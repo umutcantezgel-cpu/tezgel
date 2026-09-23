@@ -27,7 +27,7 @@ export const metadata = {
 const BATH_SERVICES = [
     { title: 'Badsanierung komplett', desc: 'Komplettbad schlüsselfertig zum Festpreis', path: '/bad/badsanierung', icon: Droplets },
     { title: 'Fliesen & XXL-Großformate', desc: 'Fugenarm verlegt, abgedichtet nach DIN 18534', path: '/bad/fliesen', icon: Grid },
-    { title: 'Barrierefreies Bad', desc: 'DIN 18040-2 & bis zu 4.000 € Zuschuss', path: '/bad/barrierefreies-bad', icon: ShieldCheck },
+    { title: 'Barrierefreies Bad', desc: 'DIN 18040-2 & bis zu 4.180 € Zuschuss', path: '/bad/barrierefreies-bad', icon: ShieldCheck },
     { title: 'Bad aus einer Hand', desc: 'Ein Ansprechpartner, abgestimmte Gewerke', path: '/bad/bad-aus-einer-hand', icon: Sparkles },
     { title: 'Musterbad-Konzepte', desc: 'Basic, Premium & Luxus (4,6 bis 15,9 m²)', path: '/bad/musterbaeder', icon: Layers },
     { title: 'Badplaner', desc: 'Ihr neues Bad Schritt für Schritt planen', path: '/bad/badplaner', icon: Ruler }

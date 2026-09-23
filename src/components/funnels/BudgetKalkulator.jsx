@@ -321,7 +321,7 @@ export default function BudgetKalkulator() {
                             <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs space-y-1 text-slate-700">
                                 <p className="font-bold text-slate-900 flex items-center gap-1.5">
                                     <BadgePercent className="w-4 h-4 text-sky-600" />
-                                    Bis zu 4.000 € Pflegekassen-Zuschuss
+                                    Bis zu 4.180 € Pflegekassen-Zuschuss
                                 </p>
                                 <p>
                                     Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.{' '}

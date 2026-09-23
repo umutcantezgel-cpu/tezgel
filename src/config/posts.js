@@ -276,7 +276,7 @@ Die DIN 18040-2 regelt die Standards für barrierefreies Bauen im Wohnbereich:
 
 ## Finanzielle Zuschüsse
 
-*   **Pflegekasse:** Bei Vorliegen eines Pflegegrads bis zu 4.000 Euro Zuschuss für wohnumfeldverbessernde Maßnahmen.
+*   **Pflegekasse:** Bei Vorliegen eines Pflegegrads bis zu 4.180 Euro Zuschuss je Maßnahme für wohnumfeldverbessernde Maßnahmen.
 *   **KfW-Förderung:** Zinsgünstige Kredite und Förderprogramme für den Abbau von Barrieren im Bestand.
 
 Planen Sie Ihre Badsanierung vorausschauend mit unserem Meisterteam in Wetzlar!

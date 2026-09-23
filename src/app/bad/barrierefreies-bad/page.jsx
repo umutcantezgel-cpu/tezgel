@@ -19,8 +19,8 @@ import { REVIEWS } from '@/config/reviews';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
-    title: 'Barrierefreie Badmodernisierung Aßlar & Wetzlar | Bis 4.000 € Pflegekassenzuschuss',
-    description: 'Altersgerechte und barrierefreie Badmodernisierung nach DIN 18040-2 in Aßlar, Wetzlar & Umgebung. Bodengleiche Duschen, Dusch-WC & bis zu 4.000 € Zuschuss der Pflegekasse.',
+    title: 'Barrierefreie Badmodernisierung Aßlar & Wetzlar | Bis 4.180 € Pflegekassenzuschuss',
+    description: 'Altersgerechte und barrierefreie Badmodernisierung nach DIN 18040-2 in Aßlar, Wetzlar & Umgebung. Bodengleiche Duschen, Dusch-WC & bis zu 4.180 € Zuschuss der Pflegekasse.',
     alternates: { canonical: '/bad/barrierefreies-bad' }
 };
 
@@ -51,7 +51,7 @@ export default function BarrierefreiesBadPage() {
                     </span>
                     <h1 id="barrierefrei-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         Barrierefreie Badmodernisierung in Aßlar &amp; Wetzlar: <br />
-                        <span className="text-ceramic-gradient">Sicherheit, Komfort &amp; bis zu 4.000 € Zuschuss</span>
+                        <span className="text-ceramic-gradient">Sicherheit, Komfort &amp; bis zu 4.180 € Zuschuss</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
                         Selbstbestimmt und sicher im eigenen Zuhause leben: Wir gestalten Ihr Badezimmer altersgerecht,
@@ -85,11 +85,11 @@ export default function BarrierefreiesBadPage() {
                                     Zuschuss für wohnumfeldverbessernde Maßnahmen (§ 40 SGB XI)
                                 </p>
                                 <h2 id="zuschuss-heading" className="text-2xl font-black text-slate-900">
-                                    Bis zu 4.000 € Zuschuss von der Pflegekasse
+                                    Bis zu 4.180 € Zuschuss von der Pflegekasse
                                 </h2>
                                 <p className="text-sm text-slate-700 leading-relaxed">
                                     Bereits ab Pflegegrad 1 bezuschusst die Pflegekasse den Umbau auf ein barrierefreies Bad mit bis
-                                    zu 4.000 € pro Person (bei Ehepaaren mit Pflegegrad sogar bis zu 8.000 €). Wir erstellen für Sie
+                                    zu 4.180 € pro Person (bei Ehepaaren mit Pflegegrad sogar bis zu 8.360 €). Wir erstellen für Sie
                                     den förderkonformen Kostenvoranschlag.
                                 </p>
                             </div>

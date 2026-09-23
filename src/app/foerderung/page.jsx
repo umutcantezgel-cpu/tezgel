@@ -6,7 +6,7 @@ import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 const GRANT_ITEMS = [
-    { rate: '§ 40 SGB XI', title: 'Pflegekassen-Zuschuss', desc: 'Bis zu 4.000 € pro pflegebedürftiger Person für Maßnahmen zur Wohnumfeldverbesserung, z. B. die bodengleiche Dusche statt Badewanne.' },
+    { rate: '§ 40 SGB XI', title: 'Pflegekassen-Zuschuss', desc: 'Bis zu 4.180 € pro pflegebedürftiger Person für Maßnahmen zur Wohnumfeldverbesserung, z. B. die bodengleiche Dusche statt Badewanne.' },
     { rate: 'Pflegegrad 1–5', title: 'Voraussetzung', desc: 'Den Zuschuss der Pflegekasse erhalten Pflegebedürftige mit anerkanntem Pflegegrad.' },
     { rate: 'KfW 159', title: 'Altersgerecht Umbauen', desc: 'Über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden.' },
     { rate: 'Antrag', title: 'Prüffähiger Kostenvoranschlag', desc: 'Wir erstellen den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag von Anfang an.' }
@@ -20,11 +20,11 @@ const foerderFaqs = [
     },
     {
         q: 'Welche Voraussetzungen gelten für den Zuschuss der Pflegekasse?',
-        a: 'Voraussetzung ist ein Pflegegrad (1–5). Die Pflegekasse bezuschusst dann Maßnahmen zur Wohnumfeldverbesserung – z. B. eine bodengleiche Dusche statt Badewanne oder schwellenlose Zugänge – mit bis zu 4.000 € pro pflegebedürftiger Person.'
+        a: 'Voraussetzung ist ein Pflegegrad (1–5). Die Pflegekasse bezuschusst dann Maßnahmen zur Wohnumfeldverbesserung – z. B. eine bodengleiche Dusche statt Badewanne oder schwellenlose Zugänge – mit bis zu 4.180 € pro pflegebedürftiger Person.'
     },
     {
         q: 'Gibt es auch Fördermittel für die Badsanierung?',
-        a: 'Ja, über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden. Zudem bezuschusst die Pflegekasse Maßnahmen zur Wohnumfeldverbesserung nach § 40 SGB XI mit bis zu 4.000 Euro pro pflegebedürftiger Person.'
+        a: 'Ja, über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden. Zudem bezuschusst die Pflegekasse Maßnahmen zur Wohnumfeldverbesserung nach § 40 SGB XI mit bis zu 4.180 Euro pro pflegebedürftiger Person.'
     },
     {
         q: `Unterstützt ${COMPANY_DATA.legalName} mich bei den Formalitäten?`,
@@ -51,7 +51,7 @@ export default function FoerderungPage() {
                         <span className="text-ceramic-gradient">barrierefreies Bad</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Verschenken Sie kein Geld: Für barrierefreie Bäder gibt es bis zu 4.000 € von der Pflegekasse. Wir begleiten Ihren Antrag von Anfang an.
+                        Verschenken Sie kein Geld: Für barrierefreie Bäder gibt es bis zu 4.180 € von der Pflegekasse. Wir begleiten Ihren Antrag von Anfang an.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
@@ -102,10 +102,10 @@ export default function FoerderungPage() {
                                 Barrierefreie Bäder (§ 40 SGB XI)
                             </span>
                             <h3 className="text-2xl font-black text-slate-900">
-                                Bis zu 4.000 € Zuschuss für Ihr barrierefreies Bad
+                                Bis zu 4.180 € Zuschuss für Ihr barrierefreies Bad
                             </h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
-                                Für Pflegebedürftige (Pflegegrad 1–5) übernimmt die Pflegekasse bis zu 4.000 € für Maßnahmen zur Wohnumfeldverbesserung (z. B. bodengleiche Dusche statt Badewanne, schwellenlose Zugänge). Wir erstellen den prüffähigen Kostenvoranschlag.
+                                Für Pflegebedürftige (Pflegegrad 1–5) übernimmt die Pflegekasse bis zu 4.180 € für Maßnahmen zur Wohnumfeldverbesserung (z. B. bodengleiche Dusche statt Badewanne, schwellenlose Zugänge). Wir erstellen den prüffähigen Kostenvoranschlag.
                             </p>
                         </div>
                         <div className="text-center md:text-right">

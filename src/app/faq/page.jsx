@@ -23,7 +23,7 @@ const faqData = {
         questions: [
             { q: 'Was kostet eine Komplettbadsanierung aus einer Hand?', a: 'Die Kosten hängen von Raumgröße, Ausstattung und Zustand des Untergrunds ab. Wir erstellen Ihnen nach einem kostenlosen Aufmaß vor Ort ein verbindliches Festpreisangebot.' },
             { q: 'Wie lange dauert ein kompletter Badumbau?', a: 'Die Dauer hängt vom Umfang der Arbeiten ab. Vor Baustart erhalten Sie einen verbindlichen Bauzeitenplan mit festen Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.' },
-            { q: 'Gibt es Zuschüsse für barrierefreie Bäder?', a: 'Ja! Bei Vorliegen eines Pflegegrads (Pflegegrad 1–5) bezuschusst die Pflegekasse den altersgerechten Badumbau mit bis zu 4.000 € pro Person.' },
+            { q: 'Gibt es Zuschüsse für barrierefreie Bäder?', a: 'Ja! Bei Vorliegen eines Pflegegrads (Pflegegrad 1–5) bezuschusst die Pflegekasse den altersgerechten Badumbau mit bis zu 4.180 € pro Person.' },
             { q: 'Wie wird eine bodengleiche Dusche dauerhaft dicht?', a: 'Durch eine normgerechte Verbundabdichtung nach DIN 18534: Lückenlose Abdichtungsbahnen und Dichtmanschetten in Nassräumen sorgen für dauerhafte Dichtigkeit und Schimmelschutz.' }
         ]
     },

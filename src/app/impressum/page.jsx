@@ -70,9 +70,6 @@ export default function ImpressumPage() {
                         <p>
                             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
                         </p>
-                        <p>
-                            Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-emerald-800 font-bold underline underline-offset-2 hover:text-emerald-700">https://ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.
-                        </p>
                     </div>
 
                     {/* Disclaimers */}

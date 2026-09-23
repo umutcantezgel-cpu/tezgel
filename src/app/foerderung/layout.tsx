@@ -5,7 +5,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Förderung & Zuschüsse für das barrierefreie Bad',
-  description: 'Bis zu 4.000 € Pflegekassen-Zuschuss für barrierefreie Bäder (§ 40 SGB XI): Wir erstellen den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag – in Aßlar, Wetzlar & Mittelhessen.',
+  description: 'Bis zu 4.180 € Pflegekassen-Zuschuss für barrierefreie Bäder (§ 40 SGB XI): Wir erstellen den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag – in Aßlar, Wetzlar & Mittelhessen.',
   path: '/foerderung',
 });
 
@@ -25,12 +25,12 @@ const foerderFaqs = [
   {
     question: 'Welche Voraussetzungen gelten für den Zuschuss der Pflegekasse?',
     answer:
-      'Voraussetzung ist ein Pflegegrad (1–5). Die Pflegekasse bezuschusst dann Maßnahmen zur Wohnumfeldverbesserung – z. B. eine bodengleiche Dusche statt Badewanne oder schwellenlose Zugänge – mit bis zu 4.000 € pro pflegebedürftiger Person.',
+      'Voraussetzung ist ein Pflegegrad (1–5). Die Pflegekasse bezuschusst dann Maßnahmen zur Wohnumfeldverbesserung – z. B. eine bodengleiche Dusche statt Badewanne oder schwellenlose Zugänge – mit bis zu 4.180 € pro pflegebedürftiger Person.',
   },
   {
     question: 'Gibt es auch Fördermittel für die Badsanierung?',
     answer:
-      'Ja, über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden. Zudem bezuschusst die Pflegekasse Maßnahmen zur Wohnumfeldverbesserung nach § 40 SGB XI mit bis zu 4.000 Euro pro pflegebedürftiger Person.',
+      'Ja, über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden. Zudem bezuschusst die Pflegekasse Maßnahmen zur Wohnumfeldverbesserung nach § 40 SGB XI mit bis zu 4.180 Euro pro pflegebedürftiger Person.',
   },
   {
     question: `Unterstützt ${COMPANY_DATA.legalName} mich bei den Formalitäten?`,

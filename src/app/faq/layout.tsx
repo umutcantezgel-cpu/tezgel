@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     question: 'Gibt es Zuschüsse für barrierefreie Bäder?',
-    answer: 'Ja! Bei Vorliegen eines Pflegegrads (Pflegegrad 1–5) bezuschusst die Pflegekasse den altersgerechten Badumbau mit bis zu 4.000 € pro Person.',
+    answer: 'Ja! Bei Vorliegen eines Pflegegrads (Pflegegrad 1–5) bezuschusst die Pflegekasse den altersgerechten Badumbau mit bis zu 4.180 € pro Person.',
   },
   {
     question: 'Wie wird eine bodengleiche Dusche dauerhaft dicht?',
