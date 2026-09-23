@@ -1,12 +1,14 @@
 "use client";
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Button } from '@/components/ui/button';
-import { Shield, ChevronRight, Check, MapPin, BarChart3, Megaphone, Settings2 } from 'lucide-react';
+import { Shield, ChevronRight, MapPin, BarChart3, Megaphone, Settings2 } from 'lucide-react';
 import { cn } from '@/utils';
 
 // Consent Version - Increment when privacy policy changes to reset consent
 const CONSENT_VERSION = '2.0';
-const CONSENT_KEY = 'baris_consent_settings';
+// Storage key scoped to the current site operator (consent given to a previous
+// operator under a different key is intentionally not carried over).
+const CONSENT_KEY = 'tezgel_consent_settings';
 
 // Context for sharing consent state across the app
 const ConsentContext = createContext(null);
@@ -146,7 +148,7 @@ const ConsentManager = () => {
         return (
             <button
                 onClick={() => setIsVisible(true)}
-                className="fixed bottom-6 left-6 z-40 bg-[var(--color-brand-primary)] text-white p-3 rounded-full shadow-[var(--shadow-lg)] hover:bg-[var(--color-brand-primary-hover)] transition-all hover:scale-110 flex items-center justify-center group"
+                className="fixed bottom-6 left-6 z-40 bg-[var(--color-brand-primary)] text-white p-3 rounded-full shadow-lg shadow-emerald-900/20 hover:bg-[var(--color-brand-primary-hover)] transition-all hover:scale-110 flex items-center justify-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
                 aria-label="Cookie-Einstellungen öffnen"
                 title="Cookie-Einstellungen"
             >
@@ -203,7 +205,7 @@ const ConsentManager = () => {
 
     return (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-[var(--spacing-4)] md:p-[var(--spacing-6)] animate-fadeInUp">
-            <div className="max-w-5xl mx-auto bg-[var(--color-neutral-0)] rounded-[var(--radius-lg)] shadow-[var(--shadow-lg)] border border-[var(--color-neutral-200)] overflow-hidden">
+            <div className="max-w-5xl mx-auto bg-[var(--color-neutral-0)] rounded-3xl shadow-[0_24px_48px_-18px_rgba(15,23,42,0.22)] border border-[var(--color-neutral-200)] overflow-hidden">
                 {!showDetails ? (
                     <div className="p-[var(--spacing-6)] md:p-[var(--spacing-8)]">
                         <div className="flex flex-col md:flex-row gap-[var(--spacing-6)] items-start md:items-center justify-between">
@@ -226,7 +228,7 @@ const ConsentManager = () => {
                                     >
                                         Einstellungen anpassen <ChevronRight className="w-3 h-3 ml-1" />
                                     </button>
-                                    <span className="text-[var(--color-neutral-400)]">|</span>
+                                    <span className="text-[var(--color-neutral-600)]" aria-hidden="true">|</span>
                                     <a
                                         href="/datenschutz"
                                         className="text-[var(--color-blue-600)] text-[var(--font-size-sm)] font-medium hover:underline"
@@ -260,7 +262,7 @@ const ConsentManager = () => {
                             </h3>
                             <button
                                 onClick={() => setShowDetails(false)}
-                                className="text-[var(--color-neutral-500)] hover:text-[var(--color-neutral-900)]"
+                                className="text-[var(--color-neutral-700)] font-medium hover:text-[var(--color-neutral-900)] hover:underline"
                             >
                                 Zurück
                             </button>
@@ -285,7 +287,7 @@ const ConsentManager = () => {
                                                 checked={category.required ? true : preferences[category.id]}
                                                 disabled={category.required}
                                                 onChange={(e) => setPreferences({ ...preferences, [category.id]: e.target.checked })}
-                                                className="w-4 h-4 text-[var(--color-brand-primary)] rounded border-[var(--color-neutral-300)] focus:ring-[var(--color-brand-primary)]"
+                                                className="w-4 h-4 accent-emerald-700 rounded border-[var(--color-neutral-300)] focus:ring-2 focus:ring-emerald-600"
                                             />
                                         </div>
                                         <div className="flex-1">
@@ -294,14 +296,14 @@ const ConsentManager = () => {
                                                 <h4 className="font-bold text-[var(--color-neutral-900)] text-[var(--font-size-sm)]">
                                                     {category.title}
                                                     {category.required && (
-                                                        <span className="ml-2 text-xs text-[var(--color-neutral-500)] font-normal">(erforderlich)</span>
+                                                        <span className="ml-2 text-xs text-[var(--color-neutral-600)] font-normal">(erforderlich)</span>
                                                     )}
                                                 </h4>
                                             </div>
                                             <p className="text-[var(--color-text-secondary)] text-xs mt-1">
                                                 {category.description}
                                             </p>
-                                            <p className="text-[var(--color-neutral-400)] text-xs mt-1">
+                                            <p className="text-[var(--color-neutral-600)] text-xs mt-1">
                                                 Beispiele: {category.examples}
                                             </p>
                                         </div>

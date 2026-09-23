@@ -6,13 +6,16 @@ import { Lock, User, AlertCircle } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import PageWrapper from '@/components/common/PageWrapper';
 
+const inputClass =
+    'w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all';
+
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Local loading state for form
     const { login } = useAuth();
-    const navigate = useRouter();
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -27,7 +30,7 @@ const Login = () => {
                 setError('Ungültige Anmeldedaten'); // Set error on login failure
                 setPassword(''); // Clear password on failed login attempt
             }
-        } catch (err) {
+        } catch {
             setError('Ein Fehler ist aufgetreten'); // Generic error for network/server issues
             setPassword(''); // Clear password on any error
         } finally {
@@ -37,26 +40,27 @@ const Login = () => {
 
     return (
         <PageWrapper title="Admin Login">
-            <div className="min-h-[calc(100vh-200px)] flex items-center justify-center px-4 py-12">
-                <div className="w-full max-w-md">
+            <div className="min-h-[calc(100vh-200px)] flex items-center justify-center px-4 pt-32 pb-16 relative overflow-hidden">
+                <div className="ambient-glow-mint -top-20 -left-20 opacity-60" />
+                <div className="w-full max-w-md relative z-10">
                     {/* Login Card */}
-                    <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/30 p-8">
+                    <div className="ceramic-hero rounded-[2rem] p-8">
                         {/* Header */}
                         <div className="text-center mb-8">
-                            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-700 to-primary-800 rounded-full mb-4">
-                                <Lock className="w-8 h-8 text-white" />
-                            </div>
-                            <h1 className="text-2xl font-heading font-bold text-primary-900 mb-2">
+                            <span className="icon-chip w-16 h-16 rounded-full mx-auto mb-4">
+                                <Lock className="w-8 h-8" />
+                            </span>
+                            <h1 className="text-2xl font-black text-slate-900 mb-2">
                                 Mitarbeiter Login
                             </h1>
-                            <p className="text-gray-600 text-sm">
+                            <p className="text-slate-700 text-sm">
                                 Melden Sie sich an, um den Admin-Bereich zu betreten
                             </p>
                         </div>
 
                         {/* Error Message */}
                         {error && (
-                            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3 text-red-700">
+                            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3 text-red-800" role="alert">
                                 <AlertCircle className="w-5 h-5 flex-shrink-0" />
                                 <p className="text-sm">{error}</p>
                             </div>
@@ -66,16 +70,18 @@ const Login = () => {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Username*/}
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label htmlFor="login-username" className="block text-sm font-bold text-slate-800 mb-2">
                                     Benutzername
                                 </label>
                                 <div className="relative">
-                                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" aria-hidden="true" />
                                     <input
+                                        id="login-username"
                                         type="text"
+                                        autoComplete="username"
                                         value={username}
                                         onChange={(e) => setUsername(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                                        className={inputClass}
                                         placeholder="Benutzername eingeben"
                                         required
                                     />
@@ -84,16 +90,18 @@ const Login = () => {
 
                             {/* Password */}
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                <label htmlFor="login-password" className="block text-sm font-bold text-slate-800 mb-2">
                                     Passwort
                                 </label>
                                 <div className="relative">
-                                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" aria-hidden="true" />
                                     <input
+                                        id="login-password"
                                         type="password"
+                                        autoComplete="current-password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                                        className={inputClass}
                                         placeholder="Passwort eingeben"
                                         required
                                     />
@@ -101,17 +109,14 @@ const Login = () => {
                             </div>
 
                             {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full bg-gradient-to-r from-primary-700 to-primary-800 hover:from-primary-800 hover:to-primary-900 text-white font-medium py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                            >
-                                Anmelden
+                            <button type="submit" disabled={isLoading} className="btn-primary w-full">
+                                {isLoading ? 'Anmeldung läuft …' : 'Anmelden'}
                             </button>
                         </form>
 
                         {/* Footer Note */}
-                        <div className="mt-6 pt-6 border-t border-gray-200 text-center">
-                            <p className="text-xs text-gray-500">
+                        <div className="mt-6 pt-6 border-t border-slate-200 text-center">
+                            <p className="text-xs text-slate-600">
                                 Nur für autorisierte Mitarbeiter
                             </p>
                         </div>

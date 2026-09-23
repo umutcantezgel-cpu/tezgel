@@ -1,10 +1,13 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildJobPostingNode, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
+const { contact, headquarters, business, legalName } = COMPANY_DATA;
+
 export const metadata = createMetadata({
-  title: 'Karriere & Jobs im SHK-Handwerk | Bad & Energie GmbH Wetzlar',
-  description: 'Werden Sie Teil unseres Meisterteams bei der Bad & Energie GmbH in Wetzlar. Aktuelle Jobs für Anlagenmechaniker SHK, Kundendienstmonteure und Azubis.',
+  title: 'Karriere & Jobs – Fliesenleger (m/w/d) in Aßlar',
+  description: `Werden Sie Teil von ${legalName} in ${headquarters.city}: Wir suchen Fliesenleger (m/w/d) – Geselle oder Meister – und freuen uns über Ausbildungs- und Initiativbewerbungen.`,
   path: '/karriere',
 });
 
@@ -14,51 +17,38 @@ const breadcrumbs = [
   { name: 'Karriere & Jobs', path: '/karriere' },
 ];
 
+// Mirrors the first (open) position shown in ./page.jsx.
 const jobs = [
   {
-    title: 'Anlagenmechaniker SHK (m/w/d) für Sanitär- & Heizungstechnik',
+    title: 'Fliesenleger (m/w/d) – Geselle oder Meister',
     description:
-      'Installation von NIBE Wärmepumpen, Fußbodenheizungen, Trinkwasserinstallationen und schlüsselfertigen Badsanierungen in Wetzlar und Region.',
-    employmentType: 'FULL_TIME',
-  },
-  {
-    title: 'Servicetechniker / Kundendienstmonteur SHK (m/w/d)',
-    description:
-      'Wartung, Instandhaltung und Störungsbeseitigung von Wärmepumpen, Gas- und Solaranlagen im Raum Wetzlar und Mittelhessen.',
-    employmentType: 'FULL_TIME',
-  },
-  {
-    title: 'Auszubildender zum Anlagenmechaniker SHK (m/w/d)',
-    description:
-      'Fundierte Ausbildung im SHK-Handwerk mit Zukunft: Lerne moderne Wärmepumpentechnik, Klimatechnik und hochwertige Bäder von Meistern ihres Fachs.',
-    employmentType: 'FULL_TIME',
+      'Verlegung von Fliesen, Platten und Naturstein in Bädern, Wohnbereichen sowie auf Balkonen und Terrassen – von der Untergrundvorbereitung über die DIN-18534-Verbundabdichtung bis zur fugenarmen XXL-Großformatverlegung.',
   },
 ];
 
+// Must mirror the visible questions & answers in ./page.jsx.
 const karriereFaqs = [
   {
-    question: 'Wie läuft der Bewerbungsprozess bei der Bad & Energie GmbH ab?',
-    answer:
-      'Ganz unkompliziert: Sie rufen uns an unter 06441 20 39 053 oder schreiben eine kurze E-Mail an anfrage@bad-energie-profi.de.',
+    question: 'Wie läuft der Bewerbungsprozess ab?',
+    answer: `Ganz unkompliziert: Rufen Sie uns an unter ${contact.phone}, schreiben Sie per WhatsApp an ${contact.whatsapp} oder senden Sie eine kurze E-Mail an ${contact.email}.`,
   },
   {
-    question: 'Gibt es Möglichkeiten zur fachlichen Weiterbildung?',
+    question: 'Welche Arbeiten erwarten mich?',
     answer:
-      'Ja, wir fördern gezielt Produktschulungen direkt bei Herstellern wie NIBE, Lehrgänge zum Kälteschein sowie Weiterbildungen zum Meister oder Techniker.',
+      'Das gesamte Spektrum des Fliesenhandwerks: Badsanierungen und barrierefreie Walk-In-Duschen, fugenarme Großformate, Wohnbereiche, Küchen und Treppen, Balkone und Terrassen, Untergrundvorbereitung mit DIN 18534 Verbundabdichtung sowie Naturstein.',
   },
   {
-    question: 'Werden Überstunden bezahlt oder ausgeglichen?',
-    answer:
-      'Jede geleistete Überstunde wird auf Ihrem persönlichen Zeitkonto erfasst und kann wahlweise vergütet oder durch Freizeit ausgeglichen werden.',
+    question: 'Wo liegen die Baustellen?',
+    answer: `Vom Firmensitz in ${headquarters.city} aus arbeiten wir in ${business.serviceArea.slice(0, -1).join(', ')} – für Großprojekte auch in ganz Hessen.`,
   },
 ];
 
 const karriereGraph = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Karriere & Jobs im SHK-Handwerk in Wetzlar | Bad & Energie GmbH',
+    name: `Karriere & Jobs bei ${legalName} in ${headquarters.city}`,
     description:
-      'Stellenangebote für Anlagenmechaniker SHK, Servicetechniker und Azubis bei der Bad & Energie GmbH in Wetzlar.',
+      'Stellenangebot für Fliesenleger (m/w/d) – Geselle oder Meister – sowie Ausbildungs- und Initiativbewerbungen im Fliesen-Meisterbetrieb.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

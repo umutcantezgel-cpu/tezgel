@@ -1,42 +1,66 @@
 import React from 'react';
 import Link from 'next/link';
-import { BadgePercent, CheckCircle2, ShieldCheck, Phone, Calendar, ArrowRight, Sparkles, Award } from 'lucide-react';
+import { BadgePercent, ArrowRight, Phone, HelpCircle, Accessibility } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
-import HeizungKonfigurator from '@/components/funnels/HeizungKonfigurator';
+import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
 
-export const metadata = {
-    title: 'Fördermittelberatung Heizung & Bad 2025/2026 | Bis 70% BEG/KfW | Bad & Energie GmbH',
-    description: 'Staatliche Fördermittel für Wärmepumpen & Badsanierung in Wetzlar: Bis zu 70% KfW 458 Zuschuss + bis zu 4.000 € Pflegekassen-Zuschuss für barrierefreie Bäder.',
-    alternates: { canonical: 'https://bad-energie.de/foerderung' }
-};
+const GRANT_ITEMS = [
+    { rate: '§ 40 SGB XI', title: 'Pflegekassen-Zuschuss', desc: 'Bis zu 4.000 € pro pflegebedürftiger Person für Maßnahmen zur Wohnumfeldverbesserung, z. B. die bodengleiche Dusche statt Badewanne.' },
+    { rate: 'Pflegegrad 1–5', title: 'Voraussetzung', desc: 'Den Zuschuss der Pflegekasse erhalten Pflegebedürftige mit anerkanntem Pflegegrad.' },
+    { rate: 'KfW 159', title: 'Altersgerecht Umbauen', desc: 'Über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden.' },
+    { rate: 'Antrag', title: 'Prüffähiger Kostenvoranschlag', desc: 'Wir erstellen den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag von Anfang an.' }
+];
+
+// Keep in sync with the FAQPage JSON-LD in ./layout.tsx (same questions & answers).
+const foerderFaqs = [
+    {
+        q: 'Wie läuft der Antrag auf den Pflegekassen-Zuschuss ab?',
+        a: 'Wir erstellen für Ihr barrierefreies Bad den prüffähigen Kostenvoranschlag, den Sie bei Ihrer Pflegekasse einreichen. Stellen Sie den Antrag möglichst vor Beginn der Arbeiten – wir begleiten Sie von Anfang an.'
+    },
+    {
+        q: 'Welche Voraussetzungen gelten für den Zuschuss der Pflegekasse?',
+        a: 'Voraussetzung ist ein Pflegegrad (1–5). Die Pflegekasse bezuschusst dann Maßnahmen zur Wohnumfeldverbesserung – z. B. eine bodengleiche Dusche statt Badewanne oder schwellenlose Zugänge – mit bis zu 4.000 € pro pflegebedürftiger Person.'
+    },
+    {
+        q: 'Gibt es auch Fördermittel für die Badsanierung?',
+        a: 'Ja, über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden. Zudem bezuschusst die Pflegekasse Maßnahmen zur Wohnumfeldverbesserung nach § 40 SGB XI mit bis zu 4.000 Euro pro pflegebedürftiger Person.'
+    },
+    {
+        q: `Unterstützt ${COMPANY_DATA.legalName} mich bei den Formalitäten?`,
+        a: 'Selbstverständlich! Wir erstellen den prüffähigen Kostenvoranschlag für Ihren Antrag und begleiten Sie Schritt für Schritt – vom kostenfreien Vor-Ort-Aufmaß bis zur Abnahme.'
+    }
+];
 
 export default function FoerderungPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-red -top-20 -right-20" />
-            <div className="ambient-glow-blue top-96 -left-20" />
+            <div className="ambient-glow-mint -top-20 -right-20 opacity-70" />
+            <div className="ambient-glow-sky top-96 -left-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="text-xs uppercase font-black tracking-wider text-amber-300 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 inline-block backdrop-blur-md">
-                        BEG &middot; KfW 458 &middot; Pflegekasse (§ 40 SGB XI)
+                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-amber">
+                        <BadgePercent className="w-3.5 h-3.5" />
+                        Pflegekasse (§ 40 SGB XI) &middot; KfW 159
                     </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-                        Fördermittelberatung für Heizung &amp; Bad
+                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                        Förderung &amp; Zuschüsse für Ihr{' '}
+                        <span className="text-ceramic-gradient">barrierefreies Bad</span>
                     </h1>
-                    <p className="text-sm sm:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed font-normal">
-                        Verschenken Sie kein Geld: Für den Einbau einer neuen NIBE Wärmepumpe erhalten Sie bis zu 70 % staatlichen Zuschuss – für barrierefreie Bäder bis zu 4.000 € von der Pflegekasse. Wir begleiten Ihren Antrag von Anfang an.
+                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                        Verschenken Sie kein Geld: Für barrierefreie Bäder gibt es bis zu 4.000 € von der Pflegekasse. Wir begleiten Ihren Antrag von Anfang an.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link
-                            href="/heizung/heizungskonfigurator"
-                            className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#E4040E] to-[#B91C1C] hover:shadow-[0_12px_28px_rgba(228,4,14,0.4)] text-white font-black text-xs shadow-md transition-all transform hover:-translate-y-0.5 border border-white/20"
-                        >
-                            Förderquote online berechnen &rarr;
+                        <Link href="/bad/budgetkalkulator" className="btn-primary px-7 py-3.5 text-xs">
+                            Badbudget online berechnen
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <Link href="/kontakt" className="btn-ghost px-7 py-3.5 text-xs">
+                            Beratung vereinbaren
                         </Link>
                     </div>
                 </div>
@@ -45,51 +69,48 @@ export default function FoerderungPage() {
             {/* Grant Details Matrix */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-14">
-                    <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-                        So setzt sich die 70 % Heizungsförderung zusammen (KfW 458)
+                    <span className="eyebrow eyebrow-sky mb-4">Zuschüsse im Überblick</span>
+                    <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Diese Förderung gibt es für Ihr barrierefreies Bad
                     </h2>
-                    <p className="mt-2 text-sm text-slate-600">
-                        Maximale förderfähige Investitionskosten: 30.000 € für ein Einfamilienhaus (max. Zuschuss 21.000 €).
+                    <p className="mt-3 text-sm sm:text-base text-slate-700">
+                        Welche Zuschüsse in Ihrem Fall infrage kommen, besprechen wir gemeinsam beim kostenfreien Vor-Ort-Aufmaß.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                    {[
-                        { rate: '30 %', title: 'Grundförderung', desc: 'Für alle Eigentümer beim Einbau einer Wärmepumpe oder Biomasseheizung.' },
-                        { rate: '+ 20 %', title: 'Geschwindigkeits-Bonus', desc: 'Für selbstnutzende Eigentümer bei vorzeitigem Austausch alter funktionierender Öl-/Gasheizungen.' },
-                        { rate: '+ 30 %', title: 'Einkommens-Bonus', desc: 'Für selbstnutzende Eigentümer mit einem zu versteuernden Haushaltsjahreseinkommen bis 40.000 €.' },
-                        { rate: '+ 5 %', title: 'Effizienz-Bonus', desc: 'Für Wärmepumpen mit natürlichem Kältemittel wie Propan (R290 bei NIBE) oder Erdwärme.' }
-                    ].map((item, idx) => (
-                        <div key={idx} className="glass-surface p-6 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(228,4,14,0.1)] hover:-translate-y-1 transition-all duration-500 flex flex-col justify-between">
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    {GRANT_ITEMS.map((item) => (
+                        <li
+                            key={item.title}
+                            className="group glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300 flex flex-col justify-between"
+                        >
                             <div>
-                                <span className="text-3xl sm:text-4xl font-black text-[#E4040E] mb-1 block">{item.rate}</span>
-                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                <p className="text-xs text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                                <span className="font-display text-2xl sm:text-3xl font-black text-emerald-800 mb-2 block">{item.rate}</span>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </div>
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
 
                 {/* Bathroom Grant - Double Bezel */}
                 <div className="glass-bezel-outer shadow-2xl">
                     <div className="glass-bezel-inner p-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-                        <div className="md:col-span-2 space-y-2">
-                            <span className="text-xs font-black uppercase tracking-wider text-[#0C3A87] bg-blue-50 px-3.5 py-1 rounded-full inline-block border border-blue-200/60">
+                        <div className="md:col-span-2 space-y-3">
+                            <span className="eyebrow">
+                                <Accessibility className="w-3.5 h-3.5" />
                                 Barrierefreie Bäder (§ 40 SGB XI)
                             </span>
                             <h3 className="text-2xl font-black text-slate-900">
                                 Bis zu 4.000 € Zuschuss für Ihr barrierefreies Bad
                             </h3>
-                            <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                            <p className="text-sm text-slate-700 leading-relaxed">
                                 Für Pflegebedürftige (Pflegegrad 1–5) übernimmt die Pflegekasse bis zu 4.000 € für Maßnahmen zur Wohnumfeldverbesserung (z. B. bodengleiche Dusche statt Badewanne, schwellenlose Zugänge). Wir erstellen den prüffähigen Kostenvoranschlag.
                             </p>
                         </div>
                         <div className="text-center md:text-right">
-                            <Link
-                                href="/termin"
-                                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#0C3A87] to-[#0E1C76] text-white font-black text-xs shadow-md hover:shadow-lg transition-all"
-                            >
-                                <span>Beratung vereinbaren</span>
+                            <Link href="/kontakt" className="btn-primary px-6 py-3.5 text-xs">
+                                Beratung vereinbaren
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -97,10 +118,42 @@ export default function FoerderungPage() {
                 </div>
             </div>
 
+            {/* FAQ */}
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                    <span className="eyebrow mb-4">Häufige Fragen</span>
+                    <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Förderung für Ihr Bad – kurz erklärt
+                    </h2>
+                </div>
+                <div className="space-y-4">
+                    {foerderFaqs.map((faq) => (
+                        <div key={faq.q} className="glass-surface rounded-2xl p-6">
+                            <h3 className="font-black text-base text-slate-900 mb-2 flex items-start gap-2">
+                                <HelpCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                {faq.q}
+                            </h3>
+                            <p className="text-sm text-slate-700 leading-relaxed pl-7">{faq.a}</p>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-6 py-3 text-xs">
+                        <Phone className="w-4 h-4 text-emerald-700" />
+                        {COMPANY_DATA.contact.phone}
+                    </a>
+                    <Link href="/faq" className="text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 inline-flex items-center gap-1">
+                        Weitere Fragen &amp; Antworten
+                        <ArrowRight className="w-4 h-4" />
+                    </Link>
+                </div>
+            </div>
+
             <QualityPromise />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-                <HeizungKonfigurator />
+            {/* Anfrage */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="anfrage">
+                <TezgelAnfrageFunnel />
             </div>
         </div>
     );

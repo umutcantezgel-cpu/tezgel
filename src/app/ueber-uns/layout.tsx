@@ -1,10 +1,13 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildAboutPageNode, buildBreadcrumbNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
+const { legalName, owner, headquarters, authority, business } = COMPANY_DATA;
+
 export const metadata = createMetadata({
-  title: 'Über uns – Meisterbetrieb in Wetzlar',
-  description: 'Lernen Sie die Bad & Energie GmbH kennen. Ihr Meisterbetrieb für Badsanierung und Heizung in Wetzlar – Tradition seit 1926, Meisterbetrieb seit 2001.',
+  title: 'Über uns – Fliesen-Meisterbetrieb in Aßlar',
+  description: `Lernen Sie ${legalName} kennen: ${authority.certification}, gegründet ${business.establishmentYear} in ${headquarters.city}. Inhaber ${owner.fullName} – Fliesen, Großformate & Badsanierung in Mittelhessen.`,
   path: '/ueber-uns',
 });
 
@@ -17,9 +20,9 @@ const breadcrumbs = [
 const aboutSchema = buildGraph([
   buildAboutPageNode({
     url: pageUrl,
-    name: 'Über die Bad & Energie GmbH – Ihr Meisterbetrieb in Wetzlar',
+    name: `Über ${legalName} – Ihr Fliesen-Meisterbetrieb in ${headquarters.city}`,
     description:
-      'Lernen Sie die Bad & Energie GmbH und Geschäftsführer Sabri Demir kennen. Meisterbetrieb für Badsanierung, Heizung und Haustechnik in Wetzlar.',
+      `Lernen Sie ${legalName} und Inhaber ${owner.fullName} kennen. ${authority.certification} für Fliesen-, Platten- und Mosaikverlegung, Naturstein und Badsanierung in ${headquarters.city} und Mittelhessen.`,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
 ]);

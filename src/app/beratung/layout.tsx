@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildServiceNode, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Kostenlose Fachberatung buchen',
-  description: 'Buchen Sie einen kostenlosen Beratungstermin bei Batherm Haustechnik Wetzlar. Persönlich, kompetent und unverbindlich vor Ort oder online.',
+  title: 'Kostenlose Fachberatung vereinbaren',
+  description: `Kostenlose Erstberatung & Vor-Ort-Aufmaß von ${COMPANY_DATA.legalName}: Badsanierung, XXL-Fliesen, Wohnbereiche und Terrassen in Aßlar, Wetzlar & Mittelhessen – persönlich und unverbindlich.`,
   path: '/beratung',
 });
 
@@ -14,43 +15,49 @@ const breadcrumbs = [
   { name: 'Kostenlose Fachberatung', path: '/beratung' },
 ];
 
+// Must mirror the visible questions & answers in ./page.jsx.
 const beratungFaqs = [
   {
-    question: 'Ist das Erstgespräch wirklich 100% kostenfrei?',
+    question: 'Ist das Erstgespräch wirklich 100% kostenlos und unverbindlich?',
     answer:
-      'Ja, unser telefonisches Vorgespräch und die Erstberatung vor Ort in Wetzlar und Umgebung sind für Sie vollständig kostenfrei und unverbindlich.',
+      'Ja. Sowohl die telefonische Erstberatung als auch das Vor-Ort-Aufmaß bei Ihnen in Aßlar, Wetzlar und Umgebung sind für Sie vollkommen kostenfrei und ohne jede Verpflichtung.',
   },
   {
-    question: 'Welche Unterlagen sollte ich zum Termin bereithalten?',
+    question: 'Wie lange dauert ein typischer Beratungstermin?',
     answer:
-      'Hilfreich sind letzte Heizkostenabrechnungen bzw. der bisherige Brennstoffverbrauch, der Bauplan oder Grundriss Ihres Hauses und ggf. Fotos Ihrer aktuellen Heizungs- oder Sanitäranlage.',
+      'Für eine fundierte Ersteinschätzung planen wir in der Regel 30 bis 45 Minuten ein. Bei komplexen Sanierungsprojekten nehmen wir uns gerne auch 60 Minuten Zeit.',
   },
   {
-    question: 'Wie schnell erhalte ich nach dem Termin mein Angebot?',
+    question: 'Welche Unterlagen sollte ich für den Termin bereitlegen?',
     answer:
-      'In der Regel erstellen wir Ihnen innerhalb von 48 bis 72 Stunden nach der Vor-Ort-Besichtigung ein detailliertes Festpreisangebot inklusive Fördermittelaufstellung.',
+      'Hilfreich sind Informationen zum Baujahr des Gebäudes, vorhandene Grundrisse oder Skizzen, Fotos des Badezimmers bzw. der zu belegenden Flächen sowie – falls vorhanden – Ideen zu Fliesenformat und Farbe.',
+  },
+  {
+    question: 'Beraten Sie auch zu Zuschüssen für das barrierefreie Bad?',
+    answer:
+      'Ja. Für den Zuschuss der Pflegekasse zum barrierefreien Bad erstellen wir den prüffähigen Kostenvoranschlag und unterstützen Sie bei der Antragsstellung.',
   },
 ];
 
 const beratungGraph = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Kostenlose Fachberatung Haustechnik Wetzlar | Batherm Haustechnik',
+    name: 'Kostenlose Fachberatung für Fliesen & Badsanierung in Aßlar & Wetzlar',
     description:
-      'Buchen Sie Ihre unverbindliche Beratung vor Ort für Badsanierung, Heizungswechsel und Wärmepumpen in Wetzlar.',
+      'Vereinbaren Sie Ihre unverbindliche Beratung und das kostenfreie Vor-Ort-Aufmaß für Badsanierung, Fliesenverlegung, Wohnbereiche und Terrassen.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
   buildServiceNode({
-    name: 'Kostenlose SHK-Fachberatung vor Ort',
-    serviceType: 'Handwerksberatung Sanitär, Heizung & Klima',
+    name: 'Kostenlose Fachberatung & Vor-Ort-Aufmaß',
+    serviceType: 'Beratung Fliesenverlegung & Badsanierung',
     description:
-      'Individuelle Vor-Ort-Beratung, Bedarfsanalyse, Konzeptentwicklung und transparente Angebotserstellung für Ihr Vorhaben.',
+      'Individuelle Vor-Ort-Beratung, Untergrundprüfung, Material- und Fugenbildplanung sowie transparente Angebotserstellung für Ihr Vorhaben.',
     url: pageUrl,
     offers: [
-      { name: 'Vor-Ort-Check', description: 'Besichtigung Ihrer Räumlichkeiten in Mittelhessen' },
-      { name: 'Heizungs- & Badkonzept', description: 'Maßgeschneiderte Auslegung nach Ihren Wünschen' },
-      { name: 'Fördermittel-Kalkulation', description: 'Ermittlung maximaler Zuschüsse' },
+      { name: 'Vor-Ort-Aufmaß', description: 'Besichtigung Ihrer Räumlichkeiten in Mittelhessen' },
+      { name: 'Material & Fugenbild', description: 'Beratung zu Formaten, Fugenachsen und Rutschhemmung' },
+      { name: 'Festpreisangebot', description: 'Transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand' },
     ],
   }),
   buildFaqNode(beratungFaqs, pageUrl),
@@ -64,4 +71,3 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </>
   );
 }
-

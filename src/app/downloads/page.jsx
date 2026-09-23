@@ -1,70 +1,110 @@
 import React from 'react';
 import Link from 'next/link';
-import { FileText, Download, CheckCircle2, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
+import { FileText, ArrowRight, ClipboardList, BadgePercent, HelpCircle, Layers, Phone, Mail, FolderOpen } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
-export const metadata = {
-    title: 'Downloads & Broschüren | Checklisten & Förderleitfaden | Bad & Energie GmbH',
-    description: 'Nützliche Downloads der Bad & Energie GmbH Wetzlar: Bad-Planungscheckliste, Förderleitfaden KfW/BEG, Trinkwasserhygiene-Leitfaden & Musterbad-Katalog.',
-    alternates: { canonical: 'https://bad-energie.de/downloads' }
-};
+export const metadata = createMetadata({
+    title: 'Downloads & Infomaterial',
+    description: `Informationen rund um Fliesen und Badsanierung von ${COMPANY_DATA.legalName}: Checkliste zur Terminvorbereitung, Förderung, häufige Fragen und Materialien – Unterlagen zu Ihrem Projekt erhalten Sie auf Anfrage.`,
+    path: '/downloads'
+});
+
+// No downloadable files are currently published (nothing under /public).
+// Documents are sent on request; these online guides replace the former PDF list.
+const RESOURCES = [
+    { icon: ClipboardList, title: 'Checkliste zur Terminvorbereitung', desc: 'Welche Maße, Fotos und Unterlagen Ihnen und uns beim Beratungstermin helfen.', href: '/beratung', cta: 'Zur Checkliste' },
+    { icon: BadgePercent, title: 'Förderung & Zuschüsse', desc: 'Pflegekassen-Zuschuss und KfW-Programm 159 für das barrierefreie Bad im Überblick.', href: '/foerderung', cta: 'Zur Förderung' },
+    { icon: HelpCircle, title: 'Häufige Fragen', desc: 'Antworten zu Großformaten, Abdichtung nach DIN 18534, Balkon & Terrasse und Festpreisangebot.', href: '/faq', cta: 'Zu den FAQ' },
+    { icon: Layers, title: 'Materialien & Systeme', desc: 'Verlegewerkstoffe, Abdichtungssysteme und Fliesen, mit denen wir arbeiten.', href: '/partner', cta: 'Zu den Materialien' }
+];
 
 export default function DownloadsPage() {
-    const downloads = [
-        { title: 'Checkliste: 10 Schritte zur perfekten Badsanierung', size: 'PDF &middot; 1,2 MB', desc: 'Vorbereitungsleitfaden für Raummaße, Wünsche, Fliesen und Zeitplanung.' },
-        { title: 'BEG & KfW Förder-Leitfaden 2025/2026', size: 'PDF &middot; 2,4 MB', desc: 'Übersicht über Grundförderung, Klimageschwindigkeits-Bonus und Einkommensbonus bis 70%.' },
-        { title: 'Trinkwasserhygiene & Legionellenschutz nach TrinkwV', size: 'PDF &middot; 1,8 MB', desc: 'Wichtige Informationen und Prüfpflichten für Eigentümer, Vermieter und Hausverwaltungen.' },
-        { title: 'NIBE Wärmepumpen Produktkatalog', size: 'PDF &middot; 4,5 MB', desc: 'Technische Daten, JAZ-Werte und Schallpegel der schwedischen Premium-Wärmepumpen.' }
-    ];
+    const { contact } = COMPANY_DATA;
 
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-blue -top-20 -left-20" />
-            <div className="ambient-glow-cyan top-96 -right-20" />
+            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-14 text-center space-y-4 relative overflow-hidden">
-                    <span className="text-xs uppercase font-black tracking-wider text-cyan-300 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 inline-block backdrop-blur-md">
+                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow">
+                        <FolderOpen className="w-3.5 h-3.5" />
                         Wissenscenter &amp; Dokumente
                     </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-                        Downloads &amp; Infomaterial
+                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                        Downloads &amp; <span className="text-ceramic-gradient">Infomaterial</span>
                     </h1>
-                    <p className="text-sm sm:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed font-normal">
-                        Kostenlose Leitfäden, Checklisten und Fachbroschüren rund um Badsanierung, Heizungsmodernisierung und Trinkwasserhygiene.
+                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                        Unterlagen zu Ihrem Projekt senden wir Ihnen gern persönlich zu. Die wichtigsten Informationen rund um Fliesen und Badsanierung finden Sie direkt hier auf der Website.
                     </p>
                 </div>
             </div>
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-                <div className="space-y-4">
-                    {downloads.map((doc, idx) => (
-                        <div key={idx} className="glass-surface p-6 sm:p-8 rounded-[2rem] flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:shadow-[0_20px_40px_rgba(12,58,135,0.1)] hover:-translate-y-0.5 transition-all duration-500">
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0C3A87] flex items-center justify-center shrink-0 border border-blue-200/60 shadow-xs">
-                                    <FileText className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <h3 className="font-black text-base text-slate-900 mb-1">{doc.title}</h3>
-                                    <p className="text-xs text-slate-600 mb-1 font-medium">{doc.desc}</p>
-                                    <span className="text-[11px] font-bold text-slate-400" dangerouslySetInnerHTML={{ __html: doc.size }} />
-                                </div>
-                            </div>
-                            <div className="shrink-0">
-                                <Link
-                                    href="/kontakt"
-                                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-slate-50 text-[#0C3A87] font-black text-xs transition-all border border-blue-200/80 shadow-xs"
-                                >
-                                    <Download className="w-4 h-4 text-[#0C3A87]" />
-                                    <span>Download anfordern</span>
-                                </Link>
-                            </div>
+                {/* On request */}
+                <div className="glass-surface rounded-[2rem] p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+                    <div className="flex items-start gap-4">
+                        <span className="icon-chip w-12 h-12">
+                            <FileText className="w-6 h-6" />
+                        </span>
+                        <div>
+                            <h2 className="font-black text-lg text-slate-900 mb-1">Unterlagen auf Anfrage</h2>
+                            <p className="text-sm text-slate-700 leading-relaxed">
+                                Sie benötigen Dokumente zu Ihrem Vorhaben? Sprechen Sie uns an – wir senden Ihnen die gewünschten Informationen per E-Mail zu.
+                            </p>
                         </div>
-                    ))}
+                    </div>
+                    <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+                        <Link href="/kontakt" className="btn-primary px-6 py-3 text-xs">
+                            Unterlagen anfragen
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <a href={`mailto:${contact.email}?subject=${encodeURIComponent('Anfrage Unterlagen')}`} className="btn-ghost px-6 py-3 text-xs">
+                            <Mail className="w-4 h-4 text-emerald-700" />
+                            {contact.email}
+                        </a>
+                    </div>
                 </div>
+
+                {/* Online resources */}
+                <h2 className="text-2xl font-black text-slate-900 tracking-tight mb-6 text-center">Online-Ratgeber &amp; Checklisten</h2>
+                <ul className="space-y-4">
+                    {RESOURCES.map(({ icon: Icon, title, desc, href, cta }) => (
+                        <li key={href}>
+                            <Link
+                                href={href}
+                                className="group glass-surface p-6 sm:p-8 rounded-[2rem] flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            >
+                                <span className="flex items-start gap-4">
+                                    <span className="icon-chip w-12 h-12">
+                                        <Icon className="w-6 h-6" />
+                                    </span>
+                                    <span>
+                                        <span className="block font-black text-base text-slate-900 mb-1 group-hover:text-emerald-800 transition-colors">{title}</span>
+                                        <span className="block text-sm text-slate-700">{desc}</span>
+                                    </span>
+                                </span>
+                                <span className="shrink-0 inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 group-hover:text-emerald-700">
+                                    {cta}
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                </span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+
+                <p className="mt-10 text-center text-sm text-slate-700">
+                    Lieber persönlich?{' '}
+                    <a href={`tel:${contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Phone className="w-4 h-4" />
+                        {contact.phone}
+                    </a>
+                </p>
             </div>
 
             <QualityPromise />

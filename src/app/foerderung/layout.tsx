@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
-import { buildGraph, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL, LOCAL_BUSINESS_ID } from '@/lib/schema';
+import { buildGraph, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Förderung & Zuschüsse bis 70% | Bad & Energie GmbH',
-  description: 'Bis zu 70% KfW-Förderung für NIBE Wärmepumpen & bis zu 4.000 € Pflegekassen-Zuschuss für barrierefreie Bäder in Wetzlar & Lahn-Dill.',
+  title: 'Förderung & Zuschüsse für das barrierefreie Bad',
+  description: 'Bis zu 4.000 € Pflegekassen-Zuschuss für barrierefreie Bäder (§ 40 SGB XI): Wir erstellen den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag – in Aßlar, Wetzlar & Mittelhessen.',
   path: '/foerderung',
 });
 
@@ -14,16 +15,17 @@ const breadcrumbs = [
   { name: 'Förderung & Zuschüsse', path: '/foerderung' },
 ];
 
+// Must mirror the visible questions & answers in ./page.jsx.
 const foerderFaqs = [
   {
-    question: 'Wie läuft der Antrag auf KfW-Heizungsförderung ab?',
+    question: 'Wie läuft der Antrag auf den Pflegekassen-Zuschuss ab?',
     answer:
-      'Zuerst schließen Sie mit uns einen Lieferungs- oder Leistungsvertrag mit aufschiebender Bedingung der Förderzusage ab. Anschließend erstellen wir für Sie die Bestätigung zum Antrag (BzA). Mit dieser BzA-ID registrieren Sie sich im Kundenportal „Meine KfW“ und stellen den Antrag online vor Beginn der Montage.',
+      'Wir erstellen für Ihr barrierefreies Bad den prüffähigen Kostenvoranschlag, den Sie bei Ihrer Pflegekasse einreichen. Stellen Sie den Antrag möglichst vor Beginn der Arbeiten – wir begleiten Sie von Anfang an.',
   },
   {
-    question: 'Welche Voraussetzungen gelten für die maximale 70% Förderung?',
+    question: 'Welche Voraussetzungen gelten für den Zuschuss der Pflegekasse?',
     answer:
-      'Die 70% Maximalförderung setzt sich zusammen aus der Grundförderung (30%), dem Geschwindigkeitsbonus (20%) beim Austausch alter fossiler Heizungen sowie dem Einkommensbonus (30% bei Haushaltseinkommen unter 40.000 €) oder dem Effizienzbonus (5%). Die Boni sind kombinierbar und werden bei 70% gedeckelt.',
+      'Voraussetzung ist ein Pflegegrad (1–5). Die Pflegekasse bezuschusst dann Maßnahmen zur Wohnumfeldverbesserung – z. B. eine bodengleiche Dusche statt Badewanne oder schwellenlose Zugänge – mit bis zu 4.000 € pro pflegebedürftiger Person.',
   },
   {
     question: 'Gibt es auch Fördermittel für die Badsanierung?',
@@ -31,29 +33,21 @@ const foerderFaqs = [
       'Ja, über das KfW-Programm 159 („Altersgerecht Umbauen“) können barrierefreie Bäder gefördert werden. Zudem bezuschusst die Pflegekasse Maßnahmen zur Wohnumfeldverbesserung nach § 40 SGB XI mit bis zu 4.000 Euro pro pflegebedürftiger Person.',
   },
   {
-    question: 'Unterstützt die Bad & Energie GmbH mich bei allen Formalitäten?',
+    question: `Unterstützt ${COMPANY_DATA.legalName} mich bei den Formalitäten?`,
     answer:
-      'Selbstverständlich! Wir erstellen sämtliche für die Bewilligung erforderlichen Fachunternehmererklärungen, hydraulischen Abgleichsberechnungen nach Verfahren B und begleiten Sie Schritt für Schritt.',
+      'Selbstverständlich! Wir erstellen den prüffähigen Kostenvoranschlag für Ihren Antrag und begleiten Sie Schritt für Schritt – vom kostenfreien Vor-Ort-Aufmaß bis zur Abnahme.',
   },
 ];
 
 const foerderungGraph = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Heizungsförderung & Zuschüsse bis 70% | Bad & Energie GmbH',
+    name: 'Förderung & Zuschüsse für das barrierefreie Bad',
     description:
-      'Nutzen Sie bis zu 70% staatliche KfW- & BEG-Förderung beim Heizungstausch und Einbau von NIBE Wärmepumpen in Wetzlar.',
+      'Pflegekassen-Zuschuss nach § 40 SGB XI und KfW-Programm 159 für barrierefreie Bäder: prüffähiger Kostenvoranschlag und Begleitung beim Antrag.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
-  {
-    '@type': 'FinancialProduct',
-    '@id': `${pageUrl}#kfw458`,
-    name: 'KfW Heizungsförderung (Zuschuss 458)',
-    description: 'Bundesförderung für effiziente Gebäude (BEG) mit bis zu 70% Zuschuss beim Heizungstausch.',
-    provider: { '@id': LOCAL_BUSINESS_ID },
-    url: pageUrl,
-  },
   buildFaqNode(foerderFaqs, pageUrl),
 ]);
 

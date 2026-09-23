@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'FAQ – Häufig gestellte Fragen zu Bad & Heizung | Bad & Energie GmbH',
-  description: 'Antworten auf alle Fragen rund um Badsanierung, NIBE Wärmepumpen, Gas-Brennwert, Lüftung & Legionellenschutz in Wetzlar & Lahn-Dill.',
+  title: 'FAQ – Häufige Fragen zu Fliesen & Badsanierung',
+  description: `Antworten zu XXL-Fliesen, Badsanierung, DIN 18534 Abdichtung, Balkon & Terrasse, Pflegekassen-Zuschuss und Festpreisangebot – vom Fliesen-Meisterbetrieb ${COMPANY_DATA.legalName} aus ${COMPANY_DATA.headquarters.city}.`,
   path: '/faq',
 });
 
@@ -14,59 +15,68 @@ const breadcrumbs = [
   { name: 'FAQ', path: '/faq' },
 ];
 
+// Must mirror the visible questions & answers in ./page.jsx.
 const faqs = [
   {
-    question: 'Wie oft sollte meine Heizung gewartet werden?',
-    answer: 'Wir empfehlen eine jährliche Wartung, idealerweise vor Beginn der Heizperiode (September/Oktober). Dies sichert die Effizienz und verlängert die Lebensdauer Ihrer Anlage.',
+    question: 'Welche Fliesenkleber und Fugenmassen verwenden Sie?',
+    answer: 'Wir verwenden ausschließlich flexible C2-TE-S1/S2 Fliesenkleber und verfärbungsfreie Premium-Fugenmassen – für einen dauerhaft festen Verbund und ein sauberes Fugenbild.',
   },
   {
-    question: 'Wann lohnt sich ein Heizungstausch?',
-    answer: 'Bei Anlagen älter als 15-20 Jahre, stark steigenden Energiekosten oder häufigen Reparaturen ist ein Austausch oft wirtschaftlich sinnvoll. Wir beraten Sie gerne individuell.',
+    question: 'Wann lohnen sich großformatige Fliesen (XXL)?',
+    answer: 'Großformate sorgen für fugenarme, planebene Flächen mit ruhigem, monolithischem Raumgefühl – im Bad ebenso wie im Wohnbereich. Mit Nivelliersystem und Vakuumhebetechnik verlegen wir sie millimetergenau und ohne Überzähne.',
   },
   {
-    question: 'Was kostet eine neue Heizung?',
-    answer: 'Die Kosten variieren stark nach Anlagentyp (Gas, Wärmepumpe, Pellets) und Gebäudegröße. Gas-Brennwertheizungen beginnen bei ca. 8.000€, Wärmepumpen ab ca. 15.000€ (vor Förderung).',
+    question: 'Was kostet die Fliesenverlegung pro Quadratmeter?',
+    answer: 'Das hängt von Format, Material und Zustand des Untergrunds ab. Nach dem kostenfreien Vor-Ort-Aufmaß erhalten Sie eine transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand – als verbindliches Festpreisangebot.',
   },
   {
-    question: 'Welche Heizung ist die beste?',
-    answer: 'Das hängt von Ihrem Gebäude, Ihrem Budget und Ihren Prioritäten ab. Wärmepumpen sind sehr effizient und werden stark gefördert, Gas ist oft günstiger in der Anschaffung.',
+    question: 'Können neue Fliesen auf einen vorhandenen Belag verlegt werden?',
+    answer: 'Das hängt vom Zustand des Altbelags ab. Beim Vor-Ort-Aufmaß prüfen wir Ebenheit, Restfeuchte und Tragfähigkeit des Untergrunds und empfehlen Ihnen die fachgerechte Lösung.',
   },
   {
-    question: 'Was kostet eine Badsanierung?',
-    answer: 'Ein Standardbad beginnt bei ca. 6.900€ (Basic), während Komfort- und Luxusbäder zwischen 15.000€ und 35.000€ liegen. Nutzen Sie unseren Budgetkalkulator für eine Sofortschätzung.',
+    question: 'Was kostet eine Komplettbadsanierung aus einer Hand?',
+    answer: 'Die Kosten hängen von Raumgröße, Ausstattung und Zustand des Untergrunds ab. Wir erstellen Ihnen nach einem kostenlosen Aufmaß vor Ort ein verbindliches Festpreisangebot.',
   },
   {
-    question: 'Wie lange dauert eine Badsanierung?',
-    answer: 'Ein komplettes Bad wird von uns im Schnitt in 8 bis 12 Werktagen schlüsselfertig fertiggestellt – mit festem Bauzeitenplan.',
+    question: 'Wie lange dauert ein kompletter Badumbau?',
+    answer: 'Die Dauer hängt vom Umfang der Arbeiten ab. Vor Baustart erhalten Sie einen verbindlichen Bauzeitenplan mit festen Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.',
   },
   {
-    question: 'Was tun bei einem Wasserrohrbruch?',
-    answer: 'Sofort den Hauptwasserhahn schließen, Strom im betroffenen Bereich abschalten und unseren Notdienst unter 06441 20 39 053 anrufen.',
+    question: 'Gibt es Zuschüsse für barrierefreie Bäder?',
+    answer: 'Ja! Bei Vorliegen eines Pflegegrads (Pflegegrad 1–5) bezuschusst die Pflegekasse den altersgerechten Badumbau mit bis zu 4.000 € pro Person.',
   },
   {
-    question: 'Wie vermeide ich Legionellen?',
-    answer: 'Warmwasserspeicher auf mindestens 60°C halten, Leitungen regelmäßig spülen und die gesetzlich vorgeschriebene 3-jährliche Legionellenprüfung durchführen lassen.',
+    question: 'Wie wird eine bodengleiche Dusche dauerhaft dicht?',
+    answer: 'Durch eine normgerechte Verbundabdichtung nach DIN 18534: Lückenlose Abdichtungsbahnen und Dichtmanschetten in Nassräumen sorgen für dauerhafte Dichtigkeit und Schimmelschutz.',
   },
   {
-    question: 'Wie oft muss eine Wohnraumlüftung gewartet werden?',
-    answer: 'Mindestens einmal jährlich sollten Filter gereinigt/gewechselt und das System überprüft werden.',
+    question: 'Welche Beläge eignen sich für Balkon und Terrasse?',
+    answer: 'Wir verlegen frostsichere 2-cm-Keramikplatten auf Stelzlagern – mit durchdachter Entwässerung für Balkon und Terrasse.',
+  },
+  {
+    question: 'Welche Rutschhemmung brauche ich?',
+    answer: 'Das hängt vom Einsatzbereich ab. Bei der Material- und Fugenbildplanung beraten wir Sie zu normgerechter Rutschhemmung (R10/R11) – passend zu Ihrem Raum und Belag.',
+  },
+  {
+    question: 'Unterstützen Sie bei der Beantragung von Zuschüssen?',
+    answer: 'Ja. Für den Zuschuss der Pflegekasse zum barrierefreien Bad erstellen wir den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag von Anfang an.',
+  },
+  {
+    question: 'Gibt es bei Ihnen eine Festpreisgarantie?',
+    answer: 'Ja! Nach dem kostenfreien Vor-Ort-Aufmaß erhalten Sie ein verbindliches Festpreisangebot ohne versteckte Zusatzkosten.',
   },
   {
     question: 'In welchem Gebiet sind Sie tätig?',
-    answer: 'Wir sind in Wetzlar, Gießen und im gesamten Lahn-Dill-Kreis für Sie im Einsatz.',
-  },
-  {
-    question: 'Wie hoch ist die Förderung für Wärmepumpen?',
-    answer: 'Aktuell werden NIBE Wärmepumpen mit bis zu 70% der förderfähigen Kosten bezuschusst (KfW Heizungsförderung 458).',
+    answer: `Vom Firmensitz in ${COMPANY_DATA.headquarters.city} aus sind wir in ${COMPANY_DATA.business.serviceArea.slice(0, -1).join(', ')} sowie für Großprojekte in ganz Hessen für Sie im Einsatz.`,
   },
 ];
 
 const faqGraph = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Häufig gestellte Fragen (FAQ) | Bad & Energie GmbH',
+    name: 'Häufig gestellte Fragen (FAQ) zu Fliesen & Badsanierung',
     description:
-      'Antworten auf alle Fragen rund um Badsanierung, Heizung, NIBE Wärmepumpen, Wohnraumlüftung und Fördermittel in Wetzlar.',
+      `Antworten auf häufige Fragen rund um Fliesen, Großformate, Badsanierung, Abdichtung, Zuschüsse und Festpreisangebote von ${COMPANY_DATA.legalName} in ${COMPANY_DATA.headquarters.city}.`,
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
