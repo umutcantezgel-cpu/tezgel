@@ -1,62 +1,64 @@
 // NAVIGATION CONFIGURATION - FLIESENVERLEGUNG TEZGEL
-// Vollständige hierarchische Struktur über alle 174 Seiten
+// Hierarchische Struktur: Header-Mega-Menü, Mobile-Drawer und Footer-Katalog.
+// Jeder Pfad verweist auf eine real generierte Route.
+
+import { CITIES } from '@/config/cities';
 
 export const navigationLinks = [
     {
         name: 'Badsanierung',
         path: '/bad',
-        badge: 'Top-Gewerk',
-        description: 'Schlüsselfertige Bäder, Walk-In Duschen & Fliesen',
+        description: 'Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen',
         submenu: [
             {
                 category: 'Bäder & Sanierung',
                 items: [
-                    { name: 'Badsanierung Komplett', path: '/bad/badsanierung', desc: 'Von der Demontage bis zur fertigen Fuge' },
-                    { name: 'Fliesen & XXL-Großformate', path: '/bad/fliesen', desc: 'Fugenarme Großkeramik bis 120x278 cm' },
-                    { name: 'Barrierefreie Bäder', path: '/bad/barrierefreies-bad', desc: 'Bodengleiche Walk-In Duschen nach DIN 18040' },
-                    { name: 'Bad aus einer Hand', path: '/bad/bad-aus-einer-hand', desc: 'Gewerkekoordination ohne Schnittstellen' }
+                    { name: 'Badsanierung im Überblick', path: '/bad', desc: 'Alle Leistungen rund ums neue Bad' },
+                    { name: 'Badsanierung komplett', path: '/bad/badsanierung', desc: 'Von der Demontage bis zur fertigen Fuge' },
+                    { name: 'Fliesen & XXL-Großformate', path: '/bad/fliesen', desc: 'Fugenarme Großkeramik im Bad' },
+                    { name: 'Barrierefreies Bad', path: '/bad/barrierefreies-bad', desc: 'Bodengleiche Walk-In-Duschen nach DIN 18040' },
+                    { name: 'Bad aus einer Hand', path: '/bad/bad-aus-einer-hand', desc: 'Gewerke koordiniert, ein Ansprechpartner' }
                 ]
             },
             {
                 category: 'Planung & Inspiration',
                 items: [
-                    { name: '3D-Badplaner', path: '/bad/badplaner', desc: 'Interaktive Raum- und Fliesenplanung' },
+                    { name: 'Badplaner', path: '/bad/badplaner', desc: 'Schritt für Schritt zum geplanten Bad' },
                     { name: 'Bad-Budgetkalkulator', path: '/bad/budgetkalkulator', desc: 'Kostenrahmen sofort transparent berechnen' },
-                    { name: 'Musterbäder Galerie', path: '/bad/musterbaeder', desc: 'Designkonzepte von Basic bis Luxus' },
-                    { name: 'Badanfrage Express', path: '/bad/badanfrage', desc: 'Gezielte Anfrage für Ihr Badezimmer' }
+                    { name: 'Musterbäder', path: '/bad/musterbaeder', desc: 'Konzepte von Basic bis Luxus' },
+                    { name: 'Badanfrage', path: '/bad/badanfrage', desc: 'Unverbindliche Anfrage für Ihr Bad' }
                 ]
             }
-        ]
+        ],
+        featured: {
+            eyebrow: 'DIN 18534',
+            title: 'Dicht. Sauber. Termintreu.',
+            text: 'Verbundabdichtung nach Norm, Staubschutz im bewohnten Bestand und ein verbindlicher Festpreis.',
+            cta: { label: 'Budget berechnen', path: '/bad/budgetkalkulator' }
+        }
     },
     {
-        name: 'Leistungen',
+        name: 'Fachgewerke',
         path: '/leistungen',
-        badge: 'Meisterqualität',
-        description: 'Exklusive Fliesenverlegung & Bauvorbereitung',
+        description: 'Fliesenverlegung innen & außen, Untergrund & Abdichtung',
         submenu: [
             {
-                category: 'Fachgewerke',
+                category: 'Meister-Fachgewerke',
                 items: [
-                    { name: 'Bäder & Wellness', path: '/leistungen/bad', desc: 'Walk-In Duschen, Gehrungen & beleuchtete Nischen' },
+                    { name: 'Alle Fachgewerke', path: '/leistungen', desc: 'Leistungsübersicht des Meisterbetriebs' },
+                    { name: 'Bäder & Wellness', path: '/leistungen/bad', desc: 'Walk-In-Duschen, Gehrungen & Nischen' },
                     { name: 'Wohnbereiche & Neubau', path: '/leistungen/wohnen', desc: 'Feinsteinzeug, Naturstein, Flure & Treppen' },
-                    { name: 'Balkon & Terrasse', path: '/leistungen/aussen', desc: 'Frostsichere 2-cm-Keramik auf Stelzlagern' },
+                    { name: 'Balkon & Terrasse', path: '/leistungen/aussen', desc: 'Frostsichere Keramik auf Stelzlagern' },
                     { name: 'Untergrund & DIN 18534', path: '/leistungen/untergrund', desc: 'Estrichspachtelung & Verbundabdichtung' }
                 ]
-            },
-            {
-                category: 'Service & Beratung',
-                items: [
-                    { name: 'Vor-Ort-Fachberatung', path: '/beratung', desc: 'Kostenloses Aufmaß und Materialberatung' },
-                    { name: 'KfW & Förderberatung', path: '/foerderung', desc: 'Zuschüsse für barrierefreie Badumbauten' },
-                    { name: 'Häufige Fragen (FAQ)', path: '/faq', desc: 'Wichtige Antworten zu Ablauf & Pflege' }
-                ]
             }
-        ]
-    },
-    {
-        name: 'Projekte',
-        path: '/referenzen',
-        description: 'Echte Baustellenarbeiten & Vorher-Nachher Referenzen'
+        ],
+        featured: {
+            eyebrow: 'Vor-Ort-Aufmaß',
+            title: 'Kostenfrei bei Ihnen vor Ort',
+            text: 'Deniz Tezgel prüft Untergrund, Restfeuchte und Maße persönlich – danach erhalten Sie ein Festpreisangebot.',
+            cta: { label: 'Aufmaß anfragen', path: '/kontakt' }
+        }
     },
     {
         name: 'Standorte',
@@ -66,17 +68,17 @@ export const navigationLinks = [
             {
                 category: 'Einsatzgebiet Hessen',
                 items: [
-                    { name: 'Fliesenleger Wetzlar', path: '/standorte/wetzlar', desc: 'Unser direkter Kernbereich' },
-                    { name: 'Fliesenleger Gießen', path: '/standorte/giessen', desc: 'Universitätsstadt & Umland' },
-                    { name: 'Fliesenleger Marburg', path: '/standorte/marburg', desc: 'Mittelhessen Nord' },
-                    { name: 'Alle Standorte', path: '/standorte', desc: 'Übersicht aller 10+ Regionen' }
+                    { name: 'Fliesenleger Wetzlar', path: '/standorte/wetzlar', desc: 'Direkt neben unserem Firmensitz Aßlar' },
+                    { name: 'Fliesenleger Gießen', path: '/standorte/giessen', desc: 'Stadt und Landkreis Gießen' },
+                    { name: 'Fliesenleger Marburg', path: '/standorte/marburg', desc: 'Landkreis Marburg-Biedenkopf' },
+                    { name: `Alle ${CITIES.length} Standorte`, path: '/standorte', desc: 'Lahn-Dill-Kreis, Wetterau & Umland' }
                 ]
             },
             {
-                category: 'Ausstellungen vor Ort',
+                category: 'Beratung & Fliesenauswahl',
                 items: [
-                    { name: 'Ausstellung Wetzlar', path: '/ausstellung/wetzlar', desc: 'Fliesen und Sanitärmuster live erleben' },
-                    { name: 'Ausstellung Gießen', path: '/ausstellung/giessen', desc: 'Moderne Bäder und Oberflächen' }
+                    { name: 'Fliesenberatung Wetzlar', path: '/ausstellung/wetzlar', desc: 'Materialauswahl nach Terminvereinbarung' },
+                    { name: 'Fliesenberatung Gießen', path: '/ausstellung/giessen', desc: 'Beratung für den Raum Gießen' }
                 ]
             }
         ]
@@ -84,64 +86,90 @@ export const navigationLinks = [
     {
         name: 'Ratgeber',
         path: '/blog',
-        description: 'Tipps zu Fliesen, Schimmelprävention & Sanierung'
-    },
-    {
-        name: 'Über uns',
-        path: '/ueber-uns',
-        description: 'Meisterbetrieb Deniz Tezgel · Handwerkstradition',
+        description: 'Wissen, Förderung, Referenzen & Service',
         submenu: [
             {
-                category: 'Das Unternehmen',
+                category: 'Wissen & Service',
                 items: [
-                    { name: 'Über Deniz Tezgel', path: '/ueber-uns', desc: 'Philosophie, Meisterbrief & Historie' },
-                    { name: 'Qualitätsversprechen', path: '/unternehmen', desc: 'Staubschutz, Pünktlichkeit & DIN-Normen' },
-                    { name: 'Karriere & Jobs', path: '/karriere', desc: 'Verstärkung für unser Meisterteam gesucht' }
+                    { name: 'Ratgeber & Blog', path: '/blog', desc: 'Tipps rund um Bad und Fliesen' },
+                    { name: 'Häufige Fragen', path: '/faq', desc: 'Antworten zu Ablauf, Kosten & Pflege' },
+                    { name: 'Vor-Ort-Beratung', path: '/beratung', desc: 'Aufmaß und Materialberatung' },
+                    { name: 'Förderung', path: '/foerderung', desc: 'Zuschüsse für barrierefreie Bäder' },
+                    { name: 'Referenzen & Bewertungen', path: '/referenzen', desc: '5,0 Sterne aus 27 Google-Rezensionen' }
                 ]
             }
         ]
     },
     {
-        name: 'Kontakt & Aufmaß',
-        path: '/kontakt',
-        badge: 'Termin',
-        description: 'Hohwardstraße 14, 35614 Aßlar · Tel: 06441 / 44 83 567'
+        name: 'Über uns',
+        path: '/ueber-uns',
+        description: 'Meisterbetrieb Deniz Tezgel in Aßlar',
+        submenu: [
+            {
+                category: 'Das Unternehmen',
+                items: [
+                    { name: 'Über Deniz Tezgel', path: '/ueber-uns', desc: 'Philosophie & Meisterbetrieb' },
+                    { name: 'Qualitätsversprechen', path: '/unternehmen', desc: 'Staubschutz, Termintreue & DIN-Normen' },
+                    { name: 'Team', path: '/team', desc: 'Ihre Ansprechpartner' },
+                    { name: 'Karriere & Jobs', path: '/karriere', desc: 'Verstärkung für unser Team' },
+                    { name: 'Kontakt', path: '/kontakt', desc: 'Hohwardstraße 14, 35614 Aßlar' }
+                ]
+            }
+        ]
     }
 ];
 
-export const quickLinks = [
-    { name: 'Badsanierung Komplett', path: '/bad/badsanierung' },
-    { name: 'Fliesen & Großformate', path: '/bad/fliesen' },
-    { name: '3D-Badplaner Tool', path: '/bad/badplaner' },
+/** Primary header call-to-action. */
+export const primaryCta = { name: 'Aufmaß buchen', path: '/kontakt' };
+
+export const footerBathLinks = [
+    { name: 'Badsanierung im Überblick', path: '/bad' },
+    { name: 'Badsanierung komplett', path: '/bad/badsanierung' },
+    { name: 'Fliesen & XXL-Großformate', path: '/bad/fliesen' },
+    { name: 'Barrierefreies Bad', path: '/bad/barrierefreies-bad' },
+    { name: 'Bad aus einer Hand', path: '/bad/bad-aus-einer-hand' },
+    { name: 'Badplaner', path: '/bad/badplaner' },
     { name: 'Bad-Budgetkalkulator', path: '/bad/budgetkalkulator' },
-    { name: 'Musterbäder Galerie', path: '/bad/musterbaeder' },
-    { name: 'Barrierefreie Bäder', path: '/bad/barrierefreies-bad' },
-    { name: 'Alle Fachgewerke', path: '/leistungen' },
-    { name: 'Projekt-Referenzen', path: '/referenzen' },
-    { name: 'Standort Wetzlar', path: '/standorte/wetzlar' },
-    { name: 'Standort Gießen', path: '/standorte/giessen' },
-    { name: 'Ratgeber & Blog', path: '/blog' },
-    { name: 'Über Meisterbetrieb Tezgel', path: '/ueber-uns' },
-    { name: 'Vor-Ort-Termin vereinbaren', path: '/termin' },
-    { name: 'Impressum', path: '/impressum' },
-    { name: 'Datenschutzerklärung', path: '/datenschutz' },
-    { name: 'AGB', path: '/agb' }
+    { name: 'Musterbäder', path: '/bad/musterbaeder' },
+    { name: 'Badanfrage', path: '/bad/badanfrage' }
 ];
 
 export const footerServiceLinks = [
-    { name: 'Schlüsselfertige Badsanierung', path: '/bad/badsanierung' },
-    { name: 'Fugenlose XXL-Großformatfliesen', path: '/bad/fliesen' },
-    { name: 'Bodengleiche Walk-In Duschen', path: '/bad/barrierefreies-bad' },
-    { name: 'Musterbäder & Badausstellung', path: '/bad/musterbaeder' },
-    { name: 'Feinsteinzeug im Wohnbereich', path: '/leistungen/wohnen' },
-    { name: 'Maßgefertigte Treppenanlagen', path: '/leistungen/wohnen' },
-    { name: 'Balkon- & Terrassenbeläge (Stelzlager)', path: '/leistungen/aussen' },
-    { name: 'DIN 18534 Verbundabdichtung', path: '/leistungen/untergrund' },
-    { name: 'Untergrundausgleich & Estrichspachtelung', path: '/leistungen/untergrund' },
-    { name: '3D-Badplanung & Visualisierung', path: '/bad/badplaner' },
-    { name: 'Bad-Budgetkalkulator online', path: '/bad/budgetkalkulator' },
-    { name: 'Fliesenleger Wetzlar & Aßlar', path: '/standorte/wetzlar' },
-    { name: 'Fliesenleger Gießen & Mittelhessen', path: '/standorte/giessen' }
+    { name: 'Alle Fachgewerke', path: '/leistungen' },
+    { name: 'Bäder & Wellness', path: '/leistungen/bad' },
+    { name: 'Wohnbereiche, Treppen & Neubau', path: '/leistungen/wohnen' },
+    { name: 'Balkon & Terrasse (Stelzlager)', path: '/leistungen/aussen' },
+    { name: 'Untergrund & DIN 18534', path: '/leistungen/untergrund' },
+    { name: 'Vor-Ort-Beratung', path: '/beratung' },
+    { name: 'Förderung', path: '/foerderung' }
+];
+
+export const footerLocationLinks = [
+    ...CITIES.map((city) => ({ name: city.name, path: `/standorte/${city.slug}` })),
+    { name: 'Fliesenberatung Wetzlar', path: '/ausstellung/wetzlar' },
+    { name: 'Fliesenberatung Gießen', path: '/ausstellung/giessen' }
+];
+
+export const footerCompanyLinks = [
+    { name: 'Über Deniz Tezgel', path: '/ueber-uns' },
+    { name: 'Qualitätsversprechen', path: '/unternehmen' },
+    { name: 'Team', path: '/team' },
+    { name: 'Referenzen & Bewertungen', path: '/referenzen' },
+    { name: 'Ratgeber & Blog', path: '/blog' },
+    { name: 'Häufige Fragen', path: '/faq' },
+    { name: 'Downloads', path: '/downloads' },
+    { name: 'Partner', path: '/partner' },
+    { name: 'Karriere', path: '/karriere' },
+    { name: 'Kontakt', path: '/kontakt' }
+];
+
+export const footerLegalLinks = [
+    { name: 'Impressum', path: '/impressum' },
+    { name: 'Datenschutz', path: '/datenschutz' },
+    { name: 'AGB', path: '/agb' },
+    { name: 'Widerruf', path: '/widerruf' },
+    { name: 'Cookie-Richtlinie', path: '/cookie-richtlinie' },
+    { name: 'Barrierefreiheit', path: '/barrierefreiheit' }
 ];
 
 export default navigationLinks;

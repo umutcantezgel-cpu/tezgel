@@ -1,27 +1,24 @@
 "use client";
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { COMPANY_DATA } from '@/config/company';
 
+// Desktop/tablet only: on phones the FloatingDock already offers WhatsApp.
 const WhatsAppButton = () => {
-    // Replace with actual generic phone number if siteConfig doesn't have a mobile specific one
-    // Assuming format in siteConfig might be "+49 172 9475061" -> needs cleaning for API
-    const phoneNumber = siteConfig.contact.phone.replace(/[^0-9]/g, '');
-    const message = "Hallo, ich habe eine Frage zu Ihren Leistungen.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const message = "Hallo Herr Tezgel, ich habe eine Frage zu Ihren Fliesen- und Badleistungen.";
+    const whatsappUrl = `${COMPANY_DATA.contact.whatsappLink}?text=${encodeURIComponent(message)}`;
 
     return (
         <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-24 right-4 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-white p-3 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center group"
-            aria-label="Chat on WhatsApp"
-            style={{ width: '60px', height: '60px' }}
+            className="hidden md:flex fixed bottom-6 right-6 z-40 w-14 h-14 items-center justify-center rounded-full bg-gradient-to-br from-[#128C7E] to-[#075E54] text-white shadow-[0_12px_30px_-8px_rgba(18,140,126,0.6)] hover:-translate-y-0.5 transition-all duration-300 group"
+            aria-label="WhatsApp-Chat mit Fliesenverlegung Tezgel starten"
         >
-            <MessageCircle className="w-8 h-8" />
-            <span className="absolute right-full mr-3 bg-white text-black px-2 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-sm pointer-events-none">
-                WhatsApp Chat
+            <MessageCircle className="w-7 h-7" />
+            <span className="absolute right-full mr-3 bg-white text-slate-900 border border-slate-200 px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-[0_8px_30px_rgba(15,23,42,0.08)] pointer-events-none">
+                WhatsApp: {COMPANY_DATA.contact.mobile}
             </span>
         </a>
     );

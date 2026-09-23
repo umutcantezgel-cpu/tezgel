@@ -1,116 +1,166 @@
 "use client";
-import React, { useState } from 'react';
+
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Phone, HelpCircle, ChevronDown, Mail, MapPin, ArrowRight, Calendar, X } from 'lucide-react';
-import { navigationLinks } from '@/config/navigation';
+import { Phone, MessageCircle, ChevronDown, Mail, MapPin, Clock, X, ArrowRight } from 'lucide-react';
+import { navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
+import { BrandMark } from '@/components/common/Header';
 
-export default function MobileMenu({ isOpen, onClose, onOpenHelp }) {
-    const pathname = usePathname();
+export default function MobileMenu({ isOpen, onClose }) {
+    const pathname = usePathname() || '/';
     const [expandedMenu, setExpandedMenu] = useState(null);
+    const closeButtonRef = useRef(null);
 
-    const toggleSubmenu = (menuName) => {
-        setExpandedMenu(expandedMenu === menuName ? null : menuName);
-    };
-
-    if (!isOpen) return null;
+    // Scroll lock, Escape to close and initial focus while open.
+    // (The parent HeaderWrapper closes the drawer on every route change.)
+    useEffect(() => {
+        if (!isOpen) return undefined;
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        closeButtonRef.current?.focus();
+        const onKeyDown = (event) => {
+            if (event.key === 'Escape') onClose();
+        };
+        document.addEventListener('keydown', onKeyDown);
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener('keydown', onKeyDown);
+        };
+    }, [isOpen, onClose]);
 
     return (
-        <div className="lg:hidden fixed inset-0 top-[60px] bg-slate-950/60 backdrop-blur-md z-40 animate-in fade-in duration-300">
-            <div className="bg-white/95 backdrop-blur-2xl h-full max-w-sm w-full ml-auto shadow-2xl p-6 overflow-y-auto pb-28 flex flex-col justify-between border-l border-white/40">
-                <div className="space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                        <span className="text-xs font-black uppercase tracking-wider text-[#0C3A87]">Menü-Navigation</span>
-                        <span className="text-xs font-bold text-emerald-600 flex items-center gap-1.5">
-                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            Kundendienst aktiv
-                        </span>
-                    </div>
+        <div
+            className={`lg:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            aria-hidden={!isOpen}
+            inert={!isOpen}
+        >
+            {/* Backdrop */}
+            <button
+                type="button"
+                tabIndex={-1}
+                aria-label="Menü schließen"
+                onClick={onClose}
+                className="absolute inset-0 w-full h-full bg-slate-900/40 backdrop-blur-sm cursor-default"
+            />
 
-                    <div className="space-y-1">
-                        {navigationLinks.map((link) => {
-                            const hasSubmenu = Boolean(link.submenu);
-                            const isExpanded = expandedMenu === link.name;
-
-                            return (
-                                <div key={link.name} className="border-b border-slate-100/80 pb-1.5">
-                                    {hasSubmenu ? (
-                                        <>
-                                            <button
-                                                onClick={() => toggleSubmenu(link.name)}
-                                                className="w-full flex items-center justify-between py-2 text-xs font-black text-slate-800"
-                                            >
-                                                <span>{link.name}</span>
-                                                <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#0C3A87]' : ''}`} />
-                                            </button>
-                                            {isExpanded && (
-                                                <div className="pl-3 pr-1 py-2 space-y-3 bg-blue-50/50 rounded-2xl my-1 border border-blue-100/40">
-                                                    {link.submenu.map((cat, idx) => (
-                                                        <div key={idx} className="space-y-1">
-                                                            <p className="text-[10px] font-black text-[#0C3A87] uppercase tracking-wider">{cat.category}</p>
-                                                            {cat.items?.map((sub) => (
-                                                                <Link
-                                                                    key={sub.name}
-                                                                    href={sub.path}
-                                                                    onClick={onClose}
-                                                                    className="block py-1 text-xs font-semibold text-slate-700 hover:text-[#0C3A87]"
-                                                                >
-                                                                    {sub.name}
-                                                                </Link>
-                                                            ))}
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
-                                        </>
-                                    ) : (
-                                        <Link
-                                            href={link.path}
-                                            onClick={onClose}
-                                            className="block py-2 text-xs font-black text-slate-800 hover:text-[#0C3A87]"
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    )}
-                                </div>
-                            );
-                        })}
-
-                        <div className="pt-2">
-                            <button
-                                onClick={onOpenHelp}
-                                className="w-full flex items-center gap-2.5 py-2.5 px-3 rounded-xl text-xs font-black text-[#0C3A87] bg-blue-50/80 hover:bg-blue-100 border border-blue-200/60 transition-all"
-                            >
-                                <HelpCircle className="w-4 h-4" />
-                                <span>Hilfe-Center &amp; Notfall-Ratgeber</span>
-                            </button>
-                        </div>
-                    </div>
+            {/* Drawer */}
+            <div
+                id="mobile-menu"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Navigation"
+                className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-[0_0_60px_rgba(15,23,42,0.18)] border-l border-slate-200 flex flex-col transition-transform duration-300 ${
+                    isOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}
+            >
+                <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-slate-200">
+                    <Link href="/" onClick={onClose} className="group">
+                        <BrandMark sublineClassName="block" />
+                    </Link>
+                    <button
+                        ref={closeButtonRef}
+                        type="button"
+                        onClick={onClose}
+                        className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors"
+                        aria-label="Menü schließen"
+                    >
+                        <X className="w-5 h-5" />
+                    </button>
                 </div>
 
-                {/* Mobile Bottom Actions */}
-                <div className="mt-6 pt-4 border-t border-slate-200 space-y-2.5">
-                    <Link
-                        href="/termin"
-                        onClick={onClose}
-                        className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-full bg-gradient-to-r from-[#E4040E] to-[#B91C1C] text-white font-black text-xs shadow-md border border-white/20"
-                    >
-                        <Calendar className="w-4 h-4" />
-                        Online-Termin vereinbaren
+                <nav aria-label="Mobile Navigation" className="flex-1 overflow-y-auto px-4 py-4">
+                    <ul className="space-y-2">
+                        {navigationLinks.map((link, index) => {
+                            const isExpanded = expandedMenu === link.name;
+                            const panelId = `mobile-submenu-${index}`;
+                            return (
+                                <li key={link.name} className={`rounded-2xl border transition-colors duration-300 ${isExpanded ? 'border-emerald-200 bg-emerald-50/50' : 'border-slate-200 bg-white'}`}>
+                                    <button
+                                        type="button"
+                                        onClick={() => setExpandedMenu(isExpanded ? null : link.name)}
+                                        aria-expanded={isExpanded}
+                                        aria-controls={panelId}
+                                        className="w-full min-h-[52px] flex items-center justify-between gap-3 px-4 text-left"
+                                    >
+                                        <span>
+                                            <span className="block font-display text-[15px] font-black text-slate-900">{link.name}</span>
+                                            <span className="block text-xs text-slate-600">{link.description}</span>
+                                        </span>
+                                        <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-emerald-700' : 'text-slate-600'}`} />
+                                    </button>
+                                    <div id={panelId} hidden={!isExpanded} className="px-2 pb-3">
+                                        {link.submenu?.map((cat) => (
+                                            <div key={cat.category} className="pt-1">
+                                                <p className="px-2 py-1.5 text-[10px] font-black uppercase tracking-widest text-slate-600">{cat.category}</p>
+                                                <ul>
+                                                    {cat.items.map((item) => {
+                                                        const active = pathname === item.path;
+                                                        return (
+                                                            <li key={item.path + item.name}>
+                                                                <Link
+                                                                    href={item.path}
+                                                                    onClick={onClose}
+                                                                    aria-current={active ? 'page' : undefined}
+                                                                    className={`min-h-[44px] flex items-center justify-between gap-2 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${
+                                                                        active ? 'bg-white text-emerald-800 border border-emerald-200' : 'text-slate-800 hover:bg-white hover:text-emerald-800'
+                                                                    }`}
+                                                                >
+                                                                    {item.name}
+                                                                    <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0" />
+                                                                </Link>
+                                                            </li>
+                                                        );
+                                                    })}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </nav>
+
+                <div className="border-t border-slate-200 px-5 py-4 space-y-2.5 bg-slate-50">
+                    <Link href={primaryCta.path} onClick={onClose} className="btn-primary w-full">
+                        Kostenfreies Aufmaß anfragen
+                        <ArrowRight className="w-4 h-4" />
                     </Link>
-
-                    <a
-                        href={`tel:${COMPANY_DATA.headquarters.phoneLink}`}
-                        className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-white text-[#0C3A87] font-black text-xs border border-blue-200 shadow-xs"
-                    >
-                        <Phone className="w-4 h-4" />
-                        {COMPANY_DATA.headquarters.phone} (Wetzlar)
-                    </a>
-
-                    <div className="text-center text-[10px] text-slate-400 pt-1 font-medium">
-                        Hans-Sachs-Str. 12 &middot; 35576 Wetzlar
+                    <div className="grid grid-cols-2 gap-2.5">
+                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-3 py-3 text-xs">
+                            <Phone className="w-4 h-4 text-emerald-700" />
+                            Anrufen
+                        </a>
+                        <a
+                            href={COMPANY_DATA.contact.whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-ghost px-3 py-3 text-xs"
+                        >
+                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                            WhatsApp
+                        </a>
                     </div>
+                    <ul className="pt-1 space-y-1.5 text-xs text-slate-700">
+                        <li className="flex items-start gap-2">
+                            <MapPin className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <span>{COMPANY_DATA.headquarters.street}, {COMPANY_DATA.headquarters.postalCode} {COMPANY_DATA.headquarters.city}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <Phone className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <span>{COMPANY_DATA.contact.phone} &middot; Mobil {COMPANY_DATA.contact.mobile}</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <Mail className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <a href={`mailto:${COMPANY_DATA.contact.email}`} className="hover:text-emerald-800 underline-offset-2 hover:underline">{COMPANY_DATA.contact.email}</a>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <Clock className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <span>{COMPANY_DATA.hours.formattedWeekdays}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

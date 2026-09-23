@@ -1,748 +1,599 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
-    Phone, 
-    Calendar, 
-    ShieldCheck, 
-    Sparkles, 
-    CheckCircle2, 
-    ArrowRight, 
-    Droplets, 
-    Sun, 
-    Layers, 
-    Award, 
-    Check, 
-    Clock, 
-    Ruler,
-    Hammer,
+import type { Metadata } from 'next';
+import type { LucideIcon } from 'lucide-react';
+import {
+    Phone,
+    ShieldCheck,
+    Sparkles,
+    CheckCircle2,
+    ArrowRight,
+    Droplets,
+    Sun,
+    Award,
+    Check,
     MapPin,
-    MessageSquare,
-    ChevronRight,
-    Star
+    MessageCircle,
+    Star,
+    Calculator,
+    BookOpen,
+    Quote
 } from 'lucide-react';
-import { COMPANY_DATA, values, processSteps } from '@/config/company';
+import { COMPANY_DATA, processSteps } from '@/config/company';
 import { SERVICES } from '@/config/services';
+import { CITIES } from '@/config/cities';
+import { RATING_SUMMARY, getFeaturedReviews } from '@/config/reviews';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 
-export const metadata = {
-    title: 'Fliesenverlegung Tezgel | Meisterbetrieb für exklusive Fliesen & Badsanierung Aßlar & Wetzlar',
+export const metadata: Metadata = {
+    title: {
+        absolute: 'Fliesenverlegung Tezgel | Meisterbetrieb für Fliesen & Badsanierung in Aßlar & Wetzlar'
+    },
     description: 'Ihr Meisterbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
     alternates: {
-        canonical: 'https://tezgel.de'
+        canonical: '/'
+    },
+    openGraph: {
+        url: '/'
     }
 };
 
-export default function HomePage() {
+const QUICK_PICKS: Array<{ title: string; text: string; href: string; icon: LucideIcon }> = [
+    { title: 'Bad & Walk-In-Dusche', text: 'Badsanierung, Großformate, barrierefrei', href: '/bad', icon: Droplets },
+    { title: 'Wohnbereiche & Neubau', text: 'Feinsteinzeug, Küche, Flure & Treppen', href: '/leistungen/wohnen', icon: Sparkles },
+    { title: 'Balkon & Terrasse', text: 'Keramik auf Stelzlagern, Entwässerung', href: '/leistungen/aussen', icon: Sun },
+    { title: 'Untergrund & Abdichtung', text: 'Estrichausgleich, DIN 18534', href: '/leistungen/untergrund', icon: ShieldCheck }
+];
+
+const PILLAR_EYEBROWS = ['Normgerechte Sicherheit', 'Meisterhafte Ausführung', 'Wohnkomfort bei Sanierung'];
+
+const PORTAL_HUBS: Array<{
+    eyebrow: string;
+    title: string;
+    text: string;
+    icon: LucideIcon;
+    links: Array<{ label: string; href: string }>;
+    cta: { label: string; href: string };
+}> = [
+    {
+        eyebrow: 'Komplettbäder',
+        title: 'Badsanierung & Wellness',
+        text: 'Barrierefreie Walk-In-Duschen, fugenarme Großformate und staubgeschützte Komplettsanierung.',
+        icon: Droplets,
+        links: [
+            { label: 'Badsanierung komplett', href: '/bad/badsanierung' },
+            { label: 'Fliesen & XXL-Großformate', href: '/bad/fliesen' },
+            { label: 'Barrierefreies Bad', href: '/bad/barrierefreies-bad' },
+            { label: 'Bad aus einer Hand', href: '/bad/bad-aus-einer-hand' },
+            { label: 'Musterbäder', href: '/bad/musterbaeder' }
+        ],
+        cta: { label: 'Zur Bad-Übersicht', href: '/bad' }
+    },
+    {
+        eyebrow: 'Planer-Tools',
+        title: 'Rechner & Planung',
+        text: 'Kostenrahmen vorab berechnen, das Bad Schritt für Schritt planen und Fördermöglichkeiten prüfen.',
+        icon: Calculator,
+        links: [
+            { label: 'Bad-Budgetkalkulator', href: '/bad/budgetkalkulator' },
+            { label: 'Badplaner', href: '/bad/badplaner' },
+            { label: 'Geführte Badanfrage', href: '/bad/badanfrage' },
+            { label: 'Vor-Ort-Beratung', href: '/beratung' },
+            { label: 'Förderung & Zuschüsse', href: '/foerderung' }
+        ],
+        cta: { label: 'Budget berechnen', href: '/bad/budgetkalkulator' }
+    },
+    {
+        eyebrow: 'Standorte Hessen',
+        title: `${CITIES.length} Städte & Regionen`,
+        text: 'Vom Firmensitz in Aßlar aus im Lahn-Dill-Kreis, im Raum Gießen, in Marburg und der Wetterau im Einsatz.',
+        icon: MapPin,
+        links: CITIES.map((city) => ({ label: city.name, href: `/standorte/${city.slug}` })),
+        cta: { label: 'Alle Standorte', href: '/standorte' }
+    },
+    {
+        eyebrow: 'Referenzen & Wissen',
+        title: 'Bewertungen & Ratgeber',
+        text: 'Echte Kundenstimmen, Antworten auf häufige Fragen und Ratgeber rund um Bad und Fliesen.',
+        icon: BookOpen,
+        links: [
+            { label: 'Referenzen & Bewertungen', href: '/referenzen' },
+            { label: 'Ratgeber & Blog', href: '/blog' },
+            { label: 'Häufige Fragen', href: '/faq' },
+            { label: 'Über Deniz Tezgel', href: '/ueber-uns' },
+            { label: 'Kontakt & Aufmaß', href: '/kontakt' }
+        ],
+        cta: { label: 'Zu den Bewertungen', href: '/referenzen' }
+    }
+];
+
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+    bad: Droplets,
+    wohnen: Sparkles,
+    aussen: Sun,
+    untergrund: ShieldCheck
+};
+
+// Bento placement per service (lg: 3-column grid → 2+1 / 1+2).
+const BENTO_LAYOUT: Record<string, string> = {
+    bad: 'md:col-span-2',
+    wohnen: '',
+    aussen: '',
+    untergrund: 'md:col-span-2'
+};
+
+function Stars({ count = 5, className = 'w-4 h-4' }: { count?: number; className?: string }) {
     return (
-        <div className="flex flex-col min-h-screen relative overflow-hidden bg-[#F8FAFC] text-slate-900">
-            
-            {/* AMBIENT GLOW ORBS (Clean Light Ceramic & Emerald Architecture) */}
+        <span className="flex items-center gap-0.5 text-amber-500" aria-hidden="true">
+            {Array.from({ length: count }, (_, i) => (
+                <Star key={i} className={`${className} fill-current`} />
+            ))}
+        </span>
+    );
+}
+
+export default function HomePage() {
+    const { contact, motto, owner } = COMPANY_DATA;
+    const google = RATING_SUMMARY.google;
+    const trustlocal = RATING_SUMMARY.trustlocal;
+    const featuredReviews = getFeaturedReviews();
+
+    return (
+        <div className="relative overflow-hidden">
             <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
             <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
             <div className="ambient-glow-slate top-[1500px] left-1/4 opacity-40" />
 
-            {/* ========================================================================
-               1. HERO BÜHNE - CLEAN ARCHITECTURAL LIGHT & CRAFTSMANSHIP
-               ======================================================================== */}
-            <section className="relative pt-32 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+            {/* 1. HERO */}
+            <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-                        
-                        {/* Hero Text Content (Left 7 Cols) */}
-                        <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-                            
-                            {/* Eyebrow Pill Badges */}
-                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-                                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-black tracking-wider uppercase border border-emerald-200 shadow-xs">
-                                    <Award className="w-3.5 h-3.5 text-emerald-700" />
-                                    HWK Wiesbaden &middot; Eingetragener Meisterbetrieb
+                        <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                                <span className="eyebrow">
+                                    <Award className="w-3.5 h-3.5" />
+                                    Meisterbetrieb &middot; {COMPANY_DATA.authority.shortName}
                                 </span>
-                                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-[11px] font-black tracking-wider uppercase border border-sky-200 shadow-xs">
-                                    <MapPin className="w-3.5 h-3.5 text-sky-600" />
-                                    Aßlar &middot; Wetzlar &middot; Hessen
+                                <span className="eyebrow eyebrow-sky">
+                                    <ShieldCheck className="w-3.5 h-3.5" />
+                                    DIN 18534 Verbundabdichtung
+                                </span>
+                                <span className="eyebrow eyebrow-amber">
+                                    <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
+                                    {google.displayRating} &middot; {google.count} {google.label}
                                 </span>
                             </div>
 
-                            {/* Main Headline */}
-                            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1]">
-                                Perfektion auf jedem <br />
-                                <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 bg-clip-text text-transparent">Quadratmeter.</span> <br />
-                                <span className="text-slate-700 text-2xl sm:text-3xl lg:text-4xl font-extrabold">
-                                    Fliesenverlegung &amp; Badsanierung
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.05]">
+                                Perfektion auf jedem{' '}
+                                <span className="text-ceramic-gradient">Quadratmeter.</span>
+                                <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-700">
+                                    Fliesenverlegung &amp; Badsanierung aus Aßlar
                                 </span>
                             </h1>
 
-                            {/* Subtitle */}
-                            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                                Von fugenarmen XXL-Großformaten und barrierefreien Walk-In-Duschen über repräsentative Wohnbereichsbeläge bis hin zu frostsicheren Terrassen: Fliesenverlegung Tezgel steht für millimetergenaue Handwerkskunst mit zertifizierter DIN 18534 Verbundabdichtung und Staubschutz-Garantie.
+                            <p className="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                                Fugenarme XXL-Großformate, barrierefreie Walk-In-Duschen, repräsentative Wohnbereiche und
+                                frostsichere Terrassen – millimetergenau verlegt, normgerecht abgedichtet nach DIN 18534 und
+                                mit Staubschutz-Garantie im bewohnten Zuhause.
                             </p>
 
-                            {/* Conversion Buttons (Aufmaß + WhatsApp + Phone) */}
-                            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-                                <Link
-                                    href="/kontakt"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 group"
-                                >
-                                    <span>Vor-Ort-Aufmaß vereinbaren</span>
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-start gap-3 [&>*]:whitespace-nowrap">
+                                <Link href="/kontakt" className="btn-primary w-full sm:w-auto group">
+                                    Vor-Ort-Aufmaß vereinbaren
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
-
                                 <a
-                                    href={COMPANY_DATA.contact.whatsappLink}
+                                    href={contact.whatsappLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs border border-emerald-200 transition-all shadow-xs"
+                                    className="glass-button-whatsapp w-full sm:w-auto text-sm"
                                 >
-                                    <MessageSquare className="w-4 h-4 fill-current text-emerald-600" />
-                                    <span>Direkt per WhatsApp</span>
+                                    <MessageCircle className="w-4 h-4" />
+                                    WhatsApp
                                 </a>
-
-                                <a
-                                    href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs border border-slate-200 shadow-xs transition-colors"
-                                    title="Direkt anrufen"
-                                >
-                                    <Phone className="w-3.5 h-3.5 text-emerald-600" />
-                                    <span>{COMPANY_DATA.contact.phone}</span>
+                                <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
+                                    <Phone className="w-4 h-4 text-emerald-700" />
+                                    {contact.phone}
                                 </a>
                             </div>
 
-                            {/* Trust Signals */}
-                            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs font-bold text-slate-600">
-                                <span className="flex items-center gap-1.5">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                    Zertifizierte DIN 18534 Abdichtung
-                                </span>
-                                <span className="flex items-center gap-1.5">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                    Staubarme Sanierung
-                                </span>
-                                <span className="flex items-center gap-1.5">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                                    Verbindliche Festpreise
-                                </span>
-                            </div>
+                            <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-sm font-semibold text-slate-700">
+                                {['Kostenfreies Vor-Ort-Aufmaß', 'Staubschutz-Garantie', 'Verbindlicher Festpreis'].map((item) => (
+                                    <li key={item} className="flex items-center gap-1.5">
+                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
 
-                            {/* Leitmotiv Quote Card */}
-                            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-xl mx-auto lg:mx-0">
-                                <p className="text-xs italic text-slate-700">
-                                    „{COMPANY_DATA.motto}“
-                                </p>
-                                <span className="block mt-1 text-[11px] font-bold text-emerald-700 not-italic">
-                                    — Deniz Tezgel, Inhaber &amp; Handwerksmeister
-                                </span>
-                            </div>
-
+                            <figure className="glass-surface rounded-2xl px-5 py-4 max-w-xl mx-auto lg:mx-0 text-left">
+                                <blockquote className="text-sm italic text-slate-800">„{motto}“</blockquote>
+                                <figcaption className="mt-1 text-xs font-bold text-emerald-800">
+                                    — {owner.fullName}, Inhaber &amp; Handwerksmeister
+                                </figcaption>
+                            </figure>
                         </div>
 
-                        {/* Hero Interactive Quick-Picker (Right 5 Cols) */}
+                        {/* Quick picker */}
                         <div className="lg:col-span-5">
-                            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl shadow-slate-200/50 relative">
-                                
-                                <div className="flex items-center justify-between mb-4">
-                                    <span className="text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200">
-                                        Fachgewerke &amp; Beratung
-                                    </span>
-                                    <span className="text-xs text-slate-500 font-bold">Aßlar &middot; Wetzlar</span>
+                            <div className="glass-surface rounded-[2rem] p-6 sm:p-8">
+                                <div className="flex items-center justify-between gap-3 mb-5">
+                                    <span className="eyebrow">Gewerke-Schnellwahl</span>
+                                    <span className="hidden sm:inline text-xs font-bold text-slate-600">Aßlar &middot; Wetzlar &middot; Hessen</span>
                                 </div>
+                                <h2 className="text-xl sm:text-2xl font-black text-slate-900 mb-1">Was möchten Sie verlegen lassen?</h2>
+                                <p className="text-sm text-slate-700 mb-5">Wählen Sie Ihr Vorhaben – wir zeigen Ihnen Ausführung, Materialien und Ablauf.</p>
 
-                                <h3 className="text-xl font-black text-slate-900 mb-1">
-                                    Was möchten Sie verlegen lassen?
-                                </h3>
-                                <p className="text-xs text-slate-500 mb-5">
-                                    Wählen Sie Ihr Einsatzgebiet für eine exakte Material- und Ausführungsberatung:
-                                </p>
+                                <ul className="space-y-3">
+                                    {QUICK_PICKS.map(({ title, text, href, icon: Icon }) => (
+                                        <li key={href}>
+                                            <Link
+                                                href={href}
+                                                className="group flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500/80 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(15,23,42,0.18)] transition-all duration-300"
+                                            >
+                                                <span className="flex items-center gap-3">
+                                                    <span className="icon-chip w-11 h-11">
+                                                        <Icon className="w-5 h-5" />
+                                                    </span>
+                                                    <span>
+                                                        <span className="block text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">{title}</span>
+                                                        <span className="block text-xs text-slate-600">{text}</span>
+                                                    </span>
+                                                </span>
+                                                <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-emerald-700 group-hover:translate-x-0.5 transition-all" />
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
 
-                                <div className="space-y-3">
-                                    <Link
-                                        href="/bad"
-                                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition-all flex items-center justify-between group block shadow-xs"
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-                                                <Droplets className="w-5 h-5" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-emerald-700 transition-colors">
-                                                    Bäder &amp; Private Wellness
-                                                </h4>
-                                                <p className="text-[11px] text-slate-500">Walk-In Duschen, Großformate, 3D-Planer</p>
-                                            </div>
-                                        </div>
-                                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
-                                    </Link>
-
-                                    <Link
-                                        href="/leistungen/wohnen"
-                                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-sky-500 hover:bg-sky-50/50 transition-all flex items-center justify-between group block shadow-xs"
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold">
-                                                <Sparkles className="w-5 h-5" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition-colors">
-                                                    Wohnbereiche &amp; Neubau
-                                                </h4>
-                                                <p className="text-[11px] text-slate-500">Feinsteinzeug, Küche, Flure &amp; Treppen</p>
-                                            </div>
-                                        </div>
-                                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-1 transition-all" />
-                                    </Link>
-
-                                    <Link
-                                        href="/leistungen/aussen"
-                                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-500 hover:bg-amber-50/50 transition-all flex items-center justify-between group block shadow-xs"
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
-                                                <Sun className="w-5 h-5" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-amber-700 transition-colors">
-                                                    Balkon- &amp; Terrassensanierung
-                                                </h4>
-                                                <p className="text-[11px] text-slate-500">2-cm-Keramik auf Stelzlagern, Entwässerung</p>
-                                            </div>
-                                        </div>
-                                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all" />
-                                    </Link>
-
-                                    <Link
-                                        href="/leistungen/untergrund"
-                                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition-all flex items-center justify-between group block shadow-xs"
-                                    >
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center font-bold">
-                                                <ShieldCheck className="w-5 h-5" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-emerald-700 transition-colors">
-                                                    Untergrund &amp; DIN 18534 Abdichtung
-                                                </h4>
-                                                <p className="text-[11px] text-slate-500">Estrichausgleich, Abbruch, Feuchteschutz</p>
-                                            </div>
-                                        </div>
-                                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all" />
-                                    </Link>
-                                </div>
-
-                                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                                <div className="mt-5 pt-4 border-t border-slate-200 flex items-center justify-between gap-3 text-sm text-slate-700">
                                     <span>Schnellste Rückmeldung:</span>
-                                    <a 
-                                        href={COMPANY_DATA.contact.whatsappLink} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="font-bold text-emerald-700 hover:underline flex items-center gap-1"
+                                    <a
+                                        href={contact.whatsappLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="font-bold text-emerald-800 hover:underline underline-offset-4 flex items-center gap-1.5"
                                     >
-                                        <MessageSquare className="w-3.5 h-3.5 fill-current text-emerald-600" />
-                                        <span>WhatsApp Chat &rarr;</span>
+                                        <MessageCircle className="w-4 h-4" />
+                                        WhatsApp-Chat
                                     </a>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            {/* ========================================================================
-               2. DIE 3 VERTRAUENS-SÄULEN (DIN 18534, HWK WIESBADEN, STAUBSCHUTZ)
-               ======================================================================== */}
-            <section className="py-16 relative z-10" id="vertrauen">
+            {/* 2. TRUST PILLARS */}
+            <section className="py-16 relative z-10" id="vertrauen" aria-label="Unsere Garantien">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        
-                        {/* Säule 1: DIN 18534 */}
-                        <div className="bg-white rounded-3xl p-7 border border-slate-200 shadow-md shadow-slate-200/40 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 group">
-                            <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                                <ShieldCheck className="w-6 h-6" />
-                            </div>
-                            <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 block mb-1">
-                                Normgerechte Sicherheit
-                            </span>
-                            <h3 className="text-lg font-black text-slate-900 mb-2">
-                                Zertifizierte Verbundabdichtung (DIN 18534)
-                            </h3>
-                            <p className="text-xs text-slate-600 leading-relaxed">
-                                Höchste Feuchtigkeitssicherheit für Walk-In-Duschen und Nassbereiche. Wir dichten lückenlos nach DIN 18534 im Verbund ab – für dauerhaften Schutz vor Feuchteschäden und Schimmelbildung.
-                            </p>
-                        </div>
-
-                        {/* Säule 2: HWK Wiesbaden */}
-                        <div className="bg-white rounded-3xl p-7 border border-slate-200 shadow-md shadow-slate-200/40 hover:border-sky-500 hover:shadow-lg transition-all duration-300 group">
-                            <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                                <Award className="w-6 h-6" />
-                            </div>
-                            <span className="text-[10px] font-black uppercase tracking-wider text-sky-700 block mb-1">
-                                Meisterhafte Ausführung
-                            </span>
-                            <h3 className="text-lg font-black text-slate-900 mb-2">
-                                Eingetragener HWK-Wiesbaden Meisterbetrieb
-                            </h3>
-                            <p className="text-xs text-slate-600 leading-relaxed">
-                                Handwerkliche Präzision bei jedem Schnitt. Wir garantieren harmonische Fugenachsen, exakte Jolly-Gehrungskanten und fehlerfreie Nivellierung – insbesondere bei anspruchsvollen XXL-Großformaten.
-                            </p>
-                        </div>
-
-                        {/* Säule 3: Staubschutz */}
-                        <div className="bg-white rounded-3xl p-7 border border-slate-200 shadow-md shadow-slate-200/40 hover:border-teal-500 hover:shadow-lg transition-all duration-300 group">
-                            <div className="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                                <Sparkles className="w-6 h-6" />
-                            </div>
-                            <span className="text-[10px] font-black uppercase tracking-wider text-teal-700 block mb-1">
-                                Wohnkomfort bei Sanierung
-                            </span>
-                            <h3 className="text-lg font-black text-slate-900 mb-2">
-                                Garantierter Staubschutz &amp; Sauberkeitsversprechen
-                            </h3>
-                            <p className="text-xs text-slate-600 leading-relaxed">
-                                Schutz für Ihr bewohntes Zuhause: Wir nutzen mobile Staubschutzwände, Hochleistungs-Luftreiniger und Schutzabdeckungen auf allen Wegen. Wir übergeben jede Baustelle besenrein und bezugsfertig.
-                            </p>
-                        </div>
-
-                    </div>
+                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {COMPANY_DATA.trustPillars.map((pillar: { title: string; description: string; icon: LucideIcon }, idx: number) => {
+                            const Icon = pillar.icon;
+                            return (
+                                <li
+                                    key={pillar.title}
+                                    className="group glass-surface rounded-3xl p-7 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                >
+                                    <span className="icon-chip w-12 h-12 mb-5">
+                                        <Icon className="w-6 h-6" />
+                                    </span>
+                                    <span className="block text-[11px] font-black uppercase tracking-widest text-emerald-800 mb-1">
+                                        {PILLAR_EYEBROWS[idx]}
+                                    </span>
+                                    <h3 className="text-lg font-black text-slate-900 mb-2">{pillar.title}</h3>
+                                    <p className="text-sm text-slate-700 leading-relaxed">{pillar.description}</p>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </div>
             </section>
 
-            {/* ========================================================================
-               NEU: DAS 100+ SEITEN PORTAL-NETZWERK (WEGWEISER ZU ALLEN SPEZIALBEREICHEN)
-               ======================================================================== */}
-            <section className="py-16 bg-white border-y border-slate-200 relative z-10" id="portal-netzwerk">
+            {/* 3. PORTAL SHOWCASE */}
+            <section className="py-20 bg-white border-y border-slate-200 relative z-10" id="portal-netzwerk" aria-labelledby="portal-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="text-xs uppercase font-black tracking-wider text-emerald-800 bg-emerald-100 px-4 py-1.5 rounded-full border border-emerald-200 mb-3 inline-block">
-                            Strukturierte Fachbereiche &amp; Tools
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Alles für Ihr Bauvorhaben auf über 100 Fachseiten
+                        <span className="eyebrow mb-4">Fachbereiche &amp; Tools</span>
+                        <h2 id="portal-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            Alles für Ihr Vorhaben auf über 100 Fachseiten
                         </h2>
-                        <p className="mt-2 text-sm text-slate-600">
-                            Wählen Sie Ihren gesuchten Themenbereich – von schlüsselfertigen Badsanierungen und interaktiven Online-Planern über Meister-Fachgewerke bis hin zu regionalen Standorten in Hessen.
+                        <p className="mt-3 text-base text-slate-700">
+                            Von der schlüsselfertigen Badsanierung über Planungs-Tools bis zu den Standorten in Hessen –
+                            wählen Sie Ihren Themenbereich.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        
-                        {/* Hub 1: Bad & Sanitär */}
-                        <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all flex flex-col justify-between">
-                            <div>
-                                <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold mb-4">
-                                    <Droplets className="w-6 h-6" />
+                        {PORTAL_HUBS.map(({ eyebrow, title, text, icon: Icon, links, cta }) => (
+                            <article
+                                key={eyebrow}
+                                className="group flex flex-col justify-between p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:border-emerald-500/80 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            >
+                                <div>
+                                    <span className="icon-chip w-12 h-12 mb-4">
+                                        <Icon className="w-6 h-6" />
+                                    </span>
+                                    <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800">{eyebrow}</span>
+                                    <h3 className="text-lg font-black text-slate-900 mt-1 mb-2">{title}</h3>
+                                    <p className="text-sm text-slate-700 mb-4 leading-relaxed">{text}</p>
+                                    <ul
+                                        className={`border-t border-slate-200 pt-3 text-sm font-semibold text-slate-800 ${
+                                            links.length > 6 ? 'flex flex-wrap gap-1.5' : 'space-y-1.5'
+                                        }`}
+                                    >
+                                        {links.map((link) => (
+                                            <li key={link.href}>
+                                                {links.length > 6 ? (
+                                                    <Link
+                                                        href={link.href}
+                                                        className="inline-block px-2.5 py-1 rounded-full bg-white border border-slate-200 text-xs hover:border-emerald-500/80 hover:text-emerald-800 transition-colors"
+                                                    >
+                                                        {link.label}
+                                                    </Link>
+                                                ) : (
+                                                    <Link href={link.href} className="flex items-center gap-1.5 hover:text-emerald-800 transition-colors">
+                                                        <ArrowRight className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                                                        {link.label}
+                                                    </Link>
+                                                )}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <span className="text-[11px] font-black uppercase text-emerald-700 tracking-wider">Komplettbäder</span>
-                                <h3 className="text-lg font-black text-slate-900 mt-1 mb-2">Badsanierung &amp; Wellness</h3>
-                                <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                                    Alles aus einer Hand: Barrierefreie Walk-In Duschen, Großformat-Design und staubarme Kernsanierung.
-                                </p>
-                                <div className="space-y-1.5 border-t border-slate-200 pt-3 text-xs font-semibold text-slate-700">
-                                    <Link href="/bad/badsanierung" className="block hover:text-emerald-700 transition-colors">&rarr; Badsanierung Übersicht</Link>
-                                    <Link href="/bad/fliesen" className="block hover:text-emerald-700 transition-colors">&rarr; Großformatfliesen im Bad</Link>
-                                    <Link href="/bad/barrierefreies-bad" className="block hover:text-emerald-700 transition-colors">&rarr; Barrierefreie Walk-In Bäder</Link>
-                                    <Link href="/bad/bad-aus-einer-hand" className="block hover:text-emerald-700 transition-colors">&rarr; Bad aus einer Hand</Link>
-                                    <Link href="/bad/musterbaeder" className="block hover:text-emerald-700 transition-colors">&rarr; Musterbäder Galerie</Link>
+                                <div className="pt-4 mt-4 border-t border-slate-200">
+                                    <Link href={cta.href} className="text-sm font-bold text-emerald-800 hover:text-emerald-700 inline-flex items-center gap-1">
+                                        {cta.label}
+                                        <ArrowRight className="w-4 h-4" />
+                                    </Link>
                                 </div>
-                            </div>
-                            <div className="pt-4 mt-4 border-t border-slate-200">
-                                <Link href="/bad" className="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
-                                    <span>Zur Bad-Hauptseite</span>
-                                    <ChevronRight className="w-3.5 h-3.5" />
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Hub 2: Interaktive Tools */}
-                        <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-sky-500 hover:shadow-lg transition-all flex flex-col justify-between">
-                            <div>
-                                <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center font-bold mb-4">
-                                    <Sparkles className="w-6 h-6" />
-                                </div>
-                                <span className="text-[11px] font-black uppercase text-sky-700 tracking-wider">Kalkulatoren &amp; Planer</span>
-                                <h3 className="text-lg font-black text-slate-900 mt-1 mb-2">Online-Rechner &amp; Planung</h3>
-                                <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                                    Berechnen Sie vorab Ihr Budget oder konfigurieren Sie Ihre Wunschmaterialien interaktiv.
-                                </p>
-                                <div className="space-y-1.5 border-t border-slate-200 pt-3 text-xs font-semibold text-slate-700">
-                                    <Link href="/bad/budgetkalkulator" className="block hover:text-sky-700 transition-colors">&rarr; Bad-Budgetkalkulator</Link>
-                                    <Link href="/bad/badplaner" className="block hover:text-sky-700 transition-colors">&rarr; 3D-Badplaner Tool</Link>
-                                    <Link href="/bad/badanfrage" className="block hover:text-sky-700 transition-colors">&rarr; Geführte Bad-Anfrage</Link>
-                                    <Link href="/beratung" className="block hover:text-sky-700 transition-colors">&rarr; Persönliche Beratung</Link>
-                                    <Link href="/foerderung" className="block hover:text-sky-700 transition-colors">&rarr; KfW-Förderung &amp; Zuschüsse</Link>
-                                </div>
-                            </div>
-                            <div className="pt-4 mt-4 border-t border-slate-200">
-                                <Link href="/bad/budgetkalkulator" className="text-xs font-bold text-sky-700 hover:text-sky-800 flex items-center gap-1">
-                                    <span>Zum Kostenrechner</span>
-                                    <ChevronRight className="w-3.5 h-3.5" />
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Hub 3: Standorte Hessen */}
-                        <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all flex flex-col justify-between">
-                            <div>
-                                <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold mb-4">
-                                    <MapPin className="w-6 h-6" />
-                                </div>
-                                <span className="text-[11px] font-black uppercase text-emerald-700 tracking-wider">Regionales Netzwerk</span>
-                                <h3 className="text-lg font-black text-slate-900 mt-1 mb-2">Standorte &amp; Ausstellungen</h3>
-                                <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                                    Vor-Ort-Service in über 50 Städten und Landkreisen im gesamten Bundesland Hessen.
-                                </p>
-                                <div className="space-y-1.5 border-t border-slate-200 pt-3 text-xs font-semibold text-slate-700">
-                                    <Link href="/standorte/wetzlar" className="block hover:text-emerald-700 transition-colors">&rarr; Fliesenleger Wetzlar</Link>
-                                    <Link href="/standorte/giessen" className="block hover:text-emerald-700 transition-colors">&rarr; Fliesenleger Gießen</Link>
-                                    <Link href="/standorte/marburg" className="block hover:text-emerald-700 transition-colors">&rarr; Fliesenleger Marburg</Link>
-                                    <Link href="/ausstellung/wetzlar" className="block hover:text-emerald-700 transition-colors">&rarr; Badausstellung Wetzlar</Link>
-                                    <Link href="/ausstellung/giessen" className="block hover:text-emerald-700 transition-colors">&rarr; Badausstellung Gießen</Link>
-                                </div>
-                            </div>
-                            <div className="pt-4 mt-4 border-t border-slate-200">
-                                <Link href="/standorte" className="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
-                                    <span>Alle 50+ Standorte</span>
-                                    <ChevronRight className="w-3.5 h-3.5" />
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Hub 4: Wissen, FAQ & Referenzen */}
-                        <div className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-amber-500 hover:shadow-lg transition-all flex flex-col justify-between">
-                            <div>
-                                <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold mb-4">
-                                    <Award className="w-6 h-6" />
-                                </div>
-                                <span className="text-[11px] font-black uppercase text-amber-700 tracking-wider">Referenzen &amp; Wissen</span>
-                                <h3 className="text-lg font-black text-slate-900 mt-1 mb-2">Projekte &amp; Ratgeber</h3>
-                                <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-                                    Einblicke in reale Baustellen, Tipps zu DIN-Normen und Materialpflege von Deniz Tezgel.
-                                </p>
-                                <div className="space-y-1.5 border-t border-slate-200 pt-3 text-xs font-semibold text-slate-700">
-                                    <Link href="/referenzen" className="block hover:text-amber-700 transition-colors">&rarr; Echte Projektgalerie</Link>
-                                    <Link href="/blog" className="block hover:text-amber-700 transition-colors">&rarr; Fliesen &amp; Bad Ratgeber</Link>
-                                    <Link href="/faq" className="block hover:text-amber-700 transition-colors">&rarr; Häufig gestellte Fragen (FAQ)</Link>
-                                    <Link href="/ueber-uns" className="block hover:text-amber-700 transition-colors">&rarr; Über Handwerksmeister Tezgel</Link>
-                                    <Link href="/kontakt" className="block hover:text-amber-700 transition-colors">&rarr; Kontakt &amp; Terminbuchung</Link>
-                                </div>
-                            </div>
-                            <div className="pt-4 mt-4 border-t border-slate-200">
-                                <Link href="/referenzen" className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1">
-                                    <span>Zur Fotogalerie</span>
-                                    <ChevronRight className="w-3.5 h-3.5" />
-                                </Link>
-                            </div>
-                        </div>
-
+                            </article>
+                        ))}
                     </div>
-
                 </div>
             </section>
 
-            {/* ========================================================================
-               3. MODULARE LEISTUNGS-PRÄSENTATION (BENTO-GRID)
-               ======================================================================== */}
-            <section className="py-20 relative z-10" id="leistungen">
+            {/* 4. BENTO GRID – FACHGEWERKE */}
+            <section className="py-20 relative z-10" id="leistungen" aria-labelledby="leistungen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-xs uppercase font-black tracking-wider text-emerald-800 bg-emerald-100 px-4 py-1.5 rounded-full border border-emerald-200 mb-3 inline-block">
-                            Fachgewerke im Detail
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Exklusive Fliesen-, Platten- &amp; Verlegearbeiten
+                    <div className="text-center max-w-3xl mx-auto mb-14">
+                        <span className="eyebrow mb-4">Meister-Fachgewerke</span>
+                        <h2 id="leistungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            Fliesen-, Platten- &amp; Verlegearbeiten{' '}
+                            <span className="text-ceramic-gradient">in Meisterqualität</span>
                         </h2>
-                        <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                            Ob barrierefreie Wellnessoase, offenes Wohnen mit XXL-Feinsteinzeug oder die wetterfeste Sanierung Ihrer Terrasse: Fliesenverlegung Tezgel bietet Meisterqualität aus Aßlar für den gesamten Lahn-Dill-Kreis und Hessen.
+                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                            Ob barrierefreie Wellnessoase, offenes Wohnen mit Feinsteinzeug oder die wetterfeste Terrasse:
+                            Meisterqualität aus Aßlar für den Lahn-Dill-Kreis und Hessen.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {SERVICES.map((srv) => (
-                            <div
-                                key={srv.id}
-                                className="bg-white rounded-[2rem] p-8 border border-slate-200 hover:border-emerald-500 shadow-md shadow-slate-200/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
-                            >
-                                <div>
-                                    <div className="flex items-center justify-between mb-6">
-                                        <div className="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                                            {srv.id === 'bad' && <Droplets className="w-7 h-7" />}
-                                            {srv.id === 'wohnen' && <Sparkles className="w-7 h-7" />}
-                                            {srv.id === 'aussen' && <Sun className="w-7 h-7" />}
-                                            {srv.id === 'untergrund' && <ShieldCheck className="w-7 h-7" />}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {SERVICES.map((srv) => {
+                            const Icon = SERVICE_ICONS[srv.id] || Sparkles;
+                            const isFeature = srv.id === 'bad';
+                            return (
+                                <article
+                                    key={srv.id}
+                                    className={`group glass-surface rounded-[2rem] p-7 sm:p-8 flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_24px_48px_-16px_rgba(15,23,42,0.18)] transition-all duration-300 ${BENTO_LAYOUT[srv.id] || ''} ${
+                                        isFeature ? 'ceramic-hero' : ''
+                                    }`}
+                                >
+                                    <div>
+                                        <div className="flex items-center justify-between mb-6">
+                                            <span className={`icon-chip ${isFeature ? 'w-16 h-16' : 'w-14 h-14'}`}>
+                                                <Icon className={isFeature ? 'w-8 h-8' : 'w-7 h-7'} />
+                                            </span>
+                                            <span className="eyebrow eyebrow-neutral">Meister-Fachgewerk</span>
                                         </div>
-                                        <span className="text-[11px] font-black uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-                                            Meister-Fachgewerk
-                                        </span>
-                                    </div>
-
-                                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
-                                        {srv.name}
-                                    </h3>
-                                    <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                                        {srv.shortDescription}
-                                    </p>
-
-                                    <div className="space-y-2 mb-6">
-                                        <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 block">
-                                            Leistungsschwerpunkte:
-                                        </span>
-                                        <ul className="space-y-2">
-                                            {srv.features.slice(0, 4).map((feat, i) => (
-                                                <li key={i} className="flex items-start gap-2 text-xs text-slate-700">
+                                        <h3 className={`${isFeature ? 'text-2xl sm:text-3xl' : 'text-xl'} font-black text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors`}>
+                                            {srv.name}
+                                        </h3>
+                                        <p className="text-sm text-slate-700 mb-6 leading-relaxed">{srv.shortDescription}</p>
+                                        <ul className={`grid gap-2 mb-6 ${isFeature ? 'sm:grid-cols-2' : ''}`}>
+                                            {srv.features.slice(0, isFeature ? 6 : 3).map((feat) => (
+                                                <li key={feat} className="flex items-start gap-2 text-sm text-slate-700">
                                                     <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                                                     <span>{feat}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
-                                </div>
-
-                                <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
-                                    <Link
-                                        href={`/leistungen/${srv.id}`}
-                                        className="text-xs font-bold text-emerald-700 hover:text-emerald-800 flex items-center gap-1.5 transition-colors"
-                                    >
-                                        <span>Details &amp; Ausführung ansehen</span>
-                                        <ArrowRight className="w-3.5 h-3.5" />
-                                    </Link>
-                                    <a
-                                        href={COMPANY_DATA.contact.whatsappLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-xs font-semibold text-slate-500 hover:text-emerald-700 transition-colors flex items-center gap-1"
-                                    >
-                                        <MessageSquare className="w-3 h-3 fill-current text-emerald-600" />
-                                        <span>WhatsApp</span>
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
+                                    <div className="pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
+                                        <Link
+                                            href={`/leistungen/${srv.id}`}
+                                            className="text-sm font-bold text-emerald-800 hover:text-emerald-700 inline-flex items-center gap-1.5"
+                                        >
+                                            Details &amp; Ausführung
+                                            <ArrowRight className="w-4 h-4" />
+                                        </Link>
+                                        {isFeature && (
+                                            <Link href="/bad" className="btn-primary px-5 py-2.5 text-xs">
+                                                Zur Badsanierung
+                                            </Link>
+                                        )}
+                                    </div>
+                                </article>
+                            );
+                        })}
                     </div>
-
                 </div>
             </section>
 
-            {/* ========================================================================
-               4. TRANSPARENTER 3-SCHRITTE-ABLAUF
-               ======================================================================== */}
-            <section className="py-20 relative z-10" id="ablauf">
+            {/* 5. PROCESS */}
+            <section className="py-20 relative z-10" id="ablauf" aria-labelledby="ablauf-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-xs uppercase font-black tracking-wider text-sky-800 bg-sky-100 px-4 py-1.5 rounded-full border border-sky-200 mb-3 inline-block">
-                            Verlässlicher Prozess
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            In 3 Schritten zu Ihrem Wunschbelag
+                    <div className="text-center max-w-3xl mx-auto mb-14">
+                        <span className="eyebrow eyebrow-sky mb-4">Transparenter Ablauf</span>
+                        <h2 id="ablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            In 3 Schritten zu Ihrem neuen Belag
                         </h2>
-                        <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                            Keine Überraschungen, keine versteckten Kosten. Von der ersten Begutachtung bis zur sauberen Abnahme durch Deniz Tezgel persönlich.
+                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                            Keine Überraschungen, keine versteckten Kosten – von der ersten Begutachtung bis zur sauberen
+                            Abnahme durch {owner.fullName} persönlich.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {processSteps.map((stepItem, idx) => (
-                            <div 
-                                key={idx}
-                                className="bg-white rounded-3xl p-8 border border-slate-200 shadow-md shadow-slate-200/40 relative overflow-hidden group hover:border-emerald-500 hover:shadow-lg transition-all"
+                    <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {processSteps.map((stepItem) => (
+                            <li
+                                key={stepItem.step}
+                                className="group glass-surface rounded-3xl p-8 relative overflow-hidden hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
                             >
-                                <div className="text-5xl font-black text-slate-200 group-hover:text-emerald-100 transition-colors mb-4 font-mono">
+                                <span className="font-display block text-5xl font-black tabular-nums text-emerald-600/25 group-hover:text-emerald-600/40 transition-colors mb-4" aria-hidden="true">
                                     {stepItem.step}
-                                </div>
-                                <span className="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 block mb-1">
+                                </span>
+                                <span className="block text-[11px] font-black uppercase tracking-widest text-emerald-800 mb-1">
                                     {stepItem.subtitle}
                                 </span>
-                                <h3 className="text-lg font-black text-slate-900 mb-3">
-                                    {stepItem.title}
-                                </h3>
-                                <p className="text-xs text-slate-600 leading-relaxed">
-                                    {stepItem.description}
-                                </p>
-                            </div>
+                                <h3 className="text-lg font-black text-slate-900 mb-3">{stepItem.title}</h3>
+                                <p className="text-sm text-slate-700 leading-relaxed">{stepItem.description}</p>
+                            </li>
                         ))}
-                    </div>
-
+                    </ol>
                 </div>
             </section>
 
-            {/* ========================================================================
-               5. GROSSFORMAT & BADSANIERUNGS-FOKUS (ARCHITECTURAL SPOTLIGHT)
-               ======================================================================== */}
-            <section className="py-20 relative z-10" id="ueber-uns">
+            {/* 6. XXL SPOTLIGHT */}
+            <section className="py-20 relative z-10" aria-labelledby="spotlight-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white rounded-[3rem] p-8 sm:p-12 lg:p-16 border border-slate-800 shadow-2xl relative overflow-hidden">
-                        
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                    <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 lg:p-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                             <div className="lg:col-span-7 space-y-6">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-black">
-                                    <Award className="w-4 h-4" />
+                                <span className="eyebrow">
+                                    <Award className="w-3.5 h-3.5" />
                                     Meisterbetrieb für anspruchsvolle Architektur
-                                </div>
-
-                                <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
-                                    Fugenarme XXL-Großformate &amp; meisterhafte Badsanierung
+                                </span>
+                                <h2 id="spotlight-heading" className="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
+                                    Fugenarme XXL-Großformate{' '}
+                                    <span className="text-ceramic-gradient">&amp; meisterhafte Badsanierung</span>
                                 </h2>
-
-                                <p className="text-sm text-slate-300 leading-relaxed">
-                                    Großformatige Platten (bis zu 120 x 278 cm) verlangen höchste Handwerkskunst. Wo herkömmliche Verleger an ihre Grenzen stoßen, setzen wir Spezialwerkzeuge, Lasernivellierung und modernste C2-Flexkleber ein. Das Resultat: Ein atemberaubend ruhiges, monolithisches Raumgefühl ohne störende Fugenkreuze.
+                                <p className="text-base text-slate-700 leading-relaxed">
+                                    Großformatige Platten verlangen höchste Präzision: Mit Nivelliersystem, Vakuumhebetechnik und
+                                    flexiblen C2-Fliesenklebern entstehen planebene Flächen mit ruhigem, monolithischem
+                                    Raumgefühl – ohne störende Fugenkreuze.
                                 </p>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                                    <div className="p-4 rounded-2xl bg-white/[0.06] border border-white/10">
-                                        <span className="text-2xl font-black text-emerald-400">100 %</span>
-                                        <p className="text-xs text-slate-300 mt-1">Dichtigkeit nach DIN 18534 Verbundabdichtung</p>
+                                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 flex flex-col-reverse justify-end gap-1">
+                                        <dt className="text-sm text-slate-700">Normgerechte Verbundabdichtung</dt>
+                                        <dd className="font-display text-2xl font-black text-emerald-800">DIN 18534</dd>
                                     </div>
-                                    <div className="p-4 rounded-2xl bg-white/[0.06] border border-white/10">
-                                        <span className="text-2xl font-black text-sky-400">XXL</span>
-                                        <p className="text-xs text-slate-300 mt-1">Großformate für fugenarme Wand- &amp; Bodenflächen</p>
+                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 flex flex-col-reverse justify-end gap-1">
+                                        <dt className="text-sm text-slate-700">Großformate für fugenarme Wand- &amp; Bodenflächen</dt>
+                                        <dd className="font-display text-2xl font-black text-sky-800">XXL</dd>
                                     </div>
-                                </div>
-
-                                <div className="pt-2 flex flex-wrap items-center gap-4">
-                                    <Link
-                                        href="/kontakt"
-                                        className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-xs shadow-lg shadow-emerald-500/20 transition-all"
-                                    >
-                                        <span>Vor-Ort-Beratung sichern</span>
+                                </dl>
+                                <div className="flex flex-wrap items-center gap-3">
+                                    <Link href="/bad/fliesen" className="btn-primary">
+                                        Großformate im Bad
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
-                                    <a
-                                        href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                                        className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white font-bold text-xs border border-white/15 transition-all"
-                                    >
-                                        <Phone className="w-4 h-4 text-emerald-400" />
-                                        <span>{COMPANY_DATA.contact.phone}</span>
+                                    <a href={`tel:${contact.phoneLink}`} className="btn-ghost">
+                                        <Phone className="w-4 h-4 text-emerald-700" />
+                                        {contact.phone}
                                     </a>
                                 </div>
                             </div>
 
-                            {/* Trust Badge Box */}
                             <div className="lg:col-span-5">
-                                <div className="bg-white/10 backdrop-blur-md p-7 sm:p-8 rounded-3xl border border-white/15 shadow-xl space-y-4 text-white">
-                                    <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400 block">
+                                <div className="glass-surface rounded-3xl p-7 sm:p-8 space-y-4">
+                                    <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800 block">
                                         Regional verwurzelt
                                     </span>
-                                    <h3 className="text-xl font-black text-white">
-                                        Fliesenverlegung Tezgel in Aßlar
-                                    </h3>
-                                    <p className="text-xs text-slate-300 leading-relaxed">
-                                        Wir betreuen Privatkunden, Architekten und Bauherren in Aßlar, Wetzlar, Gießen, Herborn und ganz Hessen.
+                                    <h3 className="text-xl font-black text-slate-900">{COMPANY_DATA.legalName} in Aßlar</h3>
+                                    <p className="text-sm text-slate-700 leading-relaxed">
+                                        Wir betreuen Privatkunden, Architekten und Bauherren in Aßlar, Wetzlar, Gießen, Herborn und
+                                        ganz Hessen.
                                     </p>
-
-                                    <div className="space-y-3 pt-2 text-xs text-slate-200">
-                                        <div className="flex items-center gap-2.5">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                                            <span>Persönliche Betreuung durch Deniz Tezgel</span>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                                            <span>Kostenfreies Vor-Ort-Aufmaß &amp; Begutachtung</span>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                                            <span>Faires Festpreisangebot ohne Nachforderungen</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="pt-4 border-t border-white/10">
-                                        <p className="text-[11px] text-slate-300 italic">
-                                            „{COMPANY_DATA.motto}“
-                                        </p>
-                                    </div>
+                                    <ul className="space-y-3 text-sm text-slate-800">
+                                        {[
+                                            `Persönliche Betreuung durch ${owner.fullName}`,
+                                            'Kostenfreies Vor-Ort-Aufmaß & Begutachtung',
+                                            'Festpreisangebot ohne Nachforderungen'
+                                        ].map((item) => (
+                                            <li key={item} className="flex items-center gap-2.5">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <p className="pt-4 border-t border-slate-200 text-sm italic text-slate-700">„{motto}“</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            {/* ========================================================================
-               6. KUNDENZUFRIEDENHEIT & SOCIAL PROOF
-               ======================================================================== */}
-            <section className="py-20 relative z-10">
+            {/* 7. SOCIAL PROOF */}
+            <section className="py-20 relative z-10" aria-labelledby="bewertungen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-2xl mx-auto mb-14">
-                        <span className="text-xs uppercase font-black tracking-wider text-emerald-800 bg-emerald-100 px-4 py-1.5 rounded-full border border-emerald-200 mb-3 inline-block">
-                            Echte Referenzen
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Begeisterte Kunden in Mittelhessen
+                    <div className="text-center max-w-2xl mx-auto mb-12">
+                        <span className="eyebrow eyebrow-amber mb-4">Echte Kundenstimmen</span>
+                        <h2 id="bewertungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            Was unsere Kunden in Mittelhessen sagen
                         </h2>
-                        <div className="flex items-center justify-center gap-1 mt-3">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
-                            ))}
-                            <span className="text-xs font-bold text-slate-700 ml-2">5.0 Meisterqualität</span>
+                        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                            <div className="glass-surface rounded-full px-5 py-2.5 flex items-center gap-3">
+                                <Stars />
+                                <span className="text-sm font-bold text-slate-900">
+                                    {google.displayRating} / {google.maxRating}
+                                </span>
+                                <span className="text-sm text-slate-700">{google.count} {google.label}</span>
+                            </div>
+                            <div className="glass-surface rounded-full px-5 py-2.5 flex items-center gap-2">
+                                <span className="text-sm font-bold text-slate-900">{trustlocal.displayRating}</span>
+                                <span className="text-sm text-slate-700">{trustlocal.count} {trustlocal.label}</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-md shadow-slate-200/40">
-                            <div className="flex items-center gap-1 text-amber-500 mb-3">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-current" />
-                                ))}
-                            </div>
-                            <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                                „Herr Tezgel hat unser gesamtes Badezimmer kernsaniert und großformatige Fliesen verlegt. Das Fugenbild ist ein Traum und die Baustelle wurde jeden Tag absolut sauber hinterlassen!“
-                            </p>
-                            <span className="text-xs font-bold text-slate-900 block">Familie M.</span>
-                            <span className="text-[10px] text-slate-500 font-medium">Badsanierung in Wetzlar</span>
-                        </div>
+                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {featuredReviews.map((review) => (
+                            <li key={review.id} className="glass-surface rounded-3xl p-7 flex flex-col justify-between">
+                                <figure>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <Stars count={review.rating} />
+                                        <Quote className="w-6 h-6 text-emerald-600/40" aria-hidden="true" />
+                                    </div>
+                                    <blockquote className="text-sm text-slate-800 leading-relaxed">„{review.text}“</blockquote>
+                                    <figcaption className="mt-5 pt-4 border-t border-slate-200 flex items-center justify-between gap-2">
+                                        <span className="text-sm font-bold text-slate-900">{review.author}</span>
+                                        <span className="text-xs font-semibold text-slate-600">
+                                            {review.source}-Rezension &middot; {review.topic}
+                                        </span>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        ))}
+                    </ul>
 
-                        <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-md shadow-slate-200/40">
-                            <div className="flex items-center gap-1 text-amber-500 mb-3">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-current" />
-                                ))}
-                            </div>
-                            <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                                „Perfekte Ausführung der Terrassenplatten auf Stelzlagern. Endlich läuft das Wasser rückstandslos ab und keine geplatzten Fugen mehr nach dem Winter. Absolut empfehlenswert!“
-                            </p>
-                            <span className="text-xs font-bold text-slate-900 block">Klaus S.</span>
-                            <span className="text-[10px] text-slate-500 font-medium">Terrassensanierung in Aßlar</span>
-                        </div>
-
-                        <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-md shadow-slate-200/40">
-                            <div className="flex items-center gap-1 text-amber-500 mb-3">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-current" />
-                                ))}
-                            </div>
-                            <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                                „120x120 cm Feinsteinzeug im gesamten Erdgeschoss. Herr Tezgel hat mit Laser und Nivelliersystem gearbeitet – kein einziger Zahn spürbar. Meisterleistung!“
-                            </p>
-                            <span className="text-xs font-bold text-slate-900 block">Dr. Thomas B.</span>
-                            <span className="text-[10px] text-slate-500 font-medium">Neubauverlegung in Gießen</span>
-                        </div>
+                    <div className="mt-10 text-center">
+                        <Link href="/referenzen" className="btn-ghost">
+                            Alle Kundenbewertungen ansehen
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* ========================================================================
-               7. EXPRESS-ANFRAGE FUNNEL SECTION
-               ======================================================================== */}
-            <section className="py-20 relative z-10" id="express-anfrage">
+            {/* 8. EXPRESS FUNNEL */}
+            <section className="py-20 relative z-10 scroll-mt-28" id="express-anfrage" aria-labelledby="anfrage-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="text-xs uppercase font-black tracking-wider text-emerald-800 bg-emerald-100 px-4 py-1.5 rounded-full border border-emerald-200 mb-3 inline-block">
-                            Kostenfrei &amp; unverbindlich
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Starten Sie Ihre Express-Anfrage
+                        <span className="eyebrow mb-4">Kostenfrei &amp; unverbindlich</span>
+                        <h2 id="anfrage-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            Ihre Express-Anfrage in 3 Klicks
                         </h2>
-                        <p className="mt-2 text-sm text-slate-600">
-                            Wählen Sie in 3 Klicks Ihr Vorhaben und senden Sie Ihre Anfrage wahlweise direkt per WhatsApp an Deniz Tezgel oder über unser digitales Anfrageformular.
+                        <p className="mt-3 text-base text-slate-700">
+                            Vorhaben wählen, Eckdaten eintragen und die Anfrage direkt per WhatsApp an {owner.fullName} oder per
+                            E-Mail senden.
                         </p>
                     </div>
-
-                    {/* The Interactive Funnel Component */}
                     <TezgelAnfrageFunnel />
                 </div>
             </section>
-
         </div>
     );
 }
