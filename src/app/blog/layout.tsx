@@ -3,8 +3,8 @@ import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } f
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Ratgeber zu Badsanierung, Heizung & Wärmepumpen | Bad & Energie GmbH',
-  description: 'Expertenwissen rund um Badsanierung, NIBE Wärmepumpen, Wohnraumlüftung und Trinkwasserhygiene in Wetzlar & Lahn-Dill.',
+  title: 'Ratgeber zu Badsanierung & Fliesen',
+  description: 'Praxiswissen rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Meisterbetrieb Tezgel aus Aßlar.',
   path: '/blog',
 });
 
@@ -17,17 +17,17 @@ const breadcrumbs = [
 const blogSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Haustechnik Ratgeber & Blog | Bad & Energie GmbH',
+    name: 'Ratgeber & Blog | Fliesenverlegung Tezgel',
     description:
-      'Fundierte Fachartikel zu Wärmepumpen, Badsanierung, Heizungswartung und Fördermitteln vom Meisterbetrieb in Wetzlar.',
+      'Fachartikel rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Meisterbetrieb in Aßlar.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
   {
     '@type': 'Blog',
     '@id': `${pageUrl}#blog`,
-    name: 'Bad & Energie GmbH Ratgeber & Insights',
-    description: 'Fachwissen, Anleitungen und Ratgeber rund um Badsanierung, Heizung und Haustechnik.',
+    name: 'Fliesenverlegung Tezgel Ratgeber',
+    description: 'Fachwissen und Ratgeber rund um Badsanierung, Fliesen und barrierefreie Bäder.',
     publisher: { '@id': ORG_ID },
     url: pageUrl,
   },

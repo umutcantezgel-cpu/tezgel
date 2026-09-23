@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Datenschutzerklärung nach DSGVO',
-  description: 'Ausführliche Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten bei der Bad & Energie GmbH gemäß DSGVO.',
+  description: `Ausführliche Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten bei der ${COMPANY_DATA.legalName} gemäß DSGVO.`,
   path: '/datenschutz',
 });
 
@@ -17,7 +18,7 @@ const breadcrumbs = [
 const datenschutzSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Datenschutzerklärung | Bad & Energie GmbH',
+    name: `Datenschutzerklärung | ${COMPANY_DATA.legalName}`,
     description: 'Informationen zur Erhebung und Verarbeitung personenbezogener Daten nach DSGVO.',
     breadcrumbItems: breadcrumbs,
   }),

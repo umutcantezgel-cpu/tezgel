@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Impressum & rechtliche Angaben',
-  description: 'Impressum und gesetzliche Anbieterkennzeichnung der Bad & Energie GmbH, Hans-Sachs-Straße 12, 35576 Wetzlar. Geschäftsführer Sabri Demir.',
+  description: `Impressum und gesetzliche Anbieterkennzeichnung der ${COMPANY_DATA.legalName}, ${COMPANY_DATA.headquarters.street}, ${COMPANY_DATA.headquarters.postalCode} ${COMPANY_DATA.headquarters.city}. Inhaber ${COMPANY_DATA.owner.fullName}.`,
   path: '/impressum',
 });
 
@@ -17,8 +18,8 @@ const breadcrumbs = [
 const impressumSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Impressum & rechtliche Angaben | Bad & Energie GmbH',
-    description: 'Gesetzliche Anbieterkennzeichnung der Bad & Energie GmbH in Wetzlar.',
+    name: `Impressum & rechtliche Angaben | ${COMPANY_DATA.legalName}`,
+    description: `Gesetzliche Anbieterkennzeichnung der ${COMPANY_DATA.legalName} in ${COMPANY_DATA.headquarters.city}.`,
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

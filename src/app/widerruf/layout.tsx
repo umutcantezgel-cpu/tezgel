@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Widerrufsbelehrung & Musterformular',
-  description: 'Widerrufsbelehrung und Muster-Widerrufsformular für Verbraucher bei Beauftragung von Leistungen der Bad & Energie GmbH.',
+  description: `Widerrufsbelehrung und Muster-Widerrufsformular für Verbraucher bei Beauftragung von Leistungen der ${COMPANY_DATA.legalName}.`,
   path: '/widerruf',
 });
 
@@ -17,8 +18,8 @@ const breadcrumbs = [
 const widerrufSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Widerrufsbelehrung & Musterformular | Bad & Energie GmbH',
-    description: 'Gesetzliche Widerrufsbelehrung und Muster-Widerrufsformular für Kunden der Bad & Energie GmbH.',
+    name: `Widerrufsbelehrung & Musterformular | ${COMPANY_DATA.legalName}`,
+    description: `Gesetzliche Widerrufsbelehrung und Muster-Widerrufsformular für Kunden der ${COMPANY_DATA.legalName}.`,
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

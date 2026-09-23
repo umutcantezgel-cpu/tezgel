@@ -2,16 +2,18 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { createPageUrl } from '@/utils';
 import { IconWrapper } from '@/utils/iconMapper';
 
 /**
  * Related Posts Component
  * Shows related blog posts based on category or tags
  */
-const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => {
+const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }) => {
+    const posts = allPosts || [];
+    const categoryList = categories || [];
+
     // 1. Find directly related posts (same category or shared tags)
-    let candidates = allPosts
+    let candidates = posts
         .filter(post => post.id !== currentPost.id)
         .map(post => {
             let score = 0;
@@ -28,7 +30,7 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
     // 2. Fallback: If not enough related posts, add recent posts
     if (candidates.length < limit) {
         const existingIds = new Set(candidates.map(p => p.id));
-        const recentPosts = allPosts
+        const recentPosts = posts
             .filter(post => post.id !== currentPost.id && !existingIds.has(post.id))
             .sort((a, b) => new Date(b.created_date) - new Date(a.created_date)) // Newest first
             .slice(0, limit - candidates.length);
@@ -41,76 +43,70 @@ const RelatedPosts = ({ currentPost, allPosts, categories = [], limit = 3 }) => 
     if (relatedPosts.length === 0) return null;
 
     return (
-        <div className="relative">
-            <div className="absolute inset-0 bg-white/60 backdrop-blur-xl rounded-3xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]" />
+        <div className="glass-surface rounded-3xl p-8">
+            <h2 className="text-2xl font-black text-slate-900 mb-6">
+                Das könnte Sie auch interessieren
+            </h2>
 
-            <div className="relative p-8">
-                <h2 className="text-2xl font-bold text-[#1a3a52] mb-6">
-                    Das könnte Sie auch interessieren
-                </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+                {relatedPosts.map(post => {
+                    const categoryData = categoryList.find(c => c.id === post.category);
+                    const image = post.image || post.image_url;
 
-                <div className="grid md:grid-cols-3 gap-6">
-                    {relatedPosts.map(post => {
-                        const categoryData = categories.find(c => c.id === post.category);
-
-                        return (
-                            <div
-                                key={post.id}
-                                className="group relative"
-                            >
-                                <div className="relative h-full">
-                                    <div className="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-xl border border-white/20 group-hover:shadow-lg transition-all duration-300" />
-
-                                    <div className="relative p-6">
-                                        {/* Image Placeholder */}
-                                        {post.image_url ? (
-                                            <div className="h-32 rounded-lg overflow-hidden mb-4">
-                                                <img
-                                                    src={post.image_url}
-                                                    alt={post.title}
-                                                    width={300}
-                                                    height={128}
-                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                                    loading="lazy"
-                                                />
-                                            </div>
-                                        ) : (
-                                            <div className="h-32 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-[#1a3a52]/10 to-[#c69c6d]/10 flex items-center justify-center">
-                                                <IconWrapper name={categoryData?.icon} className="w-8 h-8 text-[#1a3a52]/40" />
-                                            </div>
-                                        )}
-
-                                        {/* Category */}
-                                        {categoryData && (
-                                            <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-[#c69c6d]/10 text-[#c69c6d] mb-3 pointer-events-none">
-                                                <IconWrapper name={categoryData.icon} className="w-3 h-3 mr-1" />
-                                                {categoryData.name}
-                                            </span>
-                                        )}
-
-                                        {/* Title with Stretched Link */}
-                                        <h3 className="font-bold text-[#1a3a52] group-hover:text-[#c69c6d] transition-colors mb-2 line-clamp-2">
-                                            <Link href={`/blog/${post.slug}`} className="hover:underline focus:outline-none after:absolute after:inset-0">
-                                                {post.title}
-                                            </Link>
-                                        </h3>
-
-                                        {/* Excerpt */}
-                                        <p className="text-sm text-[#2c3e50]/70 line-clamp-2 mb-3">
-                                            {post.excerpt}
-                                        </p>
-
-                                        {/* Read More */}
-                                        <div className="flex items-center text-[#c69c6d] text-sm font-medium pointer-events-none">
-                                            Weiterlesen
-                                            <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                        </div>
-                                    </div>
+                    return (
+                        <div
+                            key={post.id}
+                            className="group relative h-full rounded-2xl border border-slate-200 bg-white p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                        >
+                            {/* Image */}
+                            {image ? (
+                                <div className="h-32 rounded-xl overflow-hidden mb-4">
+                                    <img
+                                        src={image}
+                                        alt={post.title}
+                                        width={300}
+                                        height={128}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        loading="lazy"
+                                    />
                                 </div>
+                            ) : (
+                                <div className="h-32 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-emerald-50 to-sky-50 flex items-center justify-center">
+                                    <IconWrapper name={categoryData?.icon} className="w-8 h-8 text-emerald-600" />
+                                </div>
+                            )}
+
+                            {/* Category */}
+                            {categoryData && (
+                                <span className="inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 mb-3 pointer-events-none">
+                                    <IconWrapper name={categoryData.icon} className="w-3 h-3 mr-1" />
+                                    {categoryData.name}
+                                </span>
+                            )}
+
+                            {/* Title with Stretched Link */}
+                            <h3 className="font-black text-slate-900 group-hover:text-emerald-800 transition-colors mb-2 line-clamp-2">
+                                <Link
+                                    href={`/blog/${post.slug}`}
+                                    className="hover:underline underline-offset-2 focus-visible:outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-2 focus-visible:after:ring-emerald-600"
+                                >
+                                    {post.title}
+                                </Link>
+                            </h3>
+
+                            {/* Excerpt */}
+                            <p className="text-sm text-slate-700 line-clamp-2 mb-3">
+                                {post.excerpt}
+                            </p>
+
+                            {/* Read More */}
+                            <div className="flex items-center text-emerald-800 text-sm font-bold pointer-events-none">
+                                Weiterlesen
+                                <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
-                        );
-                    })}
-                </div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

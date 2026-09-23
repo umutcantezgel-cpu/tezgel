@@ -3,38 +3,42 @@ import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
 
 export const metadata = {
-    title: 'Erklärung zur Barrierefreiheit | BFSG & EN 301 549 | Bad & Energie GmbH',
-    description: 'Erklärung zur digitalen Barrierefreiheit der Bad & Energie GmbH gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.',
-    alternates: { canonical: 'https://bad-energie.de/barrierefreiheit' }
+    title: 'Erklärung zur Barrierefreiheit (BFSG & EN 301 549)',
+    description: 'Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.',
+    alternates: { canonical: '/barrierefreiheit' }
 };
 
 export default function BarrierefreiheitPage() {
     return (
-        <div className="pt-32 pb-20 bg-slate-50 min-h-screen">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-md border border-slate-200 space-y-8 text-slate-800">
+        <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
+            {/* Ambient Lighting Orbs */}
+            <div className="ambient-glow-mint -top-20 -left-20 opacity-30" />
+            <div className="ambient-glow-sky top-96 -right-20 opacity-25" />
+
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 space-y-8 text-slate-700">
                     <div>
-                        <span className="text-xs uppercase font-extrabold tracking-wider text-[#0C3A87]">
+                        <span className="eyebrow mb-3">
                             Barrierefreiheitsstärkungsgesetz (BFSG) &middot; EN 301 549 / WCAG 2.1 AA
                         </span>
-                        <h1 className="text-3xl font-black text-slate-900 mt-1">Erklärung zur Barrierefreiheit</h1>
+                        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 mt-1">Erklärung zur Barrierefreiheit</h1>
                     </div>
 
-                    <div className="space-y-4 text-xs text-slate-600 leading-relaxed border-b border-slate-100 pb-6">
+                    <div className="space-y-4 text-sm text-slate-700 leading-relaxed border-b border-slate-200 pb-6">
                         <p>
-                            Die <strong>Bad &amp; Energie GmbH</strong> ist bemüht, ihre Website im Einklang mit den nationalen Rechtsvorschriften zur Umsetzung des Barrierefreiheitsstärkungsgesetzes (BFSG) sowie den Vorgaben der europäischen Norm <strong>EN 301 549</strong> (Web Content Accessibility Guidelines WCAG 2.1 auf Konformitätsstufe AA) barrierefrei zugänglich zu machen.
+                            Die <strong className="text-slate-900">{COMPANY_DATA.legalName}</strong> ist bemüht, ihre Website im Einklang mit den nationalen Rechtsvorschriften zur Umsetzung des Barrierefreiheitsstärkungsgesetzes (BFSG) sowie den Vorgaben der europäischen Norm <strong className="text-slate-900">EN 301 549</strong> (Web Content Accessibility Guidelines WCAG 2.1 auf Konformitätsstufe AA) barrierefrei zugänglich zu machen.
                         </p>
                         <p>
-                            Diese Erklärung zur Barrierefreiheit gilt für das Webangebot unter <a href="https://bad-energie.de" className="text-[#0C3A87] underline font-semibold">https://bad-energie.de</a>.
+                            Diese Erklärung zur Barrierefreiheit gilt für das Webangebot unter <a href={COMPANY_DATA.contact.website} className="text-emerald-800 font-semibold underline underline-offset-2 hover:text-emerald-700">{COMPANY_DATA.contact.website}</a>.
                         </p>
                     </div>
 
-                    <div className="space-y-4 text-xs text-slate-600 leading-relaxed border-b border-slate-100 pb-6">
-                        <h2 className="text-base font-bold text-slate-900">Stand der Vereinbarkeit mit den Anforderungen</h2>
+                    <div className="space-y-4 text-sm text-slate-700 leading-relaxed border-b border-slate-200 pb-6">
+                        <h2 className="text-base font-black text-slate-900">Stand der Vereinbarkeit mit den Anforderungen</h2>
                         <p>
                             Dieses Webangebot ist mit den Vorgaben der WCAG 2.1 Stufe AA größtenteils vereinbar. Folgende Maßnahmen wurden implementiert:
                         </p>
-                        <ul className="list-disc list-inside space-y-1.5">
+                        <ul className="list-disc list-inside space-y-1.5 marker:text-emerald-600">
                             <li>Vollständige semantische HTML5-Strukturierung (Überschriftenhierarchien H1–H4, ARIA-Landmarks)</li>
                             <li>Tastaturnavigierbarkeit aller interaktiven Menüs, Schaltflächen, Funnels und Rechner</li>
                             <li>Hohe Farbkontrastverhältnisse (mindestens 4,5:1 für Fließtexte und 3:1 für Bedienelemente)</li>
@@ -43,22 +47,22 @@ export default function BarrierefreiheitPage() {
                         </ul>
                     </div>
 
-                    <div className="space-y-4 text-xs text-slate-600 leading-relaxed border-b border-slate-100 pb-6">
-                        <h2 className="text-base font-bold text-slate-900">Feedback und Kontaktangaben</h2>
+                    <div className="space-y-4 text-sm text-slate-700 leading-relaxed border-b border-slate-200 pb-6">
+                        <h2 className="text-base font-black text-slate-900">Feedback und Kontaktangaben</h2>
                         <p>
-                            Sind Ihnen Mängel beim barrierefreien Zugang zu Inhalten von <a href="https://bad-energie.de" className="text-[#0C3A87] underline">https://bad-energie.de</a> aufgefallen? Oder haben Sie Fragen zur Umsetzung der Barrierefreiheit? Sie können sich jederzeit bei uns melden:
+                            Sind Ihnen Mängel beim barrierefreien Zugang zu Inhalten von <a href={COMPANY_DATA.contact.website} className="text-emerald-800 font-semibold underline underline-offset-2 hover:text-emerald-700">{COMPANY_DATA.contact.website}</a> aufgefallen? Oder haben Sie Fragen zur Umsetzung der Barrierefreiheit? Sie können sich jederzeit bei uns melden:
                         </p>
-                        <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 font-medium text-slate-800">
-                            <p><strong>Bad &amp; Energie GmbH</strong></p>
-                            <p>Ansprechpartner: Sabri Demir</p>
-                            <p>Hans-Sachs-Straße 12, 35576 Wetzlar</p>
-                            <p>Telefon: {COMPANY_DATA.headquarters.phone}</p>
-                            <p>E-Mail: <a href={`mailto:${COMPANY_DATA.headquarters.email}`} className="text-[#0C3A87] underline">{COMPANY_DATA.headquarters.email}</a></p>
+                        <div className="p-5 bg-slate-50 rounded-2xl border border-slate-200 font-medium text-slate-800">
+                            <p><strong className="text-slate-900">{COMPANY_DATA.legalName}</strong></p>
+                            <p>Ansprechpartner: {COMPANY_DATA.owner.fullName}</p>
+                            <p>{COMPANY_DATA.headquarters.street}, {COMPANY_DATA.headquarters.postalCode} {COMPANY_DATA.headquarters.city}</p>
+                            <p>Telefon: <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="text-emerald-800 font-semibold tabular-nums underline underline-offset-2 hover:text-emerald-700">{COMPANY_DATA.contact.phone}</a></p>
+                            <p>E-Mail: <a href={`mailto:${COMPANY_DATA.contact.email}`} className="text-emerald-800 font-semibold underline underline-offset-2 hover:text-emerald-700">{COMPANY_DATA.contact.email}</a></p>
                         </div>
                     </div>
 
-                    <div className="space-y-3 text-xs text-slate-600 leading-relaxed">
-                        <h2 className="text-base font-bold text-slate-900">Durchsetzungsverfahren / Schlichtungsstelle</h2>
+                    <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
+                        <h2 className="text-base font-black text-slate-900">Durchsetzungsverfahren / Schlichtungsstelle</h2>
                         <p>
                             Sollten Sie auf Mitteilungen oder Anfragen zur Barrierefreiheit innerhalb von sechs Wochen keine zufriedenstellende Antwort erhalten, können Sie sich an die Schlichtungsstelle nach dem Behindertengleichstellungsgesetz (BGG) wenden:
                         </p>
@@ -66,9 +70,14 @@ export default function BarrierefreiheitPage() {
                             Schlichtungsstelle nach dem Behindertengleichstellungsgesetz bei dem Beauftragten der Bundesregierung für die Belange von Menschen mit Behinderungen<br />
                             Mauerstraße 53, 10117 Berlin<br />
                             Telefon: 030 18 527-2805<br />
-                            E-Mail: <a href="mailto:info@schlichtungsstelle-bgg.de" className="text-[#0C3A87] underline">info@schlichtungsstelle-bgg.de</a><br />
-                            Website: <a href="https://www.schlichtungsstelle-bgg.de" target="_blank" rel="noopener noreferrer" className="text-[#0C3A87] underline">www.schlichtungsstelle-bgg.de</a>
+                            E-Mail: <a href="mailto:info@schlichtungsstelle-bgg.de" className="text-emerald-800 underline underline-offset-2 hover:text-emerald-700">info@schlichtungsstelle-bgg.de</a><br />
+                            Website: <a href="https://www.schlichtungsstelle-bgg.de" target="_blank" rel="noopener noreferrer" className="text-emerald-800 underline underline-offset-2 hover:text-emerald-700">www.schlichtungsstelle-bgg.de</a>
                         </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-200 flex flex-wrap gap-3 justify-between items-center text-sm font-bold">
+                        <Link href="/" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">&larr; Zurück zur Startseite</Link>
+                        <Link href="/kontakt" className="text-slate-700 hover:text-emerald-800">Kontakt aufnehmen &rarr;</Link>
                     </div>
                 </div>
             </div>

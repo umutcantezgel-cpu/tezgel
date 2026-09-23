@@ -32,16 +32,16 @@ const ReadingProgress = () => {
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-[9999] h-1 bg-gray-200/30 backdrop-blur-sm">
+        <div className="fixed top-0 left-0 right-0 z-[9999] h-1 bg-slate-200/60 backdrop-blur-sm">
             <div
-                className="h-full bg-gradient-to-r from-[#c69c6d] to-[#1a3a52] transition-all duration-150 ease-out"
+                className="h-full bg-gradient-to-r from-emerald-600 to-sky-500 transition-all duration-150 ease-out"
                 style={{ width: `${progress}%` }}
             />
 
             {/* Optional: Show percentage */}
             {progress > 5 && progress < 95 && (
-                <div className="absolute top-2 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full shadow-lg">
-                    <span className="text-xs font-medium text-[#1a3a52]">
+                <div className="absolute top-2 right-4 bg-white/95 border border-slate-200 backdrop-blur-sm px-3 py-1 rounded-full shadow-md">
+                    <span className="text-xs font-bold text-slate-800 tabular-nums">
                         {Math.round(progress)}%
                     </span>
                 </div>

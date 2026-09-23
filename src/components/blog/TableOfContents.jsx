@@ -42,14 +42,14 @@ const TableOfContents = ({ content }) => {
     if (headings.length === 0) return null;
 
     return (
-        <div className="hidden lg:block sticky top-32 ml-8 w-64 p-6 bg-white/80 backdrop-blur-xl rounded-2xl border border-white/50 shadow-lg">
-            <h4 className="flex items-center gap-2 font-bold text-gray-900 mb-4 text-sm uppercase tracking-wider">
-                <List className="w-4 h-4 text-primary-600" />
+        <div>
+            <h2 className="flex items-center gap-2 font-black text-slate-900 mb-4 text-sm uppercase tracking-wider">
+                <List className="w-4 h-4 text-emerald-600" />
                 Inhalt
-            </h4>
-            <nav className="space-y-1 relative">
+            </h2>
+            <nav aria-label="Inhaltsverzeichnis" className="space-y-1 relative">
                 {/* Active Indicator Line matches list height via CSS or direct styling */}
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gray-100 rounded-full" />
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-slate-200 rounded-full" />
 
                 {headings.map(({ id, text, level }) => (
                     <a
@@ -60,9 +60,10 @@ const TableOfContents = ({ content }) => {
                             document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
                             setActiveId(id);
                         }}
+                        aria-current={activeId === id ? 'location' : undefined}
                         className={`block text-sm py-2 pl-4 border-l-2 transition-all duration-300 ${activeId === id
-                            ? 'border-primary-600 text-primary-700 font-medium -ml-[2px]'
-                            : 'border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300 -ml-[2px]'
+                            ? 'border-emerald-600 text-emerald-800 font-bold -ml-[2px]'
+                            : 'border-transparent text-slate-700 hover:text-slate-900 hover:border-slate-300 -ml-[2px]'
                             }`}
                         style={{ marginLeft: level === 3 ? '1rem' : '0' }}
                     >

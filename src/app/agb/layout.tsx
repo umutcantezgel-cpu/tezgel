@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'AGB – Geschäftsbedingungen',
-  description: 'Allgemeine Geschäftsbedingungen der Bad & Energie GmbH für handwerkliche Leistungen in Badsanierung, Heizung und Haustechnik.',
+  description: `Allgemeine Geschäftsbedingungen der ${COMPANY_DATA.legalName} für handwerkliche Werk- und Montageleistungen.`,
   path: '/agb',
 });
 
@@ -17,8 +18,8 @@ const breadcrumbs = [
 const agbSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Allgemeine Geschäftsbedingungen (AGB) | Bad & Energie GmbH',
-    description: 'Geschäftsbedingungen für handwerkliche Dienstleistungen und Werkverträge der Bad & Energie GmbH.',
+    name: `Allgemeine Geschäftsbedingungen (AGB) | ${COMPANY_DATA.legalName}`,
+    description: `Geschäftsbedingungen für handwerkliche Dienstleistungen und Werkverträge der ${COMPANY_DATA.legalName}.`,
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

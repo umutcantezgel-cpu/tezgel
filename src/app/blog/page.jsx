@@ -1,46 +1,64 @@
 "use client";
 import React, { useState } from 'react';
-import { Search, Calendar, User, ArrowRight, Sparkles, Clock, BookOpen } from 'lucide-react';
+import { Search, Calendar, ArrowRight, Clock, BookOpen } from 'lucide-react';
 import { useContent } from '@/contexts/ContentContext';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSidebar from '@/components/blog/BlogSidebar';
-import { IconWrapper } from '@/utils/iconMapper';
 import Link from 'next/link';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { COMPANY_DATA } from '@/config/company';
 
 export default function BlogPage() {
   const { blogCategories = [], blogPosts = [] } = useContent();
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
+  const allPosts = blogPosts || [];
+
+  // Only offer category filters that actually contain articles (generic, data-driven).
+  const visibleCategories = (blogCategories || []).filter(category =>
+    category.id !== 'all' && allPosts.some(post => post.category === category.id)
+  );
+
   // Filter posts based on category and search query
-  const filteredPosts = (blogPosts || []).filter(post => {
+  const filteredPosts = allPosts.filter(post => {
     const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
-  const featuredPost = (blogPosts || []).find(post => post.featured);
+  const featuredPost = allPosts.find(post => post.featured);
 
   return (
     <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
       {/* Ambient Glow */}
-      <div className="ambient-glow-blue -top-20 -left-20" />
-      <div className="ambient-glow-cyan top-96 -right-20" />
+      <div className="ambient-glow-sky -top-20 -left-20" />
+      <div className="ambient-glow-mint top-96 -right-20" />
 
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-14 text-center space-y-4 relative overflow-hidden">
-          <span className="text-xs uppercase font-black tracking-wider text-cyan-300 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 inline-block backdrop-blur-md">
+        <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 text-center space-y-4 relative overflow-hidden">
+          <span className="eyebrow">
+            <BookOpen className="w-3.5 h-3.5" />
             Ratgeber &amp; Meisterwissen
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-            Ratgeber &amp; Neuigkeiten rund um Haustechnik in Wetzlar
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+            Ratgeber rund um <span className="text-ceramic-gradient">Bad &amp; Fliesen</span>
           </h1>
-          <p className="text-sm sm:text-base text-blue-100 max-w-3xl mx-auto leading-relaxed font-normal">
-            Praxisnahe Leitfäden zu Badsanierung, NIBE Wärmepumpen, bis zu 70% KfW-Förderung, Trinkwasserhygiene und Solarenergie von Ihrem Meisterbetrieb Bad &amp; Energie GmbH.
+          <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            Praxisnahe Leitfäden rund um Badsanierung, Fliesen und Abdichtung – von Ihrem
+            Meisterbetrieb {COMPANY_DATA.legalName} aus {COMPANY_DATA.headquarters.city}.
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
+            <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+              Beratung anfragen
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/faq" className="btn-ghost px-7 py-3.5 text-xs">
+              Häufige Fragen
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -55,45 +73,52 @@ export default function BlogPage() {
               <div className="relative">
                 <input
                   type="text"
+                  aria-label="Ratgeber durchsuchen"
                   placeholder="Ratgeber durchsuchen..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-slate-200 bg-white/90 shadow-sm text-xs font-bold focus:ring-2 focus:ring-[#0C3A87]"
+                  className="w-full pl-11 pr-4 py-3.5 rounded-2xl border border-slate-300 bg-white shadow-sm text-sm font-semibold text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600"
                 />
-                <Search className="absolute left-3.5 top-3.5 w-4 h-4 text-slate-400" />
+                <Search className="absolute left-3.5 top-4 w-4 h-4 text-slate-600" aria-hidden="true" />
               </div>
 
-              <div className="overflow-x-auto pb-2 flex gap-2 scrollbar-hide">
-                <button
-                  onClick={() => setActiveCategory('all')}
-                  className={`px-4 py-2 rounded-full whitespace-nowrap text-xs font-black transition-all ${
-                    activeCategory === 'all'
-                      ? 'bg-[#0C3A87] text-white shadow-md'
-                      : 'bg-white text-slate-700 border border-slate-200'
-                  }`}
-                >
-                  Alle Themen
-                </button>
-                {blogCategories.map(category => (
+              {visibleCategories.length > 0 && (
+                <div className="overflow-x-auto pb-2 flex gap-2 scrollbar-hide">
                   <button
-                    key={category.id}
-                    onClick={() => setActiveCategory(category.id)}
+                    type="button"
+                    onClick={() => setActiveCategory('all')}
+                    aria-pressed={activeCategory === 'all'}
                     className={`px-4 py-2 rounded-full whitespace-nowrap text-xs font-black transition-all ${
-                      activeCategory === category.id
-                        ? 'bg-[#0C3A87] text-white shadow-md'
-                        : 'bg-white text-slate-700 border border-slate-200'
+                      activeCategory === 'all'
+                        ? 'bg-emerald-700 text-white shadow-md'
+                        : 'bg-white text-slate-700 border border-slate-300 hover:border-emerald-500/80'
                     }`}
                   >
-                    {category.name}
+                    Alle Themen
                   </button>
-                ))}
-              </div>
+                  {visibleCategories.map(category => (
+                    <button
+                      type="button"
+                      key={category.id}
+                      onClick={() => setActiveCategory(category.id)}
+                      aria-pressed={activeCategory === category.id}
+                      className={`px-4 py-2 rounded-full whitespace-nowrap text-xs font-black transition-all ${
+                        activeCategory === category.id
+                          ? 'bg-emerald-700 text-white shadow-md'
+                          : 'bg-white text-slate-700 border border-slate-300 hover:border-emerald-500/80'
+                      }`}
+                    >
+                      {category.name}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Featured Post Hero Card - Double Bezel */}
             {featuredPost && activeCategory === 'all' && !searchQuery && (
               <div className="mb-10">
-                <div className="glass-bezel-outer shadow-2xl">
+                <div className="glass-bezel-outer">
                   <Link
                     href={`/blog/${featuredPost.slug}`}
                     className="glass-bezel-inner p-6 sm:p-8 block group"
@@ -105,33 +130,36 @@ export default function BlogPage() {
                           alt={featuredPost.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <span className="absolute top-3 left-3 bg-[#E4040E] text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-md">
-                          ⭐ Empfohlener Leitfaden
+                        <span className="absolute top-3 left-3 bg-emerald-700 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-md">
+                          Empfohlener Leitfaden
                         </span>
                       </div>
 
                       <div className="space-y-4">
-                        <div className="flex items-center gap-3 text-xs text-slate-500 font-bold">
-                          <span className="flex items-center gap-1.5 bg-blue-50 text-[#0C3A87] px-3 py-1 rounded-full">
-                            <Calendar className="w-3.5 h-3.5" />
-                            {featuredPost.date}
-                          </span>
+                        <div className="flex items-center gap-3 text-xs text-slate-600 font-bold">
+                          {featuredPost.date && (
+                            <span className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-200 text-emerald-800 px-3 py-1 rounded-full">
+                              <Calendar className="w-3.5 h-3.5" />
+                              {featuredPost.date}
+                            </span>
+                          )}
                           <span className="flex items-center gap-1.5">
-                            <Clock className="w-3.5 h-3.5 text-slate-400" />
-                            {featuredPost.reading_time || '5'} Min. Lesezeit
+                            <Clock className="w-3.5 h-3.5 text-emerald-600" />
+                            {featuredPost.readTime || `${featuredPost.reading_time || '5'} Min.`} Lesezeit
                           </span>
                         </div>
 
-                        <h2 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-[#0C3A87] transition-colors leading-tight">
+                        <h2 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-emerald-800 transition-colors leading-tight">
                           {featuredPost.title}
                         </h2>
 
-                        <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed font-medium">
+                        <p className="text-sm text-slate-700 line-clamp-3 leading-relaxed">
                           {featuredPost.excerpt}
                         </p>
 
-                        <div className="inline-flex items-center text-[#0C3A87] font-black text-xs group-hover:text-[#0E1C76] transition-colors pt-2">
-                          Vollständigen Leitfaden lesen &rarr;
+                        <div className="inline-flex items-center gap-1.5 text-emerald-800 font-black text-xs group-hover:text-emerald-700 transition-colors pt-2">
+                          Vollständigen Leitfaden lesen
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </div>
                     </div>
@@ -152,11 +180,12 @@ export default function BlogPage() {
             {/* Empty State */}
             {filteredPosts.length === 0 && (
               <div className="glass-surface p-12 rounded-[2.5rem] text-center space-y-4">
-                <Search className="w-10 h-10 text-slate-400 mx-auto" />
-                <p className="text-slate-600 font-bold text-sm">Keine Artikel zur Suchanfrage gefunden.</p>
+                <Search className="w-10 h-10 text-emerald-600 mx-auto" aria-hidden="true" />
+                <p className="text-slate-700 font-bold text-sm">Keine Artikel zur Suchanfrage gefunden.</p>
                 <button
+                  type="button"
                   onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
-                  className="px-6 py-2.5 bg-[#0C3A87] text-white font-black text-xs rounded-full shadow-md"
+                  className="btn-primary px-6 py-2.5 text-xs"
                 >
                   Filter zurücksetzen
                 </button>

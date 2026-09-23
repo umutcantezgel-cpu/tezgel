@@ -1,4 +1,5 @@
 import { posts } from '@/config/posts';
+import { COMPANY_DATA } from '@/config/company';
 import { buildGraph, buildArticleNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 
@@ -13,26 +14,26 @@ export async function generateMetadata({ params }) {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
 
-  const pageUrl = `${SITE_URL}/blog/${post.slug}`;
+  const path = `/blog/${post.slug}`;
   const title = post.title;
-  const fullTitle = post.title.length > 38 ? post.title : `${post.title} | Bad & Energie GmbH`;
-  const description = post.excerpt ? (post.excerpt.length > 155 ? `${post.excerpt.slice(0, 152)}...` : post.excerpt) : 'Ratgeber der Bad & Energie GmbH';
+  const fullTitle = post.title.length > 38 ? post.title : `${post.title} | ${COMPANY_DATA.legalName}`;
+  const description = post.excerpt ? (post.excerpt.length > 155 ? `${post.excerpt.slice(0, 152)}...` : post.excerpt) : post.title;
 
   return {
     title: post.title.length > 38 ? { absolute: post.title } : title,
     description,
     alternates: {
-      canonical: pageUrl,
+      canonical: path,
       languages: {
-        'de': pageUrl,
-        'x-default': pageUrl,
+        'de': path,
+        'x-default': path,
       },
     },
     openGraph: {
       title: fullTitle,
       description,
-      url: pageUrl,
-      siteName: 'Bad & Energie GmbH',
+      url: path,
+      siteName: COMPANY_DATA.legalName,
       locale: 'de_DE',
       type: 'article',
       publishedTime: post.created_date || '2025-01-15T08:00:00+01:00',
@@ -67,13 +68,13 @@ export default async function Layout({ children, params }) {
     const breadcrumbs = [
       { name: 'Home', path: '/' },
       { name: 'Blog', path: '/blog' },
-      { name: post.title, path: pageUrl },
+      { name: post.title, path: `/blog/${post.slug}` },
     ];
 
     postSchemaGraph = buildGraph([
       buildWebPageNode({
         url: pageUrl,
-        name: `${post.title} | Bad & Energie GmbH`,
+        name: `${post.title} | ${COMPANY_DATA.legalName}`,
         description: post.excerpt || post.title,
         breadcrumbItems: breadcrumbs,
       }),
@@ -84,7 +85,7 @@ export default async function Layout({ children, params }) {
         url: pageUrl,
         datePublished: post.created_date || '2025-01-15T08:00:00+01:00',
         image: post.image,
-        keywords: [post.category, 'Badsanierung', 'Wärmepumpe', 'Wetzlar', 'Bad & Energie GmbH'],
+        keywords: post.tags && post.tags.length > 0 ? post.tags : [post.category],
       }),
     ]);
   }
