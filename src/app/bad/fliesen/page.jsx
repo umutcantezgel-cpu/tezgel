@@ -1,78 +1,169 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
-    Grid, 
-    CheckCircle2, 
-    Check, 
-    ShieldCheck, 
-    Phone, 
-    Calendar, 
+import {
+    ShieldCheck,
+    Phone,
     ArrowRight,
-    Sparkles 
+    Sparkles,
+    Maximize2,
+    Footprints,
+    Layers,
+    Wrench,
+    Grid,
+    Star,
+    Quote
 } from 'lucide-react';
-import { COMPANY_DATA } from '@/config/company';
+import { COMPANY_DATA, processSteps } from '@/config/company';
+import { REVIEWS } from '@/config/reviews';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
-    title: 'Fliesenverlegung Wetzlar | Meisterhafte Fliesen- & Mosaikarbeiten | Bad & Energie GmbH',
-    description: 'Fachgerechte Fliesenverlegung im Badezimmer: Großformatige Fliesen, Feinsteinzeug, Mosaike und Naturstein in Wetzlar & Lahn-Dill.',
-    alternates: { canonical: 'https://bad-energie.de/bad/fliesen' }
+    title: 'Fliesen im Bad | XXL-Großformate & Mosaik in Aßlar & Wetzlar',
+    description: 'Fachgerechte Fliesenverlegung im Badezimmer: Großformatige Fliesen, Feinsteinzeug, Mosaike und Naturstein in Aßlar, Wetzlar & Lahn-Dill.',
+    alternates: { canonical: '/bad/fliesen' }
 };
 
+const TILE_FEATURES = [
+    { title: 'XXL-Großformatfliesen', desc: 'Fliesen bis 120 x 278 cm für moderne, fugenarme Wandflächen mit minimalem Pflegeaufwand und großzügiger Raumwirkung.', icon: Maximize2 },
+    { title: 'Verbundabdichtung nach DIN 18534', desc: 'Normgerechte Abdichtung im Dusch- und Wannenbereich schützt Mauerwerk und Bausubstanz dauerhaft vor Durchfeuchtung.', icon: ShieldCheck },
+    { title: 'Rutschhemmung R10 / R11', desc: 'Sichere Bodenfliesen im Nassbereich für barrierefreie Bäder nach DIN 18040-2 zur Vermeidung von Ausrutschunfällen.', icon: Footprints },
+    { title: 'Feinsteinzeug & Naturstein', desc: 'Robuste, kratzfeste und pflegeleichte Materialien in edler Beton-, Holz-, Marmor- oder Schieferoptik.', icon: Layers },
+    { title: 'Filigrane Mosaike & Nischen', desc: 'Individuell beleuchtete Shampoonischen, Wandablagen und akzentuierte Duschbereiche mit Mosaikfliesen.', icon: Sparkles },
+    { title: 'Abgestimmte Gewerke', desc: 'Keine Fugenabrisse oder Schnittstellenprobleme: Fliesenarbeiten und Sanitärinstallation werden eng aufeinander abgestimmt.', icon: Wrench }
+];
+
 export default function FliesenPage() {
+    const review = REVIEWS.find((r) => r.id === 'elke-s');
+
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-blue -top-20 -left-20" />
-            <div className="ambient-glow-cyan top-96 -right-20" />
+            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
 
             {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="text-xs uppercase font-black tracking-wider text-cyan-300 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 inline-block backdrop-blur-md">
-                        Fliesen- &amp; Natursteinhandwerk Wetzlar
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fliesen-heading">
+                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow">
+                        <Grid className="w-3.5 h-3.5" />
+                        Fliesen- &amp; Natursteinhandwerk &middot; Aßlar &amp; Wetzlar
                     </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-                        Perfekte Fliesenverlegung für Ihr neues Badezimmer
+                    <h1 id="fliesen-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                        Perfekte Fliesenverlegung{' '}
+                        <span className="text-ceramic-gradient">für Ihr neues Badezimmer</span>
                     </h1>
-                    <p className="text-sm sm:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed font-normal">
-                        Großformatige Fliesen (XXL), fugenarme Wandkonzepte, edler Naturstein und rutschhemmende Mosaike – millimetergenau und fachgerecht abgedichtet nach DIN 18534.
+                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                        Großformatige Fliesen (XXL), fugenarme Wandkonzepte, edler Naturstein und rutschhemmende Mosaike –
+                        millimetergenau verlegt und fachgerecht abgedichtet nach DIN 18534.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link
-                            href="/termin"
-                            className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#E4040E] to-[#B91C1C] hover:shadow-[0_12px_28px_rgba(228,4,14,0.4)] text-white font-black text-xs shadow-md transition-all transform hover:-translate-y-0.5 border border-white/20"
-                        >
-                            Beratung &amp; Bemusterung anfragen &rarr;
+                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
+                            Beratung &amp; Aufmaß anfragen
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
+                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
+                            <Phone className="w-4 h-4 text-emerald-700" />
+                            {COMPANY_DATA.contact.phone}
+                        </a>
                     </div>
                 </div>
-            </div>
+            </section>
 
             {/* Content Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[
-                        { title: 'XXL Großformatfliesen', desc: 'Fliesen bis 120 x 260 cm für moderne, fugenarme Wandflächen mit minimalem Pflegeaufwand und atemberaubender Raumwirkung.' },
-                        { title: 'Verbundabdichtung nach DIN 18534', desc: 'Absolute Wasserdichtigkeit im Dusch- und Wannenbereich schützt das Mauerwerk und die Bausubstanz dauerhaft vor Durchfeuchtung.' },
-                        { title: 'Rutschhemmung R10 / R11', desc: 'Sichere Bodenfliesen im Nassbereich für barrierefreie Bäder nach DIN 18040-2 zur Vermeidung von Ausrutschunfällen.' },
-                        { title: 'Feinsteinzeug & Naturstein', desc: 'Robuste, kratzfeste und pflegeleichte Materialien in edler Beton-, Holz-, Marmor- oder Schieferoptik.' },
-                        { title: 'Filigrane Mosaike & Nischen', desc: 'Individuell beleuchtete Shampoonischen, Wandablagen und akzentuierte Duschbereiche mit Mosaikfliesen.' },
-                        { title: 'Gewerke-Kombination', desc: 'Keine Fugenabrisse oder Schnittstellenprobleme: Fliesenleger und Sanitärinstallateure arbeiten bei uns Hand in Hand.' }
-                    ].map((item, idx) => (
-                        <div key={idx} className="glass-surface p-6 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(12,58,135,0.1)] hover:-translate-y-1 transition-all duration-500">
-                            <CheckCircle2 className="w-6 h-6 text-emerald-600 mb-3" />
-                            <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                            <p className="text-xs text-slate-600 leading-relaxed font-medium">{item.desc}</p>
-                        </div>
-                    ))}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="fliesen-features-heading">
+                <div className="text-center max-w-3xl mx-auto mb-14">
+                    <span className="eyebrow eyebrow-sky mb-4">Fliesen im Bad</span>
+                    <h2 id="fliesen-features-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Formate, Materialien &amp; Details{' '}
+                        <span className="text-ceramic-gradient">in Meisterqualität</span>
+                    </h2>
                 </div>
-            </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {TILE_FEATURES.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <li
+                                key={item.title}
+                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            >
+                                <span className="icon-chip w-12 h-12 mb-5">
+                                    <Icon className="w-6 h-6" />
+                                </span>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </section>
+
+            {/* Process */}
+            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="fliesen-ablauf-heading">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-14">
+                        <span className="eyebrow mb-4">Transparenter Ablauf</span>
+                        <h2 id="fliesen-ablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            In 3 Schritten zum neuen Fliesenbelag
+                        </h2>
+                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                            Von der ersten Begutachtung bis zur sauberen Abnahme durch {COMPANY_DATA.owner.fullName} persönlich.
+                        </p>
+                    </div>
+
+                    <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {processSteps.map((stepItem) => (
+                            <li
+                                key={stepItem.step}
+                                className="group p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                            >
+                                <span className="font-display block text-5xl font-black tabular-nums text-emerald-600/25 group-hover:text-emerald-600/40 transition-colors mb-4" aria-hidden="true">
+                                    {stepItem.step}
+                                </span>
+                                <span className="block text-[11px] font-black uppercase tracking-widest text-emerald-800 mb-1">
+                                    {stepItem.subtitle}
+                                </span>
+                                <h3 className="text-lg font-black text-slate-900 mb-3">{stepItem.title}</h3>
+                                <p className="text-sm text-slate-700 leading-relaxed">{stepItem.description}</p>
+                            </li>
+                        ))}
+                    </ol>
+                </div>
+            </section>
+
+            {/* Review */}
+            {review && (
+                <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-6 relative z-10" aria-label="Kundenstimme">
+                    <figure className="glass-surface rounded-[2rem] p-7 sm:p-10 text-center">
+                        <div className="flex items-center justify-center gap-3 mb-4">
+                            <span className="flex items-center gap-0.5 text-amber-500" aria-label={`${review.rating} von 5 Sternen`}>
+                                {Array.from({ length: review.rating }, (_, i) => (
+                                    <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
+                                ))}
+                            </span>
+                            <Quote className="w-6 h-6 text-emerald-600/40" aria-hidden="true" />
+                        </div>
+                        <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed">„{review.text}“</blockquote>
+                        <figcaption className="mt-4 text-sm">
+                            <span className="font-bold text-slate-900">{review.author}</span>
+                            <span className="text-slate-600"> &middot; {review.source}-Rezension &middot; {review.topic}</span>
+                        </figcaption>
+                        <Link
+                            href="/referenzen"
+                            className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700"
+                        >
+                            Alle Kundenbewertungen ansehen
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </figure>
+                </section>
+            )}
+
+            {/* Funnel */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="anfrage" aria-label="Badanfrage">
                 <BadanfrageFunnel />
-            </div>
+            </section>
         </div>
     );
 }
