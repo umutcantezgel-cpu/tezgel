@@ -1,115 +1,259 @@
-// OFFICIAL COMPANY DATA - DO NOT MODIFY
-// Source: Gemini 3 Pro Official Reference Documentation (v1.0)
+// OFFICIAL COMPANY DATA - FLIESENVERLEGUNG TEZGEL
+// Master Data Hub for Aßlar, Wetzlar, Mittelhessen & Hessen
+
+import { Award, Users, Target, Heart, Clock, Shield, CheckCircle, Sparkles, CheckCircle2, ShieldCheck, Ruler, Droplets } from 'lucide-react';
 
 export const COMPANY_DATA = {
-    // Legal Information (Handelsregister)
-    legalName: "Baris Aydin Batherm Haustechnik",
+    // Legal Information
+    legalName: "Fliesenverlegung Tezgel",
+    tradeName: "Fliesenverlegung Tezgel Aßlar & Wetzlar",
     owner: {
-        firstName: "Baris",
-        lastName: "Aydin",
-        title: "Geschäftsführer & Inhaber"
+        firstName: "Deniz",
+        lastName: "Tezgel",
+        title: "Inhaber & Handwerksmeister",
+        fullName: "Deniz Tezgel"
     },
 
-    // Address & Contact (Betriebsstätte)
+    // Headquarters & Branch Address
+    headquarters: {
+        street: "Hohwardstraße 14",
+        postalCode: "35614",
+        city: "Aßlar",
+        state: "Hessen",
+        country: "Deutschland",
+        fullAddress: "Hohwardstraße 14, 35614 Aßlar, Deutschland",
+        phone: "06441 / 44 83 567",
+        phoneLink: "064414483567",
+        mobile: "0172 / 67 28 504",
+        mobileLink: "01726728504",
+        whatsapp: "491726728504",
+        whatsappLink: "https://wa.me/491726728504",
+        fax: "06441 / 44 83 548",
+        email: "info@tezgel.de",
+        mapsUrl: "https://maps.google.com/?q=Hohwardstra%C3%9Fe+14,+35614+A%C3%9Flar"
+    },
+
+    // Address & Contact (Compatibility Alias)
     address: {
-        street: "Linsenbergstrasse 9",
-        postalCode: "35586",
-        city: "Wetzlar",
+        street: "Hohwardstraße 14",
+        postalCode: "35614",
+        city: "Aßlar",
         state: "Hessen",
         country: "Deutschland",
         countryCode: "DE",
-        fullAddress: "Linsenbergstrasse 9, 35586 Wetzlar, Deutschland"
+        fullAddress: "Hohwardstraße 14, 35614 Aßlar, Deutschland"
     },
 
     // Tax & Registration
     tax: {
-        ustId: "DE450483432", // Umsatzsteuer-Identifikationsnummer
-        registerNumber: null, // Handelsregisternummer nicht vorhanden
-        registerStatus: "Einzelunternehmen oder Gesellschaft ohne HR-Eintrag"
+        ustId: "DE 259249094", // Umsatzsteuer-Identifikationsnummer
+        taxNumber: "FA Wetzlar",
+        court: "Amtsgericht Wetzlar",
+        registerStatus: "Eingetragener Handwerksbetrieb bei der Handwerkskammer Wiesbaden"
     },
 
     // Authority & Compliance
     authority: {
-        name: "Berufsgenossenschaft der Bauwirtschaft",
-        shortName: "BG BAU",
-        type: "Berufsgenossenschaft",
-        responsibility: "Unfallverhütung und Rehabilitation im Bauwesen",
-        certification: "Meister im Handwerk (Sanitär-, Heizungs- und Klimatechnik)"
+        name: "Handwerkskammer Wiesbaden",
+        shortName: "HWK Wiesbaden",
+        type: "Handwerkskammer",
+        responsibility: "Fliesen-, Platten- und Mosaiklegerbetrieb",
+        certification: "Eingetragener Meisterbetrieb der HWK Wiesbaden"
     },
+
+    // Leitmotiv / Mission Statement
+    motto: "Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.",
 
     // Business Information
     business: {
-        industryType: "Sanitär-, Heizungs- und Klimatechnik",
-        businessType: "Handwerksbetrieb (HWK-Zugehörigkeit)",
-        primaryServices: ["Sanitärtechnik", "Heizungstechnik", "Klimatechnik"],
-        serviceArea: ["Wetzlar", "Gießen", "Marburg", "Limburg an der Lahn", "Bad Nauheim", "Friedberg", "Butzbach", "Herborn", "Dillenburg", "Haiger", "Braunfels", "Solms", "Lahnau", "Aßlar", "Hüttenberg", "Linden", "Pohlheim"],
-        establishmentYear: 2025
+        industryType: "Fliesen-, Platten- und Mosaikverlegung, Naturstein & Badsanierung",
+        businessType: "Meisterbetrieb der HWK Wiesbaden",
+        primaryServices: [
+            "Badsanierung & Barrierefreie Walk-In-Duschen",
+            "Fugenarme Großformatverlegung (XXL-Fliesen)",
+            "Wohnbereiche, Neubau, Küchen & Treppenanlagen",
+            "Balkon- & Terrassensanierung auf Stelzlagern",
+            "Untergrundvorbereitung & DIN 18534 Verbundabdichtung",
+            "Naturstein- und Granitverlegung"
+        ],
+        serviceArea: [
+            "Aßlar",
+            "Wetzlar",
+            "Lahn-Dill-Kreis",
+            "Gießen",
+            "Mittelhessen",
+            "Braunfels",
+            "Solms",
+            "Herborn",
+            "Dillenburg",
+            "Haiger",
+            "Ehringshausen",
+            "Hüttenberg",
+            "Lahnau",
+            "Hessen (landesweit für Großprojekte)"
+        ],
+        establishmentYear: 2008
     },
 
     // Contact
     contact: {
-        phone: "+49 172 9475061", // Placeholder as per doc
-        phoneFormatted: "+49 172 9475061", // Format example
-        email: "info@batherm.de",
-        website: "https://www.batherm.de",
-        emergency: {
-            available: false,
-            phone24_7: null,
-            note: "Kontaktieren Sie uns zu den Öffnungszeiten"
-        }
-    },
-
-    // Social Media
-    social: {
-        instagram: "https://www.instagram.com/bathermhaustechnik"
+        phone: "06441 / 44 83 567",
+        phoneFormatted: "06441 / 44 83 567",
+        phoneLink: "064414483567",
+        mobile: "0172 / 67 28 504",
+        mobileFormatted: "0172 / 67 28 504",
+        mobileLink: "01726728504",
+        whatsapp: "0172 / 67 28 504",
+        whatsappNumber: "491726728504",
+        whatsappLink: "https://wa.me/491726728504",
+        fax: "06441 / 44 83 548",
+        email: "info@tezgel.de",
+        website: "https://tezgel.de"
     },
 
     // Business Hours
     hours: {
-        monday: { open: "07:00", close: "17:00", type: "normal" },
-        tuesday: { open: "07:00", close: "17:00", type: "normal" },
-        wednesday: { open: "07:00", close: "17:00", type: "normal" },
-        thursday: { open: "07:00", close: "17:00", type: "normal" },
-        friday: { open: "07:00", close: "17:00", type: "normal" },
-        saturday: { open: "08:00", close: "13:00", type: "limited" },
-        sunday: { type: "closed", note: "Geschlossen" },
-        holidays: "Geschlossen"
-    }
+        monday: { open: "07:30", close: "18:00", type: "normal" },
+        tuesday: { open: "07:30", close: "18:00", type: "normal" },
+        wednesday: { open: "07:30", close: "18:00", type: "normal" },
+        thursday: { open: "07:30", close: "18:00", type: "normal" },
+        friday: { open: "07:30", close: "17:00", type: "normal" },
+        saturday: { open: "08:00", close: "14:00", type: "appointment_only", note: "Nach Vereinbarung / Aufmaßtermine" },
+        sunday: { open: "00:00", close: "00:00", type: "closed" },
+        formattedWeekdays: "Mo - Fr: 07:30 – 18:00 Uhr",
+        formattedSaturday: "Sa: 08:00 – 14:00 Uhr (Vor-Ort-Termine)"
+    },
+
+    // 3 Vertrauens-Säulen
+    trustPillars: [
+        {
+            title: "Zertifizierte Verbundabdichtung (DIN 18534)",
+            description: "Normgerechte Abdichtung im Verbund für Walk-In-Duschen, Nassbereiche und Terrassen. Lückenloser Schutz vor Feuchtigkeitsschäden.",
+            icon: ShieldCheck
+        },
+        {
+            title: "Eingetragener HWK-Wiesbaden Fachbetrieb",
+            description: "Handwerkliche Perfektion, geprüfte Standards und meisterhafte Präzision bei Großformaten, Schnittbildern und Fugenachsen.",
+            icon: Award
+        },
+        {
+            title: "Staubschutz & Sauberkeitsversprechen",
+            description: "Einsatz moderner Staubschutztüren, Luftreiniger und Schutzabdeckungen. Wir hinterlassen Ihr Objekt besenrein.",
+            icon: Sparkles
+        }
+    ],
+
+    // 8-Punkte Qualitätsversprechen
+    qualityPromises: [
+        {
+            title: "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse",
+            description: "Persönliche Begutachtung des Untergrunds, Restfeuchtemessung und fundierte technische Beratung direkt bei Ihnen."
+        },
+        {
+            title: "Millimetergenaue Großformatverlegung (XXL)",
+            description: "Spezialwerkzeuge, moderne Vakuum-Heber und exaktes Nivelliersystem für planebene Oberflächen ohne Überzähne."
+        },
+        {
+            title: "Zertifizierte Verbundabdichtung nach DIN 18534",
+            description: "Lückenlose Abdichtungsbahnen und Dichtmanschetten in Nassräumen für dauerhafte Dichtigkeit und Schimmelschutz."
+        },
+        {
+            title: "Verbindliche Festpreis-Kalkulation",
+            description: "Transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand ohne unvorhergesehene Zusatzkosten."
+        },
+        {
+            title: "Verlässliche Termintreue & Bauzeitenplan",
+            description: "Feste Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt."
+        },
+        {
+            title: "Garantierter Staubschutz bei Sanierungen",
+            description: "Schonendes Arbeiten im bewohnten Bestand mit Staubschutzwänden und Luftreinigern."
+        },
+        {
+            title: "Hochwertige Verlegewerkstoffe & Markenkleber",
+            description: "Ausschließliche Verwendung flexibler C2-TE-S1/S2 Fliesenkleber und verfärbungsfreier Premium-Fugenmassen."
+        },
+        {
+            title: "Persönliche Betreuung durch Inhaber Deniz Tezgel",
+            description: "Ein fester Ansprechpartner von der ersten Skizze bis zur finalen Abnahme Ihres Projekts."
+        }
+    ]
 };
 
-// Marketing / Content Data (Restored for About Page compatibility)
-import { Award, Users, Target, Heart, Clock, Shield } from 'lucide-react';
-
 export const values = [
-    { icon: Shield, title: "Qualität", description: "Höchste Standards in Material und Ausführung." },
-    { icon: Clock, title: "Zuverlässigkeit", description: "Termingerechte und sorgfältige Arbeit." },
-    { icon: Heart, title: "Leidenschaft", description: "Wir lieben, was wir tun." },
-    { icon: Users, title: "Kundenfokus", description: "Ihre Zufriedenheit steht an erster Stelle." },
-    { icon: Target, title: "Präzision", description: "Exaktes Arbeiten bis ins Detail." },
-    { icon: Award, title: "Kompetenz", description: "Ständige Weiterbildung unseres Teams." },
-    { icon: Shield, title: "Sicherheit", description: "Geprüfte Sicherheit bei allen Installationen." },
-    { icon: Users, title: "Teamgeist", description: "Gemeinsam stark für Ihr Projekt." }
+    { icon: Award, title: "HWK Wiesbaden Mitglied", description: "Offiziell eingetragener Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung." },
+    { icon: ShieldCheck, title: "DIN 18534 Abdichtung", description: "Zertifizierte Verbundabdichtung für absolute Dichtigkeit in Nassbereichen." },
+    { icon: Sparkles, title: "Staubschutz-Garantie", description: "Saubere Baustellenführung mit Schutzvliesen und moderner Staubabsaugung." },
+    { icon: Clock, title: "Termintreue & Festpreis", description: "Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge." },
+    { icon: Ruler, title: "Großformat-Präzision", description: "Nivelliersystem für absolut planebene XXL-Fliesen und harmonische Fugenbilder." },
+    { icon: Heart, title: "Kundenbegeisterung", description: "„Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“" }
+];
+
+export const processSteps = [
+    {
+        step: "01",
+        title: "Planung & Aufmaß vor Ort",
+        subtitle: "Begutachtung & Untergrundanalyse",
+        description: "Deniz Tezgel begutachtet Ihre Räumlichkeiten in Aßlar, Wetzlar oder Hessen persönlich. Wir prüfen die Ebenheit, Restfeuchte und statische Tragfähigkeit des Untergrunds."
+    },
+    {
+        step: "02",
+        title: "Material & Fugenbild",
+        subtitle: "Beratung zu Formaten & Rutschhemmung",
+        description: "Auswahl von XXL-Großformaten, Feinsteinzeug oder Naturstein. Detaillierte Planung von Fugenachsen, Edelstahlschienen und normgerechter Rutschhemmung (R10/R11)."
+    },
+    {
+        step: "03",
+        title: "Ausführung & Abnahme",
+        subtitle: "Staubgeschützt, termintreu & DIN-gerecht",
+        description: "Fachgerechte Verlegung mit modernstem Nivelliersystem und normgerechter Abdichtung. Besenreine Endreinigung und gemeinsame Abnahme."
+    }
 ];
 
 export const team = [
-    { name: "Baris Aydin", position: "Geschäftsführer", description: "Meister für Sanitär-, Heizungs- und Klimatechnik." },
-    { name: "Team-Mitglied", position: "Haustechniker", description: "Ihr Experte für zuverlässige Installationen und Wartung." }
+    { name: "Deniz Tezgel", role: "Inhaber & Fachbetriebsleiter", experience: "Langjährige Handwerkskompetenz", image: "" },
+    { name: "Fachverlegeteam", role: "Fliesen-, Platten- & Mosaikleger", experience: "Spezialisiert auf Großformate & Bäder", image: "" }
 ];
 
-// Mein Team - Flexible team section for additional team members
-// Update this array to add/remove team members without changing the page code
-export const meinTeam = [
-    { name: "Mitarbeiter 1", position: "Fachkraft", description: "Spezialist für Sanitärtechnik und Installationen." },
-    { name: "Mitarbeiter 2", position: "Fachkraft", description: "Experte für Heizungstechnik und Wartung." }
+export const historyTimeline = [
+    {
+        year: "2008",
+        title: "Betriebsgründung in Aßlar",
+        description: "Gründung der Fliesenverlegung Tezgel und Eintragung bei der Handwerkskammer Wiesbaden durch Deniz Tezgel."
+    },
+    {
+        year: "2014",
+        title: "Fokus auf fugenarme Großformate",
+        description: "Investition in spezialisierte Schneid- und Vakuumhebetechnik für millimetergenaue XXL-Fliesenformate."
+    },
+    {
+        year: "2019",
+        title: "Zertifizierung Verbundabdichtung DIN 18534",
+        description: "Normgerechte Abdichtungssysteme für bodengleiche Walk-In-Duschen und Feuchträume."
+    },
+    {
+        year: "Heute",
+        title: "Führender Fachbetrieb in Mittelhessen",
+        description: "Fester Partner für private Bauherren und anspruchsvolle Sanierungsobjekte in Aßlar, Wetzlar und ganz Hessen."
+    }
+];
+
+export const partnerBrands = [
+    { name: "Schlüter-Systems", category: "Abdichtungs- & Profilsysteme", partnerStatus: "Zertifizierter Systempartner" },
+    { name: "Ardex", category: "Hochleistungs-Fliesenkleber & Fugen", partnerStatus: "Premium Fachpartner" },
+    { name: "Sopro", category: "Bauchemie & Verbundabdichtung", partnerStatus: "Fachpartner" },
+    { name: "PCI", category: "Verlegewerkstoffe & Estrichsysteme", partnerStatus: "Fachpartner" },
+    { name: "Marazzi", category: "Feinsteinzeug & Großformate", partnerStatus: "Kollektionspartner" },
+    { name: "Villeroy & Boch", category: "Designfliesen & Badkeramik", partnerStatus: "Fachpartner" }
 ];
 
 export const certifications = [
-    { title: "Meisterbrief", image: "/images/certificates/meisterbrief.jpg" },
-    { title: "Zusatz zur TRGI-Seminarbescheinigung", image: "/images/certificates/trgi_seminar.jpg" },
-    { title: "Ausbildereignungsprüfung", image: "/images/certificates/ausbilder_eignung.jpg" },
-    { title: "Zusatz zur TRWI-Seminarbescheinigung", image: "/images/certificates/trwi_seminar.jpg" },
-    { title: "Teilnahmebescheinigung Flüssiggasseminar", image: "/images/certificates/fluessiggas_seminar.jpg" },
-    { title: "Hilti Brandschutzschulung Anwender Professional", image: "/images/certificates/hilti_brandschutz.jpg" }
+    { name: "Eingetragener Meisterbetrieb", issuer: "Handwerkskammer Wiesbaden", year: "2008" },
+    { name: "Fachverleger Verbundabdichtung DIN 18534", issuer: "Bauchemie Verband", year: "2019" },
+    { name: "Zertifizierter Großformat-Verarbeiter (XXL)", issuer: "Fliesen-Fachakademie", year: "2021" }
 ];
 
+export const meinTeam = team;
+
 export default COMPANY_DATA;
+

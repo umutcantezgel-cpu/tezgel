@@ -1,229 +1,121 @@
 /* 
-  Baris Installateur - Design System Tokens 
-  Strategic Design Refinement & Color Architecture - Phase 1
+  Fliesenverlegung Tezgel - Design System Tokens
+  Clean Architectural Ceramic & Marble Light Architecture
+  High-End Craftsmanship, Crystal Clarity & Trust
 */
 
 :root {
-   /* ========================================================================
+  /* ========================================================================
      TIER 1: PRIMITIVE COLORS
-     Foundation palette - DO NOT USE DIRECTLY in components
      ======================================================================== */
 
-   /* ========================================================================
-     TIER 1: PRIMITIVE COLORS
-     Foundation palette - DO NOT USE DIRECTLY in components
+  /* Pure Ceramic & Architectural Stone Grays (Light Canvas) */
+  --color-canvas-white: #FFFFFF;
+  --color-canvas-subtle: #F8FAFC; /* Slate 50 */
+  --color-canvas-elevated: #F1F5F9; /* Slate 100 */
+  --color-canvas-border: #E2E8F0; /* Slate 200 */
+  --color-canvas-border-strong: #CBD5E1; /* Slate 300 */
+
+  /* Deep Slate Charcoal (Typography & Precision Contrast) */
+  --color-slate-950: #020617;
+  --color-slate-900: #0F172A; /* Main Headline Color */
+  --color-slate-800: #1E293B; /* Strong Body / Titles */
+  --color-slate-700: #334155;
+  --color-slate-600: #475569; /* Balanced Reading Text */
+  --color-slate-500: #64748B; /* Secondary / Meta Text */
+  --color-slate-400: #94A3B8;
+
+  /* Brand Primary - Fresh Vivid Smaragd / Mint (Craftsmanship & Signal) */
+  --color-mint-50: #ECFDF5;
+  --color-mint-100: #D1FAE5;
+  --color-mint-200: #A7F3D0;
+  --color-mint-300: #6EE7B7;
+  --color-mint-400: #34D399;
+  --color-mint-500: #10B981;
+  --color-mint-600: #059669; /* Primary Action on Light */
+  --color-mint-700: #047857; /* Hover Action on Light */
+  --color-mint-800: #065F46;
+  --color-mint-900: #064E3B;
+  --color-mint-glow: #00F5A0;
+
+  /* Brand Secondary - Ceramic Sky Blue (Bathrooms, Water & Aesthetics) */
+  --color-sky-50: #F0F9FF;
+  --color-sky-100: #E0F2FE;
+  --color-sky-200: #BAE6FD;
+  --color-sky-300: #7DD3FC;
+  --color-sky-400: #38BDF8;
+  --color-sky-500: #0EA5E9;
+  --color-sky-600: #0284C7; /* Primary Sky on Light */
+  --color-sky-700: #0369A1;
+
+  /* Neutrals */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-900: #0F172A;
+
+  /* ========================================================================
+     TIER 2: SEMANTIC TOKENS (LIGHT ARCHITECTURE)
      ======================================================================== */
 
-   /* Neutral / Charcoal Palette - Deep, Rich, Cinematic */
-   --color-neutral-0: #FFFFFF;
-   --color-neutral-50: #F9F8F6;
-   /* Creme White */
-   --color-neutral-100: #F2F0EB;
-   /* Warm Grey Light */
-   --color-neutral-200: #E6E2DC;
-   /* Warm Grey */
-   --color-neutral-300: #D1CEC7;
-   --color-neutral-400: #A8A49D;
-   --color-neutral-500: #7D7873;
-   --color-neutral-600: #575450;
-   --color-neutral-700: #3D3B38;
-   --color-neutral-800: #262524;
-   --color-neutral-900: #1C1F26;
-   /* Deep Charcoal Main */
-   --color-neutral-950: #0F1115;
-   /* Deepest Charcoal */
+  /* Clean Glass Surfaces (Bright Frosted Finish) */
+  --glass-bg-primary: rgba(255, 255, 255, 0.92);
+  --glass-bg-subtle: rgba(248, 250, 252, 0.82);
+  --glass-bg-elevated: #FFFFFF;
+  --glass-border-light: rgba(226, 232, 240, 0.85);
+  --glass-border-highlight: rgba(16, 185, 129, 0.3);
+  --glass-border-sky: rgba(14, 165, 233, 0.25);
 
-   /* Primary Accent - Copper / Bronze - Luxury, Warmth */
-   --color-copper-50: #FDF9F3;
-   --color-copper-100: #FBEFDF;
-   --color-copper-200: #F5DCC0;
-   --color-copper-300: #EDBF91;
-   --color-copper-400: #E09D5E;
-   --color-copper-500: #C69C6D;
-   /* Main Brand Copper */
-   --color-copper-600: #A67C52;
-   --color-copper-700: #85603F;
-   --color-copper-800: #694C35;
-   --color-copper-900: #553E2E;
+  /* Backgrounds */
+  --color-background-surface-primary: var(--color-canvas-white);
+  --color-background-surface-secondary: var(--color-canvas-subtle);
+  --color-background-elevated: var(--color-canvas-white);
 
-   /* Legacy Blue Support (for backward compatibility if needed, else mapped to Charcoal) */
-   --color-blue-50: var(--color-neutral-50);
-   --color-blue-100: var(--color-neutral-100);
-   --color-blue-200: var(--color-neutral-200);
-   --color-blue-300: var(--color-neutral-300);
-   --color-blue-400: var(--color-neutral-400);
-   --color-blue-500: var(--color-neutral-500);
-   --color-blue-600: var(--color-neutral-600);
-   --color-blue-700: var(--color-neutral-900);
-   --color-blue-800: var(--color-neutral-950);
-   --color-blue-900: #050608;
+  /* Text Colors */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748B;
+  --color-text-mint: #059669;
+  --color-text-sky: #0284C7;
 
-   /* Supporting Accents */
-   --color-warm-gray-500: #8B7E6B;
+  /* Interactive Elements */
+  --color-interactive-primary: #059669;
+  --color-interactive-primary-hover: #047857;
+  --color-interactive-secondary: #0284C7;
 
-   /* Functional Colors */
-   --color-green-100: #DCFCE7;
-   --color-green-500: #22C55E;
-   --color-green-600: #16A34A;
-   --color-green-700: #15803D;
-
-   --color-amber-500: #F59E0B;
-   --color-amber-600: #D97706;
-
-   --color-red-500: #EF4444;
-   --color-red-600: #DC2626;
-   --color-red-700: #B91C1C;
-
-   /* ========================================================================
-     TIER 2: SEMANTIC COLORS
-     Context-aware aliases - USE THESE in components
-     ======================================================================== */
-
-   /* Backgrounds */
-   --color-background-surface-primary: var(--color-neutral-0);
-   /* White */
-   --color-background-surface-secondary: var(--color-neutral-50);
-   /* Creme */
-   --color-background-elevated: var(--color-neutral-0);
-   /* Cards on Creme */
-   --color-background-inverse: var(--color-neutral-900);
-   /* Dark mode / Footer */
-
-   /* Text */
-   --color-text-primary: var(--color-neutral-900);
-   /* Charcoal */
-   --color-text-secondary: var(--color-neutral-600);
-   /* Muted */
-   --color-text-tertiary: var(--color-neutral-400);
-   --color-text-inverse: var(--color-neutral-0);
-   --color-text-interactive: var(--color-copper-500);
-   /* Copper Links */
-
-   /* Borders */
-   --color-border-default: var(--color-neutral-200);
-   --color-border-strong: var(--color-copper-500);
-   --color-border-interactive: var(--color-neutral-900);
-
-   /* Interactive Elements */
-   --color-interactive-primary: var(--color-copper-500);
-   --color-interactive-hover: var(--color-copper-600);
-   --color-interactive-focus: var(--color-copper-500);
-   /* Ring color */
-
-   /* Feedback */
-   --color-feedback-success: var(--color-green-700);
-   --color-feedback-warning: var(--color-amber-600);
-   --color-feedback-error: var(--color-red-600);
-
-   /* ========================================================================
-     TIER 3: COMPONENT SPECIFIC
-     Fine-tuned overrides
-     ======================================================================== */
-
-   /* Buttons */
-   --color-button-primary-bg: var(--color-interactive-primary);
-   --color-button-primary-text: var(--color-neutral-0);
-   --color-button-primary-hover: var(--color-interactive-hover);
-
-   --color-button-secondary-bg: transparent;
-   --color-button-secondary-text: var(--color-neutral-900);
-   --color-button-secondary-border: var(--color-neutral-900);
-   --color-button-secondary-hover: var(--color-neutral-50);
-
-   /* Brand Colors - Primary identity */
-   --color-brand-primary: #1a3a52;
-   /* Marineblau */
-   --color-brand-secondary: var(--color-copper-500);
-   /* Copper */
-   --color-brand-primary-hover: #132a3c;
-
-   /* ========================================================================
+  /* ========================================================================
      SPATIAL SYSTEM
-     8px Grid
      ======================================================================== */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
 
-   --spacing-0: 0px;
-   --spacing-1: 4px;
-   /* Fine adjustments */
-   --spacing-2: 8px;
-   /* Base unit */
-   --spacing-3: 12px;
-   /* 1.5x Base */
-   --spacing-4: 16px;
-   /* 2x Base - Standard internal spacing */
-   --spacing-5: 20px;
-   /* 2.5x Base */
-   --spacing-6: 24px;
-   /* 3x Base */
-   --spacing-8: 32px;
-   /* 4x Base */
-   --spacing-10: 40px;
-   /* 5x Base */
-   --spacing-12: 48px;
-   /* 6x Base */
-   --spacing-16: 64px;
-   /* 8x Base - Major section padding */
-   --spacing-20: 80px;
-   --spacing-24: 96px;
-   --spacing-32: 128px;
-   --spacing-36: 144px;
-   --spacing-40: 160px;
-
-   /* ========================================================================
+  /* ========================================================================
      TYPOGRAPHY SYSTEM
      ======================================================================== */
+  --font-family-display: var(--font-outfit, 'Outfit', var(--font-inter, 'Inter', system-ui, sans-serif));
+  --font-family-body: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
 
-   /* Font Families - Assumes loaded via @font-face or import */
-   --font-family-display: 'Inter', system-ui, -apple-system, sans-serif;
-   --font-family-body: 'Inter', system-ui, -apple-system, sans-serif;
-   --font-family-mono: 'IBM Plex Mono', monospace;
-
-   /* Font Sizes */
-   --font-size-xs: 12px;
-   --font-size-sm: 14px;
-   --font-size-base: 16px;
-   /* Desktop base */
-   --font-size-lg: 18px;
-   --font-size-xl: 20px;
-   --font-size-2xl: 24px;
-   --font-size-3xl: 32px;
-   --font-size-4xl: 36px;
-   --font-size-5xl: 48px;
-
-   /* Line Heights */
-   --line-height-none: 1;
-   --line-height-tight: 1.2;
-   /* Headings */
-   --line-height-snug: 1.3;
-   --line-height-normal: 1.5;
-   --line-height-relaxed: 1.6;
-   /* Body text */
-
-   /* Font Weights */
-   --font-weight-regular: 400;
-   --font-weight-medium: 500;
-   --font-weight-semibold: 600;
-   --font-weight-bold: 700;
-
-   /* ========================================================================
-     EFFECTS & ANIMATION
+  /* ========================================================================
+     EFFECTS & RADIUS
      ======================================================================== */
+  --shadow-glass: 0 12px 36px -8px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  --shadow-subtle: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  --shadow-elevated: 0 20px 45px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.9);
+  --shadow-mint-glow: 0 12px 28px -6px rgba(16, 185, 129, 0.28);
+  --shadow-sky-glow: 0 12px 28px -6px rgba(14, 165, 233, 0.28);
 
-   /* Shadows */
-   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-   --shadow-focus: 0 0 0 2px var(--color-neutral-0), 0 0 0 4px var(--color-interactive-focus);
-
-   /* Radius */
-   --radius-sm: 4px;
-   --radius-base: 8px;
-   --radius-lg: 12px;
-   --radius-full: 9999px;
-
-   /* Transitions */
-   --duration-fast: 150ms;
-   --duration-normal: 250ms;
-   --duration-slow: 350ms;
-   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 8px;
+  --radius-base: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
 }

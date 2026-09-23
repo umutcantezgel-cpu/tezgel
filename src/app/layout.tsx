@@ -1,12 +1,16 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Outfit, IBM_Plex_Mono } from 'next/font/google';
+import '@/styles/tokens.css';
 import './globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';
+import FloatingDock from '@/components/layout/FloatingDock';
 import Footer from '@/components/common/Footer';
 import TrackingScripts from '@/components/common/TrackingScripts';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { AuthProvider } from '@/contexts/AuthContext';
+import { buildRootGraph } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,26 +32,37 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.batherm.de'),
+  metadataBase: new URL('https://tezgel.de'),
   title: {
-    default: 'Sanitär, Heizung & Solar in Wetzlar | Batherm Haustechnik',
-    template: '%s | Batherm Haustechnik'
+    default: 'Fliesenverlegung Tezgel | Meisterbetrieb für exklusive Fliesen & Badsanierung Aßlar & Wetzlar',
+    template: '%s | Fliesenverlegung Tezgel'
   },
-  description: 'Ihr zuverlässiger Partner für Sanitär, Heizung, Solar und Wärmepumpen in Wetzlar und Umgebung. Professionelle Haustechnik von Batherm.',
-  keywords: ['Sanitär', 'Heizung', 'Wärmepumpen', 'Solar', 'Wetzlar', 'Batherm Haustechnik', 'Klempner', 'Haustechnik'],
-  authors: [{ name: 'Batherm Haustechnik' }],
-  creator: 'Batherm Haustechnik',
-  publisher: 'Batherm Haustechnik',
+  description: 'Ihr Meisterbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Feinsteinzeug, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+  keywords: [
+    'Fliesenverlegung Tezgel',
+    'Deniz Tezgel',
+    'Fliesenleger Aßlar',
+    'Fliesenleger Wetzlar',
+    'Badsanierung Aßlar Wetzlar',
+    'Großformatfliesen Hessen',
+    'XXL Fliesen verlegen',
+    'Balkonsanierung Stelzlager',
+    'DIN 18534 Verbundabdichtung',
+    'Fliesen Handwerkskammer Wiesbaden'
+  ],
+  authors: [{ name: 'Deniz Tezgel - Fliesenverlegung Tezgel' }],
+  creator: 'Fliesenverlegung Tezgel',
+  publisher: 'Fliesenverlegung Tezgel',
   alternates: {
-    canonical: 'https://www.batherm.de/',
+    canonical: 'https://tezgel.de/',
   },
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    url: 'https://www.batherm.de/',
-    title: 'Sanitär, Heizung & Solar in Wetzlar | Batherm Haustechnik',
-    description: 'Ihr zuverlässiger Partner für Sanitär, Heizung, Solar und Wärmepumpen in Wetzlar und Umgebung. Professionelle Haustechnik von Batherm.',
-    siteName: 'Batherm Haustechnik',
+    url: 'https://tezgel.de/',
+    title: 'Fliesenverlegung Tezgel | Meisterbetrieb Aßlar & Wetzlar',
+    description: 'Ihr Meisterbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, Badsanierung, Terrassen & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+    siteName: 'Fliesenverlegung Tezgel',
   },
   robots: {
     index: true,
@@ -63,11 +78,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#1C1F26',
+  themeColor: '#060911',
 };
-
-import { buildRootGraph } from '@/lib/schema';
-import JsonLd from '@/components/seo/JsonLd';
 
 export default function RootLayout({
   children,
@@ -77,23 +89,24 @@ export default function RootLayout({
   const rootKnowledgeGraph = buildRootGraph();
 
   return (
-    <html lang="de" className={`${inter.variable} ${outfit.variable} ${plexMono.variable}`}>
+    <html lang="de" className={`${inter.variable} ${outfit.variable} ${plexMono.variable} dark`}>
       <head>
         <meta name="geo.region" content="DE-HE" />
-        <meta name="geo.placename" content="Wetzlar" />
-        <meta name="geo.position" content="50.5567;8.5022" />
-        <meta name="ICBM" content="50.5567, 8.5022" />
+        <meta name="geo.placename" content="Aßlar" />
+        <meta name="geo.position" content="50.5900;8.4600" />
+        <meta name="ICBM" content="50.5900, 8.4600" />
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className="antialiased min-h-screen flex flex-col bg-[#060911] text-white">
         <AuthProvider>
           <ContentProvider>
             <TrackingScripts />
             <HeaderWrapper />
-            <div className="flex-1">
+            <main className="flex-1">
               {children}
-            </div>
+            </main>
             <Footer />
+            <FloatingDock />
             <ClientWidgets />
           </ContentProvider>
         </AuthProvider>

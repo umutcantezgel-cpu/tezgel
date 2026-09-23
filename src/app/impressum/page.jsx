@@ -1,202 +1,105 @@
-"use client";
 import React from 'react';
-import { siteConfig } from '@/config/site';
-import { Phone, Mail, MapPin, Building2, FileText, Shield, Scale, Gavel } from 'lucide-react';
+import Link from 'next/link';
+import { COMPANY_DATA } from '@/config/company';
 
-export default function Impressum() {
-  return (
-    <div className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="relative">
-          <div className="absolute inset-0 bg-white/60 backdrop-blur-xl rounded-3xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)]" />
+export const metadata = {
+    title: 'Impressum | Fliesenverlegung Tezgel Aßlar',
+    description: 'Gesetzliche Anbieterkennzeichnung der Fliesenverlegung Tezgel gemäß § 5 DDG: Inhaber Deniz Tezgel, Hohwardstraße 14, 35614 Aßlar, HWK Wiesbaden, USt-IdNr. DE 259249094.',
+    alternates: { canonical: 'https://tezgel.de/impressum' }
+};
 
-          <div className="relative p-8 md:p-12">
-            <h1 className="text-4xl font-bold text-[#1a3a52] mb-8">Impressum – Gesetzliche Anbieterkennzeichnung</h1>
+export default function ImpressumPage() {
+    return (
+        <div className="pt-36 pb-24 min-h-screen relative overflow-hidden bg-[#060911] text-white">
+            {/* Ambient Lighting Orbs */}
+            <div className="ambient-glow-mint -top-20 -left-20 opacity-30" />
+            <div className="ambient-glow-sky top-96 -right-20 opacity-25" />
 
-            <div className="space-y-8 text-[#2c3e50]">
-              {/* Provider Identity */}
-              <section>
-                <h2 className="text-2xl font-bold text-[#1a3a52] mb-4 flex items-center gap-2">
-                  <Building2 className="w-6 h-6" />
-                  Angaben gemäß § 5 TMG und Art. 3 Abs. 3 DDG
-                </h2>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <p className="leading-relaxed font-semibold text-lg mb-2">
-                    {siteConfig.legalName}
-                  </p>
-                  <p className="leading-relaxed">
-                    Inhaber: {siteConfig.legal.owner}<br />
-                    {siteConfig.contact.address.street}<br />
-                    {siteConfig.contact.address.zipCity}<br />
-                    {siteConfig.contact.address.country}
-                  </p>
-                </div>
-              </section>
-
-              {/* Contact */}
-              <section>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h2 className="text-xl font-semibold text-[#1a3a52] mb-4 flex items-center gap-2">
-                    <Mail className="w-5 h-5" />
-                    Kontakt
-                  </h2>
-                  <div className="space-y-2 text-gray-600">
-                    <p>Telefon: <a href={`tel:${siteConfig.contact.phoneLink}`} className="text-[#1a3a52] hover:underline">{siteConfig.contact.phone}</a></p>
-                    <p>E-Mail: <a href={`mailto:${siteConfig.contact.email}`} className="text-[#1a3a52] hover:underline">{siteConfig.contact.email}</a></p>
-                  </div>
-                </div>
-              </section>
-
-              {/* Tax & Registration */}
-              <section>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h2 className="text-xl font-semibold text-[#1a3a52] mb-4 flex items-center gap-2">
-                    <FileText className="w-5 h-5" />
-                    Registereintrag & Steuern
-                  </h2>
-                  <div className="space-y-4 text-gray-600">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="glass-surface-dark rounded-[2.5rem] p-8 sm:p-12 border border-white/15 shadow-2xl space-y-8 text-slate-300">
+                    
                     <div>
-                      <span className="font-semibold block text-sm mb-1">Umsatzsteuer-ID:</span>
-                      {siteConfig.legal.taxId}
+                        <span className="text-xs uppercase font-black tracking-wider text-emerald-400 bg-emerald-500/10 px-3.5 py-1.5 rounded-full inline-block border border-emerald-500/30 mb-3">
+                            Rechtliche Pflichtangaben nach § 5 Digitale-Dienste-Gesetz (DDG)
+                        </span>
+                        <h1 className="text-3xl sm:text-4xl font-black text-white mt-1">Impressum</h1>
                     </div>
-                    <div>
-                      <span className="font-semibold block text-sm mb-1">Handwerksrolle:</span>
-                      Eingetragen in der Handwerksrolle der Handwerkskammer Wiesbaden
-                      <br />
-                      <span className="font-medium">Registernummer: 120707</span>
+
+                    {/* Company Details */}
+                    <div className="space-y-2 border-b border-white/10 pb-6 text-xs sm:text-sm">
+                        <h2 className="text-base font-black text-white">Angaben gemäß § 5 DDG:</h2>
+                        <p className="font-black text-white text-base">Fliesenverlegung Tezgel</p>
+                        <p>Inhaber: <strong className="text-emerald-400">{COMPANY_DATA.owner.fullName}</strong></p>
+                        <p>{COMPANY_DATA.headquarters.street}</p>
+                        <p>{COMPANY_DATA.headquarters.postalCode} {COMPANY_DATA.headquarters.city}</p>
+                        <p className="text-slate-400">Deutschland / Hessen</p>
                     </div>
-                    <div>
-                      <span className="font-semibold block text-sm mb-1">Registereintrag:</span>
-                      Als Einzelunternehmen nicht im Handelsregister eingetragen.
+
+                    {/* Contact */}
+                    <div className="space-y-2 border-b border-white/10 pb-6 text-xs sm:text-sm">
+                        <h2 className="text-base font-black text-white">Kontakt &amp; Erreichbarkeit:</h2>
+                        <p>Telefon: <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="text-emerald-400 font-bold hover:underline">{COMPANY_DATA.contact.phone}</a></p>
+                        <p>Mobilfunk / WhatsApp: <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline">{COMPANY_DATA.contact.mobile}</a></p>
+                        <p>Telefax: {COMPANY_DATA.headquarters.fax}</p>
+                        <p>E-Mail: <a href={`mailto:${COMPANY_DATA.headquarters.email}`} className="text-emerald-400 font-bold hover:underline">{COMPANY_DATA.headquarters.email}</a></p>
                     </div>
-                  </div>
-                </div>
-              </section>
 
-              {/* § 18 MStV - Responsible for Editorial Content */}
-              <section>
-                <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                  <h2 className="text-xl font-semibold text-[#1a3a52] mb-4 flex items-center gap-2">
-                    <FileText className="w-5 h-5" />
-                    Inhaltlich Verantwortlicher gemäß § 18 Abs. 2 MStV
-                  </h2>
-                  <p className="text-sm text-gray-600 mb-3">
-                    Verantwortlich für redaktionelle Inhalte (insbesondere Blog-Artikel und Ratgeberbeiträge) gemäß § 18 Abs. 2 Medienstaatsvertrag:
-                  </p>
-                  <div className="bg-white p-4 rounded-lg border border-blue-100">
-                    <p className="font-semibold text-[#1a3a52]">{siteConfig.legal.owner}</p>
-                    <p className="text-gray-600">
-                      {siteConfig.legalName}<br />
-                      {siteConfig.contact.address.street}<br />
-                      {siteConfig.contact.address.zipCity}<br />
-                      E-Mail: <a href={`mailto:${siteConfig.contact.email}`} className="text-[#1a3a52] underline">{siteConfig.contact.email}</a>
-                    </p>
-                  </div>
-                </div>
-              </section>
-
-              {/* Supervision */}
-              <section>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h2 className="text-xl font-semibold text-[#1a3a52] mb-4 flex items-center gap-2">
-                    <Scale className="w-5 h-5" />
-                    Aufsichtsbehörde & Kammer
-                  </h2>
-                  <div className="space-y-4 text-gray-600">
-                    <div>
-                      <span className="font-semibold block text-sm mb-1">Zuständige Kammer:</span>
-                      <a href="https://www.hwk-wiesbaden.de" target="_blank" rel="noopener noreferrer" className="text-[#1a3a52] hover:underline flex items-center gap-1">
-                        Handwerkskammer Wiesbaden
-                      </a>
-                      <span className="block text-sm text-gray-500">Bierstadter Straße 45, 65189 Wiesbaden</span>
+                    {/* Tax & Identification */}
+                    <div className="space-y-2 border-b border-white/10 pb-6 text-xs sm:text-sm">
+                        <h2 className="text-base font-black text-white">Umsatzsteuer-Identifikationsnummer:</h2>
+                        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
+                        <p className="font-black text-white text-base text-emerald-400">{COMPANY_DATA.tax.ustId}</p>
                     </div>
-                    <div>
-                      <span className="font-semibold block text-sm mb-1">Berufsbezeichnung:</span>
-                      Installateur- und Heizungsbauermeister (verliehen in Deutschland)
+
+                    {/* Chamber & Professional Regulation */}
+                    <div className="space-y-2 border-b border-white/10 pb-6 text-xs sm:text-sm">
+                        <h2 className="text-base font-black text-white">Zuständige Kammer &amp; Aufsichtsbehörde:</h2>
+                        <p className="font-bold text-white">Handwerkskammer Wiesbaden</p>
+                        <p>Bierstadter Straße 45, 65189 Wiesbaden</p>
+                        <p className="pt-2 text-slate-300">
+                            Berufsbezeichnung: Fliesen-, Platten- und Mosaiklegerbetrieb (verliehen in der Bundesrepublik Deutschland)
+                        </p>
+                        <p>
+                            Berufsrechtliche Regelungen: Handwerksordnung (HwO) (einsehbar unter: <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline font-semibold">www.gesetze-im-internet.de/hwo/</a>)
+                        </p>
                     </div>
-                    <div>
-                      <span className="font-semibold block text-sm mb-1">Berufsrechtliche Regelungen:</span>
-                      <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener noreferrer" className="text-[#1a3a52] hover:underline">Handwerksordnung</a>
+
+                    {/* Dispute Resolution */}
+                    <div className="space-y-3 border-b border-white/10 pb-6 text-xs text-slate-300 leading-relaxed font-normal">
+                        <h2 className="text-base font-black text-white">Verbraucherstreitbeilegung / Universalschlichtungsstelle:</h2>
+                        <p>
+                            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                        </p>
+                        <p>
+                            Plattform der EU-Kommission zur Online-Streitbeilegung: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline font-bold">https://ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                        </p>
                     </div>
-                  </div>
-                </div>
-              </section>
 
-              {/* Insurance */}
-              <section>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <h2 className="text-xl font-semibold text-[#1a3a52] mb-4 flex items-center gap-2">
-                    <Shield className="w-5 h-5" />
-                    Berufshaftpflichtversicherung
-                  </h2>
-                  <div className="text-gray-600 space-y-2">
-                    <p>Es besteht eine Berufshaftpflichtversicherung bei:</p>
-                    <p className="font-medium text-[#1a3a52]">VHV Allgemeine Versicherung AG</p>
-                    <p>VHV-Platz 1<br />30177 Hannover</p>
-                    <p className="text-sm mt-2 text-gray-500">Geltungsbereich: Deutschland</p>
-                  </div>
-                </div>
-              </section>
+                    {/* Disclaimers */}
+                    <div className="space-y-4 text-xs text-slate-400 leading-relaxed font-normal">
+                        <h3 className="font-black text-white text-sm">Haftung für Inhalte</h3>
+                        <p>
+                            Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                        </p>
 
-              {/* Dispute Resolution */}
-              <section>
-                <div className="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                  <h2 className="text-xl font-semibold text-[#1a3a52] mb-4 flex items-center gap-2">
-                    <Gavel className="w-5 h-5" />
-                    Streitschlichtung
-                  </h2>
-                  <div className="text-gray-600 space-y-3">
-                    <p>
-                      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-                      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-[#1a3a52] hover:underline ml-1">
-                        https://ec.europa.eu/consumers/odr/
-                      </a>
-                    </p>
-                    <p className="text-sm">
-                      Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-                    </p>
-                  </div>
-                </div>
-              </section>
+                        <h3 className="font-black text-white text-sm">Haftung für Links</h3>
+                        <p>
+                            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                        </p>
 
-              {/* Copyright */}
-              <section>
-                <h2 className="text-2xl font-bold text-[#1a3a52] mb-4">
-                  Urheberrecht
-                </h2>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <p className="leading-relaxed text-sm">
-                    Alle Inhalte, Bilder, Grafiken und Designs auf dieser Website sind urheberrechtlich geschützt.
-                    Eine unerlaubte Vervielfältigung, Verbreitung oder Änderung dieser Inhalte ist ohne ausdrückliche
-                    schriftliche Genehmigung untersagt.
-                  </p>
-                </div>
-              </section>
+                        <h3 className="font-black text-white text-sm">Urheberrecht</h3>
+                        <p>
+                            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                        </p>
+                    </div>
 
-              {/* Webdesign & Konzeption */}
-              <section>
-                <h2 className="text-2xl font-bold text-[#1a3a52] mb-4">
-                  Webdesign & Konzeption
-                </h2>
-                <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                  <p className="leading-relaxed text-sm">
-                    Technische Konzeption und Realisierung durch: <br />
-                    <a 
-                      href="https://codayweb.de" 
-                      target="_blank" 
-                      rel="dofollow noopener noreferrer"
-                      className="text-[#1a3a52] hover:underline font-semibold"
-                    >
-                      Coday Webdesign Wetzlar
-                    </a>
-                  </p>
-                </div>
-              </section>
+                    <div className="pt-4 border-t border-white/10 flex justify-between items-center text-xs">
+                        <Link href="/" className="text-emerald-400 hover:underline">&larr; Zurück zur Startseite</Link>
+                        <Link href="/datenschutz" className="text-slate-400 hover:text-white">Zur Datenschutzerklärung &rarr;</Link>
+                    </div>
 
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }

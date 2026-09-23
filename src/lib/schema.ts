@@ -1,9 +1,9 @@
 /**
- * Type-safe Schema.org Linked Data & Knowledge Graph builder.
+ * Type-safe Schema.org Linked Data & Knowledge Graph builder for Fliesenverlegung Tezgel.
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
 
-export const SITE_URL = 'https://www.batherm.de';
+export const SITE_URL = 'https://tezgel.de';
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const FOUNDER_ID = `${SITE_URL}/#founder`;
@@ -68,27 +68,27 @@ export function buildOrganizationNode(): SchemaNode {
   return {
     '@type': 'Organization',
     '@id': ORG_ID,
-    name: 'Batherm Haustechnik',
-    legalName: 'Baris Aydin Batherm Haustechnik',
-    alternateName: 'Baris Aydin Batherm Haustechnik',
+    name: 'Fliesenverlegung Tezgel',
+    legalName: 'Fliesenverlegung Tezgel',
+    alternateName: 'Fliesenverlegung Tezgel Aßlar',
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
       '@id': LOGO_ID,
-      url: `${SITE_URL}/images/batherm-logo.png`,
-      contentUrl: `${SITE_URL}/images/batherm-logo.png`,
-      caption: 'Batherm Haustechnik Logo',
+      url: `${SITE_URL}/images/logo.png`,
+      contentUrl: `${SITE_URL}/images/logo.png`,
+      caption: 'Fliesenverlegung Tezgel Logo',
     },
-    image: `${SITE_URL}/images/batherm-logo.png`,
+    image: `${SITE_URL}/images/logo.png`,
     founder: { '@id': FOUNDER_ID },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+49 172 9475061',
+      telephone: '+49 6441 4483567',
       contactType: 'customer service',
       areaServed: 'DE',
-      availableLanguage: ['German', 'Turkish', 'English'],
+      availableLanguage: ['German'],
     },
-    sameAs: ['https://www.instagram.com/bathermhaustechnik'],
+    sameAs: [],
   };
 }
 
@@ -100,19 +100,11 @@ export function buildWebSiteNode(): SchemaNode {
     '@type': 'WebSite',
     '@id': WEBSITE_ID,
     url: SITE_URL,
-    name: 'Batherm Haustechnik',
+    name: 'Fliesenverlegung Tezgel',
     description:
-      'Ihr Meisterbetrieb für Sanitär, Heizung, Wärmepumpen und Klimatechnik in Wetzlar und Mittelhessen.',
+      'Ihr Meisterbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
     publisher: { '@id': ORG_ID },
     inLanguage: 'de-DE',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
@@ -123,30 +115,23 @@ export function buildFounderNode(): SchemaNode {
   return {
     '@type': 'Person',
     '@id': FOUNDER_ID,
-    name: 'Baris Aydin',
-    givenName: 'Baris',
-    familyName: 'Aydin',
-    jobTitle: 'Geschäftsführer & Handwerksmeister für SHK',
+    name: 'Deniz Tezgel',
+    givenName: 'Deniz',
+    familyName: 'Tezgel',
+    jobTitle: 'Inhaber & Handwerksmeister',
     worksFor: { '@id': ORG_ID },
     alumniOf: {
       '@type': 'EducationalOrganization',
       name: 'Handwerkskammer Wiesbaden',
     },
     knowsAbout: [
-      'Sanitärtechnik',
-      'Heizungstechnik',
-      'Wärmepumpen',
-      'Klimatechnik',
-      'Badsanierung',
-      'Hydraulischer Abgleich',
-      'Trinkwasserhygiene',
-    ],
-    hasCredential: [
-      {
-        '@type': 'EducationalOccupationalCredential',
-        credentialCategory: 'Meisterbrief',
-        name: 'Meister im Handwerk – Sanitär-, Heizungs- und Klimatechnik',
-      },
+      'Fliesen-, Platten- und Mosaikverlegung',
+      'Fugenarme XXL-Großformatfliesen',
+      'Badsanierung & Walk-In Duschen',
+      'Verbundabdichtung nach DIN 18534',
+      'Balkon- und Terrassensanierung auf Stelzlagern',
+      'Naturstein- und Granitverlegung',
+      'Estrich- und Untergrundnivellierung',
     ],
   };
 }
@@ -156,70 +141,60 @@ export function buildFounderNode(): SchemaNode {
  */
 export function buildLocalBusinessNode(): SchemaNode {
   return {
-    '@type': ['Plumber', 'HVACBusiness', 'LocalBusiness'],
+    '@type': ['HomeAndConstructionBusiness', 'GeneralContractor', 'LocalBusiness'],
     '@id': LOCAL_BUSINESS_ID,
-    name: 'Batherm Haustechnik',
-    alternateName: 'Baris Aydin Batherm Haustechnik',
-    legalName: 'Baris Aydin Batherm Haustechnik',
+    name: 'Fliesenverlegung Tezgel',
+    alternateName: 'Fliesenverlegung Tezgel Aßlar & Wetzlar',
+    legalName: 'Fliesenverlegung Tezgel',
     description:
-      'Zertifizierter Meisterbetrieb für Sanitär, Heizung, Wärmepumpen und Klimatechnik in Wetzlar und Region. Fachgerechte Installation, Modernisierung und 24h Notdienst.',
+      'Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung, fugenlose Großformate, schlüsselfertige Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
     url: SITE_URL,
-    telephone: '+49 172 9475061',
-    email: 'info@batherm.de',
-    image: `${SITE_URL}/images/batherm-logo.png`,
+    telephone: '+49 6441 4483567',
+    email: 'info@tezgel.de',
     parentOrganization: { '@id': ORG_ID },
     founder: { '@id': FOUNDER_ID },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Linsenbergstrasse 9',
-      addressLocality: 'Wetzlar',
+      streetAddress: 'Hohwardstraße 14',
+      addressLocality: 'Aßlar',
       addressRegion: 'Hessen',
-      postalCode: '35586',
+      postalCode: '35614',
       addressCountry: 'DE',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 50.5567,
-      longitude: 8.5022,
+      latitude: 50.5900,
+      longitude: 8.4600,
     },
-    hasMap: 'https://www.google.com/maps?cid=batherm+haustechnik+wetzlar',
     areaServed: [
-      { '@type': 'City', name: 'Wetzlar', sameAs: 'https://de.wikipedia.org/wiki/Wetzlar' },
-      { '@type': 'City', name: 'Gießen', sameAs: 'https://de.wikipedia.org/wiki/Gie%C3%9Fen' },
-      { '@type': 'City', name: 'Marburg', sameAs: 'https://de.wikipedia.org/wiki/Marburg' },
-      { '@type': 'City', name: 'Limburg an der Lahn' },
-      { '@type': 'City', name: 'Bad Nauheim' },
-      { '@type': 'City', name: 'Friedberg (Hessen)' },
-      { '@type': 'City', name: 'Butzbach' },
-      { '@type': 'City', name: 'Herborn' },
-      { '@type': 'City', name: 'Dillenburg' },
-      { '@type': 'City', name: 'Haiger' },
+      { '@type': 'City', name: 'Aßlar' },
+      { '@type': 'City', name: 'Wetzlar' },
+      { '@type': 'City', name: 'Gießen' },
       { '@type': 'City', name: 'Braunfels' },
       { '@type': 'City', name: 'Solms' },
+      { '@type': 'City', name: 'Herborn' },
+      { '@type': 'City', name: 'Dillenburg' },
       { '@type': 'City', name: 'Lahnau' },
-      { '@type': 'City', name: 'Aßlar' },
       { '@type': 'City', name: 'Hüttenberg' },
-      { '@type': 'City', name: 'Linden' },
-      { '@type': 'City', name: 'Pohlheim' },
+      { '@type': 'AdministrativeArea', name: 'Hessen' },
     ],
-    priceRange: '€€',
+    priceRange: '€€€',
     currenciesAccepted: 'EUR',
-    paymentAccepted: 'Überweisung, EC-Karte, Bar',
+    paymentAccepted: 'Überweisung, Bar',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '07:00',
-        closes: '17:00',
+        opens: '07:30',
+        closes: '18:00',
       },
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Saturday'],
         opens: '08:00',
-        closes: '13:00',
+        closes: '14:00',
       },
     ],
-    sameAs: ['https://www.instagram.com/bathermhaustechnik'],
   };
 }
 
@@ -331,6 +306,7 @@ export function buildServiceNode(options: {
   serviceType: string;
   description: string;
   url: string;
+  areaServed?: string;
   areaServedCity?: string;
   offers?: { name: string; description?: string }[];
   image?: string;
@@ -347,7 +323,7 @@ export function buildServiceNode(options: {
       ? { '@type': 'City', name: options.areaServedCity }
       : {
           '@type': 'AdministrativeArea',
-          name: 'Mittelhessen (Wetzlar, Gießen, Marburg & Lahn-Dill-Kreis)',
+          name: options.areaServed || 'Aßlar, Wetzlar & Hessen',
         },
     image: options.image
       ? (options.image.startsWith('http') ? options.image : `${SITE_URL}${options.image}`)
@@ -370,7 +346,7 @@ export function buildServiceNode(options: {
 }
 
 /**
- * Builds a localized LocalBusiness/ProfessionalService slice for a specific city.
+ * Builds a localized LocalBusiness slice for a specific city.
  */
 export function buildCityLocalBusinessNode(options: {
   cityName: string;
@@ -380,13 +356,13 @@ export function buildCityLocalBusinessNode(options: {
 }): SchemaNode {
   const url = `${SITE_URL}/standorte/${options.citySlug}`;
   return {
-    '@type': ['Plumber', 'HVACBusiness', 'LocalBusiness'],
+    '@type': ['HomeAndConstructionBusiness', 'LocalBusiness'],
     '@id': `${url}#localbusiness`,
-    name: `Batherm Haustechnik – ${options.cityName}`,
+    name: `Fliesenverlegung Tezgel – ${options.cityName}`,
     description: options.description,
     url,
-    telephone: '+49 172 9475061',
-    email: 'info@batherm.de',
+    telephone: '+49 6441 4483567',
+    email: 'info@tezgel.de',
     parentOrganization: { '@id': ORG_ID },
     areaServed: {
       '@type': 'City',
@@ -394,12 +370,61 @@ export function buildCityLocalBusinessNode(options: {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Linsenbergstrasse 9',
-      addressLocality: 'Wetzlar',
+      streetAddress: 'Hohwardstraße 14',
+      addressLocality: 'Aßlar',
       addressRegion: 'Hessen',
-      postalCode: '35586',
+      postalCode: '35614',
       addressCountry: 'DE',
     },
+  };
+}
+
+/**
+ * Builds an FAQPage entity.
+ */
+export function buildFaqPageNode(faqs: FaqItem[], url: string): SchemaNode {
+  return {
+    '@type': 'FAQPage',
+    '@id': `${url}#faq`,
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export const buildFaqNode = buildFaqPageNode;
+
+/**
+ * Builds JobPosting entities.
+ */
+export function buildJobPostingNode(job: JobItem, url: string): SchemaNode {
+  const jobSlug = job.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  return {
+    '@type': 'JobPosting',
+    '@id': `${url}#job-${jobSlug}`,
+    title: job.title,
+    description: job.description,
+    datePosted: job.datePosted || '2024-01-01',
+    validThrough: '2026-12-31T23:59:59+01:00',
+    employmentType: job.employmentType || 'FULL_TIME',
+    hiringOrganization: { '@id': ORG_ID },
+    jobLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Hohwardstraße 14',
+        addressLocality: 'Aßlar',
+        addressRegion: 'Hessen',
+        postalCode: '35614',
+        addressCountry: 'DE',
+      },
+    },
+    directApply: true,
   };
 }
 
@@ -429,7 +454,7 @@ export function buildArticleNode(options: {
     publisher: { '@id': ORG_ID },
     image: options.image
       ? (options.image.startsWith('http') ? options.image : `${SITE_URL}${options.image}`)
-      : `${SITE_URL}/images/batherm-logo.png`,
+      : `${SITE_URL}/images/logo.png`,
     keywords: options.keywords?.join(', '),
   };
 }
@@ -440,9 +465,9 @@ export function buildArticleNode(options: {
 export function buildHowToNode(options: {
   name: string;
   description: string;
-  url: string;
-  steps: HowToStepItem[];
   totalTime?: string;
+  steps: HowToStepItem[];
+  url: string;
 }): SchemaNode {
   return {
     '@type': 'HowTo',
@@ -454,60 +479,10 @@ export function buildHowToNode(options: {
       '@type': 'HowToStep',
       position: index + 1,
       name: step.name,
-      itemListElement: [
-        {
-          '@type': 'HowToDirection',
-          text: step.text,
-        },
-      ],
+      text: step.text,
+      url: step.url || `${options.url}#step-${index + 1}`,
+      image: step.image,
     })),
-  };
-}
-
-/**
- * Builds a FAQPage entity.
- */
-export function buildFaqNode(faqs: FaqItem[], url: string): SchemaNode {
-  return {
-    '@type': 'FAQPage',
-    '@id': `${url}#faq`,
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-}
-
-/**
- * Builds JobPosting entities for career opportunities.
- */
-export function buildJobPostingNode(job: JobItem, url: string): SchemaNode {
-  const jobSlug = job.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-  return {
-    '@type': 'JobPosting',
-    '@id': `${url}#job-${jobSlug}`,
-    title: job.title,
-    description: job.description,
-    datePosted: job.datePosted || '2024-01-01',
-    validThrough: '2026-12-31T23:59:59+01:00',
-    employmentType: job.employmentType || 'FULL_TIME',
-    hiringOrganization: { '@id': ORG_ID },
-    jobLocation: {
-      '@type': 'Place',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Linsenbergstrasse 9',
-        addressLocality: 'Wetzlar',
-        addressRegion: 'Hessen',
-        postalCode: '35586',
-        addressCountry: 'DE',
-      },
-    },
-    directApply: true,
   };
 }
 

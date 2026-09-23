@@ -1,206 +1,138 @@
-// services.config.js - FESTWERT für alle Leistungen
-// Source: Gemini 3 Pro Official Reference Documentation (v1.0)
+// MASTER SERVICES DATA - FLIESENVERLEGUNG TEZGEL
+// Complete trade and service structure
 
 export const SERVICES = [
     {
-        id: "sanitaer",
-        name: "Sanitärtechnik",
-        shortDescription: "Professionelle Installation und Wartung von Sanitäranlagen",
+        id: "bad",
+        name: "Bäder & Wellness",
+        shortDescription: "Barrierefreie Walk-In-Duschen, fugenarme Großformate & schlüsselfertige Badsanierung",
         icon: "Droplets",
         color: "primary",
         priority: 1,
+        link: "/bad",
 
         subcategories: [
-            { id: "baeder", name: "Bäder & Duschen", icon: "shower" },
-            { id: "kuechen", name: "Küchen & Spülen", icon: "sink" },
-            { id: "leitungen", name: "Wasserleitungen", icon: "pipe" },
-            { id: "armaturen", name: "Armaturen & Accessoires", icon: "wrench" }
+            { id: "walk-in-duschen", name: "Bodengleiche Walk-In-Duschen", path: "/bad#walk-in", icon: "bath" },
+            { id: "grossformate-bad", name: "XXL-Großformatfliesen", path: "/bad#grossformate", icon: "layers" },
+            { id: "nischen", name: "Beleuchtete Wandnischen", path: "/bad#nischen", icon: "sparkles" },
+            { id: "trockenbau", name: "Trockenbau & Vorwandelemente", path: "/bad#trockenbau", icon: "grid" }
         ],
 
         features: [
-            "Badezimmer-Renovierung",
-            "Küchenausstattung",
-            "Rohrleitungssanierung",
-            "Notfalldienst",
-            "Garantieleistung"
+            "Barrierefreie Walk-In-Duschen mit millimetergenauem Gefälleschnitt",
+            "Fugenarme XXL-Fliesen (bis 120 x 278 cm) für edle, monolithische Optik",
+            "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- oder Gehrungskanten (Jolly)",
+            "Fachgerechte Verkleidung von Vorwandelementen und Installationsschächten",
+            "Staubarme Sanierung mit Schonvlies und modernen Staubschutzwänden",
+            "Zertifizierte Verbundabdichtung nach DIN 18534 für 100 % Wasserdichtigkeit"
         ],
 
-        detailText: "Umfassende Sanitärlösungen für Wohn- und Gewerberäume. Von der Planung über Installation bis zur Wartung – wir kümmern uns um alle Ihre Bedürfnisse.",
-
-        ctaText: "Kostenlos Angebot anfordern",
-
-        heroImage: "/images/uploads/sanitaer_hero_premium.png",
+        detailText: "Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel verwandelt veraltete Badezimmer in moderne Wellnessräume. Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum – für maximale Ästhetik und spielend leichte Pflege.",
+        ctaText: "Badprojekt anfragen",
+        heroImage: "/images/uploads/01.webp",
         gallery: [
-            "/images/uploads/Gemini_Generated_Image_398sct398sct398s.webp",
-            "/images/uploads/Gemini_Generated_Image_5q5ntx5q5ntx5q5n.webp",
-            "/images/uploads/Gemini_Generated_Image_5vimo25vimo25vim.webp"
+            "/images/uploads/01.webp",
+            "/images/uploads/02.webp",
+            "/images/uploads/03.webp"
         ]
     },
 
     {
-        id: "heizung",
-        name: "Heizungstechnik",
-        shortDescription: "Installation, Wartung und Optimierung von Heizsystemen",
-        icon: "Thermometer",
+        id: "wohnen",
+        name: "Wohnbereiche & Neubau",
+        shortDescription: "Edles Feinsteinzeug, durchgängige Fugenachsen, Großformate & Treppenanlagen",
+        icon: "Sparkles",
         color: "secondary",
         priority: 2,
+        link: "/wohnbereiche",
 
         subcategories: [
-            { id: "gasheizung", name: "Gas-Heizung", icon: "flame" },
-            { id: "waermepumpe", name: "Wärmepumpe", icon: "leaf" },
-            { id: "pelletheizung", name: "Pellet-Heizung", icon: "box" },
-            { id: "solarthermie", name: "Solarthermie", icon: "sun" }
+            { id: "feinsteinzeug", name: "Feinsteinzeug & Fliesen", path: "/wohnbereiche#feinsteinzeug", icon: "grid" },
+            { id: "treppen", name: "Treppenverlegung & Blockstufen", path: "/wohnbereiche#treppen", icon: "layers" },
+            { id: "kuechen-dielen", name: "Küchen, Dielen & Flure", path: "/wohnbereiche#kuechen", icon: "home" },
+            { id: "naturstein", name: "Granit & Natursteinbeläge", path: "/wohnbereiche#naturstein", icon: "box" }
         ],
 
         features: [
-            "Heizungs-Installation",
-            "Energieberatung",
-            "Wartung & Reparatur",
-            "Fördermittel-Beantragung",
-            "Effizienzsteigerung"
+            "Verlegung großformatiger Feinsteinzeugfliesen in Wohnzimmern & Dielen",
+            "Harmonisch durchlaufende Fugenbilder von Küche bis Eingangsbereich",
+            "Ideale Wärmeleitfähigkeit für moderne Fußbodenheizungen",
+            "Passgenaue Treppenverkleidungen mit Gehrungsschnitt oder Edelstahl-Stufenprofilen",
+            "Verlegung von Naturstein (Granit, Marmor, Schiefer) mit Spezialmörteln",
+            "Perfekte Nivellierung ohne Überzähne für spürbar homogene Flächen"
         ],
 
-        detailText: "Moderne Heiztechnik mit höchster Effizienz und Zuverlässigkeit. Wir beraten Sie bei der Wahl der optimalen Heizlösung für Ihre Situation.",
-
-        ctaText: "Kostenlos Beratung buchen",
-
-        heroImage: "/images/uploads/heizung_hero_premium.png",
+        detailText: "Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit. Wir verlegen hochwertige Feinsteinzeug- und Natursteinbeläge in Neubauten und Bestandsimmobilien – mit präzisem Fugenraster und perfekter Anpassung an Türen, Kamine und bodentiefe Fenster.",
+        ctaText: "Wohnbereich anfragen",
+        heroImage: "/images/uploads/04.webp",
         gallery: [
-            "/images/uploads/Gemini_Generated_Image_5xh9j55xh9j55xh9.webp",
-            "/images/uploads/Gemini_Generated_Image_7ty3xz7ty3xz7ty3.webp"
+            "/images/uploads/04.webp",
+            "/images/uploads/05.webp"
         ]
     },
 
     {
-        id: "klima",
-        name: "Klimatechnik",
-        shortDescription: "Lüftungs- und Klimaanlagen für optimales Raumklima",
-        icon: "Wind",
-        color: "info",
+        id: "aussen",
+        name: "Balkon- & Terrassensanierung",
+        shortDescription: "Frostsichere 2-cm-Keramik auf Stelzlagern, normgerechtes Gefälle & Entwässerung",
+        icon: "Sun",
+        color: "warning",
         priority: 3,
+        link: "/balkon-terrasse",
 
         subcategories: [
-            { id: "luftung", name: "Lüftungsanlagen", icon: "fan" },
-            { id: "klimaanlage", name: "Klimaanlagen", icon: "snowflake" },
-            { id: "luftreinigung", name: "Luftreinigung", icon: "air" },
-            { id: "feuchte", name: "Feuchte-Kontrolle", icon: "droplet" }
+            { id: "stelzlager", name: "20 mm Platten auf Stelzlagern", path: "/balkon-terrasse#stelzlager", icon: "layers" },
+            { id: "gefaelle", name: "Gefälleausbildung & Entwässerung", path: "/balkon-terrasse#gefaelle", icon: "arrow-down-right" },
+            { id: "abdichtung-aussen", name: "Witterungsbeständige Abdichtung", path: "/balkon-terrasse#abdichtung", icon: "shield" }
         ],
 
         features: [
-            "Lüftungs-Installation",
-            "Klimatisierung",
-            "Wartung & Service",
-            "Energiesparen",
-            "Luftqualität-Verbesserung"
+            "Verlegung robuster 2-cm-Außenkeramik auf Stelzlagern oder Splittbett",
+            "Frei ablaufendes Regenwasser durch offene Fugen – dauerhafter Frostschutz",
+            "Normgerechte Gefälleherstellung (mind. 1,5 bis 2 %) vom Gebäude weg",
+            "Architektonisch saubere Randabschlüsse mit Tropfprofilen aus pulverbeschichtetem Aluminium",
+            "Keine unschönen Kalkausblühungen oder aufplatzenden Zementfugen mehr",
+            "Sanierung von Bestandsbalkonen inklusive Entkernung des Altbelags"
         ],
 
-        detailText: "Professionelle Klimatechnik für Wohn- und Gewerberäume. Optimales Raumklima für Gesundheit, Komfort und Produktivität.",
-
-        ctaText: "Kostenlos Angebot anfordern",
-
-        heroImage: "/images/uploads/klima_hero_premium.png",
+        detailText: "Balkone und Terrassen sind extremen Wetterbedingungen ausgesetzt. Fliesenverlegung Tezgel setzt auf innovative Trockenverlegung auf Stelzlagern: Wasser fließt sofort ab, Spannungsrisse sind ausgeschlossen und der Belag bleibt über Jahrzehnte formschön und trittsicher.",
+        ctaText: "Terrassensanierung anfragen",
+        heroImage: "/images/uploads/06.webp",
         gallery: [
-            "/images/uploads/Gemini_Generated_Image_7yx3xg7yx3xg7yx3.webp"
+            "/images/uploads/06.webp"
         ]
     },
 
     {
-        id: "wartung",
-        name: "Wartung & Service",
-        shortDescription: "Regelmäßige Pflege für langlebige und effiziente Anlagen",
-        icon: "Wrench", // Needs to be mapped or available
-        color: "success",
-        priority: 6,
-
-        available24_7: false,
-
-        subcategories: [
-            { id: "heizungswartung", name: "Heizungswartung", icon: "flame" },
-            { id: "sanitaercheck", name: "Sanitär-Check", icon: "check" },
-            { id: "filterwechsel", name: "Filterwechsel", icon: "wind" }
-        ],
-
-        features: [
-            "Jährliche Inspektion",
-            "Funktionsprüfung",
-            "Reinigung & Einstellung",
-            "Verschleißteil-Tausch",
-            "Dokumentation"
-        ],
-
-        detailText: "Eine regelmäßige Wartung spart Energie, verhindert Ausfälle und verlängert die Lebensdauer Ihrer Anlage. Wir kümmern uns zuverlässig darum.",
-
-        ctaText: "Wartungstermin vereinbaren",
-
-        // Reuse an image or use a generic one
-        heroImage: "/images/uploads/wartung_hero_premium.png",
-        gallery: []
-    },
-
-    {
-        id: "smart-home",
-        name: "Smart Home",
-        shortDescription: "Intelligente Steuerung für Heizung und Klima",
-        icon: "Smartphone",
+        id: "untergrund",
+        name: "Untergrund & DIN 18534 Abdichtung",
+        shortDescription: "Fachgerechter Abbruch, Estrichausgleich, Risssanierung & zertifizierte Verbundabdichtung",
+        icon: "ShieldCheck",
         color: "primary",
         priority: 4,
+        link: "/untergrund-abdichtung",
 
         subcategories: [
-            { id: "heizungssteuerung", name: "Heizungssteuerung", icon: "thermometer" },
-            { id: "sicherheit", name: "Sicherheitstechnik", icon: "shield" },
-            { id: "beleuchtung", name: "Lichtsteuerung", icon: "sun" },
-            { id: "energie", name: "Energiemanagement", icon: "zap" }
+            { id: "din-18534", name: "Zertifizierte DIN 18534 Abdichtung", path: "/untergrund-abdichtung#din18534", icon: "shield" },
+            { id: "abbruch", name: "Rückbau & Entkernung alter Beläge", path: "/untergrund-abdichtung#abbruch", icon: "hammer" },
+            { id: "ausgleich", name: "Estrich- & Nivellierarbeiten", path: "/untergrund-abdichtung#ausgleich", icon: "ruler" },
+            { id: "rissverharzung", name: "Rissverharzung & Haftbrücken", path: "/untergrund-abdichtung#rissverharzung", icon: "zap" }
         ],
 
         features: [
-            "App-Steuerung",
-            "Energieeinsparung",
-            "Automatisierte Abläufe",
-            "Nachrüstung möglich",
-            "Sprachsteuerung"
+            "Zertifizierte Verbundabdichtung (AIV) nach DIN 18534 in Feucht- und Nassräumen",
+            "Einbindung elastischer Dichtmanschetten an allen Rohrdurchdringungen",
+            "Eckdichtbänder mit Dehnzone zur dauerhaften Entkopplung von Wand und Boden",
+            "Staubarme Entkernung alter Fliesen- und Dickbettbeläge",
+            "Präziser Untergrundausgleich mit faserverstärkten Spachtelmassen",
+            "Restfeuchtemessung (CM-Messung) vor Beginn der Verlegearbeiten"
         ],
 
-        detailText: "Machen Sie Ihr Zuhause intelligent. Steuern Sie Heizung, Licht und mehr bequem per App – für mehr Komfort und Effizienz.",
-
-        ctaText: "Beratung anfordern",
-
-        heroImage: "/images/uploads/Gemini_Generated_Image_w5ni2lw5ni2lw5ni.webp",
+        detailText: "Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir bereiten Böden und Wände kompromisslos fachgerecht vor. Insbesondere die zertifizierte Verbundabdichtung nach DIN 18534 schützt Ihre Bausubstanz verlässlich vor kostspieligen Feuchteschäden.",
+        ctaText: "Abdichtungs-Check anfordern",
+        heroImage: "/images/uploads/07.webp",
         gallery: [
-            "/images/uploads/extra-04.webp",
-            "/images/uploads/smart_home_detail.png"
-        ]
-    },
-
-    {
-        id: "wasseraufbereitung",
-        name: "Wasseraufbereitung",
-        shortDescription: "Sauberes und weiches Wasser für Ihr Zuhause",
-        icon: "Droplet",
-        color: "info",
-        priority: 5,
-
-        subcategories: [
-            { id: "enthertung", name: "Enthärtungsanlagen", icon: "droplets" },
-            { id: "filter", name: "Trinkwasserfilter", icon: "filter" },
-            { id: "dosierung", name: "Dosieranlagen", icon: "activity" }
-        ],
-
-        features: [
-            "Kalkschutz",
-            "Trinkwasserhygiene",
-            "Geräteschutz",
-            "Wartungsservice",
-            "Salzlieferung"
-        ],
-
-        detailText: "Genießen Sie perfektes Trinkwasser und schützen Sie Ihre Installation vor Kalkschäden mit unseren modernen Aufbereitungsanlagen.",
-
-        ctaText: "Angebot anfordern",
-
-        heroImage: "/images/uploads/Gemini_Generated_Image_wnggl0wnggl0wngg.webp",
-        gallery: [
-            "/images/uploads/extra-05.webp",
-            "/images/uploads/water_gallery_premium.png"
+            "/images/uploads/07.webp"
         ]
     }
 ];

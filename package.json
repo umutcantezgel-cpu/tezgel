@@ -1,6 +1,6 @@
 {
-  "name": "batherm-next",
-  "version": "0.1.0",
+  "name": "tezgel",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": ">=18.17.0"

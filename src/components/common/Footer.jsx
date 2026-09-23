@@ -1,202 +1,221 @@
 "use client";
+
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Phone, Mail, MapPin, Clock, Wrench, ChevronRight } from 'lucide-react';
-import { InstagramLogo as Instagram } from '@phosphor-icons/react';
-import { navigationLinks, quickLinks, serviceLinks } from '@/config/navigation';
-import { useContent } from '@/contexts/ContentContext';
-import { CITIES } from '@/config/cities';
+import { 
+    Phone, 
+    Mail, 
+    MapPin, 
+    Clock, 
+    ShieldCheck, 
+    ChevronRight, 
+    Award, 
+    Printer, 
+    Sparkles,
+    MessageSquare
+} from 'lucide-react';
+import { COMPANY_DATA } from '@/config/company';
+import { footerServiceLinks, quickLinks } from '@/config/navigation';
 
-const Footer = () => {
-    const { siteConfig } = useContent();
-    const pathname = usePathname();
-    
-
-    // Anchor Text Variation to prevent Google Penguin issues
-    const anchorTexts = [
-        "Webdesign von Coday",
-        "Ein Projekt von Coday",
-        "Coday Web Agency",
-        "Digitalisiert durch Coday"
-    ];
-    
-    const getStableIndex = (str) => {
-        if (!str) return 0;
-        let sum = 0;
-        for (let i = 0; i < str.length; i++) {
-            sum += str.charCodeAt(i);
-        }
-        return sum % anchorTexts.length;
-    };
-    
-    const anchorText = anchorTexts[getStableIndex(pathname)];
+export default function Footer() {
+    const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-[var(--color-neutral-900)] border-t border-[var(--color-neutral-800)] text-[var(--color-neutral-50)]">
-            <div className="max-w-7xl mx-auto px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)] py-[var(--spacing-12)]">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-[var(--spacing-8)]">
-                    {/* Company Info */}
-                    <div>
-                        <div className="flex items-center gap-[var(--spacing-3)] mb-[var(--spacing-4)]">
-                            <img
-                                src="/images/footer-logo.png"
-                                alt="Batherm Meisterbetrieb Logo"
-                                width={200}
-                                height={64}
-                                loading="lazy"
-                                className="h-16 w-auto object-contain"
-                            />
+        <footer className="bg-slate-900 border-t border-slate-800 text-slate-300 relative overflow-hidden">
+            
+            {/* Ambient Lighting Orbs */}
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-10 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Top Guarantee Banner */}
+            <div className="border-b border-slate-800 bg-slate-950/40 py-5 px-4">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-slate-300">
+                        <div className="flex items-center gap-2">
+                            <Award className="w-4 h-4 text-emerald-400" />
+                            <span className="font-bold text-white">Eingetragener Meisterbetrieb</span> · HWK Wiesbaden
                         </div>
-                        <p className="text-[var(--color-neutral-400)] mb-[var(--spacing-4)] leading-relaxed text-[var(--font-size-sm)]">
-                            {siteConfig.description}
-                        </p>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h3 className="text-[var(--font-size-lg)] font-bold mb-[var(--spacing-4)] text-[var(--color-neutral-0)]">Seiten</h3>
-                        <ul className="space-y-[var(--spacing-2)]">
-                            {navigationLinks.filter(link => link.path !== '#').map((link) => (
-                                <li key={link.name}>
-                                    <Link
-                                        href={link.path}
-                                        className="flex items-center text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors group text-[var(--font-size-sm)]"
-                                    >
-                                        <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Service Links */}
-                    <div>
-                        <h3 className="text-[var(--font-size-lg)] font-bold mb-[var(--spacing-4)] text-[var(--color-neutral-0)]">Service</h3>
-                        <ul className="space-y-[var(--spacing-2)]">
-                            {serviceLinks.map((link) => (
-                                <li key={link.name}>
-                                    <Link
-                                        href={link.path}
-                                        className="flex items-center text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors group text-[var(--font-size-sm)]"
-                                    >
-                                        <ChevronRight className="w-4 h-4 mr-1 group-hover:translate-x-1 transition-transform" />
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div>
-                        <h3 className="text-[var(--font-size-lg)] font-bold mb-[var(--spacing-4)] text-[var(--color-neutral-0)]">Kontakt</h3>
-                        <ul className="space-y-[var(--spacing-3)]">
-                            <li className="flex items-start gap-[var(--spacing-2)]">
-                                <Phone className="w-5 h-5 mt-0.5 text-[var(--color-blue-400)]" />
-                                <div>
-                                    <a
-                                        href={`tel:${siteConfig.contact.phoneLink}`}
-                                        className="text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors block text-[var(--font-size-sm)]"
-                                    >
-                                        {siteConfig.contact.phone}
-                                    </a>
-                                    <p className="text-xs text-[var(--color-neutral-500)] mt-1">{siteConfig.contact.hours.weekdays}</p>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-[var(--spacing-2)]">
-                                <Mail className="w-5 h-5 mt-0.5 text-[var(--color-blue-400)]" />
-                                <a
-                                    href={`mailto:${siteConfig.contact.email}`}
-                                    className="text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors text-[var(--font-size-sm)]"
-                                >
-                                    {siteConfig.contact.email}
-                                </a>
-                            </li>
-                            <li className="flex items-start gap-[var(--spacing-2)]">
-                                <MapPin className="w-5 h-5 mt-0.5 text-[var(--color-blue-400)]" />
-                                <span className="text-[var(--color-neutral-400)] text-[var(--font-size-sm)]">
-                                    {siteConfig.contact.address.street}<br />
-                                    {siteConfig.contact.address.zipCity}
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Service Area */}
-                    <div>
-                        <h3 className="text-[var(--font-size-lg)] font-bold mb-[var(--spacing-4)] text-[var(--color-neutral-0)]">Standorte</h3>
-                        <p className="text-[var(--color-neutral-400)] text-[var(--font-size-sm)] mb-[var(--spacing-3)]">
-                            Ihr Meisterbetrieb in der Region:
-                        </p>
-                        <div className="grid grid-cols-2 gap-[var(--spacing-2)]">
-                            {CITIES.map((city) => (
-                                <Link
-                                    key={city.slug}
-                                    href={`/standorte/${city.slug}`}
-                                    className="text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] text-xs flex items-center transition-colors"
-                                >
-                                    <div className="w-1.5 h-1.5 bg-[var(--color-blue-500)] rounded-full mr-2"></div>
-                                    {city.name}
-                                </Link>
-                            ))}
+                        <div className="flex items-center gap-2">
+                            <ShieldCheck className="w-4 h-4 text-sky-400" />
+                            <span className="font-bold text-white">DIN 18534</span> Verbundabdichtung
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Sparkles className="w-4 h-4 text-emerald-400" />
+                            <span>Garantierter Staubschutz bei Sanierungen</span>
                         </div>
                     </div>
-                </div>
-
-                {/* Bottom Bar */}
-                <div className="border-t border-[var(--color-neutral-800)] mt-[var(--spacing-8)] pt-[var(--spacing-8)]">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-[var(--spacing-4)]">
-                        <div className="flex flex-col md:flex-row items-center gap-[var(--spacing-4)]">
-                            <a
-                                href="https://www.instagram.com/bathermhaustechnik"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center text-[var(--color-neutral-400)] hover:text-[var(--color-blue-400)] transition-colors"
-                                aria-label="Instagram Profil von Batherm Haustechnik"
-                            >
-                                <Instagram className="w-5 h-5" />
-                            </a>
-                            <div className="flex flex-col sm:flex-row items-center gap-2 text-[var(--color-neutral-500)] text-xs text-center md:text-left">
-                                <span>© {new Date().getFullYear()} Batherm Haustechnik. Alle Rechte vorbehalten.</span>
-                                <span className="hidden sm:inline">|</span>
-                                <span className="text-[var(--color-neutral-600)] transition-colors">
-                                    <span className="sr-only">Diese Handwerker Webseite wurde konzipiert und technisch realisiert durch die Coday Web Agency, Experten für Webdesign und GEO in Hessen.</span>
-                                    <a 
-                                        href="https://www.codayweb.de/" 
-                                        target="_blank" 
-                                        rel="dofollow noopener noreferrer"
-                                        title="Zur Coday Web Agency - Premium Webdesign"
-                                        className="hover:text-[var(--color-neutral-400)] transition-colors"
-                                    >
-                                        {anchorText}
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="flex gap-[var(--spacing-4)]">
-                            {quickLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.path}
-                                    className="text-[var(--color-neutral-500)] hover:text-[var(--color-blue-400)] text-xs transition-colors"
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
-                            <Link
-                                href="/login"
-                                className="text-[var(--color-neutral-600)] hover:text-[var(--color-neutral-400)] text-xs transition-colors"
-                            >
-                                Mitarbeiter
-                            </Link>
-                        </div>
+                    <div>
+                        <Link 
+                            href="/kontakt" 
+                            className="inline-flex items-center gap-2 text-xs font-black text-emerald-400 hover:text-white transition-colors bg-slate-800 hover:bg-slate-700 px-4 py-1.5 rounded-full border border-slate-700"
+                        >
+                            <span>Kostenfreies Vor-Ort-Aufmaß anfordern</span>
+                            <ChevronRight className="w-3.5 h-3.5" />
+                        </Link>
                     </div>
                 </div>
             </div>
+
+            {/* Main 4-Column Footer Content */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    
+                    {/* Col 1: Company Profile & Narrative */}
+                    <div className="space-y-4">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 p-0.5 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                                <div className="w-full h-full rounded-[14px] bg-[#060911] flex items-center justify-center text-emerald-400 font-black text-sm border border-white/20">
+                                    FT
+                                </div>
+                            </div>
+                            <div>
+                                <span className="text-base font-black text-white block leading-tight">
+                                    Fliesenverlegung Tezgel
+                                </span>
+                                <span className="text-[11px] text-emerald-400 font-bold tracking-wider uppercase">
+                                    Inh. Deniz Tezgel
+                                </span>
+                            </div>
+                        </div>
+
+                        <p className="text-xs text-slate-400 leading-relaxed">
+                            Ihr zuverlässiger Fachbetrieb für fugenarme Großformate, luxuriöse Badsanierungen, witterungsbeständige Außenbeläge und normgerechte Abdichtung in Aßlar, Wetzlar und ganz Hessen.
+                        </p>
+
+                        <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 text-xs italic text-slate-300">
+                            „{COMPANY_DATA.motto}“
+                        </div>
+
+                        <div className="pt-2">
+                            <span className="text-[11px] font-bold text-slate-500 block uppercase tracking-wider mb-1">
+                                Aufsichtsbehörde:
+                            </span>
+                            <p className="text-xs text-slate-300">
+                                Handwerkskammer Wiesbaden
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Col 2: Services & Trades */}
+                    <div>
+                        <h4 className="text-xs font-black uppercase tracking-wider text-white mb-4 border-l-2 border-emerald-400 pl-2">
+                            Fachgewerke &amp; Leistungen
+                        </h4>
+                        <ul className="space-y-2 text-xs">
+                            {footerServiceLinks.map((item, i) => (
+                                <li key={i}>
+                                    <Link 
+                                        href={item.path} 
+                                        className="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1.5"
+                                    >
+                                        <ChevronRight className="w-3 h-3 text-emerald-400 shrink-0" />
+                                        <span>{item.name}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Col 3: Direct Contact */}
+                    <div className="space-y-4">
+                        <h4 className="text-xs font-black uppercase tracking-wider text-white mb-4 border-l-2 border-emerald-400 pl-2">
+                            Kontakt &amp; Standort
+                        </h4>
+                        
+                        <div className="space-y-3 text-xs">
+                            <div className="flex items-start gap-2.5 text-slate-300">
+                                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                <div>
+                                    <span className="font-bold text-white block">Fliesenverlegung Tezgel</span>
+                                    <span className="text-slate-400">{COMPANY_DATA.headquarters.street}</span>
+                                    <span className="text-slate-400 block">{COMPANY_DATA.headquarters.postalCode} {COMPANY_DATA.headquarters.city}</span>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-2.5 text-slate-300">
+                                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="hover:text-white transition-colors">
+                                    {COMPANY_DATA.contact.phone}
+                                </a>
+                            </div>
+
+                            <div className="flex items-center gap-2.5 text-slate-300">
+                                <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
+                                <a 
+                                    href={COMPANY_DATA.contact.whatsappLink} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="hover:text-[#25D366] transition-colors"
+                                >
+                                    WhatsApp: {COMPANY_DATA.contact.mobile}
+                                </a>
+                            </div>
+
+                            <div className="flex items-center gap-2.5 text-slate-300">
+                                <Printer className="w-4 h-4 text-slate-500 shrink-0" />
+                                <span className="text-slate-400">{COMPANY_DATA.headquarters.fax}</span>
+                            </div>
+
+                            <div className="flex items-center gap-2.5 text-slate-300">
+                                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                                <a href={`mailto:${COMPANY_DATA.headquarters.email}`} className="hover:text-white transition-colors">
+                                    {COMPANY_DATA.headquarters.email}
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="pt-2">
+                            <span className="text-[11px] font-bold text-slate-500 block uppercase tracking-wider mb-1">
+                                Einsatzgebiet:
+                            </span>
+                            <p className="text-xs text-slate-400">
+                                Aßlar, Wetzlar, Mittelhessen und das gesamte Bundesland Hessen.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Col 4: Quick Links & Legal */}
+                    <div>
+                        <h4 className="text-xs font-black uppercase tracking-wider text-white mb-4 border-l-2 border-emerald-400 pl-2">
+                            Rechtliches &amp; Navigation
+                        </h4>
+                        <ul className="space-y-2 text-xs mb-6">
+                            {quickLinks.map((item, i) => (
+                                <li key={i}>
+                                    <Link 
+                                        href={item.path} 
+                                        className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5"
+                                    >
+                                        <ChevronRight className="w-3 h-3 text-slate-600 shrink-0" />
+                                        <span>{item.name}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 text-[11px] text-slate-400">
+                            <span className="font-bold text-white block mb-0.5">USt-IdNr.:</span>
+                            <span>{COMPANY_DATA.tax.ustId}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {/* Bottom Copyright Bar */}
+            <div className="border-t border-white/10 bg-[#04060b] py-6 px-4 text-xs text-slate-500">
+                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p>
+                        &copy; {currentYear} Fliesenverlegung Tezgel · Inh. Deniz Tezgel. Alle Rechte vorbehalten.
+                    </p>
+                    <div className="flex items-center gap-4 text-slate-400">
+                        <Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link>
+                        <span>&middot;</span>
+                        <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
+                    </div>
+                </div>
+            </div>
+
         </footer>
     );
-};
-
-export default Footer;
+}

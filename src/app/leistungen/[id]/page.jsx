@@ -1,327 +1,237 @@
 "use client";
+
 import React, { useMemo } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle2, ArrowRight, Phone, Mail, Users, Award, Clock, Shield } from 'lucide-react';
-import { useContent } from '@/contexts/ContentContext';
-import { Button } from '@/components/ui/button';
-import PageWrapper from '@/components/common/PageWrapper';
-import SEO from '@/components/SEO';
-import { createPageUrl } from '@/utils';
-import SERVICES from '@/config/services';
-import { IconWrapper } from '@/utils/iconMapper';
-import { COMPANY_DATA } from '@/config/company';
-import CalendlySection from '@/components/common/CalendlySection';
+import { 
+  ArrowLeft, 
+  CheckCircle2, 
+  ArrowRight, 
+  Phone, 
+  Mail, 
+  Award, 
+  Clock, 
+  ShieldCheck, 
+  Sparkles, 
+  MessageSquare,
+  Droplets,
+  Sun,
+  Layers,
+  ChevronRight
+} from 'lucide-react';
+import { SERVICES } from '@/config/services';
+import { COMPANY_DATA, processSteps } from '@/config/company';
+import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 
-// Default process steps used if service doesn't have custom ones
-const defaultProcessSteps = [
-    { step: 1, title: 'Beratung', description: 'Wir besprechen Ihre Wünsche und Anforderungen in einem persönlichen Gespräch.' },
-    { step: 2, title: 'Planung', description: 'Wir erstellen ein maßgeschneidertes Konzept mit transparenter Kostenaufstellung.' },
-    { step: 3, title: 'Umsetzung', description: 'Unsere Fachleute führen die Arbeiten termingerecht und sauber aus.' },
-    { step: 4, title: 'Übergabe', description: 'Wir übergeben Ihnen das fertige Projekt und erklären alle Funktionen.' }
-];
+export default function ServiceDetailPage() {
+  const { id } = useParams();
 
-// Default benefits
-const defaultBenefits = [
-    { icon: Award, title: 'Meisterbetrieb', description: 'Höchste Qualität durch zertifizierte Handwerker.' },
-    { icon: Clock, title: 'Termintreue', description: 'Pünktliche Fertigstellung zum vereinbarten Termin.' },
-    { icon: Shield, title: 'Garantie', description: 'Garantie auf Material und Arbeit für Ihre Sicherheit.' },
-    { icon: Users, title: 'Persönlicher Ansprechpartner', description: 'Ein Ansprechpartner von Anfang bis Ende.' }
-];
+  const service = useMemo(() => {
+    return SERVICES.find(s => s.id === id) || SERVICES[0];
+  }, [id]);
 
-const ServiceDetail = () => {
-    const { id } = useParams();
-    const router = useRouter();
-    const content = useContent();
+  const relatedServices = useMemo(() => {
+    return SERVICES.filter(s => s.id !== service.id);
+  }, [service.id]);
 
-    const servicesData = content?.services || SERVICES;
-    const serviceList = Array.isArray(servicesData) ? servicesData : (servicesData?.services || []);
-    const service = useMemo(() => serviceList.find(s => s.id === id), [serviceList, id]);
+  return (
+    <div className="pt-36 pb-24 min-h-screen relative overflow-hidden bg-[#060911] text-white">
+      
+      {/* Ambient Lighting Orbs */}
+      <div className="ambient-glow-mint -top-20 -left-20 opacity-35" />
+      <div className="ambient-glow-sky top-96 -right-20 opacity-25" />
 
-    // Get other services for "Related Services" section
-    const relatedServices = useMemo(() =>
-        serviceList.filter(s => s.id !== id).slice(0, 3),
-        [serviceList, id]
-    );
+      {/* Hero Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
+        <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-12 space-y-6 border border-white/15 shadow-2xl relative overflow-hidden">
+          
+          <Link href="/leistungen" className="inline-flex items-center text-xs font-bold text-slate-400 hover:text-white transition-colors group">
+            <ArrowLeft className="w-4 h-4 mr-1.5 group-hover:-translate-x-1 transition-transform" />
+            Zurück zur Leistungsübersicht
+          </Link>
 
-    if (!service) {
-        return (
-            <PageWrapper>
-                <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-[var(--spacing-4)]">
-                    <h1 className="text-3xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)]">Service nicht gefunden</h1>
-                    <Link href={createPageUrl('Services')}>
-                        <Button>Zurück zu den Leistungen</Button>
-                    </Link>
+          <div className="flex flex-col md:flex-row gap-8 items-start justify-between">
+            <div className="flex-1 space-y-4">
+              <span className="text-xs uppercase font-black tracking-wider text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/30 inline-block">
+                Meister-Fachgewerk &middot; Fliesenverlegung Tezgel
+              </span>
+
+              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+                {service.name}
+              </h1>
+
+              <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed font-normal">
+                {service.detailText}
+              </p>
+            </div>
+
+            <div className="shrink-0 flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto">
+              <a
+                href="#express-anfrage"
+                className="glass-button-primary text-center"
+              >
+                <span>Aufmaß anfordern</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href={COMPANY_DATA.contact.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass-button-whatsapp text-center"
+              >
+                <MessageSquare className="w-4 h-4 fill-current" />
+                <span>WhatsApp Direkt</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Subcategories Bento */}
+      {service.subcategories && service.subcategories.length > 0 && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="text-2xl font-black text-white">
+              Spezialisierungen in {service.name}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {service.subcategories.map((sub, idx) => (
+              <div 
+                key={idx} 
+                className="glass-surface p-6 rounded-3xl text-center hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 border border-white/10"
+              >
+                <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-emerald-500/30 font-bold">
+                  {service.id === 'bad' && <Droplets className="w-5 h-5" />}
+                  {service.id === 'wohnen' && <Sparkles className="w-5 h-5" />}
+                  {service.id === 'aussen' && <Sun className="w-5 h-5" />}
+                  {service.id === 'untergrund' && <ShieldCheck className="w-5 h-5" />}
                 </div>
-            </PageWrapper>
-        );
-    }
+                <h3 className="font-bold text-sm text-white">{sub.name}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-    const processSteps = service.processSteps || defaultProcessSteps;
-    const benefits = service.benefits || defaultBenefits;
+      {/* Detail Content & Sticky Sidebar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+          
+          {/* Main Description & Features */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="glass-surface p-8 sm:p-10 rounded-[2.5rem] space-y-6 border border-white/15">
+              <h2 className="text-2xl font-black text-white">Fachkompetenz &amp; Ausführungsdetails</h2>
+              
+              <p className="text-sm text-slate-300 leading-relaxed">
+                {service.shortDescription}
+              </p>
 
-    return (
-        <PageWrapper>
-            <SEO
-                title={`${service.name} | Batherm Haustechnik Wetzlar`}
-                description={service.shortDescription}
-                keywords={`${service.name}, ${service.subcategories?.map(s => s.name).join(', ')}, Wetzlar`}
-            />
+              <div className="space-y-3 pt-2">
+                <span className="text-xs font-black uppercase tracking-wider text-emerald-400 block">
+                  Ihre handwerklichen Vorteile:
+                </span>
+                {service.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-slate-200">{feature}</span>
+                  </div>
+                ))}
+              </div>
 
-            {/* Hero Section with Background Image */}
-            <section
-                className="relative py-[var(--spacing-24)] px-[var(--spacing-4)] sm:px-[var(--spacing-6)] lg:px-[var(--spacing-8)]"
-                style={{
-                    backgroundImage: service.heroImage ? `url(${service.heroImage})` : undefined,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                }}
+              <div className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 text-xs text-slate-300 leading-relaxed">
+                <h3 className="font-black text-white text-sm mb-1">
+                  Warum Meisterqualität von Fliesenverlegung Tezgel?
+                </h3>
+                Mit modernster Schneid- und Nivelliertechnik garantieren wir planebene Oberflächen ohne Kantenversatz. Bei Sanierungen im bewohnten Bestand setzen wir Schonvliese und Staubabsaugungen ein – für ein staubarmes und stressfreies Ergebnis.
+              </div>
+            </div>
+
+            {/* Other Services */}
+            <div className="glass-surface p-8 rounded-3xl border border-white/15">
+              <h3 className="text-lg font-black text-white mb-4">
+                Weitere Gewerke von Fliesenverlegung Tezgel:
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {relatedServices.map((rel) => (
+                  <Link
+                    key={rel.id}
+                    href={`/leistungen/${rel.id}`}
+                    className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-emerald-400/50 transition-all group block"
+                  >
+                    <h4 className="font-bold text-xs text-white group-hover:text-emerald-400 transition-colors">
+                      {rel.name}
+                    </h4>
+                    <span className="text-[10px] text-slate-400 block mt-1">Details ansehen &rarr;</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Sticky Sidebar */}
+          <div className="glass-surface-dark p-8 rounded-[2.5rem] border border-white/20 shadow-2xl sticky top-28 space-y-6">
+            <span className="text-[10px] font-black uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 inline-block">
+              Direktkontakt
+            </span>
+
+            <h3 className="text-xl font-black text-white">
+              Projekt in {service.name} anfragen?
+            </h3>
+            
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Inhaber Deniz Tezgel berät Sie gerne persönlich vor Ort in Aßlar, Wetzlar, Mittelhessen oder ganz Hessen.
+            </p>
+
+            <div className="space-y-3 pt-2 text-xs">
+              <a 
+                href={`tel:${COMPANY_DATA.contact.phoneLink}`}
+                className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/[0.05] border border-white/10 text-white font-bold hover:bg-white/10 transition-all"
+              >
+                <Phone className="w-4 h-4 text-emerald-400" />
+                <span>{COMPANY_DATA.contact.phone}</span>
+              </a>
+
+              <a 
+                href={COMPANY_DATA.contact.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#25D366]/15 border border-[#25D366]/30 text-[#25D366] font-bold hover:bg-[#25D366]/25 transition-all"
+              >
+                <MessageSquare className="w-4 h-4 fill-current" />
+                <span>WhatsApp Chat</span>
+              </a>
+            </div>
+
+            <a
+              href="#express-anfrage"
+              className="block w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-slate-950 font-black text-xs text-center shadow-md hover:shadow-lg transition-all"
             >
-                <div className="absolute inset-0 bg-black/80" />
+              Kostenfreies Aufmaß buchen &rarr;
+            </a>
 
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <Link href="/leistungen" className="inline-flex items-center text-white/80 hover:text-white mb-[var(--spacing-8)] transition-colors group">
-                        <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-                        Zurück zu allen Leistungen
-                    </Link>
+            <div className="pt-4 border-t border-white/10 text-[11px] text-slate-400 italic">
+              „{COMPANY_DATA.motto}“
+            </div>
+          </div>
 
-                    <div className="flex flex-col md:flex-row gap-[var(--spacing-8)] items-start">
-                        <div className="flex-1">
-                            <div className="w-16 h-16 rounded-[var(--radius-lg)] bg-[var(--color-brand-primary)] flex items-center justify-center mb-[var(--spacing-6)]">
-                                <IconWrapper name={service.icon} className="w-8 h-8 text-white" />
-                            </div>
-                            <h1 className="text-3xl md:text-5xl font-bold text-white mb-[var(--spacing-4)] font-display">
-                                {service.id === 'sanitaer' ? 'Sanitärtechnik & Badsanierung in Wetzlar' :
-                                 service.id === 'heizung' ? 'Heizungstechnik, Wärmepumpen & Heizungstausch' :
-                                 service.id === 'klima' ? 'Klimatechnik & Klimalösungen in Wetzlar' :
-                                 service.id === 'wartung' ? 'Fachgerechte Wartung & Service für Haustechnik' :
-                                 service.id === 'smart-home' ? 'Intelligente Smart Home Heizungssteuerung' :
-                                 service.id === 'wasseraufbereitung' ? 'Professionelle Wasseraufbereitung & Kalkschutz' :
-                                 `${service.name} vom Meisterbetrieb`}
-                            </h1>
-                            <p className="text-xl text-white/80 max-w-2xl leading-relaxed">
-                                {service.shortDescription}
-                            </p>
-                        </div>
-                        <div className="flex-shrink-0">
-                            <Link href="/kontakt">
-                                <Button size="lg" className="bg-[var(--color-brand-secondary)] hover:bg-[var(--color-brand-primary)] text-white border-0 shadow-lg">
-                                    {service.ctaText || 'Jetzt anfragen'}
-                                    <ArrowRight className="ml-2 w-5 h-5" />
-                                </Button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        </div>
+      </div>
 
-            {/* Subcategories Section */}
-            {service.subcategories && service.subcategories.length > 0 && (
-                <section className="py-[var(--spacing-16)] bg-[var(--color-neutral-50)] px-[var(--spacing-4)]">
-                    <div className="max-w-7xl mx-auto">
-                        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] text-center mb-[var(--spacing-8)]">
-                            Unsere {service.name} Bereiche
-                        </h2>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--spacing-4)]">
-                            {service.subcategories.map((sub, idx) => (
-                                <div key={idx} className="bg-white p-[var(--spacing-6)] rounded-xl border border-[var(--color-border-default)] text-center hover:shadow-lg transition-shadow">
-                                    <div className="w-12 h-12 bg-[var(--color-blue-100)] rounded-full flex items-center justify-center mx-auto mb-[var(--spacing-3)]">
-                                        <IconWrapper name={sub.icon} className="w-6 h-6 text-[var(--color-brand-primary)]" />
-                                    </div>
-                                    <h3 className="font-semibold text-[var(--color-neutral-900)]">{sub.name}</h3>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
+      {/* Embedded Funnel */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 relative z-10" id="express-anfrage">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs uppercase font-black tracking-wider text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/30 mb-2 inline-block">
+            Express-Aufmaß
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-black text-white">
+            Jetzt unverbindlich anfragen
+          </h2>
+        </div>
+        <TezgelAnfrageFunnel />
+      </div>
 
-            {/* Main Content & Features */}
-            <section className="py-[var(--spacing-16)] px-[var(--spacing-4)]">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid lg:grid-cols-2 gap-[var(--spacing-12)]">
-                        <div>
-                            <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-6)]">Leistungsbeschreibung & Fachkompetenz</h2>
-                            <p className="text-lg text-gray-700 leading-relaxed mb-[var(--spacing-8)]">
-                                {service.detailText}
-                            </p>
-
-                            {service.features && service.features.length > 0 && (
-                                <div className="space-y-[var(--spacing-3)] mb-8">
-                                    {service.features.map((feature, idx) => (
-                                        <div key={idx} className="flex items-center gap-3">
-                                            <CheckCircle2 className="w-5 h-5 text-[var(--color-brand-secondary)] flex-shrink-0" />
-                                            <span className="text-gray-800 font-medium">{feature}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-
-                            <div className="p-6 bg-blue-50/60 rounded-2xl border border-blue-100">
-                                <h3 className="font-bold text-blue-900 mb-2">Warum Meisterqualität entscheidend ist</h3>
-                                <p className="text-sm text-blue-800 leading-relaxed">
-                                    Moderne Haustechnik verlangt höchste Präzision nach aktuellen DIN-Normen und Trinkwasser- bzw. Energiesparverordnungen. Als eingetragener Meisterbetrieb gewährleisten wir rechtssichere Planung, fachgerechte Montage und langfristige Garantien.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Sidebar CTA */}
-                        <div>
-                            <div className="bg-blue-800 rounded-2xl p-8 text-white shadow-xl sticky top-24">
-                                <h3 className="text-2xl font-bold text-white mb-[var(--spacing-4)]">
-                                    Interesse an {service.name}?
-                                </h3>
-                                <p className="text-white/90 mb-[var(--spacing-6)] leading-relaxed">
-                                    Unsere Experten beraten Sie gerne persönlich und unverbindlich.
-                                </p>
-
-                                <div className="space-y-[var(--spacing-3)] mb-[var(--spacing-6)]">
-                                    <a href={`tel:${COMPANY_DATA.contact.phone.replace(/\s/g, '')}`} className="flex items-center p-[var(--spacing-3)] bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                                        <Phone className="w-5 h-5 mr-3" />
-                                        <span className="font-medium">{COMPANY_DATA.contact.phone}</span>
-                                    </a>
-                                    <a href={`mailto:${COMPANY_DATA.contact.email}`} className="flex items-center p-[var(--spacing-3)] bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                                        <Mail className="w-5 h-5 mr-3" />
-                                        <span className="font-medium">{COMPANY_DATA.contact.email}</span>
-                                    </a>
-                                </div>
-
-                                <Link href="/kontakt" className="block">
-                                    <Button className="w-full bg-white text-[var(--color-brand-primary)] hover:bg-[var(--color-neutral-100)] border-0 h-12 font-bold">
-                                        Kontakt aufnehmen
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Process Steps */}
-            <section className="py-[var(--spacing-16)] bg-[var(--color-neutral-900)] px-[var(--spacing-4)]">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-2xl font-bold text-white text-center mb-[var(--spacing-12)]">
-                        Unser Ablauf bei {service.name}
-                    </h2>
-                    <div className="grid md:grid-cols-4 gap-[var(--spacing-6)]">
-                        {processSteps.map((step, idx) => (
-                            <div key={idx} className="text-center relative">
-                                <div className="w-12 h-12 bg-[var(--color-brand-primary)] rounded-full flex items-center justify-center mx-auto mb-[var(--spacing-4)] text-white font-bold text-lg">
-                                    {step.step}
-                                </div>
-                                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-                                <p className="text-[var(--color-neutral-400)] text-sm">{step.description}</p>
-                                {idx < processSteps.length - 1 && (
-                                    <div className="hidden md:block absolute top-6 left-[60%] w-[80%] h-0.5 bg-[var(--color-neutral-700)]" />
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Benefits Section */}
-            <section className="py-[var(--spacing-16)] px-[var(--spacing-4)]">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] text-center mb-[var(--spacing-12)]">
-                        Warum Batherm für {service.name}?
-                    </h2>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-[var(--spacing-6)]">
-                        {benefits.map((benefit, idx) => {
-                            const Icon = benefit.icon;
-                            return (
-                                <div key={idx} className="text-center p-[var(--spacing-6)] bg-[var(--color-neutral-50)] rounded-xl border border-[var(--color-border-default)]">
-                                    <div className="w-14 h-14 bg-[var(--color-brand-secondary)]/10 rounded-full flex items-center justify-center mx-auto mb-[var(--spacing-4)]">
-                                        <Icon className="w-7 h-7 text-[var(--color-brand-secondary)]" />
-                                    </div>
-                                    <h3 className="font-bold text-[var(--color-neutral-900)] mb-2">{benefit.title}</h3>
-                                    <p className="text-sm text-gray-600">{benefit.description}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* Quality Promise Section */}
-            <section className="py-[var(--spacing-16)] bg-[var(--color-neutral-50)] px-[var(--spacing-4)]">
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className="w-16 h-16 bg-[var(--color-brand-primary)]/10 rounded-full flex items-center justify-center mx-auto mb-[var(--spacing-6)]">
-                        <Shield className="w-8 h-8 text-[var(--color-brand-primary)]" />
-                    </div>
-                    <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] mb-[var(--spacing-4)]">
-                        Unser Qualitätsversprechen
-                    </h2>
-                    <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-6">
-                        Wir verstehen, dass Handwerksarbeiten Vertrauenssache sind. Deshalb garantieren wir Ihnen nicht nur eine fachgerechte Ausführung nach neuesten Standards, sondern auch absolute Zuverlässigkeit und Sauberkeit. Ihr Projekt ist bei unserem erfahrenen Team in besten Händen.
-                    </p>
-                    <div className="grid sm:grid-cols-3 gap-4 text-left">
-                        <div className="bg-white p-4 rounded-xl border border-gray-200">
-                            <h4 className="font-bold text-gray-900 text-sm mb-1">Feste Termintreue</h4>
-                            <p className="text-xs text-gray-600">Pünktliche Ausführung ohne unvorhergesehene Verzögerungen.</p>
-                        </div>
-                        <div className="bg-white p-4 rounded-xl border border-gray-200">
-                            <h4 className="font-bold text-gray-900 text-sm mb-1">Transparente Preise</h4>
-                            <p className="text-xs text-gray-600">Detaillierte Festpreis-Angebote ohne versteckte Zusatzkosten.</p>
-                        </div>
-                        <div className="bg-white p-4 rounded-xl border border-gray-200">
-                            <h4 className="font-bold text-gray-900 text-sm mb-1">Markenqualität</h4>
-                            <p className="text-xs text-gray-600">Wir verbauen ausschließlich geprüfte Premium-Komponenten.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Related Services */}
-            {relatedServices.length > 0 && (
-                <section className="py-[var(--spacing-16)] px-[var(--spacing-4)]">
-                    <div className="max-w-7xl mx-auto">
-                        <h2 className="text-2xl font-bold text-[var(--color-neutral-900)] text-center mb-[var(--spacing-8)]">
-                            Weitere Leistungen
-                        </h2>
-                        <div className="grid md:grid-cols-3 gap-[var(--spacing-6)]">
-                            {relatedServices.map((rel) => (
-                                <Link
-                                    key={rel.id}
-                                    href={`/leistungen/${rel.id}`}
-                                    className="group bg-white rounded-xl border border-[var(--color-border-default)] p-[var(--spacing-6)] hover:shadow-lg transition-all"
-                                >
-                                    <div className="w-12 h-12 bg-[var(--color-blue-100)] rounded-lg flex items-center justify-center mb-[var(--spacing-4)] group-hover:bg-[var(--color-brand-primary)] transition-colors">
-                                        <IconWrapper name={rel.icon} className="w-6 h-6 text-[var(--color-brand-primary)] group-hover:text-white transition-colors" />
-                                    </div>
-                                    <h3 className="font-bold text-[var(--color-neutral-900)] mb-2 group-hover:text-[var(--color-brand-primary)] transition-colors">
-                                        {rel.name}
-                                    </h3>
-                                    <p className="text-sm text-gray-600">{rel.shortDescription}</p>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            {/* Calendly Booking Section */}
-            <CalendlySection />
-
-            {/* Final CTA */}
-            <section className="py-[var(--spacing-16)] bg-[var(--color-brand-primary)] px-[var(--spacing-4)]">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold text-white mb-[var(--spacing-4)]">
-                        Bereit für Ihr {service.name} Projekt?
-                    </h2>
-                    <p className="text-white/90 text-lg mb-[var(--spacing-8)]">
-                        Kontaktieren Sie uns für eine kostenlose Beratung und ein unverbindliches Angebot.
-                    </p>
-                    <Link href={createPageUrl('Contact')}>
-                        <Button size="lg" className="bg-white text-[var(--color-brand-primary)] hover:bg-[var(--color-neutral-100)] font-bold">
-                            Jetzt Kontakt aufnehmen
-                            <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
-                    </Link>
-                </div>
-            </section>
-        </PageWrapper>
-    );
-};
-
-export default ServiceDetail;
+    </div>
+  );
+}

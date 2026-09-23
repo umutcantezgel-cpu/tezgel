@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 dist/
+
+# temp scrape dumps & logs
+01a0666a*
+build_*.txt
+hash.txt
