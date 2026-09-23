@@ -1,5 +1,7 @@
 // MUSTERBÄDER & BADINSPIRATION DATA
-// Exact specifications, dimensions, equipment lists and prices from Bad & Energie GmbH
+// HINWEIS: Ausstattungslisten und Preise wurden vom vorherigen Seitenbetreiber
+// übernommen und müssen vor der Veröffentlichung von Fliesenverlegung Tezgel
+// geprüft bzw. durch eigene Kalkulationen ersetzt werden.
 // Complete 12-variant catalogue across 4 room sizes (4.6, 7.0, 8.2, 15.9 m²) and 3 tiers (Basic, Premium, Luxus)
 
 export const MUSTERBAEDER = [
