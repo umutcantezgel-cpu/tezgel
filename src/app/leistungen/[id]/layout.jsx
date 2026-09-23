@@ -13,26 +13,26 @@ export async function generateMetadata({ params }) {
   const service = SERVICES.find((s) => s.id === id);
   if (!service) return {};
 
-  const pageUrl = `${SITE_URL}/leistungen/${service.id}`;
-  const title = `${service.name} in Wetzlar & Umgebung`;
-  const fullTitle = `${title} | Batherm Haustechnik`;
-  const description = `${service.shortDescription}. Ihr zertifizierter Meisterbetrieb für ${service.name} in Wetzlar. Kostenlose Beratung & faire Festpreise.`;
+  const path = `/leistungen/${service.id}`;
+  const title = `${service.name} in Aßlar, Wetzlar & Umgebung`;
+  const fullTitle = `${title} | Fliesenverlegung Tezgel`;
+  const description = `${service.shortDescription}. Ihr Fliesenleger-Meisterbetrieb aus Aßlar für Wetzlar und Mittelhessen – kostenfreies Vor-Ort-Aufmaß & verbindliches Festpreisangebot.`;
 
   return {
     title,
     description,
     alternates: {
-      canonical: pageUrl,
+      canonical: path,
       languages: {
-        'de': pageUrl,
-        'x-default': pageUrl,
+        'de': path,
+        'x-default': path,
       },
     },
     openGraph: {
       title: fullTitle,
       description,
-      url: pageUrl,
-      siteName: 'Batherm Haustechnik',
+      url: path,
+      siteName: 'Fliesenverlegung Tezgel',
       locale: 'de_DE',
       type: 'website',
     },
@@ -71,13 +71,13 @@ export default async function Layout({ children, params }) {
     serviceSchemaGraph = buildGraph([
       buildWebPageNode({
         url: pageUrl,
-        name: `${service.name} Wetzlar | Batherm Haustechnik`,
+        name: `${service.name} | Fliesenverlegung Tezgel`,
         description: service.shortDescription,
         breadcrumbItems: breadcrumbs,
       }),
       buildBreadcrumbNode(breadcrumbs, pageUrl),
       buildServiceNode({
-        name: `${service.name} in Wetzlar & Mittelhessen`,
+        name: `${service.name} in Aßlar, Wetzlar & Mittelhessen`,
         serviceType: service.name,
         description: service.shortDescription,
         url: pageUrl,
@@ -94,4 +94,3 @@ export default async function Layout({ children, params }) {
     </>
   );
 }
-

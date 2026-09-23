@@ -3,8 +3,8 @@ import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } f
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Referenzen & Kundenprojekte | Bad & Energie GmbH',
-  description: 'Abgeschlossene Meisterprojekte der Bad & Energie GmbH: Badsanierungen, NIBE Wärmepumpen, Wohnraumlüftung und Trinkwasserhygiene in Wetzlar & Lahn-Dill.',
+  title: 'Referenzen & Kundenbewertungen',
+  description: 'Echte Kundenbewertungen und Referenzen von Fliesenverlegung Tezgel: Badsanierungen, Balkone, Treppen und komplette Häuser in Aßlar, Wetzlar und Mittelhessen.',
   path: '/referenzen',
 });
 
@@ -17,17 +17,17 @@ const breadcrumbs = [
 const referenzenSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Referenzen & Meisterprojekte | Bad & Energie GmbH Wetzlar',
+    name: 'Referenzen & Kundenbewertungen | Fliesenverlegung Tezgel',
     description:
-      'Erfolgreich umgesetzte Projekte für Badsanierung, Wärmepumpen, Lüftung und Haustechnik in Wetzlar und Region.',
+      'Kundenbewertungen und Projektbeispiele des Fliesenleger-Meisterbetriebs Fliesenverlegung Tezgel aus Aßlar.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
   {
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#collection`,
-    name: 'Bad & Energie GmbH Projekt-Referenzen',
-    description: 'Dokumentation von Meisterarbeiten im Lahn-Dill-Kreis und Landkreis Gießen.',
+    name: 'Fliesenverlegung Tezgel – Referenzen & Kundenbewertungen',
+    description: 'Kundenstimmen und Projektbeispiele aus Aßlar, Wetzlar und Mittelhessen.',
     publisher: { '@id': ORG_ID },
   },
 ]);

@@ -1,4 +1,4 @@
-import { PORTFOLIO_PROJECTS } from '@/config/projects';
+import { PORTFOLIO_PROJECTS, isLegacyProject } from '@/config/projects';
 import { buildGraph, buildProjectNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 
@@ -13,26 +13,26 @@ export async function generateMetadata({ params }) {
   const project = PORTFOLIO_PROJECTS.find((p) => p.id.toString() === id);
   if (!project) return {};
 
-  const pageUrl = `${SITE_URL}/referenzen/${project.id}`;
+  const path = `/referenzen/${project.id}`;
   const title = `${project.title} in ${project.location}`;
-  const fullTitle = `${title} | Batherm Haustechnik`;
-  const description = project.description ? (project.description.length > 155 ? `${project.description.slice(0, 152)}...` : project.description) : 'Projekt von Batherm Haustechnik';
+  const fullTitle = `${title} | Fliesenverlegung Tezgel`;
+  const description = project.description ? (project.description.length > 155 ? `${project.description.slice(0, 152)}...` : project.description) : 'Projektbeispiel von Fliesenverlegung Tezgel';
 
   return {
     title,
     description,
     alternates: {
-      canonical: pageUrl,
+      canonical: path,
       languages: {
-        'de': pageUrl,
-        'x-default': pageUrl,
+        'de': path,
+        'x-default': path,
       },
     },
     openGraph: {
       title: fullTitle,
       description,
-      url: pageUrl,
-      siteName: 'Batherm Haustechnik',
+      url: path,
+      siteName: 'Fliesenverlegung Tezgel',
       locale: 'de_DE',
       type: 'website',
     },
@@ -67,22 +67,27 @@ export default async function Layout({ children, params }) {
       { name: 'Referenzen', path: '/referenzen' },
       { name: project.title, path: pageUrl },
     ];
+    const primaryImage = project.images?.find((img) => img.type === 'after')?.url || project.images?.[0]?.url;
 
     projectSchemaGraph = buildGraph([
       buildWebPageNode({
         url: pageUrl,
-        name: `${project.title} | Batherm Haustechnik Referenz`,
+        name: `${project.title} | Fliesenverlegung Tezgel`,
         description: project.description,
         breadcrumbItems: breadcrumbs,
       }),
       buildBreadcrumbNode(breadcrumbs, pageUrl),
-      buildProjectNode({
-        name: project.title,
-        description: project.description,
-        url: pageUrl,
-        locationCreated: project.location,
-        image: project.image,
-      }),
+      // The Project node credits the organization as creator, so it is only
+      // emitted for projects listed in TEZGEL_PROJECT_IDS (config/projects.js).
+      isLegacyProject(project)
+        ? null
+        : buildProjectNode({
+            name: project.title,
+            description: project.description,
+            url: pageUrl,
+            locationCreated: project.location,
+            image: primaryImage,
+          }),
     ]);
   }
 
@@ -93,4 +98,3 @@ export default async function Layout({ children, params }) {
     </>
   );
 }
-

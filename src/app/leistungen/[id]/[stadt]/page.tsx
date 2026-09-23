@@ -1,13 +1,34 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CITIES } from '@/config/cities';
+import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
-import { COMPANY_DATA } from '@/config/company';
+import { COMPANY_DATA, processSteps } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
-import { MapPin, Phone, Calendar, ArrowRight, ShieldCheck, CheckCircle2, Sparkles, Award } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
+
+// ---------------------------------------------------------------------------
+// Location helpers – CITIES distances are measured from Wetzlar city centre,
+// our head office is in Aßlar (COMPANY_DATA.headquarters).
+// ---------------------------------------------------------------------------
+function isHeadquartersCity(city: CityData) {
+  return city.name === COMPANY_DATA.headquarters.city;
+}
+
+function distanceLabel(city: CityData) {
+  if (isHeadquartersCity(city)) return 'Unser Firmensitz';
+  if (city.distanceKm === 0) return 'Direkt neben unserem Firmensitz';
+  return `ca. ${city.distanceKm} km ab Wetzlar`;
+}
+
+function distanceSentence(city: CityData) {
+  const { headquarters } = COMPANY_DATA;
+  if (isHeadquartersCity(city)) return `Unser Firmensitz liegt in der ${headquarters.street} in ${headquarters.city}.`;
+  if (city.distanceKm === 0) return `Direkt neben unserem Firmensitz in ${headquarters.city}.`;
+  return `Ca. ${city.distanceKm} km ab Wetzlar – betreut von unserem Firmensitz in ${headquarters.city}.`;
+}
 
 // ---------------------------------------------------------------------------
 // Static Params – generates a page for every service × city combination
@@ -31,37 +52,35 @@ export async function generateMetadata({
   params: Promise<{ id: string; stadt: string }>;
 }): Promise<Metadata> {
   const { id, stadt } = await params;
-  const service = SERVICES.find((s: any) => s.id === id);
+  const service = SERVICES.find((s) => s.id === id);
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) return {};
 
-  const title = `${service.name} in ${city.name} – Meisterbetrieb | Bad & Energie GmbH`;
-  const description = `${service.name} in ${city.name}: Fachgerechte Montage & Wartung vom Meisterbetrieb. ${
-    city.distanceKm === 0 ? 'Direkt vor Ort in Wetzlar.' : `Nur ${city.distanceKm} km entfernt.`
-  } Bis zu 70% Förderung & Festpreisgarantie.`;
+  const title = `${service.name} in ${city.name} – Fliesen-Meisterbetrieb`;
+  const description = `${service.name} in ${city.name}: ${service.shortDescription}. ${distanceSentence(city)} Kostenfreies Vor-Ort-Aufmaß & verbindliches Festpreisangebot.`;
 
-  const url = `https://bad-energie.de/leistungen/${service.id}/${city.slug}`;
+  const path = `/leistungen/${service.id}/${city.slug}`;
 
   return {
     title,
     description,
-    alternates: { 
-      canonical: url,
+    alternates: {
+      canonical: path,
       languages: {
-        'de': url,
-        'x-default': url,
+        'de': path,
+        'x-default': path,
       },
     },
     openGraph: {
       title,
       description,
-      url,
-      siteName: 'Bad & Energie GmbH',
+      url: path,
+      siteName: 'Fliesenverlegung Tezgel',
       locale: 'de_DE',
       type: 'website',
     },
-    robots: { 
-      index: true, 
+    robots: {
+      index: true,
       follow: true,
       googleBot: {
         index: true,
@@ -74,53 +93,23 @@ export async function generateMetadata({
   };
 }
 
-// ---------------------------------------------------------------------------
-// Process steps constant
-// ---------------------------------------------------------------------------
-const PROCESS_STEPS = [
-  {
-    step: '01',
-    title: 'Meister-Beratung vor Ort',
-    description: 'Wir besprechen Ihre Wünsche und baulichen Anforderungen direkt bei Ihnen vor Ort in '
-  },
-  {
-    step: '02',
-    title: '3D-Planung & Festpreis',
-    description: 'Exakte Grundriss- und Heizlastberechnung mit transparenter Gesamtkalkulation ohne Überraschungen.'
-  },
-  {
-    step: '03',
-    title: 'Fachgerechte Umsetzung',
-    description: 'Unsere festangestellten SHK-Monteure führen alle Arbeiten sauber, staubarm und termingerecht aus.'
-  },
-  {
-    step: '04',
-    title: 'Übergabe & Werksgarantie',
-    description: 'Gemeinsame Endabnahme, Einweisung in alle Funktionen und langfristiger Kundendienst-Support.'
-  },
-];
-
 export default async function ServiceCityPage({
   params,
 }: {
   params: Promise<{ id: string; stadt: string }>;
 }) {
   const { id, stadt } = await params;
-  const service = SERVICES.find((s: any) => s.id === id);
+  const service = SERVICES.find((s) => s.id === id);
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) notFound();
 
-  const pageUrl = `https://bad-energie.de/leistungen/${service.id}/${city.slug}`;
+  const pageUrl = `${SITE_URL}/leistungen/${service.id}/${city.slug}`;
+  const { contact, authority } = COMPANY_DATA;
 
-  // Build feature & subcategory strings for rich content
-  const featureList = (service.features ?? []).join(', ');
   const subcategoryNames = (service.subcategories ?? [])
-    .map((s: any) => s.name)
+    .map((s) => s.name)
     .join(', ');
-  const distanceInfo =
-    city.distanceKm === 0
-      ? 'direkt vor Ort in Wetzlar'
-      : `nur ${city.distanceKm} km von unserem Standort in Wetzlar entfernt`;
+  const otherServices = SERVICES.filter((s) => s.id !== service.id);
 
   // ── JSON-LD: Service + Breadcrumbs @graph ─────────────────────────────
   const breadcrumbs = [
@@ -133,15 +122,15 @@ export default async function ServiceCityPage({
   const serviceCityGraph = buildGraph([
     buildWebPageNode({
       url: pageUrl,
-      name: `${service.name} in ${city.name} | Bad & Energie GmbH`,
-      description: `${service.shortDescription} – professionell ausgeführt in ${city.name} und Umgebung.`,
+      name: `${service.name} in ${city.name} | Fliesenverlegung Tezgel`,
+      description: `${service.shortDescription} – fachgerecht ausgeführt in ${city.name} und Umgebung.`,
       breadcrumbItems: breadcrumbs,
     }),
     buildBreadcrumbNode(breadcrumbs, pageUrl),
     buildServiceNode({
       name: `${service.name} in ${city.name}`,
       serviceType: service.name,
-      description: `${service.shortDescription} – professionell ausgeführt in ${city.name} und Umgebung.`,
+      description: `${service.shortDescription} – fachgerecht ausgeführt in ${city.name} und Umgebung.`,
       url: pageUrl,
       areaServedCity: city.name,
       offers: (service.features || []).map((feat: string) => ({ name: feat })),
@@ -149,78 +138,83 @@ export default async function ServiceCityPage({
     }),
   ]);
 
+  const stats = [
+    {
+      value: isHeadquartersCity(city) ? city.name : city.distanceKm === 0 ? 'Nachbarstadt' : `ca. ${city.distanceKm} km`,
+      label: isHeadquartersCity(city)
+        ? 'Unser Firmensitz'
+        : city.distanceKm === 0
+          ? `Direkt neben unserem Firmensitz in ${COMPANY_DATA.headquarters.city}`
+          : 'Entfernung ab Wetzlar',
+      icon: MapPin,
+    },
+    { value: 'DIN 18534', label: 'Normgerechte Verbundabdichtung', icon: ShieldCheck },
+    { value: authority.shortName, label: 'Eingetragener Meisterbetrieb', icon: Award },
+  ];
+
   return (
     <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
       <JsonLd schema={serviceCityGraph} />
 
       {/* Ambient Glow */}
-      <div className="ambient-glow-blue -top-20 -left-20" />
-      <div className="ambient-glow-cyan top-96 -right-20" />
+      <div className="ambient-glow-sky -top-20 -left-20" />
+      <div className="ambient-glow-mint top-96 -right-20" />
 
       {/* ── Hero Section ─────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
+        <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
           {/* Breadcrumbs */}
           <nav
             aria-label="Breadcrumb"
-            className="mb-2 text-xs text-blue-200/80 flex flex-wrap items-center justify-center gap-1.5 font-medium"
+            className="mb-2 text-xs text-slate-600 flex flex-wrap items-center justify-center gap-1.5 font-medium"
           >
-            <Link href="/" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-emerald-800 transition-colors">
               Home
             </Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <Link
               href="/leistungen"
-              className="hover:text-white transition-colors"
+              className="hover:text-emerald-800 transition-colors"
             >
               Leistungen
             </Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <Link
               href={`/leistungen/${service.id}`}
-              className="hover:text-white transition-colors"
+              className="hover:text-emerald-800 transition-colors"
             >
               {service.name}
             </Link>
-            <span>/</span>
-            <span className="text-white font-bold">{city.name}</span>
+            <span aria-hidden="true">/</span>
+            <span className="text-slate-900 font-bold" aria-current="page">{city.name}</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-cyan-300 text-xs font-black uppercase tracking-wider">
+          <span className="eyebrow">
             <MapPin className="w-3.5 h-3.5" />
             <span>
-              {city.region} &middot;{' '}
-              {city.distanceKm === 0
-                ? 'Hauptsitz Wetzlar'
-                : `${city.distanceKm} km von Wetzlar`}
+              {city.region} &middot; {distanceLabel(city)}
             </span>
-          </div>
+          </span>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
             {service.name} in{' '}
-            <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">{city.name}</span>
+            <span className="text-ceramic-gradient">{city.name}</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-blue-100 max-w-3xl mx-auto leading-relaxed font-normal">
-            Bad &amp; Energie GmbH ist Ihr Meisterbetrieb für {service.name} in{' '}
-            {city.name} und {city.region}. {service.shortDescription}.{' '}
-            {city.distanceKm > 0
-              ? `Mit unserem Standort in Wetzlar trennen uns nur ${city.distanceKm} km von ${city.name} – für rasche Anfahrt und persönliche Betreuung.`
-              : 'Direkt vor Ort in Wetzlar für kürzeste Anfahrtswege und persönliche Betreuung.'}
+          <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            {COMPANY_DATA.legalName} ist Ihr Meisterbetrieb für {service.name} in{' '}
+            {city.name} und im {city.region}. {service.shortDescription}.{' '}
+            {distanceSentence(city)}
           </p>
 
           <div className="flex flex-wrap gap-3.5 justify-center pt-2">
-            <Link
-              href="/termin"
-              className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-[#E4040E] to-[#B91C1C] hover:shadow-[0_12px_28px_rgba(228,4,14,0.4)] text-white font-black rounded-full transition-all text-xs shadow-md border border-white/20 transform hover:-translate-y-0.5"
-            >
-              Kostenlose Meisterberatung für {city.name} &rarr;
+            <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+              Kostenloses Aufmaß in {city.name} anfragen
+              <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-              className="inline-flex items-center justify-center px-6 py-3.5 border border-white/20 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full transition-all text-xs backdrop-blur-md"
-            >
-              📞 {COMPANY_DATA.contact.phone}
+            <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
+              <Phone className="w-4 h-4 text-emerald-700" />
+              {contact.phone}
             </a>
           </div>
         </div>
@@ -231,100 +225,139 @@ export default async function ServiceCityPage({
         <div className="glass-bezel-outer shadow-2xl max-w-5xl mx-auto">
           <div className="glass-bezel-inner p-8 sm:p-12 space-y-6">
             <div>
-              <span className="text-xs uppercase font-black tracking-wider text-[#0C3A87] bg-blue-50 px-3.5 py-1 rounded-full inline-block border border-blue-200/60 shadow-xs mb-2">
-                Meisterbetrieb seit 2001
+              <span className="eyebrow mb-3">
+                <Award className="w-3.5 h-3.5" />
+                Meisterbetrieb &middot; {authority.shortName}
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
                 Fachkompetenz &amp; Meisterqualität für {city.name}
               </h2>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-              Egal ob Neubau, Altbausanierung oder laufende Instandhaltung: Als konzessionierter Handwerks-Meisterbetrieb realisieren wir anspruchsvolle Projekte im Bereich {service.name} für Privat- und Gewerbekunden in {city.name} sowie der gesamten Region {city.region}. {city.description}
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              Ob Neubau oder Sanierung im bewohnten Bestand: Als eingetragener Meisterbetrieb der {authority.name} übernehmen
+              wir Projekte im Bereich {service.name} für Privatkunden, Architekten und Bauherren in {city.name} sowie im
+              gesamten {city.region}. {city.description}
             </p>
 
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-              Im Mittelpunkt unserer Arbeit stehen Energieeffizienz, Langlebigkeit und höchste Ausführungsqualität nach aktuellen DIN- und VDI-Standards. Unser Portfolio umfasst {featureList}. {subcategoryNames ? `Wir decken alle Kernbereiche wie ${subcategoryNames} lückenlos ab.` : ''} Durch die Nähe zu {city.name} ({distanceInfo}) garantieren wir termingerechte Ausführung und faire Festpreise.
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              Im Mittelpunkt stehen Langlebigkeit, Dichtigkeit und eine saubere, millimetergenaue Ausführung – mit
+              normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser im Spiel ist.{' '}
+              {subcategoryNames ? `Unsere Schwerpunkte: ${subcategoryNames}.` : ''} Nach dem kostenfreien Vor-Ort-Aufmaß
+              erhalten Sie ein verbindliches Festpreisangebot.
             </p>
 
             {/* Stats row */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              <div className="glass-surface p-6 rounded-[2rem] text-center border border-white/80">
-                <div className="text-2xl font-black text-[#0C3A87] mb-1">
-                  {city.distanceKm === 0 ? 'Vor Ort' : `${city.distanceKm} km`}
-                </div>
-                <div className="text-xs text-slate-500 font-medium">
-                  {city.distanceKm === 0 ? 'Standort Wetzlar' : 'Kurze Anfahrt'}
-                </div>
-              </div>
-              <div className="glass-surface p-6 rounded-[2rem] text-center border border-white/80">
-                <div className="text-2xl font-black text-[#0C3A87] mb-1">
-                  {(service.features ?? []).length}+
-                </div>
-                <div className="text-xs text-slate-500 font-medium">Spezialisierungen</div>
-              </div>
-              <div className="glass-surface p-6 rounded-[2rem] text-center border border-white/80">
-                <div className="text-2xl font-black text-[#0C3A87] mb-1">100%</div>
-                <div className="text-xs text-slate-500 font-medium">Meisterbetrieb</div>
-              </div>
-            </div>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+              {stats.map(({ value, label, icon: Icon }) => (
+                <li
+                  key={label}
+                  className="rounded-[2rem] bg-white border border-slate-200 p-6 text-center flex flex-col items-center gap-1"
+                >
+                  <Icon className="w-5 h-5 text-emerald-600 mb-2" aria-hidden="true" />
+                  <span className="font-display text-2xl font-black text-slate-900 tabular-nums">{value}</span>
+                  <span className="text-xs text-slate-600 font-semibold">{label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
       {/* ── Service Features Grid ────────────────────────────────────────── */}
       {service.features && service.features.length > 0 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="leistungsspektrum">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+            <h2 id="leistungsspektrum" className="text-2xl sm:text-3xl font-black text-slate-900">
               Detailliertes Leistungsspektrum in {city.name}
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm mt-2 font-medium">
-              Maßgeschneiderte Handwerkslösungen für maximale Zuverlässigkeit und Energieeffizienz.
+            <p className="text-slate-700 text-sm sm:text-base mt-2">
+              Handwerkliche Präzision für dauerhaft schöne, dichte und pflegeleichte Beläge.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {service.features.map((feature: string, idx: number) => (
-              <div
-                key={idx}
-                className="glass-surface p-5 rounded-2xl flex items-center gap-3.5 hover:shadow-[0_15px_30px_rgba(12,58,135,0.08)] hover:-translate-y-0.5 transition-all duration-300"
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {service.features.map((feature: string) => (
+              <li
+                key={feature}
+                className="group glass-surface p-5 rounded-2xl flex items-center gap-3.5 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
               >
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#0C3A87] flex items-center justify-center shrink-0 font-bold border border-blue-200/60 shadow-xs">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                </div>
-                <span className="text-xs font-black text-slate-800">{feature}</span>
-              </div>
+                <span className="icon-chip w-9 h-9 rounded-xl">
+                  <CheckCircle2 className="w-5 h-5" />
+                </span>
+                <span className="text-sm font-bold text-slate-800">{feature}</span>
+              </li>
             ))}
-          </div>
-        </div>
+          </ul>
+        </section>
       )}
 
       {/* ── Process Steps ────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="ablauf">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-            Schritt für Schritt zu Ihrem Projekterfolg
+          <span className="eyebrow eyebrow-sky mb-4">Transparenter Ablauf</span>
+          <h2 id="ablauf" className="text-2xl sm:text-3xl font-black text-slate-900">
+            Schritt für Schritt zu Ihrem Projekterfolg in {city.name}
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm mt-2 font-medium">
+          <p className="text-slate-700 text-sm sm:text-base mt-2">
             Von der ersten Kontaktaufnahme bis zur Endabnahme transparent und strukturiert.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
-          {PROCESS_STEPS.map((step, idx) => (
-            <div key={idx} className="glass-surface p-6 rounded-[2rem] flex flex-col justify-between hover:shadow-[0_20px_40px_rgba(12,58,135,0.1)] hover:-translate-y-1 transition-all duration-500">
-              <div>
-                <span className="text-2xl sm:text-3xl font-black text-[#0C3A87] mb-2 block">{step.step}</span>
-                <h3 className="text-base font-black text-slate-900 mb-2">{step.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                  {step.description}{step.step === '01' ? city.name + '.' : ''}
-                </p>
-              </div>
-            </div>
+        <ol className="grid md:grid-cols-3 gap-6">
+          {processSteps.map((step) => (
+            <li
+              key={step.step}
+              className="glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+            >
+              <span className="font-display text-2xl sm:text-3xl font-black text-emerald-700 tabular-nums mb-2 block" aria-hidden="true">
+                {step.step}
+              </span>
+              <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800 block mb-1">
+                {step.subtitle}
+              </span>
+              <h3 className="text-base font-black text-slate-900 mb-2">{step.title}</h3>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                {step.description}
+              </p>
+            </li>
           ))}
+        </ol>
+      </section>
+
+      {/* ── More in this city ────────────────────────────────────────────── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative z-10" aria-labelledby="mehr-in-stadt">
+        <div className="glass-surface rounded-[2rem] p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div>
+            <h2 id="mehr-in-stadt" className="text-lg font-black text-slate-900 mb-1">
+              Weitere Leistungen in {city.name}
+            </h2>
+            <p className="text-sm text-slate-700">Alle Fliesengewerke aus einer Hand – vom Bad bis zur Terrasse.</p>
+          </div>
+          <ul className="flex flex-wrap gap-2">
+            {otherServices.map((other) => (
+              <li key={other.id}>
+                <Link
+                  href={`/leistungen/${other.id}/${city.slug}`}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-800 hover:border-emerald-500/80 hover:text-emerald-800 transition-colors"
+                >
+                  {other.name}
+                  <ArrowRight className="w-3 h-3 text-emerald-600" />
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                href={`/standorte/${city.slug}`}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 hover:border-emerald-500/80 transition-colors"
+              >
+                <MapPin className="w-3 h-3" />
+                Standort {city.name}
+              </Link>
+            </li>
+          </ul>
         </div>
-      </div>
+      </section>
 
       <QualityPromise />
     </div>

@@ -1,76 +1,245 @@
 import React from 'react';
 import Link from 'next/link';
-import { Eye, MapPin, CheckCircle2, ShieldCheck, Phone, Calendar, ArrowRight, Sparkles } from 'lucide-react';
-import { COMPANY_DATA } from '@/config/company';
+import {
+    MapPin,
+    Phone,
+    Mail,
+    Clock,
+    MessageCircle,
+    ArrowRight,
+    CalendarCheck,
+    Droplets,
+    Sparkles,
+    Sun,
+    ShieldCheck,
+    Info
+} from 'lucide-react';
+import { COMPANY_DATA, processSteps } from '@/config/company';
+import { SERVICES } from '@/config/services';
+import { CITIES } from '@/config/cities';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
-    title: 'Virtuelle Badausstellung Wetzlar | 360° Rundgang & Showroom | Bad & Energie GmbH',
-    description: 'Erleben Sie die Badausstellung Wetzlar virtuell im 360°-Rundgang: Moderne Musterbäder, VIGOUR Designkeramik, Walk-In Duschen & NIBE Wärmepumpen.',
-    alternates: { canonical: 'https://bad-energie.de/ausstellung/wetzlar' }
+    title: 'Fliesenberatung & Materialauswahl in Wetzlar',
+    description: 'Persönliche Fliesenberatung für Wetzlar nach Terminvereinbarung: Formate, Oberflächen, Fugenbild und Rutschhemmung gemeinsam mit Inhaber Deniz Tezgel festlegen – Meisterbetrieb aus Aßlar.',
+    alternates: { canonical: '/ausstellung/wetzlar' }
+};
+
+const CITY_SLUG = 'wetzlar';
+
+const SERVICE_ICONS = {
+    bad: Droplets,
+    wohnen: Sparkles,
+    aussen: Sun,
+    untergrund: ShieldCheck
 };
 
 export default function AusstellungWetzlarPage() {
+    const { headquarters, contact, hours, owner } = COMPANY_DATA;
+    const city = CITIES.find((c) => c.slug === CITY_SLUG);
+    const cityName = city?.name || 'Wetzlar';
+    const locationNote = city && city.distanceKm > 0
+        ? `ca. ${city.distanceKm} km ab Wetzlar`
+        : `direkt neben unserem Firmensitz in ${headquarters.city}`;
+
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-blue -top-20 -left-20" />
-            <div className="ambient-glow-cyan top-96 -right-20" />
+            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="text-xs uppercase font-black tracking-wider text-cyan-300 bg-white/10 px-4 py-1.5 rounded-full border border-white/15 inline-block backdrop-blur-md">
-                        Digitaler Showroom Wetzlar
+                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow">
+                        <CalendarCheck className="w-3.5 h-3.5" />
+                        Nach Terminvereinbarung
                     </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-                        Virtuelle Badausstellung Wetzlar
+                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                        Fliesenberatung &amp; Materialauswahl in{' '}
+                        <span className="text-ceramic-gradient">{cityName}</span>
                     </h1>
-                    <p className="text-sm sm:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed font-normal">
-                        Entdecken Sie unsere Bäderwelten und innovative Heiztechnik bequem von zu Hause aus im virtuellen Rundgang.
+                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                        Welche Fliese passt zu Ihrem Bad, Ihrem Wohnbereich oder Ihrer Terrasse? In einem persönlichen
+                        Beratungstermin klärt Inhaber {owner.fullName} mit Ihnen Formate, Oberflächen, Fugenbild und
+                        Rutschhemmung – für {cityName} und Umgebung, {locationNote}.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link
-                            href="/termin"
-                            className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#E4040E] to-[#B91C1C] hover:shadow-[0_12px_28px_rgba(228,4,14,0.4)] text-white font-black text-xs shadow-md transition-all transform hover:-translate-y-0.5 border border-white/20"
-                        >
-                            Persönliche Beratung in Wetzlar buchen &rarr;
+                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+                            Beratungstermin vereinbaren
+                            <ArrowRight className="w-4 h-4" />
                         </Link>
+                        <a
+                            href={contact.whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
+                        >
+                            <MessageCircle className="w-4 h-4" />
+                            WhatsApp
+                        </a>
+                        <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
+                            <Phone className="w-4 h-4 text-emerald-700" />
+                            {contact.phone}
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-                <div className="glass-bezel-outer shadow-2xl max-w-4xl mx-auto">
-                    <div className="glass-bezel-inner p-8 sm:p-12 text-center space-y-6">
-                        <div className="w-16 h-16 bg-blue-50 text-[#0C3A87] rounded-full flex items-center justify-center mx-auto shadow-inner border border-blue-200/60">
-                            <Eye className="w-8 h-8" />
+            {/* Process + Contact */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                    <section className="lg:col-span-2 space-y-6" aria-labelledby="ablauf-heading">
+                        <div>
+                            <span className="eyebrow eyebrow-sky mb-4">Ihr Beratungstermin</span>
+                            <h2 id="ablauf-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                                So läuft die Beratung ab
+                            </h2>
                         </div>
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-                            360°-Erlebnis &amp; Bemusterung vor Ort
-                        </h2>
-                        <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
-                            In unserem Showroom in der Hans-Sachs-Straße 12 in 35576 Wetzlar können Sie Materialien, Oberflächen, Badmöbel von VIGOUR, Duka Duschwände und funktionierende NIBE Wärmepumpen hautnah erleben und anfassen.
-                        </p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left">
-                            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
-                                <span className="font-black text-xs text-slate-900 block mb-1">Musterbäder live</span>
-                                <span className="text-[11px] text-slate-500 font-medium">Von 4,6 bis 15,9 m² mit Markenkeramik</span>
-                            </div>
-                            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
-                                <span className="font-black text-xs text-slate-900 block mb-1">Materialmuster</span>
-                                <span className="text-[11px] text-slate-500 font-medium">Fliesen, Mineralguss, Echtholz &amp; Glas</span>
-                            </div>
-                            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
-                                <span className="font-black text-xs text-slate-900 block mb-1">NIBE Wärmepumpen</span>
-                                <span className="text-[11px] text-slate-500 font-medium">Funktionsweise &amp; Geräuschpegel testen</span>
-                            </div>
+                        <ol className="space-y-4">
+                            {processSteps.map((step) => (
+                                <li
+                                    key={step.step}
+                                    className="group glass-surface rounded-3xl p-6 sm:p-7 flex gap-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                >
+                                    <span className="font-display text-3xl font-black text-emerald-700 tabular-nums shrink-0" aria-hidden="true">
+                                        {step.step}
+                                    </span>
+                                    <div>
+                                        <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800 block mb-1">
+                                            {step.subtitle}
+                                        </span>
+                                        <h3 className="text-lg font-black text-slate-900 mb-2">{step.title}</h3>
+                                        <p className="text-sm text-slate-700 leading-relaxed">{step.description}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol>
+
+                        <div className="flex items-start gap-3 p-5 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-slate-700 leading-relaxed">
+                            <Info className="w-5 h-5 text-sky-700 shrink-0 mt-0.5" aria-hidden="true" />
+                            <p>
+                                Beratungstermine vergeben wir individuell nach Absprache – telefonisch, per WhatsApp oder
+                                über unser{' '}
+                                <Link href="/kontakt" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                    Kontaktformular
+                                </Link>
+                                .
+                            </p>
                         </div>
-                    </div>
+                    </section>
+
+                    {/* Contact Card */}
+                    <aside className="glass-surface border-emerald-200 rounded-[2.5rem] p-8 space-y-6 lg:sticky lg:top-28" aria-labelledby="kontakt-heading">
+                        <span className="eyebrow">Direktkontakt</span>
+                        <div>
+                            <h2 id="kontakt-heading" className="text-xl font-black text-slate-900 mb-1">
+                                {COMPANY_DATA.legalName}
+                            </h2>
+                            <p className="text-sm text-slate-700 flex items-start gap-2">
+                                <MapPin className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                <span>
+                                    Firmensitz: {headquarters.street}, {headquarters.postalCode} {headquarters.city}
+                                </span>
+                            </p>
+                        </div>
+
+                        <ul className="space-y-3 text-sm">
+                            <li>
+                                <a
+                                    href={`tel:${contact.phoneLink}`}
+                                    className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 font-bold text-slate-900 hover:bg-white hover:border-emerald-500/80 transition-all"
+                                >
+                                    <Phone className="w-4 h-4 text-emerald-600" />
+                                    {contact.phone}
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href={contact.whatsappLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 font-bold text-emerald-800 hover:border-emerald-500/80 transition-all"
+                                >
+                                    <MessageCircle className="w-4 h-4" />
+                                    WhatsApp: {contact.mobile}
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href={`mailto:${contact.email}`}
+                                    className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 font-bold text-slate-900 hover:bg-white hover:border-emerald-500/80 transition-all"
+                                >
+                                    <Mail className="w-4 h-4 text-emerald-600" />
+                                    {contact.email}
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div className="pt-4 border-t border-slate-200 text-sm text-slate-700 space-y-1">
+                            <p className="flex items-center gap-2 font-bold text-slate-900">
+                                <Clock className="w-4 h-4 text-emerald-600" />
+                                Geschäftszeiten
+                            </p>
+                            <p>{hours.formattedWeekdays}</p>
+                            <p>{hours.formattedSaturday}</p>
+                        </div>
+
+                        <Link href="/kontakt" className="btn-primary w-full text-xs">
+                            Termin anfragen
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </aside>
                 </div>
             </div>
+
+            {/* Consultation topics */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="themen-heading">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                    <span className="eyebrow mb-4">Beratungsthemen</span>
+                    <h2 id="themen-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                        Wobei wir Sie in {cityName} beraten
+                    </h2>
+                </div>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {SERVICES.map((srv) => {
+                        const Icon = SERVICE_ICONS[srv.id] || Sparkles;
+                        return (
+                            <li key={srv.id}>
+                                <Link
+                                    href={`/leistungen/${srv.id}/${CITY_SLUG}`}
+                                    className="group glass-surface rounded-3xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                >
+                                    <div>
+                                        <span className="icon-chip w-11 h-11 mb-4">
+                                            <Icon className="w-5 h-5" />
+                                        </span>
+                                        <h3 className="text-base font-black text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                                            {srv.name}
+                                        </h3>
+                                        <p className="text-sm text-slate-700 leading-relaxed">{srv.shortDescription}</p>
+                                    </div>
+                                    <span className="mt-5 pt-4 border-t border-slate-200 text-sm font-bold text-emerald-800 flex items-center gap-1.5">
+                                        Mehr erfahren
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+                <p className="mt-8 text-center text-sm text-slate-700">
+                    Mehr zu unserem Einsatzgebiet:{' '}
+                    <Link
+                        href={`/standorte/${CITY_SLUG}`}
+                        className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                    >
+                        Fliesenverlegung in {cityName}
+                    </Link>
+                </p>
+            </section>
 
             <QualityPromise />
         </div>

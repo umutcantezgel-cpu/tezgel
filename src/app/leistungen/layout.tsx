@@ -1,10 +1,11 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, ORG_ID, SITE_URL } from '@/lib/schema';
+import { SERVICES } from '@/config/services';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Leistungen für Sanitär, Heizung & Klima',
-  description: 'Unser Leistungsspektrum: Badsanierung, Wärmepumpen, Klimaanlagen, Smart Home und mehr. Ihr zertifizierter Meisterbetrieb in Wetzlar.',
+  title: 'Leistungen: Fliesen, Bad, Terrasse & Abdichtung',
+  description: 'Unser Leistungsspektrum als Fliesenleger-Meisterbetrieb aus Aßlar: Badsanierung & Walk-In-Duschen, XXL-Großformate, Wohnbereiche & Treppen, Balkone & Terrassen sowie DIN 18534 Verbundabdichtung.',
   path: '/leistungen',
 });
 
@@ -17,67 +18,26 @@ const breadcrumbs = [
 const leistungenSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Haustechnik Leistungen in Wetzlar | Batherm Haustechnik',
+    name: 'Leistungen | Fliesenverlegung Tezgel',
     description:
-      'Komplettes Leistungsportfolio: Sanitärtechnik, moderne Heizungstechnik, Wärmepumpen, Klimatechnik und Smart Home.',
+      'Fliesen-, Platten- und Mosaikverlegung, Badsanierung, Balkon- und Terrassensanierung sowie Untergrundvorbereitung und DIN 18534 Verbundabdichtung.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
   {
     '@type': 'OfferCatalog',
     '@id': `${pageUrl}#catalog`,
-    name: 'Leistungen von Batherm Haustechnik',
+    name: 'Leistungen von Fliesenverlegung Tezgel',
     provider: { '@id': ORG_ID },
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Sanitärtechnik',
-          url: `${SITE_URL}/leistungen/sanitaer`,
-        },
+    itemListElement: SERVICES.map((service) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: service.name,
+        description: service.shortDescription,
+        url: `${SITE_URL}/leistungen/${service.id}`,
       },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Heizungstechnik',
-          url: `${SITE_URL}/leistungen/heizung`,
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Klimatechnik',
-          url: `${SITE_URL}/leistungen/klima`,
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Wartung & Service',
-          url: `${SITE_URL}/leistungen/wartung`,
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Smart Home',
-          url: `${SITE_URL}/leistungen/smart-home`,
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Wasseraufbereitung',
-          url: `${SITE_URL}/leistungen/wasseraufbereitung`,
-        },
-      },
-    ],
+    })),
   },
 ]);
 
@@ -89,4 +49,3 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </>
   );
 }
-

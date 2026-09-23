@@ -3,8 +3,8 @@ import { buildGraph, buildContactPageNode, buildBreadcrumbNode, SITE_URL } from 
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Kontakt & Standorte Wetzlar | Bad & Energie GmbH',
-  description: 'Kontaktieren Sie die Bad & Energie GmbH in Wetzlar. Badsanierung, Heizung & Haustechnik – persönliche Beratung und schnelle Terminvergabe.',
+  title: 'Kontakt & Vor-Ort-Aufmaß in Aßlar',
+  description: 'Kontaktieren Sie Fliesenverlegung Tezgel in Aßlar: Fliesenverlegung, Badsanierung und DIN 18534 Abdichtung – persönliche Beratung und kostenfreies Vor-Ort-Aufmaß in Aßlar, Wetzlar und Mittelhessen.',
   path: '/kontakt',
 });
 
@@ -17,9 +17,9 @@ const breadcrumbs = [
 const contactSchema = buildGraph([
   buildContactPageNode({
     url: pageUrl,
-    name: 'Kontakt aufnehmen | Bad & Energie GmbH Wetzlar',
+    name: 'Kontakt aufnehmen | Fliesenverlegung Tezgel',
     description:
-      'Kontaktieren Sie Ihren Meisterbetrieb Bad & Energie GmbH für Badsanierung, Heizung und Haustechnik in Wetzlar und im Lahn-Dill-Kreis.',
+      'Kontakt zum Fliesenleger-Meisterbetrieb Fliesenverlegung Tezgel in Aßlar – für Fliesenverlegung, Badsanierung und Verbundabdichtung in Wetzlar und Mittelhessen.',
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
 ]);

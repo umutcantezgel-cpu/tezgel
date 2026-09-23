@@ -1,13 +1,40 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CITIES } from '@/config/cities';
+import type { LucideIcon } from 'lucide-react';
+import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
-import { MapPin, Phone, Calendar, ArrowRight, ShieldCheck, CheckCircle2, Sparkles, Award } from 'lucide-react';
+import { MapPin, Phone, ArrowRight, ShieldCheck, Sparkles, Award, Droplets, Sun } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
+
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  bad: Droplets,
+  wohnen: Sparkles,
+  aussen: Sun,
+  untergrund: ShieldCheck,
+};
+
+function isHeadquartersCity(city: CityData) {
+  return city.name === COMPANY_DATA.headquarters.city;
+}
+
+/** Short distance label – CITIES distances are measured from Wetzlar city centre. */
+function distanceLabel(city: CityData) {
+  if (isHeadquartersCity(city)) return 'Unser Firmensitz';
+  if (city.distanceKm === 0) return 'Direkt neben unserem Firmensitz';
+  return `ca. ${city.distanceKm} km ab Wetzlar`;
+}
+
+/** Full sentence about the location of the city relative to our head office. */
+function distanceSentence(city: CityData) {
+  const { headquarters } = COMPANY_DATA;
+  if (isHeadquartersCity(city)) return `Unser Firmensitz liegt in der ${headquarters.street} in ${headquarters.city}.`;
+  if (city.distanceKm === 0) return `Direkt neben unserem Firmensitz in ${headquarters.city}.`;
+  return `Ca. ${city.distanceKm} km ab Wetzlar – betreut von unserem Firmensitz in ${headquarters.city}.`;
+}
 
 export function generateStaticParams() {
   return CITIES.map((city) => ({ stadt: city.slug }));
@@ -22,34 +49,30 @@ export async function generateMetadata({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!city) return {};
 
-  const pageUrl = `https://bad-energie.de/standorte/${city.slug}`;
-  const title = `${city.name}: Badsanierung & Heiztechnik | Bad & Energie GmbH`;
-  const description = `Ihr Meisterbetrieb für Badsanierung, Wärmepumpen & Haustechnik in ${city.name}. ${
-    city.distanceKm === 0
-      ? 'Direkt vor Ort in Wetzlar.'
-      : `Nur ${city.distanceKm} km entfernt.`
-  } Kostenlose Beratung & bis zu 70% Förderung.`;
+  const path = `/standorte/${city.slug}`;
+  const title = `Fliesenverlegung & Badsanierung in ${city.name}`;
+  const description = `Fliesenleger-Meisterbetrieb für ${city.name}: Badsanierung, Walk-In-Duschen, XXL-Großformate, Terrassen & DIN 18534 Abdichtung. ${distanceSentence(city)} Kostenfreies Vor-Ort-Aufmaß.`;
 
   return {
     title,
     description,
-    alternates: { 
-      canonical: pageUrl,
+    alternates: {
+      canonical: path,
       languages: {
-        'de': pageUrl,
-        'x-default': pageUrl,
+        'de': path,
+        'x-default': path,
       },
     },
     openGraph: {
       title,
       description,
-      url: pageUrl,
-      siteName: 'Bad & Energie GmbH',
+      url: path,
+      siteName: 'Fliesenverlegung Tezgel',
       locale: 'de_DE',
       type: 'website',
     },
-    robots: { 
-      index: true, 
+    robots: {
+      index: true,
       follow: true,
       googleBot: {
         index: true,
@@ -87,6 +110,7 @@ export default async function StandortPage({
   if (!city) notFound();
 
   const nearbyCities = getNearbyCities(city.slug, 6);
+  const { contact, authority } = COMPANY_DATA;
 
   const pageUrl = `${SITE_URL}/standorte/${city.slug}`;
   const breadcrumbs = [
@@ -98,8 +122,8 @@ export default async function StandortPage({
   const cityGraph = buildGraph([
     buildWebPageNode({
       url: pageUrl,
-      name: `Badsanierung, Heizung & Wärmepumpen in ${city.name} | Bad & Energie GmbH`,
-      description: `Ihr Meisterbetrieb für Badsanierung, Heizung & Wärmepumpen in ${city.name}. Kostenlose Beratung & Festpreisgarantie.`,
+      name: `Fliesenverlegung & Badsanierung in ${city.name} | Fliesenverlegung Tezgel`,
+      description: `Meisterbetrieb für Fliesenverlegung, Badsanierung und DIN 18534 Verbundabdichtung in ${city.name}. Kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`,
       breadcrumbItems: breadcrumbs,
     }),
     buildBreadcrumbNode(breadcrumbs, pageUrl),
@@ -107,55 +131,61 @@ export default async function StandortPage({
       cityName: city.name,
       citySlug: city.slug,
       distanceKm: city.distanceKm,
-      description: `Ihr Meisterbetrieb für Badsanierung und regenerative Heizsysteme in ${city.name}. Meisterbetrieb seit 2001.`,
+      description: `Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und DIN 18534 Verbundabdichtung in ${city.name}.`,
     }),
   ]);
+
+  const stats = [
+    {
+      value: isHeadquartersCity(city) ? city.name : city.distanceKm === 0 ? 'Nachbarstadt' : `ca. ${city.distanceKm} km`,
+      label: isHeadquartersCity(city)
+        ? 'Unser Firmensitz'
+        : city.distanceKm === 0
+          ? `Direkt neben unserem Firmensitz in ${COMPANY_DATA.headquarters.city}`
+          : 'Entfernung ab Wetzlar',
+      icon: MapPin,
+    },
+    { value: 'DIN 18534', label: 'Normgerechte Verbundabdichtung', icon: ShieldCheck },
+    { value: authority.shortName, label: 'Eingetragener Meisterbetrieb', icon: Award },
+  ];
 
   return (
     <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
       <JsonLd schema={cityGraph} />
 
       {/* Ambient Glow */}
-      <div className="ambient-glow-blue -top-20 -left-20" />
-      <div className="ambient-glow-cyan top-96 -right-20" />
+      <div className="ambient-glow-sky -top-20 -left-20" />
+      <div className="ambient-glow-mint top-96 -right-20" />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-cyan-300 text-xs font-black uppercase tracking-wider">
+        <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
+          <span className="eyebrow">
             <MapPin className="w-3.5 h-3.5" />
             <span>
-              {city.region} &middot;{' '}
-              {city.distanceKm === 0
-                ? 'Hauptsitz Wetzlar'
-                : `${city.distanceKm} km von Wetzlar`}
+              {city.region} &middot; {distanceLabel(city)}
             </span>
-          </div>
+          </span>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-            Badsanierung &amp; Heiztechnik in{' '}
-            <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">{city.name}</span>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+            Fliesenverlegung &amp; Badsanierung in{' '}
+            <span className="text-ceramic-gradient">{city.name}</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-blue-100 max-w-3xl mx-auto leading-relaxed font-normal">
-            Bad &amp; Energie GmbH – Ihr Meisterbetrieb für schlüsselfertige Komplettbäder,
-            NIBE Wärmepumpen, Gas-Brennwert und Haustechnik in {city.name} und Umgebung.
-            {city.distanceKm > 0 &&
-              ` Nur ${city.distanceKm} km von unserem Standort in Wetzlar entfernt.`}
+          <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            {COMPANY_DATA.legalName} – Ihr Meisterbetrieb für Badsanierung, fugenarme Großformate, Wohnbereiche,
+            Balkone &amp; Terrassen sowie DIN 18534 Verbundabdichtung in {city.name} und Umgebung.{' '}
+            {distanceSentence(city)}
           </p>
 
           <div className="flex flex-wrap gap-3.5 justify-center pt-2">
-            <Link
-              href="/termin"
-              className="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-[#E4040E] to-[#B91C1C] hover:shadow-[0_12px_28px_rgba(228,4,14,0.4)] text-white font-black rounded-full transition-all text-xs shadow-md border border-white/20 transform hover:-translate-y-0.5"
-            >
-              Beratungstermin in {city.name} anfragen &rarr;
+            <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+              Aufmaß in {city.name} anfragen
+              <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-              className="inline-flex items-center justify-center px-6 py-3.5 border border-white/20 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full transition-all text-xs backdrop-blur-md"
-            >
-              📞 {COMPANY_DATA.contact.phone}
+            <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
+              <Phone className="w-4 h-4 text-emerald-700" />
+              {contact.phone}
             </a>
           </div>
         </div>
@@ -166,77 +196,116 @@ export default async function StandortPage({
         <div className="glass-bezel-outer shadow-2xl max-w-5xl mx-auto">
           <div className="glass-bezel-inner p-8 sm:p-12 space-y-8">
             <div>
-              <span className="text-xs uppercase font-black tracking-wider text-[#0C3A87] bg-blue-50 px-3.5 py-1 rounded-full inline-block border border-blue-200/60 shadow-xs mb-2">
-                Regionaler Meister-Service
-              </span>
+              <span className="eyebrow mb-3">Regionaler Meister-Service</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-                Ihr Fachhandwerksbetrieb für {city.name}
+                Ihr Fliesen-Meisterbetrieb für {city.name}
               </h2>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
               {city.description}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="glass-surface p-6 rounded-[2rem] text-center border border-white/80">
-                <div className="text-2xl font-black text-[#0C3A87] mb-1">
-                  {city.distanceKm === 0 ? '✓ Vor Ort' : `${city.distanceKm} km`}
-                </div>
-                <div className="text-xs text-slate-500 font-medium">
-                  {city.distanceKm === 0 ? 'Hauptstandort Wetzlar' : 'Entfernung zu Ihnen'}
-                </div>
-              </div>
-              <div className="glass-surface p-6 rounded-[2rem] text-center border border-white/80">
-                <div className="text-2xl font-black text-[#0C3A87] mb-1">Bis 70 %</div>
-                <div className="text-xs text-slate-500 font-medium">BEG / KfW 458 Förderung</div>
-              </div>
-              <div className="glass-surface p-6 rounded-[2rem] text-center border border-white/80">
-                <div className="text-2xl font-black text-[#0C3A87] mb-1">100 %</div>
-                <div className="text-xs text-slate-500 font-medium">Meisterqualität seit 2001</div>
-              </div>
-            </div>
+            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              {stats.map(({ value, label, icon: Icon }) => (
+                <li
+                  key={label}
+                  className="rounded-[2rem] bg-white border border-slate-200 p-6 text-center flex flex-col items-center gap-1"
+                >
+                  <Icon className="w-5 h-5 text-emerald-600 mb-2" aria-hidden="true" />
+                  <span className="font-display text-2xl font-black text-slate-900 tabular-nums">{value}</span>
+                  <span className="text-xs text-slate-600 font-semibold">{label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
-      {/* ── Nearby Cities ────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+      {/* ── Services in this city ────────────────────────────────────────── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="stadt-leistungen">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-            Weitere Einsatzgebiete in der Region
+          <span className="eyebrow eyebrow-sky mb-4">Meister-Fachgewerke</span>
+          <h2 id="stadt-leistungen" className="text-2xl sm:text-3xl font-black text-slate-900">
+            Unsere Leistungen in {city.name}
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm mt-2 font-medium">
-            Wir sind in allen Städten und Gemeinden im Lahn-Dill-Kreis und Landkreis Gießen für Sie aktiv.
+          <p className="text-slate-700 text-sm sm:text-base mt-2">
+            Vom Vor-Ort-Aufmaß bis zur fertigen Fuge – alle Fliesengewerke aus einer Hand.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {nearbyCities.map((nearbyCity) => (
-            <Link
-              key={nearbyCity.slug}
-              href={`/standorte/${nearbyCity.slug}`}
-              className="glass-surface p-6 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(12,58,135,0.1)] hover:-translate-y-1 transition-all duration-500 group block"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-base font-black text-slate-900 group-hover:text-[#0C3A87] transition-colors">
-                  {nearbyCity.name}
-                </h3>
-                <span className="text-[11px] text-slate-600 bg-white/90 px-3 py-1 rounded-full font-black border border-slate-200/60 shadow-xs">
-                  {nearbyCity.distanceKm === 0
-                    ? 'Vor Ort'
-                    : `${nearbyCity.distanceKm} km`}
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 mb-3 font-medium">{nearbyCity.region}</p>
-              <span className="text-xs text-[#0C3A87] font-black flex items-center gap-1">
-                <span>Details ansehen</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-          ))}
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {SERVICES.map((srv) => {
+            const Icon = SERVICE_ICONS[srv.id] || Sparkles;
+            return (
+              <li key={srv.id}>
+                <Link
+                  href={`/leistungen/${srv.id}/${city.slug}`}
+                  className="group glass-surface rounded-3xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                >
+                  <div>
+                    <span className="icon-chip w-11 h-11 mb-4">
+                      <Icon className="w-5 h-5" />
+                    </span>
+                    <h3 className="text-base font-black text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                      {srv.name}
+                    </h3>
+                    <p className="text-sm text-slate-700 leading-relaxed">{srv.shortDescription}</p>
+                  </div>
+                  <span className="mt-5 pt-4 border-t border-slate-200 text-sm font-bold text-emerald-800 flex items-center gap-1.5">
+                    In {city.name}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      {/* ── Nearby Cities ────────────────────────────────────────────────── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="weitere-orte">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 id="weitere-orte" className="text-2xl sm:text-3xl font-black text-slate-900">
+            Weitere Einsatzgebiete in der Region
+          </h2>
+          <p className="text-slate-700 text-sm sm:text-base mt-2">
+            Wir verlegen Fliesen in Städten und Gemeinden im Lahn-Dill-Kreis, im Landkreis Gießen und in ganz Mittelhessen.
+          </p>
         </div>
-      </div>
+
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {nearbyCities.map((nearbyCity) => (
+            <li key={nearbyCity.slug}>
+              <Link
+                href={`/standorte/${nearbyCity.slug}`}
+                className="group glass-surface p-6 rounded-[2rem] h-full block hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+              >
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <h3 className="text-base font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                    {nearbyCity.name}
+                  </h3>
+                  <span className="text-[11px] text-slate-700 bg-white px-3 py-1 rounded-full font-bold border border-slate-200 whitespace-nowrap tabular-nums">
+                    {distanceLabel(nearbyCity)}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-600 mb-3 font-medium">{nearbyCity.region}</p>
+                <span className="text-xs text-emerald-800 font-black flex items-center gap-1">
+                  <span>Details ansehen</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-10 text-center">
+          <Link href="/standorte" className="btn-ghost px-7 py-3.5 text-xs">
+            Alle Standorte ansehen
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
 
       <QualityPromise />
     </div>
