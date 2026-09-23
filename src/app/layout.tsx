@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Outfit, IBM_Plex_Mono } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import '@/styles/tokens.css';
 import './globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
@@ -18,17 +18,10 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const outfit = Outfit({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-outfit',
-});
-
-const plexMono = IBM_Plex_Mono({
-  weight: ['400', '500'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-plex-mono',
+  variable: '--font-jakarta',
 });
 
 export const metadata: Metadata = {
@@ -53,13 +46,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Deniz Tezgel - Fliesenverlegung Tezgel' }],
   creator: 'Fliesenverlegung Tezgel',
   publisher: 'Fliesenverlegung Tezgel',
-  alternates: {
-    canonical: 'https://tezgel.de/',
-  },
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    url: 'https://tezgel.de/',
     title: 'Fliesenverlegung Tezgel | Meisterbetrieb Aßlar & Wetzlar',
     description: 'Ihr Meisterbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, Badsanierung, Terrassen & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
     siteName: 'Fliesenverlegung Tezgel',
@@ -78,7 +67,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#060911',
+  themeColor: '#FFFFFF',
+  colorScheme: 'light',
 };
 
 export default function RootLayout({
@@ -89,7 +79,7 @@ export default function RootLayout({
   const rootKnowledgeGraph = buildRootGraph();
 
   return (
-    <html lang="de" className={`${inter.variable} ${outfit.variable} ${plexMono.variable} dark`}>
+    <html lang="de" className={`${inter.variable} ${jakarta.variable}`}>
       <head>
         <meta name="geo.region" content="DE-HE" />
         <meta name="geo.placename" content="Aßlar" />
@@ -97,12 +87,12 @@ export default function RootLayout({
         <meta name="ICBM" content="50.5900, 8.4600" />
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#060911] text-white">
+      <body className="antialiased min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 font-sans">
         <AuthProvider>
           <ContentProvider>
             <TrackingScripts />
             <HeaderWrapper />
-            <main className="flex-1">
+            <main id="main-content" className="flex-1">
               {children}
             </main>
             <Footer />

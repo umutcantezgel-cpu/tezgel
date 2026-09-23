@@ -1,37 +1,29 @@
 /**
- * Default Team Configuration - Bad & Energie GmbH
+ * Default Team Configuration - Fliesenverlegung Tezgel
  */
+
+import { COMPANY_DATA } from '@/config/company';
 
 export const teamMembers = [
     {
         id: 1,
-        name: 'Sabri Demir',
-        role: 'Geschäftsführer & Projektleitung',
-        email: 'anfrage@bad-energie-profi.de',
-        phone: '+49 6441 2039053',
+        name: COMPANY_DATA.owner.fullName,
+        role: COMPANY_DATA.owner.title,
+        email: COMPANY_DATA.contact.email,
+        phone: COMPANY_DATA.contact.phone,
         image: '',
-        specializations: ['Badsanierung', 'NIBE Wärmepumpen', 'Projektleitung'],
-        bio: 'Geschäftsführer und Leitung der Bad & Energie GmbH in Wetzlar.'
+        specializations: ['Badsanierung', 'Fugenarme Großformate', 'DIN 18534 Verbundabdichtung'],
+        bio: `Inhaber und Fliesenlegermeister der ${COMPANY_DATA.legalName} in Aßlar – persönlicher Ansprechpartner vom Aufmaß bis zur Abnahme.`
     },
     {
         id: 2,
-        name: 'Meisterleitung SHK',
-        role: 'Bauleitung & 3D-Badplanung',
-        email: 'anfrage@bad-energie-profi.de',
-        phone: '+49 6441 2039053',
+        name: 'Verlege-Team Tezgel',
+        role: 'Fliesen-, Platten- und Mosaikleger',
+        email: COMPANY_DATA.contact.email,
+        phone: COMPANY_DATA.contact.phone,
         image: '',
-        specializations: ['3D-Planung', 'Hydraulischer Abgleich', 'Trinkwasserhygiene'],
-        bio: 'Spezialisten für präzise Ausführungsplanung und Baustellenkoordination vor Ort.'
-    },
-    {
-        id: 3,
-        name: 'Service- & Montageteam',
-        role: 'Anlagenmechaniker & Servicetechniker',
-        email: 'info@bad-energie.de',
-        phone: '+49 6441 42956',
-        image: '',
-        specializations: ['Heizungsbau', 'Badsanierung', 'Kundendienst'],
-        bio: 'Erfahrene Fachhandwerker für saubere, staubarme Montage und zuverlässigen Notdienst.'
+        specializations: ['Bäder & Walk-In-Duschen', 'Wohnbereiche & Treppen', 'Balkon & Terrasse'],
+        bio: 'Erfahrene Fliesenleger für saubere, staubgeschützte Ausführung in bewohnten Räumen.'
     },
 ];
 

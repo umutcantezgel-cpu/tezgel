@@ -27,29 +27,29 @@ const STORAGE_KEYS = {
 
 // Adapter to map COMPANY_DATA to legacy siteConfig structure for UI compatibility
 const getAdaptedSiteConfig = () => ({
-    name: COMPANY_DATA?.legalName || "Bad & Energie GmbH",
-    description: "Ihr Meisterbetrieb für Badsanierung, Heizung und Haustechnik in Wetzlar und Umgebung.",
+    name: COMPANY_DATA.legalName,
+    description: "Ihr Meisterbetrieb für Fliesenverlegung, Badsanierung und fugenarme Großformate in Aßlar, Wetzlar und ganz Hessen.",
     contact: {
-        phone: COMPANY_DATA?.contact?.phone || "06441 20 39 053",
-        phoneLink: (COMPANY_DATA?.contact?.phone || "064412039053").replace(/[^0-9+]/g, ''),
-        email: COMPANY_DATA?.contact?.email || "anfrage@bad-energie-profi.de",
+        phone: COMPANY_DATA.contact.phone,
+        phoneLink: COMPANY_DATA.contact.phoneLink,
+        email: COMPANY_DATA.contact.email,
         address: {
-            street: COMPANY_DATA?.address?.street || "Hans-Sachs-Straße 12",
-            zipCity: `${COMPANY_DATA?.address?.postalCode || "35576"} ${COMPANY_DATA?.address?.city || "Wetzlar"}`
+            street: COMPANY_DATA.address.street,
+            zipCity: `${COMPANY_DATA.address.postalCode} ${COMPANY_DATA.address.city}`
         },
         hours: {
-            weekdays: COMPANY_DATA?.hours?.formattedWeekdays || "Mo - Do: 07:00 – 16:45 Uhr",
-            saturday: "Notdienst für Bestandskunden"
+            weekdays: COMPANY_DATA.hours.formattedWeekdays,
+            saturday: COMPANY_DATA.hours.formattedSaturday
         }
     },
     social: {
-        instagram: COMPANY_DATA?.social?.instagram || "https://www.instagram.com/badundenergie"
+        instagram: COMPANY_DATA.social?.instagram || ""
     },
-    serviceAreas: COMPANY_DATA?.business?.serviceArea || ["Wetzlar", "Gießen", "Lahn-Dill-Kreis"],
+    serviceAreas: COMPANY_DATA.business.serviceArea,
     legal: {
-        owner: COMPANY_DATA?.owner?.fullName || "Sabri Demir",
-        taxId: COMPANY_DATA?.tax?.ustId || "DE215 933 612",
-        register: COMPANY_DATA?.authority?.name || "Handwerkskammer Wiesbaden"
+        owner: COMPANY_DATA.owner.fullName,
+        taxId: COMPANY_DATA.tax.ustId,
+        register: COMPANY_DATA.authority.name
     }
 });
 

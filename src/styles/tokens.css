@@ -45,11 +45,28 @@
   --color-sky-300: #7DD3FC;
   --color-sky-400: #38BDF8;
   --color-sky-500: #0EA5E9;
-  --color-sky-600: #0284C7; /* Primary Sky on Light */
-  --color-sky-700: #0369A1;
+  --color-sky-600: #0284C7; /* Sky accents, icons & water (DIN 18534) */
+  --color-sky-700: #0369A1; /* Sky text on light (AA) */
+  --color-sky-800: #075985; /* Sky text on light (AAA) */
 
-  /* Neutrals */
+  /* Warm Amber - Ratings & Precious Details */
+  --color-amber-50: #FFFBEB;
+  --color-amber-200: #FDE68A;
+  --color-amber-500: #F59E0B; /* Rating stars */
+  --color-amber-600: #D97706;
+  --color-amber-800: #92400E; /* Amber text on light (AAA) */
+
+  /* Neutrals (mapped onto the slate scale) */
   --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F8FAFC;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #CBD5E1;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-500: #64748B;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1E293B;
   --color-neutral-900: #0F172A;
 
   /* ========================================================================
@@ -69,17 +86,47 @@
   --color-background-surface-secondary: var(--color-canvas-subtle);
   --color-background-elevated: var(--color-canvas-white);
 
-  /* Text Colors */
+  /* Text Colors (WCAG: body text AAA on white, interactive text >= AA) */
   --color-text-primary: #0F172A;
   --color-text-secondary: #475569;
-  --color-text-tertiary: #64748B;
-  --color-text-mint: #059669;
-  --color-text-sky: #0284C7;
+  --color-text-tertiary: #475569;
+  --color-text-mint: #047857;
+  --color-text-sky: #0369A1;
+  --color-text-interactive: #065F46;
 
   /* Interactive Elements */
-  --color-interactive-primary: #059669;
-  --color-interactive-primary-hover: #047857;
-  --color-interactive-secondary: #0284C7;
+  --color-interactive-primary: #047857;
+  --color-interactive-primary-hover: #065F46;
+  --color-interactive-secondary: #0369A1;
+
+  /* Glows */
+  --glow-mint: rgba(5, 150, 105, 0.12);
+  --glow-sky: rgba(2, 132, 199, 0.12);
+
+  /* ========================================================================
+     COMPATIBILITY ALIASES
+     Older components reference these names; they resolve onto the
+     Ceramic Light palette so no component renders with an undefined color.
+     ======================================================================== */
+  --color-brand-primary: #047857;
+  --color-brand-primary-hover: #065F46;
+  --color-brand-secondary: #0369A1;
+  --color-button-primary-bg: #047857;
+  --color-button-primary-hover: #065F46;
+  --color-button-primary-text: #FFFFFF;
+  --color-button-secondary-bg: #FFFFFF;
+  --color-button-secondary-hover: #F8FAFC;
+  --color-button-secondary-text: #0F172A;
+  --color-button-secondary-border: #CBD5E1;
+  --color-border-default: #E2E8F0;
+  --color-border-interactive: #059669;
+  --color-feedback-error: #B91C1C;
+  --color-feedback-warning: #B45309;
+  --color-feedback-success: #047857;
+  --color-feedback-info: #0369A1;
+  --color-blue-50: #F0F9FF;
+  --color-blue-600: #0369A1;
+  --color-blue-700: #075985;
 
   /* ========================================================================
      SPATIAL SYSTEM
@@ -101,8 +148,15 @@
   /* ========================================================================
      TYPOGRAPHY SYSTEM
      ======================================================================== */
-  --font-family-display: var(--font-outfit, 'Outfit', var(--font-inter, 'Inter', system-ui, sans-serif));
+  --font-family-display: var(--font-jakarta, 'Plus Jakarta Sans', var(--font-inter, 'Inter', system-ui, sans-serif));
   --font-family-body: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
 
   /* ========================================================================
      EFFECTS & RADIUS
@@ -112,10 +166,12 @@
   --shadow-elevated: 0 20px 45px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.9);
   --shadow-mint-glow: 0 12px 28px -6px rgba(16, 185, 129, 0.28);
   --shadow-sky-glow: 0 12px 28px -6px rgba(14, 165, 233, 0.28);
+  --shadow-ceramic: 0 8px 30px rgba(15, 23, 42, 0.06);
 
-  --radius-sm: 8px;
+  /* Named "ceramic" so they never shadow Tailwind's own --radius-* scale
+     (rounded-sm / rounded-lg / rounded-xl keep their standard values). */
   --radius-base: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
+  --radius-ceramic-card: 24px;
+  --radius-ceramic-panel: 32px;
   --radius-full: 9999px;
 }

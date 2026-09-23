@@ -1,10 +1,39 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   FLIESENVERLEGUNG TEZGEL – CLEAN ARCHITECTURAL CERAMIC LIGHT
+   Theme tokens (generate Tailwind utilities such as text-primary-700,
+   bg-secondary-50, font-display). Raw design tokens live in styles/tokens.css.
+   ========================================================================== */
+
 @theme {
-  --color-primary: #10B981;
-  --color-primary-dark: #059669;
-  --color-primary-light: #34D399;
-  --color-primary-glow: #00F5A0;
+  /* Primary – Smaragd / Mint (craftsmanship). Text usage: 700+ only. */
+  --color-primary: #047857;
+  --color-primary-dark: #065F46;
+  --color-primary-light: #10B981;
+  --color-primary-50: #ECFDF5;
+  --color-primary-100: #D1FAE5;
+  --color-primary-200: #A7F3D0;
+  --color-primary-300: #6EE7B7;
+  --color-primary-400: #34D399;
+  --color-primary-500: #10B981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065F46;
+  --color-primary-900: #064E3B;
+
+  /* Secondary – Ceramic Sky (water, sanitary, DIN 18534). Text usage: 700+ only. */
+  --color-secondary: #0369A1;
+  --color-secondary-50: #F0F9FF;
+  --color-secondary-100: #E0F2FE;
+  --color-secondary-200: #BAE6FD;
+  --color-secondary-300: #7DD3FC;
+  --color-secondary-400: #38BDF8;
+  --color-secondary-500: #0EA5E9;
+  --color-secondary-600: #0284C7;
+  --color-secondary-700: #0369A1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0C4A6E;
 
   --color-mint-50: #ECFDF5;
   --color-mint-100: #D1FAE5;
@@ -14,37 +43,11 @@
   --color-mint-500: #10B981;
   --color-mint-600: #059669;
   --color-mint-700: #047857;
+  --color-mint-800: #065F46;
 
-  --color-sky-50: #F0F9FF;
-  --color-sky-100: #E0F2FE;
-  --color-sky-200: #BAE6FD;
-  --color-sky-300: #7DD3FC;
-  --color-sky-400: #38BDF8;
-  --color-sky-500: #0EA5E9;
-  --color-sky-600: #0284C7;
-
-  --color-obsidian-950: #060911;
-  --color-obsidian-900: #0C1322;
-  --color-obsidian-850: #111A2E;
-  --color-obsidian-800: #1E293B;
-  --color-obsidian-700: #334155;
-  --color-obsidian-600: #475569;
-  --color-obsidian-500: #64748B;
-  --color-obsidian-400: #94A3B8;
-
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #94A3B8;
-  --color-text-light: #64748B;
-
-  --color-bg-primary: #060911;
-  --color-bg-secondary: #0C1322;
-  --color-bg-tertiary: #111A2E;
-
-  --color-border: rgba(255, 255, 255, 0.12);
-  --color-divider: rgba(255, 255, 255, 0.08);
-
-  --font-sans: var(--font-outfit, 'Outfit', var(--font-inter, 'Inter', system-ui, sans-serif));
-  --font-mono: var(--font-plex-mono, 'IBM Plex Mono', monospace);
+  --font-sans: var(--font-inter), 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-jakarta), 'Plus Jakarta Sans', var(--font-inter), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-jakarta), 'Plus Jakarta Sans', var(--font-inter), 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -54,6 +57,7 @@
     scroll-behavior: smooth;
     background-color: #F8FAFC;
     color: #0F172A;
+    color-scheme: light;
   }
 
   body {
@@ -66,15 +70,206 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans);
+    font-family: var(--font-display);
     color: #0F172A;
     letter-spacing: -0.025em;
   }
 
   ::selection {
-    background-color: rgba(16, 185, 129, 0.2);
-    color: #059669;
+    background-color: #D1FAE5;
+    color: #064E3B;
   }
+
+  :focus-visible {
+    outline: 2px solid #059669;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   COMPONENTS – shared ceramic building blocks. Placed in the components
+   layer so per-element Tailwind utilities can still override them.
+   ========================================================================== */
+@layer components {
+  /* Light hero panel & full-width band: white ceramic with mint/sky glaze */
+  .ceramic-hero,
+  .ceramic-band {
+    position: relative;
+    color: #0F172A;
+    background:
+      radial-gradient(55% 90% at 0% 0%, rgba(16, 185, 129, 0.10) 0%, rgba(16, 185, 129, 0) 65%),
+      radial-gradient(55% 90% at 100% 100%, rgba(14, 165, 233, 0.10) 0%, rgba(14, 165, 233, 0) 65%),
+      linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  }
+
+  .ceramic-hero {
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.14), 0 1px 3px rgba(15, 23, 42, 0.04);
+  }
+
+  .ceramic-band {
+    border-bottom: 1px solid #E2E8F0;
+  }
+
+  /* All-caps micro badge */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    border: 1px solid #A7F3D0;
+    background: #ECFDF5;
+    color: #065F46;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow-sky {
+    border-color: #BAE6FD;
+    background: #F0F9FF;
+    color: #075985;
+  }
+
+  .eyebrow-neutral {
+    border-color: #E2E8F0;
+    background: #FFFFFF;
+    color: #334155;
+  }
+
+  .eyebrow-amber {
+    border-color: #FDE68A;
+    background: #FFFBEB;
+    color: #92400E;
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 800;
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+
+  .btn-primary {
+    background: #047857;
+    border: 1px solid #047857;
+    color: #FFFFFF;
+    box-shadow: 0 10px 24px -10px rgba(4, 120, 87, 0.55);
+  }
+
+  .btn-primary:hover {
+    background: #065F46;
+    border-color: #065F46;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -10px rgba(6, 95, 70, 0.6);
+  }
+
+  .btn-ghost {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #0F172A;
+    box-shadow: 0 2px 10px -4px rgba(15, 23, 42, 0.10);
+  }
+
+  .btn-ghost:hover {
+    background: #F8FAFC;
+    border-color: #10B981;
+    color: #065F46;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus-visible,
+  .btn-ghost:focus-visible {
+    outline: 2px solid #059669;
+    outline-offset: 3px;
+  }
+
+  .btn-primary:disabled,
+  .btn-ghost:disabled,
+  .btn-primary[aria-disabled="true"],
+  .btn-ghost[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* Ceramic gradient highlight for key headline words (AA on white) */
+  .text-ceramic-gradient {
+    background-image: linear-gradient(90deg, #047857 0%, #0F766E 50%, #0369A1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Icon tile that glazes to emerald when its .group is hovered */
+  .icon-chip {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: #ECFDF5;
+    border: 1px solid #D1FAE5;
+    color: #047857;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }
+
+  .group:hover .icon-chip {
+    background: #047857;
+    border-color: #047857;
+    color: #FFFFFF;
+  }
+
+  /* Long-form article typography (blog, Ratgeber, legal texts) */
+  .prose-ceramic {
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .prose-ceramic > :first-child { margin-top: 0; }
+  .prose-ceramic :is(p, ul, ol, blockquote, pre, figure, table) { margin: 1.25em 0; }
+  .prose-ceramic h2 { color: #0F172A; font-size: 1.5rem; line-height: 1.3; font-weight: 900; margin: 2.5rem 0 1rem; }
+  .prose-ceramic h3 { color: #0F172A; font-size: 1.125rem; line-height: 1.4; font-weight: 900; margin: 2rem 0 0.75rem; }
+  .prose-ceramic h4 { color: #0F172A; font-weight: 800; margin: 1.5rem 0 0.5rem; }
+  .prose-ceramic strong { color: #0F172A; font-weight: 700; }
+  .prose-ceramic a { color: #065F46; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .prose-ceramic a:hover { color: #047857; }
+  .prose-ceramic ul { list-style: disc; padding-left: 1.5rem; }
+  .prose-ceramic ol { list-style: decimal; padding-left: 1.5rem; }
+  .prose-ceramic li + li { margin-top: 0.375rem; }
+  .prose-ceramic li::marker { color: #059669; font-weight: 700; }
+  .prose-ceramic blockquote { border-left: 4px solid #10B981; background: #ECFDF5; padding: 1rem 1.5rem; border-radius: 0 1rem 1rem 0; font-style: italic; color: #1E293B; }
+  .prose-ceramic code { background: #F1F5F9; color: #0F172A; padding: 0.125rem 0.375rem; border-radius: 0.375rem; font-size: 0.875em; }
+  .prose-ceramic hr { border: 0; border-top: 1px solid #E2E8F0; margin: 2.5rem 0; }
+  .prose-ceramic img { border-radius: 1rem; margin: 2rem 0; }
+  .prose-ceramic table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .prose-ceramic th { background: #F1F5F9; color: #0F172A; font-weight: 800; text-align: left; padding: 0.625rem 0.75rem; border-bottom: 1px solid #E2E8F0; }
+  .prose-ceramic td { padding: 0.625rem 0.75rem; border-bottom: 1px solid #E2E8F0; }
 }
 
 @layer utilities {
@@ -83,7 +278,7 @@
   }
 
   /* ========================================================================
-     CLEAN FROSTED LIGHT ARCHITECTURE (CERAMIC & MARBLE LIGHT)
+     FROSTED CERAMIC GLASS SURFACES
      ======================================================================== */
 
   .glass-surface {
@@ -91,7 +286,7 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(226, 232, 240, 0.9);
-    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.03);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.03);
   }
 
   .glass-surface-subtle {
@@ -143,7 +338,7 @@
     gap: 0.75rem;
     padding: 0.875rem 1.75rem;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #047857 0%, #065F46 100%);
     color: #FFFFFF;
     font-weight: 800;
     font-size: 0.9375rem;
@@ -155,7 +350,7 @@
   .glass-button-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 16px 35px -5px rgba(5, 150, 105, 0.45);
-    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    background: linear-gradient(135deg, #065F46 0%, #064E3B 100%);
     color: #FFFFFF;
   }
 
@@ -177,11 +372,12 @@
 
   .glass-button-secondary:hover {
     background: #F8FAFC;
-    border-color: #94A3B8;
-    color: #059669;
+    border-color: #10B981;
+    color: #065F46;
     transform: translateY(-2px);
   }
 
+  /* WhatsApp: darker brand greens so white label text stays readable */
   .glass-button-whatsapp {
     display: inline-flex;
     align-items: center;
@@ -189,27 +385,28 @@
     gap: 0.65rem;
     padding: 0.875rem 1.75rem;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
     color: #FFFFFF;
     font-weight: 800;
     font-size: 0.9375rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 10px 25px -5px rgba(18, 140, 126, 0.35);
     transition: all 0.35s cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .glass-button-whatsapp:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 32px -5px rgba(37, 211, 102, 0.55);
+    color: #FFFFFF;
+    box-shadow: 0 16px 32px -5px rgba(18, 140, 126, 0.5);
   }
 
-  /* Ambient glowing orbs (Light Ceramic & Emerald) */
+  /* Ambient glaze orbs (decorative only) */
   .ambient-glow-mint {
     position: absolute;
     width: 550px;
     height: 550px;
     border-radius: 9999px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0) 70%);
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.12) 0%, rgba(5, 150, 105, 0) 70%);
     filter: blur(90px);
     pointer-events: none;
     z-index: 0;

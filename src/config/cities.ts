@@ -1,6 +1,7 @@
 export interface CityData {
   slug: string;
   name: string;
+  /** Approximate distance from Wetzlar city centre (neighbouring our head office in Aßlar). */
   distanceKm: number;
   region: string;
   description: string;
@@ -13,7 +14,7 @@ export const CITIES: CityData[] = [
     name: 'Wetzlar',
     distanceKm: 0,
     region: 'Lahn-Dill-Kreis',
-    description: 'Als Ihr lokaler Meisterbetrieb direkt in Wetzlar sind wir in wenigen Minuten bei Ihnen. Von der Altstadt bis Niedergirmes – wir kennen die Gebäudestrukturen und Installationen in Wetzlar wie unsere Westentasche.',
+    description: 'Wetzlar grenzt direkt an unseren Firmensitz in Aßlar. Für Badsanierungen, Großformat-Fliesen und Balkonsanierungen sind wir dadurch schnell beim Aufmaß und jeden Tag pünktlich auf Ihrer Baustelle.',
     mapQuery: 'Wetzlar,Hessen,Deutschland',
   },
   {
@@ -21,7 +22,7 @@ export const CITIES: CityData[] = [
     name: 'Gießen',
     distanceKm: 25,
     region: 'Landkreis Gießen',
-    description: 'Als Universitätsstadt mit vielen Alt- und Neubauten bietet Gießen ein breites Spektrum an Haustechnik-Anforderungen. Ob Studentenwohnheim oder Einfamilienhaus – wir sind Ihr kompetenter Partner.',
+    description: 'In Gießen und im Landkreis Gießen verlegen wir Fliesen in Bädern, Wohnräumen und auf Terrassen – vom kostenfreien Vor-Ort-Aufmaß bis zur fertigen Fuge, mit Staubschutz bei bewohnten Sanierungen.',
     mapQuery: 'Gießen,Hessen,Deutschland',
   },
   {
@@ -29,7 +30,7 @@ export const CITIES: CityData[] = [
     name: 'Marburg',
     distanceKm: 40,
     region: 'Landkreis Marburg-Biedenkopf',
-    description: 'Die historische Universitätsstadt an der Lahn stellt besondere Anforderungen an die Haustechnik. Wir haben Erfahrung mit denkmalgeschützten Gebäuden und modernen Sanierungen in Marburg.',
+    description: 'Auch in Marburg und im Landkreis Marburg-Biedenkopf übernehmen wir komplette Badsanierungen und fugenarme Großformat-Verlegungen – mit normgerechter Verbundabdichtung nach DIN 18534.',
     mapQuery: 'Marburg,Hessen,Deutschland',
   },
   {
@@ -37,7 +38,7 @@ export const CITIES: CityData[] = [
     name: 'Limburg an der Lahn',
     distanceKm: 35,
     region: 'Landkreis Limburg-Weilburg',
-    description: 'Auch in Limburg und dem Landkreis Limburg-Weilburg sind wir für Sie da. Professionelle Sanitär- und Heizungstechnik mit kurzen Anfahrtswegen.',
+    description: 'In Limburg und dem Landkreis Limburg-Weilburg sanieren wir Bäder, verlegen Wohnraum- und Treppenfliesen und bauen Balkone und Terrassen neu auf – mit transparentem Festpreisangebot.',
     mapQuery: 'Limburg+an+der+Lahn,Hessen,Deutschland',
   },
   {
@@ -45,7 +46,7 @@ export const CITIES: CityData[] = [
     name: 'Bad Nauheim',
     distanceKm: 40,
     region: 'Wetteraukreis',
-    description: 'Die Kurstadt Bad Nauheim mit ihren historischen Villen und Jugendstilbauten erfordert feinfühlige Haustechnik-Lösungen. Wir verbinden moderne Technik mit dem Charme historischer Gebäude.',
+    description: 'Für Bauherren und Eigentümer in Bad Nauheim planen und verlegen wir Fliesen und Naturstein – von der bodengleichen Walk-In-Dusche bis zur großformatigen Wohnraumfläche.',
     mapQuery: 'Bad+Nauheim,Hessen,Deutschland',
   },
   {
@@ -53,7 +54,7 @@ export const CITIES: CityData[] = [
     name: 'Friedberg (Hessen)',
     distanceKm: 45,
     region: 'Wetteraukreis',
-    description: 'In Friedberg und der gesamten Wetterau sind wir ein verlässlicher Partner für Sanitär, Heizung und Klimatechnik. Schnelle Reaktionszeiten und faire Preise.',
+    description: 'In Friedberg und der Wetterau übernehmen wir Badsanierungen, Fliesenarbeiten im Neubau und die Untergrundvorbereitung – sauber abgestimmt und mit festen Terminen.',
     mapQuery: 'Friedberg,Hessen,Deutschland',
   },
   {
@@ -61,7 +62,7 @@ export const CITIES: CityData[] = [
     name: 'Butzbach',
     distanceKm: 35,
     region: 'Wetteraukreis',
-    description: 'Die Friedrich-Ludwig-Weidig-Stadt Butzbach und Umgebung gehört fest zu unserem Einzugsgebiet. Zuverlässige Haustechnik für Privat und Gewerbe.',
+    description: 'Butzbach und Umgebung gehören zu unserem Einsatzgebiet: Wir verlegen Fliesen in Bad, Küche, Wohnbereich und auf dem Balkon – mit Meisterqualität aus dem Lahn-Dill-Kreis.',
     mapQuery: 'Butzbach,Hessen,Deutschland',
   },
   {
@@ -69,7 +70,7 @@ export const CITIES: CityData[] = [
     name: 'Herborn',
     distanceKm: 20,
     region: 'Lahn-Dill-Kreis',
-    description: 'Die Bärenstadt Herborn liegt nur wenige Kilometer von unserem Standort entfernt. Ob Altstadt-Fachwerkhaus oder Neubaugebiet – wir sind schnell vor Ort.',
+    description: 'Herborn liegt im Lahn-Dill-Kreis nur eine kurze Fahrt von uns entfernt. Ob Bestandsbad oder Neubau – wir übernehmen Aufmaß, Abdichtung und Verlegung aus einer Hand.',
     mapQuery: 'Herborn,Hessen,Deutschland',
   },
   {
@@ -77,7 +78,7 @@ export const CITIES: CityData[] = [
     name: 'Dillenburg',
     distanceKm: 25,
     region: 'Lahn-Dill-Kreis',
-    description: 'Die Oranierstadt Dillenburg und das gesamte Dilltal vertrauen auf unsere Expertise in Sanitär- und Heizungstechnik. Faire Preise, kompetente Beratung.',
+    description: 'In Dillenburg und dem Dilltal sanieren wir Bäder schlüsselfertig und verlegen Großformate, Treppen und Terrassenbeläge – mit Staubschutz und besenreiner Übergabe.',
     mapQuery: 'Dillenburg,Hessen,Deutschland',
   },
   {
@@ -85,7 +86,7 @@ export const CITIES: CityData[] = [
     name: 'Haiger',
     distanceKm: 30,
     region: 'Lahn-Dill-Kreis',
-    description: 'Auch in Haiger und den umliegenden Ortsteilen bieten wir das volle Spektrum der Haustechnik. Schnelle Anfahrt und termingerechte Ausführung.',
+    description: 'Auch in Haiger und den umliegenden Ortsteilen sind wir für Fliesen- und Badprojekte im Einsatz – von der barrierefreien Dusche bis zur Balkonsanierung.',
     mapQuery: 'Haiger,Hessen,Deutschland',
   },
   {
@@ -93,7 +94,7 @@ export const CITIES: CityData[] = [
     name: 'Braunfels',
     distanceKm: 10,
     region: 'Lahn-Dill-Kreis',
-    description: 'Die Schlossstadt Braunfels liegt direkt vor unserer Haustür. Kürzeste Anfahrtswege garantieren schnellen Service für alle Haustechnik-Anliegen.',
+    description: 'Braunfels liegt ganz in der Nähe unseres Firmensitzes. Kurze Wege machen Aufmaß, Materialauswahl und Abstimmung vor Ort besonders unkompliziert.',
     mapQuery: 'Braunfels,Hessen,Deutschland',
   },
   {
@@ -101,7 +102,7 @@ export const CITIES: CityData[] = [
     name: 'Solms',
     distanceKm: 8,
     region: 'Lahn-Dill-Kreis',
-    description: 'Solms gehört zu unseren nächsten Nachbargemeinden. Hier sind wir besonders schnell vor Ort – ideal für dringende Reparaturen und geplante Installationen.',
+    description: 'Solms gehört zu unseren direkten Nachbargemeinden. Hier sind wir schnell vor Ort – für die komplette Badsanierung ebenso wie für kleinere Fliesenarbeiten.',
     mapQuery: 'Solms,Hessen,Deutschland',
   },
   {
@@ -109,7 +110,7 @@ export const CITIES: CityData[] = [
     name: 'Aßlar',
     distanceKm: 5,
     region: 'Lahn-Dill-Kreis',
-    description: 'Als direkter Nachbar von Wetzlar gehört Aßlar zu unserem Kerngebiet. Minimale Anfahrtszeit und persönlicher Service zeichnen uns hier aus.',
+    description: 'In Aßlar ist unser Firmensitz in der Hohwardstraße 14. Hier sind wir zu Hause – mit persönlicher Beratung durch Fliesenlegermeister Deniz Tezgel und kürzesten Wegen zu Ihrer Baustelle.',
     mapQuery: 'Aßlar,Hessen,Deutschland',
   },
 ];

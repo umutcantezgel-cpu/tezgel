@@ -1,5 +1,15 @@
 // portfolio.config.js
-// Source: Gemini 3 Pro Official Reference Documentation (v1.0)
+
+/**
+ * Project IDs that document real Fliesenverlegung Tezgel work. The entries in
+ * PORTFOLIO_PROJECTS below were inherited from a previous site owner (heating,
+ * air conditioning, solar): their detail URLs keep working, but they are
+ * noindexed, excluded from the sitemap and not listed as Tezgel references.
+ * Add a project's id here once it is replaced with a genuine Tezgel project.
+ */
+export const TEZGEL_PROJECT_IDS = [];
+
+export const isLegacyProject = (project) => !TEZGEL_PROJECT_IDS.includes(project?.id);
 
 export const PORTFOLIO_PROJECTS = [
     {

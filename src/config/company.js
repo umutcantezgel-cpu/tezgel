@@ -111,6 +111,11 @@ export const COMPANY_DATA = {
         website: "https://tezgel.de"
     },
 
+    // Social Profiles
+    social: {
+        instagram: "https://www.instagram.com/fliesenverlegung_tezgel/"
+    },
+
     // Business Hours
     hours: {
         monday: { open: "07:30", close: "18:00", type: "normal" },
@@ -233,7 +238,7 @@ export const historyTimeline = [
     },
     {
         year: "Heute",
-        title: "Führender Fachbetrieb in Mittelhessen",
+        title: "Ihr Fliesen-Fachbetrieb in Mittelhessen",
         description: "Fester Partner für private Bauherren und anspruchsvolle Sanierungsobjekte in Aßlar, Wetzlar und ganz Hessen."
     }
 ];

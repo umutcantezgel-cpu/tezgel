@@ -75,11 +75,11 @@ export function buildOrganizationNode(): SchemaNode {
     logo: {
       '@type': 'ImageObject',
       '@id': LOGO_ID,
-      url: `${SITE_URL}/images/logo.png`,
-      contentUrl: `${SITE_URL}/images/logo.png`,
+      url: `${SITE_URL}/images/logo/logo-horizontal.png`,
+      contentUrl: `${SITE_URL}/images/logo/logo-horizontal.png`,
       caption: 'Fliesenverlegung Tezgel Logo',
     },
-    image: `${SITE_URL}/images/logo.png`,
+    image: `${SITE_URL}/images/logo/logo-horizontal.png`,
     founder: { '@id': FOUNDER_ID },
     contactPoint: {
       '@type': 'ContactPoint',
@@ -88,7 +88,7 @@ export function buildOrganizationNode(): SchemaNode {
       areaServed: 'DE',
       availableLanguage: ['German'],
     },
-    sameAs: [],
+    sameAs: ['https://www.instagram.com/fliesenverlegung_tezgel/'],
   };
 }
 
@@ -182,17 +182,19 @@ export function buildLocalBusinessNode(): SchemaNode {
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Überweisung, Bar',
     openingHoursSpecification: [
+      // Mirrors COMPANY_DATA.hours; Saturday is appointment-only (Aufmaßtermine)
+      // and therefore not published as regular opening hours.
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
         opens: '07:30',
         closes: '18:00',
       },
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '08:00',
-        closes: '14:00',
+        dayOfWeek: ['Friday'],
+        opens: '07:30',
+        closes: '17:00',
       },
     ],
   };
@@ -454,7 +456,7 @@ export function buildArticleNode(options: {
     publisher: { '@id': ORG_ID },
     image: options.image
       ? (options.image.startsWith('http') ? options.image : `${SITE_URL}${options.image}`)
-      : `${SITE_URL}/images/logo.png`,
+      : `${SITE_URL}/images/logo/logo-horizontal.png`,
     keywords: options.keywords?.join(', '),
   };
 }

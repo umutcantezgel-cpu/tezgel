@@ -1,10 +1,23 @@
+/**
+ * Only these articles belong to the Fliesenverlegung Tezgel portfolio (bath &
+ * tiles). All other posts were inherited from a previous site owner and cover
+ * heating/HVAC topics: their URLs keep working, but they are noindexed,
+ * excluded from the sitemap and hidden from blog listings.
+ */
+export const TEZGEL_POST_SLUGS = [
+    "barrierefreies-bad-planung-zuschuesse",
+    "smart-bad-wellness-hightech"
+];
+
+export const isHvacPost = (post) => !TEZGEL_POST_SLUGS.includes(post?.slug);
+
 export const posts = [
     {
         id: "1",
         title: "Wärmepumpen-Förderung 2024: Das müssen Sie wissen",
         excerpt: "Erfahren Sie alles über die aktuellen Förderprogramme für Wärmepumpen und wie Sie bis zu 70% der Kosten erstattet bekommen.",
         category: "heizung",
-        author: "Baris Haustechnik",
+        author: "Ratgeber-Redaktion",
         date: "15. März 2024",
         readTime: "5 Min.",
         image: "/images/uploads/extra-01.webp",
@@ -92,7 +105,7 @@ Als Ihr Fachbetrieb in Wetzlar und Umgebung unterstützen wir Sie bei der techni
         title: "Wasserschaden vermeiden: 5 Tipps vom Profi",
         excerpt: "Ein Wasserschaden kann teuer werden. Mit diesen einfachen Wartungstipps schützen Sie Ihr Zuhause effektiv.",
         category: "sanitaer",
-        author: "Team Baris",
+        author: "Ratgeber-Redaktion",
         date: "10. März 2024",
         readTime: "3 Min.",
         image: "/images/uploads/extra-02.webp",
@@ -142,7 +155,7 @@ Ein wenig Aufmerksamkeit schützt vor erheblichem Schaden. Sollten Sie dennoch F
         title: "Solarthermie vs. Photovoltaik: Was lohnt sich?",
         excerpt: "Der Vergleich: Wir erklären die Unterschiede und helfen Ihnen bei der Entscheidung für die richtige Solartechnik.",
         category: "solar",
-        author: "Baris Haustechnik",
+        author: "Ratgeber-Redaktion",
         date: "05. März 2024",
         readTime: "7 Min.",
         image: "/images/uploads/extra-03.webp",
@@ -196,7 +209,7 @@ Die optimale Lösung richtet sich nach Ihren Verbrauchsgewohnheiten und den baul
         title: "Heizungswartung: Warum sie Pflicht ist",
         excerpt: "Regelmäßige Wartung spart nicht nur Energie, sondern ist auch versicherungstechnisch relevant. Alle Infos im Überblick.",
         category: "wartung",
-        author: "Team Baris",
+        author: "Ratgeber-Redaktion",
         date: "28. Februar 2024",
         readTime: "4 Min.",
         image: "/images/uploads/extra-04.webp",
@@ -224,9 +237,9 @@ Sicherheit geht stets vor. Bei der Wartung werden sicherheitsrelevante Bauteile 
 
 Hersteller knüpfen Garantieansprüche an nachgewiesene Fachwartungen. Auch Gebäudeversicherungen fordern im Schadenfall den Nachweis ordnungsgemäßer Instandhaltung.
 
-## Unser Wartungsangebot
+## Fachwartung
 
-Mit unserem Wartungsservice von Baris Haustechnik sichern Sie sich maximale Zuverlässigkeit, niedrige Heizkosten und lange Lebensdauer Ihrer Anlage.
+Eine regelmäßige Fachwartung durch einen SHK-Fachbetrieb sichert maximale Zuverlässigkeit, niedrige Heizkosten und eine lange Lebensdauer der Anlage.
     `,
         tags: ["Heizung", "Wartung", "Sicherheit", "Kosten", "Rechtliches"]
     },
@@ -235,7 +248,7 @@ Mit unserem Wartungsservice von Baris Haustechnik sichern Sie sich maximale Zuve
         title: "Barrierefreies Bad: Planung und Zuschüsse",
         excerpt: "So gestalten Sie Ihr Badezimmer altersgerecht und komfortabel. Infos zu Pflegekassenzuschüssen und DIN-Normen.",
         category: "sanitaer",
-        author: "Baris Haustechnik",
+        author: "Fliesenverlegung Tezgel",
         date: "20. Februar 2024",
         readTime: "6 Min.",
         image: "/images/uploads/extra-05.webp",
@@ -275,7 +288,7 @@ Planen Sie Ihre Badsanierung vorausschauend mit unserem Meisterteam in Wetzlar!
         title: "Smart Home Heizungssteuerung nachrüsten",
         excerpt: "Intelligente Thermostate helfen beim Energiesparen. Wir zeigen, wie einfach die Nachrüstung funktioniert.",
         category: "heizung",
-        author: "Team Baris",
+        author: "Ratgeber-Redaktion",
         date: "15. Februar 2024",
         readTime: "4 Min.",
         image: "/images/uploads/extra-06.webp",
@@ -330,7 +343,7 @@ Wir beraten Sie gerne, welches System am besten zu Ihren Anforderungen und Ihrer
         title: "Heizkörper richtig entlüften: So geht's",
         excerpt: "Gluckernde Heizkörper und kalte Räume? Oft hilft einfaches Entlüften. Unsere Schritt-für-Schritt Anleitung.",
         category: "wartung",
-        author: "Team Baris",
+        author: "Ratgeber-Redaktion",
         date: "01. Februar 2024",
         readTime: "3 Min.",
         image: "/images/uploads/extra-01.webp",
@@ -364,7 +377,7 @@ Ist das Problem danach nicht behoben? Dann rufen Sie uns an!
         title: "Legionellen im Trinkwasser vermeiden",
         excerpt: "Trinkwasserhygiene ist Gesundheitsschutz. Wie Sie die gefährlichen Bakterien aus Ihrem System fernhalten.",
         category: "sanitaer",
-        author: "Baris Haustechnik",
+        author: "Ratgeber-Redaktion",
         date: "20. Januar 2024",
         readTime: "5 Min.",
         image: "/images/uploads/extra-02.webp",
@@ -398,7 +411,7 @@ Gesundes Wasser ist Lebensqualität. Gehen Sie keine Kompromisse ein.
         title: "Klimaanlage reinigen: Ein Muss für Allergiker",
         excerpt: "Eine verschmutzte Klimaanlage ist eine Bakterienschleuder. Warum die jährliche Reinigung so wichtig ist.",
         category: "klima", // Using 'klima'
-        author: "Team Baris",
+        author: "Ratgeber-Redaktion",
         date: "10. Januar 2024",
         readTime: "4 Min.",
         image: "/images/uploads/extra-03.webp",
@@ -429,7 +442,7 @@ Für Allergiker ist eine saubere Anlage ein Segen – eine schmutzige ein Fluch.
         title: "Solarpflicht in Deutschland: Was Hausbesitzer wissen müssen",
         excerpt: "Die Regeln werden strenger. Wir erklären, welche Pflichten auf Sie zukommen und wie Sie die Vorgaben clever für sich nutzen.",
         category: "solar",
-        author: "Baris Haustechnik",
+        author: "Ratgeber-Redaktion",
         date: "20. April 2024",
         readTime: "6 Min.",
         image: "/images/blog/post-10.png",
@@ -469,7 +482,7 @@ Warten Sie nicht, bis das Gesetz Sie zwingt. Planen Sie proaktiv. Die Förderung
         title: "5 Mythen über Wärmepumpen im Faktencheck",
         excerpt: "Funktionieren sie im Altbau? Sind sie laut? Wir räumen mit den gängigsten Vorurteilen über Wärmepumpen auf.",
         category: "heizung",
-        author: "Team Baris",
+        author: "Ratgeber-Redaktion",
         date: "12. April 2024",
         readTime: "5 Min.",
         image: "/images/blog/post-11.png",
@@ -504,7 +517,7 @@ Rund um die Wärmepumpe kursieren viele Halbwahrheiten. Zeit für einen objektiv
         title: "Das Smart-Bad: Wellness trifft Hightech",
         excerpt: "Spiegel mit Touchscreen, smarte Duschen und selbstreinigende WCs. So sieht das Badezimmer der Zukunft aus.",
         category: "sanitaer",
-        author: "Baris Haustechnik",
+        author: "Fliesenverlegung Tezgel",
         date: "05. April 2024",
         readTime: "4 Min.",
         image: "/images/blog/post-12.png",
@@ -544,9 +557,9 @@ Technik soll nicht überfordern, sondern dienen. Ein Smart-Bad erhöht den Komfo
     {
         id: "13",
         title: "Unser Team wächst: Verstärkung gesucht!",
-        excerpt: "Wir suchen motivierte Anlagemechaniker (m/w/d) und Azubis. Werde Teil der Baris-Familie!",
+        excerpt: "Wir suchen motivierte Anlagemechaniker (m/w/d) und Azubis. Werde Teil des Teams!",
         category: "news",
-        author: "Team Baris",
+        author: "Ratgeber-Redaktion",
         date: "01. April 2024",
         readTime: "2 Min.",
         image: "/images/blog/post-13.png",
