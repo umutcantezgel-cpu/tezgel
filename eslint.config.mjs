@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Stale static export committed to the repo (not part of the source).
+    "dist/**",
   ]),
 ]);
 
