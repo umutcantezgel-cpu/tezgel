@@ -1,4 +1,4 @@
-import { PORTFOLIO_PROJECTS, isLegacyProject } from '@/config/projects';
+import { PORTFOLIO_PROJECTS, isPlaceholderProject } from '@/config/projects';
 import { buildGraph, buildProjectNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 
@@ -8,15 +8,34 @@ export function generateStaticParams() {
   }));
 }
 
+const truncate = (text, max = 155) =>
+  text.length > max ? `${text.slice(0, max - 3).trimEnd()}...` : text;
+
+const getMetaTitle = (project) => {
+  if (isPlaceholderProject(project)) return `${project.title}: typischer Leistungsumfang`;
+  return project.location ? `${project.title} in ${project.location}` : project.title;
+};
+
+const getMetaDescription = (project) => {
+  if (isPlaceholderProject(project)) {
+    const scope = Array.isArray(project.scopeItems) ? project.scopeItems.slice(0, 3).join(', ') : '';
+    const text = scope
+      ? `Typischer Leistungsumfang: ${scope}. Projektdokumentation in Vorbereitung.`
+      : 'Typischer Leistungsumfang dieses Projekttyps. Projektdokumentation in Vorbereitung.';
+    return truncate(text);
+  }
+  return project.description ? truncate(project.description) : 'Projektbeispiel von Fliesenverlegung Tezgel';
+};
+
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const project = PORTFOLIO_PROJECTS.find((p) => p.id.toString() === id);
   if (!project) return {};
 
   const path = `/referenzen/${project.id}`;
-  const title = `${project.title} in ${project.location}`;
+  const title = getMetaTitle(project);
   const fullTitle = `${title} | Fliesenverlegung Tezgel`;
-  const description = project.description ? (project.description.length > 155 ? `${project.description.slice(0, 152)}...` : project.description) : 'Projektbeispiel von Fliesenverlegung Tezgel';
+  const description = getMetaDescription(project);
 
   return {
     title,
@@ -65,21 +84,21 @@ export default async function Layout({ children, params }) {
     const breadcrumbs = [
       { name: 'Home', path: '/' },
       { name: 'Referenzen', path: '/referenzen' },
-      { name: project.title, path: pageUrl },
+      { name: project.title, path: `/referenzen/${project.id}` },
     ];
     const primaryImage = project.images?.find((img) => img.type === 'after')?.url || project.images?.[0]?.url;
 
     projectSchemaGraph = buildGraph([
       buildWebPageNode({
         url: pageUrl,
-        name: `${project.title} | Fliesenverlegung Tezgel`,
+        name: `${getMetaTitle(project)} | Fliesenverlegung Tezgel`,
         description: project.description,
         breadcrumbItems: breadcrumbs,
       }),
       buildBreadcrumbNode(breadcrumbs, pageUrl),
       // The Project node credits the organization as creator, so it is only
-      // emitted for projects listed in TEZGEL_PROJECT_IDS (config/projects.js).
-      isLegacyProject(project)
+      // emitted for documented projects (placeholder: false in config/projects.js).
+      isPlaceholderProject(project)
         ? null
         : buildProjectNode({
             name: project.title,

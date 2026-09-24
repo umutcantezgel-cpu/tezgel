@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, MapPin, Phone, Calendar, MessageCircle, Star } from 'lucide-react';
+import { ArrowRight, Phone, MessageCircle, Star, Bath, House, Layers, Sun, LayoutGrid, CheckCircle2, Camera } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
-import { PORTFOLIO_PROJECTS, categories } from '@/config/projects';
+import { PORTFOLIO_PROJECTS, categories, isPlaceholderProject } from '@/config/projects';
 import { RATING_SUMMARY } from '@/config/reviews';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 
@@ -10,8 +10,22 @@ const { google, trustlocal } = RATING_SUMMARY;
 
 export const metadata = {
     title: 'Referenzen & Kundenbewertungen',
-    description: `Referenzen und echte Kundenbewertungen von Fliesenverlegung Tezgel aus Aßlar: ${google.displayRating} von ${google.maxRating} Sternen aus ${google.count} Google-Rezensionen und ${trustlocal.displayRating} bei Trustlocal.`,
+    description: `Echte Kundenbewertungen von Fliesenverlegung Tezgel aus Aßlar: ${google.displayRating} von ${google.maxRating} Sternen aus ${google.count} Google-Rezensionen und ${trustlocal.displayRating} bei Trustlocal – dazu typische Leistungsbeispiele.`,
     alternates: { canonical: '/referenzen' }
+};
+
+const CATEGORY_ICONS = {
+    bad: Bath,
+    wohnen: House,
+    treppen: Layers,
+    aussen: Sun
+};
+
+// Keramik-Fliesenraster als Platzhalter-Visual (statt Fotos)
+const TILE_PATTERN_STYLE = {
+    backgroundImage:
+        'linear-gradient(rgba(100,116,139,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(100,116,139,0.18) 1px, transparent 1px)',
+    backgroundSize: '28px 28px'
 };
 
 const getCategoryName = (categoryId) =>
@@ -54,60 +68,92 @@ export default function ReferenzenPage() {
 
             <ReviewsSection />
 
-            {/* Project examples */}
+            {/* Leistungsbeispiele (reservierte Referenzplätze) */}
             {PORTFOLIO_PROJECTS.length > 0 && (
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="projekte-heading">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-sky mb-4">Projektbeispiele</span>
+                    <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                        <span className="eyebrow eyebrow-sky">Projektdokumentationen folgen</span>
                         <h2 id="projekte-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Ausgewählte Projekte
+                            Leistungsbeispiele
                         </h2>
+                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            Diese Beispiele zeigen, was zu typischen Projekten gehört. Fotos und Details realer Projekte
+                            veröffentlichen wir erst, wenn unsere Kunden zugestimmt haben.
+                        </p>
                     </div>
 
                     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {PORTFOLIO_PROJECTS.map((project) => (
-                            <li key={project.id}>
-                                <Link
-                                    href={`/referenzen/${project.id}`}
-                                    className="group glass-surface p-8 rounded-[2rem] h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                >
-                                    <div className="space-y-3">
-                                        <div className="flex items-center justify-between gap-3">
-                                            <span className="text-xs font-black px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                                                {getCategoryName(project.category)}
-                                            </span>
-                                            <span className="text-xs text-slate-600 font-bold flex items-center gap-1">
-                                                <MapPin className="w-3 h-3 text-emerald-600" />
-                                                {project.location}
-                                            </span>
+                        {PORTFOLIO_PROJECTS.map((project) => {
+                            const Icon = CATEGORY_ICONS[project.category] || LayoutGrid;
+                            const placeholder = isPlaceholderProject(project);
+
+                            return (
+                                <li key={project.id}>
+                                    <article className="group glass-surface p-5 rounded-[2rem] h-full flex flex-col hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300">
+                                        {/* Keramik-Panel statt Foto */}
+                                        <div
+                                            className="relative h-40 rounded-3xl border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-sky-50 overflow-hidden flex items-center justify-center"
+                                            style={TILE_PATTERN_STYLE}
+                                            aria-hidden="true"
+                                        >
+                                            <div className="w-16 h-16 rounded-2xl bg-white/90 border border-white/80 shadow-sm flex items-center justify-center">
+                                                <Icon className="w-8 h-8 text-emerald-600" />
+                                            </div>
                                         </div>
-                                        <h3 className="font-black text-lg text-slate-900 leading-snug group-hover:text-emerald-800 transition-colors">
-                                            {project.title}
-                                        </h3>
-                                        <p className="text-sm text-slate-700 leading-relaxed">{project.description}</p>
-                                    </div>
-                                    <div className="pt-4 mt-6 border-t border-slate-200 flex items-center justify-between gap-3 text-xs font-medium">
-                                        <span className="text-slate-600 flex items-center gap-1.5">
-                                            {project.year && (
-                                                <>
-                                                    <Calendar className="w-3.5 h-3.5 text-emerald-600" />
-                                                    <span className="tabular-nums">{project.year}</span>
-                                                </>
-                                            )}
-                                            {project.duration && (
-                                                <span>
-                                                    {project.year ? '· ' : ''}Bauzeit: <strong className="text-slate-900 font-bold">{project.duration}</strong>
+
+                                        <div className="px-3 pt-5 space-y-3 flex-1">
+                                            <div>
+                                                <span className="text-xs font-black px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                                    {getCategoryName(project.category)}
                                                 </span>
+                                            </div>
+                                            <p className="text-xs font-bold text-sky-800 flex items-start gap-1.5">
+                                                <Camera className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-px" aria-hidden="true" />
+                                                {placeholder ? 'Referenzprojekt – Projektdokumentation in Vorbereitung' : 'Referenzprojekt'}
+                                            </p>
+                                            <h3 className="font-black text-lg text-slate-900 leading-snug">
+                                                <Link
+                                                    href={`/referenzen/${project.id}`}
+                                                    className="hover:text-emerald-800 transition-colors"
+                                                >
+                                                    {project.title}
+                                                </Link>
+                                            </h3>
+                                            {Array.isArray(project.scopeItems) && project.scopeItems.length > 0 && (
+                                                <ul className="space-y-1.5">
+                                                    {project.scopeItems.slice(0, 3).map((item) => (
+                                                        <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
+                                                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                                                            <span>{item}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
                                             )}
-                                        </span>
-                                        <span className="text-emerald-800 font-black flex items-center gap-1 shrink-0">
-                                            Details
-                                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                                        </span>
-                                    </div>
-                                </Link>
-                            </li>
-                        ))}
+                                        </div>
+
+                                        <div className="px-3 pt-4 mt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs font-black">
+                                            <Link
+                                                href={`/referenzen/${project.id}`}
+                                                className="text-emerald-800 hover:text-emerald-700 flex items-center gap-1"
+                                                aria-label={`Leistungsumfang ansehen: ${project.title}`}
+                                            >
+                                                Leistungsumfang
+                                                <ArrowRight className="w-3.5 h-3.5" />
+                                            </Link>
+                                            {project.serviceLink && (
+                                                <Link
+                                                    href={project.serviceLink}
+                                                    className="text-sky-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                                    aria-label={`Mehr zur Leistung: ${project.title}`}
+                                                >
+                                                    Mehr zur Leistung
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </article>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </section>
             )}

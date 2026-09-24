@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Referenzen & Kundenbewertungen',
-  description: 'Echte Kundenbewertungen und Referenzen von Fliesenverlegung Tezgel: Badsanierungen, Balkone, Treppen und komplette Häuser in Aßlar, Wetzlar und Mittelhessen.',
+  description: 'Echte Kundenbewertungen von Fliesenverlegung Tezgel zu Bädern, Balkonen, Treppen und kompletten Häusern in Aßlar, Wetzlar und Mittelhessen – dazu typische Leistungsbeispiele.',
   path: '/referenzen',
 });
 
@@ -19,7 +19,7 @@ const referenzenSchema = buildGraph([
     url: pageUrl,
     name: 'Referenzen & Kundenbewertungen | Fliesenverlegung Tezgel',
     description:
-      'Kundenbewertungen und Projektbeispiele des Fliesenleger-Meisterbetriebs Fliesenverlegung Tezgel aus Aßlar.',
+      'Kundenbewertungen und typische Leistungsbeispiele des Fliesenleger-Meisterbetriebs Fliesenverlegung Tezgel aus Aßlar.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
@@ -27,7 +27,7 @@ const referenzenSchema = buildGraph([
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#collection`,
     name: 'Fliesenverlegung Tezgel – Referenzen & Kundenbewertungen',
-    description: 'Kundenstimmen und Projektbeispiele aus Aßlar, Wetzlar und Mittelhessen.',
+    description: 'Echte Kundenstimmen aus Aßlar, Wetzlar und Mittelhessen sowie typische Leistungsbeispiele.',
     publisher: { '@id': ORG_ID },
   },
 ]);
