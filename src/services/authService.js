@@ -20,13 +20,11 @@ const loginSchema = z.object({
 export const ADMIN_DISABLED_MESSAGE =
     'Der Admin-Bereich ist für diese Website nicht eingerichtet. Bitte wenden Sie sich an den Website-Betreuer.';
 
-// Storage keys used by earlier versions of this site.
+// Session/profile keys that must never be trusted on this static site.
 const LEGACY_STORAGE_KEYS = [
-    'baris_user_profile',
-    'baris_secure_session',
-    'baris_auth_config',
     'tezgel_user_profile',
-    'tezgel_secure_session'
+    'tezgel_secure_session',
+    'tezgel_auth_config'
 ];
 
 export const authService = {

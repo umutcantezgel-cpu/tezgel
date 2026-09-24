@@ -11,7 +11,7 @@ const post = {
     "date": "24. September 2026",
     "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "4 Min.",
-    "image": "/images/uploads/extra-04.webp",
+    "image": "/images/bad/wandfliesen-gruen.webp",
     "featured": false,
     "tags": [
         "Fliesenpflege",

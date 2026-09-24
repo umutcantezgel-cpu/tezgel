@@ -134,7 +134,7 @@ export default async function ServiceCityPage({
       url: pageUrl,
       areaServedCity: city.name,
       offers: (service.features || []).map((feat: string) => ({ name: feat })),
-      image: service.heroImage,
+      image: service.heroImage ?? undefined,
     }),
   ]);
 

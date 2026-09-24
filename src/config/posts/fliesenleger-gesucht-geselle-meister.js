@@ -15,7 +15,7 @@ const post = {
     "date": "24. September 2026",
     "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "2 Min.",
-    "image": "/images/blog/post-13.png",
+    "image": "/images/bad/bad-tageslicht.webp",
     "featured": false,
     "tags": [
         "Karriere",

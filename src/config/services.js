@@ -21,7 +21,7 @@ export const SERVICES = [
         features: [
             "Barrierefreie Walk-In-Duschen mit millimetergenauem Gefälleschnitt",
             "Fugenarme XXL-Fliesen (bis 120 x 278 cm) für edle, monolithische Optik",
-            "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- oder Gehrungskanten (Jolly)",
+            "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- oder Gehrungskanten",
             "Fachgerechte Verkleidung von Vorwandelementen und Installationsschächten",
             "Staubarme Sanierung mit Schonvlies und modernen Staubschutzwänden",
             "Normgerechte Verbundabdichtung nach DIN 18534 für dauerhaft dichte Nassbereiche"
@@ -29,11 +29,11 @@ export const SERVICES = [
 
         detailText: "Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel verwandelt veraltete Badezimmer in moderne Wellnessräume. Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum – für maximale Ästhetik und spielend leichte Pflege.",
         ctaText: "Badprojekt anfragen",
-        heroImage: "/images/uploads/01.webp",
+        heroImage: "/images/bad/bad-beleuchtete-nischen.webp",
         gallery: [
-            "/images/uploads/01.webp",
-            "/images/uploads/02.webp",
-            "/images/uploads/03.webp"
+            "/images/bad/bad-beleuchtete-nischen.webp",
+            "/images/bad/walk-in-dusche.webp",
+            "/images/bad/bad-freistehende-wanne.webp"
         ]
     },
 
@@ -64,10 +64,9 @@ export const SERVICES = [
 
         detailText: "Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit. Wir verlegen hochwertige Feinsteinzeug- und Natursteinbeläge in Neubauten und Bestandsimmobilien – mit präzisem Fugenraster und perfekter Anpassung an Türen, Kamine und bodentiefe Fenster.",
         ctaText: "Wohnbereich anfragen",
-        heroImage: "/images/uploads/04.webp",
+        heroImage: "/images/bad/wandfliesen-gruen.webp",
         gallery: [
-            "/images/uploads/04.webp",
-            "/images/uploads/05.webp"
+            "/images/bad/wandfliesen-gruen.webp"
         ]
     },
 
@@ -95,11 +94,10 @@ export const SERVICES = [
             "Sanierung von Bestandsbalkonen inklusive Entkernung des Altbelags"
         ],
 
-        detailText: "Balkone und Terrassen sind extremen Wetterbedingungen ausgesetzt. Fliesenverlegung Tezgel setzt auf innovative Trockenverlegung auf Stelzlagern: Wasser fließt sofort ab, Spannungsrisse sind ausgeschlossen und der Belag bleibt über Jahrzehnte formschön und trittsicher.",
+        detailText: "Balkone und Terrassen sind extremen Wetterbedingungen ausgesetzt. Fliesenverlegung Tezgel setzt auf innovative Trockenverlegung auf Stelzlagern: Wasser fließt unter dem Belag ab, Spannungen durch Temperaturwechsel werden weitgehend vermieden und einzelne Platten bleiben für Wartung zugänglich.",
         ctaText: "Terrassensanierung anfragen",
-        heroImage: "/images/uploads/06.webp",
+        heroImage: null,
         gallery: [
-            "/images/uploads/06.webp"
         ]
     },
 
@@ -130,9 +128,8 @@ export const SERVICES = [
 
         detailText: "Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir bereiten Böden und Wände kompromisslos fachgerecht vor. Insbesondere die normgerechte Verbundabdichtung nach DIN 18534 schützt Ihre Bausubstanz verlässlich vor kostspieligen Feuchteschäden.",
         ctaText: "Abdichtungs-Check anfordern",
-        heroImage: "/images/uploads/07.webp",
+        heroImage: null,
         gallery: [
-            "/images/uploads/07.webp"
         ]
     }
 ];

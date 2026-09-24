@@ -243,19 +243,15 @@ export const historyTimeline = [
     }
 ];
 
+// Material- und Systemhersteller, mit denen gearbeitet wird (ohne Partnerstatus –
+// bitte vom Inhaber bestätigen lassen).
 export const partnerBrands = [
-    { name: "Schlüter-Systems", category: "Abdichtungs- & Profilsysteme", partnerStatus: "Zertifizierter Systempartner" },
-    { name: "Ardex", category: "Hochleistungs-Fliesenkleber & Fugen", partnerStatus: "Premium Fachpartner" },
-    { name: "Sopro", category: "Bauchemie & Verbundabdichtung", partnerStatus: "Fachpartner" },
-    { name: "PCI", category: "Verlegewerkstoffe & Estrichsysteme", partnerStatus: "Fachpartner" },
-    { name: "Marazzi", category: "Feinsteinzeug & Großformate", partnerStatus: "Kollektionspartner" },
-    { name: "Villeroy & Boch", category: "Designfliesen & Badkeramik", partnerStatus: "Fachpartner" }
-];
-
-export const certifications = [
-    { name: "Eingetragener Meisterbetrieb", issuer: "Handwerkskammer Wiesbaden", year: "2008" },
-    { name: "Fachverleger Verbundabdichtung DIN 18534", issuer: "Bauchemie Verband", year: "2019" },
-    { name: "Zertifizierter Großformat-Verarbeiter (XXL)", issuer: "Fliesen-Fachakademie", year: "2021" }
+    { name: "Schlüter-Systems", category: "Abdichtungs- & Profilsysteme" },
+    { name: "Ardex", category: "Fliesenkleber & Fugen" },
+    { name: "Sopro", category: "Bauchemie & Verbundabdichtung" },
+    { name: "PCI", category: "Verlegewerkstoffe & Estrichsysteme" },
+    { name: "Marazzi", category: "Feinsteinzeug & Großformate" },
+    { name: "Villeroy & Boch", category: "Designfliesen & Badkeramik" }
 ];
 
 export const meinTeam = team;

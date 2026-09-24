@@ -19,7 +19,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 5.854,00 €",
         priceNumber: 5854,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/03.webp",
+        image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
             "Design-Badheizkörper 177 × 60 cm (RAL 9016)",
             "Keramik-Waschtisch mit 4-seitig hinterleuchtetem LED-Lichtspiegel (4.000 K)",
@@ -82,7 +82,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 7.025,00 €",
         priceNumber: 7025,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/04.webp",
+        image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
             "Stahl-Körperform-Badewanne 170 × 75 cm",
             "Stahl-Duschwanne 120 × 90 cm mit Glas-Duschabtrennung",
@@ -144,7 +144,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 6.942,00 €",
         priceNumber: 6942,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/01.webp",
+        image: "/images/bad/barrierefreies-bad.webp",
         highlights: [
             "Mineralguss-Waschtisch in Alpinweiß mit Spiegelschrank",
             "2 Hochschränke in Anthrazit Hochglanz",
@@ -207,7 +207,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 12.034,00 €",
         priceNumber: 12034,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/05.webp",
+        image: "/images/bad/bad-tageslicht.webp",
         highlights: [
             "Stahl-Mittelablauf-Badewanne 180 × 80 cm mit Design-Wannenarmatur",
             "Rutschhemmende Mineralguss-Duschwanne 120 × 100 cm mit Nischen-Schwenktür",
@@ -282,7 +282,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 10.009,00 €",
         priceNumber: 10009,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/03.webp",
+        image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
             "Barrierefreies Fünfeck-Duschelement 90 cm mit teilgerahmter Glasabtrennung",
             "Asymmetrischer Waschtisch 100 cm mit Edelstahl-Armatur (gebürstet)",
@@ -344,7 +344,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 11.450,00 €",
         priceNumber: 11450,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/04.webp",
+        image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
             "Waschtischanlage 100 cm mit LED-Lichtspiegel und Touch-Bedienung",
             "Bodengleiche Walk-In-Duschzone mit Edelstahl-Duschrinne",
@@ -391,7 +391,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 13.800,00 €",
         priceNumber: 13800,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/01.webp",
+        image: "/images/bad/barrierefreies-bad.webp",
         highlights: [
             "Möbelwaschtisch 120 cm mit samtweißer Front",
             "LED-Lichtspiegel 120 × 75 cm mit Lichtband und Dimmfunktion",
@@ -446,7 +446,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 17.231,00 €",
         priceNumber: 17231,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/02.webp",
+        image: "/images/bad/bad-glastuer.webp",
         highlights: [
             "Möbel-Doppelwaschtisch 140 cm mit pflegeleichter Oberfläche & LED-Lichtspiegel (2.700–6.500 K)",
             "Große Stahl-Badewanne 190 × 90 cm mit Wannenfüllung über den Überlauf",
@@ -524,7 +524,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 14.500,00 €",
         priceNumber: 14500,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/03.webp",
+        image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
             "Dusch-WC mit Gesäßdusche, Geruchsabsaugung und Warmluftföhn",
             "Bodengleiche Walk-In-Regendusche mit Decken-LED & rahmenloser Glasfront",
@@ -580,7 +580,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 18.900,00 €",
         priceNumber: 18900,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/04.webp",
+        image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
             "Ergonomische Mineralguss-Badewanne mit Unterputz-Schwallauslauf",
             "Walk-In-Regendusche mit Deckenbrause & rahmenloser Glasabtrennung",
@@ -635,7 +635,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 21.400,00 €",
         priceNumber: 21400,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/01.webp",
+        image: "/images/bad/barrierefreies-bad.webp",
         highlights: [
             "Freistehende Mineralguss-Badewanne mit Standarmatur",
             "Großzügige Walk-In-Dusche mit Decken-Regenhimmel",
@@ -688,7 +688,7 @@ export const MUSTERBAEDER = [
         priceFormatted: "ca. 24.800,00 €",
         priceNumber: 24800,
         vatNote: "inkl. gesetzl. MwSt.",
-        image: "/images/uploads/05.webp",
+        image: "/images/bad/bad-tageslicht.webp",
         highlights: [
             "Freistehende Mineralguss-Badewanne mit Standarmatur",
             "Großformatige Walk-In-Dusche mit Decken-Regenpaneel & farbiger LED-Beleuchtung",

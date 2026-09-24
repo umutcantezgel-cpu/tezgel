@@ -81,7 +81,7 @@ export default async function Layout({ children, params }) {
         serviceType: service.name,
         description: service.shortDescription,
         url: pageUrl,
-        image: service.heroImage,
+        image: service.heroImage ?? undefined,
         offers: (service.features || []).map((feat) => ({ name: feat })),
       }),
     ]);

@@ -10,7 +10,7 @@ const post = {
     "date": "24. September 2026",
     "publishedAt": "2026-09-24T08:00:00+02:00",
     "readTime": "4 Min.",
-    "image": "/images/blog/post-12.png",
+    "image": "/images/bad/gaeste-bad.png",
     "featured": false,
     "tags": [
         "Gäste-WC",
