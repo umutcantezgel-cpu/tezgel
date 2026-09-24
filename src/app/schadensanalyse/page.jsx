@@ -1,222 +1,324 @@
-"use client";
 import React from 'react';
-import { Lightbulb, TrendingDown, FileText, ArrowRight, CheckCircle2, Zap, Home, Thermometer, ShieldCheck, HelpCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import PageWrapper from '@/components/common/PageWrapper';
-import SEO from '@/components/SEO';
+import {
+    ScanSearch,
+    ArrowRight,
+    Phone,
+    ClipboardList,
+    Search,
+    FileText,
+    Hammer,
+    CheckCircle2,
+    Grid,
+    Droplets,
+    Trees,
+    ShieldCheck,
+    Sparkles,
+    HelpCircle,
+    Users,
+    Gauge,
+    Ruler
+} from 'lucide-react';
+import { COMPANY_DATA } from '@/config/company';
+import { buildGraph, buildServiceNode, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 
-const processSteps = [
+const PAGE_PATH = '/schadensanalyse';
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+const HIGHLIGHTS = [
+    { icon: Search, title: 'Kostenfrei', desc: 'Teil des Vor-Ort-Aufmaßes' },
+    { icon: FileText, title: 'Festpreisangebot', desc: 'für die vorgeschlagene Lösung' },
+    { icon: Sparkles, title: 'Staubschutz', desc: 'bei der späteren Ausführung' }
+];
+
+const DAMAGE_PATTERNS = [
+    { title: 'Gerissene Fliesen', desc: 'Einzelne Sprünge nach einem Stoß oder durchlaufende Risse über mehrere Fliesen – letztere deuten fast immer auf Bewegungen im Untergrund oder fehlende Bewegungsfugen hin.' },
+    { title: 'Hohlstellen und lose Fliesen', desc: 'Hohl klingende Fliesen haben keinen vollflächigen Verbund. Unter Last oder bei Temperaturwechsel brechen Kanten, später lösen sich ganze Fliesen.' },
+    { title: 'Bröselnde oder dunkle Fugen', desc: 'Ausgewaschene Zementfugen, dauerhaft dunkle oder feuchte Fugen und abgelöste Silikonfugen sind Einfallstore für Wasser.' },
+    { title: 'Ausblühungen und Verfärbungen', desc: 'Weiße Kalkschleier oder Ränder zeigen, dass Wasser durch Fugen, Mörtelbett oder Untergrund wandert – typisch auf Balkonen, Terrassen und Außentreppen.' },
+    { title: 'Feuchte Wände neben der Dusche', desc: 'Abplatzender Putz, Flecken oder muffiger Geruch in angrenzenden Räumen können auf eine undichte Abdichtung oder undichte Anschlüsse hinweisen.' },
+    { title: 'Abgeplatzte Kanten', desc: 'Beschädigte Stufen- und Außenkanten, oft an Treppen oder an Übergängen ohne Profil, wo die Fliesenkante ungeschützt belastet wird.' }
+];
+
+const STEPS = [
+    { icon: ClipboardList, title: 'Bestandsaufnahme', desc: 'Wir sehen uns das Schadensbild an, fragen nach Alter des Belags, früheren Reparaturen und wann der Schaden aufgefallen ist.' },
+    { icon: Search, title: 'Ursachenanalyse', desc: 'Klopfprobe, Rissverlauf, Fugen, Anschlüsse und Untergrund werden geprüft; bei Bedarf messen wir die Restfeuchte.' },
+    { icon: FileText, title: 'Sanierungsvorschlag', desc: 'Sie erfahren, was die Ursache ist, welche Lösung sinnvoll ist – und wo eine Reparatur an ihre Grenzen kommt. Danach erhalten Sie ein Festpreisangebot.' },
+    { icon: Hammer, title: 'Umsetzung', desc: 'Reparatur, Fugenerneuerung oder Neuverlegung durch den Meisterbetrieb – mit Staubschutz und sauber abgegrenztem Arbeitsbereich.' }
+];
+
+const CHECKS = [
+    { icon: Hammer, title: 'Klopfprobe', desc: 'Mit einem Prüfhammer oder Metallstab abgeklopft, verraten hohle Fliesen sich durch ihren Klang. So lässt sich die Fläche der Hohlstellen eingrenzen.' },
+    { icon: Gauge, title: 'Restfeuchte', desc: 'Wo es auf die Feuchte im Untergrund ankommt, etwa bei Estrich vor einer Neuverlegung, messen wir die Restfeuchte und vergleichen sie mit den Richtwerten aus Merkblättern und Herstellerangaben.' },
+    { icon: Ruler, title: 'Untergrund und Risse', desc: 'Verlauf und Breite von Rissen, Lage von Bewegungs- und Randfugen, Ebenheit und Gefälle geben Hinweise darauf, ob der Schaden aus dem Untergrund kommt.' },
+    { icon: ShieldCheck, title: 'Abdichtung und Anschlüsse', desc: 'Im Nassbereich prüfen wir Silikonfugen, Übergänge an Wanne, Duschtasse und Durchdringungen. Ob unter den Fliesen eine intakte Verbundabdichtung liegt, lässt sich oft erst nach dem Öffnen einer Stelle sicher sagen.' }
+];
+
+const TOPICS = [
     {
-        step: 1,
-        icon: Home,
-        title: 'Vor-Ort-Bestandsaufnahme',
-        description: 'Detaillierte Erfassung Ihres Gebäudes, Baujahrs, der Heizkörper, Vorlauftemperaturen und der bisherigen Dämmung in Wetzlar und Umgebung.'
+        icon: Grid,
+        title: 'Fliesen & Fugen',
+        items: ['Einzelne gesprungene oder lose Fliesen', 'Hohlstellen in Boden und Wand', 'Ausgewaschene Zementfugen', 'Gerissene oder verfärbte Silikonfugen']
     },
     {
-        step: 2,
-        icon: FileText,
-        title: 'Heizlast & Energieanalyse',
-        description: 'Präzise raumweise Heizlastberechnung nach DIN EN 12831 und Identifikation konkreter energetischer Schwachstellen.'
+        icon: Droplets,
+        title: 'Feuchte & Abdichtung',
+        items: ['Feuchte Fugen im Duschbereich', 'Feuchteflecken an angrenzenden Wänden', 'Anschlüsse an Wanne, Duschtasse und Ablauf', 'Abdichtung nach DIN 18534 bei Erneuerung']
     },
     {
-        step: 3,
-        icon: Lightbulb,
-        title: 'Maßnahmen- & Sanierungsplan',
-        description: 'Vorstellung wirtschaftlicher Sanierungsvarianten mit transparenter Kosten-Nutzen-Rechnung und Amortisationszeit.'
-    },
-    {
-        step: 4,
-        icon: Zap,
-        title: 'Fachgerechte Umsetzung',
-        description: 'Als Meisterbetrieb realisieren wir den Umstieg auf Wärmepumpe, Solar oder Hydraulischen Abgleich aus einer Hand.'
+        icon: Trees,
+        title: 'Balkon & Außenbereich',
+        items: ['Frostabplatzungen und lose Platten', 'Ausblühungen an Belag und Stirnseite', 'Stehendes Wasser durch fehlendes Gefälle', 'Schäden an Außentreppen und Eingangspodesten']
     }
 ];
 
-const consultingTopics = [
+const OPTIONS = [
+    { title: 'Reparieren', desc: 'Sinnvoll, wenn der Schaden örtlich begrenzt ist und die Ursache feststeht – etwa eine Fliese nach einem Stoß oder eine lose Sockelfliese.', link: { href: '/fliesenreparatur', label: 'Zur Fliesenreparatur' } },
+    { title: 'Fugen erneuern', desc: 'Sinnvoll, wenn Fliesen fest sitzen, Zement- oder Silikonfugen aber ausgewaschen, rissig oder verfärbt sind.', link: { href: '/fliesen/fugensanierung', label: 'Zur Fugensanierung' } },
+    { title: 'Neu verlegen', desc: 'Nötig, wenn Hohlstellen großflächig sind, der Untergrund sich bewegt oder die Abdichtung darunter versagt hat. Dann wird der Aufbau von Grund auf erneuert.', link: { href: '/bad/badsanierung', label: 'Zur Badsanierung' } }
+];
+
+const OTHER_EXPERTS = [
+    'Undichte Leitungen, Abläufe oder Armaturen: Installateur bzw. ein Fachbetrieb für Leckortung – danach übernehmen wir Fliesen und Abdichtung.',
+    'Durchfeuchtete Wände oder Estriche: Trocknung durch einen Fachbetrieb für Bautrocknung, bevor neu belegt wird.',
+    'Großflächiger Schimmelbefall: Fachbetrieb für Schimmelsanierung. Hinweise zur Vorbeugung finden Sie in unserem Ratgeber.',
+    'Risse im Tragwerk oder Setzungen: Tragwerksplaner bzw. Statiker.',
+    'Streitfälle, Gewährleistungs- oder Versicherungsfragen: ein öffentlich bestellter und vereidigter Sachverständiger. Wir erstellen keine Gutachten.'
+];
+
+const schadensFaqs = [
     {
-        icon: Thermometer,
-        title: 'Heizungs- & Wärmepumpen-Check',
-        items: [
-            'Vorlauftemperatur-Prüfung für Wärmepumpen-Tauglichkeit',
-            'Hydraulischer Abgleich nach Verfahren B',
-            'Dimensionierung des Heizungs- und Pufferspeichers',
-            'Austausch veralteter Umwälzpumpen gegen Hocheffizienzpumpen'
-        ]
+        question: 'Was kostet die Schadensanalyse?',
+        answer: 'Die Begutachtung von Schäden ist Teil unseres kostenfreien Vor-Ort-Aufmaßes. Sie erhalten danach eine Einschätzung der Ursache und – wenn Sie möchten – ein Festpreisangebot für die Lösung.'
     },
     {
-        icon: Zap,
-        title: 'Erneuerbare Energien & Solar',
-        items: [
-            'Solarthermie für Trinkwasser- und Heizungsunterstützung',
-            'PV-Eigenverbrauchsoptimierung mit Wärmepumpe',
-            'Intelligente Smart-Home Heizungssteuerungen',
-            'Schnittstellen für dynamische Stromtarife'
-        ]
+        question: 'Erstellen Sie ein Gutachten für Versicherung oder Gericht?',
+        answer: 'Nein. Wir sind ein Meisterbetrieb für Fliesen-, Platten- und Mosaikarbeiten, keine Sachverständigen. Wir beurteilen den Schaden aus handwerklicher Sicht und schlagen eine Lösung vor. Für Gutachten wenden Sie sich an einen öffentlich bestellten und vereidigten Sachverständigen.'
     },
     {
-        icon: Home,
-        title: 'Gebäude & Fördermittel (iSFP)',
-        items: [
-            'Individueller Sanierungsfahrplan (iSFP-Bonus)',
-            'Ermittlung maximaler KfW- & BAFA-Zuschüsse',
-            'Nachweiserstellung für das Gebäudeenergiegesetz (GEG)',
-            'Erstellung von Fachunternehmererklärungen'
-        ]
+        question: 'Finden Sie auch ein Leck in der Wasserleitung?',
+        answer: 'Die Ortung verdeckter Leitungsschäden übernehmen Installateure oder spezialisierte Leckortungsfirmen. Sobald die Ursache behoben und der Untergrund trocken ist, erneuern wir Fliesen und Abdichtung.'
+    },
+    {
+        question: 'Muss bei einem Schaden immer die ganze Fläche erneuert werden?',
+        answer: 'Nein. Ist der Schaden örtlich begrenzt und die Ursache geklärt, genügt oft eine Reparatur oder die Erneuerung der Fugen. Eine Neuverlegung empfehlen wir erst, wenn Untergrund, Verbund oder Abdichtung großflächig geschädigt sind.'
+    },
+    {
+        question: 'Wie kann ich den Termin vorbereiten?',
+        answer: 'Hilfreich sind Fotos vom Schaden, Angaben zum Alter des Belags, eventuell vorhandene Restfliesen und Informationen zu früheren Reparaturen. Fotos können Sie vorab per WhatsApp senden.'
     }
 ];
 
-const energieFaqs = [
-    {
-        q: 'Ist eine Wärmepumpe auch im Altbau ohne Fußbodenheizung wirtschaftlich?',
-        a: 'Ja, moderne Luft-Wasser-Wärmepumpen (insbesondere mit natürlichen Kältemitteln wie R290) erreichen auch bei Vorlauftemperaturen von bis zu 55 °C sehr gute Effizienzwerte (JAZ > 3,5). Durch den gezielten Austausch einzelner Heizkörper gegen Niedertemperatur-Heizkörper lässt sich der Wirkungsgrad weiter deutlich steigern.'
-    },
-    {
-        q: 'Was bringt ein hydraulischer Abgleich konkret?',
-        a: 'Durch einen hydraulischen Abgleich wird jeder Heizkörper genau mit der Wassermenge versorgt, die er für die gewünschte Raumtemperatur benötigt. Das verhindert überhitzte oder unterversorgte Räume, senkt den Brennstoffverbrauch um bis zu 15% und ist Voraussetzung für die staatliche KfW-Förderung.'
-    },
-    {
-        q: 'Wie schnell amortisiert sich eine Heizungsmodernisierung?',
-        a: 'Dank staatlicher Zuschüsse von bis zu 70% und Brennstoffeinsparungen von 40 bis 60% im Vergleich zu alten Öl- oder Konstanttemperatur-Gaskesseln amortisiert sich eine moderne Wärmepumpenanlage meist schon nach 7 bis 10 Jahren.'
-    },
-    {
-        q: 'Kommen Sie für die Energieberatung direkt zu mir nach Hause?',
-        a: 'Ja. Wir führen die technische Bestandsaufnahme direkt bei Ihnen in Wetzlar, Gießen, Marburg, Limburg und dem gesamten Umland durch, um alle baulichen Gegebenheiten exakt zu erfassen.'
-    }
+const breadcrumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Schadensanalyse', path: PAGE_PATH }
 ];
 
-export default function Energieberatung() {
+const schadensGraph = buildGraph([
+    buildWebPageNode({
+        url: PAGE_URL,
+        name: 'Schadensanalyse für Fliesen, Fugen und Abdichtung',
+        description:
+            'Ursachen von gerissenen Fliesen, Hohlstellen, feuchten Fugen und Ausblühungen vor Ort klären – als Teil des kostenfreien Vor-Ort-Aufmaßes.',
+        breadcrumbItems: breadcrumbs
+    }),
+    buildBreadcrumbNode(breadcrumbs, PAGE_URL),
+    buildServiceNode({
+        name: 'Schadensanalyse Fliesen & Abdichtung',
+        serviceType: 'Begutachtung von Fliesenschäden vor Ort',
+        description:
+            'Bestandsaufnahme, Klopfprobe, Restfeuchtemessung und Prüfung von Untergrund, Fugen und Anschlüssen mit anschließendem Sanierungsvorschlag.',
+        url: PAGE_URL,
+        offers: [
+            { name: 'Bestandsaufnahme', description: 'Schadensbild und Vorgeschichte aufnehmen' },
+            { name: 'Ursachenanalyse', description: 'Klopfprobe, Restfeuchte, Untergrund und Anschlüsse prüfen' },
+            { name: 'Sanierungsvorschlag', description: 'Reparatur, Fugenerneuerung oder Neuverlegung' }
+        ]
+    }),
+    buildFaqNode(schadensFaqs, PAGE_URL)
+]);
+
+const WEITERLESEN = [
+    { title: 'Undichte Dusche erkennen', path: '/blog/undichte-dusche-warnzeichen', desc: 'Warnzeichen für Feuchte hinter Fliesen' },
+    { title: 'Schimmel in Fugen vermeiden', path: '/blog/schimmel-fliesenfugen-vermeiden', desc: 'Lüften, Pflege und Silikonfugen' },
+    { title: 'Untergrund & Abdichtung', path: '/leistungen/untergrund', desc: 'Tragfähig, eben, trocken, dicht' },
+    { title: 'Außenbereiche', path: '/leistungen/aussen', desc: 'Balkon, Terrasse und Eingang' }
+];
+
+export default function SchadensanalysePage() {
     return (
-        <PageWrapper>
-            <SEO
-                title="Energieberatung Wetzlar | Batherm Haustechnik"
-                description="Professionelle Energieberatung für Sanitär, Heizung und Wärmepumpen in Wetzlar. Heizkosten senken & maximale Förderungen sichern."
-                keywords="Energieberatung Wetzlar, Heizkosten sparen, Wärmepumpe Altbau, Hydraulischer Abgleich, Heizungsmodernisierung"
-            />
+        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+            <JsonLd schema={schadensGraph} />
+            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
 
-            {/* ── Hero Section ─────────────────────────────────────────── */}
-            <section className="relative bg-gradient-to-br from-amber-600 via-[#8a4f15] to-[var(--color-neutral-900)] pt-32 pb-20 px-4 text-white">
-                <div className="max-w-5xl mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-amber-200 text-sm mb-6 font-semibold">
-                        <Lightbulb className="w-4 h-4 text-amber-300" />
-                        Energie sparen &amp; Heizkosten dauerhaft senken
-                    </div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-display leading-tight">
-                        Energieberatung für Sanierung &amp; Effizienz in Wetzlar
+            {/* Hero */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 relative z-10" aria-labelledby="schadensanalyse-heading">
+                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow">
+                        <ScanSearch className="w-3.5 h-3.5" />
+                        Service &middot; Ursachen vor Ort klären
+                    </span>
+                    <h1 id="schadensanalyse-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                        Schadensanalyse für{' '}
+                        <span className="text-ceramic-gradient">Fliesen, Fugen und Abdichtung</span>
                     </h1>
-                    <p className="text-lg md:text-xl text-neutral-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-                        Finden Sie heraus, wie Sie mit modernen Wärmepumpen, Solartechnik und Systemoptimierung bis zu 50% Heizenergie sparen und staatliche Zuschüsse voll ausschöpfen.
+                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                        Eine gesprungene Fliese lässt sich tauschen – doch wenn die Ursache im Untergrund oder in der
+                        Abdichtung liegt, kehrt der Schaden zurück. Deshalb klärt {COMPANY_DATA.owner.fullName},
+                        Fliesenlegermeister, beim Vor-Ort-Termin zuerst, woher ein Schaden kommt, und schlägt dann die
+                        passende Lösung vor.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/beratung">
-                            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-6 rounded-full shadow-lg">
-                                Vor-Ort-Energiecheck buchen
-                                <ArrowRight className="ml-2 w-5 h-5" />
-                            </Button>
+                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
+                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
+                            Vor-Ort-Termin anfragen
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
-                        <Link href="/kontakt">
-                            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-6 rounded-full">
-                                Kontakt aufnehmen
-                            </Button>
-                        </Link>
+                        <a
+                            href={COMPANY_DATA.contact.whatsappLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-ghost px-7 py-3.5 text-xs"
+                        >
+                            Fotos per WhatsApp senden
+                        </a>
                     </div>
                 </div>
             </section>
 
-            {/* ── Savings Highlight ────────────────────────────────────── */}
-            <section className="py-12 bg-neutral-900 border-b border-neutral-800">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-                        <div className="flex items-center gap-4">
-                            <TrendingDown className="w-10 h-10 text-emerald-400" />
-                            <div className="text-left">
-                                <p className="text-3xl font-bold text-white">Bis zu 50%</p>
-                                <p className="text-neutral-400 text-sm">Heizkosten-Einsparung</p>
-                            </div>
-                        </div>
-                        <div className="hidden md:block w-px h-12 bg-neutral-800" />
-                        <div className="flex items-center gap-4">
-                            <Zap className="w-10 h-10 text-amber-400" />
-                            <div className="text-left">
-                                <p className="text-3xl font-bold text-white">Bis zu 70%</p>
-                                <p className="text-neutral-400 text-sm">KfW-Heizungsförderung</p>
-                            </div>
-                        </div>
-                        <div className="hidden md:block w-px h-12 bg-neutral-800" />
-                        <div className="flex items-center gap-4">
-                            <ShieldCheck className="w-10 h-10 text-blue-400" />
-                            <div className="text-left">
-                                <p className="text-3xl font-bold text-white">100%</p>
-                                <p className="text-neutral-400 text-sm">Meisterliche Planung &amp; Ausführung</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {/* Highlight band */}
+            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-label="Leistungsmerkmale">
+                <ul className="glass-surface rounded-[2rem] p-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    {HIGHLIGHTS.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <li key={item.title} className="flex items-center gap-4">
+                                <span className="icon-chip w-11 h-11 shrink-0">
+                                    <Icon className="w-5 h-5" />
+                                </span>
+                                <span>
+                                    <span className="block font-black text-slate-900">{item.title}</span>
+                                    <span className="block text-sm text-slate-600">{item.desc}</span>
+                                </span>
+                            </li>
+                        );
+                    })}
+                </ul>
             </section>
 
-            {/* ── Process Steps ────────────────────────────────────────── */}
-            <section className="py-20 px-4 bg-white">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 font-display">
-                            Schritt für Schritt zu Ihrem energieeffizienten Gebäude
+            {/* Schadensbilder */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="schadensbilder-heading">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <span className="eyebrow eyebrow-sky mb-4">Schadensbilder</span>
+                    <h2 id="schadensbilder-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Typische Schäden an Fliesen und Fugen
+                    </h2>
+                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                        Welche Anzeichen im Bad auf Feuchtigkeit hinter den Fliesen hindeuten, beschreibt unser Beitrag{' '}
+                        <Link href="/blog/undichte-dusche-warnzeichen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            Undichte Dusche: Warnzeichen
+                        </Link>
+                        . Hier geht es darum, was hinter dem jeweiligen Schadensbild stecken kann.
+                    </p>
+                </div>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {DAMAGE_PATTERNS.map((item) => (
+                        <li
+                            key={item.title}
+                            className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                        >
+                            <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                            <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
+            {/* Ablauf */}
+            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="ablauf-heading">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <span className="eyebrow mb-4">Ablauf</span>
+                        <h2 id="ablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            In 4 Schritten von der Ursache zur Lösung
                         </h2>
-                        <p className="text-neutral-600 max-w-2xl mx-auto">
-                            Unser strukturierter Ablauf garantiert Ihnen eine verlässliche und wirtschaftliche Modernisierung.
-                        </p>
                     </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {processSteps.map((step) => {
+                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {STEPS.map((step, idx) => {
                             const Icon = step.icon;
                             return (
-                                <div key={step.step} className="relative bg-neutral-50 p-8 rounded-2xl border border-neutral-200 shadow-xs text-center flex flex-col items-center">
-                                    <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-5">
-                                        <Icon className="w-8 h-8 text-amber-600" />
+                                <li
+                                    key={step.title}
+                                    className="group p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                >
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="icon-chip w-11 h-11">
+                                            <Icon className="w-5 h-5" />
+                                        </span>
+                                        <span className="font-display text-4xl font-black tabular-nums text-emerald-600/25" aria-hidden="true">
+                                            {String(idx + 1).padStart(2, '0')}
+                                        </span>
                                     </div>
-                                    <div className="absolute top-4 right-4 w-7 h-7 bg-neutral-900 rounded-full flex items-center justify-center text-white text-xs font-bold">
-                                        {step.step}
-                                    </div>
-                                    <h3 className="text-lg font-bold text-neutral-900 mb-2">{step.title}</h3>
-                                    <p className="text-sm text-neutral-600 leading-relaxed">{step.description}</p>
-                                </div>
+                                    <h3 className="text-base font-black text-slate-900 mb-2">{step.title}</h3>
+                                    <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
+                                </li>
                             );
                         })}
-                    </div>
+                    </ol>
                 </div>
             </section>
 
-            {/* ── Consulting Topics ────────────────────────────────────── */}
-            <section className="py-20 bg-neutral-50 px-4 border-t border-neutral-200">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4 font-display">
-                            Unsere Beratungsschwerpunkte im Überblick
-                        </h2>
-                        <p className="text-neutral-600 max-w-2xl mx-auto">
-                            Ganzheitliche Betrachtung Ihrer Haustechnik für maximalen Wohnkomfort und niedrigste Betriebskosten.
-                        </p>
-                    </div>
+            {/* Was vor Ort geprüft wird */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="pruefung-heading">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <span className="eyebrow eyebrow-sky mb-4">Prüfung vor Ort</span>
+                    <h2 id="pruefung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Was vor Ort geprüft wird
+                    </h2>
+                </div>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {CHECKS.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <li key={item.title} className="glass-surface p-7 rounded-[2rem]">
+                                <span className="icon-chip w-11 h-11 mb-4">
+                                    <Icon className="w-5 h-5" />
+                                </span>
+                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
+                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </section>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {consultingTopics.map((topic, index) => {
+            {/* Themen */}
+            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="themen-heading">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <span className="eyebrow mb-4">Schwerpunkte</span>
+                        <h2 id="themen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            Wo wir Schäden begutachten
+                        </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {TOPICS.map((topic) => {
                             const Icon = topic.icon;
                             return (
-                                <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-200 flex flex-col justify-between">
-                                    <div>
-                                        <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
-                                            <Icon className="w-7 h-7 text-amber-600" />
-                                        </div>
-                                        <h3 className="text-xl font-bold text-neutral-900 mb-4">{topic.title}</h3>
-                                        <ul className="space-y-3 mb-6">
-                                            {topic.items.map((item, idx) => (
-                                                <li key={idx} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                                                    <span>{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                <div key={topic.title} className="p-7 rounded-3xl bg-slate-50 border border-slate-200">
+                                    <span className="icon-chip w-12 h-12 mb-5">
+                                        <Icon className="w-6 h-6" />
+                                    </span>
+                                    <h3 className="text-lg font-black text-slate-900 mb-4">{topic.title}</h3>
+                                    <ul className="space-y-3">
+                                        {topic.items.map((item) => (
+                                            <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
                             );
                         })}
@@ -224,51 +326,133 @@ export default function Energieberatung() {
                 </div>
             </section>
 
-            {/* ── FAQ Section ──────────────────────────────────────────── */}
-            <section className="py-20 bg-white border-t border-neutral-200">
-                <div className="max-w-4xl mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-neutral-900 mb-4 font-display">
-                            Häufige Fragen zur Energieberatung
-                        </h2>
-                        <p className="text-neutral-600">
-                            Wichtige Antworten zu Einsparpotenzialen, Kosten und Fördermöglichkeiten.
-                        </p>
-                    </div>
+            {/* Reparieren, Fugen oder neu */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="loesung-heading">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <span className="eyebrow eyebrow-sky mb-4">Die passende Lösung</span>
+                    <h2 id="loesung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Reparieren, Fugen erneuern oder neu verlegen?
+                    </h2>
+                </div>
+                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {OPTIONS.map((option) => (
+                        <li key={option.title} className="glass-surface p-7 rounded-[2rem] flex flex-col">
+                            <h3 className="font-black text-lg text-slate-900 mb-2">{option.title}</h3>
+                            <p className="text-sm text-slate-700 leading-relaxed flex-1">{option.desc}</p>
+                            <Link
+                                href={option.link.href}
+                                className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700"
+                            >
+                                {option.link.label}
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </section>
 
+            {/* Andere Fachleute */}
+            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10" aria-labelledby="fachleute-heading">
+                <div className="rounded-[2rem] bg-sky-50 border border-sky-200 p-7 sm:p-10">
+                    <h2 id="fachleute-heading" className="text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
+                        <Users className="w-6 h-6 text-emerald-600" />
+                        Wann andere Fachleute gefragt sind
+                    </h2>
+                    <p className="text-sm text-slate-700 leading-relaxed mb-5">
+                        Wir sagen offen, wenn eine Ursache außerhalb unseres Handwerks liegt, und nennen Ihnen den richtigen
+                        Ansprechpartner:
+                    </p>
+                    <ul className="space-y-3">
+                        {OTHER_EXPERTS.map((item) => (
+                            <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700 leading-relaxed">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                    <p className="mt-5 text-sm text-slate-700">
+                        Tipps zur Vorbeugung:{' '}
+                        <Link href="/blog/schimmel-fliesenfugen-vermeiden" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            Schimmel in Fliesenfugen vermeiden
+                        </Link>
+                    </p>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="faq-heading">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-12">
+                        <span className="eyebrow mb-4">
+                            <HelpCircle className="w-3.5 h-3.5" />
+                            FAQ
+                        </span>
+                        <h2 id="faq-heading" className="text-3xl font-black text-slate-900 tracking-tight">
+                            Häufige Fragen zur Schadensanalyse
+                        </h2>
+                    </div>
                     <div className="space-y-4">
-                        {energieFaqs.map((faq, index) => (
-                            <div key={index} className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
-                                <h3 className="font-bold text-lg text-neutral-900 mb-2 flex items-center gap-2">
-                                    <HelpCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                                    {faq.q}
-                                </h3>
-                                <p className="text-neutral-700 text-sm leading-relaxed pl-7">
-                                    {faq.a}
-                                </p>
-                            </div>
+                        {schadensFaqs.map((faq) => (
+                            <details key={faq.question} className="group p-6 rounded-2xl bg-slate-50 border border-slate-200 open:bg-white open:border-emerald-500/60 transition-colors">
+                                <summary className="cursor-pointer list-none font-black text-base text-slate-900 flex items-start justify-between gap-4">
+                                    <span>{faq.question}</span>
+                                    <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 mt-1 transition-transform group-open:rotate-90" aria-hidden="true" />
+                                </summary>
+                                <p className="mt-3 text-sm text-slate-700 leading-relaxed">{faq.answer}</p>
+                            </details>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* ── CTA Section ──────────────────────────────────────────── */}
-            <section className="py-20 bg-neutral-900 text-white px-4">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 font-display">
-                        Lassen Sie sich jetzt unverbindlich beraten
+            {/* Weiterlesen */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="schaden-weiterlesen-heading">
+                <h2 id="schaden-weiterlesen-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
+                    Weiterlesen
+                </h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {WEITERLESEN.map((link) => (
+                        <li key={link.path}>
+                            <Link
+                                href={link.path}
+                                className="group glass-surface rounded-2xl p-5 h-full block hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                            >
+                                <span className="font-black text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center gap-1">
+                                    {link.title}
+                                    <ArrowRight className="w-4 h-4" />
+                                </span>
+                                <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
+            {/* Closing CTA */}
+            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" aria-labelledby="schaden-cta-heading">
+                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4">
+                    <h2 id="schaden-cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                        Schaden entdeckt? Lassen Sie die Ursache klären.
                     </h2>
-                    <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Vereinbaren Sie Ihren individuellen Beratungstermin bei Batherm Haustechnik und erfahren Sie, wie viel Energie Sie in Ihrem Gebäude einsparen können.
+                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                        Vereinbaren Sie einen Vor-Ort-Termin – {COMPANY_DATA.hours.formattedWeekdays},{' '}
+                        {COMPANY_DATA.hours.formattedSaturday}. Die Schadensanalyse ist Teil des kostenfreien Aufmaßes.
                     </p>
-                    <Link href="/beratung">
-                        <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white font-bold px-10 py-6 rounded-full shadow-xl">
-                            Jetzt kostenlose Erstberatung vereinbaren
-                            <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
-                    </Link>
+                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
+                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+                            Termin anfragen
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
+                            <Phone className="w-4 h-4 text-emerald-700" />
+                            {COMPANY_DATA.contact.phone}
+                        </a>
+                        <Link href="/beratung" className="btn-ghost px-7 py-3.5 text-xs">
+                            Beratung
+                        </Link>
+                    </div>
                 </div>
             </section>
-        </PageWrapper>
+        </div>
     );
 }
