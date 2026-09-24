@@ -178,7 +178,6 @@ export function buildLocalBusinessNode(): SchemaNode {
       { '@type': 'City', name: 'Hüttenberg' },
       { '@type': 'AdministrativeArea', name: 'Hessen' },
     ],
-    priceRange: '€€€',
     currenciesAccepted: 'EUR',
     paymentAccepted: 'Überweisung, Bar',
     openingHoursSpecification: [

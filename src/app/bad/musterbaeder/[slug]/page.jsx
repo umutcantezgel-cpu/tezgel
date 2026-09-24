@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
     if (!bath) return { title: 'Musterbad' };
 
     return {
-        title: `${bath.title} (${bath.priceFormatted})`,
+        title: `${bath.title} – Ausstattung im Detail`,
         description: `${bath.headline}. Detaillierte Ausstattungsliste mit hochwertigen Markenkomponenten. Jetzt Festpreis anfragen!`,
         alternates: { canonical: `/bad/musterbaeder/${slug}` }
     };
@@ -72,11 +72,9 @@ export default async function MusterbadDetailPage({ params }) {
                     </p>
 
                     <div className="p-4 sm:px-6 rounded-2xl bg-white border border-slate-200 inline-flex flex-wrap items-center gap-x-6 gap-y-1">
-                        <div>
-                            <span className="text-[10px] uppercase font-bold text-slate-600 block tracking-wider">Festpreis-Orientierung</span>
-                            <span className="font-display text-2xl sm:text-3xl font-black text-emerald-800 tabular-nums">{bath.priceFormatted}</span>
-                        </div>
-                        <span className="text-xs text-slate-600 font-medium">{bath.vatNote}</span>
+                        <span className="text-sm text-slate-700 font-medium">
+                            Verbindlicher Festpreis nach kostenfreiem Vor-Ort-Aufmaß – abgestimmt auf Ihren Grundriss.
+                        </span>
                     </div>
                 </div>
             </section>
@@ -103,13 +101,10 @@ export default async function MusterbadDetailPage({ params }) {
                                     key={comp.category}
                                     className="group glass-surface rounded-[2rem] p-6 sm:p-8 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
-                                    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3 mb-4">
+                                    <div className="border-b border-slate-200 pb-3 mb-4">
                                         <h3 className="font-black text-base text-slate-900 group-hover:text-emerald-800 transition-colors">
                                             {comp.category}
                                         </h3>
-                                        <span className="text-xs font-black text-slate-800 bg-slate-50 px-3.5 py-1 rounded-full border border-slate-200 tabular-nums">
-                                            {comp.price}
-                                        </span>
                                     </div>
 
                                     <ul className="space-y-2.5">

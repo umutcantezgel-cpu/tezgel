@@ -25,7 +25,7 @@ export const navigationLinks = [
                 category: 'Planung & Inspiration',
                 items: [
                     { name: 'Badplaner', path: '/bad/badplaner', desc: 'Schritt für Schritt zum geplanten Bad' },
-                    { name: 'Bad-Budgetkalkulator', path: '/bad/budgetkalkulator', desc: 'Kostenrahmen sofort transparent berechnen' },
+                    { name: 'Bad-Projektcheck', path: '/bad/projekt-check', desc: 'Badprojekt in 2 Minuten beschreiben' },
                     { name: 'Musterbäder', path: '/bad/musterbaeder', desc: 'Konzepte von Basic bis Luxus' },
                     { name: 'Badanfrage', path: '/bad/badanfrage', desc: 'Unverbindliche Anfrage für Ihr Bad' }
                 ]
@@ -35,7 +35,7 @@ export const navigationLinks = [
             eyebrow: 'DIN 18534',
             title: 'Dicht. Sauber. Termintreu.',
             text: 'Verbundabdichtung nach Norm, Staubschutz im bewohnten Bestand und ein verbindlicher Festpreis.',
-            cta: { label: 'Budget berechnen', path: '/bad/budgetkalkulator' }
+            cta: { label: 'Projektcheck starten', path: '/bad/projekt-check' }
         }
     },
     {
@@ -142,7 +142,7 @@ export const footerBathLinks = [
     { name: 'Barrierefreies Bad', path: '/bad/barrierefreies-bad' },
     { name: 'Bad aus einer Hand', path: '/bad/bad-aus-einer-hand' },
     { name: 'Badplaner', path: '/bad/badplaner' },
-    { name: 'Bad-Budgetkalkulator', path: '/bad/budgetkalkulator' },
+    { name: 'Bad-Projektcheck', path: '/bad/projekt-check' },
     { name: 'Musterbäder', path: '/bad/musterbaeder' },
     { name: 'Badanfrage', path: '/bad/badanfrage' }
 ];

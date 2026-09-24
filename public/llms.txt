@@ -51,7 +51,7 @@ Aßlar, Wetzlar, Gießen, Marburg, Lahn-Dill-Kreis und Mittelhessen; Großprojek
 - [Häufige Fragen](https://tezgel.de/faq)
 - [Förderung barrierefreier Bäder](https://tezgel.de/foerderung)
 - [Fliesen-Konfigurator](https://tezgel.de/fliesen/konfigurator)
-- [Bad-Budgetkalkulator](https://tezgel.de/bad/budgetkalkulator)
+- [Bad-Projektcheck](https://tezgel.de/bad/projekt-check)
 - [Über uns](https://tezgel.de/ueber-uns)
 - [Karriere](https://tezgel.de/karriere)
 - [Impressum](https://tezgel.de/impressum)

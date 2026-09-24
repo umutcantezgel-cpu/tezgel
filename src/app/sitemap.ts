@@ -27,7 +27,7 @@ const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, prio
   ['/bad/bad-aus-einer-hand', 'monthly', 0.8],
   ['/bad/musterbaeder', 'monthly', 0.9],
   ['/bad/badplaner', 'monthly', 0.8],
-  ['/bad/budgetkalkulator', 'monthly', 0.9],
+  ['/bad/projekt-check', 'monthly', 0.9],
   ['/bad/badanfrage', 'monthly', 0.9],
 
   // Fachgewerke

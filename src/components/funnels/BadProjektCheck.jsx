@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-    Calculator,
+    ClipboardCheck,
     Check,
     ArrowRight,
     Phone,
@@ -21,9 +21,9 @@ const SCOPE_OPTIONS = [
 ];
 
 const TIER_OPTIONS = [
-    { id: 'basic', label: 'Basic', tag: 'ab ~6.900 €', desc: 'Solide Markenqualität' },
-    { id: 'premium', label: 'Premium', tag: 'ab ~17.200 €', desc: 'Edle Oberflächen' },
-    { id: 'luxus', label: 'Luxus', tag: 'ab ~24.000 €', desc: 'Spa, Dusch-WC' }
+    { id: 'basic', label: 'Solide', desc: 'Funktional & zeitlos' },
+    { id: 'premium', label: 'Gehoben', desc: 'Edle Oberflächen' },
+    { id: 'luxus', label: 'Exklusiv', desc: 'Spa-Charakter, Dusch-WC' }
 ];
 
 const EXTRA_OPTIONS = [
@@ -40,7 +40,7 @@ const EXTRA_OPTIONS = [
 const inputClass =
     'w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all';
 
-export default function BudgetKalkulator() {
+export default function BadProjektCheck() {
     const [sqm, setSqm] = useState(8.2);
     const [tier, setTier] = useState('premium');
     const [sanitaryScope, setSanitaryScope] = useState('komplett');
@@ -60,54 +60,21 @@ export default function BudgetKalkulator() {
         );
     };
 
-    const baseRates = {
-        basic: 1200,
-        premium: 1900,
-        luxus: 2800
-    };
-
-    const optionCosts = {
-        'walkin': { basic: 1500, premium: 2500, luxus: 3800 },
-        'badewanne': { basic: 1200, premium: 2200, luxus: 4500 },
-        'dusch-wc': { basic: 1800, premium: 2800, luxus: 4200 },
-        'doppelwaschtisch': { basic: 900, premium: 1800, luxus: 3200 },
-        'fussbodenheizung': { basic: 800, premium: 1400, luxus: 2200 },
-        'design-heizkoerper': { basic: 350, premium: 850, luxus: 1500 },
-        'led-spiegel': { basic: 300, premium: 700, luxus: 1400 },
-        'fliesen': { basic: 1800, premium: 3200, luxus: 5500 }
-    };
-
-    let calculatedBase = sqm * baseRates[tier];
-    if (sanitaryScope === 'teil') calculatedBase *= 0.6;
-    if (sanitaryScope === 'dusche-nur') calculatedBase *= 0.35;
-
-    let optionsTotal = 0;
-    selectedOptions.forEach(opt => {
-        if (optionCosts[opt]) {
-            optionsTotal += optionCosts[opt][tier] || 0;
-        }
-    });
-
-    const minEstimate = Math.round((calculatedBase + optionsTotal) * 0.9 / 100) * 100;
-    const maxEstimate = Math.round((calculatedBase + optionsTotal) * 1.15 / 100) * 100;
-
     const sqmLabel = sqm.toLocaleString('de-DE');
-    const estimateText = `${minEstimate.toLocaleString('de-DE')} € – ${maxEstimate.toLocaleString('de-DE')} €`;
+    const scopeLabel = SCOPE_OPTIONS.find((s) => s.id === sanitaryScope)?.label ?? sanitaryScope;
+    const tierLabel = TIER_OPTIONS.find((t) => t.id === tier)?.label ?? tier;
+    const extras = EXTRA_OPTIONS.filter((o) => selectedOptions.includes(o.id)).map((o) => o.label);
     const matchingBath = sqm <= 9
-        ? { label: 'Basic-Bad 8,2 ㎡ (~6.942 €)', slug: 'basic-bad-8_2' }
-        : { label: 'Komfort-Bad 15,9 ㎡ (~17.231 €)', slug: 'premium-bad-15_9' };
+        ? { label: 'Kompaktbad 8,2 m²', slug: 'basic-bad-8_2' }
+        : { label: 'Komfort-Bad 15,9 m²', slug: 'premium-bad-15_9' };
 
     const getLeadMessage = () => {
-        const scopeLabel = SCOPE_OPTIONS.find((s) => s.id === sanitaryScope)?.label ?? sanitaryScope;
-        const tierLabel = TIER_OPTIONS.find((t) => t.id === tier)?.label ?? tier;
-        const extras = EXTRA_OPTIONS.filter((o) => selectedOptions.includes(o.id)).map((o) => o.label);
         return (
-            `Hallo Herr ${COMPANY_DATA.owner.lastName},\nich habe den Bad-Budgetkalkulator genutzt und bitte um ein Festpreisangebot:\n\n` +
+            `Hallo Herr ${COMPANY_DATA.owner.lastName},\nich habe den Bad-Projektcheck genutzt und bitte um ein Festpreisangebot:\n\n` +
             `Badgröße: ca. ${sqmLabel} m²\n` +
             `Sanierungsumfang: ${scopeLabel}\n` +
-            `Qualitätsstufe: ${tierLabel}\n` +
-            `Wunschausstattung: ${extras.join(', ') || 'Keine Extras gewählt'}\n` +
-            `Berechneter Richtpreis: ${estimateText}\n\n` +
+            `Ausstattungsniveau: ${tierLabel}\n` +
+            `Wunschausstattung: ${extras.join(', ') || 'Keine Extras gewählt'}\n\n` +
             `Name: ${leadData.name}\n` +
             `Telefon: ${leadData.phone}\n` +
             `E-Mail: ${leadData.email || 'Nicht angegeben'}\n\n` +
@@ -141,19 +108,19 @@ export default function BudgetKalkulator() {
                 <div className="ceramic-band p-6 sm:p-10">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                         <span className="eyebrow">
-                            <Calculator className="w-3.5 h-3.5" />
-                            Online-Budgetrechner
+                            <ClipboardCheck className="w-3.5 h-3.5" />
+                            Bad-Projektcheck
                         </span>
                         <span className="eyebrow eyebrow-neutral hidden sm:inline-flex">
-                            Transparente Festpreis-Orientierung
+                            Festpreis nach Vor-Ort-Aufmaß
                         </span>
                     </div>
                     <h2 className="text-2xl sm:text-3xl font-black mb-2 text-slate-900">
-                        Badsanierungs-Kosten sofort online kalkulieren
+                        Ihr Badprojekt in vier Schritten beschreiben
                     </h2>
                     <p className="text-sm text-slate-700 max-w-2xl leading-relaxed">
-                        Ermitteln Sie eine realistische Kostenspanne für Ihr Badezimmer in Aßlar, Wetzlar und Mittelhessen –
-                        inklusive hochwertiger Markenkomponenten.
+                        Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und
+                        melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.
                     </p>
                 </div>
 
@@ -219,7 +186,7 @@ export default function BudgetKalkulator() {
                         {/* 3. Qualitätskategorie */}
                         <fieldset>
                             <legend className="block text-sm font-black text-slate-900 mb-2">
-                                3. Qualitätsstufe:
+                                3. Ausstattungsniveau:
                             </legend>
                             <div className="grid grid-cols-3 gap-2">
                                 {TIER_OPTIONS.map((t) => {
@@ -237,7 +204,6 @@ export default function BudgetKalkulator() {
                                             }`}
                                         >
                                             <span className="block text-xs font-black text-slate-900">{t.label}</span>
-                                            <span className="block text-[11px] font-bold text-emerald-800 tabular-nums">{t.tag}</span>
                                             <span className="block text-[11px] text-slate-600 leading-snug">{t.desc}</span>
                                         </button>
                                     );
@@ -276,26 +242,31 @@ export default function BudgetKalkulator() {
                         </fieldset>
                     </div>
 
-                    {/* Price Display & Actions (Right 5 Cols) */}
+                    {/* Summary & Actions (Right 5 Cols) */}
                     <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200">
                         <div className="space-y-4">
                             <span className="eyebrow eyebrow-sky">
                                 <Info className="w-3.5 h-3.5" />
-                                Unverbindliche Richtwerte
+                                Ihre Zusammenfassung
                             </span>
 
-                            <div aria-live="polite">
-                                <span className="text-[11px] font-black uppercase tracking-widest text-slate-600 block">
-                                    Geschätzter Richtpreis:
-                                </span>
-                                <p className="font-display text-2xl sm:text-3xl font-black text-emerald-800 mt-1 tabular-nums">
-                                    {estimateText}
-                                </p>
-                                <p className="text-xs text-slate-600 mt-1">
-                                    Richtwert inkl. Material, Markenarmaturen, Vorwandinstallation und Fachmontage. Den verbindlichen
-                                    Festpreis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.
-                                </p>
-                            </div>
+                            <dl aria-live="polite" className="p-4 rounded-2xl bg-white border border-slate-200 text-xs divide-y divide-slate-100">
+                                {[
+                                    ['Badgröße', `ca. ${sqmLabel} m²`],
+                                    ['Umfang', scopeLabel],
+                                    ['Ausstattung', tierLabel],
+                                    ['Wünsche', extras.join(', ') || 'Keine Extras gewählt']
+                                ].map(([term, value]) => (
+                                    <div key={term} className="flex justify-between gap-3 py-2 first:pt-0 last:pb-0">
+                                        <dt className="font-bold text-slate-600 shrink-0">{term}</dt>
+                                        <dd className="font-bold text-slate-900 text-right">{value}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                            <p className="text-xs text-slate-600">
+                                Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den
+                                verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.
+                            </p>
 
                             {/* Reference to exact Musterbad */}
                             <div className="p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1 text-xs">
@@ -350,7 +321,7 @@ export default function BudgetKalkulator() {
                                         {sentVia === 'whatsapp' ? 'WhatsApp wurde geöffnet' : 'E-Mail-Programm wurde geöffnet'}
                                     </p>
                                     <p className="text-slate-700">
-                                        Bitte senden Sie die vorbereitete Nachricht mit Ihrer Kalkulation dort ab – erst dann erreicht
+                                        Bitte senden Sie die vorbereitete Nachricht mit Ihren Angaben dort ab – erst dann erreicht
                                         sie uns.
                                     </p>
                                     <button
@@ -398,7 +369,7 @@ export default function BudgetKalkulator() {
                                     />
                                     <button type="submit" name="channel" value="whatsapp" className="glass-button-whatsapp w-full text-xs">
                                         <MessageCircle className="w-4 h-4" />
-                                        Kalkulation per WhatsApp senden
+                                        Anfrage per WhatsApp senden
                                     </button>
                                     <button type="submit" name="channel" value="email" className="btn-ghost w-full text-xs">
                                         <Send className="w-4 h-4 text-emerald-700" />

@@ -53,8 +53,8 @@ export default function BadsanierungPage() {
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/bad/budgetkalkulator" className="btn-primary px-7 py-3.5 text-xs group">
-                            Kosten online berechnen
+                        <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs group">
+                            Bad-Projektcheck starten
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">

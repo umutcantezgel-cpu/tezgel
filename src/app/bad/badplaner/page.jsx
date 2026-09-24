@@ -24,7 +24,7 @@ const PLANNING_STEPS = [
 ];
 
 const NEXT_STEPS = [
-    { title: 'Budget berechnen', desc: 'Kostenrahmen für Ihre Planung vorab ermitteln', href: '/bad/budgetkalkulator', icon: Calculator },
+    { title: 'Projektcheck', desc: 'Größe, Umfang und Wünsche vorab erfassen', href: '/bad/projekt-check', icon: Calculator },
     { title: 'Musterbäder vergleichen', desc: 'Raumkonzepte von 4,6 bis 15,9 m² als Inspiration', href: '/bad/musterbaeder', icon: Layers },
     { title: 'Badanfrage stellen', desc: 'Ihre Planung direkt an den Meisterbetrieb senden', href: '/bad/badanfrage', icon: Send }
 ];
@@ -57,8 +57,8 @@ export default function BadplanerPage() {
                             Zur Schritt-für-Schritt-Anleitung
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </a>
-                        <Link href="/bad/budgetkalkulator" className="btn-ghost px-7 py-3.5 text-xs">
-                            Budget berechnen
+                        <Link href="/bad/projekt-check" className="btn-ghost px-7 py-3.5 text-xs">
+                            Projektcheck starten
                         </Link>
                     </div>
                 </div>

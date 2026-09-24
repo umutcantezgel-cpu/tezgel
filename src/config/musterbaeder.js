@@ -1,12 +1,11 @@
 // MUSTERBÄDER & BADINSPIRATION DATA
-// HINWEIS: Ausstattungslisten und Preise wurden vom vorherigen Seitenbetreiber
-// übernommen und müssen vor der Veröffentlichung von Fliesenverlegung Tezgel
-// geprüft bzw. durch eigene Kalkulationen ersetzt werden.
+// Ausstattungslisten der Musterbäder – bewusst ohne Preisangaben. Den
+// verbindlichen Festpreis erstellt Fliesenverlegung Tezgel nach dem Vor-Ort-Aufmaß.
 // Complete 12-variant catalogue across 4 room sizes (4.6, 7.0, 8.2, 15.9 m²) and 3 tiers (Basic, Premium, Luxus)
 
 export const MUSTERBAEDER = [
     // -------------------------------------------------------------
-    // BASIC LINE (Solide Qualität & Einstiegspreise)
+    // BASIC LINE (Solide Qualität)
     // -------------------------------------------------------------
     {
         id: "basic-4-6",
@@ -16,9 +15,6 @@ export const MUSTERBAEDER = [
         tier: "Basic",
         title: "Basic-Bad 4,6 ㎡",
         headline: "Kompakter Komfort mit durchdachter Raumausnutzung",
-        priceFormatted: "ca. 5.854,00 €",
-        priceNumber: 5854,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
             "Design-Badheizkörper 177 × 60 cm (RAL 9016)",
@@ -35,7 +31,6 @@ export const MUSTERBAEDER = [
                     "Eckeinstieg aus 2 Schiebetür-Hälften 87–89 × 200 cm, Einscheibensicherheitsglas (ESG) mit Abperl-Beschichtung, Profile chrom",
                     "Einhand-Aufputz-Brausearmatur mit Verbrühschutz (kühles Armaturengehäuse), verchromt, inkl. Brausegarnitur mit Stange 90 cm, Schlauch und 3-fach verstellbarer Handbrause"
                 ],
-                price: "ca. 2.705,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
@@ -44,7 +39,6 @@ export const MUSTERBAEDER = [
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
                     "LED-Lichtspiegel 65 × 80 cm, 4-seitig umlaufende Beleuchtung (3 cm) und hinterleuchtet, 4.000 Kelvin"
                 ],
-                price: "ca. 1.138,00 €"
             },
             {
                 category: "WC-Anlage",
@@ -52,14 +46,12 @@ export const MUSTERBAEDER = [
                     "Wand-Tiefspül-WC, weiß mit pflegeleichter Glasur, WC-Sitz mit Deckel und Absenkautomatik inkl. Schallschutzset",
                     "Vorwandelement mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
                 ],
-                price: "ca. 873,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
                     "Design-Badheizkörper 177 × 60 cm (RAL 9016)"
                 ],
-                price: "ca. 751,00 €"
             },
             {
                 category: "Accessoires",
@@ -67,7 +59,6 @@ export const MUSTERBAEDER = [
                     "WC-Bürstengarnitur und Papierhalter mit Deckel, verchromt",
                     "Handtuchhalter 45 cm, starr, und Flüssigseifenspender mit Glasbehälter, verchromt"
                 ],
-                price: "ca. 387,00 €"
             }
         ]
     },
@@ -79,9 +70,6 @@ export const MUSTERBAEDER = [
         tier: "Basic",
         title: "Basic-Bad 7,0 ㎡",
         headline: "Familienfreundliche Vollausstattung mit Badewanne & Dusche",
-        priceFormatted: "ca. 7.025,00 €",
-        priceNumber: 7025,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
             "Stahl-Körperform-Badewanne 170 × 75 cm",
@@ -97,7 +85,6 @@ export const MUSTERBAEDER = [
                     "Stahl-Körperform-Badewanne 170 × 75 cm, weiß, inkl. Wannenträger sowie Ab- und Überlaufgarnitur",
                     "Einhand-Aufputz-Wannenarmatur mit Wannenset (Wandhalter, Brauseschlauch, Handbrause), verchromt"
                 ],
-                price: "ca. 830,00 €"
             },
             {
                 category: "Dusch-Anlage",
@@ -106,7 +93,6 @@ export const MUSTERBAEDER = [
                     "Aufputz-Brausethermostat mit Sicherheitsablage, inkl. Brausegarnitur mit Stange 90 cm, Schlauch und 3-fach verstellbarer Handbrause, verchromt",
                     "Duschabtrennung aus zweiteiliger Seitenwand 90 × 195 cm und Pendeltür mit Festfeld links, Profile silber matt, ESG klar mit Abperl-Beschichtung"
                 ],
-                price: "ca. 3.123,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
@@ -114,7 +100,6 @@ export const MUSTERBAEDER = [
                     "Waschtisch-Set mit Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 × 51,5 cm in Weiß Hochglanz inkl. Eckventil",
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt, und Raumspar-Möbelsiphon"
                 ],
-                price: "ca. 1.529,00 €"
             },
             {
                 category: "WC-Anlage",
@@ -122,14 +107,12 @@ export const MUSTERBAEDER = [
                     "Spülrandloses Wand-Tiefspül-WC, weiß mit pflegeleichter Glasur, abnehmbarer WC-Sitz mit Absenkautomatik und Edelstahlscharnieren sowie Schallschutzset",
                     "Vorwandelement für den Trockenbau mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
                 ],
-                price: "ca. 969,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
                     "Design-Badheizkörper 140 × 60 cm (RAL 9016)"
                 ],
-                price: "ca. 574,00 €"
             }
         ]
     },
@@ -141,9 +124,6 @@ export const MUSTERBAEDER = [
         tier: "Basic",
         title: "Basic-Bad 8,2 ㎡",
         headline: "Funktionaler Komfort mit zeitlosem Design",
-        priceFormatted: "ca. 6.942,00 €",
-        priceNumber: 6942,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/barrierefreies-bad.webp",
         highlights: [
             "Mineralguss-Waschtisch in Alpinweiß mit Spiegelschrank",
@@ -160,7 +140,6 @@ export const MUSTERBAEDER = [
                     "Renovierungsset mit Aufputz-Brausethermostat und Brausegarnitur (Stange 90 cm, 3-fach verstellbare Handbrause)",
                     "Glas-Seitenwand 120 × 200 cm, Profile silber Hochglanz, ESG klar"
                 ],
-                price: "ca. 2.458,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
@@ -169,7 +148,6 @@ export const MUSTERBAEDER = [
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
                     "2 Hochschränke in Anthrazit Hochglanz, 30 × 32 × 160 cm"
                 ],
-                price: "ca. 2.329,00 €"
             },
             {
                 category: "WC-Anlage",
@@ -178,21 +156,18 @@ export const MUSTERBAEDER = [
                     "Vorwandelement mit Unterputz-Spülkasten, Bauhöhe 112 cm",
                     "Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
                 ],
-                price: "ca. 1.261,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
                     "Design-Badheizkörper 176,4 × 60 cm (RAL 9016)"
                 ],
-                price: "ca. 201,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
                     "WC-Bürstengarnitur, Papierhalter und Flüssigseifenspender mit Glasbehälter, verchromt"
                 ],
-                price: "ca. 693,00 €"
             }
         ]
     },
@@ -204,9 +179,6 @@ export const MUSTERBAEDER = [
         tier: "Basic",
         title: "Basic-Bad 15,9 ㎡",
         headline: "Großzügiges Raumbad mit separatem WC & breitem Möbelwaschtisch",
-        priceFormatted: "ca. 12.034,00 €",
-        priceNumber: 12034,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/bad-tageslicht.webp",
         highlights: [
             "Stahl-Mittelablauf-Badewanne 180 × 80 cm mit Design-Wannenarmatur",
@@ -223,7 +195,6 @@ export const MUSTERBAEDER = [
                     "Design-Aufputz-Wannenarmatur (Einhebel) mit Umsteller, chrom",
                     "Wand-Brausehalter, Handbrause mit Anti-Kalk-Düsen und Design-Brauseschlauch"
                 ],
-                price: "ca. 1.930,00 €"
             },
             {
                 category: "Dusch-Anlage",
@@ -232,7 +203,6 @@ export const MUSTERBAEDER = [
                     "Schwenktür für Nischeneinbau, Anschlag rechts, 100 × 195 cm, Profile chrom/Alu Hochglanz, ESG klar",
                     "Design-Aufputz-Brausearmatur (Einhebel) mit Brausestangen-Set 60 cm, chrom"
                 ],
-                price: "ca. 2.732,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
@@ -241,7 +211,6 @@ export const MUSTERBAEDER = [
                     "Design-Waschtischarmatur (Einhebel) mit Ablaufgarnitur, chrom",
                     "Wandspiegel 140 × 72,5 cm mit Rahmen passend in Metallic-Braun"
                 ],
-                price: "ca. 5.076,00 €"
             },
             {
                 category: "WC-Anlage",
@@ -249,21 +218,18 @@ export const MUSTERBAEDER = [
                     "Spülrandloses Wand-Tiefspül-WC in runder Form mit verdeckter Befestigung, weiß mit pflegeleichter Glasur, Softclose-Sitz und Schallschutzset",
                     "Vorwandelement mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt"
                 ],
-                price: "ca. 1.038,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
                     "Badheizkörper 180 × 60 cm, weiß (RAL 9016)"
                 ],
-                price: "ca. 688,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
                     "Wand-Papierrollenhalter, Stand-Seifenspender aus satiniertem Glas und WC-Bürstengarnitur, chrom"
                 ],
-                price: "ca. 570,00 €"
             }
         ]
     },
@@ -279,9 +245,6 @@ export const MUSTERBAEDER = [
         tier: "Premium",
         title: "Komfort-Bad 4,6 ㎡",
         headline: "Barrierefreier Luxus und Edelstahl-Akzente auf kompaktem Raum",
-        priceFormatted: "ca. 10.009,00 €",
-        priceNumber: 10009,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
             "Barrierefreies Fünfeck-Duschelement 90 cm mit teilgerahmter Glasabtrennung",
@@ -298,7 +261,6 @@ export const MUSTERBAEDER = [
                     "Duschsystem mit Thermostat und Sicherheitsablage, 3-fach verstellbarer Handbrause und Schlauch, verchromt",
                     "Teilgerahmte Fünfeck-Duschabtrennung 90 × 200 cm, 2-teilig mit Festfeld, Profile silber Hochglanz, ESG mit Abperl-Beschichtung"
                 ],
-                price: "ca. 2.724,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
@@ -307,7 +269,6 @@ export const MUSTERBAEDER = [
                     "Einhand-Waschtischarmatur aus Edelstahl, matt gebürstet, mit Ablaufgarnitur",
                     "LED-Lichtspiegel 100 × 80 cm, 4-seitig hinterleuchtet"
                 ],
-                price: "ca. 3.820,00 €"
             },
             {
                 category: "WC-Anlage",
@@ -315,21 +276,18 @@ export const MUSTERBAEDER = [
                     "Kompakt-Wand-Tiefspül-WC (Ausladung 48 cm), weiß mit pflegeleichter Glasur, WC-Sitz mit Absenkautomatik und Edelstahlscharnieren",
                     "Eck-Vorwandelement für Wand-WC inkl. Verkleidung und Betätigungsplatte weiß"
                 ],
-                price: "ca. 1.657,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
                     "Design-Badheizkörper 175,4 × 50 cm (RAL 9016)"
                 ],
-                price: "ca. 1.532,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
                     "Papierhalter mit Deckel, WC-Bürstengarnitur, Flüssigseifenspender und Zahnputzglashalter in Glas/Chrom"
                 ],
-                price: "ca. 276,00 €"
             }
         ]
     },
@@ -341,9 +299,6 @@ export const MUSTERBAEDER = [
         tier: "Premium",
         title: "Premium-Bad 7,0 ㎡",
         headline: "Elegante Balance aus Funktion, Ästhetik und bodengleicher Duschzone",
-        priceFormatted: "ca. 11.450,00 €",
-        priceNumber: 11450,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
             "Waschtischanlage 100 cm mit LED-Lichtspiegel und Touch-Bedienung",
@@ -359,7 +314,6 @@ export const MUSTERBAEDER = [
                     "Bodengleiche Walk-In-Dusche mit Edelstahl-Designrinne und Festglaswand 100 × 200 cm",
                     "Regendusch-System mit Thermostat und Anti-Kalk-Düsen"
                 ],
-                price: "ca. 3.650,00 €"
             },
             {
                 category: "Möbel & Keramik",
@@ -368,7 +322,6 @@ export const MUSTERBAEDER = [
                     "LED-Lichtspiegel mit Touch-Sensor und einstellbarer Lichtfarbe (2.700–6.500 K)",
                     "Spülrandloses Design-Wand-WC mit Vorwandelement"
                 ],
-                price: "ca. 5.950,00 €"
             },
             {
                 category: "Heizung & Details",
@@ -376,7 +329,6 @@ export const MUSTERBAEDER = [
                     "Design-Badheizkörper in Anthrazit oder Weiß",
                     "Accessoires-Set, verchromt"
                 ],
-                price: "ca. 1.850,00 €"
             }
         ]
     },
@@ -388,9 +340,6 @@ export const MUSTERBAEDER = [
         tier: "Premium",
         title: "Premium-Bad 8,2 ㎡",
         headline: "Stilvolles Ambiente mit großzügigem Waschtisch & Walk-In Dusche",
-        priceFormatted: "ca. 13.800,00 €",
-        priceNumber: 13800,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/barrierefreies-bad.webp",
         highlights: [
             "Möbelwaschtisch 120 cm mit samtweißer Front",
@@ -406,7 +355,6 @@ export const MUSTERBAEDER = [
                     "Edelstahl-Duschrinne mit Walk-In-Glaswand 120 × 200 cm",
                     "Duschthermostat mit Regen-Kopfbrause (Ø 25 cm) und 2-strahliger Handbrause"
                 ],
-                price: "ca. 4.200,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
@@ -415,7 +363,6 @@ export const MUSTERBAEDER = [
                     "Einhand-Waschtischarmatur, chrom",
                     "LED-Lichtspiegel 120 cm mit stufenlos einstellbarer Lichtfarbe"
                 ],
-                price: "ca. 5.600,00 €"
             },
             {
                 category: "WC-Anlage",
@@ -423,7 +370,6 @@ export const MUSTERBAEDER = [
                     "Spülrandloses Wand-Tiefspül-WC mit Softclose-Sitz",
                     "Vorwandelement 112 cm mit Unterputz-Spülkasten und Glas-Betätigungsplatte"
                 ],
-                price: "ca. 1.650,00 €"
             },
             {
                 category: "Heizung & Zubehör",
@@ -431,7 +377,6 @@ export const MUSTERBAEDER = [
                     "Drehbarer Design-Badheizkörper 175,4 × 60 cm",
                     "Design-Accessoires-Set"
                 ],
-                price: "ca. 2.350,00 €"
             }
         ]
     },
@@ -443,9 +388,6 @@ export const MUSTERBAEDER = [
         tier: "Premium / Komfort",
         title: "Komfort-Bad 15,9 ㎡",
         headline: "Großzügige Wellness-Oase für höchste Komfort- und Designansprüche",
-        priceFormatted: "ca. 17.231,00 €",
-        priceNumber: 17231,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/bad-glastuer.webp",
         highlights: [
             "Möbel-Doppelwaschtisch 140 cm mit pflegeleichter Oberfläche & LED-Lichtspiegel (2.700–6.500 K)",
@@ -461,7 +403,6 @@ export const MUSTERBAEDER = [
                     "Stahl-Badewanne 190 × 90 cm, Mittelablauf, weiß, mit Wannenträger und Ab- und Überlaufgarnitur mit integriertem Wasserzulauf",
                     "Unterputz-Wannenarmatur mit Wandanschlussbogen, 1-strahlige Stabhandbrause und Design-Brauseschlauch, verchromt"
                 ],
-                price: "ca. 2.799,00 €"
             },
             {
                 category: "Dusch-Anlage",
@@ -471,7 +412,6 @@ export const MUSTERBAEDER = [
                     "Eckiger Wandbrausehalter, verchromt",
                     "Pendeltür mit Design-Scharnieren für Nischeneinbau, ESG klar mit Abperl-Beschichtung, chrom, inkl. Aufmaß und Montage"
                 ],
-                price: "ca. 5.117,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
@@ -481,7 +421,6 @@ export const MUSTERBAEDER = [
                     "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
                     "LED-Lichtspiegel 140 × 75 cm mit Lichtband oben und einstellbarer Lichtfarbe 2.700–6.500 K (warm/kalt)"
                 ],
-                price: "ca. 5.386,00 €"
             },
             {
                 category: "WC-Anlage",
@@ -490,14 +429,12 @@ export const MUSTERBAEDER = [
                     "Vorwandelement mit Unterputz-Spülkasten (112 cm)",
                     "Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
                 ],
-                price: "ca. 1.512,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
                     "Drehbarer Design-Badheizkörper 175,4 × 75 cm (RAL 9016)"
                 ],
-                price: "ca. 1.668,00 €"
             },
             {
                 category: "Accessoires",
@@ -505,7 +442,6 @@ export const MUSTERBAEDER = [
                     "Papierhalter ohne Deckel und Wand-WC-Bürstengarnitur, verchromt, mit Behälter aus weißer Keramik",
                     "Handtuchhalter 1-armig, starr (48 cm), und Wand-Seifenspender mit weißer Keramik, verchromt"
                 ],
-                price: "ca. 749,00 €"
             }
         ]
     },
@@ -521,9 +457,6 @@ export const MUSTERBAEDER = [
         tier: "Luxus",
         title: "Luxus-Bad 4,6 ㎡",
         headline: "High-End Mini-Spa mit Dusch-WC und dimmbarer Lichtarchitektur",
-        priceFormatted: "ca. 14.500,00 €",
-        priceNumber: 14500,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/barrierefreies-bad-holz.webp",
         highlights: [
             "Dusch-WC mit Gesäßdusche, Geruchsabsaugung und Warmluftföhn",
@@ -540,7 +473,6 @@ export const MUSTERBAEDER = [
                     "Rahmenlose Glasfront aus Einscheibensicherheitsglas (100 × 210 cm) mit Abperl-Beschichtung",
                     "Unterputz-Thermostat mit digitaler Temperatureinstellung"
                 ],
-                price: "ca. 4.800,00 €"
             },
             {
                 category: "Waschtisch & Möbel",
@@ -549,7 +481,6 @@ export const MUSTERBAEDER = [
                     "Design-Waschtischarmatur in Gunmetal oder gebürstetem Messing",
                     "LED-Spiegel mit integrierter Uhr, Bluetooth-Lautsprecher und Spiegelheizung"
                 ],
-                price: "ca. 4.900,00 €"
             },
             {
                 category: "Dusch-WC der Spitzenklasse",
@@ -557,7 +488,6 @@ export const MUSTERBAEDER = [
                     "Dusch-WC mit Funkfernbedienung, oszillierender Komfortdusche, Sitzheizung und Selbstreinigung",
                     "Unterputz-Vorwandelement mit Geruchsabsaugung und Glas-Betätigungsplatte"
                 ],
-                price: "ca. 3.200,00 €"
             },
             {
                 category: "Heizung & Licht",
@@ -565,7 +495,6 @@ export const MUSTERBAEDER = [
                     "Flacher Design-Heizkörper und elektrische Fußbodentemperierung",
                     "Indirekte LED-Beleuchtung in Schattenfugen"
                 ],
-                price: "ca. 1.600,00 €"
             }
         ]
     },
@@ -577,9 +506,6 @@ export const MUSTERBAEDER = [
         tier: "Luxus",
         title: "Luxus-Bad 7,0 ㎡",
         headline: "Exklusive Spa-Atmosphäre mit Mineralguss-Wanne & Dusch-WC",
-        priceFormatted: "ca. 18.900,00 €",
-        priceNumber: 18900,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/bad-freistehende-wanne.webp",
         highlights: [
             "Ergonomische Mineralguss-Badewanne mit Unterputz-Schwallauslauf",
@@ -595,7 +521,6 @@ export const MUSTERBAEDER = [
                     "Mineralguss-Designwanne mit samtig-warmer Oberfläche und Schwallauslauf aus der Wand",
                     "Unterputz-Thermostatarmatur mit Stabhandbrause"
                 ],
-                price: "ca. 4.600,00 €"
             },
             {
                 category: "Dusch-Anlage",
@@ -603,7 +528,6 @@ export const MUSTERBAEDER = [
                     "Bodengleiche Walk-In-Dusche mit Decken-Regenkopfbrause",
                     "Rahmenlose Glasabtrennung 120 × 205 cm"
                 ],
-                price: "ca. 5.100,00 €"
             },
             {
                 category: "Doppelwaschtisch & Möbel",
@@ -612,7 +536,6 @@ export const MUSTERBAEDER = [
                     "2 Unterputz-Waschtischarmaturen im Design-Look",
                     "Großflächiger LED-Lichtspiegel, dimmbar, mit einstellbarer Lichtfarbe (warm/kalt)"
                 ],
-                price: "ca. 4.900,00 €"
             },
             {
                 category: "Dusch-WC & Heizung",
@@ -620,7 +543,6 @@ export const MUSTERBAEDER = [
                     "Dusch-WC mit verdeckten Anschlüssen und Unterputz-Vorwandelement",
                     "Design-Heizpaneel und Fußbodenheizung"
                 ],
-                price: "ca. 4.300,00 €"
             }
         ]
     },
@@ -632,9 +554,6 @@ export const MUSTERBAEDER = [
         tier: "Luxus",
         title: "Luxus-Bad 8,2 ㎡",
         headline: "High-End Wellness mit freistehender Wanne & Decken-Regenhimmel",
-        priceFormatted: "ca. 21.400,00 €",
-        priceNumber: 21400,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/barrierefreies-bad.webp",
         highlights: [
             "Freistehende Mineralguss-Badewanne mit Standarmatur",
@@ -649,7 +568,6 @@ export const MUSTERBAEDER = [
                 items: [
                     "Freistehende Badewanne aus mattem Mineralguss mit Standarmatur in Mattschwarz oder Chrom"
                 ],
-                price: "ca. 5.800,00 €"
             },
             {
                 category: "Dusch-Anlage",
@@ -657,7 +575,6 @@ export const MUSTERBAEDER = [
                     "Bodengleiche Walk-In-Duschzone mit Decken-Regenhimmel 40 × 40 cm",
                     "Rahmenlose Echtglaswand 140 cm mit Abperl-Beschichtung"
                 ],
-                price: "ca. 6.200,00 €"
             },
             {
                 category: "Waschtisch & Möbel",
@@ -665,7 +582,6 @@ export const MUSTERBAEDER = [
                     "Design-Doppelwaschtisch 140 cm in samtmatten Lackfarben mit Push-to-Open-Auszügen",
                     "2 Unterputz-Waschtischmischer und doppelter LED-Lichtspiegel mit Gestensteuerung"
                 ],
-                price: "ca. 5.400,00 €"
             },
             {
                 category: "Dusch-WC & Raumwärme",
@@ -673,7 +589,6 @@ export const MUSTERBAEDER = [
                     "Dusch-WC mit beheizbarem Sitz, Fernbedienung und Nachtlicht",
                     "Design-Wandheizkörper & elektrische Fußbodenheizung"
                 ],
-                price: "ca. 4.000,00 €"
             }
         ]
     },
@@ -685,9 +600,6 @@ export const MUSTERBAEDER = [
         tier: "Luxus",
         title: "Luxus-Bad 15,9 ㎡",
         headline: "Kompromisslose High-End Architektur & Private-Spa Atmosphäre",
-        priceFormatted: "ca. 24.800,00 €",
-        priceNumber: 24800,
-        vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/bad/bad-tageslicht.webp",
         highlights: [
             "Freistehende Mineralguss-Badewanne mit Standarmatur",
@@ -702,7 +614,6 @@ export const MUSTERBAEDER = [
                 items: [
                     "Freistehende Badewanne aus mattem Mineralwerkstoff mit Standarmatur"
                 ],
-                price: "ca. 6.200,00 €"
             },
             {
                 category: "Erlebnis-Dusche",
@@ -710,7 +621,6 @@ export const MUSTERBAEDER = [
                     "Walk-In-Duschanlage mit Decken-Regenbrause und elektronischer Thermostatsteuerung",
                     "Rahmenlose Echtglas-Abtrennung 140 × 210 cm"
                 ],
-                price: "ca. 7.900,00 €"
             },
             {
                 category: "Doppelwaschtisch & Dusch-WC",
@@ -718,7 +628,6 @@ export const MUSTERBAEDER = [
                     "Maßgefertigter Doppelwaschtisch mit samtig-matter Oberfläche",
                     "Dusch-WC mit Fernbedienung und Selbstreinigungsfunktion"
                 ],
-                price: "ca. 8.400,00 €"
             },
             {
                 category: "Heizung & Licht",
@@ -726,7 +635,6 @@ export const MUSTERBAEDER = [
                     "Design-Wandheizkörper & Fußbodentemperierung",
                     "Integrierte LED-Beleuchtung in Schattenfugen"
                 ],
-                price: "ca. 2.300,00 €"
             }
         ]
     }
@@ -742,20 +650,17 @@ export const ROOM_SIZES = [
 export const QUALITY_TIERS = [
     {
         name: "Basic",
-        subtitle: "Solide Qualität zu fairen Einstiegspreisen",
-        priceRange: "4.500 € – 8.000 €",
+        subtitle: "Solide Qualität, funktional und zeitlos",
         description: "Solide Sanitärausstattung mit Stahl-Duschwannen, Wand-WCs mit Vorwandelement und Design-Badheizkörpern. Robust, pflegeleicht und langlebig."
     },
     {
         name: "Premium",
         subtitle: "Gehobener Komfort mit edlen Oberflächen",
-        priceRange: "9.000 € – 18.000 €",
         description: "Bodengleiche Walk-In-Duschen mit Edelstahlrinne, Möbelwaschtische mit LED-Lichtspiegel, Echtglaswände und drehbare Design-Badheizkörper."
     },
     {
         name: "Luxus",
         subtitle: "High-End Spa & Maßanfertigungen ohne Kompromisse",
-        priceRange: "ab 20.000 €",
         description: "Freistehende Wannen, Dusch-WCs mit Komfortfunktionen, Decken-Regenpaneele und smarte LED-Lichtarchitektur."
     }
 ];

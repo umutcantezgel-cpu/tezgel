@@ -733,7 +733,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                     <p>
                                         Für Bad, Dusche und Gäste-WC gibt es eigene Werkzeuge: den{' '}
                                         <Link href="/bad/badplaner" className={linkClass}>Badplaner</Link> und den{' '}
-                                        <Link href="/bad/budgetkalkulator" className={linkClass}>Budgetkalkulator</Link>. Sie können das Bad
+                                        <Link href="/bad/projekt-check" className={linkClass}>Bad-Projektcheck</Link>. Sie können das Bad
                                         hier trotzdem mit angeben, etwa wenn es Teil eines größeren Projekts ist.
                                     </p>
                                 </div>

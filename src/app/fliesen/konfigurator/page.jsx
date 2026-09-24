@@ -27,7 +27,7 @@ const STEP_CARDS = [
     {
         icon: Layers,
         title: 'Schritt 1: Raum und Einsatzbereich',
-        text: 'Wohn- und Essbereich, Küche, Flur, Treppe, Balkon/Terrasse oder ein reines Untergrundprojekt – auch mehrere Bereiche gleichzeitig. Für Bäder verweisen wir auf Badplaner und Budgetkalkulator.'
+        text: 'Wohn- und Essbereich, Küche, Flur, Treppe, Balkon/Terrasse oder ein reines Untergrundprojekt – auch mehrere Bereiche gleichzeitig. Für Bäder verweisen wir auf Badplaner und Bad-Projektcheck.'
     },
     {
         icon: ClipboardList,
@@ -77,7 +77,7 @@ const FAQS = [
     },
     {
         q: 'Ich plane ein Bad – kann ich den Konfigurator trotzdem nutzen?',
-        a: 'Für Bad, Dusche und Gäste-WC sind der Badplaner und der Budgetkalkulator die passenderen Werkzeuge. Ist das Bad Teil eines größeren Projekts, können Sie es im Konfigurator zusätzlich angeben.'
+        a: 'Für Bad, Dusche und Gäste-WC sind der Badplaner und der Bad-Projektcheck die passenderen Werkzeuge. Ist das Bad Teil eines größeren Projekts, können Sie es im Konfigurator zusätzlich angeben.'
     }
 ];
 
@@ -101,7 +101,7 @@ const NEXT_STEPS = [
 
 const RELATED_LINKS = [
     { href: '/bad/badplaner', title: 'Badplaner', desc: 'Bad, Dusche und Gäste-WC planen' },
-    { href: '/bad/budgetkalkulator', title: 'Budgetkalkulator', desc: 'Orientierung für Ihr Badprojekt' },
+    { href: '/bad/projekt-check', title: 'Bad-Projektcheck', desc: 'Ihr Badprojekt strukturiert beschreiben' },
     { href: '/fliesen/verlegemuster', title: 'Verlegemuster & Abschlüsse', desc: 'Fugenbild, Verband, Kanten und Sockel' },
     { href: '/beratung', title: 'Beratung', desc: 'Persönlich klären, was zu Ihrem Projekt passt' }
 ];
@@ -143,8 +143,8 @@ export default function FliesenKonfiguratorPage() {
                             Zum Badplaner
                         </Link>{' '}
                         oder zum{' '}
-                        <Link href="/bad/budgetkalkulator" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 font-bold">
-                            Budgetkalkulator
+                        <Link href="/bad/projekt-check" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 font-bold">
+                            Bad-Projektcheck
                         </Link>
                         .
                     </p>

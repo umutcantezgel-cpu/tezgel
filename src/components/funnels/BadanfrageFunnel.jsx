@@ -30,9 +30,9 @@ const SCOPES = [
 ];
 
 const TIERS = [
-    { id: 'basic', title: 'Basic (ab ca. 6.900 €)', desc: 'Solide Markenqualität zu fairen Einstiegspreisen' },
-    { id: 'premium', title: 'Premium (ab ca. 12.000 €)', desc: 'Gehobener Komfort mit edlen Oberflächen & Echtglas' },
-    { id: 'luxus', title: 'Luxus (ab ca. 20.000 €)', desc: 'Freistehende Wanne, Dusch-WC & maßgefertigtes Design' }
+    { id: 'basic', title: 'Basic', desc: 'Solide Markenqualität, funktional und zeitlos' },
+    { id: 'premium', title: 'Premium', desc: 'Gehobener Komfort mit edlen Oberflächen & Echtglas' },
+    { id: 'luxus', title: 'Luxus', desc: 'Freistehende Wanne, Dusch-WC & maßgefertigtes Design' }
 ];
 
 const PERSON_OPTIONS = [

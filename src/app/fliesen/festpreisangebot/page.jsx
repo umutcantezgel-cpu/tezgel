@@ -63,7 +63,7 @@ const COMPARE = [
 ];
 
 const CROSS_LINKS = [
-    { href: '/bad/budgetkalkulator', label: 'Budgetkalkulator Bad', desc: 'Erste Orientierung für Ihr Badprojekt' },
+    { href: '/bad/projekt-check', label: 'Bad-Projektcheck', desc: 'Ihr Badprojekt strukturiert beschreiben' },
     { href: '/beratung', label: 'Beratung', desc: 'Ihr Projekt persönlich besprechen' },
     { href: '/unternehmen', label: 'Über unseren Betrieb', desc: 'Meisterbetrieb aus Aßlar' },
     { href: '/agb', label: 'AGB', desc: 'Unsere Vertragsbedingungen' }

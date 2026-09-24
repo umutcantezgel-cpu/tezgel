@@ -40,7 +40,7 @@ export default function MusterbaederPage() {
                         Ausstattungslisten und transparente Festpreis-Orientierungen mit hochwertigen Markenprodukten.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/bad/budgetkalkulator" className="btn-primary px-7 py-3.5 text-xs">
+                        <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs">
                             <Calculator className="w-4 h-4" />
                             Individuelles Bad online kalkulieren
                         </Link>
@@ -68,12 +68,6 @@ export default function MusterbaederPage() {
                                             </span>
                                             <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
                                                 {bath.tier}
-                                            </span>
-                                        </div>
-                                        <div className="text-right">
-                                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 block">Festpreis-Orientierung</span>
-                                            <span className="font-display text-2xl font-black text-emerald-800 tabular-nums">
-                                                {bath.priceFormatted}
                                             </span>
                                         </div>
                                     </div>

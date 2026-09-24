@@ -73,16 +73,16 @@ const PORTAL_HUBS: Array<{
     {
         eyebrow: 'Planer-Tools',
         title: 'Rechner & Planung',
-        text: 'Kostenrahmen vorab berechnen, das Bad Schritt für Schritt planen und Fördermöglichkeiten prüfen.',
+        text: 'Badprojekt in 2 Minuten beschreiben, das Bad Schritt für Schritt planen und Fördermöglichkeiten prüfen.',
         icon: Calculator,
         links: [
-            { label: 'Bad-Budgetkalkulator', href: '/bad/budgetkalkulator' },
+            { label: 'Bad-Projektcheck', href: '/bad/projekt-check' },
             { label: 'Badplaner', href: '/bad/badplaner' },
             { label: 'Geführte Badanfrage', href: '/bad/badanfrage' },
             { label: 'Vor-Ort-Beratung', href: '/beratung' },
             { label: 'Förderung & Zuschüsse', href: '/foerderung' }
         ],
-        cta: { label: 'Budget berechnen', href: '/bad/budgetkalkulator' }
+        cta: { label: 'Projektcheck starten', href: '/bad/projekt-check' }
     },
     {
         eyebrow: 'Standorte Hessen',

@@ -55,8 +55,8 @@ export default function BadAusEinerHandPage() {
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/bad/budgetkalkulator" className="btn-primary px-7 py-3.5 text-xs group">
-                            Bad-Kosten berechnen
+                        <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs group">
+                            Bad-Projektcheck starten
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <Link href="/kontakt" className="btn-ghost px-7 py-3.5 text-xs">

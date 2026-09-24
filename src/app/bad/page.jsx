@@ -15,7 +15,7 @@ import {
 import { COMPANY_DATA } from '@/config/company';
 import { QUALITY_TIERS } from '@/config/musterbaeder';
 import { RATING_SUMMARY } from '@/config/reviews';
-import BudgetKalkulator from '@/components/funnels/BudgetKalkulator';
+import BadProjektCheck from '@/components/funnels/BadProjektCheck';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
@@ -65,8 +65,8 @@ export default function BadPage() {
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/bad/budgetkalkulator" className="btn-primary px-7 py-3.5 text-xs group">
-                            Bad-Budget sofort berechnen
+                        <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs group">
+                            Bad-Projektcheck starten
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <Link href="/bad/musterbaeder" className="btn-ghost px-7 py-3.5 text-xs">
@@ -130,7 +130,7 @@ export default function BadPage() {
                             Unsere Qualitäts-Kategorien im Überblick
                         </h2>
                         <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            Wählen Sie das passende Konzept für Ihre Ansprüche und Ihr Budget. Die Preisspannen sind Richtwerte –
+                            Wählen Sie das passende Konzept für Ihre Ansprüche –
                             den verbindlichen Festpreis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.
                         </p>
                     </div>
@@ -148,7 +148,6 @@ export default function BadPage() {
                                     <h3 className="text-xl font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
                                         {tier.subtitle}
                                     </h3>
-                                    <p className="font-display text-2xl font-black text-emerald-800 tabular-nums">{tier.priceRange}</p>
                                     <p className="text-sm text-slate-700 leading-relaxed">{tier.description}</p>
                                 </div>
                                 <div className="pt-6 mt-6 border-t border-slate-200">
@@ -177,8 +176,8 @@ export default function BadPage() {
             </section>
 
             {/* Interactive Calculator Component */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 relative z-10 scroll-mt-28" id="budget" aria-label="Bad-Budgetkalkulator">
-                <BudgetKalkulator />
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10 relative z-10 scroll-mt-28" id="projekt-check" aria-label="Bad-Projektcheck">
+                <BadProjektCheck />
             </section>
 
             {/* Badanfrage Funnel */}
