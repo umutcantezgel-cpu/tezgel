@@ -1,98 +1,300 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
-    Award, 
-    CheckCircle2, 
-    ShieldCheck, 
-    Zap, 
-    Phone, 
-    Calendar, 
+import {
+    HardHat,
     ArrowRight,
-    Star,
-    Check
+    Phone,
+    Ruler,
+    Split,
+    Gauge,
+    Palette,
+    CalendarCheck,
+    ClipboardCheck,
+    CheckCircle2
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
-import HeizungKonfigurator from '@/components/funnels/HeizungKonfigurator';
+import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 
-export const metadata = {
-    title: 'NIBE Effizienz Partner Wetzlar | Schwedische Premium-Wärmepumpen | Bad & Energie GmbH',
-    description: 'Offizieller NIBE Effizienz Partner in Wetzlar & Lahn-Dill. Höchste Jahresarbeitszahlen, Propan R290, 5 Jahre NIBE Systemgarantie & bis 70% BEG-Förderung.',
-    alternates: { canonical: 'https://bad-energie.de/heizung/nibe-partner' }
-};
+export const metadata = createMetadata({
+    title: 'Fliesenleger für den Neubau: Ablauf & Terminplanung',
+    description:
+        'Fliesen im Neubau: wann der Fliesenleger im Bauablauf dran ist und wie Belegreife, Bemusterung und Schnittstellen zu Estrich und Installation geklärt werden.',
+    path: '/fliesen/neubau'
+});
 
-export default function NibePartnerPage() {
+const SEQUENCE = [
+    { phase: 'Rohbau & Fenster', desc: 'Gebäudehülle geschlossen, Fenster eingebaut – Voraussetzung für einen geschützten Innenausbau.' },
+    { phase: 'Rohinstallation', desc: 'Leitungen, Vorwandelemente und Bodenabläufe liegen in der richtigen Lage und Höhe.' },
+    { phase: 'Innenputz & Estrich', desc: 'Wände verputzt bzw. beplankt, Estrich eingebaut und in der Trocknungsphase.' },
+    { phase: 'Fliesenarbeiten', desc: 'Nach Freigabe der Belegreife: Abdichtung in Nassräumen, Wand- und Bodenfliesen, Sockel, Fugen.' },
+    { phase: 'Fertigmontage', desc: 'Danach folgen Sanitärobjekte, Armaturen und die übrigen Ausbaugewerke.' }
+];
+
+const BUILDING_BLOCKS = [
+    {
+        icon: Ruler,
+        title: 'Aufmaß & Planprüfung',
+        desc: 'Wir prüfen Pläne und Rohbaumaße, messen vor Ort auf und klären Fliesenflächen, Formate und Aufbauhöhen frühzeitig.'
+    },
+    {
+        icon: Split,
+        title: 'Schnittstellen klären',
+        desc: 'Höhen von Estrich und Bodenabläufen, Einbautiefen von Unterputzkörpern, Randdämmstreifen und Estrichfugen – was andere Gewerke vorbereiten, stimmen wir vorab ab.'
+    },
+    {
+        icon: Gauge,
+        title: 'Belegreife prüfen',
+        desc: 'Vor dem ersten Kleberauftrag messen wir die Restfeuchte des Estrichs mit dem CM-Verfahren. Erst wenn der Estrich belegreif ist, wird gefliest.'
+    },
+    {
+        icon: Palette,
+        title: 'Bemusterung & Bestellung',
+        desc: 'Formate, Farben, Fugenfarbe und Details werden rechtzeitig festgelegt, damit das Material zum Termin auf der Baustelle ist.'
+    },
+    {
+        icon: CalendarCheck,
+        title: 'Bauzeitenplan & Festpreis',
+        desc: 'Verbindlicher Festpreis nach Aufmaß und feste Zusagen für Start und Fertigstellung unserer Arbeiten – abgestimmt auf Ihren Bauablauf.'
+    },
+    {
+        icon: ClipboardCheck,
+        title: 'Abnahme & Übergabe',
+        desc: 'Gemeinsame Abnahme mit Deniz Tezgel, Übergabe von Pflegehinweisen, Materialangaben und Restfliesen.'
+    }
+];
+
+const PRECONDITIONS = [
+    'Estrich eingebaut, Randdämmstreifen noch vorhanden, Estrichfugen dokumentiert',
+    'Wände verputzt oder beplankt, lot- und fluchtgerecht',
+    'Rohinstallation abgeschlossen und geprüft, Vorwandelemente montiert',
+    'Bodenabläufe und Duschrinnen in der geplanten Höhe gesetzt',
+    'Fenster eingebaut, Innenräume vor Witterung geschützt',
+    'Höhenbezugspunkt (Meterriss) im Gebäude angezeichnet'
+];
+
+const CROSS_LINKS = [
+    { href: '/leistungen/wohnen', label: 'Fliesen im Wohnbereich', desc: 'Wohnen, Küche und Flur' },
+    { href: '/leistungen/untergrund', label: 'Untergrundvorbereitung', desc: 'Estrich, Ausgleich und Abdichtung' },
+    { href: '/untergrund-abdichtung/estrich-belegreife', label: 'Estrich & Belegreife', desc: 'Restfeuchte prüfen vor dem Fliesen' },
+    { href: '/beratung', label: 'Beratung', desc: 'Neubauprojekt frühzeitig besprechen' }
+];
+
+export default function NeubauPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-red -top-20 -right-20" />
-            <div className="ambient-glow-blue top-96 -left-20" />
+            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
 
             {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="glass-surface-dark rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="text-xs uppercase font-black tracking-wider text-red-300 bg-red-600/30 px-4 py-1.5 rounded-full border border-red-500/40 inline-block backdrop-blur-md">
-                        Autorisierter Fachpartner
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="neubau-heading">
+                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow">
+                        <HardHat className="w-3.5 h-3.5" />
+                        Neubau &middot; Bauherren
                     </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-                        Wir sind zertifizierter NIBE Effizienz Partner
+                    <h1 id="neubau-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                        Fliesenarbeiten im Neubau:{' '}
+                        <span className="text-ceramic-gradient">sauber eingeplant im Bauablauf</span>
                     </h1>
-                    <p className="text-sm sm:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed font-normal">
-                        Schwedische Spitzentechnologie für Ihr Zuhause. Als offizieller NIBE Partner garantieren wir herstellergeschulte Meistermontage, exakte Systemeinregulierung und 5 Jahre NIBE Systemgarantie.
+                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                        Im Neubau hängen die Fliesenarbeiten an den Vorleistungen anderer Gewerke. Wer früh klärt, wann der
+                        Estrich belegreif ist, wie hoch die Abläufe sitzen und welche Fliesen bestellt werden, vermeidet
+                        Wartezeiten und Nacharbeiten. Wir planen unseren Teil verbindlich und stimmen die Termine mit Ihrer
+                        Bauleitung ab.
                     </p>
-
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link
-                            href="/heizung/heizungskonfigurator"
-                            className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#E4040E] to-[#B91C1C] hover:shadow-[0_12px_28px_rgba(228,4,14,0.4)] text-white font-black text-xs shadow-md transition-all transform hover:-translate-y-0.5 border border-white/20"
-                        >
-                            NIBE Wärmepumpe berechnen &rarr;
+                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
+                            Neubauprojekt anfragen
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
-                        <a
-                            href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className="px-7 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-xs border border-white/30 transition-all flex items-center gap-2 backdrop-blur-md"
-                        >
-                            <Phone className="w-4 h-4" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
+                        <Link href="/termin" className="btn-ghost px-7 py-3.5 text-xs">
+                            Beratungstermin vereinbaren
+                        </Link>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            {/* NIBE Advantages Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl sm:text-4xl font-black text-slate-900">
-                        Warum NIBE Wärmepumpen die erste Wahl sind
+            {/* Bauablauf */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="bauablauf-heading">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <span className="eyebrow eyebrow-sky mb-4">Bauablauf</span>
+                    <h2 id="bauablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Wann der Fliesenleger im Bauablauf an der Reihe ist
                     </h2>
-                    <p className="mt-2 text-sm text-slate-600">
-                        Über 70 Jahre Erfahrung in skandinavischer Klimatechnik garantieren maximale Zuverlässigkeit selbst bei arktischen Außentemperaturen bis -25 °C.
+                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                        Die genaue Reihenfolge legt Ihre Bauleitung fest. Typisch für ein Wohnhaus ist dieser Ablauf:
                     </p>
                 </div>
+                <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    {SEQUENCE.map((item, idx) => {
+                        const isTile = item.phase === 'Fliesenarbeiten';
+                        return (
+                            <li
+                                key={item.phase}
+                                className={`p-6 rounded-3xl border ${isTile ? 'bg-emerald-50 border-emerald-600 ring-2 ring-emerald-600/20' : 'bg-slate-50 border-slate-200'}`}
+                            >
+                                <span className="font-display block text-3xl font-black tabular-nums text-emerald-600/40 mb-3" aria-hidden="true">
+                                    {String(idx + 1).padStart(2, '0')}
+                                </span>
+                                <h3 className={`font-black text-base mb-2 ${isTile ? 'text-emerald-800' : 'text-slate-900'}`}>{item.phase}</h3>
+                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
+                            </li>
+                        );
+                    })}
+                </ol>
+            </section>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {[
-                        { title: 'Natürliches Kältemittel Propan (R290)', desc: 'Zukunftssicher und klimafreundlich mit extrem niedrigem GWP (Global Warming Potential von 3). Sichert zusätzlich 5% BEG-Effizienzbonus.' },
-                        { title: 'Inverter-Leistungsregelung', desc: 'Die Wärmepumpe passt ihre Leistung stufenlos an den tatsächlichen Wärmebedarf des Hauses an. Das spart Strom und schont den Kompressor.' },
-                        { title: 'Vorlauftemperaturen bis zu 75 °C', desc: 'Perfekt geeignet für den unkomplizierten Heizungstausch im Altbau mit bestehenden Heizkörpern ohne aufwändige Dämmmaßnahmen.' },
-                        { title: 'Flüsterleiser Betrieb (Silent Mode)', desc: 'Spezielle Ventilatorgeometrie und Schalldämmung sorgen für minimale Geräuschentwicklung. Ideal auch bei dichter Reihenhausbebauung.' },
-                        { title: 'Smart-Home & NIBE myUplink', desc: 'Steuern und überwachen Sie Ihre Heizung bequem per Smartphone App. Automatische wettergeführte Vorhersagefunktion.' },
-                        { title: '5 Jahre NIBE Systemgarantie', desc: 'Bei Installation durch den zertifizierten NIBE Effizienz Partner Bad & Energie GmbH genießen Sie vollen Herstellerschutz.' }
-                    ].map((adv, idx) => (
-                        <div key={idx} className="glass-surface p-6 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(228,4,14,0.1)] hover:-translate-y-1 transition-all duration-500">
-                            <CheckCircle2 className="w-6 h-6 text-emerald-600 mb-3" />
-                            <h3 className="font-black text-base text-slate-900 mb-2">{adv.title}</h3>
-                            <p className="text-xs text-slate-600 leading-relaxed font-medium">{adv.desc}</p>
-                        </div>
-                    ))}
+            {/* Vorleistungen */}
+            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="vorleistungen-heading">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <span className="eyebrow mb-4">Schnittstellen</span>
+                        <h2 id="vorleistungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                            Vorleistungen anderer Gewerke: Estrich, Putz, Installation, Fenster
+                        </h2>
+                        <p className="mt-4 text-base text-slate-700 leading-relaxed">
+                            Estrich, Putz, Installation und Fenster liefern andere Gewerke. Wir übernehmen die Fliesenarbeiten
+                            und koordinieren unsere Termine mit Bauleitung und beteiligten Firmen. Vor Arbeitsbeginn prüfen wir,
+                            ob der Untergrund für die Verlegung geeignet ist, und melden Bedenken rechtzeitig.
+                        </p>
+                        <p className="mt-4 text-base text-slate-700 leading-relaxed">
+                            Wichtig: Der Randdämmstreifen des Estrichs bleibt bis nach dem Verfugen stehen und wird erst dann
+                            bündig abgeschnitten – so bleibt die Randfuge zwischen Belag und Wand erhalten.
+                        </p>
+                    </div>
+                    <div className="glass-surface rounded-[2rem] p-7">
+                        <h3 className="font-black text-slate-900 mb-4">Was vor Beginn der Fliesenarbeiten erledigt sein sollte</h3>
+                        <ul className="space-y-3">
+                            {PRECONDITIONS.map((item) => (
+                                <li key={item} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
+                                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            {/* 6 Bausteine */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="bausteine-heading">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <span className="eyebrow eyebrow-sky mb-4">Unsere Leistung</span>
+                    <h2 id="bausteine-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        Sechs Bausteine für Fliesen im Neubau
+                    </h2>
+                </div>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {BUILDING_BLOCKS.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <li
+                                key={item.title}
+                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            >
+                                <span className="icon-chip w-12 h-12 mb-5">
+                                    <Icon className="w-6 h-6" />
+                                </span>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </section>
+
+            {/* Belegreife, Bemusterung, Festpreis, Abnahme */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="belegreife-heading">
+                        <h2 id="belegreife-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Belegreife-Freigabe vor dem Verlegen im Kurzüberblick</h2>
+                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            Frischer Estrich gibt über Wochen Feuchtigkeit ab. Wird zu früh gefliest, drohen Risse, Hohlstellen
+                            und Verfärbungen. Deshalb messen wir vor Beginn die Restfeuchte mit dem CM-Verfahren. Die
+                            maßgeblichen Richtwerte hängen von Estrichart und Aufbau ab und richten sich nach den einschlägigen
+                            Merkblättern und Herstellerangaben. Bei temperierten Estrichen gehört das entsprechende Protokoll
+                            dazu.
+                        </p>
+                        <Link href="/untergrund-abdichtung/estrich-belegreife" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                            Estrich &amp; Belegreife im Detail
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </article>
+                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="bemusterung-heading">
+                        <h2 id="bemusterung-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Bemusterung und Materialbestellung rechtzeitig planen</h2>
+                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            Lieferzeiten für Fliesen – besonders für Großformate und besondere Oberflächen – sind sehr
+                            unterschiedlich. Legen Sie Formate, Farben und Fugenfarbe deshalb fest, bevor der Estrich eingebaut
+                            wird. Die gesamte Menge sollte aus einer Charge stammen, inklusive Reserve für Verschnitt und spätere
+                            Reparaturen.
+                        </p>
+                        <Link href="/fliesen/fliesenarten" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                            Fliesenarten im Vergleich
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </article>
+                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="festpreis-heading">
+                        <h2 id="festpreis-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Festpreis und verbindlicher Bauzeitenplan</h2>
+                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            Nach dem Aufmaß erhalten Sie ein Festpreisangebot für den beschriebenen Leistungsumfang. Start und
+                            Fertigstellung unserer Arbeiten sagen wir verbindlich zu und stimmen sie mit Ihrem Bauzeitenplan ab.
+                            Verschieben sich Vorleistungen, passen wir den Termin gemeinsam mit Ihnen an.
+                        </p>
+                        <Link href="/fliesen/festpreisangebot" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                            So entsteht das Festpreisangebot
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </article>
+                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="uebergabe-heading">
+                        <h2 id="uebergabe-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Abnahme und Übergabe</h2>
+                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            Zum Abschluss gehen Sie mit {COMPANY_DATA.owner.fullName} gemeinsam über alle Flächen. Sie erhalten
+                            Pflegehinweise, Angaben zu den verwendeten Materialien und Restfliesen für spätere Reparaturen.
+                            Worauf Sie bei der Abnahme achten können, haben wir in einer Checkliste zusammengefasst.
+                        </p>
+                        <Link href="/fliesen/abnahme" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                            Checkliste zur Abnahme
+                            <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    </article>
+                </div>
+            </section>
+
+            {/* Weiterlesen */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 relative z-10" aria-labelledby="weiterlesen-heading">
+                <h2 id="weiterlesen-heading" className="text-xl font-black text-slate-900 mb-5">Weiterlesen</h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {CROSS_LINKS.map((link) => (
+                        <li key={link.href}>
+                            <Link
+                                href={link.href}
+                                className="group block h-full glass-surface rounded-2xl p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                            >
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                    {link.label}
+                                    <ArrowRight className="w-4 h-4 shrink-0 text-emerald-600" />
+                                </span>
+                                <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <p className="mt-6 text-sm text-slate-700">
+                    Direkt sprechen:{' '}
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700">
+                        <Phone className="w-3.5 h-3.5" />
+                        {COMPANY_DATA.contact.phone}
+                    </a>
+                </p>
+            </section>
 
             <QualityPromise />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-                <HeizungKonfigurator />
-            </div>
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10" aria-label="Fliesen-Konfigurator">
+                <FliesenKonfigurator />
+            </section>
         </div>
     );
 }
