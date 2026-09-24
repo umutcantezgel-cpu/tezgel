@@ -1,169 +1,115 @@
-// portfolio.config.js
-
-/**
- * Project IDs that document real Fliesenverlegung Tezgel work. The entries in
- * PORTFOLIO_PROJECTS below were inherited from a previous site owner (heating,
- * air conditioning, solar): their detail URLs keep working, but they are
- * noindexed, excluded from the sitemap and not listed as Tezgel references.
- * Add a project's id here once it is replaced with a genuine Tezgel project.
- */
-export const TEZGEL_PROJECT_IDS = [];
-
-export const isLegacyProject = (project) => !TEZGEL_PROJECT_IDS.includes(project?.id);
+// REFERENZPROJEKTE – FLIESENVERLEGUNG TEZGEL
+//
+// Reservierte Referenzplätze: Jeder Eintrag beschreibt einen typischen
+// Projekttyp und seinen Leistungsumfang. Konkrete Projektdaten (Ort, Jahr,
+// Dauer, Fotos, Kundenstimme) werden erst ergänzt, wenn Fliesenverlegung
+// Tezgel sie mit Einverständnis der Kunden bereitstellt – dann
+// `placeholder: false` setzen und die Felder `location`, `year`, `duration`,
+// `images` (und optional `testimonial`) befüllen.
 
 export const PORTFOLIO_PROJECTS = [
     {
-        id: "project-001",
-        title: "Luxus-Badezimmer Renovierung",
-        category: "sanitaer",
-        location: "Wetzlar",
-        year: 2024,
-        duration: "3 Wochen",
-
-        description: "Komplette Renovierung eines 12m² Badezimmers mit modernem Design und hochwertigen Materialien.",
-
-        challenge: "Altbau mit veralteter Sanitärtechnik sollte in modernen Stil umgewandelt werden.",
-
-        solution: "Komplette Rohrleitungssanierung, neue Fliesen, moderne Armaturen, behindertengerechte Ausführung.",
-
-        images: [
-            { type: "before", url: "/images/uploads/Gemini_Generated_Image_8gmzbd8gmzbd8gmz.webp", alt: "Vorher-Zustand" },
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_a6q5fsa6q5fsa6q5.webp", alt: "Nachher 1" },
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_aerazzaerazzaera.webp", alt: "Nachher 2" }
-        ],
-
-        testimonial: {
-            text: "Sehr professionelle Arbeit, alles wie versprochen! Pünktlich fertig geworden.",
-            author: "Max Müller",
-            rating: 5
-        },
-
-        tags: ["Badezimmer", "Renovierung", "Modern", "Behinderteng."]
+        id: "badsanierung-grossformat",
+        placeholder: true,
+        title: "Komplette Badsanierung mit Großformatfliesen",
+        category: "bad",
+        serviceLink: "/bad/badsanierung",
+        description: "Ein solches Projekt umfasst den staubarmen Rückbau des alten Bades, die Vorbereitung von Wand- und Bodenflächen, die Verbundabdichtung nach DIN 18534 und die fugenarme Verlegung großformatiger Fliesen. Weitere Gewerke werden im Rahmen „Bad aus einer Hand“ koordiniert.",
+        scopeItems: [
+            "Staubarmer Rückbau der Altbeläge",
+            "Untergrund ausgleichen und grundieren",
+            "Verbundabdichtung nach DIN 18534",
+            "Großformatverlegung mit vollflächiger Bettung",
+            "Silikon- und Anschlussfugen",
+            "Koordination der beteiligten Gewerke"
+        ]
     },
     {
-        id: "project-002",
-        title: "Modernisierung Heizungsanlage EFH",
-        category: "heizung",
-        location: "Gießen",
-        year: 2024,
-        duration: "2 Wochen",
-
-        description: "Austausch einer alten Ölheizung gegen eine moderne Wärmepumpe mit Fußbodenheizung.",
-
-        challenge: "Dämmung des Gebäudes musste berücksichtigt werden.",
-
-        solution: "Installation einer Panasonic Aquarea Wärmepumpe und Fräsen der Fußbodenheizung in den Bestandestrich.",
-
-        images: [
-            { type: "before", url: "/images/uploads/Gemini_Generated_Image_bcyl4bcyl4bcyl4b.webp", alt: "Vorher-Zustand" },
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_e9ovtxe9ovtxe9ov.webp", alt: "Nachher 1" },
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_isa3wgisa3wgisa3.webp", alt: "Nachher 2" }
-        ],
-
-        testimonial: {
-            text: "Endlich warme Füße und niedrige Heizkosten. Danke an das Team!",
-            author: "Familie Schmidt",
-            rating: 5
-        },
-
-        tags: ["Heizung", "Wärmepumpe", "Modernisierung"]
+        id: "einfamilienhaus-komplett",
+        placeholder: true,
+        title: "Fliesenarbeiten im kompletten Einfamilienhaus",
+        category: "wohnen",
+        serviceLink: "/fliesen",
+        description: "Ein solches Projekt umfasst alle Fliesenflächen eines Hauses in Neubau oder Kernsanierung: Wohnbereich, Küche, Flur, Bäder und Treppe – mit durchgehenden Fugenachsen und einem Bauzeitenplan, der mit den übrigen Gewerken abgestimmt ist.",
+        scopeItems: [
+            "Belegreife-Prüfung des Estrichs (CM-Messung)",
+            "Wohnbereich, Küche und Flur mit durchgehenden Fugenachsen",
+            "Bäder und Gäste-WC inkl. Verbundabdichtung nach DIN 18534",
+            "Treppenbelag mit sauberer Kantenausbildung",
+            "Abgestimmter Bauzeitenplan mit den übrigen Gewerken"
+        ]
     },
     {
-        id: "project-003",
-        title: "Klimatisierung Bürokomplex",
-        category: "klima",
-        location: "Wetzlar",
-        year: 2023,
-        duration: "4 Wochen",
-
-        description: "Installation einer VRF-Klimaanlage für 10 Büroräume.",
-
-        challenge: "Laufender Betrieb durfte nicht gestört werden.",
-
-        solution: "Arbeiten am Wochenende und in den Abendstunden. Deckenkassetten für unauffällige Optik.",
-
-        images: [
-            { type: "before", url: "/images/uploads/Gemini_Generated_Image_iyxljmiyxljmiyxl.webp", alt: "Vorher-Zustand" },
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_puiwe4puiwe4puiw.webp", alt: "Nachher 1" },
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_rka2d0rka2d0rka2.webp", alt: "Nachher 2" }
-        ],
-
-        tags: ["Klima", "Büro", "VRF"]
+        id: "treppenanlage-wohnhaus",
+        placeholder: true,
+        title: "Treppenanlage mit Fliesen- oder Natursteinbelag",
+        category: "treppen",
+        serviceLink: "/treppen/innentreppe",
+        description: "Ein solches Projekt umfasst das Aufmaß jeder Stufe, den passgenauen Zuschnitt von Tritt- und Setzstufen aus Feinsteinzeug oder Naturstein, eine saubere Kantenausbildung mit Gehrung oder Stufenprofil sowie gestufte Treppensockel.",
+        scopeItems: [
+            "Aufmaß jeder einzelnen Stufe",
+            "Zuschnitt von Tritt- und Setzstufen",
+            "Kantenausbildung mit Gehrung oder Edelstahl-Stufenprofil",
+            "Gestufte Treppensockel",
+            "Rutschhemmende Oberflächen"
+        ]
     },
     {
-        id: "project-004",
-        title: "Fußbodenheizung Nachrüstung",
-        category: "heizung",
-        location: "Solms",
-        year: 2023,
-        duration: "1 Woche",
-
-        description: "Nachträglicher Einbau einer Fußbodenheizung im Trockenbausystem.",
-
-        challenge: "Geringe Aufbauhöhe von nur 5cm verfügbar.",
-
-        solution: "Verwendung eines speziellen Dünnschichtsystems für optimale Wärmeverteilung bei minimaler Höhe.",
-
-        images: [
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_tfft4dtfft4dtfft.webp", alt: "Heizung" }
-        ],
-
-        testimonial: {
-            text: "Endlich warme Füße auch im Altbau. Super Arbeit!",
-            author: "Familie Weber",
-            rating: 5
-        },
-
-        tags: ["Heizung", "Sanierung", "Komfort"]
+        id: "wohnbereich-fussbodenheizung",
+        placeholder: true,
+        title: "Fliesenboden auf Fußbodenheizung im Wohnbereich",
+        category: "wohnen",
+        serviceLink: "/fliesen/auf-fussbodenheizung",
+        description: "Ein solches Projekt umfasst die Prüfung von Aufheizprotokoll und Restfeuchte des Heizestrichs, die Planung durchgehender Fugenachsen über mehrere Räume und die Verlegung von Feinsteinzeug mit verformbarem Kleber sowie fachgerechten Rand- und Bewegungsfugen.",
+        scopeItems: [
+            "Prüfung von Aufheizprotokoll und Restfeuchte (CM-Messung)",
+            "Fugenachsen- und Übergangsplanung",
+            "Verlegung mit verformbarem Kleber (S1)",
+            "Rand- und Bewegungsfugen",
+            "Sockel und Türübergänge"
+        ]
     },
     {
-        id: "project-005",
-        title: "Barrierefreies Duschbad",
-        category: "sanitaer",
-        location: "Gießen",
-        year: 2024,
-        duration: "10 Tage",
-
-        description: "Umbau eines Standardbades zu einem barrierefreien Wellness-Bad.",
-
-        challenge: "Badewanne musste weichen, Bodeneinlauf war schwierig zu integrieren.",
-
-        solution: "Installation einer bodengleichen Dusche mit wegklappbaren Glaswänden für maximalen Platz.",
-
-        images: [
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_tx5naxtx5naxtx5n.webp", alt: "Bad" }
-        ],
-
-        tags: ["Sanitär", "Barrierefrei", "Bad"]
+        id: "barrierefreies-duschbad",
+        placeholder: true,
+        title: "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+        category: "bad",
+        serviceLink: "/bad/barrierefreies-bad",
+        description: "Ein solches Projekt umfasst den Umbau von der Wanne zur bodengleichen Dusche, die Gefälleausbildung zum Ablauf oder zur Rinne, die Verbundabdichtung nach DIN 18534 und die Verlegung rutschhemmender Fliesen im Duschbereich.",
+        scopeItems: [
+            "Rückbau der Badewanne",
+            "Gefälle zu Bodenablauf oder Duschrinne",
+            "Verbundabdichtung nach DIN 18534",
+            "Rutschhemmende Bodenfliesen im Duschbereich",
+            "Anschluss- und Wartungsfugen",
+            "Koordination der Sanitärarbeiten im Rahmen „Bad aus einer Hand“"
+        ]
     },
     {
-        id: "project-006",
-        title: "Solarthermie für Warmwasser",
-        category: "klima", // Using 'klima' or fitting category if solar exists, but sticking to existing categories 'sanitaer', 'heizung', 'klima' from config
-        location: "Aßlar",
-        year: 2023,
-        duration: "3 Tage",
-
-        description: "Installation einer Solaranlage zur Unterstützung der Warmwasserbereitung.",
-
-        challenge: "Dachausrichtung nach Süd-West.",
-
-        solution: "Optimale Ausrichtung der Kollektoren für maximalen Ertrag auch am Nachmittag.",
-
-        images: [
-            { type: "after", url: "/images/uploads/Gemini_Generated_Image_vg99vgvg99vgvg99.webp", alt: "Solar" }
-        ],
-
-        tags: ["Solar", "Energie", "Nachhaltigkeit"]
+        id: "balkon-stelzlager",
+        placeholder: true,
+        title: "Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+        category: "aussen",
+        serviceLink: "/balkon-terrasse/stelzlager",
+        description: "Ein solches Projekt umfasst den Rückbau des schadhaften Altbelags, die Prüfung von Abdichtung und Gefälle sowie die Verlegung von 2-cm-Feinsteinzeugplatten auf höhenverstellbaren Stelzlagern mit sauberen Randabschlüssen.",
+        scopeItems: [
+            "Rückbau des Altbelags",
+            "Prüfung von Abdichtung und Gefälle",
+            "Höhenverstellbare Stelzlager setzen",
+            "Verlegung von 2-cm-Feinsteinzeugplatten mit offener Fuge",
+            "Randabschlüsse mit Tropfprofilen"
+        ]
     }
-    // Weitere Projekte hinzufügen...
 ];
+
+export const isPlaceholderProject = (project) => project?.placeholder !== false;
 
 export const categories = [
     { id: 'all', name: 'Alle' },
-    { id: 'sanitaer', name: 'Sanitär' },
-    { id: 'heizung', name: 'Heizung' },
-    { id: 'klima', name: 'Klima' }
+    { id: 'bad', name: 'Bad & Dusche' },
+    { id: 'wohnen', name: 'Wohnen & Neubau' },
+    { id: 'treppen', name: 'Treppen' },
+    { id: 'aussen', name: 'Balkon & Terrasse' }
 ];
 
 export const projects = PORTFOLIO_PROJECTS;

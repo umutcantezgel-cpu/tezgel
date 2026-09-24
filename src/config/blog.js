@@ -1,19 +1,21 @@
-import React from 'react';
-// import React from 'react';
 import {
     LayoutGrid,
     Droplets,
-    Flame,
+    Grid3x3,
     Sun,
-    Wrench,
+    ShieldCheck,
+    Sparkles,
+    BookOpen,
     Newspaper
 } from 'lucide-react';
 
 export const categories = [
     { id: 'all', name: 'Alle Artikel', icon: LayoutGrid },
-    { id: 'sanitaer', name: 'Sanitär & Bad', icon: Droplets },
-    { id: 'heizung', name: 'Heizung & Wärme', icon: Flame },
-    { id: 'solar', name: 'Solar & Energie', icon: Sun },
-    { id: 'wartung', name: 'Wartung & Tipps', icon: Wrench },
+    { id: 'bad', name: 'Bad & Dusche', icon: Droplets },
+    { id: 'fliesen', name: 'Fliesen & Material', icon: Grid3x3 },
+    { id: 'untergrund', name: 'Untergrund & Abdichtung', icon: ShieldCheck },
+    { id: 'aussen', name: 'Balkon & Terrasse', icon: Sun },
+    { id: 'pflege', name: 'Pflege & Werterhalt', icon: Sparkles },
+    { id: 'ratgeber', name: 'Ratgeber & Kosten', icon: BookOpen },
     { id: 'news', name: 'Neuigkeiten', icon: Newspaper }
 ];

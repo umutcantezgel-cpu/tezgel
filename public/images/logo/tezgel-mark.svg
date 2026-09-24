@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Fliesenverlegung Tezgel</title>
+  <defs>
+    <linearGradient id="tz-glaze" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10B981"/>
+      <stop offset="0.55" stop-color="#059669"/>
+      <stop offset="1" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#tz-glaze)"/>
+  <rect x="5" y="5" width="54" height="54" rx="13" fill="#FFFFFF"/>
+  <!-- Four ceramic tiles with an even joint grid; the lower right tile carries the glaze -->
+  <rect x="12" y="12" width="18.5" height="18.5" rx="3.5" fill="#047857"/>
+  <rect x="33.5" y="12" width="18.5" height="18.5" rx="3.5" fill="#10B981"/>
+  <rect x="12" y="33.5" width="18.5" height="18.5" rx="3.5" fill="#34D399"/>
+  <rect x="33.5" y="33.5" width="18.5" height="18.5" rx="3.5" fill="url(#tz-glaze)"/>
+</svg>

@@ -23,6 +23,7 @@ import { COMPANY_DATA, processSteps } from '@/config/company';
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import { RATING_SUMMARY, getFeaturedReviews } from '@/config/reviews';
+import { TOPIC_HUBS } from '@/config/topics';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 
 export const metadata: Metadata = {
@@ -350,6 +351,32 @@ export default function HomePage() {
                                 </div>
                             </article>
                         ))}
+                    </div>
+
+                    <div className="mt-10">
+                        <p className="text-center text-[11px] font-black uppercase tracking-widest text-slate-600 mb-4">
+                            Fachthemen im Detail
+                        </p>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {TOPIC_HUBS.map((hub) => (
+                                <li key={hub.id}>
+                                    <Link
+                                        href={hub.path}
+                                        className="group flex items-center justify-between gap-3 px-5 py-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500/80 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(15,23,42,0.18)] transition-all duration-300"
+                                    >
+                                        <span>
+                                            <span className="block text-sm font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                                {hub.name}
+                                            </span>
+                                            <span className="block text-xs text-slate-600">
+                                                {hub.pages.length} Seiten &middot; {hub.description}
+                                            </span>
+                                        </span>
+                                        <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>

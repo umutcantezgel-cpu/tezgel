@@ -1,93 +1,58 @@
-# Batherm Haustechnik
+# Fliesenverlegung Tezgel
 
-> Batherm Haustechnik ist ein Meisterbetrieb für Sanitär-, Heizungs- und Klimatechnik mit Sitz in Wetzlar, Hessen, Deutschland. Inhabergeführt von Baris Aydin (Meister im SHK-Handwerk). Wir bieten professionelle Haustechnik-Lösungen für Privat- und Gewerbekunden in Wetzlar und einem Umkreis von 50 km (Mittelhessen).
+> Fliesenverlegung Tezgel ist ein inhabergeführter Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung mit Sitz in Aßlar (Lahn-Dill-Kreis, Hessen). Inhaber und Fliesenlegermeister ist Deniz Tezgel. Schwerpunkte sind Badsanierung, fugenarme Großformate, Wohnbereiche, Treppen, Balkone und Terrassen sowie Untergrundvorbereitung und Verbundabdichtung nach DIN 18534.
 
 ## Firmendaten
 
-- **Firmenname**: Baris Aydin Batherm Haustechnik
-- **Rechtsform**: Einzelunternehmen
-- **Inhaber & Geschäftsführer**: Baris Aydin (Meister im SHK-Handwerk)
-- **Qualifikation**: Meisterbrief Sanitär-, Heizungs- und Klimatechnik (HWK)
-- **Adresse**: Linsenbergstrasse 9, 35586 Wetzlar, Hessen, Deutschland
-- **Koordinaten**: 50.5567°N, 8.5022°E
-- **Telefon**: +49 172 9475061
-- **E-Mail**: info@batherm.de
-- **Website**: https://www.batherm.de
-- **Instagram**: https://www.instagram.com/batherm_haustechnik
-- **Sprachen**: Deutsch, Türkisch, Englisch
-- **Zahlungsarten**: Überweisung, EC-Karte, Barzahlung
+- **Firmenname**: Fliesenverlegung Tezgel
+- **Inhaber**: Deniz Tezgel (Inhaber & Handwerksmeister)
+- **Adresse**: Hohwardstraße 14, 35614 Aßlar, Deutschland
+- **Telefon**: 06441 / 44 83 567
+- **Mobil & WhatsApp**: 0172 / 67 28 504
+- **Fax**: 06441 / 44 83 548
+- **E-Mail**: info@tezgel.de
+- **Website**: https://tezgel.de
+- **Kammer**: Handwerkskammer Wiesbaden
+- **USt-IdNr.**: DE 259249094
+- **Gegründet**: 2008
+- **Öffnungszeiten**: Mo–Fr 07:30–18:00 Uhr (Fr bis 17:00 Uhr), Sa 08:00–14:00 Uhr nach Vereinbarung (Vor-Ort-Termine)
+- **Leitmotiv**: „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“
+- **Bewertungen**: 5,0 von 5 bei 27 Google-Rezensionen; 9,6/10 bei 25 Trustlocal-Bewertungen (Stand: September 2026)
 
-## Öffnungszeiten
+## Einsatzgebiet
 
-- Montag bis Freitag: 07:00–17:00 Uhr
-- Samstag: 08:00–13:00 Uhr
-- Sonntag & Feiertage: Geschlossen
-- **24h-Notdienst**: Sanitär-Notdienst außerhalb der Geschäftszeiten erreichbar
+Aßlar, Wetzlar, Gießen, Marburg, Lahn-Dill-Kreis und Mittelhessen; Großprojekte hessenweit.
 
 ## Leistungen
 
-- [Sanitärtechnik](https://www.batherm.de/leistungen/sanitaer): Badsanierung, barrierefreie Bäder, Kücheninstallation, Rohrleitungssanierung, Armaturen, Trinkwasserinstallation
-- [Heizungstechnik](https://www.batherm.de/leistungen/heizung): Wärmepumpen (Luft-Wasser, Sole-Wasser), Gas-Brennwertheizung, Pelletheizung, Solarthermie, Fußbodenheizung, Heizungsmodernisierung
-- [Klimatechnik](https://www.batherm.de/leistungen/klima): Split-Klimaanlagen, Lüftungsanlagen, Luftreinigung, Feuchte-Kontrolle, Raumklima-Optimierung
-- [Wartung & Service](https://www.batherm.de/leistungen/wartung): Heizungswartung, Sanitär-Check, Filterwechsel, jährliche Inspektion, Funktionsprüfung
-- [Smart Home](https://www.batherm.de/leistungen/smart-home): Heizungssteuerung per App, Sicherheitstechnik, Lichtsteuerung, Energiemanagement, Sprachsteuerung
-- [Wasseraufbereitung](https://www.batherm.de/leistungen/wasseraufbereitung): Enthärtungsanlagen, Trinkwasserfilter, Dosieranlagen, Kalkschutz
+- [Badsanierung](https://tezgel.de/bad): Komplettbäder, barrierefreie Walk-In-Duschen, Großformate, Bad aus einer Hand
+- [Fachgewerke](https://tezgel.de/leistungen): Bäder & Wellness, Wohnbereiche & Neubau, Balkon & Terrasse, Untergrund & DIN 18534
+- [Fliesen & Verlegung](https://tezgel.de/fliesen): Formate, Materialien, Verlegemuster, Verlegetechnik, Renovierung, Neubau
+- [Untergrund & Abdichtung](https://tezgel.de/untergrund-abdichtung): Verbundabdichtung nach DIN 18534, Estrich-Belegreife, Fliesen auf Fliesen, Entkopplung, Ausgleich & Gefälle
+- [Balkon & Terrasse](https://tezgel.de/balkon-terrasse): Platten auf Stelzlagern, Balkonsanierung, Terrassenplatten
+- [Naturstein & Granit](https://tezgel.de/naturstein): Granit, Schiefer, Quarzit, Marmor, Travertin, Kalkstein
+- [Treppen](https://tezgel.de/treppen): Innentreppen, Treppenhäuser, Außentreppen
+- [Schadensanalyse](https://tezgel.de/schadensanalyse) und [Fliesenreparatur](https://tezgel.de/fliesenreparatur)
 
-## Einzugsgebiet (50 km Radius um Wetzlar)
+## Garantien & Standards
 
-Wir bedienen folgende Städte und Regionen in Mittelhessen:
-
-- [Wetzlar](https://www.batherm.de/standorte/wetzlar): Hauptstandort (Lahn-Dill-Kreis)
-- [Aßlar](https://www.batherm.de/standorte/asslar): 5 km (Lahn-Dill-Kreis)
-- [Solms](https://www.batherm.de/standorte/solms): 8 km (Lahn-Dill-Kreis)
-- [Braunfels](https://www.batherm.de/standorte/braunfels): 10 km (Lahn-Dill-Kreis)
-- [Herborn](https://www.batherm.de/standorte/herborn): 20 km (Lahn-Dill-Kreis)
-- [Gießen](https://www.batherm.de/standorte/giessen): 25 km (Landkreis Gießen)
-- [Dillenburg](https://www.batherm.de/standorte/dillenburg): 25 km (Lahn-Dill-Kreis)
-- [Haiger](https://www.batherm.de/standorte/haiger): 30 km (Lahn-Dill-Kreis)
-- [Butzbach](https://www.batherm.de/standorte/butzbach): 35 km (Wetteraukreis)
-- [Limburg an der Lahn](https://www.batherm.de/standorte/limburg): 35 km (Landkreis Limburg-Weilburg)
-- [Marburg](https://www.batherm.de/standorte/marburg): 40 km (Landkreis Marburg-Biedenkopf)
-- [Bad Nauheim](https://www.batherm.de/standorte/bad-nauheim): 40 km (Wetteraukreis)
-- [Friedberg](https://www.batherm.de/standorte/friedberg): 45 km (Wetteraukreis)
-- Weitere Orte: Lahnau, Hüttenberg, Linden, Pohlheim
+- Kostenfreies Vor-Ort-Aufmaß
+- Normgerechte Verbundabdichtung nach DIN 18534
+- Staubschutz bei Sanierungen im bewohnten Bestand
+- Verbindliches Festpreisangebot
 
 ## Wichtige Seiten
 
-- [Startseite](https://www.batherm.de/): Übersicht über Batherm Haustechnik
-- [Alle Leistungen](https://www.batherm.de/leistungen): Vollständiges Leistungsspektrum
-- [Notdienst](https://www.batherm.de/notdienst): 24h Sanitär-Notdienst in Wetzlar und Umgebung
-- [Über uns](https://www.batherm.de/ueber-uns): Geschichte, Team und Philosophie
-- [Referenzen](https://www.batherm.de/referenzen): Abgeschlossene Projekte und Kundenstimmen
-- [Blog & Ratgeber](https://www.batherm.de/blog): Expertentipps zu Heizung, Sanitär und Energie
-- [FAQ](https://www.batherm.de/faq): Häufig gestellte Fragen zu Kosten, Wartung und Förderung
-- [Förderung](https://www.batherm.de/foerderung): KfW- und BAFA-Fördermittel für Heizungstausch
-- [Energieberatung](https://www.batherm.de/energieberatung): Sanierungsfahrplan und Energieausweis
-- [Kontakt](https://www.batherm.de/kontakt): Kontaktformular und Anfahrt
-- [Beratung buchen](https://www.batherm.de/beratung): Kostenlosen Beratungstermin vereinbaren
-- [Karriere](https://www.batherm.de/karriere): Stellenangebote und Ausbildungsplätze
-
-## Blog-Artikel (Ratgeber)
-
-- [Wärmepumpen-Förderung 2024](https://www.batherm.de/blog/waermepumpen-foerderung-2024): Bis zu 70% Zuschuss für den Heizungstausch
-- [Wasserschaden vermeiden](https://www.batherm.de/blog/wasserschaden-vermeiden-tipps): Präventions-Tipps für Hausbesitzer
-- [Solarthermie vs. Photovoltaik](https://www.batherm.de/blog/solarthermie-vs-photovoltaik-vergleich): Welche Technologie lohnt sich?
-- [Fußbodenheizung nachrüsten](https://www.batherm.de/blog/fussbodenheizung-nachruesten): Kosten, Vorteile und Voraussetzungen
-- [Badumbau-Ratgeber](https://www.batherm.de/blog/badumbau): Planung, Kosten und Zeitrahmen
-- [Heizung optimieren](https://www.batherm.de/blog/heizung-optimieren-energiesparen): Energiesparen im Altbau
-- [Trinkwasserhygiene](https://www.batherm.de/blog/trinkwasserhygiene-legionellen): Legionellen-Prävention
-- [Klimaanlage Ratgeber](https://www.batherm.de/blog/klimaanlage-ratgeber): Die richtige Klimaanlage wählen
-- [Notdienst-Guide](https://www.batherm.de/blog/sanitaer-notdienst-guide): Was tun bei Rohrbruch?
-- [Smart Home Heizung](https://www.batherm.de/blog/smart-home-heizungssteuerung): Intelligente Heizungssteuerung
-- [Regenwassernutzung](https://www.batherm.de/blog/regenwassernutzung-garten-haushalt): Nachhaltigkeit für Haus und Garten
-- [Barrierefreies Bad](https://www.batherm.de/blog/barrierefreies-bad-planen): Altersgerecht und komfortabel planen
-- [Energieausweis-Pflicht](https://www.batherm.de/blog/energieausweis-pflicht-2024): Was Eigentümer wissen müssen
-
-## Qualifikationen & Garantien
-
-- Meisterbetrieb (Meisterbrief SHK, Handwerkskammer)
-- Fachbetrieb für Wärmepumpen
-- Energieberatung nach DIN
-- Garantie auf Material und Arbeit
-- Kostenlose Erstberatung vor Ort
-- Transparente Kostenaufstellung vor Arbeitsbeginn
+- [Startseite](https://tezgel.de/)
+- [Kontakt & Aufmaß](https://tezgel.de/kontakt)
+- [Referenzen & Bewertungen](https://tezgel.de/referenzen)
+- [Standorte](https://tezgel.de/standorte)
+- [Ratgeber & Blog](https://tezgel.de/blog)
+- [Häufige Fragen](https://tezgel.de/faq)
+- [Förderung barrierefreier Bäder](https://tezgel.de/foerderung)
+- [Fliesen-Konfigurator](https://tezgel.de/fliesen/konfigurator)
+- [Bad-Budgetkalkulator](https://tezgel.de/bad/budgetkalkulator)
+- [Über uns](https://tezgel.de/ueber-uns)
+- [Karriere](https://tezgel.de/karriere)
+- [Impressum](https://tezgel.de/impressum)
+- [Datenschutz](https://tezgel.de/datenschutz)

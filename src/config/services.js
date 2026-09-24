@@ -12,10 +12,10 @@ export const SERVICES = [
         link: "/bad",
 
         subcategories: [
-            { id: "walk-in-duschen", name: "Bodengleiche Walk-In-Duschen", path: "/bad#walk-in", icon: "bath" },
-            { id: "grossformate-bad", name: "XXL-Großformatfliesen", path: "/bad#grossformate", icon: "layers" },
-            { id: "nischen", name: "Beleuchtete Wandnischen", path: "/bad#nischen", icon: "sparkles" },
-            { id: "trockenbau", name: "Trockenbau & Vorwandelemente", path: "/bad#trockenbau", icon: "grid" }
+            { id: "walk-in-duschen", name: "Bodengleiche Walk-In-Duschen", path: "/bad/barrierefreies-bad", icon: "bath" },
+            { id: "grossformate-bad", name: "XXL-Großformatfliesen", path: "/bad/fliesen", icon: "layers" },
+            { id: "nischen", name: "Beleuchtete Wandnischen", path: "/bad/badsanierung", icon: "sparkles" },
+            { id: "trockenbau", name: "Trockenbau & Vorwandelemente", path: "/bad/bad-aus-einer-hand", icon: "grid" }
         ],
 
         features: [
@@ -24,7 +24,7 @@ export const SERVICES = [
             "Indirekt illuminierte Wandnischen & Ablagen mit Edelstahl- oder Gehrungskanten (Jolly)",
             "Fachgerechte Verkleidung von Vorwandelementen und Installationsschächten",
             "Staubarme Sanierung mit Schonvlies und modernen Staubschutzwänden",
-            "Zertifizierte Verbundabdichtung nach DIN 18534 für 100 % Wasserdichtigkeit"
+            "Normgerechte Verbundabdichtung nach DIN 18534 für dauerhaft dichte Nassbereiche"
         ],
 
         detailText: "Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel verwandelt veraltete Badezimmer in moderne Wellnessräume. Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum – für maximale Ästhetik und spielend leichte Pflege.",
@@ -44,13 +44,13 @@ export const SERVICES = [
         icon: "Sparkles",
         color: "secondary",
         priority: 2,
-        link: "/wohnbereiche",
+        link: "/leistungen/wohnen",
 
         subcategories: [
-            { id: "feinsteinzeug", name: "Feinsteinzeug & Fliesen", path: "/wohnbereiche#feinsteinzeug", icon: "grid" },
-            { id: "treppen", name: "Treppenverlegung & Blockstufen", path: "/wohnbereiche#treppen", icon: "layers" },
-            { id: "kuechen-dielen", name: "Küchen, Dielen & Flure", path: "/wohnbereiche#kuechen", icon: "home" },
-            { id: "naturstein", name: "Granit & Natursteinbeläge", path: "/wohnbereiche#naturstein", icon: "box" }
+            { id: "feinsteinzeug", name: "Feinsteinzeug & Fliesen", path: "/fliesen/fliesenarten", icon: "grid" },
+            { id: "treppen", name: "Treppen neu belegen", path: "/treppen", icon: "layers" },
+            { id: "kuechen-dielen", name: "Küchen, Dielen & Flure", path: "/fliesen/kueche", icon: "home" },
+            { id: "naturstein", name: "Granit & Natursteinbeläge", path: "/naturstein", icon: "box" }
         ],
 
         features: [
@@ -81,9 +81,9 @@ export const SERVICES = [
         link: "/balkon-terrasse",
 
         subcategories: [
-            { id: "stelzlager", name: "20 mm Platten auf Stelzlagern", path: "/balkon-terrasse#stelzlager", icon: "layers" },
-            { id: "gefaelle", name: "Gefälleausbildung & Entwässerung", path: "/balkon-terrasse#gefaelle", icon: "arrow-down-right" },
-            { id: "abdichtung-aussen", name: "Witterungsbeständige Abdichtung", path: "/balkon-terrasse#abdichtung", icon: "shield" }
+            { id: "stelzlager", name: "20 mm Platten auf Stelzlagern", path: "/balkon-terrasse/stelzlager", icon: "layers" },
+            { id: "gefaelle", name: "Gefälleausbildung & Entwässerung", path: "/untergrund-abdichtung/ausgleich-gefaelle", icon: "arrow-down-right" },
+            { id: "abdichtung-aussen", name: "Witterungsbeständige Abdichtung", path: "/balkon-terrasse/balkonsanierung", icon: "shield" }
         ],
 
         features: [
@@ -106,21 +106,21 @@ export const SERVICES = [
     {
         id: "untergrund",
         name: "Untergrund & DIN 18534 Abdichtung",
-        shortDescription: "Fachgerechter Abbruch, Estrichausgleich, Risssanierung & zertifizierte Verbundabdichtung",
+        shortDescription: "Fachgerechter Abbruch, Estrichausgleich, Risssanierung & normgerechte Verbundabdichtung",
         icon: "ShieldCheck",
         color: "primary",
         priority: 4,
         link: "/untergrund-abdichtung",
 
         subcategories: [
-            { id: "din-18534", name: "Zertifizierte DIN 18534 Abdichtung", path: "/untergrund-abdichtung#din18534", icon: "shield" },
-            { id: "abbruch", name: "Rückbau & Entkernung alter Beläge", path: "/untergrund-abdichtung#abbruch", icon: "hammer" },
-            { id: "ausgleich", name: "Estrich- & Nivellierarbeiten", path: "/untergrund-abdichtung#ausgleich", icon: "ruler" },
-            { id: "rissverharzung", name: "Rissverharzung & Haftbrücken", path: "/untergrund-abdichtung#rissverharzung", icon: "zap" }
+            { id: "din-18534", name: "Abdichtung nach DIN 18534", path: "/untergrund-abdichtung/din-18534", icon: "shield" },
+            { id: "abbruch", name: "Rückbau & Entkernung alter Beläge", path: "/untergrund-abdichtung/fliesen-auf-fliesen", icon: "hammer" },
+            { id: "ausgleich", name: "Estrich- & Nivellierarbeiten", path: "/untergrund-abdichtung/ausgleich-gefaelle", icon: "ruler" },
+            { id: "rissverharzung", name: "Rissverharzung & Haftbrücken", path: "/untergrund-abdichtung/entkopplung", icon: "zap" }
         ],
 
         features: [
-            "Zertifizierte Verbundabdichtung (AIV) nach DIN 18534 in Feucht- und Nassräumen",
+            "Normgerechte Verbundabdichtung (AIV) nach DIN 18534 in Feucht- und Nassräumen",
             "Einbindung elastischer Dichtmanschetten an allen Rohrdurchdringungen",
             "Eckdichtbänder mit Dehnzone zur dauerhaften Entkopplung von Wand und Boden",
             "Staubarme Entkernung alter Fliesen- und Dickbettbeläge",
@@ -128,7 +128,7 @@ export const SERVICES = [
             "Restfeuchtemessung (CM-Messung) vor Beginn der Verlegearbeiten"
         ],
 
-        detailText: "Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir bereiten Böden und Wände kompromisslos fachgerecht vor. Insbesondere die zertifizierte Verbundabdichtung nach DIN 18534 schützt Ihre Bausubstanz verlässlich vor kostspieligen Feuchteschäden.",
+        detailText: "Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir bereiten Böden und Wände kompromisslos fachgerecht vor. Insbesondere die normgerechte Verbundabdichtung nach DIN 18534 schützt Ihre Bausubstanz verlässlich vor kostspieligen Feuchteschäden.",
         ctaText: "Abdichtungs-Check anfordern",
         heroImage: "/images/uploads/07.webp",
         gallery: [

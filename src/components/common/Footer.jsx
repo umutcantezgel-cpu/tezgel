@@ -25,7 +25,7 @@ import {
 
 const LINK_COLUMNS = [
     { title: 'Badsanierung', links: footerBathLinks },
-    { title: 'Fachgewerke & Service', links: footerServiceLinks },
+    { title: 'Fachgewerke & Fachthemen', links: footerServiceLinks },
     { title: 'Standorte Hessen', links: footerLocationLinks },
     { title: 'Unternehmen & Ratgeber', links: footerCompanyLinks }
 ];

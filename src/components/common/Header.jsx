@@ -49,6 +49,20 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
     const [openMenu, setOpenMenu] = useState(null);
     const [lastPathname, setLastPathname] = useState(pathname);
     const navRef = useRef(null);
+    const closeTimerRef = useRef(null);
+
+    // Hover intent: open immediately, close with a short delay so the pointer can
+    // travel from the menu item into the (centred) panel without it closing.
+    const openPanel = (name) => {
+        clearTimeout(closeTimerRef.current);
+        setOpenMenu(name);
+    };
+    const scheduleClose = () => {
+        clearTimeout(closeTimerRef.current);
+        closeTimerRef.current = setTimeout(() => setOpenMenu(null), 180);
+    };
+
+    useEffect(() => () => clearTimeout(closeTimerRef.current), []);
 
     // Close any open panel on navigation.
     if (pathname !== lastPathname) {
@@ -77,7 +91,7 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
         <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 pt-2.5 sm:pt-4">
             <div className="max-w-7xl mx-auto">
                 <div
-                    className={`px-3 sm:px-5 transition-all duration-300 rounded-full border flex items-center justify-between gap-3 backdrop-blur-xl ${
+                    className={`relative px-3 sm:px-5 transition-all duration-300 rounded-full border flex items-center justify-between gap-3 backdrop-blur-xl ${
                         isScrolled
                             ? 'py-2 bg-white/95 border-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.08)]'
                             : 'py-2.5 sm:py-3 bg-white/85 border-slate-200/80 shadow-[0_8px_30px_rgba(15,23,42,0.06)]'
@@ -94,7 +108,6 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                             const active = isSectionActive(pathname, link);
                             const isOpen = openMenu === link.name;
                             const panelId = `mega-${index}`;
-                            const alignRight = index >= Math.ceil(navigationLinks.length / 2);
                             const columns = link.submenu?.length || 0;
                             const panelWidth = columns > 1
                                 ? (link.featured ? 'w-[760px]' : 'w-[560px]')
@@ -103,9 +116,8 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                             return (
                                 <div
                                     key={link.name}
-                                    className="relative"
-                                    onMouseEnter={() => link.submenu && setOpenMenu(link.name)}
-                                    onMouseLeave={() => setOpenMenu(null)}
+                                    onMouseEnter={() => (link.submenu ? openPanel(link.name) : scheduleClose())}
+                                    onMouseLeave={scheduleClose}
                                 >
                                     <div className={`flex items-center rounded-full transition-colors duration-300 ${active || isOpen ? 'bg-emerald-50' : 'hover:bg-slate-100'}`}>
                                         <Link
@@ -134,7 +146,7 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                                     {link.submenu && (
                                         <div
                                             id={panelId}
-                                            className={`absolute top-full pt-3 z-50 ${alignRight ? 'right-0' : 'left-0'} ${
+                                            className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50 ${
                                                 isOpen ? 'visible opacity-100 translate-y-0' : 'invisible opacity-0 -translate-y-1'
                                             } transition-all duration-200`}
                                         >

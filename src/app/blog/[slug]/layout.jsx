@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
       siteName: COMPANY_DATA.legalName,
       locale: 'de_DE',
       type: 'article',
-      publishedTime: post.created_date || '2025-01-15T08:00:00+01:00',
+      publishedTime: post.publishedAt || post.created_date,
       images: post.image ? [{ url: `${SITE_URL}${post.image}`, width: 1200, height: 630 }] : [],
     },
     twitter: {
@@ -83,7 +83,7 @@ export default async function Layout({ children, params }) {
         headline: post.title,
         description: post.excerpt || post.title,
         url: pageUrl,
-        datePublished: post.created_date || '2025-01-15T08:00:00+01:00',
+        datePublished: post.publishedAt || post.created_date,
         image: post.image,
         keywords: post.tags && post.tags.length > 0 ? post.tags : [post.category],
       }),

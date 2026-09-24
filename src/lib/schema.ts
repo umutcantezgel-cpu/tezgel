@@ -75,11 +75,11 @@ export function buildOrganizationNode(): SchemaNode {
     logo: {
       '@type': 'ImageObject',
       '@id': LOGO_ID,
-      url: `${SITE_URL}/images/logo/logo-horizontal.png`,
-      contentUrl: `${SITE_URL}/images/logo/logo-horizontal.png`,
+      url: `${SITE_URL}/images/logo/tezgel-mark.svg`,
+      contentUrl: `${SITE_URL}/images/logo/tezgel-mark.svg`,
       caption: 'Fliesenverlegung Tezgel Logo',
     },
-    image: `${SITE_URL}/images/logo/logo-horizontal.png`,
+    image: `${SITE_URL}/images/logo/tezgel-mark.svg`,
     founder: { '@id': FOUNDER_ID },
     contactPoint: {
       '@type': 'ContactPoint',
@@ -449,14 +449,14 @@ export function buildArticleNode(options: {
     description: options.description,
     url: options.url,
     mainEntityOfPage: options.url,
-    datePublished: options.datePublished || '2024-01-15T08:00:00+01:00',
-    dateModified: options.dateModified || options.datePublished || '2024-03-20T10:00:00+01:00',
+    datePublished: options.datePublished,
+    dateModified: options.dateModified || options.datePublished,
     inLanguage: 'de-DE',
     author: { '@id': FOUNDER_ID },
     publisher: { '@id': ORG_ID },
     image: options.image
       ? (options.image.startsWith('http') ? options.image : `${SITE_URL}${options.image}`)
-      : `${SITE_URL}/images/logo/logo-horizontal.png`,
+      : `${SITE_URL}/images/logo/tezgel-mark.svg`,
     keywords: options.keywords?.join(', '),
   };
 }

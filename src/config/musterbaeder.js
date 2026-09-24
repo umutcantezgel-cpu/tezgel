@@ -6,7 +6,7 @@
 
 export const MUSTERBAEDER = [
     // -------------------------------------------------------------
-    // BASIC LINE (Solide Markenqualität & Einstiegspreise)
+    // BASIC LINE (Solide Qualität & Einstiegspreise)
     // -------------------------------------------------------------
     {
         id: "basic-4-6",
@@ -21,51 +21,51 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/03.webp",
         highlights: [
-            "COSMO Classic Design-Badheizkörper (177 x 60 cm)",
-            "VIGOUR derby style Waschtisch mit 4-seitig hinterleuchtetem LED-Lichtspiegel (4.000 K)",
-            "VIGOUR clivia Stahl-Duschwanne (90 x 90 cm) mit Novellini Young 2.0 Eckeinstieg",
-            "VIGOUR clivia Wand-Tiefspül-WC mit PflegePLUS & CONEL VIS Vorwandelement",
-            "Hochwertiges VIGOUR derby style Chrom-Accessoires-Set"
+            "Design-Badheizkörper 177 × 60 cm (RAL 9016)",
+            "Keramik-Waschtisch mit 4-seitig hinterleuchtetem LED-Lichtspiegel (4.000 K)",
+            "Stahl-Duschwanne 90 × 90 cm mit Eckeinstieg aus Sicherheitsglas",
+            "Wand-Tiefspül-WC mit pflegeleichter Glasur und Vorwandelement mit Unterputz-Spülkasten",
+            "Accessoires-Set in Chrom"
         ],
         components: [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "VIGOUR clivia Stahl-Duschwanne, 90 x 90 x 3,2 cm, mit Wannenträger, weiß inkl. TRINNITY Ablaufgarnitur mit Sifon und Farbset",
-                    "Novellini Young 2.0 EHF, 2 Eckeinstiegshälften 87–89 x 200 cm, ESG aqua, chrom",
-                    "Hansapolo Einhand-Aufputz-Brausearmatur mit Thermo Cool, verchromt inkl. VIGOUR individual 3.0 Brausegarnitur mit Stange 90 cm, Schlauch und Handbrause 3-fach verstellbar"
+                    "Stahl-Duschwanne 90 × 90 × 3,2 cm mit Wannenträger, weiß, inkl. Ablaufgarnitur mit Siphon und Abdeckung",
+                    "Eckeinstieg aus 2 Schiebetür-Hälften 87–89 × 200 cm, Einscheibensicherheitsglas (ESG) mit Abperl-Beschichtung, Profile chrom",
+                    "Einhand-Aufputz-Brausearmatur mit Verbrühschutz (kühles Armaturengehäuse), verchromt, inkl. Brausegarnitur mit Stange 90 cm, Schlauch und 3-fach verstellbarer Handbrause"
                 ],
                 price: "ca. 2.705,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "VIGOUR derby style Waschtisch, 65 x 48 cm, weiß mit PflegePLUS-Beschichtung und Halbsäule weiß sowie TRINNITY Waschtisch-Röhrensiphon und Eckventil",
-                    "Hansapolo Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
-                    "VIGOUR derby LED-Lichtspiegel, 65 x 80 cm, 4-seitig umlaufende Beleuchtung 3 cm und hinterleuchtet, 4.000 Kelvin"
+                    "Keramik-Waschtisch 65 × 48 cm, weiß mit pflegeleichter Glasur, Halbsäule weiß sowie Röhrensiphon und Eckventil",
+                    "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
+                    "LED-Lichtspiegel 65 × 80 cm, 4-seitig umlaufende Beleuchtung (3 cm) und hinterleuchtet, 4.000 Kelvin"
                 ],
                 price: "ca. 1.138,00 €"
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "VIGOUR clivia Wand-Tiefspül-WC, weiß mit PflegePLUS-Beschichtung und WC-Sitz mit Deckel und Absenkautomatik inkl. Schallschutzset",
-                    "CONEL WC-Element VIS mit UP-Spülkasten, 112 cm und VIGOUR Betätigungsplatte seidenmatt für 2-Mengen-Spültechnik"
+                    "Wand-Tiefspül-WC, weiß mit pflegeleichter Glasur, WC-Sitz mit Deckel und Absenkautomatik inkl. Schallschutzset",
+                    "Vorwandelement mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
                 ],
                 price: "ca. 873,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "COSMO Classic Bad- und Designheizkörper, 177 x 60 cm, RAL 9016"
+                    "Design-Badheizkörper 177 × 60 cm (RAL 9016)"
                 ],
                 price: "ca. 751,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
-                    "VIGOUR derby style Bürstengarnitur mit Papierhalter mit Deckel, verchromt",
-                    "VIGOUR derby style Handtuchhalter 45 cm, starr und Flüssigseifenspender mit Glas, verchromt"
+                    "WC-Bürstengarnitur und Papierhalter mit Deckel, verchromt",
+                    "Handtuchhalter 45 cm, starr, und Flüssigseifenspender mit Glasbehälter, verchromt"
                 ],
                 price: "ca. 387,00 €"
             }
@@ -84,50 +84,50 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/04.webp",
         highlights: [
-            "VIGOUR one Stahl-Körperform-Badewanne (170 x 75 cm)",
-            "VIGOUR derby Stahl-Duschwanne (120 x 90 cm) mit VIGOUR individual 2.0 Glaswand",
-            "VIGOUR one Waschtisch-Set mit Spiegelschrank & Unterschrank in Hochglanz",
-            "VIGOUR derby Wand-Tiefspül-WC ohne Spülrand mit PflegePLUS",
-            "COSMO Astro Design-Badheizkörper (140 x 60 cm)"
+            "Stahl-Körperform-Badewanne 170 × 75 cm",
+            "Stahl-Duschwanne 120 × 90 cm mit Glas-Duschabtrennung",
+            "Waschtisch-Set mit Spiegelschrank & Unterschrank in Weiß Hochglanz",
+            "Spülrandloses Wand-Tiefspül-WC mit pflegeleichter Glasur",
+            "Design-Badheizkörper 140 × 60 cm"
         ],
         components: [
             {
                 category: "Badewannen-Anlage",
                 items: [
-                    "VIGOUR one Stahl-Körperform-Badewanne, 170 x 75 cm, weiß, inkl. Wannenträger sowie Ab- und Überlaufgarnitur",
-                    "VIGOUR derby Einhand-Aufputz-Badearmatur und Wannenset mit Wandhalter, Brauseschlauch und 1-facher Handbrause, verchromt"
+                    "Stahl-Körperform-Badewanne 170 × 75 cm, weiß, inkl. Wannenträger sowie Ab- und Überlaufgarnitur",
+                    "Einhand-Aufputz-Wannenarmatur mit Wannenset (Wandhalter, Brauseschlauch, Handbrause), verchromt"
                 ],
                 price: "ca. 830,00 €"
             },
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "VIGOUR derby Stahl-Duschwanne, 120 x 90 x 3,5 cm, Ablauf mittig kurz, weiß inkl. Wannenträger und TRINNITY Ablaufgarnitur",
-                    "VIGOUR derby Aufputz-Brause-Thermostat Safe-Tee inkl. Brausegarnitur mit Stange 90 cm, Schlauch und 3-facher Handbrause, verchromt",
-                    "VIGOUR individual 2.0 Seitenwand 2-teilig in 90 x 195 cm und Pendeltür mit Festfeld links, silber matt, ESG transparent mit PflegePLUS"
+                    "Stahl-Duschwanne 120 × 90 × 3,5 cm, Ablauf mittig an der kurzen Seite, weiß, inkl. Wannenträger und Ablaufgarnitur",
+                    "Aufputz-Brausethermostat mit Sicherheitsablage, inkl. Brausegarnitur mit Stange 90 cm, Schlauch und 3-fach verstellbarer Handbrause, verchromt",
+                    "Duschabtrennung aus zweiteiliger Seitenwand 90 × 195 cm und Pendeltür mit Festfeld links, Profile silber matt, ESG klar mit Abperl-Beschichtung"
                 ],
                 price: "ca. 3.123,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "VIGOUR one Set inkl. Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß mit Waschtischunterschrank 82 x 51,5 cm in Weiß Hochglanz und Eckventil",
-                    "VIGOUR derby Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt und Raumspar-Möbel-Siphon"
+                    "Waschtisch-Set mit Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 × 51,5 cm in Weiß Hochglanz inkl. Eckventil",
+                    "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt, und Raumspar-Möbelsiphon"
                 ],
                 price: "ca. 1.529,00 €"
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "VIGOUR derby Wand-Tiefspül-WC ohne Spülrand, weiß mit PflegePLUS, abnehmbarer WC-Sitz mit Absenkautomatik und Edelstahlscharnieren sowie Schallschutzset",
-                    "CONEL VIS WC-Element für Trockenbau mit UP-Spülkasten 112 cm und VIGOUR DON Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
+                    "Spülrandloses Wand-Tiefspül-WC, weiß mit pflegeleichter Glasur, abnehmbarer WC-Sitz mit Absenkautomatik und Edelstahlscharnieren sowie Schallschutzset",
+                    "Vorwandelement für den Trockenbau mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt für 2-Mengen-Spülung"
                 ],
                 price: "ca. 969,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "COSMO Astro Design-Badheizkörper, 140 x 60 cm, RAL 9016"
+                    "Design-Badheizkörper 140 × 60 cm (RAL 9016)"
                 ],
                 price: "ca. 574,00 €"
             }
@@ -147,50 +147,50 @@ export const MUSTERBAEDER = [
         image: "/images/uploads/01.webp",
         highlights: [
             "Mineralguss-Waschtisch in Alpinweiß mit Spiegelschrank",
-            "2 VIGOUR one Hochschränke in Anthrazit Hochglanz",
-            "Begehbare Duschzone mit Duka ESG-Glasseitenwand (120 x 200 cm)",
-            "VIGOUR clivia Wand-Tiefspül-WC ohne Spülrand",
-            "COSMO Design-Badheizkörper"
+            "2 Hochschränke in Anthrazit Hochglanz",
+            "Duschbereich mit ESG-Glasseitenwand 120 × 200 cm",
+            "Spülrandloses Wand-Tiefspül-WC",
+            "Design-Badheizkörper (RAL 9016)"
         ],
         components: [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "VIGOUR derby Stahl-Duschwanne, 120 x 90 x 3,5 cm, weiß, mit Ablaufgarnitur und verchromtem Farbset",
-                    "VIGOUR derby Renovierungsset mit Aufputz-Brausethermostat und Brausegarnitur, 3-fach verstellbar, 90 cm",
-                    "Duka Seitenwand, 120 x 200 cm, silber Hochglanz, ESG transparent"
+                    "Stahl-Duschwanne 120 × 90 × 3,5 cm, weiß, mit Ablaufgarnitur und verchromter Abdeckung",
+                    "Renovierungsset mit Aufputz-Brausethermostat und Brausegarnitur (Stange 90 cm, 3-fach verstellbare Handbrause)",
+                    "Glas-Seitenwand 120 × 200 cm, Profile silber Hochglanz, ESG klar"
                 ],
                 price: "ca. 2.458,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "VIGOUR one Set bestehend aus Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 x 51,5 cm in Anthrazit Hochglanz mit Siphon Dallmer und Eckventil",
-                    "VIGOUR derby Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
-                    "2 VIGOUR one Hochschränke in Anthrazit Hochglanz, 30 x 32 x 160 cm"
+                    "Waschtisch-Set aus Spiegelschrank, Mineralguss-Waschtisch in Alpinweiß und Waschtischunterschrank 82 × 51,5 cm in Anthrazit Hochglanz mit Siphon und Eckventil",
+                    "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
+                    "2 Hochschränke in Anthrazit Hochglanz, 30 × 32 × 160 cm"
                 ],
                 price: "ca. 2.329,00 €"
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "VIGOUR clivia Wand-Tiefspül-WC ohne Spülrand, weiß, mit clivia lux WC-Sitz und Deckel (Edelstahl-Scharniere, Schallschutzset)",
-                    "CONEL VIS WC-Element mit UP-Spülkasten, Bauhöhe 112 cm",
-                    "VIGOUR AI Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
+                    "Spülrandloses Wand-Tiefspül-WC, weiß, mit WC-Sitz und Deckel (Edelstahlscharniere, Schallschutzset)",
+                    "Vorwandelement mit Unterputz-Spülkasten, Bauhöhe 112 cm",
+                    "Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
                 ],
                 price: "ca. 1.261,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "COSMO Bad- und Designheizkörper in RAL9016, 176,4 x 60 cm"
+                    "Design-Badheizkörper 176,4 × 60 cm (RAL 9016)"
                 ],
                 price: "ca. 201,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
-                    "VIGOUR derby Bürstengarnitur, Papierhalter und Flüssigseifenspender mit Glas, verchromt"
+                    "WC-Bürstengarnitur, Papierhalter und Flüssigseifenspender mit Glasbehälter, verchromt"
                 ],
                 price: "ca. 693,00 €"
             }
@@ -209,59 +209,59 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/05.webp",
         highlights: [
-            "VIGOUR clivia Stahl-Mittelablaufbadewanne (180 x 80 cm) mit GESSI MANZONI Armatur",
-            "VIGOUR derby Mineralguss-Duschwanne mit Antirutsch (120 x 100 cm) & Duka Gallery Schwenktür",
-            "Heibad Agus Möbelset 140 cm in Metallic-Braun mit Großspiegel",
-            "VIGOUR derby Wand-Tiefspül-WC rund ohne Spülrand mit CONEL VIS Modul",
-            "VIGOUR derby Badheizkörper (180 x 60 cm)"
+            "Stahl-Mittelablauf-Badewanne 180 × 80 cm mit Design-Wannenarmatur",
+            "Rutschhemmende Mineralguss-Duschwanne 120 × 100 cm mit Nischen-Schwenktür",
+            "Möbelwaschtisch-Set 140 cm in Metallic-Braun mit großem Wandspiegel",
+            "Spülrandloses Wand-Tiefspül-WC in runder Form mit Vorwandelement",
+            "Badheizkörper 180 × 60 cm (RAL 9016)"
         ],
         components: [
             {
                 category: "Badewannen-Anlage",
                 items: [
-                    "VIGOUR clivia Stahl-Mittelablaufbadewanne, 180 x 80 cm, weiß mit Wannenträger sowie VIGOUR Ab-/Überlaufgarnitur und Farbset verchromt",
-                    "GESSI MANZONI Aufputz-Wannen-Einhandarmatur mit Umsteller in chrom",
-                    "GESSI EMPORIO Wand-Brausehalter, Antikalk-Handbrause und Design-Brauseschlauch"
+                    "Stahl-Mittelablauf-Badewanne 180 × 80 cm, weiß, mit Wannenträger sowie Ab- und Überlaufgarnitur mit verchromter Abdeckung",
+                    "Design-Aufputz-Wannenarmatur (Einhebel) mit Umsteller, chrom",
+                    "Wand-Brausehalter, Handbrause mit Anti-Kalk-Düsen und Design-Brauseschlauch"
                 ],
                 price: "ca. 1.930,00 €"
             },
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "VIGOUR derby Mineralguss-Duschwanne mit Antirutsch, 120 x 100 x 3,2 cm, weiß mit TRINNITY Farbset und Ablauf",
-                    "Duka Gallery Schwenktür für Nische rechts, 100 x 195 cm in chrom/Alu Hochglanz ESG transparent",
-                    "GESSI Manzoni Aufputz-Brause-Einhandarmatur und Brausestangen-Set 60 cm in chrom"
+                    "Mineralguss-Duschwanne mit rutschhemmender Oberfläche, 120 × 100 × 3,2 cm, weiß, mit Ablaufgarnitur und Abdeckung",
+                    "Schwenktür für Nischeneinbau, Anschlag rechts, 100 × 195 cm, Profile chrom/Alu Hochglanz, ESG klar",
+                    "Design-Aufputz-Brausearmatur (Einhebel) mit Brausestangen-Set 60 cm, chrom"
                 ],
                 price: "ca. 2.732,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "Heibad Agus Möbelset aus Waschtisch und Waschtischunterschrank in Metallic braun, 140 cm, mit Röhrensiphon und Eckventil",
-                    "GESSI MANZONI Waschtisch-Einhandarmatur mit Ablaufgarnitur in chrom",
-                    "Heibad Agus Wandspiegel, 140 x 72,5 cm, passend in Metallic braun"
+                    "Möbelwaschtisch-Set aus Waschtisch und Unterschrank 140 cm in Metallic-Braun, mit Röhrensiphon und Eckventil",
+                    "Design-Waschtischarmatur (Einhebel) mit Ablaufgarnitur, chrom",
+                    "Wandspiegel 140 × 72,5 cm mit Rahmen passend in Metallic-Braun"
                 ],
                 price: "ca. 5.076,00 €"
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "VIGOUR derby Wand-Tiefspül-WC rund ohne Spülrand mit verdeckter Befestigung, weiß mit PflegePLUS, Softclose-Sitz und Schallschutzset",
-                    "CONEL VIS WC-Element mit UP-Spülkasten 112 cm und VIGOUR AI Betätigungsplatte seidenmatt"
+                    "Spülrandloses Wand-Tiefspül-WC in runder Form mit verdeckter Befestigung, weiß mit pflegeleichter Glasur, Softclose-Sitz und Schallschutzset",
+                    "Vorwandelement mit Unterputz-Spülkasten (112 cm) und Betätigungsplatte seidenmatt"
                 ],
                 price: "ca. 1.038,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "VIGOUR derby Badheizkörper, 180 x 60 cm, in weiß RAL 9016"
+                    "Badheizkörper 180 × 60 cm, weiß (RAL 9016)"
                 ],
                 price: "ca. 688,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
-                    "GESSI EMPORIO Wand-Papierrollenhalter, Stand-Seifenspender aus satiniertem Glas und WC-Bürstengarnitur in chrom"
+                    "Wand-Papierrollenhalter, Stand-Seifenspender aus satiniertem Glas und WC-Bürstengarnitur, chrom"
                 ],
                 price: "ca. 570,00 €"
             }
@@ -284,50 +284,50 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/03.webp",
         highlights: [
-            "Barrierefreies 5-Eck Duschelement 90 cm mit VIGOUR individual 5.0 Glasabtrennung",
-            "VIGOUR derby Asymmetrischer Waschtisch (100 cm) mit Gessi Flessa 316 Edelstahlarmatur",
-            "4-seitig hinterleuchteter LED-Lichtspiegel (100 x 80 cm)",
-            "CONEL VIS Wand-WC-Eck-Element mit VIGOUR derby Kompakt-WC",
-            "COSMO Wien Design-Badheizkörper (175,4 x 50 cm)"
+            "Barrierefreies Fünfeck-Duschelement 90 cm mit teilgerahmter Glasabtrennung",
+            "Asymmetrischer Waschtisch 100 cm mit Edelstahl-Armatur (gebürstet)",
+            "4-seitig hinterleuchteter LED-Lichtspiegel 100 × 80 cm",
+            "Kompakt-Wand-WC mit platzsparendem Eck-Vorwandelement",
+            "Design-Badheizkörper 175,4 × 50 cm (RAL 9016)"
         ],
         components: [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Duschelement 90 cm 5-Eck, rollstuhlbefahrbar, Ablauf waagerecht",
-                    "VIGOUR derby Duschsystem mit Thermostat Safe-Tee, Handbrause 3-fach und Schlauch, verchromt",
-                    "VIGOUR individual 5.0 Duschabtrennung teilgerahmt Fünfeck, 90 x 200 cm, 2-teilig mit Festfeld, Silber Hochglanz, ESG mit PflegePlusXtra"
+                    "Fünfeck-Duschelement 90 cm, rollstuhlbefahrbar, Ablauf waagerecht",
+                    "Duschsystem mit Thermostat und Sicherheitsablage, 3-fach verstellbarer Handbrause und Schlauch, verchromt",
+                    "Teilgerahmte Fünfeck-Duschabtrennung 90 × 200 cm, 2-teilig mit Festfeld, Profile silber Hochglanz, ESG mit Abperl-Beschichtung"
                 ],
                 price: "ca. 2.724,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "VIGOUR derby Mineralguss-Waschtisch und Waschtischunterschrank 57 x 48 x 100 cm in Weiß Hochglanz mit Eckventil und Siphon",
-                    "Gessi Flessa 316 Waschtisch-Einhandarmatur mit Ablaufgarnitur, Edelstahl matt gebürstet",
-                    "VIGOUR derby LED-Lichtspiegel, 100 x 80 cm, 4-seitig hinterleuchtet"
+                    "Asymmetrischer Mineralguss-Waschtisch mit Waschtischunterschrank 57 × 48 × 100 cm in Weiß Hochglanz, mit Eckventil und Siphon",
+                    "Einhand-Waschtischarmatur aus Edelstahl, matt gebürstet, mit Ablaufgarnitur",
+                    "LED-Lichtspiegel 100 × 80 cm, 4-seitig hinterleuchtet"
                 ],
                 price: "ca. 3.820,00 €"
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "VIGOUR derby Wand-Tiefspül-WC kompakt (48 cm), weiß mit PflegePLUS und derby style WC-Sitz mit Absenkautomatik und Edelstahlscharnieren",
-                    "CONEL VIS Wand-WC-Eck-Element inkl. Verkleidung und VIGOUR AI Betätigungsplatte weiß"
+                    "Kompakt-Wand-Tiefspül-WC (Ausladung 48 cm), weiß mit pflegeleichter Glasur, WC-Sitz mit Absenkautomatik und Edelstahlscharnieren",
+                    "Eck-Vorwandelement für Wand-WC inkl. Verkleidung und Betätigungsplatte weiß"
                 ],
                 price: "ca. 1.657,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "COSMO Wien Design-Badheizkörper, 175,4 x 50 cm, RAL 9016"
+                    "Design-Badheizkörper 175,4 × 50 cm (RAL 9016)"
                 ],
                 price: "ca. 1.532,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
-                    "VIGOUR derby Papierhalter mit Deckel, Bürstengarnitur, Flüssigseifenspender und Glashalter aus Glas/Chrom"
+                    "Papierhalter mit Deckel, WC-Bürstengarnitur, Flüssigseifenspender und Zahnputzglashalter in Glas/Chrom"
                 ],
                 price: "ca. 276,00 €"
             }
@@ -346,35 +346,35 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/04.webp",
         highlights: [
-            "VIGOUR white Waschtischanlage 100 cm mit Touch-LED-Spiegel",
-            "Bodengleiche Walk-In Duschzone mit VIGOUR individual Edelstahlrinne",
-            "Duka rahmenlose Festglaswand mit PflegePLUS-Beschichtung",
+            "Waschtischanlage 100 cm mit LED-Lichtspiegel und Touch-Bedienung",
+            "Bodengleiche Walk-In-Duschzone mit Edelstahl-Duschrinne",
+            "Rahmenlose Festglaswand mit Abperl-Beschichtung",
             "Design-Badheizkörper mit Handtuchwärmefunktion",
-            "VIGOUR white randloses Wand-WC mit CONEL VIS UP-Element"
+            "Spülrandloses Wand-WC mit Unterputz-Vorwandelement"
         ],
         components: [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Bodengleiche Walk-In Dusche mit VIGOUR individual Designrinne und Duka Festglaswand 100 x 200 cm",
-                    "VIGOUR vogue Regendusch-System mit Thermostat und Anti-Kalk-Düsen"
+                    "Bodengleiche Walk-In-Dusche mit Edelstahl-Designrinne und Festglaswand 100 × 200 cm",
+                    "Regendusch-System mit Thermostat und Anti-Kalk-Düsen"
                 ],
                 price: "ca. 3.650,00 €"
             },
             {
                 category: "Möbel & Keramik",
                 items: [
-                    "VIGOUR white Waschtisch 100 cm mit Softclose-Schubladen und samtweißem Lack",
-                    "LED-Lichtspiegel mit Touch-Sensor und Farbtemperaturwechsel (2.700–6.500 K)",
-                    "Randloses VIGOUR Design-WC mit CONEL Vorwandmodul"
+                    "Möbelwaschtisch 100 cm mit Softclose-Schubladen, Front samtweiß lackiert",
+                    "LED-Lichtspiegel mit Touch-Sensor und einstellbarer Lichtfarbe (2.700–6.500 K)",
+                    "Spülrandloses Design-Wand-WC mit Vorwandelement"
                 ],
                 price: "ca. 5.950,00 €"
             },
             {
                 category: "Heizung & Details",
                 items: [
-                    "COSMO Designheizkörper in Anthrazit oder Weiß",
-                    "VIGOUR individual Accessoires-Set verchromt"
+                    "Design-Badheizkörper in Anthrazit oder Weiß",
+                    "Accessoires-Set, verchromt"
                 ],
                 price: "ca. 1.850,00 €"
             }
@@ -393,43 +393,43 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/01.webp",
         highlights: [
-            "VIGOUR white 120 cm Möbelwaschtisch mit samtweißer Front",
-            "LED-Lichtspiegel 120 x 75 cm mit Lichtband und Dimmfunktion",
-            "Walk-In Dusche mit VIGOUR individual 3.0 Edelstahlrinne und Duka Echtglas",
-            "VIGOUR white randloses Wand-WC mit verdeckter Befestigung",
-            "COSMO Wien Design-Badheizkörper drehbar"
+            "Möbelwaschtisch 120 cm mit samtweißer Front",
+            "LED-Lichtspiegel 120 × 75 cm mit Lichtband und Dimmfunktion",
+            "Walk-In-Dusche mit Edelstahl-Duschrinne und Echtglaswand",
+            "Spülrandloses Wand-WC mit verdeckter Befestigung",
+            "Drehbarer Design-Badheizkörper"
         ],
         components: [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "VIGOUR individual 3.0 Edelstahlrinne mit Duka Walk-In Glaswand 120 x 200 cm",
-                    "VIGOUR vogue Duschthermostat mit Regenkopfbrause (25 cm) und 2-Strahl-Handbrause"
+                    "Edelstahl-Duschrinne mit Walk-In-Glaswand 120 × 200 cm",
+                    "Duschthermostat mit Regen-Kopfbrause (Ø 25 cm) und 2-strahliger Handbrause"
                 ],
                 price: "ca. 4.200,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "VIGOUR white Waschtischanlage 120 cm mit Doppel-Schublade und Mineralguss-Becken",
-                    "VIGOUR white Einhand-Waschtischarmatur chrom",
-                    "LED-Lichtspiegel 120 cm mit stufenloser Lichtfarbregelung"
+                    "Waschtischanlage 120 cm mit Doppel-Schublade und Mineralguss-Becken",
+                    "Einhand-Waschtischarmatur, chrom",
+                    "LED-Lichtspiegel 120 cm mit stufenlos einstellbarer Lichtfarbe"
                 ],
                 price: "ca. 5.600,00 €"
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "VIGOUR white Wand-Tiefspül-WC ohne Spülrand mit Soft-Close Sitz",
-                    "CONEL VIS WC-Vorwandmodul 112 cm mit Glas-Betätigungsplatte"
+                    "Spülrandloses Wand-Tiefspül-WC mit Softclose-Sitz",
+                    "Vorwandelement 112 cm mit Unterputz-Spülkasten und Glas-Betätigungsplatte"
                 ],
                 price: "ca. 1.650,00 €"
             },
             {
                 category: "Heizung & Zubehör",
                 items: [
-                    "COSMO Wien Designheizkörper drehbar, 175,4 x 60 cm",
-                    "VIGOUR white Design-Accessoires-Set"
+                    "Drehbarer Design-Badheizkörper 175,4 × 60 cm",
+                    "Design-Accessoires-Set"
                 ],
                 price: "ca. 2.350,00 €"
             }
@@ -448,62 +448,62 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/02.webp",
         highlights: [
-            "Möbel-Doppelwaschtisch 140 cm mit PflegePlus & LED-Lichtspiegel (2.700–6.500 K)",
-            "Große Stahl-Badewanne 190 x 90 cm mit Wasserzulauffunktion",
-            "Bodengleiche Walk-In Dusche mit VIGOUR individual 3.0 Rinne (100 cm)",
-            "VIGOUR vogue LED-Kopfbrause dropless 30 cm",
-            "COSMO Wien Design-Badheizkörper drehbar (175,4 x 75 cm)"
+            "Möbel-Doppelwaschtisch 140 cm mit pflegeleichter Oberfläche & LED-Lichtspiegel (2.700–6.500 K)",
+            "Große Stahl-Badewanne 190 × 90 cm mit Wannenfüllung über den Überlauf",
+            "Bodengleiche Walk-In-Dusche mit Edelstahl-Duschrinne 100 cm",
+            "LED-Kopfbrause Ø 30 cm mit Nachtropf-Stopp",
+            "Drehbarer Design-Badheizkörper 175,4 × 75 cm"
         ],
         components: [
             {
                 category: "Badewannen-Anlage",
                 items: [
-                    "VIGOUR derby Stahl-Badewanne, 190 x 90 cm, Mittelablauf, weiß, mit Wannenträger und Ab-/Überlaufgarnitur mit Wasserzulauf-Funktionseinheit",
-                    "VIGOUR white Badearmatur und Unterputzkörper mit Wandanschlussbogen, 1-strahlige Stabhandbrause und Design-Brauseschlauch verchromt"
+                    "Stahl-Badewanne 190 × 90 cm, Mittelablauf, weiß, mit Wannenträger und Ab- und Überlaufgarnitur mit integriertem Wasserzulauf",
+                    "Unterputz-Wannenarmatur mit Wandanschlussbogen, 1-strahlige Stabhandbrause und Design-Brauseschlauch, verchromt"
                 ],
                 price: "ca. 2.799,00 €"
             },
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "VIGOUR individual 3.0 Designrinne 100 cm, Edelstahl mit Designrost",
-                    "VIGOUR vogue Duschsystem Thermostat mit LED-Kopfbrause dropless (30 cm), Design-Brauseschlauch verchromt und VIGOUR individual 4.0 2-strahlige Handbrause (12 cm)",
-                    "VIGOUR individual 4.0 Wandbrausehalter eckig, verchromt",
-                    "VIGOUR individual 5.0 Pendeltür mit vogue Scharnierdesign für Nische, ESG klar, PflegePLUS chrom inkl. Aufmaß und Montage"
+                    "Edelstahl-Duschrinne 100 cm mit Designrost",
+                    "Thermostat-Duschsystem mit LED-Kopfbrause Ø 30 cm (Nachtropf-Stopp), Design-Brauseschlauch verchromt und 2-strahliger Handbrause Ø 12 cm",
+                    "Eckiger Wandbrausehalter, verchromt",
+                    "Pendeltür mit Design-Scharnieren für Nischeneinbau, ESG klar mit Abperl-Beschichtung, chrom, inkl. Aufmaß und Montage"
                 ],
                 price: "ca. 5.117,00 €"
             },
             {
                 category: "Waschtisch-Anlage",
                 items: [
-                    "VIGOUR white Mineralguss Möbel-Doppelwaschtisch, 140 x 49 cm, weiß mit PflegePLUS und Eckventil",
-                    "VIGOUR white Waschtischunterschrank-Aufsatz, 56,6 x 50 x 140 cm, samtweiß matt",
-                    "VIGOUR white Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
-                    "VIGOUR white LED-Lichtspiegel mit Lichtband oben, 140 x 75 cm, Farbwechsel 2700-6500K (kalt/warm)"
+                    "Mineralguss-Möbel-Doppelwaschtisch 140 × 49 cm, weiß mit pflegeleichter Oberfläche, inkl. Eckventilen",
+                    "Waschtischunterschrank 56,6 × 50 × 140 cm, samtweiß matt",
+                    "Einhand-Waschtischarmatur mit Ablaufgarnitur, verchromt",
+                    "LED-Lichtspiegel 140 × 75 cm mit Lichtband oben und einstellbarer Lichtfarbe 2.700–6.500 K (warm/kalt)"
                 ],
                 price: "ca. 5.386,00 €"
             },
             {
                 category: "WC-Anlage",
                 items: [
-                    "VIGOUR white Wand-Tiefspül-WC ohne Spülrand, unsichtbare Befestigung, weiß mit PflegePLUS, WC-Sitz mit Absenkautomatik und Edelstahl-Scharnieren sowie Schallschutzset",
-                    "CONEL VIS WC-Element mit UP-Spülkasten, 112 cm",
-                    "VIGOUR AI Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
+                    "Spülrandloses Wand-Tiefspül-WC mit verdeckter Befestigung, weiß mit pflegeleichter Glasur, WC-Sitz mit Absenkautomatik und Edelstahlscharnieren sowie Schallschutzset",
+                    "Vorwandelement mit Unterputz-Spülkasten (112 cm)",
+                    "Betätigungsplatte für 2-Mengen-Spülung (Glas weiß / Kunststoff weiß)"
                 ],
                 price: "ca. 1.512,00 €"
             },
             {
                 category: "Badheizkörper",
                 items: [
-                    "COSMO Wien Design-Badheizkörper drehbar, 175,4 x 75 cm, RAL 9016"
+                    "Drehbarer Design-Badheizkörper 175,4 × 75 cm (RAL 9016)"
                 ],
                 price: "ca. 1.668,00 €"
             },
             {
                 category: "Accessoires",
                 items: [
-                    "VIGOUR white Papierhalter ohne Deckel und Wand-Bürstengarnitur, verchromt mit Behälter aus weißer Keramik",
-                    "VIGOUR white Handtuchhalter 1-armig starr (48 cm) und Wand-Seifenspender mit weißer Keramik, verchromt"
+                    "Papierhalter ohne Deckel und Wand-WC-Bürstengarnitur, verchromt, mit Behälter aus weißer Keramik",
+                    "Handtuchhalter 1-armig, starr (48 cm), und Wand-Seifenspender mit weißer Keramik, verchromt"
                 ],
                 price: "ca. 749,00 €"
             }
@@ -526,44 +526,44 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/03.webp",
         highlights: [
-            "High-End Dusch-WC mit Gesäßdusche, Geruchsabsaugung und Warmluftföhn",
-            "Bodengleiche Walk-In Rainshower mit Decken-LED & rahmenloser Duka Glasfront",
+            "Dusch-WC mit Gesäßdusche, Geruchsabsaugung und Warmluftföhn",
+            "Bodengleiche Walk-In-Regendusche mit Decken-LED & rahmenloser Glasfront",
             "Maßgefertigter Mineralwerkstoff-Waschtisch mit Echtholz-Unterschrank",
-            "Smarter LED-Lichtspiegel mit Touch-Steuerung und Anti-Beschlag-Heizung",
-            "Smarte Fußbodentemperierung und Design-Heizpaneel"
+            "LED-Lichtspiegel mit Touch-Steuerung und Spiegelheizung gegen Beschlag",
+            "Elektrische Fußbodentemperierung und Design-Heizpaneel"
         ],
         components: [
             {
                 category: "Dusch-Anlage & Spa",
                 items: [
-                    "Bodengleiche Walk-In Erlebnisdusche mit integriertem Deckenregenpaneel und Farb-Lichttherapie",
-                    "Duka rahmenlose Einscheibensicherheitsglas-Front (100 x 210 cm) mit Spezial-Lotuseffekt",
-                    "Unterputz-Thermostatbatterie mit digitaler Temperatureinstellung"
+                    "Bodengleiche Walk-In-Dusche mit integriertem Decken-Regenpaneel und farbiger LED-Beleuchtung",
+                    "Rahmenlose Glasfront aus Einscheibensicherheitsglas (100 × 210 cm) mit Abperl-Beschichtung",
+                    "Unterputz-Thermostat mit digitaler Temperatureinstellung"
                 ],
                 price: "ca. 4.800,00 €"
             },
             {
                 category: "Waschtisch & Möbel",
                 items: [
-                    "Maßgefertigter Waschtisch aus edlem Mineralwerkstoff mit Echtholz-Unterbau (Eiche natur oder Räuchereiche)",
-                    "Designer-Armatur in Gunmetal oder gebürstetem Messing",
-                    "Smart-LED-Spiegel mit integrierter Uhr, Bluetooth-Sound und Heizfolie"
+                    "Maßgefertigter Waschtisch aus Mineralwerkstoff mit Echtholz-Unterbau (Eiche natur oder Räuchereiche)",
+                    "Design-Waschtischarmatur in Gunmetal oder gebürstetem Messing",
+                    "LED-Spiegel mit integrierter Uhr, Bluetooth-Lautsprecher und Spiegelheizung"
                 ],
                 price: "ca. 4.900,00 €"
             },
             {
                 category: "Dusch-WC der Spitzenklasse",
                 items: [
-                    "Premium Dusch-WC mit Funkfernbedienung, oszillierender Komfortdusche, Sitzheizung und Selbstreinigung",
-                    "CONEL VIS UP-Vorwandelement mit automatischer Geruchsabsaugung und Glas-Betätigungsplatte"
+                    "Dusch-WC mit Funkfernbedienung, oszillierender Komfortdusche, Sitzheizung und Selbstreinigung",
+                    "Unterputz-Vorwandelement mit Geruchsabsaugung und Glas-Betätigungsplatte"
                 ],
                 price: "ca. 3.200,00 €"
             },
             {
                 category: "Heizung & Licht",
                 items: [
-                    "COSMO Flach-Designheizkörper und elektrische Fußbodentemperierung",
-                    "Indirekte LED-Schattenfugenbeleuchtung"
+                    "Flacher Design-Heizkörper und elektrische Fußbodentemperierung",
+                    "Indirekte LED-Beleuchtung in Schattenfugen"
                 ],
                 price: "ca. 1.600,00 €"
             }
@@ -582,17 +582,17 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/04.webp",
         highlights: [
-            "Ergonomische Mineralguss-Badewanne mit Unterputz-Kaskadeneinlauf",
-            "Walk-In Regendusche mit VIGOUR individual Deckenpaneel & Duka Glas",
-            "Doppelwaschtischanlage 120 cm samtweiß mit ambienter LED-Beleuchtung",
-            "Intelligentes Dusch-WC mit Fernbedienung & Nachtlicht",
-            "COSMO Design-Wandpaneel mit programmierbarem Raumthermostat"
+            "Ergonomische Mineralguss-Badewanne mit Unterputz-Schwallauslauf",
+            "Walk-In-Regendusche mit Deckenbrause & rahmenloser Glasabtrennung",
+            "Doppelwaschtischanlage 120 cm samtweiß mit LED-Ambientebeleuchtung",
+            "Dusch-WC mit Fernbedienung & Nachtlicht",
+            "Design-Heizpaneel mit programmierbarem Raumthermostat"
         ],
         components: [
             {
                 category: "Badewannen & Spa",
                 items: [
-                    "Mineralguss-Designwanne mit samtig-warmer Haptik und Schwallauslauf aus der Wand",
+                    "Mineralguss-Designwanne mit samtig-warmer Oberfläche und Schwallauslauf aus der Wand",
                     "Unterputz-Thermostatarmatur mit Stabhandbrause"
                 ],
                 price: "ca. 4.600,00 €"
@@ -600,8 +600,8 @@ export const MUSTERBAEDER = [
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "VIGOUR individual Walk-In Dusche mit Decken-Regenkopfbrause und Wanneneinstieg bodengleich",
-                    "Duka rahmenlose Glasabtrennung 120 x 205 cm"
+                    "Bodengleiche Walk-In-Dusche mit Decken-Regenkopfbrause",
+                    "Rahmenlose Glasabtrennung 120 × 205 cm"
                 ],
                 price: "ca. 5.100,00 €"
             },
@@ -609,16 +609,16 @@ export const MUSTERBAEDER = [
                 category: "Doppelwaschtisch & Möbel",
                 items: [
                     "Doppelbecken-Möbelanlage 120 cm mit Softclose-Auszügen und matter Oberfläche",
-                    "2 Designer-Waschtischarmaturen Unterputz",
-                    "Großflächiger LED-Lichtspiegel mit warm/kalt Dimmung"
+                    "2 Unterputz-Waschtischarmaturen im Design-Look",
+                    "Großflächiger LED-Lichtspiegel, dimmbar, mit einstellbarer Lichtfarbe (warm/kalt)"
                 ],
                 price: "ca. 4.900,00 €"
             },
             {
                 category: "Dusch-WC & Heizung",
                 items: [
-                    "Komfort-Dusch-WC mit verdeckten Anschlüssen und CONEL VIS Modul",
-                    "COSMO Design-Heizwand und Fußboden-Heizsystem"
+                    "Dusch-WC mit verdeckten Anschlüssen und Unterputz-Vorwandelement",
+                    "Design-Heizpaneel und Fußbodenheizung"
                 ],
                 price: "ca. 4.300,00 €"
             }
@@ -637,41 +637,41 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/01.webp",
         highlights: [
-            "Freistehende Mineralguss-Badewanne mit Bodenstandarmatur",
-            "Großzügige Walk-In Dusche mit VIGOUR individual Decken-Regenhimmel",
-            "Designer-Waschtisch 140 cm in Mattlack mit LED-Schattenfuge",
-            "Komfort-Dusch-WC mit Warmluftföhn & Selbstreinigung",
+            "Freistehende Mineralguss-Badewanne mit Standarmatur",
+            "Großzügige Walk-In-Dusche mit Decken-Regenhimmel",
+            "Design-Waschtisch 140 cm in Mattlack mit LED-Schattenfuge",
+            "Dusch-WC mit Warmluftföhn & Selbstreinigung",
             "Design-Badheizkörper mit integriertem Handtuchwärmer"
         ],
         components: [
             {
                 category: "Freistehende Wanne",
                 items: [
-                    "Freistehende Luxus-Badewanne aus mattem Mineralguss mit Bodenstand-Armatur in Mattschwarz oder Chrom"
+                    "Freistehende Badewanne aus mattem Mineralguss mit Standarmatur in Mattschwarz oder Chrom"
                 ],
                 price: "ca. 5.800,00 €"
             },
             {
                 category: "Dusch-Anlage",
                 items: [
-                    "Bodengleiche Walk-In Duschzone mit VIGOUR individual Decken-Regenhimmel (40 x 40 cm)",
-                    "Duka 140 cm rahmenlose Echtglaswand mit Lotuseffekt"
+                    "Bodengleiche Walk-In-Duschzone mit Decken-Regenhimmel 40 × 40 cm",
+                    "Rahmenlose Echtglaswand 140 cm mit Abperl-Beschichtung"
                 ],
                 price: "ca. 6.200,00 €"
             },
             {
                 category: "Waschtisch & Möbel",
                 items: [
-                    "140 cm Designer-Doppelwaschtisch in samtmatten Trendfarben mit Push-to-Open Auszügen",
-                    "2 UP-Waschtischmischer und doppelter LED-Lichtspiegel mit Gestensteuerung"
+                    "Design-Doppelwaschtisch 140 cm in samtmatten Lackfarben mit Push-to-Open-Auszügen",
+                    "2 Unterputz-Waschtischmischer und doppelter LED-Lichtspiegel mit Gestensteuerung"
                 ],
                 price: "ca. 5.400,00 €"
             },
             {
                 category: "Dusch-WC & Raumwärme",
                 items: [
-                    "High-End Dusch-WC mit beheizbarem Sitz, Fernbedienung und Nachtlicht",
-                    "COSMO Design-Wandheizkörper & elektronische Fußbodenheizung"
+                    "Dusch-WC mit beheizbarem Sitz, Fernbedienung und Nachtlicht",
+                    "Design-Wandheizkörper & elektrische Fußbodenheizung"
                 ],
                 price: "ca. 4.000,00 €"
             }
@@ -690,25 +690,25 @@ export const MUSTERBAEDER = [
         vatNote: "inkl. gesetzl. MwSt.",
         image: "/images/uploads/05.webp",
         highlights: [
-            "Freistehende Mineralguss-Badewanne mit Bodenstandarmatur",
-            "Großformatige Walk-In Erlebnisdusche mit Decken-Regenpaneel & Farb-LED",
-            "Möbel-Doppelwaschtisch in Echtholz-/Mattlack-Ausführung mit Doppel-LED-Spiegel",
-            "Dusch-WC der Spitzenklasse mit Gesäßdusche, Geruchsabsaugung & Föhn",
-            "Individuelle Lichtzonen und Smart-Home Steuerung"
+            "Freistehende Mineralguss-Badewanne mit Standarmatur",
+            "Großformatige Walk-In-Dusche mit Decken-Regenpaneel & farbiger LED-Beleuchtung",
+            "Möbel-Doppelwaschtisch in Echtholz- oder Mattlack-Ausführung mit Doppel-LED-Spiegel",
+            "Dusch-WC mit Gesäßdusche, Geruchsabsaugung & Warmluftföhn",
+            "Individuelle Lichtzonen und Smart-Home-Steuerung"
         ],
         components: [
             {
                 category: "Spa & Badewanne",
                 items: [
-                    "Freistehende Luxus-Badewanne in mattem Mineralwerkstoff mit Bodenstand-Armatur"
+                    "Freistehende Badewanne aus mattem Mineralwerkstoff mit Standarmatur"
                 ],
                 price: "ca. 6.200,00 €"
             },
             {
                 category: "Erlebnis-Dusche",
                 items: [
-                    "Walk-In Duschanlage mit VIGOUR individual Decken-Regenbrause und elektronischer Thermostatsteuerung",
-                    "Duka rahmenlose Echtglas-Architektur 140 x 210 cm"
+                    "Walk-In-Duschanlage mit Decken-Regenbrause und elektronischer Thermostatsteuerung",
+                    "Rahmenlose Echtglas-Abtrennung 140 × 210 cm"
                 ],
                 price: "ca. 7.900,00 €"
             },
@@ -716,15 +716,15 @@ export const MUSTERBAEDER = [
                 category: "Doppelwaschtisch & Dusch-WC",
                 items: [
                     "Maßgefertigter Doppelwaschtisch mit samtig-matter Oberfläche",
-                    "Intelligentes Dusch-WC mit Fernbedienung und Selbstreinigungsfunktion"
+                    "Dusch-WC mit Fernbedienung und Selbstreinigungsfunktion"
                 ],
                 price: "ca. 8.400,00 €"
             },
             {
                 category: "Heizung & Licht",
                 items: [
-                    "COSMO Design-Wandheizkörper & Fußboden-Temperierung",
-                    "Integrierte LED-Schattenfugen-Beleuchtung"
+                    "Design-Wandheizkörper & Fußbodentemperierung",
+                    "Integrierte LED-Beleuchtung in Schattenfugen"
                 ],
                 price: "ca. 2.300,00 €"
             }
@@ -742,23 +742,22 @@ export const ROOM_SIZES = [
 export const QUALITY_TIERS = [
     {
         name: "Basic",
-        subtitle: "Solide Markenqualität zu fairen Einstiegspreisen",
+        subtitle: "Solide Qualität zu fairen Einstiegspreisen",
         priceRange: "4.500 € – 8.000 €",
-        description: "Hochwertige Sanitärausstattung mit VIGOUR derby/clivia, CONEL und COSMO Komponenten. Robust, pflegeleicht und langlebig."
+        description: "Solide Sanitärausstattung mit Stahl-Duschwannen, Wand-WCs mit Vorwandelement und Design-Badheizkörpern. Robust, pflegeleicht und langlebig."
     },
     {
         name: "Premium",
         subtitle: "Gehobener Komfort mit edlen Oberflächen",
         priceRange: "9.000 € – 18.000 €",
-        description: "Bodengleiche Walk-In Duschen, VIGOUR white Design-Waschtische, Duka Echtglaswände und drehbare Designheizkörper."
+        description: "Bodengleiche Walk-In-Duschen mit Edelstahlrinne, Möbelwaschtische mit LED-Lichtspiegel, Echtglaswände und drehbare Design-Badheizkörper."
     },
     {
         name: "Luxus",
         subtitle: "High-End Spa & Maßanfertigungen ohne Kompromisse",
         priceRange: "ab 20.000 €",
-        description: "Freistehende Wannen, Dusch-WCs mit Komfortfunktionen, VIGOUR individual Deckenpaneele und smarte LED-Lichtarchitektur."
+        description: "Freistehende Wannen, Dusch-WCs mit Komfortfunktionen, Decken-Regenpaneele und smarte LED-Lichtarchitektur."
     }
 ];
 
 export default MUSTERBAEDER;
-

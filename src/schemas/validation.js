@@ -28,9 +28,9 @@ export const blogPostSchema = z.object({
 
 // Map storage keys to schemas
 export const schemas = {
-    'baris_content_projects': z.object({
+    'tezgel_content_projects': z.object({
         projects: z.array(projectSchema),
         categories: z.array(z.any())
     }).or(z.array(projectSchema)), // Handle both formats
-    'baris_content_blog_posts': z.array(blogPostSchema),
+    'tezgel_content_blog_posts': z.array(blogPostSchema),
 };

@@ -3,6 +3,7 @@
 // Jeder Pfad verweist auf eine real generierte Route.
 
 import { CITIES } from '@/config/cities';
+import { TOPIC_HUBS } from '@/config/topics';
 
 export const navigationLinks = [
     {
@@ -51,13 +52,25 @@ export const navigationLinks = [
                     { name: 'Balkon & Terrasse', path: '/leistungen/aussen', desc: 'Frostsichere Keramik auf Stelzlagern' },
                     { name: 'Untergrund & DIN 18534', path: '/leistungen/untergrund', desc: 'Estrichspachtelung & Verbundabdichtung' }
                 ]
+            },
+            {
+                category: 'Fachthemen & Service',
+                items: [
+                    ...TOPIC_HUBS.filter((hub) => hub.id !== 'service').map((hub) => ({
+                        name: hub.name,
+                        path: hub.path,
+                        desc: hub.description
+                    })),
+                    { name: 'Fliesenreparatur', path: '/fliesenreparatur', desc: 'Einzelne Fliesen, Fugen, Sockel' },
+                    { name: 'Schadensanalyse', path: '/schadensanalyse', desc: 'Ursachen vor Ort klären' }
+                ]
             }
         ],
         featured: {
-            eyebrow: 'Vor-Ort-Aufmaß',
-            title: 'Kostenfrei bei Ihnen vor Ort',
-            text: 'Deniz Tezgel prüft Untergrund, Restfeuchte und Maße persönlich – danach erhalten Sie ein Festpreisangebot.',
-            cta: { label: 'Aufmaß anfragen', path: '/kontakt' }
+            eyebrow: 'Konfigurator',
+            title: 'Ihr Projekt in 4 Schritten',
+            text: 'Raum, Untergrund, Format und Fläche wählen – Deniz Tezgel meldet sich mit einem Termin für das kostenfreie Vor-Ort-Aufmaß.',
+            cta: { label: 'Zum Konfigurator', path: '/fliesen/konfigurator' }
         }
     },
     {
@@ -136,12 +149,10 @@ export const footerBathLinks = [
 
 export const footerServiceLinks = [
     { name: 'Alle Fachgewerke', path: '/leistungen' },
-    { name: 'Bäder & Wellness', path: '/leistungen/bad' },
-    { name: 'Wohnbereiche, Treppen & Neubau', path: '/leistungen/wohnen' },
-    { name: 'Balkon & Terrasse (Stelzlager)', path: '/leistungen/aussen' },
-    { name: 'Untergrund & DIN 18534', path: '/leistungen/untergrund' },
-    { name: 'Vor-Ort-Beratung', path: '/beratung' },
-    { name: 'Förderung', path: '/foerderung' }
+    ...TOPIC_HUBS.filter((hub) => hub.id !== 'service').map((hub) => ({ name: hub.name, path: hub.path })),
+    { name: 'Fliesen-Konfigurator', path: '/fliesen/konfigurator' },
+    { name: 'Schadensanalyse', path: '/schadensanalyse' },
+    { name: 'Fliesenreparatur', path: '/fliesenreparatur' }
 ];
 
 export const footerLocationLinks = [
@@ -157,6 +168,8 @@ export const footerCompanyLinks = [
     { name: 'Referenzen & Bewertungen', path: '/referenzen' },
     { name: 'Ratgeber & Blog', path: '/blog' },
     { name: 'Häufige Fragen', path: '/faq' },
+    { name: 'Vor-Ort-Beratung', path: '/beratung' },
+    { name: 'Förderung', path: '/foerderung' },
     { name: 'Downloads', path: '/downloads' },
     { name: 'Partner', path: '/partner' },
     { name: 'Karriere', path: '/karriere' },

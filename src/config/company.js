@@ -132,7 +132,7 @@ export const COMPANY_DATA = {
     // 3 Vertrauens-Säulen
     trustPillars: [
         {
-            title: "Zertifizierte Verbundabdichtung (DIN 18534)",
+            title: "Normgerechte Verbundabdichtung (DIN 18534)",
             description: "Normgerechte Abdichtung im Verbund für Walk-In-Duschen, Nassbereiche und Terrassen. Lückenloser Schutz vor Feuchtigkeitsschäden.",
             icon: ShieldCheck
         },
@@ -159,7 +159,7 @@ export const COMPANY_DATA = {
             description: "Spezialwerkzeuge, moderne Vakuum-Heber und exaktes Nivelliersystem für planebene Oberflächen ohne Überzähne."
         },
         {
-            title: "Zertifizierte Verbundabdichtung nach DIN 18534",
+            title: "Normgerechte Verbundabdichtung nach DIN 18534",
             description: "Lückenlose Abdichtungsbahnen und Dichtmanschetten in Nassräumen für dauerhafte Dichtigkeit und Schimmelschutz."
         },
         {
@@ -187,7 +187,7 @@ export const COMPANY_DATA = {
 
 export const values = [
     { icon: Award, title: "HWK Wiesbaden Mitglied", description: "Offiziell eingetragener Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung." },
-    { icon: ShieldCheck, title: "DIN 18534 Abdichtung", description: "Zertifizierte Verbundabdichtung für absolute Dichtigkeit in Nassbereichen." },
+    { icon: ShieldCheck, title: "DIN 18534 Abdichtung", description: "Normgerechte Verbundabdichtung für dauerhaft dichte Nassbereiche." },
     { icon: Sparkles, title: "Staubschutz-Garantie", description: "Saubere Baustellenführung mit Schutzvliesen und moderner Staubabsaugung." },
     { icon: Clock, title: "Termintreue & Festpreis", description: "Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge." },
     { icon: Ruler, title: "Großformat-Präzision", description: "Nivelliersystem für absolut planebene XXL-Fliesen und harmonische Fugenbilder." },
@@ -233,7 +233,7 @@ export const historyTimeline = [
     },
     {
         year: "2019",
-        title: "Zertifizierung Verbundabdichtung DIN 18534",
+        title: "Verbundabdichtung nach DIN 18534 als Standard",
         description: "Normgerechte Abdichtungssysteme für bodengleiche Walk-In-Duschen und Feuchträume."
     },
     {

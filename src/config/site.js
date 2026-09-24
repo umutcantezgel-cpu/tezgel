@@ -4,7 +4,7 @@ import { COMPANY_DATA } from './company';
 export const siteConfig = {
     name: COMPANY_DATA.legalName,
     tradeName: COMPANY_DATA.tradeName,
-    description: 'Fliesenverlegung Tezgel ist Ihr Meisterbetrieb für fugenarme Großformate, luxuriöse Badsanierung, Wohnbereiche, Terrassen und zertifizierte DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+    description: 'Fliesenverlegung Tezgel ist Ihr Meisterbetrieb für fugenarme Großformate, luxuriöse Badsanierung, Wohnbereiche, Terrassen und normgerechte DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
     url: 'https://tezgel.de',
 
     contact: {

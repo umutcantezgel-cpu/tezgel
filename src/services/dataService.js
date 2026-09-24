@@ -15,14 +15,14 @@ import { teamMembers } from '@/config/team';
 import { schemas as validationSchemas } from '@/schemas/validation';
 
 const STORAGE_KEYS = {
-    SITE: 'baris_content_site',
-    SERVICES: 'baris_content_services',
-    COMPANY: 'baris_content_company',
-    PROJECTS: 'baris_content_projects',
-    BLOG_CATEGORIES: 'baris_content_blog_categories',
-    BLOG_POSTS: 'baris_content_blog_posts',
-    TEAM: 'baris_content_team',
-    SETTINGS: 'baris_content_settings'
+    SITE: 'tezgel_content_site',
+    SERVICES: 'tezgel_content_services',
+    COMPANY: 'tezgel_content_company',
+    PROJECTS: 'tezgel_content_projects',
+    BLOG_CATEGORIES: 'tezgel_content_blog_categories',
+    BLOG_POSTS: 'tezgel_content_blog_posts',
+    TEAM: 'tezgel_content_team',
+    SETTINGS: 'tezgel_content_settings'
 };
 
 // Adapter to map COMPANY_DATA to legacy siteConfig structure for UI compatibility
@@ -141,7 +141,7 @@ export const dataService = {
     clearAll() {
         if (typeof window !== 'undefined') {
             Object.values(STORAGE_KEYS).forEach(key => localStorage.removeItem(key));
-            localStorage.removeItem('baris_auth_config'); // Also clear auth config
+            localStorage.removeItem('tezgel_auth_config');
             // Don't clear session automatically, let frontend handle it related to reload
             window.dispatchEvent(new Event('content-updated'));
         }

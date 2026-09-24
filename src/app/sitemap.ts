@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
-import { posts, isHvacPost } from '@/config/posts';
+import { posts } from '@/config/posts';
 import { SERVICES } from '@/config/services';
-import { PORTFOLIO_PROJECTS, isLegacyProject } from '@/config/projects';
+import { PORTFOLIO_PROJECTS } from '@/config/projects';
+import { TOPIC_PAGES } from '@/config/topics';
 import { CITIES } from '@/config/cities';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { SITE_URL } from '@/lib/schema';
@@ -11,9 +12,8 @@ export const dynamic = 'force-static';
 type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequency']>;
 
 /**
- * Indexable Tezgel routes only. Legacy HVAC routes (/heizung, /lueftung,
- * /haustechnik, /energie, /gewerbe, /energieberatung, /notdienst) are
- * noindexed and intentionally not listed here; /login and /termin are
+ * Static routes; topic hubs, services, cities, Musterbäder, references and
+ * blog posts are generated from their configs below. /login and /termin are
  * utility pages without search value.
  */
 const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, priority: number]> = [
@@ -81,9 +81,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
     ...CITIES.map((city) => entry(`/standorte/${city.slug}`, 'monthly', 0.8)),
     ...MUSTERBAEDER.map((bad) => entry(`/bad/musterbaeder/${bad.slug}`, 'monthly', 0.7)),
-    ...PORTFOLIO_PROJECTS.filter((project) => !isLegacyProject(project)).map((project) =>
-      entry(`/referenzen/${project.id}`, 'monthly', 0.6)
-    ),
-    ...posts.filter((post) => !isHvacPost(post)).map((post) => entry(`/blog/${post.slug}`, 'monthly', 0.6)),
+    ...TOPIC_PAGES.map((page) => entry(page.path, 'monthly', page.path.split('/').length === 2 ? 0.8 : 0.7)),
+    ...PORTFOLIO_PROJECTS.map((project) => entry(`/referenzen/${project.id}`, 'monthly', 0.5)),
+    ...posts.map((post) => entry(`/blog/${post.slug}`, 'monthly', 0.6)),
   ];
 }
