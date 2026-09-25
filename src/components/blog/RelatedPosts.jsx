@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IconWrapper } from '@/utils/iconMapper';
 
 /**
@@ -60,7 +61,7 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                             {/* Image */}
                             {image ? (
                                 <div className="h-32 rounded-tile-sm overflow-hidden mb-4">
-                                    <img
+                                    <Image
                                         src={image}
                                         alt={post.title}
                                         width={300}
@@ -100,7 +101,7 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
 
                             {/* Read More */}
                             <div className="flex items-center text-orange-600 text-sm font-bold pointer-events-none">
-                                Weiterlesen
+                                Artikel lesen
                                 <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </div>
                         </div>

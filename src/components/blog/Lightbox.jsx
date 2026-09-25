@@ -36,6 +36,7 @@ const Lightbox = ({ src, alt, onClose }) => {
                 className="relative max-w-[90vw] max-h-[90vh] overflow-hidden rounded-tile-md shadow-2xl"
                 onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
             >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src={src}
                     alt={alt}

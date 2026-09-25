@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, ArrowRight } from 'lucide-react';
 import { LinkedinLogo as Linkedin, TwitterLogo as Twitter, FacebookLogo as Facebook } from '@phosphor-icons/react';
 import { COMPANY_DATA } from '@/config/company';
@@ -39,7 +40,7 @@ const BlogAuthorCard = ({ author }) => {
                 {/* Avatar */}
                 <div className="flex-shrink-0">
                     {authorData.avatar ? (
-                        <img
+                        <Image
                             src={authorData.avatar}
                             alt={authorData.name}
                             width={96}

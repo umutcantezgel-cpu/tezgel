@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Kontakt & Vor-Ort-Aufmaß in Aßlar',
-  description: 'Kontaktieren Sie Fliesenverlegung Tezgel in Aßlar: Fliesenverlegung, Badsanierung und DIN 18534 Abdichtung – persönliche Beratung und kostenfreies Vor-Ort-Aufmaß in Aßlar, Wetzlar und Mittelhessen.',
+  description: 'Kontaktieren Sie Fliesenverlegung Tezgel in Aßlar: Fliesenverlegung, Badsanierung & DIN 18534 Abdichtung mit persönlicher Beratung und Aufmaß vor Ort.',
   path: '/kontakt',
 });
 

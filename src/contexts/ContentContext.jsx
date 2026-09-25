@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { dataService, KEYS } from '@/services/dataService';
+import { dataService } from '@/services/dataService';
 
 const ContentContext = createContext(null);
 

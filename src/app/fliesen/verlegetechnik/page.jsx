@@ -335,9 +335,9 @@ export default function VerlegetechnikPage() {
                 </p>
             </section>
 
-            {/* Weiterlesen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 relative z-10" aria-labelledby="weiterlesen-heading">
-                <h2 id="weiterlesen-heading" className="text-xl font-black text-slate-900 mb-5">Weiterlesen</h2>
+            {/* Weiterführende Ratgeber */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 relative z-10" aria-labelledby="ratgeber-heading">
+                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-5">Weiterführende Ratgeber zur Verlegetechnik</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {CROSS_LINKS.map((link) => (
                         <li key={link.href}>

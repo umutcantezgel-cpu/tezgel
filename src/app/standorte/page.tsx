@@ -9,7 +9,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Standorte & Einsatzgebiete in Mittelhessen',
-  description: 'Fliesenverlegung, Badsanierung und DIN 18534 Abdichtung vom Fachbetrieb aus Aßlar – im Einsatz in Wetzlar, Gießen, Marburg, Limburg, Herborn und im gesamten Lahn-Dill-Kreis.',
+  description: 'Fliesenverlegung, Badsanierung & DIN 18534 Abdichtung vom Fachbetrieb aus Aßlar: Ihr Fliesenleger für Wetzlar, Gießen, Herborn & den Lahn-Dill-Kreis.',
   path: '/standorte',
 });
 

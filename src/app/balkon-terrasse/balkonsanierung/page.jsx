@@ -353,10 +353,10 @@ export default function BalkonsanierungPage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="balkonsanierung-weiterlesen-heading">
-                    <h2 id="balkonsanierung-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
+                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="balkonsanierung-ratgeber-heading">
+                    <h2 id="balkonsanierung-ratgeber-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
                         <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                        Weiterlesen
+                        Weiterführende Ratgeber zur Balkonsanierung
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {FURTHER_READING.map((link) => (

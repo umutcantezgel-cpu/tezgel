@@ -297,7 +297,7 @@ export default function BadProjektCheck() {
                                 <p>
                                     Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.{' '}
                                     <Link href="/bad/barrierefreies-bad" className="font-bold text-sky-800 hover:underline underline-offset-2">
-                                        Mehr erfahren
+                                        Details zum barrierefreien Bad &amp; Zuschüssen
                                     </Link>
                                 </p>
                             </div>

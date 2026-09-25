@@ -19,9 +19,9 @@ import { REVIEWS } from '@/config/reviews';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
-    title: 'Barrierefreie Badmodernisierung Aßlar & Wetzlar | Bis 4.180 € Pflegekassenzuschuss',
-    description: 'Altersgerechte und barrierefreie Badmodernisierung nach DIN 18040-2 in Aßlar, Wetzlar & Umgebung. Bodengleiche Duschen, Dusch-WC & bis zu 4.180 € Zuschuss der Pflegekasse.',
-    alternates: { canonical: '/bad/barrierefreies-bad' }
+    title: 'Barrierefreie Badsanierung & Zuschüsse',
+    description: 'Barrierefreie Badsanierung nach DIN 18040-2 in Aßlar & Wetzlar: Bodengleiche Walk-In Duschen & bis zu 4.180 € Zuschuss der Pflegekasse nutzen.',
+    alternates: { canonical: 'https://tezgel.de/bad/barrierefreies-bad' }
 };
 
 const SOLUTIONS = [

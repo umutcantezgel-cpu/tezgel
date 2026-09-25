@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Clock, ArrowRight } from 'lucide-react';
 import { useContent } from '@/contexts/ContentContext';
 import { IconWrapper } from '@/utils/iconMapper';
@@ -20,7 +21,7 @@ const BlogCard = ({ post }) => {
                 <div className="relative h-52 overflow-hidden">
                     {post.image ? (
                         <>
-                            <img
+                            <Image
                                 src={post.image}
                                 alt={post.title}
                                 width={400}

@@ -21,8 +21,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
     title: 'Fliesenberatung & Materialauswahl in Gießen',
-    description: 'Persönliche Fliesenberatung für Gießen und Umgebung nach Terminvereinbarung: Formate, Oberflächen, Fugenbild und Rutschhemmung gemeinsam mit Inhaber Deniz Tezgel festlegen – Fachbetrieb aus Aßlar.',
-    alternates: { canonical: '/ausstellung/giessen' }
+    description: 'Persönliche Fliesenberatung für Gießen: Formate, Oberflächen & Fugenbild gemeinsam mit Fachbetriebsleiter Deniz Tezgel abstimmen.',
+    alternates: { canonical: 'https://tezgel.de/ausstellung/giessen' }
 };
 
 const CITY_SLUG = 'giessen';

@@ -21,8 +21,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
     title: 'Fliesenberatung & Materialauswahl in Wetzlar',
-    description: 'Persönliche Fliesenberatung für Wetzlar nach Terminvereinbarung: Formate, Oberflächen, Fugenbild und Rutschhemmung gemeinsam mit Inhaber Deniz Tezgel festlegen – Fachbetrieb aus Aßlar.',
-    alternates: { canonical: '/ausstellung/wetzlar' }
+    description: 'Persönliche Fliesenberatung für Wetzlar: Formate, Oberflächen & Fugenbild gemeinsam mit Fachbetriebsleiter Deniz Tezgel abstimmen.',
+    alternates: { canonical: 'https://tezgel.de/ausstellung/wetzlar' }
 };
 
 const CITY_SLUG = 'wetzlar';

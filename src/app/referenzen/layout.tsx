@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Referenzen & Kundenbewertungen',
-  description: 'Echte Kundenbewertungen von Fliesenverlegung Tezgel zu Bädern, Balkonen, Treppen und kompletten Häusern in Aßlar, Wetzlar und Mittelhessen – dazu typische Leistungsbeispiele.',
+  description: 'Kundenbewertungen & Referenzen von Fliesenverlegung Tezgel zu Bädern, Terrassen, Treppen und Großformaten in Aßlar, Wetzlar und Mittelhessen.',
   path: '/referenzen',
 });
 

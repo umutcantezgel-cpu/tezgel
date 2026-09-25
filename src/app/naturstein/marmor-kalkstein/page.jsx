@@ -365,10 +365,10 @@ export default function MarmorKalksteinPage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-tile-2xl p-7" aria-labelledby="marmor-weiterlesen-heading">
-                    <h2 id="marmor-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
+                <nav className="mt-10 glass-surface rounded-tile-2xl p-7" aria-labelledby="marmor-ratgeber-heading">
+                    <h2 id="marmor-ratgeber-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
                         <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                        Weiterlesen
+                        Weiterführende Ratgeber zu Marmor, Kalkstein &amp; Travertin
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {FURTHER_READING.map((link) => (

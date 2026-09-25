@@ -12,9 +12,9 @@ import { COMPANY_DATA } from '@/config/company';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
-    title: 'Badplaner | Ihr neues Bad Schritt für Schritt planen',
-    description: 'Badplanung leicht gemacht: Schritt-für-Schritt-Anleitung mit Tipps zu Raummaßen, Ausstattung, Fliesen und Licht – und persönliche Beratung beim kostenfreien Vor-Ort-Aufmaß in Aßlar, Wetzlar & Umgebung.',
-    alternates: { canonical: '/bad/badplaner' }
+    title: 'Badplaner: Bad online vorplanen',
+    description: 'Badplanung leicht gemacht: Schritt-für-Schritt mit Tipps zu Maßen, Fliesen & Licht – mit Vor-Ort-Beratung & Aufmaß in Aßlar & Wetzlar.',
+    alternates: { canonical: 'https://tezgel.de/bad/badplaner' }
 };
 
 const PLANNING_STEPS = [

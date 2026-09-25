@@ -4,9 +4,9 @@ import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
-    title: 'Badanfrage Aßlar & Wetzlar | Unverbindliches Angebot für Badsanierung anfordern',
+    title: 'Badanfrage: Angebot für Badsanierung',
     description: 'Stellen Sie in wenigen Schritten Ihre detaillierte Anfrage für eine Badsanierung in Aßlar, Wetzlar & Lahn-Dill. Kostenlose Prüfung & Vor-Ort-Beratung.',
-    alternates: { canonical: '/bad/badanfrage' }
+    alternates: { canonical: 'https://tezgel.de/bad/badanfrage' }
 };
 
 export default function BadanfragePage() {

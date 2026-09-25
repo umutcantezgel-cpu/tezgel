@@ -247,10 +247,10 @@ export default function TreppenhausPage() {
                 </div>
             </section>
 
-            {/* Weiterlesen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="treppenhaus-weiterlesen-heading">
-                <h2 id="treppenhaus-weiterlesen-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
-                    Weiterlesen
+            {/* Weiterführende Ratgeber */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="treppenhaus-ratgeber-heading">
+                <h2 id="treppenhaus-ratgeber-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
+                    Weiterführende Ratgeber zur Treppenhaussanierung
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {WEITERLESEN.map((link) => (

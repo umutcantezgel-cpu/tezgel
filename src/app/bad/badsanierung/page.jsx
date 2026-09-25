@@ -13,9 +13,9 @@ import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
-    title: 'Badsanierung Aßlar & Wetzlar | Komplettbäder in Fachqualität',
-    description: 'Badsanierung in Aßlar, Wetzlar & Lahn-Dill: Komplettbad aus einer Hand mit Festpreisgarantie, persönlicher Badplanung und staubarmer Sanierung. Jetzt unverbindlich anfragen!',
-    alternates: { canonical: '/bad/badsanierung' }
+    title: 'Badsanierung & Komplettbäder',
+    description: 'Badsanierung in Aßlar & Wetzlar: Komplettbad aus einer Hand mit Festpreisgarantie, staubarmer Ausführung & verbindlichem Bauzeitenplan.',
+    alternates: { canonical: 'https://tezgel.de/bad/badsanierung' }
 };
 
 const WORKFLOW_STEPS = [

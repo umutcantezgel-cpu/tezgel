@@ -4,9 +4,9 @@ import BadProjektCheck from '@/components/funnels/BadProjektCheck';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
-    title: 'Bad-Projektcheck | Badsanierung in 2 Minuten vorbereiten',
-    description: 'Badgröße, Sanierungsumfang, Ausstattungsniveau und Wünsche in 2 Minuten erfassen und direkt an Fliesenverlegung Tezgel senden – für Ihr Festpreisangebot nach kostenfreiem Vor-Ort-Aufmaß in Aßlar, Wetzlar & Lahn-Dill.',
-    alternates: { canonical: '/bad/projekt-check' }
+    title: 'Bad-Projektcheck: Badsanierung prüfen',
+    description: 'Badgröße, Umfang & Wünsche in 2 Minuten erfassen – für Ihr Festpreisangebot nach kostenfreiem Vor-Ort-Aufmaß in Aßlar, Wetzlar & Lahn-Dill.',
+    alternates: { canonical: 'https://tezgel.de/bad/projekt-check' }
 };
 
 export default function BadProjektCheckPage() {

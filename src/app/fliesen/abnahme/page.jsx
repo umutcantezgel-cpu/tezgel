@@ -320,8 +320,8 @@ export default function AbnahmePage() {
                 </div>
             </section>
 
-            {/* Konfigurator-CTA + Weiterlesen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-6 relative z-10" aria-labelledby="weiterlesen-heading">
+            {/* Konfigurator-CTA + Weiterführende Ratgeber */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-6 relative z-10" aria-labelledby="ratgeber-heading">
                 <div className="ceramic-hero rounded-tile-xl p-8 sm:p-10 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div>
                         <h2 className="text-2xl font-black text-slate-900">Neues Fliesenprojekt geplant?</h2>
@@ -342,7 +342,7 @@ export default function AbnahmePage() {
                     </div>
                 </div>
 
-                <h2 id="weiterlesen-heading" className="text-xl font-black text-slate-900 mb-5">Weiterlesen</h2>
+                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-5">Weiterführende Ratgeber zur Fliesenverlegung &amp; Bauabnahme</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {CROSS_LINKS.map((link) => (
                         <li key={link.href}>

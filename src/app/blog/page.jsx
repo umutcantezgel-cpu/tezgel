@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Search, Calendar, ArrowRight, Clock, BookOpen } from 'lucide-react';
 import { useContent } from '@/contexts/ContentContext';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSidebar from '@/components/blog/BlogSidebar';
-import Link from 'next/link';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -125,12 +126,15 @@ export default function BlogPage() {
                   >
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <div className="relative h-60 sm:h-72 rounded-tile-md overflow-hidden shadow-md">
-                        <img
+                        <Image
                           src={featuredPost.image}
                           alt={featuredPost.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          priority
                         />
-                        <span className="absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md">
+                        <span className="absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10">
                           Empfohlener Leitfaden
                         </span>
                       </div>

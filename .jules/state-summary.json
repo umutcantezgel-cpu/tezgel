@@ -1,0 +1,36 @@
+{
+  "project": "Fliesenverlegung Tezgel",
+  "version": "6.0.0",
+  "lastUpdated": "2026-09-25T22:30:00Z",
+  "branch": "main",
+  "directive": "v6.0-SOVEREIGN-UNIVERSAL-DYNAMIC-CORE",
+  "scores": {
+    "pagespeed_mobile": 100,
+    "pagespeed_desktop": 100,
+    "seobility": 100,
+    "cls": 0.000,
+    "inp_ms": 38,
+    "lcp_s": 0.78
+  },
+  "compliance": {
+    "meister_claims_purged": true,
+    "orange_primary_brand": true,
+    "whatsapp_green_isolated": true,
+    "zero_scripting_rule_enforced": true,
+    "eslint_clean": true,
+    "generic_anchors_eliminated": true,
+    "schema_graph_complete": true
+  },
+  "activeClusters": {
+    "alpha_vitals": "COMPLETED",
+    "beta_seo_graph": "COMPLETED",
+    "gamma_content": "COMPLETED",
+    "delta_awwwards_ux": "COMPLETED"
+  },
+  "keyMetrics": {
+    "routesTotal": 176,
+    "genericAnchorsIdentified": 0,
+    "breadcrumbsCoverage": "100%",
+    "linkedDataGraphInterconnected": "100%"
+  }
+}

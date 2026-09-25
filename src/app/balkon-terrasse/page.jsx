@@ -310,7 +310,7 @@ export default function BalkonTerrassePage() {
                                         </h3>
                                         <p className="text-sm text-slate-700 leading-relaxed mb-5">{page.desc}</p>
                                         <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-orange-800">
-                                            Weiterlesen
+                                            Mehr zu {page.name} erfahren
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                         </span>
                                     </Link>
@@ -354,10 +354,10 @@ export default function BalkonTerrassePage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="balkon-weiterlesen-heading">
-                    <h2 id="balkon-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
+                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="balkon-ratgeber-heading">
+                    <h2 id="balkon-ratgeber-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
                         <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                        Weiterlesen
+                        Weiterführende Ratgeber zu Balkon &amp; Terrasse
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {FURTHER_READING.map((link) => (

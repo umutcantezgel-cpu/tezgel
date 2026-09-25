@@ -156,31 +156,33 @@ export default async function BlogPostPage({ params }) {
                 <div className="prose-ceramic max-w-none">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
+                    /* eslint-disable @typescript-eslint/no-unused-vars */
                     components={{
-                      h1: ({ node, ...props }) => <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mt-0 mb-4" {...props} />,
-                      h2: ({ node, ...props }) => <h2 id={generateSlug(props.children)} className="text-2xl font-black text-neutral-900 mt-10 mb-4 pb-2 border-b border-neutral-200" {...props} />,
-                      h3: ({ node, ...props }) => <h3 id={generateSlug(props.children)} className="text-lg font-black text-neutral-900 mt-8 mb-3" {...props} />,
-                      ul: ({ node, ...props }) => <ul className="list-disc pl-6 mb-6 space-y-1.5 marker:text-orange-600" {...props} />,
-                      ol: ({ node, ...props }) => <ol className="list-decimal pl-6 mb-6 space-y-1.5 marker:text-orange-600 marker:font-black" {...props} />,
-                      blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-orange-600 bg-orange-50 pl-6 py-4 my-6 rounded-r-xl italic text-neutral-700 text-sm font-medium" {...props} />,
-                      table: ({ node, ...props }) => (
+                      h1: ({ _node, ...props }) => <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mt-0 mb-4" {...props} />,
+                      h2: ({ _node, ...props }) => <h2 id={generateSlug(props.children)} className="text-2xl font-black text-neutral-900 mt-10 mb-4 pb-2 border-b border-neutral-200" {...props} />,
+                      h3: ({ _node, ...props }) => <h3 id={generateSlug(props.children)} className="text-lg font-black text-neutral-900 mt-8 mb-3" {...props} />,
+                      ul: ({ _node, ...props }) => <ul className="list-disc pl-6 mb-6 space-y-1.5 marker:text-orange-600" {...props} />,
+                      ol: ({ _node, ...props }) => <ol className="list-decimal pl-6 mb-6 space-y-1.5 marker:text-orange-600 marker:font-black" {...props} />,
+                      blockquote: ({ _node, ...props }) => <blockquote className="border-l-4 border-orange-600 bg-orange-50 pl-6 py-4 my-6 rounded-r-xl italic text-neutral-700 text-sm font-medium" {...props} />,
+                      table: ({ _node, ...props }) => (
                         <div className="my-8 overflow-x-auto rounded-xl border border-neutral-200 shadow-sm">
                           <table className="w-full border-collapse text-left text-sm" {...props} />
                         </div>
                       ),
-                      thead: ({ node, ...props }) => (
+                      thead: ({ _node, ...props }) => (
                         <thead className="bg-neutral-100 text-neutral-900" {...props} />
                       ),
-                      th: ({ node, ...props }) => (
+                      th: ({ _node, ...props }) => (
                         <th className="px-5 py-3.5 font-black uppercase tracking-wider text-xs border-b border-neutral-200" {...props} />
                       ),
-                      td: ({ node, ...props }) => (
+                      td: ({ _node, ...props }) => (
                         <td className="px-5 py-3 text-neutral-700 border-b border-neutral-100 bg-white" {...props} />
                       ),
-                      tr: ({ node, ...props }) => (
+                      tr: ({ _node, ...props }) => (
                         <tr className="hover:bg-neutral-50 transition-colors" {...props} />
                       ),
                     }}
+                    /* eslint-enable @typescript-eslint/no-unused-vars */
                   >
                     {post.content}
                   </ReactMarkdown>

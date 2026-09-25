@@ -5,7 +5,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Förderung & Zuschüsse für das barrierefreie Bad',
-  description: 'Bis zu 4.180 € Pflegekassen-Zuschuss für barrierefreie Bäder (§ 40 SGB XI): Wir erstellen den prüffähigen Kostenvoranschlag und begleiten Ihren Antrag – in Aßlar, Wetzlar & Mittelhessen.',
+  description: 'Bis zu 4.180 € Pflegekassen-Zuschuss für barrierefreie Bäder (§ 40 SGB XI): Wir erstellen den prüffähigen Kostenvoranschlag in Aßlar & Wetzlar.',
   path: '/foerderung',
 });
 

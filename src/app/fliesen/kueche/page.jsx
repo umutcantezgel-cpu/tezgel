@@ -250,10 +250,10 @@ export default function KuechePage() {
                 </section>
             )}
 
-            {/* Weiterlesen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-labelledby="ku-weiterlesen-heading">
+            {/* Weiterführende Ratgeber */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-labelledby="ku-ratgeber-heading">
                 <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
-                    <h2 id="ku-weiterlesen-heading" className="text-lg font-black text-slate-900 mb-4">Weiterlesen</h2>
+                    <h2 id="ku-ratgeber-heading" className="text-lg font-black text-slate-900 mb-4">Weiterführende Ratgeber zu Küchenfliesen &amp; Fliesenspiegeln</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>

@@ -1,7 +1,7 @@
 // OFFICIAL COMPANY DATA - FLIESENVERLEGUNG TEZGEL
 // Master Data Hub for Aßlar, Wetzlar, Mittelhessen & Hessen
 
-import { Award, Users, Target, Heart, Clock, Shield, CheckCircle, Sparkles, CheckCircle2, ShieldCheck, Ruler, Droplets } from 'lucide-react';
+import { Award, Heart, Clock, Sparkles, ShieldCheck, Ruler } from 'lucide-react';
 
 export const COMPANY_DATA = {
     // Legal Information

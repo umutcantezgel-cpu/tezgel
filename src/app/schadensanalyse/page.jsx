@@ -405,10 +405,10 @@ export default function SchadensanalysePage() {
                 </div>
             </section>
 
-            {/* Weiterlesen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="schaden-weiterlesen-heading">
-                <h2 id="schaden-weiterlesen-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
-                    Weiterlesen
+            {/* Weiterführende Ratgeber */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="schaden-ratgeber-heading">
+                <h2 id="schaden-ratgeber-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
+                    Weiterführende Ratgeber zur Schadensanalyse &amp; Ursachenermittlung
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {WEITERLESEN.map((link) => (

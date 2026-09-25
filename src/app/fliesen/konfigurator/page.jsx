@@ -306,9 +306,9 @@ export default function FliesenKonfiguratorPage() {
                     </div>
                 </section>
 
-                {/* Weiterlesen */}
-                <section aria-labelledby="weiterlesen-heading" className="space-y-6">
-                    <h2 id="weiterlesen-heading" className="text-xl sm:text-2xl font-black text-slate-900">Weiterlesen</h2>
+                {/* Weiterführende Ratgeber */}
+                <section aria-labelledby="ratgeber-heading" className="space-y-6">
+                    <h2 id="ratgeber-heading" className="text-xl sm:text-2xl font-black text-slate-900">Weiterführende Ratgeber zur Fliesenplanung</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {RELATED_LINKS.map((link) => (
                             <Link

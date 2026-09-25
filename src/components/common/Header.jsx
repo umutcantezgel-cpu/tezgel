@@ -65,6 +65,7 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
     // Close any open panel on navigation – moved to useEffect to avoid
     // setState during render (which caused flickering).
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setOpenMenu(null);
     }, [pathname]);
 

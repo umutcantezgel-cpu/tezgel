@@ -13,8 +13,8 @@ import { COMPANY_DATA } from '@/config/company';
 
 export const metadata = {
     title: 'Musterbäder & Badinspiration',
-    description: 'Entdecken Sie unsere vorkalkulierten Musterbäder von 4,6 bis 15,9 m² mit Festpreis-Orientierung und hochwertigen Markenkomponenten – für Aßlar, Wetzlar & Umgebung.',
-    alternates: { canonical: '/bad/musterbaeder' }
+    description: 'Entdecken Sie unsere Musterbäder von 4,6 bis 15,9 m² mit Festpreis-Orientierung & Markenkomponenten für Aßlar, Wetzlar & Hessen.',
+    alternates: { canonical: 'https://tezgel.de/bad/musterbaeder' }
 };
 
 export default function MusterbaederPage() {

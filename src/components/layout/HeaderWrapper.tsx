@@ -13,6 +13,7 @@ export function HeaderWrapper() {
     // Close the drawer on every navigation (including back/forward).
     // Moved to useEffect to avoid setState during render (which caused flickering).
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsMobileMenuOpen(false);
     }, [pathname]);
 

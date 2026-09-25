@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { Award, Star, ArrowRight, Phone, MapPin, Users } from 'lucide-react';
+import { Award, Star, ArrowRight, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { values, COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
@@ -10,7 +10,6 @@ import QualityPromise from '@/components/sections/QualityPromise';
 export default function AboutPage() {
   const { legalName, owner, authority, headquarters, business, contact, motto } = COMPANY_DATA;
   const google = RATING_SUMMARY.google;
-  const trustlocal = RATING_SUMMARY.trustlocal;
 
   const stats = [
     { value: String(business.establishmentYear), label: `Betriebsgründung in ${headquarters.city}` },

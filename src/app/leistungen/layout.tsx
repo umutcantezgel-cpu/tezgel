@@ -5,7 +5,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Leistungen: Fliesen, Bad, Terrasse & Abdichtung',
-  description: 'Unser Leistungsspektrum als Fliesenleger-Fachbetrieb aus Aßlar: Badsanierung & Walk-In-Duschen, XXL-Großformate, Wohnbereiche & Treppen, Balkone & Terrassen sowie DIN 18534 Verbundabdichtung.',
+  description: 'Fachbetrieb für Fliesenverlegung in Aßlar & Wetzlar: Badsanierung, XXL-Großformate, Balkone, Terrassen sowie DIN 18534 Verbundabdichtung.',
   path: '/leistungen',
 });
 

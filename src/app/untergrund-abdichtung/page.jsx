@@ -163,7 +163,7 @@ export default function UntergrundAbdichtungPage() {
                                     </span>
                                     <span className="text-sm text-slate-700 leading-relaxed flex-1">{page.desc}</span>
                                     <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-orange-700">
-                                        Weiterlesen
+                                        Mehr zu {page.name} erfahren
                                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                                     </span>
                                 </Link>
@@ -370,9 +370,9 @@ export default function UntergrundAbdichtungPage() {
                 </div>
             </section>
 
-            {/* Weiterlesen */}
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10" aria-labelledby="weiterlesen-heading">
-                <h2 id="weiterlesen-heading" className="text-xl font-black text-slate-900 mb-4">Weiterlesen</h2>
+            {/* Weiterführende Ratgeber */}
+            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10" aria-labelledby="ratgeber-heading">
+                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-4">Weiterführende Ratgeber zu Untergrund &amp; Abdichtung</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                     {READ_MORE.map((link) => (
                         <li key={link.href}>
