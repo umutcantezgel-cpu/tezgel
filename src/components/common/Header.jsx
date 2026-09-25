@@ -7,14 +7,13 @@ import { usePathname } from 'next/navigation';
 import {
     Phone,
     MessageCircle,
-    Menu,
-    X,
     ChevronDown,
     ArrowRight,
     ShieldCheck
 } from 'lucide-react';
 import { navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
+import { FugenkreuzToggle } from '@/components/common/TileCraftIcons';
 
 const isActivePath = (pathname, path) =>
     path === '/' ? pathname === '/' : pathname === path || pathname.startsWith(`${path}/`);
@@ -244,12 +243,13 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                         <button
                             type="button"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl bg-neutral-900 text-white hover:bg-neutral-800 transition-colors"
-                            aria-label={isMobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
+                            className="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-neutral-100 hover:bg-orange-50 border border-neutral-200 hover:border-orange-300 text-neutral-900 transition-colors focus-visible:outline-none"
+                            aria-label={isMobileMenuOpen ? 'Architektur-Menü schließen' : 'Architektur-Menü öffnen'}
                             aria-expanded={isMobileMenuOpen}
                             aria-controls="mobile-menu"
+                            title="Fliesen-Katalog & Gewerke"
                         >
-                            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                            <FugenkreuzToggle isOpen={isMobileMenuOpen} className="w-5 h-5" />
                         </button>
                     </div>
                 </div>
