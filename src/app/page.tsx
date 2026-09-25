@@ -26,6 +26,7 @@ import { CITIES } from '@/config/cities';
 import { RATING_SUMMARY, getFeaturedReviews } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
+import HeroContactForm from '@/components/forms/HeroContactForm';
 
 const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string }> = {
     bad: {
@@ -63,13 +64,6 @@ export const metadata: Metadata = {
     }
 };
 
-const QUICK_PICKS: Array<{ title: string; text: string; href: string; icon: LucideIcon }> = [
-    { title: 'Bad & Walk-In-Dusche', text: 'Badsanierung, Großformate, barrierefrei', href: '/bad', icon: Droplets },
-    { title: 'Wohnbereiche & Neubau', text: 'Feinsteinzeug, Küche, Flure & Treppen', href: '/leistungen/wohnen', icon: Sparkles },
-    { title: 'Balkon & Terrasse', text: 'Keramik auf Stelzlagern, Entwässerung', href: '/leistungen/aussen', icon: Sun },
-    { title: 'Untergrund & Abdichtung', text: 'Estrichausgleich, DIN 18534', href: '/leistungen/untergrund', icon: ShieldCheck }
-];
-
 const PILLAR_EYEBROWS = ['Normgerechte Sicherheit', 'Fachgerechte Ausführung', 'Wohnkomfort bei Sanierung'];
 
 const PORTAL_HUBS: Array<{
@@ -83,11 +77,11 @@ const PORTAL_HUBS: Array<{
     {
         eyebrow: 'Komplettbäder',
         title: 'Badsanierung & Wellness',
-        text: 'Barrierefreie Walk-In-Duschen, fugenarme Großformate und staubgeschützte Komplettsanierung.',
+        text: 'Barrierefreie Walk-in-Duschen, fugenarme Großformate und staubgeschützte Komplettsanierung.',
         icon: Droplets,
         links: [
             { label: 'Badsanierung komplett', href: '/bad/badsanierung' },
-            { label: 'Fliesen & XXL-Großformate', href: '/bad/fliesen' },
+            { label: 'Fliesen & XXL-Großformat', href: '/bad/fliesen' },
             { label: 'Barrierefreies Bad', href: '/bad/barrierefreies-bad' },
             { label: 'Bad aus einer Hand', href: '/bad/bad-aus-einer-hand' },
             { label: 'Musterbäder', href: '/bad/musterbaeder' }
@@ -95,15 +89,15 @@ const PORTAL_HUBS: Array<{
         cta: { label: 'Zur Bad-Übersicht', href: '/bad' }
     },
     {
-        eyebrow: 'Planer-Tools',
+        eyebrow: 'Planungshilfen',
         title: 'Rechner & Planung',
         text: 'Badprojekt in 2 Minuten beschreiben, das Bad Schritt für Schritt planen und Fördermöglichkeiten prüfen.',
         icon: Calculator,
         links: [
-            { label: 'Bad-Projektcheck', href: '/bad/projekt-check' },
+            { label: 'Projektcheck', href: '/bad/projekt-check' },
             { label: 'Badplaner', href: '/bad/badplaner' },
             { label: 'Geführte Badanfrage', href: '/bad/badanfrage' },
-            { label: 'Vor-Ort-Beratung', href: '/beratung' },
+            { label: 'Beratung vor Ort', href: '/beratung' },
             { label: 'Förderung & Zuschüsse', href: '/foerderung' }
         ],
         cta: { label: 'Projektcheck starten', href: '/bad/projekt-check' }
@@ -170,23 +164,33 @@ export default function HomePage() {
             <div className="ambient-glow-slate top-[1500px] left-1/4 opacity-40" />
 
             {/* 1. HERO */}
-            <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
+            <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+                {/* Real Craftsmanship Background Image with Soft Translucent Ceramic Wash */}
+                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+                    <Image
+                        src="/images/bad/bad-beleuchtete-nischen.webp"
+                        alt="Badsanierung mit beleuchteten Wandnischen und Großformatkeramik von Fliesenverlegung Tezgel"
+                        fill
+                        priority
+                        sizes="100vw"
+                        className="object-cover object-center scale-105 opacity-[0.20] lg:opacity-[0.25]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/95 to-[#FAFAFA]/85 lg:via-[#FAFAFA]/90 lg:to-[#FAFAFA]/70" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFA] via-transparent to-transparent" />
+                </div>
+
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-                        <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
-                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-                                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-orange-50 border border-orange-200/80 text-orange-900 text-xs font-bold shadow-xs">
-                                    <Award className="w-4 h-4 text-orange-700" />
-                                    <span>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName}</span>
-                                    <span className="text-orange-300">&bull;</span>
-                                    <span className="flex items-center gap-1 text-neutral-700">
-                                        <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
-                                        {google.displayRating} ({google.count} Bewertungen)
-                                    </span>
-                                </div>
-                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-50 border border-red-200/80 text-red-900 text-xs font-bold">
-                                    <ShieldCheck className="w-3.5 h-3.5 text-red-700" />
-                                    DIN 18534 Abdichtung
+                        <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-bold text-neutral-700">
+                                <span className="inline-flex items-center gap-1.5 text-orange-800">
+                                    <Award className="w-4 h-4 text-orange-600 shrink-0" />
+                                    Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel
+                                </span>
+                                <span className="text-neutral-300 hidden sm:inline">&middot;</span>
+                                <span className="flex items-center gap-1 text-neutral-600">
+                                    <Star className="w-3.5 h-3.5 fill-current text-amber-500 shrink-0" />
+                                    {google.displayRating} ({google.count} Bewertungen)
                                 </span>
                             </div>
 
@@ -199,14 +203,14 @@ export default function HomePage() {
                             </h1>
 
                             <p className="text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                                Fugenarme XXL-Großformate, barrierefreie Walk-In-Duschen, repräsentative Wohnbereiche und
+                                Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative Wohnbereiche und
                                 frostsichere Terrassen – millimetergenau verlegt, normgerecht abgedichtet nach DIN 18534 und
-                                mit Staubschutz-Garantie im bewohnten Zuhause.
+                                mit Staubschutzgarantie im bewohnten Zuhause.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 w-full sm:w-auto">
                                 <Link href="/kontakt" className="btn-primary w-full sm:w-auto justify-center group shadow-md shadow-orange-900/15 py-3.5">
-                                    Vor-Ort-Aufmaß vereinbaren
+                                    Aufmaß vor Ort anfragen
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
                                 <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center">
@@ -227,7 +231,7 @@ export default function HomePage() {
                             </div>
 
                             <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-sm font-semibold text-neutral-700">
-                                {['Kostenfreies Vor-Ort-Aufmaß', 'Staubschutz-Garantie', 'Verbindlicher Festpreis'].map((item) => (
+                                {['Kostenloses Aufmaß vor Ort', 'Staubschutzgarantie', 'Verbindlicher Festpreis'].map((item) => (
                                     <li key={item} className="flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-orange-600" />
                                         {item}
@@ -235,7 +239,7 @@ export default function HomePage() {
                                 ))}
                             </ul>
 
-                            <figure className="glass-surface rounded-xl px-5 py-4 max-w-xl mx-auto lg:mx-0 text-left border border-neutral-200">
+                            <figure className="glass-surface rounded-xl px-5 py-3.5 max-w-xl mx-auto lg:mx-0 text-left border border-neutral-200">
                                 <blockquote className="text-sm italic text-neutral-800">&bdquo;{motto}&ldquo;</blockquote>
                                 <figcaption className="mt-1 text-xs font-bold text-orange-800">
                                     — {owner.fullName}, Inhaber
@@ -243,55 +247,9 @@ export default function HomePage() {
                             </figure>
                         </div>
 
-                        {/* Hero Right: Real Craftsmanship Showcase & Quick Access */}
-                        <div className="lg:col-span-5 space-y-4">
-                            <div className="glass-surface rounded-[2rem] p-3 sm:p-4 shadow-xl border border-neutral-200 overflow-hidden group">
-                                <div className="relative w-full h-72 sm:h-80 rounded-2xl overflow-hidden">
-                                    <Image
-                                        src="/images/bad/bad-beleuchtete-nischen.webp"
-                                        alt="Fachgerechte Badsanierung mit beleuchteten Nischen und Großformatfliesen von Fliesenverlegung Tezgel"
-                                        fill
-                                        priority
-                                        sizes="(max-width: 1024px) 100vw, 500px"
-                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent" />
-                                    <div className="absolute top-4 left-4">
-                                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/95 text-orange-900 font-bold text-xs shadow-md">
-                                            <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-                                            Referenz Mittelhessen
-                                        </span>
-                                    </div>
-                                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                                        <p className="text-xs font-bold text-orange-300 uppercase tracking-wider mb-1">
-                                            Komplettbad &middot; Fugenarme Verlegung
-                                        </p>
-                                        <p className="text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
-                                            Walk-In Dusche mit LED-Nischen &amp; XXL-Feinsteinzeug
-                                        </p>
-                                    </div>
-                                </div>
-
-                                {/* Compact quick picker tabs underneath */}
-                                <div className="mt-3 p-3 bg-neutral-50 rounded-xl border border-neutral-100">
-                                    <div className="flex items-center justify-between text-xs font-bold text-neutral-700 mb-2 px-1">
-                                        <span>Gewerke-Direktwahl</span>
-                                        <span className="text-orange-700">Aßlar &middot; Wetzlar &middot; Hessen</span>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {QUICK_PICKS.map(({ title, href, icon: Icon }) => (
-                                            <Link
-                                                key={href}
-                                                href={href}
-                                                className="flex items-center gap-2 p-2 rounded-xl bg-white border border-neutral-200 hover:border-orange-500 hover:text-orange-800 transition-all text-xs font-bold text-neutral-800 shadow-xs"
-                                            >
-                                                <Icon className="w-3.5 h-3.5 text-orange-600 shrink-0" />
-                                                <span className="truncate">{title.split('&')[0]}</span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+                        {/* Hero Right: Direct Contact Form to Deniz Tezgel */}
+                        <div className="lg:col-span-5 relative z-10">
+                            <HeroContactForm />
                         </div>
                     </div>
                 </div>
@@ -327,12 +285,12 @@ export default function HomePage() {
             <section className="py-20 bg-white border-y border-neutral-200 relative z-10" id="portal-netzwerk" aria-labelledby="portal-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Fachbereiche &amp; Tools</span>
+                        <span className="eyebrow mb-4">Fachbereiche &amp; Planungshilfen</span>
                         <h2 id="portal-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
                             Alles für Ihr Vorhaben auf über 100 Fachseiten
                         </h2>
                         <p className="mt-3 text-base text-neutral-700">
-                            Von der schlüsselfertigen Badsanierung über Planungs-Tools bis zu den Standorten in Hessen –
+                            Von der schlüsselfertigen Badsanierung über nützliche Planungshilfen bis zu den Standorten in Hessen –
                             wählen Sie Ihren Themenbereich.
                         </p>
                     </div>
