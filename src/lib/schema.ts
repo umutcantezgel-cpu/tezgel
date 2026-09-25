@@ -75,11 +75,13 @@ export function buildOrganizationNode(): SchemaNode {
     logo: {
       '@type': 'ImageObject',
       '@id': LOGO_ID,
-      url: `${SITE_URL}/images/logo/tezgel-mark.svg`,
-      contentUrl: `${SITE_URL}/images/logo/tezgel-mark.svg`,
-      caption: 'Fliesenverlegung Tezgel Logo',
+      url: `${SITE_URL}/images/logo/tezgel-logo.png`,
+      contentUrl: `${SITE_URL}/images/logo/tezgel-logo.png`,
+      width: '640',
+      height: '200',
+      caption: 'Fliesenverlegung Tezgel Meisterbetrieb Logo',
     },
-    image: `${SITE_URL}/images/logo/tezgel-mark.svg`,
+    image: `${SITE_URL}/images/logo/tezgel-logo.png`,
     founder: { '@id': FOUNDER_ID },
     contactPoint: {
       '@type': 'ContactPoint',
@@ -455,7 +457,7 @@ export function buildArticleNode(options: {
     publisher: { '@id': ORG_ID },
     image: options.image
       ? (options.image.startsWith('http') ? options.image : `${SITE_URL}${options.image}`)
-      : `${SITE_URL}/images/logo/tezgel-mark.svg`,
+      : `${SITE_URL}/images/logo/tezgel-logo.png`,
     keywords: options.keywords?.join(', '),
   };
 }

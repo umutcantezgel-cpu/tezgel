@@ -23,7 +23,7 @@ export default function FloatingDock() {
 
   return (
     <aside aria-label="Schnellkontakt" className="fixed bottom-3 left-3 right-3 z-40 md:hidden pb-[env(safe-area-inset-bottom,0px)]">
-      <div className="p-1.5 flex items-center justify-between gap-1.5 max-w-md mx-auto rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_8px_30px_rgba(15,23,42,0.12)]">
+      <div className="p-1.5 flex items-center justify-between gap-1.5 max-w-md mx-auto rounded-full bg-white/98 backdrop-blur-sm border border-slate-200/90 shadow-[0_8px_30px_rgba(15,23,42,0.12)]">
         <a
           href={`tel:${COMPANY_DATA.contact.phoneLink}`}
           className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 px-3 rounded-full bg-slate-50 text-slate-900 text-xs font-bold border border-slate-200/80 hover:bg-white active:scale-95 transition-all shadow-xs"

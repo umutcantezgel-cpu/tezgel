@@ -72,21 +72,16 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
                     {/* Master data */}
                     <div className="lg:col-span-4 space-y-5">
-                        <Link href="/" className="inline-flex items-center gap-3 group" aria-label="Fliesenverlegung Tezgel – Startseite">
+                        <Link href="/" className="inline-block group" aria-label="Fliesenverlegung Tezgel – Startseite">
                             <Image
-                                src="/images/logo/tezgel-mark.svg"
-                                alt="Fliesenverlegung Tezgel Meisterbetrieb"
-                                width={44}
-                                height={44}
-                                className="w-11 h-11 rounded-2xl shrink-0 group-hover:scale-105 transition-transform duration-300"
+                                src="/images/logo/tezgel-logo-dark.webp"
+                                alt="Fliesenverlegung Tezgel – Meisterbetrieb Aßlar & Wetzlar"
+                                width={220}
+                                height={68}
+                                className="h-12 sm:h-14 w-auto object-contain shrink-0 group-hover:scale-[1.02] transition-transform duration-200"
                             />
-                            <span>
-                                <span className="font-display block text-base font-black text-white leading-tight group-hover:text-emerald-300 transition-colors">
-                                    {COMPANY_DATA.legalName}
-                                </span>
-                                <span className="block text-[11px] font-bold uppercase tracking-widest text-slate-300">
-                                    Inh. {owner.fullName} &middot; Handwerksmeister
-                                </span>
+                            <span className="block mt-2.5 text-[11px] font-semibold tracking-wide text-slate-400">
+                                Inh. {owner.fullName} &middot; Fliesenlegermeister Aßlar / Wetzlar
                             </span>
                         </Link>
 

@@ -25,25 +25,20 @@ const isSectionActive = (pathname, link) =>
 
 export function BrandMark({ compact = false, sublineClassName = 'hidden sm:block' }) {
     return (
-        <span className="flex items-center gap-2.5 sm:gap-3">
+        <span className="flex items-center gap-2 sm:gap-2.5">
             <Image
-                src="/images/logo/tezgel-mark.svg"
-                alt="Fliesenverlegung Tezgel Meisterbetrieb"
-                width={40}
-                height={40}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform duration-300 shrink-0"
+                src="/images/logo/tezgel-logo.webp"
+                alt="Fliesenverlegung Tezgel – Meisterbetrieb Aßlar & Wetzlar"
+                width={140}
+                height={44}
+                className="h-9 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-[1.02] transition-transform duration-200"
                 priority
             />
-            <span className="flex flex-col">
-                <span className="font-display text-sm sm:text-base font-black tracking-tight text-slate-900 leading-tight">
-                    Fliesenverlegung <span className="text-emerald-700">Tezgel</span>
+            {!compact && (
+                <span className={`${sublineClassName} border-l border-slate-200/80 pl-2.5 my-auto text-[10px] sm:text-[11px] font-semibold text-slate-500 leading-tight tracking-tight`}>
+                    Meisterbetrieb<br />Aßlar &middot; Wetzlar
                 </span>
-                {!compact && (
-                    <span className={`${sublineClassName} text-[10px] sm:text-[11px] font-semibold text-slate-500 tracking-normal`}>
-                        Meisterbetrieb &middot; Aßlar / Wetzlar
-                    </span>
-                )}
-            </span>
+            )}
         </span>
     );
 }
@@ -95,10 +90,10 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
         <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 lg:px-8 pt-2.5 sm:pt-4">
             <div className="max-w-7xl mx-auto">
                 <div
-                    className={`relative px-3 sm:px-5 transition-all duration-300 rounded-full border flex items-center justify-between gap-3 backdrop-blur-xl ${
+                    className={`relative px-3 sm:px-5 transition-[background-color,border-color,box-shadow] duration-200 rounded-full border flex items-center justify-between gap-3 backdrop-blur-sm ${
                         isScrolled
-                            ? 'py-2 bg-white/95 border-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.08)]'
-                            : 'py-2.5 sm:py-3 bg-white/85 border-slate-200/80 shadow-[0_8px_30px_rgba(15,23,42,0.06)]'
+                            ? 'py-2 sm:py-2.5 bg-white/98 border-slate-200/90 shadow-[0_8px_30px_rgba(15,23,42,0.08)]'
+                            : 'py-2 sm:py-2.5 bg-white/90 border-slate-200/80 shadow-[0_4px_20px_rgba(15,23,42,0.04)]'
                     }`}
                 >
                     {/* Brand */}

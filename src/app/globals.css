@@ -393,7 +393,6 @@
     pointer-events: none;
     z-index: 0;
     contain: strict;
-    will-change: transform;
   }
 
   .ambient-glow-sky {
@@ -405,7 +404,6 @@
     pointer-events: none;
     z-index: 0;
     contain: strict;
-    will-change: transform;
   }
 
   .ambient-glow-slate {
@@ -417,6 +415,12 @@
     pointer-events: none;
     z-index: 0;
     contain: strict;
-    will-change: transform;
+  }
+
+  /* GPU-friendly offscreen content virtualization */
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 600px;
   }
 }
+
