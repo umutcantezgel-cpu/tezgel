@@ -495,16 +495,19 @@
       0 6px 18px -3px rgba(234, 88, 12, 0.12);
   }
 
-  .tile-grout-pattern {
-    background-color: #F8F9FA;
-    background-image:
-      linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-    background-size: 24px 24px;
+  @keyframes plateSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(36px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
-  .laser-glow {
-    filter: drop-shadow(0 0 4px #EA580C) drop-shadow(0 0 10px rgba(234, 88, 12, 0.6));
+  .plate-enter {
+    animation: plateSlideIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .fugen-bevel {
