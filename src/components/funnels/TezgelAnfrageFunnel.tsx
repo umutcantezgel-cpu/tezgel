@@ -344,10 +344,10 @@ export default function TezgelAnfrageFunnel() {
       {step === 2 && (
         <div className="space-y-6 relative z-10">
           <div>
-            <label className="block text-sm font-bold text-slate-800 mb-2">
+            <span id="funnel-area-heading" className="block text-sm font-bold text-slate-800 mb-2">
               Ungefähre Fläche in Quadratmetern
-            </label>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
+            </span>
+            <div role="group" aria-labelledby="funnel-area-heading" className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
               {AREA_OPTIONS.map((opt) => (
                 <button
                   type="button"
@@ -362,7 +362,11 @@ export default function TezgelAnfrageFunnel() {
                 </button>
               ))}
             </div>
+            <label htmlFor="funnel-custom-area" className="sr-only">
+              Genaue Quadratmeterzahl eingeben
+            </label>
             <input
+              id="funnel-custom-area"
               type="text"
               placeholder="Oder genaue m²-Zahl eingeben (z. B. 24 m²)"
               value={customArea}
@@ -372,10 +376,10 @@ export default function TezgelAnfrageFunnel() {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-800 mb-2">
+            <span id="funnel-timing-heading" className="block text-sm font-bold text-slate-800 mb-2">
               Gewünschter Ausführungszeitraum
-            </label>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            </span>
+            <div role="group" aria-labelledby="funnel-timing-heading" className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
               {TIMING_OPTIONS.map((opt) => (
                 <button
                   type="button"
