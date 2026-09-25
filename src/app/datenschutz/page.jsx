@@ -2,11 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
 
-export const metadata = {
-    title: 'Datenschutzerklärung',
-    description: 'Datenschutzerklärung der Fliesenverlegung Tezgel nach DSGVO. Informationen zur Erhebung und Verarbeitung personenbezogener Daten.',
-    alternates: { canonical: '/datenschutz' }
-};
+
 
 export default function DatenschutzPage() {
     return (

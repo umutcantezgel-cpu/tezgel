@@ -20,7 +20,7 @@ import { CITIES } from '@/config/cities';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
-    title: 'Fliesenberatung & Materialauswahl in Wetzlar',
+    title: { absolute: 'Fliesenberatung in Wetzlar | Fliesenverlegung Tezgel' },
     description: 'Persönliche Fliesenberatung für Wetzlar: Formate, Oberflächen & Fugenbild gemeinsam mit Fachbetriebsleiter Deniz Tezgel abstimmen.',
     alternates: { canonical: 'https://tezgel.de/ausstellung/wetzlar' }
 };
@@ -222,7 +222,7 @@ export default function AusstellungWetzlarPage() {
                                         <p className="text-sm text-slate-700 leading-relaxed">{srv.shortDescription}</p>
                                     </div>
                                     <span className="mt-5 pt-4 border-t border-slate-200 text-sm font-bold text-orange-700 flex items-center gap-1.5">
-                                        Mehr erfahren
+                                        <span>{srv.name} im Detail ansehen</span>
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </span>
                                 </Link>

@@ -256,8 +256,11 @@ export default function HomePage() {
             </section>
 
             {/* 2. TRUST PILLARS */}
-            <section className="py-16 relative z-10" id="vertrauen" aria-label="Unsere Garantien">
+            <section className="py-16 relative z-10" id="vertrauen" aria-labelledby="vertrauen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 id="vertrauen-heading" className="sr-only">
+                        Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel
+                    </h2>
                     <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {COMPANY_DATA.trustPillars.map((pillar: { title: string; description: string; icon: LucideIcon }, idx: number) => {
                             const Icon = pillar.icon;

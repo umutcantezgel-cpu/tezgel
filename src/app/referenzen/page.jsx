@@ -6,13 +6,8 @@ import { PORTFOLIO_PROJECTS, categories, isPlaceholderProject } from '@/config/p
 import { RATING_SUMMARY } from '@/config/reviews';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 
-const { google, trustlocal } = RATING_SUMMARY;
+const { google } = RATING_SUMMARY;
 
-export const metadata = {
-    title: 'Referenzen & Kundenbewertungen',
-    description: `Echte Kundenbewertungen von Fliesenverlegung Tezgel aus Aßlar: ${google.displayRating} von ${google.maxRating} Sternen aus ${google.count} Google-Rezensionen und ${trustlocal.displayRating} bei Trustlocal – dazu typische Leistungsbeispiele.`,
-    alternates: { canonical: '/referenzen' }
-};
 
 const CATEGORY_ICONS = {
     bad: Bath,

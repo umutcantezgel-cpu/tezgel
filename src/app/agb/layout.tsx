@@ -4,8 +4,8 @@ import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'AGB – Geschäftsbedingungen',
-  description: `Allgemeine Geschäftsbedingungen der ${COMPANY_DATA.legalName} für handwerkliche Werk- und Montageleistungen.`,
+  title: 'AGB – Allgemeine Geschäftsbedingungen',
+  description: 'Allgemeine Geschäftsbedingungen der Fliesenverlegung Tezgel für handwerkliche Werk-, Fliesen- und Montageleistungen in Hessen.',
   path: '/agb',
 });
 

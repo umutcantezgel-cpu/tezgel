@@ -2,11 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
 
-export const metadata = {
-    title: 'AGB – Allgemeine Geschäftsbedingungen',
-    description: 'Allgemeine Geschäftsbedingungen (AGB) der Fliesenverlegung Tezgel für Werk- und Montageleistungen in Aßlar, Wetzlar & Mittelhessen.',
-    alternates: { canonical: '/agb' }
-};
+
 
 export default function AGBPage() {
     return (

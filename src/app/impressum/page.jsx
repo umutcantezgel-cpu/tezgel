@@ -2,11 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
 
-export const metadata = {
-    title: 'Impressum',
-    description: 'Gesetzliche Anbieterkennzeichnung der Fliesenverlegung Tezgel gemäß § 5 DDG: Inhaber Deniz Tezgel, Hohwardstraße 14, 35614 Aßlar, HWK Wiesbaden, USt-IdNr. DE 259249094.',
-    alternates: { canonical: '/impressum' }
-};
+
 
 export default function ImpressumPage() {
     return (

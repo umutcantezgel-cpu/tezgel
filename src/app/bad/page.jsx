@@ -19,9 +19,9 @@ import BadProjektCheck from '@/components/funnels/BadProjektCheck';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
-    title: 'Badsanierung & Badrenovierung in Aßlar & Wetzlar',
-    description: 'Ihr Fachbetrieb für schlüsselfertige Badsanierung, Musterbäder, barrierefreie Bäder nach DIN 18040-2 und persönliche Badplanung in Aßlar, Wetzlar und Umgebung.',
-    alternates: { canonical: '/bad' }
+    title: 'Badsanierung Aßlar & Wetzlar',
+    description: 'Fachbetrieb für schlüsselfertige Badsanierung, barrierefreie Bäder nach DIN 18040-2 & moderne Großformatfliesen in Aßlar, Wetzlar und Umgebung.',
+    alternates: { canonical: 'https://tezgel.de/bad' }
 };
 
 const BATH_SERVICES = [

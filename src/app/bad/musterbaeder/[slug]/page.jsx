@@ -21,12 +21,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const bath = MUSTERBAEDER.find((b) => b.slug === slug);
-    if (!bath) return { title: 'Musterbad' };
+    if (!bath) return { title: { absolute: 'Musterbäder & Badkonzepte | Fliesenverlegung Tezgel' } };
+
+    const title = `Musterbad ${bath.title} | Fliesenverlegung Tezgel`;
+    const description = `Musterbad ${bath.title}: ${bath.headline}. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb Tezgel aus Aßlar.`;
 
     return {
-        title: `${bath.title} – Ausstattung im Detail`,
-        description: `${bath.headline}. Detaillierte Ausstattungsliste mit hochwertigen Markenkomponenten. Jetzt Festpreis anfragen!`,
-        alternates: { canonical: `/bad/musterbaeder/${slug}` }
+        title: { absolute: title },
+        description: description.length > 155 ? `${description.slice(0, 152)}...` : description,
+        alternates: { canonical: `https://tezgel.de/bad/musterbaeder/${slug}` }
     };
 }
 

@@ -5,7 +5,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Impressum & rechtliche Angaben',
-  description: `Impressum und gesetzliche Anbieterkennzeichnung der ${COMPANY_DATA.legalName}, ${COMPANY_DATA.headquarters.street}, ${COMPANY_DATA.headquarters.postalCode} ${COMPANY_DATA.headquarters.city}. Inhaber ${COMPANY_DATA.owner.fullName}.`,
+  description: 'Impressum und gesetzliche Anbieterkennzeichnung der Fliesenverlegung Tezgel in 35614 Aßlar. Angaben gemäß § 5 DDG, Kontakt und Handwerkskammer.',
   path: '/impressum',
 });
 

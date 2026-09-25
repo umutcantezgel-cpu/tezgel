@@ -4,13 +4,7 @@ import { MapPin, Phone, Mail, Clock, Printer, ShieldCheck, MessageSquare, Award,
 import { COMPANY_DATA } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 
-const { headquarters: HQ, contact: CONTACT } = COMPANY_DATA;
 
-export const metadata = {
-    title: 'Kontakt & Vor-Ort-Aufmaß in Aßlar',
-    description: `Kontaktieren Sie Fliesenverlegung Tezgel: ${HQ.street}, ${HQ.postalCode} ${HQ.city}, Tel. ${CONTACT.phone}, WhatsApp ${CONTACT.mobile}, E-Mail: ${CONTACT.email}.`,
-    alternates: { canonical: '/kontakt' }
-};
 
 export default function KontaktPage() {
     return (

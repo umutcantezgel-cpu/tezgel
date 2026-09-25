@@ -18,9 +18,9 @@ import { REVIEWS } from '@/config/reviews';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
-    title: 'Fliesen im Bad | XXL-Großformate & Mosaik in Aßlar & Wetzlar',
+    title: 'Badfliesen & XXL-Großformate',
     description: 'Fachgerechte Fliesenverlegung im Badezimmer: Großformatige Fliesen, Feinsteinzeug, Mosaike und Naturstein in Aßlar, Wetzlar & Lahn-Dill.',
-    alternates: { canonical: '/bad/fliesen' }
+    alternates: { canonical: 'https://tezgel.de/bad/fliesen' }
 };
 
 const TILE_FEATURES = [

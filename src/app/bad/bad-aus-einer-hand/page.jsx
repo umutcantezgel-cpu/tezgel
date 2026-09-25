@@ -16,9 +16,9 @@ import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = {
-    title: 'Bad aus einer Hand Aßlar & Wetzlar | Schlüsselfertige Badsanierung',
-    description: 'Bad aus einer Hand in Aßlar, Wetzlar & Lahn-Dill: Ein Ansprechpartner, ein Festpreis, verbindliche Termine. Wir koordinieren Sanitär, Fliesen, Elektrik & Malerarbeiten.',
-    alternates: { canonical: '/bad/bad-aus-einer-hand' }
+    title: 'Bad aus einer Hand Aßlar & Wetzlar',
+    description: 'Bad aus einer Hand in Aßlar & Wetzlar: Ein Ansprechpartner, verbindlicher Festpreis & Termintreue. Wir koordinieren alle Gewerke schlüsselfertig.',
+    alternates: { canonical: 'https://tezgel.de/bad/bad-aus-einer-hand' }
 };
 
 export default function BadAusEinerHandPage() {
