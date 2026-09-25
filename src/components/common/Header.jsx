@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
     Phone,
@@ -25,11 +26,14 @@ const isSectionActive = (pathname, link) =>
 export function BrandMark({ compact = false, sublineClassName = 'hidden sm:block' }) {
     return (
         <span className="flex items-center gap-2.5 sm:gap-3">
-            <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-emerald-500 via-emerald-600 to-sky-600 p-0.5 shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform duration-300 shrink-0">
-                <span className="w-full h-full rounded-[14px] bg-white flex items-center justify-center">
-                    <span className="font-display font-black text-xs sm:text-sm tracking-wider text-emerald-700">FT</span>
-                </span>
-            </span>
+            <Image
+                src="/images/logo/tezgel-mark.svg"
+                alt="Fliesenverlegung Tezgel Meisterbetrieb"
+                width={40}
+                height={40}
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl shadow-md shadow-emerald-600/20 group-hover:scale-105 transition-transform duration-300 shrink-0"
+                priority
+            />
             <span className="flex flex-col">
                 <span className="font-display text-sm sm:text-base font-black tracking-tight text-slate-900 leading-tight">
                     Fliesenverlegung <span className="text-emerald-700">Tezgel</span>
@@ -164,6 +168,7 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                                                                         <li key={item.path + item.name}>
                                                                             <Link
                                                                                 href={item.path}
+                                                                                prefetch={false}
                                                                                 aria-current={itemActive ? 'page' : undefined}
                                                                                 className={`group/item flex flex-col px-2.5 py-2 rounded-2xl border transition-all duration-300 ${
                                                                                     itemActive

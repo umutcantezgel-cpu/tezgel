@@ -15,16 +15,40 @@ const ConsentContext = createContext(null);
 
 export const useConsent = () => {
     const context = useContext(ConsentContext);
-    if (!context) {
-        // Return default values if context is not available
-        return {
-            consent: { essential: true, analytics: false, marketing: false, maps: false, externalContent: false },
-            hasConsent: (category) => category === 'essential',
-            updateConsent: () => { },
-            showBanner: () => { }
+    const [localPreferences, setLocalPreferences] = useState(() => {
+        const stored = getStoredConsent();
+        return stored || { essential: true, analytics: false, marketing: false, maps: false, externalContent: false };
+    });
+
+    useEffect(() => {
+        const handler = (event) => {
+            if (event.detail) {
+                setLocalPreferences(event.detail);
+            }
         };
-    }
-    return context;
+        window.addEventListener('consentUpdated', handler);
+        return () => window.removeEventListener('consentUpdated', handler);
+    }, []);
+
+    if (context) return context;
+
+    return {
+        preferences: localPreferences,
+        consent: localPreferences,
+        hasConsent: (category) => category === 'essential' || Boolean(localPreferences?.[category]),
+        updateConsent: (settings) => {
+            if (typeof window !== 'undefined') {
+                localStorage.setItem(CONSENT_KEY, JSON.stringify({ settings, version: CONSENT_VERSION, timestamp: new Date().toISOString() }));
+                setLocalPreferences(settings);
+                window.dispatchEvent(new CustomEvent('consentUpdated', { detail: settings }));
+            }
+        },
+        showBanner: () => {
+            if (typeof window !== 'undefined') {
+                window.dispatchEvent(new CustomEvent('showConsentBanner'));
+            }
+        }
+    };
 };
 
 // Helper function to get consent without context (for non-React code)
@@ -128,13 +152,8 @@ const ConsentManager = () => {
         setPreferences(settings);
         setIsVisible(false);
 
-        // Dispatch custom event for components to react
+        // Dispatch custom event for components to react dynamically without reload
         window.dispatchEvent(new CustomEvent('consentUpdated', { detail: settings }));
-
-        // Reload page to apply consent changes
-        if (settings.analytics || settings.marketing || settings.maps) {
-            window.location.reload();
-        }
     };
 
     // Allow external trigger to show banner (e.g., from footer link)

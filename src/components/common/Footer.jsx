@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     Phone,
     Mail,
@@ -72,11 +73,13 @@ export default function Footer() {
                     {/* Master data */}
                     <div className="lg:col-span-4 space-y-5">
                         <Link href="/" className="inline-flex items-center gap-3 group" aria-label="Fliesenverlegung Tezgel – Startseite">
-                            <span className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-400 via-emerald-500 to-sky-500 p-0.5 shrink-0">
-                                <span className="w-full h-full rounded-[14px] bg-slate-900 flex items-center justify-center">
-                                    <span className="font-display font-black text-sm tracking-wider text-emerald-400">FT</span>
-                                </span>
-                            </span>
+                            <Image
+                                src="/images/logo/tezgel-mark.svg"
+                                alt="Fliesenverlegung Tezgel Meisterbetrieb"
+                                width={44}
+                                height={44}
+                                className="w-11 h-11 rounded-2xl shrink-0 group-hover:scale-105 transition-transform duration-300"
+                            />
                             <span>
                                 <span className="font-display block text-base font-black text-white leading-tight group-hover:text-emerald-300 transition-colors">
                                     {COMPANY_DATA.legalName}

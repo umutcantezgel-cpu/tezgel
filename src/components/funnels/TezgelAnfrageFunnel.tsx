@@ -15,7 +15,9 @@ import {
   MessageCircle,
   Phone,
   Check,
-  Lock
+  Lock,
+  Loader2,
+  AlertCircle
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -64,10 +66,10 @@ const TIMING_OPTIONS = ['Schnellstmöglich', 'In 1 - 3 Monaten', 'In mehr als 3 
 const STEPS = [
   { title: 'Welches Projekt planen Sie?', text: 'Wählen Sie Ihr Fachgewerk für eine passende Planung.' },
   { title: 'Fläche, Zeitraum & Ort', text: 'Eine grobe Orientierung genügt – Details klären wir beim Aufmaß.' },
-  { title: 'Kontaktdaten & Versand', text: 'Senden Sie Ihre Anfrage direkt per WhatsApp oder per E-Mail.' }
+  { title: 'Kontaktdaten & Absenden', text: 'Direkt online absenden oder alternativ per WhatsApp anfragen.' }
 ];
 
-type Channel = 'whatsapp' | 'email';
+type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error' | 'whatsapp_opened';
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 transition-all';
@@ -90,7 +92,9 @@ export default function TezgelAnfrageFunnel() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
-  const [sentVia, setSentVia] = useState<Channel | null>(null);
+  const [honeypot, setHoneypot] = useState('');
+  const [status, setStatus] = useState<SubmissionStatus>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const projectTitle = PROJECT_TYPES.find((p) => p.id === projectType)?.title ?? projectType;
   const finalArea = customArea ? `${customArea.replace(/\s*m²$/i, '')} m²` : selectedArea;
@@ -108,52 +112,86 @@ export default function TezgelAnfrageFunnel() {
     (notes ? `📝 Anmerkungen: ${notes}\n\n` : '\n') +
     `Bitte melden Sie sich bezüglich eines unverbindlichen Vor-Ort-Aufmaßes. Vielen Dank!`;
 
-  const getEmailBody = () =>
-    `Hallo Herr Tezgel,\n\nich interessiere mich für eine fachgerechte Fliesenverlegung:\n\n` +
-    `Projekt: ${projectTitle}\n` +
-    `Fläche: ca. ${finalArea}\n` +
-    `Ort: ${locationText}\n` +
-    `Gewünschter Zeitraum: ${timing}\n\n` +
-    `Name: ${name}\n` +
-    `Telefon: ${phone}\n` +
-    `E-Mail: ${email || 'Nicht angegeben'}\n` +
-    (notes ? `Anmerkungen: ${notes}\n\n` : '\n') +
-    `Bitte melden Sie sich bezüglich eines unverbindlichen Vor-Ort-Aufmaßes. Vielen Dank!`;
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const submitter = (event.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null;
-    const channel: Channel = submitter?.value === 'email' ? 'email' : 'whatsapp';
-
-    if (channel === 'whatsapp') {
-      const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(getWhatsAppMessage())}`;
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
-    } else {
-      const subject = `Anfrage Vor-Ort-Aufmaß: ${projectTitle} (${locationText})`;
-      window.location.href = `mailto:${COMPANY_DATA.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(getEmailBody())}`;
+  const handleWhatsAppDirect = () => {
+    if (!name || !phone) {
+      setErrorMessage('Bitte tragen Sie zumindest Ihren Namen und eine Telefonnummer ein.');
+      return;
     }
-    setSentVia(channel);
+    const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(getWhatsAppMessage())}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    setStatus('whatsapp_opened');
   };
 
-  if (sentVia) {
+  const handleOnlineSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setErrorMessage('');
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('/api/anfrage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          projectType,
+          projectTitle,
+          area: finalArea,
+          timing,
+          location: locationText,
+          name,
+          phone,
+          email: email || undefined,
+          notes: notes || undefined,
+          honeypot: honeypot || undefined
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Übertragung fehlgeschlagen.');
+      }
+
+      setStatus('success');
+    } catch (err: unknown) {
+      console.error('Submission error:', err);
+      const msg = err instanceof Error ? err.message : 'Es gab ein Problem bei der Übertragung.';
+      setErrorMessage(msg);
+      setStatus('error');
+    }
+  };
+
+  // SUCCESS STATE (Direct confirmation)
+  if (status === 'success') {
     return (
-      <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 text-center max-w-2xl mx-auto" role="status">
-        <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6">
+      <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl" role="status">
+        <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6 bg-emerald-100 text-emerald-700">
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <span className="eyebrow mb-4">
-          {sentVia === 'whatsapp' ? 'WhatsApp wurde geöffnet' : 'E-Mail-Programm wurde geöffnet'}
-        </span>
-        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Fast geschafft – bitte jetzt absenden</h3>
+        <span className="eyebrow mb-4">Anfrage erfolgreich übermittelt</span>
+        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Vielen Dank, {name}!</h3>
         <p className="text-base text-slate-700 leading-relaxed mb-6">
-          Ihre Anfrage ist vorbereitet. Senden Sie die Nachricht in{' '}
-          {sentVia === 'whatsapp' ? 'WhatsApp' : 'Ihrem E-Mail-Programm'} ab – {COMPANY_DATA.owner.fullName} meldet sich dann
-          persönlich bei Ihnen, um das kostenfreie Vor-Ort-Aufmaß abzustimmen.
+          Ihre Anfrage für <strong>{projectTitle}</strong> ({finalArea}) in <strong>{locationText}</strong> ist erfolgreich bei Meister Deniz Tezgel eingegangen.
+          {email && (
+            <span className="block mt-2 text-sm text-emerald-800 font-semibold">
+              Eine Bestätigung wurde an <em>{email}</em> gesendet.
+            </span>
+          )}
         </p>
 
-        <figure className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-sm text-slate-700 mb-6">
+        <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left text-sm text-slate-700 mb-6 space-y-2">
+          <div className="font-bold text-slate-900 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-emerald-600" />
+            Nächste Schritte:
+          </div>
+          <p className="text-xs text-slate-600">
+            1. Wir prüfen Ihre Angaben und den geschätzten Material- &amp; Zeitaufwand.<br />
+            2. Herr Tezgel meldet sich binnen <strong>24 bis 48 Stunden</strong> telefonisch zur Terminabstimmung des kostenfreien Aufmaßes.
+          </p>
+        </div>
+
+        <figure className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200 text-sm text-slate-700 mb-6">
           <blockquote className="italic">„{COMPANY_DATA.motto}“</blockquote>
-          <figcaption className="mt-1 font-bold text-emerald-800">— {COMPANY_DATA.owner.fullName}, Inhaber</figcaption>
+          <figcaption className="mt-1 font-bold text-emerald-800">— {COMPANY_DATA.owner.fullName}, Meisterbetrieb Aßlar</figcaption>
         </figure>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -164,12 +202,49 @@ export default function TezgelAnfrageFunnel() {
           <button
             type="button"
             onClick={() => {
-              setSentVia(null);
+              setStatus('idle');
+              setStep(1);
+              setName('');
+              setPhone('');
+              setEmail('');
+              setNotes('');
+            }}
+            className="btn-ghost w-full sm:w-auto"
+          >
+            Weitere Anfrage starten
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // WHATSAPP OPENED STATE
+  if (status === 'whatsapp_opened') {
+    return (
+      <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl" role="status">
+        <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6 bg-emerald-100 text-emerald-700">
+          <MessageCircle className="w-10 h-10" />
+        </div>
+        <span className="eyebrow mb-4">WhatsApp geöffnet</span>
+        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Fast geschafft – Nachricht absenden</h3>
+        <p className="text-base text-slate-700 leading-relaxed mb-6">
+          Ihre Anfrage ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab – Herr Tezgel antwortet Ihnen schnellstmöglich.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto">
+            <Phone className="w-4 h-4" />
+            Direkt anrufen: {COMPANY_DATA.contact.phone}
+          </a>
+          <button
+            type="button"
+            onClick={() => {
+              setStatus('idle');
               setStep(1);
             }}
             className="btn-ghost w-full sm:w-auto"
           >
-            Neue Anfrage starten
+            Zurück zur Übersicht
           </button>
         </div>
       </div>
@@ -177,8 +252,9 @@ export default function TezgelAnfrageFunnel() {
   }
 
   return (
-    <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden max-w-4xl mx-auto">
-      <div className="ambient-glow-mint -top-40 -right-40 opacity-60" />
+    <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden max-w-4xl mx-auto shadow-lg border border-slate-200">
+      {/* Decorative gradient corner */}
+      <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/10 blur-2xl" aria-hidden="true" />
 
       {/* Header & step indicator */}
       <div className="mb-8 text-center sm:text-left relative z-10">
@@ -228,116 +304,177 @@ export default function TezgelAnfrageFunnel() {
                   key={pt.id}
                   onClick={() => setProjectType(pt.id)}
                   aria-pressed={isSelected}
-                  className={`group text-left p-4 rounded-2xl transition-all duration-300 flex flex-col justify-between border ${
+                  className={`p-4 rounded-2xl border text-left flex flex-col justify-between transition-all duration-300 ${
                     isSelected
-                      ? 'bg-emerald-50 border-emerald-600 ring-2 ring-emerald-600/20'
+                      ? 'bg-emerald-50/80 border-emerald-600 ring-2 ring-emerald-600/20 shadow-md'
                       : 'bg-white border-slate-200 hover:border-emerald-500/80 hover:-translate-y-0.5'
                   }`}
                 >
-                  <span className="flex items-center justify-between mb-3">
-                    <span
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${
-                        isSelected ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-700 border border-emerald-100'
-                      }`}
-                    >
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <span className="icon-chip w-11 h-11">
                       <IconComp className="w-5 h-5" />
                     </span>
-                    <span className="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full bg-white text-slate-700 border border-slate-200">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
                       {pt.badge}
                     </span>
-                  </span>
-                  <span className="block font-black text-sm text-slate-900 group-hover:text-emerald-800 transition-colors">{pt.title}</span>
-                  <span className="block text-xs text-slate-700 mt-0.5 leading-snug">{pt.subtitle}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-base mb-1">{pt.title}</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">{pt.subtitle}</p>
+                  </div>
                 </button>
               );
             })}
           </div>
 
-          <div className="pt-2 flex justify-end">
-            <button type="button" onClick={() => setStep(2)} className="btn-primary">
-              Weiter zu Schritt 2
+          <div className="pt-4 border-t border-slate-200 flex justify-end">
+            <button
+              type="button"
+              onClick={() => setStep(2)}
+              className="btn-primary w-full sm:w-auto"
+            >
+              Weiter zu Schritt 2: Fläche &amp; Ort
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
       )}
 
-      {/* STEP 2: AREA, TIMING & LOCATION */}
+      {/* STEP 2: DETAILS */}
       {step === 2 && (
         <div className="space-y-6 relative z-10">
-          <fieldset>
-            <legend className="block text-xs font-black uppercase tracking-widest text-slate-800 mb-2.5">Geschätzte Fläche</legend>
+          <div>
+            <label className="block text-sm font-bold text-slate-800 mb-2">
+              Ungefähre Fläche in Quadratmetern
+            </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
-              {AREA_OPTIONS.map((area) => (
+              {AREA_OPTIONS.map((opt) => (
                 <button
                   type="button"
-                  key={area}
-                  aria-pressed={selectedArea === area && !customArea}
+                  key={opt}
                   onClick={() => {
-                    setSelectedArea(area);
+                    setSelectedArea(opt);
                     setCustomArea('');
                   }}
-                  className={optionClass(selectedArea === area && !customArea)}
+                  className={optionClass(selectedArea === opt && !customArea)}
                 >
-                  {area}
+                  {opt}
                 </button>
               ))}
             </div>
-            <label htmlFor="funnel-custom-area" className="sr-only">Genaue Quadratmeterzahl</label>
             <input
-              id="funnel-custom-area"
               type="text"
-              inputMode="decimal"
-              placeholder="Oder genaue Quadratmeterzahl eingeben (z. B. 42)"
+              placeholder="Oder genaue m²-Zahl eingeben (z. B. 24 m²)"
               value={customArea}
               onChange={(e) => setCustomArea(e.target.value)}
               className={inputClass}
             />
-          </fieldset>
+          </div>
 
-          <fieldset>
-            <legend className="block text-xs font-black uppercase tracking-widest text-slate-800 mb-2.5">Gewünschter Zeitraum</legend>
+          <div>
+            <label className="block text-sm font-bold text-slate-800 mb-2">
+              Gewünschter Ausführungszeitraum
+            </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-              {TIMING_OPTIONS.map((time) => (
-                <button type="button" key={time} aria-pressed={timing === time} onClick={() => setTiming(time)} className={optionClass(timing === time)}>
-                  {time}
+              {TIMING_OPTIONS.map((opt) => (
+                <button
+                  type="button"
+                  key={opt}
+                  onClick={() => setTiming(opt)}
+                  className={optionClass(timing === opt)}
+                >
+                  {opt}
                 </button>
               ))}
             </div>
-          </fieldset>
+          </div>
 
           <div>
-            <label htmlFor="funnel-location" className="block text-xs font-black uppercase tracking-widest text-slate-800 mb-2">
-              Postleitzahl &amp; Ort des Bauvorhabens
+            <label htmlFor="funnel-location" className="block text-sm font-bold text-slate-800 mb-1.5">
+              Einsatzort / Postleitzahl
             </label>
             <input
               id="funnel-location"
               type="text"
-              autoComplete="postal-code"
-              placeholder="z. B. 35614 Aßlar oder 35576 Wetzlar"
+              placeholder="z. B. 35614 Aßlar, 35578 Wetzlar oder Nachbarort"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               className={inputClass}
             />
+            <p className="text-xs text-slate-500 mt-1">Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
           </div>
 
-          <div className="pt-2 flex items-center justify-between gap-4">
-            <button type="button" onClick={() => setStep(1)} className="btn-ghost px-5">
+          <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={() => setStep(1)}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 hover:text-emerald-800"
+            >
               <ArrowLeft className="w-4 h-4" />
               Zurück
             </button>
-            <button type="button" onClick={() => setStep(3)} className="btn-primary">
-              Weiter zu Kontaktdaten
+            <button
+              type="button"
+              onClick={() => setStep(3)}
+              className="btn-primary w-full sm:w-auto"
+            >
+              Weiter zu Schritt 3: Kontaktdaten
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
       )}
 
-      {/* STEP 3: CONTACT & SEND */}
+      {/* STEP 3: CONTACT & SUBMISSION */}
       {step === 3 && (
-        <form className="space-y-5 relative z-10" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        <form onSubmit={handleOnlineSubmit} className="space-y-6 relative z-10">
+          {/* Honeypot for spam bots */}
+          <input
+            type="text"
+            name="website_url_hp"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
+          />
+
+          {errorMessage && (
+            <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm flex items-start gap-2.5">
+              <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
+              <div>
+                <strong>Fehler beim Absenden:</strong> {errorMessage}
+                <div className="mt-1">
+                  Sie können die Anfrage alternativ direkt per{' '}
+                  <button
+                    type="button"
+                    onClick={handleWhatsAppDirect}
+                    className="underline font-bold text-emerald-800"
+                  >
+                    WhatsApp senden
+                  </button>{' '}
+                  oder anrufen.
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 text-xs sm:text-sm text-emerald-950 flex flex-wrap items-center justify-between gap-2">
+            <span>
+              <strong>Projekt:</strong> {projectTitle} &middot; <strong>Umfang:</strong> {finalArea} &middot;{' '}
+              <strong>Ort:</strong> {locationText}
+            </span>
+            <button
+              type="button"
+              onClick={() => setStep(2)}
+              className="text-xs font-bold text-emerald-800 underline underline-offset-2 hover:text-emerald-900"
+            >
+              Ändern
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="funnel-name" className="block text-sm font-bold text-slate-800 mb-1.5">
                 Ihr Name <span className="text-emerald-800">*</span>
@@ -373,7 +510,7 @@ export default function TezgelAnfrageFunnel() {
 
           <div>
             <label htmlFor="funnel-email" className="block text-sm font-bold text-slate-800 mb-1.5">
-              E-Mail-Adresse (optional)
+              E-Mail-Adresse <span className="text-slate-500 font-normal">(für die Eingangsbestätigung)</span>
             </label>
             <input
               id="funnel-email"
@@ -402,21 +539,37 @@ export default function TezgelAnfrageFunnel() {
 
           <div className="pt-4 border-t border-slate-200 space-y-3">
             <div className="flex flex-col sm:flex-row items-center gap-3">
-              <button type="submit" name="channel" value="whatsapp" className="glass-button-whatsapp w-full sm:flex-1 text-sm">
-                <MessageCircle className="w-4 h-4" />
-                Anfrage per WhatsApp senden
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="btn-primary w-full sm:flex-1 text-sm py-3.5 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              >
+                {status === 'submitting' ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Anfrage wird sicher übertragen...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Anfrage verbindlich absenden
+                  </>
+                )}
               </button>
-              <button type="submit" name="channel" value="email" className="btn-ghost w-full sm:w-auto">
-                <Send className="w-4 h-4 text-emerald-700" />
-                Per E-Mail senden
+              <button
+                type="button"
+                onClick={handleWhatsAppDirect}
+                className="glass-button-whatsapp w-full sm:w-auto text-sm py-3.5 cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Direkt per WhatsApp
               </button>
             </div>
 
-            <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
+            <p className="flex items-start justify-center gap-1.5 text-xs text-slate-600 text-center leading-relaxed">
               <Lock className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
               <span>
-                Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet. Beim Versand per WhatsApp gelten zusätzlich
-                die Datenschutzbestimmungen von WhatsApp. Details in unserer{' '}
+                Ihre Angaben werden vertraulich behandelt und verschlüsselt übertragen. Keine Weitergabe an Dritte. Details in unserer{' '}
                 <Link href="/datenschutz" className="font-bold text-emerald-800 underline underline-offset-2">
                   Datenschutzerklärung
                 </Link>
