@@ -64,12 +64,12 @@ export default function BadPage() {
                         transparente Festpreise und verbauen hochwertige Markenprodukte – normgerecht abgedichtet nach DIN 18534.
                     </p>
 
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs group">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-4 w-full sm:w-auto">
+                        <Link href="/bad/projekt-check" className="btn-primary w-full sm:w-auto px-7 py-3.5 text-xs group justify-center">
                             Bad-Projektcheck starten
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
-                        <Link href="/bad/musterbaeder" className="btn-ghost px-7 py-3.5 text-xs">
+                        <Link href="/bad/musterbaeder" className="btn-ghost w-full sm:w-auto px-7 py-3.5 text-xs justify-center">
                             Musterbäder entdecken
                         </Link>
                     </div>

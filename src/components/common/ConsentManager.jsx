@@ -110,10 +110,18 @@ const ConsentManager = () => {
             }
         })();
 
-        if (hasValidConsent) return;
+        const handleShow = () => setIsVisible(true);
+        window.addEventListener('showConsentBanner', handleShow);
+
+        if (hasValidConsent) {
+            return () => window.removeEventListener('showConsentBanner', handleShow);
+        }
 
         const timer = setTimeout(() => setIsVisible(true), 1000);
-        return () => clearTimeout(timer);
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('showConsentBanner', handleShow);
+        };
     }, []);
 
     const handleAcceptAll = () => {
@@ -167,13 +175,13 @@ const ConsentManager = () => {
         return (
             <button
                 onClick={() => setIsVisible(true)}
-                className="fixed bottom-6 left-6 z-40 bg-[var(--color-brand-primary)] text-white p-3 rounded-full shadow-lg shadow-emerald-900/20 hover:bg-[var(--color-brand-primary-hover)] transition-all hover:scale-110 flex items-center justify-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                className="hidden md:flex fixed bottom-6 left-6 z-30 bg-emerald-700 text-white p-3 rounded-full shadow-lg shadow-emerald-950/20 hover:bg-emerald-800 transition-all hover:scale-105 items-center justify-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
                 aria-label="Cookie-Einstellungen öffnen"
                 title="Cookie-Einstellungen"
             >
-                <Shield className="w-6 h-6" />
-                <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 text-sm font-medium">
-                    Datenschutz
+                <Shield className="w-5 h-5" />
+                <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 text-xs font-semibold">
+                    Privatsphäre &amp; Cookies
                 </span>
             </button>
         );

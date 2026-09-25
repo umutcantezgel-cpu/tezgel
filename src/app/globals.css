@@ -123,7 +123,7 @@
     border-bottom: 1px solid #E2E8F0;
   }
 
-  /* All-caps micro badge */
+  /* Refined micro badge */
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -133,11 +133,10 @@
     border: 1px solid #A7F3D0;
     background: #ECFDF5;
     color: #065F46;
-    font-size: 0.6875rem;
-    line-height: 1rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
   }
 
   .eyebrow-sky {

@@ -204,24 +204,26 @@ export default function HomePage() {
                                 mit Staubschutz-Garantie im bewohnten Zuhause.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-start gap-3 [&>*]:whitespace-nowrap">
-                                <Link href="/kontakt" className="btn-primary w-full sm:w-auto group">
+                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 w-full sm:w-auto">
+                                <Link href="/kontakt" className="btn-primary w-full sm:w-auto justify-center group shadow-md shadow-emerald-900/15 py-3.5">
                                     Vor-Ort-Aufmaß vereinbaren
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
-                                <a
-                                    href={contact.whatsappLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="glass-button-whatsapp w-full sm:w-auto text-sm"
-                                >
-                                    <MessageCircle className="w-4 h-4" />
-                                    WhatsApp
-                                </a>
-                                <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
-                                    <Phone className="w-4 h-4 text-emerald-700" />
-                                    {contact.phone}
-                                </a>
+                                <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:items-center">
+                                    <a
+                                        href={contact.whatsappLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="glass-button-whatsapp w-full sm:w-auto text-xs sm:text-sm justify-center py-3"
+                                    >
+                                        <MessageCircle className="w-4 h-4" />
+                                        WhatsApp
+                                    </a>
+                                    <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto text-xs sm:text-sm justify-center py-3">
+                                        <Phone className="w-4 h-4 text-emerald-700" />
+                                        {contact.phone}
+                                    </a>
+                                </div>
                             </div>
 
                             <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-sm font-semibold text-slate-700">

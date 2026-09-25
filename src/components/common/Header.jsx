@@ -39,7 +39,7 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden sm:block
                     Fliesenverlegung <span className="text-emerald-700">Tezgel</span>
                 </span>
                 {!compact && (
-                    <span className={`${sublineClassName} text-[10px] font-bold text-slate-600 tracking-widest uppercase`}>
+                    <span className={`${sublineClassName} text-[10px] sm:text-[11px] font-semibold text-slate-500 tracking-normal`}>
                         Meisterbetrieb &middot; Aßlar / Wetzlar
                     </span>
                 )}
