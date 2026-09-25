@@ -56,13 +56,13 @@ const FEATURES = [
 const TOTAL_STEPS = 5;
 
 const inputClass =
-    'w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all';
+    'w-full px-4 py-3 rounded-xl bg-white border border-neutral-300 text-neutral-900 placeholder:text-neutral-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
 
 const optionClass = (selected, padding = 'p-5') =>
-    `group ${padding} rounded-2xl border-2 text-left transition-all duration-300 ${
+    `group ${padding} rounded-xl border-2 text-left transition-all duration-200 ${
         selected
-            ? 'border-emerald-600 bg-emerald-50 ring-2 ring-emerald-600/20'
-            : 'border-slate-200 bg-white hover:border-emerald-500/80 hover:-translate-y-0.5'
+            ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
+            : 'border-neutral-200 bg-white hover:border-orange-500/80 hover:-translate-y-0.5'
     }`;
 
 export default function BadanfrageFunnel() {
@@ -170,25 +170,25 @@ export default function BadanfrageFunnel() {
         return (
             <div className="glass-bezel-outer max-w-2xl mx-auto shadow-xl">
                 <div className="glass-bezel-inner p-8 md:p-12 text-center" role="status">
-                    <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6 bg-emerald-100 text-emerald-700">
+                    <div className="icon-chip w-20 h-20 rounded-xl mx-auto mb-6 bg-orange-100 text-orange-700">
                         <CheckCircle2 className="w-10 h-10" />
                     </div>
                     <span className="eyebrow mb-4">Badanfrage erfolgreich übermittelt</span>
-                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">
+                    <h3 className="text-2xl md:text-3xl font-black text-neutral-900 mb-3">
                         Vielen Dank, {formData.name}!
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-700 mb-6 leading-relaxed">
-                        Ihre detaillierte Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist erfolgreich bei Meister Deniz Tezgel eingegangen.
+                    <p className="text-sm sm:text-base text-neutral-700 mb-6 leading-relaxed">
+                        Ihre detaillierte Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
                         {formData.email && (
-                            <span className="block mt-2 font-semibold text-emerald-800">
+                            <span className="block mt-2 font-semibold text-orange-800">
                                 Eine Eingangsbestätigung wurde an <em>{formData.email}</em> gesendet.
                             </span>
                         )}
                     </p>
 
-                    <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 text-left text-sm space-y-2 mb-6">
-                        <p className="font-black text-slate-900 flex items-center gap-1.5">
-                            <Sparkles className="w-4 h-4 text-emerald-600" />
+                    <div className="bg-neutral-50 p-5 rounded-xl border border-neutral-200 text-left text-sm space-y-2 mb-6">
+                        <p className="font-black text-neutral-900 flex items-center gap-1.5">
+                            <Sparkles className="w-4 h-4 text-orange-600" />
                             Zusammenfassung Ihres Badkonzepts:
                         </p>
                         <p className="text-slate-700 text-xs sm:text-sm"><strong>Kontakt:</strong> {formData.name} &middot; {formData.phone}</p>
@@ -221,7 +221,7 @@ export default function BadanfrageFunnel() {
         return (
             <div className="glass-bezel-outer max-w-2xl mx-auto shadow-xl">
                 <div className="glass-bezel-inner p-8 md:p-12 text-center" role="status">
-                    <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6 bg-emerald-100 text-emerald-700">
+                    <div className="icon-chip w-20 h-20 rounded-tile-xl mx-auto mb-6 bg-green-100 text-green-700">
                         <MessageCircle className="w-10 h-10" />
                     </div>
                     <span className="eyebrow mb-4">WhatsApp geöffnet</span>
@@ -263,8 +263,8 @@ export default function BadanfrageFunnel() {
                             Kostenlos &amp; unverbindlich
                         </span>
                     </div>
-                    <h2 className="text-xl sm:text-2xl font-black text-slate-900">
-                        Planen Sie Ihr Traumbad mit dem Meisterbetrieb aus Aßlar
+                    <h2 className="text-xl sm:text-2xl font-black text-neutral-900">
+                        Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar
                     </h2>
 
                     {/* Progress Indicators */}
@@ -272,8 +272,8 @@ export default function BadanfrageFunnel() {
                         {Array.from({ length: TOTAL_STEPS }, (_, i) => i + 1).map((s) => (
                             <div
                                 key={s}
-                                className={`h-2 rounded-full transition-all duration-500 ${
-                                    s <= step ? 'bg-emerald-600' : 'bg-slate-200'
+                                className={`h-2 rounded-full transition-all duration-300 ${
+                                    s <= step ? 'bg-orange-600' : 'bg-neutral-200'
                                 }`}
                             />
                         ))}
@@ -297,7 +297,7 @@ export default function BadanfrageFunnel() {
                                         onClick={() => setFormData({ ...formData, objectType: obj.id })}
                                         className={optionClass(formData.objectType === obj.id)}
                                     >
-                                        <span className="block font-black text-slate-900 text-sm sm:text-base mb-1 group-hover:text-emerald-800 transition-colors">{obj.title}</span>
+                                        <span className="block font-black text-slate-900 text-sm sm:text-base mb-1 group-hover:text-orange-600 transition-colors">{obj.title}</span>
                                         <span className="block text-xs text-slate-600">{obj.desc}</span>
                                     </button>
                                 ))}
@@ -320,7 +320,7 @@ export default function BadanfrageFunnel() {
                                         onClick={() => setFormData({ ...formData, scope: sc.id })}
                                         className={optionClass(formData.scope === sc.id)}
                                     >
-                                        <span className="block font-black text-slate-900 text-sm sm:text-base mb-1 group-hover:text-emerald-800 transition-colors">{sc.title}</span>
+                                        <span className="block font-black text-slate-900 text-sm sm:text-base mb-1 group-hover:text-orange-600 transition-colors">{sc.title}</span>
                                         <span className="block text-xs text-slate-600">{sc.desc}</span>
                                     </button>
                                 ))}
@@ -399,7 +399,7 @@ export default function BadanfrageFunnel() {
                                         onClick={() => setFormData({ ...formData, tier: t.id })}
                                         className={optionClass(formData.tier === t.id, 'p-4')}
                                     >
-                                        <span className="block font-black text-slate-900 text-xs sm:text-sm mb-1 group-hover:text-emerald-800 transition-colors">{t.title}</span>
+                                        <span className="block font-black text-slate-900 text-xs sm:text-sm mb-1 group-hover:text-orange-600 transition-colors">{t.title}</span>
                                         <span className="block text-[11px] text-slate-600 leading-snug">{t.desc}</span>
                                     </button>
                                 ))}
@@ -416,14 +416,14 @@ export default function BadanfrageFunnel() {
                                                 type="button"
                                                 aria-pressed={isSelected}
                                                 onClick={() => toggleFeature(item.id)}
-                                                className={`px-3 py-2.5 rounded-xl border text-xs font-bold text-left transition-all duration-300 flex items-center gap-2 ${
+                                                className={`px-3 py-2.5 rounded-tile-sm border text-xs font-bold text-left transition-all duration-300 flex items-center gap-2 ${
                                                     isSelected
-                                                        ? 'bg-emerald-50 text-emerald-800 border-emerald-600'
-                                                        : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500/80'
+                                                        ? 'bg-orange-50 text-orange-950 border-orange-600'
+                                                        : 'bg-white text-slate-700 border-slate-200 hover:border-orange-500'
                                                 }`}
                                             >
                                                 {isSelected ? (
-                                                    <Check className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                                                    <Check className="w-3.5 h-3.5 text-orange-600 shrink-0" />
                                                 ) : (
                                                     <Plus className="w-3.5 h-3.5 text-slate-600 shrink-0" />
                                                 )}
@@ -471,7 +471,7 @@ export default function BadanfrageFunnel() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label htmlFor="badanfrage-name" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        Vor- &amp; Nachname <span className="text-emerald-800">*</span>
+                                        Vor- &amp; Nachname <span className="text-orange-600">*</span>
                                     </label>
                                     <input
                                         id="badanfrage-name"
@@ -486,7 +486,7 @@ export default function BadanfrageFunnel() {
                                 </div>
                                 <div>
                                     <label htmlFor="badanfrage-phone" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        Telefonnummer für Rückfragen <span className="text-emerald-800">*</span>
+                                        Telefonnummer für Rückfragen <span className="text-orange-600">*</span>
                                     </label>
                                     <input
                                         id="badanfrage-phone"
@@ -556,12 +556,12 @@ export default function BadanfrageFunnel() {
                                     <button
                                         type="submit"
                                         disabled={status === 'submitting'}
-                                        className="btn-primary w-full sm:flex-1 text-sm justify-center py-3.5 shadow-md shadow-emerald-900/10 disabled:opacity-50"
+                                        className="btn-primary w-full sm:flex-1 text-sm justify-center py-3.5 shadow-md shadow-orange-900/10 disabled:opacity-50"
                                     >
                                         {status === 'submitting' ? (
                                             <>
                                                 <Loader2 className="w-4 h-4 animate-spin" />
-                                                <span>Übermittle Anfrage an Meisterbetrieb …</span>
+                                                <span>Übermittle Anfrage an Fachbetrieb …</span>
                                             </>
                                         ) : (
                                             <>
@@ -582,11 +582,11 @@ export default function BadanfrageFunnel() {
                                 </div>
 
                                 <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
-                                    <Lock className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
+                                    <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>
                                         Ihre Angaben werden vertraulich zur Angebotserstellung genutzt. Beim optionalen Versand per WhatsApp gelten
                                         zusätzlich die Richtlinien von WhatsApp. Mehr in unserer{' '}
-                                        <Link href="/datenschutz" className="font-bold text-emerald-800 underline underline-offset-2 hover:text-emerald-700">
+                                        <Link href="/datenschutz" className="font-bold text-orange-600 underline underline-offset-2 hover:text-orange-700">
                                             Datenschutzerklärung
                                         </Link>
                                         .
@@ -598,7 +598,7 @@ export default function BadanfrageFunnel() {
                                 <button
                                     type="button"
                                     onClick={() => setStep(4)}
-                                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 hover:text-emerald-800 transition-colors"
+                                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 hover:text-orange-600 transition-colors"
                                 >
                                     <ArrowLeft className="w-4 h-4" />
                                     Zurück zu Schritt 4
@@ -614,7 +614,7 @@ export default function BadanfrageFunnel() {
                                 <button
                                     type="button"
                                     onClick={() => setStep(step - 1)}
-                                    className="flex items-center gap-1.5 px-4 py-2.5 rounded-full text-slate-700 hover:text-emerald-800 font-bold text-xs transition-colors"
+                                    className="flex items-center gap-1.5 px-4 py-2.5 rounded-full text-slate-700 hover:text-orange-600 font-bold text-xs transition-colors"
                                 >
                                     <ArrowLeft className="w-4 h-4" />
                                     Zurück

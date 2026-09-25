@@ -62,7 +62,7 @@ export const CITIES: CityData[] = [
     name: 'Butzbach',
     distanceKm: 35,
     region: 'Wetteraukreis',
-    description: 'Butzbach und Umgebung gehören zu unserem Einsatzgebiet: Wir verlegen Fliesen in Bad, Küche, Wohnbereich und auf dem Balkon – mit Meisterqualität aus dem Lahn-Dill-Kreis.',
+    description: 'Butzbach und Umgebung gehören zu unserem Einsatzgebiet: Wir verlegen Fliesen in Bad, Küche, Wohnbereich und auf dem Balkon – mit höchster Präzision aus dem Lahn-Dill-Kreis.',
     mapQuery: 'Butzbach,Hessen,Deutschland',
   },
   {
@@ -110,7 +110,7 @@ export const CITIES: CityData[] = [
     name: 'Aßlar',
     distanceKm: 5,
     region: 'Lahn-Dill-Kreis',
-    description: 'In Aßlar ist unser Firmensitz in der Hohwardstraße 14. Hier sind wir zu Hause – mit persönlicher Beratung durch Fliesenlegermeister Deniz Tezgel und kürzesten Wegen zu Ihrer Baustelle.',
+    description: 'In Aßlar ist unser Firmensitz in der Hohwardstraße 14. Hier sind wir zu Hause – mit persönlicher Beratung durch Inhaber Deniz Tezgel und kürzesten Wegen zu Ihrer Baustelle.',
     mapQuery: 'Aßlar,Hessen,Deutschland',
   },
 ];

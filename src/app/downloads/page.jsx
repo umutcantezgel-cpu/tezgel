@@ -26,12 +26,12 @@ export default function DownloadsPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-14 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <FolderOpen className="w-3.5 h-3.5" />
                         Wissenscenter &amp; Dokumente
@@ -47,7 +47,7 @@ export default function DownloadsPage() {
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
                 {/* On request */}
-                <div className="glass-surface rounded-[2rem] p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+                <div className="glass-surface rounded-tile-lg p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
                     <div className="flex items-start gap-4">
                         <span className="icon-chip w-12 h-12">
                             <FileText className="w-6 h-6" />
@@ -65,7 +65,7 @@ export default function DownloadsPage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`mailto:${contact.email}?subject=${encodeURIComponent('Anfrage Unterlagen')}`} className="btn-ghost px-6 py-3 text-xs">
-                            <Mail className="w-4 h-4 text-emerald-700" />
+                            <Mail className="w-4 h-4 text-orange-600" />
                             {contact.email}
                         </a>
                     </div>
@@ -78,18 +78,18 @@ export default function DownloadsPage() {
                         <li key={href}>
                             <Link
                                 href={href}
-                                className="group glass-surface p-6 sm:p-8 rounded-[2rem] flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-6 sm:p-8 rounded-tile-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="flex items-start gap-4">
                                     <span className="icon-chip w-12 h-12">
                                         <Icon className="w-6 h-6" />
                                     </span>
                                     <span>
-                                        <span className="block font-black text-base text-slate-900 mb-1 group-hover:text-emerald-800 transition-colors">{title}</span>
+                                        <span className="block font-black text-base text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">{title}</span>
                                         <span className="block text-sm text-slate-700">{desc}</span>
                                     </span>
                                 </span>
-                                <span className="shrink-0 inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 group-hover:text-emerald-700">
+                                <span className="shrink-0 inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 group-hover:text-orange-600">
                                     {cta}
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                 </span>
@@ -100,7 +100,7 @@ export default function DownloadsPage() {
 
                 <p className="mt-10 text-center text-sm text-slate-700">
                     Lieber persönlich?{' '}
-                    <a href={`tel:${contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <a href={`tel:${contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                         <Phone className="w-4 h-4" />
                         {contact.phone}
                     </a>

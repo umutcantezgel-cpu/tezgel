@@ -20,7 +20,7 @@ import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 
 export const metadata = {
     title: 'Badsanierung & Badrenovierung in Aßlar & Wetzlar',
-    description: 'Ihr Meisterbetrieb für schlüsselfertige Badsanierung, Musterbäder, barrierefreie Bäder nach DIN 18040-2 und persönliche Badplanung in Aßlar, Wetzlar und Umgebung.',
+    description: 'Ihr Fachbetrieb für schlüsselfertige Badsanierung, Musterbäder, barrierefreie Bäder nach DIN 18040-2 und persönliche Badplanung in Aßlar, Wetzlar und Umgebung.',
     alternates: { canonical: '/bad' }
 };
 
@@ -39,16 +39,16 @@ export default function BadPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10" aria-labelledby="bad-hero-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <div className="flex flex-wrap items-center justify-center gap-2">
                         <span className="eyebrow">
                             <Award className="w-3.5 h-3.5" />
-                            Meisterbetrieb für Badsanierung &middot; Aßlar &amp; Wetzlar
+                            HWK Fachbetrieb für Badsanierung &middot; Aßlar &amp; Wetzlar
                         </span>
                         <span className="eyebrow eyebrow-amber">
                             <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
@@ -57,7 +57,7 @@ export default function BadPage() {
                     </div>
                     <h1 id="bad-hero-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         Ihr Traumbad schlüsselfertig{' '}
-                        <span className="text-ceramic-gradient">aus Meisterhand</span>
+                        <span className="text-ceramic-gradient">in Fachqualität</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
                         Von der ersten Planungsskizze bis zur schlüsselfertigen Übergabe: Wir koordinieren alle Gewerke, bieten
@@ -77,7 +77,7 @@ export default function BadPage() {
                     <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-2 text-sm font-semibold text-slate-700">
                         {['Kostenfreies Vor-Ort-Aufmaß', 'Staubschutz-Garantie', 'Verbindlicher Festpreis'].map((item) => (
                             <li key={item} className="flex items-center gap-1.5">
-                                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                <CheckCircle2 className="w-4 h-4 text-orange-600" />
                                 {item}
                             </li>
                         ))}
@@ -102,18 +102,18 @@ export default function BadPage() {
                             <li key={item.path}>
                                 <Link
                                     href={item.path}
-                                    className="group glass-surface p-6 rounded-[2rem] flex items-start gap-4 h-full hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group glass-surface p-6 rounded-tile-md flex items-start gap-4 h-full hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
                                     <span className="icon-chip w-11 h-11">
                                         <Icon className="w-5 h-5" />
                                     </span>
                                     <span className="flex-1">
-                                        <span className="block font-black text-sm sm:text-base text-slate-900 group-hover:text-emerald-800 transition-colors mb-1">
+                                        <span className="block font-black text-sm sm:text-base text-slate-900 group-hover:text-orange-600 transition-colors mb-1">
                                             {item.title}
                                         </span>
                                         <span className="block text-xs text-slate-600 font-medium">{item.desc}</span>
                                     </span>
-                                    <ArrowRight className="w-4 h-4 mt-1 text-slate-600 group-hover:text-emerald-700 group-hover:translate-x-0.5 transition-all" />
+                                    <ArrowRight className="w-4 h-4 mt-1 text-slate-600 group-hover:text-orange-600 group-hover:translate-x-0.5 transition-all" />
                                 </Link>
                             </li>
                         );
@@ -139,13 +139,13 @@ export default function BadPage() {
                         {QUALITY_TIERS.map((tier) => (
                             <li
                                 key={tier.name}
-                                className="group p-8 rounded-[2rem] bg-slate-50 border border-slate-200 flex flex-col justify-between hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group p-8 rounded-tile-md bg-slate-50 border border-slate-200 flex flex-col justify-between hover:bg-white hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <div className="space-y-3">
-                                    <span className="text-xs font-black px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-800 inline-block border border-emerald-200">
+                                    <span className="text-xs font-black px-3.5 py-1 rounded-tile-sm bg-orange-50 text-orange-950 inline-block border border-orange-200">
                                         {tier.name}
                                     </span>
-                                    <h3 className="text-xl font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                    <h3 className="text-xl font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                         {tier.subtitle}
                                     </h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{tier.description}</p>
@@ -153,7 +153,7 @@ export default function BadPage() {
                                 <div className="pt-6 mt-6 border-t border-slate-200">
                                     <Link
                                         href="/bad/musterbaeder"
-                                        className="text-sm font-bold text-emerald-800 hover:text-emerald-700 inline-flex items-center gap-1"
+                                        className="text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1"
                                     >
                                         Musterbäder ansehen
                                         <ArrowRight className="w-4 h-4" />
@@ -167,7 +167,7 @@ export default function BadPage() {
                         Fragen zu Ihrem Bad? Rufen Sie {COMPANY_DATA.owner.fullName} direkt an:{' '}
                         <a
                             href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                            className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                         >
                             {COMPANY_DATA.contact.phone}
                         </a>

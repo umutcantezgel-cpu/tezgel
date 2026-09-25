@@ -90,18 +90,18 @@ const WEITERLESEN = [
     { title: 'Treppen im Überblick', path: '/treppen', desc: 'Voraussetzungen, Belagsarten und Steigungen' },
     { title: 'Naturstein & Granit', path: '/naturstein/granit', desc: 'Silikatische Natursteine im Porträt' },
     { title: 'Wohnbereiche fliesen', path: '/leistungen/wohnen', desc: 'Böden für Flur, Diele und Wohnen' },
-    { title: 'Unser Betrieb', path: '/unternehmen', desc: 'Meisterbetrieb aus Aßlar, HWK Wiesbaden' }
+    { title: 'Unser Betrieb', path: '/unternehmen', desc: 'Fachbetrieb aus Aßlar, HWK Wiesbaden' }
 ];
 
 export default function TreppenhausPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="treppenhaus-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Building2 className="w-3.5 h-3.5" />
                         Treppen &middot; Mehrfamilienhaus
@@ -122,7 +122,7 @@ export default function TreppenhausPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                     </div>
@@ -132,7 +132,7 @@ export default function TreppenhausPage() {
             {/* Anforderungen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="anforderungen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Anforderungen</span>
+                    <span className="eyebrow mb-4">Anforderungen</span>
                     <h2 id="anforderungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Belastung, Sicherheit, Reinigung
                     </h2>
@@ -143,12 +143,12 @@ export default function TreppenhausPage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-11 h-11 mb-4">
                                     <Icon className="w-5 h-5" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -171,13 +171,13 @@ export default function TreppenhausPage() {
                             return (
                                 <li
                                     key={step.title}
-                                    className="group p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                    className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                                 >
                                     <div className="flex items-center justify-between mb-4">
                                         <span className="icon-chip w-11 h-11">
                                             <Icon className="w-5 h-5" />
                                         </span>
-                                        <span className="font-display text-4xl font-black tabular-nums text-emerald-600/25" aria-hidden="true">
+                                        <span className="font-display text-4xl font-black tabular-nums text-orange-600/25" aria-hidden="true">
                                             {String(idx + 1).padStart(2, '0')}
                                         </span>
                                     </div>
@@ -193,7 +193,7 @@ export default function TreppenhausPage() {
             {/* Beläge */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="belaege-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">
+                    <span className="eyebrow mb-4">
                         <Layers className="w-3.5 h-3.5" />
                         Beläge
                     </span>
@@ -203,7 +203,7 @@ export default function TreppenhausPage() {
                 </div>
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {MATERIALS.map((item) => (
-                        <li key={item.title} className="glass-surface p-7 rounded-[2rem]">
+                        <li key={item.title} className="glass-surface p-7 rounded-tile-lg">
                             <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
                         </li>
@@ -211,7 +211,7 @@ export default function TreppenhausPage() {
                 </ul>
                 <p className="mt-8 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
                     Kantenlösungen wie Gehrung, Stufenprofil oder Stufenplatte vergleichen wir auf der Seite{' '}
-                    <Link href="/treppen/innentreppe" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/treppen/innentreppe" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                         Innentreppe fliesen
                     </Link>
                     ; für stark frequentierte Treppenhäuser sind Profile oder robuste Stufenplatten oft die praktischere Wahl.
@@ -221,7 +221,7 @@ export default function TreppenhausPage() {
             {/* Podeste & Staubschutz */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10" aria-label="Podeste und Staubschutz">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="ceramic-hero rounded-[2.5rem] p-8 space-y-3">
+                    <div className="ceramic-hero rounded-tile-xl p-8 space-y-3">
                         <span className="icon-chip w-11 h-11">
                             <DoorOpen className="w-5 h-5" />
                         </span>
@@ -233,7 +233,7 @@ export default function TreppenhausPage() {
                             einer Anschlussfuge ausgebildet.
                         </p>
                     </div>
-                    <div className="ceramic-hero rounded-[2.5rem] p-8 space-y-3">
+                    <div className="ceramic-hero rounded-tile-xl p-8 space-y-3">
                         <span className="icon-chip w-11 h-11">
                             <Sparkles className="w-5 h-5" />
                         </span>
@@ -257,9 +257,9 @@ export default function TreppenhausPage() {
                         <li key={link.path}>
                             <Link
                                 href={link.path}
-                                className="group glass-surface rounded-2xl p-5 h-full block hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group glass-surface rounded-tile-md p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="font-black text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center gap-1">
+                                <span className="font-black text-slate-900 group-hover:text-orange-950 transition-colors flex items-center gap-1">
                                     {link.title}
                                     <ArrowRight className="w-4 h-4" />
                                 </span>

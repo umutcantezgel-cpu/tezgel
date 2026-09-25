@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     const timing = body.timing || 'Flexibel';
     const location = body.location || 'Aßlar / Wetzlar / Hessen';
 
-    // HTML Email for Meisterbetrieb Tezgel
+    // HTML Email for Team Tezgel
     const teamNotificationHtml = `
 <!DOCTYPE html>
 <html lang="de">
@@ -57,19 +57,19 @@ export async function POST(request: NextRequest) {
   <meta charset="utf-8">
   <title>Neue Anfrage: ${projectTitle}</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; padding: 24px; }
-    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(15,23,42,0.06); }
-    .header { background: linear-gradient(135deg, #047857 0%, #064e3b 100%); color: #ffffff; padding: 28px 24px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #fafafa; color: #171717; margin: 0; padding: 24px; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(23,23,23,0.06); }
+    .header { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); color: #ffffff; padding: 28px 24px; }
     .header h1 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
-    .header p { margin: 6px 0 0 0; font-size: 13px; color: #a7f3d0; }
+    .header p { margin: 6px 0 0 0; font-size: 13px; color: #fed7aa; }
     .content { padding: 28px 24px; }
-    .highlight-card { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px; margin-bottom: 24px; }
-    .field-row { display: flex; border-bottom: 1px solid #f1f5f9; padding: 10px 0; font-size: 14px; }
-    .field-label { width: 140px; color: #64748b; font-weight: 600; shrink-0; }
-    .field-value { color: #0f172a; font-weight: 700; flex: 1; }
-    .notes-box { background: #f8fafc; border-left: 4px solid #047857; padding: 14px 16px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 14px; line-height: 1.5; color: #334155; }
-    .cta-btn { display: inline-block; background: #047857; color: #ffffff !important; padding: 12px 24px; border-radius: 9999px; text-decoration: none; font-weight: 700; font-size: 14px; margin-top: 20px; }
-    .footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 24px; font-size: 12px; color: #94a3b8; text-align: center; }
+    .highlight-card { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 12px; padding: 16px; margin-bottom: 24px; }
+    .field-row { display: flex; border-bottom: 1px solid #f3f4f6; padding: 10px 0; font-size: 14px; }
+    .field-label { width: 140px; color: #737373; font-weight: 600; shrink-0; }
+    .field-value { color: #171717; font-weight: 700; flex: 1; }
+    .notes-box { background: #fafafa; border-left: 4px solid #ea580c; padding: 14px 16px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 14px; line-height: 1.5; color: #404040; }
+    .cta-btn { display: inline-block; background: #ea580c; color: #ffffff !important; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; margin-top: 20px; }
+    .footer { background: #fafafa; border-top: 1px solid #e5e7eb; padding: 16px 24px; font-size: 12px; color: #a3a3a3; text-align: center; }
   </style>
 </head>
 <body>
@@ -80,9 +80,9 @@ export async function POST(request: NextRequest) {
     </div>
     <div class="content">
       <div class="highlight-card">
-        <strong style="color: #065f46; font-size: 15px;">Kundenkontakt: ${body.name}</strong><br>
-        <span style="font-size: 14px; color: #047857;">📞 <a href="tel:${body.phone}" style="color: #047857; text-decoration: underline;">${body.phone}</a></span>
-        ${body.email ? `<br><span style="font-size: 14px; color: #047857;">✉️ <a href="mailto:${body.email}" style="color: #047857; text-decoration: underline;">${body.email}</a></span>` : ''}
+        <strong style="color: #9a3412; font-size: 15px;">Kundenkontakt: ${body.name}</strong><br>
+        <span style="font-size: 14px; color: #ea580c;">📞 <a href="tel:${body.phone}" style="color: #ea580c; text-decoration: underline;">${body.phone}</a></span>
+        ${body.email ? `<br><span style="font-size: 14px; color: #ea580c;">✉️ <a href="mailto:${body.email}" style="color: #ea580c; text-decoration: underline;">${body.email}</a></span>` : ''}
       </div>
 
       <div class="field-row">
@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
 
       ${body.notes ? `
       <div style="margin-top: 18px;">
-        <span style="font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Anmerkungen des Kunden:</span>
+        <span style="font-size: 13px; font-weight: 700; color: #525252; text-transform: uppercase; letter-spacing: 0.05em;">Anmerkungen des Kunden:</span>
         <div class="notes-box">${body.notes.replace(/\n/g, '<br>')}</div>
       </div>` : ''}
 
@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
       </div>
     </div>
     <div class="footer">
-      Fliesenverlegung Tezgel &middot; Meisterbetrieb &middot; Aßlar / Wetzlar
+      Fliesenverlegung Tezgel &middot; Fachbetrieb Aßlar / Wetzlar
     </div>
   </div>
 </body>
@@ -128,40 +128,40 @@ export async function POST(request: NextRequest) {
   <meta charset="utf-8">
   <title>Ihre Anfrage bei Fliesenverlegung Tezgel</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #0f172a; margin: 0; padding: 24px; }
-    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(15,23,42,0.06); }
-    .header { background: linear-gradient(135deg, #047857 0%, #064e3b 100%); color: #ffffff; padding: 32px 24px; text-align: center; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #fafafa; color: #171717; margin: 0; padding: 24px; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(23,23,23,0.06); }
+    .header { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); color: #ffffff; padding: 32px 24px; text-align: center; }
     .header h1 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
-    .header p { margin: 8px 0 0 0; font-size: 14px; color: #a7f3d0; }
+    .header p { margin: 8px 0 0 0; font-size: 14px; color: #fed7aa; }
     .content { padding: 28px 24px; line-height: 1.6; }
-    .summary-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; margin: 20px 0; }
+    .summary-card { background: #fafafa; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; margin: 20px 0; }
     .step-item { display: flex; gap: 12px; margin-bottom: 12px; }
-    .step-number { width: 24px; height: 24px; border-radius: 50%; background: #047857; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; shrink-0; }
-    .footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 20px 24px; font-size: 13px; color: #64748b; text-align: center; }
+    .step-number { width: 24px; height: 24px; border-radius: 6px; background: #ea580c; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; shrink-0; }
+    .footer { background: #fafafa; border-top: 1px solid #e5e7eb; padding: 20px 24px; font-size: 13px; color: #737373; text-align: center; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <h1>Vielen Dank für Ihre Anfrage!</h1>
-      <p>Fliesenverlegung Tezgel &middot; Meisterbetrieb Aßlar</p>
+      <p>Fliesenverlegung Tezgel &middot; Fachbetrieb Aßlar &amp; Wetzlar</p>
     </div>
     <div class="content">
       <p>Guten Tag <strong>${body.name}</strong>,</p>
       <p>vielen Dank für Ihr Vertrauen in unser Handwerk. Ihre Anfrage für Ihr Vorhaben <strong>${projectTitle}</strong> ist erfolgreich bei uns eingegangen.</p>
       
       <div class="summary-card">
-        <h3 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: #047857;">Ihre Projektangaben:</h3>
+        <h3 style="margin-top: 0; margin-bottom: 10px; font-size: 15px; color: #ea580c;">Ihre Projektangaben:</h3>
         <p style="margin: 4px 0; font-size: 14px;"><strong>Projekt:</strong> ${projectTitle}</p>
         <p style="margin: 4px 0; font-size: 14px;"><strong>Geschätzte Fläche:</strong> ${area}</p>
         <p style="margin: 4px 0; font-size: 14px;"><strong>Ort:</strong> ${location}</p>
         <p style="margin: 4px 0; font-size: 14px;"><strong>Gewünschter Zeitraum:</strong> ${timing}</p>
       </div>
 
-      <h3 style="font-size: 16px; color: #0f172a; margin-top: 24px;">Wie geht es jetzt weiter?</h3>
+      <h3 style="font-size: 16px; color: #171717; margin-top: 24px;">Wie geht es jetzt weiter?</h3>
       <div class="step-item">
         <div class="step-number">1</div>
-        <div style="font-size: 14px;"><strong>Persönliche Durchsicht:</strong> Fliesenlegermeister Deniz Tezgel prüft Ihre Anforderungen.</div>
+        <div style="font-size: 14px;"><strong>Persönliche Durchsicht:</strong> Inhaber Deniz Tezgel und unser Team prüfen Ihre Anforderungen.</div>
       </div>
       <div class="step-item">
         <div class="step-number">2</div>
@@ -175,18 +175,18 @@ export async function POST(request: NextRequest) {
       <p style="margin-top: 24px; font-size: 14px;">
         Haben Sie dringende Fragen oder möchten Sie direkt Fotos Ihrer Räumlichkeiten senden? Sie erreichen uns jederzeit auch per WhatsApp oder Telefon unter:
         <br>
-        <strong>Telefon / WhatsApp:</strong> <a href="tel:${COMPANY_DATA.contact.phoneLink}" style="color: #047857;">${COMPANY_DATA.contact.phone}</a>
+        <strong>Telefon / WhatsApp:</strong> <a href="tel:${COMPANY_DATA.contact.phoneLink}" style="color: #ea580c;">${COMPANY_DATA.contact.phone}</a>
       </p>
 
       <p style="margin-top: 28px; font-size: 14px;">
         Herzliche Grüße aus Aßlar,<br>
         <strong>Deniz Tezgel</strong><br>
-        <span style="color: #64748b; font-size: 13px;">Inhaber &amp; Fliesenlegermeister</span>
+        <span style="color: #737373; font-size: 13px;">Inhaber &amp; Fachbetriebsleiter</span>
       </p>
     </div>
     <div class="footer">
       <strong>Fliesenverlegung Tezgel</strong> &middot; ${COMPANY_DATA.headquarters.street}, ${COMPANY_DATA.headquarters.postalCode} ${COMPANY_DATA.headquarters.city}<br>
-      E-Mail: ${COMPANY_DATA.contact.email} &middot; Web: <a href="https://tezgel.de" style="color: #047857;">www.tezgel.de</a>
+      E-Mail: ${COMPANY_DATA.contact.email} &middot; Web: <a href="https://tezgel.de" style="color: #ea580c;">www.tezgel.de</a>
     </div>
   </div>
 </body>
@@ -219,7 +219,7 @@ export async function POST(request: NextRequest) {
         await resend.emails.send({
           from: fromSender,
           to: body.email,
-          subject: `Ihre Anfrage bei Fliesenverlegung Tezgel – Meisterbetrieb Aßlar`,
+          subject: `Ihre Anfrage bei Fliesenverlegung Tezgel – Fachbetrieb Aßlar`,
           html: customerConfirmationHtml
         });
       } catch (custError) {

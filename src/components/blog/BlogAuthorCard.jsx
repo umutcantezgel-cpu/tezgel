@@ -48,7 +48,7 @@ const BlogAuthorCard = ({ author }) => {
                         />
                     ) : (
                         <div
-                            className="w-24 h-24 rounded-full bg-emerald-700 flex items-center justify-center text-white text-4xl font-black shadow-lg ring-4 ring-white"
+                            className="w-24 h-24 rounded-full bg-orange-600 flex items-center justify-center text-white text-4xl font-black shadow-lg ring-4 ring-white"
                             aria-hidden="true"
                         >
                             {authorData.name?.charAt(0).toUpperCase()}
@@ -66,7 +66,7 @@ const BlogAuthorCard = ({ author }) => {
                     </h3>
 
                     {authorData.title && (
-                        <p className="text-emerald-800 font-bold text-sm mb-3">
+                        <p className="text-orange-950 font-bold text-sm mb-3">
                             {authorData.title}
                         </p>
                     )}
@@ -80,7 +80,7 @@ const BlogAuthorCard = ({ author }) => {
                     {isCompanyAuthor && (
                         <Link
                             href="/ueber-uns"
-                            className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                            className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                         >
                             Mehr über {COMPANY_DATA.owner.fullName}
                             <ArrowRight className="w-4 h-4" />
@@ -98,10 +98,10 @@ const BlogAuthorCard = ({ author }) => {
                                         href={url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="min-h-[44px] min-w-[44px] flex items-center justify-center bg-slate-100 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-500/80 rounded-full transition-all duration-300 group"
+                                        className="min-h-[44px] min-w-[44px] flex items-center justify-center bg-slate-100 hover:bg-orange-50 border border-slate-200 hover:border-orange-500 rounded-full transition-all duration-300 group"
                                         aria-label={platform}
                                     >
-                                        <Icon className="w-5 h-5 text-slate-700 group-hover:text-emerald-800 transition-colors" />
+                                        <Icon className="w-5 h-5 text-slate-700 group-hover:text-orange-600 transition-colors" />
                                     </a>
                                 );
                             })}

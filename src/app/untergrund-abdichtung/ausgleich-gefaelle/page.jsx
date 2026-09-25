@@ -86,14 +86,14 @@ const READ_MORE = [
 export default function AusgleichGefaellePage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="ausgleich-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
-                        <Ruler className="w-3.5 h-3.5" />
+                        <Ruler className="w-3.5 h-3.5 text-orange-600" />
                         Ebenheit &middot; Nivellierung &middot; Gefälle
                     </span>
                     <h1 id="ausgleich-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
@@ -120,7 +120,7 @@ export default function AusgleichGefaellePage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="messen-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                     <div className="lg:col-span-2 space-y-4">
-                        <span className="eyebrow eyebrow-sky">DIN 18202</span>
+                        <span className="eyebrow eyebrow-orange">DIN 18202</span>
                         <h2 id="messen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Ebenheit messen: Stichmaße nach DIN 18202
                         </h2>
@@ -135,7 +135,7 @@ export default function AusgleichGefaellePage() {
                         </p>
                     </div>
                     <div className="lg:col-span-3">
-                        <div className="overflow-x-auto rounded-3xl border border-slate-200">
+                        <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
                             <table className="w-full text-left text-sm min-w-[600px]">
                                 <caption className="sr-only">Ebenheitstoleranzen nach DIN 18202, Tabelle 3 (Auszug)</caption>
                                 <thead className="bg-slate-100 text-slate-900">
@@ -161,7 +161,7 @@ export default function AusgleichGefaellePage() {
                             </table>
                         </div>
                         <p className="mt-4 text-sm text-slate-600 leading-relaxed flex gap-2">
-                            <Info className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                            <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                             <span>
                                 Auszug aus DIN 18202, Tabelle 3: zulässige Stichmaße als Grenzwerte bei Messpunktabständen von 0,1 m,
                                 1 m und 4 m. Die Norm nennt weitere Messpunktabstände; maßgeblich ist ihre geltende Fassung.
@@ -175,8 +175,8 @@ export default function AusgleichGefaellePage() {
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="xxl-heading">
                 <div className="glass-bezel-outer">
                     <div className="glass-bezel-inner p-7 sm:p-10">
-                        <span className="eyebrow mb-4">
-                            <Maximize2 className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Maximize2 className="w-3.5 h-3.5 text-orange-600" />
                             Großformate
                         </span>
                         <h2 id="xxl-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-4">
@@ -191,7 +191,7 @@ export default function AusgleichGefaellePage() {
                             <p>
                                 Wir empfehlen, die erhöhten Anforderungen (Zeile 4 bzw. 7) bei Großformaten ausdrücklich zu
                                 vereinbaren und den nötigen Ausgleich von Anfang an im Angebot vorzusehen.{' '}
-                                <Link href="/fliesen/grossformat" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/grossformat" className="font-bold text-orange-700 hover:text-orange-800 hover:underline underline-offset-2">
                                     Mehr zu XXL-Großformaten
                                 </Link>
                             </p>
@@ -204,7 +204,7 @@ export default function AusgleichGefaellePage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="verfahren-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Verfahren</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Verfahren</span>
                         <h2 id="verfahren-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Spachteln, Nivellieren, Ausgleichsschicht: was wann passt
                         </h2>
@@ -216,11 +216,11 @@ export default function AusgleichGefaellePage() {
                         {METHODS.map((item) => {
                             const Icon = item.icon;
                             return (
-                                <li key={item.title} className="group p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
+                                <li key={item.title} className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
                                     <span className="icon-chip w-11 h-11 mb-4">
-                                        <Icon className="w-5 h-5" />
+                                        <Icon className="w-5 h-5 text-orange-600" />
                                     </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                                 </li>
                             );
@@ -233,7 +233,7 @@ export default function AusgleichGefaellePage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="waende-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     <div className="space-y-4">
-                        <span className="eyebrow eyebrow-sky">Wand</span>
+                        <span className="eyebrow eyebrow-orange">Wand</span>
                         <h2 id="waende-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Wände begradigen
                         </h2>
@@ -247,7 +247,7 @@ export default function AusgleichGefaellePage() {
                             Putzzustand und Raumsituation. Hohl liegender oder sandender Putz wird vorher entfernt.
                         </p>
                     </div>
-                    <div className="glass-surface rounded-[2rem] p-7 sm:p-8">
+                    <div className="glass-surface rounded-tile-xl p-7 sm:p-8">
                         <h3 className="text-lg font-black text-slate-900 mb-4">Worauf wir an der Wand achten</h3>
                         <ul className="space-y-3">
                             {[
@@ -258,7 +258,7 @@ export default function AusgleichGefaellePage() {
                                 'Ausreichend Platz für Armaturen, Vorwände und Nischen'
                             ].map((text) => (
                                 <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>{text}</span>
                                 </li>
                             ))}
@@ -271,8 +271,8 @@ export default function AusgleichGefaellePage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="gefaelle-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">
-                            <Droplets className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Droplets className="w-3.5 h-3.5 text-orange-600" />
                             Entwässerung
                         </span>
                         <h2 id="gefaelle-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -286,14 +286,14 @@ export default function AusgleichGefaellePage() {
                         </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <article className="rounded-[2rem] bg-slate-50 border border-slate-200 p-7 sm:p-8">
+                        <article className="rounded-tile-xl bg-slate-50 border border-slate-200 p-7 sm:p-8">
                             <h3 className="text-xl font-black text-slate-900 mb-3">Duschrinne</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Bei einer Rinne an der Wand oder im Boden fällt die Fläche nur in eine Richtung. Das ergibt eine einzige
                                 geneigte Ebene – gut geeignet für großformatige Fliesen, die ohne Kehlschnitte durchlaufen können.
                             </p>
                         </article>
-                        <article className="rounded-[2rem] bg-slate-50 border border-slate-200 p-7 sm:p-8">
+                        <article className="rounded-tile-xl bg-slate-50 border border-slate-200 p-7 sm:p-8">
                             <h3 className="text-xl font-black text-slate-900 mb-3">Punktablauf</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Beim mittigen Ablauf fällt die Fläche aus mehreren Richtungen zum Punkt. Die Fliesen werden an den Graten
@@ -304,7 +304,7 @@ export default function AusgleichGefaellePage() {
                     <p className="mt-6 text-sm text-slate-700 text-center leading-relaxed max-w-3xl mx-auto">
                         Das Gefälle entsteht in der Schicht unter der Abdichtung. Einbau und Anschluss des Ablaufs an das
                         Abwassernetz übernimmt der Sanitärinstallateur. Gefälle auf Balkonen und Terrassen behandeln wir unter{' '}
-                        <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-orange-700 hover:text-orange-800 hover:underline underline-offset-2">
                             Balkonsanierung
                         </Link>
                         .
@@ -314,9 +314,9 @@ export default function AusgleichGefaellePage() {
 
             {/* Primer & drying */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="grundierung-heading">
-                <div className="glass-surface rounded-[2rem] p-7 sm:p-10">
-                    <span className="eyebrow eyebrow-neutral mb-4">
-                        <Timer className="w-3.5 h-3.5" />
+                <div className="glass-surface rounded-tile-xl p-7 sm:p-10">
+                    <span className="eyebrow eyebrow-orange mb-4">
+                        <Timer className="w-3.5 h-3.5 text-orange-600" />
                         Vorbereitung
                     </span>
                     <h2 id="grundierung-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-5">
@@ -330,7 +330,7 @@ export default function AusgleichGefaellePage() {
                             'Dicke Ausgleichsschichten trocknen deutlich länger als dünne Spachtelungen – das planen wir in den Ablauf ein.'
                         ].map((text) => (
                             <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                 <span>{text}</span>
                             </li>
                         ))}
@@ -345,10 +345,10 @@ export default function AusgleichGefaellePage() {
                 </h2>
                 <div className="space-y-3">
                     {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-2xl px-6 py-4">
+                        <details key={item.q} className="group glass-surface rounded-tile-lg px-6 py-4">
                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
                                 {item.q}
-                                <ChevronDown className="w-5 h-5 text-emerald-600 shrink-0 transition-transform group-open:rotate-180" />
+                                <ChevronDown className="w-5 h-5 text-orange-600 shrink-0 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
                         </details>
@@ -358,7 +358,7 @@ export default function AusgleichGefaellePage() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10" aria-labelledby="cta-heading">
-                <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 text-center space-y-4">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
                     <h2 id="cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                         Unebener Boden, schiefe Wand, bodengleiche Dusche?
                     </h2>
@@ -372,11 +372,11 @@ export default function AusgleichGefaellePage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-ghost px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
+                            <MessageCircle className="w-4 h-4" />
                             WhatsApp
                         </a>
                     </div>
@@ -391,10 +391,10 @@ export default function AusgleichGefaellePage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-2xl bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-emerald-500/80 hover:text-emerald-800 transition-all duration-300"
+                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
                             >
                                 {link.label}
-                                <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                         </li>
                     ))}

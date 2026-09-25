@@ -38,7 +38,7 @@ const EXTRA_OPTIONS = [
 ];
 
 const inputClass =
-    'w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all';
+    'w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
 
 export default function BadProjektCheck() {
     const [sqm, setSqm] = useState(8.2);
@@ -133,7 +133,7 @@ export default function BadProjektCheck() {
                                 <label htmlFor="budget-sqm" className="text-sm font-black text-slate-900">
                                     1. Badezimmer-Größe in Quadratmetern:
                                 </label>
-                                <span className="font-display text-base sm:text-lg font-black text-emerald-800 bg-emerald-50 px-3.5 py-1 rounded-xl border border-emerald-200 tabular-nums whitespace-nowrap">
+                                <span className="font-display text-base sm:text-lg font-black text-orange-950 bg-orange-50 px-3.5 py-1 rounded-tile-sm border border-orange-200 tabular-nums whitespace-nowrap">
                                     {sqmLabel} m²
                                 </span>
                             </div>
@@ -145,7 +145,7 @@ export default function BadProjektCheck() {
                                 step="0.5"
                                 value={sqm}
                                 onChange={(e) => setSqm(parseFloat(e.target.value))}
-                                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-700"
+                                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
                             />
                             <div className="flex justify-between text-[10px] sm:text-[11px] text-slate-600 font-semibold mt-1 tabular-nums">
                                 <span>3,5 m² (Gäste-WC)</span>
@@ -169,13 +169,13 @@ export default function BadProjektCheck() {
                                             type="button"
                                             aria-pressed={isSelected}
                                             onClick={() => setSanitaryScope(scope.id)}
-                                            className={`p-3 rounded-2xl border text-left transition-all duration-300 ${
+                                            className={`p-3 rounded-tile-md border text-left transition-all duration-300 ${
                                                 isSelected
-                                                    ? 'border-emerald-600 bg-emerald-50 ring-2 ring-emerald-600/20'
-                                                    : 'border-slate-200 bg-white hover:border-emerald-500/80 hover:-translate-y-0.5'
+                                                    ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
+                                                    : 'border-slate-200 bg-white hover:border-orange-500 hover:-translate-y-0.5'
                                             }`}
                                         >
-                                            <span className={`block text-xs font-black ${isSelected ? 'text-emerald-800' : 'text-slate-900'}`}>{scope.label}</span>
+                                            <span className={`block text-xs font-black ${isSelected ? 'text-orange-950' : 'text-slate-900'}`}>{scope.label}</span>
                                             <span className="block text-[11px] text-slate-600">{scope.desc}</span>
                                         </button>
                                     );
@@ -197,10 +197,10 @@ export default function BadProjektCheck() {
                                             type="button"
                                             aria-pressed={isSelected}
                                             onClick={() => setTier(t.id)}
-                                            className={`p-3 rounded-2xl border text-left transition-all duration-300 ${
+                                            className={`p-3 rounded-tile-md border text-left transition-all duration-300 ${
                                                 isSelected
-                                                    ? 'border-emerald-600 bg-emerald-50 ring-2 ring-emerald-600/20'
-                                                    : 'border-slate-200 bg-white hover:border-emerald-500/80 hover:-translate-y-0.5'
+                                                    ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
+                                                    : 'border-slate-200 bg-white hover:border-orange-500 hover:-translate-y-0.5'
                                             }`}
                                         >
                                             <span className="block text-xs font-black text-slate-900">{t.label}</span>
@@ -225,15 +225,15 @@ export default function BadProjektCheck() {
                                             type="button"
                                             aria-pressed={isSelected}
                                             onClick={() => toggleOption(opt.id)}
-                                            className={`px-3 py-2 rounded-xl border text-xs font-bold text-left transition-all duration-300 flex items-center justify-between gap-2 ${
+                                            className={`px-3 py-2 rounded-tile-sm border text-xs font-bold text-left transition-all duration-300 flex items-center justify-between gap-2 ${
                                                 isSelected
-                                                    ? 'bg-emerald-50 border-emerald-600 text-emerald-800'
-                                                    : 'bg-white border-slate-200 text-slate-700 hover:border-emerald-500/80'
+                                                    ? 'bg-orange-50 border-orange-600 text-orange-950'
+                                                    : 'bg-white border-slate-200 text-slate-700 hover:border-orange-500'
                                             }`}
                                         >
                                             <span>{opt.label}</span>
                                             {isSelected && (
-                                                <Check className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                                                <Check className="w-3.5 h-3.5 text-orange-600 shrink-0" />
                                             )}
                                         </button>
                                     );
@@ -269,10 +269,10 @@ export default function BadProjektCheck() {
                             </p>
 
                             {/* Reference to exact Musterbad */}
-                            <div className="p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1 text-xs">
+                            <div className="p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1 text-xs">
                                 <p className="font-bold text-slate-900 flex items-center justify-between gap-2">
                                     <span>Musterbad-Vergleich:</span>
-                                    <Link href="/bad/musterbaeder" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 font-bold inline-flex items-center gap-1">
+                                    <Link href="/bad/musterbaeder" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold inline-flex items-center gap-1">
                                         Katalog
                                         <ArrowRight className="w-3.5 h-3.5" />
                                     </Link>
@@ -280,16 +280,16 @@ export default function BadProjektCheck() {
                                 <p className="text-slate-700">
                                     Passend:{' '}
                                     <Link
-                                        href={`/bad/musterbaeder/${matchingBath.slug}`}
-                                        className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
-                                    >
-                                        {matchingBath.label}
-                                    </Link>
-                                </p>
+                                         href={`/bad/musterbaeder/${matchingBath.slug}`}
+                                         className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
+                                     >
+                                         {matchingBath.label}
+                                     </Link>
+                                 </p>
                             </div>
 
                             {/* Subsidies banner */}
-                            <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-xs space-y-1 text-slate-700">
+                            <div className="p-3.5 rounded-tile-sm bg-sky-50 border border-sky-200 text-xs space-y-1 text-slate-700">
                                 <p className="font-bold text-slate-900 flex items-center gap-1.5">
                                     <BadgePercent className="w-4 h-4 text-sky-600" />
                                     Bis zu 4.180 € Pflegekassen-Zuschuss
@@ -315,9 +315,9 @@ export default function BadProjektCheck() {
                                     <ArrowRight className="w-4 h-4" />
                                 </button>
                             ) : sentVia ? (
-                                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs space-y-2" role="status">
+                                <div className="p-4 rounded-tile-sm bg-orange-50 border border-orange-200 text-orange-950 text-xs space-y-2" role="status">
                                     <p className="font-black flex items-center gap-1.5">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        <CheckCircle2 className="w-4 h-4 text-orange-600" />
                                         {sentVia === 'whatsapp' ? 'WhatsApp wurde geöffnet' : 'E-Mail-Programm wurde geöffnet'}
                                     </p>
                                     <p className="text-slate-700">
@@ -327,7 +327,7 @@ export default function BadProjektCheck() {
                                     <button
                                         type="button"
                                         onClick={() => setSentVia(null)}
-                                        className="font-bold text-emerald-800 hover:text-emerald-700 underline underline-offset-2"
+                                        className="font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2"
                                     >
                                         Erneut senden oder Kanal wechseln
                                     </button>
@@ -372,12 +372,12 @@ export default function BadProjektCheck() {
                                         Anfrage per WhatsApp senden
                                     </button>
                                     <button type="submit" name="channel" value="email" className="btn-ghost w-full text-xs">
-                                        <Send className="w-4 h-4 text-emerald-700" />
+                                        <Send className="w-4 h-4 text-orange-600" />
                                         Per E-Mail senden
                                     </button>
                                     <p className="text-[11px] text-slate-600 leading-relaxed">
                                         Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet.{' '}
-                                        <Link href="/datenschutz" className="font-bold text-emerald-800 underline underline-offset-2 hover:text-emerald-700">
+                                        <Link href="/datenschutz" className="font-bold text-orange-600 underline underline-offset-2 hover:text-orange-700">
                                             Datenschutz
                                         </Link>
                                     </p>
@@ -388,7 +388,7 @@ export default function BadProjektCheck() {
                                 href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                                 className="btn-ghost w-full text-xs"
                             >
-                                <Phone className="w-3.5 h-3.5 text-emerald-700" />
+                                <Phone className="w-3.5 h-3.5 text-orange-600" />
                                 Sofort anrufen: {COMPANY_DATA.contact.phone}
                             </a>
                         </div>

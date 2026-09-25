@@ -130,15 +130,15 @@ export default function FliesenRatgeberPage() {
 
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fliesen-hub-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <BookOpen className="w-3.5 h-3.5" />
-                        Fliesen-Ratgeber &middot; Gegründet {COMPANY_DATA.business.establishmentYear} &middot; Meisterbetrieb ({COMPANY_DATA.authority.shortName})
+                        Fliesen-Ratgeber &middot; Gegründet {COMPANY_DATA.business.establishmentYear} &middot; Fachbetrieb ({COMPANY_DATA.authority.shortName})
                     </span>
                     <h1 id="fliesen-hub-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         Fliesen-Ratgeber:{' '}
@@ -148,7 +148,7 @@ export default function FliesenRatgeberPage() {
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
                         Welche Fliese passt in welchen Raum, was verlangen Großformate vom Untergrund, und woran erkennen Sie
                         eine saubere Verlegung? Hier bündeln wir das Fachwissen aus unserem Alltag als Fliesen-, Platten- und
-                        Mosaikleger-Meisterbetrieb – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen.
+                        Mosaikleger-Fachbetrieb – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/fliesen/konfigurator" className="btn-primary px-7 py-3.5 text-xs group">
@@ -165,7 +165,7 @@ export default function FliesenRatgeberPage() {
             {/* All subpages */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-themen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Alle Themen</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Alle Themen</span>
                     <h2 id="fliesen-themen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         {FLIESEN_HUB ? FLIESEN_HUB.name : 'Fliesen & Verlegung'}{' '}
                         <span className="text-ceramic-gradient">im Überblick</span>
@@ -182,18 +182,18 @@ export default function FliesenRatgeberPage() {
                             <li key={page.path}>
                                 <Link
                                     href={page.path}
-                                    className="group glass-surface h-full p-6 rounded-[2rem] flex items-start gap-4 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group glass-surface h-full p-6 rounded-tile-lg flex items-start gap-4 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
                                     <span className="icon-chip w-11 h-11 shrink-0">
                                         <Icon className="w-5 h-5" />
                                     </span>
                                     <span className="flex-1">
-                                        <span className="block font-black text-base text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                        <span className="block font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
                                             {page.name}
                                         </span>
                                         <span className="block mt-1 text-sm text-slate-700 leading-relaxed">{page.desc}</span>
                                     </span>
-                                    <ArrowRight className="w-4 h-4 mt-1 text-emerald-600 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                                    <ArrowRight className="w-4 h-4 mt-1 text-orange-600 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                                 </Link>
                             </li>
                         );
@@ -217,9 +217,9 @@ export default function FliesenRatgeberPage() {
                             <article
                                 key={section.id}
                                 aria-labelledby={`guide-${section.id}`}
-                                className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:border-emerald-500/80 transition-all duration-300"
+                                className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="block text-[11px] font-black uppercase tracking-widest text-emerald-800 mb-2">
+                                <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-2">
                                     {section.eyebrow}
                                 </span>
                                 <h3 id={`guide-${section.id}`} className="text-xl font-black text-slate-900 mb-3 leading-snug">
@@ -231,7 +231,7 @@ export default function FliesenRatgeberPage() {
                                         <li key={link.href}>
                                             <Link
                                                 href={link.href}
-                                                className="inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 hover:text-emerald-700 hover:border-emerald-500/80 px-3.5 py-1.5 text-xs font-bold transition-colors"
+                                                className="inline-flex items-center gap-1 rounded-tile-pill bg-orange-50 border border-orange-200 text-orange-700 hover:text-orange-800 hover:border-orange-500/80 px-3.5 py-1.5 text-xs font-bold transition-colors"
                                             >
                                                 {link.label}
                                                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -245,9 +245,9 @@ export default function FliesenRatgeberPage() {
                         {/* Bad */}
                         <article
                             aria-labelledby="guide-bad"
-                            className="p-7 sm:p-8 rounded-3xl bg-sky-50 border border-sky-200 text-slate-700"
+                            className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200 text-slate-700"
                         >
-                            <span className="block text-[11px] font-black uppercase tracking-widest text-sky-800 mb-2">
+                            <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-2">
                                 Bad, Dusche &amp; Gäste-WC
                             </span>
                             <h3 id="guide-bad" className="text-xl font-black text-slate-900 mb-3 leading-snug">
@@ -267,7 +267,7 @@ export default function FliesenRatgeberPage() {
                                     <li key={link.href}>
                                         <Link
                                             href={link.href}
-                                            className="inline-flex items-center gap-1 rounded-full bg-white border border-sky-200 text-sky-800 hover:border-sky-500 px-3.5 py-1.5 text-xs font-bold transition-colors"
+                                            className="inline-flex items-center gap-1 rounded-tile-pill bg-white border border-slate-200 text-slate-900 hover:border-orange-500 px-3.5 py-1.5 text-xs font-bold transition-colors"
                                         >
                                             {link.label}
                                             <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -296,13 +296,13 @@ export default function FliesenRatgeberPage() {
                         <li key={hub.id}>
                             <Link
                                 href={hub.path}
-                                className="group glass-surface h-full p-6 rounded-[2rem] block hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface h-full p-6 rounded-tile-lg block hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
-                                <span className="block font-black text-base text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="block font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {hub.name}
                                 </span>
                                 <span className="block mt-1 text-sm text-slate-700 leading-relaxed">{hub.description}</span>
-                                <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-emerald-800">
+                                <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-orange-600">
                                     {hub.pages.length} {hub.pages.length === 1 ? 'Seite' : 'Seiten'}
                                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                                 </span>
@@ -314,7 +314,7 @@ export default function FliesenRatgeberPage() {
 
             {/* Link band to /leistungen/wohnen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative z-10" aria-labelledby="fliesen-projekt-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 relative overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                         <div className="lg:col-span-3 space-y-4">
                             <span className="eyebrow">
@@ -322,11 +322,11 @@ export default function FliesenRatgeberPage() {
                                 Vom Ratgeber zum Projekt
                             </span>
                             <h2 id="fliesen-projekt-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
-                                Wohnbereiche, Küche, Flur und Neubau – ausgeführt vom Meisterbetrieb
+                                Wohnbereiche, Küche, Flur und Neubau – ausgeführt vom Fachbetrieb
                             </h2>
                             <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                                 Seit {COMPANY_DATA.business.establishmentYear} verlegt {COMPANY_DATA.legalName} Fliesen,
-                                Platten und Naturstein. Der Betrieb ist Meisterbetrieb der {COMPANY_DATA.authority.name}. Sie
+                                Platten und Naturstein. Der Betrieb ist eingetragener Fachbetrieb der {COMPANY_DATA.authority.name}. Sie
                                 erhalten ein kostenfreies Vor-Ort-Aufmaß, danach ein verbindliches Festpreisangebot, und bei
                                 Arbeiten im bewohnten Bestand gilt unsere Staubschutz-Garantie. Kundinnen und Kunden haben bei uns
                                 vom einzelnen Raum bis zum kompletten Haus fliesen lassen.
@@ -338,14 +338,14 @@ export default function FliesenRatgeberPage() {
                                     `Persönliche Betreuung durch ${COMPANY_DATA.owner.fullName}`
                                 ].map((item) => (
                                     <li key={item} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-emerald-600 shrink-0" aria-hidden="true" />
+                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-orange-600 shrink-0" aria-hidden="true" />
                                         {item}
                                     </li>
                                 ))}
                             </ul>
                         </div>
                         <div className="lg:col-span-2 space-y-4">
-                            <div className="glass-surface rounded-3xl p-6 text-center">
+                            <div className="glass-surface rounded-tile-xl p-6 text-center">
                                 <span className="flex items-center justify-center gap-0.5 text-amber-500" aria-hidden="true">
                                     {Array.from({ length: 5 }, (_, i) => (
                                         <Star key={i} className="w-5 h-5 fill-current" />
@@ -362,7 +362,7 @@ export default function FliesenRatgeberPage() {
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
                                 <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost w-full px-7 py-3.5 text-xs">
-                                    <Phone className="w-4 h-4 text-emerald-700" />
+                                    <Phone className="w-4 h-4 text-slate-700" />
                                     {COMPANY_DATA.contact.phone}
                                 </a>
                                 <a
@@ -382,14 +382,14 @@ export default function FliesenRatgeberPage() {
 
             {/* Weiterlesen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-weiterlesen-heading">
-                <div className="glass-surface-subtle rounded-3xl p-6 sm:p-8">
+                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
                     <h2 id="fliesen-weiterlesen-heading" className="text-lg font-black text-slate-900 mb-4">Weiterlesen</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}
@@ -399,11 +399,11 @@ export default function FliesenRatgeberPage() {
                     </ul>
                     <p className="mt-4 text-sm text-slate-700">
                         Persönliche Beratung vor Ihrer Entscheidung?{' '}
-                        <Link href="/beratung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/beratung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Beratung anfragen
                         </Link>{' '}
                         oder den{' '}
-                        <Link href="/blog" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/blog" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Blog
                         </Link>{' '}
                         durchstöbern.

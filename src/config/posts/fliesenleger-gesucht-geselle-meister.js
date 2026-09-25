@@ -1,4 +1,4 @@
-// Blog-Artikel: Wir suchen Verstärkung: Fliesenleger/in, Geselle oder Meister (m/w/d)
+// Blog-Artikel: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)
 // Kurze Ankündigung – die vollständige Stellenausschreibung steht auf /karriere.
 
 import { COMPANY_DATA } from '@/config/company';
@@ -8,8 +8,8 @@ const { owner, contact, headquarters, authority, business } = COMPANY_DATA;
 const post = {
     "id": "13",
     "slug": "fliesenleger-gesucht-geselle-meister",
-    "title": "Wir suchen Verstärkung: Fliesenleger/in, Geselle oder Meister (m/w/d)",
-    "excerpt": "Fliesenverlegung Tezgel in Aßlar sucht eine Fliesenlegerin oder einen Fliesenleger als Geselle oder Meister (m/w/d). Hier erfahren Sie kurz, was Sie erwartet und wie Sie sich bei uns melden.",
+    "title": "Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+    "excerpt": "Fliesenverlegung Tezgel in Aßlar sucht eine Fliesenlegerin oder einen Fliesenleger als Geselle (m/w/d). Hier erfahren Sie kurz, was Sie erwartet und wie Sie sich bei uns melden.",
     "category": "news",
     "author": "Fliesenverlegung Tezgel",
     "date": "24. September 2026",
@@ -24,15 +24,15 @@ const post = {
         "Aßlar",
         "Handwerk"
     ],
-    "content": `Unser Team braucht Verstärkung: Wir suchen eine **Fliesenlegerin oder einen Fliesenleger (m/w/d) als Geselle oder Meister**. Wenn Sie Ihr Handwerk beherrschen und Freude an sauberer, präziser Arbeit haben, freuen wir uns, von Ihnen zu hören.
+    "content": `Unser Team braucht Verstärkung: Wir suchen eine **Fliesenlegerin oder einen Fliesenleger (m/w/d) als Geselle oder Fachkraft**. Wenn Sie Ihr Handwerk beherrschen und Freude an sauberer, präziser Arbeit haben, freuen wir uns, von Ihnen zu hören.
 
 ## Wer wir sind
 
-Fliesenverlegung Tezgel ist ein Fliesen-, Platten- und Mosaikleger-Meisterbetrieb mit Sitz in ${headquarters.city}, eingetragen bei der ${authority.name}. Inhaber ist Fliesenlegermeister ${owner.fullName}; den Betrieb gibt es seit ${business.establishmentYear}. Unsere Baustellen liegen in ${headquarters.city}, Wetzlar und Mittelhessen.
+Fliesenverlegung Tezgel ist ein Fliesen-, Platten- und Mosaikleger-Fachbetrieb mit Sitz in ${headquarters.city}, eingetragen bei der ${authority.name}. Inhaber ist ${owner.fullName}; den Betrieb gibt es seit ${business.establishmentYear}. Wir sind ein bis zu 12-Mann-Betrieb mit Baustellen in ${headquarters.city}, Wetzlar und Mittelhessen.
 
 ## Wen wir suchen
 
-Fliesenleger/in (m/w/d) mit abgeschlossener Ausbildung, gern auch mit Meistertitel. Sie arbeiten selbstständig und sorgfältig, gehen respektvoll mit Kunden in bewohnten Häusern um und legen Wert auf ein sauberes Ergebnis.
+Fliesenleger/in (m/w/d) mit abgeschlossener Ausbildung. Sie arbeiten selbstständig und sorgfältig, gehen respektvoll mit Kunden in bewohnten Häusern um und legen Wert auf ein sauberes Ergebnis.
 
 ## Woran Sie mitarbeiten
 
@@ -57,7 +57,7 @@ Sie möchten das Handwerk erst erlernen? Informationen zur Ausbildung finden Sie
 
 ## Fazit
 
-Sie sind Fliesenleger/in als Geselle oder Meister und suchen einen Meisterbetrieb in der Region ${headquarters.city} und Wetzlar? Dann melden Sie sich bei uns – über die [Karriereseite](/karriere) oder über unsere [Kontaktseite](/kontakt).`
+Sie sind Fliesenleger/in oder Geselle und suchen einen etablierten Fachbetrieb in der Region ${headquarters.city} und Wetzlar? Dann melden Sie sich bei uns – über die [Karriereseite](/karriere) oder über unsere [Kontaktseite](/kontakt).`
 };
 
 export default post;

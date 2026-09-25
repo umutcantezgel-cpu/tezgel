@@ -1,11 +1,9 @@
-"use client";
-import React, { useMemo } from 'react';
-import { useParams } from 'next/navigation';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { ArrowLeft, Calendar, MapPin, CheckCircle2, Ruler, Clock, ArrowRight, Quote, Camera, Star, Bath, House, Layers, Sun, LayoutGrid } from 'lucide-react';
-import { useContent } from '@/contexts/ContentContext';
-import { projects as configProjects, categories, isPlaceholderProject } from '@/config/projects';
+import { PORTFOLIO_PROJECTS, categories, isPlaceholderProject } from '@/config/projects';
 import { COMPANY_DATA } from '@/config/company';
 import QualityPromise from '@/components/sections/QualityPromise';
 
@@ -23,34 +21,28 @@ const TILE_PATTERN_STYLE = {
     backgroundSize: '32px 32px'
 };
 
-const toList = (data) => (Array.isArray(data) ? data : (data?.projects || []));
-const findById = (list, id) => list.find((p) => p?.id != null && p.id.toString() === id);
+export function generateStaticParams() {
+    return PORTFOLIO_PROJECTS.map((p) => ({ id: p.id }));
+}
 
-export default function ProjectDetailPage() {
-    const { id } = useParams();
-    const content = useContent();
-    const contentProjects = content?.projects;
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+    const project = PORTFOLIO_PROJECTS.find((p) => p.id === id);
+    if (!project) return { title: 'Referenzprojekt' };
 
-    // Config (projects.js) is the source of truth for the reserved slots.
-    // Content data (e.g. old localStorage overrides) is only merged in when
-    // its id matches a known project, or used when config has no such id.
-    const project = useMemo(() => {
-        const configMatch = findById(configProjects, id);
-        const contentMatch = findById(toList(contentProjects), id);
-        if (configMatch && contentMatch) return { ...configMatch, ...contentMatch };
-        return configMatch || contentMatch || null;
-    }, [contentProjects, id]);
+    return {
+        title: `${project.title} – Referenzen Fliesenverlegung Tezgel`,
+        description: project.description,
+        alternates: { canonical: `/referenzen/${id}` }
+    };
+}
+
+export default async function ProjectDetailPage({ params }) {
+    const { id } = await params;
+    const project = PORTFOLIO_PROJECTS.find((p) => p.id === id);
 
     if (!project) {
-        return (
-            <div className="min-h-screen pt-32 flex flex-col items-center justify-center text-center px-4">
-                <h1 className="text-3xl font-black text-slate-900 mb-4">Projekt nicht gefunden</h1>
-                <p className="text-sm text-slate-600 mb-8">Das gesuchte Referenzprojekt existiert leider nicht.</p>
-                <Link href="/referenzen" className="btn-primary px-6 py-3 text-xs">
-                    Zurück zur Referenzen-Übersicht
-                </Link>
-            </div>
-        );
+        notFound();
     }
 
     const placeholder = isPlaceholderProject(project);
@@ -67,20 +59,20 @@ export default function ProjectDetailPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-sky -top-20 -left-20" />
-            <div className="ambient-glow-mint top-96 -right-20" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-20 opacity-60" />
 
             {/* Hero Section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 space-y-6 relative overflow-hidden">
-                    <Link href="/referenzen" className="inline-flex items-center text-xs font-bold text-slate-700 hover:text-emerald-800 transition-colors group">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-14 space-y-6 relative overflow-hidden">
+                    <Link href="/referenzen" className="inline-flex items-center text-xs font-bold text-slate-700 hover:text-orange-600 transition-colors group">
                         <ArrowLeft className="w-4 h-4 mr-1.5 group-hover:-translate-x-1 transition-transform" />
                         Zurück zur Referenzen-Übersicht
                     </Link>
 
                     <div className="flex flex-wrap items-center gap-3">
                         {placeholder && (
-                            <span className="eyebrow eyebrow-sky">
+                            <span className="eyebrow eyebrow-orange">
                                 <Camera className="w-3.5 h-3.5" aria-hidden="true" />
                                 Projektdokumentation in Vorbereitung
                             </span>
@@ -90,13 +82,13 @@ export default function ProjectDetailPage() {
                         </span>
                         {year && (
                             <span className="eyebrow eyebrow-neutral">
-                                <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+                                <Calendar className="w-3.5 h-3.5 text-orange-600" />
                                 <span className="tabular-nums">{year}</span>
                             </span>
                         )}
                         {location && (
                             <span className="eyebrow eyebrow-neutral">
-                                <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                                <MapPin className="w-3.5 h-3.5 text-orange-600" />
                                 {location}
                             </span>
                         )}
@@ -130,7 +122,7 @@ export default function ProjectDetailPage() {
 
                     {/* Main Content Column */}
                     <div className="lg:col-span-2 space-y-8">
-                        <div className="glass-surface p-8 sm:p-10 rounded-[2.5rem] space-y-6">
+                        <div className="glass-surface p-8 sm:p-10 rounded-tile-xl space-y-6">
                             <h2 className="text-2xl font-black text-slate-900">
                                 {placeholder ? 'Was ein solches Projekt umfasst' : `Projekt-Überblick: ${project.title}`}
                             </h2>
@@ -155,7 +147,7 @@ export default function ProjectDetailPage() {
                                     <ul className="space-y-2.5">
                                         {scopeItems.map((item) => (
                                             <li key={item} className="flex items-start gap-2.5 text-sm text-slate-800">
-                                                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                                                <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                                                 <span>{item}</span>
                                             </li>
                                         ))}
@@ -167,15 +159,15 @@ export default function ProjectDetailPage() {
                             {!placeholder && (project.challenge || project.solution) && (
                                 <div className="grid sm:grid-cols-2 gap-4 pt-2">
                                     {project.challenge && (
-                                        <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200">
+                                        <div className="p-5 rounded-tile-lg bg-amber-50 border border-amber-200">
                                             <h3 className="text-xs font-black text-amber-900 uppercase tracking-wider mb-2">Herausforderung vor Ort</h3>
                                             <p className="text-sm text-amber-900 leading-relaxed">{project.challenge}</p>
                                         </div>
                                     )}
                                     {project.solution && (
-                                        <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200">
-                                            <h3 className="text-xs font-black text-emerald-900 uppercase tracking-wider mb-2">Lösung</h3>
-                                            <p className="text-sm text-emerald-900 leading-relaxed">{project.solution}</p>
+                                        <div className="p-5 rounded-tile-lg bg-orange-50/70 border border-orange-200">
+                                            <h3 className="text-xs font-black text-orange-950 uppercase tracking-wider mb-2">Lösung</h3>
+                                            <p className="text-sm text-orange-900 leading-relaxed">{project.solution}</p>
                                         </div>
                                     )}
                                 </div>
@@ -187,7 +179,7 @@ export default function ProjectDetailPage() {
                                 <ul className="grid sm:grid-cols-2 gap-3">
                                     {COMPANY_DATA.qualityPromises.slice(0, 4).map((promise) => (
                                         <li key={promise.title} className="flex items-start gap-2 text-sm font-semibold text-slate-800">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                            <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                                             <span>{promise.title}</span>
                                         </li>
                                     ))}
@@ -197,11 +189,11 @@ export default function ProjectDetailPage() {
 
                         {/* Project photos (only for documented projects) */}
                         {images.length > 0 && (
-                            <section aria-labelledby="projekt-fotos" className="glass-surface p-6 sm:p-8 rounded-[2.5rem] space-y-4">
+                            <section aria-labelledby="projekt-fotos" className="glass-surface p-6 sm:p-8 rounded-tile-xl space-y-4">
                                 <h2 id="projekt-fotos" className="text-xl font-black text-slate-900">Projektfotos</h2>
                                 <ul className="grid sm:grid-cols-2 gap-4">
                                     {images.map((img, index) => (
-                                        <li key={img.url} className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200">
+                                        <li key={img.url} className="relative aspect-[4/3] rounded-tile-lg overflow-hidden border border-slate-200">
                                             <Image
                                                 src={img.url}
                                                 alt={img.alt || `${project.title} – Foto ${index + 1}`}
@@ -217,9 +209,9 @@ export default function ProjectDetailPage() {
 
                         {/* Placeholder note */}
                         {placeholder && (
-                            <div className="p-6 sm:p-8 rounded-[2rem] bg-sky-50 border border-sky-200 text-slate-700 space-y-3">
+                            <div className="p-6 sm:p-8 rounded-tile-xl bg-orange-50/60 border border-orange-200/80 text-slate-700 space-y-3">
                                 <h2 className="text-lg font-black text-slate-900 flex items-center gap-2">
-                                    <Camera className="w-5 h-5 text-sky-600" aria-hidden="true" />
+                                    <Camera className="w-5 h-5 text-orange-600" aria-hidden="true" />
                                     Fotos und Details folgen
                                 </h2>
                                 <p className="text-sm leading-relaxed">
@@ -229,7 +221,7 @@ export default function ProjectDetailPage() {
                                 </p>
                                 <Link
                                     href="/referenzen#bewertungen"
-                                    className="inline-flex items-center gap-1.5 text-sm font-black text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-black text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <Star className="w-4 h-4 text-amber-500 fill-current" aria-hidden="true" />
                                     Echte Kundenbewertungen lesen
@@ -239,8 +231,8 @@ export default function ProjectDetailPage() {
 
                         {/* Testimonial (only for documented projects) */}
                         {testimonial && (
-                            <figure className="glass-surface p-8 rounded-[2rem] border-l-4 border-l-emerald-600">
-                                <Quote className="w-6 h-6 text-emerald-600/40 mb-3" aria-hidden="true" />
+                            <figure className="glass-surface p-8 rounded-tile-xl border-l-4 border-l-orange-500">
+                                <Quote className="w-6 h-6 text-orange-500/40 mb-3" aria-hidden="true" />
                                 <blockquote className="text-sm italic text-slate-800 leading-relaxed">
                                     &bdquo;{testimonial.text}&ldquo;
                                 </blockquote>
@@ -257,12 +249,12 @@ export default function ProjectDetailPage() {
                         <div className="glass-bezel-inner p-8 space-y-6">
                             {/* Ceramic visual panel (no photo) */}
                             <div
-                                className="relative h-44 rounded-3xl border border-slate-200 bg-gradient-to-br from-emerald-50 via-white to-sky-50 overflow-hidden flex items-center justify-center"
+                                className="relative h-44 rounded-tile-lg border border-slate-200 bg-gradient-to-br from-orange-50/70 via-white to-amber-50/50 overflow-hidden flex items-center justify-center"
                                 style={TILE_PATTERN_STYLE}
                                 aria-hidden="true"
                             >
-                                <div className="w-20 h-20 rounded-3xl bg-white/90 border border-white/80 shadow-sm flex items-center justify-center">
-                                    <Icon className="w-10 h-10 text-emerald-600" />
+                                <div className="w-20 h-20 rounded-tile-md bg-white/90 border border-white/80 shadow-sm flex items-center justify-center">
+                                    <Icon className="w-10 h-10 text-orange-600" />
                                 </div>
                             </div>
 
@@ -273,7 +265,7 @@ export default function ProjectDetailPage() {
                             <dl className="space-y-3 text-sm">
                                 <div className="flex items-center justify-between gap-3 py-2 border-b border-slate-200">
                                     <dt className="text-slate-600 font-medium flex items-center gap-1.5">
-                                        <Ruler className="w-3.5 h-3.5 text-emerald-600" />
+                                        <Ruler className="w-3.5 h-3.5 text-orange-600" />
                                         Kategorie
                                     </dt>
                                     <dd className="font-black text-slate-900 text-right">{categoryName}</dd>
@@ -281,7 +273,7 @@ export default function ProjectDetailPage() {
                                 {placeholder && (
                                     <div className="flex items-center justify-between gap-3 py-2 border-b border-slate-200">
                                         <dt className="text-slate-600 font-medium flex items-center gap-1.5">
-                                            <Camera className="w-3.5 h-3.5 text-emerald-600" />
+                                            <Camera className="w-3.5 h-3.5 text-orange-600" />
                                             Status
                                         </dt>
                                         <dd className="font-black text-slate-900 text-right">Dokumentation in Vorbereitung</dd>
@@ -290,7 +282,7 @@ export default function ProjectDetailPage() {
                                 {duration && (
                                     <div className="flex items-center justify-between gap-3 py-2 border-b border-slate-200">
                                         <dt className="text-slate-600 font-medium flex items-center gap-1.5">
-                                            <Clock className="w-3.5 h-3.5 text-emerald-600" />
+                                            <Clock className="w-3.5 h-3.5 text-orange-600" />
                                             Bauzeit
                                         </dt>
                                         <dd className="font-black text-slate-900 text-right">{duration}</dd>
@@ -299,7 +291,7 @@ export default function ProjectDetailPage() {
                                 {location && (
                                     <div className="flex items-center justify-between gap-3 py-2 border-b border-slate-200">
                                         <dt className="text-slate-600 font-medium flex items-center gap-1.5">
-                                            <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                                            <MapPin className="w-3.5 h-3.5 text-orange-600" />
                                             Ort
                                         </dt>
                                         <dd className="font-black text-slate-900 text-right">{location}</dd>

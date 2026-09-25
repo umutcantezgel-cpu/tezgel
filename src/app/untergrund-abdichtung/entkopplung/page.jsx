@@ -29,9 +29,9 @@ export const metadata = createMetadata({
 const LAYERS = [
     { label: 'Fliese', note: 'starrer, keramischer Belag', className: 'bg-white border-slate-300 h-10' },
     { label: 'Fliesenkleber', note: 'verformungsfähig, im Dünnbett', className: 'bg-slate-100 border-slate-200 h-6' },
-    { label: 'Entkopplungsmatte', note: 'baut Spannungen zwischen den Schichten ab', className: 'bg-emerald-50 border-emerald-300 h-8' },
+    { label: 'Entkopplungsmatte', note: 'baut Spannungen zwischen den Schichten ab', className: 'bg-orange-50 border-orange-300 h-8' },
     { label: 'Kleber zur Mattenverlegung', note: 'laut Systemvorgabe', className: 'bg-slate-100 border-slate-200 h-5' },
-    { label: 'Untergrund', note: 'Estrich, Holzwerkstoff oder Mischuntergrund', className: 'bg-sky-50 border-sky-200 h-14' }
+    { label: 'Untergrund', note: 'Estrich, Holzwerkstoff oder Mischuntergrund', className: 'bg-stone-50 border-stone-200 h-14' }
 ];
 
 const USE_CASES = [
@@ -80,21 +80,21 @@ const FAQ = [
 const READ_MORE = [
     { label: 'Leistung: Untergrund & DIN 18534 Abdichtung', href: '/leistungen/untergrund' },
     { label: 'Fliesen im Wohnbereich', href: '/leistungen/wohnen' },
-    { label: 'Badsanierung vom Meisterbetrieb', href: '/bad/badsanierung' },
+    { label: 'Badsanierung vom Fachbetrieb', href: '/bad/badsanierung' },
     { label: 'Estrich & Belegreife', href: '/untergrund-abdichtung/estrich-belegreife' }
 ];
 
 export default function EntkopplungPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="entkopplung-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
-                        <SquareStack className="w-3.5 h-3.5" />
+                        <SquareStack className="w-3.5 h-3.5 text-orange-600" />
                         Entkopplung &middot; Holz &middot; Rissverharzung
                     </span>
                     <h1 id="entkopplung-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
@@ -122,7 +122,7 @@ export default function EntkopplungPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="funktion-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div className="space-y-4">
-                        <span className="eyebrow eyebrow-sky">Prinzip</span>
+                        <span className="eyebrow eyebrow-orange">Prinzip</span>
                         <h2 id="funktion-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Wie Entkopplung funktioniert
                         </h2>
@@ -137,7 +137,7 @@ export default function EntkopplungPage() {
                             vollflächig verklebt, ist aber von den Bewegungen des Untergrunds weitgehend getrennt.
                         </p>
                     </div>
-                    <figure className="glass-surface rounded-[2rem] p-6 sm:p-8">
+                    <figure className="glass-surface rounded-tile-xl p-6 sm:p-8">
                         <div className="space-y-1.5" aria-hidden="true">
                             {LAYERS.map((layer) => (
                                 <div key={layer.label} className={`rounded-lg border ${layer.className}`} />
@@ -148,7 +148,7 @@ export default function EntkopplungPage() {
                             <ol className="space-y-2">
                                 {LAYERS.map((layer, idx) => (
                                     <li key={layer.label} className="flex gap-3 text-sm text-slate-700">
-                                        <span className="font-black tabular-nums text-emerald-800 w-5 shrink-0">{idx + 1}</span>
+                                        <span className="font-black tabular-nums text-orange-700 w-5 shrink-0">{idx + 1}</span>
                                         <span>
                                             <strong className="text-slate-900">{layer.label}</strong> – {layer.note}
                                         </span>
@@ -164,7 +164,7 @@ export default function EntkopplungPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="einsatz-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Einsatzfälle</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Einsatzfälle</span>
                         <h2 id="einsatz-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Wo eine Entkopplung sinnvoll ist
                         </h2>
@@ -173,11 +173,11 @@ export default function EntkopplungPage() {
                         {USE_CASES.map((item) => {
                             const Icon = item.icon;
                             return (
-                                <li key={item.title} className="group p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
+                                <li key={item.title} className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
                                     <span className="icon-chip w-11 h-11 mb-4">
-                                        <Icon className="w-5 h-5" />
+                                        <Icon className="w-5 h-5 text-orange-600" />
                                     </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                                 </li>
                             );
@@ -189,7 +189,7 @@ export default function EntkopplungPage() {
             {/* Wood, mixed, cracks */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-label="Holz, Mischuntergründe und Risse">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <article className="glass-surface rounded-[2rem] p-7">
+                    <article className="glass-surface rounded-tile-xl p-7">
                         <h2 className="text-xl font-black text-slate-900 mb-3">Fliesen auf Holzdielen: Tragfähigkeit und Durchbiegung prüfen</h2>
                         <ul className="space-y-3">
                             {[
@@ -199,13 +199,13 @@ export default function EntkopplungPage() {
                                 'Ob die Decke die zusätzliche Last trägt, beurteilt ein Tragwerksplaner.'
                             ].map((text) => (
                                 <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>{text}</span>
                                 </li>
                             ))}
                         </ul>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-7">
+                    <article className="glass-surface rounded-tile-xl p-7">
                         <h2 className="text-xl font-black text-slate-900 mb-3">Mischuntergründe und junge Estriche</h2>
                         <p className="text-sm text-slate-700 leading-relaxed mb-3">
                             Unterschiedliche Materialien dehnen sich unterschiedlich aus. An solchen Übergängen treten Risse
@@ -215,12 +215,12 @@ export default function EntkopplungPage() {
                         <p className="text-sm text-slate-700 leading-relaxed">
                             Bei jungem Estrich gilt: Die Matte ersetzt die Belegreife nicht grundsätzlich. Ausnahmen regeln allein die
                             Herstellerangaben des jeweiligen Systems.{' '}
-                            <Link href="/untergrund-abdichtung/estrich-belegreife" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/untergrund-abdichtung/estrich-belegreife" className="font-bold text-orange-700 hover:text-orange-800 hover:underline underline-offset-2">
                                 Mehr zur Belegreife
                             </Link>
                         </p>
                     </article>
-                    <article id="rissverharzung" className="glass-surface rounded-[2rem] p-7 scroll-mt-28">
+                    <article id="rissverharzung" className="glass-surface rounded-tile-xl p-7 scroll-mt-28">
                         <h2 className="text-xl font-black text-slate-900 mb-3">Risse im Estrich: verharzen, entkoppeln oder beides</h2>
                         <p className="text-sm text-slate-700 leading-relaxed mb-3">
                             Ruhende Risse – etwa Schwindrisse im Zementestrich – werden aufgeweitet, quer zum Riss mit Klammern
@@ -266,7 +266,7 @@ export default function EntkopplungPage() {
                         </div>
                     </div>
                     <div className="space-y-4">
-                        <span className="eyebrow eyebrow-sky">Planung</span>
+                        <span className="eyebrow eyebrow-orange">Planung</span>
                         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                             Aufbauhöhe, Trittschall und Nassraum
                         </h2>
@@ -279,10 +279,10 @@ export default function EntkopplungPage() {
                             darüber oder mit einer Bahn, die für beide Funktionen geprüft ist.
                         </p>
                         <p className="text-sm text-slate-600 leading-relaxed flex gap-2">
-                            <Info className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                            <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                             <span>
                                 Details zur Abdichtung finden Sie unter{' '}
-                                <Link href="/untergrund-abdichtung/din-18534" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/untergrund-abdichtung/din-18534" className="font-bold text-orange-700 hover:text-orange-800 hover:underline underline-offset-2">
                                     Verbundabdichtung nach DIN 18534
                                 </Link>
                                 .
@@ -299,10 +299,10 @@ export default function EntkopplungPage() {
                 </h2>
                 <div className="space-y-3">
                     {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-2xl px-6 py-4">
+                        <details key={item.q} className="group glass-surface rounded-tile-lg px-6 py-4">
                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
                                 {item.q}
-                                <ChevronDown className="w-5 h-5 text-emerald-600 shrink-0 transition-transform group-open:rotate-180" />
+                                <ChevronDown className="w-5 h-5 text-orange-600 shrink-0 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
                         </details>
@@ -312,7 +312,7 @@ export default function EntkopplungPage() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" aria-labelledby="cta-heading">
-                <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 text-center space-y-4">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
                     <h2 id="cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                         Schwieriger Untergrund? Lassen Sie ihn prüfen.
                     </h2>
@@ -326,11 +326,11 @@ export default function EntkopplungPage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-ghost px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
+                            <MessageCircle className="w-4 h-4" />
                             WhatsApp
                         </a>
                     </div>
@@ -345,10 +345,10 @@ export default function EntkopplungPage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-2xl bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-emerald-500/80 hover:text-emerald-800 transition-all duration-300"
+                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
                             >
                                 {link.label}
-                                <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                         </li>
                     ))}

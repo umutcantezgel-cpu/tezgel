@@ -137,14 +137,14 @@ const READ_MORE = [
 export default function Din18534Page() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="din-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
-                        <ShieldCheck className="w-3.5 h-3.5" />
+                        <ShieldCheck className="w-3.5 h-3.5 text-orange-600" />
                         Abdichtung im Verbund &middot; DIN 18534
                     </span>
                     <h1 id="din-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
@@ -172,7 +172,7 @@ export default function Din18534Page() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="regelt-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                     <div className="lg:col-span-2 space-y-4">
-                        <span className="eyebrow eyebrow-sky">Geltungsbereich</span>
+                        <span className="eyebrow eyebrow-orange">Geltungsbereich</span>
                         <h2 id="regelt-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Was DIN 18534 regelt – und was nicht
                         </h2>
@@ -186,12 +186,12 @@ export default function Din18534Page() {
                             dafür gelten eigene Normen der Reihe DIN 18531 bis DIN 18535.
                         </p>
                     </div>
-                    <div className="lg:col-span-3 glass-surface rounded-[2rem] p-6 sm:p-8">
+                    <div className="lg:col-span-3 glass-surface rounded-tile-xl p-6 sm:p-8">
                         <h3 className="text-lg font-black text-slate-900 mb-4">Die sechs Teile der Norm</h3>
                         <ul className="divide-y divide-slate-200">
                             {NORM_PARTS.map((item) => (
                                 <li key={item.part} className="flex gap-4 py-3">
-                                    <span className="shrink-0 w-16 text-sm font-black text-emerald-800 tabular-nums">{item.part}</span>
+                                    <span className="shrink-0 w-16 text-sm font-black text-orange-700 tabular-nums">{item.part}</span>
                                     <span className="text-sm text-slate-700 leading-relaxed">{item.text}</span>
                                 </li>
                             ))}
@@ -207,8 +207,8 @@ export default function Din18534Page() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="klassen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">
-                            <Droplets className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Droplets className="w-3.5 h-3.5 text-orange-600" />
                             DIN 18534-1
                         </span>
                         <h2 id="klassen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -220,7 +220,7 @@ export default function Din18534Page() {
                         </p>
                     </div>
 
-                    <div className="overflow-x-auto rounded-3xl border border-slate-200">
+                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
                         <table className="w-full text-left text-sm min-w-[720px]">
                             <caption className="sr-only">Wassereinwirkungsklassen nach DIN 18534-1 mit Anwendungsbeispielen</caption>
                             <thead className="bg-slate-100 text-slate-900">
@@ -235,7 +235,7 @@ export default function Din18534Page() {
                                     <tr key={row.cls} className="align-top">
                                         <th scope="row" className="px-5 py-4">
                                             <span className="block font-black text-slate-900 tabular-nums">{row.cls}</span>
-                                            <span className="block text-xs font-bold text-emerald-800 uppercase tracking-wider mt-1">{row.level}</span>
+                                            <span className="block text-xs font-bold text-orange-700 uppercase tracking-wider mt-1">{row.level}</span>
                                         </th>
                                         <td className="px-5 py-4 text-slate-700 leading-relaxed">{row.definition}</td>
                                         <td className="px-5 py-4 text-slate-700 leading-relaxed">{row.examples}</td>
@@ -245,7 +245,7 @@ export default function Din18534Page() {
                         </table>
                     </div>
                     <p className="mt-4 text-sm text-slate-600 leading-relaxed flex gap-2">
-                        <Info className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                        <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                         Vereinfachte Wiedergabe der Beispiele aus DIN 18534-1, Tabelle 1. Maßgeblich ist die Norm in ihrer geltenden
                         Fassung; die Zuordnung Ihrer Flächen klären wir bei der Planung.
                     </p>
@@ -255,7 +255,7 @@ export default function Din18534Page() {
             {/* Materials */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="stoffe-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Abdichtungsstoffe</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Abdichtungsstoffe</span>
                     <h2 id="stoffe-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Flüssige Abdichtung, Bahnen oder Platten?
                     </h2>
@@ -269,9 +269,9 @@ export default function Din18534Page() {
                     {MATERIALS.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <li key={item.title} className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
+                            <li key={item.title} className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
                                 <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
+                                    <Icon className="w-6 h-6 text-orange-600" />
                                 </span>
                                 <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
@@ -289,7 +289,7 @@ export default function Din18534Page() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="details-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Kritische Punkte</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Kritische Punkte</span>
                         <h2 id="details-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Dichtbänder, Manschetten, Abläufe:{' '}
                             <span className="text-ceramic-gradient">wo Abdichtungen versagen</span>
@@ -303,23 +303,23 @@ export default function Din18534Page() {
                         {DETAILS.map((item) => {
                             const Icon = item.icon;
                             return (
-                                <li key={item.title} className="group p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
+                                <li key={item.title} className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
                                     <span className="icon-chip w-11 h-11 mb-4">
-                                        <Icon className="w-5 h-5" />
+                                        <Icon className="w-5 h-5 text-orange-600" />
                                     </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                                 </li>
                             );
                         })}
                     </ul>
-                    <div className="mt-8 rounded-3xl bg-sky-50 border border-sky-200 text-slate-700 p-6 text-sm leading-relaxed">
+                    <div className="mt-8 rounded-tile-xl bg-orange-50/50 border border-orange-200/60 text-slate-700 p-6 text-sm leading-relaxed">
                         <p>
                             <strong className="text-slate-900">Zusammenspiel mit der Installation:</strong> Rohrleitungen, Vorwandelemente und
                             den Ablauf setzt der Sanitärinstallateur. Wir sind als Fliesenleger für die Abdichtung und den Belag
                             zuständig und stimmen Einbauhöhen, Flansche und Manschetten vorher mit ihm ab – bei Bedarf koordiniert im
                             Rahmen von{' '}
-                            <Link href="/bad/bad-aus-einer-hand" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/bad/bad-aus-einer-hand" className="font-bold text-orange-700 hover:text-orange-800 hover:underline underline-offset-2">
                                 Bad aus einer Hand
                             </Link>
                             .
@@ -332,7 +332,7 @@ export default function Din18534Page() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="schicht-heading">
                 <div className="glass-bezel-outer">
                     <div className="glass-bezel-inner p-7 sm:p-10">
-                        <span className="eyebrow eyebrow-neutral mb-4">Vor dem Fliesen</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Vor dem Fliesen</span>
                         <h2 id="schicht-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6">
                             Schichtdicken, Trocknung und Dokumentation vor dem Fliesen
                         </h2>
@@ -345,7 +345,7 @@ export default function Din18534Page() {
                                 'Vor dem Fliesen alle Anschlüsse sichtprüfen. Wir empfehlen, den fertigen Zustand zu fotografieren, denn nach dem Verlegen ist er nicht mehr einsehbar.'
                             ].map((text) => (
                                 <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>{text}</span>
                                 </li>
                             ))}
@@ -361,10 +361,10 @@ export default function Din18534Page() {
                 </h2>
                 <div className="space-y-3">
                     {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-2xl px-6 py-4">
+                        <details key={item.q} className="group glass-surface rounded-tile-lg px-6 py-4">
                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
                                 {item.q}
-                                <ChevronDown className="w-5 h-5 text-emerald-600 shrink-0 transition-transform group-open:rotate-180" />
+                                <ChevronDown className="w-5 h-5 text-orange-600 shrink-0 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
                         </details>
@@ -374,7 +374,7 @@ export default function Din18534Page() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10" aria-labelledby="cta-heading">
-                <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 text-center space-y-4">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
                     <h2 id="cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                         Neues Bad oder neue Dusche geplant?
                     </h2>
@@ -388,11 +388,11 @@ export default function Din18534Page() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-ghost px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
+                            <MessageCircle className="w-4 h-4" />
                             WhatsApp
                         </a>
                     </div>
@@ -407,10 +407,10 @@ export default function Din18534Page() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-2xl bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-emerald-500/80 hover:text-emerald-800 transition-all duration-300"
+                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
                             >
                                 {link.label}
-                                <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                         </li>
                     ))}

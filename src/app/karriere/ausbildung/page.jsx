@@ -9,7 +9,7 @@ const APPRENTICESHIP_TITLE = 'Fliesen-, Platten- und Mosaikleger (m/w/d)';
 
 export const metadata = createMetadata({
     title: 'Ausbildung Fliesen-, Platten- und Mosaikleger (m/w/d)',
-    description: `Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d) bei ${COMPANY_DATA.legalName} in ${COMPANY_DATA.headquarters.city} – eingetragener Meisterbetrieb der ${COMPANY_DATA.authority.shortName}. Jetzt per E-Mail, Telefon oder WhatsApp bewerben.`,
+    description: `Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d) bei ${COMPANY_DATA.legalName} in ${COMPANY_DATA.headquarters.city} – eingetragener Fachbetrieb der ${COMPANY_DATA.authority.shortName}. Jetzt per E-Mail, Telefon oder WhatsApp bewerben.`,
     path: '/karriere/ausbildung'
 });
 
@@ -18,22 +18,22 @@ export default function AusbildungPage() {
 
     const cards = [
         { title: 'Was du lernst', desc: 'Das Fliesenhandwerk in der Praxis: Untergrundvorbereitung, Abdichtung nach DIN 18534 sowie die Verlegung von Fliesen, Großformaten und Naturstein – im Bad, im Wohnbereich und auf Balkon und Terrasse.' },
-        { title: 'Wo du lernst', desc: `In einem eingetragenen Meisterbetrieb der ${authority.name} mit Firmensitz in ${headquarters.city} – unter Inhaber & Handwerksmeister ${owner.fullName}.` },
+        { title: 'Wo du lernst', desc: `In einem eingetragenen Fachbetrieb der ${authority.name} mit Firmensitz in ${headquarters.city} – unter Inhaber & Fachbetriebsleiter ${owner.fullName}.` },
         { title: 'Was du mitbringst', desc: 'Handwerkliches Geschick, Sorgfalt und Freude an präziser Arbeit, Teamgeist und Zuverlässigkeit.' }
     ];
 
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow eyebrow-sky">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow">
                         <GraduationCap className="w-3.5 h-3.5" />
-                        Ausbildung im Meisterbetrieb
+                        Ausbildung im Fachbetrieb
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         <span className="text-ceramic-gradient">Ausbildung</span> zum {APPRENTICESHIP_TITLE}
@@ -49,16 +49,16 @@ export default function AusbildungPage() {
                     {cards.map((card) => (
                         <li
                             key={card.title}
-                            className="group glass-surface p-8 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            className="group glass-surface p-8 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                         >
-                            <CheckCircle2 className="w-6 h-6 text-emerald-600 mb-3" />
-                            <h2 className="font-black text-lg text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{card.title}</h2>
+                            <CheckCircle2 className="w-6 h-6 text-orange-600 mb-3" />
+                            <h2 className="font-black text-lg text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{card.title}</h2>
                             <p className="text-sm text-slate-700 leading-relaxed">{card.desc}</p>
                         </li>
                     ))}
                 </ul>
 
-                <div className="ceramic-hero rounded-[2rem] max-w-3xl mx-auto p-8 sm:p-10 text-center space-y-4">
+                <div className="ceramic-hero rounded-tile-xl max-w-3xl mx-auto p-8 sm:p-10 text-center space-y-4">
                     <h3 className="text-xl sm:text-2xl font-black text-slate-900">Bereit für deine Zukunft?</h3>
                     <p className="text-sm text-slate-700 max-w-xl mx-auto leading-relaxed">
                         Bewirb dich unkompliziert per E-Mail oder ruf uns direkt an für ein erstes Kennenlernen.
@@ -72,7 +72,7 @@ export default function AusbildungPage() {
                             Jetzt per E-Mail bewerben
                         </a>
                         <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {contact.phone}
                         </a>
                         <a
@@ -86,7 +86,7 @@ export default function AusbildungPage() {
                         </a>
                     </div>
                     <p className="pt-2 text-sm text-slate-700">
-                        <Link href="/karriere" className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/karriere" className="inline-flex items-center gap-1 font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                             Alle Stellenangebote ansehen
                             <ArrowRight className="w-4 h-4" />
                         </Link>

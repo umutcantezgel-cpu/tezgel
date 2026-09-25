@@ -147,19 +147,19 @@ const FURTHER_READING = [
 export default function NatursteinPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="naturstein-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Mountain className="w-3.5 h-3.5" />
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-orange">
+                        <Mountain className="w-3.5 h-3.5 text-orange-600" />
                         Naturstein- und Granitverlegung
                     </span>
                     <h1 id="naturstein-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         Naturstein- und Granitverlegung{' '}
-                        <span className="text-ceramic-gradient">vom Meisterbetrieb</span>
+                        <span className="text-ceramic-gradient">vom Fachbetrieb</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
                         Granit, Schiefer, Marmor oder Travertin verlangen mehr als eine gute Fliesenverlegung: den passenden Kleber,
@@ -181,8 +181,8 @@ export default function NatursteinPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="naturstein-unikat-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                     <div className="lg:col-span-3">
-                        <span className="eyebrow eyebrow-sky mb-4">
-                            <Fingerprint className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Fingerprint className="w-3.5 h-3.5 text-orange-600" />
                             Unikat
                         </span>
                         <h2 id="naturstein-unikat-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -197,19 +197,19 @@ export default function NatursteinPage() {
                                 Das heißt auch: Eine Musterplatte zeigt nur einen Ausschnitt. Farbe und Zeichnung der gelieferten Ware
                                 können abweichen. Wer ein sehr gleichmäßiges Bild wünscht, sollte Naturstein und Feinsteinzeug in
                                 Steinoptik gegeneinander abwägen – der{' '}
-                                <Link href="/blog/feinsteinzeug-oder-naturstein-vergleich" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/blog/feinsteinzeug-oder-naturstein-vergleich" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Vergleich Feinsteinzeug oder Naturstein
                                 </Link>{' '}
                                 hilft bei der Entscheidung.
                             </p>
                         </div>
                     </div>
-                    <div className="lg:col-span-2 glass-surface rounded-[2rem] p-7">
+                    <div className="lg:col-span-2 glass-surface rounded-tile-2xl p-7">
                         <h3 className="font-black text-base text-slate-900 mb-4">Was wir verlegen</h3>
                         <ul className="space-y-3 text-sm text-slate-700">
                             {['Bodenbeläge in Wohnräumen, Flur und Küche', 'Wand- und Bodenbeläge im Bad', 'Treppenbeläge innen und außen', 'Balkon- und Terrassenbeläge aus geeigneten Sorten'].map((item) => (
                                 <li key={item} className="flex gap-2.5">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                                     {item}
                                 </li>
                             ))}
@@ -226,7 +226,7 @@ export default function NatursteinPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="naturstein-gruppen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Die wichtigste Unterscheidung</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Die wichtigste Unterscheidung</span>
                         <h2 id="naturstein-gruppen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Silikatisch oder kalkhaltig:{' '}
                             <span className="text-ceramic-gradient">was für Säure, Pflege und Verlegung zählt</span>
@@ -237,7 +237,7 @@ export default function NatursteinPage() {
                         </p>
                     </div>
 
-                    <div className="overflow-x-auto rounded-3xl border border-slate-200">
+                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
                         <table className="w-full min-w-[640px] text-left text-sm">
                             <caption className="sr-only">Silikatische und kalkhaltige Natursteine im Vergleich</caption>
                             <thead className="bg-slate-100 text-slate-900">
@@ -268,8 +268,8 @@ export default function NatursteinPage() {
                         </table>
                     </div>
 
-                    <div className="mt-6 flex gap-3 rounded-2xl bg-sky-50 border border-sky-200 p-5 text-sm text-slate-700 leading-relaxed">
-                        <Info className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" aria-hidden="true" />
+                    <div className="mt-6 flex gap-3 rounded-tile-lg bg-orange-50/60 border border-orange-200/80 p-5 text-sm text-slate-700 leading-relaxed">
+                        <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                         <p>
                             <strong className="text-slate-900">Härte ist etwas anderes:</strong> Die Härte sagt, wie kratzempfindlich ein
                             Stein ist. Schiefer und viele Sandsteine sind vergleichsweise weich, bestehen aber überwiegend aus Silikaten.
@@ -285,15 +285,15 @@ export default function NatursteinPage() {
                                 <li key={page.path}>
                                     <Link
                                         href={page.path}
-                                        className="group glass-surface p-8 rounded-[2rem] h-full flex flex-col hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                        className="group glass-surface p-8 rounded-tile-2xl h-full flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                     >
                                         <div className="flex items-center gap-3 mb-5">
-                                            <span className="icon-chip w-12 h-12">
+                                            <span className="icon-chip w-12 h-12 text-orange-600">
                                                 <Icon className="w-6 h-6" />
                                             </span>
                                             {details && <span className="eyebrow eyebrow-neutral">{details.group}</span>}
                                         </div>
-                                        <h3 className="font-black text-xl text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                                        <h3 className="font-black text-xl text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">
                                             {page.name}
                                         </h3>
                                         <p className="text-sm text-slate-700 leading-relaxed mb-4">{page.desc}</p>
@@ -301,13 +301,13 @@ export default function NatursteinPage() {
                                             <ul className="space-y-2 mb-6">
                                                 {details.points.map((point) => (
                                                     <li key={point} className="flex gap-2 text-sm text-slate-700">
-                                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                                                        <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                                                         {point}
                                                     </li>
                                                 ))}
                                             </ul>
                                         )}
-                                        <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-emerald-800">
+                                        <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-orange-700">
                                             Details ansehen
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                         </span>
@@ -322,7 +322,7 @@ export default function NatursteinPage() {
             {/* Areas */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="naturstein-bereiche-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Einsatzbereiche</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Einsatzbereiche</span>
                     <h2 id="naturstein-bereiche-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Böden, Wände, Treppen, außen
                     </h2>
@@ -331,8 +331,8 @@ export default function NatursteinPage() {
                     {AREAS.map((area) => {
                         const Icon = area.icon;
                         return (
-                            <li key={area.title} className="glass-surface p-7 rounded-[2rem] flex flex-col">
-                                <span className="icon-chip w-11 h-11 mb-4">
+                            <li key={area.title} className="glass-surface p-7 rounded-tile-2xl flex flex-col">
+                                <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                     <Icon className="w-5 h-5" />
                                 </span>
                                 <h3 className="font-black text-base text-slate-900 mb-2">{area.title}</h3>
@@ -340,7 +340,7 @@ export default function NatursteinPage() {
                                 {area.href && (
                                     <Link
                                         href={area.href}
-                                        className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                        className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
                                     >
                                         {area.linkLabel}
                                         <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -356,8 +356,8 @@ export default function NatursteinPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="naturstein-verlegung-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">
-                            <Layers className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Layers className="w-3.5 h-3.5 text-orange-600" />
                             Verlegung
                         </span>
                         <h2 id="naturstein-verlegung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -366,8 +366,8 @@ export default function NatursteinPage() {
                     </div>
                     <ol className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {LAYING.map((item, index) => (
-                            <li key={item.title} className="flex gap-5 p-7 rounded-3xl bg-slate-50 border border-slate-200">
-                                <span className="font-display text-4xl font-black tabular-nums text-emerald-600/30 leading-none" aria-hidden="true">
+                            <li key={item.title} className="flex gap-5 p-7 rounded-tile-xl bg-slate-50 border border-slate-200">
+                                <span className="font-display text-4xl font-black tabular-nums text-orange-500/30 leading-none" aria-hidden="true">
                                     {String(index + 1).padStart(2, '0')}
                                 </span>
                                 <div>
@@ -384,8 +384,8 @@ export default function NatursteinPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="naturstein-pflege-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
                     <div className="lg:col-span-2">
-                        <span className="eyebrow eyebrow-sky mb-4">
-                            <SprayCan className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <SprayCan className="w-3.5 h-3.5 text-orange-600" />
                             Schutz &amp; Pflege
                         </span>
                         <h2 id="naturstein-pflege-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -395,12 +395,12 @@ export default function NatursteinPage() {
                             Eine gute Pflege entscheidet darüber, wie ein Natursteinboden nach Jahren aussieht. Ob eine Imprägnierung für
                             Ihren Stein sinnvoll ist und welches Mittel passt, besprechen wir bei der Planung.
                         </p>
-                        <div className="mt-6 flex gap-3 rounded-2xl bg-amber-50 border border-amber-200 p-5 text-sm text-slate-700 leading-relaxed">
+                        <div className="mt-6 flex gap-3 rounded-tile-lg bg-amber-50 border border-amber-200 p-5 text-sm text-slate-700 leading-relaxed">
                             <TriangleAlert className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" aria-hidden="true" />
                             <p>
                                 <strong className="text-amber-800">Bei Marmor, Travertin und Kalkstein</strong> gilt zusätzlich: keine
                                 Säure, auch keine Kalk- oder Essigreiniger. Mehr dazu auf der Seite{' '}
-                                <Link href="/naturstein/marmor-kalkstein" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/naturstein/marmor-kalkstein" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Marmor, Travertin &amp; Kalkstein
                                 </Link>
                                 .
@@ -409,8 +409,8 @@ export default function NatursteinPage() {
                     </div>
                     <ul className="lg:col-span-3 space-y-4">
                         {CARE.map((item) => (
-                            <li key={item.title} className="flex gap-4 rounded-2xl bg-white border border-slate-200 p-5">
-                                <Droplets className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                            <li key={item.title} className="flex gap-4 rounded-tile-lg bg-white border border-slate-200 p-5">
+                                <Droplets className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                                 <p className="text-sm text-slate-700 leading-relaxed">
                                     <strong className="text-slate-900">{item.title}:</strong> {item.text}
                                 </p>
@@ -422,8 +422,8 @@ export default function NatursteinPage() {
 
             {/* CTA + further reading */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" aria-labelledby="naturstein-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">Beratung &amp; Aufmaß</span>
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-orange">Beratung &amp; Aufmaß</span>
                     <h2 id="naturstein-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
                         Beratung und Aufmaß für Ihren Naturstein
                     </h2>
@@ -437,7 +437,7 @@ export default function NatursteinPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a
@@ -452,9 +452,9 @@ export default function NatursteinPage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-[2rem] p-7" aria-labelledby="naturstein-weiterlesen-heading">
+                <nav className="mt-10 glass-surface rounded-tile-2xl p-7" aria-labelledby="naturstein-weiterlesen-heading">
                     <h2 id="naturstein-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
                         Weiterlesen
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -462,7 +462,7 @@ export default function NatursteinPage() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}

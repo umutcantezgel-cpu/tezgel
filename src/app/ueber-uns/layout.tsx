@@ -6,7 +6,7 @@ import JsonLd from '@/components/seo/JsonLd';
 const { legalName, owner, headquarters, authority, business } = COMPANY_DATA;
 
 export const metadata = createMetadata({
-  title: 'Über uns – Fliesen-Meisterbetrieb in Aßlar',
+  title: 'Über uns – Fliesen-Fachbetrieb in Aßlar',
   description: `Lernen Sie ${legalName} kennen: ${authority.certification}, gegründet ${business.establishmentYear} in ${headquarters.city}. Inhaber ${owner.fullName} – Fliesen, Großformate & Badsanierung in Mittelhessen.`,
   path: '/ueber-uns',
 });
@@ -20,7 +20,7 @@ const breadcrumbs = [
 const aboutSchema = buildGraph([
   buildAboutPageNode({
     url: pageUrl,
-    name: `Über ${legalName} – Ihr Fliesen-Meisterbetrieb in ${headquarters.city}`,
+    name: `Über ${legalName} – Ihr Fliesen-Fachbetrieb in ${headquarters.city}`,
     description:
       `Lernen Sie ${legalName} und Inhaber ${owner.fullName} kennen. ${authority.certification} für Fliesen-, Platten- und Mosaikverlegung, Naturstein und Badsanierung in ${headquarters.city} und Mittelhessen.`,
   }),

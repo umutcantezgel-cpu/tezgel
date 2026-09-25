@@ -73,15 +73,15 @@ export default function FAQPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
 
             {/* Hero Section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
                     <span className="eyebrow">
                         <HelpCircle className="w-3.5 h-3.5" />
-                        Schnelle Meister-Antworten
+                        Schnelle Fach-Antworten
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         Häufig gestellte Fragen zu{' '}
@@ -101,7 +101,7 @@ export default function FAQPage() {
                             placeholder="Frage oder Stichwort suchen..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-11 pr-4 py-3.5 rounded-full bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600"
+                            className="w-full pl-11 pr-4 py-3.5 rounded-tile-pill bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600"
                         />
                     </div>
                 </div>
@@ -120,10 +120,10 @@ export default function FAQPage() {
                                     type="button"
                                     onClick={() => setOpenCategory(key)}
                                     aria-pressed={isActive}
-                                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-black border transition-all duration-300 ${
+                                    className={`flex items-center gap-2 px-5 py-2.5 rounded-tile-pill text-xs font-black border transition-all duration-300 ${
                                         isActive
-                                            ? 'bg-emerald-700 text-white border-emerald-700 shadow-md shadow-emerald-700/20'
-                                            : 'bg-white text-slate-800 border-slate-200 hover:border-emerald-500/80 hover:text-emerald-800 hover:-translate-y-0.5'
+                                            ? 'bg-orange-600 text-white border-orange-600 shadow-md shadow-orange-600/20'
+                                            : 'bg-white text-slate-800 border-slate-200 hover:border-orange-500/80 hover:text-orange-700 hover:-translate-y-0.5'
                                     }`}
                                 >
                                     <Icon className="w-3.5 h-3.5" />
@@ -142,7 +142,7 @@ export default function FAQPage() {
                             <div key={key} className="space-y-3">
                                 {searchQuery && (
                                     <div className="flex items-center gap-2.5 pt-4 pb-1">
-                                        <span className="icon-chip w-8 h-8 rounded-xl">
+                                        <span className="icon-chip w-8 h-8 rounded-tile-sm">
                                             <Icon className="w-4 h-4" />
                                         </span>
                                         <h2 className="text-base font-black text-slate-900">{category.title}</h2>
@@ -153,7 +153,7 @@ export default function FAQPage() {
                                     return (
                                         <div
                                             key={idx}
-                                            className={`glass-surface rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-emerald-500/80' : 'hover:border-emerald-500/80'}`}
+                                            className={`glass-surface rounded-tile-md overflow-hidden transition-all duration-300 ${isOpen ? 'border-orange-500/80' : 'hover:border-orange-500/80'}`}
                                         >
                                             <button
                                                 type="button"
@@ -163,7 +163,7 @@ export default function FAQPage() {
                                             >
                                                 <span className="font-black text-sm text-slate-900">{faq.q}</span>
                                                 {isOpen ? (
-                                                    <ChevronUp className="w-4 h-4 text-emerald-600 shrink-0" />
+                                                    <ChevronUp className="w-4 h-4 text-orange-600 shrink-0" />
                                                 ) : (
                                                     <ChevronDown className="w-4 h-4 text-slate-600 shrink-0" />
                                                 )}
@@ -183,8 +183,8 @@ export default function FAQPage() {
 
                 {/* No Results */}
                 {searchQuery && filteredCategories.length === 0 && (
-                    <div className="glass-surface p-12 rounded-[2.5rem] text-center space-y-3">
-                        <HelpCircle className="w-10 h-10 text-emerald-600 mx-auto" />
+                    <div className="glass-surface p-12 rounded-tile-xl text-center space-y-3">
+                        <HelpCircle className="w-10 h-10 text-orange-600 mx-auto" />
                         <h3 className="text-base font-black text-slate-900">Keine passenden Fragen gefunden</h3>
                         <p className="text-sm text-slate-700">
                             Für &bdquo;{searchQuery}&ldquo; konnten wir keinen Treffer finden. Kontaktieren Sie uns gerne direkt!
@@ -193,7 +193,7 @@ export default function FAQPage() {
                 )}
 
                 {/* Question CTA Box */}
-                <div className="mt-14 ceramic-hero rounded-[2rem] p-8 text-center space-y-4">
+                <div className="mt-14 ceramic-hero rounded-tile-xl p-8 text-center space-y-4">
                     <h3 className="text-xl sm:text-2xl font-black text-slate-900">Ihre Frage war nicht dabei?</h3>
                     <p className="text-sm text-slate-700 max-w-lg mx-auto leading-relaxed">
                         {COMPANY_DATA.owner.fullName} beantwortet Ihre individuellen Anliegen gerne persönlich – am Telefon, per WhatsApp oder beim kostenfreien Vor-Ort-Aufmaß.
@@ -204,7 +204,7 @@ export default function FAQPage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                     </div>

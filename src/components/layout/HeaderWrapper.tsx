@@ -9,13 +9,12 @@ export function HeaderWrapper() {
     const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [lastPathname, setLastPathname] = useState(pathname);
 
     // Close the drawer on every navigation (including back/forward).
-    if (pathname !== lastPathname) {
-        setLastPathname(pathname);
+    // Moved to useEffect to avoid setState during render (which caused flickering).
+    useEffect(() => {
         setIsMobileMenuOpen(false);
-    }
+    }, [pathname]);
 
     const closeMobileMenu = useCallback(() => setIsMobileMenuOpen(false), []);
 

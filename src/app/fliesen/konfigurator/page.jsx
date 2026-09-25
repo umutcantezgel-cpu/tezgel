@@ -109,12 +109,12 @@ const RELATED_LINKS = [
 export default function FliesenKonfiguratorPage() {
     return (
         <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-24 -left-32 opacity-60" aria-hidden="true" />
-            <div className="ambient-glow-sky top-1/3 -right-40 opacity-50" aria-hidden="true" />
+            <div className="ambient-glow-orange -top-24 -left-32 opacity-60" aria-hidden="true" />
+            <div className="ambient-glow-warm top-1/3 -right-40 opacity-50" aria-hidden="true" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative">
                 {/* Hero */}
-                <section className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <section className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Sparkles className="w-3.5 h-3.5" />
                         Fliesen-Konfigurator
@@ -139,11 +139,11 @@ export default function FliesenKonfiguratorPage() {
                     </div>
                     <p className="text-xs text-slate-600 pt-2">
                         Sie planen ein Bad?{' '}
-                        <Link href="/bad/badplaner" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 font-bold">
+                        <Link href="/bad/badplaner" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold">
                             Zum Badplaner
                         </Link>{' '}
                         oder zum{' '}
-                        <Link href="/bad/projekt-check" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 font-bold">
+                        <Link href="/bad/projekt-check" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold">
                             Bad-Projektcheck
                         </Link>
                         .
@@ -153,7 +153,7 @@ export default function FliesenKonfiguratorPage() {
                 {/* Explanation */}
                 <section aria-labelledby="ablauf-heading" className="space-y-8">
                     <div className="text-center max-w-3xl mx-auto space-y-3">
-                        <span className="eyebrow eyebrow-sky">So funktioniert es</span>
+                        <span className="eyebrow eyebrow-orange">So funktioniert es</span>
                         <h2 id="ablauf-heading" className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Vier Schritte bis zur strukturierten Anfrage
                         </h2>
@@ -168,9 +168,9 @@ export default function FliesenKonfiguratorPage() {
                             return (
                                 <div
                                     key={card.title}
-                                    className="group glass-surface rounded-3xl p-6 space-y-3 border border-slate-200 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                    className="group glass-surface rounded-tile-xl p-6 space-y-3 border border-slate-200 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                                 >
-                                    <span className="icon-chip w-11 h-11 rounded-2xl">
+                                    <span className="icon-chip w-11 h-11 rounded-tile-md">
                                         <Icon className="w-5 h-5" />
                                     </span>
                                     <h3 className="text-base font-black text-slate-900">{card.title}</h3>
@@ -204,7 +204,7 @@ export default function FliesenKonfiguratorPage() {
                             Vor-Ort-Aufmaß fest.
                         </p>
                     </div>
-                    <div className="glass-surface rounded-3xl border border-slate-200 overflow-hidden">
+                    <div className="glass-surface rounded-tile-xl border border-slate-200 overflow-hidden">
                         <table className="w-full text-sm text-left">
                             <caption className="sr-only">Verschnitt-Richtwerte je Verlegemuster</caption>
                             <thead className="bg-slate-100 text-slate-900">
@@ -228,7 +228,7 @@ export default function FliesenKonfiguratorPage() {
                 </section>
 
                 {/* Stairs */}
-                <section aria-labelledby="treppen-heading" className="glass-surface rounded-[2rem] p-6 sm:p-10 border border-slate-200 space-y-4">
+                <section aria-labelledby="treppen-heading" className="glass-surface rounded-tile-xl p-6 sm:p-10 border border-slate-200 space-y-4">
                     <h2 id="treppen-heading" className="text-xl sm:text-2xl font-black text-slate-900">
                         Bei Treppen nur die Nettofläche
                     </h2>
@@ -247,7 +247,7 @@ export default function FliesenKonfiguratorPage() {
                             <strong className="text-slate-900">Keine Menge</strong> gibt es bei gewendelten Treppen, bei Blockstufen
                             (eine massive Bauart, kein Belag) und bei unvollständigen Maßen. Treppensockel und Kantenausbildung werden
                             beim Aufmaß festgelegt. Mehr dazu unter{' '}
-                            <Link href="/treppen" className="text-emerald-800 hover:text-emerald-700 underline underline-offset-2 font-bold">
+                            <Link href="/treppen" className="text-orange-600 hover:text-orange-700 underline underline-offset-2 font-bold">
                                 Treppen neu belegen
                             </Link>
                             .
@@ -267,9 +267,9 @@ export default function FliesenKonfiguratorPage() {
                         {NEXT_STEPS.map((item, idx) => {
                             const Icon = item.icon;
                             return (
-                                <li key={item.title} className="glass-surface rounded-3xl p-6 border border-slate-200 space-y-3">
+                                <li key={item.title} className="glass-surface rounded-tile-xl p-6 border border-slate-200 space-y-3">
                                     <div className="flex items-center gap-3">
-                                        <span className="icon-chip w-11 h-11 rounded-2xl">
+                                        <span className="icon-chip w-11 h-11 rounded-tile-md">
                                             <Icon className="w-5 h-5" />
                                         </span>
                                         <span className="text-xs font-black text-slate-600 tabular-nums">0{idx + 1}</span>
@@ -294,11 +294,11 @@ export default function FliesenKonfiguratorPage() {
                         {FAQS.map((faq) => (
                             <details
                                 key={faq.q}
-                                className="group glass-surface rounded-2xl border border-slate-200 p-5 open:border-emerald-500/80 transition-all duration-300"
+                                className="group glass-surface rounded-tile-md border border-slate-200 p-5 open:border-orange-500/80 transition-all duration-300"
                             >
                                 <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-slate-900">
                                     {faq.q}
-                                    <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
+                                    <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
                                 </summary>
                                 <p className="mt-3 text-sm text-slate-700 leading-relaxed">{faq.a}</p>
                             </details>
@@ -314,11 +314,11 @@ export default function FliesenKonfiguratorPage() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="group glass-surface rounded-2xl p-5 border border-slate-200 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface rounded-tile-md p-5 border border-slate-200 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {link.title}
-                                    <ArrowRight className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                                    <ArrowRight className="w-4 h-4 text-orange-500" aria-hidden="true" />
                                 </span>
                                 <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
                             </Link>
@@ -326,13 +326,13 @@ export default function FliesenKonfiguratorPage() {
                     </div>
                     <p className="text-sm text-slate-700">
                         Lieber direkt sprechen?{' '}
-                        <Link href="/kontakt" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 font-bold">
+                        <Link href="/kontakt" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold">
                             Zur Kontaktseite
                         </Link>{' '}
                         oder telefonisch unter{' '}
                         <a
                             href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 font-bold tabular-nums"
+                            className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold tabular-nums"
                         >
                             {COMPANY_DATA.contact.phone}
                         </a>

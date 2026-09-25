@@ -4,7 +4,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Ratgeber zu Badsanierung & Fliesen',
-  description: 'Praxiswissen rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Meisterbetrieb Tezgel aus Aßlar.',
+  description: 'Praxiswissen rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Fachbetrieb Tezgel aus Aßlar.',
   path: '/blog',
 });
 
@@ -19,7 +19,7 @@ const blogSchema = buildGraph([
     url: pageUrl,
     name: 'Ratgeber & Blog | Fliesenverlegung Tezgel',
     description:
-      'Fachartikel rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Meisterbetrieb in Aßlar.',
+      'Fachartikel rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Fachbetrieb in Aßlar.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

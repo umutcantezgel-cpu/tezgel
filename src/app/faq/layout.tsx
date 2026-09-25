@@ -5,7 +5,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'FAQ – Häufige Fragen zu Fliesen & Badsanierung',
-  description: `Antworten zu XXL-Fliesen, Badsanierung, DIN 18534 Abdichtung, Balkon & Terrasse, Pflegekassen-Zuschuss und Festpreisangebot – vom Fliesen-Meisterbetrieb ${COMPANY_DATA.legalName} aus ${COMPANY_DATA.headquarters.city}.`,
+  description: `Antworten zu XXL-Fliesen, Badsanierung, DIN 18534 Abdichtung, Balkon & Terrasse, Pflegekassen-Zuschuss und Festpreisangebot – vom Fliesen-Fachbetrieb ${COMPANY_DATA.legalName} aus ${COMPANY_DATA.headquarters.city}.`,
   path: '/faq',
 });
 

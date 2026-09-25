@@ -44,7 +44,7 @@ const TableOfContents = ({ content }) => {
     return (
         <div>
             <h2 className="flex items-center gap-2 font-black text-slate-900 mb-4 text-sm uppercase tracking-wider">
-                <List className="w-4 h-4 text-emerald-600" />
+                <List className="w-4 h-4 text-orange-600" />
                 Inhalt
             </h2>
             <nav aria-label="Inhaltsverzeichnis" className="space-y-1 relative">
@@ -62,7 +62,7 @@ const TableOfContents = ({ content }) => {
                         }}
                         aria-current={activeId === id ? 'location' : undefined}
                         className={`block text-sm py-2 pl-4 border-l-2 transition-all duration-300 ${activeId === id
-                            ? 'border-emerald-600 text-emerald-800 font-bold -ml-[2px]'
+                            ? 'border-orange-600 text-orange-950 font-bold -ml-[2px]'
                             : 'border-transparent text-slate-700 hover:text-slate-900 hover:border-slate-300 -ml-[2px]'
                             }`}
                         style={{ marginLeft: level === 3 ? '1rem' : '0' }}

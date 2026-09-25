@@ -84,7 +84,7 @@ Wichtig für die Aufgabenteilung: Den Anschluss des Ablaufs an das Abwassernetz 
 
 Für große Fliesen und eine ruhige Fläche sind Duschrinne oder Wandablauf meist die beste Wahl. Der Punktablauf ist bewährt und kommt mit kleineren Formaten oder Mosaik gut zurecht. Im Bestand entscheiden oft Aufbauhöhe und Lage der Fallleitung. Legen Sie den Ablauf daher früh fest – bevor Estrich, Abdichtung und Fliesenformat feststehen.
 
-Sie planen eine bodengleiche Dusche? Mehr zum Umbau finden Sie unter [Badsanierung](/bad/badsanierung). Für eine Beratung vor Ort [kontaktieren Sie uns](/kontakt) – wir planen Ihre Dusche als Fliesenlegermeisterbetrieb aus Aßlar.`
+Sie planen eine bodengleiche Dusche? Mehr zum Umbau finden Sie unter [Badsanierung](/bad/badsanierung). Für eine Beratung vor Ort [kontaktieren Sie uns](/kontakt) – wir planen Ihre Dusche als Fliesenleger-Fachbetrieb aus Aßlar.`
 };
 
 export default post;

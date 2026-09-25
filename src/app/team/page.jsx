@@ -6,8 +6,8 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Unser Team – Fliesen-Meisterbetrieb aus Aßlar',
-    description: `Das Team von ${COMPANY_DATA.legalName}: Inhaber & Handwerksmeister ${COMPANY_DATA.owner.fullName} und das Fachverlegeteam für Fliesen-, Platten- & Mosaikarbeiten in Aßlar, Wetzlar & Mittelhessen.`,
+    title: 'Unser Team – Fliesen-Fachbetrieb aus Aßlar',
+    description: `Das Team von ${COMPANY_DATA.legalName}: Inhaber & Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} und das bis zu 12-köpfige Verlegeteam für Fliesen-, Platten- & Mosaikarbeiten in Aßlar, Wetzlar & Mittelhessen.`,
     path: '/team'
 });
 
@@ -17,12 +17,12 @@ export default function TeamPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Users className="w-3.5 h-3.5" />
                         Kompetenz &amp; Leidenschaft
@@ -32,7 +32,7 @@ export default function TeamPage() {
                         <span className="text-ceramic-gradient">Handwerk aus Überzeugung</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Hinter jedem Bad, jeder Terrasse und jeder großformatigen Fläche steht ein eingespieltes Team aus Aßlar – geführt von Inhaber &amp; Handwerksmeister {owner.fullName}.
+                        Hinter jedem Bad, jeder Terrasse und jeder großformatigen Fläche steht ein eingespieltes Team aus Aßlar – geführt von Inhaber &amp; Fachbetriebsleiter {owner.fullName}. Mit bis zu 12 engagierten Handwerkern realisieren wir Groß- und Kleinprojekte zuverlässig.
                     </p>
                 </div>
             </div>
@@ -42,21 +42,21 @@ export default function TeamPage() {
                     {team.map((member) => (
                         <li
                             key={member.name}
-                            className="group glass-surface p-8 rounded-[2rem] flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            className="group glass-surface p-8 rounded-tile-lg flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                         >
                             <div>
                                 <span className="icon-chip w-16 h-16 font-display font-black text-xl mb-5" aria-hidden="true">
                                     {member.name.charAt(0)}
                                 </span>
-                                <h2 className="font-black text-xl text-slate-900 mb-1 group-hover:text-emerald-800 transition-colors">{member.name}</h2>
-                                <p className="text-xs font-black text-emerald-800 uppercase tracking-wider mb-3">{member.role}</p>
+                                <h2 className="font-black text-xl text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">{member.name}</h2>
+                                <p className="text-xs font-black text-orange-700 uppercase tracking-wider mb-3">{member.role}</p>
                                 <p className="text-sm text-slate-700 leading-relaxed">{member.experience}</p>
                             </div>
                         </li>
                     ))}
                 </ul>
 
-                <div className="mt-12 ceramic-hero rounded-[2rem] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="mt-12 ceramic-hero rounded-tile-lg p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
                     <div className="space-y-2 text-center md:text-left">
                         <span className="eyebrow">
                             <Award className="w-3.5 h-3.5" />
@@ -71,7 +71,7 @@ export default function TeamPage() {
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-3">
                         <a href={`tel:${contact.phoneLink}`} className="btn-ghost">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {contact.phone}
                         </a>
                         <Link href="/kontakt" className="btn-primary">
@@ -83,7 +83,7 @@ export default function TeamPage() {
 
                 <p className="mt-8 text-center text-sm text-slate-700">
                     Sie möchten unser Team verstärken?{' '}
-                    <Link href="/karriere" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/karriere" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                         Zu Karriere &amp; Jobs
                     </Link>
                 </p>

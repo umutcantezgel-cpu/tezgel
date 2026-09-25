@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   const path = `/leistungen/${service.id}`;
   const title = `${service.name} in Aßlar, Wetzlar & Umgebung`;
   const fullTitle = `${title} | Fliesenverlegung Tezgel`;
-  const description = `${service.shortDescription}. Ihr Fliesenleger-Meisterbetrieb aus Aßlar für Wetzlar und Mittelhessen – kostenfreies Vor-Ort-Aufmaß & verbindliches Festpreisangebot.`;
+  const description = `${service.shortDescription}. Ihr Fliesenleger-Fachbetrieb aus Aßlar für Wetzlar und Mittelhessen – kostenfreies Vor-Ort-Aufmaß & verbindliches Festpreisangebot.`;
 
   return {
     title,

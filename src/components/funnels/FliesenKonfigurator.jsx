@@ -131,25 +131,25 @@ const fmt = (n, digits = 1) => {
 const toggleInList = (list, id) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]);
 
 const inputClass =
-    'w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all';
+    'w-full px-4 py-2.5 rounded-tile-sm bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
 
 const cardOptionClass = (selected) =>
-    `p-4 rounded-2xl border-2 text-left transition-all duration-300 ${
+    `p-4 rounded-tile-md border-2 text-left transition-all duration-300 ${
         selected
-            ? 'border-emerald-600 bg-emerald-50 ring-2 ring-emerald-600/20'
-            : 'border-slate-200 bg-white hover:border-emerald-500/80 hover:-translate-y-0.5'
+            ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
+            : 'border-slate-200 bg-white hover:border-orange-500 hover:-translate-y-0.5'
     }`;
 
 const chipOptionClass = (selected) =>
-    `px-3 py-2.5 rounded-xl border text-xs font-bold transition-all duration-300 ${
+    `px-3 py-2.5 rounded-tile-sm border text-xs font-bold transition-all duration-300 ${
         selected
-            ? 'bg-emerald-50 text-emerald-800 border-emerald-600 ring-2 ring-emerald-600/20'
-            : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500/80'
+            ? 'bg-orange-50 text-orange-950 border-orange-600 ring-2 ring-orange-600/20'
+            : 'bg-white text-slate-700 border-slate-200 hover:border-orange-500'
     }`;
 
 const legendClass = 'block text-xs font-black text-slate-800 mb-2';
 const labelClass = 'block text-xs font-bold text-slate-800 mb-1';
-const linkClass = 'font-bold text-emerald-800 hover:text-emerald-700 underline underline-offset-2';
+const linkClass = 'font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2';
 
 // ---------------------------------------------------------------------------
 // Calculations
@@ -368,9 +368,9 @@ function ResultSummary({ data }) {
 
     return (
         <div className="space-y-4 text-left">
-            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <div className="p-5 rounded-tile-md bg-slate-50 border border-slate-200">
                 <h4 className="flex items-center gap-2 text-sm font-black text-slate-900 mb-3">
-                    <ClipboardList className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                    <ClipboardList className="w-4 h-4 text-orange-600" aria-hidden="true" />
                     Ihr Projekt in Kürze
                 </h4>
                 <dl className="grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-sm">
@@ -383,9 +383,9 @@ function ResultSummary({ data }) {
                 </dl>
             </div>
 
-            <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200">
+            <div className="p-5 rounded-tile-md bg-orange-50 border border-orange-200">
                 <h4 className="flex items-center gap-2 text-sm font-black text-slate-900 mb-3">
-                    <Ruler className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                    <Ruler className="w-4 h-4 text-orange-600" aria-hidden="true" />
                     Materialbedarf (Richtwert)
                 </h4>
                 <ul className="space-y-2 text-sm text-slate-700">
@@ -393,7 +393,7 @@ function ResultSummary({ data }) {
                         <li>
                             <strong className="text-slate-900">Fläche:</strong> {fmt(area.net)} m² netto. Mit einem Verschnitt von
                             ca. {area.pattern.min}–{area.pattern.max} % ({area.pattern.label}) ergibt sich ein Richtwert von{' '}
-                            <strong className="text-emerald-800 tabular-nums">ca. {fmt(area.low)}–{fmt(area.high)} m²</strong>.
+                            <strong className="text-orange-950 tabular-nums">ca. {fmt(area.low)}–{fmt(area.high)} m²</strong>.
                         </li>
                     )}
                     {area && !area.valid && (
@@ -410,7 +410,7 @@ function ResultSummary({ data }) {
                         <li>
                             <strong className="text-slate-900">Treppe (netto):</strong> Trittstufen {fmt(stairs.treadArea, 2)} m²
                             {stairs.withRisers && <> + Setzstufen {fmt(stairs.riserArea, 2)} m²</>} ={' '}
-                            <strong className="text-emerald-800 tabular-nums">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
+                            <strong className="text-orange-950 tabular-nums">{fmt(stairs.total, 2)} m²</strong>. Bei Treppen nennen wir
                             bewusst keinen Verschnittzuschlag, weil er stark von Format und Stufenmaß abhängt.
                         </li>
                     )}
@@ -427,7 +427,7 @@ function ResultSummary({ data }) {
             </div>
 
             {checklist.length > 0 && (
-                <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200">
+                <div className="p-5 rounded-tile-md bg-sky-50 border border-sky-200">
                     <h4 className="flex items-center gap-2 text-sm font-black text-slate-900 mb-3">
                         <Info className="w-4 h-4 text-sky-600" aria-hidden="true" />
                         Das prüfen wir vorab
@@ -435,7 +435,7 @@ function ResultSummary({ data }) {
                     <ul className="space-y-2 text-sm text-slate-700">
                         {checklist.map((item) => (
                             <li key={item.text} className="flex items-start gap-2">
-                                <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                                <Check className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                                 <span>
                                     {item.text}{' '}
                                     <Link href={item.href} className={linkClass}>
@@ -632,15 +632,15 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                         aria-current={step === s ? 'step' : undefined}
                                         className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black tabular-nums transition-all duration-300 ${
                                             step === s
-                                                ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/30'
+                                                ? 'bg-orange-600 text-white shadow-md shadow-orange-600/30'
                                                 : step > s
-                                                    ? 'bg-emerald-50 text-emerald-800 border border-emerald-300'
+                                                    ? 'bg-orange-50 text-orange-950 border border-orange-200'
                                                     : 'bg-white text-slate-700 border border-slate-300'
                                         }`}
                                     >
                                         {step > s ? (
                                             <>
-                                                <Check className="w-4 h-4" aria-hidden="true" />
+                                                <Check className="w-4 h-4 text-orange-600" aria-hidden="true" />
                                                 <span className="sr-only">Schritt {s}: {item.title} (erledigt)</span>
                                             </>
                                         ) : (
@@ -659,13 +659,13 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                     <h2 className="text-xl sm:text-2xl font-black text-slate-900">Fliesenprojekt vorbereiten</h2>
 
                     {/* Live preview */}
-                    <div className="mt-4 p-3.5 rounded-2xl bg-white border border-slate-200 space-y-1" aria-live="polite">
+                    <div className="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1" aria-live="polite">
                         <p className="text-xs font-bold text-slate-700">Materialbedarf inkl. Verschnitt (Richtwert):</p>
                         {!hasAreaRooms && !hasStairs && (
                             <p className="text-sm text-slate-700">Wählen Sie zuerst einen Bereich.</p>
                         )}
                         {areaCalc && areaCalc.valid && (
-                            <p className="font-display text-lg font-black text-emerald-800 tabular-nums">
+                            <p className="font-display text-lg font-black text-orange-950 tabular-nums">
                                 ca. {fmt(areaCalc.low)}–{fmt(areaCalc.high)} m²
                                 <span className="ml-2 text-xs font-bold text-slate-700">aus {fmt(areaCalc.net)} m² netto</span>
                             </p>
@@ -687,7 +687,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                         {[1, 2, 3, 4].map((s) => (
                             <div
                                 key={s}
-                                className={`h-2 rounded-full transition-all duration-500 ${s <= step ? 'bg-emerald-600' : 'bg-slate-200'}`}
+                                className={`h-2 rounded-full transition-all duration-500 ${s <= step ? 'bg-orange-600' : 'bg-slate-200'}`}
                             />
                         ))}
                     </div>
@@ -719,7 +719,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                             >
                                                 <span className="flex items-center justify-between gap-2">
                                                     <span className="block font-black text-slate-900 text-sm">{r.title}</span>
-                                                    {selected && <Check className="w-4 h-4 text-emerald-600" aria-hidden="true" />}
+                                                    {selected && <Check className="w-4 h-4 text-orange-600" aria-hidden="true" />}
                                                 </span>
                                                 <span className="block text-xs text-slate-600 mt-0.5">{r.desc}</span>
                                             </button>
@@ -866,7 +866,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                                 step="1"
                                                 value={Math.min(Math.max(Math.round(parseNumber(data.area)) || 1, 1), 150)}
                                                 onChange={(e) => update({ area: e.target.value })}
-                                                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-700"
+                                                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
                                             />
                                             <div className="flex justify-between text-[10px] text-slate-600 font-semibold mt-1 tabular-nums" aria-hidden="true">
                                                 <span>1 m²</span>
@@ -1067,7 +1067,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                                 <div>
                                     <label htmlFor="fk-name" className={labelClass}>
-                                        Name <span className="text-emerald-800">*</span>
+                                        Name <span className="text-orange-600">*</span>
                                     </label>
                                     <input
                                         id="fk-name"
@@ -1082,7 +1082,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                 </div>
                                 <div>
                                     <label htmlFor="fk-phone" className={labelClass}>
-                                        Telefon- oder Mobilnummer <span className="text-emerald-800">*</span>
+                                        Telefon- oder Mobilnummer <span className="text-orange-600">*</span>
                                     </label>
                                     <input
                                         id="fk-phone"
@@ -1149,12 +1149,12 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                     required
                                     checked={data.privacyConsent}
                                     onChange={(e) => update({ privacyConsent: e.target.checked })}
-                                    className="mt-0.5 rounded accent-emerald-700"
+                                    className="mt-0.5 rounded accent-orange-600"
                                 />
                                 <span>
                                     Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Details in der{' '}
                                     <Link href="/datenschutz" className={linkClass}>Datenschutzerklärung</Link>.{' '}
-                                    <span className="text-emerald-800">*</span>
+                                    <span className="text-orange-600">*</span>
                                 </span>
                             </label>
 
@@ -1165,12 +1165,12 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                         Per WhatsApp senden
                                     </button>
                                     <button type="submit" name="channel" value="email" className="btn-ghost w-full sm:w-auto">
-                                        <Send className="w-4 h-4 text-emerald-700" />
+                                        <Send className="w-4 h-4 text-orange-600" />
                                         Per E-Mail senden
                                     </button>
                                 </div>
                                 <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
-                                    <Lock className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
+                                    <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>
                                         Die Buttons öffnen WhatsApp bzw. Ihr E-Mail-Programm mit einer vorbereiteten Nachricht – gesendet wird
                                         erst, wenn Sie dort auf „Senden“ tippen. Beim Versand per WhatsApp gelten zusätzlich die
@@ -1184,7 +1184,7 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                 <button
                                     type="button"
                                     onClick={() => goToStep(3)}
-                                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-slate-700 hover:text-emerald-800 font-bold text-xs transition-colors"
+                                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-slate-700 hover:text-orange-600 font-bold text-xs transition-colors"
                                 >
                                     <ArrowLeft className="w-4 h-4" />
                                     Zurück zu Schritt 3

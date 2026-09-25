@@ -30,8 +30,8 @@ export const metadata = createMetadata({
 
 const CROSS_SECTION = [
     { label: '2-cm-Feinsteinzeugplatte', note: 'frostbeständig, liegt nur an den Ecken auf', className: 'bg-slate-200 border-slate-300 text-slate-900 h-9' },
-    { label: 'Stelzlager mit Fugensteg', note: 'höhenverstellbar, gibt die offene Fuge vor', className: 'bg-emerald-50 border-emerald-200 text-emerald-800 h-14' },
-    { label: 'Schutzlage / Lagerpad', note: 'verteilt die Last, schont die Abdichtung', className: 'bg-sky-50 border-sky-200 text-slate-900 h-8' },
+    { label: 'Stelzlager mit Fugensteg', note: 'höhenverstellbar, gibt die offene Fuge vor', className: 'bg-orange-50 border-orange-200 text-orange-900 h-14' },
+    { label: 'Schutzlage / Lagerpad', note: 'verteilt die Last, schont die Abdichtung', className: 'bg-stone-100 border-stone-200 text-slate-900 h-8' },
     { label: 'Abdichtung im Gefälle', note: 'führt das Wasser zu Ablauf oder Rinne', className: 'bg-slate-800 border-slate-900 text-white h-8' },
     { label: 'Tragender Untergrund', note: 'Balkonplatte, Dachdecke oder Betonplatte', className: 'bg-slate-100 border-slate-300 text-slate-900 h-10' }
 ];
@@ -105,12 +105,12 @@ const FURTHER_READING = [
 export default function StelzlagerPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="stelzlager-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Layers className="w-3.5 h-3.5" />
                         Balkon- &amp; Terrassensanierung auf Stelzlagern
@@ -139,7 +139,7 @@ export default function StelzlagerPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="stelzlager-prinzip-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
-                        <span className="eyebrow eyebrow-sky mb-4">Das Prinzip</span>
+                        <span className="eyebrow mb-4">Das Prinzip</span>
                         <h2 id="stelzlager-prinzip-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             So funktioniert die Stelzlager-Verlegung
                         </h2>
@@ -158,17 +158,17 @@ export default function StelzlagerPage() {
                         </div>
                     </div>
 
-                    <figure className="glass-surface rounded-[2rem] p-6 sm:p-8">
+                    <figure className="glass-surface rounded-tile-lg p-6 sm:p-8">
                         <div className="space-y-2" aria-hidden="true">
                             {CROSS_SECTION.map((layer) => (
-                                <div key={layer.label} className={`rounded-xl border flex items-center px-4 ${layer.className}`}>
+                                <div key={layer.label} className={`rounded-tile-sm border flex items-center px-4 ${layer.className}`}>
                                     <span className="text-xs font-black">{layer.label}</span>
                                 </div>
                             ))}
                         </div>
                         <figcaption className="mt-5">
                             <p className="text-sm font-black text-slate-900 mb-2">Schematischer Aufbau von oben nach unten</p>
-                            <ol className="space-y-1.5 text-sm text-slate-700 list-decimal list-inside marker:text-emerald-600">
+                            <ol className="space-y-1.5 text-sm text-slate-700 list-decimal list-inside marker:text-orange-600">
                                 {CROSS_SECTION.map((layer) => (
                                     <li key={layer.label}>
                                         <span className="font-bold text-slate-900">{layer.label}</span> – {layer.note}
@@ -196,12 +196,12 @@ export default function StelzlagerPage() {
                             return (
                                 <li
                                     key={item.title}
-                                    className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
                                     <span className="icon-chip w-12 h-12 mb-5">
                                         <Icon className="w-6 h-6" />
                                     </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                                 </li>
                             );
@@ -213,7 +213,7 @@ export default function StelzlagerPage() {
             {/* Requirements, height, revision */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <article className="glass-surface rounded-[2rem] p-7 lg:col-span-1" aria-labelledby="stelzlager-voraussetzungen-heading">
+                    <article className="glass-surface rounded-tile-lg p-7 lg:col-span-1" aria-labelledby="stelzlager-voraussetzungen-heading">
                         <span className="icon-chip w-11 h-11 mb-4">
                             <ShieldCheck className="w-5 h-5" />
                         </span>
@@ -223,21 +223,21 @@ export default function StelzlagerPage() {
                         <ul className="space-y-3">
                             {REQUIREMENTS.map((req) => (
                                 <li key={req} className="flex gap-2.5 text-sm text-slate-700 leading-relaxed">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true" />
+                                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                                     {req}
                                 </li>
                             ))}
                         </ul>
                         <p className="mt-4 text-sm text-slate-700 leading-relaxed">
                             Ist die vorhandene Abdichtung schadhaft, wird sie vor dem neuen Belag erneuert – mehr dazu unter{' '}
-                            <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                                 Balkonsanierung
                             </Link>
                             .
                         </p>
                     </article>
 
-                    <article className="glass-surface rounded-[2rem] p-7" aria-labelledby="stelzlager-hoehe-heading">
+                    <article className="glass-surface rounded-tile-lg p-7" aria-labelledby="stelzlager-hoehe-heading">
                         <span className="icon-chip w-11 h-11 mb-4">
                             <Ruler className="w-5 h-5" />
                         </span>
@@ -256,7 +256,7 @@ export default function StelzlagerPage() {
                             <p>
                                 Die Gesamthöhe aus Lager und Platte muss zur Türschwelle passen. Wie niedrig der Übergang sein darf, erklärt
                                 unser Beitrag zum{' '}
-                                <Link href="/blog/barrierefreier-balkonaustritt" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/blog/barrierefreier-balkonaustritt" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                                     barrierefreien Balkonaustritt
                                 </Link>
                                 .
@@ -264,7 +264,7 @@ export default function StelzlagerPage() {
                         </div>
                     </article>
 
-                    <article className="glass-surface rounded-[2rem] p-7" aria-labelledby="stelzlager-revision-heading">
+                    <article className="glass-surface rounded-tile-lg p-7" aria-labelledby="stelzlager-revision-heading">
                         <span className="icon-chip w-11 h-11 mb-4">
                             <Wrench className="w-5 h-5" />
                         </span>
@@ -283,7 +283,7 @@ export default function StelzlagerPage() {
                             <p>
                                 Die Oberfläche des Feinsteinzeugs reinigen Sie mit Wasser und einem milden Reiniger; Tipps dazu im
                                 Beitrag{' '}
-                                <Link href="/blog/fliesen-reinigen-pflegen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/blog/fliesen-reinigen-pflegen" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                                     Fliesen richtig reinigen
                                 </Link>
                                 .
@@ -297,7 +297,7 @@ export default function StelzlagerPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="stelzlager-grenzen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-amber mb-4">Ehrlich geplant</span>
+                        <span className="eyebrow mb-4">Ehrlich geplant</span>
                         <h2 id="stelzlager-grenzen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Grenzen: Wind, Möblierung, Punktlasten
                         </h2>
@@ -310,7 +310,7 @@ export default function StelzlagerPage() {
                         {LIMITS.map((item) => {
                             const Icon = item.icon;
                             return (
-                                <li key={item.title} className="rounded-[2rem] bg-slate-50 border border-slate-200 p-7">
+                                <li key={item.title} className="rounded-tile-lg bg-slate-50 border border-slate-200 p-7">
                                     <Icon className="w-7 h-7 text-amber-500 mb-4" aria-hidden="true" />
                                     <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
@@ -323,7 +323,7 @@ export default function StelzlagerPage() {
 
             {/* CTA + further reading */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10" aria-labelledby="stelzlager-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">Kostenfreies Aufmaß</span>
                     <h2 id="stelzlager-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
                         Passt ein Stelzlager-Belag auf Ihren Balkon?
@@ -338,7 +338,7 @@ export default function StelzlagerPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a
@@ -353,9 +353,9 @@ export default function StelzlagerPage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-[2rem] p-7" aria-labelledby="stelzlager-weiterlesen-heading">
+                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="stelzlager-weiterlesen-heading">
                     <h2 id="stelzlager-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
                         Weiterlesen
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -363,7 +363,7 @@ export default function StelzlagerPage() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}

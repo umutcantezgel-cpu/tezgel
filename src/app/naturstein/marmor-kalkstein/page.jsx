@@ -93,14 +93,14 @@ const FURTHER_READING = [
 export default function MarmorKalksteinPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="marmor-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Gem className="w-3.5 h-3.5" />
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-orange">
+                        <Gem className="w-3.5 h-3.5 text-orange-600" />
                         Kalkhaltige Natursteine
                     </span>
                     <h1 id="marmor-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
@@ -127,8 +127,8 @@ export default function MarmorKalksteinPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="marmor-saeure-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                     <div className="lg:col-span-3">
-                        <span className="eyebrow eyebrow-sky mb-4">
-                            <FlaskConical className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <FlaskConical className="w-3.5 h-3.5 text-orange-600" />
                             Grundlagen
                         </span>
                         <h2 id="marmor-saeure-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -149,7 +149,7 @@ export default function MarmorKalksteinPage() {
                         </div>
                     </div>
 
-                    <aside className="lg:col-span-2 rounded-[2rem] bg-amber-50 border border-amber-200 p-7" aria-labelledby="marmor-tabu-heading">
+                    <aside className="lg:col-span-2 rounded-tile-2xl bg-amber-50 border border-amber-200 p-7" aria-labelledby="marmor-tabu-heading">
                         <div className="flex items-center gap-3 mb-4">
                             <Ban className="w-7 h-7 text-amber-500" aria-hidden="true" />
                             <h3 id="marmor-tabu-heading" className="text-xl font-black text-amber-800">Säure ist tabu</h3>
@@ -178,8 +178,8 @@ export default function MarmorKalksteinPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="marmor-kleber-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">
-                            <Palette className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Palette className="w-3.5 h-3.5 text-orange-600" />
                             Verlegung
                         </span>
                         <h2 id="marmor-kleber-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -202,8 +202,8 @@ export default function MarmorKalksteinPage() {
                                 text: 'Manche grünen, als „Marmor“ gehandelten Steine reagieren auf wasserhaltige Kleber mit Verformung. Für sie kommen Reaktionsharzkleber infrage. Das klären wir vor der Verlegung am Material.'
                             }
                         ].map((item) => (
-                            <li key={item.title} className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
-                                <span className="icon-chip w-11 h-11 mb-4">
+                            <li key={item.title} className="group glass-surface p-7 rounded-tile-2xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
+                                <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                     <CheckCircle2 className="w-5 h-5" />
                                 </span>
                                 <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
@@ -214,7 +214,7 @@ export default function MarmorKalksteinPage() {
                     <p className="mt-8 max-w-3xl mx-auto text-center text-sm text-slate-700 leading-relaxed">
                         Die Platten werden hohlraumarm verlegt – kalibriert im Dünnbett, unkalibriert im Mittelbett. Im Bad liegt darunter
                         eine Abdichtung nach DIN 18534; die Details dazu erklärt unsere Seite{' '}
-                        <Link href="/untergrund-abdichtung/din-18534" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/untergrund-abdichtung/din-18534" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                             Abdichtung nach DIN 18534
                         </Link>
                         .
@@ -225,7 +225,7 @@ export default function MarmorKalksteinPage() {
             {/* Where marble fits */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="marmor-einsatz-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Einsatzbereiche</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Einsatzbereiche</span>
                     <h2 id="marmor-einsatz-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Wo Marmor passt – und wo besser nicht
                     </h2>
@@ -234,12 +234,12 @@ export default function MarmorKalksteinPage() {
                     {PLACES.map((place) => {
                         const Icon = place.icon;
                         return (
-                            <li key={place.title} className="glass-surface p-6 rounded-[2rem] flex flex-col">
-                                <span className="icon-chip w-11 h-11 mb-4">
+                            <li key={place.title} className="glass-surface p-6 rounded-tile-2xl flex flex-col">
+                                <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                     <Icon className="w-5 h-5" />
                                 </span>
                                 <h3 className="font-black text-base text-slate-900 mb-1">{place.title}</h3>
-                                <span className={`mb-3 text-xs font-black uppercase tracking-wider ${place.good ? 'text-emerald-800' : 'text-amber-800'}`}>
+                                <span className={`mb-3 text-xs font-black uppercase tracking-wider ${place.good ? 'text-orange-700' : 'text-amber-800'}`}>
                                     {place.verdict}
                                 </span>
                                 <p className="text-sm text-slate-700 leading-relaxed">{place.text}</p>
@@ -253,7 +253,7 @@ export default function MarmorKalksteinPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <article aria-labelledby="marmor-travertin-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
+                        <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                             <CircleDot className="w-5 h-5" />
                         </span>
                         <h2 id="marmor-travertin-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-3">
@@ -265,7 +265,7 @@ export default function MarmorKalksteinPage() {
                         </p>
                         <ul className="space-y-3">
                             {TRAVERTINE.map((type) => (
-                                <li key={type.name} className="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                                <li key={type.name} className="rounded-tile-lg bg-slate-50 border border-slate-200 p-5">
                                     <h3 className="font-black text-sm text-slate-900 mb-1">{type.name}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{type.text}</p>
                                 </li>
@@ -274,7 +274,7 @@ export default function MarmorKalksteinPage() {
                     </article>
 
                     <article aria-labelledby="marmor-pflege-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
+                        <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                             <Droplets className="w-5 h-5" />
                         </span>
                         <h2 id="marmor-pflege-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-3">
@@ -292,7 +292,7 @@ export default function MarmorKalksteinPage() {
                             </p>
                             <p>
                                 Wie Imprägnierung, Auffrischung und Wirkungskontrolle im Detail funktionieren, lesen Sie im{' '}
-                                <Link href="/naturstein" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/naturstein" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Naturstein-Ratgeber
                                 </Link>
                                 .
@@ -304,7 +304,7 @@ export default function MarmorKalksteinPage() {
 
             {/* Alternative */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="marmor-alternative-heading">
-                <div className="glass-surface rounded-[2rem] p-7 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div className="glass-surface rounded-tile-2xl p-7 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                     <div className="lg:col-span-2">
                         <span className="eyebrow eyebrow-neutral mb-4">
                             <LayoutGrid className="w-3.5 h-3.5" />
@@ -335,8 +335,8 @@ export default function MarmorKalksteinPage() {
 
             {/* CTA + further reading */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" aria-labelledby="marmor-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">Beratung &amp; Aufmaß</span>
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-orange">Beratung &amp; Aufmaß</span>
                     <h2 id="marmor-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
                         Marmor oder Travertin für Ihr Zuhause?
                     </h2>
@@ -350,7 +350,7 @@ export default function MarmorKalksteinPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a
@@ -365,9 +365,9 @@ export default function MarmorKalksteinPage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-[2rem] p-7" aria-labelledby="marmor-weiterlesen-heading">
+                <nav className="mt-10 glass-surface rounded-tile-2xl p-7" aria-labelledby="marmor-weiterlesen-heading">
                     <h2 id="marmor-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
                         Weiterlesen
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -375,7 +375,7 @@ export default function MarmorKalksteinPage() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}

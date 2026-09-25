@@ -7,7 +7,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import PageWrapper from '@/components/common/PageWrapper';
 
 const inputClass =
-    'w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all';
+    'w-full pl-10 pr-4 py-3 rounded-tile-sm bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -41,13 +41,13 @@ const Login = () => {
     return (
         <PageWrapper title="Admin Login">
             <div className="min-h-[calc(100vh-200px)] flex items-center justify-center px-4 pt-32 pb-16 relative overflow-hidden">
-                <div className="ambient-glow-mint -top-20 -left-20 opacity-60" />
+                <div className="ambient-glow-orange -top-20 -left-20 opacity-60" />
                 <div className="w-full max-w-md relative z-10">
                     {/* Login Card */}
-                    <div className="ceramic-hero rounded-[2rem] p-8">
+                    <div className="ceramic-hero rounded-tile-xl p-8">
                         {/* Header */}
                         <div className="text-center mb-8">
-                            <span className="icon-chip w-16 h-16 rounded-full mx-auto mb-4">
+                            <span className="icon-chip w-16 h-16 rounded-tile-pill mx-auto mb-4">
                                 <Lock className="w-8 h-8" />
                             </span>
                             <h1 className="text-2xl font-black text-slate-900 mb-2">
@@ -60,7 +60,7 @@ const Login = () => {
 
                         {/* Error Message */}
                         {error && (
-                            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3 text-red-800" role="alert">
+                            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-tile-sm flex items-center gap-3 text-red-800" role="alert">
                                 <AlertCircle className="w-5 h-5 flex-shrink-0" />
                                 <p className="text-sm">{error}</p>
                             </div>

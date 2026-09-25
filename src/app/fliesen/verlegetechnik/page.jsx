@@ -79,12 +79,12 @@ const CROSS_LINKS = [
 export default function VerlegetechnikPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="verlegetechnik-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Layers className="w-3.5 h-3.5" />
                         DIN 18157 &middot; DIN EN 12004 &middot; DIN EN 13888
@@ -105,7 +105,7 @@ export default function VerlegetechnikPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                     </div>
@@ -115,7 +115,7 @@ export default function VerlegetechnikPage() {
             {/* Verfahren */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="verfahren-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Bettung</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Bettung</span>
                     <h2 id="verfahren-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Dünnbett, Mittelbett, Dickbett: die Verfahren im Überblick
                     </h2>
@@ -128,13 +128,13 @@ export default function VerlegetechnikPage() {
                     {METHODS.map((item) => (
                         <li
                             key={item.title}
-                            className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                         >
                             <span className="icon-chip w-12 h-12 mb-5">
                                 <Layers className="w-6 h-6" />
                             </span>
-                            <span className="block text-[11px] font-black uppercase tracking-widest text-emerald-800 mb-1">{item.norm}</span>
-                            <h3 className="font-black text-lg text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                            <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-1">{item.norm}</span>
+                            <h3 className="font-black text-lg text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                         </li>
                     ))}
@@ -157,8 +157,8 @@ export default function VerlegetechnikPage() {
                     </div>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
                         {ADHESIVE_CLASSES.map((item) => (
-                            <li key={item.code} className="p-6 rounded-3xl bg-slate-50 border border-slate-200">
-                                <span className="font-display block text-4xl font-black tabular-nums text-emerald-600/40 mb-3" aria-hidden="true">
+                            <li key={item.code} className="p-6 rounded-tile-xl bg-slate-50 border border-slate-200">
+                                <span className="font-display block text-4xl font-black tabular-nums text-orange-500/40 mb-3" aria-hidden="true">
                                     {item.code}
                                 </span>
                                 <h3 className="text-sm font-black text-slate-900 mb-2">
@@ -173,7 +173,7 @@ export default function VerlegetechnikPage() {
                     {/* S1 / S2 */}
                     <div className="mt-16 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
                         <div className="lg:col-span-2">
-                            <span className="eyebrow eyebrow-sky mb-4">Verformbarkeit</span>
+                            <span className="eyebrow eyebrow-orange mb-4">Verformbarkeit</span>
                             <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                                 S1 und S2: wann flexibler Kleber nötig ist
                             </h3>
@@ -186,13 +186,13 @@ export default function VerlegetechnikPage() {
                         </div>
                         <ul className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-5">
                             {DEFORMABILITY.map((item) => (
-                                <li key={item.code} className="glass-surface rounded-3xl p-6">
+                                <li key={item.code} className="glass-surface rounded-tile-xl p-6">
                                     <div className="flex items-center gap-3 mb-3">
                                         <span className="icon-chip w-11 h-11">
                                             <Gauge className="w-5 h-5" />
                                         </span>
                                         <h4 className="font-black text-slate-900">
-                                            {item.code} <span className="font-semibold text-slate-600">– {item.label}</span>
+                                             {item.code} <span className="font-semibold text-slate-600">– {item.label}</span>
                                         </h4>
                                     </div>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
@@ -206,7 +206,7 @@ export default function VerlegetechnikPage() {
             {/* Grundierung */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="grundierung-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-[2rem] p-8">
+                    <article className="glass-surface rounded-tile-xl p-8">
                         <span className="icon-chip w-12 h-12 mb-5">
                             <Brush className="w-6 h-6" />
                         </span>
@@ -218,17 +218,17 @@ export default function VerlegetechnikPage() {
                             Reststaub und sorgt dafür, dass der Kleber nicht zu schnell Wasser verliert.
                         </p>
                         <ul className="space-y-2.5 text-sm text-slate-700">
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />Saugende Untergründe wie Zementestrich, Putz oder Gipskarton: Tiefengrund bzw. Grundierung nach Herstellerangabe.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />Calciumsulfatestrich: wird angeschliffen, abgesaugt und grundiert, damit der zementäre Kleber keine schädlichen Reaktionen mit dem Gips eingeht.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />Dichte, glatte Flächen wie alte Fliesen: gereinigt und mit einer Haftbrücke vorbereitet.</li>
+                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Saugende Untergründe wie Zementestrich, Putz oder Gipskarton: Tiefengrund bzw. Grundierung nach Herstellerangabe.</li>
+                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Calciumsulfatestrich: wird angeschliffen, abgesaugt und grundiert, damit der zementäre Kleber keine schädlichen Reaktionen mit dem Gips eingeht.</li>
+                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Dichte, glatte Flächen wie alte Fliesen: gereinigt und mit einer Haftbrücke vorbereitet.</li>
                         </ul>
-                        <Link href="/untergrund-abdichtung" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/untergrund-abdichtung" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             Mehr zu Untergrund &amp; Abdichtung
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                     </article>
 
-                    <article className="glass-surface rounded-[2rem] p-8">
+                    <article className="glass-surface rounded-tile-xl p-8">
                         <span className="icon-chip w-12 h-12 mb-5">
                             <Hammer className="w-6 h-6" />
                         </span>
@@ -239,12 +239,12 @@ export default function VerlegetechnikPage() {
                             Außenbereich sammelt sich Wasser und friert.
                         </p>
                         <ul className="space-y-2.5 text-sm text-slate-700">
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />Zahnung der Kelle passend zu Format und Rückseite wählen.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />Kombiniertes Verfahren (Buttering-Floating): Kleber auf Untergrund und Fliesenrückseite.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />Fliese einschieben statt nur aufdrücken, damit die Kleberstege zusammenfließen.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />Stichprobenartig eine frisch verlegte Fliese abheben und die Benetzung kontrollieren.</li>
+                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Zahnung der Kelle passend zu Format und Rückseite wählen.</li>
+                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Kombiniertes Verfahren (Buttering-Floating): Kleber auf Untergrund und Fliesenrückseite.</li>
+                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Fliese einschieben statt nur aufdrücken, damit die Kleberstege zusammenfließen.</li>
+                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Stichprobenartig eine frisch verlegte Fliese abheben und die Benetzung kontrollieren.</li>
                         </ul>
-                        <Link href="/fliesen/grossformat" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/grossformat" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             Großformate richtig verlegen
                             <ArrowRight className="w-4 h-4" />
                         </Link>
@@ -267,13 +267,13 @@ export default function VerlegetechnikPage() {
                             Für die meisten Wohnflächen ist ein hochwertiger zementärer Fugenmörtel die richtige Wahl.
                             Reaktionsharz spielt seine Stärken dort aus, wo Säuren, Fett oder intensive Reinigung auf die Fuge
                             treffen. Farbe, Breite und Fugenbild behandeln wir auf der Seite{' '}
-                            <Link href="/fliesen/verlegemuster" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/fliesen/verlegemuster" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                 Verlegemuster &amp; Abschlüsse
                             </Link>
                             .
                         </p>
                     </div>
-                    <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white">
+                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200 bg-white">
                         <table className="w-full min-w-[640px] text-left text-sm">
                             <caption className="sr-only">Vergleich zementärer Fugenmörtel und Reaktionsharz-Fugenmörtel</caption>
                             <thead className="bg-slate-100 text-slate-900">
@@ -300,7 +300,7 @@ export default function VerlegetechnikPage() {
             {/* Bewegungsfugen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="bewegungsfugen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">
+                    <span className="eyebrow eyebrow-orange mb-4">
                         <Split className="w-3.5 h-3.5" />
                         Fugenplanung
                     </span>
@@ -316,19 +316,19 @@ export default function VerlegetechnikPage() {
                     {JOINTS.map((item) => (
                         <li
                             key={item.title}
-                            className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                            className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                         >
                             <span className="icon-chip w-11 h-11 mb-4">
                                 <Blend className="w-5 h-5" />
                             </span>
-                            <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                            <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                         </li>
                     ))}
                 </ul>
                 <p className="mt-6 text-sm text-slate-600 text-center max-w-3xl mx-auto">
                     Wie elastische Fugen im Bestand erneuert werden, erklären wir auf der Seite{' '}
-                    <Link href="/fliesen/fugensanierung" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/fliesen/fugensanierung" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                         Fugensanierung
                     </Link>
                     .
@@ -343,11 +343,11 @@ export default function VerlegetechnikPage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group block h-full glass-surface rounded-2xl p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-emerald-600" />
+                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-500" />
                                 </span>
                                 <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
                             </Link>

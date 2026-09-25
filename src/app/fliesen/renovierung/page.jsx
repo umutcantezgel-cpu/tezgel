@@ -84,12 +84,12 @@ const CROSS_LINKS = [
 export default function RenovierungPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="renovierung-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Home className="w-3.5 h-3.5" />
                         Renovierung im Bestand
@@ -119,7 +119,7 @@ export default function RenovierungPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="lohnt-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                     <div>
-                        <span className="eyebrow eyebrow-sky mb-4">Ausgangslage</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Ausgangslage</span>
                         <h2 id="lohnt-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Wann sich ein neuer Fliesenboden im Bestand lohnt
                         </h2>
@@ -130,20 +130,20 @@ export default function RenovierungPage() {
                         </p>
                         <p className="mt-4 text-sm text-slate-600">
                             Kleinere Schäden?{' '}
-                            <Link href="/fliesenreparatur" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/fliesenreparatur" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                 Fliesenreparatur
                             </Link>{' '}
                             oder{' '}
-                            <Link href="/fliesen/fugensanierung" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/fliesen/fugensanierung" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                 Fugensanierung
                             </Link>
                             .
                         </p>
                     </div>
-                    <ul className="glass-surface rounded-[2rem] p-7 space-y-3.5">
+                    <ul className="glass-surface rounded-tile-xl p-7 space-y-3.5">
                         {REASONS.map((reason) => (
                             <li key={reason} className="flex gap-3 text-base text-slate-700">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                 {reason}
                             </li>
                         ))}
@@ -166,10 +166,10 @@ export default function RenovierungPage() {
                             return (
                                 <li
                                     key={item.step}
-                                    className="group p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                    className="group p-7 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                                 >
                                     <div className="flex items-center justify-between mb-4">
-                                        <span className="font-display text-4xl font-black tabular-nums text-emerald-600/30 group-hover:text-emerald-600/50 transition-colors" aria-hidden="true">
+                                        <span className="font-display text-4xl font-black tabular-nums text-orange-500/30 group-hover:text-orange-500/50 transition-colors" aria-hidden="true">
                                             {item.step}
                                         </span>
                                         <span className="icon-chip w-11 h-11">
@@ -188,7 +188,7 @@ export default function RenovierungPage() {
             {/* Etappen & Räumung */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="etappen-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="etappen-heading">
                         <span className="icon-chip w-12 h-12 mb-5">
                             <CalendarCheck className="w-6 h-6" />
                         </span>
@@ -206,7 +206,7 @@ export default function RenovierungPage() {
                             </p>
                         </div>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="raeumung-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="raeumung-heading">
                         <span className="icon-chip w-12 h-12 mb-5">
                             <Boxes className="w-6 h-6" />
                         </span>
@@ -214,7 +214,7 @@ export default function RenovierungPage() {
                         <ul className="space-y-2.5 text-sm text-slate-700">
                             {PREPARATION.map((item) => (
                                 <li key={item} className="flex gap-2.5">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                                     {item}
                                 </li>
                             ))}
@@ -226,7 +226,7 @@ export default function RenovierungPage() {
             {/* Mehrere Räume */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="mehrere-heading">
                 <div className="text-center">
-                    <span className="eyebrow eyebrow-sky mb-4">Durchgehend geplant</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Durchgehend geplant</span>
                     <h2 id="mehrere-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Mehrere Räume in einem Zug: Küche, Flur und Wohnbereich abstimmen
                     </h2>
@@ -237,10 +237,10 @@ export default function RenovierungPage() {
                         Möbel bleiben.
                     </p>
                     <div className="mt-5 flex flex-wrap justify-center gap-4 text-sm font-bold">
-                        <Link href="/fliesen/kueche" className="inline-flex items-center gap-1 text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/kueche" className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700">
                             Küche fliesen <ArrowRight className="w-4 h-4" />
                         </Link>
-                        <Link href="/fliesen/flur-diele" className="inline-flex items-center gap-1 text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/flur-diele" className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700">
                             Flur &amp; Diele fliesen <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
@@ -258,20 +258,20 @@ export default function RenovierungPage() {
                     </div>
                     <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {TECH_LINKS.map((item) => (
-                            <li key={item.title} className="p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col">
+                            <li key={item.title} className="p-7 rounded-tile-xl bg-slate-50 border border-slate-200 flex flex-col">
                                 <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed flex-1">{item.desc}</p>
-                                <Link href={item.href} className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                                <Link href={item.href} className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                                     {item.label}
                                     <ArrowRight className="w-4 h-4" />
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                    <div className="mt-8 flex gap-4 items-start rounded-3xl bg-amber-50 border border-amber-200 p-6">
-                        <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0" aria-hidden="true" />
+                    <div className="mt-8 flex gap-4 items-start rounded-tile-xl bg-orange-50/60 border border-orange-200/80 p-6">
+                        <AlertTriangle className="w-6 h-6 text-orange-600 shrink-0" aria-hidden="true" />
                         <p className="text-sm text-slate-700 leading-relaxed">
-                            <strong className="text-amber-800">Hinweis zu Schadstoffen:</strong> Alte Bodenbeläge und Kleber
+                            <strong className="text-orange-900">Hinweis zu Schadstoffen:</strong> Alte Bodenbeläge und Kleber
                             aus früheren Jahrzehnten können Schadstoffe wie Asbest oder PAK enthalten. Besteht ein Verdacht, muss
                             vor dem Rückbau eine Untersuchung erfolgen; die Entfernung übernimmt ein dafür zugelassener
                             Fachbetrieb. Wir sprechen das beim Aufmaß an.
@@ -288,11 +288,11 @@ export default function RenovierungPage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group block h-full glass-surface rounded-2xl p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-emerald-600" />
+                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-500" />
                                 </span>
                                 <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
                             </Link>
@@ -301,7 +301,7 @@ export default function RenovierungPage() {
                 </ul>
                 <p className="mt-6 text-sm text-slate-700">
                     Direkt sprechen:{' '}
-                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700">
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-orange-600 hover:text-orange-700">
                         <Phone className="w-3.5 h-3.5" />
                         {COMPANY_DATA.contact.phone}
                     </a>

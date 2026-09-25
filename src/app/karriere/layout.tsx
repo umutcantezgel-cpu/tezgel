@@ -7,7 +7,7 @@ const { contact, headquarters, business, legalName } = COMPANY_DATA;
 
 export const metadata = createMetadata({
   title: 'Karriere & Jobs – Fliesenleger (m/w/d) in Aßlar',
-  description: `Werden Sie Teil von ${legalName} in ${headquarters.city}: Wir suchen Fliesenleger (m/w/d) – Geselle oder Meister – und freuen uns über Ausbildungs- und Initiativbewerbungen.`,
+  description: `Werden Sie Teil von ${legalName} in ${headquarters.city}: Wir suchen Fliesenleger (m/w/d) – Geselle oder Fachkraft – und freuen uns über Ausbildungs- und Initiativbewerbungen.`,
   path: '/karriere',
 });
 
@@ -20,7 +20,7 @@ const breadcrumbs = [
 // Mirrors the first (open) position shown in ./page.jsx.
 const jobs = [
   {
-    title: 'Fliesenleger (m/w/d) – Geselle oder Meister',
+    title: 'Fliesenleger (m/w/d) – Geselle oder Fachkraft',
     description:
       'Verlegung von Fliesen, Platten und Naturstein in Bädern, Wohnbereichen sowie auf Balkonen und Terrassen – von der Untergrundvorbereitung über die DIN-18534-Verbundabdichtung bis zur fugenarmen XXL-Großformatverlegung.',
   },
@@ -48,7 +48,7 @@ const karriereGraph = buildGraph([
     url: pageUrl,
     name: `Karriere & Jobs bei ${legalName} in ${headquarters.city}`,
     description:
-      'Stellenangebot für Fliesenleger (m/w/d) – Geselle oder Meister – sowie Ausbildungs- und Initiativbewerbungen im Fliesen-Meisterbetrieb.',
+      'Stellenangebot für Fliesenleger (m/w/d) – Geselle oder Fachkraft – sowie Ausbildungs- und Initiativbewerbungen im Fliesen-Fachbetrieb.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

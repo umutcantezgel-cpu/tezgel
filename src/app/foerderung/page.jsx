@@ -36,12 +36,12 @@ export default function FoerderungPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -right-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -left-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -right-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -left-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow eyebrow-amber">
                         <BadgePercent className="w-3.5 h-3.5" />
                         Pflegekasse (§ 40 SGB XI) &middot; KfW 159
@@ -69,7 +69,7 @@ export default function FoerderungPage() {
             {/* Grant Details Matrix */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-14">
-                    <span className="eyebrow eyebrow-sky mb-4">Zuschüsse im Überblick</span>
+                    <span className="eyebrow mb-4">Zuschüsse im Überblick</span>
                     <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Diese Förderung gibt es für Ihr barrierefreies Bad
                     </h2>
@@ -82,11 +82,11 @@ export default function FoerderungPage() {
                     {GRANT_ITEMS.map((item) => (
                         <li
                             key={item.title}
-                            className="group glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300 flex flex-col justify-between"
+                            className="group glass-surface p-6 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300 flex flex-col justify-between"
                         >
                             <div>
-                                <span className="font-display text-2xl sm:text-3xl font-black text-emerald-800 mb-2 block">{item.rate}</span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <span className="font-display text-2xl sm:text-3xl font-black text-orange-700 mb-2 block">{item.rate}</span>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </div>
                         </li>
@@ -128,9 +128,9 @@ export default function FoerderungPage() {
                 </div>
                 <div className="space-y-4">
                     {foerderFaqs.map((faq) => (
-                        <div key={faq.q} className="glass-surface rounded-2xl p-6">
+                        <div key={faq.q} className="glass-surface rounded-tile-md p-6">
                             <h3 className="font-black text-base text-slate-900 mb-2 flex items-start gap-2">
-                                <HelpCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                <HelpCircle className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                 {faq.q}
                             </h3>
                             <p className="text-sm text-slate-700 leading-relaxed pl-7">{faq.a}</p>
@@ -139,10 +139,10 @@ export default function FoerderungPage() {
                 </div>
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                     <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-6 py-3 text-xs">
-                        <Phone className="w-4 h-4 text-emerald-700" />
+                        <Phone className="w-4 h-4 text-orange-600" />
                         {COMPANY_DATA.contact.phone}
                     </a>
-                    <Link href="/faq" className="text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 inline-flex items-center gap-1">
+                    <Link href="/faq" className="text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2 inline-flex items-center gap-1">
                         Weitere Fragen &amp; Antworten
                         <ArrowRight className="w-4 h-4" />
                     </Link>

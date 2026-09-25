@@ -72,13 +72,13 @@ const STEPS = [
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error' | 'whatsapp_opened';
 
 const inputClass =
-  'w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 transition-all';
+  'w-full px-4 py-3 rounded-xl bg-white border border-neutral-300 text-neutral-900 placeholder:text-neutral-500 text-sm focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-600/20 transition-all';
 
 const optionClass = (selected: boolean) =>
-  `py-3 px-3 rounded-xl text-sm font-bold border transition-all duration-300 ${
+  `py-3 px-3 rounded-xl text-sm font-bold border transition-all duration-200 ${
     selected
-      ? 'bg-emerald-50 text-emerald-800 border-emerald-600 ring-2 ring-emerald-600/20'
-      : 'bg-white text-slate-800 border-slate-200 hover:border-emerald-500/80 hover:-translate-y-0.5'
+      ? 'bg-orange-50 text-orange-900 border-orange-600 ring-2 ring-orange-600/20'
+      : 'bg-white text-neutral-800 border-neutral-200 hover:border-orange-500/80 hover:-translate-y-0.5'
   }`;
 
 export default function TezgelAnfrageFunnel() {
@@ -163,35 +163,35 @@ export default function TezgelAnfrageFunnel() {
   // SUCCESS STATE (Direct confirmation)
   if (status === 'success') {
     return (
-      <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl" role="status">
-        <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6 bg-emerald-100 text-emerald-700">
+      <div className="glass-surface rounded-2xl p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl" role="status">
+        <div className="icon-chip w-20 h-20 rounded-xl mx-auto mb-6 bg-orange-100 text-orange-700">
           <CheckCircle2 className="w-10 h-10" />
         </div>
         <span className="eyebrow mb-4">Anfrage erfolgreich übermittelt</span>
-        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Vielen Dank, {name}!</h3>
-        <p className="text-base text-slate-700 leading-relaxed mb-6">
-          Ihre Anfrage für <strong>{projectTitle}</strong> ({finalArea}) in <strong>{locationText}</strong> ist erfolgreich bei Meister Deniz Tezgel eingegangen.
+        <h3 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3">Vielen Dank, {name}!</h3>
+        <p className="text-base text-neutral-700 leading-relaxed mb-6">
+          Ihre Anfrage für <strong>{projectTitle}</strong> ({finalArea}) in <strong>{locationText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
           {email && (
-            <span className="block mt-2 text-sm text-emerald-800 font-semibold">
+            <span className="block mt-2 text-sm text-orange-800 font-semibold">
               Eine Bestätigung wurde an <em>{email}</em> gesendet.
             </span>
           )}
         </p>
 
-        <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-left text-sm text-slate-700 mb-6 space-y-2">
-          <div className="font-bold text-slate-900 flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-emerald-600" />
+        <div className="p-5 rounded-xl bg-neutral-50 border border-neutral-200 text-left text-sm text-neutral-700 mb-6 space-y-2">
+          <div className="font-bold text-neutral-900 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-orange-600" />
             Nächste Schritte:
           </div>
-          <p className="text-xs text-slate-600">
-            1. Wir prüfen Ihre Angaben und den geschätzten Material- &amp; Zeitaufwand.<br />
+          <p className="text-xs text-neutral-600">
+            1. Unser Team prüft Ihre Angaben und den geschätzten Material- &amp; Zeitaufwand.<br />
             2. Herr Tezgel meldet sich binnen <strong>24 bis 48 Stunden</strong> telefonisch zur Terminabstimmung des kostenfreien Aufmaßes.
           </p>
         </div>
 
-        <figure className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200 text-sm text-slate-700 mb-6">
-          <blockquote className="italic">„{COMPANY_DATA.motto}“</blockquote>
-          <figcaption className="mt-1 font-bold text-emerald-800">— {COMPANY_DATA.owner.fullName}, Meisterbetrieb Aßlar</figcaption>
+        <figure className="p-4 rounded-xl bg-orange-50/50 border border-orange-200 text-sm text-neutral-700 mb-6">
+          <blockquote className="italic">&bdquo;{COMPANY_DATA.motto}&ldquo;</blockquote>
+          <figcaption className="mt-1 font-bold text-orange-800">— {COMPANY_DATA.owner.fullName}, Fachbetrieb Aßlar</figcaption>
         </figure>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -221,13 +221,13 @@ export default function TezgelAnfrageFunnel() {
   // WHATSAPP OPENED STATE
   if (status === 'whatsapp_opened') {
     return (
-      <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl" role="status">
-        <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6 bg-emerald-100 text-emerald-700">
+      <div className="glass-surface rounded-2xl p-8 sm:p-12 text-center max-w-2xl mx-auto shadow-xl" role="status">
+        <div className="icon-chip w-20 h-20 rounded-xl mx-auto mb-6 bg-green-100 text-green-700">
           <MessageCircle className="w-10 h-10" />
         </div>
         <span className="eyebrow mb-4">WhatsApp geöffnet</span>
-        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Fast geschafft – Nachricht absenden</h3>
-        <p className="text-base text-slate-700 leading-relaxed mb-6">
+        <h3 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3">Fast geschafft – Nachricht absenden</h3>
+        <p className="text-base text-neutral-700 leading-relaxed mb-6">
           Ihre Anfrage ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab – Herr Tezgel antwortet Ihnen schnellstmöglich.
         </p>
 
@@ -252,9 +252,9 @@ export default function TezgelAnfrageFunnel() {
   }
 
   return (
-    <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden max-w-4xl mx-auto shadow-lg border border-slate-200">
+    <div className="glass-surface rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden max-w-4xl mx-auto shadow-lg border border-neutral-200">
       {/* Decorative gradient corner */}
-      <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/10 blur-2xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-orange-500/10 blur-2xl" aria-hidden="true" />
 
       {/* Header & step indicator */}
       <div className="mb-8 text-center sm:text-left relative z-10">
@@ -270,12 +270,12 @@ export default function TezgelAnfrageFunnel() {
                 <li
                   key={item.title}
                   aria-current={step === s ? 'step' : undefined}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-black tabular-nums transition-all duration-300 ${
+                  className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black tabular-nums transition-all duration-200 ${
                     step === s
-                      ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/30'
+                      ? 'bg-orange-600 text-white shadow-md shadow-orange-600/30'
                       : step > s
-                        ? 'bg-emerald-50 text-emerald-800 border border-emerald-300'
-                        : 'bg-white text-slate-700 border border-slate-300'
+                        ? 'bg-orange-50 text-orange-800 border border-orange-300'
+                        : 'bg-white text-neutral-700 border border-neutral-300'
                   }`}
                 >
                   {step > s ? <Check className="w-4 h-4" aria-label={`Schritt ${s} erledigt`} /> : s}
@@ -285,10 +285,10 @@ export default function TezgelAnfrageFunnel() {
           </ol>
         </div>
 
-        <h3 className="text-xl sm:text-2xl font-black text-slate-900">
+        <h3 className="text-xl sm:text-2xl font-black text-neutral-900">
           Schritt {step}: {STEPS[step - 1].title}
         </h3>
-        <p className="text-sm text-slate-700 mt-1">{STEPS[step - 1].text}</p>
+        <p className="text-sm text-neutral-700 mt-1">{STEPS[step - 1].text}</p>
       </div>
 
       {/* STEP 1: PROJECT */}
@@ -304,30 +304,30 @@ export default function TezgelAnfrageFunnel() {
                   key={pt.id}
                   onClick={() => setProjectType(pt.id)}
                   aria-pressed={isSelected}
-                  className={`p-4 rounded-2xl border text-left flex flex-col justify-between transition-all duration-300 ${
+                  className={`p-4 rounded-xl border text-left flex flex-col justify-between transition-all duration-200 ${
                     isSelected
-                      ? 'bg-emerald-50/80 border-emerald-600 ring-2 ring-emerald-600/20 shadow-md'
-                      : 'bg-white border-slate-200 hover:border-emerald-500/80 hover:-translate-y-0.5'
+                      ? 'bg-orange-50/80 border-orange-600 ring-2 ring-orange-600/20 shadow-md'
+                      : 'bg-white border-neutral-200 hover:border-orange-500/80 hover:-translate-y-0.5'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2 mb-3">
                     <span className="icon-chip w-11 h-11">
                       <IconComp className="w-5 h-5" />
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-neutral-100 text-neutral-600">
                       {pt.badge}
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-base mb-1">{pt.title}</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">{pt.subtitle}</p>
+                    <h4 className="font-bold text-neutral-900 text-base mb-1">{pt.title}</h4>
+                    <p className="text-xs text-neutral-600 leading-relaxed">{pt.subtitle}</p>
                   </div>
                 </button>
               );
             })}
           </div>
 
-          <div className="pt-4 border-t border-slate-200 flex justify-end">
+          <div className="pt-4 border-t border-neutral-200 flex justify-end">
             <button
               type="button"
               onClick={() => setStep(2)}
@@ -344,7 +344,7 @@ export default function TezgelAnfrageFunnel() {
       {step === 2 && (
         <div className="space-y-6 relative z-10">
           <div>
-            <span id="funnel-area-heading" className="block text-sm font-bold text-slate-800 mb-2">
+            <span id="funnel-area-heading" className="block text-sm font-bold text-neutral-800 mb-2">
               Ungefähre Fläche in Quadratmetern
             </span>
             <div role="group" aria-labelledby="funnel-area-heading" className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
@@ -376,7 +376,7 @@ export default function TezgelAnfrageFunnel() {
           </div>
 
           <div>
-            <span id="funnel-timing-heading" className="block text-sm font-bold text-slate-800 mb-2">
+            <span id="funnel-timing-heading" className="block text-sm font-bold text-neutral-800 mb-2">
               Gewünschter Ausführungszeitraum
             </span>
             <div role="group" aria-labelledby="funnel-timing-heading" className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -394,7 +394,7 @@ export default function TezgelAnfrageFunnel() {
           </div>
 
           <div>
-            <label htmlFor="funnel-location" className="block text-sm font-bold text-slate-800 mb-1.5">
+            <label htmlFor="funnel-location" className="block text-sm font-bold text-neutral-800 mb-1.5">
               Einsatzort / Postleitzahl
             </label>
             <input
@@ -405,14 +405,14 @@ export default function TezgelAnfrageFunnel() {
               onChange={(e) => setLocation(e.target.value)}
               className={inputClass}
             />
-            <p className="text-xs text-slate-500 mt-1">Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
+            <p className="text-xs text-neutral-500 mt-1">Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
           </div>
 
-          <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="pt-4 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-3">
             <button
               type="button"
               onClick={() => setStep(1)}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 hover:text-emerald-800"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-700 hover:text-orange-800"
             >
               <ArrowLeft className="w-4 h-4" />
               Zurück
@@ -454,7 +454,7 @@ export default function TezgelAnfrageFunnel() {
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="underline font-bold text-emerald-800"
+                    className="underline font-bold text-green-700 hover:text-green-800"
                   >
                     WhatsApp senden
                   </button>{' '}
@@ -464,7 +464,7 @@ export default function TezgelAnfrageFunnel() {
             </div>
           )}
 
-          <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 text-xs sm:text-sm text-emerald-950 flex flex-wrap items-center justify-between gap-2">
+          <div className="p-4 rounded-xl bg-orange-50/60 border border-orange-200 text-xs sm:text-sm text-neutral-900 flex flex-wrap items-center justify-between gap-2">
             <span>
               <strong>Projekt:</strong> {projectTitle} &middot; <strong>Umfang:</strong> {finalArea} &middot;{' '}
               <strong>Ort:</strong> {locationText}
@@ -472,7 +472,7 @@ export default function TezgelAnfrageFunnel() {
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="text-xs font-bold text-emerald-800 underline underline-offset-2 hover:text-emerald-900"
+              className="text-xs font-bold text-orange-800 underline underline-offset-2 hover:text-orange-900"
             >
               Ändern
             </button>
@@ -480,8 +480,8 @@ export default function TezgelAnfrageFunnel() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="funnel-name" className="block text-sm font-bold text-slate-800 mb-1.5">
-                Ihr Name <span className="text-emerald-800">*</span>
+              <label htmlFor="funnel-name" className="block text-sm font-bold text-neutral-800 mb-1.5">
+                Ihr Name <span className="text-orange-800">*</span>
               </label>
               <input
                 id="funnel-name"
@@ -495,8 +495,8 @@ export default function TezgelAnfrageFunnel() {
               />
             </div>
             <div>
-              <label htmlFor="funnel-phone" className="block text-sm font-bold text-slate-800 mb-1.5">
-                Telefon- oder Mobilnummer <span className="text-emerald-800">*</span>
+              <label htmlFor="funnel-phone" className="block text-sm font-bold text-neutral-800 mb-1.5">
+                Telefon- oder Mobilnummer <span className="text-orange-800">*</span>
               </label>
               <input
                 id="funnel-phone"
@@ -513,8 +513,8 @@ export default function TezgelAnfrageFunnel() {
           </div>
 
           <div>
-            <label htmlFor="funnel-email" className="block text-sm font-bold text-slate-800 mb-1.5">
-              E-Mail-Adresse <span className="text-slate-500 font-normal">(für die Eingangsbestätigung)</span>
+            <label htmlFor="funnel-email" className="block text-sm font-bold text-neutral-800 mb-1.5">
+              E-Mail-Adresse <span className="text-neutral-500 font-normal">(für die Eingangsbestätigung)</span>
             </label>
             <input
               id="funnel-email"
@@ -528,7 +528,7 @@ export default function TezgelAnfrageFunnel() {
           </div>
 
           <div>
-            <label htmlFor="funnel-notes" className="block text-sm font-bold text-slate-800 mb-1.5">
+            <label htmlFor="funnel-notes" className="block text-sm font-bold text-neutral-800 mb-1.5">
               Projekt-Details / Wünsche (optional)
             </label>
             <textarea
@@ -541,7 +541,7 @@ export default function TezgelAnfrageFunnel() {
             />
           </div>
 
-          <div className="pt-4 border-t border-slate-200 space-y-3">
+          <div className="pt-4 border-t border-neutral-200 space-y-3">
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <button
                 type="submit"
@@ -570,11 +570,11 @@ export default function TezgelAnfrageFunnel() {
               </button>
             </div>
 
-            <p className="flex items-start justify-center gap-1.5 text-xs text-slate-600 text-center leading-relaxed">
-              <Lock className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
+            <p className="flex items-start justify-center gap-1.5 text-xs text-neutral-600 text-center leading-relaxed">
+              <Lock className="w-3.5 h-3.5 text-orange-700 shrink-0 mt-0.5" />
               <span>
                 Ihre Angaben werden vertraulich behandelt und verschlüsselt übertragen. Keine Weitergabe an Dritte. Details in unserer{' '}
-                <Link href="/datenschutz" className="font-bold text-emerald-800 underline underline-offset-2">
+                <Link href="/datenschutz" className="font-bold text-orange-800 underline underline-offset-2">
                   Datenschutzerklärung
                 </Link>
                 .
@@ -586,7 +586,7 @@ export default function TezgelAnfrageFunnel() {
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 hover:text-emerald-800"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-700 hover:text-orange-800"
             >
               <ArrowLeft className="w-4 h-4" />
               Zurück zu Schritt 2

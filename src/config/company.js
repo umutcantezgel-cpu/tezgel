@@ -10,7 +10,7 @@ export const COMPANY_DATA = {
     owner: {
         firstName: "Deniz",
         lastName: "Tezgel",
-        title: "Inhaber & Handwerksmeister",
+        title: "Inhaber & Fachbetriebsleiter",
         fullName: "Deniz Tezgel"
     },
 
@@ -58,7 +58,7 @@ export const COMPANY_DATA = {
         shortName: "HWK Wiesbaden",
         type: "Handwerkskammer",
         responsibility: "Fliesen-, Platten- und Mosaiklegerbetrieb",
-        certification: "Eingetragener Meisterbetrieb der HWK Wiesbaden"
+        certification: "Eingetragener Fachbetrieb der HWK Wiesbaden"
     },
 
     // Leitmotiv / Mission Statement
@@ -67,7 +67,7 @@ export const COMPANY_DATA = {
     // Business Information
     business: {
         industryType: "Fliesen-, Platten- und Mosaikverlegung, Naturstein & Badsanierung",
-        businessType: "Meisterbetrieb der HWK Wiesbaden",
+        businessType: "Eingetragener Fachbetrieb der HWK Wiesbaden",
         primaryServices: [
             "Badsanierung & Barrierefreie Walk-In-Duschen",
             "Fugenarme Großformatverlegung (XXL-Fliesen)",
@@ -138,7 +138,7 @@ export const COMPANY_DATA = {
         },
         {
             title: "Eingetragener HWK-Wiesbaden Fachbetrieb",
-            description: "Handwerkliche Perfektion, geprüfte Standards und meisterhafte Präzision bei Großformaten, Schnittbildern und Fugenachsen.",
+            description: "Handwerkliche Perfektion, geprüfte Standards und fachgerechte Präzision bei Großformaten, Schnittbildern und Fugenachsen.",
             icon: Award
         },
         {
@@ -186,7 +186,7 @@ export const COMPANY_DATA = {
 };
 
 export const values = [
-    { icon: Award, title: "HWK Wiesbaden Mitglied", description: "Offiziell eingetragener Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung." },
+    { icon: Award, title: "HWK Wiesbaden Mitglied", description: "Offiziell eingetragener Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung." },
     { icon: ShieldCheck, title: "DIN 18534 Abdichtung", description: "Normgerechte Verbundabdichtung für dauerhaft dichte Nassbereiche." },
     { icon: Sparkles, title: "Staubschutz-Garantie", description: "Saubere Baustellenführung mit Schutzvliesen und moderner Staubabsaugung." },
     { icon: Clock, title: "Termintreue & Festpreis", description: "Verbindliche Zeitpläne und klare Kosten ohne versteckte Aufschläge." },

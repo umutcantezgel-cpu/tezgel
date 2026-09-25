@@ -17,12 +17,12 @@ export default function UnternehmenPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow eyebrow-amber">
                         <Award className="w-3.5 h-3.5" />
                         Gegründet {business.establishmentYear} &middot; {authority.shortName}
@@ -32,7 +32,7 @@ export default function UnternehmenPage() {
                         <span className="text-ceramic-gradient">Unternehmen &amp; Qualität</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit {business.establishmentYear} steht unser Meisterbetrieb aus {headquarters.city} für Fliesen-, Platten- und Mosaikarbeiten in Wetzlar, Gießen und ganz Mittelhessen.
+                        Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit {business.establishmentYear} steht unser Fachbetrieb aus {headquarters.city} mit einem Team von bis zu 12 Handwerkern für Fliesen-, Platten- und Mosaikarbeiten in Wetzlar, Gießen und ganz Mittelhessen.
                     </p>
                 </div>
             </div>
@@ -40,7 +40,7 @@ export default function UnternehmenPage() {
             {/* History Timeline */}
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="eyebrow eyebrow-sky mb-4">Unsere Geschichte</span>
+                    <span className="eyebrow mb-4">Unsere Geschichte</span>
                     <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Unsere Unternehmensgeschichte seit {business.establishmentYear}
                     </h2>
@@ -49,21 +49,21 @@ export default function UnternehmenPage() {
                     </p>
                 </div>
 
-                <ol className="space-y-8 relative before:absolute before:inset-y-0 before:left-8 md:before:left-1/2 before:-translate-x-px before:w-0.5 before:bg-emerald-200">
+                <ol className="space-y-8 relative before:absolute before:inset-y-0 before:left-8 md:before:left-1/2 before:-translate-x-px before:w-0.5 before:bg-orange-200">
                     {historyTimeline.map((item) => (
                         <li key={item.year} className="relative flex flex-col md:flex-row items-start md:items-center gap-6 group pl-16 md:pl-0">
                             <div className="flex items-center justify-start md:justify-end w-full md:w-1/2 md:pr-10">
-                                <div className="glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300 w-full">
-                                    <span className="text-xs font-black tabular-nums px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 inline-block mb-2 border border-emerald-200">
+                                <div className="glass-surface p-6 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300 w-full">
+                                    <span className="text-xs font-black tabular-nums px-3 py-1 rounded-tile-pill bg-orange-50 text-orange-800 inline-block mb-2 border border-orange-200">
                                         {item.year}
                                     </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-1 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                    <h3 className="font-black text-base text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.description}</p>
                                 </div>
                             </div>
 
                             {/* Node Center Marker */}
-                            <div className="absolute left-8 md:left-1/2 top-8 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 w-5 h-5 rounded-full bg-emerald-600 border-4 border-white shadow-md z-10" />
+                            <div className="absolute left-8 md:left-1/2 top-8 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 w-5 h-5 rounded-tile-pill bg-orange-600 border-4 border-white shadow-md z-10" />
 
                             <div className="hidden md:block md:w-1/2 md:pl-10" />
                         </li>
@@ -84,7 +84,7 @@ export default function UnternehmenPage() {
                                 <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed italic">
                                     &bdquo;{motto}&ldquo;
                                 </blockquote>
-                                <figcaption className="mt-1 text-xs font-bold text-emerald-800">
+                                <figcaption className="mt-1 text-xs font-bold text-orange-700">
                                     — {owner.fullName}, {owner.title}
                                 </figcaption>
                             </figure>
@@ -92,10 +92,11 @@ export default function UnternehmenPage() {
                                 {[
                                     `Gegründet ${business.establishmentYear}`,
                                     'DIN 18534 Verbundabdichtung',
-                                    `${authority.shortName} Mitglied`
+                                    `${authority.shortName} Mitglied`,
+                                    'Bis zu 12 Fachkräfte'
                                 ].map((badge) => (
                                     <li key={badge} className="flex items-center gap-1.5">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        <CheckCircle2 className="w-4 h-4 text-orange-600" />
                                         {badge}
                                     </li>
                                 ))}

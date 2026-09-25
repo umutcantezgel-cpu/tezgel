@@ -14,7 +14,6 @@ export default function MobileMenu({ isOpen, onClose }) {
     const closeButtonRef = useRef(null);
 
     // Scroll lock, Escape to close and initial focus while open.
-    // (The parent HeaderWrapper closes the drawer on every route change.)
     useEffect(() => {
         if (!isOpen) return undefined;
         const previousOverflow = document.body.style.overflow;
@@ -32,7 +31,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
     return (
         <div
-            className={`lg:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            className={`lg:hidden fixed inset-0 z-[60] transition-opacity duration-200 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             aria-hidden={!isOpen}
             inert={!isOpen}
         >
@@ -42,7 +41,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                 tabIndex={-1}
                 aria-label="Menü schließen"
                 onClick={onClose}
-                className="absolute inset-0 w-full h-full bg-slate-900/40 backdrop-blur-sm cursor-default"
+                className="absolute inset-0 w-full h-full bg-neutral-900/40 backdrop-blur-sm cursor-default"
             />
 
             {/* Drawer */}
@@ -51,11 +50,11 @@ export default function MobileMenu({ isOpen, onClose }) {
                 role="dialog"
                 aria-modal="true"
                 aria-label="Navigation"
-                className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-[0_0_60px_rgba(15,23,42,0.18)] border-l border-slate-200 flex flex-col transition-transform duration-300 ${
+                className={`absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-[0_0_60px_rgba(23,23,23,0.18)] border-l border-neutral-200 flex flex-col transition-transform duration-200 ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
-                <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-slate-200">
+                <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-neutral-200">
                     <Link href="/" onClick={onClose} className="group">
                         <BrandMark sublineClassName="block" />
                     </Link>
@@ -63,7 +62,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                         ref={closeButtonRef}
                         type="button"
                         onClick={onClose}
-                        className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors"
+                        className="inline-flex items-center justify-center h-11 w-11 rounded-xl bg-neutral-100 text-neutral-900 hover:bg-neutral-200 transition-colors"
                         aria-label="Menü schließen"
                     >
                         <X className="w-5 h-5" />
@@ -76,7 +75,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                             const isExpanded = expandedMenu === link.name;
                             const panelId = `mobile-submenu-${index}`;
                             return (
-                                <li key={link.name} className={`rounded-2xl border transition-colors duration-300 ${isExpanded ? 'border-emerald-200 bg-emerald-50/50' : 'border-slate-200 bg-white'}`}>
+                                <li key={link.name} className={`rounded-xl border transition-colors duration-200 ${isExpanded ? 'border-orange-200 bg-orange-50/50' : 'border-neutral-200 bg-white'}`}>
                                     <button
                                         type="button"
                                         onClick={() => setExpandedMenu(isExpanded ? null : link.name)}
@@ -85,15 +84,15 @@ export default function MobileMenu({ isOpen, onClose }) {
                                         className="w-full min-h-[52px] flex items-center justify-between gap-3 px-4 text-left"
                                     >
                                         <span>
-                                            <span className="block font-display text-[15px] font-black text-slate-900">{link.name}</span>
-                                            <span className="block text-xs text-slate-600">{link.description}</span>
+                                            <span className="block font-display text-[15px] font-black text-neutral-900">{link.name}</span>
+                                            <span className="block text-xs text-neutral-600">{link.description}</span>
                                         </span>
-                                        <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-emerald-700' : 'text-slate-600'}`} />
+                                        <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-orange-700' : 'text-neutral-600'}`} />
                                     </button>
                                     <div id={panelId} hidden={!isExpanded} className="px-2 pb-3">
                                         {link.submenu?.map((cat) => (
                                             <div key={cat.category} className="pt-1">
-                                                <p className="px-2 py-1.5 text-[10px] font-black uppercase tracking-widest text-slate-600">{cat.category}</p>
+                                                <p className="px-2 py-1.5 text-[10px] font-black uppercase tracking-widest text-neutral-600">{cat.category}</p>
                                                 <ul>
                                                     {cat.items.map((item) => {
                                                         const active = pathname === item.path;
@@ -104,11 +103,11 @@ export default function MobileMenu({ isOpen, onClose }) {
                                                                     onClick={onClose}
                                                                     aria-current={active ? 'page' : undefined}
                                                                     className={`min-h-[44px] flex items-center justify-between gap-2 px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${
-                                                                        active ? 'bg-white text-emerald-800 border border-emerald-200' : 'text-slate-800 hover:bg-white hover:text-emerald-800'
+                                                                        active ? 'bg-white text-orange-800 border border-orange-200' : 'text-neutral-800 hover:bg-white hover:text-orange-800'
                                                                     }`}
                                                                 >
                                                                     {item.name}
-                                                                    <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0" />
+                                                                    <ArrowRight className="w-4 h-4 text-orange-600 shrink-0" />
                                                                 </Link>
                                                             </li>
                                                         );
@@ -123,41 +122,41 @@ export default function MobileMenu({ isOpen, onClose }) {
                     </ul>
                 </nav>
 
-                <div className="border-t border-slate-200 px-5 py-4 space-y-2.5 bg-slate-50">
+                <div className="border-t border-neutral-200 px-5 py-4 space-y-2.5 bg-neutral-50">
                     <Link href={primaryCta.path} onClick={onClose} className="btn-primary w-full">
                         Kostenfreies Aufmaß anfragen
                         <ArrowRight className="w-4 h-4" />
                     </Link>
                     <div className="grid grid-cols-2 gap-2.5">
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-3 py-3 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-700" />
                             Anrufen
                         </a>
                         <a
                             href={COMPANY_DATA.contact.whatsappLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn-ghost px-3 py-3 text-xs"
+                            className="glass-button-whatsapp px-3 py-3 text-xs"
                         >
-                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                            <MessageCircle className="w-4 h-4" />
                             WhatsApp
                         </a>
                     </div>
-                    <ul className="pt-1 space-y-1.5 text-xs text-slate-700">
+                    <ul className="pt-1 space-y-1.5 text-xs text-neutral-700">
                         <li className="flex items-start gap-2">
-                            <MapPin className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <MapPin className="w-4 h-4 text-orange-700 shrink-0" />
                             <span>{COMPANY_DATA.headquarters.street}, {COMPANY_DATA.headquarters.postalCode} {COMPANY_DATA.headquarters.city}</span>
                         </li>
                         <li className="flex items-start gap-2">
-                            <Phone className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <Phone className="w-4 h-4 text-orange-700 shrink-0" />
                             <span>{COMPANY_DATA.contact.phone} &middot; Mobil {COMPANY_DATA.contact.mobile}</span>
                         </li>
                         <li className="flex items-start gap-2">
-                            <Mail className="w-4 h-4 text-emerald-700 shrink-0" />
-                            <a href={`mailto:${COMPANY_DATA.contact.email}`} className="hover:text-emerald-800 underline-offset-2 hover:underline">{COMPANY_DATA.contact.email}</a>
+                            <Mail className="w-4 h-4 text-orange-700 shrink-0" />
+                            <a href={`mailto:${COMPANY_DATA.contact.email}`} className="hover:text-orange-800 underline-offset-2 hover:underline">{COMPANY_DATA.contact.email}</a>
                         </li>
                         <li className="flex items-start gap-2">
-                            <Clock className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <Clock className="w-4 h-4 text-orange-700 shrink-0" />
                             <span>{COMPANY_DATA.hours.formattedWeekdays}</span>
                         </li>
                     </ul>

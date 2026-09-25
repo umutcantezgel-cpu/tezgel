@@ -80,12 +80,12 @@ const WEITERLESEN = [
 export default function AussentreppePage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="aussentreppe-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Trees className="w-3.5 h-3.5" />
                         Treppen &middot; Außenbereich
@@ -114,7 +114,7 @@ export default function AussentreppePage() {
             {/* Beanspruchung */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="beanspruchung-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Besondere Beanspruchung</span>
+                    <span className="eyebrow mb-4">Besondere Beanspruchung</span>
                     <h2 id="beanspruchung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Warum Außentreppen mehr aushalten müssen
                     </h2>
@@ -125,12 +125,12 @@ export default function AussentreppePage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-11 h-11 mb-4">
                                     <Icon className="w-5 h-5" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -142,7 +142,7 @@ export default function AussentreppePage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="schaeden-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-amber mb-4">
+                        <span className="eyebrow mb-4">
                             <AlertTriangle className="w-3.5 h-3.5" />
                             Typische Schäden
                         </span>
@@ -152,7 +152,7 @@ export default function AussentreppePage() {
                     </div>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {DAMAGE.map((item) => (
-                            <li key={item.title} className="p-7 rounded-3xl bg-slate-50 border border-slate-200">
+                            <li key={item.title} className="p-7 rounded-tile-lg bg-slate-50 border border-slate-200">
                                 <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
@@ -160,7 +160,7 @@ export default function AussentreppePage() {
                     </ul>
                     <p className="mt-8 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
                         Die Ursache eines Schadens klären wir vor Ort, bevor wir eine Lösung vorschlagen – mehr dazu unter{' '}
-                        <Link href="/schadensanalyse" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/schadensanalyse" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                             Schadensanalyse
                         </Link>
                         .
@@ -179,10 +179,10 @@ export default function AussentreppePage() {
                         Gefälle, Abdichtung, Entwässerung
                     </h2>
                 </div>
-                <ul className="glass-surface rounded-[2rem] p-7 sm:p-10 space-y-4">
+                <ul className="glass-surface rounded-tile-xl p-7 sm:p-10 space-y-4">
                     {BUILDUP.map((item) => (
                         <li key={item} className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                             <span>{item}</span>
                         </li>
                     ))}
@@ -190,7 +190,7 @@ export default function AussentreppePage() {
                 <p className="mt-6 text-sm text-slate-700 leading-relaxed text-center">
                     Auch außen gilt: Die Steigungen sollen gleichmäßig bleiben. Wie Belagdicken und Ausgleich geplant
                     werden, lesen Sie im{' '}
-                    <Link href="/treppen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/treppen" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                         Treppen-Überblick
                     </Link>
                     .
@@ -201,13 +201,13 @@ export default function AussentreppePage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="material-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-sky mb-4">Material &amp; Trittsicherheit</span>
+                        <span className="eyebrow mb-4">Material &amp; Trittsicherheit</span>
                         <h2 id="material-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Frostfeste Keramik, Naturstein oder Blockstufe
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="glass-surface p-7 rounded-[2rem]">
+                        <div className="glass-surface p-7 rounded-tile-lg">
                             <span className="icon-chip w-11 h-11 mb-4">
                                 <Snowflake className="w-5 h-5" />
                             </span>
@@ -218,7 +218,7 @@ export default function AussentreppePage() {
                                 Richtwert eine Rutschhemmung von R11 (Prüfung nach DIN EN 16165).
                             </p>
                         </div>
-                        <div className="glass-surface p-7 rounded-[2rem]">
+                        <div className="glass-surface p-7 rounded-tile-lg">
                             <span className="icon-chip w-11 h-11 mb-4">
                                 <Mountain className="w-5 h-5" />
                             </span>
@@ -229,7 +229,7 @@ export default function AussentreppePage() {
                                 Oberflächen sind außen deutlich griffiger als polierte.
                             </p>
                         </div>
-                        <div className="glass-surface p-7 rounded-[2rem]">
+                        <div className="glass-surface p-7 rounded-tile-lg">
                             <span className="icon-chip w-11 h-11 mb-4">
                                 <Hammer className="w-5 h-5" />
                             </span>
@@ -245,7 +245,7 @@ export default function AussentreppePage() {
                         Für die Stufenkante gelten außen zusätzlich Frost und Wasserablauf: Gehrungskanten brauchen
                         besonders dichtes Material und einen vollflächigen Verbund, Profile müssen für außen geeignet sein.
                         Den allgemeinen Vergleich der Kantenlösungen finden Sie unter{' '}
-                        <Link href="/treppen/innentreppe" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/treppen/innentreppe" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                             Innentreppe fliesen
                         </Link>
                         .
@@ -255,15 +255,15 @@ export default function AussentreppePage() {
 
             {/* Sanierung Schritt für Schritt */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="sanierung-heading">
-                <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 space-y-5">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 space-y-5">
                     <span className="eyebrow eyebrow-neutral">Sanierung</span>
                     <h2 id="sanierung-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                         Außentreppe sanieren – Schritt für Schritt
                     </h2>
                     <ol className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {RENOVATION.map((step, idx) => (
-                            <li key={step.t} className="rounded-2xl bg-white/80 border border-slate-200 p-5">
-                                <span className="font-display block text-3xl font-black tabular-nums text-emerald-600/40 mb-2" aria-hidden="true">
+                            <li key={step.t} className="rounded-tile-md bg-white/80 border border-slate-200 p-5">
+                                <span className="font-display block text-3xl font-black tabular-nums text-orange-600/40 mb-2" aria-hidden="true">
                                     {String(idx + 1).padStart(2, '0')}
                                 </span>
                                 <h3 className="font-black text-slate-900 mb-1">{step.t}</h3>
@@ -277,7 +277,7 @@ export default function AussentreppePage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                     </div>
@@ -294,9 +294,9 @@ export default function AussentreppePage() {
                         <li key={link.path}>
                             <Link
                                 href={link.path}
-                                className="group glass-surface rounded-2xl p-5 h-full block hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group glass-surface rounded-tile-md p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="font-black text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center gap-1">
+                                <span className="font-black text-slate-900 group-hover:text-orange-950 transition-colors flex items-center gap-1">
                                     {link.title}
                                     <ArrowRight className="w-4 h-4" />
                                 </span>

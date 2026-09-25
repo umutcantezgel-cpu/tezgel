@@ -13,7 +13,7 @@ export const teamMembers = [
         phone: COMPANY_DATA.contact.phone,
         image: '',
         specializations: ['Badsanierung', 'Fugenarme Großformate', 'DIN 18534 Verbundabdichtung'],
-        bio: `Inhaber und Fliesenlegermeister der ${COMPANY_DATA.legalName} in Aßlar – persönlicher Ansprechpartner vom Aufmaß bis zur Abnahme.`
+        bio: `Inhaber und Fachbetriebsleiter der ${COMPANY_DATA.legalName} in Aßlar – persönlicher Ansprechpartner vom Aufmaß bis zur Abnahme.`
     },
     {
         id: 2,

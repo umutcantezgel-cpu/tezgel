@@ -60,16 +60,16 @@ const ShareButtons = ({ url, title, description }) => {
                 type="button"
                 onClick={handleNativeShare}
                 aria-expanded={showShareMenu}
-                className="btn-ghost min-h-[44px] px-5 py-2.5 text-xs group"
+                className="btn-ghost min-h-[44px] px-5 py-2.5 text-xs group rounded-tile-sm"
             >
-                <Share2 className="w-4 h-4 text-emerald-700 group-hover:scale-110 transition-transform" />
+                <Share2 className="w-4 h-4 text-orange-600 group-hover:scale-110 transition-transform" />
                 Teilen
             </button>
 
             {/* Share Menu (fallback for desktop) */}
             {showShareMenu && (
                 <div className="absolute top-full mt-2 right-0 z-50">
-                    <div className="glass-surface rounded-2xl shadow-2xl p-4 min-w-[250px]">
+                    <div className="glass-surface rounded-tile-md shadow-2xl p-4 min-w-[250px]">
                         <h4 className="font-black text-slate-900 mb-4">Artikel teilen</h4>
 
                         <div className="space-y-2">
@@ -106,14 +106,14 @@ const ShareButtons = ({ url, title, description }) => {
                                 <span className="text-sm font-semibold text-slate-800">LinkedIn</span>
                             </a>
 
-                            {/* WhatsApp */}
+                            {/* WhatsApp - user explicitly requested WhatsApp remains green */}
                             <a
                                 href={shareLinks.whatsapp}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={itemClass}
                             >
-                                <MessageCircle className="w-5 h-5 text-emerald-600" />
+                                <MessageCircle className="w-5 h-5 text-[#25D366]" />
                                 <span className="text-sm font-semibold text-slate-800">WhatsApp</span>
                             </a>
 
@@ -134,8 +134,8 @@ const ShareButtons = ({ url, title, description }) => {
                             >
                                 {copied ? (
                                     <>
-                                        <Check className="w-5 h-5 text-emerald-600" />
-                                        <span className="text-sm font-semibold text-emerald-800">Link kopiert!</span>
+                                        <Check className="w-5 h-5 text-orange-600" />
+                                        <span className="text-sm font-semibold text-orange-700">Link kopiert!</span>
                                     </>
                                 ) : (
                                     <>
@@ -150,7 +150,7 @@ const ShareButtons = ({ url, title, description }) => {
                         <button
                             type="button"
                             onClick={() => setShowShareMenu(false)}
-                            className="mt-4 w-full p-2 text-sm font-semibold text-slate-700 hover:text-emerald-800 transition-colors"
+                            className="mt-4 w-full p-2 text-sm font-semibold text-slate-700 hover:text-orange-700 transition-colors"
                         >
                             Schließen
                         </button>

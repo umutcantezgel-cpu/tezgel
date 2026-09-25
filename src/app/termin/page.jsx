@@ -21,7 +21,7 @@ const TIME_SLOTS = [
 ];
 
 const inputClass =
-    'w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all';
+    'w-full px-4 py-3 rounded-tile-sm bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
 
 const labelOf = (list, value) => list.find((item) => item.value === value)?.label ?? value;
 
@@ -80,15 +80,15 @@ export default function TerminPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <CalendarCheck className="w-3.5 h-3.5" />
-                        Direkte Meisterberatung
+                        Direkte Fachberatung
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         Termin <span className="text-ceramic-gradient">vereinbaren</span>
@@ -101,8 +101,8 @@ export default function TerminPage() {
 
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
                 {sentVia ? (
-                    <div className="glass-surface rounded-[2.5rem] p-8 md:p-12 text-center" role="status">
-                        <div className="icon-chip w-20 h-20 rounded-full mx-auto mb-6">
+                    <div className="glass-surface rounded-tile-xl p-8 md:p-12 text-center" role="status">
+                        <div className="icon-chip w-20 h-20 rounded-tile-pill mx-auto mb-6">
                             <CheckCircle2 className="w-10 h-10" />
                         </div>
                         <span className="eyebrow mb-4">
@@ -133,7 +133,7 @@ export default function TerminPage() {
                         <form onSubmit={handleSubmit} className="glass-bezel-inner p-8 sm:p-10 space-y-6">
                             <div>
                                 <label htmlFor="termin-topic" className="block text-sm font-black text-slate-900 mb-2">
-                                    1. Welches Thema möchten Sie besprechen? <span className="text-emerald-800">*</span>
+                                    1. Welches Thema möchten Sie besprechen? <span className="text-orange-600">*</span>
                                 </label>
                                 <select
                                     id="termin-topic"
@@ -181,7 +181,7 @@ export default function TerminPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                                 <div>
                                     <label htmlFor="termin-name" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        Name, Vorname <span className="text-emerald-800">*</span>
+                                        Name, Vorname <span className="text-orange-600">*</span>
                                     </label>
                                     <input
                                         id="termin-name"
@@ -196,7 +196,7 @@ export default function TerminPage() {
                                 </div>
                                 <div>
                                     <label htmlFor="termin-phone" className="block text-sm font-bold text-slate-800 mb-1.5">
-                                        Telefonnummer <span className="text-emerald-800">*</span>
+                                        Telefonnummer <span className="text-orange-600">*</span>
                                     </label>
                                     <input
                                         id="termin-phone"
@@ -261,11 +261,11 @@ export default function TerminPage() {
                                         required
                                         checked={formData.privacyConsent}
                                         onChange={update('privacyConsent')}
-                                        className="mt-1 w-4 h-4 rounded accent-emerald-700 shrink-0"
+                                        className="mt-1 w-4 h-4 rounded-tile-sm accent-orange-600 shrink-0"
                                     />
                                     <span>
                                         Ich stimme zu, dass meine Angaben zur Bearbeitung der Terminanfrage gemäß der{' '}
-                                        <Link href="/datenschutz" target="_blank" className="font-bold text-emerald-800 hover:text-emerald-700 underline underline-offset-2">
+                                        <Link href="/datenschutz" target="_blank" className="font-bold text-orange-700 hover:text-orange-600 underline underline-offset-2">
                                             Datenschutzerklärung
                                         </Link>{' '}
                                         verarbeitet werden. Beim Versand per WhatsApp gelten zusätzlich die Datenschutzbestimmungen von WhatsApp.
@@ -280,12 +280,12 @@ export default function TerminPage() {
                                         Terminanfrage per WhatsApp senden
                                     </button>
                                     <button type="submit" name="channel" value="email" className="btn-ghost w-full sm:w-auto">
-                                        <Send className="w-4 h-4 text-emerald-700" />
+                                        <Send className="w-4 h-4 text-orange-600" />
                                         Per E-Mail senden
                                     </button>
                                 </div>
                                 <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
-                                    <Lock className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
+                                    <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>
                                         Ihre Anfrage wird erst verschickt, wenn Sie die vorbereitete Nachricht in WhatsApp bzw. Ihrem E-Mail-Programm absenden. Der Termin gilt nach persönlicher Bestätigung als vereinbart.
                                     </span>

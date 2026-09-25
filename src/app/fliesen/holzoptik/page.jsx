@@ -63,12 +63,12 @@ const WEITERLESEN = [
 export default function HolzoptikPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="holzoptik-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Trees className="w-3.5 h-3.5" />
                         Material &amp; Gestaltung
@@ -96,7 +96,7 @@ export default function HolzoptikPage() {
             {/* Advantages */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="ho-vorteile-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Eigenschaften</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Eigenschaften</span>
                     <h2 id="ho-vorteile-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Holzcharakter, <span className="text-ceramic-gradient">keramische Eigenschaften</span>
                     </h2>
@@ -107,12 +107,12 @@ export default function HolzoptikPage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -130,7 +130,7 @@ export default function HolzoptikPage() {
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ho-oberflaeche">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ho-oberflaeche">
                             <h3 id="ho-oberflaeche" className="text-xl font-black text-slate-900 mb-3">
                                 Oberfläche, Struktur und Farbvariation
                             </h3>
@@ -144,14 +144,14 @@ export default function HolzoptikPage() {
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">
                                 Für Böden empfehlen sich matte oder leicht strukturierte Oberflächen. Die Rutschhemmung wird nach
                                 DIN EN 16165 ermittelt und als R-Klasse angegeben.{' '}
-                                <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     R-Klassen erklärt
                                 </Link>
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ho-formate">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ho-formate">
                             <h3 id="ho-formate" className="text-xl font-black text-slate-900 mb-3 flex items-center gap-2">
-                                <Ruler className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                                <Ruler className="w-5 h-5 text-orange-600" aria-hidden="true" />
                                 Dielenformate und Untergrund
                             </h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
@@ -165,24 +165,24 @@ export default function HolzoptikPage() {
                                 Zum Verband: Die meisten Dielen werden im wilden Verband oder mit begrenztem Versatz verlegt, damit
                                 keine Überzähne entstehen. Fischgrät und Chevron sind mit passenden Formaten ebenfalls möglich.
                                 Details dazu, zu Fugenbreite und Fugenfarbe finden Sie unter{' '}
-                                <Link href="/fliesen/verlegemuster" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/verlegemuster" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Verlegemuster &amp; Abschlüsse
                                 </Link>
                                 .
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ho-fbh">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ho-fbh">
                             <h3 id="ho-fbh" className="text-xl font-black text-slate-900 mb-3">Holzoptik auf Fußbodenheizung</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Anders als Parkett quillt oder schwindet eine keramische Diele bei Temperaturwechseln nicht, und sie
                                 gibt Wärme gut an den Raum ab. Wichtig sind ein belegreifer Estrich, ein verformbarer Kleber,
                                 vollflächige Bettung und übernommene Bewegungsfugen.{' '}
-                                <Link href="/fliesen/auf-fussbodenheizung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/auf-fussbodenheizung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Fliesen auf Fußbodenheizung
                                 </Link>
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ho-aussen">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ho-aussen">
                             <h3 id="ho-aussen" className="text-xl font-black text-slate-900 mb-3">Holzoptik draußen: frostbeständig und passend verlegt</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Im Außenbereich muss das Material frostbeständig sein – bei Feinsteinzeug in der Regel gegeben, aber
@@ -193,11 +193,11 @@ export default function HolzoptikPage() {
                             </p>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">
                                 Welcher Aufbau zu Ihrem Balkon oder Ihrer Terrasse passt, lesen Sie unter{' '}
-                                <Link href="/balkon-terrasse" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/balkon-terrasse" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Balkon &amp; Terrasse
                                 </Link>{' '}
                                 und{' '}
-                                <Link href="/balkon-terrasse/terrassenplatten" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/balkon-terrasse/terrassenplatten" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Terrassenplatten
                                 </Link>
                                 .
@@ -210,12 +210,12 @@ export default function HolzoptikPage() {
             {/* Pflege */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="ho-pflege-heading">
                 <div className="text-center max-w-3xl mx-auto mb-10">
-                    <span className="eyebrow eyebrow-sky mb-4">Pflege</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Pflege</span>
                     <h2 id="ho-pflege-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Pflege im Vergleich zu Echtholz
                     </h2>
                 </div>
-                <div className="overflow-x-auto rounded-2xl border border-slate-200">
+                <div className="overflow-x-auto rounded-tile-lg border border-slate-200">
                     <table className="w-full text-left text-sm">
                         <thead className="bg-slate-100 text-slate-900">
                             <tr>
@@ -242,7 +242,7 @@ export default function HolzoptikPage() {
                 </div>
                 <p className="mt-6 text-sm text-slate-700 leading-relaxed text-center">
                     Ausführliche Reinigungstipps finden Sie im Beitrag{' '}
-                    <Link href="/blog/fliesen-reinigen-pflegen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/blog/fliesen-reinigen-pflegen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                         Fliesen richtig reinigen und pflegen
                     </Link>
                     .
@@ -251,14 +251,14 @@ export default function HolzoptikPage() {
 
             {/* Weiterlesen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative z-10" aria-labelledby="ho-weiterlesen-heading">
-                <div className="glass-surface-subtle rounded-3xl p-6 sm:p-8">
+                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
                     <h2 id="ho-weiterlesen-heading" className="text-lg font-black text-slate-900 mb-4">Weiterlesen</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}
@@ -268,7 +268,7 @@ export default function HolzoptikPage() {
                     </ul>
                     <p className="mt-4 text-sm text-slate-700">
                         Holzoptik im Bad?{' '}
-                        <Link href="/bad/fliesen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/bad/fliesen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Fliesen im Bad
                         </Link>
                     </p>
@@ -284,7 +284,7 @@ export default function HolzoptikPage() {
 
             {/* Closing CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 relative z-10" aria-labelledby="ho-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         Kostenfreies Vor-Ort-Aufmaß
@@ -299,7 +299,7 @@ export default function HolzoptikPage() {
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">Aufmaß anfragen</Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">

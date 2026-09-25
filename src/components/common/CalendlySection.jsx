@@ -54,13 +54,13 @@ const CalendlySection = () => {
                                 <a
                                     href={href}
                                     {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                    className="group h-full flex flex-col items-center text-center gap-3 p-6 rounded-3xl bg-white border border-slate-200 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group h-full flex flex-col items-center text-center gap-3 p-6 rounded-tile-md bg-white border border-slate-200 hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
                                     <span className="icon-chip w-12 h-12">
                                         <Icon className="w-6 h-6" />
                                     </span>
                                     <span className="text-[11px] font-black uppercase tracking-widest text-slate-600">{label}</span>
-                                    <span className="text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors break-all">
+                                    <span className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors break-all">
                                         {value}
                                     </span>
                                 </a>
@@ -70,7 +70,7 @@ const CalendlySection = () => {
 
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-6 border-t border-slate-200">
                         <div className="flex items-start gap-3 text-sm text-slate-700">
-                            <Clock className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                            <Clock className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                             <div>
                                 <p className="font-bold text-slate-900">Erreichbarkeit</p>
                                 <p>{hours.formattedWeekdays}</p>

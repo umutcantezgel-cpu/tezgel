@@ -47,10 +47,10 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
 
     const CommentItem = ({ comment, isReply = false }) => (
         <div className={`${isReply ? 'ml-12 mt-4' : 'mb-6'}`}>
-            <div className="rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="rounded-tile-sm border border-slate-200 bg-white p-4">
                 {/* Author Info */}
                 <div className="flex items-start gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-emerald-700 flex items-center justify-center text-white font-black" aria-hidden="true">
+                    <div className="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center text-white font-black" aria-hidden="true">
                         {comment.author_name.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
@@ -77,7 +77,7 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
                     <button
                         type="button"
                         onClick={() => setReplyTo(comment.id)}
-                        className="text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                        className="text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                     >
                         Antworten
                     </button>
@@ -92,26 +92,26 @@ const BlogComments = ({ comments = [], postId, onAddComment }) => {
     );
 
     return (
-        <div className="glass-surface rounded-3xl p-8">
+        <div className="glass-surface rounded-tile-md p-8">
             {/* Header */}
             <div className="flex items-center gap-3 mb-8">
-                <MessageCircle className="w-6 h-6 text-emerald-600" />
+                <MessageCircle className="w-6 h-6 text-orange-600" />
                 <h2 className="text-2xl font-black text-slate-900">
                     Kommentare ({comments.length})
                 </h2>
             </div>
 
             {/* Comment Form */}
-            <div className="mb-8 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <div className="mb-8 rounded-tile-sm border border-slate-200 bg-slate-50 p-6">
                 {replyTo && (
-                    <div className="mb-4 p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex items-center justify-between">
+                    <div className="mb-4 p-3 bg-orange-50 rounded-tile-sm border border-orange-200 flex items-center justify-between">
                         <span className="text-sm text-slate-800">
                             Antwort auf {comments.find(c => c.id === replyTo)?.author_name}
                         </span>
                         <button
                             type="button"
                             onClick={() => setReplyTo(null)}
-                            className="text-sm font-bold text-slate-700 hover:text-emerald-800"
+                            className="text-sm font-bold text-slate-700 hover:text-orange-600"
                         >
                             Abbrechen
                         </button>

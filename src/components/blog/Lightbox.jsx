@@ -26,14 +26,14 @@ const Lightbox = ({ src, alt, onClose }) => {
             <button
                 type="button"
                 onClick={onClose}
-                className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
                 aria-label="Schließen"
             >
                 <X className="w-8 h-8" />
             </button>
 
             <div
-                className="relative max-w-[90vw] max-h-[90vh] overflow-hidden rounded-2xl shadow-2xl"
+                className="relative max-w-[90vw] max-h-[90vh] overflow-hidden rounded-tile-md shadow-2xl"
                 onClick={(e) => e.stopPropagation()} // Prevent closing when clicking image
             >
                 <img

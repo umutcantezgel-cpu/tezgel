@@ -19,7 +19,7 @@ const contactSchema = buildGraph([
     url: pageUrl,
     name: 'Kontakt aufnehmen | Fliesenverlegung Tezgel',
     description:
-      'Kontakt zum Fliesenleger-Meisterbetrieb Fliesenverlegung Tezgel in Aßlar – für Fliesenverlegung, Badsanierung und Verbundabdichtung in Wetzlar und Mittelhessen.',
+      'Kontakt zum Fliesenleger-Fachbetrieb Fliesenverlegung Tezgel in Aßlar – für Fliesenverlegung, Badsanierung und Verbundabdichtung in Wetzlar und Mittelhessen.',
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),
 ]);

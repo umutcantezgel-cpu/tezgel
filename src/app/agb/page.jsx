@@ -12,11 +12,11 @@ export default function AGBPage() {
     return (
         <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
             {/* Ambient Lighting Orbs */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-30" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-25" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-30" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-25" />
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 space-y-8 text-slate-700">
+                <div className="glass-surface rounded-tile-xl p-8 sm:p-12 space-y-8 text-slate-700">
                     <div>
                         <span className="eyebrow mb-3">
                             Geschäftsbedingungen für Werk- und Montageleistungen
@@ -78,8 +78,8 @@ export default function AGBPage() {
                     </div>
 
                     <div className="pt-4 border-t border-slate-200 flex flex-wrap gap-3 justify-between items-center text-sm font-bold">
-                        <Link href="/" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">&larr; Zurück zur Startseite</Link>
-                        <Link href="/widerruf" className="text-slate-700 hover:text-emerald-800">Zur Widerrufsbelehrung &rarr;</Link>
+                        <Link href="/" className="text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">&larr; Zurück zur Startseite</Link>
+                        <Link href="/widerruf" className="text-slate-700 hover:text-orange-700">Zur Widerrufsbelehrung &rarr;</Link>
                     </div>
                 </div>
             </div>

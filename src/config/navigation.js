@@ -44,9 +44,9 @@ export const navigationLinks = [
         description: 'Fliesenverlegung innen & außen, Untergrund & Abdichtung',
         submenu: [
             {
-                category: 'Meister-Fachgewerke',
+                category: 'Unsere Fachgewerke',
                 items: [
-                    { name: 'Alle Fachgewerke', path: '/leistungen', desc: 'Leistungsübersicht des Meisterbetriebs' },
+                    { name: 'Alle Fachgewerke', path: '/leistungen', desc: 'Leistungsübersicht unseres Fachbetriebs' },
                     { name: 'Bäder & Wellness', path: '/leistungen/bad', desc: 'Walk-In-Duschen, Gehrungen & Nischen' },
                     { name: 'Wohnbereiche & Neubau', path: '/leistungen/wohnen', desc: 'Feinsteinzeug, Naturstein, Flure & Treppen' },
                     { name: 'Balkon & Terrasse', path: '/leistungen/aussen', desc: 'Frostsichere Keramik auf Stelzlagern' },
@@ -116,12 +116,12 @@ export const navigationLinks = [
     {
         name: 'Über uns',
         path: '/ueber-uns',
-        description: 'Meisterbetrieb Deniz Tezgel in Aßlar',
+        description: 'Fachbetrieb Deniz Tezgel in Aßlar',
         submenu: [
             {
                 category: 'Das Unternehmen',
                 items: [
-                    { name: 'Über Deniz Tezgel', path: '/ueber-uns', desc: 'Philosophie & Meisterbetrieb' },
+                    { name: 'Über Deniz Tezgel', path: '/ueber-uns', desc: 'Philosophie & Fachbetrieb' },
                     { name: 'Qualitätsversprechen', path: '/unternehmen', desc: 'Staubschutz, Termintreue & DIN-Normen' },
                     { name: 'Team', path: '/team', desc: 'Ihre Ansprechpartner' },
                     { name: 'Karriere & Jobs', path: '/karriere', desc: 'Verstärkung für unser Team' },

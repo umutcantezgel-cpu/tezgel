@@ -84,12 +84,12 @@ const CROSS_LINKS = [
 export default function NeubauPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="neubau-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <HardHat className="w-3.5 h-3.5" />
                         Neubau &middot; Bauherren
@@ -119,7 +119,7 @@ export default function NeubauPage() {
             {/* Bauablauf */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="bauablauf-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Bauablauf</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Bauablauf</span>
                     <h2 id="bauablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Wann der Fliesenleger im Bauablauf an der Reihe ist
                     </h2>
@@ -133,12 +133,12 @@ export default function NeubauPage() {
                         return (
                             <li
                                 key={item.phase}
-                                className={`p-6 rounded-3xl border ${isTile ? 'bg-emerald-50 border-emerald-600 ring-2 ring-emerald-600/20' : 'bg-slate-50 border-slate-200'}`}
+                                className={`p-6 rounded-tile-xl border ${isTile ? 'bg-orange-50/70 border-orange-500 ring-2 ring-orange-500/20' : 'bg-slate-50 border-slate-200'}`}
                             >
-                                <span className="font-display block text-3xl font-black tabular-nums text-emerald-600/40 mb-3" aria-hidden="true">
+                                <span className="font-display block text-3xl font-black tabular-nums text-orange-500/40 mb-3" aria-hidden="true">
                                     {String(idx + 1).padStart(2, '0')}
                                 </span>
-                                <h3 className={`font-black text-base mb-2 ${isTile ? 'text-emerald-800' : 'text-slate-900'}`}>{item.phase}</h3>
+                                <h3 className={`font-black text-base mb-2 ${isTile ? 'text-orange-600' : 'text-slate-900'}`}>{item.phase}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -164,12 +164,12 @@ export default function NeubauPage() {
                             bündig abgeschnitten – so bleibt die Randfuge zwischen Belag und Wand erhalten.
                         </p>
                     </div>
-                    <div className="glass-surface rounded-[2rem] p-7">
+                    <div className="glass-surface rounded-tile-xl p-7">
                         <h3 className="font-black text-slate-900 mb-4">Was vor Beginn der Fliesenarbeiten erledigt sein sollte</h3>
                         <ul className="space-y-3">
                             {PRECONDITIONS.map((item) => (
                                 <li key={item} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                                    <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0" />
                                     {item}
                                 </li>
                             ))}
@@ -181,7 +181,7 @@ export default function NeubauPage() {
             {/* 6 Bausteine */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="bausteine-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Unsere Leistung</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Unsere Leistung</span>
                     <h2 id="bausteine-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Sechs Bausteine für Fliesen im Neubau
                     </h2>
@@ -192,12 +192,12 @@ export default function NeubauPage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -208,7 +208,7 @@ export default function NeubauPage() {
             {/* Belegreife, Bemusterung, Festpreis, Abnahme */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="belegreife-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="belegreife-heading">
                         <h2 id="belegreife-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Belegreife-Freigabe vor dem Verlegen im Kurzüberblick</h2>
                         <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                             Frischer Estrich gibt über Wochen Feuchtigkeit ab. Wird zu früh gefliest, drohen Risse, Hohlstellen
@@ -217,12 +217,12 @@ export default function NeubauPage() {
                             Merkblättern und Herstellerangaben. Bei temperierten Estrichen gehört das entsprechende Protokoll
                             dazu.
                         </p>
-                        <Link href="/untergrund-abdichtung/estrich-belegreife" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/untergrund-abdichtung/estrich-belegreife" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             Estrich &amp; Belegreife im Detail
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="bemusterung-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="bemusterung-heading">
                         <h2 id="bemusterung-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Bemusterung und Materialbestellung rechtzeitig planen</h2>
                         <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                             Lieferzeiten für Fliesen – besonders für Großformate und besondere Oberflächen – sind sehr
@@ -230,31 +230,31 @@ export default function NeubauPage() {
                             wird. Die gesamte Menge sollte aus einer Charge stammen, inklusive Reserve für Verschnitt und spätere
                             Reparaturen.
                         </p>
-                        <Link href="/fliesen/fliesenarten" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/fliesenarten" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             Fliesenarten im Vergleich
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="festpreis-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="festpreis-heading">
                         <h2 id="festpreis-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Festpreis und verbindlicher Bauzeitenplan</h2>
                         <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                             Nach dem Aufmaß erhalten Sie ein Festpreisangebot für den beschriebenen Leistungsumfang. Start und
                             Fertigstellung unserer Arbeiten sagen wir verbindlich zu und stimmen sie mit Ihrem Bauzeitenplan ab.
                             Verschieben sich Vorleistungen, passen wir den Termin gemeinsam mit Ihnen an.
                         </p>
-                        <Link href="/fliesen/festpreisangebot" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/festpreisangebot" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             So entsteht das Festpreisangebot
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="uebergabe-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="uebergabe-heading">
                         <h2 id="uebergabe-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Abnahme und Übergabe</h2>
                         <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                             Zum Abschluss gehen Sie mit {COMPANY_DATA.owner.fullName} gemeinsam über alle Flächen. Sie erhalten
                             Pflegehinweise, Angaben zu den verwendeten Materialien und Restfliesen für spätere Reparaturen.
                             Worauf Sie bei der Abnahme achten können, haben wir in einer Checkliste zusammengefasst.
                         </p>
-                        <Link href="/fliesen/abnahme" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/abnahme" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             Checkliste zur Abnahme
                             <ArrowRight className="w-4 h-4" />
                         </Link>
@@ -270,11 +270,11 @@ export default function NeubauPage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group block h-full glass-surface rounded-2xl p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-emerald-600" />
+                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-500" />
                                 </span>
                                 <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
                             </Link>
@@ -283,7 +283,7 @@ export default function NeubauPage() {
                 </ul>
                 <p className="mt-6 text-sm text-slate-700">
                     Direkt sprechen:{' '}
-                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700">
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-orange-600 hover:text-orange-700">
                         <Phone className="w-3.5 h-3.5" />
                         {COMPANY_DATA.contact.phone}
                     </a>

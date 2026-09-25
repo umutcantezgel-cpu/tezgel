@@ -9,10 +9,6 @@ import JsonLd from '@/components/seo/JsonLd';
 import { MapPin, Phone, ArrowRight, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
 
-// ---------------------------------------------------------------------------
-// Location helpers – CITIES distances are measured from Wetzlar city centre,
-// our head office is in Aßlar (COMPANY_DATA.headquarters).
-// ---------------------------------------------------------------------------
 function isHeadquartersCity(city: CityData) {
   return city.name === COMPANY_DATA.headquarters.city;
 }
@@ -30,9 +26,6 @@ function distanceSentence(city: CityData) {
   return `Ca. ${city.distanceKm} km ab Wetzlar – betreut von unserem Firmensitz in ${headquarters.city}.`;
 }
 
-// ---------------------------------------------------------------------------
-// Static Params – generates a page for every service × city combination
-// ---------------------------------------------------------------------------
 export function generateStaticParams() {
   const params: { id: string; stadt: string }[] = [];
   for (const service of SERVICES) {
@@ -43,9 +36,6 @@ export function generateStaticParams() {
   return params;
 }
 
-// ---------------------------------------------------------------------------
-// Dynamic Metadata – unique title, description & OG tags per combination
-// ---------------------------------------------------------------------------
 export async function generateMetadata({
   params,
 }: {
@@ -56,7 +46,7 @@ export async function generateMetadata({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) return {};
 
-  const title = `${service.name} in ${city.name} – Fliesen-Meisterbetrieb`;
+  const title = `${service.name} in ${city.name} – Fliesen-Fachbetrieb`;
   const description = `${service.name} in ${city.name}: ${service.shortDescription}. ${distanceSentence(city)} Kostenfreies Vor-Ort-Aufmaß & verbindliches Festpreisangebot.`;
 
   const path = `/leistungen/${service.id}/${city.slug}`;
@@ -111,7 +101,6 @@ export default async function ServiceCityPage({
     .join(', ');
   const otherServices = SERVICES.filter((s) => s.id !== service.id);
 
-  // ── JSON-LD: Service + Breadcrumbs @graph ─────────────────────────────
   const breadcrumbs = [
     { name: 'Home', path: '/' },
     { name: 'Leistungen', path: '/leistungen' },
@@ -149,7 +138,7 @@ export default async function ServiceCityPage({
       icon: MapPin,
     },
     { value: 'DIN 18534', label: 'Normgerechte Verbundabdichtung', icon: ShieldCheck },
-    { value: authority.shortName, label: 'Eingetragener Meisterbetrieb', icon: Award },
+    { value: authority.shortName, label: 'Eingetragener Fachbetrieb', icon: Award },
   ];
 
   return (
@@ -157,36 +146,36 @@ export default async function ServiceCityPage({
       <JsonLd schema={serviceCityGraph} />
 
       {/* Ambient Glow */}
-      <div className="ambient-glow-sky -top-20 -left-20" />
-      <div className="ambient-glow-mint top-96 -right-20" />
+      <div className="ambient-glow-orange -top-20 -left-20" />
+      <div className="ambient-glow-red top-96 -right-20" />
 
       {/* ── Hero Section ─────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="ceramic-hero rounded-[3rem] p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
+        <div className="ceramic-hero rounded-2xl p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
           {/* Breadcrumbs */}
           <nav
             aria-label="Breadcrumb"
-            className="mb-2 text-xs text-slate-600 flex flex-wrap items-center justify-center gap-1.5 font-medium"
+            className="mb-2 text-xs text-neutral-600 flex flex-wrap items-center justify-center gap-1.5 font-medium"
           >
-            <Link href="/" className="hover:text-emerald-800 transition-colors">
+            <Link href="/" className="hover:text-orange-800 transition-colors">
               Home
             </Link>
             <span aria-hidden="true">/</span>
             <Link
               href="/leistungen"
-              className="hover:text-emerald-800 transition-colors"
+              className="hover:text-orange-800 transition-colors"
             >
               Leistungen
             </Link>
             <span aria-hidden="true">/</span>
             <Link
               href={`/leistungen/${service.id}`}
-              className="hover:text-emerald-800 transition-colors"
+              className="hover:text-orange-800 transition-colors"
             >
               {service.name}
             </Link>
             <span aria-hidden="true">/</span>
-            <span className="text-slate-900 font-bold" aria-current="page">{city.name}</span>
+            <span className="text-neutral-900 font-bold" aria-current="page">{city.name}</span>
           </nav>
 
           <span className="eyebrow">
@@ -196,13 +185,13 @@ export default async function ServiceCityPage({
             </span>
           </span>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 leading-tight">
             {service.name} in{' '}
             <span className="text-ceramic-gradient">{city.name}</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-            {COMPANY_DATA.legalName} ist Ihr Meisterbetrieb für {service.name} in{' '}
+          <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+            {COMPANY_DATA.legalName} ist Ihr Fachbetrieb für {service.name} in{' '}
             {city.name} und im {city.region}. {service.shortDescription}.{' '}
             {distanceSentence(city)}
           </p>
@@ -213,7 +202,7 @@ export default async function ServiceCityPage({
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-              <Phone className="w-4 h-4 text-emerald-700" />
+              <Phone className="w-4 h-4 text-orange-700" />
               {contact.phone}
             </a>
           </div>
@@ -227,20 +216,20 @@ export default async function ServiceCityPage({
             <div>
               <span className="eyebrow mb-3">
                 <Award className="w-3.5 h-3.5" />
-                Meisterbetrieb &middot; {authority.shortName}
+                HWK Fachbetrieb &middot; {authority.shortName}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-                Fachkompetenz &amp; Meisterqualität für {city.name}
+              <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
+                Fachkompetenz &amp; Präzision für {city.name}
               </h2>
             </div>
 
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Ob Neubau oder Sanierung im bewohnten Bestand: Als eingetragener Meisterbetrieb der {authority.name} übernehmen
+            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+              Ob Neubau oder Sanierung im bewohnten Bestand: Als eingetragener Fachbetrieb der {authority.name} übernehmen
               wir Projekte im Bereich {service.name} für Privatkunden, Architekten und Bauherren in {city.name} sowie im
               gesamten {city.region}. {city.description}
             </p>
 
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
               Im Mittelpunkt stehen Langlebigkeit, Dichtigkeit und eine saubere, millimetergenaue Ausführung – mit
               normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser im Spiel ist.{' '}
               {subcategoryNames ? `Unsere Schwerpunkte: ${subcategoryNames}.` : ''} Nach dem kostenfreien Vor-Ort-Aufmaß
@@ -252,11 +241,11 @@ export default async function ServiceCityPage({
               {stats.map(({ value, label, icon: Icon }) => (
                 <li
                   key={label}
-                  className="rounded-[2rem] bg-white border border-slate-200 p-6 text-center flex flex-col items-center gap-1"
+                  className="rounded-xl bg-white border border-neutral-200 p-6 text-center flex flex-col items-center gap-1"
                 >
-                  <Icon className="w-5 h-5 text-emerald-600 mb-2" aria-hidden="true" />
-                  <span className="font-display text-2xl font-black text-slate-900 tabular-nums">{value}</span>
-                  <span className="text-xs text-slate-600 font-semibold">{label}</span>
+                  <Icon className="w-5 h-5 text-orange-600 mb-2" aria-hidden="true" />
+                  <span className="font-display text-2xl font-black text-neutral-900 tabular-nums">{value}</span>
+                  <span className="text-xs text-neutral-600 font-semibold">{label}</span>
                 </li>
               ))}
             </ul>
@@ -268,10 +257,10 @@ export default async function ServiceCityPage({
       {service.features && service.features.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="leistungsspektrum">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 id="leistungsspektrum" className="text-2xl sm:text-3xl font-black text-slate-900">
+            <h2 id="leistungsspektrum" className="text-2xl sm:text-3xl font-black text-neutral-900">
               Detailliertes Leistungsspektrum in {city.name}
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base mt-2">
+            <p className="text-neutral-700 text-sm sm:text-base mt-2">
               Handwerkliche Präzision für dauerhaft schöne, dichte und pflegeleichte Beläge.
             </p>
           </div>
@@ -280,12 +269,12 @@ export default async function ServiceCityPage({
             {service.features.map((feature: string) => (
               <li
                 key={feature}
-                className="group glass-surface p-5 rounded-2xl flex items-center gap-3.5 hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                className="group glass-surface p-5 rounded-xl flex items-center gap-3.5 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
               >
-                <span className="icon-chip w-9 h-9 rounded-xl">
+                <span className="icon-chip w-9 h-9 rounded-lg">
                   <CheckCircle2 className="w-5 h-5" />
                 </span>
-                <span className="text-sm font-bold text-slate-800">{feature}</span>
+                <span className="text-sm font-bold text-neutral-800">{feature}</span>
               </li>
             ))}
           </ul>
@@ -295,11 +284,11 @@ export default async function ServiceCityPage({
       {/* ── Process Steps ────────────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="ablauf">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="eyebrow eyebrow-sky mb-4">Transparenter Ablauf</span>
-          <h2 id="ablauf" className="text-2xl sm:text-3xl font-black text-slate-900">
+          <span className="eyebrow eyebrow-red mb-4">Transparenter Ablauf</span>
+          <h2 id="ablauf" className="text-2xl sm:text-3xl font-black text-neutral-900">
             Schritt für Schritt zu Ihrem Projekterfolg in {city.name}
           </h2>
-          <p className="text-slate-700 text-sm sm:text-base mt-2">
+          <p className="text-neutral-700 text-sm sm:text-base mt-2">
             Von der ersten Kontaktaufnahme bis zur Endabnahme transparent und strukturiert.
           </p>
         </div>
@@ -308,16 +297,16 @@ export default async function ServiceCityPage({
           {processSteps.map((step) => (
             <li
               key={step.step}
-              className="glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+              className="glass-surface p-6 rounded-2xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
             >
-              <span className="font-display text-2xl sm:text-3xl font-black text-emerald-700 tabular-nums mb-2 block" aria-hidden="true">
+              <span className="font-display text-2xl sm:text-3xl font-black text-orange-700 tabular-nums mb-2 block" aria-hidden="true">
                 {step.step}
               </span>
-              <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800 block mb-1">
+              <span className="text-[11px] font-black uppercase tracking-widest text-orange-800 block mb-1">
                 {step.subtitle}
               </span>
-              <h3 className="text-base font-black text-slate-900 mb-2">{step.title}</h3>
-              <p className="text-sm text-slate-700 leading-relaxed">
+              <h3 className="text-base font-black text-neutral-900 mb-2">{step.title}</h3>
+              <p className="text-sm text-neutral-700 leading-relaxed">
                 {step.description}
               </p>
             </li>
@@ -327,29 +316,29 @@ export default async function ServiceCityPage({
 
       {/* ── More in this city ────────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative z-10" aria-labelledby="mehr-in-stadt">
-        <div className="glass-surface rounded-[2rem] p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div className="glass-surface rounded-2xl p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div>
-            <h2 id="mehr-in-stadt" className="text-lg font-black text-slate-900 mb-1">
+            <h2 id="mehr-in-stadt" className="text-lg font-black text-neutral-900 mb-1">
               Weitere Leistungen in {city.name}
             </h2>
-            <p className="text-sm text-slate-700">Alle Fliesengewerke aus einer Hand – vom Bad bis zur Terrasse.</p>
+            <p className="text-sm text-neutral-700">Alle Fliesengewerke aus einer Hand – vom Bad bis zur Terrasse.</p>
           </div>
           <ul className="flex flex-wrap gap-2">
             {otherServices.map((other) => (
               <li key={other.id}>
                 <Link
                   href={`/leistungen/${other.id}/${city.slug}`}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-800 hover:border-emerald-500/80 hover:text-emerald-800 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-xs font-semibold text-neutral-800 hover:border-orange-500/80 hover:text-orange-800 transition-colors"
                 >
                   {other.name}
-                  <ArrowRight className="w-3 h-3 text-emerald-600" />
+                  <ArrowRight className="w-3 h-3 text-orange-600" />
                 </Link>
               </li>
             ))}
             <li>
               <Link
                 href={`/standorte/${city.slug}`}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 hover:border-emerald-500/80 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 border border-orange-200 text-xs font-bold text-orange-800 hover:border-orange-500/80 transition-colors"
               >
                 <MapPin className="w-3 h-3" />
                 Standort {city.name}

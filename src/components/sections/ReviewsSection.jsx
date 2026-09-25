@@ -102,10 +102,10 @@ export default function ReviewsSection() {
                                 type="button"
                                 onClick={() => setSelectedTopic(filter.id)}
                                 aria-pressed={isActive}
-                                className={`px-4 py-2 rounded-full text-xs font-extrabold border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
+                                className={`px-4 py-2 rounded-tile-pill text-xs font-extrabold border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 ${
                                     isActive
-                                        ? 'bg-emerald-700 border-emerald-700 text-white'
-                                        : 'bg-white border-slate-200 text-slate-700 hover:border-emerald-500/80 hover:text-emerald-800'
+                                        ? 'bg-orange-600 border-orange-600 text-white'
+                                        : 'bg-white border-slate-200 text-slate-700 hover:border-orange-500 hover:text-orange-600'
                                 }`}
                             >
                                 {filter.label}
@@ -120,13 +120,13 @@ export default function ReviewsSection() {
                     {filteredReviews.map((review) => (
                         <li
                             key={review.id}
-                            className="glass-surface rounded-3xl p-7 flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            className="glass-surface rounded-tile-md p-7 flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                         >
                             <figure className="h-full flex flex-col justify-between">
                                 <div>
                                     <div className="flex items-center justify-between mb-4">
                                         <Stars count={review.rating} />
-                                        <Quote className="w-6 h-6 text-emerald-600/40" aria-hidden="true" />
+                                        <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
                                     </div>
                                     <span className="sr-only">{review.rating} von 5 Sternen</span>
                                     <blockquote className="text-sm text-slate-800 leading-relaxed">

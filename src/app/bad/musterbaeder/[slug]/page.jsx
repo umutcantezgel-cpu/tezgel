@@ -41,25 +41,25 @@ export default async function MusterbadDetailPage({ params }) {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Header */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="musterbad-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 space-y-4 relative overflow-hidden">
                     <Link
                         href="/bad/musterbaeder"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800 hover:text-emerald-700 bg-white px-3.5 py-1.5 rounded-full border border-slate-200 hover:border-emerald-500/80 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-950 hover:text-orange-700 bg-white px-3.5 py-1.5 rounded-tile-pill border border-neutral-200 hover:border-orange-500 transition-colors"
                     >
                         <ArrowLeft className="w-3.5 h-3.5" />
                         Zurück zur Musterbad-Übersicht
                     </Link>
 
                     <div className="flex flex-wrap items-center gap-2 pt-2">
-                        <span className="text-xs font-black bg-emerald-700 text-white px-3.5 py-1 rounded-full tabular-nums">
+                        <span className="text-xs font-black bg-orange-600 text-white px-3.5 py-1 rounded-tile-pill tabular-nums">
                             {bath.size}
                         </span>
-                        <span className="text-xs font-bold bg-emerald-50 text-emerald-800 px-3.5 py-1 rounded-full border border-emerald-200">
+                        <span className="text-xs font-bold bg-orange-50 text-orange-950 px-3.5 py-1 rounded-tile-pill border border-orange-200">
                             {bath.tier}
                         </span>
                     </div>
@@ -71,7 +71,7 @@ export default async function MusterbadDetailPage({ params }) {
                         {bath.headline}
                     </p>
 
-                    <div className="p-4 sm:px-6 rounded-2xl bg-white border border-slate-200 inline-flex flex-wrap items-center gap-x-6 gap-y-1">
+                    <div className="p-4 sm:px-6 rounded-tile-sm bg-white border border-slate-200 inline-flex flex-wrap items-center gap-x-6 gap-y-1">
                         <span className="text-sm text-slate-700 font-medium">
                             Verbindlicher Festpreis nach kostenfreiem Vor-Ort-Aufmaß – abgestimmt auf Ihren Grundriss.
                         </span>
@@ -99,10 +99,10 @@ export default async function MusterbadDetailPage({ params }) {
                             {bath.components.map((comp) => (
                                 <li
                                     key={comp.category}
-                                    className="group glass-surface rounded-[2rem] p-6 sm:p-8 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group glass-surface rounded-tile-md p-6 sm:p-8 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
                                     <div className="border-b border-slate-200 pb-3 mb-4">
-                                        <h3 className="font-black text-base text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                        <h3 className="font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
                                             {comp.category}
                                         </h3>
                                     </div>
@@ -110,7 +110,7 @@ export default async function MusterbadDetailPage({ params }) {
                                     <ul className="space-y-2.5">
                                         {comp.items.map((item) => (
                                             <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700 leading-relaxed">
-                                                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                                <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                                                 <span>{item}</span>
                                             </li>
                                         ))}
@@ -139,7 +139,7 @@ export default async function MusterbadDetailPage({ params }) {
                                     </a>
 
                                     <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost w-full text-xs">
-                                        <Phone className="w-4 h-4 text-emerald-700" />
+                                        <Phone className="w-4 h-4 text-orange-600" />
                                         Direkt anrufen: {COMPANY_DATA.contact.phone}
                                     </a>
                                 </div>
@@ -148,7 +148,7 @@ export default async function MusterbadDetailPage({ params }) {
                                     <p className="font-black text-slate-900">Ihre Sicherheiten bei {COMPANY_DATA.legalName}:</p>
                                     {['Festpreisgarantie', 'Verbindlicher Bauzeitplan', 'Staubarme Sanierung'].map((item) => (
                                         <p key={item} className="flex items-center gap-1.5">
-                                            <Check className="w-4 h-4 text-emerald-600" />
+                                            <Check className="w-4 h-4 text-orange-600" />
                                             {item}
                                         </p>
                                     ))}

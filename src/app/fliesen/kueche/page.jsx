@@ -22,7 +22,7 @@ import QualityPromise from '@/components/sections/QualityPromise';
 export const metadata = createMetadata({
     title: 'Küche fliesen: Küchenboden & Küchenrückwand',
     description:
-        'Fliesen für die Küche vom Meisterbetrieb: fleckunempfindliche Böden, Küchenrückwand als Fliesenspiegel oder Großformat und fettbeständige Fugen.',
+        'Fliesen für die Küche vom Fachbetrieb: fleckunempfindliche Böden, Küchenrückwand als Fliesenspiegel oder Großformat und fettbeständige Fugen.',
     path: '/fliesen/kueche'
 });
 
@@ -66,12 +66,12 @@ export default function KuechePage() {
 
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="kueche-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <ChefHat className="w-3.5 h-3.5" />
                         Räume &middot; Küche
@@ -100,7 +100,7 @@ export default function KuechePage() {
             {/* Requirements */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="ku-anforderungen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Anforderungen an den Küchenboden</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Anforderungen an den Küchenboden</span>
                     <h2 id="ku-anforderungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Fett, Wasser, Stöße: <span className="text-ceramic-gradient">was der Belag aushalten muss</span>
                     </h2>
@@ -111,12 +111,12 @@ export default function KuechePage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -137,7 +137,7 @@ export default function KuechePage() {
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ku-reihenfolge">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ku-reihenfolge">
                             <h3 id="ku-reihenfolge" className="text-xl font-black text-slate-900 mb-3">Vor oder nach der Küchenmontage fliesen?</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 <strong className="text-slate-900">Boden:</strong> Wird er vor der Montage durchgehend gefliest,
@@ -153,7 +153,7 @@ export default function KuechePage() {
                                 lediglich die Termine.
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ku-rueckwand">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ku-rueckwand">
                             <h3 id="ku-rueckwand" className="text-xl font-black text-slate-900 mb-3">Küchenrückwand: Fliesenspiegel, Großformat oder Mosaik</h3>
                             <ul className="space-y-3 text-sm text-slate-700 leading-relaxed">
                                 <li>
@@ -171,38 +171,38 @@ export default function KuechePage() {
                                 </li>
                             </ul>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ku-fugen">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ku-fugen">
                             <h3 id="ku-fugen" className="text-xl font-black text-slate-900 mb-3">Fugen, die Fett und Reinigern standhalten</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Zementäre Fugenmörtel der Klasse CG2 mit reduzierter Wasseraufnahme sind für die meisten
                                 Küchenböden gut geeignet. Wo Fett, Säuren oder intensive Reinigung dauerhaft einwirken, kann
                                 Reaktionsharz-Fugenmörtel (RG) die bessere Wahl sein – er ist dicht und chemisch beständiger,
                                 aber aufwendiger zu verarbeiten.{' '}
-                                <Link href="/fliesen/verlegetechnik" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/verlegetechnik" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Fugenmörtel im Vergleich
                                 </Link>
                             </p>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">
                                 Die Silikonfuge zwischen Arbeitsplatte und Rückwand ist eine Wartungsfuge und sollte bei Bedarf
                                 erneuert werden.{' '}
-                                <Link href="/fliesen/fugensanierung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/fugensanierung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Fugensanierung
                                 </Link>
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="ku-uebergang">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="ku-uebergang">
                             <h3 id="ku-uebergang" className="text-xl font-black text-slate-900 mb-3">Übergänge zu offenen Wohnbereichen</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 In offenen Grundrissen wirkt ein durchgehender Belag von der Küche bis ins Wohnzimmer besonders
                                 großzügig. Dafür planen wir Fugenachsen und Verlegerichtung über beide Bereiche hinweg.{' '}
-                                <Link href="/fliesen/verlegemuster" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/verlegemuster" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Verlegemuster &amp; Fugenachsen
                                 </Link>
                             </p>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">
                                 Trifft die Fliese auf Parkett, Vinyl oder Teppich, entscheiden Aufbauhöhe und Profil über einen
                                 sauberen Übergang.{' '}
-                                <Link href="/fliesen/flur-diele" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/flur-diele" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Übergänge zu anderen Belägen
                                 </Link>
                             </p>
@@ -213,7 +213,7 @@ export default function KuechePage() {
 
             {/* Rutschhemmung & Pflege */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="ku-pflege-heading">
-                <div className="rounded-[2rem] bg-sky-50 border border-sky-200 text-slate-700 p-7 sm:p-10">
+                <div className="rounded-tile-xl bg-slate-50 border border-slate-200 text-slate-700 p-7 sm:p-10">
                     <h2 id="ku-pflege-heading" className="text-2xl sm:text-3xl font-black text-slate-900 mb-4">
                         Rutschhemmung und Pflege im Küchenalltag
                     </h2>
@@ -226,11 +226,11 @@ export default function KuechePage() {
                     <p className="mt-3 text-sm leading-relaxed">
                         Im Alltag reicht feuchtes Wischen mit einem milden Reiniger. Aggressive oder säurehaltige Mittel können
                         zementäre Fugen angreifen.{' '}
-                        <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             R-Klassen erklärt
                         </Link>{' '}
                         &middot;{' '}
-                        <Link href="/blog/fliesen-reinigen-pflegen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/blog/fliesen-reinigen-pflegen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Fliesen reinigen und pflegen
                         </Link>
                     </p>
@@ -240,7 +240,7 @@ export default function KuechePage() {
             {/* Review */}
             {review && (
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 relative z-10" aria-label="Kundenstimme">
-                    <figure className="glass-surface rounded-[2rem] p-7 sm:p-10 text-center">
+                    <figure className="glass-surface rounded-tile-xl p-7 sm:p-10 text-center">
                         <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed">„{review.text}“</blockquote>
                         <figcaption className="mt-4 text-sm">
                             <span className="font-bold text-slate-900">{review.author}</span>
@@ -252,14 +252,14 @@ export default function KuechePage() {
 
             {/* Weiterlesen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-labelledby="ku-weiterlesen-heading">
-                <div className="glass-surface-subtle rounded-3xl p-6 sm:p-8">
+                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
                     <h2 id="ku-weiterlesen-heading" className="text-lg font-black text-slate-900 mb-4">Weiterlesen</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}
@@ -269,11 +269,11 @@ export default function KuechePage() {
                     </ul>
                     <p className="mt-4 text-sm text-slate-700">
                         Auch das Bad steht an?{' '}
-                        <Link href="/bad/fliesen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/bad/fliesen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Fliesen im Bad
                         </Link>{' '}
                         &middot;{' '}
-                        <Link href="/beratung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/beratung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Beratung anfragen
                         </Link>
                     </p>
@@ -289,7 +289,7 @@ export default function KuechePage() {
 
             {/* Closing CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 relative z-10" aria-labelledby="ku-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         Kostenfreies Vor-Ort-Aufmaß
@@ -304,7 +304,7 @@ export default function KuechePage() {
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">Aufmaß anfragen</Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-slate-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">

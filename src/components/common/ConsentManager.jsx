@@ -175,7 +175,7 @@ const ConsentManager = () => {
         return (
             <button
                 onClick={() => setIsVisible(true)}
-                className="hidden md:flex fixed bottom-6 left-6 z-30 bg-emerald-700 text-white p-3 rounded-full shadow-lg shadow-emerald-950/20 hover:bg-emerald-800 transition-all hover:scale-105 items-center justify-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                className="hidden md:flex fixed bottom-6 left-6 z-30 bg-neutral-900 text-white p-3 rounded-tile-pill shadow-lg shadow-black/20 hover:bg-orange-600 transition-all hover:scale-105 items-center justify-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2"
                 aria-label="Cookie-Einstellungen öffnen"
                 title="Cookie-Einstellungen"
             >
@@ -314,7 +314,7 @@ const ConsentManager = () => {
                                                 checked={category.required ? true : preferences[category.id]}
                                                 disabled={category.required}
                                                 onChange={(e) => setPreferences({ ...preferences, [category.id]: e.target.checked })}
-                                                className="w-4 h-4 accent-emerald-700 rounded border-[var(--color-neutral-300)] focus:ring-2 focus:ring-emerald-600"
+                                                className="w-4 h-4 accent-orange-600 rounded border-[var(--color-neutral-300)] focus:ring-2 focus:ring-orange-600"
                                             />
                                         </div>
                                         <div className="flex-1">

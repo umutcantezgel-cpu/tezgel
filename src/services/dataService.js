@@ -28,7 +28,7 @@ const STORAGE_KEYS = {
 // Adapter to map COMPANY_DATA to legacy siteConfig structure for UI compatibility
 const getAdaptedSiteConfig = () => ({
     name: COMPANY_DATA.legalName,
-    description: "Ihr Meisterbetrieb für Fliesenverlegung, Badsanierung und fugenarme Großformate in Aßlar, Wetzlar und ganz Hessen.",
+    description: "Ihr Fachbetrieb für Fliesenverlegung, Badsanierung und fugenarme Großformate in Aßlar, Wetzlar und ganz Hessen.",
     contact: {
         phone: COMPANY_DATA.contact.phone,
         phoneLink: COMPANY_DATA.contact.phoneLink,

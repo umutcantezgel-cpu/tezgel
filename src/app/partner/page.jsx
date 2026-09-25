@@ -19,12 +19,12 @@ export default function PartnerPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-60" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
 
             {/* Hero */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Layers className="w-3.5 h-3.5" />
                         Markenqualität ohne Kompromisse
@@ -46,12 +46,12 @@ export default function PartnerPage() {
                     {partnerBrands.map((brand) => (
                         <li
                             key={brand.name}
-                            className="group glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            className="group glass-surface p-6 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                         >
                             <span className="icon-chip w-11 h-11 mb-4">
                                 <CheckCircle2 className="w-5 h-5" />
                             </span>
-                            <h2 className="text-xl font-black text-slate-900 mb-1 group-hover:text-emerald-800 transition-colors">{brand.name}</h2>
+                            <h2 className="text-xl font-black text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">{brand.name}</h2>
                             <p className="text-sm text-slate-700">{brand.category}</p>
                         </li>
                     ))}

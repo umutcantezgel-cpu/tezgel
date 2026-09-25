@@ -84,12 +84,12 @@ const WEITERLESEN = [
 export default function FliesenartenPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fliesenarten-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Layers className="w-3.5 h-3.5" />
                         Materialkunde &middot; DIN EN 14411
@@ -118,7 +118,7 @@ export default function FliesenartenPage() {
             {/* Material cards */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fa-gruppen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Gruppen nach DIN EN 14411</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Gruppen nach DIN EN 14411</span>
                     <h2 id="fa-gruppen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Gebrannte Keramik: <span className="text-ceramic-gradient">drei Werkstoffe, viele Einsatzorte</span>
                     </h2>
@@ -129,19 +129,19 @@ export default function FliesenartenPage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
                     })}
                 </ul>
 
-                <div className="mt-10 overflow-x-auto rounded-2xl border border-slate-200">
+                <div className="mt-10 overflow-x-auto rounded-tile-xl border border-slate-200">
                     <table className="w-full text-left text-sm">
                         <caption className="sr-only">Vergleich der Fliesenarten nach Wasseraufnahme, Frostbeständigkeit und Einsatz</caption>
                         <thead className="bg-slate-100 text-slate-900">
@@ -180,7 +180,7 @@ export default function FliesenartenPage() {
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="fa-glasur">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="fa-glasur">
                             <h3 id="fa-glasur" className="text-xl font-black text-slate-900 mb-3">Glasiert oder unglasiert</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Unglasiertes Feinsteinzeug ist durchgefärbt: Die Oberfläche entspricht dem Scherben, Abnutzung
@@ -188,9 +188,9 @@ export default function FliesenartenPage() {
                                 ermöglicht nahezu jede Optik, macht die Oberfläche aber zur entscheidenden Verschleißschicht.
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="fa-kante">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="fa-kante">
                             <h3 id="fa-kante" className="text-xl font-black text-slate-900 mb-3 flex items-center gap-2">
-                                <Ruler className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                                <Ruler className="w-5 h-5 text-orange-600" aria-hidden="true" />
                                 Rektifiziert oder kalibriert
                             </h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
@@ -199,7 +199,7 @@ export default function FliesenartenPage() {
                                 steht auf dem Karton. Innerhalb einer Fläche sollte nur ein Kaliber verlegt werden.
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="fa-abrieb">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="fa-abrieb">
                             <h3 id="fa-abrieb" className="text-xl font-black text-slate-900 mb-3">Abriebklasse</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Die Abriebklassen 1 bis 5 (häufig PEI-Klassen genannt, geprüft nach DIN EN ISO 10545-7) gelten nur
@@ -207,13 +207,13 @@ export default function FliesenartenPage() {
                                 Eingänge brauchen höhere. Unglasiertes Feinsteinzeug wird stattdessen auf Tiefenverschleiß geprüft.
                             </p>
                         </article>
-                        <article className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="fa-rklasse">
+                        <article className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="fa-rklasse">
                             <h3 id="fa-rklasse" className="text-xl font-black text-slate-900 mb-3">Rutschhemmung (R-Klasse)</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
                                 Die Rutschhemmung wird nach DIN EN 16165 ermittelt, die die früheren Prüfnormen DIN 51130 und
                                 DIN 51097 ersetzt hat. Angegeben werden R9 bis R13 für Bereiche mit Schuhen und die Klassen A, B, C
                                 für nassbelastete Barfußbereiche. Für Privathaushalte sind sie eine Empfehlung, keine Pflicht.{' '}
-                                <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Mehr zu R-Klassen
                                 </Link>
                             </p>
@@ -224,7 +224,7 @@ export default function FliesenartenPage() {
 
             {/* Kauf */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="fa-kauf-heading">
-                <div className="rounded-[2rem] bg-sky-50 border border-sky-200 text-slate-700 p-7 sm:p-10">
+                <div className="rounded-tile-xl bg-slate-50 border border-slate-200 text-slate-700 p-7 sm:p-10">
                     <h2 id="fa-kauf-heading" className="text-2xl sm:text-3xl font-black text-slate-900 mb-6">
                         Beim Kauf: Farbcharge, Kaliber und Reservefliesen
                     </h2>
@@ -243,9 +243,9 @@ export default function FliesenartenPage() {
                                 text: 'Heben Sie einige Fliesen für spätere Reparaturen auf. Nach Jahren ist dieselbe Serie oft nicht mehr lieferbar.'
                             }
                         ].map((item) => (
-                            <li key={item.title} className="bg-white/80 border border-white/80 rounded-2xl p-5">
+                            <li key={item.title} className="bg-white/80 border border-slate-200 rounded-tile-md p-5">
                                 <h3 className="font-black text-slate-900 mb-1 flex items-center gap-2">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                                    <CheckCircle2 className="w-4 h-4 text-orange-600" aria-hidden="true" />
                                     {item.title}
                                 </h3>
                                 <p className="text-sm leading-relaxed">{item.text}</p>
@@ -254,11 +254,11 @@ export default function FliesenartenPage() {
                     </ul>
                     <p className="mt-6 text-sm leading-relaxed">
                         Wie viel Verschnitt Sie je nach Verlegemuster einplanen sollten, steht bei{' '}
-                        <Link href="/fliesen/verlegemuster" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/fliesen/verlegemuster" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Verlegemuster &amp; Abschlüsse
                         </Link>
                         . Sie möchten Fliesen gemeinsam auswählen?{' '}
-                        <Link href="/ausstellung/wetzlar" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/ausstellung/wetzlar" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Fliesenberatung nach Terminvereinbarung
                         </Link>
                         .
@@ -269,7 +269,7 @@ export default function FliesenartenPage() {
             {/* Room table */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 relative z-10" aria-labelledby="fa-raum-heading">
                 <div className="text-center max-w-3xl mx-auto mb-10">
-                    <span className="eyebrow eyebrow-sky mb-4">Übersicht</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Übersicht</span>
                     <h2 id="fa-raum-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Welche Fliese für welchen Raum?
                     </h2>
@@ -277,7 +277,7 @@ export default function FliesenartenPage() {
                         Eine erste Orientierung. Welche Fliese im Einzelfall passt, hängt von Nutzung, Untergrund und Gestaltung ab.
                     </p>
                 </div>
-                <div className="overflow-x-auto rounded-2xl border border-slate-200">
+                <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
                     <table className="w-full text-left text-sm">
                         <thead className="bg-slate-100 text-slate-900">
                             <tr>
@@ -301,14 +301,14 @@ export default function FliesenartenPage() {
 
             {/* Weiterlesen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-labelledby="fa-weiterlesen-heading">
-                <div className="glass-surface-subtle rounded-3xl p-6 sm:p-8">
+                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
                     <h2 id="fa-weiterlesen-heading" className="text-lg font-black text-slate-900 mb-4">Weiterlesen</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}
@@ -318,7 +318,7 @@ export default function FliesenartenPage() {
                     </ul>
                     <p className="mt-4 text-sm text-slate-700">
                         Projekt im Wohnbereich geplant?{' '}
-                        <Link href="/leistungen/wohnen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/leistungen/wohnen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Leistung: Wohnbereiche &amp; Neubau
                         </Link>
                     </p>
@@ -334,10 +334,10 @@ export default function FliesenartenPage() {
 
             {/* Closing CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 relative z-10" aria-labelledby="fa-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <CheckCircle2 className="w-3.5 h-3.5" />
-                        Materialberatung vom Meisterbetrieb
+                        Materialberatung vom Fachbetrieb
                     </span>
                     <h2 id="fa-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
                         Unsicher, welche Fliese passt?
@@ -349,7 +349,7 @@ export default function FliesenartenPage() {
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">Aufmaß anfragen</Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-slate-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">

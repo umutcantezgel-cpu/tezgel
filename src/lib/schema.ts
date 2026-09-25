@@ -79,7 +79,7 @@ export function buildOrganizationNode(): SchemaNode {
       contentUrl: `${SITE_URL}/images/logo/tezgel-logo.png`,
       width: '640',
       height: '200',
-      caption: 'Fliesenverlegung Tezgel Meisterbetrieb Logo',
+      caption: 'Fliesenverlegung Tezgel Fachbetrieb Logo',
     },
     image: `${SITE_URL}/images/logo/tezgel-logo.png`,
     founder: { '@id': FOUNDER_ID },
@@ -104,7 +104,7 @@ export function buildWebSiteNode(): SchemaNode {
     url: SITE_URL,
     name: 'Fliesenverlegung Tezgel',
     description:
-      'Ihr Meisterbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
+      'Ihr Fachbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
     publisher: { '@id': ORG_ID },
     inLanguage: 'de-DE',
   };
@@ -120,7 +120,7 @@ export function buildFounderNode(): SchemaNode {
     name: 'Deniz Tezgel',
     givenName: 'Deniz',
     familyName: 'Tezgel',
-    jobTitle: 'Inhaber & Handwerksmeister',
+    jobTitle: 'Inhaber & Fachbetriebsleiter',
     worksFor: { '@id': ORG_ID },
     alumniOf: {
       '@type': 'EducationalOrganization',
@@ -149,7 +149,7 @@ export function buildLocalBusinessNode(): SchemaNode {
     alternateName: 'Fliesenverlegung Tezgel Aßlar & Wetzlar',
     legalName: 'Fliesenverlegung Tezgel',
     description:
-      'Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung, fugenlose Großformate, schlüsselfertige Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
+      'Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, fugenlose Großformate, schlüsselfertige Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
     url: SITE_URL,
     telephone: '+49 6441 4483567',
     email: 'info@tezgel.de',

@@ -59,7 +59,7 @@ export const TOPIC_HUBS = [
         path: '/naturstein',
         description: 'Natursteinböden und Wandbeläge fachgerecht verlegt',
         pages: [
-            { name: 'Naturstein & Granit', path: '/naturstein', desc: 'Natursteinverlegung vom Meisterbetrieb' },
+            { name: 'Naturstein & Granit', path: '/naturstein', desc: 'Natursteinverlegung vom Fachbetrieb' },
             { name: 'Granit, Schiefer & Quarzit', path: '/naturstein/granit', desc: 'Silikatische Natursteine' },
             { name: 'Marmor, Travertin & Kalkstein', path: '/naturstein/marmor-kalkstein', desc: 'Edle, säureempfindliche Steine' }
         ]

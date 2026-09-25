@@ -85,7 +85,7 @@ Wie Sie Schimmel an Fugen vorbeugen, lesen Sie im Beitrag [Schimmel in Fliesenfu
 
 Für die tägliche Pflege genügen Vorreinigen, feuchtes Wischen mit einem passend dosierten Reiniger und im Bad ein Abzieher. Vermeiden Sie Seifenfilm, Scheuermittel und häufige Säure auf Zementfugen, und behandeln Sie kalkhaltigen Naturstein grundsätzlich säurefrei. Grundreinigung und Fugenpflege sind die Kür, die Ihren Belag über viele Jahre schön hält.
 
-Sie möchten Fugen erneuern lassen oder planen einen neuen, pflegeleichten Fliesenbelag? [Nehmen Sie Kontakt mit uns auf](/kontakt) – wir beraten Sie als Meisterbetrieb aus Aßlar.`
+Sie möchten Fugen erneuern lassen oder planen einen neuen, pflegeleichten Fliesenbelag? [Nehmen Sie Kontakt mit uns auf](/kontakt) – wir beraten Sie als Fachbetrieb aus Aßlar.`
 };
 
 export default post;

@@ -104,14 +104,14 @@ const READ_MORE = [
 export default function EstrichBelegreifePage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="estrich-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
-                        <Gauge className="w-3.5 h-3.5" />
+                        <Gauge className="w-3.5 h-3.5 text-orange-600" />
                         Estrich &middot; Restfeuchte &middot; CM-Messung
                     </span>
                     <h1 id="estrich-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
@@ -164,19 +164,19 @@ export default function EstrichBelegreifePage() {
             {/* Screed types */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="estricharten-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Estricharten</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Estricharten</span>
                     <h2 id="estricharten-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Zementestrich oder Calciumsulfatestrich: die Unterschiede
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {SCREED_TYPES.map((type) => (
-                        <article key={type.title} className="glass-surface rounded-[2rem] p-7 sm:p-8">
+                        <article key={type.title} className="glass-surface rounded-tile-xl p-7 sm:p-8">
                             <h3 className="text-xl font-black text-slate-900 mb-4">{type.title}</h3>
                             <ul className="space-y-3">
                                 {type.points.map((point) => (
                                     <li key={point} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                        <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                        <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                         <span>{point}</span>
                                     </li>
                                 ))}
@@ -187,7 +187,7 @@ export default function EstrichBelegreifePage() {
 
                 <div className="mt-10 max-w-4xl mx-auto">
                     <h3 className="text-lg font-black text-slate-900 mb-3 text-center">Häufig genannte Richtwerte für Fliesen und Platten</h3>
-                    <div className="overflow-x-auto rounded-3xl border border-slate-200">
+                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
                         <table className="w-full text-left text-sm min-w-[520px]">
                             <caption className="sr-only">Häufig genannte CM-Richtwerte für die Belegreife mit Fliesen</caption>
                             <thead className="bg-slate-100 text-slate-900">
@@ -212,7 +212,7 @@ export default function EstrichBelegreifePage() {
                         </table>
                     </div>
                     <p className="mt-4 text-sm text-slate-600 leading-relaxed flex gap-2">
-                        <Info className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                        <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                         <span>
                             Orientierungswerte für die Verlegung im Dünnbett, wie sie in Fachmerkblättern und in der Schnittstellenkoordination
                             bei beheizten und unbeheizten Fußbodenkonstruktionen genannt werden. Maßgeblich sind die aktuelle Ausgabe dieser
@@ -227,7 +227,7 @@ export default function EstrichBelegreifePage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="methoden-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Messverfahren</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Messverfahren</span>
                         <h2 id="methoden-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Drei Prüfmethoden im Vergleich: CM, Darr, KRL
                         </h2>
@@ -240,18 +240,18 @@ export default function EstrichBelegreifePage() {
                         {METHODS.map((m) => {
                             const Icon = m.icon;
                             return (
-                                <article key={m.title} className="group p-7 rounded-3xl bg-slate-50 border border-slate-200 flex flex-col hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
+                                <article key={m.title} className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 flex flex-col hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
                                     <span className="icon-chip w-12 h-12 mb-5">
-                                        <Icon className="w-6 h-6" />
+                                        <Icon className="w-6 h-6 text-orange-600" />
                                     </span>
                                     <h3 className="text-lg font-black text-slate-900 mb-2">{m.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed mb-4">{m.how}</p>
                                     <dl className="mt-auto space-y-3 text-sm">
-                                        <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-4">
-                                            <dt className="font-black text-emerald-800 mb-1">Stärke</dt>
+                                        <div className="rounded-tile-md bg-orange-50/50 border border-orange-200/60 p-4">
+                                            <dt className="font-black text-orange-700 mb-1">Stärke</dt>
                                             <dd className="text-slate-700 leading-relaxed">{m.pro}</dd>
                                         </div>
-                                        <div className="rounded-2xl bg-white border border-slate-200 p-4">
+                                        <div className="rounded-tile-md bg-white border border-slate-200 p-4">
                                             <dt className="font-black text-slate-900 mb-1">Grenze</dt>
                                             <dd className="text-slate-700 leading-relaxed">{m.contra}</dd>
                                         </div>
@@ -267,8 +267,8 @@ export default function EstrichBelegreifePage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="beheizt-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     <div className="space-y-4">
-                        <span className="eyebrow eyebrow-sky">
-                            <Thermometer className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange">
+                            <Thermometer className="w-3.5 h-3.5 text-orange-600" />
                             Fußbodenheizung
                         </span>
                         <h2 id="beheizt-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -285,7 +285,7 @@ export default function EstrichBelegreifePage() {
                             Heizrohre getroffen werden.
                         </p>
                     </div>
-                    <div className="glass-surface rounded-[2rem] p-7 sm:p-8">
+                    <div className="glass-surface rounded-tile-2xl p-7 sm:p-8">
                         <h3 className="text-lg font-black text-slate-900 mb-4">Was wir vor dem Verlegen sehen möchten</h3>
                         <ul className="space-y-3">
                             {[
@@ -295,7 +295,7 @@ export default function EstrichBelegreifePage() {
                                 'Bewegungs- und Randfugen, abgestimmt auf die Heizkreise'
                             ].map((text) => (
                                 <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>{text}</span>
                                 </li>
                             ))}
@@ -303,7 +303,7 @@ export default function EstrichBelegreifePage() {
                         <p className="mt-5 text-sm text-slate-600 leading-relaxed">
                             Estricheinbau und Aufheizen übernehmen Estrichleger und Heizungsbauer. Details zu Aufbau, Fugen und
                             Kleberwahl finden Sie unter{' '}
-                            <Link href="/fliesen/auf-fussbodenheizung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/fliesen/auf-fussbodenheizung" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                 Fliesen auf Fußbodenheizung
                             </Link>
                             .
@@ -316,7 +316,7 @@ export default function EstrichBelegreifePage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="pruefungen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Mehr als Feuchte</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Mehr als Feuchte</span>
                         <h2 id="pruefungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Weitere Prüfungen: Oberflächenfestigkeit, Sinterschicht, Risse
                         </h2>
@@ -325,8 +325,8 @@ export default function EstrichBelegreifePage() {
                         {FURTHER_CHECKS.map((item) => {
                             const Icon = item.icon;
                             return (
-                                <li key={item.title} className="group p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
-                                    <span className="icon-chip w-11 h-11 mb-4">
+                                <li key={item.title} className="group p-6 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
+                                    <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                         <Icon className="w-5 h-5" />
                                     </span>
                                     <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
@@ -337,11 +337,11 @@ export default function EstrichBelegreifePage() {
                     </ul>
                     <p className="mt-6 text-sm text-slate-700 text-center">
                         Mehr zu Rissen und Entkopplung:{' '}
-                        <Link href="/untergrund-abdichtung/entkopplung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/untergrund-abdichtung/entkopplung" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                             Entkopplung &amp; Holzuntergründe
                         </Link>
                         {' '}&middot; zur Ebenheit:{' '}
-                        <Link href="/untergrund-abdichtung/ausgleich-gefaelle" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/untergrund-abdichtung/ausgleich-gefaelle" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                             Ausgleich &amp; Gefälle
                         </Link>
                     </p>
@@ -351,8 +351,8 @@ export default function EstrichBelegreifePage() {
             {/* Too wet */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="zufeucht-heading">
                 <div className="text-center mb-10">
-                    <span className="eyebrow eyebrow-neutral mb-4">
-                        <Timer className="w-3.5 h-3.5" />
+                    <span className="eyebrow eyebrow-orange mb-4">
+                        <Timer className="w-3.5 h-3.5 text-orange-600" />
                         Wenn es noch nicht passt
                     </span>
                     <h2 id="zufeucht-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -366,8 +366,8 @@ export default function EstrichBelegreifePage() {
                         { t: 'Erneut messen', d: 'Erst wenn eine neue CM-Messung den Richtwert einhält, geben wir den Untergrund für die Verlegung frei.' },
                         { t: 'Alternativen prüfen', d: 'Einzelne Entkopplungs- oder Abdichtungssysteme erlauben laut Hersteller auf Zementestrich eine frühere Belegung. Das gilt nur im Rahmen der jeweiligen Herstellerangaben und nicht für Calciumsulfatestrich.' }
                     ].map((step, idx) => (
-                        <li key={step.t} className="glass-surface rounded-3xl p-6 flex gap-5">
-                            <span className="font-display text-3xl font-black tabular-nums text-emerald-600/40 shrink-0" aria-hidden="true">
+                        <li key={step.t} className="glass-surface rounded-tile-xl p-6 flex gap-5">
+                            <span className="font-display text-3xl font-black tabular-nums text-orange-500/40 shrink-0" aria-hidden="true">
                                 {String(idx + 1).padStart(2, '0')}
                             </span>
                             <div>
@@ -386,10 +386,10 @@ export default function EstrichBelegreifePage() {
                 </h2>
                 <div className="space-y-3">
                     {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-2xl px-6 py-4">
+                        <details key={item.q} className="group glass-surface rounded-tile-lg px-6 py-4">
                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
                                 {item.q}
-                                <ChevronDown className="w-5 h-5 text-emerald-600 shrink-0 transition-transform group-open:rotate-180" />
+                                <ChevronDown className="w-5 h-5 text-orange-600 shrink-0 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
                         </details>
@@ -399,7 +399,7 @@ export default function EstrichBelegreifePage() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10" aria-labelledby="cta-heading">
-                <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 text-center space-y-4">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
                     <h2 id="cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                         Estrich liegt, Fliesen sind ausgesucht?
                     </h2>
@@ -413,11 +413,11 @@ export default function EstrichBelegreifePage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-ghost px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
+                            <MessageCircle className="w-4 h-4 text-green-700" />
                             WhatsApp
                         </a>
                     </div>
@@ -432,10 +432,10 @@ export default function EstrichBelegreifePage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-2xl bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-emerald-500/80 hover:text-emerald-800 transition-all duration-300"
+                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
                             >
                                 {link.label}
-                                <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                         </li>
                     ))}

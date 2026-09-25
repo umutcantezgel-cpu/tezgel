@@ -74,12 +74,12 @@ export default function FugensanierungPage() {
 
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fugen-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Droplets className="w-3.5 h-3.5" />
                         Service &amp; Reparatur
@@ -99,7 +99,7 @@ export default function FugensanierungPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-ghost px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                            <MessageCircle className="w-4 h-4 text-green-700" />
                             Fotos per WhatsApp senden
                         </a>
                     </div>
@@ -108,8 +108,8 @@ export default function FugensanierungPage() {
 
             {/* Wartungsfuge */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10" aria-labelledby="wartungsfuge-heading">
-                <div className="glass-surface rounded-[2rem] p-8 sm:p-10">
-                    <span className="eyebrow eyebrow-sky mb-4">Grundlagen</span>
+                <div className="glass-surface rounded-tile-xl p-8 sm:p-10">
+                    <span className="eyebrow eyebrow-orange mb-4">Grundlagen</span>
                     <h2 id="wartungsfuge-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-4">
                         Wartungsfuge: warum Silikon regelmäßig erneuert werden muss
                     </h2>
@@ -139,7 +139,7 @@ export default function FugensanierungPage() {
                 </div>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                     {WARNING_SIGNS.map((item) => (
-                        <li key={item.title} className="p-6 rounded-3xl bg-slate-50 border border-slate-200">
+                        <li key={item.title} className="p-6 rounded-tile-xl bg-slate-50 border border-slate-200">
                             <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                         </li>
@@ -147,7 +147,7 @@ export default function FugensanierungPage() {
                 </ul>
                 <p className="mt-6 text-sm text-slate-600 text-center">
                     Ausführlich zu Feuchtigkeitsanzeichen in der Dusche:{' '}
-                    <Link href="/blog/undichte-dusche-warnzeichen" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/blog/undichte-dusche-warnzeichen" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                         Undichte Dusche – die Warnzeichen
                     </Link>
                 </p>
@@ -168,10 +168,10 @@ export default function FugensanierungPage() {
                             return (
                                 <li
                                     key={item.title}
-                                    className="group p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                    className="group p-6 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                                 >
                                     <div className="flex items-center justify-between mb-4">
-                                        <span className="font-display text-3xl font-black tabular-nums text-emerald-600/30" aria-hidden="true">
+                                        <span className="font-display text-3xl font-black tabular-nums text-orange-600/30" aria-hidden="true">
                                             {String(idx + 1).padStart(2, '0')}
                                         </span>
                                         <span className="icon-chip w-11 h-11">
@@ -181,7 +181,7 @@ export default function FugensanierungPage() {
                                     <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                                     {idx === WORK_STEPS.length - 1 && (
-                                        <Link href="/fliesenreparatur" className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                                        <Link href="/fliesenreparatur" className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                                             Fliesenreparatur
                                             <ArrowRight className="w-4 h-4" />
                                         </Link>
@@ -196,7 +196,7 @@ export default function FugensanierungPage() {
             {/* Zementfugen & Material */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="zement-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="zement-heading">
                         <h2 id="zement-heading" className="text-2xl font-black text-slate-900 mb-3">Zementfugen auskratzen und neu verfugen</h2>
                         <div className="space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed">
                             <p>
@@ -212,7 +212,7 @@ export default function FugensanierungPage() {
                             </p>
                         </div>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="material-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="material-heading">
                         <h2 id="material-heading" className="text-2xl font-black text-slate-900 mb-3">Fugenmaterial bei der Erneuerung: zementär oder Reaktionsharz</h2>
                         <div className="space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed">
                             <p>
@@ -225,7 +225,7 @@ export default function FugensanierungPage() {
                                 wir vor Ort.
                             </p>
                         </div>
-                        <Link href="/fliesen/verlegetechnik" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/verlegetechnik" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             Fugenmörtel im Vergleich
                             <ArrowRight className="w-4 h-4" />
                         </Link>
@@ -235,9 +235,9 @@ export default function FugensanierungPage() {
 
             {/* Abdichtungsproblem */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="abdichtung-heading">
-                <div className="rounded-[2rem] bg-amber-50 border border-amber-200 p-8 sm:p-10">
+                <div className="rounded-tile-xl bg-orange-50/60 border border-orange-200/80 p-8 sm:p-10">
                     <div className="flex items-center gap-3 mb-4">
-                        <AlertTriangle className="w-6 h-6 text-amber-600" aria-hidden="true" />
+                        <AlertTriangle className="w-6 h-6 text-orange-600" aria-hidden="true" />
                         <h2 id="abdichtung-heading" className="text-2xl font-black text-slate-900">Wenn hinter der Fuge ein Abdichtungsproblem steckt</h2>
                     </div>
                     <div className="space-y-3 text-base text-slate-700 leading-relaxed">
@@ -252,7 +252,7 @@ export default function FugensanierungPage() {
                             spezialisierten Fachbetriebs.
                         </p>
                     </div>
-                    <Link href="/schadensanalyse" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                    <Link href="/schadensanalyse" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-orange-600 hover:text-orange-700">
                         <Search className="w-4 h-4" />
                         Ursachen vor Ort klären: Schadensanalyse
                         <ArrowRight className="w-4 h-4" />
@@ -263,14 +263,14 @@ export default function FugensanierungPage() {
             {/* Review */}
             {review && (
                 <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-label="Kundenstimme">
-                    <figure className="glass-surface rounded-[2rem] p-7 sm:p-10 text-center">
+                    <figure className="glass-surface rounded-tile-xl p-7 sm:p-10 text-center">
                         <div className="flex items-center justify-center gap-3 mb-4">
                             <span className="flex items-center gap-0.5 text-amber-500" aria-label={`${review.rating} von 5 Sternen`}>
                                 {Array.from({ length: review.rating }, (_, i) => (
                                     <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
                                 ))}
                             </span>
-                            <Quote className="w-6 h-6 text-emerald-600/40" aria-hidden="true" />
+                            <Quote className="w-6 h-6 text-orange-500/40" aria-hidden="true" />
                         </div>
                         <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed">„{review.text}“</blockquote>
                         <figcaption className="mt-4 text-sm">
@@ -289,11 +289,11 @@ export default function FugensanierungPage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group block h-full glass-surface rounded-2xl p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/50 transition-all duration-300"
                             >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-emerald-600" />
+                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-500" />
                                 </span>
                                 <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
                             </Link>
@@ -302,11 +302,11 @@ export default function FugensanierungPage() {
                 </ul>
                 <p className="mt-6 text-sm text-slate-700">
                     Für eine erste Einschätzung helfen ein paar Fotos per{' '}
-                    <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="font-bold text-green-700 hover:text-green-800 hover:underline underline-offset-2">
                         WhatsApp
                     </a>{' '}
                     oder telefonisch unter{' '}
-                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700">
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-orange-600 hover:text-orange-700">
                         <Phone className="w-3.5 h-3.5" />
                         {COMPANY_DATA.contact.phone}
                     </a>

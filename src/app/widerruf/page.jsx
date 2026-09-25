@@ -19,13 +19,13 @@ export default function Widerruf() {
                 description={`Muster-Widerrufsformular gemäß § 246a Abs. 1 EGBGB für ${siteConfig.legalName}.`}
             />
             {/* Ambient Lighting Orbs */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-30 print:hidden" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-25 print:hidden" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-30 print:hidden" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-25 print:hidden" />
 
             <div className="max-w-3xl mx-auto relative z-10">
-                <div className="glass-surface rounded-[2.5rem] p-8 md:p-12">
+                <div className="glass-surface rounded-tile-xl p-8 md:p-12">
                     {/* Back Link */}
-                    <Link href="/agb" className="inline-flex items-center text-sm font-bold text-emerald-800 hover:text-emerald-700 mb-6 transition-colors print:hidden">
+                    <Link href="/agb" className="inline-flex items-center text-sm font-bold text-orange-700 hover:text-orange-600 mb-6 transition-colors print:hidden">
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         Zurück zu den AGB
                     </Link>
@@ -40,7 +40,7 @@ export default function Widerruf() {
                         </div>
                     </div>
 
-                    <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-8 text-sm text-amber-900">
+                    <div className="bg-amber-50 border border-amber-200 rounded-tile-md p-4 mb-8 text-sm text-amber-900">
                         <p>
                             <strong>Hinweis:</strong> Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie
                             bitte dieses Formular aus und senden Sie es zurück.
@@ -48,7 +48,7 @@ export default function Widerruf() {
                     </div>
 
                     {/* Form Content */}
-                    <div className="border-2 border-slate-300 rounded-2xl p-6 md:p-8 space-y-6 bg-white print:border print:shadow-none">
+                    <div className="border-2 border-slate-300 rounded-tile-lg p-6 md:p-8 space-y-6 bg-white print:border print:shadow-none">
                         {/* Address */}
                         <div className="border-b border-slate-200 pb-4">
                             <p className="font-bold text-slate-900 mb-2">An:</p>
@@ -112,13 +112,13 @@ export default function Widerruf() {
                             Formular drucken
                         </button>
                         <a href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent('Widerruf')}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Mail className="w-4 h-4 text-emerald-700" />
+                            <Mail className="w-4 h-4 text-orange-600" />
                             Per E-Mail senden
                         </a>
                     </div>
 
                     {/* Additional Info */}
-                    <div className="mt-8 p-5 bg-slate-50 border border-slate-200 rounded-2xl text-sm text-slate-700 leading-relaxed">
+                    <div className="mt-8 p-5 bg-slate-50 border border-slate-200 rounded-tile-md text-sm text-slate-700 leading-relaxed">
                         <p className="font-bold text-slate-900 mb-2">Widerrufsfolgen:</p>
                         <p className="mb-2">
                             Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen

@@ -85,7 +85,7 @@ Hohl klingende Fliesen, sich lösende Fugen oder Verfärbungen an angrenzenden W
 
 Einzelne Punkte in einer Silikonfuge sind ein Pflegefall. Zieht sich der Befall dagegen über größere Flächen, tritt er an Wänden oder Decken auf oder riecht es dauerhaft muffig, sollten Sie nicht selbst mit scharfen Mitteln hantieren. Dann gilt es, die Ursache zu finden und Schimmel fachgerecht zu entfernen, gegebenenfalls unter Einbeziehung weiterer Fachleute. Menschen mit Vorerkrankungen oder Allergien sollten bei Schimmelbefall ärztlichen Rat einholen.
 
-Als Fliesenlegermeisterbetrieb erneuern wir Fugen und Silikon, beheben Schäden am Fliesenbelag und stellen die Abdichtung im Bereich des Fliesenbelags normgerecht nach DIN 18534 wieder her. Mehr zu den Anforderungen lesen Sie auf unserer Seite zur [Abdichtung nach DIN 18534](/untergrund-abdichtung/din-18534).
+Als Fliesenleger-Fachbetrieb erneuern wir Fugen und Silikon, beheben Schäden am Fliesenbelag und stellen die Abdichtung im Bereich des Fliesenbelags normgerecht nach DIN 18534 wieder her. Mehr zu den Anforderungen lesen Sie auf unserer Seite zur [Abdichtung nach DIN 18534](/untergrund-abdichtung/din-18534).
 
 ## Fazit
 

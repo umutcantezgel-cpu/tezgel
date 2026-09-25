@@ -99,7 +99,7 @@ const FAQ = [
 
 const READ_MORE = [
     { label: 'Leistung: Untergrund & DIN 18534 Abdichtung', href: '/leistungen/untergrund' },
-    { label: 'Badsanierung vom Meisterbetrieb', href: '/bad/badsanierung' },
+    { label: 'Badsanierung vom Fachbetrieb', href: '/bad/badsanierung' },
     { label: 'Renovierung im Bestand', href: '/fliesen/renovierung' },
     { label: 'Über unseren Betrieb', href: '/unternehmen' }
 ];
@@ -107,14 +107,14 @@ const READ_MORE = [
 export default function FliesenAufFliesenPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="ueberfliesen-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
-                        <Hammer className="w-3.5 h-3.5" />
+                        <Hammer className="w-3.5 h-3.5 text-orange-600" />
                         Altbelag &middot; Überfliesen &middot; Rückbau
                     </span>
                     <h1 id="ueberfliesen-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
@@ -141,7 +141,7 @@ export default function FliesenAufFliesenPage() {
             {/* Prerequisites */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="voraussetzungen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Prüfung</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Prüfung</span>
                     <h2 id="voraussetzungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Voraussetzungen: Haftung, Hohlstellen, Ebenheit
                     </h2>
@@ -153,9 +153,9 @@ export default function FliesenAufFliesenPage() {
                     {PREREQS.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <li key={item.title} className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
+                            <li key={item.title} className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
                                 <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
+                                    <Icon className="w-6 h-6 text-orange-600" />
                                 </span>
                                 <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
@@ -169,20 +169,20 @@ export default function FliesenAufFliesenPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="vergleich-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Abwägung</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Abwägung</span>
                         <h2 id="vergleich-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Überfliesen oder Rückbau: Vor- und Nachteile
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {PRO_CONTRA.map((col) => (
-                            <article key={col.title} className="rounded-[2rem] bg-slate-50 border border-slate-200 p-7 sm:p-8">
+                            <article key={col.title} className="rounded-tile-xl bg-slate-50 border border-slate-200 p-7 sm:p-8">
                                 <h3 className="text-xl font-black text-slate-900 mb-5">{col.title}</h3>
-                                <p className="text-xs font-black uppercase tracking-widest text-emerald-800 mb-2">Spricht dafür</p>
+                                <p className="text-xs font-black uppercase tracking-widest text-orange-800 mb-2">Spricht dafür</p>
                                 <ul className="space-y-2 mb-6">
                                     {col.pros.map((text) => (
                                         <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                            <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                            <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                             <span>{text}</span>
                                         </li>
                                     ))}
@@ -205,9 +205,9 @@ export default function FliesenAufFliesenPage() {
             {/* Technique */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-label="Technik und Aufbauhöhen">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <article className="glass-surface rounded-[2rem] p-7 sm:p-9">
+                    <article className="glass-surface rounded-tile-xl p-7 sm:p-9">
                         <span className="icon-chip w-11 h-11 mb-4">
-                            <Layers className="w-5 h-5" />
+                            <Layers className="w-5 h-5 text-orange-600" />
                         </span>
                         <h2 className="text-2xl font-black text-slate-900 mb-3">Haftbrücke und Grundierung auf glasierten Altfliesen</h2>
                         <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
@@ -222,9 +222,9 @@ export default function FliesenAufFliesenPage() {
                             </p>
                         </div>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-7 sm:p-9">
+                    <article className="glass-surface rounded-tile-xl p-7 sm:p-9">
                         <span className="icon-chip w-11 h-11 mb-4">
-                            <DoorOpen className="w-5 h-5" />
+                            <DoorOpen className="w-5 h-5 text-orange-600" />
                         </span>
                         <h2 className="text-2xl font-black text-slate-900 mb-3">Aufbauhöhen: Türen, Übergänge, Sanitärobjekte</h2>
                         <ul className="space-y-3">
@@ -235,7 +235,7 @@ export default function FliesenAufFliesenPage() {
                                 'An der Wand verschieben sich Armaturen, Unterputz-Rosetten und Anschlüsse von WC und Waschtisch nach vorn.'
                             ].map((text) => (
                                 <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>{text}</span>
                                 </li>
                             ))}
@@ -248,7 +248,7 @@ export default function FliesenAufFliesenPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="rueckbau-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                     <div className="space-y-4">
-                        <span className="eyebrow eyebrow-neutral">Grenzen</span>
+                        <span className="eyebrow eyebrow-orange">Grenzen</span>
                         <h2 id="rueckbau-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Wann ein Rückbau unvermeidbar ist
                         </h2>
@@ -263,12 +263,12 @@ export default function FliesenAufFliesenPage() {
                             raten wir vom Überfliesen ab.
                         </p>
                     </div>
-                    <div className="glass-surface rounded-[2rem] p-7 sm:p-8">
+                    <div className="glass-surface rounded-tile-xl p-7 sm:p-8">
                         <h3 className="text-lg font-black text-slate-900 mb-4">Checkliste: Überfliesen kommt in Frage, wenn …</h3>
                         <ul className="space-y-3">
                             {CHECKLIST.map((text) => (
                                 <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>{text}</span>
                                 </li>
                             ))}
@@ -283,9 +283,9 @@ export default function FliesenAufFliesenPage() {
             {/* Dust-reduced removal + wet room */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-label="Rückbau im bewohnten Haus und Nassraum">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <article className="glass-surface rounded-[2rem] p-7 sm:p-9">
+                    <article className="glass-surface rounded-tile-xl p-7 sm:p-9">
                         <span className="icon-chip w-11 h-11 mb-4">
-                            <Sparkles className="w-5 h-5" />
+                            <Sparkles className="w-5 h-5 text-orange-600" />
                         </span>
                         <h2 className="text-2xl font-black text-slate-900 mb-3">Staubarmer Rückbau im bewohnten Haus</h2>
                         <p className="text-sm text-slate-700 leading-relaxed">
@@ -294,9 +294,9 @@ export default function FliesenAufFliesenPage() {
                             Luftreiniger ein. Schutt wird auf kurzem Weg aus dem Haus gebracht, am Ende wird besenrein übergeben.
                         </p>
                     </article>
-                    <article id="nassraum" className="glass-surface rounded-[2rem] p-7 sm:p-9 scroll-mt-28">
+                    <article id="nassraum" className="glass-surface rounded-tile-xl p-7 sm:p-9 scroll-mt-28">
                         <span className="icon-chip w-11 h-11 mb-4">
-                            <ShieldCheck className="w-5 h-5" />
+                            <ShieldCheck className="w-5 h-5 text-orange-600" />
                         </span>
                         <h2 className="text-2xl font-black text-slate-900 mb-3">Sonderfall Nassraum: Abdichtung neu herstellen</h2>
                         <p className="text-sm text-slate-700 leading-relaxed">
@@ -305,7 +305,7 @@ export default function FliesenAufFliesenPage() {
                             vorhandene Ablauf nicht zu einer normgerechten Anbindung, ist ein Rückbau in diesem Bereich meist die
                             sauberere Lösung.
                         </p>
-                        <Link href="/untergrund-abdichtung/din-18534" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/untergrund-abdichtung/din-18534" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
                             Abdichtung nach DIN 18534
                             <ArrowRight className="w-4 h-4" />
                         </Link>
@@ -320,10 +320,10 @@ export default function FliesenAufFliesenPage() {
                 </h2>
                 <div className="space-y-3">
                     {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-2xl px-6 py-4">
+                        <details key={item.q} className="group glass-surface rounded-tile-lg px-6 py-4">
                             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
                                 {item.q}
-                                <ChevronDown className="w-5 h-5 text-emerald-600 shrink-0 transition-transform group-open:rotate-180" />
+                                <ChevronDown className="w-5 h-5 text-orange-600 shrink-0 transition-transform group-open:rotate-180" />
                             </summary>
                             <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
                         </details>
@@ -333,7 +333,7 @@ export default function FliesenAufFliesenPage() {
 
             {/* CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10" aria-labelledby="cta-heading">
-                <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 text-center space-y-4">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
                     <h2 id="cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                         Überfliesen oder Rückbau – wir klären es vor Ort
                     </h2>
@@ -347,11 +347,11 @@ export default function FliesenAufFliesenPage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-ghost px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4 text-emerald-700" />
+                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
+                            <MessageCircle className="w-4 h-4" />
                             Fotos per WhatsApp
                         </a>
                     </div>
@@ -366,10 +366,10 @@ export default function FliesenAufFliesenPage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-2xl bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-emerald-500/80 hover:text-emerald-800 transition-all duration-300"
+                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
                             >
                                 {link.label}
-                                <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                         </li>
                     ))}

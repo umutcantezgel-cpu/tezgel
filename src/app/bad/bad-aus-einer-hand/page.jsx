@@ -26,7 +26,7 @@ export default function BadAusEinerHandPage() {
     const review = REVIEWS.find((r) => r.id === 'thorsten-a');
 
     const benefits = [
-        { icon: Users, title: 'Ein fester Meister-Ansprechpartner', desc: `Sie müssen nicht mit fünf verschiedenen Firmen telefonieren. ${COMPANY_DATA.owner.fullName} betreut Sie persönlich von A bis Z.` },
+        { icon: Users, title: 'Ein fester Fach-Ansprechpartner', desc: `Sie müssen nicht mit fünf verschiedenen Firmen telefonieren. ${COMPANY_DATA.owner.fullName} betreut Sie persönlich von A bis Z.` },
         { icon: FileCheck, title: 'Verbindlicher Festpreis', desc: 'Transparente Gesamtkalkulation aller Gewerke ohne versteckte Kosten oder böse Überraschungen.' },
         { icon: Clock, title: 'Verlässlicher Bauzeitplan', desc: 'Feste Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.' },
         { icon: Sparkles, title: 'Staubarme Ausführung', desc: 'Einsatz von Staubschutzwänden, Luftreinigern und Schonabdeckungen für saubere Wohnräume.' }
@@ -35,12 +35,12 @@ export default function BadAusEinerHandPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="einer-hand-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <HeartHandshake className="w-3.5 h-3.5" />
                         Rundum-Sorglos-Service &middot; Aßlar &amp; Wetzlar
@@ -78,7 +78,7 @@ export default function BadAusEinerHandPage() {
                         <span className="text-ceramic-gradient">Komplettbad-Service</span>
                     </h2>
                     <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Persönlich, termintreu und sauber – so arbeitet der Meisterbetrieb aus Aßlar in Wetzlar, Gießen und ganz
+                        Persönlich, termintreu und sauber – so arbeitet unser Fachbetrieb aus Aßlar in Wetzlar, Gießen und ganz
                         Mittelhessen.
                     </p>
                 </div>
@@ -89,12 +89,12 @@ export default function BadAusEinerHandPage() {
                         return (
                             <li
                                 key={b.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-md hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
-                                <h3 className="text-base font-black text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{b.title}</h3>
+                                <h3 className="text-base font-black text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{b.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{b.desc}</p>
                             </li>
                         );
@@ -102,14 +102,14 @@ export default function BadAusEinerHandPage() {
                 </ul>
 
                 {review && (
-                    <figure className="mt-12 ceramic-hero rounded-[2rem] p-7 sm:p-10 max-w-4xl mx-auto text-center">
+                    <figure className="mt-12 ceramic-hero rounded-tile-md border border-neutral-200/80 p-7 sm:p-10 max-w-4xl mx-auto text-center">
                         <div className="flex items-center justify-center gap-3 mb-4">
                             <span className="flex items-center gap-0.5 text-amber-500" aria-label={`${review.rating} von 5 Sternen`}>
                                 {Array.from({ length: review.rating }, (_, i) => (
                                     <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
                                 ))}
                             </span>
-                            <Quote className="w-6 h-6 text-emerald-600/40" aria-hidden="true" />
+                            <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
                         </div>
                         <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed">„{review.text}“</blockquote>
                         <figcaption className="mt-4 text-sm">
@@ -118,7 +118,7 @@ export default function BadAusEinerHandPage() {
                         </figcaption>
                         <Link
                             href="/referenzen"
-                            className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700"
+                            className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700"
                         >
                             Alle Kundenbewertungen ansehen
                             <ArrowRight className="w-4 h-4" />

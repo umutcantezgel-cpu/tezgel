@@ -73,14 +73,14 @@ const FURTHER_READING = [
 export default function GranitPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="granit-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Mountain className="w-3.5 h-3.5" />
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-orange">
+                        <Mountain className="w-3.5 h-3.5 text-orange-600" />
                         Silikatische Natursteine
                     </span>
                     <h1 id="granit-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
@@ -108,7 +108,7 @@ export default function GranitPage() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="granit-silikat-heading">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
-                        <span className="eyebrow eyebrow-sky mb-4">Grundlagen</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Grundlagen</span>
                         <h2 id="granit-silikat-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Silikatisch statt kalkhaltig: was das für Säure, Flecken und Pflege bedeutet
                         </h2>
@@ -122,7 +122,7 @@ export default function GranitPage() {
                                 Unempfindlich gegen Flecken sind sie deshalb nicht automatisch: Auch Granit hat Poren, in die Öl oder
                                 Rotwein eindringen können. Eine Imprägnierung und eine pH-neutrale Pflege halten die Oberfläche
                                 dauerhaft schön – Einzelheiten dazu im{' '}
-                                <Link href="/naturstein" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/naturstein" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Naturstein-Ratgeber
                                 </Link>
                                 .
@@ -130,7 +130,7 @@ export default function GranitPage() {
                         </div>
                     </div>
                     <div className="space-y-4">
-                        <div className="flex gap-3 rounded-2xl bg-amber-50 border border-amber-200 p-5 text-sm text-slate-700 leading-relaxed">
+                        <div className="flex gap-3 rounded-tile-lg bg-amber-50 border border-amber-200 p-5 text-sm text-slate-700 leading-relaxed">
                             <TriangleAlert className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" aria-hidden="true" />
                             <p>
                                 <strong className="text-amber-800">Ausnahmen kennen:</strong> Sandsteine mit kalkhaltigem Bindemittel
@@ -138,8 +138,8 @@ export default function GranitPage() {
                                 und hinterlässt Rostflecken. Fragen Sie beim Kauf nach den Prüfwerten der Sorte.
                             </p>
                         </div>
-                        <div className="flex gap-3 rounded-2xl bg-sky-50 border border-sky-200 p-5 text-sm text-slate-700 leading-relaxed">
-                            <Tag className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" aria-hidden="true" />
+                        <div className="flex gap-3 rounded-tile-lg bg-orange-50/60 border border-orange-200/80 p-5 text-sm text-slate-700 leading-relaxed">
+                            <Tag className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                             <div>
                                 <h3 className="font-black text-slate-900 mb-1">„Granit“ im Handel: Handelsname und Gesteinsart</h3>
                                 <p>
@@ -157,7 +157,7 @@ export default function GranitPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="granit-sorten-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Gesteine</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Gesteine</span>
                         <h2 id="granit-sorten-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Die silikatischen Natursteine{' '}
                             <span className="text-ceramic-gradient">im Überblick</span>
@@ -169,12 +169,12 @@ export default function GranitPage() {
                             return (
                                 <li
                                     key={item.title}
-                                    className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group glass-surface p-7 rounded-tile-2xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
-                                    <span className="icon-chip w-12 h-12 mb-5">
+                                    <span className="icon-chip w-12 h-12 mb-5 text-orange-600">
                                         <Icon className="w-6 h-6" />
                                     </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                                 </li>
                             );
@@ -186,8 +186,8 @@ export default function GranitPage() {
             {/* Slate + surfaces */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                    <article className="lg:col-span-2 glass-surface rounded-[2rem] p-7" aria-labelledby="granit-schiefer-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
+                    <article className="lg:col-span-2 glass-surface rounded-tile-2xl p-7" aria-labelledby="granit-schiefer-heading">
+                        <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                             <Hexagon className="w-5 h-5" />
                         </span>
                         <h2 id="granit-schiefer-heading" className="text-xl font-black text-slate-900 mb-4">
@@ -212,8 +212,8 @@ export default function GranitPage() {
                     </article>
 
                     <div className="lg:col-span-3">
-                        <span className="eyebrow eyebrow-sky mb-4">
-                            <Footprints className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Footprints className="w-3.5 h-3.5 text-orange-600" />
                             Oberflächen
                         </span>
                         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-3">
@@ -223,14 +223,14 @@ export default function GranitPage() {
                             Derselbe Stein kann je nach Bearbeitung spiegelglatt oder griffig sein. Die Rutschhemmung wird nach
                             DIN EN 16165 bestimmt (R9 bis R13 für das Begehen mit Schuhen, A bis C für Barfußbereiche). Welche Klasse
                             wo sinnvoll ist, erklärt unser Beitrag{' '}
-                            <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                 Rutschfeste Fliesen
                             </Link>
                             .
                         </p>
                         <ul className="space-y-3">
                             {SURFACES.map((surface) => (
-                                <li key={surface.name} className="rounded-2xl bg-white border border-slate-200 p-4 sm:flex sm:gap-4">
+                                <li key={surface.name} className="rounded-tile-lg bg-white border border-slate-200 p-4 sm:flex sm:gap-4">
                                     <span className="block sm:w-44 shrink-0 font-black text-sm text-slate-900">{surface.name}</span>
                                     <span className="block text-sm text-slate-700 leading-relaxed">{surface.text}</span>
                                 </li>
@@ -243,8 +243,8 @@ export default function GranitPage() {
             {/* Laying + use */}
             <section className="py-20 bg-white border-y border-slate-200 relative z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <article className="rounded-[2rem] bg-slate-50 border border-slate-200 p-7" aria-labelledby="granit-verlegung-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
+                    <article className="rounded-tile-2xl bg-slate-50 border border-slate-200 p-7" aria-labelledby="granit-verlegung-heading">
+                        <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                             <Ruler className="w-5 h-5" />
                         </span>
                         <h2 id="granit-verlegung-heading" className="text-xl font-black text-slate-900 mb-4">
@@ -262,8 +262,8 @@ export default function GranitPage() {
                             </p>
                         </div>
                     </article>
-                    <article className="rounded-[2rem] bg-slate-50 border border-slate-200 p-7" aria-labelledby="granit-einsatz-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
+                    <article className="rounded-tile-2xl bg-slate-50 border border-slate-200 p-7" aria-labelledby="granit-einsatz-heading">
+                        <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                             <Mountain className="w-5 h-5" />
                         </span>
                         <h2 id="granit-einsatz-heading" className="text-xl font-black text-slate-900 mb-4">
@@ -274,11 +274,11 @@ export default function GranitPage() {
                                 Innen eignen sich silikatische Steine für Flur, Küche, Wohnbereich und Bad. Draußen entscheidet die
                                 Frostbeständigkeit der jeweiligen Sorte; eine griffige Oberfläche ist Pflicht. Passende Aufbauten zeigt
                                 unser Ratgeber{' '}
-                                <Link href="/balkon-terrasse/terrassenplatten" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/balkon-terrasse/terrassenplatten" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Terrassenplatten
                                 </Link>
                                 ; für Stufen aus Naturstein lohnt ein Blick in den{' '}
-                                <Link href="/treppen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/treppen" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Treppen-Ratgeber
                                 </Link>
                                 .
@@ -286,7 +286,7 @@ export default function GranitPage() {
                             <p>
                                 Gepflegt wird mit Wasser und pH-neutralem Steinreiniger. Ob und wann eine Imprägnierung sinnvoll ist,
                                 erklärt der{' '}
-                                <Link href="/naturstein" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/naturstein" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Naturstein-Ratgeber
                                 </Link>
                                 .
@@ -298,16 +298,16 @@ export default function GranitPage() {
 
             {/* CTA + further reading */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10" aria-labelledby="granit-cta-heading">
-                <div className="mb-10 flex gap-3 rounded-2xl bg-sky-50 border border-sky-200 p-5 text-sm text-slate-700 leading-relaxed">
-                    <Info className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" aria-hidden="true" />
+                <div className="mb-10 flex gap-3 rounded-tile-lg bg-orange-50/60 border border-orange-200/80 p-5 text-sm text-slate-700 leading-relaxed">
+                    <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                     <p>
                         Naturstein variiert von Platte zu Platte in Farbe und Zeichnung. Das ist Teil seines Charakters – wir sortieren
                         größere Flächen vor dem Verlegen, damit das Gesamtbild stimmig wirkt.
                     </p>
                 </div>
 
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">Beratung &amp; Aufmaß</span>
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-orange">Beratung &amp; Aufmaß</span>
                     <h2 id="granit-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
                         Granit, Schiefer oder Quarzit für Ihr Projekt?
                     </h2>
@@ -321,7 +321,7 @@ export default function GranitPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a
@@ -336,9 +336,9 @@ export default function GranitPage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-[2rem] p-7" aria-labelledby="granit-weiterlesen-heading">
+                <nav className="mt-10 glass-surface rounded-tile-2xl p-7" aria-labelledby="granit-weiterlesen-heading">
                     <h2 id="granit-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
                         Weiterlesen
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -346,7 +346,7 @@ export default function GranitPage() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}

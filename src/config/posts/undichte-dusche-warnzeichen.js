@@ -78,7 +78,7 @@ Liegt die Ursache dagegen nur in gealterten Fugen und ist die Abdichtung intakt,
 
 Dauerhaft dunkle Fugen, Schimmel am Silikon, hohl klingende Fliesen, Flecken an Nachbarflächen und muffiger Geruch sind ernst zu nehmende Hinweise auf Feuchte hinter den Fliesen. Überstreichen oder Nachsilikonieren verdeckt das Problem nur. Klären Sie zuerst, ob eine Leitung undicht ist, und lassen Sie dann die Ursache prüfen, bevor saniert wird.
 
-Sie haben eines der Warnzeichen entdeckt? [Kontaktieren Sie uns](/kontakt) – als Fliesenlegermeisterbetrieb aus Aßlar sehen wir uns Ihre Dusche an und besprechen mit Ihnen den sinnvollen nächsten Schritt.`
+Sie haben eines der Warnzeichen entdeckt? [Kontaktieren Sie uns](/kontakt) – als Fliesenleger-Fachbetrieb aus Aßlar sehen wir uns Ihre Dusche an und besprechen mit Ihnen den sinnvollen nächsten Schritt.`
 };
 
 export default post;

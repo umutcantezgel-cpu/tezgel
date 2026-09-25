@@ -27,10 +27,10 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://tezgel.de'),
   title: {
-    default: 'Fliesenverlegung Tezgel | Meisterbetrieb für exklusive Fliesen & Badsanierung Aßlar & Wetzlar',
+    default: 'Fliesenverlegung Tezgel | Fachbetrieb für exklusive Fliesen & Badsanierung Aßlar & Wetzlar',
     template: '%s | Fliesenverlegung Tezgel'
   },
-  description: 'Ihr Meisterbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Feinsteinzeug, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+  description: 'Ihr Fachbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Feinsteinzeug, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
   keywords: [
     'Fliesenverlegung Tezgel',
     'Deniz Tezgel',
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    title: 'Fliesenverlegung Tezgel | Meisterbetrieb Aßlar & Wetzlar',
-    description: 'Ihr Meisterbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, Badsanierung, Terrassen & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+    title: 'Fliesenverlegung Tezgel | Fachbetrieb Aßlar & Wetzlar',
+    description: 'Ihr Fachbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, Badsanierung, Terrassen & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
     siteName: 'Fliesenverlegung Tezgel',
   },
   robots: {
@@ -96,7 +96,7 @@ export default function RootLayout({
         <meta name="ICBM" content="50.5900, 8.4600" />
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 font-sans">
+      <body className="antialiased min-h-screen flex flex-col bg-[#FAFAFA] text-neutral-900 font-sans">
         <AuthProvider>
           <ContentProvider>
             <TrackingScripts />

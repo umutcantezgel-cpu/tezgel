@@ -120,12 +120,12 @@ const FURTHER_READING = [
 export default function BalkonTerrassePage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="balkon-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Layers className="w-3.5 h-3.5" />
                         Ratgeber Außenbeläge
@@ -154,7 +154,7 @@ export default function BalkonTerrassePage() {
             {/* Why outdoor rules differ */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="balkon-regeln-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Grundlagen</span>
+                    <span className="eyebrow mb-4">Grundlagen</span>
                     <h2 id="balkon-regeln-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Warum Außenbeläge eigene Regeln brauchen
                     </h2>
@@ -167,7 +167,7 @@ export default function BalkonTerrassePage() {
                     {OUTDOOR_RULES.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <li key={item.title} className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300">
+                            <li key={item.title} className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
@@ -180,7 +180,7 @@ export default function BalkonTerrassePage() {
                 <p className="mt-8 max-w-3xl mx-auto text-sm text-slate-700 leading-relaxed text-center">
                     Typische Schadensbilder, Gefälle und Entwässerung, Abdichtungsanschlüsse und Tropfkanten behandeln wir ausführlich
                     auf der Seite{' '}
-                    <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
                         Balkonsanierung
                     </Link>
                     .
@@ -202,7 +202,7 @@ export default function BalkonTerrassePage() {
                         </p>
                     </div>
 
-                    <div className="overflow-x-auto rounded-3xl border border-slate-200">
+                    <div className="overflow-x-auto rounded-tile-lg border border-slate-200">
                         <table className="w-full min-w-[720px] text-left text-sm">
                             <caption className="sr-only">Vergleich der Aufbauten für Balkon und Terrasse</caption>
                             <thead className="bg-slate-100 text-slate-900">
@@ -234,8 +234,8 @@ export default function BalkonTerrassePage() {
                         </table>
                     </div>
 
-                    <div className="mt-6 flex gap-3 rounded-2xl bg-sky-50 border border-sky-200 p-5 text-sm text-slate-700 leading-relaxed">
-                        <Info className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" aria-hidden="true" />
+                    <div className="mt-6 flex gap-3 rounded-tile-md bg-orange-50 border border-orange-200 p-5 text-sm text-slate-700 leading-relaxed">
+                        <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                         <p>
                             <strong className="text-slate-900">Plattenstärke:</strong> 2-cm-Platten sind für Stelzlager und Splittbett
                             nötig, weil sie dort frei spannen bzw. punktuell aufliegen. Bei gebundener Verlegung trägt das Bett die
@@ -248,7 +248,7 @@ export default function BalkonTerrassePage() {
             {/* Situations */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="balkon-situation-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Entscheidungshilfe</span>
+                    <span className="eyebrow mb-4">Entscheidungshilfe</span>
                     <h2 id="balkon-situation-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Welche Lösung passt zu Ihrer Fläche?
                     </h2>
@@ -257,7 +257,7 @@ export default function BalkonTerrassePage() {
                     {SITUATIONS.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <li key={item.title} className="glass-surface p-7 rounded-[2rem]">
+                            <li key={item.title} className="glass-surface p-7 rounded-tile-lg">
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
@@ -272,8 +272,8 @@ export default function BalkonTerrassePage() {
                     {BENEFITS.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <li key={item.title} className="flex gap-4 rounded-2xl bg-white border border-slate-200 p-5">
-                                <Icon className="w-6 h-6 text-emerald-600 shrink-0" aria-hidden="true" />
+                            <li key={item.title} className="flex gap-4 rounded-tile-md bg-white border border-slate-200 p-5">
+                                <Icon className="w-6 h-6 text-orange-600 shrink-0" aria-hidden="true" />
                                 <div>
                                     <h3 className="font-black text-sm text-slate-900">{item.title}</h3>
                                     <p className="mt-1 text-sm text-slate-700 leading-relaxed">{item.desc}</p>
@@ -300,16 +300,16 @@ export default function BalkonTerrassePage() {
                                 <li key={page.path}>
                                     <Link
                                         href={page.path}
-                                        className="group glass-surface p-7 rounded-[2rem] h-full flex flex-col hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                        className="group glass-surface p-7 rounded-tile-lg h-full flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                     >
                                         <span className="icon-chip w-12 h-12 mb-5">
                                             <Icon className="w-6 h-6" />
                                         </span>
-                                        <h3 className="font-black text-lg text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                                        <h3 className="font-black text-lg text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">
                                             {page.name}
                                         </h3>
                                         <p className="text-sm text-slate-700 leading-relaxed mb-5">{page.desc}</p>
-                                        <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-emerald-800">
+                                        <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-orange-800">
                                             Weiterlesen
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                         </span>
@@ -323,7 +323,7 @@ export default function BalkonTerrassePage() {
 
             {/* From guide to offer */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10" aria-labelledby="balkon-angebot-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">Vom Ratgeber zum Angebot</span>
                     <h2 id="balkon-angebot-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
                         Wir sehen uns Ihre Fläche vor Ort an
@@ -339,7 +339,7 @@ export default function BalkonTerrassePage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a
@@ -354,9 +354,9 @@ export default function BalkonTerrassePage() {
                     </div>
                 </div>
 
-                <nav className="mt-10 glass-surface rounded-[2rem] p-7" aria-labelledby="balkon-weiterlesen-heading">
+                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="balkon-weiterlesen-heading">
                     <h2 id="balkon-weiterlesen-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-emerald-600" aria-hidden="true" />
+                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
                         Weiterlesen
                     </h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -364,7 +364,7 @@ export default function BalkonTerrassePage() {
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}

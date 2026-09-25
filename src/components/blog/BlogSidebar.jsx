@@ -29,9 +29,9 @@ const BlogSidebar = ({
             {/* ═══════════════════════════════════════════════════════════════
                 SEARCH WIDGET
             ═══════════════════════════════════════════════════════════════ */}
-            <div className="glass-surface rounded-3xl p-6">
+            <div className="glass-surface rounded-tile-lg p-6">
                 <h3 className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
-                    <Search className="w-5 h-5 text-emerald-600" />
+                    <Search className="w-5 h-5 text-orange-600" />
                     Suche
                 </h3>
                 <div className="relative">
@@ -41,9 +41,9 @@ const BlogSidebar = ({
                         placeholder="Artikel suchen..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full pl-4 pr-12 py-4 rounded-2xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600 transition-all"
+                        className="w-full pl-4 pr-12 py-4 rounded-tile-md border border-slate-300 bg-white text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all"
                     />
-                    <span className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center pointer-events-none" aria-hidden="true">
+                    <span className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-tile-sm bg-orange-600 text-white flex items-center justify-center pointer-events-none" aria-hidden="true">
                         <Search className="w-5 h-5" />
                     </span>
                 </div>
@@ -53,7 +53,7 @@ const BlogSidebar = ({
                 CATEGORIES WIDGET
             ═══════════════════════════════════════════════════════════════ */}
             {categories.length > 1 && (
-                <div className="glass-surface rounded-3xl p-6">
+                <div className="glass-surface rounded-tile-lg p-6">
                     <h3 className="text-lg font-black text-slate-900 mb-4">Kategorien</h3>
                     <div className="space-y-2">
                         {categories.map(category => (
@@ -62,19 +62,19 @@ const BlogSidebar = ({
                                 key={category.id}
                                 onClick={() => setActiveCategory(category.id)}
                                 aria-pressed={activeCategory === category.id}
-                                className={`w-full flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 ${activeCategory === category.id
-                                    ? 'bg-emerald-700 border-emerald-700 text-white shadow-md'
-                                    : 'bg-white border-slate-200 text-slate-800 hover:border-emerald-500/80 hover:bg-slate-50'
+                                className={`w-full flex items-center justify-between p-4 rounded-tile-md border transition-all duration-300 ${activeCategory === category.id
+                                    ? 'bg-orange-600 border-orange-600 text-white shadow-md'
+                                    : 'bg-white border-slate-200 text-slate-800 hover:border-orange-500/80 hover:bg-slate-50'
                                     }`}
                             >
                                 <div className="flex items-center space-x-3">
-                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${activeCategory === category.id
-                                        ? 'bg-emerald-800'
-                                        : 'bg-emerald-50 border border-emerald-200'
+                                    <div className={`w-10 h-10 rounded-tile-sm flex items-center justify-center ${activeCategory === category.id
+                                        ? 'bg-orange-700'
+                                        : 'bg-orange-50 border border-orange-200'
                                         }`}>
                                         <IconWrapper
                                             name={category.icon}
-                                            className={`w-5 h-5 ${activeCategory === category.id ? 'text-white' : 'text-emerald-600'}`}
+                                            className={`w-5 h-5 ${activeCategory === category.id ? 'text-white' : 'text-orange-600'}`}
                                         />
                                     </div>
                                     <span className="font-bold text-sm">{category.name}</span>
@@ -91,7 +91,7 @@ const BlogSidebar = ({
             {/* ═══════════════════════════════════════════════════════════════
                 CTA WIDGET
             ═══════════════════════════════════════════════════════════════ */}
-            <div className="ceramic-hero rounded-3xl p-6 group">
+            <div className="ceramic-hero rounded-tile-lg p-6 group">
                 <div className="icon-chip w-14 h-14 mb-4">
                     <Phone className="w-7 h-7" />
                 </div>
@@ -106,7 +106,7 @@ const BlogSidebar = ({
                         <ArrowRight className="w-4 h-4" />
                     </Link>
                     <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost w-full px-5 py-3 text-xs tabular-nums">
-                        <Phone className="w-4 h-4 text-emerald-700" />
+                        <Phone className="w-4 h-4 text-orange-600" />
                         {COMPANY_DATA.contact.phone}
                     </a>
                 </div>

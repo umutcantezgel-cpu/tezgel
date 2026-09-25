@@ -52,9 +52,9 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string }> 
 
 export const metadata: Metadata = {
     title: {
-        absolute: 'Fliesenverlegung Tezgel | Meisterbetrieb für Fliesen & Badsanierung in Aßlar & Wetzlar'
+        absolute: 'Fliesenverlegung Tezgel | Fachbetrieb für Fliesen & Badsanierung in Aßlar & Wetzlar'
     },
-    description: 'Ihr Meisterbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+    description: 'Ihr Fachbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
     alternates: {
         canonical: '/'
     },
@@ -70,7 +70,7 @@ const QUICK_PICKS: Array<{ title: string; text: string; href: string; icon: Luci
     { title: 'Untergrund & Abdichtung', text: 'Estrichausgleich, DIN 18534', href: '/leistungen/untergrund', icon: ShieldCheck }
 ];
 
-const PILLAR_EYEBROWS = ['Normgerechte Sicherheit', 'Meisterhafte Ausführung', 'Wohnkomfort bei Sanierung'];
+const PILLAR_EYEBROWS = ['Normgerechte Sicherheit', 'Fachgerechte Ausführung', 'Wohnkomfort bei Sanierung'];
 
 const PORTAL_HUBS: Array<{
     eyebrow: string;
@@ -165,8 +165,8 @@ export default function HomePage() {
 
     return (
         <div className="relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
             <div className="ambient-glow-slate top-[1500px] left-1/4 opacity-40" />
 
             {/* 1. HERO */}
@@ -175,37 +175,37 @@ export default function HomePage() {
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                         <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
                             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-                                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-900 text-xs font-bold shadow-xs">
-                                    <Award className="w-4 h-4 text-emerald-700" />
-                                    <span>Meisterbetrieb &middot; {COMPANY_DATA.authority.shortName}</span>
-                                    <span className="text-emerald-300">&bull;</span>
-                                    <span className="flex items-center gap-1 text-slate-700">
+                                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-orange-50 border border-orange-200/80 text-orange-900 text-xs font-bold shadow-xs">
+                                    <Award className="w-4 h-4 text-orange-700" />
+                                    <span>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName}</span>
+                                    <span className="text-orange-300">&bull;</span>
+                                    <span className="flex items-center gap-1 text-neutral-700">
                                         <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
                                         {google.displayRating} ({google.count} Bewertungen)
                                     </span>
                                 </div>
-                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sky-50 border border-sky-200/80 text-sky-900 text-xs font-bold">
-                                    <ShieldCheck className="w-3.5 h-3.5 text-sky-700" />
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-50 border border-red-200/80 text-red-900 text-xs font-bold">
+                                    <ShieldCheck className="w-3.5 h-3.5 text-red-700" />
                                     DIN 18534 Abdichtung
                                 </span>
                             </div>
 
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.05]">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-[1.05]">
                                 Perfektion auf jedem{' '}
                                 <span className="text-ceramic-gradient">Quadratmeter.</span>
-                                <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-700">
+                                <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-700">
                                     Fliesenverlegung &amp; Badsanierung aus Aßlar
                                 </span>
                             </h1>
 
-                            <p className="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            <p className="text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                                 Fugenarme XXL-Großformate, barrierefreie Walk-In-Duschen, repräsentative Wohnbereiche und
                                 frostsichere Terrassen – millimetergenau verlegt, normgerecht abgedichtet nach DIN 18534 und
                                 mit Staubschutz-Garantie im bewohnten Zuhause.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 w-full sm:w-auto">
-                                <Link href="/kontakt" className="btn-primary w-full sm:w-auto justify-center group shadow-md shadow-emerald-900/15 py-3.5">
+                                <Link href="/kontakt" className="btn-primary w-full sm:w-auto justify-center group shadow-md shadow-orange-900/15 py-3.5">
                                     Vor-Ort-Aufmaß vereinbaren
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
@@ -220,50 +220,50 @@ export default function HomePage() {
                                         WhatsApp
                                     </a>
                                     <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto text-xs sm:text-sm justify-center py-3">
-                                        <Phone className="w-4 h-4 text-emerald-700" />
+                                        <Phone className="w-4 h-4 text-orange-700" />
                                         {contact.phone}
                                     </a>
                                 </div>
                             </div>
 
-                            <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-sm font-semibold text-slate-700">
+                            <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-sm font-semibold text-neutral-700">
                                 {['Kostenfreies Vor-Ort-Aufmaß', 'Staubschutz-Garantie', 'Verbindlicher Festpreis'].map((item) => (
                                     <li key={item} className="flex items-center gap-1.5">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                                        <CheckCircle2 className="w-4 h-4 text-orange-600" />
                                         {item}
                                     </li>
                                 ))}
                             </ul>
 
-                            <figure className="glass-surface rounded-2xl px-5 py-4 max-w-xl mx-auto lg:mx-0 text-left border border-slate-200">
-                                <blockquote className="text-sm italic text-slate-800">„{motto}“</blockquote>
-                                <figcaption className="mt-1 text-xs font-bold text-emerald-800">
-                                    — {owner.fullName}, Inhaber &amp; Handwerksmeister
+                            <figure className="glass-surface rounded-xl px-5 py-4 max-w-xl mx-auto lg:mx-0 text-left border border-neutral-200">
+                                <blockquote className="text-sm italic text-neutral-800">&bdquo;{motto}&ldquo;</blockquote>
+                                <figcaption className="mt-1 text-xs font-bold text-orange-800">
+                                    — {owner.fullName}, Inhaber
                                 </figcaption>
                             </figure>
                         </div>
 
                         {/* Hero Right: Real Craftsmanship Showcase & Quick Access */}
                         <div className="lg:col-span-5 space-y-4">
-                            <div className="glass-surface rounded-[2.5rem] p-3 sm:p-4 shadow-xl border border-slate-200 overflow-hidden group">
-                                <div className="relative w-full h-72 sm:h-80 rounded-[2rem] overflow-hidden">
+                            <div className="glass-surface rounded-[2rem] p-3 sm:p-4 shadow-xl border border-neutral-200 overflow-hidden group">
+                                <div className="relative w-full h-72 sm:h-80 rounded-2xl overflow-hidden">
                                     <Image
                                         src="/images/bad/bad-beleuchtete-nischen.webp"
-                                        alt="Meisterhafte Badsanierung mit beleuchteten Nischen und Großformatfliesen von Fliesenverlegung Tezgel"
+                                        alt="Fachgerechte Badsanierung mit beleuchteten Nischen und Großformatfliesen von Fliesenverlegung Tezgel"
                                         fill
                                         priority
                                         sizes="(max-width: 1024px) 100vw, 500px"
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent" />
                                     <div className="absolute top-4 left-4">
-                                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 text-emerald-900 font-bold text-xs shadow-md">
-                                            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-                                            Meister-Referenz Mittelhessen
+                                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-white/95 text-orange-900 font-bold text-xs shadow-md">
+                                            <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+                                            Referenz Mittelhessen
                                         </span>
                                     </div>
                                     <div className="absolute bottom-4 left-4 right-4 text-white">
-                                        <p className="text-xs font-bold text-emerald-300 uppercase tracking-wider mb-1">
+                                        <p className="text-xs font-bold text-orange-300 uppercase tracking-wider mb-1">
                                             Komplettbad &middot; Fugenarme Verlegung
                                         </p>
                                         <p className="text-base sm:text-lg font-bold leading-snug drop-shadow-sm">
@@ -273,19 +273,19 @@ export default function HomePage() {
                                 </div>
 
                                 {/* Compact quick picker tabs underneath */}
-                                <div className="mt-3 p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <div className="flex items-center justify-between text-xs font-bold text-slate-700 mb-2 px-1">
+                                <div className="mt-3 p-3 bg-neutral-50 rounded-xl border border-neutral-100">
+                                    <div className="flex items-center justify-between text-xs font-bold text-neutral-700 mb-2 px-1">
                                         <span>Gewerke-Direktwahl</span>
-                                        <span className="text-emerald-700">Aßlar &middot; Wetzlar &middot; Hessen</span>
+                                        <span className="text-orange-700">Aßlar &middot; Wetzlar &middot; Hessen</span>
                                     </div>
                                     <div className="grid grid-cols-2 gap-2">
                                         {QUICK_PICKS.map(({ title, href, icon: Icon }) => (
                                             <Link
                                                 key={href}
                                                 href={href}
-                                                className="flex items-center gap-2 p-2 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:text-emerald-800 transition-all text-xs font-bold text-slate-800 shadow-xs"
+                                                className="flex items-center gap-2 p-2 rounded-xl bg-white border border-neutral-200 hover:border-orange-500 hover:text-orange-800 transition-all text-xs font-bold text-neutral-800 shadow-xs"
                                             >
-                                                <Icon className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                                                <Icon className="w-3.5 h-3.5 text-orange-600 shrink-0" />
                                                 <span className="truncate">{title.split('&')[0]}</span>
                                             </Link>
                                         ))}
@@ -306,16 +306,16 @@ export default function HomePage() {
                             return (
                                 <li
                                     key={pillar.title}
-                                    className="group glass-surface rounded-3xl p-7 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                    className="group glass-surface rounded-2xl p-7 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
                                 >
                                     <span className="icon-chip w-12 h-12 mb-5">
                                         <Icon className="w-6 h-6" />
                                     </span>
-                                    <span className="block text-[11px] font-black uppercase tracking-widest text-emerald-800 mb-1">
+                                    <span className="block text-[11px] font-black uppercase tracking-widest text-orange-800 mb-1">
                                         {PILLAR_EYEBROWS[idx]}
                                     </span>
-                                    <h3 className="text-lg font-black text-slate-900 mb-2">{pillar.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{pillar.description}</p>
+                                    <h3 className="text-lg font-black text-neutral-900 mb-2">{pillar.title}</h3>
+                                    <p className="text-sm text-neutral-700 leading-relaxed">{pillar.description}</p>
                                 </li>
                             );
                         })}
@@ -324,14 +324,14 @@ export default function HomePage() {
             </section>
 
             {/* 3. PORTAL SHOWCASE */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" id="portal-netzwerk" aria-labelledby="portal-heading">
+            <section className="py-20 bg-white border-y border-neutral-200 relative z-10" id="portal-netzwerk" aria-labelledby="portal-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <span className="eyebrow mb-4">Fachbereiche &amp; Tools</span>
-                        <h2 id="portal-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        <h2 id="portal-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
                             Alles für Ihr Vorhaben auf über 100 Fachseiten
                         </h2>
-                        <p className="mt-3 text-base text-slate-700">
+                        <p className="mt-3 text-base text-neutral-700">
                             Von der schlüsselfertigen Badsanierung über Planungs-Tools bis zu den Standorten in Hessen –
                             wählen Sie Ihren Themenbereich.
                         </p>
@@ -341,17 +341,17 @@ export default function HomePage() {
                         {PORTAL_HUBS.map(({ eyebrow, title, text, icon: Icon, links, cta }) => (
                             <article
                                 key={eyebrow}
-                                className="group flex flex-col justify-between p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:border-emerald-500/80 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group flex flex-col justify-between p-6 rounded-2xl bg-neutral-50 border border-neutral-200 hover:bg-white hover:border-orange-500/80 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
                             >
                                 <div>
                                     <span className="icon-chip w-12 h-12 mb-4">
                                         <Icon className="w-6 h-6" />
                                     </span>
-                                    <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800">{eyebrow}</span>
-                                    <h3 className="text-lg font-black text-slate-900 mt-1 mb-2">{title}</h3>
-                                    <p className="text-sm text-slate-700 mb-4 leading-relaxed">{text}</p>
+                                    <span className="text-[11px] font-black uppercase tracking-widest text-orange-800">{eyebrow}</span>
+                                    <h3 className="text-lg font-black text-neutral-900 mt-1 mb-2">{title}</h3>
+                                    <p className="text-sm text-neutral-700 mb-4 leading-relaxed">{text}</p>
                                     <ul
-                                        className={`border-t border-slate-200 pt-3 text-sm font-semibold text-slate-800 ${
+                                        className={`border-t border-neutral-200 pt-3 text-sm font-semibold text-neutral-800 ${
                                             links.length > 6 ? 'flex flex-wrap gap-1.5' : 'space-y-1.5'
                                         }`}
                                     >
@@ -360,13 +360,13 @@ export default function HomePage() {
                                                 {links.length > 6 ? (
                                                     <Link
                                                         href={link.href}
-                                                        className="inline-block px-2.5 py-1 rounded-full bg-white border border-slate-200 text-xs hover:border-emerald-500/80 hover:text-emerald-800 transition-colors"
+                                                        className="inline-block px-2.5 py-1 rounded-xl bg-white border border-neutral-200 text-xs hover:border-orange-500/80 hover:text-orange-800 transition-colors"
                                                     >
                                                         {link.label}
                                                     </Link>
                                                 ) : (
-                                                    <Link href={link.href} className="flex items-center gap-1.5 hover:text-emerald-800 transition-colors">
-                                                        <ArrowRight className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                                                    <Link href={link.href} className="flex items-center gap-1.5 hover:text-orange-800 transition-colors">
+                                                        <ArrowRight className="w-3.5 h-3.5 text-orange-600 shrink-0" />
                                                         {link.label}
                                                     </Link>
                                                 )}
@@ -374,8 +374,8 @@ export default function HomePage() {
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="pt-4 mt-4 border-t border-slate-200">
-                                    <Link href={cta.href} className="text-sm font-bold text-emerald-800 hover:text-emerald-700 inline-flex items-center gap-1">
+                                <div className="pt-4 mt-4 border-t border-neutral-200">
+                                    <Link href={cta.href} className="text-sm font-bold text-orange-800 hover:text-orange-700 inline-flex items-center gap-1">
                                         {cta.label}
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
@@ -385,7 +385,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="mt-10">
-                        <p className="text-center text-[11px] font-black uppercase tracking-widest text-slate-600 mb-4">
+                        <p className="text-center text-[11px] font-black uppercase tracking-widest text-neutral-600 mb-4">
                             Fachthemen im Detail
                         </p>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -393,17 +393,17 @@ export default function HomePage() {
                                 <li key={hub.id}>
                                     <Link
                                         href={hub.path}
-                                        className="group flex items-center justify-between gap-3 px-5 py-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500/80 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(15,23,42,0.18)] transition-all duration-300"
+                                        className="group flex items-center justify-between gap-3 px-5 py-4 rounded-xl bg-white border border-neutral-200 hover:border-orange-500/80 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(23,23,23,0.18)] transition-all duration-200"
                                     >
                                         <span>
-                                            <span className="block text-sm font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                            <span className="block text-sm font-black text-neutral-900 group-hover:text-orange-800 transition-colors">
                                                 {hub.name}
                                             </span>
-                                            <span className="block text-xs text-slate-600">
+                                            <span className="block text-xs text-neutral-600">
                                                 {hub.pages.length} Seiten &middot; {hub.description}
                                             </span>
                                         </span>
-                                        <ArrowRight className="w-4 h-4 text-emerald-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                                        <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                                     </Link>
                                 </li>
                             ))}
@@ -416,14 +416,14 @@ export default function HomePage() {
             <section className="py-20 relative z-10" id="leistungen" aria-labelledby="leistungen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-14">
-                        <span className="eyebrow mb-4">Meister-Fachgewerke</span>
-                        <h2 id="leistungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        <span className="eyebrow mb-4">Fachgewerke</span>
+                        <h2 id="leistungen-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
                             Fliesen-, Platten- &amp; Verlegearbeiten{' '}
-                            <span className="text-ceramic-gradient">in Meisterqualität</span>
+                            <span className="text-ceramic-gradient">in Fachqualität</span>
                         </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                        <p className="mt-3 text-base text-neutral-700 leading-relaxed">
                             Ob barrierefreie Wellnessoase, offenes Wohnen mit Feinsteinzeug oder die wetterfeste Terrasse:
-                            Meisterqualität aus Aßlar für den Lahn-Dill-Kreis und Hessen.
+                            Fachqualität aus Aßlar für den Lahn-Dill-Kreis und Hessen.
                         </p>
                     </div>
 
@@ -435,13 +435,13 @@ export default function HomePage() {
                             return (
                                 <article
                                     key={srv.id}
-                                    className={`group glass-surface rounded-[2rem] p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_24px_48px_-16px_rgba(15,23,42,0.18)] transition-all duration-300 ${BENTO_LAYOUT[srv.id] || ''} ${
+                                    className={`group glass-surface rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_24px_48px_-16px_rgba(23,23,23,0.18)] transition-all duration-200 ${BENTO_LAYOUT[srv.id] || ''} ${
                                         isFeature ? 'ceramic-hero' : ''
                                     }`}
                                 >
                                     <div>
                                         {/* Craftsmanship Photo */}
-                                        <div className="relative w-full h-44 sm:h-48 mb-5 rounded-2xl overflow-hidden border border-slate-100 shadow-inner">
+                                        <div className="relative w-full h-44 sm:h-48 mb-5 rounded-xl overflow-hidden border border-neutral-100 shadow-inner">
                                             <Image
                                                 src={imgData?.src || '/images/bad/walk-in-dusche.webp'}
                                                 alt={imgData?.alt || srv.name}
@@ -449,8 +449,8 @@ export default function HomePage() {
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                                            <span className="absolute bottom-2.5 left-2.5 text-[11px] font-bold text-white bg-slate-900/70 backdrop-blur-xs px-2.5 py-1 rounded-full">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
+                                            <span className="absolute bottom-2.5 left-2.5 text-[11px] font-bold text-white bg-neutral-900/70 backdrop-blur-xs px-2.5 py-1 rounded-lg">
                                                 {imgData?.tag || srv.name}
                                             </span>
                                         </div>
@@ -459,25 +459,25 @@ export default function HomePage() {
                                             <span className="icon-chip w-10 h-10">
                                                 <Icon className="w-5 h-5" />
                                             </span>
-                                            <span className="text-[11px] font-black uppercase tracking-wider text-slate-500">Meister-Fachgewerk</span>
+                                            <span className="text-[11px] font-black uppercase tracking-wider text-neutral-500">Fachgewerk</span>
                                         </div>
-                                        <h3 className={`${isFeature ? 'text-2xl' : 'text-xl'} font-black text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors`}>
+                                        <h3 className={`${isFeature ? 'text-2xl' : 'text-xl'} font-black text-neutral-900 mb-2 group-hover:text-orange-800 transition-colors`}>
                                             {srv.name}
                                         </h3>
-                                        <p className="text-sm text-slate-700 mb-5 leading-relaxed">{srv.shortDescription}</p>
+                                        <p className="text-sm text-neutral-700 mb-5 leading-relaxed">{srv.shortDescription}</p>
                                         <ul className={`grid gap-2 mb-6 ${isFeature ? 'sm:grid-cols-2' : ''}`}>
                                             {srv.features.slice(0, isFeature ? 6 : 3).map((feat) => (
-                                                <li key={feat} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                                                    <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                                <li key={feat} className="flex items-start gap-2 text-xs sm:text-sm text-neutral-700">
+                                                    <Check className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                                                     <span>{feat}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
+                                    <div className="pt-5 border-t border-neutral-200 flex flex-wrap items-center justify-between gap-3">
                                         <Link
                                             href={`/leistungen/${srv.id}`}
-                                            className="text-sm font-bold text-emerald-800 hover:text-emerald-700 inline-flex items-center gap-1.5"
+                                            className="text-sm font-bold text-orange-800 hover:text-orange-700 inline-flex items-center gap-1.5"
                                         >
                                             Details &amp; Ausführung
                                             <ArrowRight className="w-4 h-4" />
@@ -499,11 +499,11 @@ export default function HomePage() {
             <section className="py-20 relative z-10" id="ablauf" aria-labelledby="ablauf-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-14">
-                        <span className="eyebrow eyebrow-sky mb-4">Transparenter Ablauf</span>
-                        <h2 id="ablauf-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        <span className="eyebrow eyebrow-red mb-4">Transparenter Ablauf</span>
+                        <h2 id="ablauf-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
                             In 3 Schritten zu Ihrem neuen Belag
                         </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                        <p className="mt-3 text-base text-neutral-700 leading-relaxed">
                             Keine Überraschungen, keine versteckten Kosten – von der ersten Begutachtung bis zur sauberen
                             Abnahme durch {owner.fullName} persönlich.
                         </p>
@@ -513,16 +513,16 @@ export default function HomePage() {
                         {processSteps.map((stepItem) => (
                             <li
                                 key={stepItem.step}
-                                className="group glass-surface rounded-3xl p-8 relative overflow-hidden hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group glass-surface rounded-2xl p-8 relative overflow-hidden hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
                             >
-                                <span className="font-display block text-5xl font-black tabular-nums text-emerald-700/40 group-hover:text-emerald-700/60 transition-colors mb-4" aria-hidden="true">
+                                <span className="font-display block text-5xl font-black tabular-nums text-orange-700/40 group-hover:text-orange-700/60 transition-colors mb-4" aria-hidden="true">
                                     {stepItem.step}
                                 </span>
-                                <span className="block text-[11px] font-black uppercase tracking-widest text-emerald-800 mb-1">
+                                <span className="block text-[11px] font-black uppercase tracking-widest text-orange-800 mb-1">
                                     {stepItem.subtitle}
                                 </span>
-                                <h3 className="text-lg font-black text-slate-900 mb-3">{stepItem.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{stepItem.description}</p>
+                                <h3 className="text-lg font-black text-neutral-900 mb-3">{stepItem.title}</h3>
+                                <p className="text-sm text-neutral-700 leading-relaxed">{stepItem.description}</p>
                             </li>
                         ))}
                     </ol>
@@ -532,30 +532,30 @@ export default function HomePage() {
             {/* 6. XXL SPOTLIGHT */}
             <section className="py-20 relative z-10" aria-labelledby="spotlight-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 lg:p-16">
+                    <div className="ceramic-hero rounded-[2rem] p-8 sm:p-12 lg:p-16">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                             <div className="lg:col-span-7 space-y-6">
                                 <span className="eyebrow">
                                     <Award className="w-3.5 h-3.5" />
-                                    Meisterbetrieb für anspruchsvolle Architektur
+                                    Fachbetrieb für anspruchsvolle Architektur
                                 </span>
-                                <h2 id="spotlight-heading" className="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
+                                <h2 id="spotlight-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 leading-tight">
                                     Fugenarme XXL-Großformate{' '}
-                                    <span className="text-ceramic-gradient">&amp; meisterhafte Badsanierung</span>
+                                    <span className="text-ceramic-gradient">&amp; fachgerechte Badsanierung</span>
                                 </h2>
-                                <p className="text-base text-slate-700 leading-relaxed">
+                                <p className="text-base text-neutral-700 leading-relaxed">
                                     Großformatige Platten verlangen höchste Präzision: Mit Nivelliersystem, Vakuumhebetechnik und
                                     flexiblen C2-Fliesenklebern entstehen planebene Flächen mit ruhigem, monolithischem
                                     Raumgefühl – ohne störende Fugenkreuze.
                                 </p>
                                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 flex flex-col-reverse justify-end gap-1">
-                                        <dt className="text-sm text-slate-700">Normgerechte Verbundabdichtung</dt>
-                                        <dd className="font-display text-2xl font-black text-emerald-800">DIN 18534</dd>
+                                    <div className="rounded-xl bg-white border border-neutral-200 p-5 flex flex-col-reverse justify-end gap-1">
+                                        <dt className="text-sm text-neutral-700">Normgerechte Verbundabdichtung</dt>
+                                        <dd className="font-display text-2xl font-black text-orange-800">DIN 18534</dd>
                                     </div>
-                                    <div className="rounded-2xl bg-white border border-slate-200 p-5 flex flex-col-reverse justify-end gap-1">
-                                        <dt className="text-sm text-slate-700">Großformate für fugenarme Wand- &amp; Bodenflächen</dt>
-                                        <dd className="font-display text-2xl font-black text-sky-800">XXL</dd>
+                                    <div className="rounded-xl bg-white border border-neutral-200 p-5 flex flex-col-reverse justify-end gap-1">
+                                        <dt className="text-sm text-neutral-700">Großformate für fugenarme Wand- &amp; Bodenflächen</dt>
+                                        <dd className="font-display text-2xl font-black text-red-800">XXL</dd>
                                     </div>
                                 </dl>
                                 <div className="flex flex-wrap items-center gap-3">
@@ -564,7 +564,7 @@ export default function HomePage() {
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
                                     <a href={`tel:${contact.phoneLink}`} className="btn-ghost">
-                                        <Phone className="w-4 h-4 text-emerald-700" />
+                                        <Phone className="w-4 h-4 text-orange-700" />
                                         {contact.phone}
                                     </a>
                                 </div>
@@ -572,8 +572,8 @@ export default function HomePage() {
 
                             {/* Right: XXL Craftsmanship Photo Showcase */}
                             <div className="lg:col-span-5">
-                                <div className="glass-surface rounded-3xl p-3 sm:p-4 space-y-4 shadow-xl border border-slate-200">
-                                    <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden group">
+                                <div className="glass-surface rounded-2xl p-3 sm:p-4 space-y-4 shadow-xl border border-neutral-200">
+                                    <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden group">
                                         <Image
                                             src="/images/bad/bad-freistehende-wanne.webp"
                                             alt="Freistehende Badewanne mit fugenlosem XXL-Fliesenbelag von Fliesenverlegung Tezgel"
@@ -581,18 +581,18 @@ export default function HomePage() {
                                             sizes="(max-width: 1024px) 100vw, 450px"
                                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/75 via-transparent to-transparent" />
                                         <div className="absolute bottom-3 left-3 right-3 text-white text-xs">
-                                            <span className="font-bold block text-sm">Meisterbad mit freistehender Wanne</span>
-                                            <span className="text-emerald-300">Millimetergenauer Gehrungsschnitt &amp; C2TE S1 Flexkleber</span>
+                                            <span className="font-bold block text-sm">Bad mit freistehender Wanne</span>
+                                            <span className="text-orange-300">Millimetergenauer Gehrungsschnitt &amp; C2TE S1 Flexkleber</span>
                                         </div>
                                     </div>
                                     <div className="p-2 space-y-1.5">
-                                        <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800 block">
+                                        <span className="text-[11px] font-black uppercase tracking-widest text-orange-800 block">
                                             Regional verwurzelt in Aßlar &middot; Wetzlar
                                         </span>
-                                        <p className="text-xs text-slate-700 leading-relaxed">
-                                            Persönliche Meisterbetreuung durch Deniz Tezgel von der 3D-Beratung bis zur makellosen Endabnahme.
+                                        <p className="text-xs text-neutral-700 leading-relaxed">
+                                            Persönliche Betreuung durch Deniz Tezgel von der 3D-Beratung bis zur makellosen Endabnahme.
                                         </p>
                                     </div>
                                 </div>
@@ -607,36 +607,36 @@ export default function HomePage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <span className="eyebrow eyebrow-amber mb-4">Echte Kundenstimmen</span>
-                        <h2 id="bewertungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        <h2 id="bewertungen-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
                             Was unsere Kunden in Mittelhessen sagen
                         </h2>
                         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-                            <div className="glass-surface rounded-full px-5 py-2.5 flex items-center gap-3">
+                            <div className="glass-surface rounded-xl px-5 py-2.5 flex items-center gap-3">
                                 <Stars />
-                                <span className="text-sm font-bold text-slate-900">
+                                <span className="text-sm font-bold text-neutral-900">
                                     {google.displayRating} / {google.maxRating}
                                 </span>
-                                <span className="text-sm text-slate-700">{google.count} {google.label}</span>
+                                <span className="text-sm text-neutral-700">{google.count} {google.label}</span>
                             </div>
-                            <div className="glass-surface rounded-full px-5 py-2.5 flex items-center gap-2">
-                                <span className="text-sm font-bold text-slate-900">{trustlocal.displayRating}</span>
-                                <span className="text-sm text-slate-700">{trustlocal.count} {trustlocal.label}</span>
+                            <div className="glass-surface rounded-xl px-5 py-2.5 flex items-center gap-2">
+                                <span className="text-sm font-bold text-neutral-900">{trustlocal.displayRating}</span>
+                                <span className="text-sm text-neutral-700">{trustlocal.count} {trustlocal.label}</span>
                             </div>
                         </div>
                     </div>
 
                     <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {featuredReviews.map((review) => (
-                            <li key={review.id} className="glass-surface rounded-3xl p-7 flex flex-col justify-between">
+                            <li key={review.id} className="glass-surface rounded-2xl p-7 flex flex-col justify-between">
                                 <figure>
                                     <div className="flex items-center justify-between mb-4">
                                         <Stars count={review.rating} />
-                                        <Quote className="w-6 h-6 text-emerald-600/40" aria-hidden="true" />
+                                        <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
                                     </div>
-                                    <blockquote className="text-sm text-slate-800 leading-relaxed">„{review.text}“</blockquote>
-                                    <figcaption className="mt-5 pt-4 border-t border-slate-200 flex items-center justify-between gap-2">
-                                        <span className="text-sm font-bold text-slate-900">{review.author}</span>
-                                        <span className="text-xs font-semibold text-slate-600">
+                                    <blockquote className="text-sm text-neutral-800 leading-relaxed">&bdquo;{review.text}&ldquo;</blockquote>
+                                    <figcaption className="mt-5 pt-4 border-t border-neutral-200 flex items-center justify-between gap-2">
+                                        <span className="text-sm font-bold text-neutral-900">{review.author}</span>
+                                        <span className="text-xs font-semibold text-neutral-600">
                                             {review.source}-Rezension &middot; {review.topic}
                                         </span>
                                     </figcaption>
@@ -659,10 +659,10 @@ export default function HomePage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <span className="eyebrow mb-4">Kostenfrei &amp; unverbindlich</span>
-                        <h2 id="anfrage-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                        <h2 id="anfrage-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
                             Ihre Express-Anfrage in 3 Klicks
                         </h2>
-                        <p className="mt-3 text-base text-slate-700">
+                        <p className="mt-3 text-base text-neutral-700">
                             Vorhaben wählen, Eckdaten eintragen und die Anfrage direkt per WhatsApp an {owner.fullName} oder per
                             E-Mail senden.
                         </p>

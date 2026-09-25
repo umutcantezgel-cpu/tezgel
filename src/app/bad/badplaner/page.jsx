@@ -26,19 +26,19 @@ const PLANNING_STEPS = [
 const NEXT_STEPS = [
     { title: 'Projektcheck', desc: 'Größe, Umfang und Wünsche vorab erfassen', href: '/bad/projekt-check', icon: Calculator },
     { title: 'Musterbäder vergleichen', desc: 'Raumkonzepte von 4,6 bis 15,9 m² als Inspiration', href: '/bad/musterbaeder', icon: Layers },
-    { title: 'Badanfrage stellen', desc: 'Ihre Planung direkt an den Meisterbetrieb senden', href: '/bad/badanfrage', icon: Send }
+    { title: 'Badanfrage stellen', desc: 'Ihre Planung direkt an den Fachbetrieb senden', href: '/bad/badanfrage', icon: Send }
 ];
 
 export default function BadplanerPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="badplaner-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Ruler className="w-3.5 h-3.5" />
                         Badplanung Schritt für Schritt
@@ -101,12 +101,12 @@ export default function BadplanerPage() {
                     {PLANNING_STEPS.map((step) => (
                         <li
                             key={step.num}
-                            className="group glass-surface p-8 rounded-[2rem] relative overflow-hidden hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            className="group glass-surface p-8 rounded-tile-md relative overflow-hidden hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                         >
-                            <span className="font-display block text-5xl font-black tabular-nums text-emerald-600/25 group-hover:text-emerald-600/40 transition-colors mb-4" aria-hidden="true">
+                            <span className="font-display block text-5xl font-black tabular-nums text-orange-600/25 group-hover:text-orange-600/40 transition-colors mb-4" aria-hidden="true">
                                 {step.num}
                             </span>
-                            <h3 className="text-lg font-black text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                            <h3 className="text-lg font-black text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">
                                 <span className="sr-only">Schritt {step.num}: </span>
                                 {step.title}
                             </h3>
@@ -123,18 +123,18 @@ export default function BadplanerPage() {
                             <li key={href}>
                                 <Link
                                     href={href}
-                                    className="group flex items-center justify-between gap-3 p-4 rounded-2xl bg-white border border-slate-200 h-full hover:border-emerald-500/80 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(15,23,42,0.18)] transition-all duration-300"
+                                    className="group flex items-center justify-between gap-3 p-4 rounded-tile-md bg-white border border-slate-200 h-full hover:border-orange-500 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-10px_rgba(15,23,42,0.18)] transition-all duration-300"
                                 >
                                     <span className="flex items-center gap-3">
                                         <span className="icon-chip w-11 h-11">
                                             <Icon className="w-5 h-5" />
                                         </span>
                                         <span>
-                                            <span className="block text-sm font-bold text-slate-900 group-hover:text-emerald-800 transition-colors">{title}</span>
+                                            <span className="block text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors">{title}</span>
                                             <span className="block text-xs text-slate-600">{desc}</span>
                                         </span>
                                     </span>
-                                    <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-emerald-700 group-hover:translate-x-0.5 transition-all" />
+                                    <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-orange-600 group-hover:translate-x-0.5 transition-all" />
                                 </Link>
                             </li>
                         ))}

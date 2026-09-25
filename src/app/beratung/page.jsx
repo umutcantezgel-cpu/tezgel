@@ -62,8 +62,8 @@ const Beratung = () => {
         <div className="min-h-screen">
             {/* ── Hero Section ─────────────────────────────────────────── */}
             <section className="ceramic-band relative pt-32 pb-20 overflow-hidden">
-                <div className="ambient-glow-mint -top-24 -left-24 opacity-70" />
-                <div className="ambient-glow-sky -bottom-24 -right-24 opacity-60" />
+                <div className="ambient-glow-orange -top-24 -left-24 opacity-70" />
+                <div className="ambient-glow-red -bottom-24 -right-24 opacity-60" />
                 <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const Beratung = () => {
                     >
                         <span className="eyebrow mb-6">
                             <ShieldCheck className="w-3.5 h-3.5" />
-                            Kostenlose Erstberatung vom Handwerksmeister
+                            Kostenlose Erstberatung vom Fliesen-Fachbetrieb
                         </span>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
                             Kostenlose{' '}
@@ -87,7 +87,7 @@ const Beratung = () => {
                                 Termin vereinbaren
                             </a>
                             <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
-                                <Phone className="w-4 h-4 text-emerald-700" />
+                                <Phone className="w-4 h-4 text-orange-600" />
                                 {contact.phone}
                             </a>
                         </div>
@@ -99,7 +99,7 @@ const Beratung = () => {
             <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-14">
-                        <span className="eyebrow eyebrow-sky mb-4">Transparenter Ablauf</span>
+                        <span className="eyebrow mb-4">Transparenter Ablauf</span>
                         <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 tracking-tight">
                             Unser 4-Stufen-Beratungsablauf
                         </h2>
@@ -112,9 +112,9 @@ const Beratung = () => {
                         {beratungSteps.map((step) => (
                             <li
                                 key={step.step}
-                                className="group bg-slate-50 p-6 rounded-3xl border border-slate-200 relative hover:bg-white hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group bg-slate-50 p-6 rounded-tile-lg border border-slate-200 relative hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
-                                <div className="font-display text-4xl font-black tabular-nums text-emerald-600/25 group-hover:text-emerald-600/40 transition-colors mb-3" aria-hidden="true">
+                                <div className="font-display text-4xl font-black tabular-nums text-orange-600/25 group-hover:text-orange-600/40 transition-colors mb-3" aria-hidden="true">
                                     {step.step}
                                 </div>
                                 <h3 className="text-lg font-black text-slate-900 mb-2">{step.title}</h3>
@@ -128,7 +128,7 @@ const Beratung = () => {
             {/* ── Checklist Preparation ────────────────────────────────── */}
             <section className="py-16 sm:py-20">
                 <div className="max-w-5xl mx-auto px-4">
-                    <div className="glass-surface rounded-[2rem] p-8 md:p-12">
+                    <div className="glass-surface rounded-tile-xl p-8 md:p-12">
                         <div className="flex items-center gap-4 mb-8">
                             <span className="icon-chip w-12 h-12">
                                 <FileText className="w-6 h-6" />
@@ -141,8 +141,8 @@ const Beratung = () => {
 
                         <ul className="grid sm:grid-cols-2 gap-4 text-slate-700 text-sm">
                             {checklist.map((item) => (
-                                <li key={item.title} className="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                                <li key={item.title} className="flex items-start gap-3 p-4 rounded-tile-md bg-slate-50 border border-slate-200">
+                                    <CheckCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
                                     <span><strong className="text-slate-900">{item.title}:</strong> {item.text}</span>
                                 </li>
                             ))}
@@ -169,9 +169,9 @@ const Beratung = () => {
 
                     <div className="space-y-4">
                         {consultationFaqs.map((faq) => (
-                            <div key={faq.q} className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                            <div key={faq.q} className="p-6 rounded-tile-md bg-slate-50 border border-slate-200">
                                 <h3 className="font-black text-lg text-slate-900 mb-2 flex items-start gap-2">
-                                    <HelpCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-1" />
+                                    <HelpCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
                                     {faq.q}
                                 </h3>
                                 <p className="text-slate-700 text-sm leading-relaxed pl-7">
@@ -186,7 +186,7 @@ const Beratung = () => {
             {/* ── Direct Contact Section ───────────────────────────────── */}
             <section className="py-16 sm:py-20">
                 <div className="max-w-5xl mx-auto px-4">
-                    <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 text-center">
+                    <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center">
                         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4">
                             Sie möchten lieber direkt mit uns sprechen?
                         </h2>
@@ -208,7 +208,7 @@ const Beratung = () => {
                                 WhatsApp
                             </a>
                             <a href={`mailto:${contact.email}`} className="btn-ghost w-full sm:w-auto">
-                                <Mail className="w-4 h-4 text-emerald-700" />
+                                <Mail className="w-4 h-4 text-orange-600" />
                                 <span>{contact.email}</span>
                             </a>
                         </div>

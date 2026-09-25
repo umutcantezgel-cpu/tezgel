@@ -32,7 +32,7 @@ const LINK_COLUMNS = [
 ];
 
 const GUARANTEES = [
-    { icon: Award, title: 'Meisterbetrieb', text: COMPANY_DATA.authority.shortName },
+    { icon: Award, title: 'HWK Fachbetrieb', text: COMPANY_DATA.authority.shortName },
     { icon: ShieldCheck, title: 'DIN 18534', text: 'Verbundabdichtung' },
     { icon: Sparkles, title: 'Staubschutz-Garantie', text: 'bei bewohnten Sanierungen' },
     { icon: Receipt, title: 'Festpreisgarantie', text: 'transparent kalkuliert' }
@@ -43,19 +43,19 @@ export default function Footer() {
     const { headquarters, contact, hours, authority, tax, owner, motto } = COMPANY_DATA;
 
     return (
-        <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 relative overflow-hidden">
+        <footer className="bg-neutral-900 text-neutral-300 border-t border-neutral-800 relative overflow-hidden">
             {/* Guarantee plinth */}
-            <div className="border-b border-slate-800">
+            <div className="border-b border-neutral-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
                     <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
                         {GUARANTEES.map(({ icon: Icon, title, text }) => (
                             <li key={title} className="flex items-center gap-3">
-                                <span className="w-10 h-10 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0">
-                                    <Icon className="w-5 h-5 text-emerald-400" />
+                                <span className="w-10 h-10 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-center shrink-0">
+                                    <Icon className="w-5 h-5 text-orange-400" />
                                 </span>
                                 <span className="text-xs leading-snug">
                                     <span className="block font-black text-white">{title}</span>
-                                    <span className="text-slate-300">{text}</span>
+                                    <span className="text-neutral-300">{text}</span>
                                 </span>
                             </li>
                         ))}
@@ -75,49 +75,49 @@ export default function Footer() {
                         <Link href="/" className="inline-block group" aria-label="Fliesenverlegung Tezgel – Startseite">
                             <Image
                                 src="/images/logo/tezgel-logo-dark.webp"
-                                alt="Fliesenverlegung Tezgel – Meisterbetrieb Aßlar & Wetzlar"
+                                alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
                                 width={220}
                                 height={68}
                                 className="h-12 sm:h-14 w-auto object-contain shrink-0 group-hover:scale-[1.02] transition-transform duration-200"
                             />
-                            <span className="block mt-2.5 text-[11px] font-semibold tracking-wide text-slate-400">
-                                Inh. {owner.fullName} &middot; Fliesenlegermeister Aßlar / Wetzlar
+                            <span className="block mt-2.5 text-[11px] font-semibold tracking-wide text-neutral-400">
+                                Inh. {owner.fullName} &middot; Fachbetrieb Aßlar / Wetzlar
                             </span>
                         </Link>
 
-                        <blockquote className="rounded-2xl bg-slate-800/60 border border-slate-700 px-4 py-3 text-sm italic text-slate-200">
-                            „{motto}“
+                        <blockquote className="rounded-xl bg-neutral-800/60 border border-neutral-700 px-4 py-3 text-sm italic text-neutral-200">
+                            &bdquo;{motto}&ldquo;
                         </blockquote>
 
                         <address className="not-italic space-y-2.5 text-sm">
                             <p className="flex items-start gap-2.5">
-                                <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
                                 <span>{headquarters.street}, {headquarters.postalCode} {headquarters.city}</span>
                             </p>
                             <p className="flex items-center gap-2.5">
-                                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                                <Phone className="w-4 h-4 text-orange-400 shrink-0" />
                                 <a href={`tel:${contact.phoneLink}`} className="hover:text-white underline-offset-4 hover:underline">
                                     {contact.phone}
                                 </a>
                             </p>
                             <p className="flex items-center gap-2.5">
-                                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                                <MessageCircle className="w-4 h-4 text-green-400 shrink-0" />
                                 <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-white underline-offset-4 hover:underline">
                                     Mobil &amp; WhatsApp: {contact.mobile}
                                 </a>
                             </p>
                             <p className="flex items-center gap-2.5">
-                                <Printer className="w-4 h-4 text-emerald-400 shrink-0" />
+                                <Printer className="w-4 h-4 text-orange-400 shrink-0" />
                                 <span>Fax: {contact.fax}</span>
                             </p>
                             <p className="flex items-center gap-2.5">
-                                <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+                                <Mail className="w-4 h-4 text-orange-400 shrink-0" />
                                 <a href={`mailto:${contact.email}`} className="hover:text-white underline-offset-4 hover:underline">
                                     {contact.email}
                                 </a>
                             </p>
                             <p className="flex items-start gap-2.5">
-                                <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                <Clock className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
                                 <span>
                                     {hours.formattedWeekdays}
                                     <br />
@@ -127,16 +127,16 @@ export default function Footer() {
                         </address>
 
                         <dl className="grid grid-cols-2 gap-3 text-xs">
-                            <div className="rounded-2xl bg-slate-800/60 border border-slate-700 p-3">
+                            <div className="rounded-xl bg-neutral-800/60 border border-neutral-700 p-3">
                                 <dt className="flex items-center gap-1.5 font-black text-white mb-0.5">
-                                    <Landmark className="w-3.5 h-3.5 text-emerald-400" />
+                                    <Landmark className="w-3.5 h-3.5 text-orange-400" />
                                     Kammer
                                 </dt>
                                 <dd>{authority.name}</dd>
                             </div>
-                            <div className="rounded-2xl bg-slate-800/60 border border-slate-700 p-3">
+                            <div className="rounded-xl bg-neutral-800/60 border border-neutral-700 p-3">
                                 <dt className="flex items-center gap-1.5 font-black text-white mb-0.5">
-                                    <Receipt className="w-3.5 h-3.5 text-emerald-400" />
+                                    <Receipt className="w-3.5 h-3.5 text-orange-400" />
                                     USt-IdNr.
                                 </dt>
                                 <dd>{tax.ustId}</dd>
@@ -147,7 +147,7 @@ export default function Footer() {
                     {/* Link columns */}
                     {LINK_COLUMNS.map((column) => (
                         <nav key={column.title} aria-label={column.title} className="lg:col-span-2">
-                            <h2 className="font-display text-xs font-black uppercase tracking-widest text-white mb-4 pl-2.5 border-l-2 border-emerald-400">
+                            <h2 className="font-display text-xs font-black uppercase tracking-widest text-white mb-4 pl-2.5 border-l-2 border-orange-500">
                                 {column.title}
                             </h2>
                             <ul className="space-y-2 text-sm">
@@ -155,7 +155,7 @@ export default function Footer() {
                                     <li key={item.path + item.name}>
                                         <Link
                                             href={item.path}
-                                            className="inline-block py-0.5 text-slate-300 hover:text-white hover:translate-x-0.5 transition-all duration-300"
+                                            className="inline-block py-0.5 text-neutral-300 hover:text-white hover:translate-x-0.5 transition-all duration-200"
                                         >
                                             {item.name}
                                         </Link>
@@ -168,8 +168,8 @@ export default function Footer() {
             </div>
 
             {/* Bottom bar */}
-            <div className="bg-slate-950 border-t border-slate-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 md:pb-6 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+            <div className="bg-neutral-950 border-t border-neutral-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 md:pb-6 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-neutral-300">
                     <p className="text-center lg:text-left">
                         &copy; {currentYear} {COMPANY_DATA.legalName} &middot; Inh. {owner.fullName} &middot; Alle Rechte vorbehalten.
                     </p>
@@ -191,7 +191,7 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener"
                             title="Coday Webdesign Wetzlar"
-                            className="font-bold text-white hover:text-emerald-300 underline-offset-4 hover:underline"
+                            className="font-bold text-white hover:text-orange-300 underline-offset-4 hover:underline"
                         >
                             codayweb
                         </a>

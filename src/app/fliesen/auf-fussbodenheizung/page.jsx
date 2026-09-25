@@ -76,12 +76,12 @@ const WEITERLESEN = [
 export default function FliesenAufFussbodenheizungPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fbh-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <Thermometer className="w-3.5 h-3.5" />
                         Verlegetechnik &middot; Neubau &amp; Bestand
@@ -110,7 +110,7 @@ export default function FliesenAufFussbodenheizungPage() {
             {/* Topics */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fbh-themen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Worauf es ankommt</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Worauf es ankommt</span>
                     <h2 id="fbh-themen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Fünf Punkte für einen <span className="text-ceramic-gradient">dauerhaften Belag</span>
                     </h2>
@@ -121,17 +121,17 @@ export default function FliesenAufFussbodenheizungPage() {
                         return (
                             <li
                                 key={item.id}
-                                className="group glass-surface p-7 rounded-[2rem] flex flex-col hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-lg flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed flex-1">{item.text}</p>
                                 {item.link && (
                                     <Link
                                         href={item.link.href}
-                                        className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                        className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                     >
                                         {item.link.label}
                                         <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -165,7 +165,7 @@ export default function FliesenAufFussbodenheizungPage() {
                             die Übergabe aber so ab, dass der Belag passt.
                         </p>
                     </div>
-                    <div className="overflow-x-auto rounded-2xl border border-slate-200">
+                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
                         <table className="w-full text-left text-sm">
                             <thead className="bg-slate-100 text-slate-900">
                                 <tr>
@@ -188,14 +188,14 @@ export default function FliesenAufFussbodenheizungPage() {
 
             {/* Weiterlesen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fbh-weiterlesen-heading">
-                <div className="glass-surface-subtle rounded-3xl p-6 sm:p-8">
+                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
                     <h2 id="fbh-weiterlesen-heading" className="text-lg font-black text-slate-900 mb-4">Weiterlesen</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}
@@ -215,7 +215,7 @@ export default function FliesenAufFussbodenheizungPage() {
 
             {/* Closing CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 relative z-10" aria-labelledby="fbh-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         Belegreife prüfen, sauber verlegen
@@ -230,7 +230,7 @@ export default function FliesenAufFussbodenheizungPage() {
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">Aufmaß anfragen</Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-slate-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">

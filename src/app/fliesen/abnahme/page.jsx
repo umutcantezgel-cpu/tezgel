@@ -98,7 +98,7 @@ const CHECKLIST = [
 ];
 
 const CROSS_LINKS = [
-    { href: '/unternehmen', label: 'Über unseren Betrieb', desc: 'Meisterbetrieb aus Aßlar' },
+    { href: '/unternehmen', label: 'Über unseren Betrieb', desc: 'Fachbetrieb aus Aßlar' },
     { href: '/fliesen/verlegetechnik', label: 'Verlegetechnik & Werkstoffe', desc: 'Kleber, Bettung und Fugenmörtel' },
     { href: '/fliesen/fugensanierung', label: 'Fugensanierung', desc: 'Silikon- und Zementfugen erneuern' },
     { href: '/faq', label: 'Häufige Fragen', desc: 'Antworten rund um Fliesenarbeiten' }
@@ -107,12 +107,12 @@ const CROSS_LINKS = [
 export default function AbnahmePage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="abnahme-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <ClipboardCheck className="w-3.5 h-3.5" />
                         Abnahme &middot; DIN 18202
@@ -132,7 +132,7 @@ export default function AbnahmePage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <a href="#checkliste" className="btn-ghost px-7 py-3.5 text-xs">
-                            <Printer className="w-4 h-4 text-emerald-700" />
+                            <Printer className="w-4 h-4 text-slate-700" />
                             Zur Checkliste
                         </a>
                     </div>
@@ -141,7 +141,7 @@ export default function AbnahmePage() {
 
             {/* Warum gemeinsam */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10" aria-labelledby="gemeinsam-heading">
-                <div className="glass-surface rounded-[2rem] p-8 sm:p-10 flex flex-col sm:flex-row gap-6 items-start">
+                <div className="glass-surface rounded-tile-xl p-8 sm:p-10 flex flex-col sm:flex-row gap-6 items-start">
                     <span className="icon-chip w-12 h-12 shrink-0">
                         <Users className="w-6 h-6" />
                     </span>
@@ -161,7 +161,7 @@ export default function AbnahmePage() {
             {/* 5 Prüfpunkte */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="pruefpunkte-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Prüfpunkte</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Prüfpunkte</span>
                     <h2 id="pruefpunkte-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Fünf Punkte, die bei jeder Abnahme dazugehören
                     </h2>
@@ -172,12 +172,12 @@ export default function AbnahmePage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-6 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-11 h-11 mb-4">
                                     <Icon className="w-5 h-5" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -257,27 +257,27 @@ export default function AbnahmePage() {
                             Bewertung hängt immer vom Einzelfall ab.
                         </p>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="anschluesse-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="anschluesse-heading">
                         <h2 id="anschluesse-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Anschlüsse, Silikonfugen und Abdichtungsdetails</h2>
                         <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                             Elastische Fugen sind Wartungsfugen: Sie müssen bei der Übergabe einwandfrei sein, werden später aber
                             regelmäßig kontrolliert und bei Bedarf erneuert. Die Abdichtung nach DIN 18534 selbst ist nach dem
                             Fliesen nicht mehr sichtbar – fragen Sie deshalb schon während der Ausführung nach, wie sie
                             dokumentiert wird. Details zur Norm finden Sie unter{' '}
-                            <Link href="/untergrund-abdichtung/din-18534" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/untergrund-abdichtung/din-18534" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                 Abdichtung nach DIN 18534
                             </Link>
                             .
                         </p>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="unterlagen-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="unterlagen-heading">
                         <h2 id="unterlagen-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Unterlagen: Pflegehinweise, Restfliesen, Materialliste</h2>
                         <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                             Notieren Sie sich Serie, Farbe und Chargennummer der Fliesen sowie die Bezeichnungen von Kleber,
                             Fugenmörtel und Silikon. Mit einigen Restfliesen aus derselben Charge lassen sich spätere Schäden
                             passend reparieren. Pflegehinweise helfen, Fugen und Oberflächen richtig zu behandeln –
                             Grundlagen dazu im Ratgeber{' '}
-                            <Link href="/blog/fliesen-reinigen-pflegen" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                            <Link href="/blog/fliesen-reinigen-pflegen" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                 Fliesen reinigen und pflegen
                             </Link>
                             .
@@ -290,7 +290,7 @@ export default function AbnahmePage() {
             <section id="checkliste" className="py-20 bg-white border-y border-slate-200 relative z-10 scroll-mt-28" aria-labelledby="checkliste-heading">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-10">
-                        <span className="eyebrow eyebrow-sky mb-4">
+                        <span className="eyebrow eyebrow-orange mb-4">
                             <Printer className="w-3.5 h-3.5" />
                             Zum Ausdrucken
                         </span>
@@ -304,12 +304,12 @@ export default function AbnahmePage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {CHECKLIST.map((block) => (
-                            <div key={block.group} className="rounded-3xl bg-slate-50 border border-slate-200 p-6 break-inside-avoid">
+                            <div key={block.group} className="rounded-tile-lg bg-slate-50 border border-slate-200 p-6 break-inside-avoid">
                                 <h3 className="font-black text-slate-900 mb-4">{block.group}</h3>
                                 <ul className="space-y-3">
                                     {block.items.map((item) => (
                                         <li key={item} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                            <span className="mt-0.5 w-4 h-4 shrink-0 rounded border-2 border-emerald-600 bg-white" aria-hidden="true" />
+                                            <span className="mt-0.5 w-4 h-4 shrink-0 rounded border-2 border-orange-600 bg-white" aria-hidden="true" />
                                             {item}
                                         </li>
                                     ))}
@@ -322,7 +322,7 @@ export default function AbnahmePage() {
 
             {/* Konfigurator-CTA + Weiterlesen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-6 relative z-10" aria-labelledby="weiterlesen-heading">
-                <div className="ceramic-hero rounded-[2rem] p-8 sm:p-10 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-10 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                     <div>
                         <h2 className="text-2xl font-black text-slate-900">Neues Fliesenprojekt geplant?</h2>
                         <p className="mt-2 text-base text-slate-700 max-w-2xl">
@@ -336,7 +336,7 @@ export default function AbnahmePage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-slate-700" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                     </div>
@@ -348,11 +348,11 @@ export default function AbnahmePage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group block h-full glass-surface rounded-2xl p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-emerald-600" />
+                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-600" />
                                 </span>
                                 <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
                             </Link>

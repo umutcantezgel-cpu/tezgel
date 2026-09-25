@@ -12,11 +12,11 @@ export default function ImpressumPage() {
     return (
         <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Lighting Orbs */}
-            <div className="ambient-glow-mint -top-20 -left-20 opacity-30" />
-            <div className="ambient-glow-sky top-96 -right-20 opacity-25" />
+            <div className="ambient-glow-orange -top-20 -left-20 opacity-30" />
+            <div className="ambient-glow-red top-96 -right-20 opacity-25" />
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="glass-surface rounded-[2.5rem] p-8 sm:p-12 space-y-8 text-slate-700">
+                <div className="glass-surface rounded-tile-xl p-8 sm:p-12 space-y-8 text-slate-700">
 
                     <div>
                         <span className="eyebrow mb-3">
@@ -38,10 +38,10 @@ export default function ImpressumPage() {
                     {/* Contact */}
                     <div className="space-y-2 border-b border-slate-200 pb-6 text-sm">
                         <h2 className="text-base font-black text-slate-900">Kontakt &amp; Erreichbarkeit:</h2>
-                        <p>Telefon: <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="text-emerald-800 font-bold tabular-nums hover:text-emerald-700 hover:underline underline-offset-2">{COMPANY_DATA.contact.phone}</a></p>
-                        <p>Mobilfunk / WhatsApp: <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-emerald-800 font-bold tabular-nums hover:text-emerald-700 hover:underline underline-offset-2">{COMPANY_DATA.contact.mobile}</a></p>
+                        <p>Telefon: <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="text-orange-700 font-bold tabular-nums hover:text-orange-600 hover:underline underline-offset-2">{COMPANY_DATA.contact.phone}</a></p>
+                        <p>Mobilfunk / WhatsApp: <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-orange-700 font-bold tabular-nums hover:text-orange-600 hover:underline underline-offset-2">{COMPANY_DATA.contact.mobile}</a></p>
                         <p>Telefax: <span className="tabular-nums">{COMPANY_DATA.contact.fax}</span></p>
-                        <p>E-Mail: <a href={`mailto:${COMPANY_DATA.contact.email}`} className="text-emerald-800 font-bold hover:text-emerald-700 hover:underline underline-offset-2">{COMPANY_DATA.contact.email}</a></p>
+                        <p>E-Mail: <a href={`mailto:${COMPANY_DATA.contact.email}`} className="text-orange-700 font-bold hover:text-orange-600 hover:underline underline-offset-2">{COMPANY_DATA.contact.email}</a></p>
                     </div>
 
                     {/* Tax & Identification */}
@@ -60,7 +60,7 @@ export default function ImpressumPage() {
                             Berufsbezeichnung: Fliesen-, Platten- und Mosaiklegerbetrieb (verliehen in der Bundesrepublik Deutschland)
                         </p>
                         <p>
-                            Berufsrechtliche Regelungen: Handwerksordnung (HwO) (einsehbar unter: <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener noreferrer" className="text-emerald-800 font-semibold underline underline-offset-2 hover:text-emerald-700">www.gesetze-im-internet.de/hwo/</a>)
+                            Berufsrechtliche Regelungen: Handwerksordnung (HwO) (einsehbar unter: <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener noreferrer" className="text-orange-700 font-semibold underline underline-offset-2 hover:text-orange-600">www.gesetze-im-internet.de/hwo/</a>)
                         </p>
                     </div>
 
@@ -91,8 +91,8 @@ export default function ImpressumPage() {
                     </div>
 
                     <div className="pt-4 border-t border-slate-200 flex flex-wrap gap-3 justify-between items-center text-sm font-bold">
-                        <Link href="/" className="text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">&larr; Zurück zur Startseite</Link>
-                        <Link href="/datenschutz" className="text-slate-700 hover:text-emerald-800">Zur Datenschutzerklärung &rarr;</Link>
+                        <Link href="/" className="text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">&larr; Zurück zur Startseite</Link>
+                        <Link href="/datenschutz" className="text-slate-700 hover:text-orange-700">Zur Datenschutzerklärung &rarr;</Link>
                     </div>
 
                 </div>

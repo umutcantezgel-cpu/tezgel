@@ -19,7 +19,7 @@ const referenzenSchema = buildGraph([
     url: pageUrl,
     name: 'Referenzen & Kundenbewertungen | Fliesenverlegung Tezgel',
     description:
-      'Kundenbewertungen und typische Leistungsbeispiele des Fliesenleger-Meisterbetriebs Fliesenverlegung Tezgel aus Aßlar.',
+      'Kundenbewertungen und typische Leistungsbeispiele des Fliesenleger-Fachbetriebs Fliesenverlegung Tezgel aus Aßlar.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

@@ -125,7 +125,7 @@ function PatternSketch({ type, label }) {
                         y={r.y}
                         width={r.w}
                         height={r.h}
-                        className={i % 3 === 0 ? 'fill-emerald-50' : 'fill-white'}
+                        className={i % 3 === 0 ? 'fill-orange-50/80' : 'fill-white'}
                         stroke="#94A3B8"
                         strokeWidth="1"
                     />
@@ -186,12 +186,12 @@ const WEITERLESEN = [
 export default function VerlegemusterPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="verlegemuster-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <LayoutGrid className="w-3.5 h-3.5" />
                         Gestaltung &amp; Planung
@@ -219,7 +219,7 @@ export default function VerlegemusterPage() {
             {/* Patterns */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="vm-muster-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Verlegemuster</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Verlegemuster</span>
                     <h2 id="vm-muster-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Wie das Muster <span className="text-ceramic-gradient">die Raumwirkung bestimmt</span>
                     </h2>
@@ -232,10 +232,10 @@ export default function VerlegemusterPage() {
                     {PATTERNS.map((pattern) => (
                         <li
                             key={pattern.type}
-                            className="group glass-surface p-6 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                            className="group glass-surface p-6 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                         >
                             <PatternSketch type={pattern.type} label={pattern.name} />
-                            <h3 className="mt-5 font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{pattern.name}</h3>
+                            <h3 className="mt-5 font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{pattern.name}</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">{pattern.desc}</p>
                         </li>
                     ))}
@@ -257,7 +257,7 @@ export default function VerlegemusterPage() {
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <article className="p-7 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="vm-versatz">
+                        <article className="p-7 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="vm-versatz">
                             <span className="icon-chip w-11 h-11 mb-5">
                                 <Ruler className="w-5 h-5" />
                             </span>
@@ -271,7 +271,7 @@ export default function VerlegemusterPage() {
                                 Fliesenlänge. Maßgeblich ist die Angabe des Herstellers.
                             </p>
                         </article>
-                        <article className="p-7 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="vm-fugenbreite">
+                        <article className="p-7 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="vm-fugenbreite">
                             <span className="icon-chip w-11 h-11 mb-5">
                                 <Palette className="w-5 h-5" />
                             </span>
@@ -283,7 +283,7 @@ export default function VerlegemusterPage() {
                                 zeigen Verschmutzung schneller.
                             </p>
                         </article>
-                        <article className="p-7 rounded-3xl bg-slate-50 border border-slate-200" aria-labelledby="vm-achsen">
+                        <article className="p-7 rounded-tile-xl bg-slate-50 border border-slate-200" aria-labelledby="vm-achsen">
                             <span className="icon-chip w-11 h-11 mb-5">
                                 <DoorOpen className="w-5 h-5" />
                             </span>
@@ -301,7 +301,7 @@ export default function VerlegemusterPage() {
             {/* Abschlüsse */}
             <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="vm-abschluesse-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Abschlüsse</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Abschlüsse</span>
                     <h2 id="vm-abschluesse-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Sockel, Gehrungskanten und Kantenprofile
                     </h2>
@@ -325,9 +325,9 @@ export default function VerlegemusterPage() {
                             text: 'Profile aus Edelstahl oder Aluminium schützen Kanten an stark beanspruchten Stellen, etwa an Stufen, Übergängen oder Außenecken. Sie sind robuster als eine Gehrung und setzen eine feine Linie.'
                         }
                     ].map((item) => (
-                        <li key={item.title} className="glass-surface rounded-[2rem] p-7">
+                        <li key={item.title} className="glass-surface rounded-tile-xl p-7">
                             <h3 className="font-black text-base text-slate-900 mb-2 flex items-center gap-2">
-                                <Square className="w-4 h-4 text-emerald-600" aria-hidden="true" />
+                                <Square className="w-4 h-4 text-orange-600" aria-hidden="true" />
                                 {item.title}
                             </h3>
                             <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
@@ -336,11 +336,11 @@ export default function VerlegemusterPage() {
                 </ul>
                 <p className="mt-6 text-sm text-slate-700 leading-relaxed text-center">
                     Übergänge zu Parkett, Vinyl oder Teppich behandeln wir unter{' '}
-                    <Link href="/fliesen/flur-diele" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/fliesen/flur-diele" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                         Flur &amp; Diele fliesen
                     </Link>
                     , Stufenkanten unter{' '}
-                    <Link href="/treppen/innentreppe" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/treppen/innentreppe" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                         Innentreppe fliesen
                     </Link>
                     .
@@ -349,7 +349,7 @@ export default function VerlegemusterPage() {
 
             {/* Verschnitt */}
             <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 relative z-10" aria-labelledby="vm-verschnitt-heading">
-                <div className="rounded-[2rem] bg-sky-50 border border-sky-200 text-slate-700 p-7 sm:p-10">
+                <div className="rounded-tile-xl bg-orange-50/60 border border-orange-200/80 text-slate-700 p-7 sm:p-10">
                     <h2 id="vm-verschnitt-heading" className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
                         Verschnitt je Muster: Richtwerte für die Bestellung
                     </h2>
@@ -357,7 +357,7 @@ export default function VerlegemusterPage() {
                         Der Zuschlag hängt von Muster, Format und Raumzuschnitt ab. Die Werte dienen der Orientierung – die
                         verbindliche Menge ergibt sich aus dem Aufmaß.
                     </p>
-                    <div className="overflow-x-auto rounded-2xl border border-sky-200">
+                    <div className="overflow-x-auto rounded-tile-md border border-orange-200/80">
                         <table className="w-full text-left text-sm">
                             <thead className="bg-slate-100 text-slate-900">
                                 <tr>
@@ -384,14 +384,14 @@ export default function VerlegemusterPage() {
 
             {/* Weiterlesen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-labelledby="vm-weiterlesen-heading">
-                <div className="glass-surface-subtle rounded-3xl p-6 sm:p-8">
+                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
                     <h2 id="vm-weiterlesen-heading" className="text-lg font-black text-slate-900 mb-4">Weiterlesen</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                 >
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                     {link.label}
@@ -401,11 +401,11 @@ export default function VerlegemusterPage() {
                     </ul>
                     <p className="mt-4 text-sm text-slate-700">
                         Muster im Bad?{' '}
-                        <Link href="/bad/fliesen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/bad/fliesen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Fliesen im Bad
                         </Link>{' '}
                         &middot; Projekt im Wohnbereich?{' '}
-                        <Link href="/leistungen/wohnen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                        <Link href="/leistungen/wohnen" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                             Leistung: Wohnbereiche
                         </Link>
                     </p>
@@ -421,7 +421,7 @@ export default function VerlegemusterPage() {
 
             {/* Closing CTA */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 relative z-10" aria-labelledby="vm-cta-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         Kostenfreies Vor-Ort-Aufmaß
@@ -436,7 +436,7 @@ export default function VerlegemusterPage() {
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">Aufmaß anfragen</Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                         <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">

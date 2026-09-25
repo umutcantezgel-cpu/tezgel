@@ -86,7 +86,7 @@ Feinsteinzeug ist dafür bei Großformaten anspruchsvoll: Große, dünne Platten
 
 Feinsteinzeug ist die pflegeleichte, berechenbare Wahl für Bad, Küche und stark genutzte Böden. Naturstein bietet echte Unikate und eine besondere Ausstrahlung, verlangt aber das passende Gestein für den jeweiligen Einsatz und etwas mehr Aufmerksamkeit in der Pflege. Die richtige Antwort hängt von Ihrem Raum, Ihrem Alltag und Ihrem Anspruch an Gleichmäßigkeit ab.
 
-Sie schwanken zwischen beiden Materialien? Einen Überblick über keramische Varianten gibt die Seite [Fliesenarten im Vergleich](/fliesen/fliesenarten). Für eine persönliche Beratung zu Ihrem Projekt [kontaktieren Sie uns](/kontakt) – wir verlegen Feinsteinzeug und Naturstein als Meisterbetrieb aus Aßlar.`
+Sie schwanken zwischen beiden Materialien? Einen Überblick über keramische Varianten gibt die Seite [Fliesenarten im Vergleich](/fliesen/fliesenarten). Für eine persönliche Beratung zu Ihrem Projekt [kontaktieren Sie uns](/kontakt) – wir verlegen Feinsteinzeug und Naturstein als Fachbetrieb aus Aßlar.`
 };
 
 export default post;

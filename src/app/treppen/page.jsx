@@ -91,15 +91,15 @@ const WEITERLESEN = [
 export default function TreppenPage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="treppen-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Layers className="w-3.5 h-3.5" />
-                        Treppenanlagen &middot; Meisterbetrieb aus {COMPANY_DATA.headquarters.city}
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="eyebrow eyebrow-orange">
+                        <Layers className="w-3.5 h-3.5 text-orange-600" />
+                        Treppenanlagen &middot; Fachbetrieb aus {COMPANY_DATA.headquarters.city}
                     </span>
                     <h1 id="treppen-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                         Treppen neu belegen:{' '}
@@ -125,7 +125,7 @@ export default function TreppenPage() {
             {/* Treppentypen – Subpages */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="treppentypen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Welche Treppe haben Sie?</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Welche Treppe haben Sie?</span>
                     <h2 id="treppentypen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Innentreppe, Treppenhaus oder Außentreppe
                     </h2>
@@ -142,17 +142,17 @@ export default function TreppenPage() {
                             <li key={page.path}>
                                 <Link
                                     href={page.path}
-                                    className="group glass-surface p-8 rounded-[2rem] h-full flex flex-col hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group glass-surface p-8 rounded-tile-2xl h-full flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
-                                    <span className="icon-chip w-12 h-12 mb-5">
+                                    <span className="icon-chip w-12 h-12 mb-5 text-orange-600">
                                         <Icon className="w-6 h-6" />
                                     </span>
-                                    <h3 className="font-black text-lg text-slate-900 group-hover:text-emerald-800 transition-colors mb-1">
+                                    <h3 className="font-black text-lg text-slate-900 group-hover:text-orange-700 transition-colors mb-1">
                                         {page.name}
                                     </h3>
-                                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-800 mb-3">{page.desc}</p>
+                                    <p className="text-xs font-bold uppercase tracking-wider text-orange-700 mb-3">{page.desc}</p>
                                     <p className="text-sm text-slate-700 leading-relaxed mb-5 flex-1">{SUBPAGE_TEXT[page.path]}</p>
-                                    <span className="text-sm font-bold text-emerald-800 inline-flex items-center gap-1">
+                                    <span className="text-sm font-bold text-orange-700 inline-flex items-center gap-1">
                                         Zur Detailseite
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                                     </span>
@@ -167,7 +167,7 @@ export default function TreppenPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="voraussetzung-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Voraussetzung</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Voraussetzung</span>
                         <h2 id="voraussetzung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                             Tragfähige Massivtreppe: was sich belegen lässt – und was nicht
                         </h2>
@@ -179,21 +179,21 @@ export default function TreppenPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200">
+                        <div className="p-8 rounded-tile-xl bg-slate-50 border border-slate-200">
                             <h3 className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
-                                <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                                <CheckCircle2 className="w-5 h-5 text-orange-600" />
                                 In der Regel gut belegbar
                             </h3>
                             <ul className="space-y-3">
                                 {SUITABLE.map((item) => (
                                     <li key={item} className="flex items-start gap-2 text-sm text-slate-700 leading-relaxed">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                        <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200">
+                        <div className="p-8 rounded-tile-xl bg-slate-50 border border-slate-200">
                             <h3 className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
                                 <AlertTriangle className="w-5 h-5 text-amber-500" />
                                 Nicht oder nur nach Klärung
@@ -214,7 +214,7 @@ export default function TreppenPage() {
             {/* Belagsarten */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="belagsarten-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Belagsarten im Überblick</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Belagsarten im Überblick</span>
                     <h2 id="belagsarten-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Fliese, Stufenplatte, Naturstein – oder Blockstufe
                     </h2>
@@ -226,12 +226,12 @@ export default function TreppenPage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-2xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
-                                <span className="icon-chip w-11 h-11 mb-4">
+                                <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                     <Icon className="w-5 h-5" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -241,11 +241,11 @@ export default function TreppenPage() {
                 <p className="mt-8 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
                     Wie die Stufenkante ausgebildet wird – Gehrung, Profil oder Stufenplatte – vergleichen wir ausführlich
                     auf der Seite{' '}
-                    <Link href="/treppen/innentreppe" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/treppen/innentreppe" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                         Innentreppe fliesen
                     </Link>
                     . Welche Rutschhemmung auf Stufen sinnvoll ist, erklärt unser Beitrag zu den{' '}
-                    <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                         R-Klassen nach DIN EN 16165
                     </Link>
                     .
@@ -256,8 +256,8 @@ export default function TreppenPage() {
             <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="steigungen-heading">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-10">
-                        <span className="eyebrow mb-4">
-                            <Ruler className="w-3.5 h-3.5" />
+                        <span className="eyebrow eyebrow-orange mb-4">
+                            <Ruler className="w-3.5 h-3.5 text-orange-600" />
                             Gleichmäßige Steigungen
                         </span>
                         <h2 id="steigungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -266,7 +266,7 @@ export default function TreppenPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-700 leading-relaxed">
-                        <div className="glass-surface rounded-[2rem] p-7 space-y-3">
+                        <div className="glass-surface rounded-tile-2xl p-7 space-y-3">
                             <h3 className="font-black text-base text-slate-900">Warum es auf Millimeter ankommt</h3>
                             <p>
                                 Beim Gehen stellt sich der Körper auf eine gleichbleibende Stufenhöhe ein. Weicht eine einzelne
@@ -280,7 +280,7 @@ export default function TreppenPage() {
                                 Trittstufe ist der Auftritt einschließlich Überstand an der Vorderkante.
                             </p>
                         </div>
-                        <div className="glass-surface rounded-[2rem] p-7 space-y-3">
+                        <div className="glass-surface rounded-tile-2xl p-7 space-y-3">
                             <h3 className="font-black text-base text-slate-900">Was wir beim Aufmaß klären</h3>
                             <ul className="space-y-2">
                                 {[
@@ -290,7 +290,7 @@ export default function TreppenPage() {
                                     'Ungleichmäßige Rohbaustufen lassen sich nur begrenzt korrigieren; die Maße des Rohbaus bleiben maßgebend'
                                 ].map((item) => (
                                     <li key={item} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                        <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
@@ -302,7 +302,7 @@ export default function TreppenPage() {
 
             {/* Renovieren statt Abriss */}
             <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="renovieren-heading">
-                <div className="ceramic-hero rounded-[2.5rem] p-8 sm:p-12 space-y-5">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 space-y-5">
                     <span className="eyebrow eyebrow-neutral">Alte Treppe renovieren</span>
                     <h2 id="renovieren-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                         Neuer Belag statt Abriss
@@ -318,8 +318,8 @@ export default function TreppenPage() {
                             { t: 'Stufen einzeln aufmessen', d: 'Keine Stufe ist exakt gleich – jede Tritt- und Setzstufe wird individuell zugeschnitten.' },
                             { t: 'Vollflächig verlegen', d: 'Hohlraumarm verlegt mit flexiblem Fliesenkleber, damit Kanten unter Last nicht abbrechen.' }
                         ].map((step, idx) => (
-                            <li key={step.t} className="rounded-2xl bg-white/80 border border-slate-200 p-5">
-                                <span className="font-display block text-3xl font-black tabular-nums text-emerald-600/40 mb-2" aria-hidden="true">
+                            <li key={step.t} className="rounded-tile-lg bg-white/80 border border-slate-200 p-5">
+                                <span className="font-display block text-3xl font-black tabular-nums text-orange-500/30 mb-2" aria-hidden="true">
                                     {String(idx + 1).padStart(2, '0')}
                                 </span>
                                 <h3 className="font-black text-slate-900 mb-1">{step.t}</h3>
@@ -333,7 +333,7 @@ export default function TreppenPage() {
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-emerald-700" />
+                            <Phone className="w-4 h-4 text-orange-600" />
                             {COMPANY_DATA.contact.phone}
                         </a>
                     </div>
@@ -350,9 +350,9 @@ export default function TreppenPage() {
                         <li key={link.path}>
                             <Link
                                 href={link.path}
-                                className="group glass-surface rounded-2xl p-5 h-full block hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group glass-surface rounded-tile-lg p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="font-black text-slate-900 group-hover:text-emerald-800 transition-colors flex items-center gap-1">
+                                <span className="font-black text-slate-900 group-hover:text-orange-700 transition-colors flex items-center gap-1">
                                     {link.title}
                                     <ArrowRight className="w-4 h-4" />
                                 </span>

@@ -9,7 +9,7 @@ import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
   title: 'Standorte & Einsatzgebiete in Mittelhessen',
-  description: 'Fliesenverlegung, Badsanierung und DIN 18534 Abdichtung vom Meisterbetrieb aus Aßlar – im Einsatz in Wetzlar, Gießen, Marburg, Limburg, Herborn und im gesamten Lahn-Dill-Kreis.',
+  description: 'Fliesenverlegung, Badsanierung und DIN 18534 Abdichtung vom Fachbetrieb aus Aßlar – im Einsatz in Wetzlar, Gießen, Marburg, Limburg, Herborn und im gesamten Lahn-Dill-Kreis.',
   path: '/standorte',
 });
 
@@ -31,7 +31,7 @@ const standorteGraph = buildGraph([
     '@type': 'CollectionPage',
     '@id': `${pageUrl}#collection`,
     name: 'Fliesenverlegung Tezgel – Standorte & Einsatzgebiete',
-    description: 'Meisterbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und Verbundabdichtung in Mittelhessen.',
+    description: 'Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und Verbundabdichtung in Mittelhessen.',
     publisher: { '@id': ORG_ID },
   },
 ]);
@@ -59,14 +59,14 @@ export default function StandorteOverviewPage() {
             Mittelhessen &amp; Lahn-Dill-Kreis
           </span>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 leading-tight">
             Standorte &amp; Einsatzgebiete in <span className="text-ceramic-gradient">Mittelhessen</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
-            Als Meisterbetrieb mit Firmensitz in der {headquarters.street} in {headquarters.postalCode}{' '}
+          <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+            Als Fachbetrieb mit Firmensitz in der {headquarters.street} in {headquarters.postalCode}{' '}
             {headquarters.city} betreuen wir Privatkunden, Architekten und Bauherren in Wetzlar, Gießen, Herborn und
-            ganz Mittelhessen – mit persönlicher Beratung vor Ort und handwerklicher Meisterqualität.
+            ganz Mittelhessen – mit persönlicher Beratung vor Ort und handwerklicher Präzision.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
@@ -75,7 +75,7 @@ export default function StandorteOverviewPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-              <PhoneCall className="w-4 h-4 text-emerald-700" />
+              <PhoneCall className="w-4 h-4 text-orange-700" />
               {contact.phone}
             </a>
           </div>
@@ -84,13 +84,13 @@ export default function StandorteOverviewPage() {
 
       {/* Cities Grid */}
       <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="ambient-glow-mint -top-10 -left-32 opacity-60" />
+        <div className="ambient-glow-orange -top-10 -left-32 opacity-60" />
         <div className="text-center max-w-3xl mx-auto mb-14 relative z-10">
-          <span className="eyebrow eyebrow-sky mb-4">{CITIES.length} Städte &amp; Gemeinden</span>
-          <h2 className="text-3xl font-black text-slate-900 mb-4 tracking-tight">
+          <span className="eyebrow eyebrow-red mb-4">{CITIES.length} Städte &amp; Gemeinden</span>
+          <h2 className="text-3xl font-black text-neutral-900 mb-4 tracking-tight">
             Wählen Sie Ihre Stadt oder Gemeinde
           </h2>
-          <p className="text-slate-700">
+          <p className="text-neutral-700">
             Klicken Sie auf Ihren Wohnort, um mehr über unsere Fliesen- und Badleistungen und den Ablauf vor Ort zu
             erfahren. Entfernungen sind ungefähre Angaben ab Wetzlar.
           </p>
@@ -101,28 +101,28 @@ export default function StandorteOverviewPage() {
             <li key={city.slug}>
               <Link
                 href={`/standorte/${city.slug}`}
-                className="group glass-surface rounded-3xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                className="group glass-surface rounded-2xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
               >
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-4">
-                    <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800">
+                    <span className="text-[11px] font-black uppercase tracking-widest text-orange-800">
                       {city.region}
                     </span>
-                    <span className="text-xs font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full whitespace-nowrap tabular-nums">
+                    <span className="text-xs font-bold text-neutral-700 bg-neutral-100 border border-neutral-200 px-2.5 py-1 rounded-xl whitespace-nowrap tabular-nums">
                       {distanceLabel(city)}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-black text-slate-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                  <h3 className="text-xl font-black text-neutral-900 mb-3 group-hover:text-orange-800 transition-colors">
                     {city.name}
                   </h3>
 
-                  <p className="text-slate-700 text-sm leading-relaxed mb-6">
+                  <p className="text-neutral-700 text-sm leading-relaxed mb-6">
                     {city.description}
                   </p>
                 </div>
 
-                <span className="pt-4 border-t border-slate-200 flex items-center justify-between text-sm font-bold text-emerald-800">
+                <span className="pt-4 border-t border-neutral-200 flex items-center justify-between text-sm font-bold text-orange-800">
                   <span>Details &amp; Leistungen</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -133,11 +133,11 @@ export default function StandorteOverviewPage() {
       </section>
 
       {/* Services everywhere */}
-      <section className="py-16 bg-white border-y border-slate-200 relative z-10" aria-labelledby="leistungen-ueberall">
+      <section className="py-16 bg-white border-y border-neutral-200 relative z-10" aria-labelledby="leistungen-ueberall">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="eyebrow mb-4">In allen Einsatzgebieten</span>
-            <h2 id="leistungen-ueberall" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            <h2 id="leistungen-ueberall" className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
               Unsere Leistungen vor Ort
             </h2>
           </div>
@@ -145,9 +145,9 @@ export default function StandorteOverviewPage() {
             {business.primaryServices.map((service) => (
               <li
                 key={service}
-                className="flex items-start gap-3 rounded-2xl bg-slate-50 border border-slate-200 p-4 text-sm font-semibold text-slate-800"
+                className="flex items-start gap-3 rounded-xl bg-neutral-50 border border-neutral-200 p-4 text-sm font-semibold text-neutral-800"
               >
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0" />
                 <span>{service}</span>
               </li>
             ))}
@@ -155,7 +155,7 @@ export default function StandorteOverviewPage() {
           <div className="mt-8 text-center">
             <Link
               href="/leistungen"
-              className="text-sm font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2 inline-flex items-center gap-1.5"
+              className="text-sm font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2 inline-flex items-center gap-1.5"
             >
               Alle Leistungen im Überblick
               <ArrowRight className="w-4 h-4" />
@@ -166,12 +166,12 @@ export default function StandorteOverviewPage() {
 
       {/* CTA Box */}
       <section className="py-20 px-4 max-w-5xl mx-auto relative z-10">
-        <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+        <div className="ceramic-hero rounded-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
           <span className="eyebrow eyebrow-neutral">Weitere Orte auf Anfrage</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
+          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
             Ihre Stadt ist nicht aufgeführt?
           </h2>
-          <p className="text-slate-700 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="text-neutral-700 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Wir sind unter anderem im {REGIONS.join(', ')} unterwegs. Rufen Sie uns einfach an – wir klären gern,
             ob wir Ihr Projekt an Ihrem Wohnort übernehmen können.
           </p>

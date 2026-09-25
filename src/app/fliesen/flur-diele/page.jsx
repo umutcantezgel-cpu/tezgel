@@ -17,7 +17,7 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 
 export const metadata = createMetadata({
-    title: 'Flur und Diele fliesen lassen: Tipps vom Meister',
+    title: 'Flur und Diele fliesen lassen: Tipps vom Fachbetrieb',
     description:
         'Flur und Eingangsbereich fliesen: strapazierfähige Formate, Verlegerichtung im schmalen Flur, Schmutzfangzone, Rutschhemmung und Übergänge zu anderen Belägen.',
     path: '/fliesen/flur-diele'
@@ -67,12 +67,12 @@ const CROSS_LINKS = [
 export default function FlurDielePage() {
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-mint -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-sky top-96 -right-24 opacity-60" />
+            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
+            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="flur-heading">
-                <div className="ceramic-hero rounded-[3rem] p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
                     <span className="eyebrow">
                         <DoorOpen className="w-3.5 h-3.5" />
                         Küchen, Dielen &amp; Flure
@@ -101,7 +101,7 @@ export default function FlurDielePage() {
             {/* Lösungen */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="anforderungen-heading">
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-sky mb-4">Planung</span>
+                    <span className="eyebrow eyebrow-orange mb-4">Planung</span>
                     <h2 id="anforderungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
                         Anforderungen im Eingangsbereich: Abrieb, Schmutz, Nässe
                     </h2>
@@ -115,12 +115,12 @@ export default function FlurDielePage() {
                         return (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-[2rem] hover:-translate-y-0.5 hover:border-emerald-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                             >
                                 <span className="icon-chip w-12 h-12 mb-5">
                                     <Icon className="w-6 h-6" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-emerald-800 transition-colors">{item.title}</h3>
+                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -146,7 +146,7 @@ export default function FlurDielePage() {
                                 Großformate reduzieren die Fugenanteile und lassen den Raum ruhiger wirken. Sie verlangen aber einen
                                 besonders ebenen Untergrund und eine vollflächige Bettung. Wie Fugenachsen durch Türen weiterlaufen
                                 und welcher Sockel passt, zeigen wir auf der Seite{' '}
-                                <Link href="/fliesen/verlegemuster" className="font-semibold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                                <Link href="/fliesen/verlegemuster" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
                                     Verlegemuster &amp; Abschlüsse
                                 </Link>
                                 .
@@ -154,14 +154,14 @@ export default function FlurDielePage() {
                         </div>
                     </div>
                     <div>
-                        <span className="eyebrow eyebrow-sky mb-4">Sauberlaufzone</span>
+                        <span className="eyebrow eyebrow-orange mb-4">Sauberlaufzone</span>
                         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-4">
                             Schmutzfangzone von Anfang an einplanen
                         </h2>
                         <ul className="space-y-3 text-base text-slate-700">
-                            <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />Größe und Lage festlegen, bevor der Belag geplant wird – idealerweise über die volle Türbreite und mindestens eine Schrittlänge tief.</li>
-                            <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />Aufbauhöhe von Rahmen und Matte beachten, damit die Matte bündig mit den Fliesen abschließt.</li>
-                            <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />Rahmen und Matte besorgen Sie über den Fachhandel; wir planen die Aussparung und schließen den Fliesenbelag sauber an.</li>
+                            <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />Größe und Lage festlegen, bevor der Belag geplant wird – idealerweise über die volle Türbreite und mindestens eine Schrittlänge tief.</li>
+                            <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />Aufbauhöhe von Rahmen und Matte beachten, damit die Matte bündig mit den Fliesen abschließt.</li>
+                            <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />Rahmen und Matte besorgen Sie über den Fachhandel; wir planen die Aussparung und schließen den Fliesenbelag sauber an.</li>
                         </ul>
                     </div>
                 </div>
@@ -181,7 +181,7 @@ export default function FlurDielePage() {
                 </div>
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {TRANSITIONS.map((item) => (
-                        <li key={item.title} className="p-7 rounded-3xl bg-slate-50 border border-slate-200 hover:bg-white hover:border-emerald-500/80 transition-all duration-300">
+                        <li key={item.title} className="p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:border-orange-500/80 transition-all duration-300">
                             <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
                             <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                         </li>
@@ -192,7 +192,7 @@ export default function FlurDielePage() {
             {/* Rutschhemmung & offener Wohnbereich */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="rutsch-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="rutsch-heading">
                         <span className="icon-chip w-12 h-12 mb-5">
                             <Footprints className="w-6 h-6" />
                         </span>
@@ -204,12 +204,12 @@ export default function FlurDielePage() {
                             R9 oder R10 – sie bleibt im Alltag gut zu reinigen und bietet bei Nässe mehr Halt als eine polierte
                             Fliese.
                         </p>
-                        <Link href="/blog/rutschfeste-fliesen-r-klassen" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/blog/rutschfeste-fliesen-r-klassen" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             R-Klassen verständlich erklärt
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                     </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="offen-heading">
+                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="offen-heading">
                         <span className="icon-chip w-12 h-12 mb-5">
                             <MoveHorizontal className="w-6 h-6" />
                         </span>
@@ -220,7 +220,7 @@ export default function FlurDielePage() {
                             Türdurchgängen – deckungsgleich in den Belag übernommen werden. Liegt eine Flächentemperierung im
                             Boden, gelten zusätzliche Regeln.
                         </p>
-                        <Link href="/fliesen/auf-fussbodenheizung" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-700">
+                        <Link href="/fliesen/auf-fussbodenheizung" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
                             Fliesen auf beheiztem Estrich
                             <ArrowRight className="w-4 h-4" />
                         </Link>
@@ -236,11 +236,11 @@ export default function FlurDielePage() {
                         <li key={link.href}>
                             <Link
                                 href={link.href}
-                                className="group block h-full glass-surface rounded-2xl p-5 hover:-translate-y-0.5 hover:border-emerald-500/80 transition-all duration-300"
+                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
                             >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-emerald-800 transition-colors">
+                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-emerald-600" />
+                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-600" />
                                 </span>
                                 <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
                             </Link>
@@ -249,12 +249,12 @@ export default function FlurDielePage() {
                 </ul>
                 <p className="mt-6 text-sm text-slate-700">
                     Fragen zum Projekt? Rufen Sie an unter{' '}
-                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-700">
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-slate-800 hover:text-orange-600">
                         <Phone className="w-3.5 h-3.5" />
                         {COMPANY_DATA.contact.phone}
                     </a>{' '}
                     oder senden Sie Fotos per{' '}
-                    <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-800 hover:text-emerald-700 hover:underline underline-offset-2">
+                    <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="font-bold text-green-700 hover:text-green-800 hover:underline underline-offset-2">
                         WhatsApp
                     </a>
                     .

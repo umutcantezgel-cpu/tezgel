@@ -4,10 +4,10 @@ import { cn } from "@/utils"
 
 const Button = React.forwardRef(({ className, variant = "default", size = "default", ...props }, ref) => {
   // Base styles using design tokens
-  const baseStyles = "inline-flex items-center justify-center font-bold transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+  const baseStyles = "inline-flex items-center justify-center font-bold transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
 
   const variants = {
-    // Primary: Solid Emerald (white text, WCAG AA)
+    // Primary: Solid Orange (white text)
     default: "bg-[var(--color-button-primary-bg)] text-[var(--color-button-primary-text)] hover:bg-[var(--color-button-primary-hover)] shadow-sm hover:shadow-md",
 
     // Secondary: Neutral/Ghost-like but with background
@@ -27,10 +27,10 @@ const Button = React.forwardRef(({ className, variant = "default", size = "defau
   }
 
   const sizes = {
-    default: "h-[var(--spacing-12)] px-[var(--spacing-6)] rounded-full text-[var(--font-size-base)]", // 48px height
-    sm: "h-[var(--spacing-10)] px-[var(--spacing-4)] rounded-full text-[var(--font-size-sm)]", // 40px height
-    lg: "h-[var(--spacing-16)] px-[var(--spacing-8)] rounded-full text-[var(--font-size-lg)]", // 64px height (Large CTAs)
-    icon: "h-[var(--spacing-12)] w-[var(--spacing-12)] rounded-full",
+    default: "h-[var(--spacing-12)] px-[var(--spacing-6)] rounded-tile-md text-[var(--font-size-base)]", // 48px height
+    sm: "h-[var(--spacing-10)] px-[var(--spacing-4)] rounded-tile-sm text-[var(--font-size-sm)]", // 40px height
+    lg: "h-[var(--spacing-16)] px-[var(--spacing-8)] rounded-tile-md text-[var(--font-size-lg)]", // 64px height (Large CTAs)
+    icon: "h-[var(--spacing-12)] w-[var(--spacing-12)] rounded-tile-md",
   }
 
   return (
