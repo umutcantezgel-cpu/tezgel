@@ -10,7 +10,7 @@ interface StoredPosition {
 
 const getButtonSize = () => {
     if (typeof window === 'undefined') return 60;
-    return window.innerWidth < 640 ? 56 : 62;
+    return window.innerWidth < 640 ? 56 : 60;
 };
 
 const getBounds = () => {
@@ -52,8 +52,8 @@ const getInitialPos = () => {
     return { x: initialX, y: initialY };
 };
 
-// Authentic WhatsApp vector paths (speech bubble and centered telephone receiver)
-const BUBBLE_PATH = "M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326z";
+// WhatsApp vector paths (speech bubble and telephone receiver)
+const BUBBLE_OUTLINE = "M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326z";
 const SECONDARY_SKETCH_CONTOUR = "M13.5 2.4A7.8 7.8 0 0 0 8 0.1C3.7 0.1 0.2 3.6 0.2 7.9c0 1.4.4 2.7 1 3.9L0.1 15.9l4.2-1.1a7.8 7.8 0 0 0 3.7.9h.1c4.3 0 7.8-3.5 7.8-7.8a7.8 7.8 0 0 0-2.4-5.5z";
 const HANDSET_PATH = "M11.609 9.587c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z";
 
@@ -112,7 +112,6 @@ export default function WhatsAppButton() {
     // Smooth, damped magnetic docking to nearest edge without arcade bouncing
     const snapToEdge = useCallback((startX: number, startY: number, vx = 0, vy = 0) => {
         const bounds = getBounds();
-        // Determine edge target with subtle velocity influence
         const projectedX = startX + vx * 6;
         const targetX = projectedX < (bounds.minX + bounds.maxX) / 2 ? bounds.minX : bounds.maxX;
         const projectedY = startY + vy * 5;
@@ -125,7 +124,6 @@ export default function WhatsAppButton() {
             const dx = targetX - currentX;
             const dy = targetY - currentY;
 
-            // Critically-damped smooth glide
             currentX += dx * 0.22;
             currentY += dy * 0.22;
 
@@ -182,7 +180,6 @@ export default function WhatsAppButton() {
 
     // Pointer event handlers (Mouse, Trackpad & Touch)
     const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-        // Only primary mouse button or touch
         if (e.button !== 0 && e.pointerType === 'mouse') return;
 
         if (animFrameRef.current) {
@@ -311,154 +308,121 @@ export default function WhatsAppButton() {
             className="group outline-none"
         >
             <div
-                className={`relative w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] transition-transform duration-200 ${
+                className={`relative w-[56px] h-[56px] sm:w-[60px] sm:h-[60px] rounded-full transition-transform duration-200 ${
                     isDraggingState ? 'scale-105' : 'hover:scale-[1.03]'
                 }`}
             >
-                {/* Hyperrealistic Handcrafted/Sketch WhatsApp Icon */}
+                {/* Normaler runder WhatsApp-Button wie mit grünem und weißem Bleistift gezeichnet */}
                 <svg
-                    viewBox="-1.5 -1.5 19 19"
+                    viewBox="0 0 64 64"
                     aria-hidden="true"
-                    className="w-full h-full select-none pointer-events-none drop-shadow-[0_8px_16px_rgba(4,32,15,0.38)]"
+                    className="w-full h-full select-none pointer-events-none drop-shadow-[0_8px_18px_rgba(4,32,15,0.36)]"
                 >
                     <defs>
-                        {/* Organic hand-drawn pen/pencil roughness filter */}
-                        <filter id="wa-sketch-roughness" x="-30%" y="-30%" width="160%" height="160%">
-                            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
-                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.38" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+                        {/* Organischer Buntstift-Filter (Papierabrieb und natürliche Linien-Rauheit) */}
+                        <filter id="pencil-rough-edge" x="-15%" y="-15%" width="130%" height="130%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" result="roughness" />
+                            <feDisplacementMap in="SourceGraphic" in2="roughness" scale="0.65" xChannelSelector="R" yChannelSelector="G" />
                         </filter>
 
-                        {/* Craftsman Green Marker Gradient */}
-                        <linearGradient id="wa-marker-fill" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#28E26F" />
-                            <stop offset="45%" stopColor="#20BD5A" />
-                            <stop offset="80%" stopColor="#159346" />
-                            <stop offset="100%" stopColor="#0D6A32" />
-                        </linearGradient>
-
-                        {/* Hand-drawn pencil hatching pattern (Schraffur) */}
-                        <pattern id="wa-sketch-hatch" width="1.4" height="1.4" patternTransform="rotate(42 0 0)" patternUnits="userSpaceOnUse">
-                            <line x1="0" y1="0" x2="0" y2="1.4" stroke="#063B19" strokeWidth="0.16" strokeOpacity="0.35" strokeDasharray="1.4 0.2" />
+                        {/* Grüner Buntstift-Strichverlauf (parallele Stiftstriche im 38° Winkel) */}
+                        <pattern id="green-pencil-hatch" width="1.6" height="1.6" patternTransform="rotate(38 0 0)" patternUnits="userSpaceOnUse">
+                            <line x1="0" y1="0" x2="0" y2="1.6" stroke="#15803D" strokeWidth="0.35" strokeOpacity="0.45" />
+                            <line x1="0.8" y1="0" x2="0.8" y2="1.6" stroke="#0B5327" strokeWidth="0.2" strokeOpacity="0.3" />
                         </pattern>
 
-                        {/* Cross hatching for deep craftsman volume */}
-                        <pattern id="wa-sketch-crosshatch" width="1.8" height="1.8" patternTransform="rotate(-35 0 0)" patternUnits="userSpaceOnUse">
-                            <line x1="0" y1="0" x2="0" y2="1.8" stroke="#042810" strokeWidth="0.14" strokeOpacity="0.22" />
+                        {/* Kreuzschraffur für plastische Buntstift-Schattierung unten-rechts */}
+                        <pattern id="green-cross-hatch" width="2.2" height="2.2" patternTransform="rotate(-35 0 0)" patternUnits="userSpaceOnUse">
+                            <line x1="0" y1="0" x2="0" y2="2.2" stroke="#064E24" strokeWidth="0.25" strokeOpacity="0.35" />
                         </pattern>
+
+                        {/* Grüner Buntstift-Kern-Verlauf */}
+                        <radialGradient id="green-pencil-base" cx="38%" cy="35%" r="65%">
+                            <stop offset="0%" stopColor="#22C55E" />
+                            <stop offset="50%" stopColor="#16A34A" />
+                            <stop offset="85%" stopColor="#15803D" />
+                            <stop offset="100%" stopColor="#0E5A29" />
+                        </radialGradient>
                     </defs>
 
-                    {/* 1. Underlying Graphite Contact Shadow */}
-                    <path
-                        d={BUBBLE_PATH}
-                        fill="#021609"
-                        opacity="0.25"
-                        filter="url(#wa-sketch-roughness)"
-                        transform="translate(0.35, 0.55)"
-                    />
+                    {/* 1. Weicher Graphit-Papierschatten */}
+                    <circle cx="32.5" cy="33.5" r="28" fill="#031A0B" opacity="0.22" filter="url(#pencil-rough-edge)" />
 
-                    {/* Main Handcrafted Sketch Group */}
-                    <g filter="url(#wa-sketch-roughness)">
-                        {/* 2. Preliminary Bleistift-Vorzeichnung (construction pencil lines) */}
+                    {/* 2. Runder Button-Grundkörper mit grünem Buntstift koloriert */}
+                    <g filter="url(#pencil-rough-edge)">
+                        {/* Grüner Buntstift Farbauftrag */}
+                        <circle cx="32" cy="32" r="28" fill="url(#green-pencil-base)" />
+
+                        {/* Buntstift-Schraffur Strichstrukturen */}
+                        <circle cx="32" cy="32" r="28" fill="url(#green-pencil-hatch)" />
+                        <circle cx="32" cy="32" r="28" fill="url(#green-cross-hatch)" />
+
+                        {/* Handgezeichnete runde Kreisbegrenzung (dunkelgrüner/Graphit-Buntstift) */}
+                        <circle cx="32" cy="32" r="27.8" fill="none" stroke="#073C19" strokeWidth="0.9" strokeLinecap="round" />
+                        {/* Feiner skizzierter Zweitstrich */}
+                        <circle cx="32.1" cy="31.9" r="27.5" fill="none" stroke="#042610" strokeWidth="0.4" strokeOpacity="0.6" strokeDasharray="20, 2, 8, 3" />
+
+                        {/* Weißer Buntstift-Lichtbogen am oberen linken Rand des runden Buttons */}
+                        <path d="M12 24 A26 26 0 0 1 32 6" fill="none" stroke="#FFFFFF" strokeWidth="0.8" strokeLinecap="round" strokeOpacity="0.65" />
+                    </g>
+
+                    {/* 3. WhatsApp-Symbol im Zentrum MIT WEISSEM BUNTSTIFT GEZEICHNET */}
+                    <g transform="translate(14, 14) scale(2.25)" filter="url(#pencil-rough-edge)">
+                        {/* Dezent schattierter Graphit-Strich unter dem weißen Buntstift */}
                         <path
-                            d={BUBBLE_PATH}
+                            d={BUBBLE_OUTLINE}
                             fill="none"
-                            stroke="#1F2937"
-                            strokeWidth="0.35"
-                            strokeOpacity="0.4"
-                            transform="translate(-0.1, -0.08)"
-                        />
-                        <path
-                            d={BUBBLE_PATH}
-                            fill="none"
-                            stroke="#374151"
-                            strokeWidth="0.2"
+                            stroke="#063116"
+                            strokeWidth="1.4"
                             strokeOpacity="0.35"
-                            transform="translate(0.18, 0.15)"
+                            transform="translate(0.2, 0.3)"
                         />
 
-                        {/* 3. Rich Green Marker/Colored-Pencil Fill */}
-                        <path d={BUBBLE_PATH} fill="url(#wa-marker-fill)" />
-
-                        {/* 4. Diagonal Hand-drawn Hatching (Schraffur) */}
-                        <path d={BUBBLE_PATH} fill="url(#wa-sketch-hatch)" />
-
-                        {/* 5. Cross-Hatching for 3D Volume */}
-                        <path d={BUBBLE_PATH} fill="url(#wa-sketch-crosshatch)" />
-
-                        {/* 6. Dark Fineliner Primary Contour */}
+                        {/* Weißer Buntstift: Hauptkontur der WhatsApp-Sprechblase */}
                         <path
-                            d={BUBBLE_PATH}
+                            d={BUBBLE_OUTLINE}
                             fill="none"
-                            stroke="#062D15"
-                            strokeWidth="0.52"
+                            stroke="#FFFFFF"
+                            strokeWidth="1.2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
+                            strokeOpacity="0.95"
                         />
-
-                        {/* 7. Secondary Hand-sketched Contour (Überzeichnung) */}
+                        {/* Feiner handgezeichneter Zweitstrich der Sprechblase */}
                         <path
                             d={SECONDARY_SKETCH_CONTOUR}
                             fill="none"
-                            stroke="#03180B"
-                            strokeWidth="0.22"
-                            strokeOpacity="0.7"
-                            strokeDasharray="5, 0.8, 2.5, 0.6"
+                            stroke="#F8FAFC"
+                            strokeWidth="0.35"
+                            strokeOpacity="0.65"
+                            strokeDasharray="4, 0.8, 2, 0.6"
                         />
 
-                        {/* 8. White Chalk / Gel Pen Highlight Strokes */}
-                        <path
-                            d="M3.2 4.4 A 6.6 6.6 0 0 1 10.8 1.4"
-                            fill="none"
-                            stroke="#FFFFFF"
-                            strokeWidth="0.55"
-                            strokeLinecap="round"
-                            strokeOpacity="0.75"
-                        />
-                        <path
-                            d="M4.5 3.2 A 6.0 6.0 0 0 1 8.8 1.8"
-                            fill="none"
-                            stroke="#FFFFFF"
-                            strokeWidth="0.25"
-                            strokeLinecap="round"
-                            strokeOpacity="0.9"
-                        />
-
-                        {/* 9. Handset Charcoal Contact Shadow */}
+                        {/* Telefonhörer-Schatten */}
                         <path
                             d={HANDSET_PATH}
-                            fill="#03220F"
+                            fill="#052812"
                             opacity="0.4"
                             transform="translate(0.18, 0.25)"
                         />
 
-                        {/* 10. Handset Body - Opaque Drafting White with Dark Fineliner Outline */}
+                        {/* Weißer Buntstift: Telefonhörer-Körper */}
                         <path
                             d={HANDSET_PATH}
-                            fill="#FAFAF9"
-                            stroke="#092A16"
-                            strokeWidth="0.32"
+                            fill="#FFFFFF"
+                            stroke="#FFFFFF"
+                            strokeWidth="0.3"
                             strokeLinejoin="round"
                             strokeLinecap="round"
                         />
 
-                        {/* 11. Handset Secondary Sketch Contour Accent */}
+                        {/* Zarter Graphit-Akzent auf dem Hörer */}
                         <path
                             d={HANDSET_PATH}
                             fill="none"
-                            stroke="#1E293B"
-                            strokeWidth="0.18"
-                            strokeOpacity="0.6"
-                            transform="translate(-0.06, -0.06)"
-                        />
-
-                        {/* 12. Handset Inner Ergonomic Volume Line */}
-                        <path
-                            d="M4.8 6.4 C6.2 8.6 7.6 10.0 9.8 11.4"
-                            fill="none"
-                            stroke="#CBD5E1"
-                            strokeWidth="0.35"
-                            strokeLinecap="round"
-                            strokeOpacity="0.6"
+                            stroke="#1E3A29"
+                            strokeWidth="0.15"
+                            strokeOpacity="0.4"
                         />
                     </g>
                 </svg>
