@@ -3,6 +3,7 @@ import { InquiryPayload, SendEmailResult } from './types';
 import { generateReferenceId } from './reference';
 import { generateCustomerEmailHtml } from './templates/customerEmail';
 import { generateTeamEmailHtml } from './templates/teamEmail';
+import { COMPANY_DATA } from '@/config/company';
 
 /**
  * Dispatches both the internal team notification and the personalized customer confirmation email.
@@ -15,8 +16,9 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
   const customerHtml = generateCustomerEmailHtml(payload, referenceId);
 
   const resendApiKey = process.env.RESEND_API_KEY;
-  const recipientEmail = process.env.CONTACT_EMAIL || 'info@tezgel.de';
-  const fromSender = process.env.RESEND_FROM_EMAIL || 'Fliesenverlegung Tezgel <anfrage@tezgel.de>';
+  // info@tezgel.de is the authoritative single email address for all incoming inquiries
+  const recipientEmail = COMPANY_DATA.contact.email || process.env.CONTACT_EMAIL || 'info@tezgel.de';
+  const fromSender = process.env.RESEND_FROM_EMAIL || `Fliesenverlegung Tezgel <${recipientEmail}>`;
 
   // In development without an API key, simulate delivery and log details
   if (!resendApiKey || resendApiKey.trim() === '' || resendApiKey.startsWith('re_your_api_key')) {
@@ -61,11 +63,11 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
   let customerSent = false;
 
   try {
-    // 1. Send team lead alert
+    // 1. Send team lead alert (always arrives at info@tezgel.de)
     await resend.emails.send({
       from: fromSender,
       to: recipientEmail,
-      replyTo: payload.contact.email || undefined,
+      replyTo: payload.contact.email || recipientEmail,
       subject: teamSubject,
       html: teamHtml
     });
@@ -81,6 +83,7 @@ export async function sendInquiryEmails(payload: InquiryPayload): Promise<SendEm
       await resend.emails.send({
         from: fromSender,
         to: payload.contact.email.trim(),
+        replyTo: recipientEmail, // Direct customer replies directly into info@tezgel.de
         subject: customerSubject,
         html: customerHtml
       });

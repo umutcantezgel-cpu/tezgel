@@ -289,7 +289,8 @@ export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: 
               <span style="font-size: 12.5px; color: #64748b; display: block; margin-bottom: 12px;">
                 ${COMPANY_DATA.owner.title}
               </span>
-              <p style="margin: 0; font-size: 13px; color: #334155; line-height: 1.5;">
+              <p style="margin: 0; font-size: 13px; color: #334155; line-height: 1.6;">
+                ✉️ E-Mail: <a href="mailto:${COMPANY_DATA.contact.email}" style="color: #ea580c; font-weight: 700; text-decoration: none;">${COMPANY_DATA.contact.email}</a><br>
                 📞 Telefon: <a href="tel:${COMPANY_DATA.contact.phoneLink}" style="color: #ea580c; font-weight: 700; text-decoration: none;">${COMPANY_DATA.contact.phone}</a><br>
                 💬 WhatsApp / Mobil: <a href="${COMPANY_DATA.contact.whatsappLink}" style="color: #ea580c; font-weight: 700; text-decoration: none;">${COMPANY_DATA.contact.mobile}</a>
               </p>
