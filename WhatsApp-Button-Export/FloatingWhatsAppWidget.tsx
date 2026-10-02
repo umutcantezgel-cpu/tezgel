@@ -23,16 +23,18 @@ import { openWhatsApp, buildWhatsAppUrl, isMobileDevice } from "@/lib/whatsapp";
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 interface StoredPosition {
-  side: "left" | "right";
+  side: "right";
   yRatio: number;
 }
 
 const SIZE = 60;
-const FRICTION = 0.92;
-const BOUNCE = 0.6;
-const MIN_VEL = 0.3;
-const DRAG_THRESHOLD_TOUCH = 14; // Higher tolerance for mobile finger taps to prevent accidental drag cancels
-const DRAG_THRESHOLD_MOUSE = 7;
+const FRICTION = 0.94; // Smooth deceleration allowing 2-4 wall bounces on hard throw
+const BOUNCE = 0.72; // Elastic satisfying rebound
+const MIN_VEL = 0.38; // Threshold to transition from bouncing to docking
+const DRAG_THRESHOLD_MOUSE = 5; // Px movement required to distinguish click from drag
+const DRAG_THRESHOLD_TOUCH = 10;
+const MAX_VELOCITY = 42; // Prevent glitch speeds
+const HISTORY_WINDOW_MS = 120; // Time window for release velocity calculation
 
 /* ── Contextual messages tailored to Fliesenverlegung Tezgel ── */
 function getContextualMessage(pathname: string): string {
@@ -76,7 +78,7 @@ function getWidgetBounds(size: number) {
   const isMobile = w < 768;
   const margin = isMobile ? 12 : 24;
   const safeTop = 72; // below sticky header
-  // Ensure comfortable clearance above mobile bottom dock (FloatingDock) + iOS home bar
+  // Clearance above mobile bottom dock (FloatingDock) + iOS home bar
   const safeBottom = isMobile ? 102 : 24;
 
   const minX = margin;
@@ -87,23 +89,21 @@ function getWidgetBounds(size: number) {
   return { w, h, isMobile, margin, safeTop, safeBottom, minX, maxX, minY, maxY };
 }
 
-/* ── Initial position resolution ── */
-function getInitialPosition(): { x: number; y: number; side: "left" | "right" } {
+/* ── Initial position resolution (always starts or restores to right edge) ── */
+function getInitialPosition(): { x: number; y: number; side: "right" } {
   if (typeof window === "undefined") {
     return { x: 300, y: 500, side: "right" };
   }
   const bounds = getWidgetBounds(SIZE);
   let initialX = bounds.maxX;
   let initialY = bounds.maxY;
-  let initialSide: "left" | "right" = "right";
 
   try {
     const raw = sessionStorage.getItem("tezgel_wa_button_pos");
     if (raw) {
       const parsed: StoredPosition = JSON.parse(raw);
-      if (parsed.side === "left" || parsed.side === "right") {
-        initialSide = parsed.side;
-        initialX = parsed.side === "left" ? bounds.minX : bounds.maxX;
+      if (typeof parsed.yRatio === "number") {
+        initialX = bounds.maxX;
         initialY = bounds.minY + parsed.yRatio * (bounds.maxY - bounds.minY);
       }
     }
@@ -111,21 +111,7 @@ function getInitialPosition(): { x: number; y: number; side: "left" | "right" } 
     // Fallback to default
   }
 
-  return { x: initialX, y: initialY, side: initialSide };
-}
-
-/* ── Edge-snap target: find nearest screen edge and clamp within safe bounds ── */
-function getSnapTarget(x: number, y: number, size: number) {
-  const bounds = getWidgetBounds(size);
-  const midX = x + size / 2;
-  const distLeft = midX;
-  const distRight = bounds.w - midX;
-
-  const clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, y));
-  if (distLeft < distRight) {
-    return { x: bounds.minX, y: clampedY, side: "left" as const };
-  }
-  return { x: bounds.maxX, y: clampedY, side: "right" as const };
+  return { x: initialX, y: initialY, side: "right" };
 }
 
 export default function FloatingWhatsAppWidget() {
@@ -136,31 +122,36 @@ export default function FloatingWhatsAppWidget() {
   }));
   const [isDragging, setIsDragging] = useState(false);
   const [isSnapping, setIsSnapping] = useState(false);
-  const [currentSide, setCurrentSide] = useState<"left" | "right">(initialState.side);
   const [showTooltip, setShowTooltip] = useState(false);
   const [showBadge, setShowBadge] = useState(true);
 
   const btnRef = useRef<HTMLAnchorElement>(null);
   const pathname = usePathname() || "";
 
-  // Position state (refs for 60fps physics animations without causing React re-renders)
+  // Position & physics refs (for smooth 60fps animations without React re-renders)
   const posRef = useRef({ x: initialState.x, y: initialState.y });
   const velRef = useRef({ x: 0, y: 0 });
   const isPointerDownRef = useRef(false);
   const isDraggingRef = useRef(false);
   const wasDraggedRef = useRef(false);
+  const justFinishedDragRef = useRef(false);
   const isSnappingRef = useRef(false);
   const pointerDownTimeRef = useRef(0);
-  const justHandledTapRef = useRef(false);
   const pointerTypeRef = useRef<string>("mouse");
-  const dragStartRef = useRef({ x: 0, y: 0 });
-  const lastPointerRef = useRef({ x: 0, y: 0, t: 0 });
-  const prevPointerRef = useRef({ x: 0, y: 0, t: 0 });
+  const dragStartPointerRef = useRef({ x: 0, y: 0 });
+  const dragStartPosRef = useRef({ x: 0, y: 0 });
+  const pointerHistoryRef = useRef<Array<{ x: number; y: number; t: number }>>([]);
+  const pointerIdRef = useRef<number | null>(null);
+  const windowListenersRef = useRef<{
+    move: (e: PointerEvent) => void;
+    up: (e: PointerEvent) => void;
+  } | null>(null);
+
   const animFrameRef = useRef<number>(0);
   const snapFrameRef = useRef<number>(0);
   const animateFnRef = useRef<(() => void) | null>(null);
 
-  // Directly update DOM transform during 60fps animations for optimal performance
+  // Directly update DOM transform during 60fps physics animations
   const updateTransform = useCallback((x: number, y: number) => {
     posRef.current = { x, y };
     if (btnRef.current) {
@@ -168,31 +159,47 @@ export default function FloatingWhatsAppWidget() {
     }
   }, []);
 
-  // Save dock position to sessionStorage
-  const persistPosition = useCallback((side: "left" | "right", y: number) => {
+  // Save docked position to sessionStorage
+  const persistPosition = useCallback((y: number) => {
     try {
       const bounds = getWidgetBounds(SIZE);
       const span = bounds.maxY - bounds.minY;
       const yRatio = span > 0 ? (y - bounds.minY) / span : 0.8;
-      const payload: StoredPosition = { side, yRatio: Math.max(0, Math.min(1, yRatio)) };
+      const payload: StoredPosition = { side: "right", yRatio: Math.max(0, Math.min(1, yRatio)) };
       sessionStorage.setItem("tezgel_wa_button_pos", JSON.stringify(payload));
     } catch {
       // Ignore storage errors in private browsing
     }
   }, []);
 
-  // Edge-snap animation (spring-like easing)
-  const snapToEdge = useCallback(() => {
-    const target = getSnapTarget(posRef.current.x, posRef.current.y, SIZE);
+  // Remove window pointer listeners cleanly
+  const removeWindowListeners = useCallback(() => {
+    if (windowListenersRef.current) {
+      window.removeEventListener("pointermove", windowListenersRef.current.move);
+      window.removeEventListener("pointerup", windowListenersRef.current.up);
+      window.removeEventListener("pointercancel", windowListenersRef.current.up);
+      windowListenersRef.current = null;
+    }
+  }, []);
+
+  // Smooth dock to right screen edge
+  const snapToRightEdge = useCallback(() => {
+    cancelAnimationFrame(animFrameRef.current);
+    cancelAnimationFrame(snapFrameRef.current);
+
+    const bounds = getWidgetBounds(SIZE);
+    const targetX = bounds.maxX; // Always dock to the right edge
+    const clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y));
+
     isSnappingRef.current = true;
     setIsSnapping(true);
-    setCurrentSide(target.side);
-    persistPosition(target.side, target.y);
+    persistPosition(clampedY);
 
     const startX = posRef.current.x;
     const startY = posRef.current.y;
     const startTime = performance.now();
-    const duration = 380; // ms
+    const distance = Math.hypot(targetX - startX, clampedY - startY);
+    const duration = Math.min(450, Math.max(260, distance * 0.4));
 
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
@@ -201,8 +208,8 @@ export default function FloatingWhatsAppWidget() {
       const progress = Math.min(elapsed / duration, 1);
       const eased = easeOutCubic(progress);
 
-      const nextX = startX + (target.x - startX) * eased;
-      const nextY = startY + (target.y - startY) * eased;
+      const nextX = startX + (targetX - startX) * eased;
+      const nextY = startY + (clampedY - startY) * eased;
       updateTransform(nextX, nextY);
 
       if (progress < 1) {
@@ -210,15 +217,15 @@ export default function FloatingWhatsAppWidget() {
       } else {
         isSnappingRef.current = false;
         setIsSnapping(false);
-        updateTransform(target.x, target.y);
-        setCoords({ x: target.x, y: target.y });
+        updateTransform(targetX, clampedY);
+        setCoords({ x: targetX, y: clampedY });
       }
     };
 
     snapFrameRef.current = requestAnimationFrame(step);
   }, [persistPosition, updateTransform]);
 
-  // Keep animateFnRef fresh
+  // Wall bounce physics loop
   useEffect(() => {
     animateFnRef.current = () => {
       if (isDraggingRef.current) return;
@@ -230,47 +237,64 @@ export default function FloatingWhatsAppWidget() {
       v.x *= FRICTION;
       v.y *= FRICTION;
 
-      if (Math.abs(v.x) < MIN_VEL && Math.abs(v.y) < MIN_VEL) {
-        v.x = 0;
-        v.y = 0;
-        snapToEdge();
-        return;
-      }
-
       let nextX = p.x + v.x;
       let nextY = p.y + v.y;
+      let didBounce = false;
 
-      // Bounce off safe edges
+      // Elastic bounce off Left & Right walls
       if (nextX <= bounds.minX) {
         nextX = bounds.minX;
         v.x = Math.abs(v.x) * BOUNCE;
+        didBounce = true;
       } else if (nextX >= bounds.maxX) {
         nextX = bounds.maxX;
         v.x = -Math.abs(v.x) * BOUNCE;
+        didBounce = true;
       }
 
+      // Elastic bounce off Top & Bottom safe bounds
       if (nextY <= bounds.minY) {
         nextY = bounds.minY;
         v.y = Math.abs(v.y) * BOUNCE;
+        didBounce = true;
       } else if (nextY >= bounds.maxY) {
         nextY = bounds.maxY;
         v.y = -Math.abs(v.y) * BOUNCE;
+        didBounce = true;
+      }
+
+      if (didBounce && typeof navigator !== "undefined" && navigator.vibrate) {
+        try {
+          navigator.vibrate(8);
+        } catch {
+          // ignore
+        }
       }
 
       updateTransform(nextX, nextY);
+
+      // Once momentum dissipates, smoothly snap into dock on the right edge
+      const speed = Math.hypot(v.x, v.y);
+      if (speed < MIN_VEL) {
+        v.x = 0;
+        v.y = 0;
+        snapToRightEdge();
+        return;
+      }
+
       animFrameRef.current = requestAnimationFrame(() => {
         animateFnRef.current?.();
       });
     };
-  }, [snapToEdge, updateTransform]);
+  }, [snapToRightEdge, updateTransform]);
 
-  // Trigger physics animation
   const startPhysicsAnimation = useCallback(() => {
     cancelAnimationFrame(animFrameRef.current);
+    cancelAnimationFrame(snapFrameRef.current);
     animateFnRef.current?.();
   }, []);
 
-  // Timers for tooltip and badge
+  // Timers for initial tooltip and badge
   useEffect(() => {
     const tooltipTimer = setTimeout(() => setShowTooltip(true), 5000);
     const badgeTimer = setTimeout(() => setShowBadge(false), 30000);
@@ -281,7 +305,7 @@ export default function FloatingWhatsAppWidget() {
     };
   }, []);
 
-  // Track analytics event helper
+  // Analytics event tracking
   const trackClick = useCallback(() => {
     if (typeof window !== "undefined") {
       const win = window as unknown as { gtag?: (...args: unknown[]) => void };
@@ -294,60 +318,34 @@ export default function FloatingWhatsAppWidget() {
     }
   }, [pathname]);
 
-  const onPointerDown = useCallback(
-    (e: React.PointerEvent) => {
-      if (e.button !== 0) return;
-
-      isPointerDownRef.current = true;
-      isDraggingRef.current = false;
-      wasDraggedRef.current = false;
-      isSnappingRef.current = false;
-      setIsDragging(false);
-      setIsSnapping(false);
-
-      cancelAnimationFrame(animFrameRef.current);
-      cancelAnimationFrame(snapFrameRef.current);
-      velRef.current = { x: 0, y: 0 };
-
-      const now = Date.now();
-      pointerDownTimeRef.current = now;
-      pointerTypeRef.current = e.pointerType || "mouse";
-      dragStartRef.current = { x: e.clientX, y: e.clientY };
-      lastPointerRef.current = { x: e.clientX, y: e.clientY, t: now };
-      prevPointerRef.current = { x: e.clientX, y: e.clientY, t: now };
-
-      try {
-        (e.target as HTMLElement).setPointerCapture(e.pointerId);
-      } catch {
-        // ignore
+  // Global window pointermove handler (registered during pointer down)
+  const onWindowPointerMove = useCallback(
+    (e: PointerEvent) => {
+      if (!isPointerDownRef.current || (pointerIdRef.current !== null && e.pointerId !== pointerIdRef.current)) {
+        return;
       }
-    },
-    []
-  );
 
-  const onPointerMove = useCallback(
-    (e: React.PointerEvent) => {
-      if (!isPointerDownRef.current) return;
-
-      const totalDx = e.clientX - dragStartRef.current.x;
-      const totalDy = e.clientY - dragStartRef.current.y;
+      const totalDx = e.clientX - dragStartPointerRef.current.x;
+      const totalDy = e.clientY - dragStartPointerRef.current.y;
       const dist = Math.hypot(totalDx, totalDy);
       const threshold = pointerTypeRef.current === "touch" ? DRAG_THRESHOLD_TOUCH : DRAG_THRESHOLD_MOUSE;
 
-      // Only enter drag state if pointer has intentionally moved beyond jitter threshold
+      // Enter drag state once movement exceeds threshold
       if (!isDraggingRef.current && dist > threshold) {
         isDraggingRef.current = true;
         wasDraggedRef.current = true;
         setIsDragging(true);
-
-        // Hide tooltip & badge on intentional drag
         setShowTooltip(false);
         setShowBadge(false);
 
-        // Haptic feedback on mobile when drag begins
+        // Clear accidental text selection
+        if (typeof window !== "undefined" && window.getSelection) {
+          window.getSelection()?.removeAllRanges();
+        }
+
         if (typeof navigator !== "undefined" && navigator.vibrate) {
           try {
-            navigator.vibrate(20);
+            navigator.vibrate(15);
           } catch {
             // ignore
           }
@@ -356,98 +354,162 @@ export default function FloatingWhatsAppWidget() {
 
       if (!isDraggingRef.current) return;
 
-      const dx = e.clientX - lastPointerRef.current.x;
-      const dy = e.clientY - lastPointerRef.current.y;
+      // Prevent native scroll or text drag while actively dragging the widget
+      if (e.cancelable) {
+        e.preventDefault();
+      }
 
       const bounds = getWidgetBounds(SIZE);
-      const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x + dx));
-      const nextY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y + dy));
+      const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, dragStartPosRef.current.x + totalDx));
+      const nextY = Math.max(bounds.minY, Math.min(bounds.maxY, dragStartPosRef.current.y + totalDy));
 
       updateTransform(nextX, nextY);
 
-      prevPointerRef.current = { ...lastPointerRef.current };
-      lastPointerRef.current = { x: e.clientX, y: e.clientY, t: Date.now() };
+      // Record rolling pointer history (last 120ms) for high-accuracy fling calculation
+      const now = performance.now();
+      pointerHistoryRef.current.push({ x: e.clientX, y: e.clientY, t: now });
+      const cutoff = now - HISTORY_WINDOW_MS;
+      pointerHistoryRef.current = pointerHistoryRef.current.filter((sample) => sample.t >= cutoff);
     },
     [updateTransform]
   );
 
-  const onPointerUp = useCallback(
-    (e: React.PointerEvent) => {
-      if (!isPointerDownRef.current) return;
-      isPointerDownRef.current = false;
-
-      try {
-        (e.target as HTMLElement).releasePointerCapture(e.pointerId);
-      } catch {
-        // ignore
+  // Global window pointerup/pointercancel handler
+  const onWindowPointerUp = useCallback(
+    (e: PointerEvent) => {
+      if (!isPointerDownRef.current || (pointerIdRef.current !== null && e.pointerId !== pointerIdRef.current)) {
+        return;
       }
 
-      // Case A: User was actively dragging the button
+      isPointerDownRef.current = false;
+      pointerIdRef.current = null;
+      removeWindowListeners();
+
+      // Case A: User was dragging or flinging the widget
       if (isDraggingRef.current) {
         isDraggingRef.current = false;
         setIsDragging(false);
 
-        const dt = Math.max(1, lastPointerRef.current.t - prevPointerRef.current.t);
-        const vx = ((lastPointerRef.current.x - prevPointerRef.current.x) / dt) * 16;
-        const vy = ((lastPointerRef.current.y - prevPointerRef.current.y) / dt) * 16;
+        justFinishedDragRef.current = true;
+        setTimeout(() => {
+          justFinishedDragRef.current = false;
+          wasDraggedRef.current = false;
+        }, 200);
 
-        const maxV = 36;
+        // Compute fling velocity from the rolling history buffer
+        const now = performance.now();
+        const recent = pointerHistoryRef.current.filter((sample) => now - sample.t <= 100);
+
+        let vx = 0;
+        let vy = 0;
+
+        if (recent.length >= 2) {
+          const oldest = recent[0];
+          const newest = recent[recent.length - 1];
+          const dt = Math.max(10, newest.t - oldest.t);
+          vx = ((newest.x - oldest.x) / dt) * 16;
+          vy = ((newest.y - oldest.y) / dt) * 16;
+        }
+
         velRef.current = {
-          x: Math.max(-maxV, Math.min(maxV, vx)),
-          y: Math.max(-maxV, Math.min(maxV, vy)),
+          x: Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, vx)),
+          y: Math.max(-MAX_VELOCITY, Math.min(MAX_VELOCITY, vy)),
         };
 
-        if (Math.abs(velRef.current.x) > MIN_VEL || Math.abs(velRef.current.y) > MIN_VEL) {
+        const speed = Math.hypot(velRef.current.x, velRef.current.y);
+        if (speed > 1.2) {
           startPhysicsAnimation();
         } else {
-          snapToEdge();
+          snapToRightEdge();
         }
         return;
       }
 
-      // Case B: Clean tap/click on touch or mouse without dragging
+      // Case B: Clean tap on touch devices
       const duration = Date.now() - pointerDownTimeRef.current;
-      if (!wasDraggedRef.current && duration < 500) {
-        justHandledTapRef.current = true;
-        setTimeout(() => {
-          justHandledTapRef.current = false;
-        }, 500);
-
+      if (!wasDraggedRef.current && duration < 400 && pointerTypeRef.current === "touch") {
         trackClick();
-
         const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
         const contextMessage = getContextualMessage(pathname);
         openWhatsApp({ phone: cleanNumber, text: contextMessage });
       }
     },
-    [pathname, snapToEdge, startPhysicsAnimation, trackClick]
+    [pathname, removeWindowListeners, snapToRightEdge, startPhysicsAnimation, trackClick]
   );
 
+  // Pointer down on the anchor element
+  const onPointerDown = useCallback(
+    (e: React.PointerEvent<HTMLAnchorElement>) => {
+      if (e.button !== 0) return;
+
+      isPointerDownRef.current = true;
+      isDraggingRef.current = false;
+      wasDraggedRef.current = false;
+      justFinishedDragRef.current = false;
+      isSnappingRef.current = false;
+      setIsDragging(false);
+      setIsSnapping(false);
+
+      cancelAnimationFrame(animFrameRef.current);
+      cancelAnimationFrame(snapFrameRef.current);
+      velRef.current = { x: 0, y: 0 };
+
+      const now = performance.now();
+      pointerDownTimeRef.current = Date.now();
+      pointerTypeRef.current = e.pointerType || "mouse";
+      pointerIdRef.current = e.pointerId;
+
+      dragStartPointerRef.current = { x: e.clientX, y: e.clientY };
+      dragStartPosRef.current = { x: posRef.current.x, y: posRef.current.y };
+      pointerHistoryRef.current = [{ x: e.clientX, y: e.clientY, t: now }];
+
+      // Attach window listeners to ensure 100% reliable tracking across the entire screen
+      windowListenersRef.current = { move: onWindowPointerMove, up: onWindowPointerUp };
+      window.addEventListener("pointermove", onWindowPointerMove, { passive: false });
+      window.addEventListener("pointerup", onWindowPointerUp, { passive: false });
+      window.addEventListener("pointercancel", onWindowPointerUp, { passive: false });
+    },
+    [onWindowPointerMove, onWindowPointerUp]
+  );
+
+  // Click handler
   const onClick = useCallback(
-    (e: React.MouseEvent) => {
-      if (wasDraggedRef.current || justHandledTapRef.current) {
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      // Disallow link activation if user was dragging or throwing
+      if (wasDraggedRef.current || justFinishedDragRef.current) {
         e.preventDefault();
+        e.stopPropagation();
         return;
       }
 
-      // Keyboard navigation (Enter / Space) or standard browser click fallback
       trackClick();
 
+      // On mobile devices, use direct openWhatsApp launcher to prevent blank tabs
       if (isMobileDevice()) {
         e.preventDefault();
         const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
         const contextMessage = getContextualMessage(pathname);
         openWhatsApp({ phone: cleanNumber, text: contextMessage });
       }
+      // On desktop, the native <a href target="_blank"> handles opening WhatsApp Web seamlessly
     },
     [pathname, trackClick]
   );
 
-  // Keep widget safely clamped within viewport on resize or orientation change
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      removeWindowListeners();
+      cancelAnimationFrame(animFrameRef.current);
+      cancelAnimationFrame(snapFrameRef.current);
+    };
+  }, [removeWindowListeners]);
+
+  // Keep widget clamped on viewport resize
   useEffect(() => {
     const handleResize = () => {
       const bounds = getWidgetBounds(SIZE);
-      const clampedX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x));
+      const clampedX = bounds.maxX; // Always stay docked on the right edge
       const clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y));
       if (clampedX !== posRef.current.x || clampedY !== posRef.current.y) {
         updateTransform(clampedX, clampedY);
@@ -463,14 +525,6 @@ export default function FloatingWhatsAppWidget() {
     };
   }, [updateTransform]);
 
-  // Cleanup frame handles on unmount
-  useEffect(() => {
-    return () => {
-      cancelAnimationFrame(animFrameRef.current);
-      cancelAnimationFrame(snapFrameRef.current);
-    };
-  }, []);
-
   const whatsappNumber = companyInfo.socialMedia.whatsapp;
   if (!whatsappNumber) return null;
 
@@ -479,21 +533,17 @@ export default function FloatingWhatsAppWidget() {
   const whatsappUrl = buildWhatsAppUrl(cleanNumber, contextMessage);
 
   const isIdle = !isDragging && !isSnapping;
-  const isLeft = currentSide === "left";
-
-  const tooltipLeft = isLeft ? coords.x + SIZE + 12 : coords.x - 128;
-  const tooltipTop = coords.y + 12;
 
   return (
     <>
-      {/* Tooltip (Smart positioning depending on docking side) */}
+      {/* Tooltip (Smart positioning to the left of the docked right button) */}
       {showTooltip && isIdle && (
         <div
           style={{
             position: "fixed",
             zIndex: 9996,
-            left: tooltipLeft,
-            top: tooltipTop,
+            left: coords.x - 128,
+            top: coords.y + 12,
             pointerEvents: "none",
             opacity: 1,
             animation: "fadeIn 0.25s ease-out",
@@ -529,11 +579,15 @@ export default function FloatingWhatsAppWidget() {
         id="whatsapp-floating-btn"
         role="button"
         tabIndex={0}
+        draggable={false}
+        onDragStart={(e) => e.preventDefault()}
         onClick={onClick}
         onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onMouseEnter={() => setShowTooltip(true)}
+        onMouseEnter={() => {
+          if (!isDraggingRef.current && !isSnappingRef.current) {
+            setShowTooltip(true);
+          }
+        }}
         onMouseLeave={() => setShowTooltip(false)}
         style={{
           position: "fixed",
@@ -551,20 +605,21 @@ export default function FloatingWhatsAppWidget() {
           color: "#ffffff",
           textDecoration: "none",
           userSelect: "none",
+          WebkitUserSelect: "none",
           touchAction: "none",
           cursor: isDragging ? "grabbing" : "grab",
           boxShadow: isDragging
-            ? "0 10px 36px rgba(37,211,102,0.65), 0 0 0 6px rgba(37,211,102,0.25)"
+            ? "0 14px 44px rgba(37,211,102,0.7), 0 0 0 6px rgba(37,211,102,0.3)"
             : "0 6px 26px rgba(37,211,102,0.5), 0 0 0 3px rgba(37,211,102,0.22)",
           scale: isDragging ? "1.12" : "1",
           transition: isDragging || isSnapping ? "none" : "box-shadow 0.25s, scale 0.2s",
           willChange: "transform",
-          animation: isIdle ? "wa-pulse 2.2s ease-in-out infinite" : "none",
         }}
       >
         {/* Notification Badge */}
         {showBadge && (
           <span
+            aria-hidden="true"
             style={{
               position: "absolute",
               top: -2,
