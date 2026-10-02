@@ -1,83 +1,137 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendInquiryEmails, InquiryPayload, InquiryType } from '@/lib/email';
+import {
+  sendInquiryEmails,
+  InquiryPayload,
+  InquiryType,
+  validateInquiryPayload,
+  checkIpRateLimit,
+  getClientIp,
+  checkFastBot,
+  isHoneypotTriggered
+} from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // 1. Client IP & Rate Limiting Check (max 5 requests per 10 minutes per IP)
+    const clientIp = getClientIp(request.headers);
+    const ipCheck = checkIpRateLimit(clientIp, 5, 600_000);
 
-    // Spam honeypot detection: bots fill hidden fields
-    const honeypot = body.honeypot || body.contact?.honeypot;
-    if (honeypot && typeof honeypot === 'string' && honeypot.trim().length > 0) {
-      // Silently return success to confuse spam bots
+    if (!ipCheck.allowed) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Zu viele Anfragen von diesem Anschluss. Bitte versuchen Sie es in wenigen Minuten erneut oder rufen Sie uns direkt an.'
+        },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(ipCheck.retryAfterSec || 60)
+          }
+        }
+      );
+    }
+
+    let rawBody: unknown;
+    try {
+      rawBody = await request.json();
+    } catch {
+      return NextResponse.json(
+        { success: false, error: 'Ungültiges Datenformat (JSON erwartet).' },
+        { status: 400 }
+      );
+    }
+
+    if (typeof rawBody !== 'object' || rawBody === null) {
+      return NextResponse.json(
+        { success: false, error: 'Fehlerhafte Anfrage.' },
+        { status: 400 }
+      );
+    }
+
+    const body = rawBody as Record<string, unknown>;
+
+    // 2. Multi-stage Bot Detection: Honeypot field
+    const honeypot = body.honeypot ?? (body.contact as Record<string, unknown> | undefined)?.honeypot;
+    if (isHoneypotTriggered(honeypot)) {
+      // Silently return success to confuse automated scrapers/spammers
       return NextResponse.json(
         { success: true, referenceId: 'TEZ-SPAM-IGN', message: 'Anfrage erhalten.' },
         { status: 200 }
       );
     }
 
-    // Normalize contact data (supports both nested `contact` and legacy flat fields)
-    const name = (body.contact?.name || body.name || '').trim();
-    const phone = (body.contact?.phone || body.phone || '').trim();
-    const email = (body.contact?.email || body.email || '').trim();
-    const location = (body.contact?.zipCity || body.contact?.location || body.location || body.zipCity || '').trim();
-    const street = (body.contact?.street || body.street || '').trim();
-
-    // Required fields validation
-    if (!name || !phone) {
+    // 3. Multi-stage Bot Detection: Fast-bot timing barrier (<1500ms)
+    const botCheck = checkFastBot(body._t as number | string | undefined, 1500);
+    if (botCheck.isBot) {
       return NextResponse.json(
-        { success: false, error: 'Bitte füllen Sie mindestens Ihren Namen und Ihre Telefonnummer aus.' },
+        { success: true, referenceId: 'TEZ-BOT-IGN', message: 'Anfrage erhalten.' },
+        { status: 200 }
+      );
+    }
+
+    // 4. Server-side Schema Validation with Zod
+    const validation = validateInquiryPayload(body);
+    if (!validation.success || !validation.data) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: validation.error || 'Bitte prüfen Sie Ihre Eingaben.',
+          fieldErrors: validation.fieldErrors
+        },
         { status: 400 }
       );
     }
 
-    // Determine Inquiry Type
-    let inquiryType: InquiryType = 'general';
-    if (body.inquiryType && ['general', 'bad', 'fliesen', 'termin', 'projekt_check'].includes(body.inquiryType)) {
-      inquiryType = body.inquiryType as InquiryType;
-    } else if (body.projectType === 'bad' && body.badDetails) {
+    const validData = validation.data;
+
+    // 5. Determine Inquiry Type with priority
+    let inquiryType: InquiryType = validData.inquiryType || 'general';
+    if (validData.inquiryType && ['general', 'bad', 'fliesen', 'termin', 'projekt_check'].includes(validData.inquiryType)) {
+      inquiryType = validData.inquiryType;
+    } else if (validData.projectType === 'bad' && validData.badDetails) {
       inquiryType = 'bad';
-    } else if (body.projectType === 'fliesen' && body.fliesenDetails) {
+    } else if (validData.projectType === 'fliesen' && validData.fliesenDetails) {
       inquiryType = 'fliesen';
-    } else if (body.topic || body.terminDetails) {
+    } else if (validData.terminDetails) {
       inquiryType = 'termin';
     }
 
-    // Normalize Project Title
+    // 6. Normalize Project Title
     const projectTitle =
-      body.projectTitle ||
+      validData.projectTitle ||
       (inquiryType === 'termin'
-        ? `Termin: ${body.terminDetails?.topicLabel || body.topic || 'Vor-Ort-Aufmaß'}`
+        ? `Termin: ${validData.terminDetails?.topicLabel || 'Vor-Ort-Aufmaß'}`
         : inquiryType === 'bad'
         ? 'Badsanierung & Komplettbad'
         : inquiryType === 'fliesen'
         ? 'Fliesen-Konfiguration'
         : inquiryType === 'projekt_check'
         ? 'Bad-Projektcheck'
-        : body.projectType || 'Projektanfrage');
+        : validData.projectType || 'Projektanfrage');
 
-    // Assemble unified InquiryPayload
+    // 7. Assemble unified, sanitized InquiryPayload
     const payload: InquiryPayload = {
       inquiryType,
       projectTitle,
+      projectType: validData.projectType,
       contact: {
-        name,
-        phone,
-        email: email || undefined,
-        location: location || 'Aßlar / Wetzlar / Hessen',
-        zipCity: location || undefined,
-        street: street || undefined
+        name: validData.contact.name,
+        phone: validData.contact.phone,
+        email: validData.contact.email || undefined,
+        location: validData.contact.location || validData.contact.zipCity || 'Aßlar / Wetzlar / Hessen',
+        zipCity: validData.contact.zipCity || validData.contact.location || undefined,
+        street: validData.contact.street || undefined
       },
-      timing: body.timing || undefined,
-      area: body.area || undefined,
-      notes: body.notes ? body.notes.trim() : undefined,
-      honeypot: undefined,
-      badDetails: body.badDetails,
-      fliesenDetails: body.fliesenDetails,
-      terminDetails: body.terminDetails,
-      projektCheckDetails: body.projektCheckDetails
+      timing: validData.timing || undefined,
+      area: validData.area || undefined,
+      notes: validData.notes || undefined,
+      badDetails: validData.badDetails,
+      fliesenDetails: validData.fliesenDetails,
+      terminDetails: validData.terminDetails,
+      projektCheckDetails: validData.projektCheckDetails
     };
 
-    // Dispatch emails via central email mailer
+    // 8. Dispatch emails via central mailer (with retry, backoff and fail-safe logging)
     const result = await sendInquiryEmails(payload);
 
     return NextResponse.json({
@@ -90,7 +144,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        error: 'Die Anfrage konnte leider nicht übertragen werden. Bitte versuchen Sie es telefonisch oder per WhatsApp.'
+        error: 'Die Anfrage konnte derzeit nicht übertragen werden. Bitte kontaktieren Sie uns direkt telefonisch (06441 / 44 83 567) oder per WhatsApp.'
       },
       { status: 500 }
     );

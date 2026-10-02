@@ -1,43 +1,14 @@
-import { InquiryPayload } from '../types';
+import type { InquiryPayload } from '../types';
 import { COMPANY_DATA } from '@/config/company';
+import { escapeHtml, sanitizeHeaderValue, stripUrls } from '../security';
+import { wrapInMsoContainer, renderSpecRow, renderBulletproofButton } from './components';
 
 /**
- * Generates an individualized, high-end responsive HTML confirmation email for the customer.
+ * Builds customer-facing specification rows.
  */
-export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: string): string {
-  const { inquiryType, projectTitle, contact, notes, badDetails, fliesenDetails, terminDetails, projektCheckDetails, timing, area } = payload;
+function extractCustomerSpecRows(payload: InquiryPayload, referenceId: string): { label: string; value: string }[] {
+  const { inquiryType, projectTitle, contact, badDetails, fliesenDetails, terminDetails, projektCheckDetails, timing, area } = payload;
 
-  const currentYear = new Date().getFullYear();
-  const timestamp = new Intl.DateTimeFormat('de-DE', {
-    dateStyle: 'full',
-    timeStyle: 'short',
-    timeZone: 'Europe/Berlin'
-  }).format(new Date());
-
-  // 1. Dynamic Subject & Type-specific titles
-  let typeBadge = 'Fachbetriebs-Anfrage';
-  let dynamicTitle = 'Ihre Anfrage bei Fliesenverlegung Tezgel';
-  let dynamicSubtitle = 'Vielen Dank für Ihr Vertrauen in unser Handwerk';
-
-  if (inquiryType === 'termin') {
-    typeBadge = '📅 Terminanfrage Vor-Ort-Aufmaß';
-    dynamicTitle = 'Ihr Wunschtermin für Vor-Ort-Aufmaß';
-    dynamicSubtitle = 'Wir haben Ihre Terminanfrage erhalten und prüfen den Kalender';
-  } else if (inquiryType === 'bad') {
-    typeBadge = '🛁 Badsanierungs-Anfrage';
-    dynamicTitle = 'Ihre Badsanierung & Komplettbad-Planung';
-    dynamicSubtitle = 'Ihre Vorhabensdetails für ein Festpreisangebot sind eingegangen';
-  } else if (inquiryType === 'fliesen') {
-    typeBadge = '📐 Fliesen-Konfiguration';
-    dynamicTitle = 'Ihre Fliesen-Konfiguration';
-    dynamicSubtitle = 'Ihre Konfigurationsdaten für ein verbindliches Aufmaß';
-  } else if (inquiryType === 'projekt_check') {
-    typeBadge = '📋 Bad-Projektcheck';
-    dynamicTitle = 'Ihre Bad-Projektcheck Zusammenfassung';
-    dynamicSubtitle = 'Ihre Vorgaben für die Badmodernisierung';
-  }
-
-  // 2. Build Structured Specifications Table Rows
   const specRows: { label: string; value: string }[] = [];
 
   specRows.push({ label: 'Vorgangsnummer', value: referenceId });
@@ -83,253 +54,345 @@ export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: 
       specRows.push({ label: 'Gewählte Extras', value: projektCheckDetails.extras.join(', ') });
     }
   } else {
-    // General Express
     if (area) specRows.push({ label: 'Geschätzte Fläche', value: area });
     if (timing) specRows.push({ label: 'Gewünschter Zeitraum', value: timing });
   }
 
-  // 3. Contextual Next Steps
-  let nextStepsHtml = '';
+  return specRows;
+}
+
+/**
+ * Generates an individualized, high-end, MSO-compatible responsive HTML confirmation email for the customer.
+ */
+export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: string): string {
+  const { inquiryType, contact, notes } = payload;
+
+  const currentYear = new Date().getFullYear();
+  const timestamp = new Intl.DateTimeFormat('de-DE', {
+    dateStyle: 'full',
+    timeStyle: 'short',
+    timeZone: 'Europe/Berlin'
+  }).format(new Date());
+
+  let typeBadge = 'Fachbetriebs-Anfrage';
+  let dynamicTitle = 'Ihre Anfrage bei Fliesenverlegung Tezgel';
+  let dynamicSubtitle = 'Vielen Dank für Ihr Interesse an unseren Handwerksleistungen';
+
   if (inquiryType === 'termin') {
-    nextStepsHtml = `
-      <div style="margin-bottom: 12px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">1</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Terminabgleich im Kalender:</strong> Inhaber Deniz Tezgel prüft den gewünschten Termin für das Vor-Ort-Aufmaß.
-        </div>
-      </div>
-      <div style="margin-bottom: 12px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">2</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Verbindliche Rückmeldung:</strong> Wir bestätigen Ihnen das Zeitfenster telefonisch oder schlagen bei Überschneidungen eine Alternative vor.
-        </div>
-      </div>
-      <div style="margin-bottom: 4px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">3</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Kostenfreies Vor-Ort-Aufmaß:</strong> Pünktlicher Termin bei Ihnen vor Ort für millimetergenaues Aufmaß und Ihr Festpreisangebot.
-        </div>
-      </div>
-    `;
+    typeBadge = '📅 Terminanfrage Vor-Ort-Aufmaß';
+    dynamicTitle = 'Ihr Wunschtermin für Vor-Ort-Aufmaß';
+    dynamicSubtitle = 'Wir haben Ihre Terminanfrage erhalten und prüfen den Kalender';
   } else if (inquiryType === 'bad') {
-    nextStepsHtml = `
-      <div style="margin-bottom: 12px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">1</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Fachliche Bedarfsanalyse:</strong> Prüfung Ihrer Raummaße, Sanitäranordnung und Verbundabdichtung (DIN 18534).
-        </div>
-      </div>
-      <div style="margin-bottom: 12px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">2</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Persönlicher Vor-Ort-Check:</strong> Wir vereinbaren einen Termin für Untergrundprüfung und exaktes Aufmaß.
-        </div>
-      </div>
-      <div style="margin-bottom: 4px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">3</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Verbindliches Festpreisangebot:</strong> Transparenter Kostenvoranschlag aller Positionen – garantiert ohne versteckte Nachforderungen.
-        </div>
-      </div>
-    `;
-  } else {
-    nextStepsHtml = `
-      <div style="margin-bottom: 12px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">1</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Persönliche Durchsicht:</strong> Inhaber Deniz Tezgel sichtet Ihre Angaben und prüft Materialbedarf und Machbarkeit.
-        </div>
-      </div>
-      <div style="margin-bottom: 12px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">2</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Kontaktaufnahme:</strong> Wir melden uns in der Regel binnen 24–48 Stunden telefonisch bei Ihnen zur kurzen Vorab-Klärung.
-        </div>
-      </div>
-      <div style="margin-bottom: 4px; display: table; width: 100%;">
-        <div style="display: table-cell; width: 28px; vertical-align: top;">
-          <div style="width: 22px; height: 22px; border-radius: 50%; background-color: #ea580c; color: #ffffff; text-align: center; font-size: 12px; font-weight: 700; line-height: 22px;">3</div>
-        </div>
-        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-size: 13.5px; color: #334155; line-height: 1.5;">
-          <strong style="color: #0f172a;">Kostenfreies Vor-Ort-Aufmaß:</strong> Unverbindliche Begutachtung vor Ort für Ihr individuelles Festpreisangebot.
-        </div>
-      </div>
-    `;
+    typeBadge = '🛁 Badsanierungs-Anfrage';
+    dynamicTitle = 'Ihre Badsanierung & Komplettbad-Planung';
+    dynamicSubtitle = 'Ihre Vorhabensdetails für ein Festpreisangebot sind eingegangen';
+  } else if (inquiryType === 'fliesen') {
+    typeBadge = '📐 Fliesen-Konfiguration';
+    dynamicTitle = 'Ihre Fliesen-Konfiguration';
+    dynamicSubtitle = 'Ihre Konfigurationsdaten für ein verbindliches Aufmaß';
+  } else if (inquiryType === 'projekt_check') {
+    typeBadge = '📋 Bad-Projektcheck';
+    dynamicTitle = 'Ihre Bad-Projektcheck Zusammenfassung';
+    dynamicSubtitle = 'Ihre Vorgaben für die Badmodernisierung';
   }
 
-  // 4. Clean Table Rows Markup
-  const tableRowsHtml = specRows
-    .map(
-      (row, idx) => `
-      <tr style="background-color: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
-        <td style="padding: 10px 14px; font-size: 13px; font-weight: 600; color: #64748b; width: 160px; border-bottom: 1px solid #e2e8f0;">
-          ${row.label}:
-        </td>
-        <td style="padding: 10px 14px; font-size: 13.5px; font-weight: 700; color: #0f172a; border-bottom: 1px solid #e2e8f0;">
-          ${row.value}
+  const specRows = extractCustomerSpecRows(payload, referenceId);
+  const tableRowsHtml = specRows.map((row, idx) => renderSpecRow(row.label, row.value, idx % 2 === 0)).join('');
+
+  // Anti-Spam / Anti-Reflection: Clean notes from external links
+  const safeNotes = notes ? escapeHtml(stripUrls(notes)).replace(/\n/g, '<br>') : '';
+
+  // Polite German greeting with fallback
+  const greeting = contact.name && contact.name.trim().length > 0
+    ? `Guten Tag ${escapeHtml(contact.name)},`
+    : 'Guten Tag,';
+
+  const innerContent = `
+    <!-- Top Brand Accent Bar -->
+    <div style="background-color:#ea580c;height:6px;width:100%;font-size:0;line-height:0;">&nbsp;</div>
+
+    <!-- Header -->
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#0f172a;color:#ffffff;">
+      <tr>
+        <td style="padding:28px 24px;">
+          <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td style="vertical-align:top;">
+                <span style="display:inline-block;background-color:rgba(234,88,12,0.25);border:1px solid rgba(234,88,12,0.4);color:#fed7aa;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:3px 9px;border-radius:4px;margin-bottom:8px;">
+                  ${escapeHtml(typeBadge)}
+                </span>
+                <h1 style="margin:0;color:#ffffff;font-size:21px;font-weight:900;letter-spacing:-0.02em;line-height:1.25;">
+                  Fliesenverlegung Tezgel
+                </h1>
+                <p style="margin:4px 0 0 0;color:#94a3b8;font-size:12.5px;">
+                  Eingetragener HWK-Fachbetrieb &middot; Aßlar &amp; Wetzlar
+                </p>
+              </td>
+              <td style="text-align:right;vertical-align:top;width:120px;">
+                <div style="background-color:#1e293b;border:1px solid #334155;border-radius:6px;padding:6px 10px;text-align:right;">
+                  <span style="display:block;font-size:9.5px;color:#94a3b8;font-weight:700;text-transform:uppercase;">Vorgangs-ID</span>
+                  <span style="display:block;font-size:12px;color:#ffffff;font-weight:800;letter-spacing:0.03em;">${escapeHtml(referenceId)}</span>
+                </div>
+              </td>
+            </tr>
+          </table>
         </td>
       </tr>
-    `
-    )
-    .join('');
+    </table>
+
+    <!-- Main Body Content -->
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#ffffff;">
+      <tr>
+        <td style="padding:26px 24px;">
+
+          <!-- Greeting -->
+          <h2 style="margin:0 0 10px 0;font-size:18px;font-weight:800;color:#0f172a;">
+            ${greeting}
+          </h2>
+          <p style="margin:0 0 20px 0;font-size:14px;line-height:1.6;color:#334155;">
+            ${escapeHtml(dynamicSubtitle)}. Ihre Anfrage ist erfolgreich bei unserem Meisterbetrieb eingegangen und wurde unter der Vorgangsnummer <strong>${escapeHtml(referenceId)}</strong> registriert.
+          </p>
+
+          <!-- Specifications Table -->
+          <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="border:1px solid #cbd5e1;border-radius:10px;overflow:hidden;margin-bottom:22px;border-collapse:collapse;">
+            <thead>
+              <tr style="background-color:#f8fafc;border-bottom:1px solid #cbd5e1;">
+                <th colspan="2" style="padding:10px 14px;font-size:12px;font-weight:800;color:#0f172a;text-align:left;text-transform:uppercase;letter-spacing:0.05em;">
+                  Ihre erfassten Projektdaten:
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              ${tableRowsHtml}
+            </tbody>
+          </table>
+
+          ${
+            safeNotes
+              ? `
+          <!-- Notes Box (Sanitized, no active external links) -->
+          <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#fff7ed;border-left:4px solid #ea580c;border-radius:0 8px 8px 0;margin-bottom:22px;">
+            <tr>
+              <td style="padding:12px 16px;">
+                <span style="display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:#9a3412;margin-bottom:4px;">
+                  Ihre Anmerkung an unser Team:
+                </span>
+                <p style="margin:0;font-size:13px;color:#7c2d12;line-height:1.55;word-break:break-word;">
+                  ${safeNotes}
+                </p>
+              </td>
+            </tr>
+          </table>`
+              : ''
+          }
+
+          <!-- Next Steps Box (Table-based for Outlook Classic) -->
+          <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:24px;">
+            <tr>
+              <td style="padding:18px;">
+                <h3 style="margin:0 0 14px 0;font-size:14px;font-weight:800;color:#0f172a;">
+                  Wie geht es jetzt weiter?
+                </h3>
+                <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="width:26px;vertical-align:top;padding-bottom:10px;">
+                      <div style="width:20px;height:20px;border-radius:50%;background-color:#ea580c;color:#ffffff;text-align:center;font-size:11px;font-weight:700;line-height:20px;">1</div>
+                    </td>
+                    <td style="padding-left:10px;padding-bottom:10px;font-size:13px;color:#334155;line-height:1.5;">
+                      <strong style="color:#0f172a;">Persönliche Sichtung:</strong> Inhaber Deniz Tezgel prüft Ihre Angaben und den Material- bzw. Ausführungsaufwand.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width:26px;vertical-align:top;padding-bottom:10px;">
+                      <div style="width:20px;height:20px;border-radius:50%;background-color:#ea580c;color:#ffffff;text-align:center;font-size:11px;font-weight:700;line-height:20px;">2</div>
+                    </td>
+                    <td style="padding-left:10px;padding-bottom:10px;font-size:13px;color:#334155;line-height:1.5;">
+                      <strong style="color:#0f172a;">Telefonische Vorab-Klärung:</strong> Wir melden uns zeitnah bei Ihnen unter der angegebenen Rufnummer zur Abstimmung eines Termins.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width:26px;vertical-align:top;">
+                      <div style="width:20px;height:20px;border-radius:50%;background-color:#ea580c;color:#ffffff;text-align:center;font-size:11px;font-weight:700;line-height:20px;">3</div>
+                    </td>
+                    <td style="padding-left:10px;font-size:13px;color:#334155;line-height:1.5;">
+                      <strong style="color:#0f172a;">Kostenfreies Vor-Ort-Aufmaß:</strong> Pünktlicher Termin bei Ihnen vor Ort für millimetergenaues Aufmaß und Ihr verbindliches Festpreisangebot.
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Direct Craftsman Card -->
+          <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="border:1px solid #fed7aa;background-color:#fffbeb;border-radius:10px;margin-bottom:24px;">
+            <tr>
+              <td style="padding:18px;">
+                <span style="font-size:11px;font-weight:800;color:#c2410c;text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:3px;">
+                  Ihr persönlicher Ansprechpartner
+                </span>
+                <strong style="font-size:15px;color:#0f172a;display:block;">
+                  ${escapeHtml(COMPANY_DATA.owner.fullName)}
+                </strong>
+                <span style="font-size:12px;color:#64748b;display:block;margin-bottom:10px;">
+                  ${escapeHtml(COMPANY_DATA.owner.title)}
+                </span>
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="font-size:12.5px;color:#334155;line-height:1.6;">
+                  <tr>
+                    <td style="padding:2px 0;">✉️ E-Mail:</td>
+                    <td style="padding:2px 0 2px 8px;">
+                      <a href="mailto:${escapeHtml(COMPANY_DATA.contact.email)}" style="color:#ea580c;font-weight:700;text-decoration:none;">${escapeHtml(COMPANY_DATA.contact.email)}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:2px 0;">📞 Telefon:</td>
+                    <td style="padding:2px 0 2px 8px;">
+                      <a href="tel:${escapeHtml(COMPANY_DATA.contact.phoneLink)}" style="color:#ea580c;font-weight:700;text-decoration:none;">${escapeHtml(COMPANY_DATA.contact.phone)}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:2px 0;">💬 WhatsApp:</td>
+                    <td style="padding:2px 0 2px 8px;">
+                      <a href="${escapeHtml(COMPANY_DATA.contact.whatsappLink)}" style="color:#ea580c;font-weight:700;text-decoration:none;">${escapeHtml(COMPANY_DATA.contact.mobile)}</a>
+                    </td>
+                  </tr>
+                </table>
+
+                <div style="text-align:center;margin-top:16px;">
+                  ${renderBulletproofButton({
+                    href: COMPANY_DATA.contact.whatsappLink,
+                    label: '💬 Per WhatsApp schreiben',
+                    bgColor: '#16a34a',
+                    width: 220
+                  })}
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Sign-off -->
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#334155;">
+            Herzliche Grüße aus Aßlar,<br>
+            <strong>${escapeHtml(COMPANY_DATA.owner.fullName)}</strong> &amp; das Team von Fliesenverlegung Tezgel
+          </p>
+
+        </td>
+      </tr>
+    </table>
+
+    <!-- Legal Footer -->
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#0f172a;color:#94a3b8;border-top:1px solid #1e293b;">
+      <tr>
+        <td style="padding:22px 24px;font-size:11.5px;line-height:1.6;text-align:center;">
+          <strong style="color:#ffffff;font-size:12.5px;">${escapeHtml(COMPANY_DATA.legalName)}</strong><br>
+          ${escapeHtml(COMPANY_DATA.headquarters.street)} &middot; ${escapeHtml(COMPANY_DATA.headquarters.postalCode)} ${escapeHtml(COMPANY_DATA.headquarters.city)}<br>
+          ${escapeHtml(COMPANY_DATA.authority.certification)} &middot; USt-IdNr.: ${escapeHtml(COMPANY_DATA.tax.ustId)}<br>
+          E-Mail: <a href="mailto:${escapeHtml(COMPANY_DATA.contact.email)}" style="color:#fb923c;text-decoration:none;">${escapeHtml(COMPANY_DATA.contact.email)}</a> &middot; Web: <a href="https://tezgel.de" style="color:#fb923c;text-decoration:none;">www.tezgel.de</a>
+          
+          <div style="margin-top:12px;padding-top:10px;border-top:1px solid #1e293b;font-size:10.5px;">
+            <a href="https://tezgel.de/impressum" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Impressum</a> &middot;
+            <a href="https://tezgel.de/datenschutz" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Datenschutz</a> &middot;
+            <a href="https://tezgel.de/widerruf" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Widerrufsbelehrung</a>
+          </div>
+          <p style="margin:8px 0 0 0;font-size:10.5px;color:#64748b;">
+            Eingegangen am ${escapeHtml(timestamp)} &middot; &copy; ${currentYear} ${escapeHtml(COMPANY_DATA.legalName)}. Alle Rechte vorbehalten.
+          </p>
+        </td>
+      </tr>
+    </table>
+  `;
 
   return `<!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${dynamicTitle}</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>${escapeHtml(dynamicTitle)}</title>
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
 </head>
-<body style="margin: 0; padding: 20px 10px; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
-  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 18px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
-    
-    <!-- Top Brand Accent -->
-    <div style="background-color: #ea580c; height: 6px; width: 100%;"></div>
-
-    <!-- Header -->
-    <div style="background-color: #0f172a; padding: 32px 28px 28px 28px; text-align: left;">
-      <table style="width: 100%; border-collapse: collapse;">
-        <tr>
-          <td>
-            <span style="display: inline-block; background-color: rgba(234, 88, 12, 0.2); border: 1px solid rgba(234, 88, 12, 0.4); color: #fb923c; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 6px; margin-bottom: 8px;">
-              ${typeBadge}
-            </span>
-            <h1 style="margin: 0; color: #ffffff; font-size: 22px; font-weight: 900; letter-spacing: -0.02em;">
-              Fliesenverlegung Tezgel
-            </h1>
-            <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 13px;">
-              Eingetragener HWK-Fachbetrieb &middot; Aßlar &amp; Wetzlar
-            </p>
-          </td>
-          <td style="text-align: right; vertical-align: top;">
-            <div style="background-color: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 6px 12px; display: inline-block; text-align: right;">
-              <span style="display: block; font-size: 10px; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Vorgangs-ID</span>
-              <span style="display: block; font-size: 13px; color: #ffffff; font-weight: 800; letter-spacing: 0.03em;">${referenceId}</span>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- Body Content -->
-    <div style="padding: 30px 28px;">
-      
-      <!-- Greeting -->
-      <h2 style="margin: 0 0 10px 0; font-size: 19px; font-weight: 800; color: #0f172a;">
-        Guten Tag ${contact.name},
-      </h2>
-      <p style="margin: 0 0 20px 0; font-size: 14.5px; line-height: 1.6; color: #475569;">
-        ${dynamicSubtitle}. Ihre Angaben sind erfolgreich bei uns eingegangen und wurden unter der Vorgangsnummer <strong>${referenceId}</strong> registriert.
-      </p>
-
-      <!-- Specifications Card -->
-      <div style="background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
-        <div style="background-color: #f8fafc; padding: 12px 16px; border-bottom: 1px solid #cbd5e1;">
-          <strong style="font-size: 13px; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em;">
-            Ihre erfassten Projektdetails:
-          </strong>
-        </div>
-        <table style="width: 100%; border-collapse: collapse;">
-          <tbody>
-            ${tableRowsHtml}
-          </tbody>
-        </table>
-      </div>
-
-      ${
-        notes
-          ? `
-      <!-- Customer Notes Box -->
-      <div style="background-color: #fff7ed; border-left: 4px solid #ea580c; border-radius: 0 10px 10px 0; padding: 14px 16px; margin-bottom: 24px;">
-        <span style="display: block; font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #9a3412; margin-bottom: 4px;">
-          Ihre Anmerkung an unser Team:
-        </span>
-        <p style="margin: 0; font-size: 13.5px; color: #7c2d12; line-height: 1.5;">
-          ${notes.replace(/\n/g, '<br>')}
-        </p>
-      </div>`
-          : ''
-      }
-
-      <!-- Next Steps Box -->
-      <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 18px; margin-bottom: 26px;">
-        <h3 style="margin: 0 0 16px 0; font-size: 15px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-          Wie geht es jetzt weiter?
-        </h3>
-        ${nextStepsHtml}
-      </div>
-
-      <!-- Craftsman Card & Direct Contact -->
-      <div style="border: 1px solid #fed7aa; background: linear-gradient(180deg, #fffbeb 0%, #fff7ed 100%); border-radius: 14px; padding: 22px 20px; text-align: left; margin-bottom: 24px;">
-        <table style="width: 100%; border-collapse: collapse;">
-          <tr>
-            <td style="vertical-align: top;">
-              <span style="font-size: 11px; font-weight: 800; color: #c2410c; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 4px;">
-                Ihr persönlicher Ansprechpartner
-              </span>
-              <strong style="font-size: 16px; color: #0f172a; display: block;">
-                ${COMPANY_DATA.owner.fullName}
-              </strong>
-              <span style="font-size: 12.5px; color: #64748b; display: block; margin-bottom: 12px;">
-                ${COMPANY_DATA.owner.title}
-              </span>
-              <p style="margin: 0; font-size: 13px; color: #334155; line-height: 1.6;">
-                ✉️ E-Mail: <a href="mailto:${COMPANY_DATA.contact.email}" style="color: #ea580c; font-weight: 700; text-decoration: none;">${COMPANY_DATA.contact.email}</a><br>
-                📞 Telefon: <a href="tel:${COMPANY_DATA.contact.phoneLink}" style="color: #ea580c; font-weight: 700; text-decoration: none;">${COMPANY_DATA.contact.phone}</a><br>
-                💬 WhatsApp / Mobil: <a href="${COMPANY_DATA.contact.whatsappLink}" style="color: #ea580c; font-weight: 700; text-decoration: none;">${COMPANY_DATA.contact.mobile}</a>
-              </p>
-            </td>
-          </tr>
-        </table>
-        
-        <div style="text-align: center; margin-top: 18px;">
-          <a href="${COMPANY_DATA.contact.whatsappLink}" style="display: inline-block; background-color: #16a34a; color: #ffffff !important; font-weight: 700; font-size: 13.5px; padding: 11px 22px; border-radius: 10px; text-decoration: none; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);">
-            💬 Direkt per WhatsApp schreiben
-          </a>
-        </div>
-      </div>
-
-      <!-- Closing -->
-      <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #334155;">
-        Herzliche Grüße aus Aßlar,<br>
-        <strong>${COMPANY_DATA.owner.fullName}</strong> &amp; das Team von Fliesenverlegung Tezgel
-      </p>
-
-    </div>
-
-    <!-- Legal Footer -->
-    <div style="background-color: #0f172a; color: #94a3b8; padding: 24px 28px; font-size: 12px; line-height: 1.6; border-top: 1px solid #1e293b; text-align: center;">
-      <strong style="color: #ffffff; font-size: 13px;">${COMPANY_DATA.legalName}</strong><br>
-      ${COMPANY_DATA.headquarters.street} &middot; ${COMPANY_DATA.headquarters.postalCode} ${COMPANY_DATA.headquarters.city}<br>
-      ${COMPANY_DATA.authority.certification} &middot; USt-IdNr.: ${COMPANY_DATA.tax.ustId}<br>
-      E-Mail: <a href="mailto:${COMPANY_DATA.contact.email}" style="color: #fb923c; text-decoration: none;">${COMPANY_DATA.contact.email}</a> &middot; Web: <a href="https://tezgel.de" style="color: #fb923c; text-decoration: none;">www.tezgel.de</a>
-      <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid #1e293b; font-size: 11px;">
-        <a href="https://tezgel.de/impressum" style="color: #94a3b8; text-decoration: underline; margin: 0 6px;">Impressum</a> &middot; 
-        <a href="https://tezgel.de/datenschutz" style="color: #94a3b8; text-decoration: underline; margin: 0 6px;">Datenschutz</a> &middot; 
-        <a href="https://tezgel.de/widerruf" style="color: #94a3b8; text-decoration: underline; margin: 0 6px;">Widerrufsbelehrung</a>
-      </div>
-      <p style="margin: 10px 0 0 0; font-size: 11px; color: #64748b;">
-        Eingegangen am ${timestamp} &middot; &copy; ${currentYear} ${COMPANY_DATA.legalName}. Alle Rechte vorbehalten.
-      </p>
-    </div>
-
-  </div>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background-color:#f1f5f9;color:#0f172a;margin:0;padding:20px 10px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+  ${wrapInMsoContainer(innerContent, 600)}
 </body>
 </html>`;
+}
+
+/**
+ * Generates structured Plain-Text companion for the customer confirmation email.
+ */
+export function generateCustomerEmailText(payload: InquiryPayload, referenceId: string): string {
+  const { contact, notes } = payload;
+  const currentYear = new Date().getFullYear();
+  const timestamp = new Intl.DateTimeFormat('de-DE', {
+    dateStyle: 'full',
+    timeStyle: 'short',
+    timeZone: 'Europe/Berlin'
+  }).format(new Date());
+
+  const specRows = extractCustomerSpecRows(payload, referenceId);
+  const specText = specRows.map((r) => `* ${r.label}: ${r.value}`).join('\n');
+
+  const greeting = contact.name && contact.name.trim().length > 0
+    ? `Guten Tag ${contact.name},`
+    : 'Guten Tag,';
+
+  return `===========================================================
+FLIESENVERLEGUNG TEZGEL - EINGANGSBESTÄTIGUNG
+Vorgangsnummer: ${referenceId}
+===========================================================
+
+${greeting}
+
+Vielen Dank für Ihre Anfrage bei Fliesenverlegung Tezgel.
+Ihre Angaben sind erfolgreich bei uns eingegangen und wurden unter der Vorgangsnummer ${referenceId} registriert.
+
+IHRE ERFASSTEN PROJEKTDETAILS:
+${specText}
+
+${notes ? `IHRE ANMERKUNG AN UNSER TEAM:\n${stripUrls(notes)}\n` : ''}
+WIE GEHT ES JETZT WEITER?
+1. Persönliche Sichtung: Inhaber Deniz Tezgel prüft Ihre Angaben und den Leistungsumfang.
+2. Telefonische Vorab-Klärung: Wir melden uns zeitnah bei Ihnen zur Abstimmung eines Termins.
+3. Kostenfreies Vor-Ort-Aufmaß: Pünktlicher Termin bei Ihnen vor Ort für millimetergenaues Aufmaß und Ihr verbindliches Festpreisangebot.
+
+DIREKTER KONTAKT:
+Fliesenverlegung Tezgel
+Inhaber: Deniz Tezgel
+Telefon:  ${COMPANY_DATA.contact.phone}
+WhatsApp: ${COMPANY_DATA.contact.mobile}
+E-Mail:   ${COMPANY_DATA.contact.email}
+Web:      https://tezgel.de
+
+RECHTLICHE ANGABEN:
+${COMPANY_DATA.legalName}
+${COMPANY_DATA.headquarters.street}, ${COMPANY_DATA.headquarters.postalCode} ${COMPANY_DATA.headquarters.city}
+${COMPANY_DATA.authority.certification}
+USt-IdNr.: ${COMPANY_DATA.tax.ustId}
+
+Eingegangen am: ${timestamp}
+(c) ${currentYear} ${COMPANY_DATA.legalName}. Alle Rechte vorbehalten.
+`;
+}
+
+/**
+ * Generates the standardized subject line for the customer confirmation email.
+ */
+export function getCustomerEmailSubject(payload: InquiryPayload, referenceId: string): string {
+  const ref = sanitizeHeaderValue(referenceId);
+  if (payload.inquiryType === 'termin') {
+    return `Ihre Terminanfrage für Vor-Ort-Aufmaß (Vorgang ${ref}) – Fliesenverlegung Tezgel`;
+  } else if (payload.inquiryType === 'bad') {
+    return `Ihre Badsanierungs-Anfrage (Vorgang ${ref}) – Fliesenverlegung Tezgel`;
+  } else if (payload.inquiryType === 'fliesen') {
+    return `Ihre Fliesen-Konfiguration (Vorgang ${ref}) – Fliesenverlegung Tezgel`;
+  } else if (payload.inquiryType === 'projekt_check') {
+    return `Ihre Bad-Projektcheck Zusammenfassung (Vorgang ${ref}) – Fliesenverlegung Tezgel`;
+  }
+  return `Ihre Anfrage bei Fliesenverlegung Tezgel (Vorgang ${ref})`;
 }

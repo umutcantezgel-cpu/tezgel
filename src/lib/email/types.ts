@@ -66,11 +66,13 @@ export interface ProjektCheckSpecifics {
 export interface InquiryPayload {
   inquiryType: InquiryType;
   projectTitle: string;
+  projectType?: string;
   contact: CustomerContact;
   timing?: string;
   area?: string;
   notes?: string;
   honeypot?: string;
+  _t?: number | string;
   // Specific extensions per funnel
   badDetails?: BadSpecifics;
   fliesenDetails?: FliesenSpecifics;
@@ -85,5 +87,18 @@ export interface SendEmailResult {
   customerSent: boolean;
   mocked?: boolean;
   message: string;
+  error?: string;
+  fallbackLogged?: boolean;
+}
+
+export interface LeadFallbackRecord {
+  referenceId: string;
+  timestamp: string;
+  inquiryType: InquiryType;
+  projectTitle: string;
+  contact: CustomerContact;
+  notes?: string;
+  teamSent: boolean;
+  customerSent: boolean;
   error?: string;
 }
