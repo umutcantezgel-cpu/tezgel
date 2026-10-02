@@ -4,6 +4,8 @@
   "lastUpdated": "2026-10-02T19:30:00Z",
   "branch": "main",
   "directive": "v6.0-SOVEREIGN-UNIVERSAL-DYNAMIC-CORE",
+  "mode": "SMART_MAINTENANCE",
+  "convergenceGatePassed": true,
   "scores": {
     "pagespeed_mobile": 100,
     "pagespeed_desktop": 100,
