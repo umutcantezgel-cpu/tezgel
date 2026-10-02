@@ -515,4 +515,17 @@
       inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
       inset 0 -1px 0 0 rgba(0, 0, 0, 0.08);
   }
+
+  @keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wa-pulse-ring, #whatsapp-floating-btn {
+      animation: none !important;
+    }
+  }
 }
+

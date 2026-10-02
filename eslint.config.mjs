@@ -14,6 +14,10 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Stale static export committed to the repo (not part of the source).
     "dist/**",
+    "WhatsApp-Button-Export/**",
+    "CookieConsentExport/**",
+    "K-Aqua-Cursor-Animation/**",
+    "Pipeline Kopie 5/**",
   ]),
 ]);
 
