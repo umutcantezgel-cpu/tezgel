@@ -182,6 +182,7 @@ export const footerLegalLinks = [
     { name: 'AGB', path: '/agb' },
     { name: 'Widerruf', path: '/widerruf' },
     { name: 'Cookie-Richtlinie', path: '/cookie-richtlinie' },
+    { name: 'Cookie-Einstellungen', path: '#cookie-settings' },
     { name: 'Barrierefreiheit', path: '/barrierefreiheit' }
 ];
 
