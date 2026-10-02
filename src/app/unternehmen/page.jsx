@@ -4,6 +4,7 @@ import { Award, CheckCircle2, ArrowRight } from 'lucide-react';
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
     title: 'Unternehmen & Qualitätsversprechen',
@@ -114,6 +115,7 @@ export default function UnternehmenPage() {
             </div>
 
             <QualityPromise />
+            <FinalCTA />
         </div>
     );
 }

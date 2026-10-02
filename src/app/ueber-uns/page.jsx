@@ -6,6 +6,7 @@ import { values, COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
 import CompanyHistory from '@/components/sections/CompanyHistory';
 import QualityPromise from '@/components/sections/QualityPromise';
+import FinalCTA from '@/components/ui/FinalCTA';
 
 export default function AboutPage() {
   const { legalName, owner, authority, headquarters, business, contact, motto } = COMPANY_DATA;
@@ -130,6 +131,13 @@ export default function AboutPage() {
 
       <CompanyHistory />
       <QualityPromise />
+
+      {/* Final Conversion Anchor */}
+      <FinalCTA
+        headline="Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel."
+        subtitle="Über 15 Jahre Meistererfahrung • Verbindlicher Festpreis • HWK-Fachbetrieb"
+        buttonText="Jetzt persönlichen Termin anfragen"
+      />
     </div>
   );
 }

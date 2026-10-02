@@ -6,6 +6,9 @@ import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import ServiceMapWrapper from '@/components/maps/ServiceMapWrapper';
+import LocationContact from '@/components/locations/LocationContact';
+import FinalCTA from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
   title: 'Standorte & Einsatzgebiete in Mittelhessen',
@@ -80,6 +83,20 @@ export default function StandorteOverviewPage() {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Interactive Service Map */}
+      <section className="py-12 px-4 max-w-7xl mx-auto relative z-10" aria-labelledby="karte-ueberschrift">
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <span className="eyebrow mb-2">Interaktive Gebietskarte</span>
+          <h2 id="karte-ueberschrift" className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
+            Unser 45-km-Einsatzgebiet in Mittelhessen
+          </h2>
+          <p className="text-sm text-neutral-600 mt-1">
+            Klicken Sie auf eine Stadt für Details zu Entfernung, Anfahrt und schnellem Vor-Ort-Aufmaß.
+          </p>
+        </div>
+        <ServiceMapWrapper />
       </section>
 
       {/* Cities Grid */}
@@ -186,6 +203,16 @@ export default function StandorteOverviewPage() {
           </div>
         </div>
       </section>
+
+      {/* Regional Quick Contact Box */}
+      <LocationContact cityName="Mittelhessen & Lahn-Dill-Kreis" className="bg-neutral-50" />
+
+      {/* Final Conversion Anchor */}
+      <FinalCTA
+        headline="Planen Sie ein Fliesen- oder Badprojekt in Mittelhessen? Sprechen Sie direkt mit Meister Deniz Tezgel."
+        subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
+        buttonText="Jetzt Vor-Ort-Termin anfragen"
+      />
     </div>
   );
 }

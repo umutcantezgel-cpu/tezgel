@@ -5,6 +5,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { PORTFOLIO_PROJECTS, categories, isPlaceholderProject } from '@/config/projects';
 import { RATING_SUMMARY } from '@/config/reviews';
 import ReviewsSection from '@/components/sections/ReviewsSection';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 const { google } = RATING_SUMMARY;
 
@@ -185,6 +186,8 @@ export default function ReferenzenPage() {
                     </div>
                 </div>
             </section>
+
+            <FinalCTA />
         </div>
     );
 }

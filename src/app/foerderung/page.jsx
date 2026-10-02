@@ -4,6 +4,7 @@ import { BadgePercent, ArrowRight, Phone, HelpCircle, Accessibility } from 'luci
 import { COMPANY_DATA } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 const GRANT_ITEMS = [
     { rate: '§ 40 SGB XI', title: 'Pflegekassen-Zuschuss', desc: 'Bis zu 4.180 € pro pflegebedürftiger Person für Maßnahmen zur Wohnumfeldverbesserung, z. B. die bodengleiche Dusche statt Badewanne.' },
@@ -155,6 +156,8 @@ export default function FoerderungPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="anfrage">
                 <TezgelAnfrageFunnel />
             </div>
+
+            <FinalCTA />
         </div>
     );
 }

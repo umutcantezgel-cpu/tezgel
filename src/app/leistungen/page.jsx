@@ -17,6 +17,8 @@ import {
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
+import { PricingCalculator } from '@/components/pricing/PricingCalculator';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export default function ServiceHubPage() {
   return (
@@ -185,8 +187,13 @@ export default function ServiceHubPage() {
         </ol>
       </div>
 
+      {/* Interaktiver Preisrechner */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
+        <PricingCalculator />
+      </div>
+
       {/* Express-Anfrage Funnel */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 scroll-mt-28" id="express-anfrage">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10 scroll-mt-28" id="express-anfrage">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="eyebrow mb-4">
             Online-Bedarfsabfrage
@@ -201,6 +208,9 @@ export default function ServiceHubPage() {
 
         <TezgelAnfrageFunnel />
       </div>
+
+      {/* Final Conversion CTA */}
+      <FinalCTA />
 
     </div>
   );

@@ -17,6 +17,9 @@ import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
+import { PricingCalculator } from '@/components/pricing/PricingCalculator';
+import FAQAccordion from '@/components/ui/FAQAccordion';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export function generateStaticParams() {
   return SERVICES.map((service) => ({ id: service.id }));
@@ -258,8 +261,41 @@ export default async function ServiceDetailPage({ params }) {
         </div>
       </div>
 
+      {/* Interaktiver Preisrechner */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <PricingCalculator />
+      </div>
+
+      {/* Häufige Fragen & Antworten */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="eyebrow mb-3">Transparenz &amp; Ratgeber</span>
+          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
+            Häufige Fragen zu {service.name}
+          </h2>
+          <p className="text-sm text-neutral-700 mt-2">
+            Antworten unseres Handwerksteams für eine reibungslose Planung und Ausführung.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <FAQAccordion
+            question={`Wie läuft die Beauftragung und Vorbereitung für ${service.name} ab?`}
+            answer="Nach Ihrer ersten Anfrage vereinbaren wir zeitnah ein unverbindliches Vor-Ort-Aufmaß. Wir prüfen den Untergrund, besprechen Ihre Materialwünsche und erstellen ein transparentes Festpreisangebot ohne versteckte Kosten."
+          />
+          <FAQAccordion
+            question="Welche Normen und Qualitätsstandards werden eingehalten?"
+            answer="Alle Arbeiten werden streng nach DIN-Normen (insbesondere DIN 18534 für Verbundabdichtungen) und den anerkannten Regeln des Fliesenlegerhandwerks ausgeführt. Bei bewohnten Objekten schützen wir angrenzende Räume mit Staubschutztüren und Luftreinigern."
+          />
+          <FAQAccordion
+            question="In welchem Umkreis sind Sie im Einsatz?"
+            answer="Unser Meisterbetrieb hat seinen Sitz in Aßlar und betreut Kunden im Umkreis von ca. 45 km, u. a. in Wetzlar, Gießen, Butzbach, Herborn, Limburg und dem gesamten Lahn-Dill-Kreis."
+          />
+        </div>
+      </div>
+
       {/* Embedded Funnel */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 relative z-10 scroll-mt-28" id="express-anfrage">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 relative z-10 scroll-mt-28" id="express-anfrage">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="eyebrow mb-4">
             Express-Aufmaß
@@ -270,6 +306,9 @@ export default async function ServiceDetailPage({ params }) {
         </div>
         <TezgelAnfrageFunnel />
       </div>
+
+      {/* Final Conversion CTA */}
+      <FinalCTA />
 
     </div>
   );

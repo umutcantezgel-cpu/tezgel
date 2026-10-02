@@ -172,5 +172,27 @@
   --radius-tile-card: 20px;
   --radius-tile-panel: 24px;
   --radius-tile-button: 14px;
+  --radius-16: 16px;
   --radius-full: 9999px;
+
+  /* Reusable Component UI Tokens */
+  --border-subtle: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F9FAFB;
+  --surface-elevated: #FFFFFF;
+  --value-primary: #EA580C;
+  --value-icon-bg: #FFEDD5;
+  --value-icon-color: #C2410C;
+  --color-red-500: #EA580C;
+  --color-red-600: #C2410C;
+  --color-google-gold: #FBBC05;
+  --elevation-1: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  --elevation-2: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --elevation-3: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --section-py: clamp(3rem, 2rem + 4vw, 5rem);
+  --section-px: 1rem;
+  --space-gap: 1.5rem;
+  --space-section: clamp(3rem, 2rem + 4vw, 5rem);
+  --shadow-cta: 0 10px 25px -5px rgba(234, 88, 12, 0.35);
 }

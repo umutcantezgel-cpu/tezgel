@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { MapPin, Phone, Mail, Clock, Printer, ShieldCheck, MessageSquare, Award, Sparkles, ArrowRight } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
-import GoogleMap from '@/components/common/GoogleMap';
+import ContactPremiumMap from '@/components/maps/ContactPremiumMap';
+import LocationContact from '@/components/locations/LocationContact';
+import FinalCTA from '@/components/ui/FinalCTA';
 
 
 
@@ -183,33 +185,27 @@ export default function KontaktPage() {
 
                 </div>
 
-                {/* Standort & Google Maps Anfahrt */}
+                {/* Standort & Google Maps Anfahrt mit ContactPremiumMap */}
                 <section className="mb-16 scroll-mt-28" id="standort-anfahrt" aria-labelledby="standort-anfahrt-heading">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
                         <div>
-                            <span className="eyebrow mb-2">Standort &amp; Anfahrt</span>
+                            <span className="eyebrow mb-2">Interaktive Karte &amp; Standorte</span>
                             <h2 id="standort-anfahrt-heading" className="text-2xl font-black text-neutral-900 tracking-tight">
-                                Unser Fachbetrieb in Aßlar
+                                Unser Fachbetrieb &amp; Einsatzgebiet Mittelhessen
                             </h2>
                             <p className="text-sm text-neutral-600 mt-1">
-                                Zentral gelegen im Lahn-Dill-Kreis (Hohwardstraße 14, 35614 Aßlar) – Anfahrt &amp; Navigation direkt über Google Maps.
+                                Zentrale in der Hohwardstraße 14, 35614 Aßlar – wählen Sie Ihre Stadt für Fahrtzeiten und Infos.
                             </p>
                         </div>
-                        <a
-                            href={COMPANY_DATA.headquarters.mapsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn-ghost self-start sm:self-auto text-xs"
-                        >
-                            <MapPin className="w-3.5 h-3.5 text-orange-600" />
-                            <span>Route in Google Maps öffnen</span>
-                        </a>
                     </div>
-                    <GoogleMap height="400px" />
+                    <ContactPremiumMap />
                 </section>
 
+                {/* Regional Quick Contact Box */}
+                <LocationContact cityName="Aßlar, Wetzlar &amp; Mittelhessen" className="mb-16 rounded-3xl overflow-hidden border border-neutral-200" />
+
                 {/* Embedded Express Funnel on Contact Page */}
-                <section className="pt-4 scroll-mt-28" id="express-anfrage" aria-labelledby="express-anfrage-heading">
+                <section className="pt-4 mb-16 scroll-mt-28" id="express-anfrage" aria-labelledby="express-anfrage-heading">
                     <div className="text-center max-w-2xl mx-auto mb-10">
                         <span className="eyebrow mb-4">
                             Direkt online anfragen
@@ -217,11 +213,20 @@ export default function KontaktPage() {
                         <h2 id="express-anfrage-heading" className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
                             Ihr Vor-Ort-Aufmaß anfordern
                         </h2>
+                        <p className="text-sm text-neutral-600 mt-2">
+                            Füllen Sie kurz die Projektdaten aus – Meister Deniz Tezgel meldet sich persönlich bei Ihnen.
+                        </p>
                     </div>
                     <TezgelAnfrageFunnel />
                 </section>
-
             </div>
+
+            {/* Final CTA Banner */}
+            <FinalCTA
+                headline="Sie möchten Ihr Bad oder Ihre Fliesen erneuern? Jetzt unverbindlich beraten lassen."
+                subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
+                buttonText="Jetzt Deniz Tezgel anrufen"
+            />
         </div>
     );
 }

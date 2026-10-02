@@ -4,6 +4,8 @@ import { Search, HelpCircle, ArrowRight, ChevronDown, ChevronUp, Droplets, Clipb
 import Link from 'next/link';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
+import { PricingCalculator } from '@/components/pricing/PricingCalculator';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 // Keep in sync with the FAQPage JSON-LD in ./layout.tsx (same questions & answers).
 const faqData = {
@@ -209,9 +211,14 @@ export default function FAQPage() {
                         </a>
                     </div>
                 </div>
+                {/* Interaktiver Preisrechner */}
+                <div className="mt-16">
+                    <PricingCalculator />
+                </div>
             </div>
 
             <QualityPromise />
+            <FinalCTA />
         </div>
     );
 }

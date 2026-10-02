@@ -9,6 +9,9 @@ import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPa
 import JsonLd from '@/components/seo/JsonLd';
 import { MapPin, Phone, ArrowRight, ShieldCheck, Sparkles, Award, Droplets, Sun } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
+import RouteVisualization from '@/components/locations/RouteVisualization';
+import LocationContact from '@/components/locations/LocationContact';
+import FinalCTA from '@/components/ui/FinalCTA';
 
 const SERVICE_ICONS: Record<string, LucideIcon> = {
   bad: Droplets,
@@ -222,6 +225,9 @@ export default async function StandortPage({
         </div>
       </div>
 
+      {/* ── Route Visualization from Aßlar to this city ────────────────────── */}
+      <RouteVisualization city={city} />
+
       {/* ── Services in this city ────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="stadt-leistungen">
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -307,7 +313,18 @@ export default async function StandortPage({
         </div>
       </section>
 
+      {/* Direct Contact Box for this City */}
+      <LocationContact cityName={city.name} className="bg-neutral-50" />
+
       <QualityPromise />
+
+      {/* Final Conversion Anchor for this City */}
+      <FinalCTA
+        headline={`Ihr Fliesenleger für ${city.name}: Jetzt kostenfreies Vor-Ort-Aufmaß vereinbaren.`}
+        subtitle={`Schnelle Anfahrt nach ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
+        buttonText={`Jetzt Aufmaß in ${city.name} anfragen`}
+        serviceContext={`Einsatzgebiet ${city.name}`}
+      />
     </div>
   );
 }

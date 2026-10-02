@@ -29,6 +29,7 @@ import { TOPIC_HUBS } from '@/config/topics';
 import { createMetadata } from '@/lib/metadata';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
     title: 'Fliesen-Ratgeber: Formate, Material & Verlegung',
@@ -417,6 +418,7 @@ export default function FliesenRatgeberPage() {
             </section>
 
             <QualityPromise />
+            <FinalCTA />
         </div>
     );
 }

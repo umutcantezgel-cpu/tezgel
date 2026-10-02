@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CalendarCheck, CheckCircle2, Phone, MessageCircle, Send, Lock, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 const TOPICS = [
     { value: 'badsanierung', label: 'Badsanierung / Komplettbad aus einer Hand' },
@@ -431,6 +432,8 @@ export default function TerminPage() {
                     </div>
                 )}
             </div>
+
+            <FinalCTA />
         </div>
     );
 }

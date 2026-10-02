@@ -4,6 +4,7 @@ import { Users, Award, ArrowRight, Phone } from 'lucide-react';
 import { COMPANY_DATA, team } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import FinalCTA from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
     title: 'Unser Team – Fliesen-Fachbetrieb aus Aßlar',
@@ -90,6 +91,12 @@ export default function TeamPage() {
             </div>
 
             <QualityPromise />
+
+            <FinalCTA
+                headline="Bauen Sie auf ein starkes Team: Jetzt Ihr Fliesen- oder Badprojekt anfragen."
+                subtitle="Erfahrene Fachkräfte • Meistergeführte Baustelle • Feste Terminzusagen"
+                buttonText="Jetzt Projekt unverbindlich anfragen"
+            />
         </div>
     );
 }

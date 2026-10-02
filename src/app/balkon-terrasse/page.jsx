@@ -23,6 +23,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { TOPIC_HUBS } from '@/config/topics';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
     title: 'Balkon & Terrasse: Belagsaufbauten im Vergleich',
@@ -376,6 +377,7 @@ export default function BalkonTerrassePage() {
             </section>
 
             <QualityPromise />
+            <FinalCTA />
         </div>
     );
 }

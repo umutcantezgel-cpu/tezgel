@@ -5,8 +5,13 @@ import './globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';
 import FloatingDock from '@/components/layout/FloatingDock';
+import MobileBottomBar from '@/components/layout/MobileBottomBar';
 import Footer from '@/components/common/Footer';
 import TrackingScripts from '@/components/common/TrackingScripts';
+import SkipNav from '@/components/ui/SkipNav';
+import { UIProvider } from '@/components/providers/UIProvider';
+import { MotionProvider } from '@/components/providers/MotionProvider';
+import { ErrorBoundary } from '@/components/providers/ErrorBoundary';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { buildRootGraph, SITE_URL } from '@/lib/schema';
@@ -100,18 +105,25 @@ export default function RootLayout({
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-[#FAFAFA] text-neutral-900 font-sans">
-        <AuthProvider>
-          <ContentProvider>
-            <TrackingScripts />
-            <HeaderWrapper />
-            <main id="main-content" className="flex-1 pb-16 md:pb-0">
-              {children}
-            </main>
-            <Footer />
-            <FloatingDock />
-            <ClientWidgets />
-          </ContentProvider>
-        </AuthProvider>
+        <SkipNav />
+        <ErrorBoundary>
+          <UIProvider>
+            <MotionProvider>
+              <AuthProvider>
+                <ContentProvider>
+                  <TrackingScripts />
+                  <HeaderWrapper />
+                  <main id="main-content" className="flex-1 pb-16 md:pb-0">
+                    {children}
+                  </main>
+                  <Footer />
+                  <MobileBottomBar />
+                  <ClientWidgets />
+                </ContentProvider>
+              </AuthProvider>
+            </MotionProvider>
+          </UIProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

@@ -27,6 +27,13 @@ import { RATING_SUMMARY, getFeaturedReviews } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import HeroContactForm from '@/components/forms/HeroContactForm';
+import TrustStrip from '@/components/trust/TrustStrip';
+import GoogleReviewsBadge from '@/components/reviews/GoogleReviewsBadge';
+import PricingCalculator from '@/components/pricing/PricingCalculator';
+import ServiceMapWrapper from '@/components/maps/ServiceMapWrapper';
+import ReviewCarousel from '@/components/reviews/ReviewCarousel';
+import FAQAccordion from '@/components/ui/FAQAccordion';
+import FinalCTA from '@/components/ui/FinalCTA';
 
 const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string }> = {
     bad: {
@@ -255,6 +262,14 @@ export default function HomePage() {
                 </div>
             </section>
 
+            {/* TRUST STRIP & GOOGLE REVIEWS BADGE */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8 mb-8 relative z-20">
+                <TrustStrip />
+                <div className="flex justify-center mt-5">
+                    <GoogleReviewsBadge />
+                </div>
+            </div>
+
             {/* 2. TRUST PILLARS */}
             <section className="py-16 relative z-10" id="vertrauen" aria-labelledby="vertrauen-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -370,6 +385,23 @@ export default function HomePage() {
                             ))}
                         </ul>
                     </div>
+                </div>
+            </section>
+
+            {/* PREISKALKULATOR & TRANSPARENZ */}
+            <section className="py-20 relative z-10" id="kosten-rechner" aria-labelledby="rechner-heading">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <span className="eyebrow eyebrow-red mb-4">Interaktiver Kalkulator</span>
+                        <h2 id="rechner-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
+                            Kosten vorab transparent kalkulieren
+                        </h2>
+                        <p className="mt-3 text-base text-neutral-700 leading-relaxed">
+                            Wählen Sie Ihr gewünschtes Vorhaben und die geschätzte Quadratmeterzahl für einen realistischen Vorab-Richtwert.
+                            Das verbindliche Festpreisangebot erfolgt stets nach kostenfreiem Vor-Ort-Aufmaß.
+                        </p>
+                    </div>
+                    <PricingCalculator />
                 </div>
             </section>
 
@@ -587,25 +619,9 @@ export default function HomePage() {
                         </div>
                     </div>
 
-                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {featuredReviews.map((review) => (
-                            <li key={review.id} className="glass-surface rounded-2xl p-7 flex flex-col justify-between">
-                                <figure>
-                                    <div className="flex items-center justify-between mb-4">
-                                        <Stars count={review.rating} />
-                                        <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
-                                    </div>
-                                    <blockquote className="text-sm text-neutral-800 leading-relaxed">&bdquo;{review.text}&ldquo;</blockquote>
-                                    <figcaption className="mt-5 pt-4 border-t border-neutral-200 flex items-center justify-between gap-2">
-                                        <span className="text-sm font-bold text-neutral-900">{review.author}</span>
-                                        <span className="text-xs font-semibold text-neutral-600">
-                                            {review.source}-Rezension &middot; {review.topic}
-                                        </span>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="mt-8">
+                        <ReviewCarousel />
+                    </div>
 
                     <div className="mt-10 text-center">
                         <Link href="/referenzen" className="btn-ghost">
@@ -616,7 +632,60 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* 8. EXPRESS FUNNEL */}
+            {/* 8. INTERAKTIVE KARTE & SERVICEGEBIET */}
+            <section className="py-20 bg-white border-y border-neutral-200 relative z-10" id="servicegebiet" aria-labelledby="map-heading">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <span className="eyebrow mb-4">Regionale Einsatzgebiete</span>
+                        <h2 id="map-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
+                            In ganz Mittelhessen schnell auf Ihrer Baustelle
+                        </h2>
+                        <p className="mt-3 text-base text-neutral-700 leading-relaxed">
+                            Firmensitz in Aßlar – im 45-km-Einsatzradius für Wetzlar, Gießen, Marburg, Limburg, Braunfels, Herborn und ganz Hessen.
+                        </p>
+                    </div>
+                    <ServiceMapWrapper />
+                </div>
+            </section>
+
+            {/* 9. HÄUFIGE FRAGEN (FAQ) */}
+            <section className="py-20 relative z-10 bg-neutral-50/60 border-b border-neutral-200" id="faq" aria-labelledby="home-faq-heading">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-2xl mx-auto mb-12">
+                        <span className="eyebrow mb-4">Transparente Antworten</span>
+                        <h2 id="home-faq-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
+                            Häufig gestellte Fragen zu Fliesen &amp; Badsanierung
+                        </h2>
+                        <p className="mt-3 text-base text-neutral-700 leading-relaxed">
+                            Wichtige Fragen zu Kosten, DIN 18534 Abdichtung, Staubschutz und dem Ablauf vor Ort.
+                        </p>
+                    </div>
+                    <div className="space-y-3">
+                        <FAQAccordion
+                            question="Was kostet eine professionelle Fliesenverlegung oder Badsanierung?"
+                            answer="Die Kosten richten sich nach Format, Material und Zustand des Untergrunds. Nach dem kostenfreien Vor-Ort-Aufmaß in Aßlar, Wetzlar oder Hessen erhalten Sie eine transparente Kostenaufstellung nach Quadratmetern und Arbeitsaufwand – als verbindliches Festpreisangebot."
+                        />
+                        <FAQAccordion
+                            question="Wie garantieren Sie den Staubschutz bei bewohnten Sanierungen?"
+                            answer="Wir setzen moderne Staubschutztüren, Unterdruck-Luftreiniger und saugfähige Schutzvliese ein. So bleibt der Feinstaub im Arbeitsbereich und Ihre übrigen Wohnräume bleiben sauber und bewohnbar."
+                        />
+                        <FAQAccordion
+                            question="Warum ist die Verbundabdichtung nach DIN 18534 im Bad unverzichtbar?"
+                            answer="Normgerechte Verbundabdichtung nach DIN 18534 mit Dichtbändern und Dichtmanschetten schützt das Mauerwerk und den Estrich dauerhaft vor Feuchteschäden, Wassereintritt und Schimmelbildung – besonders in bodengleichen Walk-In-Duschen."
+                        />
+                        <FAQAccordion
+                            question="Verlegen Sie auch XXL-Großformate planeben ohne Überzähne?"
+                            answer="Ja! Wir nutzen modernste Nivelliersysteme und Vakuum-Hebetechnik für millimetergenaue Großformatverlegung (z. B. 120x120 cm oder 120x260 cm) mit minimalen, harmonischen Fugenachsen."
+                        />
+                        <FAQAccordion
+                            question="Wie schnell erhalten wir einen Termin zum Aufmaß vor Ort?"
+                            answer="In der Regel vereinbaren wir binnen 24 bis 48 Stunden einen passenden Termin direkt bei Ihnen vor Ort in Aßlar, Wetzlar, Gießen oder Mittelhessen."
+                        />
+                    </div>
+                </div>
+            </section>
+
+            {/* 10. EXPRESS FUNNEL */}
             <section className="py-20 relative z-10 scroll-mt-28" id="express-anfrage" aria-labelledby="anfrage-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
@@ -632,6 +701,13 @@ export default function HomePage() {
                     <TezgelAnfrageFunnel />
                 </div>
             </section>
+
+            {/* 11. FINAL CONVERSION ANCHOR */}
+            <FinalCTA
+                headline="Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Meister Deniz Tezgel."
+                subtitle="Kostenfreies Vor-Ort-Aufmaß • Verbindlicher Festpreis • Über 15 Jahre Erfahrung"
+                buttonText="Jetzt Vor-Ort-Aufmaß anfragen"
+            />
         </div>
     );
 }

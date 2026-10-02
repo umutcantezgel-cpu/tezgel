@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, ShieldCheck, FileText, Phone, Mail, HelpCircle, MessageCircle } from 'lucide-react';
 import CalendlySection from '@/components/common/CalendlySection';
 import { COMPANY_DATA } from '@/config/company';
+import { FinalCTA } from '@/components/ui/FinalCTA';
 
 // Keep in sync with the FAQPage JSON-LD in ./layout.tsx (same questions & answers).
 const consultationFaqs = [
@@ -215,6 +216,8 @@ const Beratung = () => {
                     </div>
                 </div>
             </section>
+
+            <FinalCTA />
         </div>
     );
 };
