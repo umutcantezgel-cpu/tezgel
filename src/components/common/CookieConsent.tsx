@@ -16,11 +16,42 @@
  * ══════════════════════════════════════════════════════════════
  */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useConsent } from "@/hooks/useConsent";
 import { CONSENT_CATEGORY_INFO, COOKIE_INVENTORY, type ConsentCategory } from "@/lib/cookie-inventory";
 import { Shield, X, Cookie, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
+import { widgetPhysicsCoordinator } from "@/lib/physics/widgetPhysicsCoordinator";
+
+/* ── Viewport boundary calculations (protects mobile bottom dock) ── */
+function getBannerBounds(cardWidth: number, cardHeight: number) {
+  const w = typeof window !== "undefined" ? window.innerWidth : 1280;
+  const h = typeof window !== "undefined" ? window.innerHeight : 800;
+  const isMobile = w < 768;
+  const margin = isMobile ? 12 : 24;
+  const safeTop = 72; // Below sticky header
+  // Ensure the banner NEVER covers the mobile FloatingDock (Anrufen, WhatsApp, Aufmaß)
+  const safeBottom = isMobile ? 86 : 24;
+
+  const minX = margin;
+  const maxX = Math.max(margin, w - cardWidth - margin);
+  const minY = safeTop;
+  const maxY = Math.max(minY, h - cardHeight - safeBottom);
+
+  return { w, h, isMobile, minX, maxX, minY, maxY };
+}
+
+/* ── Initial banner placement (top position on mobile to free the bottom dock) ── */
+function getInitialBannerPosition(cardWidth: number): { x: number; y: number } {
+  if (typeof window === "undefined") {
+    return { x: 24, y: 76 };
+  }
+  const w = window.innerWidth;
+  const isMobile = w < 768;
+  const x = Math.max(isMobile ? 12 : 24, Math.round((w - cardWidth) / 2));
+  const y = isMobile ? 76 : 80;
+  return { x, y };
+}
 
 export default function CookieConsent() {
   const {
@@ -36,6 +67,323 @@ export default function CookieConsent() {
   const [analyticsChecked, setAnalyticsChecked] = useState(false);
   const [marketingChecked, setMarketingChecked] = useState(false);
   const [expandedCategory, setExpandedCategory] = useState<ConsentCategory | null>(null);
+
+  // Physics & 2D dragging state
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [coords, setCoords] = useState<{ x: number; y: number }>(() => ({ x: 12, y: 76 }));
+  const [isDragging, setIsDragging] = useState(false);
+
+  const posRef = useRef({ x: 12, y: 76 });
+  const velRef = useRef({ x: 0, y: 0 });
+  const isDraggingRef = useRef(false);
+  const isPointerDownRef = useRef(false);
+  const pointerIdRef = useRef<number | null>(null);
+  const dragStartPointerRef = useRef({ x: 0, y: 0 });
+  const dragStartPosRef = useRef({ x: 0, y: 0 });
+  const pointerHistoryRef = useRef<Array<{ x: number; y: number; t: number }>>([]);
+  const windowListenersRef = useRef<{
+    move: (e: PointerEvent) => void;
+    up: (e: PointerEvent) => void;
+  } | null>(null);
+
+  const animFrameRef = useRef<number>(0);
+  const animateFnRef = useRef<(() => void) | null>(null);
+
+  // Directly update DOM transform during 60fps physics animations
+  const updateTransform = useCallback((x: number, y: number) => {
+    posRef.current = { x, y };
+    if (cardRef.current) {
+      cardRef.current.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
+    }
+  }, []);
+
+  // Remove window pointer listeners cleanly
+  const removeWindowListeners = useCallback(() => {
+    if (windowListenersRef.current) {
+      window.removeEventListener("pointermove", windowListenersRef.current.move);
+      window.removeEventListener("pointerup", windowListenersRef.current.up);
+      window.removeEventListener("pointercancel", windowListenersRef.current.up);
+      windowListenersRef.current = null;
+    }
+  }, []);
+
+  // Initial horizontal centering & top positioning
+  useEffect(() => {
+    if (typeof window === "undefined" || !showBanner) return;
+    const card = cardRef.current;
+    const w = window.innerWidth;
+    const isMobile = w < 768;
+    const estimatedWidth = isMobile ? w - 24 : Math.min(w - 48, 860);
+    const initial = getInitialBannerPosition(card ? card.offsetWidth : estimatedWidth);
+    posRef.current = initial;
+    setCoords(initial);
+    updateTransform(initial.x, initial.y);
+  }, [showBanner, updateTransform]);
+
+  // Wall bounce physics loop with 2-body collision resolution
+  useEffect(() => {
+    animateFnRef.current = () => {
+      if (isDraggingRef.current) return;
+
+      const p = posRef.current;
+      const v = velRef.current;
+      const card = cardRef.current;
+      const cardWidth = card ? card.offsetWidth : 360;
+      const cardHeight = card ? card.offsetHeight : 280;
+      const bounds = getBannerBounds(cardWidth, cardHeight);
+
+      v.x *= 0.94;
+      v.y *= 0.94;
+
+      let nextX = p.x + v.x;
+      let nextY = p.y + v.y;
+      let didBounce = false;
+
+      if (nextX <= bounds.minX) {
+        nextX = bounds.minX;
+        v.x = Math.abs(v.x) * 0.65;
+        didBounce = true;
+      } else if (nextX >= bounds.maxX) {
+        nextX = bounds.maxX;
+        v.x = -Math.abs(v.x) * 0.65;
+        didBounce = true;
+      }
+
+      if (nextY <= bounds.minY) {
+        nextY = bounds.minY;
+        v.y = Math.abs(v.y) * 0.65;
+        didBounce = true;
+      } else if (nextY >= bounds.maxY) {
+        nextY = bounds.maxY;
+        v.y = -Math.abs(v.y) * 0.65;
+        didBounce = true;
+      }
+
+      if (didBounce && typeof navigator !== "undefined" && navigator.vibrate) {
+        try {
+          navigator.vibrate(6);
+        } catch {
+          // ignore
+        }
+      }
+
+      updateTransform(nextX, nextY);
+
+      // Check and resolve 2-body collision with WhatsApp widget!
+      widgetPhysicsCoordinator.checkAndResolveCollision();
+
+      const speed = Math.hypot(v.x, v.y);
+      if (speed < 0.25) {
+        v.x = 0;
+        v.y = 0;
+        setCoords({ x: nextX, y: nextY });
+        return;
+      }
+
+      animFrameRef.current = requestAnimationFrame(() => {
+        animateFnRef.current?.();
+      });
+    };
+  }, [updateTransform]);
+
+  const startPhysicsAnimation = useCallback(() => {
+    cancelAnimationFrame(animFrameRef.current);
+    animateFnRef.current?.();
+  }, []);
+
+  // Register in 2-body physics coordinator
+  useEffect(() => {
+    if (!showBanner) return;
+
+    return widgetPhysicsCoordinator.registerBox({
+      id: "cookie-banner",
+      mass: 4,
+      getBounds: () => {
+        const card = cardRef.current;
+        const w = card ? card.offsetWidth : 360;
+        const h = card ? card.offsetHeight : 280;
+        return {
+          left: posRef.current.x,
+          top: posRef.current.y,
+          right: posRef.current.x + w,
+          bottom: posRef.current.y + h,
+        };
+      },
+      getVel: () => velRef.current,
+      applyImpulse: (vx: number, vy: number) => {
+        velRef.current.x += vx;
+        velRef.current.y += vy;
+      },
+      displace: (dx: number, dy: number) => {
+        const card = cardRef.current;
+        const w = card ? card.offsetWidth : 360;
+        const h = card ? card.offsetHeight : 280;
+        const bounds = getBannerBounds(w, h);
+        const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x + dx));
+        const nextY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y + dy));
+        updateTransform(nextX, nextY);
+      },
+      wakePhysics: () => {
+        startPhysicsAnimation();
+      },
+    });
+  }, [showBanner, startPhysicsAnimation, updateTransform]);
+
+  // Window pointer handlers for smooth dragging & throwing
+  const onWindowPointerMove = useCallback(
+    (e: PointerEvent) => {
+      if (!isPointerDownRef.current || (pointerIdRef.current !== null && e.pointerId !== pointerIdRef.current)) {
+        return;
+      }
+
+      const totalDx = e.clientX - dragStartPointerRef.current.x;
+      const totalDy = e.clientY - dragStartPointerRef.current.y;
+      const dist = Math.hypot(totalDx, totalDy);
+
+      // Distinguish drag from tap (> 8px movement required)
+      if (!isDraggingRef.current && dist > 8) {
+        isDraggingRef.current = true;
+        setIsDragging(true);
+
+        if (typeof window !== "undefined" && window.getSelection) {
+          window.getSelection()?.removeAllRanges();
+        }
+      }
+
+      if (!isDraggingRef.current) return;
+
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+
+      const card = cardRef.current;
+      const cardWidth = card ? card.offsetWidth : 360;
+      const cardHeight = card ? card.offsetHeight : 280;
+      const bounds = getBannerBounds(cardWidth, cardHeight);
+
+      const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, dragStartPosRef.current.x + totalDx));
+      const nextY = Math.max(bounds.minY, Math.min(bounds.maxY, dragStartPosRef.current.y + totalDy));
+
+      updateTransform(nextX, nextY);
+
+      // Collision check during active drag
+      widgetPhysicsCoordinator.checkAndResolveCollision();
+
+      const now = performance.now();
+      pointerHistoryRef.current.push({ x: e.clientX, y: e.clientY, t: now });
+      const cutoff = now - 120;
+      pointerHistoryRef.current = pointerHistoryRef.current.filter((sample) => sample.t >= cutoff);
+    },
+    [updateTransform]
+  );
+
+  const onWindowPointerUp = useCallback(
+    (e: PointerEvent) => {
+      if (!isPointerDownRef.current || (pointerIdRef.current !== null && e.pointerId !== pointerIdRef.current)) {
+        return;
+      }
+
+      isPointerDownRef.current = false;
+      pointerIdRef.current = null;
+      removeWindowListeners();
+
+      if (isDraggingRef.current) {
+        isDraggingRef.current = false;
+        setIsDragging(false);
+
+        const now = performance.now();
+        const recent = pointerHistoryRef.current.filter((sample) => now - sample.t <= 100);
+
+        let vx = 0;
+        let vy = 0;
+
+        if (recent.length >= 2) {
+          const oldest = recent[0];
+          const newest = recent[recent.length - 1];
+          const dt = Math.max(10, newest.t - oldest.t);
+          vx = ((newest.x - oldest.x) / dt) * 16;
+          vy = ((newest.y - oldest.y) / dt) * 16;
+        }
+
+        const maxV = 32;
+        velRef.current = {
+          x: Math.max(-maxV, Math.min(maxV, vx)),
+          y: Math.max(-maxV, Math.min(maxV, vy)),
+        };
+
+        const speed = Math.hypot(velRef.current.x, velRef.current.y);
+        if (speed > 1.0) {
+          startPhysicsAnimation();
+        } else {
+          setCoords({ x: posRef.current.x, y: posRef.current.y });
+        }
+      }
+    },
+    [removeWindowListeners, startPhysicsAnimation]
+  );
+
+  // Card pointer down (only on non-interactive parts)
+  const onPointerDown = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
+      if (e.button !== 0) return;
+
+      // Never intercept button clicks, links, or form controls
+      const target = e.target as HTMLElement;
+      if (target.closest("button, a, input, [role='button'], label, [tabindex='0']")) {
+        return;
+      }
+
+      isPointerDownRef.current = true;
+      isDraggingRef.current = false;
+      setIsDragging(false);
+
+      cancelAnimationFrame(animFrameRef.current);
+      velRef.current = { x: 0, y: 0 };
+
+      const now = performance.now();
+      pointerIdRef.current = e.pointerId;
+      dragStartPointerRef.current = { x: e.clientX, y: e.clientY };
+      dragStartPosRef.current = { x: posRef.current.x, y: posRef.current.y };
+      pointerHistoryRef.current = [{ x: e.clientX, y: e.clientY, t: now }];
+
+      windowListenersRef.current = { move: onWindowPointerMove, up: onWindowPointerUp };
+      window.addEventListener("pointermove", onWindowPointerMove, { passive: false });
+      window.addEventListener("pointerup", onWindowPointerUp, { passive: false });
+      window.addEventListener("pointercancel", onWindowPointerUp, { passive: false });
+    },
+    [onWindowPointerMove, onWindowPointerUp]
+  );
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      removeWindowListeners();
+      cancelAnimationFrame(animFrameRef.current);
+    };
+  }, [removeWindowListeners]);
+
+  // Viewport resize clamping
+  useEffect(() => {
+    const handleResize = () => {
+      const card = cardRef.current;
+      const cardWidth = card ? card.offsetWidth : 360;
+      const cardHeight = card ? card.offsetHeight : 280;
+      const bounds = getBannerBounds(cardWidth, cardHeight);
+      const clampedX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x));
+      const clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y));
+      if (clampedX !== posRef.current.x || clampedY !== posRef.current.y) {
+        updateTransform(clampedX, clampedY);
+        setCoords({ x: clampedX, y: clampedY });
+      }
+    };
+
+    window.addEventListener("resize", handleResize, { passive: true });
+    window.addEventListener("orientationchange", handleResize, { passive: true });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+    };
+  }, [updateTransform]);
 
   // Global event listener to listen for `#cookie-settings` in the URL
   useEffect(() => {
@@ -105,13 +453,36 @@ export default function CookieConsent() {
     <>
       {showBanner && (
         <div
+          ref={cardRef}
           role="dialog"
           aria-modal="false"
           aria-label="Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG"
           aria-describedby="cookie-consent-description"
-          className="fixed bottom-0 left-0 right-0 z-[9999] p-3 sm:p-4 md:p-6 pb-[max(1.25rem,calc(env(safe-area-inset-bottom)+76px))] md:pb-6 pointer-events-none animate-in fade-in slide-in-from-bottom-5 duration-300"
+          onPointerDown={onPointerDown}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            transform: `translate3d(${coords.x}px, ${coords.y}px, 0px)`,
+            zIndex: 9998,
+            width: typeof window !== "undefined" && window.innerWidth < 768 ? "calc(100vw - 24px)" : "min(860px, calc(100vw - 48px))",
+            maxWidth: 860,
+            touchAction: "none",
+            userSelect: isDragging ? "none" : "auto",
+            willChange: "transform",
+          }}
+          className={`rounded-2xl border border-neutral-200/90 bg-white shadow-[0_12px_44px_rgba(0,0,0,0.18)] backdrop-blur-xl max-h-[82vh] overflow-y-auto overscroll-contain transition-shadow ${
+            isDragging ? "shadow-[0_20px_50px_rgba(0,0,0,0.3)]" : ""
+          }`}
         >
-          <div className="pointer-events-auto mx-auto max-w-4xl max-h-[85vh] overflow-y-auto overscroll-contain rounded-2xl border border-neutral-200 bg-white shadow-[0_-8px_35px_rgba(0,0,0,0.16)] backdrop-blur-xl">
+          {/* Subtle Drag Handle Bar */}
+          <div
+            className="w-full flex items-center justify-center pt-2.5 pb-0.5 cursor-grab active:cursor-grabbing select-none touch-none group"
+            aria-label="Cookie-Banner verschieben"
+            title="Frei verschiebbar & werfbar"
+          >
+            <div className="w-12 h-1.5 rounded-full bg-neutral-200 group-hover:bg-neutral-300 transition-colors" />
+          </div>
             {!showSettings ? (
               /* ── Banner View ── */
               <div className="p-5 sm:p-6 md:p-6 relative">
@@ -380,7 +751,6 @@ export default function CookieConsent() {
                 </div>
               </div>
             )}
-          </div>
         </div>
       )}
 
@@ -394,7 +764,7 @@ export default function CookieConsent() {
             setAnalyticsChecked(consent?.analytics ?? false);
             setMarketingChecked(consent?.marketing ?? false);
           }}
-          className="fixed bottom-4 left-4 z-[9995] w-10 h-10 md:w-11 md:h-11 bg-white/95 backdrop-blur-md rounded-full shadow-[0_4px_18px_rgba(0,0,0,0.12)] border border-neutral-200/90 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200 text-neutral-700 hover:text-orange-600 group"
+          className="fixed bottom-20 left-4 md:bottom-4 md:left-4 z-[9995] w-10 h-10 md:w-11 md:h-11 bg-white/95 backdrop-blur-md rounded-full shadow-[0_4px_18px_rgba(0,0,0,0.12)] border border-neutral-200/90 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200 text-neutral-700 hover:text-orange-600 group"
           aria-label="Cookie-Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"
         >

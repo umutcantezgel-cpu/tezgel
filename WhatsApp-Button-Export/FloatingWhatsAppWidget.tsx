@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { companyInfo } from "@/lib/data/company";
 import { openWhatsApp, buildWhatsAppUrl, isMobileDevice } from "@/lib/whatsapp";
+import { widgetPhysicsCoordinator } from "@/lib/physics/widgetPhysicsCoordinator";
 
 /* ═══════════════════════════════════════════════════════════════════════════
  * Floating WhatsApp CTA Widget - Fliesenverlegung Tezgel
@@ -273,6 +274,9 @@ export default function FloatingWhatsAppWidget() {
 
       updateTransform(nextX, nextY);
 
+      // Check and resolve 2-body collision with Cookie Banner
+      widgetPhysicsCoordinator.checkAndResolveCollision();
+
       // Once momentum dissipates, smoothly snap into dock on the right edge
       const speed = Math.hypot(v.x, v.y);
       if (speed < MIN_VEL) {
@@ -293,6 +297,33 @@ export default function FloatingWhatsAppWidget() {
     cancelAnimationFrame(snapFrameRef.current);
     animateFnRef.current?.();
   }, []);
+
+  // Register WhatsApp widget in 2-body physics coordinator
+  useEffect(() => {
+    return widgetPhysicsCoordinator.registerCircle({
+      id: "whatsapp-btn",
+      mass: 1,
+      radius: SIZE / 2,
+      getCenter: () => ({
+        x: posRef.current.x + SIZE / 2,
+        y: posRef.current.y + SIZE / 2,
+      }),
+      getVel: () => velRef.current,
+      applyImpulse: (vx: number, vy: number) => {
+        velRef.current.x += vx;
+        velRef.current.y += vy;
+      },
+      displace: (dx: number, dy: number) => {
+        const bounds = getWidgetBounds(SIZE);
+        const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x + dx));
+        const nextY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y + dy));
+        updateTransform(nextX, nextY);
+      },
+      wakePhysics: () => {
+        startPhysicsAnimation();
+      },
+    });
+  }, [startPhysicsAnimation, updateTransform]);
 
   // Timers for initial tooltip and badge
   useEffect(() => {
