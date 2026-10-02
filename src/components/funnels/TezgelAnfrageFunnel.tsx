@@ -20,6 +20,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp } from '@/lib/whatsapp';
 
 const PROJECT_TYPES = [
   {
@@ -118,8 +119,10 @@ export default function TezgelAnfrageFunnel() {
       setErrorMessage('Bitte tragen Sie zumindest Ihren Namen und eine Telefonnummer ein.');
       return;
     }
-    const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(getWhatsAppMessage())}`;
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    openWhatsApp({
+      phone: COMPANY_DATA.contact.whatsappNumber,
+      text: getWhatsAppMessage(),
+    });
     setStatus('whatsapp_opened');
   };
 

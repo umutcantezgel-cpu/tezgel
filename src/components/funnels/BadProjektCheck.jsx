@@ -16,6 +16,7 @@ import {
     Sparkles
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp } from '@/lib/whatsapp';
 
 const SCOPE_OPTIONS = [
     { id: 'komplett', label: 'Komplettbad', desc: 'Schlüsselfertig' },
@@ -95,11 +96,10 @@ export default function BadProjektCheck() {
         const message = getLeadMessage();
 
         if (channel === 'whatsapp') {
-            window.open(
-                `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(message)}`,
-                '_blank',
-                'noopener,noreferrer'
-            );
+            openWhatsApp({
+                phone: COMPANY_DATA.contact.whatsappNumber,
+                text: message,
+            });
             setSentVia('whatsapp');
             return;
         }

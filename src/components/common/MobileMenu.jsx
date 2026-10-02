@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp } from '@/lib/whatsapp';
 import { BrandMark } from '@/components/common/Header';
 
 function getCategoryIcon(name) {
@@ -279,6 +280,10 @@ export default function MobileMenu({ isOpen, onClose }) {
                             href={COMPANY_DATA.contact.whatsappLink}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber });
+                            }}
                             className="glass-button-whatsapp py-2 px-3 text-xs justify-center font-bold"
                         >
                             <MessageCircle className="w-4 h-4 shrink-0" />

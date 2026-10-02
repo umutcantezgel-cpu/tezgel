@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Phone, MessageCircle, Ruler } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp } from '@/lib/whatsapp';
 
 export default function FloatingDock() {
   const pathname = usePathname() || '';
@@ -37,6 +38,10 @@ export default function FloatingDock() {
           href={COMPANY_DATA.contact.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => {
+            e.preventDefault();
+            openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber });
+          }}
           className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-green-50 text-green-900 text-xs font-bold border border-green-200 hover:bg-green-100 active:scale-95 transition-all shadow-xs"
           aria-label="WhatsApp-Chat starten"
         >

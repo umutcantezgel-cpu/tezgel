@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp, isMobileDevice } from '@/lib/whatsapp';
 import { FugenkreuzToggle } from '@/components/common/TileCraftIcons';
 
 const isActivePath = (pathname, path) =>
@@ -228,6 +229,12 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                             href={COMPANY_DATA.contact.whatsappLink}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={(e) => {
+                                if (isMobileDevice()) {
+                                    e.preventDefault();
+                                    openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber });
+                                }
+                            }}
                             className="hidden sm:inline-flex items-center justify-center gap-1.5 h-10 min-w-10 px-2.5 rounded-xl bg-green-50 hover:bg-green-100 text-green-800 font-bold text-xs border border-green-200 hover:border-green-500/80 transition-all duration-200"
                             aria-label="WhatsApp-Chat starten"
                         >

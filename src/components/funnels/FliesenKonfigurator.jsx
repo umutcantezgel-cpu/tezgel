@@ -18,6 +18,7 @@ import {
     AlertCircle
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp } from '@/lib/whatsapp';
 
 // ---------------------------------------------------------------------------
 // Options
@@ -560,8 +561,10 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
         const message = buildMessage();
 
         if (channel === 'whatsapp') {
-            const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            openWhatsApp({
+                phone: COMPANY_DATA.contact.whatsappNumber,
+                text: message,
+            });
             setSentVia('whatsapp');
             return;
         }

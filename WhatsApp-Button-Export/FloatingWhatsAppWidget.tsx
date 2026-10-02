@@ -3,9 +3,10 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { companyInfo } from "@/lib/data/company";
+import { openWhatsApp, buildWhatsAppUrl, isMobileDevice } from "@/lib/whatsapp";
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * Floating WhatsApp CTA Widget - Export & Source
+ * Floating WhatsApp CTA Widget - Fliesenverlegung Tezgel
  *
  * Features:
  *  1. Physics-based drag & throw (momentum, bounce, friction)
@@ -17,7 +18,8 @@ import { companyInfo } from "@/lib/data/company";
  *  7. Notification badge ("1") for first 30 seconds
  *  8. Contextual WhatsApp messages tailored to Tezgel's tile & bathroom services
  *  9. Haptic feedback on mobile touch interaction
- * 10. Analytics event tracking on click
+ * 10. Universal cross-device launcher (iOS Safari, Android Chrome, Desktop)
+ * 11. Analytics event tracking on click
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 interface StoredPosition {
@@ -29,7 +31,8 @@ const SIZE = 60;
 const FRICTION = 0.92;
 const BOUNCE = 0.6;
 const MIN_VEL = 0.3;
-const DRAG_THRESHOLD = 5;
+const DRAG_THRESHOLD_TOUCH = 14; // Higher tolerance for mobile finger taps to prevent accidental drag cancels
+const DRAG_THRESHOLD_MOUSE = 7;
 
 /* ── Contextual messages tailored to Fliesenverlegung Tezgel ── */
 function getContextualMessage(pathname: string): string {
@@ -71,14 +74,15 @@ function getWidgetBounds(size: number) {
   const w = typeof window !== "undefined" ? window.innerWidth : 1280;
   const h = typeof window !== "undefined" ? window.innerHeight : 800;
   const isMobile = w < 768;
-  const margin = isMobile ? 14 : 24;
+  const margin = isMobile ? 12 : 24;
   const safeTop = 72; // below sticky header
-  const safeBottom = isMobile ? 96 : 24; // above mobile dock
+  // Ensure comfortable clearance above mobile bottom dock (FloatingDock) + iOS home bar
+  const safeBottom = isMobile ? 102 : 24;
 
   const minX = margin;
   const maxX = Math.max(margin, w - size - margin);
   const minY = safeTop;
-  const maxY = Math.max(safeTop, h - size - safeBottom);
+  const maxY = Math.max(minY, h - size - safeBottom);
 
   return { w, h, isMobile, margin, safeTop, safeBottom, minX, maxX, minY, maxY };
 }
@@ -142,9 +146,13 @@ export default function FloatingWhatsAppWidget() {
   // Position state (refs for 60fps physics animations without causing React re-renders)
   const posRef = useRef({ x: initialState.x, y: initialState.y });
   const velRef = useRef({ x: 0, y: 0 });
+  const isPointerDownRef = useRef(false);
   const isDraggingRef = useRef(false);
   const wasDraggedRef = useRef(false);
   const isSnappingRef = useRef(false);
+  const pointerDownTimeRef = useRef(0);
+  const justHandledTapRef = useRef(false);
+  const pointerTypeRef = useRef<string>("mouse");
   const dragStartRef = useRef({ x: 0, y: 0 });
   const lastPointerRef = useRef({ x: 0, y: 0, t: 0 });
   const prevPointerRef = useRef({ x: 0, y: 0, t: 0 });
@@ -273,38 +281,45 @@ export default function FloatingWhatsAppWidget() {
     };
   }, []);
 
+  // Track analytics event helper
+  const trackClick = useCallback(() => {
+    if (typeof window !== "undefined") {
+      const win = window as unknown as { gtag?: (...args: unknown[]) => void };
+      if (typeof win.gtag === "function") {
+        win.gtag("event", "whatsapp_click", {
+          event_category: "engagement",
+          event_label: pathname,
+        });
+      }
+    }
+  }, [pathname]);
+
   const onPointerDown = useCallback(
     (e: React.PointerEvent) => {
       if (e.button !== 0) return;
 
-      isDraggingRef.current = true;
+      isPointerDownRef.current = true;
+      isDraggingRef.current = false;
       wasDraggedRef.current = false;
       isSnappingRef.current = false;
-      setIsDragging(true);
+      setIsDragging(false);
       setIsSnapping(false);
 
       cancelAnimationFrame(animFrameRef.current);
       cancelAnimationFrame(snapFrameRef.current);
       velRef.current = { x: 0, y: 0 };
 
-      // Hide tooltip & badge on interaction
-      setShowTooltip(false);
-      setShowBadge(false);
-
       const now = Date.now();
+      pointerDownTimeRef.current = now;
+      pointerTypeRef.current = e.pointerType || "mouse";
       dragStartRef.current = { x: e.clientX, y: e.clientY };
       lastPointerRef.current = { x: e.clientX, y: e.clientY, t: now };
       prevPointerRef.current = { x: e.clientX, y: e.clientY, t: now };
 
-      (e.target as HTMLElement).setPointerCapture(e.pointerId);
-
-      // Haptic feedback on mobile
-      if (typeof navigator !== "undefined" && navigator.vibrate) {
-        try {
-          navigator.vibrate(25);
-        } catch {
-          // ignore
-        }
+      try {
+        (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      } catch {
+        // ignore
       }
     },
     []
@@ -312,16 +327,37 @@ export default function FloatingWhatsAppWidget() {
 
   const onPointerMove = useCallback(
     (e: React.PointerEvent) => {
+      if (!isPointerDownRef.current) return;
+
+      const totalDx = e.clientX - dragStartRef.current.x;
+      const totalDy = e.clientY - dragStartRef.current.y;
+      const dist = Math.hypot(totalDx, totalDy);
+      const threshold = pointerTypeRef.current === "touch" ? DRAG_THRESHOLD_TOUCH : DRAG_THRESHOLD_MOUSE;
+
+      // Only enter drag state if pointer has intentionally moved beyond jitter threshold
+      if (!isDraggingRef.current && dist > threshold) {
+        isDraggingRef.current = true;
+        wasDraggedRef.current = true;
+        setIsDragging(true);
+
+        // Hide tooltip & badge on intentional drag
+        setShowTooltip(false);
+        setShowBadge(false);
+
+        // Haptic feedback on mobile when drag begins
+        if (typeof navigator !== "undefined" && navigator.vibrate) {
+          try {
+            navigator.vibrate(20);
+          } catch {
+            // ignore
+          }
+        }
+      }
+
       if (!isDraggingRef.current) return;
 
       const dx = e.clientX - lastPointerRef.current.x;
       const dy = e.clientY - lastPointerRef.current.y;
-
-      const totalDx = e.clientX - dragStartRef.current.x;
-      const totalDy = e.clientY - dragStartRef.current.y;
-      if (Math.abs(totalDx) > DRAG_THRESHOLD || Math.abs(totalDy) > DRAG_THRESHOLD) {
-        wasDraggedRef.current = true;
-      }
 
       const bounds = getWidgetBounds(SIZE);
       const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x + dx));
@@ -337,9 +373,8 @@ export default function FloatingWhatsAppWidget() {
 
   const onPointerUp = useCallback(
     (e: React.PointerEvent) => {
-      if (!isDraggingRef.current) return;
-      isDraggingRef.current = false;
-      setIsDragging(false);
+      if (!isPointerDownRef.current) return;
+      isPointerDownRef.current = false;
 
       try {
         (e.target as HTMLElement).releasePointerCapture(e.pointerId);
@@ -347,45 +382,86 @@ export default function FloatingWhatsAppWidget() {
         // ignore
       }
 
-      const dt = Math.max(1, lastPointerRef.current.t - prevPointerRef.current.t);
-      const vx = ((lastPointerRef.current.x - prevPointerRef.current.x) / dt) * 16;
-      const vy = ((lastPointerRef.current.y - prevPointerRef.current.y) / dt) * 16;
+      // Case A: User was actively dragging the button
+      if (isDraggingRef.current) {
+        isDraggingRef.current = false;
+        setIsDragging(false);
 
-      const maxV = 36;
-      velRef.current = {
-        x: Math.max(-maxV, Math.min(maxV, vx)),
-        y: Math.max(-maxV, Math.min(maxV, vy)),
-      };
+        const dt = Math.max(1, lastPointerRef.current.t - prevPointerRef.current.t);
+        const vx = ((lastPointerRef.current.x - prevPointerRef.current.x) / dt) * 16;
+        const vy = ((lastPointerRef.current.y - prevPointerRef.current.y) / dt) * 16;
 
-      if (Math.abs(velRef.current.x) > MIN_VEL || Math.abs(velRef.current.y) > MIN_VEL) {
-        startPhysicsAnimation();
-      } else {
-        snapToEdge();
+        const maxV = 36;
+        velRef.current = {
+          x: Math.max(-maxV, Math.min(maxV, vx)),
+          y: Math.max(-maxV, Math.min(maxV, vy)),
+        };
+
+        if (Math.abs(velRef.current.x) > MIN_VEL || Math.abs(velRef.current.y) > MIN_VEL) {
+          startPhysicsAnimation();
+        } else {
+          snapToEdge();
+        }
+        return;
+      }
+
+      // Case B: Clean tap/click on touch or mouse without dragging
+      const duration = Date.now() - pointerDownTimeRef.current;
+      if (!wasDraggedRef.current && duration < 500) {
+        justHandledTapRef.current = true;
+        setTimeout(() => {
+          justHandledTapRef.current = false;
+        }, 500);
+
+        trackClick();
+
+        const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
+        const contextMessage = getContextualMessage(pathname);
+        openWhatsApp({ phone: cleanNumber, text: contextMessage });
       }
     },
-    [snapToEdge, startPhysicsAnimation]
+    [pathname, snapToEdge, startPhysicsAnimation, trackClick]
   );
 
   const onClick = useCallback(
     (e: React.MouseEvent) => {
-      if (wasDraggedRef.current) {
+      if (wasDraggedRef.current || justHandledTapRef.current) {
         e.preventDefault();
         return;
       }
 
-      // Track analytics event
-      if (typeof window !== "undefined") {
-        const win = window as unknown as { gtag?: (...args: unknown[]) => void };
-        if (typeof win.gtag === "function") {
-          win.gtag("event", "whatsapp_click", {
-            event_category: "engagement",
-            event_label: pathname,
-          });
-        }
+      // Keyboard navigation (Enter / Space) or standard browser click fallback
+      trackClick();
+
+      if (isMobileDevice()) {
+        e.preventDefault();
+        const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
+        const contextMessage = getContextualMessage(pathname);
+        openWhatsApp({ phone: cleanNumber, text: contextMessage });
       }
     },
-    [pathname]
+    [pathname, trackClick]
   );
+
+  // Keep widget safely clamped within viewport on resize or orientation change
+  useEffect(() => {
+    const handleResize = () => {
+      const bounds = getWidgetBounds(SIZE);
+      const clampedX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x));
+      const clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y));
+      if (clampedX !== posRef.current.x || clampedY !== posRef.current.y) {
+        updateTransform(clampedX, clampedY);
+        setCoords({ x: clampedX, y: clampedY });
+      }
+    };
+
+    window.addEventListener("resize", handleResize, { passive: true });
+    window.addEventListener("orientationchange", handleResize, { passive: true });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
+    };
+  }, [updateTransform]);
 
   // Cleanup frame handles on unmount
   useEffect(() => {
@@ -400,7 +476,7 @@ export default function FloatingWhatsAppWidget() {
 
   const cleanNumber = whatsappNumber.replace(/[^0-9]/g, "");
   const contextMessage = getContextualMessage(pathname);
-  const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(contextMessage)}`;
+  const whatsappUrl = buildWhatsAppUrl(cleanNumber, contextMessage);
 
   const isIdle = !isDragging && !isSnapping;
   const isLeft = currentSide === "left";
@@ -451,6 +527,8 @@ export default function FloatingWhatsAppWidget() {
         rel="noopener noreferrer"
         aria-label="WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
         id="whatsapp-floating-btn"
+        role="button"
+        tabIndex={0}
         onClick={onClick}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}

@@ -16,6 +16,7 @@ import {
     AlertCircle
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp } from '@/lib/whatsapp';
 
 const OBJECT_TYPES = [
     { id: 'efh', title: 'Einfamilienhaus', desc: 'Freistehend oder Reihenhaus' },
@@ -126,8 +127,10 @@ export default function BadanfrageFunnel() {
             setErrorMessage('Bitte tragen Sie zumindest Name und Telefonnummer ein.');
             return;
         }
-        const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(getMessage())}`;
-        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        openWhatsApp({
+            phone: COMPANY_DATA.contact.whatsappNumber,
+            text: getMessage(),
+        });
         setStatus('whatsapp_opened');
     };
 

@@ -11,6 +11,7 @@ import {
     AlertCircle
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { buildWhatsAppUrl, openWhatsApp, isMobileDevice } from '@/lib/whatsapp';
 
 const PROJECT_OPTIONS = [
     { id: 'bad', label: 'Badsanierung' },
@@ -33,17 +34,20 @@ export default function HeroContactForm() {
     const selectedOption = PROJECT_OPTIONS.find((opt) => opt.id === projectType);
     const projectTitle = selectedOption ? selectedOption.label : 'Fliesenarbeiten';
 
-    const getWhatsAppUrl = () => {
-        const text =
+    const getWhatsAppText = () => {
+        return (
             `Hallo Herr Tezgel,\n` +
             `ich interessiere mich für: ${projectTitle}.\n` +
             (location ? `Ort / Region: ${location}\n` : '') +
             (name ? `Mein Name: ${name}\n` : '') +
             (phone ? `Telefon: ${phone}\n` : '') +
             (notes ? `Hinweise: ${notes}\n` : '') +
-            `\nBitte melden Sie sich bezüglich eines kostenfreien Termins zum Aufmaß vor Ort. Vielen Dank!`;
+            `\nBitte melden Sie sich bezüglich eines kostenfreien Termins zum Aufmaß vor Ort. Vielen Dank!`
+        );
+    };
 
-        return `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(text)}`;
+    const getWhatsAppUrl = () => {
+        return buildWhatsAppUrl(COMPANY_DATA.contact.whatsappNumber, getWhatsAppText());
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -323,6 +327,12 @@ export default function HeroContactForm() {
                             href={getWhatsAppUrl()}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={(e) => {
+                                if (isMobileDevice()) {
+                                    e.preventDefault();
+                                    openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber, text: getWhatsAppText() });
+                                }
+                            }}
                             className="flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-900 hover:underline"
                         >
                             <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />

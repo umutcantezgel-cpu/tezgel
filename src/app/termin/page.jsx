@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { CalendarCheck, CheckCircle2, Phone, MessageCircle, Send, Lock, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
+import { openWhatsApp } from '@/lib/whatsapp';
 
 const TOPICS = [
     { value: 'badsanierung', label: 'Badsanierung / Komplettbad aus einer Hand' },
@@ -72,8 +73,10 @@ export default function TerminPage() {
         const message = buildMessage();
 
         if (channel === 'whatsapp') {
-            const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            openWhatsApp({
+                phone: COMPANY_DATA.contact.whatsappNumber,
+                text: message,
+            });
             setSentVia('whatsapp');
             return;
         }
