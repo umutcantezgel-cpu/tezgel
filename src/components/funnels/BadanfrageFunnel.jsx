@@ -69,6 +69,7 @@ export default function BadanfrageFunnel() {
     const [step, setStep] = useState(1);
     const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error' | 'whatsapp_opened'
     const [errorMessage, setErrorMessage] = useState('');
+    const [referenceId, setReferenceId] = useState('');
     const [formData, setFormData] = useState({
         objectType: 'efh',
         scope: 'komplett',
@@ -140,15 +141,35 @@ export default function BadanfrageFunnel() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    inquiryType: 'bad',
                     projectType: 'bad',
                     projectTitle: `Badsanierung (${scopeTitle} · ${tierTitle})`,
-                    area: `${calculatedSqm} m² (${formData.length} x ${formData.width} m)`,
+                    contact: {
+                        name: formData.name,
+                        phone: formData.phone,
+                        email: formData.email || undefined,
+                        street: formData.street || undefined,
+                        zipCity: formData.zipCity || undefined,
+                        location: addressText
+                    },
+                    badDetails: {
+                        scope: formData.scope,
+                        scopeLabel: scopeTitle,
+                        tier: formData.tier,
+                        tierLabel: tierTitle,
+                        sqm: calculatedSqm,
+                        length: formData.length,
+                        width: formData.width,
+                        persons: formData.persons,
+                        personsLabel: personsLabel,
+                        propertyType: formData.objectType,
+                        propertyTypeLabel: objectTitle,
+                        features: formData.features,
+                        featureLabels: featureLabels
+                    },
                     timing: `Personen im Haushalt: ${personsLabel}`,
-                    location: addressText,
-                    name: formData.name,
-                    phone: formData.phone,
-                    email: formData.email || undefined,
-                    notes: `Immobilie: ${objectTitle}. Ausstattung: ${featureLabels.join(', ')}. ${formData.notes || ''}`.trim(),
+                    area: `${calculatedSqm} m² (${formData.length} x ${formData.width} m)`,
+                    notes: formData.notes ? formData.notes.trim() : undefined,
                     honeypot: formData.honeypot || undefined
                 })
             });
@@ -156,6 +177,10 @@ export default function BadanfrageFunnel() {
             const data = await response.json();
             if (!response.ok || !data.success) {
                 throw new Error(data.error || 'Übertragung fehlgeschlagen.');
+            }
+
+            if (data.referenceId) {
+                setReferenceId(data.referenceId);
             }
 
             setStatus('success');
@@ -173,15 +198,22 @@ export default function BadanfrageFunnel() {
                     <div className="icon-chip w-20 h-20 rounded-xl mx-auto mb-6 bg-orange-100 text-orange-700">
                         <CheckCircle2 className="w-10 h-10" />
                     </div>
-                    <span className="eyebrow mb-4">Badanfrage erfolgreich übermittelt</span>
+                    <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+                        <span className="eyebrow">Badanfrage erfolgreich übermittelt</span>
+                        {referenceId && (
+                            <span className="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full font-mono text-xs font-bold text-slate-800">
+                                Vorgangs-Nr.: {referenceId}
+                            </span>
+                        )}
+                    </div>
                     <h3 className="text-2xl md:text-3xl font-black text-neutral-900 mb-3">
                         Vielen Dank, {formData.name}!
                     </h3>
                     <p className="text-sm sm:text-base text-neutral-700 mb-6 leading-relaxed">
                         Ihre detaillierte Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
                         {formData.email && (
-                            <span className="block mt-2 font-semibold text-orange-800">
-                                Eine Eingangsbestätigung wurde an <em>{formData.email}</em> gesendet.
+                            <span className="block mt-2 font-semibold text-orange-800 bg-orange-50/80 border border-orange-200/80 rounded-xl p-2.5 max-w-md mx-auto text-xs sm:text-sm">
+                                ✉️ Eine ausführliche Bestätigung mit allen Angaben wurde an <em>{formData.email}</em> gesendet.
                             </span>
                         )}
                     </p>
@@ -206,7 +238,7 @@ export default function BadanfrageFunnel() {
                         </a>
                         <button
                             type="button"
-                            onClick={() => { setStatus('idle'); setStep(1); }}
+                            onClick={() => { setStatus('idle'); setStep(1); setReferenceId(''); }}
                             className="btn-ghost w-full sm:w-auto text-xs"
                         >
                             Neue Badanfrage starten

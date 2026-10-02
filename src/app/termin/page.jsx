@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { CalendarCheck, CheckCircle2, Phone, MessageCircle, Send, Lock } from 'lucide-react';
+import { CalendarCheck, CheckCircle2, Phone, MessageCircle, Send, Lock, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 
 const TOPICS = [
@@ -32,7 +32,10 @@ const formatDate = (isoDate) => {
 };
 
 export default function TerminPage() {
-    const [sentVia, setSentVia] = useState(null);
+    const [sentVia, setSentVia] = useState(null); // 'whatsapp' | 'online'
+    const [referenceId, setReferenceId] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
         topic: 'badsanierung',
         date: '',
@@ -62,19 +65,70 @@ export default function TerminPage() {
         (formData.notes ? `Anmerkungen: ${formData.notes}\n\n` : '\n') +
         `Bitte bestätigen Sie mir den Termin oder schlagen Sie einen Alternativtermin vor. Vielen Dank!`;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const submitter = e.nativeEvent?.submitter;
-        const channel = submitter?.value === 'email' ? 'email' : 'whatsapp';
+        const channel = submitter?.value === 'whatsapp' ? 'whatsapp' : 'online';
+        const message = buildMessage();
 
         if (channel === 'whatsapp') {
-            const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(buildMessage())}`;
+            const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank', 'noopener,noreferrer');
-        } else {
-            const subject = `Terminanfrage: ${labelOf(TOPICS, formData.topic)}${formData.zipCity ? ` (${formData.zipCity})` : ''}`;
-            window.location.href = `mailto:${COMPANY_DATA.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildMessage())}`;
+            setSentVia('whatsapp');
+            return;
         }
-        setSentVia(channel);
+
+        // Online API Submission
+        setIsSubmitting(true);
+        setErrorMessage('');
+
+        try {
+            const topicLabel = labelOf(TOPICS, formData.topic);
+            const timeSlotLabel = labelOf(TIME_SLOTS, formData.timeSlot);
+            const formattedDate = formatDate(formData.date);
+
+            const res = await fetch('/api/anfrage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    inquiryType: 'termin',
+                    projectType: 'termin',
+                    projectTitle: `Termin: ${topicLabel}`,
+                    contact: {
+                        name: formData.name,
+                        phone: formData.phone,
+                        email: formData.email || undefined,
+                        zipCity: formData.zipCity || undefined,
+                        location: formData.zipCity || 'Aßlar / Wetzlar'
+                    },
+                    terminDetails: {
+                        topic: formData.topic,
+                        topicLabel,
+                        date: formData.date,
+                        formattedDate,
+                        timeSlot: formData.timeSlot,
+                        timeSlotLabel
+                    },
+                    timing: `${formattedDate} (${timeSlotLabel})`,
+                    notes: formData.notes ? formData.notes.trim() : undefined
+                })
+            });
+
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                throw new Error(data.error || 'Übertragung fehlgeschlagen.');
+            }
+
+            if (data.referenceId) {
+                setReferenceId(data.referenceId);
+            }
+            setSentVia('online');
+        } catch (err) {
+            console.error('Termin submission error:', err);
+            setErrorMessage(err.message || 'Verbindungsfehler beim Absenden.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -94,25 +148,76 @@ export default function TerminPage() {
                         Termin <span className="text-ceramic-gradient">vereinbaren</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Wählen Sie Ihr Wunschthema und Ihren Wunschtermin für ein unverbindliches Beratungsgespräch bei Ihnen vor Ort in {COMPANY_DATA.headquarters.city}, Wetzlar &amp; Umgebung. Ihre Anfrage senden Sie per WhatsApp oder E-Mail direkt an {COMPANY_DATA.owner.fullName}.
+                        Wählen Sie Ihr Wunschthema und Ihren Wunschtermin für ein unverbindliches Beratungsgespräch bei Ihnen vor Ort in {COMPANY_DATA.headquarters.city}, Wetzlar &amp; Umgebung. Ihre Anfrage senden Sie direkt online mit E-Mail-Bestätigung oder per WhatsApp an {COMPANY_DATA.owner.fullName}.
                     </p>
                 </div>
             </div>
 
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-                {sentVia ? (
+                {sentVia === 'online' ? (
+                    <div className="glass-surface rounded-tile-xl p-8 md:p-12 text-center shadow-2xl" role="status">
+                        <div className="icon-chip w-20 h-20 rounded-tile-pill mx-auto mb-6 bg-orange-100 text-orange-600">
+                            <CheckCircle2 className="w-10 h-10" />
+                        </div>
+                        <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+                            <span className="eyebrow">Terminanfrage erfolgreich übermittelt</span>
+                            {referenceId && (
+                                <span className="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full font-mono text-xs font-bold text-slate-800">
+                                    Vorgangs-Nr.: {referenceId}
+                                </span>
+                            )}
+                        </div>
+                        <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">
+                            Vielen Dank, {formData.name}!
+                        </h2>
+                        <p className="text-slate-700 mb-6 leading-relaxed text-sm sm:text-base max-w-xl mx-auto">
+                            Ihre Terminanfrage für <strong>{labelOf(TOPICS, formData.topic)}</strong> am <strong>{formatDate(formData.date)}</strong> ({labelOf(TIME_SLOTS, formData.timeSlot)}) ist erfolgreich eingegangen.
+                            {formData.email && (
+                                <span className="block mt-2 font-semibold text-orange-800 bg-orange-50/80 border border-orange-200/80 rounded-xl p-2.5 max-w-md mx-auto text-xs sm:text-sm">
+                                    ✉️ Eine Bestätigung mit allen Termindaten wurde an <em>{formData.email}</em> gesendet.
+                                </span>
+                            )}
+                        </p>
+
+                        <div className="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 text-left text-xs sm:text-sm text-neutral-700 mb-6 space-y-2 max-w-xl mx-auto">
+                            <div className="font-bold text-neutral-900 flex items-center gap-2">
+                                <Sparkles className="w-4 h-4 text-orange-600" />
+                                Nächste Schritte:
+                            </div>
+                            <p className="text-xs text-neutral-600 leading-relaxed">
+                                1. Inhaber Deniz Tezgel gleicht Ihren Wunschtermin mit dem aktuellen Einsatzplan ab.<br />
+                                2. Wir bestätigen Ihnen das Zeitfenster telefonisch unter <strong>{formData.phone}</strong>.<br />
+                                3. Pünktlicher Termin bei Ihnen vor Ort für das kostenfreie Aufmaß und die persönliche Beratung.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                            <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto">
+                                <Phone className="w-4 h-4" />
+                                Direkt anrufen: {COMPANY_DATA.contact.phone}
+                            </a>
+                            <button
+                                type="button"
+                                onClick={() => { setSentVia(null); setReferenceId(''); }}
+                                className="btn-ghost w-full sm:w-auto"
+                            >
+                                Weiteren Termin anfragen
+                            </button>
+                        </div>
+                    </div>
+                ) : sentVia === 'whatsapp' ? (
                     <div className="glass-surface rounded-tile-xl p-8 md:p-12 text-center" role="status">
                         <div className="icon-chip w-20 h-20 rounded-tile-pill mx-auto mb-6">
                             <CheckCircle2 className="w-10 h-10" />
                         </div>
                         <span className="eyebrow mb-4">
-                            {sentVia === 'whatsapp' ? 'WhatsApp wurde geöffnet' : 'E-Mail-Programm wurde geöffnet'}
+                            WhatsApp wurde geöffnet
                         </span>
                         <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">
                             Fast geschafft – bitte jetzt absenden
                         </h2>
                         <p className="text-slate-700 mb-6 leading-relaxed text-sm sm:text-base">
-                            Vielen Dank, {formData.name}. Ihre Terminanfrage ({formatDate(formData.date)} &middot; {labelOf(TIME_SLOTS, formData.timeSlot)}) ist vorbereitet. Senden Sie die Nachricht in {sentVia === 'whatsapp' ? 'WhatsApp' : 'Ihrem E-Mail-Programm'} ab – {COMPANY_DATA.owner.fullName} meldet sich dann persönlich bei Ihnen, um den Termin abzustimmen.
+                            Vielen Dank, {formData.name}. Ihre Terminanfrage ({formatDate(formData.date)} &middot; {labelOf(TIME_SLOTS, formData.timeSlot)}) ist vorbereitet. Senden Sie die Nachricht in WhatsApp ab – {COMPANY_DATA.owner.fullName} meldet sich dann persönlich bei Ihnen, um den Termin abzustimmen.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                             <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto">
@@ -273,21 +378,49 @@ export default function TerminPage() {
                                 </label>
                             </div>
 
+                            {errorMessage && (
+                                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-red-800 flex items-start gap-2">
+                                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
+                                    <span>{errorMessage}</span>
+                                </div>
+                            )}
+
                             <div className="pt-4 border-t border-slate-200 space-y-3">
                                 <div className="flex flex-col sm:flex-row items-center gap-3">
-                                    <button type="submit" name="channel" value="whatsapp" className="glass-button-whatsapp w-full sm:flex-1 text-sm">
-                                        <MessageCircle className="w-4 h-4" />
-                                        Terminanfrage per WhatsApp senden
+                                    <button
+                                        type="submit"
+                                        name="channel"
+                                        value="online"
+                                        disabled={isSubmitting}
+                                        className="btn-primary w-full sm:flex-1 text-sm flex items-center justify-center gap-2"
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="w-4 h-4 animate-spin" />
+                                                Wird übertragen …
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-4 h-4" />
+                                                Termin online anfragen (mit E-Mail-Bestätigung)
+                                            </>
+                                        )}
                                     </button>
-                                    <button type="submit" name="channel" value="email" className="btn-ghost w-full sm:w-auto">
-                                        <Send className="w-4 h-4 text-orange-600" />
-                                        Per E-Mail senden
+                                    <button
+                                        type="submit"
+                                        name="channel"
+                                        value="whatsapp"
+                                        disabled={isSubmitting}
+                                        className="glass-button-whatsapp w-full sm:w-auto text-sm flex items-center justify-center gap-2"
+                                    >
+                                        <MessageCircle className="w-4 h-4" />
+                                        Per WhatsApp senden
                                     </button>
                                 </div>
                                 <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
                                     <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>
-                                        Ihre Anfrage wird erst verschickt, wenn Sie die vorbereitete Nachricht in WhatsApp bzw. Ihrem E-Mail-Programm absenden. Der Termin gilt nach persönlicher Bestätigung als vereinbart.
+                                        Bei Online-Absendung erhalten Sie unmittelbar eine schriftliche Bestätigung per E-Mail. Bei WhatsApp öffnet sich WhatsApp mit Ihren vorbereiteten Angaben. Der Termin gilt nach persönlicher Abstimmung als fest vereinbart.
                                     </span>
                                 </p>
                             </div>

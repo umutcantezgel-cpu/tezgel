@@ -23,8 +23,10 @@ export default function HeroContactForm() {
     const [projectType, setProjectType] = useState('bad');
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
     const [location, setLocation] = useState('');
     const [notes, setNotes] = useState('');
+    const [referenceId, setReferenceId] = useState('');
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -60,11 +62,15 @@ export default function HeroContactForm() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    inquiryType: 'general',
                     projectType,
                     projectTitle,
-                    name: name.trim(),
-                    phone: phone.trim(),
-                    location: location.trim() || 'Aßlar / Wetzlar / Hessen',
+                    contact: {
+                        name: name.trim(),
+                        phone: phone.trim(),
+                        email: email.trim() || undefined,
+                        location: location.trim() || 'Aßlar / Wetzlar / Hessen'
+                    },
                     area: 'Wird vor Ort ermittelt',
                     timing: 'Schnellstmöglich',
                     notes: notes.trim() || undefined
@@ -75,6 +81,10 @@ export default function HeroContactForm() {
 
             if (!res.ok || !data.success) {
                 throw new Error(data.error || 'Übertragung fehlgeschlagen.');
+            }
+
+            if (data.referenceId) {
+                setReferenceId(data.referenceId);
             }
 
             setStatus('success');
@@ -95,15 +105,27 @@ export default function HeroContactForm() {
                 </div>
 
                 <div className="space-y-1">
-                    <span className="text-[11px] font-black uppercase tracking-wider text-orange-700 bg-orange-50 px-2 py-0.5 rounded-full border border-orange-200">
-                        Anfrage erfolgreich übermittelt
-                    </span>
+                    <div className="flex flex-wrap items-center justify-center gap-2 mb-1">
+                        <span className="text-[11px] font-black uppercase tracking-wider text-orange-700 bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200">
+                            Anfrage übermittelt
+                        </span>
+                        {referenceId && (
+                            <span className="text-[11px] font-mono font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
+                                {referenceId}
+                            </span>
+                        )}
+                    </div>
                     <h3 className="font-display text-xl font-black text-neutral-900 pt-1">
                         Vielen Dank, {name}!
                     </h3>
                     <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed max-w-sm mx-auto">
                         Ihre Anfrage für <strong>{projectTitle}</strong> ist direkt bei Herrn Deniz Tezgel eingegangen.
                     </p>
+                    {email && (
+                        <p className="text-xs text-orange-800 font-semibold bg-orange-50/80 border border-orange-200/80 rounded-xl p-2.5 max-w-sm mx-auto">
+                            ✉️ Eine schriftliche Zusammenfassung wurde an <strong>{email}</strong> gesendet.
+                        </p>
+                    )}
                 </div>
 
                 <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 text-left text-xs text-neutral-700 space-y-2">
@@ -123,8 +145,10 @@ export default function HeroContactForm() {
                             setStatus('idle');
                             setName('');
                             setPhone('');
+                            setEmail('');
                             setLocation('');
                             setNotes('');
+                            setReferenceId('');
                         }}
                         className="text-xs font-bold text-orange-700 hover:text-orange-800 underline underline-offset-4"
                     >
@@ -224,8 +248,22 @@ export default function HeroContactForm() {
                     </div>
                 </div>
 
-                {/* 3. Ort & Kurzbeschreibung */}
+                {/* 3. Ort & E-Mail */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                        <label htmlFor="hero-email" className="block text-[11px] font-black uppercase tracking-wider text-neutral-700 mb-1">
+                            E-Mail <span className="text-neutral-500 font-normal text-[10px]">(für Bestätigung)</span>
+                        </label>
+                        <input
+                            id="hero-email"
+                            type="email"
+                            placeholder="ihre.adresse@beispiel.de"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full h-11 px-3 rounded-xl bg-neutral-50 border border-neutral-200 text-xs sm:text-sm font-semibold text-neutral-900 placeholder:text-neutral-600 focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
+                        />
+                    </div>
+
                     <div>
                         <label htmlFor="hero-location" className="block text-[11px] font-black uppercase tracking-wider text-neutral-700 mb-1">
                             Ort / PLZ
@@ -239,20 +277,21 @@ export default function HeroContactForm() {
                             className="w-full h-11 px-3 rounded-xl bg-neutral-50 border border-neutral-200 text-xs sm:text-sm font-semibold text-neutral-900 placeholder:text-neutral-600 focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
                         />
                     </div>
+                </div>
 
-                    <div>
-                        <label htmlFor="hero-notes" className="block text-[11px] font-black uppercase tracking-wider text-neutral-700 mb-1">
-                            Projektnotiz (optional)
-                        </label>
-                        <input
-                            id="hero-notes"
-                            type="text"
-                            placeholder="z. B. ca. 15 m² Fliesen"
-                            value={notes}
-                            onChange={(e) => setNotes(e.target.value)}
-                            className="w-full h-11 px-3 rounded-xl bg-neutral-50 border border-neutral-200 text-xs sm:text-sm font-semibold text-neutral-900 placeholder:text-neutral-600 focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
-                        />
-                    </div>
+                {/* 4. Kurzbeschreibung */}
+                <div>
+                    <label htmlFor="hero-notes" className="block text-[11px] font-black uppercase tracking-wider text-neutral-700 mb-1">
+                        Projektnotiz (optional)
+                    </label>
+                    <input
+                        id="hero-notes"
+                        type="text"
+                        placeholder="z. B. ca. 15 m² Fliesen, Altbau, Walk-In Dusche"
+                        value={notes}
+                        onChange={(e) => setNotes(e.target.value)}
+                        className="w-full h-11 px-3 rounded-xl bg-neutral-50 border border-neutral-200 text-xs sm:text-sm font-semibold text-neutral-900 placeholder:text-neutral-600 focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
+                    />
                 </div>
 
                 {/* Submit Actions */}

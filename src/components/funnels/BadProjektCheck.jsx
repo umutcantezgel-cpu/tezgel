@@ -10,7 +10,10 @@ import {
     BadgePercent,
     MessageCircle,
     Send,
-    CheckCircle2
+    CheckCircle2,
+    Loader2,
+    AlertCircle,
+    Sparkles
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -52,7 +55,10 @@ export default function BadProjektCheck() {
     ]);
     const [contactOpen, setContactOpen] = useState(false);
     const [leadData, setLeadData] = useState({ name: '', phone: '', email: '' });
-    const [sentVia, setSentVia] = useState(null);
+    const [sentVia, setSentVia] = useState(null); // 'whatsapp' | 'online'
+    const [referenceId, setReferenceId] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const toggleOption = (id) => {
         setSelectedOptions(prev =>
@@ -82,10 +88,10 @@ export default function BadProjektCheck() {
         );
     };
 
-    const handleLeadSubmit = (e) => {
+    const handleLeadSubmit = async (e) => {
         e.preventDefault();
         const submitter = e.nativeEvent?.submitter;
-        const channel = submitter && submitter.value === 'email' ? 'email' : 'whatsapp';
+        const channel = submitter && submitter.value === 'whatsapp' ? 'whatsapp' : 'online';
         const message = getLeadMessage();
 
         if (channel === 'whatsapp') {
@@ -94,11 +100,54 @@ export default function BadProjektCheck() {
                 '_blank',
                 'noopener,noreferrer'
             );
-        } else {
-            const subject = `Festpreisanfrage Bad (ca. ${sqmLabel} m²)`;
-            window.location.assign(`mailto:${COMPANY_DATA.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`);
+            setSentVia('whatsapp');
+            return;
         }
-        setSentVia(channel);
+
+        setIsSubmitting(true);
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('/api/anfrage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    inquiryType: 'projekt_check',
+                    projectType: 'bad',
+                    projectTitle: `Bad-Projektcheck (ca. ${sqmLabel} m²)`,
+                    contact: {
+                        name: leadData.name,
+                        phone: leadData.phone,
+                        email: leadData.email || undefined
+                    },
+                    projektCheckDetails: {
+                        sqm: sqmLabel,
+                        scope: sanitaryScope,
+                        scopeLabel,
+                        tier,
+                        tierLabel,
+                        extras
+                    },
+                    area: `ca. ${sqmLabel} m²`,
+                    timing: 'Nach Aufmaß'
+                })
+            });
+
+            const data = await response.json();
+            if (!response.ok || !data.success) {
+                throw new Error(data.error || 'Übertragung fehlgeschlagen.');
+            }
+
+            if (data.referenceId) {
+                setReferenceId(data.referenceId);
+            }
+            setSentVia('online');
+        } catch (err) {
+            console.error('BadProjektCheck submission error:', err);
+            setErrorMessage(err.message || 'Verbindungsfehler beim Absenden.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -314,15 +363,51 @@ export default function BadProjektCheck() {
                                     Angebot mit Festpreis anfordern
                                     <ArrowRight className="w-4 h-4" />
                                 </button>
-                            ) : sentVia ? (
+                            ) : sentVia === 'online' ? (
+                                <div className="p-4 rounded-tile-sm bg-orange-50 border border-orange-200 text-orange-950 text-xs space-y-3" role="status">
+                                    <div className="flex items-center justify-between gap-2">
+                                        <p className="font-black flex items-center gap-1.5 text-sm text-slate-900">
+                                            <CheckCircle2 className="w-4 h-4 text-orange-600" />
+                                            Projektcheck übermittelt
+                                        </p>
+                                        {referenceId && (
+                                            <span className="px-2 py-0.5 bg-white border border-orange-300 rounded font-mono text-[11px] font-bold text-slate-800">
+                                                {referenceId}
+                                            </span>
+                                        )}
+                                    </div>
+                                    <p className="text-slate-700 leading-relaxed">
+                                        Vielen Dank, <strong>{leadData.name}</strong>! Ihre Projektangaben für ca. {sqmLabel} m² ({scopeLabel}) sind direkt bei Herrn Deniz Tezgel eingegangen.
+                                        {leadData.email && (
+                                            <span className="block mt-1 text-orange-800 font-semibold">
+                                                ✉️ Eine Bestätigung wurde an <em>{leadData.email}</em> gesendet.
+                                            </span>
+                                        )}
+                                    </p>
+                                    <div className="p-2.5 rounded-lg bg-white border border-orange-200 text-[11px] text-slate-600 space-y-1">
+                                        <strong className="text-slate-900 flex items-center gap-1.5">
+                                            <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+                                            Nächste Schritte:
+                                        </strong>
+                                        <p>1. Herr Tezgel prüft Ihre Angaben &amp; Materialbedarf.</p>
+                                        <p>2. Rückruf binnen 24–48 Std. zur Vor-Ort-Aufmaß-Abstimmung.</p>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={() => { setSentVia(null); setReferenceId(''); }}
+                                        className="font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2"
+                                    >
+                                        Erneut anfragen oder anpassen
+                                    </button>
+                                </div>
+                            ) : sentVia === 'whatsapp' ? (
                                 <div className="p-4 rounded-tile-sm bg-orange-50 border border-orange-200 text-orange-950 text-xs space-y-2" role="status">
                                     <p className="font-black flex items-center gap-1.5">
                                         <CheckCircle2 className="w-4 h-4 text-orange-600" />
-                                        {sentVia === 'whatsapp' ? 'WhatsApp wurde geöffnet' : 'E-Mail-Programm wurde geöffnet'}
+                                        WhatsApp wurde geöffnet
                                     </p>
                                     <p className="text-slate-700">
-                                        Bitte senden Sie die vorbereitete Nachricht mit Ihren Angaben dort ab – erst dann erreicht
-                                        sie uns.
+                                        Bitte senden Sie die vorbereitete Nachricht mit Ihren Angaben dort ab – erst dann erreicht sie uns.
                                     </p>
                                     <button
                                         type="button"
@@ -334,6 +419,13 @@ export default function BadProjektCheck() {
                                 </div>
                             ) : (
                                 <form onSubmit={handleLeadSubmit} className="space-y-2.5">
+                                    {errorMessage && (
+                                        <div className="p-2.5 rounded-lg bg-red-50 border border-red-200 text-xs text-red-800 flex items-center gap-2">
+                                            <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+                                            <span>{errorMessage}</span>
+                                        </div>
+                                    )}
+
                                     <label htmlFor="budget-lead-name" className="sr-only">Ihr Name</label>
                                     <input
                                         id="budget-lead-name"
@@ -362,18 +454,39 @@ export default function BadProjektCheck() {
                                         id="budget-lead-email"
                                         type="email"
                                         autoComplete="email"
-                                        placeholder="Ihre E-Mail-Adresse (optional)"
+                                        placeholder="Ihre E-Mail-Adresse (optional für Bestätigung)"
                                         value={leadData.email}
                                         onChange={(e) => setLeadData({ ...leadData, email: e.target.value })}
                                         className={inputClass}
                                     />
-                                    <button type="submit" name="channel" value="whatsapp" className="glass-button-whatsapp w-full text-xs">
+                                    <button
+                                        type="submit"
+                                        name="channel"
+                                        value="online"
+                                        disabled={isSubmitting}
+                                        className="btn-primary w-full text-xs flex items-center justify-center gap-2"
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                                                Wird übertragen …
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-3.5 h-3.5" />
+                                                Online anfragen (mit E-Mail-Bestätigung)
+                                            </>
+                                        )}
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        name="channel"
+                                        value="whatsapp"
+                                        disabled={isSubmitting}
+                                        className="glass-button-whatsapp w-full text-xs"
+                                    >
                                         <MessageCircle className="w-4 h-4" />
                                         Anfrage per WhatsApp senden
-                                    </button>
-                                    <button type="submit" name="channel" value="email" className="btn-ghost w-full text-xs">
-                                        <Send className="w-4 h-4 text-orange-600" />
-                                        Per E-Mail senden
                                     </button>
                                     <p className="text-[11px] text-slate-600 leading-relaxed">
                                         Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet.{' '}

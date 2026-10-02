@@ -13,7 +13,9 @@ import {
     Phone,
     Ruler,
     Send,
-    Sparkles
+    Sparkles,
+    Loader2,
+    AlertCircle
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -464,7 +466,10 @@ const KNOWN_ROOMS = ROOM_OPTIONS.map((r) => r.id);
  */
 export default function FliesenKonfigurator({ area, substrate, format, material, floorHeating } = {}) {
     const [step, setStep] = useState(1);
-    const [sentVia, setSentVia] = useState(null);
+    const [sentVia, setSentVia] = useState(null); // 'whatsapp' | 'online'
+    const [referenceId, setReferenceId] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const headingRef = useRef(null);
 
     const [data, setData] = useState(() => {
@@ -548,29 +553,144 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
         ].join('\n');
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const submitter = event.nativeEvent?.submitter;
-        const channel = submitter?.value === 'email' ? 'email' : 'whatsapp';
+        const channel = submitter?.value === 'whatsapp' ? 'whatsapp' : 'online';
         const message = buildMessage();
 
         if (channel === 'whatsapp') {
             const waUrl = `https://wa.me/${COMPANY_DATA.contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank', 'noopener,noreferrer');
-        } else {
-            const roomsText = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ') || 'Fliesenprojekt';
-            const subject = `Anfrage Fliesen-Konfigurator: ${roomsText}${data.zipCity ? ` (${data.zipCity})` : ''}`;
-            window.location.assign(
-                `mailto:${COMPANY_DATA.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`
-            );
+            setSentVia('whatsapp');
+            return;
         }
-        setSentVia(channel);
+
+        // Online Direct API Submission
+        setIsSubmitting(true);
+        setErrorMessage('');
+
+        const roomsText = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ') || 'Fliesenprojekt';
+        const roomLabels = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id));
+        const substrateLabels = (data.substrates || []).map((id) => labelOf(SUBSTRATE_OPTIONS, id));
+
+        try {
+            const res = await fetch('/api/anfrage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    inquiryType: 'fliesen',
+                    projectType: 'fliesen',
+                    projectTitle: `Fliesen-Konfiguration (${roomsText})`,
+                    contact: {
+                        name: data.name,
+                        phone: data.phone,
+                        email: data.email || undefined,
+                        zipCity: data.zipCity || undefined,
+                        location: data.zipCity || 'Aßlar / Wetzlar'
+                    },
+                    fliesenDetails: {
+                        rooms: data.rooms,
+                        roomLabels,
+                        sqm: data.area || undefined,
+                        substrate: data.substrates?.join(', '),
+                        substrateLabel: substrateLabels.join(', ') || 'Nicht angegeben',
+                        tileType: data.material,
+                        tileTypeLabel: `${labelOf(MATERIAL_OPTIONS, data.material)} (${labelOf(FORMAT_OPTIONS, data.format)})`,
+                        removal: data.removal,
+                        removalLabel: data.removal === 'ja' ? 'Ja, Altbelag entfernen' : data.removal === 'nein' ? 'Nein, nicht erforderlich' : 'Unklar / vor Ort prüfen',
+                        underfloorHeating: data.floorHeating,
+                        underfloorHeatingLabel: data.floorHeating === 'ja' ? 'Ja, vorhanden/geplant' : 'Nein',
+                        timing: data.timing,
+                        timingLabel: data.timing
+                    },
+                    timing: data.timing,
+                    area: `${data.area || '20'} m²`,
+                    notes: data.notes || undefined
+                })
+            });
+
+            const resData = await res.json();
+            if (!res.ok || !resData.success) {
+                throw new Error(resData.error || 'Übertragung fehlgeschlagen.');
+            }
+
+            if (resData.referenceId) {
+                setReferenceId(resData.referenceId);
+            }
+            setSentVia('online');
+        } catch (err) {
+            console.error('Fliesen-Konfigurator submission error:', err);
+            setErrorMessage(err.message || 'Verbindungsfehler beim Absenden.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     // -----------------------------------------------------------------------
     // Success view
     // -----------------------------------------------------------------------
-    if (sentVia) {
+    if (sentVia === 'online') {
+        const roomsText = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ') || 'Fliesenprojekt';
+        return (
+            <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 max-w-3xl mx-auto shadow-xl" role="status">
+                <div className="text-center">
+                    <div className="icon-chip w-16 h-16 rounded-full mx-auto mb-5 bg-orange-100 text-orange-600">
+                        <CheckCircle2 className="w-9 h-9" />
+                    </div>
+                    <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+                        <span className="eyebrow">Konfiguration erfolgreich übermittelt</span>
+                        {referenceId && (
+                            <span className="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full font-mono text-xs font-bold text-slate-800">
+                                Vorgangs-Nr.: {referenceId}
+                            </span>
+                        )}
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+                        Vielen Dank, {data.name}!
+                    </h3>
+                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6 max-w-2xl mx-auto">
+                        Ihre Konfiguration für <strong>{roomsText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
+                        {data.email && (
+                            <span className="block mt-2 font-semibold text-orange-800 bg-orange-50/80 border border-orange-200/80 rounded-xl p-2.5 max-w-md mx-auto text-xs sm:text-sm">
+                                ✉️ Eine ausführliche Bestätigung mit allen Angaben und Materialschätzungen wurde an <em>{data.email}</em> gesendet.
+                            </span>
+                        )}
+                    </p>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-neutral-50 border border-neutral-200 text-left text-xs sm:text-sm text-neutral-700 mb-6 space-y-2">
+                    <div className="font-bold text-neutral-900 flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-orange-600" />
+                        Nächste Schritte:
+                    </div>
+                    <p className="text-xs text-neutral-600 leading-relaxed">
+                        1. Inhaber Deniz Tezgel prüft Ihre Raum- und Materialangaben sowie Machbarkeit und Vorarbeiten.<br />
+                        2. Wir melden uns binnen <strong>24 bis 48 Stunden</strong> telefonisch zur Vorab-Klärung und Terminabsprache.<br />
+                        3. Kostenfreies Aufmaß vor Ort für Ihr verbindliches Festpreisangebot.
+                    </p>
+                </div>
+
+                <ResultSummary data={data} />
+
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto text-xs">
+                        <Phone className="w-4 h-4" />
+                        Direkt anrufen: {COMPANY_DATA.contact.phone}
+                    </a>
+                    <button
+                        type="button"
+                        onClick={() => { setSentVia(null); setStep(1); setReferenceId(''); }}
+                        className="btn-ghost w-full sm:w-auto text-xs"
+                    >
+                        Neue Konfiguration starten
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    if (sentVia === 'whatsapp') {
         return (
             <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 max-w-3xl mx-auto" role="status">
                 <div className="text-center">
@@ -578,14 +698,14 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                         <CheckCircle2 className="w-9 h-9" />
                     </div>
                     <span className="eyebrow mb-4">
-                        {sentVia === 'whatsapp' ? 'WhatsApp wurde geöffnet' : 'E-Mail-Programm wurde geöffnet'}
+                        WhatsApp wurde geöffnet
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
-                        {sentVia === 'whatsapp' ? 'WhatsApp' : 'E-Mail-Programm'} wurde geöffnet – bitte absenden
+                        WhatsApp wurde geöffnet – bitte absenden
                     </h3>
                     <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
                         Ihre Anfrage ist vorbereitet, aber noch nicht verschickt. Senden Sie die Nachricht in{' '}
-                        {sentVia === 'whatsapp' ? 'WhatsApp' : 'Ihrem E-Mail-Programm'} ab. Fotos von Raum, Untergrund oder Treppe
+                        WhatsApp ab. Fotos von Raum, Untergrund oder Treppe
                         können Sie gern per WhatsApp nachsenden. Auf dieser Website wird nichts gespeichert.
                     </p>
                 </div>
@@ -1158,24 +1278,49 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                                 </span>
                             </label>
 
+                            {errorMessage && (
+                                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-red-800 flex items-start gap-2">
+                                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
+                                    <span>{errorMessage}</span>
+                                </div>
+                            )}
+
                             <div className="pt-4 border-t border-slate-200 space-y-3">
                                 <div className="flex flex-col sm:flex-row items-center gap-3">
-                                    <button type="submit" name="channel" value="whatsapp" className="glass-button-whatsapp w-full sm:flex-1 text-sm">
+                                    <button
+                                        type="submit"
+                                        name="channel"
+                                        value="online"
+                                        disabled={isSubmitting}
+                                        className="btn-primary w-full sm:flex-1 text-sm flex items-center justify-center gap-2"
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="w-4 h-4 animate-spin" />
+                                                Wird übertragen …
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-4 h-4" />
+                                                Online absenden (mit E-Mail-Bestätigung)
+                                            </>
+                                        )}
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        name="channel"
+                                        value="whatsapp"
+                                        disabled={isSubmitting}
+                                        className="glass-button-whatsapp w-full sm:w-auto text-sm flex items-center justify-center gap-2"
+                                    >
                                         <MessageCircle className="w-4 h-4" />
                                         Per WhatsApp senden
-                                    </button>
-                                    <button type="submit" name="channel" value="email" className="btn-ghost w-full sm:w-auto">
-                                        <Send className="w-4 h-4 text-orange-600" />
-                                        Per E-Mail senden
                                     </button>
                                 </div>
                                 <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
                                     <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
                                     <span>
-                                        Die Buttons öffnen WhatsApp bzw. Ihr E-Mail-Programm mit einer vorbereiteten Nachricht – gesendet wird
-                                        erst, wenn Sie dort auf „Senden“ tippen. Beim Versand per WhatsApp gelten zusätzlich die
-                                        Datenschutzbestimmungen von WhatsApp. Mehr in unserer{' '}
-                                        <Link href="/datenschutz" className={linkClass}>Datenschutzerklärung</Link>.
+                                        Bei Online-Absendung erhalten Sie unmittelbar eine schriftliche Zusammenfassung per E-Mail. Bei Auswahl von WhatsApp öffnet sich WhatsApp mit Ihren vorbereiteten Angaben.
                                     </span>
                                 </p>
                             </div>

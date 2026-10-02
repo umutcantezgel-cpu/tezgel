@@ -95,6 +95,7 @@ export default function TezgelAnfrageFunnel() {
   const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState<SubmissionStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [referenceId, setReferenceId] = useState('');
 
   const projectTitle = PROJECT_TYPES.find((p) => p.id === projectType)?.title ?? projectType;
   const finalArea = customArea ? `${customArea.replace(/\s*m²$/i, '')} m²` : selectedArea;
@@ -132,14 +133,17 @@ export default function TezgelAnfrageFunnel() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          inquiryType: 'general',
           projectType,
           projectTitle,
+          contact: {
+            name,
+            phone,
+            email: email || undefined,
+            location: locationText
+          },
           area: finalArea,
           timing,
-          location: locationText,
-          name,
-          phone,
-          email: email || undefined,
           notes: notes || undefined,
           honeypot: honeypot || undefined
         })
@@ -149,6 +153,10 @@ export default function TezgelAnfrageFunnel() {
 
       if (!response.ok || !data.success) {
         throw new Error(data.error || 'Übertragung fehlgeschlagen.');
+      }
+
+      if (data.referenceId) {
+        setReferenceId(data.referenceId);
       }
 
       setStatus('success');
@@ -167,13 +175,20 @@ export default function TezgelAnfrageFunnel() {
         <div className="icon-chip w-20 h-20 rounded-xl mx-auto mb-6 bg-orange-100 text-orange-700">
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <span className="eyebrow mb-4">Anfrage erfolgreich übermittelt</span>
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+          <span className="eyebrow">Anfrage erfolgreich übermittelt</span>
+          {referenceId && (
+            <span className="px-3 py-1 bg-slate-100 border border-slate-200 rounded-full font-mono text-xs font-bold text-slate-800">
+              Vorgangs-Nr.: {referenceId}
+            </span>
+          )}
+        </div>
         <h3 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3">Vielen Dank, {name}!</h3>
         <p className="text-base text-neutral-700 leading-relaxed mb-6">
           Ihre Anfrage für <strong>{projectTitle}</strong> ({finalArea}) in <strong>{locationText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
           {email && (
-            <span className="block mt-2 text-sm text-orange-800 font-semibold">
-              Eine Bestätigung wurde an <em>{email}</em> gesendet.
+            <span className="block mt-2 text-sm text-orange-800 font-semibold bg-orange-50/80 border border-orange-200/80 rounded-xl p-2.5 max-w-md mx-auto">
+              ✉️ Eine ausführliche Bestätigung mit allen Angaben wurde an <em>{email}</em> gesendet.
             </span>
           )}
         </p>
@@ -208,6 +223,7 @@ export default function TezgelAnfrageFunnel() {
               setPhone('');
               setEmail('');
               setNotes('');
+              setReferenceId('');
             }}
             className="btn-ghost w-full sm:w-auto"
           >
