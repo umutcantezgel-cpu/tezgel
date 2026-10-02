@@ -94,6 +94,27 @@ export default function DatenschutzPage() {
                         </p>
                     </div>
 
+                    {/* 6. Technischer Dienstleister / Auftragsverarbeitung */}
+                    <div className="space-y-3 text-sm text-slate-700 leading-relaxed border-b border-slate-200 pb-6">
+                        <h2 className="text-base font-black text-slate-900">6. Technischer Dienstleister &amp; Website-Betreuung</h2>
+                        <p>
+                            Für die technische Konzeption, Entwicklung und laufende Betreuung dieser Website arbeiten wir mit folgendem Dienstleister zusammen:{' '}
+                            <strong className="text-slate-900">Coday Webdesign Wetzlar</strong> &mdash; Agentur für Webdesign, SEO &amp; Branding in Wetzlar.{' '}
+                            <a
+                                href="https://codayweb.de"
+                                target="_blank"
+                                rel="noopener"
+                                title="Coday Webdesign Wetzlar – Agentur für Webdesign &amp; SEO"
+                                className="text-orange-700 font-bold underline underline-offset-2 hover:text-orange-600"
+                            >
+                                codayweb.de
+                            </a>
+                        </p>
+                        <p className="text-slate-600 text-xs">
+                            Die Zusammenarbeit erfolgt im Rahmen einer datenschutzkonformen Auftragsverarbeitung gemäß Art. 28 DSGVO, um den sicheren und technisch einwandfreien Betrieb dieser Webpräsenz zu gewährleisten.
+                        </p>
+                    </div>
+
                     <div className="pt-4 border-t border-slate-200 flex flex-wrap gap-3 justify-between items-center text-sm font-bold">
                         <Link href="/" className="text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">&larr; Zurück zur Startseite</Link>
                         <Link href="/impressum" className="text-slate-700 hover:text-orange-700">Zum Impressum &rarr;</Link>

@@ -106,6 +106,23 @@ export function buildWebSiteNode(): SchemaNode {
     description:
       'Ihr Fachbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
     publisher: { '@id': ORG_ID },
+    creator: {
+      '@type': 'Organization',
+      '@id': 'https://codayweb.de/#organization',
+      name: 'Coday Webdesign',
+      url: 'https://codayweb.de',
+      description: 'Agentur für Webdesign, SEO & Branding in Wetzlar',
+      areaServed: {
+        '@type': 'City',
+        name: 'Wetzlar'
+      }
+    },
+    maintainer: {
+      '@type': 'Organization',
+      '@id': 'https://codayweb.de/#organization',
+      name: 'Coday Webdesign',
+      url: 'https://codayweb.de'
+    },
     inLanguage: 'de-DE',
   };
 }

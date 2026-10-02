@@ -68,6 +68,37 @@ export default function ImpressumPage() {
                         </p>
                     </div>
 
+                    {/* Conception & Realization / Web Agency Credit */}
+                    <div className="space-y-2 border-b border-slate-200 pb-6 text-sm">
+                        <h2 className="text-base font-black text-slate-900">Konzeption, Webdesign &amp; Realisierung:</h2>
+                        <p>
+                            <a
+                                href="https://codayweb.de"
+                                target="_blank"
+                                rel="noopener"
+                                title="Coday Webdesign – Agentur für Webseiten &amp; SEO in Wetzlar"
+                                className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
+                            >
+                                Coday Webdesign Wetzlar – Agentur für Webdesign &amp; SEO
+                            </a>
+                        </p>
+                        <p className="text-slate-600">
+                            Technische Konzeption, Webdesign, Suchmaschinenoptimierung und laufende Betreuung durch Coday Webdesign in Wetzlar.
+                        </p>
+                        <p className="text-xs text-slate-500">
+                            Website:{' '}
+                            <a
+                                href="https://codayweb.de"
+                                target="_blank"
+                                rel="noopener"
+                                title="codayweb.de – Webdesign &amp; SEO Wetzlar"
+                                className="font-semibold text-slate-700 hover:text-orange-700 hover:underline underline-offset-2"
+                            >
+                                codayweb.de
+                            </a>
+                        </p>
+                    </div>
+
                     {/* Disclaimers */}
                     <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
                         <h3 className="font-black text-slate-900 text-sm">Haftung für Inhalte</h3>

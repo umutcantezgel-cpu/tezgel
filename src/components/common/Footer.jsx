@@ -185,15 +185,15 @@ export default function Footer() {
                         </ul>
                     </nav>
                     <p>
-                        Webdesign:{' '}
+                        Webdesign &amp; SEO:{' '}
                         <a
-                            href="https://www.codayweb.de/"
+                            href="https://codayweb.de"
                             target="_blank"
                             rel="noopener"
-                            title="Coday Webdesign Wetzlar"
+                            title="Coday – Webdesign-Agentur Wetzlar | Webseiten, SEO & Branding"
                             className="font-bold text-white hover:text-orange-300 underline-offset-4 hover:underline"
                         >
-                            codayweb
+                            Webdesign Wetzlar – Coday
                         </a>
                     </p>
                 </div>

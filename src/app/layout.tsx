@@ -48,8 +48,11 @@ export const metadata: Metadata = {
     'DIN 18534 Verbundabdichtung',
     'Fliesen Handwerkskammer Wiesbaden'
   ],
-  authors: [{ name: 'Deniz Tezgel - Fliesenverlegung Tezgel' }],
-  creator: 'Fliesenverlegung Tezgel',
+  authors: [
+    { name: 'Deniz Tezgel - Fliesenverlegung Tezgel' },
+    { name: 'Coday Webdesign Wetzlar', url: 'https://codayweb.de' }
+  ],
+  creator: 'Coday Webdesign Wetzlar',
   publisher: 'Fliesenverlegung Tezgel',
   openGraph: {
     type: 'website',

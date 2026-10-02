@@ -1,0 +1,14 @@
+/* TEAM */
+  Webdesign & SEO: Coday Webdesign
+  Contact: info@codayweb.de
+  Website: https://codayweb.de
+  Location: Wetzlar, Hessen, Germany
+  Description: Agentur für Webdesign, SEO & Branding in Wetzlar
+
+/* SITE */
+  Client: Fliesenverlegung Tezgel
+  Owner: Deniz Tezgel
+  Website: https://tezgel.de
+  Location: Aßlar / Wetzlar, Hessen, Germany
+  Standards: HTML5, CSS3, JSON-LD, Next.js, React
+  Components: Tailwind CSS, Schema.org Knowledge Graph
