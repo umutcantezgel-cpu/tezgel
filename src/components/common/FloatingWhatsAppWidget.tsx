@@ -190,7 +190,15 @@ export default function FloatingWhatsAppWidget() {
 
     const bounds = getWidgetBounds(SIZE);
     const targetX = bounds.maxX; // Always dock to the right edge
-    const clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y));
+    let clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y));
+
+    // If the Cookie Banner is currently visible, ensure we dock safely below it
+    const box = widgetPhysicsCoordinator.getBoxBounds();
+    if (box && box.bottom > 0) {
+      if (clampedY < box.bottom + 12) {
+        clampedY = Math.min(bounds.maxY, box.bottom + 16);
+      }
+    }
 
     isSnappingRef.current = true;
     setIsSnapping(true);
@@ -212,6 +220,7 @@ export default function FloatingWhatsAppWidget() {
       const nextX = startX + (targetX - startX) * eased;
       const nextY = startY + (clampedY - startY) * eased;
       updateTransform(nextX, nextY);
+      widgetPhysicsCoordinator.checkAndResolveCollision();
 
       if (progress < 1) {
         snapFrameRef.current = requestAnimationFrame(step);

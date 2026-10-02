@@ -41,6 +41,8 @@
   "exclude": [
     "node_modules",
     "CookieConsentExport",
-    "K-Aqua-Cursor-Animation"
+    "K-Aqua-Cursor-Animation",
+    "WhatsApp-Button-Export",
+    "ms-reusable-components"
   ]
 }

@@ -76,24 +76,32 @@ class WidgetPhysicsCoordinator {
     let ny = 0;
     let overlap = 0;
 
+    const w = typeof window !== "undefined" ? window.innerWidth : 1280;
+    const canEscapeLeft = box.left > r + 12;
+    const canEscapeRight = box.right < w - r - 12;
+
     // Case 1: Circle center is strictly inside the box
     if (distSq === 0) {
-      const dLeft = cx - box.left;
-      const dRight = box.right - cx;
+      const dLeft = canEscapeLeft ? cx - box.left : Infinity;
+      const dRight = canEscapeRight ? box.right - cx : Infinity;
       const dTop = cy - box.top;
       const dBottom = box.bottom - cy;
       const minDist = Math.min(dLeft, dRight, dTop, dBottom);
 
       if (minDist === dLeft) {
         nx = -1;
-        overlap = r + dLeft;
+        ny = 0;
+        overlap = r + (cx - box.left);
       } else if (minDist === dRight) {
         nx = 1;
-        overlap = r + dRight;
+        ny = 0;
+        overlap = r + (box.right - cx);
       } else if (minDist === dTop) {
+        nx = 0;
         ny = -1;
         overlap = r + dTop;
       } else {
+        nx = 0;
         ny = 1;
         overlap = r + dBottom;
       }
@@ -103,6 +111,15 @@ class WidgetPhysicsCoordinator {
       overlap = r - dist;
       nx = dx / dist;
       ny = dy / dist;
+
+      // If pushed sideways into a blocked viewport margin, redirect vertically
+      if (nx < 0 && !canEscapeLeft) {
+        nx = 0;
+        ny = cy >= (box.top + box.bottom) / 2 ? 1 : -1;
+      } else if (nx > 0 && !canEscapeRight) {
+        nx = 0;
+        ny = cy >= (box.top + box.bottom) / 2 ? 1 : -1;
+      }
     } else {
       // No collision
       return false;
@@ -156,6 +173,10 @@ class WidgetPhysicsCoordinator {
     }
 
     return true;
+  }
+
+  public getBoxBounds() {
+    return this.box ? this.box.getBounds() : null;
   }
 }
 
