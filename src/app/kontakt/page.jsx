@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MapPin, Phone, Mail, Clock, Printer, ShieldCheck, MessageSquare, Award, Sparkles, ArrowRight } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
+import GoogleMap from '@/components/common/GoogleMap';
 
 
 
@@ -181,6 +182,31 @@ export default function KontaktPage() {
                     </div>
 
                 </div>
+
+                {/* Standort & Google Maps Anfahrt */}
+                <section className="mb-16 scroll-mt-28" id="standort-anfahrt" aria-labelledby="standort-anfahrt-heading">
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+                        <div>
+                            <span className="eyebrow mb-2">Standort &amp; Anfahrt</span>
+                            <h2 id="standort-anfahrt-heading" className="text-2xl font-black text-neutral-900 tracking-tight">
+                                Unser Fachbetrieb in Aßlar
+                            </h2>
+                            <p className="text-sm text-neutral-600 mt-1">
+                                Zentral gelegen im Lahn-Dill-Kreis (Hohwardstraße 14, 35614 Aßlar) – Anfahrt &amp; Navigation direkt über Google Maps.
+                            </p>
+                        </div>
+                        <a
+                            href={COMPANY_DATA.headquarters.mapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-ghost self-start sm:self-auto text-xs"
+                        >
+                            <MapPin className="w-3.5 h-3.5 text-orange-600" />
+                            <span>Route in Google Maps öffnen</span>
+                        </a>
+                    </div>
+                    <GoogleMap height="400px" />
+                </section>
 
                 {/* Embedded Express Funnel on Contact Page */}
                 <section className="pt-4 scroll-mt-28" id="express-anfrage" aria-labelledby="express-anfrage-heading">
