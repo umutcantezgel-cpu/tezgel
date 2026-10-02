@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+/.leads-fallback/
 
 # debug
 npm-debug.log*

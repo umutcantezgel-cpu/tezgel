@@ -27,6 +27,8 @@ export default function HeroContactForm() {
     const [email, setEmail] = useState('');
     const [location, setLocation] = useState('');
     const [notes, setNotes] = useState('');
+    const [honeypot, setHoneypot] = useState('');
+    const [formInitTime] = useState<number>(() => Date.now());
     const [referenceId, setReferenceId] = useState('');
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -77,7 +79,9 @@ export default function HeroContactForm() {
                     },
                     area: 'Wird vor Ort ermittelt',
                     timing: 'Schnellstmöglich',
-                    notes: notes.trim() || undefined
+                    notes: notes.trim() || undefined,
+                    honeypot: honeypot || undefined,
+                    _t: formInitTime
                 })
             });
 
@@ -295,6 +299,20 @@ export default function HeroContactForm() {
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         className="w-full h-11 px-3 rounded-xl bg-neutral-50 border border-neutral-200 text-xs sm:text-sm font-semibold text-neutral-900 placeholder:text-neutral-600 focus:bg-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-colors"
+                    />
+                </div>
+
+                {/* Anti-spam honeypot (hidden from human visitors) */}
+                <div style={{ display: 'none' }} aria-hidden="true">
+                    <label htmlFor="website_url_hp">Bitte dieses Feld freilassen</label>
+                    <input
+                        id="website_url_hp"
+                        type="text"
+                        name="website_url_hp"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
                     />
                 </div>
 

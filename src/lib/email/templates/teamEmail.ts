@@ -1,16 +1,12 @@
-import { InquiryPayload } from '../types';
+import type { InquiryPayload } from '../types';
+import { escapeHtml, sanitizeHeaderValue } from '../security';
+import { wrapInMsoContainer, renderSpecRow, renderBulletproofButton } from './components';
 
 /**
- * Generates an actionable, structured HTML lead notification email for the craftsman team.
+ * Builds the list of structured specification key-value pairs for the team notification.
  */
-export function generateTeamEmailHtml(payload: InquiryPayload, referenceId: string): string {
-  const { inquiryType, projectTitle, contact, notes, badDetails, fliesenDetails, terminDetails, projektCheckDetails, timing, area } = payload;
-
-  const timestamp = new Intl.DateTimeFormat('de-DE', {
-    dateStyle: 'full',
-    timeStyle: 'short',
-    timeZone: 'Europe/Berlin'
-  }).format(new Date());
+function extractDetails(payload: InquiryPayload, referenceId: string): { label: string; value: string }[] {
+  const { inquiryType, projectTitle, contact, badDetails, fliesenDetails, terminDetails, projektCheckDetails, timing, area } = payload;
 
   let typeLabel = 'Projektanfrage';
   if (inquiryType === 'termin') typeLabel = 'Terminvereinbarung Aufmaß';
@@ -18,11 +14,6 @@ export function generateTeamEmailHtml(payload: InquiryPayload, referenceId: stri
   else if (inquiryType === 'fliesen') typeLabel = 'Fliesen-Konfigurator';
   else if (inquiryType === 'projekt_check') typeLabel = 'Bad-Projektcheck';
 
-  // Build clean phone link for WhatsApp
-  const cleanPhone = contact.phone.replace(/[^0-9]/g, '');
-  const waPhone = cleanPhone.startsWith('0') ? '49' + cleanPhone.slice(1) : cleanPhone;
-
-  // Build list of details
   const details: { label: string; value: string }[] = [];
 
   details.push({ label: 'Vorgangsnummer', value: referenceId });
@@ -75,97 +66,209 @@ export function generateTeamEmailHtml(payload: InquiryPayload, referenceId: stri
     if (timing) details.push({ label: 'Zeitraum', value: timing });
   }
 
-  const rowsHtml = details
-    .map(
-      (item, idx) => `
-    <tr style="background-color: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
-      <td style="padding: 10px 14px; font-size: 13px; font-weight: 700; color: #475569; width: 160px; border-bottom: 1px solid #e2e8f0;">
-        ${item.label}:
-      </td>
-      <td style="padding: 10px 14px; font-size: 13.5px; font-weight: 700; color: #0f172a; border-bottom: 1px solid #e2e8f0;">
-        ${item.value}
-      </td>
-    </tr>
-  `
-    )
-    .join('');
+  return details;
+}
 
-  return `<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <title>Neue Anfrage: ${typeLabel} - ${contact.name}</title>
-</head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; color: #0f172a; margin: 0; padding: 24px;">
-  <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
-    
-    <!-- Header -->
-    <div style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); color: #ffffff; padding: 26px 24px;">
-      <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background-color: rgba(255,255,255,0.2); display: inline-block; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px;">
-        ${typeLabel} &middot; Vorgang ${referenceId}
-      </div>
-      <h1 style="margin: 0; font-size: 21px; font-weight: 800; letter-spacing: -0.02em;">
-        Neue Website-Anfrage eingegangen
-      </h1>
-      <p style="margin: 6px 0 0 0; font-size: 13px; color: #fed7aa;">
-        Eingegangen am ${timestamp}
-      </p>
-    </div>
+/**
+ * Generates an actionable, structured, MSO-compatible HTML lead notification email for the craftsman team.
+ */
+export function generateTeamEmailHtml(payload: InquiryPayload, referenceId: string): string {
+  const { inquiryType, contact, notes } = payload;
 
-    <!-- Quick Action Bar -->
-    <div style="background-color: #fff7ed; border-bottom: 1px solid #fed7aa; padding: 18px 24px; text-align: center;">
-      <span style="display: block; font-size: 12px; font-weight: 800; color: #9a3412; text-transform: uppercase; margin-bottom: 10px;">
-        Schnellkontakt zum Interessenten:
-      </span>
-      <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
-        <a href="tel:${contact.phone}" style="display: inline-block; background-color: #ea580c; color: #ffffff !important; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 3px;">
-          📞 Jetzt anrufen (${contact.phone})
-        </a>
-        <a href="https://wa.me/${waPhone}" style="display: inline-block; background-color: #16a34a; color: #ffffff !important; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 3px;">
-          💬 WhatsApp Chat öffnen
-        </a>
+  const timestamp = new Intl.DateTimeFormat('de-DE', {
+    dateStyle: 'full',
+    timeStyle: 'short',
+    timeZone: 'Europe/Berlin'
+  }).format(new Date());
+
+  let typeLabel = 'Projektanfrage';
+  if (inquiryType === 'termin') typeLabel = 'Terminvereinbarung Aufmaß';
+  else if (inquiryType === 'bad') typeLabel = 'Badsanierung';
+  else if (inquiryType === 'fliesen') typeLabel = 'Fliesen-Konfigurator';
+  else if (inquiryType === 'projekt_check') typeLabel = 'Bad-Projektcheck';
+
+  // Build clean phone link for WhatsApp & Tel
+  const cleanPhone = contact.phone.replace(/[^0-9]/g, '');
+  const waPhone = cleanPhone.startsWith('0') ? '49' + cleanPhone.slice(1) : cleanPhone;
+  const telLink = `tel:${contact.phone.replace(/[\s/]/g, '')}`;
+
+  const details = extractDetails(payload, referenceId);
+  const rowsHtml = details.map((item, idx) => renderSpecRow(item.label, item.value, idx % 2 === 0)).join('');
+
+  const quickActionButtons = `
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
+      <tr>
+        <td style="padding:4px;" align="center">
+          ${renderBulletproofButton({
+            href: telLink,
+            label: `📞 Anrufen (${contact.phone})`,
+            bgColor: '#ea580c',
+            width: 190
+          })}
+        </td>
+        <td style="padding:4px;" align="center">
+          ${renderBulletproofButton({
+            href: `https://wa.me/${waPhone}`,
+            label: '💬 WhatsApp Chat',
+            bgColor: '#16a34a',
+            width: 170
+          })}
+        </td>
         ${
           contact.email
-            ? `<a href="mailto:${contact.email}" style="display: inline-block; background-color: #0f172a; color: #ffffff !important; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 3px;">
-          ✉️ E-Mail senden
-        </a>`
+            ? `
+        <td style="padding:4px;" align="center">
+          ${renderBulletproofButton({
+            href: `mailto:${contact.email}`,
+            label: '✉️ E-Mail',
+            bgColor: '#0f172a',
+            width: 130
+          })}
+        </td>`
             : ''
         }
-      </div>
-    </div>
+      </tr>
+    </table>
+  `;
+
+  const innerContent = `
+    <!-- Top Accent Bar -->
+    <div style="background-color:#ea580c;height:6px;width:100%;font-size:0;line-height:0;">&nbsp;</div>
+
+    <!-- Header Section -->
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#0f172a;color:#ffffff;">
+      <tr>
+        <td style="padding:24px 22px;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;background-color:rgba(234,88,12,0.25);color:#fed7aa;border:1px solid rgba(234,88,12,0.4);display:inline-block;padding:3px 8px;border-radius:4px;margin-bottom:8px;">
+            ${escapeHtml(typeLabel)} &middot; Vorgang ${escapeHtml(referenceId)}
+          </div>
+          <h1 style="margin:0;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#ffffff;line-height:1.25;">
+            Neue Website-Anfrage eingegangen
+          </h1>
+          <p style="margin:6px 0 0 0;font-size:12.5px;color:#94a3b8;">
+            Eingang am ${escapeHtml(timestamp)} (Europe/Berlin)
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Quick Action Bar (Table-based for Outlook Classic compatibility) -->
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#fff7ed;border-bottom:1px solid #fed7aa;">
+      <tr>
+        <td style="padding:16px 20px;text-align:center;">
+          <span style="display:block;font-size:11.5px;font-weight:800;color:#9a3412;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">
+            Sofortkontakt zum Interessenten:
+          </span>
+          ${quickActionButtons}
+        </td>
+      </tr>
+    </table>
 
     <!-- Specifications Table -->
-    <div style="padding: 24px;">
-      <h3 style="margin: 0 0 12px 0; font-size: 14px; font-weight: 800; color: #0f172a; text-transform: uppercase;">
-        Projektdaten &amp; Kontaktdaten:
-      </h3>
-      <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
-        <tbody>
-          ${rowsHtml}
-        </tbody>
-      </table>
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#ffffff;">
+      <tr>
+        <td style="padding:22px;">
+          <h3 style="margin:0 0 12px 0;font-size:13.5px;font-weight:800;color:#0f172a;text-transform:uppercase;letter-spacing:0.05em;">
+            Projektdaten &amp; Kontaktdaten:
+          </h3>
+          <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;border-collapse:collapse;">
+            <tbody>
+              ${rowsHtml}
+            </tbody>
+          </table>
 
-      ${
-        notes
-          ? `
-      <div style="margin-top: 20px;">
-        <span style="font-size: 12px; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">
-          Anmerkungen des Kunden:
-        </span>
-        <div style="background: #f8fafc; border-left: 4px solid #ea580c; padding: 14px 16px; border-radius: 0 8px 8px 0; font-size: 14px; line-height: 1.5; color: #334155;">
-          ${notes.replace(/\n/g, '<br>')}
-        </div>
-      </div>`
-          : ''
-      }
-    </div>
+          ${
+            notes
+              ? `
+          <div style="margin-top:20px;">
+            <span style="font-size:11.5px;font-weight:800;color:#475569;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:6px;">
+              Anmerkungen des Kunden:
+            </span>
+            <div style="background:#f8fafc;border-left:4px solid #ea580c;padding:14px 16px;border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.55;color:#1e293b;word-break:break-word;">
+              ${escapeHtml(notes).replace(/\n/g, '<br>')}
+            </div>
+          </div>`
+              : ''
+          }
+        </td>
+      </tr>
+    </table>
 
     <!-- Footer -->
-    <div style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 16px 24px; font-size: 12px; color: #64748b; text-align: center;">
-      Fliesenverlegung Tezgel &middot; Internes Lead-Management &middot; Vorgangsnummer: <strong>${referenceId}</strong>
-    </div>
+    <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#f8fafc;border-top:1px solid #e2e8f0;">
+      <tr>
+        <td style="padding:16px 20px;font-size:11.5px;color:#64748b;text-align:center;">
+          Fliesenverlegung Tezgel &middot; Internes Lead-Management &middot; Vorgangsnummer: <strong>${escapeHtml(referenceId)}</strong>
+        </td>
+      </tr>
+    </table>
+  `;
 
-  </div>
+  return `<!DOCTYPE html>
+<html lang="de" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neue Anfrage: ${escapeHtml(typeLabel)} - ${escapeHtml(contact.name)}</title>
+  <!--[if mso]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+</head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background-color:#f1f5f9;color:#0f172a;margin:0;padding:20px 10px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+  ${wrapInMsoContainer(innerContent, 600)}
 </body>
 </html>`;
+}
+
+/**
+ * Generates structured Plain-Text companion for the team lead notification.
+ */
+export function generateTeamEmailText(payload: InquiryPayload, referenceId: string): string {
+  const { contact, notes } = payload;
+  const timestamp = new Intl.DateTimeFormat('de-DE', {
+    dateStyle: 'full',
+    timeStyle: 'short',
+    timeZone: 'Europe/Berlin'
+  }).format(new Date());
+
+  const details = extractDetails(payload, referenceId);
+  const detailsText = details.map((d) => `* ${d.label}: ${d.value}`).join('\n');
+
+  return `===========================================================
+NEUE WEBSITE-ANFRAGE [${referenceId}]
+Fliesenverlegung Tezgel - Internes Lead-Management
+===========================================================
+
+Eingegangen am: ${timestamp} (Europe/Berlin)
+Vorgangsnummer: ${referenceId}
+
+SCHNELLKONTAKT ZUM INTERESSENTEN:
+- Telefon: ${contact.phone}
+- E-Mail:  ${contact.email || 'Nicht angegeben'}
+
+PROJEKTDATEN & SPEZIFIKATIONEN:
+${detailsText}
+
+${notes ? `ANMERKUNGEN DES KUNDEN:\n${notes}\n` : ''}
+===========================================================
+Diese Nachricht wurde automatisch über das Kontaktformular von tezgel.de generiert.
+Antworten auf diese E-Mail gehen direkt an den Interessenten (Reply-To).
+`;
+}
+
+/**
+ * Generates the standardized subject line for the team lead notification.
+ * Preserves the exact "[Neue Anfrage]" prefix for existing Outlook rules.
+ */
+export function getTeamEmailSubject(payload: InquiryPayload, referenceId: string): string {
+  const locationTag = sanitizeHeaderValue(payload.contact.zipCity || payload.contact.location || 'Aßlar/Wetzlar');
+  const title = sanitizeHeaderValue(payload.projectTitle || 'Projektanfrage');
+  const name = sanitizeHeaderValue(payload.contact.name);
+  const ref = sanitizeHeaderValue(referenceId);
+
+  return `[Neue Anfrage] ${title} - ${name} (${locationTag}) [${ref}]`;
 }

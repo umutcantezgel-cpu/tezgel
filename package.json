@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "node --experimental-strip-types --loader ./test/resolver.mjs --test test/email-pipeline.test.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {

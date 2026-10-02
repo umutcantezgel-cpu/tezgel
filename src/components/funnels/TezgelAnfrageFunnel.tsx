@@ -94,6 +94,7 @@ export default function TezgelAnfrageFunnel() {
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
   const [honeypot, setHoneypot] = useState('');
+  const [formInitTime] = useState<number>(() => Date.now());
   const [status, setStatus] = useState<SubmissionStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [referenceId, setReferenceId] = useState('');
@@ -148,7 +149,8 @@ export default function TezgelAnfrageFunnel() {
           area: finalArea,
           timing,
           notes: notes || undefined,
-          honeypot: honeypot || undefined
+          honeypot: honeypot || undefined,
+          _t: formInitTime
         })
       });
 
