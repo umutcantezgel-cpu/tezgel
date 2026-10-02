@@ -171,8 +171,8 @@ export default function HeroContactForm() {
                     <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-orange-700 bg-orange-50 px-2.5 py-0.5 rounded-lg border border-orange-200">
                         Direktanfrage an Deniz Tezgel
                     </span>
-                    <span className="flex items-center gap-1 text-[11px] font-bold text-neutral-500">
-                        <Clock className="w-3.5 h-3.5 text-orange-600" />
+                    <span className="flex items-center gap-1 text-[11px] font-bold text-neutral-600">
+                        <Clock className="w-3.5 h-3.5 text-orange-700" />
                         Rückruf &lt; 24h
                     </span>
                 </div>
@@ -208,7 +208,7 @@ export default function HeroContactForm() {
                                     onClick={() => setProjectType(opt.id)}
                                     className={`py-2 px-2.5 rounded-xl text-xs font-bold transition-all text-center border ${
                                         isSelected
-                                            ? 'bg-orange-500 text-white border-orange-600 shadow-xs'
+                                            ? 'bg-orange-700 text-white border-orange-800 shadow-xs'
                                             : 'bg-neutral-50 hover:bg-neutral-100 text-neutral-800 border-neutral-200'
                                     }`}
                                 >
@@ -223,7 +223,7 @@ export default function HeroContactForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
                         <label htmlFor="hero-name" className="block text-[11px] font-black uppercase tracking-wider text-neutral-700 mb-1">
-                            Name <span className="text-orange-600">*</span>
+                            Name <span className="text-orange-700">*</span>
                         </label>
                         <input
                             id="hero-name"
@@ -238,7 +238,7 @@ export default function HeroContactForm() {
 
                     <div>
                         <label htmlFor="hero-phone" className="block text-[11px] font-black uppercase tracking-wider text-neutral-700 mb-1">
-                            Telefonnummer <span className="text-orange-600">*</span>
+                            Telefonnummer <span className="text-orange-700">*</span>
                         </label>
                         <input
                             id="hero-phone"
@@ -256,7 +256,7 @@ export default function HeroContactForm() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
                         <label htmlFor="hero-email" className="block text-[11px] font-black uppercase tracking-wider text-neutral-700 mb-1">
-                            E-Mail <span className="text-neutral-500 font-normal text-[10px]">(für Bestätigung)</span>
+                            E-Mail <span className="text-neutral-600 font-normal text-[10px]">(für Bestätigung)</span>
                         </label>
                         <input
                             id="hero-email"
@@ -318,9 +318,9 @@ export default function HeroContactForm() {
                         )}
                     </button>
 
-                    <div className="flex items-center justify-between gap-2 pt-1 text-[11px] text-neutral-500">
+                    <div className="flex items-center justify-between gap-2 pt-1 text-[11px] text-neutral-600">
                         <span className="flex items-center gap-1">
-                            <ShieldCheck className="w-3.5 h-3.5 text-orange-600" />
+                            <ShieldCheck className="w-3.5 h-3.5 text-orange-700" />
                             100 % unverbindlich
                         </span>
                         <a

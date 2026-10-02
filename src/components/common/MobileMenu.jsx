@@ -106,7 +106,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             >
                 {/* 1. Header Bar: Logo & Close Button */}
                 <header className="px-5 py-4 bg-white border-b border-neutral-200 flex items-center justify-between gap-3 shrink-0">
-                    <Link href="/" onClick={onClose} className="group focus-visible:outline-none" aria-label="Zur Startseite">
+                    <Link href="/" onClick={onClose} className="group focus-visible:outline-none" aria-label="Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite">
                         <BrandMark sublineClassName="block" />
                     </Link>
 

@@ -97,7 +97,7 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                     }`}
                 >
                     {/* Brand */}
-                    <Link href="/" className="group shrink-0 rounded-xl" aria-label="Fliesenverlegung Tezgel – Startseite">
+                    <Link href="/" className="group shrink-0 rounded-xl" aria-label="Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite">
                         <BrandMark />
                     </Link>
 

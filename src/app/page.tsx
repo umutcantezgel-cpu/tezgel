@@ -438,6 +438,7 @@ export default function HomePage() {
                                     <div className="pt-5 border-t border-neutral-200 flex flex-wrap items-center justify-between gap-3">
                                         <Link
                                             href={`/leistungen/${srv.id}`}
+                                            aria-label={`Details & Ausführung zu ${srv.name}`}
                                             className="text-sm font-bold text-orange-800 hover:text-orange-700 inline-flex items-center gap-1.5"
                                         >
                                             Details &amp; Ausführung
@@ -476,7 +477,7 @@ export default function HomePage() {
                                 key={stepItem.step}
                                 className="group glass-surface rounded-2xl p-8 relative overflow-hidden hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
                             >
-                                <span className="font-display block text-5xl font-black tabular-nums text-orange-700/40 group-hover:text-orange-700/60 transition-colors mb-4" aria-hidden="true">
+                                <span className="font-display block text-5xl font-black tabular-nums text-orange-800 group-hover:text-orange-900 transition-colors mb-4" aria-hidden="true">
                                     {stepItem.step}
                                 </span>
                                 <span className="block text-[11px] font-black uppercase tracking-widest text-orange-800 mb-1">

@@ -72,7 +72,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
                     {/* Master data */}
                     <div className="lg:col-span-4 space-y-5">
-                        <Link href="/" className="inline-block group" aria-label="Fliesenverlegung Tezgel – Startseite">
+                        <Link href="/" className="inline-block group" aria-label={`Fliesenverlegung Tezgel – Inh. ${owner.fullName} · Fachbetrieb Aßlar / Wetzlar – Startseite`}>
                             <Image
                                 src="/images/logo/tezgel-logo-dark.webp"
                                 alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"

@@ -130,15 +130,20 @@ export function useConsent() {
 
   const [showBanner, setShowBanner] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
-    const isSettingsRequested = window.location.hash === "#cookie-settings";
-    if (isSettingsRequested) return true;
-    const stored = readConsentCookie();
-    if (!stored || stored.version !== CONSENT_VERSION) return true;
-    return false;
+    return window.location.hash === "#cookie-settings";
   });
 
-  // Listen to external hash change or custom trigger events
+  // Listen to external hash change or custom trigger events, and schedule banner after initial paint
   useEffect(() => {
+    const stored = readConsentCookie();
+    if (!stored || stored.version !== CONSENT_VERSION) {
+      // Defer banner slightly so browser paints Hero (H1 / LCP hero image) first
+      const timer = setTimeout(() => {
+        setShowBanner(true);
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+
     const handleHashChange = () => {
       if (window.location.hash === "#cookie-settings") {
         setShowBanner(true);

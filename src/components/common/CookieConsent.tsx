@@ -175,7 +175,7 @@ export default function CookieConsent() {
                       <button
                         type="button"
                         onClick={handleAcceptAll}
-                        className="px-5 py-2.5 bg-orange-600 hover:bg-orange-700 active:scale-[0.99] text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm min-h-[44px] flex-1 text-center"
+                        className="px-5 py-2.5 bg-orange-700 hover:bg-orange-800 active:scale-[0.99] text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm min-h-[44px] flex-1 text-center"
                       >
                         Alle akzeptieren
                       </button>
@@ -352,7 +352,7 @@ export default function CookieConsent() {
                   <button
                     type="button"
                     onClick={handleSaveSettings}
-                    className="px-5 py-2.5 bg-orange-600 hover:bg-orange-700 active:scale-[0.99] text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm min-h-[44px] flex-1 text-center"
+                    className="px-5 py-2.5 bg-orange-700 hover:bg-orange-800 active:scale-[0.99] text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-sm min-h-[44px] flex-1 text-center"
                   >
                     Auswahl speichern
                   </button>

@@ -559,12 +559,12 @@ export default function FloatingWhatsAppWidget() {
           scale: isDragging ? "1.12" : "1",
           transition: isDragging || isSnapping ? "none" : "box-shadow 0.25s, scale 0.2s",
           willChange: "transform",
-          animation: isIdle ? "wa-pulse 2.2s ease-in-out infinite" : "none",
         }}
       >
         {/* Notification Badge */}
         {showBadge && (
           <span
+            aria-hidden="true"
             style={{
               position: "absolute",
               top: -2,
