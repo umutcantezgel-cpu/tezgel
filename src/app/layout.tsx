@@ -9,7 +9,7 @@ import Footer from '@/components/common/Footer';
 import TrackingScripts from '@/components/common/TrackingScripts';
 import { ContentProvider } from '@/contexts/ContentContext';
 import { AuthProvider } from '@/contexts/AuthContext';
-import { buildRootGraph } from '@/lib/schema';
+import { buildRootGraph, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 
 const inter = Inter({
@@ -25,7 +25,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tezgel.de'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Fliesenverlegung Tezgel | Fachbetrieb für exklusive Fliesen & Badsanierung Aßlar & Wetzlar',
     template: '%s | Fliesenverlegung Tezgel'

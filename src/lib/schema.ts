@@ -3,7 +3,7 @@
  * Uses interconnected canonical @id URIs and standard @graph notation.
  */
 
-export const SITE_URL = 'https://tezgel.de';
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
 export const ORG_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const FOUNDER_ID = `${SITE_URL}/#founder`;

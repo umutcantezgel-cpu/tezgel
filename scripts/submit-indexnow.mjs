@@ -6,7 +6,7 @@
  */
 
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '4c6796df61f5479387fc4f56b1ed6b19';
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://tezgel.de';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tezgel.de';
 const HOST = new URL(SITE_URL).hostname;
 const KEY_LOCATION = `${SITE_URL}/${INDEXNOW_KEY}.txt`;
 
@@ -46,6 +46,7 @@ const CORE_ROUTES = [
   '/karriere',
   '/karriere/ausbildung',
   '/kontakt',
+  '/termin',
   '/impressum',
   '/datenschutz',
   '/agb',
@@ -60,9 +61,16 @@ async function fetchSitemapUrls() {
     const res = await fetch(sitemapUrl, { signal: AbortSignal.timeout(5000) });
     if (res.ok) {
       const xml = await res.text();
-      const matches = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+      const matches = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => {
+        try {
+          const parsed = new URL(m[1]);
+          return `${SITE_URL}${parsed.pathname}`;
+        } catch {
+          return m[1];
+        }
+      });
       if (matches.length > 0) {
-        return matches;
+        return Array.from(new Set(matches));
       }
     }
   } catch {

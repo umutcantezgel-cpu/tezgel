@@ -7,7 +7,7 @@ import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { SITE_URL } from '@/lib/schema';
 
 export const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '4c6796df61f5479387fc4f56b1ed6b19';
-export const INDEXNOW_HOST = new URL(SITE_URL).hostname; // 'tezgel.de'
+export const INDEXNOW_HOST = new URL(SITE_URL).hostname; // 'www.tezgel.de'
 export const INDEXNOW_KEY_LOCATION = `${SITE_URL}/${INDEXNOW_KEY}.txt`;
 
 const STATIC_PATHS = [
@@ -38,6 +38,7 @@ const STATIC_PATHS = [
   '/karriere',
   '/karriere/ausbildung',
   '/kontakt',
+  '/termin',
   '/impressum',
   '/datenschutz',
   '/agb',

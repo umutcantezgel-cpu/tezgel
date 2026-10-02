@@ -13,8 +13,8 @@ type ChangeFrequency = NonNullable<MetadataRoute.Sitemap[number]['changeFrequenc
 
 /**
  * Static routes; topic hubs, services, cities, Musterbäder, references and
- * blog posts are generated from their configs below. /login and /termin are
- * utility pages without search value.
+ * blog posts are generated from their configs below. /login is an internal
+ * utility page excluded via robots.txt.
  */
 const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, priority: number]> = [
   ['', 'weekly', 1.0],
@@ -54,6 +54,7 @@ const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, prio
   ['/karriere', 'monthly', 0.6],
   ['/karriere/ausbildung', 'monthly', 0.5],
   ['/kontakt', 'monthly', 0.9],
+  ['/termin', 'monthly', 0.8],
 
   // Rechtliches
   ['/impressum', 'yearly', 0.3],
@@ -73,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority,
   });
 
-  return [
+  const rawEntries: MetadataRoute.Sitemap = [
     ...STATIC_ROUTES.map(([path, changeFrequency, priority]) => entry(path, changeFrequency, priority)),
     ...SERVICES.map((service) => entry(`/leistungen/${service.id}`, 'monthly', 0.9)),
     ...SERVICES.flatMap((service) =>
@@ -85,4 +86,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...PORTFOLIO_PROJECTS.map((project) => entry(`/referenzen/${project.id}`, 'monthly', 0.5)),
     ...posts.map((post) => entry(`/blog/${post.slug}`, 'monthly', 0.6)),
   ];
+
+  // Deduplicate by URL to guarantee clean sitemap output
+  const uniqueMap = new Map<string, MetadataRoute.Sitemap[number]>();
+  for (const item of rawEntries) {
+    if (!uniqueMap.has(item.url)) {
+      uniqueMap.set(item.url, item);
+    }
+  }
+
+  return Array.from(uniqueMap.values());
 }
