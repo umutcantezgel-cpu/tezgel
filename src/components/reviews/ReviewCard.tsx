@@ -24,27 +24,25 @@ export default function ReviewCard({ review }: { review: ReviewItem }) {
       <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500 group-hover:h-[4px] transition-all duration-300" />
 
       {/* Header: Avatar + Name + Rating */}
-      <div className="flex justify-between items-start mb-4 relative z-10">
-        <div className="flex items-center gap-3">
-          <div className="relative flex items-center justify-center w-11 h-11 rounded-full font-bold text-base shrink-0 bg-orange-100 text-orange-800 ring-2 ring-orange-200/50 shadow-xs">
-            {initial}
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-base text-neutral-900 flex items-center gap-1.5">
-              <span>{name}</span>
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-label="Verifizierter Kunde" />
-            </span>
-            <div className="flex items-center gap-1.5 text-xs text-neutral-700 mt-0.5 font-medium">
-              {review.topic && (
-                <span className="font-semibold text-orange-800 bg-orange-50 px-2 py-0.5 rounded-md border border-orange-200">
-                  {review.topic}
-                </span>
-              )}
-              {review.location && <span>• {review.location}</span>}
-            </div>
+      <header className="flex items-center gap-3 mb-4 relative z-10">
+        <div className="relative flex items-center justify-center w-11 h-11 rounded-full font-bold text-base shrink-0 bg-orange-100 text-orange-800 ring-2 ring-orange-200/50 shadow-xs">
+          {initial}
+        </div>
+        <div className="flex flex-col">
+          <span className="font-bold text-base text-neutral-900 flex items-center gap-1.5">
+            {name}
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-label="Verifizierter Kunde" />
+          </span>
+          <div className="flex items-center gap-1.5 text-xs text-neutral-700 mt-0.5 font-medium">
+            {review.topic && (
+              <span className="font-semibold text-orange-800 bg-orange-50 px-2 py-0.5 rounded-md border border-orange-200">
+                {review.topic}
+              </span>
+            )}
+            {review.location && <span>• {review.location}</span>}
           </div>
         </div>
-      </div>
+      </header>
 
       <div className="relative flex-1 flex flex-col mt-1">
         {/* Star Rating */}
@@ -64,12 +62,12 @@ export default function ReviewCard({ review }: { review: ReviewItem }) {
       </div>
 
       {/* Footer / Source */}
-      <div className="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between relative z-10">
+      <footer className="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between relative z-10">
         <span className="text-[11px] font-semibold text-neutral-700 uppercase tracking-wider">
           {review.source} Rezension
         </span>
         <GoogleIcon size={16} className="opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
-      </div>
+      </footer>
     </article>
   );
 }
