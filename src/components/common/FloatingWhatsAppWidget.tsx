@@ -31,9 +31,9 @@ interface StoredPosition {
 const SIZE = 60;
 const FRICTION = 0.94; // Smooth deceleration allowing 2-4 wall bounces on hard throw
 const BOUNCE = 0.72; // Elastic satisfying rebound
-const MIN_VEL = 0.38; // Threshold to transition from bouncing to docking
+const MIN_VEL = 0.42; // Threshold to transition from bouncing to docking
 const DRAG_THRESHOLD_MOUSE = 5; // Px movement required to distinguish click from drag
-const DRAG_THRESHOLD_TOUCH = 10;
+const DRAG_THRESHOLD_TOUCH = 8;
 const MAX_VELOCITY = 42; // Prevent glitch speeds
 const HISTORY_WINDOW_MS = 120; // Time window for release velocity calculation
 
@@ -75,19 +75,25 @@ function getContextualMessage(pathname: string): string {
 /* ── Calculate responsive bounds & sizes ── */
 function getWidgetBounds(size: number) {
   const w = typeof window !== "undefined" ? window.innerWidth : 1280;
-  const h = typeof window !== "undefined" ? window.innerHeight : 800;
+  const vh =
+    typeof window !== "undefined" && window.visualViewport
+      ? window.visualViewport.height
+      : typeof window !== "undefined"
+      ? window.innerHeight
+      : 800;
   const isMobile = w < 768;
-  const margin = isMobile ? 12 : 24;
+  const isTablet = w >= 768 && w < 1024;
+  const margin = isMobile ? 12 : isTablet ? 18 : 24;
   const safeTop = 72; // below sticky header
   // Clearance above mobile bottom dock (FloatingDock) + iOS home bar
-  const safeBottom = isMobile ? 102 : 24;
+  const safeBottom = isMobile ? 112 : isTablet ? 48 : 28;
 
   const minX = margin;
   const maxX = Math.max(margin, w - size - margin);
   const minY = safeTop;
-  const maxY = Math.max(minY, h - size - safeBottom);
+  const maxY = Math.max(minY, vh - size - safeBottom);
 
-  return { w, h, isMobile, margin, safeTop, safeBottom, minX, maxX, minY, maxY };
+  return { w, h: vh, isMobile, isTablet, margin, safeTop, safeBottom, minX, maxX, minY, maxY };
 }
 
 /* ── Initial position resolution (always starts or restores to right edge) ── */
@@ -235,7 +241,7 @@ export default function FloatingWhatsAppWidget() {
     snapFrameRef.current = requestAnimationFrame(step);
   }, [persistPosition, updateTransform]);
 
-  // Wall bounce physics loop
+  // Wall bounce and magnetic right-docking physics loop
   useEffect(() => {
     animateFnRef.current = () => {
       if (isDraggingRef.current) return;
@@ -244,22 +250,51 @@ export default function FloatingWhatsAppWidget() {
       const v = velRef.current;
       const bounds = getWidgetBounds(SIZE);
 
+      // 1. Air damping / friction
       v.x *= FRICTION;
       v.y *= FRICTION;
+
+      // 2. Magnetic Attraction to Right Edge (Positive Attraction Pole +)
+      const distToRight = bounds.maxX - p.x;
+      if (distToRight > 0) {
+        const rightRatio = distToRight / bounds.w;
+        const magX = Math.min(2.4, Math.max(0.3, rightRatio * 2.2)) * 0.6;
+        v.x += magX;
+      }
+
+      // 3. Magnetic Repulsion from Left Edge (Negative Repulsion Pole -)
+      const leftRepelZone = bounds.w * 0.38;
+      const distFromLeft = Math.max(0, p.x - bounds.minX);
+      if (distFromLeft < leftRepelZone) {
+        const repelRatio = 1 - distFromLeft / leftRepelZone;
+        const repelAcc = Math.pow(repelRatio, 2) * 1.8;
+        v.x += repelAcc;
+      }
 
       let nextX = p.x + v.x;
       let nextY = p.y + v.y;
       let didBounce = false;
 
-      // Elastic bounce off Left & Right walls
+      // Elastic bounce off Left wall with rightward impulse
       if (nextX <= bounds.minX) {
         nextX = bounds.minX;
-        v.x = Math.abs(v.x) * BOUNCE;
+        v.x = Math.max(2.5, Math.abs(v.x) * BOUNCE + 1.2);
         didBounce = true;
-      } else if (nextX >= bounds.maxX) {
+      }
+
+      // Right edge contact: soft bounce or direct capture into right dock
+      if (nextX >= bounds.maxX) {
         nextX = bounds.maxX;
-        v.x = -Math.abs(v.x) * BOUNCE;
-        didBounce = true;
+        if (Math.abs(v.x) < 2.8 && Math.abs(v.y) < 2.0) {
+          v.x = 0;
+          v.y = 0;
+          updateTransform(bounds.maxX, nextY);
+          snapToRightEdge();
+          return;
+        } else {
+          v.x = -Math.abs(v.x) * 0.25;
+          didBounce = true;
+        }
       }
 
       // Elastic bounce off Top & Bottom safe bounds
@@ -286,9 +321,9 @@ export default function FloatingWhatsAppWidget() {
       // Check and resolve 2-body collision with Cookie Banner
       widgetPhysicsCoordinator.checkAndResolveCollision();
 
-      // Once momentum dissipates, smoothly snap into dock on the right edge
+      // Settle condition: low velocity or landing right next to right dock
       const speed = Math.hypot(v.x, v.y);
-      if (speed < MIN_VEL) {
+      if (speed < MIN_VEL || (nextX >= bounds.maxX - 6 && speed < 1.8)) {
         v.x = 0;
         v.y = 0;
         snapToRightEdge();
@@ -358,6 +393,25 @@ export default function FloatingWhatsAppWidget() {
     }
   }, [pathname]);
 
+  // Unified WhatsApp launcher with debounce to prevent double-activation
+  const lastActionTimeRef = useRef(0);
+  const triggerWhatsAppAction = useCallback(() => {
+    const now = Date.now();
+    if (now - lastActionTimeRef.current < 450) return;
+    lastActionTimeRef.current = now;
+
+    trackClick();
+    const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
+    const contextMessage = getContextualMessage(pathname);
+
+    if (isMobileDevice()) {
+      openWhatsApp({ phone: cleanNumber, text: contextMessage });
+    } else {
+      const url = buildWhatsAppUrl(cleanNumber, contextMessage);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  }, [pathname, trackClick]);
+
   // Global window pointermove handler (registered during pointer down)
   const onWindowPointerMove = useCallback(
     (e: PointerEvent) => {
@@ -385,7 +439,7 @@ export default function FloatingWhatsAppWidget() {
 
         if (typeof navigator !== "undefined" && navigator.vibrate) {
           try {
-            navigator.vibrate(15);
+            navigator.vibrate(12);
           } catch {
             // ignore
           }
@@ -422,13 +476,14 @@ export default function FloatingWhatsAppWidget() {
       }
 
       isPointerDownRef.current = false;
+      const heldPointerId = pointerIdRef.current;
       pointerIdRef.current = null;
       removeWindowListeners();
 
       // Release pointer capture if held
       try {
-        if (pointerIdRef.current !== null && btnRef.current) {
-          btnRef.current.releasePointerCapture(pointerIdRef.current);
+        if (heldPointerId !== null && btnRef.current) {
+          btnRef.current.releasePointerCapture(heldPointerId);
         }
       } catch {
         // ignore
@@ -474,25 +529,21 @@ export default function FloatingWhatsAppWidget() {
         return;
       }
 
-      // Case B: Clean tap on touch devices
+      // Case B: Clean tap detection (under 400ms without dragging)
       const duration = Date.now() - pointerDownTimeRef.current;
-      if (!wasDraggedRef.current && duration < 400 && pointerTypeRef.current === "touch") {
-        trackClick();
-        const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
-        const contextMessage = getContextualMessage(pathname);
-        openWhatsApp({ phone: cleanNumber, text: contextMessage });
+      if (!wasDraggedRef.current && duration < 400) {
+        triggerWhatsAppAction();
       }
     },
-    [pathname, removeWindowListeners, snapToRightEdge, startPhysicsAnimation, trackClick]
+    [removeWindowListeners, snapToRightEdge, startPhysicsAnimation, triggerWhatsAppAction]
   );
 
   // Pointer down on the button element
   const onPointerDown = useCallback(
     (e: React.PointerEvent<HTMLButtonElement>) => {
-      if (e.button !== 0) return;
+      // Only process primary button (left click) or touch / pen
+      if (e.button !== 0 && e.pointerType === "mouse") return;
 
-      // Strictly suppress native OS drag-and-drop ghost image and text selection
-      e.preventDefault();
       try {
         e.currentTarget.setPointerCapture(e.pointerId);
       } catch {
@@ -529,30 +580,35 @@ export default function FloatingWhatsAppWidget() {
     [onWindowPointerMove, onWindowPointerUp]
   );
 
-  // Click handler
+  // Click handler (handles keyboard activation and mouse clicks)
   const onClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       // Disallow link activation if user was dragging or throwing
-      if (wasDraggedRef.current || justFinishedDragRef.current) {
+      if (wasDraggedRef.current || justFinishedDragRef.current || isDraggingRef.current) {
         e.preventDefault();
         e.stopPropagation();
         return;
       }
 
-      trackClick();
-
-      const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
-      const contextMessage = getContextualMessage(pathname);
-
-      if (isMobileDevice()) {
-        openWhatsApp({ phone: cleanNumber, text: contextMessage });
-      } else {
-        const url = buildWhatsAppUrl(cleanNumber, contextMessage);
-        window.open(url, "_blank", "noopener,noreferrer");
-      }
+      triggerWhatsAppAction();
     },
-    [pathname, trackClick]
+    [triggerWhatsAppAction]
   );
+
+  // Release drag state if window loses focus
+  useEffect(() => {
+    const onBlur = () => {
+      if (isPointerDownRef.current || isDraggingRef.current) {
+        isPointerDownRef.current = false;
+        isDraggingRef.current = false;
+        setIsDragging(false);
+        removeWindowListeners();
+        snapToRightEdge();
+      }
+    };
+    window.addEventListener("blur", onBlur);
+    return () => window.removeEventListener("blur", onBlur);
+  }, [removeWindowListeners, snapToRightEdge]);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -577,9 +633,15 @@ export default function FloatingWhatsAppWidget() {
 
     window.addEventListener("resize", handleResize, { passive: true });
     window.addEventListener("orientationchange", handleResize, { passive: true });
+    if (typeof window !== "undefined" && window.visualViewport) {
+      window.visualViewport.addEventListener("resize", handleResize, { passive: true });
+    }
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("orientationchange", handleResize);
+      if (typeof window !== "undefined" && window.visualViewport) {
+        window.visualViewport.removeEventListener("resize", handleResize);
+      }
     };
   }, [updateTransform]);
 
@@ -634,9 +696,6 @@ export default function FloatingWhatsAppWidget() {
         onDragStart={(e) => {
           e.preventDefault();
           return false;
-        }}
-        onMouseDown={(e) => {
-          e.preventDefault();
         }}
         onClick={onClick}
         onPointerDown={onPointerDown}
