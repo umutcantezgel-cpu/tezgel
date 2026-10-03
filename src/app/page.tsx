@@ -177,7 +177,7 @@ export default function HomePage() {
                         alt="Badsanierung mit beleuchteten Wandnischen und Großformatkeramik von Fliesenverlegung Tezgel"
                         fill
                         priority
-                        quality={70}
+                        quality={60}
                         sizes="(max-width: 768px) 100vw, 100vw"
                         className="object-cover object-center scale-105 opacity-[0.20] lg:opacity-[0.25]"
                     />
