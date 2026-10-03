@@ -35,11 +35,11 @@ export default function ContactSection({
           <div className="lg:col-span-5 bg-gradient-to-br from-neutral-900 via-neutral-850 to-neutral-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-neutral-800 flex flex-col justify-between h-full relative overflow-hidden">
             <div className="relative z-10">
               <span className="text-xs font-bold uppercase tracking-wider text-orange-400">
-                Direkter Meister-Kontakt
+                Direkter Fachbetriebs-Kontakt
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-white mt-1 mb-3">
+              <p className="text-xl sm:text-2xl font-black text-white mt-1 mb-3">
                 Lieber direkt persönlich sprechen?
-              </h3>
+              </p>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-6">
                 Rufen Sie uns unverbindlich an. Wir klären Ihre Fragen zu Fliesen,
                 Untergrund, Badmaßen und Zeitfenstern direkt am Telefon.

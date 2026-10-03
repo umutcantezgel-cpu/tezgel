@@ -101,8 +101,7 @@ export default async function MusterbadDetailPage({ params }) {
                                 Detaillierte Ausstattungs- und Komponentenliste
                             </h2>
                             <p className="text-sm text-slate-700">
-                                Transparente Auflistung der vorgesehenen Markenkomponenten je Bereich – Maße und Ausstattung passen wir
-                                individuell an Ihren Grundriss an.
+                                Transparente Komponentenübersicht für das {bath.title} ({bath.sizeM2} m²): Alle Sanitärelemente, Armaturen und Fliesenoberflächen stimmen wir passgenau auf Ihren Grundriss ab.
                             </p>
                         </div>
 
@@ -113,9 +112,9 @@ export default async function MusterbadDetailPage({ params }) {
                                     className="group glass-surface rounded-tile-md p-6 sm:p-8 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
                                     <div className="border-b border-slate-200 pb-3 mb-4">
-                                        <h3 className="font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
+                                        <p className="font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
                                             {comp.category}
-                                        </h3>
+                                        </p>
                                     </div>
 
                                     <ul className="space-y-2.5">
@@ -139,8 +138,7 @@ export default async function MusterbadDetailPage({ params }) {
                                     Dieses Musterbad anfragen
                                 </h2>
                                 <p className="text-sm text-slate-700 leading-relaxed">
-                                    Gefällt Ihnen das Konzept {bath.title}? Wir passen die Maße und Ausstattung individuell an Ihren
-                                    Grundriss an.
+                                    Möchten Sie das {bath.title} ({bath.sizeM2} m²) in Ihrem Zuhause umsetzen? Wir passen Fliesenraster, Sanitärobjekte und Anschlüsse exakt an Ihre Raumsituation an.
                                 </p>
 
                                 <div className="space-y-3 pt-2">

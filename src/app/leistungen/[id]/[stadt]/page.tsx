@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
-import { COMPANY_DATA, processSteps } from '@/config/company';
+import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import { createMetadata } from '@/lib/metadata';
@@ -27,6 +27,54 @@ function distanceSentence(city: CityData) {
   if (city.distanceKm === 0) return `Direkt neben unserem Firmensitz in ${headquarters.city}.`;
   return `Ca. ${city.distanceKm} km ab Wetzlar – betreut von unserem Firmensitz in ${headquarters.city}.`;
 }
+
+const SERVICE_CITY_INTROS: Record<
+  string,
+  (cityName: string, region: string, authorityName: string, subcategories: string) => { p1: string; p2: string }
+> = {
+  bad: (city, reg, auth, subs) => ({
+    p1: `Ob vollständige Badsanierung oder barrierefreier Umbau im bewohnten Bestand: Als eingetragener Fachbetrieb der ${auth} realisieren wir moderne Bäder, begehbare Walk-In-Duschen und großformatige Fliesenbeläge für Privatkunden, Architekten und Bauherren in ${city} sowie im gesamten ${reg}.`,
+    p2: `Im Mittelpunkt stehen kompromisslose Langlebigkeit, absolute Dichtigkeit und saubere Ausführung mit normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser einwirkt.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Nach einem kostenfreien Vor-Ort-Aufmaß erhalten Sie ein transparentes, verbindliches Festpreisangebot.`
+  }),
+  wohnen: (city, reg, auth, subs) => ({
+    p1: `Für repräsentative Wohnräume, offene Küchen und Flure in ${city} und der Region ${reg} verlegen wir erstklassiges Feinsteinzeug und Natursteinbeläge. Als geprüfter Fachbetrieb der ${auth} schaffen wir schwellenlose Übergänge zwischen Wohnbereichen und ein vollkommen symmetrisches Fugenbild.`,
+    p2: `Wir stimmen den Belagsaufbau exakt auf Ihre Fußbodenheizung und Estrich-Belegreife ab, um optimale Wärmeleitung und rissfreie Beständigkeit zu sichern.${subs ? ` Unsere Fachleistungen für ${city}: ${subs}.` : ''} Nach dem Vor-Ort-Aufmaß in ${city} planen wir Fugenachsen und Verlegemuster im Detail mit Festpreisgarantie.`
+  }),
+  aussen: (city, reg, auth, subs) => ({
+    p1: `Balkone, Terrassen und Eingangsbereiche in ${city} erfordern höchste Witterungsbeständigkeit. Als Fachbetrieb der ${auth} verlegen wir frostsichere 2-cm-Keramikplatten auf Stelzlagern oder im drainierten Kiesbett für Immobilienbesitzer im gesamten ${reg}.`,
+    p2: `Dank durchdachtem Gefälle- und Entwässerungskonzept bleibt Ihr Außenbelag in ${city} auch bei starken Frostwechseln rissfrei, trittsicher und dauerhaft wasserableitend.${subs ? ` Unsere Leistungen in ${city}: ${subs}.` : ''} Bei der Vor-Ort-Besichtigung prüfen wir Untergrund und Entwässerungswege persönlich.`
+  }),
+  untergrund: (city, reg, auth, subs) => ({
+    p1: `Ein solider Untergrund ist die unverzichtbare Basis für jeden dauerhaften Fliesenbelag. Als Fachbetrieb der ${auth} analysieren und sanieren wir Estriche, Altbeläge und Wandflächen für Bauherren und Renovierer in ${city} und Umgebung (${reg}).`,
+    p2: `Mit CM-Restfeuchtemessung, Rissverharzung, Ausgleichsspachtelungen und zugelassenen Entkopplungssystemen schaffen wir die perfekte Grundlage.${subs ? ` Unsere Schwerpunkte in ${city}: ${subs}.` : ''} Im Feuchtbereich dichten wir strikt nach DIN 18534 ab – verlässlich geprüft vor Ort in ${city}.`
+  })
+};
+
+const SERVICE_CITY_STEPS: Record<
+  string,
+  (cityName: string) => Array<{ step: string; subtitle: string; title: string; description: string }>
+> = {
+  bad: (city) => [
+    { step: '01', subtitle: 'Bedarf & Beratung', title: 'Vor-Ort-Aufmaß im Bad', description: `Deniz Tezgel prüft Ihr Bad in ${city} persönlich: Raummaße, Wandaufbau, Gefälle zur Entwässerung und Leitungsanschlüsse.` },
+    { step: '02', subtitle: 'Design & Fliesen', title: 'Fliesenformat & Verlegeplan', description: `Gemeinsame Auswahl von Großformaten, rutschhemmenden Bodenbelägen und Fugenrastern, abgestimmt auf Ihr Badkonzept in ${city}.` },
+    { step: '03', subtitle: 'Handwerksqualität', title: 'Abdichtung & Verlegung', description: `DIN 18534 Verbundabdichtung, millimetergenaue Verlegung mit Nivelliersystem und staubgeschützte Übergabe in ${city}.` }
+  ],
+  wohnen: (city) => [
+    { step: '01', subtitle: 'Vor-Ort-Check', title: 'Aufmaß & Estrichprüfung', description: `Wir begutachten Estrich, Raummaße und Fugenachsen vor Ort in ${city} und prüfen die Belegreife für Fußbodenheizungen.` },
+    { step: '02', subtitle: 'Materialauswahl', title: 'Feinsteinzeug & Fugenbild', description: `Auswahl der gewünschten Großformate und Abstimmung des Fugenverlaufs für ein harmonisches Raumgefühl in ${city}.` },
+    { step: '03', subtitle: 'Verlegearbeit', title: 'Präzisionsverlegung', description: `Planschliff und Verlegung im Dünnbettverfahren mit sauberen Sockelabschlüssen und besenreiner Übergabe in ${city}.` }
+  ],
+  aussen: (city) => [
+    { step: '01', subtitle: 'Planung Außen', title: 'Bestandsaufnahme Außen', description: `Begutachtung Ihres Balkons oder Ihrer Terrasse in ${city}: Gefälle, Wasserableitung und Untergrundaufbau.` },
+    { step: '02', subtitle: 'Belagskonzept', title: 'Stelzlager & Plattenwahl', description: `Auswahl robuster, frostsicherer 2-cm-Keramikplatten und Festlegung des Entwässerungs- bzw. Stelzlagersystems für ${city}.` },
+    { step: '03', subtitle: 'Ausführung', title: 'Wetterfeste Montage', description: `Fachgerechter Aufbau mit sauberem Gefälle, rissfreier Plattenausrichtung und dauerhafter Witterungsbeständigkeit in ${city}.` }
+  ],
+  untergrund: (city) => [
+    { step: '01', subtitle: 'Diagnose', title: 'CM-Restfeuchte & Ebenheit', description: `Messung der Estrichfeuchte mit dem CM-Gerät, Klopfprobe und Überprüfung der Ebenheitstoleranzen vor Ort in ${city}.` },
+    { step: '02', subtitle: 'Vorbereitung', title: 'Ausgleich & Entkopplung', description: `Fräsen, Grundieren, Ausgleichsspachtelung und Verlegung von Entkopplungsmatten für schadensfreie Beläge in ${city}.` },
+    { step: '03', subtitle: 'Abdichtung', title: 'DIN 18534 Norm-Abdichtung', description: `Einbau zugelassener Dichtmanschetten, Dichtbänder und Verbundabdichtungen vor dem Fliesenauftrag in ${city}.` }
+  ]
+};
 
 export function generateStaticParams() {
   const params: { id: string; stadt: string }[] = [];
@@ -135,6 +183,14 @@ export default async function ServiceCityPage({
     { value: authority.shortName, label: 'Eingetragener Fachbetrieb', icon: Award },
   ];
 
+  const currentIntro = (SERVICE_CITY_INTROS[service.id] || SERVICE_CITY_INTROS.bad)(
+    city.name,
+    city.region,
+    authority.name,
+    subcategoryNames
+  );
+  const currentSteps = (SERVICE_CITY_STEPS[service.id] || SERVICE_CITY_STEPS.bad)(city.name);
+
   return (
     <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
       <JsonLd schema={serviceCityGraph} />
@@ -218,16 +274,11 @@ export default async function ServiceCityPage({
             </div>
 
             <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-              Ob Neubau oder Sanierung im bewohnten Bestand: Als eingetragener Fachbetrieb der {authority.name} übernehmen
-              wir Projekte im Bereich {displayName} für Privatkunden, Architekten und Bauherren in {city.name} sowie im
-              gesamten {city.region}. {city.description}
+              {currentIntro.p1} {city.description}
             </p>
 
             <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-              Im Mittelpunkt stehen Langlebigkeit, Dichtigkeit und eine saubere, millimetergenaue Ausführung – mit
-              normgerechter Verbundabdichtung nach DIN 18534 überall dort, wo Wasser im Spiel ist.{' '}
-              {subcategoryNames ? `Unsere Schwerpunkte: ${subcategoryNames}.` : ''} Nach dem kostenfreien Vor-Ort-Aufmaß
-              erhalten Sie ein verbindliches Festpreisangebot.
+              {currentIntro.p2}
             </p>
 
             {/* Stats row */}
@@ -288,7 +339,7 @@ export default async function ServiceCityPage({
         </div>
 
         <ol className="grid md:grid-cols-3 gap-6">
-          {processSteps.map((step) => (
+          {currentSteps.map((step) => (
             <li
               key={step.step}
               className="glass-surface p-6 rounded-2xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
@@ -299,7 +350,7 @@ export default async function ServiceCityPage({
               <span className="text-[11px] font-black uppercase tracking-widest text-orange-800 block mb-1">
                 {step.subtitle}
               </span>
-              <h3 className="text-base font-black text-neutral-900 mb-2">{step.title}</h3>
+              <p className="text-base font-black text-neutral-900 mb-2">{step.title}</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
                 {step.description}
               </p>

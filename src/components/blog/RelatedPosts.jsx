@@ -94,9 +94,9 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                                 </Link>
                             </p>
 
-                            {/* Excerpt */}
+                            {/* Teaser */}
                             <p className="text-sm text-slate-700 line-clamp-2 mb-3">
-                                {post.excerpt}
+                                Fachbeitrag von Fliesenverlegung Tezgel – praxisnahe Hinweise zu Planung, Material und Ausführung.
                             </p>
 
                             {/* Read More */}

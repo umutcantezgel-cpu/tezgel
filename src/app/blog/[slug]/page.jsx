@@ -109,7 +109,7 @@ export default async function BlogPostPage({ params }) {
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto pt-1 leading-relaxed">
-            {post.title} – Fachwissen, Praxistipps und rechtliche Vorgaben für Bauherren und Modernisierer von Meisterbetrieb Tezgel.
+            {post.title} – Fachwissen, Praxistipps und rechtliche Vorgaben für Bauherren und Modernisierer von Fachbetrieb Tezgel.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-neutral-700 text-xs font-bold pt-2">
@@ -147,7 +147,7 @@ export default async function BlogPostPage({ params }) {
 
                 {/* Excerpt */}
                 <p className="text-base sm:text-lg text-neutral-800 font-bold leading-relaxed border-l-4 border-orange-600 pl-6 bg-orange-50/60 py-3 rounded-r-xl">
-                  {post.excerpt}
+                  Praxis-Leitfaden von Fachbetriebsleiter Deniz Tezgel: {post.excerpt}
                 </p>
 
                 {/* Markdown Body */}

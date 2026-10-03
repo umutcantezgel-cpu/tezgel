@@ -96,7 +96,7 @@ function MapImplementation() {
             <div style="font-family: system-ui, sans-serif; padding: 4px; max-width: 240px;">
               <strong style="color: #EA580C; font-size: 15px;">Fliesenverlegung Tezgel</strong>
               <div style="font-size: 13px; color: #404040; margin-top: 4px;">${siteConfig.company.street}, ${siteConfig.company.postalCode} ${siteConfig.company.city}</div>
-              <div style="font-size: 12px; color: #16A34A; font-weight: bold; margin-top: 4px;">Firmensitz & Meisterbetrieb</div>
+              <div style="font-size: 12px; color: #16A34A; font-weight: bold; margin-top: 4px;">Firmensitz & Fachbetrieb</div>
               <a href="/kontakt" style="display:inline-block; margin-top:8px; color:#EA580C; font-weight:bold; font-size:12px;">Kontakt & Aufmaß &rarr;</a>
             </div>
           `);

@@ -35,7 +35,7 @@ export default function LocationContact({
             </h2>
 
             <p className="text-sm sm:text-base text-neutral-300 leading-relaxed mb-8">
-              Meisterbetrieb Deniz Tezgel berät Sie persönlich und unverbindlich. Vereinbaren Sie
+              Fachbetriebsleiter Deniz Tezgel berät Sie in {cityName} persönlich und unverbindlich. Vereinbaren Sie
               direkt Ihr kostenfreies Aufmaß vor Ort.
             </p>
 

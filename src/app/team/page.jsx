@@ -94,7 +94,7 @@ export default function TeamPage() {
 
             <FinalCTA
                 headline="Bauen Sie auf ein starkes Team: Jetzt Ihr Fliesen- oder Badprojekt anfragen."
-                subtitle="Erfahrene Fachkräfte • Meistergeführte Baustelle • Feste Terminzusagen"
+                subtitle="Erfahrene Fachkräfte • Inhabergeführte Baustelle • Feste Terminzusagen"
                 buttonText="Jetzt Projekt unverbindlich anfragen"
             />
         </div>

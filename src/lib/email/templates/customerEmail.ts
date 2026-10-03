@@ -150,7 +150,7 @@ export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: 
             ${greeting}
           </h2>
           <p style="margin:0 0 20px 0;font-size:14px;line-height:1.6;color:#334155;">
-            ${escapeHtml(dynamicSubtitle)}. Ihre Anfrage ist erfolgreich bei unserem Meisterbetrieb eingegangen und wurde unter der Vorgangsnummer <strong>${escapeHtml(referenceId)}</strong> registriert.
+            ${escapeHtml(dynamicSubtitle)}. Ihre Anfrage ist erfolgreich bei unserem Fachbetrieb eingegangen und wurde unter der Vorgangsnummer <strong>${escapeHtml(referenceId)}</strong> registriert.
           </p>
 
           <!-- Specifications Table -->

@@ -217,9 +217,7 @@ export default async function ProjectDetailPage({ params }) {
                                     Fotos und Details folgen
                                 </h2>
                                 <p className="text-sm leading-relaxed">
-                                    Fotos und Details realer Projekte – etwa Ort, Bauzeit und Kundenstimme – veröffentlichen wir erst
-                                    mit dem Einverständnis unserer Kunden. Bis dahin zeigen die echten Bewertungen unserer Kunden,
-                                    wie wir arbeiten.
+                                    Detaillierte Baustellenfotos und Kundendokumentationen für {project.title} veröffentlichen wir aus Diskretionsgründen ausschließlich mit ausdrücklicher Freigabe der Bauherren. Authentische Erfahrungsberichte finden Sie in unseren verifizierten Google-Bewertungen.
                                 </p>
                                 <Link
                                     href="/referenzen#bewertungen"

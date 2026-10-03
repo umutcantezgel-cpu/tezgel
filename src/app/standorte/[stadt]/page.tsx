@@ -288,7 +288,7 @@ export default async function StandortPage({
             Weitere Einsatzgebiete in der Region
           </h2>
           <p className="text-neutral-700 text-sm sm:text-base mt-2">
-            Wir verlegen Fliesen in Städten und Gemeinden im Lahn-Dill-Kreis, im Landkreis Gießen und in ganz Mittelhessen.
+            Neben {city.name} betreuen wir auch die angrenzenden Gemeinden im {city.region} sowie im gesamten Lahn-Dill- und Gießener Umland.
           </p>
         </div>
 

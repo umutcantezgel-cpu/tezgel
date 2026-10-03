@@ -135,7 +135,7 @@ export default function AboutPage() {
       {/* Final Conversion Anchor */}
       <FinalCTA
         headline="Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel."
-        subtitle="Über 15 Jahre Meistererfahrung • Verbindlicher Festpreis • HWK-Fachbetrieb"
+        subtitle="Über 15 Jahre Praxiserfahrung • Verbindlicher Festpreis • HWK-Fachbetrieb"
         buttonText="Jetzt persönlichen Termin anfragen"
       />
     </div>

@@ -112,7 +112,7 @@ export default function AusstellungWetzlarPage() {
                                         <span className="text-[11px] font-black uppercase tracking-widest text-orange-700 block mb-1">
                                             {step.subtitle}
                                         </span>
-                                        <h3 className="text-lg font-black text-slate-900 mb-2">{step.title}</h3>
+                                        <p className="text-lg font-black text-slate-900 mb-2">{step.title}</p>
                                         <p className="text-sm text-slate-700 leading-relaxed">{step.description}</p>
                                     </div>
                                 </li>
@@ -122,8 +122,7 @@ export default function AusstellungWetzlarPage() {
                         <div className="flex items-start gap-3 p-5 rounded-tile-lg bg-orange-50/60 border border-orange-200/80 text-sm text-slate-700 leading-relaxed">
                             <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
                             <p>
-                                Beratungstermine vergeben wir individuell nach Absprache – telefonisch, per WhatsApp oder
-                                über unser{' '}
+                                Für die Fliesenausstellung in Wetzlar vergeben wir Termine flexibel nach Vereinbarung – kontaktieren Sie uns direkt per WhatsApp, Telefon oder über unser{' '}
                                 <Link href="/kontakt" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
                                     Kontaktformular
                                 </Link>

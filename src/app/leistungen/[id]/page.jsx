@@ -44,11 +44,82 @@ export default async function ServiceDetailPage({ params }) {
     untergrund: 'DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar',
   };
   const serviceIntroTexts = {
-    bad: 'Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel ist Ihr erfahrener Fachbetrieb für professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exklusive Bäder & Wellness in Wetzlar und ganz Mittelhessen. Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum – für maximale Ästhetik und spielend leichte Pflege.',
-    wohnen: 'Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit: Fliesenverlegung Tezgel gestaltet Ihren Wohnbereich und Neubau in Wetzlar mit hochwertigen Feinsteinzeug- und Natursteinbelägen – mit präzisem Fugenraster und perfekter Anpassung an Türen, Kamine und bodentiefe Fenster.',
-    aussen: 'Balkone und Terrassen sind extremen Wetterbedingungen ausgesetzt. Fliesenverlegung Tezgel ist Ihr Partner für fachgerechte Balkon- & Terrassensanierung in Wetzlar & ganz Mittelhessen: Wir setzen auf innovative Trockenverlegung auf Stelzlagern – Wasser fließt unter dem Belag ab und einzelne Platten bleiben für Wartung zugänglich.',
-    untergrund: 'Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir gewährleisten eine fachgerechte Untergrundvorbereitung sowie normgerechte DIN 18534 Abdichtung in Wetzlar und Umgebung: So bleibt Ihre Bausubstanz dauerhaft vor kostspieligen Feuchteschäden geschützt.',
+    bad: 'Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exklusive Bäder & Wellness in Wetzlar und Mittelhessen realisieren wir maßgeschneiderte Wohlfühloasen. Wir verarbeiten raumhohe Fliesenformate mit minimalen Fugenanteilen, integrieren barrierefreie Walk-In-Bereiche und garantieren zertifizierten Staubschutz für Ihr bewohntes Zuhause.',
+    wohnen: 'Für anspruchsvolle Fliesenverlegung Wohnbereich & Neubau in Wetzlar verlegen wir exklusives Feinsteinzeug und Naturstein mit perfekter Fluchtung. Wir planen Fugenachsen raumübergreifend, stimmen den Schichtenaufbau exakt auf Ihre Fußbodenheizung ab und schaffen dauerhaft plane, schwellenlose Wohnflächen.',
+    aussen: 'Für die nachhaltige Balkon- & Terrassensanierung in Wetzlar & Mittelhessen ist Fliesenverlegung Tezgel Ihr spezialisierter Fachbetrieb: Mit aufgestelzter 2-cm-Keramik auf verstellbaren Stelzlagern und optimalem Gefälleaufbau verhindern wir stehendes Wasser, Frostausbrüche und unansehnliche Fugenverfärbungen ein für alle Mal.',
+    untergrund: 'Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar und der gesamten Region. Mit präziser CM-Restfeuchtemessung, Risssanierung und hochelastischen Verbundabdichtungen schützen wir Ihr Bauwerk verlässlich vor Durchfeuchtung und Bauschäden.',
   };
+  const serviceQualityNotes = {
+    bad: 'Bei der Badsanierung verbinden wir moderne Verlegemethoden mit kompromisslosem Staubschutz: Staubschutztüren, Unterdruckabsaugung und Schonvliese schützen Ihr bewohntes Zuhause. Verbundabdichtungen nach DIN 18534 garantieren jahrzehntelange Sicherheit gegen Feuchtigkeit.',
+    wohnen: 'In Wohnräumen und offenen Küchen sorgen präzise Lasernivellierung und Gehrungsschnitte (Jolly-Kanten) für ein makelloses, ebenes Fugenbild. Wir stimmen den Aufbau exakt auf die Heizkurve Ihrer Fußbodenheizung ab.',
+    aussen: 'Auf Terrassen und Balkonen verhindern entkoppelte Stelzlagersysteme und frostsichere 2-cm-Keramikplatten Ausblühungen und Frostschäden. Wir sorgen für das notwendige 2%-Gefälle zur zuverlässigen Wasserabführung.',
+    untergrund: 'Vom CM-Messgerät bis zur Rissverharzung und Entkopplung: Wir schaffen für jeden Alt- und Neubauuntergrund die normgerechte Ebenheit und Festigkeit, bevor der hochwertige Belag verlegt wird.',
+  };
+  const serviceSidebarIntros = {
+    bad: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} berät Sie zur schlüsselfertigen Badsanierung, Walk-In-Duschen und DIN 18534 Abdichtung persönlich bei Ihnen vor Ort in Aßlar, Wetzlar oder Mittelhessen.`,
+    wohnen: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} berät Sie persönlich zu Großformaten, Wohnraumfliesen und Fußbodenheizungs-Belegreife direkt in Ihren Räumlichkeiten.`,
+    aussen: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} begutachtet Ihren Balkon oder Ihre Terrasse vor Ort: Gefälle, Abdichtungsanschlüsse und Stelzlagersysteme.`,
+    untergrund: `Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} prüft Ihren Estrich und Untergrund persönlich: CM-Restfeuchtemessung, Risssanierung und Entkopplungskonzepte.`,
+  };
+  const serviceFaqs = {
+    bad: [
+      {
+        q: 'Wie läuft die Badsanierung von der Planung bis zur Übergabe ab?',
+        a: 'Nach Ihrer Anfrage begutachten wir das Bad vor Ort in Aßlar, Wetzlar oder Mittelhessen. Wir prüfen Wand- und Bodenuntergründe, besprechen Sanitärobjekte und Fugenachsen und übergeben Ihnen ein verbindliches Festpreisangebot mit festem Zeitplan.',
+      },
+      {
+        q: 'Welche Abdichtungsnormen gelten für Dusche und Badewanne?',
+        a: 'Wir dichten alle Nass- und Spritzwasserbereiche streng nach DIN 18534 (Wassereinwirkungsklassen W1-I bis W2-I) mit geprüften Dichtbändern und Dichtmanschetten ab. Ihr bewohntes Zuhause schützen wir mit Staubschutztüren.',
+      },
+      {
+        q: 'Koordiniert Fliesenverlegung Tezgel auch Sanitär- und Elektroarbeiten?',
+        a: 'Auf Wunsch koordinieren wir Ihr Bad aus einer Hand gemeinsam mit befreundeten regionalen Sanitär- und Elektrofachbetrieben – von der Demontage bis zur fertigen Endreinigung.',
+      },
+    ],
+    wohnen: [
+      {
+        q: 'Wie werden Großformatfliesen im Wohnbereich eben verlegt?',
+        a: 'Wir nutzen spezielle mechanische Nivelliersysteme und hochflexible Dünnbettkleber (C2-Klassifizierung), um Kantenversätze (Überzähne) selbst bei Fliesenformaten von 120x120 cm oder 120x278 cm komplett auszuschließen.',
+      },
+      {
+        q: 'Kann Feinsteinzeug direkt auf einer Fußbodenheizung verlegt werden?',
+        a: 'Ja, Keramik und Feinsteinzeug besitzen eine hervorragende Wärmeleitfähigkeit. Voraussetzung ist das ordnungsgemäße Funktions- und Belegreifheizen des Estrichs sowie das Einhalten von Bewegungsfugen über den Heizkreisgrenzen.',
+      },
+      {
+        q: 'In welchem Umkreis verlegen Sie Wohnraum- und Fliesenbeläge?',
+        a: 'Wir verlegen Wohn- und Bodenfliesen im Umkreis von ca. 45 km rund um unseren Firmensitz in Aßlar – insbesondere in Wetzlar, Gießen, Butzbach, Herborn und Marburg.',
+      },
+    ],
+    aussen: [
+      {
+        q: 'Warum sind Stelzlager für Balkon und Terrasse besonders langlebig?',
+        a: 'Stelzlager ermöglichen eine aufgestelzte Verlegung von 2-cm-Feinsteinzeugplatten ohne starren Mörtel. Regenwasser fließt durch die offenen Fugen direkt auf die Abdichtungsebene ab, wodurch Frostabplatzungen und Staunässe unmöglich werden.',
+      },
+      {
+        q: 'Welches Mindestgefälle ist im Außenbereich vorgeschrieben?',
+        a: 'Wir stellen im Untergrund ein Mindestgefälle von 1,5 bis 2 % vom Gebäude weg her. So wird sichergestellt, dass Niederschlagswasser rasch abfließt und Türschwellen nach DIN 18531 / 18533 geschützt bleiben.',
+      },
+      {
+        q: 'Können vorhandene Beton- oder Fliesenbeläge überbaut werden?',
+        a: 'Sofern die Tragfähigkeit und die Anschlusshöhen an Balkontüren ausreichen, können alte Beläge oft nach Gefällekorrektur mit Stelzlagern schadensfrei überbaut werden.',
+      },
+    ],
+    untergrund: [
+      {
+        q: 'Warum ist die CM-Restfeuchtemessung vor dem Fliesenlegen Pflicht?',
+        a: 'Die CM-Messung ist das handwerksrechtlich anerkannte Verfahren zur Bestimmung der Belegreife. Verfrühtes Belegen auf feuchtem Zement- oder Calciumsulfatestrich führt unweigerlich zu Hohlstellen, Rissen oder Schimmel.',
+      },
+      {
+        q: 'Wie werden Risse im Estrich vor dem Verlegen saniert?',
+        a: 'Risse werden quer aufgeflext, mit Estrichklammern armiert und kraftschlüssig mit 2-Komponenten-Epoxidharz vergossen. Anschließend wird die Fläche mit Quarzsand abgestreut, um optimalen Haftverbund zu sichern.',
+      },
+      {
+        q: 'Wann ist eine Entkopplungsmatte erforderlich?',
+        a: 'Bei Mischuntergründen, jungen Zementestrichen, Holzbalkendecken oder extremen Großformaten fangen Entkopplungsmatten Spannungen aus dem Untergrund ab und verhindern Rissübertragungen auf die Fliese.',
+      },
+    ],
+  };
+  const currentFaqs = serviceFaqs[service.id] || serviceFaqs.bad;
   const h1Title = serviceH1Titles[service.id] || service.name;
 
   const pageUrl = `${SITE_URL}/leistungen/${service.id}`;
@@ -189,7 +260,7 @@ export default async function ServiceDetailPage({ params }) {
                 <p className="font-black text-neutral-900 text-sm mb-1">
                   Warum Fachqualität von {COMPANY_DATA.legalName}?
                 </p>
-                Mit moderner Schneid- und Nivelliertechnik sorgen wir für planebene Oberflächen ohne Kantenversatz. Bei Sanierungen im bewohnten Bestand setzen wir Schonvliese und Staubabsaugungen ein – für ein staubarmes und stressfreies Ergebnis.
+                {serviceQualityNotes[service.id] || serviceQualityNotes.bad}
               </div>
             </div>
 
@@ -252,7 +323,7 @@ export default async function ServiceDetailPage({ params }) {
             </h2>
 
             <p className="text-sm text-neutral-700 leading-relaxed">
-              Inhaber {COMPANY_DATA.owner.fullName} berät Sie gerne persönlich vor Ort in Aßlar, Wetzlar, Mittelhessen oder ganz Hessen.
+              {serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}
             </p>
 
             <div className="space-y-3 pt-2 text-sm">
@@ -318,18 +389,13 @@ export default async function ServiceDetailPage({ params }) {
         </div>
 
         <div className="space-y-4">
-          <FAQAccordion
-            question={`Wie läuft die Beauftragung und Vorbereitung für ${service.name} ab?`}
-            answer="Nach Ihrer ersten Anfrage vereinbaren wir zeitnah ein unverbindliches Vor-Ort-Aufmaß. Wir prüfen den Untergrund, besprechen Ihre Materialwünsche und erstellen ein transparentes Festpreisangebot ohne versteckte Kosten."
-          />
-          <FAQAccordion
-            question="Welche Normen und Qualitätsstandards werden eingehalten?"
-            answer="Alle Arbeiten werden streng nach DIN-Normen (insbesondere DIN 18534 für Verbundabdichtungen) und den anerkannten Regeln des Fliesenlegerhandwerks ausgeführt. Bei bewohnten Objekten schützen wir angrenzende Räume mit Staubschutztüren und Luftreinigern."
-          />
-          <FAQAccordion
-            question="In welchem Umkreis sind Sie im Einsatz?"
-            answer="Unser Fachbetrieb hat seinen Sitz in Aßlar und betreut Kunden im Umkreis von ca. 45 km, u. a. in Wetzlar, Gießen, Butzbach, Herborn, Limburg und dem gesamten Lahn-Dill-Kreis."
-          />
+          {currentFaqs.map((faq) => (
+            <FAQAccordion
+              key={faq.q}
+              question={faq.q}
+              answer={faq.a}
+            />
+          ))}
         </div>
       </div>
 

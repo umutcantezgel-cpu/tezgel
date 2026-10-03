@@ -26,8 +26,9 @@ export default function RouteVisualization({ city, className = "" }: RouteVisual
             Schnell bei Ihnen in {city.name}
           </h2>
           <p className="text-sm sm:text-base text-neutral-600 mt-2 leading-relaxed">
-            Direkte Anfahrt von unserem Betriebssitz in Aßlar über die B49 und A45 –
-            ohne lange Wartezeiten, persönlich vor Ort.
+            {city.distanceKm === 0
+              ? `Als direkte Nachbarstadt erreichen wir ${city.name} von unserem Betriebssitz in Aßlar in wenigen Fahrminuten für Ihr persönliches Vor-Ort-Aufmaß.`
+              : `Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in ${city.name} (ca. ${city.distanceKm} km) über die B49/A45 in rund ${drivingMinutes} Minuten.`}
           </p>
         </div>
 
