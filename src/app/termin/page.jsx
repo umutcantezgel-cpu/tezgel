@@ -5,6 +5,7 @@ import { CalendarCheck, CheckCircle2, Phone, MessageCircle, Send, Lock, Loader2,
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import BookingCalendar from '@/components/contact/BookingCalendar';
 
 const TOPICS = [
     { value: 'badsanierung', label: 'Badsanierung / Komplettbad aus einer Hand' },
@@ -34,6 +35,7 @@ const formatDate = (isoDate) => {
 };
 
 export default function TerminPage() {
+    const [bookingMode, setBookingMode] = useState('calendar'); // 'calendar' | 'form'
     const [sentVia, setSentVia] = useState(null); // 'whatsapp' | 'online'
     const [referenceId, setReferenceId] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -238,9 +240,39 @@ export default function TerminPage() {
                         </div>
                     </div>
                 ) : (
-                    <div className="glass-bezel-outer shadow-2xl">
-                        <form onSubmit={handleSubmit} className="glass-bezel-inner p-8 sm:p-10 space-y-6">
-                            <div>
+                    <div>
+                        {/* Booking Mode Selector Tabs */}
+                        <div className="flex items-center justify-center p-1.5 rounded-2xl bg-neutral-100 border border-neutral-200 mb-8 max-w-md mx-auto">
+                            <button
+                                type="button"
+                                onClick={() => setBookingMode('calendar')}
+                                className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                                    bookingMode === 'calendar'
+                                        ? 'bg-white text-orange-950 shadow-sm border border-neutral-200/80'
+                                        : 'text-neutral-600 hover:text-neutral-900'
+                                }`}
+                            >
+                                📅 2-Schritt Schnellauswahl
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => setBookingMode('form')}
+                                className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                                    bookingMode === 'form'
+                                        ? 'bg-white text-orange-950 shadow-sm border border-neutral-200/80'
+                                        : 'text-neutral-600 hover:text-neutral-900'
+                                }`}
+                            >
+                                📝 Individuelles Formular
+                            </button>
+                        </div>
+
+                        {bookingMode === 'calendar' ? (
+                            <BookingCalendar initialServiceType="Kostenfreies Vor-Ort-Aufmaß & Beratung" />
+                        ) : (
+                            <div className="glass-bezel-outer shadow-2xl">
+                                <form onSubmit={handleSubmit} className="glass-bezel-inner p-8 sm:p-10 space-y-6">
+                                    <div>
                                 <label htmlFor="termin-topic" className="block text-sm font-black text-slate-900 mb-2">
                                     1. Welches Thema möchten Sie besprechen? <span className="text-orange-600">*</span>
                                 </label>
@@ -432,6 +464,8 @@ export default function TerminPage() {
                     </div>
                 )}
             </div>
+        )}
+    </div>
 
             <FinalCTA />
         </div>

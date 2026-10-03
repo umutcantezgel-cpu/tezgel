@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock, Printer, ShieldCheck, MessageSquare, Award, Sparkles, ArrowRight } from 'lucide-react';
+import { Phone, ShieldCheck, Award, Sparkles, ArrowRight } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import ContactPremiumMap from '@/components/maps/ContactPremiumMap';
 import LocationContact from '@/components/locations/LocationContact';
 import FinalCTA from '@/components/ui/FinalCTA';
 
-
-
+import DirectContactCard from '@/components/contact/DirectContactCard';
+import BookingCalendar from '@/components/contact/BookingCalendar';
 export default function KontaktPage() {
     return (
         <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
@@ -45,88 +45,8 @@ export default function KontaktPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
 
-                    {/* Headquarters Card */}
-                    <div className="glass-surface rounded-2xl p-8 flex flex-col justify-between">
-                        <div className="space-y-6">
-                            <div className="flex items-center justify-between gap-3">
-                                <span className="eyebrow">
-                                    Betriebssitz {COMPANY_DATA.headquarters.city}
-                                </span>
-                                <span className="text-xs font-bold text-neutral-600">Fachbetriebsleiter</span>
-                            </div>
-
-                            <div>
-                                <h2 className="text-2xl font-black text-neutral-900 mb-1">
-                                    {COMPANY_DATA.legalName}
-                                </h2>
-                                <p className="text-sm text-neutral-700 font-medium flex items-center gap-1.5">
-                                    <MapPin className="w-4 h-4 text-orange-600 shrink-0" />
-                                    {COMPANY_DATA.headquarters.street}, {COMPANY_DATA.headquarters.postalCode} {COMPANY_DATA.headquarters.city}
-                                </p>
-                                <a
-                                    href={COMPANY_DATA.headquarters.mapsUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-1 ml-5.5 inline-block text-xs font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2"
-                                >
-                                    Route in Google Maps öffnen
-                                </a>
-                            </div>
-
-                            <ul className="space-y-3 pt-2 text-sm">
-                                <li className="flex items-center gap-3">
-                                    <Phone className="w-4 h-4 text-orange-600 shrink-0" />
-                                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="font-bold text-neutral-900 hover:text-orange-800 transition-colors">
-                                        Telefon: {COMPANY_DATA.contact.phone}
-                                    </a>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <MessageSquare className="w-4 h-4 text-green-600 shrink-0" />
-                                    <a
-                                        href={COMPANY_DATA.contact.whatsappLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="font-bold text-green-800 hover:text-green-700 hover:underline underline-offset-2"
-                                    >
-                                        Mobil / WhatsApp: {COMPANY_DATA.contact.mobile}
-                                    </a>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <Printer className="w-4 h-4 text-neutral-600 shrink-0" />
-                                    <span className="text-neutral-700">Telefax: {COMPANY_DATA.headquarters.fax}</span>
-                                </li>
-                                <li className="flex items-center gap-3">
-                                    <Mail className="w-4 h-4 text-orange-600 shrink-0" />
-                                    <a href={`mailto:${COMPANY_DATA.headquarters.email}`} className="text-neutral-800 hover:text-orange-800 transition-colors">
-                                        E-Mail: {COMPANY_DATA.headquarters.email}
-                                    </a>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <Clock className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                    <span className="text-neutral-700">{COMPANY_DATA.hours.formattedWeekdays} | {COMPANY_DATA.hours.formattedSaturday}</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="pt-6 border-t border-neutral-200 mt-6 flex flex-col sm:flex-row gap-3">
-                            <a
-                                href={COMPANY_DATA.contact.whatsappLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex-1 glass-button-whatsapp text-sm"
-                            >
-                                <MessageSquare className="w-4 h-4 fill-current" />
-                                <span>WhatsApp Nachricht</span>
-                            </a>
-                            <a
-                                href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                                className="flex-1 btn-ghost"
-                            >
-                                <Phone className="w-4 h-4 text-orange-700" />
-                                <span>Jetzt anrufen</span>
-                            </a>
-                        </div>
-                    </div>
+                    {/* Direct Contact Card */}
+                    <DirectContactCard />
 
                     {/* Quality & Regional Promise Card */}
                     <div className="glass-surface rounded-2xl p-8 flex flex-col justify-between">
@@ -204,11 +124,29 @@ export default function KontaktPage() {
                 {/* Regional Quick Contact Box */}
                 <LocationContact cityName="Aßlar, Wetzlar &amp; Mittelhessen" className="mb-16 rounded-3xl overflow-hidden border border-neutral-200" />
 
+                {/* 2-Step Appointment Booking Calendar */}
+                <section className="mb-16 scroll-mt-28" id="termin-buchen" aria-labelledby="termin-buchen-heading">
+                    <div className="text-center max-w-2xl mx-auto mb-8">
+                        <span className="eyebrow mb-3">
+                            Verbindlicher Vor-Ort-Termin
+                        </span>
+                        <h2 id="termin-buchen-heading" className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
+                            Wunschtermin in 2 Schritten reservieren
+                        </h2>
+                        <p className="text-sm text-neutral-600 mt-2">
+                            Wählen Sie direkt einen freien Tag und eine Uhrzeit für Ihr kostenfreies Aufmaß vor Ort.
+                        </p>
+                    </div>
+                    <div className="max-w-3xl mx-auto">
+                        <BookingCalendar initialServiceType="Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse" />
+                    </div>
+                </section>
+
                 {/* Embedded Express Funnel on Contact Page */}
                 <section className="pt-4 mb-16 scroll-mt-28" id="express-anfrage" aria-labelledby="express-anfrage-heading">
                     <div className="text-center max-w-2xl mx-auto mb-10">
                         <span className="eyebrow mb-4">
-                            Direkt online anfragen
+                            Oder detailliert konfigurieren
                         </span>
                         <h2 id="express-anfrage-heading" className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
                             Ihr Vor-Ort-Aufmaß anfordern

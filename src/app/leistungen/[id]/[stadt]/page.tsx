@@ -9,6 +9,7 @@ import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
 import { MapPin, Phone, ArrowRight, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
+import FinalCTA from '@/components/ui/FinalCTA';
 
 function isHeadquartersCity(city: CityData) {
   return city.name === COMPANY_DATA.headquarters.city;
@@ -325,6 +326,16 @@ export default async function ServiceCityPage({
       </section>
 
       <QualityPromise />
+
+      {/* Final Conversion CTA with Quick Form */}
+      <FinalCTA
+        headline={`${service.name} in ${city.name}: Jetzt unverbindlich beraten lassen.`}
+        subtitle={`Kostenfreies Vor-Ort-Aufmaß in ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
+        buttonText={`Jetzt Beratung für ${city.name} anfordern`}
+        serviceContext={`${service.name} · ${city.name}`}
+        showQuickForm={true}
+        quickFormSource={`leistung-${service.id}-${city.slug}`}
+      />
     </div>
   );
 }

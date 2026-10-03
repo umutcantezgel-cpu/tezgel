@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import HeartbeatCTA from "@/components/animations/HeartbeatCTA";
 import { triggerHaptic } from "@/lib/haptics";
 import { siteConfig } from "@/lib/config";
+import { LeadQuickForm } from "@/components/forms/LeadQuickForm";
 
 interface FinalCTAProps {
   className?: string;
@@ -16,6 +17,8 @@ interface FinalCTAProps {
   socialProof?: string;
   subtitle?: string;
   serviceContext?: string;
+  showQuickForm?: boolean;
+  quickFormSource?: string;
 }
 
 const defaultBenefits = [
@@ -32,6 +35,8 @@ export default function FinalCTA({
   socialProof = "5,0 Google-Bewertung bei 27 echten Kundenstimmen",
   subtitle = "Schnelle Reaktionszeit • Persönliche Betreuung vor Ort • HWK-Fachbetrieb",
   serviceContext,
+  showQuickForm = false,
+  quickFormSource,
 }: FinalCTAProps) {
   return (
     <section
@@ -137,6 +142,17 @@ export default function FinalCTA({
               {subtitle}
             </span>
           </div>
+
+          {showQuickForm && (
+            <div className="w-full max-w-xl mx-auto mt-10 text-left">
+              <LeadQuickForm
+                variant="card"
+                sourceTag={quickFormSource || serviceContext || 'final-cta'}
+                heading="Kostenfreies Vor-Ort-Aufmaß anfordern"
+                subheading="Tragen Sie Ihre Kontaktdaten ein – Meister Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

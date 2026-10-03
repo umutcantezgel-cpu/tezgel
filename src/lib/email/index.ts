@@ -6,3 +6,5 @@ export * from './security';
 export * from './templates/components';
 export * from './templates/customerEmail';
 export * from './templates/teamEmail';
+export * from './templates/leadNotification';
+export * from './templates/clientConfirmation';
