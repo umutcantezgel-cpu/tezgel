@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { MapPin, ExternalLink, Navigation, ShieldCheck, Eye } from 'lucide-react';
+import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
 import { COMPANY_DATA } from '@/config/company';
 import { useConsent } from '@/hooks/useConsent';
 import { getMapEmbedUrl, getDirectionsUrl, TEZGEL_HQ_COORDS } from '@/lib/maps/getMapEmbedUrl';
@@ -23,13 +24,13 @@ interface GoogleMapProps {
 
 /**
  * ══════════════════════════════════════════════════════════════
- * DSGVO-konforme Google Maps Standort-Komponente (2-Klick-Lösung)
+ * 20x Google Maps Standort-Komponente (DSGVO 2-Klick-Lösung)
  * ══════════════════════════════════════════════════════════════
- * - Verwendet NEXT_PUBLIC_GOOGLE_MAPS_API_KEY wenn vorhanden.
- * - Fällt bei fehlendem Key auf OpenStreetMap (OSM) mit exakter Bounding Box zurück.
- * - DSGVO Zwei-Klick-Lösung: Keine Übertragung von IP-Adressen ohne Einwilligung.
+ * - Verwendet @vis.gl/react-google-maps mit AdvancedMarker & Pin bei verfügbarem API-Key.
+ * - Fällt bei fehlendem Key auf sicheres OpenStreetMap/Embed-Fallback zurück.
+ * - Vollständige DSGVO-Zwei-Klick-Lösung: Keine Übertragung von IP-Adressen ohne Einwilligung.
  * - Synchronisiert mit dem globalen CookieConsent (useConsent).
- * - Enthält barrierefreie Steuerung und direkte Routenplanung.
+ * - Direkte Ein-Klick-Routenplanung und barrierefreie UI.
  */
 export default function GoogleMap({
   address = COMPANY_DATA.headquarters.fullAddress,
@@ -41,6 +42,7 @@ export default function GoogleMap({
 }: GoogleMapProps) {
   const { consent } = useConsent();
   const [userLoaded, setUserLoaded] = useState(false);
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
 
   // Marketing-Consent aus Cookie-Banner ODER Klick auf "Interaktive Karte laden"
   const isAllowedToLoad = userLoaded || (autoLoadWithConsent && consent?.marketing);
@@ -119,17 +121,35 @@ export default function GoogleMap({
       ) : (
         // Aktive interaktive Google Map
         <div className="relative w-full" style={{ height }}>
-          <iframe
-            title={title}
-            src={embedUrl}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full filter saturate-[0.95]"
-          />
+          {apiKey ? (
+            <APIProvider apiKey={apiKey}>
+              <Map
+                style={{ width: '100%', height: '100%' }}
+                defaultCenter={TEZGEL_HQ_COORDS}
+                defaultZoom={15}
+                mapId="DEMO_MAP_ID"
+                gestureHandling="cooperative"
+                disableDefaultUI={false}
+                internalUsageAttributionIds={["gmp_git_agentskills_v1"]}
+              >
+                <AdvancedMarker position={TEZGEL_HQ_COORDS} title={title}>
+                  <Pin background="#ea580c" glyphColor="#ffffff" borderColor="#c2410c" />
+                </AdvancedMarker>
+              </Map>
+            </APIProvider>
+          ) : (
+            <iframe
+              title={title}
+              src={embedUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full filter saturate-[0.95]"
+            />
+          )}
 
           {/* Schnellzugriff-Bar oben rechts auf der Karte */}
           <div className="absolute top-3 right-3 z-10">

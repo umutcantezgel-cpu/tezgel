@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     resolveAlias: {
       'next/dist/build/polyfills/polyfill-module': './src/lib/polyfills/empty.js',
+      '../build/polyfills/polyfill-module': './src/lib/polyfills/empty.js',
     },
   },
   webpack: (config) => {

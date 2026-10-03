@@ -111,7 +111,7 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-white underline-offset-4 hover:underline"
-                                    aria-label={`WhatsApp Chat mit Deniz Tezgel starten: ${contact.mobile}`}
+                                    aria-label={`Mobil & WhatsApp: ${contact.mobile} – Chat mit Deniz Tezgel starten`}
                                 >
                                     Mobil &amp; WhatsApp: {contact.mobile}
                                 </a>
@@ -191,7 +191,7 @@ export default function Footer() {
                         <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
                             {footerLegalLinks.map((item) => (
                                 <li key={item.path}>
-                                    <Link href={item.path} className="hover:text-white underline-offset-4 hover:underline">
+                                    <Link href={item.path} className="inline-block py-1 hover:text-white underline-offset-4 hover:underline">
                                         {item.name}
                                     </Link>
                                 </li>
@@ -205,7 +205,7 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener"
                             title="Coday – Webdesign-Agentur Wetzlar | Webseiten, SEO & Branding"
-                            className="font-bold text-white hover:text-orange-300 underline-offset-4 hover:underline"
+                            className="inline-block py-1 font-bold text-white hover:text-orange-300 underline-offset-4 hover:underline"
                         >
                             Webdesign Wetzlar – Coday
                         </a>

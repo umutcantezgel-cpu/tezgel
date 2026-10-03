@@ -689,7 +689,7 @@ export default function FloatingWhatsAppWidget() {
       <button
         ref={btnRef}
         type="button"
-        aria-label="WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+        aria-label={showBadge ? "1 – WhatsApp-Nachricht an Fliesenverlegung Tezgel senden" : "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"}
         id="whatsapp-floating-btn"
         tabIndex={0}
         draggable={false}

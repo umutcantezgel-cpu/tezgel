@@ -229,6 +229,7 @@ export default async function StandortPage({
           </div>
           <LocalDominanceMap
             centerCity={`${city.name} (${city.region})`}
+            citySlug={city.slug}
             radiusKm={Math.max(25, city.distanceKm + 10)}
             topRankings={[
               `#1 Fachbetrieb in ${city.name} & Region`,

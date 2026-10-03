@@ -471,6 +471,9 @@ export default function PricingCalculator() {
               )}
 
               {/* Honeypot Feld für Bot-Schutz */}
+              <label htmlFor="calc-organization-fax" className="sr-only">
+                Faxnummer
+              </label>
               <input
                 type="text"
                 name="organization_fax"

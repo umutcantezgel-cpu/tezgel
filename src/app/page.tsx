@@ -463,7 +463,6 @@ export default function HomePage() {
                                     <div className="pt-5 border-t border-neutral-200 flex flex-wrap items-center justify-between gap-3">
                                         <Link
                                             href={`/leistungen/${srv.id}`}
-                                            aria-label={`Details & Ausführung zu ${srv.name}`}
                                             className="text-sm font-bold text-orange-800 hover:text-orange-700 inline-flex items-center gap-1.5"
                                         >
                                             <span>Details &amp; Ausführung: {srv.name}</span>

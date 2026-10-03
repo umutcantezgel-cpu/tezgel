@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { MapPin, ArrowRight, Navigation } from 'lucide-react';
+import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
 import { SITE_CONFIG } from '@/shared/config/site';
 import MapConsentGate from '@/components/legal/MapConsentGate';
 import { getMapEmbedUrl, getDirectionsUrl, TEZGEL_HQ_COORDS } from '@/lib/maps/getMapEmbedUrl';
@@ -17,7 +18,12 @@ export interface InteractiveMapProps {
 }
 
 /**
- * Interactive Map Embed with Reduced Contrast Filter & Floating Direction Box
+ * ══════════════════════════════════════════════════════════════
+ * 20x Interactive Map Component (DSGVO 2-Klick-Gate)
+ * ══════════════════════════════════════════════════════════════
+ * - Verwendet @vis.gl/react-google-maps AdvancedMarker bei API-Key.
+ * - DSGVO-geschützt über MapConsentGate.
+ * - Fließendes Fallback auf OpenStreetMap / Embed wenn kein Key vorhanden ist.
  */
 export function InteractiveMap({
   className = '',
@@ -28,6 +34,7 @@ export function InteractiveMap({
   postalCodeCity = `${SITE_CONFIG.headquarters.postalCode} ${SITE_CONFIG.headquarters.addressLocality}`,
   googleMapsUrl = SITE_CONFIG.contact.googleMapsUrl,
 }: InteractiveMapProps) {
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '';
   const address = `${streetAddress}, ${postalCodeCity}`;
   const iframeSrc = getMapEmbedUrl({
     address,
@@ -43,11 +50,29 @@ export function InteractiveMap({
       style={{ height }}
     >
       <MapConsentGate
-        src={iframeSrc}
+        src={apiKey ? undefined : iframeSrc}
         title={`Standort von ${addressTitle}`}
         height="100%"
         className="w-full h-full"
-      />
+      >
+        {apiKey ? (
+          <APIProvider apiKey={apiKey}>
+            <Map
+              style={{ width: '100%', height: '100%' }}
+              defaultCenter={TEZGEL_HQ_COORDS}
+              defaultZoom={15}
+              mapId="DEMO_MAP_ID"
+              gestureHandling="cooperative"
+              disableDefaultUI={false}
+              internalUsageAttributionIds={["gmp_git_agentskills_v1"]}
+            >
+              <AdvancedMarker position={TEZGEL_HQ_COORDS} title={addressTitle}>
+                <Pin background="#ea580c" glyphColor="#ffffff" borderColor="#c2410c" />
+              </AdvancedMarker>
+            </Map>
+          </APIProvider>
+        ) : null}
+      </MapConsentGate>
 
       {/* Floating Info Box */}
       {showInfoBox && (
