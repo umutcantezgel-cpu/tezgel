@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Datenschutzerklärung nach DSGVO',
+  title: 'Datenschutzerklärung nach DSGVO | Fliesen Tezgel',
   description: 'Ausführliche Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten bei der Fliesenverlegung Tezgel gemäß EU-DSGVO.',
   path: '/datenschutz',
   robots: { index: false, follow: true },

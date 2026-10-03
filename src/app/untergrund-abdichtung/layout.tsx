@@ -11,9 +11,9 @@ const breadcrumbs = [
 const untergrundSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Untergrundvorbereitung & Verbundabdichtung | Fliesenverlegung Tezgel',
+    name: 'Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel',
     description:
-      'Fachbetrieb für DIN 18534 Verbundabdichtung, Estrich-Belegreife, Gefälleausgleich und Entkopplung in Aßlar, Wetzlar und ganz Mittelhessen.',
+      'Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

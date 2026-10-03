@@ -20,8 +20,8 @@ import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Barrierefreie Badsanierung Aßlar – DIN 18040-2 Tezgel',
-    description: 'Barrierefreie Badsanierung nach DIN 18040-2 in Aßlar & Wetzlar: Bodengleiche Walk-In Duschen & bis zu 4.180 € Zuschuss der Pflegekasse nutzen.',
+    title: 'Barrierefreies Bad Wetzlar & Aßlar | DIN 18040 Tezgel',
+    description: 'Barrierefreie Badsanierung nach DIN 18040-2 in Wetzlar & Aßlar: Bodengleiche Duschen, rutschfeste Fliesen & Pflegekassen-Zuschuss. Jetzt anfragen!',
     path: '/bad/barrierefreies-bad'
 });
 

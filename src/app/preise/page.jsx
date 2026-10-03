@@ -16,9 +16,9 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import { FinalCTA } from "@/components/ui/FinalCTA";
 
 export const metadata = createMetadata({
-  title: "Preise & Kostenkalkulator – Fliesenverlegung & Badsanierung",
+  title: "Fliesenleger Preise & Kosten | Kalkulator · Tezgel",
   description:
-    "Transparente Preise für Fliesenverlegung, XXL-Großformate, Badsanierung und Terrassenbeläge in Aßlar, Wetzlar und Mittelhessen. Berechnen Sie Ihre Kosten online.",
+    "Transparente Preise für Fliesenverlegung, XXL-Fliesen & Badsanierung in Wetzlar & Aßlar. Online-Kalkulator nutzen & Festpreisangebot anfragen!",
   path: "/preise"
 });
 

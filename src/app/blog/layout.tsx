@@ -3,8 +3,8 @@ import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } f
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Ratgeber zu Badsanierung & Fliesen',
-  description: 'Praxiswissen rund um Badsanierung, Fliesen und Abdichtung vom Fliesenleger-Fachbetrieb Tezgel aus Aßlar.',
+  title: 'Fliesen-Ratgeber & Badsanierung Tipps | Tezgel',
+  description: 'Praxiswissen & Ratgeber zu Badsanierung, Fliesenverlegung & DIN 18534 Abdichtung vom Fliesenleger-Fachbetrieb Tezgel aus Aßlar. Jetzt informieren!',
   path: '/blog',
 });
 

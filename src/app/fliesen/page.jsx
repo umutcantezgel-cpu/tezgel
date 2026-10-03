@@ -32,9 +32,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-    title: 'Fliesen-Ratgeber: Formate, Material & Verlegung',
+    title: 'Fliesenverlegung & Ratgeber | Fliesenleger Tezgel',
     description:
-        'Großformat, Holzoptik, Fliesenarten, Verlegemuster und Verlegetechnik: Der Ratgeber erklärt, worauf es bei Fliesen in Wohnraum, Küche, Flur und Neubau ankommt.',
+        'Ratgeber & Fachwissen zur Fliesenverlegung: Großformate, Feinsteinzeug, Holzoptik & Verlegetechniken vom Fliesenleger-Fachbetrieb Tezgel in Hessen.',
     path: '/fliesen'
 });
 

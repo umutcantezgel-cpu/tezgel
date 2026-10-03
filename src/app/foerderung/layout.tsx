@@ -4,8 +4,8 @@ import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Förderung & Zuschüsse für das barrierefreie Bad',
-  description: 'Bis zu 4.180 € Pflegekassen-Zuschuss für barrierefreie Bäder (§ 40 SGB XI): Wir erstellen den prüffähigen Kostenvoranschlag in Aßlar & Wetzlar.',
+  title: 'Förderung barrierefreies Bad: Zuschüsse | Tezgel',
+  description: 'Bis zu 4.180 € Pflegekassen-Zuschuss für Ihr barrierefreies Bad: Fliesenleger Tezgel erstellt den Kostenvoranschlag in Wetzlar & Aßlar. Jetzt beraten lassen!',
   path: '/foerderung',
 });
 

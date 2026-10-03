@@ -6,8 +6,8 @@ import JsonLd from '@/components/seo/JsonLd';
 const { legalName, owner, headquarters, authority, business } = COMPANY_DATA;
 
 export const metadata = createMetadata({
-  title: 'Über uns – Fliesen-Fachbetrieb in Aßlar',
-  description: `Lernen Sie ${legalName} kennen: ${authority.certification}, gegründet ${business.establishmentYear} in ${headquarters.city}. Inhaber ${owner.fullName} – Fliesen, Großformate & Badsanierung in Mittelhessen.`,
+  title: 'Über uns | Fliesenleger-Fachbetrieb Tezgel Aßlar',
+  description: `Über Fliesenverlegung Tezgel in ${headquarters.city}: ${authority.certification} seit ${business.establishmentYear}. Inhaber ${owner.fullName} – Fliesen & Bad in Wetzlar & Hessen.`,
   path: '/ueber-uns',
 });
 

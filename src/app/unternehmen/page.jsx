@@ -7,8 +7,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-    title: 'Unternehmen & Qualitätsversprechen',
-    description: `${COMPANY_DATA.legalName} aus ${COMPANY_DATA.headquarters.city}: gegründet ${COMPANY_DATA.business.establishmentYear}, ${COMPANY_DATA.authority.certification}. Unsere Geschichte, Inhaber ${COMPANY_DATA.owner.fullName} und unser 8-Punkte-Qualitätsversprechen.`,
+    title: 'Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb',
+    description: 'Fliesenverlegung Tezgel aus Aßlar: Fachbetrieb der HWK seit 2008. Firmengeschichte, Inhaber Deniz Tezgel & unser Qualitätsversprechen für Hessen.',
     path: '/unternehmen'
 });
 

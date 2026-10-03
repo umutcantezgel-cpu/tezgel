@@ -24,9 +24,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Balkonsanierung: Abdichtung, Gefälle & neuer Belag',
+    title: 'Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel',
     description:
-        'Ausblühungen, Risse, lose Fliesen am Balkon? Ursachen erkennen, Altbelag rückbauen, Abdichtung und Gefälle herstellen, neu belegen – so läuft die Sanierung.',
+        'Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!',
     path: '/balkon-terrasse/balkonsanierung'
 });
 

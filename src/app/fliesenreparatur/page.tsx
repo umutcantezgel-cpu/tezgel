@@ -22,9 +22,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesenreparatur: einzelne Fliesen & Fugen ausbessern',
+    title: 'Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel',
     description:
-        'Gesprungene Fliese, lose Sockelfliese, bröselnde Fuge? Der HWK-Fachbetrieb aus Aßlar übernimmt auch kleinere Reparaturen – sauber ausgeführt, nach Termin.',
+        'Professionelle Fliesenreparatur in Wetzlar & Aßlar: einzelne Fliesen austauschen, Bohrlöcher verschließen & Fugen sanieren. Schneller Vor-Ort-Service!',
     path: '/fliesenreparatur'
 });
 

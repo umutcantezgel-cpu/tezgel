@@ -24,9 +24,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Marmor & Travertin verlegen: Kleber, Schutz, Pflege',
+    title: 'Marmor & Travertin verlegen lassen | Fliesen Tezgel',
     description:
-        'Marmor, Travertin und Kalkstein sind kalkhaltig und damit säureempfindlich. Welche Kleber, Imprägnierungen und Pflegemittel sie dauerhaft schön halten.',
+        'Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
     path: '/naturstein/marmor-kalkstein'
 });
 

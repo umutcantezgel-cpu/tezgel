@@ -1,7 +1,7 @@
 {
   "project": "Fliesenverlegung Tezgel",
-  "version": "6.0.7",
-  "lastUpdated": "2026-10-03T14:00:00Z",
+  "version": "6.0.8",
+  "lastUpdated": "2026-10-03T14:30:00Z",
   "branch": "main",
   "directive": "v6.0-SOVEREIGN-UNIVERSAL-DYNAMIC-CORE",
   "mode": "SMART_MAINTENANCE",
@@ -44,7 +44,7 @@
     "delta_awwwards_ux": "COMPLETED"
   },
   "keyMetrics": {
-    "routesTotal": 177,
+    "routesTotal": 179,
     "genericAnchorsIdentified": 0,
     "canonicalLoopsEliminated": 23,
     "redirectLoopsEliminated": 46,

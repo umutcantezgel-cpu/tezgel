@@ -17,9 +17,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesenarbeiten abnehmen: Checkliste & Toleranzen',
+    title: 'Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel',
     description:
-        'Worauf Sie bei der Abnahme von Fliesenarbeiten achten: Ebenheit, Winkel, Überzähne, Fugenbild, Hohlstellen, Silikonfugen und Unterlagen – mit Checkliste.',
+        'Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar.',
     path: '/fliesen/abnahme'
 });
 

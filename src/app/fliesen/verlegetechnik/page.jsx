@@ -18,9 +18,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 
 export const metadata = createMetadata({
-    title: 'Fliesen verlegen: Dünnbett, Kleber & Fugenmörtel',
+    title: 'Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel',
     description:
-        'Dünnbett nach DIN 18157, Mittelbett oder Dickbett? Kleberklassen C1, C2, S1, S2 und Fugenmörtel CG2 oder Reaktionsharz erklärt – so entstehen dauerhafte Beläge.',
+        'Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar.',
     path: '/fliesen/verlegetechnik'
 });
 

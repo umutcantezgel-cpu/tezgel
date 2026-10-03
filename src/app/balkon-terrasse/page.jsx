@@ -26,9 +26,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-    title: 'Balkon & Terrasse: Belagsaufbauten im Vergleich',
+    title: 'Balkon & Terrasse fliesen Wetzlar | Fachbetrieb Tezgel',
     description:
-        'Stelzlager, Splittbett oder gebundene Verlegung? Aufbauten für Balkon, Dachterrasse und Terrasse auf Erdreich im Vergleich – mit Entscheidungshilfe.',
+        'Balkon & Terrasse fliesen lassen in Wetzlar & Aßlar: frostsichere Keramik, Stelzlager & Naturstein. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     path: '/balkon-terrasse'
 });
 

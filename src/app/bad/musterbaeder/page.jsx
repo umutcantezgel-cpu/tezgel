@@ -13,8 +13,8 @@ import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Musterbäder & Badinspiration Aßlar – Fachbetrieb Tezgel',
-    description: 'Entdecken Sie unsere Musterbäder von 4,6 bis 15,9 m² mit Festpreis-Orientierung & Markenkomponenten für Aßlar, Wetzlar & Hessen.',
+    title: 'Musterbäder & Badideen Wetzlar | Badsanierung Tezgel',
+    description: 'Inspiration für Ihr neues Bad: Musterbäder von 4,6 bis 15,9 m² mit Großformatfliesen, Walk-In Duschen & Markenkomponenten. Fachbetrieb Tezgel in Wetzlar!',
     path: '/bad/musterbaeder'
 });
 

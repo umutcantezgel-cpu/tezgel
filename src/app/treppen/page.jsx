@@ -21,9 +21,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-    title: 'Treppe sanieren: Beläge für innen, außen & Treppenhaus',
+    title: 'Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel',
     description:
-        'Alte Massivtreppe neu belegen statt abreißen: Treppentypen, Belagsarten und gleichmäßige Steigungen im Überblick – mit Detailseiten für jeden Treppentyp.',
+        'Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!',
     path: '/treppen'
 });
 

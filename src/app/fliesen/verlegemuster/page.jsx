@@ -17,9 +17,9 @@ import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesen-Verlegemuster: Verband, Fischgrät, Diagonal',
+    title: 'Fliesen-Verlegemuster: Fischgrät & Verbände | Tezgel',
     description:
-        'Kreuzfuge, Halb- und Drittelverband, Fischgrät oder Diagonal? Verlegemuster, Fugenbild, Sockel und Kantenprofile im Überblick – mit Richtwerten zum Verschnitt.',
+        'Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel.',
     path: '/fliesen/verlegemuster'
 });
 

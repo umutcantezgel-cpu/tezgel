@@ -19,9 +19,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Außentreppe fliesen & sanieren: frostsicher, rutschfest',
+    title: 'Außentreppe fliesen: frostsicher & rutschfest | Tezgel',
     description:
-        'Außentreppen und Eingangspodeste dauerhaft belegen: frostbeständige Platten, Rutschhemmung, Gefälle, Abdichtung und Stufenkanten – plus typische Schäden.',
+        'Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar.',
     path: '/treppen/aussentreppe'
 });
 

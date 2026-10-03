@@ -6,8 +6,8 @@ import JsonLd from '@/components/seo/JsonLd';
 const { contact, headquarters, business, legalName } = COMPANY_DATA;
 
 export const metadata = createMetadata({
-  title: 'Karriere & Jobs – Fliesenleger (m/w/d) in Aßlar',
-  description: `Werden Sie Teil von ${legalName} in ${headquarters.city}: Wir suchen Fliesenleger (m/w/d) – Geselle oder Fachkraft – und freuen uns über Ausbildungs- und Initiativbewerbungen.`,
+  title: 'Fliesenleger Jobs Wetzlar & Aßlar | Karriere Tezgel',
+  description: `Fliesenleger (m/w/d) gesucht! Jobs bei Fliesenverlegung Tezgel in ${headquarters.city} & Wetzlar: faire Bezahlung, modernes Werkzeug & gutes Team. Jetzt bewerben!`,
   path: '/karriere',
 });
 

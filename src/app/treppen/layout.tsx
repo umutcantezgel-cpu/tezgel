@@ -11,9 +11,9 @@ const breadcrumbs = [
 const treppenSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Treppenverlegung & Treppensanierung | Fliesenverlegung Tezgel',
+    name: 'Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel',
     description:
-      'Treppenverlegung und Treppensanierung in Aßlar & Wetzlar: Trittsichere Fliesen- und Natursteinbeläge für Innentreppen, Außentreppen und Mehrfamilienhäuser.',
+      'Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

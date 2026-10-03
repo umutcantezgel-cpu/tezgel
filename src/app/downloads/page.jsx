@@ -6,8 +6,8 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Downloads & Infomaterial',
-    description: `Informationen rund um Fliesen und Badsanierung von ${COMPANY_DATA.legalName}: Checkliste zur Terminvorbereitung, Förderung, häufige Fragen und Materialien – Unterlagen zu Ihrem Projekt erhalten Sie auf Anfrage.`,
+    title: 'Downloads & Infomaterial | Fliesenverlegung Tezgel',
+    description: 'Infomaterial & Checklisten rund um Fliesenverlegung, Badsanierung & Fördermittel vom Fachbetrieb Tezgel in Aßlar & Wetzlar. Jetzt online informieren!',
     path: '/downloads'
 });
 

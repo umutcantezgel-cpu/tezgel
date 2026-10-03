@@ -7,8 +7,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import FinalCTA from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-    title: 'Unser Team – Fliesen-Fachbetrieb aus Aßlar',
-    description: `Das Team von ${COMPANY_DATA.legalName}: Inhaber & Fachbetriebsleiter ${COMPANY_DATA.owner.fullName} und das bis zu 12-köpfige Verlegeteam für Fliesen-, Platten- & Mosaikarbeiten in Aßlar, Wetzlar & Mittelhessen.`,
+    title: 'Unser Team | Fliesenleger-Fachbetrieb Tezgel Aßlar',
+    description: 'Das Team von Fliesenverlegung Tezgel: Inhaber Deniz Tezgel und qualifizierte Fliesenleger für Fliesen- & Badprojekte in Aßlar, Wetzlar & ganz Hessen.',
     path: '/team'
 });
 

@@ -17,9 +17,9 @@ import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Fliesen-Konfigurator & Bedarfsrechner',
+    title: 'Fliesen-Konfigurator & Bedarfsrechner | Tezgel',
     description:
-        'Raum, Untergrund, Format und Fläche wählen: Der Konfigurator ermittelt den Materialbedarf inkl. Verschnitt als Richtwert und sendet Ihre Anfrage per WhatsApp.',
+        'Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen.',
     path: '/fliesen/konfigurator'
 });
 

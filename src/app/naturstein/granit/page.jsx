@@ -21,9 +21,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Granit & Schiefer verlegen: Boden, Treppe, Außen',
+    title: 'Granit & Schiefer verlegen lassen | Fliesen Tezgel',
     description:
-        'Granit, Schiefer, Quarzit und andere silikatische Natursteine: Eigenschaften, Oberflächen, Rutschhemmung, kalibrierte oder spaltraue Platten und Pflege.',
+        'Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen.',
     path: '/naturstein/granit'
 });
 

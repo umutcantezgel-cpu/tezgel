@@ -17,8 +17,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Bad aus einer Hand Aßlar & Wetzlar – Fachbetrieb Tezgel',
-    description: 'Bad aus einer Hand in Aßlar & Wetzlar: Ein Ansprechpartner, verbindlicher Festpreis & Termintreue. Wir koordinieren alle Gewerke schlüsselfertig.',
+    title: 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung',
+    description: 'Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!',
     path: '/bad/bad-aus-einer-hand'
 });
 

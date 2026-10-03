@@ -19,8 +19,8 @@ import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Badfliesen & XXL-Großformate Aßlar – Fliesen Tezgel',
-    description: 'Fachgerechte Fliesenverlegung im Badezimmer: Großformatige Fliesen, Feinsteinzeug, Mosaike und Naturstein in Aßlar, Wetzlar & Lahn-Dill.',
+    title: 'Badfliesen & XXL-Großformate | Fliesenleger Tezgel',
+    description: 'Badfliesen & XXL-Großformate fugenarm verlegen in Wetzlar & Aßlar: Feinsteinzeug, Mosaik & DIN 18534 Abdichtung. Jetzt unverbindlich beraten lassen!',
     path: '/bad/fliesen'
 });
 

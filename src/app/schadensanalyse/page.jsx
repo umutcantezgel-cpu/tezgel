@@ -118,9 +118,9 @@ const breadcrumbs = [
 const schadensGraph = buildGraph([
     buildWebPageNode({
         url: PAGE_URL,
-        name: 'Schadensanalyse für Fliesen, Fugen und Abdichtung',
+        name: 'Fliesenschäden analysieren: Risse & Feuchte | Tezgel',
         description:
-            'Ursachen von gerissenen Fliesen, Hohlstellen, feuchten Fugen und Ausblühungen vor Ort klären – als Teil des kostenfreien Vor-Ort-Aufmaßes.',
+            'Gerissene Fliesen, Hohlstellen oder feuchte Fugen? Kostenfreie Schadensanalyse vor Ort in Wetzlar & Aßlar. Fliesenleger-Fachbetrieb Tezgel berät Sie!',
         breadcrumbItems: breadcrumbs
     }),
     buildBreadcrumbNode(breadcrumbs, PAGE_URL),

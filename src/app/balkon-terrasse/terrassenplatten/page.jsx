@@ -21,9 +21,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Terrassenplatten: Keramik oder Naturstein im Freien',
+    title: 'Terrassenplatten verlegen lassen | Fliesen Tezgel',
     description:
-        '2-cm-Feinsteinzeug oder Naturstein? Frostbeständigkeit, Rutschhemmung, Formate, Optiken und Pflege von Terrassenplatten für Balkon und Terrasse im Überblick.',
+        'Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!',
     path: '/balkon-terrasse/terrassenplatten'
 });
 

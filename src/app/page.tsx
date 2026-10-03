@@ -62,14 +62,16 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string }> 
 
 export const metadata: Metadata = {
     title: {
-        absolute: 'Fliesenverlegung Tezgel · Fachbetrieb Mittelhessen'
+        absolute: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel'
     },
-    description: 'Ihr Fachbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Mittelhessen & ganz Hessen.',
+    description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     alternates: {
         canonical: 'https://www.tezgel.de'
     },
     openGraph: {
-        url: 'https://www.tezgel.de'
+        url: 'https://www.tezgel.de',
+        title: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
+        description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     }
 };
 
@@ -173,19 +175,9 @@ export default function HomePage() {
 
             {/* 1. HERO */}
             <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-                {/* Real Craftsmanship Background Image with Soft Translucent Ceramic Wash */}
-                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-                    <Image
-                        src="/images/bad/bad-beleuchtete-nischen.webp"
-                        alt="Badsanierung mit beleuchteten Wandnischen und Großformatkeramik von Fliesenverlegung Tezgel"
-                        fill
-                        priority
-                        quality={60}
-                        sizes="(max-width: 768px) 100vw, 100vw"
-                        className="object-cover object-center scale-105 opacity-[0.20] lg:opacity-[0.25]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/95 to-[#FAFAFA]/85 lg:via-[#FAFAFA]/90 lg:to-[#FAFAFA]/70" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFA] via-transparent to-transparent" />
+                {/* Subtle Ambient Craftsmanship Texture & Soft Glow Wash */}
+                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
+                    <div className="absolute inset-0 bg-gradient-to-b from-orange-500/[0.03] via-transparent to-transparent" />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -20,9 +20,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Untergrund ausgleichen & Gefälle vor dem Fliesen',
+    title: 'Untergrund ausgleichen & Gefälle herstellen | Tezgel',
     description:
-        'Unebene Böden und Wände vorbereiten: Ebenheit nach DIN 18202 messen, spachteln und nivellieren, erhöhte Ebenheit für XXL und Gefälle zu Ablauf oder Duschrinne.',
+        'Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen.',
     path: '/untergrund-abdichtung/ausgleich-gefaelle'
 });
 

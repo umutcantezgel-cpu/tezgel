@@ -5,8 +5,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Bad-Projektcheck: Badsanierung prüfen – Fachbetrieb Tezgel',
-    description: 'Badgröße, Umfang & Wünsche in 2 Minuten erfassen – für Ihr Festpreisangebot nach kostenfreiem Vor-Ort-Aufmaß in Aßlar, Wetzlar & Lahn-Dill.',
+    title: 'Bad-Projektcheck: Badsanierung prüfen | Tezgel Wetzlar',
+    description: 'Bad-Projektcheck in 2 Minuten: Kostenfreie Machbarkeitsprüfung & Festpreisangebot für Ihre Badsanierung in Wetzlar & Aßlar. Jetzt online starten!',
     path: '/bad/projekt-check'
 });
 

@@ -18,9 +18,9 @@ import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesen auf Fußbodenheizung richtig verlegen',
+    title: 'Fliesen auf Fußbodenheizung verlegen | Ratgeber Tezgel',
     description:
-        'Warum Fliesen und Fußbodenheizung gut zusammenpassen und worauf es ankommt: Belegreife des Heizestrichs, verformbarer Kleber, Rand- und Bewegungsfugen.',
+        'Fliesen auf Fußbodenheizung fachgerecht verlegen: Belegreife des Heizestrichs, verformbare Kleber & normgerechte Dehnungsfugen. Ratgeber vom Fachbetrieb Tezgel.',
     path: '/fliesen/auf-fussbodenheizung'
 });
 

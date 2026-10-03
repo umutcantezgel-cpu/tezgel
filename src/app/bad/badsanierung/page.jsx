@@ -14,8 +14,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Badsanierung & Komplettbäder Aßlar – Fachbetrieb Tezgel',
-    description: 'Badsanierung in Aßlar & Wetzlar: Komplettbad aus einer Hand mit Festpreisgarantie, staubarmer Ausführung & verbindlichem Bauzeitenplan.',
+    title: 'Badsanierung Wetzlar & Aßlar | Komplettbäder Tezgel',
+    description: 'Komplette Badsanierung in Wetzlar & Aßlar: Demontage bis Fuge, Walk-In Dusche, Großformate & Verbundabdichtung. Festpreisangebot vom Fachbetrieb Tezgel!',
     path: '/bad/badsanierung'
 });
 

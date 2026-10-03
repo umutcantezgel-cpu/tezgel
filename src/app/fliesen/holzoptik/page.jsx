@@ -19,9 +19,9 @@ import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesen in Holzoptik: Formate, Wirkung & Einsatz',
+    title: 'Fliesen in Holzoptik verlegen | Fliesenleger Tezgel',
     description:
-        'Holzoptik-Fliesen aus Feinsteinzeug: Dielenformate, Farbvariation und Oberflächen, Einsatz auf Fußbodenheizung und draußen, Pflege im Vergleich zu Echtholz.',
+        'Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!',
     path: '/fliesen/holzoptik'
 });
 

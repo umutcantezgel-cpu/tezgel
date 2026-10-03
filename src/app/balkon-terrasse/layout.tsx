@@ -11,9 +11,9 @@ const breadcrumbs = [
 const balkonSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Balkon- & Terrassensanierung | Fliesenverlegung Tezgel',
+    name: 'Balkon & Terrasse fliesen Wetzlar | Fachbetrieb Tezgel',
     description:
-      'Balkon- und Terrassensanierung vom Fachbetrieb in Aßlar & Wetzlar: Feinsteinzeug-Terrassenplatten auf Stelzlagern, Gefälleausgleich und Abdichtung.',
+      'Balkon & Terrasse fliesen lassen in Wetzlar & Aßlar: frostsichere Keramik, Stelzlager & Naturstein. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

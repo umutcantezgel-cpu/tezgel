@@ -21,9 +21,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Estrich-Belegreife prüfen: CM-Messung vor dem Fliesen',
+    title: 'Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel',
     description:
-        'Wann ist der Estrich belegreif? CM-Messung, Darr-Methode und KRL im Vergleich, Richtwerte je Estrichart – und warum zu früh verlegte Fliesen reißen.',
+        'Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen.',
     path: '/untergrund-abdichtung/estrich-belegreife'
 });
 

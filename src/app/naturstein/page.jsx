@@ -26,9 +26,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-    title: 'Naturstein & Granit verlegen lassen in Mittelhessen',
+    title: 'Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel',
     description:
-        'Granit, Marmor, Travertin oder Schiefer: Natursteinböden und Wandbeläge fachgerecht verlegt – mit passendem Kleber, Imprägnierung und ehrlicher Beratung.',
+        'Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort kostenfrei!',
     path: '/naturstein'
 });
 

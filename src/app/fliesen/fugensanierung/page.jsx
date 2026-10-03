@@ -21,9 +21,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fugen & Silikonfugen erneuern: Fugensanierung',
+    title: 'Fugensanierung & Silikonfugen erneuern | Tezgel',
     description:
-        'Schimmelige Silikonfugen oder bröselnde Zementfugen? Warum elastische Fugen Wartungsfugen sind, wie der Austausch abläuft und wann eine Sanierung nicht reicht.',
+        'Fugensanierung in Wetzlar & Aßlar: Schimmelige Silikonfugen & bröselnde Zementfugen fachgerecht austauschen und dauerhaft abdichten. Jetzt anfragen!',
     path: '/fliesen/fugensanierung'
 });
 

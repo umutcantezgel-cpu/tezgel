@@ -20,9 +20,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Verbundabdichtung nach DIN 18534 für Bad & Dusche',
+    title: 'DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel',
     description:
-        'DIN 18534 verständlich erklärt: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder, Manschetten an Rohrdurchführungen und Abläufen – so bleibt Ihr Bad dicht.',
+        'DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel.',
     path: '/untergrund-abdichtung/din-18534'
 });
 

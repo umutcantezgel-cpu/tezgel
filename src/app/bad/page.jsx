@@ -21,8 +21,8 @@ import { FinalCTA } from '@/components/ui/FinalCTA';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Badsanierung Aßlar & Wetzlar · Fachbetrieb Tezgel',
-    description: 'Fachbetrieb für schlüsselfertige Badsanierung, barrierefreie Bäder nach DIN 18040-2 & moderne Großformatfliesen in Aßlar, Wetzlar und Umgebung.',
+    title: 'Badsanierung Wetzlar & Aßlar | Fachbetrieb Tezgel',
+    description: 'Schlüsselfertige Badsanierung in Wetzlar & Aßlar: barrierefreie Walk-In Duschen, XXL-Fliesen & DIN 18534 Abdichtung. Jetzt Festpreisangebot anfragen!',
     path: '/bad'
 });
 

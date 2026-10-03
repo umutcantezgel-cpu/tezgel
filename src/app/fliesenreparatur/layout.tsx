@@ -11,9 +11,9 @@ const breadcrumbs = [
 const reparaturSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Fliesenreparatur & Fliesen-Austausch | Fliesenverlegung Tezgel',
+    name: 'Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel',
     description:
-      'Professionelle Fliesenreparatur in Aßlar & Wetzlar: Austausch gerissener Fliesen, Verschließen von Bohrlöchern und fugenlose Nachbesserung.',
+      'Professionelle Fliesenreparatur in Wetzlar & Aßlar: einzelne Fliesen austauschen, Bohrlöcher verschließen & Fugen sanieren. Schneller Vor-Ort-Service!',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

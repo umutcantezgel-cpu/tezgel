@@ -11,9 +11,9 @@ const breadcrumbs = [
 const natursteinSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Natursteinverlegung & Naturstein-Ratgeber | Fliesenverlegung Tezgel',
+    name: 'Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel',
     description:
-      'Fachbetrieb für Naturstein in Aßlar & Wetzlar: Granit, Marmor, Kalkstein, Travertin und Schiefer fachgerecht verlegt und dauerhaft veredelt.',
+      'Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort kostenfrei!',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

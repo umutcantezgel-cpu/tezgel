@@ -22,9 +22,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Terrassenplatten auf Stelzlagern verlegen lassen',
+    title: 'Terrassenplatten auf Stelzlagern verlegen | Tezgel',
     description:
-        'Stelzlager für Balkon und Dachterrasse: 2-cm-Feinsteinzeug auf höhenverstellbaren Lagern, offene Fugen, Höhenausgleich und abnehmbare Platten zur Kontrolle.',
+        'Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!',
     path: '/balkon-terrasse/stelzlager'
 });
 

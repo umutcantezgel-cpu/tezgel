@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Cookie-Richtlinie (EU) – Fliesenverlegung Tezgel',
+    title: 'Cookie-Richtlinie (EU) | Fliesenverlegung Tezgel',
     description: 'Informationen über die Verwendung von Cookies und ähnlichen Technologien auf der Website der Fliesenverlegung Tezgel in Hessen.',
     path: '/cookie-richtlinie',
     robots: { index: false, follow: true },

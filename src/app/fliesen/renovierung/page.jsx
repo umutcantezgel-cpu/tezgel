@@ -19,9 +19,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 
 export const metadata = createMetadata({
-    title: 'Fliesenboden im Bestand erneuern: Ablauf & Planung',
+    title: 'Fliesen Renovierung: Alte Fliesen erneuern | Tezgel',
     description:
-        'Wohnraum, Küche oder Flur im bewohnten Haus neu fliesen: wann es sich lohnt, der Ablauf in vier Schritten und wie Etappen, Räumung und Zugänge geplant werden.',
+        'Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen.',
     path: '/fliesen/renovierung'
 });
 

@@ -6,8 +6,8 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Materialien & Systeme, mit denen wir arbeiten',
-    description: `Verlegewerkstoffe, Abdichtungssysteme und Fliesen, mit denen ${COMPANY_DATA.legalName} arbeitet: ${partnerBrands.map((brand) => brand.name).join(', ')}.`,
+    title: 'Materialpartner & Verlegesysteme | Tezgel Fachbetrieb',
+    description: 'Hochwertige Verlegewerkstoffe & Fliesenmarken bei Tezgel: Schlüter-Systems, Ardex, Sopro, PCI, Marazzi & Villeroy & Boch. Höchste Qualität für Ihr Projekt!',
     path: '/partner'
 });
 

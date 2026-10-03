@@ -22,7 +22,7 @@ import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
     title: 'Fliesenberatung in Gießen | Fliesenverlegung Tezgel',
-    description: 'Persönliche Fliesenberatung für Gießen: Formate, Oberflächen & Fugenbild gemeinsam mit Fachbetriebsleiter Deniz Tezgel abstimmen.',
+    description: 'Persönliche Fliesenberatung für Gießen: Formate, Oberflächen & Fugenbild abstimmen mit Fachbetriebsleiter Deniz Tezgel. Jetzt Termin vereinbaren!',
     path: '/ausstellung/giessen'
 });
 

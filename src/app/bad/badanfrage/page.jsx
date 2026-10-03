@@ -5,8 +5,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Badanfrage: Angebot für Badsanierung – Fachbetrieb Tezgel',
-    description: 'Stellen Sie in wenigen Schritten Ihre detaillierte Anfrage für eine Badsanierung in Aßlar, Wetzlar & Lahn-Dill. Kostenlose Prüfung & Vor-Ort-Beratung.',
+    title: 'Badsanierung Angebot anfordern | Tezgel Wetzlar',
+    description: 'Unverbindliche Badanfrage an Fliesenverlegung Tezgel: Beschreiben Sie Ihr Projekt für ein individuelles Festpreisangebot in Wetzlar & Aßlar. Jetzt anfragen!',
     path: '/bad/badanfrage'
 });
 

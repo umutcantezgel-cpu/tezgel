@@ -17,9 +17,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 
 export const metadata = createMetadata({
-    title: 'Flur und Diele fliesen lassen: Tipps vom Fachbetrieb',
+    title: 'Flur & Diele fliesen lassen | Fliesenleger Tezgel',
     description:
-        'Flur und Eingangsbereich fliesen: strapazierfähige Formate, Verlegerichtung im schmalen Flur, Schmutzfangzone, Rutschhemmung und Übergänge zu anderen Belägen.',
+        'Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!',
     path: '/fliesen/flur-diele'
 });
 

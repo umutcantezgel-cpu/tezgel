@@ -12,8 +12,8 @@ import LocationContact from '@/components/locations/LocationContact';
 import FinalCTA from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-  title: 'Standorte & Einsatzgebiete in Mittelhessen',
-  description: 'Fliesenverlegung, Badsanierung & DIN 18534 Abdichtung vom Fachbetrieb aus Aßlar: Ihr Fliesenleger für Wetzlar, Gießen, Herborn & den Lahn-Dill-Kreis.',
+  title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
+  description: 'Fliesenleger-Fachbetrieb Tezgel aus Aßlar: Fliesenverlegung & Badsanierung in Wetzlar, Gießen, Herborn & Lahn-Dill-Kreis. Jetzt Vor-Ort-Aufmaß anfragen!',
   path: '/standorte',
 });
 

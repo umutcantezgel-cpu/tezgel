@@ -20,9 +20,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesen auf Holzboden & Rissen: Entkopplung erklärt',
+    title: 'Fliesen auf Holzboden verlegen: Entkopplung | Tezgel',
     description:
-        'Fliesen auf Holzdielen, Mischuntergründen oder gerissenem Estrich: wie Entkopplung und Rissverharzung helfen, wo ihre Grenzen liegen und was vorab geprüft wird.',
+        'Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel.',
     path: '/untergrund-abdichtung/entkopplung'
 });
 

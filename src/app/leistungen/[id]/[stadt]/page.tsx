@@ -56,7 +56,7 @@ export async function generateMetadata({
     aussen: 'Balkon- & Terrassensanierung',
   };
   const displayName = serviceCityNames[service.id] || service.name;
-  const title = `${displayName} in ${city.name} · Tezgel`;
+  const title = `${displayName} in ${city.name} | Fachbetrieb Tezgel`;
   
   const description = `${service.name} in ${city.name}: Fachgerechte Verlegung & Sanierung. ${distanceLabel(city)}. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
 

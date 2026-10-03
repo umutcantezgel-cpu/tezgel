@@ -13,8 +13,8 @@ import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Badplaner: Bad online vorplanen – Fachbetrieb Tezgel',
-    description: 'Badplanung leicht gemacht: Schritt-für-Schritt mit Tipps zu Maßen, Fliesen & Licht – mit Vor-Ort-Beratung & Aufmaß in Aßlar & Wetzlar.',
+    title: 'Badplaner: Bad online planen | Fliesenverlegung Tezgel',
+    description: 'Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!',
     path: '/bad/badplaner'
 });
 

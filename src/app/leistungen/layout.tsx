@@ -4,8 +4,8 @@ import { SERVICES } from '@/config/services';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Leistungen: Fliesen, Bad, Terrasse & Abdichtung',
-  description: 'Fachbetrieb für Fliesenverlegung in Aßlar & Wetzlar: Badsanierung, XXL-Großformate, Balkone, Terrassen sowie DIN 18534 Verbundabdichtung.',
+  title: 'Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel',
+  description: 'Alle Fliesenleger-Leistungen von Tezgel in Wetzlar & Aßlar: Badsanierung, XXL-Großformate, Terrassen, Naturstein & Abdichtung. Jetzt Festpreis anfragen!',
   path: '/leistungen',
 });
 

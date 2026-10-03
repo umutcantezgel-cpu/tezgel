@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
     const bath = MUSTERBAEDER.find((b) => b.slug === slug);
     if (!bath) {
         return createMetadata({
-            title: 'Musterbäder & Badkonzepte – Fliesenverlegung Tezgel',
+            title: 'Musterbäder & Badkonzepte | Fliesenverlegung Tezgel',
             description: 'Musterbäder und Badkonzepte von Fachbetrieb Tezgel in Aßlar, Wetzlar und ganz Mittelhessen.',
             path: '/bad/musterbaeder'
         });

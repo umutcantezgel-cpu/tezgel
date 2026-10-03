@@ -1,11 +1,10 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildServiceNode, buildFaqNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
-import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Kostenlose Fachberatung vereinbaren',
-  description: `Kostenlose Erstberatung & Vor-Ort-Aufmaß von ${COMPANY_DATA.legalName}: Badsanierung, XXL-Fliesen, Wohnbereiche und Terrassen in Aßlar, Wetzlar & Mittelhessen – persönlich und unverbindlich.`,
+  title: 'Kostenlose Fliesenberatung Wetzlar | Fachbetrieb Tezgel',
+  description: 'Kostenlose Fliesenberatung & Aufmaß: Badsanierung, XXL-Fliesen & Terrassen in Wetzlar & Aßlar. Fliesenleger Tezgel berät persönlich und unverbindlich!',
   path: '/beratung',
 });
 

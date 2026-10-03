@@ -4,8 +4,8 @@ import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'FAQ – Häufige Fragen zu Fliesen & Badsanierung',
-  description: `Antworten zu XXL-Fliesen, Badsanierung, DIN 18534 Abdichtung, Balkon & Terrasse, Pflegekassen-Zuschuss und Festpreisangebot – vom Fliesen-Fachbetrieb ${COMPANY_DATA.legalName} aus ${COMPANY_DATA.headquarters.city}.`,
+  title: 'FAQ: Häufige Fragen zu Fliesen & Bad | Tezgel',
+  description: 'Häufige Fragen zu Fliesenverlegung, Badsanierung, Preisen & DIN 18534 Abdichtung beantwortet vom Fliesenleger-Fachbetrieb Tezgel in Aßlar & Wetzlar.',
   path: '/faq',
 });
 

@@ -11,9 +11,9 @@ const breadcrumbs = [
 const fliesenSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Fliesen-Ratgeber & Verlegehandwerk | Fliesenverlegung Tezgel',
+    name: 'Fliesenverlegung & Ratgeber | Fliesenleger Tezgel',
     description:
-      'Ratgeber und Fachwissen zur Fliesenverlegung: Großformate, Holzoptik, Küchenfliesen, Fußbodenheizung und Verlegetechniken vom Fachbetrieb aus Aßlar.',
+      'Ratgeber & Fachwissen zur Fliesenverlegung: Großformate, Feinsteinzeug, Holzoptik & Verlegetechniken vom Fliesenleger-Fachbetrieb Tezgel in Hessen.',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

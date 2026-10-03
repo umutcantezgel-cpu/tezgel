@@ -8,8 +8,8 @@ import QualityPromise from '@/components/sections/QualityPromise';
 const APPRENTICESHIP_TITLE = 'Fliesen-, Platten- und Mosaikleger (m/w/d)';
 
 export const metadata = createMetadata({
-    title: 'Ausbildung Fliesen-, Platten- und Mosaikleger (m/w/d)',
-    description: `Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d) bei ${COMPANY_DATA.legalName} in ${COMPANY_DATA.headquarters.city} – eingetragener Fachbetrieb der ${COMPANY_DATA.authority.shortName}. Jetzt per E-Mail, Telefon oder WhatsApp bewerben.`,
+    title: 'Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel',
+    description: 'Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!',
     path: '/karriere/ausbildung'
 });
 

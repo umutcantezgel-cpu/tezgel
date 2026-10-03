@@ -19,9 +19,9 @@ import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesenarten: Feinsteinzeug, Steinzeug & Steingut',
+    title: 'Fliesenarten im Vergleich: Feinsteinzeug & Co. | Tezgel',
     description:
-        'Welche Fliese für welchen Raum? Feinsteinzeug, Steinzeug und Steingut im Vergleich: Wasseraufnahme, Frostsicherheit, Abriebklasse und Einsatzbereiche.',
+        'Fliesenarten im Vergleich: Feinsteinzeug, Steinzeug & Steingut. Wasseraufnahme, Frostsicherheit & Abriebklassen erklärt vom Fachbetrieb Tezgel aus Aßlar.',
     path: '/fliesen/fliesenarten'
 });
 

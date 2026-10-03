@@ -19,9 +19,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Innentreppe fliesen lassen: Stufen, Kanten, Sockel',
+    title: 'Innentreppe fliesen lassen | Stufen & Kanten · Tezgel',
     description:
-        'Betontreppe im Haus fliesen: Tritt- und Setzstufen aus Feinsteinzeug oder Naturstein, Gehrungskanten oder Stufenprofile im Vergleich, Treppensockel und Podeste.',
+        'Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!',
     path: '/treppen/innentreppe'
 });
 

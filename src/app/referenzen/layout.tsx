@@ -3,8 +3,8 @@ import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } f
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Referenzen & Kundenbewertungen',
-  description: 'Kundenbewertungen & Referenzen von Fliesenverlegung Tezgel zu Bädern, Terrassen, Treppen und Großformaten in Aßlar, Wetzlar und Mittelhessen.',
+  title: 'Referenzen & Bewertungen | Fliesenleger Tezgel ★ 5,0',
+  description: 'Kundenbewertungen & Referenzen von Fliesenleger Tezgel: Bäder, Terrassen, Treppen & Großformate in Wetzlar, Aßlar & Mittelhessen. 5,0 Google-Bewertung!',
   path: '/referenzen',
 });
 

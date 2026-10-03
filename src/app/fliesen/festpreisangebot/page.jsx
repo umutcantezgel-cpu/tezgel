@@ -24,9 +24,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 
 export const metadata = createMetadata({
-    title: 'Fliesenleger-Angebot: Kostenfaktoren & Festpreis',
+    title: 'Fliesenleger Festpreisangebot | Fachbetrieb Tezgel',
     description:
-        'Wie ein Festpreisangebot für Fliesenarbeiten entsteht: Aufmaß, Positionen, Format, Untergrund und Rückbau transparent erklärt, damit Sie Angebote vergleichen.',
+        'Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     path: '/fliesen/festpreisangebot'
 });
 

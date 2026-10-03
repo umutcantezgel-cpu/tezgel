@@ -18,9 +18,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 
 export const metadata = createMetadata({
-    title: 'Fliesenleger für den Neubau: Ablauf & Terminplanung',
+    title: 'Fliesen im Neubau verlegen lassen | Fliesen Tezgel',
     description:
-        'Fliesen im Neubau: wann der Fliesenleger im Bauablauf dran ist und wie Belegreife, Bemusterung und Schnittstellen zu Estrich und Installation geklärt werden.',
+        'Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!',
     path: '/fliesen/neubau'
 });
 

@@ -11,9 +11,9 @@ const breadcrumbs = [
 const badSchema = buildGraph([
   buildWebPageNode({
     url: pageUrl,
-    name: 'Badsanierung & Badmodernisierung | Fliesenverlegung Tezgel',
+    name: 'Badsanierung Wetzlar & Aßlar | Fachbetrieb Tezgel',
     description:
-      'Schlüsselfertige Badsanierung, barrierefreie Bäder nach DIN 18040-2 und bodengleiche Walk-In Duschen vom Fachbetrieb in Aßlar & Wetzlar.',
+      'Schlüsselfertige Badsanierung in Wetzlar & Aßlar: barrierefreie Walk-In Duschen, XXL-Fliesen & DIN 18534 Abdichtung. Jetzt Festpreisangebot anfragen!',
     breadcrumbItems: breadcrumbs,
   }),
   buildBreadcrumbNode(breadcrumbs, pageUrl),

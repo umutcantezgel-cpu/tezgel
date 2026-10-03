@@ -6,6 +6,12 @@ const SITE_NAME = 'Fliesenverlegung Tezgel';
 
 function sanitizeTitle(raw: string): string {
   const trimmed = raw.trim().replace(/\s+/g, ' ');
+
+  // If already intentionally crafted within the 45-58 chars budget and contains brand, keep as is
+  if (/Tezgel/i.test(trimmed) && trimmed.length >= 45 && trimmed.length <= 58) {
+    return trimmed;
+  }
+
   const base = trimmed
     .replace(/\s*\|\s*Fliesenverlegung Tezgel/gi, '')
     .replace(/\s*–\s*Referenzen Fliesenverlegung Tezgel/gi, '')

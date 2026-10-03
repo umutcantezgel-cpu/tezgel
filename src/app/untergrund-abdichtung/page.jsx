@@ -22,9 +22,9 @@ import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 
 export const metadata = createMetadata({
-    title: 'Untergrund & Abdichtung für Fliesen: Fachwissen',
+    title: 'Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel',
     description:
-        'Tragfähig, eben, trocken, dicht: Wie der HWK-Fachbetrieb Untergründe für Fliesen prüft und vorbereitet – von der DIN-18534-Abdichtung bis zur Entkopplung.',
+        'Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!',
     path: '/untergrund-abdichtung'
 });
 

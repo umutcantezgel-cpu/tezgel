@@ -20,9 +20,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesen auf Fliesen verlegen: Wann Überfliesen geht',
+    title: 'Fliesen auf Fliesen verlegen: Wann es geht | Tezgel',
     description:
-        'Überfliesen spart Rückbau und Staub – wenn der Altbelag fest haftet. Prüfkriterien, Haftbrücke, Aufbauhöhen an Türen und wann der Rückbau besser ist.',
+        'Fliesen auf Fliesen verlegen (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
     path: '/untergrund-abdichtung/fliesen-auf-fliesen'
 });
 

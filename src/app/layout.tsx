@@ -31,10 +31,10 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Fliesenverlegung Tezgel | Fachbetrieb für exklusive Fliesen & Badsanierung Aßlar & Wetzlar',
+    default: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
     template: '%s | Fliesenverlegung Tezgel'
   },
-  description: 'Ihr Fachbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Feinsteinzeug, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+  description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
   keywords: [
     'Fliesenverlegung Tezgel',
     'Deniz Tezgel',
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    title: 'Fliesenverlegung Tezgel | Fachbetrieb Aßlar & Wetzlar',
-    description: 'Ihr Fachbetrieb für exklusive Fliesenverlegung, fugenarme Großformate, Badsanierung, Terrassen & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+    title: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
+    description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     siteName: 'Fliesenverlegung Tezgel',
   },
   robots: {

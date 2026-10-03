@@ -19,9 +19,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Treppenhaus sanieren: Fliesen & Naturstein im MFH',
+    title: 'Treppenhaus sanieren: Fliesen & Naturstein | Tezgel',
     description:
-        'Treppenhaus im Mehrfamilienhaus neu belegen: Planung mit Eigentümern oder Hausverwaltung, abschnittsweise Arbeiten im bewohnten Haus, trittsichere Beläge.',
+        'Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb.',
     path: '/treppen/treppenhaus'
 });
 

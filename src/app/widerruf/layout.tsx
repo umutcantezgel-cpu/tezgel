@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = createMetadata({
-  title: 'Widerrufsbelehrung & Musterformular',
+  title: 'Widerrufsbelehrung & Formular | Fliesenverlegung Tezgel',
   description: `Widerrufsbelehrung und Muster-Widerrufsformular für Verbraucher bei Beauftragung von Leistungen der ${COMPANY_DATA.legalName}.`,
   path: '/widerruf',
   robots: { index: false, follow: true },

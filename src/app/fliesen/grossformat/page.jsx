@@ -19,9 +19,9 @@ import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Großformatfliesen & XXL-Fliesen fugenarm verlegen',
+    title: 'Großformatfliesen verlegen lassen | Fliesen Tezgel',
     description:
-        'XXL-Fliesen fugenarm verlegt: Formatklassen im Vergleich, Anforderungen an den Untergrund, vollflächige Bettung und sicheres Handling vom Fachbetrieb.',
+        'XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!',
     path: '/fliesen/grossformat'
 });
 

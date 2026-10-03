@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Erklärung zur Barrierefreiheit (BFSG & EN 301 549)',
+    title: 'Erklärung zur Barrierefreiheit | Fliesen Tezgel',
     description: 'Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.',
     path: '/barrierefreiheit'
 });

@@ -20,9 +20,9 @@ import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Küche fliesen: Küchenboden & Küchenrückwand',
+    title: 'Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel',
     description:
-        'Fliesen für die Küche vom Fachbetrieb: fleckunempfindliche Böden, Küchenrückwand als Fliesenspiegel oder Großformat und fettbeständige Fugen.',
+        'Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!',
     path: '/fliesen/kueche'
 });
 

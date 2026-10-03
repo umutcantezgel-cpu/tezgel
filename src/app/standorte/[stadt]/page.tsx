@@ -56,8 +56,8 @@ export async function generateMetadata({
   if (!city) return {};
 
   const path = `/standorte/${city.slug}`;
-  const title = `Fliesenverlegung in ${city.name} · Fachbetrieb Tezgel`;
-  const description = `Fliesenleger & Badsanierung in ${city.name}: Fachbetrieb für Komplettbäder, XXL-Fliesen & DIN 18534 Abdichtung. ${distanceSentence(city)}`;
+  const title = `Fliesenleger & Bad in ${city.name} | Tezgel Fachbetrieb`;
+  const description = `Ihr Fliesenleger in ${city.name}: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
 
   return createMetadata({
     title,

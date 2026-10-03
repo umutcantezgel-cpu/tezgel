@@ -24,6 +24,12 @@ export function RotatingText({
   useEffect(() => {
     if (texts.length <= 1) return;
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) return;
+
     const timer = setInterval(() => {
       setFadeState('exit');
       setTimeout(() => {
