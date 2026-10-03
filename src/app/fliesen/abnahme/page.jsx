@@ -122,9 +122,7 @@ export default function AbnahmePage() {
                         <span className="text-ceramic-gradient">Qualität erkennen und prüfen</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Gute Fliesenarbeit erkennt man nicht nur am ersten Eindruck. Diese Seite zeigt Ihnen, worauf Sie bei der
-                        Abnahme achten können, welche Toleranzen als Orientierung dienen und welche Unterlagen Sie bei der
-                        Übergabe erhalten sollten – inklusive Checkliste zum Ausdrucken.
+                        Abnahme von Fliesenarbeiten: Handwerkliche Qualität erkennen und prüfen nach anerkannten Regeln der Technik und DIN 18202. Erfahren Sie, worauf Bauherren bei Ebenheit, Fugenbild, Hohlraumfreiheit und Übergabe achten sollten – inklusive praktischer Prüf-Checkliste.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

@@ -130,8 +130,7 @@ export default function BalkonsanierungPage() {
                         <span className="text-ceramic-gradient">vom undichten Altbelag zur dauerhaften Lösung</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Ausblühungen, Frostschäden und lose Fliesen sind fast immer Symptome eines Wasserproblems. Eine neue Fliese
-                        darüber hilft nicht – dauerhaft wird es erst, wenn Gefälle, Abdichtung und Randabschluss stimmen.
+                        Balkon sanieren: Vom undichten Altbelag zur dauerhaften Lösung mit Gefälle, normgerechter Verbundabdichtung und frostsicheren Stelzlagern. Ausblühungen, Abplatzungen und Feuchteschäden packen wir an der Wurzel an, statt Schadstellen nur oberflächlich zu überdecken.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

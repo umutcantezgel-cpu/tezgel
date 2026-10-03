@@ -81,7 +81,7 @@ const Beratung = () => {
                             vereinbaren
                         </h1>
                         <p className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                            Ob Badsanierung, XXL-Großformate, Wohnbereich oder Terrasse in Aßlar, Wetzlar und Umgebung – {COMPANY_DATA.owner.fullName} nimmt sich Zeit für Ihre Fragen und findet mit Ihnen die passende Lösung.
+                            Jetzt Ihre kostenlose Fachberatung vereinbaren: Ob Badsanierung, XXL-Großformate, Wohnbereich oder Terrasse in Aßlar, Wetzlar und Umgebung – {COMPANY_DATA.owner.fullName} nimmt sich Zeit für Ihre Fragen und findet mit Ihnen die passende Lösung.
                         </p>
                         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                             <a href="#booking" className="btn-primary w-full sm:w-auto">

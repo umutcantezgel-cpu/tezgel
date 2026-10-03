@@ -27,16 +27,6 @@ export default function ReviewCarousel({
   }, []);
 
   useEffect(() => {
-    // Defer initial layout measurements to idle time to eliminate forced dynamic reflows during page load
-    let idleId: number | undefined;
-    if (typeof window !== 'undefined') {
-      if ('requestIdleCallback' in window) {
-        idleId = (window as Window & { requestIdleCallback: (cb: () => void) => number }).requestIdleCallback(() => checkScroll());
-      } else {
-        const timer = setTimeout(checkScroll, 300);
-        idleId = timer as unknown as number;
-      }
-    }
     const el = scrollContainerRef.current;
     if (!el) return;
     el.addEventListener("scroll", checkScroll, { passive: true });
@@ -44,13 +34,6 @@ export default function ReviewCarousel({
     return () => {
       el.removeEventListener("scroll", checkScroll);
       window.removeEventListener("resize", checkScroll);
-      if (idleId && typeof window !== 'undefined') {
-        if ('cancelIdleCallback' in window) {
-          (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleId);
-        } else {
-          clearTimeout(idleId);
-        }
-      }
     };
   }, [checkScroll]);
 

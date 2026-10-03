@@ -122,9 +122,7 @@ export default function FliesenAufFliesenPage() {
                         <span className="text-ceramic-gradient">Den Altbelag richtig bewerten</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Überfliesen klingt verlockend: kein Abbruch, weniger Schmutz. Ob es in Ihrem Fall funktioniert, hängt vom
-                        Zustand des Altbelags, von den Aufbauhöhen und vom Raum ab. Die Entscheidung fällt erst nach der Prüfung vor
-                        Ort – hier sehen Sie, worauf wir dabei achten.
+                        Fliesen auf Fliesen oder Rückbau? Den Altbelag richtig bewerten und fundiert entscheiden: Überfliesen spart Zeit und Schmutz, erfordert aber einen rissfreien, tragfähigen Untergrund, ausreichende Aufbauhöhen und eine geprüfte Haftung.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

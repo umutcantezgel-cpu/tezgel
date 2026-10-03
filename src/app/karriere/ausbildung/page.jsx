@@ -39,7 +39,7 @@ export default function AusbildungPage() {
                         <span className="text-ceramic-gradient">Ausbildung</span> zum {APPRENTICESHIP_TITLE}
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Du möchtest ein Handwerk lernen, bei dem du am Ende des Tages siehst, was du geschaffen hast? Bewirb dich bei {COMPANY_DATA.legalName} in {headquarters.city} – ganz unkompliziert per E-Mail, Telefon oder WhatsApp.
+                        Starte deine Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d) bei {COMPANY_DATA.legalName} in {headquarters.city}: Du möchtest ein zukunftssicheres Handwerk lernen, bei dem du täglich siehst, was du geschaffen hast? Bewirb dich unkompliziert per E-Mail, Telefon oder WhatsApp.
                     </p>
                 </div>
             </div>

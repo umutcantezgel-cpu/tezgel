@@ -123,8 +123,7 @@ export default function TerrassenplattenPage() {
                         <span className="text-ceramic-gradient">Material, Stärke und Oberfläche</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Feinsteinzeug oder Naturstein, 2 cm oder übliche Stärke, glatt oder strukturiert: Welche Platte auf Ihren Balkon
-                        oder Ihre Terrasse gehört, hängt von Aufbau, Nutzung und Pflegewunsch ab.
+                        Terrassenplatten richtig wählen: Material, Stärke und Oberfläche passend zu Untergrund und Witterung abstimmen. Ob 2-cm-Feinsteinzeug oder Naturstein, rutschfest strukturiert oder matt – wir beraten Sie zu Aufbau, Haltbarkeit und Pflegeaufwand für Terrasse und Balkon.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

@@ -102,9 +102,7 @@ export default function EntkopplungPage() {
                         <span className="text-ceramic-gradient">kritische Untergründe sicher belegen</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Alte Dielenböden, gerissener Estrich, Übergänge zwischen verschiedenen Materialien: Nicht jeder Untergrund ist
-                        auf Anhieb für Fliesen geeignet. Mit Rissverharzung und einer Entkopplungsschicht lässt sich vieles lösen –
-                        wenn die Grundvoraussetzungen stimmen. Wo diese fehlen, sagen wir es ehrlich.
+                        Entkopplung, Holzdielen und Risse: Kritische Untergründe sicher belegen durch moderne Mattensysteme und Rissverharzung. Alte Dielenböden, gerissener Estrich und Mischuntergründe erfordern eine professionelle Scherriss-Entkopplung, um Fliesen dauerhaft schadensfrei zu verlegen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

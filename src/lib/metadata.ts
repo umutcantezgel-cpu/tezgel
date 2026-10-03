@@ -20,15 +20,18 @@ function sanitizeTitle(raw: string): string {
   if (/Tezgel/i.test(base)) {
     candidate = base;
   } else {
-    if (base.length + 9 <= 53) {
+    if (base.length + 9 <= 58) {
       candidate = `${base} · Tezgel`;
+    } else if (base.length <= 58 && base.length >= 45) {
+      candidate = base;
     } else {
-      let cut = base.slice(0, 44);
+      let cut = base.slice(0, 48);
       const lastSpace = cut.lastIndexOf(' ');
-      if (lastSpace > 25) {
+      if (lastSpace > 20) {
         cut = cut.slice(0, lastSpace);
       }
-      candidate = `${cut.trim()} · Tezgel`;
+      cut = cut.replace(/\s+(in|und|für|mit|bei|&|-|–)\s*$/gi, '').trim();
+      candidate = `${cut} · Tezgel`;
     }
   }
 
@@ -37,25 +40,34 @@ function sanitizeTitle(raw: string): string {
     if (candidate.includes(' · Tezgel')) {
       const parts = candidate.split(' · Tezgel');
       const prefix = parts[0];
-      if (prefix.length + 21 <= 53) {
+      if (prefix.length + 21 <= 58) {
         candidate = `${prefix} · Fachbetrieb Tezgel`;
-      } else if (prefix.length + 18 <= 53) {
-        candidate = `${prefix} – Fliesen Tezgel`;
+      } else if (prefix.length + 18 <= 58) {
+        candidate = `${prefix} · Fliesen Tezgel`;
+      } else if (prefix.length + 16 <= 58) {
+        candidate = `${prefix} – Tezgel Hessen`;
       }
-    }
-    if (candidate.length < 45 && candidate.length + 9 <= 53) {
-      candidate = `${candidate} – Hessen`;
-    } else if (candidate.length < 45 && candidate.length + 7 <= 53) {
-      candidate = `${candidate} Profi`;
+    } else {
+      if (candidate.length + 9 <= 58) {
+        candidate = `${candidate} · Tezgel`;
+      } else if (candidate.length + 7 <= 58) {
+        candidate = `${candidate} Hessen`;
+      }
     }
   }
 
-  // Ensure maximum length strictly <= 53 characters (< 550px)
-  if (candidate.length > 53) {
-    const cut = candidate.slice(0, 53);
+  // Guard: strictly clamp to <= 58 chars (SERP Budget < 580px)
+  if (candidate.length > 58) {
+    const cut = candidate.slice(0, 58);
     const lastSpace = cut.lastIndexOf(' ');
-    candidate = (lastSpace > 42 ? cut.slice(0, lastSpace) : cut).trim();
+    candidate = (lastSpace > 45 ? cut.slice(0, lastSpace) : cut).trim();
   }
+
+  // Final sanitation: never allow dangling prepositions before brand or title end
+  candidate = candidate
+    .replace(/\s+(in|und|für|mit|&)\s+·\s+Tezgel/gi, ' · Tezgel')
+    .replace(/\s+(in|und|für|mit|&)\s*$/gi, '')
+    .trim();
 
   return candidate;
 }

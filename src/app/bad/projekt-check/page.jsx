@@ -27,7 +27,7 @@ export default function BadProjektCheckPage() {
                         <span className="text-ceramic-gradient">in 2 Minuten vorbereiten</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                        Größe, Umfang, Ausstattungsniveau und Wünsche auswählen – wir erhalten eine klare Zusammenfassung Ihres
+                        Ihr neues Bad in 2 Minuten vorbereiten: Größe, Umfang, Ausstattungsniveau und Wünsche auswählen – wir erhalten eine klare Zusammenfassung Ihres
                         Vorhabens. Den verbindlichen Festpreis erstellen wir nach dem kostenfreien Vor-Ort-Aufmaß.
                     </p>
                 </header>

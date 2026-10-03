@@ -211,6 +211,7 @@ export default function AusstellungWetzlarPage() {
                             <li key={srv.id}>
                                 <Link
                                     href={`/leistungen/${srv.id}/${CITY_SLUG}`}
+                                    aria-label={`${srv.name} für Wetzlar im Detail`}
                                     className="group glass-surface rounded-tile-xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
                                 >
                                     <div>

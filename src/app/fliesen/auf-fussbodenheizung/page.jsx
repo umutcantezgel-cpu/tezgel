@@ -91,9 +91,7 @@ export default function FliesenAufFussbodenheizungPage() {
                         <span className="text-ceramic-gradient">Aufbau, Fugen und Kleberwahl</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Fliesen und Naturstein sind ein idealer Belag für Flächenheizungen – vorausgesetzt, Estrich, Kleber und
-                        Fugen sind auf die Temperaturwechsel abgestimmt. Wir verlegen auf Warmwasser-Fußbodenheizung und auf
-                        elektrischen Dünnbett-Systemen und stimmen uns dabei mit den anderen Gewerken ab.
+                        Fliesen auf Fußbodenheizung erfordern einen normgerechten Aufbau, spannungsarme Fugen und eine fundierte Kleberwahl: Fliesen und Naturstein sind der ideale Belag für Flächenheizungen – vorausgesetzt, Estrich, Kleber und Fugen sind exakt auf die Temperaturwechsel abgestimmt. Wir verlegen auf Warmwasser-Fußbodenheizung und auf elektrischen Dünnbett-Systemen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

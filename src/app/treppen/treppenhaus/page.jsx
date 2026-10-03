@@ -111,10 +111,7 @@ export default function TreppenhausPage() {
                         <span className="text-ceramic-gradient">neue Beläge im Mehrfamilienhaus</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Ausgetretene Stufen, gesprungene Platten, unpassend geflickte Podeste: Das Treppenhaus ist die
-                        Visitenkarte eines Hauses. Für Vermieter, Hausverwaltungen und Eigentümergemeinschaften belegen wir
-                        Stufen, Podeste und Eingangsbereiche neu – geplant in Abstimmung mit Ihnen und ausgeführt im
-                        bewohnten Haus.
+                        Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus für Trittsicherheit, Schallschutz und repräsentative Optik. Ausgetretene Stufen, gesprungene Platten und unpassend geflickte Podeste erneuern wir für Eigentümer und Hausverwaltungen termintreu und im bewohnten Bestand.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

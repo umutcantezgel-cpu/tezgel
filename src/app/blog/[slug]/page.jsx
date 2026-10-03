@@ -108,6 +108,10 @@ export default async function BlogPostPage({ params }) {
             {post.title}
           </h1>
 
+          <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto pt-1 leading-relaxed">
+            {post.title} – Fachwissen, Praxistipps und rechtliche Vorgaben für Bauherren und Modernisierer von Meisterbetrieb Tezgel.
+          </p>
+
           <div className="flex flex-wrap items-center justify-center gap-6 text-neutral-700 text-xs font-bold pt-2">
             {displayDate && (
               <>

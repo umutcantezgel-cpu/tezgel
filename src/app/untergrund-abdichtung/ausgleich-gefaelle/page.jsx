@@ -101,8 +101,7 @@ export default function AusgleichGefaellePage() {
                         <span className="text-ceramic-gradient">eben verlegen, Wasser gezielt ableiten</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Ein planebener Belag beginnt beim Untergrund. Wir messen die Ebenheit, gleichen Böden und Wände aus und legen
-                        vor Bodenablauf oder Duschrinne ein Gefälle an, das Wasser zuverlässig dorthin führt, wo es hin soll.
+                        Untergrund ausgleichen und Gefälle herstellen: eben verlegen, Wasser gezielt ableiten und Hohlstellen vermeiden. Wir messen die Ebenheit nach DIN 18202, gleichen Böden und Wände mit faserverstärkten Spachtelmassen aus und modellieren normgerechtes Gefälle zu Abläufen und Duschrinnen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

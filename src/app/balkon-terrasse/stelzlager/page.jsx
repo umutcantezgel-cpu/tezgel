@@ -120,8 +120,7 @@ export default function StelzlagerPage() {
                         <span className="text-ceramic-gradient">frostsicher, eben, reparaturfreundlich</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        2-cm-Feinsteinzeug auf höhenverstellbaren Lagern: Wasser läuft durch offene Fugen ab, die Abdichtung darunter
-                        bleibt geschützt und zugänglich. Die bewährte Lösung für Balkon, Loggia und Dachterrasse ohne Mörtelbett.
+                        Terrassenplatten auf Stelzlagern: frostsicher, eben, reparaturfreundlich und dauerhaft entwässert. 2-cm-Feinsteinzeug auf höhenverstellbaren Lagern lässt Regenwasser durch offene Fugen abfließen, schont die Abdichtung und vermeidet Frostabplatzungen ohne Mörtelbett.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

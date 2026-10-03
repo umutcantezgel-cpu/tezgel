@@ -108,8 +108,7 @@ export default function MarmorKalksteinPage() {
                         <span className="text-ceramic-gradient">edle Natursteine richtig verlegen</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Kaum ein Material wirkt so hochwertig wie Marmor. Weil diese Steine aus Kalk bestehen, brauchen sie aber eine
-                        durchdachte Verlegung und eine Pflege ohne Säure. Was Sie vor der Entscheidung wissen sollten.
+                        Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen mit verfärbungsfreiem Trasszement-Natursteinkleber und feuchtigkeitsregulierender Fuge. Kaum ein Belag wirkt so repräsentativ und elegant – erfordert jedoch fachgerechten Schutz und säurefreie Pflege.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

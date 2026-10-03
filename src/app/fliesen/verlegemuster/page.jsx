@@ -201,8 +201,7 @@ export default function VerlegemusterPage() {
                         <span className="text-ceramic-gradient">so wirkt Ihre Fliesenfläche</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Dieselbe Fliese kann ruhig, lebendig oder großzügig wirken – je nach Muster, Fugenbild und Abschluss.
-                        Wer das vor der Bestellung festlegt, bestimmt die Raumwirkung und kennt den Materialbedarf.
+                        Verlegemuster, Fugenbild und Abschlüsse: So wirkt Ihre Fliesenfläche im Raum und setzt architektonische Akzente. Dieselbe Fliese kann ruhig, lebendig oder großzügig wirken – je nach Muster, Fugenbreite und Abschlusskanten.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

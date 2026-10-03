@@ -99,9 +99,7 @@ export default function RenovierungPage() {
                         <span className="text-ceramic-gradient">Ablauf im bewohnten Haus</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Ein neuer Fliesenboden in Wohnraum, Küche oder Flur, während Sie im Haus wohnen, gelingt mit guter
-                        Vorbereitung. Hier lesen Sie, wann sich die Erneuerung lohnt, wie der Ablauf aussieht und was Sie
-                        selbst vorbereiten können.
+                        Fliesenboden im Bestand erneuern: Ein sauberer, strukturierter Ablauf im bewohnten Haus gelingt mit vorausschauender Planung und staubarmen Verfahren. Erfahren Sie, wann sich die Erneuerung lohnt und wie wir Wohnräume zügig neu belegen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

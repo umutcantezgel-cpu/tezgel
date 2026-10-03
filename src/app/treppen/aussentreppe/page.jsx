@@ -95,9 +95,7 @@ export default function AussentreppePage() {
                         <span className="text-ceramic-gradient">frostsicher und trittsicher belegt</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Eingangsstufen, Podeste und Gartentreppen müssen Regen, Frost und Streusalz aushalten. Ob ein Belag
-                        viele Winter übersteht, entscheidet sich weniger an der Platte als am Aufbau darunter: Gefälle,
-                        Abdichtung, hohlraumarme Verlegung und eine Stufenkante, an der Wasser abtropfen kann.
+                        Außentreppe und Hauseingang: frostsicher und trittsicher belegt mit normgerechtem Gefälle, Verbundabdichtung und rutschhemmender Keramik. Eingangsstufen, Podeste und Freitreppen trotzen Frost und Nässe nur mit durchdachtem Wasserablauf und profilierter Stufenkante.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

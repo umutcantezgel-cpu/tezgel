@@ -40,7 +40,7 @@ export default function DownloadsPage() {
                         Downloads &amp; <span className="text-ceramic-gradient">Infomaterial</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Unterlagen zu Ihrem Projekt senden wir Ihnen gern persönlich zu. Die wichtigsten Informationen rund um Fliesen und Badsanierung finden Sie direkt hier auf der Website.
+                        Nützliche Downloads &amp; Infomaterial zu Ihrem Projekt senden wir Ihnen gern persönlich zu. Die wichtigsten Informationen rund um Fliesen und Badsanierung finden Sie direkt hier auf der Website.
                     </p>
                 </div>
             </div>

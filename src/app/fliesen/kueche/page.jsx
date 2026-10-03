@@ -81,9 +81,7 @@ export default function KuechePage() {
                         <span className="text-ceramic-gradient">robust, hygienisch, fleckunempfindlich</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        In der Küche treffen Fett, Wasser, Hitze und Stöße auf den Belag. Fliesen halten das aus – wenn Material,
-                        Fugen und Zeitpunkt der Verlegung stimmen. Ob im Neubau, bei der Renovierung oder beim Küchentausch:
-                        So planen Sie Boden und Rückwand.
+                        Küchenboden und Küchenrückwand fliesen: robust, hygienisch und fleckunempfindlich für den täglichen Einsatz. In der Küche treffen Fett, Wasser, Hitze und mechanische Stöße auf den Belag – Feinsteinzeug hält dem stand, wenn Material, Fugen und Anschlüsse exakt ausgeführt sind.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

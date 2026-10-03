@@ -88,9 +88,7 @@ export default function GranitPage() {
                         <span className="text-ceramic-gradient">silikatische Natursteine richtig verlegen</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Hart im Nehmen und deutlich unempfindlicher gegen Säure als Marmor: Silikatische Steine eignen sich für stark
-                        genutzte Böden, Treppen und – in frostbeständigen Sorten – auch für draußen. Worauf es bei Auswahl und
-                        Verlegung ankommt.
+                        Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit verfärbungsfreien Spezialmörteln und hohlraumfreier Bettung. Hart im Nehmen und deutlich unempfindlicher gegen Säure als Marmor, eignen sie sich perfekt für stark genutzte Böden, Treppen und Außenbereiche.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

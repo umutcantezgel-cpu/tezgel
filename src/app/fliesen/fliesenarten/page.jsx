@@ -99,9 +99,7 @@ export default function FliesenartenPage() {
                         <span className="text-ceramic-gradient">Fliesenarten und ihre Eigenschaften</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Fliese ist nicht gleich Fliese. Wasseraufnahme, Frostbeständigkeit, Oberfläche und Kantenbearbeitung
-                        entscheiden, wo eine Fliese dauerhaft funktioniert. Diese Seite erklärt die Kennwerte – damit Sie beim
-                        Aussuchen und beim Vergleichen von Angeboten wissen, worauf Sie achten müssen.
+                        Feinsteinzeug, Steinzeug, Steingut: Die verschiedenen Fliesenarten und ihre spezifischen Eigenschaften entscheiden, wo eine Fliese dauerhaft funktioniert. Wasseraufnahme, Frostbeständigkeit, Rutschhemmung und Kantenbearbeitung im fundierten Überblick nach DIN EN 14411.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

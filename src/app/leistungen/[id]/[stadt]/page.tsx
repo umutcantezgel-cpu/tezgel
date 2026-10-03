@@ -49,7 +49,14 @@ export async function generateMetadata({
   if (!service || !city) return {};
 
   const path = `/leistungen/${service.id}/${city.slug}`;
-  const title = `${service.name} in ${city.name} · Tezgel`;
+  const serviceCityNames: Record<string, string> = {
+    untergrund: 'Untergrund & Abdichtung',
+    bad: 'Badsanierung',
+    wohnen: 'Fliesenverlegung & Wohnen',
+    aussen: 'Balkon- & Terrassensanierung',
+  };
+  const displayName = serviceCityNames[service.id] || service.name;
+  const title = `${displayName} in ${city.name} · Tezgel`;
   
   const description = `${service.name} in ${city.name}: Fachgerechte Verlegung & Sanierung. ${distanceLabel(city)}. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
 
@@ -305,9 +312,10 @@ export default async function ServiceCityPage({
               <li key={other.id}>
                 <Link
                   href={`/leistungen/${other.id}/${city.slug}`}
+                  aria-label={`${other.name} in ${city.name} ansehen`}
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-neutral-200 text-xs font-semibold text-neutral-800 hover:border-orange-500/80 hover:text-orange-800 transition-colors"
                 >
-                  {other.name}
+                  {other.name} in {city.name}
                   <ArrowRight className="w-3 h-3 text-orange-600" />
                 </Link>
               </li>

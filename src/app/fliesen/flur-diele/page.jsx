@@ -82,9 +82,7 @@ export default function FlurDielePage() {
                         <span className="text-ceramic-gradient">robust vom Eingang bis in den Wohnbereich</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Der Flur ist die am stärksten beanspruchte Fläche im Haus: Straßenschuhe, Nässe, Einkaufstaschen und
-                        oft der Übergang in offene Wohnräume. Mit dem richtigen Format, einer durchdachten Verlegerichtung und
-                        sauber geplanten Übergängen wird aus dem Durchgangsraum ein Boden, der jahrzehntelang gut aussieht.
+                        Flur und Diele fliesen: robust vom Eingang bis in den Wohnbereich mit strapazierfähigen, pflegeleichten Belägen. Der Flur ist die am stärksten beanspruchte Fläche im Haus: Straßenschuhe, Nässe, Schmutz und Übergänge in offene Räume erfordern abriebfeste Feinsteinzeugfliesen und eine durchdachte Verlegerichtung.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

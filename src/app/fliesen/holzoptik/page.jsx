@@ -78,8 +78,7 @@ export default function HolzoptikPage() {
                         <span className="text-ceramic-gradient">Dielenlook mit keramischer Robustheit</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Holzoptik-Fliesen aus Feinsteinzeug bringen die Anmutung von Dielen in Wohnraum, Küche und Flur – mit den
-                        Eigenschaften eines keramischen Belags. Hier lesen Sie, worauf es bei Oberfläche, Format und Einsatzort ankommt.
+                        Fliesen in Holzoptik verbinden eleganten Dielenlook mit keramischer Robustheit: Feinsteinzeug bringt die natürliche Holzmaserung in Wohnraum, Küche, Bad und Flur – unempfindlich gegenüber Feuchtigkeit, kratzfest und ideal für Fußbodenheizungen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

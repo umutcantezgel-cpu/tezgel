@@ -56,7 +56,7 @@ export async function generateMetadata({
   if (!city) return {};
 
   const path = `/standorte/${city.slug}`;
-  const title = `Fliesenverlegung & Badsanierung in ${city.name}`;
+  const title = `Fliesenverlegung in ${city.name} · Fachbetrieb Tezgel`;
   const description = `Fliesenleger & Badsanierung in ${city.name}: Fachbetrieb für Komplettbäder, XXL-Fliesen & DIN 18534 Abdichtung. ${distanceSentence(city)}`;
 
   return createMetadata({
@@ -256,6 +256,7 @@ export default async function StandortPage({
               <li key={srv.id}>
                 <Link
                   href={`/leistungen/${srv.id}/${city.slug}`}
+                  aria-label={`${srv.name} in ${city.name} ansehen`}
                   className="group glass-surface rounded-2xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
                 >
                   <div>

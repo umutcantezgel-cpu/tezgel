@@ -99,10 +99,7 @@ export default function NeubauPage() {
                         <span className="text-ceramic-gradient">sauber eingeplant im Bauablauf</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Im Neubau hängen die Fliesenarbeiten an den Vorleistungen anderer Gewerke. Wer früh klärt, wann der
-                        Estrich belegreif ist, wie hoch die Abläufe sitzen und welche Fliesen bestellt werden, vermeidet
-                        Wartezeiten und Nacharbeiten. Wir planen unseren Teil verbindlich und stimmen die Termine mit Ihrer
-                        Bauleitung ab.
+                        Fliesenarbeiten im Neubau: Sauber eingeplant im Bauablauf sichern sie eine reibungslose Koordination der Gewerke. Wer frühzeitig Estrich-Belegreife, Fugenachsen und Anschlussdetails abstimmt, vermeidet Verzögerungen und garantiert höchste Ausführungsqualität.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

@@ -16,9 +16,13 @@ export async function generateMetadata({ params }) {
   if (!service) return {};
 
   const path = `/leistungen/${service.id}`;
-  const title = service.id === 'bad'
-    ? 'Badsanierung & Komplettbäder – Fachbetrieb Mittelhessen'
-    : `${service.name} in Aßlar & Wetzlar – Fachbetrieb`;
+  const serviceHubTitles = {
+    bad: 'Badsanierung & Komplettbäder · Tezgel Mittelhessen',
+    wohnen: 'Wohnbereich & Fliesenverlegung · Tezgel Hessen',
+    aussen: 'Balkon- & Terrassensanierung · Tezgel Mittelhessen',
+    untergrund: 'DIN 18534 Abdichtung & Untergrund · Tezgel Hessen',
+  };
+  const title = serviceHubTitles[service.id] || `${service.name} · Tezgel Hessen`;
   const description = `${service.shortDescription}. Fachbetrieb für ${service.name} in Aßlar, Wetzlar & Mittelhessen – kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`;
 
   return createMetadata({
