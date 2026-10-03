@@ -19,20 +19,26 @@ import {
     Calculator,
     BookOpen
 } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import { RATING_SUMMARY } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
-import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import HeroContactForm from '@/components/forms/HeroContactForm';
 import TrustStrip from '@/components/trust/TrustStrip';
 import GoogleReviewsBadge from '@/components/reviews/GoogleReviewsBadge';
 import PricingCalculator from '@/components/pricing/PricingCalculator';
-import ServiceMapWrapper from '@/components/maps/ServiceMapWrapper';
 import ReviewCarousel from '@/components/reviews/ReviewCarousel';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import FinalCTA from '@/components/ui/FinalCTA';
+
+const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
+    loading: () => <div className="min-h-[460px] flex items-center justify-center text-xs font-semibold text-neutral-400">Anfrageformular wird geladen...</div>,
+});
+const ServiceMapWrapper = dynamic(() => import('@/components/maps/ServiceMapWrapper'), {
+    loading: () => <div className="min-h-[380px] flex items-center justify-center text-xs font-semibold text-neutral-400">Einsatzgebietskarte wird geladen...</div>,
+});
 import SpotlightCard from '@/components/ui/SpotlightCard';
 import GradientText from '@/components/ui/GradientText';
 
@@ -424,9 +430,10 @@ export default function HomePage() {
                                             <Image
                                                 src={imgData?.src || '/images/bad/walk-in-dusche.webp'}
                                                 alt={imgData?.alt || srv.name}
-                                                fill
+                                                width={640}
+                                                height={384}
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
                                             <span className="absolute bottom-2.5 left-2.5 text-[11px] font-bold text-white bg-neutral-900/70 backdrop-blur-xs px-2.5 py-1 rounded-lg">
@@ -561,9 +568,10 @@ export default function HomePage() {
                                         <Image
                                             src="/images/bad/bad-freistehende-wanne.webp"
                                             alt="Freistehende Badewanne mit fugenlosem XXL-Fliesenbelag von Fliesenverlegung Tezgel"
-                                            fill
+                                            width={720}
+                                            height={480}
                                             sizes="(max-width: 1024px) 100vw, 450px"
-                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/75 via-transparent to-transparent" />
                                         <div className="absolute bottom-3 left-3 right-3 text-white text-xs">
