@@ -16,12 +16,13 @@ import {
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Badfliesen & XXL-Großformate',
+export const metadata = createMetadata({
+    title: 'Badfliesen & XXL-Großformate Aßlar – Fliesen Tezgel',
     description: 'Fachgerechte Fliesenverlegung im Badezimmer: Großformatige Fliesen, Feinsteinzeug, Mosaike und Naturstein in Aßlar, Wetzlar & Lahn-Dill.',
-    alternates: { canonical: 'https://tezgel.de/bad/fliesen' }
-};
+    path: '/bad/fliesen'
+});
 
 const TILE_FEATURES = [
     { title: 'XXL-Großformatfliesen', desc: 'Fliesen bis 120 x 278 cm für moderne, fugenarme Wandflächen mit minimalem Pflegeaufwand und großzügiger Raumwirkung.', icon: Maximize2 },

@@ -110,7 +110,7 @@ export default function NeubauPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <Link href="/termin" className="btn-ghost px-7 py-3.5 text-xs">
-                            Beratungstermin vereinbaren
+                            Online-Termin buchen
                         </Link>
                     </div>
                 </div>

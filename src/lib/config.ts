@@ -200,7 +200,7 @@ export const siteConfig: SiteConfig = {
     whatsapp: "https://wa.me/491726728504",
   },
   seo: {
-    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://tezgel.de",
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://www.tezgel.de",
     defaultKeywords: [
       "Fliesenleger Aßlar",
       "Fliesenleger Wetzlar",

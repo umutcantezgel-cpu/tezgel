@@ -327,13 +327,19 @@ export default function WaterCursor(props: WaterCursorProps) {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     }
+    let cachedHoverRect: DOMRect | null = null;
+
     function onOver(e: Event) {
       hoverEl = findMagnetic((e as PointerEvent).target);
+      cachedHoverRect = hoverEl ? (hoverEl as Element).getBoundingClientRect() : null;
     }
     function onOut(e: Event) {
       const rel = (e as PointerEvent).relatedTarget as Element | null;
       const stillInside = Boolean(rel && hoverEl && hoverEl.contains(rel));
-      if (!stillInside) hoverEl = null;
+      if (!stillInside) {
+        hoverEl = null;
+        cachedHoverRect = null;
+      }
     }
     function onDown(e: PointerEvent) {
       gathering = true;
@@ -388,7 +394,7 @@ export default function WaterCursor(props: WaterCursorProps) {
       const spring = o.spring ?? 0.03;
       const friction = o.friction ?? 0.9;
 
-      const rect = hoverEl ? (hoverEl as Element).getBoundingClientRect() : null;
+      const rect = cachedHoverRect;
       hoverT = clamp(hoverT + (rect ? 9 : -7) * dt, 0, 1);
 
       let tx = mouse.x;

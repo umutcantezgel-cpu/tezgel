@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     },
     description: 'Ihr Fachbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
     alternates: {
-        canonical: '/'
+        canonical: 'https://www.tezgel.de'
     },
     openGraph: {
-        url: '/'
+        url: 'https://www.tezgel.de'
     }
 };
 
@@ -476,8 +476,8 @@ export default function HomePage() {
                                             aria-label={`Details & Ausführung zu ${srv.name}`}
                                             className="text-sm font-bold text-orange-800 hover:text-orange-700 inline-flex items-center gap-1.5"
                                         >
-                                            Details &amp; Ausführung
-                                            <ArrowRight className="w-4 h-4" />
+                                            <span>Details &amp; Ausführung: {srv.name}</span>
+                                            <ArrowRight className="w-4 h-4 shrink-0" />
                                         </Link>
                                         {isFeature && (
                                             <Link href="/bad" className="btn-primary px-5 py-2.5 text-xs">

@@ -53,7 +53,7 @@ export default function BlogPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
             <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
-              Beratung anfragen
+              Projekt unverbindlich anfragen
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/faq" className="btn-ghost px-7 py-3.5 text-xs">

@@ -11,6 +11,7 @@ import {
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { COMPANY_DATA } from '@/config/company';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
+import { createMetadata } from '@/lib/metadata';
 
 export async function generateStaticParams() {
     return MUSTERBAEDER.map((b) => ({
@@ -21,16 +22,22 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
     const { slug } = await params;
     const bath = MUSTERBAEDER.find((b) => b.slug === slug);
-    if (!bath) return { title: { absolute: 'Musterbäder & Badkonzepte | Fliesenverlegung Tezgel' } };
+    if (!bath) {
+        return createMetadata({
+            title: 'Musterbäder & Badkonzepte – Fliesenverlegung Tezgel',
+            description: 'Musterbäder und Badkonzepte von Fachbetrieb Tezgel in Aßlar, Wetzlar und ganz Mittelhessen.',
+            path: '/bad/musterbaeder'
+        });
+    }
 
     const title = `Musterbad ${bath.title} | Fliesenverlegung Tezgel`;
     const description = `Musterbad ${bath.title}: ${bath.headline}. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb Tezgel aus Aßlar.`;
 
-    return {
-        title: { absolute: title },
-        description: description.length > 155 ? `${description.slice(0, 152)}...` : description,
-        alternates: { canonical: `https://tezgel.de/bad/musterbaeder/${slug}` }
-    };
+    return createMetadata({
+        title,
+        description,
+        path: `/bad/musterbaeder/${slug}`
+    });
 }
 
 export default async function MusterbadDetailPage({ params }) {

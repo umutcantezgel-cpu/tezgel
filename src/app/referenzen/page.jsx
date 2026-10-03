@@ -127,22 +127,22 @@ export default function ReferenzenPage() {
                                             )}
                                         </div>
 
-                                        <div className="px-3 pt-4 mt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs font-black">
+                                        <div className="px-3 pt-4 mt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs font-bold">
                                             <Link
                                                 href={`/referenzen/${project.id}`}
-                                                className="text-orange-600 hover:text-orange-700 flex items-center gap-1"
+                                                className="text-orange-800 hover:text-orange-700 flex items-center gap-1"
                                                 aria-label={`Leistungsumfang ansehen: ${project.title}`}
                                             >
-                                                Leistungsumfang
-                                                <ArrowRight className="w-3.5 h-3.5" />
+                                                <span>Leistungsumfang: {project.title}</span>
+                                                <ArrowRight className="w-3.5 h-3.5 shrink-0" />
                                             </Link>
                                             {project.serviceLink && (
                                                 <Link
                                                     href={project.serviceLink}
-                                                    className="text-slate-600 hover:text-orange-600 hover:underline underline-offset-2"
+                                                    className="text-neutral-700 hover:text-orange-800 hover:underline underline-offset-2 font-medium"
                                                     aria-label={`Mehr zur Leistung: ${project.title}`}
                                                 >
-                                                    Mehr zur Leistung
+                                                    Leistungsdetails zu {project.category}
                                                 </Link>
                                             )}
                                         </div>

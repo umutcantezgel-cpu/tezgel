@@ -138,8 +138,8 @@ export default function ServiceHubPage() {
                   href={`/leistungen/${srv.id}`}
                   className="w-full sm:w-auto text-sm font-bold text-orange-800 hover:text-orange-700 flex items-center gap-1.5 transition-colors"
                 >
-                  <span>Ausführliche Fachdetails &amp; Ratgeber</span>
-                  <ChevronRight className="w-4 h-4" />
+                  <span>Fachdetails &amp; Ratgeber: {srv.title}</span>
+                  <ChevronRight className="w-4 h-4 shrink-0" />
                 </Link>
                 <a
                   href="#express-anfrage"

@@ -17,10 +17,10 @@ export default function TrustStrip() {
 
   return (
     <section
-      aria-label="Vertrauenssignale und Meister-Garantien"
+      aria-label="Vertrauenssignale und Fachbetriebs-Garantien"
       className="bg-white/95 backdrop-blur-md border border-neutral-200/90 rounded-2xl shadow-sm h-14 sm:h-16 flex items-center overflow-hidden relative z-20 w-full mx-auto"
     >
-      <h2 className="sr-only">Vertrauenssignale und Meister-Garantien</h2>
+      <h2 className="sr-only">Vertrauenssignale und Fachbetriebs-Garantien</h2>
 
       <div className="flex w-full overflow-hidden trust-strip-mask group">
         <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused] group-active:[animation-play-state:paused] items-center py-2">

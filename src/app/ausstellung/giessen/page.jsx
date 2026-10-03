@@ -18,12 +18,13 @@ import { COMPANY_DATA, processSteps } from '@/config/company';
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: { absolute: 'Fliesenberatung in Gießen | Fliesenverlegung Tezgel' },
+export const metadata = createMetadata({
+    title: 'Fliesenberatung in Gießen | Fliesenverlegung Tezgel',
     description: 'Persönliche Fliesenberatung für Gießen: Formate, Oberflächen & Fugenbild gemeinsam mit Fachbetriebsleiter Deniz Tezgel abstimmen.',
-    alternates: { canonical: 'https://tezgel.de/ausstellung/giessen' }
-};
+    path: '/ausstellung/giessen'
+});
 
 const CITY_SLUG = 'giessen';
 
@@ -68,7 +69,7 @@ export default function AusstellungGiessenPage() {
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
-                            Beratungstermin vereinbaren
+                            Beratung für Gießen anfragen
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a

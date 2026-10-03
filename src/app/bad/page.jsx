@@ -18,12 +18,13 @@ import { RATING_SUMMARY } from '@/config/reviews';
 import BadProjektCheck from '@/components/funnels/BadProjektCheck';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Badsanierung Aßlar & Wetzlar',
+export const metadata = createMetadata({
+    title: 'Badsanierung Aßlar & Wetzlar – Meisterhafter Fachbetrieb',
     description: 'Fachbetrieb für schlüsselfertige Badsanierung, barrierefreie Bäder nach DIN 18040-2 & moderne Großformatfliesen in Aßlar, Wetzlar und Umgebung.',
-    alternates: { canonical: 'https://tezgel.de/bad' }
-};
+    path: '/bad'
+});
 
 const BATH_SERVICES = [
     { title: 'Badsanierung komplett', desc: 'Komplettbad schlüsselfertig zum Festpreis', path: '/bad/badsanierung', icon: Droplets },

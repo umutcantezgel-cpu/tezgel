@@ -10,12 +10,13 @@ import {
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Badplaner: Bad online vorplanen',
+export const metadata = createMetadata({
+    title: 'Badplaner: Bad online vorplanen – Fachbetrieb Tezgel',
     description: 'Badplanung leicht gemacht: Schritt-für-Schritt mit Tipps zu Maßen, Fliesen & Licht – mit Vor-Ort-Beratung & Aufmaß in Aßlar & Wetzlar.',
-    alternates: { canonical: 'https://tezgel.de/bad/badplaner' }
-};
+    path: '/bad/badplaner'
+});
 
 const PLANNING_STEPS = [
     { num: '01', title: 'Raummaße & Anschlüsse erfassen', desc: 'Messen Sie Länge, Breite und Raumhöhe aus und notieren Sie die Positionen von Türen, Fenstern, Heizkörpern und Rohrleitungsanschlüssen.' },

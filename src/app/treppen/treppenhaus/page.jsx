@@ -270,7 +270,7 @@ export default function TreppenhausPage() {
                 </ul>
                 <div className="mt-8">
                     <Link href="/beratung" className="btn-ghost px-6 py-3 text-xs">
-                        Beratungstermin vereinbaren
+                        Persönliche Treppenberatung anfragen
                     </Link>
                 </div>
             </section>

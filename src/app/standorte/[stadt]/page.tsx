@@ -6,6 +6,7 @@ import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
 import { MapPin, Phone, ArrowRight, ShieldCheck, Sparkles, Award, Droplets, Sun } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
@@ -54,38 +55,13 @@ export async function generateMetadata({
 
   const path = `/standorte/${city.slug}`;
   const title = `Fliesenverlegung & Badsanierung in ${city.name}`;
-  const description = `Fliesenleger-Fachbetrieb für ${city.name}: Badsanierung, Walk-In-Duschen, XXL-Großformate, Terrassen & DIN 18534 Abdichtung. ${distanceSentence(city)} Kostenfreies Vor-Ort-Aufmaß.`;
+  const description = `Fliesenleger & Badsanierung in ${city.name}: Fachbetrieb für Komplettbäder, XXL-Fliesen & DIN 18534 Abdichtung. ${distanceSentence(city)}`;
 
-  return {
+  return createMetadata({
     title,
     description,
-    alternates: {
-      canonical: path,
-      languages: {
-        'de': path,
-        'x-default': path,
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      url: path,
-      siteName: 'Fliesenverlegung Tezgel',
-      locale: 'de_DE',
-      type: 'website',
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  };
+    path,
+  });
 }
 
 function getNearbyCities(currentSlug: string, count: number = 5) {
@@ -176,7 +152,7 @@ export default async function StandortPage({
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            {COMPANY_DATA.legalName} – Ihr Fachbetrieb für Badsanierung, fugenarme Großformate, Wohnbereiche,
+            Fliesenverlegung &amp; Badsanierung in {city.name}: {COMPANY_DATA.legalName} – Ihr Fachbetrieb für moderne Bäder, fugenarme Großformate, Wohnbereiche,
             Balkone &amp; Terrassen sowie DIN 18534 Verbundabdichtung in {city.name} und Umgebung.{' '}
             {distanceSentence(city)}
           </p>

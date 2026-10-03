@@ -108,7 +108,7 @@ export const COMPANY_DATA = {
         whatsappLink: "https://wa.me/491726728504",
         fax: "06441 / 44 83 548",
         email: "info@tezgel.de",
-        website: "https://tezgel.de"
+        website: "https://www.tezgel.de"
     },
 
     // Social Profiles

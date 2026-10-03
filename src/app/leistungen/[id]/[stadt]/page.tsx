@@ -5,6 +5,7 @@ import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
 import { MapPin, Phone, ArrowRight, ShieldCheck, CheckCircle2, Award } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
@@ -46,41 +47,18 @@ export async function generateMetadata({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) return {};
 
-  const title = `${service.name} in ${city.name} – Fliesen-Fachbetrieb`;
-  const description = `${service.name} in ${city.name}: ${service.shortDescription}. ${distanceSentence(city)} Kostenfreies Vor-Ort-Aufmaß & verbindliches Festpreisangebot.`;
-
   const path = `/leistungen/${service.id}/${city.slug}`;
+  const title = (service.id === 'bad' && city.slug === 'asslar')
+    ? 'Badsanierung Aßlar – Fliesen-Fachbetrieb vor Ort am Firmensitz'
+    : `${service.name} in ${city.name} – Fachbetrieb Fliesen Tezgel`;
+  
+  const description = `${service.name} in ${city.name}: Fachgerechte Verlegung & Sanierung. ${distanceLabel(city)}. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
 
-  return {
+  return createMetadata({
     title,
     description,
-    alternates: {
-      canonical: path,
-      languages: {
-        'de': path,
-        'x-default': path,
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      url: path,
-      siteName: 'Fliesenverlegung Tezgel',
-      locale: 'de_DE',
-      type: 'website',
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  };
+    path
+  });
 }
 
 export default async function ServiceCityPage({

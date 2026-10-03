@@ -18,12 +18,13 @@ import { COMPANY_DATA, processSteps } from '@/config/company';
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: { absolute: 'Fliesenberatung in Wetzlar | Fliesenverlegung Tezgel' },
+export const metadata = createMetadata({
+    title: 'Fliesenberatung in Wetzlar | Fliesenverlegung Tezgel',
     description: 'Persönliche Fliesenberatung für Wetzlar: Formate, Oberflächen & Fugenbild gemeinsam mit Fachbetriebsleiter Deniz Tezgel abstimmen.',
-    alternates: { canonical: 'https://tezgel.de/ausstellung/wetzlar' }
-};
+    path: '/ausstellung/wetzlar'
+});
 
 const CITY_SLUG = 'wetzlar';
 
@@ -67,7 +68,7 @@ export default function AusstellungWetzlarPage() {
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
-                            Beratungstermin vereinbaren
+                            Beratung für Wetzlar anfragen
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                         <a

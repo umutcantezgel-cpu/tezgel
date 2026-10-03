@@ -2,12 +2,13 @@ import React from 'react';
 import { ClipboardCheck } from 'lucide-react';
 import BadProjektCheck from '@/components/funnels/BadProjektCheck';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Bad-Projektcheck: Badsanierung prüfen',
+export const metadata = createMetadata({
+    title: 'Bad-Projektcheck: Badsanierung prüfen – Fachbetrieb Tezgel',
     description: 'Badgröße, Umfang & Wünsche in 2 Minuten erfassen – für Ihr Festpreisangebot nach kostenfreiem Vor-Ort-Aufmaß in Aßlar, Wetzlar & Lahn-Dill.',
-    alternates: { canonical: 'https://tezgel.de/bad/projekt-check' }
-};
+    path: '/bad/projekt-check'
+});
 
 export default function BadProjektCheckPage() {
     return (

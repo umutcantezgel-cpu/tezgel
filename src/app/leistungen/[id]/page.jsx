@@ -25,18 +25,6 @@ export function generateStaticParams() {
   return SERVICES.map((service) => ({ id: service.id }));
 }
 
-export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const service = SERVICES.find((s) => s.id === id);
-  if (!service) return { title: 'Fachgewerk' };
-
-  return {
-    title: `${service.name} – Fachbetrieb Tezgel`,
-    description: `${service.shortDescription}. Fachbetrieb für Fliesenverlegung & Sanierung in Aßlar, Wetzlar und ganz Hessen.`,
-    alternates: { canonical: `/leistungen/${id}` }
-  };
-}
-
 export default async function ServiceDetailPage({ params }) {
   const { id } = await params;
   const service = SERVICES.find((s) => s.id === id);

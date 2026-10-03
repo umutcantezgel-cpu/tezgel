@@ -14,12 +14,13 @@ import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Bad aus einer Hand Aßlar & Wetzlar',
+export const metadata = createMetadata({
+    title: 'Bad aus einer Hand Aßlar & Wetzlar – Fachbetrieb Tezgel',
     description: 'Bad aus einer Hand in Aßlar & Wetzlar: Ein Ansprechpartner, verbindlicher Festpreis & Termintreue. Wir koordinieren alle Gewerke schlüsselfertig.',
-    alternates: { canonical: 'https://tezgel.de/bad/bad-aus-einer-hand' }
-};
+    path: '/bad/bad-aus-einer-hand'
+});
 
 export default function BadAusEinerHandPage() {
     const google = RATING_SUMMARY.google;

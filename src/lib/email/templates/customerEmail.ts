@@ -286,12 +286,12 @@ export function generateCustomerEmailHtml(payload: InquiryPayload, referenceId: 
           <strong style="color:#ffffff;font-size:12.5px;">${escapeHtml(COMPANY_DATA.legalName)}</strong><br>
           ${escapeHtml(COMPANY_DATA.headquarters.street)} &middot; ${escapeHtml(COMPANY_DATA.headquarters.postalCode)} ${escapeHtml(COMPANY_DATA.headquarters.city)}<br>
           ${escapeHtml(COMPANY_DATA.authority.certification)} &middot; USt-IdNr.: ${escapeHtml(COMPANY_DATA.tax.ustId)}<br>
-          E-Mail: <a href="mailto:${escapeHtml(COMPANY_DATA.contact.email)}" style="color:#fb923c;text-decoration:none;">${escapeHtml(COMPANY_DATA.contact.email)}</a> &middot; Web: <a href="https://tezgel.de" style="color:#fb923c;text-decoration:none;">www.tezgel.de</a>
+          E-Mail: <a href="mailto:${escapeHtml(COMPANY_DATA.contact.email)}" style="color:#fb923c;text-decoration:none;">${escapeHtml(COMPANY_DATA.contact.email)}</a> &middot; Web: <a href="https://www.tezgel.de" style="color:#fb923c;text-decoration:none;">www.tezgel.de</a>
           
           <div style="margin-top:12px;padding-top:10px;border-top:1px solid #1e293b;font-size:10.5px;">
-            <a href="https://tezgel.de/impressum" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Impressum</a> &middot;
-            <a href="https://tezgel.de/datenschutz" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Datenschutz</a> &middot;
-            <a href="https://tezgel.de/widerruf" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Widerrufsbelehrung</a>
+            <a href="https://www.tezgel.de/impressum" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Impressum</a> &middot;
+            <a href="https://www.tezgel.de/datenschutz" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Datenschutz</a> &middot;
+            <a href="https://www.tezgel.de/widerruf" style="color:#94a3b8;text-decoration:underline;margin:0 5px;">Widerrufsbelehrung</a>
           </div>
           <p style="margin:8px 0 0 0;font-size:10.5px;color:#64748b;">
             Eingegangen am ${escapeHtml(timestamp)} &middot; &copy; ${currentYear} ${escapeHtml(COMPANY_DATA.legalName)}. Alle Rechte vorbehalten.
@@ -367,7 +367,7 @@ Inhaber: Deniz Tezgel
 Telefon:  ${COMPANY_DATA.contact.phone}
 WhatsApp: ${COMPANY_DATA.contact.mobile}
 E-Mail:   ${COMPANY_DATA.contact.email}
-Web:      https://tezgel.de
+Web:      https://www.tezgel.de
 
 RECHTLICHE ANGABEN:
 ${COMPANY_DATA.legalName}

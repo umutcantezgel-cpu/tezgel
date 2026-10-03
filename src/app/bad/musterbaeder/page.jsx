@@ -10,12 +10,13 @@ import {
 } from 'lucide-react';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { COMPANY_DATA } from '@/config/company';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Musterbäder & Badinspiration',
+export const metadata = createMetadata({
+    title: 'Musterbäder & Badinspiration Aßlar – Fachbetrieb Tezgel',
     description: 'Entdecken Sie unsere Musterbäder von 4,6 bis 15,9 m² mit Festpreis-Orientierung & Markenkomponenten für Aßlar, Wetzlar & Hessen.',
-    alternates: { canonical: 'https://tezgel.de/bad/musterbaeder' }
-};
+    path: '/bad/musterbaeder'
+});
 
 export default function MusterbaederPage() {
     return (

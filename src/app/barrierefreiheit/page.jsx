@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { COMPANY_DATA } from '@/config/company';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
+export const metadata = createMetadata({
     title: 'Erklärung zur Barrierefreiheit (BFSG & EN 301 549)',
     description: 'Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.',
-    alternates: { canonical: '/barrierefreiheit' }
-};
+    path: '/barrierefreiheit'
+});
 
 export default function BarrierefreiheitPage() {
     return (

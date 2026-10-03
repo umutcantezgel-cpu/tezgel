@@ -17,12 +17,13 @@ import {
 import { COMPANY_DATA } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Barrierefreie Badsanierung & Zuschüsse',
+export const metadata = createMetadata({
+    title: 'Barrierefreie Badsanierung Aßlar – DIN 18040-2 Tezgel',
     description: 'Barrierefreie Badsanierung nach DIN 18040-2 in Aßlar & Wetzlar: Bodengleiche Walk-In Duschen & bis zu 4.180 € Zuschuss der Pflegekasse nutzen.',
-    alternates: { canonical: 'https://tezgel.de/bad/barrierefreies-bad' }
-};
+    path: '/bad/barrierefreies-bad'
+});
 
 const SOLUTIONS = [
     { title: 'Bodengleiche Walk-In-Duschen', desc: 'Schwellenloser Einstieg ohne Stolperfallen. Integrierte Duschrinne, rutschhemmende Fliesen (R10B) und breite Glaszugänge.', icon: Droplets },

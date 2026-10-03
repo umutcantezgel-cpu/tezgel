@@ -8,51 +8,24 @@ export function generateStaticParams() {
   }));
 }
 
+import { createMetadata } from '@/lib/metadata';
+
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const service = SERVICES.find((s) => s.id === id);
   if (!service) return {};
 
   const path = `/leistungen/${service.id}`;
-  const title = `${service.name} in Aßlar, Wetzlar & Umgebung`;
-  const fullTitle = `${title} | Fliesenverlegung Tezgel`;
-  const description = `${service.shortDescription}. Ihr Fliesenleger-Fachbetrieb aus Aßlar für Wetzlar und Mittelhessen – kostenfreies Vor-Ort-Aufmaß & verbindliches Festpreisangebot.`;
+  const title = service.id === 'bad'
+    ? 'Badsanierung & Komplettbäder – Fachbetrieb Mittelhessen'
+    : `${service.name} in Aßlar & Wetzlar – Fachbetrieb`;
+  const description = `${service.shortDescription}. Fachbetrieb für ${service.name} in Aßlar, Wetzlar & Mittelhessen – kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`;
 
-  return {
+  return createMetadata({
     title,
     description,
-    alternates: {
-      canonical: path,
-      languages: {
-        'de': path,
-        'x-default': path,
-      },
-    },
-    openGraph: {
-      title: fullTitle,
-      description,
-      url: path,
-      siteName: 'Fliesenverlegung Tezgel',
-      locale: 'de_DE',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: fullTitle,
-      description,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  };
+    path
+  });
 }
 
 export default async function Layout({ children, params }) {

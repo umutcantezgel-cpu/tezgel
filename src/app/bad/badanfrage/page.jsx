@@ -2,12 +2,13 @@ import React from 'react';
 import { Send } from 'lucide-react';
 import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata = {
-    title: 'Badanfrage: Angebot für Badsanierung',
+export const metadata = createMetadata({
+    title: 'Badanfrage: Angebot für Badsanierung – Fachbetrieb Tezgel',
     description: 'Stellen Sie in wenigen Schritten Ihre detaillierte Anfrage für eine Badsanierung in Aßlar, Wetzlar & Lahn-Dill. Kostenlose Prüfung & Vor-Ort-Beratung.',
-    alternates: { canonical: 'https://tezgel.de/bad/badanfrage' }
-};
+    path: '/bad/badanfrage'
+});
 
 export default function BadanfragePage() {
     return (
