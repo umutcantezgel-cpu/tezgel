@@ -101,7 +101,7 @@ export default function DatenschutzPage() {
                             Für die technische Konzeption, Entwicklung und laufende Betreuung dieser Website arbeiten wir mit folgendem Dienstleister zusammen:{' '}
                             <strong className="text-slate-900">Coday Webdesign Wetzlar</strong> &mdash; Agentur für Webdesign, SEO &amp; Branding in Wetzlar.{' '}
                             <a
-                                href="https://codayweb.de"
+                                href="https://www.codayweb.de/"
                                 target="_blank"
                                 rel="noopener"
                                 title="Coday Webdesign Wetzlar – Agentur für Webdesign &amp; SEO"

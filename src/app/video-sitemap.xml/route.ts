@@ -12,7 +12,7 @@ export async function GET() {
     <video:video>
       <video:thumbnail_loc>${SITE_CONFIG.baseUrl}/images/bad/walk-in-dusche.webp</video:thumbnail_loc>
       <video:title>Handwerkliche Präzision: Großformatfliesen &amp; Badsanierung Tezgel</video:title>
-      <video:description>Exklusive Fliesenverlegung und barrierefreie Badsanierung von Meisterbetrieb Fliesenverlegung Tezgel in Aßlar und Wetzlar.</video:description>
+      <video:description>Exklusive Fliesenverlegung und barrierefreie Badsanierung von Fachbetrieb Fliesenverlegung Tezgel in Aßlar und Wetzlar.</video:description>
       <video:player_loc>${SITE_CONFIG.baseUrl}/videos/handwerk.mp4</video:player_loc>
       <video:duration>45</video:duration>
       <video:publication_date>2025-01-15T08:00:00+01:00</video:publication_date>

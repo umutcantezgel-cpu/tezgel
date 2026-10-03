@@ -16,13 +16,52 @@ import {
 } from 'lucide-react';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
+import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 
+const pageUrl = `${SITE_URL}/leistungen`;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Leistungen', path: '/leistungen' },
+];
+
+const leistungenSchema = buildGraph([
+  buildWebPageNode({
+    url: pageUrl,
+    name: 'Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel',
+    description:
+      'Alle Fliesenleger-Leistungen von Tezgel in Wetzlar & Aßlar: Badsanierung, XXL-Großformate, Terrassen, Naturstein & Abdichtung.',
+    breadcrumbItems: breadcrumbs,
+  }),
+  buildBreadcrumbNode(breadcrumbs, pageUrl),
+  {
+    '@type': 'OfferCatalog',
+    '@id': `${pageUrl}#catalog`,
+    name: 'Leistungen von Fliesenverlegung Tezgel',
+    itemListElement: SERVICES.map((service) => ({
+      '@type': 'Offer',
+      price: '0.00',
+      priceCurrency: 'EUR',
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/termin`,
+      itemOffered: {
+        '@type': 'Service',
+        name: service.name,
+        description: service.shortDescription,
+        url: `${SITE_URL}/leistungen/${service.id}`,
+      },
+    })),
+  },
+]);
+
 export default function ServiceHubPage() {
   return (
     <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
+      <JsonLd schema={leistungenSchema} />
 
       {/* Ambient Lighting Orbs */}
       <div className="ambient-glow-orange -top-24 -left-24 opacity-70" />
@@ -44,12 +83,12 @@ export default function ServiceHubPage() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-tight">
-            Handwerksleistungen &amp;{' '}
-            <span className="text-ceramic-gradient">Fachgewerke</span>
+            Fliesenleger Leistungen &amp;{' '}
+            <span className="text-ceramic-gradient">Fachgewerke Wetzlar</span>
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            Unsere Handwerksleistungen &amp; Fachgewerke umfassen fugenarme XXL-Großformate im Badezimmer, repräsentatives Feinsteinzeug im Neubau sowie witterungsbeständige Außenbeläge auf Stelzlagern: Fliesenverlegung Tezgel steht für millimetergenaue Präzision, normgerechte Verbundabdichtung nach DIN 18534 und konsequenten Staubschutz.
+            Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen bieten wir hochwertige Handwerksleistungen: Unsere Fachgewerke umfassen fugenarme XXL-Großformate im Badezimmer, repräsentatives Feinsteinzeug im Neubau sowie witterungsbeständige Außenbeläge auf Stelzlagern – mit millimetergenauer Präzision, normgerechter Verbundabdichtung nach DIN 18534 und konsequentem Staubschutz.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">

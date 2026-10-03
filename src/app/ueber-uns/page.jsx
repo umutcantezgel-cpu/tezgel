@@ -31,10 +31,10 @@ export default function AboutPage() {
             Gegründet {business.establishmentYear} &middot; {authority.shortName}
           </span>
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight text-neutral-900">
-            Über <span className="text-ceramic-gradient">{legalName}</span>
+            Über uns – <span className="text-ceramic-gradient">Fliesenleger-Fachbetrieb Tezgel</span> in {headquarters.city}
           </h1>
           <p className="text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed">
-            Über uns und {legalName}: Ihr erfahrener Fliesen-Fachbetrieb in {headquarters.city} für {business.industryType} – mit bis zu 12 qualifizierten Fachkräften, Firmensitz in {headquarters.city} und im Einsatz in Wetzlar, Gießen und ganz Mittelhessen.
+            Über uns und {legalName}: Ihr eingetragener Fliesenleger-Fachbetrieb Tezgel in {headquarters.city} für {business.industryType} – mit bis zu 12 qualifizierten Fachkräften, Firmensitz in {headquarters.city} und im Einsatz in Wetzlar, Gießen und ganz Mittelhessen.
           </p>
         </div>
       </div>

@@ -108,7 +108,7 @@ export default async function StandortPage({
           cityName: city.name,
           citySlug: city.slug,
           distanceKm: city.distanceKm,
-          description: `Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und DIN 18534 Verbundabdichtung in ${city.name}.`,
+          description: `Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und DIN 18534 Verbundabdichtung in ${city.name}. Kostenfreies Vor-Ort-Aufmaß & Festpreisangebot.`,
         }),
       ];
 

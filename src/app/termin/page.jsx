@@ -151,10 +151,10 @@ export default function TerminPage() {
                         Direkte Fachberatung
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Termin <span className="text-ceramic-gradient">vereinbaren</span>
+                        Termin vereinbaren bei <span className="text-ceramic-gradient">Fliesenleger Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Jetzt Ihren verbindlichen Termin vereinbaren: Wählen Sie Ihr Wunschthema und Ihren Wunschtermin für ein unverbindliches Beratungsgespräch bei Ihnen vor Ort in {COMPANY_DATA.headquarters.city}, Wetzlar &amp; Umgebung. Ihre Anfrage senden Sie direkt online mit E-Mail-Bestätigung oder per WhatsApp an {COMPANY_DATA.owner.fullName}.
+                        Jetzt Ihren Vor-Ort-Termin vereinbaren: Wählen Sie Ihr Wunschthema für eine persönliche Fachberatung durch Fliesenleger Tezgel in {COMPANY_DATA.headquarters.city}, Wetzlar &amp; Umgebung. Ihre Anfrage senden Sie direkt online mit E-Mail-Bestätigung oder per WhatsApp an {COMPANY_DATA.owner.fullName}.
                     </p>
                 </div>
             </div>

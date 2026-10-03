@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: 'Deniz Tezgel - Fliesenverlegung Tezgel' },
-    { name: 'Coday Webdesign Wetzlar', url: 'https://codayweb.de' }
+    { name: 'Coday Webdesign Wetzlar', url: 'https://www.codayweb.de/' }
   ],
   creator: 'Coday Webdesign Wetzlar',
   publisher: 'Fliesenverlegung Tezgel',

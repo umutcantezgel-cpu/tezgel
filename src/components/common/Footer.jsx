@@ -201,7 +201,7 @@ export default function Footer() {
                     <p>
                         Webdesign &amp; SEO:{' '}
                         <a
-                            href="https://codayweb.de"
+                            href="https://www.codayweb.de/"
                             target="_blank"
                             rel="noopener"
                             title="Coday – Webdesign-Agentur Wetzlar | Webseiten, SEO & Branding"

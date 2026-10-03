@@ -110,9 +110,9 @@ export function buildWebSiteNode(): SchemaNode {
     publisher: { '@id': ORG_ID },
     creator: {
       '@type': 'Organization',
-      '@id': 'https://codayweb.de/#organization',
+      '@id': 'https://www.codayweb.de/#organization',
       name: 'Coday Webdesign',
-      url: 'https://codayweb.de',
+      url: 'https://www.codayweb.de/',
       description: 'Agentur für Webdesign, SEO & Branding in Wetzlar',
       areaServed: {
         '@type': 'City',
@@ -121,9 +121,9 @@ export function buildWebSiteNode(): SchemaNode {
     },
     maintainer: {
       '@type': 'Organization',
-      '@id': 'https://codayweb.de/#organization',
+      '@id': 'https://www.codayweb.de/#organization',
       name: 'Coday Webdesign',
-      url: 'https://codayweb.de'
+      url: 'https://www.codayweb.de/'
     },
     inLanguage: 'de-DE',
   };
@@ -170,6 +170,7 @@ export function buildLocalBusinessNode(): SchemaNode {
     description:
       'Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, fugenlose Großformate, schlüsselfertige Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.',
     url: SITE_URL,
+    image: `${SITE_URL}/images/logo/tezgel-logo.png`,
     telephone: '+49 6441 4483567',
     email: 'info@tezgel.de',
     parentOrganization: { '@id': ORG_ID },
@@ -247,7 +248,7 @@ export function buildMainProductOfferNode(options?: {
   const name = options?.name || 'Fachbetrieb Fliesenverlegung & Badsanierung Komplettpaket';
   const description =
     options?.description ||
-    'Meisterhafte Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.';
+    'Fachgerechte Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.';
   const id = options?.productId ? `${SITE_URL}/#${options.productId}` : MAIN_SERVICE_PACKAGE_ID;
 
   return {
@@ -468,6 +469,11 @@ export function buildServiceNode(options: {
           name: `${options.name} Leistungen`,
           itemListElement: options.offers.map((offer) => ({
             '@type': 'Offer',
+            price: '0.00',
+            priceCurrency: 'EUR',
+            priceValidUntil: '2026-12-31',
+            availability: 'https://schema.org/InStock',
+            url: `${SITE_URL}/termin`,
             itemOffered: {
               '@type': 'Service',
               name: offer.name,
@@ -495,6 +501,7 @@ export function buildCityLocalBusinessNode(options: {
     name: `Fliesenverlegung Tezgel – ${options.cityName}`,
     description: options.description,
     url,
+    image: `${SITE_URL}/images/logo/tezgel-logo.png`,
     telephone: '+49 6441 4483567',
     email: 'info@tezgel.de',
     parentOrganization: { '@id': ORG_ID },
@@ -509,6 +516,11 @@ export function buildCityLocalBusinessNode(options: {
       addressRegion: 'Hessen',
       postalCode: '35614',
       addressCountry: 'DE',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 50.5900,
+      longitude: 8.4600,
     },
   };
 }

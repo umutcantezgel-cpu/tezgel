@@ -298,7 +298,6 @@ export function getCityLandingPageSchema(
     '@type': 'City',
     '@id': cityId,
     name: city.name,
-    postalCode: city.postalCode,
     geo: {
       '@type': 'GeoCoordinates',
       latitude: city.latitude,
@@ -320,8 +319,9 @@ export function getCityLandingPageSchema(
     '@type': ['HomeAndConstructionBusiness', 'GeneralContractor', 'LocalBusiness'],
     '@id': `${cityPageUrl}#localbusiness`,
     name: `Fliesenverlegung Tezgel – ${city.name}`,
-    description: `Fliesenleger & Fachbetrieb für Badsanierung, barrierefreie Duschen, Großformate & DIN 18534 Abdichtung für Kunden in ${city.name}. Ausgeführt von unserem Meisterbetrieb in Aßlar.`,
+    description: `Fliesenleger & Fachbetrieb für Badsanierung, barrierefreie Duschen, Großformate & DIN 18534 Abdichtung für Kunden in ${city.name}. Ausgeführt von unserem Fachbetrieb in Aßlar.`,
     url: cityPageUrl,
+    image: `${SITE_CONFIG.baseUrl}/images/logo/tezgel-logo.png`,
     telephone: SITE_CONFIG.contact.telephone,
     email: SITE_CONFIG.contact.email,
     parentOrganization: { '@id': ORG_ID },

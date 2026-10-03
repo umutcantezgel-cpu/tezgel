@@ -86,11 +86,11 @@ export default function FAQPage() {
                         Schnelle Fach-Antworten
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Häufig gestellte Fragen zu{' '}
-                        <span className="text-ceramic-gradient">Bad &amp; Fliesen</span>
+                        FAQ: Häufige Fragen zu{' '}
+                        <span className="text-ceramic-gradient">Fliesen &amp; Bad</span> bei Tezgel
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Häufig gestellte Fragen (FAQ) zu Fliesen &amp; Badsanierung: Hier beantwortet {COMPANY_DATA.owner.fullName} vom Fachbetrieb Fliesenverlegung Tezgel die wichtigsten Fragen rund um Bad &amp; Fliesen, XXL-Großformate, Badsanierung, DIN 18534 Abdichtung, Balkon &amp; Terrasse sowie Festpreisangebote.
+                        FAQ: Häufige Fragen zu Fliesen &amp; Bad beantwortet vom Fliesenleger-Fachbetrieb Tezgel in Aßlar &amp; Wetzlar: Hier finden Sie fundierte Antworten rund um Badsanierung, XXL-Großformate, DIN 18534 Abdichtung, Kosten und Festpreisangebote von Inhaber {COMPANY_DATA.owner.fullName}.
                     </p>
 
                     {/* Search Bar */}

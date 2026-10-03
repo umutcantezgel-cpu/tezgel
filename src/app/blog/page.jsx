@@ -45,11 +45,10 @@ export default function BlogPage() {
             Ratgeber &amp; Fachwissen
           </span>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-            Ratgeber rund um <span className="text-ceramic-gradient">Bad &amp; Fliesen</span>
+            Fliesen-Ratgeber &amp; <span className="text-ceramic-gradient">Badsanierung Tipps</span>
           </h1>
           <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-            Praxisnahe Leitfäden rund um Badsanierung, Fliesen und Abdichtung – von Ihrem
-            Fachbetrieb {COMPANY_DATA.legalName} aus {COMPANY_DATA.headquarters.city}.
+            Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesenverlegung und DIN 18534 Verbundabdichtung – von Ihrem Fachbetrieb {COMPANY_DATA.legalName} aus {COMPANY_DATA.headquarters.city}.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
             <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">

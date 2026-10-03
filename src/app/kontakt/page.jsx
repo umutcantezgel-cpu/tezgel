@@ -23,10 +23,10 @@ export default function KontaktPage() {
                         Fachbetrieb Aßlar &middot; Wetzlar &middot; Hessen
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-tight">
-                        Kontakt &amp; <span className="text-ceramic-gradient">Vor-Ort-Termin</span>
+                        Kontakt &amp; <span className="text-ceramic-gradient">Aufmaß Fliesenleger Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-neutral-700 max-w-2xl mx-auto leading-relaxed">
-                        Wir freuen uns auf Ihr Vorhaben. Rufen Sie uns direkt an, schreiben Sie uns per WhatsApp oder fordern Sie über unsere Express-Anfrage Ihr kostenfreies Vor-Ort-Aufmaß an.
+                        Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, schreiben Sie uns per WhatsApp oder sichern Sie sich über unsere Express-Anfrage Ihr kostenfreies Vor-Ort-Aufmaß mit verbindlichem Festpreisangebot.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <a href="#express-anfrage" className="btn-primary px-7 py-3.5 text-xs">

@@ -56,12 +56,7 @@ const STATIC_ROUTES: Array<[path: string, changeFrequency: ChangeFrequency, prio
   ['/kontakt', 'monthly', 0.9],
   ['/termin', 'monthly', 0.8],
 
-  // Rechtliches
-  ['/impressum', 'yearly', 0.3],
-  ['/datenschutz', 'yearly', 0.3],
-  ['/agb', 'yearly', 0.2],
-  ['/widerruf', 'yearly', 0.2],
-  ['/cookie-richtlinie', 'yearly', 0.2],
+  // Barrierefreiheit (indexable legal page)
   ['/barrierefreiheit', 'yearly', 0.2],
 ];
 

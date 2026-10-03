@@ -16,6 +16,8 @@ import {
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
+import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import FAQAccordion from '@/components/ui/FAQAccordion';
@@ -35,8 +37,34 @@ export default async function ServiceDetailPage({ params }) {
 
   const relatedServices = SERVICES.filter((s) => s.id !== service.id);
 
+  const pageUrl = `${SITE_URL}/leistungen/${service.id}`;
+  const breadcrumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Leistungen', path: '/leistungen' },
+    { name: service.name, path: `/leistungen/${service.id}` },
+  ];
+
+  const serviceSchemaGraph = buildGraph([
+    buildWebPageNode({
+      url: pageUrl,
+      name: `${service.name} | Fliesenverlegung Tezgel`,
+      description: service.shortDescription,
+      breadcrumbItems: breadcrumbs,
+    }),
+    buildBreadcrumbNode(breadcrumbs, pageUrl),
+    buildServiceNode({
+      name: `${service.name} in Aßlar, Wetzlar & Mittelhessen`,
+      serviceType: service.name,
+      description: service.shortDescription,
+      url: pageUrl,
+      image: service.heroImage ?? undefined,
+      offers: (service.features || []).map((feat) => ({ name: feat })),
+    }),
+  ]);
+
   return (
     <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
+      <JsonLd schema={serviceSchemaGraph} />
 
       {/* Ambient Lighting Orbs */}
       <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />

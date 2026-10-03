@@ -66,11 +66,11 @@ export default function KarrierePage() {
                         Werde Teil unseres Teams
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Karriere bei{' '}
-                        <span className="text-ceramic-gradient">{COMPANY_DATA.legalName}</span>
+                        Fliesenleger Jobs &amp; Karriere bei{' '}
+                        <span className="text-ceramic-gradient">Tezgel in Wetzlar &amp; Aßlar</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Wir suchen Verstärkung im Fliesenhandwerk: Fliesenleger (m/w/d) als Geselle oder erfahrene Fachkraft. Bewerben Sie sich direkt bei Inhaber {COMPANY_DATA.owner.fullName} – ein starkes Team von bis zu 12 Handwerkern.
+                        Fliesenleger Jobs in Wetzlar &amp; Aßlar gesucht: Verstärken Sie das Team von {COMPANY_DATA.legalName} als Geselle oder erfahrene Fachkraft. Bewerben Sie sich direkt bei Inhaber {COMPANY_DATA.owner.fullName} – ein starkes Team von bis zu 12 Handwerkern im Einsatz in Mittelhessen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <a href={applyHref(JOBS[0].title)} className="btn-primary px-7 py-3.5 text-xs">

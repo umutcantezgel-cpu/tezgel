@@ -207,27 +207,29 @@ export default function AusstellungWetzlarPage() {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                     {SERVICES.map((srv) => {
                         const Icon = SERVICE_ICONS[srv.id] || Sparkles;
+                        const serviceCityUrl = `/leistungen/${srv.id}/${CITY_SLUG}`;
                         return (
                             <li key={srv.id}>
-                                <Link
-                                    href={`/leistungen/${srv.id}/${CITY_SLUG}`}
-                                    aria-label={`${srv.name} für Wetzlar im Detail`}
-                                    className="group glass-surface rounded-tile-xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                >
+                                <div className="group glass-surface rounded-tile-xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300">
                                     <div>
                                         <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                             <Icon className="w-5 h-5" />
                                         </span>
                                         <h3 className="text-base font-black text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">
-                                            {srv.name}
+                                            <Link href={serviceCityUrl} className="hover:underline">
+                                                {srv.name} in {cityName}
+                                            </Link>
                                         </h3>
                                         <p className="text-sm text-slate-700 leading-relaxed">{srv.shortDescription}</p>
                                     </div>
-                                    <span className="mt-5 pt-4 border-t border-slate-200 text-sm font-bold text-orange-700 flex items-center gap-1.5">
-                                        <span>{srv.name} für Wetzlar im Detail</span>
+                                    <Link
+                                        href={serviceCityUrl}
+                                        className="mt-5 pt-4 border-t border-slate-200 text-sm font-bold text-orange-700 flex items-center gap-1.5 hover:text-orange-800"
+                                    >
+                                        <span>{srv.name} für {cityName} ansehen</span>
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                    </span>
-                                </Link>
+                                    </Link>
+                                </div>
                             </li>
                         );
                     })}

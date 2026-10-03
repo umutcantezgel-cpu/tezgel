@@ -54,7 +54,7 @@ export default function BarrierefreiheitPage() {
                             Sind Ihnen Mängel beim barrierefreien Zugang zu Inhalten von <a href={COMPANY_DATA.contact.website} className="text-orange-700 font-semibold underline underline-offset-2 hover:text-orange-600">{COMPANY_DATA.contact.website}</a> aufgefallen? Oder haben Sie Fragen zur Umsetzung der Barrierefreiheit? Sie können sich jederzeit bei uns melden:
                         </p>
                         <div className="p-5 bg-slate-50 rounded-tile-md border border-slate-200 font-medium text-slate-800">
-                            <p><strong className="text-slate-900">{COMPANY_DATA.legalName}</strong></p>
+                            <p className="font-bold text-slate-900">{COMPANY_DATA.legalName}</p>
                             <p>Ansprechpartner: {COMPANY_DATA.owner.fullName}</p>
                             <p>{COMPANY_DATA.headquarters.street}, {COMPANY_DATA.headquarters.postalCode} {COMPANY_DATA.headquarters.city}</p>
                             <p>Telefon: <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="text-orange-700 font-semibold tabular-nums underline underline-offset-2 hover:text-orange-600">{COMPANY_DATA.contact.phone}</a></p>
@@ -72,7 +72,7 @@ export default function BarrierefreiheitPage() {
                             Mauerstraße 53, 10117 Berlin<br />
                             Telefon: 030 18 527-2805<br />
                             E-Mail: <a href="mailto:info@schlichtungsstelle-bgg.de" className="text-orange-700 underline underline-offset-2 hover:text-orange-600">info@schlichtungsstelle-bgg.de</a><br />
-                            Website: <a href="https://www.schlichtungsstelle-bgg.de" target="_blank" rel="noopener noreferrer" className="text-orange-700 underline underline-offset-2 hover:text-orange-600">www.schlichtungsstelle-bgg.de</a>
+                            Website: <a href="https://www.bgg-schlichtungsstelle.de" target="_blank" rel="noopener noreferrer" className="text-orange-700 underline underline-offset-2 hover:text-orange-600">www.bgg-schlichtungsstelle.de</a>
                         </p>
                     </div>
 

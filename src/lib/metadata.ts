@@ -4,23 +4,34 @@ import { SITE_URL } from '@/lib/schema';
 const BASE_URL = SITE_URL;
 const SITE_NAME = 'Fliesenverlegung Tezgel';
 
+function cleanTrailingWords(text: string): string {
+  let cleaned = text.trim().replace(/[,:;\-–—/\\|&]+\s*$/g, '').trim();
+  const stopWords = /\s+(in|und|für|mit|bei|&|-|–|der|die|das|den|dem|des|ein|eine|einer|oder|wie|ob|als|vom|beim|zum|zur|im|am|ab|darf|kann|soll)\s*$/gi;
+  while (stopWords.test(cleaned) || /[,:;\-–—/\\|&]+\s*$/.test(cleaned)) {
+    cleaned = cleaned.replace(stopWords, '').replace(/[,:;\-–—/\\|&]+\s*$/g, '').trim();
+  }
+  return cleaned;
+}
+
 function sanitizeTitle(raw: string): string {
-  const trimmed = raw.trim().replace(/\s+/g, ' ');
+  const trimmed = cleanTrailingWords(raw.trim().replace(/\s+/g, ' '));
 
   // If already intentionally crafted within the 45-58 chars budget and contains brand, keep as is
   if (/Tezgel/i.test(trimmed) && trimmed.length >= 45 && trimmed.length <= 58) {
     return trimmed;
   }
 
-  const base = trimmed
-    .replace(/\s*\|\s*Fliesenverlegung Tezgel/gi, '')
-    .replace(/\s*–\s*Referenzen Fliesenverlegung Tezgel/gi, '')
-    .replace(/\s*\|\s*Ratgeber Fliesenverlegung Tezgel/gi, '')
-    .replace(/\s*–\s*Fachbetrieb Fliesen Tezgel/gi, '')
-    .replace(/\s*·\s*Tezgel/gi, '')
-    .replace(/\s*\|\s*Fachbetrieb/gi, '')
-    .replace(/\s*–\s*Fachbetrieb/gi, '')
-    .trim();
+  const base = cleanTrailingWords(
+    trimmed
+      .replace(/\s*\|\s*Fliesenverlegung Tezgel/gi, '')
+      .replace(/\s*–\s*Referenzen Fliesenverlegung Tezgel/gi, '')
+      .replace(/\s*\|\s*Ratgeber Fliesenverlegung Tezgel/gi, '')
+      .replace(/\s*–\s*Fachbetrieb Fliesen Tezgel/gi, '')
+      .replace(/\s*·\s*Tezgel/gi, '')
+      .replace(/\s*\|\s*Fachbetrieb/gi, '')
+      .replace(/\s*–\s*Fachbetrieb/gi, '')
+      .trim()
+  );
 
   let candidate: string;
   if (/Tezgel/i.test(base)) {
@@ -36,7 +47,7 @@ function sanitizeTitle(raw: string): string {
       if (lastSpace > 20) {
         cut = cut.slice(0, lastSpace);
       }
-      cut = cut.replace(/\s+(in|und|für|mit|bei|&|-|–)\s*$/gi, '').trim();
+      cut = cleanTrailingWords(cut);
       candidate = `${cut} · Tezgel`;
     }
   }
@@ -45,7 +56,7 @@ function sanitizeTitle(raw: string): string {
   if (candidate.length < 45) {
     if (candidate.includes(' · Tezgel')) {
       const parts = candidate.split(' · Tezgel');
-      const prefix = parts[0];
+      const prefix = cleanTrailingWords(parts[0]);
       if (prefix.length + 21 <= 58) {
         candidate = `${prefix} · Fachbetrieb Tezgel`;
       } else if (prefix.length + 18 <= 58) {
@@ -54,10 +65,11 @@ function sanitizeTitle(raw: string): string {
         candidate = `${prefix} – Tezgel Hessen`;
       }
     } else {
-      if (candidate.length + 9 <= 58) {
-        candidate = `${candidate} · Tezgel`;
-      } else if (candidate.length + 7 <= 58) {
-        candidate = `${candidate} Hessen`;
+      const cleaned = cleanTrailingWords(candidate);
+      if (cleaned.length + 9 <= 58) {
+        candidate = `${cleaned} · Tezgel`;
+      } else if (cleaned.length + 7 <= 58) {
+        candidate = `${cleaned} Hessen`;
       }
     }
   }
@@ -69,10 +81,14 @@ function sanitizeTitle(raw: string): string {
     candidate = (lastSpace > 45 ? cut.slice(0, lastSpace) : cut).trim();
   }
 
-  // Final sanitation: never allow dangling prepositions before brand or title end
+  // Final sanitation: clean before brand and title end
   candidate = candidate
-    .replace(/\s+(in|und|für|mit|&)\s+·\s+Tezgel/gi, ' · Tezgel')
-    .replace(/\s+(in|und|für|mit|&)\s*$/gi, '')
+    .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Tezgel/gi, ' · Tezgel')
+    .replace(/\s+(in|und|für|mit|&|oder|der|die|das|wie|darf|kann|soll)\s+·\s+Tezgel/gi, ' · Tezgel')
+    .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Fachbetrieb Tezgel/gi, ' · Fachbetrieb Tezgel')
+    .replace(/\s*[,:;\-–—/\\|&]+\s*·\s*Fliesen Tezgel/gi, ' · Fliesen Tezgel')
+    .replace(/\s+(in|und|für|mit|&|oder|der|die|das|wie|darf|kann|soll)\s*$/gi, '')
+    .replace(/[,:;\-–—/\\|&]+\s*$/g, '')
     .trim();
 
   return candidate;
@@ -140,7 +156,7 @@ export function generatePageMetadata(options: MetadataOptions): Metadata {
     },
     openGraph: {
       title: fullTitle,
-      description: options.description,
+      description: fullDesc,
       url: canonicalUrl,
       siteName: SITE_NAME,
       locale: 'de_DE',
@@ -150,7 +166,7 @@ export function generatePageMetadata(options: MetadataOptions): Metadata {
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
-      description: options.description,
+      description: fullDesc,
       images: ogImages.map(img => img.url),
     },
     robots: {

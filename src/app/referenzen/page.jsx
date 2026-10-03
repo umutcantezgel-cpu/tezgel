@@ -44,10 +44,10 @@ export default function ReferenzenPage() {
                         {google.displayRating} &middot; {google.count} {google.label}
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Referenzen &amp; <span className="text-ceramic-gradient">Kundenbewertungen</span>
+                        Referenzen &amp; <span className="text-ceramic-gradient">Bewertungen Fliesenleger Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Echte Referenzen &amp; Kundenbewertungen für Fliesenverlegung Tezgel: Erfahren Sie, was unsere Kunden in Aßlar, Wetzlar und Mittelhessen über Bäder, Balkone, Treppen und Großformatfliesen sagen – transparent und wörtlich zitiert aus verifizierten Google-Rezensionen.
+                        Echte Referenzen &amp; Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unsere Kunden in Aßlar, Wetzlar und Mittelhessen über Bäder, Balkone, Treppen und Großformatfliesen sagen – mit 5,0 Sternen transparent und wörtlich aus verifizierten Google-Rezensionen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <a href="#bewertungen" className="btn-primary px-7 py-3.5 text-xs">
