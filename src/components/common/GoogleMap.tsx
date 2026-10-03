@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { MapPin, ExternalLink, Navigation, ShieldCheck, Eye } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { useConsent } from '@/hooks/useConsent';
+import { getMapEmbedUrl, getDirectionsUrl, TEZGEL_HQ_COORDS } from '@/lib/maps/getMapEmbedUrl';
 
 interface GoogleMapProps {
   /** Zieladresse für die Karte (Standard: Betriebssitz Aßlar) */
@@ -24,8 +25,9 @@ interface GoogleMapProps {
  * ══════════════════════════════════════════════════════════════
  * DSGVO-konforme Google Maps Standort-Komponente (2-Klick-Lösung)
  * ══════════════════════════════════════════════════════════════
- * - Verwendet NEXT_PUBLIC_GOOGLE_MAPS_API_KEY aus den Vercel Environment Variables.
- * - DSGVO Zwei-Klick-Lösung: Keine Übertragung von IP-Adressen an Google vor expliziter Einwilligung.
+ * - Verwendet NEXT_PUBLIC_GOOGLE_MAPS_API_KEY wenn vorhanden.
+ * - Fällt bei fehlendem Key auf OpenStreetMap (OSM) mit exakter Bounding Box zurück.
+ * - DSGVO Zwei-Klick-Lösung: Keine Übertragung von IP-Adressen ohne Einwilligung.
  * - Synchronisiert mit dem globalen CookieConsent (useConsent).
  * - Enthält barrierefreie Steuerung und direkte Routenplanung.
  */
@@ -43,15 +45,14 @@ export default function GoogleMap({
   // Marketing-Consent aus Cookie-Banner ODER Klick auf "Interaktive Karte laden"
   const isAllowedToLoad = userLoaded || (autoLoadWithConsent && consent?.marketing);
 
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || process.env.GOOGLE_MAPS_API_KEY;
+  const embedUrl = getMapEmbedUrl({
+    address,
+    lat: TEZGEL_HQ_COORDS.lat,
+    lng: TEZGEL_HQ_COORDS.lng,
+    zoom: 15,
+  });
 
-  // Iframe-URL generieren
-  // 1. Wenn API-Key vorhanden: Offizielle Google Maps Embed API v1
-  // 2. Fallback: Standard Google Maps Query Embed
-  const encodedAddress = encodeURIComponent(address);
-  const embedUrl = apiKey
-    ? `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodedAddress}&language=de`
-    : `https://maps.google.com/maps?q=${encodedAddress}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const effectiveMapsUrl = mapsUrl || getDirectionsUrl(address);
 
   return (
     <div className={`relative rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-900 shadow-sm ${className}`}>
@@ -98,7 +99,7 @@ export default function GoogleMap({
               </button>
 
               <a
-                href={mapsUrl}
+                href={effectiveMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-neutral-200 text-sm font-semibold transition-colors"
@@ -133,7 +134,7 @@ export default function GoogleMap({
           {/* Schnellzugriff-Bar oben rechts auf der Karte */}
           <div className="absolute top-3 right-3 z-10">
             <a
-              href={mapsUrl}
+              href={effectiveMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-sm text-neutral-900 text-xs font-bold shadow-md hover:bg-white transition-all border border-neutral-200"

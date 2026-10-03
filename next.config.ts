@@ -17,6 +17,20 @@ const nextConfig: NextConfig = {
       'framer-motion'
     ],
   },
+  turbopack: {
+    resolveAlias: {
+      'next/dist/build/polyfills/polyfill-module': './src/lib/polyfills/empty.js',
+    },
+  },
+  webpack: (config) => {
+    config.resolve = config.resolve || {};
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'next/dist/build/polyfills/polyfill-module': false,
+      'next/dist/build/polyfills/polyfill-module.js': false,
+    };
+    return config;
+  },
   async headers() {
     return [
       {
@@ -44,7 +58,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin',
+            value: 'same-origin-allow-popups',
           },
           {
             key: 'Permissions-Policy',
@@ -52,7 +66,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.tezgel.de https://tezgel.de https://images.unsplash.com https://www.facebook.com; font-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self';",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://www.googletagmanager.com https://connect.facebook.net https://maps.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.tezgel.de https://tezgel.de https://images.unsplash.com https://www.facebook.com https://maps.gstatic.com https://*.googleapis.com https://*.google.com https://*.tile.openstreetmap.org; font-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.google-analytics.com https://region1.google-analytics.com https://connect.facebook.net https://maps.googleapis.com https://*.tile.openstreetmap.org; frame-src 'self' https://www.google.com https://maps.google.com https://www.openstreetmap.org; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self';",
           },
         ],
       },

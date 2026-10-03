@@ -5,6 +5,7 @@ import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
 import { CITIES } from "@/config/cities";
 import { siteConfig } from "@/lib/config";
 import MapConsentGate from "@/components/legal/MapConsentGate";
+import { getMapEmbedUrl, getDirectionsUrl } from "@/lib/maps/getMapEmbedUrl";
 
 const ASSLAR_CENTER = { lat: 50.5900, lng: 8.4600 };
 const SERVICE_RADIUS_KM = 45;
@@ -140,10 +141,14 @@ function MapImplementation() {
   }, []);
 
   if (!hasApiKey) {
-    // Fallback: Embed Iframe
-    const embedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
-      siteConfig.company.fullAddress
-    )}&t=&z=11&ie=UTF8&iwloc=&output=embed`;
+    // Fallback: Embed OpenStreetMap / Google Maps Embed API with Direct Route Link
+    const embedUrl = getMapEmbedUrl({
+      address: siteConfig.company.fullAddress,
+      lat: ASSLAR_CENTER.lat,
+      lng: ASSLAR_CENTER.lng,
+      zoom: 11,
+    });
+    const directionsUrl = getDirectionsUrl(siteConfig.company.fullAddress);
 
     return (
       <div className="relative w-full h-[450px] rounded-2xl overflow-hidden border border-neutral-200">
@@ -154,7 +159,18 @@ function MapImplementation() {
           height="100%"
           style={{ border: 0 }}
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
         />
+        <div className="absolute top-3 right-3 z-10">
+          <a
+            href={directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 backdrop-blur-sm text-neutral-900 text-xs font-bold shadow-md hover:bg-white transition-all border border-neutral-200"
+          >
+            <span>In Google Maps öffnen</span>
+          </a>
+        </div>
       </div>
     );
   }

@@ -231,8 +231,10 @@ export default function HeroContactForm() {
                         </label>
                         <input
                             id="hero-name"
+                            name="name"
                             type="text"
                             required
+                            autoComplete="name"
                             placeholder="Vor- und Nachname"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -246,8 +248,10 @@ export default function HeroContactForm() {
                         </label>
                         <input
                             id="hero-phone"
+                            name="phone"
                             type="tel"
                             required
+                            autoComplete="tel"
                             placeholder="Für den Rückruf"
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
@@ -264,7 +268,9 @@ export default function HeroContactForm() {
                         </label>
                         <input
                             id="hero-email"
+                            name="email"
                             type="email"
+                            autoComplete="email"
                             placeholder="ihre.adresse@beispiel.de"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -278,7 +284,9 @@ export default function HeroContactForm() {
                         </label>
                         <input
                             id="hero-location"
+                            name="location"
                             type="text"
+                            autoComplete="address-level2"
                             placeholder="z. B. Aßlar, Wetzlar, Gießen"
                             value={location}
                             onChange={(e) => setLocation(e.target.value)}
@@ -294,7 +302,9 @@ export default function HeroContactForm() {
                     </label>
                     <input
                         id="hero-notes"
+                        name="notes"
                         type="text"
+                        autoComplete="off"
                         placeholder="z. B. ca. 15 m² Fliesen, Altbau, Walk-In Dusche"
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}

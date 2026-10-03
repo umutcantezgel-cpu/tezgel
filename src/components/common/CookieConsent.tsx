@@ -128,20 +128,27 @@ export default function CookieConsent() {
     updateTransform(initial.x, initial.y);
   }, [showBanner, updateTransform]);
 
-  // Sync dimensions when settings modal opens/closes without blocking layout
+  // Passive ResizeObserver for dimensions - eliminates forced synchronous layout reflows
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const rId = requestAnimationFrame(() => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        cardDimensionsRef.current = {
-          w: rect.width || (window.innerWidth < 768 ? window.innerWidth - 24 : 860),
-          h: rect.height || 280,
-        };
+    if (typeof window === "undefined" || !cardRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.borderBoxSize && entry.borderBoxSize.length > 0) {
+          cardDimensionsRef.current = {
+            w: entry.borderBoxSize[0].inlineSize || cardDimensionsRef.current.w,
+            h: entry.borderBoxSize[0].blockSize || cardDimensionsRef.current.h,
+          };
+        } else if (entry.contentRect) {
+          cardDimensionsRef.current = {
+            w: entry.contentRect.width || cardDimensionsRef.current.w,
+            h: entry.contentRect.height || cardDimensionsRef.current.h,
+          };
+        }
       }
     });
-    return () => cancelAnimationFrame(rId);
-  }, [showSettings]);
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [showBanner]);
 
   // Wall bounce physics loop with 2-body collision resolution
   useEffect(() => {
@@ -352,14 +359,6 @@ export default function CookieConsent() {
       isDraggingRef.current = false;
       setIsDragging(false);
 
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        cardDimensionsRef.current = {
-          w: rect.width || cardDimensionsRef.current.w,
-          h: rect.height || cardDimensionsRef.current.h,
-        };
-      }
-
       cancelAnimationFrame(animFrameRef.current);
       velRef.current = { x: 0, y: 0 };
 
@@ -388,13 +387,6 @@ export default function CookieConsent() {
   // Viewport resize clamping
   useEffect(() => {
     const handleResize = () => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        cardDimensionsRef.current = {
-          w: rect.width || cardDimensionsRef.current.w,
-          h: rect.height || cardDimensionsRef.current.h,
-        };
-      }
       const { w: cardWidth, h: cardHeight } = cardDimensionsRef.current;
       const bounds = getBannerBounds(cardWidth, cardHeight);
       const clampedX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x));

@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/config";
 import MapConsentGate from "@/components/legal/MapConsentGate";
 import { MapPin, Phone, Search, Navigation, ExternalLink } from "lucide-react";
 import { triggerHaptic } from "@/lib/haptics";
+import { getMapEmbedUrl, getDirectionsUrl, CITY_COORDINATES, TEZGEL_HQ_COORDS } from "@/lib/maps/getMapEmbedUrl";
 
 export default function ContactPremiumMap({ className = "" }: { className?: string }) {
   const [selectedSlug, setSelectedSlug] = useState<string>("asslar");
@@ -18,12 +19,18 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
 
   const currentCity = CITIES.find((c) => c.slug === selectedSlug) || CITIES[0];
 
-  const mapQuery = currentCity?.slug === "asslar"
-    ? encodeURIComponent(siteConfig.company.fullAddress)
-    : encodeURIComponent(`${currentCity.name}, Hessen, Deutschland`);
+  const coords = CITY_COORDINATES[currentCity?.slug || "asslar"] || TEZGEL_HQ_COORDS;
+  const addressQuery = currentCity?.slug === "asslar"
+    ? siteConfig.company.fullAddress
+    : `${currentCity.name}, Hessen, Deutschland`;
 
-  const embedUrl = `https://maps.google.com/maps?q=${mapQuery}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-  const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
+  const embedUrl = getMapEmbedUrl({
+    address: addressQuery,
+    lat: coords.lat,
+    lng: coords.lng,
+    zoom: currentCity?.slug === "asslar" ? 14 : 12,
+  });
+  const directionsUrl = getDirectionsUrl(addressQuery);
 
   return (
     <div className={`w-full bg-white rounded-3xl border border-neutral-200/90 shadow-lg overflow-hidden flex flex-col lg:flex-row ${className}`}>

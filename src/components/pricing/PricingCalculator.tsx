@@ -303,6 +303,7 @@ export default function PricingCalculator() {
                 id="calc-custom-area"
                 name="customArea"
                 type="text"
+                autoComplete="off"
                 placeholder="z. B. 18"
                 aria-label="Quadratmeterzahl manuell eingeben"
                 value={customArea}
@@ -371,6 +372,8 @@ export default function PricingCalculator() {
           </div>
           <textarea
             id="situation-notes"
+            name="notes"
+            autoComplete="off"
             rows={4}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
@@ -471,6 +474,8 @@ export default function PricingCalculator() {
               <input
                 type="text"
                 name="organization_fax"
+                id="calc-organization-fax"
+                aria-label="Faxnummer (Spamschutz)"
                 value={honeypot}
                 onChange={(e) => setHoneypot(e.target.value)}
                 tabIndex={-1}
@@ -490,6 +495,7 @@ export default function PricingCalculator() {
                     name="name"
                     type="text"
                     required
+                    autoComplete="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Vor- und Nachname"
@@ -507,6 +513,7 @@ export default function PricingCalculator() {
                       name="phone"
                       type="tel"
                       required
+                      autoComplete="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="z. B. 0170 1234567"
@@ -522,6 +529,7 @@ export default function PricingCalculator() {
                       id="calc-email"
                       name="email"
                       type="email"
+                      autoComplete="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="ihre@email.de"
@@ -539,6 +547,7 @@ export default function PricingCalculator() {
                       id="calc-location"
                       name="location"
                       type="text"
+                      autoComplete="address-level2"
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
                       placeholder="z. B. Aßlar, Wetzlar..."

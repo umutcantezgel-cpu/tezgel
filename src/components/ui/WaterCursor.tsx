@@ -328,15 +328,21 @@ export default function WaterCursor(props: WaterCursorProps) {
       mouse.y = e.clientY;
     }
     let cachedHoverRect: DOMRect | null = null;
+    let lastHoverEl: Element | null = null;
 
     function onOver(e: Event) {
-      hoverEl = findMagnetic((e as PointerEvent).target);
-      cachedHoverRect = hoverEl ? (hoverEl as Element).getBoundingClientRect() : null;
+      const nextHover = findMagnetic((e as PointerEvent).target);
+      if (nextHover !== lastHoverEl) {
+        lastHoverEl = nextHover;
+        hoverEl = nextHover;
+        cachedHoverRect = nextHover ? nextHover.getBoundingClientRect() : null;
+      }
     }
     function onOut(e: Event) {
       const rel = (e as PointerEvent).relatedTarget as Element | null;
       const stillInside = Boolean(rel && hoverEl && hoverEl.contains(rel));
       if (!stillInside) {
+        lastHoverEl = null;
         hoverEl = null;
         cachedHoverRect = null;
       }
