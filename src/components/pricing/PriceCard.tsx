@@ -3,7 +3,8 @@ import { Check } from "lucide-react";
 
 interface PriceCardProps {
   title: string;
-  price: number | string;
+  price?: number | string;
+  priceSubtitle?: string;
   description: string;
   features: string[];
   isPopular?: boolean;
@@ -13,7 +14,8 @@ interface PriceCardProps {
 
 export default function PriceCard({
   title,
-  price,
+  price = "Auf Anfrage",
+  priceSubtitle = "Individuelles Festpreisangebot",
   description,
   features,
   isPopular = false,
@@ -46,12 +48,12 @@ export default function PriceCard({
         <p className="text-xs text-neutral-500 mt-1 leading-relaxed">{description}</p>
       </div>
 
-      <div className="mb-6 flex items-baseline gap-1">
-        <span className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
+      <div className="mb-6 flex flex-col items-start gap-1">
+        <span className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
           {typeof price === "number" ? `ab ${price} €` : price}
         </span>
-        {typeof price === "number" && (
-          <span className="text-xs font-semibold text-neutral-500">/ m² Richtpreis</span>
+        {priceSubtitle && (
+          <span className="text-xs font-semibold text-neutral-500">{priceSubtitle}</span>
         )}
       </div>
 

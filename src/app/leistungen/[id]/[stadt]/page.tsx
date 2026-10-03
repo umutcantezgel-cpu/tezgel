@@ -49,16 +49,18 @@ export async function generateMetadata({
   if (!service || !city) return {};
 
   const path = `/leistungen/${service.id}/${city.slug}`;
-  const serviceCityNames: Record<string, string> = {
+  const serviceDisplayNames: Record<string, string> = {
     untergrund: 'Untergrund & Abdichtung',
-    bad: 'Badsanierung',
+    bad: 'Badsanierung & Bäder',
     wohnen: 'Fliesenverlegung & Wohnen',
     aussen: 'Balkon- & Terrassensanierung',
   };
-  const displayName = serviceCityNames[service.id] || service.name;
-  const title = `${displayName} in ${city.name} | Fachbetrieb Tezgel`;
+  const displayName = serviceDisplayNames[service.id] || service.name;
+  const title = service.id === 'aussen'
+    ? `${displayName} in ${city.name} | Tezgel`
+    : `${displayName} in ${city.name} | Fliesen Tezgel`;
   
-  const description = `${service.name} in ${city.name}: Fachgerechte Verlegung & Sanierung. ${distanceLabel(city)}. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
+  const description = `${displayName} in ${city.name}: Fachgerechte Verlegung & Sanierung. ${distanceLabel(city)}. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
 
   return createMetadata({
     title,
@@ -76,6 +78,14 @@ export default async function ServiceCityPage({
   const service = SERVICES.find((s) => s.id === id);
   const city = CITIES.find((c) => c.slug === stadt);
   if (!service || !city) notFound();
+
+  const serviceDisplayNames: Record<string, string> = {
+    untergrund: 'Untergrund & Abdichtung',
+    bad: 'Badsanierung & Bäder',
+    wohnen: 'Fliesenverlegung & Wohnen',
+    aussen: 'Balkon- & Terrassensanierung',
+  };
+  const displayName = serviceDisplayNames[service.id] || service.name;
 
   const pageUrl = `${SITE_URL}/leistungen/${service.id}/${city.slug}`;
   const { contact, authority } = COMPANY_DATA;
@@ -95,14 +105,14 @@ export default async function ServiceCityPage({
   const serviceCityGraph = buildGraph([
     buildWebPageNode({
       url: pageUrl,
-      name: `${service.name} in ${city.name} | Fliesenverlegung Tezgel`,
+      name: `${displayName} in ${city.name} | Fliesenverlegung Tezgel`,
       description: `${service.shortDescription} – fachgerecht ausgeführt in ${city.name} und Umgebung.`,
       breadcrumbItems: breadcrumbs,
     }),
     buildBreadcrumbNode(breadcrumbs, pageUrl),
     buildServiceNode({
-      name: `${service.name} in ${city.name}`,
-      serviceType: service.name,
+      name: `${displayName} in ${city.name}`,
+      serviceType: displayName,
       description: `${service.shortDescription} – fachgerecht ausgeführt in ${city.name} und Umgebung.`,
       url: pageUrl,
       areaServedCity: city.name,
@@ -170,12 +180,12 @@ export default async function ServiceCityPage({
           </span>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 leading-tight">
-            {service.name} in{' '}
+            {displayName} in{' '}
             <span className="text-ceramic-gradient">{city.name}</span>
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            {COMPANY_DATA.legalName} ist Ihr Fachbetrieb für {service.name} in{' '}
+            {COMPANY_DATA.legalName} ist Ihr Fachbetrieb für {displayName} in{' '}
             {city.name} und im {city.region}. {service.shortDescription}.{' '}
             {distanceSentence(city)}
           </p>
@@ -209,7 +219,7 @@ export default async function ServiceCityPage({
 
             <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
               Ob Neubau oder Sanierung im bewohnten Bestand: Als eingetragener Fachbetrieb der {authority.name} übernehmen
-              wir Projekte im Bereich {service.name} für Privatkunden, Architekten und Bauherren in {city.name} sowie im
+              wir Projekte im Bereich {displayName} für Privatkunden, Architekten und Bauherren in {city.name} sowie im
               gesamten {city.region}. {city.description}
             </p>
 
@@ -337,10 +347,10 @@ export default async function ServiceCityPage({
 
       {/* Final Conversion CTA with Quick Form */}
       <FinalCTA
-        headline={`${service.name} in ${city.name}: Jetzt unverbindlich beraten lassen.`}
+        headline={`${displayName} in ${city.name}: Jetzt unverbindlich beraten lassen.`}
         subtitle={`Kostenfreies Vor-Ort-Aufmaß in ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
         buttonText={`Jetzt Beratung für ${city.name} anfordern`}
-        serviceContext={`${service.name} · ${city.name}`}
+        serviceContext={`${displayName} · ${city.name}`}
         showQuickForm={true}
         quickFormSource={`leistung-${service.id}-${city.slug}`}
       />

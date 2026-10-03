@@ -29,11 +29,11 @@ export default function TeamPage() {
                         Kompetenz &amp; Leidenschaft
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Unser Team –{' '}
-                        <span className="text-ceramic-gradient">Handwerk aus Überzeugung</span>
+                        Unser Team:{' '}
+                        <span className="text-ceramic-gradient">Fliesenleger-Fachbetrieb Tezgel Aßlar</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Unser Team steht für echtes Handwerk aus Überzeugung: Hinter jedem Bad, jeder Terrasse und jeder großformatigen Fläche steht ein eingespieltes Team aus Aßlar – geführt von Inhaber &amp; Fachbetriebsleiter {owner.fullName}. Mit bis zu 12 engagierten Handwerkern realisieren wir Groß- und Kleinprojekte zuverlässig.
+                        Lernen Sie unser Team kennen: Hinter dem Fliesenleger-Fachbetrieb Tezgel Aßlar steht ein eingespieltes Team aus Handwerkern – geführt von Inhaber {owner.fullName}. Für Ihr Projekt in Wetzlar, Gießen und ganz Hessen.
                     </p>
                 </div>
             </div>

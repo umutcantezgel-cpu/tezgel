@@ -33,11 +33,11 @@ export default function MusterbaederPage() {
                         Transparente Raumkonzepte
                     </span>
                     <h1 id="musterbaeder-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Musterbad-Katalog &amp;{' '}
-                        <span className="text-ceramic-gradient">Badinspiration</span>
+                        Musterbäder &amp; Badideen Wetzlar:{' '}
+                        <span className="text-ceramic-gradient">Badsanierung Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        In unserem Musterbad-Katalog und unserer Badinspiration finden Sie schlüsselfertige Musterbäder für Ihr Bad in Aßlar, Wetzlar und ganz Mittelhessen. Als Fachbetrieb Tezgel bieten wir transparente Ausstattungslisten und verlässliche Festpreis-Orientierungen mit hochwertigen Markenprodukten.
+                        Entdecken Sie unsere Musterbäder und modernen Badideen für Wetzlar, Aßlar und Mittelhessen. Als Fachbetrieb für Badsanierung Tezgel bieten wir transparente Ausstattungslisten und verlässliche Festpreis-Orientierungen mit hochwertigen Markenprodukten.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs">
@@ -80,7 +80,7 @@ export default function MusterbaederPage() {
                                     </p>
 
                                     <div className="space-y-2.5 mb-6">
-                                        <h3 className="text-[11px] font-black uppercase tracking-widest text-orange-950">Ausstattungs-Highlights</h3>
+                                        <div className="text-[11px] font-black uppercase tracking-widest text-orange-950">Ausstattungs-Highlights</div>
                                         <ul className="space-y-2">
                                             {bath.highlights.map((h) => (
                                                 <li key={h} className="flex items-start gap-2 text-sm text-slate-700">

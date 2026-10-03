@@ -280,3 +280,29 @@ test('12. Utilities: String normalizers & Customer Subjects', () => {
   assert.equal(subjGeneral.includes('Fliesenverlegung Tezgel'), true);
 });
 
+test('13. PricingCalculator: Transformed Comprehensive Contact Form submission validates', () => {
+  const payload = {
+    inquiryType: 'bad',
+    projectTitle: 'Badsanierung & Walk-In Dusche (Standard-Raum / Bad)',
+    projectType: 'bad',
+    contact: {
+      name: 'Erika Musterfrau',
+      phone: '0160 98765432',
+      email: 'erika.muster@example.de',
+      location: 'Wetzlar'
+    },
+    area: 'ca. 10 - 25 m²',
+    timing: 'In den nächsten 1 - 3 Monaten',
+    notes: 'SITUATIONSSCHILDERUNG DES KUNDEN:\nAltes Badezimmer aus den 80ern, soll komplett barrierefrei umgebaut werden mit Walk-In-Dusche.\n--- PROJEKTDETAILS ---\nGewerk: Badsanierung & Walk-In Dusche\nFläche: ca. 10 - 25 m²\nBesonderheiten:\n- Altfliesen entfernen & entsorgen\n- Barrierefreier / schwellenloser Zugang',
+    _t: Date.now() - 5000
+  };
+
+  const validation = validateInquiryPayload(payload);
+  assert.equal(validation.success, true);
+  assert.equal(validation.data?.contact.name, 'Erika Musterfrau');
+  assert.equal(validation.data?.contact.phone, '0160 98765432');
+  assert.equal(validation.data?.contact.email, 'erika.muster@example.de');
+  assert.equal(validation.data?.area, 'ca. 10 - 25 m²');
+  assert.equal(validation.data?.notes?.includes('Altes Badezimmer aus den 80ern'), true);
+});
+

@@ -72,7 +72,7 @@ export default function BarrierefreiheitPage() {
                             Mauerstraße 53, 10117 Berlin<br />
                             Telefon: 030 18 527-2805<br />
                             E-Mail: <a href="mailto:info@schlichtungsstelle-bgg.de" className="text-orange-700 underline underline-offset-2 hover:text-orange-600">info@schlichtungsstelle-bgg.de</a><br />
-                            Website: <a href="https://www.bgg-schlichtungsstelle.de" target="_blank" rel="noopener noreferrer" className="text-orange-700 underline underline-offset-2 hover:text-orange-600">www.bgg-schlichtungsstelle.de</a>
+                            Website: <a href="https://www.schlichtungsstelle-bgg.de" target="_blank" rel="noopener noreferrer" className="text-orange-700 underline underline-offset-2 hover:text-orange-600">www.schlichtungsstelle-bgg.de</a>
                         </p>
                     </div>
 

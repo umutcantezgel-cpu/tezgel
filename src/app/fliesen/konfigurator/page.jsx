@@ -120,13 +120,11 @@ export default function FliesenKonfiguratorPage() {
                         Fliesen-Konfigurator
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesen-Konfigurator: Ihr Fliesenprojekt in{' '}
-                        <span className="text-ceramic-gradient">4 Schritten</span> vorbereiten
+                        Fliesen-Konfigurator &amp; Bedarfsrechner von{' '}
+                        <span className="text-ceramic-gradient">Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Wählen Sie Raum, Untergrund, Format und Fläche. Der Konfigurator fasst Ihr Vorhaben zusammen, ermittelt den
-                        Materialbedarf inklusive Verschnitt als Richtwert und nennt die Punkte, die wir vorab prüfen. Die Anfrage
-                        senden Sie direkt per WhatsApp oder E-Mail – ohne Preise, ohne Verpflichtung.
+                        Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechnen Sie Materialbedarf und Verschnitt für Raum, Untergrund und Format vorab – unverbindlich und kostenfrei.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <a href="#konfigurator" className="btn-primary px-7 py-3.5 text-xs">

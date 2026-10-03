@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
         });
     }
 
-    const title = `Musterbad ${bath.title} | Fliesenverlegung Tezgel`;
+    const title = `Musterbad ${bath.title} – Komplettbad & Badsanierung | Tezgel`;
     const description = `Musterbad ${bath.title}: ${bath.headline}. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb Tezgel aus Aßlar.`;
 
     return createMetadata({
@@ -75,7 +75,8 @@ export default async function MusterbadDetailPage({ params }) {
                     </div>
 
                     <h1 id="musterbad-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        {bath.title}
+                        Musterbad {bath.title} –{' '}
+                        <span className="text-ceramic-gradient">Komplettbad &amp; Badsanierung</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed">
                         {bath.headline}

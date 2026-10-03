@@ -118,11 +118,11 @@ export default function AbnahmePage() {
                         Abnahme &middot; DIN 18202
                     </span>
                     <h1 id="abnahme-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Abnahme von Fliesenarbeiten:{' '}
-                        <span className="text-ceramic-gradient">Qualität erkennen und prüfen</span>
+                        Fliesenarbeiten abnehmen: Checkliste &amp; Normen bei{' '}
+                        <span className="text-ceramic-gradient">Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Abnahme von Fliesenarbeiten: Handwerkliche Qualität erkennen und prüfen nach anerkannten Regeln der Technik und DIN 18202. Erfahren Sie, worauf Bauherren bei Ebenheit, Fugenbild, Hohlraumfreiheit und Übergabe achten sollten – inklusive praktischer Prüf-Checkliste.
+                        Fliesenarbeiten fachgerecht abnehmen nach DIN 18202 und anerkannten Regeln der Technik: Fachbetrieb Tezgel erklärt Checkliste, Ebenheitstoleranzen, Fugenbild und worauf Bauherren bei der Übergabe achten sollten.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

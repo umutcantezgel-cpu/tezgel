@@ -128,14 +128,19 @@ export default function CookieConsent() {
     updateTransform(initial.x, initial.y);
   }, [showBanner, updateTransform]);
 
-  // Sync dimensions when settings modal opens/closes
+  // Sync dimensions when settings modal opens/closes without blocking layout
   useEffect(() => {
-    if (cardRef.current) {
-      cardDimensionsRef.current = {
-        w: cardRef.current.offsetWidth,
-        h: cardRef.current.offsetHeight,
-      };
-    }
+    if (typeof window === "undefined") return;
+    const rId = requestAnimationFrame(() => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        cardDimensionsRef.current = {
+          w: rect.width || (window.innerWidth < 768 ? window.innerWidth - 24 : 860),
+          h: rect.height || 280,
+        };
+      }
+    });
+    return () => cancelAnimationFrame(rId);
   }, [showSettings]);
 
   // Wall bounce physics loop with 2-body collision resolution
@@ -348,9 +353,10 @@ export default function CookieConsent() {
       setIsDragging(false);
 
       if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
         cardDimensionsRef.current = {
-          w: cardRef.current.offsetWidth,
-          h: cardRef.current.offsetHeight,
+          w: rect.width || cardDimensionsRef.current.w,
+          h: rect.height || cardDimensionsRef.current.h,
         };
       }
 
@@ -383,9 +389,10 @@ export default function CookieConsent() {
   useEffect(() => {
     const handleResize = () => {
       if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
         cardDimensionsRef.current = {
-          w: cardRef.current.offsetWidth,
-          h: cardRef.current.offsetHeight,
+          w: rect.width || cardDimensionsRef.current.w,
+          h: rect.height || cardDimensionsRef.current.h,
         };
       }
       const { w: cardWidth, h: cardHeight } = cardDimensionsRef.current;

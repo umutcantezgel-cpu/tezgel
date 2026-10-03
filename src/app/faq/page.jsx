@@ -211,7 +211,7 @@ export default function FAQPage() {
                         </a>
                     </div>
                 </div>
-                {/* Interaktiver Preisrechner */}
+                {/* Umfassendes Projektanfrage-Formular */}
                 <div className="mt-16">
                     <PricingCalculator />
                 </div>

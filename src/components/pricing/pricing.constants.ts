@@ -1,19 +1,26 @@
 // ============================================================
-// PREIS-KALKULATION KONSTANTEN – FLIESENVERLEGUNG TEZGEL
+// PROJEKT-ANFRAGE KONSTANTEN – FLIESENVERLEGUNG TEZGEL
 // ============================================================
-// Realistische Richtwerte für Vorabkalkulation in Aßlar & Wetzlar
-// Verbindliches Festpreisangebot immer nach kostenfreiem Vor-Ort-Aufmaß
+// Strukturierte Daten für die umfassende Projekt- und Situationsabfrage.
+// Keine öffentlichen Preise – Individuelle Festpreisangebote nach kostenfreiem Vor-Ort-Aufmaß.
 // ============================================================
 
-export type CraftServiceType = 'bad' | 'grossformat' | 'wohnbereich' | 'balkon' | 'abdichtung';
+export type CraftServiceType =
+  | 'bad'
+  | 'grossformat'
+  | 'wohnbereich'
+  | 'balkon'
+  | 'abdichtung'
+  | 'reparatur';
+
 export type RoomSizeType = 'small' | 'medium' | 'large' | 'xlarge';
 
 export interface CraftServiceOption {
   id: CraftServiceType;
   title: string;
   subtitle: string;
-  basePricePerSqm: number;
-  fixedBase: number;
+  badge?: string;
+  focusPoints?: string[];
 }
 
 export interface RoomSizeOption {
@@ -23,73 +30,134 @@ export interface RoomSizeOption {
   approxSqm: number;
 }
 
+export interface SituationFeatureOption {
+  id: string;
+  label: string;
+  description: string;
+}
+
 export const CRAFT_SERVICES: Record<CraftServiceType, CraftServiceOption> = {
   bad: {
     id: 'bad',
-    title: 'Badsanierung & Walk-In',
-    subtitle: 'Wand & Boden, Gefälle & Dichtigkeit',
-    basePricePerSqm: 85,
-    fixedBase: 1200,
+    title: 'Badsanierung & Walk-In Dusche',
+    subtitle: 'Wand & Boden, Gefälle, Nischen & Komplettbad',
+    badge: 'Sehr gefragt',
+    focusPoints: ['Normgerechte Verbundabdichtung', 'Bodengleiche Walk-In-Dusche', 'Ablagenischen & Gehrungsschnitt']
   },
   grossformat: {
     id: 'grossformat',
-    title: 'XXL-Großformat (ab 120cm)',
-    subtitle: 'Nivelliersystem, Vakuumheber & Kalibrierung',
-    basePricePerSqm: 95,
-    fixedBase: 800,
+    title: 'XXL-Großformat (ab 120 cm)',
+    subtitle: 'Fugenarme Fliesen, Vakuumheber & Kalibrierung',
+    badge: 'Spezialgebiet',
+    focusPoints: ['Fliesenformate bis 120x260 cm', 'Exaktes Nivelliersystem', 'Millimetergenaue Verlegeachsen']
   },
   wohnbereich: {
     id: 'wohnbereich',
     title: 'Wohnraum, Flur & Küche',
-    subtitle: 'Feinsteinzeug, Holzoptik & Fugenachsen',
-    basePricePerSqm: 55,
-    fixedBase: 450,
+    subtitle: 'Feinsteinzeug, Holzoptik & durchgehende Fugen',
+    badge: 'Klassiker',
+    focusPoints: ['Robuste Feinsteinzeug-Beläge', 'Moderne Großformate', 'Schwellenlose Übergänge']
   },
   balkon: {
     id: 'balkon',
-    title: 'Balkon & Terrasse',
-    subtitle: 'Stelzlager, Gefälleestrich & Frostsicherheit',
-    basePricePerSqm: 75,
-    fixedBase: 650,
+    title: 'Balkon, Terrasse & Außen',
+    subtitle: 'Frostsichere 2-cm-Keramik, Stelzlager & Gefälle',
+    badge: 'Außenbereich',
+    focusPoints: ['2-cm-Außenkeramik auf Stelzlagern', 'Hinterlüftet & frostsicher', 'Optimaler Wasserablauf']
   },
   abdichtung: {
     id: 'abdichtung',
     title: 'DIN 18534 Abdichtung & Estrich',
     subtitle: 'Verbundabdichtung, Dichtbänder & Nivellierung',
-    basePricePerSqm: 40,
-    fixedBase: 350,
+    badge: 'Zertifiziert',
+    focusPoints: ['Normgerechte Nassraum-Abdichtung', 'Untergrundausgleich & Spachtelung', 'Dauerhafter Feuchteschutz']
   },
+  reparatur: {
+    id: 'reparatur',
+    title: 'Reparatur & Schadensbeseitigung',
+    subtitle: 'Fliesentausch, Silikonfugen & Ursachenprüfung',
+    badge: 'Schnellhilfe',
+    focusPoints: ['Gezielter Einzelfliesen-Austausch', 'Sanierung elastischer Fugen', 'Vor-Ort-Schadensanalyse']
+  }
 };
 
 export const ROOM_SIZES: Record<RoomSizeType, RoomSizeOption> = {
   small: {
     id: 'small',
     label: 'Kompakt / Gäste-WC',
-    areaText: 'ca. 5 - 10 m²',
-    approxSqm: 8,
+    areaText: 'bis ca. 10 m²',
+    approxSqm: 8
   },
   medium: {
     id: 'medium',
     label: 'Standard-Raum / Bad',
     areaText: 'ca. 10 - 25 m²',
-    approxSqm: 18,
+    approxSqm: 18
   },
   large: {
     id: 'large',
-    label: 'Großraum / Wohnfläche',
+    label: 'Großraum / Wohnbereich',
     areaText: 'ca. 25 - 50 m²',
-    approxSqm: 35,
+    approxSqm: 35
   },
   xlarge: {
     id: 'xlarge',
     label: 'Gesamtes Objekt / Etage',
     areaText: 'ab 50 m²',
-    approxSqm: 65,
-  },
+    approxSqm: 65
+  }
 };
 
-export const ADDON_OPTIONS = [
-  { id: 'staubschutz', label: 'Staubschutz-Paket (Luftreiniger & Staubtür)', cost: 180 },
-  { id: 'altbelag', label: 'Altfliesen-Demontage & Fachgerechte Entsorgung', cost: 420 },
-  { id: 'fussbodenheizung', label: 'Verlegung auf Fußbodenheizung (Flexmörtel S1/S2)', cost: 250 },
+export const SITUATION_OPTIONS: SituationFeatureOption[] = [
+  {
+    id: 'altbelag',
+    label: 'Altfliesen entfernen & entsorgen',
+    description: 'Bestehende Fliesen müssen vorab fachgerecht abgetragen werden'
+  },
+  {
+    id: 'untergrund',
+    label: 'Untergrundausgleich / Estrich nötig',
+    description: 'Unebene Böden oder Wände müssen vor der Verlegung gespachtelt werden'
+  },
+  {
+    id: 'fussbodenheizung',
+    label: 'Fußbodenheizung vorhanden / geplant',
+    description: 'Verlegung erfordert hochflexible S1/S2 Mörtel für thermische Spannungen'
+  },
+  {
+    id: 'barrierefrei',
+    label: 'Barrierefreier / schwellenloser Zugang',
+    description: 'Bodengleiche Dusche, flache Schwellen oder altersgerechte Planung'
+  },
+  {
+    id: 'staubschutz',
+    label: 'Staubschutz im bewohnten Wohnbereich',
+    description: 'Einsatz von Staubschutztüren & HEPA-Luftreinigern während der Arbeiten'
+  },
+  {
+    id: 'fliesenberatung',
+    label: 'Material- & Fliesenberatung gewünscht',
+    description: 'Unterstützung bei Fliesenauswahl, Rutschhemmung und Formatabstimmung'
+  }
+];
+
+// Abwärtskompatibles Alias für eventuelle Altreferenzen
+export const ADDON_OPTIONS = SITUATION_OPTIONS.map((item) => ({
+  id: item.id,
+  label: item.label,
+  cost: 0
+}));
+
+export const PROPERTY_TYPES = [
+  { id: 'bestand', label: 'Bestandsimmobilie / Sanierung' },
+  { id: 'neubau', label: 'Neubau / Erstbezug' },
+  { id: 'miete', label: 'Mietobjekt / Wohnanlage' },
+  { id: 'gewerbe', label: 'Gewerbe / Praxis / Büro' }
+];
+
+export const TIMING_OPTIONS = [
+  'Schnellstmöglich',
+  'In den nächsten 1 - 3 Monaten',
+  'In 3 - 6 Monaten',
+  'Flexibel / In Planung'
 ];

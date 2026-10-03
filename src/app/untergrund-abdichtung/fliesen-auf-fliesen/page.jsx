@@ -20,9 +20,9 @@ import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
 export const metadata = createMetadata({
-    title: 'Fliesen auf Fliesen verlegen: Wann es geht | Tezgel',
+    title: 'Altfliesen überkleben: Wann es fachgerecht geht | Tezgel',
     description:
-        'Fliesen auf Fliesen verlegen (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
+        'Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar.',
     path: '/untergrund-abdichtung/fliesen-auf-fliesen'
 });
 
@@ -118,11 +118,11 @@ export default function FliesenAufFliesenPage() {
                         Altbelag &middot; Überfliesen &middot; Rückbau
                     </span>
                     <h1 id="ueberfliesen-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesen auf Fliesen oder Rückbau?{' '}
-                        <span className="text-ceramic-gradient">Den Altbelag richtig bewerten</span>
+                        Altfliesen überkleben:{' '}
+                        <span className="text-ceramic-gradient">Wann es fachgerecht geht</span> bei Tezgel
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Fliesen auf Fliesen oder Rückbau? Den Altbelag richtig bewerten und fundiert entscheiden: Überfliesen spart Zeit und Schmutz, erfordert aber einen rissfreien, tragfähigen Untergrund, ausreichende Aufbauhöhen und eine geprüfte Haftung.
+                        Altfliesen überkleben oder Rückbau? Fachbetrieb Tezgel prüft Ihren Altbelag auf Tragfähigkeit, Haftung und Aufbauhöhen – damit Ihr neuer Fliesenbelag dauerhaft sicher und rissfrei liegt.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

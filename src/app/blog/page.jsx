@@ -173,11 +173,13 @@ export default function BlogPage() {
 
             {/* Post Grid */}
             <div className="grid md:grid-cols-2 gap-6">
-              {filteredPosts.map((post) => (
-                <div key={post.id}>
-                  <BlogCard post={post} />
-                </div>
-              ))}
+              {filteredPosts
+                .filter(post => !(featuredPost && activeCategory === 'all' && !searchQuery && post.id === featuredPost.id))
+                .map((post) => (
+                  <div key={post.id}>
+                    <BlogCard post={post} />
+                  </div>
+                ))}
             </div>
 
             {/* Empty State */}

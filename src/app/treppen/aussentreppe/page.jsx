@@ -91,11 +91,11 @@ export default function AussentreppePage() {
                         Treppen &middot; Außenbereich
                     </span>
                     <h1 id="aussentreppe-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Außentreppe und Hauseingang:{' '}
-                        <span className="text-ceramic-gradient">frostsicher und trittsicher belegt</span>
+                        Außentreppe fliesen: frostsicher &amp; rutschfest bei{' '}
+                        <span className="text-ceramic-gradient">Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Außentreppe und Hauseingang: frostsicher und trittsicher belegt mit normgerechtem Gefälle, Verbundabdichtung und rutschhemmender Keramik. Eingangsstufen, Podeste und Freitreppen trotzen Frost und Nässe nur mit durchdachtem Wasserablauf und profilierter Stufenkante.
+                        Außentreppe und Hauseingang frostsicher fliesen &amp; sanieren: Fliesenleger-Fachbetrieb Tezgel belegt Stufen und Podeste mit rutschfesten Platten, normgerechtem Gefälle und dauerhafter Verbundabdichtung in Wetzlar &amp; Aßlar.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

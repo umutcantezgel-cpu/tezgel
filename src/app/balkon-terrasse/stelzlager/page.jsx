@@ -116,11 +116,11 @@ export default function StelzlagerPage() {
                         Balkon- &amp; Terrassensanierung auf Stelzlagern
                     </span>
                     <h1 id="stelzlager-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Terrassenplatten auf Stelzlagern:{' '}
-                        <span className="text-ceramic-gradient">frostsicher, eben, reparaturfreundlich</span>
+                        Terrassenplatten auf Stelzlagern verlegen mit{' '}
+                        <span className="text-ceramic-gradient">Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Terrassenplatten auf Stelzlagern: frostsicher, eben, reparaturfreundlich und dauerhaft entwässert. 2-cm-Feinsteinzeug auf höhenverstellbaren Lagern lässt Regenwasser durch offene Fugen abfließen, schont die Abdichtung und vermeidet Frostabplatzungen ohne Mörtelbett.
+                        Terrassenplatten auf Stelzlagern verlegen lassen: Fachbetrieb Tezgel montiert 2-cm-Feinsteinzeug auf höhenverstellbaren Stelzlagern in Wetzlar &amp; Aßlar – frostsicher, dauerhaft drainagefähig und ohne Mörtelbett.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

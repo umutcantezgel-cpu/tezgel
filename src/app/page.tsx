@@ -197,7 +197,7 @@ export default function HomePage() {
                                             'Fliesenverlegung & Badsanierung aus Aßlar',
                                             'XXL-Großformatkeramik & Walk-In Duschen',
                                             'DIN 18534 Verbundabdichtung & Staubschutz',
-                                            'Ihr Meisterbetrieb für Mittelhessen',
+                                            'Ihr Fachbetrieb für Mittelhessen',
                                         ]}
                                     />
                                 </span>
@@ -385,17 +385,17 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* PREISKALKULATOR & TRANSPARENZ */}
+            {/* PROJEKTANFRAGE & SITUATIONSSCHILDERUNG */}
             <section className="py-20 relative z-10" id="kosten-rechner" aria-labelledby="rechner-heading">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-red mb-4">Interaktiver Kalkulator</span>
+                        <span className="eyebrow eyebrow-red mb-4">Umfassende Projektanfrage</span>
                         <h2 id="rechner-heading" className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
-                            Kosten vorab transparent kalkulieren
+                            Projekt anfragen &amp; Situation schildern
                         </h2>
                         <p className="mt-3 text-base text-neutral-700 leading-relaxed">
-                            Wählen Sie Ihr gewünschtes Vorhaben und die geschätzte Quadratmeterzahl für einen realistischen Vorab-Richtwert.
-                            Das verbindliche Festpreisangebot erfolgt stets nach kostenfreiem Vor-Ort-Aufmaß.
+                            Wählen Sie Ihr geplantes Vorhaben und beschreiben Sie kurz Ihre Ausgangslage vor Ort.
+                            Meister Deniz Tezgel prüft Ihre Angaben und meldet sich zeitnah für eine persönliche Abstimmung und das kostenfreie Vor-Ort-Aufmaß.
                         </p>
                     </div>
                     <PricingCalculator />

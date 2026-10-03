@@ -31,9 +31,9 @@ export function formatWhatsAppNumber(phone?: string): string {
 export function buildWhatsAppUrl(phone?: string, text?: string): string {
   const cleanPhone = formatWhatsAppNumber(phone);
   if (!text || text.trim() === '') {
-    return `https://wa.me/${cleanPhone}`;
+    return `https://api.whatsapp.com/send?phone=${cleanPhone}`;
   }
-  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(text.trim())}`;
+  return `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodeURIComponent(text.trim())}`;
 }
 
 /**

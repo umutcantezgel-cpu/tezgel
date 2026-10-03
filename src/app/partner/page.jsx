@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Layers, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { partnerBrands, COMPANY_DATA } from '@/config/company';
+import { partnerBrands } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
 
@@ -14,8 +14,6 @@ export const metadata = createMetadata({
 // Uses the brand names & categories from COMPANY_DATA only. Partner-status labels are
 // intentionally not shown until they are verified.
 export default function PartnerPage() {
-    const materialPromise = COMPANY_DATA.qualityPromises.find((promise) => promise.title.includes('Verlegewerkstoffe'));
-
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
             {/* Ambient Glow */}
@@ -30,14 +28,12 @@ export default function PartnerPage() {
                         Markenqualität ohne Kompromisse
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Materialien &amp; Systeme,{' '}
-                        <span className="text-ceramic-gradient">mit denen wir arbeiten</span>
+                        Materialpartner &amp; Verlegesysteme:{' '}
+                        <span className="text-ceramic-gradient">Tezgel Fachbetrieb</span>
                     </h1>
-                    {materialPromise && (
-                        <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                            {materialPromise.description}
-                        </p>
-                    )}
+                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                        Als Fachbetrieb Tezgel setzen wir bei Verbundabdichtung, Klebern und Fliesen auf führende Materialpartner und zertifizierte Verlegesysteme renommierter Hersteller.
+                    </p>
                 </div>
             </div>
 

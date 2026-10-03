@@ -23,12 +23,11 @@ export default function BadanfragePage() {
                         Kostenfrei &amp; unverbindlich
                     </span>
                     <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Ihre Badanfrage{' '}
-                        <span className="text-ceramic-gradient">in 5 Schritten</span>
+                        Badsanierung Angebot anfordern bei{' '}
+                        <span className="text-ceramic-gradient">Tezgel Wetzlar</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                        Immobilie, Umfang, Raummaße und Wunschausstattung angeben – und die Anfrage anschließend direkt per WhatsApp
-                        oder E-Mail an uns senden.
+                        Jetzt unverbindlich Ihr Badsanierung Angebot anfordern: In 5 Schritten Raummaße und Wunschausstattung angeben – Tezgel Wetzlar erstellt Ihr maßgeschneidertes Festpreisangebot.
                     </p>
                 </header>
 

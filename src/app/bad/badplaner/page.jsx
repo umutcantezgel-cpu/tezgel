@@ -45,12 +45,12 @@ export default function BadplanerPage() {
                         Badplanung Schritt für Schritt
                     </span>
                     <h1 id="badplaner-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Ihr Badplaner:{' '}
-                        <span className="text-ceramic-gradient">in 3 Schritten zum Badkonzept</span>
+                        Badplaner: Bad online planen mit{' '}
+                        <span className="text-ceramic-gradient">Fliesenverlegung Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Planen Sie Ihr neues Badezimmer schon vor dem ersten Hammerschlag: Raummaße erfassen, Ausstattung festlegen,
-                        Fliesen, Farben und Licht abstimmen – den Feinschliff übernehmen wir beim Vor-Ort-Termin.
+                        Planen Sie Ihr Bad online in 3 Schritten: Raummaße erfassen, Ausstattung festlegen und
+                        Fliesen abstimmen. Fliesenverlegung Tezgel berät Sie persönlich beim kostenfreien Vor-Ort-Aufmaß.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">

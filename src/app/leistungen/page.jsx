@@ -226,8 +226,17 @@ export default function ServiceHubPage() {
         </ol>
       </div>
 
-      {/* Interaktiver Preisrechner */}
+      {/* Umfassendes Projektanfrage-Formular */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="eyebrow mb-3">Projekt &amp; Ausgangslage</span>
+          <h2 className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
+            Projekt anfragen &amp; Situation schildern
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-700 mt-2">
+            Geben Sie uns einen ersten Einblick in Ihr Vorhaben vor Ort für eine fundierte Einschätzung durch Meister Deniz Tezgel.
+          </p>
+        </div>
         <PricingCalculator />
       </div>
 

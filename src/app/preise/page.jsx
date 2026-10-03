@@ -16,9 +16,9 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 import { FinalCTA } from "@/components/ui/FinalCTA";
 
 export const metadata = createMetadata({
-  title: "Fliesenleger Preise & Kosten | Kalkulator · Tezgel",
+  title: "Fliesenleger Preise auf Anfrage | Festpreisangebote · Tezgel",
   description:
-    "Transparente Preise für Fliesenverlegung, XXL-Fliesen & Badsanierung in Wetzlar & Aßlar. Online-Kalkulator nutzen & Festpreisangebot anfragen!",
+    "Preise für Fliesenverlegung, XXL-Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
   path: "/preise"
 });
 
@@ -35,25 +35,25 @@ export default function PreisePage() {
           <div className="flex flex-wrap items-center justify-center gap-2">
             <span className="eyebrow">
               <Calculator className="w-3.5 h-3.5" />
-              100% Preistransparenz
+              Preise auf Anfrage
             </span>
             <span className="eyebrow eyebrow-red">
-              Verbindliche Festpreisangebote
+              Verbindliche Festpreisgarantie
             </span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-tight">
-            Transparente Preise &amp;{" "}
-            <span className="text-ceramic-gradient">Kostenrechner</span>
+            Kosten &amp; Preise auf Anfrage –{" "}
+            <span className="text-ceramic-gradient">Verbindliche Festpreise</span>
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            Keine versteckten Nebenkosten, keine bösen Überraschungen: Bei {siteConfig.company.name} erhalten Sie nach einem kostenfreien Vor-Ort-Aufmaß ein verbindliches Festpreisangebot mit detaillierter Leistungsaufstellung. Nutzen Sie unseren interaktiven Rechner für eine erste Orientierung.
+            Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Raummaßen und Gestaltungswünschen. Bei {siteConfig.company.name} erhalten Sie nach einem kostenfreien Vor-Ort-Aufmaß ein detailliertes und verbindliches Festpreisangebot – garantiert ohne versteckte Nebenkosten.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-            <a href="#kalkulator" className="btn-primary">
-              <span>Online-Rechner starten</span>
+            <a href="#anfrage" className="btn-primary">
+              <span>Projektanfrage starten</span>
               <ArrowRight className="w-4 h-4" />
             </a>
             <a
@@ -78,17 +78,18 @@ export default function PreisePage() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="eyebrow mb-3">Leistungspakete im Überblick</span>
           <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Richtpreise unserer Fachgewerke
+            Unsere Fachgewerke
           </h2>
           <p className="text-sm text-neutral-700 mt-2">
-            Verlässliche Orientierungswerte für Arbeitsleistung und Standard-Verlegematerialien.
+            Fachmännische Ausführung von der Untergrundvorbereitung bis zur perfekten Fuge – verbindliches Angebot nach Aufmaß.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <PriceCard
             title="Boden & Wand Standard"
-            price={48}
+            price="Auf Anfrage"
+            priceSubtitle="Individuelles Angebot"
             description="Fliesenverlegung in Standardformaten bis 60x60 cm in Küche, Flur oder Keller."
             features={[
               "Formate bis 60x60 cm",
@@ -98,12 +99,13 @@ export default function PreisePage() {
               "Besenreine Übergabe"
             ]}
             ctaText="Angebot anfragen"
-            ctaHref="/kontakt"
+            ctaHref="#anfrage"
           />
 
           <PriceCard
             title="XXL-Großformate"
-            price={85}
+            price="Auf Anfrage"
+            priceSubtitle="Individuelles Angebot"
             description="Fugenarme Luxusbeläge von 120x60 cm bis 120x260 cm mit Spezialhebetechnik."
             features={[
               "Formate bis 120x260 cm",
@@ -114,12 +116,13 @@ export default function PreisePage() {
             ]}
             isPopular={true}
             ctaText="Großformat anfragen"
-            ctaHref="/kontakt"
+            ctaHref="#anfrage"
           />
 
           <PriceCard
             title="Bad-Sanierung"
-            price={75}
+            price="Auf Anfrage"
+            priceSubtitle="Individuelles Angebot"
             description="Komplettes Badezimmer inkl. normgerechter DIN 18534 Abdichtung und Duschgefälle."
             features={[
               "Norm-Abdichtung DIN 18534",
@@ -129,12 +132,13 @@ export default function PreisePage() {
               "Staubschutz im Wohnbereich"
             ]}
             ctaText="Badsanierung anfragen"
-            ctaHref="/bad/badanfrage"
+            ctaHref="#anfrage"
           />
 
           <PriceCard
             title="Balkon & Terrasse"
-            price={65}
+            price="Auf Anfrage"
+            priceSubtitle="Individuelles Angebot"
             description="Witterungsbeständige 2-cm-Keramikplatten auf höhenverstellbaren Stelzlagern."
             features={[
               "2 cm Feinsteinzeug-Platten",
@@ -144,13 +148,13 @@ export default function PreisePage() {
               "Rutschhemmung R11"
             ]}
             ctaText="Terrasse anfragen"
-            ctaHref="/balkon-terrasse"
+            ctaHref="#anfrage"
           />
         </div>
       </div>
 
-      {/* Interactive Pricing Calculator */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 scroll-mt-28" id="kalkulator">
+      {/* Interactive Pricing Calculator / Project Inquiry */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 scroll-mt-28" id="anfrage">
         <PricingCalculator />
       </div>
 

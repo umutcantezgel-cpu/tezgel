@@ -37,6 +37,14 @@ export default async function ServiceDetailPage({ params }) {
 
   const relatedServices = SERVICES.filter((s) => s.id !== service.id);
 
+  const serviceH1Titles = {
+    bad: 'Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar',
+    wohnen: 'Fliesenverlegung Wohnbereich & Neubau in Wetzlar',
+    aussen: 'Balkon- & Terrassensanierung in Wetzlar & Mittelhessen',
+    untergrund: 'DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar',
+  };
+  const h1Title = serviceH1Titles[service.id] || service.name;
+
   const pageUrl = `${SITE_URL}/leistungen/${service.id}`;
   const breadcrumbs = [
     { name: 'Home', path: '/' },
@@ -86,7 +94,7 @@ export default async function ServiceDetailPage({ params }) {
               </span>
 
               <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-tight">
-                {service.name}
+                {h1Title}
               </h1>
 
               <p className="text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed">
@@ -277,8 +285,17 @@ export default async function ServiceDetailPage({ params }) {
         </div>
       </div>
 
-      {/* Interaktiver Preisrechner */}
+      {/* Umfassendes Projektanfrage-Formular */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="eyebrow mb-3">Individuelle Anfrage</span>
+          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
+            Projekt anfragen &amp; Situation schildern
+          </h2>
+          <p className="text-sm text-neutral-700 mt-2">
+            Schildern Sie uns Ihr Vorhaben für {service.name} für eine fachmännische Einschätzung und ein Festpreisangebot nach Vor-Ort-Aufmaß.
+          </p>
+        </div>
         <PricingCalculator />
       </div>
 
@@ -305,7 +322,7 @@ export default async function ServiceDetailPage({ params }) {
           />
           <FAQAccordion
             question="In welchem Umkreis sind Sie im Einsatz?"
-            answer="Unser Meisterbetrieb hat seinen Sitz in Aßlar und betreut Kunden im Umkreis von ca. 45 km, u. a. in Wetzlar, Gießen, Butzbach, Herborn, Limburg und dem gesamten Lahn-Dill-Kreis."
+            answer="Unser Fachbetrieb hat seinen Sitz in Aßlar und betreut Kunden im Umkreis von ca. 45 km, u. a. in Wetzlar, Gießen, Butzbach, Herborn, Limburg und dem gesamten Lahn-Dill-Kreis."
           />
         </div>
       </div>

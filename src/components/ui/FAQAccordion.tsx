@@ -17,7 +17,7 @@ const callVariants = [
   `Direkt anrufen: ${siteConfig.contact.phone.formatted}`,
   `Kostenfreie Fachberatung: ${siteConfig.contact.phone.formatted}`,
   `Jetzt unter ${siteConfig.contact.phone.formatted} anfragen`,
-  `Fliesenmeister kontaktieren: ${siteConfig.contact.phone.formatted}`,
+  `Fliesen-Fachbetrieb kontaktieren: ${siteConfig.contact.phone.formatted}`,
   `Vor-Ort-Aufmaß anfragen: ${siteConfig.contact.phone.formatted}`,
   `Persönliche Beratung: ${siteConfig.contact.phone.formatted}`,
   `Rückfragen unter ${siteConfig.contact.phone.formatted}`,

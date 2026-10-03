@@ -77,11 +77,11 @@ export default function KuechePage() {
                         Räume &middot; Küche
                     </span>
                     <h1 id="kueche-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Küchenboden und Küchenrückwand fliesen:{' '}
-                        <span className="text-ceramic-gradient">robust, hygienisch, fleckunempfindlich</span>
+                        Küchenfliesen verlegen in Wetzlar mit{' '}
+                        <span className="text-ceramic-gradient">Fliesenleger Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Küchenboden und Küchenrückwand fliesen: robust, hygienisch und fleckunempfindlich für den täglichen Einsatz. In der Küche treffen Fett, Wasser, Hitze und mechanische Stöße auf den Belag – Feinsteinzeug hält dem stand, wenn Material, Fugen und Anschlüsse exakt ausgeführt sind.
+                        Fachgerechte Küchenfliesen und Fliesenspiegel verlegen in Wetzlar und Umgebung: Fliesenleger Tezgel sorgt für robuste Böden, hygienische Rückwände und pflegeleichte Fugen in Ihrer Küche.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

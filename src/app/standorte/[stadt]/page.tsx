@@ -55,14 +55,16 @@ export async function generateMetadata({
   const city = CITIES.find((c) => c.slug === stadt);
   if (!city) return {};
 
-  const path = `/standorte/${city.slug}`;
-  const title = `Fliesenleger & Bad in ${city.name} | Tezgel Fachbetrieb`;
+  const title =
+    city.slug === 'bad-nauheim'
+      ? 'Fliesenleger in Bad Nauheim | Badsanierung Tezgel'
+      : `Fliesenleger & Bad in ${city.name} | Tezgel Fachbetrieb`;
   const description = `Ihr Fliesenleger in ${city.name}: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
 
   return createMetadata({
     title,
     description,
-    path,
+    path: `/standorte/${stadt}`,
   });
 }
 

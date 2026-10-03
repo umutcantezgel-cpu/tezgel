@@ -98,11 +98,11 @@ export default function EntkopplungPage() {
                         Entkopplung &middot; Holz &middot; Rissverharzung
                     </span>
                     <h1 id="entkopplung-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Entkopplung, Holzdielen und Risse:{' '}
-                        <span className="text-ceramic-gradient">kritische Untergründe sicher belegen</span>
+                        Fliesen auf Holzboden verlegen: Entkopplung bei{' '}
+                        <span className="text-ceramic-gradient">Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Entkopplung, Holzdielen und Risse: Kritische Untergründe sicher belegen durch moderne Mattensysteme und Rissverharzung. Alte Dielenböden, gerissener Estrich und Mischuntergründe erfordern eine professionelle Scherriss-Entkopplung, um Fliesen dauerhaft schadensfrei zu verlegen.
+                        Fliesen auf Holzboden verlegen mit professioneller Entkopplung: Fachbetrieb Tezgel belegt Holzdielen, Mischuntergründe und gerissenen Estrich sicher mit modernen Entkopplungsmatten und Rissverharzung.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

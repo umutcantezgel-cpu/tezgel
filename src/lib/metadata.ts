@@ -27,7 +27,13 @@ function sanitizeTitle(raw: string): string {
       .replace(/\s*–\s*Referenzen Fliesenverlegung Tezgel/gi, '')
       .replace(/\s*\|\s*Ratgeber Fliesenverlegung Tezgel/gi, '')
       .replace(/\s*–\s*Fachbetrieb Fliesen Tezgel/gi, '')
+      .replace(/\s*\|\s*Fachbetrieb Tezgel/gi, '')
+      .replace(/\s*–\s*Fachbetrieb Tezgel/gi, '')
+      .replace(/\s*\|\s*Tezgel Fachbetrieb/gi, '')
+      .replace(/\s*–\s*Tezgel Fachbetrieb/gi, '')
       .replace(/\s*·\s*Tezgel/gi, '')
+      .replace(/\s*\|\s*Tezgel/gi, '')
+      .replace(/\s*–\s*Tezgel/gi, '')
       .replace(/\s*\|\s*Fachbetrieb/gi, '')
       .replace(/\s*–\s*Fachbetrieb/gi, '')
       .trim()
@@ -63,6 +69,14 @@ function sanitizeTitle(raw: string): string {
         candidate = `${prefix} · Fliesen Tezgel`;
       } else if (prefix.length + 16 <= 58) {
         candidate = `${prefix} – Tezgel Hessen`;
+      }
+    } else if (/Tezgel/i.test(candidate)) {
+      // Already has Tezgel brand - expand regionally, do NOT repeat Tezgel
+      const cleaned = cleanTrailingWords(candidate);
+      if (cleaned.length + 10 <= 58) {
+        candidate = `${cleaned} in Hessen`;
+      } else if (cleaned.length + 7 <= 58) {
+        candidate = `${cleaned} Hessen`;
       }
     } else {
       const cleaned = cleanTrailingWords(candidate);

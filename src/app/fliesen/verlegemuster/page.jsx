@@ -197,11 +197,11 @@ export default function VerlegemusterPage() {
                         Gestaltung &amp; Planung
                     </span>
                     <h1 id="verlegemuster-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Verlegemuster, Fugenbild und Abschlüsse:{' '}
-                        <span className="text-ceramic-gradient">so wirkt Ihre Fliesenfläche</span>
+                        Fliesen-Verlegemuster: Fischgrät &amp; Verbände bei{' '}
+                        <span className="text-ceramic-gradient">Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Verlegemuster, Fugenbild und Abschlüsse: So wirkt Ihre Fliesenfläche im Raum und setzt architektonische Akzente. Dieselbe Fliese kann ruhig, lebendig oder großzügig wirken – je nach Muster, Fugenbreite und Abschlusskanten.
+                        Entdecken Sie beliebte Fliesen-Verlegemuster wie Fischgrät, Kreuzfuge und Verbände: Fachbetrieb Tezgel berät Sie zu Raumwirkung, Verschnitt und harmonischem Fugenbild für Ihr Projekt.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

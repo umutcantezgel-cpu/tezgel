@@ -27,7 +27,7 @@ export const COMPANY_DATA = {
         mobile: "0172 / 67 28 504",
         mobileLink: "+491726728504",
         whatsapp: "491726728504",
-        whatsappLink: "https://wa.me/491726728504",
+        whatsappLink: "https://api.whatsapp.com/send?phone=491726728504",
         fax: "06441 / 44 83 548",
         email: "info@tezgel.de",
         mapsUrl: "https://maps.google.com/?q=Hohwardstra%C3%9Fe+14,+35614+A%C3%9Flar"
@@ -105,10 +105,10 @@ export const COMPANY_DATA = {
         mobileLink: "+491726728504",
         whatsapp: "0172 / 67 28 504",
         whatsappNumber: "491726728504",
-        whatsappLink: "https://wa.me/491726728504",
+        whatsappLink: "https://api.whatsapp.com/send?phone=491726728504",
         fax: "06441 / 44 83 548",
         email: "info@tezgel.de",
-        website: "https://www.tezgel.de"
+        website: "https://www.tezgel.de/"
     },
 
     // Social Profiles

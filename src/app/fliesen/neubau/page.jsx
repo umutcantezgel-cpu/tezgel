@@ -95,11 +95,11 @@ export default function NeubauPage() {
                         Neubau &middot; Bauherren
                     </span>
                     <h1 id="neubau-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesenarbeiten im Neubau:{' '}
-                        <span className="text-ceramic-gradient">sauber eingeplant im Bauablauf</span>
+                        Fliesen im Neubau verlegen lassen mit{' '}
+                        <span className="text-ceramic-gradient">Fliesen Tezgel</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Fliesenarbeiten im Neubau: Sauber eingeplant im Bauablauf sichern sie eine reibungslose Koordination der Gewerke. Wer frühzeitig Estrich-Belegreife, Fugenachsen und Anschlussdetails abstimmt, vermeidet Verzögerungen und garantiert höchste Ausführungsqualität.
+                        Fliesen im Neubau verlegen lassen: Fachbetrieb Fliesen Tezgel begleitet Bauherren in Wetzlar &amp; Aßlar mit Belegreifeprüfung, Bemusterung und terminierter Ausführung im Bauzeitenplan.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
