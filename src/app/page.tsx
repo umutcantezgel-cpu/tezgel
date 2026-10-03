@@ -33,6 +33,9 @@ import ServiceMapWrapper from '@/components/maps/ServiceMapWrapper';
 import ReviewCarousel from '@/components/reviews/ReviewCarousel';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import FinalCTA from '@/components/ui/FinalCTA';
+import SpotlightCard from '@/components/ui/SpotlightCard';
+import GradientText from '@/components/ui/GradientText';
+import RotatingText from '@/components/ui/RotatingText';
 
 const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string }> = {
     bad: {
@@ -202,9 +205,16 @@ export default function HomePage() {
 
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-[1.05]">
                                 Perfektion auf jedem{' '}
-                                <span className="text-ceramic-gradient">Quadratmeter.</span>
+                                <GradientText from="from-orange-600" to="to-amber-500">Quadratmeter.</GradientText>
                                 <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-700">
-                                    Fliesenverlegung &amp; Badsanierung aus Aßlar
+                                    <RotatingText
+                                        texts={[
+                                            'Fliesenverlegung & Badsanierung aus Aßlar',
+                                            'XXL-Großformatkeramik & Walk-In Duschen',
+                                            'DIN 18534 Verbundabdichtung & Staubschutz',
+                                            'Ihr Meisterbetrieb für Mittelhessen',
+                                        ]}
+                                    />
                                 </span>
                             </h1>
 
@@ -283,18 +293,17 @@ export default function HomePage() {
                         {COMPANY_DATA.trustPillars.map((pillar: { title: string; description: string; icon: LucideIcon }, idx: number) => {
                             const Icon = pillar.icon;
                             return (
-                                <li
-                                    key={pillar.title}
-                                    className="group glass-surface rounded-2xl p-7 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
-                                >
-                                    <span className="icon-chip w-12 h-12 mb-5">
-                                        <Icon className="w-6 h-6" />
-                                    </span>
-                                    <span className="block text-[11px] font-black uppercase tracking-widest text-orange-800 mb-1">
-                                        {PILLAR_EYEBROWS[idx]}
-                                    </span>
-                                    <h3 className="text-lg font-black text-neutral-900 mb-2">{pillar.title}</h3>
-                                    <p className="text-sm text-neutral-700 leading-relaxed">{pillar.description}</p>
+                                <li key={pillar.title} className="list-none">
+                                    <SpotlightCard className="h-full group hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200">
+                                        <span className="icon-chip w-12 h-12 mb-5">
+                                            <Icon className="w-6 h-6" />
+                                        </span>
+                                        <span className="block text-[11px] font-black uppercase tracking-widest text-orange-800 mb-1">
+                                            {PILLAR_EYEBROWS[idx]}
+                                        </span>
+                                        <h3 className="text-lg font-black text-neutral-900 mb-2">{pillar.title}</h3>
+                                        <p className="text-sm text-neutral-700 leading-relaxed">{pillar.description}</p>
+                                    </SpotlightCard>
                                 </li>
                             );
                         })}

@@ -7,6 +7,7 @@ import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import ServiceMapWrapper from '@/components/maps/ServiceMapWrapper';
+import InteractiveMap from '@/components/maps/InteractiveMap';
 import LocationContact from '@/components/locations/LocationContact';
 import FinalCTA from '@/components/ui/FinalCTA';
 
@@ -202,6 +203,20 @@ export default function StandorteOverviewPage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Google Maps HQ Embed */}
+      <section className="py-12 px-4 max-w-5xl mx-auto relative z-10" aria-label="Anfahrt und Hauptsitz">
+        <div className="space-y-4 mb-6 text-center">
+          <span className="eyebrow">Firmensitz &amp; Anfahrt</span>
+          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
+            Unser Hauptstandort in Aßlar
+          </h2>
+          <p className="text-sm text-neutral-600 max-w-2xl mx-auto">
+            Von der Hohwardstraße 14 in Aßlar starten wir täglich zu unseren Projekten in Wetzlar, Gießen und ganz Hessen.
+          </p>
+        </div>
+        <InteractiveMap height="400px" />
       </section>
 
       {/* Regional Quick Contact Box */}

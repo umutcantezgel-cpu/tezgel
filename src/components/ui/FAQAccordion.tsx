@@ -78,3 +78,5 @@ export default function FAQAccordion({ question, answer, isDarkerBg = false }: F
     </div>
   );
 }
+
+export { FAQAccordion as FaqAccordion };

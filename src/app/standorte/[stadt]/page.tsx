@@ -6,12 +6,14 @@ import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
 import { notFound } from 'next/navigation';
 import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
+import { findCityConfig, getCityLandingPageSchema } from '@/lib/schemaPyramid';
 import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
 import { MapPin, Phone, ArrowRight, ShieldCheck, Sparkles, Award, Droplets, Sun } from 'lucide-react';
 import QualityPromise from '@/components/sections/QualityPromise';
 import RouteVisualization from '@/components/locations/RouteVisualization';
 import LocationContact from '@/components/locations/LocationContact';
+import LocalDominanceMap from '@/components/maps/LocalDominanceMap';
 import FinalCTA from '@/components/ui/FinalCTA';
 
 const SERVICE_ICONS: Record<string, LucideIcon> = {
@@ -98,6 +100,18 @@ export default async function StandortPage({
     { name: city.name, path: pageUrl },
   ];
 
+  const cityConfig = findCityConfig(city.slug);
+  const cityTierNodes = cityConfig
+    ? getCityLandingPageSchema(cityConfig)['@graph']
+    : [
+        buildCityLocalBusinessNode({
+          cityName: city.name,
+          citySlug: city.slug,
+          distanceKm: city.distanceKm,
+          description: `Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und DIN 18534 Verbundabdichtung in ${city.name}.`,
+        }),
+      ];
+
   const cityGraph = buildGraph([
     buildWebPageNode({
       url: pageUrl,
@@ -106,12 +120,7 @@ export default async function StandortPage({
       breadcrumbItems: breadcrumbs,
     }),
     buildBreadcrumbNode(breadcrumbs, pageUrl),
-    buildCityLocalBusinessNode({
-      cityName: city.name,
-      citySlug: city.slug,
-      distanceKm: city.distanceKm,
-      description: `Fachbetrieb für Fliesen-, Platten- und Mosaikverlegung, Badsanierung und DIN 18534 Verbundabdichtung in ${city.name}.`,
-    }),
+    ...cityTierNodes,
   ]);
 
   const stats = [
@@ -203,6 +212,30 @@ export default async function StandortPage({
 
       {/* ── Route Visualization from Aßlar to this city ────────────────────── */}
       <RouteVisualization city={city} />
+
+      {/* ── Regional Dominance & Service Radius Radar ──────────────────── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-label={`Einsatzgebiet und Marktabdeckung ${city.name}`}>
+        <div className="max-w-5xl mx-auto space-y-4">
+          <div className="text-center sm:text-left">
+            <span className="eyebrow eyebrow-orange mb-2">Regionale Marktabdeckung</span>
+            <h3 className="text-xl sm:text-2xl font-black text-neutral-900">
+              Einsatzgebiet {city.name} &amp; Mittelhessen
+            </h3>
+            <p className="text-xs sm:text-sm text-neutral-600 mt-1">
+              Feste Anfahrtsrouten ab Aßlar im gesamten Lahn-Dill-Kreis &amp; Umgebung.
+            </p>
+          </div>
+          <LocalDominanceMap
+            centerCity={`${city.name} (${city.region})`}
+            radiusKm={Math.max(25, city.distanceKm + 10)}
+            topRankings={[
+              `#1 Fachbetrieb in ${city.name} & Region`,
+              '5,0★ Google-Bewertung (27 Rezensionen)',
+              'Eingetragener HWK-Betrieb',
+            ]}
+          />
+        </div>
+      </section>
 
       {/* ── Services in this city ────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="stadt-leistungen">
@@ -300,6 +333,8 @@ export default async function StandortPage({
         subtitle={`Schnelle Anfahrt nach ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
         buttonText={`Jetzt Aufmaß in ${city.name} anfragen`}
         serviceContext={`Einsatzgebiet ${city.name}`}
+        showQuickForm={true}
+        quickFormSource={`standort-${city.slug}`}
       />
     </div>
   );
