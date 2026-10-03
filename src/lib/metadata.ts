@@ -86,15 +86,24 @@ function sanitizeDescription(raw: string): string {
   return desc;
 }
 
-export function createMetadata(options: {
+export interface MetadataOptions {
   title: string;
   description: string;
   path: string;
   image?: string;
-}): Metadata {
+  robots?: {
+    index?: boolean;
+    follow?: boolean;
+  };
+}
+
+export function generatePageMetadata(options: MetadataOptions): Metadata {
   const canonicalUrl = `${BASE_URL}${options.path === '/' ? '' : options.path}`;
   const fullTitle = sanitizeTitle(options.title);
   const fullDesc = sanitizeDescription(options.description);
+
+  const shouldIndex = options.robots?.index !== undefined ? options.robots.index : true;
+  const shouldFollow = options.robots?.follow !== undefined ? options.robots.follow : true;
 
   const defaultOgImage = `${BASE_URL}/images/logo/tezgel-logo.png`;
   const ogImages = options.image
@@ -127,11 +136,11 @@ export function createMetadata(options: {
       images: ogImages.map(img => img.url),
     },
     robots: {
-      index: true,
-      follow: true,
+      index: shouldIndex,
+      follow: shouldFollow,
       googleBot: {
-        index: true,
-        follow: true,
+        index: shouldIndex,
+        follow: shouldFollow,
         'max-video-preview': -1,
         'max-image-preview': 'large',
         'max-snippet': -1,
@@ -139,3 +148,6 @@ export function createMetadata(options: {
     },
   };
 }
+
+export const createMetadata = generatePageMetadata;
+

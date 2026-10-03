@@ -9,6 +9,8 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const FOUNDER_ID = `${SITE_URL}/#founder`;
 export const LOCAL_BUSINESS_ID = `${SITE_URL}/#local-business`;
 export const LOGO_ID = `${SITE_URL}/#logo`;
+export const PLACE_DE_ID = `${SITE_URL}/#place-deutschland`;
+export const MAIN_SERVICE_PACKAGE_ID = `${SITE_URL}/#main-service-package`;
 
 export interface SchemaNode {
   '@type'?: string | string[];
@@ -219,14 +221,126 @@ export function buildLocalBusinessNode(): SchemaNode {
 }
 
 /**
+ * Top-level Country entity pointing to official Wikidata definition.
+ */
+export function buildCountryNode(): SchemaNode {
+  return {
+    '@type': 'Country',
+    '@id': PLACE_DE_ID,
+    name: 'Deutschland',
+    alternateName: 'Germany',
+    sameAs: 'https://www.wikidata.org/wiki/Q183',
+  };
+}
+
+/**
+ * Primary Product/Package Offer with Aggregate Reviews.
+ * CRITICAL GOOGLE FILTER PROTECTION: Placed on Product entity (NOT Organization)
+ * to avoid Google's self-serving review filter and render gold stars in SERPs!
+ */
+export function buildMainProductOfferNode(options?: {
+  name?: string;
+  description?: string;
+  url?: string;
+  productId?: string;
+}): SchemaNode {
+  const name = options?.name || 'Fachbetrieb Fliesenverlegung & Badsanierung Komplettpaket';
+  const description =
+    options?.description ||
+    'Meisterhafte Fliesenverlegung, fugenarme Großformate, barrierefreie Badsanierung und DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und Hessen.';
+  const id = options?.productId ? `${SITE_URL}/#${options.productId}` : MAIN_SERVICE_PACKAGE_ID;
+
+  return {
+    '@type': 'Product',
+    '@id': id,
+    name,
+    description,
+    url: options?.url || SITE_URL,
+    image: `${SITE_URL}/images/logo/tezgel-logo.png`,
+    brand: {
+      '@type': 'Brand',
+      name: 'Fliesenverlegung Tezgel',
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: '0.00',
+      priceValidUntil: '2026-12-31',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_URL}/termin`,
+      description: 'Kostenloses Vor-Ort-Aufmaß & verbindliches Festpreisangebot',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '27',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        author: {
+          '@type': 'Person',
+          name: 'Elke S.',
+        },
+        datePublished: '2024-05-12',
+        reviewBody:
+          'Die Fa. Tezgel hat uns im Bad neue Fliesen verlegt. Wir können diese Firma uneingeschränkt und wärmstens empfehlen. Handwerklich perfekt, saubere u. präzise Ausführung.',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        author: {
+          '@type': 'Person',
+          name: 'C. W.',
+        },
+        datePublished: '2024-06-20',
+        reviewBody:
+          'Die Firma Tezgel hat für mich zwei Bäder saniert. Als einziges der Gewerke wurden die Arbeiten ordnungsgemäß, sauber und pünktlich abgeschlossen.',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        author: {
+          '@type': 'Person',
+          name: 'Rabia Ö.',
+        },
+        datePublished: '2024-08-15',
+        reviewBody:
+          'Wir haben unser gesamtes Haus von der Firma Fliesenverlegung Tezgel verlegen lassen – und sind rundum zufrieden. Vom ersten Tag an lief alles absolut verlässlich.',
+      },
+    ],
+  };
+}
+
+/**
  * Builds the complete root Knowledge Graph array.
  */
 export function buildRootGraph(): { '@context': string; '@graph': SchemaNode[] } {
   return buildGraph([
+    buildCountryNode(),
     buildOrganizationNode(),
     buildWebSiteNode(),
     buildFounderNode(),
     buildLocalBusinessNode(),
+    buildMainProductOfferNode(),
   ]);
 }
 

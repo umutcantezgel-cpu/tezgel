@@ -7,6 +7,7 @@ export const metadata = createMetadata({
   title: 'Datenschutzerklärung nach DSGVO',
   description: 'Ausführliche Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten bei der Fliesenverlegung Tezgel gemäß EU-DSGVO.',
   path: '/datenschutz',
+  robots: { index: false, follow: true },
 });
 
 const pageUrl = `${SITE_URL}/datenschutz`;

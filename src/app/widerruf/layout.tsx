@@ -7,6 +7,7 @@ export const metadata = createMetadata({
   title: 'Widerrufsbelehrung & Musterformular',
   description: `Widerrufsbelehrung und Muster-Widerrufsformular für Verbraucher bei Beauftragung von Leistungen der ${COMPANY_DATA.legalName}.`,
   path: '/widerruf',
+  robots: { index: false, follow: true },
 });
 
 const pageUrl = `${SITE_URL}/widerruf`;
