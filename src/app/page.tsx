@@ -261,11 +261,8 @@ export default function HomePage() {
             </div>
 
             {/* 2. TRUST PILLARS */}
-            <section className="py-16 relative z-10" id="vertrauen" aria-labelledby="vertrauen-heading">
+            <section className="py-16 relative z-10" id="vertrauen" aria-label="Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 id="vertrauen-heading" className="sr-only">
-                        Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel
-                    </h2>
                     <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {COMPANY_DATA.trustPillars.map((pillar: { title: string; description: string; icon: LucideIcon }, idx: number) => {
                             const Icon = pillar.icon;
@@ -278,7 +275,7 @@ export default function HomePage() {
                                         <span className="block text-[11px] font-black uppercase tracking-widest text-orange-800 mb-1">
                                             {PILLAR_EYEBROWS[idx]}
                                         </span>
-                                        <h3 className="text-lg font-black text-neutral-900 mb-2">{pillar.title}</h3>
+                                        <p className="text-lg font-black text-neutral-900 mb-2">{pillar.title}</p>
                                         <p className="text-sm text-neutral-700 leading-relaxed">{pillar.description}</p>
                                     </SpotlightCard>
                                 </li>

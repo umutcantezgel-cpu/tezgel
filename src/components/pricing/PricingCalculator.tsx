@@ -393,9 +393,9 @@ export default function PricingCalculator() {
               <span>Referenz: {referenceId || "TEZ-ANFRAGE"}</span>
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            <p className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Anfrage erfolgreich übermittelt!
-            </h3>
+            </p>
 
             <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-sm mx-auto">
               Vielen Dank, <strong>{name}</strong>! Ihre Situationsbeschreibung und Kontaktdaten
@@ -427,9 +427,9 @@ export default function PricingCalculator() {
                 <span>Preise individuell auf Anfrage</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
+              <p className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
                 Unverbindliche Projektanfrage
-              </h3>
+              </p>
 
               <p className="text-xs text-neutral-300 leading-relaxed mb-5">
                 Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Bauvorhaben ist einzigartig.

@@ -61,9 +61,9 @@ export default function QualityPromise() {
                                     <span className="text-[10px] font-black uppercase tracking-widest text-neutral-600">
                                         Punkt {String(idx + 1).padStart(2, '0')}
                                     </span>
-                                    <h3 className="text-base font-black text-neutral-900 mt-1 mb-2 leading-snug group-hover:text-orange-800 transition-colors">
+                                    <p className="text-base font-black text-neutral-900 mt-1 mb-2 leading-snug group-hover:text-orange-800 transition-colors">
                                         {promise.title}
-                                    </h3>
+                                    </p>
                                     <p className="text-sm text-neutral-700 leading-relaxed">{promise.description}</p>
                                 </div>
                                 <p className="mt-5 pt-3 border-t border-neutral-200 flex items-center gap-1.5 text-xs font-bold text-orange-800">

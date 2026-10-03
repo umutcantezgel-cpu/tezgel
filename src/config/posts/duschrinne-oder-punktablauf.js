@@ -24,14 +24,14 @@ const post = {
 ## Die Varianten im Überblick
 
 - **Duschrinne (Linienentwässerung):** Eine lange, schmale Rinne, meist an der Wand oder vor dem Duscheingang. Die Abdeckung ist aus Edelstahl oder kann mit Fliesen belegt werden.
-- **Punktablauf:** Der klassische, meist quadratische Bodenablauf, häufig mittig oder außermittig in der Duschfläche.
-- **Wandablauf:** Das Wasser läuft in einen Schlitz in der Wand bzw. einer Vorwand. Der Boden bleibt komplett frei von Rinne oder Rost.
+- **Klassischer Punktablauf:** Der bewährte, meist quadratische Bodenablauf, häufig mittig oder außermittig in der Duschfläche.
+- **Integrierter Wandablauf:** Das Wasser läuft in einen Schlitz in der Wand bzw. einer Vorwand. Der Boden bleibt komplett frei von Rinne oder Rost.
 
 ## Gefälle und Fliesenzuschnitt
 
 Hier liegt der größte Unterschied zwischen den Systemen.
 
-**Punktablauf:** Das Wasser muss von allen Seiten zum Ablauf fließen. Dazu wird ein **Trichtergefälle** hergestellt, das die Fläche in vier geneigte Felder teilt. Die Fliesen werden entlang der Grate diagonal geschnitten (sogenannter Briefkuvertschnitt). Mit kleineren Formaten oder Mosaik lässt sich das gut ausführen, bei großen Platten entstehen viele Schnitte.
+Beim Punktablauf muss das Wasser von allen Seiten zum Ablauf fließen. Dazu wird ein **Trichtergefälle** hergestellt, das die Fläche in vier geneigte Felder teilt. Die Fliesen werden entlang der Grate diagonal geschnitten (sogenannter Briefkuvertschnitt). Mit kleineren Formaten oder Mosaik lässt sich das gut ausführen, bei großen Platten entstehen viele Schnitte.
 
 **Duschrinne und Wandablauf:** Die Fläche fällt nur in **eine Richtung**, zur Rinne oder zur Wand hin. Große Formate können ohne Diagonalschnitte durchlaufen, das Fugenbild bleibt ruhig. Deshalb sind Rinne und Wandablauf die bevorzugte Wahl für Großformate. Mehr dazu auf der Seite [XXL-Großformate](/fliesen/grossformat).
 
@@ -62,9 +62,9 @@ Hintergründe finden Sie auf der Seite [Abdichtung nach DIN 18534](/untergrund-a
 
 ## Reinigung im Alltag
 
-- **Duschrinne:** Abdeckung abnehmen, Haarsieb leeren, Geruchsverschluss herausnehmen und ausspülen. Je nach Nutzung etwa alle paar Wochen.
-- **Punktablauf:** Rost abnehmen, Haarsieb reinigen. Die kleine Fläche ist schnell sauber.
-- **Wandablauf:** Kein Rost im Boden, die Reinigung erfolgt über eine Revisionsöffnung in der Wand.
+- **Pflege der Duschrinne:** Abdeckung abnehmen, Haarsieb leeren, Geruchsverschluss herausnehmen und ausspülen. Je nach Nutzung etwa alle paar Wochen.
+- **Reinigung beim Bodenablauf:** Rost abnehmen, Haarsieb reinigen. Die kleine Fläche ist schnell sauber.
+- **Wandablauf-Wartung:** Kein Rost im Boden, die Reinigung erfolgt über eine Revisionsöffnung in der Wand.
 
 Verwenden Sie für Edelstahlteile milde Reiniger ohne Chlor und Scheuermittel. Allgemeine Pflegetipps für Fliesen und Fugen finden Sie im Beitrag [Fliesen richtig reinigen](/blog/fliesen-reinigen-pflegen).
 

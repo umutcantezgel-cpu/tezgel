@@ -43,10 +43,10 @@ const TableOfContents = ({ content }) => {
 
     return (
         <div>
-            <h2 className="flex items-center gap-2 font-black text-slate-900 mb-4 text-sm uppercase tracking-wider">
+            <p className="flex items-center gap-2 font-black text-slate-900 mb-4 text-sm uppercase tracking-wider">
                 <List className="w-4 h-4 text-orange-600" />
                 Inhalt
-            </h2>
+            </p>
             <nav aria-label="Inhaltsverzeichnis" className="space-y-1 relative">
                 {/* Active Indicator Line matches list height via CSS or direct styling */}
                 <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-slate-200 rounded-full" />

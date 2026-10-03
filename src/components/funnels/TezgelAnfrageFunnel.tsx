@@ -188,7 +188,7 @@ export default function TezgelAnfrageFunnel() {
             </span>
           )}
         </div>
-        <h3 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3">Vielen Dank, {name}!</h3>
+        <p className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3">Vielen Dank, {name}!</p>
         <p className="text-base text-neutral-700 leading-relaxed mb-6">
           Ihre Anfrage für <strong>{projectTitle}</strong> ({finalArea}) in <strong>{locationText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
           {email && (
@@ -247,7 +247,7 @@ export default function TezgelAnfrageFunnel() {
           <MessageCircle className="w-10 h-10" />
         </div>
         <span className="eyebrow mb-4">WhatsApp geöffnet</span>
-        <h3 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3">Fast geschafft – Nachricht absenden</h3>
+        <p className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3">Fast geschafft – Nachricht absenden</p>
         <p className="text-base text-neutral-700 leading-relaxed mb-6">
           Ihre Anfrage ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab – Herr Tezgel antwortet Ihnen schnellstmöglich.
         </p>
@@ -306,9 +306,9 @@ export default function TezgelAnfrageFunnel() {
           </ol>
         </div>
 
-        <h3 className="text-xl sm:text-2xl font-black text-neutral-900">
+        <p className="text-xl sm:text-2xl font-black text-neutral-900">
           Schritt {step}: {STEPS[step - 1].title}
-        </h3>
+        </p>
         <p className="text-sm text-neutral-700 mt-1">{STEPS[step - 1].text}</p>
       </div>
 
@@ -340,7 +340,7 @@ export default function TezgelAnfrageFunnel() {
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-neutral-900 text-base mb-1">{pt.title}</h4>
+                    <p className="font-bold text-neutral-900 text-base mb-1">{pt.title}</p>
                     <p className="text-xs text-neutral-600 leading-relaxed">{pt.subtitle}</p>
                   </div>
                 </button>

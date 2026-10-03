@@ -161,9 +161,9 @@ export default function Footer() {
                     {/* Link columns */}
                     {LINK_COLUMNS.map((column) => (
                         <nav key={column.title} aria-label={column.title} className="lg:col-span-2">
-                            <h2 className="font-display text-xs font-black uppercase tracking-widest text-white mb-4 pl-2.5 border-l-2 border-orange-500">
+                            <p className="font-display text-xs font-black uppercase tracking-widest text-white mb-4 pl-2.5 border-l-2 border-orange-500">
                                 {column.title}
-                            </h2>
+                            </p>
                             <ul className="space-y-2 text-sm">
                                 {column.links.map((item) => (
                                     <li key={item.path + item.name}>
@@ -201,7 +201,7 @@ export default function Footer() {
                     <p>
                         Webdesign &amp; SEO:{' '}
                         <a
-                            href="https://www.codayweb.de/"
+                            href="https://www.codayweb.de/de"
                             target="_blank"
                             rel="noopener"
                             title="Coday – Webdesign-Agentur Wetzlar | Webseiten, SEO & Branding"

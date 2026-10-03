@@ -257,7 +257,7 @@ export default function SchadensanalysePage() {
                                             {String(idx + 1).padStart(2, '0')}
                                         </span>
                                     </div>
-                                    <h3 className="text-base font-black text-slate-900 mb-2">{step.title}</h3>
+                                    <p className="text-base font-black text-slate-900 mb-2">{step.title}</p>
                                     <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
                                 </li>
                             );
@@ -282,7 +282,7 @@ export default function SchadensanalysePage() {
                                 <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                     <Icon className="w-5 h-5" />
                                 </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
+                                <p className="font-black text-base text-slate-900 mb-2">{item.title}</p>
                                 <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                             </li>
                         );
@@ -334,7 +334,7 @@ export default function SchadensanalysePage() {
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {OPTIONS.map((option) => (
                         <li key={option.title} className="glass-surface p-7 rounded-tile-2xl flex flex-col">
-                            <h3 className="font-black text-lg text-slate-900 mb-2">{option.title}</h3>
+                            <p className="font-black text-lg text-slate-900 mb-2">{option.title}</p>
                             <p className="text-sm text-slate-700 leading-relaxed flex-1">{option.desc}</p>
                             <Link
                                 href={option.link.href}

@@ -649,9 +649,9 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                             </span>
                         )}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+                    <p className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
                         Vielen Dank, {data.name}!
-                    </h3>
+                    </p>
                     <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6 max-w-2xl mx-auto">
                         Ihre Konfiguration für <strong>{roomsText}</strong> ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
                         {data.email && (
@@ -703,9 +703,9 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                     <span className="eyebrow mb-4">
                         WhatsApp wurde geöffnet
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+                    <p className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
                         WhatsApp wurde geöffnet – bitte absenden
-                    </h3>
+                    </p>
                     <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
                         Ihre Anfrage ist vorbereitet, aber noch nicht verschickt. Senden Sie die Nachricht in{' '}
                         WhatsApp ab. Fotos von Raum, Untergrund oder Treppe
@@ -818,9 +818,9 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
 
                 <div className="p-6 sm:p-10">
                     <div className="mb-6">
-                        <h3 ref={headingRef} tabIndex={-1} className="text-base sm:text-lg font-black text-slate-900 focus:outline-none">
+                        <p ref={headingRef} tabIndex={-1} className="text-base sm:text-lg font-black text-slate-900 focus:outline-none">
                             {step}. {STEPS[step - 1].title}
-                        </h3>
+                        </p>
                         <p className="text-sm text-slate-700 mt-1">{STEPS[step - 1].text}</p>
                     </div>
 

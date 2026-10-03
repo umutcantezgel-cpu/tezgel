@@ -131,9 +131,9 @@ export default function StandorteOverviewPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-black text-neutral-900 mb-3 group-hover:text-orange-800 transition-colors">
+                  <p className="text-xl font-black text-neutral-900 mb-3 group-hover:text-orange-800 transition-colors">
                     {city.name}
-                  </h3>
+                  </p>
 
                   <p className="text-neutral-700 text-sm leading-relaxed mb-6">
                     {city.description}
@@ -141,7 +141,7 @@ export default function StandorteOverviewPage() {
                 </div>
 
                 <span className="pt-4 border-t border-neutral-200 flex items-center justify-between text-sm font-bold text-orange-800">
-                  <span>Details &amp; Leistungen</span>
+                  <span>Fliesenleger in {city.name}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>

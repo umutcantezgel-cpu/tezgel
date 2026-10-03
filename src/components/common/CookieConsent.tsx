@@ -530,9 +530,9 @@ export default function CookieConsent() {
                     <Cookie className="w-5 h-5 text-orange-700" />
                   </div>
                   <div className="flex-1 pr-6">
-                    <h2 className="text-base font-bold text-neutral-900 mb-1.5 flex items-center gap-2">
+                    <p className="text-base font-bold text-neutral-900 mb-1.5 flex items-center gap-2">
                       <span>Privatsphäre & Cookie-Einstellungen</span>
-                    </h2>
+                    </p>
                     <p id="cookie-consent-description" className="text-sm text-neutral-700 leading-relaxed mb-4">
                       Wir nutzen Cookies auf unserer Website. Einige sind <strong>technisch notwendig</strong> für den Betrieb, 
                       während andere uns helfen, unser Online-Angebot zu verbessern und interaktive Karten bereitzustellen. 
@@ -601,9 +601,9 @@ export default function CookieConsent() {
               <div className="p-5 sm:p-6 md:p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Shield className="w-5 h-5 text-orange-600 shrink-0" />
-                  <h2 className="text-base font-bold text-neutral-900">
+                  <p className="text-base font-bold text-neutral-900">
                     Cookie-Einstellungen individuell anpassen
-                  </h2>
+                  </p>
                 </div>
                 <p className="text-xs text-neutral-600 mb-4 leading-relaxed">
                   Bestimmen Sie selbst, welche Kategorien Sie zulassen möchten. Technisch notwendige Cookies 

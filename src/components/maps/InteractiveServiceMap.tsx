@@ -118,7 +118,7 @@ function MapImplementation() {
                 <strong style="font-size: 14px; color: #171717;">Einsatzgebiet ${city.name}</strong>
                 <div style="font-size: 12px; color: #737373; margin-top: 2px;">Entfernung ca. ${city.distanceKm} km von Aßlar</div>
                 <div style="font-size: 12px; color: #EA580C; font-weight: bold; margin-top: 4px;">Fliesenverlegung & Badsanierung</div>
-                <a href="/standorte/${city.slug}" style="display:inline-block; margin-top:6px; color:#EA580C; font-weight:bold; font-size:12px;">Mehr Details &rarr;</a>
+                <a href="/standorte/${city.slug}" style="display:inline-block; margin-top:6px; color:#EA580C; font-weight:bold; font-size:12px;">Fliesenleger ${city.name} ansehen &rarr;</a>
               </div>
             `);
             infoWindow.open(map, marker);

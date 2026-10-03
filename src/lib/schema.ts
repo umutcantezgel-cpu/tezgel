@@ -112,7 +112,7 @@ export function buildWebSiteNode(): SchemaNode {
       '@type': 'Organization',
       '@id': 'https://www.codayweb.de/#organization',
       name: 'Coday Webdesign',
-      url: 'https://www.codayweb.de/',
+      url: 'https://www.codayweb.de/de',
       description: 'Agentur für Webdesign, SEO & Branding in Wetzlar',
       areaServed: {
         '@type': 'City',
@@ -123,7 +123,7 @@ export function buildWebSiteNode(): SchemaNode {
       '@type': 'Organization',
       '@id': 'https://www.codayweb.de/#organization',
       name: 'Coday Webdesign',
-      url: 'https://www.codayweb.de/'
+      url: 'https://www.codayweb.de/de'
     },
     inLanguage: 'de-DE',
   };

@@ -79,7 +79,7 @@ export default async function MusterbadDetailPage({ params }) {
                         <span className="text-ceramic-gradient">Komplettbad &amp; Badsanierung</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed">
-                        {bath.headline}
+                        {bath.headline}: Unser Musterbad {bath.title} bietet Ihnen ein schlüsselfertiges Komplettbad und eine professionelle Badsanierung von Fachbetrieb Tezgel in Aßlar und Wetzlar. Entdecken Sie alle Ausstattungsdetails, Sanitärobjekte und Markenkomponenten für Ihre Badplanung.
                     </p>
 
                     <div className="p-4 sm:px-6 rounded-tile-sm bg-white border border-slate-200 inline-flex flex-wrap items-center gap-x-6 gap-y-1">

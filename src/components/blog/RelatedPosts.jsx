@@ -85,14 +85,14 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                             )}
 
                             {/* Title with Stretched Link */}
-                            <h3 className="font-black text-slate-900 group-hover:text-orange-600 transition-colors mb-2 line-clamp-2">
+                            <p className="font-black text-slate-900 group-hover:text-orange-600 transition-colors mb-2 line-clamp-2">
                                 <Link
                                     href={`/blog/${post.slug}`}
                                     className="hover:underline underline-offset-2 focus-visible:outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-2 focus-visible:after:ring-orange-600"
                                 >
                                     {post.title}
                                 </Link>
-                            </h3>
+                            </p>
 
                             {/* Excerpt */}
                             <p className="text-sm text-slate-700 line-clamp-2 mb-3">

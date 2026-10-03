@@ -329,7 +329,7 @@ export default function EstrichBelegreifePage() {
                                     <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
                                         <Icon className="w-5 h-5" />
                                     </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
+                                    <p className="font-black text-base text-slate-900 mb-2">{item.title}</p>
                                     <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
                                 </li>
                             );
@@ -371,7 +371,7 @@ export default function EstrichBelegreifePage() {
                                 {String(idx + 1).padStart(2, '0')}
                             </span>
                             <div>
-                                <h3 className="font-black text-base text-slate-900 mb-1">{step.t}</h3>
+                                <p className="font-black text-base text-slate-900 mb-1">{step.t}</p>
                                 <p className="text-sm text-slate-700 leading-relaxed">{step.d}</p>
                             </div>
                         </li>

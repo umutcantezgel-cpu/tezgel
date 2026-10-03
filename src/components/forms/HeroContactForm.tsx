@@ -123,9 +123,9 @@ export default function HeroContactForm() {
                             </span>
                         )}
                     </div>
-                    <h3 className="font-display text-xl font-black text-neutral-900 pt-1">
+                    <p className="font-display text-xl font-black text-neutral-900 pt-1">
                         Vielen Dank, {name}!
-                    </h3>
+                    </p>
                     <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed max-w-sm mx-auto">
                         Ihre Anfrage für <strong>{projectTitle}</strong> ist direkt bei Herrn Deniz Tezgel eingegangen.
                     </p>
@@ -180,9 +180,9 @@ export default function HeroContactForm() {
                         Rückruf &lt; 24h
                     </span>
                 </div>
-                <h2 className="font-display text-lg sm:text-xl font-black text-neutral-900 tracking-tight">
+                <p className="font-display text-lg sm:text-xl font-black text-neutral-900 tracking-tight">
                     Kostenloses Aufmaß vor Ort anfragen
-                </h2>
+                </p>
                 <p className="text-xs text-neutral-600 mt-0.5 leading-snug">
                     Beschreiben Sie Ihr Projekt in 30 Sekunden – Herr Tezgel meldet sich direkt persönlich bei Ihnen.
                 </p>

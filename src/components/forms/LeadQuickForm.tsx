@@ -112,7 +112,7 @@ export function LeadQuickForm({
         <div className="inline-flex p-3 rounded-full bg-orange-500/10 text-orange-600 mb-4 ring-8 ring-orange-500/5">
           <CheckCircle2 className="w-8 h-8" />
         </div>
-        <h3 className="text-xl font-bold text-neutral-900">Anfrage erfolgreich übermittelt!</h3>
+        <p className="text-xl font-bold text-neutral-900">Anfrage erfolgreich übermittelt!</p>
         <p className="mt-2 text-sm text-neutral-700 max-w-md mx-auto leading-relaxed">
           Vielen Dank, <strong>{formData.name}</strong>. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.
         </p>
@@ -143,7 +143,7 @@ export function LeadQuickForm({
             <Sparkles className="w-3 h-3 text-orange-600" />
             <span>Kostenloses Vor-Ort-Aufmaß</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight">{heading}</h3>
+          <p className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight">{heading}</p>
           {subheading && <p className="mt-1 text-xs sm:text-sm text-neutral-600 leading-relaxed">{subheading}</p>}
         </div>
       )}

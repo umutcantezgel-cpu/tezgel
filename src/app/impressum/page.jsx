@@ -73,7 +73,7 @@ export default function ImpressumPage() {
                         <h2 className="text-base font-black text-slate-900">Konzeption, Webdesign &amp; Realisierung:</h2>
                         <p>
                             <a
-                                href="https://www.codayweb.de/"
+                                href="https://www.codayweb.de/de"
                                 target="_blank"
                                 rel="noopener"
                                 title="Coday Webdesign – Agentur für Webseiten &amp; SEO in Wetzlar"
@@ -88,7 +88,7 @@ export default function ImpressumPage() {
                         <p className="text-xs text-slate-500">
                             Website:{' '}
                             <a
-                                href="https://www.codayweb.de/"
+                                href="https://www.codayweb.de/de"
                                 target="_blank"
                                 rel="noopener"
                                 title="codayweb.de – Webdesign &amp; SEO Wetzlar"

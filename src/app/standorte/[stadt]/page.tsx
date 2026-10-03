@@ -220,9 +220,9 @@ export default async function StandortPage({
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="text-center sm:text-left">
             <span className="eyebrow eyebrow-orange mb-2">Regionale Marktabdeckung</span>
-            <h3 className="text-xl sm:text-2xl font-black text-neutral-900">
+            <p className="text-xl sm:text-2xl font-black text-neutral-900">
               Einsatzgebiet {city.name} &amp; Mittelhessen
-            </h3>
+            </p>
             <p className="text-xs sm:text-sm text-neutral-600 mt-1">
               Feste Anfahrtsrouten ab Aßlar im gesamten Lahn-Dill-Kreis &amp; Umgebung.
             </p>
@@ -265,9 +265,9 @@ export default async function StandortPage({
                     <span className="icon-chip w-11 h-11 mb-4">
                       <Icon className="w-5 h-5" />
                     </span>
-                    <h3 className="text-base font-black text-neutral-900 mb-2 group-hover:text-orange-800 transition-colors">
+                    <p className="text-base font-black text-neutral-900 mb-2 group-hover:text-orange-800 transition-colors">
                       {srv.name}
-                    </h3>
+                    </p>
                     <p className="text-sm text-neutral-700 leading-relaxed">{srv.shortDescription}</p>
                   </div>
                   <span className="mt-5 pt-4 border-t border-neutral-200 text-sm font-bold text-orange-800 flex items-center gap-1.5">
@@ -300,16 +300,16 @@ export default async function StandortPage({
                 className="group glass-surface p-6 rounded-2xl h-full block hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
               >
                 <div className="flex items-center justify-between gap-3 mb-3">
-                  <h3 className="text-base font-black text-neutral-900 group-hover:text-orange-800 transition-colors">
+                  <p className="text-base font-black text-neutral-900 group-hover:text-orange-800 transition-colors">
                     {nearbyCity.name}
-                  </h3>
+                  </p>
                   <span className="text-[11px] text-neutral-700 bg-white px-3 py-1 rounded-xl font-bold border border-neutral-200 whitespace-nowrap tabular-nums">
                     {distanceLabel(nearbyCity)}
                   </span>
                 </div>
                 <p className="text-xs text-neutral-600 mb-3 font-medium">{nearbyCity.region}</p>
                 <span className="text-xs text-orange-800 font-black flex items-center gap-1">
-                  <span>Details ansehen</span>
+                  <span>Fliesenleger für {nearbyCity.name} ansehen</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>

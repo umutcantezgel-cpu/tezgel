@@ -30,10 +30,10 @@ const BlogSidebar = ({
                 SEARCH WIDGET
             ═══════════════════════════════════════════════════════════════ */}
             <div className="glass-surface rounded-tile-lg p-6">
-                <h3 className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
+                <p className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
                     <Search className="w-5 h-5 text-orange-600" />
                     Suche
-                </h3>
+                </p>
                 <div className="relative">
                     <input
                         type="text"
@@ -54,7 +54,7 @@ const BlogSidebar = ({
             ═══════════════════════════════════════════════════════════════ */}
             {categories.length > 1 && (
                 <div className="glass-surface rounded-tile-lg p-6">
-                    <h3 className="text-lg font-black text-slate-900 mb-4">Kategorien</h3>
+                    <p className="text-lg font-black text-slate-900 mb-4">Kategorien</p>
                     <div className="space-y-2">
                         {categories.map(category => (
                             <button
@@ -95,7 +95,7 @@ const BlogSidebar = ({
                 <div className="icon-chip w-14 h-14 mb-4">
                     <Phone className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-black text-slate-900 mb-2">Beratung gewünscht?</h3>
+                <p className="text-xl font-black text-slate-900 mb-2">Beratung gewünscht?</p>
                 <p className="text-slate-700 text-sm mb-5 leading-relaxed">
                     Fragen zu Badsanierung, Fliesen oder Abdichtung? {COMPANY_DATA.owner.fullName} berät Sie
                     persönlich – inklusive kostenfreiem Vor-Ort-Aufmaß.

@@ -27,7 +27,7 @@ export default function BadProjektCheckPage() {
                         <span className="text-ceramic-gradient">Tezgel Wetzlar</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                        Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten prüfen, Größe, Umfang und
+                        Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten online prüfen, Größe, Umfang und
                         Ausstattung auswählen – den verbindlichen Festpreis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß.
                     </p>
                 </header>

@@ -209,9 +209,9 @@ export default function BadanfrageFunnel() {
                             </span>
                         )}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-black text-neutral-900 mb-3">
+                    <p className="text-2xl md:text-3xl font-black text-neutral-900 mb-3">
                         Vielen Dank, {formData.name}!
-                    </h3>
+                    </p>
                     <p className="text-sm sm:text-base text-neutral-700 mb-6 leading-relaxed">
                         Ihre detaillierte Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
                         {formData.email && (
@@ -320,9 +320,9 @@ export default function BadanfrageFunnel() {
                     {/* Step 1: Objekttyp */}
                     {step === 1 && (
                         <div className="space-y-6">
-                            <h3 className="text-base sm:text-lg font-black text-slate-900">
+                            <p className="text-base sm:text-lg font-black text-slate-900">
                                 1. Um welche Art von Immobilie handelt es sich?
-                            </h3>
+                            </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {OBJECT_TYPES.map((obj) => (
                                     <button
@@ -343,9 +343,9 @@ export default function BadanfrageFunnel() {
                     {/* Step 2: Sanierungsumfang */}
                     {step === 2 && (
                         <div className="space-y-6">
-                            <h3 className="text-base sm:text-lg font-black text-slate-900">
+                            <p className="text-base sm:text-lg font-black text-slate-900">
                                 2. Welcher Sanierungsumfang ist geplant?
-                            </h3>
+                            </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {SCOPES.map((sc) => (
                                     <button
@@ -366,9 +366,9 @@ export default function BadanfrageFunnel() {
                     {/* Step 3: Raummaße */}
                     {step === 3 && (
                         <div className="space-y-6">
-                            <h3 className="text-base sm:text-lg font-black text-slate-900">
+                            <p className="text-base sm:text-lg font-black text-slate-900">
                                 3. Ungefähre Raummaße Ihres Badezimmers
-                            </h3>
+                            </p>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <div>
                                     <label htmlFor="badanfrage-length" className="block text-xs font-black text-slate-800 mb-1.5">Länge (m)</label>
@@ -421,9 +421,9 @@ export default function BadanfrageFunnel() {
                     {/* Step 4: Ausstattung & Qualitätsstufe */}
                     {step === 4 && (
                         <div className="space-y-6">
-                            <h3 className="text-base sm:text-lg font-black text-slate-900">
+                            <p className="text-base sm:text-lg font-black text-slate-900">
                                 4. Qualitätskategorie &amp; gewünschte Elemente
-                            </h3>
+                            </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 {TIERS.map((t) => (
@@ -474,9 +474,9 @@ export default function BadanfrageFunnel() {
                     {/* Step 5: Kontaktdaten & Absenden */}
                     {step === 5 && (
                         <form onSubmit={handleOnlineSubmit} className="space-y-4">
-                            <h3 className="text-base sm:text-lg font-black text-slate-900 mb-1">
+                            <p className="text-base sm:text-lg font-black text-slate-900 mb-1">
                                 5. Kontaktdaten &amp; Versand Ihrer Anfrage
-                            </h3>
+                            </p>
                             <p className="text-sm text-slate-700 mb-4">
                                 Senden Sie Ihre Badanfrage direkt online an {COMPANY_DATA.owner.fullName} oder nutzen Sie WhatsApp. Keine
                                 Weitergabe an Dritte.

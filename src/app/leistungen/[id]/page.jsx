@@ -43,6 +43,12 @@ export default async function ServiceDetailPage({ params }) {
     aussen: 'Balkon- & Terrassensanierung in Wetzlar & Mittelhessen',
     untergrund: 'DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar',
   };
+  const serviceIntroTexts = {
+    bad: 'Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel ist Ihr erfahrener Fachbetrieb für professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exklusive Bäder & Wellness in Wetzlar und ganz Mittelhessen. Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum – für maximale Ästhetik und spielend leichte Pflege.',
+    wohnen: 'Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit: Fliesenverlegung Tezgel gestaltet Ihren Wohnbereich und Neubau in Wetzlar mit hochwertigen Feinsteinzeug- und Natursteinbelägen – mit präzisem Fugenraster und perfekter Anpassung an Türen, Kamine und bodentiefe Fenster.',
+    aussen: 'Balkone und Terrassen sind extremen Wetterbedingungen ausgesetzt. Fliesenverlegung Tezgel ist Ihr Partner für fachgerechte Balkon- & Terrassensanierung in Wetzlar & ganz Mittelhessen: Wir setzen auf innovative Trockenverlegung auf Stelzlagern – Wasser fließt unter dem Belag ab und einzelne Platten bleiben für Wartung zugänglich.',
+    untergrund: 'Ein hochwertiger Fliesenbelag ist nur so langlebig wie der Untergrund, auf dem er ruht. Wir gewährleisten eine fachgerechte Untergrundvorbereitung sowie normgerechte DIN 18534 Abdichtung in Wetzlar und Umgebung: So bleibt Ihre Bausubstanz dauerhaft vor kostspieligen Feuchteschäden geschützt.',
+  };
   const h1Title = serviceH1Titles[service.id] || service.name;
 
   const pageUrl = `${SITE_URL}/leistungen/${service.id}`;
@@ -98,7 +104,7 @@ export default async function ServiceDetailPage({ params }) {
               </h1>
 
               <p className="text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed">
-                {service.detailText}
+                {serviceIntroTexts[service.id] || service.detailText}
               </p>
             </div>
 
@@ -145,7 +151,7 @@ export default async function ServiceDetailPage({ params }) {
                   {service.id === 'aussen' && <Sun className="w-5 h-5" />}
                   {service.id === 'untergrund' && <ShieldCheck className="w-5 h-5" />}
                 </div>
-                <h3 className="font-bold text-sm text-neutral-900">{sub.name}</h3>
+                <p className="font-bold text-sm text-neutral-900">{sub.name}</p>
               </li>
             ))}
           </ul>
@@ -180,9 +186,9 @@ export default async function ServiceDetailPage({ params }) {
               </div>
 
               <div className="p-6 rounded-xl bg-orange-50/50 border border-orange-200 text-sm text-neutral-700 leading-relaxed">
-                <h3 className="font-black text-neutral-900 text-sm mb-1">
+                <p className="font-black text-neutral-900 text-sm mb-1">
                   Warum Fachqualität von {COMPANY_DATA.legalName}?
-                </h3>
+                </p>
                 Mit moderner Schneid- und Nivelliertechnik sorgen wir für planebene Oberflächen ohne Kantenversatz. Bei Sanierungen im bewohnten Bestand setzen wir Schonvliese und Staubabsaugungen ein – für ein staubarmes und stressfreies Ergebnis.
               </div>
             </div>
@@ -199,11 +205,11 @@ export default async function ServiceDetailPage({ params }) {
                     href={`/leistungen/${rel.id}`}
                     className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 hover:bg-white hover:border-orange-500/80 hover:-translate-y-0.5 transition-all duration-200 group block"
                   >
-                    <h3 className="font-bold text-sm text-neutral-900 group-hover:text-orange-800 transition-colors">
+                    <p className="font-bold text-sm text-neutral-900 group-hover:text-orange-800 transition-colors">
                       {rel.name}
-                    </h3>
+                    </p>
                     <span className="text-xs font-bold text-orange-800 flex items-center gap-1 mt-1">
-                      Details ansehen
+                      Gewerk {rel.name} ansehen
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                     </span>
                   </Link>

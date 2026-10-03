@@ -44,7 +44,7 @@ export default function PriceCard({
       )}
 
       <div className="mb-5">
-        <h3 className="text-xl font-bold text-neutral-900 tracking-tight">{title}</h3>
+        <p className="text-xl font-bold text-neutral-900 tracking-tight">{title}</p>
         <p className="text-xs text-neutral-500 mt-1 leading-relaxed">{description}</p>
       </div>
 
