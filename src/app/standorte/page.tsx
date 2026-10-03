@@ -224,7 +224,7 @@ export default function StandorteOverviewPage() {
 
       {/* Final Conversion Anchor */}
       <FinalCTA
-        headline="Planen Sie ein Fliesen- oder Badprojekt in Mittelhessen? Sprechen Sie direkt mit Meister Deniz Tezgel."
+        headline="Planen Sie ein Fliesen- oder Badprojekt in Mittelhessen? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel."
         subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
         buttonText="Jetzt Vor-Ort-Termin anfragen"
       />

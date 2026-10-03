@@ -152,7 +152,7 @@ export default function KontaktPage() {
                             Ihr Vor-Ort-Aufmaß anfordern
                         </h2>
                         <p className="text-sm text-neutral-600 mt-2">
-                            Füllen Sie kurz die Projektdaten aus – Meister Deniz Tezgel meldet sich persönlich bei Ihnen.
+                            Füllen Sie kurz die Projektdaten aus – Fachbetriebsleiter Deniz Tezgel meldet sich persönlich bei Ihnen.
                         </p>
                     </div>
                     <TezgelAnfrageFunnel />

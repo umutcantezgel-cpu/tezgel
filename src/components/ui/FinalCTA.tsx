@@ -29,7 +29,7 @@ const defaultBenefits = [
 
 export default function FinalCTA({
   className,
-  headline = "Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt mit Meister Deniz Tezgel.",
+  headline = "Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
   benefits = defaultBenefits,
   buttonText = "Jetzt kostenfrei anrufen",
   socialProof = "5,0 Google-Bewertung bei 27 echten Kundenstimmen",
@@ -149,7 +149,7 @@ export default function FinalCTA({
                 variant="card"
                 sourceTag={quickFormSource || serviceContext || 'final-cta'}
                 heading="Kostenfreies Vor-Ort-Aufmaß anfordern"
-                subheading="Tragen Sie Ihre Kontaktdaten ein – Meister Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
+                subheading="Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
               />
             </div>
           )}

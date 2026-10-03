@@ -35,7 +35,6 @@ import FAQAccordion from '@/components/ui/FAQAccordion';
 import FinalCTA from '@/components/ui/FinalCTA';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 import GradientText from '@/components/ui/GradientText';
-import RotatingText from '@/components/ui/RotatingText';
 
 const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string }> = {
     bad: {
@@ -192,14 +191,7 @@ export default function HomePage() {
                                 Perfektion auf jedem{' '}
                                 <GradientText from="from-orange-600" to="to-amber-500">Quadratmeter.</GradientText>
                                 <span className="block mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-700">
-                                    <RotatingText
-                                        texts={[
-                                            'Fliesenverlegung & Badsanierung aus Aßlar',
-                                            'XXL-Großformatkeramik & Walk-In Duschen',
-                                            'DIN 18534 Verbundabdichtung & Staubschutz',
-                                            'Ihr Fachbetrieb für Mittelhessen',
-                                        ]}
-                                    />
+                                    Fliesenverlegung &amp; Badsanierung aus Aßlar
                                 </span>
                             </h1>
 
@@ -395,7 +387,7 @@ export default function HomePage() {
                         </h2>
                         <p className="mt-3 text-base text-neutral-700 leading-relaxed">
                             Wählen Sie Ihr geplantes Vorhaben und beschreiben Sie kurz Ihre Ausgangslage vor Ort.
-                            Meister Deniz Tezgel prüft Ihre Angaben und meldet sich zeitnah für eine persönliche Abstimmung und das kostenfreie Vor-Ort-Aufmaß.
+                            Fachbetriebsleiter Deniz Tezgel prüft Ihre Angaben und meldet sich zeitnah für eine persönliche Abstimmung und das kostenfreie Vor-Ort-Aufmaß.
                         </p>
                     </div>
                     <PricingCalculator />
@@ -705,7 +697,7 @@ export default function HomePage() {
 
             {/* 11. FINAL CONVERSION ANCHOR */}
             <FinalCTA
-                headline="Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Meister Deniz Tezgel."
+                headline="Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel."
                 subtitle="Kostenfreies Vor-Ort-Aufmaß • Verbindlicher Festpreis • Über 15 Jahre Erfahrung"
                 buttonText="Jetzt Vor-Ort-Aufmaß anfragen"
             />

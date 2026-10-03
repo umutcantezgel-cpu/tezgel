@@ -295,16 +295,23 @@ export default function PricingCalculator() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs text-neutral-500 shrink-0">Oder genaue Quadratmeterzahl bekannt:</span>
+            <label htmlFor="calc-custom-area" className="text-xs text-neutral-700 font-medium shrink-0">
+              Oder genaue Quadratmeterzahl bekannt:
+            </label>
             <div className="relative flex-1 max-w-[140px]">
               <input
+                id="calc-custom-area"
+                name="customArea"
                 type="text"
                 placeholder="z. B. 18"
+                aria-label="Quadratmeterzahl manuell eingeben"
                 value={customArea}
                 onChange={(e) => setCustomArea(e.target.value)}
-                className="w-full px-3 py-1.5 text-xs rounded-lg border border-neutral-300 bg-white text-neutral-900 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                className="w-full px-3 py-1.5 text-xs rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
               />
-              <span className="absolute right-3 top-1.5 text-xs text-neutral-400 font-medium">m²</span>
+              <span className="absolute right-3 top-1.5 text-xs text-neutral-700 font-semibold" aria-hidden="true">
+                m²
+              </span>
             </div>
           </div>
         </div>
@@ -475,10 +482,12 @@ export default function PricingCalculator() {
               {/* Eingabefelder Kontaktdaten */}
               <div className="space-y-3">
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                  <label htmlFor="calc-name" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
                     Ihr Name <span className="text-orange-400">*</span>
                   </label>
                   <input
+                    id="calc-name"
+                    name="name"
                     type="text"
                     required
                     value={name}
@@ -490,10 +499,12 @@ export default function PricingCalculator() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                    <label htmlFor="calc-phone" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
                       Telefonnummer <span className="text-orange-400">*</span>
                     </label>
                     <input
+                      id="calc-phone"
+                      name="phone"
                       type="tel"
                       required
                       value={phone}
@@ -504,10 +515,12 @@ export default function PricingCalculator() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                    <label htmlFor="calc-email" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
                       E-Mail-Adresse
                     </label>
                     <input
+                      id="calc-email"
+                      name="email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -519,10 +532,12 @@ export default function PricingCalculator() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                    <label htmlFor="calc-location" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
                       Einsatzort / PLZ
                     </label>
                     <input
+                      id="calc-location"
+                      name="location"
                       type="text"
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
@@ -532,10 +547,13 @@ export default function PricingCalculator() {
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                    <label htmlFor="calc-timing" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
                       Gewünschter Zeitraum
                     </label>
                     <select
+                      id="calc-timing"
+                      name="timing"
+                      aria-label="Gewünschter Zeitraum"
                       value={timing}
                       onChange={(e) => setTiming(e.target.value)}
                       className="w-full px-3 py-2.5 rounded-xl bg-neutral-800 border border-neutral-700 text-white text-xs sm:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
@@ -550,9 +568,11 @@ export default function PricingCalculator() {
                 </div>
 
                 {/* Datenschutz Checkbox */}
-                <label className="flex items-start gap-2 pt-2 cursor-pointer text-[11px] text-neutral-400">
+                <label className="flex items-start gap-2 pt-2 cursor-pointer text-[11px] text-neutral-300">
                   <input
                     type="checkbox"
+                    id="calc-privacy"
+                    name="privacyAccepted"
                     checked={privacyAccepted}
                     onChange={(e) => setPrivacyAccepted(e.target.checked)}
                     className="mt-0.5 rounded border-neutral-700 bg-neutral-800 text-orange-600 focus:ring-orange-500"

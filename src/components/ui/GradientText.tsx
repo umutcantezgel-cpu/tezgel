@@ -22,7 +22,7 @@ export function GradientText({
 }: GradientTextProps) {
   return (
     <span
-      className={`inline-block bg-gradient-to-r ${from} ${via} ${to} bg-clip-text text-transparent font-inherit ${className}`}
+      className={`inline-block text-orange-600 bg-gradient-to-r ${from} ${via} ${to} bg-clip-text text-transparent font-inherit ${className}`}
       {...props}
     >
       {children}

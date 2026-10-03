@@ -9,7 +9,7 @@ import { triggerHaptic } from "@/lib/haptics";
 
 export default function ContactSection({
   title = "In 2 Minuten zum kostenfreien Vor-Ort-Aufmaß",
-  subtitle = "Rufen Sie direkt an oder senden Sie uns Ihre Projekt-Eckdaten. Meister Deniz Tezgel meldet sich persönlich bei Ihnen.",
+  subtitle = "Rufen Sie direkt an oder senden Sie uns Ihre Projekt-Eckdaten. Fachbetriebsleiter Deniz Tezgel meldet sich persönlich bei Ihnen.",
 }: {
   title?: string;
   subtitle?: string;

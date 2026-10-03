@@ -168,7 +168,7 @@ export default function PreisePage() {
               </div>
               <h3 className="text-lg font-bold text-neutral-900">Kostenfreies Vor-Ort-Aufmaß</h3>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                Vor jedem Angebot begutachtet Meister {siteConfig.company.owner.fullName} Ihre Räume persönlich, prüft den Untergrund und nimmt exakte Maße.
+                Vor jedem Angebot begutachtet Inhaber {siteConfig.company.owner.fullName} Ihre Räume persönlich, prüft den Untergrund und nimmt exakte Maße.
               </p>
             </div>
 

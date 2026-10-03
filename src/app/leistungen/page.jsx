@@ -234,7 +234,7 @@ export default function ServiceHubPage() {
             Projekt anfragen &amp; Situation schildern
           </h2>
           <p className="text-sm sm:text-base text-neutral-700 mt-2">
-            Geben Sie uns einen ersten Einblick in Ihr Vorhaben vor Ort für eine fundierte Einschätzung durch Meister Deniz Tezgel.
+            Geben Sie uns einen ersten Einblick in Ihr Vorhaben vor Ort für eine fundierte Einschätzung durch Fachbetriebsleiter Deniz Tezgel.
           </p>
         </div>
         <PricingCalculator />
