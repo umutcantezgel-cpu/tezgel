@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --loader ./test/resolver.mjs --test test/email-pipeline.test.mjs",
+    "test": "node --experimental-strip-types --loader ./test/resolver.mjs --test test/email-pipeline.test.mjs test/titleLength.test.mjs",
+    "qa:graph": "node scripts/qa/check-graph.mjs",
+    "typecheck": "tsc --noEmit",
     "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
