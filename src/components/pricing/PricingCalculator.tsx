@@ -65,21 +65,21 @@ export default function PricingCalculator() {
         {/* Step Indicator */}
         <div className="flex items-center gap-3 mb-6">
           <div className="flex items-center gap-2">
-            <span className="w-7 h-7 rounded-full bg-orange-600 text-white flex items-center justify-center text-xs font-bold shadow-xs">
+            <span className="w-7 h-7 rounded-full bg-orange-700 text-white flex items-center justify-center text-xs font-bold shadow-xs">
               1
             </span>
             <span className="text-xs sm:text-sm font-bold text-neutral-800">Gewerk</span>
           </div>
           <div className="flex-1 h-[2px] bg-orange-200" />
           <div className="flex items-center gap-2">
-            <span className="w-7 h-7 rounded-full bg-orange-600 text-white flex items-center justify-center text-xs font-bold shadow-xs">
+            <span className="w-7 h-7 rounded-full bg-orange-700 text-white flex items-center justify-center text-xs font-bold shadow-xs">
               2
             </span>
             <span className="text-xs sm:text-sm font-bold text-neutral-800">Fläche</span>
           </div>
           <div className="flex-1 h-[2px] bg-orange-200" />
           <div className="flex items-center gap-2">
-            <span className="w-7 h-7 rounded-full bg-orange-600 text-white flex items-center justify-center text-xs font-bold shadow-xs">
+            <span className="w-7 h-7 rounded-full bg-orange-700 text-white flex items-center justify-center text-xs font-bold shadow-xs">
               3
             </span>
             <span className="text-xs sm:text-sm font-bold text-neutral-800">Optionen</span>
@@ -88,7 +88,7 @@ export default function PricingCalculator() {
 
         {/* 1. Gewerk Auswahl */}
         <div className="mb-6">
-          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-500 mb-3">
+          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-3">
             1. Welches Fliesen- oder Badprojekt planen Sie?
           </label>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -112,7 +112,7 @@ export default function PricingCalculator() {
                   <div
                     className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
                       isSelected
-                        ? "bg-orange-600 text-white"
+                        ? "bg-orange-700 text-white"
                         : "bg-neutral-100 text-neutral-600"
                     }`}
                   >
@@ -122,7 +122,7 @@ export default function PricingCalculator() {
                     <div className="text-sm font-bold text-neutral-900 leading-tight">
                       {srv.title}
                     </div>
-                    <div className="text-xs text-neutral-500 mt-0.5 leading-snug">
+                    <div className="text-xs text-neutral-600 mt-0.5 leading-snug">
                       {srv.subtitle}
                     </div>
                   </div>
@@ -134,7 +134,7 @@ export default function PricingCalculator() {
 
         {/* 2. Raumgröße / Fläche */}
         <div className="mb-6">
-          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-500 mb-3">
+          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-3">
             2. Geschätzte Grundfläche:
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -155,7 +155,7 @@ export default function PricingCalculator() {
                   }`}
                 >
                   <div className="text-xs font-bold text-neutral-900">{size.label}</div>
-                  <div className="text-[11px] font-semibold text-orange-600 mt-0.5">
+                  <div className="text-[11px] font-bold text-orange-800 mt-0.5">
                     {size.areaText}
                   </div>
                 </button>
@@ -166,7 +166,7 @@ export default function PricingCalculator() {
 
         {/* 3. Zusatzoptionen */}
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-500 mb-3">
+          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-3">
             3. Zusatzleistungen & Vorbereitungen:
           </label>
           <div className="space-y-2">
@@ -187,7 +187,7 @@ export default function PricingCalculator() {
                     <div
                       className={`w-5 h-5 rounded-md flex items-center justify-center border ${
                         isChecked
-                          ? "bg-orange-600 border-orange-600 text-white"
+                          ? "bg-orange-700 border-orange-700 text-white"
                           : "border-neutral-300 bg-white"
                       }`}
                     >
@@ -208,18 +208,18 @@ export default function PricingCalculator() {
       {/* ── Right Panel: Price Display & Immediate Conversion ── */}
       <div className="flex-[2] p-6 sm:p-8 lg:p-10 bg-neutral-900 text-white flex flex-col justify-between">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-600/30 text-orange-400 border border-orange-500/30 text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-600/35 text-orange-300 border border-orange-500/40 text-xs font-bold mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Transparenter Vorab-Richtwert</span>
           </div>
 
-          <div className="text-xs text-neutral-400 font-medium">Kalkulierter Richtwert ab:</div>
+          <div className="text-xs text-neutral-300 font-medium">Kalkulierter Richtwert ab:</div>
           <div className="text-4xl sm:text-5xl font-black text-white tracking-tight my-2 flex items-baseline gap-1">
             <span>ca.</span>
             <AnimatedNumber value={totalPrice} />
             <span className="text-2xl font-bold text-orange-400">€</span>
           </div>
-          <p className="text-xs text-neutral-400 leading-relaxed mb-6">
+          <p className="text-xs text-neutral-300 leading-relaxed mb-6">
             Inkl. Verlegematerialien, Facharbeit & Vorbereitung. Exakter Endpreis nach
             kostenfreiem Vor-Ort-Aufmaß in Aßlar, Wetzlar & Hessen.
           </p>
@@ -249,7 +249,8 @@ export default function PricingCalculator() {
             <a
               href={siteConfig.contact.phone.link}
               onClick={() => triggerHaptic("medium")}
-              className="flex items-center justify-center gap-2 w-full h-13 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm shadow-lg shadow-orange-950/50 transition-all cursor-pointer"
+              aria-label="Angebot für Fliesen- oder Badprojekt telefonisch besprechen"
+              className="flex items-center justify-center gap-2 w-full h-13 rounded-xl bg-orange-700 hover:bg-orange-600 text-white font-bold text-sm shadow-lg shadow-orange-950/50 transition-all cursor-pointer"
             >
               <Phone className="w-4 h-4" />
               <span>Angebot telefonisch besprechen</span>
@@ -258,7 +259,7 @@ export default function PricingCalculator() {
 
           <a
             href="/kontakt#express-anfrage"
-            className="flex items-center justify-center gap-2 w-full h-11 rounded-xl bg-white/10 hover:bg-white/15 text-neutral-200 text-xs font-semibold border border-white/10 transition-colors"
+            className="flex items-center justify-center gap-2 w-full h-11 rounded-xl bg-white/10 hover:bg-white/15 text-neutral-100 text-xs font-semibold border border-white/10 transition-colors"
           >
             <Ruler className="w-3.5 h-3.5 text-orange-400" />
             <span>Kostenfreies Vor-Ort-Aufmaß buchen</span>

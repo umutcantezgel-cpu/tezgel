@@ -62,9 +62,13 @@ export default function FAQAccordion({ question, answer, isDarkerBg = false }: F
             <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
               {answer}
             </p>
-            <div className="mt-2 text-xs sm:text-sm font-medium text-neutral-500 pt-3 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center gap-2">
+            <div className="mt-2 text-xs sm:text-sm font-semibold text-neutral-700 pt-3 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center gap-2">
               <span>Haben Sie eine Frage zu Ihrem Bauvorhaben?</span>
-              <a href={siteConfig.contact.phone.link} className="inline-flex items-center text-orange-600 hover:text-orange-700 hover:underline font-bold">
+              <a
+                href={siteConfig.contact.phone.link}
+                aria-label={`Fliesenverlegung Tezgel telefonisch kontaktieren: ${linkText}`}
+                className="inline-flex items-center text-orange-800 hover:text-orange-900 hover:underline font-bold"
+              >
                 {linkText}
               </a>
             </div>

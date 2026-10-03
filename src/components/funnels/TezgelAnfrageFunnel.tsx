@@ -293,7 +293,7 @@ export default function TezgelAnfrageFunnel() {
                   aria-current={step === s ? 'step' : undefined}
                   className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black tabular-nums transition-all duration-200 ${
                     step === s
-                      ? 'bg-orange-600 text-white shadow-md shadow-orange-600/30'
+                      ? 'bg-orange-700 text-white shadow-md shadow-orange-700/30'
                       : step > s
                         ? 'bg-orange-50 text-orange-800 border border-orange-300'
                         : 'bg-white text-neutral-700 border border-neutral-300'
@@ -426,7 +426,7 @@ export default function TezgelAnfrageFunnel() {
               onChange={(e) => setLocation(e.target.value)}
               className={inputClass}
             />
-            <p className="text-xs text-neutral-500 mt-1">Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
+            <p className="text-xs text-neutral-700 font-medium mt-1">Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
           </div>
 
           <div className="pt-4 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-3">
@@ -535,7 +535,7 @@ export default function TezgelAnfrageFunnel() {
 
           <div>
             <label htmlFor="funnel-email" className="block text-sm font-bold text-neutral-800 mb-1.5">
-              E-Mail-Adresse <span className="text-neutral-500 font-normal">(für die Eingangsbestätigung)</span>
+              E-Mail-Adresse <span className="text-neutral-700 font-medium">(für die Eingangsbestätigung)</span>
             </label>
             <input
               id="funnel-email"

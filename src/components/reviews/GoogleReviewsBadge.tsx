@@ -36,7 +36,7 @@ export default function GoogleReviewsBadge({
             ))}
           </div>
         </div>
-        <div className="text-[11px] font-medium text-neutral-500 mt-1">
+        <div className="text-[11px] font-semibold text-neutral-700 mt-1">
           {count} verifizierte Google-Rezensionen
         </div>
       </div>

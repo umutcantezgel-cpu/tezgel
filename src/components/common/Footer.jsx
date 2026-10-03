@@ -96,13 +96,23 @@ export default function Footer() {
                             </p>
                             <p className="flex items-center gap-2.5">
                                 <Phone className="w-4 h-4 text-orange-400 shrink-0" />
-                                <a href={`tel:${contact.phoneLink}`} className="hover:text-white underline-offset-4 hover:underline">
+                                <a
+                                    href={`tel:${contact.phoneLink}`}
+                                    className="hover:text-white underline-offset-4 hover:underline"
+                                    aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${contact.phone}`}
+                                >
                                     {contact.phone}
                                 </a>
                             </p>
                             <p className="flex items-center gap-2.5">
                                 <MessageCircle className="w-4 h-4 text-green-400 shrink-0" />
-                                <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-white underline-offset-4 hover:underline">
+                                <a
+                                    href={contact.whatsappLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-white underline-offset-4 hover:underline"
+                                    aria-label={`WhatsApp Chat mit Deniz Tezgel starten: ${contact.mobile}`}
+                                >
                                     Mobil &amp; WhatsApp: {contact.mobile}
                                 </a>
                             </p>
@@ -112,7 +122,11 @@ export default function Footer() {
                             </p>
                             <p className="flex items-center gap-2.5">
                                 <Mail className="w-4 h-4 text-orange-400 shrink-0" />
-                                <a href={`mailto:${contact.email}`} className="hover:text-white underline-offset-4 hover:underline">
+                                <a
+                                    href={`mailto:${contact.email}`}
+                                    className="hover:text-white underline-offset-4 hover:underline"
+                                    aria-label={`E-Mail an Fliesenverlegung Tezgel senden: ${contact.email}`}
+                                >
                                     {contact.email}
                                 </a>
                             </p>

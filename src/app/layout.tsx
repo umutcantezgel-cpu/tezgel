@@ -4,7 +4,6 @@ import '@/styles/tokens.css';
 import './globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';
-import FloatingDock from '@/components/layout/FloatingDock';
 import MobileBottomBar from '@/components/layout/MobileBottomBar';
 import Footer from '@/components/common/Footer';
 import TrackingScripts from '@/components/common/TrackingScripts';

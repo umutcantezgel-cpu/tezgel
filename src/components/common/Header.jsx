@@ -35,7 +35,7 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden sm:block
                 priority
             />
             {!compact && (
-                <span className={`${sublineClassName} border-l border-neutral-200/80 pl-2.5 my-auto text-[10px] sm:text-[11px] font-semibold text-neutral-500 leading-tight tracking-tight`}>
+                <span className={`${sublineClassName} border-l border-neutral-200/80 pl-2.5 my-auto text-[10px] sm:text-[11px] font-bold text-neutral-700 leading-tight tracking-tight`}>
                     Fachbetrieb<br />Aßlar &middot; Wetzlar
                 </span>
             )}
@@ -220,7 +220,7 @@ export default function Header({ isScrolled, isMobileMenuOpen, setIsMobileMenuOp
                         <a
                             href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                             className="inline-flex items-center justify-center gap-2 h-10 min-w-10 px-2.5 xl:px-3.5 rounded-xl bg-white hover:bg-neutral-50 text-neutral-900 font-bold text-xs border border-neutral-200 hover:border-orange-500/80 transition-all duration-200"
-                            aria-label={`Anrufen: ${COMPANY_DATA.contact.phone}`}
+                            aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
                         >
                             <Phone className="w-4 h-4 text-orange-700" />
                             <span className="hidden xl:inline">{COMPANY_DATA.contact.phone}</span>

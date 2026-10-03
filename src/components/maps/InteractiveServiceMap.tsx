@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { setOptions, importLibrary } from "@googlemaps/js-api-loader";
 import { CITIES } from "@/config/cities";
 import { siteConfig } from "@/lib/config";
@@ -164,7 +163,7 @@ function MapImplementation() {
     <div className="relative w-full h-[450px] rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-neutral-100">
       <div ref={mapRef} className="w-full h-full" />
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-neutral-100 text-neutral-500 text-sm">
+        <div className="absolute inset-0 flex items-center justify-center bg-neutral-100 text-neutral-700 font-semibold text-sm">
           Karte wird geladen...
         </div>
       )}

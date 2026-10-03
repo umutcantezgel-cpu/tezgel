@@ -34,9 +34,9 @@ export default function ReviewCard({ review }: { review: ReviewItem }) {
               <span>{name}</span>
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-label="Verifizierter Kunde" />
             </span>
-            <div className="flex items-center gap-1.5 text-xs text-neutral-500 mt-0.5">
+            <div className="flex items-center gap-1.5 text-xs text-neutral-700 mt-0.5 font-medium">
               {review.topic && (
-                <span className="font-medium text-orange-700 bg-orange-50 px-2 py-0.5 rounded-md border border-orange-100">
+                <span className="font-semibold text-orange-800 bg-orange-50 px-2 py-0.5 rounded-md border border-orange-200">
                   {review.topic}
                 </span>
               )}
@@ -65,7 +65,7 @@ export default function ReviewCard({ review }: { review: ReviewItem }) {
 
       {/* Footer / Source */}
       <div className="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between relative z-10">
-        <span className="text-[11px] font-semibold text-neutral-500 uppercase tracking-wider">
+        <span className="text-[11px] font-semibold text-neutral-700 uppercase tracking-wider">
           {review.source} Rezension
         </span>
         <GoogleIcon size={16} className="opacity-70 group-hover:opacity-100 transition-opacity duration-200" />

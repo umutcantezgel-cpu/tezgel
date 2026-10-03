@@ -31,7 +31,7 @@ export default function MobileBottomBar() {
         <a
           href={siteConfig.contact.phone.link}
           onClick={() => triggerHaptic("medium")}
-          className="flex-1 min-h-[46px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-orange-600 text-white text-xs font-bold hover:bg-orange-500 active:scale-95 transition-all shadow-xs"
+          className="flex-1 min-h-[46px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-orange-700 text-white text-xs font-bold hover:bg-orange-600 active:scale-95 transition-all shadow-xs"
           aria-label={`Fliesenverlegung Tezgel anrufen: ${siteConfig.contact.phone.formatted}`}
         >
           <Phone className="w-4 h-4 shrink-0" />
@@ -47,7 +47,7 @@ export default function MobileBottomBar() {
             triggerHaptic("light");
             openWhatsApp({ phone: siteConfig.contact.whatsapp });
           }}
-          className="flex-1 min-h-[46px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-500 active:scale-95 transition-all shadow-xs"
+          className="flex-1 min-h-[46px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-600 active:scale-95 transition-all shadow-xs"
           aria-label="WhatsApp-Chat starten"
         >
           <MessageCircle className="w-4 h-4 shrink-0" />

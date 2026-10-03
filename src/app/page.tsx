@@ -17,13 +17,12 @@ import {
     MessageCircle,
     Star,
     Calculator,
-    BookOpen,
-    Quote
+    BookOpen
 } from 'lucide-react';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
-import { RATING_SUMMARY, getFeaturedReviews } from '@/config/reviews';
+import { RATING_SUMMARY } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import HeroContactForm from '@/components/forms/HeroContactForm';
@@ -162,7 +161,6 @@ export default function HomePage() {
     const { contact, motto, owner } = COMPANY_DATA;
     const google = RATING_SUMMARY.google;
     const trustlocal = RATING_SUMMARY.trustlocal;
-    const featuredReviews = getFeaturedReviews();
 
     return (
         <div className="relative overflow-hidden">
@@ -179,7 +177,8 @@ export default function HomePage() {
                         alt="Badsanierung mit beleuchteten Wandnischen und Großformatkeramik von Fliesenverlegung Tezgel"
                         fill
                         priority
-                        sizes="100vw"
+                        quality={70}
+                        sizes="(max-width: 768px) 100vw, 100vw"
                         className="object-cover object-center scale-105 opacity-[0.20] lg:opacity-[0.25]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] via-[#FAFAFA]/95 to-[#FAFAFA]/85 lg:via-[#FAFAFA]/90 lg:to-[#FAFAFA]/70" />
@@ -230,7 +229,11 @@ export default function HomePage() {
                                         <MessageCircle className="w-4 h-4" />
                                         WhatsApp
                                     </a>
-                                    <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto text-xs sm:text-sm justify-center py-3">
+                                    <a
+                                        href={`tel:${contact.phoneLink}`}
+                                        className="btn-ghost w-full sm:w-auto text-xs sm:text-sm justify-center py-3"
+                                        aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${contact.phone}`}
+                                    >
                                         <Phone className="w-4 h-4 text-orange-700" />
                                         {contact.phone}
                                     </a>
@@ -557,7 +560,11 @@ export default function HomePage() {
                                         Großformate im Bad
                                         <ArrowRight className="w-4 h-4" />
                                     </Link>
-                                    <a href={`tel:${contact.phoneLink}`} className="btn-ghost">
+                                    <a
+                                        href={`tel:${contact.phoneLink}`}
+                                        className="btn-ghost"
+                                        aria-label={`Großformat-Fliesenberatung telefonisch anfragen: ${contact.phone}`}
+                                    >
                                         <Phone className="w-4 h-4 text-orange-700" />
                                         {contact.phone}
                                     </a>

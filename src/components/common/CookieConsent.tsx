@@ -70,10 +70,19 @@ export default function CookieConsent() {
 
   // Physics & 2D dragging state
   const cardRef = useRef<HTMLDivElement>(null);
-  const [coords, setCoords] = useState<{ x: number; y: number }>(() => ({ x: 12, y: 76 }));
+  const [coords, setCoords] = useState<{ x: number; y: number }>(() => {
+    if (typeof window !== "undefined") {
+      const w = window.innerWidth;
+      const isMobile = w < 768;
+      const estimatedWidth = isMobile ? w - 24 : Math.min(w - 48, 860);
+      return getInitialBannerPosition(estimatedWidth);
+    }
+    return { x: 12, y: 76 };
+  });
   const [isDragging, setIsDragging] = useState(false);
 
-  const posRef = useRef({ x: 12, y: 76 });
+  const cardDimensionsRef = useRef({ w: 360, h: 280 });
+  const posRef = useRef(coords);
   const velRef = useRef({ x: 0, y: 0 });
   const isDraggingRef = useRef(false);
   const isPointerDownRef = useRef(false);
@@ -107,18 +116,27 @@ export default function CookieConsent() {
     }
   }, []);
 
-  // Initial horizontal centering & top positioning
+  // Initial horizontal centering & top positioning (Zero forced reflow - pure layout math)
   useEffect(() => {
     if (typeof window === "undefined" || !showBanner) return;
-    const card = cardRef.current;
     const w = window.innerWidth;
     const isMobile = w < 768;
     const estimatedWidth = isMobile ? w - 24 : Math.min(w - 48, 860);
-    const initial = getInitialBannerPosition(card ? card.offsetWidth : estimatedWidth);
+    cardDimensionsRef.current.w = estimatedWidth;
+    const initial = getInitialBannerPosition(estimatedWidth);
     posRef.current = initial;
-    setCoords(initial);
     updateTransform(initial.x, initial.y);
   }, [showBanner, updateTransform]);
+
+  // Sync dimensions when settings modal opens/closes
+  useEffect(() => {
+    if (cardRef.current) {
+      cardDimensionsRef.current = {
+        w: cardRef.current.offsetWidth,
+        h: cardRef.current.offsetHeight,
+      };
+    }
+  }, [showSettings]);
 
   // Wall bounce physics loop with 2-body collision resolution
   useEffect(() => {
@@ -127,9 +145,7 @@ export default function CookieConsent() {
 
       const p = posRef.current;
       const v = velRef.current;
-      const card = cardRef.current;
-      const cardWidth = card ? card.offsetWidth : 360;
-      const cardHeight = card ? card.offsetHeight : 280;
+      const { w: cardWidth, h: cardHeight } = cardDimensionsRef.current;
       const bounds = getBannerBounds(cardWidth, cardHeight);
 
       v.x *= 0.94;
@@ -199,9 +215,7 @@ export default function CookieConsent() {
       id: "cookie-banner",
       mass: 4,
       getBounds: () => {
-        const card = cardRef.current;
-        const w = card ? card.offsetWidth : 360;
-        const h = card ? card.offsetHeight : 280;
+        const { w, h } = cardDimensionsRef.current;
         return {
           left: posRef.current.x,
           top: posRef.current.y,
@@ -215,9 +229,7 @@ export default function CookieConsent() {
         velRef.current.y += vy;
       },
       displace: (dx: number, dy: number) => {
-        const card = cardRef.current;
-        const w = card ? card.offsetWidth : 360;
-        const h = card ? card.offsetHeight : 280;
+        const { w, h } = cardDimensionsRef.current;
         const bounds = getBannerBounds(w, h);
         const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x + dx));
         const nextY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y + dy));
@@ -256,9 +268,7 @@ export default function CookieConsent() {
         e.preventDefault();
       }
 
-      const card = cardRef.current;
-      const cardWidth = card ? card.offsetWidth : 360;
-      const cardHeight = card ? card.offsetHeight : 280;
+      const { w: cardWidth, h: cardHeight } = cardDimensionsRef.current;
       const bounds = getBannerBounds(cardWidth, cardHeight);
 
       const nextX = Math.max(bounds.minX, Math.min(bounds.maxX, dragStartPosRef.current.x + totalDx));
@@ -337,6 +347,13 @@ export default function CookieConsent() {
       isDraggingRef.current = false;
       setIsDragging(false);
 
+      if (cardRef.current) {
+        cardDimensionsRef.current = {
+          w: cardRef.current.offsetWidth,
+          h: cardRef.current.offsetHeight,
+        };
+      }
+
       cancelAnimationFrame(animFrameRef.current);
       velRef.current = { x: 0, y: 0 };
 
@@ -365,9 +382,13 @@ export default function CookieConsent() {
   // Viewport resize clamping
   useEffect(() => {
     const handleResize = () => {
-      const card = cardRef.current;
-      const cardWidth = card ? card.offsetWidth : 360;
-      const cardHeight = card ? card.offsetHeight : 280;
+      if (cardRef.current) {
+        cardDimensionsRef.current = {
+          w: cardRef.current.offsetWidth,
+          h: cardRef.current.offsetHeight,
+        };
+      }
+      const { w: cardWidth, h: cardHeight } = cardDimensionsRef.current;
       const bounds = getBannerBounds(cardWidth, cardHeight);
       const clampedX = Math.max(bounds.minX, Math.min(bounds.maxX, posRef.current.x));
       const clampedY = Math.max(bounds.minY, Math.min(bounds.maxY, posRef.current.y));
@@ -478,7 +499,7 @@ export default function CookieConsent() {
           {/* Subtle Drag Handle Bar */}
           <div
             className="w-full flex items-center justify-center pt-2.5 pb-0.5 cursor-grab active:cursor-grabbing select-none touch-none group"
-            aria-label="Cookie-Banner verschieben"
+            aria-hidden="true"
             title="Frei verschiebbar & werfbar"
           >
             <div className="w-12 h-1.5 rounded-full bg-neutral-200 group-hover:bg-neutral-300 transition-colors" />
@@ -499,7 +520,7 @@ export default function CookieConsent() {
 
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="hidden sm:flex shrink-0 w-11 h-11 rounded-xl bg-orange-50 border border-orange-200/60 items-center justify-center">
-                    <Cookie className="w-5 h-5 text-orange-600" />
+                    <Cookie className="w-5 h-5 text-orange-700" />
                   </div>
                   <div className="flex-1 pr-6">
                     <h2 className="text-base font-bold text-neutral-900 mb-1.5 flex items-center gap-2">
@@ -674,7 +695,7 @@ export default function CookieConsent() {
                                   </span>
                                 ) : null}
                               </span>
-                              <p className={`text-xs leading-relaxed ${isChecked ? "text-neutral-700" : "text-neutral-500"}`}>
+                              <p className={`text-xs leading-relaxed ${isChecked ? "text-neutral-700" : "text-neutral-600"}`}>
                                 {info.description}
                               </p>
                             </div>
@@ -686,7 +707,7 @@ export default function CookieConsent() {
                               <button
                                 type="button"
                                 onClick={() => setExpandedCategory(isExpanded ? null : key)}
-                                className="w-full flex items-center justify-between px-3.5 py-2 text-xs font-medium text-neutral-500 hover:text-neutral-800 hover:bg-neutral-50 transition-colors border-t border-neutral-100"
+                                className="w-full flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 transition-colors border-t border-neutral-100"
                               >
                                 <span>{relatedCookies.length} Cookie(s) & Details einsehen</span>
                                 {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -702,10 +723,10 @@ export default function CookieConsent() {
                                         <code className="font-mono font-bold text-neutral-900 bg-neutral-100 px-1.5 py-0.5 rounded text-[11px]">
                                           {cookie.name}
                                         </code>
-                                        <span className="text-neutral-500 text-[11px]">{cookie.duration}</span>
+                                        <span className="text-neutral-600 text-[11px] font-medium">{cookie.duration}</span>
                                       </div>
-                                      <p className="text-neutral-600 mt-1">{cookie.purpose}</p>
-                                      <p className="text-neutral-400 text-[10px] mt-0.5">Anbieter: {cookie.provider}</p>
+                                      <p className="text-neutral-700 mt-1">{cookie.purpose}</p>
+                                      <p className="text-neutral-500 text-[10px] mt-0.5 font-medium">Anbieter: {cookie.provider}</p>
                                     </div>
                                   ))}
                                 </div>

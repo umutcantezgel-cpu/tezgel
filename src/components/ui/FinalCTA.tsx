@@ -80,6 +80,7 @@ export default function FinalCTA({
           <a
             href={siteConfig.contact.phone.link}
             onClick={() => triggerHaptic("light")}
+            aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${siteConfig.contact.phone.formatted}`}
             className="text-2xl sm:text-3xl md:text-4xl font-black text-orange-400 hover:text-orange-300 transition-colors tracking-tight tabular-nums whitespace-nowrap"
           >
             {siteConfig.contact.phone.formatted}
@@ -90,7 +91,7 @@ export default function FinalCTA({
               <a
                 href={siteConfig.contact.phone.link}
                 onClick={() => triggerHaptic("medium")}
-                className="group flex items-center justify-center gap-2.5 w-full h-14 bg-orange-600 hover:bg-orange-500 text-white text-base font-bold rounded-xl shadow-lg shadow-orange-950/40 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-orange-500/40 cursor-pointer"
+                className="group flex items-center justify-center gap-2.5 w-full h-14 bg-orange-700 hover:bg-orange-600 text-white text-base font-bold rounded-xl shadow-lg shadow-orange-950/40 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-orange-500/40 cursor-pointer"
               >
                 <Phone className="h-5 w-5 shrink-0" />
                 <span>{buttonText}</span>
@@ -103,8 +104,8 @@ export default function FinalCTA({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => triggerHaptic("light")}
-              className="flex items-center justify-center gap-2 h-14 px-5 bg-emerald-600 hover:bg-emerald-500 text-white text-base font-bold rounded-xl shadow-lg shadow-emerald-950/30 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-emerald-500/40"
-              aria-label="WhatsApp Nachricht senden"
+              className="flex items-center justify-center gap-2 h-14 px-5 bg-emerald-700 hover:bg-emerald-600 text-white text-base font-bold rounded-xl shadow-lg shadow-emerald-950/30 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-emerald-500/40"
+              aria-label="WhatsApp Nachricht an Fliesenverlegung Tezgel senden"
             >
               <MessageCircle className="h-5 w-5 shrink-0" />
               <span className="hidden sm:inline">WhatsApp</span>

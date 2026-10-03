@@ -272,8 +272,9 @@ export default function MobileMenu({ isOpen, onClose }) {
                         <a
                             href={`tel:${COMPANY_DATA.contact.phoneLink}`}
                             className="btn-ghost py-2 px-3 text-xs justify-center font-bold"
+                            aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
                         >
-                            <Phone className="w-4 h-4 text-orange-600 shrink-0" />
+                            <Phone className="w-4 h-4 text-orange-700 shrink-0" />
                             <span>Anrufen</span>
                         </a>
                         <a
@@ -285,6 +286,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                                 openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber });
                             }}
                             className="glass-button-whatsapp py-2 px-3 text-xs justify-center font-bold"
+                            aria-label={`WhatsApp-Chat mit Deniz Tezgel starten: ${COMPANY_DATA.contact.whatsapp}`}
                         >
                             <MessageCircle className="w-4 h-4 shrink-0" />
                             <span>WhatsApp</span>

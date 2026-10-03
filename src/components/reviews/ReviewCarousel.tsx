@@ -50,7 +50,7 @@ export default function ReviewCarousel({
     <div className={`relative w-full ${className}`}>
       {/* Scroll Controls */}
       <div className="flex items-center justify-between mb-4 px-1">
-        <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
+        <span className="text-xs font-bold text-neutral-700 uppercase tracking-wider">
           Echte Kundenstimmen aus Mittelhessen
         </span>
         <div className="flex items-center gap-2">

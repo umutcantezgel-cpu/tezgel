@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import {
   Calculator,
   ShieldCheck,
@@ -7,10 +6,6 @@ import {
   ArrowRight,
   Phone,
   MessageSquare,
-  Sparkles,
-  Layers,
-  Droplets,
-  Sun,
   Ruler
 } from "lucide-react";
 import { siteConfig } from "@/lib/config";

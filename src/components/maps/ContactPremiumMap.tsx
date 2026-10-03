@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { CITIES } from "@/config/cities";
 import { siteConfig } from "@/lib/config";
 import MapConsentGate from "@/components/legal/MapConsentGate";
-import { MapPin, Phone, Search, Navigation, ExternalLink, Clock } from "lucide-react";
+import { MapPin, Phone, Search, Navigation, ExternalLink } from "lucide-react";
 import { triggerHaptic } from "@/lib/haptics";
 
 export default function ContactPremiumMap({ className = "" }: { className?: string }) {
@@ -37,7 +37,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
           <h3 className="text-xl font-bold text-neutral-900 tracking-tight mb-1">
             Mittelhessen vor Ort
           </h3>
-          <p className="text-xs text-neutral-500 mb-4 leading-relaxed">
+          <p className="text-xs text-neutral-600 mb-4 leading-relaxed">
             Firmensitz in Aßlar – täglich auf Baustellen in Wetzlar, Gießen & Lahn-Dill-Kreis.
           </p>
 
@@ -67,12 +67,12 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                   }}
                   className={`w-full px-3 py-2 text-left rounded-xl text-xs font-semibold flex items-center justify-between transition-all cursor-pointer ${
                     isSelected
-                      ? "bg-orange-600 text-white shadow-xs"
+                      ? "bg-orange-700 text-white shadow-xs"
                       : "bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-200/80"
                   }`}
                 >
                   <span className="truncate">{city.name}</span>
-                  <span className={`text-[10px] shrink-0 ml-2 ${isSelected ? "text-orange-100" : "text-neutral-400"}`}>
+                  <span className={`text-[10px] shrink-0 ml-2 font-medium ${isSelected ? "text-orange-100" : "text-neutral-600"}`}>
                     {city.distanceKm === 0 ? "Firmensitz" : `ca. ${city.distanceKm} km`}
                   </span>
                 </button>
@@ -85,11 +85,11 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
         <div className="mt-5 pt-4 border-t border-neutral-200">
           <div className="text-xs font-bold text-neutral-900 mb-1 flex items-center justify-between">
             <span>{currentCity.name}</span>
-            <span className="text-orange-600 font-semibold text-[11px]">
+            <span className="text-orange-800 font-bold text-[11px]">
               {currentCity.distanceKm === 0 ? "Direkt vor Ort" : `ca. ${currentCity.distanceKm} km`}
             </span>
           </div>
-          <p className="text-[11px] text-neutral-500 line-clamp-2 leading-relaxed mb-3">
+          <p className="text-[11px] text-neutral-600 line-clamp-2 leading-relaxed mb-3">
             {currentCity.description}
           </p>
 
@@ -107,7 +107,8 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
 
             <a
               href={siteConfig.contact.phone.link}
-              className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-bold border border-orange-200 transition-colors"
+              aria-label={`Fliesenverlegung Tezgel anrufen: ${siteConfig.contact.phone.formatted}`}
+              className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-800 text-xs font-bold border border-orange-200 transition-colors"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>Anrufen</span>
