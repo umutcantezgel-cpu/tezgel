@@ -59,9 +59,9 @@ const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string }> 
 
 export const metadata: Metadata = {
     title: {
-        absolute: 'Fliesenverlegung Tezgel | Fachbetrieb für Fliesen & Badsanierung in Aßlar & Wetzlar'
+        absolute: 'Fliesenverlegung Tezgel · Fachbetrieb Mittelhessen'
     },
-    description: 'Ihr Fachbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Aßlar, Wetzlar und ganz Hessen.',
+    description: 'Ihr Fachbetrieb für fugenarme Großformate, barrierefreie Badsanierung, Terrassen auf Stelzlagern & DIN 18534 Verbundabdichtung in Mittelhessen & ganz Hessen.',
     alternates: {
         canonical: 'https://www.tezgel.de'
     },
@@ -481,7 +481,7 @@ export default function HomePage() {
                                         </Link>
                                         {isFeature && (
                                             <Link href="/bad" className="btn-primary px-5 py-2.5 text-xs">
-                                                Zur Badsanierung
+                                                Zum Fachbereich Badsanierung
                                             </Link>
                                         )}
                                     </div>

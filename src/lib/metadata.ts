@@ -5,37 +5,56 @@ const BASE_URL = SITE_URL;
 const SITE_NAME = 'Fliesenverlegung Tezgel';
 
 function sanitizeTitle(raw: string): string {
-  const trimmed = raw.trim();
-  let candidate = trimmed;
+  const trimmed = raw.trim().replace(/\s+/g, ' ');
+  const base = trimmed
+    .replace(/\s*\|\s*Fliesenverlegung Tezgel/gi, '')
+    .replace(/\s*–\s*Referenzen Fliesenverlegung Tezgel/gi, '')
+    .replace(/\s*\|\s*Ratgeber Fliesenverlegung Tezgel/gi, '')
+    .replace(/\s*–\s*Fachbetrieb Fliesen Tezgel/gi, '')
+    .replace(/\s*·\s*Tezgel/gi, '')
+    .replace(/\s*\|\s*Fachbetrieb/gi, '')
+    .replace(/\s*–\s*Fachbetrieb/gi, '')
+    .trim();
 
-  if (trimmed.includes('Fliesenverlegung Tezgel')) {
-    candidate = trimmed;
-  } else if (trimmed.includes('Tezgel')) {
-    if (trimmed.length + 15 <= 65) {
-      candidate = `${trimmed} | Fachbetrieb`;
-    } else {
-      candidate = trimmed;
-    }
-  } else if (trimmed.length + 26 <= 65) {
-    candidate = `${trimmed} | ${SITE_NAME}`;
-  } else if (trimmed.length + 9 <= 65) {
-    candidate = `${trimmed} · Tezgel`;
+  let candidate: string;
+  if (/Tezgel/i.test(base)) {
+    candidate = base;
   } else {
-    candidate = `${trimmed.slice(0, 56)} · Tezgel`;
+    if (base.length + 9 <= 53) {
+      candidate = `${base} · Tezgel`;
+    } else {
+      let cut = base.slice(0, 44);
+      const lastSpace = cut.lastIndexOf(' ');
+      if (lastSpace > 25) {
+        cut = cut.slice(0, lastSpace);
+      }
+      candidate = `${cut.trim()} · Tezgel`;
+    }
   }
 
   // Ensure minimum length of 45 characters for Seobility
   if (candidate.length < 45) {
-    if (candidate.length + 18 <= 65) {
-      candidate = `${candidate} – Fachbetrieb`;
-    } else if (candidate.length + 10 <= 65) {
+    if (candidate.includes(' · Tezgel')) {
+      const parts = candidate.split(' · Tezgel');
+      const prefix = parts[0];
+      if (prefix.length + 21 <= 53) {
+        candidate = `${prefix} · Fachbetrieb Tezgel`;
+      } else if (prefix.length + 18 <= 53) {
+        candidate = `${prefix} – Fliesen Tezgel`;
+      }
+    }
+    if (candidate.length < 45 && candidate.length + 9 <= 53) {
       candidate = `${candidate} – Hessen`;
+    } else if (candidate.length < 45 && candidate.length + 7 <= 53) {
+      candidate = `${candidate} Profi`;
     }
   }
 
-  // Ensure maximum length of 65 characters
-  if (candidate.length > 65) {
-    candidate = candidate.slice(0, 65).trim();
+  // Ensure maximum length strictly <= 53 characters (< 550px)
+  if (candidate.length > 53) {
+    const cut = candidate.slice(0, 53);
+    const lastSpace = cut.lastIndexOf(' ');
+    candidate = (lastSpace > 42 ? cut.slice(0, lastSpace) : cut).trim();
   }
 
   return candidate;

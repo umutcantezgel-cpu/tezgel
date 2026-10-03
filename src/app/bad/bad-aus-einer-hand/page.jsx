@@ -51,8 +51,7 @@ export default function BadAusEinerHandPage() {
                         <span className="text-ceramic-gradient">Ein Ansprechpartner. Ein Festpreis. Null Stress.</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Kein Ärger mit verschiedenen Handwerkern und Terminen. {COMPANY_DATA.legalName} übernimmt die Koordination
-                        von Sanitär, Fliesen, Elektrik, Trockenbau und Malerarbeiten bis zur schlüsselfertigen Übergabe.
+                        Ihr schlüsselfertiges Bad aus einer Hand in Aßlar &amp; Wetzlar: Als spezialisierter Fachbetrieb Tezgel garantieren wir Ihnen einen Ansprechpartner, einen Festpreis und termingerechte Fertigstellung mit null Stress. Kein Ärger mit Gewerken – wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau bis zur schlüsselfertigen Übergabe.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">

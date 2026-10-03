@@ -163,8 +163,7 @@ export default function NatursteinPage() {
                         <span className="text-ceramic-gradient">vom Fachbetrieb</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Granit, Schiefer, Marmor oder Travertin verlangen mehr als eine gute Fliesenverlegung: den passenden Kleber,
-                        das richtige Mörtelbett und eine Pflege, die zum Gestein passt. Hier erfahren Sie, worauf es ankommt.
+                        Professionelle Naturstein- und Granitverlegung vom Fachbetrieb Tezgel in Mittelhessen: Hochwertigen Naturstein &amp; Granit fachgerecht verlegen lassen verlangt passenden Spezialkleber, hohlraumarme Bettung und typgerechte Pflege für Granit, Schiefer, Marmor oder Travertin. Hier erfahren Sie, worauf es in der Praxis ankommt.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

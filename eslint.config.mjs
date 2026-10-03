@@ -19,6 +19,7 @@ const eslintConfig = defineConfig([
     "K-Aqua-Cursor-Animation/**",
     "Pipeline Kopie 5/**",
     "ms-reusable-components/**",
+    "coday-seo-toolkit/**",
   ]),
 ]);
 

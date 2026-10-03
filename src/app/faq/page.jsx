@@ -90,7 +90,7 @@ export default function FAQPage() {
                         <span className="text-ceramic-gradient">Bad &amp; Fliesen</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Hier beantwortet {COMPANY_DATA.owner.fullName} die wichtigsten Fragen rund um Fliesen &amp; Großformate, Badsanierung, DIN 18534 Abdichtung, Balkon &amp; Terrasse, Zuschüsse und Festpreisangebote.
+                        Häufig gestellte Fragen (FAQ) zu Fliesen &amp; Badsanierung: Hier beantwortet {COMPANY_DATA.owner.fullName} vom Fachbetrieb Fliesenverlegung Tezgel die wichtigsten Fragen rund um Bad &amp; Fliesen, XXL-Großformate, Badsanierung, DIN 18534 Abdichtung, Balkon &amp; Terrasse sowie Festpreisangebote.
                     </p>
 
                     {/* Search Bar */}

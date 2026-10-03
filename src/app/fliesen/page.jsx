@@ -147,9 +147,7 @@ export default function FliesenRatgeberPage() {
                         verständlich erklärt
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Welche Fliese passt in welchen Raum, was verlangen Großformate vom Untergrund, und woran erkennen Sie
-                        eine saubere Verlegung? Hier bündeln wir das Fachwissen aus unserem Alltag als Fliesen-, Platten- und
-                        Mosaikleger-Fachbetrieb – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen.
+                        In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegetechnik verständlich aus der Praxis. Welche Fliese passt in welchen Raum, was verlangen Großformate vom Untergrund und woran erkennen Sie eine saubere Verlegung? Hier bündeln wir das Fachwissen aus unserem Alltag als Fachbetrieb Fliesen Tezgel – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/fliesen/konfigurator" className="btn-primary px-7 py-3.5 text-xs group">
@@ -401,7 +399,7 @@ export default function FliesenRatgeberPage() {
                     <p className="mt-4 text-sm text-slate-700">
                         Persönliche Beratung vor Ihrer Entscheidung?{' '}
                         <Link href="/beratung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
-                            Beratung anfragen
+                            Fachberatung anfragen
                         </Link>{' '}
                         oder unseren{' '}
                         <Link href="/blog" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">

@@ -55,9 +55,7 @@ export default function BarrierefreiesBadPage() {
                         <span className="text-ceramic-gradient">Sicherheit, Komfort &amp; bis zu 4.180 € Zuschuss</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Selbstbestimmt und sicher im eigenen Zuhause leben: Wir gestalten Ihr Badezimmer altersgerecht,
-                        rollstuhlgerecht oder barrierearm – mit bodengleichen Duschen, rutschfesten Böden und Unterstützung bei der
-                        Pflegekassen-Förderung.
+                        Eine barrierefreie Badmodernisierung und Badsanierung nach DIN 18040-2 durch Fachbetrieb Tezgel in Aßlar &amp; Wetzlar schenkt Sicherheit, Komfort und Selbstbestimmung im eigenen Zuhause. Wir gestalten Ihr Badezimmer altersgerecht, rollstuhlgerecht oder barrierearm – mit bodengleichen Duschen, rutschfesten Böden und bis zu 4.180 € Zuschuss der Pflegekasse.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">

@@ -21,7 +21,7 @@ import { FinalCTA } from '@/components/ui/FinalCTA';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-    title: 'Badsanierung Aßlar & Wetzlar – Meisterhafter Fachbetrieb',
+    title: 'Badsanierung Aßlar & Wetzlar · Fachbetrieb Tezgel',
     description: 'Fachbetrieb für schlüsselfertige Badsanierung, barrierefreie Bäder nach DIN 18040-2 & moderne Großformatfliesen in Aßlar, Wetzlar und Umgebung.',
     path: '/bad'
 });
@@ -62,8 +62,7 @@ export default function BadPage() {
                         <span className="text-ceramic-gradient">in Fachqualität</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Von der ersten Planungsskizze bis zur schlüsselfertigen Übergabe: Wir koordinieren alle Gewerke, bieten
-                        transparente Festpreise und verbauen hochwertige Markenprodukte – normgerecht abgedichtet nach DIN 18534.
+                        Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfertige Badsanierung in Aßlar, Wetzlar und ganz Mittelhessen. Von der ersten Planungsskizze bis zur schlüsselfertigen Übergabe Ihres Traumbads in Fachqualität koordinieren wir alle Gewerke, garantieren transparente Festpreise und verbauen normgerechte Verbundabdichtungen nach DIN 18534.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-4 w-full sm:w-auto">

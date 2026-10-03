@@ -19,6 +19,7 @@ import BlogVoteButton from '@/components/blog/BlogVoteButton';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { posts } from '@/config/posts';
 import { categories } from '@/config/blog';
+import { createMetadata } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -29,19 +30,12 @@ export async function generateMetadata({ params }) {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: 'Ratgeber Artikel' };
 
-  return {
-    title: `${post.title} | Ratgeber Fliesenverlegung Tezgel`,
+  return createMetadata({
+    title: post.title,
     description: post.excerpt,
-    alternates: {
-      canonical: `/blog/${slug}`
-    },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: 'article',
-      url: `/blog/${slug}`
-    }
-  };
+    path: `/blog/${slug}`,
+    image: post.image
+  });
 }
 
 // Helper to extract text from React children

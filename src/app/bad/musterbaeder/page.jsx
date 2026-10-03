@@ -37,8 +37,7 @@ export default function MusterbaederPage() {
                         <span className="text-ceramic-gradient">Badinspiration</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Finden Sie die passende Inspiration für Ihr neues Bad. Alle Musterbäder enthalten detaillierte
-                        Ausstattungslisten und transparente Festpreis-Orientierungen mit hochwertigen Markenprodukten.
+                        In unserem Musterbad-Katalog und unserer Badinspiration finden Sie schlüsselfertige Musterbäder für Ihr Bad in Aßlar, Wetzlar und ganz Mittelhessen. Als Fachbetrieb Tezgel bieten wir transparente Ausstattungslisten und verlässliche Festpreis-Orientierungen mit hochwertigen Markenprodukten.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs">
@@ -99,7 +98,7 @@ export default function MusterbaederPage() {
                                         className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
                                     >
                                         <Eye className="w-4 h-4" />
-                                        Ausstattungsliste &amp; Details
+                                        <span>Ausstattung &amp; Details: {bath.title}</span>
                                     </Link>
 
                                     <Link href="/bad/badanfrage" className="btn-primary px-5 py-2.5 text-xs">

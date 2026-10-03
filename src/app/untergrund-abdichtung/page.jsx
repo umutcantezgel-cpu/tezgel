@@ -128,9 +128,7 @@ export default function UntergrundAbdichtungPage() {
                         <span className="text-ceramic-gradient">das Fundament jedes Fliesenbelags</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Eine Fliese ist nur so gut wie das, worauf sie liegt. Bevor wir verlegen, prüfen wir den Untergrund auf
-                        Tragfähigkeit, Ebenheit, Restfeuchte und Sauberkeit und planen im Nassbereich die Verbundabdichtung nach
-                        DIN 18534. Hier finden Sie, worauf es dabei ankommt.
+                        Untergrund und Abdichtung für Fliesen: Fundiertes Fachwissen und das Fundament jedes Fliesenbelags vom Fachbetrieb Tezgel. Eine Fliese ist nur so gut wie das, worauf sie liegt: Bevor wir verlegen, prüfen wir den Untergrund auf Tragfähigkeit, Ebenheit, Restfeuchte und Sauberkeit und führen im Nassbereich die normgerechte Verbundabdichtung nach DIN 18534 aus.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

@@ -132,7 +132,7 @@ export default function FliesenAufFliesenPage() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <Link href="/bad/badsanierung" className="btn-ghost px-7 py-3.5 text-xs">
-                            Zur Badsanierung
+                            Badsanierung ansehen
                         </Link>
                     </div>
                 </div>

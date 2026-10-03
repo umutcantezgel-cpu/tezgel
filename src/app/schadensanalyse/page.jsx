@@ -76,7 +76,7 @@ const TOPICS = [
 const OPTIONS = [
     { title: 'Reparieren', desc: 'Sinnvoll, wenn der Schaden örtlich begrenzt ist und die Ursache feststeht – etwa eine Fliese nach einem Stoß oder eine lose Sockelfliese.', link: { href: '/fliesenreparatur', label: 'Zur Fliesenreparatur' } },
     { title: 'Fugen erneuern', desc: 'Sinnvoll, wenn Fliesen fest sitzen, Zement- oder Silikonfugen aber ausgewaschen, rissig oder verfärbt sind.', link: { href: '/fliesen/fugensanierung', label: 'Zur Fugensanierung' } },
-    { title: 'Neu verlegen', desc: 'Nötig, wenn Hohlstellen großflächig sind, der Untergrund sich bewegt oder die Abdichtung darunter versagt hat. Dann wird der Aufbau von Grund auf erneuert.', link: { href: '/bad/badsanierung', label: 'Zur Badsanierung' } }
+    { title: 'Neu verlegen', desc: 'Nötig, wenn Hohlstellen großflächig sind, der Untergrund sich bewegt oder die Abdichtung darunter versagt hat. Dann wird der Aufbau von Grund auf erneuert.', link: { href: '/bad/badsanierung', label: 'Zur Komplettbadsanierung' } }
 ];
 
 const OTHER_EXPERTS = [
@@ -165,10 +165,7 @@ export default function SchadensanalysePage() {
                         <span className="text-ceramic-gradient">Fliesen, Fugen und Abdichtung</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Eine gesprungene Fliese lässt sich tauschen – doch wenn die Ursache im Untergrund oder in der
-                        Abdichtung liegt, kehrt der Schaden zurück. Deshalb klärt {COMPANY_DATA.owner.fullName},
-                        Fachbetriebsinhaber, beim Vor-Ort-Termin zuerst, woher ein Schaden kommt, und schlägt dann die
-                        passende Lösung vor.
+                        Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerechte Schadensanalyse für Fliesen, Fugen und Abdichtung von Fachbetrieb Tezgel. Eine gesprungene Fliese lässt sich tauschen – doch wenn die Ursache im Untergrund oder in der Abdichtung liegt, kehrt der Schaden zurück. Deshalb klärt Deniz Tezgel beim kostenfreien Vor-Ort-Termin die Schadensursache und schlägt die passende Sanierungslösung vor.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

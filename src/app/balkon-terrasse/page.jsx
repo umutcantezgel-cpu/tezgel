@@ -136,9 +136,7 @@ export default function BalkonTerrassePage() {
                         <span className="text-ceramic-gradient">Beläge, die Frost und Regen standhalten</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Draußen entscheidet nicht die Fliese allein, sondern der gesamte Aufbau darunter. Hier vergleichen wir
-                        Stelzlager, Splittbett und gebundene Verlegung und zeigen, welche Lösung zu Balkon, Dachterrasse oder
-                        Terrasse auf Erdreich passt.
+                        Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Regen standhalten. Draußen entscheidet nicht die Fliese allein, sondern der gesamte Aufbau darunter. Als Fachbetrieb Tezgel vergleichen wir Stelzlager, Splittbett und gebundene Verlegung und zeigen, welche Lösung zu Balkon, Dachterrasse oder Terrasse auf Erdreich passt.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">

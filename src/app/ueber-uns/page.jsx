@@ -34,7 +34,7 @@ export default function AboutPage() {
             Über <span className="text-ceramic-gradient">{legalName}</span>
           </h1>
           <p className="text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed">
-            Ihr Fachbetrieb für {business.industryType} – mit bis zu 12 qualifizierten Fachkräften, Firmensitz in {headquarters.city} und im Einsatz in Wetzlar, Gießen und ganz Mittelhessen.
+            Über uns und {legalName}: Ihr erfahrener Fliesen-Fachbetrieb in {headquarters.city} für {business.industryType} – mit bis zu 12 qualifizierten Fachkräften, Firmensitz in {headquarters.city} und im Einsatz in Wetzlar, Gießen und ganz Mittelhessen.
           </p>
         </div>
       </div>

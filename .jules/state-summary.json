@@ -1,7 +1,7 @@
 {
   "project": "Fliesenverlegung Tezgel",
-  "version": "6.0.4",
-  "lastUpdated": "2026-10-03T11:00:00Z",
+  "version": "6.0.6",
+  "lastUpdated": "2026-10-03T11:20:00Z",
   "branch": "main",
   "directive": "v6.0-SOVEREIGN-UNIVERSAL-DYNAMIC-CORE",
   "mode": "SMART_MAINTENANCE",
@@ -27,12 +27,15 @@
     "generic_anchors_eliminated": true,
     "heading_hierarchy_perfect": true,
     "title_length_strictly_bounded": true,
+    "title_pixel_width_bounded": true,
     "description_length_strictly_bounded": true,
     "canonical_urls_absolute": true,
     "canonical_loops_eliminated": true,
     "csp_hardened": true,
     "dom_tree_streamlined": true,
-    "schema_graph_complete": true
+    "schema_graph_complete": true,
+    "h1_title_first_100_words_resonated": true,
+    "keyword_cannibalization_resolved": true
   },
   "activeClusters": {
     "alpha_vitals": "COMPLETED",
@@ -45,11 +48,13 @@
     "genericAnchorsIdentified": 0,
     "canonicalLoopsEliminated": 23,
     "redirectLoopsEliminated": 46,
-    "identicalLinkAnchorsDifferentiated": 22,
+    "identicalLinkAnchorsDifferentiated": 38,
     "forcedDynamicReflowsEliminated": 1,
     "headingLevelSkips": 0,
     "breadcrumbsCoverage": "100%",
-    "linkedDataGraphInterconnected": "100%"
+    "linkedDataGraphInterconnected": "100%",
+    "h1KeywordResonance": "100%",
+    "titleKeywordResonance": "100%"
   }
 }
 

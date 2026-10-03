@@ -49,7 +49,7 @@ export default function ServiceHubPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            Ob fugenarme XXL-Großformate im Badezimmer, repräsentatives Feinsteinzeug im Neubau oder witterungsbeständige Außenbeläge auf Stelzlagern: Fliesenverlegung Tezgel steht für millimetergenaue Präzision, normgerechte Verbundabdichtung nach DIN 18534 und konsequenten Staubschutz.
+            Unsere Handwerksleistungen &amp; Fachgewerke umfassen fugenarme XXL-Großformate im Badezimmer, repräsentatives Feinsteinzeug im Neubau sowie witterungsbeständige Außenbeläge auf Stelzlagern: Fliesenverlegung Tezgel steht für millimetergenaue Präzision, normgerechte Verbundabdichtung nach DIN 18534 und konsequenten Staubschutz.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
@@ -138,7 +138,7 @@ export default function ServiceHubPage() {
                   href={`/leistungen/${srv.id}`}
                   className="w-full sm:w-auto text-sm font-bold text-orange-800 hover:text-orange-700 flex items-center gap-1.5 transition-colors"
                 >
-                  <span>Fachdetails &amp; Ratgeber: {srv.title}</span>
+                  <span>Fachdetails &amp; Ratgeber: {srv.name}</span>
                   <ChevronRight className="w-4 h-4 shrink-0" />
                 </Link>
                 <a

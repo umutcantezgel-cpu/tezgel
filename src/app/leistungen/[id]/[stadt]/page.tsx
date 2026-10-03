@@ -48,9 +48,7 @@ export async function generateMetadata({
   if (!service || !city) return {};
 
   const path = `/leistungen/${service.id}/${city.slug}`;
-  const title = (service.id === 'bad' && city.slug === 'asslar')
-    ? 'Badsanierung Aßlar – Fliesen-Fachbetrieb vor Ort am Firmensitz'
-    : `${service.name} in ${city.name} – Fachbetrieb Fliesen Tezgel`;
+  const title = `${service.name} in ${city.name} · Tezgel`;
   
   const description = `${service.name} in ${city.name}: Fachgerechte Verlegung & Sanierung. ${distanceLabel(city)}. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!`;
 

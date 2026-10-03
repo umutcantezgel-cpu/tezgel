@@ -162,7 +162,7 @@ export default function Din18534Page() {
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                         <Link href="/bad/badsanierung" className="btn-ghost px-7 py-3.5 text-xs">
-                            Zur Badsanierung
+                            Details zur Badsanierung
                         </Link>
                     </div>
                 </div>

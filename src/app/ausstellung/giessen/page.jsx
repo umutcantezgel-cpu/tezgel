@@ -224,7 +224,7 @@ export default function AusstellungGiessenPage() {
                                         <p className="text-sm text-slate-700 leading-relaxed">{srv.shortDescription}</p>
                                     </div>
                                     <span className="mt-5 pt-4 border-t border-slate-200 text-sm font-bold text-orange-700 flex items-center gap-1.5">
-                                        <span>{srv.name} im Detail ansehen</span>
+                                        <span>{srv.name} für Gießen im Detail</span>
                                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </span>
                                 </Link>

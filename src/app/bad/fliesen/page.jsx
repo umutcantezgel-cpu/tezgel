@@ -54,8 +54,7 @@ export default function FliesenPage() {
                         <span className="text-ceramic-gradient">für Ihr neues Badezimmer</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Großformatige Fliesen (XXL), fugenarme Wandkonzepte, edler Naturstein und rutschhemmende Mosaike –
-                        millimetergenau verlegt und fachgerecht abgedichtet nach DIN 18534.
+                        Perfekte Fliesenverlegung für Ihr neues Badezimmer: Als Fachbetrieb für Badfliesen &amp; XXL-Großformate verlegt Fliesen Tezgel in Aßlar und Wetzlar großformatige Fliesen, fugenarme Wandkonzepte, edlen Naturstein und rutschhemmende Mosaike – millimetergenau verlegt und fachgerecht abgedichtet nach DIN 18534.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">

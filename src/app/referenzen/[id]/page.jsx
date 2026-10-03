@@ -6,6 +6,7 @@ import { ArrowLeft, Calendar, MapPin, CheckCircle2, Ruler, Clock, ArrowRight, Qu
 import { PORTFOLIO_PROJECTS, categories, isPlaceholderProject } from '@/config/projects';
 import { COMPANY_DATA } from '@/config/company';
 import QualityPromise from '@/components/sections/QualityPromise';
+import { createMetadata } from '@/lib/metadata';
 
 const CATEGORY_ICONS = {
     bad: Bath,
@@ -30,11 +31,12 @@ export async function generateMetadata({ params }) {
     const project = PORTFOLIO_PROJECTS.find((p) => p.id === id);
     if (!project) return { title: 'Referenzprojekt' };
 
-    return {
-        title: `${project.title} – Referenzen Fliesenverlegung Tezgel`,
+    return createMetadata({
+        title: project.title,
         description: project.description,
-        alternates: { canonical: `/referenzen/${id}` }
-    };
+        path: `/referenzen/${id}`,
+        image: project.image
+    });
 }
 
 export default async function ProjectDetailPage({ params }) {
@@ -105,7 +107,7 @@ export default async function ProjectDetailPage({ params }) {
                     <div className="flex flex-wrap items-center gap-3.5 pt-2">
                         {project.serviceLink && (
                             <Link href={project.serviceLink} className="btn-primary px-7 py-3.5 text-xs">
-                                Mehr zur Leistung
+                                Leistungsdetails: {project.title}
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
                         )}
@@ -315,7 +317,7 @@ export default async function ProjectDetailPage({ params }) {
                                         href={project.serviceLink}
                                         className="btn-ghost w-full text-xs"
                                     >
-                                        Mehr zur Leistung
+                                        Fachbereich zu {project.title} ansehen
                                     </Link>
                                 )}
                             </div>

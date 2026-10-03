@@ -274,7 +274,7 @@ export default function KuechePage() {
                         </Link>{' '}
                         &middot;{' '}
                         <Link href="/beratung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
-                            Beratung anfragen
+                            Küchenfliesen-Beratung anfragen
                         </Link>
                     </p>
                 </div>

@@ -49,8 +49,7 @@ export default function BadsanierungPage() {
                         <span className="text-ceramic-gradient">Ihr neues Traumbad ohne Stress &amp; zum Festpreis</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Wir verwandeln alte, unpraktische Bäder in moderne Wohlfühloasen. Schlüsselfertige Ausführung, persönliche
-                        Betreuung durch {COMPANY_DATA.owner.fullName} und saubere Baustellenführung mit Staubschutz.
+                        Ihre professionelle Badsanierung in Aßlar &amp; Wetzlar: Als spezialisierter Fachbetrieb Tezgel realisieren wir schlüsselfertige Komplettbäder und Ihr neues Traumbad ohne Stress zum verbindlichen Festpreis. Wir verwandeln alte Bäder in moderne Wohlfühloasen – mit persönlicher Betreuung durch {COMPANY_DATA.owner.fullName} und konsequentem Staubschutz.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">

@@ -107,9 +107,7 @@ export default function TreppenPage() {
                         <span className="text-ceramic-gradient">Welche Lösung passt zu Ihrer Treppe?</span>
                     </h1>
                     <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Eine abgenutzte Massivtreppe muss nicht abgerissen werden. Solange der Rohbau trägt, bekommt sie mit
-                        Fliesen, Feinsteinzeug oder Naturstein einen neuen, dauerhaften Belag – innen, im Treppenhaus und
-                        am Hauseingang. Hier finden Sie die Grundlagen und die Detailseiten für jeden Treppentyp.
+                        Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen &amp; Treppenhaus vom Fachbetrieb Tezgel. Eine abgenutzte Massivtreppe muss nicht abgerissen werden: Solange der Rohbau trägt, bekommt sie mit Fliesen, Feinsteinzeug oder Naturstein einen neuen, rutschfesten Belag – innen, im Treppenhaus und am Hauseingang. Hier finden Sie alle Grundlagen und die passende Lösung für Ihre Treppe.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
                         <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
