@@ -26,7 +26,8 @@ const ruhe = (page) => page.waitForLoadState('networkidle', { timeout: 5000 }).c
 
 // Platzhalter-Knopf der Karte am jeweiligen Ort. Die Servicegebiet-Karte der Startseite wird erst im Blick eingebunden.
 async function ladeKnopf(page, ort) {
-  if (ort === '/') await page.getByText('Karte wird geladen...').first().scrollIntoViewIfNeeded();
+  // E2-BAU-04: auf / steht das Einwilligungs-Tor sofort im Dokument (vorher erst ein Ladehinweis) – Knopf in den Blick holen
+  if (ort === '/') await page.getByRole('button', { name: LADE_KNOPF }).first().scrollIntoViewIfNeeded();
   const bereich = ort === '/standorte' ? standortKarte(page) : page;
   return bereich.getByRole('button', { name: LADE_KNOPF });
 }
@@ -137,11 +138,9 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
       });
     }
 
-    test('/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)', async ({ page, context, protokoll, isMobile }) => {
-      // Befund (Ausgangsstand 5a7a7b0, gemessen): Auf Smartphone-Breite (375, 390, 430 px) deckt der Info-Kasten der
-      // Standortkarte (absolut unten, z-10) den Knopf vollständig ab; ein Tipp trifft den Kasten. Desktop ist nicht
-      // betroffen. Siehe OFFENE FRAGEN.
-      test.fixme(isMobile, 'Ausgangsstand: Info-Kasten der Standortkarte überdeckt den Platzhalter-Knopf auf Smartphone-Breite (OFFENE FRAGE)');
+    test('/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)', async ({ page, context, protokoll }) => {
+      // V-01 behoben (E2-BAU-04): Der Info-Kasten steht im Fluss unter der Karte und überdeckt den Knopf nicht mehr;
+      // der Ausgangsbefund (Smartphone-Breite, Kasten absolut über dem Knopf) gilt damit als Abnahmetest auch mobil.
       await page.goto('/standorte');
       const knopf = await ladeKnopf(page, '/standorte');
       await knopf.click();

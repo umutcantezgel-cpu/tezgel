@@ -372,5 +372,59 @@
   "block": "main",
   "entfernt": "verifizierte",
   "vermerk": "E2-BAU-01 Bewertungs-Kennwert: „verifizierte“ entfällt (nicht belegbar) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Karte wird geladen...",
+  "vermerk": "E2-BAU-04 Karte: das Einwilligungs-Tor steht sofort im Dokument; der Ladehinweis „Karte wird geladen...“ erscheint nur noch nach Einwilligung – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "wird geladen...",
+  "vermerk": "E2-BAU-04 Karte: das Einwilligungs-Tor steht sofort im Dokument; der Ladehinweis „Karte wird geladen...“ erscheint nur noch nach Einwilligung – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Aßlar & Wetzlar regional vor Ort",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Eingetragener HWK Wiesbaden Fachbetrieb",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "DIN 18534 Verbundabdichtung",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "XXL-Großformat Nivelliertechnik",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Staubschutz & Sauberkeits-Garantie",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Verbindliche Festpreis-Kalkulation",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "5,0 Google-Bewertungen (27 Rezensionen)",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
  }
 ]
