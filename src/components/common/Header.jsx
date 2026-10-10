@@ -218,7 +218,7 @@ export default function Header({ isMobileMenuOpen }) {
                         <Icon name="telefon" groesse={5} />
                         <span className="hidden lg:inline xl:hidden">{COMPANY_DATA.contact.phone}</span>
                     </a>
-                    <Link href={primaryCta.path} className={knopfKlassen('haupt', 'hidden px-4 sm:inline-flex')} data-motion="druck">
+                    <Link href={primaryCta.path} className={knopfKlassen('haupt', 'px-4 max-sm:hidden')} data-motion="druck">
                         {primaryCta.name}
                     </Link>
                     <button
