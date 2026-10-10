@@ -1,9 +1,10 @@
 // Text- und SEO-Invarianten (Ebene 7 + Unantastbar-Schutz): extrahiert je Seite und Ansicht Texte, Metadaten, JSON-LD, Links
 // sowie die Wortfolge je Block (header, main, footer und jedes sichtbare [role=dialog]).
-// Nutzung: node texte.mjs --satz <name> [--seiten /,/bad | --hauptansichten] [--ansichten d1440,m390] [--base URL]
-//   d1440 (Standard): belege/<satz>/texte/<slug>.json (bisheriger Dateiname).
-//   Mehrere Ansichten: je Ansicht belege/<satz>/texte/<slug>@<ansicht>.json, d1440 zusätzlich als <slug>.json.
-//   Index: belege/<satz>/texte-index.json (Schlüssel "/pfad" für d1440, sonst "/pfad@ansicht").
+// Nutzung: node texte.mjs --satz <name> [--seiten /,/bad | --hauptansichten] [--ansichten d1440,m390] [--base URL] [--ziel DIR]
+//   Ziel (Standard belege/<satz>, mit --ziel DIR stattdessen DIR; so schreibt Prüfstufe A nach _werkstatt/cache/texte/<Kennung>).
+//   d1440 (Standard): <ziel>/texte/<slug>.json (bisheriger Dateiname).
+//   Mehrere Ansichten: je Ansicht <ziel>/texte/<slug>@<ansicht>.json, d1440 zusätzlich als <slug>.json.
+//   Index: <ziel>/texte-index.json (Schlüssel "/pfad" für d1440, sonst "/pfad@ansicht").
 import { chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,7 +22,8 @@ const seiten = process.argv.includes('--hauptansichten')
   : arg('seiten') ? arg('seiten').split(',') : G.seiten;
 const ansichten = (arg('ansichten') || 'd1440').split(',');
 if (ansichten.some((a) => !ANSICHTEN[a])) throw new Error(`ABBRUCH: unbekannte Ansicht in --ansichten (erlaubt: ${Object.keys(ANSICHTEN).join(', ')}).`);
-const out = ensureDir(path.join(RELAUNCH, 'belege', satz, 'texte'));
+const ziel = arg('ziel') ? path.resolve(arg('ziel')) : path.join(RELAUNCH, 'belege', satz);
+const out = ensureDir(path.join(ziel, 'texte'));
 const h = (s) => crypto.createHash('sha256').update(s).digest('hex').slice(0, 16);
 // Index-Schlüssel: d1440 bleibt "/pfad" (bisherige Datei), andere Ansichten "/pfad@ansicht".
 const schluessel = (s, a) => (a === 'd1440' ? s : `${s}@${a}`);
@@ -114,6 +116,6 @@ for (const p of [...intern].sort()) {
   if (r.status >= 400) kaputt.push(`${p} ${r.status}`);
 }
 await browser.close();
-fs.writeFileSync(path.join(RELAUNCH, 'belege', satz, 'texte-index.json'), JSON.stringify({ satz, base, ansichten, seiten: index, sitemap, sitemap_anzahl: sitemap.length, robots_hash: h(robots), interne_ziele: intern.size, kaputte_links: kaputt }, null, 1));
-console.log(`\nSeiten ${seiten.length} · Ansichten ${ansichten.join(',')} · Sitemap ${sitemap.length} · interne Ziele ${intern.size} · kaputte Links ${kaputt.length}`);
+fs.writeFileSync(path.join(ziel, 'texte-index.json'), JSON.stringify({ satz, base, ansichten, seiten: index, sitemap, sitemap_anzahl: sitemap.length, robots_hash: h(robots), interne_ziele: intern.size, kaputte_links: kaputt }, null, 1));
+console.log(`\nSeiten ${seiten.length} · Ansichten ${ansichten.join(',')} · Sitemap ${sitemap.length} · interne Ziele ${intern.size} · kaputte Links ${kaputt.length} · Ziel ${ziel}`);
 if (kaputt.length) console.log(kaputt.slice(0, 20).join('\n'));

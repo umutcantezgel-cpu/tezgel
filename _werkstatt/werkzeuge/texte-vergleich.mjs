@@ -7,23 +7,27 @@
 // "seite" ist der Pfad und gilt für alle Ansichten. Ein Eintrag mit entfernt/hinzugefuegt gehört zur Spannenregel.
 // ROT wenn: Zeilen entfernt, SEO-Abweichung, Sitemap- oder robots-Änderung, kaputte interne Links oder unerlaubt entfernte Wortspannen.
 // Ausgabe: belege/<nachher>/texte-vergleich-gegen-<vorher>.json (Abschnitt spannen je Seite und Block, unerlaubt_entfernt_je_seite).
-// Nutzung: node texte-vergleich.mjs <satzVorher> <satzNachher> [--erlaubt datei.json] [--streng]
+// Nutzung: node texte-vergleich.mjs <satzVorher> <satzNachher> [--erlaubt datei.json] [--streng] [--vorher-ordner DIR] [--nachher-ordner DIR]
+//   Ordner (Standard belege/<satz>): je Ordner texte-index.json und texte/. Die Ausgabe liegt im Nachher-Ordner
+//   (Prüfstufe A: vorher _werkstatt/belege/e0, nachher _werkstatt/cache/texte/<Kennung>).
 import fs from 'node:fs';
 import path from 'node:path';
 import { RELAUNCH, slug } from './lib.mjs';
 
 const [, , A, B] = process.argv;
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
+const vorherOrdner = arg('vorher-ordner') ? path.resolve(arg('vorher-ordner')) : path.join(RELAUNCH, 'belege', A);
+const nachherOrdner = arg('nachher-ordner') ? path.resolve(arg('nachher-ordner')) : path.join(RELAUNCH, 'belege', B);
 const erlaubt = arg('erlaubt') ? JSON.parse(fs.readFileSync(arg('erlaubt'), 'utf8')) : [];
 const zeilenErlaubt = erlaubt.filter((e) => !('entfernt' in e) && !('hinzugefuegt' in e));
 const spannenErlaubt = erlaubt.filter((e) => 'entfernt' in e || 'hinzugefuegt' in e);
 const WORTKONTEXT = 5;
-const ia = JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'belege', A, 'texte-index.json'), 'utf8'));
-const ib = JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'belege', B, 'texte-index.json'), 'utf8'));
+const ia = JSON.parse(fs.readFileSync(path.join(vorherOrdner, 'texte-index.json'), 'utf8'));
+const ib = JSON.parse(fs.readFileSync(path.join(nachherOrdner, 'texte-index.json'), 'utf8'));
 // Index-Schlüssel "/pfad" (d1440) oder "/pfad@ansicht" → Dateiname wie in texte.mjs
 const pfadVon = (k) => k.split('@')[0];
 const dateiVon = (k) => { const [p, a] = k.split('@'); return slug(p) + (a ? `@${a}` : '') + '.json'; };
-const lade = (satz, k) => JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'belege', satz, 'texte', dateiVon(k)), 'utf8'));
+const lade = (ordner, k) => JSON.parse(fs.readFileSync(path.join(ordner, 'texte', dateiVon(k)), 'utf8'));
 const multiset = (arr) => { const m = new Map(); for (const x of arr) m.set(x, (m.get(x) || 0) + 1); return m; };
 const differenz = (a, b) => { const mb = multiset(b); const r = []; for (const x of a) { const n = mb.get(x) || 0; if (n > 0) mb.set(x, n - 1); else r.push(x); } return r; };
 const istErlaubt = (seite, alt, neu) => zeilenErlaubt.some((e) => (e.seite === '*' || e.seite === seite) && (e.alt === alt || e.alt === undefined) && (e.neu === neu || e.neu === undefined));
@@ -90,7 +94,7 @@ const felderMeta = ['title', 'description', 'canonical', 'robots', 'og_title', '
 for (const k of Object.keys(ia.seiten)) {
   if (!ib.seiten[k]) { bericht.seiten[k] = { fehlt: true }; continue; }
   const seite = pfadVon(k);
-  const a = lade(A, k), b = lade(B, k);
+  const a = lade(vorherOrdner, k), b = lade(nachherOrdner, k);
   const e = {};
   for (const f of felderMeta) if (a[f] !== b[f] && !istErlaubt(seite, a[f], b[f])) e[f] = { alt: a[f], neu: b[f] };
   if (a.status !== b.status) e.status = { alt: a.status, neu: b.status };
@@ -133,7 +137,7 @@ const sitemapNeu = differenz(ib.sitemap, ia.sitemap);
 bericht.sitemap = { entfernt: sitemapWeg, hinzu: sitemapNeu };
 bericht.robots_geaendert = ia.robots_hash !== ib.robots_hash;
 bericht.kaputte_links = ib.kaputte_links;
-const ziel = path.join(RELAUNCH, 'belege', B, `texte-vergleich-gegen-${A}.json`);
+const ziel = path.join(nachherOrdner, `texte-vergleich-gegen-${A}.json`);
 fs.writeFileSync(ziel, JSON.stringify(bericht, null, 1));
 const rot = bericht.summe.entfernt > 0 || bericht.summe.seo > 0 || sitemapWeg.length > 0 || bericht.robots_geaendert || ib.kaputte_links.length > 0 || bericht.summe.spannen_unerlaubt_entfernt > 0;
 console.log(JSON.stringify({ seiten_mit_abweichung: Object.keys(bericht.seiten).length, ...bericht.summe, sitemap_entfernt: sitemapWeg.length, sitemap_hinzu: sitemapNeu.length, robots_geaendert: bericht.robots_geaendert, kaputte_links: ib.kaputte_links.length, ergebnis: rot ? 'ROT' : 'GRÜN' }));

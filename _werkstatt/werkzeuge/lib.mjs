@@ -60,6 +60,8 @@ export async function installSperre(context, { protokoll = [], echteRoute = fals
     const lokal = ['127.0.0.1', 'localhost'].includes(url.hostname);
     const methode = req.method();
     if (url.protocol === 'data:' || url.protocol === 'blob:') return route.continue();
+    // Lokale Prüfseiten (Sichtprüfung von SVG-Dateien) dürfen Dateien lesen; schreibend gibt es file: nicht.
+    if (url.protocol === 'file:' && methode === 'GET') return route.continue();
     if (!lokal) {
       protokoll.push({ art: 'fremd', methode, url: url.origin + url.pathname });
       return route.fulfill({ status: 204, body: '' });
@@ -158,4 +160,12 @@ export async function ueberlauf(page) {
     }
     return befunde.slice(0, 50);
   });
+}
+
+// E0 · Prüfstufe A: Gerätegrößen für Einzelbild, Bildsatz und Überlappung (wie HAUPTANSICHTEN.json).
+export const GERAETE = ['m390', 't768', 'd1440'];
+
+/** Entwicklungs-Oberfläche von Next.js ausblenden, damit sie nicht als Überdeckung zählt (nur Prüfläufe). */
+export async function versteckeDevOverlay(page) {
+  await page.addStyleTag({ content: 'nextjs-portal, [data-nextjs-toast], [data-next-badge-root], [data-nextjs-dev-tools-button] { display: none !important; }' });
 }
