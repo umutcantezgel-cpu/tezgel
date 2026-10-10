@@ -172,10 +172,19 @@
     scroll-behavior: smooth;
     /* Kopfhöhe + 16 px, damit Anker und Fokus nie unter dem festen Kopf liegen */
     scroll-padding-top: calc(var(--spacing) * 24);
+    /* unten ebenso frei: mobil Leiste und Einwilligungs-Schild, ab md WhatsApp-Knopf und Schild –
+       fokussierte oder angesprungene Elemente liegen nie unter einer festen Ebene (WCAG 2.4.11) */
+    scroll-padding-bottom: calc(var(--spacing) * 32);
     background-color: var(--color-kalk);
     color: var(--color-tinte);
     color-scheme: light;
     overflow-x: clip;
+  }
+
+  @media (width >= 48rem) {
+    html {
+      scroll-padding-bottom: calc(var(--spacing) * 24);
+    }
   }
 
   /* Offenes Menüblatt sperrt das Scrollen der Seite (ohne JavaScript, auch vor der Hydrierung) */
