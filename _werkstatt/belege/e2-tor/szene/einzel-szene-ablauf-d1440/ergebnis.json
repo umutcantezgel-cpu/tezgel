@@ -1,0 +1,68 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/werkstatt-schaufenster/szene",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-10T23:01:51.027Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "szene-ablauf",
+   "elemente": 1,
+   "ausloeser": "scroll",
+   "ausgeloest": 1,
+   "modus": "scroll",
+   "animationen": 7,
+   "laengste_dauer_ms": 0,
+   "bilder": [
+    {
+     "datei": "szene-ablauf-0.jpg",
+     "scroll_y": 1102,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "szene-ablauf-1.jpg",
+     "scroll_y": 1172,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "szene-ablauf-2.jpg",
+     "scroll_y": 1243,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "szene-ablauf-3.jpg",
+     "scroll_y": 1313,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "szene-ablauf-4.jpg",
+     "scroll_y": 1384,
+     "art": "ausschnitt"
+    }
+   ],
+   "befund": [
+    "nicht im K-009-Auszug: Scroll-Auslöser angenommen"
+   ],
+   "wirkbereich": "ganz sichtbar"
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 79,
+ "meldung": "1 Kennungen, 79 Elemente auf /werkstatt-schaufenster/szene.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/szene/einzel-szene-ablauf-d1440"
+}

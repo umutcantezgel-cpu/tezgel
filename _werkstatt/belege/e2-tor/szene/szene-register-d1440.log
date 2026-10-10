@@ -1,0 +1,40 @@
+{
+ "modus": "register",
+ "seite": "/werkstatt-schaufenster/szene",
+ "ansicht": "d1440",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/szene/register-d1440/ergebnis.json",
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "szene-ablauf",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "ohne_register_anzahl": 2,
+ "ohne_register_erste": [
+  {
+   "art": "transition",
+   "sel": "a.inline-block.py-1",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 15
+  },
+  {
+   "art": "transition",
+   "sel": "a.text-kalk.underline",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 6
+  }
+ ],
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 25
+ }
+}
