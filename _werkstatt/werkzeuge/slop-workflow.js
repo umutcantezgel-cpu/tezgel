@@ -4,7 +4,7 @@ export const meta = {
   phases: [{ title: 'Jagd', detail: 'Haiku zählt Fundstellen nach Katalog' }, { title: 'Gegenprüfung', detail: 'Opus erkennt an, verwirft, trägt nach' }],
 }
 // args: { satz, basis, material: { "<seite>": ["<relativer bildpfad>", …] }, texte: { "<seite>": "<pfad>" } }
-const BRIEF = '/home/user/tezgel/_relaunch/pakete/_vorlage-slopjaeger.md'
+const BRIEF = '/home/user/tezgel/_werkstatt/pakete/_vorlage-slopjaeger.md'
 const FUND = { type: 'object', properties: { kennung: { type: 'string' }, hart: { type: 'boolean' }, ort: { type: 'string' }, begruendung: { type: 'string' } }, required: ['kennung', 'hart', 'ort', 'begruendung'] }
 const JAGD = { type: 'object', properties: { funde: { type: 'array', items: FUND } }, required: ['funde'] }
 const PRUEF = {

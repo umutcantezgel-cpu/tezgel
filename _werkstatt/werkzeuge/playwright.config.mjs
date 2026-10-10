@@ -13,7 +13,7 @@ export default defineConfig({
   outputDir: process.env.RELAUNCH_OUTPUT || '../cache/test-results', // je Paket eigenes Verzeichnis (L6)
   use: { baseURL: BASE, locale: 'de-DE', timezoneId: 'Europe/Berlin', reducedMotion: 'reduce', trace: 'off' },
   projects: [
-    { name: 'mobil', use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },
+    { name: 'mobil', use: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } },
     { name: 'desktop', use: { viewport: { width: 1440, height: 900 } } },
   ],
 });

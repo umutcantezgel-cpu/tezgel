@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { RELAUNCH, ensureDir } from './lib.mjs';
 
-const SCRATCH = process.env.RELAUNCH_SCRATCH || '/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad';
+const SCRATCH = process.env.RELAUNCH_SCRATCH || '/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad';
 const [, , A, B] = process.argv;
 const dir = (s) => path.join(SCRATCH, `reinraum-${s}`, '.next');
 const liste = (d, ext) => { const r = []; (function w(x) { for (const e of fs.readdirSync(x, { withFileTypes: true })) { const p = path.join(x, e.name); if (e.isDirectory()) w(p); else if (p.endsWith(ext)) r.push(p); } })(d); return r; };

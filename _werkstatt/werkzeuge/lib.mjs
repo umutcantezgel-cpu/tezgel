@@ -19,6 +19,7 @@ export function assertLocal(base = BASE) {
 
 export const ANSICHTEN = {
   m375: { width: 375, height: 812, isMobile: true, hasTouch: true },
+  m390: { width: 390, height: 844, isMobile: true, hasTouch: true },
   t768: { width: 768, height: 1024, isMobile: true, hasTouch: true },
   d1440: { width: 1440, height: 900, isMobile: false, hasTouch: false },
   d1920: { width: 1920, height: 1080, isMobile: false, hasTouch: false },

@@ -64,3 +64,4 @@ playwright-report/
 /_werkstatt/cache/
 /_werkstatt/**/*.report.json
 /_werkstatt/**/lhr-*.json
+/_werkstatt/werkzeuge/node_modules

@@ -5,9 +5,9 @@ set -uo pipefail
 REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 REF="${1:-HEAD}"
 SHA="$(git -C "$REPO" rev-parse --short "$REF")"
-SCRATCH="${RELAUNCH_SCRATCH:-/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad}"
+SCRATCH="${RELAUNCH_SCRATCH:-/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad}"
 DIR="$SCRATCH/reinraum-$SHA"
-LOG="$(realpath -m "${2:-$REPO/_relaunch/cache/reinraum-$SHA}")"
+LOG="$(realpath -m "${2:-$REPO/_werkstatt/cache/reinraum-$SHA}")"
 mkdir -p "$LOG"
 rm -rf "$DIR" && mkdir -p "$DIR"
 git -C "$REPO" archive "$REF" | tar -x -C "$DIR"
@@ -22,7 +22,7 @@ run test npm test
 run qa-graph npm run qa:graph
 # Routentabelle aus dem Build-Log extrahieren (○ static, ● SSG, ƒ dynamic)
 grep -E '^[├└┌│ ]+[○●ƒ◐]' "$LOG/build.log" | sed -E 's/[[:space:]]+[0-9.]+ ?[kKmM]?B.*$//' > "$LOG/routen.txt" || true
-# Tracing darf _relaunch nie enthalten
-if grep -rl "_relaunch" .next/server --include='*.nft.json' > "$LOG/nft-relaunch.txt" 2>/dev/null && [ -s "$LOG/nft-relaunch.txt" ]; then echo "nft: _relaunch GEFUNDEN"; else echo "nft: sauber"; fi
+# Tracing darf _relaunch und _werkstatt nie enthalten
+if grep -rlE "_relaunch|_werkstatt" .next/server --include='*.nft.json' > "$LOG/nft-werkstatt.txt" 2>/dev/null && [ -s "$LOG/nft-werkstatt.txt" ]; then echo "nft: _relaunch/_werkstatt GEFUNDEN"; else echo "nft: sauber"; fi
 { echo "commit $SHA"; for k in npm-ci build typecheck lint test qa-graph; do echo "$k ${RES[$k]}"; done; } > "$LOG/ergebnis.txt"
 cat "$LOG/ergebnis.txt"
