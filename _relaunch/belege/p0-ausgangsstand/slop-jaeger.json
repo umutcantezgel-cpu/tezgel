@@ -1,0 +1,1834 @@
+{
+ "satz": "p0-ausgangsstand",
+ "seiten": {
+  "/": {
+   "weich": 16,
+   "hart": 4,
+   "gemeldet": 19,
+   "verworfen": 6,
+   "nachgetragen": 7,
+   "funde": [
+    {
+     "kennung": "S-04",
+     "hart": true,
+     "ort": "fotos/m375/start/01.jpg und fotos/m375/start/03.jpg (unten rechts, schwebender Chat-Hinweis 'Chat starten')",
+     "begruendung": "Im Chat-Hinweis steht ein Sprechblasen-Emoji als Zierelement neben dem Text; Grenzfall, weil es ein Bedienelement-Label ist."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "fotos/d1440/start/09.jpg (Kartenblock, Button 'Karte laden & zustimmen')",
+     "begruendung": "Weißer, ca. 15 px halbfetter Text auf kräftigem Orange liegt geschätzt bei ca. 3,5:1 und damit unter AA 4,5:1; die Farbe ist nur aus dem JPEG geschätzt, Messung per getComputedStyle nötig."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "fotos/m375/start/01.jpg, fotos/m375/start/10.jpg, fotos/d1440/start/03.jpg (Formularfelder, Platzhalter)",
+     "begruendung": "Platzhalter wie 'Vor- und Nachname' und 'z. B. 0170 1234567' sind auf hellem Feld hellgrau und auf dunklem Feld dunkelgrau, geschätzt deutlich unter 4,5:1; Grenzfall, da Platzhalter keine Pflichtinformation tragen."
+    },
+    {
+     "kennung": "S-01",
+     "hart": true,
+     "ort": "fotos/t768/start/04.jpg (Karte 'DIN 18534 Abdichtung & Estrich', Etikett 'Zertifiziert'), fotos/d1440/start/03.jpg (gleiches Etikett); Text-Datei, Feld 'description': 'DIN 18534 zertifiziert'",
+     "begruendung": "Die Auszeichnung 'Zertifiziert' bzw. 'zertifiziert' steht für eine Norm, und im Material gibt es keinen Beleg; DIN 18534 ist eine Norm, keine Zertifizierung. Grenzfall."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/m375/start/00.jpg, fotos/t768/start/00.jpg, fotos/d1440/start/00.jpg, fotos/d1920/start/00.jpg (Badge-Zeile über der H1)",
+     "begruendung": "Die Zeile 'Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel · 5,0 (27 Bewertungen)' steht als Badge über der Einstiegsüberschrift, das ist das Katalogmuster."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/d1920/start/06.jpg, fotos/t768/start/09.jpg (Karte 'Fugenarme XXL-Großformate & fachgerechte Badsanierung')",
+     "begruendung": "Die Karte hat einen weichen Verlauf von Pfirsich zu Weiß mit Glanzschatten, ein generischer Verlauf ohne Aussage."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/d1440/start/11.jpg (Karte 'Ihre Express-Anfrage in 3 Klicks', obere rechte Ecke)",
+     "begruendung": "Ein warmes Leuchten in der rechten oberen Kartenecke ist schwach sichtbar, Grenzfall."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/d1920/start/00.jpg, fotos/d1440/start/00.jpg (Hintergrund der Hero, oben links und rechts Mitte)",
+     "begruendung": "Unscharfe warme Farbflächen im Hintergrund wirken wie Leuchtkugeln, schwach ausgeprägt, Grenzfall."
+    },
+    {
+     "kennung": "S-10",
+     "hart": false,
+     "ort": "fotos/m375/start/00.jpg, fotos/t768/start/00.jpg (Hero)",
+     "begruendung": "Zentrierte Badge, zweizeilige H1 mit orangem Akzentwort, Unterzeile, Absatz und drei Knöpfe auf warmem Hintergrund; der Desktop-Hero ist linksbündig, das Muster gilt für Mobil und Tablet."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "fotos/t768/start/02.jpg, fotos/d1440/start/02.jpg (Abschnitt 'Alles für Ihr Vorhaben auf über 100 Fachseiten')",
+     "begruendung": "Vier gleich gebaute Karten mit Icon-Kachel, Eyebrow, Überschrift, zwei bis drei Textzeilen, Fünf-Punkt-Liste und Link bilden den ganzen Abschnitt."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "fotos/d1440/start/05.jpg, fotos/d1440/start/06.jpg, fotos/d1920/start/04.jpg (Abschnitt 'Fliesen-, Platten- & Verlegearbeiten in Fachqualität')",
+     "begruendung": "Vier identische Fachgewerk-Karten mit Bild, Icon, Tag 'FACHGEWERK', Überschrift, Text, drei Häkchen und Link; der Wechsel breit und schmal im Raster hat außer der ersten Karte keine erkennbare Rangfolge."
+    },
+    {
+     "kennung": "S-14",
+     "hart": false,
+     "ort": "fotos/d1440/start/05.jpg, fotos/d1920/start/04.jpg, fotos/d1440/start/06.jpg (Fachgewerk-Bilder Komplettbad, Wohnbereich, Fliesenwand DIN 18534)",
+     "begruendung": "Die Fotos stehen in drei Farbwelten (kühles Weiß, warmes Goldlicht, Petrol-Grün) und wirken weichgezeichnet und geglättet, also uneinheitliche Bildbearbeitung mit KI- oder Stock-Anmutung."
+    },
+    {
+     "kennung": "S-14",
+     "hart": false,
+     "ort": "fotos/d1920/start/06.jpg, fotos/t768/start/09.jpg (Großformat-Abschnitt, Bild 'Bad mit freistehender Wanne')",
+     "begruendung": "Goldene Lichtstrahlen, Dunst und Glanz auf dem Boden wirken generiert, KI-Anmutung, Grenzfall."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/m375/start/00.jpg, fotos/t768/start/00.jpg, fotos/d1440/start/00.jpg, fotos/d1920/start/00.jpg (Hero-H1, Akzentwort 'Quadratmeter.')",
+     "begruendung": "Das Akzentwort ist Verlaufstext. Gemessen verläuft es in d1920/00 von etwa #FF5600 links nach #FF8F00 rechts, also kein Vollton, sondern ein Orange-Bernstein-Verlauf."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/m375/start/11.jpg, fotos/d1920/start/04.jpg (H2 'Fliesen-, Platten- & Verlegearbeiten in Fachqualität', Akzent 'in Fachqualität')",
+     "begruendung": "Auch dieser Akzent ist Verlaufstext. Gemessen geht er von Orange (etwa #FF4E00) zu Rot (etwa #E12F2F)."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/t768/start/09.jpg, fotos/d1920/start/06.jpg (H2 'Fugenarme XXL-Großformate & fachgerechte Badsanierung', Akzent '& fachgerechte Badsanierung')",
+     "begruendung": "Verlaufstext von Orange (etwa #F34C00) bis Rot-Pink (etwa #EC1222), über die ganze Akzentzeile gemessen."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/d1440/start/00.jpg, fotos/d1920/start/00.jpg (Leiste unter dem Hero, rechts angeschnitten 'XXL-Großformat Ni…'); Text-Datei main_zeilen: Liste 'Aßlar & Wetzlar regional vor Ort' bis '5,0 Google-Bewertungen (27 Rezensionen)' steht doppelt",
+     "begruendung": "Die Vertrauensleiste ist am Rand angeschnitten, und ihr Inhalt ist im DOM verdoppelt. Das ist der typische Aufbau eines Endlos-Laufbands. Grenzfall, weil statt Logos Icons mit Text laufen und die Bewegung im Standbild nicht zu sehen ist."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/m375/start/03.jpg (Karte 'Eingetragener HWK-Wiesbaden Fachbetrieb'); Text-Datei main_zeilen",
+     "begruendung": "Wörtlich: 'Handwerkliche Perfektion, geprüfte Standards und fachgerechte Präzision bei Großformaten, Schnittbildern und Fugenachsen.' Eine Dreierreihe hohler Qualitätswörter ohne konkrete Aussage."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/m375/start/10.jpg, fotos/d1440/start/03.jpg (dunkle Formularspalte 'Unverbindliche Projektanfrage'); Text-Datei main_zeilen",
+     "begruendung": "Wörtlich: 'Jedes Bauvorhaben ist einzigartig.' Eine Allerweltsfloskel ohne Informationsgehalt."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "Text-Datei, h2 des Schlussabschnitts",
+     "begruendung": "Wörtlich: 'Bereit für Ihr Fliesen- oder Badprojekt?' Die 'Bereit für …?'-Formel ist die typische generische Abschluss-CTA-Floskel."
+    }
+   ],
+   "roh": {
+    "seite": "/",
+    "jagd": [
+     {
+      "kennung": "S-04",
+      "hart": true,
+      "ort": "fotos/m375/start/01.jpg und fotos/m375/start/03.jpg (unten rechts, schwebender Chat-Hinweis 'Chat starten')",
+      "begruendung": "Im Chat-Hinweis steht ein Sprechblasen-Emoji als Zierelement neben dem Text; Grenzfall, weil es ein Bedienelement-Label ist."
+     },
+     {
+      "kennung": "S-03",
+      "hart": true,
+      "ort": "fotos/d1440/start/09.jpg (Kartenblock, Button 'Karte laden & zustimmen')",
+      "begruendung": "Weißer, ca. 15 px halbfetter Text auf kräftigem Orange liegt geschätzt bei ca. 3,5:1 und damit unter AA 4,5:1; die Farbe ist nur aus dem JPEG geschätzt, Messung per getComputedStyle nötig."
+     },
+     {
+      "kennung": "S-03",
+      "hart": true,
+      "ort": "fotos/m375/start/01.jpg, fotos/m375/start/10.jpg, fotos/d1440/start/03.jpg (Formularfelder, Platzhalter)",
+      "begruendung": "Platzhalter wie 'Vor- und Nachname' und 'z. B. 0170 1234567' sind auf hellem Feld hellgrau und auf dunklem Feld dunkelgrau, geschätzt deutlich unter 4,5:1; Grenzfall, da Platzhalter keine Pflichtinformation tragen."
+     },
+     {
+      "kennung": "S-01",
+      "hart": true,
+      "ort": "fotos/t768/start/04.jpg (Karte 'DIN 18534 Abdichtung & Estrich', Etikett 'Zertifiziert'), fotos/d1440/start/03.jpg (gleiches Etikett); Text-Datei, Feld 'description': 'DIN 18534 zertifiziert'",
+      "begruendung": "Die Auszeichnung 'Zertifiziert' bzw. 'zertifiziert' steht für eine Norm, und im Material gibt es keinen Beleg; DIN 18534 ist eine Norm, keine Zertifizierung. Grenzfall."
+     },
+     {
+      "kennung": "S-08",
+      "hart": false,
+      "ort": "fotos/t768/start/00.jpg, fotos/d1440/start/00.jpg (Hero, Karten, Formular)",
+      "begruendung": "Der Gesamteindruck wirkt wie eine Komponentenbibliothek: Pill-Badges, Karten mit gleichem Radius und weichem Schatten sowie Standard-Auswahlkarten und Select-Feld; zwei Schriftfamilien (Überschrift und Fließtext) sprechen dagegen, daher Grenzfall."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/m375/start/00.jpg, fotos/t768/start/00.jpg, fotos/d1440/start/00.jpg, fotos/d1920/start/00.jpg (Badge-Zeile über der H1)",
+      "begruendung": "Die Zeile 'Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel · 5,0 (27 Bewertungen)' steht als Badge über der Einstiegsüberschrift, das ist das Katalogmuster."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/t768/start/02.jpg ('Fachbereiche & Planungshilfen'), fotos/m375/start/11.jpg ('Fachgewerke'), fotos/d1440/start/02.jpg ('Umfassende Projektanfrage'), fotos/d1440/start/06.jpg ('Transparenter Ablauf'), fotos/d1440/start/08.jpg ('Echte Kundenstimmen'), fotos/d1440/start/09.jpg ('Regionale Einsatzgebiete'), fotos/d1440/start/11.jpg ('Kostenfrei & unverbindlich')",
+      "begruendung": "Dieselbe Pill-Badge steht über fast jeder Abschnittsüberschrift; gezählt sind sieben Abschnitte mit je einem Vorkommen, der Gegenprüfer bestätigt die Zählung."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1920/start/06.jpg, fotos/t768/start/09.jpg (Karte 'Fugenarme XXL-Großformate & fachgerechte Badsanierung')",
+      "begruendung": "Die Karte hat einen weichen Verlauf von Pfirsich zu Weiß mit Glanzschatten, ein generischer Verlauf ohne Aussage."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1440/start/11.jpg (Karte 'Ihre Express-Anfrage in 3 Klicks', obere rechte Ecke)",
+      "begruendung": "Ein warmes Leuchten in der rechten oberen Kartenecke ist schwach sichtbar, Grenzfall."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1920/start/00.jpg, fotos/d1440/start/00.jpg (Hintergrund der Hero, oben links und rechts Mitte)",
+      "begruendung": "Unscharfe warme Farbflächen im Hintergrund wirken wie Leuchtkugeln, schwach ausgeprägt, Grenzfall."
+     },
+     {
+      "kennung": "S-10",
+      "hart": false,
+      "ort": "fotos/m375/start/00.jpg, fotos/t768/start/00.jpg (Hero)",
+      "begruendung": "Zentrierte Badge, zweizeilige H1 mit orangem Akzentwort, Unterzeile, Absatz und drei Knöpfe auf warmem Hintergrund; der Desktop-Hero ist linksbündig, das Muster gilt für Mobil und Tablet."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/t768/start/02.jpg, fotos/d1440/start/02.jpg (Abschnitt 'Alles für Ihr Vorhaben auf über 100 Fachseiten')",
+      "begruendung": "Vier gleich gebaute Karten mit Icon-Kachel, Eyebrow, Überschrift, zwei bis drei Textzeilen, Fünf-Punkt-Liste und Link bilden den ganzen Abschnitt."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/d1440/start/05.jpg, fotos/d1440/start/06.jpg, fotos/d1920/start/04.jpg (Abschnitt 'Fliesen-, Platten- & Verlegearbeiten in Fachqualität')",
+      "begruendung": "Vier identische Fachgewerk-Karten mit Bild, Icon, Tag 'FACHGEWERK', Überschrift, Text, drei Häkchen und Link; der Wechsel breit und schmal im Raster hat außer der ersten Karte keine erkennbare Rangfolge."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/d1440/start/02.jpg, fotos/d1920/start/02.jpg (Abschnitt 'Fachthemen im Detail')",
+      "begruendung": "Sechs gleich gebaute Kacheln mit Titel, zwei Zeilen und Pfeil statt Icon, Grenzfall."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "fotos/m375/start/00.jpg, fotos/t768/start/00.jpg, fotos/d1440/start/00.jpg, fotos/d1920/start/00.jpg (Hero-Überschrift, Zitat 'Perfektion auf jedem Quadratmeter.')",
+      "begruendung": "Der Werbeslogan hat Floskel-Charakter ('Perfektion auf jedem ...'), ist aber kein Listenwort des Katalogs, Grenzfall."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "fotos/t768/start/02.jpg (Abschnittsüberschrift, Zitat 'Alles für Ihr Vorhaben auf über 100 Fachseiten')",
+      "begruendung": "Die Formel 'Alles für Ihr ...' als Abschnittsüberschrift hat Floskel-Charakter, Grenzfall."
+     },
+     {
+      "kennung": "S-14",
+      "hart": false,
+      "ort": "fotos/d1440/start/05.jpg, fotos/d1920/start/04.jpg, fotos/d1440/start/06.jpg (Fachgewerk-Bilder Komplettbad, Wohnbereich, Fliesenwand DIN 18534)",
+      "begruendung": "Die Fotos stehen in drei Farbwelten (kühles Weiß, warmes Goldlicht, Petrol-Grün) und wirken weichgezeichnet und geglättet, also uneinheitliche Bildbearbeitung mit KI- oder Stock-Anmutung."
+     },
+     {
+      "kennung": "S-14",
+      "hart": false,
+      "ort": "fotos/t768/start/07.jpg (rechte Karte mit Label 'Balkon & Terrasse'), fotos/d1440/start/06.jpg (linkes Bild mit Label 'Balkon & Terrasse')",
+      "begruendung": "Das Bild mit dem Label 'Balkon & Terrasse' zeigt ein Badinterieur mit WC und Waschtisch, das Motiv passt nicht zum Thema und wirkt wie ein Stockbild ohne Bezug."
+     },
+     {
+      "kennung": "S-14",
+      "hart": false,
+      "ort": "fotos/d1920/start/06.jpg, fotos/t768/start/09.jpg (Großformat-Abschnitt, Bild 'Bad mit freistehender Wanne')",
+      "begruendung": "Goldene Lichtstrahlen, Dunst und Glanz auf dem Boden wirken generiert, KI-Anmutung, Grenzfall."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "Auf m375/01 und m375/03 sichtbar: Der schwebende Hinweis heißt 'Chat starten 💬'. Das Sprechblasen-Emoji ist Zierde neben einem Label, das auch ohne es verständlich ist, also ein Emoji als Gestaltungsmittel (S-04, hart). Es ist ein einziges Element und zählt einmal. Das '😊' im Zitat von Ortwin L. steht in einer Kundenstimme und zählt nicht."
+      },
+      {
+       "nr": 2,
+       "urteil": "anerkannt",
+       "grund": "Pixelmessung am JPEG: Hintergrund etwa #EC5408, Text weiß, Verhältnis etwa 3,3:1 (t768/11 etwa 3,4:1). Der Text ist rund 15 px halbfett und damit keine Großschrift, also unter AA 4,5:1. Die Messung per getComputedStyle bleibt zur Bestätigung nötig. Das Element ist in d1440/09 und t768/11 zu sehen und zählt einmal."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "Nur eingeschränkt anerkannt. Im dunklen Formular (m375/10, d1440/03) liegen die Platzhalter bei etwa #6E6E70 auf #242428, das ergibt etwa 2,8 bis 3,2:1 und damit unter AA. Platzhalter sind Text im Sinne von 1.4.3. Die hellen Felder (m375/01, d1440/00) messen dagegen etwa 8:1. Dieser Teil ist ein Fehlalarm und gehört nicht zum Fund."
+      },
+      {
+       "nr": 4,
+       "urteil": "anerkannt",
+       "grund": "Das Etikett 'Zertifiziert' an der Karte 'DIN 18534 Abdichtung & Estrich' ist in t768/04 und d1440/03 sichtbar. In der Meta-Beschreibung steht 'DIN 18534 zertifiziert'. Im Material gibt es keinen Beleg für eine solche Zertifizierung, und eine Norm ist keine Auszeichnung. Das ist eine unbelegte Auszeichnung (S-01, hart). Es ist ein Element und zählt einmal."
+      },
+      {
+       "nr": 5,
+       "urteil": "verworfen",
+       "grund": "S-08 verlangt eine Standardschrift als einzige Schrift sowie Standardradien und -schatten überall. Sichtbar sind aber zwei Schriftfamilien, eine geometrische Grotesk für Überschriften und eine Grotesk für den Fließtext. Ob Radien und Schatten Framework-Standard sind, lässt sich am JPEG nicht feststellen. Ein Gesamteindruck ohne konkrete Fundstelle reicht nicht."
+      },
+      {
+       "nr": 6,
+       "urteil": "anerkannt",
+       "grund": "Die Zeile über der H1 mit Medaillen-Icon, 'Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel · 5,0 (27 Bewertungen)' ist in allen vier Ansichten sichtbar. Das ist genau das Katalogmuster 'Badge über der Einstiegsüberschrift'. Das Element zählt einmal."
+      },
+      {
+       "nr": 7,
+       "urteil": "verworfen",
+       "grund": "Der Katalog nennt nur das Badge über der Einstiegsüberschrift, also der Hero-H1, und das ist bereits Fund 6. Pill-Eyebrows über Abschnitts-H2 sind kein Katalogpunkt von S-09. Auch die Zählung stimmt nicht: Es fehlen mindestens 'Fachbetrieb für anspruchsvolle Architektur' (t768/09, d1920/06) und 'Transparente Antworten' (FAQ, laut Text-Datei). Außerdem fasst der Fund sieben Abschnitte zu einem zusammen. Eine Bestätigung der Zählung ist deshalb nicht möglich."
+      },
+      {
+       "nr": 8,
+       "urteil": "anerkannt",
+       "grund": "In t768/09 und d1920/06 sichtbar: Die Großformat-Karte hat oben links einen Pfirsich-Schleier und unten rechts einen rosa Schleier, dazu einen rötlich getönten weichen Schatten. Das ist ein dekorativer Verlauf ohne Aussage (S-09). Es ist ein Fund für diesen Abschnitt."
+      },
+      {
+       "nr": 9,
+       "urteil": "anerkannt",
+       "grund": "In d1440/11 ist in der oberen rechten Ecke der Karte 'Express-Anfrage' ein radiales Pfirsich-Leuchten deutlich zu sehen. Das ist das Leuchtkugel-Muster in einer Kartenecke. Der Abschnitt ist ein anderer als bei Fund 8, also keine Doppelzählung."
+      },
+      {
+       "nr": 10,
+       "urteil": "anerkannt",
+       "grund": "Grenzfall. Im Hero von d1920/00 sind oben links und rechts in der Mitte unscharfe warme Flecken schwach, aber erkennbar. In d1440/00 sind sie kaum zu sehen. Das sind Leuchtkugeln in schwacher Ausprägung (S-09). Es ist ein Fund für den Hero."
+      },
+      {
+       "nr": 11,
+       "urteil": "anerkannt",
+       "grund": "In m375/00 und t768/00: zentrierte Badge, zentrierte H1 mit Akzentwort, Unterzeile, Absatz und Knopfreihe auf einem warmen Schleier ohne Bildinhalt. Das ist der austauschbare Einstieg, mit drei statt zwei Knöpfen. Auf dem Desktop ist der Hero linksbündig mit Formular daneben, dort trifft das Muster nicht zu. Der Fund gilt nur für Mobil und Tablet und zählt einmal."
+      },
+      {
+       "nr": 12,
+       "urteil": "anerkannt",
+       "grund": "In t768/02, m375/04 und d1440/02 sichtbar: Vier gleich gebaute Karten aus Icon-Kachel, Eyebrow in Versalien, H3, zwei bis drei Zeilen, Pfeil-Liste und Link bilden den ganzen Abschnitt. Das ist gleichförmiges Karten-Einerlei (S-11) und ein Fund für den Abschnitt."
+      },
+      {
+       "nr": 13,
+       "urteil": "anerkannt",
+       "grund": "In d1440/05, d1440/06 und d1920/04 sichtbar: vier gleich gebaute Fachgewerk-Karten (Bild, Icon, Tag 'FACHGEWERK', H3, Text, Häkchen, Link) im Wechsel breit-schmal und schmal-breit. Die breite zweite Reihe 'Untergrund' hat den wenigsten Inhalt und viel Leerraum. Das zeigt ein Bento-Raster ohne inhaltliche Logik. Das Tag 'FACHGEWERK' ist auf jeder Karte gleich und sagt nichts. Es ist ein Fund für den Abschnitt."
+      },
+      {
+       "nr": 14,
+       "urteil": "verworfen",
+       "grund": "Doppelzählung. 'Fachthemen im Detail' hat keine eigene H2 und gehört laut Text-Datei und d1440/02 zum selben Abschnitt 'Alles für Ihr Vorhaben auf über 100 Fachseiten' wie Fund 12. Pro Abschnitt zählt nur ein Fund. Außerdem fehlt das Icon, die Kacheln sind eine Linkliste mit Seitenzahlen und keine Icon-Karten."
+      },
+      {
+       "nr": 15,
+       "urteil": "verworfen",
+       "grund": "'Perfektion auf jedem Quadratmeter.' ist ein werbliches, aber branchenbezogenes Motto mit konkretem Bild (Quadratmeter beim Fliesenleger). Es ist keine KI-Floskel im Sinne des Katalogs, also nicht nahtlos, ganzheitlich oder 'Entdecken Sie'. Der Jäger selbst nennt es einen Grenzfall. Bei Strenge gegen Fehlalarme fällt der Fund weg."
+      },
+      {
+       "nr": 16,
+       "urteil": "verworfen",
+       "grund": "'Alles für Ihr Vorhaben auf über 100 Fachseiten' nennt eine überprüfbare Sachangabe (über 100 Fachseiten) und ist keine Leerformel. Der Wortbestandteil 'Alles für Ihr ...' allein trägt keinen S-13-Fund."
+      },
+      {
+       "nr": 17,
+       "urteil": "anerkannt",
+       "grund": "In d1440/05, d1920/04 und t768/07 sichtbar: Die Fachgewerk-Bilder stehen in drei Farbwelten. Das Komplettbad ist kühl-weiß im Stock-Stil, das Wohnbereich-Bild warm mit Goldlicht und Lichtstrahlen, die Fliesenwand petrol und stark weichgezeichnet. Das ist uneinheitliche Bildbearbeitung mit Stock- und KI-Anmutung (S-14). Auch das Bild 'Wohnbereiche & Neubau' zeigt ein Bad mit Wanne statt Wohnbereich. Das ist ein Fund für den Abschnitt."
+      },
+      {
+       "nr": 18,
+       "urteil": "verworfen",
+       "grund": "Doppelzählung zu Fund 17. Die Karten-Bilder im Fachgewerk-Abschnitt sind gleichartige Elemente eines Abschnitts und zählen als ein S-14-Fund, Fund 17. Der Motivfehler ist echt, das Bad mit WC und Waschtisch unter dem Label 'Balkon & Terrasse' (t768/07), ebenso das Bad unter 'Wohnbereiche'. Er ist aber als Inhaltsfehler zu beheben und kein zweiter Slop-Fund."
+      },
+      {
+       "nr": 19,
+       "urteil": "anerkannt",
+       "grund": "In t768/09 und d1920/06 sichtbar: Das Bild 'Bad mit freistehender Wanne' zeigt goldene Lichtstrahlen, Dunst und Glanzboden, eine typische KI-Render-Anmutung (S-14). Es steht in einem anderen Abschnitt als Fund 17, die Zählung ist also richtig. Dieselbe Szene wird im Fachgewerk-Abschnitt wiederverwendet."
+      }
+     ],
+     "nachgetragen": [
+      {
+       "kennung": "S-09",
+       "hart": false,
+       "ort": "fotos/m375/start/00.jpg, fotos/t768/start/00.jpg, fotos/d1440/start/00.jpg, fotos/d1920/start/00.jpg (Hero-H1, Akzentwort 'Quadratmeter.')",
+       "begruendung": "Das Akzentwort ist Verlaufstext. Gemessen verläuft es in d1920/00 von etwa #FF5600 links nach #FF8F00 rechts, also kein Vollton, sondern ein Orange-Bernstein-Verlauf."
+      },
+      {
+       "kennung": "S-09",
+       "hart": false,
+       "ort": "fotos/m375/start/11.jpg, fotos/d1920/start/04.jpg (H2 'Fliesen-, Platten- & Verlegearbeiten in Fachqualität', Akzent 'in Fachqualität')",
+       "begruendung": "Auch dieser Akzent ist Verlaufstext. Gemessen geht er von Orange (etwa #FF4E00) zu Rot (etwa #E12F2F)."
+      },
+      {
+       "kennung": "S-09",
+       "hart": false,
+       "ort": "fotos/t768/start/09.jpg, fotos/d1920/start/06.jpg (H2 'Fugenarme XXL-Großformate & fachgerechte Badsanierung', Akzent '& fachgerechte Badsanierung')",
+       "begruendung": "Verlaufstext von Orange (etwa #F34C00) bis Rot-Pink (etwa #EC1222), über die ganze Akzentzeile gemessen."
+      },
+      {
+       "kennung": "S-09",
+       "hart": false,
+       "ort": "fotos/d1440/start/00.jpg, fotos/d1920/start/00.jpg (Leiste unter dem Hero, rechts angeschnitten 'XXL-Großformat Ni…'); Text-Datei main_zeilen: Liste 'Aßlar & Wetzlar regional vor Ort' bis '5,0 Google-Bewertungen (27 Rezensionen)' steht doppelt",
+       "begruendung": "Die Vertrauensleiste ist am Rand angeschnitten, und ihr Inhalt ist im DOM verdoppelt. Das ist der typische Aufbau eines Endlos-Laufbands. Grenzfall, weil statt Logos Icons mit Text laufen und die Bewegung im Standbild nicht zu sehen ist."
+      },
+      {
+       "kennung": "S-13",
+       "hart": false,
+       "ort": "fotos/m375/start/03.jpg (Karte 'Eingetragener HWK-Wiesbaden Fachbetrieb'); Text-Datei main_zeilen",
+       "begruendung": "Wörtlich: 'Handwerkliche Perfektion, geprüfte Standards und fachgerechte Präzision bei Großformaten, Schnittbildern und Fugenachsen.' Eine Dreierreihe hohler Qualitätswörter ohne konkrete Aussage."
+      },
+      {
+       "kennung": "S-13",
+       "hart": false,
+       "ort": "fotos/m375/start/10.jpg, fotos/d1440/start/03.jpg (dunkle Formularspalte 'Unverbindliche Projektanfrage'); Text-Datei main_zeilen",
+       "begruendung": "Wörtlich: 'Jedes Bauvorhaben ist einzigartig.' Eine Allerweltsfloskel ohne Informationsgehalt."
+      },
+      {
+       "kennung": "S-13",
+       "hart": false,
+       "ort": "Text-Datei, h2 des Schlussabschnitts",
+       "begruendung": "Wörtlich: 'Bereit für Ihr Fliesen- oder Badprojekt?' Die 'Bereit für …?'-Formel ist die typische generische Abschluss-CTA-Floskel."
+      }
+     ]
+    }
+   }
+  },
+  "/bad": {
+   "weich": 7,
+   "hart": 0,
+   "gemeldet": 9,
+   "verworfen": 2,
+   "nachgetragen": 0,
+   "funde": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "d1440/00.jpg: Hero-Überschrift, Akzentwort „in Fachqualität“ (gleiches Element auch in d1920/00, t768/00, m375/00)",
+     "begruendung": "Verlaufstext: Die Schriftfarbe läuft über das Wort von Orange (ca. RGB 223/96/37) nach Rot (ca. 211/54/51). Per Pixelprobe am Screenshot belegt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "d1440/00.jpg: Abschnitts-Überschrift „Alles für Ihr neues Bad aus einer Hand“, Akzentwort „aus einer Hand“ (gleiches Element auch in d1920/00, t768/00, m375/01)",
+     "begruendung": "Zweiter Verlaufstext: Das Akzentwort läuft von Orange (ca. RGB 223/103/50) nach Rot (ca. 210/59/57). Per Pixelprobe am Screenshot belegt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "d1440/00.jpg: oberhalb der Hero-Überschrift zwei Pillen-Badges „HWK Fachbetrieb für Badsanierung · Aßlar & Wetzlar“ und „5,0 · 27 Google-Rezensionen“ (gleiches Element auch in d1920/00, t768/00, m375/00)",
+     "begruendung": "Badges über der Einstiegsüberschrift, im Katalog ausdrücklich genannt. Gleichartige Pillen stehen zusätzlich über Abschnittsüberschriften („Bad-Leistungen im Überblick“, „Transparente Standards“)."
+    },
+    {
+     "kennung": "S-10",
+     "hart": false,
+     "ort": "d1440/00.jpg: Hero-Block mit zentrierter Überschrift, zentrierter Unterzeile, Knöpfen „Bad-Projektcheck starten“ und „Musterbäder entdecken“ sowie Check-Zeile, vor schwach pastellfarbenem Verlauf (gleiches Element auch in d1920/00, t768/00, m375/00)",
+     "begruendung": "Zentrierte Überschrift, Unterzeile und zwei Knöpfe vor abstraktem, leicht verlaufendem Hintergrund. Das ist der Standard-Einstieg aus dem Katalog."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "d1920/03.jpg: dunkler Abschluss-Block „Planen Sie ein Fliesen- oder Badprojekt?“, oberer Mittelbereich (auch d1440/04.jpg, t768/04.jpg, m375/08.jpg)",
+     "begruendung": "Warmes Radial-Glühen oben mittig (ca. RGB 62/34/22 gegenüber den Rändern mit ca. 26/21/18) plus feines Punktraster. Leuchtfläche als Hintergrundeffekt ohne erkennbaren inhaltlichen Grund."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "d1440/00.jpg und d1920/00.jpg: Leistungsraster „Alles für Ihr neues Bad aus einer Hand“, sechs Karten in drei Spalten (zweite Reihe in d1920/00, t768/01, m375/01)",
+     "begruendung": "Sechs gleichförmige Karten mit farbiger Icon-Kachel, Überschrift, ein bis zwei Zeilen Text und Pfeil. Ein Abschnitt, daher ein Fund."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "d1440/01.jpg: Karte „High-End Spa & Maßanfertigungen ohne Kompromisse“ (auch d1920/01.jpg; Text-Datei main_zeilen)",
+     "begruendung": "Grenzfall. Wörtliches Zitat „ohne Kompromisse“, Werbefloskel aus der Klasse „maßgeschneidert“ (hier „Maßanfertigungen“). Nicht als Katalogwort gelistet."
+    }
+   ],
+   "roh": {
+    "seite": "/bad",
+    "jagd": [
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "d1440/00.jpg: Hero-Überschrift, Akzentwort „in Fachqualität“ (gleiches Element auch in d1920/00, t768/00, m375/00)",
+      "begruendung": "Verlaufstext: Die Schriftfarbe läuft über das Wort von Orange (ca. RGB 223/96/37) nach Rot (ca. 211/54/51). Per Pixelprobe am Screenshot belegt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "d1440/00.jpg: Abschnitts-Überschrift „Alles für Ihr neues Bad aus einer Hand“, Akzentwort „aus einer Hand“ (gleiches Element auch in d1920/00, t768/00, m375/01)",
+      "begruendung": "Zweiter Verlaufstext: Das Akzentwort läuft von Orange (ca. RGB 223/103/50) nach Rot (ca. 210/59/57). Per Pixelprobe am Screenshot belegt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "d1440/00.jpg: oberhalb der Hero-Überschrift zwei Pillen-Badges „HWK Fachbetrieb für Badsanierung · Aßlar & Wetzlar“ und „5,0 · 27 Google-Rezensionen“ (gleiches Element auch in d1920/00, t768/00, m375/00)",
+      "begruendung": "Badges über der Einstiegsüberschrift, im Katalog ausdrücklich genannt. Gleichartige Pillen stehen zusätzlich über Abschnittsüberschriften („Bad-Leistungen im Überblick“, „Transparente Standards“)."
+     },
+     {
+      "kennung": "S-10",
+      "hart": false,
+      "ort": "d1440/00.jpg: Hero-Block mit zentrierter Überschrift, zentrierter Unterzeile, Knöpfen „Bad-Projektcheck starten“ und „Musterbäder entdecken“ sowie Check-Zeile, vor schwach pastellfarbenem Verlauf (gleiches Element auch in d1920/00, t768/00, m375/00)",
+      "begruendung": "Zentrierte Überschrift, Unterzeile und zwei Knöpfe vor abstraktem, leicht verlaufendem Hintergrund. Das ist der Standard-Einstieg aus dem Katalog."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "d1920/03.jpg: dunkler Abschluss-Block „Planen Sie ein Fliesen- oder Badprojekt?“, oberer Mittelbereich (auch d1440/04.jpg, t768/04.jpg, m375/08.jpg)",
+      "begruendung": "Warmes Radial-Glühen oben mittig (ca. RGB 62/34/22 gegenüber den Rändern mit ca. 26/21/18) plus feines Punktraster. Leuchtfläche als Hintergrundeffekt ohne erkennbaren inhaltlichen Grund."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "d1440/00.jpg und d1920/00.jpg: Leistungsraster „Alles für Ihr neues Bad aus einer Hand“, sechs Karten in drei Spalten (zweite Reihe in d1920/00, t768/01, m375/01)",
+      "begruendung": "Sechs gleichförmige Karten mit farbiger Icon-Kachel, Überschrift, ein bis zwei Zeilen Text und Pfeil. Ein Abschnitt, daher ein Fund."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "d1440/01.jpg: Abschnitt „Unsere Qualitäts-Kategorien im Überblick“, drei Karten (auch d1920/01.jpg, t768/01.jpg, m375/03.jpg)",
+      "begruendung": "Grenzfall: drei gleiche Karten mit Stufen-Badge, Überschrift, Absatz und Link „Musterbäder ansehen“. Ohne Icon, daher schwächer als der Kern von S-11."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "d1440/01.jpg: Karte „High-End Spa & Maßanfertigungen ohne Kompromisse“ (auch d1920/01.jpg; Text-Datei main_zeilen)",
+      "begruendung": "Grenzfall. Wörtliches Zitat „ohne Kompromisse“, Werbefloskel aus der Klasse „maßgeschneidert“ (hier „Maßanfertigungen“). Nicht als Katalogwort gelistet."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "d1440/00.jpg: Hero-Sekundärknopf „Musterbäder entdecken“ (auch d1920/00.jpg, t768/00.jpg; Text-Datei main_zeilen)",
+      "begruendung": "Grenzfall. Wörtliches Zitat „Musterbäder entdecken“. Nahe an „Entdecken Sie …“, aber ohne Sie-Anrede."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "Pixelprobe in d1440/00 bestätigt es: Das Akzentwort „in Fachqualität“ läuft von Orange (ca. 238/84/14) nach Rot (ca. 221/39/36). Das ist Verlaufstext. Er tritt in allen Ansichten auf und wird einmal gezählt."
+      },
+      {
+       "nr": 2,
+       "urteil": "anerkannt",
+       "grund": "Pixelprobe in d1440/00 bestätigt es: „aus einer Hand“ läuft von Orange (ca. 205/70/38) nach Rot (ca. 222/44/34). Das Element steht in einem anderen Abschnitt als die Hero-Überschrift, ein eigener Fund ist deshalb zulässig."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "Über der H1 stehen zwei Pillen-Badges, sichtbar in d1440/00, d1920/00 und m375/00. Das ist das Katalogmuster „Badge über der Einstiegsüberschrift“. Die Abschnittspillen sind korrekt im selben Fund erwähnt und nicht doppelt gezählt."
+      },
+      {
+       "nr": 4,
+       "urteil": "anerkannt",
+       "grund": "Überschrift, Unterzeile und zwei Knöpfe stehen zentriert. Dahinter liegt nur ein schwacher pastellfarbener Verlauf, kein Bild und kein inhaltlicher Blickfang. Das ist der Standard-Einstieg nach S-10."
+      },
+      {
+       "nr": 5,
+       "urteil": "anerkannt",
+       "grund": "Pixelprobe in d1440/04: Oben mittig misst die Fläche ca. 62/34/22, an den Rändern ca. 31/21/20. Das ist ein warmes Radial-Glühen ohne inhaltlichen Grund, dazu ein Punktraster. Es ist in allen Ansichten dasselbe Element."
+      },
+      {
+       "nr": 6,
+       "urteil": "anerkannt",
+       "grund": "Sechs gleichförmige Karten mit Icon-Kachel, Überschrift, ein bis zwei Zeilen Text und Pfeil, sichtbar in d1920/00. Das ist der Kern von S-11 und richtig als ein Fund je Abschnitt gezählt."
+      },
+      {
+       "nr": 7,
+       "urteil": "verworfen",
+       "grund": "Die Karten haben kein Icon. Sie zeigen eine inhaltlich begründete Stufung Basic/Premium/Luxus mit unterschiedlichen konkreten Ausstattungstexten von drei bis vier Zeilen. Das ist ein Vergleich mit Logik, kein Karten-Einerlei. Es wäre ein Fehlalarm."
+      },
+      {
+       "nr": 8,
+       "urteil": "anerkannt",
+       "grund": "Das wörtliche Zitat „ohne Kompromisse“ steht in der H3 (d1440/01, Text-Datei). Es ist eine inhaltsleere Werbefloskel aus der Klasse der Katalogbeispiele. Anerkannt wird nur „ohne Kompromisse“. „Maßanfertigungen“ ist ein sachlicher Produktbegriff und keine Floskel."
+      },
+      {
+       "nr": 9,
+       "urteil": "verworfen",
+       "grund": "„Musterbäder entdecken“ ist eine kurze Linkbeschriftung mit konkretem Ziel, nämlich den Musterbädern. Es ist keine Floskel nach dem Muster „Entdecken Sie …“ als leerer Einstiegssatz. Bei solcher Auslegung wäre jedes Verb in einem Knopf ein Fund. Es wäre ein Fehlalarm."
+      }
+     ],
+     "nachgetragen": []
+    }
+   }
+  },
+  "/leistungen": {
+   "weich": 15,
+   "hart": 2,
+   "gemeldet": 19,
+   "verworfen": 7,
+   "nachgetragen": 5,
+   "funde": [
+    {
+     "kennung": "S-04",
+     "hart": true,
+     "ort": "fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg: Symbol im Hero-Knopf 'WhatsApp Schnellkontakt'; Vergleich fotos/d1920/leistungen/07.jpg (Knopf 'WhatsApp') und Kopfzeilen-Symbol",
+     "begruendung": "Das Sprechblasen-Symbol im Hero-Knopf wirkt gefüllt, während die Sprechblase im Fußknopf 'WhatsApp' und im Kopfzeilen-Symbol als Umriss gezeichnet ist, also zwei Symbolvarianten oder Familien. Am Bild nicht sicher belegbar; Gegenprüfer bitte am Bild prüfen."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/m375/leistungen/00.jpg, fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg: zwei Pillen über der H1 'Fliesenleger Leistungen & Fachgewerke Wetzlar'",
+     "begruendung": "'HWK Wiesbaden Fachbetrieb' und 'Aßlar · Wetzlar · Mittelhessen' stehen über der Einstiegsüberschrift, das Katalogmuster 'Badge über der Einstiegsüberschrift'."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg: H1-Zeile 'Fachgewerke Wetzlar'",
+     "begruendung": "Die Zeile wechselt von Orange zu Rot über die Wortgrenze und wirkt wie Verlaufstext; am Bild nicht sicher, ob Verlauf oder zwei Farbtöne, Gegenprüfer bitte prüfen."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg, fotos/t768/leistungen/00.jpg: Heldkarte und Seitenhintergrund",
+     "begruendung": "Heldkarte mit Pfirsich-Verlauf und rosé Tönung zu den Ecken hin, im Seitenhintergrund weiche Farbflecken (d1920 oben links, rechts Mitte); generisch und schwach ausgeprägt, ohne Inhaltsbezug."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/d1440/leistungen/06.jpg (unten), fotos/d1440/leistungen/07.jpg, fotos/d1920/leistungen/05.jpg (unten), fotos/d1920/leistungen/06.jpg: dunkler Abschluss 'Planen Sie ein Fliesen- oder Badprojekt?'",
+     "begruendung": "Warmer Lichtschein am oberen Rand des dunklen Abschnitts mit feinem Punktraster; Hintergrundwirkung ohne Inhaltsbezug, schwach ausgeprägt."
+    },
+    {
+     "kennung": "S-10",
+     "hart": false,
+     "ort": "fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg (Hero); fotos/m375/leistungen/00.jpg nur teilweise",
+     "begruendung": "Zentrierte Hauptüberschrift, Absatz darunter und zwei Hauptknöpfe plus Telefon-Knopf auf weichem Pfirsich-Verlauf; entspricht dem austauschbaren Einstiegsmuster."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "fotos/t768/leistungen/02.jpg, fotos/d1440/leistungen/04.jpg, fotos/d1920/leistungen/03.jpg: Gewerk-Auswahl 'Welches Projekt planen Sie?'",
+     "begruendung": "Sechs gleichförmige Auswahlkacheln mit Icon-Kachel, Titel, zwei Zeilen Text und Tag-Pille ('Sehr gefragt', 'Spezialgebiet', 'Klassiker', 'Außenbereich', 'Zertifiziert', 'Schnellhilfe'); Grenzfall, da es eine Auswahlsteuerung ist und keine Inhaltskarten."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "fotos/d1440/leistungen/06.jpg, fotos/d1920/leistungen/05.jpg: Express-Schritt 1 'Schritt 1: Welches Projekt planen Sie?'",
+     "begruendung": "Fünf gleichförmige Kacheln mit Icon, Titel und ein bis zwei Zeilen Text; wiederholt die Gewerk-Auswahl aus dem Projektformular in einem anderen Abschnitt. Grenzfall."
+    },
+    {
+     "kennung": "S-12",
+     "hart": false,
+     "ort": "fotos/t768/leistungen/00.jpg und 02.jpg, fotos/d1440/leistungen/01.jpg und 02.jpg, fotos/d1920/leistungen/01.jpg und 02.jpg: Leistungsblöcke Bäder & Wellness, Wohnbereiche & Neubau, Balkon- & Terrassensanierung, Untergrund & DIN 18534",
+     "begruendung": "Vier Leistungsblöcke im 2x2-Raster mit gleichem Aufbau (Icon-Kachel, Pille 'Geprüfte Fachkompetenz', H2, Absatz, Chips, 'AUSSTATTUNGSMERKMALE & VORTEILE' mit Häkchenliste, Ratgeber-Link, Knopf 'Aufmaß anfragen'); kein Block hebt sich ab."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1920/leistungen/00.jpg, fotos/d1440/leistungen/01.jpg, fotos/m375/leistungen/01.jpg: Bäder-Absatz",
+     "begruendung": "Wortlaut 'Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum' (Text-Datei und sichtbar); 'innovativ' ist ein Katalogwort."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1920/leistungen/02.jpg, fotos/d1440/leistungen/02.jpg: Balkon-Absatz",
+     "begruendung": "Wortlaut 'Fliesenverlegung Tezgel setzt auf innovative Trockenverlegung auf Stelzlagern' (sichtbar); 'innovativ' ist ein Katalogwort."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1440/leistungen/03.jpg, fotos/d1920/leistungen/02.jpg: H2 'Ihr verlässlicher Weg zum neuen Traumbelag'",
+     "begruendung": "Werbefloskel 'Traumbelag' in der Überschrift, keine Katalogvokabel, sondern Analogie zu den Floskeln; Grenzfall, Gegenprüfer entscheidet."
+    },
+    {
+     "kennung": "S-01",
+     "hart": true,
+     "ort": "fotos/d1920/leistungen/00.jpg bis 06.jpg, d1440/00, t768/00, m375/00 (schwebender WhatsApp-Knopf unten rechts, rotes Zähler-Badge '1')",
+     "begruendung": "Das rote Zähler-Badge '1' auf dem schwebenden WhatsApp-Knopf täuscht eine ungelesene Nachricht vor, die es nicht gibt. Das ist eine erfundene Zahl bzw. Benachrichtigung."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/d1920/leistungen/04.jpg, fotos/d1440/leistungen/06.jpg (Express-Karte 'Schritt 1: Welches Projekt planen Sie?', oben rechts)",
+     "begruendung": "In der rechten oberen Ecke der Express-Karte liegt ein weicher orange-pfirsichfarbener Lichtschein ohne Inhaltsbezug, ein dekorativer Verlauf bzw. eine Leuchtkugel, schwach ausgeprägt."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1920/leistungen/00.jpg, fotos/m375/leistungen/01.jpg (Absatz 'Wohnbereiche & Neubau')",
+     "begruendung": "Wörtlich: 'Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit'. Das ist eine leere Superlativ-Floskel ohne überprüfbaren Inhalt."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1920/leistungen/00.jpg, fotos/m375/leistungen/01.jpg (Absatz 'Bäder & Wellness')",
+     "begruendung": "Wörtlich: 'Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel verwandelt veraltete Badezimmer in moderne Wellnessräume'. Das ist eine typische Verwandlungs- und Oasen-Floskel."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1920/leistungen/02.jpg (dunkler Kasten 'Unverbindliche Projektanfrage'), t768/05",
+     "begruendung": "Wörtlich: 'Jedes Bauvorhaben ist einzigartig.' Das ist eine austauschbare Standardfloskel ohne Aussage."
+    }
+   ],
+   "roh": {
+    "seite": "/leistungen",
+    "jagd": [
+     {
+      "kennung": "S-04",
+      "hart": true,
+      "ort": "fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg: Symbol im Hero-Knopf 'WhatsApp Schnellkontakt'; Vergleich fotos/d1920/leistungen/07.jpg (Knopf 'WhatsApp') und Kopfzeilen-Symbol",
+      "begruendung": "Das Sprechblasen-Symbol im Hero-Knopf wirkt gefüllt, während die Sprechblase im Fußknopf 'WhatsApp' und im Kopfzeilen-Symbol als Umriss gezeichnet ist, also zwei Symbolvarianten oder Familien. Am Bild nicht sicher belegbar; Gegenprüfer bitte am Bild prüfen."
+     },
+     {
+      "kennung": "S-08",
+      "hart": false,
+      "ort": "fotos/m375/leistungen/11.jpg, fotos/t768/leistungen/05.jpg, fotos/d1440/leistungen/05.jpg, fotos/d1920/leistungen/03.jpg: Checkbox 'Ich stimme zu ...' im dunklen Formularkasten",
+      "begruendung": "Die Checkbox ist im Browser-Standard blau mit weißem Haken ausgefüllt, während Akzent, Auswahlkacheln und Knöpfe orange sind; die Standardkomponente ist ohne Anpassung an das Farbsystem übernommen."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/m375/leistungen/00.jpg, fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg: zwei Pillen über der H1 'Fliesenleger Leistungen & Fachgewerke Wetzlar'",
+      "begruendung": "'HWK Wiesbaden Fachbetrieb' und 'Aßlar · Wetzlar · Mittelhessen' stehen über der Einstiegsüberschrift, das Katalogmuster 'Badge über der Einstiegsüberschrift'."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg: H1-Zeile 'Fachgewerke Wetzlar'",
+      "begruendung": "Die Zeile wechselt von Orange zu Rot über die Wortgrenze und wirkt wie Verlaufstext; am Bild nicht sicher, ob Verlauf oder zwei Farbtöne, Gegenprüfer bitte prüfen."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg, fotos/t768/leistungen/00.jpg: Heldkarte und Seitenhintergrund",
+      "begruendung": "Heldkarte mit Pfirsich-Verlauf und rosé Tönung zu den Ecken hin, im Seitenhintergrund weiche Farbflecken (d1920 oben links, rechts Mitte); generisch und schwach ausgeprägt, ohne Inhaltsbezug."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1440/leistungen/06.jpg (unten), fotos/d1440/leistungen/07.jpg, fotos/d1920/leistungen/05.jpg (unten), fotos/d1920/leistungen/06.jpg: dunkler Abschluss 'Planen Sie ein Fliesen- oder Badprojekt?'",
+      "begruendung": "Warmer Lichtschein am oberen Rand des dunklen Abschnitts mit feinem Punktraster; Hintergrundwirkung ohne Inhaltsbezug, schwach ausgeprägt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1440/leistungen/03.jpg, fotos/d1920/leistungen/02.jpg: Pille 'Ausführungs-Standards' über H2 'Ihr verlässlicher Weg zum neuen Traumbelag'",
+      "begruendung": "Eyebrow-Pille über einer Abschnittsüberschrift im selben Muster wie die Einstiegs-Badges; Grenzfall, da kein Einstieg."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/m375/leistungen/08.jpg, fotos/d1440/leistungen/04.jpg, fotos/d1920/leistungen/02.jpg: Pille 'Projekt & Ausgangslage' über H2 'Projekt anfragen & Situation schildern'",
+      "begruendung": "Eyebrow-Pille über einer Abschnittsüberschrift im selben Muster wie die Einstiegs-Badges; Grenzfall, da kein Einstieg."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/t768/leistungen/05.jpg (unten), fotos/d1440/leistungen/05.jpg (unten), fotos/d1920/leistungen/05.jpg (oben): Pille 'Online-Bedarfsabfrage' über H2 'Fordern Sie Ihr persönliches Angebot an'",
+      "begruendung": "Eyebrow-Pille über einer Abschnittsüberschrift im selben Muster wie die Einstiegs-Badges; Grenzfall, da kein Einstieg."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1440/leistungen/06.jpg, fotos/d1920/leistungen/05.jpg: Pille 'Express-Anfrage in 60 Sekunden' in der Karte über 'Schritt 1: Welches Projekt planen Sie?'",
+      "begruendung": "Pille mit Sparkle-Icon oberhalb der Schritt-Überschrift, gleiches Badge-Muster wie im Einstieg; Grenzfall."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/m375/leistungen/11.jpg, fotos/t768/leistungen/05.jpg, fotos/d1440/leistungen/04.jpg, fotos/d1920/leistungen/02.jpg: Pille 'Preise individuell auf Anfrage' über 'Unverbindliche Projektanfrage' im dunklen Kasten",
+      "begruendung": "Pille mit Sparkle-Icon oberhalb der Abschnittsüberschrift im selben Badge-Muster; Grenzfall, da kein Einstieg."
+     },
+     {
+      "kennung": "S-10",
+      "hart": false,
+      "ort": "fotos/t768/leistungen/00.jpg, fotos/d1440/leistungen/00.jpg, fotos/d1920/leistungen/00.jpg (Hero); fotos/m375/leistungen/00.jpg nur teilweise",
+      "begruendung": "Zentrierte Hauptüberschrift, Absatz darunter und zwei Hauptknöpfe plus Telefon-Knopf auf weichem Pfirsich-Verlauf; entspricht dem austauschbaren Einstiegsmuster."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/t768/leistungen/02.jpg, fotos/d1440/leistungen/04.jpg, fotos/d1920/leistungen/03.jpg: Gewerk-Auswahl 'Welches Projekt planen Sie?'",
+      "begruendung": "Sechs gleichförmige Auswahlkacheln mit Icon-Kachel, Titel, zwei Zeilen Text und Tag-Pille ('Sehr gefragt', 'Spezialgebiet', 'Klassiker', 'Außenbereich', 'Zertifiziert', 'Schnellhilfe'); Grenzfall, da es eine Auswahlsteuerung ist und keine Inhaltskarten."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/d1440/leistungen/06.jpg, fotos/d1920/leistungen/05.jpg: Express-Schritt 1 'Schritt 1: Welches Projekt planen Sie?'",
+      "begruendung": "Fünf gleichförmige Kacheln mit Icon, Titel und ein bis zwei Zeilen Text; wiederholt die Gewerk-Auswahl aus dem Projektformular in einem anderen Abschnitt. Grenzfall."
+     },
+     {
+      "kennung": "S-12",
+      "hart": false,
+      "ort": "fotos/t768/leistungen/00.jpg und 02.jpg, fotos/d1440/leistungen/01.jpg und 02.jpg, fotos/d1920/leistungen/01.jpg und 02.jpg: Leistungsblöcke Bäder & Wellness, Wohnbereiche & Neubau, Balkon- & Terrassensanierung, Untergrund & DIN 18534",
+      "begruendung": "Vier Leistungsblöcke im 2x2-Raster mit gleichem Aufbau (Icon-Kachel, Pille 'Geprüfte Fachkompetenz', H2, Absatz, Chips, 'AUSSTATTUNGSMERKMALE & VORTEILE' mit Häkchenliste, Ratgeber-Link, Knopf 'Aufmaß anfragen'); kein Block hebt sich ab."
+     },
+     {
+      "kennung": "S-12",
+      "hart": false,
+      "ort": "fotos/m375/leistungen/07.jpg, fotos/d1440/leistungen/03.jpg, fotos/d1920/leistungen/02.jpg: Schritte 01, 02, 03 'Ihr verlässlicher Weg zum neuen Traumbelag'",
+      "begruendung": "Drei aufeinanderfolgende Karten mit gleicher Struktur (Zahl, Großlabel, H3, drei bis vier Zeilen Text) und gleicher Dichte ohne Blickfang; Gleichtakt."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "fotos/d1920/leistungen/00.jpg, fotos/d1440/leistungen/01.jpg, fotos/m375/leistungen/01.jpg: Bäder-Absatz",
+      "begruendung": "Wortlaut 'Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum' (Text-Datei und sichtbar); 'innovativ' ist ein Katalogwort."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "fotos/d1920/leistungen/02.jpg, fotos/d1440/leistungen/02.jpg: Balkon-Absatz",
+      "begruendung": "Wortlaut 'Fliesenverlegung Tezgel setzt auf innovative Trockenverlegung auf Stelzlagern' (sichtbar); 'innovativ' ist ein Katalogwort."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "fotos/d1440/leistungen/03.jpg, fotos/d1920/leistungen/02.jpg: H2 'Ihr verlässlicher Weg zum neuen Traumbelag'",
+      "begruendung": "Werbefloskel 'Traumbelag' in der Überschrift, keine Katalogvokabel, sondern Analogie zu den Floskeln; Grenzfall, Gegenprüfer entscheidet."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "Bestätigt in der Vergrößerung von d1920/00: Der Hero-Knopf 'WhatsApp Schnellkontakt' zeigt eine gefüllte, eckige Sprechblase im Material-Stil. Der Abschlussknopf 'WhatsApp' (d1920/05, d1440/06) und das Kopfzeilen-Symbol zeigen dagegen eine runde Umriss-Sprechblase im Lucide-Stil. Das sind zwei Icon-Familien für dieselbe Funktion, also S-04 hart. Die genannte Datei d1920/07.jpg gehört nicht zum Bildsatz, der Vergleich ist aber in d1920/05 belegt."
+      },
+      {
+       "nr": 2,
+       "urteil": "verworfen",
+       "grund": "Die blaue Checkbox im Browser-Standard ist sichtbar, aber sie ist ein einzelnes Bedienelement. S-08 meint einen Standard-Look, der die ganze Seite prägt ('Standardschrift als einzige Schrift, Standardradien und -schatten überall'). Die Seite hat eigene Schriften, Radien, Auswahlkacheln und eigene orange Radio-Kreise. Die Checkbox ist ein Detailfehler gegen das Farbsystem, kein S-08-Befund."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "Zwei Pillen 'HWK Wiesbaden Fachbetrieb' und 'Aßlar · Wetzlar · Mittelhessen' stehen direkt über der H1, in allen vier Ansichten. Das ist wörtlich 'Badge über der Einstiegsüberschrift'."
+      },
+      {
+       "nr": 4,
+       "urteil": "anerkannt",
+       "grund": "Ich habe die Pixel entlang der zweiten H1-Zeile in d1920/00 gemessen. Der Grünkanal fällt stetig von etwa 83 auf 33 und der Blaukanal steigt, auch schon innerhalb des Wortes 'Fachgewerke'. Das ist ein Verlauf und nicht zwei Farbtöne, also Verlaufstext (S-09). Der Verlauf ist auch in m375/00 sichtbar."
+      },
+      {
+       "nr": 5,
+       "urteil": "anerkannt",
+       "grund": "Sichtbar sind die Pfirsich-Tönung oben links und der Rosé-Ton unten rechts in der Heldkarte sowie weiche Farbflecken im Seitenhintergrund (d1920/00). Das ist ein generischer Verlauf ohne Inhaltsbezug, schwach ausgeprägt. Der Fund steht neben S-10 (Fund 12) als eigenes Muster, nämlich als Verlaufsklischee und nicht als Einstiegskomposition."
+      },
+      {
+       "nr": 6,
+       "urteil": "anerkannt",
+       "grund": "Der warme Lichtschein oben im dunklen Abschluss und ein regelmäßiges Punktraster sind belegt; das Raster habe ich per Kontrastverstärkung des Ausschnitts aus d1920/05 bestätigt (sichtbar auch in d1440/06). Das ist eine dekorative Hintergrundwirkung (S-09, schwach). Die Ortsangabe d1440/07 ist falsch, dort ist nur der Footer zu sehen."
+      },
+      {
+       "nr": 7,
+       "urteil": "verworfen",
+       "grund": "Der Katalog nennt ausdrücklich nur 'Badge über der Einstiegsüberschrift'. 'Ausführungs-Standards' ist eine Eyebrow-Zeile über einer Abschnittsüberschrift und kein Einstieg. Der Fund liegt außerhalb des Katalogwortlauts und wäre eine Erweiterung des Musters, also ein Fehlalarm."
+      },
+      {
+       "nr": 8,
+       "urteil": "verworfen",
+       "grund": "Gleiche Begründung wie bei Nr. 7: 'Projekt & Ausgangslage' sitzt über einer Abschnitts-H2 und nicht über der Einstiegsüberschrift. Der Katalog erfasst das nicht."
+      },
+      {
+       "nr": 9,
+       "urteil": "verworfen",
+       "grund": "Gleiche Begründung wie bei Nr. 7: 'Online-Bedarfsabfrage' ist eine Eyebrow über einer Abschnittsüberschrift und kein Einstiegs-Badge."
+      },
+      {
+       "nr": 10,
+       "urteil": "verworfen",
+       "grund": "'Express-Anfrage in 60 Sekunden' sitzt in einer Formularkarte und nicht über der Einstiegsüberschrift. Das statische Sparkle-Icon ist kein Funkeln-Effekt im Sinne von S-09, also keine Animation oder Glitzerwirkung. Kein Katalogmuster."
+      },
+      {
+       "nr": 11,
+       "urteil": "verworfen",
+       "grund": "'Preise individuell auf Anfrage' sitzt im Formular-Seitenkasten und nicht über der Einstiegsüberschrift. Das statische Sparkle-Icon ist kein Funkeln. Kein Katalogmuster."
+      },
+      {
+       "nr": 12,
+       "urteil": "anerkannt",
+       "grund": "Der Einstieg ist zentriert gebaut: H1, Absatz darunter, zwei Hauptknöpfe plus Telefon-Knopf in einer Karte auf weichem Pfirsich-Verlauf, ohne Bild oder Inhaltsbezug (d1920/00, d1440/00, t768/00). Das entspricht S-10."
+      },
+      {
+       "nr": 13,
+       "urteil": "anerkannt",
+       "grund": "Die Gewerk-Auswahl besteht aus sechs gleichförmigen Kacheln mit Icon-Kachel, Titel, zwei Zeilen und Tag-Pille (d1920/02-03, t768/02). Auf der Seite herrscht dieser Kacheltyp vor, Auswahlsteuerung hin oder her; das ist S-11 und zählt als ein Fund für das Projektformular."
+      },
+      {
+       "nr": 14,
+       "urteil": "anerkannt",
+       "grund": "Im eigenen Abschnitt 'Fordern Sie Ihr persönliches Angebot an' stehen fünf weitere gleichförmige Kacheln mit Icon, Tag, Titel und ein bis zwei Zeilen (d1920/04, d1440/06). Sie wiederholen dieselbe Auswahl wie das Projektformular. Das ist ein eigener Abschnitt und deshalb ein eigener Fund, keine Doppelzählung."
+      },
+      {
+       "nr": 15,
+       "urteil": "anerkannt",
+       "grund": "Vier aufeinanderfolgende H2-Leistungsblöcke haben identischen Aufbau und gleiche Dichte: Icon-Kachel, Pille 'Geprüfte Fachkompetenz', Absatz, Chips, Häkchenliste, Ratgeber-Link, Knopf. Keiner hat ein Bild oder einen Blickfang (d1920/00-02). Das ist S-12."
+      },
+      {
+       "nr": 16,
+       "urteil": "verworfen",
+       "grund": "Die Schritte 01-03 sind drei Karten innerhalb eines einzigen Abschnitts (H2 'Ihr verlässlicher Weg ...'). S-12 verlangt drei oder mehr aufeinanderfolgende Abschnitte. Eine dreiteilige Prozessreihe mit Nummern ist dort legitim, und die Karten haben keine Icons, also greift auch S-11 nicht."
+      },
+      {
+       "nr": 17,
+       "urteil": "anerkannt",
+       "grund": "Das wörtliche Zitat 'Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum' steht in der Text-Datei und ist im Bild sichtbar (d1920/00). 'innovativ' steht als Floskel im Katalog."
+      },
+      {
+       "nr": 18,
+       "urteil": "anerkannt",
+       "grund": "Das wörtliche Zitat 'Fliesenverlegung Tezgel setzt auf innovative Trockenverlegung auf Stelzlagern' steht in der Text-Datei und ist sichtbar (d1920/01). Es ist eine eigene Fundstelle in einem anderen Block."
+      },
+      {
+       "nr": 19,
+       "urteil": "anerkannt",
+       "grund": "Das wörtliche Zitat ist 'Ihr verlässlicher Weg zum neuen Traumbelag'. Die Katalogliste ist mit 'wie' offen formuliert. Die Formel 'Ihr verlässlicher Weg zum neuen Traum-X' ist eine austauschbare Werbefloskel ohne Information und passt zu den Katalogbeispielen. Als schwacher S-13-Fund anerkannt."
+      }
+     ],
+     "nachgetragen": [
+      {
+       "kennung": "S-01",
+       "hart": true,
+       "ort": "fotos/d1920/leistungen/00.jpg bis 06.jpg, d1440/00, t768/00, m375/00 (schwebender WhatsApp-Knopf unten rechts, rotes Zähler-Badge '1')",
+       "begruendung": "Das rote Zähler-Badge '1' auf dem schwebenden WhatsApp-Knopf täuscht eine ungelesene Nachricht vor, die es nicht gibt. Das ist eine erfundene Zahl bzw. Benachrichtigung."
+      },
+      {
+       "kennung": "S-09",
+       "hart": false,
+       "ort": "fotos/d1920/leistungen/04.jpg, fotos/d1440/leistungen/06.jpg (Express-Karte 'Schritt 1: Welches Projekt planen Sie?', oben rechts)",
+       "begruendung": "In der rechten oberen Ecke der Express-Karte liegt ein weicher orange-pfirsichfarbener Lichtschein ohne Inhaltsbezug, ein dekorativer Verlauf bzw. eine Leuchtkugel, schwach ausgeprägt."
+      },
+      {
+       "kennung": "S-13",
+       "hart": false,
+       "ort": "fotos/d1920/leistungen/00.jpg, fotos/m375/leistungen/01.jpg (Absatz 'Wohnbereiche & Neubau')",
+       "begruendung": "Wörtlich: 'Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit'. Das ist eine leere Superlativ-Floskel ohne überprüfbaren Inhalt."
+      },
+      {
+       "kennung": "S-13",
+       "hart": false,
+       "ort": "fotos/d1920/leistungen/00.jpg, fotos/m375/leistungen/01.jpg (Absatz 'Bäder & Wellness')",
+       "begruendung": "Wörtlich: 'Vom ersten Vor-Ort-Aufmaß bis zur fugenarmen Luxusoase: Fliesenverlegung Tezgel verwandelt veraltete Badezimmer in moderne Wellnessräume'. Das ist eine typische Verwandlungs- und Oasen-Floskel."
+      },
+      {
+       "kennung": "S-13",
+       "hart": false,
+       "ort": "fotos/d1920/leistungen/02.jpg (dunkler Kasten 'Unverbindliche Projektanfrage'), t768/05",
+       "begruendung": "Wörtlich: 'Jedes Bauvorhaben ist einzigartig.' Das ist eine austauschbare Standardfloskel ohne Aussage."
+      }
+     ]
+    }
+   }
+  },
+  "/standorte": {
+   "weich": 8,
+   "hart": 6,
+   "gemeldet": 11,
+   "verworfen": 2,
+   "nachgetragen": 5,
+   "funde": [
+    {
+     "kennung": "S-10",
+     "hart": false,
+     "ort": "Einstieg/Hero: m375/00, t768/00, d1440/00, d1920/00 (ein Fund über alle Ansichten)",
+     "begruendung": "Zentrierte H1 'Standorte & Einsatzgebiete in Mittelhessen', zentrierte Unterzeile, zwei Knöpfe ('Vor-Ort-Aufmaß anfragen', '06441 / 44 83 567'), Hintergrund nur ein schwacher warmer Verlauf. Entspricht dem Katalogmuster; die Abstraktheit des Hintergrunds ist schwach ausgeprägt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Hero-Pille über der H1: m375/00, t768/00, d1440/00, d1920/00",
+     "begruendung": "Pille 'Mittelhessen & Lahn-Dill-Kreis' mit Pin-Icon steht über der Einstiegsüberschrift. Grenzfall: Die Pille nennt die Region und trägt damit Information; der Gegenprüfer entscheidet, ob sie als Klischee zählt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Hero-H1, Wort 'Mittelhessen': d1440/00, d1920/00",
+     "begruendung": "Das Wort wechselt sichtbar von Orange zu Rotorange und wirkt wie Verlaufstext. Ob es per CSS-Verlauf gefüllt ist, lässt sich aus dem Bild nicht belegen; Prüfung am Stylesheet nötig."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Dunkler Abschnitt 'Planen Sie ein Fliesen- oder Badprojekt …': d1440/06, d1920/06",
+     "begruendung": "Oben mittig hinter der großen weißen Überschrift liegt ein rostbrauner Leuchtfleck. Aurora-/Leuchtkugel-Anmutung, dezent ausgeprägt."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "Abschnitt 'Unsere Leistungen vor Ort': m375/08, t768/04, d1920/04",
+     "begruendung": "Sechs gleich gebaute Kacheln mit Häkchen-Icon und ein- bis zweizeiliger Leistungsangabe. Passt zum Kachelmuster aus S-11, jedoch ohne Überschrift je Kachel."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "Hero-Absatz: m375/00, d1440/00, t768/00; Text-Datei main_zeilen",
+     "begruendung": "Wörtlich: 'mit persönlicher Beratung vor Ort und handwerklicher Präzision'. Marketing-Floskel; keines der Katalogwörter kommt vor. Kandidat für TEXTVORSCHLAEGE.md."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "Karte Butzbach: d1920/02; Text-Datei main_zeilen",
+     "begruendung": "Wörtlich: 'mit höchster Präzision aus dem Lahn-Dill-Kreis'. Gleiche Marketing-Floskel wie im Hero; keines der Katalogwörter kommt vor. Gegenprüfer entscheidet."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "Button 'Karte laden & zustimmen': m375/01, d1440/01, d1920/01, t768/05",
+     "begruendung": "Weiße Schrift (ca. 16 px, halbfett) auf hellem Orange. Schätzung aus dem Bild: etwa 3,5:1; AA verlangt 4,5:1 für Text dieser Größe. Nicht gemessen; Messung nötig."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "Knopf 'WhatsApp Chat': d1440/06, m375/11",
+     "begruendung": "Weiße Schrift auf mittelgrünem Grund. Schätzung aus dem Bild: vermutlich unter 4,5:1, mit geringerer Sicherheit als beim Orange-Knopf. Nicht gemessen; Messung nötig."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "Dunkle CTA-Box 'Fliesenleger oder Badsanierung … gesucht?', Knopf '06441 / 44 83 567': d1440/06, d1920/05, m375/11",
+     "begruendung": "Weiße Schrift (etwa 16 bis 17 px fett) auf demselben hellen Orange etwa rgb(234,88,13), aus dem Bild gemessen etwa 3,25:1, rechnerisch etwa 3,56:1. Liegt unter 4,5:1 und ist ein anderes Element als Fund 10."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "Box 'Fliesenverlegung & Badsanierung in Aßlar', Knopf 'Kostenloses Vor-Ort-Aufmaß': d1440/01",
+     "begruendung": "Weiße Schrift von etwa 13 px fett auf hellem Orange etwa rgb(234,88,13), aus dem Bild gemessen etwa 3,15:1. Liegt unter 4,5:1."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "Abschnitt 'Unser Hauptstandort in Aßlar', zweite Karteneinbettung, Knopf 'Karte laden & zustimmen': d1440/05, d1920/04, t768/05, m375/10",
+     "begruendung": "Gleicher Knopf wie in Fund 10, aber in einem eigenen Abschnitt: weiß auf hellem Orange, gemessen etwa 3,2:1. Dazu verdeckt die Adresskarte den Knopf in t768/05 teilweise ('…en & zustimmen'); in m375/10 sind die Einwilligungsknöpfe gar nicht zu sehen. Die Einwilligung ist dort also nur eingeschränkt erreichbar."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "Adresskarte 'Fliesenverlegung Tezgel', Link 'Route planen': d1440/05, d1920/04, t768/05, m375/10",
+     "begruendung": "Orange Linkschrift von etwa 13 px fett auf hellgrauer Karte. Die gesättigten Pixel ergeben aus dem Bild gemessen etwa 2,8 bis 3,0:1 gegen den Kartengrund. Das liegt deutlich unter 4,5:1; bestätigen per getComputedStyle."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "Leiste vor dem Fußbereich (HWK Fachbetrieb, DIN 18534, Staubschutz-Garantie, Festpreisgarantie): d1440/07, d1440/08, d1920/06, t768/07",
+     "begruendung": "Vier gleich gebaute Einträge, jeweils Icon-Kachel, fette Überschrift und eine bis zwei Zeilen: genau die Form aus S-11. Das Element ist seitenübergreifend und steht nicht in main_zeilen; es ist deshalb dem globalen Layout zuzuordnen."
+    }
+   ],
+   "roh": {
+    "seite": "/standorte",
+    "jagd": [
+     {
+      "kennung": "S-10",
+      "hart": false,
+      "ort": "Einstieg/Hero: m375/00, t768/00, d1440/00, d1920/00 (ein Fund über alle Ansichten)",
+      "begruendung": "Zentrierte H1 'Standorte & Einsatzgebiete in Mittelhessen', zentrierte Unterzeile, zwei Knöpfe ('Vor-Ort-Aufmaß anfragen', '06441 / 44 83 567'), Hintergrund nur ein schwacher warmer Verlauf. Entspricht dem Katalogmuster; die Abstraktheit des Hintergrunds ist schwach ausgeprägt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Hero-Pille über der H1: m375/00, t768/00, d1440/00, d1920/00",
+      "begruendung": "Pille 'Mittelhessen & Lahn-Dill-Kreis' mit Pin-Icon steht über der Einstiegsüberschrift. Grenzfall: Die Pille nennt die Region und trägt damit Information; der Gegenprüfer entscheidet, ob sie als Klischee zählt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Hero-H1, Wort 'Mittelhessen': d1440/00, d1920/00",
+      "begruendung": "Das Wort wechselt sichtbar von Orange zu Rotorange und wirkt wie Verlaufstext. Ob es per CSS-Verlauf gefüllt ist, lässt sich aus dem Bild nicht belegen; Prüfung am Stylesheet nötig."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Dunkler Abschnitt 'Planen Sie ein Fliesen- oder Badprojekt …': d1440/06, d1920/06",
+      "begruendung": "Oben mittig hinter der großen weißen Überschrift liegt ein rostbrauner Leuchtfleck. Aurora-/Leuchtkugel-Anmutung, dezent ausgeprägt."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "Abschnitt '13 Städte & Gemeinden' (Raster): m375/03, m375/04, m375/06, m375/07, t768/02, d1440/02, d1440/03, d1920/02, d1920/03",
+      "begruendung": "13 gleich gebaute Karten (Eyebrow-Label, Entfernungs-Pille, Überschrift, 3 bis 5 Zeilen Text, Link 'Fliesenleger in …') bilden das vorherrschende Muster des Abschnitts. Die Karten haben kein Icon und keine zwei Zeilen; keine Bento-Logik. Die Reihenfolge folgt weder Entfernung noch Alphabet."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "Abschnitt 'Unsere Leistungen vor Ort': m375/08, t768/04, d1920/04",
+      "begruendung": "Sechs gleich gebaute Kacheln mit Häkchen-Icon und ein- bis zweizeiliger Leistungsangabe. Passt zum Kachelmuster aus S-11, jedoch ohne Überschrift je Kachel."
+     },
+     {
+      "kennung": "S-12",
+      "hart": false,
+      "ort": "Abschnitte 'Unsere Leistungen vor Ort', 'Ihre Stadt ist nicht aufgeführt?', 'Unser Hauptstandort in Aßlar', 'Fliesenleger oder Badsanierung … gesucht?': m375/08, m375/10, m375/11, t768/04, t768/05, d1440/05, d1920/04, d1920/05",
+      "begruendung": "Vier aufeinanderfolgende Abschnitte mit gleicher Abfolge: Eyebrow-Pille, H2, Absatz, dann Block oder Knöpfe. Kein klarer Blickfang in dieser Reihe. Grenzfall: /standorte ist eine Übersichtsseite, S-12 zielt auf Erzählseiten. Die Eyebrow-Pillen über den H2 wiederholen sich in sechs Abschnitten."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "Hero-Absatz: m375/00, d1440/00, t768/00; Text-Datei main_zeilen",
+      "begruendung": "Wörtlich: 'mit persönlicher Beratung vor Ort und handwerklicher Präzision'. Marketing-Floskel; keines der Katalogwörter kommt vor. Kandidat für TEXTVORSCHLAEGE.md."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "Karte Butzbach: d1920/02; Text-Datei main_zeilen",
+      "begruendung": "Wörtlich: 'mit höchster Präzision aus dem Lahn-Dill-Kreis'. Gleiche Marketing-Floskel wie im Hero; keines der Katalogwörter kommt vor. Gegenprüfer entscheidet."
+     },
+     {
+      "kennung": "S-03",
+      "hart": true,
+      "ort": "Button 'Karte laden & zustimmen': m375/01, d1440/01, d1920/01, t768/05",
+      "begruendung": "Weiße Schrift (ca. 16 px, halbfett) auf hellem Orange. Schätzung aus dem Bild: etwa 3,5:1; AA verlangt 4,5:1 für Text dieser Größe. Nicht gemessen; Messung nötig."
+     },
+     {
+      "kennung": "S-03",
+      "hart": true,
+      "ort": "Knopf 'WhatsApp Chat': d1440/06, m375/11",
+      "begruendung": "Weiße Schrift auf mittelgrünem Grund. Schätzung aus dem Bild: vermutlich unter 4,5:1, mit geringerer Sicherheit als beim Orange-Knopf. Nicht gemessen; Messung nötig."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "In m375/00, t768/00, d1440/00 und d1920/00 zu sehen: zentrierte H1, zentrierter Absatz und zwei Knöpfe vor einer fast leeren Fläche mit schwachem warmem Verlauf. Es gibt kein Bild und keinen inhaltlichen Hintergrund. Das ist das Katalogmuster, über alle Ansichten richtig als ein Fund gezählt."
+      },
+      {
+       "nr": 2,
+       "urteil": "anerkannt",
+       "grund": "Der Katalog nennt das 'Badge über der Einstiegsüberschrift' ausdrücklich. Die Pille 'Mittelhessen & Lahn-Dill-Kreis' bringt keine eigene Information mit: 'Mittelhessen' steht in der H1 direkt darunter, der Lahn-Dill-Kreis im Absatz (Wetzlar, Herborn). Einen Grund für das Badge gibt es also nicht."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "Am Bild gemessen (d1920/00, gesättigte Pixel quer über das Wort): Der Farbton läuft von links nach rechts gleichmäßig von etwa rgb(230,83,17) nach rgb(196,54,46), der Grünkanal fällt dabei von 86 auf 52. Eine einzelne Volltonfarbe zeigt diesen Verlauf nicht; es ist Verlaufstext und damit ein S-09-Klischee. Das Stylesheet zu prüfen ist für das Urteil nicht nötig."
+      },
+      {
+       "nr": 4,
+       "urteil": "anerkannt",
+       "grund": "Oben mittig im dunklen Abschnitt 'Planen Sie ein Fliesen- oder Badprojekt …' liegt ein rostbrauner radialer Leuchtfleck hinter der Überschrift (d1440/06). In d1920 steht der Abschnitt in d1920/05, nicht in 06; die Ortsangabe ist dort zu berichtigen. Das Muster liegt dezent, aber sichtbar vor."
+      },
+      {
+       "nr": 5,
+       "urteil": "verworfen",
+       "grund": "Der Kern von S-11 ist nicht erfüllt: Die Ortskarten haben kein Icon und nicht zwei Zeilen. Jede Karte trägt eigenen Inhalt (Landkreis, Entfernung, ortsbezogener Text, eigener Link). Für ein Verzeichnis mit 13 Orten ist ein gleichmäßiges Raster die passende Form; ein Bento-Raster ist es nicht. Dass die Reihenfolge weder nach Entfernung noch nach Alphabet geht, ist ein Gestaltungshinweis und kein Katalogmuster."
+      },
+      {
+       "nr": 6,
+       "urteil": "anerkannt",
+       "grund": "Sechs gleich gebaute Kacheln, alle mit demselben dekorativen Häkchen-Icon, das nichts unterscheidet, und je einer kurzen Leistungszeile (m375/08, t768/04). In dem Abschnitt ist das das vorherrschende Muster, als Karten verpackt, wo eine Liste genügt. Das ist Karten-Einerlei, richtig als ein Fund je Abschnitt gezählt. Hinweis: In d1920/04 ist der Abschnitt nicht zu sehen; die Ortsangabe passt dort nicht."
+      },
+      {
+       "nr": 7,
+       "urteil": "verworfen",
+       "grund": "S-12 gilt nur für Erzählseiten; /standorte ist ein Verzeichnis. Die vier Abschnitte haben außerdem nicht dieselbe Struktur und Dichte: ein Kachelraster, eine helle Verlaufsbox mit Text und Knöpfen, eine Karteneinbettung mit Adresskarte und eine dunkle CTA-Box mit Knöpfen und Kennzeilen. Wiederholte Eyebrow-Pillen über einer H2 nennt der Katalog nicht; als Badge zählt er nur das über der Einstiegsüberschrift."
+      },
+      {
+       "nr": 8,
+       "urteil": "anerkannt",
+       "grund": "Wörtlich in Bild und Text-Datei: 'mit persönlicher Beratung vor Ort und handwerklicher Präzision'. Der Katalog nennt seine Wörter mit 'wie' nur als Beispiele. Der Schluss des sonst konkreten Satzes (Adresse, Kundengruppen, Orte) ist eine austauschbare Werbefloskel ohne prüfbaren Inhalt. Kandidat für TEXTVORSCHLAEGE.md."
+      },
+      {
+       "nr": 9,
+       "urteil": "anerkannt",
+       "grund": "Wörtlich in der Text-Datei (Karte Butzbach): 'mit höchster Präzision aus dem Lahn-Dill-Kreis'. Ein unbelegter Superlativ als Satzende; der Rest der Karte ist konkret. Die Stelle ist eine andere als der Hero-Satz, also keine Doppelzählung. Hinweis zur Ortsangabe: Der Satz steht in d1440/02 und d1440/03 am Kartenende. Ob er in d1920/02 voll sichtbar ist, habe ich nicht geprüft; die Text-Datei belegt ihn."
+      },
+      {
+       "nr": 10,
+       "urteil": "anerkannt",
+       "grund": "Aus dem JPEG gemessen (d1440/01): Grund etwa rgb(234,88,11), helle Schrift etwa 3,2:1. Rechnerisch ergibt Weiß auf #EA580C etwa 3,56:1. Die Schrift ist etwa 16 px halbfett, also kein großer Text; AA verlangt 4,5:1, der Fund ist bestätigt. Den Wert per getComputedStyle festzuhalten wäre gut, das Urteil hängt aber nicht davon ab. Zählung: Der Fund gilt für die Instanz in der Gebietskarte (m375/01, d1440/01, d1920/01). t768/05 zeigt die zweite Karteneinbettung im Abschnitt 'Unser Hauptstandort'; sie steht deshalb als eigener Fund unter den Nachträgen."
+      },
+      {
+       "nr": 11,
+       "urteil": "anerkannt",
+       "grund": "Aus dem JPEG gemessen (d1440/06, d1920/05): Grund etwa rgb(0,152,101), weiße Schrift etwa 3,5:1, rechnerisch etwa 3,7:1. Die Versalhöhe misst etwa 11 px, die Schrift ist also etwa 16 px fett und kein großer Text; nötig sind 4,5:1, der Fund ist bestätigt. Gleicher Knopf in m375/11. Zur Abgrenzung: Die dunkler grünen WhatsApp-Knöpfe (etwa rgb(1,121,86), etwa 5,1 bis 5,3:1) in d1440/07 und in der mobilen Leiste bestehen."
+      }
+     ],
+     "nachgetragen": [
+      {
+       "kennung": "S-03",
+       "hart": true,
+       "ort": "Dunkle CTA-Box 'Fliesenleger oder Badsanierung … gesucht?', Knopf '06441 / 44 83 567': d1440/06, d1920/05, m375/11",
+       "begruendung": "Weiße Schrift (etwa 16 bis 17 px fett) auf demselben hellen Orange etwa rgb(234,88,13), aus dem Bild gemessen etwa 3,25:1, rechnerisch etwa 3,56:1. Liegt unter 4,5:1 und ist ein anderes Element als Fund 10."
+      },
+      {
+       "kennung": "S-03",
+       "hart": true,
+       "ort": "Box 'Fliesenverlegung & Badsanierung in Aßlar', Knopf 'Kostenloses Vor-Ort-Aufmaß': d1440/01",
+       "begruendung": "Weiße Schrift von etwa 13 px fett auf hellem Orange etwa rgb(234,88,13), aus dem Bild gemessen etwa 3,15:1. Liegt unter 4,5:1."
+      },
+      {
+       "kennung": "S-03",
+       "hart": true,
+       "ort": "Abschnitt 'Unser Hauptstandort in Aßlar', zweite Karteneinbettung, Knopf 'Karte laden & zustimmen': d1440/05, d1920/04, t768/05, m375/10",
+       "begruendung": "Gleicher Knopf wie in Fund 10, aber in einem eigenen Abschnitt: weiß auf hellem Orange, gemessen etwa 3,2:1. Dazu verdeckt die Adresskarte den Knopf in t768/05 teilweise ('…en & zustimmen'); in m375/10 sind die Einwilligungsknöpfe gar nicht zu sehen. Die Einwilligung ist dort also nur eingeschränkt erreichbar."
+      },
+      {
+       "kennung": "S-03",
+       "hart": true,
+       "ort": "Adresskarte 'Fliesenverlegung Tezgel', Link 'Route planen': d1440/05, d1920/04, t768/05, m375/10",
+       "begruendung": "Orange Linkschrift von etwa 13 px fett auf hellgrauer Karte. Die gesättigten Pixel ergeben aus dem Bild gemessen etwa 2,8 bis 3,0:1 gegen den Kartengrund. Das liegt deutlich unter 4,5:1; bestätigen per getComputedStyle."
+      },
+      {
+       "kennung": "S-11",
+       "hart": false,
+       "ort": "Leiste vor dem Fußbereich (HWK Fachbetrieb, DIN 18534, Staubschutz-Garantie, Festpreisgarantie): d1440/07, d1440/08, d1920/06, t768/07",
+       "begruendung": "Vier gleich gebaute Einträge, jeweils Icon-Kachel, fette Überschrift und eine bis zwei Zeilen: genau die Form aus S-11. Das Element ist seitenübergreifend und steht nicht in main_zeilen; es ist deshalb dem globalen Layout zuzuordnen."
+      }
+     ]
+    }
+   }
+  },
+  "/blog": {
+   "weich": 8,
+   "hart": 4,
+   "gemeldet": 13,
+   "verworfen": 3,
+   "nachgetragen": 2,
+   "funde": [
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "m375/01.jpg, m375/03.jpg, d1440/00.jpg, d1920/02.jpg (Artikelraster, Linktexte und Badge)",
+     "begruendung": "Orangefarbener Linktext 'Artikel lesen' bzw. 'Vollständigen Leitfaden lesen' auf Weiß und weißer Kleintext auf orangem Badge 'EMPFOHLENER LEITFADEN' wirken unter 4,5:1; nur visuelle Schätzung aus dem Bild, Messung ausstehend."
+    },
+    {
+     "kennung": "S-04",
+     "hart": true,
+     "ort": "m375/11.jpg (schwebender WhatsApp-Button, Tooltip)",
+     "begruendung": "Der Tooltip 'Chat starten 💬' setzt ein Emoji als Gestaltungs- und Textmittel ein."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/00.jpg, t768/00.jpg, d1440/00.jpg, d1920/00.jpg (Hero)",
+     "begruendung": "Ein Pill-Badge 'Ratgeber & Fachwissen' mit Buchsymbol steht direkt über der Einstiegsüberschrift."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/00.jpg, t768/00.jpg, d1440/00.jpg, d1920/00.jpg (Hero-H1)",
+     "begruendung": "Die Akzentphrase 'Badsanierung Tipps' läuft als Verlauf in der Textfarbe von Orange nach Rot."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "d1440/04.jpg, d1920/03.jpg (Überschrift Abschnitt 8-Punkte)",
+     "begruendung": "Die Akzentphrase 'für Ihr Fliesenprojekt' ist im Orange-Rot-Verlauf gesetzt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "d1920/00.jpg (Seitenhintergrund oben links und rechts Mitte); d1440/00.jpg (Hero-Fläche)",
+     "begruendung": "Weiche, unscharfe Farbflecken im Hintergrund und ein apricot-rosa Verlauf in der Hero-Fläche; nur schwach sichtbar."
+    },
+    {
+     "kennung": "S-10",
+     "hart": false,
+     "ort": "m375/00.jpg, t768/00.jpg, d1440/00.jpg, d1920/00.jpg (Hero)",
+     "begruendung": "Zentrierte Überschrift, Unterzeile und zwei Knöpfe ('Projekt unverbindlich anfragen', 'Häufige Fragen') stehen vor einer weichen Verlaufsfläche."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "m375/10.jpg, m375/11.jpg, t768/05.jpg, d1440/04.jpg, d1440/05.jpg, d1920/04.jpg (Raster 8-Punkte)",
+     "begruendung": "Acht gleich gebaute Karten (Icon-Kachel, 'PUNKT 0X', Überschrift, zwei bis drei Zeilen, identische Fußzeile 'Garantierter Standard') im Raster ohne Blickfang."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "t768/05.jpg, d1440/05.jpg, d1920/04.jpg (Abschlussband über dem Footer)",
+     "begruendung": "Wörtlich: 'Überzeugen Sie sich selbst von unserer Fachqualität', eine Imperativ-Floskel nach dem Muster 'Entdecken Sie …'."
+    },
+    {
+     "kennung": "S-14",
+     "hart": false,
+     "ort": "d1440/01.jpg, d1440/02.jpg, d1440/03.jpg, d1920/00.jpg, d1920/01.jpg (Artikelbilder)",
+     "begruendung": "Glatte, warm ausgeleuchtete Badszenen mit Dampf, Pflanzen und Glasreflexen wirken wie Stock- oder KI-Renderings."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "d1440/00.jpg und d1920/00.jpg (Seitenleiste Kategorien, aktiver Eintrag 'Alle Artikel'); t768/00.jpg (Themenfilter, aktiver Chip 'Alle Themen')",
+     "begruendung": "Weißer Text in normaler Größe auf etwa #EA580C (Pixelprobe ca. 236,92,12) ergibt rund 3,6:1, das liegt unter AA 4,5:1. Es ist dieselbe Kategorie-Navigation in verschiedenen Layouts und zählt daher einmal. Geschätzt aus dem JPEG, eine Messung steht aus."
+    },
+    {
+     "kennung": "S-01",
+     "hart": true,
+     "ort": "alle Ansichten (schwebender WhatsApp-Button unten rechts, roter Zähler '1')",
+     "begruendung": "Auf dem WhatsApp-Button steht dauerhaft ein roter Benachrichtigungszähler '1'. Er kündigt eine ungelesene Nachricht an, die es für Besucher nicht gibt, ist also eine erfundene Zahl bzw. ein Platzhalterzustand."
+    }
+   ],
+   "roh": {
+    "seite": "/blog",
+    "jagd": [
+     {
+      "kennung": "S-03",
+      "hart": true,
+      "ort": "m375/01.jpg, m375/03.jpg, d1440/00.jpg, d1920/02.jpg (Artikelraster, Linktexte und Badge)",
+      "begruendung": "Orangefarbener Linktext 'Artikel lesen' bzw. 'Vollständigen Leitfaden lesen' auf Weiß und weißer Kleintext auf orangem Badge 'EMPFOHLENER LEITFADEN' wirken unter 4,5:1; nur visuelle Schätzung aus dem Bild, Messung ausstehend."
+     },
+     {
+      "kennung": "S-04",
+      "hart": true,
+      "ort": "m375/11.jpg (schwebender WhatsApp-Button, Tooltip)",
+      "begruendung": "Der Tooltip 'Chat starten 💬' setzt ein Emoji als Gestaltungs- und Textmittel ein."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "m375/00.jpg, t768/00.jpg, d1440/00.jpg, d1920/00.jpg (Hero)",
+      "begruendung": "Ein Pill-Badge 'Ratgeber & Fachwissen' mit Buchsymbol steht direkt über der Einstiegsüberschrift."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "m375/00.jpg, t768/00.jpg, d1440/00.jpg, d1920/00.jpg (Hero-H1)",
+      "begruendung": "Die Akzentphrase 'Badsanierung Tipps' läuft als Verlauf in der Textfarbe von Orange nach Rot."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "d1440/04.jpg, d1920/03.jpg (Überschrift Abschnitt 8-Punkte)",
+      "begruendung": "Die Akzentphrase 'für Ihr Fliesenprojekt' ist im Orange-Rot-Verlauf gesetzt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "d1920/00.jpg (Seitenhintergrund oben links und rechts Mitte); d1440/00.jpg (Hero-Fläche)",
+      "begruendung": "Weiche, unscharfe Farbflecken im Hintergrund und ein apricot-rosa Verlauf in der Hero-Fläche; nur schwach sichtbar."
+     },
+     {
+      "kennung": "S-10",
+      "hart": false,
+      "ort": "m375/00.jpg, t768/00.jpg, d1440/00.jpg, d1920/00.jpg (Hero)",
+      "begruendung": "Zentrierte Überschrift, Unterzeile und zwei Knöpfe ('Projekt unverbindlich anfragen', 'Häufige Fragen') stehen vor einer weichen Verlaufsfläche."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "d1440/01.jpg bis d1440/03.jpg, t768/02.jpg, t768/03.jpg, d1920/01.jpg, d1920/02.jpg (Artikelraster, zwölf Karten plus hervorgehobene Leitfaden-Karte)",
+      "begruendung": "Zwölf gleich gebaute Karten (Bild statt Icon, Kategorie-Etikett, Datum, Überschrift, Anreißer, 'Artikel lesen') bilden das vorherrschende Muster; einzige Abweichung ist die hervorgehobene Leitfaden-Karte."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "m375/10.jpg, m375/11.jpg, t768/05.jpg, d1440/04.jpg, d1440/05.jpg, d1920/04.jpg (Raster 8-Punkte)",
+      "begruendung": "Acht gleich gebaute Karten (Icon-Kachel, 'PUNKT 0X', Überschrift, zwei bis drei Zeilen, identische Fußzeile 'Garantierter Standard') im Raster ohne Blickfang."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "t768/05.jpg, d1440/05.jpg, d1920/04.jpg (Abschlussband über dem Footer)",
+      "begruendung": "Wörtlich: 'Überzeugen Sie sich selbst von unserer Fachqualität', eine Imperativ-Floskel nach dem Muster 'Entdecken Sie …'."
+     },
+     {
+      "kennung": "S-14",
+      "hart": false,
+      "ort": "d1440/01.jpg, d1440/02.jpg, d1440/03.jpg, d1920/00.jpg, d1920/01.jpg (Artikelbilder)",
+      "begruendung": "Glatte, warm ausgeleuchtete Badszenen mit Dampf, Pflanzen und Glasreflexen wirken wie Stock- oder KI-Renderings."
+     },
+     {
+      "kennung": "S-14",
+      "hart": false,
+      "ort": "d1440/01.jpg (Feinsteinzeug, Barrierefreier Balkonaustritt); d1920/02.jpg (Fliesen für Allergiker)",
+      "begruendung": "Dieselbe Bildszene (Milchglasdusche, weiße Handtuchheizung, freistehende Wanne) erscheint bei drei Artikeln aus verschiedenen Kategorien."
+     },
+     {
+      "kennung": "S-14",
+      "hart": false,
+      "ort": "t768/03.jpg, d1920/03.jpg (Artikelbild Gäste-WC)",
+      "begruendung": "Kleine blaue Piktogramm-Artefakte auf der Fliesenwand und am beleuchteten Spiegel wirken wie Bildfehler."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "Teilweise bestätigt, aus Pixelproben der JPEGs geschätzt. Der Badge-Grund 'EMPFOHLENER LEITFADEN' liegt bei etwa #EA580C (rund 234,88,12). Weiß darauf ergibt ca. 3,6:1 bei Kleintext von etwa 10 px, das reicht nicht für AA. 'Artikel lesen' ist im selben hellen Orange gesetzt, die Proben liegen bei 3,5 bis 3,8:1 auf Weiß (normale Textgröße), also unter 4,5:1. Ausnahme: 'Vollständigen Leitfaden lesen' ist dunkler (ca. 172,76,44, rund 5,5:1) und besteht. Dieser Teil des Fundes entfällt. Eine Messung im Browser steht noch aus."
+      },
+      {
+       "nr": 2,
+       "urteil": "anerkannt",
+       "grund": "In m375/11 ist der Tooltip 'Chat starten 💬' klar zu sehen. Das Emoji dient dort als Gestaltungsmittel."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "Die Pill 'Ratgeber & Fachwissen' mit Buch-Icon steht in allen vier Ansichten direkt über der H1."
+      },
+      {
+       "nr": 4,
+       "urteil": "anerkannt",
+       "grund": "Die Verlaufsschrift ist sichtbar und gemessen. 'Badsanierung' liegt bei ca. 228,84,20 (Orange), 'Tipps' bei ca. 220,52,36 (Rot)."
+      },
+      {
+       "nr": 5,
+       "urteil": "anerkannt",
+       "grund": "In d1440/04 und d1920/03 geht 'für Ihr' (Orange) sichtbar in 'Fliesenprojekt' (Rot) über. Das ist derselbe Verlaufstext-Effekt wie bei Nr. 4, steht aber in einem anderen Abschnitt und zählt deshalb eigens."
+      },
+      {
+       "nr": 6,
+       "urteil": "anerkannt",
+       "grund": "In d1920/00 sind weiche, unscharfe Pfirsich-Flecken zu erkennen, oben links (um x150/y150) und rechts in der Mitte (um x1750/y620). Dazu kommt die apricot-rosa getönte Hero-Fläche. Schwach, aber vorhanden. Das ist ein eigenes Muster (Leuchtflecken/Verlauf) und nicht dasselbe wie der Einstiegsaufbau aus Nr. 7."
+      },
+      {
+       "nr": 7,
+       "urteil": "anerkannt",
+       "grund": "Zentrierte H1, Unterzeile und zwei Knöpfe ('Projekt unverbindlich anfragen', 'Häufige Fragen') stehen in einer Karte mit weichem Verlauf, ohne Bild und ohne Bezug zum Inhalt. In allen Ansichten gleich."
+      },
+      {
+       "nr": 8,
+       "urteil": "verworfen",
+       "grund": "Fehlalarm. S-11 zielt auf gleichförmige Icon-Karten mit Überschrift und zwei Zeilen oder auf Bento-Raster ohne inhaltliche Logik. Hier steht eine Artikelübersicht: Jede Karte führt zu einem eigenen Artikel, hat ein eigenes Bild, eine Kategorie und einen Anreißer. Gleich gebaute Listeneinträge sind auf einer Blog-Übersicht inhaltlich begründet. Die Bildprobleme deckt Nr. 11 ab."
+      },
+      {
+       "nr": 9,
+       "urteil": "anerkannt",
+       "grund": "Acht identisch gebaute Karten: Icon-Kachel, 'PUNKT 0X', Überschrift, zwei bis vier Zeilen und überall dieselbe Fußzeile 'Garantierter Standard'. Kein Blickfang. Das ist das typische Icon-Karten-Einerlei. Ein Fund für den Abschnitt."
+      },
+      {
+       "nr": 10,
+       "urteil": "anerkannt",
+       "grund": "Wörtlich in der Text-Datei und in d1440/05 bzw. d1920/04: 'Überzeugen Sie sich selbst von unserer Fachqualität'. Das ist eine Werbe-Imperativfloskel vom Typ 'Entdecken Sie …'."
+      },
+      {
+       "nr": 11,
+       "urteil": "anerkannt",
+       "grund": "Die Artikelbilder sind glatte Renderings in KI-Anmutung: Dampfschwaden, hängende Pflanzen, Lichtstrahlen (Neuigkeiten, 5 Mythen), überwarme Lichtstimmung. Ein Fund für das Artikelraster. Die Bildwiederholungen aus Nr. 12 und das Bildfehler-Artefakt aus Nr. 13 sind Belege für diesen Fund."
+      },
+      {
+       "nr": 12,
+       "urteil": "verworfen",
+       "grund": "Doppelzählung. Die Beobachtung stimmt: Die Milchglas-Szene erscheint bei Feinsteinzeug, Balkonaustritt und Allergiker, die Dampf-Szene bei Undichte Dusche, Duschrinne und Schimmel. Es ist aber dasselbe Muster S-14 im selben Abschnitt (Artikelraster) wie Nr. 11 und wird dort eingerechnet."
+      },
+      {
+       "nr": 13,
+       "urteil": "verworfen",
+       "grund": "Doppelzählung zu Nr. 11, also S-14 im selben Abschnitt. Das blaue Raster-Piktogramm auf der Marmorwand in t768/03 und d1920/03 ist zwar ein echtes Bildartefakt. Die Icons am Spiegel lassen sich dagegen als Smart-Mirror-Anzeige lesen und sind kein sicherer Fehler. Der Beleg gehört zu Nr. 11."
+      }
+     ],
+     "nachgetragen": [
+      {
+       "kennung": "S-03",
+       "hart": true,
+       "ort": "d1440/00.jpg und d1920/00.jpg (Seitenleiste Kategorien, aktiver Eintrag 'Alle Artikel'); t768/00.jpg (Themenfilter, aktiver Chip 'Alle Themen')",
+       "begruendung": "Weißer Text in normaler Größe auf etwa #EA580C (Pixelprobe ca. 236,92,12) ergibt rund 3,6:1, das liegt unter AA 4,5:1. Es ist dieselbe Kategorie-Navigation in verschiedenen Layouts und zählt daher einmal. Geschätzt aus dem JPEG, eine Messung steht aus."
+      },
+      {
+       "kennung": "S-01",
+       "hart": true,
+       "ort": "alle Ansichten (schwebender WhatsApp-Button unten rechts, roter Zähler '1')",
+       "begruendung": "Auf dem WhatsApp-Button steht dauerhaft ein roter Benachrichtigungszähler '1'. Er kündigt eine ungelesene Nachricht an, die es für Besucher nicht gibt, ist also eine erfundene Zahl bzw. ein Platzhalterzustand."
+      }
+     ]
+    }
+   }
+  },
+  "/ueber-uns": {
+   "weich": 12,
+   "hart": 0,
+   "gemeldet": 13,
+   "verworfen": 3,
+   "nachgetragen": 2,
+   "funde": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Hero, Badge „Gegründet 2008 · HWK Wiesbaden“ direkt über der H1 (d1440/00, d1920/00, m375/00, t768/00; Ordner fotos/<Breite>/ueber-uns/)",
+     "begruendung": "Badge über der Einstiegsüberschrift, ein im Katalog wörtlich genanntes Klischee. Die gleiche Pillenform über Abschnittsüberschriften (Betrieb, Werte, Geschichte, Qualität) ist nicht separat gezählt, weil sie nicht am Einstieg steht."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Hero, H1 „Fliesenleger-Fachbetrieb Tezgel“ mit Farbverlauf von Orange nach Rot (d1440/00, d1920/00, m375/00, t768/00)",
+     "begruendung": "Verlaufstext auf der Einstiegsüberschrift; der Verlauf liegt nur auf dem Schlüsselbegriff und hat ohne Markenbezug keinen erkennbaren Inhaltsgrund."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Abschnitt Geschichte, H2 „Unsere Unternehmensgeschichte“ mit Verlauf Orange nach Rot (d1440/02, d1920/01, t768/02, m375/04)",
+     "begruendung": "Verlaufstext in einer Abschnittsüberschrift, eigener Abschnitt und deshalb eigener Fund."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Abschnitt Qualität, H2 „Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt“, Verlauf auf „für Ihr Fliesenprojekt“ (d1440/04, d1920/03, t768/04, m375/07)",
+     "begruendung": "Verlaufstext auf dem Schlussteil der Abschnittsüberschrift, eigener Abschnitt und deshalb eigener Fund."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Hero, weiche rosa-pfirsichfarbene Farbflächen links und rechts hinter dem Text (d1440/00, d1920/00, m375/00)",
+     "begruendung": "Aurora-artiger Hintergrund ohne Inhaltsbezug; Grenzfall, weil die Fläche schwach ausgeprägt ist und im Mobilbild kaum hervortritt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Abschnitt „Lernen Sie uns persönlich kennen“, dunkler Hintergrund mit warmem braunorangem Leuchten am oberen Rand (d1440/05, d1440/06, d1920/04, d1920/05)",
+     "begruendung": "Radiale Lichtfläche ohne Inhaltsbezug, nahe am Klischee Leuchtkugel oder Aurora; Grenzfall."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "Abschnitt Werte, sechs Karten im 3x2-Raster mit Icon, Überschrift und zwei Zeilen (d1440/01, d1920/01, t768/02, m375/03)",
+     "begruendung": "Gleichförmige Karten mit Icon, Überschrift und zwei Zeilen bilden das tragende Muster dieses Abschnitts; zählt als ein Fund für den Abschnitt."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "Abschnitt Qualität, acht Karten im 4x2-Raster mit Icon, „PUNKT 0X“-Kürzel, Überschrift, Text und identischer Fußzeile „Garantierter Standard“ (d1440/04, d1440/05, d1920/03, d1920/04, t768/04, t768/05, m375/07, m375/08, m375/10)",
+     "begruendung": "Acht gleich gebaute Karten mit identischer Fußzeile ergeben Karten-Einerlei und wirken austauschbar; zählt als ein Fund für den Abschnitt."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "Abschnitt Qualität, Box unter den Karten, H2 „Überzeugen Sie sich selbst von unserer Fachqualität“ (d1440/05, d1920/04, m375/10, m375/11; Text-Datei main_zeilen)",
+     "begruendung": "Sie-Imperativ-Floskel aus der Familie „Entdecken Sie …“; der Satz ist wörtlich im Bild und in der Text-Datei belegt."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "Abschnitt dunkler CTA, H2 „Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel.“ (d1440/06, d1920/05, m375/11; Text-Datei ueberschriften)",
+     "begruendung": "Gleiche Sie-Imperativ-Floskel als Abschlussüberschrift; der Satz ist wörtlich im Bild und in der Text-Datei belegt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Abschnitt Geschichte: großer, weicher pfirsichfarbener Farbkreis rechts neben und unter der H2 (d1440/02, d1920/01 unten rechts, d1920/02 oben rechts, t768/02 schwach um die Überschrift), dazu ein zweiter weicher Kreis links an der Zitatkarte (d1440/03 unten links, d1920/03 links)",
+     "begruendung": "Leuchtkugel-artige Farbflächen ohne Inhaltsbezug, im Hero-Fund Nr. 5 nicht enthalten, weil sie in einem anderen Abschnitt stehen. Grenzfall, weil die Flächen blass sind."
+    },
+    {
+     "kennung": "S-12",
+     "hart": false,
+     "ort": "Abschnitte Werte, Geschichte und Qualität hintereinander (d1440/01–05, d1920/01–04, t768/02–05, m375/03–10)",
+     "begruendung": "Drei aufeinanderfolgende Abschnitte haben dieselbe Struktur: Pillen-Badge, zentrierte H2, oft mit Verlauf, kurze Unterzeile und darunter weiße Karten. Die Dichte ist gleich, und auf der Erzählseite gibt es kein Bild und keinen anderen klaren Blickfang."
+    }
+   ],
+   "roh": {
+    "seite": "/ueber-uns",
+    "jagd": [
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Hero, Badge „Gegründet 2008 · HWK Wiesbaden“ direkt über der H1 (d1440/00, d1920/00, m375/00, t768/00; Ordner fotos/<Breite>/ueber-uns/)",
+      "begruendung": "Badge über der Einstiegsüberschrift, ein im Katalog wörtlich genanntes Klischee. Die gleiche Pillenform über Abschnittsüberschriften (Betrieb, Werte, Geschichte, Qualität) ist nicht separat gezählt, weil sie nicht am Einstieg steht."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Hero, H1 „Fliesenleger-Fachbetrieb Tezgel“ mit Farbverlauf von Orange nach Rot (d1440/00, d1920/00, m375/00, t768/00)",
+      "begruendung": "Verlaufstext auf der Einstiegsüberschrift; der Verlauf liegt nur auf dem Schlüsselbegriff und hat ohne Markenbezug keinen erkennbaren Inhaltsgrund."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Abschnitt Geschichte, H2 „Unsere Unternehmensgeschichte“ mit Verlauf Orange nach Rot (d1440/02, d1920/01, t768/02, m375/04)",
+      "begruendung": "Verlaufstext in einer Abschnittsüberschrift, eigener Abschnitt und deshalb eigener Fund."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Abschnitt Qualität, H2 „Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt“, Verlauf auf „für Ihr Fliesenprojekt“ (d1440/04, d1920/03, t768/04, m375/07)",
+      "begruendung": "Verlaufstext auf dem Schlussteil der Abschnittsüberschrift, eigener Abschnitt und deshalb eigener Fund."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Hero, weiche rosa-pfirsichfarbene Farbflächen links und rechts hinter dem Text (d1440/00, d1920/00, m375/00)",
+      "begruendung": "Aurora-artiger Hintergrund ohne Inhaltsbezug; Grenzfall, weil die Fläche schwach ausgeprägt ist und im Mobilbild kaum hervortritt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Abschnitt „Lernen Sie uns persönlich kennen“, dunkler Hintergrund mit warmem braunorangem Leuchten am oberen Rand (d1440/05, d1440/06, d1920/04, d1920/05)",
+      "begruendung": "Radiale Lichtfläche ohne Inhaltsbezug, nahe am Klischee Leuchtkugel oder Aurora; Grenzfall."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "Abschnitt Werte, sechs Karten im 3x2-Raster mit Icon, Überschrift und zwei Zeilen (d1440/01, d1920/01, t768/02, m375/03)",
+      "begruendung": "Gleichförmige Karten mit Icon, Überschrift und zwei Zeilen bilden das tragende Muster dieses Abschnitts; zählt als ein Fund für den Abschnitt."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "Abschnitt Qualität, acht Karten im 4x2-Raster mit Icon, „PUNKT 0X“-Kürzel, Überschrift, Text und identischer Fußzeile „Garantierter Standard“ (d1440/04, d1440/05, d1920/03, d1920/04, t768/04, t768/05, m375/07, m375/08, m375/10)",
+      "begruendung": "Acht gleich gebaute Karten mit identischer Fußzeile ergeben Karten-Einerlei und wirken austauschbar; zählt als ein Fund für den Abschnitt."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "Abschnitt Qualität, Box unter den Karten, H2 „Überzeugen Sie sich selbst von unserer Fachqualität“ (d1440/05, d1920/04, m375/10, m375/11; Text-Datei main_zeilen)",
+      "begruendung": "Sie-Imperativ-Floskel aus der Familie „Entdecken Sie …“; der Satz ist wörtlich im Bild und in der Text-Datei belegt."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "Abschnitt dunkler CTA, H2 „Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel.“ (d1440/06, d1920/05, m375/11; Text-Datei ueberschriften)",
+      "begruendung": "Gleiche Sie-Imperativ-Floskel als Abschlussüberschrift; der Satz ist wörtlich im Bild und in der Text-Datei belegt."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "Abschnitt Betrieb, Fließtext: „…persönlich, transparent und mit verbindlichem Festpreisangebot.“ (d1440/01, d1920/00, m375/01; Text-Datei main_zeilen)",
+      "begruendung": "Dreierreihung aus Adjektiven nach KI-Art, wörtlich belegt; Grenzfall, weil die Reihung auch gewöhnliche Werbesprache sein kann."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "Zitatblöcke „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“: kleiner Zitatkasten im Abschnitt Betrieb (d1440/01, m375/01) und große Zitatkarte nach dem Zeitstrahl (d1440/03, d1920/03, t768/04, m375/06; Text-Datei main_zeilen)",
+      "begruendung": "Stehende Werbefloskel, wörtlich belegt; derselbe Satz steht zusätzlich als Karte im Abschnitt Werte und in der Fußzeile und ist dort nicht gesondert gezählt. Grenzfall."
+     },
+     {
+      "kennung": "S-08",
+      "hart": false,
+      "ort": "Gesamte Seite: Karten mit Icon-Kachel, Pillen-Badges, Standardradien und weichen Schatten, Fließtext in einer neutralen Grotesk (d1440/00–07, m375/00–11)",
+      "begruendung": "Das Komponenten-Vokabular wirkt wie eine gängige Komponentenvorlage; Grenzfall, weil Überschriften eine eigene Schrift haben und die Markenakzente nicht standardmäßig sind."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "Pillen-Badge „Gegründet 2008 · HWK Wiesbaden“ steht in allen vier Ansichten direkt über der H1. Das ist das Katalogklischee „Badge über der Einstiegsüberschrift“, einmal gezählt."
+      },
+      {
+       "nr": 2,
+       "urteil": "anerkannt",
+       "grund": "Auf „Fliesenleger-Fachbetrieb Tezgel“ ist in d1440/00, d1920/00, t768/00 und m375/00 ein Verlauf von Orange nach Rot zu sehen. Einschränkung: Die Begründung „ohne Markenbezug“ stimmt nicht ganz, denn das Logo nutzt Orange und Rot. Verlaufstext bleibt trotzdem ein Klischee ohne inhaltlichen Grund."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "„Unternehmensgeschichte“ trägt in d1440/02, d1920/01, t768/02 und m375/04 sichtbar den Verlauf von Orange nach Rot. Es ist ein eigener Abschnitt, daher zu Recht ein eigener Fund."
+      },
+      {
+       "nr": 4,
+       "urteil": "anerkannt",
+       "grund": "„für Ihr Fliesenprojekt“ läuft in d1440/04, d1920/03, t768/04 und m375/07 von Orange nach Rot. Eigener Abschnitt, also keine Doppelzählung."
+      },
+      {
+       "nr": 5,
+       "urteil": "anerkannt",
+       "grund": "In d1440/00 und d1920/00 sind links und rechts im Hero weiche pfirsichfarbene Flächen zu sehen, in m375/00 und t768/00 schwach. Aurora-artiger Hintergrund ohne Inhaltsbezug, als Grenzfall vertretbar."
+      },
+      {
+       "nr": 6,
+       "urteil": "anerkannt",
+       "grund": "Der dunkle Abschnitt hat in d1440/05, d1440/06 und d1920/04, /05 oben ein braunorangenes radiales Leuchten über einem Punktraster. Das passt zur Leuchtkugel-/Aurora-Familie, als Grenzfall annehmbar."
+      },
+      {
+       "nr": 7,
+       "urteil": "anerkannt",
+       "grund": "Sechs gleich gebaute Karten (Icon-Kachel, Überschrift, zwei Zeilen) im 3x2-Raster bilden das ganze Muster des Abschnitts Werte, zu sehen in d1440/01, d1920/01 und m375/03. Ein Fund für den Abschnitt."
+      },
+      {
+       "nr": 8,
+       "urteil": "anerkannt",
+       "grund": "Acht gleich gebaute Karten mit Icon, „PUNKT 0X“, Überschrift, Text und identischer Fußzeile „Garantierter Standard“ sind in allen Ansichten belegt. Ein Fund für den Abschnitt, keine Doppelzählung mit Nr. 7."
+      },
+      {
+       "nr": 9,
+       "urteil": "anerkannt",
+       "grund": "„Überzeugen Sie sich selbst von unserer Fachqualität“ steht wörtlich in d1440/05, d1920/04 und in main_zeilen. Stehende Sie-Imperativ-Werbefloskel aus der Familie „Entdecken Sie …“."
+      },
+      {
+       "nr": 10,
+       "urteil": "anerkannt",
+       "grund": "„Lernen Sie uns persönlich kennen: …“ steht wörtlich in d1440/05, m375/11 und in ueberschriften. Gleiche Sie-Imperativ-Floskel, aber eigener Abschnitt und eigene Stelle, daher eigener Fund."
+      },
+      {
+       "nr": 11,
+       "urteil": "verworfen",
+       "grund": "„persönlich, transparent und mit verbindlichem Festpreisangebot“ ist keine Floskel aus dem Katalog und auch keine reine Adjektiv-Dreierreihung: Das dritte Glied ist eine konkrete, prüfbare Zusage (Festpreisangebot). Gewöhnliche Werbesprache, also Fehlalarm."
+      },
+      {
+       "nr": 12,
+       "urteil": "verworfen",
+       "grund": "„Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“ ist als Zitat dem Inhaber zugeschrieben und mit dem altmodischen Wort „Reklame“ erkennbar keine KI-Floskel nach S-13. Die vierfache Wiederholung ist ein Redaktionsproblem, aber kein Katalogmuster. Zudem fasst der Fund Stellen aus zwei Abschnitten zu einem zusammen und widerspricht damit der Zählregel."
+      },
+      {
+       "nr": 13,
+       "urteil": "verworfen",
+       "grund": "S-08 verlangt laut Katalog die Standardschrift als einzige Schrift. Die Überschriften haben aber sichtbar eine eigene Grotesk, die sich vom Fließtext unterscheidet, und die Farbakzente sind markenspezifisch. Karten, Pillen und Schatten sind schon über Nr. 1, 7 und 8 erfasst. Ein seitenweiter Sammelfund würde doppelt zählen."
+      }
+     ],
+     "nachgetragen": [
+      {
+       "kennung": "S-09",
+       "hart": false,
+       "ort": "Abschnitt Geschichte: großer, weicher pfirsichfarbener Farbkreis rechts neben und unter der H2 (d1440/02, d1920/01 unten rechts, d1920/02 oben rechts, t768/02 schwach um die Überschrift), dazu ein zweiter weicher Kreis links an der Zitatkarte (d1440/03 unten links, d1920/03 links)",
+       "begruendung": "Leuchtkugel-artige Farbflächen ohne Inhaltsbezug, im Hero-Fund Nr. 5 nicht enthalten, weil sie in einem anderen Abschnitt stehen. Grenzfall, weil die Flächen blass sind."
+      },
+      {
+       "kennung": "S-12",
+       "hart": false,
+       "ort": "Abschnitte Werte, Geschichte und Qualität hintereinander (d1440/01–05, d1920/01–04, t768/02–05, m375/03–10)",
+       "begruendung": "Drei aufeinanderfolgende Abschnitte haben dieselbe Struktur: Pillen-Badge, zentrierte H2, oft mit Verlauf, kurze Unterzeile und darunter weiße Karten. Die Dichte ist gleich, und auf der Erzählseite gibt es kein Bild und keinen anderen klaren Blickfang."
+      }
+     ]
+    }
+   }
+  },
+  "/kontakt": {
+   "weich": 8,
+   "hart": 1,
+   "gemeldet": 8,
+   "verworfen": 0,
+   "nachgetragen": 1,
+   "funde": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Hero oben, Ansichten m375/kontakt/00.jpg, t768/kontakt/00.jpg, d1440/kontakt/00.jpg, d1920/kontakt/00.jpg (Pille über der H1)",
+     "begruendung": "Die Pille „Fachbetrieb Aßlar · Wetzlar · Hessen“ steht direkt über der Einstiegsüberschrift und entspricht dem Katalogmuster „Badge über der Einstiegsüberschrift“."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Hero-H1 „Kontakt & Aufmaß Fliesenleger Tezgel“, Ansichten d1920/kontakt/00.jpg und d1440/kontakt/00.jpg",
+     "begruendung": "Die Zeichenfarbe läuft von „Aufmaß“ (ca. RGB 224/85/25) über „Fliesenleger“ (219/66/34) zu „Tezgel“ (215/48/42), also ein Verlaufstext und keine zwei festen Farben; an beiden Breiten an den Pixeln gemessen."
+    },
+    {
+     "kennung": "S-10",
+     "hart": false,
+     "ort": "Hero-Karte, Ansichten m375/kontakt/00.jpg, t768/kontakt/00.jpg, d1440/kontakt/00.jpg, d1920/kontakt/00.jpg",
+     "begruendung": "Zentrierte Überschrift, Unterzeile und zwei Knöpfe („Zur Express-Anfrage“ plus Telefonnummer) bilden das Einstiegsmuster; der Hintergrund ist eine weiße Karte mit zartem Pfirsich-Verlauf in zwei Ecken, deshalb nur weich."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Seitenhintergrund, Ansicht d1920/kontakt/00.jpg (rosa Flecken oben links um x 100–300, y 80–300, und rechts um x 1650–1900, y 550–750)",
+     "begruendung": "Zwei weiche rosa Unschärfe-Flecken als Hintergrunddekor ohne Inhaltsbezug, ein Leuchtkugel-artiges Muster; sehr zart (ca. RGB 250/244/244 gegen 251/251/251)."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Abschnitt „Sie möchten Ihr Bad oder Ihre Fliesen erneuern?“, Ansicht d1920/kontakt/04.jpg (oben Mitte)",
+     "begruendung": "Der dunkle Block hat einen warmen Leuchtkern oben mittig (ca. RGB 62/34/22 gegen 17/17/17 darunter) ohne Funktion, ein Aurora-artiges Glühen."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Kopfleiste der Karte „Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse“, Ansicht d1920/kontakt/02.jpg (ähnlich d1440/kontakt/03.jpg und t768/kontakt/03.jpg)",
+     "begruendung": "Dekorative Verlaufsleiste (Orange, Bernstein, Orange) ohne Funktion; ein generischer Verlauf, aber nicht Violett-Blau, deshalb ein schwacher Fund."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "Abschnitt „Ihr Vor-Ort-Aufmaß anfordern“, Schritt 1 „Welches Projekt planen Sie?“, Ansichten d1920/kontakt/03.jpg, d1440/kontakt/04.jpg, t768/kontakt/04.jpg, m375/kontakt/06.jpg und m375/kontakt/07.jpg",
+     "begruendung": "Fünf gleich gebaute Karten bilden das Hauptmuster: Icon-Kachel, kleines Etikett (SEHR BELIEBT, GROSSFORMAT, FROSTSICHER, PRÄZISION, DIN-NORM), Überschrift und ein bis zwei Textzeilen."
+    },
+    {
+     "kennung": "S-03",
+     "hart": true,
+     "ort": "Dunkler Kontaktkasten links, Überschrift „Direkter Kontakt“ zwischen Pille und Absatz, Ansichten d1920/kontakt/00.jpg und d1440/kontakt/00.jpg (t768/kontakt/00.jpg)",
+     "begruendung": "In d1920 und d1440 ist die Überschrift nicht sichtbar; der Leerraum zeigt nur den Hintergrund (Pixelstreuung etwa eine Stufe). In t768 ist sie nur als Schemen mit etwa 1,1 bis 1,25:1 Kontrast zu erkennen, weit unter 3:1 für große Schrift; die Ursache (Einblendung oder Farbe) ist im Bild nicht erkennbar."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Dunkler Kontaktkasten „Direkter Kontakt“ (Kartenfläche um die Kontaktzeilen): d1920/kontakt/00.jpg (um x 800–925, y 640–770), d1440/kontakt/01.jpg (unten links um x 130–250, y 320), t768/kontakt/00.jpg und t768/kontakt/01.jpg, m375/kontakt/01.jpg (linker Rand um y 420, oben rechts)",
+     "begruendung": "Der dunkle Kasten hat weiche warmrote Leuchtflecken ohne Funktion: gemessen 40/29/25 bzw. 32/26/26 gegen den neutralen Kartengrund 24/24/26. Das ist ein Leuchtkugel- oder Aurora-Glühen, zarter als in Fund 5, aber im Bild als rötlicher Schimmer erkennbar. Der Abschnitt ist ein anderer als in Fund 5."
+    }
+   ],
+   "roh": {
+    "seite": "/kontakt",
+    "jagd": [
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Hero oben, Ansichten m375/kontakt/00.jpg, t768/kontakt/00.jpg, d1440/kontakt/00.jpg, d1920/kontakt/00.jpg (Pille über der H1)",
+      "begruendung": "Die Pille „Fachbetrieb Aßlar · Wetzlar · Hessen“ steht direkt über der Einstiegsüberschrift und entspricht dem Katalogmuster „Badge über der Einstiegsüberschrift“."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Hero-H1 „Kontakt & Aufmaß Fliesenleger Tezgel“, Ansichten d1920/kontakt/00.jpg und d1440/kontakt/00.jpg",
+      "begruendung": "Die Zeichenfarbe läuft von „Aufmaß“ (ca. RGB 224/85/25) über „Fliesenleger“ (219/66/34) zu „Tezgel“ (215/48/42), also ein Verlaufstext und keine zwei festen Farben; an beiden Breiten an den Pixeln gemessen."
+     },
+     {
+      "kennung": "S-10",
+      "hart": false,
+      "ort": "Hero-Karte, Ansichten m375/kontakt/00.jpg, t768/kontakt/00.jpg, d1440/kontakt/00.jpg, d1920/kontakt/00.jpg",
+      "begruendung": "Zentrierte Überschrift, Unterzeile und zwei Knöpfe („Zur Express-Anfrage“ plus Telefonnummer) bilden das Einstiegsmuster; der Hintergrund ist eine weiße Karte mit zartem Pfirsich-Verlauf in zwei Ecken, deshalb nur weich."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Seitenhintergrund, Ansicht d1920/kontakt/00.jpg (rosa Flecken oben links um x 100–300, y 80–300, und rechts um x 1650–1900, y 550–750)",
+      "begruendung": "Zwei weiche rosa Unschärfe-Flecken als Hintergrunddekor ohne Inhaltsbezug, ein Leuchtkugel-artiges Muster; sehr zart (ca. RGB 250/244/244 gegen 251/251/251)."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Abschnitt „Sie möchten Ihr Bad oder Ihre Fliesen erneuern?“, Ansicht d1920/kontakt/04.jpg (oben Mitte)",
+      "begruendung": "Der dunkle Block hat einen warmen Leuchtkern oben mittig (ca. RGB 62/34/22 gegen 17/17/17 darunter) ohne Funktion, ein Aurora-artiges Glühen."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "Kopfleiste der Karte „Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse“, Ansicht d1920/kontakt/02.jpg (ähnlich d1440/kontakt/03.jpg und t768/kontakt/03.jpg)",
+      "begruendung": "Dekorative Verlaufsleiste (Orange, Bernstein, Orange) ohne Funktion; ein generischer Verlauf, aber nicht Violett-Blau, deshalb ein schwacher Fund."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "Abschnitt „Ihr Vor-Ort-Aufmaß anfordern“, Schritt 1 „Welches Projekt planen Sie?“, Ansichten d1920/kontakt/03.jpg, d1440/kontakt/04.jpg, t768/kontakt/04.jpg, m375/kontakt/06.jpg und m375/kontakt/07.jpg",
+      "begruendung": "Fünf gleich gebaute Karten bilden das Hauptmuster: Icon-Kachel, kleines Etikett (SEHR BELIEBT, GROSSFORMAT, FROSTSICHER, PRÄZISION, DIN-NORM), Überschrift und ein bis zwei Textzeilen."
+     },
+     {
+      "kennung": "S-03",
+      "hart": true,
+      "ort": "Dunkler Kontaktkasten links, Überschrift „Direkter Kontakt“ zwischen Pille und Absatz, Ansichten d1920/kontakt/00.jpg und d1440/kontakt/00.jpg (t768/kontakt/00.jpg)",
+      "begruendung": "In d1920 und d1440 ist die Überschrift nicht sichtbar; der Leerraum zeigt nur den Hintergrund (Pixelstreuung etwa eine Stufe). In t768 ist sie nur als Schemen mit etwa 1,1 bis 1,25:1 Kontrast zu erkennen, weit unter 3:1 für große Schrift; die Ursache (Einblendung oder Farbe) ist im Bild nicht erkennbar."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "In allen vier 00.jpg-Ansichten steht die Pille „Fachbetrieb Aßlar · Wetzlar · Hessen“ direkt über der H1. Das ist das Katalogmuster „Badge über der Einstiegsüberschrift“, und es ist einmal gezählt."
+      },
+      {
+       "nr": 2,
+       "urteil": "anerkannt",
+       "grund": "Nachgemessen in d1920/00.jpg: Der Median der farbigen Pixel je 30-px-Spalte läuft von x 770 bis 1370 gleichmäßig von etwa 227/90/22 nach 217/39/42. Der Grünwert fällt dabei stetig, ohne harte Stufe. Das ist ein Verlauf und keine zwei Festfarben, also Verlaufstext."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "Die Hero-Karte zeigt zentriert eine H1, eine Unterzeile und zwei Knöpfe. Dahinter liegt eine Karte, deren einziges Dekor zarte Pfirsich-Verläufe in den Ecken sind, ohne Bild oder Inhaltsbezug. Damit liegt das Einstiegsmuster vor, zu Recht als weich eingestuft. Es ist keine Doppelzählung mit Fund 1, weil es ein anderes Muster ist."
+      },
+      {
+       "nr": 4,
+       "urteil": "anerkannt",
+       "grund": "Nachgemessen in d1920/00.jpg: Bei (200,180) liegt 250/245/242, bei (1750,650) 250/244/244. Der neutrale Grund hat 251/251/251. Es sind also zwei weiche, warm getönte Flecken ohne Inhaltsbezug (Leuchtkugel-Dekor). Sie sind sehr schwach, aber vorhanden und gehören zu keinem anderen Fund."
+      },
+      {
+       "nr": 5,
+       "urteil": "anerkannt",
+       "grund": "Nachgemessen in d1920/04.jpg: Mittig oben liegen 65/33/22 (y 220) und 58/31/20 (y 300), am Rand 31–34/25/25, weiter unten 17/17/19. Das ist ein klarer warmer Leuchtkern ohne Funktion, ein Aurora-Glühen. Er ist auch in d1440/05.jpg und m375/08.jpg zu sehen; es ist dasselbe Element und einmal gezählt."
+      },
+      {
+       "nr": 6,
+       "urteil": "anerkannt",
+       "grund": "Nachgemessen in d1920/02.jpg bei y 737: Die Leiste läuft von 255/114/10 über 246/150/12 zurück nach 234/105/13, also Orange, Bernstein, Orange. Sie ist rein dekorativ. Es ist ein generischer Verlauf, aber nicht Violett-Blau; als schwacher Fund richtig eingeordnet. Dieselbe Leiste in d1440/03 und t768/03 ist einmal gezählt."
+      },
+      {
+       "nr": 7,
+       "urteil": "anerkannt",
+       "grund": "Im Abschnitt prägen fünf gleich gebaute Karten das Bild: Icon-Kachel, generisches Etikett (SEHR BELIEBT, GROSSFORMAT, FROSTSICHER, PRÄZISION, DIN-NORM), Überschrift und ein bis zwei Zeilen. Dass es Auswahlkarten sind, erklärt die Gleichförmigkeit, aber nicht die rein dekorativen Etiketten und Icon-Kacheln. Je Abschnitt ist es ein Fund, richtig gezählt."
+      },
+      {
+       "nr": 8,
+       "urteil": "anerkannt",
+       "grund": "Die H3 „Direkter Kontakt“ steht in der Text-Datei. Nachgemessen ist die Fläche zwischen Pille und Absatz in d1920/00 und d1440/00 völlig gleichförmig (Helligkeit 22–28, wie der Kartengrund); die Überschrift ist also nicht zu sehen. In t768/00 steht sie als dunkle Schrift auf dunklem Grund (Helligkeit 17–37), weit unter AA. Sichtbarer Text ist damit unlesbar, also S-03 hart. Es ist ein Element über drei Ansichten, einmal gezählt."
+      }
+     ],
+     "nachgetragen": [
+      {
+       "kennung": "S-09",
+       "hart": false,
+       "ort": "Dunkler Kontaktkasten „Direkter Kontakt“ (Kartenfläche um die Kontaktzeilen): d1920/kontakt/00.jpg (um x 800–925, y 640–770), d1440/kontakt/01.jpg (unten links um x 130–250, y 320), t768/kontakt/00.jpg und t768/kontakt/01.jpg, m375/kontakt/01.jpg (linker Rand um y 420, oben rechts)",
+       "begruendung": "Der dunkle Kasten hat weiche warmrote Leuchtflecken ohne Funktion: gemessen 40/29/25 bzw. 32/26/26 gegen den neutralen Kartengrund 24/24/26. Das ist ein Leuchtkugel- oder Aurora-Glühen, zarter als in Fund 5, aber im Bild als rötlicher Schimmer erkennbar. Der Abschnitt ist ein anderer als in Fund 5."
+      }
+     ]
+    }
+   }
+  }
+ }
+}

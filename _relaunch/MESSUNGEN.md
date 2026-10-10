@@ -8,7 +8,8 @@ Alle Zahlen mit Messbedingungen. Median aus fünf, wo gefordert. Ausgangsstand =
 | Slop hart (statisch: freie Werte S-05, Emojis S-04, Platzhalter S-01) | 479 Fundstellen | 0 | 479 |
 | Slop hart (Icon-Familien S-04) | lucide 122 Dateien + Phosphor 2 + eigene Inline-SVG 5 | eine Familie (Marken-Logos ausgenommen) | – |
 | Slop hart (S-03 Kontrast/Fokus, axe) | 1.614 Kontrast-Knoten | 0 | – |
-| Slop weich (statisch, Signaturen S-09/S-11/S-13) | 1.383 Fundstellen | −80 % (≤ 277), ≤ 2 je Hauptseite | 1.383 |
+| Slop weich (statisch, Signaturen S-09/S-11/S-13) | 1.383 Fundstellen | −80 % (≤ 277) | 1.383 |
+| Slop weich (Slop-Jäger + Opus-Gegenprüfer, Hauptseiten) | 74 (/ 16 · /bad 7 · /leistungen 15 · /standorte 8 · /blog 8 · /ueber-uns 12 · /kontakt 8) | −80 % (≤ 14), ≤ 2 je Hauptseite | 74 |
 | Jury (gewichtet, je Hauptseite) | 4,15–4,40 (/ 4,30 · /bad 4,20 · /leistungen 4,40 · /standorte 4,40 · /blog 4,35 · /ueber-uns 4,15 · /kontakt 4,40) | ≥ 8,0, keine Kategorie < 7,5 | – |
 | Blindvergleich | – | ≥ 90 % Siege | – |
 | Registerabdeckung (data-motion) | 0 Einträge, kein Register | 100 % | – |
@@ -59,7 +60,21 @@ Beleg: `belege/p0-ausgangsstand/axe.json`, `axe-zustaende.json`.
 | S-11 Icon-Kachel | 135 | 64 |
 | S-13 Floskel | 41 | 22 |
 | S-09 Hover-Anheben | 132 | 80 |
-Beleg: `belege/p0-ausgangsstand/statisch.json`. Weiche Befunde je Seite (Katalog, Opus-Gegenprüfung) folgen mit dem Slop-Jäger.
+Beleg: `belege/p0-ausgangsstand/statisch.json`.
+
+### Slop-Jäger (Bildbefund) · Hauptseiten
+Bedingungen: ≤ 30 Bildschirmhöhen-Ausschnitte je Seite über 4 Ansichten (Jury-Material) + Seitentext; Haiku zählt nach Katalog, frischer Opus-Gegenprüfer erkennt an, verwirft oder trägt nach (Workflow `tezgel-slop`). Gleiches Element in mehreren Ansichten = 1 Fund; gleichartige Karten je Abschnitt = 1 Fund.
+| Seite | weich | hart (sichtbar) | gemeldet / verworfen / nachgetragen | Schwerpunkte |
+|---|---|---|---|---|
+| / | 16 | 4 | 19 / 6 / 7 | S-09 ×8 (Verlaufstext, Glow, Badge über H1, Laufband), S-11 ×2, S-13 ×3, S-14 ×2 |
+| /bad | 7 | 0 | 9 / 2 / 0 | S-09 ×4 |
+| /leistungen | 15 | 2 | 19 / 7 / 5 | S-13 ×6, S-09 ×5 |
+| /standorte | 8 | 6 | 11 / 2 / 5 | S-03 ×6 (Kontrast), S-09 ×3 |
+| /blog | 8 | 4 | 13 / 3 / 2 | S-09 ×4 |
+| /ueber-uns | 12 | 0 | 13 / 3 / 2 | S-09 ×7 |
+| /kontakt | 8 | 1 | 8 / 0 / 1 | S-09 ×6 |
+| **Summe** | **74** | **17** | 92 / 23 / 22 | |
+Beleg: `belege/p0-ausgangsstand/slop-jaeger.json` (jeder Fund mit Ort und Begründung). Übrige Seiten: Stichprobe je Vorlage folgt in P3-00 (E-016).
 
 ## W0 · Aufräumen (cf38982, live)
 Reinraum grün · Routentabelle identisch · HTML 172/172 identisch · 211 ungenutzte CSS-Selektoren, 46 Theme-Variablen, 1 Keyframe entfallen · Texte/SEO 120 Seiten GRÜN · Live-Rauchtest grün (x-build = cf38982).

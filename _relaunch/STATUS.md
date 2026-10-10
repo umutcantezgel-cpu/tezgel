@@ -1,4 +1,4 @@
-STATUS · Phase P0 · Welle W0 live · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · Ausnahmen 0 · Elemente – · Slop hart 479 (statisch) · Jury – · Lighthouse mobil – · axe 1661 · Puffer 100 % · Nächster Schritt: Testschreiber-Pakete, Jury-Ausgangswert, Lighthouse im ruhigen Fenster, dann P0-Tor
+STATUS · Phase P0→P2 (L0 Runde 2) · live 1fc0ec3 · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · Ausnahmen 0 · Slop hart 479 (statisch) · Jury 4,15–4,40 · Lighthouse mobil 67–88 · axe 1.661 · Puffer ≈ 100 % (Planwert ≈ 9 Tage, P2-GEG-01) · Nächster Schritt: Plan Runde 2, dann Werkzeug-Welle P3-00
 
 # STATUS · Lauf 1 „Rückführung und Veredelung“ (angepasst: nur Aufwertung)
 
@@ -21,7 +21,7 @@ STATUS · Phase P0 · Welle W0 live · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · A
 - FREIGABE: nein (Auftraggeber)
 - MODELLE: Opus 5.5 (Orchestrator, Stufe 3, effort high für Unteragenten) · Haiku 5.5 (Stufe 1–2)
 - PARALLELITÄT: 5
-- BRANCH: main (Auftraggeber) · Vorab-Prüfstand: claude/kind-franklin-5y6s1d
+- BRANCH: main (Auftraggeber) · kein Vorab-Push auf andere Branches (E-005)
 - PUSH: nach jeder grünen Welle auf main (Auftraggeber)
 - ANSICHTEN: 375×812 · 768×1024 · 1440×900 · 1920×1080
 - BUDGETS: Standard
@@ -33,3 +33,4 @@ STATUS · Phase P0 · Welle W0 live · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · A
 - 2026-10-10 16:30 CEST · Werkzeuge (lib, fotos, texte, texte-vergleich, axe, lighthouse, statisch, Playwright-Tests) eingerichtet; Text-/SEO-Basis 120 Seiten, 0 kaputte Links; Kundschafter A01/A02 zurück; Richtung A gestartet.
 - 2026-10-10 16:40 CEST · Ausgangsfotos 480/480 (0 Fehler, 0 Überlauf, 0 Konsole); statische Slop-Zählung P0; W0 lokal committet (4 Pakete), Reinraum grün, HTML 172/172 identisch, Texte/SEO grün; Gegenprüfung W0 läuft; axe P0 läuft; Kundschafter A01–A05 zurück; Richtungen A/B/C laufen; 10 Testschreiber-Pakete vorbereitet.
 - 2026-10-10 16:54 CEST · W0 live (cf38982), Live-Rauchtest grün; Gegenprüfung P0-GEG-01 FREIGABE; axe-Basis 1.661 ernst/kritisch; Richtung C fertig; TEST-01/02/05 laufen.
+- 2026-10-10 18:52 CEST · Funktionstests 289 Fälle grün (Hydrierungs-Wartebedingung), Lighthouse-Basis, Richtung gewählt (E-008), KERN v1, E-009–E-013, heikle Befunde aus öffentlichen Dateien entfernt (a00fdc2), Gesamtplan Runde 1, ruhender Kern-Code (1fc0ec3) live, Live-Rauchtest grün; Gegenprüfung P2-GEG-01: mit Auflagen.

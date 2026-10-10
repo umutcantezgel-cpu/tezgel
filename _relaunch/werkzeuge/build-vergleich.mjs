@@ -18,6 +18,10 @@ const norm = (h) => h
   .replace(/data-dpl-id="[^"]*"/g, '')
   .replace(/\?dpl=[^"&]+/g, '')
   .replace(/[a-z0-9]{8,}-module__[A-Za-z0-9_-]+__variable/g, 'FONTVAR')
+  // React-useId-Werte hängen von der Baumtiefe ab (z. B. nach Umzug in eine Routen-Gruppe); Paare bleiben konsistent
+  .replace(/_R_[0-9a-z]+_/g, '_R_X_')
+  // leere Suspense-Grenzen tragen keinen Inhalt
+  .replace(/<!--\$--><!--\/\$-->/g, '')
   .replace(/\\"b\\":\\"[A-Za-z0-9_-]{15,}\\"/g, '\\"b\\":\\"X\\"')
   .replace(/\[\\"\$\\",\\"meta\\",\\"\d+\\",\{\\"name\\":\\"x-build\\",\\"content\\":\\"[^\\]*\\"\}\],?/g, '')
   .replace(/\\"\$\\",\\"([a-z]+)\\",\\"\d+\\"/g, (m, t) => `\\"$\\",\\"${t}\\",\\"N\\"`);
@@ -30,7 +34,7 @@ for (const k of Object.keys(htmlA)) if (htmlB[k]) { const a = norm(fs.readFileSy
 // Selektorlisten nur an Kommas außerhalb von Klammern trennen (z. B. shadow-[0_1px_rgba(0,0,0,.1)]).
 const trenne = (t) => { const r = []; let tiefe = 0, akt = ''; for (const c of t) { if (c === '(' || c === '[') tiefe++; if (c === ')' || c === ']') tiefe--; if (c === ',' && tiefe === 0) { r.push(akt); akt = ''; } else akt += c; } r.push(akt); return r; };
 const cssText = (d) => liste(path.join(d, 'static'), '.css').map((f) => fs.readFileSync(f, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '')).join('\n');
-const selektoren = (d) => { const s = new Set(); const css = cssText(d); for (const m of css.matchAll(/([^{}]+)\{/g)) for (const sel of trenne(m[1])) { const t = sel.trim(); if (t && !t.startsWith('@')) s.add(t); } return s; };
+const selektoren = (d) => { const s = new Set(); const css = cssText(d); for (const m of css.matchAll(/([^{}]+)\{/g)) for (const sel of trenne(m[1])) { const t = sel.trim().replace(/^\.([a-z_]+)_[0-9a-f]{8}-module__[A-Za-z0-9_-]+__(className|variable)$/, '.$1_FONT__$2'); if (t && !t.startsWith('@')) s.add(t); } return s; };
 const eigenschaften = (d) => new Set([...cssText(d).matchAll(/(--[A-Za-z0-9_-]+)\s*:/g)].map((m) => m[1]));
 const keyframes = (d) => new Set([...cssText(d).matchAll(/@keyframes\s+([A-Za-z0-9_-]+)/g)].map((m) => m[1]));
 const sa = selektoren(dir(A)), sb = selektoren(dir(B));

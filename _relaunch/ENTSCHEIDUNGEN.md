@@ -32,7 +32,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - Volle Git-Historie per `git fetch --unshallow` geladen.
 
 ## E-003 · Push-Weg
-- Vor jedem main-Push: Reinraum-Build aus `git worktree`, Invarianten, Push des Commits auf den Sitzungs-Branch `claude/kind-franklin-5y6s1d` → Vercel-Vorschau-Status grün → `git push origin HEAD:main` → Produktionsstatus → Live-Rauchtest (x-build-Meta = Commit). Bewegt sich origin/main: Merge-Commit, kein Rebase, kein Force.
+- *(ersetzt durch E-005)* Vor jedem main-Push: Reinraum-Build aus `git worktree`, Invarianten, ~~Push des Commits auf den Sitzungs-Branch → Vercel-Vorschau-Status grün~~ → `git push origin HEAD:main` → Produktionsstatus → Live-Rauchtest (x-build-Meta = Commit). Bewegt sich origin/main: Merge-Commit, kein Rebase, kein Force.
 
 ## E-004 · Node-Version
 - `.nvmrc` (20) und `engines` (>=18.17) bleiben unverändert: Die Laufzeit auf Vercel ist eine Projekteinstellung; eine Änderung wäre eine Hosting-Änderung ohne Nutzen für die Gestaltung. Lokal läuft Node 22.22 (nötig für `npm test` mit `--experimental-strip-types`). Hinweis in MENSCHEN.md.
@@ -68,7 +68,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - **Bewertung:**
   - Nordstern/Austauschprobe: A und C bestehen, B nur im Grenzfall (anderer Großformat-Betrieb könnte es übernehmen).
   - UNANTASTBAR: Die bestehende H1 von `/` lautet „Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar“ – sie ist wörtlich die Leitidee von A (Präzision je Quadratmeter = Verlegeplan). C setzt das Motto als H1 → Überschriftenänderung, nur als Vorschlag zulässig; C verliert ohne diese Geste seinen Einstieg.
-  - Skalierung: A erzeugt je Leistung eine eigene Verlegeplan-Zeichnung (6 Leistungen, 13 Fliesenseiten, Untergrund/Abdichtung, Treppen, Balkon) – Bildwelt ohne Foto, ehrlich gezeichnet, ohne erfundene Maße („=“ statt Zahl). C lebt von Kundenstimmen (27 Bewertungen, Freigabe der Namensnennung offen, M-xx) und trägt auf Rechts-, Blog- und Leistungsseiten kaum.
+  - Skalierung: A erzeugt je Leistung eine eigene Verlegeplan-Zeichnung (6 Leistungen, 13 Fliesenseiten, Untergrund/Abdichtung, Treppen, Balkon) – Bildwelt ohne Foto, ehrlich gezeichnet, ohne erfundene Maße („=“ statt Zahl). C lebt von Kundenstimmen (27 Bewertungen, Freigabe der Namensnennung offen, M-12) und trägt auf Rechts-, Blog- und Leistungsseiten kaum.
   - Bedienbarkeit: gleich (je 6); Fehler beider sind lokal behebbar. Cs Atkinson-Vorteil (1/l/I, 0/O) gilt vor allem für Nummern – diese stehen in A ohnehin in Plex Mono mit eindeutigen Formen.
   - Lauf 2: A liefert den markenbezogenen Spitzenmoment (Kreuzlinienlaser projiziert Waage und Lot über eine gezeichnete Fläche) ohne Fremdmotiv.
   - Risiko: A wirkt kühl/technisch → Gegenmittel aus C: die Hand des Inhabers (Anriss mit dem Stift ist Fliesenleger-Praxis) an echten Stimmen und Prüfhaken; Kitschgefahr von C wird durch „ein Rot, eine Geste je Abschnitt“ begrenzt.
@@ -120,3 +120,24 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - **Wahl: (1)** in P4. Texte und Kategorien wörtlich (Rechtstext), Fokusreihenfolge geprüft.
 - **Umkehrprobe:** Revert; F-11 sichert das Verhalten.
 - **Folgen zweiter Ordnung:** Das Einwilligungsverhalten selbst (Speicherung, Kategorien, Zeitpunkt) bleibt unberührt (G9); Prüfpunkte dazu stehen neutral in MENSCHEN.md.
+
+## E-014 · Vorab angekreuzte Einwilligung im Preisrechner
+- **Befund:** Die Einwilligungs-Checkbox im PricingCalculator startet angekreuzt (`useState(true)`). Eine vorab erteilte Einwilligung ist kein freiwilliges, bewusstes Ja (Fairness-Leitplanke, Rang 1 vor Bestand).
+- **Wahl:** Startwert `false` in der Kern-Darstellung (P3-10); Logik der Übermittlung unverändert. **Folge für Z-04:** ein Klick mehr in der Aufgabe „Anfrage stellen“ über den Preisrechner – begründete Abweichung, im Probeläufer-Vergleich ausgewiesen. Prüfhinweis an den Auftraggeber in MENSCHEN.md.
+- **Umkehrprobe:** ein Wert im Revert.
+
+## E-015 · Denkprotokoll: Bauweise und Freischaltung (ersetzt den „globalen Umstieg“ in P4)
+- **Ziel:** (1) nie ein halbfertiger oder gemischter Stand live – jede Seite ist live ganz alt oder ganz neu; (2) trotzdem nach jeder Welle pushen (E-000), damit nichts verloren geht; (3) kein globales Umfärben ungeprüfter Seiten (P2-GEG-01 Befund 2: ≈ 4.600 Klassenstellen über `tokens.css`-Umdeutungen); (4) neue Seiten laden nur die neuen Schriften und das neue CSS.
+- **Wege:**
+  1. *Plan Runde 1:* P3 additiv auf `/`, P4 globaler Umstieg (Tokens, Schriften, Schale für alle), P5 Körper je Cluster. → Mischstände live (neue `/` unter altem Kopf; neue Schale über orangen Körpern auf 113 Seiten), großes Umfärbe-Risiko.
+  2. *Schale per Pfad wählen* (Client-Weiche mit `usePathname`, beide Schalen im RSC-Paket aller Seiten) + Schalter je Phase. → doppelte Schale in jeder Seite, alle vier Schriftfamilien überall, Weiche im Client.
+  3. *Zwei Routen-Gruppen mit je eigenem Root-Layout:* `src/app/(bestand)/` (heutiges Layout unverändert: Schale, Inter/Jakarta, `globals.css`) und `src/app/(kern)/` (neues Layout: Kern-Schale, Archivo/Plex, eigenes CSS `kern-global.css` mit `@source` nur auf Kern-Code). Neue Seiten entstehen ruhend im privaten Ordner `src/app/(kern)/_entwurf/<route>/` (Unterstrich = nicht geroutet), werden gebaut, typgeprüft, gelintet und gepusht, sind aber nicht erreichbar. **Freischaltung** einer Seite oder eines Clusters = ein Commit, der `_entwurf/<route>` nach `(kern)/<route>` verschiebt und `(bestand)/<route>` entfernt. Getestet wird vorher der **Kandidat**: Reinraum-Kopie + dasselbe Freischalt-Skript (`werkzeuge/freischalten.sh`), also Byte für Byte der spätere Live-Stand. 404 für unbekannte Adressen über `app/global-not-found.tsx` (experimentell, `experimental.globalNotFound`), das die Bestands-Schale rendert, bis die letzte Seite umgezogen ist.
+- **Bewertung:** (3) erfüllt alle vier Ziele: Seiten sind live nie gemischt; Wellen pushen ruhenden Code; alte Seiten behalten ihr CSS unverändert (`globals.css` bekommt nur `@source not` für Kern-Ordner, damit ihr CSS byte-gleich bleibt), neue Seiten tragen nur Kern-CSS und zwei Schriften; framer-motion, lucide, `tokens.css`, Inter/Jakarta und die alte Schale fallen am Ende mit dem letzten Bestandsnutzer weg (E-009/E-010 vereinfacht, P2-GEG-01 Befund 10 erledigt). Nachteil: Wechsel zwischen alter und neuer Seite lädt die Seite voll neu (verschiedene Root-Layouts) – nur in der Übergangszeit, unkritisch. Risiko: `global-not-found` ist experimentell → Kandidat-Prüfung mit Status 404 und Funktionstest F-17; Rückfall: Weg 2 nur für die 404.
+- **Wahl: (3).** Ablauf je Phase: ruhende Wellen → Kandidat-Tor (vollständig) → Freischalt-Commit → Push → Live-Rauchtest. Der Umzug des Bestands nach `(bestand)` ist ein eigener, inhaltsneutraler Schritt (P3-00): HTML aller 172 Dateien normalisiert identisch, Pixel 0.
+- **Umkehrprobe:** Revert des Freischalt-Commits stellt die Bestandsseite wieder her (sie liegt bis zum Aufräumen am Phasenende in der Historie und im Kandidat-Vergleich). Der Umzug selbst ist per Revert umkehrbar.
+- **Folgen zweiter Ordnung:** (1) P4 heißt nun „Fundament“ ohne globalen Umstieg: vollständige Kern-Bausteine, Vorlagen, Verlegepläne, Icons, Wege (308/410) – die Freischaltungen geschehen clusterweise in P5. (2) Interne Links zwischen alten und neuen Seiten bleiben gleich (URLs unverändert). (3) Metadaten-Vorgaben des Root-Layouts werden in ein gemeinsames Modul gezogen und von beiden Layouts genutzt (JSON-LD-Hash-Invariante). (4) Die Startklasse (Kopfskript) steht nur im Kern-Layout. (5) Dokumentation: Zusammenführen entfällt (main), am Ende von P5 werden `(bestand)` und alle Altbausteine entfernt.
+
+## E-016 · Slop-Basis: Umfang
+- **Ziel:** belastbare Basis für Z-07 ohne 240 Agenten.
+- **Wahl:** Hart über alle Dateien per `statisch.mjs` (479), weich (a) über alle Dateien per `statisch.mjs` (1.383) und (b) per Slop-Jäger + Opus-Gegenprüfer auf einer festen Stichprobe: 7 Hauptseiten (74, MESSUNGEN) + je Vorlage zwei Seiten (P3-00, ≈ 22 Seiten). Die Abnahme vergleicht dieselbe Stichprobe vorher/nachher; am Ende zusätzlich Slop-Jäger über die Grundmenge in allen Ansichten (Z-07).
+- **Umkehrprobe:** Stichprobe ist fest in `belege/p0-slop-args.json` und folgender Datei; erweiterbar.

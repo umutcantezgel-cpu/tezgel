@@ -15,7 +15,7 @@ Du hast zwei Aufträge geschickt: Lauf 1 „Rückführung und Veredelung“ und 
 | Ablauf Lauf 1 | Rückführung und Veredelung | **Nur aufwerten.** P1 Verlustatlas entfällt. Z-01 und Z-02 stehen als „ENTFÄLLT – Entscheidung des Auftraggebers“ (mit Zitat) in ABNAHME.md; das ist keine AUSNAHME. Tezgel-Stände in Git dienen nur zum Nachschlagen. |
 | Aufräumen | G4: entfernen nur mit Ersatz | **Entfernen erlaubt**, mit Protokoll, für: (a) Reste der Vorgängerfirma · (b) Prompt- und Pipeline-Dokumente · (c) Export-Ordner · (d) Logs, Vorlagen, Altkonfig. Für Gestaltungsmerkmale (WaterCursor, Marquee, Glow-Orbs …) gilt G4 weiter: Ersatz oder begründeter Eintrag in ENTSCHEIDUNGEN.md. |
 | Push | nie | **Nach jeder Welle auf `main` (= live)**, nur nach grünem Tor (siehe „Push-Tor“). Sinngemäß auch in Lauf 2; am Freigabepunkt A2 änderbar. |
-| Branch | `relaunch/rueckfuehrung-veredelung` | **`main`.** Der Sitzungs-Branch `claude/kind-franklin-5y6s1d` dient nur als Vorab-Prüfstand für die Vercel-Vorschau vor jedem main-Push. |
+| Branch | `relaunch/rueckfuehrung-veredelung` | **`main`.** Kein Vorab-Push auf andere Branches (E-005: blockierte die Produktion); Vorprüfung ausschließlich über den Reinraum-Build. |
 | Freigabe Lauf 1 | Halt nach P2 | **Vollautonom.** Die Richtung wird per Denkprotokoll festgeschrieben. |
 | Lauf 2 | – | **Direkt anschließen.** Halt nach A2 (`WARTET AUF FREIGABE`). |
 | `_relaunch/` | nur lokal | **Ins Repo**, mit zwei begründeten Einschränkungen (siehe unten). |
@@ -99,8 +99,8 @@ Du hast zwei Aufträge geschickt: Lauf 1 „Rückführung und Veredelung“ und 
      - Überlauf bei 320/360/390/768/1024/1280/1440
      - Pixelvergleich außerhalb der Welle; bei globalen Wellen stattdessen Invarianten und Jury-Stichprobe
   5. `git fetch origin main`. Hat sich main bewegt: Merge-Commit (kein Rebase, kein Force), dann Tor neu.
-  6. Push auf `claude/kind-franklin-5y6s1d`, dann den Vercel-Status per GitHub abwarten (alle 20 s, höchstens 10 min).
-  7. Ist er grün: `git push origin HEAD:main`. Danach Produktionsstatus abwarten und Live-Rauchtest:
+  6. (entfällt nach E-005: kein Vorab-Push auf den Sitzungs-Branch.)
+  7. `git push origin HEAD:main`. Danach Produktionsstatus abwarten und Live-Rauchtest:
      - `<meta name="x-build">` mit `VERCEL_GIT_COMMIT_SHA` gleich dem gepushten Commit (die Meta-Zeile kommt in W0)
      - Hauptseiten 200, `/gibt-es-nicht` 404
      - `/sitemap.xml`, `/robots.txt`, `/llms.txt` erreichbar
@@ -279,7 +279,7 @@ Dazu:
   - `WARTET AUF FREIGABE` in `_relaunch/ausbau/PRUEFPUNKT.md`, Routine löschen.
 
 ## Risiken
-- **Live zwischen den Wellen:** P3 bleibt auf `/` begrenzt, P4 ist der globale Umstieg, P5 geht clusterweise vor. Vorab-Vorschau, Reinraum-Build, Live-Rauchtest, Revert.
+- **Live zwischen den Wellen:** P3 bleibt auf `/` begrenzt, P4 ist der globale Umstieg, P5 geht clusterweise vor. Reinraum-Build, Live-Rauchtest, Revert (E-005). Überarbeitet in Gesamtplan Runde 2 (E-015).
 - **Harte S-01-Behauptungen im unantastbaren Fließtext:** Sie gehen nach TEXTVORSCHLAEGE und MENSCHEN. Bleiben sie offen, wird Z-07 nach L7 zur AUSNAHME mit Begründung.
 - **Bildmaterial:** Typografie und SVG-Formsystem tragen die Gestaltung. Ehrliche Alt-Texte, einheitliche Behandlung, keine Retusche. Echte Baustellenfotos werden angefragt.
 - **Messrauschen** im Container: Median aus 5, ruhiges Messfenster, Bedingungen notiert. Live-Lighthouse ist nicht maßgeblich.
@@ -300,7 +300,7 @@ Dazu:
 
 ---
 
-# Gesamtplan P3–P7 (L0 Runde 1 · Kern v1 · 10.10.2026)
+# Gesamtplan P3–P7 (L0 Runde 1 · Kern v1 · 10.10.2026) — ERSETZT durch Runde 2 unten (P2-GEG-01)
 
 ## Mengengerüst
 | Größe | Menge | Quelle |
@@ -356,3 +356,85 @@ Volltest 8 Ebenen, BERICHT mit Galerie, KERN als Dokumentation, README/DESIGN_SY
 - Kapazität (Formel): Tage = 113 ÷ (5 × 4 Wellen/Tag) × 1,2 ≈ **6,8 Tage**.
 - Kritischer Pfad: P3-01/02 → P3-03 → P3-06 → P3-12 → P4-01/02 → P4-08 → P4-15 → P5 W1…W10 (nacheinander, je Welle ein Push) → P6 → P7.
 - Vorrat (V-01…V-06) ist den Wellen zugeordnet.
+
+---
+
+# Gesamtplan P3–P7 · L0 Runde 2 (Kern v1.1 · 10.10.2026, nach P2-GEG-01)
+
+## Grundsätze (neu)
+1. **Bauweise E-015:** Bestand liegt unverändert in `src/app/(bestand)/` (eigenes Root-Layout, altes CSS, alte Schriften), das Neue in `src/app/(kern)/` (eigenes Root-Layout, `kern-global.css`, Archivo/Plex, Kopfskript). Neue Seiten entstehen **ruhend** in `src/app/(kern)/_entwurf/<route>/` (nicht geroutet) und werden mit einem **Freischalt-Commit** live (verschieben nach `(kern)/<route>`, `(bestand)/<route>` entfernen). Kein globaler Umstieg, keine gemischten Seiten live.
+2. **Push:** Jede Welle pusht ruhenden Code nach grünem Reinraum-Tor (E-000, E-005). Jede Freischaltung pusht erst nach grünem **Kandidat-Tor** (Reinraum-Kopie + dasselbe Freischalt-Skript = späterer Live-Stand).
+3. **Kandidat-Tor** (je Freischaltung): Reinraum (`npm ci`, Build, Typen, Lint, Test, qa:graph, Routen, Tracing) · Funktionstests aller betroffenen F + Test-Sperrklinke · Text v2 (Build-HTML + Zustände; nur Einträge aus `MIKROTEXTE.md` dürfen abweichen; „hinzu“ in Überschriften rot) · SEO-Invarianten · Logo-Hash · axe + a11y-Zusatz (Tastatur, Reflow 320, Zoom 200 %, Textabstände, forced-colors, ohne JS) · Überlauf 320–1920 · Bewegung (Register, Framezeiten 4×, LoAF, reduziert) · SVG-Prüfung · Pixel **0 auf allen nicht freigeschalteten Seiten** (4 Ansichten, Masken, A/A-Lauf) · Lighthouse verschränkt (Ausgang/Kandidat abwechselnd, 5 bzw. 10 im Grenzbereich) auf betroffenen Hauptseiten, sonst JS-Bytes je Route · Slop (statisch + Jäger auf der Stichprobe) · Jury 3 + Lockvogel auf freigeschalteten Hauptseiten (intern Ziel 8,4) · Sperrklinke je Seite: axe-Knoten, Überlauf, Konsole nie schlechter.
+4. **Testordnung:** Fälle und `expect` je Spec ≥ Vorstand, `fixme`/`skip` ≤ Vorstand (11); Formular-IDs und `name` bleiben (Alias, wenn nötig); Selektor-Anpassungen nur in Testschreiber-Paketen mit Opus-Gegenprüfung; Erfolgstexte nur über `MIKROTEXTE.md`; Mutationsprobe je umgestelltem Formular, nur in der Reinraum-Kopie.
+5. **Schreibrechte:** Paket-Kopfzeile listet Dateien; `commit.sh` nimmt nur Dateien und gleicht sie ab; Unteragenten: keine git-Schreibbefehle, kein `npm install/uninstall`, kein Build/Start, kein POST; `git status`-Vergleich zu Wellenbeginn/-ende; Tar-Schnappschuss `src`/`public` vor jeder Welle in `cache/`.
+6. **Messordnung:** Messfenster ohne Unteragenten; Lighthouse/Jury nur an Kandidat-Toren; Kapazität mit Puffer (unten).
+
+## P3-00 · Werkzeuge, Basis, Umzug (eine Welle, vor allem anderen)
+| Kennung | Inhalt | Wer | Kriterium |
+|---|---|---|---|
+| P3-00a | `bewegung.mjs`: Register-Abgleich `data-motion`, `getAnimations`, Bildfolgen, Framezeiten bei 4× CPU (CDP), LoAF, reduziert | Opus | Z-09 |
+| P3-00b | `svg.mjs` + `svgo-statisch.json`/`svgo-animiert.json`: viewBox, currentColor, IDs eindeutig, Größenbudgets, a11y | Haiku | Z-10 |
+| P3-00c | `a11y-zusatz.mjs`: Tastatur-Durchlauf (Reihenfolge, Fokus sichtbar, keine Falle), Reflow 320, Zoom 200 %, Textabstände 1.4.12, forced-colors-Foto, Lauf ohne JS | Opus | Z-11 |
+| P3-00d | `lighthouse.mjs`: INP-Zeitspannen (Menü, Formular, Seitenwechsel, 4×), verschränkter Modus, LCP-Element im Ergebnis | Opus | Z-12 |
+| P3-00e | `texte2.mjs`: Textknoten aus Build-HTML (alle 172), Normalisierung (Leerraum, U+00AD, kein text-transform), Zustände im Browser (Banner Erstbesuch + Einstellungen, Menüs offen), Vergleich gegen `MIKROTEXTE.md`; `literal.mjs`: AST-Vergleich der String-Literale je Datei (Selbstprüfung ohne Build) | Opus | Z-05, Z-06 |
+| P3-00f | `pixel.mjs`: 4 Ansichten, Masken (Öffnungsstatus, Kalender, Jahr, Karussell), A/A-Pflichtlauf | Orchestrator | Z-13 |
+| P3-00g | Basis am Ausgangsbuild: Probeläufer Z-04 (5 Aufgaben × mobil/Desktop × Touch/Maus/Tastatur, Schritte + Zeit), Fünf-Sekunden-Probe (5 Haiku-Erstbetrachter je Hauptseite), INP, LCP-Element + CLS-Ursache je Hauptseite, Slop-Jäger-Stichprobe je Vorlage (E-016), Bewegungs-Basis | Haiku ×2 + Orchestrator | Z-04, Z-07, Z-12 |
+| P3-00h | Umzug Bestand → `(bestand)` mit `umzug-bestand.py` (erprobt: HTML 172/172 normalisiert gleich, 404-Status gleich), `global-not-found`, `@source not` für Kern-Ordner | Orchestrator | Z-05 |
+| P3-00i | Härtung: `commit.sh` (nur Dateien, Abgleich Kopfzeile), `server.sh` (Abbruch bei `RESEND_API_KEY` oder `.env*` außer `.env.example`), `testzahl.mjs` (Sperrklinke), `freischalten.sh` + `reinraum.sh --kandidat`, Live-Rauchtest im Browser (lesend, Anfragesperre, ≤ 1/s, Konsole/Hydration/CSP) | Orchestrator | Z-03, Z-05 |
+| P3-00j | `MIKROTEXTE.md` (Freigabeliste: Klassen nach KERN v1.1 K-012) + S-13-Vorschlagspaket für TEXTVORSCHLAEGE (41 Floskeln, 22 Dateien) | Haiku + Opus-Gegenprüfer | Z-07 |
+
+## P3 · Durchstich `/` mit Kern-Schale (ruhend, dann eine Freischaltung)
+| Kennung | Inhalt (Dateien) | Wer | hängt ab | Kriterium |
+|---|---|---|---|---|
+| P3-01 | Schriften fertig (Fallback-Metriken auch für Plex), Einbindung im Kern-Layout | Orchestrator | P3-00h | Z-12 |
+| P3-02 | `(kern)/layout.tsx`, `kern-global.css` (`source(none)` + Kern-Ordner), gemeinsames Metadaten-Modul, Kopfskript, `BewegungsRegie` | Orchestrator | P3-01 | Z-05, Z-09 |
+| P3-03 | Kern-Grundbausteine `src/components/kern/basis/` (Knopf, Textlink, Feld, Auswahl, Checkbox, Akkordeon, Hinweis, Etikett, Feldraster, Fugenlinie) mit allen Zuständen | Opus | P3-02 | Z-11, Z-07 |
+| P3-04 | Icon-Grundsatz (≈ 20) + Sprite + `Icon` + Abbildung `iconMapper` | Opus | P3-02 | Z-10, Z-07 |
+| P3-05 | Motive Verlegeplan Start, Fugenkreuz, Trenner, Muster | Orchestrator | P3-02 | Z-10 |
+| P3-06 | Kern-Kopf, Mega-Menü, Mobilmenü (vor Hydrierung bedienbar, V-06) | Opus | P3-03/04 | Z-03 F-13, Z-11 |
+| P3-07 | Kern-Fuß mit Schriftfeld, untere Leiste, WhatsApp-Kanal (E-012) | Opus | P3-03/04 | Z-03 F-10/F-15 |
+| P3-08 | Kern-Einwilligungsbanner (E-013, wörtlich, nie LCP-Element) + Karten-Platzhalter | Opus | P3-03 | Z-03 F-11/F-12, Z-12 |
+| P3-09 | Einstieg `/` mit SIG-1 Kreuzlinie, Schriftfeld, Mobilkomposition | Orchestrator | P3-05/06 | Z-08, Z-09, Z-12 |
+| P3-10 | Fachbereiche + Leistungen mit Plan-Vignetten | Opus | P3-04/05 | Z-07, Z-10 |
+| P3-11 | Ablauf mit Prüfhaken (`auftritt`, keine Signatur) + Großformat-Abschnitt | Opus | P3-05 | Z-07, Z-09 |
+| P3-12 | Vertrauen: Stimmen mit Anriss, Bewertungs-Karussell (F-19), Einzugsgebiet/Karte | Opus | P3-03/08 | Z-03 F-19 |
+| P3-13 | Anfrage-Einstiege in Kern-Erscheinung: HeroContactForm, PricingCalculator (E-014), Funnel, Abschluss (Logik unverändert) | Opus | P3-03 | Z-03 F-01–F-03, Z-04 |
+| P3-14 | Testschreiber: Kern-Varianten von F-01–F-03, F-10–F-15, F-19 (Sperrklinke) + Opus-Gegenprüfer | Haiku + Opus | P3-06–P3-13 | Z-03 |
+| P3-15 | FAQ + Zusammensetzen `(kern)/_entwurf/page.tsx` | Orchestrator | alle | – |
+| P3-16 | Kandidat-Tor `/` → Freischalt-Commit → Push → Live-Rauchtest → M-06 Geräteprobe (Prüfliste) | Orchestrator | P3-15 | alle Z auf `/` |
+
+## P4 · Fundament (ruhend; Bausteine für P5)
+| Kennung | Inhalt | Wer | Kriterium |
+|---|---|---|---|
+| P4-01 | Vorlage Fachseite (Einstieg, Faktenfeld, Tabelle, Ablauf, FAQ, Abschluss, Querverweise) | Opus | Z-07, Z-13 |
+| P4-02 | Vorlagen Cluster-Übersicht, Liste, Artikel, Detail (Musterbad/Referenz) | Opus | Z-07, Z-13 |
+| P4-03a–c | Verlegepläne je Leistung (3 × ≈ 5) | Opus | Z-10 |
+| P4-04 | Icon-Vollsatz (≈ 30) | Opus | Z-10 |
+| P4-05a–b | Kern-Erscheinung übrige Formulare: BadanfrageFunnel, BadProjektCheck, FliesenKonfigurator, BookingCalendar, Termin, LeadQuickForm (Logik unverändert) | Opus | Z-03 |
+| P4-06 | Testschreiber für P4-05 + Mutationsprobe (Reinraum) + Opus-Gegenprüfer | Haiku + Opus | Z-03 |
+| P4-07 | Wege: `redirects()` 308 (2 Ziele) + 410 über `proxy.ts` mit engem `matcher`, Test „Hauptseiten laufen nicht durch den Proxy“ | Orchestrator | Z-06 |
+
+## P5 · Freischaltung je Cluster (je Welle: ruhende Pakete → Kandidat-Tor → Freischaltung → Push)
+| Welle | Pakete (Seiten) | Wer |
+|---|---|---|
+| W1 Bad | P5-W1-01 `/bad` (SIG-2) · -02 badsanierung, bad-aus-einer-hand · -03 barrierefreies-bad, fliesen · -04 badanfrage, badplaner · -05 projekt-check | Opus 01, 05 · Haiku nach Muster 02–04 |
+| W2 Leistungen | -01 `/leistungen` (SIG-3) · -02 `[id]` (Vorlage, 4) · -03 `[id]/[stadt]` (Vorlage, 52 HTML) | Opus · Opus · Haiku |
+| W3 Standorte | -01 `/standorte` (CLS-Ursache beheben) · -02 `[stadt]` (Vorlage, 10) | Opus · Haiku |
+| W4 Fliesen | -01 `/fliesen` · -02…-05 Fachseiten (je 3–4 von 13) · -06 konfigurator | Opus · Haiku ×4 · Opus |
+| W5 Fachthemen | -01 Untergrund (6) · -02 Balkon (4) · -03 Naturstein (3) · -04 Treppen (4) · -05 Reparatur, Schadensanalyse · -06 `/foerderung` | Haiku nach Vorlage, Opus-Stichprobe |
+| W6 Blog | -01 Liste (TBT/LCP) · -02 Artikel-Vorlage (10) | Opus · Haiku |
+| W7 Musterbäder, Referenzen | -01/-02 Musterbäder Liste + Detail · -03/-04 Referenzen Liste + Detail | Haiku nach Vorlage |
+| W8 Firma | -01 ueber-uns · -02 unternehmen, team · -03 karriere ×2 · -04 partner, ausstellung ×2 | Opus 01 · Haiku |
+| W9 Arbeitsseiten | -01 kontakt (V-02) · -02 termin · -03 beratung, faq · -04 preise, downloads · -05 login | Opus 01–02 · Haiku |
+| W10 Recht + Abschluss | -01 Rechtsseiten (6, nur Darstellung) · -02 Kern-404 (`global-not-found` im Kern) · -03 Aufräumen: `(bestand)`, alte Bausteine, framer-motion, lucide, `tokens.css`, Inter/Jakarta (knip, Denkprotokoll) | Haiku · Opus · Orchestrator |
+
+## P6 · Feinschliff (≈ 8 Pakete)
+Mikrointeraktionen und Zustände, Auswahlfarbe, Teilen-Bilder (OG) im Formsystem, Konsistenzdurchgang, Signaturmomente schärfen, Blindvergleich (L8), optional View Transitions nur mit Messgewinn und Tests (Zurück, Anker, Fokus). Favicon: nur Vorschlag (Logo-Figur unantastbar, M-09). Tor Z-08.
+
+## P7 · Abnahme (≈ 6 Pakete) – wie Runde 1.
+
+## Summe, Kapazität, kritischer Pfad
+- Pakete: P3-00 10 + P3 16 + P4 10 + P5 40 + P6 8 + P7 6 = **90**.
+- Formel des Auftrags: 90 ÷ (5 × 4) × 1,2 ≈ **5,4 Tage**. Über die Abhängigkeiten (Wellen nacheinander, Tore, Messfenster): P3-00 1 + P3 4 + P4 2 + P5 15 + P6 3 + P7 2 = 27 Wellen ÷ 4 je Tag × 1,2 ≈ **8,1 Tage**. **Planwert = 8–9 Tage** (Maximum), Puffer in STATUS, Abweichung im Morgenbericht.
+- Kritischer Pfad (Orchestrator-Spur): P3-00h → P3-01 → P3-02 → P3-05 → P3-09 → P3-15 → P3-16 → P4-01 → P5 W1 … W10 (Kandidat-Tore nacheinander) → P6 → P7.
+- Vorrat: V-01…V-06 den Wellen zugeordnet (V-02 W9, V-03 P4-05, V-04 P4-07, V-05 W9, V-06 P3-06).
