@@ -2,7 +2,9 @@
 // Zusätzlich je Seite (Index-Schlüssel "/pfad" bzw. "/pfad@ansicht") und Block (header, main, footer, dialog:…) die Wortfolgen per LCS:
 // entfernte und hinzugefügte Wortspannen, zusammenhängend, mit je 5 Wörtern Kontext. Sätze ohne Feld bloecke werden dafür nicht geprüft.
 // Erlaubte Änderungen (protokollierte Mikrotexte) stehen in einer JSON-Liste, in zwei Formaten:
-//   Zeilen:  [{ "seite": "*"|"/pfad", "alt": "…", "neu": "…"|null }]
+//   Zeilen:  [{ "seite": "*"|"/pfad", "alt": "…", "neu": "…"|null, "teil": "main_zeilen"|"header_zeilen"|…, "ansicht": "d1440"|"m390" }]
+//            (teil und ansicht sind optional und engen den Eintrag ein; fehlen sie, gilt er für alle Teile bzw. Ansichten;
+//             für entfernte Zeilen gilt nur ein Eintrag ohne "neu"; "vermerk" wird nicht ausgewertet und nennt den Beleg)
 //   Spannen: [{ "seite": "*"|"/pfad", "block": "*"|"main"|…, "entfernt": "…", "hinzugefuegt": "…" }]  (block fehlt = "*")
 // "seite" ist der Pfad und gilt für alle Ansichten. Ein Eintrag mit entfernt/hinzugefuegt gehört zur Spannenregel.
 // ROT wenn: Zeilen entfernt, SEO-Abweichung, Sitemap- oder robots-Änderung, kaputte interne Links oder unerlaubt entfernte Wortspannen.
@@ -30,7 +32,9 @@ const dateiVon = (k) => { const [p, a] = k.split('@'); return slug(p) + (a ? `@$
 const lade = (ordner, k) => JSON.parse(fs.readFileSync(path.join(ordner, 'texte', dateiVon(k)), 'utf8'));
 const multiset = (arr) => { const m = new Map(); for (const x of arr) m.set(x, (m.get(x) || 0) + 1); return m; };
 const differenz = (a, b) => { const mb = multiset(b); const r = []; for (const x of a) { const n = mb.get(x) || 0; if (n > 0) mb.set(x, n - 1); else r.push(x); } return r; };
-const istErlaubt = (seite, alt, neu) => zeilenErlaubt.some((e) => (e.seite === '*' || e.seite === seite) && (e.alt === alt || e.alt === undefined) && (e.neu === neu || e.neu === undefined));
+const ansichtVon = (k) => k.split('@')[1] || 'd1440';
+const istErlaubt = (seite, alt, neu, teil, ansicht) => zeilenErlaubt.some((e) => (e.seite === '*' || e.seite === seite) && (e.alt === alt || e.alt === undefined) && (e.neu === neu || e.neu === undefined)
+  && (e.teil === undefined || teil === undefined || e.teil === teil) && (e.ansicht === undefined || ansicht === undefined || e.ansicht === ansicht));
 const norm = (t) => String(t ?? '').split(/\s+/).filter(Boolean).join(' ');
 
 // LCS-Differenz zweier Wortfolgen: Indizes der Wörter, die nur in a (entfernt) bzw. nur in b (hinzu) stehen.
@@ -96,13 +100,14 @@ for (const k of Object.keys(ia.seiten)) {
   const seite = pfadVon(k);
   const a = lade(vorherOrdner, k), b = lade(nachherOrdner, k);
   const e = {};
-  for (const f of felderMeta) if (a[f] !== b[f] && !istErlaubt(seite, a[f], b[f])) e[f] = { alt: a[f], neu: b[f] };
+  const ansicht = ansichtVon(k);
+  for (const f of felderMeta) if (a[f] !== b[f] && !istErlaubt(seite, a[f], b[f], f, ansicht)) e[f] = { alt: a[f], neu: b[f] };
   if (a.status !== b.status) e.status = { alt: a.status, neu: b.status };
   if (a.jsonld_hash !== b.jsonld_hash) e.jsonld = 'geändert';
-  if (JSON.stringify(a.h1) !== JSON.stringify(b.h1) && !istErlaubt(seite, a.h1.join(' | '), b.h1.join(' | '))) e.h1 = { alt: a.h1, neu: b.h1 };
+  if (JSON.stringify(a.h1) !== JSON.stringify(b.h1) && !istErlaubt(seite, a.h1.join(' | '), b.h1.join(' | '), 'h1', ansicht)) e.h1 = { alt: a.h1, neu: b.h1 };
   for (const teil of ['main_zeilen', 'header_zeilen', 'footer_zeilen', 'alt', 'ueberschriften']) {
-    const weg = differenz(a[teil].map(String), b[teil].map(String)).filter((x) => !istErlaubt(seite, x, undefined));
-    const neu = differenz(b[teil].map(String), a[teil].map(String)).filter((x) => !istErlaubt(seite, undefined, x));
+    const weg = differenz(a[teil].map(String), b[teil].map(String)).filter((x) => !istErlaubt(seite, x, undefined, teil, ansicht));
+    const neu = differenz(b[teil].map(String), a[teil].map(String)).filter((x) => !istErlaubt(seite, undefined, x, teil, ansicht));
     if (weg.length || neu.length) e[teil] = { entfernt: weg, hinzu: neu };
     bericht.summe.entfernt += weg.length; bericht.summe.hinzu += neu.length;
   }

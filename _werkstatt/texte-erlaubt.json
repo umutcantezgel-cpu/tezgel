@@ -1,0 +1,77 @@
+[
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 01",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 02",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 03",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 04",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 05",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 06",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 07",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "PUNKT 08",
+  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "WhatsApp",
+  "vermerk": "E2-ORCH-04 FinalCTA: Knopftext „WhatsApp“ → „Per WhatsApp schreiben“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "header_zeilen",
+  "ansicht": "d1440",
+  "alt": "Fachbetrieb",
+  "vermerk": "E2-ORCH-05a Kopf: Unterzeile und Rufnummer bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM, Rufnummer im Fuß – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "header_zeilen",
+  "ansicht": "d1440",
+  "alt": "Aßlar · Wetzlar",
+  "vermerk": "E2-ORCH-05a Kopf: Unterzeile und Rufnummer bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM, Rufnummer im Fuß – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "header_zeilen",
+  "ansicht": "d1440",
+  "alt": "06441 / 44 83 567",
+  "vermerk": "E2-ORCH-05a Kopf: Unterzeile und Rufnummer bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM, Rufnummer im Fuß – TEXTVORSCHLAEGE"
+ }
+]

@@ -151,7 +151,10 @@ else
   SEITEN_KOMMA="$(IFS=,; echo "${PFADE[*]}")"
   RELAUNCH_BASE="$DEV" node "$WERKZEUGE/texte.mjs" --satz "$KENNUNG" --seiten "$SEITEN_KOMMA" --base "$DEV" --ziel "$TEXT_ZIEL" > "$OUT/texte.log" 2>&1
   T_RC=$?
-  node "$WERKZEUGE/texte-vergleich.mjs" "$TEXT_BASIS_NAME" "$KENNUNG" --vorher-ordner "$TEXT_BASIS" --nachher-ordner "$TEXT_ZIEL" > "$OUT/texte-vergleich.log" 2>&1
+  # protokollierte Mikrotexte (TEXTVORSCHLAEGE/ENTSCHEIDUNGEN) als Erlaubnisliste, falls vorhanden
+  ERLAUBT_ARG=()
+  [ -f "$REPO/_werkstatt/texte-erlaubt.json" ] && ERLAUBT_ARG=(--erlaubt "$REPO/_werkstatt/texte-erlaubt.json")
+  node "$WERKZEUGE/texte-vergleich.mjs" "$TEXT_BASIS_NAME" "$KENNUNG" --vorher-ordner "$TEXT_BASIS" --nachher-ordner "$TEXT_ZIEL" "${ERLAUBT_ARG[@]}" > "$OUT/texte-vergleich.log" 2>&1
   V_RC=$?
   if [ "$T_RC" -ne 0 ] || [ "$V_RC" -ne 0 ]; then TEXT_STATE=ROT
   elif grep -q '"ergebnis":"ROT"' "$OUT/texte-vergleich.log"; then TEXT_STATE=ROT

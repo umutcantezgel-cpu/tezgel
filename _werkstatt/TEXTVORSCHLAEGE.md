@@ -15,6 +15,8 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E2-ORCH-05a | `src/components/common/Footer.jsx` | Icons vor Zusagen und Stammdaten (Award, ShieldCheck, Sparkles, Receipt, MapPin …) | Fugenkreuz bzw. Mono-Etiketten „Anschrift“, „Telefon“, „Mobil & WhatsApp“, „E-Mail“, „Fax“, „Zeiten“, „Betrieb seit 2008“ (aus COMPANY_DATA.business.establishmentYear) | Schriftfeld statt Icon-Liste (K-009) |
 | E2-ORCH-05a | `src/components/common/Header.jsx` | WhatsApp-Symbolknopf im Kopf | (entfällt im Kopf) | gleichwertig vorhanden: flacher WhatsApp-Knopf `#whatsapp-floating-btn` (Desktop), untere Leiste (mobil), Menüblatt und Fuß |
 | E2-ORCH-05a | `src/components/common/MobileMenu.jsx` | Kategorie-Schalter „Badsanierung …“ (ganze Zeile) | Zeile = Link zur Übersicht; Schalter rechts mit Namen „Badsanierung – Unterseiten öffnen/schließen“ | Übersicht auch vor der Hydrierung erreichbar (V-06) |
+| E2-ORCH-05a | `src/components/common/Header.jsx` | Unterzeile „Fachbetrieb · Aßlar · Wetzlar“ und Rufnummer neben dem Symbol immer sichtbar | bei 1280–1535 px ausgeblendet (Text bleibt im DOM; Rufnummer im Fuß und im Menüblatt) | Kopfzeile passt sonst nicht neben die Navigation |
+| E2-BAU-01 | `src/components/sections/QualityPromise.jsx` | Etikett „Punkt 01 … 08“ in Versalien (CSS) | gleiche Zeichen als Mono-Etikett ohne Versalien | Merkliste nach KERN K-009; Wortlaut unverändert |
 | E2-BAU-02 | `src/components/kern/Hinweis.tsx` | (Hinweis ohne Titel: Art nur über Icon/Farbe) | unsichtbares Präfix „Hinweis:“, „Warnung:“, „Fehler:“, „Erledigt:“ (nur Screenreader) | Art nie allein über Farbe/Icon (WCAG 1.4.1, 1.1.1) |
 
 ## Vorschläge (Überschriften, Fließtext)

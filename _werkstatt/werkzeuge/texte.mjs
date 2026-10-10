@@ -54,8 +54,16 @@ async function bearbeite(s, a) {
       if (!el) return null;
       const kopie = el.cloneNode(true);
       kopie.querySelectorAll('script, style, [aria-hidden="true"]').forEach((n) => n.remove());
-      return (kopie.textContent || '').split(/\s+/).filter(Boolean);
+      // je Textknoten getrennt, damit Wörter an Elementgrenzen nicht zusammenkleben („anfragenAnrufen“)
+      const woerter = [];
+      const gang = document.createTreeWalker(kopie, NodeFilter.SHOW_TEXT);
+      for (let n = gang.nextNode(); n; n = gang.nextNode()) woerter.push(...(n.nodeValue || '').split(/\s+/).filter(Boolean));
+      return woerter;
     };
+    // Kopf und Fuß der Seite: das header/footer-Element auf Seitenebene (nicht in main, article, section, nav, aside oder Dialogen)
+    const seitenebene = (tag) => [...document.querySelectorAll(tag)].find((el) => !el.parentElement?.closest('main, article, aside, section, nav, [role="dialog"]')) || null;
+    const kopf = seitenebene('header');
+    const fuss = seitenebene('footer');
     // Sichtbar: nicht aria-hidden/inert (geschlossenes Mobilmenü), nicht ausgeblendet, im Viewport
     const sichtbar = (el) => {
       if (el.closest('[aria-hidden="true"], [inert]')) return false;
@@ -64,7 +72,7 @@ async function bearbeite(s, a) {
       const r = el.getBoundingClientRect();
       return r.width > 0 && r.height > 0 && r.right > 0 && r.bottom > 0 && r.left < window.innerWidth && r.top < window.innerHeight;
     };
-    const bloecke = { header: wortfolge(document.querySelector('header')), main: wortfolge(document.querySelector('main')), footer: wortfolge(document.querySelector('footer')) };
+    const bloecke = { header: wortfolge(kopf), main: wortfolge(document.querySelector('main')), footer: wortfolge(fuss) };
     [...document.querySelectorAll('[role="dialog"]')].filter(sichtbar).forEach((el, n) => { bloecke[`dialog:${el.id || el.getAttribute('aria-label') || n + 1}`] = wortfolge(el); });
     const main = document.querySelector('main');
     const ld = [...document.querySelectorAll('script[type="application/ld+json"]')].map((x) => x.textContent.trim());
@@ -80,8 +88,8 @@ async function bearbeite(s, a) {
       ueberschriften: [...document.querySelectorAll('h1,h2,h3,h4,h5,h6')].map((x) => `${x.tagName.toLowerCase()}: ${norm(x.textContent)}`),
       h1: [...document.querySelectorAll('h1')].map((x) => norm(x.textContent)),
       main_zeilen: zeilen(main),
-      header_zeilen: zeilen(document.querySelector('header')),
-      footer_zeilen: zeilen(document.querySelector('footer')),
+      header_zeilen: zeilen(kopf),
+      footer_zeilen: zeilen(fuss),
       alt: [...document.querySelectorAll('img')].map((x) => x.getAttribute('alt')),
       jsonld: ld,
       links: [...new Set(links)].sort(),
