@@ -17,9 +17,10 @@ Sortiert nach Wirkung × Unsicherheit. Jede Zeile hat Lichtungsaufgabe oder Gege
 | gesichert | Ausgangsstand 5a7a7b0, Archiv mit sha256 | – | – | E-002 |
 | riskant | Z-08 Kategorie „Inhalt“ ≥ 7,5 ohne echte Fotos (P0: 4,5–5,5; Texte unantastbar) | hoch | mittel | Frühwarnung in P3-16 (eigene Auswertung „Inhalt“), Fotoliste M-14, Verlegepläne als ehrliche Bildwelt; L7-Pfad: Z-08 kann AUSNAHME werden |
 | riskant | `global-not-found` ist experimentell (E-015) | mittel | gering | erprobt (Status 404, Schale, HTML gleich); Kandidat-Tor prüft F-17; Rückfall: Pfad-Weiche nur für die 404 |
+| riskant | Markenbruch in der Übergangszeit: Kern- und Bestandsseiten sehen verschieden aus, Wechsel lädt voll neu (E-015) | mittel | gering | Hauptwege früh freischalten (W1, dann W9-01 `/kontakt`), Navigation gleich gegliedert, Übergangszeit kurz halten |
 
 ## Vorab-Scheitern
 - „Prächtig, aber träge“: Lighthouse fällt nach einer Welle um > 3 Punkte → Welle anhalten, Ursache beheben, Budget je Paket.
 - „Effektfeuerwerk“: Bewegungsregister wächst schneller als fertige Seiten → Einträge streichen.
-- „Fremdkörper“: neue Teile wirken als Bruch zu nicht umgebauten Seiten, die zwischen den Wellen live sind → P3 strikt auf `/`, P4 globaler Umstieg vor P5.
+- „Fremdkörper“: neue Teile wirken als Bruch zu nicht umgebauten Seiten, die zwischen den Wellen live sind → E-015: jede Seite ganz alt oder ganz neu; Hauptwege früh freischalten (Plan Runde 3). (Früher: P3 strikt auf `/`, P4 globaler Umstieg vor P5.
 - „Grüner Build lokal, roter Build live“: nicht committete Dateien, abweichende Umgebung → Reinraum-Build aus `git archive`-Kopie (E-005).

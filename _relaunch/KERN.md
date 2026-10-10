@@ -1,6 +1,6 @@
-# KERN · Gestaltungskern Fliesenverlegung Tezgel · Version 1.1
+# KERN · Gestaltungskern Fliesenverlegung Tezgel · Version 1.2
 
-Stand: 10.10.2026, P2 (v1.1 nach Gegenprüfung P2-GEG-01). Quelle der Richtung: E-008 (Grundsystem A „Fuge und Achse“ + Vertrauensschicht aus C). Er gewinnt gegen Plan und einzelne Vorlieben. Über ihm stehen Grenzen und Leitplanken, Bestand und Funktion, Barrierefreiheit und Leistung, Definition of Done und Wünsche. Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde. **[A]** = Annahme, offen in MENSCHEN.md.
+Stand: 10.10.2026, P2 (v1.2 nach Gegenprüfung P2-GEG-02). Quelle der Richtung: E-008 (Grundsystem A „Fuge und Achse“ + Vertrauensschicht aus C). Er gewinnt gegen Plan und einzelne Vorlieben. Über ihm stehen Grenzen und Leitplanken, Bestand und Funktion, Barrierefreiheit und Leistung, Definition of Done und Wünsche. Jedes Paket nennt die Kern-Version, gegen die es gebaut wurde. **[A]** = Annahme, offen in MENSCHEN.md.
 
 ## Das Projekt in fünf Sätzen
 1. Wir werten die Website von Fliesenverlegung Tezgel (Deniz Tezgel, Aßlar, seit 2008 bei der Handwerkskammer Wiesbaden eingetragen) zu einer eigenständigen, messbar besseren Seite auf, ohne Texte, Logo, Rechtliches oder Funktionen zu verlieren.
@@ -42,22 +42,22 @@ Stand: 10.10.2026, P2 (v1.1 nach Gegenprüfung P2-GEG-01). Quelle der Richtung: 
 ## K-004 Plattformregeln
 - Next.js 16.3.6, App Router, statisch vorgerendert (SSG), Turbopack. React 19. Tailwind 4.3. Kein Dunkelmodus, keine Mehrsprachigkeit, `lang="de"`. Vor jeder Arbeit die passende Seite in `node_modules/next/dist/docs/` lesen.
 - Seiten: Bestand in `src/app/(bestand)/**/page.(jsx|tsx)`, Kern in `src/app/(kern)/**` – ruhende Entwürfe in `src/app/(kern)/_entwurf/<route>/` (E-015). Kern-Code nutzt nur Kern-Tokens und Kern-Bausteine; Bestands-Code bleibt bis zu seiner Freischaltung unverändert. Komponenten nach Bereich: `src/components/<bereich>/`. Daten und Inhalte: `src/config/*.js` (u. a. `company.js` = COMPANY_DATA, `services.js`, `cities.ts`, `reviews.js`, `navigation.js`). Telefonnummern, Adressen und Öffnungszeiten nur aus COMPANY_DATA, nie fest im Markup.
-- Styling: Tailwind-Klassen. Tokens als CSS-Variablen; ab P4 in `@theme` (globals.css), bis dahin additiv als `--k-*`. Keine freien Werte (`p-[13px]`, Hex im Code, Inline-`style`, Dauern als Zahl). Ausnahme: dynamische Werte über eine CSS-Variable im `style`-Attribut, z. B. `style={{'--k-achse-x': x}}`.
-- Schriften: `next/font/local` mit wörtlichen Pfaden unter `src/app/fonts/`, `display: 'swap'`, `adjustFontFallback`, höchstens zwei vorgeladene Schnitte. In P3 nur am Seiten-Wrapper von `/` (`.variable`), ab P4 global an `<html>`.
+- Styling: Tailwind-Klassen. Tokens als CSS-Variablen mit Präfix `k-` in `@theme` von `src/styles/kern.css`, eingebunden **nur** über `src/app/(kern)/kern-global.css` (`source(none)`, `@source` nur auf Kern-Ordner, nicht auf `_entwurf`). `globals.css` und `tokens.css` bleiben eingefroren (E-015, Plan Runde 3). Keine freien Werte (`p-[13px]`, Hex im Code, Inline-`style`, Dauern als Zahl). Ausnahme: dynamische Werte über eine CSS-Variable im `style`-Attribut, z. B. `style={{'--k-achse-x': x}}`.
+- Schriften: `next/font/local` mit wörtlichen Pfaden unter `src/app/fonts/`, `display: 'swap'`, `adjustFontFallback`, höchstens zwei vorgeladene Schnitte. Eingebunden am `<html>` des Kern-Layouts `src/app/(kern)/layout.tsx` (`.variable` beider Familien); Bestandsseiten laden sie nie.
 - Bilder: `next/image`, `preload` statt `priority` für das LCP-Bild, `sizes` gesetzt, Qualitäten nur aus `images.qualities` (Standard [75]), feste Seitenverhältnisse.
 - Client-Komponenten (`'use client'`) nur für Interaktion. Inhalte werden auf dem Server gerendert und sind ohne JavaScript sichtbar.
 - Bewegung: zentrales Modul `src/lib/motion/` (E-009). Startklasse über ein Inline-Skript im `<head>` (`dangerouslySetInnerHTML`, `<html suppressHydrationWarning>`). CSP erlaubt Inline-Skripte bereits.
-- Wege: Weiterleitungen über `redirects()` in `next.config.ts` (308); 410 über `proxy.ts`; 404 über `not-found.tsx` mit Status 404.
+- Wege: Weiterleitungen über `redirects()` in `next.config.ts` (308); 410 über `proxy.ts`; 404: `src/app/(kern)/not-found.tsx` für `notFound()` in Kern-Seiten, `src/app/global-not-found.tsx` für unbekannte Adressen (bis W10 mit Bestands-Schale), Status 404.
 - Prüfungen: `npm run build`, `typecheck`, `lint`, `npm test` (Node ≥ 22.6), `qa:graph`; dazu die Werkzeuge in `_relaunch/werkzeuge`. **Keine Erkennung von Testumgebungen im Produkt** (kein `navigator.webdriver`, keine Sonderwege für Lighthouse oder Headless). Endzustände für Standbilder entstehen allein über reduzierte Bewegung und das 2-s-Zeitlimit.
 - Vor dem Umbenennen oder Entfernen von Klassen, IDs und data-Attributen: Nutzung in E-Mail-Vorlagen (`src/lib/email`), Tests, Analyse-Konfiguration (`TrackingScripts`, `cookie-inventory.ts`) suchen; Funde bleiben als Alias.
 - Tote Klassen `rounded-tile-*`, `eyebrow-orange`, `ambient-glow-warm` werden nie definiert; ihre Zahl darf nur sinken.
 
 ## K-005 Typografie
-- Familien (OFL, selbst gehostet, woff2, Teilmengen Latin + Latin Extended mit ß/ẞ/Umlauten, Lizenzvermerk in `src/app/fonts/LIZENZEN.md`):
+- Familien (OFL, selbst gehostet, woff2, Teilmenge Latin (enthält ß und Umlaute), Lizenzvermerk in `src/app/fonts/LIZENZEN.md`):
   - **Archivo** variabel (wght 100–900, wdth 62–125). Anzeige und Überschriften in Breite 74 %, Gewicht 760. Text in Breite 100 %, Gewicht 400/600.
   - **IBM Plex Mono** 400 (optional 500) für Messbares und Belegbares: Normen, Rutschklassen, Telefonnummern, PLZ, Jahreszahlen, Bewertungen, Schrittnummern, Bildunterschriften. Nie für Fließtext, nur Satzschreibung, keine Versalien-Sperrung.
   - Kaufempfehlung in MENSCHEN.md [A]: keine lizenzierte Hausschrift bekannt.
-- Teilmenge: **Latin genügt** (geprüft P3-01: alle Seitentexte des Ausgangsstands liegen darin; Pfeile, ≤, ★, ㎡ und Emojis fallen auf Systemschriften und sind ohnehin Slop- bzw. Satzfälle). Ersatzschrift für beide Familien: Arial mit von next/font berechnetem `size-adjust` und Metrik-Overrides (`adjustFontFallback: 'Arial'`). Vorgeladen: Archivo und Plex Mono 400 (zwei Dateien).
+- Teilmenge: **Latin genügt** (geprüft P3-01: alle Seitentexte des Ausgangsstands liegen darin; Pfeile, ≤, ★, ㎡ und Emojis fallen auf Systemschriften und sind ohnehin Slop- bzw. Satzfälle). Ersatzschrift: Archivo → Arial mit von next/font berechnetem `size-adjust` und Metrik-Overrides (`adjustFontFallback: 'Arial'`); Plex Mono → Courier New ohne Anpassung (gleiche Zeichenbreite 0,6 em, kein Umbruchsprung; `adjustFontFallback: false`), so gebaut in `src/app/fonts/kern.ts`. Vorgeladen: Archivo und Plex Mono 400 (zwei Dateien).
 - Skala (7 Stufen, `clamp` mit rem-Anteil, Max ≤ 2,5 × Min):
 
   | Token | Wert | Einsatz |
@@ -111,7 +111,7 @@ Regel: Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk. Genau 
 - Haltung: Bewegung richtet aus. Dinge rücken in die Flucht, der Laser schaltet ein, nichts federt, nichts schwebt.
 - Dauer-Tokens (5): `--k-dauer-1` 140 ms (Rückmeldung) · `-2` 320 ms (Zustandswechsel) · `-3` 600 ms (Auftritt) · `-4` 800 ms (Flucht) · `-5` 1200 ms (Laser). Signaturabläufe ≤ 1600 ms gesamt. Staffel `--k-staffel` 60 ms, höchstens 8 Elemente.
 - Kurven (4): `--k-kurve-setzen` cubic-bezier(0.2, 0.8, 0.2, 1) (ausklingend) · `--k-kurve-laser` cubic-bezier(0.7, 0, 0.2, 1) (wechselnd) · `--k-kurve-weg` cubic-bezier(0.32, 0, 0.67, 0) (beschleunigend, Ausgänge eine Dauerstufe kürzer) · `linear` (Fortschritt, scroll-gebunden).
-- Technik: nur `transform` und `opacity`. Aufklapphöhen über `grid-template-rows` (Registereintrag). Auslöser über IntersectionObserver. Seitenwechsel über React `<ViewTransition>` als progressive Verbesserung; nach clientseitigem Wechsel Fokus auf die h1 (nicht beim ersten Laden, nicht bei Hash oder Zurück).
+- Technik: nur `transform` und `opacity`. Aufklapphöhen über `grid-template-rows` (Registereintrag). Auslöser über IntersectionObserver. Seitenwechsel über React `<ViewTransition>` nur optional (P6) und nur innerhalb der Kern-Gruppe, als progressive Verbesserung; nach clientseitigem Wechsel Fokus auf die h1 (nicht beim ersten Laden, nicht bei Hash oder Zurück).
 - Sichtbarkeit: Inline-Head-Skript setzt `html.k-bewegung` vor dem ersten Rendern, nur wenn `prefers-reduced-motion: no-preference`. Startzustände hängen nur an dieser Klasse. Nach 2 s setzt ein Zeitlimit `k-bereit` und zeigt alles. Das LCP-Element startet nie unsichtbar (nur Versatz ≤ 14 px, Deckkraft 1). Ohne JavaScript ist alles sichtbar.
 - Reduziert: Überblendung oder Sofortzustand, gleiche Information. Hover-Effekte nur bei `(hover: hover) and (pointer: fine)`; Touch bekommt `:active`-Rückmeldung.
 - Choreografie: Reihenfolge nach Lesefluss, eine Richtung je Abschnitt, je Bildschirmhöhe höchstens ein Auftritt mit Gewicht, Scroll-Auftritte auf höchstens der Hälfte der Abschnitte einer Seite (S-02).
@@ -184,4 +184,5 @@ Lighthouse mobil ≥ 90 · LCP ≤ 2,5 s · CLS ≤ 0,1 · TBT ≤ 200 ms · INP
 
 ## Änderungsprotokoll
 - v1 (10.10.2026, P2): erste Fassung nach E-008.
+- v1.2 (10.10.2026, P2): nach P2-GEG-02 – Tokens nur im Kern-CSS, Schriften am Kern-`<html>`, 404-Weg unter E-015, Teilmenge und Ersatzschrift so wie gebaut, Seitenwechsel optional nur im Kern. Betroffene Pakete: P3-00-Aufträge verweisen auf v1.2.
 - v1.1 (10.10.2026, P2): nach P2-GEG-01 – Seitenart je URL, ein Signaturmoment je Seite (SIG-1 `/`, SIG-2 `/bad`, SIG-3 Leistungen), Mikrotext-Klassen und Badge-Regel, Randnotiz nur als Verweis, Schriftteilmenge und Ersatzschrift, Bildregel, Bauweise E-015 in K-004. Betroffene Pakete: noch keine gebaut.

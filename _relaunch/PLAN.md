@@ -438,3 +438,59 @@ Mikrointeraktionen und Zustände, Auswahlfarbe, Teilen-Bilder (OG) im Formsystem
 - Formel des Auftrags: 90 ÷ (5 × 4) × 1,2 ≈ **5,4 Tage**. Über die Abhängigkeiten (Wellen nacheinander, Tore, Messfenster): P3-00 1 + P3 4 + P4 2 + P5 15 + P6 3 + P7 2 = 27 Wellen ÷ 4 je Tag × 1,2 ≈ **8,1 Tage**. **Planwert = 8–9 Tage** (Maximum), Puffer in STATUS, Abweichung im Morgenbericht.
 - Kritischer Pfad (Orchestrator-Spur): P3-00h → P3-01 → P3-02 → P3-05 → P3-09 → P3-15 → P3-16 → P4-01 → P5 W1 … W10 (Kandidat-Tore nacheinander) → P6 → P7.
 - Vorrat: V-01…V-06 den Wellen zugeordnet (V-02 W9, V-03 P4-05, V-04 P4-07, V-05 W9, V-06 P3-06).
+
+---
+
+# Gesamtplan · L0 Runde 3 (Kern v1.2 · 10.10.2026, nach P2-GEG-02) — gilt vor Runde 2, wo beide sich widersprechen
+
+## Tore (ersetzt das Push-Tor des genehmigten Plans und Grundsatz 3 der Runde 2)
+| Tor | Wann | Inhalt | Ergebnis |
+|---|---|---|---|
+| **T1 Wellen-Tor** | jede Welle, vor jedem Push | Reinraum (npm ci, Build, Typen, Lint, Test, qa:graph, Routen, Tracing) · `testzahl.mjs` statisch + Laufzeit · Entwürfe nur mit `@/`-Importen (grep) · **build-vergleich gegen den letzten Live-Commit: HTML aller 172 Dateien und CSS-Selektoren/-Variablen/-Keyframes gleich** | gleich ⇒ ruhend bestätigt ⇒ Push. Ungleich ⇒ T2 für alle Seiten mit Abweichung, sonst kein Push |
+| **T2 Kandidat-Tor** | jede Freischaltung; jede Welle mit Abweichung in T1; jedes sofort wirksame Paket (Umzug, 308/410, N-14, Hooks) | Kandidat = Reinraum-Kopie + `freischalten.sh` (bzw. HEAD) gegen den letzten Live-Stand: Funktionstests aller live erreichbaren F (289+) · Text v2 (nur `MIKROTEXTE.md` erlaubt; Überschriften „hinzu“ rot; Fragment-Ziele) · SEO-Invarianten, Logo-Hash · axe + a11y-Zusatz · Überlauf 320–1920 · Bewegung · SVG · Klassen-Abdeckung Kern-CSS · Pixel 0 auf allen nicht betroffenen Seiten (A/A, 4 Ansichten; Stichprobe Hauptseiten + 2 je Vorlage, Volltest 120 × 4 bei Paketen außerhalb der Kern-Ordner) · Lighthouse verschränkt auf betroffenen Hauptseiten · Slop (statisch + Stichprobe) · Jury 3 + Lockvogel auf betroffenen Hauptseiten · Sperrklinke je Seite (axe, Überlauf, Konsole) | **Freischalt-Schwelle:** Ränge 1–4 grün (Grenzen, Bestand/Funktion, Barrierefreiheit/Leistung, DoD der Seite), nichts schlechter als der Bestand, Jury ≥ Bestand + 2,0 je Seite. Die Zielwerte (Jury ≥ 8,0) gehören zum Phasentor |
+| **T3 Phasentor** | Ende P3, P4, P5, P6 | alle Z der Phase nach AUFTRAG + L3: Probeläufer (15 Läufe), Fünf-Sekunden-Probe, frischer Gegenprüfer, Mutationsprobe; P4-Tor über die Vorschau-Kandidaten der Hauptseiten-Entwürfe (E-017) | grün oder L7 |
+| **Vorschau-Kandidat** | jeder Wellenschluss, auf Anforderung | `KANDIDAT="<alle Entwürfe>" reinraum.sh HEAD` + `server.sh start <sha>-k` (Port 4320); für unfertige Arbeit Vorschaubaum im Scratchpad (Kopie des Arbeitsbaums + `freischalten.sh` + Build). Unteragenten fotografieren lesend (`fotos.mjs`, `axe.mjs` mit `RELAUNCH_BASE`) | Selbstkontrolle, L1/L8, Varianten-Wahl – kein Vorschauweg im Produkt (G7) |
+
+**Freischalt-Ablauf (N-02):** `freischalten.sh --commit <routen>` läuft nur bei sauberem Baum (außer CLAUDE.md) und `HEAD = KANDIDAT_BASIS`, nutzt `git mv`/`git rm`, committet selbst und vergleicht danach `git archive HEAD` mit der Kandidat-Kopie (ohne `node_modules`, `.next`, Logs). Ist der Vergleich nicht leer, wird nicht gepusht. Live danach: `live-rauchtest.sh` + `live-browser.mjs` über die Hauptseiten **und** alle freigeschalteten Routen (je Vorlage 2), statische Dateien aus dem lokalen Build, Dokumente höchstens 1 je Sekunde (G1).
+
+## Bauregeln (Ergänzung zu E-015)
+1. **Einfrieren (N-01 c):** Alles außerhalb von `src/components/kern/`, `src/lib/kern/`, `src/app/(kern)/` bleibt bis W10 unverändert. Ausnahmen nur als eigenes Paket mit T2 (oder build-vergleich „gleich“): Umzug P3-00h, Formular-Hooks P3-00l, P3-00k (Fairness), P4-07 (Wege). Der Kern hat eigene Icon-Abbildung (`src/lib/kern/icons.ts`) und eigene Mikrotexte.
+2. **Kern-CSS (N-01 b):** `kern-global.css` mit `@import "tailwindcss" source(none)`, `@source` auf `src/components/kern`, `src/lib/kern`, `src/app/(kern)` und `@source not "../app/(kern)/_entwurf"` – Entwurfsklassen kommen erst mit der Freischaltung ins ausgelieferte CSS.
+3. **Formulare (N-05):** Logik je Formular in einen Hook ohne Markup (`src/lib/formulare/use<Formular>.ts`, wörtlich verschoben); Bestand und Kern nutzen ihn; Nachweis: build-vergleich HTML 172 gleich + Funktionstests + Mutationsprobe. Kern-Ansicht in `src/components/kern/formulare/`.
+4. **Kern-Layout (N-06):** Pflichtinhalt wie Bestand: TrackingScripts (an `useConsent`), SkipNav, ErrorBoundary, UIProvider, AuthProvider, ContentProvider, Geo-Meta, Verifizierung, JSON-LD (`buildRootGraph`), Icons, `x-build`, Metadaten-Vorgaben aus einem gemeinsamen Modul `src/lib/kern/metadaten.ts` (importiert **nicht** `(bestand)/_dokument.tsx`). F-11 wird erweitert: Tracking-Hosts vor/nach Einwilligung gleich auf Bestand und Kern; Einwilligung gilt über die Gruppengrenze; `#cookie-settings` in beiden Gruppen.
+5. **404 (N-07):** `(kern)/not-found.tsx` (Wortlaut der Bestands-404) ab P3-15; F-17 prüft je freigeschalteter dynamischer Vorlage einen unbekannten Parameter.
+6. **Segment-Layouts (N-08):** `freischalten.sh` entfernt im Bestand `layout.*`, `template.*`, `not-found.*`, `error.*`, `loading.*` nur, wenn darunter keine Bestands-`page.*` mehr liegt.
+7. **Importe (N-20):** Entwürfe nur mit `@/`-Importen; geteilter Kern-Code nur in den Kern-Ordnern.
+8. **Banner als LCP (N-22):** erlaubt sind Komposition, Größe und Server-Rendern; verboten ist Einblenden nach dem LCP oder per Zeitverzug.
+9. **Varianten (N-13):** SIG-1, SIG-2, SIG-3 je zwei Opus-Varianten, Kopf und Fachseiten-Vorlage je zwei; Wahl über Vorschau-Kandidat + Jury + Denkprotokoll.
+
+## Ergänzte und neue Pakete
+- **P3-00k** (Orchestrator, T2): Rang-1-Korrekturen im Bestand – Einwilligung im Preisrechner startet leer (E-014, N-14; Test „ohne Haken kein Versand“), vorgetäuschtes Benachrichtigungs-Abzeichen „1“ am WhatsApp-Widget entfällt (E-012). Erklärte Pixel-Abweichung nur an Checkbox bzw. Abzeichen.
+- **P3-00l** (Opus + Gegenprüfer, T2): Formular-Hooks für F-01–F-09, F-11/F-12 (`useConsent` geteilt, `MapConsentGate`).
+- **P3-00m** (Haiku): `kern-klassen.mjs` (jede Klasse im HTML einer Kern-Seite hat eine Regel im Kern-CSS, N-19).
+- **P3-00n** (Haiku): Feld `seitenart` je URL in `GRUNDMENGE.json` nach K-002 (N-23).
+- **P3-00o** (Orchestrator): Erprobung 2 (N-04) – Wegwerf-Baum mit Minimal-`(kern)` (Layout, Kern-CSS, statische + dynamische Probe-Route mit `notFound()`): Bestands-HTML/CSS gleich, Kern-Route lädt nur Kern-CSS und 2 Schriften, Wechsel beider Richtungen ohne Konsolenfehler, 404 für unbekannte Adressen und `notFound()` in beiden Gruppen, Klammer-Globs greifen. Belege ins Repo. Scheitert sie: E-015 Weg 2.
+- **P3-02** Pflichtinhalt nach Bauregel 4. **P3-08** mit Bauregel 8. **P3-09/W1-01/W2-01** je zwei Varianten. **P3-14** geteilt: a F-01–F-03, b F-10/F-15, c F-11/F-12/F-19, d F-13/F-14/F-17 (je Haiku + Opus-Gegenprüfer). **P3-15** inkl. `(kern)/not-found.tsx` (Kriterium Z-05, Z-06). **P3-16** = T2 + T3 (Probeläufer, Fünf-Sekunden-Probe, Gegenprüfer); Geräteprobe M-06 danach, nicht blockierend.
+
+## P5–P7 mit Kriterien (ersetzt die Kurztabellen der Runde 2)
+| Welle | Pakete | hängt ab | Kriterien |
+|---|---|---|---|
+| W1 Bad | -01 `/bad` (SIG-2, 2 Varianten) · -02 badsanierung, bad-aus-einer-hand · -03 barrierefreies-bad, fliesen · -04 badanfrage, badplaner · -05 projekt-check · -T Testschreiber F-04/F-05 · -P Probeläufer (Aufgaben 1, 5) | P4-01, P4-05 | Z-03, Z-04, Z-05, Z-07, Z-08 (/bad), Z-09, Z-11, Z-13 |
+| W2 Leistungen | -01 `/leistungen` (SIG-3, 2 Varianten) · -02 `[id]` · -03 `[id]/[stadt]` · -T F-02 auf Leistungsseiten, F-09 · -P (Aufgabe 1) | P4-01–03 | Z-03–Z-07, Z-08 (/leistungen), Z-10, Z-12 |
+| W3 Standorte | -01 `/standorte` (CLS) · -02 `[stadt]` · -T F-09, F-12 · -P (Aufgabe 4) | P4-01, P3-08 | Z-03–Z-07, Z-08, Z-12 |
+| W4 Fliesen | -01 `/fliesen` · -02…-05 Fachseiten · -06 konfigurator · -T F-06 (≥ 10 Eingaben gegen Altverhalten) | P4-01, P4-05 | Z-03, Z-05–Z-07, Z-10, Z-13 |
+| W5 Fachthemen | -01 Untergrund · -02 Balkon · -03 Naturstein · -04 Treppen · -05 Reparatur, Schadensanalyse · -06 `/foerderung` · -P (Aufgabe 5) | P4-01 | Z-04–Z-07, Z-10, Z-13 |
+| W6 Blog | -01 Liste (TBT/LCP) · -02 Artikel · -T F-16 | P4-02 | Z-03, Z-05–Z-08 (/blog), Z-12 |
+| W7 Musterbäder, Referenzen | -01–-04 Liste + Detail | P4-02 | Z-05–Z-07, Z-13 |
+| W8 Firma | -01 ueber-uns · -02 unternehmen, team · -03 karriere · -04 partner, ausstellung · -P (Aufgabe 2) | P4-01 | Z-04–Z-08 (/ueber-uns) |
+| W9 Arbeitsseiten | -01 kontakt (V-02) · -02 termin · -03 beratung, faq · -04 preise, downloads · -05 login · -T F-07/F-08/F-14/F-18 · -P (Aufgabe 3) | P4-05, P4-06 | Z-03–Z-08 (/kontakt), Z-11, Z-12 |
+| W10 Recht + Abschluss | -01 Rechtsseiten · -02 Kern-404 global · -03 Aufräumen (`(bestand)`, Altbausteine, framer-motion, lucide, tokens.css, Inter/Jakarta) · -04 Rückroll-Anleitung für den Stand ohne Bestand | alle | Z-05, Z-06, Z-07, Z-11, Z-14 |
+| P6 | Mikrointeraktionen/Zustände (Z-09, Z-11) · Teilen-Bilder (Z-06) · Konsistenz (Z-07) · Signaturen schärfen + Blindvergleich L8 (Z-08) · View Transitions optional, nur Kern-Gruppe (Z-09) | P5 | Z-08 Tor |
+| P7 | Volltest 8 Ebenen · Probeläufer 15 Läufe + Fünf-Sekunden-Probe (Z-04) · Jury-Stichprobe 10 % (≥ 5) · Slop-Jäger Grundmenge (Z-07) · Mutationsprobe je F (Z-03) · BERICHT, KERN-Doku, MENSCHEN, Rückroll-Anleitung (Z-14) · Gegenprüfer über ABNAHME | P6 | alle |
+
+## Kritischer Pfad und Kapazität (N-11)
+- Pfad: P3-00o → P3-00h → P3-00l → P3-01 → P3-02 → P3-03 → P3-06 → P3-09 (Varianten) → P3-14 → P3-15 → P3-16 → P4-05 → P4-06 → W1 … W10 (je T2) → P6 → P7.
+- Abhängigkeitsebenen ≈ 40–45 Wellenschritte. **Planwert 10–13 Tage**, nach dem ersten T2 (P3-16) gemessen und festgeschrieben; Puffer in STATUS in Tagen. Messfenster (ohne Unteragenten) nur für Lighthouse und Framezeiten.
+
+## Kleinpunkte (N-16–N-23)
+Wiederaufnahme nach jedem Paket (L5) · `testzahl.mjs` zusätzlich mit Laufzeitzahlen aus dem Playwright-Bericht (Basis 289 Fälle; statisch fixme 3 + skip 6 = 9) · Fragment-Ziele in Text v2 · Klassen-Abdeckung (P3-00m) · `PAKET=` für Unteragenten-Commits Pflicht · gemeinsame Dateien des Orchestrators zusätzlich: `(kern)/layout.tsx`, `kern-global.css`, `(bestand)/_dokument.tsx`, `global-not-found.tsx`, `freischalten.sh`, `src/lib/kern/metadaten.ts` · Vorrat V-01…V-06 · Nebelkarte: Markenbruch Kern ↔ Bestand in der Übergangszeit → Hauptwege früh freischalten (W9-01 `/kontakt` direkt nach W1).
