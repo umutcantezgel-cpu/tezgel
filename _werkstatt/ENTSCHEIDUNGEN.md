@@ -134,6 +134,12 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 - Nicht umgesetzt (Bestand/Funktion): zweites und drittes Anfrageformular auf / und Terminwahl als Formularschritt – das wären Funktionsänderungen; sie gehen als Vorschlag in BERICHT.
 - Folgen: neue Bausteine `Leitachse`, `Einzugsband` (vorgezogen aus E3-ORCH-03), Logik `einzugszonen.ts` mit Test; Prüfstufe A und Sichtabnahme Anlauf 2.
 
+## E-020 · Zusammenführung mit main auf ausdrückliche Anweisung
+- Anlass: Nachricht der Nutzerin/des Nutzers am 11.10. (~02:40): „merge bitte alles mit main. Fully push to main for redeploy on vercel!“ – das hebt für diesen Schritt G2 (kein Zusammenführen, kein Push auf main) und G3 (keine Veröffentlichung) des Auftrags ausdrücklich auf.
+- Befund: main ist seit der Basis 2362a5a um 60 Commits einer anderen Sitzung („relaunch P3“) weiter: Seiten in die Routengruppe (bestand) verschoben, ruhender Kern unter (kern), Logik in Hooks, Fairness-Korrekturen. Probe-Zusammenführung (ohne Verzeichnis-Umbenennungserkennung): 13 Konflikte.
+- Entscheidung: beide Arbeitsstände erhalten. Sichtbares Markup = Werkstatt (KERN v2, geprüft); Verhaltenskorrekturen und Hooks der anderen Sitzung übernehmen; ruhende Kern-Dateien unverändert; `_relaunch/` vollständig in der Fassung von main (Werkzeuge der anderen Sitzung). Gepusht wird nur ein zusammengeführter Stand mit grünem Reinraum-Build und grünen Funktionstests; unmittelbar vor dem Push wird main erneut geholt (die andere Sitzung schreibt dort weiter).
+- Umkehrprobe: Revert des Merge-Commits auf main stellt den vorherigen Produktionsstand wieder her.
+
 ## L6 · Lernen
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|
