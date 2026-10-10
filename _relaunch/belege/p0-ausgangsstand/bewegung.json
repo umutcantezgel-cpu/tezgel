@@ -1,7 +1,7 @@
 {
  "satz": "p0-ausgangsstand",
  "base": "http://127.0.0.1:4310",
- "erstellt": "2026-10-10T19:16:04.726Z",
+ "erstellt": "2026-10-10T19:31:10.702Z",
  "bedingungen": {
   "einwilligung": "abgelehnt",
   "dpr": 1,
@@ -34,11 +34,52 @@
    "/kontakt"
   ],
   "laeufe": [
-   "normal",
-   "reduziert",
    "frames"
   ],
   "gegenprobe": false,
+  "zusammengefuehrt": {
+   "mit_erstellt": "2026-10-10T19:16:04.726Z",
+   "vorlauf_laeufe": [
+    "normal",
+    "reduziert",
+    "frames"
+   ],
+   "vorlauf_maschine": {
+    "cpus": 4,
+    "last_1min_start": 9.69
+   },
+   "vorlauf_laufzeit_s": 370,
+   "uebernommen": [
+    "/ [d1440] normal",
+    "/ [d1440] reduziert",
+    "/ [m375] normal",
+    "/ [m375] reduziert",
+    "/bad [d1440] normal",
+    "/bad [d1440] reduziert",
+    "/bad [m375] normal",
+    "/bad [m375] reduziert",
+    "/leistungen [d1440] normal",
+    "/leistungen [d1440] reduziert",
+    "/leistungen [m375] normal",
+    "/leistungen [m375] reduziert",
+    "/standorte [d1440] normal",
+    "/standorte [d1440] reduziert",
+    "/standorte [m375] normal",
+    "/standorte [m375] reduziert",
+    "/blog [d1440] normal",
+    "/blog [d1440] reduziert",
+    "/blog [m375] normal",
+    "/blog [m375] reduziert",
+    "/ueber-uns [d1440] normal",
+    "/ueber-uns [d1440] reduziert",
+    "/ueber-uns [m375] normal",
+    "/ueber-uns [m375] reduziert",
+    "/kontakt [d1440] normal",
+    "/kontakt [d1440] reduziert",
+    "/kontakt [m375] normal",
+    "/kontakt [m375] reduziert"
+   ]
+  },
   "sammellauf": {
    "reduced_motion": {
     "normal": "no-preference",
@@ -64,12 +105,14 @@
    "scroll": "40 px je Bild (rAF-gekoppelt, behavior instant) + 30 Bilder Nachlauf",
    "einstieg": "rAF ab Dokumentbeginn bis Scrollbeginn (nach load, fonts.ready, networkidle ≤ 5 s)",
    "exklusiv": true,
-   "wiederholungen": 1,
+   "wiederholungen": 3,
+   "ruhetor": "vor jedem Framelauf ungedrosselte Rechenprobe (1e7 Schleifen, Median aus 3) ≤ 1,3 × beste Basis, Abfragetakt 2 s, höchstens 90 s",
+   "messqualitaet": "ok bei effektiver Drosselung (gedrosselt / beste Basis) im Bereich 0,75–1,35 × Soll; sonst „unsicher“ (Fremdlast)",
    "verworfen": "Intervall ≥ 2 vsync (= „> 16,7 ms“ ohne Rundungsrauschen; rAF-Zeitstempel sind auf 0,1 ms gerundet)",
    "ueber_50ms": "Intervall ≥ 4 vsync (> 50 ms)",
    "z09_soll": "mobil (4×) – Desktop 1× informativ",
    "gl_renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
-   "leistungsbasis_ms": 5
+   "leistungsbasis_ms": 15
   },
   "loaf": {
    "quelle": "PerformanceObserver long-animation-frame (buffered) im Framelauf",
@@ -95,9 +138,9 @@
   },
   "maschine": {
    "cpus": 4,
-   "last_1min_start": 9.69
+   "last_1min_start": 9.14
   },
-  "laufzeit_s": 370,
+  "laufzeit_s": 763,
   "worker": 2
  },
  "zusammenfassung": {
@@ -631,77 +674,89 @@
   "frames_scroll": {
    "gesamt": {
     "laeufe": 14,
-    "intervalle": 3921,
-    "anteil_verworfen": 0.4012,
-    "anteil_ueber_50ms": 0.3249,
+    "intervalle": 3918,
+    "anteil_verworfen": 0.3913,
+    "anteil_ueber_50ms": 0.3221,
     "schlechteste_seite": {
      "seite": "/",
      "ansicht": "d1440",
      "anteil_verworfen": 1
     },
-    "einstieg_anteil_verworfen_max": 0.7778
+    "einstieg_anteil_verworfen_max": 0.8077
    },
    "mobil": {
     "laeufe": 7,
-    "intervalle": 2560,
-    "anteil_verworfen": 0.0828,
-    "anteil_ueber_50ms": 0.0121,
+    "intervalle": 2557,
+    "anteil_verworfen": 0.0673,
+    "anteil_ueber_50ms": 0.0102,
     "schlechteste_seite": {
-     "seite": "/ueber-uns",
+     "seite": "/standorte",
      "ansicht": "m375",
-     "anteil_verworfen": 0.1171
+     "anteil_verworfen": 0.1062
     },
-    "einstieg_anteil_verworfen_max": 0.5455
+    "einstieg_anteil_verworfen_max": 0.5
    },
    "m375": {
     "laeufe": 7,
-    "intervalle": 2560,
-    "anteil_verworfen": 0.0828,
-    "anteil_ueber_50ms": 0.0121,
+    "intervalle": 2557,
+    "anteil_verworfen": 0.0673,
+    "anteil_ueber_50ms": 0.0102,
     "schlechteste_seite": {
-     "seite": "/ueber-uns",
+     "seite": "/standorte",
      "ansicht": "m375",
-     "anteil_verworfen": 0.1171
+     "anteil_verworfen": 0.1062
     },
-    "einstieg_anteil_verworfen_max": 0.5455
+    "einstieg_anteil_verworfen_max": 0.5
    },
    "d1440": {
     "laeufe": 7,
     "intervalle": 1361,
     "anteil_verworfen": 1,
-    "anteil_ueber_50ms": 0.9133,
+    "anteil_ueber_50ms": 0.9082,
     "schlechteste_seite": {
      "seite": "/",
      "ansicht": "d1440",
      "anteil_verworfen": 1
     },
-    "einstieg_anteil_verworfen_max": 0.7778
+    "einstieg_anteil_verworfen_max": 0.8077
    }
   },
-  "loaf": {
-   "anzahl": 125,
-   "laengster_ms": 638,
-   "laengste_skriptdauer_ms": 236,
-   "bewegung_skripte": 5,
-   "bewegung_ueber_20ms": 1,
-   "bewegung_laengste_ms": 29,
-   "bewegung_top": [
+  "frames_messqualitaet": {
+   "ok": 12,
+   "unsicher": [
     {
-     "invoker": "DOMWindow.onscroll",
-     "typ": "event-listener",
-     "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
-     "funktion": "t",
-     "pos": 33222,
-     "dauer_ms": 29,
-     "erzwungen_ms": 0,
-     "bewegungsbezug": [
-      "chunk:framer-motion"
-     ],
-     "werkzeug": false,
-     "phase": "scroll",
      "seite": "/",
-     "ansicht": "m375"
+     "ansicht": "d1440",
+     "drossel_soll": 1,
+     "drossel_effektiv": 2.78,
+     "last_1min": [
+      9.85,
+      10.01,
+      10.47
+     ]
     },
+    {
+     "seite": "/leistungen",
+     "ansicht": "d1440",
+     "drossel_soll": 1,
+     "drossel_effektiv": 1.51,
+     "last_1min": [
+      8.18,
+      8.16,
+      8.97
+     ]
+    }
+   ],
+   "regel": "ok, wenn Rechenprobe gedrosselt / beste ungedrosselte Basis im Bereich 0,75–1,35 × Soll-Drosselung liegt"
+  },
+  "loaf": {
+   "anzahl": 103,
+   "laengster_ms": 577,
+   "laengste_skriptdauer_ms": 303,
+   "bewegung_skripte": 2,
+   "bewegung_ueber_20ms": 0,
+   "bewegung_laengste_ms": 8,
+   "bewegung_top": [
     {
      "invoker": "DOMWindow.onscroll",
      "typ": "event-listener",
@@ -719,54 +774,19 @@
      "ansicht": "m375"
     },
     {
-     "invoker": "FrameRequestCallback",
-     "typ": "user-callback",
-     "quelle": "/_next/static/chunks/2ggqqy3mbn44t.js",
-     "funktion": "Q",
-     "pos": 6181,
-     "dauer_ms": 7,
+     "invoker": "http://127.0.0.1:4310/_next/static/chunks/2ozzpluwoe0ev.js",
+     "typ": "classic-script",
+     "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
+     "funktion": null,
+     "pos": 0,
+     "dauer_ms": 5,
      "erzwungen_ms": 0,
      "bewegungsbezug": [
-      "rAF-Rückruf",
-      "chunk:reduced-motion-abfrage"
+      "chunk:framer-motion"
      ],
      "werkzeug": false,
      "phase": "einstieg",
-     "seite": "/",
-     "ansicht": "d1440"
-    },
-    {
-     "invoker": "FrameRequestCallback",
-     "typ": "user-callback",
-     "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
-     "funktion": null,
-     "pos": 33260,
-     "dauer_ms": 7,
-     "erzwungen_ms": 0,
-     "bewegungsbezug": [
-      "rAF-Rückruf",
-      "chunk:framer-motion"
-     ],
-     "werkzeug": false,
-     "phase": "scroll",
-     "seite": "/",
-     "ansicht": "m375"
-    },
-    {
-     "invoker": "FrameRequestCallback",
-     "typ": "user-callback",
-     "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
-     "funktion": null,
-     "pos": 33260,
-     "dauer_ms": 7,
-     "erzwungen_ms": 0,
-     "bewegungsbezug": [
-      "rAF-Rückruf",
-      "chunk:framer-motion"
-     ],
-     "werkzeug": false,
-     "phase": "scroll",
-     "seite": "/leistungen",
+     "seite": "/kontakt",
      "ansicht": "m375"
     }
    ]
@@ -928,7 +948,7 @@
    "registriert_100": false,
    "verworfene_frames_max_5_prozent": false,
    "verworfene_frames_max_5_prozent_je_seite_mobil": false,
-   "kein_loaf_bewegung_ueber_20ms": false,
+   "kein_loaf_bewegung_ueber_20ms": true,
    "reduziert_ohne_orts_groessenaenderung": false,
    "reduziert_ohne_autoplay": true
   }
@@ -938,6 +958,145 @@
    "seite": "/",
    "ansicht": "d1440",
    "fehler": [],
+   "frames": {
+    "drossel": 1,
+    "drossel_ist": 2.78,
+    "drossel_effektiv": 2.78,
+    "messqualitaet": "unsicher",
+    "ruhetor_s": 11,
+    "leistung_ms": 43,
+    "leistung_frei_ms": 16,
+    "last_1min": [
+     9.85,
+     10.01,
+     10.47
+    ],
+    "vsync_ms": 16.7,
+    "einstieg": {
+     "intervalle": 26,
+     "anteil_verworfen": 0.8077,
+     "anteil_ueber_50ms": 0.3846,
+     "anteil_ausgelassene_vsyncs": 0.806,
+     "anteil_roh_ueber_16_7ms": 0.8846,
+     "p50_ms": 33.4,
+     "p95_ms": 283.3,
+     "max_ms": 300.1,
+     "vsync_einheiten": {
+      "1": 5,
+      "2": 9,
+      "3": 2,
+      "4+": 10
+     }
+    },
+    "scroll": {
+     "intervalle": 328,
+     "anteil_verworfen": 1,
+     "anteil_ueber_50ms": 0.9939,
+     "anteil_ausgelassene_vsyncs": 0.8684,
+     "anteil_roh_ueber_16_7ms": 1,
+     "p50_ms": 116.7,
+     "p95_ms": 216.7,
+     "max_ms": 300,
+     "vsync_einheiten": {
+      "1": 0,
+      "2": 0,
+      "3": 2,
+      "4+": 326
+     }
+    },
+    "loaf": {
+     "anzahl": 9,
+     "einstieg": 5,
+     "scroll": 4,
+     "laengster_ms": 348,
+     "laengste_skriptdauer_ms": 89,
+     "bewegung": {
+      "skripte": 0,
+      "ueber_20ms": 0,
+      "laengste_ms": 0,
+      "top": []
+     },
+     "werkzeug": {
+      "skripte": 0,
+      "laengste_ms": 0,
+      "erzwungen_ms_max": 0
+     },
+     "top": [
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 89,
+       "erzwungen_ms": 63,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 82,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 71,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 9,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
+      },
+      {
+       "invoker": "Promise.resolve",
+       "typ": "resolve-promise",
+       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
+       "funktion": null,
+       "pos": -1,
+       "dauer_ms": 7,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      }
+     ],
+     "fehler": null
+    },
+    "wiederholungen": 3,
+    "scroll_anteil_verworfen_alle": [
+     1,
+     1,
+     1
+    ],
+    "drossel_effektiv_alle": [
+     1.86,
+     2.78,
+     2.61
+    ]
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -1604,125 +1763,134 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "fehler": [],
    "frames": {
-    "drossel": 1,
-    "drossel_ist": 2.59,
-    "leistung_ms": 13,
+    "drossel": 4,
+    "drossel_ist": 3.34,
+    "drossel_effektiv": 3.61,
+    "messqualitaet": "ok",
+    "ruhetor_s": 4,
+    "leistung_ms": 59,
+    "leistung_frei_ms": 18,
     "last_1min": [
-     13.31,
-     15.72
+     7.33,
+     6.9,
+     7.36
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 27,
-     "anteil_verworfen": 0.7778,
-     "anteil_ueber_50ms": 0.1852,
-     "anteil_ausgelassene_vsyncs": 0.7429,
-     "anteil_roh_ueber_16_7ms": 0.8519,
-     "p50_ms": 33.4,
-     "p95_ms": 183.3,
-     "max_ms": 533.3,
+     "intervalle": 23,
+     "anteil_verworfen": 0.2174,
+     "anteil_ueber_50ms": 0.1739,
+     "anteil_ausgelassene_vsyncs": 0.6567,
+     "anteil_roh_ueber_16_7ms": 0.4783,
+     "p50_ms": 16.7,
+     "p95_ms": 150.1,
+     "max_ms": 450,
      "vsync_einheiten": {
-      "1": 6,
-      "2": 9,
-      "3": 7,
-      "4+": 5
+      "1": 18,
+      "2": 1,
+      "3": 0,
+      "4+": 4
      }
     },
     "scroll": {
-     "intervalle": 329,
-     "anteil_verworfen": 1,
-     "anteil_ueber_50ms": 0.9939,
-     "anteil_ausgelassene_vsyncs": 0.8895,
-     "anteil_roh_ueber_16_7ms": 1,
-     "p50_ms": 133.3,
-     "p95_ms": 283.3,
-     "max_ms": 433.4,
+     "intervalle": 610,
+     "anteil_verworfen": 0.0787,
+     "anteil_ueber_50ms": 0.0082,
+     "anteil_ausgelassene_vsyncs": 0.1273,
+     "anteil_roh_ueber_16_7ms": 0.3344,
+     "p50_ms": 16.7,
+     "p95_ms": 33.3,
+     "max_ms": 300,
      "vsync_einheiten": {
-      "1": 0,
-      "2": 0,
-      "3": 2,
-      "4+": 327
+      "1": 562,
+      "2": 33,
+      "3": 10,
+      "4+": 5
      }
     },
     "loaf": {
-     "anzahl": 15,
-     "einstieg": 6,
+     "anzahl": 13,
+     "einstieg": 4,
      "scroll": 9,
-     "laengster_ms": 270,
-     "laengste_skriptdauer_ms": 120,
+     "laengster_ms": 577,
+     "laengste_skriptdauer_ms": 303,
      "bewegung": {
       "skripte": 1,
       "ueber_20ms": 0,
-      "laengste_ms": 7,
+      "laengste_ms": 8,
       "top": [
        {
-        "invoker": "FrameRequestCallback",
-        "typ": "user-callback",
-        "quelle": "/_next/static/chunks/2ggqqy3mbn44t.js",
-        "funktion": "Q",
-        "pos": 6181,
-        "dauer_ms": 7,
+        "invoker": "DOMWindow.onscroll",
+        "typ": "event-listener",
+        "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
+        "funktion": "t",
+        "pos": 33222,
+        "dauer_ms": 8,
         "erzwungen_ms": 0,
         "bewegungsbezug": [
-         "rAF-Rückruf",
-         "chunk:reduced-motion-abfrage"
+         "chunk:framer-motion"
         ],
         "werkzeug": false,
-        "phase": "einstieg"
+        "phase": "scroll"
        }
       ]
      },
      "werkzeug": {
-      "skripte": 0,
-      "laengste_ms": 0,
-      "erzwungen_ms_max": 0
+      "skripte": 2,
+      "laengste_ms": 10,
+      "erzwungen_ms_max": 9
      },
      "top": [
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/431bw722fec3m.js",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
        "typ": "classic-script",
-       "quelle": "/_next/static/chunks/431bw722fec3m.js",
+       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 120,
+       "dauer_ms": 303,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
-       "phase": "einstieg"
+       "phase": "scroll"
       },
       {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "typ": "classic-script",
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 101,
-       "erzwungen_ms": 89,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 57,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "ReadableStreamDefaultReader.read.then",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
        "funktion": null,
-       "pos": -1,
-       "dauer_ms": 55,
+       "pos": 0,
+       "dauer_ms": 110,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 90,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 42,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -1734,7 +1902,7 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": "O",
        "pos": 224488,
-       "dauer_ms": 53,
+       "dauer_ms": 40,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -1743,16 +1911,18 @@
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     1
+     0.0754,
+     0.0936,
+     0.0787
+    ],
+    "drossel_effektiv_alle": [
+     4.03,
+     4.34,
+     3.61
     ]
-   }
-  },
-  {
-   "seite": "/",
-   "ansicht": "m375",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -2215,165 +2385,131 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "fehler": [],
    "frames": {
-    "drossel": 4,
-    "drossel_ist": 11.65,
-    "leistung_ms": 57,
+    "drossel": 1,
+    "drossel_ist": 1.1,
+    "drossel_effektiv": 1.12,
+    "messqualitaet": "ok",
+    "ruhetor_s": 2,
+    "leistung_ms": 17,
+    "leistung_frei_ms": 16,
     "last_1min": [
-     13.46,
-     13.31
+     9.16,
+     9.16,
+     8.42
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 24,
-     "anteil_verworfen": 0.3333,
-     "anteil_ueber_50ms": 0.1667,
-     "anteil_ausgelassene_vsyncs": 0.6757,
-     "anteil_roh_ueber_16_7ms": 0.7083,
+     "intervalle": 33,
+     "anteil_verworfen": 0.2727,
+     "anteil_ueber_50ms": 0.1818,
+     "anteil_ausgelassene_vsyncs": 0.5,
+     "anteil_roh_ueber_16_7ms": 0.4848,
      "p50_ms": 16.7,
-     "p95_ms": 116.7,
-     "max_ms": 516.6,
+     "p95_ms": 116.8,
+     "max_ms": 149.9,
      "vsync_einheiten": {
-      "1": 16,
-      "2": 2,
-      "3": 2,
-      "4+": 4
+      "1": 24,
+      "2": 0,
+      "3": 3,
+      "4+": 6
      }
     },
     "scroll": {
-     "intervalle": 609,
-     "anteil_verworfen": 0.1166,
-     "anteil_ueber_50ms": 0.023,
-     "anteil_ausgelassene_vsyncs": 0.1781,
-     "anteil_roh_ueber_16_7ms": 0.3826,
-     "p50_ms": 16.7,
-     "p95_ms": 33.4,
-     "max_ms": 216.6,
+     "intervalle": 147,
+     "anteil_verworfen": 1,
+     "anteil_ueber_50ms": 0.8095,
+     "anteil_ausgelassene_vsyncs": 0.7667,
+     "anteil_roh_ueber_16_7ms": 1,
+     "p50_ms": 66.7,
+     "p95_ms": 100,
+     "max_ms": 150,
      "vsync_einheiten": {
-      "1": 538,
-      "2": 44,
-      "3": 13,
-      "4+": 14
+      "1": 0,
+      "2": 2,
+      "3": 26,
+      "4+": 119
      }
     },
     "loaf": {
-     "anzahl": 23,
-     "einstieg": 5,
-     "scroll": 18,
-     "laengster_ms": 638,
-     "laengste_skriptdauer_ms": 199,
+     "anzahl": 4,
+     "einstieg": 4,
+     "scroll": 0,
+     "laengster_ms": 185,
+     "laengste_skriptdauer_ms": 56,
      "bewegung": {
-      "skripte": 3,
-      "ueber_20ms": 1,
-      "laengste_ms": 29,
-      "top": [
-       {
-        "invoker": "DOMWindow.onscroll",
-        "typ": "event-listener",
-        "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
-        "funktion": "t",
-        "pos": 33222,
-        "dauer_ms": 29,
-        "erzwungen_ms": 0,
-        "bewegungsbezug": [
-         "chunk:framer-motion"
-        ],
-        "werkzeug": false,
-        "phase": "scroll"
-       },
-       {
-        "invoker": "DOMWindow.onscroll",
-        "typ": "event-listener",
-        "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
-        "funktion": "t",
-        "pos": 33222,
-        "dauer_ms": 8,
-        "erzwungen_ms": 0,
-        "bewegungsbezug": [
-         "chunk:framer-motion"
-        ],
-        "werkzeug": false,
-        "phase": "scroll"
-       },
-       {
-        "invoker": "FrameRequestCallback",
-        "typ": "user-callback",
-        "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
-        "funktion": null,
-        "pos": 33260,
-        "dauer_ms": 7,
-        "erzwungen_ms": 0,
-        "bewegungsbezug": [
-         "rAF-Rückruf",
-         "chunk:framer-motion"
-        ],
-        "werkzeug": false,
-        "phase": "scroll"
-       }
-      ]
+      "skripte": 0,
+      "ueber_20ms": 0,
+      "laengste_ms": 0,
+      "top": []
      },
      "werkzeug": {
-      "skripte": 3,
-      "laengste_ms": 7,
-      "erzwungen_ms_max": 6
+      "skripte": 0,
+      "laengste_ms": 0,
+      "erzwungen_ms_max": 0
      },
      "top": [
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 56,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
       {
        "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
        "typ": "classic-script",
        "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 199,
+       "dauer_ms": 50,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
-       "phase": "scroll"
+       "phase": "einstieg"
       },
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/431bw722fec3m.js",
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 36,
+       "erzwungen_ms": 19,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/bad",
        "typ": "classic-script",
-       "quelle": "/_next/static/chunks/431bw722fec3m.js",
+       "quelle": "/bad",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 108,
+       "dauer_ms": 9,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
       },
       {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 73,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 47,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 41,
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/0mrfva4uf7_pi.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/0mrfva4uf7_pi.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 5,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -2382,16 +2518,18 @@
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     0.1166
+     1,
+     1,
+     1
+    ],
+    "drossel_effektiv_alle": [
+     1.2,
+     1.12,
+     1.29
     ]
-   }
-  },
-  {
-   "seite": "/bad",
-   "ansicht": "d1440",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -2742,54 +2880,64 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "fehler": [],
    "frames": {
-    "drossel": 1,
-    "drossel_ist": 1.55,
-    "leistung_ms": 8,
+    "drossel": 4,
+    "drossel_ist": 3.85,
+    "drossel_effektiv": 3.98,
+    "messqualitaet": "ok",
+    "ruhetor_s": 0,
+    "leistung_ms": 61,
+    "leistung_frei_ms": 16,
     "last_1min": [
-     16.01,
-     15.08
+     10.77,
+     10.77,
+     10.87
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 46,
-     "anteil_verworfen": 0.2174,
-     "anteil_ueber_50ms": 0.1739,
-     "anteil_ausgelassene_vsyncs": 0.6541,
-     "anteil_roh_ueber_16_7ms": 0.3696,
+     "intervalle": 22,
+     "anteil_verworfen": 0.3182,
+     "anteil_ueber_50ms": 0.2727,
+     "anteil_ausgelassene_vsyncs": 0.5769,
+     "anteil_roh_ueber_16_7ms": 0.6364,
      "p50_ms": 16.7,
-     "p95_ms": 216.7,
-     "max_ms": 233.4,
+     "p95_ms": 100,
+     "max_ms": 216.7,
      "vsync_einheiten": {
-      "1": 36,
-      "2": 2,
+      "1": 15,
+      "2": 1,
       "3": 0,
-      "4+": 8
+      "4+": 6
      }
     },
     "scroll": {
-     "intervalle": 146,
-     "anteil_verworfen": 1,
-     "anteil_ueber_50ms": 1,
-     "anteil_ausgelassene_vsyncs": 0.8841,
-     "anteil_roh_ueber_16_7ms": 1,
-     "p50_ms": 133.3,
-     "p95_ms": 283.2,
-     "max_ms": 316.7,
+     "intervalle": 267,
+     "anteil_verworfen": 0.0562,
+     "anteil_ueber_50ms": 0.015,
+     "anteil_ausgelassene_vsyncs": 0.107,
+     "anteil_roh_ueber_16_7ms": 0.2959,
+     "p50_ms": 16.7,
+     "p95_ms": 33.3,
+     "max_ms": 183.3,
      "vsync_einheiten": {
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4+": 146
+      "1": 252,
+      "2": 9,
+      "3": 2,
+      "4+": 4
      }
     },
     "loaf": {
-     "anzahl": 7,
-     "einstieg": 4,
-     "scroll": 3,
-     "laengster_ms": 104,
-     "laengste_skriptdauer_ms": 53,
+     "anzahl": 11,
+     "einstieg": 6,
+     "scroll": 5,
+     "laengster_ms": 265,
+     "laengste_skriptdauer_ms": 179,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -2803,60 +2951,60 @@
      },
      "top": [
       {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 53,
-       "erzwungen_ms": 17,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 47,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
        "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
        "typ": "classic-script",
        "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 42,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "ReadableStreamDefaultReader.read.then",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": -1,
-       "dauer_ms": 16,
+       "dauer_ms": 179,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "scroll"
       },
       {
-       "invoker": "ReadableStreamDefaultReader.read.then",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 82,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/turbopack-1m7sgzau7206r.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/turbopack-1m7sgzau7206r.js",
        "funktion": null,
-       "pos": -1,
-       "dauer_ms": 10,
+       "pos": 0,
+       "dauer_ms": 74,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 73,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 48,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -2865,16 +3013,18 @@
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     1
+     0.0562,
+     0.0634,
+     0.0746
+    ],
+    "drossel_effektiv_alle": [
+     3.98,
+     6.97,
+     3.37
     ]
-   }
-  },
-  {
-   "seite": "/bad",
-   "ansicht": "m375",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -3165,54 +3315,64 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "fehler": [],
    "frames": {
-    "drossel": 4,
-    "drossel_ist": 4.06,
-    "leistung_ms": 20,
+    "drossel": 1,
+    "drossel_ist": 1.51,
+    "drossel_effektiv": 1.51,
+    "messqualitaet": "unsicher",
+    "ruhetor_s": 2,
+    "leistung_ms": 23,
+    "leistung_frei_ms": 15,
     "last_1min": [
-     16.79,
-     16.01
+     8.18,
+     8.16,
+     8.97
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 19,
-     "anteil_verworfen": 0.3684,
-     "anteil_ueber_50ms": 0.2105,
-     "anteil_ausgelassene_vsyncs": 0.6346,
-     "anteil_roh_ueber_16_7ms": 0.7895,
+     "intervalle": 38,
+     "anteil_verworfen": 0.2895,
+     "anteil_ueber_50ms": 0.1842,
+     "anteil_ausgelassene_vsyncs": 0.525,
+     "anteil_roh_ueber_16_7ms": 0.5263,
      "p50_ms": 16.7,
-     "p95_ms": 266.5,
-     "max_ms": 266.5,
+     "p95_ms": 116.7,
+     "max_ms": 199.9,
      "vsync_einheiten": {
-      "1": 12,
-      "2": 3,
+      "1": 27,
+      "2": 4,
       "3": 0,
-      "4+": 4
+      "4+": 7
      }
     },
     "scroll": {
-     "intervalle": 269,
-     "anteil_verworfen": 0.0929,
-     "anteil_ueber_50ms": 0.0112,
-     "anteil_ausgelassene_vsyncs": 0.1266,
-     "anteil_roh_ueber_16_7ms": 0.342,
-     "p50_ms": 16.7,
-     "p95_ms": 33.3,
-     "max_ms": 116.7,
+     "intervalle": 184,
+     "anteil_verworfen": 1,
+     "anteil_ueber_50ms": 1,
+     "anteil_ausgelassene_vsyncs": 0.8691,
+     "anteil_roh_ueber_16_7ms": 1,
+     "p50_ms": 116.7,
+     "p95_ms": 200,
+     "max_ms": 266.5,
      "vsync_einheiten": {
-      "1": 244,
-      "2": 18,
-      "3": 4,
-      "4+": 3
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4+": 184
      }
     },
     "loaf": {
-     "anzahl": 11,
-     "einstieg": 4,
-     "scroll": 7,
-     "laengster_ms": 398,
-     "laengste_skriptdauer_ms": 144,
+     "anzahl": 3,
+     "einstieg": 3,
+     "scroll": 0,
+     "laengster_ms": 183,
+     "laengste_skriptdauer_ms": 59,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -3231,7 +3391,7 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 144,
+       "dauer_ms": 59,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -3243,7 +3403,7 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": "O",
        "pos": 224488,
-       "dauer_ms": 89,
+       "dauer_ms": 53,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -3255,49 +3415,27 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": "O",
        "pos": 224488,
-       "dauer_ms": 56,
+       "dauer_ms": 7,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "Promise.resolve",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": -1,
-       "dauer_ms": 21,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "ReadableStreamDefaultReader.read.then",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": -1,
-       "dauer_ms": 20,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
+       "phase": "einstieg"
       }
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     0.0929
+     1,
+     1,
+     1
+    ],
+    "drossel_effektiv_alle": [
+     1.48,
+     1.51,
+     1.54
     ]
-   }
-  },
-  {
-   "seite": "/leistungen",
-   "ansicht": "d1440",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -3648,54 +3786,64 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "fehler": [],
    "frames": {
-    "drossel": 1,
-    "drossel_ist": 1.14,
-    "leistung_ms": 6,
+    "drossel": 4,
+    "drossel_ist": 3.51,
+    "drossel_effektiv": 3.94,
+    "messqualitaet": "ok",
+    "ruhetor_s": 2,
+    "leistung_ms": 60,
+    "leistung_frei_ms": 17,
     "last_1min": [
-     15.47,
-     14.53
+     6.84,
+     6.29,
+     6.59
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 35,
-     "anteil_verworfen": 0.2571,
-     "anteil_ueber_50ms": 0.2286,
-     "anteil_ausgelassene_vsyncs": 0.6196,
-     "anteil_roh_ueber_16_7ms": 0.5429,
+     "intervalle": 23,
+     "anteil_verworfen": 0.3043,
+     "anteil_ueber_50ms": 0.1739,
+     "anteil_ausgelassene_vsyncs": 0.5818,
+     "anteil_roh_ueber_16_7ms": 0.5217,
      "p50_ms": 16.7,
-     "p95_ms": 200,
-     "max_ms": 216.7,
+     "p95_ms": 150.1,
+     "max_ms": 183.3,
      "vsync_einheiten": {
-      "1": 26,
+      "1": 16,
       "2": 1,
-      "3": 0,
-      "4+": 8
+      "3": 2,
+      "4+": 4
      }
     },
     "scroll": {
-     "intervalle": 184,
-     "anteil_verworfen": 1,
-     "anteil_ueber_50ms": 0.9891,
-     "anteil_ausgelassene_vsyncs": 0.8658,
-     "anteil_roh_ueber_16_7ms": 1,
-     "p50_ms": 116.7,
-     "p95_ms": 200.1,
-     "max_ms": 333.3,
+     "intervalle": 385,
+     "anteil_verworfen": 0.0286,
+     "anteil_ueber_50ms": 0.0052,
+     "anteil_ausgelassene_vsyncs": 0.061,
+     "anteil_roh_ueber_16_7ms": 0.2623,
+     "p50_ms": 16.7,
+     "p95_ms": 16.8,
+     "max_ms": 199.9,
      "vsync_einheiten": {
-      "1": 0,
-      "2": 0,
-      "3": 2,
-      "4+": 182
+      "1": 374,
+      "2": 8,
+      "3": 1,
+      "4+": 2
      }
     },
     "loaf": {
-     "anzahl": 4,
-     "einstieg": 3,
-     "scroll": 1,
-     "laengster_ms": 245,
-     "laengste_skriptdauer_ms": 68,
+     "anzahl": 8,
+     "einstieg": 6,
+     "scroll": 2,
+     "laengster_ms": 260,
+     "laengste_skriptdauer_ms": 208,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -3714,11 +3862,11 @@
        "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 68,
+       "dauer_ms": 208,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
-       "phase": "einstieg"
+       "phase": "scroll"
       },
       {
        "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
@@ -3726,37 +3874,63 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 50,
+       "dauer_ms": 135,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
       },
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/turbopack-1m7sgzau7206r.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/turbopack-1m7sgzau7206r.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 5,
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 56,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 47,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "ReadableStreamDefaultReader.read.then",
+       "typ": "resolve-promise",
+       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
+       "funktion": null,
+       "pos": -1,
+       "dauer_ms": 19,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
       }
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     1
+     0.0519,
+     0.0363,
+     0.0286
+    ],
+    "drossel_effektiv_alle": [
+     5.73,
+     2.12,
+     3.94
     ]
-   }
-  },
-  {
-   "seite": "/leistungen",
-   "ansicht": "m375",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -4047,75 +4221,69 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "fehler": [],
    "frames": {
-    "drossel": 4,
-    "drossel_ist": 3.06,
-    "leistung_ms": 15,
+    "drossel": 1,
+    "drossel_ist": 1.06,
+    "drossel_effektiv": 1.33,
+    "messqualitaet": "ok",
+    "ruhetor_s": 0,
+    "leistung_ms": 20,
+    "leistung_frei_ms": 19,
     "last_1min": [
-     15.53,
-     15.17
+     7.94,
+     7.94,
+     7.52
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 23,
-     "anteil_verworfen": 0.3043,
-     "anteil_ueber_50ms": 0.087,
-     "anteil_ausgelassene_vsyncs": 0.5893,
-     "anteil_roh_ueber_16_7ms": 0.6522,
+     "intervalle": 35,
+     "anteil_verworfen": 0.2286,
+     "anteil_ueber_50ms": 0.1429,
+     "anteil_ausgelassene_vsyncs": 0.4853,
+     "anteil_roh_ueber_16_7ms": 0.4571,
      "p50_ms": 16.7,
-     "p95_ms": 166.6,
-     "max_ms": 316.7,
+     "p95_ms": 116.8,
+     "max_ms": 133.3,
      "vsync_einheiten": {
-      "1": 16,
-      "2": 4,
-      "3": 1,
-      "4+": 2
-     }
-    },
-    "scroll": {
-     "intervalle": 386,
-     "anteil_verworfen": 0.0803,
-     "anteil_ueber_50ms": 0.013,
-     "anteil_ausgelassene_vsyncs": 0.1147,
-     "anteil_roh_ueber_16_7ms": 0.3005,
-     "p50_ms": 16.7,
-     "p95_ms": 33.3,
-     "max_ms": 83.3,
-     "vsync_einheiten": {
-      "1": 355,
-      "2": 19,
-      "3": 7,
+      "1": 27,
+      "2": 1,
+      "3": 2,
       "4+": 5
      }
     },
+    "scroll": {
+     "intervalle": 195,
+     "anteil_verworfen": 1,
+     "anteil_ueber_50ms": 0.9179,
+     "anteil_ausgelassene_vsyncs": 0.7912,
+     "anteil_roh_ueber_16_7ms": 1,
+     "p50_ms": 83.3,
+     "p95_ms": 100.1,
+     "max_ms": 133.4,
+     "vsync_einheiten": {
+      "1": 0,
+      "2": 0,
+      "3": 16,
+      "4+": 179
+     }
+    },
     "loaf": {
-     "anzahl": 13,
-     "einstieg": 4,
-     "scroll": 9,
-     "laengster_ms": 531,
-     "laengste_skriptdauer_ms": 153,
+     "anzahl": 2,
+     "einstieg": 2,
+     "scroll": 0,
+     "laengster_ms": 145,
+     "laengste_skriptdauer_ms": 40,
      "bewegung": {
-      "skripte": 1,
+      "skripte": 0,
       "ueber_20ms": 0,
-      "laengste_ms": 7,
-      "top": [
-       {
-        "invoker": "FrameRequestCallback",
-        "typ": "user-callback",
-        "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
-        "funktion": null,
-        "pos": 33260,
-        "dauer_ms": 7,
-        "erzwungen_ms": 0,
-        "bewegungsbezug": [
-         "rAF-Rückruf",
-         "chunk:framer-motion"
-        ],
-        "werkzeug": false,
-        "phase": "scroll"
-       }
-      ]
+      "laengste_ms": 0,
+      "top": []
      },
      "werkzeug": {
       "skripte": 0,
@@ -4124,78 +4292,32 @@
      },
      "top": [
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/turbopack-1m7sgzau7206r.js",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
        "typ": "classic-script",
-       "quelle": "/_next/static/chunks/turbopack-1m7sgzau7206r.js",
+       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 153,
+       "dauer_ms": 40,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 69,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 44,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "ReadableStreamDefaultReader.read.then",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": -1,
-       "dauer_ms": 43,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "Promise.resolve",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": -1,
-       "dauer_ms": 43,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
       }
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     0.0803
+     1,
+     1,
+     1
+    ],
+    "drossel_effektiv_alle": [
+     1.33,
+     1.7,
+     1.07
     ]
-   }
-  },
-  {
-   "seite": "/standorte",
-   "ansicht": "d1440",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -4931,54 +5053,64 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "fehler": [],
    "frames": {
-    "drossel": 1,
-    "drossel_ist": 1.41,
-    "leistung_ms": 7,
+    "drossel": 4,
+    "drossel_ist": 4.75,
+    "drossel_effektiv": 5.07,
+    "messqualitaet": "ok",
+    "ruhetor_s": 8,
+    "leistung_ms": 78,
+    "leistung_frei_ms": 16,
     "last_1min": [
-     13.59,
-     11.18
+     9.27,
+     8.46,
+     8.27
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 34,
-     "anteil_verworfen": 0.2647,
-     "anteil_ueber_50ms": 0.2353,
-     "anteil_ausgelassene_vsyncs": 0.4603,
-     "anteil_roh_ueber_16_7ms": 0.4706,
-     "p50_ms": 16.7,
-     "p95_ms": 66.7,
-     "max_ms": 133.4,
+     "intervalle": 14,
+     "anteil_verworfen": 0.5,
+     "anteil_ueber_50ms": 0.2143,
+     "anteil_ausgelassene_vsyncs": 0.7813,
+     "anteil_roh_ueber_16_7ms": 0.5714,
+     "p50_ms": 33.3,
+     "p95_ms": 433.2,
+     "max_ms": 433.2,
      "vsync_einheiten": {
-      "1": 25,
-      "2": 1,
-      "3": 0,
-      "4+": 8
+      "1": 7,
+      "2": 2,
+      "3": 2,
+      "4+": 3
      }
     },
     "scroll": {
-     "intervalle": 195,
-     "anteil_verworfen": 1,
-     "anteil_ueber_50ms": 0.7333,
-     "anteil_ausgelassene_vsyncs": 0.796,
-     "anteil_roh_ueber_16_7ms": 1,
-     "p50_ms": 66.7,
-     "p95_ms": 150,
-     "max_ms": 233.3,
+     "intervalle": 339,
+     "anteil_verworfen": 0.1062,
+     "anteil_ueber_50ms": 0.0147,
+     "anteil_ausgelassene_vsyncs": 0.165,
+     "anteil_roh_ueber_16_7ms": 0.292,
+     "p50_ms": 16.7,
+     "p95_ms": 33.4,
+     "max_ms": 250,
      "vsync_einheiten": {
-      "1": 0,
-      "2": 5,
-      "3": 47,
-      "4+": 143
+      "1": 303,
+      "2": 24,
+      "3": 7,
+      "4+": 5
      }
     },
     "loaf": {
-     "anzahl": 2,
-     "einstieg": 2,
-     "scroll": 0,
-     "laengster_ms": 175,
-     "laengste_skriptdauer_ms": 42,
+     "anzahl": 16,
+     "einstieg": 4,
+     "scroll": 12,
+     "laengster_ms": 521,
+     "laengste_skriptdauer_ms": 273,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -4986,36 +5118,86 @@
       "top": []
      },
      "werkzeug": {
-      "skripte": 0,
-      "laengste_ms": 0,
-      "erzwungen_ms_max": 0
+      "skripte": 1,
+      "laengste_ms": 16,
+      "erzwungen_ms_max": 16
      },
      "top": [
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 273,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2zx3q7e7c69qs.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 254,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
       {
        "invoker": "MessagePort.onmessage",
        "typ": "event-listener",
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": "O",
        "pos": 224488,
-       "dauer_ms": 42,
-       "erzwungen_ms": 22,
+       "dauer_ms": 65,
+       "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 56,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 52,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
       }
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     1
+     0.1268,
+     0.1062,
+     0.0472
+    ],
+    "drossel_effektiv_alle": [
+     3.75,
+     5.07,
+     6.29
     ]
-   }
-  },
-  {
-   "seite": "/standorte",
-   "ansicht": "m375",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -5656,54 +5838,64 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "fehler": [],
    "frames": {
-    "drossel": 4,
-    "drossel_ist": 3.59,
-    "leistung_ms": 18,
+    "drossel": 1,
+    "drossel_ist": 1.16,
+    "drossel_effektiv": 1.26,
+    "messqualitaet": "ok",
+    "ruhetor_s": 0,
+    "leistung_ms": 19,
+    "leistung_frei_ms": 17,
     "last_1min": [
-     11.18,
-     11.25
+     5.92,
+     5.92,
+     5.56
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 10,
-     "anteil_verworfen": 0.5,
-     "anteil_ueber_50ms": 0.4,
-     "anteil_ausgelassene_vsyncs": 0.75,
-     "anteil_roh_ueber_16_7ms": 0.8,
-     "p50_ms": 50.1,
-     "p95_ms": 199.9,
-     "max_ms": 199.9,
+     "intervalle": 34,
+     "anteil_verworfen": 0.2353,
+     "anteil_ueber_50ms": 0.2059,
+     "anteil_ausgelassene_vsyncs": 0.5467,
+     "anteil_roh_ueber_16_7ms": 0.5588,
+     "p50_ms": 16.7,
+     "p95_ms": 133.2,
+     "max_ms": 133.4,
      "vsync_einheiten": {
-      "1": 5,
-      "2": 0,
-      "3": 1,
-      "4+": 4
+      "1": 26,
+      "2": 1,
+      "3": 0,
+      "4+": 7
      }
     },
     "scroll": {
-     "intervalle": 339,
-     "anteil_verworfen": 0.0472,
-     "anteil_ueber_50ms": 0.0088,
-     "anteil_ausgelassene_vsyncs": 0.0863,
-     "anteil_roh_ueber_16_7ms": 0.2891,
-     "p50_ms": 16.7,
-     "p95_ms": 16.8,
-     "max_ms": 183.3,
+     "intervalle": 164,
+     "anteil_verworfen": 1,
+     "anteil_ueber_50ms": 0.7256,
+     "anteil_ausgelassene_vsyncs": 0.7684,
+     "anteil_roh_ueber_16_7ms": 1,
+     "p50_ms": 66.7,
+     "p95_ms": 116.7,
+     "max_ms": 200,
      "vsync_einheiten": {
-      "1": 323,
-      "2": 12,
-      "3": 1,
-      "4+": 3
+      "1": 0,
+      "2": 6,
+      "3": 39,
+      "4+": 119
      }
     },
     "loaf": {
-     "anzahl": 10,
-     "einstieg": 5,
-     "scroll": 5,
-     "laengster_ms": 202,
-     "laengste_skriptdauer_ms": 198,
+     "anzahl": 3,
+     "einstieg": 3,
+     "scroll": 0,
+     "laengster_ms": 177,
+     "laengste_skriptdauer_ms": 80,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -5717,24 +5909,12 @@
      },
      "top": [
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
        "typ": "classic-script",
-       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 198,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/431bw722fec3m.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/431bw722fec3m.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 187,
+       "dauer_ms": 80,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -5746,31 +5926,19 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": "O",
        "pos": 224488,
-       "dauer_ms": 78,
+       "dauer_ms": 46,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
-       "phase": "scroll"
+       "phase": "einstieg"
       },
       {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 65,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "http://127.0.0.1:4310/standorte",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1_ivff33scuff.js",
        "typ": "classic-script",
-       "quelle": "/standorte",
+       "quelle": "/_next/static/chunks/1_ivff33scuff.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 52,
+       "dauer_ms": 5,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -5779,16 +5947,18 @@
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     0.0472
+     1,
+     1,
+     1
+    ],
+    "drossel_effektiv_alle": [
+     1.26,
+     1.75,
+     1.87
     ]
-   }
-  },
-  {
-   "seite": "/blog",
-   "ansicht": "d1440",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -6137,54 +6307,64 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "fehler": [],
    "frames": {
-    "drossel": 1,
-    "drossel_ist": 1.22,
-    "leistung_ms": 6,
+    "drossel": 4,
+    "drossel_ist": 4.01,
+    "drossel_effektiv": 5.17,
+    "messqualitaet": "ok",
+    "ruhetor_s": 0,
+    "leistung_ms": 79,
+    "leistung_frei_ms": 20,
     "last_1min": [
-     10,
-     8.76
+     6.08,
+     6.08,
+     5.92
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 35,
-     "anteil_verworfen": 0.2857,
-     "anteil_ueber_50ms": 0.2,
-     "anteil_ausgelassene_vsyncs": 0.4853,
-     "anteil_roh_ueber_16_7ms": 0.5143,
+     "intervalle": 17,
+     "anteil_verworfen": 0.3529,
+     "anteil_ueber_50ms": 0.2941,
+     "anteil_ausgelassene_vsyncs": 0.7258,
+     "anteil_roh_ueber_16_7ms": 0.5882,
      "p50_ms": 16.7,
-     "p95_ms": 100,
-     "max_ms": 133.3,
+     "p95_ms": 233.4,
+     "max_ms": 233.4,
      "vsync_einheiten": {
-      "1": 25,
-      "2": 2,
-      "3": 1,
-      "4+": 7
+      "1": 11,
+      "2": 1,
+      "3": 0,
+      "4+": 5
      }
     },
     "scroll": {
-     "intervalle": 164,
-     "anteil_verworfen": 1,
-     "anteil_ueber_50ms": 0.6585,
-     "anteil_ausgelassene_vsyncs": 0.7753,
-     "anteil_roh_ueber_16_7ms": 1,
-     "p50_ms": 66.7,
-     "p95_ms": 133.3,
-     "max_ms": 166.7,
+     "intervalle": 358,
+     "anteil_verworfen": 0.0559,
+     "anteil_ueber_50ms": 0,
+     "anteil_ausgelassene_vsyncs": 0.0604,
+     "anteil_roh_ueber_16_7ms": 0.2737,
+     "p50_ms": 16.7,
+     "p95_ms": 33.3,
+     "max_ms": 50,
      "vsync_einheiten": {
-      "1": 0,
-      "2": 8,
-      "3": 48,
-      "4+": 108
+      "1": 338,
+      "2": 17,
+      "3": 3,
+      "4+": 0
      }
     },
     "loaf": {
-     "anzahl": 3,
-     "einstieg": 3,
-     "scroll": 0,
-     "laengster_ms": 188,
-     "laengste_skriptdauer_ms": 81,
+     "anzahl": 8,
+     "einstieg": 6,
+     "scroll": 2,
+     "laengster_ms": 402,
+     "laengste_skriptdauer_ms": 223,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -6198,12 +6378,24 @@
      },
      "top": [
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "typ": "classic-script",
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 223,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/431bw722fec3m.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/431bw722fec3m.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 81,
+       "dauer_ms": 215,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -6215,19 +6407,31 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": "O",
        "pos": 224488,
-       "dauer_ms": 50,
+       "dauer_ms": 48,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
       },
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1_ivff33scuff.js",
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 32,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/turbopack-1m7sgzau7206r.js",
        "typ": "classic-script",
-       "quelle": "/_next/static/chunks/1_ivff33scuff.js",
+       "quelle": "/_next/static/chunks/turbopack-1m7sgzau7206r.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 9,
+       "dauer_ms": 10,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -6236,16 +6440,18 @@
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     1
+     0.0587,
+     0.0476,
+     0.0559
+    ],
+    "drossel_effektiv_alle": [
+     4.55,
+     5.07,
+     5.17
     ]
-   }
-  },
-  {
-   "seite": "/blog",
-   "ansicht": "m375",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -6533,54 +6739,64 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "fehler": [],
    "frames": {
-    "drossel": 4,
-    "drossel_ist": 6.57,
-    "leistung_ms": 32,
+    "drossel": 1,
+    "drossel_ist": 1.06,
+    "drossel_effektiv": 1.13,
+    "messqualitaet": "ok",
+    "ruhetor_s": 2,
+    "leistung_ms": 17,
+    "leistung_frei_ms": 16,
     "last_1min": [
-     8.76,
-     7.97
+     7.48,
+     7.48,
+     7.59
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 62,
-     "anteil_verworfen": 0.1613,
-     "anteil_ueber_50ms": 0.0806,
-     "anteil_ausgelassene_vsyncs": 0.3673,
-     "anteil_roh_ueber_16_7ms": 0.5806,
+     "intervalle": 36,
+     "anteil_verworfen": 0.2778,
+     "anteil_ueber_50ms": 0.2222,
+     "anteil_ausgelassene_vsyncs": 0.5,
+     "anteil_roh_ueber_16_7ms": 0.4444,
      "p50_ms": 16.7,
-     "p95_ms": 83.3,
-     "max_ms": 183.4,
+     "p95_ms": 100,
+     "max_ms": 116.6,
      "vsync_einheiten": {
-      "1": 52,
-      "2": 5,
-      "3": 0,
-      "4+": 5
+      "1": 26,
+      "2": 1,
+      "3": 1,
+      "4+": 8
      }
     },
     "scroll": {
-     "intervalle": 358,
-     "anteil_verworfen": 0.0391,
-     "anteil_ueber_50ms": 0,
-     "anteil_ausgelassene_vsyncs": 0.0479,
-     "anteil_roh_ueber_16_7ms": 0.2346,
-     "p50_ms": 16.7,
-     "p95_ms": 16.8,
-     "max_ms": 50,
+     "intervalle": 179,
+     "anteil_verworfen": 1,
+     "anteil_ueber_50ms": 0.8101,
+     "anteil_ausgelassene_vsyncs": 0.7914,
+     "anteil_roh_ueber_16_7ms": 1,
+     "p50_ms": 66.7,
+     "p95_ms": 133.3,
+     "max_ms": 183.3,
      "vsync_einheiten": {
-      "1": 344,
-      "2": 10,
-      "3": 4,
-      "4+": 0
+      "1": 0,
+      "2": 0,
+      "3": 34,
+      "4+": 145
      }
     },
     "loaf": {
-     "anzahl": 9,
-     "einstieg": 7,
-     "scroll": 2,
-     "laengster_ms": 197,
-     "laengste_skriptdauer_ms": 164,
+     "anzahl": 2,
+     "einstieg": 2,
+     "scroll": 0,
+     "laengster_ms": 134,
+     "laengste_skriptdauer_ms": 48,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -6594,60 +6810,12 @@
      },
      "top": [
       {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 164,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/431bw722fec3m.js",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2zx3q7e7c69qs.js",
        "typ": "classic-script",
-       "quelle": "/_next/static/chunks/431bw722fec3m.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 153,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 84,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1agk_5kpausjh.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/1agk_5kpausjh.js",
+       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
        "funktion": null,
        "pos": 0,
        "dauer_ms": 48,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "Promise.resolve",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": -1,
-       "dauer_ms": 17,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
@@ -6656,16 +6824,18 @@
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     0.0391
+     1,
+     1,
+     1
+    ],
+    "drossel_effektiv_alle": [
+     1.83,
+     1.13,
+     1.19
     ]
-   }
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "d1440",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -7799,54 +7969,64 @@
       ]
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "fehler": [],
    "frames": {
-    "drossel": 1,
-    "drossel_ist": 3.86,
-    "leistung_ms": 19,
+    "drossel": 4,
+    "drossel_ist": 4.65,
+    "drossel_effektiv": 4.92,
+    "messqualitaet": "ok",
+    "ruhetor_s": 0,
+    "leistung_ms": 75,
+    "leistung_frei_ms": 16,
     "last_1min": [
-     8.95,
-     9.95
+     6.22,
+     6.22,
+     5.8
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 38,
-     "anteil_verworfen": 0.2895,
-     "anteil_ueber_50ms": 0.2368,
-     "anteil_ausgelassene_vsyncs": 0.6696,
-     "anteil_roh_ueber_16_7ms": 0.5526,
+     "intervalle": 19,
+     "anteil_verworfen": 0.3684,
+     "anteil_ueber_50ms": 0.2105,
+     "anteil_ausgelassene_vsyncs": 0.6346,
+     "anteil_roh_ueber_16_7ms": 0.5263,
      "p50_ms": 16.7,
-     "p95_ms": 216.7,
-     "max_ms": 233.3,
+     "p95_ms": 266.7,
+     "max_ms": 266.7,
      "vsync_einheiten": {
-      "1": 27,
-      "2": 2,
+      "1": 12,
+      "2": 3,
       "3": 0,
-      "4+": 9
+      "4+": 4
      }
     },
     "scroll": {
-     "intervalle": 179,
-     "anteil_verworfen": 1,
-     "anteil_ueber_50ms": 1,
-     "anteil_ausgelassene_vsyncs": 0.8699,
-     "anteil_roh_ueber_16_7ms": 1,
-     "p50_ms": 116.7,
-     "p95_ms": 250,
-     "max_ms": 333.3,
+     "intervalle": 333,
+     "anteil_verworfen": 0.0571,
+     "anteil_ueber_50ms": 0.012,
+     "anteil_ausgelassene_vsyncs": 0.1072,
+     "anteil_roh_ueber_16_7ms": 0.2643,
+     "p50_ms": 16.7,
+     "p95_ms": 33.3,
+     "max_ms": 233.4,
      "vsync_einheiten": {
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4+": 179
+      "1": 314,
+      "2": 13,
+      "3": 2,
+      "4+": 4
      }
     },
     "loaf": {
-     "anzahl": 4,
-     "einstieg": 4,
-     "scroll": 0,
-     "laengster_ms": 146,
-     "laengste_skriptdauer_ms": 101,
+     "anzahl": 8,
+     "einstieg": 5,
+     "scroll": 3,
+     "laengster_ms": 313,
+     "laengste_skriptdauer_ms": 243,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -7860,28 +8040,16 @@
      },
      "top": [
       {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 101,
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 243,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 64,
-       "erzwungen_ms": 35,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
+       "phase": "scroll"
       },
       {
        "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
@@ -7889,37 +8057,63 @@
        "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 63,
+       "dauer_ms": 141,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
       },
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1_ivff33scuff.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/1_ivff33scuff.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 6,
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 95,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 52,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 35,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
       }
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     1
+     0.0571,
+     0.042,
+     0.0633
+    ],
+    "drossel_effektiv_alle": [
+     4.92,
+     6.22,
+     7.8
     ]
-   }
-  },
-  {
-   "seite": "/ueber-uns",
-   "ansicht": "m375",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -8736,54 +8930,64 @@
       ]
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "fehler": [],
    "frames": {
-    "drossel": 4,
-    "drossel_ist": 7.55,
-    "leistung_ms": 37,
+    "drossel": 1,
+    "drossel_ist": 1.07,
+    "drossel_effektiv": 1.12,
+    "messqualitaet": "ok",
+    "ruhetor_s": 2,
+    "leistung_ms": 17,
+    "leistung_frei_ms": 16,
     "last_1min": [
-     8.94,
-     8.95
+     9.53,
+     9.53,
+     9.28
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 16,
-     "anteil_verworfen": 0.375,
+     "intervalle": 32,
+     "anteil_verworfen": 0.2813,
      "anteil_ueber_50ms": 0.1875,
-     "anteil_ausgelassene_vsyncs": 0.7193,
-     "anteil_roh_ueber_16_7ms": 0.6875,
+     "anteil_ausgelassene_vsyncs": 0.5897,
+     "anteil_roh_ueber_16_7ms": 0.4688,
      "p50_ms": 16.7,
-     "p95_ms": 350,
-     "max_ms": 350,
+     "p95_ms": 149.9,
+     "max_ms": 200,
      "vsync_einheiten": {
-      "1": 10,
-      "2": 3,
-      "3": 0,
-      "4+": 3
+      "1": 23,
+      "2": 2,
+      "3": 1,
+      "4+": 6
      }
     },
     "scroll": {
-     "intervalle": 333,
-     "anteil_verworfen": 0.1171,
-     "anteil_ueber_50ms": 0.012,
-     "anteil_ausgelassene_vsyncs": 0.1527,
-     "anteil_roh_ueber_16_7ms": 0.3183,
-     "p50_ms": 16.7,
-     "p95_ms": 33.4,
-     "max_ms": 183.3,
+     "intervalle": 164,
+     "anteil_verworfen": 1,
+     "anteil_ueber_50ms": 1,
+     "anteil_ausgelassene_vsyncs": 0.8602,
+     "anteil_roh_ueber_16_7ms": 1,
+     "p50_ms": 116.6,
+     "p95_ms": 200,
+     "max_ms": 266.7,
      "vsync_einheiten": {
-      "1": 294,
-      "2": 30,
-      "3": 5,
-      "4+": 4
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4+": 164
      }
     },
     "loaf": {
-     "anzahl": 12,
+     "anzahl": 4,
      "einstieg": 4,
-     "scroll": 8,
-     "laengster_ms": 527,
-     "laengste_skriptdauer_ms": 219,
+     "scroll": 0,
+     "laengster_ms": 185,
+     "laengste_skriptdauer_ms": 52,
      "bewegung": {
       "skripte": 0,
       "ueber_20ms": 0,
@@ -8797,78 +9001,44 @@
      },
      "top": [
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2zx3q7e7c69qs.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 219,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
        "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
        "typ": "classic-script",
        "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 197,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 108,
+       "dauer_ms": 52,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
       },
       {
-       "invoker": "Promise.resolve",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
        "funktion": null,
-       "pos": -1,
-       "dauer_ms": 13,
+       "pos": 0,
+       "dauer_ms": 43,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "ReadableStreamDefaultReader.read.then",
-       "typ": "resolve-promise",
-       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
-       "funktion": null,
-       "pos": -1,
-       "dauer_ms": 10,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
+       "phase": "einstieg"
       }
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     0.1171
+     1,
+     1,
+     1
+    ],
+    "drossel_effektiv_alle": [
+     1.93,
+     1.12,
+     2.19
     ]
-   }
-  },
-  {
-   "seite": "/kontakt",
-   "ansicht": "d1440",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -9367,59 +9537,84 @@
       "ort": []
      }
     ]
-   },
+   }
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "fehler": [],
    "frames": {
-    "drossel": 1,
-    "drossel_ist": 1.33,
-    "leistung_ms": 7,
+    "drossel": 4,
+    "drossel_ist": 4.3,
+    "drossel_effektiv": 4.84,
+    "messqualitaet": "ok",
+    "ruhetor_s": 0,
+    "leistung_ms": 74,
+    "leistung_frei_ms": 17,
     "last_1min": [
-     10.07,
-     9.69
+     7.65,
+     7.65,
+     7.79
     ],
     "vsync_ms": 16.7,
     "einstieg": {
-     "intervalle": 37,
-     "anteil_verworfen": 0.1892,
-     "anteil_ueber_50ms": 0.1622,
-     "anteil_ausgelassene_vsyncs": 0.4638,
-     "anteil_roh_ueber_16_7ms": 0.5135,
+     "intervalle": 15,
+     "anteil_verworfen": 0.4667,
+     "anteil_ueber_50ms": 0.2667,
+     "anteil_ausgelassene_vsyncs": 0.717,
+     "anteil_roh_ueber_16_7ms": 0.6,
      "p50_ms": 16.7,
-     "p95_ms": 100,
-     "max_ms": 183.4,
+     "p95_ms": 250,
+     "max_ms": 250,
      "vsync_einheiten": {
-      "1": 30,
-      "2": 0,
+      "1": 8,
+      "2": 2,
       "3": 1,
-      "4+": 6
+      "4+": 4
      }
     },
     "scroll": {
-     "intervalle": 164,
-     "anteil_verworfen": 1,
-     "anteil_ueber_50ms": 0.9634,
-     "anteil_ausgelassene_vsyncs": 0.8157,
-     "anteil_roh_ueber_16_7ms": 1,
-     "p50_ms": 83.3,
-     "p95_ms": 150,
-     "max_ms": 216.7,
+     "intervalle": 265,
+     "anteil_verworfen": 0.0868,
+     "anteil_ueber_50ms": 0.0226,
+     "anteil_ausgelassene_vsyncs": 0.1846,
+     "anteil_roh_ueber_16_7ms": 0.3358,
+     "p50_ms": 16.7,
+     "p95_ms": 33.4,
+     "max_ms": 266.6,
      "vsync_einheiten": {
-      "1": 0,
-      "2": 0,
-      "3": 6,
-      "4+": 158
+      "1": 242,
+      "2": 12,
+      "3": 5,
+      "4+": 6
      }
     },
     "loaf": {
-     "anzahl": 3,
-     "einstieg": 2,
-     "scroll": 1,
-     "laengster_ms": 158,
-     "laengste_skriptdauer_ms": 49,
+     "anzahl": 12,
+     "einstieg": 5,
+     "scroll": 7,
+     "laengster_ms": 356,
+     "laengste_skriptdauer_ms": 259,
      "bewegung": {
-      "skripte": 0,
+      "skripte": 1,
       "ueber_20ms": 0,
-      "laengste_ms": 0,
-      "top": []
+      "laengste_ms": 5,
+      "top": [
+       {
+        "invoker": "http://127.0.0.1:4310/_next/static/chunks/2ozzpluwoe0ev.js",
+        "typ": "classic-script",
+        "quelle": "/_next/static/chunks/2ozzpluwoe0ev.js",
+        "funktion": null,
+        "pos": 0,
+        "dauer_ms": 5,
+        "erzwungen_ms": 0,
+        "bewegungsbezug": [
+         "chunk:framer-motion"
+        ],
+        "werkzeug": false,
+        "phase": "einstieg"
+       }
+      ]
      },
      "werkzeug": {
       "skripte": 0,
@@ -9428,42 +9623,80 @@
      },
      "top": [
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
        "typ": "classic-script",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
        "funktion": null,
        "pos": 0,
-       "dauer_ms": 49,
+       "dauer_ms": 259,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
+      },
+      {
+       "invoker": "http://127.0.0.1:4310/_next/static/chunks/2zx3q7e7c69qs.js",
+       "typ": "classic-script",
+       "quelle": "/_next/static/chunks/2zx3q7e7c69qs.js",
+       "funktion": null,
+       "pos": 0,
+       "dauer_ms": 189,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
       },
       {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1_ivff33scuff.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/1_ivff33scuff.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 6,
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 123,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 102,
        "erzwungen_ms": 0,
        "bewegungsbezug": [],
        "werkzeug": false,
        "phase": "einstieg"
+      },
+      {
+       "invoker": "MessagePort.onmessage",
+       "typ": "event-listener",
+       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
+       "funktion": "O",
+       "pos": 224488,
+       "dauer_ms": 50,
+       "erzwungen_ms": 0,
+       "bewegungsbezug": [],
+       "werkzeug": false,
+       "phase": "scroll"
       }
      ],
      "fehler": null
     },
-    "wiederholungen": 1,
+    "wiederholungen": 3,
     "scroll_anteil_verworfen_alle": [
-     1
+     0.0865,
+     0.1128,
+     0.0868
+    ],
+    "drossel_effektiv_alle": [
+     6.51,
+     6.05,
+     4.84
     ]
-   }
-  },
-  {
-   "seite": "/kontakt",
-   "ansicht": "m375",
-   "fehler": [],
+   },
    "normal": {
     "modus": "normal",
     "status": 200,
@@ -9901,133 +10134,6 @@
       "dauer_ms": [],
       "ort": []
      }
-    ]
-   },
-   "frames": {
-    "drossel": 4,
-    "drossel_ist": 4.57,
-    "leistung_ms": 22,
-    "last_1min": [
-     10.42,
-     10.07
-    ],
-    "vsync_ms": 16.7,
-    "einstieg": {
-     "intervalle": 11,
-     "anteil_verworfen": 0.5455,
-     "anteil_ueber_50ms": 0.4545,
-     "anteil_ausgelassene_vsyncs": 0.7381,
-     "anteil_roh_ueber_16_7ms": 0.7273,
-     "p50_ms": 50,
-     "p95_ms": 249.9,
-     "max_ms": 249.9,
-     "vsync_einheiten": {
-      "1": 5,
-      "2": 0,
-      "3": 1,
-      "4+": 5
-     }
-    },
-    "scroll": {
-     "intervalle": 266,
-     "anteil_verworfen": 0.0602,
-     "anteil_ueber_50ms": 0.0075,
-     "anteil_ausgelassene_vsyncs": 0.0922,
-     "anteil_roh_ueber_16_7ms": 0.3008,
-     "p50_ms": 16.7,
-     "p95_ms": 33.3,
-     "max_ms": 133.4,
-     "vsync_einheiten": {
-      "1": 250,
-      "2": 11,
-      "3": 3,
-      "4+": 2
-     }
-    },
-    "loaf": {
-     "anzahl": 9,
-     "einstieg": 6,
-     "scroll": 3,
-     "laengster_ms": 245,
-     "laengste_skriptdauer_ms": 236,
-     "bewegung": {
-      "skripte": 0,
-      "ueber_20ms": 0,
-      "laengste_ms": 0,
-      "top": []
-     },
-     "werkzeug": {
-      "skripte": 0,
-      "laengste_ms": 0,
-      "erzwungen_ms_max": 0
-     },
-     "top": [
-      {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/431bw722fec3m.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/431bw722fec3m.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 236,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "http://127.0.0.1:4310/_next/static/chunks/1l32bdzcyvs_o.js",
-       "typ": "classic-script",
-       "quelle": "/_next/static/chunks/1l32bdzcyvs_o.js",
-       "funktion": null,
-       "pos": 0,
-       "dauer_ms": 146,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 88,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 39,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "scroll"
-      },
-      {
-       "invoker": "MessagePort.onmessage",
-       "typ": "event-listener",
-       "quelle": "/_next/static/chunks/2vh4q1xrp9pbj.js",
-       "funktion": "O",
-       "pos": 224488,
-       "dauer_ms": 27,
-       "erzwungen_ms": 0,
-       "bewegungsbezug": [],
-       "werkzeug": false,
-       "phase": "einstieg"
-      }
-     ],
-     "fehler": null
-    },
-    "wiederholungen": 1,
-    "scroll_anteil_verworfen_alle": [
-     0.0602
     ]
    }
   }

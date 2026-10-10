@@ -1,7 +1,7 @@
 {
  "satz": "p0-ausgangsstand",
  "base": "http://127.0.0.1:4310",
- "erstellt": "2026-10-10T19:07:27.993Z",
+ "erstellt": "2026-10-10T19:29:17.417Z",
  "werkzeug": "a11y-zusatz.mjs",
  "kriterium": "Z-11",
  "bedingungen": {
@@ -68,7 +68,7 @@
    },
    "reflow": {
     "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
-    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
     "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
    },
    "zoom": {
@@ -96,7 +96,7 @@
   },
   "rohdaten": "cache/a11y-zusatz/p0-ausgangsstand"
  },
- "laufzeit_s": 702,
+ "laufzeit_s": 664,
  "status": {
   "tastatur": {
    "reihenfolge": "rot",
@@ -118,24 +118,24 @@
  },
  "kennzahlen": {
   "tastatur": {
-   "fokus_nicht_sichtbar": 649,
-   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 458,
+   "fokus_nicht_sichtbar": 664,
+   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 475,
    "fokus_ring_teilverdeckt_fest": 284,
-   "fokus_unter_2px": 269,
+   "fokus_unter_2px": 270,
    "fokus_nicht_messbar": 0,
    "fokus_ohne_outline_schatten": 28,
-   "fokus_verdeckt": 604,
-   "fokus_verdeckt_fest": 568,
+   "fokus_verdeckt": 621,
+   "fokus_verdeckt_fest": 582,
    "sprung_rueckwaerts": 2,
    "falle": 0,
    "zyklus_ohne_ausweg": 0,
    "sprunglink_fehlt": 0,
    "laeufe": 28,
    "fehler": 0,
-   "schritte": 3580,
+   "schritte": 3597,
    "m375_abgelehnt": {
-    "fokus_nicht_sichtbar": 65,
-    "fokus_unter_2px": 59,
+    "fokus_nicht_sichtbar": 64,
+    "fokus_unter_2px": 60,
     "fokus_ohne_outline_schatten": 7,
     "fokus_verdeckt": 164,
     "fokus_verdeckt_fest": 151,
@@ -144,7 +144,7 @@
     "sprunglink_fehlt": 0
    },
    "d1440_abgelehnt": {
-    "fokus_nicht_sichtbar": 65,
+    "fokus_nicht_sichtbar": 64,
     "fokus_unter_2px": 49,
     "fokus_ohne_outline_schatten": 7,
     "fokus_verdeckt": 6,
@@ -154,11 +154,11 @@
     "sprunglink_fehlt": 0
    },
    "m375_erstbesuch": {
-    "fokus_nicht_sichtbar": 455,
+    "fokus_nicht_sichtbar": 472,
     "fokus_unter_2px": 105,
     "fokus_ohne_outline_schatten": 7,
-    "fokus_verdeckt": 423,
-    "fokus_verdeckt_fest": 412,
+    "fokus_verdeckt": 440,
+    "fokus_verdeckt_fest": 426,
     "sprung_rueckwaerts": 0,
     "falle": 0,
     "sprunglink_fehlt": 0
@@ -234,14 +234,14 @@
  "je_seite": {
   "/": {
    "tastatur": {
-    "fokus_nicht_sichtbar": 175,
-    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 126,
+    "fokus_nicht_sichtbar": 191,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 143,
     "fokus_ring_teilverdeckt_fest": 63,
     "fokus_unter_2px": 44,
     "fokus_nicht_messbar": 0,
     "fokus_ohne_outline_schatten": 4,
-    "fokus_verdeckt": 138,
-    "fokus_verdeckt_fest": 116,
+    "fokus_verdeckt": 155,
+    "fokus_verdeckt_fest": 130,
     "sprung_rueckwaerts": 0,
     "falle": 0,
     "zyklus_ohne_ausweg": 0,
@@ -282,10 +282,10 @@
   },
   "/bad": {
    "tastatur": {
-    "fokus_nicht_sichtbar": 68,
+    "fokus_nicht_sichtbar": 67,
     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 54,
     "fokus_ring_teilverdeckt_fest": 45,
-    "fokus_unter_2px": 29,
+    "fokus_unter_2px": 30,
     "fokus_nicht_messbar": 0,
     "fokus_ohne_outline_schatten": 4,
     "fokus_verdeckt": 67,
@@ -588,9 +588,9 @@
     "schritte": 187,
     "instabil": 0,
     "fokus": {
-     "ok": 160,
+     "ok": 161,
      "duenn": 6,
-     "kontrastarm": 14,
+     "kontrastarm": 13,
      "unsichtbar": 7,
      "nicht-messbar": 0
     },
@@ -602,7 +602,7 @@
      "ganz": 5
     },
     "kennzahlen": {
-     "fokus_nicht_sichtbar": 21,
+     "fokus_nicht_sichtbar": 20,
      "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 5,
      "fokus_ring_teilverdeckt_fest": 1,
      "fokus_unter_2px": 6,
@@ -803,20 +803,6 @@
        "stilAenderung": [
         "outline",
         "outlineOffset"
-       ]
-      },
-      {
-       "nr": 107,
-       "status": "kontrastarm",
-       "pfad": "button#faq-btn-_R_375fdlb_",
-       "name": "Was kostet eine professionelle Fliesenverlegung oder Badsani",
-       "kontrast": 0,
-       "maxKontrast": 1.74,
-       "umfang": 1785,
-       "stilAenderung": [
-        "outline",
-        "outlineOffset",
-        "boxShadow"
        ]
       },
       {
@@ -1093,7 +1079,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 62.2
+    "dauer_s": 62.6
    },
    {
     "pruefung": "tastatur",
@@ -1644,7 +1630,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 64.4
+    "dauer_s": 61.2
    },
    {
     "pruefung": "tastatur",
@@ -2654,7 +2640,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 52.5
+    "dauer_s": 51.6
    },
    {
     "pruefung": "tastatur",
@@ -2671,31 +2657,31 @@
      "href": "#main-content"
     },
     "ende": "seitenende",
-    "schritte": 183,
+    "schritte": 200,
     "instabil": 0,
     "fokus": {
      "ok": 49,
      "duenn": 21,
      "kontrastarm": 36,
-     "unsichtbar": 77,
+     "unsichtbar": 94,
      "nicht-messbar": 0
     },
     "verdeckt": {
-     "fest": 95,
+     "fest": 109,
      "andere": 1,
-     "ausserhalb": 0,
-     "abgeschnitten": 5,
-     "ganz": 84
+     "ausserhalb": 1,
+     "abgeschnitten": 7,
+     "ganz": 99
     },
     "kennzahlen": {
-     "fokus_nicht_sichtbar": 113,
-     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 110,
+     "fokus_nicht_sichtbar": 130,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 127,
      "fokus_ring_teilverdeckt_fest": 35,
      "fokus_unter_2px": 21,
      "fokus_nicht_messbar": 0,
      "fokus_ohne_outline_schatten": 1,
-     "fokus_verdeckt": 101,
-     "fokus_verdeckt_fest": 95,
+     "fokus_verdeckt": 118,
+     "fokus_verdeckt_fest": 109,
      "sprung_rueckwaerts": 0,
      "falle": 0,
      "zyklus_ohne_ausweg": 0,
@@ -3998,7 +3984,7 @@
        "ebene": "div.contents > div.rounded-2xl.border"
       },
       {
-       "nr": 97,
+       "nr": 114,
        "pfad": "button#faq-btn-_R_575fdlb_",
        "name": "Wie garantieren Sie den Staubschutz bei bewohnten Sanierunge",
        "ebene": "div.contents > div.rounded-2xl.border"
@@ -4009,7 +3995,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 63.3
+    "dauer_s": 68.6
    },
    {
     "pruefung": "tastatur",
@@ -4194,7 +4180,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 28.6
+    "dauer_s": 30.9
    },
    {
     "pruefung": "tastatur",
@@ -4392,7 +4378,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 31.3
+    "dauer_s": 34.2
    },
    {
     "pruefung": "tastatur",
@@ -4412,9 +4398,9 @@
     "instabil": 0,
     "fokus": {
      "ok": 98,
-     "duenn": 7,
+     "duenn": 8,
      "kontrastarm": 2,
-     "unsichtbar": 2,
+     "unsichtbar": 1,
      "nicht-messbar": 0
     },
     "verdeckt": {
@@ -4425,10 +4411,10 @@
      "ganz": 9
     },
     "kennzahlen": {
-     "fokus_nicht_sichtbar": 4,
+     "fokus_nicht_sichtbar": 3,
      "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
      "fokus_ring_teilverdeckt_fest": 16,
-     "fokus_unter_2px": 7,
+     "fokus_unter_2px": 8,
      "fokus_nicht_messbar": 0,
      "fokus_ohne_outline_schatten": 1,
      "fokus_verdeckt": 19,
@@ -4552,7 +4538,7 @@
        "grund": "verdeckt-in-messlage",
        "pfad": "nav > ul.flex.flex-wrap > li > a.inline-block.py-1",
        "name": "Barrierefreiheit",
-       "kontrast": 275,
+       "kontrast": 251,
        "maxKontrast": 5.56,
        "umfang": 218,
        "stilAenderung": [
@@ -4576,11 +4562,11 @@
       },
       {
        "nr": 109,
-       "status": "unsichtbar",
+       "status": "duenn",
        "pfad": "button#whatsapp-floating-btn",
-       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
-       "kontrast": 0,
-       "maxKontrast": 1,
+       "name": "1 – WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "kontrast": 165,
+       "maxKontrast": 19,
        "umfang": 188,
        "stilAenderung": [
         "outlineOffset"
@@ -4981,7 +4967,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 33.6
+    "dauer_s": 31
    },
    {
     "pruefung": "tastatur",
@@ -6325,7 +6311,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 34.3
+    "dauer_s": 35.4
    },
    {
     "pruefung": "tastatur",
@@ -6653,7 +6639,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 27.3
+    "dauer_s": 27.2
    },
    {
     "pruefung": "tastatur",
@@ -7096,7 +7082,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 31.3
+    "dauer_s": 31.5
    },
    {
     "pruefung": "tastatur",
@@ -7911,7 +7897,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 29.3
+    "dauer_s": 27
    },
    {
     "pruefung": "tastatur",
@@ -9189,7 +9175,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 32.3
+    "dauer_s": 31.9
    },
    {
     "pruefung": "tastatur",
@@ -9334,7 +9320,7 @@
        "status": "kontrastarm",
        "pfad": "div.w-full.p-5 > div > div.max-h-56.overflow-y-auto > button.w-full.px-3",
        "name": "Aßlar ca. 5 km",
-       "kontrast": 347,
+       "kontrast": 346,
        "maxKontrast": 3.44,
        "umfang": 723,
        "stilAenderung": [
@@ -9544,7 +9530,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 47
+    "dauer_s": 39.6
    },
    {
     "pruefung": "tastatur",
@@ -9912,7 +9898,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 51
+    "dauer_s": 44.2
    },
    {
     "pruefung": "tastatur",
@@ -9978,7 +9964,7 @@
        "status": "duenn",
        "pfad": "div.max-w-7xl.mx-auto > div.ceramic-hero.rounded-2xl > div.flex.flex-wrap > a.btn-primary.px-7",
        "name": "Zur Express-Anfrage",
-       "kontrast": 549,
+       "kontrast": 550,
        "maxKontrast": 3.45,
        "umfang": 482,
        "stilAenderung": [
@@ -10706,7 +10692,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 47.4
+    "dauer_s": 44
    },
    {
     "pruefung": "tastatur",
@@ -12048,7 +12034,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 52.4
+    "dauer_s": 46.5
    },
    {
     "pruefung": "tastatur",
@@ -12223,7 +12209,7 @@
        "nr": 125,
        "status": "unsichtbar",
        "pfad": "button#whatsapp-floating-btn",
-       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "name": "1 – WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
        "kontrast": 0,
        "maxKontrast": 1,
        "umfang": 188,
@@ -12250,7 +12236,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 36.4
+    "dauer_s": 30.5
    },
    {
     "pruefung": "tastatur",
@@ -12465,7 +12451,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 37.2
+    "dauer_s": 34.2
    },
    {
     "pruefung": "tastatur",
@@ -13057,7 +13043,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 32.5
+    "dauer_s": 33.9
    },
    {
     "pruefung": "tastatur",
@@ -13555,7 +13541,7 @@
        "grund": "ring-unter-fester-ebene",
        "pfad": "select#calc-timing",
        "name": "Gewünschter Zeitraum",
-       "kontrast": 875,
+       "kontrast": 874,
        "maxKontrast": 6.32,
        "umfang": 643,
        "stilAenderung": [
@@ -14411,7 +14397,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 39.3
+    "dauer_s": 36.1
    },
    {
     "pruefung": "tastatur",
@@ -14712,7 +14698,7 @@
        "nr": 122,
        "status": "unsichtbar",
        "pfad": "button#whatsapp-floating-btn",
-       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "name": "1 – WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
        "kontrast": 0,
        "maxKontrast": 1,
        "umfang": 188,
@@ -14761,7 +14747,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 37.9
+    "dauer_s": 28.7
    },
    {
     "pruefung": "tastatur",
@@ -15010,7 +14996,7 @@
        "status": "kontrastarm",
        "pfad": "div.w-full.space-y-4 > div.w-full.overflow-x-auto > div.flex.items-center > button.px-3.py-1.5",
        "name": "Aßlar 5 km",
-       "kontrast": 76,
+       "kontrast": 74,
        "maxKontrast": 3.41,
        "umfang": 283,
        "stilAenderung": [
@@ -15210,7 +15196,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 36.8
+    "dauer_s": 33.5
    },
    {
     "pruefung": "tastatur",
@@ -15554,7 +15540,7 @@
        "grund": "verdeckt-in-messlage",
        "pfad": "nav > ul.flex.flex-wrap > li > a.inline-block.py-1",
        "name": "Barrierefreiheit",
-       "kontrast": 275,
+       "kontrast": 251,
        "maxKontrast": 5.56,
        "umfang": 218,
        "stilAenderung": [
@@ -16001,7 +15987,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 34.8
+    "dauer_s": 32.1
    },
    {
     "pruefung": "tastatur",
@@ -17305,7 +17291,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 42.3
+    "dauer_s": 34.3
    },
    {
     "pruefung": "tastatur",
@@ -17464,7 +17450,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 22.2
+    "dauer_s": 22.7
    },
    {
     "pruefung": "tastatur",
@@ -17636,7 +17622,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 23.1
+    "dauer_s": 24.3
    },
    {
     "pruefung": "tastatur",
@@ -18106,7 +18092,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 23.8
+    "dauer_s": 23.4
    },
    {
     "pruefung": "tastatur",
@@ -19318,7 +19304,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 25.2
+    "dauer_s": 25.3
    }
   ],
   "reflow": [
@@ -19353,7 +19339,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 7.7
+    "dauer_s": 7.3
    },
    {
     "pruefung": "reflow",
@@ -19386,7 +19372,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.2
+    "dauer_s": 4
    },
    {
     "pruefung": "reflow",
@@ -19419,7 +19405,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.2
+    "dauer_s": 4.7
    },
    {
     "pruefung": "reflow",
@@ -19452,7 +19438,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.8
+    "dauer_s": 3.9
    },
    {
     "pruefung": "reflow",
@@ -19485,7 +19471,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.4
+    "dauer_s": 5.6
    },
    {
     "pruefung": "reflow",
@@ -19518,7 +19504,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.1
+    "dauer_s": 4.8
    },
    {
     "pruefung": "reflow",
@@ -19551,7 +19537,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.9
+    "dauer_s": 4.5
    }
   ],
   "zoom": [
@@ -19805,7 +19791,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 9.1
+    "dauer_s": 7.3
    },
    {
     "pruefung": "zoom",
@@ -19840,7 +19826,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 13.8
+    "dauer_s": 12.9
    },
    {
     "pruefung": "zoom",
@@ -20084,7 +20070,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.3
+    "dauer_s": 3.8
    },
    {
     "pruefung": "zoom",
@@ -20119,7 +20105,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 7
+    "dauer_s": 6.2
    },
    {
     "pruefung": "zoom",
@@ -20454,7 +20440,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.7
+    "dauer_s": 3.7
    },
    {
     "pruefung": "zoom",
@@ -20489,7 +20475,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 12.3
+    "dauer_s": 8.4
    },
    {
     "pruefung": "zoom",
@@ -20741,7 +20727,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.6
+    "dauer_s": 3.9
    },
    {
     "pruefung": "zoom",
@@ -20776,7 +20762,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 7
+    "dauer_s": 6.7
    },
    {
     "pruefung": "zoom",
@@ -21020,7 +21006,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.6
+    "dauer_s": 4.7
    },
    {
     "pruefung": "zoom",
@@ -21055,7 +21041,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 8.9
+    "dauer_s": 8.3
    },
    {
     "pruefung": "zoom",
@@ -21307,7 +21293,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5
+    "dauer_s": 4.7
    },
    {
     "pruefung": "zoom",
@@ -21350,7 +21336,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 8.3
+    "dauer_s": 7.7
    },
    {
     "pruefung": "zoom",
@@ -21594,7 +21580,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.6
+    "dauer_s": 4.1
    },
    {
     "pruefung": "zoom",
@@ -21629,7 +21615,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 8
+    "dauer_s": 7.5
    }
   ],
   "textabstand": [
@@ -21841,7 +21827,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.7
+    "dauer_s": 5.8
    },
    {
     "pruefung": "textabstand",
@@ -22062,7 +22048,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 7.1
+    "dauer_s": 7.3
    },
    {
     "pruefung": "textabstand",
@@ -22103,7 +22089,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.1
+    "dauer_s": 3.2
    },
    {
     "pruefung": "textabstand",
@@ -22145,7 +22131,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.8
+    "dauer_s": 4.1
    },
    {
     "pruefung": "textabstand",
@@ -22381,7 +22367,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.6
+    "dauer_s": 3.4
    },
    {
     "pruefung": "textabstand",
@@ -22634,7 +22620,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5
+    "dauer_s": 4.8
    },
    {
     "pruefung": "textabstand",
@@ -22692,7 +22678,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3
+    "dauer_s": 3.2
    },
    {
     "pruefung": "textabstand",
@@ -22743,7 +22729,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.9
+    "dauer_s": 4
    },
    {
     "pruefung": "textabstand",
@@ -22832,7 +22818,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.5
+    "dauer_s": 4.3
    },
    {
     "pruefung": "textabstand",
@@ -22882,7 +22868,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.8
+    "dauer_s": 3.5
    },
    {
     "pruefung": "textabstand",
@@ -22939,7 +22925,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.6
+    "dauer_s": 4.3
    },
    {
     "pruefung": "textabstand",
@@ -22980,7 +22966,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3
+    "dauer_s": 3.2
    },
    {
     "pruefung": "textabstand",
@@ -23045,7 +23031,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.2
+    "dauer_s": 4.3
    }
   ],
   "forced": [
@@ -23097,7 +23083,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.2
+    "dauer_s": 4.7
    },
    {
     "pruefung": "forced",
@@ -23132,7 +23118,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 6.8
+    "dauer_s": 6.7
    },
    {
     "pruefung": "forced",
@@ -23188,7 +23174,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.1
+    "dauer_s": 2.8
    },
    {
     "pruefung": "forced",
@@ -23279,7 +23265,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.1
+    "dauer_s": 3.6
    },
    {
     "pruefung": "forced",
@@ -23309,7 +23295,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.2
+    "dauer_s": 4.9
    },
    {
     "pruefung": "forced",
@@ -23359,7 +23345,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.3
+    "dauer_s": 3.5
    },
    {
     "pruefung": "forced",
@@ -23394,7 +23380,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.6
+    "dauer_s": 3.7
    },
    {
     "pruefung": "forced",
@@ -23529,7 +23515,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.5
+    "dauer_s": 4.1
    },
    {
     "pruefung": "forced",
@@ -23564,7 +23550,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.9
+    "dauer_s": 4.8
    },
    {
     "pruefung": "forced",
@@ -23614,7 +23600,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.9
+    "dauer_s": 3.3
    },
    {
     "pruefung": "forced",
@@ -23649,7 +23635,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.5
+    "dauer_s": 4.4
    }
   ],
   "ohnejs": [
@@ -23735,7 +23721,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.1
+    "dauer_s": 4.7
    },
    {
     "pruefung": "ohnejs",
@@ -23775,7 +23761,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 7.1
+    "dauer_s": 6.9
    },
    {
     "pruefung": "ohnejs",
@@ -23859,7 +23845,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.8
+    "dauer_s": 3.2
    },
    {
     "pruefung": "ohnejs",
@@ -23899,7 +23885,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.2
+    "dauer_s": 3.7
    },
    {
     "pruefung": "ohnejs",
@@ -24023,7 +24009,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5
+    "dauer_s": 4.8
    },
    {
     "pruefung": "ohnejs",
@@ -24107,7 +24093,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.2
+    "dauer_s": 4.1
    },
    {
     "pruefung": "ohnejs",
@@ -24147,7 +24133,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.8
+    "dauer_s": 4.5
    },
    {
     "pruefung": "ohnejs",
@@ -24231,7 +24217,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4
+    "dauer_s": 3.3
    },
    {
     "pruefung": "ohnejs",
@@ -24271,7 +24257,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 5.2
+    "dauer_s": 4.7
    },
    {
     "pruefung": "ohnejs",
@@ -24355,7 +24341,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.9
+    "dauer_s": 3.7
    },
    {
     "pruefung": "ohnejs",
@@ -24393,7 +24379,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.7
+    "dauer_s": 4.8
    },
    {
     "pruefung": "ohnejs",
@@ -24477,7 +24463,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 3.2
+    "dauer_s": 3.7
    },
    {
     "pruefung": "ohnejs",
@@ -24517,7 +24503,7 @@
      "fremd": 0,
      "blockiert": 0
     },
-    "dauer_s": 4.5
+    "dauer_s": 4.4
    }
   ]
  }

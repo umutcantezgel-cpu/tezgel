@@ -105,3 +105,12 @@ Bedingungen: lokaler Produktions-Build 707a93d (`next start`, komprimiert, 127.0
 | /kontakt | 80 | 4.836 ms | 178 ms | 0 | 95 | 413 KB | 96 | 1.389 ms |
 
 Bewährte Praktiken und SEO je 100. Schriften 77 KB (Inter + Plus Jakarta Sans). Streuung: /standorte mobil zweigipflig (Leistung 64–88, CLS 0 oder 0,516 je Lauf) → Layoutsprung, der nur in einem Teil der Läufe auftritt (Kandidat: nachgeladene Karte oder Banner). Budgets gerissen: LCP mobil auf allen 7 Hauptseiten, CLS auf /standorte, TBT auf /blog.
+
+## P0 · Ebene 4 Bewegung (`bewegung.mjs`, 7 Hauptseiten × m375/d1440)
+Registriert 0/93 animierte Elemente (keines mit `data-motion`) · Layout-Eigenschaften 0 · verworfene Frames mobil 4× 6,73 % (2,9–10,6 % je Seite; Soll ≤ 5 %; unter Last gemessen, ±3 Pp., Nachmessung im ruhigen Fenster) · LoAF aus Bewegungscode ≤ 8 ms · reduzierte Bewegung: 10 Verstöße (alle /ueber-uns, `CompanyHistory`, framer-motion) · Desktop-Frames 100 % verworfen durch WaterCursor-WebGL ohne GPU (nur Information). Beleg `belege/p0-ausgangsstand/bewegung.json`.
+
+## P0 · Ebene 5 Zusatz (`a11y-zusatz.mjs`, 7 Hauptseiten, 91 Läufe)
+Fokus nicht sichtbar 64 (abgelehnt) bzw. 472 (m375 Erstbesuch, Banner) · Fokusring dünn/unter 3:1 270 · WhatsApp-Knopf ohne Fokusstil 28 · Fokus verdeckt durch feste Ebene 582 (untere Leiste 151, Banner 426) · Reihenfolge 2 · Falle 0 · Sprunglink 28/28 · Reflow 320: 7 (mobile Leiste) · Textabstände abgeschnitten 46 (33 line-clamp), Überlauf 14 · forced-colors ohne Grenze 48 (Icon-Knöpfe), Felder 2 · ohne JS grün (Textanteil ≥ 0,863) · Zoom (Information) 71/139. Beleg `belege/p0-ausgangsstand/a11y-zusatz.json`.
+
+## P0 · Ebene 10 SVG (`svg.mjs`)
+21.699 SVG-Einheiten · viewBox fehlt 0 · feste Farbe 8 · Pixelbild 2 (Logo-Hüllen) · ID-Kollision 0 · Zugänglichkeit nicht belegt 44 · Strichstärke ≠ 1,5: 21.676 · Icon-Budget 0 über · 171 Seiten mit zwei Icon-Familien (lucide + eigene). Beleg `belege/p0-ausgangsstand/svg.json`.
