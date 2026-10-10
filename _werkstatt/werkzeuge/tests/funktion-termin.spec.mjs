@@ -192,3 +192,25 @@ test.describe('Termin-Formular (F-08) auf /termin', () => {
     });
   });
 });
+
+// ---------- V-02 Kalender und Uhr (E2-ORCH-09) ----------
+// Vorher: Der vorgerenderte Kalender rechnete mit dem Build-Tag; lag der Besuchstag danach, meldete React einen
+// Hydrierungsfehler (#418). Abnahme: Uhr des Browsers einen Tag nach heute (also sicher nach dem Build-Tag) –
+// keine Hydrierungsmeldung, und der erste angebotene Tag ist der Werktag nach dem Besuchstag.
+test.describe('V-02 Kalender rechnet mit dem Besuchstag', () => {
+  test('/kontakt#termin-buchen mit Uhr auf heute + 1: kein Hydrierungsfehler, erster Tag = Besuchstag + 1 (ohne Sonntag)', async ({ page }) => {
+    const meldungen = [];
+    page.on('console', (m) => { if (m.type() === 'error') meldungen.push(m.text()); });
+    page.on('pageerror', (e) => meldungen.push(String(e)));
+    const [y, m, d] = heute().split('-').map(Number);
+    // 12:00 Uhr Berliner Zeit am Folgetag (Mittag vermeidet Tagesgrenzen durch Zeitzonen)
+    await page.clock.install({ time: new Date(Date.UTC(y, m - 1, d + 1, 10, 0, 0)) });
+    await page.goto('/kontakt#termin-buchen');
+    const ersterTag = page.getByRole('region', { name: 'Verfügbare Termine' }).getByRole('group').first();
+    await expect(ersterTag.getByRole('button', { name: '08:30 Uhr', exact: true })).toBeVisible();
+    let erwartet = isoInTagen(2);
+    if (new Date(`${erwartet}T12:00:00Z`).getUTCDay() === 0) erwartet = isoInTagen(3);
+    await expect(ersterTag).toHaveAttribute('aria-label', new RegExp(`${alsAnzeige(erwartet).replace(/\./g, '\\.')}$`));
+    expect(meldungen.filter((t) => /418|hydrat/i.test(t))).toEqual([]);
+  });
+});

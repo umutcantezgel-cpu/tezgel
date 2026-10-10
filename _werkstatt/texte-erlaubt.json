@@ -426,5 +426,53 @@
   "teil": "main_zeilen",
   "alt": "5,0 Google-Bewertungen (27 Rezensionen)",
   "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt_muster": "\\d{2}:\\d{2} Uhr",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt_muster": "Samstag \\(Aufmaßtermin\\)",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "block": "main",
+  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "teil": "main_zeilen",
+  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "teil": "main_zeilen",
+  "alt_muster": "\\d{2}:\\d{2} Uhr",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "teil": "main_zeilen",
+  "alt_muster": "Samstag \\(Aufmaßtermin\\)",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
  }
 ]
