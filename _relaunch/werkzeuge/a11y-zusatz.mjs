@@ -6,6 +6,8 @@
 //                    Reihenfolge (Sprung rückwärts > 1 Bildschirmhöhe), Fokus sichtbar (Pixelvergleich Ruhe/Fokus im
 //                    Elementausschnitt, Kontrast ≥ 3:1 je Pixel), Fokus verdeckt (elementFromPoint an der Mitte),
 //                    Tastaturfalle (derselbe Fokus 10× hintereinander; zusätzlich Zyklus-Erkennung), erster Tab = Sprunglink.
+//                    Pixelmessung in einer Messlage (Element mittig, falls Ring am Bildrand/unter fester Ebene), danach
+//                    Scrollstand zurück; Umfang mit Eckenrundung. Zusätze: Ring teilverdeckt (fest), ohne Outline/Schatten.
 //   2. reflow      – 320 × 640: horizontales Scrollen + Überlauf/Abschneiden (lib.mjs → ueberlauf).
 //   3. zoom        – d1280 (1280 × 800, DPR 1) mit document.documentElement.style.zoom = 2: horizontales Scrollen,
 //                    Überlauf, verdeckte Bedienelemente. Zusätzlich Variante „aequivalent“ (640 × 400, DPR 2 = echter
@@ -88,7 +90,7 @@ const REGELN = {
     sprunglink: 'erster Tab fokussiert <a href="#main-content"> und das Ziel #main-content existiert',
     iframes: 'ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)',
   },
-  reflow: { ansicht: '320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)', horizontal: 'scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1', ueberlauf: 'lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()' },
+  reflow: { ansicht: '320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)', horizontal: 'scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)', ueberlauf: 'lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()' },
   zoom: { css: '1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)', aequivalent: '640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)', verdeckt: 'sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist', nie_im_bild: 'Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen', info: 'im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar' },
   textabstand: { stilblatt: '*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}', befund: 'Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde', scroll_ueberhang: 'Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info' },
   forced: { emulation: "page.emulateMedia({ forcedColors: 'active' })", befund: 'sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert' },
@@ -813,32 +815,41 @@ await browser.close();
 
 // ---- Zusammenfassung ----
 const summe = (liste, k) => liste.reduce((n, r) => n + ((r.kennzahlen && r.kennzahlen[k]) || 0), 0);
-const ergebnis = {};
-const kennzahlen = {};
-const status = {};
-for (const p of pruefungen) {
-  const l = laeufe.filter((r) => r.pruefung === p).sort((x, y) => (x.seite || '').localeCompare(y.seite || '') || String(x.ansicht).localeCompare(String(y.ansicht)) || String(x.zustand || x.variante || '').localeCompare(String(y.zustand || y.variante || '')));
+// Kennzahlen + Status einer Prüfung aus einer Laufliste (auch für die Basis im Gegenprobe-Vergleich)
+function fasse(p, l) {
   const keys = [...new Set(l.flatMap((r) => Object.keys(r.kennzahlen || {})))];
   const kz = Object.fromEntries(keys.map((k) => [k, summe(l, k)]));
   kz.laeufe = l.length; kz.fehler = l.filter((r) => r.fehler).length;
+  let st;
   if (p === 'tastatur') {
     kz.schritte = l.reduce((n, r) => n + (r.schritte || 0), 0);
     for (const z of zustaendeTastatur) for (const a of ansichten) {
       const t = l.filter((r) => r.zustand === z && r.ansicht === a);
       kz[`${a}_${z}`] = Object.fromEntries(['fokus_nicht_sichtbar', 'fokus_unter_2px', 'fokus_ohne_outline_schatten', 'fokus_verdeckt', 'fokus_verdeckt_fest', 'sprung_rueckwaerts', 'falle', 'sprunglink_fehlt'].map((k) => [k, summe(t, k)]));
     }
-    status.tastatur = {
+    st = {
       reihenfolge: kz.sprung_rueckwaerts ? 'rot' : 'gruen', fokus_sichtbar: kz.fokus_nicht_sichtbar ? 'rot' : 'gruen', fokus_2px: kz.fokus_unter_2px ? 'rot' : 'gruen',
       fokus_outline: kz.fokus_ohne_outline_schatten ? 'rot' : 'gruen', fokus_verdeckt: kz.fokus_verdeckt ? 'rot' : 'gruen', tastaturfalle: kz.falle || kz.zyklus_ohne_ausweg ? 'rot' : 'gruen', sprunglink: kz.sprunglink_fehlt ? 'rot' : 'gruen',
     };
   } else if (p === 'zoom') {
     for (const vz of ['css', 'aequivalent']) { const t = l.filter((r) => r.variante === vz); kz[vz] = Object.fromEntries(['horizontal', 'verdeckt', 'verdeckt_fest', 'nie_im_bild', 'ueberlauf'].map((k) => [k, summe(t, k)])); }
     const rotZ = (k) => (k.horizontal || k.verdeckt || k.nie_im_bild || k.ueberlauf ? 'rot' : 'gruen');
-    status.zoom = { css: rotZ(kz.css), aequivalent: rotZ(kz.aequivalent) };
+    st = { css: rotZ(kz.css), aequivalent: rotZ(kz.aequivalent) };
   } else {
     const haupt = { reflow: ['horizontal', 'ueberlauf'], textabstand: ['abgeschnitten_neu', 'ueberlauf_neu'], forced: ['ohne_grenze'], ohnejs: ['text_unter_80', 'erster_bildschirm_versteckt', 'navigation_fehlt'] }[p];
-    status[p] = haupt.some((k) => kz[k]) ? 'rot' : 'gruen';
+    st = haupt.some((k) => kz[k]) ? 'rot' : 'gruen';
   }
+  return { kz, st };
+}
+const sortiert = (l) => l.slice().sort((x, y) => (x.seite || '').localeCompare(y.seite || '') || String(x.ansicht).localeCompare(String(y.ansicht)) || String(x.zustand || x.variante || '').localeCompare(String(y.zustand || y.variante || '')));
+const laufSchluessel = (r) => `${r.seite}|${r.ansicht}|${r.zustand || r.variante || ''}`;
+const ergebnis = {};
+const kennzahlen = {};
+const status = {};
+for (const p of pruefungen) {
+  const l = sortiert(laeufe.filter((r) => r.pruefung === p));
+  const { kz, st } = fasse(p, l);
+  status[p] = st;
   if (kz.fehler) status[`${p}_fehler`] = kz.fehler;
   kennzahlen[p] = kz;
   ergebnis[p] = l;
@@ -860,8 +871,11 @@ if (gegenprobe.length) {
   if (fs.existsSync(basisDatei)) {
     const basis = JSON.parse(fs.readFileSync(basisDatei, 'utf8'));
     const nurZahlen = (o) => Object.fromEntries(Object.entries(o || {}).filter(([, x]) => typeof x === 'number'));
-    vergleich = { basis: path.relative(RELAUNCH, basisDatei), basis_erstellt: basis.erstellt, status_basis: Object.fromEntries(pruefungen.map((p) => [p, basis.status?.[p]])), status_gegenprobe: Object.fromEntries(pruefungen.map((p) => [p, status[p]])), kennzahlen_basis: Object.fromEntries(pruefungen.map((p) => [p, nurZahlen(basis.kennzahlen?.[p])])), kennzahlen_gegenprobe: Object.fromEntries(pruefungen.map((p) => [p, nurZahlen(kennzahlen[p])])) };
-    if (pruefungen.includes('tastatur') && basis.bedingungen?.rohdaten) {
+    // Basis auf dieselben Läufe (Seite|Ansicht|Zustand/Variante) eingeschränkt, damit Teilmengen-Gegenproben vergleichbar sind
+    const gleiche = (p) => { const k = new Set(ergebnis[p].map(laufSchluessel)); return (basis.ergebnisse?.[p] || []).filter((r) => k.has(laufSchluessel(r))); };
+    const basisFass = Object.fromEntries(pruefungen.map((p) => [p, fasse(p, gleiche(p))]));
+    vergleich = { basis: path.relative(RELAUNCH, basisDatei), basis_erstellt: basis.erstellt, gleiche_laeufe: Object.fromEntries(pruefungen.map((p) => [p, basisFass[p].kz.laeufe])), status_basis: Object.fromEntries(pruefungen.map((p) => [p, basisFass[p].st])), status_gegenprobe: Object.fromEntries(pruefungen.map((p) => [p, status[p]])), kennzahlen_basis: Object.fromEntries(pruefungen.map((p) => [p, nurZahlen(basisFass[p].kz)])), kennzahlen_gegenprobe: Object.fromEntries(pruefungen.map((p) => [p, nurZahlen(kennzahlen[p])])) };
+    if (pruefungen.includes('tastatur') && gegenprobe.includes('fokus') && basis.bedingungen?.rohdaten) {
       const lies = (f) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; } };
       const NICHT = ['unsichtbar', 'kontrastarm'];
       const t = { paare: 0, basis_ok: 0, basis_ok_jetzt_nicht_sichtbar: 0, basis_ok_jetzt_duenn: 0, basis_ok_bleibt_ok: 0, beispiele_bleibt_ok: [], ohne_basis: [] };
@@ -900,5 +914,8 @@ ensureDir(path.dirname(AUS));
 fs.writeFileSync(AUS, JSON.stringify(aus, null, 1));
 console.log(`\na11y-zusatz: ${laeufe.length} Läufe in ${aus.laufzeit_s} s → ${path.relative(RELAUNCH, AUS)}`);
 console.log(JSON.stringify(status));
-if (vergleich) console.log('gegenprobe_vergleich', JSON.stringify({ status_basis: vergleich.status_basis, status_gegenprobe: vergleich.status_gegenprobe, tastatur: vergleich.tastatur_fokus_je_schritt && Object.fromEntries(Object.entries(vergleich.tastatur_fokus_je_schritt).filter(([, x]) => typeof x === 'number')) }));
+if (vergleich) {
+  console.log('gegenprobe_vergleich', JSON.stringify({ gleiche_laeufe: vergleich.gleiche_laeufe, status_basis: vergleich.status_basis, status_gegenprobe: vergleich.status_gegenprobe, tastatur: vergleich.tastatur_fokus_je_schritt && Object.fromEntries(Object.entries(vergleich.tastatur_fokus_je_schritt).filter(([, x]) => typeof x === 'number')) }));
+  for (const p of pruefungen) console.log(`  ${p} basis→gegenprobe`, JSON.stringify(Object.fromEntries(Object.keys(vergleich.kennzahlen_gegenprobe[p]).filter((k) => vergleich.kennzahlen_basis[p][k] !== vergleich.kennzahlen_gegenprobe[p][k]).map((k) => [k, `${vergleich.kennzahlen_basis[p][k] ?? '–'}→${vergleich.kennzahlen_gegenprobe[p][k]}`]))));
+}
 for (const [p, kz] of Object.entries(kennzahlen)) console.log(p, JSON.stringify(Object.fromEntries(Object.entries(kz).filter(([, v]) => typeof v === 'number'))));

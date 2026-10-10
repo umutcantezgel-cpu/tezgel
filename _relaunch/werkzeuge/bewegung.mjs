@@ -11,12 +11,15 @@
 //   5 Reduzierte Bewegung – zweiter Sammellauf mit reducedMotion 'reduce' → Orts-/Größenänderung > 0 ms, Autoplay.
 //   6 Bildfolge (--bildfolge) – Einstieg 0–2 s, Bildschirmfoto alle 100 ms (CDP) nach cache/bewegung/<satz>/bildfolge/.
 // Nutzung: node bewegung.mjs --satz <name> [--seiten /,/bad] [--ansichten m375,d1440] [--bildfolge]
-//          [--laeufe normal,reduziert,frames] [--drossel <n>] [--px 40] [--worker 2] [--wdh 1] [--gegenprobe] [--aus <datei.json>]
+//          [--laeufe normal,reduziert,frames] [--drossel <n>] [--px 40] [--worker 2] [--wdh 1] [--gegenprobe] [--aus <datei.json>] [--zusammenfuehren] [--ruhe-max 90]
 //   --gegenprobe: fügt per page.addStyleTag eine unregistrierte Endlos-Animation mit `left` an der h1 ein, dazu eine
 //   WAAPI-Endlosverschiebung, die reduce ignoriert, und im Framelauf (addScriptTag) 30 ms Last je 10. rAF-Rückruf;
 //   Ergebnis nur nach cache/bewegung/<satz>/gegenprobe/ (kein Beleg). Erwartung: zusammenfassung.gegenprobe.erkannt = true.
 // Feste Zeiten (begründet): Verweilen 120 ms je Scrollschritt (IO-Schwellen greifen, wie lib.durchscrollen), Ruhefenster
-//   1500 ms (Beobachtung, kein Zustandswarten), Bildfolge-Takt 100 ms. Sonst nur Zustandsabfragen (abklingen, bereit).
+//   1500 ms (Beobachtung, kein Zustandswarten), Bildfolge-Takt 100 ms, Abfragetakt 2 s des Ruhetors. Sonst nur Zustandsabfragen.
+// Ruhetor/Messqualität: vor jedem Framelauf wartet das Werkzeug (≤ --ruhe-max s), bis die ungedrosselte Rechenprobe nahe der
+//   besten Basis liegt; Läufe mit effektiver Drosselung außerhalb 0,75–1,35 × Soll heißen „unsicher“ (Fremdlast auf der Maschine).
+//   --zusammenfuehren: nur die Läufe dieses Aufrufs ersetzen, der Rest des vorhandenen Ergebnisses bleibt (z. B. frames später nachmessen).
 // Messbedingungen: lokaler Server (assertLocal), Anfragesperre (installSperre), Einwilligung „abgelehnt“, DPR 1,
 //   ohne page.clock, de-DE, Europe/Berlin, hell; Sammelläufe ohne Drosselung; höchstens 2 Kontexte gleichzeitig,
 //   Framelauf exklusiv (belegt beide Plätze). Stehen vollständig im Kopf der Ausgabe (bedingungen).
@@ -36,6 +39,7 @@ const satz = arg('satz', 'adhoc');
 const seiten = arg('seiten') ? arg('seiten').split(',') : G.hauptseiten;
 const ansichten = (arg('ansichten') || 'm375,d1440').split(',');
 const gegenprobe = flag('gegenprobe');
+const zusammenfuehren = flag('zusammenfuehren');
 const laeufe = (arg('laeufe') || 'normal,reduziert,frames').split(',').concat(flag('bildfolge') ? ['bildfolge'] : []);
 const worker = Math.min(2, Number(arg('worker', '2'))); // Last-Grenze: höchstens 2 Browser-Kontexte
 const pxJeBild = Number(arg('px', '40'));
@@ -370,7 +374,9 @@ async function abklingen(page) {
 }
 
 // Framelauf: CPU-Drosselung, rAF-Zeitstempel ab Dokumentbeginn, Einstieg bis „bereit“, dann rAF-gekoppeltes Scrollen
-let basisLeistung = null;
+let basisLeistung = null; // beste (kleinste) ungedrosselte Rechenprobe des Laufs – Bezug für Ruhetor und effektive Drosselung
+const LEISTUNG = () => { const t = performance.now(); let x = 0; for (let i = 0; i < 1e7; i++) x += i % 7; return performance.now() - t + (x < 0 ? 1 : 0); };
+const RUHE_WARTE_MAX_S = Number(arg('ruhe-max', '90')); // Ruhetor: höchstens so lange auf eine ruhige Maschine warten, dann messen und markieren
 let glRenderer = null; // WebGL-Renderer im Framelauf (headless: SwiftShader = Software-GL → WebGL-lastige Seiten auf Desktop deutlich langsamer)
 async function framelauf(s, a) {
   const v = ANSICHTEN[a];
@@ -379,9 +385,19 @@ async function framelauf(s, a) {
   await context.addInitScript(rekorder);
   const page = await context.newPage();
   const cdp = await context.newCDPSession(page);
-  await cdp.send('Emulation.setCPUThrottlingRate', { rate });
   const last = [os.loadavg()[0]];
   try {
+    // Ruhetor (Zustandsabfrage, Takt 2 s): ungedrosselte Rechenprobe auf about:blank ≤ 1,3 × beste Basis – sonst Fremdlast auf der Maschine
+    const tw = Date.now(); let frei;
+    for (;;) {
+      const w = []; for (let i = 0; i < 3; i++) w.push(await page.evaluate(LEISTUNG));
+      frei = median(w); basisLeistung = Math.min(basisLeistung ?? frei, frei);
+      if (frei <= basisLeistung * 1.3 || Date.now() - tw > RUHE_WARTE_MAX_S * 1000) break;
+      await page.waitForTimeout(2000); // Abfragetakt des Ruhetors, kein Warten auf einen Zustand der Seite
+    }
+    const ruheWarteS = Math.round((Date.now() - tw) / 1000);
+    last.push(os.loadavg()[0]);
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate });
     await page.goto(BASE + s, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await bereit(page);
     if (gegenprobe) {
@@ -390,7 +406,7 @@ async function framelauf(s, a) {
       await page.route(GEGENPROBE_URL, (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: GEGENPROBE_LAST }));
       await page.addScriptTag({ url: GEGENPROBE_URL });
     }
-    const leistung = await page.evaluate(() => { const t = performance.now(); let x = 0; for (let i = 0; i < 3e6; i++) x += i % 7; return performance.now() - t + (x < 0 ? 1 : 0); });
+    const leistung = await page.evaluate(LEISTUNG);
     await page.evaluate(async (px) => {
       const R = window.__bwr; R.marke('scroll');
       let y = scrollY, n = 0;
@@ -401,7 +417,11 @@ async function framelauf(s, a) {
     if (!glRenderer) glRenderer = await page.evaluate(() => { try { const c = document.createElement('canvas').getContext('webgl'); const e = c && c.getExtension('WEBGL_debug_renderer_info'); return e ? c.getParameter(e.UNMASKED_RENDERER_WEBGL) : 'unbekannt'; } catch { return 'unbekannt'; } });
     const roh = await page.evaluate(() => ({ ts: window.__bwr.ts, marken: window.__bwr.marken, loaf: window.__bwr.loaf, loafFehler: window.__bwr.loafFehler || null }));
     last.push(os.loadavg()[0]);
-    return { rate, leistung_ms: Math.round(leistung), drossel_ist: basisLeistung ? +(leistung / basisLeistung).toFixed(2) : null, last_1min: last, ...roh };
+    // drossel_ist = gedrosselt / ungedrosselt im selben Kontext; effektiv = gedrosselt / beste Basis (enthält Fremdlast).
+    const effektiv = +(leistung / basisLeistung).toFixed(2);
+    const qualitaet = effektiv >= rate * 0.75 && effektiv <= rate * 1.35 ? 'ok' : 'unsicher';
+    return { rate, leistung_ms: Math.round(leistung), leistung_frei_ms: Math.round(frei), drossel_ist: +(leistung / frei).toFixed(2), drossel_effektiv: effektiv, messqualitaet: qualitaet,
+      ruhetor_s: ruheWarteS, last_1min: last, ...roh };
   } finally { await context.close(); }
 }
 
@@ -563,7 +583,8 @@ async function werteFrames(roh) {
   const bew = skripteAlle.filter((s) => s.bewegungsbezug.length);
   const wz = skripteAlle.filter((s) => s.werkzeug);
   return {
-    drossel: roh.rate, drossel_ist: roh.drossel_ist, leistung_ms: roh.leistung_ms, last_1min: roh.last_1min, vsync_ms: +vsync.toFixed(2),
+    drossel: roh.rate, drossel_ist: roh.drossel_ist, drossel_effektiv: roh.drossel_effektiv, messqualitaet: roh.messqualitaet, ruhetor_s: roh.ruhetor_s,
+    leistung_ms: roh.leistung_ms, leistung_frei_ms: roh.leistung_frei_ms, last_1min: roh.last_1min, vsync_ms: +vsync.toFixed(2),
     einstieg: framestat(intervalle(roh.ts, 0, tScroll ?? Infinity), vsync), scroll: framestat(intervalle(roh.ts, tScroll ?? 0, tEnde ?? Infinity), vsync),
     loaf: { anzahl: loaf.length, einstieg: loaf.filter((l) => l.phase === 'einstieg').length, scroll: loaf.filter((l) => l.phase === 'scroll').length,
       laengster_ms: Math.max(0, ...loaf.map((l) => l.dauer_ms)), laengste_skriptdauer_ms: Math.max(0, ...skripteAlle.map((s) => s.dauer_ms)),
@@ -578,14 +599,17 @@ const median = (xs) => { const s = [...xs].sort((a, b) => a - b); return s.lengt
 
 // ---------------------------------------------------------------- Ablauf
 const tStart = Date.now();
+const ziel = arg('aus') ? path.resolve(arg('aus')) : gegenprobe ? path.join(cacheDir, 'gegenprobe.json') : path.join(RELAUNCH, 'belege', satz, 'bewegung.json');
+// --zusammenfuehren: Läufe dieses Aufrufs ersetzen die gleichnamigen im vorhandenen Ergebnis, alle übrigen bleiben (z. B. nur frames neu messen)
+const vorher = zusammenfuehren && fs.existsSync(ziel) ? JSON.parse(fs.readFileSync(ziel, 'utf8')) : null;
 { // Leistungsbasis ohne Drosselung (für den Nachweis der Drosselung: drossel_ist = Zeit gedrosselt / Zeit ungedrosselt)
   await plaetze.nimm(1);
   const { context } = await kontext('d1440', 'no-preference');
   const page = await context.newPage();
   await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
   const w = [];
-  for (let i = 0; i < 3; i++) w.push(await page.evaluate(() => { const t = performance.now(); let x = 0; for (let i = 0; i < 3e6; i++) x += i % 7; return performance.now() - t + (x < 0 ? 1 : 0); }));
-  basisLeistung = median(w);
+  for (let i = 0; i < 5; i++) w.push(await page.evaluate(LEISTUNG));
+  basisLeistung = Math.min(...w);
   await context.close(); plaetze.gib(1);
 }
 const auftraege = [];
@@ -606,21 +630,33 @@ async function bearbeite({ s, a }) {
         const reps = [];
         for (let i = 0; i < wdh; i++) reps.push(await werteFrames(await framelauf(s, a)));
         roh.frames = reps;
-        const best = reps.sort((x, y) => (x.scroll.anteil_verworfen ?? 0) - (y.scroll.anteil_verworfen ?? 0))[Math.floor((reps.length - 1) / 2)]; // Median-Lauf
+        const gute = reps.filter((x) => x.messqualitaet === 'ok'); const pool = gute.length ? gute : reps; // Läufe mit sauberer Drosselung bevorzugt
+        const best = [...pool].sort((x, y) => (x.scroll.anteil_verworfen ?? 0) - (y.scroll.anteil_verworfen ?? 0))[Math.floor((pool.length - 1) / 2)]; // Median-Lauf
         const { _loafRoh, ...rest } = best; void _loafRoh;
-        r.frames = { ...rest, wiederholungen: reps.length, scroll_anteil_verworfen_alle: reps.map((x) => x.scroll.anteil_verworfen) };
+        r.frames = { ...rest, wiederholungen: reps.length, scroll_anteil_verworfen_alle: reps.map((x) => x.scroll.anteil_verworfen), drossel_effektiv_alle: reps.map((x) => x.drossel_effektiv) };
       } else if (lauf === 'bildfolge') r.bildfolge = await bildfolge(s, a);
     } catch (e) { r.fehler.push(`${lauf}: ${String(e.message).slice(0, 200)}`); }
     finally { plaetze.gib(k); }
   }
   ensureDir(path.join(cacheDir, 'roh'));
-  fs.writeFileSync(path.join(cacheDir, 'roh', `${a}__${slug(s)}.json`), JSON.stringify(roh));
+  const rohDatei = path.join(cacheDir, 'roh', `${a}__${slug(s)}.json`);
+  const rohAlt = zusammenfuehren && fs.existsSync(rohDatei) ? JSON.parse(fs.readFileSync(rohDatei, 'utf8')) : {};
+  fs.writeFileSync(rohDatei, JSON.stringify({ ...rohAlt, ...roh }));
   ergebnisse.push(r);
   process.stdout.write(r.fehler.length ? 'F' : '.');
 }
 let naechster = 0;
 await Promise.all(Array.from({ length: worker }, async () => { while (naechster < auftraege.length) await bearbeite(auftraege[naechster++]); }));
 await browser.close();
+const uebernommen = [];
+if (vorher) {
+  for (const o of vorher.ergebnisse || []) {
+    const r = ergebnisse.find((x) => x.seite === o.seite && x.ansicht === o.ansicht);
+    if (!r) { ergebnisse.push(o); uebernommen.push(`${o.seite} [${o.ansicht}] alle`); continue; }
+    for (const k of ['normal', 'reduziert', 'frames', 'bildfolge']) if (o[k] && !r[k]) { r[k] = o[k]; uebernommen.push(`${o.seite} [${o.ansicht}] ${k}`); }
+  }
+  for (const o of vorher.ergebnisse || []) if (!seiten.includes(o.seite)) seiten.push(o.seite);
+}
 ergebnisse.sort((x, y) => (seiten.indexOf(x.seite) - seiten.indexOf(y.seite)) || x.ansicht.localeCompare(y.ansicht));
 
 // ---------------------------------------------------------------- Zusammenfassung
@@ -657,6 +693,8 @@ const zus = {
   technik: { elemente_ausserhalb_transform_opacity: tech.length, davon_layout: summe((r) => r.normal.technik_layout), muster: muster(tech).slice(0, 30) },
   // Z-09-Soll gilt für den gedrosselten Mobillauf (4× CPU); Desktop (1×) informativ
   frames_scroll: { gesamt: fsum(null), mobil: fsum('mobil'), ...Object.fromEntries(ansichten.map((a) => [a, fsum(a)])) },
+  frames_messqualitaet: { ok: F.filter((r) => r.frames.messqualitaet === 'ok').length, unsicher: F.filter((r) => r.frames.messqualitaet !== 'ok').map((r) => ({ seite: r.seite, ansicht: r.ansicht, drossel_soll: r.frames.drossel, drossel_effektiv: r.frames.drossel_effektiv, last_1min: r.frames.last_1min })),
+    regel: 'ok, wenn Rechenprobe gedrosselt / beste ungedrosselte Basis im Bereich 0,75–1,35 × Soll-Drosselung liegt' },
   loaf: { anzahl: F.reduce((n, r) => n + r.frames.loaf.anzahl, 0), laengster_ms: Math.max(0, ...F.map((r) => r.frames.loaf.laengster_ms)), laengste_skriptdauer_ms: Math.max(0, ...F.map((r) => r.frames.loaf.laengste_skriptdauer_ms)),
     bewegung_skripte: F.reduce((n, r) => n + r.frames.loaf.bewegung.skripte, 0), bewegung_ueber_20ms: F.reduce((n, r) => n + r.frames.loaf.bewegung.ueber_20ms, 0),
     bewegung_laengste_ms: Math.max(0, ...F.map((r) => r.frames.loaf.bewegung.laengste_ms)), bewegung_top: loafBew.sort((a, b) => b.dauer_ms - a.dauer_ms).slice(0, 8) },
@@ -699,21 +737,23 @@ const kopf = {
   satz, base: BASE, erstellt: new Date().toISOString(),
   bedingungen: {
     einwilligung: 'abgelehnt', dpr: 1, page_clock: false, locale: 'de-DE', zeitzone: 'Europe/Berlin', farbschema: 'light', browser: `chromium ${browser.version()} (Playwright 1.56.1, headless)`,
-    ansichten: Object.fromEntries(ansichten.map((a) => [a, ANSICHTEN[a]])), seiten, laeufe, gegenprobe,
+    ansichten: Object.fromEntries([...new Set([...ansichten, ...ergebnisse.map((r) => r.ansicht)])].map((a) => [a, ANSICHTEN[a]])), seiten, laeufe, gegenprobe,
+    zusammengefuehrt: vorher ? { mit_erstellt: vorher.erstellt, vorlauf_laeufe: vorher.bedingungen?.laeufe, vorlauf_maschine: vorher.bedingungen?.maschine, vorlauf_laufzeit_s: vorher.bedingungen?.laufzeit_s, uebernommen } : null,
     sammellauf: { reduced_motion: { normal: 'no-preference', reduziert: 'reduce' }, drosselung: 'keine', abfrage_ms: 50, ereignisse: ['animationstart', 'animationiteration', 'transitionrun', 'transitionstart'],
       skriptbewegung: 'MutationObserver style + SVG-Geometrie, ≥ 3 verschiedene Werte je Eigenschaft', raf_schleife: `≥ ${RAF_SCHLEIFE_JE_BILD} Seiten-rAF-Aufrufe je Bild im Ruhefenster (≥ 5 Bilder); mit sichtbarer Canvas = animiertes Element`, scroll: `Schritte ${SCHRITT_VH} Bildschirmhöhe, je Schritt 2 Bilder + ${VERWEIL_MS} ms`, abklingen: `Zustandsabfrage, max ${ABKLINGEN_MAX_MS} ms`, ruhefenster_ms: RUHE_MS },
     framelauf: { reduced_motion: 'no-preference', drosselung: drosselFest ? `${drosselFest}× fest` : 'mobil 4×, Desktop 1× (CDP Emulation.setCPUThrottlingRate)', scroll: `${pxJeBild} px je Bild (rAF-gekoppelt, behavior instant) + 30 Bilder Nachlauf`,
       einstieg: 'rAF ab Dokumentbeginn bis Scrollbeginn (nach load, fonts.ready, networkidle ≤ 5 s)', exklusiv: true, wiederholungen: wdh,
+      ruhetor: `vor jedem Framelauf ungedrosselte Rechenprobe (1e7 Schleifen, Median aus 3) ≤ 1,3 × beste Basis, Abfragetakt 2 s, höchstens ${RUHE_WARTE_MAX_S} s`,
+      messqualitaet: 'ok bei effektiver Drosselung (gedrosselt / beste Basis) im Bereich 0,75–1,35 × Soll; sonst „unsicher“ (Fremdlast)',
       verworfen: 'Intervall ≥ 2 vsync (= „> 16,7 ms“ ohne Rundungsrauschen; rAF-Zeitstempel sind auf 0,1 ms gerundet)', ueber_50ms: 'Intervall ≥ 4 vsync (> 50 ms)', z09_soll: 'mobil (4×) – Desktop 1× informativ', gl_renderer: glRenderer, leistungsbasis_ms: basisLeistung ? Math.round(basisLeistung) : null },
     loaf: { quelle: 'PerformanceObserver long-animation-frame (buffered) im Framelauf', bewegungsbezug: 'rAF-Rückruf (invoker FrameRequestCallback) · Funktionsname /anim|motion|tween|spring|scroll/ · Chunk-Inhalt: ' + SIGNATUREN.map(([n]) => n).join(', ') },
     register: REGISTER, maschine: { cpus: os.cpus().length, last_1min_start: os.loadavg()[0] }, laufzeit_s: Math.round((Date.now() - tStart) / 1000), worker,
   },
 };
 const ausgabe = { ...kopf, zusammenfassung: zus, ergebnisse };
-const ziel = arg('aus') ? path.resolve(arg('aus')) : gegenprobe ? path.join(cacheDir, 'gegenprobe.json') : path.join(ensureDir(path.join(RELAUNCH, 'belege', satz)), 'bewegung.json');
 ensureDir(path.dirname(ziel));
 fs.writeFileSync(ziel, JSON.stringify(ausgabe, null, 1));
 console.log(`\nbewegung: ${ergebnisse.length} Seiten×Ansichten · ${Math.round((Date.now() - tStart) / 1000)} s → ${path.relative(RELAUNCH, ziel)}`);
 console.log(JSON.stringify({ registriert: `${zus.registriert.im_register}/${zus.registriert.elemente_animiert}`, technik_ausserhalb: zus.technik.elemente_ausserhalb_transform_opacity, layout: zus.technik.davon_layout,
-  verworfen_scroll_mobil: zus.frames_scroll.mobil.anteil_verworfen, verworfen_scroll_gesamt: zus.frames_scroll.gesamt.anteil_verworfen, ueber_50: zus.frames_scroll.gesamt.anteil_ueber_50ms, loaf: zus.loaf.anzahl, loaf_bewegung_ueber_20: zus.loaf.bewegung_ueber_20ms,
+  frames_ok: `${zus.frames_messqualitaet.ok}/${F.length}`, verworfen_scroll_mobil: zus.frames_scroll.mobil.anteil_verworfen, verworfen_scroll_gesamt: zus.frames_scroll.gesamt.anteil_verworfen, ueber_50: zus.frames_scroll.gesamt.anteil_ueber_50ms, loaf: zus.loaf.anzahl, loaf_bewegung_ueber_20: zus.loaf.bewegung_ueber_20ms,
   reduziert_verstoesse: zus.reduziert.verstoesse, fehler: zus.fehler.length, ...(gegenprobe ? { gegenprobe_erkannt: zus.gegenprobe.erkannt } : {}) }));
