@@ -150,6 +150,11 @@
     overflow-x: clip;
   }
 
+  /* Offenes Menüblatt sperrt das Scrollen der Seite (ohne JavaScript, auch vor der Hydrierung) */
+  html:has(.menue-blatt:popover-open) {
+    overflow: hidden;
+  }
+
   body {
     background-color: var(--color-kalk);
     color: var(--color-tinte);
@@ -298,9 +303,11 @@
     }
   }
 
-  .btn-primary:active,
-  .btn-ghost:active {
-    translate: 0 1px;
+  @media (prefers-reduced-motion: no-preference) {
+    .btn-primary:active,
+    .btn-ghost:active {
+      translate: 0 1px;
+    }
   }
 
   .btn-primary:disabled,

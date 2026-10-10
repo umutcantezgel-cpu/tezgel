@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // Entwicklungsabzeichen aus: es liegt links unten über dem Cookie-Schild und fängt dort Klicks ab;
+  // Kompilier- und Laufzeitfehler zeigt Next weiterhin an (nur `next dev`, kein Einfluss auf den Build).
+  devIndicators: false,
   // Dev-Schaufenster der Bausteine (src/app/werkstatt-schaufenster/**/page.dev.tsx) existiert nur in der
   // Entwicklung; im Build gibt es die Route nicht (KERN K-004).
   pageExtensions: process.env.NODE_ENV === 'development' ? ['dev.tsx', 'tsx', 'ts', 'jsx', 'js'] : ['tsx', 'ts', 'jsx', 'js'],

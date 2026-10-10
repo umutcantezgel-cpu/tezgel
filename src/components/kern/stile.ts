@@ -5,7 +5,7 @@ import clsx from 'clsx';
 export type KnopfVariante = 'haupt' | 'neben' | 'text' | 'hell';
 
 const KNOPF_BASIS =
-  'inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50';
+  'inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50';
 
 const KNOPF: Record<KnopfVariante, string> = {
   haupt: 'border border-tinte bg-tinte text-kalk hover:border-tinte-2 hover:bg-tinte-2',

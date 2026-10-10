@@ -10,6 +10,11 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E2-ORCH-04 | `src/components/reviews/ReviewCard.tsx` | – | Randnotiz „→ Ablauf 02 · Material & Fugenbild“ u. a. (`src/lib/stimmen.ts`) | Vertrauensschicht K-001; Texte aus den Ablaufschritten in `company.js` |
 | E2-ORCH-04 | `src/components/ui/FinalCTA.tsx` | Knopftext „WhatsApp“ (nur ab sm sichtbar) | „Per WhatsApp schreiben“ | Knöpfe sagen, was passiert (K-009); aria-label unverändert |
 | E2-ORCH-04 | `src/components/ui/FAQAccordion.tsx` | Fragezeichen-Icon vor jeder Frage | (entfällt) | Zierrat ohne Information |
+| E2-ORCH-05a | `src/components/common/Footer.jsx` | Linktext „Mobil & WhatsApp: 0172 / 67 28 504“ | „0172 / 67 28 504“ unter dem Etikett „Mobil & WhatsApp“ | Etikett steht im Schriftfeld darüber; aria-label unverändert |
+| E2-ORCH-05a | `src/components/common/Footer.jsx` | „Fax: 06441 / 44 83 548“ | „06441 / 44 83 548“ unter dem Etikett „Fax“ | wie oben |
+| E2-ORCH-05a | `src/components/common/Footer.jsx` | Icons vor Zusagen und Stammdaten (Award, ShieldCheck, Sparkles, Receipt, MapPin …) | Fugenkreuz bzw. Mono-Etiketten „Anschrift“, „Telefon“, „Mobil & WhatsApp“, „E-Mail“, „Fax“, „Zeiten“, „Betrieb seit 2008“ (aus COMPANY_DATA.business.establishmentYear) | Schriftfeld statt Icon-Liste (K-009) |
+| E2-ORCH-05a | `src/components/common/Header.jsx` | WhatsApp-Symbolknopf im Kopf | (entfällt im Kopf) | gleichwertig vorhanden: flacher WhatsApp-Knopf `#whatsapp-floating-btn` (Desktop), untere Leiste (mobil), Menüblatt und Fuß |
+| E2-ORCH-05a | `src/components/common/MobileMenu.jsx` | Kategorie-Schalter „Badsanierung …“ (ganze Zeile) | Zeile = Link zur Übersicht; Schalter rechts mit Namen „Badsanierung – Unterseiten öffnen/schließen“ | Übersicht auch vor der Hydrierung erreichbar (V-06) |
 
 ## Vorschläge (Überschriften, Fließtext)
 _noch keine_

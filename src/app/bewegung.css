@@ -85,12 +85,51 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   transition-timing-function: var(--ease-setzen);
 }
 
+/* aufklappen – Menüblatt (Popover) fährt von rechts ein, Mega-Menü rückt 4 px in die Flucht;
+   zu: eine Stufe kürzer. Ohne Bewegungswunsch erscheinen beide sofort. */
+.menue-blatt::backdrop {
+  background: color-mix(in oklab, var(--color-tinte) 60%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .menue-blatt {
+    transition: translate var(--dauer-1) var(--ease-weg), display var(--dauer-1) allow-discrete, overlay var(--dauer-1) allow-discrete;
+    translate: 100% 0;
+  }
+  .menue-blatt:popover-open {
+    translate: 0 0;
+    transition-duration: var(--dauer-2);
+    transition-timing-function: var(--ease-setzen);
+  }
+  @starting-style {
+    .menue-blatt:popover-open {
+      translate: 100% 0;
+    }
+  }
+  .mega-blatt {
+    transition: opacity var(--dauer-2) var(--ease-setzen), translate var(--dauer-2) var(--ease-setzen);
+  }
+  @starting-style {
+    .mega-blatt:not([hidden]) {
+      opacity: 0;
+      translate: 0 calc(var(--spacing) * -1);
+    }
+  }
+}
+/* Ohne Popover-Unterstützung (Safari < 17) bleibt das Blatt verborgen; der Schalter führt zum Seitenindex. */
+@supports not selector(:popover-open) {
+  .menue-blatt {
+    display: none;
+  }
+}
+
 /* druck – Knopf-Rückmeldung 1 px; zustand – Farbwechsel bei Hover/Fokus */
 [data-motion="druck"] {
   transition: translate var(--dauer-1) var(--ease-setzen), background-color var(--dauer-1) var(--ease-setzen), border-color var(--dauer-1) var(--ease-setzen), color var(--dauer-1) var(--ease-setzen);
 }
-[data-motion="druck"]:active {
-  translate: 0 1px;
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion="druck"]:active {
+    translate: 0 1px;
+  }
 }
 [data-motion="zustand"] {
   transition: background-color var(--dauer-1) var(--ease-setzen), border-color var(--dauer-1) var(--ease-setzen), color var(--dauer-1) var(--ease-setzen), text-decoration-color var(--dauer-1) var(--ease-setzen);
