@@ -16,8 +16,9 @@
 //                 "befunde": [{"schwere": "mittel", "schritt": 3, "text": "…"}], "gegenprobe": false,
 //                 "schritte": [ {"tippe": "Standorte"}, {"taste": "Tab", "bis": "Butzbach"}, … ] }
 //   Schrittarten: tippe (Name/Text; optional nr, in) · taste (optional mal, bis, max) · fuelle {feld?, text} ·
-//                 waehle {feld?, option} · scrolle "unten"|"oben"|"ende"|"anfang"|<px> · warte_auf "<Text>" · zurueck
-//   Tastatur-Modus: tippe und scrolle sind verboten; fuelle/waehle wirken nur auf das fokussierte Feld.
+//                 waehle {feld?, option} · scrolle "unten"|"oben"|"ende"|"anfang"|<px> · wische "links"|"rechts" + an "<Text>"
+//                 (waagerechte Leiste) · warte_auf "<Text>" · zurueck
+//   Tastatur-Modus: tippe, scrolle und wische sind verboten; fuelle/waehle wirken nur auf das fokussierte Feld.
 //
 // Messbedingungen (stehen in jeder lauf.json unter „bedingungen“): Chromium (Playwright 1.56.1), Ansicht aus
 //   lib.mjs ANSICHTEN (DPR 1), Einwilligung „erstbesuch“ (Banner gehört zur Wirklichkeit des Besuchers),
@@ -60,7 +61,7 @@ export const AUFGABEN = {
     titel: 'Vertrauen prüfen',
     auftrag: 'Prüfen Sie, wie lange es den Betrieb gibt und wie Kunden ihn bewerten.',
     ziel: [
-      { name: 'Angabe, seit wann es den Betrieb gibt, war im Bild', art: 'gesehen', text: /\b2008\b/ },
+      { name: 'Angabe, seit wann es den Betrieb gibt, war im Bild (Gründungsjahr 2008 oder „über N Jahre“)', art: 'gesehen', text: /\b2008\b|\büber \d+ Jahren?\b/i },
       { name: 'Kundenbewertung (Note mit Bewertungen/Rezensionen) war im Bild', art: 'gesehen', text: /\b[1-5],\d\b/, und: /Bewertung|Rezension|Sterne|Kundenstimme/i },
     ],
   },
@@ -186,6 +187,8 @@ async function beschreibe(loc) {
 
 // Im Seitenkontext: Lage und Sichtbarkeit eines Elements (für Besucher sichtbar = nicht display/visibility/opacity 0,
 // größer als 1 px, innerhalb der Dokumentfläche; im Bild = schneidet den Ausschnitt; frei = Mittelpunkt nicht verdeckt).
+// Trifft die Punktprobe einen Vorfahren, zählt das als frei (Inhalt mit pointer-events:none), außer der Vorfahr ist
+// body/html – dann liegt dort eine Ebene ohne eigenes Element (z. B. ::after-Überlagerung) über dem Ziel.
 const LAGE = (el) => {
   const vw = innerWidth, vh = innerHeight;
   const r = el.getBoundingClientRect();
@@ -206,7 +209,7 @@ const LAGE = (el) => {
   if (imBild) {
     const cx = Math.min(Math.max(r.left + r.width / 2, 1), vw - 1), cy = Math.min(Math.max(r.top + r.height / 2, 1), vh - 1);
     const hit = document.elementFromPoint(cx, cy);
-    frei = !!hit && (el === hit || el.contains(hit) || hit.contains(el));
+    frei = !!hit && (el === hit || el.contains(hit) || (hit.contains(el) && hit !== document.body && hit !== document.documentElement));
     if (!frei) verdeckt = beschreibeEl(hit);
   }
   const lm = el.closest('nav,[role=navigation],header,[role=banner],footer,[role=contentinfo],[role=dialog],dialog,aside,[role=complementary],[role=region],section[aria-label],section[aria-labelledby],main,form');
@@ -236,7 +239,7 @@ const AUSSCHNITT = () => {
   const frei = (el, r) => {
     const cx = Math.min(Math.max(r.left + Math.min(r.width, 40) / 2, 1), vw - 1), cy = Math.min(Math.max(r.top + r.height / 2, 1), vh - 1);
     const hit = document.elementFromPoint(cx, cy);
-    return !hit || el === hit || el.contains(hit) || hit.contains(el);
+    return !hit || el === hit || el.contains(hit) || (hit.contains(el) && hit !== document.body && hit !== document.documentElement);
   };
   const h1el = [...document.querySelectorAll('h1')].find(sicht);
   const ueberschriften = [];
@@ -461,7 +464,7 @@ const BEDIEN_LISTE = (els, nurImBild) => {
     if (imBild) {
       const cx = Math.min(Math.max(r.left + r.width / 2, 1), vw - 1), cy = Math.min(Math.max(r.top + r.height / 2, 1), vh - 1);
       const hit = document.elementFromPoint(cx, cy);
-      frei = !!hit && (el === hit || el.contains(hit) || hit.contains(el));
+      frei = !!hit && (el === hit || el.contains(hit) || (hit.contains(el) && hit !== document.body && hit !== document.documentElement));
       if (!frei && hit) { const d = hit.closest('[role=dialog],[role=alertdialog],dialog,[aria-label]'); verdeckt = d ? `${d.getAttribute('role') || d.tagName.toLowerCase()} „${(d.getAttribute('aria-label') || '').slice(0, 50)}“` : hit.tagName.toLowerCase(); }
     }
     const ro = rolle(el); const n = name(el);
@@ -640,7 +643,7 @@ async function festhalten(nr, art, extra = {}) {
 }
 
 function schrittArt(s) {
-  for (const k of ['tippe', 'taste', 'fuelle', 'waehle', 'scrolle', 'warte_auf', 'zurueck']) if (k in s) return k;
+  for (const k of ['tippe', 'taste', 'fuelle', 'waehle', 'scrolle', 'wische', 'warte_auf', 'zurueck']) if (k in s) return k;
   return null;
 }
 function schrittText(s) {
@@ -651,6 +654,7 @@ function schrittText(s) {
   if (a === 'waehle') return `waehle ${s.waehle.feld ? `„${s.waehle.feld}“` : '(Fokusfeld)'} → „${s.waehle.option}“`;
   if (a === 'scrolle') return `scrolle ${s.scrolle}`;
   if (a === 'warte_auf') return `warte_auf „${s.warte_auf}“`;
+  if (a === 'wische') return `wische ${s.wische} an „${s.an}“`;
   if (a === 'zurueck') return 'zurueck';
   return JSON.stringify(s);
 }
@@ -681,7 +685,7 @@ async function nachAktion() {
 async function fuehreAus(s, nr) {
   const art = schrittArt(s);
   const info = { handlungen: 0, bildlauf_implizit: 0, hinweise: [] };
-  if (!art) throw new SchrittFehler(`unbekannte Schrittart ${JSON.stringify(s)} (tippe, taste, fuelle, waehle, scrolle, warte_auf, zurueck)`);
+  if (!art) throw new SchrittFehler(`unbekannte Schrittart ${JSON.stringify(s)} (tippe, taste, fuelle, waehle, scrolle, wische, warte_auf, zurueck)`);
   if (art === 'tippe') {
     if (eingabe === 'tastatur') throw new SchrittFehler('„tippe“ ist im Tastatur-Modus verboten – Fokus mit "taste" (Tab) bewegen und mit Enter/Space auslösen');
     const k = await loese(page, String(s.tippe), { nr: s.nr, inBereich: s.in });
@@ -833,6 +837,34 @@ async function fuehreAus(s, nr) {
     const bewegt = await scrolleUm(dy);
     info.handlungen = Math.max(1, Math.ceil(Math.abs(bewegt) / vh - 0.001));
     info.hinweise.push(`Bildlauf ${bewegt} px${bewegt === 0 ? ' (Seite bewegte sich nicht – Anfang/Ende erreicht)' : ''}`);
+    Object.assign(info, { ruhe: await nachAktion() });
+    return info;
+  }
+  if (art === 'wische') {
+    // Waagerechte Leiste (Karussell, Chips) mit dem Finger/Mausrad seitlich bewegen. "links" = Finger nach links,
+    // zeigt, was rechts liegt; "rechts" = zurück. "an": sichtbarer Text eines Elements in der Leiste.
+    if (eingabe === 'tastatur') throw new SchrittFehler('wischen ist im Tastatur-Modus nicht erlaubt – Tab/Pfeiltasten mit "taste" nutzen');
+    if (!['links', 'rechts'].includes(s.wische) || !s.an) throw new SchrittFehler('wische braucht "links"|"rechts" und "an": "<sichtbarer Text in der Leiste>"');
+    const k = await loese(page, String(s.an), { nr: s.nr, inBereich: s.in });
+    if (!k.lage.imBild) throw new SchrittFehler(`wische: „${s.an}“ liegt nicht im Bild – erst dorthin scrollen`);
+    const leiste = await k.loc.evaluate((el) => {
+      for (let p = el; p && p !== document.body; p = p.parentElement) {
+        const cs = getComputedStyle(p);
+        if (['auto', 'scroll'].includes(cs.overflowX) && p.scrollWidth > p.clientWidth + 2) { const r = p.getBoundingClientRect(); return { x: Math.round(r.left + r.width / 2), y: Math.round(r.top + r.height / 2), breite: p.clientWidth, links: p.scrollLeft, max: p.scrollWidth - p.clientWidth }; }
+      }
+      return null;
+    });
+    if (!leiste) throw new SchrittFehler(`wische: an „${s.an}“ gibt es keine waagerecht verschiebbare Leiste`);
+    const dx = (s.wische === 'links' ? 1 : -1) * Math.round(leiste.breite * 0.85);
+    await page.mouse.move(Math.min(Math.max(leiste.x, 1), V.width - 1), Math.min(Math.max(leiste.y, 1), V.height - 1));
+    await page.mouse.wheel(dx, 0);
+    // Zustandsabfrage: Leiste steht still (3 Abfragen in Folge gleich, max 2 s)
+    let gleich = 0, letzt = null, jetzt = leiste.links; const t0 = Date.now();
+    while (gleich < 3 && Date.now() - t0 < 2000) { jetzt = await k.loc.evaluate((el, x0) => new Promise((r) => setTimeout(() => { for (let p = el; p && p !== document.body; p = p.parentElement) { const cs = getComputedStyle(p); if (['auto', 'scroll'].includes(cs.overflowX) && p.scrollWidth > p.clientWidth + 2) return r(p.scrollLeft); } r(x0); }, 50)), leiste.links).catch(() => letzt); gleich = jetzt === letzt ? gleich + 1 : 0; letzt = jetzt; }
+    const bewegt = (jetzt ?? leiste.links) - leiste.links;
+    info.handlungen = Math.max(1, Math.ceil(Math.abs(bewegt) / leiste.breite - 0.001));
+    info.ziel_element = `Leiste an ${k.beschreibung}`;
+    info.hinweise.push(`Leiste ${bewegt} px seitlich${bewegt === 0 ? ' (bewegte sich nicht – Ende erreicht)' : ''}`);
     Object.assign(info, { ruhe: await nachAktion() });
     return info;
   }

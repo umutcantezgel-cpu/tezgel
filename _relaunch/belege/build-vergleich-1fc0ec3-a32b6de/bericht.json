@@ -1,0 +1,64 @@
+{
+ "vorher": "1fc0ec3",
+ "nachher": "a32b6de",
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 8,
+ "abweichungen": [
+  {
+   "datei": "faq.html",
+   "ab": 106786,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  },
+  {
+   "datei": "index.html",
+   "ab": 154365,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  },
+  {
+   "datei": "leistungen/aussen.html",
+   "ab": 120034,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  },
+  {
+   "datei": "leistungen/bad.html",
+   "ab": 120786,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  },
+  {
+   "datei": "leistungen/untergrund.html",
+   "ab": 120575,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  },
+  {
+   "datei": "leistungen/wohnen.html",
+   "ab": 121065,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  },
+  {
+   "datei": "leistungen.html",
+   "ab": 124141,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  },
+  {
+   "datei": "preise.html",
+   "ab": 110902,
+   "vorher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\" checked=\"\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet wer",
+   "nachher": "700 bg-neutral-800 text-orange-600 focus:ring-orange-500\" name=\"privacyAccepted\"/><span>Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.</span>"
+  }
+ ],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": []
+}
