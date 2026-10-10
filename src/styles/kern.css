@@ -81,12 +81,19 @@
   --k-gewicht-anzeige: 760;
 }
 
+/* Untere Leiste (P3-07): sichtbare Höhe · Sicherheitsrand (0 ohne viewport-fit=cover) · belegter Raum unten; ab lg keine Leiste */
+:root {
+  --k-leiste-hoehe: calc(var(--spacing-k-7) + var(--k-fuge));
+  --k-leiste-sicher: env(safe-area-inset-bottom, 0px);
+  --k-leiste-platz: calc(var(--k-leiste-hoehe) + var(--k-leiste-sicher));
+}
+
 @media (min-width: 768px) {
   :root { --k-rand: var(--spacing-k-6); }
 }
 
 @media (min-width: 1024px) {
-  :root { --k-rand: var(--spacing-k-7); }
+  :root { --k-rand: var(--spacing-k-7); --k-leiste-hoehe: 0px; --k-leiste-sicher: 0px; }
 }
 
 /* --------------------------------------------------------------------------
