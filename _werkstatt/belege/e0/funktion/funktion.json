@@ -1,0 +1,1754 @@
+[
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Schritte vor und zurück: Auswahl und Maße bleiben erhalten, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4093
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Pflichtfelder: leerer Name und leere Telefonnummer blockieren den Versand, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1455
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Telefonnummer unter 6 Zeichen blockiert den Versand, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1642
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › ungültige E-Mail-Adresse blockiert den Versand, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1900
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Gutfall online: POST /api/anfrage mit inquiryType „bad“ und badDetails, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4106
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Gutfall nur Pflichtangaben: Standardauswahl wird gesendet, optionale Felder fehlen",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1577
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Schritte vor und zurück: Auswahl und Maße bleiben erhalten, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 13889
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Pflichtfelder: leerer Name und leere Telefonnummer blockieren den Versand, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5863
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Telefonnummer unter 6 Zeichen blockiert den Versand, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 6201
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › ungültige E-Mail-Adresse blockiert den Versand, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 6320
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Gutfall online: POST /api/anfrage mit inquiryType „bad“ und badDetails, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 13214
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › Gutfall nur Pflichtangaben: Standardauswahl wird gesendet, optionale Felder fehlen",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 6151
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Badanfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3611
+ },
+ {
+  "titel": "BadanfrageFunnel (/bad/badanfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Badanfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 9165
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1782
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1608
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1625
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1779
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3044
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1667
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1289
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2185
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1799
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1865
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2862
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2233
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3405
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2331
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 898
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2735
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › Schild öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1543
+ },
+ {
+  "titel": "Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › Schild öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1500
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › Erstbesuch (keine Entscheidung) › /kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1915
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › Erstbesuch (keine Entscheidung) › /kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2091
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1974
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1500
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1722
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+  "projekt": "mobil",
+  "status": "fixme",
+  "dauer_ms": 78
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1220
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1645
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2038
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1411
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1505
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1173
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1132
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2966
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 914
+ },
+ {
+  "titel": "Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 786
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2654
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1524
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1976
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2309
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1860
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /kontakt: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2597
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /#express-anfrage: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4253
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /leistungen: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2754
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /foerderung: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2088
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2432
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4966
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2067
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 10022
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3244
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3509
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3036
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2611
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /kontakt: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2959
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /#express-anfrage: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 10958
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /leistungen: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3115
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall auf /foerderung: POST general mit Standardauswahl, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3134
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 6323
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5234
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3546
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3492
+ },
+ {
+  "titel": "TezgelAnfrageFunnel (F-03, /kontakt) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 6204
+ },
+ {
+  "titel": "HeroContactForm (/) › ohne Name/Telefon: Fehlermeldung, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1504
+ },
+ {
+  "titel": "HeroContactForm (/) › gültig: sendet Anfrage an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3337
+ },
+ {
+  "titel": "HeroContactForm (/) › ohne Name/Telefon: Fehlermeldung, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1291
+ },
+ {
+  "titel": "HeroContactForm (/) › gültig: sendet Anfrage an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1155
+ },
+ {
+  "titel": "HeroContactForm (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3141
+ },
+ {
+  "titel": "HeroContactForm (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3401
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1010
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Fläche ohne gültige Zahl → Hinweis statt Richtwert",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2921
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Treppe mit Stufenmaßen → Treppen-Richtwert (Trittstufen + Setzstufen)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1535
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Blockstufen → keine m²-Menge im Richtwert",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1968
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 1: 20 m² · Kreuzfuge → ca. 21–22 m² (netto 20 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3513
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 2: 20 m² · Diagonal → ca. 22–23 m² (netto 20 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3740
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 3: 20 m² · Noch offen → ca. 21–23 m² (netto 20 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4341
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4188
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3383
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 6: 12 m² · Wilder Verband → ca. 12,6–13,2 m² (netto 12 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3338
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3442
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 8: 150 m² · Diagonal → ca. 165–172,5 m² (netto 150 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3931
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4000
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4418
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4073
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4165
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: leere Pflichtfelder blockieren den Versand, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 9019
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: Telefonnummer unter 6 Zeichen blockiert den Versand",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 8047
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: ohne Einwilligung blockiert der Versand, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 7090
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 8132
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 6855
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Gutfall nur Treppe: Versand als POST „fliesen“ mit Bereich „treppe“",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3695
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Fußbodenheizung „Weiß nicht“ wird im Versand nicht als „Nein“ gemeldet",
+  "projekt": "mobil",
+  "status": "fixme",
+  "dauer_ms": 0
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast",
+  "projekt": "mobil",
+  "status": "fixme",
+  "dauer_ms": 0
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 726
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Fläche ohne gültige Zahl → Hinweis statt Richtwert",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1681
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Treppe mit Stufenmaßen → Treppen-Richtwert (Trittstufen + Setzstufen)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3962
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Blockstufen → keine m²-Menge im Richtwert",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5254
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 1: 20 m² · Kreuzfuge → ca. 21–22 m² (netto 20 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3875
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 2: 20 m² · Diagonal → ca. 22–23 m² (netto 20 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4052
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 3: 20 m² · Noch offen → ca. 21–23 m² (netto 20 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3433
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 8736
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3913
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 6: 12 m² · Wilder Verband → ca. 12,6–13,2 m² (netto 12 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4547
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3610
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 8: 150 m² · Diagonal → ca. 165–172,5 m² (netto 150 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3913
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4137
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4950
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3912
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4773
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: leere Pflichtfelder blockieren den Versand, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 12689
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: Telefonnummer unter 6 Zeichen blockiert den Versand",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 19859
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: ohne Einwilligung blockiert der Versand, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 16150
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 13879
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 12801
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Gutfall nur Treppe: Versand als POST „fliesen“ mit Bereich „treppe“",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 11521
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Fußbodenheizung „Weiß nicht“ wird im Versand nicht als „Nein“ gemeldet",
+  "projekt": "desktop",
+  "status": "fixme",
+  "dauer_ms": 0
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast",
+  "projekt": "desktop",
+  "status": "fixme",
+  "dauer_ms": 0
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt die Konfiguration an und vergibt echte Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 8604
+ },
+ {
+  "titel": "FliesenKonfigurator (/fliesen/konfigurator) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt die Konfiguration an und vergibt echte Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 14729
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1591
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1502
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1448
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)",
+  "projekt": "mobil",
+  "status": "übersprungen",
+  "dauer_ms": 70
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › /: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 622
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › /kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 527
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › /bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 433
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 791
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1818
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2879
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2884
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1993
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › /: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 687
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › /kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 501
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › /bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 465
+ },
+ {
+  "titel": "F-10 WhatsApp-Links und Widget › Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer",
+  "projekt": "desktop",
+  "status": "übersprungen",
+  "dauer_ms": 60
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 536
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /: alle E-Mail-Links zeigen auf info@tezgel.de",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 533
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 508
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /kontakt: alle E-Mail-Links zeigen auf info@tezgel.de",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 551
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 457
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /bad: alle E-Mail-Links zeigen auf info@tezgel.de",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 451
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 535
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › Mobil-Leiste: Anrufen zeigt auf die Festnetznummer",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 614
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 681
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /: alle E-Mail-Links zeigen auf info@tezgel.de",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 625
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 473
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /kontakt: alle E-Mail-Links zeigen auf info@tezgel.de",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 513
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 534
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /bad: alle E-Mail-Links zeigen auf info@tezgel.de",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 479
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › /bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 538
+ },
+ {
+  "titel": "F-15 Telefon und E-Mail › Mobil-Leiste: Anrufen zeigt auf die Festnetznummer",
+  "projekt": "desktop",
+  "status": "übersprungen",
+  "dauer_ms": 51
+ },
+ {
+  "titel": "Mega-Menü (Desktop, ab lg) › Hover öffnet das Untermenü, Escape schließt es",
+  "projekt": "mobil",
+  "status": "übersprungen",
+  "dauer_ms": 1
+ },
+ {
+  "titel": "Mega-Menü (Desktop, ab lg) › Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter",
+  "projekt": "mobil",
+  "status": "übersprungen",
+  "dauer_ms": 1
+ },
+ {
+  "titel": "Mega-Menü (Desktop, ab lg) › Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü",
+  "projekt": "mobil",
+  "status": "übersprungen",
+  "dauer_ms": 1
+ },
+ {
+  "titel": "Mega-Menü (Desktop, ab lg) › Hover öffnet das Untermenü, Escape schließt es",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2279
+ },
+ {
+  "titel": "Mega-Menü (Desktop, ab lg) › Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 939
+ },
+ {
+  "titel": "Mega-Menü (Desktop, ab lg) › Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2587
+ },
+ {
+  "titel": "Mobilmenü (Drawer) › mobil: Desktop-Navigation ist ausgeblendet, der Drawer ist der Zugang",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 733
+ },
+ {
+  "titel": "Mobilmenü (Drawer) › Schalter öffnet den Drawer, Escape schließt ihn",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1208
+ },
+ {
+  "titel": "Mobilmenü (Drawer) › Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Drawer schließt",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1990
+ },
+ {
+  "titel": "Mobilmenü (Drawer) › mobil: Desktop-Navigation ist ausgeblendet, der Drawer ist der Zugang",
+  "projekt": "desktop",
+  "status": "übersprungen",
+  "dauer_ms": 86
+ },
+ {
+  "titel": "Mobilmenü (Drawer) › Schalter öffnet den Drawer, Escape schließt ihn",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1032
+ },
+ {
+  "titel": "Mobilmenü (Drawer) › Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Drawer schließt",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4442
+ },
+ {
+  "titel": "Sprunglink › erster Tabstopp, führt zu #main-content",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 697
+ },
+ {
+  "titel": "Sprunglink › erster Tabstopp, führt zu #main-content",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1005
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 849
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 690
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 785
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage wechselt aria-expanded und blendet die Antwort ein/aus",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3474
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2149
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 916
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 957
+ },
+ {
+  "titel": "FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage wechselt aria-expanded und blendet die Antwort ein/aus",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2381
+ },
+ {
+  "titel": "404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4513
+ },
+ {
+  "titel": "404 › Link „Zur Startseite“ führt zurück zur Startseite",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4426
+ },
+ {
+  "titel": "404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2138
+ },
+ {
+  "titel": "404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 529
+ },
+ {
+  "titel": "404 › Link „Zur Startseite“ führt zurück zur Startseite",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1034
+ },
+ {
+  "titel": "404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 715
+ },
+ {
+  "titel": "Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1227
+ },
+ {
+  "titel": "Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 970
+ },
+ {
+  "titel": "Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 834
+ },
+ {
+  "titel": "Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 903
+ },
+ {
+  "titel": "Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 726
+ },
+ {
+  "titel": "Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2052
+ },
+ {
+  "titel": "Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 939
+ },
+ {
+  "titel": "Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 843
+ },
+ {
+  "titel": "Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3281
+ },
+ {
+  "titel": "Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1050
+ },
+ {
+  "titel": "Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 993
+ },
+ {
+  "titel": "Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 992
+ },
+ {
+  "titel": "Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1548
+ },
+ {
+  "titel": "Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 6679
+ },
+ {
+  "titel": "Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1707
+ },
+ {
+  "titel": "Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift",
+  "projekt": "mobil",
+  "status": "übersprungen",
+  "dauer_ms": 72
+ },
+ {
+  "titel": "Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1340
+ },
+ {
+  "titel": "Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1636
+ },
+ {
+  "titel": "PricingCalculator (/preise) › ohne Name: Pflichtfeld blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 952
+ },
+ {
+  "titel": "PricingCalculator (/preise) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1004
+ },
+ {
+  "titel": "PricingCalculator (/preise) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1032
+ },
+ {
+  "titel": "PricingCalculator (/preise) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1102
+ },
+ {
+  "titel": "PricingCalculator (/preise) › Vorauswahl Bad: sendet inquiryType \"bad\" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 994
+ },
+ {
+  "titel": "PricingCalculator (/preise) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType \"general\", Details in notes, Erfolg",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1598
+ },
+ {
+  "titel": "PricingCalculator (/preise) › ohne Name: Pflichtfeld blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1446
+ },
+ {
+  "titel": "PricingCalculator (/preise) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1410
+ },
+ {
+  "titel": "PricingCalculator (/preise) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2553
+ },
+ {
+  "titel": "PricingCalculator (/preise) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4661
+ },
+ {
+  "titel": "PricingCalculator (/preise) › Vorauswahl Bad: sendet inquiryType \"bad\" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3707
+ },
+ {
+  "titel": "PricingCalculator (/preise) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType \"general\", Details in notes, Erfolg",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 11313
+ },
+ {
+  "titel": "PricingCalculator (/preise) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2569
+ },
+ {
+  "titel": "PricingCalculator (/preise) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 7875
+ },
+ {
+  "titel": "PricingCalculator (/faq) › Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 888
+ },
+ {
+  "titel": "PricingCalculator (/faq) › Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4376
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 968
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 853
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1111
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 886
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2726
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4151
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4200
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1809
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2526
+ },
+ {
+  "titel": "BadProjektCheck (/bad/projekt-check) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5352
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1636
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1554
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4553
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4426
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 7595
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 6724
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 9308
+ },
+ {
+  "titel": "BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 8735
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 855
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2836
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2632
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2797
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2756
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1217
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5226
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5064
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4068
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4499
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 814
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2894
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2558
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2614
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2649
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1276
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4602
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3542
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4110
+ },
+ {
+  "titel": "LeadQuickForm (/leistungen/bad/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3699
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) · Sonderfälle › nur Pflichtfelder: optionale Angaben fehlen in der Nutzlast, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2666
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) · Sonderfälle › nur Pflichtfelder: optionale Angaben fehlen in der Nutzlast, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 4523
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) · Sonderfälle › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 4300
+ },
+ {
+  "titel": "LeadQuickForm (/standorte/wetzlar) · Sonderfälle › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 8593
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 919
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1020
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 982
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1087
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 1303
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5725
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5832
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5925
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1719
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3643
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1727
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1741
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5600
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 7165
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 7070
+ },
+ {
+  "titel": "BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 5817
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 860
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1334
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › ohne Einwilligung: blockiert, keine Anfrage",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 1278
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 2808
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2412
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 3406
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › ohne Einwilligung: blockiert, keine Anfrage",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 2870
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 9036
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Termin-Formular an und vergibt echte Referenz",
+  "projekt": "mobil",
+  "status": "bestanden",
+  "dauer_ms": 3077
+ },
+ {
+  "titel": "Termin-Formular (F-08) auf /termin › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Termin-Formular an und vergibt echte Referenz",
+  "projekt": "desktop",
+  "status": "bestanden",
+  "dauer_ms": 9282
+ }
+]
