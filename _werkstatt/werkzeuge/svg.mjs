@@ -26,6 +26,13 @@ const ANSICHTEN_SEITE = ['m390', 'd1440'];
 
 const relPfad = (f) => path.relative(REPO, f).split(path.sep).join('/');
 const norm = (s) => s.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
+// Vergleich mit der SVGO-Fassung ohne Attributreihenfolge und ohne SVG-Standardwerte, die SVGO streicht
+// (der Icon-Kopf nennt stroke-linejoin="miter" bewusst; KERN K-008).
+const STANDARDWERTE = new Set(['stroke-linejoin=miter', 'stroke-linecap=butt', 'stroke-miterlimit=4', 'fill-rule=nonzero', 'stroke-dashoffset=0', 'stroke-opacity=1', 'fill-opacity=1', 'opacity=1']);
+const kanon = (s) => norm(s).replace(/<([\w:-]+)((?:\s+[\w:-]+\s*=\s*"[^"]*")*)\s*(\/?)>/g, (_, tag, attrs, zu) => {
+  const liste = [...attrs.matchAll(/([\w:-]+)\s*=\s*"([^"]*)"/g)].map(([, n, v]) => `${n}=${v}`).filter((a) => !STANDARDWERTE.has(a)).sort();
+  return `<${tag}${liste.map((a) => { const i = a.indexOf('='); return ` ${a.slice(0, i)}="${a.slice(i + 1)}"`; }).join('')}${zu}>`;
+});
 
 // Zweimal optimieren: Fixpunkt, wenn die zweite Runde nichts mehr ändert.
 export function optimiere(text, animiert = false) {
@@ -43,13 +50,13 @@ export function pruefeSvgText(text, { animiert = false } = {}) {
   const zahlen = vb ? vb[1].trim().split(/[\s,]+/).map(Number) : [];
   const icon24 = zahlen.length === 4 && zahlen[2] === 24 && zahlen[3] === 24;
   const fixpunkt = opt1 === opt2;
-  const entspricht = norm(text) === norm(opt1);
+  const entspricht = kanon(text) === kanon(opt1);
   const pixel = (text.match(/<image\b/gi) || []).length + (text.match(/data:image\//gi) || []).length;
   const befunde = [];
   if (!/<svg\b/i.test(text)) befunde.push({ art: 'kein_svg', hinweis: 'kein <svg>-Wurzelelement' });
   if (!vb) befunde.push({ art: 'viewbox_fehlt', hinweis: 'kein viewBox-Attribut' });
   if (!fixpunkt) befunde.push({ art: 'kein_fixpunkt', hinweis: 'zweite SVGO-Runde ändert die Datei weiter' });
-  if (!entspricht) befunde.push({ art: 'nicht_optimiert', hinweis: 'Datei weicht von der SVGO-Fassung ab (± Leerraum)' });
+  if (!entspricht) befunde.push({ art: 'nicht_optimiert', hinweis: 'Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)' });
   if (pixel) befunde.push({ art: 'pixelbild', hinweis: `${pixel} eingebettete(s) Pixelbild(er): <image> bzw. data:image` });
   if (icon24 && bytes > ICON_MAX_ROH) befunde.push({ art: 'budget_icon', hinweis: `${bytes} Byte roh, Grenze ${ICON_MAX_ROH} Byte` });
   if (!icon24 && gzip > ILLU_MAX_GZIP) befunde.push({ art: 'budget_illustration', hinweis: `${gzip} Byte gzip, Grenze ${ILLU_MAX_GZIP} Byte` });
