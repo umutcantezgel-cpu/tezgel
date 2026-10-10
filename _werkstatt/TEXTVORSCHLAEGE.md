@@ -8,6 +8,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E2-ORCH-04 | `src/components/reviews/ReviewCard.tsx` | Icon mit `aria-label="Verifizierter Kunde"` | (entfällt) | nicht belegbare Zusicherung (Leitplanke Wahrheit) |
 | E2-ORCH-04 | `src/components/reviews/ReviewCard.tsx` | 5 Stern-Icons (aria-hidden) und Fußzeile „{Quelle} Rezension“ | „{Bewertung} von 5“ in Mono, Etikett „{Quelle} · {Thema}“ | Maß statt Behauptung (K-003) |
 | E2-ORCH-04 | `src/components/reviews/ReviewCard.tsx` | – | Randnotiz „→ Ablauf 02 · Material & Fugenbild“ u. a. (`src/lib/stimmen.ts`) | Vertrauensschicht K-001; Texte aus den Ablaufschritten in `company.js` |
+| E2-ORCH-04 | `src/components/reviews/ReviewCard.tsx` | Anfangsbuchstabe des Namens als Kreis-Bild; Zitat in geraden Anführungszeichen "…" | (entfällt); deutsche Anführungszeichen „…“ | Typografie K-006; Zitattext wörtlich, Lesefolge Name – Thema – Zitat – Quelle wie im Bestand |
 | E2-ORCH-04 | `src/components/ui/FinalCTA.tsx` | Knopftext „WhatsApp“ (nur ab sm sichtbar) | „Per WhatsApp schreiben“ | Knöpfe sagen, was passiert (K-009); aria-label unverändert |
 | E2-ORCH-04 | `src/components/ui/FAQAccordion.tsx` | Fragezeichen-Icon vor jeder Frage | (entfällt) | Zierrat ohne Information |
 | E2-ORCH-05a | `src/components/common/Footer.jsx` | Linktext „Mobil & WhatsApp: 0172 / 67 28 504“ | „0172 / 67 28 504“ unter dem Etikett „Mobil & WhatsApp“ | Etikett steht im Schriftfeld darüber; aria-label unverändert |

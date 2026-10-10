@@ -2,54 +2,6 @@
  {
   "seite": "*",
   "teil": "main_zeilen",
-  "alt": "PUNKT 01",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
-  "alt": "PUNKT 02",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
-  "alt": "PUNKT 03",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
-  "alt": "PUNKT 04",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
-  "alt": "PUNKT 05",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
-  "alt": "PUNKT 06",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
-  "alt": "PUNKT 07",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
-  "alt": "PUNKT 08",
-  "vermerk": "E2-BAU-01 Merkliste: Etikett „Punkt 01…“ ohne Versalien (CSS text-transform), Zeichen gleich – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "main_zeilen",
   "alt": "WhatsApp",
   "vermerk": "E2-ORCH-04 FinalCTA: Knopftext „WhatsApp“ → „Per WhatsApp schreiben“ – TEXTVORSCHLAEGE"
  },
@@ -66,5 +18,179 @@
   "ansicht": "d1440",
   "alt": "Aßlar · Wetzlar",
   "vermerk": "E2-ORCH-05a Kopf: Unterzeile bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "E",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Die",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "…\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "C",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "R",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Wir",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "H",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Ich",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "U",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Top",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "P",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Sehr",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "S",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "K",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Herr",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "T",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Deniz",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Immer",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Arbeit!\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "J",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "empfehlen\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "O",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "😊\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Preis.\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Rezension",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "footer",
+  "entfernt": "WhatsApp:",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "footer",
+  "entfernt": "Fax:",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "footer_zeilen",
+  "alt": "Fax: 06441 / 44 83 548",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "footer_zeilen",
+  "alt": "Mobil & WhatsApp: 0172 / 67 28 504",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
  }
 ]

@@ -45,20 +45,33 @@ async function bearbeite(s, a) {
   await bereit(page);
   // Aufklappbares öffnen, damit FAQ- und Akkordeon-Texte im Text stehen (nur lesen, keine Navigation)
   await page.evaluate(() => { document.querySelectorAll('details').forEach((d) => d.setAttribute('open', '')); });
+  // Zeilen (innerText) ohne CSS-Großschreibung lesen: gemessen wird der Text, nicht seine Auszeichnung (wie bei der Wortfolge)
+  await page.addStyleTag({ content: '*, *::before, *::after { text-transform: none !important; }' });
   const d = await page.evaluate(() => {
     const norm = (t) => (t || '').replace(/ /g, ' ').replace(/[ \t]+/g, ' ').trim();
     const meta = (sel, attr = 'content') => document.querySelector(sel)?.getAttribute(attr) ?? null;
+    // Zeilen: innerText (Blockstruktur, sichtbare Inhalte) bei neutralisiertem text-transform
     const zeilen = (el) => (el ? el.innerText.split('\n').map(norm).filter((z) => z.length > 0) : []);
-    // Wortfolge eines Blocks: textContent (daher ohne Einfluss von CSS text-transform), ohne script/style/aria-hidden, Leerraum zusammengefasst
+    // Wortfolge eines Blocks: Text wie textContent (daher ohne Einfluss von CSS text-transform), ohne script/style/aria-hidden;
+    // Wortgrenzen an Block-Elementen und <br> (berechnetes display nicht inline*/contents, Flex-/Grid-Kinder gelten als Block),
+    // Inline-Elemente (z. B. <mark>, <strong>) teilen kein Wort. So kleben Wörter benachbarter Blöcke nicht zusammen („anfragenAnrufen“).
     const wortfolge = (el) => {
       if (!el) return null;
-      const kopie = el.cloneNode(true);
-      kopie.querySelectorAll('script, style, [aria-hidden="true"]').forEach((n) => n.remove());
-      // je Textknoten getrennt, damit Wörter an Elementgrenzen nicht zusammenkleben („anfragenAnrufen“)
-      const woerter = [];
-      const gang = document.createTreeWalker(kopie, NodeFilter.SHOW_TEXT);
-      for (let n = gang.nextNode(); n; n = gang.nextNode()) woerter.push(...(n.nodeValue || '').split(/\s+/).filter(Boolean));
-      return woerter;
+      let text = '';
+      const gang = (n) => {
+        if (n.nodeType === 3) { text += n.nodeValue; return; }
+        if (n.nodeType !== 1) return;
+        const tag = n.tagName.toUpperCase();
+        if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'TEMPLATE' || n.getAttribute('aria-hidden') === 'true') return;
+        if (tag === 'BR') { text += ' '; return; }
+        const d = getComputedStyle(n).display;
+        const block = !(d.startsWith('inline') || d === 'contents');
+        if (block) text += ' ';
+        for (const c of n.childNodes) gang(c);
+        if (block) text += ' ';
+      };
+      gang(el);
+      return text.split(/\s+/).filter(Boolean);
     };
     // Kopf und Fuß der Seite: das header/footer-Element auf Seitenebene (nicht in main, article, section, nav, aside oder Dialogen)
     const seitenebene = (tag) => [...document.querySelectorAll(tag)].find((el) => !el.parentElement?.closest('main, article, aside, section, nav, [role="dialog"]')) || null;
