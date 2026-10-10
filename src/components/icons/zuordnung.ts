@@ -17,7 +17,7 @@ export const LUCIDE_ZUORDNUNG: Record<string, string | null> = {
   ListChecks: 'haken', FileCheck: 'haken', UserCheck: 'haken',
   Info: 'info', HelpCircle: 'info', Lightbulb: 'hinweis',
   AlertCircle: 'hinweis', AlertTriangle: 'hinweis', TriangleAlert: 'hinweis', Ban: 'fehler',
-  X: 'schliessen', Plus: 'plus',
+  X: 'schliessen', Plus: 'plus', Minus: 'minus',
   // Zeit und Termin
   Clock: 'uhr', Timer: 'uhr', CalendarClock: 'kalender', Calendar: 'kalender', CalendarCheck: 'kalender',
   // Inhalte
