@@ -6,6 +6,9 @@
 //            (teil und ansicht sind optional und engen den Eintrag ein; fehlen sie, gilt er für alle Teile bzw. Ansichten;
 //             für entfernte Zeilen gilt nur ein Eintrag ohne "neu"; "vermerk" wird nicht ausgewertet und nennt den Beleg)
 //   Spannen: [{ "seite": "*"|"/pfad", "block": "*"|"main"|…, "entfernt": "…", "hinzugefuegt": "…" }]  (block fehlt = "*")
+//            oder mit "entfernt_muster" (regulärer Ausdruck über die ganze Spanne) – nur für tagesabhängige Inhalte
+//            wie Kalendertage, die vom Abrufdatum abhängen; Seite und Block müssen dann ausdrücklich genannt sein.
+//   Zeilen ebenso mit "alt_muster" (ganze Zeile) – nur mit ausdrücklicher Seite und Teil.
 // "seite" ist der Pfad und gilt für alle Ansichten. Ein Eintrag mit entfernt/hinzugefuegt gehört zur Spannenregel.
 // ROT wenn: Zeilen entfernt, SEO-Abweichung, Sitemap- oder robots-Änderung, kaputte interne Links oder unerlaubt entfernte Wortspannen.
 // Ausgabe: belege/<nachher>/texte-vergleich-gegen-<vorher>.json (Abschnitt spannen je Seite und Block, unerlaubt_entfernt_je_seite).
@@ -21,8 +24,10 @@ const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 
 const vorherOrdner = arg('vorher-ordner') ? path.resolve(arg('vorher-ordner')) : path.join(RELAUNCH, 'belege', A);
 const nachherOrdner = arg('nachher-ordner') ? path.resolve(arg('nachher-ordner')) : path.join(RELAUNCH, 'belege', B);
 const erlaubt = arg('erlaubt') ? JSON.parse(fs.readFileSync(arg('erlaubt'), 'utf8')) : [];
-const zeilenErlaubt = erlaubt.filter((e) => !('entfernt' in e) && !('hinzugefuegt' in e));
-const spannenErlaubt = erlaubt.filter((e) => 'entfernt' in e || 'hinzugefuegt' in e);
+const zeilenErlaubt = erlaubt.filter((e) => !('entfernt' in e) && !('hinzugefuegt' in e) && !('entfernt_muster' in e) && !('alt_muster' in e));
+const zeilenMuster = erlaubt.filter((e) => 'alt_muster' in e && e.seite && e.seite !== '*' && e.teil).map((e) => ({ ...e, re: new RegExp(`^(?:${e.alt_muster})$`) }));
+const spannenErlaubt = erlaubt.filter((e) => 'entfernt' in e || 'hinzugefuegt' in e || 'entfernt_muster' in e);
+const musterErlaubt = spannenErlaubt.filter((e) => 'entfernt_muster' in e && e.seite && e.seite !== '*' && e.block && e.block !== '*').map((e) => ({ ...e, re: new RegExp(`^(?:${e.entfernt_muster})$`) }));
 const WORTKONTEXT = 5;
 const ia = JSON.parse(fs.readFileSync(path.join(vorherOrdner, 'texte-index.json'), 'utf8'));
 const ib = JSON.parse(fs.readFileSync(path.join(nachherOrdner, 'texte-index.json'), 'utf8'));
@@ -81,6 +86,7 @@ function spanneErlaubt(art, seite, block, text) {
   const feld = art === 'entfernt' ? 'entfernt' : 'hinzugefuegt';
   const t = norm(text);
   if (spannenErlaubt.some((e) => (e.seite === '*' || e.seite === seite) && (e.block === undefined || e.block === '*' || e.block === block) && e[feld] !== undefined && norm(e[feld]) === t)) return true;
+  if (art === 'entfernt' && musterErlaubt.some((e) => e.seite === seite && e.block === block && e.re.test(t))) return true;
   return art === 'entfernt' && zeilenErlaubt.some((e) => (e.seite === '*' || e.seite === seite) && typeof e.alt === 'string' && ` ${norm(e.alt)} `.includes(` ${t} `));
 }
 function spanneBericht(woerter, sp, art, seite, block) {
@@ -106,7 +112,7 @@ for (const k of Object.keys(ia.seiten)) {
   if (a.jsonld_hash !== b.jsonld_hash) e.jsonld = 'geändert';
   if (JSON.stringify(a.h1) !== JSON.stringify(b.h1) && !istErlaubt(seite, a.h1.join(' | '), b.h1.join(' | '), 'h1', ansicht)) e.h1 = { alt: a.h1, neu: b.h1 };
   for (const teil of ['main_zeilen', 'header_zeilen', 'footer_zeilen', 'alt', 'ueberschriften']) {
-    const weg = differenz(a[teil].map(String), b[teil].map(String)).filter((x) => !istErlaubt(seite, x, undefined, teil, ansicht));
+    const weg = differenz(a[teil].map(String), b[teil].map(String)).filter((x) => !istErlaubt(seite, x, undefined, teil, ansicht) && !zeilenMuster.some((e) => e.seite === seite && e.teil === teil && e.re.test(x)));
     const neu = differenz(b[teil].map(String), a[teil].map(String)).filter((x) => !istErlaubt(seite, undefined, x, teil, ansicht));
     if (weg.length || neu.length) e[teil] = { entfernt: weg, hinzu: neu };
     bericht.summe.entfernt += weg.length; bericht.summe.hinzu += neu.length;
