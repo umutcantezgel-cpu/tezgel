@@ -1,0 +1,137 @@
+
+> tezgel@1.0.8 build
+> next build
+
+▲ Next.js 16.3.6 (Turbopack)
+✓ Running next.config.ts took 76ms
+- Experiments (use with caution):
+  · optimizePackageImports
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 46s
+  Running TypeScript ...
+  Finished TypeScript in 17.5s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/179) ...
+  Generating static pages using 3 workers (44/179) 
+  Generating static pages using 3 workers (89/179) 
+  Generating static pages using 3 workers (134/179) 
+✓ Generating static pages using 3 workers (179/179) in 9.3s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /agb
+├ ƒ /api/anfrage
+├ ƒ /api/indexnow
+├ ○ /apple-icon.png
+├ ○ /ausstellung/giessen
+├ ○ /ausstellung/wetzlar
+├ ○ /bad
+├ ○ /bad/bad-aus-einer-hand
+├ ○ /bad/badanfrage
+├ ○ /bad/badplaner
+├ ○ /bad/badsanierung
+├ ○ /bad/barrierefreies-bad
+├ ○ /bad/fliesen
+├ ○ /bad/musterbaeder
+├   /bad/musterbaeder/[slug]
+│ ├ ● /bad/musterbaeder/basic-bad-4_6
+│ ├ ● /bad/musterbaeder/basic-bad-7
+│ ├ ● /bad/musterbaeder/basic-bad-8_2
+│ └ ● [+9 more paths]
+├ ○ /bad/projekt-check
+├ ○ /balkon-terrasse
+├ ○ /balkon-terrasse/balkonsanierung
+├ ○ /balkon-terrasse/stelzlager
+├ ○ /balkon-terrasse/terrassenplatten
+├ ○ /barrierefreiheit
+├ ○ /beratung
+├ ○ /blog
+├   /blog/[slug]
+│ ├ ● /blog/handwerkerbonus-fliesenarbeiten
+│ ├ ● /blog/undichte-dusche-warnzeichen
+│ ├ ● /blog/feinsteinzeug-oder-naturstein-vergleich
+│ └ ● [+10 more paths]
+├ ○ /cookie-richtlinie
+├ ○ /datenschutz
+├ ○ /downloads
+├ ○ /faq
+├ ○ /fliesen
+├ ○ /fliesen/abnahme
+├ ○ /fliesen/auf-fussbodenheizung
+├ ○ /fliesen/festpreisangebot
+├ ○ /fliesen/fliesenarten
+├ ○ /fliesen/flur-diele
+├ ○ /fliesen/fugensanierung
+├ ○ /fliesen/grossformat
+├ ○ /fliesen/holzoptik
+├ ○ /fliesen/konfigurator
+├ ○ /fliesen/kueche
+├ ○ /fliesen/neubau
+├ ○ /fliesen/renovierung
+├ ○ /fliesen/verlegemuster
+├ ○ /fliesen/verlegetechnik
+├ ○ /fliesenreparatur
+├ ○ /foerderung
+├ ○ /icon.png
+├ ○ /impressum
+├ ○ /karriere
+├ ○ /karriere/ausbildung
+├ ○ /kontakt
+├ ○ /leistungen
+├   /leistungen/[id]
+│ ├ ● /leistungen/bad
+│ ├ ● /leistungen/wohnen
+│ ├ ● /leistungen/aussen
+│ └ ● /leistungen/untergrund
+├   /leistungen/[id]/[stadt]
+│ ├ ● /leistungen/bad/wetzlar
+│ ├ ● /leistungen/bad/giessen
+│ ├ ● /leistungen/bad/marburg
+│ └ ● [+49 more paths]
+├ ○ /llms.txt
+├ ○ /login
+├ ○ /naturstein
+├ ○ /naturstein/granit
+├ ○ /naturstein/marmor-kalkstein
+├ ○ /partner
+├ ○ /preise
+├ ○ /referenzen
+├   /referenzen/[id]
+│ ├ ● /referenzen/badsanierung-grossformat
+│ ├ ● /referenzen/einfamilienhaus-komplett
+│ ├ ● /referenzen/treppenanlage-wohnhaus
+│ └ ● [+3 more paths]
+├ ○ /robots.txt
+├ ○ /schadensanalyse
+├ ○ /sitemap.xml
+├ ○ /standorte
+├   /standorte/[stadt]
+│ ├ ● /standorte/wetzlar
+│ ├ ● /standorte/giessen
+│ ├ ● /standorte/marburg
+│ └ ● [+10 more paths]
+├ ○ /team
+├ ○ /termin
+├ ○ /treppen
+├ ○ /treppen/aussentreppe
+├ ○ /treppen/innentreppe
+├ ○ /treppen/treppenhaus
+├ ○ /ueber-uns
+├ ○ /untergrund-abdichtung
+├ ○ /untergrund-abdichtung/ausgleich-gefaelle
+├ ○ /untergrund-abdichtung/din-18534
+├ ○ /untergrund-abdichtung/entkopplung
+├ ○ /untergrund-abdichtung/estrich-belegreife
+├ ○ /untergrund-abdichtung/fliesen-auf-fliesen
+├ ○ /unternehmen
+├ ○ /video-sitemap.xml
+└ ○ /widerruf
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

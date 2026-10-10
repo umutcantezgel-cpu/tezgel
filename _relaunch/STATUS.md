@@ -1,4 +1,4 @@
-STATUS · Phase P0 · Welle 0/– · Erfüllt 0/14 · Ausnahmen 0 · Elemente – (Rückführung entfällt) · Slop hart – · Jury – · Lighthouse mobil – · axe – · Puffer 100 % · Nächster Schritt: Ausgangsfotos abschließen, dann axe + Lighthouse im ruhigen Fenster, Jury-Ausgangswert
+STATUS · Phase P0 · Welle W0 live · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · Ausnahmen 0 · Elemente – · Slop hart 479 (statisch) · Jury – · Lighthouse mobil – · axe 1661 · Puffer 100 % · Nächster Schritt: Testschreiber-Pakete, Jury-Ausgangswert, Lighthouse im ruhigen Fenster, dann P0-Tor
 
 # STATUS · Lauf 1 „Rückführung und Veredelung“ (angepasst: nur Aufwertung)
 
@@ -32,3 +32,4 @@ STATUS · Phase P0 · Welle 0/– · Erfüllt 0/14 · Ausnahmen 0 · Elemente �
 - 2026-10-10 16:20 CEST · P0-ORCH-01 (707a93d) gepusht; Reinraum grün (Build, Typen, Lint, 17/17 Tests, qa:graph), CSS identisch zum Ausgangsstand; Produktion nicht ausgelöst (E-005) → Folgecommit.
 - 2026-10-10 16:30 CEST · Werkzeuge (lib, fotos, texte, texte-vergleich, axe, lighthouse, statisch, Playwright-Tests) eingerichtet; Text-/SEO-Basis 120 Seiten, 0 kaputte Links; Kundschafter A01/A02 zurück; Richtung A gestartet.
 - 2026-10-10 16:40 CEST · Ausgangsfotos 480/480 (0 Fehler, 0 Überlauf, 0 Konsole); statische Slop-Zählung P0; W0 lokal committet (4 Pakete), Reinraum grün, HTML 172/172 identisch, Texte/SEO grün; Gegenprüfung W0 läuft; axe P0 läuft; Kundschafter A01–A05 zurück; Richtungen A/B/C laufen; 10 Testschreiber-Pakete vorbereitet.
+- 2026-10-10 16:54 CEST · W0 live (cf38982), Live-Rauchtest grün; Gegenprüfung P0-GEG-01 FREIGABE; axe-Basis 1.661 ernst/kritisch; Richtung C fertig; TEST-01/02/05 laufen.
