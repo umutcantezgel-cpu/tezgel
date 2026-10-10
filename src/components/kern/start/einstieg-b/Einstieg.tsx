@@ -1,25 +1,27 @@
-// Startseite · Einstieg Variante B „Planblatt“ (P3-09b, KERN v1.2, K-001, K-007, K-009 SIG-1, K-011 Erzählseite).
-// Der erste Bildschirm ist ein Planblatt: oben die Kopfzeile des Blatts (Etikett links, Bewertung über der Zeichnung),
-// links die H1, rechts der Verlegeplan Bad mit Passstücken und Bemaßung; das Hero-Formular liegt als Feld auf dem Plan.
-// Die rote Achse kommt aus dem Plan: Kreuzpunkt = Mitte der Zeichnung; die Waage läuft von dort nach links in die
-// Textspalte und ist die Grundlinie, auf der die H1 steht; das Lot steht auf der Mittelfuge des Plans.
+// Startseite · Einstieg Variante B „Planblatt“ (P3-09b/P3-09c, KERN v1.2, K-001, K-007, K-009 SIG-1, K-011 Erzählseite).
+// Der erste Bildschirm ist ein Planblatt: oben die Kennzeile des Blatts (Etikett links, Bewertung über der Zeichnung),
+// links die H1, rechts der Verlegeplan Bad – an seiner Achse geschnitten (obere Hälfte mit Bemaßung, Passstücken,
+// Rinne). Unter der Schnittkante steht das Hero-Formular als eigenes Feld; es setzt die Wände des Plans nach unten fort
+// und überdeckt keine Zeichnung (P3-09c, Auflage 1).
+// Die rote Achse kommt aus dem Plan: Kreuzpunkt = Mitte der Zeichnung = Mitte der Schnittkante; die Waage läuft von dort
+// nach links in die Textspalte und ist die Grundlinie, auf der die H1 steht; das Lot steht auf der Mittelfuge des Plans.
 //
 // Raster ab lg (12 Spalten ohne Zwischenraum, K-007), drei Zeilen:
-//   1  Kopfzeile: Etikett (Sp. 1–6) | Bewertung (Sp. 7–12), gemeinsame 1-px-Fuge unten
+//   1  Kennzeile: Etikett (Sp. 1–6) | Bewertung (Sp. 7–12), gemeinsame 1-px-Fuge unten
 //   2  H1 (Sp. 1–6, unten bündig)       | obere Planhälfte (Sp. 7–12, unten bündig)  → Unterkante = Kreuzpunkt = Waage
-//   3  Absatz, Knöpfe, Zusagen, Motto   | untere Planhälfte, darauf der Formularplatz
+//   3  Absatz, Knöpfe, Zusagen, Motto   | Formularfeld, Oberkante auf der Waage (Schnittkante des Plans)
 // Die Waage liegt als Bahn am Anfang von Zeile 3 über alle 12 Spalten – die H1 steht auf ihr, kein Text wird geschnitten –
 // und ist bei 75 % der Breite (Mitte der Spalten 7–12 = Mitte des Plans) zentriert; die Bahn kappt sie links an der
-// Textkante und rechts am Rand der Planspalte. Formularfeld in der 24er-Teilung des Plans (480 / 24 = 20 Einheiten):
-// oben auf der nächsten Rasterfuge unter der Achse (y = 230: Abstand 60/480 = 1/8 der Breite, Abstandhalter 8 : 1),
-// links bündig mit der Wand (x = 20, Spalte 2) bzw. ab xl mit der ersten Fuge (x = 120, Spalte 7), rechts mit der Wand
-// (x = 460, Ende Spalte 23).
-// Unter lg (eigenes Blatt, K-003 Nr. 7): eine Spalte – Kopfzeile, Planstreifen, H1, Absatz, Knöpfe, Zusagen, Motto, dann
-// das Formular (nicht im ersten Bildschirm, K-011). Achse nur als Lot am linken Rand (`--k-rand` − 1 px), Text 16 px
-// eingerückt; das Lot reicht von der Kopfzeile bis zur H1.
+// Textkante und rechts am Rand der Planspalte. Sie liegt im DOM nach dem Formularfeld und damit über dessen Oberkante.
+// Formularfeld in der 24er-Teilung des Plans (480 / 24 = 20 Einheiten): von Wand (x = 20, Spalte 2) bis Wand (x = 460,
+// Ende Spalte 23). Bei 1440 × 900 beginnt es im ersten Bildschirm (Waage ≈ 545 px samt 64-px-Kopf).
+// Unter lg (eigenes Blatt, K-003 Nr. 7, P3-09c Auflage 2): eine Spalte – Kennzeile, H1 mit Unterzeile, Absatz, Knöpfe
+// (Hauptknopf zuerst), Zusagen, Motto, Plan vollständig und verkleinert, Formular. Achse nur als Lot am linken Rand
+// (`--k-rand` − 1 px) über die volle Höhe des Einstiegs; Text 16 px eingerückt.
 // SIG-1 nur über CSS (`kern.css`: html.k-bewegung, k-waage/k-lot, dauer-5 · kurve-laser, Lot eine Staffel später).
 // H1 und Absatz (LCP) stehen ab dem ersten Bild: keine Deckkraft 0, kein Versatz – bewegt werden nur die SVG-Linien.
 // Kopf (sticky, im Fluss, `--k-kopf-hoehe`) verdeckt nichts: Der Einstieg beginnt unter ihm, kein Ausgleich nötig.
+// `data-hauptaktion` am Abschnitt: Der WhatsApp-Kanal des Layouts weicht dem Einstieg aus (P3-07, FREIHALTEN).
 // Wortlaut wörtlich aus `src/app/(bestand)/page.tsx` („1. HERO“), Daten aus `@/config/company` und `@/config/reviews`.
 import { useId, type ReactNode } from 'react';
 import { COMPANY_DATA } from '@/config/company';
@@ -43,14 +45,14 @@ export default function Einstieg({ formular }: EinstiegProps) {
   const titelId = `k-einstieg-b${useId()}`;
 
   return (
-    <section aria-labelledby={titelId} className="pt-k-6 pb-k-9 lg:pt-k-7">
+    <section aria-labelledby={titelId} data-hauptaktion="" className="relative pt-k-6 pb-k-9 lg:pt-k-5">
       <div className="mx-auto max-w-(--k-seite) px-(--k-rand)">
         <div className="relative grid grid-cols-1 pl-k-4 lg:grid-cols-12 lg:pl-0">
-          {/* Zeile 1 · Kopfzeile des Blatts (Etiketten, Klasse 3, Wortlaut wie im Bestand) */}
+          {/* Zeile 1 · Kennzeile des Blatts (Etiketten, Klasse 3, Wortlaut wie im Bestand) */}
           <Etikett als="p" kreuz ton="tinte" className="lg:col-span-6 lg:row-start-1 lg:w-auto lg:border-b lg:border-k-fuge lg:pr-k-6 lg:pb-k-3">
             Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel
           </Etikett>
-          <p className="mt-k-2 flex items-center gap-k-2 k-mono text-k-1 text-k-tinte lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:mt-0 lg:items-start lg:border-b lg:border-k-fuge lg:pb-k-3">
+          <p className="mt-k-2 flex items-start gap-k-2 k-mono text-k-1 text-k-tinte lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:mt-0 lg:border-b lg:border-k-fuge lg:pb-k-3">
             <span className="flex h-lh shrink-0 items-center">
               <Icon name="stern-voll" groesse={16} />
             </span>
@@ -59,29 +61,25 @@ export default function Einstieg({ formular }: EinstiegProps) {
             </span>
           </p>
 
-          {/* Zeile 2 rechts · Verlegeplan (mobil: Streifen über der H1) */}
-          <Plan className="mt-k-5 lg:col-span-6 lg:col-start-7 lg:row-start-2 lg:mt-k-6 lg:self-end" />
-
           {/* Zeile 2 links · H1, steht auf der Waage (Abstand unten über die Unterlängen hinweg) */}
           <h1
             id={titelId}
-            className="mt-k-5 k-anzeige text-k-7 text-k-tinte lg:col-span-6 lg:row-start-2 lg:mt-k-6 lg:self-end lg:pr-k-6 lg:pb-k-4"
+            className="mt-k-5 k-anzeige text-k-7 text-k-tinte lg:col-span-6 lg:row-start-2 lg:mt-k-4 lg:self-end lg:pr-k-6 lg:pb-k-3"
           >
             <span className="block">Perfektion auf jedem Quadrat&shy;meter.</span>
-            <span className="mt-k-3 block text-k-5 text-k-tinte-2">Fliesenverlegung &amp; Badsanierung aus Aßlar</span>
+            {/* Unterzeile ungestaucht: Textbreite 100 %, Laufweite normal (P3-09c, Auflage 3) */}
+            <span className="mt-k-2 block k-text text-k-5 font-semibold tracking-normal text-k-tinte-2">
+              Fliesenverlegung &amp; Badsanierung aus Aßlar
+            </span>
           </h1>
-
-          {/* Waage (ab lg): Bahn am Anfang von Zeile 3, Linie 150 % breit ab links = Mitte bei 75 % (Kreuzpunkt) */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-(--k-linie-2) -translate-y-1/2 overflow-hidden lg:col-span-full lg:row-start-3 lg:block">
-            <LaserWaage className="absolute top-0 left-0 h-full w-3/2" />
-          </div>
 
           {/* Zeile 3 links · Absatz, Knöpfe, Zusagen, Motto */}
           <div className="mt-k-5 lg:col-span-6 lg:row-start-3 lg:pr-k-6">
             <p className="max-w-(--k-mass) k-text text-k-4 text-k-tinte">
               Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative Wohnbereiche und frostsichere
               Terrassen – millimetergenau verlegt, normgerecht abgedichtet nach{' '}
-              <span className="k-mono whitespace-nowrap">DIN 18534</span> und mit Staubschutzgarantie im bewohnten Zuhause.
+              {/* Mono eine Stufe kleiner (Wortlücke schmaler), ohne Umbruch, ohne Laufweite (P3-09c, Auflage 4) */}
+              <span className="k-mono text-k-3 whitespace-nowrap">DIN 18534</span> und mit Staubschutzgarantie im bewohnten Zuhause.
             </p>
 
             <div className="mt-k-6 flex flex-wrap gap-k-3">
@@ -126,19 +124,26 @@ export default function Einstieg({ formular }: EinstiegProps) {
             </figure>
           </div>
 
-          {/* Zeile 3 rechts · Formularplatz: Feld auf dem Plan, Kanten an Fuge und Wand (24er-Teilung des Plans) */}
+          {/* Zeile 2 rechts · Verlegeplan, an der Achse geschnitten (mobil: vollständig, verkleinert, nach dem Text) */}
+          <Plan className="mt-k-7 w-3/4 md:w-1/2 lg:col-span-6 lg:col-start-7 lg:row-start-2 lg:mt-k-5 lg:w-auto lg:self-end" />
+
+          {/* Zeile 3 rechts · Formularfeld unter der Schnittkante, Wand bis Wand (24er-Teilung des Plans) */}
           {formular ? (
-            <div className="relative mt-k-7 lg:col-span-6 lg:col-start-7 lg:row-start-3 lg:mt-0 lg:grid lg:grid-cols-24 lg:content-start">
-              <div aria-hidden="true" className="hidden aspect-8/1 lg:col-span-full lg:block" />
-              <div className="border border-k-strich bg-k-fliese lg:col-start-2 lg:col-end-24 xl:col-start-7">{formular}</div>
+            <div className="relative mt-k-5 lg:col-span-6 lg:col-start-7 lg:row-start-3 lg:mt-0 lg:grid lg:grid-cols-24 lg:content-start">
+              <div className="min-w-0 lg:col-start-2 lg:col-end-24">{formular}</div>
             </div>
           ) : null}
 
-          {/* Lot unter lg: am linken Rand (rechte Kante bei --k-rand), von der Kopfzeile bis zur H1 */}
-          <div className="pointer-events-none absolute inset-y-0 right-full col-start-1 row-start-1 row-end-5 mr-k-4 w-(--k-linie-2) lg:hidden">
-            <LaserLot className="h-full w-full" />
+          {/* Waage (ab lg): Bahn am Anfang von Zeile 3, Linie 150 % breit ab links = Mitte bei 75 % (Kreuzpunkt) */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-(--k-linie-2) -translate-y-1/2 overflow-hidden lg:col-span-full lg:row-start-3 lg:block">
+            <LaserWaage className="absolute top-0 left-0 h-full w-3/2" />
           </div>
         </div>
+      </div>
+
+      {/* Lot unter lg: am linken Rand (rechte Kante bei --k-rand), über die volle Höhe des Einstiegs */}
+      <div className="pointer-events-none absolute inset-y-0 left-(--k-rand) w-(--k-linie-2) -translate-x-full lg:hidden">
+        <LaserLot className="h-full w-full" />
       </div>
     </section>
   );
