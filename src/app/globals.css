@@ -99,6 +99,11 @@
   --color-secondary-900: #7F1D1D;
 }
 
+/* Bänder mit eigenem Wischen (Kundenstimmen) ohne sichtbare Leiste */
+@utility ohne-scrollleiste {
+  scrollbar-width: none;
+}
+
 /* Dauer-Stufen als Utilities: dauer-1 … dauer-5 */
 @utility dauer-* {
   transition-duration: --value(--dauer-*);

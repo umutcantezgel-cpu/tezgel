@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
-import { Plus, HelpCircle } from "lucide-react";
+import Fugenkreuz from "@/components/kern/Fugenkreuz";
 import { pickVariant } from "@/lib/textRotation";
 import { siteConfig } from "@/lib/config";
 
@@ -23,6 +23,8 @@ const callVariants = [
   `Rückfragen unter ${siteConfig.contact.phone.formatted}`,
 ];
 
+// FAQ (KERN K-009): Fragen an der Fuge, das Fugenkreuz dreht sich zum Schließen-Zeichen,
+// die Antwort klappt über grid-template-rows auf (Register „aufklappen“).
 export default function FAQAccordion({ question, answer, isDarkerBg = false }: FAQAccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
   const uniqueId = useId();
@@ -32,22 +34,24 @@ export default function FAQAccordion({ question, answer, isDarkerBg = false }: F
   const linkText = pickVariant(callVariants, question);
 
   return (
-    <div className={`rounded-2xl ${isDarkerBg ? 'bg-neutral-50' : 'bg-white'} border border-neutral-200 overflow-hidden transition-all duration-300 ease-out mb-4 shadow-sm hover:shadow-md`}>
+    <div className={`border-b border-fuge first:border-t ${isDarkerBg ? "bg-kalk" : "bg-fliese"}`}>
       <div>
         <button
           id={buttonId}
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-2xl cursor-pointer"
+          className="flex w-full cursor-pointer items-start justify-between gap-6 px-4 py-6 text-left transition-colors dauer-1 ease-setzen hover:bg-kalk md:px-6"
           aria-expanded={isOpen}
           aria-controls={panelId}
+          data-motion="zustand"
         >
-          <span className="flex gap-3 text-base sm:text-lg font-bold text-neutral-900">
-            <HelpCircle className="h-5 w-5 sm:h-6 sm:w-6 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-            <span>{question}</span>
-          </span>
-          <span className={`shrink-0 text-orange-600 transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-45' : 'rotate-0'}`} aria-hidden="true">
-            <Plus className="h-5 w-5 sm:h-6 sm:w-6" />
+          <span className="font-text text-fs-4 font-semibold text-tinte">{question}</span>
+          <span
+            className={`mt-2 shrink-0 text-tinte transition-transform dauer-2 ease-setzen ${isOpen ? "rotate-45" : "rotate-0"}`}
+            aria-hidden="true"
+            data-motion="aufklappen"
+          >
+            <Fugenkreuz className="size-4" />
           </span>
         </button>
       </div>
@@ -55,23 +59,26 @@ export default function FAQAccordion({ question, answer, isDarkerBg = false }: F
         id={panelId}
         role="region"
         aria-labelledby={buttonId}
-        className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+        className="aufklappen"
+        data-offen={isOpen ? "true" : "false"}
+        data-motion="aufklappen"
+        inert={!isOpen}
       >
-        <div className="overflow-hidden">
-          <div className="px-5 pb-5 pt-0 sm:px-6 sm:pb-6 flex flex-col gap-3">
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+        <div>
+          <div className="flex max-w-mass flex-col gap-4 px-4 pb-6 md:px-6">
+            <p className="text-fs-3 text-tinte">
               {answer}
             </p>
-            <div className="mt-2 text-xs sm:text-sm font-semibold text-neutral-700 pt-3 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center gap-2">
+            <p className="flex flex-col gap-2 border-t border-fuge pt-4 text-fs-2 text-tinte-2 sm:flex-row sm:items-center">
               <span>Haben Sie eine Frage zu Ihrem Bauvorhaben?</span>
               <a
                 href={siteConfig.contact.phone.link}
                 aria-label={`Fliesenverlegung Tezgel telefonisch kontaktieren: ${linkText}`}
-                className="inline-flex items-center text-orange-800 hover:text-orange-900 hover:underline font-bold"
+                className="font-semibold text-tinte underline decoration-strich underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte"
               >
                 {linkText}
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </div>

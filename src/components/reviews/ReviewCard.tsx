@@ -1,6 +1,7 @@
 import React from "react";
-import { Star, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 import GoogleIcon from "@/components/ui/GoogleIcon";
+import { STIMMEN, teileAnriss } from "@/lib/stimmen";
 
 export interface ReviewItem {
   id?: string;
@@ -14,59 +15,40 @@ export interface ReviewItem {
   location?: string;
 }
 
+// Kundenstimme (KERN K-009): wörtliches Zitat mit genau einem Anriss, Quelle und Bewertung in Mono,
+// Randnotiz mit Verweis auf Tezgels Ablauf oder Leistung.
 export default function ReviewCard({ review }: { review: ReviewItem }) {
   const name = review.authorName || review.author || "Kunde";
-  const initial = name.charAt(0).toUpperCase();
+  const zusatz = review.id ? STIMMEN[review.id] : undefined;
+  const teile = teileAnriss(review.text, zusatz?.anriss);
 
   return (
-    <article className="group flex flex-col bg-white p-6 sm:p-7 rounded-2xl shadow-sm border border-neutral-200/90 hover:border-orange-300 hover:shadow-md transition-all duration-300 shrink-0 min-w-[280px] sm:min-w-[340px] max-w-[380px] snap-center h-full relative overflow-hidden">
-      {/* Primary Accent Line Top */}
-      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500 group-hover:h-[4px] transition-all duration-300" />
-
-      {/* Header: Avatar + Name + Rating */}
-      <header className="flex items-center gap-3 mb-4 relative z-10">
-        <div className="relative flex items-center justify-center w-11 h-11 rounded-full font-bold text-base shrink-0 bg-orange-100 text-orange-800 ring-2 ring-orange-200/50 shadow-xs">
-          {initial}
-        </div>
-        <div className="flex flex-col">
-          <span className="font-bold text-base text-neutral-900 flex items-center gap-1.5">
-            {name}
-            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-label="Verifizierter Kunde" />
-          </span>
-          <div className="flex items-center gap-1.5 text-xs text-neutral-700 mt-0.5 font-medium">
-            {review.topic && (
-              <span className="font-semibold text-orange-800 bg-orange-50 px-2 py-0.5 rounded-md border border-orange-200">
-                {review.topic}
-              </span>
-            )}
-            {review.location && <span>• {review.location}</span>}
-          </div>
-        </div>
-      </header>
-
-      <div className="relative flex-1 flex flex-col mt-1">
-        {/* Star Rating */}
-        <div className="flex gap-1 mb-3 text-amber-400">
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              className={`h-4 w-4 ${i < review.rating ? "fill-current" : "fill-transparent text-neutral-200"}`}
-              aria-hidden="true"
-            />
-          ))}
-        </div>
-
-        <p className="relative z-10 text-sm text-neutral-700 font-medium leading-relaxed italic line-clamp-4">
-          &quot;{review.text}&quot;
+    <article className="flex h-full w-4/5 shrink-0 snap-start flex-col bg-fliese p-6 sm:w-1/2 lg:w-1/3 lg:p-8">
+      <p className="flex items-center gap-2 font-mono text-fs-1 text-tinte-2">
+        <span>{review.source}</span>
+        {review.topic && <><span aria-hidden="true">·</span><span>{review.topic}</span></>}
+      </p>
+      <blockquote className="mt-4 flex-1 text-fs-3 text-tinte">
+        <p>
+          „{teile ? <>{teile[0]}<mark data-motion="anriss">{teile[1]}</mark>{teile[2]}</> : review.text}“
         </p>
-      </div>
-
-      {/* Footer / Source */}
-      <footer className="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between relative z-10">
-        <span className="text-[11px] font-semibold text-neutral-700 uppercase tracking-wider">
-          {review.source} Rezension
-        </span>
-        <GoogleIcon size={16} className="opacity-70 group-hover:opacity-100 transition-opacity duration-200" />
+      </blockquote>
+      <footer className="mt-6 border-t border-fuge pt-4">
+        <p className="flex items-center justify-between gap-3 font-text text-fs-2 font-semibold text-tinte">
+          <span>{name}</span>
+          <span className="flex items-center gap-2 font-mono text-fs-1 font-normal text-tinte-2">
+            <span>{review.rating} von 5</span>
+            {review.source === "Google" && <GoogleIcon size={16} />}
+          </span>
+        </p>
+        {zusatz && (
+          <p className="mt-3 font-mono text-fs-1 text-tinte-2">
+            <span aria-hidden="true">→ </span>
+            <Link href={zusatz.verweis.href} className="underline decoration-strich underline-offset-4 transition-colors dauer-1 ease-setzen hover:text-tinte hover:decoration-tinte">
+              {zusatz.verweis.text}
+            </Link>
+          </p>
+        )}
       </footer>
     </article>
   );
