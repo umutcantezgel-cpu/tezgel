@@ -1,12 +1,12 @@
 'use client';
 
-// Mobilmenü unter lg (Variante B „Achse“, F-13, V-06). Der Schalter öffnet das Blatt als natives Popover
+// Mobilmenü unter xl (Variante B „Achse“, F-13, V-06). Der Schalter öffnet das Blatt als natives Popover
 // (`popovertarget` → `popover="auto"`, role="dialog" „Hauptnavigation“): Öffnen, Escape (Fokus zurück zum Schalter)
 // und Schließen per Tippen außerhalb leistet der Browser – auch bevor React geladen ist; der Zustand bleibt beim
 // Hydrieren stabil (das Skript liest ihn nur aus dem toggle-Ereignis bzw. `:popover-open`).
 // Das Blatt liegt unter dem Kopf (top = --k-kopf-hoehe, bis zum unteren Rand); der Schalter bleibt sichtbar und wird
 // zum Schließen-Zeichen. Client-JS ergänzt nur: aria-expanded und Zeichen, Scroll-Sperre, Fokus-Ring zwischen Schalter
-// und Blatt (Tab), Bereiche aufklappen (aria-expanded), Schließen beim Folgen eines Links, beim Pfadwechsel und ab lg,
+// und Blatt (Tab), Bereiche aufklappen (aria-expanded), Schließen beim Folgen eines Links, beim Pfadwechsel und ab xl,
 // Aufklappen über das Register (`aufklappen`; reduziert sofort).
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type MouseEvent } from 'react';
@@ -14,7 +14,7 @@ import { fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import MobilBlatt from '@/components/kern/kopf-b/MobilBlatt';
 import {
-  AB_LG,
+  AB_XL,
   TEXT,
   aktiverBereich,
   aufklappenAb,
@@ -54,7 +54,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
     pfadRef.current = pfad;
   }, [pfad]);
 
-  // toggle-Ereignis → Zustand, Scroll-Sperre, Aufklappen; ab lg schließen.
+  // toggle-Ereignis → Zustand, Scroll-Sperre, Aufklappen; ab xl schließen.
   useEffect(() => {
     const b = blatt.current;
     if (!b) return undefined;
@@ -95,7 +95,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
       }
     });
 
-    const mq = window.matchMedia(AB_LG);
+    const mq = window.matchMedia(AB_XL);
     const breite = () => {
       if (mq.matches && istOffen(b)) b.hidePopover();
     };
@@ -154,7 +154,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
   };
 
   return (
-    <div className="ml-auto flex lg:hidden">
+    <div className="flex shrink-0 items-center border-l border-k-fuge pl-k-2 xl:hidden">
       <button
         ref={schalter}
         type="button"
@@ -176,7 +176,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
         popover="auto"
         role="dialog"
         aria-label={TEXT.dialog}
-        className="inset-x-0 top-(--k-kopf-hoehe) bottom-0 h-auto w-full overflow-y-auto overscroll-contain bg-k-kalk text-k-tinte lg:hidden"
+        className="inset-x-0 top-(--k-kopf-hoehe) bottom-0 h-auto w-full overflow-y-auto overscroll-contain bg-k-kalk text-k-tinte xl:hidden"
       >
         <div data-motion="aufklappen" data-offen="">
           <div>

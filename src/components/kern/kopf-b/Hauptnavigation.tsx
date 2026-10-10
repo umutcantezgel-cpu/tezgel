@@ -1,6 +1,6 @@
 'use client';
 
-// Hauptnavigation ab lg (Variante B „Achse“, F-13). Hauptpunkte sind echte Links; daneben je ein Schalter mit
+// Hauptnavigation ab xl (Variante B „Achse“, F-13). Hauptpunkte sind echte Links; daneben je ein Schalter mit
 // aria-expanded/aria-controls, der sein Blatt als natives Popover (`popover="auto"` + `popovertarget`) öffnet:
 // Öffnen, Escape und Light-Dismiss gehören dem Browser und wirken schon vor der Hydrierung; „nur ein Panel offen“
 // leistet die auto-Gruppe selbst. Dieses Skript ergänzt nur: Hover-Absicht (sofort auf, verzögert zu), Fokus zurück
@@ -8,8 +8,7 @@
 // Aufklappen über das Register (`aufklappen`, dauer-2 · setzen; reduziert sofort).
 // Markierung: 2-px-Laserlinie an der Unterkante des Punkts für aktiven Bereich, Hover-Ziel und offenes Blatt – je Punkt
 // eine eigene Linie, die schaltet (kein Gleiten, kein Nachlauf). Aktiv zusätzlich Text in Laser tief + aria-current.
-// Schalterbreite: ab xl 48 px (Touch-Ziel ≥ 44 px); zwischen lg und xl 32 × 64 px, weil fünf Einträge, Telefon und
-// Hauptknopf sonst nicht in eine Zeile passen (Abweichung, Rückgabe P3-06b).
+// Maße (P3-06c): Hauptpunkte text-k-2, Schalter 48 × 64 px; deshalb steht die Navigation erst ab xl (siehe AB_XL).
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent, type MouseEvent, type PointerEvent } from 'react';
@@ -17,7 +16,7 @@ import { fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import MegaBlatt from '@/components/kern/kopf-b/MegaBlatt';
 import {
-  AB_LG,
+  AB_XL,
   TEXT,
   aktiverBereich,
   aufklappenAb,
@@ -44,9 +43,11 @@ export type HauptnavigationProps = {
   pfad?: string;
   /** Nur für die Vorschau-Tafel: ohne Blätter und ohne Verhalten (Ruhe- und Aktivzustand als Bild). */
   statisch?: boolean;
+  /** Nur für die Vorschau-Tafel (mit `statisch`): Index des Punkts, der als geöffnet gezeichnet wird. */
+  vorschauOffen?: number;
 };
 
-export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch = false }: HauptnavigationProps) {
+export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch = false, vorschauOffen }: HauptnavigationProps) {
   const aktuell = usePathname() || '/';
   const pfad = pfadVorgabe ?? aktuell;
   const basisId = useId();
@@ -117,8 +118,8 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
       const i = blaetter.current.findIndex((b) => istOffen(b));
       if (i >= 0) setOffen(i);
     });
-    // Unter lg ist die Navigation ausgeblendet: offene Blätter schließen.
-    const mq = window.matchMedia(AB_LG);
+    // Unter xl ist die Navigation ausgeblendet: offene Blätter schließen.
+    const mq = window.matchMedia(AB_XL);
     const breite = () => {
       if (!mq.matches) schliesseAlle(blaetter.current);
     };
@@ -142,13 +143,13 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
   }, [aktuell]);
 
   return (
-    <nav aria-label={TEXT.nav} className="hidden h-full lg:flex">
+    <nav aria-label={TEXT.nav} className="flex h-full">
       <ul className="flex h-full">
         {eintraege.map((eintrag, i) => {
           const hatBlatt = !statisch && eintrag.kategorien.length > 0;
           const hatSchalter = eintrag.kategorien.length > 0;
           const blattId = `k-kopf-b-blatt-${i}${basisId}`;
-          const istAuf = offen === i;
+          const istAuf = offen === i || (statisch && vorschauOffen === i);
           const istAktiv = aktiv === i;
 
           const punktHandler = hatBlatt
@@ -199,7 +200,7 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
                 aria-current={pfad === eintrag.pfad ? 'page' : undefined}
                 data-motion="zustand"
                 className={verbinde(
-                  'flex h-full items-center whitespace-nowrap pl-k-1 k-text text-k-1 font-semibold xl:pl-k-2',
+                  'flex h-full items-center whitespace-nowrap pl-k-3 k-text text-k-2 font-semibold',
                   hatSchalter ? 'pr-0' : 'pr-k-3',
                   istAktiv ? 'text-k-laser-tief' : 'text-k-tinte',
                   fokus('hell'),
@@ -220,7 +221,7 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
                   onClick={hatBlatt ? schalterKlick : undefined}
                   data-motion="zustand"
                   className={verbinde(
-                    'flex h-full w-k-6 cursor-pointer xl:w-k-7 items-center justify-center text-k-tinte-2 pointer-fine:hover:text-k-tinte',
+                    'flex h-full w-k-7 cursor-pointer items-center justify-center text-k-tinte-2 pointer-fine:hover:text-k-tinte',
                     fokus('hell'),
                   )}
                 >
@@ -229,7 +230,7 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
               ) : null}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-0 left-k-1 right-k-1 border-t-2 border-k-laser opacity-0 group-data-aktiv:opacity-100 group-data-offen:opacity-100 pointer-fine:group-hover:opacity-100 xl:left-k-2"
+                className="pointer-events-none absolute bottom-0 left-k-3 right-k-1 border-t-2 border-k-laser opacity-0 group-data-aktiv:opacity-100 group-data-offen:opacity-100 pointer-fine:group-hover:opacity-100"
               />
               {hatBlatt ? (
                 <div
