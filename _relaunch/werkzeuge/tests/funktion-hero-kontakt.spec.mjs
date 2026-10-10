@@ -1,0 +1,43 @@
+// MUSTER (Testschreiber): Funktionstest der Kernaufgabe „Direktanfrage aus dem Einstieg der Startseite“.
+// Prüft Verhalten (Pflichtfelder, gesendete Nutzlast, Erfolgszustand mit Referenz), nicht Aussehen.
+import { test, expect, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
+
+test.describe('HeroContactForm (/)', () => {
+  test('ohne Name/Telefon: Fehlermeldung, keine Anfrage', async ({ page, anfragen }) => {
+    await page.goto('/');
+    const form = page.locator('form').filter({ has: page.locator('#hero-name') });
+    await form.locator('button[type="submit"]').click();
+    // Native Pflichtfeld-Prüfung (required) oder eigene Fehlermeldung – beides gilt als Verhalten „blockiert“.
+    const nameUngueltig = await page.locator('#hero-name').evaluate((el) => !el.checkValidity());
+    const meldung = await form.getByText(/Namen und Ihre Telefonnummer/).count();
+    expect(nameUngueltig || meldung > 0).toBe(true);
+    await page.waitForTimeout(300);
+    expect(anfragen).toHaveLength(0);
+  });
+
+  test('gültig: sendet Anfrage an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)', async ({ page, anfragen }) => {
+    await page.goto('/');
+    await page.locator('#hero-name').fill('Prüf Person');
+    await page.locator('#hero-phone').fill('0170 0000000');
+    await page.locator('#hero-location').fill('Wetzlar');
+    await page.locator('form').filter({ has: page.locator('#hero-name') }).locator('button[type="submit"]').click();
+    await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+    expect(anfragen).toHaveLength(1);
+    expect(anfragen[0]).toMatchObject({ inquiryType: 'general', contact: { name: 'Prüf Person', phone: '0170 0000000', location: 'Wetzlar' } });
+    expect(typeof anfragen[0]._t).toBe('number');
+  });
+
+  test.describe('echte Route (Mock-Modus ohne Resend-Schlüssel)', () => {
+    test.use({ echteRoute: true });
+    test('Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page }) => {
+      await page.goto('/');
+      await warteBotSchwelle(page);
+      await page.locator('#hero-name').fill(`Prüf ${Date.now() % 100000}`);
+      await page.locator('#hero-phone').fill(`0170 ${String(Date.now()).slice(-7)}`);
+      await page.locator('form').filter({ has: page.locator('#hero-name') }).locator('button[type="submit"]').click();
+      const ref = page.getByText(/TEZ-\d{2}-[A-Z0-9]+/).first();
+      await expect(ref).toBeVisible();
+      expect(istEchteReferenz((await ref.textContent()).trim())).toBe(true);
+    });
+  });
+});

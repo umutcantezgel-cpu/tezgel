@@ -1,0 +1,136 @@
+
+> tezgel@1.0.8 test
+> node --experimental-strip-types --loader ./test/resolver.mjs --test test/email-pipeline.test.mjs test/titleLength.test.mjs
+
+TAP version 13
+# (node:23804) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./test/resolver.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:23804) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-74be890/src/lib/email/security.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-74be890/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [E-Mail Mailer: DEV MOCK MODE]
+# -> Vorgangsnummer: TEZ-26-K8R9
+# -> Anfragetyp: general (Fliesenverlegung)
+# -> Kunde: Idempotency Tester, Tel: 0151 / 4433221, E-Mail: idem@example.com
+# -> Team-Mail an: info@tezgel.de
+# -> Kunden-Mail an: idem@example.com
+# Subtest: 1. Security: HTML Escaping prevents Injection
+ok 1 - 1. Security: HTML Escaping prevents Injection
+  ---
+  duration_ms: 1.716841
+  type: 'test'
+  ...
+# Subtest: 2. Security: Header Sanitization strips CRLF
+ok 2 - 2. Security: Header Sanitization strips CRLF
+  ---
+  duration_ms: 0.455129
+  type: 'test'
+  ...
+# Subtest: 3. Security: Anti-Reflection strips URLs from user notes
+ok 3 - 3. Security: Anti-Reflection strips URLs from user notes
+  ---
+  duration_ms: 0.486666
+  type: 'test'
+  ...
+# Subtest: 4. Security: IP Sliding Window Rate Limiter
+ok 4 - 4. Security: IP Sliding Window Rate Limiter
+  ---
+  duration_ms: 0.488707
+  type: 'test'
+  ...
+# Subtest: 5. Security: Recipient Confirmation Rate Limiter
+ok 5 - 5. Security: Recipient Confirmation Rate Limiter
+  ---
+  duration_ms: 0.295828
+  type: 'test'
+  ...
+# Subtest: 6. Security: Bot Timing & Honeypot Checks
+ok 6 - 6. Security: Bot Timing & Honeypot Checks
+  ---
+  duration_ms: 0.310136
+  type: 'test'
+  ...
+# Subtest: 7. Validation: Valid inquiry payloads across types
+ok 7 - 7. Validation: Valid inquiry payloads across types
+  ---
+  duration_ms: 5.843112
+  type: 'test'
+  ...
+# Subtest: 8. Validation: Rejection of invalid phone and email inputs
+ok 8 - 8. Validation: Rejection of invalid phone and email inputs
+  ---
+  duration_ms: 2.438031
+  type: 'test'
+  ...
+# Subtest: 9. Templates: Team Email MSO Compatibility & Outlook Subject Prefix
+ok 9 - 9. Templates: Team Email MSO Compatibility & Outlook Subject Prefix
+  ---
+  duration_ms: 18.782851
+  type: 'test'
+  ...
+# Subtest: 10. Templates: Customer Confirmation Sanitization & Legal Information
+ok 10 - 10. Templates: Customer Confirmation Sanitization & Legal Information
+  ---
+  duration_ms: 1.555884
+  type: 'test'
+  ...
+# Subtest: 11. Mailer: Dev Mock Mode & Idempotency Deduplication
+ok 11 - 11. Mailer: Dev Mock Mode & Idempotency Deduplication
+  ---
+  duration_ms: 2.328901
+  type: 'test'
+  ...
+# Subtest: 12. Utilities: String normalizers & Customer Subjects
+ok 12 - 12. Utilities: String normalizers & Customer Subjects
+  ---
+  duration_ms: 0.356158
+  type: 'test'
+  ...
+# Subtest: 13. PricingCalculator: Transformed Comprehensive Contact Form submission validates
+ok 13 - 13. PricingCalculator: Transformed Comprehensive Contact Form submission validates
+  ---
+  duration_ms: 0.342282
+  type: 'test'
+  ...
+# (node:23805) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./test/resolver.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:23805) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-74be890/src/lib/metadata.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-74be890/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 1. Title Budget: Long raw titles are strictly clamped to <= 58 chars (SERP Budget)
+ok 14 - 1. Title Budget: Long raw titles are strictly clamped to <= 58 chars (SERP Budget)
+  ---
+  duration_ms: 4.98019
+  type: 'test'
+  ...
+# Subtest: 2. Title Budget: City Landing Page titles satisfy 58-char budget
+ok 15 - 2. Title Budget: City Landing Page titles satisfy 58-char budget
+  ---
+  duration_ms: 2.969152
+  type: 'test'
+  ...
+# Subtest: 3. Title Budget: Service x City matrix titles satisfy 58-char budget
+ok 16 - 3. Title Budget: Service x City matrix titles satisfy 58-char budget
+  ---
+  duration_ms: 0.826995
+  type: 'test'
+  ...
+# Subtest: 4. Legal Routes: index: false, follow: true is correctly configured
+ok 17 - 4. Legal Routes: index: false, follow: true is correctly configured
+  ---
+  duration_ms: 0.21394
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 871.716625

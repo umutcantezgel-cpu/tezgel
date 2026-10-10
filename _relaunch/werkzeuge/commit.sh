@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 SUBJ="$1"; BODY="$2"; shift 2
 [ "$#" -gt 0 ] || { echo "keine Pfade"; exit 2; }
-git add -- "$@"
+git add -A -- "$@"
 if git diff --cached --name-only | grep -qx 'CLAUDE.md'; then
   git restore --staged CLAUDE.md; echo "ABBRUCH: CLAUDE.md war gestaged"; exit 3
 fi

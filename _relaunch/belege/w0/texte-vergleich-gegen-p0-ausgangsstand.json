@@ -1,0 +1,17 @@
+{
+ "vorher": "p0-ausgangsstand",
+ "nachher": "w0",
+ "seiten": {},
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 0,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

@@ -1,6 +1,7 @@
 # PRUEFPUNKT
 
-- Lauf: 1 (angepasst) · Phase: P0 · Schritt: 4 (Prüfwerkzeuge)
-- Letzter grüner Commit: siehe `git log` (P0-ORCH-02); Ausgangsstand 5a7a7b0
-- Offene Pakete: keine
-- Nächster exakter Schritt: Live-Rauchtest des Folgecommits (x-build = Commit), dann `_relaunch/werkzeuge/package.json` anlegen (Playwright 1.56.1, axe, lighthouse, pixelmatch, pngjs, svgo, knip) und Anfragesperre schreiben.
+- Lauf: 1 (angepasst) · Phase: P0 · Schritte 5 (Messbasis) und 7 (W0) parallel
+- Letzter grüner Commit (live): e79480a · lokal, noch nicht gepusht: f595f7b, 88b2b67, eca9d5b, 74be890 (W0, Tor grün, wartet auf Gegenprüfung P0-GEG-01)
+- Offene Pakete: P0-KUN-06 (Atlas Bausteine), P2-RICHTUNG-A/B/C (Stilkacheln), P0-GEG-01 (Gegenprüfung W0); vorbereitet: P0-TEST-01…10
+- Messbasis: Fotos ✔, Texte/SEO ✔, statisch ✔, axe läuft (cache/axe-p0.log), Lighthouse offen (ruhiges Fenster nötig), Jury-Ausgangswert offen (Material: belege/p0-ausgangsstand/jury-material.json)
+- Nächster exakter Schritt: nach GEG-01 FREIGABE → STATUS/ABNAHME committen, W0 pushen, Live-Rauchtest; dann Testschreiber-Pakete in freie Plätze; Jury-Workflow P0; Lighthouse im ruhigen Fenster.

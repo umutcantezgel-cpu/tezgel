@@ -1,4 +1,4 @@
-STATUS · Phase P0 · Welle 0/– · Erfüllt 0/14 · Ausnahmen 0 · Elemente –/– (Rückführung entfällt) · Slop hart – · Jury – · Lighthouse mobil – · axe – · Puffer 100 % · Nächster Schritt: Prüfwerkzeuge einrichten (P0 Schritt 4)
+STATUS · Phase P0 · Welle 0/– · Erfüllt 0/14 · Ausnahmen 0 · Elemente – (Rückführung entfällt) · Slop hart – · Jury – · Lighthouse mobil – · axe – · Puffer 100 % · Nächster Schritt: Ausgangsfotos abschließen, dann axe + Lighthouse im ruhigen Fenster, Jury-Ausgangswert
 
 # STATUS · Lauf 1 „Rückführung und Veredelung“ (angepasst: nur Aufwertung)
 
@@ -30,3 +30,5 @@ STATUS · Phase P0 · Welle 0/– · Erfüllt 0/14 · Ausnahmen 0 · Elemente �
 ## Protokoll (stündlich)
 - 2026-10-10 15:55 CEST · P0 gestartet; Sicherung (Archiv + unshallow), main ausgecheckt, Aufträge gespeichert, Arbeitsdateien angelegt.
 - 2026-10-10 16:20 CEST · P0-ORCH-01 (707a93d) gepusht; Reinraum grün (Build, Typen, Lint, 17/17 Tests, qa:graph), CSS identisch zum Ausgangsstand; Produktion nicht ausgelöst (E-005) → Folgecommit.
+- 2026-10-10 16:30 CEST · Werkzeuge (lib, fotos, texte, texte-vergleich, axe, lighthouse, statisch, Playwright-Tests) eingerichtet; Text-/SEO-Basis 120 Seiten, 0 kaputte Links; Kundschafter A01/A02 zurück; Richtung A gestartet.
+- 2026-10-10 16:40 CEST · Ausgangsfotos 480/480 (0 Fehler, 0 Überlauf, 0 Konsole); statische Slop-Zählung P0; W0 lokal committet (4 Pakete), Reinraum grün, HTML 172/172 identisch, Texte/SEO grün; Gegenprüfung W0 läuft; axe P0 läuft; Kundschafter A01–A05 zurück; Richtungen A/B/C laufen; 10 Testschreiber-Pakete vorbereitet.

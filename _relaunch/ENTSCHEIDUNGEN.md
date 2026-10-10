@@ -43,3 +43,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - Wege: (1) weiter Vorab-Push auf Branch → blockiert Produktion (verworfen); (2) Vorab-Push eines eigenen Prüf-Commits → doppelte Commits, Verwirrung (verworfen); (3) **direkt auf main pushen, Vorprüfung ausschließlich über den Reinraum-Build** (`_relaunch/werkzeuge/reinraum.sh`, identische Kopie der getrackten Dateien, `npm ci`, Build, Typen, Lint, Tests, Routentabelle, Tracing) plus Produktionsstatus und Live-Rauchtest danach.
 - Wahl: (3). Umkehrprobe: Revert-Commit auf main. Folge zweiter Ordnung: Ein nur auf Vercel auftretender Build-Fehler würde erst nach dem Push sichtbar – dann bleibt die vorherige Produktion aktiv (Vercel schaltet nur erfolgreiche Builds live), Schaden gering.
 - Beobachtung: Das Repo ist mit **zwei** Vercel-Projekten verbunden (`uus-projects-dd41487b/tezgel` und `codays-projects/tezgel`); www.tezgel.de wird vom Projekt `codays-projects` ausgeliefert. → MENSCHEN.md M-11.
+
+## E-006 · Richtungsarbeit (P2) startet parallel zum Rest von P0
+- Die drei Stilkacheln entstehen als eigenständige HTML-Dateien in `_relaunch/richtungen/` und berühren weder Plattform noch Messbasis. Sie laufen daher als Vorrat (L2: kein Platz bleibt leer) in freien Agentenplätzen, während P0 (Fotos, axe, Lighthouse, Jury-Ausgangswert, W0) abschließt. Wahl, KERN und Plan erfolgen erst nach dem P0-Phasentor.
+- Schriften: Pool aus 30 OFL-Familien lokal über npm (`_relaunch/richtungen/SCHRIFTEN-POOL.md`), keine Laufzeitabhängigkeit.

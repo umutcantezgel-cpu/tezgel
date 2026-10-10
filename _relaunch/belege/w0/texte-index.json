@@ -1,0 +1,1855 @@
+{
+ "satz": "w0",
+ "base": "http://127.0.0.1:4311",
+ "seiten": {
+  "/": {
+   "status": 200,
+   "title": "Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel",
+   "description": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+   "canonical": "https://www.tezgel.de",
+   "robots": "index, follow",
+   "h1": [
+    "Perfektion auf jedem Quadratmeter.Fliesenverlegung & Badsanierung aus Aßlar"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "7980c08f6ab230ea",
+   "main_zeilen": 414,
+   "links": 67
+  },
+  "/ausstellung/giessen": {
+   "status": 200,
+   "title": "Fliesenberatung in Gießen | Fliesenverlegung Tezgel",
+   "description": "Persönliche Fliesenberatung für Gießen: Formate, Oberflächen & Fugenbild abstimmen mit Fachbetriebsleiter Deniz Tezgel. Jetzt Termin vereinbaren!",
+   "canonical": "https://www.tezgel.de/ausstellung/giessen",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenberatung & Materialauswahl in Gießen"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "29ca9c8d4773057f",
+   "main_zeilen": 85,
+   "links": 69
+  },
+  "/agb": {
+   "status": 200,
+   "title": "AGB – Allgemeine Geschäftsbedingungen | Tezgel",
+   "description": "Allgemeine Geschäftsbedingungen der Fliesenverlegung Tezgel für handwerkliche Werk-, Fliesen- und Montageleistungen in Hessen.",
+   "canonical": "https://www.tezgel.de/agb",
+   "robots": "noindex, follow",
+   "h1": [
+    "Allgemeine Geschäftsbedingungen (AGB)"
+   ],
+   "jsonld_hash": "b0356faa354e818d",
+   "main_hash": "990a293b7138364a",
+   "main_zeilen": 20,
+   "links": 65
+  },
+  "/ausstellung/wetzlar": {
+   "status": 200,
+   "title": "Fliesenberatung in Wetzlar | Fliesenverlegung Tezgel",
+   "description": "Persönliche Fliesenberatung für Wetzlar: Formate, Oberflächen & Fugenbild abstimmen mit Fachbetriebsleiter Deniz Tezgel. Jetzt Termin vereinbaren!",
+   "canonical": "https://www.tezgel.de/ausstellung/wetzlar",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenberatung & Materialauswahl in Wetzlar"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "bff0f9898a49808e",
+   "main_zeilen": 85,
+   "links": 69
+  },
+  "/bad/bad-aus-einer-hand": {
+   "status": 200,
+   "title": "Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung",
+   "description": "Bad aus einer Hand in Wetzlar & Aßlar: Alle Gewerke koordiniert, ein Ansprechpartner & garantierter Festpreis. Jetzt kostenfreies Vor-Ort-Aufmaß sichern!",
+   "canonical": "https://www.tezgel.de/bad/bad-aus-einer-hand",
+   "robots": "index, follow",
+   "h1": [
+    "Bad aus einer Hand: Ein Ansprechpartner. Ein Festpreis. Null Stress."
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "87c4c7295b7227a9",
+   "main_zeilen": 72,
+   "links": 65
+  },
+  "/bad": {
+   "status": 200,
+   "title": "Badsanierung Wetzlar & Aßlar | Fachbetrieb Tezgel",
+   "description": "Schlüsselfertige Badsanierung in Wetzlar & Aßlar: barrierefreie Walk-In Duschen, XXL-Fliesen & DIN 18534 Abdichtung. Jetzt Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/bad",
+   "robots": "index, follow",
+   "h1": [
+    "Ihr Traumbad schlüsselfertig in Fachqualität"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "42485dbe5e3d6517",
+   "main_zeilen": 112,
+   "links": 66
+  },
+  "/bad/badanfrage": {
+   "status": 200,
+   "title": "Badsanierung Angebot anfordern | Tezgel Wetzlar",
+   "description": "Unverbindliche Badanfrage an Fliesenverlegung Tezgel: Beschreiben Sie Ihr Projekt für ein individuelles Festpreisangebot in Wetzlar & Aßlar. Jetzt...",
+   "canonical": "https://www.tezgel.de/bad/badanfrage",
+   "robots": "index, follow",
+   "h1": [
+    "Badsanierung Angebot anfordern bei Tezgel Wetzlar"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "247f6e7efb266d43",
+   "main_zeilen": 55,
+   "links": 63
+  },
+  "/bad/badplaner": {
+   "status": 200,
+   "title": "Badplaner: Bad online planen | Fliesenverlegung Tezgel",
+   "description": "Planen Sie Ihr Bad online: Raumgröße, Fliesen & Ausstattung wählen. Fliesenverlegung Tezgel berät Sie mit kostenfreiem Vor-Ort-Aufmaß in Wetzlar & Aßlar!",
+   "canonical": "https://www.tezgel.de/bad/badplaner",
+   "robots": "index, follow",
+   "h1": [
+    "Badplaner: Bad online planen mit Fliesenverlegung Tezgel"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "4cd50befcb8af6b3",
+   "main_zeilen": 42,
+   "links": 64
+  },
+  "/bad/barrierefreies-bad": {
+   "status": 200,
+   "title": "Barrierefreies Bad Wetzlar & Aßlar | DIN 18040 Tezgel",
+   "description": "Barrierefreie Badsanierung nach DIN 18040-2 in Wetzlar & Aßlar: Bodengleiche Duschen, rutschfeste Fliesen & Pflegekassen-Zuschuss. Jetzt anfragen!",
+   "canonical": "https://www.tezgel.de/bad/barrierefreies-bad",
+   "robots": "index, follow",
+   "h1": [
+    "Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "d90b7a6c6d4ad28c",
+   "main_zeilen": 40,
+   "links": 65
+  },
+  "/bad/badsanierung": {
+   "status": 200,
+   "title": "Badsanierung Wetzlar & Aßlar | Komplettbäder Tezgel",
+   "description": "Komplette Badsanierung in Wetzlar & Aßlar: Demontage bis Fuge, Walk-In Dusche, Großformate & Verbundabdichtung. Festpreisangebot vom Fachbetrieb Tezgel!",
+   "canonical": "https://www.tezgel.de/bad/badsanierung",
+   "robots": "index, follow",
+   "h1": [
+    "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "7c8d5bfc099c7b4f",
+   "main_zeilen": 89,
+   "links": 65
+  },
+  "/bad/fliesen": {
+   "status": 200,
+   "title": "Badfliesen & XXL-Großformate | Fliesenleger Tezgel",
+   "description": "Badfliesen & XXL-Großformate fugenarm verlegen in Wetzlar & Aßlar: Feinsteinzeug, Mosaik & DIN 18534 Abdichtung. Jetzt unverbindlich beraten lassen!",
+   "canonical": "https://www.tezgel.de/bad/fliesen",
+   "robots": "index, follow",
+   "h1": [
+    "Perfekte Fliesenverlegung für Ihr neues Badezimmer"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "422ca8cd4889f2b7",
+   "main_zeilen": 50,
+   "links": 65
+  },
+  "/bad/projekt-check": {
+   "status": 200,
+   "title": "Bad-Projektcheck: Badsanierung prüfen | Tezgel Wetzlar",
+   "description": "Bad-Projektcheck in 2 Minuten: Kostenfreie Machbarkeitsprüfung & Festpreisangebot für Ihre Badsanierung in Wetzlar & Aßlar. Jetzt online starten!",
+   "canonical": "https://www.tezgel.de/bad/projekt-check",
+   "robots": "index, follow",
+   "h1": [
+    "Bad-Projektcheck: Badsanierung online prüfen bei Tezgel Wetzlar"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "2608d20573f13e23",
+   "main_zeilen": 92,
+   "links": 64
+  },
+  "/bad/musterbaeder": {
+   "status": 200,
+   "title": "Musterbäder & Badideen Wetzlar | Badsanierung Tezgel",
+   "description": "Inspiration für Ihr neues Bad: Musterbäder von 4,6 bis 15,9 m² mit Großformatfliesen, Walk-In Duschen & Markenkomponenten. Fachbetrieb Tezgel in Wetzlar!",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbäder & Badideen Wetzlar: Badsanierung Tezgel"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "a4efe816c05bca43",
+   "main_zeilen": 150,
+   "links": 77
+  },
+  "/balkon-terrasse": {
+   "status": 200,
+   "title": "Balkon & Terrasse fliesen Wetzlar | Fachbetrieb Tezgel",
+   "description": "Balkon & Terrasse fliesen lassen in Wetzlar & Aßlar: frostsichere Keramik, Stelzlager & Naturstein. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+   "canonical": "https://www.tezgel.de/balkon-terrasse",
+   "robots": "index, follow",
+   "h1": [
+    "Balkon und Terrasse: Beläge, die Frost und Regen standhalten"
+   ],
+   "jsonld_hash": "ace727d8404f6478",
+   "main_hash": "9ee719deaa2638e5",
+   "main_zeilen": 113,
+   "links": 69
+  },
+  "/balkon-terrasse/balkonsanierung": {
+   "status": 200,
+   "title": "Balkonsanierung Wetzlar & Aßlar | Abdichtung · Tezgel",
+   "description": "Balkonsanierung in Wetzlar & Aßlar: Fachgerechte Abdichtung, Gefälleerstellung & neuer Fliesenbelag vom Fachbetrieb. Jetzt Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/balkon-terrasse/balkonsanierung",
+   "robots": "index, follow",
+   "h1": [
+    "Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung"
+   ],
+   "jsonld_hash": "ace727d8404f6478",
+   "main_hash": "9cf17710d374e05a",
+   "main_zeilen": 107,
+   "links": 67
+  },
+  "/balkon-terrasse/stelzlager": {
+   "status": 200,
+   "title": "Terrassenplatten auf Stelzlagern verlegen | Tezgel",
+   "description": "Terrassenplatten auf Stelzlagern verlegen lassen: höhenverstellbar, frostsicher & drainagefähig. Fachbetrieb Tezgel in Wetzlar & Aßlar. Jetzt anfragen!",
+   "canonical": "https://www.tezgel.de/balkon-terrasse/stelzlager",
+   "robots": "index, follow",
+   "h1": [
+    "Terrassenplatten auf Stelzlagern verlegen mit Tezgel"
+   ],
+   "jsonld_hash": "ace727d8404f6478",
+   "main_hash": "269f40ce0566cbf4",
+   "main_zeilen": 108,
+   "links": 68
+  },
+  "/balkon-terrasse/terrassenplatten": {
+   "status": 200,
+   "title": "Terrassenplatten verlegen lassen | Fliesen Tezgel",
+   "description": "Terrassenplatten aus Keramik oder Naturstein fachgerecht verlegen lassen: frostsicher, rutschfest & langlebig. Fachbetrieb Tezgel – Jetzt Aufmaß anfragen!",
+   "canonical": "https://www.tezgel.de/balkon-terrasse/terrassenplatten",
+   "robots": "index, follow",
+   "h1": [
+    "Terrassenplatten richtig wählen: Material, Stärke und Oberfläche"
+   ],
+   "jsonld_hash": "ace727d8404f6478",
+   "main_hash": "f72b9aeaa1dfe6b5",
+   "main_zeilen": 94,
+   "links": 68
+  },
+  "/barrierefreiheit": {
+   "status": 200,
+   "title": "Erklärung zur Barrierefreiheit | Fliesen Tezgel",
+   "description": "Erklärung zur digitalen Barrierefreiheit der Fliesenverlegung Tezgel gemäß Barrierefreiheitsstärkungsgesetz (BFSG) und europäischen Standards EN 301 549.",
+   "canonical": "https://www.tezgel.de/barrierefreiheit",
+   "robots": "index, follow",
+   "h1": [
+    "Erklärung zur Barrierefreiheit"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "49e4c7c17b37a46d",
+   "main_zeilen": 27,
+   "links": 68
+  },
+  "/beratung": {
+   "status": 200,
+   "title": "Kostenlose Fliesenberatung Wetzlar | Fachbetrieb Tezgel",
+   "description": "Kostenlose Fliesenberatung & Aufmaß: Badsanierung, XXL-Fliesen & Terrassen in Wetzlar & Aßlar. Fliesenleger Tezgel berät persönlich und unverbindlich!",
+   "canonical": "https://www.tezgel.de/beratung",
+   "robots": "index, follow",
+   "h1": [
+    "Kostenlose Fliesenberatung in Wetzlar"
+   ],
+   "jsonld_hash": "f6d8a0fecb239b3e",
+   "main_hash": "eec15bc6ed1d5e9b",
+   "main_zeilen": 64,
+   "links": 67
+  },
+  "/blog": {
+   "status": 200,
+   "title": "Fliesen-Ratgeber & Badsanierung Tipps | Tezgel",
+   "description": "Praxiswissen & Ratgeber zu Badsanierung, Fliesenverlegung & DIN 18534 Abdichtung vom Fliesenleger-Fachbetrieb Tezgel aus Aßlar. Jetzt informieren!",
+   "canonical": "https://www.tezgel.de/blog",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen-Ratgeber & Badsanierung Tipps"
+   ],
+   "jsonld_hash": "972adfc77a1e80ba",
+   "main_hash": "b42bbb1c29c7c6e9",
+   "main_zeilen": 136,
+   "links": 78
+  },
+  "/cookie-richtlinie": {
+   "status": 200,
+   "title": "Cookie-Richtlinie (EU) | Fliesenverlegung Tezgel",
+   "description": "Informationen über die Verwendung von Cookies und ähnlichen Technologien auf der Website der Fliesenverlegung Tezgel in Hessen.",
+   "canonical": "https://www.tezgel.de/cookie-richtlinie",
+   "robots": "noindex, follow",
+   "h1": [
+    "Cookie-Richtlinie (EU)"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "5521ea865f49c937",
+   "main_zeilen": 17,
+   "links": 66
+  },
+  "/datenschutz": {
+   "status": 200,
+   "title": "Datenschutzerklärung nach DSGVO | Fliesen Tezgel",
+   "description": "Ausführliche Informationen zum Datenschutz und zur Verarbeitung personenbezogener Daten bei der Fliesenverlegung Tezgel gemäß EU-DSGVO.",
+   "canonical": "https://www.tezgel.de/datenschutz",
+   "robots": "noindex, follow",
+   "h1": [
+    "Datenschutzerklärung"
+   ],
+   "jsonld_hash": "418b90fabd7491b6",
+   "main_hash": "e834962604305188",
+   "main_zeilen": 42,
+   "links": 67
+  },
+  "/downloads": {
+   "status": 200,
+   "title": "Downloads & Infomaterial | Fliesenverlegung Tezgel",
+   "description": "Infomaterial & Checklisten rund um Fliesenverlegung, Badsanierung & Fördermittel vom Fachbetrieb Tezgel in Aßlar & Wetzlar. Jetzt online informieren!",
+   "canonical": "https://www.tezgel.de/downloads",
+   "robots": "index, follow",
+   "h1": [
+    "Downloads & Infomaterial"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "02c4edf38622a337",
+   "main_zeilen": 61,
+   "links": 66
+  },
+  "/faq": {
+   "status": 200,
+   "title": "FAQ: Häufige Fragen zu Fliesen & Bad | Tezgel",
+   "description": "Häufige Fragen zu Fliesenverlegung, Badsanierung, Preisen & DIN 18534 Abdichtung beantwortet vom Fliesenleger-Fachbetrieb Tezgel in Aßlar & Wetzlar.",
+   "canonical": "https://www.tezgel.de/faq",
+   "robots": "index, follow",
+   "h1": [
+    "FAQ: Häufige Fragen zu Fliesen & Bad bei Tezgel"
+   ],
+   "jsonld_hash": "7d703a1ad80bf78e",
+   "main_hash": "edf02d6d3f92e552",
+   "main_zeilen": 142,
+   "links": 65
+  },
+  "/fliesen": {
+   "status": 200,
+   "title": "Fliesenverlegung & Ratgeber | Fliesenleger Tezgel",
+   "description": "Ratgeber & Fachwissen zur Fliesenverlegung: Großformate, Feinsteinzeug, Holzoptik & Verlegetechniken vom Fliesenleger-Fachbetrieb Tezgel in Hessen.",
+   "canonical": "https://www.tezgel.de/fliesen",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen-Ratgeber: Formate, Räume und Verlegetechnik verständlich erklärt"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "e577e148f715bbb2",
+   "main_zeilen": 191,
+   "links": 83
+  },
+  "/fliesen/abnahme": {
+   "status": 200,
+   "title": "Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel",
+   "description": "Checkliste für die Abnahme von Fliesenarbeiten: Ebenheit nach DIN 18202, Fugenbild, Hohlstellen & Toleranzen erklärt vom Fachbetrieb Tezgel aus Aßlar.",
+   "canonical": "https://www.tezgel.de/fliesen/abnahme",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenarbeiten abnehmen: Checkliste & Normen bei Tezgel"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "69270d892d2eb238",
+   "main_zeilen": 112,
+   "links": 70
+  },
+  "/fliesen/auf-fussbodenheizung": {
+   "status": 200,
+   "title": "Fliesen auf Fußbodenheizung verlegen | Ratgeber Tezgel",
+   "description": "Fliesen auf Fußbodenheizung fachgerecht verlegen: Belegreife des Heizestrichs, verformbare Kleber & normgerechte Dehnungsfugen. Ratgeber vom...",
+   "canonical": "https://www.tezgel.de/fliesen/auf-fussbodenheizung",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen auf Fußbodenheizung: Aufbau, Fugen und Kleberwahl"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "083066378b6f62fc",
+   "main_zeilen": 110,
+   "links": 67
+  },
+  "/fliesen/festpreisangebot": {
+   "status": 200,
+   "title": "Fliesenleger Festpreisangebot | Fachbetrieb Tezgel",
+   "description": "Transparentes Festpreisangebot für Fliesenarbeiten: Aufmaß, Material & Verlegung ohne versteckte Kosten. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+   "canonical": "https://www.tezgel.de/fliesen/festpreisangebot",
+   "robots": "index, follow",
+   "h1": [
+    "Festpreisangebot für Fliesenarbeiten: was den Aufwand bestimmt"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "aede2d9eb967bd2b",
+   "main_zeilen": 134,
+   "links": 67
+  },
+  "/fliesen/fliesenarten": {
+   "status": 200,
+   "title": "Fliesenarten im Vergleich: Feinsteinzeug & Co. | Tezgel",
+   "description": "Fliesenarten im Vergleich: Feinsteinzeug, Steinzeug & Steingut. Wasseraufnahme, Frostsicherheit & Abriebklassen erklärt vom Fachbetrieb Tezgel aus Aßlar.",
+   "canonical": "https://www.tezgel.de/fliesen/fliesenarten",
+   "robots": "index, follow",
+   "h1": [
+    "Feinsteinzeug, Steinzeug, Steingut: Fliesenarten und ihre Eigenschaften"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "375b138dd2178cc3",
+   "main_zeilen": 137,
+   "links": 68
+  },
+  "/fliesen/flur-diele": {
+   "status": 200,
+   "title": "Flur & Diele fliesen lassen | Fliesenleger Tezgel",
+   "description": "Flur & Eingangsbereich fliesen lassen: strapazierfähige Formate, Verlegerichtung, Rutschhemmung & Schmutzfangzonen. Fachbetrieb Tezgel – Jetzt anfragen!",
+   "canonical": "https://www.tezgel.de/fliesen/flur-diele",
+   "robots": "index, follow",
+   "h1": [
+    "Flur und Diele fliesen: robust vom Eingang bis in den Wohnbereich"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "2f3ed832693d590a",
+   "main_zeilen": 123,
+   "links": 68
+  },
+  "/fliesen/fugensanierung": {
+   "status": 200,
+   "title": "Fugensanierung & Silikonfugen erneuern | Tezgel",
+   "description": "Fugensanierung in Wetzlar & Aßlar: Schimmelige Silikonfugen & bröselnde Zementfugen fachgerecht austauschen und dauerhaft abdichten. Jetzt anfragen!",
+   "canonical": "https://www.tezgel.de/fliesen/fugensanierung",
+   "robots": "index, follow",
+   "h1": [
+    "Fugensanierung: Silikon- und Zementfugen fachgerecht erneuern"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "28e622ca6adc2547",
+   "main_zeilen": 101,
+   "links": 68
+  },
+  "/fliesen/grossformat": {
+   "status": 200,
+   "title": "Großformatfliesen verlegen lassen | Fliesen Tezgel",
+   "description": "XXL-Großformatfliesen & fugenlose Platten fachgerecht verlegen lassen: perfekte Untergrundvorbereitung & Handling. Fachbetrieb Tezgel in Wetzlar & Aßlar!",
+   "canonical": "https://www.tezgel.de/fliesen/grossformat",
+   "robots": "index, follow",
+   "h1": [
+    "Großformatfliesen verlegen: fugenarm, planeben, präzise"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "2dccbd1d792b568b",
+   "main_zeilen": 150,
+   "links": 68
+  },
+  "/fliesen/holzoptik": {
+   "status": 200,
+   "title": "Fliesen in Holzoptik verlegen | Fliesenleger Tezgel",
+   "description": "Holzoptik-Fliesen aus Feinsteinzeug verlegen lassen: warme Holzoptik, feuchteresistent & ideal für Fußbodenheizung. Fachbetrieb Tezgel – Jetzt anfragen!",
+   "canonical": "https://www.tezgel.de/fliesen/holzoptik",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen in Holzoptik: Dielenlook mit keramischer Robustheit"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "59d40763d54f9109",
+   "main_zeilen": 121,
+   "links": 70
+  },
+  "/fliesen/konfigurator": {
+   "status": 200,
+   "title": "Fliesen-Konfigurator & Bedarfsrechner | Tezgel",
+   "description": "Fliesen online konfigurieren: Raum, Untergrund, Format & Fläche wählen und unverbindliche Preisschätzung erhalten. Fliesenverlegung Tezgel in Hessen.",
+   "canonical": "https://www.tezgel.de/fliesen/konfigurator",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen-Konfigurator & Bedarfsrechner von Tezgel"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "7a193adec4ef4f20",
+   "main_zeilen": 138,
+   "links": 65
+  },
+  "/fliesen/kueche": {
+   "status": 200,
+   "title": "Küchenfliesen verlegen Wetzlar | Fliesenleger Tezgel",
+   "description": "Küchenfliesen & Fliesenspiegel verlegen in Wetzlar & Aßlar: strapazierfähige Böden, Großformate & pflegeleichte Fugen. Jetzt unverbindlich beraten lassen!",
+   "canonical": "https://www.tezgel.de/fliesen/kueche",
+   "robots": "index, follow",
+   "h1": [
+    "Küchenfliesen verlegen in Wetzlar mit Fliesenleger Tezgel"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "993290c89fce35d5",
+   "main_zeilen": 119,
+   "links": 72
+  },
+  "/fliesen/neubau": {
+   "status": 200,
+   "title": "Fliesen im Neubau verlegen lassen | Fliesen Tezgel",
+   "description": "Fliesenleger für Neubau-Projekte in Wetzlar & Aßlar: Termintreue, Belegreifeprüfung, Bemusterung & Schnittstellenkoordination. Jetzt Angebot anfragen!",
+   "canonical": "https://www.tezgel.de/fliesen/neubau",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen im Neubau verlegen lassen mit Fliesen Tezgel"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "4539b7205a03ddbc",
+   "main_zeilen": 142,
+   "links": 70
+  },
+  "/fliesen/renovierung": {
+   "status": 200,
+   "title": "Fliesen Renovierung: Alte Fliesen erneuern | Tezgel",
+   "description": "Fliesenboden im bewohnten Bestand fachgerecht renovieren & erneuern: Ablauf, Staubschutz & Etappenplanung vom Fliesenleger-Fachbetrieb Tezgel in Hessen.",
+   "canonical": "https://www.tezgel.de/fliesen/renovierung",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenboden im Bestand erneuern: Ablauf im bewohnten Haus"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "ebad9683b52751dd",
+   "main_zeilen": 136,
+   "links": 70
+  },
+  "/fliesen/verlegemuster": {
+   "status": 200,
+   "title": "Fliesen-Verlegemuster: Fischgrät & Verbände | Tezgel",
+   "description": "Fliesen-Verlegemuster im Überblick: Kreuzfuge, Halbverband, Fischgrät & Diagonalverlegung. Verschnitt, Wirkung & Fachberatung von Fliesenleger Tezgel.",
+   "canonical": "https://www.tezgel.de/fliesen/verlegemuster",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen-Verlegemuster: Fischgrät & Verbände bei Tezgel"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "694bb18781ef5445",
+   "main_zeilen": 131,
+   "links": 68
+  },
+  "/fliesen/verlegetechnik": {
+   "status": 200,
+   "title": "Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel",
+   "description": "Verlegetechniken für Fliesen nach DIN 18157: Dünnbett, Mittelbett, Buttering-Floating & Kleberklassen erklärt vom Fachbetrieb Tezgel aus Aßlar & Wetzlar.",
+   "canonical": "https://www.tezgel.de/fliesen/verlegetechnik",
+   "robots": "index, follow",
+   "h1": [
+    "Verlegetechnik und Werkstoffe: Kleber, Bettung und Fugenmörtel"
+   ],
+   "jsonld_hash": "5803f4bbb10a4ff7",
+   "main_hash": "b39c2f4673055fd2",
+   "main_zeilen": 160,
+   "links": 68
+  },
+  "/fliesenreparatur": {
+   "status": 200,
+   "title": "Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel",
+   "description": "Professionelle Fliesenreparatur in Wetzlar & Aßlar: einzelne Fliesen austauschen, Bohrlöcher verschließen & Fugen sanieren. Schneller Vor-Ort-Service!",
+   "canonical": "https://www.tezgel.de/fliesenreparatur",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel"
+   ],
+   "jsonld_hash": "79605f8f76b09c25",
+   "main_hash": "939b0ff56269f485",
+   "main_zeilen": 112,
+   "links": 66
+  },
+  "/foerderung": {
+   "status": 200,
+   "title": "Förderung barrierefreies Bad: Zuschüsse | Tezgel",
+   "description": "Bis zu 4.180 € Pflegekassen-Zuschuss für Ihr barrierefreies Bad: Fliesenleger Tezgel erstellt den Kostenvoranschlag in Wetzlar & Aßlar. Jetzt beraten...",
+   "canonical": "https://www.tezgel.de/foerderung",
+   "robots": "index, follow",
+   "h1": [
+    "Förderung & Zuschüsse für Ihr barrierefreies Bad"
+   ],
+   "jsonld_hash": "ef1bc66259fe48f8",
+   "main_hash": "bb788fb3fb156adc",
+   "main_zeilen": 107,
+   "links": 65
+  },
+  "/impressum": {
+   "status": 200,
+   "title": "Impressum & rechtliche Angaben | Fliesen Tezgel",
+   "description": "Impressum und gesetzliche Anbieterkennzeichnung der Fliesenverlegung Tezgel in 35614 Aßlar. Angaben gemäß § 5 DDG, Kontakt und Handwerkskammer.",
+   "canonical": "https://www.tezgel.de/impressum",
+   "robots": "noindex, follow",
+   "h1": [
+    "Impressum"
+   ],
+   "jsonld_hash": "887e3a2ccdebc683",
+   "main_hash": "51ecc9f7499802c5",
+   "main_zeilen": 35,
+   "links": 66
+  },
+  "/karriere": {
+   "status": 200,
+   "title": "Fliesenleger Jobs Wetzlar & Aßlar | Karriere Tezgel",
+   "description": "Fliesenleger (m/w/d) gesucht! Jobs bei Fliesenverlegung Tezgel in Aßlar & Wetzlar: faire Bezahlung, modernes Werkzeug & gutes Team. Jetzt bewerben!",
+   "canonical": "https://www.tezgel.de/karriere",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar"
+   ],
+   "jsonld_hash": "c194a0178724c332",
+   "main_hash": "29b447289ca5b89e",
+   "main_zeilen": 79,
+   "links": 69
+  },
+  "/karriere/ausbildung": {
+   "status": 200,
+   "title": "Ausbildung Fliesenleger (m/w/d) | Fachbetrieb Tezgel",
+   "description": "Ausbildung zum Fliesenleger (m/w/d) in Aßlar & Wetzlar bei Tezgel: solides Handwerk, modernste Verlegetechnik & starkes Team. Jetzt unkompliziert bewerben!",
+   "canonical": "https://www.tezgel.de/karriere/ausbildung",
+   "robots": "index, follow",
+   "h1": [
+    "Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)"
+   ],
+   "jsonld_hash": "c194a0178724c332",
+   "main_hash": "efa7258e3c9aa50b",
+   "main_zeilen": 54,
+   "links": 66
+  },
+  "/leistungen": {
+   "status": 200,
+   "title": "Fliesenleger Leistungen Wetzlar | Fachbetrieb Tezgel",
+   "description": "Alle Fliesenleger-Leistungen von Tezgel in Wetzlar & Aßlar: Badsanierung, XXL-Großformate, Terrassen, Naturstein & Abdichtung. Jetzt Festpreis anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "jsonld_hash": "358ac153ff4b5946",
+   "main_hash": "9d416078300cdd75",
+   "main_zeilen": 199,
+   "links": 66
+  },
+  "/kontakt": {
+   "status": 200,
+   "title": "Kontakt & Vor-Ort-Aufmaß | Fliesenleger Tezgel Aßlar",
+   "description": "Kontaktieren Sie Fliesenleger Tezgel in Aßlar: kostenfreies Vor-Ort-Aufmaß, persönliche Beratung & Festpreis für Wetzlar & Hessen. Jetzt anfragen!",
+   "canonical": "https://www.tezgel.de/kontakt",
+   "robots": "index, follow",
+   "h1": [
+    "Kontakt & Aufmaß Fliesenleger Tezgel"
+   ],
+   "jsonld_hash": "3ab7952d2b8a76fc",
+   "main_hash": "e800285ea757c4ba",
+   "main_zeilen": 189,
+   "links": 68
+  },
+  "/login": {
+   "status": 200,
+   "title": "Admin Login | Fliesenverlegung Tezgel | Fliesenverlegung Tezgel",
+   "description": "Interner Verwaltungsbereich und administrativer Zugang für Fliesenverlegung Tezgel in Aßlar & Wetzlar. Bitte autorisieren Sie sich mit Ihren Zugangsdaten.",
+   "canonical": null,
+   "robots": "noindex, nofollow",
+   "h1": [
+    "Mitarbeiter Login"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "c833e6fba6b0d6d2",
+   "main_zeilen": 6,
+   "links": 65
+  },
+  "/naturstein/granit": {
+   "status": 200,
+   "title": "Granit & Schiefer verlegen lassen | Fliesen Tezgel",
+   "description": "Granit- & Schieferbeläge für Boden, Treppe und Außenbereich fachgerecht verlegen lassen: passende Kleber & Imprägnierung. Fachbetrieb Tezgel in Hessen.",
+   "canonical": "https://www.tezgel.de/naturstein/granit",
+   "robots": "index, follow",
+   "h1": [
+    "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen"
+   ],
+   "jsonld_hash": "93920efc92c062ee",
+   "main_hash": "9ed616c375a8b618",
+   "main_zeilen": 98,
+   "links": 68
+  },
+  "/naturstein": {
+   "status": 200,
+   "title": "Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel",
+   "description": "Naturstein fachgerecht verlegen in Wetzlar & Aßlar: Granit, Marmor, Kalkstein, Travertin & Schiefer. Verfärbungsfreie Verklebung. Aufmaß vor Ort...",
+   "canonical": "https://www.tezgel.de/naturstein",
+   "robots": "index, follow",
+   "h1": [
+    "Naturstein- und Granitverlegung vom Fachbetrieb"
+   ],
+   "jsonld_hash": "93920efc92c062ee",
+   "main_hash": "700a09d41de8df04",
+   "main_zeilen": 135,
+   "links": 69
+  },
+  "/partner": {
+   "status": 200,
+   "title": "Materialpartner & Verlegesysteme | Tezgel Fachbetrieb",
+   "description": "Hochwertige Verlegewerkstoffe & Fliesenmarken bei Tezgel: Schlüter-Systems, Ardex, Sopro, PCI, Marazzi & Villeroy & Boch. Höchste Qualität für Ihr Projekt!",
+   "canonical": "https://www.tezgel.de/partner",
+   "robots": "index, follow",
+   "h1": [
+    "Materialpartner & Verlegesysteme: Tezgel Fachbetrieb"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "8e2d56fcc7441388",
+   "main_zeilen": 56,
+   "links": 65
+  },
+  "/naturstein/marmor-kalkstein": {
+   "status": 200,
+   "title": "Marmor & Travertin verlegen lassen | Fliesen Tezgel",
+   "description": "Marmor, Travertin & Kalkstein fachgerecht verlegen lassen: verfärbungsfreie Kleber, Imprägnierung & Schutz. Fachbetrieb Tezgel in Aßlar & Wetzlar.",
+   "canonical": "https://www.tezgel.de/naturstein/marmor-kalkstein",
+   "robots": "index, follow",
+   "h1": [
+    "Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen"
+   ],
+   "jsonld_hash": "93920efc92c062ee",
+   "main_hash": "9c7c9af515407f93",
+   "main_zeilen": 108,
+   "links": 67
+  },
+  "/preise": {
+   "status": 200,
+   "title": "Fliesenleger Preise auf Anfrage | Festpreisangebote",
+   "description": "Preise für Fliesenverlegung, XXL-Fliesen & Badsanierung in Wetzlar & Aßlar auf Anfrage. Schildern Sie Ihr Vorhaben für ein verbindliches Festpreisangebot!",
+   "canonical": "https://www.tezgel.de/preise",
+   "robots": "index, follow",
+   "h1": [
+    "Kosten & Preise auf Anfrage – Verbindliche Festpreise"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "4e152d303c237133",
+   "main_zeilen": 162,
+   "links": 66
+  },
+  "/referenzen": {
+   "status": 200,
+   "title": "Referenzen & Bewertungen | Fliesenleger Tezgel ★ 5,0",
+   "description": "Kundenbewertungen & Referenzen von Fliesenleger Tezgel: Bäder, Terrassen, Treppen & Großformate in Wetzlar, Aßlar & Mittelhessen. 5,0 Google-Bewertung!",
+   "canonical": "https://www.tezgel.de/referenzen",
+   "robots": "index, follow",
+   "h1": [
+    "Referenzen & Bewertungen Fliesenleger Tezgel"
+   ],
+   "jsonld_hash": "c163313c360aec14",
+   "main_hash": "45949a3f51a0e82f",
+   "main_zeilen": 152,
+   "links": 75
+  },
+  "/schadensanalyse": {
+   "status": 200,
+   "title": "Fliesenschäden analysieren: Risse & Feuchte | Tezgel",
+   "description": "Gerissene Fliesen, Hohlstellen oder feuchte Fugen? Kostenfreie Schadensanalyse vor Ort in Wetzlar & Aßlar. Fliesenleger-Fachbetrieb Tezgel berät Sie!",
+   "canonical": "https://www.tezgel.de/schadensanalyse",
+   "robots": "index, follow",
+   "h1": [
+    "Schadensanalyse für Fliesen, Fugen und Abdichtung"
+   ],
+   "jsonld_hash": "e86501c5a3e8816f",
+   "main_hash": "1cdc55028c323f8a",
+   "main_zeilen": 112,
+   "links": 68
+  },
+  "/standorte": {
+   "status": 200,
+   "title": "Fliesenleger Standorte & Einsatzgebiete | Tezgel",
+   "description": "Fliesenleger-Fachbetrieb Tezgel aus Aßlar: Fliesenverlegung & Badsanierung in Wetzlar, Gießen, Herborn & Lahn-Dill-Kreis. Jetzt Vor-Ort-Aufmaß anfragen!",
+   "canonical": "https://www.tezgel.de/standorte",
+   "robots": "index, follow",
+   "h1": [
+    "Standorte & Einsatzgebiete in Mittelhessen"
+   ],
+   "jsonld_hash": "a07525483e5cb2ea",
+   "main_hash": "b8f85fc625fb5be8",
+   "main_zeilen": 159,
+   "links": 67
+  },
+  "/team": {
+   "status": 200,
+   "title": "Unser Team | Fliesenleger-Fachbetrieb Tezgel Aßlar",
+   "description": "Das Team von Fliesenverlegung Tezgel: Inhaber Deniz Tezgel und qualifizierte Fliesenleger für Fliesen- & Badprojekte in Aßlar, Wetzlar & ganz Hessen.",
+   "canonical": "https://www.tezgel.de/team",
+   "robots": "index, follow",
+   "h1": [
+    "Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "664ae9b08d7f7a7b",
+   "main_zeilen": 66,
+   "links": 65
+  },
+  "/termin": {
+   "status": 200,
+   "title": "Termin vereinbaren | Fliesenleger Tezgel Wetzlar",
+   "description": "Termin bei Fliesenleger Tezgel in Aßlar: Wunschthema wählen & Terminanfrage für Vor-Ort-Aufmaß in Wetzlar & Hessen direkt online oder per WhatsApp senden.",
+   "canonical": "https://www.tezgel.de/termin",
+   "robots": "index, follow",
+   "h1": [
+    "Termin vereinbaren bei Fliesenleger Tezgel"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "3106e3ef5eca3351",
+   "main_zeilen": 80,
+   "links": 65
+  },
+  "/treppen": {
+   "status": 200,
+   "title": "Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel",
+   "description": "Treppe fliesen & sanieren in Wetzlar & Aßlar: Innentreppen, Außentreppen & Treppenhäuser mit Fliesen oder Naturstein belegen. Jetzt Angebot anfragen!",
+   "canonical": "https://www.tezgel.de/treppen",
+   "robots": "index, follow",
+   "h1": [
+    "Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?"
+   ],
+   "jsonld_hash": "48c2eb15616bc589",
+   "main_hash": "f2f8f69e6f9339b4",
+   "main_zeilen": 129,
+   "links": 69
+  },
+  "/treppen/aussentreppe": {
+   "status": 200,
+   "title": "Außentreppe fliesen: frostsicher & rutschfest | Tezgel",
+   "description": "Außentreppe frostsicher fliesen & sanieren: rutschhemmende Platten, Gefälleausbildung & Abdichtung. Fliesenleger-Fachbetrieb Tezgel in Wetzlar & Aßlar.",
+   "canonical": "https://www.tezgel.de/treppen/aussentreppe",
+   "robots": "index, follow",
+   "h1": [
+    "Außentreppe fliesen: frostsicher & rutschfest bei Tezgel"
+   ],
+   "jsonld_hash": "48c2eb15616bc589",
+   "main_hash": "6843e25233f3ec0a",
+   "main_zeilen": 107,
+   "links": 66
+  },
+  "/treppen/treppenhaus": {
+   "status": 200,
+   "title": "Treppenhaus sanieren: Fliesen & Naturstein | Tezgel",
+   "description": "Treppenhaus im MFH neu fliesen & sanieren: trittsichere Beläge, abschnittsweises Arbeiten im bewohnten Haus & Hausverwaltungs-Service. Tezgel Fachbetrieb.",
+   "canonical": "https://www.tezgel.de/treppen/treppenhaus",
+   "robots": "index, follow",
+   "h1": [
+    "Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus"
+   ],
+   "jsonld_hash": "48c2eb15616bc589",
+   "main_hash": "e96c844fd73e868e",
+   "main_zeilen": 91,
+   "links": 67
+  },
+  "/treppen/innentreppe": {
+   "status": 200,
+   "title": "Innentreppe fliesen lassen | Stufen & Kanten · Tezgel",
+   "description": "Innentreppe im Haus fliesen lassen: Stufen aus Feinsteinzeug oder Naturstein, Gehrungskanten & Sockel. Fachbetrieb Tezgel – Jetzt Angebot anfragen!",
+   "canonical": "https://www.tezgel.de/treppen/innentreppe",
+   "robots": "index, follow",
+   "h1": [
+    "Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss"
+   ],
+   "jsonld_hash": "48c2eb15616bc589",
+   "main_hash": "b16bdb2fbe6425a1",
+   "main_zeilen": 87,
+   "links": 67
+  },
+  "/ueber-uns": {
+   "status": 200,
+   "title": "Über uns | Fliesenleger-Fachbetrieb Tezgel Aßlar",
+   "description": "Über Fliesenverlegung Tezgel in Aßlar: Eingetragener Fachbetrieb der HWK Wiesbaden seit 2008. Inhaber Deniz Tezgel – Fliesen & Bad in Wetzlar & Hessen.",
+   "canonical": "https://www.tezgel.de/ueber-uns",
+   "robots": "index, follow",
+   "h1": [
+    "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar"
+   ],
+   "jsonld_hash": "1516102b6bc7c8cb",
+   "main_hash": "1b625864f5081ec2",
+   "main_zeilen": 101,
+   "links": 66
+  },
+  "/untergrund-abdichtung/ausgleich-gefaelle": {
+   "status": 200,
+   "title": "Untergrund ausgleichen & Gefälle herstellen | Tezgel",
+   "description": "Unebene Böden & Wände vor dem Fliesen ausgleichen: Ebenheit nach DIN 18202, Spachtelung & Gefälleausbildung zu Abläufen. Fachbetrieb Tezgel in Hessen.",
+   "canonical": "https://www.tezgel.de/untergrund-abdichtung/ausgleich-gefaelle",
+   "robots": "index, follow",
+   "h1": [
+    "Untergrund ausgleichen und Gefälle herstellen: eben verlegen, Wasser gezielt ableiten"
+   ],
+   "jsonld_hash": "1cff7dd2e2c4d4e0",
+   "main_hash": "4c0a5edb5a355048",
+   "main_zeilen": 113,
+   "links": 68
+  },
+  "/untergrund-abdichtung": {
+   "status": 200,
+   "title": "Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel",
+   "description": "Untergrundvorbereitung & DIN 18534 Verbundabdichtung für Fliesen in Wetzlar & Aßlar: Estrichprüfung, Entkopplung & Gefälleausgleich. Jetzt beraten lassen!",
+   "canonical": "https://www.tezgel.de/untergrund-abdichtung",
+   "robots": "index, follow",
+   "h1": [
+    "Untergrund und Abdichtung: das Fundament jedes Fliesenbelags"
+   ],
+   "jsonld_hash": "1cff7dd2e2c4d4e0",
+   "main_hash": "5148314776b009d2",
+   "main_zeilen": 131,
+   "links": 70
+  },
+  "/untergrund-abdichtung/din-18534": {
+   "status": 200,
+   "title": "DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel",
+   "description": "DIN 18534 Verbundabdichtung für Bad & Dusche: Wassereinwirkungsklassen W0-I bis W3-I, Dichtbänder & Rohrmanschetten. Normgerecht ausgeführt von Tezgel.",
+   "canonical": "https://www.tezgel.de/untergrund-abdichtung/din-18534",
+   "robots": "index, follow",
+   "h1": [
+    "Verbundabdichtung nach DIN 18534: dicht unter der Fliese"
+   ],
+   "jsonld_hash": "1cff7dd2e2c4d4e0",
+   "main_hash": "82fb952a8e02655b",
+   "main_zeilen": 130,
+   "links": 66
+  },
+  "/untergrund-abdichtung/entkopplung": {
+   "status": 200,
+   "title": "Fliesen auf Holzboden verlegen: Entkopplung | Tezgel",
+   "description": "Fliesen auf Holzdielen, Mischuntergründen & gerissenem Estrich sicher verlegen: Entkopplungsmatten & Rissverharzung erklärt vom Fachbetrieb Tezgel.",
+   "canonical": "https://www.tezgel.de/untergrund-abdichtung/entkopplung",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel"
+   ],
+   "jsonld_hash": "1cff7dd2e2c4d4e0",
+   "main_hash": "f3ee5eb361c89992",
+   "main_zeilen": 111,
+   "links": 67
+  },
+  "/untergrund-abdichtung/estrich-belegreife": {
+   "status": 200,
+   "title": "Estrich-Belegreife & CM-Messung vor dem Fliesen | Tezgel",
+   "description": "Estrich-Belegreife zuverlässig prüfen: CM-Messung, Richtwerte je Estrichart & Feuchtigkeitsmessung vor dem Fliesen verlegen. Fachbetrieb Tezgel in Hessen.",
+   "canonical": "https://www.tezgel.de/untergrund-abdichtung/estrich-belegreife",
+   "robots": "index, follow",
+   "h1": [
+    "Estrich prüfen: Belegreife und Restfeuchte vor dem Fliesen"
+   ],
+   "jsonld_hash": "1cff7dd2e2c4d4e0",
+   "main_hash": "67cc36f9d5f76a0b",
+   "main_zeilen": 139,
+   "links": 69
+  },
+  "/untergrund-abdichtung/fliesen-auf-fliesen": {
+   "status": 200,
+   "title": "Altfliesen überkleben: Wann es fachgerecht geht | Tezgel",
+   "description": "Altfliesen überkleben (Überfliesen): Prüfkriterien, Haftbrücke, Aufbauhöhen & wann Rückbau besser ist. Fachbetrieb Tezgel in Aßlar & Wetzlar.",
+   "canonical": "https://www.tezgel.de/untergrund-abdichtung/fliesen-auf-fliesen",
+   "robots": "index, follow",
+   "h1": [
+    "Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel"
+   ],
+   "jsonld_hash": "1cff7dd2e2c4d4e0",
+   "main_hash": "33e86ee043eecb88",
+   "main_zeilen": 115,
+   "links": 67
+  },
+  "/unternehmen": {
+   "status": 200,
+   "title": "Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb",
+   "description": "Fliesenverlegung Tezgel aus Aßlar: Fachbetrieb der HWK seit 2008. Firmengeschichte, Inhaber Deniz Tezgel & unser Qualitätsversprechen für Hessen.",
+   "canonical": "https://www.tezgel.de/unternehmen",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung Tezgel: Unternehmen & Qualität"
+   ],
+   "jsonld_hash": "7e2cbb4a00e6a5d0",
+   "main_hash": "66f89182578e7089",
+   "main_zeilen": 76,
+   "links": 65
+  },
+  "/widerruf": {
+   "status": 200,
+   "title": "Widerrufsbelehrung & Formular | Fliesenverlegung Tezgel",
+   "description": "Widerrufsbelehrung und Muster-Widerrufsformular für Verbraucher bei Beauftragung von Leistungen der Fliesenverlegung Tezgel.",
+   "canonical": "https://www.tezgel.de/widerruf",
+   "robots": "noindex, follow",
+   "h1": [
+    "Widerrufsbelehrung & Muster-Widerrufsformular"
+   ],
+   "jsonld_hash": "42335761342ac329",
+   "main_hash": "0ca2694afb5d0ca9",
+   "main_zeilen": 23,
+   "links": 66
+  },
+  "/leistungen/aussen": {
+   "status": 200,
+   "title": "Balkon- & Terrassensanierung Wetzlar | Tezgel",
+   "description": "Frostsichere 2-cm-Keramik auf Stelzlagern, normgerechtes Gefälle & Entwässerung. Fachbetrieb für Balkon- & Terrassensanierung in Aßlar, Wetzlar &...",
+   "canonical": "https://www.tezgel.de/leistungen/aussen",
+   "robots": "index, follow",
+   "h1": [
+    "Balkon- & Terrassensanierung in Wetzlar & Mittelhessen"
+   ],
+   "jsonld_hash": "b512ff93eedea9b2",
+   "main_hash": "0d952739fcb8a2f5",
+   "main_zeilen": 179,
+   "links": 79
+  },
+  "/leistungen/bad": {
+   "status": 200,
+   "title": "Badsanierung & Komplettbäder Wetzlar | Tezgel",
+   "description": "Barrierefreie Walk-In-Duschen, fugenarme Großformate & schlüsselfertige Badsanierung. Fachbetrieb für Bäder & Wellness in Aßlar, Wetzlar &...",
+   "canonical": "https://www.tezgel.de/leistungen/bad",
+   "robots": "index, follow",
+   "h1": [
+    "Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar"
+   ],
+   "jsonld_hash": "252f22a9b1396f45",
+   "main_hash": "05edc8f99dd0788d",
+   "main_zeilen": 180,
+   "links": 79
+  },
+  "/leistungen/untergrund": {
+   "status": 200,
+   "title": "DIN 18534 Abdichtung & Untergrund | Fliesen Tezgel",
+   "description": "Fachgerechter Abbruch, Estrichausgleich, Risssanierung & normgerechte Verbundabdichtung. Fachbetrieb für Untergrund & DIN 18534 Abdichtung in Aßlar,...",
+   "canonical": "https://www.tezgel.de/leistungen/untergrund",
+   "robots": "index, follow",
+   "h1": [
+    "DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar"
+   ],
+   "jsonld_hash": "d4b723cf06ce0bf6",
+   "main_hash": "64546b4eb62d7707",
+   "main_zeilen": 180,
+   "links": 79
+  },
+  "/leistungen/wohnen": {
+   "status": 200,
+   "title": "Fliesenverlegung Wohnbereich Wetzlar | Tezgel",
+   "description": "Edles Feinsteinzeug, durchgängige Fugenachsen, Großformate & Treppenanlagen. Fachbetrieb für Wohnbereiche & Neubau in Aßlar, Wetzlar & Mittelhessen –...",
+   "canonical": "https://www.tezgel.de/leistungen/wohnen",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung Wohnbereich & Neubau in Wetzlar"
+   ],
+   "jsonld_hash": "350d15ce48364d77",
+   "main_hash": "0f16c1f2514b9663",
+   "main_zeilen": 180,
+   "links": 79
+  },
+  "/leistungen/bad/wetzlar": {
+   "status": 200,
+   "title": "Badsanierung & Bäder in Wetzlar | Fliesen Tezgel",
+   "description": "Badsanierung & Bäder in Wetzlar: Fachgerechte Verlegung & Sanierung. Direkt neben unserem Firmensitz. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen/bad/wetzlar",
+   "robots": "index, follow",
+   "h1": [
+    "Badsanierung & Bäder in Wetzlar"
+   ],
+   "jsonld_hash": "874e047c0b7272cb",
+   "main_hash": "a532b2920b07a178",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/bad/giessen": {
+   "status": 200,
+   "title": "Badsanierung & Bäder in Gießen | Fliesen Tezgel",
+   "description": "Badsanierung & Bäder in Gießen: Fachgerechte Verlegung & Sanierung. ca. 25 km ab Wetzlar. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen/bad/giessen",
+   "robots": "index, follow",
+   "h1": [
+    "Badsanierung & Bäder in Gießen"
+   ],
+   "jsonld_hash": "c1531018adc441c7",
+   "main_hash": "0d5687617587b506",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/bad/asslar": {
+   "status": 200,
+   "title": "Badsanierung & Bäder in Aßlar | Fliesen Tezgel",
+   "description": "Badsanierung & Bäder in Aßlar: Fachgerechte Verlegung & Sanierung. Unser Firmensitz. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen/bad/asslar",
+   "robots": "index, follow",
+   "h1": [
+    "Badsanierung & Bäder in Aßlar"
+   ],
+   "jsonld_hash": "f8354bfa7330935e",
+   "main_hash": "03c2b9ce61a92e24",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/wohnen/wetzlar": {
+   "status": 200,
+   "title": "Fliesenverlegung & Wohnen in Wetzlar | Fliesen Tezgel",
+   "description": "Fliesenverlegung & Wohnen in Wetzlar: Fachgerechte Verlegung & Sanierung. Direkt neben unserem Firmensitz. Jetzt Vor-Ort-Aufmaß & Festpreisangebot...",
+   "canonical": "https://www.tezgel.de/leistungen/wohnen/wetzlar",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Wohnen in Wetzlar"
+   ],
+   "jsonld_hash": "659c5029cd491bd7",
+   "main_hash": "29ea51fc7a9689fd",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/wohnen/marburg": {
+   "status": 200,
+   "title": "Fliesenverlegung & Wohnen in Marburg | Fliesen Tezgel",
+   "description": "Fliesenverlegung & Wohnen in Marburg: Fachgerechte Verlegung & Sanierung. ca. 40 km ab Wetzlar. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen/wohnen/marburg",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Wohnen in Marburg"
+   ],
+   "jsonld_hash": "1128f846d1ec1a68",
+   "main_hash": "f8210093e6aa9948",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/wohnen/limburg": {
+   "status": 200,
+   "title": "Fliesenverlegung & Wohnen in Limburg an der Lahn",
+   "description": "Fliesenverlegung & Wohnen in Limburg an der Lahn: Fachgerechte Verlegung & Sanierung. ca. 35 km ab Wetzlar. Jetzt Vor-Ort-Aufmaß & Festpreisangebot...",
+   "canonical": "https://www.tezgel.de/leistungen/wohnen/limburg",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Wohnen in Limburg an der Lahn"
+   ],
+   "jsonld_hash": "f807f02ef41e0843",
+   "main_hash": "12e42effe4c56c5c",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/aussen/wetzlar": {
+   "status": 200,
+   "title": "Balkon- & Terrassensanierung in Wetzlar | Tezgel",
+   "description": "Balkon- & Terrassensanierung in Wetzlar: Fachgerechte Verlegung & Sanierung. Direkt neben unserem Firmensitz. Jetzt Vor-Ort-Aufmaß & Festpreisangebot...",
+   "canonical": "https://www.tezgel.de/leistungen/aussen/wetzlar",
+   "robots": "index, follow",
+   "h1": [
+    "Balkon- & Terrassensanierung in Wetzlar"
+   ],
+   "jsonld_hash": "75235ce54b69db54",
+   "main_hash": "fec03c4d86a47203",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/aussen/herborn": {
+   "status": 200,
+   "title": "Balkon- & Terrassensanierung in Herborn | Tezgel",
+   "description": "Balkon- & Terrassensanierung in Herborn: Fachgerechte Verlegung & Sanierung. ca. 20 km ab Wetzlar. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen/aussen/herborn",
+   "robots": "index, follow",
+   "h1": [
+    "Balkon- & Terrassensanierung in Herborn"
+   ],
+   "jsonld_hash": "f28a1b8a1a70a2a9",
+   "main_hash": "5b45b288ec723de4",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/untergrund/wetzlar": {
+   "status": 200,
+   "title": "Untergrund & Abdichtung in Wetzlar | Fliesen Tezgel",
+   "description": "Untergrund & Abdichtung in Wetzlar: Fachgerechte Verlegung & Sanierung. Direkt neben unserem Firmensitz. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen/untergrund/wetzlar",
+   "robots": "index, follow",
+   "h1": [
+    "Untergrund & Abdichtung in Wetzlar"
+   ],
+   "jsonld_hash": "e458b84926efafc5",
+   "main_hash": "8d4f6a5738e8e3b3",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/leistungen/untergrund/dillenburg": {
+   "status": 200,
+   "title": "Untergrund & Abdichtung in Dillenburg | Fliesen Tezgel",
+   "description": "Untergrund & Abdichtung in Dillenburg: Fachgerechte Verlegung & Sanierung. ca. 25 km ab Wetzlar. Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/leistungen/untergrund/dillenburg",
+   "robots": "index, follow",
+   "h1": [
+    "Untergrund & Abdichtung in Dillenburg"
+   ],
+   "jsonld_hash": "a359912ae1c271a7",
+   "main_hash": "8a9028fbe8e0ce1b",
+   "main_zeilen": 114,
+   "links": 68
+  },
+  "/standorte/asslar": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Aßlar | Tezgel Fachbetrieb",
+   "description": "Ihr Fliesenleger in Aßlar: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/asslar",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Aßlar"
+   ],
+   "jsonld_hash": "f41fc589b8f0c978",
+   "main_hash": "28ff8dff948d259a",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/bad-nauheim": {
+   "status": 200,
+   "title": "Fliesenleger in Bad Nauheim | Badsanierung Tezgel",
+   "description": "Ihr Fliesenleger in Bad Nauheim: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/bad-nauheim",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Bad Nauheim"
+   ],
+   "jsonld_hash": "0135daf6b326c7df",
+   "main_hash": "383fc669f498dbe8",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/butzbach": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Butzbach | Tezgel Fachbetrieb",
+   "description": "Ihr Fliesenleger in Butzbach: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/butzbach",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Butzbach"
+   ],
+   "jsonld_hash": "002100cd7998b956",
+   "main_hash": "bd6762eeb093c6bb",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/braunfels": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Braunfels | Tezgel Fachbetrieb",
+   "description": "Ihr Fliesenleger in Braunfels: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/braunfels",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Braunfels"
+   ],
+   "jsonld_hash": "aca16cfc6004ae47",
+   "main_hash": "b220aa158bc8a862",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/friedberg": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Friedberg (Hessen) · Tezgel",
+   "description": "Ihr Fliesenleger in Friedberg (Hessen): Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot...",
+   "canonical": "https://www.tezgel.de/standorte/friedberg",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Friedberg (Hessen)"
+   ],
+   "jsonld_hash": "22fabc1a18c14ce2",
+   "main_hash": "3db1145e9c9a574f",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/giessen": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Gießen | Tezgel Fachbetrieb",
+   "description": "Ihr Fliesenleger in Gießen: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/giessen",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Gießen"
+   ],
+   "jsonld_hash": "89ac70c19f9285e2",
+   "main_hash": "1100b90e9cfbb03d",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/haiger": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Haiger | Tezgel Fachbetrieb",
+   "description": "Ihr Fliesenleger in Haiger: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/haiger",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Haiger"
+   ],
+   "jsonld_hash": "08b209b7858bf67f",
+   "main_hash": "65c7e99af73421f1",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/limburg": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Limburg an der Lahn · Tezgel",
+   "description": "Ihr Fliesenleger in Limburg an der Lahn: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß &...",
+   "canonical": "https://www.tezgel.de/standorte/limburg",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Limburg an der Lahn"
+   ],
+   "jsonld_hash": "ad1c7f00078037d3",
+   "main_hash": "5b8e735ab4e31ddb",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/marburg": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Marburg | Tezgel Fachbetrieb",
+   "description": "Ihr Fliesenleger in Marburg: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/marburg",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Marburg"
+   ],
+   "jsonld_hash": "8568c3f4ef108f0a",
+   "main_hash": "db572314912a02dc",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/standorte/solms": {
+   "status": 200,
+   "title": "Fliesenleger & Bad in Solms | Tezgel Fachbetrieb",
+   "description": "Ihr Fliesenleger in Solms: Badsanierung, XXL-Fliesen & DIN 18534 Abdichtung. Fachbetrieb Tezgel – Jetzt Vor-Ort-Aufmaß & Festpreisangebot anfragen!",
+   "canonical": "https://www.tezgel.de/standorte/solms",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Solms"
+   ],
+   "jsonld_hash": "40a618ffaa6c3f2c",
+   "main_hash": "7b050c73faba9b86",
+   "main_zeilen": 150,
+   "links": 70
+  },
+  "/blog/barrierefreier-balkonaustritt": {
+   "status": 200,
+   "title": "Barrierefreier Balkonaustritt: Wie niedrig · Tezgel",
+   "description": "Stolperfrei auf den Balkon – und trotzdem dicht? Warum die Schwelle an der Balkontür ein Abdichtungsdetail ist, welche Regeln gelten und wie niedrige...",
+   "canonical": "https://www.tezgel.de/blog/barrierefreier-balkonaustritt",
+   "robots": "index, follow",
+   "h1": [
+    "Barrierefreier Balkonaustritt: Wie niedrig darf die Türschwelle sein?"
+   ],
+   "jsonld_hash": "7a6803aa52c67d97",
+   "main_hash": "b647e7c0bfcb7e9c",
+   "main_zeilen": 118,
+   "links": 79
+  },
+  "/blog/duschrinne-oder-punktablauf": {
+   "status": 200,
+   "title": "Duschrinne oder Punktablauf? Die Entwässerung · Tezgel",
+   "description": "Die Wahl des Ablaufs bestimmt Gefälle, Fliesenzuschnitt und Optik der Walk-In-Dusche. Duschrinne, Punkt- und Wandablauf im Vergleich, mit Blick auf...",
+   "canonical": "https://www.tezgel.de/blog/duschrinne-oder-punktablauf",
+   "robots": "index, follow",
+   "h1": [
+    "Duschrinne oder Punktablauf? Die Entwässerung der bodengleichen Dusche"
+   ],
+   "jsonld_hash": "5905945157ca5026",
+   "main_hash": "d8b9e7ebe0d2ca09",
+   "main_zeilen": 121,
+   "links": 79
+  },
+  "/blog/feinsteinzeug-oder-naturstein-vergleich": {
+   "status": 200,
+   "title": "Feinsteinzeug oder Naturstein? Der ehrliche Vergleich",
+   "description": "Beide Materialien sind hochwertig und langlebig, unterscheiden sich aber bei Optik, Pflege, Empfindlichkeit und Verlegung. Der Vergleich hilft bei der...",
+   "canonical": "https://www.tezgel.de/blog/feinsteinzeug-oder-naturstein-vergleich",
+   "robots": "index, follow",
+   "h1": [
+    "Feinsteinzeug oder Naturstein? Der ehrliche Vergleich"
+   ],
+   "jsonld_hash": "fbc68ef5f326f443",
+   "main_hash": "24e8f57c90d11e11",
+   "main_zeilen": 123,
+   "links": 78
+  },
+  "/blog/fliesen-fuer-allergiker": {
+   "status": 200,
+   "title": "Fliesen für Allergiker: Warum harte Böden entlasten können",
+   "description": "Glatte, harte Böden bieten Hausstaubmilben wenig Lebensraum und lassen sich feucht wischen. Was Fliesen für Allergiker-Haushalte interessant macht und...",
+   "canonical": "https://www.tezgel.de/blog/fliesen-fuer-allergiker",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen für Allergiker: Warum harte Böden entlasten können"
+   ],
+   "jsonld_hash": "ae1a398a07e0dad9",
+   "main_hash": "be7148e4d3cdf84a",
+   "main_zeilen": 121,
+   "links": 78
+  },
+  "/blog/fliesen-reinigen-pflegen": {
+   "status": 200,
+   "title": "Fliesen richtig reinigen: Pflicht und Kür · Tezgel",
+   "description": "Mit dem passenden Reiniger bleiben Fliesen und Fugen lange schön. Welche Mittel geeignet sind, was Sie vermeiden sollten und wann eine Grundreinigung...",
+   "canonical": "https://www.tezgel.de/blog/fliesen-reinigen-pflegen",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesen richtig reinigen: Pflicht und Kür der Fliesenpflege"
+   ],
+   "jsonld_hash": "afec02c990924a1d",
+   "main_hash": "1d2748128cde2ec8",
+   "main_zeilen": 123,
+   "links": 77
+  },
+  "/blog/fliesenleger-gesucht-geselle-meister": {
+   "status": 200,
+   "title": "Wir suchen Verstärkung: Fliesenleger/in · Tezgel",
+   "description": "Fliesenverlegung Tezgel in Aßlar sucht eine Fliesenlegerin oder einen Fliesenleger als Geselle (m/w/d). Hier erfahren Sie kurz, was Sie erwartet und...",
+   "canonical": "https://www.tezgel.de/blog/fliesenleger-gesucht-geselle-meister",
+   "robots": "index, follow",
+   "h1": [
+    "Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)"
+   ],
+   "jsonld_hash": "cfbcbe348487f260",
+   "main_hash": "51ec8799a28da22b",
+   "main_zeilen": 100,
+   "links": 75
+  },
+  "/blog/gaeste-wc-fliesen": {
+   "status": 200,
+   "title": "Gäste-WC fliesen: So wirkt der kleine Raum größer · Tezgel",
+   "description": "Wenige Quadratmeter, viele Details: Welche Formate, Fugenbilder und Fliesenhöhen ein Gäste-WC größer wirken lassen und wie Vorwand, Handwaschbecken...",
+   "canonical": "https://www.tezgel.de/blog/gaeste-wc-fliesen",
+   "robots": "index, follow",
+   "h1": [
+    "Gäste-WC fliesen: So wirkt der kleine Raum größer"
+   ],
+   "jsonld_hash": "1f700f7e92835a6a",
+   "main_hash": "3edf6b81f3814e15",
+   "main_zeilen": 127,
+   "links": 77
+  },
+  "/blog/rutschfeste-fliesen-r-klassen": {
+   "status": 200,
+   "title": "Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?",
+   "description": "R9 bis R13, A bis C: die Rutschhemmungsklassen nach DIN EN 16165 verständlich erklärt. Wo sie Pflicht sind, was im Privathaus empfehlenswert ist und...",
+   "canonical": "https://www.tezgel.de/blog/rutschfeste-fliesen-r-klassen",
+   "robots": "index, follow",
+   "h1": [
+    "Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?"
+   ],
+   "jsonld_hash": "6bc88979f58c6ad6",
+   "main_hash": "a371f3a51376ccdb",
+   "main_zeilen": 127,
+   "links": 77
+  },
+  "/blog/schimmel-fliesenfugen-vermeiden": {
+   "status": 200,
+   "title": "Schimmel in Fliesenfugen vermeiden: Ursachen · Tezgel",
+   "description": "Schwarze Punkte in Fugen und Silikon sind lästig und manchmal ein Warnsignal. Wie Schimmel entsteht, wie Sie vorbeugen und wann eine Fuge erneuert...",
+   "canonical": "https://www.tezgel.de/blog/schimmel-fliesenfugen-vermeiden",
+   "robots": "index, follow",
+   "h1": [
+    "Schimmel in Fliesenfugen vermeiden: Ursachen und Vorbeugung"
+   ],
+   "jsonld_hash": "50e291fec307e35e",
+   "main_hash": "709d2ad75529f524",
+   "main_zeilen": 125,
+   "links": 78
+  },
+  "/blog/undichte-dusche-warnzeichen": {
+   "status": 200,
+   "title": "Undichte Dusche? 5 Warnzeichen für Feuchte hinter Fliesen",
+   "description": "Dunkle Fugen, lose Fliesen, muffiger Geruch: Diese fünf Anzeichen deuten auf Feuchtigkeit hinter den Fliesen hin. So reagieren Sie richtig, bevor der...",
+   "canonical": "https://www.tezgel.de/blog/undichte-dusche-warnzeichen",
+   "robots": "index, follow",
+   "h1": [
+    "Undichte Dusche? 5 Warnzeichen für Feuchte hinter Fliesen"
+   ],
+   "jsonld_hash": "dc961a7db5b109fd",
+   "main_hash": "b1e94295d5017a01",
+   "main_zeilen": 119,
+   "links": 80
+  },
+  "/bad/musterbaeder/basic-bad-15_9": {
+   "status": 200,
+   "title": "Musterbad Basic-Bad 15,9 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Basic-Bad 15,9 ㎡: Großzügiges Raumbad mit separatem WC & breitem Möbelwaschtisch. Ausstattungsliste, Markenkomponenten & transparente...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/basic-bad-15_9",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Basic-Bad 15,9 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "4cf5411af76ada74",
+   "main_zeilen": 49,
+   "links": 66
+  },
+  "/bad/musterbaeder/basic-bad-4_6": {
+   "status": 200,
+   "title": "Musterbad Basic-Bad 4,6 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Basic-Bad 4,6 ㎡: Kompakter Komfort mit durchdachter Raumausnutzung. Ausstattungsliste, Markenkomponenten & transparente Festpreise von...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/basic-bad-4_6",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Basic-Bad 4,6 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "155e2421e982f670",
+   "main_zeilen": 46,
+   "links": 66
+  },
+  "/bad/musterbaeder/basic-bad-7": {
+   "status": 200,
+   "title": "Musterbad Basic-Bad 7,0 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Basic-Bad 7,0 ㎡: Familienfreundliche Vollausstattung mit Badewanne & Dusche. Ausstattungsliste, Markenkomponenten & transparente Festpreise...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/basic-bad-7",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Basic-Bad 7,0 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "311c2df82a81acd6",
+   "main_zeilen": 45,
+   "links": 66
+  },
+  "/bad/musterbaeder/basic-bad-8_2": {
+   "status": 200,
+   "title": "Musterbad Basic-Bad 8,2 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Basic-Bad 8,2 ㎡: Funktionaler Komfort mit zeitlosem Design. Ausstattungsliste, Markenkomponenten & transparente Festpreise von Fachbetrieb...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/basic-bad-8_2",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Basic-Bad 8,2 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "b4603081430a9dbe",
+   "main_zeilen": 46,
+   "links": 66
+  },
+  "/bad/musterbaeder/luxus-bad-15_9": {
+   "status": 200,
+   "title": "Musterbad Luxus-Bad 15,9 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Luxus-Bad 15,9 ㎡: Kompromisslose High-End Architektur & Private-Spa Atmosphäre. Ausstattungsliste, Markenkomponenten & transparente...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/luxus-bad-15_9",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Luxus-Bad 15,9 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "d1806e075a25983b",
+   "main_zeilen": 41,
+   "links": 66
+  },
+  "/bad/musterbaeder/luxus-bad-7": {
+   "status": 200,
+   "title": "Musterbad Luxus-Bad 7,0 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Luxus-Bad 7,0 ㎡: Exklusive Spa-Atmosphäre mit Mineralguss-Wanne & Dusch-WC. Ausstattungsliste, Markenkomponenten & transparente Festpreise...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/luxus-bad-7",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Luxus-Bad 7,0 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "7b38a5574ad4a5f2",
+   "main_zeilen": 43,
+   "links": 66
+  },
+  "/bad/musterbaeder/premium-bad-15_9": {
+   "status": 200,
+   "title": "Musterbad Komfort-Bad 15,9 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Komfort-Bad 15,9 ㎡: Großzügige Wellness-Oase für höchste Komfort- und Designansprüche. Ausstattungsliste, Markenkomponenten & transparente...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/premium-bad-15_9",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Komfort-Bad 15,9 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "1e87c7280a7b7db9",
+   "main_zeilen": 52,
+   "links": 66
+  },
+  "/bad/musterbaeder/luxus-bad-8_2": {
+   "status": 200,
+   "title": "Musterbad Luxus-Bad 8,2 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Luxus-Bad 8,2 ㎡: High-End Wellness mit freistehender Wanne & Decken-Regenhimmel. Ausstattungsliste, Markenkomponenten & transparente...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/luxus-bad-8_2",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Luxus-Bad 8,2 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "86b7139258be3094",
+   "main_zeilen": 41,
+   "links": 66
+  },
+  "/bad/musterbaeder/premium-bad-4_6": {
+   "status": 200,
+   "title": "Musterbad Komfort-Bad 4,6 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Komfort-Bad 4,6 ㎡: Barrierefreier Luxus und Edelstahl-Akzente auf kompaktem Raum. Ausstattungsliste, Markenkomponenten & transparente...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/premium-bad-4_6",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Komfort-Bad 4,6 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "c2072fe49e0b949c",
+   "main_zeilen": 45,
+   "links": 66
+  },
+  "/referenzen/badsanierung-grossformat": {
+   "status": 200,
+   "title": "Komplette Badsanierung mit Großformatfliesen · Tezgel",
+   "description": "Ein solches Projekt umfasst den staubarmen Rückbau des alten Bades, die Vorbereitung von Wand- und Bodenflächen, die Verbundabdichtung nach DIN 18534...",
+   "canonical": "https://www.tezgel.de/referenzen/badsanierung-grossformat",
+   "robots": "index, follow",
+   "h1": [
+    "Komplette Badsanierung mit Großformatfliesen"
+   ],
+   "jsonld_hash": "4e5d837eb4c40ce6",
+   "main_hash": "5615ef33e8586ac9",
+   "main_zeilen": 71,
+   "links": 66
+  },
+  "/bad/musterbaeder/premium-bad-7": {
+   "status": 200,
+   "title": "Musterbad Premium-Bad 7,0 ㎡ – Komplettbad & Badsanierung",
+   "description": "Musterbad Premium-Bad 7,0 ㎡: Elegante Balance aus Funktion, Ästhetik und bodengleicher Duschzone. Ausstattungsliste, Markenkomponenten & transparente...",
+   "canonical": "https://www.tezgel.de/bad/musterbaeder/premium-bad-7",
+   "robots": "index, follow",
+   "h1": [
+    "Musterbad Premium-Bad 7,0 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "jsonld_hash": "3ea431fb4c2ad2fa",
+   "main_hash": "ee9a2d4a7d106591",
+   "main_zeilen": 40,
+   "links": 66
+  },
+  "/referenzen/balkon-stelzlager": {
+   "status": 200,
+   "title": "Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+   "description": "Ein solches Projekt umfasst den Rückbau des schadhaften Altbelags, die Prüfung von Abdichtung und Gefälle sowie die Verlegung von...",
+   "canonical": "https://www.tezgel.de/referenzen/balkon-stelzlager",
+   "robots": "index, follow",
+   "h1": [
+    "Balkonsanierung mit Terrassenplatten auf Stelzlagern"
+   ],
+   "jsonld_hash": "9587947b50bc1d46",
+   "main_hash": "9df632c16f873750",
+   "main_zeilen": 70,
+   "links": 67
+  },
+  "/referenzen/barrierefreies-duschbad": {
+   "status": 200,
+   "title": "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+   "description": "Ein solches Projekt umfasst den Umbau von der Wanne zur bodengleichen Dusche, die Gefälleausbildung zum Ablauf oder zur Rinne, die Verbundabdichtung...",
+   "canonical": "https://www.tezgel.de/referenzen/barrierefreies-duschbad",
+   "robots": "index, follow",
+   "h1": [
+    "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche"
+   ],
+   "jsonld_hash": "496d6dd516ef7465",
+   "main_hash": "27c8fd742227cf09",
+   "main_zeilen": 71,
+   "links": 66
+  },
+  "/referenzen/einfamilienhaus-komplett": {
+   "status": 200,
+   "title": "Fliesenarbeiten im kompletten Einfamilienhaus · Tezgel",
+   "description": "Ein solches Projekt umfasst alle Fliesenflächen eines Hauses in Neubau oder Kernsanierung: Wohnbereich, Küche, Flur, Bäder und Treppe – mit...",
+   "canonical": "https://www.tezgel.de/referenzen/einfamilienhaus-komplett",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenarbeiten im kompletten Einfamilienhaus"
+   ],
+   "jsonld_hash": "168660f04aa9ee2f",
+   "main_hash": "a6899f2b5de5b53d",
+   "main_zeilen": 70,
+   "links": 66
+  },
+  "/referenzen/treppenanlage-wohnhaus": {
+   "status": 200,
+   "title": "Treppenanlage mit Fliesen- oder Natursteinbelag · Tezgel",
+   "description": "Ein solches Projekt umfasst das Aufmaß jeder Stufe, den passgenauen Zuschnitt von Tritt- und Setzstufen aus Feinsteinzeug oder Naturstein, eine...",
+   "canonical": "https://www.tezgel.de/referenzen/treppenanlage-wohnhaus",
+   "robots": "index, follow",
+   "h1": [
+    "Treppenanlage mit Fliesen- oder Natursteinbelag"
+   ],
+   "jsonld_hash": "ae90a1368b633a52",
+   "main_hash": "daaf8fc18dcd4eb5",
+   "main_zeilen": 70,
+   "links": 67
+  },
+  "/referenzen/wohnbereich-fussbodenheizung": {
+   "status": 200,
+   "title": "Fliesenboden auf Fußbodenheizung im Wohnbereich · Tezgel",
+   "description": "Ein solches Projekt umfasst die Prüfung von Aufheizprotokoll und Restfeuchte des Heizestrichs, die Planung durchgehender Fugenachsen über mehrere...",
+   "canonical": "https://www.tezgel.de/referenzen/wohnbereich-fussbodenheizung",
+   "robots": "index, follow",
+   "h1": [
+    "Fliesenboden auf Fußbodenheizung im Wohnbereich"
+   ],
+   "jsonld_hash": "aa2e56b67d6b0583",
+   "main_hash": "e9f7baea277fd37a",
+   "main_zeilen": 70,
+   "links": 67
+  }
+ },
+ "sitemap": [
+  "https://www.tezgel.de",
+  "https://www.tezgel.de/ausstellung/giessen",
+  "https://www.tezgel.de/ausstellung/wetzlar",
+  "https://www.tezgel.de/bad",
+  "https://www.tezgel.de/bad/bad-aus-einer-hand",
+  "https://www.tezgel.de/bad/badanfrage",
+  "https://www.tezgel.de/bad/badplaner",
+  "https://www.tezgel.de/bad/badsanierung",
+  "https://www.tezgel.de/bad/barrierefreies-bad",
+  "https://www.tezgel.de/bad/fliesen",
+  "https://www.tezgel.de/bad/musterbaeder",
+  "https://www.tezgel.de/bad/musterbaeder/basic-bad-15_9",
+  "https://www.tezgel.de/bad/musterbaeder/basic-bad-4_6",
+  "https://www.tezgel.de/bad/musterbaeder/basic-bad-7",
+  "https://www.tezgel.de/bad/musterbaeder/basic-bad-8_2",
+  "https://www.tezgel.de/bad/musterbaeder/luxus-bad-15_9",
+  "https://www.tezgel.de/bad/musterbaeder/luxus-bad-4_6",
+  "https://www.tezgel.de/bad/musterbaeder/luxus-bad-7",
+  "https://www.tezgel.de/bad/musterbaeder/luxus-bad-8_2",
+  "https://www.tezgel.de/bad/musterbaeder/premium-bad-15_9",
+  "https://www.tezgel.de/bad/musterbaeder/premium-bad-4_6",
+  "https://www.tezgel.de/bad/musterbaeder/premium-bad-7",
+  "https://www.tezgel.de/bad/musterbaeder/premium-bad-8_2",
+  "https://www.tezgel.de/bad/projekt-check",
+  "https://www.tezgel.de/balkon-terrasse",
+  "https://www.tezgel.de/balkon-terrasse/balkonsanierung",
+  "https://www.tezgel.de/balkon-terrasse/stelzlager",
+  "https://www.tezgel.de/balkon-terrasse/terrassenplatten",
+  "https://www.tezgel.de/barrierefreiheit",
+  "https://www.tezgel.de/beratung",
+  "https://www.tezgel.de/blog",
+  "https://www.tezgel.de/blog/barrierefreier-balkonaustritt",
+  "https://www.tezgel.de/blog/duschrinne-oder-punktablauf",
+  "https://www.tezgel.de/blog/feinsteinzeug-oder-naturstein-vergleich",
+  "https://www.tezgel.de/blog/fliesen-fuer-allergiker",
+  "https://www.tezgel.de/blog/fliesen-mythen-faktencheck",
+  "https://www.tezgel.de/blog/fliesen-reinigen-pflegen",
+  "https://www.tezgel.de/blog/fliesenleger-gesucht-geselle-meister",
+  "https://www.tezgel.de/blog/gaeste-wc-fliesen",
+  "https://www.tezgel.de/blog/handwerkerbonus-fliesenarbeiten",
+  "https://www.tezgel.de/blog/rutschfeste-fliesen-r-klassen",
+  "https://www.tezgel.de/blog/schimmel-fliesenfugen-vermeiden",
+  "https://www.tezgel.de/blog/undichte-dusche-warnzeichen",
+  "https://www.tezgel.de/blog/wandnischen-dusche-planen",
+  "https://www.tezgel.de/downloads",
+  "https://www.tezgel.de/faq",
+  "https://www.tezgel.de/fliesen",
+  "https://www.tezgel.de/fliesen/abnahme",
+  "https://www.tezgel.de/fliesen/auf-fussbodenheizung",
+  "https://www.tezgel.de/fliesen/festpreisangebot",
+  "https://www.tezgel.de/fliesen/fliesenarten",
+  "https://www.tezgel.de/fliesen/flur-diele",
+  "https://www.tezgel.de/fliesen/fugensanierung",
+  "https://www.tezgel.de/fliesen/grossformat",
+  "https://www.tezgel.de/fliesen/holzoptik",
+  "https://www.tezgel.de/fliesen/konfigurator",
+  "https://www.tezgel.de/fliesen/kueche",
+  "https://www.tezgel.de/fliesen/neubau",
+  "https://www.tezgel.de/fliesen/renovierung",
+  "https://www.tezgel.de/fliesen/verlegemuster",
+  "https://www.tezgel.de/fliesen/verlegetechnik",
+  "https://www.tezgel.de/fliesenreparatur",
+  "https://www.tezgel.de/foerderung",
+  "https://www.tezgel.de/karriere",
+  "https://www.tezgel.de/karriere/ausbildung",
+  "https://www.tezgel.de/kontakt",
+  "https://www.tezgel.de/leistungen",
+  "https://www.tezgel.de/leistungen/aussen",
+  "https://www.tezgel.de/leistungen/aussen/asslar",
+  "https://www.tezgel.de/leistungen/aussen/bad-nauheim",
+  "https://www.tezgel.de/leistungen/aussen/braunfels",
+  "https://www.tezgel.de/leistungen/aussen/butzbach",
+  "https://www.tezgel.de/leistungen/aussen/dillenburg",
+  "https://www.tezgel.de/leistungen/aussen/friedberg",
+  "https://www.tezgel.de/leistungen/aussen/giessen",
+  "https://www.tezgel.de/leistungen/aussen/haiger",
+  "https://www.tezgel.de/leistungen/aussen/herborn",
+  "https://www.tezgel.de/leistungen/aussen/limburg",
+  "https://www.tezgel.de/leistungen/aussen/marburg",
+  "https://www.tezgel.de/leistungen/aussen/solms",
+  "https://www.tezgel.de/leistungen/aussen/wetzlar",
+  "https://www.tezgel.de/leistungen/bad",
+  "https://www.tezgel.de/leistungen/bad/asslar",
+  "https://www.tezgel.de/leistungen/bad/bad-nauheim",
+  "https://www.tezgel.de/leistungen/bad/braunfels",
+  "https://www.tezgel.de/leistungen/bad/butzbach",
+  "https://www.tezgel.de/leistungen/bad/dillenburg",
+  "https://www.tezgel.de/leistungen/bad/friedberg",
+  "https://www.tezgel.de/leistungen/bad/giessen",
+  "https://www.tezgel.de/leistungen/bad/haiger",
+  "https://www.tezgel.de/leistungen/bad/herborn",
+  "https://www.tezgel.de/leistungen/bad/limburg",
+  "https://www.tezgel.de/leistungen/bad/marburg",
+  "https://www.tezgel.de/leistungen/bad/solms",
+  "https://www.tezgel.de/leistungen/bad/wetzlar",
+  "https://www.tezgel.de/leistungen/untergrund",
+  "https://www.tezgel.de/leistungen/untergrund/asslar",
+  "https://www.tezgel.de/leistungen/untergrund/bad-nauheim",
+  "https://www.tezgel.de/leistungen/untergrund/braunfels",
+  "https://www.tezgel.de/leistungen/untergrund/butzbach",
+  "https://www.tezgel.de/leistungen/untergrund/dillenburg",
+  "https://www.tezgel.de/leistungen/untergrund/friedberg",
+  "https://www.tezgel.de/leistungen/untergrund/giessen",
+  "https://www.tezgel.de/leistungen/untergrund/haiger",
+  "https://www.tezgel.de/leistungen/untergrund/herborn",
+  "https://www.tezgel.de/leistungen/untergrund/limburg",
+  "https://www.tezgel.de/leistungen/untergrund/marburg",
+  "https://www.tezgel.de/leistungen/untergrund/solms",
+  "https://www.tezgel.de/leistungen/untergrund/wetzlar",
+  "https://www.tezgel.de/leistungen/wohnen",
+  "https://www.tezgel.de/leistungen/wohnen/asslar",
+  "https://www.tezgel.de/leistungen/wohnen/bad-nauheim",
+  "https://www.tezgel.de/leistungen/wohnen/braunfels",
+  "https://www.tezgel.de/leistungen/wohnen/butzbach",
+  "https://www.tezgel.de/leistungen/wohnen/dillenburg",
+  "https://www.tezgel.de/leistungen/wohnen/friedberg",
+  "https://www.tezgel.de/leistungen/wohnen/giessen",
+  "https://www.tezgel.de/leistungen/wohnen/haiger",
+  "https://www.tezgel.de/leistungen/wohnen/herborn",
+  "https://www.tezgel.de/leistungen/wohnen/limburg",
+  "https://www.tezgel.de/leistungen/wohnen/marburg",
+  "https://www.tezgel.de/leistungen/wohnen/solms",
+  "https://www.tezgel.de/leistungen/wohnen/wetzlar",
+  "https://www.tezgel.de/naturstein",
+  "https://www.tezgel.de/naturstein/granit",
+  "https://www.tezgel.de/naturstein/marmor-kalkstein",
+  "https://www.tezgel.de/partner",
+  "https://www.tezgel.de/referenzen",
+  "https://www.tezgel.de/referenzen/badsanierung-grossformat",
+  "https://www.tezgel.de/referenzen/balkon-stelzlager",
+  "https://www.tezgel.de/referenzen/barrierefreies-duschbad",
+  "https://www.tezgel.de/referenzen/einfamilienhaus-komplett",
+  "https://www.tezgel.de/referenzen/treppenanlage-wohnhaus",
+  "https://www.tezgel.de/referenzen/wohnbereich-fussbodenheizung",
+  "https://www.tezgel.de/schadensanalyse",
+  "https://www.tezgel.de/standorte",
+  "https://www.tezgel.de/standorte/asslar",
+  "https://www.tezgel.de/standorte/bad-nauheim",
+  "https://www.tezgel.de/standorte/braunfels",
+  "https://www.tezgel.de/standorte/butzbach",
+  "https://www.tezgel.de/standorte/dillenburg",
+  "https://www.tezgel.de/standorte/friedberg",
+  "https://www.tezgel.de/standorte/giessen",
+  "https://www.tezgel.de/standorte/haiger",
+  "https://www.tezgel.de/standorte/herborn",
+  "https://www.tezgel.de/standorte/limburg",
+  "https://www.tezgel.de/standorte/marburg",
+  "https://www.tezgel.de/standorte/solms",
+  "https://www.tezgel.de/standorte/wetzlar",
+  "https://www.tezgel.de/team",
+  "https://www.tezgel.de/termin",
+  "https://www.tezgel.de/treppen",
+  "https://www.tezgel.de/treppen/aussentreppe",
+  "https://www.tezgel.de/treppen/innentreppe",
+  "https://www.tezgel.de/treppen/treppenhaus",
+  "https://www.tezgel.de/ueber-uns",
+  "https://www.tezgel.de/untergrund-abdichtung",
+  "https://www.tezgel.de/untergrund-abdichtung/ausgleich-gefaelle",
+  "https://www.tezgel.de/untergrund-abdichtung/din-18534",
+  "https://www.tezgel.de/untergrund-abdichtung/entkopplung",
+  "https://www.tezgel.de/untergrund-abdichtung/estrich-belegreife",
+  "https://www.tezgel.de/untergrund-abdichtung/fliesen-auf-fliesen",
+  "https://www.tezgel.de/unternehmen"
+ ],
+ "sitemap_anzahl": 163,
+ "robots_hash": "b0c8a9156fdef270",
+ "interne_ziele": 168,
+ "kaputte_links": []
+}
