@@ -1,6 +1,6 @@
 # PRUEFPUNKT
 
-- Lauf: 1 (angepasst) · Phase: P0 · Schritt: 2 (Arbeitsdateien) → 2b Infrastruktur-Commit
-- Letzter grüner Commit: 5a7a7b066ab098a1984bfbc556aa597b957bb8f4 (Ausgangsstand)
+- Lauf: 1 (angepasst) · Phase: P0 · Schritt: 4 (Prüfwerkzeuge)
+- Letzter grüner Commit: siehe `git log` (P0-ORCH-02); Ausgangsstand 5a7a7b0
 - Offene Pakete: keine
-- Nächster exakter Schritt: Infrastruktur-Commit vorbereiten (.gitignore, .vercelignore, eslint/tsconfig exclude, `@source not` in globals.css, x-build-Meta), Reinraum-Build, Push-Tor.
+- Nächster exakter Schritt: Live-Rauchtest des Folgecommits (x-build = Commit), dann `_relaunch/werkzeuge/package.json` anlegen (Playwright 1.56.1, axe, lighthouse, pixelmatch, pngjs, svgo, knip) und Anfragesperre schreiben.
