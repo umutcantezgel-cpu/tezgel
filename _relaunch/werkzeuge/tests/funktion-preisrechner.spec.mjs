@@ -68,6 +68,15 @@ test.describe('PricingCalculator (/preise)', () => {
     expect(anfragen).toHaveLength(0);
   });
 
+  test('Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage', async ({ page, anfragen }) => {
+    await page.goto('/preise');
+    await expect(page.locator('#calc-privacy')).not.toBeChecked();
+    await kontaktAusfuellen(page);
+    await klicken(absendenKnopf(page));
+    await expect(formularVon(page).getByText(/willigen Sie in die Datenverarbeitung/)).toBeVisible();
+    expect(anfragen).toHaveLength(0);
+  });
+
   test('ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage', async ({ page, anfragen }) => {
     await page.goto('/preise');
     await kontaktAusfuellen(page);

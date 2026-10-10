@@ -2,6 +2,7 @@
 // Zweck: misst je Seite und Ansicht, welche Bewegungen laufen, und prüft sie gegen das Bewegungsregister.
 //   1 Register-Abgleich  – document.getAnimations() alle 50 ms + animationstart/-iteration/transitionrun/-start
 //                          + Skript-Bewegung (MutationObserver auf style/SVG-Geometrie, Zähler per characterData)
+//                          + rAF-Schleifen im Ruhefenster (Canvas/WebGL; sichtbare Canvas zählt als animiertes Element)
 //                          → je Element Selektor, Eigenschaften, Dauer, Kurve, data-motion; Kennzahl „registriert“.
 //   2 Technik            – animierte Eigenschaften außerhalb transform/opacity (Ausnahme grid-template-rows bei aufklappen).
 //   3 Framezeiten        – eigener Lauf, CDP Emulation.setCPUThrottlingRate (mobil 4×, Desktop 1×), rAF-Zeitstempel,
@@ -11,8 +12,11 @@
 //   6 Bildfolge (--bildfolge) – Einstieg 0–2 s, Bildschirmfoto alle 100 ms (CDP) nach cache/bewegung/<satz>/bildfolge/.
 // Nutzung: node bewegung.mjs --satz <name> [--seiten /,/bad] [--ansichten m375,d1440] [--bildfolge]
 //          [--laeufe normal,reduziert,frames] [--drossel <n>] [--px 40] [--worker 2] [--wdh 1] [--gegenprobe] [--aus <datei.json>]
-//   --gegenprobe: fügt per page.addStyleTag eine unregistrierte Endlos-Animation mit `left` an der h1 ein und im
-//   Framelauf einen 30-ms-rAF-Rückruf je 10. Bild; Ergebnis nur nach cache/bewegung/<satz>/gegenprobe/ (kein Beleg).
+//   --gegenprobe: fügt per page.addStyleTag eine unregistrierte Endlos-Animation mit `left` an der h1 ein, dazu eine
+//   WAAPI-Endlosverschiebung, die reduce ignoriert, und im Framelauf (addScriptTag) 30 ms Last je 10. rAF-Rückruf;
+//   Ergebnis nur nach cache/bewegung/<satz>/gegenprobe/ (kein Beleg). Erwartung: zusammenfassung.gegenprobe.erkannt = true.
+// Feste Zeiten (begründet): Verweilen 120 ms je Scrollschritt (IO-Schwellen greifen, wie lib.durchscrollen), Ruhefenster
+//   1500 ms (Beobachtung, kein Zustandswarten), Bildfolge-Takt 100 ms. Sonst nur Zustandsabfragen (abklingen, bereit).
 // Messbedingungen: lokaler Server (assertLocal), Anfragesperre (installSperre), Einwilligung „abgelehnt“, DPR 1,
 //   ohne page.clock, de-DE, Europe/Berlin, hell; Sammelläufe ohne Drosselung; höchstens 2 Kontexte gleichzeitig,
 //   Framelauf exklusiv (belegt beide Plätze). Stehen vollständig im Kopf der Ausgabe (bedingungen).
@@ -39,6 +43,7 @@ const wdh = Math.max(1, Number(arg('wdh', '1')));
 const drosselFest = arg('drossel') ? Number(arg('drossel')) : null;
 const SCHRITT_VH = 0.5;       // Sammelläufe: Schrittweite in Bildschirmhöhen
 const VERWEIL_MS = 120;       // Verweilzeit je Schritt (wie durchscrollen() in lib.mjs): IO-Schwellen 20–50 % greifen sicher
+const RAF_SCHLEIFE_JE_BILD = 0.5; // Seiten-rAF-Aufrufe je Bild im Ruhefenster, ab denen eine Skript-Schleife läuft (Schleife ≈ 1/Bild, unabhängig von der Bildrate)
 const RUHE_MS = 1500;         // Beobachtungsfenster nach dem Abklingen: was hier noch läuft, läuft von selbst (Autoplay)
 const ABKLINGEN_MAX_MS = 4000; // Obergrenze beim Warten auf das Ende aller endlichen Bewegungen
 
@@ -216,6 +221,23 @@ function sammler() {
     }
   });
   mo.observe(document, { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: ATTR, characterData: true });
+  // rAF-Schleifen (Canvas/WebGL, Skript-Laufbänder) – unsichtbar für getAnimations; gezählt nur im Ruhefenster.
+  // Erste Aufrufer je Quelle aus dem Stack (Chunk-Datei), höchstens 5.
+  B.raf = { ruhe: 0, quellen: [], bilder: 0 };
+  const rafOrig = window.requestAnimationFrame.bind(window);
+  // Ruhefenster: eigener Bildzähler (über das Original, zählt nicht als Seiten-rAF) → Aufrufe je Bild unabhängig von der Bildrate
+  B.starteRuhe = () => { B.phase = 'ruhe'; B.ruheStart = performance.now(); const z = () => { B.raf.bilder++; if (!B.ruheEnde) rafOrig(z); }; rafOrig(z); };
+  window.requestAnimationFrame = function (cb) {
+    if (B.phase === 'ruhe') {
+      B.raf.ruhe++;
+      if (B.raf.quellen.length < 5) {
+        const zeile = String(new Error().stack || '').split('\n').slice(2).find((l) => /https?:\/\//.test(l)) || '(ohne Quelle)';
+        const q = (zeile.match(/https?:\/\/[^\s)]+/) || [zeile.trim()])[0].replace(/:\d+:\d+$/, '');
+        if (!B.raf.quellen.includes(q)) B.raf.quellen.push(q);
+      }
+    }
+    return rafOrig(cb);
+  };
 
   B.bericht = () => {
     abfrage();
@@ -249,7 +271,11 @@ function sammler() {
       dekl.elemente++; if (e.hasAttribute('data-motion')) dekl.mit_data_motion++;
       const p = cs.transitionProperty; dekl.nach_eigenschaft[p] = (dekl.nach_eigenschaft[p] || 0) + 1;
     }
-    return { elemente, smil, videos, deklariert: dekl, polls: B.polls, ereignisse: B.ereignisse, mutationen: B.mutationen, klasse_html: document.documentElement.className.slice(0, 200), seitenhoehe: document.documentElement.scrollHeight };
+    const canvas = [...document.querySelectorAll('canvas')].filter((c) => { const cs = getComputedStyle(c); const r = c.getBoundingClientRect(); return cs.display !== 'none' && cs.visibility !== 'hidden' && +cs.opacity > 0 && r.width > 0 && r.height > 0 && !c.closest('[hidden]'); })
+      .map((c) => ({ sel: sel(c), breite: c.width, hoehe: c.height, motion: motion(c).eigen, motion_vorfahr: motion(c).vorfahr }));
+    const ruheS = Math.max(0.001, ((B.ruheEnde || performance.now()) - (B.ruheStart || performance.now())) / 1000);
+    const raf = { aufrufe_in_ruhe: B.raf.ruhe, bilder_in_ruhe: B.raf.bilder, je_bild: B.raf.bilder ? +(B.raf.ruhe / B.raf.bilder).toFixed(2) : 0, je_s: +(B.raf.ruhe / ruheS).toFixed(1), quellen: B.raf.quellen.map((q) => { try { return new URL(q).pathname; } catch { return q; } }) };
+    return { elemente, smil, videos, canvas_sichtbar: canvas, raf, deklariert: dekl, polls: B.polls, ereignisse: B.ereignisse, mutationen: B.mutationen, klasse_html: document.documentElement.className.slice(0, 200), seitenhoehe: document.documentElement.scrollHeight };
   };
 }
 
@@ -267,7 +293,16 @@ function rekorder() {
   } catch (e) { R.loafFehler = String(e); }
 }
 
+// Gegenprobe (absichtlich schlechte Fälle, nur im Testlauf, nichts unter src/):
+//  CSS  – unregistrierte Endlos-Animation mit Layout-Eigenschaft `left` an der h1 (Paketvorgabe, page.addStyleTag)
+//  JS   – WAAPI-Endlosverschiebung an der h1, die prefers-reduced-motion ignoriert (wie eine Skript-Bibliothek ohne Weiche)
+//  LAST – 30 ms Last in jedem 10. rAF-Rückruf (Framelauf: verworfene Frames + LoAF aus Bewegungscode)
 const GEGENPROBE_CSS = '@keyframes bw-gegenprobe { from { left: 0px; } to { left: 24px; } } h1 { position: relative; animation: bw-gegenprobe 1500ms linear infinite; }';
+const GEGENPROBE_JS = "void document.querySelector('h1')?.animate([{ transform: 'translateX(0px)' }, { transform: 'translateX(8px)' }], { duration: 1200, iterations: Infinity, id: 'bw-gegenprobe-js' })";
+// Das Lastskript bekommt eine eigene (abgefangene, nie ans Netz gehende) URL, damit LoAF es als Seitenskript mit Quelle sieht –
+// Werkzeug-Code (page.evaluate/addInitScript) hat in LoAF keine Quelle und wird getrennt gezählt.
+const GEGENPROBE_URL = BASE + '/__bw-gegenprobe-last.js';
+const GEGENPROBE_LAST = '(() => { let n = 0; const f = () => { if (++n % 10 === 0) { const t = performance.now(); while (performance.now() - t < 30) {} } requestAnimationFrame(f); }; requestAnimationFrame(f); })();';
 
 // ---------------------------------------------------------------- Knoten-Seite: Hilfen
 class Plaetze { // FIFO-Semaphore: höchstens 2 Kontexte; Framelauf belegt beide (keine Eigenlast neben der Messung)
@@ -301,7 +336,10 @@ async function sammellauf(s, a, modus) {
   try {
     const resp = await page.goto(BASE + s, { waitUntil: 'domcontentloaded', timeout: 45000 });
     await bereit(page);
-    if (gegenprobe) await page.addStyleTag({ content: GEGENPROBE_CSS });
+    if (gegenprobe) {
+      await page.addStyleTag({ content: GEGENPROBE_CSS });
+      await page.evaluate(GEGENPROBE_JS);
+    }
     await abklingen(page);
     await page.evaluate(() => { window.__bw.phase = 'scroll'; });
     const schritte = await page.evaluate(async ({ vh, verweil }) => {
@@ -314,9 +352,9 @@ async function sammellauf(s, a, modus) {
       return n;
     }, { vh: SCHRITT_VH, verweil: VERWEIL_MS });
     await abklingen(page);
-    await page.evaluate(() => { window.__bw.phase = 'ruhe'; });
+    await page.evaluate(() => window.__bw.starteRuhe());
     await page.evaluate((ms) => new Promise((r) => setTimeout(r, ms)), RUHE_MS); // Beobachtungsfenster, keine Wartezeit auf einen Zustand
-    const bericht = await page.evaluate(() => window.__bw.bericht());
+    const bericht = await page.evaluate(() => { window.__bw.ruheEnde = performance.now(); return window.__bw.bericht(); });
     return { status: resp?.status() ?? null, schritte, dauer_ms: Date.now() - t0, konsole, fremd: protokoll.filter((p) => p.art === 'fremd').length, ...bericht };
   } finally { await context.close(); }
 }
@@ -333,6 +371,7 @@ async function abklingen(page) {
 
 // Framelauf: CPU-Drosselung, rAF-Zeitstempel ab Dokumentbeginn, Einstieg bis „bereit“, dann rAF-gekoppeltes Scrollen
 let basisLeistung = null;
+let glRenderer = null; // WebGL-Renderer im Framelauf (headless: SwiftShader = Software-GL → WebGL-lastige Seiten auf Desktop deutlich langsamer)
 async function framelauf(s, a) {
   const v = ANSICHTEN[a];
   const rate = drosselFest ?? (v.isMobile ? 4 : 1);
@@ -347,7 +386,9 @@ async function framelauf(s, a) {
     await bereit(page);
     if (gegenprobe) {
       await page.addStyleTag({ content: GEGENPROBE_CSS });
-      await page.evaluate(() => { let n = 0; const f = () => { if (++n % 10 === 0) { const t = performance.now(); while (performance.now() - t < 30) { /* Gegenprobe: 30 ms Last im rAF */ } } requestAnimationFrame(f); }; requestAnimationFrame(f); });
+      // als Seitenskript mit Quelle (page.route hat Vorrang vor der Sperre im Kontext; die Anfrage erreicht den Server nicht)
+      await page.route(GEGENPROBE_URL, (route) => route.fulfill({ status: 200, contentType: 'text/javascript', body: GEGENPROBE_LAST }));
+      await page.addScriptTag({ url: GEGENPROBE_URL });
     }
     const leistung = await page.evaluate(() => { const t = performance.now(); let x = 0; for (let i = 0; i < 3e6; i++) x += i % 7; return performance.now() - t + (x < 0 ? 1 : 0); });
     await page.evaluate(async (px) => {
@@ -357,6 +398,7 @@ async function framelauf(s, a) {
       await new Promise((r) => { let i = 0; const f = () => (++i >= 30 ? r() : requestAnimationFrame(f)); requestAnimationFrame(f); }); // 30 Bilder Nachlauf (Auftritte am Seitenende)
       R.marke('ende');
     }, pxJeBild);
+    if (!glRenderer) glRenderer = await page.evaluate(() => { try { const c = document.createElement('canvas').getContext('webgl'); const e = c && c.getExtension('WEBGL_debug_renderer_info'); return e ? c.getParameter(e.UNMASKED_RENDERER_WEBGL) : 'unbekannt'; } catch { return 'unbekannt'; } });
     const roh = await page.evaluate(() => ({ ts: window.__bwr.ts, marken: window.__bwr.marken, loaf: window.__bwr.loaf, loafFehler: window.__bwr.loafFehler || null }));
     last.push(os.loadavg()[0]);
     return { rate, leistung_ms: Math.round(leistung), drossel_ist: basisLeistung ? +(leistung / basisLeistung).toFixed(2) : null, last_1min: last, ...roh };
@@ -387,18 +429,24 @@ async function bildfolge(s, a) {
 const ERLAUBT = new Set(['transform', 'opacity', 'translate', 'scale', 'rotate']);
 const LAYOUT = /^(top|left|right|bottom|inset.*|margin.*|padding.*|width|height|min-width|min-height|max-width|max-height|grid-template-.*|grid-(row|column).*|flex.*|gap|row-gap|column-gap|font-size|line-height|letter-spacing|word-spacing|border(-.*)?-width|border-width|position|display|aspect-ratio|x|y|cx|cy|r|rx|ry|d|points)$/;
 const SPARSAM = /^(filter|backdrop-filter|clip-path|mask.*)$/;
+const KATEGORIE_TEXT = { layout: 'Layout-Eigenschaft', paint: 'Paint-Eigenschaft', sparsam: 'filter/clip-path/mask (sparsam, gemessen)', variable: 'CSS-Variable' };
 function kategorie(p) { if (ERLAUBT.has(p)) return null; if (LAYOUT.test(p)) return 'layout'; if (SPARSAM.test(p)) return 'sparsam'; if (p.startsWith('--')) return 'variable'; return 'paint'; }
 
 function werteSammlung(roh, modus) {
   const reg = new Set(REGISTER.kennungen);
-  const elemente = roh.elemente.map((e) => {
+  // rAF-Schleife im Ruhefenster + sichtbare Canvas → die Canvas zählt als animiertes Element (Register-Abgleich, bei reduce Autoplay)
+  const rafSchleife = !!(roh.raf && roh.raf.bilder_in_ruhe >= 5 && roh.raf.je_bild >= RAF_SCHLEIFE_JE_BILD);
+  const canvasAnim = rafSchleife ? (roh.canvas_sichtbar || []).map((c) => ({ sel: c.sel, tag: 'canvas', pseudo: null, motion: c.motion, motion_vorfahr: c.motion_vorfahr, phase: 'ruhe', t: null,
+    anim: [{ art: 'raf-schleife', name: 'raf-schleife', eigenschaften: [], dauer_ms: ['endlos'], verzoegerung_ms: [], kurve: ['skript'], iterationen: 'unendlich', timeline: 'skript', ort: [], phasen: ['ruhe'],
+      anzahl: roh.raf.aufrufe_in_ruhe, ereignis: false, laeuft_in_ruhe: true, quellen: roh.raf.quellen }] })) : [];
+  const elemente = roh.elemente.concat(canvasAnim).map((e) => {
     const eig = [...new Set(e.anim.flatMap((z) => z.eigenschaften))];
     const technik = [];
     for (const p of eig) {
       const k = kategorie(p);
       if (!k) continue;
       if (p === 'grid-template-rows' && (e.motion === 'aufklappen' || e.motion_vorfahr === 'aufklappen')) continue; // Registerausnahme
-      technik.push({ eigenschaft: p, kategorie: k, layout: k === 'layout' });
+      technik.push({ eigenschaft: p, kategorie: k, text: KATEGORIE_TEXT[k], layout: k === 'layout' });
     }
     return { sel: e.sel, pseudo: e.pseudo, motion: e.motion, motion_vorfahr: e.motion_vorfahr, registriert: !!e.motion && reg.has(e.motion),
       registriert_mit_vorfahr: (!!e.motion && reg.has(e.motion)) || (!!e.motion_vorfahr && reg.has(e.motion_vorfahr)),
@@ -410,10 +458,12 @@ function werteSammlung(roh, modus) {
   const n = elemente.length;
   const mitMotion = elemente.filter((e) => e.motion).length;
   const imRegister = elemente.filter((e) => e.registriert).length;
-  const zusatz = { smil: roh.smil.length, videos_laufend: roh.videos.filter((v) => v.laeuft).length };
+  const zusatz = { smil: roh.smil.length, videos_laufend: roh.videos.filter((v) => v.laeuft).length, canvas_sichtbar: (roh.canvas_sichtbar || []).length, raf_ruhe: roh.raf || null };
   const out = { modus, status: roh.status, dauer_ms: roh.dauer_ms, seitenhoehe: roh.seitenhoehe, schritte: roh.schritte, html_klasse: roh.klasse_html, konsole: roh.konsole, fremd: roh.fremd,
     elemente_animiert: n, mit_data_motion: mitMotion, im_register: imRegister, anteil_registriert: n ? +(imRegister / n).toFixed(3) : 1,
     im_register_mit_vorfahr: elemente.filter((e) => e.registriert_mit_vorfahr).length, ...zusatz, polls: roh.polls, ereignisse: roh.ereignisse, mutationen: roh.mutationen };
+  // rAF-Schleife ohne sichtbare Canvas: keine sichtbare Bewegung nachweisbar → nur Hinweis (mit Canvas oben als Element erfasst)
+  out.hinweise = rafSchleife && !canvasAnim.length ? [{ grund: 'raf-schleife ohne sichtbare Canvas', je_bild: roh.raf.je_bild, je_s: roh.raf.je_s, quellen: roh.raf.quellen }] : [];
   if (modus === 'normal') {
     out.unregistriert = elemente.filter((e) => !e.registriert);
     out.technik = elemente.filter((e) => e.technik.length).map((e) => ({ sel: e.sel, pseudo: e.pseudo, motion: e.motion, namen: e.namen, eigenschaften: e.technik }));
@@ -451,16 +501,38 @@ function framestat(d, vsync) {
     anteil_ausgelassene_vsyncs: +((summeK - d.length) / summeK).toFixed(4), anteil_roh_ueber_16_7ms: +(d.filter((x) => x > 16.7).length / d.length).toFixed(4),
     p50_ms: +s[Math.floor(s.length * 0.5)].toFixed(1), p95_ms: +s[Math.floor(s.length * 0.95)].toFixed(1), max_ms: +s[s.length - 1].toFixed(1), vsync_einheiten: hist };
 }
-const chunkCache = new Map();
+const chunkCache = new Map([[GEGENPROBE_URL, { html: false, text: GEGENPROBE_LAST }]]);
+// Inhalts-Signaturen je Skriptquelle. `data-motion` nur als ganzes Attribut (nicht `data-motion-hydrated` o. ä.).
 const SIGNATUREN = [['framer-motion', /framerAppearId|blockInitialAnimation|reducedMotionConfig|skipAnimations/], ['gsap', /GreenSock|ScrollTrigger/], ['lenis', /\blenis\b/i],
-  ['lottie', /bodymovin|lottie/i], ['bewegungsmodul', /k-bewegung|k-bereit|data-motion/]];
-async function chunkBezug(url) {
+  ['lottie', /bodymovin|lottie/i], ['bewegungsmodul', /\bk-(?:bewegung|bereit)\b|data-motion(?![\w-])/], ['reduced-motion-abfrage', /prefers-reduced-motion/]];
+// Dokument als Quelle (Inline-Skripte): nur echte Inline-Skripte prüfen, nicht RSC-Nutzlast (self.__next_f) oder JSON(-LD);
+// liegt sourceCharPosition in einem Inline-Skript, nur dieses.
+async function chunkBezug(url, pos) {
   if (!url) return null;
-  if (chunkCache.has(url)) return chunkCache.get(url);
-  let bezug = null;
-  try { assertLocal(url); const txt = await (await fetch(url)).text(); bezug = SIGNATUREN.filter(([, re]) => re.test(txt)).map(([n]) => n); } catch { bezug = null; }
-  chunkCache.set(url, bezug);
-  return bezug;
+  let quelle = chunkCache.get(url);
+  if (quelle === undefined) {
+    try {
+      assertLocal(url);
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const txt = await res.text();
+      if (/text\/html/.test(res.headers.get('content-type') || '')) {
+        const inline = [];
+        for (const m of txt.matchAll(/<script(?![^>]*\bsrc=)([^>]*)>([\s\S]*?)<\/script>/g)) {
+          if (/type=["']?application\/(ld\+)?json/.test(m[1]) || /^\s*\(?self\.__next_f/.test(m[2])) continue;
+          const start = m.index + m[0].indexOf('>') + 1;
+          inline.push({ start, ende: start + m[2].length, text: m[2] });
+        }
+        quelle = { html: true, inline };
+      } else quelle = { html: false, text: txt };
+    } catch { quelle = null; }
+    chunkCache.set(url, quelle);
+  }
+  if (!quelle) return null;
+  const pruefe = (t) => SIGNATUREN.filter(([, re]) => re.test(t)).map(([n]) => n);
+  if (!quelle.html) return pruefe(quelle.text);
+  const treffer = typeof pos === 'number' && pos >= 0 ? quelle.inline.find((x) => pos >= x.start && pos <= x.ende) : null;
+  return pruefe(treffer ? treffer.text : quelle.inline.map((x) => x.text).join('\n'));
 }
 async function werteFrames(roh) {
   const marke = (p) => (roh.marken.find((m) => m[0] === p) || [null, null])[1];
@@ -473,17 +545,23 @@ async function werteFrames(roh) {
     const skripte = [];
     for (const s of e.skripte) {
       const bezug = [];
-      if (/FrameRequestCallback/i.test(s.invoker || '')) bezug.push('rAF-Rückruf');
-      if (/anim|motion|tween|spring|scroll/i.test(s.funktion || '')) bezug.push('funktionsname');
-      const ch = await chunkBezug(s.url); if (ch && ch.length) bezug.push(...ch.map((c) => 'chunk:' + c));
+      // Werkzeug-Code (page.evaluate/addInitScript: Rekorder, Scroll-Treiber) hat keine Quelle → eigene Klasse, nicht Bewegungscode der Seite
+      const werkzeug = !s.url && /FrameRequestCallback/i.test(s.invoker || '');
+      if (!werkzeug) {
+        if (/FrameRequestCallback/i.test(s.invoker || '')) bezug.push('rAF-Rückruf');
+        if (/anim|motion|tween|spring|scroll/i.test(s.funktion || '')) bezug.push('funktionsname');
+        const ch = await chunkBezug(s.url, s.pos); if (ch && ch.length) bezug.push(...ch.map((c) => 'chunk:' + c));
+      }
       let kurz = s.url; try { kurz = new URL(s.url).pathname; } catch {}
-      skripte.push({ invoker: String(s.invoker || '').slice(0, 80), typ: s.typ, quelle: kurz || '(inline/eval)', funktion: s.funktion || null, dauer_ms: Math.round(s.dauer), erzwungen_ms: Math.round(s.erzwungen || 0), bewegungsbezug: bezug });
+      skripte.push({ invoker: String(s.invoker || '').slice(0, 80), typ: s.typ, quelle: werkzeug ? '(werkzeug)' : (kurz || '(inline/eval)'), funktion: s.funktion || null, pos: s.pos ?? null,
+        dauer_ms: Math.round(s.dauer), erzwungen_ms: Math.round(s.erzwungen || 0), bewegungsbezug: bezug, werkzeug });
     }
     const phase = tScroll == null || e.start < tScroll ? 'einstieg' : 'scroll';
     loaf.push({ phase, start_ms: Math.round(e.start), dauer_ms: Math.round(e.dauer), blockierend_ms: Math.round(e.blockierend), render_ms: e.renderStart ? Math.round(e.start + e.dauer - e.renderStart) : 0, skripte });
   }
   const skripteAlle = loaf.flatMap((l) => l.skripte.map((s) => ({ ...s, phase: l.phase })));
   const bew = skripteAlle.filter((s) => s.bewegungsbezug.length);
+  const wz = skripteAlle.filter((s) => s.werkzeug);
   return {
     drossel: roh.rate, drossel_ist: roh.drossel_ist, leistung_ms: roh.leistung_ms, last_1min: roh.last_1min, vsync_ms: +vsync.toFixed(2),
     einstieg: framestat(intervalle(roh.ts, 0, tScroll ?? Infinity), vsync), scroll: framestat(intervalle(roh.ts, tScroll ?? 0, tEnde ?? Infinity), vsync),
@@ -491,6 +569,7 @@ async function werteFrames(roh) {
       laengster_ms: Math.max(0, ...loaf.map((l) => l.dauer_ms)), laengste_skriptdauer_ms: Math.max(0, ...skripteAlle.map((s) => s.dauer_ms)),
       bewegung: { skripte: bew.length, ueber_20ms: bew.filter((s) => s.dauer_ms > 20).length, laengste_ms: Math.max(0, ...bew.map((s) => s.dauer_ms)),
         top: bew.sort((x, y) => y.dauer_ms - x.dauer_ms).slice(0, 5) },
+      werkzeug: { skripte: wz.length, laengste_ms: Math.max(0, ...wz.map((s) => s.dauer_ms)), erzwungen_ms_max: Math.max(0, ...wz.map((s) => s.erzwungen_ms)) },
       top: skripteAlle.sort((x, y) => y.dauer_ms - x.dauer_ms).slice(0, 5), fehler: roh.loafFehler },
     _loafRoh: loaf,
   };
@@ -559,11 +638,11 @@ function muster(liste) { // gleiche Bewegung über Seiten hinweg zusammenfassen
 const N = ergebnisse.filter((r) => r.normal);
 const summe = (f) => N.reduce((n, r) => n + f(r), 0);
 const unreg = N.flatMap((r) => r.normal.unregistriert.map((e) => ({ r, e })));
-const tech = N.flatMap((r) => r.normal.technik.map((t) => ({ r, e: { ...t, eigenschaften: t.eigenschaften.map((x) => `${x.eigenschaft} (${x.kategorie})`) } })));
+const tech = N.flatMap((r) => r.normal.technik.map((t) => ({ r, e: { ...t, eigenschaften: t.eigenschaften.map((x) => `${x.eigenschaft} (${KATEGORIE_TEXT[x.kategorie] || x.kategorie})`) } })));
 const R = ergebnisse.filter((r) => r.reduziert);
 const F = ergebnisse.filter((r) => r.frames);
 const fsum = (ans) => {
-  const fs2 = F.filter((r) => !ans || r.ansicht === ans);
+  const fs2 = F.filter((r) => !ans || (ans === 'mobil' ? ANSICHTEN[r.ansicht].isMobile : r.ansicht === ans));
   const ges = fs2.reduce((o, r) => { o.n += r.frames.scroll.intervalle || 0; o.v += Math.round((r.frames.scroll.anteil_verworfen || 0) * (r.frames.scroll.intervalle || 0)); o.s += Math.round((r.frames.scroll.anteil_ueber_50ms || 0) * (r.frames.scroll.intervalle || 0)); return o; }, { n: 0, v: 0, s: 0 });
   return { laeufe: fs2.length, intervalle: ges.n, anteil_verworfen: ges.n ? +(ges.v / ges.n).toFixed(4) : null, anteil_ueber_50ms: ges.n ? +(ges.s / ges.n).toFixed(4) : null,
     schlechteste_seite: fs2.map((r) => ({ seite: r.seite, ansicht: r.ansicht, anteil_verworfen: r.frames.scroll.anteil_verworfen })).sort((a, b) => b.anteil_verworfen - a.anteil_verworfen)[0] || null,
@@ -576,31 +655,44 @@ const zus = {
     anteil: summe((r) => r.normal.elemente_animiert) ? +(summe((r) => r.normal.im_register) / summe((r) => r.normal.elemente_animiert)).toFixed(3) : 1,
     im_register_mit_vorfahr: summe((r) => r.normal.im_register_mit_vorfahr), unregistriert_muster: muster(unreg).slice(0, 40) },
   technik: { elemente_ausserhalb_transform_opacity: tech.length, davon_layout: summe((r) => r.normal.technik_layout), muster: muster(tech).slice(0, 30) },
-  frames_scroll: { gesamt: fsum(null), ...Object.fromEntries(ansichten.map((a) => [a, fsum(a)])) },
+  // Z-09-Soll gilt für den gedrosselten Mobillauf (4× CPU); Desktop (1×) informativ
+  frames_scroll: { gesamt: fsum(null), mobil: fsum('mobil'), ...Object.fromEntries(ansichten.map((a) => [a, fsum(a)])) },
   loaf: { anzahl: F.reduce((n, r) => n + r.frames.loaf.anzahl, 0), laengster_ms: Math.max(0, ...F.map((r) => r.frames.loaf.laengster_ms)), laengste_skriptdauer_ms: Math.max(0, ...F.map((r) => r.frames.loaf.laengste_skriptdauer_ms)),
     bewegung_skripte: F.reduce((n, r) => n + r.frames.loaf.bewegung.skripte, 0), bewegung_ueber_20ms: F.reduce((n, r) => n + r.frames.loaf.bewegung.ueber_20ms, 0),
     bewegung_laengste_ms: Math.max(0, ...F.map((r) => r.frames.loaf.bewegung.laengste_ms)), bewegung_top: loafBew.sort((a, b) => b.dauer_ms - a.dauer_ms).slice(0, 8) },
   reduziert: { verstoesse: R.reduce((n, r) => n + r.reduziert.verstoesse.length, 0), elemente_animiert: R.reduce((n, r) => n + r.reduziert.elemente_animiert, 0),
     muster: muster(R.flatMap((r) => r.reduziert.verstoesse.map((v) => ({ r, e: { sel: v.sel, pseudo: v.pseudo, motion: v.motion, namen: [v.grund, ...(v.namen || [])], eigenschaften: v.arten || v.eigenschaften || [], arten: v.typ } })))).slice(0, 30) },
   deklariert: { elemente_mit_transition: summe((r) => r.normal.deklariert.elemente), mit_data_motion: summe((r) => r.normal.deklariert.mit_data_motion) },
+  raf_schleifen: ergebnisse.flatMap((r) => ['normal', 'reduziert'].filter((m) => r[m]?.raf_ruhe && r[m].raf_ruhe.bilder_in_ruhe >= 5 && r[m].raf_ruhe.je_bild >= RAF_SCHLEIFE_JE_BILD)
+    .map((m) => ({ seite: r.seite, ansicht: r.ansicht, modus: m, je_bild: r[m].raf_ruhe.je_bild, je_s: r[m].raf_ruhe.je_s, canvas_sichtbar: r[m].canvas_sichtbar, quellen: r[m].raf_ruhe.quellen }))),
 };
 zus.z09 = { // Soll aus ABNAHME.md Z-09
   registriert_100: zus.registriert.anteil === 1,
-  verworfene_frames_max_5_prozent: zus.frames_scroll.gesamt.anteil_verworfen != null ? zus.frames_scroll.gesamt.anteil_verworfen <= 0.05 : null,
+  verworfene_frames_max_5_prozent: zus.frames_scroll.mobil.anteil_verworfen != null ? zus.frames_scroll.mobil.anteil_verworfen <= 0.05 : null, // mobil, 4× gedrosselt
+  verworfene_frames_max_5_prozent_je_seite_mobil: F.some((r) => ANSICHTEN[r.ansicht].isMobile) ? F.filter((r) => ANSICHTEN[r.ansicht].isMobile).every((r) => r.frames.scroll.anteil_verworfen <= 0.05) : null,
   kein_loaf_bewegung_ueber_20ms: F.length ? zus.loaf.bewegung_ueber_20ms === 0 : null,
   reduziert_ohne_orts_groessenaenderung: R.length ? R.every((r) => !r.reduziert.verstoesse.some((v) => v.grund.startsWith('ortsaenderung'))) : null,
   reduziert_ohne_autoplay: R.length ? R.every((r) => !r.reduziert.verstoesse.some((v) => v.grund.startsWith('autoplay'))) : null,
 };
 if (gegenprobe) {
-  const treffer = (r) => ({
-    seite: r.seite, ansicht: r.ansicht,
-    unregistriert: !!r.normal?.unregistriert.some((e) => e.namen.includes('bw-gegenprobe') && !e.registriert),
-    layout_eigenschaft: !!r.normal?.technik.some((t) => t.namen.includes('bw-gegenprobe') && t.eigenschaften.some((x) => x.eigenschaft === 'left' && x.layout)),
-    reduziert_gemeldet: r.reduziert ? r.reduziert.verstoesse.filter((v) => (v.namen || []).includes('bw-gegenprobe')).map((v) => v.grund) : null,
-    loaf_bewegung_ueber_20ms: r.frames ? r.frames.loaf.bewegung.ueber_20ms : null, scroll_anteil_verworfen: r.frames ? r.frames.scroll.anteil_verworfen : null,
-  });
-  zus.gegenprobe = { eingriff: GEGENPROBE_CSS + ' · Framelauf zusätzlich: 30 ms Last in jedem 10. rAF-Rückruf', je_lauf: ergebnisse.map(treffer) };
-  zus.gegenprobe.erkannt = zus.gegenprobe.je_lauf.every((t) => t.unregistriert && t.layout_eigenschaft && (t.reduziert_gemeldet == null || t.reduziert_gemeldet.length > 0));
+  const treffer = (r) => {
+    const gr = r.reduziert ? r.reduziert.verstoesse.filter((v) => (v.namen || []).includes('bw-gegenprobe-js')).map((v) => v.grund) : null;
+    const t = {
+      seite: r.seite, ansicht: r.ansicht,
+      unregistriert: !!r.normal?.unregistriert.some((e) => e.namen.includes('bw-gegenprobe') && !e.registriert),
+      layout_eigenschaft: !!r.normal?.technik.some((x) => x.namen.includes('bw-gegenprobe') && x.eigenschaften.some((y) => y.eigenschaft === 'left' && y.layout)),
+      reduziert_js_gemeldet: gr,
+      loaf_bewegung_ueber_20ms: r.frames ? r.frames.loaf.bewegung.ueber_20ms : null, scroll_anteil_verworfen: r.frames ? r.frames.scroll.anteil_verworfen : null,
+    };
+    t.erkannt = t.unregistriert && t.layout_eigenschaft
+      && (gr == null || (gr.includes('ortsaenderung') && gr.includes('autoplay/endlos')))
+      && (t.loaf_bewegung_ueber_20ms == null || (t.loaf_bewegung_ueber_20ms > 0 && t.scroll_anteil_verworfen > 0.05));
+    return t;
+  };
+  zus.gegenprobe = { eingriff: { css: GEGENPROBE_CSS, js: GEGENPROBE_JS, framelauf: GEGENPROBE_LAST + ` (per addScriptTag als ${new URL(GEGENPROBE_URL).pathname}, per page.route bedient)` },
+    erwartung: 'normal: h1 unregistriert + left als Layout-Eigenschaft · reduziert: WAAPI-Verschiebung als ortsaenderung + autoplay/endlos (CSS-Variante darf vom Reset der Seite neutralisiert sein) · frames: LoAF aus Bewegungscode > 20 ms und > 5 % verworfene Frames',
+    je_lauf: ergebnisse.map(treffer) };
+  zus.gegenprobe.erkannt = zus.gegenprobe.je_lauf.every((t) => t.erkannt);
 }
 
 const kopf = {
@@ -609,10 +701,10 @@ const kopf = {
     einwilligung: 'abgelehnt', dpr: 1, page_clock: false, locale: 'de-DE', zeitzone: 'Europe/Berlin', farbschema: 'light', browser: `chromium ${browser.version()} (Playwright 1.56.1, headless)`,
     ansichten: Object.fromEntries(ansichten.map((a) => [a, ANSICHTEN[a]])), seiten, laeufe, gegenprobe,
     sammellauf: { reduced_motion: { normal: 'no-preference', reduziert: 'reduce' }, drosselung: 'keine', abfrage_ms: 50, ereignisse: ['animationstart', 'animationiteration', 'transitionrun', 'transitionstart'],
-      skriptbewegung: 'MutationObserver style + SVG-Geometrie, ≥ 3 verschiedene Werte je Eigenschaft', scroll: `Schritte ${SCHRITT_VH} Bildschirmhöhe, je Schritt 2 Bilder + ${VERWEIL_MS} ms`, abklingen: `Zustandsabfrage, max ${ABKLINGEN_MAX_MS} ms`, ruhefenster_ms: RUHE_MS },
+      skriptbewegung: 'MutationObserver style + SVG-Geometrie, ≥ 3 verschiedene Werte je Eigenschaft', raf_schleife: `≥ ${RAF_SCHLEIFE_JE_BILD} Seiten-rAF-Aufrufe je Bild im Ruhefenster (≥ 5 Bilder); mit sichtbarer Canvas = animiertes Element`, scroll: `Schritte ${SCHRITT_VH} Bildschirmhöhe, je Schritt 2 Bilder + ${VERWEIL_MS} ms`, abklingen: `Zustandsabfrage, max ${ABKLINGEN_MAX_MS} ms`, ruhefenster_ms: RUHE_MS },
     framelauf: { reduced_motion: 'no-preference', drosselung: drosselFest ? `${drosselFest}× fest` : 'mobil 4×, Desktop 1× (CDP Emulation.setCPUThrottlingRate)', scroll: `${pxJeBild} px je Bild (rAF-gekoppelt, behavior instant) + 30 Bilder Nachlauf`,
       einstieg: 'rAF ab Dokumentbeginn bis Scrollbeginn (nach load, fonts.ready, networkidle ≤ 5 s)', exklusiv: true, wiederholungen: wdh,
-      verworfen: 'Intervall ≥ 2 vsync (= „> 16,7 ms“ ohne Rundungsrauschen; rAF-Zeitstempel sind auf 0,1 ms gerundet)', ueber_50ms: 'Intervall ≥ 4 vsync (> 50 ms)', leistungsbasis_ms: basisLeistung ? Math.round(basisLeistung) : null },
+      verworfen: 'Intervall ≥ 2 vsync (= „> 16,7 ms“ ohne Rundungsrauschen; rAF-Zeitstempel sind auf 0,1 ms gerundet)', ueber_50ms: 'Intervall ≥ 4 vsync (> 50 ms)', z09_soll: 'mobil (4×) – Desktop 1× informativ', gl_renderer: glRenderer, leistungsbasis_ms: basisLeistung ? Math.round(basisLeistung) : null },
     loaf: { quelle: 'PerformanceObserver long-animation-frame (buffered) im Framelauf', bewegungsbezug: 'rAF-Rückruf (invoker FrameRequestCallback) · Funktionsname /anim|motion|tween|spring|scroll/ · Chunk-Inhalt: ' + SIGNATUREN.map(([n]) => n).join(', ') },
     register: REGISTER, maschine: { cpus: os.cpus().length, last_1min_start: os.loadavg()[0] }, laufzeit_s: Math.round((Date.now() - tStart) / 1000), worker,
   },
@@ -623,5 +715,5 @@ ensureDir(path.dirname(ziel));
 fs.writeFileSync(ziel, JSON.stringify(ausgabe, null, 1));
 console.log(`\nbewegung: ${ergebnisse.length} Seiten×Ansichten · ${Math.round((Date.now() - tStart) / 1000)} s → ${path.relative(RELAUNCH, ziel)}`);
 console.log(JSON.stringify({ registriert: `${zus.registriert.im_register}/${zus.registriert.elemente_animiert}`, technik_ausserhalb: zus.technik.elemente_ausserhalb_transform_opacity, layout: zus.technik.davon_layout,
-  verworfen_scroll: zus.frames_scroll.gesamt.anteil_verworfen, ueber_50: zus.frames_scroll.gesamt.anteil_ueber_50ms, loaf: zus.loaf.anzahl, loaf_bewegung_ueber_20: zus.loaf.bewegung_ueber_20ms,
+  verworfen_scroll_mobil: zus.frames_scroll.mobil.anteil_verworfen, verworfen_scroll_gesamt: zus.frames_scroll.gesamt.anteil_verworfen, ueber_50: zus.frames_scroll.gesamt.anteil_ueber_50ms, loaf: zus.loaf.anzahl, loaf_bewegung_ueber_20: zus.loaf.bewegung_ueber_20ms,
   reduziert_verstoesse: zus.reduziert.verstoesse, fehler: zus.fehler.length, ...(gegenprobe ? { gegenprobe_erkannt: zus.gegenprobe.erkannt } : {}) }));

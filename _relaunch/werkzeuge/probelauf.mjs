@@ -35,9 +35,10 @@ import path from 'node:path';
 import { BASE, assertLocal, ANSICHTEN, FESTE_ZEIT, installSperre, setzeEinwilligung, bereit, ensureDir, RELAUNCH } from './lib.mjs';
 
 const WERKZEUG_VERSION = '1.0';
-const AKTION_TIMEOUT = 5000;
+const AKTION_TIMEOUT = 30000; // Bedienbarkeitsprüfung je Handlung (Playwright: sichtbar, stabil, frei, aktiv)
 const WARTE_TIMEOUT = 10000;
 const MAX_BIS = 250;
+const BANNER_TIMEOUT = 8000;
 
 // ---------------------------------------------------------------------------------------------------------
 // Die fünf Besucheraufgaben (wortgleich mit PROBELAUF.md) und ihre objektiven Zielzustände.
@@ -122,6 +123,16 @@ function aehnlich(a, b) { // Dice-Koeffizient über Bigramme
   return na + nb ? (2 * schnitt) / (na + nb) : 0;
 }
 class SchrittFehler extends Error { constructor(grund, extra = {}) { super(grund); this.grund = grund; Object.assign(this, extra); } }
+// Playwright-Fehler → Besuchergrund: erste Zeile plus der aussagekräftigste Eintrag des Aufruf-Protokolls
+// (verdeckt, nicht stabil, nicht sichtbar, deaktiviert, außerhalb des Bildes).
+function pwGrund(e) {
+  const zeilen = String(e && e.message || e).split('\n').map((z) => z.trim()).filter(Boolean);
+  const erste = zeilen[0] || '';
+  const log = zeilen.filter((z) => /^-\s/.test(z)).map((z) => z.replace(/^-\s+/, ''));
+  const wichtig = [...log].reverse().find((z) => /intercepts pointer events|not stable|not visible|not enabled|disabled|outside of the viewport|detached|not attached|readonly|not an <input>/i.test(z));
+  return kurz(wichtig ? `${erste} – ${wichtig}` : erste, 220);
+}
+const pwLog = (e) => String(e && e.message || e).split("\n").map((z) => z.trim()).filter(Boolean).slice(1).slice(-10);
 
 // Erste Zeile eines ariaSnapshot → „rolle "Name"“
 function ersteZeile(snap) {
@@ -135,8 +146,16 @@ function teileRolleName(beschr) {
   const m = /^([a-z]+)(?: "((?:[^"\\]|\\.)*)")?/.exec(beschr || '');
   return m ? { rolle: m[1], name: (m[2] || '').replace(/\\"/g, '"').replace(/\\\\/g, '\\') } : { rolle: '', name: beschr || '' };
 }
+// Rolle und Name eines Elements aus seinem ariaSnapshot (genau wie getByRole sie sieht). Höchstens 4 Abfragen
+// gleichzeitig: mehr staut sich unter Last im Renderer und läuft in die Obergrenze.
+let laufend = 0; const warteschlange = [];
+async function begrenzt(fn) {
+  if (laufend >= 4) await new Promise((r) => warteschlange.push(r));
+  laufend++;
+  try { return await fn(); } finally { laufend--; const n = warteschlange.shift(); if (n) n(); }
+}
 async function beschreibe(loc) {
-  try { return kurz(ersteZeile(await loc.ariaSnapshot({ timeout: 1500 })), 110); } catch { return '(ohne Namen)'; }
+  return begrenzt(async () => { try { return kurz(ersteZeile(await loc.ariaSnapshot({ timeout: 10000 })), 110); } catch { return '(ohne Namen)'; } });
 }
 
 // Im Seitenkontext: Lage und Sichtbarkeit eines Elements (für Besucher sichtbar = nicht display/visibility/opacity 0,
@@ -174,7 +193,7 @@ const LAGE = (el) => {
   const a = el.closest('a[href]');
   return {
     sichtbar, imBild, frei, verdeckt, bereich,
-    oben: Math.round(r.top), unten: Math.round(r.bottom), links: Math.round(r.left), hoehe: Math.round(r.height), vh,
+    oben: Math.round(r.top), unten: Math.round(r.bottom), links: Math.round(r.left), hoehe: Math.round(r.height), vh, absOben: Math.round(r.top + scrollY),
     href: a ? a.getAttribute('href') : null,
     tag: el.tagName.toLowerCase(),
     editierbar: el.matches('input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit]):not([type=hidden]), textarea, [contenteditable=""], [contenteditable=true]'),
@@ -222,21 +241,23 @@ const ROLLEN_TIPPE = ['link', 'button', 'tab', 'menuitem', 'menuitemcheckbox', '
 const ROLLEN_FELD = ['textbox', 'searchbox', 'combobox', 'spinbutton', 'listbox', 'radiogroup', 'group'];
 const ROLLEN_BEREICH = ['navigation', 'dialog', 'alertdialog', 'region', 'banner', 'contentinfo', 'main', 'complementary', 'form', 'list', 'group', 'article', 'listbox', 'menu', 'tablist'];
 
-function rollenUnion(scope, rollen, name, exact) {
-  let loc = null;
-  for (const r of rollen) { const l = scope.getByRole(r, { name, exact }); loc = loc ? loc.or(l) : l; }
-  return loc;
+// Je Rolle ein eigener Locator (statt einer .or()-Vereinigung): jede spätere Auflösung (Lage, Name, Klick mit
+// Bedienbarkeitsprüfung) fragt dann nur eine Rolle ab – unter Last um ein Vielfaches schneller.
+function rollenListe(scope, rollen, name, exact) {
+  return rollen.map((r) => scope.getByRole(r, { name, exact }));
 }
 
-async function sammle(loc, stufe, grenze = 40) {
-  const gesamt = await loc.count();
-  const sichtbar = [];
-  for (let i = 0; i < Math.min(gesamt, grenze); i++) {
-    const l = loc.nth(i);
-    const lage = await l.evaluate(LAGE).catch(() => null);
-    if (!lage || !lage.sichtbar) continue;
-    sichtbar.push({ loc: l, stufe, lage, beschreibung: await beschreibe(l) });
-  }
+async function sammle(locs, stufe, grenze = 40) {
+  const liste = Array.isArray(locs) ? locs : [locs];
+  const zahlen = await Promise.all(liste.map((l) => l.count().catch(() => 0)));
+  const gesamt = zahlen.reduce((a, b) => a + b, 0);
+  const einzel = [];
+  liste.forEach((l, j) => { for (let i = 0; i < zahlen[j] && einzel.length < grenze; i++) einzel.push(l.nth(i)); });
+  const lagen = await Promise.all(einzel.map((l) => l.evaluate(LAGE).catch(() => null)));
+  const idx = lagen.map((lage, i) => (lage && lage.sichtbar ? i : -1)).filter((i) => i >= 0);
+  const namen = await Promise.all(idx.map((i) => beschreibe(einzel[i])));
+  const sichtbar = idx.map((i, k) => ({ loc: einzel[i], stufe, lage: lagen[i], beschreibung: namen[k] }))
+    .sort((a, b) => (a.lage.absOben - b.lage.absOben) || (a.lage.links - b.lage.links)); // Dokumentlage (oben → unten)
   return { gesamt, sichtbar, gekappt: gesamt > grenze };
 }
 
@@ -244,21 +265,24 @@ const kandidatText = (k, i) => `${i + 1}) ${k.beschreibung}${k.lage.bereich ? ` 
 
 async function bereichScope(page, name) {
   for (const exact of [true, false]) {
-    const loc = rollenUnion(page, ROLLEN_BEREICH, name, exact);
-    const n = await loc.count();
-    for (let i = 0; i < n; i++) { const l = loc.nth(i); const lage = await l.evaluate(LAGE).catch(() => null); if (lage && lage.sichtbar) return l; }
+    const { sichtbar } = await sammle(rollenListe(page, ROLLEN_BEREICH, name, exact), 'bereich', 20);
+    if (sichtbar.length) return sichtbar[0].loc;
   }
   throw new SchrittFehler(`Bereich „${name}“ nicht gefunden (Name einer Navigation, eines Dialogs oder Abschnitts)`);
 }
 
 // Ähnliche Bedienelemente (für „nicht gefunden“): aus dem Aria-Baum der ganzen Seite.
 async function aehnliche(page, name) {
-  let snap = '';
-  try { snap = await page.locator('body').ariaSnapshot({ timeout: 5000 }); } catch { return []; }
   const namen = new Map();
+  let snap = '';
+  try { snap = await page.locator('body').ariaSnapshot({ timeout: 20000 }); } catch {}
   for (const z of snap.split('\n')) {
     const m = /^\s*- '?(link|button|tab|menuitem|checkbox|radio|switch|option|combobox|textbox|searchbox|spinbutton) "((?:[^"\\]|\\.)*)"/.exec(z);
     if (m) { const k = `${m[1]} "${m[2]}"`; if (!namen.has(k)) namen.set(k, m[2]); }
+  }
+  if (!namen.size) { // Rückfall: Näherung im Seitenkontext (z. B. wenn der Aria-Baum unter Last nicht rechtzeitig kam)
+    const l = await page.locator(BEDIEN_SEL).evaluateAll(BEDIEN_LISTE, false).catch(() => []);
+    for (const x of l) if (x.name && !/^(generic|none|presentation)$/.test(x.rolle)) { const k = `${x.rolle} "${kurz(x.name, 100)}"`; if (!namen.has(k)) namen.set(k, x.name); }
   }
   return [...namen.entries()].map(([k, n]) => ({ k, s: Math.max(aehnlich(n, name), falte(n).includes(falte(name).split(' ')[0] || '§') ? 0.35 : 0) }))
     .sort((a, b) => b.s - a.s).slice(0, 8).map((x) => `${x.k} (Ähnlichkeit ${x.s.toFixed(2)})`);
@@ -273,13 +297,13 @@ async function loese(page, name, { nr, inBereich, rollen = ROLLEN_TIPPE, feld = 
     ? [
       ['label-genau', () => scope.getByLabel(name, { exact: true })],
       ['label', () => scope.getByLabel(name)],
-      ['rolle-genau', () => rollenUnion(scope, rollen, name, true)],
-      ['rolle', () => rollenUnion(scope, rollen, name, false)],
+      ['rolle-genau', () => rollenListe(scope, rollen, name, true)],
+      ['rolle', () => rollenListe(scope, rollen, name, false)],
       ['platzhalter', () => scope.getByPlaceholder(name)],
     ]
     : [
-      ['rolle-genau', () => rollenUnion(scope, rollen, name, true)],
-      ['rolle', () => rollenUnion(scope, rollen, name, false)],
+      ['rolle-genau', () => rollenListe(scope, rollen, name, true)],
+      ['rolle', () => rollenListe(scope, rollen, name, false)],
       ['text-genau', () => scope.getByText(name, { exact: true })],
       ['text', () => scope.getByText(name)],
       ['label-genau', () => scope.getByLabel(name, { exact: true })],
@@ -331,8 +355,8 @@ async function beruhige(page, netz) {
         let last = performance.now(); const start = last;
         const mo = new MutationObserver(() => { last = performance.now(); });
         mo.observe(document, { subtree: true, childList: true, attributes: true, characterData: true });
-        const tick = () => { const now = performance.now(); if (now - last >= ruheMs) { mo.disconnect(); res('ruhig'); } else if (now - start >= maxMs) { mo.disconnect(); res('obergrenze'); } else requestAnimationFrame(tick); };
-        requestAnimationFrame(tick);
+        const tick = () => { const now = performance.now(); if (now - last >= ruheMs) { mo.disconnect(); res('ruhig'); } else if (now - start >= maxMs) { mo.disconnect(); res('obergrenze'); } else setTimeout(tick, 50); };
+        setTimeout(tick, 50); // Abfrage per Zeitgeber, nicht per Bild: unter Last stocken Bildwechsel
       }), { ruheMs: 250, maxMs: 3000 });
       zustand.animation = await page.evaluate((maxMs) => {
         const endliche = document.getAnimations().filter((a) => { try { const t = a.effect && a.effect.getComputedTiming(); return a.playState === 'running' && t && Number.isFinite(t.endTime); } catch { return false; } });
@@ -361,28 +385,68 @@ async function fokusInfo(page) {
   return { beschreibung, ...lage };
 }
 
-async function bedienImBild(page) {
-  const alle = page.locator(BEDIEN_SEL);
-  const lagen = await alle.evaluateAll((els) => els.map((el, i) => {
-    const vw = innerWidth, vh = innerHeight; const r = el.getBoundingClientRect();
-    if (r.width <= 1 || r.height <= 1 || el.closest('[inert]')) return null;
-    if (!(r.bottom > 0 && r.right > 0 && r.top < vh && r.left < vw)) return null;
+// Im Seitenkontext, ein Durchgang für alle Bedienelemente: Lage, Verdeckung und eine Näherung von Rolle und
+// zugänglichem Namen (aria-labelledby → aria-label → Beschriftung/Platzhalter → Textinhalt ohne aria-hidden, alt,
+// title). Ersetzt bis zu 70 einzelne ariaSnapshot-Abfragen (unter Last je Schritt 20 s und mehr). Die Liste dient
+// nur der Orientierung; aufgelöst wird beim Antippen immer über Playwright (getByRole/getByText/getByLabel).
+const BEDIEN_LISTE = (els, nurImBild) => {
+  const vw = innerWidth, vh = innerHeight;
+  const sauber = (t) => String(t || '').replace(/\s+/g, ' ').trim();
+  const textVon = (n) => {
+    if (n.nodeType === 3) return n.textContent;
+    if (n.nodeType !== 1) return '';
+    const e = n;
+    if (e.getAttribute('aria-hidden') === 'true' || e.hidden || ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE'].includes(e.tagName)) return '';
+    const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden') return '';
+    if (e.getAttribute('aria-label')) return ' ' + e.getAttribute('aria-label') + ' ';
+    if (e.tagName === 'IMG') return ' ' + (e.getAttribute('alt') || '') + ' ';
+    if (e.tagName.toLowerCase() === 'svg') { const t = e.querySelector('title'); return t ? ' ' + t.textContent + ' ' : ''; }
+    const block = /^(block|flex|grid|list-item|table)/.test(cs.display) ? ' ' : '';
+    let t = ''; for (const c of e.childNodes) t += textVon(c); return block + t + block;
+  };
+  const rolle = (e) => {
+    const r = e.getAttribute('role'); if (r) return r.split(' ')[0];
+    const tag = e.tagName.toLowerCase(); const typ = (e.getAttribute('type') || 'text').toLowerCase();
+    if (tag === 'a') return 'link'; if (tag === 'button' || tag === 'summary') return 'button';
+    if (tag === 'select') return e.multiple || e.size > 1 ? 'listbox' : 'combobox'; if (tag === 'textarea') return 'textbox';
+    if (tag === 'input') return ({ checkbox: 'checkbox', radio: 'radio', button: 'button', submit: 'button', reset: 'button', image: 'button', range: 'slider', number: 'spinbutton', search: 'searchbox' })[typ] || 'textbox';
+    return e.isContentEditable ? 'textbox' : 'generic';
+  };
+  const name = (e) => {
+    const lb = e.getAttribute('aria-labelledby');
+    if (lb) { const t = sauber(lb.split(/\s+/).map((id) => { const x = document.getElementById(id); return x ? textVon(x) : ''; }).join(' ')); if (t) return t; }
+    if (e.getAttribute('aria-label')) return sauber(e.getAttribute('aria-label'));
+    if (e.labels && e.labels.length) { const t = sauber([...e.labels].map(textVon).join(' ')); if (t) return t; }
+    if (['INPUT', 'TEXTAREA'].includes(e.tagName)) { if (['submit', 'button', 'reset'].includes(e.type) && e.value) return sauber(e.value); if (e.getAttribute('placeholder')) return sauber(e.getAttribute('placeholder')); }
+    if (e.tagName === 'SELECT') return sauber(e.getAttribute('title') || '');
+    const t = sauber(textVon(e)); if (t) return t;
+    return sauber(e.getAttribute('title') || '');
+  };
+  return els.map((el, i) => {
+    const r = el.getBoundingClientRect();
+    if (r.width <= 1 || r.height <= 1 || el.closest('[inert],[aria-hidden="true"]')) return null;
+    const imBild = r.bottom > 0 && r.right > 0 && r.top < vh && r.left < vw;
+    if (nurImBild && !imBild) return null;
     if (el.checkVisibility && !el.checkVisibility({ opacityProperty: true, visibilityProperty: true })) return null;
-    const cx = Math.min(Math.max(r.left + r.width / 2, 1), vw - 1), cy = Math.min(Math.max(r.top + r.height / 2, 1), vh - 1);
-    const hit = document.elementFromPoint(cx, cy);
-    const frei = !!hit && (el === hit || el.contains(hit) || hit.contains(el));
-    let verdeckt = null;
-    if (!frei && hit) { const d = hit.closest('[role=dialog],[role=alertdialog],dialog,[aria-label]'); verdeckt = d ? `${d.getAttribute('role') || d.tagName.toLowerCase()} „${(d.getAttribute('aria-label') || '').slice(0, 50)}“` : hit.tagName.toLowerCase(); }
-    return { i, y: Math.round(r.top), x: Math.round(r.left), frei, verdeckt };
-  }).filter(Boolean)).catch(() => []);
-  const liste = [];
-  for (const l of lagen.slice(0, 70)) {
-    const b = await beschreibe(alle.nth(l.i));
-    if (!b || b === '(ohne Namen)' || /^(generic|none|presentation)\b/.test(b)) continue;
-    liste.push({ ...l, beschreibung: b });
-  }
+    let frei = false, verdeckt = null;
+    if (imBild) {
+      const cx = Math.min(Math.max(r.left + r.width / 2, 1), vw - 1), cy = Math.min(Math.max(r.top + r.height / 2, 1), vh - 1);
+      const hit = document.elementFromPoint(cx, cy);
+      frei = !!hit && (el === hit || el.contains(hit) || hit.contains(el));
+      if (!frei && hit) { const d = hit.closest('[role=dialog],[role=alertdialog],dialog,[aria-label]'); verdeckt = d ? `${d.getAttribute('role') || d.tagName.toLowerCase()} „${(d.getAttribute('aria-label') || '').slice(0, 50)}“` : hit.tagName.toLowerCase(); }
+    }
+    const ro = rolle(el); const n = name(el);
+    const zust = [el.getAttribute('aria-expanded') === 'true' ? '[expanded]' : '', el.getAttribute('aria-pressed') === 'true' || el.checked ? '[checked]' : '', el.disabled || el.getAttribute('aria-disabled') === 'true' ? '[disabled]' : ''].filter(Boolean).join(' ');
+    const kurzN = n.length > 100 ? n.slice(0, 99) + '…' : n;
+    return { i, y: Math.round(r.top), x: Math.round(r.left), imBild, frei, verdeckt, rolle: ro, name: n, beschreibung: `${ro}${n ? ` "${kurzN}"` : ''}${zust ? ' ' + zust : ''}` };
+  }).filter(Boolean);
+};
+
+async function bedienImBild(page) {
+  const lagen = await page.locator(BEDIEN_SEL).evaluateAll(BEDIEN_LISTE, true).catch(() => []);
+  const liste = lagen.filter((l) => l.name && !/^(generic|none|presentation)$/.test(l.rolle));
   liste.sort((a, b) => a.y - b.y || a.x - b.x);
-  return liste;
+  return liste.slice(0, 120);
 }
 
 async function ariaAuszug(page) {
@@ -395,15 +459,15 @@ async function ariaAuszug(page) {
     const e = ebenen.nth(i);
     const lage = await e.evaluate(LAGE).catch(() => null);
     if (!lage || !lage.sichtbar) continue;
-    try { teile.push(`## Offene Ebene\n${kuerze(ohneUrl(await e.ariaSnapshot({ timeout: 3000 })), 120)}`); } catch {}
+    try { teile.push(`## Offene Ebene\n${kuerze(ohneUrl(await e.ariaSnapshot({ timeout: 10000 })), 120)}`); } catch {}
   }
-  try { const kopf = page.getByRole('banner').first(); if (await kopf.count()) teile.push(`## Kopf\n${kuerze(ohneUrl(await kopf.ariaSnapshot({ timeout: 3000 })), 40)}`); } catch {}
+  try { const kopf = page.getByRole('banner').first(); if (await kopf.count()) teile.push(`## Kopf\n${kuerze(ohneUrl(await kopf.ariaSnapshot({ timeout: 10000 })), 40)}`); } catch {}
   try {
     const main = page.locator('main').first();
     const ziel = (await main.count()) ? main : page.locator('body');
-    teile.push(`## Hauptbereich\n${kuerze(ohneUrl(await ziel.ariaSnapshot({ timeout: 5000 })), 300)}`);
+    teile.push(`## Hauptbereich\n${kuerze(ohneUrl(await ziel.ariaSnapshot({ timeout: 20000 })), 300)}`);
   } catch (e) { teile.push(`## Hauptbereich\n(nicht lesbar: ${kurz(e.message, 80)})`); }
-  return { text: teile.join('\n\n'), ebenen: teile.filter((t) => t.startsWith('## Offene Ebene')).map((t) => kurz(t.split('\n')[1], 90)) };
+  return { text: teile.join('\n\n'), ebenen: teile.filter((t) => t.startsWith('## Offene Ebene')).map((t) => kurz(ersteZeile(t.split('\n').slice(1).join('\n')), 90)) };
 }
 
 // ---------------------------------------------------------------------------------------------------------
@@ -512,22 +576,24 @@ let summe = 0;
 async function festhalten(nr, art, extra = {}) {
   const basis = `${zwei(nr)}-${art}`;
   const bild = `${basis}.jpg`;
-  await page.screenshot({ path: path.join(ausDir, bild), type: 'jpeg', quality: 72 }).catch(() => {});
-  const aria = await ariaAuszug(page);
+  const zeiten = {}; let tz = Date.now();
+  const takt = (k) => { const t = Date.now(); zeiten[k] = t - tz; tz = t; };
+  await page.screenshot({ path: path.join(ausDir, bild), type: 'jpeg', quality: 72, timeout: 20000 }).catch(() => {}); takt('bild');
+  const aria = await ariaAuszug(page); takt('aria');
   fs.writeFileSync(path.join(ausDir, `${zwei(nr)}-aria.txt`), aria.text);
-  const aus = await page.evaluate(AUSSCHNITT).catch(() => ({ h1: null, ueberschriften: [], text: '', kurztexte: [], scrollY: 0, seitenhoehe: 0, opened: [] }));
-  const bed = await bedienImBild(page);
+  const aus = await page.evaluate(AUSSCHNITT).catch(() => ({ h1: null, ueberschriften: [], text: '', kurztexte: [], scrollY: 0, seitenhoehe: 0, opened: [] })); takt('ausschnitt');
+  const bed = await bedienImBild(page); takt('bedien');
   fs.writeFileSync(path.join(ausDir, `${zwei(nr)}-sichtbar.txt`), bed.map((b) => `${b.beschreibung}${b.frei ? '' : ` (verdeckt durch ${b.verdeckt})`} · y=${b.y}`).join('\n') + '\n');
   const fokus = eingabe === 'tastatur' || extra.fokusImmer ? await fokusInfo(page) : null;
   const u = new URL(page.url());
   const lokal = ['127.0.0.1', 'localhost'].includes(u.hostname);
-  // Zielprüfung
-  if (aufgabe) {
+  // Zielprüfung – nur nach vollständig ausgeführten Schritten (nicht am Fehlerbild eines abgebrochenen Schritts)
+  if (aufgabe && extra.ziel !== false) {
     const z = { pfad: u.pathname, aus, anfragen: protokoll.filter((p) => p.art === 'anfrage').length };
     aufgabe.ziel.forEach((b, i) => { if (!zielStand[i].erfuellt && lokal) { const t = pruefeBedingung(b, z); if (t) Object.assign(zielStand[i], { erfuellt: true, bei_schritt: nr, treffer: t }); } });
     if (zielErreichtBei === null && zielStand.every((s) => s.erfuellt)) { zielErreichtBei = nr; handlungenBisZiel = summe; }
   }
-  return { url: lokal ? u.pathname + u.search + u.hash : page.url(), h1: aus.h1, scrollY: aus.scrollY, seitenhoehe: aus.seitenhoehe, fokus, ebenen: aria.ebenen, bed, dateien: { bild, aria: `${zwei(nr)}-aria.txt`, sichtbar: `${zwei(nr)}-sichtbar.txt` }, opened: aus.opened };
+  return { url: lokal ? u.pathname + u.search + u.hash : page.url(), h1: aus.h1, scrollY: aus.scrollY, seitenhoehe: aus.seitenhoehe, fokus, ebenen: aria.ebenen, bed, zeiten, dateien: { bild, aria: `${zwei(nr)}-aria.txt`, sichtbar: `${zwei(nr)}-sichtbar.txt` }, opened: aus.opened };
 }
 
 function schrittArt(s) {
@@ -553,7 +619,7 @@ async function scrolleUm(dy) {
   await page.mouse.wheel(0, dy);
   // Zustandsabfrage: Bildlauf steht still (3 Abfragen in Folge gleich, max 2 s)
   let gleich = 0, letzt = null; const t0 = Date.now();
-  while (gleich < 3 && Date.now() - t0 < 2000) { const y = await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => r(scrollY)))); gleich = y === letzt ? gleich + 1 : 0; letzt = y; }
+  while (gleich < 3 && Date.now() - t0 < 2000) { const y = await page.evaluate(() => new Promise((r) => setTimeout(() => r(scrollY), 50))); gleich = y === letzt ? gleich + 1 : 0; letzt = y; }
   const nach = await page.evaluate(() => scrollY);
   return nach - vor;
 }
@@ -592,7 +658,7 @@ async function fuehreAus(s, nr) {
       if (eingabe === 'touch') await k.loc.tap({ timeout: AKTION_TIMEOUT }); else await k.loc.click({ timeout: AKTION_TIMEOUT });
     } catch (e) {
       const m = /<[^>]+> (?:from <[^>]+> subtree )?intercepts pointer events/.exec(e.message);
-      throw new SchrittFehler(m ? `nicht bedienbar: „${s.tippe}“ ist verdeckt – ${kurz(m[0], 160)}` : `Antippen fehlgeschlagen: ${kurz(e.message.split('\n')[0], 160)}`);
+      throw new SchrittFehler(m ? `nicht bedienbar: „${s.tippe}“ ist verdeckt – ${kurz(m[0], 160)}` : `Antippen fehlgeschlagen: ${pwGrund(e)}`, { pw_log: pwLog(e) });
     }
     info.handlungen = 1 + info.bildlauf_implizit;
     Object.assign(info, { ruhe: await nachAktion() });
@@ -607,7 +673,7 @@ async function fuehreAus(s, nr) {
       let erste = null;
       for (let i = 1; i <= maxN; i++) {
         await page.keyboard.press(taste);
-        await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
+        await page.evaluate(() => new Promise((r) => setTimeout(() => setTimeout(r, 0), 0))); // Aufgaben-Warteschlange einmal leeren (Fokus-Handler)
         const f = page.locator('*:focus');
         const b = (await f.count()) ? await beschreibe(f.first()) : '(kein Fokus)';
         spur.push(b);
@@ -631,7 +697,7 @@ async function fuehreAus(s, nr) {
         if (f.href && /^(tel|mailto|sms):/i.test(f.href)) { info.verlassen = f.href.split(':')[0]; info.hinweise.push(`${f.href.split(':')[0]}-Verweis ausgelöst (${f.href}) – außerhalb der Website, nicht ausgeführt`); continue; }
       }
       await page.keyboard.press(taste);
-      if (mal > 1) { await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))).catch(() => {}); const f = page.locator('*:focus'); spur.push((await f.count()) ? await beschreibe(f.first()) : '(kein Fokus)'); }
+      if (mal > 1) { await page.evaluate(() => new Promise((r) => setTimeout(() => setTimeout(r, 0), 0))).catch(() => {}); const f = page.locator('*:focus'); spur.push((await f.count()) ? await beschreibe(f.first()) : '(kein Fokus)'); }
     }
     info.handlungen = mal; if (spur.length) info.spur = spur.slice(-12);
     Object.assign(info, { ruhe: await nachAktion() });
@@ -662,7 +728,7 @@ async function fuehreAus(s, nr) {
       try {
         if (eingabe === 'touch') await k.loc.tap({ timeout: AKTION_TIMEOUT }); else await k.loc.click({ timeout: AKTION_TIMEOUT });
         await k.loc.fill(String(text), { timeout: AKTION_TIMEOUT });
-      } catch (e) { throw new SchrittFehler(`Feld „${feld}“ nicht bedienbar: ${kurz(e.message.split('\n')[0], 160)}`); }
+      } catch (e) { throw new SchrittFehler(`Feld „${feld}“ nicht bedienbar: ${pwGrund(e)}`); }
     }
     info.handlungen = 1 + info.bildlauf_implizit;
     Object.assign(info, { ruhe: await nachAktion() });
@@ -686,13 +752,13 @@ async function fuehreAus(s, nr) {
       if (!k.lage.istSelect) { // Optionsgruppe: Option darin antippen
         const opt = await loese(page, String(option), { rollen: ['radio', 'button', 'option', 'checkbox', 'switch', 'tab'] , inBereich: undefined }).catch(() => null);
         if (!opt) throw new SchrittFehler(`waehle: Option „${option}“ in „${feld}“ nicht gefunden`);
-        try { if (eingabe === 'touch') await opt.loc.tap({ timeout: AKTION_TIMEOUT }); else await opt.loc.click({ timeout: AKTION_TIMEOUT }); } catch (e) { throw new SchrittFehler(`Option „${option}“ nicht bedienbar: ${kurz(e.message.split('\n')[0], 160)}`); }
+        try { if (eingabe === 'touch') await opt.loc.tap({ timeout: AKTION_TIMEOUT }); else await opt.loc.click({ timeout: AKTION_TIMEOUT }); } catch (e) { throw new SchrittFehler(`Option „${option}“ nicht bedienbar: ${pwGrund(e)}`); }
         info.handlungen = 1 + info.bildlauf_implizit;
         Object.assign(info, { ruhe: await nachAktion() });
         return info;
       }
       ziel = k.loc;
-      try { if (eingabe === 'touch') await k.loc.tap({ trial: true, timeout: AKTION_TIMEOUT }); else await k.loc.click({ trial: true, timeout: AKTION_TIMEOUT }); } catch (e) { throw new SchrittFehler(`Auswahlliste „${feld}“ nicht bedienbar: ${kurz(e.message.split('\n')[0], 160)}`); }
+      try { if (eingabe === 'touch') await k.loc.tap({ trial: true, timeout: AKTION_TIMEOUT }); else await k.loc.click({ trial: true, timeout: AKTION_TIMEOUT }); } catch (e) { throw new SchrittFehler(`Auswahlliste „${feld}“ nicht bedienbar: ${pwGrund(e)}`); }
     }
     try { await ziel.selectOption({ label: String(option) }, { timeout: AKTION_TIMEOUT }); } catch {
       try { await ziel.selectOption(String(option), { timeout: AKTION_TIMEOUT }); } catch (e) {
@@ -747,13 +813,13 @@ try {
   const t0 = Date.now();
   await page.goto(BASE + start, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await bereit(page);
-  // Einwilligungsbanner (Erstbesuch) erscheint verzögert – auf Erscheinen warten, höchstens 3 s.
+  // Einwilligungsbanner (Erstbesuch) erscheint verzögert – auf Erscheinen warten (Abfrage alle 100 ms, Obergrenze BANNER_TIMEOUT).
   bedingungen.banner_erschienen = await page.waitForFunction(() => [...document.querySelectorAll('[role=dialog],[role=alertdialog],dialog[open]')].some((d) => {
     const r = d.getBoundingClientRect(); return r.width > 1 && r.height > 1 && /cookie|einwillig|datenschutz|privatsph/i.test((d.getAttribute('aria-label') || '') + ' ' + d.textContent.slice(0, 400));
-  }), null, { timeout: 3000 }).then(() => true).catch(() => false);
+  }), null, { timeout: BANNER_TIMEOUT, polling: 100 }).then(() => true).catch(() => false);
   const ruhe0 = await beruhige(page, netz);
   letzte = await festhalten(0, 'start');
-  ergebnis.schritte.push({ nr: 0, art: 'start', eingabe: { start }, ergebnis: 'ok', handlungen: 0, summe: 0, url: letzte.url, h1: letzte.h1, ebenen: letzte.ebenen, fokus: letzte.fokus, dateien: letzte.dateien, ruhe: ruhe0, dauer_ms: Date.now() - t0 });
+  ergebnis.schritte.push({ nr: 0, art: 'start', eingabe: { start }, ergebnis: 'ok', handlungen: 0, summe: 0, url: letzte.url, h1: letzte.h1, ebenen: letzte.ebenen, fokus: letzte.fokus, dateien: letzte.dateien, ruhe: ruhe0, festhalten_ms: letzte.zeiten, dauer_ms: Date.now() - t0 });
   druck(` 00 start${' '.repeat(36)}→ ${letzte.url} · H1 „${kurz(letzte.h1, 60)}“${letzte.ebenen.length ? ` · Ebenen: ${letzte.ebenen.join(' | ')}` : ''}`);
 
   for (let i = 0; i < schritte.length; i++) {
@@ -761,8 +827,8 @@ try {
     let info;
     try { info = await fuehreAus(s, nr); } catch (e) {
       const grund = e instanceof SchrittFehler ? e.grund : `Werkzeugfehler: ${kurz(e.message, 200)}`;
-      const shot = await festhalten(nr, 'fehler').catch(() => null);
-      ergebnis.abbruch = { schritt: nr, eingabe: s, grund, kandidaten: e.kandidaten || [], url: shot ? shot.url : page.url(), dateien: shot ? shot.dateien : null };
+      const shot = await festhalten(nr, 'fehler', { ziel: false }).catch(() => null);
+      ergebnis.abbruch = { schritt: nr, eingabe: s, grund, kandidaten: e.kandidaten || [], pw_log: e.pw_log || null, url: shot ? shot.url : page.url(), dateien: shot ? shot.dateien : null };
       ergebnis.schritte.push({ nr, art: schrittArt(s), eingabe: s, ergebnis: 'fehler', grund, handlungen: 0, summe, url: shot?.url, dateien: shot?.dateien, dauer_ms: Date.now() - t1 });
       druck(` ${zwei(nr)} ${schrittText(s).padEnd(40)} ✗ ABBRUCH: ${grund}`);
       for (const k of e.kandidaten || []) druck(`      · ${k}`);
@@ -779,7 +845,7 @@ try {
     if (opened.length) { info.hinweise.push(`window.open abgefangen: ${opened.map((x) => kurz(x, 60)).join(', ')}`); ergebnis.verlassen.push({ schritt: nr, ziel: 'window.open', urls: opened }); await page.evaluate(() => { window.__relaunchOpened = []; }).catch(() => {}); }
     if (info.ruhe?.neuesFenster) info.hinweise.push('neues Fenster/Tab geöffnet – der Lauf geht dort weiter');
     if (eingabe === 'tastatur' && stand.fokus && stand.fokus.beschreibung && !stand.fokus.beschreibung.startsWith('(kein') && !stand.fokus.imBild) info.hinweise.push('Fokus liegt außerhalb des sichtbaren Ausschnitts');
-    ergebnis.schritte.push({ nr, art: schrittArt(s), eingabe: s, ergebnis: 'ok', ziel_element: info.ziel_element || null, auswahl: info.auswahl || null, handlungen: info.handlungen, bildlauf_implizit: info.bildlauf_implizit || 0, summe, url: stand.url, h1: stand.h1, scrollY: stand.scrollY, ebenen: stand.ebenen, fokus: stand.fokus, spur: info.spur || null, hinweise: info.hinweise, ruhe: info.ruhe, dateien: stand.dateien, dauer_ms: Date.now() - t1 });
+    ergebnis.schritte.push({ nr, art: schrittArt(s), eingabe: s, ergebnis: 'ok', ziel_element: info.ziel_element || null, auswahl: info.auswahl || null, handlungen: info.handlungen, bildlauf_implizit: info.bildlauf_implizit || 0, summe, url: stand.url, h1: stand.h1, scrollY: stand.scrollY, ebenen: stand.ebenen, fokus: stand.fokus, spur: info.spur || null, hinweise: info.hinweise, ruhe: info.ruhe, dateien: stand.dateien, festhalten_ms: stand.zeiten, dauer_ms: Date.now() - t1 });
     const fokusTxt = stand.fokus ? ` · Fokus: ${kurz(stand.fokus.beschreibung, 50)}${stand.fokus.imBild === false ? ' (außer Bild)' : ''}` : '';
     druck(` ${zwei(nr)} ${schrittText(s).padEnd(40)} ✓ ${info.ziel_element ? `${kurz(info.ziel_element, 60)} · ` : ''}+${info.handlungen} = ${summe} · ${stand.url}${fokusTxt}${info.hinweise.length ? ` · ${info.hinweise.join(' · ')}` : ''}`);
   }

@@ -466,7 +466,7 @@ Mikrointeraktionen und Zustände, Auswahlfarbe, Teilen-Bilder (OG) im Formsystem
 
 ## Ergänzte und neue Pakete
 - **P3-00k** (Orchestrator, T2): Rang-1-Korrekturen im Bestand – Einwilligung im Preisrechner startet leer (E-014, N-14; Test „ohne Haken kein Versand“), vorgetäuschtes Benachrichtigungs-Abzeichen „1“ am WhatsApp-Widget entfällt (E-012). Erklärte Pixel-Abweichung nur an Checkbox bzw. Abzeichen.
-- **P3-00l** (Opus + Gegenprüfer, T2): Formular-Hooks für F-01–F-09, F-11/F-12 (`useConsent` geteilt, `MapConsentGate`).
+- **P3-00l** (Opus + Gegenprüfer, T2): Formular-Hooks für F-01–F-03 und F-12 (`MapConsentGate`), `useConsent` (F-11) wird geteilt; die Hooks für F-04–F-09 entstehen in P4-05a/b vor ihrer Kern-Ansicht (je T2). Läuft nach dem Umzug P3-00h.
 - **P3-00m** (Haiku): `kern-klassen.mjs` (jede Klasse im HTML einer Kern-Seite hat eine Regel im Kern-CSS, N-19).
 - **P3-00n** (Haiku): Feld `seitenart` je URL in `GRUNDMENGE.json` nach K-002 (N-23).
 - **P3-00o** (Orchestrator): Erprobung 2 (N-04) – Wegwerf-Baum mit Minimal-`(kern)` (Layout, Kern-CSS, statische + dynamische Probe-Route mit `notFound()`): Bestands-HTML/CSS gleich, Kern-Route lädt nur Kern-CSS und 2 Schriften, Wechsel beider Richtungen ohne Konsolenfehler, 404 für unbekannte Adressen und `notFound()` in beiden Gruppen, Klammer-Globs greifen. Belege ins Repo. Scheitert sie: E-015 Weg 2.

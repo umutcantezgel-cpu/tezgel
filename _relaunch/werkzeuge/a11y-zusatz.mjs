@@ -20,10 +20,11 @@
 // Nutzung:
 //   node a11y-zusatz.mjs --satz p0-ausgangsstand [--seiten /,/bad] [--ansichten m375,d1440]
 //        [--pruefungen tastatur,reflow,zoom,textabstand,forced,ohnejs] [--ohne-erstbesuch] [--max-tabs 400]
-//        [--worker 2] [--gegenprobe fokus[,verdeckt,falle,reihenfolge,reflow,zoom,textabstand,forced,ohnejs]] [--aus datei.json]
+//        [--worker 2] [--gegenprobe fokus[,verdeckt,falle,reihenfolge,reflow,zoom,textabstand,forced,ohnejs]] [--basis datei.json] [--aus datei.json]
 //   Standard: 7 Hauptseiten (GRUNDMENGE.json), alle Prüfungen. --ansichten gilt für tastatur/textabstand/forced/ohnejs.
 //   Ausgabe: belege/<satz>/a11y-zusatz.json (Zusammenfassung), Rohdaten unter cache/a11y-zusatz/<satz>/.
-//   Gegenprobe-Läufe schreiben nie nach belege/, sondern nach cache/a11y-zusatz/<satz>/gegenprobe-<namen>.json.
+//   Gegenprobe-Läufe schreiben nie nach belege/, sondern nach cache/a11y-zusatz/<satz>/gegenprobe-<namen>.json, und
+//   vergleichen mit der Basis (Standard belege/<satz>/a11y-zusatz.json; tastatur je Fokusschritt über deren Rohdaten).
 //
 // Messbedingungen: lokaler Server (assertLocal), Anfragesperre (installSperre, G5), Einwilligung „abgelehnt“ (Tastatur
 // zusätzlich „erstbesuch“, Banner per Zustandsabfrage abgewartet), reducedMotion 'reduce', de-DE, Europe/Berlin, hell,
@@ -70,9 +71,16 @@ const REGELN = {
     sprung_rueckwaerts: 'Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen',
     fokus_sichtbar: 'Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). '
       + 'Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). '
-      + 'U = 2·(Breite + Höhe) des sichtbaren Elementrechtecks (1-px-Umfang). Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss, '
-      + 'Rundungen eingerechnet) · duenn ≥ 0,7·U (≈ 1 px) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. '
-      + '„Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei (Fokusfalle o. Ä.).',
+      + 'Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach '
+      + 'werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung '
+      + '(je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang. Status: ok ≥ 1,5·U Kontrastpixel '
+      + '(≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) '
+      + 'geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. '
+      + 'grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. '
+      + 'Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte '
+      + 'mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als '
+      + '„Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). '
+      + 'Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).',
     fokus_verdeckt: 'elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; '
       + '„fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; '
       + '„abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei',
@@ -81,10 +89,10 @@ const REGELN = {
     iframes: 'ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)',
   },
   reflow: { ansicht: '320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)', horizontal: 'scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1', ueberlauf: 'lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()' },
-  zoom: { css: '1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)', aequivalent: '640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)', verdeckt: 'sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist', nie_im_bild: 'Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb)' },
-  textabstand: { stilblatt: '*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}', befund: 'Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde' },
+  zoom: { css: '1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)', aequivalent: '640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)', verdeckt: 'sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist', nie_im_bild: 'Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen', info: 'im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar' },
+  textabstand: { stilblatt: '*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}', befund: 'Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde', scroll_ueberhang: 'Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info' },
   forced: { emulation: "page.emulateMedia({ forcedColors: 'active' })", befund: 'sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert' },
-  ohnejs: { kontext: 'javaScriptEnabled: false', text: 'sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)', erster_bildschirm: 'Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum; gezählt mit Inhalt (Text/Bild) und ohne aria-hidden', navigation: 'mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten' },
+  ohnejs: { kontext: 'javaScriptEnabled: false', text: 'sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)', erster_bildschirm: 'Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert', navigation: 'mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten' },
 };
 
 const FOKUS_PAD = 8;
@@ -130,7 +138,7 @@ function HELFER() {
     id(el) { let i = ids.get(el); if (!i) { i = ++n; ids.set(el, i); } return i; },
     kurz(e) {
       const teile = [];
-      for (let x = e, i = 0; x && x.nodeType === 1 && i < 4; x = x.parentElement, i++) {
+      for (let x = e, i = 0; x && x.nodeType === 1 && x !== document.body && x !== document.documentElement && i < 4; x = x.parentElement, i++) {
         let t = x.tagName.toLowerCase();
         if (x.id) { teile.unshift(`${t}#${x.id}`); break; }
         const c = [...x.classList].filter((k) => !/[:[\]/]/.test(k)).slice(0, 2);
@@ -165,7 +173,8 @@ function HELFER() {
         const cx = cs.overflowX !== 'visible', cy = cs.overflowY !== 'visible';
         if (!cx && !cy) continue;
         const r = p.getBoundingClientRect();
-        if ((cx && (x < r.left || x > r.right)) || (cy && (y < r.top || y > r.bottom))) return true;
+        // halboffen: ein Vorfahr mit Höhe/Breite 0 (eingeklapptes Akkordeon) schneidet immer ab
+        if ((cx && (x < r.left || x >= r.right)) || (cy && (y < r.top || y >= r.bottom))) return true;
       }
       return false;
     },
@@ -238,7 +247,7 @@ async function SCHRITT(maxMs) {
     ende: false, id: Z.id(el), tag: el.tagName.toLowerCase(), rolle: el.getAttribute('role'), name: Z.name(el), href: el.getAttribute('href'),
     pfad: Z.kurz(el), rect: { x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) },
     docY: Math.round(r.top + scrollY), scrollY: Math.round(scrollY), fest: f ? f.pos : null, focusVisible: el.matches(':focus-visible'),
-    stil: Z.stil(el), mitte, ganzVerdeckt: mitte.s !== 'frei' && ecken.every((s) => s !== 'frei'), stabil: st,
+    stil: Z.stil(el), mitte, ganzVerdeckt: mitte.s !== 'frei' && ecken.every((s) => s !== 'frei'), stabil: st, sichtbar: Z.sichtbar(el),
     sprungziel: el.getAttribute('href') === '#main-content' ? !!document.getElementById('main-content') : null,
   };
 }
@@ -250,6 +259,70 @@ async function BLUR(maxMs) {
   return { stil: Z.stil(el), frei: !ae || ae === document.body || ae === document.documentElement, stabil: st };
 }
 function REFOKUS() { const el = window.__a11yAktiv; el.focus({ preventScroll: true }); return document.activeElement === el; }
+
+// Messlage: Ragt der Ausschnitt (Element + pad) aus dem Bild, wird das Element nur für die Pixelmessung mittig gerollt
+// (sonst fehlt der Fokusring am Bildrand). Alle Scrollstände werden gemerkt und danach zurückgesetzt (LAGE_ZURUECK),
+// damit der nächste Tab im natürlichen Scrollstand landet (Prüfung „verdeckt“ bleibt unverfälscht).
+async function MESSLAGE([pad, maxMs]) {
+  const Z = window.__a11yZ; const el = window.__a11yAktiv;
+  const box = () => { const r = el.getBoundingClientRect(); return { x: r.left, y: r.top, w: r.width, h: r.height }; };
+  // Ring-Stichproben 4 px außerhalb des Rechtecks (Kantenmitten + Ecken): liegt dort eine fremde feste Ebene?
+  const randFest = (q) => {
+    const o = 4, xs = [q.x - o, q.x + q.w / 2, q.x + q.w + o - 1], ys = [q.y - o, q.y + q.h / 2, q.y + q.h + o - 1];
+    for (const x of xs) for (const y of ys) {
+      if (x === xs[1] && y === ys[1]) continue;
+      if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) continue;
+      const h = document.elementFromPoint(x, y); if (!h || h === el || el.contains(h)) continue;
+      const f = Z.fest(h); if (f && !f.el.contains(el)) return Z.kurz(f.el);
+    }
+    return null;
+  };
+  const mitteVon = () => { const g = Z.hauptRect(el); return Z.treffer(el, g.left + g.width / 2, g.top + g.height / 2).s; };
+  let b = box();
+  const randNatur = randFest(b);
+  const mitteNatur = mitteVon();
+  const drin = b.x - pad >= 0 && b.y - pad >= 0 && b.x + b.w + pad <= innerWidth && b.y + b.h + pad <= innerHeight && !randNatur;
+  const passt = b.w + 2 * pad <= innerWidth && b.h + 2 * pad <= innerHeight;
+  window.__a11yLage = null;
+  let verschoben = false;
+  if (!drin && passt) {
+    const lage = [{ el: document.scrollingElement || document.documentElement, l: scrollX, t: scrollY, fenster: true }];
+    for (let p = el.parentElement; p && p !== document.body && p !== document.documentElement; p = p.parentElement) {
+      if (p.scrollHeight > p.clientHeight || p.scrollWidth > p.clientWidth) lage.push({ el: p, l: p.scrollLeft, t: p.scrollTop });
+    }
+    window.__a11yLage = lage;
+    el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
+    await Z.stabil(el, maxMs);
+    b = box();
+    verschoben = true;
+    // Mittig schlechter als natürlich (Mitte dort verdeckt, z. B. Banner)? → zurück und im natürlichen Scrollstand messen
+    if (mitteVon() !== 'frei' && mitteNatur === 'frei') {
+      for (const q of lage.slice().reverse()) { if (q.fenster) window.scrollTo({ left: q.l, top: q.t, behavior: 'instant' }); else { q.el.scrollLeft = q.l; q.el.scrollTop = q.t; } }
+      window.__a11yLage = null;
+      await Z.stabil(el, maxMs);
+      b = box();
+      verschoben = false;
+    }
+  }
+  // Umfang mit Eckenrundung (CSS-Skalierung zu großer Radien wie 9999px eingerechnet), Teil im Bild
+  const cs = getComputedStyle(el);
+  const px = (v, bezug) => (v.endsWith('%') ? (parseFloat(v) / 100) * bezug : parseFloat(v)) || 0;
+  const ecken = ['TopLeft', 'TopRight', 'BottomRight', 'BottomLeft'].map((k) => { const t = cs[`border${k}Radius`].split(' '); return { h: px(t[0], b.w), v: px(t[1] || t[0], b.h) }; });
+  const f = Math.min(1, ...[[0, 1, 'h', b.w], [3, 2, 'h', b.w], [0, 3, 'v', b.h], [1, 2, 'v', b.h]].map(([i, j, a, s]) => { const sum = ecken[i][a] + ecken[j][a]; return sum > 0 ? s / sum : 1; }));
+  const radien = ecken.map((e) => Math.min(e.h, e.v) * f);
+  const mitte = mitteVon();
+  return { rect: { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.w), h: Math.round(b.h) }, radien: radien.map((r) => Math.round(r * 10) / 10), verschoben, rand_fest_natuerlich: randNatur, rand_fest_messlage: verschoben ? randFest(b) : randNatur, mitte_messlage: mitte };
+}
+async function LAGE_ZURUECK(maxMs) {
+  const lage = window.__a11yLage; if (!lage) return false;
+  for (const s of lage.slice().reverse()) {
+    if (s.fenster) window.scrollTo({ left: s.l, top: s.t, behavior: 'instant' });
+    else { s.el.scrollLeft = s.l; s.el.scrollTop = s.t; }
+  }
+  window.__a11yLage = null;
+  await window.__a11yZ.stabil(window.__a11yAktiv, maxMs);
+  return true;
+}
 
 async function VERDECKUNG(SEL) {
   const Z = window.__a11yZ;
@@ -279,15 +352,18 @@ async function VERDECKUNG(SEL) {
   }
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   const verdeckt = [], nieImBild = [];
-  let verborgen = 0;
+  let verborgen = 0, imScroller = 0;
+  // eigener Scroll-Container (overflow auto/scroll mit Überhang) zwischen Element und Dokument → per Container-Scrollen erreichbar
+  const scroller = (e) => { for (let p = e.parentElement; p && p !== document.body && p !== document.documentElement; p = p.parentElement) { const cs = getComputedStyle(p); if ((['auto', 'scroll'].includes(cs.overflowX) && p.scrollWidth > p.clientWidth + 1) || (['auto', 'scroll'].includes(cs.overflowY) && p.scrollHeight > p.clientHeight + 1)) return true; } return false; };
   els.forEach((e, i) => {
     const s = stand[i];
     const d = { pfad: Z.kurz(e), name: Z.name(e) };
     if (s.gesehen > 0 && s.frei === 0) verdeckt.push({ ...d, durch: s.t.durch || s.t.s, fest: s.t.fest || null, ebene: s.t.ebene || null });
     else if (s.gesehen === 0 && s.abgeschnitten > 0) verborgen++;
-    else if (s.gesehen === 0) { const g = Z.hauptRect(e); nieImBild.push({ ...d, x: Math.round(g.left), w: Math.round(g.width) }); }
+    else if (s.gesehen === 0 && scroller(e)) imScroller++;
+    else if (s.gesehen === 0) { const g = Z.hauptRect(e); nieImBild.push({ ...d, x: Math.round(g.left), y: Math.round(g.top), w: Math.round(g.width), fest: !!Z.fest(e) }); }
   });
-  return { bedienelemente: els.length, positionen, verdeckt, nie_im_bild: nieImBild, im_overflow_verborgen: verborgen };
+  return { bedienelemente: els.length, positionen, verdeckt, nie_im_bild: nieImBild, im_overflow_verborgen: verborgen, im_scroller: imScroller };
 }
 
 function TEXTSCHNITT() {
@@ -316,6 +392,20 @@ function TEXTSCHNITT() {
       }
     }
     if (ueber > 2) out.push({ id: Z.id(el), pfad: Z.kurz(el), text: beispiel, ueberstand: Math.round(ueber), achse: hy && hx ? 'xy' : hy ? 'y' : 'x', lineClamp: !!(cs.webkitLineClamp && cs.webkitLineClamp !== 'none') });
+  }
+  return out;
+}
+
+// Wortlaut des Pakets: Element mit overflow hidden/clip, Text darin, scrollHeight > clientHeight bzw. scrollWidth > clientWidth
+function SCROLLSCHNITT() {
+  const Z = window.__a11yZ; const out = [];
+  for (const el of document.querySelectorAll('body *')) {
+    const cs = getComputedStyle(el);
+    const hx = cs.overflowX === 'hidden' || cs.overflowX === 'clip', hy = cs.overflowY === 'hidden' || cs.overflowY === 'clip';
+    if (!hx && !hy) continue;
+    if (el.closest('[aria-hidden="true"]') || !Z.sichtbar(el) || Z.srOnly(el, cs) || !(el.textContent || '').trim()) continue;
+    const dy = hy ? el.scrollHeight - el.clientHeight : 0, dx = hx ? el.scrollWidth - el.clientWidth : 0;
+    if (dy > 1 || dx > 1) out.push({ id: Z.id(el), pfad: Z.kurz(el), dx, dy });
   }
   return out;
 }
@@ -439,9 +529,9 @@ async function pruefeTastatur(s, a, zustand) {
     const schritte = [];
     const zaehl = { ok: 0, duenn: 0, kontrastarm: 0, unsichtbar: 0, 'nicht-messbar': 0 };
     const verdeckt = { fest: 0, andere: 0, ausserhalb: 0, abgeschnitten: 0, ganz: 0 };
-    const befunde = { fokus: [], verdeckt: [], sprung: [], falle: null, zyklus: null, refokus: [] };
+    const befunde = { fokus: [], verdeckt: [], sprung: [], falle: null, zyklus: null, refokus: [], ring_teilverdeckt: [] };
     const besuche = new Map();
-    let letzteId = null, gleich = 0, ende = 'obergrenze', vorig = null, ersteId = null, bilder = 0;
+    let letzteId = null, gleich = 0, ende = 'obergrenze', vorig = null, ersteId = null, bilder = 0, ohneUmriss = 0;
     const bildDir = path.join(CACHE, 'tastatur', `${a}-${zustand}`, slug(s));
     for (let n = 1; n <= maxTabs; n++) {
       await page.keyboard.press('Tab');
@@ -475,15 +565,20 @@ async function pruefeTastatur(s, a, zustand) {
         if (info.ganzVerdeckt) verdeckt.ganz++;
         befunde.verdeckt.push({ nr: n, art, ganz: info.ganzVerdeckt, pfad: info.pfad, name: info.name, durch: info.mitte.durch || null, ebene: info.mitte.ebene || null, rect: info.rect });
       }
-      // Fokus sichtbar (Pixel Ruhe/Fokus)
-      const sx0 = Math.max(0, info.rect.x), sy0 = Math.max(0, info.rect.y);
-      const sx1 = Math.min(v.width, info.rect.x + info.rect.w), sy1 = Math.min(v.height, info.rect.y + info.rect.h);
+      // Fokus sichtbar (Pixel Ruhe/Fokus) – in der Messlage (Ausschnitt ganz im Bild), danach Scrollstand zurück
+      const lage = await page.evaluate(MESSLAGE, [FOKUS_PAD, 1500]);
+      const m = lage.rect;
+      const sx0 = Math.max(0, m.x), sy0 = Math.max(0, m.y);
+      const sx1 = Math.min(v.width, m.x + m.w), sy1 = Math.min(v.height, m.y + m.h);
+      const grundSichtbar = !info.sichtbar ? 'element-unsichtbar' : lage.mitte_messlage === 'abgeschnitten' ? 'im-overflow-abgeschnitten'
+        : lage.mitte_messlage !== 'frei' ? 'verdeckt-in-messlage' : lage.rand_fest_messlage ? 'ring-unter-fester-ebene' : undefined;
+      if (lage.rand_fest_natuerlich && info.mitte.s === 'frei') befunde.ring_teilverdeckt.push({ nr: n, pfad: info.pfad, name: info.name, ebene: lage.rand_fest_natuerlich });
       let fokus;
-      if (info.rect.w < 1 || info.rect.h < 1) fokus = { status: 'unsichtbar', grund: 'ohne-groesse' };
-      else if (sx1 <= sx0 || sy1 <= sy0) fokus = { status: 'unsichtbar', grund: 'ausserhalb-bild' };
+      if (m.w < 1 || m.h < 1) fokus = { status: 'unsichtbar', grund: 'ohne-groesse', stilAenderung: [] };
+      else if (sx1 <= sx0 || sy1 <= sy0) fokus = { status: 'unsichtbar', grund: 'ausserhalb-bild', stilAenderung: [] };
       else {
-        const x0 = Math.max(0, info.rect.x - FOKUS_PAD), y0 = Math.max(0, info.rect.y - FOKUS_PAD);
-        const x1 = Math.min(v.width, info.rect.x + info.rect.w + FOKUS_PAD), y1 = Math.min(v.height, info.rect.y + info.rect.h + FOKUS_PAD);
+        const x0 = Math.max(0, m.x - FOKUS_PAD), y0 = Math.max(0, m.y - FOKUS_PAD);
+        const x1 = Math.min(v.width, m.x + m.w + FOKUS_PAD), y1 = Math.min(v.height, m.y + m.h + FOKUS_PAD);
         const clip = { x: x0, y: y0, width: x1 - x0, height: y1 - y0 };
         const bildF = await page.screenshot({ clip, animations: 'disabled' });
         const ruhe = await page.evaluate(BLUR, 1500);
@@ -491,7 +586,8 @@ async function pruefeTastatur(s, a, zustand) {
         const refok = await page.evaluate(REFOKUS);
         if (!refok) befunde.refokus.push({ nr: n, pfad: info.pfad });
         const px = vergleiche(bildF, bildR);
-        const U = 2 * ((sx1 - sx0) + (sy1 - sy0));
+        const Urechteck = 2 * ((sx1 - sx0) + (sy1 - sy0));
+        const U = Math.max(0.5 * Urechteck, Urechteck - lage.radien.reduce((s, r) => s + (2 - Math.PI / 2) * r, 0));
         const stilAenderung = Object.keys(info.stil).filter((k) => info.stil[k] !== ruhe.stil[k]);
         let status;
         if (!ruhe.frei || !px) status = 'nicht-messbar';
@@ -499,7 +595,7 @@ async function pruefeTastatur(s, a, zustand) {
         else if (px.kontrast < MIN_FAKTOR * U) status = 'kontrastarm';
         else if (px.kontrast < OK_FAKTOR * U) status = 'duenn';
         else status = 'ok';
-        fokus = { status, ...px, umfang: U, stilAenderung, stabil: info.stabil.ok && ruhe.stabil.ok };
+        fokus = { status, grund: status === 'ok' ? undefined : grundSichtbar, ...px, umfang: Math.round(U), umfang_rechteck: Urechteck, radien: lage.radien, messlage_verschoben: lage.verschoben, rand_fest: lage.rand_fest_messlage, clip, stilAenderung, stabil: info.stabil.ok && ruhe.stabil.ok };
         if (status !== 'ok' && bilder < 12) {
           ensureDir(bildDir);
           fs.writeFileSync(path.join(bildDir, `${String(n).padStart(3, '0')}-fokus.png`), bildF);
@@ -507,8 +603,11 @@ async function pruefeTastatur(s, a, zustand) {
           bilder++;
         }
       }
+      if (lage.verschoben) await page.evaluate(LAGE_ZURUECK, 1500);
+      fokus.outline_oder_schatten = fokus.stilAenderung.includes('outline') || fokus.stilAenderung.includes('boxShadow');
+      if (!fokus.outline_oder_schatten) ohneUmriss++;
       zaehl[fokus.status]++;
-      if (['unsichtbar', 'kontrastarm', 'duenn', 'nicht-messbar'].includes(fokus.status)) befunde.fokus.push({ nr: n, status: fokus.status, grund: fokus.grund, pfad: info.pfad, name: info.name, kontrast: fokus.kontrast, umfang: fokus.umfang, stilAenderung: fokus.stilAenderung });
+      if (['unsichtbar', 'kontrastarm', 'duenn', 'nicht-messbar'].includes(fokus.status)) befunde.fokus.push({ nr: n, status: fokus.status, grund: fokus.grund, pfad: info.pfad, name: info.name, kontrast: fokus.kontrast, maxKontrast: fokus.maxKontrast, umfang: fokus.umfang, stilAenderung: fokus.stilAenderung });
       e.fokus = fokus;
       schritte.push(e);
     }
@@ -520,12 +619,14 @@ async function pruefeTastatur(s, a, zustand) {
     r.fokus = zaehl;
     r.verdeckt = verdeckt;
     r.kennzahlen = {
-      fokus_nicht_sichtbar: zaehl.unsichtbar + zaehl.kontrastarm, fokus_unter_2px: zaehl.duenn, fokus_nicht_messbar: zaehl['nicht-messbar'],
+      fokus_nicht_sichtbar: zaehl.unsichtbar + zaehl.kontrastarm,
+      fokus_nicht_sichtbar_davon_verdeckt_verborgen: befunde.fokus.filter((b) => ['unsichtbar', 'kontrastarm'].includes(b.status) && ['verdeckt-in-messlage', 'ring-unter-fester-ebene', 'im-overflow-abgeschnitten', 'element-unsichtbar'].includes(b.grund)).length,
+      fokus_ring_teilverdeckt_fest: befunde.ring_teilverdeckt.length, fokus_unter_2px: zaehl.duenn, fokus_nicht_messbar: zaehl['nicht-messbar'], fokus_ohne_outline_schatten: ohneUmriss,
       fokus_verdeckt: verdeckt.fest + verdeckt.andere + verdeckt.ausserhalb + verdeckt.abgeschnitten, fokus_verdeckt_fest: verdeckt.fest,
       sprung_rueckwaerts: befunde.sprung.length, falle: befunde.falle ? 1 : 0, zyklus_ohne_ausweg: befunde.zyklus && !befunde.zyklus.escape_befreit ? 1 : 0,
       sprunglink_fehlt: r.erster_tab.ok ? 0 : 1,
     };
-    r.befunde = { fokus: befunde.fokus.slice(0, 40), verdeckt: befunde.verdeckt.slice(0, 40), sprung: befunde.sprung.slice(0, 20), falle: befunde.falle, zyklus: befunde.zyklus, refokus_fehlgeschlagen: befunde.refokus.slice(0, 10) };
+    r.befunde = { fokus: befunde.fokus.slice(0, 40), verdeckt: befunde.verdeckt.slice(0, 40), sprung: befunde.sprung.slice(0, 20), falle: befunde.falle, zyklus: befunde.zyklus, refokus_fehlgeschlagen: befunde.refokus.slice(0, 10), ring_teilverdeckt: befunde.ring_teilverdeckt.slice(0, 20) };
     const roh = ensureDir(path.join(CACHE, 'tastatur', `${a}-${zustand}`));
     fs.writeFileSync(path.join(roh, `${slug(s)}.json`), JSON.stringify({ seite: s, ansicht: a, zustand, ende, schritte }, null, 1));
   } catch (err) { r.fehler = String(err.message).slice(0, 300); }
@@ -571,7 +672,7 @@ async function pruefeZoom(s, variante) {
     r.horizontal = await page.evaluate(() => window.__a11yZ.horizontal());
     const ue = (await ueberlauf(page)).filter((b) => b.art !== 'horizontal');
     const vd = await page.evaluate(VERDECKUNG, BEDIENELEMENTE);
-    r.bedienelemente = vd.bedienelemente; r.scrollpositionen = vd.positionen; r.im_overflow_verborgen = vd.im_overflow_verborgen;
+    r.bedienelemente = vd.bedienelemente; r.scrollpositionen = vd.positionen; r.im_overflow_verborgen = vd.im_overflow_verborgen; r.im_scroller = vd.im_scroller;
     r.befunde = { verdeckt: vd.verdeckt.slice(0, 40), nie_im_bild: vd.nie_im_bild.slice(0, 20), ueberlauf: ue };
     r.kennzahlen = { horizontal: r.horizontal.horizontal ? 1 : 0, verdeckt: vd.verdeckt.length, verdeckt_fest: vd.verdeckt.filter((x) => x.fest).length, nie_im_bild: vd.nie_im_bild.length, ueberlauf: ue.length };
   } catch (err) { r.fehler = String(err.message).slice(0, 300); }
@@ -591,19 +692,23 @@ async function pruefeTextabstand(s, a) {
     await durchscrollen(page); await bereit(page);
     r.gegenprobe = await gegenprobenAnwenden(page, 'textabstand');
     const vor = await page.evaluate(TEXTSCHNITT);
+    const scrollVor = await page.evaluate(SCROLLSCHNITT);
     const ueVor = await ueberlauf(page);
     await page.addStyleTag({ content: TEXTABSTAND_CSS });
     await page.evaluate(() => window.__a11yZ.frames(2));
     const nach = await page.evaluate(TEXTSCHNITT);
+    const scrollNach = await page.evaluate(SCROLLSCHNITT);
     const ueNach = await ueberlauf(page);
+    const scrollVorIds = new Set(scrollVor.map((x) => x.id));
+    const scrollNeu = scrollNach.filter((x) => !scrollVorIds.has(x.id));
     const schl = (b) => `${b.art}|${b.tag}|${b.cls || ''}|${b.text || ''}`;
     const vorIds = new Set(vor.map((x) => x.id));
     const ueVorK = new Set(ueVor.map(schl));
     const neu = nach.filter((x) => !vorIds.has(x.id));
     const ueNeu = ueNach.filter((b) => !ueVorK.has(schl(b)));
     r.vorher_abgeschnitten = vor.length;
-    r.befunde = { abgeschnitten_neu: neu.slice(0, 40), ueberlauf_neu: ueNeu.slice(0, 20), vorher: vor.slice(0, 10) };
-    r.kennzahlen = { abgeschnitten_neu: neu.length, davon_line_clamp: neu.filter((x) => x.lineClamp).length, ueberlauf_neu: ueNeu.length, horizontal_neu: ueNeu.some((b) => b.art === 'horizontal') ? 1 : 0 };
+    r.befunde = { abgeschnitten_neu: neu.slice(0, 40), ueberlauf_neu: ueNeu.slice(0, 20), vorher: vor.slice(0, 10), scroll_ueberhang_neu: scrollNeu.slice(0, 20) };
+    r.kennzahlen = { abgeschnitten_neu: neu.length, scroll_ueberhang_neu: scrollNeu.length, davon_line_clamp: neu.filter((x) => x.lineClamp).length, ueberlauf_neu: ueNeu.length, horizontal_neu: ueNeu.some((b) => b.art === 'horizontal') ? 1 : 0 };
   } catch (err) { r.fehler = String(err.message).slice(0, 300); }
   r.sperre = sperrInfo(protokoll);
   await context.close();
@@ -648,6 +753,7 @@ async function pruefeOhneJs(s, a) {
     await laden(page, s);
     await durchscrollen(page); await bereit(page);
     const mitJs = await page.evaluate(TEXT_MAIN);
+    const erstMitJs = await page.evaluate(ERSTER_BILDSCHIRM);
     prot.push(...k.protokoll);
     await k.context.close();
     // Lauf ohne JS
@@ -661,12 +767,17 @@ async function pruefeOhneJs(s, a) {
     prot.push(...k.protokoll);
     await k.context.close();
     const anteil = mitJs.zeichen ? ohneJs.zeichen / mitJs.zeichen : 0;
-    const versteckt = erst.filter((x) => x.inhalt && !x.ariaHidden);
+    // Vergleich mit dem Lauf mit JS (oben, nach durchscrollen): was dort ebenso verborgen ist (geschlossene Menüs u. Ä.), ist kein Verlust ohne JS
+    const schl = (x) => `${x.pfad}|${x.text}`;
+    const auchMitJs = new Set(erstMitJs.map(schl));
+    const kandidaten = erst.filter((x) => x.inhalt && !x.ariaHidden);
+    const versteckt = kandidaten.filter((x) => !auchMitJs.has(schl(x)));
+    const ebensoMitJs = kandidaten.filter((x) => auchMitJs.has(schl(x)));
     const pfade = new Set([...nav.kopf.pfade, ...nav.fuss.pfade]);
     r.text = { mit_js: mitJs.zeichen, ohne_js: ohneJs.zeichen, anteil: Math.round(anteil * 1000) / 1000, main: ohneJs.main };
     r.navigation = { kopf_sichtbar: nav.kopf.sichtbar, kopf_intern: nav.kopf.intern, fuss_sichtbar: nav.fuss.sichtbar, fuss_intern: nav.fuss.intern, hauptseiten_erreichbar: G.hauptseiten.filter((h) => pfade.has(h)).length, hauptseiten_fehlen: G.hauptseiten.filter((h) => !pfade.has(h)) };
-    r.befunde = { erster_bildschirm_versteckt: versteckt.slice(0, 30), erster_bildschirm_sonstige: erst.length - versteckt.length };
-    r.kennzahlen = { text_unter_80: anteil < 0.8 ? 1 : 0, erster_bildschirm_versteckt: versteckt.length, navigation_fehlt: nav.kopf.intern + nav.fuss.intern > 0 ? 0 : 1 };
+    r.befunde = { erster_bildschirm_versteckt: versteckt.slice(0, 30), erster_bildschirm_ebenso_mit_js: ebensoMitJs.slice(0, 20), erster_bildschirm_ohne_inhalt_oder_aria_hidden: erst.length - kandidaten.length };
+    r.kennzahlen = { text_unter_80: anteil < 0.8 ? 1 : 0, erster_bildschirm_versteckt: versteckt.length, erster_bildschirm_ebenso_mit_js: ebensoMitJs.length, navigation_fehlt: nav.kopf.intern + nav.fuss.intern > 0 ? 0 : 1, kopf_ohne_interne_links: nav.kopf.intern > 0 ? 0 : 1 };
   } catch (err) { r.fehler = String(err.message).slice(0, 300); }
   r.sperre = sperrInfo(prot);
   return r;
@@ -713,15 +824,16 @@ for (const p of pruefungen) {
     kz.schritte = l.reduce((n, r) => n + (r.schritte || 0), 0);
     for (const z of zustaendeTastatur) for (const a of ansichten) {
       const t = l.filter((r) => r.zustand === z && r.ansicht === a);
-      kz[`${a}_${z}`] = Object.fromEntries(['fokus_nicht_sichtbar', 'fokus_unter_2px', 'fokus_verdeckt', 'fokus_verdeckt_fest', 'sprung_rueckwaerts', 'falle', 'sprunglink_fehlt'].map((k) => [k, summe(t, k)]));
+      kz[`${a}_${z}`] = Object.fromEntries(['fokus_nicht_sichtbar', 'fokus_unter_2px', 'fokus_ohne_outline_schatten', 'fokus_verdeckt', 'fokus_verdeckt_fest', 'sprung_rueckwaerts', 'falle', 'sprunglink_fehlt'].map((k) => [k, summe(t, k)]));
     }
     status.tastatur = {
       reihenfolge: kz.sprung_rueckwaerts ? 'rot' : 'gruen', fokus_sichtbar: kz.fokus_nicht_sichtbar ? 'rot' : 'gruen', fokus_2px: kz.fokus_unter_2px ? 'rot' : 'gruen',
-      fokus_verdeckt: kz.fokus_verdeckt ? 'rot' : 'gruen', tastaturfalle: kz.falle || kz.zyklus_ohne_ausweg ? 'rot' : 'gruen', sprunglink: kz.sprunglink_fehlt ? 'rot' : 'gruen',
+      fokus_outline: kz.fokus_ohne_outline_schatten ? 'rot' : 'gruen', fokus_verdeckt: kz.fokus_verdeckt ? 'rot' : 'gruen', tastaturfalle: kz.falle || kz.zyklus_ohne_ausweg ? 'rot' : 'gruen', sprunglink: kz.sprunglink_fehlt ? 'rot' : 'gruen',
     };
   } else if (p === 'zoom') {
     for (const vz of ['css', 'aequivalent']) { const t = l.filter((r) => r.variante === vz); kz[vz] = Object.fromEntries(['horizontal', 'verdeckt', 'verdeckt_fest', 'nie_im_bild', 'ueberlauf'].map((k) => [k, summe(t, k)])); }
-    status.zoom = { css: kz.css.horizontal || kz.css.verdeckt || kz.css.ueberlauf ? 'rot' : 'gruen', aequivalent: kz.aequivalent.horizontal || kz.aequivalent.verdeckt || kz.aequivalent.ueberlauf ? 'rot' : 'gruen' };
+    const rotZ = (k) => (k.horizontal || k.verdeckt || k.nie_im_bild || k.ueberlauf ? 'rot' : 'gruen');
+    status.zoom = { css: rotZ(kz.css), aequivalent: rotZ(kz.aequivalent) };
   } else {
     const haupt = { reflow: ['horizontal', 'ueberlauf'], textabstand: ['abgeschnitten_neu', 'ueberlauf_neu'], forced: ['ohne_grenze'], ohnejs: ['text_unter_80', 'erster_bildschirm_versteckt', 'navigation_fehlt'] }[p];
     status[p] = haupt.some((k) => kz[k]) ? 'rot' : 'gruen';
@@ -740,6 +852,38 @@ for (const s of seiten) {
     jeSeite[s][p] = Object.fromEntries(keys.map((k) => [k, summe(l, k)]));
   }
 }
+// Gegenprobe: Vergleich mit der Basis desselben Satzes (Kennzahlen; für tastatur je Fokusschritt über die Rohdaten)
+let vergleich = null;
+if (gegenprobe.length) {
+  const basisDatei = typeof arg('basis') === 'string' ? path.resolve(arg('basis')) : path.join(RELAUNCH, 'belege', satz, 'a11y-zusatz.json');
+  if (fs.existsSync(basisDatei)) {
+    const basis = JSON.parse(fs.readFileSync(basisDatei, 'utf8'));
+    const nurZahlen = (o) => Object.fromEntries(Object.entries(o || {}).filter(([, x]) => typeof x === 'number'));
+    vergleich = { basis: path.relative(RELAUNCH, basisDatei), basis_erstellt: basis.erstellt, status_basis: Object.fromEntries(pruefungen.map((p) => [p, basis.status?.[p]])), status_gegenprobe: Object.fromEntries(pruefungen.map((p) => [p, status[p]])), kennzahlen_basis: Object.fromEntries(pruefungen.map((p) => [p, nurZahlen(basis.kennzahlen?.[p])])), kennzahlen_gegenprobe: Object.fromEntries(pruefungen.map((p) => [p, nurZahlen(kennzahlen[p])])) };
+    if (pruefungen.includes('tastatur') && basis.bedingungen?.rohdaten) {
+      const lies = (f) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; } };
+      const NICHT = ['unsichtbar', 'kontrastarm'];
+      const t = { paare: 0, basis_ok: 0, basis_ok_jetzt_nicht_sichtbar: 0, basis_ok_jetzt_duenn: 0, basis_ok_bleibt_ok: 0, beispiele_bleibt_ok: [], ohne_basis: [] };
+      for (const r of ergebnis.tastatur) {
+        const rel = path.join('tastatur', `${r.ansicht}-${r.zustand}`, `${slug(r.seite)}.json`);
+        const b = lies(path.join(RELAUNCH, basis.bedingungen.rohdaten, rel)), g = lies(path.join(CACHE, rel));
+        if (!b || !g) { t.ohne_basis.push(rel); continue; }
+        const bm = new Map(b.schritte.map((x) => [`${x.nr}|${x.pfad}`, x.fokus && x.fokus.status]));
+        for (const x of g.schritte) {
+          const k = `${x.nr}|${x.pfad}`; if (!bm.has(k) || !x.fokus) continue;
+          t.paare++;
+          if (bm.get(k) !== 'ok') continue;
+          t.basis_ok++;
+          if (NICHT.includes(x.fokus.status)) t.basis_ok_jetzt_nicht_sichtbar++;
+          else if (x.fokus.status === 'duenn') t.basis_ok_jetzt_duenn++;
+          else if (x.fokus.status === 'ok') { t.basis_ok_bleibt_ok++; if (t.beispiele_bleibt_ok.length < 20) t.beispiele_bleibt_ok.push({ seite: r.seite, ansicht: r.ansicht, zustand: r.zustand, nr: x.nr, pfad: x.pfad, name: x.name, stilAenderung: x.fokus.stilAenderung }); }
+        }
+      }
+      t.quote_erkannt = t.basis_ok ? Math.round((t.basis_ok_jetzt_nicht_sichtbar / t.basis_ok) * 1000) / 1000 : null;
+      vergleich.tastatur_fokus_je_schritt = t;
+    }
+  }
+}
 const aus = {
   satz, base: BASE, erstellt: new Date().toISOString(), werkzeug: 'a11y-zusatz.mjs', kriterium: 'Z-11',
   bedingungen: {
@@ -749,10 +893,11 @@ const aus = {
     regeln: REGELN, rohdaten: path.relative(RELAUNCH, CACHE),
   },
   laufzeit_s: Math.round((Date.now() - t0) / 1000),
-  status, kennzahlen, je_seite: jeSeite, ergebnisse: ergebnis,
+  status, kennzahlen, ...(vergleich ? { gegenprobe_vergleich: vergleich } : {}), je_seite: jeSeite, ergebnisse: ergebnis,
 };
 ensureDir(path.dirname(AUS));
 fs.writeFileSync(AUS, JSON.stringify(aus, null, 1));
 console.log(`\na11y-zusatz: ${laeufe.length} Läufe in ${aus.laufzeit_s} s → ${path.relative(RELAUNCH, AUS)}`);
 console.log(JSON.stringify(status));
+if (vergleich) console.log('gegenprobe_vergleich', JSON.stringify({ status_basis: vergleich.status_basis, status_gegenprobe: vergleich.status_gegenprobe, tastatur: vergleich.tastatur_fokus_je_schritt && Object.fromEntries(Object.entries(vergleich.tastatur_fokus_je_schritt).filter(([, x]) => typeof x === 'number')) }));
 for (const [p, kz] of Object.entries(kennzahlen)) console.log(p, JSON.stringify(Object.fromEntries(Object.entries(kz).filter(([, v]) => typeof v === 'number'))));

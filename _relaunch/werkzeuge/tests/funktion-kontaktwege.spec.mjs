@@ -65,6 +65,14 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
     });
   }
 
+  test('Widget: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)', async ({ page }) => {
+    await page.goto('/');
+    const knopf = page.locator('#whatsapp-floating-btn');
+    await expect(knopf).toBeVisible();
+    await expect(knopf).toHaveAttribute('aria-label', 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden');
+    await expect(knopf.locator('xpath=..').getByText('1', { exact: true })).toHaveCount(0);
+  });
+
   test('Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)', async ({ page }) => {
     test.skip(test.info().project.name !== 'desktop', 'Am Desktop über window.open synchron prüfbar; mobil ist es eine Navigation');
     await page.goto('/');
