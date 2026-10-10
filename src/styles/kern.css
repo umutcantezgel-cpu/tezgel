@@ -202,3 +202,37 @@ html.k-bewegung [data-motion="notiert"] path {
   [data-motion] { transition-duration: 0s !important; }
   [data-motion="zustand"], [data-motion="druck"] { transition-duration: var(--k-dauer-1) !important; }
 }
+
+/* --------------------------------------------------------------------------
+   SIG-1 Kreuzlinie (K-009): Waage und Lot wachsen aus dem Kreuzpunkt beim Laden.
+   Reine CSS-Animation am ersten Bildschirm, hängt nicht am nachgeladenen Skript;
+   ohne html.k-bewegung (reduziert, ohne JS, Zeitlimit) stehen beide Linien sofort.
+   -------------------------------------------------------------------------- */
+[data-motion="sig-kreuzlinie"] .k-laser-waage,
+[data-motion="sig-kreuzlinie"] .k-laser-lot {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+html.k-bewegung [data-motion="sig-kreuzlinie"] .k-laser-waage {
+  animation: k-waage var(--k-dauer-5) var(--ease-k-laser) both;
+}
+html.k-bewegung [data-motion="sig-kreuzlinie"] .k-laser-lot {
+  animation: k-lot var(--k-dauer-5) var(--ease-k-laser) both;
+  animation-delay: var(--k-staffel);
+}
+@keyframes k-waage { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes k-lot { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* --------------------------------------------------------------------------
+   Muster Kreuzfuge (K-010) als harte Linien; Halb- und Drittelverband als SVG-Muster (Komponente `Verband`).
+   -------------------------------------------------------------------------- */
+@layer components {
+  .k-muster-kreuzfuge {
+    --k-muster: 3rem;
+    --k-muster-fuge: var(--color-k-fuge);
+    background-image:
+      linear-gradient(to right, var(--k-muster-fuge) 0 1px, transparent 1px),
+      linear-gradient(to bottom, var(--k-muster-fuge) 0 1px, transparent 1px);
+    background-size: var(--k-muster) var(--k-muster);
+  }
+}
