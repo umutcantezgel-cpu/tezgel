@@ -13,8 +13,9 @@ produkt="$(echo "$geaendert" | grep -v '^_relaunch/' | grep -v '^$' || true)"
 echo "T1 · live $LIVE → $KOPF · geänderte Dateien: $(echo "$geaendert" | grep -c .) · davon außerhalb _relaunch: $(echo "$produkt" | grep -c . || true)"
 node "$W/testzahl.mjs" || { echo "T1 ROT: Test-Sperrklinke"; exit 1; }
 if [ -z "$produkt" ]; then echo "T1 GRÜN: nur Arbeitsordner (wird nicht ausgeliefert)"; exit 0; fi
-# Entwürfe nur mit @/-Importen (N-20)
-if git -C "$REPO" ls-files 'src/app/(kern)/_entwurf' | grep -E '\.(tsx|ts|jsx|js)$' | xargs -r grep -lE "from '\.\.?/" 2>/dev/null | grep -q .; then echo "T1 ROT: relative Importe in Entwürfen"; exit 1; fi
+# Entwürfe nur mit @/-Importen (N-20). Erlaubt bleibt nur der Import einer Nachbardatei im selben Ordner („./Datei“)
+# oder aus einem privaten Unterordner („./_x/…“): freischalten.sh verschiebt Dateien und _-Ordner gemeinsam.
+if git -C "$REPO" ls-files 'src/app/(kern)/_entwurf' | grep -E '\.(tsx|ts|jsx|js)$' | xargs -r grep -nE "from ['\"](\.\./|\./[^_'\"][^'\"]*/)" 2>/dev/null | grep .; then echo "T1 ROT: relative Importe über den Entwurfsordner hinaus"; exit 1; fi
 bash "$W/reinraum.sh" HEAD > "$SCRATCH/t1-$KOPF.log" 2>&1; tail -8 "$SCRATCH/t1-$KOPF.log"
 grep -qE '^(build|typecheck|lint|test|qa-graph) 0 ' "$REPO/_relaunch/cache/reinraum-$KOPF/ergebnis.txt" || true
 for k in npm-ci build typecheck lint test qa-graph; do grep -qE "^$k 0 " "$REPO/_relaunch/cache/reinraum-$KOPF/ergebnis.txt" || { echo "T1 ROT: $k"; exit 1; }; done
