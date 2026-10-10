@@ -1,0 +1,26 @@
+# MIKROTEXTE – Freigabeliste
+
+Zweck: Freigabeliste für die Text-Invarianten (`werkzeuge/texte2.mjs --vergleich … --freigabe _relaunch/MIKROTEXTE.md`) und die Tests. Eine Zeile sagt: dieser Wortlaut darf sich von `alt` nach `neu` ändern. Die Zeile wirkt erst, wenn der Code entsprechend geändert ist; bis dahin ist sie nur ein angekündigter Eingriff.
+
+Regel (K-012): nur die Klassen 1–4. Klasse 1 Beschriftungen von Bedienelementen, Hilfe-, Fehler- und Zustandstexte; Klasse 2 Alt-Texte und `aria-label`; Klasse 3 Etiketten und Badges (Wortlaut bleibt, nur Form und Ort ändern sich; eine Zeile mit geändertem Wortlaut ist unwirksam); Klasse 4 Wahrheitskorrekturen in Metadaten und Badges (protokolliert, Liste intern). Überschriften, Absätze, Listen, FAQ, Kundenstimmen und Rechtstexte stehen hier nie; ihre Vorschläge stehen in `TEXTVORSCHLAEGE.md`.
+
+Format, wie `texte2.mjs` es liest: Tabellenzeilen mit Spalten `Seite oder * | alt | neu | Klasse (K-012) | Paket | Grund`. Zellen in Backticks. `–` oder leer = kein Text. Seite `*`, `/pfad` oder `/pfad/*`. Klasse als Ziffer 1–4. `alt` ist der Wortlaut, wie er im Code steht; `{…}` markiert einen JSX-Ausdruck, den das Werkzeug im HTML nicht als Text findet. Teilersetzung innerhalb eines Blocks ist erlaubt. Im Grund-Feld kein `|`.
+
+Hinweis: Erfolgs- und Ladezustände erscheinen erst nach dem Absenden. `texte2.mjs` misst sie nicht; die Zeilen stehen hier, damit P3 sie zusammen mit dem Code ändert. Gemeinsam genutzte Komponenten wirken auf jeder Seite, in der sie eingebunden sind; die Seitenangabe `/` gilt nur für den Code, den P3 an dieser Stelle ändert.
+
+Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator-Prüfung: Erfolgstexte behalten ihren vollen bisherigen Wortlaut (Information und Zusagen bleiben), vorangestellt wird nur „Notiert.“ (KERN K-012).
+
+## Freigaben
+
+| Seite oder * | alt | neu | Klasse (K-012) | Paket | Grund |
+|---|---|---|---|---|---|
+| `/` | `Ihre Anfrage für {projectTitle} ist direkt bei Herrn Deniz Tezgel eingegangen.` | `Notiert. Ihre Anfrage für {projectTitle} ist direkt bei Herrn Deniz Tezgel eingegangen.` | 1 | P3-00j | Erfolgszustand Hero-Formular (`src/components/forms/HeroContactForm.tsx:130`); „Vielen Dank, {name}!“ bleibt davor stehen |
+| `/` | `Ihre Situationsbeschreibung und Kontaktdaten sind direkt bei Herrn Deniz Tezgel eingegangen.` | `Notiert. Ihre Situationsbeschreibung und Kontaktdaten sind direkt bei Herrn Deniz Tezgel eingegangen.` | 1 | P3-00j | Erfolgsansicht Preisrechner nach Absenden (`src/components/pricing/PricingCalculator.tsx:404`); Begrüßungszeile bleibt |
+| `/` | `Ihre Anfrage für {projectTitle} ({finalArea}) in {locationText} ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.` | `Notiert. Ihre Anfrage für {projectTitle} ({finalArea}) in {locationText} ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.` | 1 | P3-00j | Erfolgszustand Anfrage-Funnel (`src/components/funnels/TezgelAnfrageFunnel.tsx:193`); Projektbezug entfällt im Zustandstext |
+| `/` | `Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.` | `Notiert. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.` | 1 | P3-00j | Erfolgszustand Kurzformular über FinalCTA (`src/components/forms/LeadQuickForm.tsx:117`); die Zusage „innerhalb von 24 Stunden“ entfällt in diesem Zustand |
+| `/` | `Wird übertragen...` | `Wird gesendet …` | 1 | P3-00j | Ladezustand Knopf Hero-Formular (`src/components/forms/HeroContactForm.tsx:339`) |
+| `/` | `Anfrage wird übertragen...` | `Wird gesendet …` | 1 | P3-00j | Ladezustand Knopf Preisrechner (`src/components/pricing/PricingCalculator.tsx:611`) |
+| `/` | `Anfrage wird sicher übertragen...` | `Wird gesendet …` | 1 | P3-00j | Ladezustand Knopf Anfrage-Funnel (`src/components/funnels/TezgelAnfrageFunnel.tsx:575`); „sicher“ entfällt, weil der Text die Sicherheit nicht belegt |
+| `/` | `Wird gesendet...` | `Wird gesendet …` | 1 | P3-00j | Ladezustand Kurzformular (`src/components/forms/LeadQuickForm.tsx:270`); nur die Schreibweise (Leerzeichen vor dem Auslassungszeichen) |
+| `/` | `Oder via WhatsApp` | `Per WhatsApp schreiben` | 1 | P3-00j | Link neben dem Absende-Knopf im Hero-Formular (`src/components/forms/HeroContactForm.tsx:367`); im Build-HTML von `/` enthalten, also von texte2 gemessen |
+| `/` | `Anfrage verbindlich absenden` | `Anfrage senden` | 1 | P3-00j | Absende-Knopf Anfrage-Funnel (`src/components/funnels/TezgelAnfrageFunnel.tsx:580`); „verbindlich“ passt nicht zu „Unverbindliche Anfrage absenden“ (Preisrechner, `/`) und „100 % unverbindlich“ (Hero-Formular, `/`) |
