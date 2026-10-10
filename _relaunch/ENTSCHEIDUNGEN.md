@@ -189,3 +189,27 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Bewertung:** (2) löst die Aufgabe ohne Karte: jede Stadt als Link mit Entfernung ab Aßlar, die Karte nur nach Einwilligung. Das Radar hat keine Aufgabe und keinen Registereintrag (S-09-nah). Der Umschalter verdoppelt die Fremdanfragen.
 - **Wahl: (2)** (P3-12). Die Entfernungen werden ab dem Firmensitz Aßlar angezeigt (`CITY_HUB_DATA`). Im Bestand standen sie ab Wetzlar, aber als Abstand zum Firmensitz bezeichnet; das ist eine Wahrheitskorrektur. Die Stadtwahl auf der Karte prüft W3 (`/standorte`) erneut.
 - **Umkehrprobe:** Revert. Der Bestand bleibt bis zur Freischaltung unverändert.
+
+## E-022 · Variantenwahl Kopf (P3-06) und Einstieg (P3-09) – Jury 3 × Opus, Bildmaterial (Belege `belege/p3-varianten/`)
+| Juror (Schwerpunkt) | Kopf A | Kopf B | Einstieg A | Einstieg B | Wahl |
+|---|---|---|---|---|---|
+| 1 Gestaltung | 36 | 42 | 45 | 42 | Kopf B · Einstieg B (unter Auflagen) |
+| 2 Nutzerführung, Barrierefreiheit | 41 | 47 | 45 | 42 | Kopf B · Einstieg A |
+| 3 Marke, Handwerk | 40 | 36 | 36 | 48 | Kopf A (unter Auflagen) · Einstieg B |
+
+- **Denkprotokoll:**
+  - **Kopf:** B gewinnt 2 : 1. Es fluchtet an der Inhaltskante, ist mobil sauber (A läuft auf 396 px über) und ruhiger. Die Stärke von A, Felder mit 1-px-Fugen, wird als Auflage in B übernommen.
+  - **Einstieg:** B gewinnt 2 : 1. Nur B besteht die Austauschprobe K-001, mit dem gezeichneten Verlegeplan und dem Kreuzpunkt auf dem Plan. Die Mängel von B liegen in der Anordnung und sind behebbar; bei A fehlt die eigene Bildwelt grundsätzlich.
+  - A bleibt die Rückfallwahl, falls die Auflagen nicht erfüllt werden.
+- **Wahl: Kopf B + Einstieg B**, mit diesen Auflagen vor der Freischaltung:
+  - **Kopf B:**
+    1. Zonen (Marke | Navigation | Telefon + Knopf) mit 1-px-Fugen, Kanten auf der Inhaltsflucht (`--k-seite`/`--k-rand`), keine leeren Felder.
+    2. Hauptpunkte mindestens `text-k-2`, Knopf „Aufmaß anfragen“ mindestens 44 px hoch.
+    3. Geöffnetes Mega-Blatt fotografisch belegen, ebenso den Tastaturweg.
+  - **Einstieg B:**
+    1. Das Formular steht in einem eigenen Feld an einer Fuge des Plans, ohne die Zeichnung zu überdecken. Seine Oberkante liegt bei 1440 × 900 im ersten Bildschirm, einschließlich des Kopfs.
+    2. Mobil gilt die Reihenfolge Kennzeile → H1 → Unterzeile → Absatz → „Aufmaß vor Ort anfragen“ → Plan vollständig (nicht angeschnitten) → Formular. Das Lot läuft über die volle Höhe.
+    3. Die Unterzeile wird nicht gestaucht.
+    4. „DIN 18534“ in Mono ohne breite Wortlücken.
+    5. Der Einstieg trägt `data-hauptaktion`, damit der WhatsApp-Kanal ihn nie überdeckt (K-011, E-013).
+- **Umkehrprobe:** Variante A liegt im Repo (`kopf-a`, `einstieg-a`), ein Import tauscht sie zurück. Nicht gewählte Varianten werden in W10 mit knip entfernt.
