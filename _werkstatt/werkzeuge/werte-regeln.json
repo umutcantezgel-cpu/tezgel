@@ -150,7 +150,7 @@
  "ausnahmen": {
   "dateien": [
    "src/lib/email/**",
-   "src/components/ui/GoogleIcon.tsx",
+   "src/components/ui/GoogleIcon.tsx", "src/components/ui/WhatsAppLogo.tsx",
    "**/opengraph-image.*",
    "src/app/werkstatt-schaufenster/**"
   ],

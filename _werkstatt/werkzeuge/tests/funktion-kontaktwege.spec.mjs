@@ -54,9 +54,14 @@ const WIDGET_SEITEN = [
 
 test.describe('F-10 WhatsApp-Links und Widget', () => {
   for (const [pfad, textMuster] of WIDGET_SEITEN) {
+    // E-015: am Desktop der flache Knopf #whatsapp-floating-btn, mobil das WhatsApp-Feld der unteren Leiste –
+    // gleiche Erwartungen (Firmennummer, seitenbezogener Text, keine Anfrage), Test gleich streng.
     test(`Widget ${pfad}: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage`, async ({ page, anfragen }) => {
       await page.goto(pfad);
-      const ziele = await waAufrufen(page, () => page.locator('#whatsapp-floating-btn').click());
+      const ausloeser = test.info().project.name === 'mobil'
+        ? page.getByRole('complementary', { name: 'Schnellkontakt Daumenleiste' }).getByRole('link', { name: 'WhatsApp-Chat starten' })
+        : page.locator('#whatsapp-floating-btn');
+      const ziele = await waAufrufen(page, () => ausloeser.click());
       const z = waZiel(ziele[0]);
       expect(z.passt, z.url).toBe(true);
       expect(z.nummer).toBe(WA_NUMMER);

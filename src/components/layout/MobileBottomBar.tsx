@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "@/components/icons/Icon";
 import { siteConfig } from "@/lib/config";
-import { openWhatsApp } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, kontextNachricht, openWhatsApp } from "@/lib/whatsapp";
 import { triggerHaptic } from "@/lib/haptics";
 
 // Untere Leiste (KERN K-009): einzige feste Ebene neben dem Kopf, nur mobil; drei Wege an der Fuge,
@@ -46,13 +46,14 @@ export default function MobileBottomBar() {
         </a>
 
         <a
-          href={siteConfig.contact.whatsappLink}
+          href={buildWhatsAppUrl(siteConfig.contact.whatsapp, kontextNachricht(pathname))}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => {
             e.preventDefault();
             triggerHaptic("light");
-            openWhatsApp({ phone: siteConfig.contact.whatsapp });
+            // seitenbezogene Nachricht wie beim Desktop-Knopf (E-015)
+            openWhatsApp({ phone: siteConfig.contact.whatsapp, text: kontextNachricht(pathname) });
           }}
           className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
           aria-label="WhatsApp-Chat starten"
