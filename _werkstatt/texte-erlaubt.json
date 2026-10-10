@@ -58,20 +58,13 @@
   "teil": "header_zeilen",
   "ansicht": "d1440",
   "alt": "Fachbetrieb",
-  "vermerk": "E2-ORCH-05a Kopf: Unterzeile und Rufnummer bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM, Rufnummer im Fuß – TEXTVORSCHLAEGE"
+  "vermerk": "E2-ORCH-05a Kopf: Unterzeile bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM – TEXTVORSCHLAEGE"
  },
  {
   "seite": "*",
   "teil": "header_zeilen",
   "ansicht": "d1440",
   "alt": "Aßlar · Wetzlar",
-  "vermerk": "E2-ORCH-05a Kopf: Unterzeile und Rufnummer bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM, Rufnummer im Fuß – TEXTVORSCHLAEGE"
- },
- {
-  "seite": "*",
-  "teil": "header_zeilen",
-  "ansicht": "d1440",
-  "alt": "06441 / 44 83 567",
-  "vermerk": "E2-ORCH-05a Kopf: Unterzeile und Rufnummer bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM, Rufnummer im Fuß – TEXTVORSCHLAEGE"
+  "vermerk": "E2-ORCH-05a Kopf: Unterzeile bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM – TEXTVORSCHLAEGE"
  }
 ]

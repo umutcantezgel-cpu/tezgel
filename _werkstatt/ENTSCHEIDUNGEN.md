@@ -108,6 +108,15 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 - **Umkehrprobe:** Revert der Commits E2-ORCH-05b.
 - **Folgen zweiter Ordnung:** Die Leiste öffnet WhatsApp jetzt mit vorbelegtem Text; der Widerrufs-Knopf der Einwilligung bleibt als zweite kleine feste Ebene links (Art. 7 Abs. 3 DSGVO, Test F-11) und trägt `data-feste-ebene`.
 
+## E-016 · Farbwechsel ohne Überblendung bei Links, Feldern und Auswahlknöpfen
+- **Anlass:** Prüfstufe A (E2-PRUEF-A-1, Z3) fand Übergänge ohne `data-motion` an Elementen, die ihre Klassen aus `kern/stile.ts` beziehen (Textlinks, Felder, Auswahlknöpfe). Ein Attribut lässt sich über Klassenbausteine nicht mitgeben.
+- **Wahl:** Diese Elemente wechseln Farbe und Rahmen sofort (kein Übergang, kein Registereintrag nötig). Knöpfe (`knopfKlassen`) behalten ihre Rückmeldung und tragen immer `data-motion="druck"`; Kopf-Links tragen `zustand`. Die Prüfung bleibt unverändert streng.
+- **Umkehrprobe:** Klassen in `stile.ts` zurücksetzen und `data-motion="zustand"` an allen Nutzungen setzen.
+
+## E-017 · Rufnummer im Kopf ab 1024 px in Mono
+- **Anlass:** Prüfstufe A (D4): K-009 verlangt die Rufnummer in Mono im Kopf; bei 1280–1535 px war sie nur als Symbol sichtbar.
+- **Wahl:** Rufnummer ab 1024 px sichtbar, bei 1280–1535 px in `text-fs-1` und mit engerer Navigation (`pl-2`, `gap-4`); die Unterzeile „Fachbetrieb · Aßlar · Wetzlar“ bleibt dort ausgeblendet (TEXTVORSCHLAEGE). Nachweis: Kopfzeile ohne Überlauf bei 1280 und 1440 (Prüfer).
+
 ## L6 · Lernen
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|
