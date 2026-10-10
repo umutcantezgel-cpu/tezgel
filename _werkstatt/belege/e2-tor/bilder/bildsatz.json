@@ -1,7 +1,7 @@
 {
- "satz": "e2-tor",
+ "satz": "e2-tor-n",
  "base": "http://127.0.0.1:4312",
- "ziel": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bildsatz",
+ "ziel": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B2/bildsatz",
  "protokoll": {
   "einwilligung": "abgelehnt",
   "bewegung": "reduce",
@@ -41,7 +41,7 @@
    "ansicht": "d1440",
    "seite": "/",
    "status": 200,
-   "hoehe": 16644,
+   "hoehe": 16431,
    "aufnahmen": [
     {
      "nr": 0,
@@ -128,7 +128,7 @@
    "ansicht": "d1440",
    "seite": "/kontakt",
    "status": 200,
-   "hoehe": 6890,
+   "hoehe": 6647,
    "aufnahmen": [
     {
      "nr": 0,
@@ -175,7 +175,7 @@
     {
      "nr": 7,
      "y": 6300,
-     "y_wirksam": 5990,
+     "y_wirksam": 5747,
      "datei": "d1440/kontakt/07.jpg"
     }
    ],
@@ -191,7 +191,7 @@
    "ansicht": "m390",
    "seite": "/",
    "status": 200,
-   "hoehe": 30282,
+   "hoehe": 29205,
    "aufnahmen": [
     {
      "nr": 0,
@@ -278,7 +278,7 @@
    "ansicht": "m390",
    "seite": "/kontakt",
    "status": 200,
-   "hoehe": 12523,
+   "hoehe": 12497,
    "aufnahmen": [
     {
      "nr": 0,
@@ -365,7 +365,7 @@
    "ansicht": "t768",
    "seite": "/",
    "status": 200,
-   "hoehe": 23969,
+   "hoehe": 22022,
    "aufnahmen": [
     {
      "nr": 0,
@@ -452,7 +452,7 @@
    "ansicht": "t768",
    "seite": "/kontakt",
    "status": 200,
-   "hoehe": 9766,
+   "hoehe": 9563,
    "aufnahmen": [
     {
      "nr": 0,
@@ -511,7 +511,7 @@
     {
      "nr": 9,
      "y": 9216,
-     "y_wirksam": 8742,
+     "y_wirksam": 8539,
      "datei": "t768/kontakt/09.jpg"
     }
    ],

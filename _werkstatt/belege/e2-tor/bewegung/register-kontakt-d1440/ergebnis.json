@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/kontakt",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-10T22:47:40.254Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 19
+ },
+ "data_motion_elemente": 145,
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "sig-kreuzlinie",
+  "sig-flucht",
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "verband",
+  "fugenband",
+  "leitachse",
+  "anriss",
+  "auftritt",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 19,
+ "erfasste_eintraege": 19,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/bewegung/register-kontakt-d1440"
+}
