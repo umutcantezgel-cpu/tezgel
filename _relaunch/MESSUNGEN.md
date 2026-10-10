@@ -9,7 +9,7 @@ Alle Zahlen mit Messbedingungen. Median aus fünf, wo gefordert. Ausgangsstand =
 | Slop hart (Icon-Familien S-04) | lucide 122 Dateien + Phosphor 2 + eigene Inline-SVG 5 | eine Familie (Marken-Logos ausgenommen) | – |
 | Slop hart (S-03 Kontrast/Fokus, axe) | 1.614 Kontrast-Knoten | 0 | – |
 | Slop weich (statisch, Signaturen S-09/S-11/S-13) | 1.383 Fundstellen | −80 % (≤ 277), ≤ 2 je Hauptseite | 1.383 |
-| Jury (gewichtet, je Hauptseite) | ausstehend | ≥ 8,0, keine Kategorie < 7,5 | – |
+| Jury (gewichtet, je Hauptseite) | 4,15–4,40 (/ 4,30 · /bad 4,20 · /leistungen 4,40 · /standorte 4,40 · /blog 4,35 · /ueber-uns 4,15 · /kontakt 4,40) | ≥ 8,0, keine Kategorie < 7,5 | – |
 | Blindvergleich | – | ≥ 90 % Siege | – |
 | Registerabdeckung (data-motion) | 0 Einträge, kein Register | 100 % | – |
 | axe ernst/kritisch (Knoten, 4 Ansichten × 120 Seiten + Zustände) | 1.661 + 113 (Zustände) | 0 | – |
@@ -61,3 +61,15 @@ Beleg: `belege/p0-ausgangsstand/statisch.json`. Weiche Befunde je Seite (Katalog
 
 ## W0 · Aufräumen (cf38982, live)
 Reinraum grün · Routentabelle identisch · HTML 172/172 identisch · 211 ungenutzte CSS-Selektoren, 46 Theme-Variablen, 1 Keyframe entfallen · Texte/SEO 120 Seiten GRÜN · Live-Rauchtest grün (x-build = cf38982).
+
+## P0 · Jury Ausgangsstand (3 frische Opus-Jurys je Hauptseite, nur Bildmaterial, ≤ 30 Ausschnitte über 4 Ansichten)
+| Seite | gewichtet (Median) | Design | Bedienbarkeit | Kreativität | Inhalt | Einzelurteile |
+|---|---|---|---|---|---|---|
+| / | 4,30 | 4,5 | 4,5 | 3,0 | 5,5 | 4,45 · 3,95 · 4,40 |
+| /bad | 4,20 | 4,0 | 5,0 | 3,0 | 5,0 | 4,20 · 4,20 · 4,35 |
+| /leistungen | 4,40 | 4,5 | 5,0 | 3,0 | 5,0 | 4,55 · 4,40 · 4,40 |
+| /standorte | 4,40 | 4,5 | 5,0 | 3,0 | 5,0 | 4,20 · 4,40 · 4,40 |
+| /blog | 4,35 | 4,5 | 5,0 | 3,0 | 4,5 | 4,50 · 4,50 · 4,35 |
+| /ueber-uns | 4,15 | 4,0 | 5,0 | 3,0 | 4,5 | 4,20 · 4,35 · 4,15 |
+| /kontakt | 4,40 | 4,5 | 4,5 | 3,5 | 5,5 | 4,50 · 4,55 · 4,45 |
+Wiederkehrende Schwächen (alle Jurys): generisches Muster (Pill-Badge + zentrierte Überschrift vor jeder Sektion, gleiche Kartenraster), kein Bild/keine Leitidee aus dem Gewerk, Stock-/KI-Bildanmutung, mobil vier überlagerte feste Ebenen (Leiste, WhatsApp-Bubble mit Badge, Chat-Blase, Cookie-Schild) verdecken Formularfelder und Knöpfe, drei konkurrierende Anfrageformulare auf der Startseite, abgeschnittene Chip-/Vertrauensleisten. Beleg: `belege/p0-ausgangsstand/jury.json` (alle Belege und Reparaturvorschläge).

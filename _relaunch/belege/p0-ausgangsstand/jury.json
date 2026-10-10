@@ -1,0 +1,1251 @@
+{
+ "satz": "p0-ausgangsstand",
+ "seiten": {
+  "/": {
+   "urteile": [
+    {
+     "seite": "/",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero links: kräftige Grotesk-Headline 'Perfektion auf jedem Quadratmeter.' mit orangefarbenem Akzentwort, sauber gesetzt. Der Hero hat aber kein einziges Bild, rechts steht nur eine weiße Formularkarte. Für einen Fliesenbetrieb fehlt jeder Eindruck von Material und Fläche.",
+        "d1920/02.jpg und d1440/09.jpg Mitte: Jede Sektion beginnt nach demselben Muster mit Pill-Badge ('Umfassende Projektanfrage', 'Regionale Einsatzgebiete'), zentrierter Headline und grauem Einleitungstext. Darunter folgen gleich gerundete Karten. Konsistent, aber austauschbar wie eine Vorlage.",
+        "d1920/04.jpg rechts und d1440/05.jpg Kartenköpfe: Die Bildwelt wirkt wie Stock- oder generiertes Material (Lichtstrahlen-Bad mit freistehender Wanne, unscharfe grüne Fliesen mit Messinggriff). Die Fotos stehen nur als schmale Streifen über Textkarten, statt die Gestaltung zu tragen.",
+        "d1440/00.jpg Header links: Das Cartoon-Maskottchen im Logo passt nicht zum Premium-Anspruch ('anspruchsvolle Architektur', 'XXL-Großformate') und zur sonst nüchternen Typografie."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg und d1920/09.jpg: Die Desktop-Navigation ist klar (fünf Menüpunkte, Telefonnummer, 'Aufmaß buchen' als Primärbutton), der Header klebt oben. Die Orientierung oben ist gut.",
+        "m375/01.jpg unten: Mehrere Ebenen überlagern sich. Unten sitzt die feste Leiste (Anrufen/WhatsApp/Aufmaß), darüber der grüne WhatsApp-Kreis mit roter '1', die Sprechblase 'Chat starten' und links das Schild-Icon. Die Sprechblase verdeckt das Feld 'ORT / PLZ' im Formular.",
+        "m375/00.jpg unten: Die Hero-Buttons 'WhatsApp' und Telefon werden von der festen Leiste und dem Schild-Icon überdeckt. WhatsApp erscheint dreifach im Sichtfeld.",
+        "d1440/00.jpg rechts, d1440/03.jpg und d1920/09.jpg unten: Auf einer Seite stehen drei verschiedene Anfrageformulare (Hero-Kurzformular, 3-Schritt-'Projektanfrage' mit dunkler Zusammenfassung, 'Express-Anfrage in 3 Klicks'). Welcher Weg der richtige ist, bleibt unklar.",
+        "t768/11.jpg Mitte: Die Standort-Chips sind am rechten Rand abgeschnitten ('Bad Na…'), und kein Hinweis zeigt, dass man seitlich scrollen kann."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "d1920/00.jpg Hero: Der Aufbau Headline + Akzentwort + drei Buttons + Häkchen-Zeile + Zitatkarte + Formular rechts ist ein gängiges Handwerker-Landingpage-Schema. Es gibt keine Leitidee, die mit Fliesen, Fugen oder Raster spielt.",
+        "d1440/03.jpg rechts: Die dunkle Zusammenfassungsbox neben dem Schrittformular (Gewerk, Fläche, '0 € (Kostenfrei)', 'Verbindlicher Festpreis') ist der einzige eigenständige Moment. Sie wiederholt aber nur Formularinhalte.",
+        "d1440/09.jpg Mitte: Die Karte erscheint als großer schwarzer Punkteraster-Block mit DSGVO-Hinweis. Die Fläche ist groß, das visuelle Ergebnis leer, eine Region oder Route ist nicht zu sehen."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "t768/07.jpg rechts und d1440/06.jpg: Die Texte sind konkret und fachkundig ('2-cm-Außenkeramik auf Stelzlagern oder Splittbett', 'Gefälle mind. 1,5 bis 2 %', 'Verbundabdichtung (AIV) nach DIN 18534', 'bis 120 × 278 cm'). Das wirkt wie echtes Fachwissen.",
+        "d1440/08.jpg: Echte Bewertungen mit Namen (Elke S., C. W., Rabia Ö.), Projekttyp und Google-Quelle, dazu Zahlen (5,0/5 bei 27 Google-Rezensionen, 9,6/10 Trustlocal). d1920/11.jpg Footer: Adresse, HWK Wiesbaden, USt-IdNr. Das schafft Echtheit.",
+        "t768/02.jpg oben ('Alles für Ihr Vorhaben auf über 100 Fachseiten') und d1440/05.jpg Linktexte ('Details & Ausführung: Bäder & Wellness'): Der Ton ist SEO-lastig und wiederholt sich. Projektfotos aus echten Aufträgen oder ein Bild von Deniz Tezgel fehlen, obwohl er mehrfach namentlich genannt wird."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare (Hero-Formular, 3-Schritt-Projektanfrage, Express-Anfrage) plus viele gleichwertige CTAs machen den Hauptweg unklar (d1440/00.jpg, d1440/03.jpg, d1920/09.jpg).",
+        "reparatur": "Ein einziges Formular als Ziel festlegen, am besten das 3-Schritt-Formular mit Zusammenfassung, und es weit oben platzieren. Hero und andere Sektionen verlinken nur per Anker darauf. Express-Anfrage und Hero-Kurzformular entfernen, je Sektion höchstens ein Primär-CTA."
+       },
+       {
+        "schwaeche": "Auf Mobilgeräten überlagern sich feste Leiste, schwebender WhatsApp-Kreis mit Badge, 'Chat starten'-Blase und Cookie-Schild und verdecken Formularfelder und Hero-Buttons (m375/00.jpg, m375/01.jpg).",
+        "reparatur": "Auf Mobilgeräten nur die feste untere Leiste (Anrufen/WhatsApp/Aufmaß) behalten. Schwebenden WhatsApp-Button und Chat-Blase entfernen, das Cookie-Schild in den Footer verlegen. Unten so viel Innenabstand geben, dass kein Inhalt verdeckt wird."
+       },
+       {
+        "schwaeche": "Die Gestaltung ist generisch: Pill-Badge vor jeder Sektion, gleiche Kartenraster, kein Bild im Hero, Stock- oder generiert wirkende Fotos und Cartoon-Logo. Nichts erzählt vom Handwerk Fliese (d1440/00.jpg, d1920/02.jpg, d1920/04.jpg).",
+        "reparatur": "Eine Leitidee aus dem Gewerk ableiten, etwa ein sichtbares Fugenraster als Layout-Grid und große, randlose Fotos echter Projekte (Großformat, Walk-in, Terrasse) im Hero. Sektions-Badges streichen und die Hierarchie über Typografie und Weißraum führen. Das Logo auf eine ruhige Wortmarke reduzieren, die zum Premium-Anspruch passt."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1440/00.jpg, Hero gesamt: links nur Text (Badge, H1 mit orangem 'Quadratmeter.', Untertitel, Fliesstext, drei Buttons, Haekchenzeile, Zitatbox), rechts Formular in weisser Karte - kein einziges Bild von Fliesenarbeit ueber der Falz; sauber, aber typischer SaaS-Landingpage-Aufbau.",
+        "d1440/02.jpg, 05.jpg, 08.jpg, 09.jpg, Sektionskoepfe Mitte: immer dasselbe Muster aus pastellfarbener Pill-Badge ('Umfassende Projektanfrage', 'Transparenter Ablauf', 'Echte Kundenstimmen', 'Regionale Einsatzgebiete'), zentrierter fetter Headline und grauem Zweizeiler - austauschbares Raster ohne Rhythmuswechsel.",
+        "d1920/04.jpg, Fachgewerke-Karten: Bilder (Dusche mit Haltegriffen, Wanne im Lichtstrahl) wirken wie Stock- bzw. generierte Motive mit dunklem Label unten links; dazu Strichicons in orangen Kacheln und 'FACHGEWERK'-Tag - ordentlich, aber Kartenbaukasten.",
+        "d1920/00.jpg, Kopfleiste links: Cartoon-Maskottchen im Logo widerspricht dem Premium-Anspruch 'Perfektion auf jedem Quadratmeter' und den ruhigen Architekturbaedern weiter unten."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4,
+       "belege": [
+        "m375/01.jpg und m375/03.jpg, unteres Drittel: schwebende WhatsApp-Blase mit roter '1' und Tooltip 'Chat starten' liegt ueber dem E-Mail-Feld bzw. ueber Badge und Headline 'Alles fuer Ihr Vorhaben'; dazu Schild-Button unten links und fixe Leiste 'Anrufen/WhatsApp/Aufmass' - vier fixe Ebenen auf 375 px.",
+        "m375/00.jpg, unten: WhatsApp- und Telefon-Button des Heros werden von der fixen Unterleiste mit denselben Aktionen verdeckt; die Telefonnummer bricht auf drei Zeilen ('06441 / 44 83 / 567').",
+        "d1440/00.jpg (Hero-Formular), d1440/03.jpg (dreistufige Projektanfrage mit Dunkelspalte) und d1440/11.jpg ('Ihre Express-Anfrage in 3 Klicks'): drei verschiedene Anfrageformulare auf einer Seite - unklar, welches der eigentliche Weg ist.",
+        "t768/11.jpg und d1440/09.jpg, Ortschip-Reihe rechts abgeschnitten ('Bad Na...'); d1440/00.jpg Vertrauensleiste unten abgeschnitten ('XXL-Grossformat Ni...'); d1440/03.jpg, Karte 'Reparatur & Schadensbeseitigung': Label 'Schnellhilfe' ragt ueber den Kartenrand. Positiv: d1440/00.jpg Desktop-Navigation mit klaren Hauptpunkten und Telefonnummer gut sichtbar."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1440/00.jpg, Hero: einzige Geste ist das orange eingefaerbte Wort 'Quadratmeter.' - keine Leitidee aus dem Material Fliese (Raster, Fuge, Format) erkennbar, kein Signaturmoment.",
+        "d1440/09.jpg und t768/11.jpg, Kartenbereich: grosse schwarze Flaeche mit Punktraster und DSGVO-Hinweis 'Interaktive Karte geschuetzt' statt einer eigenen Einsatzgebiet-Grafik - die prominenteste Flaeche der Seite ist ein Platzhalter.",
+        "d1440/08.jpg, Bewertungen: drei identische weisse Karten mit Initialen-Kreis, Sternen und Google-Logo im Karussell - Standardkomponente ohne Ueberraschung."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1920/04.jpg und d1440/06.jpg, Fachgewerke-Listen: konkrete Fachangaben (XXL-Fliesen bis 120 x 278 cm, 2-cm-Aussenkeramik auf Stelzlagern, Gefaelle 1,5 bis 2 %, Verbundabdichtung nach DIN 18534) wirken kompetent und echt.",
+        "d1920/11.jpg, Footer: vollstaendige Adresse Hohwardstrasse 14 Asslar, Mobilnummer, Oeffnungszeiten, Kammer und USt-IdNr. - glaubwuerdige Handwerksidentitaet; d1440/08.jpg echte Google-Stimmen mit Namen.",
+        "m375/00.jpg und d1440/00.jpg, Hero-Fliesstext: Aufzaehlung 'Fugenarme XXL-Grossformatfliesen, barrierefreie Walk-in-Duschen, repraesentative Wohnbereiche und frostsichere Terrassen ... DIN 18534 ... Staubschutzgarantie' - SEO-artig ueberladen; dieselben Schlagworte wiederholen sich in fast jeder Sektion (d1920/06.jpg 'DIN 18534 / XXL').",
+        "d1440/05.jpg und d1920/06.jpg, Bildmaterial: keine erkennbaren eigenen Baustellen- oder Vorher-Nachher-Fotos; Motive wirken generisch und nicht als Arbeiten des Betriebs belegt."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Mobil ueberlagern vier fixe Elemente (Kopfleiste, Unterleiste, WhatsApp-Blase mit Tooltip und Zaehler-Badge, Schild-Button) Inhalte und Formularfelder (m375/01.jpg, m375/03.jpg).",
+        "reparatur": "WhatsApp-Blase und Tooltip auf Mobil entfernen, da die Unterleiste WhatsApp schon enthaelt; Fake-Zaehler '1' streichen; Schild-Button in den Footer verlegen; Hero-Buttons auf Mobil auf einen Primaer-CTA reduzieren."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare auf einer Seite (Hero, 'Projekt anfragen & Situation schildern', 'Express-Anfrage in 3 Klicks') verwaessern die Hauptaktion und verlaengern die Seite massiv.",
+        "reparatur": "Ein einziges Anfrageformular (z. B. das dreistufige) behalten, alle CTAs darauf verankern; im Hero statt Formular ein starkes eigenes Referenzfoto plus ein Button."
+       },
+       {
+        "schwaeche": "Generische Baukasten-Optik ohne Leitidee: identische Pill-Badge-plus-Headline-Koepfe, Karten ueberall, kein eigenes Bildmaterial ueber der Falz, Cartoon-Logo im Kontrast zum Premiumanspruch.",
+        "reparatur": "Eine Gestaltungsidee aus dem Gewerk ableiten (Fugenraster als Layoutgitter, Formate als Bildausschnitte), echte Fotos eigener Projekte gross im Hero und in einer Referenzstrecke zeigen, Badge-Muster auf wenige Stellen begrenzen und Sektionen im Rhythmus variieren (Vollbild, asymmetrisch, dunkel)."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, Hero links: sauberer, geometrischer Display-Grotesk mit enger Laufweite, Akzentwort 'Quadratmeter.' im Orangeverlauf, rechts eine weiße Formularkarte. Das ist ordentlich gesetzt, aber genau das übliche SaaS-Landingpage-Muster (Badge, Headline mit Farbwort, drei Buttons, Häkchenzeile) und für ein Fliesenhandwerk austauschbar.",
+        "d1440/05.jpg und t768/07.jpg, Bildkarten: Die Fotos wirken generisch oder stockartig (weiße Dusche mit Haltegriffen, sonnenbeschienenes Bad mit freistehender Wanne). Die grüne Fliesenwand bei 'DIN 18534 Abdichtung' ist stark unscharf und als Breitformat ausgeschnitten. Es gibt keine eigene Bildsprache und keine sichtbaren Fugen- oder Materialdetails, obwohl das Thema Fliese genau das anbietet.",
+        "d1920/02.jpg, d1440/08.jpg und d1440/11.jpg, Abschnittsköpfe: Über fast jeder Sektion sitzt dasselbe Pastell-Pill-Badge ('Umfassende Projektanfrage', 'Echte Kundenstimmen', 'Regionale Einsatzgebiete', 'Kostenfrei & unverbindlich') über einer zentrierten Headline. Dadurch entsteht ein monotoner Rhythmus aus gleich gerundeten Karten.",
+        "d1440/03.jpg, Projektwahl-Raster rechts: Das Tag 'Schnellhilfe' ragt über den Kartenrand hinaus, und 'XXL-Großformat (ab 120 cm)' bricht wegen des Tags 'Spezialgebiet' unschön dreizeilig um. Die Detailpräzision fehlt."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfzeile: Klare Hauptnavigation mit Dropdowns, Telefonnummer, WhatsApp und der Primäraktion 'Aufmaß buchen' bleiben beim Scrollen fixiert (sichtbar in jedem Desktop-Bild). Orientierung und Kontaktweg sind jederzeit eindeutig.",
+        "m375/01.jpg und m375/03.jpg, Mobil unten: Unten liegen eine fixe Leiste (Anrufen/WhatsApp/Aufmaß), dazu der schwebende WhatsApp-Knopf mit Badge '1', die Blase 'Chat starten' und ein Schild-Knopf. Zusammen verdecken sie Formularfelder ('ORT / PLZ', E-Mail-Feld) und die Headline 'Alles für Ihr Vorhaben'. WhatsApp erscheint im Hero (m375/00.jpg) dreifach gleichzeitig.",
+        "d1440/00.jpg (Hero-Formular), d1440/03.jpg ('Projekt anfragen & Situation schildern' mit dunkler Zusammenfassung) und d1440/11.jpg ('Ihre Express-Anfrage in 3 Klicks'): Drei verschiedene Anfrageformulare auf einer Seite mit jeweils eigener Logik. Das verwässert die Handlungsklarheit und verlängert die Seite massiv.",
+        "t768/11.jpg und d1440/09.jpg, Karte: Ein großer, fast leerer schwarzer DSGVO-Platzhalter ('Interaktive Karte geschützt') nimmt rund eine Bildschirmhöhe ein, ohne vor der Zustimmung Information zu liefern. Die Ortsleiste darüber ist rechts abgeschnitten ('Bad Na…')."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg und m375/00.jpg, Hero: Der Claim 'Perfektion auf jedem Quadratmeter.' ist die einzige Leitidee. Sie wird visuell nicht eingelöst: Es gibt kein Raster, kein Fugenmotiv, keine Materialtextur und keinen Bezug zur Fliese als Gestaltungselement.",
+        "d1440/03.jpg und m375/10.jpg, dunkle Angebotsspalte: Die Live-Zusammenfassung ('Gewerk', 'Fläche', 'Vor-Ort-Aufmaß: 0 € (Kostenfrei)', 'Angebot: Verbindlicher Festpreis') ist der einzige Ansatz eines Signaturmoments. Sie bleibt aber ein Standard-Konfigurator-Muster und wird durch zwei weitere Formulare entwertet.",
+        "d1440/08.jpg, Bewertungen: Ein konventioneller Karussell-Slider mit Initial-Avataren und orangem Kartenrand oben, ohne eigene Inszenierung."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/08.jpg, Bewertungsblock: Konkrete Kundenstimmen mit Namen und Gewerk ('Elke S. – Bad', 'C. W. – Badsanierung', 'Rabia Ö. – Komplettes Haus') sowie zwei Quellen (5,0/5 bei 27 Google-Rezensionen, 9,6/10 bei 25 Trustlocal-Bewertungen) wirken echt. d1920/11.jpg, Footer: Adresse, Kammer und USt-IdNr. stützen das.",
+        "t768/09.jpg und d1440/05.jpg, Fließtexte: Die Texte sind dicht mit Fach- und Suchbegriffen gefüllt ('C2-Fliesenklebern', 'C2TE S1 Flexkleber', 'planebene Flächen', 'monolithischem Raumgefühl', 'Alles für Ihr Vorhaben auf über 100 Fachseiten' in t768/02.jpg). Der Ton liest sich eher SEO-getrieben als persönlich. Die Schreibung schwankt ('Walk-in' im Hero, 'Walk-In' in den Karten).",
+        "m375/00.jpg und d1920/00.jpg: Das Inhaberzitat 'Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.' gibt eine persönliche Note. Es fehlt aber ein Foto von Deniz Tezgel oder von echten eigenen Baustellen. Die Bilder wirken nicht wie eigene Projekte."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Austauschbare Vorlagen-Ästhetik: Pill-Badge, zentrierte Headline mit Orangewort und gerundete Icon-Karten wiederholen sich in jeder Sektion (d1920/02.jpg, d1440/08.jpg, d1440/11.jpg). Eine fliesenspezifische Leitidee fehlt.",
+        "reparatur": "Eine Gestaltungsidee aus dem Handwerk ableiten, zum Beispiel ein sichtbares Fugenraster als Layout-System mit exakten Linien, Sektionen als 'Platten' und Materialtexturen im Großformat. Die Pill-Badges streichen, Headlines linksbündig und editorial setzen, Kartenvielfalt reduzieren."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare (Hero d1440/00.jpg, Projektanfrage d1440/03.jpg, Express-Anfrage d1440/11.jpg) plus vielfach doppelte CTAs. Die Seite wird überlang und die Hauptaktion verwässert.",
+        "reparatur": "Einen einzigen Anfragepfad behalten, etwa das mehrstufige Formular mit Live-Zusammenfassung an einer Stelle. Der Hero verlinkt nur per Anker dorthin. Die übrigen Formulare entfernen und die Seite um die frei gewordenen Abschnitte straffen."
+       },
+       {
+        "schwaeche": "Mobil überlagern sich fixe Bottom-Bar, schwebender WhatsApp-Knopf mit Badge und 'Chat starten'-Blase sowie Cookie-Schild und verdecken Inhalte und Formularfelder (m375/01.jpg, m375/03.jpg, m375/10.jpg). Generische, teils unscharfe Stockbilder statt eigener Referenzfotos (d1440/05.jpg, t768/07.jpg).",
+        "reparatur": "Mobil nur die Bottom-Bar behalten. Den schwebenden WhatsApp-Knopf, die Chat-Blase und das Fake-Badge '1' entfernen und das Cookie-Schild in den Footer verlegen. Echte Projektfotos aus eigenen Baustellen einsetzen (Detailaufnahmen von Fugen, Gehrungen, Großformaten) und mit Ort und Jahr beschriften."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 4.5,
+    "bedienbarkeit": 4.5,
+    "kreativitaet": 3,
+    "inhalt": 5.5
+   },
+   "gewichtet": 4.3,
+   "einzel_gewichtet": [
+    4.45,
+    3.95,
+    4.4
+   ],
+   "lockvogel_gewichtet": []
+  },
+  "/bad": {
+   "urteile": [
+    {
+     "seite": "/bad",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1920/00.jpg, Hero Mitte: rein typografischer Hero ohne ein einziges Bild - zentrierte Headline mit orangem Verlaufswort, zwei Badge-Pillen, Zwei-Button-Paar, Haekchenzeile. Standard-Landingpage-Muster, sauber, aber fuer ein Bad-Gewerk ohne Material, Oberflaeche oder Raumgefuehl.",
+        "d1440/01.jpg, Mitte: drei gleiche Karten Basic/Premium/Luxus mit Pillen-Label und 'Musterbaeder ansehen'-Link, auf der ganzen Seite kein Foto; ebenso d1920/00.jpg unten: sechs Leistungskacheln mit identischen kleinen Icons in Orange-Quadraten - austauschbare Vorlagen-Optik.",
+        "d1440/05.jpg, Mitte: leerer weisser Streifen zwischen dunklem CTA-Block und dunklem Footer - sichtbarer Kompositionsfehler (ebenso d1920/04.jpg Mitte).",
+        "t768/01.jpg, Mitte: Kategoriekarten zu schmal, Ueberschrift 'High-End Spa & Massanfertigungen ohne Kompromisse' bricht vierzeilig um, Fliesstext in 2-3-Wort-Zeilen."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1920/00.jpg, Header: klare Hauptnavigation mit aktivem Punkt 'Badsanierung', Telefonnummer und CTA 'Aufmass buchen' stets sichtbar - gute Orientierung; daneben aber ein auf Desktop redundanter Hamburger-Button.",
+        "d1440/02.jpg und 03.jpg: Projektcheck mit Schieberegler, Auswahlkacheln und Live-Zusammenfassung ist verstaendlich; direkt darunter folgt eine zweite, konkurrierende 'Interaktive Badanfrage - Schritt 1 von 5' - zwei Formulare hintereinander lassen offen, welcher Weg gilt.",
+        "m375/00.jpg, unten: sticky Leiste Anrufen/WhatsApp/Aufmass plus schwebender WhatsApp-Kreis mit roter '1' plus Schild-Symbol links ueberlagern den Button 'Musterbaeder entdecken' - drei Overlay-Ebenen auf 375 px.",
+        "m375/07.jpg, Mitte: gruener WhatsApp-Button nur mit Icon ohne Beschriftung, rechts vom schwebenden WhatsApp-Kreis verdeckt; darunter Button 'Kostenloses Vor-Ort-Aufmass anfordern' von der Sticky-Leiste angeschnitten.",
+        "m375/10.jpg und 11.jpg: Footer auf Mobil als endlose einspaltige Linkliste (ueber 40 Links, 15 Standorte) - Ende der Seite schwer erreichbar."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg bis 05.jpg gesamt: keine erkennbare Leitidee, kein Signaturmoment - Abfolge Hero, Kachelraster, Dreier-Preiskarten, Formular, Formular, dunkler CTA, Footer entspricht einem Baukasten-Schema.",
+        "d1440/02.jpg, Projektcheck: der Flaechen-Schieberegler (3,5 bis 25 m2) mit Live-Zusammenfassung und 'Musterbad-Vergleich: Kompaktbad 8,2 m2' ist der einzige eigenstaendige Ansatz, visuell aber als generisches Formular umgesetzt (kein Grundriss, keine Fliesen- oder Raumdarstellung).",
+        "d1440/05.jpg, CTA-Block: dunkler Verlaufshintergrund mit Punktraster und riesiger oranger Telefonnummer - bekanntes Muster ohne Bezug zu Fliese oder Bad."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Hero: konkrete Fakten (HWK-Fachbetrieb, 5,0 bei 27 Google-Rezensionen, DIN 18534, Festpreis nach Aufmass) wirken glaubwuerdig; der Hero-Absatz ist aber vierzeilig, wiederholt 'schluesselfertig' und 'Fachqualitaet' doppelt und liest sich SEO-getrieben.",
+        "d1920/04.jpg, Footer links: echte Adresse Hohwardstrasse 14 Assler, Telefon, Mobil, Fax, Oeffnungszeiten, Handwerkskammer, USt-IdNr. und Name Deniz Tezgel - hohe Echtheit; aber kein einziges Foto eines realisierten Bads, des Teams oder einer Baustelle auf der ganzen Seite (alle Ansichten).",
+        "d1440/01.jpg, Kategoriekarten: Ausstattungsbeschreibungen (Edelstahlrinne, LED-Lichtspiegel, Decken-Regenpaneele) sind konkret, Ueberschriften wie 'High-End Spa & Massanfertigungen ohne Kompromisse' sind Werbefloskeln."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Keine Fotos auf einer Badsanierungsseite: weder Referenzbaeder, Materialien noch Team (alle Ansichten, z. B. d1920/00.jpg Hero, d1440/01.jpg Kategoriekarten). Die Seite kann Qualitaet nur behaupten, nicht zeigen.",
+        "reparatur": "Hero mit grossformatigem echtem Referenzbad (vorher/nachher oder Detail Fuge/Rinne) besetzen; jede Kategorie Basic/Premium/Luxus mit einem echten Projektfoto inkl. m2 und Ort; ein Portraet Deniz Tezgel beim CTA-Block."
+       },
+       {
+        "schwaeche": "Doppelte, konkurrierende Anfragestrecken: 'Bad-Projektcheck' (d1440/02.jpg) und direkt darunter 'Interaktive Badanfrage Schritt 1 von 5' (d1440/03.jpg), dazu dunkler CTA-Block mit vier weiteren Handlungsoptionen (d1440/05.jpg).",
+        "reparatur": "Eine einzige Anfragestrecke behalten (Projektcheck mit Zusammenfassung, Kontaktdaten als letzter Schritt), die zweite entfernen; im CTA-Block auf einen Primaer- und einen Sekundaerweg reduzieren."
+       },
+       {
+        "schwaeche": "Mobile Overlay-Ueberladung und Layoutfehler: Sticky-Leiste, schwebender WhatsApp-Kreis und Schild-Symbol verdecken Inhalte (m375/00.jpg unten, m375/07.jpg WhatsApp-Button ohne Label), dazu leerer weisser Streifen vor dem Footer (d1440/05.jpg, d1920/04.jpg).",
+        "reparatur": "Schwebenden WhatsApp-Kreis auf Mobil entfernen, da die Sticky-Leiste WhatsApp bereits enthaelt; Schild-Symbol in den Footer verlegen; Seiteninhalt unten um die Hoehe der Sticky-Leiste polstern; WhatsApp-Button beschriften; Leer-Abschnitt vor dem Footer entfernen; Footer-Linklisten auf Mobil als Akkordeon."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/bad",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1920/00.jpg, Hero Mitte: zentrierte Überschrift mit orangem Verlaufswort, zwei Pillen-Badges, zwei Buttons und drei Häkchen-Merkmale. Das ist die übliche Vorlagen-Komposition ohne Bild oder Grafik. Für eine Badsanierung fehlt jedes Material: Fliese, Fuge, Wasser, Licht.",
+        "d1440/01.jpg, Qualitätskarten: drei gleiche graue Kästen (Basic/Premium/Luxus), nur Text und Linkzeile, ohne ein einziges Bad-Foto. Dazu d1440/05.jpg, Mitte: ein leerer weißer Streifen von etwa 100 px zwischen dunklem CTA-Block und Footer, der wie ein Darstellungsfehler wirkt."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "m375/00.jpg, unteres Drittel: Sticky-Leiste (Anrufen/WhatsApp/Aufmaß), schwebender WhatsApp-Button mit Badge und Schild-Icon liegen übereinander und verdecken den zweiten Hero-Button 'Musterbäder entdecken'. Auf allen Mobilansichten (m375/01 bis 11) verdeckt diese Ebene rund 15 % der Bildschirmhöhe.",
+        "d1440/02.jpg und d1440/03.jpg: Bad-Projektcheck (vier Schritte mit Zusammenfassung) und direkt danach eine zweite 'Interaktive Badanfrage · Schritt 1 von 5' mit eigenem Fortschrittsbalken. Zwei konkurrierende Formulare hintereinander machen den nächsten Schritt unklar. Positiv: Auf d1440/00.jpg ist der Navigationspunkt 'Badsanierung' aktiv markiert, und die Telefonnummer steht gut sichtbar im Header."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg, Hero: Es gibt keine Leitidee und keinen Signaturmoment. Das einzige Gestaltungsmittel ist ein weicher Orange-Rosa-Verlauf hinter einem Kasten, austauschbar mit jeder Handwerker-Vorlage.",
+        "d1440/00.jpg, Leistungskacheln: Linien-Icons in orangen Quadraten (Tropfen, Raster, Schild, Funken, Lineal) aus einem Standard-Iconset. Nur das Raster-Icon deutet ein Fliesenmotiv an, und das wird nirgends weitergeführt. Auch der dunkle CTA-Block mit Punktraster (d1440/04.jpg) ist generisch."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Hero-Fließtext: konkrete, glaubwürdige Fakten (DIN 18534, Festpreis, Aßlar/Wetzlar, 5,0 bei 27 Google-Rezensionen). Sie sind aber als Keyword-Satz formuliert ('schlüsselfertig' zweimal, 'Traumbad' und 'Fachqualität' zweimal), der Ton ist werblich und hölzern.",
+        "d1440/01.jpg, Qualitätskarten, und m375/03.jpg: Die Ausstattungsstufen sind sachlich beschrieben (Edelstahlrinne, LED-Lichtspiegel, Dusch-WC), aber es gibt keine echten Fotos von Bädern, keine Vorher-Nachher-Bilder und kein Gesicht von Deniz Tezgel, obwohl er in d1440/04.jpg namentlich als Ansprechpartner genannt wird. Echtheit wird nur behauptet, nicht gezeigt."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Auf einer Seite, die Badsanierung verkauft, gibt es kein Bildmaterial (d1920/00 bis 05, d1440/00 bis 06): weder fertige Bäder noch Material oder Handwerk. Die Seite besteht nur aus Text, Kästen und Icons.",
+        "reparatur": "Den Hero als großformatiges echtes Referenzbad (Foto oder kurzes Vorher-Nachher) anlegen. Jede Qualitätskarte Basic/Premium/Luxus mit einem echten Projektfoto samt m² und Ort versehen. Ein Porträt von Deniz Tezgel in den dunklen CTA-Block setzen."
+       },
+       {
+        "schwaeche": "Doppelte Anfrage-Strecken: Der Bad-Projektcheck (d1440/02) und direkt danach die 'Interaktive Badanfrage Schritt 1 von 5' (d1440/03, m375/06) konkurrieren miteinander. Dazu kommen fünf weitere CTAs (Aufmaß buchen, Jetzt anrufen, WhatsApp, Vor-Ort-Aufmaß, Angebot mit Festpreis).",
+        "reparatur": "Beide Strecken zu einer einzigen Anfrage zusammenführen, die Projektcheck-Zusammenfassung als letzten Schritt. Einen primären CTA pro Bildschirm festlegen und die übrigen als sekundäre Textlinks führen."
+       },
+       {
+        "schwaeche": "Auf Mobilgeräten stapeln sich Sticky-Leiste, schwebender WhatsApp-Button mit Fake-Badge '1' und Schild-Icon und verdecken Inhalte (m375/00: zweiter Hero-Button verdeckt; m375/07: der grüne WhatsApp-Button zeigt nur ein Icon ohne Beschriftung). Auf Desktop steht zwischen CTA-Block und Footer ein leerer weißer Streifen (d1440/05, d1920/04).",
+        "reparatur": "Auf Mobilgeräten den schwebenden WhatsApp-Button entfernen, weil WhatsApp bereits in der Sticky-Leiste steht. Das Badge streichen und das Schild-Icon in den Footer verlegen. Unten so viel Abstand einplanen, wie die Sticky-Leiste hoch ist. Die leere Sektion vor dem Footer entfernen oder mit Inhalt füllen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/bad",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1920/00.jpg, Hero und Leistungsraster: Der Hero ist zentriert, darüber sitzen zwei Pill-Badges, die Headline hat ein orangefarbenes Akzentwort, darunter folgen zwei Buttons und drei Häkchenzeilen. Das Leistungsraster besteht aus sechs gleichen weißen Karten mit Linien-Icon in orangefarbenem Quadrat. Typografie und Farbe sind sauber und einheitlich, aber das Muster ist eine austauschbare Vorlage.",
+        "d1440/00.jpg bis 06.jpg und m375/00.jpg bis 11.jpg, gesamte Seite: Auf einer Seite zum Thema Badsanierung gibt es kein einziges Foto, kein Rendering und keine Materialgrafik. Fliesen, Oberflächen und Licht, also genau das, was verkauft wird, sieht man nirgends. Die Seite besteht nur aus Text, Karten und Formularfeldern.",
+        "d1440/05.jpg, Übergang zwischen dunklem CTA-Block und Footer: Dort liegt ein leerer weißer Streifen von etwa 100 px zwischen zwei dunklen Flächen und reißt die Komposition auf. Derselbe Fehler steht in d1920/04.jpg Mitte.",
+        "d1920/02.jpg, linke Spalte des Projektchecks unter Punkt 4: Unter den Extras bleibt eine große leere weiße Fläche, weil die rechte Zusammenfassung viel länger ist. Die beiden Spalten sind nicht ausbalanciert."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste: Die Navigation ist klar gegliedert. Der aktive Punkt „Badsanierung“ ist hervorgehoben, Telefonnummer, WhatsApp und „Aufmaß buchen“ bleiben in der klebenden Leiste immer erreichbar. Das hilft der Orientierung.",
+        "m375/00.jpg, unterer Bildschirmrand: Die feste Leiste mit Anrufen, WhatsApp und Aufmaß, der schwebende WhatsApp-Button mit Badge „1“ und das Schild-Icon links überdecken den zweiten Hero-Button „Musterbäder entdecken“. Auf dem Handy sind so drei Bedienebenen übereinandergestapelt.",
+        "m375/07.jpg, dunkler CTA-Block Mitte: Der grüne WhatsApp-Button zeigt nur ein Icon ohne Beschriftung, und der schwebende WhatsApp-Kreis liegt direkt darüber. Darunter wird „Kostenloses Vor-Ort-Aufmaß anfordern“ von der unteren Leiste abgeschnitten.",
+        "d1440/04.jpg, Mitte: Direkt nach dem vierstufigen Bad-Projektcheck mit eigenem Abschluss-CTA beginnt ein zweiter Assistent, „Interaktive Badanfrage · Schritt 1 von 5“. Zwei Anfragestrecken hintereinander machen unklar, welche man ausfüllen soll."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "d1920/02.jpg, Projektcheck mit Live-Zusammenfassung: Flächen-Schieberegler mit Marken (3,5 bis 25 m²), Auswahlkacheln und eine rechte Spalte, die mitrechnet und ein passendes Musterbad vorschlägt („Kompaktbad 8,2 m²“). Das ist der einzige Ansatz eines eigenen Moments, aber gestaltet wie ein Standardformular.",
+        "d1440/01.jpg, Qualitätskategorien: Die drei Karten Basic, Premium und Luxus sind identisch, mit kleinem Label und Textlink. Es gibt keine visuelle Steigerung zwischen den Stufen und keine Leitidee wie Fliesenraster, Fugenbild oder Wasser.",
+        "d1920/04.jpg, dunkler CTA-Block: Dunkler Verlauf mit Punktraster, große Telefonnummer und Häkchenliste. Das ist ein gängiges Conversion-Muster ohne Überraschung."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/03.jpg, rechte Spalte des Projektchecks: Konkrete und glaubwürdige Angaben wie „Bis zu 4.180 € Pflegekassen-Zuschuss“, „DIN 18040-2“ und der ehrliche Hinweis, dass der Festpreis erst nach dem Vor-Ort-Aufmaß kommt. Dazu kommt d1440/06.jpg, linke Footer-Spalte, mit Adresse, Kammer und USt-IdNr. Das schafft Echtheit.",
+        "m375/00.jpg und d1920/00.jpg, Hero-Fließtext: Der Text ist SEO-lastig und wiederholt sich: „schlüsselfertig“ und „Traumbad in Fachqualität“ stehen doppelt in Headline und Absatz, Ortsnamen sind gehäuft. Auf mobil wird daraus ein langer Block aus 10 Zeilen vor dem ersten Button.",
+        "m375/10.jpg und m375/11.jpg, Footer: Lange Linklisten mit über 15 Standortseiten („Fliesenberatung Wetzlar“, „Fliesenberatung Gießen“ zusätzlich zu Wetzlar und Gießen) wirken wie SEO-Füllmaterial statt Orientierung. Echte Referenzbilder oder Kundenstimmen fehlen auf der Seite."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Es gibt kein Bildmaterial auf einer Seite, die Bäder verkauft. Hero, Leistungen und Qualitätsstufen sind reine Text- und Icon-Karten (d1440/00.jpg, d1440/01.jpg).",
+        "reparatur": "Echte Vorher-nachher-Fotos aus eigenen Projekten einsetzen: ein großes Hero-Foto eines fertigen Bads und je ein Referenzbild pro Stufe Basic, Premium und Luxus. Optional eine Materialstreifen-Grafik mit Fliesenformaten als wiederkehrendes Motiv."
+       },
+       {
+        "schwaeche": "Zu viele und doppelte Handlungsangebote. Es gibt zwei Formularstrecken hintereinander (Projektcheck, dann Badanfrage, d1440/04.jpg), dazu „Aufmaß buchen“, „Angebot mit Festpreis“, Anrufen, WhatsApp-Float und auf mobil eine feste Leiste, die Inhalte überdeckt (m375/00.jpg, m375/07.jpg).",
+        "reparatur": "Beide Assistenten zu einer Strecke zusammenführen, deren Zusammenfassung direkt in die Anfrage übergeht. Auf mobil entweder den schwebenden WhatsApp-Kreis oder die feste Leiste streichen und unten genug Abstand lassen, damit kein Button verdeckt wird. Den WhatsApp-Button im CTA-Block beschriften."
+       },
+       {
+        "schwaeche": "Ein generisches Vorlagenbild ohne Leitidee, dazu handwerkliche Layoutfehler: der leere weiße Streifen vor dem Footer (d1440/05.jpg), die leere linke Spalte im Projektcheck (d1920/02.jpg), die umgebrochene Telefonnummer „06441 / 44 / 83 567“ im Button (d1440/04.jpg, m375/06.jpg) und das verwaiste „5“ im Badge (m375/07.jpg).",
+        "reparatur": "Ein visuelles Leitmotiv aus dem Handwerk ableiten, etwa Fugenraster oder Fliesenmodul als Gestaltungsraster und Trenner, und die Qualitätsstufen visuell steigern. Den leeren Abschnitt entfernen, die Telefonnummer mit geschütztem Leerzeichen oder white-space: nowrap zusammenhalten, die Projektcheck-Spalten oben ausrichten oder die Zusammenfassung mitscrollen lassen und die Badge-Texte kürzen."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 4,
+    "bedienbarkeit": 5,
+    "kreativitaet": 3,
+    "inhalt": 5
+   },
+   "gewichtet": 4.2,
+   "einzel_gewichtet": [
+    4.2,
+    4.2,
+    4.35
+   ],
+   "lockvogel_gewichtet": []
+  },
+  "/leistungen": {
+   "urteile": [
+    {
+     "seite": "/leistungen",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, Hero Mitte: zentrierte Karte mit Pillen-Badges, zweizeiliger Headline mit orange-rotem Verlauf auf 'Fachgewerke Wetzlar' und drei gleich lauten Buttons (Orange, Petrol, Weiß). Das ist das übliche SaaS-Vorlagenmuster, nichts erinnert an Fliesen, Material oder Handwerk.",
+        "d1920/01.jpg und d1440/01.jpg, Leistungskarten im 2x2-Raster: auf jeder Karte ein Icon-Kästchen, die gleiche Pille 'Geprüfte Fachkompetenz', Tag-Chips und eine Häkchenliste. Auf der ganzen Seite gibt es kein einziges Foto einer verlegten Fläche. Die Typografie (Grotesk, fett, eng gesetzt) ist sauber, bleibt aber austauschbar.",
+        "d1440/05.jpg, rechte dunkle Spalte: unter der Einwilligung steht eine riesige leere schwarze Fläche bis zum Absenden-Button, die Komposition kippt dort. Ebenso d1920/05.jpg Mitte: ein leerer weißer Streifen zwischen dunklem CTA-Block und Footer wirkt wie ein Fehler.",
+        "d1440/03.jpg, Konfigurator rechts unten: das Label 'Schnellhilfe' ragt über den Kartenrand von 'Reparatur & Schadensbeseitigung' hinaus (auch d1920/03.jpg). In d1440/02.jpg sind die Footer-Zeilen der Karten 'Fachdetails & Ratgeber …' umbrochen und uneinheitlich."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfzeile: die Navigation ist klar, 'Fachgewerke' ist als aktiver Punkt hervorgehoben, Telefon und 'Aufmaß buchen' sind immer sichtbar. Die Orientierung oben funktioniert.",
+        "m375/00.jpg, unterer Bildschirmrand: Bottom-Bar (Anrufen, WhatsApp, Aufmaß), dazu eine schwebende WhatsApp-Blase mit roter '1' und ein Schild-Icon links. Zusammen verdecken sie Fließtext ('na… DIN 18534') und den Hero-Button 'vereinbaren'. Dieselbe Handlung wird drei- bis viermal parallel angeboten.",
+        "t768/04.jpg und d1920/04.jpg: auf einer Seite stehen hintereinander zwei verschiedene Anfrageformulare, der Konfigurator 'Projekt anfragen & Situation schildern' und darunter 'Fordern Sie Ihr persönliches Angebot an' mit Schritt 1/2/3. Danach folgt noch ein dritter CTA-Block. Unklar, welches Formular gilt.",
+        "t768/05.jpg, Formular Mitte: die Datenschutz-Einwilligung ist vorab angehakt, in t768/04.jpg auch 'Untergrundausgleich' und 'Staubschutz'. Vorausgefüllte Entscheidungen untergraben Vertrauen und Klarheit der Handlung."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "d1440/03.jpg, rechte dunkle Spalte: die Live-Zusammenfassung (Gewerk, Fläche, 'Vor-Ort-Aufmaß 0 € (Kostenfrei)', 'Verbindlicher Festpreis') neben dem Konfigurator ist der einzige Ansatz eines eigenen Moments.",
+        "d1920/02.jpg, Mitte: der Prozess '01/02/03 – Ihr verlässlicher Weg zum neuen Traumbelag' als drei gleiche Textkarten. Das Thema Fliese, Fuge oder Raster wird nirgends gestalterisch aufgegriffen (keine Fugenraster-Grafik, kein Material, keine Bildsprache). Es gibt keine Leitidee."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1920/01.jpg, Häkchenlisten: sehr konkrete Fachangaben wie 'XXL-Fliesen (bis 120 × 278 cm)', 'Gefälleherstellung (mind. 1,5 bis 2 %)', 'Restfeuchtemessung (CM-Messung)' und 'DIN 18534'. Das wirkt fachlich echt und kompetent.",
+        "d1440/00.jpg, Hero-Text und Headline 'Fliesenleger Leistungen & Fachgewerke Wetzlar': ein SEO-lastiger Ortsnamen-Bandwurm, dazu Floskeln wie 'Luxusoase' (m375/01.jpg) und 'unübertroffener Robustheit' (d1920/00.jpg). Kein einziges Projektfoto oder Referenzbeispiel belegt die Leistungen. Einzig der Hinweis '5,0 Google-Bewertung bei 27 echten Kundenstimmen' (d1440/06.jpg) dient als Vertrauensbeleg."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Keinerlei echtes Bildmaterial: Für ein Fliesenhandwerk mit XXL-Formaten, Naturstein und Terrassen zeigt die Seite nur Icons und Textlisten (d1920/00.jpg–02.jpg).",
+        "reparatur": "Jede der vier Leistungskarten bekommt ein großes Foto eines eigenen Projekts (Detail von Fuge, Kante oder Gefälle) als Kopf oder seitliche Bildfläche. Ein Vorher/Nachher-Streifen zwischen den Leistungen und dem Prozess. Die generischen Icon-Kästchen und die Pille 'Geprüfte Fachkompetenz' entfallen."
+       },
+       {
+        "schwaeche": "Redundante, konkurrierende Handlungen: zwei verschiedene Anfrageformulare plus ein dritter CTA-Block auf einer Seite (t768/04.jpg, d1920/04.jpg, d1920/05.jpg). Auf dem Handy überlagern sich Bottom-Bar, WhatsApp-Blase mit Fake-Badge und Schild-Icon und verdecken Inhalt (m375/00.jpg).",
+        "reparatur": "Nur ein Anfrageweg auf der Seite: den Konfigurator behalten, das Express-Formular streichen, den Schluss-CTA auf eine kompakte Telefonzeile reduzieren. Mobil die schwebende WhatsApp-Blase und das '1'-Badge entfernen (die Bottom-Bar genügt) und den Seiteninhalt um deren Höhe nach unten auspolstern."
+       },
+       {
+        "schwaeche": "Layoutfehler und leere Flächen: das 'Schnellhilfe'-Label läuft über den Kartenrand (d1440/03.jpg), die rechte dunkle Spalte hat einen großen Leerraum (d1440/05.jpg), ein leerer weißer Streifen steht vor dem Footer (d1920/05.jpg). Dazu sind Einwilligung und Optionen vorab angehakt (t768/04.jpg, t768/05.jpg).",
+        "reparatur": "Die Tag-Labels in der Konfigurator-Karte unter den Titel setzen statt rechts daneben. Die dunkle Zusammenfassung sticky oben halten und Formularfelder sowie Absenden-Button bündig darunter stapeln, damit kein Leerraum bleibt. Die leere Sektion vor dem Footer entfernen. Einwilligung und alle Optionen standardmäßig unangehakt lassen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/leistungen",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, Hero-Karte Mitte: zentrierte Überschrift mit Orange-Rot-Verlauf auf „Fachgewerke Wetzlar“, zwei Pillen-Badges darüber, drei gleich gewichtete Buttons darunter. Sauber, aber das ist ein austauschbares SaaS-Muster ohne ein einziges Foto, Material oder Fliesenmotiv.",
+        "d1920/01.jpg, Leistungskarten links und rechts: vier identisch aufgebaute weiße Karten (Icon-Kachel, Badge „Geprüfte Fachkompetenz“, Chips, Häkchenliste, Link und Button). Die Komposition wiederholt sich ohne Rhythmuswechsel. Auf der ganzen Seite gibt es keine Bildwelt, für einen Fliesenleger, dessen Produkt sichtbar ist, ein schwerer Mangel.",
+        "d1920/05.jpg, Mitte (ca. y 810–905): leerer weißer Streifen zwischen dunklem CTA-Block und dunkler Vertrauensleiste. Das wirkt wie ein Layoutfehler und bricht die Flächenführung.",
+        "d1440/05.jpg, rechte dunkle Spalte: großer Leerraum zwischen der Einwilligungs-Checkbox und dem Button „Unverbindliche Anfrage absenden“. Die Spalte ist nicht auf die Formularhöhe links abgestimmt.",
+        "d1440/03.jpg, Formularkarte unten rechts: das Badge „Schnellhilfe“ ragt über den rechten Rand der Karte „Reparatur & Schadensbeseitigung“ hinaus (auch d1920/04.jpg, oben rechts in der Karte)."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste: die Navigation markiert „Fachgewerke“ aktiv, Telefon und „Aufmaß buchen“ sind ständig erreichbar, die Orientierung ist gut. Daneben steht aber zusätzlich ein Hamburger-Button trotz voll ausgeschriebener Navigation, eine doppelte und unklare Handlung.",
+        "m375/00.jpg, unteres Drittel: die feste Leiste (Anrufen/WhatsApp/Aufmaß), die schwebende WhatsApp-Blase mit roter „1“ und das Schild-Icon links verdecken gemeinsam den Fließtext („…nach DIN 18534“). WhatsApp ist auf einem Bildschirm dreifach präsent (auch Hero-Button).",
+        "d1920/02.jpg unten und d1920/04.jpg: zwei verschiedene Anfrage-Formulare hintereinander („Projekt anfragen & Situation schildern“ mit 3-Schritt-Leiste plus dunklem Panel, danach „Fordern Sie Ihr persönliches Angebot an“ mit einem weiteren 3-Schritt-Assistenten), danach noch ein CTA-Block (d1920/05.jpg). Damit ist unklar, welcher Weg der richtige ist.",
+        "m375/10.jpg, unten: die Einwilligungs-Checkbox ist bereits angehakt, im Formular sind Optionen vorausgewählt (m375/08.jpg: „Staubschutz“ markiert; t768/04.jpg: „Badsanierung“, „Standard-Raum“, „Untergrundausgleich“). Die Zusammenfassung zeigt so Angaben, die der Nutzer nie gemacht hat.",
+        "t768/02.jpg, Kartenfuß links unten: der Link „Fachdetails & Ratgeber: Balkon- &…“ und der Button „Aufmaß anfragen“ sind eingequetscht und laufen am Kartenrand ab."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg, Hero: Verlaufsüberschrift, Badges und Button-Reihe. Es gibt keine Leitidee, die mit Fliesen, Fugen, Raster oder Material spielt. Das einzige grafische Element sind generische Line-Icons in orangen Kacheln (Tropfen, Funkeln, Sonne, Schild).",
+        "d1920/02.jpg, Mitte: „Ihr verlässlicher Weg zum neuen Traumbelag“ als drei Standard-Karten 01/02/03. Das ist ein Schablonen-Prozessblock ohne Signaturmoment. Am ehesten eigenständig ist der Konfigurator mit Flächenkacheln und Live-Zusammenfassung (d1920/03.jpg), aber auch er folgt einem gängigen Muster."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/01.jpg und d1440/02.jpg, Häkchenlisten: konkrete Fachangaben (XXL-Fliesen bis 120 × 278 cm, Gefälle mind. 1,5 bis 2 %, CM-Messung, AIV nach DIN 18534, Tropfprofile aus pulverbeschichtetem Aluminium) wirken echt und kompetent.",
+        "d1920/00.jpg, Hero-Text und Überschrift „Fliesenleger Leistungen & Fachgewerke Wetzlar“: keyword-lastig und schwerfällig, der Einleitungsabsatz reiht Schlagworte aneinander. Dazu Werbefloskeln („Luxusoase“, „Traumbelag“, „unübertroffener Robustheit“, d1920/00.jpg Karte rechts). Es gibt kein einziges Referenzfoto ausgeführter Arbeiten, die Bewertung „5,0 bei 27 Kundenstimmen“ (d1920/05.jpg) steht ohne Zitat da."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Keine Bildwelt: Ein Fliesenleger zeigt auf der Leistungsseite kein einziges Foto von Bädern, Terrassen, Fugenbildern oder Material (alle Ansichten, z. B. d1920/00–02.jpg). Dadurch wirkt die Seite austauschbar und unbelegt.",
+        "reparatur": "Jede Leistungskarte bekommt ein echtes Projektfoto (am besten Vorher/Nachher oder ein Detail mit Fuge und Kante). Dazu im Hero ein großformatiges Bild eines fertigen XXL-Bads. Eine Leitidee aus Fliesenraster oder Fugenlinien für Gliederung und Trenner verbindet Grafik und Gewerk."
+       },
+       {
+        "schwaeche": "Redundante, konkurrierende Anfragewege: zwei komplette Formulare (d1920/02–04.jpg), danach CTA-Block und Vertrauensleiste mit weiterem Button (d1920/05.jpg). Mobil kommen feste Leiste, schwebende WhatsApp-Blase und Hero-Buttons hinzu (m375/00.jpg) und verdecken Inhalt.",
+        "reparatur": "Einen einzigen Anfrage-Assistenten behalten, den zweiten Wizard streichen. Mobil entweder die feste Leiste oder die schwebende WhatsApp-Blase zeigen, nicht beides, und unten genug Innenabstand lassen, damit nichts verdeckt wird. Den Desktop-Hamburger neben der vollen Navigation entfernen."
+       },
+       {
+        "schwaeche": "Handwerkliche Layoutfehler und Vorbelegungen: leerer weißer Streifen zwischen dunklen Blöcken (d1920/05.jpg, t768/07.jpg), leere Fläche im dunklen Formularpanel (d1440/05.jpg), überlaufendes Badge „Schnellhilfe“ (d1440/03.jpg), vorab angehakte Einwilligung und vorausgewählte Optionen (m375/10.jpg, t768/04.jpg).",
+        "reparatur": "Den Leerabschnitt entfernen oder füllen. Die Formularspalten per Grid oder Sticky-Zusammenfassung auf gleiche Höhe bringen. Badges in den Kartenfluss setzen statt absolut zu positionieren. Einwilligung und alle Optionen standardmäßig leer lassen und die Zusammenfassung erst nach Nutzereingaben füllen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/leistungen",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero-Kachel: zentrierte Überschrift mit orange-rotem Verlaufswort 'Fachgewerke Wetzlar', zwei Pill-Badges darüber und drei gleich gewichtete Buttons (orange, petrol mit Verlauf, weiß umrandet). Das ist sauber, aber ein austauschbares SaaS-Vorlagenmuster ohne ein einziges Foto von Fliesen oder Arbeit.",
+        "d1920/01.jpg, Leistungskarten-Raster: vier identisch gebaute weiße Karten (Icon-Kachel, Badge 'Geprüfte Fachkompetenz', H2, Fließtext, Pill-Chips, Häkchenliste, Link und Ghost-Button). Typografie und Abstände sind ordentlich, aber visuell monoton. Der Werkstoff Fliese kommt nirgends als Bild, Textur oder Fugenraster vor.",
+        "d1920/05.jpg, Übergang vom dunklen CTA-Block zur Fußzeile (ca. y 810–905): ein leerer weißer Streifen über die ganze Breite unterbricht die dunkle Fläche. Das wirkt wie ein Layoutfehler (auch auf t768/07.jpg in der Mitte).",
+        "d1440/05.jpg, rechte dunkle Formularspalte: zwischen Einwilligungs-Checkbox (oben) und Absende-Button (unten) bleibt eine große leere schwarze Fläche, weil die Spalte nur auf die Höhe der linken Spalte gestreckt ist."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "m375/00.jpg, unterer Bildrand: Die feste Leiste 'Anrufen / WhatsApp / Aufmaß', der schwebende WhatsApp-Kreis mit Zähler '1' und das Schild-Symbol links verdecken gleichzeitig Fließtext ('na[ch] DIN 18534') und den Hero-CTA 'Vor-Ort-Aufmaß vereinbaren', der nur angeschnitten sichtbar ist. Auf m375/04.jpg verdeckt der WhatsApp-Kreis zusätzlich Listentext.",
+        "d1440/03.jpg und d1440/06.jpg: Die Seite hat zwei getrennte Anfrageformulare mit unterschiedlicher Logik. Das erste ('Projekt anfragen & Situation schildern') zeigt alle Schritte auf einmal mit Kontaktspalte, das zweite ('Express-Anfrage in 60 Sekunden', Schritt 1 von 3) ist ein Wizard mit ähnlichen, aber anders benannten Kacheln. Dazu kommen 'Aufmaß buchen', 'Aufmaß anfragen' je Karte und 'Kostenloses Vor-Ort-Aufmaß anfordern'. Der eigentliche Handlungsweg bleibt unklar.",
+        "d1440/00.jpg, Kopfzeile: klare Hauptnavigation mit hervorgehobenem aktivem Punkt 'Fachgewerke', sichtbarer Telefonnummer und primärem Button 'Aufmaß buchen'. Die Orientierung oben ist gut. Das Burger-Symbol daneben ist auf Desktop allerdings überflüssig und doppelt.",
+        "t768/04.jpg, Formular Schritt 1–3: Auswahlkacheln mit Radio- und Checkbox-Zuständen in Orange sind klar lesbar und gut antippbar. Die Zusammenfassung im dunklen Block (t768/05.jpg: 'Gewerk / Fläche / 0 € (Kostenfrei)') gibt hilfreiches Feedback."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/02.jpg, Mitte: Der Prozessabschnitt 'Ihr verlässlicher Weg zum neuen Traumbelag' besteht aus drei Standard-Karten mit großen Ziffern 01/02/03. Ein generisches Muster, das keinerlei Bezug zum Fliesenhandwerk aufbaut.",
+        "d1440/07.jpg, Vertrauensleiste oben: Vier Icon-Kacheln (HWK Fachbetrieb, DIN 18534, Staubschutz-Garantie, Festpreisgarantie) im typischen Line-Icon-Stil. Auch die Icons der Leistungskarten (Tropfen, Funkeln, Sonne, Schild auf d1920/01.jpg) sind Bibliotheks-Standard. Es gibt keinen Signaturmoment und keine Leitidee wie Fugenraster, Materialmuster oder Werkfoto."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/02.jpg, linke Karte 'Balkon- & Terrassensanierung', Häkchenliste: konkrete, fachlich echte Angaben wie '2-cm-Außenkeramik auf Stelzlagern oder Splittbett', 'Gefälle (mind. 1,5 bis 2 %)', 'Tropfprofile aus pulverbeschichtetem Aluminium'. Die rechte Karte nennt 'CM-Messung' und 'AIV nach DIN 18534'. Das zeigt glaubwürdige Fachkompetenz.",
+        "d1440/00.jpg, Hero-Text: Ein einziger 5-zeiliger Satz mit SEO-Häufung ('Fliesenleger Leistungen & Fachgewerke Wetzlar', 'Wetzlar, Aßlar und Mittelhessen', 'fugenarme XXL-Großformate', 'DIN 18534', 'Staubschutz'). Er liest sich wie Keyword-Text statt wie die Ansprache eines Handwerksbetriebs. Auf der ganzen Seite fehlt echtes Bildmaterial von Projekten oder von Deniz Tezgel.",
+        "d1920/05.jpg, dunkler CTA: Die Telefonnummer steht groß in Orange, dazu der Text '5,0 Google-Bewertung bei 27 echten Kundenstimmen'. Das ist ein konkreter Vertrauensbeleg, aber ohne zitierte Stimme oder Link. Die Nummer 06441 / 44 83 567 erscheint auf der Seite mindestens sechsmal."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Es gibt kein einziges Foto oder Material-Bild: Eine Fliesenleger-Seite zeigt weder Bäder, Terrassen, Fugenbilder noch den Inhaber. Alle Leistungskarten sind reine Text-, Chip- und Listenblöcke (d1920/00–01.jpg, m375/01.jpg).",
+        "reparatur": "Jede Leistungskarte bekommt ein echtes Referenzfoto oder ein Vorher-nachher-Paar als Kopfbild. Im Hero ersetzt ein großformatiges Projektfoto oder eine Detailaufnahme von Fugen bzw. Großformat die leere Verlaufskachel. Dazu kommt ein Porträt von Deniz Tezgel am CTA."
+       },
+       {
+        "schwaeche": "Doppelte, konkurrierende Anfragewege: Zwei vollständige Formulare (d1440/03.jpg und d1440/06.jpg) plus zahlreiche 'Aufmaß'-Buttons, ein schwebender WhatsApp-Kreis und eine mobile Bottom-Bar. Auf m375/00.jpg verdecken diese festen Elemente Hero-Text und Hero-CTA.",
+        "reparatur": "Auf ein Formular reduzieren, am besten den Wizard mit Zusammenfassung, und alle Aufmaß-Buttons per Anker dorthin führen. Mobil entweder die Bottom-Bar oder den schwebenden WhatsApp-Button behalten, nicht beides. Unten so viel Innenabstand vorsehen, dass kein Inhalt verdeckt wird."
+       },
+       {
+        "schwaeche": "Ein monotones Vorlagen-Raster mit Layoutfehlern: Vier identische Karten mit identischem Badge 'Geprüfte Fachkompetenz', dazu Pill-Chips überall. Hinzu kommen ein leerer weißer Streifen zwischen dunklem CTA und Fußzeile (d1920/05.jpg) und eine leere schwarze Fläche in der Formularspalte (d1440/05.jpg).",
+        "reparatur": "Die Leistungen asymmetrisch inszenieren, zum Beispiel Bad groß mit Bild und die anderen als schmalere Reihen. Das wiederholte Badge streichen und als gestalterischen Leitfaden ein Fugenraster bzw. eine Fliesenmodul-Geometrie nutzen. Den weißen Streifen entfernen und die Formular-Spalten oben bündig ohne künstliche Streckung setzen, den Absende-Button dabei direkt unter die Felder."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 4.5,
+    "bedienbarkeit": 5,
+    "kreativitaet": 3,
+    "inhalt": 5
+   },
+   "gewichtet": 4.4,
+   "einzel_gewichtet": [
+    4.55,
+    4.4,
+    4.4
+   ],
+   "lockvogel_gewichtet": []
+  },
+  "/standorte": {
+   "urteile": [
+    {
+     "seite": "/standorte",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1920/00.jpg, Hero Mitte: zentrierte Zeile 'Standorte & Einsatzgebiete in' mit orangefarbenem Akzentwort 'Mittelhessen', Pill-Badge darüber und zwei Buttons darunter. Das ist das bekannte SaaS-Landingpage-Muster, sauber gesetzt, aber austauschbar. Kein Foto, keine Grafik.",
+        "d1440/02.jpg und d1920/02.jpg, Kartenraster: 13 gleich gebaute weiße Karten (rote Versal-Kreiszeile, graue km-Pille, Fließtext, Trennlinie, Pfeillink), ordentlich im Rhythmus, aber monoton. Dazu dieselbe dunkle Punktraster-Box in d1440/01.jpg oben, d1440/05.jpg Mitte und d1440/06.jpg unten. Die Pill-Badges ('Interaktive Gebietskarte', '13 Städte & Gemeinden', 'In allen Einsatzgebieten', 'Firmensitz & Anfahrt') wiederholen sich als Schablone über allen Abschnitten."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfzeile: klare Navigation mit hervorgehobenem Punkt 'Standorte', Telefonnummer und 'Aufmaß buchen' sind immer sichtbar. Auf m375/00.jpg unten gibt es eine feste Leiste 'Anrufen / WhatsApp / Aufmaß', die Handlungen sind also eindeutig.",
+        "m375/03.jpg und m375/06.jpg, rechts unten: Der schwebende WhatsApp-Knopf mit Badge '1' liegt über dem Kartentext ('Auch in Marburg', 'Balkonsanierung') und doppelt die WhatsApp-Schaltfläche der Leiste darunter. Auf t768/05.jpg, Kartenbox links, verdeckt die Adresskarte den Button 'Karte laden & zustimmen' (nur 'en & zustimmen' ist lesbar). Auf m375/01.jpg ist die Stadt-Chipzeile rechts abgeschnitten ('Marbu'), ohne erkennbaren Scroll-Hinweis."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg unten und d1920/01.jpg oben: Das mögliche Signaturelement 'Unser 45-km-Einsatzgebiet' mit Stadt-Chips führt nur zu einem schwarzen Platzhalter 'Interaktive Karte geschützt (DSGVO)'. Die Leitidee Region und Entfernung wird nirgends grafisch eingelöst, es gibt weder eine eigene Karte noch Radien.",
+        "d1920/05.jpg, unterer Bereich: Der Abschlussblock mit vierzeiliger Headline 'Planen Sie ein Fliesen- oder Badprojekt in Mittelhessen?', Häkchenliste, großer Telefonnummer und Doppelbutton ist ein generischer Conversion-Block ohne Bezug zum Handwerk Fliese. Das gilt für die ganze Seite: Keine Fugen, kein Raster und kein Material tauchen als gestalterische Idee auf."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1920/02.jpg, Kartenraster: konkrete Angaben je Ort (Landkreis, 'ca. 35 km ab Wetzlar', DIN 18534, Staubschutz) und echte Adresse 'Hohwardstraße 14, 35614 Aßlar' im Hero von d1440/00.jpg wirken glaubwürdig und regional verankert.",
+        "d1440/05.jpg unten und d1440/06.jpg oben: Die keyword-lastige Headline 'Fliesenleger oder Badsanierung in Mittelhessen & Lahn-Dill-Kreis' und die schablonenhaften Kartentexte ('Auch in … übernehmen wir …') lesen sich wie SEO-Text. Auf der ganzen Seite gibt es kein einziges Projekt- oder Teamfoto. Die Entfernungen werden 'ab Wetzlar' gemessen, obwohl der Firmensitz in Aßlar liegt (d1440/03.jpg, Karte Aßlar 'Unser Firmensitz')."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Es gibt kein echtes Bildmaterial, und die Karte, das Kernthema der Seite, erscheint zweimal nur als DSGVO-Platzhalter (d1440/01.jpg, d1440/05.jpg). Die Seite zeigt die Region nie.",
+        "reparatur": "Eine eigene, zustimmungsfreie SVG-Regionskarte mit Firmensitz Aßlar als Zentrum, Entfernungsringen und klickbaren Orten als Signaturelement bauen, die mit den Chips und Karten verknüpft ist. Google Maps nur noch als optionaler Link 'Route planen'. Je Region ein echtes Baustellenfoto ergänzen."
+       },
+       {
+        "schwaeche": "Die Handlungsaufforderungen überlagern sich mobil: Kopf-Telefon, feste Unterleiste, schwebender WhatsApp-Knopf und Cookie-Schild verdecken Inhalt (m375/03.jpg, m375/06.jpg). Auf dem Tablet verdeckt die Adresskarte den Zustimmungsbutton (t768/05.jpg).",
+        "reparatur": "Den schwebenden WhatsApp-Knopf auf Mobil und Tablet entfernen, weil die Unterleiste ihn schon enthält. Das Cookie-Schild in den Footer verlegen. Die Adresskarte unter die Kartenbox setzen statt darüber und dem Seiteninhalt unten so viel Abstand geben, wie die Leiste hoch ist."
+       },
+       {
+        "schwaeche": "Monotone, redundante Struktur: 13 identische Textkarten, zwei Kartenboxen und drei aufeinanderfolgende CTA-Blöcke mit derselben Nummer (d1920/05.jpg, d1440/06.jpg). Dazu durchgehend dieselben Pill-Badges, insgesamt ein Vorlagen-Look.",
+        "reparatur": "Die Orte nach Landkreis gruppieren (Lahn-Dill, Gießen, Wetterau …) und als kompakte Liste oder Karte mit Entfernung zeigen, Detailtexte erst auf den Ortsseiten. Die beiden Kartenboxen zu einer zusammenlegen, die CTA-Blöcke auf einen reduzieren und die Badges sparsam als echte Gliederung einsetzen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/standorte",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero mittig: Muster aus Badge-Pille, zentrierter Grotesk-Headline mit orangem Schlusswort, Fließtext und zwei Buttons. Sauber gesetzt, aber genau das Standardschema eines Baukastens; ein Foto, eine Grafik oder eine Karte gibt es hier nicht.",
+        "d1440/02.jpg und d1920/02.jpg, Städteraster: 13 gleich gebaute weiße Karten (Kreis-Label in Versalien, Entfernungs-Pille, Titel, Text, Linklinie) ohne ein einziges Bild. Die zweizeiligen Kreis-Labels ('LANDKREIS MARBURG-BIEDENKOPF', 'LANDKREIS LIMBURG-WEILBURG') schieben die Titel aus der Linie (Marburg-Titel tiefer als Wetzlar/Gießen).",
+        "d1440/01.jpg und d1440/05.jpg, große schwarze Punktraster-Flächen: Der Platzhalter 'Interaktive Karte geschützt (DSGVO)' steht zweimal als leere dunkle Fläche auf der Seite. Er ist das größte Gestaltungselement und zeigt keinen Inhalt.",
+        "d1920/05.jpg, unten Mitte: Der Button 'Jetzt Vor-Ort-Termin anfragen' bricht zweizeilig um, Telefon-Icon und Pfeil kleben an den Rändern. Er steht neben einem niedrigeren WhatsApp-Button, das wirkt unsauber."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste: Die Navigation ist klar, der aktive Punkt 'Standorte' ist hervorgehoben, Telefon und 'Aufmaß buchen' sind immer sichtbar. Die Orientierung ist gut.",
+        "t768/05.jpg, Kartenblock Mitte links: Die Adresskarte 'Fliesenverlegung Tezgel / Route planen' überdeckt den Button 'Karte laden & zustimmen', zu lesen ist nur noch 'en & zustimmen'. Ähnlich in m375/10.jpg, wo die Karte den Einwilligungsbereich verdeckt.",
+        "m375/04.jpg und m375/07.jpg, unterer Rand: Leiste mit drei Buttons (Anrufen/WhatsApp/Aufmaß), dazu WhatsApp-Blase mit Badge '1' und Schild-Knopf. Drei schwebende Ebenen verdecken Inhalt, z. B. 'Walk-In-Dusche bis zur großformatigen …' und die Pille 'Unser Firmensitz'.",
+        "d1440/05.jpg bis d1440/07.jpg: Zwei dunkle CTA-Blöcke folgen direkt aufeinander ('Fliesenleger oder Badsanierung in Mittelhessen …' und 'Planen Sie ein Fliesen- oder Badprojekt …'), jeweils mit Telefon- und WhatsApp-Button. Die Telefonnummer steht auf der Seite rund sechsmal, die Handlungen wiederholen sich, statt sich zu staffeln."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1440/00.jpg, Städte-Chips unter 'Unser 45-km-Einsatzgebiet': Die 'Interaktive Gebietskarte' wäre der einzige mögliche Signaturmoment. Zu sehen ist aber nur eine abgeschnittene Chip-Reihe ('H…') und darunter der schwarze Einwilligungs-Platzhalter (d1440/01.jpg), eine Karte wird nie gezeigt.",
+        "d1920/02.jpg, Kartenraster: Die Einsatzorte sind eine austauschbare Kachelliste. Es gibt keine Leitidee (Wege, Radius, Entfernungen als Grafik), die das Thema 'vor Ort in Mittelhessen' sichtbar macht.",
+        "d1920/05.jpg, dunkler Abschluss-Block: Der Verlauf von Braun zu Schwarz mit Punktraster und die Riesen-Headline sind ein bekanntes Landingpage-Muster ohne eigenen Dreh."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/02.jpg und d1440/03.jpg, Kartentexte: Jede Stadt hat eigenen Text mit örtlichem Bezug, z. B. Dillenburg 'Dilltal', Solms 'direkte Nachbargemeinden', Aßlar 'Hohwardstraße 14 … Inhaber Deniz Tezgel'. Dazu kommen konkrete Entfernungen und die DIN 18534. Das wirkt glaubwürdiger als reine Platzhalter.",
+        "d1440/00.jpg, Chip 'Wetzlar HQ' gegen Hero-Text 'Firmensitz in der Hohwardstraße 14 in 35614 Aßlar': Der Hauptsitz ist widersprüchlich angegeben, alle Entfernungen gelten 'ab Wetzlar' (d1440/02.jpg), obwohl die Aßlar-Karte 'Unser Firmensitz' sagt (d1440/03.jpg).",
+        "d1920/02.jpg bis d1920/05.jpg: Kein einziges echtes Foto (Team, Baustellen, Bäder aus den Orten). Die Texte haben einen SEO-Ton ('Fliesenleger in …' 13-mal, 'Fliesenleger oder Badsanierung in Mittelhessen & Lahn-Dill-Kreis'). Bildmaterial fehlt völlig."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Die zentrale Karte fehlt. Zweimal steht eine große schwarze DSGVO-Platzhalterfläche, wo das Einsatzgebiet gezeigt werden sollte (d1440/01.jpg, d1440/05.jpg). Beim zweiten Platzhalter überdeckt die Adresskarte den Einwilligungs-Button (t768/05.jpg).",
+        "reparatur": "Eine eigene, statische SVG-Karte von Mittelhessen ohne Google zeigen: Firmensitz Aßlar, Radius-Ringe und die 13 Orte als anklickbare Punkte, verbunden mit Chips und Karten. Google Maps nur als optionaler Link 'Route planen'. Den zweiten Platzhalter streichen und die Adresskarte daneben statt darüber setzen."
+       },
+       {
+        "schwaeche": "Austauschbares, bildloses Kachelraster mit wiederholten Handlungsblöcken. 13 identische Karten, danach zwei fast gleiche dunkle CTA-Sektionen, die Telefonnummer etwa sechsmal (d1440/02.jpg, d1440/05.jpg bis 07.jpg).",
+        "reparatur": "Orte nach Entfernung oder Landkreis gruppieren (z. B. 'Nachbarorte unter 10 km', 'Lahn-Dill', 'Wetterau'). Je Gruppe ein echtes Projektfoto aus dem Ort zeigen. Die Kreis-Labels einzeilig kürzen, damit die Titel bündig stehen. Die beiden CTA-Blöcke zu einem zusammenlegen, mit Foto von Deniz Tezgel."
+       },
+       {
+        "schwaeche": "Mobil ist die Seite überladen und widersprüchlich: Unterleiste, WhatsApp-Blase mit Fake-Badge '1' und Cookie-Schild verdecken Text und Pillen (m375/04.jpg, m375/07.jpg). Der Sitz heißt mal 'Wetzlar HQ', mal 'Firmensitz Aßlar' (d1440/00.jpg).",
+        "reparatur": "Auf Mobil die schwebende WhatsApp-Blase entfernen, weil WhatsApp schon in der Unterleiste steht, und das Cookie-Schild in den Footer verlegen. Unten genug Abstand lassen, damit die Leiste nichts verdeckt. Den Firmensitz überall einheitlich 'Aßlar' nennen und die Entfernungen ab Aßlar angeben."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/standorte",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, Hero Mitte: zentrierte Grotesk-Headline mit orangem Verlaufswort 'Mittelhessen', Pill-Badge darüber, zwei Buttons darunter. Sauber, aber das übliche Landingpage-Muster ohne Bild, Grafik oder eigenen Akzent.",
+        "d1920/02.jpg und d1440/03.jpg, Kartenraster: 13 gleich gebaute weiße Textkarten (Kreis-Label, Entfernungspille, Stadtname, Linkzeile), kein einziges Foto. Die letzte Karte 'Aßlar' steht allein in der letzten Reihe (d1440/05.jpg links, rechts zwei Drittel leer).",
+        "d1440/01.jpg oben und d1920/04.jpg Mitte: zweimal derselbe schwarze Punktraster-Block 'Interaktive Karte geschützt (DSGVO)' als großer, dunkler Leerraum. Dazu d1440/06.jpg: zwei dunkle CTA-Flächen direkt übereinander, das zerfasert den Seitenrhythmus.",
+        "m375/01.jpg bis m375/11.jpg: über jedem Abschnitt dasselbe orange Pill-Badge ('Interaktive Gebietskarte', '13 Städte & Gemeinden', 'In allen Einsatzgebieten', 'Firmensitz & Anfahrt'). Ein Baukasten-Tick, der keine Hierarchie stiftet."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste: Navigation mit hervorgehobenem aktivem Punkt 'Standorte', Telefonnummer und 'Aufmaß buchen' immer sichtbar. Die Orientierung ist klar.",
+        "d1440/00.jpg unten und m375/01.jpg Mitte: die Städte-Chipleiste ist am Rand abgeschnitten ('H', 'Marbu'). Nichts zeigt, dass man seitlich scrollen kann.",
+        "t768/05.jpg, Kartenblock links unten: die weiße Adresskarte 'Fliesenverlegung Tezgel' liegt über dem Button 'Karte laden & zustimmen', von dem nur noch 'en & zustimmen' zu sehen ist.",
+        "m375/03.jpg und m375/06.jpg, rechts unten: der schwebende WhatsApp-Kreis mit roter '1' und der Schild-Knopf links verdecken Fließtext ('großformatigen', 'Balkonsanierung'). Zusammen mit der unteren Leiste (Anrufen/WhatsApp/Aufmaß) gibt es drei Bedienebenen übereinander.",
+        "d1440/03.jpg und d1920/02.jpg: die Karten sind weder nach Entfernung noch nach Kreis sortiert (40, 35, 40, 45, dann 20 km). Der Firmensitz Aßlar kommt als letzte Karte (d1440/05.jpg)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1440/00.jpg und d1440/01.jpg: die Leitidee 'Unser 45-km-Einsatzgebiet' mit 'Interaktive Gebietskarte' wird nicht eingelöst. Statt einer eigenen Regionsgrafik steht dort nur der Google-Maps-Zustimmungsplatzhalter.",
+        "d1920/02.jpg: die Entfernungspillen ('ca. 25 km ab Wetzlar') sind die einzige ortsbezogene Idee. Sie bleiben Text und werden nicht räumlich gezeigt; es gibt keinen Signaturmoment, kein Fliesen- oder Fugenmotiv, nichts Überraschendes.",
+        "d1920/05.jpg und d1440/06.jpg: Abschluss-CTA mit vierzeiliger Headline und großer oranger Telefonnummer. Das ist die Standardformel für Handwerkerseiten."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1920/00.jpg, Hero-Text: konkrete Adresse 'Hohwardstraße 14 in 35614 Aßlar', Zielgruppen genannt. Dazu d1920/06.jpg, Vertrauensleiste: 'HWK Wiesbaden', 'DIN 18534', '5,0 Google-Bewertung bei 27 echten Kundenstimmen'. Das ist greifbar und glaubwürdig.",
+        "d1920/02.jpg, Kartentexte: austauschbare SEO-Formeln ('Auch in Haiger und den umliegenden Ortsteilen...', 'Butzbach und Umgebung gehören zu unserem Einsatzgebiet...'). Keine Referenzprojekte oder Fotos aus den Orten, nichts wirklich Lokales.",
+        "m375/10.jpg und d1920/05.jpg: Wiederholungen ('kostenfreies Aufmaß' und die Telefonnummer mehrfach pro Bildschirm), uneinheitliche Rollenbezeichnung ('Fachbetriebsleiter' vs. 'Inhaber' in d1440/05.jpg). Der Ton wirkt dadurch werblich statt persönlich."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Der zentrale Inhalt der Seite, das Einsatzgebiet, ist nur als gesperrter Google-Maps-Platzhalter zu sehen, und das zweimal (d1440/01.jpg, d1920/04.jpg). Auf Tablet verdeckt die Adresskarte sogar den Zustimm-Button (t768/05.jpg).",
+        "reparatur": "Eine eigene statische SVG-Regionskarte von Mittelhessen zeichnen: Aßlar als Mittelpunkt, Radius-Ringe für 10/25/45 km, die 13 Orte als anklickbare Punkte, die mit den Karten verknüpft sind. Google Maps nur noch einmal und optional für die Routenplanung anbieten, und die Adresskarte unter den Button setzen statt darüber."
+       },
+       {
+        "schwaeche": "Das Kartenraster aus 13 gleichförmigen Textkarten hat weder Bilder noch Ordnung (d1920/02.jpg). Der Firmensitz steht als verwaiste Einzelkarte am Ende (d1440/05.jpg), die Texte sind austauschbare Ortsnamen-Formeln.",
+        "reparatur": "Nach Entfernung oder nach Kreis gruppieren, mit Zwischenüberschriften je Landkreis. Aßlar/Wetzlar als hervorgehobene Breitkarte an den Anfang stellen. Je Ort ein echtes Projektfoto oder ein konkretes Referenzdetail (Straße/Jahr/Leistung) einsetzen und die Texte entsprechend individualisieren."
+       },
+       {
+        "schwaeche": "Auf dem Handy überlagern sich schwebender WhatsApp-Knopf mit Zähler, Schild-Knopf und untere Aktionsleiste und verdecken Text (m375/03.jpg, m375/06.jpg). Dazu kommen abgeschnittene Chips ohne Scrollhinweis (m375/01.jpg) und dieselbe Handlungsaufforderung in jedem Abschnitt, oft mit Pill-Badge.",
+        "reparatur": "Den schwebenden WhatsApp-Kreis auf Mobil streichen, weil die untere Leiste ihn schon enthält, und den Schild-Knopf in die Fußzeile verlegen. Der Chipleiste einen Auslauf-Verlauf oder Pfeil geben. CTA-Blöcke auf einen Abschluss reduzieren und die Abschnitts-Badges nur dort behalten, wo sie Information tragen."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 4.5,
+    "bedienbarkeit": 5,
+    "kreativitaet": 3,
+    "inhalt": 5
+   },
+   "gewichtet": 4.4,
+   "einzel_gewichtet": [
+    4.2,
+    4.4,
+    4.4
+   ],
+   "lockvogel_gewichtet": []
+  },
+  "/blog": {
+   "urteile": [
+    {
+     "seite": "/blog",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, Kopfbereich: zentrierte Hero-Box mit Pill-Badge, zweifarbiger Headline (Schwarz plus Orange-Verlauf 'Badsanierung Tipps') und zwei Buttons, ein austauschbares Vorlagenmuster ohne Bezug zu Fliese, Fuge oder Raster",
+        "d1440/01.jpg und d1920/02.jpg, Kartenraster: dieselben Bilder wiederholen sich (geteiltes Dusche/Wanne-Bild bei Feinsteinzeug, Balkonaustritt und Allergiker; Dampf-Bad bei Undichte Dusche, Duschrinne und Schimmel), die Bildsprache wirkt gerendert",
+        "d1440/03.jpg, rechte Spalte: die Sidebar endet, darunter bleibt ein breiter leerer Streifen neben dem Raster, die Komposition kippt nach links",
+        "t768/06.jpg und d1920/05.jpg, oben: grosser leerer heller Block zwischen CTA-Box und dunklem Footer wirkt wie ein Layoutloch",
+        "d1920/04.jpg, Qualitaetsraster: acht identische Karten mit Icon-Kachel und achtmal 'Garantierter Standard', sauber, aber monoton"
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Navigation: aktiver Zustand 'Ratgeber' hervorgehoben, Telefon, WhatsApp und 'Aufmass buchen' klar sichtbar, rechts Sidebar mit Suche und Kategorien, gute Orientierung",
+        "m375/00.jpg, unteres Drittel: Suchfeld 'Ratgeber durchsuchen' wird vom Schild-Symbol ueberlagert, dazu feste Leiste Anrufen/WhatsApp/Aufmass und WhatsApp-Blase mit Badge, vier schwebende Ebenen auf 375 px",
+        "m375/07.jpg, rechte Mitte: WhatsApp-Blase verdeckt den Teaser der Karte '5 Mythen'; m375/10.jpg: zusaetzliche Sprechblase 'Chat starten' ueber dem Inhalt",
+        "m375/04.jpg und t768/02.jpg, Kartentitel: Ueberschriften brechen mit Auslassung ab ('Wandnischen in Dusche und Bad: planen, abdichten, ...', 'Duschrinne oder Punktablauf? Die Entwaesserung der ...')",
+        "t768/00.jpg, Kategorie-Chips: die Reihe laeuft rechts bei 'Balkon & Terrasse' aus dem Bild; auf m375/00.jpg und m375/01.jpg ist kein Kategoriefilter zu sehen"
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "d1440/00.jpg bis d1440/04.jpg: es fehlt eine Leitidee, die Seite ist Hero, Kartenraster mit Sidebar, Feature-Raster, CTA-Box und Footer in Standardfolge, ohne Signaturmoment aus dem Handwerk (Fugenraster, Fliesenformate, Materialmuster)",
+        "d1920/03.jpg, unten, und d1920/04.jpg: das '8-Punkte-Qualitaetsversprechen' mit orange hervorgehobener Headline-Haelfte wiederholt das Hero-Muster und ueberrascht nicht",
+        "m375/00.jpg, links oben: das Maskottchen-Logo ist das einzige eigenstaendige Element und wird nirgends gestalterisch aufgegriffen"
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/04.jpg und d1920/03.jpg, Teaser: fachlich konkrete Themen (R9 bis R13, DIN EN 16165; Duschrinne oder Punktablauf; Handwerkerbonus) mit nuetzlichem Ton fuer Bauherren",
+        "d1920/01.jpg bis d1920/03.jpg, Datumszeilen: alle Artikel tragen dasselbe Datum '24. September 2026', das wirkt wie Massenimport und kostet Echtheit",
+        "d1440/00.jpg, Headline 'Fliesen-Ratgeber & Badsanierung Tipps' liest sich als Keyword-Kette statt als Versprechen an die Leserin",
+        "d1920/04.jpg: Werbetexte ('Garantierter Staubschutz', 'Markenkleber') auf der Ratgeberseite verwischen Fachwissen und Verkauf; echte Projektfotos fehlen, zu sehen sind wiederholte gerenderte Baeder"
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Bildmaterial: wenige gerenderte Baeder werden ueber viele Artikel wiederholt (d1440/01.jpg, d1920/02.jpg), dadurch wirkt der Ratgeber generisch und unecht",
+        "reparatur": "Jedem Artikel ein eigenes, themengenaues Motiv geben, am besten eigene Baustellen- und Detailfotos (Fugen, Ablauf, Schwelle, R-Klassen-Muster); wo Fotos fehlen, mit einer einheitlichen Illustrations- oder Materialmuster-Serie arbeiten statt mit Dubletten"
+       },
+       {
+        "schwaeche": "Mobile Ueberladung: Schild-Symbol, WhatsApp-Blase mit Badge und 'Chat starten'-Hinweis sowie die feste Dreier-Leiste ueberlagern Suchfeld und Teaser (m375/00.jpg, m375/07.jpg, m375/10.jpg)",
+        "reparatur": "Auf Mobil nur die feste Aktionsleiste behalten, WhatsApp-Blase und Hinweisblase streichen, Schild-Symbol in den Footer oder die Leiste verlegen und unten genug Abstand lassen, damit nichts den Inhalt verdeckt"
+       },
+       {
+        "schwaeche": "Vorlagenhafte Komposition ohne Leitidee: Standard-Hero, monotones Kartenraster, leere Sidebar-Flaeche und ein Leerraum vor dem Footer (d1440/03.jpg, d1920/05.jpg); Titel werden abgeschnitten und alle Daten sind gleich (m375/04.jpg, d1920/02.jpg)",
+        "reparatur": "Ein Signaturmotiv aus dem Fliesenhandwerk (Raster und Fugenlinien als Layoutsystem) einfuehren, den Leitfaden als grossen Aufmacher setzen und die Kategorien als Themeneinstiege gestalten, die Sidebar sticky machen oder ins volle Raster aufloesen, den Leerraum vor dem Footer entfernen, Titel vollstaendig zeigen und echte Veroeffentlichungsdaten oder 'aktualisiert am' nutzen"
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/blog",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero Mitte: zentrierte Vorlagen-Formel aus Pill-Badge 'Ratgeber & Fachwissen', zweifarbiger Headline (schwarz + Orange-Rot-Verlauf 'Badsanierung Tipps') und zwei Buttons in einem bildlosen, eckigen Kasten mit weichem Schatten. Sauber gesetzt, aber austauschbar.",
+        "d1440/01.jpg, Kartenraster links/rechts oben: 'Feinsteinzeug oder Naturstein?' und 'Barrierefreier Balkonaustritt' zeigen dasselbe Foto (Bad mit Trennkante, Heizkörper, Wanne), ebenso das Dampf-Bad in d1440/03.jpg bei 'Wandnischen'/'Duschrinne' und 'Schimmel'. Die gerenderte Hochglanz-Bildwelt wirkt generisch und wiederholt sich.",
+        "d1440/02.jpg bis 04.jpg, rechte Spalte: Die Sidebar endet nach 'Beratung gewünscht?', danach bleibt rechts neben dem Raster eine große leere Fläche. Dazu wechseln die Eckenradien: eckiger Hero, abgerundete Featured-Karte (d1440/00.jpg), eckige Artikelkarten, runde Qualitätskarten (d1440/06.jpg).",
+        "d1920/05.jpg und t768/06.jpg, oberhalb der dunklen Fußzeile: ein großer weißer Leerblock ohne Inhalt bricht den Rhythmus vor dem Footer. Der Footer selbst ist dunkel, gut gegliedert und ordentlich gesetzt (d1920/05.jpg, vier Spalten mit orangen Linienmarken)."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste: Der aktive Punkt 'Ratgeber' ist hinterlegt, Telefonnummer und 'Aufmaß buchen' sind ständig sichtbar, die Sidebar bietet Suche und Kategorien mit Icons. Die Orientierung ist klar, aber das Hamburger-Menü rechts steht redundant neben der voll ausgeschriebenen Navigation.",
+        "m375/00.jpg, unterer Bildrand: Die Suchleiste 'Ratgeber durchsuchen…' wird vom Schild-Icon links überdeckt. Darunter liegt die feste Leiste Anrufen/WhatsApp/Aufmaß, zusätzlich schwebt eine zweite WhatsApp-Blase mit Zähler '1'. Drei bis vier Overlays nehmen rund 20 % der Höhe ein. In m375/03.jpg verdeckt die Blase Bild und Lesezeitangabe, in m375/10.jpg zusätzlich die Sprechblase 'Chat starten'.",
+        "t768/02.jpg und d1920/02.jpg, Kartentitel: Überschriften werden mit Auslassungspunkten abgeschnitten ('Duschrinne oder Punktablauf? Die Entwässerung der bodengleichen…', m375/04.jpg 'Wandnischen in Dusche und Bad: planen, abdichten, …'). Der Leser sieht nicht, worum es geht.",
+        "t768/00.jpg, Filterzeile: Die Kategorie-Chips sind klar, laufen aber rechts angeschnitten aus ('Balkon & Terrasse' am Rand) ohne Hinweis auf weitere Einträge. Die Kartenstruktur (Kategorie, Lesezeit, Datum, Titel, Anriss, 'Artikel lesen') ist dagegen auf allen Breiten gut scannbar (m375/06.jpg)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1440/00.jpg, Hero: Keine Leitidee, die mit Fliesen, Fugen, Raster oder Material spielt. Die Seite folgt dem Standard aus Badge, Zweifarb-Headline und CTA-Paar, kein Signaturmoment.",
+        "d1920/04.jpg, 8-Punkte-Qualitätsversprechen: acht gleich gebaute Icon-Karten mit identischem Fuß 'Garantierter Standard'. Das ist ein austauschbarer Trust-Block, der sich in t768/05.jpg und m375/10.jpg einfach stapelt.",
+        "d1440/00.jpg, Logo oben links: Das Maskottchen (Fliesenleger als Comicfigur) wäre der einzige eigenständige Ansatz, taucht aber nur briefmarkengroß in Kopf und Fuß auf (d1920/05.jpg) und wird nirgends weitergeführt."
+       ]
+      },
+      "inhalt": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/02.jpg und 03.jpg, Kartendaten: Alle Artikel tragen dasselbe Datum '24. September 2026'. Zusammen mit den mehrfach verwendeten KI-artigen Renderbildern (d1440/01.jpg) wirkt das wie Massenimport und kostet Echtheit.",
+        "d1440/03.jpg, Anrisse: Die Themen sind fachlich konkret und hilfreich ('R9 bis R13, A bis C: die Rutschhemmungsklassen nach DIN EN 16165', 'Schwarze Punkte in Fugen und Silikon'). Der Ton ist sachlich und kundennah.",
+        "d1440/00.jpg, Hero-Text: 'Fliesen-Ratgeber & Badsanierung Tipps' und 'Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps… von Ihrem Fachbetrieb Fliesenverlegung Tezgel aus Aßlar' liest sich als Keyword-Text (fehlender Bindestrich bei 'Badsanierung Tipps'). Die Fußzeile in d1920/05.jpg liefert dagegen echte Belege: Adresse, Kammer, USt-IdNr. und Öffnungszeiten.",
+        "d1440/04.jpg, Raster unten rechts: 'Wir suchen Verstärkung: Fliesenleger/in oder Geselle' steht als Stellenanzeige zwischen den Ratgeberartikeln und verwässert den Ratgeber-Charakter."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Generische, wiederholte Bildwelt: dieselben Renderbilder für verschiedene Artikel (d1440/01.jpg: Feinsteinzeug und Balkonaustritt; Dampf-Bad dreifach) und dazu überall dasselbe Datum. Das untergräbt die Glaubwürdigkeit eines Fachbetriebs.",
+        "reparatur": "Jedem Artikel ein eigenes, echtes Projektfoto oder Detailbild geben (Fuge, Abdichtungsmanschette, Rinne), notfalls eine eigene Illustration oder Schnittzeichnung je Thema. Echte Veröffentlichungsdaten zeigen oder das Datum weglassen und 'aktualisiert am' nur dort zeigen, wo es stimmt."
+       },
+       {
+        "schwaeche": "Mobile Overlay-Überlast: feste Aktionsleiste, zusätzliche WhatsApp-Blase mit Zähler, 'Chat starten'-Sprechblase und Schild-Icon überdecken Suche, Bilder und Text (m375/00.jpg, m375/03.jpg, m375/10.jpg).",
+        "reparatur": "Auf Mobil nur die untere Aktionsleiste behalten (sie enthält WhatsApp bereits), die schwebende Blase und die Sprechblase entfernen, das Consent-Schild in den Footer oder ins Menü verlegen und den unteren Seitenabstand an die Leistenhöhe anpassen."
+       },
+       {
+        "schwaeche": "Austauschbare Komposition ohne Leitidee: bildloser Standard-Hero, Kartenraster mit leerer Sidebar-Fläche ab d1440/02.jpg, wechselnde Eckenradien, weißer Leerblock vor dem Footer (d1920/05.jpg) und ein generischer 8-Karten-Trust-Block.",
+        "reparatur": "Ein Gestaltungsprinzip aus dem Handwerk ableiten, etwa ein Fliesenraster mit sichtbaren Fugenlinien als Layoutsystem, und Radien und Abstände darauf vereinheitlichen. Den Featured-Artikel als großes Bildmotiv in den Hero ziehen. Die Sidebar sticky machen oder durch eine Filterleiste ersetzen, damit das Raster die volle Breite nutzt. Den Leerblock streichen und die acht Versprechen zu einer kompakten Leiste mit drei belegten Kernaussagen kürzen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/blog",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero oben mittig: zentrierte Karte mit Pill-Badge 'Ratgeber & Fachwissen', zweifarbiger Headline (Schwarz + Orange-Rot-Verlauf) und zwei Buttons, ein austauschbares Muster. Der Featured-Artikel darunter hat einen doppelten Rahmen (äußere graue Kontur plus innere Karte), der unruhig wirkt.",
+        "d1440/02.jpg und d1920/02.jpg, rechte Spalte: Die Sidebar endet nach der Kontaktbox, danach bleibt rechts neben dem Raster eine leere Spalte von etwa 320 px über mehrere Bildschirmhöhen. Das Artikelraster bleibt dadurch links eingeengt (2 Spalten), die Komposition kippt.",
+        "d1920/02.jpg, Kartenraster: Dasselbe geteilte Dusche/Wanne-Bild steht unter 'Fliesen & Material', 'Balkon & Terrasse' und 'Fliesen für Allergiker'. Auch das orange Dampf-Bad kommt mehrfach vor (d1440/01 links oben, d1440/02 rechts, d1920/02 links Mitte). Die Bildsprache wirkt dadurch generiert und eintönig.",
+        "t768/06.jpg und d1920/05.jpg, oberer Bereich: Große leere Weißfläche zwischen CTA-Box und dunklem Footer. Der Footer selbst ist ordentlich gegliedert (4 Spalten, orange Linien vor den Überschriften), aber Standardware."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "m375/06.jpg, rechts unten: Die WhatsApp-Blase mit Badge '1' liegt über dem Anreißertext ('passen nur in große Räume? Wir prüfen fünf…'). Links unten überlagert das Schild-Icon die Karten, darunter kommt die feste Leiste Anrufen/WhatsApp/Aufmaß. Unten sind so drei schwebende Ebenen gestapelt, die Inhalt verdecken (auch m375/07: Titel 'Fliesenleger/in oder Geselle…' hinter der Leiste).",
+        "m375/00.jpg, unten: Das Suchfeld 'Ratgeber durchsuchen…' sitzt direkt über der Sticky-Leiste und wird links vom Schild-Icon angeschnitten. Themenfilter wie auf Tablet (t768/00.jpg, Chip-Reihe 'Alle Themen / Bad & Dusche …') sind im ersten Bildschirm nicht zu sehen.",
+        "d1440/00.jpg, Kopfzeile: Die Navigation ist klar, 'Ratgeber' ist als aktiver Punkt hellorange hinterlegt, Telefonnummer und 'Aufmaß buchen' sind gut auffindbar. Gleichzeitig gibt es ein redundantes Hamburger-Menü neben der vollen Navigation.",
+        "m375/04.jpg, Kartentitel Mitte: 'Wandnischen in Dusche und Bad: planen, abdichten, …' ist nach zwei Zeilen abgeschnitten, ebenso t768/02.jpg rechts 'Die Entwässerung der …'. Leser sehen das Thema nur teilweise. Die Kartenstruktur (Kategorie, Lesezeit, Datum, Titel, Teaser, 'Artikel lesen') ist aber konsistent und leicht zu überfliegen."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg, Hero: Es gibt keine Leitidee zum Thema Fliese oder Fuge (kein Raster, kein Material, kein Fugenbild). Die Seite folgt dem Standardaufbau Badge, Gradient-Headline, zwei Buttons, Kartenraster, Sidebar.",
+        "d1920/04.jpg, 8-Punkte-Block: acht identische Kacheln mit Icon im Pastellquadrat, 'PUNKT 0X', Text und dem jeweils gleichen 'Garantierter Standard'. Das ist ein generisches Vorlagenmodul ohne Signaturmoment und ohne Bezug zum Ratgeber."
+       ]
+      },
+      "inhalt": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/01.jpg bis d1920/03.jpg, Kartendaten: Alle Artikel tragen dasselbe Datum '24. September 2026'. Das wirkt wie ein Massenimport und untergräbt die Echtheit eines gewachsenen Ratgebers.",
+        "d1440/04.jpg, Karte 'Rutschfeste Fliesen': 'R9 bis R13, A bis C … nach DIN EN 16165'. Fachlich konkrete, nützliche Themen (Handwerkerbonus, Duschrinne vs. Punktablauf, Schimmel in Fugen) mit sachlichem Ton zeigen echte Kompetenz.",
+        "d1440/03.jpg, Bilder: glatte, offenbar generierte Musterbäder statt eigener Baustellen- oder Referenzfotos. Die Karte 'Fliesen richtig reinigen' (d1920/01.jpg, links Mitte) mit grünen Zellige-Fliesen ist die einzige materialnahe Aufnahme.",
+        "d1920/05.jpg, Footer links: Inhaber Deniz Tezgel, Adresse Aßlar, Kammer, USt-IdNr. und Öffnungszeiten sind konkret und vertrauensbildend. Das Zitat 'Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.' ist dagegen floskelhaft."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Auf dem Desktop bleibt rechts eine leere Spalte (Sidebar endet früh, d1440/02.jpg, d1920/02.jpg), und vor dem Footer liegt toter Weißraum (d1920/05.jpg). Das Raster wirkt unfertig.",
+        "reparatur": "Sidebar sticky machen oder ab der Kontaktbox auflösen und das Artikelraster auf 3 Spalten über die volle Breite laufen lassen. Den Leerraum vor dem Footer auf einen normalen Sektionsabstand kürzen."
+       },
+       {
+        "schwaeche": "Auf dem Mobilgerät stapeln sich unten WhatsApp-Blase, Schild-Icon und Aktionsleiste und verdecken Teaser, Titel und Suchfeld (m375/00.jpg, m375/06.jpg, m375/07.jpg).",
+        "reparatur": "Die schwebende WhatsApp-Blase mobil entfernen, weil WhatsApp schon in der Leiste steht. Das Schild-Icon in Footer oder Menü verlegen. Unten so viel Innenabstand ergänzen, wie die Leiste hoch ist. Themenfilter-Chips mobil direkt unter den Hero holen."
+       },
+       {
+        "schwaeche": "Die Echtheit leidet: Bilder wiederholen sich mehrfach (d1920/02.jpg), wirken generiert, alle Artikel haben dasselbe Datum (d1920/01.jpg), und der 8-Punkte-Vorlagenblock (d1920/04.jpg) ersetzt eine eigene Leitidee.",
+        "reparatur": "Je Artikel ein eigenes Foto aus echten Projekten oder Detailaufnahmen (Fuge, Abdichtung, Ablauf) verwenden und die echten Veröffentlichungsdaten zeigen. Den 8-Punkte-Block auf der Ratgeberseite durch eine Themen-Einstiegshilfe ersetzen, die zur Fliese passt, etwa ein Fliesenraster als Kategorienavigation."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 4.5,
+    "bedienbarkeit": 5,
+    "kreativitaet": 3,
+    "inhalt": 4.5
+   },
+   "gewichtet": 4.35,
+   "einzel_gewichtet": [
+    4.5,
+    4.5,
+    4.35
+   ],
+   "lockvogel_gewichtet": []
+  },
+  "/ueber-uns": {
+   "urteile": [
+    {
+     "seite": "/ueber-uns",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1920/00.jpg, Hero und Bereich darunter: zentrierte Überschrift mit Orange-Rot-Verlauf, Pill-Badge darüber, rechts vier weiße Kennzahl-Karten (2008 / HWK / Bis zu 12 / 5,0). Sauber, aber es gibt kein einziges Foto: kein Inhaber, kein Team, keine verlegte Fläche. Bei einer Über-uns-Seite eines Fliesenbetriebs ist das ein schwerer Mangel.",
+        "d1440/01.jpg und d1440/04.jpg, ganze Breite: Ein Raster aus 6 Werte-Karten folgt auf eines aus 8 Qualitätskarten. Alle haben dasselbe Muster (Icon im orangefarbenen Quadrat, fette Zeile, grauer Text), dazu achtmal die gleiche Fußzeile „Garantierter Standard“. Das ist austauschbares Baukasten-Bild ohne Material- oder Fliesenbezug.",
+        "d1440/06.jpg Mitte und d1920/05.jpg Mitte: Zwischen dem dunklen CTA-Block und dem dunklen Footer liegt ein leeres weißes Band von etwa 80 px. Das ist ein klarer Kompositionsbruch.",
+        "m375/04.jpg, Mitte: Die Überschrift „Unternehmensgeschi…“ läuft rechts aus dem Bildschirm und wird abgeschnitten."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste: Die schwebende Navigation hat einen aktiven Zustand „Über uns“, Telefonnummer, WhatsApp und den Haupt-CTA „Aufmaß buchen“. Orientierung und Hauptaktion sind klar. Auf m375/00.jpg unten macht die feste Aktionsleiste Anrufen / WhatsApp / Aufmaß die Seite mobil gut bedienbar.",
+        "t768/00.jpg, unten rechts und links: Der schwebende WhatsApp-Knopf verdeckt den Fließtext („Großproj…“, „…verbindlichem“), der Schutzschild-Knopf verdeckt „Festpreisangebot“. Auf m375/01.jpg unten werden die Kennzahl-Karten von Knöpfen und Aktionsleiste überdeckt („etriebsgründung“, „(Handwerkskammer“ abgeschnitten).",
+        "d1440/06.jpg, dunkler CTA-Block: Drei Knöpfe stehen gleichrangig neben- und untereinander (Termin anfragen, WhatsApp, Aufmaß anfordern), dazu eine große Telefonnummer. Zusammen mit dem CTA-Kasten auf d1440/05.jpg, der Knopfreihe auf d1920/01.jpg und dem Footer-CTA ergibt das fünf Aktionszonen hintereinander, die Hierarchie verwässert.",
+        "m375/00.jpg: WhatsApp gibt es doppelt, einmal als schwebender grüner Knopf mit „1“-Badge und einmal in der Aktionsleiste. Das ist redundant und nimmt dem Inhalt Fläche weg."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/02.jpg, ganze Breite: Die Zeitleiste mit abwechselnd links und rechts gesetzten Karten und orangen Ringpunkten ist der einzige Ansatz eines eigenen Moments. Sie hat aber nur vier Stationen, große Leerflächen und Standardkarten, deshalb trägt sie keine Leitidee.",
+        "d1920/03.jpg, Zitatkasten: Das große kursive Zitat mit Anführungszeichen-Icon ist ein Standard-Testimonial-Baustein. Es gibt keinen Bezug zu Fliese, Fuge, Raster oder Material, obwohl das Gewerk sich dafür anbietet (Fugenbild, Großformat, Nivelliersystem werden nur im Text erwähnt)."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg und m375/01.jpg, Fließtext unter „Handwerkliche Präzision aus Aßlar“: konkrete, glaubwürdige Fakten (Gründung 2008, HWK Wiesbaden, Inhaber Deniz Tezgel, bis zu 12 Fachkräfte, Hohwardstraße 14, DIN 18534). Auf d1440/05.jpg Punkt 07 steht C2-TE-S1/S2-Kleber. Diese Fachtiefe wirkt echt.",
+        "Das Zitat „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“ steht mindestens viermal auf der Seite: d1440/01.jpg Zitatbox oben links und Werte-Karte „Kundenbegeisterung“, d1440/04.jpg großer Zitatkasten unten, d1440/07.jpg im Footer links. Dazu wirken Hero-Unterzeile („Über uns und Fliesenverlegung Tezgel: Ihr eingetragener …“) und H1 („Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar“) auf d1920/00.jpg wie Suchwort-Text statt wie eine persönliche Vorstellung.",
+        "d1440/06.jpg unter der Bewertungsbox: „Über 15 Jahre Praxiserfahrung“ passt nicht zu „Gegründet 2008“ und © 2026. Das ist eine kleine Unstimmigkeit, die Glaubwürdigkeit kostet."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Auf der Über-uns-Seite gibt es kein echtes Bildmaterial: kein Porträt von Deniz Tezgel, kein Team, keine Baustelle, keine fertigen Bäder (d1920/00.jpg bis 06.jpg sind reine Text- und Kartenflächen). Die Seite kann ihren Zweck, Vertrauen über Personen aufzubauen, so nicht erfüllen.",
+        "reparatur": "Neben „Handwerkliche Präzision aus Aßlar“ ein großes, echtes Inhaber-Porträt auf der Baustelle setzen. Die Zeitleisten-Stationen mit je einem Projektfoto des Jahres versehen. Ein Team- oder Werkstattbild in den dunklen CTA-Block legen. Die Kennzahl-Karten können dafür kleiner werden."
+       },
+       {
+        "schwaeche": "Inhalte und Bausteine wiederholen sich stark. Die 6 Werte-Karten und die 8 Qualitätspunkte decken sich (Staubschutz, DIN 18534, Festpreis, Großformat), der Trust-Streifen im Footer wiederholt sie ein drittes Mal, und dasselbe Zitat steht viermal da (d1440/01, 04, 07). Das ergibt eine lange, monotone Kartenwüste.",
+        "reparatur": "Werte und 8-Punkte-Versprechen zu einer Sektion zusammenlegen, maximal 6 Punkte mit unterschiedlicher Gewichtung (z. B. 2 groß mit Bild, 4 klein). Das Zitat nur einmal groß zeigen, an den anderen Stellen streichen. Statt „Garantierter Standard“ achtmal einen konkreten Nachweis je Punkt nennen (Norm, Gerät, Material)."
+       },
+       {
+        "schwaeche": "Es gibt Layout- und Überlagerungsfehler. Die H2 „Unternehmensgeschichte“ läuft auf Mobil aus dem Bildschirm (m375/04.jpg). Schwebende WhatsApp- und Schild-Knöpfe verdecken Fließtext und Karten (t768/00.jpg, m375/01.jpg). Vor dem Footer liegt ein leeres weißes Band (d1440/06.jpg, d1920/05.jpg).",
+        "reparatur": "Lange Komposita mit hyphens:auto bzw. &shy; trennen oder die Schriftgröße mit clamp() an die Breite koppeln. Den schwebenden WhatsApp-Knopf auf Mobil entfernen, weil die Aktionsleiste ihn schon enthält, und dem Seiteninhalt unten Polsterung in Höhe der Leiste geben. Den Schild-Knopf in den Footer verlegen. Den Leerabstand zwischen CTA-Block und Footer entfernen oder beide Flächen bündig aneinandersetzen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/ueber-uns",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, Hero oben mittig: zentrierte Headline mit orange-rotem Verlaufstext 'Fliesenleger-Fachbetrieb Tezgel', Pill-Badge darüber, blasser Farbverlauf im Hintergrund. Sauber gesetzt, aber ein gängiges Muster. Auf der ganzen Seite gibt es kein einziges Foto, keine eigene Grafik und keine Materialtextur.",
+        "d1440/01.jpg und d1440/05.jpg, Raster Mitte: 6 Wertekarten und danach 8 Qualitätskarten, alle gleich gebaut (weiße Karte, orangefarbenes Icon in einem getönten Quadrat, Titel, Fließtext). Unter jeder der 8 Karten steht dieselbe Fußzeile 'Garantierter Standard' (d1920/04, unten in jeder Karte). Ordentlich und einheitlich, aber wie aus einer Vorlage.",
+        "d1920/02.jpg, Zeitleiste: abwechselnd linke und rechte Karten an einer Mittellinie mit orangefarbenen Punkten. Das ist der einzige gestaltete Moment der Seite. Bei 1920 px bleiben aber große Leerflächen neben den Karten, und es gibt nur 4 Einträge.",
+        "d1440/06.jpg, zwischen dunklem CTA-Block und dunklem Footer (ca. y 626-706): ein heller Leerstreifen ohne Inhalt, ebenso in t768/07.jpg (y ca. 332-412). Das wirkt wie ein Layoutfehler und unterbricht die dunkle Fläche."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste: klare Navigation mit hervorgehobenem aktivem Punkt 'Über uns', Telefonnummer, WhatsApp und Hauptaktion 'Aufmaß buchen' sind immer sichtbar. Die Orientierung ist gut. Daneben gibt es aber auch auf Desktop ein überflüssiges Hamburger-Menü.",
+        "m375/04.jpg, Mitte: die Headline 'Unternehmensgeschi…' ist am rechten Rand abgeschnitten. Auf 375 px läuft das Wort über die Seitenbreite hinaus.",
+        "m375/00.jpg und m375/03.jpg, unterer Rand: die feste Leiste (Anrufen/WhatsApp/Aufmaß), die schwebende WhatsApp-Blase mit Badge '1' und das Schild-Icon links verdecken gleichzeitig Inhalt, z. B. die Headline 'Handwerkliche Präzision' und den Kartentitel 'Kundenbegeisterung'. In t768/00.jpg unten rechts verdeckt die WhatsApp-Blase Fließtext ('Großprojekte … Festpreisangebot').",
+        "d1440/06.jpg, dunkler CTA-Block: große Telefonnummer, 'Jetzt persönlichen Termin anfragen', 'WhatsApp' und 'Kostenloses Vor-Ort-Aufmaß anfordern' stehen untereinander, kurz darauf folgt 'Kostenfreies Vor-Ort-Aufmaß' in der Vertrauensleiste. Zusammen mit dem CTA-Kasten 'Aufmaß anfragen' (d1440/05) sind das zu viele gleichwertige Handlungen. Der Text im Termin-Button bricht um, Telefon-Icon und Pfeil sitzen an den Rändern."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/02.jpg und d1440/03.jpg, Zeitleiste 2008-2014-2019-Heute: das einzige erzählerische Element, umgesetzt als Standard-Timeline mit Schild-Icons. Bezüge zum Fliesenhandwerk wie Fugenraster, Verlegemuster oder Material fehlen.",
+        "d1920/03.jpg, Zitatblock: großes kursives Zitat mit orangefarbenem Anführungszeichen-Icon in einer Karte mit blassem Verlauf. Ein vertrautes Muster ohne Überraschung. Dasselbe Zitat steht schon im Textblock (d1440/01 oben links), in der Wertekarte 'Kundenbegeisterung' (d1440/01 unten rechts) und im Footer (d1440/07 links). Dadurch verliert es jede Wirkung.",
+        "m375/00.jpg Kopf: das Logo mit Cartoon-Maskottchen ist das einzige Bildelement mit Persönlichkeit, wird aber nirgends aufgegriffen. Eine Leitidee ist nicht zu erkennen."
+       ]
+      },
+      "inhalt": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, rechte Spalte: konkrete Kennzahlen (2008, HWK, 'Bis zu 12 Fachkräfte', 5,0 aus 27 Google-Rezensionen). Auch d1440/05.jpg Karte 'PUNKT 07' nennt konkrete Details wie 'C2-TE-S1/S2 Fliesenkleber', dazu die Adresse Hohwardstraße 14. Das wirkt glaubwürdig und fachkundig.",
+        "d1440/00.jpg, Lead unter dem Hero: 'Über uns und Fliesenverlegung Tezgel: Ihr eingetragener Fliesenleger-Fachbetrieb Tezgel in Aßlar …' liest sich wie eine Kette von SEO-Stichworten, nicht wie ein Text über Menschen. Auf einer Über-uns-Seite fehlen Fotos von Inhaber Deniz Tezgel, vom Team oder von Baustellen völlig (alle Ansichten).",
+        "d1440/01.jpg und d1440/05.jpg: dieselben Versprechen (Festpreis, Staubschutz, DIN 18534, HWK) kommen in Wertekarten, 8-Punkte-Raster, CTA-Häkchenliste (d1440/06) und Vertrauensleiste (d1440/07) jeweils erneut vor. Dazu kommen dreimal fast gleiche Eyebrow-Badges ('Gegründet 2008 · HWK Wiesbaden', 'Gegründet 2008 in Aßlar · HWK Wiesbaden', 'HWK Fachbetrieb · HWK Wiesbaden'). Das ist redundant und ermüdend."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Eine Über-uns-Seite ohne einziges Foto: keine Person, kein Team, kein Werkzeug, keine fertige Arbeit. Die Seite besteht nur aus Text, Karten und Icons und wirkt dadurch austauschbar (alle Ansichten, z. B. d1920/00-04).",
+        "reparatur": "Im Hero ein echtes Porträt von Deniz Tezgel auf der Baustelle oder in der Werkstatt zeigen. Die Zeitleiste mit einem echten Projektfoto je Station (2008, 2014 XXL-Format, 2019 Walk-In-Dusche) bebildern. Die 6 Wertekarten durch eine kurze Team- und Bildstrecke mit Namen und Rollen ersetzen."
+       },
+       {
+        "schwaeche": "Mobile Fehler und Überlagerungen: Die Headline 'Unternehmensgeschichte' ist abgeschnitten (m375/04). Die feste Aktionsleiste, die WhatsApp-Blase mit Badge und das Schild-Icon verdecken zusammen Inhalte (m375/00, m375/03, t768/00). Auf Desktop folgt ein leerer heller Streifen vor dem Footer (d1440/06, t768/07).",
+        "reparatur": "Auf schmalen Bildschirmen die Headline-Größe fluide begrenzen und lange Komposita mit weichem Trennstrich oder hyphens:auto trennen. Wenn die untere Aktionsleiste sichtbar ist, die schwebende WhatsApp-Blase ausblenden (WhatsApp steckt ja schon in der Leiste) und dem Seiteninhalt unten passenden Abstand geben. Den Leerabschnitt zwischen CTA und Footer entfernen."
+       },
+       {
+        "schwaeche": "Starke Wiederholung in Inhalt und Aktionen: Das Kundenzitat steht viermal auf der Seite. Festpreis, Staubschutz, DIN 18534 und HWK werden je vier- bis fünfmal genannt. Bis zu fünf Aufmaß- und Kontakt-CTAs folgen dicht aufeinander (d1440/05-07). 'Garantierter Standard' steht unter jeder der 8 Karten.",
+        "reparatur": "Wertekarten und 8-Punkte-Raster zu einem Abschnitt zusammenlegen. Das Zitat nur einmal groß zeigen, am besten mit Foto des Inhabers. Den CTA-Kasten 'Überzeugen Sie sich selbst' oder den dunklen CTA-Block streichen, sodass ein klarer Abschluss mit Hauptaktion und Telefon bleibt. Den SEO-Lead im Hero durch zwei persönliche Sätze in Ich- oder Wir-Form ersetzen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/ueber-uns",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1920/01.jpg, gesamte Fläche: \"Unsere Werte im Handwerk\" als 3x2-Raster aus gleichen weißen Karten mit orangem Icon-Quadrat, Titel und Zweizeiler. Direkt danach folgen in d1920/04.jpg acht weitere Karten im selben Aufbau (Icon, \"PUNKT 0x\", \"Garantierter Standard\"). Das ist Baukasten-Optik ohne eigene Formensprache.",
+        "d1440/00.jpg bis d1440/07.jpg, ganze Bildfolge: Auf der ganzen Über-uns-Seite gibt es kein einziges Foto, weder vom Inhaber noch vom Team, von Baustellen oder fertigen Bädern. Das einzige Bildelement ist das Comic-Maskottchen im Logo (oben links). Die Gestaltung trägt nur Verlaufstext in Orange-Rot (Hero \"Fliesenleger-Fachbetrieb Tezgel\") und Pill-Badges.",
+        "d1440/06.jpg, Mitte: Zwischen dem dunklen CTA-Block und dem Footer-Trustband liegt ein leerer hellgrauer Streifen von etwa 80 px. Er sieht aus wie ein Layoutfehler, derselbe Streifen ist in d1920/05.jpg und t768/07.jpg zu sehen.",
+        "d1920/02.jpg, linke und rechte Hälfte: Die alternierende Zeitleiste lässt neben jeder Karte eine halbe Bildschirmbreite leer. Die vier Stationen (2008, 2014, 2019, Heute) ziehen sich über etwa 1,5 Bildschirmhöhen, ohne Bild oder Detail."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "m375/04.jpg, Mitte: Die Überschrift \"Unternehmensgeschi…\" läuft rechts aus dem Bildschirm und ist abgeschnitten. Auf 375 px ist das ein sichtbarer Überlauf.",
+        "m375/03.jpg, unten links, und m375/06.jpg, unten rechts: Das Consent-Schild-Icon verdeckt den Anfang von \"Kundenbegeisterung\", der WhatsApp-Button verdeckt Fließtext (\"Untergru…\", \"…estfeuchtemessung\"). Zusammen mit der festen Leiste unten (Anrufen/WhatsApp/Aufmaß) sind auf Mobil drei schwebende Ebenen gleichzeitig über dem Inhalt. Dasselbe in t768/00.jpg, unten rechts: Der WhatsApp-Button liegt über \"Großprojekte … Festpreisangebot\".",
+        "d1440/00.jpg, Kopfzeile: Die Navigation ist klar (Badsanierung, Fachgewerke, Standorte, Ratgeber, \"Über uns\" als aktiv hervorgehoben), Telefonnummer und \"Aufmaß buchen\" sind sofort erreichbar. Zusätzlich steht rechts aber ein Hamburger-Menü, obwohl die Navigation schon ausgeschrieben ist.",
+        "d1440/06.jpg, Mitte: Im CTA-Block konkurrieren vier gleich starke Handlungen (große Telefonnummer, \"Jetzt persönlichen Termin anfragen\", WhatsApp, \"Kostenloses Vor-Ort-Aufmaß anfordern\"). Direkt darunter kommt im Footer-Band noch ein \"Kostenfreies Vor-Ort-Aufmaß\". Die Hierarchie der Handlungen verwässert."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/02.jpg, Seitenmitte: Die Zeitleiste mit orangen Ring-Punkten und teilweise orange gefüllter Linie ist der einzige Ansatz für einen Signaturmoment. Sie folgt aber dem Standardmuster \"alternierende Karten\" und hat keinen Bezug zum Fliesenhandwerk, etwa Fugenraster, Fliesenformat oder Material.",
+        "d1920/03.jpg, oben: Der große Zitatblock mit stilisiertem Anführungszeichen-Icon ist ein generisches Testimonial-Muster. Dasselbe Zitat steht schon in d1440/01.jpg links oben, in der Werte-Karte \"Kundenbegeisterung\" (d1920/01.jpg rechts unten) und im Footer (d1920/06.jpg links). Die Wiederholung wirkt wie Füllung, nicht wie Leitidee."
+       ]
+      },
+      "inhalt": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/04.jpg, Kartenreihe unten: Konkrete und glaubwürdige Fachangaben wie \"C2-TE-S1/S2 Fliesenkleber\", \"Verbundabdichtung nach DIN 18534\", \"Vakuum-Heber und exaktes Nivelliersystem\". Dazu Adresse, Gründungsjahr 2008 und \"Bis zu 12 Fachkräfte\" (d1920/00.jpg, Kennzahlkacheln rechts). Das gibt Substanz.",
+        "d1440/00.jpg, Hero-Unterzeile: \"Über uns und Fliesenverlegung Tezgel: Ihr eingetragener Fliesenleger-Fachbetrieb Tezgel in Aßlar für Fliesen-, Platten- und Mosaikverlegung …\" liest sich wie ein SEO-Absatz und nicht wie eine persönliche Vorstellung. Auf einer Über-uns-Seite fehlen Gesicht und Geschichte von Deniz Tezgel als Person, ebenso Teamfotos.",
+        "d1920/01.jpg und d1920/04.jpg, Kartenraster: Staubschutz, Festpreis, DIN 18534 und Großformat erscheinen erst als \"Werte\", dann noch einmal als \"8-Punkte-Versprechen\" und ein drittes Mal im Footer-Trustband (d1920/06.jpg oben). Der Inhalt wiederholt sich statt zu vertiefen."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Es gibt kein echtes Bildmaterial: kein Porträt des Inhabers, kein Team, keine Baustellen- oder Referenzfotos (alle Ansichten, z. B. d1440/00.jpg bis 07.jpg). Die Seite wirkt dadurch anonym und austauschbar, gerade dort, wo Vertrauen entstehen soll.",
+        "reparatur": "Ins Hero ein großes, echtes Foto von Deniz Tezgel auf der Baustelle oder im Bad setzen. In der Zeitleiste pro Station ein dokumentarisches Bild zeigen (Werkstatt 2008, erste XXL-Verlegung 2014, Abdichtungsdetail 2019). Dazu ein Teamfoto bei \"Bis zu 12 Fachkräfte\"."
+       },
+       {
+        "schwaeche": "Mobile Darstellungsfehler: \"Unternehmensgeschichte\" läuft aus dem Bildschirm (m375/04.jpg). Consent-Schild und WhatsApp-Bubble verdecken Text (m375/03.jpg, m375/06.jpg, t768/00.jpg). Außerdem gibt es einen leeren Streifen zwischen CTA-Block und Footer (d1440/06.jpg, d1920/05.jpg, t768/07.jpg).",
+        "reparatur": "Die Überschrift fluide skalieren (clamp) und Silbentrennung (hyphens:auto) erlauben. Die WhatsApp-Bubble auf Mobil entfernen, weil die feste Leiste WhatsApp schon anbietet. Das Consent-Icon in den Footer verlegen. Den leeren Streifen zwischen dunklem CTA und Footer-Band entfernen."
+       },
+       {
+        "schwaeche": "Starke Redundanz: Dasselbe Inhaberzitat steht viermal auf der Seite, dieselben vier Leistungsversprechen erscheinen dreimal (Werte, 8 Punkte, Trustband), dazu drei bis vier CTA-Zonen mit gleich gewichteten Buttons (d1920/01.jpg, d1920/04.jpg, d1440/06.jpg). Die Seite wird lang, ohne mehr zu erzählen.",
+        "reparatur": "Werte und 8-Punkte-Versprechen zu einer Sektion zusammenlegen, das Zitat nur einmal groß einsetzen, und zwar mit Porträt. Pro Sektion eine primäre Handlung festlegen (Aufmaß) und Telefon und WhatsApp nur als sekundäre Textlinks führen. Den gewonnenen Platz für eine persönliche Geschichte von Deniz Tezgel und echte Projektbeispiele nutzen."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 4,
+    "bedienbarkeit": 5,
+    "kreativitaet": 3,
+    "inhalt": 4.5
+   },
+   "gewichtet": 4.15,
+   "einzel_gewichtet": [
+    4.2,
+    4.35,
+    4.15
+   ],
+   "lockvogel_gewichtet": []
+  },
+  "/kontakt": {
+   "urteile": [
+    {
+     "seite": "/kontakt",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero: sauber gesetzte Karte mit Pill-Badge, zweifarbigem Verlaufstitel 'Aufmaß Fliesenleger Tezgel' und Primär- und Sekundärbutton. Ordentlich, aber das übliche SaaS-Hero-Muster, ohne Bild und ohne Bezug zum Handwerk Fliesen.",
+        "d1440/00.jpg, dunkle Kontaktkarte links: zwischen dem Badge 'Eingetragener HWK-Fachbetrieb' und dem Fließtext klafft eine Lücke. Die Überschrift 'Direkter Kontakt' ist dunkel auf dunkel praktisch unsichtbar (in t768/00.jpg nur als schwarzer Schatten-Text zu ahnen). Ein klarer Gestaltungsfehler.",
+        "d1440/01.jpg, rechte weiße Karte: großer leerer Weißraum über 'Einsatzgebiet'. Die beiden Spalten sind ungleich gefüllt, die Komposition kippt.",
+        "d1920/05.jpg, oberes Drittel: zwischen dem dunklen Schluss-CTA und dem dunklen Footer liegt ein unmotivierter weißer Streifen. Die Abschnittsübergänge wirken zufällig.",
+        "d1440/02.jpg und d1440/05.jpg: zwei fast gleiche dunkle CTA-Blöcke mit Punktraster, Orange-Button und grünem WhatsApp-Button. Dazu überall dieselben orangefarbenen Pill-Labels (d1920/02.jpg 'Verbindlicher Vor-Ort-Termin', d1920/03.jpg 'Oder detailliert konfigurieren'). Ein Baukastensystem ohne eigene Bildsprache."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "m375/00.jpg, unterer Bildrand: Sticky-Leiste 'Anrufen / WhatsApp / Aufmaß', schwebender WhatsApp-Kreis mit roter '1' und Schild-Icon links. Drei Overlays übereinander verdecken dauerhaft Inhalt, in m375/10.jpg zum Beispiel den Footer-Link 'Balkon & Terrasse'.",
+        "m375/07.jpg, Mitte: der grüne WhatsApp-Button zeigt nur ein Icon und keine Beschriftung. Der Button 'Kostenloses Vor-Ort-Aufmaß anfor…' darunter wird vom WhatsApp-Kreis abgeschnitten.",
+        "Konkurrierende Handlungswege: d1440/00.jpg 'Zur Express-Anfrage', d1440/03.jpg 'Wunschtermin in 2 Schritten reservieren', d1440/04.jpg 'Express-Anfrage in 60 Sekunden' mit Schritt 1 bis 3 und d1440/05.jpg 'Kostenloses Vor-Ort-Aufmaß anfordern'. Der Nutzer erfährt nicht, welcher Weg der richtige ist.",
+        "Positiv: d1440/00.jpg und m375/01.jpg, Kontaktkacheln 'Büro / Festnetz', 'Mobil & WhatsApp', 'E-Mail', 'Bürozeiten' und 'Betriebssitz' mit Icon, klarer Beschriftung und großer Trefferfläche. Die Kontaktdaten sind schnell erfassbar.",
+        "m375/03.jpg, oben: die Ortsliste ist ein eigener Scrollbereich in der Seite ('Friedberg (Hessen)' angeschnitten), darunter ein großer dunkler DSGVO-Platzhalter für die Karte. Auf dem Handy entsteht Scroll-in-Scroll und viel Fläche ohne Nutzen (d1920/01.jpg, rechte Hälfte: leere dunkle Kartenfläche)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 4,
+       "belege": [
+        "d1440/03.jpg, Terminwahl: ein Slot-Raster mit Datum und fünf Uhrzeiten je Tag ist als Idee nützlich, sieht aber aus wie ein generisches Buchungs-Widget. Nichts darin erzählt von Fliesen, Maß oder Handwerk.",
+        "d1440/04.jpg, Projektauswahl: Kacheln mit Linien-Icons und Tags wie 'SEHR BELIEBT' und 'FROSTSICHER' sind ein bekanntes Konfigurator-Muster. Der Titel 'Aufmaß' (Messen, Raster, Fuge) wird als Leitidee nirgends visuell aufgegriffen.",
+        "d1440/02.jpg und d1920/01.jpg: das Punktraster auf dunklem Grund ist der einzige wiederkehrende grafische Akzent. Als Anspielung auf ein Fliesenraster wäre es ausbaufähig, bleibt aber ein dekoratives Standardmuster.",
+        "d1440/06.jpg, Footer links: das Cartoon-Maskottchen im Logo ist das einzige eigenständige Element, wird auf der Seite aber nicht weiter genutzt."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/06.jpg, Footer links: echte, prüfbare Angaben (Hohwardstraße 14, 35614 Aßlar, Fax, USt-IdNr. DE 259249094, Handwerkskammer Wiesbaden). Das wirkt glaubwürdig.",
+        "Widersprüche: m375/01.jpg nennt als Bürozeiten 'Mo–Do 07:30–18:00, Fr 07:30–17:00', d1440/02.jpg und d1440/06.jpg dagegen 'Mo - Fr: 07:30 – 18:00'. In t768/01.jpg ist 'Wetzlar' als 'Firmensitz' markiert, darunter steht 'Aßlar – Direkt vor Ort (Firmensitz)'.",
+        "Ton und Redundanz: die Telefonnummer 06441 / 44 83 567 steht allein in d1440/00.jpg bis d1440/05.jpg mehrfach, in d1440/05.jpg zusätzlich als riesige Orange-Zeile. Die SEO-Überschrift 'Fliesenleger oder Badsanierung in Aßlar, Wetzlar & Mittelhessen gesucht?' (d1440/02.jpg) liest sich wie für Suchmaschinen geschrieben.",
+        "Bildmaterial: auf der ganzen Seite gibt es kein Foto von Deniz Tezgel, vom Team oder von einer Arbeit (d1440/00.jpg bis d1440/05.jpg). Das Zitat 'Die Zufriedenheit unserer Kunden…' (d1440/00.jpg, rechte Karte) bleibt ohne Gesicht."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Zu viele konkurrierende Handlungswege und doppelte CTA-Blöcke: Express-Anfrage, Terminwahl, Dreischritt-Formular, zwei dunkle CTA-Banner und Telefonnummer sechsfach (d1440/00.jpg bis d1440/05.jpg).",
+        "reparatur": "Einen Hauptweg festlegen, etwa 'Aufmaß anfragen' mit integrierter Terminwahl als Schritt 2. Telefon und WhatsApp bleiben als ruhige Nebenwege in der Kontaktkarte. Einen der beiden dunklen CTA-Blöcke streichen und die Seite um etwa 40 % kürzen."
+       },
+       {
+        "schwaeche": "Sichtbare Gestaltungsfehler: die Überschrift 'Direkter Kontakt' ist dunkel auf dunkel unsichtbar (d1440/00.jpg, t768/00.jpg), die rechte Karte hat ein Leerloch (d1440/01.jpg), vor dem Footer liegt ein weißer Streifen (d1920/05.jpg), und der WhatsApp-Button auf dem Handy ist leer (m375/07.jpg).",
+        "reparatur": "Die Überschrift auf hellen Text setzen, die Spaltenhöhen per Inhalt oder Grid ausgleichen, den Zwischenraum vor dem Footer entfernen und jedem Button ein sichtbares Label geben. Danach in allen vier Breiten gegenprüfen."
+       },
+       {
+        "schwaeche": "Mobil überlagern sich Sticky-Leiste, schwebender WhatsApp-Kreis mit Fake-Badge '1' und Schild-Icon. Sie verdecken Inhalte und Buttons (m375/00.jpg, m375/07.jpg, m375/10.jpg).",
+        "reparatur": "Auf dem Handy nur die untere Aktionsleiste behalten, den schwebenden WhatsApp-Kreis und die Benachrichtigungs-'1' entfernen und das Schild-Icon in den Footer verlegen. Dazu unten ein Seiten-Padding in Höhe der Leiste setzen."
+       },
+       {
+        "schwaeche": "Keine eigene Leitidee und kein echtes Bildmaterial: die Seite besteht aus generischen Karten, Pills und Punktrastern. Es gibt kein Foto vom Inhaber oder von einer Arbeit (d1440/00.jpg bis d1440/05.jpg).",
+        "reparatur": "Ein echtes Porträt von Deniz Tezgel neben die Kontaktkarte stellen, Fotos ausgeführter Bäder zeigen und das Motiv 'Aufmaß' (Maßband, Fugenraster, Maßlinien) als durchgehendes grafisches Element einsetzen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/kontakt",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Hero-Karte Mitte: sauber gesetzte Display-Grotesk 'Kontakt & Aufmaß Fliesenleger Tezgel' mit Orange-Rot-Verlauf, Pill-Badge darüber, zwei Buttons darunter. Ordentlich, aber das übliche SaaS-Muster (Badge, Verlaufswort, Primär- und Sekundärbutton).",
+        "t768/00.jpg und d1440/00.jpg, dunkle Kontaktkarte links oben: Die Überschrift 'Direkter Kontakt' ist dunkel auf dunkel kaum oder gar nicht zu sehen (bei d1440 bleibt nur eine leere Lücke zwischen Badge und Fließtext). Dazu kommen im ganzen Verlauf Weißraum-Löcher: d1440/01.jpg, rechte Karte, großer leerer Block über 'Einsatzgebiet', und d1920/05.jpg, ein weißes Leerband zwischen dunklem CTA und Footer-Leiste.",
+        "d1920/01.jpg, rechte Hälfte: Die Karte bleibt ohne Zustimmung eine riesige schwarze Punktraster-Fläche mit kleinem Hinweis. Fotos von Bädern, Fliesen oder Inhaber gibt es auf der ganzen Seite nicht, das einzige Bildelement ist das Comic-Logo (d1440/06.jpg, Footer links)."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "m375/07.jpg, Mitte: Der grüne WhatsApp-Button zeigt nur ein Icon und keine Beschriftung. 'Kostenloses Vor-Ort-Aufmaß anfor…' wird von der schwebenden WhatsApp-Blase abgeschnitten, die Zeile '5,0 Google-Bewertung' verschwindet unter der Sticky-Leiste.",
+        "m375/01.jpg und m375/08.jpg, unteres Drittel: Die Sticky-Leiste (Anrufen/WhatsApp/Aufmaß), die WhatsApp-Blase mit Badge '1' und das Schild-Icon liegen auf dem Inhalt ('Persönliche Fachberatung'-Text und Footer-Links 'Balkon & Terrasse' werden verdeckt). Drei Kontaktwege bieten auf einem Bildschirm dasselbe an.",
+        "Seitenfluss d1920/02.jpg bis d1920/04.jpg: Kalender 'Wunschtermin in 2 Schritten', danach 'Oder detailliert konfigurieren' mit 3-Schritt-Formular und dazwischen bzw. danach zwei dunkle Anruf-CTAs. Es gibt vier konkurrierende Abschlusswege ohne klare Rangfolge. Positiv: Die Kontaktkacheln mit Label und Wert sind gut lesbar (m375/01.jpg oben)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "d1440/04.jpg, Formular: Kachel-Auswahl 'Bad & Wellness / Wohnbereich / Balkon …' mit Icon und Tag ('SEHR BELIEBT', 'FROSTSICHER'). Das ist die einzige gewerkbezogene Idee, sie sieht aber aus wie eine Standard-Onboarding-Komponente.",
+        "d1440/02.jpg und d1440/05.jpg: zweimal fast dieselbe dunkle CTA-Box mit Punktraster, orangem Telefonbutton und grünem WhatsApp-Button. Ein Signaturmoment, eine Leitidee oder ein Bezug zu Fliese, Fuge oder Raster als Gestaltungsmittel ist nicht zu erkennen."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "m375/01.jpg, Kontaktkarte: konkrete, echte Angaben wie Festnetz, Mobil, E-Mail, Bürozeiten und 'Hohwardstraße 14, 35614 Aßlar'. Im Footer stehen dazu USt-IdNr. und HWK Wiesbaden (d1440/06.jpg links), das schafft Vertrauen.",
+        "Widersprüche und SEO-Ton: t768/01.jpg, Ortsliste, markiert Wetzlar als 'Firmensitz', direkt darunter steht 'Aßlar … Direkt vor Ort (Firmensitz)'. m375/01.jpg nennt 'Mo–Do 07:30–18:00, Fr 07:30–17:00', d1440/02.jpg unten dagegen 'Mo - Fr: 07:30 – 18:00 Uhr'. Die Überschrift 'Fliesenleger oder Badsanierung in Aßlar, Wetzlar & Mittelhessen gesucht?' (d1440/02.jpg) liest sich wie ein Keyword-Block. Der Kalender (d1440/03.jpg) zeigt jeden Tag dieselben fünf Zeiten und wirkt dadurch unecht."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Unsichtbare oder fehlende Überschrift 'Direkter Kontakt' in der dunklen Karte (t768/00.jpg, d1440/00.jpg) und ein WhatsApp-Button ohne Text auf Mobil (m375/07.jpg). Die wichtigsten Kontaktbausteine sehen kaputt aus.",
+        "reparatur": "Der Überschrift in der dunklen Karte eine helle Textfarbe geben (Verlauf oder Clip-Text auf Dunkel prüfen) und den mobilen WhatsApp-Button mit Label 'WhatsApp' wie auf dem Desktop ausstatten. Danach jede dunkle Fläche auf fehlende Texte durchsehen."
+       },
+       {
+        "schwaeche": "Überladene Abschlusslogik: Hero-CTA, Kalender, 3-Schritt-Formular, zwei fast gleiche dunkle Anruf-Boxen, Sticky-Leiste und WhatsApp-Blase konkurrieren. Auf Mobil verdecken sich die Overlays gegenseitig und den Inhalt (m375/01.jpg, m375/07.jpg).",
+        "reparatur": "Auf einen Hauptweg reduzieren (z. B. Anfrageformular, dazu Telefon und WhatsApp als Nebenwege). Eine der beiden dunklen CTA-Boxen streichen, Kalender und Formular zusammenlegen. Auf Mobil die schwebende WhatsApp-Blase entfernen, weil die Sticky-Leiste denselben Weg schon bietet, und unten genug Innenabstand für die Leiste lassen."
+       },
+       {
+        "schwaeche": "Austauschbare Vorlagenästhetik ohne Bildmaterial: Pill-Badges über jeder Sektion, Verlaufswort im H1, leerer schwarzer Kartenplatzhalter (d1920/01.jpg), Weißraum-Löcher (d1440/01.jpg, d1920/05.jpg). Es gibt kein einziges Foto von Arbeit oder Inhaber.",
+        "reparatur": "Ein echtes Foto von Deniz Tezgel und eine Referenzaufnahme in die Kontaktkarte bzw. den Hero setzen. Den Kartenplatzhalter durch eine statische, gestaltete Einsatzgebiet-Grafik ersetzen (z. B. Fugenraster mit Orten), die ohne Zustimmung funktioniert. Badges auf höchstens einen pro Ansicht begrenzen und die Leerflächen schließen. Dazu die Widersprüche bei Firmensitz und Öffnungszeiten bereinigen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/kontakt",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero-Karte oben: sauber gesetzter Groteskkopf 'Kontakt & Aufmaß Fliesenleger Tezgel' mit Orange-Rot-Verlauf, Pill-Badge darüber, zwei Buttons darunter. Ordentlich, aber das übliche SaaS-Hero-Muster ohne Bild und ohne Bezug zu Fliesen oder Handwerk.",
+        "d1440/00.jpg und d1920/00.jpg, dunkle Kontaktkarte links oben: zwischen dem Badge 'Eingetragener HWK-Fachbetrieb' und dem Fließtext klafft eine Lücke, weil die Überschrift 'Direkter Kontakt' dunkel auf Dunkel steht. In t768/00.jpg ist sie nur schwach als dunkle Schrift zu ahnen. Ein sichtbarer Gestaltungsfehler.",
+        "d1920/05.jpg, Mitte: leeres weißes Band von etwa 100 px zwischen dunklem Abschluss-CTA und dunkler Vertrauensleiste über dem Footer. Der Rhythmus bricht, das wirkt unfertig.",
+        "d1920/01.jpg, rechte Hälfte: die Karten-Platzhalterfläche (DSGVO) nimmt etwa 830x600 px leeres Schwarz mit Punktraster ein und ist die größte Fläche der Seite, ohne Inhalt. Auf der ganzen Seite gibt es kein einziges Foto von Fliesen, Bädern oder Personen; als Bildsprache bleibt nur das Comic-Maskottchen im Logo (alle Header)."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "m375/00.jpg, unten: feste Leiste mit 'Anrufen / WhatsApp / Aufmaß', dazu die schwebende WhatsApp-Blase mit roter '1' und unten links ein Schild-Button. Drei schwebende Ebenen überdecken den Inhalt, in m375/01.jpg etwa den Text 'Persönliche Fachberatung', in m375/10.jpg Footer-Links wie 'Balkon & Terrasse'.",
+        "m375/08.jpg, Mitte: der grüne WhatsApp-Button ist nur ein Icon ohne Beschriftung, und der Button darunter wird zu 'Kostenloses Vor-Ort-Aufmaß anfor…' abgeschnitten. Die Hauptaktionen sind auf dem Handy also unvollständig.",
+        "t768/03.jpg und t768/04.jpg: zwei konkurrierende Buchungswege direkt nacheinander, erst der Kalender 'Wunschtermin in 2 Schritten reservieren', dann 'Oder detailliert konfigurieren' mit 'Schritt 1 von 3'. Unklar, welcher der richtige ist. Positiv: die Schrittanzeige 1-2-3 und die hervorgehobene Auswahlkarte 'Bad & Wellness' sind klar lesbar.",
+        "m375/03.jpg, oben: die Städteliste steckt in einem eigenen Scrollbereich und schneidet 'Friedberg (Hessen)' an. Auf dem Handy entsteht Scrollen im Scrollen. Die Telefonnummer 06441 / 44 83 567 erscheint dafür überall gut erreichbar (d1440/00.jpg Header und Hero, d1440/05.jpg groß in Orange)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1440/02.jpg, unten: der Block 'Fliesenleger oder Badsanierung in Aßlar, Wetzlar & Mittelhessen gesucht?' (dunkle Karte, Punktraster, Orange- und Grün-Button) wiederholt fast deckungsgleich den Abschluss-CTA in d1440/05.jpg. Zwei austauschbare Baukasten-CTAs ohne Leitidee.",
+        "d1440/04.jpg, Projektwahl-Kacheln: Icon im Quadrat, Tag rechts oben ('SEHR BELIEBT', 'FROSTSICHER'), Titel und Unterzeile. Generisches Kartenraster. Ein Fliesen-, Fugen- oder Rastermotiv, das bei einem Fliesenleger naheläge, fehlt auf der ganzen Seite (auch d1920/00.jpg bis 05.jpg)."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/06.jpg, Footer links: konkrete und glaubwürdige Angaben wie Hohwardstraße 14 in 35614 Aßlar, Fax, USt-IdNr. DE 259249094 und Handwerkskammer Wiesbaden. Dazu in t768/00.jpg ein namentlicher Inhaber mit Zitat '— Deniz Tezgel, Inhaber'. Das schafft Echtheit.",
+        "Widersprüche: m375/01.jpg nennt als Bürozeiten 'Mo–Do 07:30–18:00, Fr 07:30–17:00', d1440/02.jpg unten und der Footer in d1440/06.jpg aber 'Mo - Fr: 07:30 – 18:00 Uhr'. In t768/01.jpg trägt Wetzlar das Etikett 'Firmensitz', obwohl Betriebssitz und Detailkarte Aßlar nennen. Dazu SEO-lastige Überschriften ('…in Aßlar, Wetzlar & Mittelhessen gesucht?', d1440/02.jpg) und wechselnde Titel ('Inhaber' und 'Fachbetriebsleiter', d1440/02.jpg)."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Unsichtbare oder fehlerhafte Kernelemente: die Überschrift 'Direkter Kontakt' steht dunkel auf Dunkel (d1440/00.jpg, t768/00.jpg). Auf dem Handy hat der WhatsApp-Button kein Label, der Aufmaß-Button ist abgeschnitten (m375/08.jpg), und in d1920/05.jpg bleibt ein leeres weißes Band.",
+        "reparatur": "Überschrift in der dunklen Karte auf Weiß oder Hellbeige setzen. Buttons mobil einspaltig und mit voller Beschriftung umbrechen lassen (kein Ellipsis, Mindesthöhe 48 px). Den Abstandscontainer vor der Vertrauensleiste entfernen oder dunkel einfärben."
+       },
+       {
+        "schwaeche": "Redundanz und konkurrierende Wege: zwei fast gleiche dunkle CTA-Blöcke, zwei Buchungsmodule (Kalender und 3-Schritt-Formular) sowie mobil drei schwebende Ebenen (Bottom-Bar, WhatsApp-Blase mit Fake-'1', Schild-Button). Das verwässert die Hierarchie und verdeckt Inhalt (m375/00.jpg, m375/01.jpg, t768/03.jpg und 04.jpg, d1440/02.jpg und 05.jpg).",
+        "reparatur": "Einen primären Weg festlegen (z. B. Kalender-Termin, das Formular als optionaler zweiter Schritt darin), den mittleren CTA-Block streichen und auf dem Handy nur die Bottom-Bar behalten. WhatsApp-Blase und Benachrichtigungsbadge entfernen, den Datenschutz-Button in den Footer verlegen."
+       },
+       {
+        "schwaeche": "Keine Bildsprache und keine Leitidee: kein Foto von Arbeiten, Bädern oder dem Inhaber. Die größte Fläche ist ein leerer Karten-Platzhalter (d1920/01.jpg). Die Gestaltung ist ein generisches Kartenraster ohne Bezug zum Fliesenhandwerk, und kleinere inhaltliche Widersprüche (Öffnungszeiten, 'Firmensitz' Wetzlar) schwächen das Vertrauen.",
+        "reparatur": "Ins Hero ein echtes Porträt von Deniz Tezgel auf der Baustelle oder ein Referenzbad setzen. Die Kartenfläche durch eine statische Regionsgrafik (SVG mit Radiusringen um Aßlar) ersetzen, die ohne Einwilligung auskommt. Ein Fliesenraster- oder Fugenmotiv als wiederkehrendes Gestaltungselement einführen. Öffnungszeiten und Firmensitz an allen Stellen auf eine Quelle vereinheitlichen."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 4.5,
+    "bedienbarkeit": 4.5,
+    "kreativitaet": 3.5,
+    "inhalt": 5.5
+   },
+   "gewichtet": 4.4,
+   "einzel_gewichtet": [
+    4.5,
+    4.55,
+    4.45
+   ],
+   "lockvogel_gewichtet": []
+  }
+ }
+}
