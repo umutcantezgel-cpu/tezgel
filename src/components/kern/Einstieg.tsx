@@ -1,16 +1,21 @@
 // Einstieg (KERN K-006, K-009): Erzählansicht – H1 links bündig an der Laserachse, Vorspann, Aktionen,
 // Randspalte (Plan oder Schriftfeld). Arbeitsansicht – kompakter Kopf (H1 text-fs-6), keine Inszenierung.
 // Startseite: SIG-1 Kreuzlinie (kreuzlinie), die Zeilen der H1 tragen data-motion="sig-flucht".
+// Flucht: Lot bzw. Kreuzlinie stehen im Seitenrand vor der Inhaltskante; Etikett, H1 und Text beginnen an derselben
+// Kante wie alle Abschnitte (kein Einzug).
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Laserachse from './Laserachse';
 import Kreuzlinie from './Kreuzlinie';
+import { ACHSE_LAGE } from './Leitachse';
 import { etikettKlassen, seitenKlassen } from './stile';
 
 export interface EinstiegProps {
   art?: 'erzaehl' | 'arbeit';
   etikett?: ReactNode;
   titel: ReactNode;
+  /** H1 in festen Zeilen (je Zeile ein Block); mit kreuzlinie rücken die Zeilen gestaffelt in die Flucht */
+  titelZeilen?: ReactNode[];
   /** zweite Zeile der H1 (Teil der Überschrift, kleiner gesetzt) */
   unterzeile?: ReactNode;
   vorspann?: ReactNode;
@@ -28,17 +33,26 @@ export interface EinstiegProps {
   className?: string;
 }
 
-export default function Einstieg({ art = 'erzaehl', etikett, titel, unterzeile, vorspann, aktionen, merkmale, rand, fuss, achse = art === 'erzaehl', kreuzlinie = false, id, className }: EinstiegProps) {
+export default function Einstieg({ art = 'erzaehl', etikett, titel, titelZeilen, unterzeile, vorspann, aktionen, merkmale, rand, fuss, achse = art === 'erzaehl', kreuzlinie = false, id, className }: EinstiegProps) {
   const erzaehl = art === 'erzaehl';
   return (
     <header id={id} className={clsx('relative border-b border-fuge', erzaehl ? 'pt-32 pb-16 lg:pt-32 lg:pb-24' : 'pt-32 pb-12 lg:pb-16', className)}>
       <div className={clsx(seitenKlassen, 'relative')}>
-        {kreuzlinie ? <Kreuzlinie className="-top-8 left-2 md:left-4 lg:left-8" /> : achse && <Laserachse className="left-2 md:left-4 lg:left-8" />}
+        {kreuzlinie ? <Kreuzlinie className={clsx('-top-8', ACHSE_LAGE)} /> : achse && <Laserachse className={ACHSE_LAGE} />}
         <div className={clsx('grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12', erzaehl ? 'lg:gap-x-12' : 'lg:gap-x-8')}>
-          <div className={clsx('col-span-4 md:col-span-8', rand ? 'lg:col-span-7' : 'lg:col-span-9', (achse || kreuzlinie) && 'pl-4 md:pl-6 lg:pl-8')}>
+          <div className={clsx('col-span-4 md:col-span-8', rand ? 'lg:col-span-7' : 'lg:col-span-9')}>
             {etikett && <p className={clsx(etikettKlassen, 'mb-6 flex-wrap')}>{etikett}</p>}
             <h1 className={clsx('text-tinte', erzaehl ? 'text-fs-7' : 'text-fs-6')} data-motion={kreuzlinie ? 'sig-flucht' : undefined}>
-              <span className="block">{titel}</span>
+              {titelZeilen ? (
+                titelZeilen.map((zeile, i) => (
+                  <span key={i} className="block">
+                    {zeile}
+                    {i < titelZeilen.length - 1 && ' '}
+                  </span>
+                ))
+              ) : (
+                <span className="block">{titel}</span>
+              )}
               {unterzeile && <span className="mt-4 block text-fs-5 text-tinte-2">{unterzeile}</span>}
             </h1>
             {vorspann && <div className="mt-8 max-w-mass text-fs-4 text-tinte">{vorspann}</div>}
@@ -47,7 +61,7 @@ export default function Einstieg({ art = 'erzaehl', etikett, titel, unterzeile, 
           </div>
           {rand && <div className="col-span-4 md:col-span-8 lg:col-span-5">{rand}</div>}
         </div>
-        {fuss && <div className={clsx('mt-12', (achse || kreuzlinie) && 'pl-4 md:pl-6 lg:pl-8')}>{fuss}</div>}
+        {fuss && <div className="mt-12">{fuss}</div>}
       </div>
     </header>
   );

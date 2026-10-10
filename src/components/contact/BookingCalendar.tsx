@@ -202,7 +202,7 @@ export function BookingCalendar({
       <div className="mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-fuge pb-6">
         <div>
           <span className={etikettKlassen}>
-            <Fugenkreuz className="size-3 text-laser" />
+            <Fugenkreuz className="size-3 text-strich" />
             <span>Kostenloses Vor-Ort-Aufmaß</span>
           </span>
           <h3 className="mt-3 text-fs-5 text-tinte">

@@ -105,15 +105,15 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Abstand über der unteren Leiste (nur unter md, dort ist die Leiste sichtbar): Leistenhöhe + Fuge + Sicherheitsrand.
-   Ab md setzt das Element seinen Abstand selbst (z. B. md:bottom-6). */
+/* Abstand über der unteren Leiste (nur unter lg, dort ist die Leiste sichtbar): Leistenhöhe + Fuge + Sicherheitsrand.
+   Ab lg setzt das Element seinen Abstand selbst (z. B. lg:bottom-6). */
 @utility ueber-leiste-12 {
-  @media (width < 48rem) {
+  @media (width < 64rem) {
     bottom: calc(var(--spacing) * 12 + 1px + env(safe-area-inset-bottom, 0px));
   }
 }
 @utility ueber-leiste-16 {
-  @media (width < 48rem) {
+  @media (width < 64rem) {
     bottom: calc(var(--spacing) * 16 + 1px + env(safe-area-inset-bottom, 0px));
   }
 }
@@ -172,7 +172,7 @@
     scroll-behavior: smooth;
     /* Kopfhöhe + 16 px, damit Anker und Fokus nie unter dem festen Kopf liegen */
     scroll-padding-top: calc(var(--spacing) * 24);
-    /* unten ebenso frei: mobil Leiste und Einwilligungs-Schild, ab md WhatsApp-Knopf und Schild –
+    /* unten ebenso frei: bis lg die Leiste (mit Schild), ab lg WhatsApp-Knopf und Schild –
        fokussierte oder angesprungene Elemente liegen nie unter einer festen Ebene (WCAG 2.4.11) */
     scroll-padding-bottom: calc(var(--spacing) * 32);
     background-color: var(--color-kalk);
@@ -181,7 +181,7 @@
     overflow-x: clip;
   }
 
-  @media (width >= 48rem) {
+  @media (width >= 64rem) {
     html {
       scroll-padding-bottom: calc(var(--spacing) * 24);
     }
@@ -208,6 +208,8 @@
     font-weight: 760;
     color: var(--color-tinte);
     letter-spacing: -0.01em;
+    /* Der schmale Schnitt hat einen engen Wortzwischenraum: jede Wortlücke deutlich breiter als die Buchstabenfuge */
+    word-spacing: 0.12em;
     text-wrap: balance;
     hyphens: manual;
   }
@@ -461,5 +463,14 @@
   .font-anzeige {
     font-stretch: 74%;
     letter-spacing: -0.01em;
+    word-spacing: 0.12em;
+  }
+}
+
+/* Widerruf-Schild der Einwilligung (E2-ORCH-10): unter lg sitzt es in der unteren Leiste; das schwebende Schild
+   erscheint dort nur auf Seiten ohne Leiste (Abläufe). Außerhalb der Ebenen, damit es die Anzeige-Utility schlägt. */
+@media (width < 64rem) {
+  body:has([data-leiste]) .widerruf-schwebend {
+    display: none;
   }
 }

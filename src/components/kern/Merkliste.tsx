@@ -35,7 +35,7 @@ export default function Merkliste({ eintraege, spalten = 1, nummeriert = false, 
       <ul className={clsx('border-t', tinte ? 'border-nacht-fuge' : 'border-fuge', className)}>
         {eintraege.map((e, i) => (
           <li key={i} className={clsx('flex items-start gap-4 border-b py-4 lg:gap-6', tinte ? 'border-nacht-fuge' : 'border-fuge')}>
-            <Fugenkreuz className="mt-2 size-3 shrink-0 text-laser" />
+            <Fugenkreuz className={clsx('mt-2 size-3 shrink-0', tinte ? 'text-nacht-2' : 'text-strich')} />
             <div className="min-w-0 flex-1">
               {nummeriert && <p className={clsx('font-mono text-fs-1', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{nummer(i)}</p>}
               <p className={clsx('font-anzeige text-fs-4 font-semibold', nummeriert && 'mt-2', tinte ? 'text-kalk' : 'text-tinte')}>{e.titel}</p>

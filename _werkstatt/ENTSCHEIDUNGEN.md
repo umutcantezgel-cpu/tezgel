@@ -122,6 +122,18 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 - **Wahl:** Höhe über die Variable `--karten-hoehe` am Element und die Komponentenklasse `karten-hoehe` (globals.css); erlaubte Werte 400/440/460 px und Spaltenhöhe ab `lg` (KERN K-005). Keine weiteren Kartenwerte.
 - **Umkehrprobe:** Klasse entfernen → Karten fallen auf Inhaltshöhe zurück (CLS-Risiko).
 
+## E-019 · Sicht-Nacharbeit am E2-Tor (Anlauf 2)
+- Frage: Wie reagiert der Lauf auf die Sichtabnahme E2-SICHT (/ 5,7, /kontakt 5,0)?
+- Entscheidung (Denkprotokoll): Befunde mit Wirkung auf die Leitidee zuerst und systemweit, nicht je Seite flicken:
+  1. Flucht: Lot, Kreuzlinie und Abschnittsmarken stehen an einer gemeinsamen Lage im Seitenrand (`ACHSE_LAGE`), Etikett/H1/Text des Einstiegs ohne Einzug an der Inhaltskante; eine `Leitachse` führt das Lot über alle Abschnitte der Erzählansicht, Abschnitte setzen ein Fugenkreuz an ihre Oberkante.
+  2. Rot-Disziplin (K-003.2): Aufzählungs- und Etikettenkreuze in Strich (auf Tinte Nacht-2); Rot bleibt Laserachse, Kreuzlinie, Firmensitz-Marke, Anriss, Fokus, Fehler. Aktiver Menüpunkt in Tinte.
+  3. Gezeichnet statt generiert (K-003.4): Fotos mit Generatorzeichen verlassen die Startseite (M-19), Verlegepläne tragen das Bild; Gewerkwahl im Rechner mit Planmarken statt Piktogrammen.
+  4. Feste Ebenen (K-003.7): Leiste bis lg, Widerruf-Schild als erstes Leistenfeld (bestehendes Ereignis `openCookieSettings`, Logik unverändert); WhatsApp ab lg als 44-px-Quadrat im Seitenrand.
+  5. Takt: Erzählabschnitte py-16/24; Garantien als Zeilen, Fachthemen als Linienliste – keine zwei benachbarten Abschnitte gleicher Bauart; Vertrauensleiste als festes Raster mit dem Kennwert als achtem Feld.
+  6. /kontakt: seitlicher Abschnittskopf mobil volle Breite (Fehler), Ortsliste in ganzen Zeilen, Zonen 10/25/50 aus `einzugszonen.ts`, Kartenplatzhalter mit kompaktem Einzugsband.
+- Nicht umgesetzt (Bestand/Funktion): zweites und drittes Anfrageformular auf / und Terminwahl als Formularschritt – das wären Funktionsänderungen; sie gehen als Vorschlag in BERICHT.
+- Folgen: neue Bausteine `Leitachse`, `Einzugsband` (vorgezogen aus E3-ORCH-03), Logik `einzugszonen.ts` mit Test; Prüfstufe A und Sichtabnahme Anlauf 2.
+
 ## L6 · Lernen
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|

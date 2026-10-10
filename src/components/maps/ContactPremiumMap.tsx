@@ -6,6 +6,8 @@ import { APIProvider, Map, AdvancedMarker, Pin, useMap } from "@vis.gl/react-goo
 import { CITIES } from "@/config/cities";
 import { COMPANY_DATA } from "@/config/company";
 import MapConsentGate from "@/components/legal/MapConsentGate";
+import Einzugsband from "@/components/kern/Einzugsband";
+import { ZONEN } from "@/lib/einzugszonen";
 import Icon from "@/components/icons/Icon";
 import { etikettKlassen, feldKlassen, knopfKlassen, wahlKlassen } from "@/components/kern/stile";
 import { triggerHaptic } from "@/lib/haptics";
@@ -20,11 +22,10 @@ import {
 /** Kartenhöhe auf Smartphone-Breite; ab lg füllt die Fläche die Höhe der linken Spalte. */
 const KARTE_HOEHE = "440px";
 
+// Entfernungsfilter mit denselben Zonen wie das Einzugsband (≤ 10 / ≤ 25 / ≤ 50 km, src/lib/einzugszonen.ts)
 const ENTFERNUNGEN: { label: string; val: number | null }[] = [
   { label: "Alle", val: null },
-  { label: "≤ 15 km", val: 15 },
-  { label: "≤ 30 km", val: 30 },
-  { label: "≤ 45 km", val: 45 },
+  ...ZONEN.map((z) => ({ label: z.etikett, val: z.bis })),
 ];
 
 function ContactCameraController({ targetCoords }: { targetCoords: { lat: number; lng: number } }) {
@@ -118,6 +119,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
             ))}
           </div>
 
+          {/* genau fünf Zeilen à 44 px + Fugen (max-h-56): keine angeschnittene Zeile */}
           <ul className="max-h-56 overflow-y-auto border border-fuge bg-fliese">
             {filteredCities.map((city) => {
               const isSelected = selectedSlug === city.slug;
@@ -127,14 +129,14 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                     type="button"
                     aria-pressed={isSelected}
                     onClick={() => handleSelectCity(city.slug)}
-                    className="flex min-h-11 w-full items-center justify-between gap-3 px-4 py-3 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
+                    className="flex h-11 w-full items-center justify-between gap-3 px-4 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
                   >
                     <span className="flex min-w-0 items-center gap-2">
                       <Icon name="ort" groesse={4} />
                       <span className="truncate">{city.name}</span>
                     </span>
                     <span className="shrink-0 font-mono text-fs-1">
-                      {city.distanceKm === 0 ? "Firmensitz" : `ca. ${city.distanceKm} km`}
+                      {city.distanceKm === 0 ? "angrenzend" : `ca. ${city.distanceKm} km`}
                     </span>
                   </button>
                 </li>
@@ -187,6 +189,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
           title={`Google Maps Ansicht ${currentHub.name}`}
           height="100%"
           className="w-full"
+          vorschau={<Einzugsband kompakt />}
         >
           {apiKey ? (
             <APIProvider apiKey={apiKey}>

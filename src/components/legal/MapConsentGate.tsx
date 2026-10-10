@@ -12,6 +12,8 @@ interface MapConsentGateProps {
   title?: string;
   className?: string;
   height?: string | number;
+  /** gezeichnete Vorschau im Platzhalter (dekorativ, ab md), z. B. das Einzugsband – statt leerer Fläche */
+  vorschau?: React.ReactNode;
 }
 
 export function MapConsentGate({
@@ -20,6 +22,7 @@ export function MapConsentGate({
   title = "Google Maps Standort",
   className = "",
   height = "420px",
+  vorschau,
 }: MapConsentGateProps) {
   const { consent, updateConsent, openSettings } = useConsent();
   const [isHydrated, setIsHydrated] = useState(false);
@@ -78,13 +81,24 @@ export function MapConsentGate({
           <Icon name="schloss" groesse={4} />
           Karte
         </span>
-        <div className="flex flex-1 flex-col items-center justify-center gap-4 py-6 text-center">
+        {vorschau && (
+          <div aria-hidden="true" className="hidden min-h-0 flex-1 overflow-hidden pt-4 md:block">
+            {vorschau}
+          </div>
+        )}
+        <div
+          className={
+            vorschau
+              ? "flex flex-col items-center justify-center gap-4 py-6 text-center md:items-start md:border-t md:border-fuge md:pb-0 md:pt-4 md:text-left"
+              : "flex flex-1 flex-col items-center justify-center gap-4 py-6 text-center"
+          }
+        >
           <p className="font-text text-fs-3 font-semibold text-tinte">Interaktive Karte geschützt (DSGVO)</p>
           <p className="max-w-md font-text text-fs-2 text-tinte-2">
             Um die interaktive Google Maps Karte mit Standorten und Routen anzuzeigen, ist Ihre Einwilligung in externe
             Medien erforderlich.
           </p>
-          <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <div className={clsx("flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center", vorschau && "md:justify-start")}>
             <button type="button" onClick={handleAccept} className={knopfKlassen("haupt", "w-full sm:w-auto")} data-motion="druck">
               Karte laden & zustimmen
             </button>

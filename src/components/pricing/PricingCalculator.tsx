@@ -13,17 +13,19 @@ import {
   type CraftServiceType,
   type RoomSizeType,
 } from "./pricing.constants";
-import Icon, { type IconName } from "@/components/icons/Icon";
+import Icon from "@/components/icons/Icon";
+import Verlegeplan from "@/components/kern/Verlegeplan";
+import type { PlanName } from "@/lib/plaene/vorgaben";
 import Fugenkreuz from "@/components/kern/Fugenkreuz";
 import Knopf from "@/components/kern/Knopf";
 import { etikettForm, etikettKlassen, feldKlassen, labelKlassen } from "@/components/kern/stile";
 import { siteConfig } from "@/lib/config";
 import { triggerHaptic } from "@/lib/haptics";
 
-const SERVICE_ICONS: Record<CraftServiceType, IconName> = {
+const SERVICE_PLAENE: Record<CraftServiceType, PlanName> = {
   bad: "bad",
   grossformat: "grossformat",
-  wohnbereich: "haus",
+  wohnbereich: "wohnen",
   balkon: "balkon",
   abdichtung: "abdichtung",
   reparatur: "reparatur",
@@ -225,12 +227,15 @@ export default function PricingCalculator() {
                   className={optionKlassen}
                   data-motion="zustand"
                 >
-                  <Icon name={SERVICE_ICONS[srv.id] || "fliese"} groesse={6} className="shrink-0" />
+                  {/* Planmarke statt Piktogramm: das Gewerk als kleiner Verlegeplan (Formsystem K-008), auf Kalk in beiden Zuständen lesbar */}
+                  <span className="w-14 shrink-0 border border-fuge bg-kalk p-1">
+                    <Verlegeplan plan={SERVICE_PLAENE[srv.id]} bemassung={false} ohneAchse />
+                  </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
                       <span className="block min-w-0 text-fs-2 font-semibold">{srv.title}</span>
                       {srv.badge && (
-                        <span className="hidden whitespace-nowrap font-mono text-fs-1 sm:inline-block">{srv.badge}</span>
+                        <span className="hidden whitespace-nowrap font-text text-fs-1 sm:inline-block">{srv.badge}</span>
                       )}
                     </span>
                     <span className="mt-1 block text-fs-1">{srv.subtitle}</span>
@@ -382,7 +387,7 @@ export default function PricingCalculator() {
           <form onSubmit={handleSubmit} className="flex h-full flex-col justify-between gap-8">
             <div>
               <span className={`${etikettForm} text-nacht-2`}>
-                <Fugenkreuz className="size-3 text-laser" />
+                <Fugenkreuz className="size-3 text-nacht-2" />
                 <span>Preise individuell auf Anfrage</span>
               </span>
 

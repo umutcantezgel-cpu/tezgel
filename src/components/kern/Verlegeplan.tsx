@@ -17,6 +17,8 @@ export interface VerlegeplanProps {
   beschriftet?: boolean;
   bemassung?: boolean;
   interaktiv?: boolean;
+  /** ohne Laserachse (z. B. kleine Planmarken, damit je Bildschirm nur ein roter Blickfang bleibt) */
+  ohneAchse?: boolean;
   /** Stand im Ablauf (K-007 szene-ablauf); Standard fugenbild */
   zustand?: 'aufmass' | 'fugenbild' | 'verlegt';
   className?: string;
@@ -64,7 +66,7 @@ function Element({ e, b, h }: { e: Planelement; b: number; h: number }) {
   }
 }
 
-export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, zustand = 'fugenbild', className }: VerlegeplanProps) {
+export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, ohneAchse = false, zustand = 'fugenbild', className }: VerlegeplanProps) {
   const vorgabe: Planvorgabe = typeof plan === 'string' ? PLAENE[plan] : plan;
   const bild = fugenbild(vorgabe);
   const uid = useId().replace(/[^a-zA-Z0-9-]/g, '');
@@ -78,8 +80,8 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
   const stelz = elemente.some((e) => e.art === 'stelzlager');
   const kreuzpunkte = stelz ? bild.waagrecht.flatMap((y) => bild.senkrecht.filter(([, y1, y2]) => y1 <= y * 1 && y2 >= y).map(([x]) => [x, y])) : [];
   const links = bild.passstuecke.find(([x]) => x === 0);
-  const zeigeLot = vorgabe.achse !== 'waage';
-  const zeigeWaage = vorgabe.achse !== 'lot';
+  const zeigeLot = !ohneAchse && vorgabe.achse !== 'waage';
+  const zeigeWaage = !ohneAchse && vorgabe.achse !== 'lot';
   const zeigeRaster = zustand !== 'aufmass';
   // Prüfmarken beim Aufmaß (Ebenheit, Restfeuchte, Tragfähigkeit): drei Messpunkte auf der Diagonale
   const pruefpunkte = [[0.22, 0.28], [0.5, 0.5], [0.78, 0.72]].map(([fx, fy]) => [fx * W, fy * H]);

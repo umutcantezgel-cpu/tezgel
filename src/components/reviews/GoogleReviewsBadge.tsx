@@ -6,6 +6,8 @@ interface GoogleReviewsBadgeProps {
   rating?: number;
   count?: number;
   className?: string;
+  /** als Feld in einem Raster an der Fuge (ohne eigenen Rahmen, volle Breite) */
+  imRaster?: boolean;
 }
 
 // Kennwert-Link (KERN K-009): eckig an der Fuge, das Google-Logo in Form und Farbe, der Wert in der
@@ -14,6 +16,7 @@ export default function GoogleReviewsBadge({
   rating = RATING_SUMMARY.google.rating,
   count = RATING_SUMMARY.google.count,
   className = "",
+  imRaster = false,
 }: GoogleReviewsBadgeProps) {
   const wert = rating.toFixed(1).replace(".", ",");
   return (
@@ -23,7 +26,7 @@ export default function GoogleReviewsBadge({
       rel="noopener noreferrer"
       title="Zu den Google Bewertungen von Fliesenverlegung Tezgel"
       data-motion="zustand"
-      className={`inline-flex items-center gap-4 rounded-none border border-strich bg-fliese p-4 text-tinte hover:border-tinte lg:p-6 ${className}`}
+      className={`${imRaster ? "flex w-full items-center gap-4 bg-fliese px-4 py-4 text-tinte underline decoration-transparent underline-offset-4 hover:decoration-tinte" : "inline-flex items-center gap-4 rounded-none border border-strich bg-fliese p-4 text-tinte hover:border-tinte lg:p-6"} ${className}`}
     >
       <GoogleIcon size={24} className="shrink-0" />
       <span className="flex flex-col">

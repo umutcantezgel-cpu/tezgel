@@ -13,7 +13,7 @@ export default function QualityPromise() {
         text: promise.description,
         fuss: (
             <span className="flex items-center gap-2 font-mono text-fs-1 text-tinte-2">
-                <Fugenkreuz className="size-3 text-laser" />
+                <Fugenkreuz className="size-3 text-strich" />
                 Garantierter Standard
             </span>
         ),

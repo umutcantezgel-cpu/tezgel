@@ -94,7 +94,7 @@ export default function TezgelAnfrageFunnel() {
       <div className="mb-8 border-b border-fuge pb-6">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <span className={etikettKlassen}>
-            <Fugenkreuz className="size-3 text-laser" />
+            <Fugenkreuz className="size-3 text-strich" />
             Express-Anfrage in 60 Sekunden
           </span>
           <ol className="flex items-center gap-2" aria-label="Fortschritt">

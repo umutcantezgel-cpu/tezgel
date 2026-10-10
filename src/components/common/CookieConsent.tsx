@@ -114,7 +114,7 @@ export default function CookieConsent() {
           aria-modal="false"
           aria-label="Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG"
           aria-describedby="cookie-consent-description"
-          className="hoehe-banner ueber-leiste-12 fixed left-0 right-0 z-50 overflow-y-auto overscroll-contain border-t border-tinte bg-fliese text-tinte md:bottom-6 md:left-6 md:right-auto md:w-full md:max-w-md md:border"
+          className="hoehe-banner ueber-leiste-12 fixed left-0 right-0 z-50 overflow-y-auto overscroll-contain border-t border-tinte bg-fliese text-tinte lg:bottom-6 lg:left-6 lg:right-auto lg:w-full lg:max-w-md lg:border"
         >
           {!showSettings ? (
             /* ── Banner View ── */
@@ -308,7 +308,8 @@ export default function CookieConsent() {
         </div>
       )}
 
-      {/* Widerruf jederzeit (Art. 7 Abs. 3 DSGVO): kleiner, flacher Knopf; mobil über der unteren Leiste */}
+      {/* Widerruf jederzeit (Art. 7 Abs. 3 DSGVO): kleiner, flacher Knopf. Unter lg sitzt das Schild in der unteren
+          Leiste (gleicher Name, öffnet über das Ereignis openCookieSettings); schwebend nur dort, wo keine Leiste ist. */}
       {!showBanner && (
         <button
           type="button"
@@ -318,7 +319,7 @@ export default function CookieConsent() {
             setAnalyticsChecked(consent?.analytics ?? false);
             setMarketingChecked(consent?.marketing ?? false);
           }}
-          className="ueber-leiste-16 fixed left-4 z-30 inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte-2 transition-colors dauer-1 ease-setzen hover:border-tinte hover:text-tinte md:bottom-6 md:left-6"
+          className="widerruf-schwebend ueber-leiste-16 fixed left-4 z-30 inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte-2 transition-colors dauer-1 ease-setzen hover:border-tinte hover:text-tinte lg:bottom-6 lg:left-6"
           aria-label="Cookie-Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"
           data-feste-ebene

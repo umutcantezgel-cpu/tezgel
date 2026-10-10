@@ -33,6 +33,11 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E2-BAU-02 | `src/components/kern/Hinweis.tsx` | (Hinweis ohne Titel: Art nur über Icon/Farbe) | unsichtbares Präfix „Hinweis:“, „Warnung:“, „Fehler:“, „Erledigt:“ (nur Screenreader) | Art nie allein über Farbe/Icon (WCAG 1.4.1, 1.1.1) |
 | E2-ORCH-08-N2 | `src/app/page.tsx` (Fachgewerke) | Bildunterschriften „Wohnbereiche & Neubau“, „Balkon & Terrasse“, „DIN 18534 Abdichtung“ und die Alt-Texte der drei Badfotos unter diesen Gewerken | entfallen mit den unpassenden Fotos | Foto zeigte ein Bad statt des Gewerks (irreführender Alt-Text); Ersatz ist der Verlegeplan des Gewerks, MENSCHEN M-18 |
 | E2-ORCH-09-N3 | `src/components/locations/LocationContact.tsx` | Pill-Badge „Ihr regionaler Ansprechpartner für …“ | wortgleich als Mono-Etikett | Badge → Etikett (K-009); Herzschlag-Hülle und Verlauf entfallen, Texte unverändert |
+| E2-ORCH-10 | `src/components/maps/ContactPremiumMap.tsx` | Filter „≤ 15 km“, „≤ 30 km“, „≤ 45 km“ | „≤ 10 km“, „≤ 25 km“, „≤ 50 km“ (aus `src/lib/einzugszonen.ts`) | Zonen wie das Einzugsband (K-007); Sichtabnahme E2-SICHT: Widerspruch der Zonen |
+| E2-ORCH-10 | `src/components/maps/ContactPremiumMap.tsx` | Entfernung Wetzlar „Firmensitz“ | „angrenzend“ | Firmensitz ist Aßlar; Wetzlar grenzt laut `cities.ts` an Aßlar (M-17) |
+| E2-ORCH-10 | `src/app/page.tsx` (Fachgewerke, XXL) | Bildunterschriften „Komplettbad & Dusche“, „Bad mit freistehender Wanne“ und Alt-Texte der beiden Fotos | entfallen mit den Fotos; Verlegeplan statt Foto, Unterschrift „Millimetergenauer Gehrungsschnitt & C2TE S1 Flexkleber“ bleibt | Fotos tragen das Zeichen eines Bildgenerators (M-19) |
+| E2-ORCH-10 | `src/components/common/FloatingWhatsAppWidget.tsx` | sichtbarer Text „WhatsApp“ | nur für Screenreader (Knopf als Quadrat im Seitenrand); aria-label unverändert | Knopf verdeckt keinen Inhalt (E2-SICHT Details) |
+| E2-ORCH-10 | `src/components/layout/MobileBottomBar.tsx` | – | Schild „Cookie-Einstellungen verwalten“ als erstes Feld der Leiste (gleicher Name wie das schwebende Schild) | schwebendes Schild verdeckte Inhalt; öffnet die Einstellungen über das bestehende Ereignis |
 
 ## Vorschläge (Überschriften, Fließtext)
 _noch keine_

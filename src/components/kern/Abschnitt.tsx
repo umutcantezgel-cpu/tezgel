@@ -2,6 +2,8 @@
 // wahlweise gestapelt oder seitlich (Kopf links, Inhalt rechts). Flächen: Kalk, Fliese, Tinte.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
+import Fugenkreuz from './Fugenkreuz';
+import { ACHSE_LAGE } from './Leitachse';
 import { etikettForm, seitenKlassen } from './stile';
 
 export interface AbschnittProps {
@@ -19,16 +21,18 @@ export interface AbschnittProps {
   breite?: 'seite' | 'mass';
   /** data-motion="auftritt" für den Inhalt (nur Erzählansichten, höchstens jeder zweite Abschnitt) */
   auftritt?: boolean;
+  /** Fugenkreuz auf der Leitachse an der Oberkante (innerhalb von <Leitachse>) */
+  leitachse?: boolean;
   className?: string;
   children?: ReactNode;
   'aria-label'?: string;
 }
 
-export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, className, children, ...rest }: AbschnittProps) {
+export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleitung, art = 'erzaehl', flaeche = 'kalk', kopf = 'gestapelt', breite = 'seite', auftritt = false, leitachse = false, className, children, ...rest }: AbschnittProps) {
   const hId = titelId ?? (id ? `${id}-titel` : undefined);
   const tinte = flaeche === 'tinte';
   const kopfInhalt = (titel || etikett) && (
-    <div className={clsx(kopf === 'seitlich' ? 'lg:col-span-4' : 'max-w-mass')}>
+    <div className={clsx(kopf === 'seitlich' ? 'col-span-4 md:col-span-8 lg:col-span-4' : 'max-w-mass')}>
       {(etikett || nummer) && (
         <p className={clsx(etikettForm, 'mb-4', tinte ? 'text-nacht-2' : 'text-tinte-2')}>
           {nummer && <span className={tinte ? 'text-kalk' : 'text-tinte'}>{nummer}</span>}
@@ -47,12 +51,19 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
       aria-label={!titel ? rest['aria-label'] : undefined}
       className={clsx(
         'relative scroll-mt-24',
-        art === 'erzaehl' ? 'py-24 lg:py-32' : 'py-12 lg:py-16',
+        art === 'erzaehl' ? 'py-16 lg:py-24' : 'py-12 lg:py-16',
         flaeche === 'fliese' && 'border-y border-fuge bg-fliese',
         tinte && 'flaeche-tinte bg-tinte text-kalk',
         className,
       )}
     >
+      {leitachse && (
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-20">
+          <div className={clsx(seitenKlassen, 'relative')}>
+            <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2', ACHSE_LAGE, tinte ? 'text-nacht-2' : 'text-tinte')} />
+          </div>
+        </div>
+      )}
       <div className={clsx(seitenKlassen, breite === 'mass' && 'max-w-mass')}>
         {kopf === 'seitlich' ? (
           <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">

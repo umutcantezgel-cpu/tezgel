@@ -8,10 +8,11 @@ import { siteConfig } from "@/lib/config";
 import { buildWhatsAppUrl, kontextNachricht, openWhatsApp } from "@/lib/whatsapp";
 import { triggerHaptic } from "@/lib/haptics";
 
-// Untere Leiste (KERN K-009): einzige feste Ebene neben dem Kopf, nur mobil; drei Wege an der Fuge,
-// die Anfrage als Hauptaktion auf Tinte.
+// Untere Leiste (KERN K-009): einzige feste Ebene neben dem Kopf, bis lg; drei Wege an der Fuge, die Anfrage als
+// Hauptaktion auf Tinte. Links sitzt das Widerruf-Schild der Einwilligung (öffnet die Einstellungen über das
+// bestehende Ereignis openCookieSettings) – so verdeckt kein schwebender Knopf Inhalt.
 const feld =
-  "flex min-h-12 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen";
+  "flex min-h-12 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen";
 
 export default function MobileBottomBar() {
   const pathname = usePathname() || "";
@@ -30,10 +31,21 @@ export default function MobileBottomBar() {
   return (
     <aside
       aria-label="Schnellkontakt Daumenleiste"
-      className="unten-sicher fixed inset-x-0 bottom-0 z-30 border-t border-fuge bg-fuge md:hidden"
+      className="unten-sicher fixed inset-x-0 bottom-0 z-30 border-t border-fuge bg-fuge lg:hidden"
       data-feste-ebene
+      data-leiste
     >
-      <div className="grid grid-cols-3 gap-px">
+      <div className="flex gap-px">
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("openCookieSettings"))}
+          className="flex w-12 shrink-0 items-center justify-center bg-kalk text-tinte-2 hover:bg-fliese hover:text-tinte"
+          aria-label="Cookie-Einstellungen verwalten"
+          title="Cookie-Einstellungen öffnen"
+          data-motion="druck"
+        >
+          <Icon name="schloss" groesse={5} />
+        </button>
         <a
           href={siteConfig.contact.phone.link}
           onClick={() => triggerHaptic("medium")}

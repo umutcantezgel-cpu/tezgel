@@ -113,7 +113,7 @@ export default function Header({ isMobileMenuOpen }) {
                                 onMouseEnter={() => (link.submenu ? openPanel(link.name) : scheduleClose())}
                                 onMouseLeave={scheduleClose}
                             >
-                                <div className={clsx('flex items-stretch border-b-2', active || isOpen ? 'border-laser' : 'border-transparent')}>
+                                <div className={clsx('flex items-stretch border-b-2', active || isOpen ? 'border-tinte' : 'border-transparent')}>
                                     <Link
                                         href={link.path}
                                         onClick={() => setOpenMenu(null)}

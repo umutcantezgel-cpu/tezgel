@@ -296,6 +296,18 @@ html.k-bewegung .sig-plan-ziel .plan-raster {
 @keyframes szene-einblenden { from { opacity: 0; } to { opacity: 1; } }
 @keyframes szene-setzen { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
 
+/* einzugsband (K-007, /standorte und [stadt]): die Zonenkanten setzen sich nacheinander von links (dauer-3, setzen,
+   Staffel je Zone); Startzustand nur unter html.k-bewegung und solange der Stand nicht „an“ ist. */
+.einzugsband .einzugsband-kante { transform-origin: 0 50%; }
+html.k-bewegung [data-motion="einzugsband"] .einzugsband-kante {
+  transition: scale var(--dauer-3) var(--ease-setzen);
+}
+html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-kante { transition-delay: calc(var(--staffel) * 3); }
+html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-kante { transition-delay: calc(var(--staffel) * 6); }
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stand="an"]) .einzugsband-kante {
+  scale: 0 1;
+}
+
 /* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, laser); mobil nur das Lot.
    Lage (oben, links) über Klassen am Element; Endzustand = beide Linien voll. */
 .kreuzlinie {
@@ -345,8 +357,15 @@ html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-s
 html.k-bewegung [data-motion="sig-flucht"] > * {
   transition: translate var(--dauer-4) var(--ease-setzen);
 }
+/* Staffel: je Zeile zwei Stufen (2 × --staffel), damit die Zeilen sichtbar nacheinander einrücken */
 html.k-bewegung [data-motion="sig-flucht"] > :nth-child(2) {
-  transition-delay: var(--staffel);
+  transition-delay: calc(var(--staffel) * 2);
+}
+html.k-bewegung [data-motion="sig-flucht"] > :nth-child(3) {
+  transition-delay: calc(var(--staffel) * 4);
+}
+html.k-bewegung [data-motion="sig-flucht"] > :nth-child(4) {
+  transition-delay: calc(var(--staffel) * 6);
 }
 html.k-bewegung:not(.k-notaus) [data-motion="sig-flucht"]:not([data-motion-stand="an"]) > * {
   translate: calc(var(--spacing) * 3) 0;

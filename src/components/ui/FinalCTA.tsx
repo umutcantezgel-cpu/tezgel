@@ -58,7 +58,7 @@ export default function FinalCTA({
             <ul className="mt-8 grid gap-px border border-nacht-fuge bg-nacht-fuge md:grid-cols-3">
               {benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start gap-3 bg-tinte p-4 text-fs-2 text-kalk">
-                  <Fugenkreuz className="mt-1 size-3 text-laser" />
+                  <Fugenkreuz className="mt-1 size-3 text-nacht-2" />
                   <span>{benefit}</span>
                 </li>
               ))}

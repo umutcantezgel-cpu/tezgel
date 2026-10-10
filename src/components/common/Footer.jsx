@@ -44,7 +44,7 @@ export default function Footer() {
                     <ul className="grid grid-cols-2 gap-px bg-nacht-fuge md:grid-cols-4 lg:flex-1">
                         {GUARANTEES.map(({ title, text }) => (
                             <li key={title} className="flex items-start gap-3 bg-tinte py-4 pr-4 md:px-4 md:first:pl-0">
-                                <Fugenkreuz className="mt-1 size-4 shrink-0 text-laser" />
+                                <Fugenkreuz className="mt-1 size-4 shrink-0 text-nacht-2" />
                                 <span className="text-fs-2">
                                     <span className="block font-semibold text-kalk">{title}</span>
                                     <span className="text-nacht-2">{text}</span>
@@ -168,7 +168,7 @@ export default function Footer() {
             </div>
 
             <div className="border-t border-nacht-fuge">
-                <div className={clsx(seitenKlassen, 'flex flex-col items-start gap-4 pb-24 pt-6 font-mono text-fs-1 text-nacht-2 md:pb-6 lg:flex-row lg:items-center lg:justify-between')}>
+                <div className={clsx(seitenKlassen, 'flex flex-col items-start gap-4 pb-24 pt-6 font-mono text-fs-1 text-nacht-2 lg:pb-6 lg:flex-row lg:items-center lg:justify-between')}>
                     <p>
                         &copy; {currentYear} {COMPANY_DATA.legalName} &middot; Inh. {owner.fullName} &middot; Alle Rechte vorbehalten.
                     </p>

@@ -39,7 +39,7 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
   return (
     <div className={clsx('flaeche-tinte bg-tinte p-6 text-kalk sm:p-8 lg:p-12', className)}>
       <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-nacht-2">
-        <Fugenkreuz className="size-3 text-laser" />
+        <Fugenkreuz className="size-3 text-nacht-2" />
         <span>Eingetragener HWK-Fachbetrieb</span>
       </span>
       <h3 className="mt-4 text-fs-5 text-kalk">Direkter Kontakt</h3>
@@ -63,7 +63,7 @@ export function DirectContactCard({ className = '' }: DirectContactCardProps) {
               Fr: {SITE_CONFIG.contact.openingHours.opens} – {SITE_CONFIG.contact.openingHours.fridayCloses} Uhr
             </div>
             <div className="mt-1 text-fs-1 text-nacht-2">
-              Sa: 08:00 – 14:00 Uhr (Vor-Ort-Termine nach Vereinbarung)
+              Sa: {SITE_CONFIG.contact.openingHours.saturday}
             </div>
           </div>
         </div>

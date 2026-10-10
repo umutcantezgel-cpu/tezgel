@@ -66,15 +66,15 @@ export default function KontaktPage() {
 
                             <ul className="mt-6 flex flex-col gap-3 text-fs-2 text-tinte">
                                 <li className="flex items-center gap-3">
-                                    <Fugenkreuz className="size-3 text-laser" />
+                                    <Fugenkreuz className="size-3 text-strich" />
                                     <span>Normgerechte Verbundabdichtung nach DIN 18534</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <Fugenkreuz className="size-3 text-laser" />
+                                    <Fugenkreuz className="size-3 text-strich" />
                                     <span>Garantierter Staubschutz bei Renovierungen</span>
                                 </li>
                                 <li className="flex items-center gap-3">
-                                    <Fugenkreuz className="size-3 text-laser" />
+                                    <Fugenkreuz className="size-3 text-strich" />
                                     <span>Eingetragen bei der {COMPANY_DATA.authority.name}</span>
                                 </li>
                             </ul>

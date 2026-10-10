@@ -16,6 +16,7 @@ import ReviewCarousel from '@/components/reviews/ReviewCarousel';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import FinalCTA from '@/components/ui/FinalCTA';
 import Einstieg from '@/components/kern/Einstieg';
+import Leitachse from '@/components/kern/Leitachse';
 import Abschnitt from '@/components/kern/Abschnitt';
 import { Feldraster, Feld } from '@/components/kern/Feldraster';
 import Knopf from '@/components/kern/Knopf';
@@ -36,12 +37,10 @@ const ServiceMapWrapper = dynamic(() => import('@/components/maps/ServiceMapWrap
     loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Einsatzgebietskarte wird geladen...</p>,
 });
 
-// Fotos der Fachgewerke mit den Maßen der Bilddatei (Bildfeld schneidet nicht zu). Ein Foto steht nur, wo es das
-// Gewerk zeigt: alle vorhandenen Fotos sind Bäder (E2-ORCH-08-N2, MENSCHEN M-18) – für Wohnen, Außen und Untergrund
-// trägt der gezeichnete Verlegeplan das Bild, bis Projektfotos vorliegen.
-const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string; breite: number; hoehe: number }> = {
-    bad: { src: '/images/bad/walk-in-dusche.webp', alt: 'Bodengleiche Walk-In Dusche und Badgestaltung Tezgel', tag: 'Komplettbad & Dusche', breite: 2528, hoehe: 1696 },
-};
+// Fotos der Fachgewerke mit den Maßen der Bilddatei (Bildfeld schneidet nicht zu). Derzeit leer: Die vorhandenen
+// Fotos zeigen nur Bäder (M-18) und tragen das Zeichen eines Bildgenerators (M-19) – auf der Startseite trägt der
+// gezeichnete Verlegeplan das Bild („gezeichnet statt generiert“, K-003), bis echte Projektfotos vorliegen.
+const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string; breite: number; hoehe: number }> = {};
 
 // Verlegeplan je Fachgewerk (Planvorgaben in src/lib/plaene/vorgaben.ts)
 const SERVICE_PLAENE: Record<string, PlanName> = { bad: 'bad', wohnen: 'wohnen', aussen: 'aussen', untergrund: 'untergrund' };
@@ -127,6 +126,7 @@ export default function HomePage() {
                     </>
                 }
                 titel={<>Perfektion auf jedem Quadratmeter.</>}
+                titelZeilen={['Perfektion', 'auf jedem', 'Quadratmeter.']}
                 unterzeile="Fliesenverlegung & Badsanierung aus Aßlar"
                 vorspann={
                     <p>
@@ -154,7 +154,7 @@ export default function HomePage() {
                         <ul className="flex flex-col gap-3">
                             {['Kostenloses Aufmaß vor Ort', 'Staubschutzgarantie', 'Verbindlicher Festpreis'].map((item) => (
                                 <li key={item} className="flex items-center gap-3 text-fs-3 text-tinte">
-                                    <Fugenkreuz className="size-3 text-laser" />
+                                    <Fugenkreuz className="size-3 text-strich" />
                                     {item}
                                 </li>
                             ))}
@@ -168,34 +168,34 @@ export default function HomePage() {
                 rand={<HeroContactForm />}
             />
 
-            {/* VERTRAUENSZEILE & GOOGLE-KENNWERT */}
-            <div className="border-b border-fuge bg-fliese">
-                <div className="mx-auto grid w-full max-w-seite grid-cols-1 gap-6 px-4 py-8 md:px-8 lg:grid-cols-12 lg:px-12">
-                    <div className="lg:col-span-9">
-                        <TrustStrip />
-                    </div>
-                    <GoogleReviewsBadge className="justify-self-start lg:col-span-3 lg:justify-self-stretch" />
+            {/* VERTRAUENSZEILE: sieben Zusagen und der Google-Kennwert als achtes Feld im selben Raster */}
+            <div className="border-b border-fuge bg-kalk">
+                <div className="mx-auto w-full max-w-seite px-4 py-8 md:px-8 lg:px-12">
+                    <TrustStrip ende={<GoogleReviewsBadge imRaster />} />
                 </div>
             </div>
 
-            {/* 2. GARANTIEN */}
-            <Abschnitt id="vertrauen" aria-label="Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel">
-                <Feldraster spalten={3}>
+            {/* LEITACHSE: ein Lot über alle Abschnitte bis zum Abschluss, an der Stelle der Kreuzlinie */}
+            <Leitachse>
+            {/* 2. GARANTIEN als Zeilen an der Fuge (Etikett links, Zusage rechts) – bewusst keine Kartenreihe */}
+            <Abschnitt id="vertrauen" leitachse aria-label="Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel">
+                <ul className="border-t border-tinte">
                     {COMPANY_DATA.trustPillars.map((pillar: { title: string; description: string }, idx: number) => (
-                        <Feld key={pillar.title}>
-                            <span className={etikettKlassen}>
-                                <Fugenkreuz className="size-3 text-laser" />
+                        <li key={pillar.title} className="grid grid-cols-4 gap-x-6 gap-y-3 border-b border-fuge py-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+                            <span className={`${etikettKlassen} col-span-4 md:col-span-3 lg:col-span-3`}>
+                                <Fugenkreuz className="size-3 text-strich" />
                                 {PILLAR_EYEBROWS[idx]}
                             </span>
-                            <p className="mt-6 text-fs-4 font-semibold text-tinte">{pillar.title}</p>
-                            <p className="mt-3 text-fs-3 text-tinte-2">{pillar.description}</p>
-                        </Feld>
+                            <p className="col-span-4 font-anzeige text-fs-5 font-semibold text-tinte md:col-span-5 lg:col-span-4">{pillar.title}</p>
+                            <p className="col-span-4 max-w-mass text-fs-3 text-tinte-2 md:col-span-5 md:col-start-4 lg:col-span-5 lg:col-start-auto">{pillar.description}</p>
+                        </li>
                     ))}
-                </Feldraster>
+                </ul>
             </Abschnitt>
 
             {/* 3. FACHBEREICHE & PLANUNGSHILFEN */}
             <Abschnitt
+                leitachse
                 id="portal-netzwerk"
                 titelId="portal-heading"
                 flaeche="fliese"
@@ -234,13 +234,13 @@ export default function HomePage() {
 
                 <div className="mt-16">
                     <p className={etikettKlassen}>Fachthemen im Detail</p>
-                    <ul className="mt-4 grid grid-cols-1 gap-px border border-fuge bg-fuge sm:grid-cols-2 lg:grid-cols-3">
+                    <ul className="mt-4 grid grid-cols-1 border-t border-tinte sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-3 lg:gap-x-12">
                         {TOPIC_HUBS.map((hub) => (
-                            <li key={hub.id} className="bg-kalk">
+                            <li key={hub.id} className="border-b border-fuge">
                                 <Link
                                     href={hub.path}
-                                    className="group flex h-full items-center justify-between gap-4 p-6 transition-colors dauer-1 ease-setzen hover:bg-fliese"
-                                    data-motion="druck"
+                                    className="group flex h-full items-center justify-between gap-4 py-6 hover:bg-kalk"
+                                    data-motion="zustand"
                                 >
                                     <span>
                                         <span className="block text-fs-3 font-semibold text-tinte">{hub.name}</span>
@@ -258,6 +258,7 @@ export default function HomePage() {
 
             {/* 4. PROJEKTANFRAGE & SITUATIONSSCHILDERUNG */}
             <Abschnitt
+                leitachse
                 id="kosten-rechner"
                 titelId="rechner-heading"
                 etikett="Umfassende Projektanfrage"
@@ -274,6 +275,7 @@ export default function HomePage() {
 
             {/* 5. FACHGEWERKE als Planliste: Plan · Text · Foto je Gewerk */}
             <Abschnitt
+                leitachse
                 id="leistungen"
                 titelId="leistungen-heading"
                 flaeche="fliese"
@@ -345,6 +347,7 @@ export default function HomePage() {
 
             {/* 6. ABLAUF */}
             <Abschnitt
+                leitachse
                 id="ablauf"
                 titelId="ablauf-heading"
                 etikett="Transparenter Ablauf"
@@ -371,6 +374,7 @@ export default function HomePage() {
 
             {/* 7. XXL-GROSSFORMATE */}
             <Abschnitt
+                leitachse
                 titelId="spotlight-heading"
                 flaeche="fliese"
                 kopf="seitlich"
@@ -405,19 +409,12 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div className="col-span-4 md:col-span-4">
-                        <Bildfeld
-                            src="/images/bad/bad-freistehende-wanne.webp"
-                            alt="Freistehende Badewanne mit fugenlosem XXL-Fliesenbelag von Fliesenverlegung Tezgel"
-                            breite={2752}
-                            hoehe={1536}
-                            spalten="halb"
-                            beschriftung={
-                                <>
-                                    <span className="block font-semibold">Bad mit freistehender Wanne</span>
-                                    <span className="block text-tinte-2">Millimetergenauer Gehrungsschnitt &amp; C2TE S1 Flexkleber</span>
-                                </>
-                            }
-                        />
+                        <figure className="border border-fuge bg-kalk p-6 lg:p-8">
+                            <Verlegeplan plan="grossformat" beschriftet />
+                            <figcaption className="mt-6 border-t border-fuge pt-4 text-fs-2 text-tinte">
+                                <span className="block text-tinte-2">Millimetergenauer Gehrungsschnitt &amp; C2TE S1 Flexkleber</span>
+                            </figcaption>
+                        </figure>
                         <div className="mt-6 border-t border-fuge pt-6">
                             <span className={etikettKlassen}>Regional verwurzelt in Aßlar &middot; Wetzlar</span>
                             <p className="mt-2 text-fs-2 text-tinte-2">
@@ -430,6 +427,7 @@ export default function HomePage() {
 
             {/* 8. KUNDENSTIMMEN */}
             <Abschnitt
+                leitachse
                 titelId="bewertungen-heading"
                 etikett="Echte Kundenstimmen"
                 titel="Was unsere Kunden in Mittelhessen sagen"
@@ -451,6 +449,7 @@ export default function HomePage() {
 
             {/* 9. EINSATZGEBIET */}
             <Abschnitt
+                leitachse
                 id="servicegebiet"
                 titelId="map-heading"
                 flaeche="fliese"
@@ -463,6 +462,7 @@ export default function HomePage() {
 
             {/* 10. HÄUFIGE FRAGEN */}
             <Abschnitt
+                leitachse
                 id="faq"
                 titelId="home-faq-heading"
                 kopf="seitlich"
@@ -496,6 +496,7 @@ export default function HomePage() {
 
             {/* 11. EXPRESS-ANFRAGE */}
             <Abschnitt
+                leitachse
                 id="express-anfrage"
                 titelId="anfrage-heading"
                 flaeche="fliese"
@@ -510,6 +511,8 @@ export default function HomePage() {
             >
                 <TezgelAnfrageFunnel />
             </Abschnitt>
+
+            </Leitachse>
 
             {/* 12. ABSCHLUSS */}
             <FinalCTA

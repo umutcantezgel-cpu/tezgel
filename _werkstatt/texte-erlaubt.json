@@ -528,5 +528,131 @@
   "teil": "alt",
   "alt": "Verbundabdichtung DIN 18534 und Estrichausgleich",
   "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Komplettbad & Dusche",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Komplettbad & Dusche",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Bad mit freistehender Wanne",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Bad mit freistehender Wanne",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Bodengleiche Walk-In Dusche und Badgestaltung Tezgel",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Freistehende Badewanne mit fugenlosem XXL-Fliesenbelag von Fliesenverlegung Tezgel",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Perfektion auf jedem Quadratmeter.",
+  "vermerk": "E2-ORCH-10 SIG-1: H1 in drei festen Zeilen (je Zeile ein Block für die gestaffelte Flucht); Wortlaut und Reihenfolge unverändert"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "≤ 15 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "≤ 30 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "≤ 45 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "Firmensitz",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "≤ 15 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "≤ 30 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "≤ 45 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "Firmensitz",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "15",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "30",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "45",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "15 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "30 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "45 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
  }
 ]

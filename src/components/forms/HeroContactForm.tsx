@@ -164,7 +164,7 @@ export default function HeroContactForm() {
             {/* Kopf des Formulars: Schriftfeld-Zeile */}
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-fuge pb-4">
                 <span className={etikettKlassen}>
-                    <Fugenkreuz className="size-3 text-laser" />
+                    <Fugenkreuz className="size-3 text-strich" />
                     Direktanfrage an Deniz Tezgel
                 </span>
                 <span className="flex items-center gap-2 font-mono text-fs-1 text-tinte">
