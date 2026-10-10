@@ -1,0 +1,121 @@
+{
+ "werkzeug": "svg.mjs",
+ "zeitpunkt": "2026-10-10T19:25:52.396Z",
+ "animiert": false,
+ "dateien": [
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo-dark.svg",
+   "bytes": 395903,
+   "gzip": 297820,
+   "optimiert_bytes": 395854,
+   "optimiert_gzip": 297765,
+   "viewbox": "0 0 640 200",
+   "icon24": false,
+   "fixpunkt": true,
+   "entspricht": false,
+   "pixelbilder": 2,
+   "befunde": [
+    {
+     "art": "nicht_optimiert",
+     "hinweis": "Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)"
+    },
+    {
+     "art": "pixelbild",
+     "hinweis": "2 eingebettete(s) Pixelbild(er): <image> bzw. data:image"
+    },
+    {
+     "art": "budget_illustration",
+     "hinweis": "297820 Byte gzip, Grenze 40000 Byte"
+    }
+   ]
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo.svg",
+   "bytes": 395903,
+   "gzip": 297822,
+   "optimiert_bytes": 395857,
+   "optimiert_gzip": 297768,
+   "viewbox": "0 0 640 200",
+   "icon24": false,
+   "fixpunkt": true,
+   "entspricht": false,
+   "pixelbilder": 2,
+   "befunde": [
+    {
+     "art": "nicht_optimiert",
+     "hinweis": "Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)"
+    },
+    {
+     "art": "pixelbild",
+     "hinweis": "2 eingebettete(s) Pixelbild(er): <image> bzw. data:image"
+    },
+    {
+     "art": "budget_illustration",
+     "hinweis": "297822 Byte gzip, Grenze 40000 Byte"
+    }
+   ]
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-mark.svg",
+   "bytes": 977,
+   "gzip": 436,
+   "optimiert_bytes": 776,
+   "optimiert_gzip": 350,
+   "viewbox": "0 0 64 64",
+   "icon24": false,
+   "fixpunkt": true,
+   "entspricht": false,
+   "pixelbilder": 0,
+   "befunde": [
+    {
+     "art": "nicht_optimiert",
+     "hinweis": "Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)"
+    }
+   ]
+  }
+ ],
+ "seiten": null,
+ "befunde_gesamt": 7,
+ "befunde": [
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo-dark.svg",
+   "art": "nicht_optimiert",
+   "hinweis": "Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)"
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo-dark.svg",
+   "art": "pixelbild",
+   "hinweis": "2 eingebettete(s) Pixelbild(er): <image> bzw. data:image"
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo-dark.svg",
+   "art": "budget_illustration",
+   "hinweis": "297820 Byte gzip, Grenze 40000 Byte"
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo.svg",
+   "art": "nicht_optimiert",
+   "hinweis": "Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)"
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo.svg",
+   "art": "pixelbild",
+   "hinweis": "2 eingebettete(s) Pixelbild(er): <image> bzw. data:image"
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-logo.svg",
+   "art": "budget_illustration",
+   "hinweis": "297822 Byte gzip, Grenze 40000 Byte"
+  },
+  {
+   "datei": "../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E0-PRUEF-03/svg-745335f/tezgel-mark.svg",
+   "art": "nicht_optimiert",
+   "hinweis": "Datei weicht von der SVGO-Fassung ab (ohne Leerraum, Attributreihenfolge und Standardwerte)"
+  }
+ ],
+ "zusammenfassung": {
+  "nicht_optimiert": 3,
+  "pixelbild": 2,
+  "budget_illustration": 2
+ }
+}

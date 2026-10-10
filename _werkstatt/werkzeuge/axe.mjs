@@ -1,6 +1,8 @@
 // Ebene 5: axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa) je Seite und Ansicht, dazu Zustände:
-// offenes Mobilmenü (m375) und Erstbesuch mit Einwilligungsbanner.
-// Nutzung: node axe.mjs --satz <name> [--seiten …] [--ansichten m375,d1440] [--zustaende]
+// offenes Mobilmenü (m390) und Erstbesuch mit Einwilligungsbanner (m390, d1440).
+// Nutzung: node axe.mjs --satz <name> [--seiten … | --hauptansichten] [--ansichten m390,d1440] [--zustaende] [--nur-zustaende] [--ziel DIR]
+// --hauptansichten liest _werkstatt/HAUPTANSICHTEN.json (12 Seiten); zusammen mit --zustaende gelten die Zustände für alle 12.
+// --ziel DIR schreibt axe.json bzw. axe-zustaende.json nach DIR (Standard: _werkstatt/belege/<satz>).
 import { chromium } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
@@ -11,7 +13,10 @@ const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 
 assertLocal();
 const G = grundmenge();
 const satz = arg('satz', 'adhoc');
-const seiten = arg('seiten') ? arg('seiten').split(',') : G.seiten;
+const hauptansichten = process.argv.includes('--hauptansichten');
+if (hauptansichten && arg('seiten')) throw new Error('ABBRUCH: --seiten und --hauptansichten bitte nicht zusammen.');
+const HAUPT = JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'HAUPTANSICHTEN.json'), 'utf8')).hauptansichten.map((h) => h.pfad);
+const seiten = hauptansichten ? HAUPT : (arg('seiten') ? arg('seiten').split(',') : G.seiten);
 const ansichten = (arg('ansichten') || Object.keys(ANSICHTEN).join(',')).split(',');
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 const browser = await chromium.launch();
@@ -39,11 +44,11 @@ async function pruefe(s, a, zustand = 'normal') {
 
 const jobs = [];
 if (!process.argv.includes('--nur-zustaende')) for (const s of seiten) for (const a of ansichten) jobs.push([s, a, 'normal']);
-if (process.argv.includes('--zustaende')) for (const s of G.hauptseiten) { jobs.push([s, 'm375', 'menue']); jobs.push([s, 'm375', 'erstbesuch']); jobs.push([s, 'd1440', 'erstbesuch']); }
+if (process.argv.includes('--zustaende')) for (const s of hauptansichten ? HAUPT : G.hauptseiten) { jobs.push([s, 'm390', 'menue']); jobs.push([s, 'm390', 'erstbesuch']); jobs.push([s, 'd1440', 'erstbesuch']); }
 let i = 0;
 await Promise.all(Array.from({ length: 3 }, async () => { while (i < jobs.length) { const j = jobs[i++]; try { await pruefe(...j); } catch (e) { ergebnisse.push({ seite: j[0], ansicht: j[1], zustand: j[2], fehler: String(e.message).slice(0, 200) }); } } }));
 await browser.close();
-const out = ensureDir(path.join(RELAUNCH, 'belege', satz));
+const out = arg('ziel') ? ensureDir(path.resolve(arg('ziel'))) : ensureDir(path.join(RELAUNCH, 'belege', satz));
 const zaehl = {};
 for (const r of ergebnisse) for (const v of r.verstoesse || []) { const k = `${v.impact}:${v.id}`; zaehl[k] = (zaehl[k] || 0) + v.anzahl; }
 const ernst = ergebnisse.reduce((n, r) => n + (r.verstoesse || []).filter((v) => ['serious', 'critical'].includes(v.impact)).reduce((m, v) => m + v.anzahl, 0), 0);
