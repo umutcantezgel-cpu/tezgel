@@ -1,0 +1,13 @@
+{
+ "satz": "p0-ausgangsstand", "base": null, "bedingungen": "siehe _satz.json", "erstellt": "2026-10-10T19:06:26.817Z",
+ "seite": "/_global-error", "quelle": "_global-error.html", "status": 500, "im_manifest": true,
+ "h1": ["This page couldn’t load"],
+ "ids": [],
+ "links": [],
+ "eintraege": [
+  {"art":"meta","name":"title","wert":"500: This page couldn’t load"},
+  {"art":"ueberschrift","ebene":"h1","wert":"This page couldn’t load"},
+  {"art":"text","wert":"A server error occurred. Reload to try again."},
+  {"art":"text","wert":"Reload"}
+ ]
+}

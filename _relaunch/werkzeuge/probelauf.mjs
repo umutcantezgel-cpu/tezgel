@@ -126,13 +126,30 @@ class SchrittFehler extends Error { constructor(grund, extra = {}) { super(grund
 // Playwright-Fehler → Besuchergrund: erste Zeile plus der aussagekräftigste Eintrag des Aufruf-Protokolls
 // (verdeckt, nicht stabil, nicht sichtbar, deaktiviert, außerhalb des Bildes).
 function pwGrund(e) {
-  const zeilen = String(e && e.message || e).split('\n').map((z) => z.trim()).filter(Boolean);
+  const zeilen = ohneAnsi(e && e.message || e).split('\n').map((z) => z.trim()).filter(Boolean);
   const erste = zeilen[0] || '';
   const log = zeilen.filter((z) => /^-\s/.test(z)).map((z) => z.replace(/^-\s+/, ''));
   const wichtig = [...log].reverse().find((z) => /intercepts pointer events|not stable|not visible|not enabled|disabled|outside of the viewport|detached|not attached|readonly|not an <input>/i.test(z));
   return kurz(wichtig ? `${erste} – ${wichtig}` : erste, 220);
 }
-const pwLog = (e) => String(e && e.message || e).split("\n").map((z) => z.trim()).filter(Boolean).slice(1).slice(-10);
+const ohneAnsi = (t) => String(t).replace(/\x1B\[[0-9;]*m/g, '');
+const pwLog = (e) => ohneAnsi(e && e.message || e).split('\n').map((z) => z.trim()).filter(Boolean).slice(1).slice(-10);
+
+// Antippen (Touch) oder Klicken (Maus) mit Playwrights Bedienbarkeitsprüfung (sichtbar, aktiv, stabil, nicht verdeckt).
+// Läuft die Obergrenze erst ab, NACHDEM Playwright die Handlung schon abgesetzt hat („performing … action“ als letzter
+// Protokolleintrag: der Browser quittiert das Eingabeereignis unter Last nicht rechtzeitig), gilt die Handlung als
+// ausgeführt – der Folgezustand wird wie immer über die Zustandsabfragen festgestellt und im Schritt vermerkt.
+async function bediene(loc, wie = eingabe) {
+  try {
+    if (wie === 'touch') await loc.tap({ timeout: AKTION_TIMEOUT }); else await loc.click({ timeout: AKTION_TIMEOUT });
+    return { unbestaetigt: false };
+  } catch (e) {
+    const log = pwLog(e);
+    if (/Timeout/i.test(e.message) && /performing (click|tap) action/.test(log[log.length - 1] || '')) return { unbestaetigt: true };
+    throw e;
+  }
+}
+const UNBESTAETIGT = 'Handlung abgesetzt, Quittung des Browsers blieb bis zur Obergrenze aus (Last) – Folgezustand per Zustandsabfrage geprüft';
 
 // Erste Zeile eines ariaSnapshot → „rolle "Name"“
 function ersteZeile(snap) {
@@ -155,7 +172,11 @@ async function begrenzt(fn) {
   try { return await fn(); } finally { laufend--; const n = warteschlange.shift(); if (n) n(); }
 }
 async function beschreibe(loc) {
-  return begrenzt(async () => { try { return kurz(ersteZeile(await loc.ariaSnapshot({ timeout: 10000 })), 110); } catch { return '(ohne Namen)'; } });
+  return begrenzt(async () => {
+    try { return kurz(ersteZeile(await loc.ariaSnapshot({ timeout: 10000 })), 110); } catch {}
+    try { const n = await loc.evaluateAll(BEDIEN_LISTE, false); if (n[0] && n[0].name) return `${kurz(n[0].beschreibung, 106)} (≈)`; } catch {} // Näherung, falls der Aria-Baum unter Last ausbleibt
+    return '(ohne Namen)';
+  });
 }
 
 // Im Seitenkontext: Lage und Sichtbarkeit eines Elements (für Besucher sichtbar = nicht display/visibility/opacity 0,
@@ -655,7 +676,7 @@ async function fuehreAus(s, nr) {
       return info;
     }
     try {
-      if (eingabe === 'touch') await k.loc.tap({ timeout: AKTION_TIMEOUT }); else await k.loc.click({ timeout: AKTION_TIMEOUT });
+      if ((await bediene(k.loc)).unbestaetigt) info.hinweise.push(UNBESTAETIGT);
     } catch (e) {
       const m = /<[^>]+> (?:from <[^>]+> subtree )?intercepts pointer events/.exec(e.message);
       throw new SchrittFehler(m ? `nicht bedienbar: „${s.tippe}“ ist verdeckt – ${kurz(m[0], 160)}` : `Antippen fehlgeschlagen: ${pwGrund(e)}`, { pw_log: pwLog(e) });
@@ -726,7 +747,7 @@ async function fuehreAus(s, nr) {
         info.hinweise.push(`Feld lag außerhalb des Bildes – ${info.bildlauf_implizit} Bildlauf-Handlung(en) gezählt`);
       }
       try {
-        if (eingabe === 'touch') await k.loc.tap({ timeout: AKTION_TIMEOUT }); else await k.loc.click({ timeout: AKTION_TIMEOUT });
+        if ((await bediene(k.loc)).unbestaetigt) info.hinweise.push(UNBESTAETIGT);
         await k.loc.fill(String(text), { timeout: AKTION_TIMEOUT });
       } catch (e) { throw new SchrittFehler(`Feld „${feld}“ nicht bedienbar: ${pwGrund(e)}`); }
     }
@@ -752,7 +773,7 @@ async function fuehreAus(s, nr) {
       if (!k.lage.istSelect) { // Optionsgruppe: Option darin antippen
         const opt = await loese(page, String(option), { rollen: ['radio', 'button', 'option', 'checkbox', 'switch', 'tab'] , inBereich: undefined }).catch(() => null);
         if (!opt) throw new SchrittFehler(`waehle: Option „${option}“ in „${feld}“ nicht gefunden`);
-        try { if (eingabe === 'touch') await opt.loc.tap({ timeout: AKTION_TIMEOUT }); else await opt.loc.click({ timeout: AKTION_TIMEOUT }); } catch (e) { throw new SchrittFehler(`Option „${option}“ nicht bedienbar: ${pwGrund(e)}`); }
+        try { if ((await bediene(opt.loc)).unbestaetigt) info.hinweise.push(UNBESTAETIGT); } catch (e) { throw new SchrittFehler(`Option „${option}“ nicht bedienbar: ${pwGrund(e)}`); }
         info.handlungen = 1 + info.bildlauf_implizit;
         Object.assign(info, { ruhe: await nachAktion() });
         return info;

@@ -954,7 +954,13 @@ function modusVergleich() {
         if (!za || typeof za !== 'object' || !Array.isArray(za.neu)) continue;
         const zb = sb.zustaende[name];
         zustaendeVerglichen++;
-        if (!zb) { add(route, [{ farbe: za.neu.length ? 'rot' : 'gelb', art: 'zustand-fehlt', zustand: name, eintraege_alt: za.neu.length }]); continue; }
+        if (!zb) {
+          // nicht gemessen (Teil-Lauf mit --nur bzw. Seite nicht in --global-seiten) ist gelb, sonst fehlt der Zustand
+          const gruppe = name === 'megamenue' ? 'mega' : name === 'akkordeons' ? 'akkordeon' : name === 'mobilmenue' ? 'mobil' : name.startsWith('banner') ? 'banner' : name;
+          const gemessen = (ZB.bedingungen?.zustaende || []).includes(gruppe) && (!['mega', 'mobil', 'banner'].includes(gruppe) || (ZB.bedingungen?.global_seiten || []).includes(route));
+          add(route, [{ farbe: gemessen && za.neu.length ? 'rot' : 'gelb', art: gemessen ? 'zustand-fehlt' : 'zustand-nicht-gemessen', zustand: name, eintraege_alt: za.neu.length }]);
+          continue;
+        }
         if (za.gefunden && zb.gefunden === false) add(route, [{ farbe: 'rot', art: 'zustand-nicht-erreicht', zustand: name }]);
         add(route, vergleicheFolge(route, za.neu, zb.neu, F, volatil, name).filter((b) => b.art !== 'h1-fehlt'));
       }

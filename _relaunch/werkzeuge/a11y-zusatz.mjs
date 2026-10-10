@@ -111,7 +111,8 @@ const GEGENPROBEN = {
   zoom: { pruefung: 'zoom', css: 'main{min-width:1000px!important}', js: () => { const d = document.createElement('div'); d.setAttribute('data-gegenprobe', 'zoom'); d.style.cssText = 'position:fixed;inset:0;z-index:2147483647;background:transparent'; document.body.append(d); } },
   textabstand: { pruefung: 'textabstand', js: () => { for (const p of document.querySelectorAll('main p')) { p.style.height = p.getBoundingClientRect().height + 'px'; p.style.overflow = 'hidden'; } } },
   forced: { pruefung: 'forced', js: () => { for (const e of document.querySelectorAll('main a[href], main button')) { e.textContent = ''; e.style.minWidth = '24px'; e.style.minHeight = '24px'; e.style.display = 'inline-block'; } } },
-  ohnejs: { pruefung: 'ohnejs', css: 'main > *{opacity:0!important}' },
+  // transition:none, weil die globale reduce-Regel (transition: all 0.01ms) ohne JS sonst den Startwert 1 einfriert
+  ohnejs: { pruefung: 'ohnejs', css: 'main > *{opacity:0!important;transition:none!important;animation:none!important}' },
 };
 for (const g of gegenprobe) if (!GEGENPROBEN[g]) throw new Error(`unbekannte Gegenprobe ${g}`);
 
