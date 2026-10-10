@@ -245,6 +245,12 @@
    Nutzungen zeigt (Abbau E6). Neue Arbeit nutzt sie nicht.
    ========================================================================== */
 @layer components {
+  /* Kartenfläche (E2-BAU-04): feste Höhe aus der Variablen am Element (Platzhalter = geladene Karte, kein CLS);
+     als Komponentenklasse, damit Utilities wie lg:h-auto sie übersteuern */
+  .karten-hoehe {
+    height: var(--karten-hoehe);
+  }
+
   .ceramic-hero,
   .ceramic-band {
     position: relative;
