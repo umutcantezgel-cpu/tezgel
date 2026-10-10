@@ -70,7 +70,8 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
     const knopf = page.locator('#whatsapp-floating-btn');
     await expect(knopf).toBeVisible();
     await expect(knopf).toHaveAttribute('aria-label', 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden');
-    await expect(knopf.locator('xpath=..').getByText('1', { exact: true })).toHaveCount(0);
+    // Das Abzeichen saß im Knopf selbst (Ausgangsstand: ein Element mit Text „1“); Schrittnummern der Seite zählen nicht.
+    await expect(knopf.getByText('1', { exact: true })).toHaveCount(0);
   });
 
   test('Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)', async ({ page }) => {
