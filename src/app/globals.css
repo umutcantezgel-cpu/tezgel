@@ -1,6 +1,10 @@
 @import "tailwindcss";
 /* Relaunch working area is documentation only – keep it out of class detection. */
 @source not "../../_relaunch";
+/* E-015: Kern-Code hat ein eigenes CSS (kern-global.css). */
+@source not "../components/kern";
+@source not "../lib/kern";
+@source not "./(kern)";
 
 /* ==========================================================================
    FLIESENVERLEGUNG TEZGEL – TILE-CRAFT DESIGN SYSTEM

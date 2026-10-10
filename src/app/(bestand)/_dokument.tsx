@@ -1,7 +1,8 @@
+// Dokument-Gerüst der Bestandsseiten (E-015): wörtlich aus dem früheren Root-Layout übernommen.
 import type { Metadata, Viewport } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import '@/styles/tokens.css';
-import './globals.css';
+import '@/app/globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';
 import MobileBottomBar from '@/components/layout/MobileBottomBar';
@@ -28,7 +29,7 @@ const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
 });
 
-export const metadata: Metadata = {
+export const BESTAND_METADATA: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
@@ -89,12 +90,12 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
+export const BESTAND_VIEWPORT: Viewport = {
   themeColor: '#FFFFFF',
   colorScheme: 'light',
 };
 
-export default function RootLayout({
+export default function BestandDokument({
   children,
 }: Readonly<{
   children: React.ReactNode;

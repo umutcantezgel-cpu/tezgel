@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   experimental: {
+    // E-015: mehrere Root-Layouts (bestand/kern) → 404 für unbekannte Adressen über app/global-not-found.tsx
+    globalNotFound: true,
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',
