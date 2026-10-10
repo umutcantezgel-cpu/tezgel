@@ -17,7 +17,7 @@
  */
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { useConsent } from "@/hooks/useConsent";
+import { useEinwilligungsBanner } from "@/lib/formulare/useEinwilligungsBanner";
 import { CONSENT_CATEGORY_INFO, COOKIE_INVENTORY, type ConsentCategory } from "@/lib/cookie-inventory";
 import { Shield, X, Cookie, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
@@ -57,16 +57,21 @@ export default function CookieConsent() {
   const {
     consent,
     showBanner,
-    acceptAll,
-    acceptEssentialOnly,
-    updateConsent,
-    setShowBanner,
-  } = useConsent();
-
-  const [showSettings, setShowSettings] = useState(false);
-  const [analyticsChecked, setAnalyticsChecked] = useState(false);
-  const [marketingChecked, setMarketingChecked] = useState(false);
-  const [expandedCategory, setExpandedCategory] = useState<ConsentCategory | null>(null);
+    showSettings,
+    setShowSettings,
+    analyticsChecked,
+    setAnalyticsChecked,
+    marketingChecked,
+    setMarketingChecked,
+    expandedCategory,
+    setExpandedCategory,
+    handleSaveSettings,
+    handleClose,
+    handleOpenSettings,
+    handleDeclineAll,
+    handleAcceptAll,
+    handleShieldClick,
+  } = useEinwilligungsBanner();
 
   // Physics & 2D dragging state
   const cardRef = useRef<HTMLDivElement>(null);
@@ -405,70 +410,6 @@ export default function CookieConsent() {
     };
   }, [updateTransform]);
 
-  // Global event listener to listen for `#cookie-settings` in the URL
-  useEffect(() => {
-    const handleOpenSettingsEvent = () => {
-      setShowBanner(true);
-      setShowSettings(true);
-      if (consent) {
-        setAnalyticsChecked(consent.analytics);
-        setMarketingChecked(consent.marketing);
-      }
-    };
-
-    const handleHashChange = () => {
-      if (window.location.hash === "#cookie-settings") {
-        handleOpenSettingsEvent();
-        window.history.replaceState(null, "", window.location.pathname + window.location.search);
-      }
-    };
-
-    if (window.location.hash === "#cookie-settings") {
-      handleHashChange();
-    }
-
-    window.addEventListener("hashchange", handleHashChange);
-    window.addEventListener("openCookieSettings", handleOpenSettingsEvent);
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-      window.removeEventListener("openCookieSettings", handleOpenSettingsEvent);
-    };
-  }, [consent, setShowBanner]);
-
-  const handleSaveSettings = () => {
-    updateConsent({
-      analytics: analyticsChecked,
-      marketing: marketingChecked,
-    });
-    setShowSettings(false);
-  };
-
-  const handleClose = () => {
-    acceptEssentialOnly();
-    setShowSettings(false);
-  };
-
-  const handleOpenSettings = () => {
-    setAnalyticsChecked(consent?.analytics ?? false);
-    setMarketingChecked(consent?.marketing ?? false);
-    setShowSettings(true);
-  };
-
-  const handleDeclineAll = () => {
-    setAnalyticsChecked(false);
-    setMarketingChecked(false);
-    acceptEssentialOnly();
-    setShowSettings(false);
-  };
-
-  const handleAcceptAll = () => {
-    setAnalyticsChecked(true);
-    setMarketingChecked(true);
-    acceptAll();
-    setShowSettings(false);
-  };
-
   return (
     <>
       {showBanner && (
@@ -778,12 +719,7 @@ export default function CookieConsent() {
       {!showBanner && (
         <button
           type="button"
-          onClick={() => {
-            setShowBanner(true);
-            setShowSettings(true);
-            setAnalyticsChecked(consent?.analytics ?? false);
-            setMarketingChecked(consent?.marketing ?? false);
-          }}
+          onClick={handleShieldClick}
           className="fixed bottom-20 left-4 md:bottom-4 md:left-4 z-[9995] w-10 h-10 md:w-11 md:h-11 bg-white/95 backdrop-blur-md rounded-full shadow-[0_4px_18px_rgba(0,0,0,0.12)] border border-neutral-200/90 flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200 text-neutral-700 hover:text-orange-600 group"
           aria-label="Cookie-Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"

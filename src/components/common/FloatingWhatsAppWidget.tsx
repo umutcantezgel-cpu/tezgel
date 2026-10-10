@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { companyInfo } from "@/lib/data/company";
-import { openWhatsApp, buildWhatsAppUrl, isMobileDevice } from "@/lib/whatsapp";
+import { useWhatsAppKanal } from "@/lib/formulare/useWhatsAppKanal";
 import { widgetPhysicsCoordinator } from "@/lib/physics/widgetPhysicsCoordinator";
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -36,41 +36,6 @@ const DRAG_THRESHOLD_MOUSE = 5; // Px movement required to distinguish click fro
 const DRAG_THRESHOLD_TOUCH = 8;
 const MAX_VELOCITY = 42; // Prevent glitch speeds
 const HISTORY_WINDOW_MS = 120; // Time window for release velocity calculation
-
-/* ── Contextual messages tailored to Fliesenverlegung Tezgel ── */
-function getContextualMessage(pathname: string): string {
-  if (pathname.includes("/bad")) {
-    return "Hallo Herr Tezgel, ich interessiere mich für eine Badsanierung bzw. barrierefreie Walk-In-Dusche.";
-  }
-  if (pathname.includes("/balkon-terrasse")) {
-    return "Hallo Herr Tezgel, ich interessiere mich für eine Balkon- oder Terrassensanierung auf Stelzlagern.";
-  }
-  if (pathname.includes("/fliesenreparatur")) {
-    return "Hallo Herr Tezgel, ich benötige fachmännische Hilfe bei einer Fliesenreparatur oder Schadensbehebung.";
-  }
-  if (pathname.includes("/fliesen")) {
-    return "Hallo Herr Tezgel, ich habe eine Frage zu Großformatfliesen und Verlegearbeiten.";
-  }
-  if (pathname.includes("/naturstein")) {
-    return "Hallo Herr Tezgel, ich interessiere mich für Naturstein- und Granitverlegung.";
-  }
-  if (pathname.includes("/treppen")) {
-    return "Hallo Herr Tezgel, ich möchte eine Treppe mit Fliesen oder Naturstein belegen lassen.";
-  }
-  if (pathname.includes("/untergrund-abdichtung")) {
-    return "Hallo Herr Tezgel, ich habe eine Frage zur Untergrundvorbereitung und DIN 18534 Verbundabdichtung.";
-  }
-  if (pathname.includes("/schadensanalyse") || pathname.includes("/termin")) {
-    return "Hallo Herr Tezgel, ich möchte ein unverbindliches Vor-Ort-Aufmaß bzw. eine Schadensanalyse anfragen.";
-  }
-  if (pathname.includes("/kontakt")) {
-    return "Hallo Herr Tezgel, ich möchte ein Projekt anfragen bzw. einen Beratungstermin vereinbaren.";
-  }
-  if (pathname.includes("/standorte") || pathname.includes("/ausstellung")) {
-    return "Hallo Herr Tezgel, ich komme aus der Region und interessiere mich für Ihre Fliesenarbeiten.";
-  }
-  return "Hallo Herr Tezgel, ich hätte eine Frage zu Ihren Fliesen- und Sanierungsleistungen.";
-}
 
 /* ── Calculate responsive bounds & sizes ── */
 function getWidgetBounds(size: number) {
@@ -381,37 +346,8 @@ export default function FloatingWhatsAppWidget() {
     };
   }, []);
 
-  // Analytics event tracking
-  const trackClick = useCallback(() => {
-    if (typeof window !== "undefined") {
-      const win = window as unknown as { gtag?: (...args: unknown[]) => void };
-      if (typeof win.gtag === "function") {
-        win.gtag("event", "whatsapp_click", {
-          event_category: "engagement",
-          event_label: pathname,
-        });
-      }
-    }
-  }, [pathname]);
-
-  // Unified WhatsApp launcher with debounce to prevent double-activation
-  const lastActionTimeRef = useRef(0);
-  const triggerWhatsAppAction = useCallback(() => {
-    const now = Date.now();
-    if (now - lastActionTimeRef.current < 450) return;
-    lastActionTimeRef.current = now;
-
-    trackClick();
-    const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
-    const contextMessage = getContextualMessage(pathname);
-
-    if (isMobileDevice()) {
-      openWhatsApp({ phone: cleanNumber, text: contextMessage });
-    } else {
-      const url = buildWhatsAppUrl(cleanNumber, contextMessage);
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-  }, [pathname, trackClick]);
+  // Analytics-Ereignis und WhatsApp-Start (450-ms-Sperre) wörtlich im Hook (P3-00p)
+  const { triggerWhatsAppAction } = useWhatsAppKanal(pathname);
 
   // Global window pointermove handler (registered during pointer down)
   const onWindowPointerMove = useCallback(
