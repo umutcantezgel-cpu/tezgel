@@ -117,6 +117,11 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 - **Anlass:** Prüfstufe A (D4): K-009 verlangt die Rufnummer in Mono im Kopf; bei 1280–1535 px war sie nur als Symbol sichtbar.
 - **Wahl:** Rufnummer ab 1024 px sichtbar, bei 1280–1535 px in `text-fs-1` und mit engerer Navigation (`pl-2`, `gap-4`); die Unterzeile „Fachbetrieb · Aßlar · Wetzlar“ bleibt dort ausgeblendet (TEXTVORSCHLAEGE). Nachweis: Kopfzeile ohne Überlauf bei 1280 und 1440 (Prüfer).
 
+## E-018 · Kartenhöhen als eigene Stufe
+- **Anlass:** E2-BAU-04 – Karten brauchen eine feste Höhe, damit Platzhalter (Einwilligungs-Tor) und geladene Karte gleich hoch sind (CLS); die Abstandsskala endet bei 128 px.
+- **Wahl:** Höhe über die Variable `--karten-hoehe` am Element und die Komponentenklasse `karten-hoehe` (globals.css); erlaubte Werte 400/440/460 px und Spaltenhöhe ab `lg` (KERN K-005). Keine weiteren Kartenwerte.
+- **Umkehrprobe:** Klasse entfernen → Karten fallen auf Inhaltshöhe zurück (CLS-Risiko).
+
 ## L6 · Lernen
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|
