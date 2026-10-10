@@ -13,20 +13,26 @@ const G = grundmenge();
 const satz = arg('satz', 'adhoc');
 const seiten = arg('seiten') ? arg('seiten').split(',') : G.hauptseiten;
 const laeufe = Number(arg('laeufe', '5'));
+const formen = (arg('formen') || 'mobil,desktop').split(',');
+// Messfehler des Werkzeugs (z. B. NO_NAVSTART) zählen nicht als Lauf: bis zu 3 Wiederholungen je Lauf
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 const blocked = ['*google-analytics.com*', '*googletagmanager.com*', '*facebook.net*', '*facebook.com*', '*vercel-insights.com*', '*vercel-scripts.com*', '*googleapis.com*', '*gstatic.com*', '*openstreetmap.org*', '*whatsapp.com*', '*wa.me*'];
 const rawDir = ensureDir(path.join(RELAUNCH, 'cache', 'lighthouse', satz));
 const median = (a) => { const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
 
 const chrome = await chromeLauncher.launch({ chromePath: CHROME, chromeFlags: ['--headless=new', '--no-sandbox', '--disable-gpu'] });
-const ergebnis = { satz, base: BASE, laeufe, bedingungen: 'lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset)', seiten: {} };
+const vorhanden = process.argv.includes('--zusammenfuehren') && fs.existsSync(path.join(RELAUNCH, 'belege', satz, 'lighthouse.json')) ? JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'belege', satz, 'lighthouse.json'), 'utf8')) : null;
+const ergebnis = vorhanden || { satz, base: BASE, laeufe, bedingungen: 'lokal next start (komprimiert), Erstbesuch mit Banner, Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset)', seiten: {} };
 for (const s of seiten) {
-  ergebnis.seiten[s] = {};
-  for (const form of ['mobil', 'desktop']) {
+  ergebnis.seiten[s] = ergebnis.seiten[s] || {};
+  for (const form of formen) {
     const runs = [];
     for (let k = 0; k < laeufe; k++) {
       const config = form === 'desktop' ? (await import('lighthouse/core/config/desktop-config.js')).default : undefined;
-      const r = await lighthouse(BASE + s, { port: chrome.port, output: 'json', logLevel: 'error', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], blockedUrlPatterns: blocked, disableStorageReset: false }, config);
+      let r, versuch = 0;
+      do { r = await lighthouse(BASE + s, { port: chrome.port, output: 'json', logLevel: 'error', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], blockedUrlPatterns: blocked, disableStorageReset: false }, config); versuch++; }
+      while (r.lhr.runtimeError && versuch < 4);
+      if (r.lhr.runtimeError) throw new Error(`${s} ${form}: ${r.lhr.runtimeError.code}`);
       const a = r.lhr.audits;
       runs.push({
         perf: Math.round(r.lhr.categories.performance.score * 100),
@@ -48,7 +54,7 @@ for (const s of seiten) {
     m.lcp = Math.round(m.lcp); m.tbt = Math.round(m.tbt); m.fcp = Math.round(m.fcp); m.si = Math.round(m.si); m.cls = Number(m.cls.toFixed(3));
     ergebnis.seiten[s][form] = { median: m, laeufe: runs };
   }
-  console.log(`\n${s}: mobil ${ergebnis.seiten[s].mobil.median.perf} (LCP ${ergebnis.seiten[s].mobil.median.lcp} ms, TBT ${ergebnis.seiten[s].mobil.median.tbt}, CLS ${ergebnis.seiten[s].mobil.median.cls}) · desktop ${ergebnis.seiten[s].desktop.median.perf}`);
+  if (ergebnis.seiten[s].mobil && ergebnis.seiten[s].desktop) console.log(`\n${s}: mobil ${ergebnis.seiten[s].mobil.median.perf} (LCP ${ergebnis.seiten[s].mobil.median.lcp} ms, TBT ${ergebnis.seiten[s].mobil.median.tbt}, CLS ${ergebnis.seiten[s].mobil.median.cls}) · desktop ${ergebnis.seiten[s].desktop.median.perf}`);
 }
 await chrome.kill();
 const out = ensureDir(path.join(RELAUNCH, 'belege', satz));

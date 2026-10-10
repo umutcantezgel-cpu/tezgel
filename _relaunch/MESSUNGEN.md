@@ -13,7 +13,9 @@ Alle Zahlen mit Messbedingungen. Median aus fünf, wo gefordert. Ausgangsstand =
 | Blindvergleich | – | ≥ 90 % Siege | – |
 | Registerabdeckung (data-motion) | 0 Einträge, kein Register | 100 % | – |
 | axe ernst/kritisch (Knoten, 4 Ansichten × 120 Seiten + Zustände) | 1.661 + 113 (Zustände) | 0 | – |
-| Lighthouse mobil (Median, Hauptseiten) | ausstehend (ruhiges Messfenster) | ≥ 90, nie > 3 Punkte schlechter | – |
+| Lighthouse mobil (Median aus 5, Hauptseiten) | 67–88 (/ 87 · /bad 88 · /leistungen 88 · /standorte 67 · /blog 72 · /ueber-uns 88 · /kontakt 80) | ≥ 90 überall, nie > 3 Punkte schlechter | 67–88 |
+| LCP mobil (Median) | 3,4–6,6 s (alle Hauptseiten über Budget) | ≤ 2,5 s | – |
+| CLS mobil (Median) | 0 · /standorte 0,516 | ≤ 0,1 | – |
 | Element-Abdeckung | ENTFÄLLT (E-000) | – | – |
 
 ## P0 · Ebene 1 Bestand (Reinraum 5a7a7b0)
@@ -73,3 +75,18 @@ Reinraum grün · Routentabelle identisch · HTML 172/172 identisch · 211 ungen
 | /ueber-uns | 4,15 | 4,0 | 5,0 | 3,0 | 4,5 | 4,20 · 4,35 · 4,15 |
 | /kontakt | 4,40 | 4,5 | 4,5 | 3,5 | 5,5 | 4,50 · 4,55 · 4,45 |
 Wiederkehrende Schwächen (alle Jurys): generisches Muster (Pill-Badge + zentrierte Überschrift vor jeder Sektion, gleiche Kartenraster), kein Bild/keine Leitidee aus dem Gewerk, Stock-/KI-Bildanmutung, mobil vier überlagerte feste Ebenen (Leiste, WhatsApp-Bubble mit Badge, Chat-Blase, Cookie-Schild) verdecken Formularfelder und Knöpfe, drei konkurrierende Anfrageformulare auf der Startseite, abgeschnittene Chip-/Vertrauensleisten. Beleg: `belege/p0-ausgangsstand/jury.json` (alle Belege und Reparaturvorschläge).
+
+## P0 · Ebene 6 Leistung (Lighthouse 12, Median aus 5 je Seite und Form)
+Bedingungen: lokaler Produktions-Build 707a93d (`next start`, komprimiert, 127.0.0.1:4310), Chromium 1194 headless, Erstbesuch mit Einwilligungsbanner, Dritt-Hosts blockiert, Lighthouse-Standarddrosselung (mobil simuliert: 4× CPU, Slow 4G; Desktop-Preset), Benchmark-Index 2.190–2.385, ruhiges Messfenster (kein Unteragent, keine Browserläufe). Werkzeugfehler (`NO_NAVSTART`) zählen nicht als Lauf und werden wiederholt (3 Fälle nachgemessen). Beleg: `belege/p0-ausgangsstand/lighthouse.json`, Rohberichte im Cache.
+
+| Seite | mobil Leistung | LCP | TBT | CLS | Zugängl. | JS (Übertragung) | Desktop Leistung | Desktop LCP |
+|---|---|---|---|---|---|---|---|---|
+| / | 87 | 3.410 ms | 164 ms | 0 | 100 | 413 KB | 99 | 840 ms |
+| /bad | 88 | 3.688 ms | 158 ms | 0 | 97 | 431 KB | 100 | 763 ms |
+| /leistungen | 88 | 3.765 ms | 111 ms | 0 | 100 | 428 KB | 100 | 763 ms |
+| /standorte | 67 | 3.789 ms | 112 ms | **0,516** | 95 | 427 KB | 100 | 737 ms |
+| /blog | 72 | **6.574 ms** | **255 ms** | 0 | 97 | 597 KB | 100 | 755 ms |
+| /ueber-uns | 88 | 3.687 ms | 121 ms | 0 | 100 | 425 KB | 100 | 753 ms |
+| /kontakt | 80 | 4.836 ms | 178 ms | 0 | 95 | 413 KB | 96 | 1.389 ms |
+
+Bewährte Praktiken und SEO je 100. Schriften 77 KB (Inter + Plus Jakarta Sans). Streuung: /standorte mobil zweigipflig (Leistung 64–88, CLS 0 oder 0,516 je Lauf) → Layoutsprung, der nur in einem Teil der Läufe auftritt (Kandidat: nachgeladene Karte oder Banner). Budgets gerissen: LCP mobil auf allen 7 Hauptseiten, CLS auf /standorte, TBT auf /blog.
