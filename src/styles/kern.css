@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Gestaltungskern Fliesenverlegung Tezgel · KERN v1 (K-005 bis K-009)
+   Leitidee: Jede Seite ist ein Verlegeplan – ein Fugenraster, eine rote
+   Laserachse, und alles fluchtet daran.
+   Bis P4 additiv (Präfix k-); bestehende Tokens bleiben unverändert.
+   ========================================================================== */
+
+@theme {
+  /* K-006 Farbe – Neutrale auf 228°, ein Akzent (Laser = Logo-Rot) */
+  --color-k-kalk: #F5F4F0;
+  --color-k-fliese: #FFFFFF;
+  --color-k-fuge: #DDDEE2;
+  --color-k-strich: #818698;
+  --color-k-tinte-2: #4B5067;
+  --color-k-tinte: #0A1129;
+  --color-k-laser: #D82020;
+  --color-k-laser-tief: #A8171C;
+  --color-k-abnahme: #1D6B3F;
+  --color-k-nacht-2: #A9AEC0;
+  --color-k-nacht-fuge: #2B3352;
+
+  /* K-005 Typografie */
+  --font-k-text: var(--k-font-text), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-k-mono: var(--k-font-mono), "IBM Plex Mono", "Courier New", ui-monospace, monospace;
+
+  --text-k-1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-k-1--line-height: 1.5;
+  --text-k-2: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --text-k-2--line-height: 1.6;
+  --text-k-3: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
+  --text-k-3--line-height: 1.6;
+  --text-k-4: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+  --text-k-4--line-height: 1.5;
+  --text-k-5: clamp(1.5rem, 1.25rem + 1.1vw, 2.25rem);
+  --text-k-5--line-height: 1.1;
+  --text-k-6: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
+  --text-k-6--line-height: 1.1;
+  --text-k-7: clamp(2.75rem, 1.4rem + 5vw, 6.5rem);
+  --text-k-7--line-height: 1.08;
+
+  /* K-007 Abstände (10 Stufen) */
+  --spacing-k-1: 0.25rem;
+  --spacing-k-2: 0.5rem;
+  --spacing-k-3: 0.75rem;
+  --spacing-k-4: 1rem;
+  --spacing-k-5: 1.5rem;
+  --spacing-k-6: 2rem;
+  --spacing-k-7: 3rem;
+  --spacing-k-8: 4rem;
+  --spacing-k-9: 6rem;
+  --spacing-k-10: 8rem;
+
+  /* K-008 Formen */
+  --radius-k-0: 0;
+  --radius-k-1: 2px;
+  --shadow-k-0: none;
+  --shadow-k-1: 0 1px 0 var(--color-k-fuge);
+
+  /* K-009 Kurven */
+  --ease-k-setzen: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-k-laser: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-k-weg: cubic-bezier(0.32, 0, 0.67, 0);
+}
+
+:root {
+  /* K-009 Dauern und Staffel */
+  --k-dauer-1: 140ms;
+  --k-dauer-2: 320ms;
+  --k-dauer-3: 600ms;
+  --k-dauer-4: 800ms;
+  --k-dauer-5: 1200ms;
+  --k-staffel: 60ms;
+
+  /* K-007 Raster */
+  --k-seite: 82rem;
+  --k-mass: 66ch;
+  --k-fuge: 1px;
+  --k-linie-2: 2px;
+  --k-rand: var(--spacing-k-4);
+  --k-breite-anzeige: 74%;
+  --k-gewicht-anzeige: 760;
+}
+
+@media (min-width: 768px) {
+  :root { --k-rand: var(--spacing-k-6); }
+}
+
+@media (min-width: 1024px) {
+  :root { --k-rand: var(--spacing-k-7); }
+}
+
+/* --------------------------------------------------------------------------
+   Satzbausteine (K-005)
+   -------------------------------------------------------------------------- */
+@layer components {
+  .k-anzeige {
+    font-family: var(--font-k-text);
+    font-stretch: var(--k-breite-anzeige);
+    font-weight: var(--k-gewicht-anzeige);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  .k-text {
+    font-family: var(--font-k-text);
+    font-stretch: 100%;
+    text-wrap: pretty;
+  }
+  .k-mono {
+    font-family: var(--font-k-mono);
+    font-weight: 400;
+    font-stretch: 100%;
+    letter-spacing: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Bewegungsregister (K-009). Startzustände nur unter html.k-bewegung, das das
+   Kopfskript ausschließlich bei erlaubter Bewegung setzt. Ohne Klasse (reduziert,
+   ohne JS, Zeitlimit) steht jeder Inhalt sofort im Endzustand.
+   -------------------------------------------------------------------------- */
+[data-motion="auftritt"] {
+  transition: opacity var(--k-dauer-3) var(--ease-k-setzen), transform var(--k-dauer-3) var(--ease-k-setzen);
+}
+html.k-bewegung [data-motion="auftritt"][data-ausloeser="sicht"]:not([data-sichtbar]) {
+  opacity: 0;
+  transform: translateY(var(--spacing-k-2));
+}
+
+/* Anriss: Strich unter dem Schlüsselwort einer Kundenstimme, wächst von links */
+[data-motion="anriss"] {
+  position: relative;
+  text-decoration: none;
+}
+[data-motion="anriss"]::after {
+  content: "";
+  position: absolute;
+  left: -0.05em;
+  right: -0.05em;
+  bottom: -0.12em;
+  height: var(--k-linie-2);
+  background: var(--color-k-laser-tief);
+  transform-origin: left center;
+  transition: transform var(--k-dauer-4) var(--ease-k-setzen);
+}
+html.k-bewegung [data-motion="anriss"][data-ausloeser="sicht"]:not([data-sichtbar])::after {
+  transform: scaleX(0);
+}
+
+/* Druck: sofortige Rückmeldung, 1 px nach unten */
+[data-motion="druck"] {
+  transition: transform var(--k-dauer-1) var(--ease-k-setzen), background-color var(--k-dauer-1) var(--ease-k-setzen), color var(--k-dauer-1) var(--ease-k-setzen), border-color var(--k-dauer-1) var(--ease-k-setzen);
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion="druck"]:active { transform: translateY(1px); }
+}
+
+/* Zustand: Farbwechsel bei Hover/Fokus (Farbe ist keine Bewegung, gilt auch reduziert) */
+[data-motion="zustand"] {
+  transition: background-color var(--k-dauer-1) var(--ease-k-setzen), color var(--k-dauer-1) var(--ease-k-setzen), border-color var(--k-dauer-1) var(--ease-k-setzen);
+}
+
+/* Aufklappen: Höhe über grid-template-rows (Registereintrag, Ausnahme von transform/opacity) */
+[data-motion="aufklappen"] {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--k-dauer-1) var(--ease-k-weg);
+}
+[data-motion="aufklappen"][data-offen] {
+  grid-template-rows: 1fr;
+  transition-duration: var(--k-dauer-2);
+  transition-timing-function: var(--ease-k-setzen);
+}
+[data-motion="aufklappen"] > * { overflow: hidden; min-height: 0; }
+
+/* Notiert: Haken zeichnet sich (SVG mit pathLength="1") */
+[data-motion="notiert"] path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+html.k-bewegung [data-motion="notiert"] path {
+  animation: k-zeichnen var(--k-dauer-3) var(--ease-k-setzen) both;
+}
+
+/* Laden: eine Fuge läuft (nur sichtbar, solange gesendet wird) */
+[data-motion="laden"] {
+  background: linear-gradient(90deg, transparent 0 40%, currentColor 40% 60%, transparent 60% 100%) 0 0 / 250% 100% no-repeat;
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion="laden"] { animation: k-fuge-laeuft var(--k-dauer-5) linear infinite; }
+}
+
+@keyframes k-zeichnen {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes k-fuge-laeuft {
+  from { background-position: 100% 0; }
+  to { background-position: -150% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion] { transition-duration: 0s !important; }
+  [data-motion="zustand"], [data-motion="druck"] { transition-duration: var(--k-dauer-1) !important; }
+}
