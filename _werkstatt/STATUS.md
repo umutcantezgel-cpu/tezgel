@@ -1,4 +1,4 @@
-STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 0/9 (E0) · Welle – · Pflicht 0/– · Kür 0/9 · Kriterien 0/10 · Ausnahmen 0 · Bestand grün (Vorlauf) · Nächster Schritt: E0-PRUEF-01 (Einrichtung) abwarten, dann Werkzeuglücken (E0-PRUEF-02) und Ausgangswerte (E0-PRUEF-03)
+STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 1/9 (E0/E1 parallel) · Welle E0-W1 · Pflicht 2/111 · Kür 0/9 · Kriterien 0/10 · Ausnahmen 0 · Bestand grün · Nächster Schritt: Rückgaben E0-PRUEF-02a–d abnehmen, dann Ausgangswerte (E0-PRUEF-03/-04) und L0-Planprüfung
 
 # STATUS · Werkstatt-Lauf „Tezgel auf Spitzenniveau“
 
@@ -25,3 +25,4 @@ Siehe `_werkstatt/werkzeuge/EINRICHTUNG.md` (entsteht in E0-PRUEF-01). Kurz: `np
 
 ## Protokoll (stündlich, unten anfügen)
 - 2026-10-10 19:30 CEST · E0 gestartet: Plan im Chat freigegeben; `_werkstatt` angelegt, Werkzeuge aus `_relaunch` übernommen (git mv), Ausschlüsse gesetzt, CLAUDE.md-Block, Kundschafter- und Planprüfberichte abgelegt; E0-PRUEF-01 läuft.
+- 2026-10-10 21:15 CEST · E0-PRUEF-01 committet (Reinraum grün, Server 4310/4320); E0-PRUEF-02a–d laufen (4 Plätze); Next-16-Doku gelesen (View Transitions ohne Konfiguration, `transitionTypes`, `next/font/local`, `preload`, `qualities`, `redirects`, `agentRules`); KERN v2, PLAN v1 (111 Pakete), ABNAHME, Denkprotokolle E-004–E-013 geschrieben (ZWISCHENSTAND).
