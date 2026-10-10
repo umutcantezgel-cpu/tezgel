@@ -1,0 +1,21 @@
+{
+ "vorher": "56fd0dd",
+ "nachher": "8319525",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 0,
+ "abweichungen": [],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": []
+}
