@@ -130,7 +130,8 @@ export default function FloatingWhatsAppWidget() {
   const [isDragging, setIsDragging] = useState(false);
   const [isSnapping, setIsSnapping] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
-  const [showBadge, setShowBadge] = useState(true);
+  // Kein vorgetäuschtes Benachrichtigungs-Abzeichen „1“ (keine manipulativen Muster, E-012).
+  const [showBadge, setShowBadge] = useState(false);
 
   const btnRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname() || "";

@@ -57,7 +57,8 @@ export default function PricingCalculator() {
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [location, setLocation] = useState<string>("");
-  const [privacyAccepted, setPrivacyAccepted] = useState<boolean>(true);
+  // Einwilligung nie vorab erteilt: Besucher setzen den Haken selbst (Fairness, E-014).
+  const [privacyAccepted, setPrivacyAccepted] = useState<boolean>(false);
 
   // 3. Status & Anti-Bot
   const [honeypot, setHoneypot] = useState<string>("");
