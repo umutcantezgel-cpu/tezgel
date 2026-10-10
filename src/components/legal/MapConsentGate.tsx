@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { MapPin, Settings2 } from "lucide-react";
-import { useConsent } from "@/hooks/useConsent";
+import { useKartenEinwilligung } from "@/lib/formulare/useKartenEinwilligung";
 
 interface MapConsentGateProps {
   children?: React.ReactNode;
@@ -19,19 +18,7 @@ export function MapConsentGate({
   className = "",
   height = "420px",
 }: MapConsentGateProps) {
-  const { consent, updateConsent, openSettings } = useConsent();
-  const [isHydrated, setIsHydrated] = useState(false);
-  const [manualAccepted, setManualAccepted] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsHydrated(true);
-  }, []);
-
-  const handleAccept = () => {
-    setManualAccepted(true);
-    updateConsent({ marketing: true, analytics: consent?.analytics ?? false });
-  };
+  const { isHydrated, hasConsent, handleAccept, openSettings } = useKartenEinwilligung();
 
   if (!isHydrated) {
     return (
@@ -41,8 +28,6 @@ export function MapConsentGate({
       />
     );
   }
-
-  const hasConsent = manualAccepted || consent?.marketing;
 
   if (hasConsent) {
     if (children) {

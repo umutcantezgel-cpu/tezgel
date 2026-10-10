@@ -1,13 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  Droplets,
   Sparkles,
-  Sun,
-  Layers,
-  ShieldCheck,
   ArrowRight,
   ArrowLeft,
   CheckCircle2,
@@ -20,57 +15,18 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
-import { openWhatsApp } from '@/lib/whatsapp';
-
-const PROJECT_TYPES = [
-  {
-    id: 'bad',
-    title: 'Bad & Wellness',
-    subtitle: 'Walk-In-Dusche, Großformate, Ablagenischen',
-    icon: Droplets,
-    badge: 'Sehr beliebt'
-  },
-  {
-    id: 'wohnen',
-    title: 'Wohnbereich & Neubau',
-    subtitle: 'Feinsteinzeug, Küche, Diele & Flure',
-    icon: Sparkles,
-    badge: 'Großformat'
-  },
-  {
-    id: 'balkon',
-    title: 'Balkon & Terrasse',
-    subtitle: '2-cm-Keramikplatten auf Stelzlagern',
-    icon: Sun,
-    badge: 'Frostsicher'
-  },
-  {
-    id: 'treppe',
-    title: 'Treppen & Naturstein',
-    subtitle: 'Granit, Naturstein & Treppenstufen',
-    icon: Layers,
-    badge: 'Präzision'
-  },
-  {
-    id: 'untergrund',
-    title: 'Untergrund & Abdichtung',
-    subtitle: 'Estrichausgleich & DIN 18534 Verbundabdichtung',
-    icon: ShieldCheck,
-    badge: 'DIN-Norm'
-  }
-];
-
-const AREA_OPTIONS = ['Bis 15 m²', '15 - 35 m²', '35 - 75 m²', 'Über 75 m²'];
-
-const TIMING_OPTIONS = ['Schnellstmöglich', 'In 1 - 3 Monaten', 'In mehr als 3 Monaten / Flexibel'];
+import {
+  PROJECT_TYPES,
+  AREA_OPTIONS,
+  TIMING_OPTIONS,
+  useAnfrageFunnel
+} from '@/lib/formulare/useAnfrageFunnel';
 
 const STEPS = [
   { title: 'Welches Projekt planen Sie?', text: 'Wählen Sie Ihr Fachgewerk für eine passende Planung.' },
   { title: 'Fläche, Zeitraum & Ort', text: 'Eine grobe Orientierung genügt – Details klären wir beim Aufmaß.' },
   { title: 'Kontaktdaten & Absenden', text: 'Direkt online absenden oder alternativ per WhatsApp anfragen.' }
 ];
-
-type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error' | 'whatsapp_opened';
 
 const inputClass =
   'w-full px-4 py-3 rounded-xl bg-white border border-neutral-300 text-neutral-900 placeholder:text-neutral-500 text-sm focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-600/20 transition-all';
@@ -83,95 +39,40 @@ const optionClass = (selected: boolean) =>
   }`;
 
 export default function TezgelAnfrageFunnel() {
-  const [step, setStep] = useState(1);
-  const [projectType, setProjectType] = useState('bad');
-  const [selectedArea, setSelectedArea] = useState('15 - 35 m²');
-  const [customArea, setCustomArea] = useState('');
-  const [timing, setTiming] = useState('In 1 - 3 Monaten');
-  const [location, setLocation] = useState('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [notes, setNotes] = useState('');
-  const [honeypot, setHoneypot] = useState('');
-  const [formInitTime] = useState<number>(() => Date.now());
-  const [status, setStatus] = useState<SubmissionStatus>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [referenceId, setReferenceId] = useState('');
-
-  const projectTitle = PROJECT_TYPES.find((p) => p.id === projectType)?.title ?? projectType;
-  const finalArea = customArea ? `${customArea.replace(/\s*m²$/i, '')} m²` : selectedArea;
-  const locationText = location || 'Aßlar / Wetzlar / Hessen';
-
-  const getWhatsAppMessage = () =>
-    `Hallo Herr Tezgel,\nich interessiere mich für eine fachgerechte Fliesenverlegung:\n\n` +
-    `📌 Projekt: ${projectTitle}\n` +
-    `📐 Fläche: ca. ${finalArea}\n` +
-    `📍 Ort: ${locationText}\n` +
-    `⏱️ Gewünschter Zeitraum: ${timing}\n\n` +
-    `👤 Name: ${name}\n` +
-    `📞 Telefon: ${phone}\n` +
-    `✉️ E-Mail: ${email || 'Nicht angegeben'}\n` +
-    (notes ? `📝 Anmerkungen: ${notes}\n\n` : '\n') +
-    `Bitte melden Sie sich bezüglich eines unverbindlichen Vor-Ort-Aufmaßes. Vielen Dank!`;
-
-  const handleWhatsAppDirect = () => {
-    if (!name || !phone) {
-      setErrorMessage('Bitte tragen Sie zumindest Ihren Namen und eine Telefonnummer ein.');
-      return;
-    }
-    openWhatsApp({
-      phone: COMPANY_DATA.contact.whatsappNumber,
-      text: getWhatsAppMessage(),
-    });
-    setStatus('whatsapp_opened');
-  };
-
-  const handleOnlineSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setErrorMessage('');
-    setStatus('submitting');
-
-    try {
-      const response = await fetch('/api/anfrage', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          inquiryType: 'general',
-          projectType,
-          projectTitle,
-          contact: {
-            name,
-            phone,
-            email: email || undefined,
-            location: locationText
-          },
-          area: finalArea,
-          timing,
-          notes: notes || undefined,
-          honeypot: honeypot || undefined,
-          _t: formInitTime
-        })
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.error || 'Übertragung fehlgeschlagen.');
-      }
-
-      if (data.referenceId) {
-        setReferenceId(data.referenceId);
-      }
-
-      setStatus('success');
-    } catch (err: unknown) {
-      console.error('Submission error:', err);
-      const msg = err instanceof Error ? err.message : 'Es gab ein Problem bei der Übertragung.';
-      setErrorMessage(msg);
-      setStatus('error');
-    }
-  };
+  const {
+    step,
+    setStep,
+    projectType,
+    setProjectType,
+    selectedArea,
+    customArea,
+    setCustomArea,
+    timing,
+    setTiming,
+    location,
+    setLocation,
+    name,
+    setName,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    notes,
+    setNotes,
+    honeypot,
+    setHoneypot,
+    status,
+    errorMessage,
+    referenceId,
+    projectTitle,
+    finalArea,
+    locationText,
+    handleWhatsAppDirect,
+    handleOnlineSubmit,
+    handleNewRequest,
+    handleBackToOverview,
+    selectArea
+  } = useAnfrageFunnel();
 
   // SUCCESS STATE (Direct confirmation)
   if (status === 'success') {
@@ -221,15 +122,7 @@ export default function TezgelAnfrageFunnel() {
           </a>
           <button
             type="button"
-            onClick={() => {
-              setStatus('idle');
-              setStep(1);
-              setName('');
-              setPhone('');
-              setEmail('');
-              setNotes('');
-              setReferenceId('');
-            }}
+            onClick={handleNewRequest}
             className="btn-ghost w-full sm:w-auto"
           >
             Weitere Anfrage starten
@@ -259,10 +152,7 @@ export default function TezgelAnfrageFunnel() {
           </a>
           <button
             type="button"
-            onClick={() => {
-              setStatus('idle');
-              setStep(1);
-            }}
+            onClick={handleBackToOverview}
             className="btn-ghost w-full sm:w-auto"
           >
             Zurück zur Übersicht
@@ -373,10 +263,7 @@ export default function TezgelAnfrageFunnel() {
                 <button
                   type="button"
                   key={opt}
-                  onClick={() => {
-                    setSelectedArea(opt);
-                    setCustomArea('');
-                  }}
+                  onClick={() => selectArea(opt)}
                   className={optionClass(selectedArea === opt && !customArea)}
                 >
                   {opt}

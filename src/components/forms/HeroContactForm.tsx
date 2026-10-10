@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from 'react';
 import {
     MessageCircle,
     ArrowRight,
@@ -10,99 +9,33 @@ import {
     Clock,
     AlertCircle
 } from 'lucide-react';
-import { COMPANY_DATA } from '@/config/company';
-import { buildWhatsAppUrl, openWhatsApp, isMobileDevice } from '@/lib/whatsapp';
-
-const PROJECT_OPTIONS = [
-    { id: 'bad', label: 'Badsanierung' },
-    { id: 'fliesen', label: 'Fliesenverlegung' },
-    { id: 'aussen', label: 'Balkon & Terrasse' },
-    { id: 'reparatur', label: 'Reparatur & Fugen' }
-];
+import { PROJECT_OPTIONS, useHeroKontakt } from '@/lib/formulare/useHeroKontakt';
 
 export default function HeroContactForm() {
-    const [projectType, setProjectType] = useState('bad');
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [location, setLocation] = useState('');
-    const [notes, setNotes] = useState('');
-    const [honeypot, setHoneypot] = useState('');
-    const [formInitTime] = useState<number>(() => Date.now());
-    const [referenceId, setReferenceId] = useState('');
-    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-    const [errorMessage, setErrorMessage] = useState('');
-
-    const selectedOption = PROJECT_OPTIONS.find((opt) => opt.id === projectType);
-    const projectTitle = selectedOption ? selectedOption.label : 'Fliesenarbeiten';
-
-    const getWhatsAppText = () => {
-        return (
-            `Hallo Herr Tezgel,\n` +
-            `ich interessiere mich für: ${projectTitle}.\n` +
-            (location ? `Ort / Region: ${location}\n` : '') +
-            (name ? `Mein Name: ${name}\n` : '') +
-            (phone ? `Telefon: ${phone}\n` : '') +
-            (notes ? `Hinweise: ${notes}\n` : '') +
-            `\nBitte melden Sie sich bezüglich eines kostenfreien Termins zum Aufmaß vor Ort. Vielen Dank!`
-        );
-    };
-
-    const getWhatsAppUrl = () => {
-        return buildWhatsAppUrl(COMPANY_DATA.contact.whatsappNumber, getWhatsAppText());
-    };
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setErrorMessage('');
-
-        if (!name.trim() || !phone.trim()) {
-            setErrorMessage('Bitte geben Sie Ihren Namen und Ihre Telefonnummer für den Rückruf an.');
-            return;
-        }
-
-        setStatus('submitting');
-
-        try {
-            const res = await fetch('/api/anfrage', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    inquiryType: 'general',
-                    projectType,
-                    projectTitle,
-                    contact: {
-                        name: name.trim(),
-                        phone: phone.trim(),
-                        email: email.trim() || undefined,
-                        location: location.trim() || 'Aßlar / Wetzlar / Hessen'
-                    },
-                    area: 'Wird vor Ort ermittelt',
-                    timing: 'Schnellstmöglich',
-                    notes: notes.trim() || undefined,
-                    honeypot: honeypot || undefined,
-                    _t: formInitTime
-                })
-            });
-
-            const data = await res.json();
-
-            if (!res.ok || !data.success) {
-                throw new Error(data.error || 'Übertragung fehlgeschlagen.');
-            }
-
-            if (data.referenceId) {
-                setReferenceId(data.referenceId);
-            }
-
-            setStatus('success');
-        } catch (err: unknown) {
-            console.error('Hero contact form error:', err);
-            const msg = err instanceof Error ? err.message : 'Es gab ein Problem bei der Übertragung.';
-            setErrorMessage(msg);
-            setStatus('error');
-        }
-    };
+    const {
+        projectType,
+        setProjectType,
+        name,
+        setName,
+        phone,
+        setPhone,
+        email,
+        setEmail,
+        location,
+        setLocation,
+        notes,
+        setNotes,
+        honeypot,
+        setHoneypot,
+        referenceId,
+        status,
+        errorMessage,
+        projectTitle,
+        getWhatsAppUrl,
+        handleSubmit,
+        handleNewRequest,
+        handleWhatsAppClick
+    } = useHeroKontakt();
 
     // SUCCESS VIEW
     if (status === 'success') {
@@ -149,15 +82,7 @@ export default function HeroContactForm() {
                 <div className="pt-2">
                     <button
                         type="button"
-                        onClick={() => {
-                            setStatus('idle');
-                            setName('');
-                            setPhone('');
-                            setEmail('');
-                            setLocation('');
-                            setNotes('');
-                            setReferenceId('');
-                        }}
+                        onClick={handleNewRequest}
                         className="text-xs font-bold text-orange-700 hover:text-orange-800 underline underline-offset-4"
                     >
                         Weitere Anfrage stellen
@@ -355,12 +280,7 @@ export default function HeroContactForm() {
                             href={getWhatsAppUrl()}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => {
-                                if (isMobileDevice()) {
-                                    e.preventDefault();
-                                    openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber, text: getWhatsAppText() });
-                                }
-                            }}
+                            onClick={handleWhatsAppClick}
                             className="flex items-center gap-1 font-bold text-emerald-800 hover:text-emerald-900 hover:underline"
                         >
                             <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
