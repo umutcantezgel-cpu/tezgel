@@ -36,12 +36,11 @@ const ServiceMapWrapper = dynamic(() => import('@/components/maps/ServiceMapWrap
     loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Einsatzgebietskarte wird geladen...</p>,
 });
 
-// Fotos der Fachgewerke mit den Maßen der Bilddatei (Bildfeld schneidet nicht zu)
+// Fotos der Fachgewerke mit den Maßen der Bilddatei (Bildfeld schneidet nicht zu). Ein Foto steht nur, wo es das
+// Gewerk zeigt: alle vorhandenen Fotos sind Bäder (E2-ORCH-08-N2, MENSCHEN M-18) – für Wohnen, Außen und Untergrund
+// trägt der gezeichnete Verlegeplan das Bild, bis Projektfotos vorliegen.
 const SERVICE_IMAGES: Record<string, { src: string; alt: string; tag: string; breite: number; hoehe: number }> = {
     bad: { src: '/images/bad/walk-in-dusche.webp', alt: 'Bodengleiche Walk-In Dusche und Badgestaltung Tezgel', tag: 'Komplettbad & Dusche', breite: 2528, hoehe: 1696 },
-    wohnen: { src: '/images/bad/bad-tageslicht.webp', alt: 'Wohnbereich und Fliesenverlegung mit Feinsteinzeug', tag: 'Wohnbereiche & Neubau', breite: 2752, hoehe: 1536 },
-    aussen: { src: '/images/bad/barrierefreies-bad-holz.webp', alt: 'Terrassenplatten auf Stelzlagern und Außenbereiche', tag: 'Balkon & Terrasse', breite: 2816, hoehe: 1536 },
-    untergrund: { src: '/images/bad/wandfliesen-gruen.webp', alt: 'Verbundabdichtung DIN 18534 und Estrichausgleich', tag: 'DIN 18534 Abdichtung', breite: 3584, hoehe: 4800 },
 };
 
 // Verlegeplan je Fachgewerk (Planvorgaben in src/lib/plaene/vorgaben.ts)
@@ -171,11 +170,11 @@ export default function HomePage() {
 
             {/* VERTRAUENSZEILE & GOOGLE-KENNWERT */}
             <div className="border-b border-fuge bg-fliese">
-                <div className="mx-auto w-full max-w-seite px-4 py-8 md:px-8 lg:px-12">
-                    <TrustStrip />
-                    <div className="mt-6 flex justify-start">
-                        <GoogleReviewsBadge />
+                <div className="mx-auto grid w-full max-w-seite grid-cols-1 gap-6 px-4 py-8 md:px-8 lg:grid-cols-12 lg:px-12">
+                    <div className="lg:col-span-9">
+                        <TrustStrip />
                     </div>
+                    <GoogleReviewsBadge className="justify-self-start lg:col-span-3 lg:justify-self-stretch" />
                 </div>
             </div>
 
@@ -316,10 +315,10 @@ export default function HomePage() {
                                     </p>
                                     {plan && <Verlegeplan plan={plan} className="mt-6 w-2/3 md:w-full" />}
                                 </div>
-                                <div className="col-span-4 md:col-span-5 lg:col-span-6">
+                                <div className={imgData ? 'col-span-4 md:col-span-5 lg:col-span-6' : 'col-span-4 md:col-span-5 lg:col-span-9'}>
                                     <h3 className={isFeature ? 'text-fs-5 text-tinte' : 'text-fs-4 font-semibold text-tinte'}>{srv.name}</h3>
                                     <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">{srv.shortDescription}</p>
-                                    <ul className={isFeature ? 'mt-6 grid gap-3 sm:grid-cols-2' : 'mt-6 grid gap-3'}>
+                                    <ul className={isFeature ? 'mt-6 grid gap-3 sm:grid-cols-2' : 'mt-6 grid gap-3 lg:grid-cols-2 lg:gap-x-12'}>
                                         {srv.features.slice(0, isFeature ? 6 : 3).map((feat) => (
                                             <li key={feat} className="flex items-start gap-3 text-fs-2 text-tinte">
                                                 <Fugenkreuz className="mt-1 size-3 text-tinte" />

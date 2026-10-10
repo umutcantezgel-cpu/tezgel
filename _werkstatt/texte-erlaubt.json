@@ -474,5 +474,59 @@
   "teil": "main_zeilen",
   "alt_muster": "Samstag \\(Aufmaßtermin\\)",
   "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Wohnbereiche & Neubau",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Wohnbereiche & Neubau",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Balkon & Terrasse",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Balkon & Terrasse",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "DIN 18534 Abdichtung",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "DIN 18534 Abdichtung",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Wohnbereich und Fliesenverlegung mit Feinsteinzeug",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Terrassenplatten auf Stelzlagern und Außenbereiche",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Verbundabdichtung DIN 18534 und Estrichausgleich",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
  }
 ]

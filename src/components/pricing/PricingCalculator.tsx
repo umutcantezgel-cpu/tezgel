@@ -227,10 +227,10 @@ export default function PricingCalculator() {
                 >
                   <Icon name={SERVICE_ICONS[srv.id] || "fliese"} groesse={6} className="shrink-0" />
                   <span className="min-w-0 flex-1">
-                    <span className="flex items-start justify-between gap-2">
-                      <span className="block text-fs-2 font-semibold">{srv.title}</span>
+                    <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
+                      <span className="block min-w-0 text-fs-2 font-semibold">{srv.title}</span>
                       {srv.badge && (
-                        <span className="hidden font-mono text-fs-1 sm:inline-block">{srv.badge}</span>
+                        <span className="hidden whitespace-nowrap font-mono text-fs-1 sm:inline-block">{srv.badge}</span>
                       )}
                     </span>
                     <span className="mt-1 block text-fs-1">{srv.subtitle}</span>
