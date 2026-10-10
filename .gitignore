@@ -49,3 +49,12 @@ build_*.txt
 hash.txt
 ms-reusable-components/
 coday-seo-toolkit/
+
+# relaunch working area (tracked), minus reproducible/large artefacts
+**/node_modules/
+test-results/
+playwright-report/
+/_relaunch/sicherung/
+/_relaunch/cache/
+/_relaunch/**/*.report.json
+/_relaunch/**/lhr-*.json

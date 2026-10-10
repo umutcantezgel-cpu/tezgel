@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Relaunch working area is documentation only – keep it out of class detection. */
+@source not "../../_relaunch";
 
 /* ==========================================================================
    FLIESENVERLEGUNG TEZGEL – TILE-CRAFT DESIGN SYSTEM

@@ -83,6 +83,10 @@ export const metadata: Metadata = {
   verification: {
     google: 'google831a76ab6f34b9f6',
   },
+  // Build identifier: lets the post-deploy smoke test verify which commit is live.
+  other: {
+    'x-build': process.env.VERCEL_GIT_COMMIT_SHA ?? 'local',
+  },
 };
 
 export const viewport: Viewport = {

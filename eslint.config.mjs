@@ -20,6 +20,8 @@ const eslintConfig = defineConfig([
     "Pipeline Kopie 5/**",
     "ms-reusable-components/**",
     "coday-seo-toolkit/**",
+    // Relaunch working area (docs, tools, prototypes) – never part of the app.
+    "_relaunch/**",
   ]),
 ]);
 
