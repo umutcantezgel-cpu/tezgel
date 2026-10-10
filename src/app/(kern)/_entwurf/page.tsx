@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/metadata';
-import Einstieg from '@/components/kern/start/einstieg-a/Einstieg';
+import Einstieg from '@/components/kern/start/einstieg-b/Einstieg';
 import HeroKontakt from '@/components/kern/formulare/HeroKontakt';
 import Vertrauen from '@/components/kern/start/Vertrauen';
 import Fachbereiche from '@/components/kern/start/Fachbereiche';
