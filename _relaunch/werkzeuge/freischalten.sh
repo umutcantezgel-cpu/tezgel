@@ -49,7 +49,6 @@ for r in "$@"; do
 done
 
 if [ $MODUS = commit ]; then
-  git -C "$W" add -A -- "src/app/(kern)" "src/app/(bestand)"
   git -C "$W" commit -q -F - <<MSG
 relaunch(freischaltung): $*
 
@@ -59,11 +58,12 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01R5GwnzadLaqH6WWL74KkLx
 MSG
   K="${RELAUNCH_SCRATCH:-/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad}/reinraum-$(git -C "$W" rev-parse --short "$KANDIDAT_BASIS")-k"
-  [ -d "$K" ] || { echo "ROT: Kandidat-Kopie $K fehlt – nicht pushen"; exit 4; }
+  [ -d "$K" ] || { echo "ROT: Kandidat-Kopie $K fehlt – nicht pushen (Rückweg: git revert --no-edit HEAD, lokal)"; exit 4; }
+  { grep -qx "routen: $*" "$K/.kandidat-stempel" && grep -qx "art: k" "$K/.kandidat-stempel"; } 2>/dev/null || { echo "ROT: Stempel der Kandidat-Kopie passt nicht zu den Routen ($*) – nicht pushen (Rückweg: git revert --no-edit HEAD)"; exit 4; }
   T="$(mktemp -d)"; git -C "$W" archive HEAD | tar -x -C "$T"
-  if diff -rq -x node_modules -x .next -x '*.log' -x 'next-env.d.ts' -x '*.tsbuildinfo' "$T" "$K" > "$T.diff"; then
+  if diff -rq -x node_modules -x .next -x '*.log' -x 'next-env.d.ts' -x '*.tsbuildinfo' -x '.kandidat-stempel' "$T" "$K" > "$T.diff"; then
     echo "GLEICH: Freischalt-Commit = geprüfter Kandidat"; rm -rf "$T" "$T.diff"
   else
-    echo "ROT: Freischalt-Commit weicht vom Kandidaten ab – nicht pushen"; cat "$T.diff"; exit 5
+    echo "ROT: Freischalt-Commit weicht vom Kandidaten ab – nicht pushen (Rückweg: git revert --no-edit HEAD, lokal)"; cat "$T.diff"; exit 5
   fi
 fi

@@ -64,6 +64,6 @@ if 'globalNotFound' not in cfg:
 # 4) Bestands-CSS byte-gleich halten: Kern-Code nicht in globals.css scannen
 g = (app / 'globals.css').read_text()
 if '@source not "../components/kern"' not in g:
-    g = g.replace('@source not "../../_relaunch";', '@source not "../../_relaunch";\n/* E-015: Kern-Code hat ein eigenes CSS (kern-global.css). */\n@source not "../components/kern";\n@source not "./(kern)";', 1)
+    g = g.replace('@source not "../../_relaunch";', '@source not "../../_relaunch";\n/* E-015: Kern-Code hat ein eigenes CSS (kern-global.css). */\n@source not "../components/kern";\n@source not "../lib/kern";\n@source not "./(kern)";', 1)
     (app / 'globals.css').write_text(g)
 print('Umzug fertig:', len(os.listdir(ziel)), 'Einträge in (bestand)')

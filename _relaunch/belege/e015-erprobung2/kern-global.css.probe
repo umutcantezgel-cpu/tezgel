@@ -1,0 +1,6 @@
+@import "tailwindcss" source(none);
+@import "./kern.css";
+@source "../components/kern";
+@source "../lib/kern";
+@source "../app/(kern)";
+@source not "../app/(kern)/_entwurf";

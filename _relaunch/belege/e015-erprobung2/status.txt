@@ -1,0 +1,15 @@
+/gibt-es-nicht 404 header:1 titel:Seite nicht gefunden (404) | Fliesenverlegung Tezgel  css:2 fonts:0
+/gibt/es/nicht 404 header:1 titel:Seite nicht gefunden (404) | Fliesenverlegung Tezgel  css:2 fonts:0
+/blog/unbekannt-xyz 404 header:0 titel:Seite nicht gefunden (404) | Fliesenverlegung Tezgel css:2 fonts:0
+/kern-probe/xyz 404 header:0 titel:Kern-Probe css:1 fonts:0
+/kern-probe 200 header:0 titel:Kern-Probe css:1 fonts:4
+/kern-probe/a 200 header:0 titel:Kern-Probe css:1 fonts:4
+/bad 200 header:1 titel:Badsanierung Wetzlar &amp; Aßlar | Fachbetrieb Tezge css:2 fonts:2
+/ 200 header:2 titel:Fliesenleger Wetzlar &amp; Aßlar | Fliesenverlegung  css:2 fonts:2
+/sitemap.xml 200 header:0 titel: css:0 fonts:0
+kern-probe h1: Probe Kern · k-bewegung: true · sichtbar-attr: 
+nach Klick: http://127.0.0.1:4314/bad h1: Ihr Traumbad schlüsselfertig in Fachqual · header: 2
+zurück: http://127.0.0.1:4314/kern-probe h1: Probe Kern
+404 h1: Seite nicht gefunden · header: 2
+kern-404 h1: Seite nicht gefunden
+Konsolenfehler: 2 Failed to load resource: the server responded with a status of 404 (Not Found) | Failed to load resource: the server responded with a status of 404 (Not Found)

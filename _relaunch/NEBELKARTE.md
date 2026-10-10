@@ -16,7 +16,7 @@ Sortiert nach Wirkung × Unsicherheit. Jede Zeile hat Lichtungsaufgabe oder Gege
 | angenommen | Marke, Zielgruppe, Besucheraufgaben (aus Inhalten abgeleitet) | hoch | mittel | P2, als Annahme markiert |
 | gesichert | Ausgangsstand 5a7a7b0, Archiv mit sha256 | – | – | E-002 |
 | riskant | Z-08 Kategorie „Inhalt“ ≥ 7,5 ohne echte Fotos (P0: 4,5–5,5; Texte unantastbar) | hoch | mittel | Frühwarnung in P3-16 (eigene Auswertung „Inhalt“), Fotoliste M-14, Verlegepläne als ehrliche Bildwelt; L7-Pfad: Z-08 kann AUSNAHME werden |
-| riskant | `global-not-found` ist experimentell (E-015) | mittel | gering | erprobt (Status 404, Schale, HTML gleich); Kandidat-Tor prüft F-17; Rückfall: Pfad-Weiche nur für die 404 |
+| riskant | `global-not-found` ist experimentell (E-015) | mittel | gering | erprobt in Erprobung 2 (`belege/e015-erprobung2/status.txt`: 404 in beiden Gruppen, Bestands-Schale, HTML 172 gleich; Nebenwirkung: Kern-Seiten laden bis W10 Inter/Jakarta mit vor); Kandidat-Tor prüft F-17; Rückfall: Pfad-Weiche nur für die 404 |
 | riskant | Markenbruch in der Übergangszeit: Kern- und Bestandsseiten sehen verschieden aus, Wechsel lädt voll neu (E-015) | mittel | gering | Hauptwege früh freischalten (W1, dann W9-01 `/kontakt`), Navigation gleich gegliedert, Übergangszeit kurz halten |
 
 ## Vorab-Scheitern

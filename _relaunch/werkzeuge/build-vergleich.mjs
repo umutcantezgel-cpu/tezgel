@@ -7,9 +7,20 @@ import { RELAUNCH, ensureDir } from './lib.mjs';
 
 const SCRATCH = process.env.RELAUNCH_SCRATCH || '/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad';
 const [, , A, B] = process.argv;
+// --streng (P2-GEG-03 H-1): Skripte und Chunk-Namen bleiben im Vergleich (Turbopack benennt Chunks nach Inhalt),
+// nur Build-ID-Pfade und Build-Kennungen werden normalisiert; CSS wird als volle Regelmenge verglichen.
+const STRENG = process.argv.includes('--streng');
 const dir = (s) => path.join(SCRATCH, `reinraum-${s}`, '.next');
 const liste = (d, ext) => { const r = []; (function w(x) { for (const e of fs.readdirSync(x, { withFileTypes: true })) { const p = path.join(x, e.name); if (e.isDirectory()) w(p); else if (p.endsWith(ext)) r.push(p); } })(d); return r; };
-const norm = (h) => h
+const normStreng = (h) => h
+  .replace(/\/_next\/static\/(?!chunks\/|media\/|immutable\/)[^/"'\s]+\//g, '/_next/static/BUILD/')
+  .replace(/"buildId":"[^"]+"/g, '"buildId":"X"')
+  .replace(/\\"b\\":\\"[A-Za-z0-9_-]{15,}\\"/g, '\\"b\\":\\"X\\"')
+  .replace(/<meta name="x-build" content="[^"]*"\/?>/g, '')
+  .replace(/\[\\"\$\\",\\"meta\\",\\"\d+\\",\{\\"name\\":\\"x-build\\",\\"content\\":\\"[^\\]*\\"\}\],?/g, '')
+  .replace(/data-dpl-id="[^"]*"/g, '')
+  .replace(/\?dpl=[^"&]+/g, '');
+const normWeich = (h) => h
   // RSC-Nutzlast (Flight-Skripte) ist Rauschen; verglichen wird das gerenderte Markup + JSON-LD.
   .replace(/<script(?![^>]*application\/ld\+json)[^>]*>[\s\S]*?<\/script>/g, '')
   .replace(/\/_next\/static\/[^"'\s)]+/g, '/_next/static/X')
@@ -25,6 +36,7 @@ const norm = (h) => h
   .replace(/\\"b\\":\\"[A-Za-z0-9_-]{15,}\\"/g, '\\"b\\":\\"X\\"')
   .replace(/\[\\"\$\\",\\"meta\\",\\"\d+\\",\{\\"name\\":\\"x-build\\",\\"content\\":\\"[^\\]*\\"\}\],?/g, '')
   .replace(/\\"\$\\",\\"([a-z]+)\\",\\"\d+\\"/g, (m, t) => `\\"$\\",\\"${t}\\",\\"N\\"`);
+const norm = STRENG ? normStreng : normWeich;
 const htmlA = Object.fromEntries(liste(path.join(dir(A), 'server', 'app'), '.html').map((p) => [path.relative(path.join(dir(A), 'server', 'app'), p), p]));
 const htmlB = Object.fromEntries(liste(path.join(dir(B), 'server', 'app'), '.html').map((p) => [path.relative(path.join(dir(B), 'server', 'app'), p), p]));
 const nurA = Object.keys(htmlA).filter((k) => !htmlB[k]);
@@ -34,16 +46,17 @@ for (const k of Object.keys(htmlA)) if (htmlB[k]) { const a = norm(fs.readFileSy
 // Selektorlisten nur an Kommas außerhalb von Klammern trennen (z. B. shadow-[0_1px_rgba(0,0,0,.1)]).
 const trenne = (t) => { const r = []; let tiefe = 0, akt = ''; for (const c of t) { if (c === '(' || c === '[') tiefe++; if (c === ')' || c === ']') tiefe--; if (c === ',' && tiefe === 0) { r.push(akt); akt = ''; } else akt += c; } r.push(akt); return r; };
 const cssText = (d) => liste(path.join(d, 'static'), '.css').map((f) => fs.readFileSync(f, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '')).join('\n');
+const regeln = (d) => new Set(cssText(d).replace(/\s+/g, ' ').split('}').map((r) => r.trim()).filter(Boolean));
 const selektoren = (d) => { const s = new Set(); const css = cssText(d); for (const m of css.matchAll(/([^{}]+)\{/g)) for (const sel of trenne(m[1])) { const t = sel.trim().replace(/^\.([a-z_]+)_[0-9a-f]{8}-module__[A-Za-z0-9_-]+__(className|variable)$/, '.$1_FONT__$2'); if (t && !t.startsWith('@')) s.add(t); } return s; };
 const eigenschaften = (d) => new Set([...cssText(d).matchAll(/(--[A-Za-z0-9_-]+)\s*:/g)].map((m) => m[1]));
 const keyframes = (d) => new Set([...cssText(d).matchAll(/@keyframes\s+([A-Za-z0-9_-]+)/g)].map((m) => m[1]));
-const sa = selektoren(dir(A)), sb = selektoren(dir(B));
+const sa = STRENG ? regeln(dir(A)) : selektoren(dir(A)), sb = STRENG ? regeln(dir(B)) : selektoren(dir(B));
 const weg = [...sa].filter((x) => !sb.has(x)).sort(), neu = [...sb].filter((x) => !sa.has(x)).sort();
 const ea = eigenschaften(dir(A)), eb = eigenschaften(dir(B)), ka = keyframes(dir(A)), kb = keyframes(dir(B));
 const varWeg = [...ea].filter((x) => !eb.has(x)).sort(), varNeu = [...eb].filter((x) => !ea.has(x)).sort();
 const kfWeg = [...ka].filter((x) => !kb.has(x)).sort(), kfNeu = [...kb].filter((x) => !ka.has(x)).sort();
 const bericht = { vorher: A, nachher: B, variablen_weg: varWeg, variablen_neu: varNeu, keyframes_weg: kfWeg, keyframes_neu: kfNeu, html_dateien: Object.keys(htmlA).length, nur_vorher: nurA, nur_nachher: nurB, html_abweichend: anders.length, abweichungen: anders.slice(0, 40), css_selektoren_weg: weg, css_selektoren_neu: neu };
-const out = ensureDir(path.join(RELAUNCH, 'belege', `build-vergleich-${A}-${B}`));
+const out = ensureDir(path.join(RELAUNCH, 'belege', `build-vergleich-${A}-${B}${STRENG ? '-streng' : ''}`));
 fs.writeFileSync(path.join(out, 'bericht.json'), JSON.stringify(bericht, null, 1));
 console.log(JSON.stringify({ html: bericht.html_dateien, nur_vorher: nurA.length, nur_nachher: nurB.length, html_abweichend: anders.length, css_weg: weg.length, css_neu: neu.length, var_weg: varWeg.length, var_neu: varNeu.length, keyframes_weg: kfWeg.length, keyframes_neu: kfNeu.length }));
 for (const a of anders.slice(0, 5)) console.log('≠', a.datei, '\n  vorher: ', a.vorher.replace(/\n/g, ' '), '\n  nachher:', a.nachher.replace(/\n/g, ' '));

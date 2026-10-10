@@ -9,7 +9,7 @@ case "${1:-}" in
   stop) pkill -f "next start -H 127.0.0.1 -p $PORT" 2>/dev/null; sleep 1; echo "gestoppt";;
   start)
     REPO="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
-    NAME="${2:-HEAD}"; SUF=""; case "$NAME" in *-k) SUF="-k"; NAME="${NAME%-k}";; esac
+    NAME="${2:-HEAD}"; SUF=""; case "$NAME" in *-k) SUF="-k"; NAME="${NAME%-k}";; *-v) SUF="-v"; NAME="${NAME%-v}";; esac
     SHA="$(git -C "$REPO" rev-parse --short "$NAME")$SUF"
     DIR="$SCRATCH/reinraum-$SHA"
     [ -z "${RESEND_API_KEY:-}" ] || { echo "ABBRUCH (G5): RESEND_API_KEY ist gesetzt"; exit 3; }
