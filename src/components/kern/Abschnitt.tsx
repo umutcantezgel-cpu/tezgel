@@ -2,7 +2,7 @@
 // wahlweise gestapelt oder seitlich (Kopf links, Inhalt rechts). Flächen: Kalk, Fliese, Tinte.
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
-import { etikettKlassen, seitenKlassen } from './stile';
+import { etikettForm, seitenKlassen } from './stile';
 
 export interface AbschnittProps {
   id?: string;
@@ -30,7 +30,7 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
   const kopfInhalt = (titel || etikett) && (
     <div className={clsx(kopf === 'seitlich' ? 'lg:col-span-4' : 'max-w-mass')}>
       {(etikett || nummer) && (
-        <p className={clsx(etikettKlassen, 'mb-4', tinte && 'text-nacht-2')}>
+        <p className={clsx(etikettForm, 'mb-4', tinte ? 'text-nacht-2' : 'text-tinte-2')}>
           {nummer && <span className={tinte ? 'text-kalk' : 'text-tinte'}>{nummer}</span>}
           {nummer && etikett && <span aria-hidden="true">·</span>}
           {etikett}

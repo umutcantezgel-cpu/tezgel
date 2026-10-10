@@ -35,7 +35,9 @@ export const wahlKlassen =
 /** Kontrollkästchen */
 export const kontrollKlassen = 'mt-1 size-5 shrink-0 rounded-r1 border border-strich accent-tinte';
 /** Mono-Etikett (vormals Badge) */
-export const etikettKlassen = 'inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2';
+/** Mono-Etikett ohne Farbe (für Flächen mit eigener Textfarbe, z. B. Tinte) */
+export const etikettForm = 'inline-flex items-center gap-2 font-mono text-fs-1';
+export const etikettKlassen = `${etikettForm} text-tinte-2`;
 /** Textlink im Fließtext */
 export const linkKlassen = 'text-tinte underline decoration-strich underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte';
 /** Seitenrand und Satzspiegel */

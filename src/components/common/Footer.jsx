@@ -130,8 +130,8 @@ export default function Footer() {
                         </div>
                     </address>
 
-                    <dl className="grid grid-cols-3 gap-px border border-nacht-fuge bg-nacht-fuge">
-                        <div className="bg-tinte p-4">
+                    <dl className="grid grid-cols-2 gap-px border border-nacht-fuge bg-nacht-fuge">
+                        <div className="col-span-2 bg-tinte p-4">
                             <dt className={etikett}>Kammer</dt>
                             <dd className="mt-1 text-fs-2">{authority.name}</dd>
                         </div>
