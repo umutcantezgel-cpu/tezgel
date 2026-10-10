@@ -1,0 +1,9 @@
+{
+ "aufnahmen": 18,
+ "fehler": 0,
+ "status_nicht_200": [],
+ "mit_ueberlauf": [
+  "/p3-06-a [m375] horizontal,ragt-heraus,ragt-heraus"
+ ],
+ "mit_konsolenfehler": []
+}
