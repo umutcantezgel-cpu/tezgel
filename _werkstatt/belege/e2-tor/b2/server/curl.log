@@ -1,0 +1,12 @@
+# 2026-10-10T22:34:20Z GET-Probe (nur GET, keine POST)
+port=4312 path=/ code=200
+port=4312 path=/kontakt code=200
+port=4311 path=/ code=200
+port=4311 path=/kontakt code=200
+port=4310 path=/ code=200
+port=4310 path=/kontakt code=200
+port=4320 path=/ code=200
+port=4320 path=/kontakt code=200
+# Verzeichnis 4312 (server-4312.dir): /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc
+# Verzeichnis 4311 (server-4311.dir): /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B2/reinraum-ga-f8899dc
+# 4310 und 4320 nicht gestartet/gestoppt; 4310 Verzeichnis: /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-745335f

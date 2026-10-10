@@ -1,0 +1,204 @@
+
+> tezgel@1.0.8 test
+> node --experimental-strip-types --loader ./test/resolver.mjs --test test/email-pipeline.test.mjs test/titleLength.test.mjs test/bewegung.test.mjs test/plaene.test.mjs
+
+TAP version 13
+# (node:26770) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./test/resolver.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Bewegung 1: Register enthält genau die 16 Einträge des Gestaltungskerns
+ok 1 - Bewegung 1: Register enthält genau die 16 Einträge des Gestaltungskerns
+  ---
+  duration_ms: 2.669831
+  type: 'test'
+  ...
+# Subtest: Bewegung 2: sig-plan wird nur auf groben Zeigegeräten über Sichtbarkeit ausgelöst
+ok 2 - Bewegung 2: sig-plan wird nur auf groben Zeigegeräten über Sichtbarkeit ausgelöst
+  ---
+  duration_ms: 0.341453
+  type: 'test'
+  ...
+# Subtest: Bewegung 3: Ladeeinträge und Schwellen
+ok 3 - Bewegung 3: Ladeeinträge und Schwellen
+  ---
+  duration_ms: 0.366499
+  type: 'test'
+  ...
+# Subtest: Bewegung 4: unbekannte Kennungen sind nicht registriert
+ok 4 - Bewegung 4: unbekannte Kennungen sind nicht registriert
+  ---
+  duration_ms: 0.15246
+  type: 'test'
+  ...
+# Subtest: Bewegung 5: Kopfskript setzt k-bewegung nur ohne reduzierte Bewegung und hat ein Notaus nach 2 s
+ok 5 - Bewegung 5: Kopfskript setzt k-bewegung nur ohne reduzierte Bewegung und hat ein Notaus nach 2 s
+  ---
+  duration_ms: 0.642524
+  type: 'test'
+  ...
+# (node:26770) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/src/lib/motion/register.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:26771) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./test/resolver.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:26771) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/src/lib/email/security.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# [E-Mail Mailer: DEV MOCK MODE]
+# -> Vorgangsnummer: TEZ-26-PBG5
+# -> Anfragetyp: general (Fliesenverlegung)
+# -> Kunde: Idempotency Tester, Tel: 0151 / 4433221, E-Mail: idem@example.com
+# -> Team-Mail an: info@tezgel.de
+# -> Kunden-Mail an: idem@example.com
+# Subtest: 1. Security: HTML Escaping prevents Injection
+ok 6 - 1. Security: HTML Escaping prevents Injection
+  ---
+  duration_ms: 1.490274
+  type: 'test'
+  ...
+# Subtest: 2. Security: Header Sanitization strips CRLF
+ok 7 - 2. Security: Header Sanitization strips CRLF
+  ---
+  duration_ms: 0.300876
+  type: 'test'
+  ...
+# Subtest: 3. Security: Anti-Reflection strips URLs from user notes
+ok 8 - 3. Security: Anti-Reflection strips URLs from user notes
+  ---
+  duration_ms: 0.375942
+  type: 'test'
+  ...
+# Subtest: 4. Security: IP Sliding Window Rate Limiter
+ok 9 - 4. Security: IP Sliding Window Rate Limiter
+  ---
+  duration_ms: 0.3707
+  type: 'test'
+  ...
+# Subtest: 5. Security: Recipient Confirmation Rate Limiter
+ok 10 - 5. Security: Recipient Confirmation Rate Limiter
+  ---
+  duration_ms: 0.33399
+  type: 'test'
+  ...
+# Subtest: 6. Security: Bot Timing & Honeypot Checks
+ok 11 - 6. Security: Bot Timing & Honeypot Checks
+  ---
+  duration_ms: 0.315641
+  type: 'test'
+  ...
+# Subtest: 7. Validation: Valid inquiry payloads across types
+ok 12 - 7. Validation: Valid inquiry payloads across types
+  ---
+  duration_ms: 12.046379
+  type: 'test'
+  ...
+# Subtest: 8. Validation: Rejection of invalid phone and email inputs
+ok 13 - 8. Validation: Rejection of invalid phone and email inputs
+  ---
+  duration_ms: 2.141435
+  type: 'test'
+  ...
+# Subtest: 9. Templates: Team Email MSO Compatibility & Outlook Subject Prefix
+ok 14 - 9. Templates: Team Email MSO Compatibility & Outlook Subject Prefix
+  ---
+  duration_ms: 20.045909
+  type: 'test'
+  ...
+# Subtest: 10. Templates: Customer Confirmation Sanitization & Legal Information
+ok 15 - 10. Templates: Customer Confirmation Sanitization & Legal Information
+  ---
+  duration_ms: 2.001921
+  type: 'test'
+  ...
+# Subtest: 11. Mailer: Dev Mock Mode & Idempotency Deduplication
+ok 16 - 11. Mailer: Dev Mock Mode & Idempotency Deduplication
+  ---
+  duration_ms: 4.052521
+  type: 'test'
+  ...
+# Subtest: 12. Utilities: String normalizers & Customer Subjects
+ok 17 - 12. Utilities: String normalizers & Customer Subjects
+  ---
+  duration_ms: 0.630137
+  type: 'test'
+  ...
+# Subtest: 13. PricingCalculator: Transformed Comprehensive Contact Form submission validates
+ok 18 - 13. PricingCalculator: Transformed Comprehensive Contact Form submission validates
+  ---
+  duration_ms: 0.840368
+  type: 'test'
+  ...
+# (node:26772) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./test/resolver.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:26772) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/src/lib/plaene/geometrie.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Plan 1: Startversatz legt die Achse auf eine Fuge
+ok 19 - Plan 1: Startversatz legt die Achse auf eine Fuge
+  ---
+  duration_ms: 1.580632
+  type: 'test'
+  ...
+# Subtest: Plan 2: Reihenversatz je Verband
+ok 20 - Plan 2: Reihenversatz je Verband
+  ---
+  duration_ms: 2.708672
+  type: 'test'
+  ...
+# Subtest: Plan 3: Im Kreuzverband sind die Passstücke an beiden Rändern gleich breit
+ok 21 - Plan 3: Im Kreuzverband sind die Passstücke an beiden Rändern gleich breit
+  ---
+  duration_ms: 1.404993
+  type: 'test'
+  ...
+# Subtest: Plan 4: Fugen liegen innerhalb des Raums, Passstücke sind schmaler als eine Platte
+ok 22 - Plan 4: Fugen liegen innerhalb des Raums, Passstücke sind schmaler als eine Platte
+  ---
+  duration_ms: 3.10536
+  type: 'test'
+  ...
+# (node:26794) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+# --import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("./test/resolver.mjs", pathToFileURL("./"));'
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:26794) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/src/lib/metadata.ts is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to /tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/reinraum-f8899dc/package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: 1. Title Budget: Long raw titles are strictly clamped to <= 58 chars (SERP Budget)
+ok 23 - 1. Title Budget: Long raw titles are strictly clamped to <= 58 chars (SERP Budget)
+  ---
+  duration_ms: 8.322708
+  type: 'test'
+  ...
+# Subtest: 2. Title Budget: City Landing Page titles satisfy 58-char budget
+ok 24 - 2. Title Budget: City Landing Page titles satisfy 58-char budget
+  ---
+  duration_ms: 2.476069
+  type: 'test'
+  ...
+# Subtest: 3. Title Budget: Service x City matrix titles satisfy 58-char budget
+ok 25 - 3. Title Budget: Service x City matrix titles satisfy 58-char budget
+  ---
+  duration_ms: 1.726324
+  type: 'test'
+  ...
+# Subtest: 4. Legal Routes: index: false, follow: true is correctly configured
+ok 26 - 4. Legal Routes: index: false, follow: true is correctly configured
+  ---
+  duration_ms: 0.416453
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 925.063552
