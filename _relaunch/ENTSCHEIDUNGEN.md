@@ -168,3 +168,13 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Mobil:** Bezugswert ist der realistische beste Weg einschließlich `wische` (Aufgabe 4: 8 Schritte statt 10 senkrecht).
 - **Antworten:** Aufgabe 2 gilt als gelöst, wenn der Läufer eine Angabe zur Bestandsdauer findet („seit 2008“ oder „über N Jahre“) und eine Bewertungsangabe; widersprüchliche Angaben sind ein Befund (Inhalt, MENSCHEN M-03), keine Lösungsfrage.
 - Läufe unter Lastspitzen mit „Werkzeug:“-Abbruch werden wiederholt, nicht gezählt. Die Matrix der Basis (15 Läufe) erhebt ein Haiku-Probeläufer im ruhigen Fenster; Ablage `belege/p0-ausgangsstand/probelauf/` durch den Orchestrator.
+
+## E-020 · Widerruf der Einwilligung im Kern: Fußlink statt schwebendem Schild
+- **Befund (Vorschau 1323c32-v):** Der Kern-Banner (P3-08) übernahm das schwebende Schild des Bestands als festen Knopf unten links. Neben Kopf und unterer Leiste wäre das eine dritte feste Ebene (KERN K-003 Prinzip 7, K-011).
+- **Wege:**
+  1. Schild behalten. Dann gibt es mobil zwei feste Ebenen unten, und Inhalte werden überdeckt.
+  2. Schild in die untere Leiste legen. Dann hat die Leiste vier Felder; Anrufen, WhatsApp und Anfrage werden schmaler (Touch-Ziele).
+  3. Widerruf über den Link „Cookie-Einstellungen“ (`#cookie-settings`) im Fuß jeder Seite (P3-07) und auf der Datenschutzseite.
+- **Bewertung:** (3) erhält die Funktion „Widerruf jederzeit“ (F-11) auf jeder Seite, ohne feste Ebene. Die Einwilligungslogik bleibt unberührt (G9); `#cookie-settings` öffnet die Einstellungen mit dem aktuellen Stand.
+- **Wahl: (3).** Der Test „Schild öffnet die Einstellungen“ wird im Testschreiber-Paket P3-14c auf den Fußlink umgestellt; Fälle und `expect` bleiben gleich viele. Prüfhinweis an den Auftraggeber: MENSCHEN M-18.
+- **Umkehrprobe:** Schild wieder einhängen (Hook liefert `handleShieldClick` unverändert).
