@@ -1,6 +1,7 @@
 import { CheckCircle2, Phone, Sparkles } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { labelOf, ROOM_OPTIONS } from './logik';
+import ResultSummary from './ResultSummary';
 
 // Erfolgsansicht nach dem Absenden (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
 export default function Erfolg({ setStep, data, setSentVia, referenceId, setReferenceId }) {
