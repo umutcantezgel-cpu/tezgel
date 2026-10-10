@@ -17,7 +17,7 @@ export default function Schaufenster() {
           {ICON_NAMEN.map((n) => (
             <li key={n} className="flex flex-col items-center gap-2 border-b border-r border-fuge bg-fliese p-4">
               <Icon name={n} groesse={6} />
-              <span className="font-mono text-fs-1 text-tinte-2">{n}</span>
+              <span className="max-w-full font-mono text-fs-1 break-all text-tinte-2">{n}</span>
             </li>
           ))}
           <li className="flex flex-col items-center gap-2 border-b border-r border-fuge bg-fliese p-4">

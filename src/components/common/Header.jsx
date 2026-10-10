@@ -94,7 +94,7 @@ export default function Header({ isMobileMenuOpen }) {
             className="kopf-anker fixed inset-x-0 top-0 z-40 border-b border-fuge bg-kalk"
             data-feste-ebene
         >
-            <div className={clsx(seitenKlassen, 'flex h-16 items-center justify-between gap-6')}>
+            <div className={clsx(seitenKlassen, 'flex h-16 items-center justify-between gap-6 xl:gap-4 2xl:gap-6')}>
                 <Link href="/" className="shrink-0" aria-label="Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite">
                     <BrandMark />
                 </Link>
@@ -119,8 +119,8 @@ export default function Header({ isMobileMenuOpen }) {
                                         onClick={() => setOpenMenu(null)}
                                         aria-current={pathname === link.path ? 'page' : undefined}
                                         className={clsx(
-                                            'flex items-center whitespace-nowrap pl-3 text-fs-2 font-semibold text-tinte transition-colors dauer-1 ease-setzen hover:text-tinte-2',
-                                            link.submenu ? 'pr-1' : 'pr-3'
+                                            'flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibold text-tinte transition-colors dauer-1 ease-setzen hover:text-tinte-2',
+                                            link.submenu ? 'pr-1' : 'pr-3 xl:pr-2 2xl:pr-3'
                                         )}
                                         data-motion="zustand"
                                     >
@@ -139,7 +139,7 @@ export default function Header({ isMobileMenuOpen }) {
                                             <Icon
                                                 name="winkel-unten"
                                                 groesse={4}
-                                                className={clsx('transition-transform dauer-2 ease-setzen', isOpen && 'rotate-180')}
+                                                className={clsx('motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen', isOpen && 'rotate-180')}
                                             />
                                         </button>
                                     )}
@@ -211,12 +211,12 @@ export default function Header({ isMobileMenuOpen }) {
                 <div className="flex shrink-0 items-center gap-2">
                     <a
                         href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                        className="hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte sm:inline-flex"
+                        className="hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:text-fs-2 text-tinte underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte sm:inline-flex"
                         aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
                         data-motion="zustand"
                     >
                         <Icon name="telefon" groesse={5} />
-                        <span className="hidden lg:inline xl:hidden">{COMPANY_DATA.contact.phone}</span>
+                        <span className="hidden lg:inline">{COMPANY_DATA.contact.phone}</span>
                     </a>
                     <Link href={primaryCta.path} className={knopfKlassen('haupt', 'px-4 max-sm:hidden')} data-motion="druck">
                         {primaryCta.name}
