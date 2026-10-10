@@ -11,7 +11,7 @@
       "build": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-707a93d/.next/server/app",
       "nur": null
     },
-    "src_stand": "git HEAD 76ba942 (Arbeitsbaum ohne Änderungen an src/ und public/)",
+    "src_stand": "git HEAD 96db4f1 (Arbeitsbaum ohne Änderungen an src/ und public/)",
     "build_stand": "Ausgangsstand 707a93d (reinraum-707a93d/.next/server/app), nur lesen",
     "einheiten": {
       "kilobyte": 1024,
@@ -37,11 +37,13 @@
       "JSX-Ausdrücke (z. B. fill={c}, viewBox per Template) werden nur über Literale geprüft; nicht auswertbare Werte bleiben ungezählt",
       "Phosphor-Imports im Quellcode sind nicht im Markup sichtbar; Familie wird nur über Markup erkannt",
       "Build-Stand (707a93d) und Arbeitsbaum (HEAD) unterscheiden sich in 25 Dateien unter src/ und public/",
-      "Marken-Erkennung über Liste; neue Marken brauchen einen Eintrag"
+      "Marken-Erkennung über Liste; neue Marken brauchen einen Eintrag",
+      "Budgets gelten für ausgelieferte Markups (public, Build); Quellblöcke aus src/ werden nur gezählt, nicht gegen das Budget geprüft (JSX-Text ist größer als das Ergebnis)",
+      "Quelle wird als ganze Datei geparst; Parser ist ein Tokenizer ohne TypeScript-Parser (keine Abhängigkeit im Paket), Zählung gegen grep geprüft"
     ],
-    "laufzeit_s": 2.4
+    "laufzeit_s": 3.1
   },
-  "erstellt": "2026-10-10T19:26:57.623Z",
+  "erstellt": "2026-10-10T19:30:09.466Z",
   "zaehlung": {
     "public": {
       "dateien": 3,
@@ -80,9 +82,9 @@
       ]
     },
     "Zugänglichkeit nicht belegt": {
-      "instanzen": 45,
-      "muster": 15,
-      "orte": 8,
+      "instanzen": 44,
+      "muster": 14,
+      "orte": 7,
       "beispiele": [
         {
           "ort": "public/images/logo/tezgel-logo-dark.svg",
@@ -154,35 +156,60 @@
         }
       ]
     },
-    "Budget Icon über 1,5 KB (roh)": {
-      "instanzen": 1,
-      "muster": 1,
-      "orte": 1,
-      "beispiele": [
-        {
-          "ort": "src/components/common/TileCraftIcons.jsx:11",
-          "art": "icon",
-          "familie": "eigene",
-          "kurz": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2.5\" strokeLinecap=\"round\" strokeLinejoin=\"round\" className={`${className} transition-t…"
-        }
-      ]
-    },
     "mehrere Icon-Familien je Seite": {
       "instanzen": 171,
       "muster": 0,
       "orte": 171,
       "beispiele": [],
       "einheit": "Seiten"
+    },
+    "viewBox fehlt": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "ID-Kollision": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": [],
+      "einheit": "SVG-Instanzen mit doppelter ID (Quelle: Datei; Build: Seiten-DOM)"
+    },
+    "url(#…)/href ohne Ziel": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "Budget Icon über 1,5 KB (roh)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "Budget Illustration über 40 KB (gzip)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "ID-Dopplung im Seiten-DOM (Build, alle Elemente)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": [],
+      "einheit": "doppelte IDs je Seite (instanzen = Anzahl IDs)"
     }
   },
   "a11y": {
     "zaehlung": {
-      "fehlt": 45,
+      "fehlt": 44,
       "bedeutung": 1,
-      "dekorativ": 21653
+      "dekorativ": 21654
     },
     "gruende": {
-      "weder aria-hidden noch role=img": 20,
+      "weder aria-hidden noch role=img": 19,
       "role=img nur mit aria-label": 25
     }
   },
@@ -222,12 +249,12 @@
   },
   "budgets": {
     "icon": {
-      "geprueft": 21669,
-      "groesstes_roh_bytes": 1706,
-      "ueber_budget": 1
+      "geprueft": 21656,
+      "groesstes_roh_bytes": 882,
+      "ueber_budget": 0
     },
     "illustration": {
-      "geprueft": 8,
+      "geprueft": 6,
       "groesstes_gzip_bytes": 1158,
       "ueber_budget": 0
     },

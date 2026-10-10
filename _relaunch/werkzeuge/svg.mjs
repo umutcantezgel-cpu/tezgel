@@ -58,6 +58,7 @@ const R = {
   BUD_ICON: 'Budget Icon über 1,5 KB (roh)',
   BUD_ILL: 'Budget Illustration über 40 KB (gzip)',
   FAM: 'mehrere Icon-Familien je Seite',
+  IDSEITE: 'ID-Dopplung im Seiten-DOM (Build, alle Elemente)',
 };
 
 // ---------- Tokenizer für HTML und JSX (keine Parser-Abhängigkeit im Paket) ----------
@@ -351,9 +352,10 @@ function analyseUnit(sv, kx) {
   }
   if (a11y === 'fehlt') befunde.push(R.A11Y);
 
-  // Budgets (Marken ausgenommen)
-  if (!marke && art === 'icon' && bytes > BUDGET_ICON_ROH) befunde.push(R.BUD_ICON);
-  if (!marke && (art === 'illustration' || art === 'unbekannt') && gz > BUDGET_ILL_GZ) befunde.push(R.BUD_ILL);
+  // Budgets (Marken ausgenommen; Quellblöcke nicht: ihr Text ist JSX, nicht das ausgelieferte Markup)
+  const budgetPruefen = !marke && quelle !== 'src';
+  if (budgetPruefen && art === 'icon' && bytes > BUDGET_ICON_ROH) befunde.push(R.BUD_ICON);
+  if (budgetPruefen && (art === 'illustration' || art === 'unbekannt') && gz > BUDGET_ILL_GZ) befunde.push(R.BUD_ILL);
 
   return {
     quelle, ort, art, familie, marke, hash, vb, viewBox: vbRoh !== undefined,
@@ -378,25 +380,17 @@ function analyseDoc(text, quelle, ort) {
   return roots.map((sv) => analyseUnit(sv, { text, scope, dup, quelle, ort }));
 }
 
-// Inline-SVG in JSX: jeder <svg>-Block einzeln geparst (TS-Code außerhalb stört nicht)
+// Inline-SVG in JSX: ganze Datei geparst, damit Vorfahren (z. B. <div aria-hidden>) sichtbar bleiben.
+// Die Zahl der Wurzeln wird gegen die grep-Zählung von <svg in der Datei geprüft (siehe Bedingungen).
 function analyseFragmente(text, quelle, ort) {
-  const frags = [];
-  let ende = 0;
-  for (const m of text.matchAll(/<svg\b/g)) {
-    if (m.index < ende) continue;
-    const sub = text.slice(m.index);
-    const tree = parse(sub);
-    const root = tree.ch.find((n) => n.n === 'svg');
-    if (!root) continue;
-    ende = m.index + (root.ee ?? sub.length);
-    frags.push({ sub, root, pos: m.index });
-  }
-  const ids = frags.flatMap((f) => allEls(f.root).map((e) => getA(e, 'id')).filter((v) => typeof v === 'string' && v));
+  const tree = parse(text);
+  const roots = findSvgRoots(tree);
+  const ids = roots.flatMap((sv) => allEls(sv).map((e) => getA(e, 'id')).filter((v) => typeof v === 'string' && v));
   const scope = new Set(ids);
   const dup = dupSet(ids);
-  return frags.map((f) => {
-    const zeile = text.slice(0, f.pos).split('\n').length;
-    return analyseUnit(f.root, { text: f.sub, scope, dup, quelle, ort: `${ort}:${zeile}` });
+  return roots.map((sv) => {
+    const zeile = text.slice(0, sv.s).split('\n').length;
+    return analyseUnit(sv, { text, scope, dup, quelle, ort: `${ort}:${zeile}` });
   });
 }
 
@@ -557,6 +551,11 @@ for (const u of units) {
   }
 }
 for (const seite of seiten) {
+  if (seite.id_doppelt) {
+    const r = (regeln[R.IDSEITE] ||= { instanzen: 0, muster: new Set(), orte: new Set(), beispiele: [] });
+    r.instanzen += seite.id_doppelt;
+    r.orte.add(seite.seite);
+  }
   if (seite.befunde[R.FAM]) {
     const r = (regeln[R.FAM] ||= { instanzen: 0, muster: new Set(), orte: new Set(), beispiele: [] });
     r.instanzen++;
@@ -567,9 +566,11 @@ const regelnAus = Object.fromEntries(Object.entries(regeln).map(([k, r]) => [k, 
   instanzen: r.instanzen, muster: r.muster.size, orte: r.orte.size,
   beispiele: r.beispiele.map(({ hash, ...rest }) => rest),
 }]));
+for (const k of Object.values(R)) regelnAus[k] ??= { instanzen: 0, muster: 0, orte: 0, beispiele: [] };
 // Seitenweise Zählung für die Icon-Familien-Regel (kein Muster)
 regelnAus[R.FAM] && (regelnAus[R.FAM].einheit = 'Seiten');
-if (regelnAus[R.ID]) regelnAus[R.ID].einheit = 'Instanzen (Quelle: Datei; Build: Seiten-DOM)';
+if (regelnAus[R.ID]) regelnAus[R.ID].einheit = 'SVG-Instanzen mit doppelter ID (Quelle: Datei; Build: Seiten-DOM)';
+if (regelnAus[R.IDSEITE]) regelnAus[R.IDSEITE].einheit = 'doppelte IDs je Seite (instanzen = Anzahl IDs)';
 
 const familien = {};
 for (const u of units) {
@@ -580,8 +581,9 @@ for (const u of units) {
   for (const [k, c] of Object.entries(u.striche)) f.strich[k] = (f.strich[k] || 0) + c;
 }
 
-const icons = units.filter((u) => u.art === 'icon' && !u.marke);
-const ills = units.filter((u) => (u.art === 'illustration' || u.art === 'unbekannt') && !u.marke);
+const ausgeliefert = units.filter((u) => u.quelle !== 'src' && !u.marke);
+const icons = ausgeliefert.filter((u) => u.art === 'icon');
+const ills = ausgeliefert.filter((u) => u.art === 'illustration' || u.art === 'unbekannt');
 const budgets = {
   icon: {
     geprueft: icons.length,
@@ -643,6 +645,8 @@ const erg = {
       'Phosphor-Imports im Quellcode sind nicht im Markup sichtbar; Familie wird nur über Markup erkannt',
       'Build-Stand (707a93d) und Arbeitsbaum (HEAD) unterscheiden sich in 25 Dateien unter src/ und public/',
       'Marken-Erkennung über Liste; neue Marken brauchen einen Eintrag',
+      'Budgets gelten für ausgelieferte Markups (public, Build); Quellblöcke aus src/ werden nur gezählt, nicht gegen das Budget geprüft (JSX-Text ist größer als das Ergebnis)',
+      'Quelle wird als ganze Datei geparst; Parser ist ein Tokenizer ohne TypeScript-Parser (keine Abhängigkeit im Paket), Zählung gegen grep geprüft',
     ],
     laufzeit_s: Number(((Date.now() - t0) / 1000).toFixed(1)),
   },
