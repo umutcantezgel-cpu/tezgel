@@ -178,3 +178,14 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Bewertung:** (3) erhält die Funktion „Widerruf jederzeit“ (F-11) auf jeder Seite, ohne feste Ebene. Die Einwilligungslogik bleibt unberührt (G9); `#cookie-settings` öffnet die Einstellungen mit dem aktuellen Stand.
 - **Wahl: (3).** Der Test „Schild öffnet die Einstellungen“ wird im Testschreiber-Paket P3-14c auf den Fußlink umgestellt; Fälle und `expect` bleiben gleich viele. Prüfhinweis an den Auftraggeber: MENSCHEN M-18.
 - **Umkehrprobe:** Schild wieder einhängen (Hook liefert `handleShieldClick` unverändert).
+
+## E-021 · Servicegebiet auf `/` im Kern: Städteregister + Karte nach Einwilligung, ohne Radar und Kartenumschalter
+- **Bestand:** `InteractiveServiceMap` mit Radar-Ansicht (Animation), Umschalter Radar/OpenStreetMap/Google-JS-Karte und Stadtwahl auf der Karte. Alles hinter dem Zwei-Klick-Platzhalter.
+- **Ziel:** Besucheraufgabe 4 „Eigenen Ort prüfen“ (K-002) und F-12 bleiben erhalten. Die Gestaltungsmerkmale folgen KERN.
+- **Wege:**
+  1. Alles nachbauen. Das wäre eine Kopie der Bestands-Logik und der Google-Bibliothek, dazu eine Radar-Bewegung ohne Registereintrag.
+  2. Städteregister mit Links zu den Standortseiten plus OSM-Karte des Bestands nach Einwilligung, ohne Radar und Umschalter.
+  3. Karte ganz streichen. Das verlöre F-12 auf `/`.
+- **Bewertung:** (2) löst die Aufgabe ohne Karte: jede Stadt als Link mit Entfernung ab Aßlar, die Karte nur nach Einwilligung. Das Radar hat keine Aufgabe und keinen Registereintrag (S-09-nah). Der Umschalter verdoppelt die Fremdanfragen.
+- **Wahl: (2)** (P3-12). Die Entfernungen werden ab dem Firmensitz Aßlar angezeigt (`CITY_HUB_DATA`). Im Bestand standen sie ab Wetzlar, aber als Abstand zum Firmensitz bezeichnet; das ist eine Wahrheitskorrektur. Die Stadtwahl auf der Karte prüft W3 (`/standorte`) erneut.
+- **Umkehrprobe:** Revert. Der Bestand bleibt bis zur Freischaltung unverändert.
