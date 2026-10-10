@@ -41,20 +41,9 @@ export function MapConsentGate({
     "--karten-hoehe": typeof height === "number" ? `${height}px` : height,
   } as CSSProperties;
 
-  if (!isHydrated) {
-    return (
-      <div className={rahmen} style={rahmenStil}>
-        <div className="flex h-full flex-col p-6">
-          <span className={etikettKlassen}>
-            <Icon name="schloss" groesse={4} />
-            Karte
-          </span>
-        </div>
-      </div>
-    );
-  }
-
-  const hasConsent = manualAccepted || consent?.marketing;
+  // Vor der Hydrierung (Server und erster Browserlauf) gilt noch keine Einwilligung: das Einwilligungs-Tor mit Texten
+  // und Knöpfen steht sofort im Dokument; die Karte erscheint erst danach und nur mit Einwilligung.
+  const hasConsent = isHydrated && (manualAccepted || consent?.marketing);
 
   if (hasConsent) {
     if (children) {
