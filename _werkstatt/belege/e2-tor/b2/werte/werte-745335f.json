@@ -1,0 +1,5126 @@
+{
+ "werkzeug": "werte.mjs",
+ "zeitpunkt": "2026-10-10T23:02:42.744Z",
+ "basis": "745335f",
+ "arbeitsbaum": true,
+ "regeln": "_werkstatt/werkzeuge/werte-regeln.json",
+ "dateien": [
+  "src/app/beratung/page.jsx",
+  "src/app/bewegung.css",
+  "src/app/blog/layout.tsx",
+  "src/app/globals.css",
+  "src/app/kontakt/page.jsx",
+  "src/app/layout.tsx",
+  "src/app/login/layout.tsx",
+  "src/app/not-found.tsx",
+  "src/app/page.tsx",
+  "src/components/common/CookieConsent.tsx",
+  "src/components/common/FloatingWhatsAppWidget.tsx",
+  "src/components/common/Footer.jsx",
+  "src/components/common/Header.jsx",
+  "src/components/common/MobileMenu.jsx",
+  "src/components/contact/BookingCalendar.tsx",
+  "src/components/contact/DirectContactCard.tsx",
+  "src/components/forms/HeroContactForm.tsx",
+  "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+  "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+  "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+  "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+  "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+  "src/components/funnels/BadProjektCheck/index.jsx",
+  "src/components/funnels/BadProjektCheck/logik.js",
+  "src/components/funnels/BadProjektCheck/stile.js",
+  "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+  "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+  "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+  "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+  "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+  "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+  "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+  "src/components/funnels/BadanfrageFunnel/index.jsx",
+  "src/components/funnels/BadanfrageFunnel/logik.js",
+  "src/components/funnels/BadanfrageFunnel/stile.js",
+  "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+  "src/components/funnels/FliesenKonfigurator/OptionGroup.jsx",
+  "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt2.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+  "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+  "src/components/funnels/FliesenKonfigurator/index.jsx",
+  "src/components/funnels/FliesenKonfigurator/logik.js",
+  "src/components/funnels/FliesenKonfigurator/stile.js",
+  "src/components/funnels/TezgelAnfrageFunnel/Erfolg.jsx",
+  "src/components/funnels/TezgelAnfrageFunnel/Schritt1.jsx",
+  "src/components/funnels/TezgelAnfrageFunnel/Schritt2.jsx",
+  "src/components/funnels/TezgelAnfrageFunnel/Schritt3.jsx",
+  "src/components/funnels/TezgelAnfrageFunnel/WhatsAppGeoeffnet.jsx",
+  "src/components/funnels/TezgelAnfrageFunnel/index.tsx",
+  "src/components/funnels/TezgelAnfrageFunnel/logik.ts",
+  "src/components/funnels/TezgelAnfrageFunnel/stile.ts",
+  "src/components/icons/Icon.tsx",
+  "src/components/icons/ersatz.tsx",
+  "src/components/icons/namen.ts",
+  "src/components/icons/zuordnung.ts",
+  "src/components/kern/Abschnitt.tsx",
+  "src/components/kern/BewegungsWaechter.tsx",
+  "src/components/kern/Bildfeld.tsx",
+  "src/components/kern/Einstieg.tsx",
+  "src/components/kern/Feldraster.tsx",
+  "src/components/kern/Fugenkreuz.tsx",
+  "src/components/kern/Hinweis.tsx",
+  "src/components/kern/Kennwerte.tsx",
+  "src/components/kern/Knopf.tsx",
+  "src/components/kern/Kreuzlinie.tsx",
+  "src/components/kern/Laserachse.tsx",
+  "src/components/kern/Merkliste.tsx",
+  "src/components/kern/RatgeberListe.tsx",
+  "src/components/kern/Schriftfeld.tsx",
+  "src/components/kern/Schrittfolge.tsx",
+  "src/components/kern/SzeneAblauf.tsx",
+  "src/components/kern/Tabelle.tsx",
+  "src/components/kern/Verlegeplan.tsx",
+  "src/components/kern/stile.ts",
+  "src/components/layout/ClientWidgets.tsx",
+  "src/components/layout/HeaderWrapper.tsx",
+  "src/components/layout/MobileBottomBar.tsx",
+  "src/components/legal/MapConsentGate.tsx",
+  "src/components/locations/LocationContact.tsx",
+  "src/components/maps/ContactPremiumMap.tsx",
+  "src/components/maps/InteractiveMap.tsx",
+  "src/components/maps/InteractiveServiceMap.tsx",
+  "src/components/maps/LocalDominanceMap.tsx",
+  "src/components/maps/ServiceMapWrapper.tsx",
+  "src/components/pricing/PricingCalculator.tsx",
+  "src/components/reviews/GoogleReviewsBadge.tsx",
+  "src/components/reviews/ReviewCard.tsx",
+  "src/components/reviews/ReviewCarousel.tsx",
+  "src/components/sections/CompanyHistory.jsx",
+  "src/components/sections/QualityPromise.jsx",
+  "src/components/trust/TrustStrip.tsx",
+  "src/components/ui/FAQAccordion.tsx",
+  "src/components/ui/FinalCTA.tsx",
+  "src/components/ui/Markenlogos.tsx",
+  "src/lib/motion/bewegung.ts",
+  "src/lib/motion/kopfskript.ts",
+  "src/lib/motion/register.ts",
+  "src/lib/plaene/geometrie.ts",
+  "src/lib/plaene/typen.ts",
+  "src/lib/plaene/vorgaben.ts",
+  "src/lib/stimmen.ts",
+  "src/lib/whatsapp.ts",
+  "src/utils/iconMapper.jsx"
+ ],
+ "kandidaten_vorkommen": 5142,
+ "kandidaten_eindeutig": 536,
+ "stil_nicht_pruefbar": 4,
+ "laufzeit_ms": 770,
+ "zusammenfassung": {
+  "ohne_css": 20,
+  "beliebig": 19,
+  "farbe_ausserhalb": 322,
+  "abstand_ausserhalb": 77,
+  "groesse_ausserhalb": 45,
+  "schrift_ausserhalb": 186,
+  "radius_ausserhalb": 32,
+  "dauer_ausserhalb": 9,
+  "farbe_literal": 0,
+  "style_wert": 1,
+  "dauer_zahl": 2
+ },
+ "befunde": [
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 67,
+   "art": "abstand_ausserhalb",
+   "kandidat": "pb-20",
+   "hinweis": "pb-20: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 74,
+   "art": "dauer_zahl",
+   "kandidat": "duration: 0.6",
+   "hinweis": "Dauer als Zahl; nur dauer-1 … dauer-5 und ease-Tokens"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 77,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 77,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 80,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-4xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 80,
+   "art": "schrift_ausserhalb",
+   "kandidat": "md:text-5xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 80,
+   "art": "schrift_ausserhalb",
+   "kandidat": "lg:text-6xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 80,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 85,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 85,
+   "art": "schrift_ausserhalb",
+   "kandidat": "md:text-xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 85,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 93,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 102,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:py-20",
+   "hinweis": "py-20: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 102,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 104,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-14",
+   "hinweis": "mb-14: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 106,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 106,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-4xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 106,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 109,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 118,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-50",
+   "hinweis": "--color-slate-50 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 118,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-lg",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 118,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 118,
+   "art": "abstand_ausserhalb",
+   "kandidat": "hover:-translate-y-0.5",
+   "hinweis": "translate-y-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 118,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:border-orange-500/80",
+   "hinweis": "--color-orange-500 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 118,
+   "art": "beliebig",
+   "kandidat": "hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 118,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-300",
+   "hinweis": "duration-300 nicht in dauern"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 120,
+   "art": "schrift_ausserhalb",
+   "kandidat": "font-display",
+   "hinweis": "Schriftfamilie nicht in schrift"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 120,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-4xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 120,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600/25",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 120,
+   "art": "farbe_ausserhalb",
+   "kandidat": "group-hover:text-orange-600/40",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 123,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 123,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 124,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 124,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 132,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:py-20",
+   "hinweis": "py-20: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 134,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-xl",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 140,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 140,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 141,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 141,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 145,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 145,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 147,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-md",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 147,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-50",
+   "hinweis": "--color-slate-50 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 147,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 148,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 148,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-0.5",
+   "hinweis": "mt-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 149,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 161,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:py-20",
+   "hinweis": "py-20: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 161,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 165,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 165,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-4xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 165,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 168,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 175,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-md",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 175,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-50",
+   "hinweis": "--color-slate-50 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 175,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 176,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 176,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 177,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 180,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 180,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 180,
+   "art": "abstand_ausserhalb",
+   "kandidat": "pl-7",
+   "hinweis": "pl-7: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 190,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:py-20",
+   "hinweis": "py-20: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 192,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-xl",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 193,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 193,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 193,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 196,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 196,
+   "art": "groesse_ausserhalb",
+   "kandidat": "max-w-xl",
+   "hinweis": "max-w-xl: nicht in groessen"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 196,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 196,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 208,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/app/beratung/page.jsx",
+   "zeile": 214,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 6,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 6,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "schrift_ausserhalb",
+   "kandidat": "font-display",
+   "hinweis": "Schriftfamilie nicht in schrift"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "abstand_ausserhalb",
+   "kandidat": "px-3.5",
+   "hinweis": "px-3.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 21,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-2.5",
+   "hinweis": "h-2.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 21,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-lg",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "accent-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 23,
+   "art": "beliebig",
+   "kandidat": "text-[10px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 23,
+   "art": "beliebig",
+   "kandidat": "sm:text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt1.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 7,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 7,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 19,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-md",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 19,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-300",
+   "hinweis": "duration-300 nicht in dauern"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "ring-orange-600/20",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:border-orange-500",
+   "hinweis": "--color-orange-500 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 22,
+   "art": "abstand_ausserhalb",
+   "kandidat": "hover:-translate-y-0.5",
+   "hinweis": "translate-y-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 25,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 25,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 25,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 26,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt2.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 7,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 7,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 19,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-md",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 19,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-300",
+   "hinweis": "duration-300 nicht in dauern"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "ring-orange-600/20",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:border-orange-500",
+   "hinweis": "--color-orange-500 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 22,
+   "art": "abstand_ausserhalb",
+   "kandidat": "hover:-translate-y-0.5",
+   "hinweis": "translate-y-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 25,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 25,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 26,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt3.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 8,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 8,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 20,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 20,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-300",
+   "hinweis": "duration-300 nicht in dauern"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:border-orange-500",
+   "hinweis": "--color-orange-500 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 28,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 28,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Schritt4.jsx",
+   "zeile": 28,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-50",
+   "hinweis": "--color-slate-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 9,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-3xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 11,
+   "art": "ohne_css",
+   "kandidat": "eyebrow-sky",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 12,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 12,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 16,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-2xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 16,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 16,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 16,
+   "art": "farbe_ausserhalb",
+   "kandidat": "divide-slate-100",
+   "hinweis": "--color-slate-100 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 24,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 25,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 29,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 29,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 35,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-3.5",
+   "hinweis": "p-3.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 35,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 35,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 35,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 36,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 38,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 38,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-700",
+   "hinweis": "--color-orange-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 40,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 40,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 43,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 47,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 47,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-700",
+   "hinweis": "--color-orange-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 55,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-3.5",
+   "hinweis": "p-3.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 55,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 55,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-sky-50",
+   "hinweis": "--color-sky-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 55,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-sky-200",
+   "hinweis": "--color-sky-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 55,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 55,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 56,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 56,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 57,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-sky-600",
+   "hinweis": "--color-sky-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 62,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-sky-800",
+   "hinweis": "--color-sky-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 70,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 75,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 81,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 81,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 81,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 81,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 81,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 83,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 83,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 83,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 84,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 88,
+   "art": "abstand_ausserhalb",
+   "kandidat": "py-0.5",
+   "hinweis": "py-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 88,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-300",
+   "hinweis": "--color-orange-300 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 88,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 88,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 88,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 93,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 96,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-800",
+   "hinweis": "--color-orange-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 101,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-2.5",
+   "hinweis": "p-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 101,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-lg",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 101,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 101,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 101,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 102,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 102,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 103,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 103,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 103,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 112,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 112,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-700",
+   "hinweis": "--color-orange-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 118,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 118,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 118,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 118,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 118,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 119,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 120,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 123,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 129,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 129,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-700",
+   "hinweis": "--color-orange-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 135,
+   "art": "abstand_ausserhalb",
+   "kandidat": "space-y-2.5",
+   "hinweis": "space-y-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 137,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-2.5",
+   "hinweis": "p-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 137,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-lg",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 137,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-red-50",
+   "hinweis": "--color-red-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 137,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-red-200",
+   "hinweis": "--color-red-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 137,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 137,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-red-800",
+   "hinweis": "--color-red-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 138,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-red-600",
+   "hinweis": "--color-red-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 181,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 185,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 185,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 190,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 190,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 200,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 205,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 205,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 207,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 207,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-700",
+   "hinweis": "--color-orange-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 216,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 218,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 218,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/Zusammenfassung.jsx",
+   "zeile": 218,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 87,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:p-10",
+   "hinweis": "p-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 90,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 90,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 97,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 97,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 97,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 100,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 100,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 106,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:p-10",
+   "hinweis": "p-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadProjektCheck/index.jsx",
+   "zeile": 108,
+   "art": "abstand_ausserhalb",
+   "kandidat": "space-y-7",
+   "hinweis": "space-y-7: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 7,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-xl",
+   "hinweis": "Roh-Farbwert rgb( im erzeugten CSS"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 9,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-20",
+   "hinweis": "w-20: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 9,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-20",
+   "hinweis": "h-20: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 9,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-100",
+   "hinweis": "--color-orange-100 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-700",
+   "hinweis": "--color-orange-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 10,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-10",
+   "hinweis": "w-10: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 10,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-10",
+   "hinweis": "h-10: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 15,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-100",
+   "hinweis": "--color-slate-100 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 15,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 15,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 15,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 15,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "md:text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 20,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-900",
+   "hinweis": "--color-neutral-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 23,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 23,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-700",
+   "hinweis": "--color-neutral-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-800",
+   "hinweis": "--color-orange-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50/80",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200/80",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 26,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 26,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-2.5",
+   "hinweis": "p-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 26,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 26,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 32,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-neutral-50",
+   "hinweis": "--color-neutral-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 32,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-5",
+   "hinweis": "p-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 32,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 32,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-neutral-200",
+   "hinweis": "--color-neutral-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 32,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 33,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-900",
+   "hinweis": "--color-neutral-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 33,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 34,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 37,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 37,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 37,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 38,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 38,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 38,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 39,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 39,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 39,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 41,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 41,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 46,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Erfolg.jsx",
+   "zeile": 53,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 8,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 8,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 8,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 20,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 20,
+   "art": "farbe_ausserhalb",
+   "kandidat": "group-hover:text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 21,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt1.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 8,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 8,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 8,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 20,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 20,
+   "art": "farbe_ausserhalb",
+   "kandidat": "group-hover:text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 21,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt2.jsx",
+   "zeile": 21,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 8,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 8,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 8,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 13,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 13,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 13,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 26,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 26,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 39,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 39,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 39,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 53,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-2xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 53,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-sky-50",
+   "hinweis": "--color-sky-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 53,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-sky-200",
+   "hinweis": "--color-sky-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 54,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 54,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 55,
+   "art": "schrift_ausserhalb",
+   "kandidat": "font-display",
+   "hinweis": "Schriftfamilie nicht in schrift"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 55,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt3.jsx",
+   "zeile": 55,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 9,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 9,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 22,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 22,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "group-hover:text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 23,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 29,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 29,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 29,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-2.5",
+   "hinweis": "mb-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 39,
+   "art": "abstand_ausserhalb",
+   "kandidat": "py-2.5",
+   "hinweis": "py-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 39,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 39,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 39,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-300",
+   "hinweis": "duration-300 nicht in dauern"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 41,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 41,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 41,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 42,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 42,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 42,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:border-orange-500",
+   "hinweis": "--color-orange-500 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 46,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 46,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 46,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 48,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 48,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt4.jsx",
+   "zeile": 48,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 10,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 10,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 10,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 13,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 13,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 33,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-3.5",
+   "hinweis": "p-3.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 33,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 33,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-red-50",
+   "hinweis": "--color-red-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 33,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-red-200",
+   "hinweis": "--color-red-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 33,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-red-800",
+   "hinweis": "--color-red-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 33,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 33,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-2.5",
+   "hinweis": "gap-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 34,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-red-600",
+   "hinweis": "--color-red-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 41,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 41,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 41,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 42,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 56,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 56,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 56,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 57,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 72,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 72,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 72,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 84,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 84,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 84,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 98,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 98,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 98,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 111,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 111,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 111,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-1.5",
+   "hinweis": "mb-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 122,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 127,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 127,
+   "art": "abstand_ausserhalb",
+   "kandidat": "py-3.5",
+   "hinweis": "py-3.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 127,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-md",
+   "hinweis": "Roh-Farbwert rgb( im erzeugten CSS"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 127,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-orange-900/10",
+   "hinweis": "--color-orange-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 145,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 145,
+   "art": "abstand_ausserhalb",
+   "kandidat": "py-3.5",
+   "hinweis": "py-3.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 152,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 152,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 152,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 153,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 153,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 153,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 153,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-0.5",
+   "hinweis": "mt-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 157,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 157,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-700",
+   "hinweis": "--color-orange-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 169,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 169,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 169,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/Schritt5.jsx",
+   "zeile": 169,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 7,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-xl",
+   "hinweis": "Roh-Farbwert rgb( im erzeugten CSS"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 9,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-20",
+   "hinweis": "w-20: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 9,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-20",
+   "hinweis": "h-20: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 9,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-xl",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-green-100",
+   "hinweis": "--color-green-100 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 9,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-green-700",
+   "hinweis": "--color-green-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 10,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-10",
+   "hinweis": "w-10: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 10,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-10",
+   "hinweis": "h-10: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 13,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 13,
+   "art": "schrift_ausserhalb",
+   "kandidat": "md:text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 13,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 16,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 16,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 16,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 20,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/WhatsAppGeoeffnet.jsx",
+   "zeile": 27,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 109,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 109,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 116,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 116,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 116,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-900",
+   "hinweis": "--color-neutral-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 125,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 125,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-300",
+   "hinweis": "duration-300 nicht in dauern"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 126,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 126,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-neutral-200",
+   "hinweis": "--color-neutral-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 134,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:p-10",
+   "hinweis": "p-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 148,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 153,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 153,
+   "art": "abstand_ausserhalb",
+   "kandidat": "py-2.5",
+   "hinweis": "py-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 153,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 153,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 153,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 153,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/BadanfrageFunnel/index.jsx",
+   "zeile": 165,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 10,
+   "art": "beliebig",
+   "kandidat": "rounded-[2.5rem]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 10,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:p-10",
+   "hinweis": "p-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 10,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-xl",
+   "hinweis": "Roh-Farbwert rgb( im erzeugten CSS"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 12,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 12,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-5",
+   "hinweis": "mb-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 12,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-100",
+   "hinweis": "--color-orange-100 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 12,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 13,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-9",
+   "hinweis": "w-9: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 13,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-9",
+   "hinweis": "h-9: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 18,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-100",
+   "hinweis": "--color-slate-100 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 18,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 18,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 18,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 18,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 23,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 23,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 26,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 26,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 29,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-800",
+   "hinweis": "--color-orange-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 29,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50/80",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 29,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200/80",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 29,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 29,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-2.5",
+   "hinweis": "p-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 29,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 29,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 36,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-5",
+   "hinweis": "p-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 36,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-2xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 36,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-neutral-50",
+   "hinweis": "--color-neutral-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 36,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-neutral-200",
+   "hinweis": "--color-neutral-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 36,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 36,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 36,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-700",
+   "hinweis": "--color-neutral-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 37,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-900",
+   "hinweis": "--color-neutral-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 38,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 41,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 41,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-600",
+   "hinweis": "--color-neutral-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 51,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+   "zeile": 58,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 17,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-5",
+   "hinweis": "p-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 17,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-md",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 17,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-50",
+   "hinweis": "--color-slate-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 17,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 18,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 18,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 19,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 22,
+   "art": "beliebig",
+   "kandidat": "sm:grid-cols-[max-content_1fr]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 22,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-y-1.5",
+   "hinweis": "gap-y-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 22,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 25,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 26,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 32,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-5",
+   "hinweis": "p-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 32,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-md",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 32,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 32,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 33,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 33,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 34,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 37,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 37,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 40,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 42,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 47,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 52,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 57,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 59,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 65,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 69,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 69,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 76,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-5",
+   "hinweis": "p-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 76,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-md",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 76,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-sky-50",
+   "hinweis": "--color-sky-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 76,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-sky-200",
+   "hinweis": "--color-sky-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 77,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 77,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 78,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-sky-600",
+   "hinweis": "--color-sky-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 81,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 81,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 84,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+   "zeile": 84,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-0.5",
+   "hinweis": "mt-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 9,
+   "art": "abstand_ausserhalb",
+   "kandidat": "space-y-5",
+   "hinweis": "space-y-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 24,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 24,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 25,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 27,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 27,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 27,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-0.5",
+   "hinweis": "mt-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 35,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-2xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 35,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-sky-50",
+   "hinweis": "--color-sky-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 35,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-sky-200",
+   "hinweis": "--color-sky-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 35,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 35,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 46,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+   "zeile": 46,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 22,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 22,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 22,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 23,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 23,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 86,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-2.5",
+   "hinweis": "h-2.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 86,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 86,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-lg",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 86,
+   "art": "farbe_ausserhalb",
+   "kandidat": "accent-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 88,
+   "art": "beliebig",
+   "kandidat": "text-[10px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 88,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 94,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 94,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 102,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 103,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 103,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 133,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 133,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 133,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 134,
+   "art": "beliebig",
+   "kandidat": "text-[11px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 134,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 248,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 248,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 256,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-2xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 256,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-sky-50",
+   "hinweis": "--color-sky-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 256,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-sky-200",
+   "hinweis": "--color-sky-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 256,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 256,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 274,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+   "zeile": 274,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 17,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 32,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 90,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 90,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-600",
+   "hinweis": "--color-slate-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 93,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-2.5",
+   "hinweis": "gap-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 93,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 93,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 99,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-0.5",
+   "hinweis": "mt-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 99,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 99,
+   "art": "farbe_ausserhalb",
+   "kandidat": "accent-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 104,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 109,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 109,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-red-50",
+   "hinweis": "--color-red-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 109,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-red-200",
+   "hinweis": "--color-red-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 109,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 109,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-red-800",
+   "hinweis": "--color-red-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 110,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-0.5",
+   "hinweis": "mt-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 110,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-red-600",
+   "hinweis": "--color-red-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 115,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 122,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 141,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 147,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 147,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 147,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 148,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 148,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 148,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 148,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-0.5",
+   "hinweis": "mt-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 159,
+   "art": "abstand_ausserhalb",
+   "kandidat": "gap-1.5",
+   "hinweis": "gap-1.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 159,
+   "art": "abstand_ausserhalb",
+   "kandidat": "py-2.5",
+   "hinweis": "py-2.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 159,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 159,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 159,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+   "zeile": 159,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 8,
+   "art": "beliebig",
+   "kandidat": "rounded-[2.5rem]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 8,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:p-10",
+   "hinweis": "p-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 10,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 10,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-5",
+   "hinweis": "mb-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 11,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-9",
+   "hinweis": "w-9: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 11,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-9",
+   "hinweis": "h-9: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 16,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 16,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 16,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 19,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 19,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 19,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 28,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 28,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-800",
+   "hinweis": "--color-slate-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 33,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+   "zeile": 37,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 110,
+   "art": "groesse_ausserhalb",
+   "kandidat": "w-3.5",
+   "hinweis": "w-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 110,
+   "art": "groesse_ausserhalb",
+   "kandidat": "h-3.5",
+   "hinweis": "h-3.5: nicht in groessen"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 120,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 120,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 120,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-300",
+   "hinweis": "duration-300 nicht in dauern"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 122,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 122,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-md",
+   "hinweis": "Roh-Farbwert rgb( im erzeugten CSS"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 122,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-orange-600/30",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 124,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 124,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 124,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 125,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 125,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-300",
+   "hinweis": "--color-slate-300 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 130,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 145,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 145,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 146,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 146,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 146,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 149,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-3.5",
+   "hinweis": "p-3.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 149,
+   "art": "ohne_css",
+   "kandidat": "rounded-tile-sm",
+   "hinweis": "erzeugt kein CSS: Klasse ist nicht im Designsystem"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 149,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 150,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 150,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 152,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 152,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 155,
+   "art": "schrift_ausserhalb",
+   "kandidat": "font-display",
+   "hinweis": "Schriftfamilie nicht in schrift"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 155,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 155,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-950",
+   "hinweis": "--color-orange-950 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 157,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 157,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 161,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 161,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 164,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 164,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 165,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 177,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 177,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-500",
+   "hinweis": "duration-500 nicht in dauern"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 177,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 177,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 183,
+   "art": "abstand_ausserhalb",
+   "kandidat": "sm:p-10",
+   "hinweis": "p-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 185,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 185,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 185,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-900",
+   "hinweis": "--color-slate-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 188,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 188,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-slate-700",
+   "hinweis": "--color-slate-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 206,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-slate-200",
+   "hinweis": "--color-slate-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 211,
+   "art": "abstand_ausserhalb",
+   "kandidat": "px-5",
+   "hinweis": "px-5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 211,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/funnels/FliesenKonfigurator/index.jsx",
+   "zeile": 224,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 31,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mb-20",
+   "hinweis": "mb-20: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 35,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-4xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 35,
+   "art": "schrift_ausserhalb",
+   "kandidat": "md:text-5xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 35,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-900",
+   "hinweis": "--color-neutral-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 39,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-base",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 39,
+   "art": "schrift_ausserhalb",
+   "kandidat": "sm:text-lg",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 39,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-700",
+   "hinweis": "--color-neutral-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 46,
+   "art": "beliebig",
+   "kandidat": "w-[3px]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 46,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-neutral-200",
+   "hinweis": "--color-neutral-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 48,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 49,
+   "art": "style_wert",
+   "kandidat": "style.scaleY",
+   "hinweis": "Inline-style nur zum Setzen von CSS-Variablen (--name)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 59,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 59,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 61,
+   "art": "abstand_ausserhalb",
+   "kandidat": "pl-10",
+   "hinweis": "pl-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 68,
+   "art": "dauer_zahl",
+   "kandidat": "duration: 0.8",
+   "hinweis": "Dauer als Zahl; nur dauer-1 … dauer-5 und ease-Tokens"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 69,
+   "art": "beliebig",
+   "kandidat": "md:w-[42%]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 71,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-2xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 71,
+   "art": "abstand_ausserhalb",
+   "kandidat": "hover:-translate-y-0.5",
+   "hinweis": "translate-y-0.5: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 71,
+   "art": "farbe_ausserhalb",
+   "kandidat": "hover:border-orange-500/80",
+   "hinweis": "--color-orange-500 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 71,
+   "art": "beliebig",
+   "kandidat": "hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 71,
+   "art": "dauer_ausserhalb",
+   "kandidat": "duration-200",
+   "hinweis": "duration-200 nicht in dauern"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 73,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 73,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 73,
+   "art": "farbe_ausserhalb",
+   "kandidat": "bg-orange-50",
+   "hinweis": "--color-orange-50 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 73,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-200",
+   "hinweis": "--color-orange-200 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 73,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-800",
+   "hinweis": "--color-orange-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 76,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 79,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 79,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-900",
+   "hinweis": "--color-neutral-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 79,
+   "art": "farbe_ausserhalb",
+   "kandidat": "group-hover:text-orange-800",
+   "hinweis": "--color-orange-800 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 82,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-700",
+   "hinweis": "--color-neutral-700 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 82,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-sm",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 94,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-full",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 94,
+   "art": "farbe_ausserhalb",
+   "kandidat": "border-orange-600",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 94,
+   "art": "farbe_ausserhalb",
+   "kandidat": "shadow-md",
+   "hinweis": "Roh-Farbwert rgb( im erzeugten CSS"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 99,
+   "art": "beliebig",
+   "kandidat": "md:w-[42%]",
+   "hinweis": "Beliebigwert: nur Tokens aus dem Theme verwenden"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 112,
+   "art": "abstand_ausserhalb",
+   "kandidat": "mt-28",
+   "hinweis": "mt-28: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 112,
+   "art": "abstand_ausserhalb",
+   "kandidat": "p-10",
+   "hinweis": "p-10: Stufe nicht in abstaende"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 112,
+   "art": "radius_ausserhalb",
+   "kandidat": "rounded-2xl",
+   "hinweis": "Radius nicht in radien"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 114,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-600/60",
+   "hinweis": "--color-orange-600 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 115,
+   "art": "schrift_ausserhalb",
+   "kandidat": "font-display",
+   "hinweis": "Schriftfamilie nicht in schrift"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 115,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-2xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 115,
+   "art": "schrift_ausserhalb",
+   "kandidat": "md:text-3xl",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 115,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-neutral-900",
+   "hinweis": "--color-neutral-900 nicht in farben"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 118,
+   "art": "schrift_ausserhalb",
+   "kandidat": "text-xs",
+   "hinweis": "Schriftgröße nicht in schrift (text-fs-1 … text-fs-7)"
+  },
+  {
+   "datei": "src/components/sections/CompanyHistory.jsx",
+   "zeile": 118,
+   "art": "farbe_ausserhalb",
+   "kandidat": "text-orange-800",
+   "hinweis": "--color-orange-800 nicht in farben"
+  }
+ ],
+ "fehler": []
+}
