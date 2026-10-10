@@ -35,3 +35,5 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/` | `–` | `* Pflichtfeld` | 1 | P3-13a | Hilfetext einmal je Formular (Feldgruppe `pflichthinweis`), erklärt das Sternchen an Pflichtfeldern, das der Bestand ohne Erklärung zeigt |
 | `/` | `✉️ Eine schriftliche Zusammenfassung wurde an` | `Eine schriftliche Zusammenfassung wurde an` | 1 | P3-13a | Erfolgszustand Hero-Formular: das Emoji wird durch das Kern-Icon „mail“ (aria-hidden) ersetzt, Wortlaut unverändert |
 | `/` | `✉️ Eine ausführliche Bestätigung mit allen Angaben wurde an` | `Eine ausführliche Bestätigung mit allen Angaben wurde an` | 1 | P3-13b | Erfolgszustand Anfrage-Funnel: Emoji durch Kern-Icon „mail“ (aria-hidden) ersetzt, Wortlaut unverändert |
+| `/` | `HQ` | `5 km` | 4 | P3-12b | Wahrheitskorrektur Servicegebiet: Firmensitz ist Aßlar, nicht Wetzlar; Entfernung Wetzlar ab Aßlar aus `CITY_HUB_DATA` (E-021) |
+| `/` | `5 km` | `Firmensitz` | 4 | P3-12b | Wahrheitskorrektur Servicegebiet: Aßlar ist der Firmensitz (Wortlaut „Firmensitz“ aus dem Bestand); Entfernungsangaben ab Aßlar (E-021) |
