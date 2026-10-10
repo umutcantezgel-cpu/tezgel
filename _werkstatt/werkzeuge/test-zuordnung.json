@@ -5,11 +5,11 @@
   { "muster": "BadanfrageFunnel", "specs": ["funktion-badanfrage.spec.mjs"] },
   { "muster": "BadProjektCheck", "specs": ["funktion-projektcheck.spec.mjs"] },
   { "muster": "FliesenKonfigurator", "specs": ["funktion-konfigurator.spec.mjs"] },
-  { "muster": "BookingCalendar|app/termin|app/kontakt", "specs": ["funktion-termin.spec.mjs"] },
+  { "muster": "BookingCalendar|app/(\\([a-z]+\\)/)?(termin|kontakt)", "specs": ["funktion-termin.spec.mjs"] },
   { "muster": "LeadQuickForm", "specs": ["funktion-schnellanfrage.spec.mjs"] },
   { "muster": "FloatingWhatsAppWidget|MobileBottomBar|whatsapp|DirectContactCard|Footer", "specs": ["funktion-kontaktwege.spec.mjs"] },
   { "muster": "CookieConsent|useConsent|MapConsentGate|components/maps|TrackingScripts", "specs": ["funktion-einwilligung.spec.mjs"] },
-  { "muster": "Header|MobileMenu|navigation|FAQAccordion|components/blog|app/blog|not-found|app/login|components/reviews", "specs": ["funktion-navigation.spec.mjs"] },
+  { "muster": "Header|MobileMenu|navigation|FAQAccordion|components/blog|app/(\\([a-z]+\\)/)?(blog|login)|not-found|components/reviews", "specs": ["funktion-navigation.spec.mjs"] },
   { "muster": "next.config", "specs": ["funktion-weiterleitung.spec.mjs"] },
-  { "muster": "app/layout.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon", "specs": ["ALLE"] }
+  { "muster": "app/(\\([a-z]+\\)/)?(layout|_dokument)\\.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon", "specs": ["ALLE"] }
 ]

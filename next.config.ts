@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   // Entwicklungsabzeichen aus: es liegt links unten über dem Cookie-Schild und fängt dort Klicks ab;
   // Kompilier- und Laufzeitfehler zeigt Next weiterhin an (nur `next dev`, kein Einfluss auf den Build).
   devIndicators: false,
-  // Dev-Schaufenster der Bausteine (src/app/werkstatt-schaufenster/**/page.dev.tsx) existiert nur in der
+  // Dev-Schaufenster der Bausteine (src/app/(bestand)/werkstatt-schaufenster/**/page.dev.tsx) existiert nur in der
   // Entwicklung; im Build gibt es die Route nicht (KERN K-004).
   pageExtensions: process.env.NODE_ENV === 'development' ? ['dev.tsx', 'tsx', 'ts', 'jsx', 'js'] : ['tsx', 'ts', 'jsx', 'js'],
   // Umbenannte Adressen dauerhaft weiterleiten (308, V-04); belegt im Vorlauf (_relaunch/PLAN.md, „Wege“)
@@ -24,6 +24,8 @@ const nextConfig: NextConfig = {
     qualities: [75],
   },
   experimental: {
+    // E-015: mehrere Root-Layouts (bestand/kern) → 404 für unbekannte Adressen über app/global-not-found.tsx
+    globalNotFound: true,
     optimizePackageImports: [
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',

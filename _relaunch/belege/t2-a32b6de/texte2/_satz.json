@@ -1,0 +1,6233 @@
+{
+ "satz": "t2-a32b6de",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-a32b6de/.next/server/app/**/*.html",
+  "build_id": "4mvcZYBW762XPPwhNnF9R",
+  "dateien": 176,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-10T19:55:42.460Z",
+ "summe": {
+  "dateien": 176,
+  "im_manifest": 172,
+  "eintraege": 63239,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [
+   "/blog/gibt-es-nicht",
+   "/blog/unbekannt",
+   "/leistungen/x/y",
+   "/standorte/unbekannt"
+  ],
+  "fragmente": {
+   "gesamt": 633,
+   "ok": 462,
+   "befehle": 171,
+   "fehlend": 0,
+   "ziel_unbekannt": 0,
+   "pflichtanker_ok": "4/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 3.9
+ },
+ "fragmente": {
+  "gesamt": 633,
+  "ok": 462,
+  "befehle": [
+   {
+    "seite": "/_not-found",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/agb",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/ausstellung/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/ausstellung/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/bad-aus-einer-hand",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/badanfrage",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/badplaner",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/badsanierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/barrierefreies-bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/basic-bad-15_9",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/basic-bad-4_6",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/basic-bad-7",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/basic-bad-8_2",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/luxus-bad-15_9",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/luxus-bad-4_6",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/luxus-bad-7",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/luxus-bad-8_2",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/premium-bad-15_9",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/premium-bad-4_6",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/premium-bad-7",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/musterbaeder/premium-bad-8_2",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/projekt-check",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse/stelzlager",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse/terrassenplatten",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/barrierefreiheit",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/beratung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/barrierefreier-balkonaustritt",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/duschrinne-oder-punktablauf",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/fliesen-fuer-allergiker",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/fliesen-mythen-faktencheck",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/fliesen-reinigen-pflegen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/gaeste-wc-fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/rutschfeste-fliesen-r-klassen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/schimmel-fliesenfugen-vermeiden",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/undichte-dusche-warnzeichen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog/wandnischen-dusche-planen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/cookie-richtlinie",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/datenschutz",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/downloads",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/faq",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/abnahme",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/auf-fussbodenheizung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/festpreisangebot",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/fliesenarten",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/flur-diele",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/fugensanierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/grossformat",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/holzoptik",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/konfigurator",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/kueche",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/neubau",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/renovierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/verlegemuster",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/verlegetechnik",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesenreparatur",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/foerderung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/impressum",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/karriere",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/karriere/ausbildung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/kontakt",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/asslar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/bad-nauheim",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/braunfels",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/butzbach",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/dillenburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/friedberg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/haiger",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/herborn",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/limburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/marburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/solms",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/asslar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/bad-nauheim",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/braunfels",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/butzbach",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/dillenburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/friedberg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/haiger",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/herborn",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/limburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/marburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/solms",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/asslar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/bad-nauheim",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/braunfels",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/butzbach",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/dillenburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/friedberg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/haiger",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/herborn",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/limburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/marburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/solms",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/asslar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/bad-nauheim",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/braunfels",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/butzbach",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/dillenburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/friedberg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/haiger",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/herborn",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/limburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/marburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/solms",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/login",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/naturstein",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/naturstein/granit",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/naturstein/marmor-kalkstein",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/partner",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/preise",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/badsanierung-grossformat",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/balkon-stelzlager",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/barrierefreies-duschbad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/einfamilienhaus-komplett",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/treppenanlage-wohnhaus",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/wohnbereich-fussbodenheizung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/schadensanalyse",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/asslar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/bad-nauheim",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/braunfels",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/butzbach",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/dillenburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/friedberg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/haiger",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/herborn",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/limburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/marburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/solms",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/team",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/termin",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen/aussentreppe",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen/innentreppe",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen/treppenhaus",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/ueber-uns",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung/ausgleich-gefaelle",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung/din-18534",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung/entkopplung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung/estrich-belegreife",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/widerruf",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/unternehmen",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 168,
+    "von": [
+     "/_not-found",
+     "/agb",
+     "/ausstellung/giessen",
+     "/ausstellung/wetzlar",
+     "/bad"
+    ]
+   },
+   {
+    "ziel": "/referenzen",
+    "id": "bewertungen",
+    "verweise": 7,
+    "von": [
+     "/referenzen",
+     "/referenzen/badsanierung-grossformat",
+     "/referenzen/balkon-stelzlager",
+     "/referenzen/barrierefreies-duschbad",
+     "/referenzen/einfamilienhaus-komplett"
+    ]
+   },
+   {
+    "ziel": "/_not-found",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/_not-found"
+    ]
+   },
+   {
+    "ziel": "/agb",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/agb"
+    ]
+   },
+   {
+    "ziel": "/ausstellung/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ausstellung/giessen"
+    ]
+   },
+   {
+    "ziel": "/ausstellung/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ausstellung/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad"
+    ]
+   },
+   {
+    "ziel": "/bad/bad-aus-einer-hand",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/bad-aus-einer-hand"
+    ]
+   },
+   {
+    "ziel": "/bad/badanfrage",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/badanfrage"
+    ]
+   },
+   {
+    "ziel": "/bad/badplaner",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/badplaner"
+    ]
+   },
+   {
+    "ziel": "/bad/badplaner",
+    "id": "planung",
+    "verweise": 1,
+    "von": [
+     "/bad/badplaner"
+    ]
+   },
+   {
+    "ziel": "/bad/badsanierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/badsanierung"
+    ]
+   },
+   {
+    "ziel": "/bad/barrierefreies-bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/barrierefreies-bad"
+    ]
+   },
+   {
+    "ziel": "/bad/fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/fliesen"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-15_9",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-15_9"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-15_9",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-15_9"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-4_6",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-4_6"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-4_6",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-4_6"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-7",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-7"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-7",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-7"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-8_2",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-8_2"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/basic-bad-8_2",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/basic-bad-8_2"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-15_9",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-15_9"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-15_9",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-15_9"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-4_6",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-4_6"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-4_6",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-4_6"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-7",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-7"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-7",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-7"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-8_2",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-8_2"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/luxus-bad-8_2",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/luxus-bad-8_2"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-15_9",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-15_9"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-15_9",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-15_9"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-4_6",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-4_6"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-4_6",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-4_6"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-7",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-7"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-7",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-7"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-8_2",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-8_2"
+    ]
+   },
+   {
+    "ziel": "/bad/musterbaeder/premium-bad-8_2",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/bad/musterbaeder/premium-bad-8_2"
+    ]
+   },
+   {
+    "ziel": "/bad/projekt-check",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/projekt-check"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse/balkonsanierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse/balkonsanierung"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse/stelzlager",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse/stelzlager"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse/terrassenplatten",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse/terrassenplatten"
+    ]
+   },
+   {
+    "ziel": "/barrierefreiheit",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/barrierefreiheit"
+    ]
+   },
+   {
+    "ziel": "/beratung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/beratung"
+    ]
+   },
+   {
+    "ziel": "/beratung",
+    "id": "booking",
+    "verweise": 1,
+    "von": [
+     "/beratung"
+    ]
+   },
+   {
+    "ziel": "/blog",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "warum-die-balkontür-eine-schwachstelle-ist",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "die-grundregel-der-abdichtungs-fachregeln",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "was-barrierefreiheit-verlangt",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "niveaugleich-planen-rinne-gefälle-türelement",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "was-der-belag-beitragen-kann",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "wer-beteiligt-ist",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "zuschüsse-für-barrierefreie-umbauten",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/barrierefreier-balkonaustritt",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/barrierefreier-balkonaustritt"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "die-varianten-im-überblick",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "gefälle-und-fliesenzuschnitt",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "aufbauhöhe-im-bestand",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "anschluss-an-die-abdichtung-nach-din-18534",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "reinigung-im-alltag",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "entscheidungshilfe",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/duschrinne-oder-punktablauf",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/duschrinne-oder-punktablauf"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "zwei-prinzipien-gebrannte-keramik-gegen-gewachsenen-stein",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "optik-reproduzierbar-oder-unikat",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "robustheit-säure-und-flecken",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "pflegeaufwand-und-imprägnierung",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "einsatz-im-haus-und-im-freien",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "was-bei-der-verlegung-von-naturstein-anders-ist",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "entscheidungshilfe",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/feinsteinzeug-oder-naturstein-vergleich"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "hausstaub-milben-pollen-was-allergiker-belastet",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "harte-böden-feucht-wischbar-ohne-textilfasern",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "großformate-und-schmale-fugen-für-einfache-reinigung",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "kennzeichnungen-emissionsarmer-verlegewerkstoffe-allgemein-erklärt",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "pflege-so-bleibt-der-boden-allergikerfreundlich",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "grenzen-fliesen-ersetzen-keine-ärztliche-beratung",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-fuer-allergiker",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-fuer-allergiker"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-mythen-faktencheck",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-mythen-faktencheck"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-mythen-faktencheck",
+    "id": "mythos-1-fliesen-sind-immer-kalt",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-mythen-faktencheck"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-mythen-faktencheck",
+    "id": "mythos-2-fugen-werden-zwangsläufig-schmutzig",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-mythen-faktencheck"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-mythen-faktencheck",
+    "id": "mythos-3-fliesen-auf-fliesen-geht-nie",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-mythen-faktencheck"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-mythen-faktencheck",
+    "id": "mythos-4-großformate-passen-nur-in-große-räume",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-mythen-faktencheck"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-mythen-faktencheck",
+    "id": "mythos-5-fliesen-gehören-nur-ins-bad",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-mythen-faktencheck"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-mythen-faktencheck",
+    "id": "fazit-worauf-es-wirklich-ankommt",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-mythen-faktencheck"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "die-pflicht-unterhaltsreinigung-im-alltag",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "die-richtigen-reiniger-je-nach-material",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "was-fliesen-und-fugen-schadet",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "zementschleier-nach-der-verlegung",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "die-kür-grundreinigung-und-fugenpflege",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "silikonfugen-als-wartungsfugen-im-blick-behalten",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesen-reinigen-pflegen",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesen-reinigen-pflegen"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesenleger-gesucht-geselle-meister",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesenleger-gesucht-geselle-meister"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesenleger-gesucht-geselle-meister",
+    "id": "wer-wir-sind",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesenleger-gesucht-geselle-meister"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesenleger-gesucht-geselle-meister",
+    "id": "wen-wir-suchen",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesenleger-gesucht-geselle-meister"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesenleger-gesucht-geselle-meister",
+    "id": "woran-sie-mitarbeiten",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesenleger-gesucht-geselle-meister"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesenleger-gesucht-geselle-meister",
+    "id": "so-melden-sie-sich",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesenleger-gesucht-geselle-meister"
+    ]
+   },
+   {
+    "ziel": "/blog/fliesenleger-gesucht-geselle-meister",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/fliesenleger-gesucht-geselle-meister"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "kleiner-raum-viele-details",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "format-und-fugenbild-weniger-fugen-mehr-ruhe",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "raumhoch-halbhoch-oder-akzentwand",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "vorwand-und-wc-element-verkleiden",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "spritzwasser-am-handwaschbecken-welche-abdichtung-nötig-ist",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "ablauf-mit-staubschutz-und-klarer-koordination",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/gaeste-wc-fliesen",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/gaeste-wc-fliesen"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "was-ist-der-handwerkerbonus",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "wie-hoch-ist-die-steuerermäßigung",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "was-zählt-und-was-nicht",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "renovierung-ja-neubau-nein",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "voraussetzungen-rechnung-und-überweisung",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "keine-doppelförderung",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "praxistipps-für-ihr-fliesenprojekt",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/handwerkerbonus-fliesenarbeiten",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/handwerkerbonus-fliesenarbeiten"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "die-grundlage-din-en-16165",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "r-klassen-bereiche-mit-schuhen",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "bewertungsgruppen-a-b-und-c-barfußbereiche",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "pflicht-oder-empfehlung",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "orientierungswerte-für-bad-küche-flur-treppe-und-terrasse",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "rutschhemmung-und-reinigungsaufwand",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "barrierefreiheit-trittsicherheit-im-bad",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/rutschfeste-fliesen-r-klassen",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/rutschfeste-fliesen-r-klassen"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "wie-schimmel-auf-fugen-entsteht",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "lüften-und-abziehen-die-wichtigste-vorbeugung",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "zementfuge-reaktionsharzfuge-silikon-unterschiedlich-anfällig",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "reinigen-oder-erneuern-die-grenze-bei-silikonfugen",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "wenn-schimmel-immer-wiederkommt-abdichtung-prüfen-lassen",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "großflächigen-befall-fachgerecht-beseitigen-lassen",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/schimmel-fliesenfugen-vermeiden",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/schimmel-fliesenfugen-vermeiden"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "wie-wasser-hinter-die-fliesen-gelangt",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "warnzeichen-1-dauerhaft-dunkle-oder-bröselnde-fugen",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "warnzeichen-2-schimmel-und-abgelöste-silikonfugen",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "warnzeichen-3-hohl-klingende-oder-lose-fliesen",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "warnzeichen-4-flecken-und-putzschäden-an-nachbarwänden",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "warnzeichen-5-anhaltend-muffiger-geruch",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "übersicht-anzeichen-und-mögliche-ursachen",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "was-jetzt-zu-tun-ist",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/undichte-dusche-warnzeichen",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/undichte-dusche-warnzeichen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "warum-wandnischen-ordnung-schaffen",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "vorwand-oder-bestandswand",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "maße-und-position-aufs-fliesenraster-abstimmen",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "abdichtung-in-der-nische",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "kanten-gehrung-oder-profil",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "indirekte-led-beleuchtung",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/blog/wandnischen-dusche-planen",
+    "id": "fazit",
+    "verweise": 1,
+    "von": [
+     "/blog/wandnischen-dusche-planen"
+    ]
+   },
+   {
+    "ziel": "/cookie-richtlinie",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/cookie-richtlinie"
+    ]
+   },
+   {
+    "ziel": "/datenschutz",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/datenschutz"
+    ]
+   },
+   {
+    "ziel": "/downloads",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/downloads"
+    ]
+   },
+   {
+    "ziel": "/faq",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/faq"
+    ]
+   },
+   {
+    "ziel": "/fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen"
+    ]
+   },
+   {
+    "ziel": "/fliesen/abnahme",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/abnahme"
+    ]
+   },
+   {
+    "ziel": "/fliesen/abnahme",
+    "id": "checkliste",
+    "verweise": 1,
+    "von": [
+     "/fliesen/abnahme"
+    ]
+   },
+   {
+    "ziel": "/fliesen/auf-fussbodenheizung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/auf-fussbodenheizung"
+    ]
+   },
+   {
+    "ziel": "/fliesen/festpreisangebot",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/festpreisangebot"
+    ]
+   },
+   {
+    "ziel": "/fliesen/fliesenarten",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/fliesenarten"
+    ]
+   },
+   {
+    "ziel": "/fliesen/flur-diele",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/flur-diele"
+    ]
+   },
+   {
+    "ziel": "/fliesen/fugensanierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/fugensanierung"
+    ]
+   },
+   {
+    "ziel": "/fliesen/grossformat",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/grossformat"
+    ]
+   },
+   {
+    "ziel": "/fliesen/holzoptik",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/holzoptik"
+    ]
+   },
+   {
+    "ziel": "/fliesen/konfigurator",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/konfigurator"
+    ]
+   },
+   {
+    "ziel": "/fliesen/konfigurator",
+    "id": "konfigurator",
+    "verweise": 1,
+    "von": [
+     "/fliesen/konfigurator"
+    ]
+   },
+   {
+    "ziel": "/fliesen/kueche",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/kueche"
+    ]
+   },
+   {
+    "ziel": "/fliesen/neubau",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/neubau"
+    ]
+   },
+   {
+    "ziel": "/fliesen/renovierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/renovierung"
+    ]
+   },
+   {
+    "ziel": "/fliesen/verlegemuster",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/verlegemuster"
+    ]
+   },
+   {
+    "ziel": "/fliesen/verlegetechnik",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/verlegetechnik"
+    ]
+   },
+   {
+    "ziel": "/fliesenreparatur",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesenreparatur"
+    ]
+   },
+   {
+    "ziel": "/foerderung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/foerderung"
+    ]
+   },
+   {
+    "ziel": "/impressum",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/impressum"
+    ]
+   },
+   {
+    "ziel": "/karriere",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/karriere"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/karriere/ausbildung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/karriere/ausbildung"
+    ]
+   },
+   {
+    "ziel": "/kontakt",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/kontakt"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/asslar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/asslar"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/bad-nauheim",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/bad-nauheim"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/braunfels",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/braunfels"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/butzbach",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/butzbach"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/dillenburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/dillenburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/friedberg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/friedberg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/giessen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/haiger",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/haiger"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/herborn",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/herborn"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/limburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/limburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/marburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/marburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/solms",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/solms"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/asslar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/asslar"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/bad-nauheim",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/bad-nauheim"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/braunfels",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/braunfels"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/butzbach",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/butzbach"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/dillenburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/dillenburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/friedberg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/friedberg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/giessen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/haiger",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/haiger"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/herborn",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/herborn"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/limburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/limburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/marburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/marburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/solms",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/solms"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/asslar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/asslar"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/bad-nauheim",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/bad-nauheim"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/braunfels",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/braunfels"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/butzbach",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/butzbach"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/dillenburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/dillenburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/friedberg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/friedberg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/giessen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/haiger",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/haiger"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/herborn",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/herborn"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/limburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/limburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/marburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/marburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/solms",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/solms"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/asslar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/asslar"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/bad-nauheim",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/bad-nauheim"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/braunfels",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/braunfels"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/butzbach",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/butzbach"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/dillenburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/dillenburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/friedberg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/friedberg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/giessen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/haiger",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/haiger"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/herborn",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/herborn"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/limburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/limburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/marburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/marburg"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/solms",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/solms"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/login",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/login"
+    ]
+   },
+   {
+    "ziel": "/naturstein",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/naturstein"
+    ]
+   },
+   {
+    "ziel": "/naturstein/granit",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/naturstein/granit"
+    ]
+   },
+   {
+    "ziel": "/naturstein/marmor-kalkstein",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/naturstein/marmor-kalkstein"
+    ]
+   },
+   {
+    "ziel": "/partner",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/partner"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/referenzen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen"
+    ]
+   },
+   {
+    "ziel": "/referenzen/badsanierung-grossformat",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/badsanierung-grossformat"
+    ]
+   },
+   {
+    "ziel": "/referenzen/balkon-stelzlager",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/balkon-stelzlager"
+    ]
+   },
+   {
+    "ziel": "/referenzen/barrierefreies-duschbad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/barrierefreies-duschbad"
+    ]
+   },
+   {
+    "ziel": "/referenzen/einfamilienhaus-komplett",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/einfamilienhaus-komplett"
+    ]
+   },
+   {
+    "ziel": "/referenzen/treppenanlage-wohnhaus",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/treppenanlage-wohnhaus"
+    ]
+   },
+   {
+    "ziel": "/referenzen/wohnbereich-fussbodenheizung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/wohnbereich-fussbodenheizung"
+    ]
+   },
+   {
+    "ziel": "/schadensanalyse",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/schadensanalyse"
+    ]
+   },
+   {
+    "ziel": "/standorte",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte"
+    ]
+   },
+   {
+    "ziel": "/standorte/asslar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/asslar"
+    ]
+   },
+   {
+    "ziel": "/standorte/bad-nauheim",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/bad-nauheim"
+    ]
+   },
+   {
+    "ziel": "/standorte/braunfels",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/braunfels"
+    ]
+   },
+   {
+    "ziel": "/standorte/butzbach",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/butzbach"
+    ]
+   },
+   {
+    "ziel": "/standorte/dillenburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/dillenburg"
+    ]
+   },
+   {
+    "ziel": "/standorte/friedberg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/friedberg"
+    ]
+   },
+   {
+    "ziel": "/standorte/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/giessen"
+    ]
+   },
+   {
+    "ziel": "/standorte/haiger",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/haiger"
+    ]
+   },
+   {
+    "ziel": "/standorte/herborn",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/herborn"
+    ]
+   },
+   {
+    "ziel": "/standorte/limburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/limburg"
+    ]
+   },
+   {
+    "ziel": "/standorte/marburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/marburg"
+    ]
+   },
+   {
+    "ziel": "/standorte/solms",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/solms"
+    ]
+   },
+   {
+    "ziel": "/standorte/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/team",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/team"
+    ]
+   },
+   {
+    "ziel": "/termin",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/termin"
+    ]
+   },
+   {
+    "ziel": "/treppen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen"
+    ]
+   },
+   {
+    "ziel": "/treppen/aussentreppe",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen/aussentreppe"
+    ]
+   },
+   {
+    "ziel": "/treppen/innentreppe",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen/innentreppe"
+    ]
+   },
+   {
+    "ziel": "/treppen/treppenhaus",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen/treppenhaus"
+    ]
+   },
+   {
+    "ziel": "/ueber-uns",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ueber-uns"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung/ausgleich-gefaelle",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung/ausgleich-gefaelle"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung/din-18534",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung/din-18534"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung/entkopplung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung/entkopplung"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung/estrich-belegreife",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung/estrich-belegreife"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung/fliesen-auf-fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung/fliesen-auf-fliesen"
+    ]
+   },
+   {
+    "ziel": "/widerruf",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/widerruf"
+    ]
+   },
+   {
+    "ziel": "/unternehmen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/unternehmen"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": true,
+    "seite_vorhanden": true
+   }
+  ]
+ },
+ "seiten": {
+  "/": {
+   "datei": "start.json",
+   "quelle": "index.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 733,
+   "arten": {
+    "meta": 32,
+    "text": 561,
+    "aria": 110,
+    "alt": 8,
+    "ueberschrift": 22
+   },
+   "h1": [
+    "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar"
+   ],
+   "hash": "aed31871b38c2f96"
+  },
+  "/_global-error": {
+   "datei": "_global-error.json",
+   "quelle": "_global-error.html",
+   "status": 500,
+   "im_manifest": true,
+   "eintraege": 4,
+   "arten": {
+    "meta": 1,
+    "ueberschrift": 1,
+    "text": 2
+   },
+   "h1": [
+    "This page couldn’t load"
+   ],
+   "hash": "0885fa13b4c6f9e5"
+  },
+  "/_not-found": {
+   "datei": "_not-found.json",
+   "quelle": "_not-found.html",
+   "status": 404,
+   "im_manifest": true,
+   "eintraege": 257,
+   "arten": {
+    "meta": 24,
+    "text": 198,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 1
+   },
+   "h1": [
+    "Seite nicht gefunden"
+   ],
+   "hash": "fc39f1750b74d236"
+  },
+  "/agb": {
+   "datei": "agb.json",
+   "quelle": "agb.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 280,
+   "arten": {
+    "meta": 33,
+    "text": 207,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 6
+   },
+   "h1": [
+    "Allgemeine Geschäftsbedingungen (AGB)"
+   ],
+   "hash": "b1896078d5c3c226"
+  },
+  "/ausstellung/giessen": {
+   "datei": "ausstellung__giessen.json",
+   "quelle": "ausstellung/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 344,
+   "arten": {
+    "meta": 32,
+    "text": 269,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenberatung & Materialauswahl in Gießen"
+   ],
+   "hash": "3c58e37091a60a1a"
+  },
+  "/ausstellung/wetzlar": {
+   "datei": "ausstellung__wetzlar.json",
+   "quelle": "ausstellung/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 344,
+   "arten": {
+    "meta": 32,
+    "text": 269,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenberatung & Materialauswahl in Wetzlar"
+   ],
+   "hash": "7daf50884c6b713e"
+  },
+  "/bad": {
+   "datei": "bad.json",
+   "quelle": "bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 355,
+   "arten": {
+    "meta": 33,
+    "text": 275,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Ihr Traumbad schlüsselfertig in Fachqualität"
+   ],
+   "hash": "1892bf21aa0b38be"
+  },
+  "/bad/bad-aus-einer-hand": {
+   "datei": "bad__bad-aus-einer-hand.json",
+   "quelle": "bad/bad-aus-einer-hand.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 328,
+   "arten": {
+    "meta": 33,
+    "text": 251,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Bad aus einer Hand: Ein Ansprechpartner. Ein Festpreis. Null Stress."
+   ],
+   "hash": "2e748c27631c621d"
+  },
+  "/bad/badanfrage": {
+   "datei": "bad__badanfrage.json",
+   "quelle": "bad/badanfrage.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 304,
+   "arten": {
+    "meta": 33,
+    "text": 237,
+    "aria": 28,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Badsanierung Angebot anfordern bei Tezgel Wetzlar"
+   ],
+   "hash": "919b0ccfef0f5404"
+  },
+  "/bad/badplaner": {
+   "datei": "bad__badplaner.json",
+   "quelle": "bad/badplaner.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 287,
+   "arten": {
+    "meta": 33,
+    "text": 214,
+    "aria": 29,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Badplaner: Bad online planen mit Fliesenverlegung Tezgel"
+   ],
+   "hash": "fccbbef8fde821c3"
+  },
+  "/bad/badsanierung": {
+   "datei": "bad__badsanierung.json",
+   "quelle": "bad/badsanierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 339,
+   "arten": {
+    "meta": 33,
+    "text": 260,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis"
+   ],
+   "hash": "ba5683c779ee02df"
+  },
+  "/bad/barrierefreies-bad": {
+   "datei": "bad__barrierefreies-bad.json",
+   "quelle": "bad/barrierefreies-bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 297,
+   "arten": {
+    "meta": 33,
+    "text": 218,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss"
+   ],
+   "hash": "39fc6e9dc2a420f3"
+  },
+  "/bad/fliesen": {
+   "datei": "bad__fliesen.json",
+   "quelle": "bad/fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 306,
+   "arten": {
+    "meta": 33,
+    "text": 223,
+    "aria": 34,
+    "alt": 3,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "Perfekte Fliesenverlegung für Ihr neues Badezimmer"
+   ],
+   "hash": "581080ddb3cfeae2"
+  },
+  "/bad/musterbaeder": {
+   "datei": "bad__musterbaeder.json",
+   "quelle": "bad/musterbaeder.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 387,
+   "arten": {
+    "meta": 33,
+    "text": 306,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "Musterbäder & Badideen Wetzlar: Badsanierung Tezgel"
+   ],
+   "hash": "180d70b9d5fabb77"
+  },
+  "/bad/musterbaeder/basic-bad-15_9": {
+   "datei": "bad__musterbaeder__basic-bad-15_9.json",
+   "quelle": "bad/musterbaeder/basic-bad-15_9.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 305,
+   "arten": {
+    "meta": 33,
+    "text": 233,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Basic-Bad 15,9 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "79de1682161f887e"
+  },
+  "/bad/musterbaeder/basic-bad-4_6": {
+   "datei": "bad__musterbaeder__basic-bad-4_6.json",
+   "quelle": "bad/musterbaeder/basic-bad-4_6.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 302,
+   "arten": {
+    "meta": 33,
+    "text": 230,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Basic-Bad 4,6 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "62d1a88353156449"
+  },
+  "/bad/musterbaeder/basic-bad-7": {
+   "datei": "bad__musterbaeder__basic-bad-7.json",
+   "quelle": "bad/musterbaeder/basic-bad-7.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 301,
+   "arten": {
+    "meta": 33,
+    "text": 229,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Basic-Bad 7,0 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "263e6659231cdde4"
+  },
+  "/bad/musterbaeder/basic-bad-8_2": {
+   "datei": "bad__musterbaeder__basic-bad-8_2.json",
+   "quelle": "bad/musterbaeder/basic-bad-8_2.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 302,
+   "arten": {
+    "meta": 33,
+    "text": 230,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Basic-Bad 8,2 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "6ce6502b8675c4f2"
+  },
+  "/bad/musterbaeder/luxus-bad-15_9": {
+   "datei": "bad__musterbaeder__luxus-bad-15_9.json",
+   "quelle": "bad/musterbaeder/luxus-bad-15_9.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 297,
+   "arten": {
+    "meta": 33,
+    "text": 225,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Luxus-Bad 15,9 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "25efa8d1e35cf4cf"
+  },
+  "/bad/musterbaeder/luxus-bad-4_6": {
+   "datei": "bad__musterbaeder__luxus-bad-4_6.json",
+   "quelle": "bad/musterbaeder/luxus-bad-4_6.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 300,
+   "arten": {
+    "meta": 33,
+    "text": 228,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Luxus-Bad 4,6 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "ad7ec750e4b8b8be"
+  },
+  "/bad/musterbaeder/luxus-bad-7": {
+   "datei": "bad__musterbaeder__luxus-bad-7.json",
+   "quelle": "bad/musterbaeder/luxus-bad-7.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 299,
+   "arten": {
+    "meta": 33,
+    "text": 227,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Luxus-Bad 7,0 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "a5a63b6cb36e4b77"
+  },
+  "/bad/musterbaeder/luxus-bad-8_2": {
+   "datei": "bad__musterbaeder__luxus-bad-8_2.json",
+   "quelle": "bad/musterbaeder/luxus-bad-8_2.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 297,
+   "arten": {
+    "meta": 33,
+    "text": 225,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Luxus-Bad 8,2 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "da95a182e07af57d"
+  },
+  "/bad/musterbaeder/premium-bad-15_9": {
+   "datei": "bad__musterbaeder__premium-bad-15_9.json",
+   "quelle": "bad/musterbaeder/premium-bad-15_9.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 308,
+   "arten": {
+    "meta": 33,
+    "text": 236,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Komfort-Bad 15,9 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "d9f85cc9bbee13a5"
+  },
+  "/bad/musterbaeder/premium-bad-4_6": {
+   "datei": "bad__musterbaeder__premium-bad-4_6.json",
+   "quelle": "bad/musterbaeder/premium-bad-4_6.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 301,
+   "arten": {
+    "meta": 33,
+    "text": 229,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Komfort-Bad 4,6 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "3a29c977a157cdb0"
+  },
+  "/bad/musterbaeder/premium-bad-7": {
+   "datei": "bad__musterbaeder__premium-bad-7.json",
+   "quelle": "bad/musterbaeder/premium-bad-7.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 296,
+   "arten": {
+    "meta": 33,
+    "text": 224,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Premium-Bad 7,0 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "410911d002a43cf1"
+  },
+  "/bad/musterbaeder/premium-bad-8_2": {
+   "datei": "bad__musterbaeder__premium-bad-8_2.json",
+   "quelle": "bad/musterbaeder/premium-bad-8_2.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 299,
+   "arten": {
+    "meta": 33,
+    "text": 227,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Musterbad Premium-Bad 8,2 ㎡ – Komplettbad & Badsanierung"
+   ],
+   "hash": "3bdae0d260b41a3a"
+  },
+  "/bad/projekt-check": {
+   "datei": "bad__projekt-check.json",
+   "quelle": "bad/projekt-check.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 335,
+   "arten": {
+    "meta": 33,
+    "text": 268,
+    "aria": 28,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Bad-Projektcheck: Badsanierung online prüfen bei Tezgel Wetzlar"
+   ],
+   "hash": "548a54aee4c8dca4"
+  },
+  "/balkon-terrasse": {
+   "datei": "balkon-terrasse.json",
+   "quelle": "balkon-terrasse.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 393,
+   "arten": {
+    "meta": 33,
+    "text": 302,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 22
+   },
+   "h1": [
+    "Balkon und Terrasse: Beläge, die Frost und Regen standhalten"
+   ],
+   "hash": "6e9aac7f0650a046"
+  },
+  "/balkon-terrasse/balkonsanierung": {
+   "datei": "balkon-terrasse__balkonsanierung.json",
+   "quelle": "balkon-terrasse/balkonsanierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 367,
+   "arten": {
+    "meta": 33,
+    "text": 277,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung"
+   ],
+   "hash": "00d80398bfcaebcb"
+  },
+  "/balkon-terrasse/stelzlager": {
+   "datei": "balkon-terrasse__stelzlager.json",
+   "quelle": "balkon-terrasse/stelzlager.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 368,
+   "arten": {
+    "meta": 33,
+    "text": 282,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Terrassenplatten auf Stelzlagern verlegen mit Tezgel"
+   ],
+   "hash": "9870a62ac650b782"
+  },
+  "/balkon-terrasse/terrassenplatten": {
+   "datei": "balkon-terrasse__terrassenplatten.json",
+   "quelle": "balkon-terrasse/terrassenplatten.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 366,
+   "arten": {
+    "meta": 33,
+    "text": 281,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Terrassenplatten richtig wählen: Material, Stärke und Oberfläche"
+   ],
+   "hash": "f8c28dffb9d5e282"
+  },
+  "/barrierefreiheit": {
+   "datei": "barrierefreiheit.json",
+   "quelle": "barrierefreiheit.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 282,
+   "arten": {
+    "meta": 32,
+    "text": 212,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Erklärung zur Barrierefreiheit"
+   ],
+   "hash": "31a622c8134016c3"
+  },
+  "/beratung": {
+   "datei": "beratung.json",
+   "quelle": "beratung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 324,
+   "arten": {
+    "meta": 33,
+    "text": 240,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Kostenlose Fliesenberatung in Wetzlar"
+   ],
+   "hash": "9a276f2c8337a98e"
+  },
+  "/blog": {
+   "datei": "blog.json",
+   "quelle": "blog.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 421,
+   "arten": {
+    "meta": 33,
+    "text": 322,
+    "aria": 35,
+    "alt": 16,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesen-Ratgeber & Badsanierung Tipps"
+   ],
+   "hash": "fb50c520abed9fe3"
+  },
+  "/blog/barrierefreier-balkonaustritt": {
+   "datei": "blog__barrierefreier-balkonaustritt.json",
+   "quelle": "blog/barrierefreier-balkonaustritt.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 381,
+   "arten": {
+    "meta": 34,
+    "text": 297,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Barrierefreier Balkonaustritt: Wie niedrig darf die Türschwelle sein?"
+   ],
+   "hash": "4fe675eee2316252"
+  },
+  "/blog/duschrinne-oder-punktablauf": {
+   "datei": "blog__duschrinne-oder-punktablauf.json",
+   "quelle": "blog/duschrinne-oder-punktablauf.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 398,
+   "arten": {
+    "meta": 34,
+    "text": 315,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Duschrinne oder Punktablauf? Die Entwässerung der bodengleichen Dusche"
+   ],
+   "hash": "a5132ae79d14104d"
+  },
+  "/blog/feinsteinzeug-oder-naturstein-vergleich": {
+   "datei": "blog__feinsteinzeug-oder-naturstein-vergleich.json",
+   "quelle": "blog/feinsteinzeug-oder-naturstein-vergleich.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 399,
+   "arten": {
+    "meta": 34,
+    "text": 315,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Feinsteinzeug oder Naturstein? Der ehrliche Vergleich"
+   ],
+   "hash": "887fb175b3f2adb2"
+  },
+  "/blog/fliesen-fuer-allergiker": {
+   "datei": "blog__fliesen-fuer-allergiker.json",
+   "quelle": "blog/fliesen-fuer-allergiker.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 386,
+   "arten": {
+    "meta": 34,
+    "text": 303,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Fliesen für Allergiker: Warum harte Böden entlasten können"
+   ],
+   "hash": "0aaccb5ebe5ce6a9"
+  },
+  "/blog/fliesen-mythen-faktencheck": {
+   "datei": "blog__fliesen-mythen-faktencheck.json",
+   "quelle": "blog/fliesen-mythen-faktencheck.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 387,
+   "arten": {
+    "meta": 34,
+    "text": 305,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "5 Mythen über Fliesenböden im Faktencheck"
+   ],
+   "hash": "8a4f7a785eb56461"
+  },
+  "/blog/fliesen-reinigen-pflegen": {
+   "datei": "blog__fliesen-reinigen-pflegen.json",
+   "quelle": "blog/fliesen-reinigen-pflegen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 394,
+   "arten": {
+    "meta": 34,
+    "text": 311,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Fliesen richtig reinigen: Pflicht und Kür der Fliesenpflege"
+   ],
+   "hash": "569b68709d579782"
+  },
+  "/blog/fliesenleger-gesucht-geselle-meister": {
+   "datei": "blog__fliesenleger-gesucht-geselle-meister.json",
+   "quelle": "blog/fliesenleger-gesucht-geselle-meister.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 361,
+   "arten": {
+    "meta": 34,
+    "text": 280,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)"
+   ],
+   "hash": "6ce4eb9470a2044a"
+  },
+  "/blog/gaeste-wc-fliesen": {
+   "datei": "blog__gaeste-wc-fliesen.json",
+   "quelle": "blog/gaeste-wc-fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 393,
+   "arten": {
+    "meta": 34,
+    "text": 310,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Gäste-WC fliesen: So wirkt der kleine Raum größer"
+   ],
+   "hash": "226e210ce2da76af"
+  },
+  "/blog/gibt-es-nicht": {
+   "datei": "blog__gibt-es-nicht.json",
+   "quelle": "blog/gibt-es-nicht.html",
+   "status": 404,
+   "im_manifest": false,
+   "eintraege": 26,
+   "arten": {
+    "meta": 26
+   },
+   "h1": [],
+   "hash": "01fb67fb2ba11ade"
+  },
+  "/blog/handwerkerbonus-fliesenarbeiten": {
+   "datei": "blog__handwerkerbonus-fliesenarbeiten.json",
+   "quelle": "blog/handwerkerbonus-fliesenarbeiten.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 391,
+   "arten": {
+    "meta": 34,
+    "text": 307,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen"
+   ],
+   "hash": "fcb1bf05230d1655"
+  },
+  "/blog/rutschfeste-fliesen-r-klassen": {
+   "datei": "blog__rutschfeste-fliesen-r-klassen.json",
+   "quelle": "blog/rutschfeste-fliesen-r-klassen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 413,
+   "arten": {
+    "meta": 34,
+    "text": 329,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?"
+   ],
+   "hash": "6099a0920770addd"
+  },
+  "/blog/schimmel-fliesenfugen-vermeiden": {
+   "datei": "blog__schimmel-fliesenfugen-vermeiden.json",
+   "quelle": "blog/schimmel-fliesenfugen-vermeiden.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 394,
+   "arten": {
+    "meta": 34,
+    "text": 311,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Schimmel in Fliesenfugen vermeiden: Ursachen und Vorbeugung"
+   ],
+   "hash": "737a6488beda16df"
+  },
+  "/blog/unbekannt": {
+   "datei": "blog__unbekannt.json",
+   "quelle": "blog/unbekannt.html",
+   "status": 404,
+   "im_manifest": false,
+   "eintraege": 26,
+   "arten": {
+    "meta": 26
+   },
+   "h1": [],
+   "hash": "01fb67fb2ba11ade"
+  },
+  "/blog/undichte-dusche-warnzeichen": {
+   "datei": "blog__undichte-dusche-warnzeichen.json",
+   "quelle": "blog/undichte-dusche-warnzeichen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 382,
+   "arten": {
+    "meta": 34,
+    "text": 297,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "Undichte Dusche? 5 Warnzeichen für Feuchte hinter Fliesen"
+   ],
+   "hash": "3db01b2d3fcae2db"
+  },
+  "/blog/wandnischen-dusche-planen": {
+   "datei": "blog__wandnischen-dusche-planen.json",
+   "quelle": "blog/wandnischen-dusche-planen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 382,
+   "arten": {
+    "meta": 34,
+    "text": 299,
+    "aria": 32,
+    "alt": 6,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Wandnischen in Dusche und Bad: planen, abdichten, beleuchten"
+   ],
+   "hash": "0ecb83ac06629353"
+  },
+  "/cookie-richtlinie": {
+   "datei": "cookie-richtlinie.json",
+   "quelle": "cookie-richtlinie.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 276,
+   "arten": {
+    "meta": 32,
+    "text": 202,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Cookie-Richtlinie (EU)"
+   ],
+   "hash": "88daf93e3cfb882f"
+  },
+  "/datenschutz": {
+   "datei": "datenschutz.json",
+   "quelle": "datenschutz.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 299,
+   "arten": {
+    "meta": 33,
+    "text": 221,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Datenschutzerklärung"
+   ],
+   "hash": "5836f8074fd8f9de"
+  },
+  "/downloads": {
+   "datei": "downloads.json",
+   "quelle": "downloads.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 312,
+   "arten": {
+    "meta": 32,
+    "text": 242,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Downloads & Infomaterial"
+   ],
+   "hash": "8c817ee53c88a10b"
+  },
+  "/faq": {
+   "datei": "faq.json",
+   "quelle": "faq.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 407,
+   "arten": {
+    "meta": 33,
+    "text": 324,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "FAQ: Häufige Fragen zu Fliesen & Bad bei Tezgel"
+   ],
+   "hash": "af99f8f86bb0b3fc"
+  },
+  "/fliesen": {
+   "datei": "fliesen.json",
+   "quelle": "fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 420,
+   "arten": {
+    "meta": 33,
+    "text": 334,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesen-Ratgeber: Formate, Räume und Verlegetechnik verständlich erklärt"
+   ],
+   "hash": "a69ed5bf8b059140"
+  },
+  "/fliesen/abnahme": {
+   "datei": "fliesen__abnahme.json",
+   "quelle": "fliesen/abnahme.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 392,
+   "arten": {
+    "meta": 33,
+    "text": 304,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Fliesenarbeiten abnehmen: Checkliste & Normen bei Tezgel"
+   ],
+   "hash": "f2f3bc25cd9676c8"
+  },
+  "/fliesen/auf-fussbodenheizung": {
+   "datei": "fliesen__auf-fussbodenheizung.json",
+   "quelle": "fliesen/auf-fussbodenheizung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 366,
+   "arten": {
+    "meta": 33,
+    "text": 285,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesen auf Fußbodenheizung: Aufbau, Fugen und Kleberwahl"
+   ],
+   "hash": "a9e2f8bc4e7aef2c"
+  },
+  "/fliesen/festpreisangebot": {
+   "datei": "fliesen__festpreisangebot.json",
+   "quelle": "fliesen/festpreisangebot.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 395,
+   "arten": {
+    "meta": 33,
+    "text": 307,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Festpreisangebot für Fliesenarbeiten: was den Aufwand bestimmt"
+   ],
+   "hash": "f48cdb7fd1440133"
+  },
+  "/fliesen/fliesenarten": {
+   "datei": "fliesen__fliesenarten.json",
+   "quelle": "fliesen/fliesenarten.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 416,
+   "arten": {
+    "meta": 33,
+    "text": 325,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 22
+   },
+   "h1": [
+    "Feinsteinzeug, Steinzeug, Steingut: Fliesenarten und ihre Eigenschaften"
+   ],
+   "hash": "5a4da3e4ba83f8bd"
+  },
+  "/fliesen/flur-diele": {
+   "datei": "fliesen__flur-diele.json",
+   "quelle": "fliesen/flur-diele.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 375,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Flur und Diele fliesen: robust vom Eingang bis in den Wohnbereich"
+   ],
+   "hash": "bbcc241df3014ce1"
+  },
+  "/fliesen/fugensanierung": {
+   "datei": "fliesen__fugensanierung.json",
+   "quelle": "fliesen/fugensanierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 363,
+   "arten": {
+    "meta": 33,
+    "text": 276,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Fugensanierung: Silikon- und Zementfugen fachgerecht erneuern"
+   ],
+   "hash": "7ee6f99bfcd2fdc0"
+  },
+  "/fliesen/grossformat": {
+   "datei": "fliesen__grossformat.json",
+   "quelle": "fliesen/grossformat.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 401,
+   "arten": {
+    "meta": 33,
+    "text": 309,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Großformatfliesen verlegen: fugenarm, planeben, präzise"
+   ],
+   "hash": "e2c9e3fae8e7572e"
+  },
+  "/fliesen/holzoptik": {
+   "datei": "fliesen__holzoptik.json",
+   "quelle": "fliesen/holzoptik.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 382,
+   "arten": {
+    "meta": 33,
+    "text": 296,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 17
+   },
+   "h1": [
+    "Fliesen in Holzoptik: Dielenlook mit keramischer Robustheit"
+   ],
+   "hash": "c9afcec9f1b35641"
+  },
+  "/fliesen/konfigurator": {
+   "datei": "fliesen__konfigurator.json",
+   "quelle": "fliesen/konfigurator.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 392,
+   "arten": {
+    "meta": 33,
+    "text": 310,
+    "aria": 30,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Fliesen-Konfigurator & Bedarfsrechner von Tezgel"
+   ],
+   "hash": "5d5079b53a6444ad"
+  },
+  "/fliesen/kueche": {
+   "datei": "fliesen__kueche.json",
+   "quelle": "fliesen/kueche.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 372,
+   "arten": {
+    "meta": 33,
+    "text": 285,
+    "aria": 34,
+    "alt": 3,
+    "ueberschrift": 17
+   },
+   "h1": [
+    "Küchenfliesen verlegen in Wetzlar mit Fliesenleger Tezgel"
+   ],
+   "hash": "a4fe07ea56b283f0"
+  },
+  "/fliesen/neubau": {
+   "datei": "fliesen__neubau.json",
+   "quelle": "fliesen/neubau.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 393,
+   "arten": {
+    "meta": 33,
+    "text": 301,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Fliesen im Neubau verlegen lassen mit Fliesen Tezgel"
+   ],
+   "hash": "8871a3f3743c73f4"
+  },
+  "/fliesen/renovierung": {
+   "datei": "fliesen__renovierung.json",
+   "quelle": "fliesen/renovierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 387,
+   "arten": {
+    "meta": 33,
+    "text": 301,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 17
+   },
+   "h1": [
+    "Fliesenboden im Bestand erneuern: Ablauf im bewohnten Haus"
+   ],
+   "hash": "1ff2f41f789d05c4"
+  },
+  "/fliesen/verlegemuster": {
+   "datei": "fliesen__verlegemuster.json",
+   "quelle": "fliesen/verlegemuster.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 394,
+   "arten": {
+    "meta": 33,
+    "text": 298,
+    "aria": 39,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Fliesen-Verlegemuster: Fischgrät & Verbände bei Tezgel"
+   ],
+   "hash": "781db632ede053af"
+  },
+  "/fliesen/verlegetechnik": {
+   "datei": "fliesen__verlegetechnik.json",
+   "quelle": "fliesen/verlegetechnik.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 418,
+   "arten": {
+    "meta": 33,
+    "text": 325,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 24
+   },
+   "h1": [
+    "Verlegetechnik und Werkstoffe: Kleber, Bettung und Fugenmörtel"
+   ],
+   "hash": "48dd54f229bbc761"
+  },
+  "/fliesenreparatur": {
+   "datei": "fliesenreparatur.json",
+   "quelle": "fliesenreparatur.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 375,
+   "arten": {
+    "meta": 33,
+    "text": 286,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Fliesenreparatur und kleine Arbeiten: einzelne Fliesen, Fugen, Sockel"
+   ],
+   "hash": "6e287a4c670364aa"
+  },
+  "/foerderung": {
+   "datei": "foerderung.json",
+   "quelle": "foerderung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 369,
+   "arten": {
+    "meta": 33,
+    "text": 285,
+    "aria": 34,
+    "alt": 3,
+    "ueberschrift": 14
+   },
+   "h1": [
+    "Förderung & Zuschüsse für Ihr barrierefreies Bad"
+   ],
+   "hash": "97cfaa42a6d2cf44"
+  },
+  "/impressum": {
+   "datei": "impressum.json",
+   "quelle": "impressum.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 297,
+   "arten": {
+    "meta": 33,
+    "text": 218,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Impressum"
+   ],
+   "hash": "f0aa4ad41d04fea4"
+  },
+  "/karriere": {
+   "datei": "karriere.json",
+   "quelle": "karriere.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 339,
+   "arten": {
+    "meta": 33,
+    "text": 257,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar"
+   ],
+   "hash": "d641c030ca3c2a6a"
+  },
+  "/karriere/ausbildung": {
+   "datei": "karriere__ausbildung.json",
+   "quelle": "karriere/ausbildung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 314,
+   "arten": {
+    "meta": 33,
+    "text": 241,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 6
+   },
+   "h1": [
+    "Ausbildung zum Fliesen-, Platten- und Mosaikleger (m/w/d)"
+   ],
+   "hash": "47bb8da7221c256c"
+  },
+  "/kontakt": {
+   "datei": "kontakt.json",
+   "quelle": "kontakt.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 447,
+   "arten": {
+    "meta": 33,
+    "text": 365,
+    "aria": 36,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Kontakt & Aufmaß Fliesenleger Tezgel"
+   ],
+   "hash": "5a27bb26776da04f"
+  },
+  "/leistungen": {
+   "datei": "leistungen.json",
+   "quelle": "leistungen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 450,
+   "arten": {
+    "meta": 33,
+    "text": 359,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "hash": "8149ba92287f954c"
+  },
+  "/leistungen/aussen": {
+   "datei": "leistungen__aussen.json",
+   "quelle": "leistungen/aussen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 445,
+   "arten": {
+    "meta": 33,
+    "text": 353,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Wetzlar & Mittelhessen"
+   ],
+   "hash": "1a1f99d27a47f8fe"
+  },
+  "/leistungen/aussen/asslar": {
+   "datei": "leistungen__aussen__asslar.json",
+   "quelle": "leistungen/aussen/asslar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Aßlar"
+   ],
+   "hash": "bde619f2ed3e25d2"
+  },
+  "/leistungen/aussen/bad-nauheim": {
+   "datei": "leistungen__aussen__bad-nauheim.json",
+   "quelle": "leistungen/aussen/bad-nauheim.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Bad Nauheim"
+   ],
+   "hash": "aea4aed2d2db07f1"
+  },
+  "/leistungen/aussen/braunfels": {
+   "datei": "leistungen__aussen__braunfels.json",
+   "quelle": "leistungen/aussen/braunfels.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Braunfels"
+   ],
+   "hash": "281304ba9900cd41"
+  },
+  "/leistungen/aussen/butzbach": {
+   "datei": "leistungen__aussen__butzbach.json",
+   "quelle": "leistungen/aussen/butzbach.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Butzbach"
+   ],
+   "hash": "9ab37f672ae62db0"
+  },
+  "/leistungen/aussen/dillenburg": {
+   "datei": "leistungen__aussen__dillenburg.json",
+   "quelle": "leistungen/aussen/dillenburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Dillenburg"
+   ],
+   "hash": "0d75b72933e69eeb"
+  },
+  "/leistungen/aussen/friedberg": {
+   "datei": "leistungen__aussen__friedberg.json",
+   "quelle": "leistungen/aussen/friedberg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Friedberg (Hessen)"
+   ],
+   "hash": "83ab7f0fd50874e1"
+  },
+  "/leistungen/aussen/giessen": {
+   "datei": "leistungen__aussen__giessen.json",
+   "quelle": "leistungen/aussen/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Gießen"
+   ],
+   "hash": "2ae55900d457fa0f"
+  },
+  "/leistungen/aussen/haiger": {
+   "datei": "leistungen__aussen__haiger.json",
+   "quelle": "leistungen/aussen/haiger.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Haiger"
+   ],
+   "hash": "7fbe35078f0d556b"
+  },
+  "/leistungen/aussen/herborn": {
+   "datei": "leistungen__aussen__herborn.json",
+   "quelle": "leistungen/aussen/herborn.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Herborn"
+   ],
+   "hash": "38c97ec0cac7331f"
+  },
+  "/leistungen/aussen/limburg": {
+   "datei": "leistungen__aussen__limburg.json",
+   "quelle": "leistungen/aussen/limburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Limburg an der Lahn"
+   ],
+   "hash": "c3ea16da8c4637e9"
+  },
+  "/leistungen/aussen/marburg": {
+   "datei": "leistungen__aussen__marburg.json",
+   "quelle": "leistungen/aussen/marburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Marburg"
+   ],
+   "hash": "d41bd334d3d866ad"
+  },
+  "/leistungen/aussen/solms": {
+   "datei": "leistungen__aussen__solms.json",
+   "quelle": "leistungen/aussen/solms.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Solms"
+   ],
+   "hash": "d194dd2ba5764fa3"
+  },
+  "/leistungen/aussen/wetzlar": {
+   "datei": "leistungen__aussen__wetzlar.json",
+   "quelle": "leistungen/aussen/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Wetzlar"
+   ],
+   "hash": "2bd6109c4810c907"
+  },
+  "/leistungen/bad": {
+   "datei": "leistungen__bad.json",
+   "quelle": "leistungen/bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 446,
+   "arten": {
+    "meta": 33,
+    "text": 354,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar"
+   ],
+   "hash": "4246906c934fb748"
+  },
+  "/leistungen/bad/asslar": {
+   "datei": "leistungen__bad__asslar.json",
+   "quelle": "leistungen/bad/asslar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Aßlar"
+   ],
+   "hash": "11fecdddf3dff9f2"
+  },
+  "/leistungen/bad/bad-nauheim": {
+   "datei": "leistungen__bad__bad-nauheim.json",
+   "quelle": "leistungen/bad/bad-nauheim.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Bad Nauheim"
+   ],
+   "hash": "23df786edd3edb15"
+  },
+  "/leistungen/bad/braunfels": {
+   "datei": "leistungen__bad__braunfels.json",
+   "quelle": "leistungen/bad/braunfels.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Braunfels"
+   ],
+   "hash": "60bb418a509c8623"
+  },
+  "/leistungen/bad/butzbach": {
+   "datei": "leistungen__bad__butzbach.json",
+   "quelle": "leistungen/bad/butzbach.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Butzbach"
+   ],
+   "hash": "0170998f8eb5919a"
+  },
+  "/leistungen/bad/dillenburg": {
+   "datei": "leistungen__bad__dillenburg.json",
+   "quelle": "leistungen/bad/dillenburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Dillenburg"
+   ],
+   "hash": "1871e0f8571d6660"
+  },
+  "/leistungen/bad/friedberg": {
+   "datei": "leistungen__bad__friedberg.json",
+   "quelle": "leistungen/bad/friedberg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Friedberg (Hessen)"
+   ],
+   "hash": "a32ff0520b58755c"
+  },
+  "/leistungen/bad/giessen": {
+   "datei": "leistungen__bad__giessen.json",
+   "quelle": "leistungen/bad/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Gießen"
+   ],
+   "hash": "3491dee38f0383d1"
+  },
+  "/leistungen/bad/haiger": {
+   "datei": "leistungen__bad__haiger.json",
+   "quelle": "leistungen/bad/haiger.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Haiger"
+   ],
+   "hash": "0c205ade5f54746e"
+  },
+  "/leistungen/bad/herborn": {
+   "datei": "leistungen__bad__herborn.json",
+   "quelle": "leistungen/bad/herborn.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Herborn"
+   ],
+   "hash": "4135410ef6d9e8a1"
+  },
+  "/leistungen/bad/limburg": {
+   "datei": "leistungen__bad__limburg.json",
+   "quelle": "leistungen/bad/limburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Limburg an der Lahn"
+   ],
+   "hash": "9cabf69fdf6298ac"
+  },
+  "/leistungen/bad/marburg": {
+   "datei": "leistungen__bad__marburg.json",
+   "quelle": "leistungen/bad/marburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Marburg"
+   ],
+   "hash": "b53e5b34b97e0942"
+  },
+  "/leistungen/bad/solms": {
+   "datei": "leistungen__bad__solms.json",
+   "quelle": "leistungen/bad/solms.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Solms"
+   ],
+   "hash": "485dd68752f3dbba"
+  },
+  "/leistungen/bad/wetzlar": {
+   "datei": "leistungen__bad__wetzlar.json",
+   "quelle": "leistungen/bad/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Wetzlar"
+   ],
+   "hash": "72e180eec4c994f2"
+  },
+  "/leistungen/untergrund": {
+   "datei": "leistungen__untergrund.json",
+   "quelle": "leistungen/untergrund.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 446,
+   "arten": {
+    "meta": 33,
+    "text": 354,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar"
+   ],
+   "hash": "32763687ce458605"
+  },
+  "/leistungen/untergrund/asslar": {
+   "datei": "leistungen__untergrund__asslar.json",
+   "quelle": "leistungen/untergrund/asslar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Aßlar"
+   ],
+   "hash": "611980e190e72186"
+  },
+  "/leistungen/untergrund/bad-nauheim": {
+   "datei": "leistungen__untergrund__bad-nauheim.json",
+   "quelle": "leistungen/untergrund/bad-nauheim.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Bad Nauheim"
+   ],
+   "hash": "e71509ec5d3726f9"
+  },
+  "/leistungen/untergrund/braunfels": {
+   "datei": "leistungen__untergrund__braunfels.json",
+   "quelle": "leistungen/untergrund/braunfels.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Braunfels"
+   ],
+   "hash": "7cf273b339d28c04"
+  },
+  "/leistungen/untergrund/butzbach": {
+   "datei": "leistungen__untergrund__butzbach.json",
+   "quelle": "leistungen/untergrund/butzbach.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Butzbach"
+   ],
+   "hash": "f567fa8b8875458b"
+  },
+  "/leistungen/untergrund/dillenburg": {
+   "datei": "leistungen__untergrund__dillenburg.json",
+   "quelle": "leistungen/untergrund/dillenburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Dillenburg"
+   ],
+   "hash": "6c80bdafd83b31e3"
+  },
+  "/leistungen/untergrund/friedberg": {
+   "datei": "leistungen__untergrund__friedberg.json",
+   "quelle": "leistungen/untergrund/friedberg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Friedberg (Hessen)"
+   ],
+   "hash": "41efc76557feaf36"
+  },
+  "/leistungen/untergrund/giessen": {
+   "datei": "leistungen__untergrund__giessen.json",
+   "quelle": "leistungen/untergrund/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Gießen"
+   ],
+   "hash": "bc87d91f21268ca3"
+  },
+  "/leistungen/untergrund/haiger": {
+   "datei": "leistungen__untergrund__haiger.json",
+   "quelle": "leistungen/untergrund/haiger.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Haiger"
+   ],
+   "hash": "c5319dcbc7e136a8"
+  },
+  "/leistungen/untergrund/herborn": {
+   "datei": "leistungen__untergrund__herborn.json",
+   "quelle": "leistungen/untergrund/herborn.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Herborn"
+   ],
+   "hash": "d6952a67e4930031"
+  },
+  "/leistungen/untergrund/limburg": {
+   "datei": "leistungen__untergrund__limburg.json",
+   "quelle": "leistungen/untergrund/limburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Limburg an der Lahn"
+   ],
+   "hash": "84deb99c63039976"
+  },
+  "/leistungen/untergrund/marburg": {
+   "datei": "leistungen__untergrund__marburg.json",
+   "quelle": "leistungen/untergrund/marburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Marburg"
+   ],
+   "hash": "cba808ca25ce50dc"
+  },
+  "/leistungen/untergrund/solms": {
+   "datei": "leistungen__untergrund__solms.json",
+   "quelle": "leistungen/untergrund/solms.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Solms"
+   ],
+   "hash": "28a87db106f8ab6c"
+  },
+  "/leistungen/untergrund/wetzlar": {
+   "datei": "leistungen__untergrund__wetzlar.json",
+   "quelle": "leistungen/untergrund/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Untergrund & Abdichtung in Wetzlar"
+   ],
+   "hash": "849246166c77791a"
+  },
+  "/leistungen/wohnen": {
+   "datei": "leistungen__wohnen.json",
+   "quelle": "leistungen/wohnen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 446,
+   "arten": {
+    "meta": 33,
+    "text": 354,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Fliesenverlegung Wohnbereich & Neubau in Wetzlar"
+   ],
+   "hash": "feedef21f823c75b"
+  },
+  "/leistungen/wohnen/asslar": {
+   "datei": "leistungen__wohnen__asslar.json",
+   "quelle": "leistungen/wohnen/asslar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Aßlar"
+   ],
+   "hash": "ecd050c33f328ab5"
+  },
+  "/leistungen/wohnen/bad-nauheim": {
+   "datei": "leistungen__wohnen__bad-nauheim.json",
+   "quelle": "leistungen/wohnen/bad-nauheim.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Bad Nauheim"
+   ],
+   "hash": "9ad3ae890a820f86"
+  },
+  "/leistungen/wohnen/braunfels": {
+   "datei": "leistungen__wohnen__braunfels.json",
+   "quelle": "leistungen/wohnen/braunfels.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Braunfels"
+   ],
+   "hash": "21a4db6ff74b999e"
+  },
+  "/leistungen/wohnen/butzbach": {
+   "datei": "leistungen__wohnen__butzbach.json",
+   "quelle": "leistungen/wohnen/butzbach.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Butzbach"
+   ],
+   "hash": "180bba3740d284e5"
+  },
+  "/leistungen/wohnen/dillenburg": {
+   "datei": "leistungen__wohnen__dillenburg.json",
+   "quelle": "leistungen/wohnen/dillenburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Dillenburg"
+   ],
+   "hash": "96805b1c0ddc42e3"
+  },
+  "/leistungen/wohnen/friedberg": {
+   "datei": "leistungen__wohnen__friedberg.json",
+   "quelle": "leistungen/wohnen/friedberg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Friedberg (Hessen)"
+   ],
+   "hash": "f72255a61cfc80ef"
+  },
+  "/leistungen/wohnen/giessen": {
+   "datei": "leistungen__wohnen__giessen.json",
+   "quelle": "leistungen/wohnen/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Gießen"
+   ],
+   "hash": "8d7edc7acd2331e4"
+  },
+  "/leistungen/wohnen/haiger": {
+   "datei": "leistungen__wohnen__haiger.json",
+   "quelle": "leistungen/wohnen/haiger.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Haiger"
+   ],
+   "hash": "1b8cfea6a048fb89"
+  },
+  "/leistungen/wohnen/herborn": {
+   "datei": "leistungen__wohnen__herborn.json",
+   "quelle": "leistungen/wohnen/herborn.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Herborn"
+   ],
+   "hash": "f9374dbbb2b9bf15"
+  },
+  "/leistungen/wohnen/limburg": {
+   "datei": "leistungen__wohnen__limburg.json",
+   "quelle": "leistungen/wohnen/limburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Limburg an der Lahn"
+   ],
+   "hash": "5a265c312a1d900a"
+  },
+  "/leistungen/wohnen/marburg": {
+   "datei": "leistungen__wohnen__marburg.json",
+   "quelle": "leistungen/wohnen/marburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Marburg"
+   ],
+   "hash": "042d9c6ebcf078fc"
+  },
+  "/leistungen/wohnen/solms": {
+   "datei": "leistungen__wohnen__solms.json",
+   "quelle": "leistungen/wohnen/solms.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Solms"
+   ],
+   "hash": "187c0bce52cb83f5"
+  },
+  "/leistungen/wohnen/wetzlar": {
+   "datei": "leistungen__wohnen__wetzlar.json",
+   "quelle": "leistungen/wohnen/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 33,
+    "text": 288,
+    "aria": 42,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenverlegung & Wohnen in Wetzlar"
+   ],
+   "hash": "5fbe84fdf2412699"
+  },
+  "/leistungen/x/y": {
+   "datei": "leistungen__x__y.json",
+   "quelle": "leistungen/x/y.html",
+   "status": 404,
+   "im_manifest": false,
+   "eintraege": 26,
+   "arten": {
+    "meta": 26
+   },
+   "h1": [],
+   "hash": "f5b38a8285cd0502"
+  },
+  "/login": {
+   "datei": "login.json",
+   "quelle": "login.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 259,
+   "arten": {
+    "meta": 23,
+    "text": 199,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 1
+   },
+   "h1": [
+    "Mitarbeiter Login"
+   ],
+   "hash": "543bd22133c55fee"
+  },
+  "/naturstein": {
+   "datei": "naturstein.json",
+   "quelle": "naturstein.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 407,
+   "arten": {
+    "meta": 33,
+    "text": 317,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Naturstein- und Granitverlegung vom Fachbetrieb"
+   ],
+   "hash": "3539e1c993811323"
+  },
+  "/naturstein/granit": {
+   "datei": "naturstein__granit.json",
+   "quelle": "naturstein/granit.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 353,
+   "arten": {
+    "meta": 33,
+    "text": 270,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen"
+   ],
+   "hash": "a1add1294328e14b"
+  },
+  "/naturstein/marmor-kalkstein": {
+   "datei": "naturstein__marmor-kalkstein.json",
+   "quelle": "naturstein/marmor-kalkstein.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 368,
+   "arten": {
+    "meta": 33,
+    "text": 279,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 22
+   },
+   "h1": [
+    "Marmor, Travertin und Kalkstein: edle Natursteine richtig verlegen"
+   ],
+   "hash": "06424b2428454bb4"
+  },
+  "/partner": {
+   "datei": "partner.json",
+   "quelle": "partner.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 315,
+   "arten": {
+    "meta": 32,
+    "text": 241,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Materialpartner & Verlegesysteme: Tezgel Fachbetrieb"
+   ],
+   "hash": "478fd6d6ab8bf3bd"
+  },
+  "/preise": {
+   "datei": "preise.json",
+   "quelle": "preise.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 421,
+   "arten": {
+    "meta": 32,
+    "text": 333,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Kosten & Preise auf Anfrage – Verbindliche Festpreise"
+   ],
+   "hash": "725ef016449107ca"
+  },
+  "/referenzen": {
+   "datei": "referenzen.json",
+   "quelle": "referenzen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 412,
+   "arten": {
+    "meta": 33,
+    "text": 319,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Referenzen & Bewertungen Fliesenleger Tezgel"
+   ],
+   "hash": "156a8b82023b2471"
+  },
+  "/referenzen/badsanierung-grossformat": {
+   "datei": "referenzen__badsanierung-grossformat.json",
+   "quelle": "referenzen/badsanierung-grossformat.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 331,
+   "arten": {
+    "meta": 34,
+    "text": 256,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Komplette Badsanierung mit Großformatfliesen"
+   ],
+   "hash": "dbb9600f18c1decc"
+  },
+  "/referenzen/balkon-stelzlager": {
+   "datei": "referenzen__balkon-stelzlager.json",
+   "quelle": "referenzen/balkon-stelzlager.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 330,
+   "arten": {
+    "meta": 34,
+    "text": 255,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkonsanierung mit Terrassenplatten auf Stelzlagern"
+   ],
+   "hash": "4fba4595a09ee03f"
+  },
+  "/referenzen/barrierefreies-duschbad": {
+   "datei": "referenzen__barrierefreies-duschbad.json",
+   "quelle": "referenzen/barrierefreies-duschbad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 331,
+   "arten": {
+    "meta": 34,
+    "text": 256,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche"
+   ],
+   "hash": "288053d45ef68687"
+  },
+  "/referenzen/einfamilienhaus-komplett": {
+   "datei": "referenzen__einfamilienhaus-komplett.json",
+   "quelle": "referenzen/einfamilienhaus-komplett.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 330,
+   "arten": {
+    "meta": 34,
+    "text": 255,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenarbeiten im kompletten Einfamilienhaus"
+   ],
+   "hash": "3f618b378d365657"
+  },
+  "/referenzen/treppenanlage-wohnhaus": {
+   "datei": "referenzen__treppenanlage-wohnhaus.json",
+   "quelle": "referenzen/treppenanlage-wohnhaus.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 330,
+   "arten": {
+    "meta": 34,
+    "text": 255,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Treppenanlage mit Fliesen- oder Natursteinbelag"
+   ],
+   "hash": "f66d514418e7e417"
+  },
+  "/referenzen/wohnbereich-fussbodenheizung": {
+   "datei": "referenzen__wohnbereich-fussbodenheizung.json",
+   "quelle": "referenzen/wohnbereich-fussbodenheizung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 330,
+   "arten": {
+    "meta": 34,
+    "text": 255,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenboden auf Fußbodenheizung im Wohnbereich"
+   ],
+   "hash": "c26b6832397db020"
+  },
+  "/schadensanalyse": {
+   "datei": "schadensanalyse.json",
+   "quelle": "schadensanalyse.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 370,
+   "arten": {
+    "meta": 33,
+    "text": 283,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Schadensanalyse für Fliesen, Fugen und Abdichtung"
+   ],
+   "hash": "fb69eff1bf61f0c7"
+  },
+  "/standorte": {
+   "datei": "standorte.json",
+   "quelle": "standorte.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 365,
+   "arten": {
+    "meta": 33,
+    "text": 286,
+    "aria": 34,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Standorte & Einsatzgebiete in Mittelhessen"
+   ],
+   "hash": "02157a531a59de9d"
+  },
+  "/standorte/asslar": {
+   "datei": "standorte__asslar.json",
+   "quelle": "standorte/asslar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Aßlar"
+   ],
+   "hash": "c704e481f9ea9c4f"
+  },
+  "/standorte/bad-nauheim": {
+   "datei": "standorte__bad-nauheim.json",
+   "quelle": "standorte/bad-nauheim.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Bad Nauheim"
+   ],
+   "hash": "dee2eddabe9522fe"
+  },
+  "/standorte/braunfels": {
+   "datei": "standorte__braunfels.json",
+   "quelle": "standorte/braunfels.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Braunfels"
+   ],
+   "hash": "7bcaea38b1e619bb"
+  },
+  "/standorte/butzbach": {
+   "datei": "standorte__butzbach.json",
+   "quelle": "standorte/butzbach.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Butzbach"
+   ],
+   "hash": "2f7cd2be4e45d461"
+  },
+  "/standorte/dillenburg": {
+   "datei": "standorte__dillenburg.json",
+   "quelle": "standorte/dillenburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Dillenburg"
+   ],
+   "hash": "e7a1f10389704f6c"
+  },
+  "/standorte/friedberg": {
+   "datei": "standorte__friedberg.json",
+   "quelle": "standorte/friedberg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Friedberg (Hessen)"
+   ],
+   "hash": "b5716dd400ccb103"
+  },
+  "/standorte/giessen": {
+   "datei": "standorte__giessen.json",
+   "quelle": "standorte/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Gießen"
+   ],
+   "hash": "e9f51ef93444bd94"
+  },
+  "/standorte/haiger": {
+   "datei": "standorte__haiger.json",
+   "quelle": "standorte/haiger.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Haiger"
+   ],
+   "hash": "44d596eb93f8076f"
+  },
+  "/standorte/herborn": {
+   "datei": "standorte__herborn.json",
+   "quelle": "standorte/herborn.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Herborn"
+   ],
+   "hash": "ba6b2e251d461a6b"
+  },
+  "/standorte/limburg": {
+   "datei": "standorte__limburg.json",
+   "quelle": "standorte/limburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Limburg an der Lahn"
+   ],
+   "hash": "bc7680286ec0be54"
+  },
+  "/standorte/marburg": {
+   "datei": "standorte__marburg.json",
+   "quelle": "standorte/marburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Marburg"
+   ],
+   "hash": "8f4efaba97ffe278"
+  },
+  "/standorte/solms": {
+   "datei": "standorte__solms.json",
+   "quelle": "standorte/solms.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Solms"
+   ],
+   "hash": "bb65be222e8088da"
+  },
+  "/standorte/unbekannt": {
+   "datei": "standorte__unbekannt.json",
+   "quelle": "standorte/unbekannt.html",
+   "status": 404,
+   "im_manifest": false,
+   "eintraege": 18,
+   "arten": {
+    "meta": 18
+   },
+   "h1": [],
+   "hash": "d067813c30b60274"
+  },
+  "/standorte/wetzlar": {
+   "datei": "standorte__wetzlar.json",
+   "quelle": "standorte/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 419,
+   "arten": {
+    "meta": 33,
+    "text": 332,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Wetzlar"
+   ],
+   "hash": "264326376559afdc"
+  },
+  "/team": {
+   "datei": "team.json",
+   "quelle": "team.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 326,
+   "arten": {
+    "meta": 32,
+    "text": 253,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 5
+   },
+   "h1": [
+    "Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar"
+   ],
+   "hash": "7493328d9add43b4"
+  },
+  "/termin": {
+   "datei": "termin.json",
+   "quelle": "termin.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 341,
+   "arten": {
+    "meta": 32,
+    "text": 270,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Termin vereinbaren bei Fliesenleger Tezgel"
+   ],
+   "hash": "94d9849e63bfc375"
+  },
+  "/treppen": {
+   "datei": "treppen.json",
+   "quelle": "treppen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 391,
+   "arten": {
+    "meta": 33,
+    "text": 298,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 24
+   },
+   "h1": [
+    "Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?"
+   ],
+   "hash": "3dd070ee50b411ca"
+  },
+  "/treppen/aussentreppe": {
+   "datei": "treppen__aussentreppe.json",
+   "quelle": "treppen/aussentreppe.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 367,
+   "arten": {
+    "meta": 33,
+    "text": 277,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Außentreppe fliesen: frostsicher & rutschfest bei Tezgel"
+   ],
+   "hash": "6c4e2e5866c49a0b"
+  },
+  "/treppen/innentreppe": {
+   "datei": "treppen__innentreppe.json",
+   "quelle": "treppen/innentreppe.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 361,
+   "arten": {
+    "meta": 33,
+    "text": 278,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 14
+   },
+   "h1": [
+    "Innentreppe fliesen: Stufen, Setzstufen und Sockel aus einem Guss"
+   ],
+   "hash": "7baf905330128e9e"
+  },
+  "/treppen/treppenhaus": {
+   "datei": "treppen__treppenhaus.json",
+   "quelle": "treppen/treppenhaus.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 352,
+   "arten": {
+    "meta": 33,
+    "text": 265,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus"
+   ],
+   "hash": "87ab5618dd33d1dc"
+  },
+  "/ueber-uns": {
+   "datei": "ueber-uns.json",
+   "quelle": "ueber-uns.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 363,
+   "arten": {
+    "meta": 33,
+    "text": 278,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar"
+   ],
+   "hash": "652fa78b1277d3f9"
+  },
+  "/untergrund-abdichtung": {
+   "datei": "untergrund-abdichtung.json",
+   "quelle": "untergrund-abdichtung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 380,
+   "arten": {
+    "meta": 33,
+    "text": 289,
+    "aria": 34,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Untergrund und Abdichtung: das Fundament jedes Fliesenbelags"
+   ],
+   "hash": "644ce39d6eefc85b"
+  },
+  "/untergrund-abdichtung/ausgleich-gefaelle": {
+   "datei": "untergrund-abdichtung__ausgleich-gefaelle.json",
+   "quelle": "untergrund-abdichtung/ausgleich-gefaelle.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 393,
+   "arten": {
+    "meta": 33,
+    "text": 307,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Untergrund ausgleichen und Gefälle herstellen: eben verlegen, Wasser gezielt ableiten"
+   ],
+   "hash": "7b0977d92eb65131"
+  },
+  "/untergrund-abdichtung/din-18534": {
+   "datei": "untergrund-abdichtung__din-18534.json",
+   "quelle": "untergrund-abdichtung/din-18534.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 386,
+   "arten": {
+    "meta": 33,
+    "text": 300,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 19
+   },
+   "h1": [
+    "Verbundabdichtung nach DIN 18534: dicht unter der Fliese"
+   ],
+   "hash": "f208cdebd2651a42"
+  },
+  "/untergrund-abdichtung/entkopplung": {
+   "datei": "untergrund-abdichtung__entkopplung.json",
+   "quelle": "untergrund-abdichtung/entkopplung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 367,
+   "arten": {
+    "meta": 33,
+    "text": 282,
+    "aria": 32,
+    "alt": 3,
+    "ueberschrift": 17
+   },
+   "h1": [
+    "Fliesen auf Holzboden verlegen: Entkopplung bei Tezgel"
+   ],
+   "hash": "dda80a3e2ed333c5"
+  },
+  "/untergrund-abdichtung/estrich-belegreife": {
+   "datei": "untergrund-abdichtung__estrich-belegreife.json",
+   "quelle": "untergrund-abdichtung/estrich-belegreife.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 405,
+   "arten": {
+    "meta": 33,
+    "text": 320,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Estrich prüfen: Belegreife und Restfeuchte vor dem Fliesen"
+   ],
+   "hash": "ab8c21c41df9fd55"
+  },
+  "/untergrund-abdichtung/fliesen-auf-fliesen": {
+   "datei": "untergrund-abdichtung__fliesen-auf-fliesen.json",
+   "quelle": "untergrund-abdichtung/fliesen-auf-fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 377,
+   "arten": {
+    "meta": 33,
+    "text": 290,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 18
+   },
+   "h1": [
+    "Altfliesen überkleben: Wann es fachgerecht geht bei Tezgel"
+   ],
+   "hash": "a8e5f85ea23a148a"
+  },
+  "/unternehmen": {
+   "datei": "unternehmen.json",
+   "quelle": "unternehmen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 337,
+   "arten": {
+    "meta": 32,
+    "text": 260,
+    "aria": 33,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung Tezgel: Unternehmen & Qualität"
+   ],
+   "hash": "579def1b5ae7ed6b"
+  },
+  "/widerruf": {
+   "datei": "widerruf.json",
+   "quelle": "widerruf.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 279,
+   "arten": {
+    "meta": 33,
+    "text": 211,
+    "aria": 31,
+    "alt": 3,
+    "ueberschrift": 1
+   },
+   "h1": [
+    "Widerrufsbelehrung & Muster-Widerrufsformular"
+   ],
+   "hash": "30bdd8fa3e1f17b3"
+  }
+ }
+}

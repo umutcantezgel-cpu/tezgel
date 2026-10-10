@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, type CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import clsx from "clsx";
-import { useConsent } from "@/hooks/useConsent";
+import { useKartenEinwilligung } from "@/lib/formulare/useKartenEinwilligung";
 import Icon from "@/components/icons/Icon";
 import { etikettKlassen, knopfKlassen } from "@/components/kern/stile";
 
@@ -24,19 +24,9 @@ export function MapConsentGate({
   height = "420px",
   vorschau,
 }: MapConsentGateProps) {
-  const { consent, updateConsent, openSettings } = useConsent();
-  const [isHydrated, setIsHydrated] = useState(false);
-  const [manualAccepted, setManualAccepted] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsHydrated(true);
-  }, []);
-
-  const handleAccept = () => {
-    setManualAccepted(true);
-    updateConsent({ marketing: true, analytics: consent?.analytics ?? false });
-  };
+  // Einwilligungslogik (Hydrierung, Zustimmung per Klick, Marketing-Kategorie, Einstellungen öffnen) im gemeinsamen
+  // Hook useKartenEinwilligung (P3-00l) – dieselbe Logik wie die Kern-Ansicht; hier nur das Markup.
+  const { isHydrated, hasConsent: eingewilligt, handleAccept, openSettings } = useKartenEinwilligung();
 
   // Ein Rahmen mit fester Höhe für Platzhalter und geladene Karte: kein Sprung beim Laden (CLS).
   const rahmen = clsx("karten-hoehe relative w-full overflow-hidden border border-fuge bg-fliese", className);
@@ -46,7 +36,7 @@ export function MapConsentGate({
 
   // Vor der Hydrierung (Server und erster Browserlauf) gilt noch keine Einwilligung: das Einwilligungs-Tor mit Texten
   // und Knöpfen steht sofort im Dokument; die Karte erscheint erst danach und nur mit Einwilligung.
-  const hasConsent = isHydrated && (manualAccepted || consent?.marketing);
+  const hasConsent = isHydrated && eingewilligt;
 
   if (hasConsent) {
     if (children) {

@@ -1,0 +1,3661 @@
+{
+  "satz": "p0-ausgangsstand",
+  "base": "http://127.0.0.1:4310",
+  "bedingungen": {
+    "werkzeug": "svg.mjs (P3-00b), Kern-Version 1.2",
+    "kern": "K-010 (Formsystem), K-013 (Budgets), Z-10",
+    "messmodus": "statisch, kein Browserlauf: keine Anfragen, daher ohne assertLocal/installSperre",
+    "quellen": {
+      "public": "public/**/*.svg",
+      "src": "src/**/*.{tsx,jsx}, nur Inline-<svg>-Blöcke (Datei-Ebene für IDs und Verweise)",
+      "build": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-707a93d/.next/server/app",
+      "nur": null
+    },
+    "src_stand": "git HEAD 96db4f1 (Arbeitsbaum ohne Änderungen an src/ und public/)",
+    "build_stand": "Ausgangsstand 707a93d (reinraum-707a93d/.next/server/app), nur lesen",
+    "einheiten": {
+      "kilobyte": 1024,
+      "icon_budget_roh_bytes": 1536,
+      "illustration_budget_gzip_bytes": 40960,
+      "gzip": "zlib, Level 9"
+    },
+    "strichstaerke_soll": 1.5,
+    "klassifikation": {
+      "familie": "marke (Liste) · lucide (class enthält lucide) · phosphor (viewBox 0 0 256 256 oder class ph) · sonst eigene",
+      "art": "marke (Liste) · icon (lucide/phosphor oder quadratische viewBox ≤ 256) · illustration (übrige mit viewBox) · unbekannt (ohne viewBox)",
+      "strichstaerke": "je Geometrie-Element mit wirksamer Kontur, vererbt; ohne stroke-width = 1 (SVG-Standard)"
+    },
+    "marken_liste": [
+      "Dateien: public/images/logo/tezgel-*.svg (Bestand, unverändert)",
+      "Attribut data-marke an <svg>",
+      "Google: <title>Google</title> oder aria-label=\"Google\"",
+      "WhatsApp: Pfad beginnt mit \"M17.472 14.382\""
+    ],
+    "a11y_regel": "dekorativ = aria-hidden=\"true\" am SVG oder an einem Vorfahren; bedeutungstragend = role=\"img\" + aria-labelledby, alle Ziele in Datei bzw. Seite; sonst fehlt; Ausdruck in aria-labelledby = unbestimmt",
+    "id_regel": "Quelle: Dopplung innerhalb der Datei (alle <svg>-Blöcke zusammen); Build: Dopplung im gesamten Seiten-DOM; url(#…) und href=\"#…\" ohne Ziel gemeldet",
+    "grenzen": [
+      "JSX-Ausdrücke (z. B. fill={c}, viewBox per Template) werden nur über Literale geprüft; nicht auswertbare Werte bleiben ungezählt",
+      "Phosphor-Imports im Quellcode sind nicht im Markup sichtbar; Familie wird nur über Markup erkannt",
+      "Build-Stand (707a93d) und Arbeitsbaum (HEAD) unterscheiden sich in 25 Dateien unter src/ und public/",
+      "Marken-Erkennung über Liste; neue Marken brauchen einen Eintrag",
+      "Budgets gelten für ausgelieferte Markups (public, Build); Quellblöcke aus src/ werden nur gezählt, nicht gegen das Budget geprüft (JSX-Text ist größer als das Ergebnis)",
+      "Quelle wird als ganze Datei geparst; Parser ist ein Tokenizer ohne TypeScript-Parser (keine Abhängigkeit im Paket), Zählung gegen grep geprüft"
+    ],
+    "laufzeit_s": 3.1
+  },
+  "erstellt": "2026-10-10T19:30:09.466Z",
+  "zaehlung": {
+    "public": {
+      "dateien": 3,
+      "svg": 3
+    },
+    "src": {
+      "dateien": 5,
+      "svg": 17
+    },
+    "build": {
+      "seiten": 176,
+      "svg_instanzen": 21679,
+      "muster": 450,
+      "seiten_mit_id_kollision": 0
+    },
+    "nur": []
+  },
+  "regeln": {
+    "eingebettetes Pixelbild (image)": {
+      "instanzen": 2,
+      "muster": 2,
+      "orte": 2,
+      "beispiele": [
+        {
+          "ort": "public/images/logo/tezgel-logo-dark.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        },
+        {
+          "ort": "public/images/logo/tezgel-logo.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        }
+      ]
+    },
+    "Zugänglichkeit nicht belegt": {
+      "instanzen": 44,
+      "muster": 14,
+      "orte": 7,
+      "beispiele": [
+        {
+          "ort": "public/images/logo/tezgel-logo-dark.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        },
+        {
+          "ort": "public/images/logo/tezgel-logo.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        },
+        {
+          "ort": "src/app/fliesen/verlegemuster/page.jsx:114",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className=\"w-full h-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden\" role=\"img\" aria-label={`Sche…"
+        }
+      ]
+    },
+    "feste Farbe statt currentColor/Variable": {
+      "instanzen": 8,
+      "muster": 8,
+      "orte": 3,
+      "beispiele": [
+        {
+          "ort": "src/app/fliesen/verlegemuster/page.jsx:114",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className=\"w-full h-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden\" role=\"img\" aria-label={`Sche…"
+        },
+        {
+          "ort": "src/components/common/TileCraftIcons.jsx:71",
+          "art": "illustration",
+          "familie": "eigene",
+          "kurz": "<svg className=\"w-full h-full\" viewBox=\"0 0 400 12\" preserveAspectRatio=\"none\" aria-hidden=\"true\" > <defs> <linearGradient id=\"laserGrad\" x1=\"0%\" y1=\"0%\" x2=\"1…"
+        },
+        {
+          "ort": "/fliesen/verlegemuster",
+          "art": "illustration",
+          "familie": "eigene",
+          "kurz": "<svg viewBox=\"0 0 120 80\" class=\"w-full h-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden\" role=\"img\" aria-label=\"Schema: Kreuzfuge\"><g><r…"
+        }
+      ]
+    },
+    "Strichstärke ≠ 1,5": {
+      "instanzen": 21676,
+      "muster": 462,
+      "orte": 186,
+      "beispiele": [
+        {
+          "ort": "src/app/fliesen/verlegemuster/page.jsx:114",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className=\"w-full h-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden\" role=\"img\" aria-label={`Sche…"
+        },
+        {
+          "ort": "src/components/common/CookieConsent.tsx:661",
+          "art": "icon",
+          "familie": "eigene",
+          "kurz": "<svg className=\"w-3.5 h-3.5 text-white\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={3} > <path strokeLinecap=\"round\" strokeLinejoin=\"rou…"
+        },
+        {
+          "ort": "src/components/common/TileCraftIcons.jsx:11",
+          "art": "icon",
+          "familie": "eigene",
+          "kurz": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2.5\" strokeLinecap=\"round\" strokeLinejoin=\"round\" className={`${className} transition-t…"
+        }
+      ]
+    },
+    "mehrere Icon-Familien je Seite": {
+      "instanzen": 171,
+      "muster": 0,
+      "orte": 171,
+      "beispiele": [],
+      "einheit": "Seiten"
+    },
+    "viewBox fehlt": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "ID-Kollision": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": [],
+      "einheit": "SVG-Instanzen mit doppelter ID (Quelle: Datei; Build: Seiten-DOM)"
+    },
+    "url(#…)/href ohne Ziel": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "Budget Icon über 1,5 KB (roh)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "Budget Illustration über 40 KB (gzip)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "ID-Dopplung im Seiten-DOM (Build, alle Elemente)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": [],
+      "einheit": "doppelte IDs je Seite (instanzen = Anzahl IDs)"
+    }
+  },
+  "a11y": {
+    "zaehlung": {
+      "fehlt": 44,
+      "bedeutung": 1,
+      "dekorativ": 21654
+    },
+    "gruende": {
+      "weder aria-hidden noch role=img": 19,
+      "role=img nur mit aria-label": 25
+    }
+  },
+  "familien": {
+    "marke": {
+      "instanzen": 22,
+      "arten": {
+        "marke": 22
+      },
+      "strich": {}
+    },
+    "eigene": {
+      "instanzen": 193,
+      "arten": {
+        "unbekannt": 1,
+        "icon": 185,
+        "illustration": 7
+      },
+      "strich": {
+        "1": 503,
+        "3": 1,
+        "2.5": 519,
+        "1.5": 1,
+        "0.8": 1,
+        "1.8": 41
+      }
+    },
+    "lucide": {
+      "instanzen": 21484,
+      "arten": {
+        "icon": 21484
+      },
+      "strich": {
+        "2": 44349
+      }
+    }
+  },
+  "budgets": {
+    "icon": {
+      "geprueft": 21656,
+      "groesstes_roh_bytes": 882,
+      "ueber_budget": 0
+    },
+    "illustration": {
+      "geprueft": 6,
+      "groesstes_gzip_bytes": 1158,
+      "ueber_budget": 0
+    },
+    "marke_quelle": [
+      {
+        "ort": "public/images/logo/tezgel-logo-dark.svg",
+        "marke": "Tezgel-Logo (Bestand)",
+        "bytes": 395903,
+        "gzip": 297820,
+        "pixel": 1
+      },
+      {
+        "ort": "public/images/logo/tezgel-logo.svg",
+        "marke": "Tezgel-Logo (Bestand)",
+        "bytes": 395903,
+        "gzip": 297822,
+        "pixel": 1
+      },
+      {
+        "ort": "public/images/logo/tezgel-mark.svg",
+        "marke": "Tezgel-Logo (Bestand)",
+        "bytes": 976,
+        "gzip": 435,
+        "pixel": 0
+      },
+      {
+        "ort": "src/components/common/FloatingWhatsAppWidget.tsx:767",
+        "marke": "WhatsApp-Logo",
+        "bytes": 1394,
+        "gzip": 738,
+        "pixel": 0
+      },
+      {
+        "ort": "src/components/ui/GoogleIcon.tsx:16",
+        "marke": "Google-Logo",
+        "bytes": 878,
+        "gzip": 499,
+        "pixel": 0
+      }
+    ],
+    "marke_build": {
+      "instanzen": 17,
+      "muster": 2,
+      "marken": [
+        "Google-Logo"
+      ]
+    }
+  },
+  "familien_je_seite": {
+    "0": 4,
+    "1": 1,
+    "2": 171
+  },
+  "seiten": [
+    {
+      "seite": "/_global-error",
+      "svg": 1,
+      "muster": 1,
+      "familien": {
+        "eigene": 1
+      },
+      "icon_familien": 1,
+      "familien_liste": [
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Zugänglichkeit nicht belegt": 1
+      }
+    },
+    {
+      "seite": "/_not-found",
+      "svg": 82,
+      "muster": 34,
+      "familien": {
+        "lucide": 81,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 82,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/agb",
+      "svg": 80,
+      "muster": 32,
+      "familien": {
+        "lucide": 79,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 80,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/ausstellung/giessen",
+      "svg": 118,
+      "muster": 53,
+      "familien": {
+        "lucide": 117,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 118,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/ausstellung/wetzlar",
+      "svg": 118,
+      "muster": 53,
+      "familien": {
+        "lucide": 117,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 118,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad",
+      "svg": 125,
+      "muster": 55,
+      "familien": {
+        "lucide": 124,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 125,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/bad-aus-einer-hand",
+      "svg": 115,
+      "muster": 50,
+      "familien": {
+        "lucide": 114,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 115,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/badanfrage",
+      "svg": 99,
+      "muster": 42,
+      "familien": {
+        "lucide": 98,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 99,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/badplaner",
+      "svg": 88,
+      "muster": 38,
+      "familien": {
+        "lucide": 87,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 88,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/badsanierung",
+      "svg": 111,
+      "muster": 47,
+      "familien": {
+        "lucide": 110,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 111,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/barrierefreies-bad",
+      "svg": 99,
+      "muster": 44,
+      "familien": {
+        "lucide": 98,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 99,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/fliesen",
+      "svg": 98,
+      "muster": 44,
+      "familien": {
+        "lucide": 97,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 98,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder",
+      "svg": 167,
+      "muster": 37,
+      "familien": {
+        "lucide": 166,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 167,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/basic-bad-15_9",
+      "svg": 101,
+      "muster": 37,
+      "familien": {
+        "lucide": 100,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 101,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/basic-bad-4_6",
+      "svg": 99,
+      "muster": 37,
+      "familien": {
+        "lucide": 98,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 99,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/basic-bad-7",
+      "svg": 98,
+      "muster": 37,
+      "familien": {
+        "lucide": 97,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 98,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/basic-bad-8_2",
+      "svg": 99,
+      "muster": 37,
+      "familien": {
+        "lucide": 98,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 99,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/luxus-bad-15_9",
+      "svg": 95,
+      "muster": 37,
+      "familien": {
+        "lucide": 94,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 95,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/luxus-bad-4_6",
+      "svg": 98,
+      "muster": 37,
+      "familien": {
+        "lucide": 97,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 98,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/luxus-bad-7",
+      "svg": 97,
+      "muster": 37,
+      "familien": {
+        "lucide": 96,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 97,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/luxus-bad-8_2",
+      "svg": 95,
+      "muster": 37,
+      "familien": {
+        "lucide": 94,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 95,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/premium-bad-15_9",
+      "svg": 104,
+      "muster": 37,
+      "familien": {
+        "lucide": 103,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 104,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/premium-bad-4_6",
+      "svg": 98,
+      "muster": 37,
+      "familien": {
+        "lucide": 97,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 98,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/premium-bad-7",
+      "svg": 95,
+      "muster": 37,
+      "familien": {
+        "lucide": 94,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 95,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/musterbaeder/premium-bad-8_2",
+      "svg": 97,
+      "muster": 37,
+      "familien": {
+        "lucide": 96,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 97,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/bad/projekt-check",
+      "svg": 107,
+      "muster": 45,
+      "familien": {
+        "lucide": 106,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 107,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/balkon-terrasse",
+      "svg": 138,
+      "muster": 63,
+      "familien": {
+        "lucide": 137,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 138,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/balkon-terrasse/balkonsanierung",
+      "svg": 123,
+      "muster": 56,
+      "familien": {
+        "lucide": 122,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 123,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/balkon-terrasse/stelzlager",
+      "svg": 126,
+      "muster": 53,
+      "familien": {
+        "lucide": 125,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 126,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/balkon-terrasse/terrassenplatten",
+      "svg": 119,
+      "muster": 53,
+      "familien": {
+        "lucide": 118,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 119,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/barrierefreiheit",
+      "svg": 80,
+      "muster": 32,
+      "familien": {
+        "lucide": 79,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 80,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/beratung",
+      "svg": 112,
+      "muster": 49,
+      "familien": {
+        "lucide": 111,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 112,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog",
+      "svg": 155,
+      "muster": 65,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/barrierefreier-balkonaustritt",
+      "svg": 117,
+      "muster": 53,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/duschrinne-oder-punktablauf",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/fliesen-fuer-allergiker",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/fliesen-mythen-faktencheck",
+      "svg": 117,
+      "muster": 53,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/fliesen-reinigen-pflegen",
+      "svg": 117,
+      "muster": 53,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+      "svg": 117,
+      "muster": 53,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/gaeste-wc-fliesen",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/gibt-es-nicht",
+      "svg": 0,
+      "muster": 0,
+      "familien": {},
+      "icon_familien": 0,
+      "familien_liste": [],
+      "id_doppelt": 0,
+      "befunde": {}
+    },
+    {
+      "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+      "svg": 117,
+      "muster": 53,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/rutschfeste-fliesen-r-klassen",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/schimmel-fliesenfugen-vermeiden",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/unbekannt-xyz",
+      "svg": 0,
+      "muster": 0,
+      "familien": {},
+      "icon_familien": 0,
+      "familien_liste": [],
+      "id_doppelt": 0,
+      "befunde": {}
+    },
+    {
+      "seite": "/blog/undichte-dusche-warnzeichen",
+      "svg": 117,
+      "muster": 53,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/blog/wandnischen-dusche-planen",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/cookie-richtlinie",
+      "svg": 80,
+      "muster": 32,
+      "familien": {
+        "lucide": 79,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 80,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/datenschutz",
+      "svg": 80,
+      "muster": 32,
+      "familien": {
+        "lucide": 79,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 80,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/downloads",
+      "svg": 112,
+      "muster": 49,
+      "familien": {
+        "lucide": 111,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 112,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/faq",
+      "svg": 134,
+      "muster": 66,
+      "familien": {
+        "lucide": 133,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 134,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen",
+      "svg": 183,
+      "muster": 70,
+      "familien": {
+        "lucide": 182,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 183,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/abnahme",
+      "svg": 116,
+      "muster": 55,
+      "familien": {
+        "lucide": 115,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 116,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/auf-fussbodenheizung",
+      "svg": 118,
+      "muster": 52,
+      "familien": {
+        "lucide": 117,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 118,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/festpreisangebot",
+      "svg": 129,
+      "muster": 60,
+      "familien": {
+        "lucide": 128,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 129,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/fliesenarten",
+      "svg": 120,
+      "muster": 52,
+      "familien": {
+        "lucide": 119,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 120,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/flur-diele",
+      "svg": 121,
+      "muster": 53,
+      "familien": {
+        "lucide": 120,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 121,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/fugensanierung",
+      "svg": 123,
+      "muster": 56,
+      "familien": {
+        "lucide": 122,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 123,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/grossformat",
+      "svg": 123,
+      "muster": 54,
+      "familien": {
+        "lucide": 122,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 123,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/holzoptik",
+      "svg": 116,
+      "muster": 51,
+      "familien": {
+        "lucide": 115,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 116,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/konfigurator",
+      "svg": 117,
+      "muster": 50,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/kueche",
+      "svg": 117,
+      "muster": 52,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/neubau",
+      "svg": 124,
+      "muster": 53,
+      "familien": {
+        "lucide": 123,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 124,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/renovierung",
+      "svg": 130,
+      "muster": 56,
+      "familien": {
+        "lucide": 129,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 130,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/verlegemuster",
+      "svg": 122,
+      "muster": 57,
+      "familien": {
+        "lucide": 115,
+        "eigene": 7
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 122,
+        "feste Farbe statt currentColor/Variable": 6,
+        "Zugänglichkeit nicht belegt": 6,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesen/verlegetechnik",
+      "svg": 129,
+      "muster": 54,
+      "familien": {
+        "lucide": 128,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 129,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/fliesenreparatur",
+      "svg": 135,
+      "muster": 55,
+      "familien": {
+        "lucide": 134,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 135,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/foerderung",
+      "svg": 128,
+      "muster": 58,
+      "familien": {
+        "lucide": 127,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 128,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/impressum",
+      "svg": 80,
+      "muster": 32,
+      "familien": {
+        "lucide": 79,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 80,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/",
+      "svg": 330,
+      "muster": 87,
+      "familien": {
+        "lucide": 312,
+        "eigene": 1,
+        "marke": 17
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 313,
+        "Zugänglichkeit nicht belegt": 33,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/karriere",
+      "svg": 119,
+      "muster": 53,
+      "familien": {
+        "lucide": 118,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 119,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/karriere/ausbildung",
+      "svg": 107,
+      "muster": 46,
+      "familien": {
+        "lucide": 106,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 107,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/kontakt",
+      "svg": 141,
+      "muster": 69,
+      "familien": {
+        "lucide": 140,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 141,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen",
+      "svg": 146,
+      "muster": 59,
+      "familien": {
+        "lucide": 145,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 146,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen",
+      "svg": 147,
+      "muster": 59,
+      "familien": {
+        "lucide": 146,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 147,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/asslar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/bad-nauheim",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/braunfels",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/butzbach",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/dillenburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/friedberg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/giessen",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/haiger",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/herborn",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/limburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/marburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/solms",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/aussen/wetzlar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad",
+      "svg": 148,
+      "muster": 59,
+      "familien": {
+        "lucide": 147,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 148,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/asslar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/bad-nauheim",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/braunfels",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/butzbach",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/dillenburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/friedberg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/giessen",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/haiger",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/herborn",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/limburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/marburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/solms",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/bad/wetzlar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund",
+      "svg": 148,
+      "muster": 59,
+      "familien": {
+        "lucide": 147,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 148,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/asslar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/bad-nauheim",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/braunfels",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/butzbach",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/dillenburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/friedberg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/giessen",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/haiger",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/herborn",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/limburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/marburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/solms",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/untergrund/wetzlar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen",
+      "svg": 148,
+      "muster": 59,
+      "familien": {
+        "lucide": 147,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 148,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/asslar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/bad-nauheim",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/braunfels",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/butzbach",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/dillenburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/friedberg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/giessen",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/haiger",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/herborn",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/limburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/marburg",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/solms",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/wohnen/wetzlar",
+      "svg": 132,
+      "muster": 59,
+      "familien": {
+        "lucide": 131,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 132,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/leistungen/xyz",
+      "svg": 0,
+      "muster": 0,
+      "familien": {},
+      "icon_familien": 0,
+      "familien_liste": [],
+      "id_doppelt": 0,
+      "befunde": {}
+    },
+    {
+      "seite": "/login",
+      "svg": 83,
+      "muster": 35,
+      "familien": {
+        "lucide": 82,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 83,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/naturstein",
+      "svg": 152,
+      "muster": 64,
+      "familien": {
+        "lucide": 151,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 152,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/naturstein/granit",
+      "svg": 121,
+      "muster": 56,
+      "familien": {
+        "lucide": 120,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 121,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/naturstein/marmor-kalkstein",
+      "svg": 129,
+      "muster": 58,
+      "familien": {
+        "lucide": 128,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 129,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/partner",
+      "svg": 107,
+      "muster": 44,
+      "familien": {
+        "lucide": 106,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 107,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/preise",
+      "svg": 138,
+      "muster": 56,
+      "familien": {
+        "lucide": 137,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 138,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/referenzen",
+      "svg": 235,
+      "muster": 49,
+      "familien": {
+        "lucide": 234,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 235,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/referenzen/badsanierung-grossformat",
+      "svg": 118,
+      "muster": 50,
+      "familien": {
+        "lucide": 117,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 118,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/referenzen/balkon-stelzlager",
+      "svg": 117,
+      "muster": 50,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/referenzen/barrierefreies-duschbad",
+      "svg": 118,
+      "muster": 50,
+      "familien": {
+        "lucide": 117,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 118,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/referenzen/einfamilienhaus-komplett",
+      "svg": 117,
+      "muster": 50,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/referenzen/treppenanlage-wohnhaus",
+      "svg": 117,
+      "muster": 50,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/referenzen/wohnbereich-fussbodenheizung",
+      "svg": 117,
+      "muster": 50,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/schadensanalyse",
+      "svg": 129,
+      "muster": 50,
+      "familien": {
+        "lucide": 128,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 129,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte",
+      "svg": 125,
+      "muster": 49,
+      "familien": {
+        "lucide": 124,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 125,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/asslar",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/bad-nauheim",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/braunfels",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/butzbach",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/dillenburg",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/friedberg",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/giessen",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/haiger",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/herborn",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/limburg",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/marburg",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/solms",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/standorte/unbekannt",
+      "svg": 0,
+      "muster": 0,
+      "familien": {},
+      "icon_familien": 0,
+      "familien_liste": [],
+      "id_doppelt": 0,
+      "befunde": {}
+    },
+    {
+      "seite": "/standorte/wetzlar",
+      "svg": 155,
+      "muster": 77,
+      "familien": {
+        "lucide": 154,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 155,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/team",
+      "svg": 115,
+      "muster": 50,
+      "familien": {
+        "lucide": 114,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 115,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/termin",
+      "svg": 95,
+      "muster": 41,
+      "familien": {
+        "lucide": 94,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 95,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/treppen",
+      "svg": 144,
+      "muster": 63,
+      "familien": {
+        "lucide": 143,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 144,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/treppen/aussentreppe",
+      "svg": 121,
+      "muster": 53,
+      "familien": {
+        "lucide": 120,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 121,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/treppen/innentreppe",
+      "svg": 121,
+      "muster": 54,
+      "familien": {
+        "lucide": 120,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 121,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/treppen/treppenhaus",
+      "svg": 117,
+      "muster": 54,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/ueber-uns",
+      "svg": 131,
+      "muster": 56,
+      "familien": {
+        "lucide": 130,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 131,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/untergrund-abdichtung",
+      "svg": 146,
+      "muster": 62,
+      "familien": {
+        "lucide": 145,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 146,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/untergrund-abdichtung/ausgleich-gefaelle",
+      "svg": 129,
+      "muster": 57,
+      "familien": {
+        "lucide": 128,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 129,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/untergrund-abdichtung/din-18534",
+      "svg": 127,
+      "muster": 58,
+      "familien": {
+        "lucide": 126,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 127,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/untergrund-abdichtung/entkopplung",
+      "svg": 126,
+      "muster": 56,
+      "familien": {
+        "lucide": 125,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 126,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/untergrund-abdichtung/estrich-belegreife",
+      "svg": 134,
+      "muster": 60,
+      "familien": {
+        "lucide": 133,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 134,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/untergrund-abdichtung/fliesen-auf-fliesen",
+      "svg": 141,
+      "muster": 54,
+      "familien": {
+        "lucide": 140,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 141,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/unternehmen",
+      "svg": 117,
+      "muster": 48,
+      "familien": {
+        "lucide": 116,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 117,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    },
+    {
+      "seite": "/widerruf",
+      "svg": 84,
+      "muster": 36,
+      "familien": {
+        "lucide": 83,
+        "eigene": 1
+      },
+      "icon_familien": 2,
+      "familien_liste": [
+        "lucide",
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "Strichstärke ≠ 1,5": 84,
+        "mehrere Icon-Familien je Seite": 1
+      }
+    }
+  ],
+  "dateien": {
+    "public": [
+      {
+        "datei": "public/images/logo/tezgel-logo-dark.svg",
+        "svg": 1
+      },
+      {
+        "datei": "public/images/logo/tezgel-logo.svg",
+        "svg": 1
+      },
+      {
+        "datei": "public/images/logo/tezgel-mark.svg",
+        "svg": 1
+      }
+    ],
+    "src": [
+      {
+        "datei": "src/app/fliesen/verlegemuster/page.jsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/common/CookieConsent.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/common/FloatingWhatsAppWidget.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/common/TileCraftIcons.jsx",
+        "svg": 13
+      },
+      {
+        "datei": "src/components/ui/GoogleIcon.tsx",
+        "svg": 1
+      }
+    ],
+    "nur": []
+  }
+}

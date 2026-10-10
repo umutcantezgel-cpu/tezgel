@@ -152,7 +152,7 @@
    "src/lib/email/**",
    "src/components/ui/GoogleIcon.tsx", "src/components/ui/WhatsAppLogo.tsx",
    "**/opengraph-image.*",
-   "src/app/werkstatt-schaufenster/**"
+   "src/app/(bestand)/werkstatt-schaufenster/**"
   ],
   "svg_pfaddaten": [
    "d",
@@ -160,7 +160,7 @@
   ],
   "zeilen": [
    {
-    "datei": "src/app/layout.tsx",
+    "datei": "src/app/(bestand)/_dokument.tsx",
     "muster": "themeColor",
     "grund": "Metadaten verlangen einen Farbwert (= --color-kalk)"
    },

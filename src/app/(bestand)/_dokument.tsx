@@ -1,6 +1,8 @@
+// Dokument-Gerüst der Bestandsseiten (E-015): Inhalt des früheren Root-Layouts (Stand KERN v2), eingebunden über ./layout.tsx.
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
+// Pfad nach dem Umzug in die Gruppe (bestand); globals.css bindet tokens.css selbst in layer(alt) ein (KERN K-004).
+import '@/app/globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';
 import MobileBottomBar from '@/components/layout/MobileBottomBar';
@@ -16,7 +18,7 @@ import { KOPFSKRIPT } from '@/lib/motion/kopfskript';
 // Schriften selbst gehostet (OFL 1.1, src/app/fonts/LIZENZEN.md). Archivo auf die genutzten Achsen beschnitten
 // (wdth 74–100, wght 400–800); Ersatzschriften mit Metrik-Anpassung stehen in globals.css (KERN K-006, E-010).
 const archivo = localFont({
-  src: './fonts/archivo-variabel.woff2',
+  src: '../fonts/archivo-variabel.woff2',
   variable: '--font-archivo',
   display: 'swap',
   weight: '400 800',
@@ -25,7 +27,7 @@ const archivo = localFont({
 });
 
 const plexMono = localFont({
-  src: './fonts/plex-mono-400.woff2',
+  src: '../fonts/plex-mono-400.woff2',
   variable: '--font-plex-mono',
   display: 'swap',
   weight: '400',
@@ -33,7 +35,7 @@ const plexMono = localFont({
   adjustFontFallback: false,
 });
 
-export const metadata: Metadata = {
+export const BESTAND_METADATA: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
@@ -94,12 +96,12 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
+export const BESTAND_VIEWPORT: Viewport = {
   themeColor: '#F5F4F0', // = --color-kalk (Metadaten verlangen einen Farbwert)
   colorScheme: 'light',
 };
 
-export default function RootLayout({
+export default function BestandDokument({
   children,
 }: Readonly<{
   children: React.ReactNode;

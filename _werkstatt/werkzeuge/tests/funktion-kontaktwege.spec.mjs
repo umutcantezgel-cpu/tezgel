@@ -70,6 +70,19 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
     });
   }
 
+  test('Widget: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)', async ({ page }) => {
+    await page.goto('/');
+    const knopf = page.locator('#whatsapp-floating-btn');
+    // Kennung E-012 aus _relaunch/ENTSCHEIDUNGEN.md (übernommen mit dem Merge von main). Unser Rahmen (KERN K-009): der flache
+    // Knopf ist erst ab lg sichtbar; mobil steht er verborgen im Dokument (WhatsApp trägt die untere Leiste).
+    // Name und Abzeichen werden in beiden Projekten am Knopf selbst geprüft.
+    if (test.info().project.name === 'mobil') await expect(knopf).toHaveCount(1);
+    else await expect(knopf).toBeVisible();
+    await expect(knopf).toHaveAttribute('aria-label', 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden');
+    // Das Abzeichen saß im Knopf selbst (Ausgangsstand: ein Element mit Text „1“); Schrittnummern der Seite zählen nicht.
+    await expect(knopf.getByText('1', { exact: true })).toHaveCount(0);
+  });
+
   test('Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)', async ({ page }) => {
     test.skip(test.info().project.name !== 'desktop', 'Am Desktop über window.open synchron prüfbar; mobil ist es eine Navigation');
     await page.goto('/');

@@ -3,15 +3,14 @@
 // Projektanfrage auf der Startseite (E2-ORCH-08): links die Angaben als Felder an der Fuge, rechts Zusammenfassung
 // und Kontakt als Schriftfeld auf Tinte. Logik, Nutzlast, IDs, Knopfnamen und Texte unverändert (Test funktion-preisrechner);
 // das pulsierende Absende-Element (HeartbeatCTA) entfällt – Bewegung nur nach Register.
-import React, { useState } from "react";
+// Zustände, Prüfung und Absenden kommen aus usePreisrechner (P3-00l, eine Logik für Bestand und Kern); dort startet die
+// Einwilligung leer (Fairness, E-014).
 import {
   CRAFT_SERVICES,
   ROOM_SIZES,
   SITUATION_OPTIONS,
-  PROPERTY_TYPES,
   TIMING_OPTIONS,
   type CraftServiceType,
-  type RoomSizeType,
 } from "./pricing.constants";
 import Icon from "@/components/icons/Icon";
 import Verlegeplan from "@/components/kern/Verlegeplan";
@@ -20,7 +19,7 @@ import Fugenkreuz from "@/components/kern/Fugenkreuz";
 import Knopf from "@/components/kern/Knopf";
 import { etikettForm, etikettKlassen, feldKlassen, labelKlassen } from "@/components/kern/stile";
 import { siteConfig } from "@/lib/config";
-import { triggerHaptic } from "@/lib/haptics";
+import { usePreisrechner } from "@/lib/formulare/usePreisrechner";
 
 const SERVICE_PLAENE: Record<CraftServiceType, PlanName> = {
   bad: "bad",
@@ -43,143 +42,40 @@ const stufeKlassen =
 const zahlFeldKlassen =
   "block w-24 min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte";
 
-type FormStatus = "idle" | "submitting" | "success" | "error";
-
 export default function PricingCalculator() {
-  // 1. Projekt- & Situationsangaben
-  const [serviceType, setServiceType] = useState<CraftServiceType>("bad");
-  const [roomSize, setRoomSize] = useState<RoomSizeType>("medium");
-  const [customArea, setCustomArea] = useState<string>("");
-  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([
-    "untergrund",
-    "staubschutz",
-  ]);
-  const [propertyType] = useState<string>("bestand");
-  const [timing, setTiming] = useState<string>("In den nächsten 1 - 3 Monaten");
-  const [notes, setNotes] = useState<string>("");
-
-  // 2. Kontaktdaten
-  const [name, setName] = useState<string>("");
-  const [phone, setPhone] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [location, setLocation] = useState<string>("");
-  const [privacyAccepted, setPrivacyAccepted] = useState<boolean>(true);
-
-  // 3. Status & Anti-Bot
-  const [honeypot, setHoneypot] = useState<string>("");
-  const [formInitTime] = useState<number>(() => Date.now());
-  const [status, setStatus] = useState<FormStatus>("idle");
-  const [errorMessage, setErrorMessage] = useState<string>("");
-  const [referenceId, setReferenceId] = useState<string>("");
-
-  const selectedService = CRAFT_SERVICES[serviceType] || CRAFT_SERVICES.bad;
-  const selectedSize = ROOM_SIZES[roomSize] || ROOM_SIZES.medium;
-
-  const toggleFeature = (id: string) => {
-    triggerHaptic("light");
-    setSelectedFeatures((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    triggerHaptic("medium");
-
-    if (!name.trim()) {
-      setErrorMessage("Bitte geben Sie Ihren Namen an.");
-      return;
-    }
-
-    if (!phone.trim()) {
-      setErrorMessage("Bitte geben Sie eine Telefonnummer für den Rückruf an.");
-      return;
-    }
-
-    if (!privacyAccepted) {
-      setErrorMessage("Bitte willigen Sie in die Datenverarbeitung zur Kontaktaufnahme ein.");
-      return;
-    }
-
-    setErrorMessage("");
-    setStatus("submitting");
-
-    // Detaillierte Situationszusammenfassung für Deniz Tezgel
-    const featureLabels = selectedFeatures
-      .map((fId) => SITUATION_OPTIONS.find((opt) => opt.id === fId)?.label)
-      .filter(Boolean);
-
-    const propertyLabel =
-      PROPERTY_TYPES.find((p) => p.id === propertyType)?.label || propertyType;
-
-    const areaDescription = customArea.trim()
-      ? `${customArea.trim()} m² (Kategorie: ${selectedSize.label})`
-      : selectedSize.areaText;
-
-    const fullSituationDescription = [
-      notes.trim() ? `SITUATIONSSCHILDERUNG DES KUNDEN:\n${notes.trim()}\n` : "",
-      `--- PROJEKTDETAILS ---`,
-      `Gewerk: ${selectedService.title}`,
-      `Fläche / Umfang: ${areaDescription}`,
-      `Objektart: ${propertyLabel}`,
-      `Zeitrahmen: ${timing}`,
-      featureLabels.length > 0
-        ? `Besonderheiten / Vorarbeiten:\n- ${featureLabels.join("\n- ")}`
-        : "Besonderheiten: Keine besonderen Zusatzoptionen angewählt",
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    try {
-      const res = await fetch("/api/anfrage", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          inquiryType: serviceType === "bad" ? "bad" : "general",
-          projectTitle: `${selectedService.title} (${selectedSize.label})`,
-          projectType: serviceType,
-          contact: {
-            name: name.trim(),
-            phone: phone.trim(),
-            email: email.trim() || undefined,
-            location: location.trim() || "Aßlar / Wetzlar / Hessen",
-          },
-          area: areaDescription,
-          timing: timing,
-          notes: fullSituationDescription,
-          honeypot: honeypot || undefined,
-          _t: formInitTime,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        throw new Error(data.error || "Übertragung fehlgeschlagen.");
-      }
-
-      if (data.referenceId) {
-        setReferenceId(data.referenceId);
-      }
-
-      setStatus("success");
-    } catch (err: unknown) {
-      console.error("Anfrageformular Fehler:", err);
-      const msg =
-        err instanceof Error
-          ? err.message
-          : "Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns direkt an.";
-      setErrorMessage(msg);
-      setStatus("error");
-    }
-  };
-
-  const handleReset = () => {
-    setStatus("idle");
-    setNotes("");
-    setReferenceId("");
-    setErrorMessage("");
-  };
+  const {
+    serviceType,
+    roomSize,
+    customArea,
+    setCustomArea,
+    selectedFeatures,
+    timing,
+    setTiming,
+    notes,
+    setNotes,
+    name,
+    setName,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    location,
+    setLocation,
+    privacyAccepted,
+    setPrivacyAccepted,
+    honeypot,
+    setHoneypot,
+    status,
+    errorMessage,
+    referenceId,
+    selectedService,
+    selectedSize,
+    toggleFeature,
+    handleSubmit,
+    handleReset,
+    selectService,
+    selectRoomSize,
+  } = usePreisrechner();
 
   return (
     <div className="grid grid-cols-1 border border-strich lg:grid-cols-5">
@@ -220,10 +116,7 @@ export default function PricingCalculator() {
                   key={srv.id}
                   type="button"
                   aria-pressed={isSelected}
-                  onClick={() => {
-                    triggerHaptic("light");
-                    setServiceType(srv.id);
-                  }}
+                  onClick={() => selectService(srv.id)}
                   className={optionKlassen}
                   data-motion="zustand"
                 >
@@ -259,11 +152,7 @@ export default function PricingCalculator() {
                   key={size.id}
                   type="button"
                   aria-pressed={isSelected}
-                  onClick={() => {
-                    triggerHaptic("light");
-                    setRoomSize(size.id);
-                    setCustomArea("");
-                  }}
+                  onClick={() => selectRoomSize(size.id)}
                   className={stufeKlassen}
                   data-motion="zustand"
                 >

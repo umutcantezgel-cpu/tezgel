@@ -12,7 +12,14 @@ Vertrauliche Details (Sicherheit, Recht) stehen bewusst nicht in diesem öffentl
 - M-06 · Geräteprobe: iPhone mit Safari, Android mit Chrome, Desktop mit Firefox und Safari – WebKit/Firefox sind in der Arbeitsumgebung nicht installierbar. Kriterium: Z-11, Z-13, A-10.
 - M-07 · Geschmacksabnahme der gewählten Richtung und der Signaturmomente (Lauf 1 vollautonom; Abnahme nachträglich).
 - M-08 · URLs der Original-tezgel.de vor dem Relaunch (Wayback Machine aus der Arbeitsumgebung gesperrt): Export „Seiten“ aus der Google Search Console, damit alte URLs weitergeleitet werden können. Kriterium: Z-06.
-- M-09 · Lizenzen: Maskottchen (I-08); Schrift-Kaufempfehlung folgt in P2.
+- M-09 · Lizenzen: Logo-Figur (I-08). Schriften: Archivo und IBM Plex Mono stehen unter der SIL Open Font License (frei nutzbar, Vermerk in `src/app/fonts/LIZENZEN.md`); eine Kaufschrift ist nicht nötig. Favicon bleibt unverändert; ein Favicon im Formsystem ist nur ein Vorschlag.
 - M-10 · Node-Version: `npm test` braucht Node ≥ 22.6; `.nvmrc` sagt 20 (E-004). Annahme: unverändert.
 - M-11 · Vercel: Das Repo ist mit zwei Vercel-Projekten verbunden (`uus-projects-dd41487b/tezgel`, `codays-projects/tezgel`); beide bauen jeden Push. Live (www.tezgel.de) ist `codays-projects`. Prüfen, ob das zweite Projekt gebraucht wird. Annahme: unverändert.
 - M-05 (Ergänzung): weitere Geschäftslogik-Befunde aus den Funktionstests (Details I-18).
+- M-12 · Kundenstimmen: Dürfen Google-Bewertungen mit gekürztem Namen und Quelle wörtlich gezeigt und ein Schlüsselwort angestrichen werden (E-008)? Kriterium: Z-08 Inhalt, Recht. Annahme: ja, wie bisher auf der Website, Wortlaut unverändert.
+- M-13 · Preisrechner: Die Einwilligung startet künftig nicht mehr vorab angekreuzt (E-014) – ein Klick mehr, dafür eine echte Zustimmung. Bitte bestätigen. Annahme: so umsetzen.
+- M-14 · Fotoliste für die Jury-Kategorie „Inhalt“ (Z-08): Inhaber beim Aufmaß, Großformat-Fuge im Streiflicht, Walk-in-Dusche mit Rinne, Terrasse auf Stelzlagern, Treppe mit Kantenschiene, fertiges Bad (je 1–2, eigene Baustellen). Annahme: bis dahin tragen gezeichnete Verlegepläne die Bildwelt.
+- M-15 · Mikrotext „Anfrage verbindlich absenden“ → „Anfrage senden“ (Anfrage-Funnel; andere Formulare nennen die Anfrage „unverbindlich“). Bitte bestätigen. Annahme: so umsetzen (MIKROTEXTE.md).
+- M-16 · Karten-Platzhalter: Der Knopf „Cookie-Einstellungen“ im Platzhalter öffnet den Einwilligungsbanner nicht (Bestand und Kern, siehe FUNKTIONSLISTE „Befund P3-08“). Behebung berührt die Einwilligungslogik (G9). Kriterium: Z-03 F-11/F-12. Annahme: unverändert; der Weg über „Cookie-Einstellungen“ im Fußbereich funktioniert.
+- M-17 · Bildbeschreibungen: Generierte Bilder bekommen in der neuen Gestaltung ehrliche Alt-Texte mit dem Zusatz „(generierte Darstellung)“ (MIKROTEXTE, Klasse 2). Bitte bestätigen oder echte Fotos liefern (M-02). Annahme: so umsetzen.
+- M-18 · Widerruf der Cookie-Einwilligung: In der neuen Gestaltung entfällt das schwebende Schild; der Widerruf geht über „Cookie-Einstellungen“ im Fußbereich jeder Seite (E-020). Bitte rechtlich bestätigen. Annahme: so umsetzen.

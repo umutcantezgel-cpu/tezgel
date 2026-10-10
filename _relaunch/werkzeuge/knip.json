@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["src/app/**/{page,layout,not-found,route,sitemap,robots,icon,apple-icon}.{ts,tsx,js,jsx}", "next.config.ts", "scripts/**/*.mjs", "test/**/*.mjs"],
+  "project": ["src/**/*.{ts,tsx,js,jsx}"],
+  "ignore": ["_relaunch/**", "Pipeline Kopie 5/**", "K-Aqua-Cursor-Animation/**", "WhatsApp-Button-Export/**", "CookieConsentExport/**"],
+  "next": true,
+  "eslint": true,
+  "postcss": true,
+  "tailwind": true
+}

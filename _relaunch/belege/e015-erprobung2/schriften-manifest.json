@@ -1,0 +1,18 @@
+{
+ "(bestand)/page": [
+  "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+  "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2"
+ ],
+ "(kern)/kern-probe/[slug]/page": [
+  "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+  "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+  "archivo_latin_variabel-s.p.1h4hl0m83hjjz.woff2",
+  "ibm_plex_mono_latin_400.p.3xdfs0-p_zi4c.woff2"
+ ],
+ "(kern)/kern-probe/page": [
+  "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+  "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+  "archivo_latin_variabel-s.p.1h4hl0m83hjjz.woff2",
+  "ibm_plex_mono_latin_400.p.3xdfs0-p_zi4c.woff2"
+ ]
+}

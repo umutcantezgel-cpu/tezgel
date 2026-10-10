@@ -32,7 +32,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - Volle Git-Historie per `git fetch --unshallow` geladen.
 
 ## E-003 · Push-Weg
-- Vor jedem main-Push: Reinraum-Build aus `git worktree`, Invarianten, Push des Commits auf den Sitzungs-Branch `claude/kind-franklin-5y6s1d` → Vercel-Vorschau-Status grün → `git push origin HEAD:main` → Produktionsstatus → Live-Rauchtest (x-build-Meta = Commit). Bewegt sich origin/main: Merge-Commit, kein Rebase, kein Force.
+- *(ersetzt durch E-005)* Vor jedem main-Push: Reinraum-Build aus `git worktree`, Invarianten, ~~Push des Commits auf den Sitzungs-Branch → Vercel-Vorschau-Status grün~~ → `git push origin HEAD:main` → Produktionsstatus → Live-Rauchtest (x-build-Meta = Commit). Bewegt sich origin/main: Merge-Commit, kein Rebase, kein Force.
 
 ## E-004 · Node-Version
 - `.nvmrc` (20) und `engines` (>=18.17) bleiben unverändert: Die Laufzeit auf Vercel ist eine Projekteinstellung; eine Änderung wäre eine Hosting-Änderung ohne Nutzen für die Gestaltung. Lokal läuft Node 22.22 (nötig für `npm test` mit `--experimental-strip-types`). Hinweis in MENSCHEN.md.
@@ -68,7 +68,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - **Bewertung:**
   - Nordstern/Austauschprobe: A und C bestehen, B nur im Grenzfall (anderer Großformat-Betrieb könnte es übernehmen).
   - UNANTASTBAR: Die bestehende H1 von `/` lautet „Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar“ – sie ist wörtlich die Leitidee von A (Präzision je Quadratmeter = Verlegeplan). C setzt das Motto als H1 → Überschriftenänderung, nur als Vorschlag zulässig; C verliert ohne diese Geste seinen Einstieg.
-  - Skalierung: A erzeugt je Leistung eine eigene Verlegeplan-Zeichnung (6 Leistungen, 13 Fliesenseiten, Untergrund/Abdichtung, Treppen, Balkon) – Bildwelt ohne Foto, ehrlich gezeichnet, ohne erfundene Maße („=“ statt Zahl). C lebt von Kundenstimmen (27 Bewertungen, Freigabe der Namensnennung offen, M-xx) und trägt auf Rechts-, Blog- und Leistungsseiten kaum.
+  - Skalierung: A erzeugt je Leistung eine eigene Verlegeplan-Zeichnung (6 Leistungen, 13 Fliesenseiten, Untergrund/Abdichtung, Treppen, Balkon) – Bildwelt ohne Foto, ehrlich gezeichnet, ohne erfundene Maße („=“ statt Zahl). C lebt von Kundenstimmen (27 Bewertungen, Freigabe der Namensnennung offen, M-12) und trägt auf Rechts-, Blog- und Leistungsseiten kaum.
   - Bedienbarkeit: gleich (je 6); Fehler beider sind lokal behebbar. Cs Atkinson-Vorteil (1/l/I, 0/O) gilt vor allem für Nummern – diese stehen in A ohnehin in Plex Mono mit eindeutigen Formen.
   - Lauf 2: A liefert den markenbezogenen Spitzenmoment (Kreuzlinienlaser projiziert Waage und Lot über eine gezeichnete Fläche) ohne Fremdmotiv.
   - Risiko: A wirkt kühl/technisch → Gegenmittel aus C: die Hand des Inhabers (Anriss mit dem Stift ist Fliesenleger-Praxis) an echten Stimmen und Prüfhaken; Kitschgefahr von C wird durch „ein Rot, eine Geste je Abschnitt“ begrenzt.
@@ -100,7 +100,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - **Bestand:** `src/components/ui/WaterCursor.tsx` (588 Zeilen, WebGL), global über `ClientWidgets`, nur Dekoration ohne Aufgabe.
 - **Wege:** (1) entfernen, Ersatz ist SIG-1 Kreuzlinie als lebendiges Element des Einstiegs. (2) auf `(pointer: fine)` und Erzählseiten begrenzen. (3) in Form der Leitidee neu (Laserpunkt folgt dem Zeiger).
 - **Bewertung:** (2) bleibt S-09 und WebGL (in Lauf 1 nur bei GESTALTUNGSMUT experimentell zulässig). (3) Nachlaufcursor bleibt Nachlaufcursor, Austauschprobe schwach. (1) spart JS und GPU-Last, die Aufgabe „Lebendigkeit“ übernimmt SIG-1.
-- **Wahl: (1)** in P4 (globaler Umstieg) mit Protokoll; verwaiste Hülle `src/components/common/WaterCursor.tsx` gleich mit.
+- **Wahl: (1).** Nach E-015: Die Kern-Schale enthält keinen Nachlaufcursor; im Bestand entfällt er mit dem Aufräumen in W10 (Bestand bleibt bis dahin eingefroren); verwaiste Hülle `src/components/common/WaterCursor.tsx` gleich mit.
 - **Umkehrprobe:** Revert des P4-Pakets.
 - **Folgen zweiter Ordnung:** Lauf 2 darf einen markenbezogenen WebGL-/Canvas-Moment prüfen (A2 C) – nicht als Cursor.
 
@@ -109,7 +109,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - **Bestand:** `FloatingWhatsAppWidget.tsx` (780 Zeilen) mit Wurfphysik (`widgetPhysicsCoordinator`), Tooltip, Benachrichtigungs-Badge „1“ für 30 s (vorgetäuschte Nachricht), dazu MobileBottomBar mit WhatsApp.
 - **Wege:** (1) mobil entfällt das schwebende Widget, WhatsApp liegt in der unteren Leiste; Desktop ein flacher, rechteckiger Knopf rechts unten im Formsystem, ohne Badge und ohne Physik. (2) überall schwebend, nur neu gestaltet. (3) Widget ganz entfernen, nur Leiste und Kopf.
 - **Bewertung:** (2) behält die Mehrfachüberlagerung mobil. (3) verliert am Desktop einen sichtbaren Kanal (Bestand). (1) erhält jeden Kanal und beseitigt die Überdeckung. Das Badge „1“ täuscht eine Nachricht vor → manipulatives Muster, entfällt (Leitplanke Rang 1).
-- **Wahl: (1)** in P4. Seitenbezogene Texte und das Analyse-Ereignis bleiben wörtlich.
+- **Wahl: (1)** in der Kern-Schale (P3-07). Seitenbezogene Texte und das Analyse-Ereignis bleiben wörtlich. Das vorgetäuschte Abzeichen „1“ entfällt im Bestand sofort (P3-00k, Rang 1).
 - **Umkehrprobe:** Revert; Funktionstest F-10 sichert beide Wege.
 - **Folgen zweiter Ordnung:** `widgetPhysicsCoordinator` wird nur noch vom Banner genutzt → mit E-013 entfällt er ganz.
 
@@ -117,6 +117,64 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 - **Ziel:** Inhalt, Reihenfolge und Gleichwertigkeit der Knöpfe unverändert (F-11), Form nach KERN, verdeckt nie die Hauptaktion des ersten Bildschirms.
 - **Wege:** (1) Schriftfeld-Form: Desktop links unten ≤ 28rem, mobil unten über der Leiste, ohne Wurfphysik. (2) Modal in der Mitte. (3) schmale Leiste am oberen Rand.
 - **Bewertung:** (2) blockiert Inhalte (S-07-nah) und fokussiert zwangsweise. (3) verdrängt Kopf und Achse. (1) ist nicht blockierend und im Formsystem; die Wurfphysik hat keine Aufgabe.
-- **Wahl: (1)** in P4. Texte und Kategorien wörtlich (Rechtstext), Fokusreihenfolge geprüft.
+- **Wahl: (1)** in der Kern-Schale (P3-08). Texte und Kategorien wörtlich (Rechtstext), Fokusreihenfolge geprüft; Bestand unverändert bis zu seiner Freischaltung.
 - **Umkehrprobe:** Revert; F-11 sichert das Verhalten.
 - **Folgen zweiter Ordnung:** Das Einwilligungsverhalten selbst (Speicherung, Kategorien, Zeitpunkt) bleibt unberührt (G9); Prüfpunkte dazu stehen neutral in MENSCHEN.md.
+
+## E-014 · Vorab angekreuzte Einwilligung im Preisrechner
+- **Befund:** Die Einwilligungs-Checkbox im PricingCalculator startet angekreuzt (`useState(true)`). Eine vorab erteilte Einwilligung ist kein freiwilliges, bewusstes Ja (Fairness-Leitplanke, Rang 1 vor Bestand).
+- **Wahl:** Startwert `false` – im Bestand sofort (P3-00k, Rang 1 vor Bestand, P2-GEG-02 N-14) und in der Kern-Darstellung (P3-13); Logik der Übermittlung unverändert. **Folge für Z-04:** ein Klick mehr in der Aufgabe „Anfrage stellen“ über den Preisrechner – begründete Abweichung, im Probeläufer-Vergleich ausgewiesen. Prüfhinweis an den Auftraggeber in MENSCHEN.md.
+- **Umkehrprobe:** ein Wert im Revert.
+
+## E-015 · Denkprotokoll: Bauweise und Freischaltung (ersetzt den „globalen Umstieg“ in P4)
+- **Ziel:** (1) nie ein halbfertiger oder gemischter Stand live – jede Seite ist live ganz alt oder ganz neu; (2) trotzdem nach jeder Welle pushen (E-000), damit nichts verloren geht; (3) kein globales Umfärben ungeprüfter Seiten (P2-GEG-01 Befund 2: ≈ 4.600 Klassenstellen über `tokens.css`-Umdeutungen); (4) neue Seiten laden nur die neuen Schriften und das neue CSS.
+- **Wege:**
+  1. *Plan Runde 1:* P3 additiv auf `/`, P4 globaler Umstieg (Tokens, Schriften, Schale für alle), P5 Körper je Cluster. → Mischstände live (neue `/` unter altem Kopf; neue Schale über orangen Körpern auf 113 Seiten), großes Umfärbe-Risiko.
+  2. *Schale per Pfad wählen* (Client-Weiche mit `usePathname`, beide Schalen im RSC-Paket aller Seiten) + Schalter je Phase. → doppelte Schale in jeder Seite, alle vier Schriftfamilien überall, Weiche im Client.
+  3. *Zwei Routen-Gruppen mit je eigenem Root-Layout:* `src/app/(bestand)/` (heutiges Layout unverändert: Schale, Inter/Jakarta, `globals.css`) und `src/app/(kern)/` (neues Layout: Kern-Schale, Archivo/Plex, eigenes CSS `kern-global.css` mit `@source` nur auf Kern-Code). Neue Seiten entstehen ruhend im privaten Ordner `src/app/(kern)/_entwurf/<route>/` (Unterstrich = nicht geroutet), werden typgeprüft, gelintet und gepusht, sind aber nicht erreichbar und nicht gebaut (private Ordner kompiliert Next nur bei Import) – gebaut und angesehen werden sie im Vorschau-Kandidaten (Plan Runde 3, N-03). **Freischaltung** einer Seite oder eines Clusters = ein Commit, der `_entwurf/<route>` nach `(kern)/<route>` verschiebt und `(bestand)/<route>` entfernt. Getestet wird vorher der **Kandidat**: Reinraum-Kopie + dasselbe Freischalt-Skript (`werkzeuge/freischalten.sh`), also Byte für Byte der spätere Live-Stand. 404 für unbekannte Adressen über `app/global-not-found.tsx` (experimentell, `experimental.globalNotFound`), das die Bestands-Schale rendert, bis die letzte Seite umgezogen ist.
+- **Bewertung:** (3) erfüllt alle vier Ziele: Seiten sind live nie gemischt; Wellen pushen ruhenden Code; alte Seiten behalten ihr CSS unverändert (`globals.css` bekommt nur `@source not` für Kern-Ordner, damit ihr CSS byte-gleich bleibt), neue Seiten tragen nur Kern-CSS und zwei Schriften; framer-motion, lucide, `tokens.css`, Inter/Jakarta und die alte Schale fallen am Ende mit dem letzten Bestandsnutzer weg (E-009/E-010 vereinfacht, P2-GEG-01 Befund 10 erledigt). Nachteil: Wechsel zwischen alter und neuer Seite lädt die Seite voll neu (verschiedene Root-Layouts) – nur in der Übergangszeit, unkritisch. Risiko: `global-not-found` ist experimentell → Kandidat-Prüfung mit Status 404 und Funktionstest F-17; Rückfall: Weg 2 nur für die 404.
+- **Wahl: (3).** Ablauf je Phase: ruhende Wellen → Kandidat-Tor (vollständig) → Freischalt-Commit → Push → Live-Rauchtest. Der Umzug des Bestands nach `(bestand)` ist ein eigener, inhaltsneutraler Schritt (P3-00): HTML aller 172 Dateien normalisiert identisch, Pixel 0.
+- **Umkehrprobe:** Revert des Freischalt-Commits stellt die Bestandsseite wieder her (sie liegt bis zum Aufräumen am Phasenende in der Historie und im Kandidat-Vergleich). Der Umzug selbst ist per Revert umkehrbar.
+- **Folgen zweiter Ordnung:** (1) P4 heißt nun „Fundament“ ohne globalen Umstieg: vollständige Kern-Bausteine, Vorlagen, Verlegepläne, Icons, Wege (308/410) – die Freischaltungen geschehen clusterweise in P5. (2) Interne Links zwischen alten und neuen Seiten bleiben gleich (URLs unverändert). (3) Metadaten-Vorgaben des Root-Layouts werden in ein gemeinsames Modul gezogen und von beiden Layouts genutzt (JSON-LD-Hash-Invariante). (4) Die Startklasse (Kopfskript) steht nur im Kern-Layout. (5) Dokumentation: Zusammenführen entfällt (main), am Ende von P5 werden `(bestand)` und alle Altbausteine entfernt.
+
+## E-016 · Slop-Basis: Umfang
+- **Ziel:** belastbare Basis für Z-07 ohne 240 Agenten.
+- **Wahl:** Hart über alle Dateien per `statisch.mjs` (479), weich (a) über alle Dateien per `statisch.mjs` (1.383) und (b) per Slop-Jäger + Opus-Gegenprüfer auf einer festen Stichprobe: 7 Hauptseiten (74, MESSUNGEN; ≤ 30 Ausschnitte) + je Vorlage eine Seite (P3-00, 12 Seiten, je 16 Ausschnitte über 4 Ansichten; Liste `belege/p0-stichprobe-slop-args.json`). Begründung der Verkleinerung: Opus-Kontingent (P2-GEG-01 Befund 14/C-11). Die Abnahme vergleicht dieselbe Stichprobe vorher/nachher; am Ende zusätzlich Slop-Jäger über die Grundmenge in allen Ansichten (Z-07).
+- **Umkehrprobe:** Stichprobe ist fest in `belege/p0-slop-args.json` und folgender Datei; erweiterbar.
+
+## E-017 · Denkprotokoll: Tore unter E-015 (P2-GEG-02 N-01, N-09)
+- **Ziel:** Tore, die (1) ruhenden Code als ruhend beweisen, (2) eine Freischaltung nur zulassen, wenn nichts schlechter wird, (3) die Zielwerte des Auftrags an den Phasentoren prüfen, ohne dass eine schwer erreichbare Zielmarke (Jury ≥ 8,0, Kategorie Inhalt ohne Fotos) jede Freischaltung blockiert.
+- **Wege:** (1) ein Tor für alles (Kandidat-Tor mit Zielwerten) → jede Freischaltung hängt an Z-08 und blockiert den Pfad (L3: drei Anläufe). (2) nur Wellen-Tor + Phasentor → Freischaltungen ohne Prüfung der betroffenen Seiten. (3) **drei Stufen:** T1 Wellen-Tor (build-vergleich gegen Live: HTML 172 + CSS gleich ⇒ ruhend bewiesen), T2 Kandidat-Tor mit Freischalt-Schwelle (Ränge 1–4 grün, nichts schlechter als Bestand, Jury ≥ Bestand + 2,0), T3 Phasentor mit allen Zielwerten und L3.
+- **Wahl: (3).** P4-Tor (AUFTRAG: Z-05, Z-11, Z-13 auf den Hauptseiten) wird über die Vorschau-Kandidaten der Hauptseiten-Entwürfe geprüft (W1-01, W2-01, W3-01, W6-01, W8-01, W9-01 werden dafür in P4 als Entwurf vorgezogen); live schalten sie erst in ihrer Welle frei.
+- **Umkehrprobe:** Schwelle und Ziel sind getrennt dokumentiert; wird eine Seite mit Freischalt-Schwelle live und verfehlt später das Ziel, bleibt sie Paket bis zum Phasentor (L7).
+- **Folgen zweiter Ordnung:** Z-08 kann nach L7 AUSNAHME werden, ohne dass der Bestand länger live bleibt; die Freischaltungen verbessern den Live-Stand schrittweise.
+
+### E-015 · Nachtrag: Erprobung 2 (P3-00o, 10.10.2026) – bestanden
+Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, BewegungsRegie; statische und dynamische Probe-Route mit `notFound()`; Entwurf mit eigener Klasse). Belege `belege/e015-erprobung2/`.
+- Bestand: HTML 172/172 normalisiert gleich (`build-vergleich.json`), Bestands-CSS ohne Kern- und Probeklassen.
+- Kern-CSS: Einstieg **`src/styles/kern-global.css`** mit `@source "../app/(kern)"` und `@source not "../app/(kern)/_entwurf"` greift (Probeklasse drin, Entwurfsklasse nicht). Eine Kern-CSS-Datei liegt **in** `(kern)/` mit `@source "./"` hat nicht gegriffen; maskierte Klammern (`\(kern\)`) und `?kern?` ebenfalls nicht → Einstieg liegt unter `src/styles/`.
+- Status (`status.txt`): unbekannte Adressen 404 mit Bestands-Schale (`global-not-found`), `notFound()` in Bestand und Kern 404, Kern-404 rendert `(kern)/not-found.tsx`; Wechsel Kern → Bestand (Next-Link, volle Neuladung) und zurück ohne Konsolenfehler; Startklasse und Sichtauslöser greifen.
+- **Abweichung (befristet bis W10):** `global-not-found` wird von Next in jede Route eingehängt; dadurch lädt eine Kern-Seite zusätzlich Inter und Jakarta vor (4 statt 2 Schriftdateien, `schriften-manifest.json`). Ohne `global-not-found` sind es 2, mit Schriftaufrufen nur in der 404 ebenfalls 4 (geprüft). JavaScript unverändert (173 KB gzip mit und ohne). Gegenweg (Fang-Route `[...unbekannt]`) wäre schlechter: die 404 unbekannter Adressen käme ohne Server-HTML (leer ohne JavaScript). → Hinnehmen bis W10-02 (Kern-404 global, Bestands-Schriften entfallen); Lighthouse im T2 weist den Effekt aus; K-005 vermerkt die Ausnahme.
+
+## E-018 · Messregeln für Bewegung und Barrierefreiheit (Rückfragen P3-00a, P3-00c)
+- **Frames (Z-09):** Soll nur mobil bei 4× CPU-Drosselung (AUFTRAG Ebene 4). „Verworfen“ = Frame-Intervall > 25 ms (mehr als 1,5 vsync, mindestens ein verpasster Frame). Desktop-Frames nur als Information (Headless ohne GPU).
+- **Interaktions-Bewegungen** (`sig-plan`, `zustand`, `druck`, `aufklappen`): `bewegung.mjs` löst Hover, Fokus und Klick auf Elementen mit diesen Kennungen aus – Erweiterung in P3-14d, sobald Kern-Elemente existieren.
+- **Harte Kennzahlen Z-11:** Fokus nicht sichtbar · Fokusring < 3:1 oder < 2 px („dünn“; KERN K-006 verlangt 2 px und 3:1) · Fokus durch feste Ebene verdeckt (WCAG 2.4.11) · Tastaturfalle · Reihenfolge-Sprünge · Sprunglink · Reflow 320 · Textabstände: abgeschnitten (auch `line-clamp`, außer der volle Text ist über einen benannten Link erreichbar) · forced-colors ohne Grenze · ohne JS. **Nur Information:** Zoom per CSS-Emulation (ungenau), Ring teilverdeckt am Bildrand.
+- **Einwilligungsbanner:** Inhalt, Kategorien und gleichwertige Knöpfe unantastbar, Form nicht (E-013). Die 426 Fokus-Verdeckungen durch den Banner (m375, Erstbesuch) sind ein Befund des Bestands; die Kern-Schale (P3-08) muss sie auf null bringen.
+- Basiswerte stehen in MESSUNGEN (Ebene 4/5 Ergänzung); Frames werden im ruhigen Messfenster nachgemessen (Last bei der Basis 6–16 auf 4 CPUs).
+
+## E-019 · Zählregeln der Probeläufe (Rückfragen P3-00g)
+- **Einwilligungsbanner:** Der Probeläufer schließt den Banner nur, wenn er die nächste Handlung verdeckt oder blockiert – wie ein Besucher; jede dafür nötige Handlung zählt als Schritt (Tastatur: alle Tabs bis zum Knopf). Die 190 Tabs bis zum Banner im Bestand sind ein echter Reibungsbefund (Banner steht am Ende der Tab-Reihenfolge) und bleiben im Bezugswert.
+- **Mobil:** Bezugswert ist der realistische beste Weg einschließlich `wische` (Aufgabe 4: 8 Schritte statt 10 senkrecht).
+- **Antworten:** Aufgabe 2 gilt als gelöst, wenn der Läufer eine Angabe zur Bestandsdauer findet („seit 2008“ oder „über N Jahre“) und eine Bewertungsangabe; widersprüchliche Angaben sind ein Befund (Inhalt, MENSCHEN M-03), keine Lösungsfrage.
+- Läufe unter Lastspitzen mit „Werkzeug:“-Abbruch werden wiederholt, nicht gezählt. Die Matrix der Basis (15 Läufe) erhebt ein Haiku-Probeläufer im ruhigen Fenster; Ablage `belege/p0-ausgangsstand/probelauf/` durch den Orchestrator.
+
+## E-020 · Widerruf der Einwilligung im Kern: Fußlink statt schwebendem Schild
+- **Befund (Vorschau 1323c32-v):** Der Kern-Banner (P3-08) übernahm das schwebende Schild des Bestands als festen Knopf unten links. Neben Kopf und unterer Leiste wäre das eine dritte feste Ebene (KERN K-003 Prinzip 7, K-011).
+- **Wege:**
+  1. Schild behalten. Dann gibt es mobil zwei feste Ebenen unten, und Inhalte werden überdeckt.
+  2. Schild in die untere Leiste legen. Dann hat die Leiste vier Felder; Anrufen, WhatsApp und Anfrage werden schmaler (Touch-Ziele).
+  3. Widerruf über den Link „Cookie-Einstellungen“ (`#cookie-settings`) im Fuß jeder Seite (P3-07) und auf der Datenschutzseite.
+- **Bewertung:** (3) erhält die Funktion „Widerruf jederzeit“ (F-11) auf jeder Seite, ohne feste Ebene. Die Einwilligungslogik bleibt unberührt (G9); `#cookie-settings` öffnet die Einstellungen mit dem aktuellen Stand.
+- **Wahl: (3).** Der Test „Schild öffnet die Einstellungen“ wird im Testschreiber-Paket P3-14c auf den Fußlink umgestellt; Fälle und `expect` bleiben gleich viele. Prüfhinweis an den Auftraggeber: MENSCHEN M-18.
+- **Umkehrprobe:** Schild wieder einhängen (Hook liefert `handleShieldClick` unverändert).

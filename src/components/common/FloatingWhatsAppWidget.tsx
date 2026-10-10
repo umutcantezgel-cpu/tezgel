@@ -1,54 +1,26 @@
 "use client";
 
-import { useCallback, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { companyInfo } from "@/lib/data/company";
-import { openWhatsApp, buildWhatsAppUrl, isMobileDevice, kontextNachricht } from "@/lib/whatsapp";
+import { useWhatsAppKanal } from "@/lib/formulare/useWhatsAppKanal";
 import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 
 /* ═══════════════════════════════════════════════════════════════════════════
  * WhatsApp-Knopf - Fliesenverlegung Tezgel (KERN K-009, E-008)
  *
- * Flacher Knopf rechts unten, nur ab md; mobil trägt die untere Leiste WhatsApp.
+ * Flacher Knopf rechts unten, nur ab lg; darunter trägt die untere Leiste WhatsApp.
  * Verhalten wie im Bestand: seitenbezogene Nachricht, Entprellung (450 ms),
  * Analyse-Ereignis nur, wenn gtag nach Einwilligung geladen ist,
- * mobil direkte Navigation, Desktop neuer Tab.
+ * mobil direkte Navigation, Desktop neuer Tab – alles im gemeinsamen Hook
+ * useWhatsAppKanal (src/lib/formulare, P3-00p), dieselbe Logik wie die Kern-Ansicht.
+ * Kein Benachrichtigungs-Abzeichen ohne echte Nachricht (E-012).
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 export default function FloatingWhatsAppWidget() {
   const pathname = usePathname() || "/";
 
-  // Analytics event tracking
-  const trackClick = useCallback(() => {
-    if (typeof window !== "undefined") {
-      const win = window as unknown as { gtag?: (...args: unknown[]) => void };
-      if (typeof win.gtag === "function") {
-        win.gtag("event", "whatsapp_click", {
-          event_category: "engagement",
-          event_label: pathname,
-        });
-      }
-    }
-  }, [pathname]);
-
-  // Unified WhatsApp launcher with debounce to prevent double-activation
-  const lastActionTimeRef = useRef(0);
-  const triggerWhatsAppAction = useCallback(() => {
-    const now = Date.now();
-    if (now - lastActionTimeRef.current < 450) return;
-    lastActionTimeRef.current = now;
-
-    trackClick();
-    const cleanNumber = companyInfo.socialMedia.whatsapp?.replace(/[^0-9]/g, "");
-    const contextMessage = kontextNachricht(pathname);
-
-    if (isMobileDevice()) {
-      openWhatsApp({ phone: cleanNumber, text: contextMessage });
-    } else {
-      const url = buildWhatsAppUrl(cleanNumber, contextMessage);
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-  }, [pathname, trackClick]);
+  // Analytics-Ereignis whatsapp_click und WhatsApp-Start (450-ms-Sperre, Weg mobil/Desktop) im Hook
+  const { triggerWhatsAppAction } = useWhatsAppKanal(pathname);
 
   const whatsappNumber = companyInfo.socialMedia.whatsapp;
   if (!whatsappNumber) return null;

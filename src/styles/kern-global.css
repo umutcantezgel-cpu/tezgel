@@ -1,0 +1,35 @@
+/* Kern-CSS-Einstieg (E-015, Plan Runde 3 Bauregel 2): nur Kern-Code wird gescannt; Entwürfe erst nach der Freischaltung. */
+@import "tailwindcss" source(none);
+@import "./kern.css";
+@source "../components/kern";
+@source "../lib/kern";
+@source "../lib/motion";
+@source "../app/(kern)";
+@source not "../app/(kern)/_entwurf";
+
+@layer base {
+  html {
+    background-color: var(--color-k-kalk);
+    color: var(--color-k-tinte);
+    color-scheme: light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    hyphens: auto;
+    text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--k-kopf-hoehe) + var(--spacing-k-4));
+  }
+  body {
+    background-color: var(--color-k-kalk);
+    font-family: var(--font-k-text);
+    font-size: var(--text-k-3);
+    line-height: var(--text-k-3--line-height);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-k-tinte);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background-color: var(--color-k-fuge);
+    color: var(--color-k-tinte);
+  }
+}

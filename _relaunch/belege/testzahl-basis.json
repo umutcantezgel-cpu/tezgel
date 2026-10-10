@@ -1,0 +1,183 @@
+{
+ "erstellt": "2026-10-10T18:47:40.811Z",
+ "specs": {
+  "funktion-badanfrage.spec.mjs": {
+   "faelle": 7,
+   "expects": 42,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-einwilligung.spec.mjs": {
+   "faelle": 13,
+   "expects": 46,
+   "fixme": 1,
+   "skip": 0
+  },
+  "funktion-express-funnel.spec.mjs": {
+   "faelle": 10,
+   "expects": 52,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-hero-kontakt.spec.mjs": {
+   "faelle": 3,
+   "expects": 8,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-konfigurator.spec.mjs": {
+   "faelle": 14,
+   "expects": 51,
+   "fixme": 2,
+   "skip": 0
+  },
+  "funktion-kontaktwege.spec.mjs": {
+   "faelle": 8,
+   "expects": 19,
+   "fixme": 0,
+   "skip": 3
+  },
+  "funktion-navigation.spec.mjs": {
+   "faelle": 23,
+   "expects": 102,
+   "fixme": 0,
+   "skip": 3
+  },
+  "funktion-preisrechner.spec.mjs": {
+   "faelle": 8,
+   "expects": 34,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-projektcheck.spec.mjs": {
+   "faelle": 7,
+   "expects": 46,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-schnellanfrage.spec.mjs": {
+   "faelle": 7,
+   "expects": 19,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-termin.spec.mjs": {
+   "faelle": 9,
+   "expects": 37,
+   "fixme": 0,
+   "skip": 0
+  }
+ },
+ "laufzeit": {
+  "funktion-badanfrage.spec.mjs::mobil": {
+   "faelle": 7,
+   "gruen": 7,
+   "ausgelassen": 0
+  },
+  "funktion-badanfrage.spec.mjs::desktop": {
+   "faelle": 7,
+   "gruen": 7,
+   "ausgelassen": 0
+  },
+  "funktion-einwilligung.spec.mjs::mobil": {
+   "faelle": 17,
+   "gruen": 16,
+   "ausgelassen": 1
+  },
+  "funktion-einwilligung.spec.mjs::desktop": {
+   "faelle": 17,
+   "gruen": 17,
+   "ausgelassen": 0
+  },
+  "funktion-express-funnel.spec.mjs::mobil": {
+   "faelle": 13,
+   "gruen": 13,
+   "ausgelassen": 0
+  },
+  "funktion-express-funnel.spec.mjs::desktop": {
+   "faelle": 13,
+   "gruen": 13,
+   "ausgelassen": 0
+  },
+  "funktion-hero-kontakt.spec.mjs::mobil": {
+   "faelle": 3,
+   "gruen": 3,
+   "ausgelassen": 0
+  },
+  "funktion-hero-kontakt.spec.mjs::desktop": {
+   "faelle": 3,
+   "gruen": 3,
+   "ausgelassen": 0
+  },
+  "funktion-konfigurator.spec.mjs::mobil": {
+   "faelle": 25,
+   "gruen": 23,
+   "ausgelassen": 2
+  },
+  "funktion-konfigurator.spec.mjs::desktop": {
+   "faelle": 25,
+   "gruen": 23,
+   "ausgelassen": 2
+  },
+  "funktion-kontaktwege.spec.mjs::mobil": {
+   "faelle": 16,
+   "gruen": 15,
+   "ausgelassen": 1
+  },
+  "funktion-kontaktwege.spec.mjs::desktop": {
+   "faelle": 16,
+   "gruen": 14,
+   "ausgelassen": 2
+  },
+  "funktion-navigation.spec.mjs::mobil": {
+   "faelle": 23,
+   "gruen": 19,
+   "ausgelassen": 4
+  },
+  "funktion-navigation.spec.mjs::desktop": {
+   "faelle": 23,
+   "gruen": 21,
+   "ausgelassen": 1
+  },
+  "funktion-preisrechner.spec.mjs::mobil": {
+   "faelle": 8,
+   "gruen": 8,
+   "ausgelassen": 0
+  },
+  "funktion-preisrechner.spec.mjs::desktop": {
+   "faelle": 8,
+   "gruen": 8,
+   "ausgelassen": 0
+  },
+  "funktion-projektcheck.spec.mjs::mobil": {
+   "faelle": 9,
+   "gruen": 9,
+   "ausgelassen": 0
+  },
+  "funktion-projektcheck.spec.mjs::desktop": {
+   "faelle": 9,
+   "gruen": 9,
+   "ausgelassen": 0
+  },
+  "funktion-schnellanfrage.spec.mjs::mobil": {
+   "faelle": 12,
+   "gruen": 12,
+   "ausgelassen": 0
+  },
+  "funktion-schnellanfrage.spec.mjs::desktop": {
+   "faelle": 12,
+   "gruen": 11,
+   "ausgelassen": 0
+  },
+  "funktion-termin.spec.mjs::mobil": {
+   "faelle": 13,
+   "gruen": 13,
+   "ausgelassen": 0
+  },
+  "funktion-termin.spec.mjs::desktop": {
+   "faelle": 13,
+   "gruen": 12,
+   "ausgelassen": 0
+  }
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "satz": "p0-ausgangsstand", "base": null, "bedingungen": "siehe _satz.json", "erstellt": "2026-10-10T19:06:33.013Z",
+ "seite": "/standorte/unbekannt", "quelle": "standorte/unbekannt.html", "status": 404, "im_manifest": false,
+ "h1": [],
+ "ids": [],
+ "links": [],
+ "eintraege": [
+  {"art":"meta","name":"robots","wert":"noindex"},
+  {"art":"meta","name":"title","wert":"Seite nicht gefunden (404) | Fliesenverlegung Tezgel | Fliesenverlegung Tezgel"},
+  {"art":"meta","name":"description","wert":"Die angeforderte Seite konnte leider nicht gefunden werden. Nutzen Sie unsere Übersicht zu Fliesenverlegung & Badsanierung in Aßlar & Wetzlar."},
+  {"art":"meta","name":"author","wert":"Deniz Tezgel - Fliesenverlegung Tezgel"},
+  {"art":"meta","name":"author","wert":"Coday Webdesign Wetzlar"},
+  {"art":"meta","name":"keywords","wert":"Fliesenverlegung Tezgel,Deniz Tezgel,Fliesenleger Aßlar,Fliesenleger Wetzlar,Badsanierung Aßlar Wetzlar,Großformatfliesen Hessen,XXL Fliesen verlegen,Balkonsanierung Stelzlager,DIN 18534 Verbundabdichtung,Fliesen Handwerkskammer Wiesbaden"},
+  {"art":"meta","name":"creator","wert":"Coday Webdesign Wetzlar"},
+  {"art":"meta","name":"publisher","wert":"Fliesenverlegung Tezgel"},
+  {"art":"meta","name":"robots","wert":"noindex, follow"},
+  {"art":"meta","name":"google-site-verification","wert":"google831a76ab6f34b9f6"},
+  {"art":"meta","name":"og:title","wert":"Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel"},
+  {"art":"meta","name":"og:description","wert":"Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!"},
+  {"art":"meta","name":"og:site_name","wert":"Fliesenverlegung Tezgel"},
+  {"art":"meta","name":"og:locale","wert":"de_DE"},
+  {"art":"meta","name":"og:type","wert":"website"},
+  {"art":"meta","name":"twitter:card","wert":"summary"},
+  {"art":"meta","name":"twitter:title","wert":"Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel"},
+  {"art":"meta","name":"twitter:description","wert":"Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!"}
+ ]
+}

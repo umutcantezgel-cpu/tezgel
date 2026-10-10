@@ -13,14 +13,14 @@
  * ✅ Consent-Timestamp & Versionierung im Cookie gespeichert
  * ✅ Jederzeit reaktivierbar via #cookie-settings & Widerrufs-Knopf
  * Darstellung (KERN K-009): Schriftfeld – mobil über der unteren Leiste, am Desktop links unten (≤ 28rem);
- * ruhig, ohne Ziehen und ohne Schatten. Inhalt, Reihenfolge, Knopfnamen und Logik wie im Bestand.
+ * ruhig, ohne Ziehen und ohne Schatten. Inhalt, Reihenfolge, Knopfnamen und Logik wie im Bestand;
+ * die Logik liegt im Hook useEinwilligungsBanner (src/lib/formulare, P3-00p).
  * ══════════════════════════════════════════════════════════════
  */
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import clsx from "clsx";
-import { useConsent } from "@/hooks/useConsent";
+import { useEinwilligungsBanner } from "@/lib/formulare/useEinwilligungsBanner";
 import { CONSENT_CATEGORY_INFO, COOKIE_INVENTORY, type ConsentCategory } from "@/lib/cookie-inventory";
 import Icon from "@/components/icons/Icon";
 import { knopfKlassen, linkKlassen } from "@/components/kern/stile";
@@ -28,83 +28,26 @@ import { knopfKlassen, linkKlassen } from "@/components/kern/stile";
 const marke = "inline-flex items-center font-mono text-fs-1";
 
 export default function CookieConsent() {
+  // Steuerlogik (Einstellungszustände, #cookie-settings, Ereignis openCookieSettings, Handler) im gemeinsamen Hook
+  // useEinwilligungsBanner (P3-00p) – dieselbe Logik wie die Kern-Ansicht; hier nur das Markup.
   const {
     consent,
     showBanner,
-    acceptAll,
-    acceptEssentialOnly,
-    updateConsent,
-    setShowBanner,
-  } = useConsent();
-
-  const [showSettings, setShowSettings] = useState(false);
-  const [analyticsChecked, setAnalyticsChecked] = useState(false);
-  const [marketingChecked, setMarketingChecked] = useState(false);
-  const [expandedCategory, setExpandedCategory] = useState<ConsentCategory | null>(null);
-
-  // Global event listener to listen for `#cookie-settings` in the URL
-  useEffect(() => {
-    const handleOpenSettingsEvent = () => {
-      setShowBanner(true);
-      setShowSettings(true);
-      if (consent) {
-        setAnalyticsChecked(consent.analytics);
-        setMarketingChecked(consent.marketing);
-      }
-    };
-
-    const handleHashChange = () => {
-      if (window.location.hash === "#cookie-settings") {
-        handleOpenSettingsEvent();
-        window.history.replaceState(null, "", window.location.pathname + window.location.search);
-      }
-    };
-
-    if (window.location.hash === "#cookie-settings") {
-      handleHashChange();
-    }
-
-    window.addEventListener("hashchange", handleHashChange);
-    window.addEventListener("openCookieSettings", handleOpenSettingsEvent);
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-      window.removeEventListener("openCookieSettings", handleOpenSettingsEvent);
-    };
-  }, [consent, setShowBanner]);
-
-  const handleSaveSettings = () => {
-    updateConsent({
-      analytics: analyticsChecked,
-      marketing: marketingChecked,
-    });
-    setShowSettings(false);
-  };
-
-  const handleClose = () => {
-    acceptEssentialOnly();
-    setShowSettings(false);
-  };
-
-  const handleOpenSettings = () => {
-    setAnalyticsChecked(consent?.analytics ?? false);
-    setMarketingChecked(consent?.marketing ?? false);
-    setShowSettings(true);
-  };
-
-  const handleDeclineAll = () => {
-    setAnalyticsChecked(false);
-    setMarketingChecked(false);
-    acceptEssentialOnly();
-    setShowSettings(false);
-  };
-
-  const handleAcceptAll = () => {
-    setAnalyticsChecked(true);
-    setMarketingChecked(true);
-    acceptAll();
-    setShowSettings(false);
-  };
+    showSettings,
+    setShowSettings,
+    analyticsChecked,
+    setAnalyticsChecked,
+    marketingChecked,
+    setMarketingChecked,
+    expandedCategory,
+    setExpandedCategory,
+    handleSaveSettings,
+    handleClose,
+    handleOpenSettings,
+    handleDeclineAll,
+    handleAcceptAll,
+    handleShieldClick,
+  } = useEinwilligungsBanner();
 
   return (
     <>
@@ -313,12 +256,7 @@ export default function CookieConsent() {
       {!showBanner && (
         <button
           type="button"
-          onClick={() => {
-            setShowBanner(true);
-            setShowSettings(true);
-            setAnalyticsChecked(consent?.analytics ?? false);
-            setMarketingChecked(consent?.marketing ?? false);
-          }}
+          onClick={handleShieldClick}
           className="widerruf-schwebend ueber-leiste-16 fixed left-4 z-30 inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte-2 transition-colors dauer-1 ease-setzen hover:border-tinte hover:text-tinte lg:bottom-6 lg:left-6"
           aria-label="Cookie-Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"
