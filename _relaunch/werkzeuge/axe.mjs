@@ -26,7 +26,7 @@ async function pruefe(s, a, zustand = 'normal') {
   await page.goto(BASE + s, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await bereit(page);
   if (zustand === 'menue') {
-    const knopf = page.locator('header button[aria-expanded], header button[aria-controls]').first();
+    const knopf = page.locator('header button[aria-expanded]:visible, header button[aria-controls]:visible, header button[aria-label*="enü"]:visible').first();
     if (await knopf.count()) { await knopf.click(); await page.waitForTimeout(400); }
   }
   if (zustand === 'erstbesuch') await page.waitForTimeout(900); // Banner erscheint nach 400 ms
@@ -38,7 +38,7 @@ async function pruefe(s, a, zustand = 'normal') {
 }
 
 const jobs = [];
-for (const s of seiten) for (const a of ansichten) jobs.push([s, a, 'normal']);
+if (!process.argv.includes('--nur-zustaende')) for (const s of seiten) for (const a of ansichten) jobs.push([s, a, 'normal']);
 if (process.argv.includes('--zustaende')) for (const s of G.hauptseiten) { jobs.push([s, 'm375', 'menue']); jobs.push([s, 'm375', 'erstbesuch']); jobs.push([s, 'd1440', 'erstbesuch']); }
 let i = 0;
 await Promise.all(Array.from({ length: 3 }, async () => { while (i < jobs.length) { const j = jobs[i++]; try { await pruefe(...j); } catch (e) { ergebnisse.push({ seite: j[0], ansicht: j[1], zustand: j[2], fehler: String(e.message).slice(0, 200) }); } } }));
@@ -47,6 +47,6 @@ const out = ensureDir(path.join(RELAUNCH, 'belege', satz));
 const zaehl = {};
 for (const r of ergebnisse) for (const v of r.verstoesse || []) { const k = `${v.impact}:${v.id}`; zaehl[k] = (zaehl[k] || 0) + v.anzahl; }
 const ernst = ergebnisse.reduce((n, r) => n + (r.verstoesse || []).filter((v) => ['serious', 'critical'].includes(v.impact)).reduce((m, v) => m + v.anzahl, 0), 0);
-fs.writeFileSync(path.join(out, 'axe.json'), JSON.stringify({ satz, tags: TAGS, laeufe: ergebnisse.length, ernst_kritisch_knoten: ernst, je_regel: zaehl, ergebnisse }, null, 1));
+fs.writeFileSync(path.join(out, process.argv.includes('--nur-zustaende') ? 'axe-zustaende.json' : 'axe.json'), JSON.stringify({ satz, tags: TAGS, laeufe: ergebnisse.length, ernst_kritisch_knoten: ernst, je_regel: zaehl, ergebnisse }, null, 1));
 console.log(`\naxe: ${ergebnisse.length} Läufe · ernst/kritisch (Knoten) ${ernst}`);
 console.log(Object.entries(zaehl).sort((a, b) => b[1] - a[1]).slice(0, 15).map(([k, n]) => `${k} ${n}`).join('\n'));

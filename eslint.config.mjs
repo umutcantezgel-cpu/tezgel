@@ -12,8 +12,6 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    // Stale static export committed to the repo (not part of the source).
-    "dist/**",
     "ms-reusable-components/**",
     "coday-seo-toolkit/**",
     // Relaunch working area (docs, tools, prototypes) – never part of the app.
