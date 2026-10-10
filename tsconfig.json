@@ -40,6 +40,7 @@
     "node_modules",
     "ms-reusable-components",
     "coday-seo-toolkit",
-    "_relaunch"
+    "_relaunch",
+    "_werkstatt"
   ]
 }

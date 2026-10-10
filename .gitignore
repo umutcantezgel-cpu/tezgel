@@ -58,3 +58,9 @@ playwright-report/
 /_relaunch/cache/
 /_relaunch/**/*.report.json
 /_relaunch/**/lhr-*.json
+
+# werkstatt (tracked), minus reproducible/large artefacts – cache is a symlink outside the repo
+/_werkstatt/cache
+/_werkstatt/cache/
+/_werkstatt/**/*.report.json
+/_werkstatt/**/lhr-*.json

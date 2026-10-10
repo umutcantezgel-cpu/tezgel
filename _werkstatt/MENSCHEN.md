@@ -1,0 +1,19 @@
+# MENSCHEN · Was nur ein Mensch klären kann
+
+Je Punkt: Beleg · betroffenes Kriterium · Standardannahme (gilt bis zur Antwort). Das Repository ist öffentlich: Sicherheits- und Rechtsdetails stehen hier bewusst nur neutral.
+
+## Offen
+- M-01 · **Rechtliche Prüfung** von Datenschutzerklärung, Einwilligungstexten und Formulierungen mit Rechtsbezug (aus Vorlauf M-01). Kriterium: Leitplanke Recht. Annahme: Rechtstexte bleiben inhaltlich unverändert; nur ihre Darstellung wird neu gestaltet.
+- M-02 · **Bildmaterial und Bildrechte:** Die 11 Fotos unter `public/images/bad` haben KI-typische Formate (2816×1536, 3712×4608); ihre Alt-Texte geben sie als Tezgel-Arbeit aus. Benötigt werden echte Baustellen-, Projekt- und Teamfotos samt Rechten. Kriterium: Leitplanke Wahrheit/Bilder, Z-04. Annahme: Bilder bleiben, werden sparsam und einheitlich gerahmt; Alt-Texte beschreiben ehrlich, was zu sehen ist (Mikrotext, Protokoll in TEXTVORSCHLAEGE.md); die Bildwelt trägt sich über gezeichnete Verlegepläne.
+- M-03 · **Inhalte mit Zeitbezug** prüfen (Öffnungszeiten, Bewertungszahlen 5,0/27 und 9,6/25, Erfahrungsjahre, Förderbeträge, Stellenangebote) (aus Vorlauf M-03). Annahme: unverändert.
+- M-04 · **Referenzen:** `src/config/projects.js` enthält 6 Projekte mit `placeholder: true`; die Seiten kennzeichnen sie als „Projektdokumentation in Vorbereitung“. Benötigt: echte Projektdaten und Fotos. Annahme: Kennzeichnung bleibt, nichts wird als echtes Projekt ausgegeben.
+- M-05 · **Kundenstimmen namentlich:** Kundenstimmen werden zum tragenden Vertrauensbeleg (Anriss). Bitte die Freigabe der Namensnennung bestätigen. Annahme: Stimmen erscheinen so, wie sie heute auf der Seite stehen (Vorname + Initial, Quelle).
+- M-06 · **Geschäftslogik-Befunde** mit Patch-Vorschlag (aus Vorlauf M-05/I-12/I-18, Konfigurator: „Weiß nicht“ wird als „Nein“ gemeldet; Nur-Treppe sendet Vorgabe „20 m²“). Annahme: Logik bleibt unverändert (UNANTASTBAR); die Tests markieren sie als bekannte Altfehler.
+- M-07 · **Vertrauliche Befunde des Vorlaufs** (Ordner `_relaunch/intern/`) sind nicht im Repository und nicht in diesem Klon. Bitte bei Bedarf aus dem Vorlauf-Chat übernehmen. Annahme: keine Maßnahme in diesem Lauf.
+- M-08 · **Geschmacksabnahme** von Richtung, Referenzansicht und großen Momenten (vollautonomer Lauf; Abnahme nachträglich).
+- M-09 · **Geräteprobe** auf echten Geräten: iPhone mit Safari (auch iOS < 26 wegen der Ersatzdarstellung ohne scroll-gebundene Animationen), Android mit Chrome, Desktop mit Firefox und Safari. WebKit/Firefox sind in der Cloud nicht installierbar (UMGEBUNGSAUSNAHME). Kriterien: Z-05, Z-07, Z-09.
+- M-10 · **Lizenzen:** Archivo und IBM Plex Mono stehen unter SIL Open Font License 1.1 (Lizenzvermerk kommt nach `src/app/fonts/`); Maskottchen-Dateien im Logo-Ordner sind ungenutzt und bleiben unberührt. Bitte bestätigen, dass keine lizenzierte Hausschrift existiert.
+- M-11 · **Node-Version:** `npm test` braucht Node ≥ 22.6; `.nvmrc` sagt 20, die CI (`security.yml`) nutzt 20 (aus Vorlauf M-10). Annahme: unverändert; lokal läuft Node 22.
+- M-12 · **Vercel:** Das Repo ist mit zwei Vercel-Projekten verbunden (aus Vorlauf M-11). Pushes auf den Arbeitsbranch erzeugen dort nur Vorschauen (keine Veröffentlichung). Annahme: unverändert.
+- M-13 · **Zusammenführen und Veröffentlichen** des Arbeitsbranches entscheidest du (Anleitung kommt mit dem Abschluss).
+- M-14 · **Alte Adressen der Original-tezgel.de** (aus Vorlauf M-08): Export „Seiten“ aus der Google Search Console, damit alte Adressen weitergeleitet werden können. Annahme: Weiterleitungen nur für die im Repo belegten Umbenennungen.
