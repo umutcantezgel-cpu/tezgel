@@ -1,0 +1,992 @@
+{
+ "satz": "p2-richtungen",
+ "seiten": {
+  "Richtung A": {
+   "urteile": [
+    {
+     "seite": "Richtung A",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 7.5,
+       "belege": [
+        "d1920/00.jpg, gesamte Einstiegsfläche: schmal gesetzte Archivo-Überschrift in Navy, darüber ein feines Fugenraster. Eine einzige rote Laserachse läuft durch Überschrift und Verlegeplan, rechts steht ein Schriftfeld wie auf einer technischen Zeichnung. Die Komposition ist streng und eigenständig.",
+        "t768/10.jpg, oberes Bilddrittel: das SVG-Motiv „Verlegeplan“ mit schraffierten Passstücken, „=“-Bemaßung, Achse A/Achse 1, Rinne und Schiene. Die Zeichnung ist präzise und passt zum Gewerk.",
+        "d1440/07.jpg, Raster-Mitte: Icon-Reihe (Telefon, Bad, Großformat, Abdichtung) mit eckigen Enden in einem Strich. Darunter drei Verlegemuster als Linienzeichnung. Das Formsystem ist konsequent.",
+        "m375/00.jpg und d1440/00.jpg, Schriftfeld-Kopf rechts „35614 Aẞlar“: Das ß in der Monospace wirkt wie ein Versal-ẞ und stört das Wortbild. Ein Fehler im Detail, der sich im Fuß wiederholt (d1440/13.jpg, rechts)."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6,
+       "belege": [
+        "d1440/00.jpg, linke Spalte: klare Hierarchie aus Leistung, Ort/Inhaber und einem dunklen Haupt-CTA „Aufmaß vor Ort anfragen“ mit zwei gleichrangigen Nebenknöpfen (WhatsApp, Anrufen). Die Navigation oben ist knapp und benennt Ablauf, Leistungen, Einzugsgebiet, Bewertungen und Kontakt.",
+        "d1440/11.jpg, Formularbereich: Beschriftungen stehen über den Feldern, es gibt nur drei Felder und einen breiten Absendeknopf. Die Zustände (Fokus, Fehler „Nummer unvollständig.“, Erfolg „Passt.“) sind eindeutig.",
+        "m375/05.jpg und t768/13.jpg, ganze Fläche: Lange Tabellen mit Token-Namen und clamp()-Formeln, auf dem Handy untereinander gestapelt. Ein Besucher muss hier weit durch Inhalte scrollen, die ihm nichts sagen, bevor er zum Ablauf oder Formular kommt.",
+        "m375/00.jpg, Kopfbereich: Die rote Achse schneidet die Unterkante von „Großformat,“. Das Label „Achse“ schwebt ohne Bezug rechts am Rand, und der Verlegeplan aus der Desktop-Ansicht fehlt mobil ganz."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 8,
+       "belege": [
+        "d1920/06.jpg, unterer Bereich „Ablauf“: Die rote Achse läuft waagerecht durch die drei Schritte, an jeder Schrittfuge sitzt ein Fugenkreuz. Auf m375/10.jpg (linker Rand) wird daraus ein senkrechtes Lot. Das ist eine durchdachte Signatur, die aus dem Handwerk stammt.",
+        "d1920/00.jpg, rechte Spalte: Das „Schriftfeld“ als Visitenkarte mit Inhaber, HWK seit 2008, Google- und Trustlocal-Werten und Telefon übersetzt den Plankopf einer Bauzeichnung in einen Vertrauensblock. Das überrascht und hat Sinn.",
+        "d1440/11.jpg, Feldzustand 4 „Fehler · ‚aus der Flucht‘“ und Ladeknopf 7 mit Laser-Scanstrich: Die Leitidee „Fuge und Achse“ trägt bis in die Mikrozustände."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "t768/00.jpg, Schriftfeld: belegbare Fakten statt Adjektive (Deniz Tezgel, 2008 · HWK Wiesbaden, 5,0 von 5 · 27 Bewertungen, 9,6 · 25 Bewertungen, zwei Rufnummern). Der Ton ist sachlich und glaubwürdig.",
+        "t768/08.jpg, Mitte: Das Kundenzitat „… Handwerklich perfekt, saubere u. präzise …“ steht mit Quelle und Stand (Elke S. · Google · Stand September 2026). Das ist ehrlich datiert.",
+        "m375/05.jpg und d1920/04.jpg, Kontrasttabelle: Ein großer Teil der Seite besteht aus interner Spezifikation (Tokens, Kontrastwerte, Dauer in ms). Für Badkunden ist das kein Inhalt. Es gibt außerdem kein einziges Foto einer ausgeführten Arbeit, nur das Logo-Maskottchen."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Die Seite ist überwiegend Gestaltungsdokumentation (Blatt 03–09: Schriften, Palette, Raster, Bewegungstabelle), siehe m375/05.jpg und d1920/11.jpg. Ein Besucher findet vor allem Token-Namen statt Leistungen, Einzugsgebiet und Referenzen.",
+        "reparatur": "Spezifikation in ein internes Dokument auslagern. Die Blätter durch echte Kundenabschnitte ersetzen (Leistungen mit je eigenem Verlegeplan, Einzugsgebiet, Bewertungen, Kontakt) und dabei die Signaturen (Achse, Schriftfeld, Fugenkreuz) beibehalten."
+       },
+       {
+        "schwaeche": "Es gibt kein Bildmaterial ausgeführter Arbeiten. Die Seite lebt allein von Linien und Typografie (d1440/00.jpg bis d1440/13.jpg), dadurch fehlt der sinnliche Beweis für Qualität, gerade bei Großformat und Fugenbild.",
+        "reparatur": "Zwei bis drei eigene Baustellenfotos (Großformat-Fuge im Streiflicht, Walk-In mit Rinne) in die 1-px-Fugenrahmen setzen, bildlich ins Raster eingepasst und mit Mono-Bildunterschrift (Ort, Format, Jahr)."
+       },
+       {
+        "schwaeche": "Mobile Einstiegsfläche (m375/00.jpg): Die Achse schneidet die Überschrift, das Label „Achse“ hängt ohne Funktion am Rand, der Verlegeplan fehlt. Dazu kommt die verunglückte ß-Glyphe „Aẞlar“ in der Monospace (m375/00.jpg Schriftfeld, d1440/13.jpg Fuß).",
+        "reparatur": "Die Achse mobil auf die Grundlinie zwischen Überschrift und „nach DIN 18534“ legen oder als Lot links führen, das Label „Achse“ mobil streichen und eine verkleinerte Plan-Vignette unter den Knöpfen zeigen. Für Ortsnamen die Monospace-Schrift auf ein korrektes kleines ß prüfen oder dort die Archivo verwenden."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1920/00.jpg, Einstiegsfläche: Verlaufsfreier Rosé-Hintergrund, Pillen-Badge über der Überschrift, „Quadratmeter.“ in Orange-Verlauf, rechts eine abgerundete Formularkarte mit Schatten. Das ist sauber gesetzt, folgt aber einem verbreiteten Vorlagenmuster.",
+        "d1440/06.jpg, ganze Fläche: Karten mit großem Radius, Schatten, Pillenlabel auf dem Foto, Häkchen-Listen und orange Textlinks. Diese Kartenform wiederholt sich unverändert über die ganze Seite (d1440/02.jpg, d1440/08.jpg).",
+        "t768/09.jpg, unteres Bilddrittel: Ein weichgezeichnetes Wannenbad im Gegenlicht wirkt wie Stock- oder generiertes Bildmaterial. Es passt nicht zum Fliesen-Handwerk, zu sehen ist kaum Fliese.",
+        "t768/11.jpg und d1440/09.jpg, Kartenblock: Ein großer schwarzer Kasten „Interaktive Karte geschützt (DSGVO)“ mit Punktmuster bricht farblich aus dem hellen System aus und dominiert die Fläche ohne Inhalt."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, oben: Die Navigation ist klar (Badsanierung, Fachgewerke, Standorte, Ratgeber, Über uns), Telefon und „Aufmaß buchen“ sind dauerhaft sichtbar, und das Formular in der Einstiegsfläche ist sofort nutzbar. Das ist eine gute Grundorientierung.",
+        "m375/00.jpg, unteres Drittel: Untere Leiste (Anrufen, WhatsApp, Aufmaß), schwebender WhatsApp-Kreis mit Fake-Zähler „1“ und Cookie-Schild links überlagern den zweiten Knopfsatz. Die Telefonnummer bricht unglücklich in „06441 / 44 83 / 567“ um.",
+        "m375/01.jpg und m375/04.jpg, rechts unten: Die Sprechblase „Chat starten“ liegt dauerhaft über Formularfeldern (z. B. „ORT / PLZ“) und Kartentexten und verdeckt Inhalte.",
+        "d1440/03.jpg und d1440/11.jpg: Es gibt drei verschiedene Anfrageformulare auf einer Seite (Einstieg, „Projekt anfragen & Situation schildern“, „Ihre Express-Anfrage in 3 Klicks“). Welcher Weg der richtige ist, wird dadurch unklar."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg, Überschrift „Perfektion auf jedem Quadratmeter.“ mit einem farbigen Schlusswort: ein austauschbares Muster ohne Bezug zur Arbeit eines Fliesenlegers.",
+        "t768/02.jpg, Fachbereichskacheln: Orange Icon-Quadrate, Großbuchstaben-Kicker und Pfeil-Listen sind generisches Kartenvokabular. Es gibt keinen Signaturmoment, der die Marke von einem anderen Handwerksbetrieb unterscheidet.",
+        "d1920/07.jpg, Bewertungen: Ein Standard-Karussell mit Initialen-Avatar, Sternen und Google-Logo, wie es viele Baukasten-Seiten verwenden."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/05.jpg, Kartenlisten: Konkrete Fachangaben (XXL-Fliesen bis 120 × 278 cm, Verbundabdichtung nach DIN 18534, 2-cm-Keramik auf Stelzlagern, Gefälle 1,5 bis 2 %) belegen echtes Fachwissen.",
+        "d1440/08.jpg, Bewertungen: Echte, namentlich gekürzte Google-Stimmen (Elke S., C. W., Rabia Ö.) und zwei Bewertungsquellen (5,0/5 · 27 Google, 9,6/10 · 25 Trustlocal) sind glaubwürdig.",
+        "m375/00.jpg und d1920/04.jpg: Viel Werbesprache („Perfektion“, „Fachqualität“, „anspruchsvolle Architektur“, „Staubschutzgarantie“), dazu Fotos, die nicht nach eigenen Baustellen aussehen (t768/07.jpg, Barrierefrei-Dusche und Wanne), schwächen die Echtheit."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Überladene schwebende Bedienelemente auf dem Handy: untere Leiste, WhatsApp-Kreis mit künstlichem Zähler „1“, Sprechblase „Chat starten“ und Cookie-Schild verdecken dauerhaft Inhalte und Formularfelder (m375/00.jpg, m375/01.jpg, m375/04.jpg).",
+        "reparatur": "Nur eine feste untere Leiste behalten (Anrufen, WhatsApp, Aufmaß), den schwebenden WhatsApp-Kreis samt Zähler und Sprechblase entfernen und das Cookie-Schild in den Fuß verlegen. Die Telefonnummer mit geschütztem Leerzeichen setzen, damit sie nicht umbricht."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare auf derselben Seite (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg) verwässern die Hauptaktion und verlängern die Seite stark.",
+        "reparatur": "Auf ein Formular festlegen (das kurze in der Einstiegsfläche oder ein einziges geführtes 3-Schritt-Formular am Ende). Die übrigen Stellen verlinken nur dorthin."
+       },
+       {
+        "schwaeche": "Austauschbare Gestaltung ohne Leitidee: Orange-Akzentwort, Pillen-Badges, Schattenkarten und Stock-Bildsprache (d1920/00.jpg, t768/09.jpg) unterscheiden den Betrieb nicht von einer beliebigen Vorlage.",
+        "reparatur": "Eine Leitidee aus dem Handwerk wählen (z. B. Fugenraster, Achse, Bemaßung), Kartenschatten und Rundungen zurücknehmen und die Stockfotos durch eigene Baustellenfotos mit Ort und Format ersetzen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "Richtung A",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 8,
+       "belege": [
+        "d1920/00.jpg, Hero: schmale Archivo-Headline „Badsanierung, Großformat, Abdichtung“ auf einem sichtbaren Fugenraster; eine rote Laser-Achse läuft über die volle Breite durch den Kreuzpunkt, rechts sitzt ein Verlegeplan-SVG mit „=“-Bemaßung, Rinne und Schiene. Die Bildidee ist konsequent und präzise ausgeführt.",
+        "d1440/00.jpg und t768/00.jpg, „Schriftfeld“: Firmendaten (Inhaber, HWK seit 2008, Google 5,0, Telefon in Mono) als Plankopf-Tabelle mit 1-px-Fugen. Navy, Kalk und Rot bleiben streng reduziert, der Kontrast zwischen Mono und Grotesk ist sauber.",
+        "d1440/09.jpg, SVG-Formsystem: Icons auf 24er-Raster mit eckigen Enden, dazu Trenner „Fugenlinie mit Kreuz“ und drei Verlegemuster (Kreuz-, Halb- und Drittelverband). Die Details sind bis ins Kleine durchgezogen."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6,
+       "belege": [
+        "d1440/00.jpg, Hero: klare Hierarchie mit einem dunklen Primärknopf „Aufmaß vor Ort anfragen“ und zwei sekundären Rahmenknöpfen (WhatsApp, Anrufen); Telefonnummer und „Aufmaß anfragen“ stehen auch im Kopf. Auf m375/00.jpg sind die Knöpfe groß und daumengerecht.",
+        "m375/02.jpg bis m375/13.jpg: nach dem Hero fehlt jeder Kopf und jede Aktionsleiste, auf dem Handy gibt es also über lange Strecken keinen Weg zu Anruf oder Anfrage. In d1920/02.jpg steht oben nur ein leerer Streifen mit Unterkante, ohne Logo und ohne Navigation.",
+        "d1440/11.jpg, Formular: drei Felder, lesbare Labels und ein voller Sendeknopf. Darunter sind die Zustände Ruhe, Hover, Fokus, Fehler „Nummer unvollständig.“ und Erfolg „Passt.“ vorbildlich klar gezeigt."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 8,
+       "belege": [
+        "d1920/06.jpg, Ablauf auf Navy: Die rote Waage-Achse läuft durch die Schritte 01/02/03, an jeder Schrittfuge sitzt ein weißes Fugenkreuz. Der Kreuzlinienlaser des Fliesenlegers wird so zur Signatur. In m375/10.jpg ist die Achse am Handy als senkrechtes Lot umgesetzt.",
+        "t768/10.jpg, Motiv „Verlegeplan“: Achse A und Achse 1 in Rot, schraffierte Passstücke gleicher Breite mit „=“ bemaßt statt mit erfundenen Zahlen. Das ist eine Überraschung mit Sinn, weil die Grafik das eigentliche Handwerk erklärt."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "d1440/00.jpg, Lead und Schriftfeld: „inhabergeführt von Deniz Tezgel, seit 2008 eingetragener Fachbetrieb der Handwerkskammer Wiesbaden“ plus belegte Zahlen (5,0 · 27 Google, 9,6 · 25 Trustlocal); in d1920/07.jpg ein Kundenzitat mit Quelle und „Stand September 2026“. Der Ton ist sachlich und echt.",
+        "t768/03.jpg, d1920/04.jpg und t768/13.jpg: Große Teile der Seite bestehen aus Tokens (clamp-Werte, Hex-Codes, Kontrasttabelle, Animationskennungen wie „ablauf-kreuz“). Kunden finden dort keine Leistungsbeschreibung, keine Referenzen und kein einziges Projektfoto."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Die Seite ist überwiegend Gestaltungsdokumentation statt Kundenseite: Schriftgrade mit clamp(), Palette mit Hex-Codes, Kontrasttabelle und Animationstabelle (t768/03.jpg, d1920/04.jpg, d1920/11.jpg). Für Besucher ist das Inhalt ohne Nutzen.",
+        "reparatur": "Die Token-Blätter in eine interne Stilreferenz auslagern. Auf der Seite selbst sollen Leistungen, Ablauf, Einzugsgebiet, Bewertungen und Anfrage nach dem gezeigten System gesetzt stehen."
+       },
+       {
+        "schwaeche": "Es gibt kein einziges Foto ausgeführter Arbeiten; Bildmaterial besteht nur aus Logo, Linien-SVG und Rasterflächen (d1440/00.jpg, d1440/09.jpg). Bei einem Fliesenleger fehlt damit der stärkste Vertrauensbeleg.",
+        "reparatur": "Eigene Projektfotos (Walk-In, Großformat, Terrasse) streng im Fugenraster beschneiden und jeweils mit einer Mono-Bildunterschrift versehen: Ort, Format, Verband. Daneben den passenden Verlegeplan zeigen."
+       },
+       {
+        "schwaeche": "Nach dem Einstieg gibt es keinen dauerhaften Zugriff auf Anruf oder Anfrage: Auf dem Handy fehlen Kopf und Aktionsleiste (m375/02.jpg ff.), am Desktop bleibt ein leerer Kopfstreifen (d1920/02.jpg).",
+        "reparatur": "Einen schlanken, festen Kopf mit Logo, Telefon und „Aufmaß anfragen“ einführen. Auf dem Handy zusätzlich eine flache untere Leiste mit Anrufen und Anfrage zeigen, im Stil des Systems mit 1-px-Fuge und ohne Schatten."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1440/00.jpg, Hero gesamt: austauschbares SaaS-Schema mit orangem Akzentwort „Quadratmeter.“, Pillen-Badge oben, drei gleichrangigen Buttons (Orange, Petrol-WhatsApp, Weiß) und abgerundeter Formular-Karte rechts; die Typografie (Plus-Jakarta-artige Grotesk) ist sauber, hat aber keine eigene Haltung.",
+        "d1440/05.jpg und d1920/04.jpg, Leistungskarten: abgerundete Karten mit Icon im orangen Quadrat, Label „FACHGEWERK“, Häkchenlisten und Linkzeile – das immer gleiche Kartenmuster; das Foto in der rechten unteren Karte (grüne Wandfliesen, stark unscharf) und das hell überstrahlte Duschbild wirken wie Archiv- oder KI-Bilder und zeigen keine eigene Arbeit.",
+        "t768/11.jpg, Einsatzgebiet: schwarzer DSGVO-Platzhalter „Interaktive Karte geschützt“ belegt eine ganze Bildschirmhöhe als dunkle Leerfläche, die Ortschips darüber werden rechts abgeschnitten („Bad Na…“)."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "m375/01.jpg, unteres Drittel: untere Aktionsleiste (Anrufen/WhatsApp/Aufmaß), schwebender WhatsApp-Kreis mit roter „1“, Sprechblase „Chat starten“ und Schild-Symbol links überlagern gleichzeitig das Formularfeld „E-Mail“ und das Label „Ort / PLZ“; in m375/03.jpg verdeckt „Chat starten“ das Badge „Fachbereiche“.",
+        "d1440/00.jpg (Hero-Formular), d1440/03.jpg („Projekt anfragen & Situation schildern“ mit Schrittleiste 1–3) und d1440/11.jpg („Ihre Express-Anfrage in 3 Klicks“): drei verschiedene Anfrageformulare auf einer Seite. Das verwässert die Handlung, und die Nutzer wissen nicht, welches das richtige ist.",
+        "d1440/00.jpg, Kopf: Hauptnavigation mit fünf Dropdowns, dazu Telefon, WhatsApp, „Aufmaß buchen“ und ein zusätzlicher Burger. Die Orientierung ist grundsätzlich gegeben, doppelt sich aber; die Vertrauensleiste unten ist rechts abgeschnitten („XXL-Großformat Ni…“)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg, Headline „Perfektion auf jedem Quadratmeter.“ mit eingefärbtem Schlusswort: eine Floskel und ein Standardeffekt, keine Leitidee aus dem Handwerk (Fuge, Raster, Maß) erkennbar.",
+        "d1440/08.jpg und d1920/07.jpg, Bewertungsbereich: Karussell mit Initialen-Avataren, fünf Sternen, oranger Oberkante und „GOOGLE REZENSION“ – das Muster jeder Bewertungs-Vorlage, kein Signaturmoment."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/03.jpg, rechte dunkle Spalte: „Wir zeigen keine pauschalen Scheinpreise im Netz …“ mit Zusammenfassung Gewerk/Fläche/0 € Aufmaß/Festpreis – konkret und ehrlich im Ton; ebenso echte Kundenzitate mit Namen in d1440/08.jpg.",
+        "t768/04.jpg und d1440/06.jpg, Leistungstexte: fachlich präzise (2-cm-Keramik auf Stelzlagern, Gefälle 1,5–2 %, AIV nach DIN 18534), aber überladen und wiederholt; „Fachbetrieb“, „DIN 18534“, „Staubschutz“ und „Festpreis“ tauchen in fast jedem Abschnitt erneut auf (vgl. d1920/11.jpg Siegelleiste über dem Footer)."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Schwebende Elemente stapeln sich auf dem Handy (Bottom-Bar, WhatsApp-Kreis mit Zähler, „Chat starten“-Blase, Schild-Icon) und verdecken Formularfelder und Überschriften (m375/01.jpg, m375/03.jpg, m375/07.jpg).",
+        "reparatur": "Ein einziges persistentes Bedienelement behalten, die Bottom-Bar mit Anrufen/WhatsApp/Aufmaß. WhatsApp-Kreis, Chat-Blase und Zähler-Badge entfernen und das Consent-Schild in den Footer verlegen."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare (Hero, „Projekt anfragen“, „Express-Anfrage“) machen die Seite lang und die Hauptaktion unklar (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg).",
+        "reparatur": "Auf ein Formular reduzieren, das an einem festen Anker am Seitenende steht. Im Hero nur einen Primärknopf „Aufmaß vor Ort anfragen“ zeigen, der dorthin springt."
+       },
+       {
+        "schwaeche": "Generische Vorlagenästhetik ohne eigene Bildsprache: Pillen-Badges über jeder Sektion, Orange-Akzentwörter, gleichförmige Icon-Karten, unscharfe Fremdbilder (d1440/05.jpg, t768/07.jpg, d1920/04.jpg).",
+        "reparatur": "Eine Leitidee aus dem Gewerk ableiten (z. B. Fugenraster, Verlegeplan, Maßangaben) und daraus Raster, Trenner und Grafik bauen. Fremdbilder durch eigene Projektfotos mit Ort und Format ersetzen und die Badges streichen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "Richtung A",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 7.5,
+       "belege": [
+        "d1440/00.jpg, Hero: schmale Archivo-Versalzeilen in Navy auf Kalkgrund, darüber ein feines Fliesenraster. Eine einzige rote Laserachse läuft über die volle Breite und führt in die SVG-Verlegeplan-Zeichnung rechts; Typo, Farbe und Grafik sprechen eine Sprache.",
+        "d1920/07.jpg, Bereich Ablauf oben bis Mitte: Wechsel auf Tinte-Navy mit großen Ziffern 01/02/03, die rote Waagrechte verbindet die Fugenkreuze an den Spaltenfugen. Präzise und zurückhaltend gesetzt.",
+        "Abzug, m375/00.jpg, Hero links: das Fugenkreuz „+“ sitzt am Rand halb im Rand-Gutter und stößt fast an „Großformat“. Auch d1440/00.jpg, Schriftfeld rechts: „5,0 von 5 · 27 / Bewertungen“ bricht unsauber um."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6,
+       "belege": [
+        "d1440/00.jpg, Hero links: klare Rangfolge der Handlungen. Der Hauptknopf „Aufmaß vor Ort anfragen“ ist gefüllt, WhatsApp und Anrufen sind umrandet; Telefon und Knopf stehen zusätzlich in der Kopfleiste.",
+        "m375/13.jpg, ganzer Ausschnitt: am Handy ist der Ablauf neu gesetzt (Achse als senkrechtes Lot links, Schritte darunter) statt zusammengeschoben. Gut lesbar, große Ziffern.",
+        "Abzug, t768/03.jpg und d1920/11.jpg: lange Strecken mit Entwicklerangaben (clamp(...), --fs-7, IntersectionObserver, --ease-setzen). Für einen Kunden sind sie unlesbar und verwässern die Orientierung; ein Kunde muss weit scrollen, bis wieder eine Handlung kommt."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 8,
+       "belege": [
+        "t768/10.jpg, oberer Bereich: das Motiv „Verlegeplan“ mit Achse A / Achse 1, schraffierten Passstücken, Rinne und Schiene, bemaßt mit „=“. Eine echte, gewerkspezifische Leitidee statt Deko.",
+        "d1920/00.jpg, rechte Spalte: Vertrauensdaten (Inhaber, HWK seit 2008, Google 5,0, Trustlocal 9,6, Telefon) stehen im technischen „Schriftfeld“ einer Bauzeichnung. Überraschend und sinnvoll.",
+        "d1440/11.jpg, Formularzustände unten: Fehler als „aus der Flucht“, Ladezustand mit rotem Laser-Scanstrich im Knopf. Die Idee reicht bis in die Mikrozustände."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "d1440/00.jpg, Hero-Fließtext und Schriftfeld: konkrete, prüfbare Angaben (Aßlar, Deniz Tezgel, seit 2008, HWK Wiesbaden, DIN 18534, 27 Google-Bewertungen) statt Superlativen. Sachlicher, glaubwürdiger Ton.",
+        "Abzug, t768/08.jpg, unten im Navy-Block: die einzige Kundenstimme ist ein Bruchstück „… Handwerklich perfekt, saubere u. präzise …“. Auf keiner Ansicht gibt es ein Foto eines echten Bads oder des Inhabers.",
+        "Abzug, m375/05.jpg bis 08.jpg: der Großteil der Seite ist Gestaltungsdokumentation (Farbwerte, Kontrasttabelle, Abstands-Token) und kein Kundeninhalt."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Kein echtes Bildmaterial. Die Seite zeigt nur Zeichnungen, Raster und Farbfelder, aber keine fertigen Bäder, keine Baustelle und kein Porträt (sichtbar auf allen Ansichten, z. B. d1920/00.jpg bis 11.jpg).",
+        "reparatur": "Eigene Referenzfotos (fertiges Bad, Detail einer Großformatfuge, Inhaber vor Ort) ins Raster setzen, randlos auf Fugenbreite. Die rote Achse darf als Bemaßung über ein Foto laufen, damit die Leitidee am echten Werk belegt wird."
+       },
+       {
+        "schwaeche": "Kunden- und Entwicklerebene sind vermischt. Nach dem starken Hero folgen Token-Tabellen, clamp()-Formeln und Bewegungsspezifikationen (t768/03.jpg, t768/13.jpg, d1920/11.jpg), die für Bauherren keinen Wert haben.",
+        "reparatur": "Die Spezifikation in ein internes Dokument auslagern. Die Kundenseite folgt dann Hero → Ablauf → Leistungen mit Verlegeplan → Bewertungen → Aufmaß-Formular, und das Formular erscheint früher und noch einmal am Ende."
+       },
+       {
+        "schwaeche": "Kleine Präzisionsfehler widersprechen dem Anspruch „Maß statt Behauptung“: Das Fugenkreuz stößt am Handy an den Rand und an die Headline (m375/00.jpg links), das Label „Achse“ schwebt verloren in der Bildmitte (d1440/00.jpg), die Bewertungszelle im Schriftfeld bricht unsauber um, und die Kundenstimme ist ein Fragment (t768/08.jpg).",
+        "reparatur": "Das Kreuz auf Rand-Gutter + --s-3 setzen und das Achsen-Label an Zeichnung oder Rand andocken. Die Schriftfeld-Zelle zweizeilig bauen (Wert / Anzahl). Ein vollständiges, kurzes Zitat mit Ort und Gewerk zeigen statt „… … …“."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1920/00.jpg, Hero: Ein Wort der Headline („Quadratmeter.“) steht in Orange-Verlauf, darunter weich gerundete Pillen-Knöpfe und eine schwebende Formularkarte mit Schatten. Das ist das gängige Landingpage-Muster ohne eigene Handschrift.",
+        "d1440/02.jpg und d1440/09.jpg, Abschnittsköpfe: vor jeder Überschrift steht dieselbe hellorange Pillen-Marke („Umfassende Projektanfrage“, „Regionale Einsatzgebiete“), dazu wiederholte Icon-Kästchen in Orange. Das Muster wiederholt sich ermüdend und flacht die Hierarchie ab.",
+        "d1920/06.jpg, Kartenfotos oben: weichgezeichnete, generisch wirkende Badbilder (Sonnenstrahlen-Wanne, verschwommene grüne Fliesen) mit dunklen Etiketten. Bildsprache und Rest der Gestaltung passen nicht zusammen."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Kopfleiste und Hero: Telefon, WhatsApp und „Aufmaß buchen“ sind sofort sichtbar, das Kurzformular steht direkt rechts daneben. Die Hauptabsicht ist klar erreichbar.",
+        "m375/01.jpg, unterer Bildrand: die Sprechblase „Chat starten“, der schwebende WhatsApp-Knopf mit roter „1“, ein Schild-Icon links und eine dreiteilige Fußleiste überdecken gleichzeitig das E-Mail- und das Ort-Feld des Formulars.",
+        "d1440/03.jpg und d1440/11.jpg: auf einer Seite folgen drei verschiedene Anfrageformulare (Hero-Kurzformular, 3-Schritt-Projektanfrage mit dunkler Seitenspalte, „Express-Anfrage in 3 Klicks“). Das verwirrt und verlängert die Seite stark."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "m375/00.jpg, Hero: zentrierte Badge-Zeile, Sternzeile, Claim „Perfektion auf jedem Quadratmeter.“ mit Farbwort. Das ist austauschbar mit jedem anderen Handwerker- oder SaaS-Auftritt.",
+        "d1440/09.jpg, Mitte unten: die Kartenfläche ist ein dunkler Cookie-Platzhalter („Interaktive Karte geschützt (DSGVO)“) mit Punktraster. Gerade dort, wo ein eigenes Motiv zum Einzugsgebiet möglich wäre, fehlt es."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "t768/07.jpg, Kartenlisten rechts: fachlich konkrete Angaben (Außenkeramik 2 cm auf Stelzlagern, Gefälle mind. 1,5 bis 2 %, Verbundabdichtung DIN 18534) zeigen echtes Gewerkwissen.",
+        "d1440/08.jpg, Bewertungen: echte, namentlich gekürzte Google-Stimmen (Elke S., C. W., Rabia Ö.) mit Gewerk-Etikett sowie 5,0/5 bei 27 und 9,6/10 bei 25 Bewertungen. Das ist glaubwürdig belegt.",
+        "Abzug, d1920/04.jpg und t768/02.jpg: Floskeln wie „Fachbetrieb für anspruchsvolle Architektur“, „Alles für Ihr Vorhaben auf über 100 Fachseiten“ und „Perfektion“ sowie Etiketten wie „Sehr gefragt“ und „Zertifiziert“ klingen nach Werbung, nicht nach dem Inhaber."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Am Handy überlagern sich vier schwebende Elemente (WhatsApp-Knopf mit Fake-Benachrichtigung „1“, „Chat starten“-Blase, Schild-Icon, dreiteilige Fußleiste) und verdecken auf jedem Bildschirm Inhalt und Formularfelder (m375/01.jpg, m375/08.jpg).",
+        "reparatur": "Nur eine feste Handlungsleiste unten behalten (Anrufen · WhatsApp · Aufmaß) und den schwebenden WhatsApp-Knopf, die Chat-Blase und die rote „1“ entfernen. Das Datenschutz-Icon in den Footer verlegen und den unteren Seitenabstand an die Leistenhöhe anpassen."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare plus ein Mega-Menü machen die Startseite lang und redundant (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg).",
+        "reparatur": "Ein einziges Aufmaß-Formular (Gewerk, Name, Telefon, Ort) am Seitenende behalten. Alle anderen Stellen verweisen per Anker darauf, und der Hero zeigt nur Knopf und Telefon."
+       },
+       {
+        "schwaeche": "Die Gestaltung ist austauschbar: Orange-Verlaufswort, Pillen-Marke über jeder Überschrift, gleichförmige Rundkarten mit Icon-Kästchen und stockartige Fotos (d1920/00.jpg, d1920/06.jpg, t768/09.jpg).",
+        "reparatur": "Ein eigenes gestalterisches Prinzip aus dem Gewerk ableiten (Fuge, Raster, Maß), die Pillen-Marken und Verläufe streichen und eine Schrift mit Charakter einsetzen. Stockbilder durch eigene Referenzfotos aus Aßlar und Umgebung mit Ort und Format als Bildunterschrift ersetzen."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 7.5,
+    "bedienbarkeit": 6,
+    "kreativitaet": 8,
+    "inhalt": 6
+   },
+   "gewichtet": 7,
+   "einzel_gewichtet": [
+    6.95,
+    7.2,
+    7
+   ],
+   "lockvogel_gewichtet": [
+    4.25,
+    4.05,
+    4.1
+   ]
+  },
+  "Richtung B": {
+   "urteile": [
+    {
+     "seite": "Richtung B",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 7,
+       "belege": [
+        "d1440/00.jpg, Hero oben links: sehr breite Archivo-Überschrift 'Fugenarme Großformatverlegung' in Tinte-Navy auf warmem Kalkgrund, darunter Mono-Metazeile rechts. Ruhig, eigenständig, präzise gesetzt",
+        "d1920/00.jpg, Bereich unter dem Hero: Inhalte stehen als Platten im Drittelverband mit 2-px-Fugen statt in Karten mit Schatten. Das Raster ist selbst das Gestaltungsmittel",
+        "d1920/11.jpg, linke Hälfte: SVG-Schichtaufbau mit schraffiertem Untergrund, wasserblauer Abdichtungslinie, nummerierten Navy-Marken und einer Wasserwelle als einziger Kurve. Sauber und stimmig",
+        "Gegenbeleg d1920/07.jpg, ganze Bildhöhe: riesige leere Kalkplatten, nur mit 'Zuschnitt' beschriftet; m375/00.jpg Mono-Zeile 'Aßlar': das ß fällt erkennbar aus der Schrift (wirkt wie 'Aʒlar')"
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/00.jpg, Kopf: klare Navigation (Leistungen, Ablauf, Einzugsgebiet, Kontakt) und Telefonnummer als umrandeter Knopf. Primärknopf 'Kostenfreies Aufmaß vor Ort anfragen' ist eindeutig die Haupthandlung",
+        "m375/00.jpg, erster Bildschirm: Logo, Telefon-Icon und 'Menü' sind groß tippbar, der Text ist gut lesbar. Der Aufmaß-Knopf sitzt aber erst unterhalb des langen Teaser-Blocks",
+        "Gegenbeleg d1920/09.jpg, linke Platte: Die Knöpfe 'Aufmaß vor Ort anfragen' und 'Anrufen' schwimmen unten in einer sonst leeren Platte. Der Bezug zu Schritt 03 rechts ist unklar",
+        "Gegenbeleg m375/10.jpg und m375/11.jpg: lange Kontrasttabellen ('17,32 : 1 bestanden') und m375/07.jpg clamp-Zeichenketten. Ein Kunde muss sich durch Seiten interner Spezifikation scrollen"
+       ]
+      },
+      "kreativitaet": {
+       "wert": 7.5,
+       "belege": [
+        "m375/02.jpg, Leitidee-Absatz: 'Die Website ist eine planeben verlegte Großformatfläche … gegliedert nur von der 2-mm-Fuge'. Ein klarer, aus dem Handwerk abgeleiteter Leitgedanke, der im Raster wirklich umgesetzt ist",
+        "t768/08.jpg, unterer Bereich: Signatur 'Streiflicht' als Ebenheitsprüfung über die Schrittplatten. Die Bewegung hat einen fachlichen Sinn statt bloßer Deko",
+        "t768/10.jpg, Mitte: Icon-Regeln (Gehrung, eckige Enden, 'Kurven ausschließlich Wasser') und das Muster 'Großformat 2:1, Reihen um ⅓ versetzt'. Details belohnen das Hinsehen",
+        "Gegenbeleg: Das Streiflicht selbst ist auf keinem Standbild sichtbar. d1920/09.jpg zeigt nur den Knopf 'Streiflicht erneut zeigen', das Signaturmoment bleibt unbelegt"
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/02.jpg, rechte Spalte 'Maß statt Behauptung': Es zählen echte Angaben (DIN 18534, R10/R11, seit 2008, 27 Bewertungen), Superlative sind ausdrücklich verboten. Ehrlicher, sachlicher Ton",
+        "d1920/00.jpg, Hero unten: 'Eingetragener Fachbetrieb der Handwerkskammer Wiesbaden', das Inhaberzitat und '5,0 von 5 bei 27 Google-Bewertungen, Stand September 2026'. Echt und überprüfbar",
+        "Gegenbeleg d1440/04.jpg, rechte Spalte: Token-Texte wie '--t-h2: clamp(1.875rem, 1.391rem + 2.066vw …) · jetzt 52 px' und d1920/11.jpg '(OFFENE FRAGE)'. Interne Arbeitsnotizen stehen im sichtbaren Inhalt",
+        "Gegenbeleg: Auf allen Bildern gibt es kein einziges Projektfoto. Für einen Fliesenleger fehlt der wichtigste Echtheitsbeweis, die eigene Arbeit"
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Die Seite ist überwiegend Stil- und Spezifikationsdokument: clamp-Formeln, OKLCH-Werte, Kontrasttabellen, Bewegungsregister und 'OFFENE FRAGE' sind für Kunden sichtbar (d1440/04.jpg, d1440/07.jpg, d1920/13.jpg).",
+        "reparatur": "Alle Token-, Kontrast- und Bewegungsangaben in eine interne Styleguide-Seite verschieben. Die Startseite zeigt nur Hero, Leistungen, Ablauf, Schichtaufbau als erklärende Grafik, Einzugsgebiet und Anfrage."
+       },
+       {
+        "schwaeche": "Leere Platten ohne Inhalt und keine Fotografie: Die Rasterdemonstration (d1920/07.jpg) und die Ablauf-Fläche (d1920/09.jpg, linke Platten) wirken unfertig, und die Knöpfe schwimmen im Leerraum.",
+        "reparatur": "Die großen Zuschnitt-Platten mit eigenen Projektfotos füllen, idealerweise Streiflicht-Aufnahmen fugenarmer Flächen. Die Knöpfe direkt unter Schritt 03 oder in eine eigene Abschlussplatte setzen."
+       },
+       {
+        "schwaeche": "Der Mono-Schriftschnitt hat ein fehlerhaftes ß, das sichtbar aus der Schrift fällt: 'Aßlar' (m375/00.jpg), 'Hohwardstraße' (d1920/13.jpg), 'Großformat · 6 Spalten' (d1920/07.jpg).",
+        "reparatur": "Den Zeichensatz-Subset von IBM Plex Mono um ß und die Umlaute ergänzen bzw. auf 'latin-ext' umstellen und den Fallback prüfen. Alternativ Ortsnamen in Archivo statt in Mono setzen."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg, Hero links: 'Perfektion auf jedem Quadratmeter.' mit orangefarbenem Verlaufswort, darüber eine Pillen-Badge-Zeile, rechts eine schwebende Formularkarte mit großem Radius und Schatten. Ein austauschbares SaaS-Landingpage-Muster",
+        "d1440/02.jpg und t768/02.jpg: Karten mit Icon in orangem Rundkästchen + Versal-Kicker + Titel + Pfeil-Liste wiederholen sich in jedem Abschnitt. Über jeder Überschrift steht eine Pillen-Badge ('Fachbereiche & Planungshilfen', 'Transparenter Ablauf')",
+        "d1920/06.jpg, rechte Karte: großes, warm belichtetes Badfoto mit freistehender Wanne. Die Bilder heben die Seite punktuell, wirken aber eher wie Stock- oder Render-Bilder",
+        "d1440/03.jpg, Projektanfrage: Der harte Wechsel von heller Kartenfläche zu schwarzem Panel mit Grün-Akzenten bricht die ohnehin unruhige Farbpalette (Orange, Teal, Grün, Schwarz)"
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "d1920/00.jpg, Kopf und Hero: Telefon, WhatsApp und 'Aufmaß buchen' sind überall sichtbar, das Formular steht schon im ersten Bildschirm. Die Handlungen sind sehr klar",
+        "d1440/03.jpg, Anfrageblock: Die Schrittanzeige '1 Gewerk – 2 Fläche – 3 Situation' und die Zusammenfassung rechts ('Gewerk / Fläche / Vor-Ort-Aufmaß 0 €') geben gute Orientierung",
+        "Gegenbeleg m375/01.jpg, unteres Drittel: Die Sticky-Leiste (Anrufen/WhatsApp/Aufmaß), der WhatsApp-Knopf mit roter '1', die Blase 'Chat starten' und das Schild-Icon überdecken gleichzeitig die Formularfelder E-Mail und Ort",
+        "Gegenbeleg d1440/11.jpg: Mit 'Ihre Express-Anfrage in 3 Klicks' folgt schon das dritte Anfrageformular nach Hero-Formular (d1440/00.jpg) und 'Projekt anfragen & Situation schildern' (d1440/03.jpg). Das erzeugt Redundanz und Unsicherheit"
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1440/00.jpg, Hero: Die Kombination aus Verlaufswort, Trust-Badges, drei Knöpfen und Formularkarte ist ein gängiges Vorlagenmuster ohne Bezug zum Werkstoff Fliese",
+        "d1440/09.jpg, Einzugsgebiet: Eine Chip-Leiste mit km-Angaben über einer dunklen DSGVO-Kartenplatzhalterfläche ist funktional, aber ohne eigene Idee oder Signaturmoment",
+        "Kein Bild zeigt ein wiederkehrendes eigenes Motiv. Fliese, Fuge oder Verlegebild tauchen gestalterisch nirgends auf, nur als Text"
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/08.jpg, Kundenstimmen: namentlich gekennzeichnete Google-Rezensionen (Elke S., C. W., Rabia Ö.) mit Gewerk-Etikett, dazu '5,0/5 · 27 Google-Rezensionen' und '9,6/10 · 25 Trustlocal'. Echt und konkret",
+        "d1440/05.jpg, Karte 'Bäder & Wellness': fachlich gehaltvolle Aussagen ('XXL-Fliesen bis 120 × 278 cm', 'Verbundabdichtung nach DIN 18534', 'Gefälleschnitt'). Echte Kompetenz wird sichtbar",
+        "Gegenbeleg d1440/00.jpg und t768/09.jpg: Superlative und Werbefloskeln ('Perfektion auf jedem Quadratmeter', 'Fachbetrieb für anspruchsvolle Architektur', 'Wellnessoase') verwässern den sachlichen Kern",
+        "Gegenbeleg d1440/02.jpg: '100 Fachseiten'-Kacheln mit Seitenzahlen ('15 Seiten · …') wirken wie ein Inhaltsverzeichnis für Suchmaschinen statt wie eine Botschaft an Kunden"
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Mobile Überlagerungsflut: Die Sticky-Leiste, der WhatsApp-Knopf mit künstlichem '1'-Zähler, die Blase 'Chat starten' und das Schild-Icon liegen gleichzeitig über dem Inhalt und verdecken Formularfelder (m375/01.jpg, m375/08.jpg).",
+        "reparatur": "Mobil nur eine einzige Sticky-Leiste mit Anrufen/WhatsApp/Aufmaß behalten. Schwebenden WhatsApp-Knopf, Fake-Benachrichtigung und Chat-Blase entfernen und das Consent-Schild in den Footer verlegen."
+       },
+       {
+        "schwaeche": "Auf der Startseite stehen drei konkurrierende Anfrageformulare: Hero-Formular (d1440/00.jpg), Mehrschritt-Projektanfrage (d1440/03.jpg) und Express-Anfrage (d1440/11.jpg). Die Seite wird lang und redundant.",
+        "reparatur": "Auf ein Formular reduzieren, die Mehrschritt-Variante mit Zusammenfassung, an einer festen Stelle. Alle anderen Knöpfe springen per Anker dorthin."
+       },
+       {
+        "schwaeche": "Generische Vorlagenoptik ohne Bezug zum Handwerk: Pillen-Badge über jeder Überschrift, Icon-im-Orangekästchen-Karten, Verlaufswort und Mischpalette aus Orange, Teal, Grün und Schwarz (d1440/02.jpg, d1440/06.jpg, d1440/03.jpg).",
+        "reparatur": "Badges und Icon-Kästchen streichen und die Palette auf eine Akzentfarbe plus Neutraltöne reduzieren. Eine eigene Leitidee aus Fliese und Fuge entwickeln (Raster, Fugenbild) und eigene Projektfotos statt Stock- oder Render-Bildern zeigen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "Richtung B",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 7,
+       "belege": [
+        "d1920/00.jpg, Hero: breite Archivo-Überschrift „Fugenarme Großformatverlegung“ über die volle Fläche, warmes Kalk-Weiß, Navy-Tinte, Mono-Zeilen rechts unten („Aßlar · Mittelhessen · seit 2008“) – ruhig, eigenständig, präzise.",
+        "d1440/00.jpg, untere Reihe: Inhalt sitzt in Platten, die nur durch 2-px-Fugen getrennt und versetzt sind (Zitat | Aufmaß-Knopf | Kontakt) – das Raster ist selbst die Gestaltung.",
+        "d1920/11.jpg, links: SVG-Schichtaufbau mit Schraffur, Wasserblau-Abdichtung, nummerierten Navy-Marken und Tropfen – sauberes, eigenes Grafiksystem.",
+        "d1920/07.jpg, ganze Fläche: riesige leere Platten nur mit „Zuschnitt“/„Großformat · 6 Spalten“-Etiketten; kein einziges Foto von Fliesen oder Bädern auf der ganzen Seite – die Ruhe kippt ins Leere."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5.5,
+       "belege": [
+        "m375/00.jpg, erster Bildschirm: knapper Kopf mit Telefonsymbol und „Menü“, klare Überschrift, ein dunkler Hauptknopf „Kostenloses Aufmaß vor Ort anfragen“, keine Überlagerungen – mobil sehr aufgeräumt.",
+        "d1920/09.jpg, Ablauf: Schrittnummern 02/03 in Mono, Knöpfe „Aufmaß vor Ort anfragen“ + „Anrufen“ direkt am Ablauf – Handlung gut platziert.",
+        "d1440/06.jpg und m375/08.jpg: lange WCAG-Kontrasttabellen, Hex-Werte und Token-Namen nehmen große Teile der Seite ein; ein Kunde muss sich durch Entwicklerdokumentation scrollen, um zu Leistungen oder Anfrage zu kommen.",
+        "d1920/00.jpg, Hero: großes Leerfeld zwischen Überschrift und Unterzeile, Bewertung und Kontakt rutschen an den unteren Rand – auf 1920 wirkt der erste Bildschirm unterfüllt."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 7.5,
+       "belege": [
+        "m375/02.jpg, „Leitidee“: Website als planeben verlegte Großformatfläche mit 2-mm-Fuge und Streiflicht von links – eine klare, aus dem Handwerk abgeleitete Idee, die in Raster, Schatten und Bewegung durchgezogen wird.",
+        "t768/08.jpg, unten: „Ablauf in drei Schritten“ mit Signatur Streiflicht – Licht streicht wie bei der Ebenheitsprüfung über die Schrittplatte; dazu „Streiflicht erneut zeigen“ (d1440/11.jpg).",
+        "d1920/13.jpg, Bewegungsregister: Ladeanzeige „laden-fliesen“ (drei kleine Fliesen werden nacheinander hell) und „fuge-fokus“ (Fuge füllt sich unter dem Feld) – Überraschung mit Sinn, auf den Bildern selbst aber nur beschrieben, nicht sichtbar.",
+        "t768/10.jpg, Mitte: Trenner „Fugenkreuz im Drittelverband“ und Muster 2 : 1 – Details, die das Hinsehen belohnen."
+       ]
+      },
+      "inhalt": {
+       "wert": 4.5,
+       "belege": [
+        "t768/00.jpg, Kontaktplatte: echte Daten (06441 / 44 83 567, WhatsApp 0172 / 67 28 504, 5,0 bei 27 Google-Bewertungen, Stand September 2026, HWK Wiesbaden) – nüchtern und glaubwürdig.",
+        "m375/05.jpg und d1440/04.jpg: sichtbare CSS-Angaben („--t-display: clamp(2.75rem, …) · jetzt 44 px“, „--t-mini …“) sowie in d1440/13.jpg „(OFFENE FRAGE)“ – interne Arbeitsnotizen statt Kundentext.",
+        "d1920/04.jpg, Mitte: Überschrift „Verbundabdichtung Großformatfliesen Badsanierung“ ist eine Stichwortkette ohne Satz; Leistungstexte bleiben auf je eine Zeile beschränkt, Referenzen oder Projektbilder fehlen ganz."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Die Seite ist überwiegend Gestaltungsdokumentation (Token-Tabellen, Kontrastwerte, clamp-Formeln, Abstandsskala, „OFFENE FRAGE“) – für Besucher ohne Nutzen und als Website-Seite nicht vorzeigbar (m375/08.jpg, d1440/04.jpg, d1440/13.jpg).",
+        "reparatur": "System-Inhalte in ein internes Dokument verschieben; die öffentliche Seite nur aus Hero, Leistungen, Ablauf mit Streiflicht, Schichtaufbau, Referenzen, Einzugsgebiet und Anfrage bauen."
+       },
+       {
+        "schwaeche": "Keine Fotografie: Ein Fliesenleger zeigt weder Material noch fertige Bäder, die großen Platten bleiben leere Kalkflächen (d1920/07.jpg, d1920/09.jpg linke Platten).",
+        "reparatur": "Leere Zuschnitt-Platten mit großformatigen eigenen Projektfotos (Streiflicht über echter Fliesenfläche, Detail Fuge/Gehrung) füllen; je Leistung ein Bild im 2 : 1-Plattenformat."
+       },
+       {
+        "schwaeche": "Hierarchie und Füllung des ersten Bildschirms auf Desktop schwach: großes Leerfeld unter der Überschrift, Hauptknopf erst unten in der zweiten Plattenreihe; Leistungs-Überschrift als Stichwortkette (d1920/00.jpg, d1920/04.jpg).",
+        "reparatur": "Hero-Höhe verringern, Unterzeile und Hauptknopf direkt unter die Überschrift ziehen, ein Bild oder das Streiflicht-Motiv in die freie Fläche setzen; Stichwort-Überschriften in klare Sätze umschreiben („Großformate dicht und planeben verlegt“)."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Hero links: Plus-Jakarta-artige Grotesk in Schwarz mit orangem Akzentwort „Quadratmeter.“, darunter drei Knöpfe in drei Farben (Rostrot, Petrol-WhatsApp, weiß) – sauber gesetzt, aber das gängige Handwerker-Landingpage-Muster.",
+        "t768/02.jpg und d1440/02.jpg, Kartenraster: jede Karte ist Icon im orangen Quadrat + Versal-Kicker + Titel + Pfeil-Liste + Textlink – genau die austauschbare Kachel, dazu Pillen-Badges über jeder Sektion („Fachbereiche & Planungshilfen“, „Umfassende Projektanfrage“, „Transparenter Ablauf“).",
+        "d1920/04.jpg, Leistungskarten: echte Bad-Fotos mit Bildunterschrift-Chip geben Wärme, das grüne Fliesenbild unten ist aber stark unscharf und wirkt wie ein Platzhalter.",
+        "d1920/11.jpg, Fußbereich: dunkle Zone mit Vertrauensleiste und vierspaltigem Linkblock, ordentlich gegliedert, aber ohne eigene Handschrift."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "m375/01.jpg, unten: WhatsApp-Kreis mit roter „1“, Sprechblase „Chat starten“, Cookie-Schild links und dreiteilige Leiste (Anrufen/WhatsApp/Aufmaß) liegen alle zugleich über dem Formular und verdecken die Feldbeschriftung „ORT / PLZ“.",
+        "d1440/00.jpg + d1440/03.jpg + d1440/11.jpg: drei verschiedene Anfrageformulare auf einer Seite (Hero-Formular, Projektanfrage mit Schritten 1–3, „Express-Anfrage in 3 Klicks“) – unklar, welches gemeint ist.",
+        "d1440/00.jpg, Kopf: klare Navigation mit Telefonnummer und Hauptknopf „Aufmaß buchen“ immer sichtbar; Hierarchie Überschrift → Unterzeile → Knöpfe ist gut lesbar.",
+        "t768/11.jpg, Ortsleiste: Chips laufen rechts angeschnitten aus dem Bild („Bad Na…“), ohne sichtbaren Hinweis auf Wischen; darunter eine große schwarze Fläche, die nur aus einem Einwilligungshinweis besteht."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "t768/00.jpg, Hero: kein Bild, keine Idee aus dem Fliesenhandwerk – Überschrift, Knöpfe, Häkchenleiste und Zitatkasten folgen dem bekannten Baukasten.",
+        "d1440/09.jpg, Bewertungen: Sterne, Initialen-Kreis, Kategorie-Chip, „Google Rezension“-Fuß – Standard-Testimonial-Karussell ohne Überraschung.",
+        "d1920/06.jpg, XXL-Block: die Kennzahl-Kästen „DIN 18534“ und „XXL“ sind der einzige Versuch eines Akzents, bleiben aber generische Stat-Kacheln."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "d1920/04.jpg, Karte „Bäder & Wellness“: konkrete Fachangaben (XXL bis 120 × 278 cm, Verbundabdichtung nach DIN 18534, Schonvlies, Staubschutzwände) wirken kompetent und echt.",
+        "d1440/09.jpg, Mitte: echte Namen mit Kurzzitaten und zwei Quellen (5,0 / 27 Google, 9,6/10 Trustlocal) – glaubwürdig.",
+        "t768/02.jpg, Kopf der Sektion: „Alles für Ihr Vorhaben auf über 100 Fachseiten“ und die Liste „15 Seiten · 6 Seiten …“ (m375/06.jpg) lesen sich wie SEO-Inhaltsverzeichnis statt Kundennutzen; Texte wiederholen sich (Staubschutz, Festpreis, DIN 18534 in fast jeder Sektion)."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Mobil liegen vier schwebende Elemente (WhatsApp-Kreis mit Zähler, „Chat starten“-Blase, Cookie-Schild, Aktionsleiste) gleichzeitig über dem Inhalt und verdecken Formularfelder (m375/01.jpg, m375/08.jpg).",
+        "reparatur": "Auf eine einzige untere Aktionsleiste reduzieren (Anrufen · WhatsApp · Aufmaß), WhatsApp-Kreis, Zähler-Badge und Sprechblase entfernen, Cookie-Schild nur im Fußbereich anbieten."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare und mehrfach wiederholte Verkaufsargumente machen die Seite lang und die Handlung unklar (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg).",
+        "reparatur": "Ein einziges Anfrageformular (mehrstufig) an einer festen Stelle; alle anderen Knöpfe springen dorthin. Wiederholte Abschnitte (zweiter Leistungsblock, Express-Anfrage) streichen."
+       },
+       {
+        "schwaeche": "Austauschbare Bildsprache: Icon-Kacheln, Pillen-Badges über jeder Sektion, Orange-Akzentwort – nichts erzählt von Fliese, Fuge oder Präzision (t768/02.jpg, d1440/02.jpg).",
+        "reparatur": "Eine Leitidee aus dem Handwerk wählen (z. B. Raster/Fuge als Gliederung, eigene Projektfotos in großem Format statt Icons), Badges und Icon-Quadrate streichen und eigene Referenzfotos statt unscharfer Stockbilder zeigen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "Richtung B",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 7.5,
+       "belege": [
+        "d1440/00.jpg, oberer Bereich: breite Archivo-Headline 'Fugenarme Großformatverlegung' in Navy auf Kalkfläche, Mono-Kleinsatz rechts unten ('Aßlar · Mittelhessen · seit 2008'). Die Fläche wird nur durch 2-px-Fugen gegliedert, nicht durch Karten, und das wirkt ruhig und präzise.",
+        "d1920/11.jpg, linke Hälfte: SVG-Schichtaufbau mit schraffiertem Untergrund, wasserblauer Abdichtungslinie, nummerierten Navy-Markern und Tropfen als einziger Kurve. Die Grafik ist eigenständig und passt zur Leitidee.",
+        "t768/10.jpg, Mitte: Muster 'Großformat 2:1, Reihen um ⅓ versetzt' und Icon-Kacheln mit Gehrungsecken. Die Formsprache ist konsequent durchgezogen.",
+        "d1920/07.jpg, ganzer Bildschirm: die Rasterdemo besteht aus bildschirmfüllenden leeren Platten mit den Etiketten 'Zuschnitt'. Hier wirkt die Fläche leer und nicht gestaltet. d1920/09.jpg, linke Platte: großes leeres Feld, nur unten zwei Knöpfe."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6.5,
+       "belege": [
+        "d1440/00.jpg, Kopfzeile: vier klare Navigationspunkte und die Telefonnummer als umrandeter Knopf. Darunter ein einziger dunkler Hauptknopf 'Kostenfreies Aufmaß vor Ort anfragen'. Die Handlungen sind eindeutig.",
+        "m375/00.jpg: auf dem Telefon nur Logo, ein Telefonsymbol und 'Menü'. Der Hauptknopf ist im ersten Bildschirm sichtbar, ohne schwebende Störer.",
+        "m375/08.jpg und m375/10.jpg: die Kontrasttabelle läuft über mehrere Bildschirme mit Werten wie '17,32 : 1 · bestanden'. Für Besucher ist das Ballast, der Weg zum Inhalt wird lang.",
+        "d1920/00.jpg, Hero: zwischen der Headline und der Unterzeile liegt ein Leerraum von etwa 200 px. Die Unterzeile rutscht an den Rand der Platte, der Blick findet keinen Anschluss."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 8,
+       "belege": [
+        "d1440/02.jpg: die Tun/Lassen-Regeln 'Die Fuge gliedert', 'Licht kommt flach von links', 'Gerade für Keramik, Kurve nur für Wasser'. Die Leitidee kommt direkt aus dem Handwerk und ist konsequent durchgezogen.",
+        "t768/08.jpg, unten: Signatur 'Streiflicht', die den Ablauf als Schrittplatten zeigt wie bei der Ebenheitsprüfung auf der Baustelle. Die Bewegung hat einen Sinn. Dazu d1440/11.jpg: Knopf 'Streiflicht erneut zeigen'.",
+        "d1440/09.jpg, Mitte: die Abstandsskala '--a-fuge 2' beginnt bei der Fuge. Eine kleine Pointe, die das Hinsehen belohnt.",
+        "d1920/11.jpg, Legende '6 Wasser – die einzige Kurve': die Kurve ist bewusst nur dem Wasser vorbehalten und in der Grafik eingelöst."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "d1440/00.jpg, rechte Spalte: '5,0 von 5 bei 27 Google-Bewertungen · Stand September 2026', dazu 'Eingetragener Fachbetrieb der Handwerkskammer Wiesbaden'. Echte, überprüfbare Angaben statt Superlative.",
+        "m375/07.jpg: der Leistungstext nennt Feinsteinzeug, Edelstahlschienen, R10/R11 und 'Besenreine Endreinigung und gemeinsame Abnahme'. Konkret und sachlich.",
+        "d1440/13.jpg, rechts: der Satz 'Benennungen sind eine Skizze; die genauen Schichten bestätigt der Betrieb (OFFENE FRAGE)' steht sichtbar für Besucher da. Das ist ein Arbeitsstand, kein Inhalt.",
+        "Auf keinem der 31 Bilder ist ein Foto zu sehen, weder von einer verlegten Fläche noch vom Inhaber. Das Großformat wird behauptet, aber nicht gezeigt."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Interne Systemdokumentation steht im Besucherfluss: Kontrasttabelle, clamp-Werte, Bewegungsregister, Hex-Codes und 'OFFENE FRAGE' (m375/08.jpg, d1920/13.jpg, d1440/13.jpg).",
+        "reparatur": "Kundenseite und Stilkachel trennen. Auf der Seite bleiben Hero, Leistungen, Ablauf, Schichtgrafik, Einzugsgebiet und Anfrage. Tokens, Kontraste und das Register wandern in ein internes Dokument."
+       },
+       {
+        "schwaeche": "Große leere Platten ohne Inhalt: die Rasterdemo (d1920/07.jpg), die linke Ablaufplatte mit Knöpfen ganz unten (d1920/09.jpg, d1440/11.jpg) und der Leerraum im Hero (d1920/00.jpg). Die Ruhe kippt hier ins Unfertige.",
+        "reparatur": "Leere Platten mit echten Fotos verlegter Großformate unter Streiflicht füllen oder die Plattenhöhe an den Inhalt koppeln. Die Hero-Unterzeile direkt unter die Headline setzen, statt sie an den Plattenboden zu drücken."
+       },
+       {
+        "schwaeche": "Es gibt kein Bildmaterial. Das Versprechen 'fugenarm, planeben' bleibt abstrakt, und der Seite fehlt der handwerkliche Beleg.",
+        "reparatur": "Zwei bis drei echte Projektfotos in Plattenformaten 2:1 oder 3:1 einsetzen, flach von links ausgeleuchtet wie das Streiflicht-Motiv, mit Mono-Etikett zu Format, Ort und Fugenbreite."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 4.5,
+       "belege": [
+        "d1440/00.jpg: der Hero folgt einem verbreiteten SaaS-Muster mit Badge-Zeile, zweifarbiger Headline 'Perfektion auf jedem Quadratmeter.' in Orange-Verlauf, drei Knöpfen und einer schwebenden Formularkarte mit Schatten. Sauber gesetzt, aber austauschbar.",
+        "d1920/04.jpg und t768/02.jpg: abgerundete Karten mit Icon in Orange-Pastellkästchen, Großbuchstaben-Kicker und Pfeil-Linkliste wiederholen sich in jedem Abschnitt. Diese Gleichförmigkeit ist typisch für eine Vorlage.",
+        "d1920/06.jpg: das Fotomaterial (Wanne im Gegenlicht mit Sonnenstrahlen) wirkt wie Stock- oder Generierbilder und zeigt keine erkennbar eigene Arbeit.",
+        "d1920/11.jpg: der dunkle Footer mit Vertrauensleiste und vier Linkspalten ist ordentlich aufgebaut, aber ohne eigenen Charakter."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "m375/01.jpg und m375/06.jpg, unten rechts: die WhatsApp-Blase mit Zähler '1' und die Sprechblase 'Chat starten' liegen über Formularfeld und Fließtext. Dazu kommen ein Schild-Symbol links und eine dreiteilige Leiste unten. Auf dem Telefon überlagern sich vier fixe Elemente.",
+        "Drei Anfrageformulare auf einer Seite: d1440/00.jpg (Hero), d1440/03.jpg ('Projekt anfragen & Situation schildern') und d1440/11.jpg ('Ihre Express-Anfrage in 3 Klicks'). Die Hauptaktion verwässert.",
+        "d1440/00.jpg, Kopfzeile: Telefon, WhatsApp, 'Aufmaß buchen' und Burgermenü stehen zusätzlich zur vollen Navigation mit fünf Ausklappmenüs. Das Burgermenü auf dem Desktop ist überflüssig.",
+        "Positiv in d1440/03.jpg: die nummerierten Schritte 'Gewerk · Fläche · Situation' und die markierte Auswahl machen den Formularfortschritt gut lesbar."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1440/00.jpg: die Leitidee 'Perfektion auf jedem Quadratmeter' ist ein Werbeslogan ohne visuelle Umsetzung. Kein Signaturmoment verweist auf Fliese, Fuge oder Material.",
+        "t768/11.jpg und d1440/09.jpg: die Kartenattrappe 'Interaktive Karte geschützt (DSGVO)' mit Punktraster auf Schwarz ist ein Standardbaustein, keine gestaltete Einzugsgebiet-Lösung.",
+        "d1440/06.jpg: die Pill-Badges 'Transparenter Ablauf', 'Echte Kundenstimmen' und 'Regionale Einsatzgebiete' über jeder Headline sind ein austauschbares Muster ohne Überraschung."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/05.jpg und d1920/04.jpg: konkrete Fachangaben wie 'Fugenarme XXL-Fliesen (bis 120 × 278 cm)', 'Gefälleherstellung (mind. 1,5 bis 2 %)' und 'Eckdichtbänder mit Dehnzone' zeigen echtes Wissen.",
+        "d1440/08.jpg: Kundenstimmen mit Namen (Elke S., C. W., Rabia Ö.), Gewerk-Etikett und Quelle 'Google Rezension' sowie '27 Google-Rezensionen · 25 Trustlocal-Bewertungen' wirken glaubwürdig.",
+        "d1440/00.jpg und t768/02.jpg: der Ton ist zugleich marketinglastig, mit 'Perfektion', 'Alles für Ihr Vorhaben auf über 100 Fachseiten' und 'Sehr gefragt / Spezialgebiet / Zertifiziert'. Die Etiketten in d1440/03.jpg sind Verkaufsfloskeln."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Schwebende Elemente überladen das Telefon: WhatsApp-Blase mit Zähler, 'Chat starten'-Bubble, Schild-Symbol und dreiteilige Leiste unten verdecken Inhalt (m375/01.jpg, m375/06.jpg).",
+        "reparatur": "Nur eine fixe Aktionsleiste unten behalten (Anrufen · WhatsApp · Aufmaß). Die WhatsApp-Blase mit dem Zähler und die 'Chat starten'-Sprechblase streichen, das Datenschutz-Symbol in den Footer verlegen."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare und doppelte CTAs auf einer Seite (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg).",
+        "reparatur": "Ein einziges geführtes Formular (Gewerk → Fläche → Kontakt) an einer Stelle anbieten. Alle anderen Stellen verlinken als Anker darauf, der Hero verweist nur mit einem Knopf dorthin."
+       },
+       {
+        "schwaeche": "Das Erscheinungsbild ist eine austauschbare Vorlage (Orange-Verlauf, Pill-Badges, Icon-Karten), dazu kommt stockartiges Bildmaterial. Nichts erzählt von Fliese, Fuge oder Handwerk (d1440/00.jpg, d1920/06.jpg).",
+        "reparatur": "Eine Leitidee aus dem Material ableiten, etwa ein Raster als Verlegeplan mit Fugen als Gliederung. Generische Bäder durch echte Projektfotos ersetzen, Badges und Icon-Kästchen deutlich reduzieren."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 7,
+    "bedienbarkeit": 5.5,
+    "kreativitaet": 7.5,
+    "inhalt": 5
+   },
+   "gewichtet": 6.45,
+   "einzel_gewichtet": [
+    6.45,
+    6.4,
+    7.15
+   ],
+   "lockvogel_gewichtet": [
+    4.45,
+    4.8,
+    4.3
+   ]
+  },
+  "Richtung C": {
+   "urteile": [
+    {
+     "seite": "Richtung C",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 7.5,
+       "belege": [
+        "d1440/00.jpg, linke Hälfte: Motto in großer Newsreader-Antiqua auf feinem Aufmaßblatt-Raster, nur das Wort „Kunden“ mit handgezogenem Rotstift unterstrichen. Klare Hierarchie, sehr reduzierte Palette aus Tinte, Papier und Rot.",
+        "d1440/09.jpg, ganze Breite: Kundenstimmen links in der Antiqua, rechts eine durchgehende rote Randlinie mit Pfeilen auf die Randnotizen in Mono und Rot (01 Planung, 02 Material …). Die Komposition wirkt wie ein korrigiertes Dokument und ist präzise gesetzt.",
+        "d1920/02.jpg, untere Hälfte: die Stufe --fs-4xl bricht „Großformatflies / en“ mitten im Wort um. Das ist ein sichtbarer Satzfehler genau dort, wo die Typografie vorgeführt wird.",
+        "d1440/00.jpg, Knopfgruppe links unten: der WhatsApp-Knopf rutscht allein in eine zweite Zeile unter „Aufmaß vor Ort anfragen“ und „Anrufen“. Die Gruppe wirkt dadurch unaufgeräumt."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6.5,
+       "belege": [
+        "m375/00.jpg, Mitte: ein dunkler Hauptknopf „Aufmaß vor Ort anfragen“ über voller Breite, darunter zwei gleich große Umrissknöpfe für Anrufen und WhatsApp. Die Handlungen sind eindeutig gestaffelt, oben sitzen nur Telefon und Menü.",
+        "m375/11.jpg, Mitte: die Randnotizen werden mobil zu eingerückten Kästen mit rotem Randstrich unter jeder Stimme („Leistung“, „Direkt zum Inhaber“). Die Lesereihenfolge bleibt dabei verständlich.",
+        "m375/05.jpg, ganze Fläche: lange graue Mono-Zeilen wie „--fs-xl · clamp(1.5rem, 1.280rem + 0.939vw …)“ in kleiner Größe. Für eine Kundschaft von 35 bis 75 Jahren ist das schwer lesbar und ohne Nutzen.",
+        "d1440/13.jpg, Tabelle oben: die Bewegungstabelle mit IntersectionObserver, Kurven und Millisekunden hat sieben Spalten. Für Besucher gibt sie keine Orientierung und streckt den Weg zum Kontakt."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 8,
+       "belege": [
+        "t768/10.jpg, unterer Kasten: ein Zollstock, zur Sprechblase gefaltet, mit Gelenken auf Rasterpunkten und einem Rotstift-Haken darin. Das ist ein eigenständiges Signaturmotiv, das Maß und Wort verbindet.",
+        "t768/00.jpg, Zettel unten: der Aufmaßzettel „Ebenheit / Restfeuchte / statische Tragfähigkeit – geprüft“ mit roten Haken in Kästchen. Die Leitidee Aufmaßblatt und Rotstift ist schlüssig auf echte Handwerksarbeit übertragen.",
+        "d1920/07.jpg, Zitate: in jeder Kundenstimme ist genau ein Schlüsselwort rot angestrichen („kurzfristig“, „präzise“, „pünktlich“). Die Überraschung hat einen Sinn: Vertrauen wird belegt, nicht behauptet."
+       ]
+      },
+      "inhalt": {
+       "wert": 6.5,
+       "belege": [
+        "d1920/07.jpg, links: echte, gekürzte Google-Stimmen mit Kurznamen und Quelle („Elke S. · Google“), dazu darüber „5,0 von 5 bei 27 Bewertungen“ und „Trustlocal 9,6 bei 25“. Der Ton ist sachlich und glaubwürdig.",
+        "d1440/06.jpg, Palette: Hex-, OKLCH- und Kontrastwerte („Rotstift auf Tinte 2,83:1 · verboten“) machen einen großen Teil der Seite aus. Für die Kundschaft ist das interner Spezifikationsinhalt.",
+        "d1920/09.jpg, rechter Kasten: „Echte Baustellenfotos (später)“. Es gibt keinerlei Fotos von Arbeiten; das Bildmaterial fehlt ganz."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Ein großer Teil der Seite ist Systemdokumentation (Token, clamp-Formeln, Kontrastwerte, Bewegungstabelle) statt Kundeninhalt. Dadurch wird die Seite lang und für Besucher nicht nutzbar (m375/05.jpg, d1440/13.jpg).",
+        "reparatur": "Die Spezifikation auf eine interne Seite auslagern oder hinter einen Schalter „Für Gestalter“ legen. Die öffentliche Fassung endet nach Einstieg, Kundenstimmen mit Randnotizen, Ablauf und Kontakt."
+       },
+       {
+        "schwaeche": "Satzfehler in der größten Stufe: „Großformatflies / en“ bricht mitten im Wort um (d1920/02.jpg). Dazu steht der WhatsApp-Knopf auf Desktop allein in einer zweiten Zeile (d1440/00.jpg, d1920/00.jpg).",
+        "reparatur": "Für die Musterzeile hyphens:auto mit lang=de oder ein weiches Trennzeichen setzen, alternativ die Maximalgröße für die Spalte begrenzen. Die drei Knöpfe auf Desktop in eine Reihe bringen, etwa mit einem kleineren WhatsApp-Knopf oder WhatsApp als Textlink."
+       },
+       {
+        "schwaeche": "Es gibt kein einziges Foto ausgeführter Arbeit. Gerade beim Fliesenleger trägt das Bild den Kompetenznachweis, und die Seite bleibt dadurch rein typografisch (d1920/09.jpg, Hinweis „später“).",
+        "reparatur": "Drei bis fünf echte Baustellenfotos im angekündigten 4:3- oder 3:4-Zuschnitt neben die passenden Kundenstimmen setzen. Pro Foto ein Detail mit dem Rotstift umkreisen, damit das Signatursystem auch das Bild trägt."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1440/00.jpg, links: Headline „Perfektion auf jedem Quadratmeter.“ in schwerer Grotesk, „Quadratmeter.“ mit orangem Verlauf, dazu Pillen-Badge, Häkchen-Leiste und Zitatbox. Das ist das übliche Muster einer SaaS-Vorlage ohne Bezug zum Handwerk.",
+        "d1440/05.jpg, Karten: abgerundete weiße Karten mit Icon im orange getönten Quadrat, Kategorie-Label in Versalien und Häkchenlisten. Bilder mit Lichtstrahl-Badästhetik („Wohnbereiche & Neubau“) wirken wie Stock- oder KI-Material.",
+        "d1440/03.jpg, rechte Kartenspalte: das Label „Schnellhilfe“ ragt bei „Reparatur & Schadensbeseitigung“ über den Kartenrand hinaus. „XXL-Großformat (ab 120 cm)“ bricht in drei gequetschte Zeilen."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4,
+       "belege": [
+        "m375/01.jpg, unten: die Sprechblase „Chat starten“ und der schwebende WhatsApp-Knopf mit roter „1“ verdecken das E-Mail-Feld des Formulars. Links liegt zusätzlich ein Schild-Knopf, unten die feste Leiste Anrufen/WhatsApp/Aufmaß. Vier Bedienschichten konkurrieren um den Platz.",
+        "m375/00.jpg, unterer Rand: der Cookie-Schild-Knopf überlappt den WhatsApp-Knopf im Einstieg, und die feste Leiste schneidet „Staubschutzgarantie“ ab.",
+        "d1440/11.jpg, Mitte: nach dem Hero-Formular (d1440/00.jpg) und dem großen Anfrageformular (d1440/03.jpg) folgt mit „Ihre Express-Anfrage in 3 Klicks“ ein drittes Anfrageformular. Wer handeln will, weiß nicht, welches das richtige ist.",
+        "d1440/00.jpg, Kopfleiste: Telefonnummer, WhatsApp und „Aufmaß buchen“ sind dauerhaft sichtbar und die Navigation ist klar benannt. Die Orientierung oben funktioniert."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/04.jpg, Abschnitt Großformate: Pillen-Badge, Headline mit orangem Halbsatz, zwei Kennzahlkarten („DIN 18534“, „XXL“), Knopfpaar und Bildkarte. Jeder Abschnitt wiederholt dieses Schema, ohne eigene Leitidee.",
+        "t768/11.jpg, Mitte: dunkler Kartenplatzhalter „Interaktive Karte geschützt (DSGVO)“ mit Punktraster. Das ist ein austauschbarer Baustein, an der Stelle fehlt jeder Signaturmoment.",
+        "d1920/07.jpg, Bewertungen: Karussell mit Initialen-Avataren, fünf Sternen und „Google Rezension“. Das ist das Standardmuster jedes Vorlagen-Themes."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/05.jpg, Karte „Bäder & Wellness“: konkrete Fachangaben wie „bis 120 × 278 cm“, „Verbundabdichtung nach DIN 18534“ und „Schonvlies und Staubschutzwänden“. Inhaltlich ist das kompetent und spezifisch.",
+        "m375/08.jpg, oberer Bereich: „Wir zeigen keine pauschalen Scheinpreise im Netz“, dazu im Einstieg „Perfektion auf jedem Quadratmeter“ und „auf über 100 Fachseiten“ (t768/02.jpg). Superlative und Werbeton mindern die Echtheit.",
+        "d1440/08.jpg, Bewertungskarten: echte Google-Stimmen mit Kurznamen (Elke S., C. W., Rabia Ö.). Die Texte sind aber mitten im Satz auf „saubere…“ abgeschnitten, und es fehlt ein erkennbares Foto einer eigenen Baustelle."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Auf Mobilgeräten überlagern sich vier Bedienschichten: feste Leiste unten, schwebender WhatsApp-Knopf mit Zähler-Badge, die Blase „Chat starten“ und der Cookie-Schild-Knopf. Sie verdecken Formularfelder und Knöpfe (m375/00.jpg, m375/01.jpg).",
+        "reparatur": "Den schwebenden WhatsApp-Knopf samt Fake-Zähler und Tooltip streichen, weil die feste Leiste WhatsApp schon enthält. Den Cookie-Knopf in den Footer verlegen und die feste Leiste ausblenden, solange ein Formularfeld den Fokus hat."
+       },
+       {
+        "schwaeche": "Drei verschiedene Anfrageformulare auf einer Startseite: im Einstieg, als „Projekt anfragen“ und als „Express-Anfrage in 3 Klicks“. Das verwässert die Hauptaktion und streckt die Seite (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg).",
+        "reparatur": "Auf ein Formular reduzieren, etwa das kurze im Einstieg. Alle anderen Abschnitte verlinken per Anker darauf, oder der ausführliche Mehrschritt-Weg bekommt eine eigene Seite."
+       },
+       {
+        "schwaeche": "Die Gestaltung ist eine generische Vorlage: Verlaufs-Headline, Pillen-Badges über jedem Abschnitt, Icon-Karten und Stock- bzw. KI-Badbilder ohne eigene Arbeiten. Dazu kommen Layoutfehler wie das überlaufende Label „Schnellhilfe“ (d1440/03.jpg, d1440/05.jpg).",
+        "reparatur": "Eine eigene Leitidee aus dem Handwerk entwickeln (Fuge, Raster, Aufmaß) und Badges und Verläufe streichen. Stockbilder durch echte Projektfotos mit Ort und Leistung ersetzen und die Kartenlabels so setzen, dass sie umbrechen statt überzulaufen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "Richtung C",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 8,
+       "belege": [
+        "d1440/00.jpg und d1920/00.jpg, Hero: sehr große Antiqua-Zitatzeile '„Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“' auf feinem Karopapier-Raster, 'Kunden' mit handgezogenem roten Rotstiftstrich. Rechts ein kartonfarbener Aufmaßzettel mit roten Haken ('Ebenheit', 'Restfeuchte', 'statische Tragfähigkeit'). Klare Hierarchie, sparsame Farbe aus Tinte, Papier und Rot.",
+        "d1920/07.jpg, Kundenstimmen: Antiqua-Zitate links und Mono-Quelle darunter, dazu ein durchgehender roter Randstrich mit Zeigerpfeilen auf Randnotizen ('01 · Planung & Aufmaß vor Ort'). Präzise Komposition, das Detail belohnt das Hinsehen. Abzug für einen sichtbaren Satzfehler in d1920/02.jpg: 'Großformatflies / en' bricht im 4xl-Muster mitten im Wort um."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6,
+       "belege": [
+        "m375/00.jpg und t768/00.jpg, Hero mobil: ein dunkler Primärknopf 'Aufmaß vor Ort anfragen' über zwei gleich breiten Rahmenknöpfen 'Anrufen' und 'WhatsApp', im Kopf Telefon und 'Menü'. Die Hauptaktion ist eindeutig und ohne schwebende Störer.",
+        "Große Teile der Seite sind Spezifikation statt Nutzerführung: Token-Tabellen mit 'clamp(…)'-Werten (m375/05.jpg), Bewegungstabelle mit 'IntersectionObserver (20 %)' und 'Verzug 320 ms' (d1920/11.jpg, t768/13.jpg), lange Mono-Zeilen in Grau (m375/07.jpg). Für Besucher ist das schwer lesbar und ohne Orientierung. In d1440/00.jpg rutscht außerdem 'WhatsApp' allein in eine zweite Knopfzeile."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 8.5,
+       "belege": [
+        "d1440/11.jpg und t768/10.jpg, Motiv: Ein zur Sprechblase gefalteter Zollstock mit Gelenkpunkten und einem Rotstift-Haken darin vereint 'Maß und Wort' in einer Form. Dazu kommt ein festes Repertoire aus vier Rotstift-Gesten (Unterstreichen, Haken, Randstrich, Zeiger). Eigenständige, gewerksbezogene Leitidee.",
+        "m375/10.jpg und d1920/07.jpg: Die Leitidee 'zitieren statt behaupten' wird durchgezogen. Das Schlüsselwort jeder echten Rezension wird rot angestrichen ('kurzfristig', 'präzise', 'pünktlich', 'barrierefrei'), und die Fugenschnur-Trennlinie (t768/10.jpg) überträgt das Fugenraster ins Layout."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "d1920/07.jpg und m375/11.jpg: echte, gekürzte Google-Stimmen mit Namen und Quelle ('Christian S. · Google', 'Ute T. · Google') und Zuordnung zu konkreten Leistungen ('Planung von Fugenachsen, Edelstahlschienen und Rutschhemmung (R10/R11)'). Glaubwürdig und ruhig im Ton.",
+        "m375/02.jpg, m375/07.jpg und d1440/07.jpg: Der Großteil des Textes richtet sich an Gestalter, nicht an Kunden ('Tun / Lassen'-Regeln, OKLCH-Werte, 'Kontrast 16,56:1 · AAA', Spaltenraster 4/12). Leistungen, Ablauf und Einzugsgebiet erscheinen nur als Probesätze oder Ortsliste (d1920/00.jpg unten). Echte Baustellenfotos fehlen, sie sind als 'später' angekündigt (d1440/11.jpg rechts)."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Die Seite ist überwiegend Stil- und Token-Dokumentation: clamp-Werte, Kontrastzahlen, Bewegungstabelle (m375/05.jpg, d1920/11.jpg). Für Kunden fehlen echte Inhalte zu Leistungen und Ablauf.",
+        "reparatur": "Die Systemdokumentation auf eine interne Seite verlagern. Auf der Startseite Hero, Kundenstimmen mit Randnotizen, Leistungen, Ablauf und Einzugsgebiet als echte Abschnitte im selben System ausbauen."
+       },
+       {
+        "schwaeche": "Satz- und Umbruchfehler: 'Großformatflies / en' in der 4xl-Stufe bei 1920 (d1920/02.jpg). 'WhatsApp' bricht im Desktop-Hero allein in eine zweite Zeile (d1440/00.jpg, d1920/00.jpg).",
+        "reparatur": "Weiche Trennung oder hyphens:auto mit lang=de setzen und die 4xl-Stufe für lange Komposita auf die Spaltenbreite begrenzen. Die drei Hero-Knöpfe in eine Zeile fassen (Primär plus zwei kompakte) oder WhatsApp als Textlink neben 'Anrufen' führen."
+       },
+       {
+        "schwaeche": "Keine echten Fotos. Die Bildwelt besteht nur aus Typografie, Raster und Linien-Icons, das Gewerk 'Fliese' wird nie sichtbar (m375 und t768 durchgehend, d1440/11.jpg 'Echte Baustellenfotos (später)').",
+        "reparatur": "Zwei bis drei eigene Baustellenfotos im angekündigten 4:3-Zuschnitt in Hero-Nähe und bei den Leistungen einsetzen, mit Mono-Bildunterschrift (Ort · Leistung) und einem Rotstift-Kreis pro Bild, wie in der eigenen Regel beschrieben."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 5,
+       "belege": [
+        "d1440/00.jpg, Hero links: groteske Headline 'Perfektion auf jedem Quadratmeter.' mit orange hervorgehobenem Schlusswort, darunter drei gleich starke Knöpfe (Rot, Petrol-WhatsApp, Weiß). Sauber gesetzt, aber das übliche Handwerker-Muster aus Verlaufshintergrund, Pillen-Badge und Formularkarte rechts.",
+        "d1440/05.jpg und d1920/04.jpg, Leistungskarten: abgerundete Karten mit Stockfoto, Icon-Kachel, Label 'FACHGEWERK', Häkchenliste und Textlink. Ordentlich, aber jede Sektion nutzt dasselbe Kartenschema mit Pillen-Eyebrow ('Fachgewerke', 'Transparenter Ablauf', 'Echte Kundenstimmen' in d1440/08.jpg). Daraus entsteht kein eigenes Bild. Die Fotos wirken generisch, teils gerendert, etwa die Wanne im Lichtkegel."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "m375/01.jpg, unterer Bildrand: Sticky-Leiste (Anrufen/WhatsApp/Aufmaß), schwebender WhatsApp-Kreis mit Zähler '1', Sprechblase 'Chat starten' und Schild-Knopf links liegen gleichzeitig über dem Formular und verdecken das Feld 'ORT / PLZ'. In m375/00.jpg verdecken sie die Hero-Knöpfe 'WhatsApp' und die Telefonnummer.",
+        "Drei getrennte Anfrageformulare auf einer Seite: Hero-Formular (d1440/00.jpg rechts), 'Projekt anfragen & Situation schildern' mit 3 Schritten und dunkler Spalte (d1440/03.jpg) und 'Ihre Express-Anfrage in 3 Klicks' (d1440/11.jpg). Dazu kommen 'Aufmaß buchen' im Kopf. Wo man tatsächlich anfragen soll, bleibt unklar."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg, Gesamtaufbau Hero: Siegelzeile, Sternebewertung, Headline mit Farbwort, Trust-Laufband ('Aßlar & Wetzlar regional vor Ort', 'HWK Wiesbaden', 'DIN 18534') und Google-Badge. Das ist das Standardrepertoire, ohne Leitidee oder Signaturmoment.",
+        "t768/11.jpg, Einsatzgebiet: Ortspillen mit km-Angabe und darunter ein schwarzer Platzhalter 'Interaktive Karte geschützt (DSGVO)'. Die regionale Verankerung wird nicht gestaltet, sie fällt auf einen Consent-Kasten zurück."
+       ]
+      },
+      "inhalt": {
+       "wert": 5.5,
+       "belege": [
+        "d1440/08.jpg, Kundenstimmen: drei Google-Rezensionen mit Kürzeln (Elke S., C. W., Rabia Ö.) und Angaben '5,0 / 5 27 Google-Rezensionen' und '9,6/10 25 Trustlocal'. Das ist echt und konkret.",
+        "t768/09.jpg und d1440/06.jpg: fachlich genaue Angaben ('C2-Fliesenklebern', 'mind. 1,5 bis 2 % vom Gebäude weg', 'Eckdichtbänder mit Dehnzone'). Dieselben Versprechen (Staubschutz, DIN 18534, XXL, Festpreis) wiederholen sich aber in Hero, Trust-Band, Karten, Formularen und Footer-Leiste, und der Ton bleibt werblich ('Perfektion', 'Fachqualität')."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Mobil überlagern sich vier schwebende Elemente (Sticky-Leiste, WhatsApp-Kreis mit Fake-Zähler, 'Chat starten'-Blase, Schild-Knopf) und verdecken Formularfelder und Hero-Knöpfe (m375/00.jpg, m375/01.jpg).",
+        "reparatur": "Nur ein festes Element behalten, entweder die untere Leiste mit Anrufen/WhatsApp/Aufmaß oder den WhatsApp-Knopf, nicht beides. Den Zähler und die Blase streichen, den Consent-Knopf in den Footer verlegen und unten Platz in Höhe der Leiste freihalten."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare plus Kopf-CTA (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg) zersplittern die Hauptaktion und blähen die Seite auf.",
+        "reparatur": "Ein einziges Anfrageformular am Seitenende als Ziel aller CTAs. Im Hero nur einen Primärknopf und die Telefonnummer zeigen und die Express- und Mehrschritt-Varianten zusammenlegen."
+       },
+       {
+        "schwaeche": "Austauschbare Bildsprache und Kartenschema: Pillen-Eyebrows, Icon-Kacheln und Stock- oder Renderfotos in jeder Sektion (d1440/05.jpg, d1920/06.jpg), keine eigene Leitidee.",
+        "reparatur": "Eine Gestaltungsidee aus dem Gewerk ableiten, etwa Fugenraster oder Aufmaß. Echte Baustellenfotos von Deniz Tezgel verwenden, die Kartenvielfalt auf ein bis zwei Muster verdichten und die Badges auf Text reduzieren."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "Richtung C",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 7.5,
+       "belege": [
+        "d1920/00.jpg, linke Hälfte: Inhaber-Zitat in großer Antiqua (Newsreader) über Millimeterpapier-Raster, das Wort „Kunden“ handgezeichnet rot unterstrichen. Klare Hierarchie, eigene Haltung, Navy, Papier und Rot sind diszipliniert eingesetzt.",
+        "d1920/07.jpg, oben: Zollstock zur Sprechblase gefaltet, mit Rotstift-Haken, daneben die vier Rotstift-Anstriche auf Karton-Flächen. Präzise SVG-Grafik, die zur Leitidee passt.",
+        "Abzug: d1920/02.jpg, rechte Spalte Mitte: das Muster-Wort bricht hart als „Großformatflies / en“ um. Auf dem Desktop gibt es also einen sichtbaren Satzfehler in der größten Schriftstufe.",
+        "Abzug: d1440/00.jpg, linke Spalte unten: der WhatsApp-Knopf rutscht allein in eine zweite Zeile, die Knopfgruppe wirkt dadurch unaufgeräumt."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6,
+       "belege": [
+        "m375/00.jpg, Mitte und unten: ein dunkler Hauptknopf „Aufmaß vor Ort anfragen“ in voller Breite, darunter gleich große Knöpfe „Anrufen“ und „WhatsApp“. Die Rangfolge ist eindeutig und lässt sich gut mit dem Daumen treffen.",
+        "d1440/00.jpg, Kopfzeile: vier klare Menüpunkte und ein abgesetzter Knopf „Aufmaß anfragen“. Die Orientierung ist ruhig, und es gibt keine Störer.",
+        "Abzug: m375/05.jpg und t768/13.jpg, gesamte Fläche: lange Tabellen aus Werten wie clamp(…), OKLCH, IntersectionObserver und ms. Für Besucher ist das unlesbares Fachchinesisch, das den Weg zur Handlung über viele Bildschirme verlängert.",
+        "Abzug: m375/00.jpg, Kopf: Unter „Fliesenverlegung in Aßlar“ stehen kleine graue Monospace-Zeilen. Kleine Grauschrift mindert die Lesbarkeit für die genannte Zielgruppe von 35 bis 75 Jahren."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 8,
+       "belege": [
+        "d1920/06.jpg, Mitte: Kundenzitate links, eine rote Randlinie mit Pfeilen auf Randnotizen rechts („01 · Planung & Aufmaß vor Ort“). Die Idee „korrigiertes Aufmaßblatt“ trägt als Signaturmoment und verknüpft Kundenstimme und Leistung sinnvoll.",
+        "d1440/00.jpg, rechte Karte: ein Aufmaßzettel mit rot abgehakten Prüfpunkten (Ebenheit, Restfeuchte, statische Tragfähigkeit). Das Abhaken überrascht und sagt zugleich etwas über die Arbeitsweise.",
+        "m375/11.jpg, Mitte: Die Fugenschnur als Trenner und die rot unterstrichenen Schlüsselwörter („barrierefrei“, „Kommunikation“) führen das Motiv konsequent bis ins Detail fort."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "d1920/06.jpg, linke Spalte: echte Google-Zitate mit Kürzel und Quelle („Elke S. · Google“, „C. W. · Google“) und Kürzungen mit „…“. Der Ton ist glaubwürdig und frei von Superlativen.",
+        "d1440/04.jpg, unten: Der Probesatz nennt konkrete Leistungen (Restfeuchte, Edelstahlschienen, R10/R11, Abnahme). Die Fachlichkeit ist sachlich belegt.",
+        "Abzug: m375/03.jpg und t768/03.jpg: Ein großer Teil des Inhalts ist interne Gestaltungsdokumentation (Token-Namen wie --fs-4xl, Kontrastwerte, Animationskennungen) statt Kundeninhalt.",
+        "Abzug: d1440/07.jpg, rechte Karte: „Echte Baustellenfotos (später)“. Echtes Bildmaterial der eigenen Arbeit fehlt ganz."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Bruch im Desktop-Satz: Das Muster-Wort in der größten Stufe bricht als „Großformatflies / en“ um (d1920/02.jpg, rechte Spalte).",
+        "reparatur": "Die Spalte für das Muster breiter anlegen oder die größte Stufe auf breiten Ansichten über eine Container-Abfrage begrenzen. Dazu hyphens: manual und ein weiches Trennzeichen (Großformat&shy;fliesen) setzen, damit nie mitten im Wortende getrennt wird."
+       },
+       {
+        "schwaeche": "Dokumentation verdrängt den Inhalt: Lange Token-, Kontrast- und Bewegungstabellen (m375/05.jpg, t768/13.jpg, d1440/13.jpg) ziehen die Seite in die Länge und sind für Kunden wertlos.",
+        "reparatur": "Die Spezifikation in einen getrennten Anhang oder eine eigene Unterseite auslagern. Die Seite selbst zeigt nur echte Abschnitte: Einstieg, Stimmen mit Randnotizen, Ablauf, Einzugsgebiet, Anfrage."
+       },
+       {
+        "schwaeche": "Kein echtes Bildmaterial: Die Leitidee wirkt rein typografisch, und Belege der handwerklichen Arbeit fehlen (d1440/07.jpg, „Baustellenfotos (später)“).",
+        "reparatur": "Drei bis sechs echte Baustellenfotos im angekündigten Zuschnitt 4:3 bzw. 3:4 einsetzen, je eines neben einer Kundenstimme, mit Bildunterschrift im Vordruck (Ort · Leistung) und höchstens einem Rotstift-Kreis pro Bild."
+       },
+       {
+        "schwaeche": "Unruhige Knopfgruppe auf dem Desktop: WhatsApp rutscht allein in die zweite Zeile (d1440/00.jpg, d1920/00.jpg).",
+        "reparatur": "Alle drei Knöpfe in eine Reihe setzen (WhatsApp als Textlink oder schmaler Knopf) oder bewusst den Hauptknopf oben und darunter zwei gleich breite Nebenknöpfe zeigen, wie mobil in m375/00.jpg."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 4,
+       "belege": [
+        "d1440/00.jpg, gesamter Einstieg: eine generische SaaS-Startseite mit Pill-Badge über der Überschrift, Grotesk mit orangefarbenem Akzentwort („Quadratmeter.“), weich gerundeten Karten mit Schatten und einem Formular rechts. Das ist austauschbar.",
+        "d1920/04.jpg und d1920/09.jpg, Abschnittsköpfe: Jeder Abschnitt beginnt mit demselben orangen Pill-Badge („Fachgewerke“, „Kostenfrei & unverbindlich“, „Echte Kundenstimmen“) und einer zentrierten Überschrift. Das Schema wiederholt sich ohne Spannung.",
+        "d1920/06.jpg, rechte Karte: Das Bad mit freistehender Wanne im Gegenlicht wirkt wie ein Stock- bzw. KI-Bild, nicht wie eine eigene Baustelle. Die Bildsprache ist ohne Bezug zum Betrieb."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 4.5,
+       "belege": [
+        "m375/00.jpg, unten: WhatsApp-Bubble mit roter „1“, Schutzschild-Knopf links und eine feste Leiste mit drei Knöpfen überdecken gleichzeitig die Knöpfe des Einstiegs. Die Telefonnummer im Knopf bricht um („06441 / 44 83 / 567“).",
+        "m375/01.jpg, Mitte: Die Einblendung „Chat starten“ und die WhatsApp-Bubble liegen über dem Feld „E-Mail“ und „Ort / PLZ“ des Formulars. Die Eingabe wird verdeckt.",
+        "d1440/03.jpg und d1440/11.jpg: Neben dem Einstiegsformular gibt es zwei weitere Anfragestrecken („Projekt anfragen & Situation schildern“, „Express-Anfrage in 3 Klicks“). Die drei konkurrierenden Wege verwirren.",
+        "Positiv: d1440/00.jpg, Kopfzeile: Telefonnummer, WhatsApp und „Aufmaß buchen“ sind dauerhaft sichtbar, die Navigation mit Aufklappmenüs ist klar beschriftet."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3,
+       "belege": [
+        "d1920/00.jpg, Einstieg: „Perfektion auf jedem Quadratmeter.“ mit orangem Farbwort ist ein Standardmuster ohne eigene Leitidee oder Signaturmoment.",
+        "d1920/07.jpg, oben: Ein Bewertungskarussell mit Initialen-Kreisen, fünf Sternen und Google-Logo ist ein Baukastenmodul ohne Überraschung.",
+        "t768/11.jpg, Mitte: Die Kartenfläche „Interaktive Karte geschützt (DSGVO)“ als großes schwarzes Feld ist reine Pflicht und ohne gestalterische Idee."
+       ]
+      },
+      "inhalt": {
+       "wert": 5,
+       "belege": [
+        "d1440/09.jpg, Bewertungskarten: echte Zitate mit Kürzeln (Elke S., C. W., Rabia Ö.), dazu 5,0 bei 27 Google- und 9,6 bei 25 Trustlocal-Bewertungen. Das ist überprüfbar und vertrauensbildend.",
+        "d1440/06.jpg, linke Karte: konkrete Fachangaben (bis 120 × 278 cm, Verbundabdichtung nach DIN 18534, Gefälle mindestens 1,5 bis 2 %). Das zeigt fachliche Substanz.",
+        "Abzug: t768/02.jpg, Überschrift „Alles für Ihr Vorhaben auf über 100 Fachseiten“ und d1920/00.jpg, „Perfektion auf jedem Quadratmeter“: Werbesprache und Superlative statt Belege. Das Inhaber-Motto steht klein und kursiv in einer Nebenkarte."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Überladene Bedienebenen mobil: WhatsApp-Bubble mit falscher „1“-Benachrichtigung, Chat-Tooltip, Schutzschild-Knopf und feste Leiste überdecken Inhalt und Formularfelder (m375/00.jpg, m375/01.jpg).",
+        "reparatur": "Bubble, Tooltip und rote Zahl entfernen. Nur eine feste Leiste (Anrufen · WhatsApp · Aufmaß) behalten, dem Seiteninhalt unten so viel Abstand geben, wie die Leiste hoch ist, und den Schutzschild-Knopf in den Fußbereich verlegen."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare auf einer Seite (d1440/00.jpg, d1440/03.jpg, d1440/11.jpg) verwässern die Hauptaktion und verlängern die Seite.",
+        "reparatur": "Eine einzige Anfragestrecke festlegen (z. B. die dreistufige aus d1440/03.jpg) und alle anderen Stellen nur noch per Knopf dorthin verweisen lassen."
+       },
+       {
+        "schwaeche": "Austauschbare Vorlagen-Optik ohne Leitidee: Pill-Badges, Orange-Verläufe, Kartenstapel und Stock-Bilder (d1920/04.jpg, d1920/06.jpg).",
+        "reparatur": "Ein eigenes visuelles Leitmotiv aus dem Handwerk ableiten (z. B. Fugenraster oder Aufmaßzettel), Badges streichen, die Schriftmischung reduzieren und die Stock-Bilder durch echte Baustellenfotos mit Ortsangabe ersetzen."
+       },
+       {
+        "schwaeche": "Werbesprache statt Stimme: Superlative („Perfektion auf jedem Quadratmeter“, „über 100 Fachseiten“), während das starke Inhaber-Motto klein und kursiv versteckt bleibt (d1920/00.jpg, Zitatkarte).",
+        "reparatur": "Das Inhaber-Motto oder eine echte Kundenstimme zur Hauptüberschrift machen und Superlative durch konkrete, belegbare Aussagen ersetzen (Bewertungszahl, Meisterbetrieb, Ablauf)."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 7.5,
+    "bedienbarkeit": 6,
+    "kreativitaet": 8,
+    "inhalt": 6
+   },
+   "gewichtet": 7,
+   "einzel_gewichtet": [
+    7.2,
+    7.3,
+    7
+   ],
+   "lockvogel_gewichtet": [
+    3.9,
+    4.5,
+    4.05
+   ]
+  }
+ }
+}

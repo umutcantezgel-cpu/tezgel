@@ -3,7 +3,7 @@
 // Der Kalender zeigt Tage ab morgen (relativ zu heute): Datum und Slot werden aus der Auswahl gelesen, nicht fest vorgegeben.
 // Bekannter Ausgangsfehler (Datum/Uhrzeit des Kalenders erreichen die Mail nicht): hier nicht als Soll festgeschrieben,
 // geprüft wird nur, was der Client sendet, und welcher Zustand folgt.
-import { test, expect, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
 
 const ORTE_KALENDER = [
   { ort: '/termin', url: '/termin', serviceType: 'Kostenfreies Vor-Ort-Aufmaß & Beratung' },
@@ -33,7 +33,7 @@ const kalenderFormular = (page) => page.locator('form').filter({ has: page.locat
 
 // Wählt Slot (zweiter Tag, damit das Datum nicht zufällig der erste Tag ist) und liefert Datum/Slot aus der Schritt-2-Überschrift.
 async function kalenderZuKontaktdaten(page, uhrzeit = '15:00', tagIndex = 1) {
-  await page.getByRole('button', { name: `${uhrzeit} Uhr`, exact: true }).nth(tagIndex).click();
+  await (await bedienbar(page.getByRole('button', { name: `${uhrzeit} Uhr`, exact: true }).nth(tagIndex))).click();
   const kopf = page.getByText(/Schritt 2: Kontaktdaten für \d{2}\.\d{2}\.\d{4} um \d{2}:\d{2} Uhr/);
   await expect(kopf).toBeVisible();
   const m = (await kopf.textContent()).match(/(\d{2})\.(\d{2})\.(\d{4}) um (\d{2}:\d{2}) Uhr/);

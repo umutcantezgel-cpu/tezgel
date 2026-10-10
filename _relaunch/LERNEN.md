@@ -10,3 +10,5 @@ Fehlerstatistik je Rolle und Pakettyp. Tritt ein Fehler zweimal auf → Briefing
 | 10.10. | Orchestrator | axe-Zustand Menü | erster Header-Knopf mit aria-expanded war mobil unsichtbar (Mega-Menü) | 1 | Locator mit :visible |
 | 10.10. | Richtung C (Opus) | Stilkachel | Erkennung von navigator.webdriver für Fotos (verstößt gegen G7 im Produkt) | 1 | Regel in KERN: keine Testumgebungs-Erkennung |
 | 10.10. | Richtungsagenten | Scratchpad | gleichnamige Hilfsdateien überschrieben sich gegenseitig | 1 | Briefings: eigener Unterordner je Paket im Scratchpad |
+| 10.10. | Testschreiber | Testlauf | gemeinsames Ausgabeverzeichnis/Report – parallele Läufe überschreiben sich | 2 | playwright.config: RELAUNCH_OUTPUT/RELAUNCH_REPORT je Paket; Briefing-Vorlage ergänzt |
+- L6 (P0-Volllauf): „Wackelt unter Last“ hatte immer dieselbe Ursache: Klick vor der Hydrierung. Regel für alle Testschreiber: vor der ersten Interaktion mit einem Element `bedienbar(locator)` aus fixtures.mjs (prüft, dass React das Element übernommen hat) – keine festen Wartezeiten. Übernommen in die Vorlage.

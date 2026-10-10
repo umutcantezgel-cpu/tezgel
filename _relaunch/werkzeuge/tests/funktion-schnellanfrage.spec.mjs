@@ -2,7 +2,7 @@
 // Kernaufgabe: Pflichtfelder und Einwilligung blockieren den Versand; gültige Angaben senden POST /api/anfrage
 // mit inquiryType „general“ und der Quelle der Seite und zeigen Erfolg mit Referenz; gefülltes Honeypot-Feld → kein Versand im Client.
 // Geprüft wird Verhalten (Nutzlast, Zustand), nicht Aussehen. Altverhalten = Ausgangsstand 5a7a7b0.
-import { test, expect, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
 
 const ORTE = [
   { seite: '/standorte/wetzlar', quelle: 'standort-wetzlar' },
@@ -89,6 +89,7 @@ for (const { seite, quelle } of ORTE) {
     test('Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus', async ({ page, anfragen }) => {
       await page.goto(seite);
       // Ein Bot füllt verborgene Felder über das DOM aus (kein Fokus nötig); React erhält das Input-Ereignis.
+      await bedienbar(honeypot(page));
       await honeypot(page).evaluate((el) => {
         const setze = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;
         setze.call(el, 'https://spam.example');

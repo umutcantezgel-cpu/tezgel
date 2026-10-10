@@ -9,8 +9,8 @@ export default defineConfig({
   fullyParallel: true,
   workers: 2,
   retries: 0,
-  reporter: [['list'], ['json', { outputFile: '../cache/playwright-ergebnis.json' }]],
-  outputDir: '../cache/test-results',
+  reporter: [['list'], ['json', { outputFile: process.env.RELAUNCH_REPORT || '../cache/playwright-ergebnis.json' }]],
+  outputDir: process.env.RELAUNCH_OUTPUT || '../cache/test-results', // je Paket eigenes Verzeichnis (L6)
   use: { baseURL: BASE, locale: 'de-DE', timezoneId: 'Europe/Berlin', reducedMotion: 'reduce', trace: 'off' },
   projects: [
     { name: 'mobil', use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },

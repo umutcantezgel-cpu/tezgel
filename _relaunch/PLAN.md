@@ -306,3 +306,4 @@ Dazu:
 - V-03 (Z-11, P5): LeadQuickForm – Labels mit Feldern verknüpfen (htmlFor/id); Fehlerblöcke mit role="alert" (BadProjektCheck, FliesenKonfigurator, TezgelAnfrageFunnel).
 - V-04 (Z-06, P4): Weiterleitungen/410 nach Plan.
 - V-05 (Z-05/Mikrotext, P5): `tel:`-Ziel in DirectContactCard ohne Leerzeichen; feste Telefonnummern in BookingCalendar/LeadQuickForm aus COMPANY_DATA.
+- V-06 (Z-05/Z-04, P4): Menü-Schalter wirkt erst nach der Hydrierung (Tippen davor bleibt wirkungslos); Drawer kann beim ersten Öffnen neu einhängen → Menü so bauen, dass es ohne JS/vor Hydrierung funktioniert (z. B. Navigation als Link zum Fußbereich/<details>-Fallback) und Zustand stabil bleibt.

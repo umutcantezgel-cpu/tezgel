@@ -1,7 +1,7 @@
 // Funktionstests F-13 (Navigation), F-14 (FAQ), F-16 (Blog-Werkzeuge), F-17 (404), F-18 (Login), F-19 (Bewertungs-Karussell).
 // Prüft Verhalten (Zustand, Ziel, Status, Fehlermeldung, Fokus), nicht Aussehen. Keine Wartezeiten, nur Zustandsabfragen.
 // Kein Test gegen die echte Route nötig: keines dieser Elemente sendet an /api/anfrage (Login wird clientseitig abgewiesen).
-import { test, expect } from './fixtures.mjs';
+import { test, expect, bedienbar } from './fixtures.mjs';
 
 const ARTIKEL = '/blog/fliesen-reinigen-pflegen';
 
@@ -10,6 +10,14 @@ const hauptnav = (page) => page.getByRole('navigation', { name: 'Hauptnavigation
 // Mobil-Drawer (Dialog); im geschlossenen Zustand per aria-hidden nicht im Accessibility-Baum.
 const drawer = (page) => page.getByRole('dialog', { name: 'Hauptnavigation' });
 const menueSchalter = (page) => page.getByRole('button', { name: /^Architektur-Menü (öffnen|schließen)$/ });
+// Ein Klick vor der Hydrierung bleibt wirkungslos (Ausgangsstand, siehe PLAN V-06). Verhalten prüfen: Öffnen gelingt.
+async function oeffneMenue(page) {
+  const schalter = menueSchalter(page);
+  await expect(async () => {
+    if ((await schalter.getAttribute('aria-expanded')) !== 'true') await schalter.click();
+    await expect(schalter).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
+  }).toPass({ timeout: 15_000 });
+}
 
 test.describe('Mega-Menü (Desktop, ab lg)', () => {
   test.skip(({ isMobile }) => isMobile, 'Mega-Menü ist mobil ausgeblendet (hidden lg:flex)');
@@ -46,7 +54,7 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
   test('Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü', async ({ page }) => {
     await page.goto('/');
     const nav = hauptnav(page);
-    await nav.getByRole('link', { name: 'Badsanierung', exact: true }).hover();
+    await (await bedienbar(nav.getByRole('link', { name: 'Badsanierung', exact: true }))).hover();
     await nav.getByRole('link', { name: /^Badsanierung komplett/ }).click();
     await expect(page).toHaveURL(/\/bad\/badsanierung$/);
     await expect(nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ })).toHaveAttribute('aria-expanded', 'false');
@@ -66,8 +74,7 @@ test.describe('Mobilmenü (Drawer)', () => {
     const schalter = menueSchalter(page);
     await expect(schalter).toHaveAttribute('aria-expanded', 'false');
     await expect(drawer(page)).toHaveCount(0);
-    await schalter.click();
-    await expect(schalter).toHaveAttribute('aria-expanded', 'true');
+    await oeffneMenue(page);
     await expect(drawer(page)).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(schalter).toHaveAttribute('aria-expanded', 'false');
@@ -76,11 +83,18 @@ test.describe('Mobilmenü (Drawer)', () => {
 
   test('Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Drawer schließt', async ({ page }) => {
     await page.goto('/');
-    await menueSchalter(page).click();
+    await oeffneMenue(page);
     const dialog = drawer(page);
+    await expect(dialog).toBeVisible();
+    // Zustand statt Wartezeit: Einblend-Übergang des Drawers abschließen lassen, dann aufklappen
+    await dialog.evaluate((el) => Promise.all(el.getAnimations({ subtree: true }).map((a) => a.finished.catch(() => null))));
     const kategorie = dialog.getByRole('button', { name: /^Badsanierung/ });
-    await kategorie.click();
-    await expect(kategorie).toHaveAttribute('aria-expanded', 'true');
+    // Der Drawer wird beim ersten Öffnen nachgeladen und kann einmal neu einhängen (Zustand zurückgesetzt).
+    // Verhalten „Kategorie lässt sich aufklappen“ prüfen: Klick wiederholen, bis aufgeklappt (max. 10 s).
+    await expect(async () => {
+      if ((await kategorie.getAttribute('aria-expanded')) !== 'true') await kategorie.click();
+      await expect(kategorie).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
+    }).toPass({ timeout: 10_000 });
     await dialog.getByRole('link', { name: /^Badsanierung komplett/ }).click();
     await expect(page).toHaveURL(/\/bad\/badsanierung$/);
     await expect(drawer(page)).toHaveCount(0);
