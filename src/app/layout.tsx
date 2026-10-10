@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
-import '@/styles/tokens.css';
+import localFont from 'next/font/local';
 import './globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';
@@ -15,17 +14,27 @@ import { ContentProvider } from '@/contexts/ContentContext';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { buildRootGraph, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import BewegungsWaechter from '@/components/kern/BewegungsWaechter';
+import { KOPFSKRIPT } from '@/lib/motion/kopfskript';
 
-const inter = Inter({
-  subsets: ['latin'],
+// Schriften selbst gehostet (OFL 1.1, src/app/fonts/LIZENZEN.md). Archivo auf die genutzten Achsen beschnitten
+// (wdth 74–100, wght 400–800); Ersatzschriften mit Metrik-Anpassung stehen in globals.css (KERN K-006, E-010).
+const archivo = localFont({
+  src: './fonts/archivo-variabel.woff2',
+  variable: '--font-archivo',
   display: 'swap',
-  variable: '--font-inter',
+  weight: '400 800',
+  adjustFontFallback: false,
+  declarations: [{ prop: 'font-stretch', value: '74% 100%' }],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
+const plexMono = localFont({
+  src: './fonts/plex-mono-400.woff2',
+  variable: '--font-plex-mono',
   display: 'swap',
-  variable: '--font-jakarta',
+  weight: '400',
+  preload: false,
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -90,7 +99,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#FFFFFF',
+  themeColor: '#F5F4F0', // = --color-kalk (Metadaten verlangen einen Farbwert)
   colorScheme: 'light',
 };
 
@@ -102,15 +111,17 @@ export default function RootLayout({
   const rootKnowledgeGraph = buildRootGraph();
 
   return (
-    <html lang="de" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="de" data-scroll-behavior="smooth" suppressHydrationWarning className={`${archivo.variable} ${plexMono.variable}`}>
       <head>
+        {/* Bewegung: Startklasse vor dem ersten Rendern (KERN K-007) */}
+        <script dangerouslySetInnerHTML={{ __html: KOPFSKRIPT }} />
         <meta name="geo.region" content="DE-HE" />
         <meta name="geo.placename" content="Aßlar" />
         <meta name="geo.position" content="50.5900;8.4600" />
         <meta name="ICBM" content="50.5900, 8.4600" />
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#FAFAFA] text-neutral-900 font-sans">
+      <body className="antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text">
         <SkipNav />
         <ErrorBoundary>
           <UIProvider>
@@ -125,6 +136,7 @@ export default function RootLayout({
                   <Footer />
                   <MobileBottomBar />
                   <ClientWidgets />
+                  <BewegungsWaechter />
                 </ContentProvider>
               </AuthProvider>
             </MotionProvider>

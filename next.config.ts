@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
+    // Ab Next 16 Pflicht: erlaubte Bildqualitäten (KERN K-004)
+    qualities: [75],
   },
   experimental: {
     optimizePackageImports: [

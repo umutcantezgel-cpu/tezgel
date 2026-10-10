@@ -92,9 +92,9 @@ Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk; genau ein Akz
 
 ## K-006 Typografie und Komposition
 - Familien (OFL 1.1, selbst gehostet, woff2, Lizenzvermerk `src/app/fonts/LIZENZEN.md`):
-  - **Archivo** variabel (wght 100–900, wdth 62–125; `font-stretch: 62% 125%`). Anzeige und Überschriften: Breite 74 %, Gewicht 760 (`font-anzeige`). Text: Breite 100 %, Gewicht 400/600 (`font-text`).
-  - **IBM Plex Mono** 400 (optional 500) für Messbares und Belegbares: Normen, Rutschklassen, Telefonnummern, PLZ, Jahreszahlen, Bewertungen, Schrittnummern, Etiketten, Bildunterschriften. Nie für Fließtext; keine Versalien-Sperrung. Zeichen außerhalb der Schriftabdeckung (Prüfung `glyphen.mjs`) werden nicht in Mono gesetzt oder durch ein Icon ersetzt (z. B. Stern).
-  - Ersatzschriften: `Archivo Ersatz` = local(Arial)/local(Roboto) mit `size-adjust`, `ascent-override`, `descent-override` getrennt für Text und Anzeige (Werte in E2 gemessen, im Änderungsprotokoll); `Plex Ersatz` = local(Courier New)/local(Roboto Mono).
+  - **Archivo** variabel, beschnitten auf wdth 74–100 und wght 400–800 (`font-stretch: 74% 100%`), Teilmenge latin. Anzeige und Überschriften: Breite 74 %, Gewicht 760 (`font-anzeige`). Text: Breite 100 %, Gewicht 400/600 (`font-text`).
+  - **IBM Plex Mono** 400 (optional 500) für Messbares und Belegbares: Normen, Rutschklassen, Telefonnummern, PLZ, Jahreszahlen, Bewertungen, Schrittnummern, Etiketten, Bildunterschriften. Nie für Fließtext; keine Versalien-Sperrung. Die Plex-Datei enthält kein ß (die Glyphe liest sich wie „B“); ß setzt automatisch Archivo. Zeichen außerhalb der Schriftabdeckung (Prüfung `glyphen.mjs`) werden nicht in Mono gesetzt oder durch ein Icon ersetzt (z. B. Stern).
+  - Ersatzschriften (gemessen an Liberation Sans/Mono = Arial-/Courier-Metrik): `Archivo Ersatz` size-adjust 98,7 %, ascent 88,9 %, descent 21,3 %; `Archivo Anzeige Ersatz` (Arial Bold) size-adjust 79 %, ascent 111,2 %, descent 26,6 %; `Plex Ersatz` size-adjust 100 %, ascent 102,5 %, descent 27,5 %.
 - Skala (7 Stufen, `--text-fs-N` mit eigener Zeilenhöhe; Max ≤ 2,5 × Min):
 
   | Klasse | Größe | Zeilenhöhe | Einsatz |

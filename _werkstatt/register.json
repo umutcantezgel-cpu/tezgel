@@ -1,4 +1,21 @@
 {
-  "quelle": "KERN K-007 (v1 K-009; wird mit KERN v2 aktualisiert)",
-  "kennungen": ["sig-kreuzlinie", "sig-flucht", "sig-ablauf", "sig-plan", "anriss", "auftritt", "aufklappen", "druck", "zustand", "notiert", "laden", "seitenwechsel", "leitachse", "szene-ablauf", "einzugsband", "verband"]
+  "quelle": "KERN K-007 (v2)",
+  "kennungen": [
+    "sig-kreuzlinie",
+    "sig-flucht",
+    "szene-ablauf",
+    "sig-plan",
+    "einzugsband",
+    "verband",
+    "fugenband",
+    "leitachse",
+    "anriss",
+    "auftritt",
+    "aufklappen",
+    "druck",
+    "zustand",
+    "notiert",
+    "laden",
+    "seitenwechsel"
+  ]
 }

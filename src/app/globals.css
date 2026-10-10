@@ -1,16 +1,78 @@
+@layer alt, theme, base, components, utilities;
 @import "tailwindcss";
-/* Relaunch working area is documentation only – keep it out of class detection. */
+/* Alt-System (bis zum Abbau in E6): liegt unter dem Theme, überschreibt nichts mehr (KERN K-004, E-004). */
+@import "../styles/tokens.css" layer(alt);
+/* Bewegungsregister (KERN K-007) */
+@import "./bewegung.css" layer(components);
+/* Arbeitsbereiche sind Dokumentation – nicht in die Klassenerkennung aufnehmen. */
 @source not "../../_relaunch";
 @source not "../../_werkstatt";
 
 /* ==========================================================================
-   FLIESENVERLEGUNG TEZGEL – TILE-CRAFT DESIGN SYSTEM
-   Orange · Red · Black · Gray – Warm Precision & Professional Craft
-   Theme tokens for Tailwind utilities (text-primary-700, bg-secondary-50, etc.)
+   FLIESENVERLEGUNG TEZGEL · KERN v2 – „Jede Seite ist ein Verlegeplan“
+   Einzige Quelle der Gestaltungswerte (K-005). Werte nie im Code wiederholen.
    ========================================================================== */
+@theme static {
+  /* Farbe – Neutrale auf 228°, ein Akzent (Laser = Logo-Rot) */
+  --color-kalk: #F5F4F0;
+  --color-fliese: #FFFFFF;
+  --color-fuge: #DDDEE2;
+  --color-strich: #818698;
+  --color-tinte-2: #4B5067;
+  --color-tinte: #0A1129;
+  --color-laser: #D82020;
+  --color-laser-tief: #A8171C;
+  --color-abnahme: #1D6B3F;
+  --color-nacht-2: #A9AEC0;
+  --color-nacht-fuge: #2B3352;
 
-@theme {
-  /* Primary – ORANGE (Craft, Warmth, Tile Identity) */
+  /* Schrift (K-006) */
+  --font-text: var(--font-archivo), "Archivo Ersatz", Arial, sans-serif;
+  --font-anzeige: var(--font-archivo), "Archivo Anzeige Ersatz", Arial, sans-serif;
+  /* Plex Mono ohne ß (Glyphe liest sich wie „B“); ß kommt aus Archivo (K-006) */
+  --font-mono: var(--font-plex-mono), var(--font-archivo), "Plex Ersatz", "Courier New", monospace;
+  /* Alt-Namen zeigen bis zum Abbau auf die neuen Familien */
+  --font-sans: var(--font-text);
+  --font-display: var(--font-anzeige);
+  --font-heading: var(--font-anzeige);
+
+  --text-fs-1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --text-fs-1--line-height: 1.5;
+  --text-fs-2: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+  --text-fs-2--line-height: 1.55;
+  --text-fs-3: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
+  --text-fs-3--line-height: 1.6;
+  --text-fs-4: clamp(1.25rem, 1.15rem + 0.45vw, 1.5rem);
+  --text-fs-4--line-height: 1.5;
+  --text-fs-5: clamp(1.5rem, 1.25rem + 1.1vw, 2.25rem);
+  --text-fs-5--line-height: 1.15;
+  --text-fs-6: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
+  --text-fs-6--line-height: 1.1;
+  --text-fs-6--letter-spacing: -0.015em;
+  --text-fs-7: clamp(2.75rem, 1.4rem + 5vw, 6.5rem);
+  --text-fs-7--line-height: 1.04;
+  --text-fs-7--letter-spacing: -0.015em;
+
+  /* Satzspiegel */
+  --container-seite: 82rem;
+  --container-mass: 66ch;
+
+  /* Formen und Tiefe (K-005) */
+  --radius-r1: 2px;
+  --shadow-fuge: 0 1px 0 var(--color-fuge);
+
+  /* Bewegung (K-005/K-007) */
+  --dauer-1: 140ms;
+  --dauer-2: 320ms;
+  --dauer-3: 600ms;
+  --dauer-4: 800ms;
+  --dauer-5: 1200ms;
+  --staffel: 60ms;
+  --ease-setzen: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-laser: cubic-bezier(0.7, 0, 0.2, 1);
+  --ease-weg: cubic-bezier(0.32, 0, 0.67, 0);
+
+  /* Alt-Theme (primary/secondary) bleibt bis E6 als Alias erhalten */
   --color-primary: #EA580C;
   --color-primary-dark: #C2410C;
   --color-primary-light: #F97316;
@@ -24,8 +86,6 @@
   --color-primary-700: #C2410C;
   --color-primary-800: #9A3412;
   --color-primary-900: #7C2D12;
-
-  /* Secondary – RED / CRIMSON (Accent, DIN-compliance signal) */
   --color-secondary: #DC2626;
   --color-secondary-50: #FEF2F2;
   --color-secondary-100: #FEE2E2;
@@ -37,10 +97,39 @@
   --color-secondary-700: #B91C1C;
   --color-secondary-800: #991B1B;
   --color-secondary-900: #7F1D1D;
+}
 
-  --font-sans: var(--font-inter), 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-jakarta), 'Plus Jakarta Sans', var(--font-inter), 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-jakarta), 'Plus Jakarta Sans', var(--font-inter), 'Inter', ui-sans-serif, system-ui, sans-serif;
+/* Dauer-Stufen als Utilities: dauer-1 … dauer-5 */
+@utility dauer-* {
+  transition-duration: --value(--dauer-*);
+  --dauer: --value(--dauer-*);
+}
+
+/* Ersatzschriften mit Metrik-Anpassung (gemessen an Liberation Sans/Mono = Arial/Courier-Metrik, E-010) */
+@font-face {
+  font-family: "Archivo Ersatz";
+  src: local("Arial"), local("Liberation Sans"), local("Helvetica");
+  size-adjust: 98.7%;
+  ascent-override: 88.9%;
+  descent-override: 21.3%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Archivo Anzeige Ersatz";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"), local("Helvetica Bold");
+  font-weight: 700 800;
+  size-adjust: 79%;
+  ascent-override: 111.2%;
+  descent-override: 26.6%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Plex Ersatz";
+  src: local("Courier New"), local("Liberation Mono"), local("Courier");
+  size-adjust: 100%;
+  ascent-override: 102.5%;
+  descent-override: 27.5%;
+  line-gap-override: 0%;
 }
 
 @layer base {
@@ -48,43 +137,68 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    background-color: #FAFAFA;
-    color: #171717;
+    /* Kopfhöhe + 16 px, damit Anker und Fokus nie unter dem festen Kopf liegen */
+    scroll-padding-top: calc(var(--spacing) * 24);
+    background-color: var(--color-kalk);
+    color: var(--color-tinte);
     color-scheme: light;
     overflow-x: clip;
-    hyphens: none;
-    -webkit-hyphens: none;
   }
 
   body {
-    background-color: #FAFAFA;
-    color: #171717;
-    font-family: var(--font-sans);
-    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: var(--color-kalk);
+    color: var(--color-tinte);
+    font-family: var(--font-text);
+    font-feature-settings: "kern" 1, "calt" 1;
     overflow-x: clip;
     min-height: 100vh;
   }
 
+  /* Überschriften: Archivo in Anzeigebreite; Silben nur an gesetzten Fugenstellen (&shy;) */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    color: #171717;
-    letter-spacing: -0.025em;
+    font-family: var(--font-anzeige);
+    font-stretch: 74%;
+    font-weight: 760;
+    color: var(--color-tinte);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    hyphens: manual;
+  }
+
+  /* Fließtext: Silbentrennung mit lang="de", ruhige Zeilen */
+  p, li, dd, td, th, blockquote, figcaption {
+    text-wrap: pretty;
+    hyphens: auto;
+    -webkit-hyphens: auto;
   }
 
   ::selection {
-    background-color: #FFEDD5;
-    color: #7C2D12;
+    background-color: var(--color-fuge);
+    color: var(--color-tinte);
   }
 
   :focus-visible {
-    outline: 2px solid #EA580C;
-    outline-offset: 3px;
+    outline: 2px solid var(--color-tinte);
+    outline-offset: 2px;
+  }
+
+  /* Auf Tinte-Flächen hellt der Fokus auf (K-009) */
+  .flaeche-tinte :focus-visible {
+    outline-color: var(--color-kalk);
+  }
+
+  @media (forced-colors: active) {
+    :focus-visible {
+      outline-color: Highlight;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
+    /* Übergangsregel bis E6: unumgebaute Seiten tragen noch freie Transitionen. Registereinträge sind bei
+       reduzierter Bewegung ohnehin Sofortzustand oder Überblendung (K-007). */
     *, *::before, *::after {
       transition-duration: 0.01ms !important;
       animation-duration: 0.01ms !important;
@@ -94,112 +208,94 @@
 }
 
 /* ==========================================================================
-   COMPONENTS – Tile-craft building blocks
+   ALIASSE DES ALT-SYSTEMS (E-004) – auf KERN umgefärbt, bis die Suche null
+   Nutzungen zeigt (Abbau E6). Neue Arbeit nutzt sie nicht.
    ========================================================================== */
 @layer components {
-  /* Hero panel & full-width band: warm orange/red wash */
   .ceramic-hero,
   .ceramic-band {
     position: relative;
-    color: #171717;
-    background:
-      radial-gradient(55% 90% at 0% 0%, rgba(249, 115, 22, 0.08) 0%, rgba(249, 115, 22, 0) 65%),
-      radial-gradient(55% 90% at 100% 100%, rgba(220, 38, 38, 0.06) 0%, rgba(220, 38, 38, 0) 65%),
-      linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+    color: var(--color-tinte);
+    background: var(--color-fliese);
   }
 
   .ceramic-hero {
-    border: 1px solid #E5E7EB;
-    box-shadow: 0 24px 48px -18px rgba(23, 23, 23, 0.14), 0 1px 3px rgba(23, 23, 23, 0.04);
+    border: 1px solid var(--color-fuge);
+    border-radius: 0;
   }
 
   .ceramic-band {
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--color-fuge);
   }
 
-  /* Eyebrow micro badge – tile-cut shape (partially rounded) */
-  .eyebrow {
+  /* Badge → Mono-Etikett (Wortlaut bleibt, E-013) */
+  .eyebrow,
+  .eyebrow-red,
+  .eyebrow-neutral,
+  .eyebrow-amber {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
-    padding: 0.375rem 0.875rem;
-    border-radius: 10px;
-    border: 1px solid #FED7AA;
-    background: #FFF7ED;
-    color: #9A3412;
-    font-size: 0.75rem;
-    line-height: 1.125rem;
-    font-weight: 800;
-    letter-spacing: 0.01em;
+    gap: calc(var(--spacing) * 2);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-tinte-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-fs-1);
+    line-height: var(--text-fs-1--line-height);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
   }
 
-  .eyebrow-red {
-    border-color: #FECACA;
-    background: #FEF2F2;
-    color: #991B1B;
-  }
-
-  .eyebrow-neutral {
-    border-color: #E5E7EB;
-    background: #FFFFFF;
-    color: #404040;
-  }
-
-  .eyebrow-amber {
-    border-color: #FDE68A;
-    background: #FFFBEB;
-    color: #92400E;
-  }
-
-  /* Buttons – Tile-shaped (rounded-xl, not pill) */
   .btn-primary,
   .btn-ghost {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.875rem 1.75rem;
-    border-radius: 14px;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 800;
+    gap: calc(var(--spacing) * 2);
+    min-height: calc(var(--spacing) * 11);
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
+    border-radius: 0;
+    font-family: var(--font-text);
+    font-size: var(--text-fs-2);
+    line-height: var(--text-fs-2--line-height);
+    font-weight: 600;
     text-align: center;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: none;
+    transition-property: background-color, border-color, color, translate;
+    transition-duration: var(--dauer-1);
+    transition-timing-function: var(--ease-setzen);
   }
 
   .btn-primary {
-    background: #C2410C;
-    border: 1px solid #C2410C;
-    color: #FFFFFF;
-    box-shadow: 0 10px 24px -10px rgba(194, 65, 12, 0.45);
-  }
-
-  .btn-primary:hover {
-    background: #9A3412;
-    border-color: #9A3412;
-    color: #FFFFFF;
-    transform: translateY(-1px);
-    box-shadow: 0 14px 30px -10px rgba(154, 52, 18, 0.55);
+    background: var(--color-tinte);
+    border: 1px solid var(--color-tinte);
+    color: var(--color-kalk);
   }
 
   .btn-ghost {
-    background: #FFFFFF;
-    border: 1px solid #D4D4D8;
-    color: #171717;
-    box-shadow: 0 2px 10px -4px rgba(23, 23, 23, 0.08);
+    background: var(--color-fliese);
+    border: 1px solid var(--color-strich);
+    color: var(--color-tinte);
   }
 
-  .btn-ghost:hover {
-    background: #FAFAFA;
-    border-color: #EA580C;
-    color: #9A3412;
-    transform: translateY(-1px);
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover {
+      background: var(--color-tinte-2);
+      border-color: var(--color-tinte-2);
+      color: var(--color-kalk);
+    }
+    .btn-ghost:hover {
+      border-color: var(--color-tinte);
+      color: var(--color-tinte);
+    }
   }
 
-  .btn-primary:focus-visible,
-  .btn-ghost:focus-visible {
-    outline: 2px solid #EA580C;
-    outline-offset: 3px;
+  .btn-primary:active,
+  .btn-ghost:active {
+    translate: 0 1px;
   }
 
   .btn-primary:disabled,
@@ -210,294 +306,103 @@
     pointer-events: none;
   }
 
-  /* Gradient headline accent: orange → red */
+  /* Verlaufstext entfällt: Hervorhebung nur über Gewicht */
   .text-ceramic-gradient {
-    background-image: linear-gradient(90deg, #EA580C 0%, #DC2626 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: var(--color-tinte);
+    background: none;
   }
 
-  /* Icon tile – tile-shaped chip with orange glaze on hover */
+  /* Icon-Kachel → stilles Zeichen ohne Fläche */
   .icon-chip {
     display: flex;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;
-    background: #FFF7ED;
-    border: 1px solid #FED7AA;
-    color: #EA580C;
-    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    border-radius: 0;
+    background: transparent;
+    border: 1px solid var(--color-fuge);
+    color: var(--color-tinte);
   }
 
-  .group:hover .icon-chip {
-    background: #EA580C;
-    border-color: #EA580C;
-    color: #FFFFFF;
-  }
-
-  /* Long-form article typography */
+  /* Lesemodus (Ratgeber) im System */
   .prose-ceramic {
-    color: #404040;
-    font-size: 1rem;
-    line-height: 1.75;
+    color: var(--color-tinte);
+    font-size: var(--text-fs-3);
+    line-height: var(--text-fs-3--line-height);
+    max-width: var(--container-mass);
   }
 
   .prose-ceramic > :first-child { margin-top: 0; }
   .prose-ceramic :is(p, ul, ol, blockquote, pre, figure, table) { margin: 1.25em 0; }
-  .prose-ceramic h2 { color: #171717; font-size: 1.5rem; line-height: 1.3; font-weight: 900; margin: 2.5rem 0 1rem; }
-  .prose-ceramic h3 { color: #171717; font-size: 1.125rem; line-height: 1.4; font-weight: 900; margin: 2rem 0 0.75rem; }
-  .prose-ceramic h4 { color: #171717; font-weight: 800; margin: 1.5rem 0 0.5rem; }
-  .prose-ceramic strong { color: #171717; font-weight: 700; }
-  .prose-ceramic a { color: #9A3412; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-  .prose-ceramic a:hover { color: #EA580C; }
-  .prose-ceramic ul { list-style: disc; padding-left: 1.5rem; }
-  .prose-ceramic ol { list-style: decimal; padding-left: 1.5rem; }
-  .prose-ceramic li + li { margin-top: 0.375rem; }
-  .prose-ceramic li::marker { color: #EA580C; font-weight: 700; }
-  .prose-ceramic blockquote { border-left: 4px solid #F97316; background: #FFF7ED; padding: 1rem 1.5rem; border-radius: 0 14px 14px 0; font-style: italic; color: #262626; }
-  .prose-ceramic code { background: #F4F4F5; color: #171717; padding: 0.125rem 0.375rem; border-radius: 6px; font-size: 0.875em; }
-  .prose-ceramic hr { border: 0; border-top: 1px solid #E5E7EB; margin: 2.5rem 0; }
-  .prose-ceramic img { border-radius: 14px; margin: 2rem 0; }
-  .prose-ceramic table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-  .prose-ceramic th { background: #F4F4F5; color: #171717; font-weight: 800; text-align: left; padding: 0.625rem 0.75rem; border-bottom: 1px solid #E5E7EB; }
-  .prose-ceramic td { padding: 0.625rem 0.75rem; border-bottom: 1px solid #E5E7EB; }
+  .prose-ceramic h2 { font-size: var(--text-fs-5); line-height: var(--text-fs-5--line-height); margin: calc(var(--spacing) * 12) 0 calc(var(--spacing) * 4); }
+  .prose-ceramic h3 { font-size: var(--text-fs-4); line-height: var(--text-fs-4--line-height); margin: calc(var(--spacing) * 8) 0 calc(var(--spacing) * 3); }
+  .prose-ceramic h4 { font-size: var(--text-fs-3); margin: calc(var(--spacing) * 6) 0 calc(var(--spacing) * 2); }
+  .prose-ceramic strong { font-weight: 600; }
+  .prose-ceramic a { color: var(--color-tinte); text-decoration: underline; text-decoration-color: var(--color-strich); text-underline-offset: 3px; }
+  .prose-ceramic a:hover { text-decoration-color: var(--color-tinte); }
+  .prose-ceramic ul { list-style: square; padding-left: calc(var(--spacing) * 6); }
+  .prose-ceramic ol { list-style: decimal; padding-left: calc(var(--spacing) * 6); }
+  .prose-ceramic li + li { margin-top: calc(var(--spacing) * 2); }
+  .prose-ceramic li::marker { color: var(--color-tinte-2); }
+  .prose-ceramic blockquote { border-left: 2px solid var(--color-laser); padding: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 1) calc(var(--spacing) * 6); color: var(--color-tinte); }
+  .prose-ceramic code { font-family: var(--font-mono); font-size: 0.9em; }
+  .prose-ceramic hr { border: 0; border-top: 1px solid var(--color-fuge); margin: calc(var(--spacing) * 12) 0; }
+  .prose-ceramic img { margin: calc(var(--spacing) * 8) 0; }
+  .prose-ceramic table { width: 100%; border-collapse: collapse; font-size: var(--text-fs-2); }
+  .prose-ceramic th { text-align: left; font-weight: 600; padding: calc(var(--spacing) * 3); border-bottom: 1px solid var(--color-strich); }
+  .prose-ceramic td { padding: calc(var(--spacing) * 3); border-bottom: 1px solid var(--color-fuge); }
 }
 
 @layer utilities {
-  .touch-target {
-    @apply min-h-[44px] min-w-[44px];
-  }
-
-  /* ========================================================================
-     FROSTED TILE SURFACES
-     ======================================================================== */
-
-  .glass-surface {
-    background: #FFFFFF;
-    border: 1px solid rgba(229, 231, 235, 0.9);
-    box-shadow: 0 4px 20px -2px rgba(23, 23, 23, 0.05), 0 1px 3px rgba(23, 23, 23, 0.03);
-  }
-
-  .glass-surface-subtle {
-    background: #FAFAFA;
-    border: 1px solid rgba(229, 231, 235, 0.85);
-    box-shadow: 0 2px 12px -2px rgba(23, 23, 23, 0.04);
+  /* Flächen ohne Glas: Feld auf Kalk, getrennt durch Fuge */
+  .glass-surface,
+  .glass-surface-subtle,
+  .glass-bezel-inner {
+    background: var(--color-fliese);
+    border: 1px solid var(--color-fuge);
+    box-shadow: none;
+    border-radius: 0;
   }
 
   .glass-bezel-outer {
-    padding: 6px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, rgba(229, 231, 235, 0.8) 0%, rgba(244, 244, 245, 0.5) 100%);
-    border: 1px solid rgba(212, 212, 216, 0.6);
-    box-shadow: 0 12px 30px -5px rgba(23, 23, 23, 0.06);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
-  .glass-bezel-inner {
-    border-radius: calc(24px - 6px);
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.8);
-  }
-
-  .glass-pill {
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.98);
-    border: 1px solid rgba(229, 231, 235, 0.9);
-    box-shadow: 0 4px 16px -2px rgba(23, 23, 23, 0.06);
-  }
-
-  .glass-button-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 0.875rem 1.75rem;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
-    color: #FFFFFF;
-    font-weight: 800;
-    font-size: 0.9375rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 25px -5px rgba(234, 88, 12, 0.35);
-    transition: all 0.25s cubic-bezier(0.32, 0.72, 0, 1);
-  }
-
-  .glass-button-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 16px 35px -5px rgba(234, 88, 12, 0.45);
-    background: linear-gradient(135deg, #C2410C 0%, #9A3412 100%);
-    color: #FFFFFF;
-  }
-
-  .glass-button-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 0.875rem 1.75rem;
-    border-radius: 14px;
-    background: #FFFFFF;
-    color: #171717;
-    font-weight: 800;
-    font-size: 0.9375rem;
-    border: 1px solid #D4D4D8;
-    box-shadow: 0 4px 15px -2px rgba(23, 23, 23, 0.06);
-    transition: all 0.25s cubic-bezier(0.32, 0.72, 0, 1);
-  }
-
-  .glass-button-secondary:hover {
-    background: #FAFAFA;
-    border-color: #EA580C;
-    color: #9A3412;
-    transform: translateY(-1px);
-  }
-
-  /* WhatsApp: STAYS GREEN (brand-compliant) */
+  /* WhatsApp-Knopf als Nebenknopf; das Markenzeichen bleibt im Icon */
   .glass-button-whatsapp {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.65rem;
-    padding: 0.875rem 1.75rem;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
-    color: #FFFFFF;
-    font-weight: 800;
-    font-size: 0.9375rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 25px -5px rgba(18, 140, 126, 0.35);
-    transition: all 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+    gap: calc(var(--spacing) * 2);
+    min-height: calc(var(--spacing) * 11);
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
+    border-radius: 0;
+    background: var(--color-fliese);
+    color: var(--color-tinte);
+    font-weight: 600;
+    font-size: var(--text-fs-2);
+    border: 1px solid var(--color-strich);
+    box-shadow: none;
   }
 
-  .glass-button-whatsapp:hover {
-    transform: translateY(-1px);
-    color: #FFFFFF;
-    box-shadow: 0 16px 32px -5px rgba(18, 140, 126, 0.5);
-  }
-
-  /* Ambient warm glows – subtle, GPU-friendly */
-  .ambient-glow-orange {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.07) 0%, rgba(249, 115, 22, 0.02) 40%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    contain: strict;
-  }
-
-  .ambient-glow-red {
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.06) 0%, rgba(220, 38, 38, 0.02) 40%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    contain: strict;
-  }
-
-  .ambient-glow-slate {
-    position: absolute;
-    width: 520px;
-    height: 520px;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(229, 231, 235, 0.45) 0%, rgba(244, 244, 245, 0.12) 45%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    contain: strict;
-  }
-
-  /* Legacy alias for old glow classes */
-  .ambient-glow-mint {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.07) 0%, rgba(249, 115, 22, 0.02) 40%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    contain: strict;
-  }
-
+  /* Leuchtkugeln entfallen (Katalog „weich“) */
+  .ambient-glow-orange,
+  .ambient-glow-red,
+  .ambient-glow-slate,
+  .ambient-glow-mint,
   .ambient-glow-sky {
-    position: absolute;
-    width: 480px;
-    height: 480px;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.06) 0%, rgba(220, 38, 38, 0.02) 40%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    contain: strict;
+    display: none;
   }
 
-  /* GPU-friendly offscreen content virtualization */
-  .content-auto {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 600px;
-  }
-
-  /* ========================================================================
-     HYPERREALISTIC CERAMIC TILE SYSTEM (FLIESEN-MANUFAKTUR)
-     ======================================================================== */
-
-  .tile-slab {
-    position: relative;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
-    border: 1px solid rgba(229, 231, 235, 0.95);
-    border-radius: 16px;
-    box-shadow:
-      inset 0 1.5px 0 0 rgba(255, 255, 255, 1),
-      inset 0 -1.5px 0 0 rgba(0, 0, 0, 0.06),
-      0 2px 8px -2px rgba(23, 23, 23, 0.06),
-      0 12px 28px -6px rgba(23, 23, 23, 0.08);
-  }
-
-  .tile-slab-dark {
-    position: relative;
-    background: linear-gradient(180deg, #1C1917 0%, #0C0A09 100%);
-    border: 1px solid rgba(68, 64, 60, 0.6);
-    border-radius: 16px;
-    box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
-      inset 0 -1.5px 0 0 rgba(0, 0, 0, 0.6),
-      0 4px 16px -2px rgba(0, 0, 0, 0.35);
-  }
-
-  .tile-slab-orange {
-    position: relative;
-    background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 16px;
-    box-shadow:
-      inset 0 1.5px 0 0 rgba(255, 255, 255, 0.4),
-      inset 0 -1.5px 0 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px -4px rgba(234, 88, 12, 0.4);
-  }
-
-  .tile-plank {
-    position: relative;
-    background: #FFFFFF;
-    border: 1px solid rgba(229, 231, 235, 0.9);
-    border-radius: 14px;
-    box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 0 rgba(0, 0, 0, 0.05),
-      0 2px 6px -1px rgba(23, 23, 23, 0.05);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .tile-plank:hover {
-    transform: translateY(-1px);
-    border-color: rgba(234, 88, 12, 0.4);
-    box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 1),
-      0 6px 18px -3px rgba(234, 88, 12, 0.12);
-  }
-
+  /* ----------------------------------------------------------------------
+     Wörtlich erhaltene Altblöcke bis zu ihren Paketen:
+     plate-enter → E2-ORCH-05a · WhatsApp-Schwebeknopf → E2-ORCH-05b ·
+     WaterCursor → E2-ORCH-05b · Laufband → E2-BAU-01
+     ---------------------------------------------------------------------- */
   @keyframes plateSlideIn {
     from {
       opacity: 0;
@@ -627,28 +532,4 @@
   .animate-marquee {
     animation: marquee 28s linear infinite;
   }
-
-  @keyframes heartbeat {
-    0%, 100% {
-      transform: scale(1);
-    }
-    14% {
-      transform: scale(1.03);
-    }
-    28% {
-      transform: scale(1);
-    }
-    42% {
-      transform: scale(1.03);
-    }
-    70% {
-      transform: scale(1);
-    }
-  }
-
-  .animate-heartbeat {
-    animation: heartbeat 3s ease-in-out infinite;
-  }
 }
-
-
