@@ -1,0 +1,158 @@
+{
+ "_kommentar": "Quelle: KERN v1, wird mit v2 angepasst. Erste Fassung nach Briefing E0-PRUEF-02d; der Orchestrator pflegt die Datei. Abweichung zum Briefing: schrift und kurven folgen dem Theme in src/app/globals.css und KERN v2 (font-text, font-anzeige, font-mono; ease-setzen, ease-laser, ease-weg, ease-linear).",
+ "farben": [
+  "kalk",
+  "fliese",
+  "fuge",
+  "strich",
+  "tinte",
+  "tinte-2",
+  "laser",
+  "laser-tief",
+  "abnahme",
+  "nacht-2",
+  "nacht-fuge",
+  "white",
+  "transparent",
+  "current",
+  "inherit"
+ ],
+ "abstaende": {
+  "praefixe": [
+   "p",
+   "px",
+   "py",
+   "pt",
+   "pr",
+   "pb",
+   "pl",
+   "ps",
+   "pe",
+   "m",
+   "mx",
+   "my",
+   "mt",
+   "mr",
+   "mb",
+   "ml",
+   "ms",
+   "me",
+   "gap",
+   "gap-x",
+   "gap-y",
+   "space-x",
+   "space-y",
+   "inset",
+   "inset-x",
+   "inset-y",
+   "top",
+   "right",
+   "bottom",
+   "left",
+   "translate-x",
+   "translate-y",
+   "scroll-mt",
+   "scroll-pt"
+  ],
+  "stufen": [
+   "0",
+   "px",
+   "1",
+   "2",
+   "3",
+   "4",
+   "6",
+   "8",
+   "12",
+   "16",
+   "24",
+   "32"
+  ]
+ },
+ "groessen": {
+  "praefixe": [
+   "w",
+   "h",
+   "size",
+   "min-w",
+   "min-h",
+   "max-w"
+  ],
+  "stufen": [
+   "4",
+   "5",
+   "6",
+   "11",
+   "full",
+   "auto",
+   "screen",
+   "fit",
+   "min",
+   "max",
+   "px",
+   "0",
+   "1/2",
+   "1/3",
+   "2/3",
+   "1/4",
+   "3/4"
+  ],
+  "benannt": [
+   "seite",
+   "mass"
+  ]
+ },
+ "schrift": [
+  "text-fs-1",
+  "text-fs-2",
+  "text-fs-3",
+  "text-fs-4",
+  "text-fs-5",
+  "text-fs-6",
+  "text-fs-7",
+  "font-anzeige",
+  "font-text",
+  "font-mono"
+ ],
+ "dauern": [
+  "dauer-1",
+  "dauer-2",
+  "dauer-3",
+  "dauer-4",
+  "dauer-5"
+ ],
+ "kurven": [
+  "setzen",
+  "laser",
+  "weg",
+  "linear"
+ ],
+ "radien": [
+  "rounded-none",
+  "rounded-r1"
+ ],
+ "ausnahmen": {
+  "dateien": [
+   "src/lib/email/**",
+   "src/components/ui/GoogleIcon.tsx",
+   "**/opengraph-image.*",
+   "src/app/werkstatt-schaufenster/**"
+  ],
+  "svg_pfaddaten": [
+   "d",
+   "points"
+  ],
+  "zeilen": [
+   {
+    "datei": "src/app/layout.tsx",
+    "muster": "themeColor",
+    "grund": "Metadaten verlangen einen Farbwert (= --color-kalk)"
+   },
+   {
+    "datei": "src/app/globals.css",
+    "muster": "0.01ms",
+    "grund": "Übergangsregel reduzierte Bewegung bis E6"
+   }
+  ]
+ }
+}

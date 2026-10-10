@@ -90,6 +90,15 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 - Badge-Texte gelten als Mikrotext: Sie werden zum Mono-Etikett mit gleichem Wortlaut; entfallen sie, weil sie nur die H2 wiederholen, steht das alt → (entfällt) in TEXTVORSCHLAEGE.md.
 - Alt-Texte, die Bilder als Tezgel-Arbeit ausgeben („… von Fliesenverlegung Tezgel“), werden beschreibend umformuliert, bis die Bildherkunft geklärt ist (M-02).
 
+## E-014 · Verwaiste Komponenten entfernen (Denkprotokoll, Entfernen von Bestand)
+- **Ziel:** Altlasten ohne Funktion und ohne Inhalt entfernen, die das Formsystem und Z-03/Z-06 belasten (lucide, framer-motion, freie Werte), ohne Bestand zu verlieren.
+- **Bestand:** 13 Dateien ohne Importeur laut E0-KUN-03 (Abschnitt 3): `components/CookieConsent.tsx` (Duplikat-Re-Export), `common/GoogleMap.tsx`, `common/WaterCursor.tsx` (Re-Export), `common/WhatsAppButton.tsx`, `layout/FloatingDock.tsx`, `maps/ContactMapWrapper.tsx`, `sections/home/ContactSection.tsx`, `trust/TrustBadges.tsx`, `trust/TrustSignals.tsx`, `ui/AnimatedNumber.tsx`, `ui/OptimizedImage.tsx`, `ui/RotatingText.tsx`, `ui/TiltCard.tsx`.
+- **Wege:** (1) behalten und umgestalten; (2) behalten, aber nicht anfassen (bleiben im Altstil, mit lucide/framer); (3) nach erneuter Nutzungssuche (statische, dynamische und relative Importe, Zeichenketten, Tests, E-Mail-Vorlagen) entfernen.
+- **Bewertung:** (1) Arbeit ohne Nutzen für Besucher; (2) blockiert die Deinstallation von lucide und framer-motion (Z-06) und hält Generisches im Repo (Hochzählen, Kippkarten, Nachlauf-Laufschrift); (3) kein Inhalt, keine Route, keine Funktion geht verloren – „gleichwertiger Ersatz“ ist nicht nötig, weil nichts genutzt wird; Vermerk hier und im Commit.
+- **Wahl: (3)** in Paket E2-AUF-01; Datei wird nur entfernt, wenn die Suche null Treffer zeigt und Typprüfung sowie Lint danach grün sind.
+- **Umkehrprobe:** Revert des Commits stellt jede Datei wieder her (Historie bleibt).
+- **Folgen zweiter Ordnung:** weniger Fundstellen für lucide/framer-motion; `AnimatedNumber` (Hochzählen) und `TiltCard` (Kippkarte) als Katalog-Muster verschwinden.
+
 ## L6 · Lernen
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|
