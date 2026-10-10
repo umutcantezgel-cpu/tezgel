@@ -1,16 +1,17 @@
-import { ArrowRight, ArrowLeft } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import { hilfeKlassen, knopfKlassen, labelKlassen } from '@/components/kern/stile';
 import { AREA_OPTIONS, TIMING_OPTIONS } from './logik';
 import { inputClass, optionClass } from './stile';
 
-// Schritt 2: Fläche, Zeitraum und Ort (E-011: aus TezgelAnfrageFunnel.tsx verschoben, Markup unverändert).
+// Schritt 2: Fläche, Zeitraum und Ort (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 export default function Schritt2({ setStep, selectedArea, setSelectedArea, customArea, setCustomArea, timing, setTiming, location, setLocation }) {
     return (
-        <div className="space-y-6 relative z-10">
+        <div className="flex flex-col gap-8">
           <div>
-            <span id="funnel-area-heading" className="block text-sm font-bold text-neutral-800 mb-2">
+            <span id="funnel-area-heading" className={labelKlassen}>
               Ungefähre Fläche in Quadratmetern
             </span>
-            <div role="group" aria-labelledby="funnel-area-heading" className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
+            <div role="group" aria-labelledby="funnel-area-heading" className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {AREA_OPTIONS.map((opt) => (
                 <button
                   type="button"
@@ -19,7 +20,9 @@ export default function Schritt2({ setStep, selectedArea, setSelectedArea, custo
                     setSelectedArea(opt);
                     setCustomArea('');
                   }}
-                  className={optionClass(selectedArea === opt && !customArea)}
+                  aria-pressed={selectedArea === opt && !customArea}
+                  className={optionClass}
+                  data-motion="zustand"
                 >
                   {opt}
                 </button>
@@ -39,16 +42,18 @@ export default function Schritt2({ setStep, selectedArea, setSelectedArea, custo
           </div>
 
           <div>
-            <span id="funnel-timing-heading" className="block text-sm font-bold text-neutral-800 mb-2">
+            <span id="funnel-timing-heading" className={labelKlassen}>
               Gewünschter Ausführungszeitraum
             </span>
-            <div role="group" aria-labelledby="funnel-timing-heading" className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            <div role="group" aria-labelledby="funnel-timing-heading" className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-3">
               {TIMING_OPTIONS.map((opt) => (
                 <button
                   type="button"
                   key={opt}
                   onClick={() => setTiming(opt)}
-                  className={optionClass(timing === opt)}
+                  aria-pressed={timing === opt}
+                  className={optionClass}
+                  data-motion="zustand"
                 >
                   {opt}
                 </button>
@@ -57,7 +62,7 @@ export default function Schritt2({ setStep, selectedArea, setSelectedArea, custo
           </div>
 
           <div>
-            <label htmlFor="funnel-location" className="block text-sm font-bold text-neutral-800 mb-1.5">
+            <label htmlFor="funnel-location" className={labelKlassen}>
               Einsatzort / Postleitzahl
             </label>
             <input
@@ -68,25 +73,27 @@ export default function Schritt2({ setStep, selectedArea, setSelectedArea, custo
               onChange={(e) => setLocation(e.target.value)}
               className={inputClass}
             />
-            <p className="text-xs text-neutral-700 font-medium mt-1">Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
+            <p className={hilfeKlassen}>Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
           </div>
 
-          <div className="pt-4 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex flex-col-reverse items-stretch justify-between gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center">
             <button
               type="button"
               onClick={() => setStep(1)}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-700 hover:text-orange-800"
+              className={knopfKlassen('text')}
+              data-motion="druck"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <Icon name="pfeil-links" groesse={5} />
               Zurück
             </button>
             <button
               type="button"
               onClick={() => setStep(3)}
-              className="btn-primary w-full sm:w-auto"
+              className={knopfKlassen('haupt', 'w-full sm:w-auto')}
+              data-motion="druck"
             >
               Weiter zu Schritt 3: Kontaktdaten
-              <ArrowRight className="w-4 h-4" />
+              <Icon name="pfeil-rechts" groesse={5} />
             </button>
           </div>
         </div>

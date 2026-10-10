@@ -1,9 +1,11 @@
 'use client';
 
 // Express-Anfrage (E-011): Zustand, Schrittwechsel und Absenden hier; Logik in logik.ts (gesperrt), Markup in Schritt1–3,
-// Erfolg und WhatsAppGeoeffnet.
+// Erfolg und WhatsAppGeoeffnet. Darstellung nach KERN (E2-ORCH-08): Feld an der Fuge, Fortschritt als Mono-Felder.
 import React, { useState } from 'react';
-import { Sparkles, Check } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { etikettKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
 import { STEPS, beschriftungen, nachricht, nutzlast, type SubmissionStatus } from './logik';
@@ -87,43 +89,40 @@ export default function TezgelAnfrageFunnel() {
   }
 
   return (
-    <div className="glass-surface rounded-2xl p-6 sm:p-10 lg:p-12 relative overflow-hidden max-w-4xl mx-auto shadow-lg border border-neutral-200">
-      {/* Decorative gradient corner */}
-      <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-orange-500/10 blur-2xl" aria-hidden="true" />
-
-      {/* Header & step indicator */}
-      <div className="mb-8 text-center sm:text-left relative z-10">
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
-          <span className="eyebrow mx-auto sm:mx-0">
-            <Sparkles className="w-3.5 h-3.5" />
+    <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12">
+      {/* Kopf und Fortschritt */}
+      <div className="mb-8 border-b border-fuge pb-6">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+          <span className={etikettKlassen}>
+            <Fugenkreuz className="size-3 text-laser" />
             Express-Anfrage in 60 Sekunden
           </span>
-          <ol className="flex items-center gap-2 mx-auto sm:mx-0" aria-label="Fortschritt">
+          <ol className="flex items-center gap-2" aria-label="Fortschritt">
             {STEPS.map((item, idx) => {
               const s = idx + 1;
               return (
                 <li
                   key={item.title}
                   aria-current={step === s ? 'step' : undefined}
-                  className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black tabular-nums transition-all duration-200 ${
+                  className={`flex size-8 items-center justify-center border font-mono text-fs-1 tabular-nums ${
                     step === s
-                      ? 'bg-orange-700 text-white shadow-md shadow-orange-700/30'
+                      ? 'border-tinte bg-tinte text-kalk'
                       : step > s
-                        ? 'bg-orange-50 text-orange-800 border border-orange-300'
-                        : 'bg-white text-neutral-700 border border-neutral-300'
+                        ? 'border-tinte bg-fliese text-tinte'
+                        : 'border-strich bg-fliese text-tinte-2'
                   }`}
                 >
-                  {step > s ? <Check className="w-4 h-4" aria-label={`Schritt ${s} erledigt`} /> : s}
+                  {step > s ? <Icon name="haken" groesse={4} label={`Schritt ${s} erledigt`} /> : s}
                 </li>
               );
             })}
           </ol>
         </div>
 
-        <p className="text-xl sm:text-2xl font-black text-neutral-900">
+        <p className="font-anzeige text-fs-5 font-semibold text-tinte">
           Schritt {step}: {STEPS[step - 1].title}
         </p>
-        <p className="text-sm text-neutral-700 mt-1">{STEPS[step - 1].text}</p>
+        <p className="mt-2 text-fs-2 text-tinte-2">{STEPS[step - 1].text}</p>
       </div>
 
       {/* STEP 1: PROJECT */}

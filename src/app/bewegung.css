@@ -251,3 +251,68 @@ html.k-bewegung .sig-plan-ziel .plan-raster {
     translate: var(--plan-versatz) 0;
   }
 }
+
+/* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, laser); mobil nur das Lot.
+   Lage (oben, links) über Klassen am Element; Endzustand = beide Linien voll. */
+.kreuzlinie {
+  pointer-events: none;
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+}
+.kreuzlinie-lot,
+.kreuzlinie-waage {
+  position: absolute;
+  display: block;
+  background: var(--color-laser);
+}
+.kreuzlinie-lot {
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 2px;
+  margin-inline-start: -1px;
+  transform-origin: top center;
+}
+.kreuzlinie-waage {
+  inset-inline: 0;
+  inset-block-start: 0;
+  height: 2px;
+  margin-block-start: -1px;
+  transform-origin: center left;
+}
+.kreuzlinie-punkt {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  translate: -50% -50%;
+}
+html.k-bewegung .kreuzlinie-lot,
+html.k-bewegung .kreuzlinie-waage {
+  transition: scale var(--dauer-5) var(--ease-laser);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-lot {
+  scale: 1 0;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-waage {
+  scale: 0 1;
+}
+
+/* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht; Deckkraft bleibt 1 (LCP) */
+html.k-bewegung [data-motion="sig-flucht"] > * {
+  transition: translate var(--dauer-4) var(--ease-setzen);
+}
+html.k-bewegung [data-motion="sig-flucht"] > :nth-child(2) {
+  transition-delay: var(--staffel);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-flucht"]:not([data-motion-stand="an"]) > * {
+  translate: calc(var(--spacing) * 3) 0;
+}
+@media print, (forced-colors: active) {
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage {
+    scale: none !important;
+  }
+  html.k-bewegung [data-motion="sig-flucht"] > * {
+    translate: none !important;
+  }
+}

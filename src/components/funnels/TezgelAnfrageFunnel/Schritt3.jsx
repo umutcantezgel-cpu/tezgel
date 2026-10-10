@@ -1,11 +1,13 @@
 import Link from 'next/link';
-import { ArrowLeft, Send, MessageCircle, Lock, Loader2, AlertCircle } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Knopf from '@/components/kern/Knopf';
+import { knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { inputClass } from './stile';
 
-// Schritt 3: Kontaktdaten und Absenden (E-011: aus TezgelAnfrageFunnel.tsx verschoben, Markup unverändert).
+// Schritt 3: Kontaktdaten und Absenden (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 export default function Schritt3({ setStep, name, setName, phone, setPhone, email, setEmail, notes, setNotes, honeypot, setHoneypot, status, errorMessage, projectTitle, finalArea, locationText, handleWhatsAppDirect, handleOnlineSubmit }) {
     return (
-        <form onSubmit={handleOnlineSubmit} className="space-y-6 relative z-10">
+        <form onSubmit={handleOnlineSubmit} className="flex flex-col gap-8">
           {/* Honeypot for spam bots */}
           <input
             type="text"
@@ -19,16 +21,16 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
           />
 
           {errorMessage && (
-            <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm flex items-start gap-2.5">
-              <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
+            <div className="flex items-start gap-3 border-l-2 border-laser bg-kalk p-4 text-fs-2 text-tinte" role="alert">
+              <Icon name="fehler" groesse={5} className="mt-px text-laser-tief" />
               <div>
-                <strong>Fehler beim Absenden:</strong> {errorMessage}
+                <strong className="font-semibold text-laser-tief">Fehler beim Absenden:</strong> {errorMessage}
                 <div className="mt-1">
                   Sie können die Anfrage alternativ direkt per{' '}
                   <button
                     type="button"
                     onClick={handleWhatsAppDirect}
-                    className="underline font-bold text-green-700 hover:text-green-800"
+                    className={`${linkKlassen} font-semibold`}
                   >
                     WhatsApp senden
                   </button>{' '}
@@ -38,24 +40,25 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
             </div>
           )}
 
-          <div className="p-4 rounded-xl bg-orange-50/60 border border-orange-200 text-xs sm:text-sm text-neutral-900 flex flex-wrap items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2 border border-fuge bg-kalk p-4 text-fs-2 text-tinte">
             <span>
-              <strong>Projekt:</strong> {projectTitle} &middot; <strong>Umfang:</strong> {finalArea} &middot;{' '}
-              <strong>Ort:</strong> {locationText}
+              <strong className="font-mono font-normal text-tinte-2">Projekt:</strong> {projectTitle} &middot; <strong className="font-mono font-normal text-tinte-2">Umfang:</strong> {finalArea} &middot;{' '}
+              <strong className="font-mono font-normal text-tinte-2">Ort:</strong> {locationText}
             </span>
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="text-xs font-bold text-orange-800 underline underline-offset-2 hover:text-orange-900"
+              className={knopfKlassen('text')}
+              data-motion="druck"
             >
               Ändern
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
             <div>
-              <label htmlFor="funnel-name" className="block text-sm font-bold text-neutral-800 mb-1.5">
-                Ihr Name <span className="text-orange-800">*</span>
+              <label htmlFor="funnel-name" className={labelKlassen}>
+                Ihr Name <span className={pflichtKlassen}>*</span>
               </label>
               <input
                 id="funnel-name"
@@ -69,8 +72,8 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
               />
             </div>
             <div>
-              <label htmlFor="funnel-phone" className="block text-sm font-bold text-neutral-800 mb-1.5">
-                Telefon- oder Mobilnummer <span className="text-orange-800">*</span>
+              <label htmlFor="funnel-phone" className={labelKlassen}>
+                Telefon- oder Mobilnummer <span className={pflichtKlassen}>*</span>
               </label>
               <input
                 id="funnel-phone"
@@ -87,8 +90,8 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
           </div>
 
           <div>
-            <label htmlFor="funnel-email" className="block text-sm font-bold text-neutral-800 mb-1.5">
-              E-Mail-Adresse <span className="text-neutral-700 font-medium">(für die Eingangsbestätigung)</span>
+            <label htmlFor="funnel-email" className={labelKlassen}>
+              E-Mail-Adresse <span className="font-normal text-tinte-2">(für die Eingangsbestätigung)</span>
             </label>
             <input
               id="funnel-email"
@@ -102,7 +105,7 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
           </div>
 
           <div>
-            <label htmlFor="funnel-notes" className="block text-sm font-bold text-neutral-800 mb-1.5">
+            <label htmlFor="funnel-notes" className={labelKlassen}>
               Projekt-Details / Wünsche (optional)
             </label>
             <textarea
@@ -115,40 +118,21 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
             />
           </div>
 
-          <div className="pt-4 border-t border-neutral-200 space-y-3">
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <button
-                type="submit"
-                disabled={status === 'submitting'}
-                className="btn-primary w-full sm:flex-1 text-sm py-3.5 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-              >
-                {status === 'submitting' ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    Anfrage wird sicher übertragen...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    Anfrage verbindlich absenden
-                  </>
-                )}
-              </button>
-              <button
-                type="button"
-                onClick={handleWhatsAppDirect}
-                className="glass-button-whatsapp w-full sm:w-auto text-sm py-3.5 cursor-pointer"
-              >
-                <MessageCircle className="w-4 h-4" />
+          <div className="flex flex-col gap-4 border-t border-fuge pt-6">
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+              <Knopf type="submit" laedt={status === 'submitting'} ladeText="Anfrage wird sicher übertragen..." icon="pfeil-rechts" className="w-full sm:flex-1">
+                Anfrage verbindlich absenden
+              </Knopf>
+              <Knopf variante="neben" onClick={handleWhatsAppDirect} iconLinks="sprechblase" className="w-full sm:w-auto">
                 Direkt per WhatsApp
-              </button>
+              </Knopf>
             </div>
 
-            <p className="flex items-start justify-center gap-1.5 text-xs text-neutral-600 text-center leading-relaxed">
-              <Lock className="w-3.5 h-3.5 text-orange-700 shrink-0 mt-0.5" />
+            <p className="flex items-start gap-2 text-fs-1 text-tinte-2">
+              <Icon name="schloss" groesse={4} className="mt-px" />
               <span>
                 Ihre Angaben werden vertraulich behandelt und verschlüsselt übertragen. Keine Weitergabe an Dritte. Details in unserer{' '}
-                <Link href="/datenschutz" className="font-bold text-orange-800 underline underline-offset-2">
+                <Link href="/datenschutz" className={linkKlassen}>
                   Datenschutzerklärung
                 </Link>
                 .
@@ -156,13 +140,14 @@ export default function Schritt3({ setStep, name, setName, phone, setPhone, emai
             </p>
           </div>
 
-          <div className="pt-1 flex justify-start">
+          <div className="flex justify-start">
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-700 hover:text-orange-800"
+              className={knopfKlassen('text')}
+              data-motion="druck"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <Icon name="pfeil-links" groesse={5} />
               Zurück zu Schritt 2
             </button>
           </div>

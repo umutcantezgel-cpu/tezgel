@@ -1,13 +1,16 @@
-import { ArrowRight } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import { knopfKlassen } from '@/components/kern/stile';
 import { PROJECT_TYPES } from './logik';
+import { projektClass } from './stile';
 
-// Schritt 1: Projekt (E-011: aus TezgelAnfrageFunnel.tsx verschoben, Markup unverändert).
+// Schritt 1: Projekt (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
+const PROJEKT_ICONS = { bad: 'bad', wohnen: 'haus', balkon: 'balkon', treppe: 'treppe', untergrund: 'untergrund' };
+
 export default function Schritt1({ setStep, projectType, setProjectType }) {
     return (
-        <div className="space-y-6 relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div className="flex flex-col gap-8">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {PROJECT_TYPES.map((pt) => {
-              const IconComp = pt.icon;
               const isSelected = projectType === pt.id;
               return (
                 <button
@@ -15,37 +18,31 @@ export default function Schritt1({ setStep, projectType, setProjectType }) {
                   key={pt.id}
                   onClick={() => setProjectType(pt.id)}
                   aria-pressed={isSelected}
-                  className={`p-4 rounded-xl border text-left flex flex-col justify-between transition-all duration-200 ${
-                    isSelected
-                      ? 'bg-orange-50/80 border-orange-600 ring-2 ring-orange-600/20 shadow-md'
-                      : 'bg-white border-neutral-200 hover:border-orange-500/80 hover:-translate-y-0.5'
-                  }`}
+                  className={projektClass}
+                  data-motion="zustand"
                 >
-                  <div className="flex items-start justify-between gap-2 mb-3">
-                    <span className="icon-chip w-11 h-11">
-                      <IconComp className="w-5 h-5" />
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-neutral-100 text-neutral-600">
-                      {pt.badge}
-                    </span>
-                  </div>
-                  <div>
-                    <p className="font-bold text-neutral-900 text-base mb-1">{pt.title}</p>
-                    <p className="text-xs text-neutral-600 leading-relaxed">{pt.subtitle}</p>
-                  </div>
+                  <span className="flex items-start justify-between gap-2">
+                    <Icon name={PROJEKT_ICONS[pt.id] || 'fliese'} groesse={6} />
+                    <span className="font-mono text-fs-1">{pt.badge}</span>
+                  </span>
+                  <span>
+                    <span className="block text-fs-3 font-semibold">{pt.title}</span>
+                    <span className="mt-1 block text-fs-1">{pt.subtitle}</span>
+                  </span>
                 </button>
               );
             })}
           </div>
 
-          <div className="pt-4 border-t border-neutral-200 flex justify-end">
+          <div className="flex justify-end border-t border-fuge pt-6">
             <button
               type="button"
               onClick={() => setStep(2)}
-              className="btn-primary w-full sm:w-auto"
+              className={knopfKlassen('haupt', 'w-full sm:w-auto')}
+              data-motion="druck"
             >
               Weiter zu Schritt 2: Fläche &amp; Ort
-              <ArrowRight className="w-4 h-4" />
+              <Icon name="pfeil-rechts" groesse={5} />
             </button>
           </div>
         </div>

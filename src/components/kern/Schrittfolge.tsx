@@ -22,12 +22,14 @@ export interface SchrittfolgeProps {
   auftritt?: boolean;
   /** Element der Schritt-Titel (Gliederung der Seite): h3 (Standard), h4 oder div */
   titelEbene?: 'h3' | 'h4' | 'div';
+  /** Untertitel über dem Titel statt darunter (Lesefolge des Bestands, z. B. Startseite) */
+  untertitelOben?: boolean;
   className?: string;
 }
 
 const SPALTEN = { 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4' } as const;
 
-export default function Schrittfolge({ schritte, ausrichtung = 'senkrecht', auftritt = false, titelEbene = 'h3', className }: SchrittfolgeProps) {
+export default function Schrittfolge({ schritte, ausrichtung = 'senkrecht', auftritt = false, titelEbene = 'h3', untertitelOben = false, className }: SchrittfolgeProps) {
   const Titel = titelEbene;
   const waagrecht = ausrichtung === 'waagrecht';
   const spalten = Math.min(Math.max(schritte.length, 2), 4) as keyof typeof SPALTEN;
@@ -50,8 +52,9 @@ export default function Schrittfolge({ schritte, ausrichtung = 'senkrecht', auft
             </div>
             <div className={clsx('min-w-0 flex-1', !letzter && 'pb-12', waagrecht && 'lg:pb-0')}>
               <div className="font-mono text-fs-1 text-tinte">{schritt.nummer ?? String(index + 1).padStart(2, '0')}</div>
-              <Titel className="mt-2 font-text text-fs-4 font-semibold text-tinte">{schritt.titel}</Titel>
-              {schritt.untertitel && <div className="mt-1 font-mono text-fs-2 text-tinte-2">{schritt.untertitel}</div>}
+              {untertitelOben && schritt.untertitel && <div className="mt-2 font-mono text-fs-2 text-tinte-2">{schritt.untertitel}</div>}
+              <Titel className={clsx('font-text text-fs-4 font-semibold text-tinte', untertitelOben && schritt.untertitel ? 'mt-1' : 'mt-2')}>{schritt.titel}</Titel>
+              {!untertitelOben && schritt.untertitel && <div className="mt-1 font-mono text-fs-2 text-tinte-2">{schritt.untertitel}</div>}
               {schritt.text && <div className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">{schritt.text}</div>}
             </div>
           </li>

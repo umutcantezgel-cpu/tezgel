@@ -439,21 +439,4 @@
     display: none;
   }
 
-  /* ----------------------------------------------------------------------
-     Wörtlich erhaltener Altblock bis zu seinem Paket:
-     Laufband → E2-ORCH-08 (TrustStrip)
-     ---------------------------------------------------------------------- */
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .animate-marquee {
-    animation: marquee 28s linear infinite;
-  }
 }
