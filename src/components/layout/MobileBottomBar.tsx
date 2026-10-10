@@ -30,8 +30,7 @@ export default function MobileBottomBar() {
   return (
     <aside
       aria-label="Schnellkontakt Daumenleiste"
-      className="fixed inset-x-0 bottom-0 z-30 border-t border-fuge bg-fuge md:hidden"
-      style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+      className="unten-sicher fixed inset-x-0 bottom-0 z-30 border-t border-fuge bg-fuge md:hidden"
       data-feste-ebene
     >
       <div className="grid grid-cols-3 gap-px">

@@ -100,6 +100,11 @@
 }
 
 /* Bänder mit eigenem Wischen (Kundenstimmen) ohne sichtbare Leiste */
+/* Abstand zur Gestenleiste mobiler Geräte (untere Leiste) */
+@utility unten-sicher {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 @utility ohne-scrollleiste {
   scrollbar-width: none;
 }

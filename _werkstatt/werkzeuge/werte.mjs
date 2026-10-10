@@ -413,11 +413,14 @@ export async function main(argv) {
     }
   }
   // Klassen: Beliebigwerte direkt; alle übrigen je eindeutiger Grundklasse einmal auflösen und bewerten.
-  const basen = new Set(out.kandidaten.filter((k) => !/[[(]/.test(k.token)).map((k) => basis(k.token)));
+  // Beliebig ist nur der Wert (Teil nach der letzten Variante); Varianten wie aria-[current=page]: sind Selektoren.
+  const wertTeil = (t) => { let tiefe = 0, start = 0; for (let i = 0; i < t.length; i++) { const c = t[i]; if (c === '[' || c === '(') tiefe++; else if (c === ']' || c === ')') tiefe--; else if (c === ':' && tiefe === 0) start = i + 1; } return t.slice(start); };
+  const beliebigWert = (t) => /[[(]/.test(wertTeil(t));
+  const basen = new Set(out.kandidaten.filter((k) => !beliebigWert(k.token)).map((k) => basis(k.token)));
   const aufgeloest = aufloesen(ds, [...basen]);
   const cache = new Map();
   for (const k of out.kandidaten) {
-    if (/[[(]/.test(k.token)) {
+    if (beliebigWert(k.token)) {
       out.befunde.push({ datei: k.datei, zeile: k.zeile, art: 'beliebig', kandidat: k.token, hinweis: 'Beliebigwert: nur Tokens aus dem Theme verwenden' });
       continue;
     }

@@ -75,7 +75,7 @@ Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk; genau ein Akz
 
 ### Abstände, Größen, Raster
 - Abstandsskala (margin, padding, gap, space, inset, translate, scroll-margin): Tailwind-Stufen `0 · px · 1 · 2 · 3 · 4 · 6 · 8 · 12 · 16 · 24 · 32` = 0 · 1 · 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 px. Alle anderen Stufen gelten als Wert außerhalb des Systems.
-- Größen: Icons `size-4 | size-5 | size-6` (16/20/24 px); Touch-Ziel `size-11`/`min-h-11` (44 px); Breiten `max-w-seite` (82rem), `max-w-mass` (66ch), Brüche und `full/auto/fit/screen`.
+- Größen (w, h, size, min-*, max-w): Icons `size-4 | size-5 | size-6` (16/20/24 px); Touch-Ziel `size-11`/`min-h-11` (44 px); Flächen und Bildhöhen auf der Abstandsskala (`1 · 2 · 3 · 4 · 6 · 8 · 12 · 16 · 24 · 32`, z. B. Kopf `h-16`, Logo `h-12`, Fugenkreuz-Marke `size-3`); Breiten `max-w-seite` (82rem), `max-w-mass` (66ch), `max-w-md` (28rem: Menüblatt, Banner), Brüche (1/5 … 4/5, 1/4 … 3/4, 1/3, 2/3, 1/2) und `full/auto/fit/min/max/screen/dvh/svh`.
 - Rand: mobil `px-4`, Tablett `md:px-8`, Desktop `lg:px-12`. Abschnittsabstand Erzählansicht `py-24`/`lg:py-32`, Arbeitsansicht `py-12`/`lg:py-16`.
 - Raster: 12 Spalten ab `lg` (1024), 8 ab `md` (768), 4 mobil; Spalten ohne Zwischenraum, Gliederung durch 1-px-Fugen (`border-fuge`, `divide-fuge`). Verbände als Rastervarianten: Kreuzfuge (Standard), Halbverband (Listen), Drittelverband (Großformat-Seiten).
 - Ebenen: `z-0` Inhalt · `z-10` Inhalt über Deko · `z-30` untere Leiste · `z-40` Kopf · `z-50` Dialoge, Menü, Banner. Keine anderen.
@@ -193,3 +193,4 @@ Zielgruppe und Hauptaufgaben (K-002), Erfolgsfarbe `abnahme` (K-005), Kundenstim
 ## Änderungsprotokoll
 - v1 (10.10.2026, Vorlauf P2): erste Fassung nach E-008.
 - v2 (10.10.2026, E1): Gliederung K-001–K-012 des Werkstatt-Auftrags; Tokens als `@theme static` mit eindeutigen Namen und Tailwind-Stufen (E-004); Kurven als `ease-*`, Dauern als `dauer-*`; Ebenen- und Größenstufen; Bewegung geschärft (Bereit-Meldung, `data-motion-stand`, nur transform/opacity, Ersatzzweig = reduziert; E-005); große Momente je Erzählansicht, Leitachse, Einzugsband statt Maßband, Verband-Umschalter, Fugenband, Seitenwechsel (E-007); Icon-Sprite per Import (E-006); Menü per Popover (E-009); Schriften ohne automatische Ersatzschrift (E-010).
+- v2.1 (10.10.2026, E2): Größenstufen präzisiert (Flächen auf der Abstandsskala, `max-w-md`, `dvh`, Brüche) – ergab sich beim Rahmen; `werte-regeln.json` angeglichen, Varianten wie `aria-[current=page]:` gelten nicht als Beliebigwert.

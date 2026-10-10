@@ -175,6 +175,10 @@ html.k-bewegung .laden-fuge::after {
   animation-duration: var(--dauer-2);
   animation-timing-function: var(--ease-setzen);
 }
+/* Der feste Kopf ist beim Seitenwechsel verankert (KERN K-007) */
+.kopf-anker {
+  view-transition-name: kopf;
+}
 ::view-transition-group(kopf) {
   animation: none;
   z-index: 40;

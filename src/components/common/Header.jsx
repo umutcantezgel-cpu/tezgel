@@ -26,7 +26,7 @@ export function BrandMark({ compact = false, sublineClassName = 'hidden lg:block
                 alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
                 width={140}
                 height={44}
-                className="h-9 w-auto shrink-0 object-contain sm:h-10"
+                className="h-12 w-auto shrink-0 object-contain"
                 priority
             />
             {!compact && (
@@ -91,8 +91,7 @@ export default function Header({ isMobileMenuOpen }) {
 
     return (
         <header
-            className="fixed inset-x-0 top-0 z-40 border-b border-fuge bg-kalk"
-            style={{ viewTransitionName: 'kopf' }}
+            className="kopf-anker fixed inset-x-0 top-0 z-40 border-b border-fuge bg-kalk"
             data-feste-ebene
         >
             <div className={clsx(seitenKlassen, 'flex h-16 items-center justify-between gap-6')}>
@@ -187,7 +186,7 @@ export default function Header({ isMobileMenuOpen }) {
                                                 <div className="flaeche-tinte col-span-4 flex flex-col justify-between gap-6 bg-tinte p-6 text-kalk">
                                                     <div className="flex flex-col gap-3">
                                                         <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-nacht-2">{link.featured.eyebrow}</span>
-                                                        <p className="font-display text-fs-5 font-semibold text-kalk">{link.featured.title}</p>
+                                                        <p className="font-anzeige text-fs-5 font-semibold text-kalk">{link.featured.title}</p>
                                                         <p className="text-fs-2 text-nacht-2">{link.featured.text}</p>
                                                     </div>
                                                     <Link
