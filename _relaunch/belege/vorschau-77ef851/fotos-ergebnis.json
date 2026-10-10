@@ -1,0 +1,503 @@
+{
+ "satz": "vorschau-77ef851",
+ "base": "http://127.0.0.1:4320",
+ "einwilligung": "abgelehnt",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 16,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 16337,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 16,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 16417,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 16,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 28807,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-b",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 9,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7374,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-b",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 7,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7555,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-b",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 15,
+   "konsole": [],
+   "ueberlauf": [
+    {
+     "art": "horizontal",
+     "scrollWidth": 463,
+     "clientWidth": 375
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "p",
+     "cls": "k-anzeige text-k-4 text-k-tinte",
+     "left": 298,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "p",
+     "cls": "k-text text-k-2 text-k-tinte-2",
+     "left": 298,
+     "right": 429
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "relative inline-flex items-center justify-center gap-k-2 rounded-k-0 border k-te",
+     "left": 298,
+     "right": 463
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 205,
+     "right": 384
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 253,
+     "right": 376
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "p",
+     "cls": "k-text text-k-2 text-k-tinte-2",
+     "left": 298,
+     "right": 378
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "relative inline-flex items-center justify-center gap-k-2 rounded-k-0 border k-te",
+     "left": 298,
+     "right": 459
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 248,
+     "right": 419
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 248,
+     "right": 419
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 296,
+     "right": 411
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 296,
+     "right": 411
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "mt-k-1 block text-k-1 text-k-tinte-2",
+     "left": 296,
+     "right": 411
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "li",
+     "cls": "",
+     "left": 248,
+     "right": 419
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "a",
+     "cls": "group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2 foc",
+     "left": 248,
+     "right": 419
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "min-w-0 k-text",
+     "left": 296,
+     "right": 411
+    },
+    {
+     "art": "ragt-heraus",
+     "tag": "span",
+     "cls": "block text-k-2 font-semibold text-k-tinte",
+     "left": 296,
+     "right": 411
+    }
+   ],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 11930,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-b",
+   "ansicht": "t768",
+   "status": 200,
+   "hoehen": 9,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 9152,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-09-b",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 4,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 3594,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-09-b",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 4,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 3845,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-09-b",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 9,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 6605,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-09-b",
+   "ansicht": "t768",
+   "status": 200,
+   "hoehen": 6,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 5130,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "status": 200,
+   "hoehen": 16,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 21063,
+   "blockiert": []
+  }
+ ]
+}
