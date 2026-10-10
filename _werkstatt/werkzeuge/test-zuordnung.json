@@ -10,5 +10,6 @@
   { "muster": "FloatingWhatsAppWidget|MobileBottomBar|whatsapp|DirectContactCard|Footer", "specs": ["funktion-kontaktwege.spec.mjs"] },
   { "muster": "CookieConsent|useConsent|MapConsentGate|components/maps|TrackingScripts", "specs": ["funktion-einwilligung.spec.mjs"] },
   { "muster": "Header|MobileMenu|navigation|FAQAccordion|components/blog|app/blog|not-found|app/login|components/reviews", "specs": ["funktion-navigation.spec.mjs"] },
+  { "muster": "next.config", "specs": ["funktion-weiterleitung.spec.mjs"] },
   { "muster": "app/layout.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon", "specs": ["ALLE"] }
 ]

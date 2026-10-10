@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 export const metadata: Metadata = {
   title: 'Admin Login | Fliesenverlegung Tezgel',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
+// Anmeldung nur hier im Bündel (E-010, vorher im Wurzel-Layout); Logik unverändert
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+  return <AuthProvider>{children}</AuthProvider>;
 }

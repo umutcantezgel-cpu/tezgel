@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
   // Dev-Schaufenster der Bausteine (src/app/werkstatt-schaufenster/**/page.dev.tsx) existiert nur in der
   // Entwicklung; im Build gibt es die Route nicht (KERN K-004).
   pageExtensions: process.env.NODE_ENV === 'development' ? ['dev.tsx', 'tsx', 'ts', 'jsx', 'js'] : ['tsx', 'ts', 'jsx', 'js'],
+  // Umbenannte Adressen dauerhaft weiterleiten (308, V-04); belegt im Vorlauf (_relaunch/PLAN.md, „Wege“)
+  async redirects() {
+    return [
+      { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },
+      { source: '/blog/barrierefreies-bad-planung-zuschuesse', destination: '/bad/barrierefreies-bad', permanent: true },
+    ];
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,

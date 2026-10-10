@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { motion } from 'framer-motion';
+import { MotionConfig, motion } from 'framer-motion';
 import { CheckCircle, ShieldCheck, FileText, Phone, Mail, HelpCircle, MessageCircle } from 'lucide-react';
 import CalendlySection from '@/components/common/CalendlySection';
 import { COMPANY_DATA } from '@/config/company';
@@ -59,7 +59,9 @@ const checklist = [
 const Beratung = () => {
     const { contact } = COMPANY_DATA;
 
+    // reduzierte Bewegung achten (vorher globaler MotionProvider, E-010)
     return (
+        <MotionConfig reducedMotion="user">
         <div className="min-h-screen">
             {/* ── Hero Section ─────────────────────────────────────────── */}
             <section className="ceramic-band relative pt-32 pb-20 overflow-hidden">
@@ -219,6 +221,7 @@ const Beratung = () => {
 
             <FinalCTA />
         </div>
+        </MotionConfig>
     );
 };
 

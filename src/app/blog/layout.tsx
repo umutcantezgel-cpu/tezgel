@@ -1,6 +1,7 @@
 import { createMetadata } from '@/lib/metadata';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL, ORG_ID } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import { ContentProvider } from '@/contexts/ContentContext';
 
 export const metadata = createMetadata({
   title: 'Fliesen-Ratgeber & Badsanierung Tipps | Tezgel',
@@ -37,7 +38,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <JsonLd schema={blogSchema} />
-      {children}
+      {/* Ratgeber-Inhalte nur hier im Bündel (E-010, vorher im Wurzel-Layout) */}
+      <ContentProvider>{children}</ContentProvider>
     </>
   );
 }

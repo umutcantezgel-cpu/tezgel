@@ -7,11 +7,7 @@ import MobileBottomBar from '@/components/layout/MobileBottomBar';
 import Footer from '@/components/common/Footer';
 import TrackingScripts from '@/components/common/TrackingScripts';
 import SkipNav from '@/components/ui/SkipNav';
-import { UIProvider } from '@/components/providers/UIProvider';
-import { MotionProvider } from '@/components/providers/MotionProvider';
 import { ErrorBoundary } from '@/components/providers/ErrorBoundary';
-import { ContentProvider } from '@/contexts/ContentContext';
-import { AuthProvider } from '@/contexts/AuthContext';
 import { buildRootGraph, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import BewegungsWaechter from '@/components/kern/BewegungsWaechter';
@@ -123,24 +119,17 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text">
         <SkipNav />
+        {/* Provider liegen an ihrem Nutzungsort (E-010): Inhalte unter /blog, Anmeldung unter /login */}
         <ErrorBoundary>
-          <UIProvider>
-            <MotionProvider>
-              <AuthProvider>
-                <ContentProvider>
-                  <TrackingScripts />
-                  <HeaderWrapper />
-                  <main id="main-content" className="flex-1 pb-16 md:pb-0">
-                    {children}
-                  </main>
-                  <Footer />
-                  <MobileBottomBar />
-                  <ClientWidgets />
-                  <BewegungsWaechter />
-                </ContentProvider>
-              </AuthProvider>
-            </MotionProvider>
-          </UIProvider>
+          <TrackingScripts />
+          <HeaderWrapper />
+          <main id="main-content" className="flex-1 pb-16 md:pb-0">
+            {children}
+          </main>
+          <Footer />
+          <MobileBottomBar />
+          <ClientWidgets />
+          <BewegungsWaechter />
         </ErrorBoundary>
       </body>
     </html>
