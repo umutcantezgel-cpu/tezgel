@@ -1,0 +1,26 @@
+{
+  "multipass": true,
+  "plugins": [
+    {
+      "name": "preset-default",
+      "params": {
+        "overrides": {
+          "removeViewBox": false,
+          "removeTitle": false,
+          "removeUnknownsAndDefaults": {
+            "keepRoleAttr": true
+          },
+          "mergePaths": false,
+          "collapseGroups": false,
+          "convertShapeToPath": false,
+          "cleanupIds": {
+            "minify": false,
+            "remove": false,
+            "preserve": [],
+            "preservePrefixes": []
+          }
+        }
+      }
+    }
+  ]
+}

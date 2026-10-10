@@ -10,11 +10,14 @@
 //   node probelauf.mjs <lauf.json> [--satz <name>] [--lauf <name>] [--ansicht m375|d1440] [--eingabe touch|maus|tastatur]
 //                      [--still] [--stoer-css "<css>"] [--echte-zeit]
 //   node probelauf.mjs --aufgaben                 # die fünf Besucher-Aufträge (ohne Zielzustände)
-//   node probelauf.mjs --matrix --satz <name>     # Übersicht aller Läufe eines Satzes (Aufgabe × Modus)
+//   node probelauf.mjs --matrix --satz <name> [--beleg]   # Übersicht aller Läufe eines Satzes (Aufgabe × Modus);
+//                                                 # --beleg schreibt sie zusätzlich nach belege/<satz>/probelauf.json
 //   Lauf-Datei: { "aufgabe": 4, "start": "/", "ansicht": "m375", "eingabe": "touch", "antwort": "…",
+//                 "befunde": [{"schwere": "mittel", "schritt": 3, "text": "…"}], "gegenprobe": false,
 //                 "schritte": [ {"tippe": "Standorte"}, {"taste": "Tab", "bis": "Butzbach"}, … ] }
 //   Schrittarten: tippe (Name/Text; optional nr, in) · taste (optional mal, bis, max) · fuelle {feld?, text} ·
 //                 waehle {feld?, option} · scrolle "unten"|"oben"|"ende"|"anfang"|<px> · warte_auf "<Text>" · zurueck
+//   Tastatur-Modus: tippe und scrolle sind verboten; fuelle/waehle wirken nur auf das fokussierte Feld.
 //
 // Messbedingungen (stehen in jeder lauf.json unter „bedingungen“): Chromium (Playwright 1.56.1), Ansicht aus
 //   lib.mjs ANSICHTEN (DPR 1), Einwilligung „erstbesuch“ (Banner gehört zur Wirklichkeit des Besuchers),
@@ -22,10 +25,12 @@
 //   locale de-DE, Zeitzone Europe/Berlin, feste Uhrzeit FESTE_ZEIT (abschaltbar mit --echte-zeit).
 //   Jeder Lauf beginnt in einem frischen Browser-Kontext am Startpfad (zustandslos, reproduzierbar).
 //   Warten ausschließlich über Zustandsabfragen mit Obergrenze (Netz ruhig 400 ms, DOM ruhig 250 ms,
-//   endliche Animationen fertig, Schriften geladen); Einwilligungsbanner: Warten auf Erscheinen, höchstens 3 s.
+//   endliche Animationen fertig, Schriften geladen; Abfragen per Zeitgeber, weil Bildwechsel unter Last stocken);
+//   Einwilligungsbanner: Warten auf Erscheinen, Obergrenze 8 s; Bedienbarkeitsprüfung je Handlung bis 30 s.
 //
 // Ausgabe: _relaunch/cache/probelauf/<satz>/<lauf>/ (NN-<art>.jpg, NN-aria.txt, NN-sichtbar.txt, lauf.json,
-//   eingabe.json). Konsole: kompakte Schrittliste, Zielprüfung, Bedienelemente im letzten Bild.
+//   eingabe.json); Kopf von lauf.json: { satz, base, bedingungen, erstellt }. Konsole: kompakte Schrittliste,
+//   Zielprüfung, Bedienelemente im letzten Bild.
 //   Exit-Code 0 = alle Schritte ausgeführt, 2 = Abbruch an einem Schritt (Grund + Kandidatenliste), 1 = Bedienfehler.
 //
 // Bezug: Z-04 (ABNAHME.md) – alle 5 Aufgaben lösbar, Schrittzahl ≤ Ausgangsstand, 0 Befunde „hoch“.
@@ -342,6 +347,8 @@ async function loese(page, name, { nr, inBereich, rollen = ROLLEN_TIPPE, feld = 
     if (sichtbar.length === 1) return { ...sichtbar[0], auswahl: 'eindeutig' };
     const frei = sichtbar.filter((k) => k.lage.imBild && k.lage.frei);
     if (frei.length === 1) return { ...frei[0], auswahl: `einziger freier Treffer im Bild (von ${sichtbar.length})` };
+    const imBild = sichtbar.filter((k) => k.lage.imBild);
+    if (!frei.length && imBild.length === 1) return { ...imBild[0], auswahl: `einziger Treffer im Bild (von ${sichtbar.length}), verdeckt`, liste }; // der Besucher sieht nur diesen
     throw new SchrittFehler(`mehrdeutig: „${name}“ trifft ${sichtbar.length} sichtbare Elemente (Stufe ${stufe}${gekappt ? `, von ${gesamt} nur die ersten 40 geprüft` : ''}) – mit "nr" (1…${sichtbar.length}) oder "in" (Bereichsname) wählen`, { kandidaten: liste });
   }
   const aeh = await aehnliche(page, name);
@@ -445,10 +452,11 @@ const BEDIEN_LISTE = (els, nurImBild) => {
   };
   return els.map((el, i) => {
     const r = el.getBoundingClientRect();
-    if (r.width <= 1 || r.height <= 1 || el.closest('[inert],[aria-hidden="true"]')) return null;
+    const roh = nurImBild === 'roh';
+    if (!roh && (r.width <= 1 || r.height <= 1 || el.closest('[inert],[aria-hidden="true"]'))) return null;
     const imBild = r.bottom > 0 && r.right > 0 && r.top < vh && r.left < vw;
-    if (nurImBild && !imBild) return null;
-    if (el.checkVisibility && !el.checkVisibility({ opacityProperty: true, visibilityProperty: true })) return null;
+    if (nurImBild === true && !imBild) return null;
+    if (!roh && el.checkVisibility && !el.checkVisibility({ opacityProperty: true, visibilityProperty: true })) return null;
     let frei = false, verdeckt = null;
     if (imBild) {
       const cx = Math.min(Math.max(r.left + r.width / 2, 1), vw - 1), cy = Math.min(Math.max(r.top + r.height / 2, 1), vh - 1);
@@ -462,6 +470,18 @@ const BEDIEN_LISTE = (els, nurImBild) => {
     return { i, y: Math.round(r.top), x: Math.round(r.left), imBild, frei, verdeckt, rolle: ro, name: n, beschreibung: `${ro}${n ? ` "${kurzN}"` : ''}${zust ? ' ' + zust : ''}` };
   }).filter(Boolean);
 };
+
+// Seitenausdruck: fokussiertes Element nach einem Tastendruck (für „taste … bis“).
+const FOKUS_JETZT = `(async () => {
+  await new Promise((r) => setTimeout(() => setTimeout(r, 0), 0));
+  const L = ${BEDIEN_LISTE.toString()};
+  let el = document.activeElement;
+  if (!el || el === document.body || el === document.documentElement) return { beschreibung: '(kein Fokus)', name: '', text: '', istErste: false };
+  const d = L([el], 'roh')[0] || { beschreibung: el.tagName.toLowerCase(), name: '' };
+  const w = window.__probelaufErster; let istErste = false;
+  if (!w) window.__probelaufErster = new WeakRef(el); else istErste = w.deref() === el;
+  return { beschreibung: d.beschreibung, name: d.name || '', text: (el.innerText || el.value || '').replace(/\\s+/g, ' ').trim().slice(0, 200), istErste };
+})()`;
 
 async function bedienImBild(page) {
   const lagen = await page.locator(BEDIEN_SEL).evaluateAll(BEDIEN_LISTE, true).catch(() => []);
@@ -539,6 +559,7 @@ const V = ANSICHTEN[ansicht];
 if (!V) { console.error(`Unbekannte Ansicht ${ansicht} (${Object.keys(ANSICHTEN).join(', ')})`); process.exit(1); }
 if (!['touch', 'maus', 'tastatur'].includes(eingabe)) { console.error(`Unbekannte Eingabe ${eingabe} (touch|maus|tastatur)`); process.exit(1); }
 if (eingabe === 'touch' && !V.hasTouch) { console.error(`Touch braucht eine Touch-Ansicht (m375, t768) – ${ansicht} hat kein Touch.`); process.exit(1); }
+if (Array.isArray(def.befunde) && def.befunde.some((b) => !['hoch', 'mittel', 'gering'].includes(b && b.schwere))) { console.error('befunde: jede Angabe braucht schwere hoch|mittel|gering'); process.exit(1); }
 if (def.aufgabe && !aufgabe) { console.error(`Unbekannte Aufgabe ${def.aufgabe} (1–5)`); process.exit(1); }
 if (!/^\/[^/]/.test(start) && start !== '/') { console.error(`Start muss ein Pfad sein (z. B. "/"), nicht ${start}`); process.exit(1); }
 
@@ -579,7 +600,7 @@ const bedingungen = {
   ansicht, viewport: { width: V.width, height: V.height }, isMobile: V.isMobile, hasTouch: V.hasTouch, dpr: 1, eingabe,
   browser: `chromium ${browser.version()}`, playwright: '1.56.1', reducedMotion: 'no-preference', locale: 'de-DE', zeitzone: 'Europe/Berlin',
   feste_zeit: echteZeit ? null : FESTE_ZEIT.toISOString(), einwilligung: 'erstbesuch', sperre: 'installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)',
-  warten: 'Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften',
+  warten: 'Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s',
   aktion_timeout_ms: AKTION_TIMEOUT, stoerung: stoerCss ? { css: stoerCss, hinweis: 'GEGENPROBE – kein gültiges Ergebnis' } : null,
   werkzeug: `probelauf.mjs ${WERKZEUG_VERSION}`,
 };
@@ -587,7 +608,8 @@ const bedingungen = {
 const ergebnis = {
   satz, base: BASE, bedingungen, erstellt: new Date().toISOString(),
   lauf, aufgabe: def.aufgabe || null, titel: aufgabe ? aufgabe.titel : null, auftrag: aufgabe ? aufgabe.auftrag : null,
-  start, eingabe_datei: path.relative(RELAUNCH, eingabeDatei), antwort: def.antwort || null,
+  start, eingabe_datei: path.relative(RELAUNCH, eingabeDatei), antwort: def.antwort || null, gegenprobe: !!def.gegenprobe,
+  befunde: Array.isArray(def.befunde) ? def.befunde : [], // vom Probeläufer eingetragen: {schwere: hoch|mittel|gering, schritt, text}
   schritte: [], handlungen_gesamt: 0, ziel: null, abbruch: null, anfragen: protokoll, verlassen: [], konsolenfehler,
 };
 const zielStand = aufgabe ? aufgabe.ziel.map((b) => ({ name: b.name, erfuellt: false, bei_schritt: null, treffer: null })) : [];
@@ -676,8 +698,14 @@ async function fuehreAus(s, nr) {
       return info;
     }
     try {
-      if ((await bediene(k.loc)).unbestaetigt) info.hinweise.push(UNBESTAETIGT);
+      // Liegt das Ziel im Bild, aber sein Mittelpunkt unter einer anderen Ebene (z. B. Banner), bekommt Playwright
+      // nur eine kurze Frist: wird es nicht frei, ist es für den Besucher verdeckt.
+      if (k.lage.imBild && !k.lage.frei) {
+        try { await (eingabe === 'touch' ? k.loc.tap({ timeout: 4000 }) : k.loc.click({ timeout: 4000 })); }
+        catch (e) { throw new SchrittFehler(`nicht bedienbar: „${s.tippe}“ ist verdeckt durch ${k.lage.verdeckt}`, { kandidaten: k.liste || [kandidatText(k, 0)], pw_log: pwLog(e) }); }
+      } else if ((await bediene(k.loc)).unbestaetigt) info.hinweise.push(UNBESTAETIGT);
     } catch (e) {
+      if (e instanceof SchrittFehler) throw e;
       const m = /<[^>]+> (?:from <[^>]+> subtree )?intercepts pointer events/.exec(e.message);
       throw new SchrittFehler(m ? `nicht bedienbar: „${s.tippe}“ ist verdeckt – ${kurz(m[0], 160)}` : `Antippen fehlgeschlagen: ${pwGrund(e)}`, { pw_log: pwLog(e) });
     }
@@ -694,12 +722,14 @@ async function fuehreAus(s, nr) {
       let erste = null;
       for (let i = 1; i <= maxN; i++) {
         await page.keyboard.press(taste);
-        await page.evaluate(() => new Promise((r) => setTimeout(() => setTimeout(r, 0), 0))); // Aufgaben-Warteschlange einmal leeren (Fokus-Handler)
-        const f = page.locator('*:focus');
-        const b = (await f.count()) ? await beschreibe(f.first()) : '(kein Fokus)';
+        // Eine Abfrage je Tastendruck (unter Last sonst 5 Runden): Aufgaben-Warteschlange leeren (Fokus-Handler),
+        // dann Rolle/Name des fokussierten Elements (Näherung wie in der Bedienliste) und Rundlauf-Erkennung.
+        const f = await page.evaluate(FOKUS_JETZT).catch(() => ({ beschreibung: '(Fokus nicht lesbar)', name: '', text: '', istErste: false }));
+        const b = f.beschreibung;
         spur.push(b);
-        const istErste = (await f.count()) ? await f.first().evaluate((el) => { const w = window.__probelaufErster; if (!w) { window.__probelaufErster = new WeakRef(el); return false; } return w.deref() === el; }) : false;
-        if (falte(teileRolleName(b).name).includes(ziel) || falte(b).includes(ziel)) {
+        const istErste = f.istErste;
+        if (falte(f.name).includes(ziel) || falte(f.text).includes(ziel) || falte(b).includes(ziel)) {
+          const genau = await page.locator('*:focus').first().count() ? await beschreibe(page.locator('*:focus').first()) : b; spur[spur.length - 1] = genau;
           info.handlungen = i; info.spur = spur.slice(-12); info.hinweise.push(`${i}× ${s.taste} bis „${s.bis}“`);
           await page.evaluate(() => { delete window.__probelaufErster; });
           Object.assign(info, { ruhe: await nachAktion() });
@@ -906,15 +936,20 @@ function matrix() {
   for (const d of fs.readdirSync(dir)) {
     const f = path.join(dir, d, 'lauf.json'); if (!fs.existsSync(f)) continue;
     const j = JSON.parse(fs.readFileSync(f, 'utf8'));
-    laeufe.push({ lauf: j.lauf, aufgabe: j.aufgabe, modus: `${j.bedingungen.ansicht} ${j.bedingungen.eingabe}`, geloest: j.ziel ? j.ziel.erreicht : null, handlungen_bis_ziel: j.ziel ? j.ziel.handlungen_bis_ziel : null, handlungen_gesamt: j.handlungen_gesamt, abbruch: j.abbruch ? j.abbruch.grund : null, gegenprobe: !!j.bedingungen.stoerung, erstellt: j.erstellt });
+    laeufe.push({ lauf: j.lauf, aufgabe: j.aufgabe, modus: `${j.bedingungen.ansicht} ${j.bedingungen.eingabe}`, geloest: j.ziel ? j.ziel.erreicht : null, handlungen_bis_ziel: j.ziel ? j.ziel.handlungen_bis_ziel : null, handlungen_gesamt: j.handlungen_gesamt, abbruch: j.abbruch ? j.abbruch.grund : null, gegenprobe: !!j.bedingungen.stoerung || !!j.gegenprobe, befunde: Array.isArray(j.befunde) ? j.befunde : [], erstellt: j.erstellt });
   }
   laeufe.sort((a, b) => (a.aufgabe || 9) - (b.aufgabe || 9) || a.modus.localeCompare(b.modus));
   const modi = ['m375 touch', 'd1440 maus', 'd1440 tastatur'];
   console.log(`Satz ${satz} · ${laeufe.length} Läufe\nAufgabe | ${modi.join(' | ')}`);
   for (const n of [1, 2, 3, 4, 5]) {
-    const zellen = modi.map((m) => { const l = laeufe.filter((x) => x.aufgabe === n && x.modus === m && !x.gegenprobe); if (!l.length) return '–'; const x = l[l.length - 1]; return x.geloest ? `gelöst ${x.handlungen_bis_ziel}` : `offen${x.abbruch ? ' (Abbruch)' : ''}`; });
+    const zellen = modi.map((m) => { const l = laeufe.filter((x) => x.aufgabe === n && x.modus === m && !x.gegenprobe).sort((a, b) => String(a.erstellt).localeCompare(String(b.erstellt))); if (!l.length) return '–'; const x = l[l.length - 1]; const hoch = x.befunde.filter((b) => b.schwere === 'hoch').length; return (x.geloest ? `gelöst ${x.handlungen_bis_ziel}` : `offen${x.abbruch ? ' (Abbruch)' : ''}`) + (x.befunde.length ? ` · ${x.befunde.length} Befund(e)${hoch ? `, ${hoch} hoch` : ''}` : ''); });
     console.log(`${n} | ${zellen.join(' | ')}`);
   }
-  fs.writeFileSync(path.join(dir, 'matrix.json'), JSON.stringify({ satz, base: BASE, bedingungen: { quelle: 'lauf.json je Lauf', modi }, erstellt: new Date().toISOString(), laeufe }, null, 1));
+  const zusammen = { satz, base: BASE, bedingungen: { quelle: 'lauf.json je Lauf (Messbedingungen dort)', modi, protokoll: '_relaunch/PROBELAUF.md' }, erstellt: new Date().toISOString(), laeufe };
+  fs.writeFileSync(path.join(dir, 'matrix.json'), JSON.stringify(zusammen, null, 1));
   console.log(`→ ${path.relative(path.resolve(RELAUNCH, '..'), path.join(dir, 'matrix.json'))}`);
+  if (flag('beleg')) { // Zusammenfassung als Beleg (nur wenn das Paket Schreibrechte unter belege/ gibt)
+    const ziel = path.join(RELAUNCH, 'belege', satz, 'probelauf.json'); ensureDir(path.dirname(ziel));
+    fs.writeFileSync(ziel, JSON.stringify(zusammen, null, 1)); console.log(`→ ${path.relative(path.resolve(RELAUNCH, '..'), ziel)}`);
+  }
 }
