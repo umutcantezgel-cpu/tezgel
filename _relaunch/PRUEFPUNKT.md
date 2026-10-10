@@ -1,10 +1,10 @@
 # PRUEFPUNKT
 
 - Lauf: 1 (angepasst, E-000) · Phase: P3 (Durchstich `/`, ruhend) · L0 abgeschlossen
-- Letzter grüner Commit live: 57470f8 (P3-00l Formular-Hooks; T2 grün, Live-Rauchtest + Live-Browser grün)
-- Lokal, noch nicht gepusht: 70a77a8 P3-00p (Hooks F-10/F-11 – braucht T2), af2cf20 P3-04, 8f6f470 P3-03, 7dbfb18 P3-11, 6d1539c (Sprite im Kern-Layout, Staffel-Regel, Alt-Text) – Kern-Teile ruhend (T1 streng)
-- Laufende Pakete: P3-03b (Zeichen an Icon-Familie, enter-sicherer SendeKnopf), P3-06a/b (Kopf-Varianten), P3-07 (Fuß, Leiste, WhatsApp-Kanal), P3-08 (Banner, Karten-Platzhalter)
-- Server: 4310 Ausgangsstand 707a93d · 4311 a32b6de · 4312 56fd0dd (= Live-Quelltext) · 4320 Vorschau 444298e-v
-- Nächster exakter Schritt: Reinraum 6d1539c + `build-vergleich 56fd0dd 6d1539c --streng` (läuft) → T2 P3-00p: volle Suite, Mutationsprobe (W1 Kontexttext /bad, W2 Entprellung 0, B1 Ablehnen→Annehmen, B2 Hash, B3 Auswahl vertauscht), Gegenprüfer P3-00p-GEG, Pixel-Stichprobe Banner Erstbesuch → Push nur auf main (E-005: kein Vorab-Push auf den Sitzungs-Branch) → Live-Rauchtest + Live-Browser. Danach Vorschau-Kandidat (p3-03, p3-04, p3-05, p3-11, später p3-06-a/b, p3-07, p3-08) fotografieren und prüfen.
-- Offen danach: Basis-Matrix Probeläufer (15 Läufe), Fünf-Sekunden-Probe, Slop-Stichprobe Vorlagen, INP-Basis im ruhigen Fenster (`node inp.mjs --satz p0-ausgangsstand --seiten /,/kontakt,/blog --ansichten m375`).
-- Ruhender Code auf main: `src/app/fonts/`, `src/styles/kern*.css`, `src/lib/motion/`, `src/lib/kern/`, `src/components/kern/`, `src/app/(kern)/` (nur Layout + `_entwurf`).
+- Letzter grüner Commit live: 9542dd9 (Kern-Pakete ruhend, T1 streng gleich); letzter Bestandseingriff live: f213507 (Hooks WhatsApp/Banner/Kurzformular, T2 grün, Live-Browser grün)
+- Ruhend auf main: Kern-Layout (Kopf B, Fuß, Leiste, WhatsApp-Kanal, Banner, Sprite), Grundbausteine, Icons, Motive, alle Startseiten-Abschnitte, Startseiten-Entwurf `(kern)/_entwurf/page.tsx`, Kern-404-Entwurf.
+- Variantenwahl E-022: Kopf B + Einstieg B unter Auflagen; laufend: P3-06c (Kopf-Auflagen), P3-09c (Einstieg-Auflagen).
+- Server: 4310 Ausgangsstand 707a93d · 4320 Vorschau 5acf806-v (ohne Kopf im Layout).
+- Nächster exakter Schritt: nach P3-06c/P3-09c → Vorschau `VORSCHAU="/ …" reinraum.sh HEAD` (Port 4320), Fotos `/` in 4 Ansichten + Mega-Blatt + Mobilmenü + Banner-Erstbesuch, Selbstprüfung (Überlauf, Konsole, axe, Klassen-Abdeckung `kern-klassen.mjs`), dann Kandidat `KANDIDAT="/" reinraum.sh HEAD` (Port 4321) → P3-14a–d Testschreiber (Haiku) + Opus-Gegenprüfer → T2 voll (Suite, Text v2 mit MIKROTEXTE, SEO, Logo, axe + a11y-zusatz, Überlauf, Bewegung, SVG, Pixel 0 auf allen anderen Seiten, Lighthouse verschränkt auf `/`, Slop, Jury 3 + Lockvogel) → `KANDIDAT_BASIS=<sha> freischalten.sh --commit /` → Push → Live-Prüfung.
+- Offen: Basis-Matrix Probeläufer (15 Läufe), Fünf-Sekunden-Probe, Slop-Stichprobe Vorlagen, INP-Basis im ruhigen Fenster (`node inp.mjs --satz p0-ausgangsstand --seiten /,/kontakt,/blog --ansichten m375`) – vor P3-16 nötig (T3).
+- Werkzeug-Stand: server.sh beendet ganze Prozesskette (75bf4da); tor-t1.sh Importregel N-20 präzisiert (96cd58d).
