@@ -440,3 +440,12 @@
   }
 
 }
+
+/* Anzeigeschnitt für Titel ohne Überschriften-Element (Formulartitel, Kennwerte, Merkliste): schmal gesetzt wie
+   h1–h6 (KERN K-006), damit Titel und Überschriften denselben Schnitt zeigen */
+@layer utilities {
+  .font-anzeige {
+    font-stretch: 74%;
+    letter-spacing: -0.01em;
+  }
+}
