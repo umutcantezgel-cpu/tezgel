@@ -299,3 +299,10 @@ Dazu:
 - **Je Welle:** das Push-Tor oben, also Reinraum-Build mit allen `npm`-Prüfungen, die Playwright-Suiten (Funktion, Darstellung, Bewegung, axe, forced-colors, ohne JS), Invarianten-Skripte, dann Vorschau-Status, Produktionsstatus und Live-Rauchtest.
 - **An Phasentoren:** Volltest über die 120 Seiten in 4 Ansichten (Lauf 2: 6), Lighthouse-Median aus 5 je Hauptseite, Jury zu dritt mit Lockvogel, Mutationsprobe, Gegenprüfer.
 - **Abschluss:** frischer Gegenprüfer gegen ABNAHME.md, mit Beleg für jede Zeile.
+
+## Vorrat (aus P0-Befunden, je mit Kriterium)
+- V-01 (Z-13/Z-04, P5 W3): /standorte mobil – Info-Kasten der Karte überdeckt „Karte laden & zustimmen“; danach `test.fixme(isMobile…)` in funktion-einwilligung.spec.mjs entfernen.
+- V-02 (Z-05, P5 W9): /kontakt – Hydrationsfehler #418, wenn Besuchstag ≠ Build-Tag (Kalender statisch vorgerendert) → Kalender clientseitig nach dem Mount rendern (Darstellung, keine Logik).
+- V-03 (Z-11, P5): LeadQuickForm – Labels mit Feldern verknüpfen (htmlFor/id); Fehlerblöcke mit role="alert" (BadProjektCheck, FliesenKonfigurator, TezgelAnfrageFunnel).
+- V-04 (Z-06, P4): Weiterleitungen/410 nach Plan.
+- V-05 (Z-05/Mikrotext, P5): `tel:`-Ziel in DirectContactCard ohne Leerzeichen; feste Telefonnummern in BookingCalendar/LeadQuickForm aus COMPANY_DATA.
