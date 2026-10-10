@@ -84,3 +84,15 @@ Ausgabe muss leer sein (siehe Stolpersteine).
 - `next dev` (16.3) pflegt in `AGENTS.md` einen verwalteten Block (`<!-- BEGIN:nextjs-agent-rules -->`); laut `node_modules/next/dist/docs/01-app/02-guides/ai-agents.md` wird die Auffrischung mit committet (kein `agentRules: false`).
 - `.gitignore` enthält `/_werkstatt/werkzeuge/node_modules` (Symlink, daher ohne Schrägstrich).
 - Die Anfrage-Route läuft ohne Mail-Schlüssel im Mock-Modus (keine `.env*`, keine `RESEND_*`-Variable) – Testläufe gegen die echte Route versenden nichts.
+
+## Variante mit Platzhalter-Analyse-ID (Tracking-Test, Port 4311)
+Für `funktion-tracking.spec.mjs` (Tracking erst nach Einwilligung) wird derselbe Stand zusätzlich mit einer
+Platzhalter-Kennung gebaut (keine echte Kennung, keine echte Anfrage – die Werkzeuge sperren Fremd-Hosts):
+
+```bash
+S=<Scratchpad>
+REINRAUM_DIR=$S/reinraum-ga-<commit> NEXT_PUBLIC_GA4_ID=G-TEST000000 bash _werkstatt/werkzeuge/reinraum.sh <commit> $S/reinraum-ga-log
+PORT=4311 REINRAUM_DIR=$S/reinraum-ga-<commit> bash _werkstatt/werkzeuge/server.sh start <commit>
+RELAUNCH_BASE=http://127.0.0.1:4311 RELAUNCH_TRACKING=1 npx playwright test funktion-tracking.spec.mjs --workers=1
+```
+`server.sh stop` beendet nur den Server des jeweiligen Ports (Verzeichnis in `server-<Port>.dir`).
