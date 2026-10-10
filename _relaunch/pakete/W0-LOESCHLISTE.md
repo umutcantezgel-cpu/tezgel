@@ -35,7 +35,7 @@ Bleiben: `@googlemaps/js-api-loader` (Abhängigkeit von `@vis.gl/react-google-ma
 - `.gitignore.old` (Vite-Vorlage), `netlify.toml` (Vite-SPA-Rewrite auf `/index.html`, `dist`), `Dockerfile`, `.dockerignore` (Vite-SPA)
 - `fonts.css` (Wurzel; IBM Plex/Inter von gstatic, nirgends importiert)
 - `public/file.svg`, `public/globe.svg`, `public/next.svg`, `public/vercel.svg`, `public/window.svg` (Next-Vorlage, nirgends referenziert)
-- `public/llms.txt` – veraltetes Duplikat der Route `src/app/llms.txt/route.ts`; Vercel liefert live bereits die Route, lokal überschattet die Datei sie (Abweichung lokal/live) und behauptet „Meisterbetrieb“/„Fliesenlegermeister“.
+- `public/llms.txt` – veraltetes Duplikat der Route `src/app/llms.txt/route.ts`; Vercel liefert live bereits die Route, lokal überschattet die Datei sie (Abweichung lokal/live) und ist inhaltlich veraltet.
 - `.github/workflows/deploy.yml` (Node 18, lädt `dist/` hoch, das es nicht gibt; scheitert bei jedem `v*`-Tag; deployt nichts)
 - Ignore-Einträge in `eslint.config.mjs`/`tsconfig.json` für die gelöschten Ordner
 

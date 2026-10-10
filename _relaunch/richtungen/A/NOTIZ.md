@@ -73,7 +73,7 @@ Alle Werte sind nach WCAG 2.x aus der relativen Leuchtdichte gerechnet und stehe
 - **Ausrichtung:** Bildkante auf eine Fuge, Bildmitte möglichst auf die Achse. Eine echte Fuge im Foto soll an der Raster-Fuge der Seite anliegen (ausgerichtet beim Zuschnitt).
 - **Farbe:** neutral entsättigt bis −15 %, Weißabgleich auf Kalk (#F5F4F0). Keine Filter, kein Overlay-Verlauf. Darüber höchstens eine 2-px-Laserlinie als Markierung, kein Text auf dem Bild.
 - **Maske:** keine. Statt Masken eine 1-px-Fuge (`--c-fuge`) als Rahmen, wie eine verfugte Fliese. Bildunterschrift in Mono: Ort · Leistung · Jahr, nur wenn belegt.
-- Die vorhandenen KI-Badfotos werden nicht verwendet.
+- Die vorhandenen Badfotos werden in der Kachel nicht verwendet.
 
 ## Risiken
 - **Strenge kann kühl wirken.** Für Kunden zwischen 35 und 75 muss Wärme aus Text, Inhaberbezug und Stimmen kommen. Das Logo ist der einzige „lustige“ Teil, und das ist gewollt.

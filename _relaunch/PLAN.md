@@ -21,7 +21,7 @@ Du hast zwei Aufträge geschickt: Lauf 1 „Rückführung und Veredelung“ und 
 | `_relaunch/` | nur lokal | **Ins Repo**, mit zwei begründeten Einschränkungen (siehe unten). |
 
 **Zwei Abweichungen, die ich vorschlage, weil das Repo öffentlich ist:**
-1. **Heikle Details nicht öffentlich.** Sicherheitslücken (offenes `/api/indexnow`, Inhalts-Override per localStorage, Lead-Fallback) und rechtliche Angriffsflächen (KI-Fotos als eigene Arbeit, unbelegte Behauptungen, Lücken in der Datenschutzerklärung) stehen nur in `_relaunch/intern/`. Der Ordner ist per `.git/info/exclude` ausgeschlossen. Du bekommst die Details im Chat und im Morgenbericht; das committete MENSCHEN.md verweist nur neutral darauf.
+1. **Heikle Details nicht öffentlich.** Sicherheits- und Rechtsbefunde stehen nur in `_relaunch/intern/`. Der Ordner ist per `.git/info/exclude` ausgeschlossen. Du bekommst die Details im Chat und im Morgenbericht; das committete MENSCHEN.md verweist nur neutral darauf.
 2. **Belege in vertretbarer Menge.** Ins Repo kommen alle Belege, auf die MESSUNGEN, ABNAHME oder BERICHT verweisen: Hauptseiten und je Vorlage zwei Seiten, als JPEG q70 bei DPR 1, dazu Kontaktbögen, Lighthouse-Mediane als Zahlen, Bildfolgen und Aufzeichnungen. Massen-Rohaufnahmen (über 4.000 Bilder je Volltest) bleiben im lokalen Cache; aus jeder Commit-Kennung lassen sie sich neu erzeugen. Grenzen: keine Datei über 5 MB, höchstens 50 MB je Push.
 
 **Unverändert gilt der Rest beider Aufträge:**
@@ -61,7 +61,7 @@ Du hast zwei Aufträge geschickt: Lauf 1 „Rückführung und Veredelung“ und 
   - `SECURITY.md` beschreibt die alte Authentifizierung.
   - Wurzel-`fonts.css` und `src/styles/index.css` sind ungenutzt.
   - `src/config/routes.js` und `createPageUrl` (`/energieberatung`) sind ungenutzt.
-  - `public/llms.txt` ist tot (live liefert die Route) und behauptet „Meisterbetrieb“.
+  - `public/llms.txt` ist tot (live liefert die Route), Inhalt veraltet.
   - Ungenutzte Abhängigkeiten: `motion`, `vanilla-cookieconsent` sicher; `@radix-ui/react-slot`, `@tanstack/react-query`, `class-variance-authority`, `dompurify` per knip prüfen.
 - **Nicht löschen:**
   - Coday-Credits (deine Agentur, teils Rechtstext) und Formularoptionen wie „Fußbodenheizung“ (Fliesenthema).
@@ -69,17 +69,7 @@ Du hast zwei Aufträge geschickt: Lauf 1 „Rückführung und Veredelung“ und 
   - Logo-Ordner, E-Mail-Vorlagen, `icon.png`.
 - **Verwaiste Tezgel-Komponenten** (TrustBadges, TrustSignals, ContactSection, TiltCard, AnimatedNumber, OptimizedImage, ContactMapWrapper, BlogComments, Lightbox, FloatingDock, RotatingText, `common/GoogleMap`, LaserLevelLine …) werden im zuständigen P4- oder P5-Paket mit Protokoll entfernt oder wiederverwendet.
 - **URLs:** Es gibt keine Weiterleitungen. Batherm-Pfade (`/heizung/*`, `/haustechnik/*`, `/lueftung/*`, `/energie/*`, `/gewerbe/*`, `/energieberatung`, `/notdienst`, 13 HVAC-Blogslugs, `/referenzen/project-00x`) liefern 404. Tezgel-Umbenennung: `/bad/budgetkalkulator` → `/bad/projekt-check`. Die URLs der Original-tezgel.de sind unbekannt (Wayback gesperrt); ein Search-Console-Export kommt nach MENSCHEN.md.
-- **Wahrheit und Recht → `_relaunch/intern/`:**
-  - Alle 11 Fotos sind offenbar KI-generiert (Gemini: C2PA-Kennzeichen, sichtbares Wasserzeichen) und werden per Alt-Text als eigene Arbeit ausgegeben. Wasserzeichen werden **nicht** weggeschnitten oder retuschiert.
-  - Die Referenzen sind Platzhalter.
-  - Die Datenschutzerklärung nennt Resend, Vercel, Maps, GA4 und Meta nicht.
-  - Erstbesuch-Fehler in der Einwilligung.
-  - BookingCalendar verliert Datum und Uhrzeit.
-  - Lead-Fallback auf Vercel wirkungslos.
-  - Behauptungen: „#1 Fachbetrieb“, „Meister-Erfahrung“ (2 Stellen), „DIN 18534 zertifiziert“ (in die Metadaten zurückgekehrt), „Fliesenausstellung“.
-  - Öffnungszeiten widersprüchlich; „5,0 / 27“ siebenmal von Hand eingetragen; „über 15 Jahre“.
-  - Die Video-Sitemap nennt Videos, die es nicht gibt.
-  - Lizenz des Maskottchens unklar.
+- **Wahrheit und Recht:** Befunde I-01 bis I-18 stehen ausschließlich in `_relaunch/intern/BEFUNDE.md` (nicht öffentlich); MENSCHEN.md verweist neutral darauf.
 - **Umgebung:**
   - 4 CPUs, 15 GB RAM, 30 GB frei.
   - Node 22.22 (`.nvmrc` sagt 20 und bleibt; Grund in ENTSCHEIDUNGEN.md).
@@ -253,7 +243,7 @@ Du hast zwei Aufträge geschickt: Lauf 1 „Rückführung und Veredelung“ und 
 10. Rechtsseiten (nur Darstellung)
 
 Dazu:
-- Mikrotexte direkt; Wahrheitskorrekturen in Metadaten und Badges protokolliert („zertifiziert“ → „normgerecht nach DIN 18534“, „Meister-Erfahrung“, „#1“). Überschriften und Fließtext nur als Vorschlag.
+- Mikrotexte direkt; Wahrheitskorrekturen in Metadaten und Badges protokolliert (Liste intern). Überschriften und Fließtext nur als Vorschlag.
 - Ein Lauf ohne JavaScript je Welle; die Mutationsprobe an jedem Phasentor und bei jedem neuen Testtyp, im ruhigen Fenster, dateigenau zurückgesetzt.
 - **Tor:** Z-03 bis Z-07, Z-09 bis Z-13.
 
@@ -291,7 +281,7 @@ Dazu:
 ## Risiken
 - **Live zwischen den Wellen:** P3 bleibt auf `/` begrenzt, P4 ist der globale Umstieg, P5 geht clusterweise vor. Vorab-Vorschau, Reinraum-Build, Live-Rauchtest, Revert.
 - **Harte S-01-Behauptungen im unantastbaren Fließtext:** Sie gehen nach TEXTVORSCHLAEGE und MENSCHEN. Bleiben sie offen, wird Z-07 nach L7 zur AUSNAHME mit Begründung.
-- **KI-Fotos:** Typografie und SVG-Formsystem tragen die Gestaltung. Ehrliche Alt-Texte, einheitliche Behandlung ohne Wasserzeichen-Kaschierung. Echte Baustellenfotos werden angefragt.
+- **Bildmaterial:** Typografie und SVG-Formsystem tragen die Gestaltung. Ehrliche Alt-Texte, einheitliche Behandlung, keine Retusche. Echte Baustellenfotos werden angefragt.
 - **Messrauschen** im Container: Median aus 5, ruhiges Messfenster, Bedingungen notiert. Live-Lighthouse ist nicht maßgeblich.
 - **Laufzeit, Nutzungslimits, Kontextverdichtung:** L5-Prüfpunkte im Repo, Paketvorrat, Fortsetzung nach dem Limit-Reset.
 

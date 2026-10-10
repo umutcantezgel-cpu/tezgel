@@ -6,7 +6,7 @@ Sortiert nach Wirkung × Unsicherheit. Jede Zeile hat Lichtungsaufgabe oder Gege
 |---|---|---|---|---|
 | riskant | Jeder Push auf main geht live; ein Fehler trifft echte Besucher | hoch | mittel | Push-Tor: Reinraum-Build, Invarianten, Vorschau-Status, Live-Rauchtest, Revert-Regel |
 | riskant | Richtung trifft die Marke nicht (keine Geschmacksabnahme, vollautonom) | hoch | mittel | Drei Stilkacheln, Jury mit Lockvogel, Denkprotokoll; M-07 |
-| riskant | Bildmaterial ist KI-generiert → Echtheit und Jury-Inhalt leiden | hoch | gering | Typografie und SVG tragen; ehrliche Alt-Texte; M-02 |
+| riskant | Bildmaterial trägt die Marke nicht (Jury P0) → Bildwelt muss ohne Fotos tragen | hoch | gering | Typografie und SVG tragen; ehrliche Alt-Texte; M-02 |
 | riskant | Harte S-01-Befunde im unantastbaren Fließtext | mittel | mittel | TEXTVORSCHLAEGE + MENSCHEN; ggf. Z-07 AUSNAHME nach L7 |
 | riskant | Suchverlust (stark SEO-optimierte Seite) | hoch | gering | SEO-Invarianten je Welle; 308/410 für alte Pfade |
 | riskant | Recht und Datenschutz bei Schriften, Einbettungen, Tracking | mittel | gering | nichts Neues von Dritten, Schriften lokal, M-01 |
