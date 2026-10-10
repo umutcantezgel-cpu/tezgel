@@ -11,7 +11,7 @@ for p in "$@"; do
   if [ ! -e "$p" ] && ! git ls-files --error-unmatch -- "$p" >/dev/null 2>&1; then echo "ABBRUCH: unbekannter Pfad: $p"; exit 6; fi
 done
 if [ -n "${PAKET:-}" ]; then
-  muster=$(grep -m1 -i '^Schreibrechte:' "$PAKET" | grep -o '`[^`]*`' | tr -d '`' || true)
+  muster=$(grep -m1 'Schreibrechte:' "$PAKET" | sed 's/.*Schreibrechte://; s/· Kriterium.*//; s/· Umfang.*//' | grep -o '`[^`]*`' | tr -d '`' || true)
   [ -n "$muster" ] || { echo "ABBRUCH: keine Schreibrechte in $PAKET"; exit 7; }
   for p in "$@"; do
     ok=0; while IFS= read -r m; do [ -n "$m" ] || continue; case "$p" in $m) ok=1;; esac; done <<< "$muster"

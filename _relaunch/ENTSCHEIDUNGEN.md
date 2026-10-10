@@ -139,5 +139,5 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
 
 ## E-016 · Slop-Basis: Umfang
 - **Ziel:** belastbare Basis für Z-07 ohne 240 Agenten.
-- **Wahl:** Hart über alle Dateien per `statisch.mjs` (479), weich (a) über alle Dateien per `statisch.mjs` (1.383) und (b) per Slop-Jäger + Opus-Gegenprüfer auf einer festen Stichprobe: 7 Hauptseiten (74, MESSUNGEN) + je Vorlage zwei Seiten (P3-00, ≈ 22 Seiten). Die Abnahme vergleicht dieselbe Stichprobe vorher/nachher; am Ende zusätzlich Slop-Jäger über die Grundmenge in allen Ansichten (Z-07).
+- **Wahl:** Hart über alle Dateien per `statisch.mjs` (479), weich (a) über alle Dateien per `statisch.mjs` (1.383) und (b) per Slop-Jäger + Opus-Gegenprüfer auf einer festen Stichprobe: 7 Hauptseiten (74, MESSUNGEN; ≤ 30 Ausschnitte) + je Vorlage eine Seite (P3-00, 12 Seiten, je 16 Ausschnitte über 4 Ansichten; Liste `belege/p0-stichprobe-slop-args.json`). Begründung der Verkleinerung: Opus-Kontingent (P2-GEG-01 Befund 14/C-11). Die Abnahme vergleicht dieselbe Stichprobe vorher/nachher; am Ende zusätzlich Slop-Jäger über die Grundmenge in allen Ansichten (Z-07).
 - **Umkehrprobe:** Stichprobe ist fest in `belege/p0-slop-args.json` und folgender Datei; erweiterbar.

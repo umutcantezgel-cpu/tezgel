@@ -16,6 +16,15 @@ const PRUEF = {
   required: ['urteile', 'nachgetragen'],
 }
 const voll = (l) => l.map((x) => (x.startsWith('/') ? x : (args.basis || '') + x))
+// Kompaktform: args.kompakt = { "<seite>": { m375: [0,1,3], … } }, Pfad = <ansicht>/<slug>/<nn>.jpg; Text = args.texte_basis + slug + '.json'
+const slug = (p) => (p === '/' ? 'start' : p.replace(/^\//, '').replace(/\//g, '__'))
+if (args.kompakt) {
+  args.material = {}; args.texte = {}
+  for (const [s, ans] of Object.entries(args.kompakt)) {
+    args.material[s] = Object.entries(ans).flatMap(([a, nr]) => nr.map((n) => `${a}/${slug(s)}/${String(n).padStart(2, '0')}.jpg`))
+    args.texte[s] = args.texte_basis + slug(s) + '.json'
+  }
+}
 const seiten = Object.keys(args.material)
 const ergebnisse = await pipeline(
   seiten,

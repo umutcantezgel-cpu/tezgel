@@ -1,5 +1,5 @@
 // Wählt je Seite höchstens 30 Bildschirmhöhen-Ausschnitte über alle Ansichten (gleichmäßig verteilt, Anfang zuerst).
-// Nutzung: node jury-material.mjs <satz> [<quelle: belege|cache>] → belege/<satz>/jury-material.json
+// Nutzung: node jury-material.mjs <satz> [<quelle: belege|cache>] [<seiten>] [<ausgabe-satz>] → belege/<ausgabe-satz|satz>/jury-material.json
 import fs from 'node:fs';
 import path from 'node:path';
 import { RELAUNCH, grundmenge, slug } from './lib.mjs';
@@ -20,5 +20,7 @@ for (const s of seiten) {
     for (const b of verteilt(bilder, n)) material[s].push(path.join(d, b));
   }
 }
-fs.writeFileSync(path.join(RELAUNCH, 'belege', satz, 'jury-material.json'), JSON.stringify(material, null, 1));
+const aus = process.argv[5] || satz;
+fs.mkdirSync(path.join(RELAUNCH, 'belege', aus), { recursive: true });
+fs.writeFileSync(path.join(RELAUNCH, 'belege', aus, 'jury-material.json'), JSON.stringify(material, null, 1));
 for (const [s, l] of Object.entries(material)) console.log(s, l.length);
