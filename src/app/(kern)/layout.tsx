@@ -5,6 +5,7 @@ import { KOPF_SKRIPT } from '@/lib/motion/kopfskript';
 import BewegungsRegie from '@/lib/motion/BewegungsRegie';
 import TrackingScripts from '@/components/common/TrackingScripts';
 import Sprunglink from '@/components/kern/schale/Sprunglink';
+import IconSprite from '@/components/kern/icons/IconSprite';
 import { buildRootGraph } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
 import '@/styles/kern-global.css';
@@ -29,6 +30,7 @@ export default function KernLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className="min-h-screen flex flex-col">
         <Sprunglink />
+        <IconSprite />
         <TrackingScripts />
         <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
           {children}

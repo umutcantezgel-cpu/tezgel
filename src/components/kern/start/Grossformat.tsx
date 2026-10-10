@@ -49,7 +49,7 @@ export default function Grossformat() {
               <div className="relative aspect-2/1 overflow-hidden bg-k-kalk">
                 <Image
                   src="/images/bad/bad-freistehende-wanne.webp"
-                  alt="Freistehende Badewanne mit fugenlosem XXL-Fliesenbelag von Fliesenverlegung Tezgel"
+                  alt="Freistehende Badewanne vor bodentiefen Fenstern, Boden aus großformatigen hellen Natursteinplatten (generierte Darstellung)"
                   fill
                   quality={75}
                   sizes="(min-width: 82rem) 44rem, (min-width: 1024px) 58vw, 100vw"

@@ -120,6 +120,8 @@
    -------------------------------------------------------------------------- */
 [data-motion="auftritt"] {
   transition: opacity var(--k-dauer-3) var(--ease-k-setzen), transform var(--k-dauer-3) var(--ease-k-setzen);
+  /* Staffel: Element n setzt n × --k-staffel später ein (style="--k-staffel-nr: n", höchstens 8 je Gruppe) */
+  transition-delay: calc(var(--k-staffel) * var(--k-staffel-nr, 0));
 }
 html.k-bewegung [data-motion="auftritt"][data-ausloeser="sicht"]:not([data-sichtbar]) {
   opacity: 0;

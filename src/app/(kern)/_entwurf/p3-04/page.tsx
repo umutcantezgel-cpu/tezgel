@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Icon, { ICON_GROESSEN } from '@/components/kern/icons/Icon';
-import IconSprite from '@/components/kern/icons/IconSprite';
 import { FAMILIEN_NAMEN, ICONS, MARKEN_NAMEN, RICHTUNGEN, type IconName, type Richtung } from '@/components/kern/icons/geometrie';
 import { KONFIG_ICON_NAMEN, iconAbbildung } from '@/lib/kern/icons';
 import { RATING_SUMMARY } from '@/config/reviews';
@@ -41,7 +40,6 @@ export default function VorschauIcons() {
   const volle = Math.round(google.rating);
   return (
     <div className="mx-auto max-w-(--k-seite) px-(--k-rand) py-k-8 k-text">
-      <IconSprite />
       <h1 className="k-anzeige text-k-6">Vorschau P3‑04 · Icons</h1>
       <p className="mt-k-3 max-w-(--k-mass) text-k-2 text-k-tinte-2">
         24er-Raster · Strich 1,5 · square · miter · currentColor. Je Feld 16, 20, 24 und 32 px.

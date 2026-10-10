@@ -52,6 +52,8 @@ Stand 10.10.2026 · P3-00j · Kriterium Z-07 (S-13) · Fundstellen aus `belege/p
 | `src/shared/config/site.ts:29` (Beschreibung, `de`) | Ihr Fachbetrieb für exklusive Fliesenverlegung, … in Aßlar, Wetzlar und Hessen. | wie `src/lib/schema.ts:109` (eine Änderung für beide) | „exklusive“ (S-13); gleicher Satz wie `schema.ts:109`. |
 | `src/styles/tokens.css:56` (Kommentar) | `/* Warm Amber – Ratings & Premium Highlights */` | `/* Warm Amber – Bewertungen & Hervorhebungen */` | „Premium“ (S-13). Kommentar, ohne Seitenwirkung. |
 | `src/styles/index.css:83` (Kommentar) | `/* Premium typography defaults */` | entfällt: Datei nicht mehr im Arbeitsbaum (nur im Ausgangsstand 707a93d) | „Premium“ (S-13). Kommentar, ohne Seitenwirkung. |
+| `src/app/(bestand)/page.tsx:576–578` (Kern: `src/components/kern/start/Grossformat.tsx`) | Bad mit freistehender Wanne / Millimetergenauer Gehrungsschnitt &amp; C2TE S1 Flexkleber | Bildunterschrift streichen oder durch eine belegte Angabe zu einem echten Tezgel-Projekt ersetzen (Foto vom Auftraggeber) | Bildunterschrift nennt Ausführungsdetails unter einem generierten Bild (K-008: Bildunterschrift nur mit belegten Angaben). Nur Vorschlag (P3-11). |
+| `src/app/(bestand)/page.tsx:533` | Großformatige Platten verlangen höchste Präzision: … | Großformatige Platten verlangen Präzision: … | Superlativ „höchste“ (K-012). Absatz, nur Vorschlag (P3-11). |
 
 ## Offene Fragen zu den Vorschlägen
 

@@ -1,4 +1,3 @@
-import IconSprite from '@/components/kern/icons/IconSprite';
 import Ablauf from '@/components/kern/start/Ablauf';
 import Grossformat from '@/components/kern/start/Grossformat';
 
@@ -8,7 +7,6 @@ import Grossformat from '@/components/kern/start/Grossformat';
 export default function VorschauStartAblaufGrossformat() {
   return (
     <>
-      <IconSprite namen={['haken', 'pfeil', 'telefon']} />
       <div className="mx-auto max-w-(--k-seite) px-(--k-rand)">
         <div aria-hidden="true" className="flex min-h-screen items-end border border-dashed border-k-strich p-k-5">
           <span className="k-mono text-k-1 text-k-tinte-2">Platzhalter P3-11 · erster Bildschirm (Einstieg) · weiter nach unten</span>
