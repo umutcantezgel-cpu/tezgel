@@ -27,11 +27,18 @@ await context.route('**/*', (route) => {
   const dokument = req.resourceType() === 'document' || req.headers()['rsc'];
   if (!dokument && speicher.has(req.url())) return route.fulfill(speicher.get(req.url()));
   return warteschlange().then(async () => {
-    liveAnfragen++;
-    const antwort = await route.fetch();
-    const eintrag = { status: antwort.status(), headers: antwort.headers(), body: await antwort.body() };
-    if (!dokument) speicher.set(req.url(), eintrag);
-    return route.fulfill(eintrag);
+    // Seite kann inzwischen geschlossen sein (Anfrage noch in der Warteschlange): dann nichts mehr abrufen.
+    let zu = false; try { zu = req.frame().page().isClosed(); } catch { /* Anfrage ohne Rahmen */ }
+    if (zu) return;
+    try {
+      liveAnfragen++;
+      const antwort = await route.fetch();
+      const eintrag = { status: antwort.status(), headers: antwort.headers(), body: await antwort.body() };
+      if (!dokument) speicher.set(req.url(), eintrag);
+      await route.fulfill(eintrag);
+    } catch (e) {
+      if (!/closed/i.test(String(e?.message))) throw e;
+    }
   });
 });
 await context.addInitScript(() => {
@@ -55,6 +62,7 @@ for (const s of seiten) {
   await page.close();
   await new Promise((r) => setTimeout(r, 1000));
 }
+await context.unrouteAll({ behavior: 'ignoreErrors' });
 await browser.close();
 console.log(`Live-Anfragen: ${liveAnfragen} (≥ 1 s Abstand)`);
 console.log(rot ? `ROT (${rot})` : 'GRÜN');
