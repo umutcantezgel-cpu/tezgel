@@ -16,6 +16,10 @@ const URTEIL = {
 const SCHEMA_EINZEL = { type: 'object', properties: { urteil: URTEIL }, required: ['urteil'] }
 const SCHEMA_PAAR = { type: 'object', properties: { seite_1: URTEIL, seite_2: URTEIL }, required: ['seite_1', 'seite_2'] }
 const BRIEF = '/home/user/tezgel/_relaunch/pakete/_vorlage-jury.md'
+// Pfade dürfen relativ zu args.basis (bzw. args.basis_lockvogel) angegeben werden
+const voll = (b, l) => l.map((x) => (x.startsWith('/') ? x : (b || '') + x))
+for (const k of Object.keys(args.material)) args.material[k] = voll(args.basis, args.material[k])
+if (args.lockvogel) for (const k of Object.keys(args.lockvogel)) args.lockvogel[k] = voll(args.basis_lockvogel, args.lockvogel[k])
 const seiten = Object.keys(args.material)
 phase('Jury')
 const jobs = []
