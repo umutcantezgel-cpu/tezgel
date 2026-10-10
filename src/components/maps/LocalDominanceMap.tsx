@@ -47,8 +47,17 @@ export function LocalDominanceMap({
 
   return (
     <div className={clsx('flaeche-tinte flex flex-col gap-6 border border-nacht-fuge bg-tinte p-6 text-kalk lg:p-8', className)}>
+      {/* Zentrum und Fahrtzeit stehen im DOM vor der Rangliste (wie im Ausgangsstand); sichtbar unter dem Radar (order) */}
+      <div className="order-3 flex flex-col items-center gap-2 text-center font-mono text-fs-1 text-nacht-2">
+        <span>Zentrum: {centerCity}</span>
+        <span className="inline-flex items-center gap-2">
+          <Icon name="uhr" groesse={4} />
+          <span>Fahrtzeit ab Aßlar: {driveInfo.text}</span>
+        </span>
+      </div>
+
       {/* Rangliste: Felder an der Fuge */}
-      <ul className="grid gap-px border border-nacht-fuge bg-nacht-fuge">
+      <ul className="order-1 grid gap-px border border-nacht-fuge bg-nacht-fuge">
         {topRankings.map((badge, idx) => (
           <li key={idx} className="flex items-center gap-3 bg-tinte px-4 py-3 font-text text-fs-2 text-kalk">
             <Icon name={idx < 2 ? 'stern' : 'haken'} groesse={4} className="text-nacht-2" />
@@ -58,7 +67,7 @@ export function LocalDominanceMap({
       </ul>
 
       {/* Radar: Ringe um den Firmensitz, Fugenkreuz im Mittelpunkt */}
-      <div className="relative mx-auto w-full max-w-md">
+      <div className="order-2 relative mx-auto w-full max-w-md">
         <svg viewBox="-160 -160 320 320" aria-hidden="true" focusable="false" className="block h-auto w-full">
           {RINGE.map((r) => (
             <circle
@@ -78,16 +87,8 @@ export function LocalDominanceMap({
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-2 text-center font-mono text-fs-1 text-nacht-2">
-        <span>Zentrum: {centerCity}</span>
-        <span className="inline-flex items-center gap-2">
-          <Icon name="uhr" groesse={4} />
-          <span>Fahrtzeit ab Aßlar: {driveInfo.text}</span>
-        </span>
-      </div>
-
       {/* Fußzeile: Radius und Routenlink */}
-      <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="order-4 flex flex-col gap-4 border-t border-nacht-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
         <span className="inline-flex items-center gap-2 font-text text-fs-2 text-nacht-2">
           <Icon name="haken" groesse={4} />
           <span>Radius: ca. {radiusKm} km Vor-Ort-Einsatz</span>
