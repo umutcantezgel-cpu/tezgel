@@ -1,10 +1,23 @@
 #!/usr/bin/env bash
-# Commit-Routine des Orchestrators: nur ausdrücklich genannte Pfade, nie CLAUDE.md, Attributionszeilen.
-# Nutzung: commit.sh "<Betreff>" "<Text>" pfad1 [pfad2 ...]
+# Commit-Routine des Orchestrators: nur ausdrücklich genannte DATEIEN (keine Verzeichnisse), nie CLAUDE.md, Attributionszeilen.
+# Nutzung: commit.sh "<Betreff>" "<Text>" datei1 [datei2 ...]
+# Optional: PAKET=_relaunch/pakete/<Kennung>.md – jede Datei muss zu einem Muster der Zeile „Schreibrechte:“ passen.
 set -euo pipefail
 cd "$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 SUBJ="$1"; BODY="$2"; shift 2
 [ "$#" -gt 0 ] || { echo "keine Pfade"; exit 2; }
+for p in "$@"; do
+  if [ -d "$p" ]; then echo "ABBRUCH: Verzeichnis statt Datei: $p (Dateien einzeln nennen)"; exit 5; fi
+  if [ ! -e "$p" ] && ! git ls-files --error-unmatch -- "$p" >/dev/null 2>&1; then echo "ABBRUCH: unbekannter Pfad: $p"; exit 6; fi
+done
+if [ -n "${PAKET:-}" ]; then
+  muster=$(grep -m1 -i '^Schreibrechte:' "$PAKET" | grep -o '`[^`]*`' | tr -d '`' || true)
+  [ -n "$muster" ] || { echo "ABBRUCH: keine Schreibrechte in $PAKET"; exit 7; }
+  for p in "$@"; do
+    ok=0; while IFS= read -r m; do [ -n "$m" ] || continue; case "$p" in $m) ok=1;; esac; done <<< "$muster"
+    [ $ok = 1 ] || { echo "ABBRUCH: $p liegt außerhalb der Schreibrechte von $PAKET"; exit 8; }
+  done
+fi
 git add -A -- "$@"
 if git diff --cached --name-only | grep -qx 'CLAUDE.md'; then
   git restore --staged CLAUDE.md; echo "ABBRUCH: CLAUDE.md war gestaged"; exit 3

@@ -1,5 +1,5 @@
 // Pixelvergleich zweier lokaler Server (z. B. Ausgangsstand gegen Welle) außerhalb des Wellenumfangs.
-// Nutzung: node pixel.mjs --a http://127.0.0.1:4310 --b http://127.0.0.1:4311 --satz <name> [--seiten …] [--ohne /,/x] [--ansichten m375,d1440]
+// Nutzung: node pixel.mjs --a http://127.0.0.1:4310 --b http://127.0.0.1:4311 --satz <name> [--seiten …] [--ohne /,/x] [--ansichten m375,t768,d1440,d1920] [--maske "sel1, sel2"]
 // Bedingungen: DPR 1, reduzierte Bewegung, Einwilligung „abgelehnt“, durchgescrollt, Animationen beim Foto angehalten.
 // Erst A gegen A laufen lassen (Rauschen), dann A gegen B.
 import { chromium } from '@playwright/test';
@@ -16,10 +16,11 @@ assertLocal(A); assertLocal(B);
 const satz = arg('satz', 'adhoc');
 const ohne = new Set((arg('ohne') || '').split(',').filter(Boolean));
 const seiten = (arg('seiten') ? arg('seiten').split(',') : grundmenge().seiten).filter((s) => !ohne.has(s));
-const ansichten = (arg('ansichten') || 'm375,d1440').split(',');
+const ansichten = (arg('ansichten') || 'm375,t768,d1440,d1920').split(',');
 // Globale schwebende Ebenen erscheinen zeitabhängig (Leerlauf-Rückruf) und an Zieh-Positionen → beim Foto ausblenden;
 // sie werden in ihrer eigenen Welle (P4) gesondert geprüft.
-const MASKE = '#whatsapp-floating-btn, *:has(> #whatsapp-floating-btn) { visibility: hidden !important; }';
+// Zusätzliche Masken (zeitabhängige Inhalte, z. B. Öffnungsstatus) per --maske "<CSS-Selektoren>"; A/A-Lauf zeigt, ob nötig.
+const MASKE = ['#whatsapp-floating-btn, *:has(> #whatsapp-floating-btn)', arg('maske')].filter(Boolean).join(', ') + ' { visibility: hidden !important; }';
 const ziel = ensureDir(path.join(RELAUNCH, 'cache', 'pixel', satz));
 const browser = await chromium.launch();
 

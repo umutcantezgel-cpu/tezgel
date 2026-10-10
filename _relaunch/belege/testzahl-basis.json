@@ -1,0 +1,71 @@
+{
+ "erstellt": "2026-10-10T17:05:09.710Z",
+ "specs": {
+  "funktion-badanfrage.spec.mjs": {
+   "faelle": 7,
+   "expects": 42,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-einwilligung.spec.mjs": {
+   "faelle": 13,
+   "expects": 46,
+   "fixme": 1,
+   "skip": 0
+  },
+  "funktion-express-funnel.spec.mjs": {
+   "faelle": 10,
+   "expects": 52,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-hero-kontakt.spec.mjs": {
+   "faelle": 3,
+   "expects": 8,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-konfigurator.spec.mjs": {
+   "faelle": 14,
+   "expects": 51,
+   "fixme": 2,
+   "skip": 0
+  },
+  "funktion-kontaktwege.spec.mjs": {
+   "faelle": 8,
+   "expects": 19,
+   "fixme": 0,
+   "skip": 3
+  },
+  "funktion-navigation.spec.mjs": {
+   "faelle": 23,
+   "expects": 102,
+   "fixme": 0,
+   "skip": 3
+  },
+  "funktion-preisrechner.spec.mjs": {
+   "faelle": 8,
+   "expects": 34,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-projektcheck.spec.mjs": {
+   "faelle": 7,
+   "expects": 46,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-schnellanfrage.spec.mjs": {
+   "faelle": 7,
+   "expects": 19,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-termin.spec.mjs": {
+   "faelle": 9,
+   "expects": 37,
+   "fixme": 0,
+   "skip": 0
+  }
+ }
+}
