@@ -50,4 +50,29 @@ OFFENE FRAGEN
 5. Icons: Z. 8 nennt ≈36; die Tabelle ergibt 12 Muster plus 25 Haiku-Icons. Zahl klären.
 6. Kür-Kennungen K-01 bis K-09 ähneln KERN K-001 bis K-012. Umbenennen (z. B. KÜR-01)?
 
+## RUNDE 2
+
+Geprüft: PLAN.md gegen Checkliste A bis F, Importe in src/app. Bericht: `_werkstatt/berichte/E1-L0-runde2.md`. PLAN.md nicht geändert.
+
+Ergebnis je Prüfpunkt:
+- A Kriterien → Pakete: BESTANDEN.
+- B Kriterium und Modell: BESTANDEN.
+- C Dateihoheit: BEFUNDE (C-1 bis C-4).
+- D Muster und Maßstab: BEFUNDE (D-1).
+- E Abhängigkeiten: BESTANDEN (keine Zirkel).
+- F Pflicht und Kür: BESTANDEN.
+
+Status der Runde-1-Befunde: 19 behoben; Befund 9 und 12 offen (als C-1 und C-4 geführt); Befund 7 ohne Wirkung (E0 erledigt).
+
+Befunde (blockierend):
+1. C-1 (Importregel E3): E3-BAU-07 (W1, Z. 72) importiert CompanyHistory (`src/app/ueber-uns/page.jsx` Z. 7, 132), das E3-ORCH-05 (W2, Z. 77) ändert. Änderung: CompanyHistory-Umbau als Komponentenpaket nach E3-W1; E3-BAU-07 nach E3-W2; E3-ORCH-05 nach E3-W3.
+2. C-2 (gleiche Welle E6-W): E6-BAU-08 (Z. 123, /login) importiert PageWrapper (`src/app/login/page.jsx` Z. 7); E6-BAU-11 (Z. 126) baut ihn um, ohne Abhängigkeit. Änderung: E6-BAU-08 um E6-BAU-11 als Abhängigkeit ergänzen.
+3. C-3 (Referenzen vor später umgebauten Komponenten): `/` (E2-ORCH-08, Z. 52) importiert GradientText und SpotlightCard (`src/app/page.tsx` Z. 42–43), die E6-BAU-11 umbaut; `/kontakt` (E2-ORCH-09, Z. 53) importiert LocationContact (`src/app/kontakt/page.jsx` Z. 7, 125), das E3-BAU-21 (Z. 91) umbaut. Änderung: beide Referenzen ersetzen diese Imports durch Bausteine; Ziel-Text ergänzen.
+4. C-4 (Dateihoheit KÜR-01): KÜR-01 (Z. 131) hat keine Dateiliste und übernimmt laut Text die E5-Listen (Z. 105, 108, 110, 112); vier dieser Seiten schreibt KÜR-04 (Z. 134) in derselben Welle E7–E8. Änderung: exakte Liste der 30 Seiten; Hub- und Musterbad-Seiten streichen oder KÜR-01 nach KÜR-02, -04, -05 hängen.
+5. D-1 (Muster): KÜR-05 (Z. 135) und KÜR-07 (Z. 137) ohne benanntes Muster. Änderung: KÜR-05 „Muster E3-ORCH-02“; KÜR-07 „Muster E3-BAU-10“ und Abhängig E3-BAU-10.
+
+Geprüft ohne Befund: E3-W1- und E3-W2-Importe der Seiten gegen Komponenten derselben Welle; Überschneidungen (außer dem historischen E0-Paar); Zirkel; gemeinsame Dateien nur in ORCHESTRATOR-Zeilen.
+
+Hinweise (keine Befunde): E2-Tor und E3-Tor bilden nicht alle Pakete ihrer Etappe explizit ab (die Wellenfolge deckt sie). KÜR-04 nennt acht Hubs, die von HAUPTANSICHTEN.json abweichen.
+
 === ENDE E1-PRUEF-01 · BEREIT ZUR RÜCKGABE ===
