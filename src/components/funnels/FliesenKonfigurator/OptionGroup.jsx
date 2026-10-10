@@ -1,11 +1,11 @@
 import { chipOptionClass, legendClass } from './stile';
 
-// Auswahlgruppe (Karten oder Chips) (E-011: aus FliesenKonfigurator.jsx verschoben, unverändert).
+// Auswahlgruppe (Chips) (E-011: aus FliesenKonfigurator.jsx verschoben; E3-Vorlauf: Hinweis im System).
 export default function OptionGroup({ legend, options, value, onChange, multi = false, columns = 'grid-cols-2 sm:grid-cols-3', hint }) {
     return (
         <fieldset>
             <legend className={legendClass}>{legend}</legend>
-            {hint && <p className="text-xs text-slate-600 -mt-1 mb-2">{hint}</p>}
+            {hint && <p className="mb-2 font-text text-fs-2 text-tinte-2">{hint}</p>}
             <div className={`grid ${columns} gap-2`}>
                 {options.map((o) => {
                     const selected = multi ? value.includes(o.id) : value === o.id;

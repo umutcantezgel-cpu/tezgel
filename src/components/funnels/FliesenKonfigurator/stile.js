@@ -1,21 +1,21 @@
-// Klassen des Fliesen-Konfigurators (E-011) – Gestaltung später nach kern/stile.ts.
-export const inputClass =
-    'w-full px-4 py-2.5 rounded-tile-sm bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
+// Klassen des Fliesen-Konfigurators (E-011, E3-Vorlauf): aus kern/stile.ts abgeleitet, keine freien Werte.
+// Farbwechsel ohne Überblendung (E-016); gewählt = Tinte wie wahlKlassen, Signatur (selected) unverändert.
+import { feldKlassen, labelKlassen, linkKlassen } from '@/components/kern/stile';
 
+export const inputClass = feldKlassen;
+
+const WAHL_BASIS = 'border text-left font-text text-fs-2';
+const GEWAEHLT = 'border-tinte bg-tinte text-kalk';
+const OFFEN = 'border-strich bg-fliese text-tinte hover:border-tinte';
+
+/** Auswahlkarte; Nebentexte darin: gewählt text-nacht-2, sonst text-tinte-2 */
 export const cardOptionClass = (selected) =>
-    `p-4 rounded-tile-md border-2 text-left transition-all duration-300 ${
-        selected
-            ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
-            : 'border-slate-200 bg-white hover:border-orange-500 hover:-translate-y-0.5'
-    }`;
+    `flex h-full flex-col gap-2 p-4 ${WAHL_BASIS} ${selected ? GEWAEHLT : OFFEN}`;
 
+/** Auswahlchip */
 export const chipOptionClass = (selected) =>
-    `px-3 py-2.5 rounded-tile-sm border text-xs font-bold transition-all duration-300 ${
-        selected
-            ? 'bg-orange-50 text-orange-950 border-orange-600 ring-2 ring-orange-600/20'
-            : 'bg-white text-slate-700 border-slate-200 hover:border-orange-500'
-    }`;
+    `inline-flex min-h-11 items-center justify-center px-3 py-2 text-center ${WAHL_BASIS} ${selected ? GEWAEHLT : OFFEN}`;
 
-export const legendClass = 'block text-xs font-black text-slate-800 mb-2';
-export const labelClass = 'block text-xs font-bold text-slate-800 mb-1';
-export const linkClass = 'font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2';
+export const legendClass = `${labelKlassen} mb-2`;
+export const labelClass = labelKlassen;
+export const linkClass = `${linkKlassen} font-semibold`;

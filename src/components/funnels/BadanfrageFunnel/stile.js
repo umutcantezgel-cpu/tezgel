@@ -1,10 +1,11 @@
-// Klassen der Badanfrage (E-011) – Gestaltung später nach kern/stile.ts.
-export const inputClass =
-    'w-full px-4 py-3 rounded-xl bg-white border border-neutral-300 text-neutral-900 placeholder:text-neutral-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
+// Klassen der Badanfrage (E-011, E3-Vorlauf): aus kern/stile.ts abgeleitet, keine freien Werte.
+// Farbwechsel ohne Überblendung (E-016); gewählt = Tinte wie wahlKlassen, Signatur unverändert.
+import { feldKlassen } from '@/components/kern/stile';
 
-export const optionClass = (selected, padding = 'p-5') =>
-    `group ${padding} rounded-xl border-2 text-left transition-all duration-200 ${
-        selected
-            ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
-            : 'border-neutral-200 bg-white hover:border-orange-500/80 hover:-translate-y-0.5'
+export const inputClass = feldKlassen;
+
+/** Auswahlkarte; padding nur aus der Abstandsskala (p-4, p-6). Nebentexte: gewählt text-nacht-2, sonst text-tinte-2 */
+export const optionClass = (selected, padding = 'p-6') =>
+    `group flex h-full flex-col gap-2 ${padding} border text-left font-text text-fs-2 ${
+        selected ? 'border-tinte bg-tinte text-kalk' : 'border-strich bg-fliese text-tinte hover:border-tinte'
     }`;
