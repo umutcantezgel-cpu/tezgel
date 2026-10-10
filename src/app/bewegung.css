@@ -170,3 +170,41 @@ html.k-bewegung .laden-fuge::after {
     scale: none !important;
   }
 }
+
+/* ==========================================================================
+   VERLEGEPLAN (K-008) und sig-plan (K-007)
+   ========================================================================== */
+.verlegeplan { overflow: visible; }
+.verlegeplan .plan-raum { fill: none; stroke: var(--color-tinte); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-fuge { stroke: var(--color-strich); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-schraffur-linie { stroke: var(--color-strich); stroke-width: 1; }
+.verlegeplan .plan-passstueck { stroke: none; }
+.verlegeplan .plan-fehlstelle { fill: var(--color-kalk); stroke: var(--color-laser-tief); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-element, .verlegeplan .plan-tuer path:not(.plan-luecke) { fill: none; stroke: var(--color-tinte); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-element rect { fill: var(--color-fliese); }
+.verlegeplan .plan-luecke { stroke: var(--color-fliese); stroke-width: 4; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-heizung { fill: none; stroke: var(--color-strich); stroke-width: 1.5; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-dichtband { fill: none; stroke: var(--color-tinte-2); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-stelzlager { fill: var(--color-tinte); }
+.verlegeplan .plan-achse { stroke: var(--color-laser); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-kreuz { fill: var(--color-tinte); }
+.verlegeplan .plan-bemassung path { stroke: var(--color-tinte-2); stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; }
+.verlegeplan .plan-bemassung text { fill: var(--color-tinte-2); font-family: var(--font-mono); font-size: 11px; }
+
+/* sig-plan: das Raster steht versetzt, bis Hover/Fokus (fein) bzw. Eintritt (grob) es in die Flucht rückt */
+.verlegeplan .plan-raster { --plan-versatz: -9px; }
+html.k-bewegung [data-motion="sig-plan"] .plan-raster,
+html.k-bewegung .sig-plan-ziel .plan-raster {
+  transition: translate var(--dauer-2) var(--ease-setzen);
+}
+@media (hover: hover) and (pointer: fine) {
+  html.k-bewegung:not(.k-notaus) .sig-plan-ziel:not(:hover):not(:focus-within) .plan-raster,
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not(:hover) .plan-raster {
+    translate: var(--plan-versatz) 0;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-motion-stand="an"]) .plan-raster {
+    translate: var(--plan-versatz) 0;
+  }
+}

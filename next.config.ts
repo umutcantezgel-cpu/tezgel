@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // Dev-Schaufenster der Bausteine (src/app/werkstatt-schaufenster/**/page.dev.tsx) existiert nur in der
+  // Entwicklung; im Build gibt es die Route nicht (KERN K-004).
+  pageExtensions: process.env.NODE_ENV === 'development' ? ['dev.tsx', 'tsx', 'ts', 'jsx', 'js'] : ['tsx', 'ts', 'jsx', 'js'],
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
