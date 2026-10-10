@@ -26,10 +26,23 @@ Kriterium · Methode · Schwelle · Beleg · Status. Erledigt ist nur, was gepr�
 ## UMGEBUNGSAUSNAHMEN (E1; zählen nicht als AUSNAHME; Eintrag in MENSCHEN M-09)
 - **Echte Geräte, Safari/WebKit, Firefox** sind in der Cloud nicht installierbar. Ersatzprüfung: Chromium mit Geräteemulation (Touch, DPR) in allen GERÄTEGRÖSSEN; Ersatzpfad-Lauf ohne `animation-timeline` und View Transitions (Darstellung wie Safari < 26 / Firefox).
 - **Bildrate auf echter Grafikhardware** ist nicht messbar. Ersatzprüfung: Software-Rendering bei 4× CPU-Drosselung mit Frame-Tracing und Long Animation Frames.
+- **Ersatzpfad ohne `animation-timeline`/View Transitions** lässt sich in Chromium 141 nicht per Startschalter abschalten (E0-PRUEF-03, 34 geprüfte Schalter). Ersatzprüfung: Emulation im Bildsatz-Werkzeug – CSS-Antworten ohne `animation-timeline`-Deklarationen und mit unerfüllbarem `@supports`, `document.startViewTransition` entfernt (Option `--ersatzpfad`, Wirkung per Testseite belegt).
 - **INP im Feld** ist im Labor nicht messbar. Ersatzprüfung: TBT plus gemessene Eingabeverzögerung beim Klick auf die Hauptknöpfe.
 
 ## Ausgangswerte (E0)
-_Werden von E0-PRUEF-03 erhoben (12 Hauptansichten, neue Gerätegrößen) und hier eingetragen. Vergleichswerte des Vorlaufs (7 Seiten, 375 px, Median aus 5): mobil LCP 3,4–6,6 s, CLS 0 bis 0,516 (/standorte), TBT 111–255 ms, Leistung 67–88; axe 1.661 ernste/kritische Knoten (120 Seiten, 4 Ansichten); Funktionstests 292 Fälle grün bis auf Altfehler-`fixme`; `npm test` 17/17._
+Basisstand 745335f auf 4310, erhoben von E0-PRUEF-03 (Belege `_werkstatt/belege/e0/ausgang/AUSGANG.md`); Lighthouse folgt aus E0-PRUEF-03L im Ruhefenster, die Funktionsliste aus E0-PRUEF-04.
+
+| Kriterium | Ausgangswert (12 Hauptansichten, m390/t768/d1440) | Zielwert |
+|---|---|---|
+| Z-02 Texte/SEO | 121 Seiten × 2 Ansichten als Textbasis; Sitemap 163, 168 interne Ziele, 0 kaputte Links; je Seite genau eine h1 | Textbasis unverändert außer protokollierten Mikrotexten; Sitemap 163, 0 kaputte Links |
+| Z-02 Funktionen | folgt aus E0-PRUEF-04 | F-01–F-19 + neue Fälle grün, `fixme` nicht mehr als E0 |
+| Z-05 Bewegung | data-motion 0; 34–95 Animationseinträge ohne Register je Seite; reduziert 2–5 Befunde je Seite; Bildrate verworfen `/` 1,25 %, `/bad` 1,19 % (unter Last) | Register ohne Lücke, reduziert 0 Befunde, große Momente ≤ 5 % verworfen |
+| Z-06 SVG | 3.894 Inline-SVG, 0 doppelte IDs, 3.836 ohne `focusable="false"`, 32 dekorative ohne aria-hidden (nur `/`); Logos 298 KB gzip mit Pixelbild (unantastbar) | eine Icon-Familie, ARIA vollständig, 0 doppelte IDs, Icon ≤ 1,5 KB |
+| Z-07 axe | 349 ernste Knoten (Kontrast 344, Fokus 5), 0 kritische (m390/d1440, mit Menü und Banner) | 0 ernste, 0 kritische |
+| Z-08 Leistung | Schriften 75,7 KB; Lighthouse folgt (E0-PRUEF-03L) | LCP ≤ 2,5 s, CLS ≤ 0,1, TBT ≤ 200 ms mobil; Schriften ≤ 250 KB |
+| Z-09 Darstellung | 367 Aufnahmen, 0 Fehler, 0 Überlauf, 0 Konsole; Überlappung 2.041 (fester Kopf 1.972, sticky 7, Textkreuzung 62); Ersatzpfad per Browserschalter nicht herstellbar (siehe UMGEBUNGSAUSNAHMEN) | 0 Überlauf, 0 Überlappung (feste Ebenen mit `data-feste-ebene` ausgenommen), kein abgeschnittener Text |
+
+Vorlaufwerte (7 Seiten, 375 px, Median aus 5) zum Vergleich: mobil LCP 3,4–6,6 s, CLS 0 bis 0,516 (/standorte), TBT 111–255 ms, Leistung 67–88; Probe 02c (4310, Median aus 3): `/` mobil LCP 3,79 s (Element `p.text-base`), `/kontakt` mobil 4,89 s (Element: Einwilligungsbanner).
 
 ## AUSNAHMEN
 _keine_

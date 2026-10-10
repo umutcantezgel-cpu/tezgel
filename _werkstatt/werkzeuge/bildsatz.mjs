@@ -2,7 +2,8 @@
 // Protokoll: Einwilligung abgelehnt, reducedMotion reduce, DPR 1, Dev-Overlay ausgeblendet; erst durchscrollen und
 // bereit, dann Ausschnitte an den festen Positionen k × Viewporthöhe, k = 0 … min(12, ceil(Seitenhöhe/vh)) − 1, JPEG q70.
 // Je Seite × Ansicht: Status, Konsolenfehler, ueberlauf() und ueberlappung().
-// Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2]
+// Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad]
+// --ersatzpfad: Darstellung ohne Scroll-Animationen und View Transitions (Safari < 26, Firefox) per Emulation.
 // Ziel (Standard _werkstatt/cache/bildsatz/<satz>/): <ansicht>/<slug>/NN.jpg sowie bildsatz.json.
 // --hauptansichten liest _werkstatt/HAUPTANSICHTEN.json. Zusammenfassung auf stdout.
 // Exit 1, wenn eine Aufnahme scheitert oder eine Seite nicht 200 liefert.
@@ -10,14 +11,14 @@
 import { chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, ANSICHTEN, GERAETE, installSperre, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH } from './lib.mjs';
+import { BASE, assertLocal, ANSICHTEN, GERAETE, installSperre, installErsatzpfad, setzeEinwilligung, durchscrollen, bereit, slug, ensureDir, ueberlauf, versteckeDevOverlay, RELAUNCH } from './lib.mjs';
 import { ueberlappungMitZahl } from './ueberlappung.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 const flag = (k) => process.argv.includes(`--${k}`);
 const MAX_AUSSCHNITTE = 12;
 const EINWILLIGUNG = 'abgelehnt';
-const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2]';
+const NUTZUNG = 'Nutzung: node bildsatz.mjs --satz NAME (--hauptansichten | --seiten /a,/b) [--base URL] [--ziel DIR] [--worker 2] [--ersatzpfad]';
 
 const base = arg('base', BASE);
 assertLocal(base);
@@ -30,6 +31,7 @@ if (!satz || !seiten || !seiten.length) { console.error(NUTZUNG); process.exit(2
 for (const s of seiten) if (!s.startsWith('/')) { console.error(`Seite muss mit / beginnen: ${s}`); process.exit(2); }
 const ziel = ensureDir(arg('ziel') ? path.resolve(arg('ziel')) : path.join(RELAUNCH, 'cache', 'bildsatz', satz));
 const worker = Number(arg('worker', '2'));
+const ERSATZPFAD = flag('ersatzpfad'); // ohne animation-timeline/View Transitions (lib.mjs installErsatzpfad)
 
 const rahmenAbwarten = (page) => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => r(null)))));
 
@@ -39,6 +41,7 @@ async function bearbeite(browser, a, s) {
   const context = await browser.newContext({ viewport: { width: v.width, height: v.height }, deviceScaleFactor: 1, isMobile: v.isMobile, hasTouch: v.hasTouch, reducedMotion: 'reduce', locale: 'de-DE', timezoneId: 'Europe/Berlin', colorScheme: 'light' });
   const protokoll = [];
   await installSperre(context, { protokoll });
+  if (ERSATZPFAD) await installErsatzpfad(context);
   await setzeEinwilligung(context, EINWILLIGUNG, base);
   const page = await context.newPage();
   const konsole = [];

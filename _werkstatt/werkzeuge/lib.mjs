@@ -169,3 +169,28 @@ export const GERAETE = ['m390', 't768', 'd1440'];
 export async function versteckeDevOverlay(page) {
   await page.addStyleTag({ content: 'nextjs-portal, [data-nextjs-toast], [data-next-badge-root], [data-nextjs-dev-tools-button] { display: none !important; }' });
 }
+
+/**
+ * Ersatzpfad (Z-09, UMGEBUNGSAUSNAHME in ABNAHME.md): emuliert einen Browser ohne Scroll-Animationen
+ * (animation-timeline) und ohne View Transitions – Chromium 141 lässt sich dafür nicht per Startschalter umstellen.
+ * CSS-Antworten verlieren ihre animation-timeline-Deklarationen, @supports (animation-timeline …) wird unerfüllbar,
+ * CSS.supports meldet beides als nicht unterstützt und document.startViewTransition fehlt.
+ * Nach installSperre aufrufen (spätere Routen haben Vorrang).
+ */
+export async function installErsatzpfad(context) {
+  await context.addInitScript(() => {
+    try { delete Document.prototype.startViewTransition; } catch { /* nicht vorhanden */ }
+    const original = CSS.supports.bind(CSS);
+    CSS.supports = (...a) => (/animation-timeline|scroll-timeline|view-timeline|view-transition/.test(a.join(' ')) ? false : original(...a));
+  });
+  await context.route(/\.css(\?|$)/, async (route) => {
+    const antwort = await route.fetch();
+    let text = await antwort.text();
+    text = text
+      .replace(/@supports\s*\(\s*animation-timeline/g, '@supports (ersatzpfad-aus')
+      .replace(/@supports\s+not\s*\(\s*animation-timeline/g, '@supports not (ersatzpfad-aus')
+      .replace(/animation-timeline\s*:[^;}]*;?/g, '');
+    const kopf = Object.fromEntries(Object.entries(antwort.headers()).filter(([k]) => !/^(content-encoding|content-length|transfer-encoding)$/i.test(k)));
+    await route.fulfill({ status: antwort.status(), headers: kopf, body: text });
+  });
+}
