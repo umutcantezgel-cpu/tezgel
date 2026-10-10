@@ -1,0 +1,240 @@
+{
+ "satz": "vorschau-1323c32",
+ "base": "http://127.0.0.1:4320",
+ "einwilligung": "abgelehnt",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/p3-03",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7396,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-03",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 12446,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-04",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 4,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 2864,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-04",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 7,
+   "konsole": [],
+   "ueberlauf": [
+    {
+     "art": "ragt-heraus",
+     "tag": "table",
+     "cls": "mt-k-4 w-full border-collapse bg-k-fliese text-k-2",
+     "left": 16,
+     "right": 376
+    }
+   ],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 5668,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-05",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 2,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 924,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-05",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 2,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 1401,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-a",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 6933,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-a",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [
+    {
+     "art": "horizontal",
+     "scrollWidth": 396,
+     "clientWidth": 375
+    }
+   ],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 8847,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-b",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7760,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-06-b",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 10389,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-07",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 4,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 3201,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-07",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 7,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 5032,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-08",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 5,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 3708,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-08",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 7,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 5170,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-09-a",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 3,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 2191,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-09-a",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 4,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 2835,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-11",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 4,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 2919,
+   "blockiert": []
+  },
+  {
+   "seite": "/p3-11",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 5,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 3924,
+   "blockiert": []
+  }
+ ]
+}
