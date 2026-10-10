@@ -31,6 +31,8 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E2-BAU-01 | `src/components/reviews/GoogleReviewsBadge.tsx` | „{Anzahl} verifizierte Google-Rezensionen“ | „{Anzahl} Google-Rezensionen“ | „verifiziert“ ist nicht belegbar (Leitplanke Wahrheit, wie ReviewCard) |
 | E2-BAU-01 | `src/components/sections/QualityPromise.jsx` | Etikett „Punkt 01 … 08“ in Versalien (CSS) | gleiche Zeichen als Mono-Etikett ohne Versalien | Merkliste nach KERN K-009; Wortlaut unverändert |
 | E2-BAU-02 | `src/components/kern/Hinweis.tsx` | (Hinweis ohne Titel: Art nur über Icon/Farbe) | unsichtbares Präfix „Hinweis:“, „Warnung:“, „Fehler:“, „Erledigt:“ (nur Screenreader) | Art nie allein über Farbe/Icon (WCAG 1.4.1, 1.1.1) |
+| E2-ORCH-08-N2 | `src/app/page.tsx` (Fachgewerke) | Bildunterschriften „Wohnbereiche & Neubau“, „Balkon & Terrasse“, „DIN 18534 Abdichtung“ und die Alt-Texte der drei Badfotos unter diesen Gewerken | entfallen mit den unpassenden Fotos | Foto zeigte ein Bad statt des Gewerks (irreführender Alt-Text); Ersatz ist der Verlegeplan des Gewerks, MENSCHEN M-18 |
+| E2-ORCH-09-N3 | `src/components/locations/LocationContact.tsx` | Pill-Badge „Ihr regionaler Ansprechpartner für …“ | wortgleich als Mono-Etikett | Badge → Etikett (K-009); Herzschlag-Hülle und Verlauf entfallen, Texte unverändert |
 
 ## Vorschläge (Überschriften, Fließtext)
 _noch keine_

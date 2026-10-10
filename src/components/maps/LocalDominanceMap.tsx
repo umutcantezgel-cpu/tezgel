@@ -94,7 +94,7 @@ export function LocalDominanceMap({
           <span>Radius: ca. {radiusKm} km Vor-Ort-Einsatz</span>
         </span>
 
-        <a href={routeUrl} target="_blank" rel="noopener noreferrer" className={knopfKlassen('hell', 'shrink-0')}>
+        <a href={routeUrl} target="_blank" rel="noopener noreferrer" className={knopfKlassen('hell', 'shrink-0')} data-motion="druck">
           <span>Route in Google Maps</span>
           <Icon name="link-extern" groesse={4} />
         </a>

@@ -160,7 +160,7 @@ export default function MobileMenu({ isOpen, onToggle }) {
                                                                 </ul>
                                                             </div>
                                                         ))}
-                                                        <Link href={link.path} onClick={schliessen} className={knopfKlassen('text', 'self-start')}>
+                                                        <Link href={link.path} onClick={schliessen} className={knopfKlassen('text', 'self-start')} data-motion="druck">
                                                             Alle Leistungen zu {link.name} ansehen
                                                             <Icon name="pfeil-rechts" groesse={4} />
                                                         </Link>

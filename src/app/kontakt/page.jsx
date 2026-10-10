@@ -105,9 +105,7 @@ export default function KontaktPage() {
             </Abschnitt>
 
             {/* Regionaler Kontakt */}
-            <div className="mx-auto w-full max-w-seite px-4 py-12 md:px-8 lg:px-12 lg:py-16">
-                <LocationContact cityName="Aßlar, Wetzlar &amp; Mittelhessen" className="border border-fuge" />
-            </div>
+            <LocationContact cityName="Aßlar, Wetzlar &amp; Mittelhessen" />
 
             {/* Terminkalender */}
             <Abschnitt

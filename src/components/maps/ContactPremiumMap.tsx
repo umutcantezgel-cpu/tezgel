@@ -127,7 +127,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                     type="button"
                     aria-pressed={isSelected}
                     onClick={() => handleSelectCity(city.slug)}
-                    className="flex min-h-11 w-full items-center justify-between gap-3 px-4 py-3 text-left font-text text-fs-2 text-tinte transition-colors dauer-1 ease-setzen hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
+                    className="flex min-h-11 w-full items-center justify-between gap-3 px-4 py-3 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
                   >
                     <span className="flex min-w-0 items-center gap-2">
                       <Icon name="ort" groesse={4} />
@@ -159,7 +159,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
               href={directionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={knopfKlassen("haupt", "flex-1")}
+              className={knopfKlassen("haupt", "flex-1")} data-motion="druck"
             >
               <span>Route</span>
               <Icon name="link-extern" groesse={4} />
@@ -168,7 +168,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
             <a
               href={`tel:${COMPANY_DATA.contact.phoneLink}`}
               aria-label={`Fliesenverlegung Tezgel anrufen: ${COMPANY_DATA.contact.phone}`}
-              className={knopfKlassen("neben", "flex-1")}
+              className={knopfKlassen("neben", "flex-1")} data-motion="druck"
             >
               <Icon name="telefon" groesse={4} />
               <span>Anrufen</span>
@@ -230,7 +230,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                     href={directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={knopfKlassen("neben")}
+                    className={knopfKlassen("neben")} data-motion="druck"
                   >
                     <Icon name="pfeil-rechts" groesse={4} />
                     <span>Navigation starten</span>
@@ -255,7 +255,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                   href={directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={knopfKlassen("neben")}
+                  className={knopfKlassen("neben")} data-motion="druck"
                 >
                   <Icon name="pfeil-rechts" groesse={4} />
                   <span>In Google Maps öffnen</span>

@@ -15,7 +15,7 @@ export const KARTE_HOEHE = "460px";
 
 /** Stadtknopf: mindestens 44 px hoch, ohne vertikales Padding, damit die Leiste genau 44 px hoch bleibt. */
 export const STADT_KLASSEN =
-  "inline-flex min-h-11 items-center gap-2 rounded-none border border-strich bg-fliese px-4 py-2 font-text text-fs-2 text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
+  "inline-flex min-h-11 items-center gap-2 rounded-none border border-strich bg-fliese px-4 py-2 font-text text-fs-2 text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
 
 /** Stadtleiste (feste Höhe h-11, darunter mb-4). Die Auswahl hält das übergeordnete Element. */
 export function ServiceStadtleiste({
@@ -90,7 +90,7 @@ export function ServiceKurzprofil({ selectedSlug }: { selectedSlug: string }) {
         </div>
 
         <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
-          <a href="/kontakt#express-anfrage" className={knopfKlassen("haupt", "w-full sm:w-auto")}>
+          <a href="/kontakt#express-anfrage" className={knopfKlassen("haupt", "w-full sm:w-auto")} data-motion="druck">
             <span>Kostenloses Vor-Ort-Aufmaß</span>
             <Icon name="pfeil-rechts" groesse={4} />
           </a>
@@ -99,7 +99,7 @@ export function ServiceKurzprofil({ selectedSlug }: { selectedSlug: string }) {
             href={directionsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={knopfKlassen("neben", "w-full sm:w-auto")}
+            className={knopfKlassen("neben", "w-full sm:w-auto")} data-motion="druck"
           >
             <Icon name="link-extern" groesse={4} />
             <span>Route in Google Maps</span>

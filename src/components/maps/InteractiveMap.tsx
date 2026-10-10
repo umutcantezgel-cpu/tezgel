@@ -89,7 +89,7 @@ export function InteractiveMap({
             href={effectiveDirectionsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={knopfKlassen('neben', 'shrink-0')}
+            className={knopfKlassen('neben', 'shrink-0')} data-motion="druck"
           >
             <span>Route planen</span>
             <Icon name="pfeil-rechts" groesse={4} />

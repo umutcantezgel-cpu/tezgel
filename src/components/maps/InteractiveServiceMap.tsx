@@ -166,7 +166,7 @@ function InteractiveRadarCanvas({
           className="block h-full w-full border-0"
         />
         <div className="absolute left-4 top-4 z-10">
-          <button type="button" onClick={() => setShowOsmTiles(false)} className={knopfKlassen("neben")}>
+          <button type="button" onClick={() => setShowOsmTiles(false)} className={knopfKlassen("neben")} data-motion="druck">
             <span>Vektor-Radar anzeigen</span>
           </button>
         </div>
@@ -204,7 +204,7 @@ function InteractiveRadarCanvas({
           <Icon name="haken" groesse={4} />
           <span>Einsatzgebiet 45 km Mittelhessen</span>
         </span>
-        <button type="button" onClick={() => setShowOsmTiles(true)} className={knopfKlassen("neben")}>
+        <button type="button" onClick={() => setShowOsmTiles(true)} className={knopfKlassen("neben")} data-motion="druck">
           <span>Straßenkarte (OSM)</span>
         </button>
       </div>
@@ -213,6 +213,7 @@ function InteractiveRadarCanvas({
         type="button"
         onClick={() => onSelectCity("asslar")}
         className={clsx(knopfKlassen("neben"), "relative z-20")}
+        data-motion="druck"
       >
         <Fugenkreuz className="size-3 text-laser" />
         <span>Aßlar (Firmensitz)</span>

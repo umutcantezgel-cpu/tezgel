@@ -70,7 +70,7 @@ export default function FinalCTA({
               href={siteConfig.contact.phone.link}
               onClick={() => triggerHaptic("light")}
               aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${siteConfig.contact.phone.formatted}`}
-              className="font-mono text-fs-5 text-kalk underline decoration-nacht-fuge underline-offset-8 transition-colors dauer-1 ease-setzen hover:decoration-kalk"
+              className="font-mono text-fs-5 text-kalk underline decoration-nacht-fuge underline-offset-8 hover:decoration-kalk"
             >
               {siteConfig.contact.phone.formatted}
             </a>

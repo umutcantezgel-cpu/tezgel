@@ -85,10 +85,10 @@ export function MapConsentGate({
             Medien erforderlich.
           </p>
           <div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <button type="button" onClick={handleAccept} className={knopfKlassen("haupt", "w-full sm:w-auto")}>
+            <button type="button" onClick={handleAccept} className={knopfKlassen("haupt", "w-full sm:w-auto")} data-motion="druck">
               Karte laden & zustimmen
             </button>
-            <button type="button" onClick={openSettings} className={knopfKlassen("neben", "w-full sm:w-auto")}>
+            <button type="button" onClick={openSettings} className={knopfKlassen("neben", "w-full sm:w-auto")} data-motion="druck">
               Cookie-Einstellungen
             </button>
           </div>
