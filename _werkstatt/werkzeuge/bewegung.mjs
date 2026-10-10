@@ -7,7 +7,7 @@
 //   reduziert     Animationen bei prefers-reduced-motion: reduce und Sichtbarkeit der data-motion-Elemente
 // Nutzung:
 //   node bewegung.mjs --modus einzelbilder|bildrate|register|reduziert --seite /pfad [--base URL]
-//     [--ansicht m390] [--kennung NAME] [--ziel DIR] [--wiederholungen 3]
+//     [--ansicht m390] [--kennung NAME] [--ziel DIR] [--wiederholungen 3] [--ausschnitt ansicht]
 // Standardziel: _werkstatt/cache/bewegung/<modus>/<slug>/ (liegt außerhalb des Repos).
 // Jeder Browserlauf: assertLocal(base), installSperre (Anfragesperre aus lib.mjs), Einwilligung „abgelehnt“.
 import { chromium } from '@playwright/test';
@@ -189,8 +189,15 @@ function wirkbereich(kennung) {
 
 function mitteZeigen(el) { el.scrollIntoView({ block: 'center', behavior: 'instant' }); }
 
-/** Ausschnitt des Elements mit 24 px Rand, im Viewport. Liegt das Element nicht im Viewport, wird die Ansicht aufgenommen. */
-async function ausschnitt(page, loc, datei) {
+/** Ausschnitt des Elements mit 24 px Rand, im Viewport. Liegt das Element nicht im Viewport, wird die Ansicht aufgenommen.
+ *  Mit --ausschnitt ansicht (ganzeAnsicht): ganzer Viewport bei Scrollposition 0 (Lade-Momente im ersten Bildschirm). */
+async function ausschnitt(page, loc, datei, ganzeAnsicht = false) {
+  if (ganzeAnsicht) {
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await page.evaluate(ZWEI_FRAMES);
+    await page.screenshot({ path: datei, type: 'jpeg', quality: 70 });
+    return 'ansicht';
+  }
   const vp = page.viewportSize();
   const box = await loc.boundingBox();
   let clip = { x: 0, y: 0, width: vp.width, height: vp.height };
@@ -205,7 +212,7 @@ async function ausschnitt(page, loc, datei) {
 }
 
 /** Eine Kennung: Auslöser, Pause, Zeitpunkte bzw. Scrollpositionen, fünf Bilder. */
-async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis }) {
+async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis, ganzeAnsicht = false }) {
   const ausloeser = AUSLOESER[kennung] ?? 'scroll';
   const info = { kennung, elemente: anzahl, ausloeser, ausgeloest: 0, modus: null, animationen: 0, laengste_dauer_ms: 0, bilder: [], befund: [] };
   if (!(kennung in AUSLOESER)) info.befund.push('nicht im K-009-Auszug: Scroll-Auslöser angenommen');
@@ -251,6 +258,7 @@ async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis }) 
     if (st.scroll > 0 && st.zeit > 0) info.befund.push('Zeit- und Scroll-Animationen gemischt: Zeitpunkte nur für die zeitbasierten');
     const scrollModus = st.scroll > 0 && st.zeit === 0;
     info.modus = scrollModus ? 'scroll' : 'zeit';
+    if (ganzeAnsicht && scrollModus) info.befund.push('--ausschnitt ansicht im Scrollmodus: alle Bilder bei Scrollposition 0');
 
     if (scrollModus) {
       const bereich = await page.evaluate(wirkbereich, kennung);
@@ -261,7 +269,7 @@ async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis }) 
         await page.waitForTimeout(120);
         await page.evaluate(ZWEI_FRAMES);
         const datei = `${kennung}-${k}.jpg`;
-        const art = await ausschnitt(page, loc.first(), path.join(verzeichnis, datei));
+        const art = await ausschnitt(page, loc.first(), path.join(verzeichnis, datei), ganzeAnsicht);
         info.bilder.push({ datei, scroll_y: y, art });
       }
     } else {
@@ -269,7 +277,7 @@ async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis }) 
         await page.evaluate(([p, T]) => window.__bewSeek(p, T), [ZEITPUNKTE[k], st.laengste_ms]);
         await page.evaluate(ZWEI_FRAMES);
         const datei = `${kennung}-${k}.jpg`;
-        const art = await ausschnitt(page, loc.first(), path.join(verzeichnis, datei));
+        const art = await ausschnitt(page, loc.first(), path.join(verzeichnis, datei), ganzeAnsicht);
         info.bilder.push({ datei, zeitpunkt: ZEITPUNKTE[k], art });
       }
     }
@@ -280,12 +288,13 @@ async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis }) 
   }
 }
 
-async function einzelbilder({ browser, base, seite, ansicht, kennung, verzeichnis, vorbereitung, zeitpunkt }) {
+async function einzelbilder({ browser, base, seite, ansicht, kennung, verzeichnis, vorbereitung, zeitpunkt, ganzeAnsicht = false }) {
   const protokoll = [];
   const erg = {
     modus: 'einzelbilder', seite, base, ansicht, zeitpunkt, dpr: ANSICHTEN_AUSBAU[ansicht].isMobile ? 2 : 1,
     reducedMotion: 'no-preference', einwilligung: 'abgelehnt', zeitpunkte_anteil: ZEITPUNKTE, kennungen: [], bilder_gesamt: 0,
   };
+  if (ganzeAnsicht) erg.ausschnitt = 'ansicht';
   const context = await kontext(browser, { base, ansicht, reducedMotion: 'no-preference', protokoll, init: [pausierInit], vorbereitung });
   try {
     const pruef = await context.newPage();
@@ -304,7 +313,7 @@ async function einzelbilder({ browser, base, seite, ansicht, kennung, verzeichni
     for (const k of kennungen) {
       if (!/^[a-z0-9-]+$/.test(k)) { erg.kennungen.push({ kennung: k, befund: ['unzulässige Zeichen in der Kennung: übersprungen'], bilder: [] }); continue; }
       try {
-        erg.kennungen.push(await aufnahme(context, { base, seite, kennung: k, anzahl: anzahl[k], verzeichnis }));
+        erg.kennungen.push(await aufnahme(context, { base, seite, kennung: k, anzahl: anzahl[k], verzeichnis, ganzeAnsicht }));
       } catch (e) {
         // Ein Fehler je Kennung bricht den Lauf nicht ab; er wird als Befund festgehalten
         erg.kennungen.push({ kennung: k, elemente: anzahl[k], befund: [`Fehler beim Auslösen: ${String(e.message).split('\n')[0].slice(0, 160)}`], bilder: [] });
@@ -585,19 +594,20 @@ async function reduziert({ browser, base, seite, ansicht, vorbereitung, zeitpunk
 }
 
 /** Öffentliche Schnittstelle: führt einen Lauf aus und schreibt ergebnis.json. */
-export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390', kennung = null, ziel = null, wiederholungen = 3, vorbereitung = null }) {
+export async function laufe({ modus, seite = '/', base = BASE, ansicht = 'm390', kennung = null, ziel = null, wiederholungen = 3, vorbereitung = null, ausschnitt = null }) {
   if (!MODI.includes(modus)) throw new Error(`--modus fehlt oder ist unbekannt (${MODI.join('|')})`);
   assertLocal(base);
   if (!seite.startsWith('/')) throw new Error('--seite beginnt mit /');
   if (!ANSICHTEN_AUSBAU[ansicht]) throw new Error(`unbekannte Ansicht ${ansicht}`);
   if (modus === 'bildrate' && ansicht !== 'm390') throw new Error('bildrate läuft fest in Ansicht m390 (DPR 2)');
   if (kennung && !/^[a-z0-9-]+$/.test(kennung)) throw new Error('--kennung nur a–z, 0–9 und Bindestrich');
+  if (ausschnitt && ausschnitt !== 'ansicht') throw new Error('--ausschnitt nur ansicht');
   const verzeichnis = ensureDir(ziel ? path.resolve(ziel) : path.join(RELAUNCH, 'cache', 'bewegung', modus, slug(seite)));
   const basis = { seite, base, ansicht, zeitpunkt: new Date().toISOString(), vorbereitung };
   const browser = await chromium.launch();
   let ergebnis;
   try {
-    if (modus === 'einzelbilder') ergebnis = await einzelbilder({ browser, ...basis, kennung, verzeichnis });
+    if (modus === 'einzelbilder') ergebnis = await einzelbilder({ browser, ...basis, kennung, verzeichnis, ganzeAnsicht: ausschnitt === 'ansicht' });
     else if (modus === 'bildrate') ergebnis = await bildrate({ browser, ...basis, wiederholungen: Math.max(1, wiederholungen) });
     else if (modus === 'register') ergebnis = await register({ browser, ...basis });
     else ergebnis = await reduziert({ browser, ...basis });
@@ -639,6 +649,7 @@ if (istAufruf) {
       kennung: arg(argv, 'kennung', null),
       ziel: arg(argv, 'ziel', null),
       wiederholungen: Number(arg(argv, 'wiederholungen', '3')),
+      ausschnitt: arg(argv, 'ausschnitt', null),
     });
     console.log(JSON.stringify(kurzfassung(ergebnis, datei), null, 1));
   } catch (e) {

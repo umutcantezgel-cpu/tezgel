@@ -1,0 +1,28 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/",
+ "base": "http://127.0.0.1:4310",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-10T22:29:54.599Z",
+ "dpr": 2,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [],
+ "bilder_gesamt": 0,
+ "ausschnitt": "ansicht",
+ "data_motion_elemente": 0,
+ "meldung": "Keine [data-motion]-Elemente auf /: keine Einzelbilder erzeugt.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/werkzeug-ausschnitt/4310"
+}
