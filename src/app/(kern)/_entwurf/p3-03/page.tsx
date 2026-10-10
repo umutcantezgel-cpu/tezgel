@@ -171,8 +171,8 @@ export default function VorschauGrundbausteine() {
 
       <Abschnitt id="t-senden" titel="Absenden mit Ladeanzeige">
         <Feldraster>
-          <Zustand name="Antwort nach 1,2 s · Anzeige ab 300 ms" breite={HALB}>
-            <SendeProbe dauer={1200} kennung="Probe lange Antwort" />
+          <Zustand voll name="Antwort nach 1,2 s · Anzeige ab 300 ms · ein Feld: Enter gesperrt, solange gesendet wird" breite={HALB}>
+            <SendeProbe dauer={1200} kennung="Probe lange Antwort" mitFeld />
           </Zustand>
           <Zustand name="Antwort nach 0,15 s · keine Anzeige" breite={HALB}>
             <SendeProbe dauer={150} kennung="Probe kurze Antwort" />
@@ -234,6 +234,14 @@ export default function VorschauGrundbausteine() {
           </Zustand>
           <Zustand voll name="mehrzeilig · Ruhe" breite={{ mobil: 4, tablett: 8, desktop: 8 }}>
             <Mehrzeilig beschriftung="Projektnotiz (optional)" name="notes" placeholder="z. B. ca. 15 m² Fliesen, Altbau, Walk-In Dusche" />
+          </Zustand>
+          <Zustand voll name="Formular · Pflichthinweis einmal je Formular (Feldgruppe)" breite={{ mobil: 4, tablett: 8, desktop: 12 }}>
+            {/* „* Pflichtfeld“: Mikrotext Klasse 1, nur in der Vorschau (Entscheidung Orchestrator P3-03b) */}
+            <Feldgruppe legende="Direktanfrage an Deniz Tezgel" pflichthinweis="* Pflichtfeld" anordnung="felder">
+              <Feld beschriftung="Name" zusatz="*" name="name-formular" autoComplete="name" placeholder="Vor- und Nachname" required />
+              <Feld beschriftung="Telefonnummer" zusatz="*" art="tel" name="phone-formular" placeholder="Für den Rückruf" required />
+              <Feld beschriftung="E-Mail" zusatz="(für Bestätigung)" art="email" name="email-formular" placeholder="ihre.adresse@beispiel.de" />
+            </Feldgruppe>
           </Zustand>
         </Feldraster>
       </Abschnitt>

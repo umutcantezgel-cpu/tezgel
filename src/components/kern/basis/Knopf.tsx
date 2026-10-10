@@ -1,7 +1,9 @@
 // Knopf (K-011): Hauptknopf Tinte mit Kalk-Text, Nebenknopf 1-px-Rahmen Strich, Textknopf mit Unterstreichung.
 // Als Link (href) oder als <button>. Server-tauglich (keine Hooks, keine eigenen Handler): gesperrte Zustände
 // entstehen ohne Skript – der Knopf wird type="button", verliert onClick und trägt aria-disabled; ein gesperrter Link
-// verliert sein href. So bleibt der Knopf fokussierbar (kein Fokusverlust beim Absenden) und tut doch nichts.
+// verliert sein href. So bleibt der Knopf fokussierbar und tut doch nichts.
+// Absende-Knöpfe nicht hiermit, sondern mit SendeKnopf: Er bleibt type="submit" und bricht den Klick ab – nur so ist auch
+// das implizite Absenden per Enter gesperrt (ein type="button" lässt ein Formular mit einem einzigen Feld absenden).
 // Register K-009: `druck` (1 px nach unten, :active) und `laden` (Fuge läuft); Hover nur bei feinem Zeiger.
 import Link from 'next/link';
 import type { ComponentPropsWithRef, ReactNode } from 'react';
@@ -94,14 +96,15 @@ export const LADETEXT = 'Wird gesendet …';
 
 type Zustand = Pick<KnopfEigen, 'art' | 'groesse' | 'auf' | 'breit' | 'deaktiviert' | 'laedt' | 'className'>;
 
-function knopfKlassen({ art = 'haupt', groesse = 'normal', auf = 'hell', breit, deaktiviert, laedt, className }: Zustand): string {
+/** Klassen eines Knopfs (auch für SendeKnopf, der den <button> selbst rendert). */
+export function knopfKlassen({ art = 'haupt', groesse = 'normal', auf = 'hell', breit, deaktiviert, laedt, className }: Zustand): string {
   const farbe = deaktiviert
     ? art === 'text' ? AUS[auf].text : AUS[auf].flaeche
     : verbinde(RUHE[auf][art], laedt ? 'cursor-progress' : WIRKUNG[auf][art]);
   return verbinde(BASIS, HOEHE[groesse], art !== 'text' && INNEN_X[groesse], farbe, fokus(auf), breit && 'w-full', className);
 }
 
-function Inhalt({ vorne, hinten, children, laedt, ladetext }: Pick<KnopfEigen, 'vorne' | 'hinten' | 'children' | 'laedt' | 'ladetext'>) {
+export function KnopfInhalt({ vorne, hinten, children, laedt, ladetext }: Pick<KnopfEigen, 'vorne' | 'hinten' | 'children' | 'laedt' | 'ladetext'>) {
   // Ladefähig (laedt ist gesetzt, auch false): Beschriftung und Ladetext liegen übereinander im selben Rasterfeld,
   // die Breite bleibt beim Wechsel gleich (kein Sprung). Unsichtbares fällt aus dem Barrierebaum (visibility).
   if (laedt === undefined) {
@@ -137,7 +140,7 @@ export default function Knopf(props: KnopfProps) {
     const { art, groesse, auf, breit, deaktiviert, laedt, beschaeftigt, ladetext, vorne, hinten, children, className, href, onClick, ...rest } = props;
     const gesperrt = Boolean(deaktiviert || laedt || beschaeftigt);
     const klassen = knopfKlassen({ art, groesse, auf, breit, deaktiviert, laedt, className });
-    const inhalt = <Inhalt vorne={vorne} hinten={hinten} laedt={laedt} ladetext={ladetext}>{children}</Inhalt>;
+    const inhalt = <KnopfInhalt vorne={vorne} hinten={hinten} laedt={laedt} ladetext={ladetext}>{children}</KnopfInhalt>;
     if (gesperrt) {
       // Gesperrter Link: ohne href kein Ziel und kein Tab-Halt; role="link" + aria-disabled nennen den Zustand.
       return (
@@ -172,7 +175,7 @@ export default function Knopf(props: KnopfProps) {
       data-motion={gesperrt ? undefined : 'druck'}
       className={knopfKlassen({ art, groesse, auf, breit, deaktiviert, laedt, className })}
     >
-      <Inhalt vorne={vorne} hinten={hinten} laedt={laedt} ladetext={ladetext}>{children}</Inhalt>
+      <KnopfInhalt vorne={vorne} hinten={hinten} laedt={laedt} ladetext={ladetext}>{children}</KnopfInhalt>
     </button>
   );
 }

@@ -1,6 +1,8 @@
-// Feldgruppe (fieldset + legend) für Auswahlknöpfe und zusammengehörige Checkboxen.
-// Hilfe und Fehlermeldung (Versatz-Zeichen + role="alert") stehen einmal für die Gruppe und sind per aria-describedby verknüpft.
-// anordnung: untereinander · nebeneinander (umbrechend) · kacheln (Felder ohne Zwischenraum, 1-px-Fugen in Strich,
+// Feldgruppe (fieldset + legend) für Auswahlknöpfe, zusammengehörige Checkboxen oder einen ganzen Formularabschnitt.
+// Hilfe, Pflichthinweis und Fehlermeldung (Versatz-Zeichen + role="alert") stehen einmal für die Gruppe und sind per
+// aria-describedby verknüpft. Pflichthinweis (z. B. „* Pflichtfeld“, Wortlaut vom Aufrufer, K-012 Klasse 1): einmal je Formular,
+// sichtbar vor den Feldern, in Mono wie das Sternchen an der Beschriftung (Feld `zusatz`).
+// anordnung: untereinander · felder (Formularfelder mit Abstand) · nebeneinander (umbrechend) · kacheln (Felder ohne Zwischenraum, 1-px-Fugen in Strich,
 // zusammen mit Auswahlknopf art="kachel"; die Felder tragen den rechten und unteren Rand, die Gruppe den linken und oberen).
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 import { FeldMeldung, Hilfe, useFeldIds } from '@/components/kern/basis/Feldrahmen';
@@ -11,7 +13,9 @@ export type FeldgruppeProps = Omit<ComponentPropsWithRef<'fieldset'>, 'children'
   zusatz?: ReactNode;
   hilfe?: ReactNode;
   fehler?: ReactNode;
-  anordnung?: 'untereinander' | 'nebeneinander' | 'kacheln';
+  /** einmal je Formular: Erklärung des Pflicht-Sternchens */
+  pflichthinweis?: ReactNode;
+  anordnung?: 'untereinander' | 'felder' | 'nebeneinander' | 'kacheln';
   /** Spalten für kacheln ab 768 px (2) bzw. 1024 px (3, 4); mobil eine Spalte */
   spalten?: 2 | 3 | 4;
   children: ReactNode;
@@ -24,20 +28,23 @@ const KACHEL_SPALTEN: Record<2 | 3 | 4, string> = {
   4: 'md:grid-cols-2 lg:grid-cols-4',
 };
 
-export default function Feldgruppe({ legende, zusatz, hilfe, fehler, anordnung = 'untereinander', spalten = 2, children, className, id, disabled, 'aria-describedby': eigene, ...rest }: FeldgruppeProps) {
+export default function Feldgruppe({ legende, zusatz, hilfe, fehler, pflichthinweis, anordnung = 'untereinander', spalten = 2, children, className, id, disabled, 'aria-describedby': eigene, ...rest }: FeldgruppeProps) {
   const ids = useFeldIds(id);
   const innen =
     anordnung === 'kacheln'
       ? verbinde('grid grid-cols-1 border-l border-t border-k-strich', KACHEL_SPALTEN[spalten])
       : anordnung === 'nebeneinander'
         ? 'flex flex-wrap gap-x-k-6'
-        : 'flex flex-col';
+        : anordnung === 'felder'
+          ? 'flex flex-col gap-k-5'
+          : 'flex flex-col';
+  const pflichtId = `${ids.id}-pflicht`;
   return (
     <fieldset
       {...rest}
       id={ids.id}
       disabled={disabled}
-      aria-describedby={beschreibung(hilfe ? ids.hilfeId : undefined, fehler ? ids.meldungId : undefined, eigene)}
+      aria-describedby={beschreibung(hilfe ? ids.hilfeId : undefined, pflichthinweis ? pflichtId : undefined, fehler ? ids.meldungId : undefined, eigene)}
       className={verbinde('m-0 flex min-w-0 flex-col gap-k-2 border-0 p-0', className)}
     >
       <legend className={verbinde('mb-k-2 p-0 k-text text-k-2 font-semibold', disabled ? 'text-k-tinte-2' : 'text-k-tinte')}>
@@ -45,6 +52,11 @@ export default function Feldgruppe({ legende, zusatz, hilfe, fehler, anordnung =
         {zusatz ? <span className="k-mono text-k-1 font-normal text-k-tinte-2"> {zusatz}</span> : null}
       </legend>
       {hilfe ? <Hilfe id={ids.hilfeId}>{hilfe}</Hilfe> : null}
+      {pflichthinweis ? (
+        <p id={pflichtId} className="k-mono text-k-1 text-k-tinte-2">
+          {pflichthinweis}
+        </p>
+      ) : null}
       <div className={innen}>{children}</div>
       <FeldMeldung id={ids.meldungId} fehler={fehler} />
     </fieldset>

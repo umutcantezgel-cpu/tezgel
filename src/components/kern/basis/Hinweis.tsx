@@ -3,7 +3,7 @@
 // fehler: Rahmen Laser, Versatz-Zeichen, Titel in Laser tief, role="alert".
 // Für Ansagen beim Erscheinen den Hinweis erst bei Bedarf einsetzen; ankuendigen={false} für statische Hinweise.
 import type { ReactNode } from 'react';
-import { ZeichenFehler, ZeichenHaken, ZeichenHinweis } from '@/components/kern/basis/Zeichen';
+import Icon from '@/components/kern/icons/Icon';
 import { verbinde } from '@/components/kern/basis/klassen';
 
 export type HinweisArt = 'info' | 'erfolg' | 'fehler';
@@ -24,10 +24,11 @@ const TITEL: Record<HinweisArt, string> = { info: 'text-k-tinte', erfolg: 'text-
 
 const ZEICHEN_FARBE: Record<HinweisArt, string> = { info: 'text-k-tinte', erfolg: 'text-k-abnahme', fehler: 'text-k-laser' };
 
+// Erfolg: Haken inline, damit `notiert` (an der Hülle) seine Pfade zeichnen kann.
 function Zeichen({ art }: { art: HinweisArt }) {
-  if (art === 'fehler') return <ZeichenFehler className="size-k-5" />;
-  if (art === 'erfolg') return <ZeichenHaken notiert className="size-k-5" />;
-  return <ZeichenHinweis className="size-k-5" />;
+  if (art === 'fehler') return <Icon name="fehler" groesse={24} />;
+  if (art === 'erfolg') return <Icon name="haken" groesse={24} inline />;
+  return <Icon name="hinweis" groesse={24} />;
 }
 
 export default function Hinweis({ art = 'info', titel, children, ankuendigen, id, className }: HinweisProps) {
@@ -37,7 +38,10 @@ export default function Hinweis({ art = 'info', titel, children, ankuendigen, id
     <div id={id} role={rolle} className={verbinde('flex items-start gap-k-3 border bg-k-fliese p-k-4 k-text text-k-3 text-k-tinte', RAND[art], className)}>
       {/* Zeichen fluchtet mit der ersten Zeile (Höhe = Zeilenhöhe von Titel k-3 bzw. Text k-2);
           Farbe an der Hülle, damit das SVG in forced-colors die erzwungene Textfarbe erbt */}
-      <span className={verbinde('flex h-lh shrink-0 items-center', titel ? 'text-k-3' : 'text-k-2', ZEICHEN_FARBE[art])}>
+      <span
+        data-motion={art === 'erfolg' ? 'notiert' : undefined}
+        className={verbinde('flex h-lh shrink-0 items-center', titel ? 'text-k-3' : 'text-k-2', ZEICHEN_FARBE[art])}
+      >
         <Zeichen art={art} />
       </span>
       <div className="flex min-w-0 flex-col gap-k-1">

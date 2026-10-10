@@ -6,7 +6,7 @@
 // Invariante: data-offen steht immer am Inhalt, außer während einer Animation – so zeigt ein vom Browser geöffnetes
 // <details> (Seitensuche, name-Gruppe, ohne Skript) seinen Inhalt stets vollständig.
 import { useEffect, useRef, type MouseEvent, type ReactNode } from 'react';
-import { ZeichenAufZu } from '@/components/kern/basis/Zeichen';
+import Icon from '@/components/kern/icons/Icon';
 import { fokus, verbinde } from '@/components/kern/basis/klassen';
 
 export function Akkordeon({ children, className }: { children: ReactNode; className?: string }) {
@@ -92,8 +92,10 @@ export function AkkordeonEintrag({ titel, children, offen = false, name, ebene, 
         )}
       >
         <Titel className="min-w-0">{titel}</Titel>
+        {/* Plus zu, Minus offen (group-open); beide aus der Icon-Familie, Farbe erbt vom summary */}
         <span className="flex h-lh shrink-0 items-center">
-          <ZeichenAufZu className="size-k-5" />
+          <Icon name="plus" groesse={24} className="group-open:hidden" />
+          <Icon name="minus" groesse={24} className="hidden group-open:block" />
         </span>
       </summary>
       <div ref={inhalt} data-motion="aufklappen" data-offen="">

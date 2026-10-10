@@ -2,7 +2,7 @@
 // ein Leerzustand ist eine erste Option mit value="" und Wortlaut des Aufrufers. Zustände wie Feld.
 import type { ComponentPropsWithRef } from 'react';
 import { Feldrahmen, feldBeschreibung, feldKlassen, useFeldIds, type FeldAngaben } from '@/components/kern/basis/Feldrahmen';
-import { ZeichenWinkel } from '@/components/kern/basis/Zeichen';
+import Icon from '@/components/kern/icons/Icon';
 import { verbinde } from '@/components/kern/basis/klassen';
 
 export type AuswahlProps = FeldAngaben & Omit<ComponentPropsWithRef<'select'>, keyof FeldAngaben>;
@@ -24,7 +24,7 @@ export default function Auswahl({ beschriftung, zusatz, hilfe, fehler, erfolg, c
           {children}
         </select>
         <span className="pointer-events-none absolute inset-y-0 right-k-3 flex items-center text-k-tinte peer-disabled:text-k-tinte-2">
-          <ZeichenWinkel className="size-k-5" />
+          <Icon name="winkel" richtung="unten" groesse={24} />
         </span>
       </div>
     </Feldrahmen>

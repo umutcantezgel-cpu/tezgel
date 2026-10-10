@@ -3,7 +3,7 @@
 // Feld, Mehrzeilig und Auswahl nutzen ihn; Ankreuzfeld, Auswahlknopf und Feldgruppe nutzen FeldMeldung.
 // Server-tauglich: useId ist in Server-Komponenten erlaubt.
 import { useId, type ReactNode } from 'react';
-import { ZeichenFehler, ZeichenHaken } from '@/components/kern/basis/Zeichen';
+import Icon from '@/components/kern/icons/Icon';
 import { beschreibung, fokus, verbinde } from '@/components/kern/basis/klassen';
 
 /** Gemeinsame Angaben aller Felder mit Beschriftung. */
@@ -43,7 +43,7 @@ export function FeldMeldung({ id, fehler, erfolg, className }: { id: string; feh
     return (
       <p id={id} role="alert" className={verbinde('flex items-start gap-k-2 k-text text-k-2 text-k-laser-tief', className)}>
         <span className="flex h-lh shrink-0 items-center text-k-laser">
-          <ZeichenFehler className="size-k-4" />
+          <Icon name="fehler" groesse={16} />
         </span>
         <span className="min-w-0">{fehler}</span>
       </p>
@@ -52,8 +52,9 @@ export function FeldMeldung({ id, fehler, erfolg, className }: { id: string; feh
   if (erfolg) {
     return (
       <p id={id} className={verbinde('flex items-start gap-k-2 k-text text-k-2 text-k-abnahme', className)}>
-        <span className="flex h-lh shrink-0 items-center">
-          <ZeichenHaken notiert className="size-k-4" />
+        {/* Haken inline (Pfade mit pathLength=1), damit `notiert` ihn zeichnen kann – CSS erreicht Pfade hinter use nicht */}
+        <span className="flex h-lh shrink-0 items-center" data-motion="notiert">
+          <Icon name="haken" groesse={16} inline />
         </span>
         <span className="min-w-0">{erfolg}</span>
       </p>

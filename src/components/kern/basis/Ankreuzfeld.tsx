@@ -4,7 +4,7 @@
 // Zustände: Ruhe · Hover (feiner Zeiger, Rand Tinte) · Fokus (2 px Tinte am Kästchen) · gesetzt · deaktiviert (gestrichelt, Cursor) · Fehler.
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 import { FeldMeldung, Hilfe, feldBeschreibung, useFeldIds } from '@/components/kern/basis/Feldrahmen';
-import { ZeichenHaken } from '@/components/kern/basis/Zeichen';
+import Icon from '@/components/kern/icons/Icon';
 import { fokus, verbinde } from '@/components/kern/basis/klassen';
 
 export type AnkreuzfeldProps = Omit<ComponentPropsWithRef<'input'>, 'type' | 'children'> & {
@@ -42,9 +42,10 @@ export default function Ankreuzfeld({ children, hilfe, fehler, className, id, di
               fokus('hell'),
             )}
           />
-          {/* Farbe an der Hülle, nicht am SVG: in forced-colors erbt das SVG die erzwungene Textfarbe */}
+          {/* Farbe an der Hülle, nicht am SVG: in forced-colors erbt das SVG die erzwungene Textfarbe.
+              Haken über das Sprite (IconSprite steht im Kern-Layout am Anfang von body, also vor jedem Feld im HTML). */}
           <span className="pointer-events-none invisible absolute inset-0 flex items-center justify-center text-k-kalk peer-checked:visible peer-disabled:text-k-tinte-2">
-            <ZeichenHaken className="size-k-5" />
+            <Icon name="haken" groesse={24} />
           </span>
         </span>
         <span className="min-w-0">{children}</span>
