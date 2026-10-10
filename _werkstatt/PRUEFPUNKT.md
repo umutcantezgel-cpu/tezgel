@@ -1,9 +1,12 @@
 # PRUEFPUNKT
 
-- Etappe: E2 Referenz · Stand 10.10.2026 22:27 CEST
-- Letzter Commit vor diesem Prüfpunkt: E2-PRUEF-T-2 (Textbasis e0 neu); 4310 = Reinraum 745335f, 4320 = Dev (Arbeitsbaum).
-- Laufende Pakete (Haiku): E2-PRUEF-A-2 (Prüfstufe A für 05a-N1/N2, 04-N1, 05b, 05c, 06; schreibt nur Scratch und Rückgabe), E2-BAU-04 (Karten, V-01; unkommittierte Dateien `src/components/maps/**`, `src/components/legal/MapConsentGate.tsx`).
-- Orchestrator: Entwürfe unter Scratch `orch/entwurf/startseite` (page, Kreuzlinie, TrustStrip, HeroContactForm, PricingCalculator, taf/*, Einstieg, Schrittfolge, bewegung-sig1.css) und `orch/entwurf/kontakt` (DirectContactCard). Textproben mit `orch/textdiff.cjs`: nur protokollierbare Mikrotexte.
-- Danach: Rückgabe A-2 auswerten → E2-ORCH-08 anwenden (TEXTVORSCHLAEGE: Hero „Per WhatsApp schreiben“, Emoji in zwei Bestätigungen, Laufband-Abbau in globals.css) → Prüfstufe A → E2-ORCH-09 (/kontakt, BookingCalendar V-02/V-05) → E2-Tor (Prüfstufe B, Sichtabnahme, Lighthouse-Ruhefenster E0-PRUEF-03L).
-- Offene Menschen-Fragen: M-15 (Löschfreigabe verwaister Dateien, erweitert), M-16 (GA im selben Besuch).
+- Etappe: E2 Referenz · Stand 10.10.2026 23:19 CEST
+- Abgenommen: E2-ORCH-01…08, E2-BAU-01…04, E2-GRAF-01/02 (Belege in den Rückgaben E2-PRUEF-A-1…-A-3 und E2-BAU-04).
+- Laufend (Haiku): E2-PRUEF-A-4 (Prüfstufe A für E2-ORCH-09 /kontakt und -04-N2; alle Funktionstests; V-02-Test).
+- Danach E2-Tor in dieser Reihenfolge:
+  1. E2-PRUEF-B auf Reinraum-Build HEAD (Port 4312; Vorlage `scratchpad/orch/spez/E2-PRUEF-B.vorlage.json`, COMMIT einsetzen).
+  2. E2-PRUEF-L1 Lighthouse im Ruhefenster (kein anderer Agent): e0 auf 4310 (745335f) und E2 auf 4312 (Vorlage `E2-PRUEF-L1.vorlage.json`).
+  3. Sichtabnahme durch frischen Unteragenten (Modell ORCHESTRATOR) nach `_werkstatt/pakete/_vorlage-sichtabnahme.md`, Bilder aus E2-PRUEF-B; Ansichtswert ≥ 8.
+- Vorbereitet für E3: Entwürfe `scratchpad/orch/entwurf/e3` (Verlegeplan-Zustände, SzeneAblauf mit view-timeline).
+- Offene Menschen-Fragen: M-15 (Löschfreigabe, erweitert), M-16 (GA im selben Besuch), M-17 (Standortdaten Wetzlar/Aßlar).
 - Bei Wiederaufnahme nach Abbruch: laufende Pakete in ihren Dateien auf den letzten Commit zurücksetzen und neu starten; Server nach `_werkstatt/werkzeuge/EINRICHTUNG.md`.
