@@ -99,6 +99,15 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 - **Umkehrprobe:** Revert des Commits stellt jede Datei wieder her (Historie bleibt).
 - **Folgen zweiter Ordnung:** weniger Fundstellen für lucide/framer-motion; `AnimatedNumber` (Hochzählen) und `TiltCard` (Kippkarte) als Katalog-Muster verschwinden.
 
+## E-015 · WhatsApp mobil in der Leiste, am Desktop flacher Knopf (Denkprotokoll, Teständerung)
+- **Ziel:** KERN K-003/7 („untere Leiste als einzige feste Ebene neben dem Kopf“, keine Chat-Blase) einhalten, ohne einen Kontaktweg oder dessen Verhalten zu verlieren.
+- **Bestand:** schwebender, ziehbarer WhatsApp-Kreis mit „1“-Abzeichen auf allen Breiten (`#whatsapp-floating-btn`, seitenbezogene Nachricht, Entprellung 450 ms); mobil zusätzlich WhatsApp in der unteren Leiste (ohne seitenbezogene Nachricht). Test F-10 klickt mobil und am Desktop `#whatsapp-floating-btn` und erwartet Firmennummer und seitenbezogenen Text.
+- **Wege:** (1) Kreis mobil behalten (flach) – zwei WhatsApp-Wege übereinander; (2) Kreis mobil ausblenden, Test unverändert – Test schlägt mobil fehl; (3) mobil trägt die Leiste WhatsApp mit derselben seitenbezogenen Nachricht (`kontextNachricht` in `src/lib/whatsapp.ts`, aus dem Widget verschoben), am Desktop bleibt `#whatsapp-floating-btn` als flacher Knopf; Test F-10 klickt mobil den WhatsApp-Link der Leiste mit denselben Erwartungen.
+- **Bewertung:** (1) widerspricht K-003/7 und verdeckt Inhalt; (2) verletzt den Bestand; (3) ein Weg je Breite, gleiches Verhalten, die Leiste gewinnt den seitenbezogenen Text dazu.
+- **Wahl: (3).** Der Test bleibt gleich streng (gleiche Erwartungen: sichtbares Bedienelement, Firmennummer, seitenbezogener Text, keine Anfrage); nur das Element mobil ist die Leiste. Das vorgetäuschte „1“-Abzeichen und der Hinweis „Chat starten 💬“ entfallen (E-008, TEXTVORSCHLAEGE).
+- **Umkehrprobe:** Revert der Commits E2-ORCH-05b.
+- **Folgen zweiter Ordnung:** Die Leiste öffnet WhatsApp jetzt mit vorbelegtem Text; der Widerrufs-Knopf der Einwilligung bleibt als zweite kleine feste Ebene links (Art. 7 Abs. 3 DSGVO, Test F-11) und trägt `data-feste-ebene`.
+
 ## L6 · Lernen
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|
