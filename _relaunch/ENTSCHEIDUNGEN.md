@@ -213,3 +213,13 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
     4. „DIN 18534“ in Mono ohne breite Wortlücken.
     5. Der Einstieg trägt `data-hauptaktion`, damit der WhatsApp-Kanal ihn nie überdeckt (K-011, E-013).
 - **Umkehrprobe:** Variante A liegt im Repo (`kopf-a`, `einstieg-a`), ein Import tauscht sie zurück. Nicht gewählte Varianten werden in W10 mit knip entfernt.
+
+## E-013 · Nachtrag (11.10.2026, Vorschau 77ef851-v): „verdeckt nie die Hauptaktion“ – Auslegung
+- **Befund:** Beim Erstbesuch am Desktop (1440 × 900) liegt der Banner links unten (≤ 28rem) über den Knöpfen des Einstiegs, „Aufmaß vor Ort anfragen“ und WhatsApp. Frei bleiben der Knopf „Aufmaß anfragen“ im Kopf, das Hero-Formular ab seiner Überschrift und die H1 (LCP). Mobil liegt der Banner über dem Absatz, und die untere Leiste mit „Aufmaß“ bleibt frei.
+- **Wege:**
+  1. Banner rechts: verdeckt das Formular.
+  2. Banner oben: verdeckt die H1, also das LCP-Element.
+  3. Banner im Fluss: verschiebt die Seite nach dem Laden (CLS).
+  4. Links unten wie gebaut.
+- **Wahl: (4).** Ausgelegt heißt die Regel: In jeder Ansicht bleibt mindestens ein vollständiger Anfrageweg frei sichtbar und bedienbar (Kopf-Knopf + Formular am Desktop, untere Leiste mobil). Der Banner deckt höchstens Zweitwege ab. Er ist nicht blockierend (`aria-modal="false"`) und mit einer gleichwertigen Wahl sofort weg.
+- **Prüfung:** Probeläufer-Aufgabe 3 (Anfrage) am Kandidaten mit Einwilligung „erstbesuch“ – Schrittzahl ≤ Bezugswert, kein Befund „verdeckt durch …“ auf dem Weg.
