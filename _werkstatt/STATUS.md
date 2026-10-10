@@ -1,4 +1,4 @@
-STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 1/9 (E0/E1 parallel) · Welle E0-W1 · Pflicht 2/111 · Kür 0/9 · Kriterien 0/10 · Ausnahmen 0 · Bestand grün · Nächster Schritt: Rückgaben E0-PRUEF-02a–d abnehmen, dann Ausgangswerte (E0-PRUEF-03/-04) und L0-Planprüfung
+STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 2/9 (E0/E1 Abschluss, E2 begonnen) · Welle E0-W2 · E2-W2 · Pflicht 7/100 · Kür 0/9 · Kriterien 0/10 · Ausnahmen 0 · Bestand grün · Nächster Schritt: Rahmen (E2-ORCH-05a) bauen, während E0-PRUEF-03, E1-PRUEF-01 Runde 2, E2-GRAF-02 und E2-AUF-01 laufen
 
 # STATUS · Werkstatt-Lauf „Tezgel auf Spitzenniveau“
 
@@ -26,3 +26,5 @@ Siehe `_werkstatt/werkzeuge/EINRICHTUNG.md` (entsteht in E0-PRUEF-01). Kurz: `np
 ## Protokoll (stündlich, unten anfügen)
 - 2026-10-10 19:30 CEST · E0 gestartet: Plan im Chat freigegeben; `_werkstatt` angelegt, Werkzeuge aus `_relaunch` übernommen (git mv), Ausschlüsse gesetzt, CLAUDE.md-Block, Kundschafter- und Planprüfberichte abgelegt; E0-PRUEF-01 läuft.
 - 2026-10-10 21:15 CEST · E0-PRUEF-01 committet (Reinraum grün, Server 4310/4320); E0-PRUEF-02a–d laufen (4 Plätze); Next-16-Doku gelesen (View Transitions ohne Konfiguration, `transitionTypes`, `next/font/local`, `preload`, `qualities`, `redirects`, `agentRules`); KERN v2, PLAN v1 (111 Pakete), ABNAHME, Denkprotokolle E-004–E-013 geschrieben (ZWISCHENSTAND).
+
+- 2026-10-10 20:52 CEST · Korrektur: der vorige Eintrag trägt fälschlich 21:15, richtig war etwa 20:17 CEST. Seitdem: E0-PRUEF-02a–d abgenommen und committet (Werkzeugkette vollständig: Prüfstufe A, Bildsatz, Überlappung, Bewegung, Glyphen, Lighthouse, Texte, Werte, SVG); E2-ORCH-01–04 als ZWISCHENSTAND committet (Fundament, Bewegungssystem, Formsystem, Referenzbausteine); E2-GRAF-01 (12 Icons) abgenommen; L0-Runde 1 mit 22 Befunden in PLAN.md eingearbeitet (Tabellenzahl 116, Pflicht = 100 Zeilen E0–E6, KÜR-01…09 mit Schwellen); laufend: E0-PRUEF-03, E1-PRUEF-01 Runde 2, E2-GRAF-02, E2-AUF-01.

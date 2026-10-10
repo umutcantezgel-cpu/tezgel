@@ -12,7 +12,7 @@ Kriterium · Methode · Schwelle · Beleg · Status. Erledigt ist nur, was gepr�
 
 | Nr | Kriterium | Methode | Schwelle | Beleg | Status |
 |---|---|---|---|---|---|
-| Z-01 | Plan | Abgleich mit PLAN.md | 100 % der Pflichtpakete erledigt und abgenommen; jede Kür-Position K-01…K-09 erreicht ihre Schwelle | PLAN.md mit Commit-Kennungen | ☐ |
+| Z-01 | Plan | Abgleich mit PLAN.md | 100 % der Pflichtpakete erledigt und abgenommen; jede Kür-Position KÜR-01…KÜR-09 erreicht ihre Schwelle | PLAN.md mit Commit-Kennungen | ☐ |
 | Z-02 | Bestand | Prüfstufe C: Reinraum (build, typecheck, lint, `npm test`, `qa:graph`), Funktionstests F-01…F-19 + neue Fälle gegen 4310 (Attrappe und echte Route im Mock-Modus), Konsole, Text-/SEO-Vergleich gegen E0 | alles grün; `npm test` alle grün und ≥ 17 Fälle; bekannte Altfehler-`fixme` nehmen nicht zu, V-01 aufgelöst; 0 neue Konsolenfehler; Sitemap 163, 0 kaputte interne Links; Textabweichungen nur protokollierte Mikrotexte; Abnahmetests V-01…V-06 grün | `belege/c/` | ☐ |
 | Z-03 | Designsystem | `werte.mjs --basis 745335f --arbeitsbaum` über alle geänderten Dateien + Stichprobe | 0 Werte außerhalb von KERN, 0 Klassen ohne CSS; jede neue Komponente nutzt das System; Ausnahmen nur laut `werte-regeln.json` (E-Mail-Vorlagen, SVG-Koordinaten, `next/og`) | `belege/c/werte.json` | ☐ |
 | Z-04 | Gestaltung | Frischer Opus-Endprüfer, nur Bilder (Bildsatz Abschluss) + 5-Bild-Folgen der großen Momente, Rubrik Abschnitt 9; Blindvergleich vorher/nachher, neutral benannt, zufällige Reihenfolge, Schlüssel getrennt | jede Hauptansicht Ansichtswert ≥ 8, keine Kategorie < 7; auf jeder Hauptansicht wird der neue Stand vorgezogen | `bilder/abschluss/`, `bilder/blind/`, `berichte/C-ENDPRUEFUNG.md` | ☐ |
