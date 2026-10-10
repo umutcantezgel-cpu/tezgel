@@ -107,6 +107,10 @@ export default function Footer() {
                             </a>
                         </div>
                         <div className="bg-tinte p-4">
+                            <span className={etikett}>Fax</span>
+                            <span className="mt-1 block font-mono text-fs-2">{contact.fax}</span>
+                        </div>
+                        <div className="bg-tinte p-4">
                             <span className={etikett}>E-Mail</span>
                             <a
                                 href={`mailto:${contact.email}`}
@@ -115,10 +119,6 @@ export default function Footer() {
                             >
                                 {contact.email}
                             </a>
-                        </div>
-                        <div className="bg-tinte p-4">
-                            <span className={etikett}>Fax</span>
-                            <span className="mt-1 block font-mono text-fs-2">{contact.fax}</span>
                         </div>
                         <div className="bg-tinte p-4 sm:col-span-2">
                             <span className={etikett}>Zeiten</span>
