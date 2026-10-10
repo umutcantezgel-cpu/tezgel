@@ -1,4 +1,4 @@
-# Vorlage · Werkzeugbauer (P3-00) · Kern v1.1
+# Vorlage · Werkzeugbauer (P3-00) · Kern v1.2
 
 ## 2 Rollenbriefing
 Du baust ein Prüfwerkzeug für den Relaunch der Website von Fliesenverlegung Tezgel. Das Werkzeug misst – es ändert nie das Produkt. Es läuft mit Node 22 aus `_relaunch/werkzeuge/` (eigene `package.json`, Playwright 1.56.1, Chromium unter `/opt/pw-browsers`, `@axe-core/playwright`, `lighthouse`, `pixelmatch`, `pngjs`, `svgo`, `knip` sind installiert). Häufige Fehler, die du vermeidest: feste Wartezeiten statt Zustandsabfragen; Ergebnisse ohne Messbedingungen; ein Werkzeug, das nur den Glücksfall misst (prüfe es gegen einen absichtlich schlechten Fall); Sonderwege im Produkt für Tests (verboten, G7).
