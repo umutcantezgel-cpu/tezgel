@@ -1,48 +1,15 @@
 "use client";
+// Bad-Projektcheck (E-011): Zustand und Absenden hier, Logik in logik.js (gesperrt), Markup in Schritt1–4 und Zusammenfassung.
 import React, { useState } from 'react';
-import Link from 'next/link';
-import {
-    ClipboardCheck,
-    Check,
-    ArrowRight,
-    Phone,
-    Info,
-    BadgePercent,
-    MessageCircle,
-    Send,
-    CheckCircle2,
-    Loader2,
-    AlertCircle,
-    Sparkles
-} from 'lucide-react';
+import { ClipboardCheck } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
-
-const SCOPE_OPTIONS = [
-    { id: 'komplett', label: 'Komplettbad', desc: 'Schlüsselfertig' },
-    { id: 'teil', label: 'Teilsanierung', desc: 'Sanitär & Keramik' },
-    { id: 'dusche-nur', label: 'Wanne zu Dusche', desc: 'Nur Duschbereich' }
-];
-
-const TIER_OPTIONS = [
-    { id: 'basic', label: 'Solide', desc: 'Funktional & zeitlos' },
-    { id: 'premium', label: 'Gehoben', desc: 'Edle Oberflächen' },
-    { id: 'luxus', label: 'Exklusiv', desc: 'Spa-Charakter, Dusch-WC' }
-];
-
-const EXTRA_OPTIONS = [
-    { id: 'walkin', label: 'Bodengleiche Walk-In-Dusche' },
-    { id: 'badewanne', label: 'Badewanne / Komfortwanne' },
-    { id: 'dusch-wc', label: 'Dusch-WC mit Hygiene-Spülung' },
-    { id: 'doppelwaschtisch', label: 'Möbel-Doppelwaschtisch' },
-    { id: 'fussbodenheizung', label: 'Fußbodenheizung' },
-    { id: 'design-heizkoerper', label: 'Design-Heizkörper' },
-    { id: 'led-spiegel', label: 'LED-Lichtspiegel' },
-    { id: 'fliesen', label: 'Großformat-Fliesenverlegung' }
-];
-
-const inputClass =
-    'w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
+import { beschriftungen, leadNachricht, anfrageNutzlast } from './logik';
+import Schritt1 from './Schritt1';
+import Schritt2 from './Schritt2';
+import Schritt3 from './Schritt3';
+import Schritt4 from './Schritt4';
+import Zusammenfassung from './Zusammenfassung';
 
 export default function BadProjektCheck() {
     const [sqm, setSqm] = useState(8.2);
@@ -67,27 +34,9 @@ export default function BadProjektCheck() {
         );
     };
 
-    const sqmLabel = sqm.toLocaleString('de-DE');
-    const scopeLabel = SCOPE_OPTIONS.find((s) => s.id === sanitaryScope)?.label ?? sanitaryScope;
-    const tierLabel = TIER_OPTIONS.find((t) => t.id === tier)?.label ?? tier;
-    const extras = EXTRA_OPTIONS.filter((o) => selectedOptions.includes(o.id)).map((o) => o.label);
-    const matchingBath = sqm <= 9
-        ? { label: 'Kompaktbad 8,2 m²', slug: 'basic-bad-8_2' }
-        : { label: 'Komfort-Bad 15,9 m²', slug: 'premium-bad-15_9' };
+    const { sqmLabel, scopeLabel, tierLabel, extras, matchingBath } = beschriftungen({ sqm, sanitaryScope, tier, selectedOptions });
 
-    const getLeadMessage = () => {
-        return (
-            `Hallo Herr ${COMPANY_DATA.owner.lastName},\nich habe den Bad-Projektcheck genutzt und bitte um ein Festpreisangebot:\n\n` +
-            `Badgröße: ca. ${sqmLabel} m²\n` +
-            `Sanierungsumfang: ${scopeLabel}\n` +
-            `Ausstattungsniveau: ${tierLabel}\n` +
-            `Wunschausstattung: ${extras.join(', ') || 'Keine Extras gewählt'}\n\n` +
-            `Name: ${leadData.name}\n` +
-            `Telefon: ${leadData.phone}\n` +
-            `E-Mail: ${leadData.email || 'Nicht angegeben'}\n\n` +
-            `Bitte melden Sie sich bezüglich eines unverbindlichen Vor-Ort-Aufmaßes. Vielen Dank!`
-        );
-    };
+    const getLeadMessage = () => leadNachricht({ ownerLastName: COMPANY_DATA.owner.lastName, sqmLabel, scopeLabel, tierLabel, extras, leadData });
 
     const handleLeadSubmit = async (e) => {
         e.preventDefault();
@@ -111,26 +60,7 @@ export default function BadProjektCheck() {
             const response = await fetch('/api/anfrage', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    inquiryType: 'projekt_check',
-                    projectType: 'bad',
-                    projectTitle: `Bad-Projektcheck (ca. ${sqmLabel} m²)`,
-                    contact: {
-                        name: leadData.name,
-                        phone: leadData.phone,
-                        email: leadData.email || undefined
-                    },
-                    projektCheckDetails: {
-                        sqm: sqmLabel,
-                        scope: sanitaryScope,
-                        scopeLabel,
-                        tier,
-                        tierLabel,
-                        extras
-                    },
-                    area: `ca. ${sqmLabel} m²`,
-                    timing: 'Nach Aufmaß'
-                })
+                body: JSON.stringify(anfrageNutzlast({ sqmLabel, sanitaryScope, scopeLabel, tier, tierLabel, extras, leadData }))
             });
 
             const data = await response.json();
@@ -176,336 +106,19 @@ export default function BadProjektCheck() {
                 <div className="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Controls (Left 7 Cols) */}
                     <div className="lg:col-span-7 space-y-7">
-                        {/* 1. Room Size Slider */}
-                        <div>
-                            <div className="flex items-center justify-between gap-3 mb-2">
-                                <label htmlFor="budget-sqm" className="text-sm font-black text-slate-900">
-                                    1. Badezimmer-Größe in Quadratmetern:
-                                </label>
-                                <span className="font-display text-base sm:text-lg font-black text-orange-950 bg-orange-50 px-3.5 py-1 rounded-tile-sm border border-orange-200 tabular-nums whitespace-nowrap">
-                                    {sqmLabel} m²
-                                </span>
-                            </div>
-                            <input
-                                id="budget-sqm"
-                                type="range"
-                                min="3.5"
-                                max="25"
-                                step="0.5"
-                                value={sqm}
-                                onChange={(e) => setSqm(parseFloat(e.target.value))}
-                                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
-                            />
-                            <div className="flex justify-between text-[10px] sm:text-[11px] text-slate-600 font-semibold mt-1 tabular-nums">
-                                <span>3,5 m² (Gäste-WC)</span>
-                                <span>8,2 m² (Standard)</span>
-                                <span>15,9 m² (Komfort)</span>
-                                <span>25 m² (Spa)</span>
-                            </div>
-                        </div>
-
-                        {/* 2. Sanierungsumfang */}
-                        <fieldset>
-                            <legend className="block text-sm font-black text-slate-900 mb-2">
-                                2. Sanierungsumfang:
-                            </legend>
-                            <div className="grid grid-cols-3 gap-2">
-                                {SCOPE_OPTIONS.map((scope) => {
-                                    const isSelected = sanitaryScope === scope.id;
-                                    return (
-                                        <button
-                                            key={scope.id}
-                                            type="button"
-                                            aria-pressed={isSelected}
-                                            onClick={() => setSanitaryScope(scope.id)}
-                                            className={`p-3 rounded-tile-md border text-left transition-all duration-300 ${
-                                                isSelected
-                                                    ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
-                                                    : 'border-slate-200 bg-white hover:border-orange-500 hover:-translate-y-0.5'
-                                            }`}
-                                        >
-                                            <span className={`block text-xs font-black ${isSelected ? 'text-orange-950' : 'text-slate-900'}`}>{scope.label}</span>
-                                            <span className="block text-[11px] text-slate-600">{scope.desc}</span>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </fieldset>
-
-                        {/* 3. Qualitätskategorie */}
-                        <fieldset>
-                            <legend className="block text-sm font-black text-slate-900 mb-2">
-                                3. Ausstattungsniveau:
-                            </legend>
-                            <div className="grid grid-cols-3 gap-2">
-                                {TIER_OPTIONS.map((t) => {
-                                    const isSelected = tier === t.id;
-                                    return (
-                                        <button
-                                            key={t.id}
-                                            type="button"
-                                            aria-pressed={isSelected}
-                                            onClick={() => setTier(t.id)}
-                                            className={`p-3 rounded-tile-md border text-left transition-all duration-300 ${
-                                                isSelected
-                                                    ? 'border-orange-600 bg-orange-50 ring-2 ring-orange-600/20'
-                                                    : 'border-slate-200 bg-white hover:border-orange-500 hover:-translate-y-0.5'
-                                            }`}
-                                        >
-                                            <span className="block text-xs font-black text-slate-900">{t.label}</span>
-                                            <span className="block text-[11px] text-slate-600 leading-snug">{t.desc}</span>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </fieldset>
-
-                        {/* 4. Sonderausstattungen */}
-                        <fieldset>
-                            <legend className="block text-sm font-black text-slate-900 mb-2">
-                                4. Wunschausstattung &amp; Extras:
-                            </legend>
-                            <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-2">
-                                {EXTRA_OPTIONS.map((opt) => {
-                                    const isSelected = selectedOptions.includes(opt.id);
-                                    return (
-                                        <button
-                                            key={opt.id}
-                                            type="button"
-                                            aria-pressed={isSelected}
-                                            onClick={() => toggleOption(opt.id)}
-                                            className={`px-3 py-2 rounded-tile-sm border text-xs font-bold text-left transition-all duration-300 flex items-center justify-between gap-2 ${
-                                                isSelected
-                                                    ? 'bg-orange-50 border-orange-600 text-orange-950'
-                                                    : 'bg-white border-slate-200 text-slate-700 hover:border-orange-500'
-                                            }`}
-                                        >
-                                            <span>{opt.label}</span>
-                                            {isSelected && (
-                                                <Check className="w-3.5 h-3.5 text-orange-600 shrink-0" />
-                                            )}
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </fieldset>
+                        <Schritt1 sqm={sqm} setSqm={setSqm} sqmLabel={sqmLabel} />
+                        <Schritt2 sanitaryScope={sanitaryScope} setSanitaryScope={setSanitaryScope} />
+                        <Schritt3 tier={tier} setTier={setTier} />
+                        <Schritt4 selectedOptions={selectedOptions} toggleOption={toggleOption} />
                     </div>
 
-                    {/* Summary & Actions (Right 5 Cols) */}
-                    <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200">
-                        <div className="space-y-4">
-                            <span className="eyebrow eyebrow-sky">
-                                <Info className="w-3.5 h-3.5" />
-                                Ihre Zusammenfassung
-                            </span>
-
-                            <dl aria-live="polite" className="p-4 rounded-2xl bg-white border border-slate-200 text-xs divide-y divide-slate-100">
-                                {[
-                                    ['Badgröße', `ca. ${sqmLabel} m²`],
-                                    ['Umfang', scopeLabel],
-                                    ['Ausstattung', tierLabel],
-                                    ['Wünsche', extras.join(', ') || 'Keine Extras gewählt']
-                                ].map(([term, value]) => (
-                                    <div key={term} className="flex justify-between gap-3 py-2 first:pt-0 last:pb-0">
-                                        <dt className="font-bold text-slate-600 shrink-0">{term}</dt>
-                                        <dd className="font-bold text-slate-900 text-right">{value}</dd>
-                                    </div>
-                                ))}
-                            </dl>
-                            <p className="text-xs text-slate-600">
-                                Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den
-                                verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.
-                            </p>
-
-                            {/* Reference to exact Musterbad */}
-                            <div className="p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1 text-xs">
-                                <p className="font-bold text-slate-900 flex items-center justify-between gap-2">
-                                    <span>Musterbad-Vergleich:</span>
-                                    <Link href="/bad/musterbaeder" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold inline-flex items-center gap-1">
-                                        Katalog
-                                        <ArrowRight className="w-3.5 h-3.5" />
-                                    </Link>
-                                </p>
-                                <p className="text-slate-700">
-                                    Passend:{' '}
-                                    <Link
-                                         href={`/bad/musterbaeder/${matchingBath.slug}`}
-                                         className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                                     >
-                                         {matchingBath.label}
-                                     </Link>
-                                 </p>
-                            </div>
-
-                            {/* Subsidies banner */}
-                            <div className="p-3.5 rounded-tile-sm bg-sky-50 border border-sky-200 text-xs space-y-1 text-slate-700">
-                                <p className="font-bold text-slate-900 flex items-center gap-1.5">
-                                    <BadgePercent className="w-4 h-4 text-sky-600" />
-                                    Bis zu 4.180 € Pflegekassen-Zuschuss
-                                </p>
-                                <p>
-                                    Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.{' '}
-                                    <Link href="/bad/barrierefreies-bad" className="font-bold text-sky-800 hover:underline underline-offset-2">
-                                        Details zum barrierefreien Bad &amp; Zuschüssen
-                                    </Link>
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Action Block */}
-                        <div className="pt-4 border-t border-slate-200 space-y-3">
-                            {!contactOpen ? (
-                                <button
-                                    type="button"
-                                    onClick={() => setContactOpen(true)}
-                                    className="btn-primary w-full text-xs"
-                                >
-                                    Angebot mit Festpreis anfordern
-                                    <ArrowRight className="w-4 h-4" />
-                                </button>
-                            ) : sentVia === 'online' ? (
-                                <div className="p-4 rounded-tile-sm bg-orange-50 border border-orange-200 text-orange-950 text-xs space-y-3" role="status">
-                                    <div className="flex items-center justify-between gap-2">
-                                        <p className="font-black flex items-center gap-1.5 text-sm text-slate-900">
-                                            <CheckCircle2 className="w-4 h-4 text-orange-600" />
-                                            Projektcheck übermittelt
-                                        </p>
-                                        {referenceId && (
-                                            <span className="px-2 py-0.5 bg-white border border-orange-300 rounded font-mono text-[11px] font-bold text-slate-800">
-                                                {referenceId}
-                                            </span>
-                                        )}
-                                    </div>
-                                    <p className="text-slate-700 leading-relaxed">
-                                        Vielen Dank, <strong>{leadData.name}</strong>! Ihre Projektangaben für ca. {sqmLabel} m² ({scopeLabel}) sind direkt bei Herrn Deniz Tezgel eingegangen.
-                                        {leadData.email && (
-                                            <span className="block mt-1 text-orange-800 font-semibold">
-                                                ✉️ Eine Bestätigung wurde an <em>{leadData.email}</em> gesendet.
-                                            </span>
-                                        )}
-                                    </p>
-                                    <div className="p-2.5 rounded-lg bg-white border border-orange-200 text-[11px] text-slate-600 space-y-1">
-                                        <strong className="text-slate-900 flex items-center gap-1.5">
-                                            <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-                                            Nächste Schritte:
-                                        </strong>
-                                        <p>1. Herr Tezgel prüft Ihre Angaben &amp; Materialbedarf.</p>
-                                        <p>2. Rückruf binnen 24–48 Std. zur Vor-Ort-Aufmaß-Abstimmung.</p>
-                                    </div>
-                                    <button
-                                        type="button"
-                                        onClick={() => { setSentVia(null); setReferenceId(''); }}
-                                        className="font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2"
-                                    >
-                                        Erneut anfragen oder anpassen
-                                    </button>
-                                </div>
-                            ) : sentVia === 'whatsapp' ? (
-                                <div className="p-4 rounded-tile-sm bg-orange-50 border border-orange-200 text-orange-950 text-xs space-y-2" role="status">
-                                    <p className="font-black flex items-center gap-1.5">
-                                        <CheckCircle2 className="w-4 h-4 text-orange-600" />
-                                        WhatsApp wurde geöffnet
-                                    </p>
-                                    <p className="text-slate-700">
-                                        Bitte senden Sie die vorbereitete Nachricht mit Ihren Angaben dort ab – erst dann erreicht sie uns.
-                                    </p>
-                                    <button
-                                        type="button"
-                                        onClick={() => setSentVia(null)}
-                                        className="font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2"
-                                    >
-                                        Erneut senden oder Kanal wechseln
-                                    </button>
-                                </div>
-                            ) : (
-                                <form onSubmit={handleLeadSubmit} className="space-y-2.5">
-                                    {errorMessage && (
-                                        <div className="p-2.5 rounded-lg bg-red-50 border border-red-200 text-xs text-red-800 flex items-center gap-2">
-                                            <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
-                                            <span>{errorMessage}</span>
-                                        </div>
-                                    )}
-
-                                    <label htmlFor="budget-lead-name" className="sr-only">Ihr Name</label>
-                                    <input
-                                        id="budget-lead-name"
-                                        type="text"
-                                        required
-                                        autoComplete="name"
-                                        placeholder="Ihr Name *"
-                                        value={leadData.name}
-                                        onChange={(e) => setLeadData({ ...leadData, name: e.target.value })}
-                                        className={inputClass}
-                                    />
-                                    <label htmlFor="budget-lead-phone" className="sr-only">Ihre Telefonnummer</label>
-                                    <input
-                                        id="budget-lead-phone"
-                                        type="tel"
-                                        required
-                                        minLength={6}
-                                        autoComplete="tel"
-                                        placeholder="Ihre Telefonnummer *"
-                                        value={leadData.phone}
-                                        onChange={(e) => setLeadData({ ...leadData, phone: e.target.value })}
-                                        className={inputClass}
-                                    />
-                                    <label htmlFor="budget-lead-email" className="sr-only">Ihre E-Mail-Adresse (optional)</label>
-                                    <input
-                                        id="budget-lead-email"
-                                        type="email"
-                                        autoComplete="email"
-                                        placeholder="Ihre E-Mail-Adresse (optional für Bestätigung)"
-                                        value={leadData.email}
-                                        onChange={(e) => setLeadData({ ...leadData, email: e.target.value })}
-                                        className={inputClass}
-                                    />
-                                    <button
-                                        type="submit"
-                                        name="channel"
-                                        value="online"
-                                        disabled={isSubmitting}
-                                        className="btn-primary w-full text-xs flex items-center justify-center gap-2"
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                                                Wird übertragen …
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Send className="w-3.5 h-3.5" />
-                                                Online anfragen (mit E-Mail-Bestätigung)
-                                            </>
-                                        )}
-                                    </button>
-                                    <button
-                                        type="submit"
-                                        name="channel"
-                                        value="whatsapp"
-                                        disabled={isSubmitting}
-                                        className="glass-button-whatsapp w-full text-xs"
-                                    >
-                                        <MessageCircle className="w-4 h-4" />
-                                        Anfrage per WhatsApp senden
-                                    </button>
-                                    <p className="text-[11px] text-slate-600 leading-relaxed">
-                                        Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet.{' '}
-                                        <Link href="/datenschutz" className="font-bold text-orange-600 underline underline-offset-2 hover:text-orange-700">
-                                            Datenschutz
-                                        </Link>
-                                    </p>
-                                </form>
-                            )}
-
-                            <a
-                                href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                                className="btn-ghost w-full text-xs"
-                            >
-                                <Phone className="w-3.5 h-3.5 text-orange-600" />
-                                Sofort anrufen: {COMPANY_DATA.contact.phone}
-                            </a>
-                        </div>
-                    </div>
+                    <Zusammenfassung
+                        sqmLabel={sqmLabel} scopeLabel={scopeLabel} tierLabel={tierLabel} extras={extras} matchingBath={matchingBath}
+                        contactOpen={contactOpen} setContactOpen={setContactOpen}
+                        sentVia={sentVia} setSentVia={setSentVia} referenceId={referenceId} setReferenceId={setReferenceId}
+                        leadData={leadData} setLeadData={setLeadData}
+                        isSubmitting={isSubmitting} errorMessage={errorMessage} handleLeadSubmit={handleLeadSubmit}
+                    />
                 </div>
             </div>
         </div>
