@@ -123,7 +123,7 @@ export default function MobileMenu({ isOpen, onToggle }) {
                                                     className="flex w-11 shrink-0 items-center justify-center text-tinte"
                                                     data-motion="aufklappen"
                                                 >
-                                                    <Fugenkreuz className={`size-4 motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen ${isExpanded ? 'rotate-45' : 'rotate-0'}`} />
+                                                    <Fugenkreuz className={`size-4 motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen motion-reduce:transition-none ${isExpanded ? 'rotate-45' : 'rotate-0'}`} />
                                                 </button>
                                             )}
                                         </div>

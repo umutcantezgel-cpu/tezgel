@@ -139,7 +139,7 @@ export default function Header({ isMobileMenuOpen }) {
                                             <Icon
                                                 name="winkel-unten"
                                                 groesse={4}
-                                                className={clsx('motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen', isOpen && 'rotate-180')}
+                                                className={clsx('motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen motion-reduce:transition-none', isOpen && 'rotate-180')}
                                             />
                                         </button>
                                     )}

@@ -47,7 +47,7 @@ export default function FAQAccordion({ question, answer, isDarkerBg = false }: F
         >
           <span className="font-text text-fs-4 font-semibold text-tinte">{question}</span>
           <span
-            className={`mt-2 shrink-0 text-tinte motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen ${isOpen ? "rotate-45" : "rotate-0"}`}
+            className={`mt-2 shrink-0 text-tinte motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen motion-reduce:transition-none ${isOpen ? "rotate-45" : "rotate-0"}`}
             aria-hidden="true"
             data-motion="aufklappen"
           >
