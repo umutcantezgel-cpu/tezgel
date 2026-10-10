@@ -1,7 +1,8 @@
 // Kern-Grundbausteine (P3-03, KERN v1.2). Import: `import { Knopf, Feld } from '@/components/kern/basis'`.
 export { default as Knopf, LADETEXT, type KnopfProps, type KnopfAlsLink, type KnopfAlsButton, type KnopfArt, type KnopfGroesse } from '@/components/kern/basis/Knopf';
 export { default as SendeKnopf, type SendeKnopfProps } from '@/components/kern/basis/SendeKnopf';
-export { useLadeanzeige, LADE_VERZUG_MS, LADE_MINDEST_MS } from '@/components/kern/basis/useLadeanzeige';
+// useLadeanzeige steht bewusst nicht im Sammelexport: Die Datei importiert React-Hooks ohne 'use client'; über den Sammelexport
+// würde jede Server-Komponente sie mitziehen (Turbopack-Fehler). Client-Komponenten importieren sie direkt aus ./useLadeanzeige.
 export { default as Textlink, type TextlinkProps } from '@/components/kern/basis/Textlink';
 export { default as Feld, type FeldProps, type FeldArt } from '@/components/kern/basis/Feld';
 export { default as Mehrzeilig, type MehrzeiligProps } from '@/components/kern/basis/Mehrzeilig';
