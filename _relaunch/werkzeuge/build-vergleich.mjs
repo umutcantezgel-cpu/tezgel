@@ -37,8 +37,14 @@ const normWeich = (h) => h
   .replace(/\[\\"\$\\",\\"meta\\",\\"\d+\\",\{\\"name\\":\\"x-build\\",\\"content\\":\\"[^\\]*\\"\}\],?/g, '')
   .replace(/\\"\$\\",\\"([a-z]+)\\",\\"\d+\\"/g, (m, t) => `\\"$\\",\\"${t}\\",\\"N\\"`);
 const norm = STRENG ? normStreng : normWeich;
-const htmlA = Object.fromEntries(liste(path.join(dir(A), 'server', 'app'), '.html').map((p) => [path.relative(path.join(dir(A), 'server', 'app'), p), p]));
-const htmlB = Object.fromEntries(liste(path.join(dir(B), 'server', 'app'), '.html').map((p) => [path.relative(path.join(dir(B), 'server', 'app'), p), p]));
+// Nur vom Build vorgerenderte Seiten zählen (prerender-manifest); Dateien, die `next start` zur Laufzeit zwischenspeichert
+// (z. B. 404-Hüllen nach Testaufrufen unbekannter Adressen), werden getrennt ausgewiesen und nicht verglichen.
+const vorgerendert = (d) => { try { const r = JSON.parse(fs.readFileSync(path.join(d, 'prerender-manifest.json'), 'utf8')).routes; return new Set(Object.keys(r).map((k) => (k === '/' ? 'index.html' : k.replace(/^\//, '') + '.html'))); } catch { return null; } };
+const filtere = (d, o) => { const v = vorgerendert(d); if (!v) return [o, []]; const rest = []; for (const k of Object.keys(o)) if (!v.has(k)) { rest.push(k); delete o[k]; } return [o, rest]; };
+const htmlA_ = Object.fromEntries(liste(path.join(dir(A), 'server', 'app'), '.html').map((p) => [path.relative(path.join(dir(A), 'server', 'app'), p), p]));
+const htmlB_ = Object.fromEntries(liste(path.join(dir(B), 'server', 'app'), '.html').map((p) => [path.relative(path.join(dir(B), 'server', 'app'), p), p]));
+const [htmlA, laufzeitA] = filtere(dir(A), htmlA_);
+const [htmlB, laufzeitB] = filtere(dir(B), htmlB_);
 const nurA = Object.keys(htmlA).filter((k) => !htmlB[k]);
 const nurB = Object.keys(htmlB).filter((k) => !htmlA[k]);
 const anders = [];
@@ -55,7 +61,7 @@ const weg = [...sa].filter((x) => !sb.has(x)).sort(), neu = [...sb].filter((x) =
 const ea = eigenschaften(dir(A)), eb = eigenschaften(dir(B)), ka = keyframes(dir(A)), kb = keyframes(dir(B));
 const varWeg = [...ea].filter((x) => !eb.has(x)).sort(), varNeu = [...eb].filter((x) => !ea.has(x)).sort();
 const kfWeg = [...ka].filter((x) => !kb.has(x)).sort(), kfNeu = [...kb].filter((x) => !ka.has(x)).sort();
-const bericht = { vorher: A, nachher: B, variablen_weg: varWeg, variablen_neu: varNeu, keyframes_weg: kfWeg, keyframes_neu: kfNeu, html_dateien: Object.keys(htmlA).length, nur_vorher: nurA, nur_nachher: nurB, html_abweichend: anders.length, abweichungen: anders.slice(0, 40), css_selektoren_weg: weg, css_selektoren_neu: neu };
+const bericht = { vorher: A, nachher: B, laufzeit_reste: { vorher: laufzeitA, nachher: laufzeitB }, variablen_weg: varWeg, variablen_neu: varNeu, keyframes_weg: kfWeg, keyframes_neu: kfNeu, html_dateien: Object.keys(htmlA).length, nur_vorher: nurA, nur_nachher: nurB, html_abweichend: anders.length, abweichungen: anders.slice(0, 40), css_selektoren_weg: weg, css_selektoren_neu: neu };
 const out = ensureDir(path.join(RELAUNCH, 'belege', `build-vergleich-${A}-${B}${STRENG ? '-streng' : ''}`));
 fs.writeFileSync(path.join(out, 'bericht.json'), JSON.stringify(bericht, null, 1));
 console.log(JSON.stringify({ html: bericht.html_dateien, nur_vorher: nurA.length, nur_nachher: nurB.length, html_abweichend: anders.length, css_weg: weg.length, css_neu: neu.length, var_weg: varWeg.length, var_neu: varNeu.length, keyframes_weg: kfWeg.length, keyframes_neu: kfNeu.length }));

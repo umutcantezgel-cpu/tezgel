@@ -1,0 +1,24 @@
+{
+ "vorher": "a32b6de",
+ "nachher": "9a9fc7d",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html",
+   "blog/unbekannt.html",
+   "leistungen/x/y.html",
+   "standorte/unbekannt.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 0,
+ "abweichungen": [],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": []
+}
