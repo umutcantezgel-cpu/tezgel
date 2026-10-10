@@ -233,6 +233,12 @@ html.k-bewegung .laden-fuge::after {
 .verlegeplan .plan-kreuz { fill: var(--color-tinte); }
 .verlegeplan .plan-bemassung path { stroke: var(--color-tinte-2); stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; }
 .verlegeplan .plan-bemassung text { fill: var(--color-tinte-2); font-family: var(--font-mono); font-size: 11px; }
+/* Zustände im Ablauf (szene-ablauf): verlegter Belag in Kalk, Prüfmarken beim Aufmaß, Abnahme-Haken */
+.verlegeplan .plan-belag { fill: var(--color-kalk); stroke: none; }
+.verlegeplan .plan-marke circle { fill: var(--color-fliese); stroke: var(--color-tinte); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-marke path { fill: none; stroke: var(--color-tinte); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-abnahme circle { fill: var(--color-abnahme); stroke: none; }
+.verlegeplan .plan-abnahme path { fill: none; stroke: var(--color-fliese); stroke-width: 2; vector-effect: non-scaling-stroke; }
 
 /* sig-plan: das Raster steht versetzt, bis Hover/Fokus (fein) bzw. Eintritt (grob) es in die Flucht rückt */
 .verlegeplan .plan-raster { --plan-versatz: -9px; }
@@ -251,6 +257,44 @@ html.k-bewegung .sig-plan-ziel .plan-raster {
     translate: var(--plan-versatz) 0;
   }
 }
+
+/* szene-ablauf (großer Moment /bad, K-007): linear an Scroll, je Plan eine view-timeline; nur scale und opacity.
+   Ersatzpfad (ohne animation-timeline, reduziert, ohne JS, Druck) = Endzustand: alle drei Zustände fertig. */
+.szene-ablauf .szene-plan { view-timeline: --szene-plan block; }
+.szene-ablauf .plan-raster,
+.szene-ablauf .plan-belag,
+.szene-ablauf .plan-marke,
+.szene-ablauf .plan-abnahme {
+  transform-box: fill-box;
+}
+@supports (animation-timeline: view()) {
+  @media screen and (prefers-reduced-motion: no-preference) {
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-raster {
+      transform-origin: 50% 0;
+      animation: szene-ziehen linear both;
+      animation-timeline: --szene-plan;
+      animation-range: cover 15% cover 45%;
+    }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-belag {
+      animation: szene-einblenden linear both;
+      animation-timeline: --szene-plan;
+      animation-range: cover 30% cover 50%;
+    }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-marke,
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-abnahme {
+      transform-origin: 50% 50%;
+      animation: szene-setzen linear both;
+      animation-timeline: --szene-plan;
+    }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-pruefung > g:nth-child(1) .plan-marke { animation-range: cover 20% cover 32%; }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-pruefung > g:nth-child(2) .plan-marke { animation-range: cover 28% cover 40%; }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-pruefung > g:nth-child(3) .plan-marke { animation-range: cover 36% cover 48%; }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-abnahme { animation-range: cover 45% cover 55%; }
+  }
+}
+@keyframes szene-ziehen { from { scale: 1 0; } to { scale: 1 1; } }
+@keyframes szene-einblenden { from { opacity: 0; } to { opacity: 1; } }
+@keyframes szene-setzen { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
 
 /* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, laser); mobil nur das Lot.
    Lage (oben, links) über Klassen am Element; Endzustand = beide Linien voll. */

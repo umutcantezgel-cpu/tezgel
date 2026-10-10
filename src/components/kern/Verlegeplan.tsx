@@ -1,6 +1,8 @@
 // Verlegeplan (KERN K-008): gezeichnete Draufsicht mit Fugenbild, schraffierten Passstücken, Laserachse
 // und Bemaßung „=“. Serverkomponente ohne JavaScript. Mit `interaktiv` trägt die Hülle data-motion="sig-plan":
 // am Desktop rückt das Raster bei Hover/Fokus in die Flucht, mobil beim Eintritt (Register K-007).
+// `zustand` zeigt den Plan im Ablauf (Szene „Verlegeplan entsteht“): aufmass (Raum, Achsen, drei Prüfmarken),
+// fugenbild (Standard: Raster mit Passstücken), verlegt (Belag und Abnahme-Haken).
 import { useId } from 'react';
 import clsx from 'clsx';
 import { fugenbild, startversatz } from '@/lib/plaene/geometrie';
@@ -15,6 +17,8 @@ export interface VerlegeplanProps {
   beschriftet?: boolean;
   bemassung?: boolean;
   interaktiv?: boolean;
+  /** Stand im Ablauf (K-007 szene-ablauf); Standard fugenbild */
+  zustand?: 'aufmass' | 'fugenbild' | 'verlegt';
   className?: string;
 }
 
@@ -60,7 +64,7 @@ function Element({ e, b, h }: { e: Planelement; b: number; h: number }) {
   }
 }
 
-export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, className }: VerlegeplanProps) {
+export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, zustand = 'fugenbild', className }: VerlegeplanProps) {
   const vorgabe: Planvorgabe = typeof plan === 'string' ? PLAENE[plan] : plan;
   const bild = fugenbild(vorgabe);
   const uid = useId().replace(/[^a-zA-Z0-9-]/g, '');
@@ -76,6 +80,9 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
   const links = bild.passstuecke.find(([x]) => x === 0);
   const zeigeLot = vorgabe.achse !== 'waage';
   const zeigeWaage = vorgabe.achse !== 'lot';
+  const zeigeRaster = zustand !== 'aufmass';
+  // Prüfmarken beim Aufmaß (Ebenheit, Restfeuchte, Tragfähigkeit): drei Messpunkte auf der Diagonale
+  const pruefpunkte = [[0.22, 0.28], [0.5, 0.5], [0.78, 0.72]].map(([fx, fy]) => [fx * W, fy * H]);
 
   return (
     <svg
@@ -90,22 +97,45 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
           <path d="M0 0v6" className="plan-schraffur-linie" />
         </pattern>
       </defs>
-      <g className="plan-raster">
-        {bild.passstuecke.map(([x, y, pb, ph], i) => (
-          <rect key={i} x={x * S} y={y * S} width={pb * S} height={ph * S} fill={`url(#${schraffur})`} className="plan-passstueck" />
-        ))}
-        {fehl && fehl.art === 'fehlstelle' && (
-          <rect className="plan-fehlstelle" x={(startversatz(b, vorgabe.platte.b) + fehl.spalte * vorgabe.platte.b) * S} y={(startversatz(h, vorgabe.platte.h) + fehl.zeile * vorgabe.platte.h) * S} width={vorgabe.platte.b * S} height={vorgabe.platte.h * S} />
-        )}
-        {bild.waagrecht.map((y, i) => <path key={`w${i}`} className="plan-fuge" d={`M0 ${y * S}H${W}`} />)}
-        {bild.senkrecht.map(([x, y1, y2], i) => <path key={`s${i}`} className="plan-fuge" d={`M${x * S} ${y1 * S}V${y2 * S}`} />)}
-        {kreuzpunkte.map(([x, y], i) => <rect key={`k${i}`} className="plan-stelzlager" x={x * S - 3} y={y * S - 3} width={6} height={6} />)}
-      </g>
+      {zustand === 'verlegt' && <rect className="plan-belag" x={0} y={0} width={W} height={H} />}
+      {zeigeRaster && (
+        <g className="plan-raster">
+          {bild.passstuecke.map(([x, y, pb, ph], i) => (
+            <rect key={i} x={x * S} y={y * S} width={pb * S} height={ph * S} fill={`url(#${schraffur})`} className="plan-passstueck" />
+          ))}
+          {fehl && fehl.art === 'fehlstelle' && (
+            <rect className="plan-fehlstelle" x={(startversatz(b, vorgabe.platte.b) + fehl.spalte * vorgabe.platte.b) * S} y={(startversatz(h, vorgabe.platte.h) + fehl.zeile * vorgabe.platte.h) * S} width={vorgabe.platte.b * S} height={vorgabe.platte.h * S} />
+          )}
+          {bild.waagrecht.map((y, i) => <path key={`w${i}`} className="plan-fuge" d={`M0 ${y * S}H${W}`} />)}
+          {bild.senkrecht.map(([x, y1, y2], i) => <path key={`s${i}`} className="plan-fuge" d={`M${x * S} ${y1 * S}V${y2 * S}`} />)}
+          {kreuzpunkte.map(([x, y], i) => <rect key={`k${i}`} className="plan-stelzlager" x={x * S - 3} y={y * S - 3} width={6} height={6} />)}
+        </g>
+      )}
       <rect className="plan-raum" x={0} y={0} width={W} height={H} />
       {elemente.map((e, i) => <Element key={i} e={e} b={b} h={h} />)}
       {zeigeLot && <path className="plan-achse" d={`M${bild.achseX * S} ${-rand + 4}V${H + rand - 4}`} />}
       {zeigeWaage && <path className="plan-achse" d={`M${-rand + 4} ${bild.achseY * S}H${W + rand - 4}`} />}
       {zeigeLot && zeigeWaage && <path className="plan-kreuz" d={`M${bild.achseX * S - 1.5} ${bild.achseY * S - 6}h3v4.5h4.5v3h-4.5v4.5h-3v-4.5h-4.5v-3h4.5z`} />}
+      {zustand === 'aufmass' && (
+        <g className="plan-pruefung">
+          {pruefpunkte.map(([px, py], i) => (
+            <g key={i} transform={`translate(${px} ${py})`}>
+              <g className="plan-marke">
+                <circle r={8} />
+                <path d="M-3.5 0l2.5 2.5 4.5-5" />
+              </g>
+            </g>
+          ))}
+        </g>
+      )}
+      {zustand === 'verlegt' && (
+        <g transform={`translate(${W - 14} ${H - 14})`}>
+          <g className="plan-abnahme">
+            <circle r={10} />
+            <path d="M-4.5 0l3 3 6-6.5" />
+          </g>
+        </g>
+      )}
       {bemassung && links && (
         <g className="plan-bemassung">
           <path d={`M0 ${-12}H${W}M0 ${-16}v8M${links[2] * S} ${-16}v8M${W - links[2] * S} ${-16}v8M${W} ${-16}v8`} />
