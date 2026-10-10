@@ -1,4 +1,4 @@
-STATUS · Phase P2 (L0 Runde 3) · live 6d6a4c9 · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · Ausnahmen 0 · Slop hart 479 (statisch) · Slop weich 74 (Hauptseiten) · Jury 4,15–4,40 · Lighthouse mobil 67–88 · axe 1.661 · Planwert 10–13 Tage (P2-GEG-02, wird nach dem ersten Kandidat-Tor gemessen) · Nächster Schritt: Plan Runde 3, Werkzeuge fortsetzen
+STATUS · Phase P3-00 (Werkzeug-Welle, fast fertig) · live ff531a1 (Bestand in Routen-Gruppe, Fairness-Korrekturen) · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · Slop hart 479 · Slop weich 74 (Hauptseiten) · Jury 4,15–4,40 · Lighthouse mobil 67–88 · axe 1.661 · Planwert 10–13 Tage · Nächster Schritt: Formular-Hooks, INP-Werkzeug, Basis-Probeläufe, dann P3
 
 # STATUS · Lauf 1 „Rückführung und Veredelung“ (angepasst: nur Aufwertung)
 
@@ -35,3 +35,4 @@ STATUS · Phase P2 (L0 Runde 3) · live 6d6a4c9 · Erfüllt 0/14 (Z-01, Z-02 ENT
 - 2026-10-10 16:54 CEST · W0 live (cf38982), Live-Rauchtest grün; Gegenprüfung P0-GEG-01 FREIGABE; axe-Basis 1.661 ernst/kritisch; Richtung C fertig; TEST-01/02/05 laufen.
 - 2026-10-10 18:52 CEST · Funktionstests 289 Fälle grün (Hydrierungs-Wartebedingung), Lighthouse-Basis, Richtung gewählt (E-008), KERN v1, E-009–E-013, heikle Befunde aus öffentlichen Dateien entfernt (a00fdc2), Gesamtplan Runde 1, ruhender Kern-Code (1fc0ec3) live, Live-Rauchtest grün; Gegenprüfung P2-GEG-01: mit Auflagen.
 - 2026-10-10 20:40 CEST · Nutzungslimit traf 5 Unteragenten (P3-00a/c/e/g, P2-GEG-02); P2-GEG-02-Rückgabe liegt vor (L0 Runde 2 mit Auflagen nicht bestanden); Neustart, Server neu gestartet.
+- 2026-10-10 22:25 CEST · L0 bestanden mit Auflagen (umgesetzt); Werkzeuge P3-00a/b/c/e/g/j/m/n abgenommen; Umzug P3-00h + Fairness P3-00k nach T2 live (ff531a1), Live-Browser grün.

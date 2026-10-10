@@ -27,6 +27,15 @@ Dieses Protokoll ist fest. Probeläufer ändern es nicht; Änderungen nur per En
 | `{"warte_auf": "<Text>"}` | warten, bis der Text sichtbar ist (höchstens 10 s) | ✓ | ✓ | ✓ |
 | `{"zurueck": true}` | Zurück-Knopf des Browsers | ✓ | ✓ | ✓ |
 
+### Abbrüche lesen
+| Meldung | Bedeutung | Was der Probeläufer tut |
+|---|---|---|
+| `nicht gefunden` (mit ähnlichen Bedienelementen) | kein sichtbares Element dieses Namens | Name nach dem Bild korrigieren (Eingabefehler, zählt nicht); gibt es das Gesuchte für einen Besucher wirklich nicht → anderer Weg, ggf. Befund |
+| `mehrdeutig` (mit Kandidatenliste) | mehrere sichtbare Treffer, keiner eindeutig frei im Bild | mit `"nr"` oder `"in"` den gemeinten wählen (zählt nicht) |
+| `nicht bedienbar: … verdeckt durch …` | Ziel liegt unter einer anderen Ebene | Befund; Ebene mit der kürzesten Handlung freimachen (zählt), dann erneut |
+| `nicht erreichbar` / `nicht erreicht` (Tastatur, mit Fokusspur) | der Fokus kommt nicht hin | Befund (hoch, wenn das Ziel mit der Tastatur gar nicht erreichbar ist) |
+| `Werkzeug:` / `Werkzeugfehler` | Abfrage unter Last nicht lesbar | kein Befund – Lauf wiederholen |
+
 `tel:`, `mailto:` und `sms:` werden nicht ausgelöst (zählen als 1, „Website verlassen“). Fremd-Hosts (z. B. WhatsApp) liefert die Sperre leer aus; das Werkzeug vermerkt „Website verlassen“. Keine Aufgabe gilt durch Anrufen, Mailen oder WhatsApp als gelöst.
 
 ## 2 Die fünf Aufgaben
@@ -76,5 +85,7 @@ Chromium (Playwright 1.56.1), Ansichten aus `lib.mjs` (`m375` 375 × 812 Touch, 
 | 3 | folgt | folgt | folgt |
 | 4 | gelöst · 8 Schritte | gelöst · 1 Schritt | gelöst · 8 Schritte |
 | 5 | folgt | folgt | folgt |
+
+Wege Aufgabe 4 (Lauf-Dateien unter `cache/probelauf/eingaben/ausgangsstand/`): Touch – „Alle ablehnen“ (Banner liegt über dem Mobilmenü), Menü, „Standorte“, „Alle 13 Standorte“, 1 Bildlauf, 3× Wischen in der Stadt-Leiste → „Butzbach 35 km“ unter „Unser 45-km-Einsatzgebiet“ (ohne Wischen: 10 Schritte, Satz `erkundung`). Maus – Klick „Standorte“ → Stadt-Leiste mit „Butzbach 35 km“ im ersten Bild (Banner bleibt stehen, verdeckt nichts Nötiges). Tastatur – 7× Tab bis „Standorte“, Enter. Banner-Probe Tastatur (`banner-d1440-tastatur`): „Alle ablehnen“ erst nach 190× Tab erreichbar.
 
 Z-04 vergleicht jeden späteren Lauf mit dieser Tabelle (Schrittzahl bis Ziel ≤ Bezugswert, gelöst, 0 Befunde „hoch“).

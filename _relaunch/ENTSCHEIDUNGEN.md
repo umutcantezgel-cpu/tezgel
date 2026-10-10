@@ -162,3 +162,9 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Harte Kennzahlen Z-11:** Fokus nicht sichtbar · Fokusring < 3:1 oder < 2 px („dünn“; KERN K-006 verlangt 2 px und 3:1) · Fokus durch feste Ebene verdeckt (WCAG 2.4.11) · Tastaturfalle · Reihenfolge-Sprünge · Sprunglink · Reflow 320 · Textabstände: abgeschnitten (auch `line-clamp`, außer der volle Text ist über einen benannten Link erreichbar) · forced-colors ohne Grenze · ohne JS. **Nur Information:** Zoom per CSS-Emulation (ungenau), Ring teilverdeckt am Bildrand.
 - **Einwilligungsbanner:** Inhalt, Kategorien und gleichwertige Knöpfe unantastbar, Form nicht (E-013). Die 426 Fokus-Verdeckungen durch den Banner (m375, Erstbesuch) sind ein Befund des Bestands; die Kern-Schale (P3-08) muss sie auf null bringen.
 - Basiswerte stehen in MESSUNGEN (Ebene 4/5 Ergänzung); Frames werden im ruhigen Messfenster nachgemessen (Last bei der Basis 6–16 auf 4 CPUs).
+
+## E-019 · Zählregeln der Probeläufe (Rückfragen P3-00g)
+- **Einwilligungsbanner:** Der Probeläufer schließt den Banner nur, wenn er die nächste Handlung verdeckt oder blockiert – wie ein Besucher; jede dafür nötige Handlung zählt als Schritt (Tastatur: alle Tabs bis zum Knopf). Die 190 Tabs bis zum Banner im Bestand sind ein echter Reibungsbefund (Banner steht am Ende der Tab-Reihenfolge) und bleiben im Bezugswert.
+- **Mobil:** Bezugswert ist der realistische beste Weg einschließlich `wische` (Aufgabe 4: 8 Schritte statt 10 senkrecht).
+- **Antworten:** Aufgabe 2 gilt als gelöst, wenn der Läufer eine Angabe zur Bestandsdauer findet („seit 2008“ oder „über N Jahre“) und eine Bewertungsangabe; widersprüchliche Angaben sind ein Befund (Inhalt, MENSCHEN M-03), keine Lösungsfrage.
+- Läufe unter Lastspitzen mit „Werkzeug:“-Abbruch werden wiederholt, nicht gezählt. Die Matrix der Basis (15 Läufe) erhebt ein Haiku-Probeläufer im ruhigen Fenster; Ablage `belege/p0-ausgangsstand/probelauf/` durch den Orchestrator.

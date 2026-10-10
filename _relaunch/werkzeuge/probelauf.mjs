@@ -278,11 +278,21 @@ function rollenListe(scope, rollen, name, exact) {
 
 async function sammle(locs, stufe, grenze = 40) {
   const liste = Array.isArray(locs) ? locs : [locs];
-  const zahlen = await Promise.all(liste.map((l) => l.count().catch(() => 0)));
+  // Unter starker Last können einzelne Abfragen in die Obergrenze laufen. Eine fehlgeschlagene Abfrage heißt nicht
+  // „unsichtbar“: sie wird einmal einzeln wiederholt; scheitert sie erneut, bricht der Schritt als Werkzeugfehler ab,
+  // statt still auf eine ungenauere Stufe auszuweichen.
+  const zaehle = (l) => l.count().catch(() => l.count().catch(() => { throw new SchrittFehler(`Werkzeug: Abfrage „${stufe}“ nicht lesbar (Browser unter Last) – Lauf wiederholen`); }));
+  const zahlen = await Promise.all(liste.map(zaehle));
   const gesamt = zahlen.reduce((a, b) => a + b, 0);
   const einzel = [];
   liste.forEach((l, j) => { for (let i = 0; i < zahlen[j] && einzel.length < grenze; i++) einzel.push(l.nth(i)); });
-  const lagen = await Promise.all(einzel.map((l) => l.evaluate(LAGE).catch(() => null)));
+  const FEHLT = Symbol('fehlt');
+  const lagen = await Promise.all(einzel.map((l) => l.evaluate(LAGE).catch((e) => (/not attached|detached|Element is not|resolved to 0|strict mode/i.test(String(e.message)) ? null : FEHLT))));
+  for (let i = 0; i < lagen.length; i++) {
+    if (lagen[i] !== FEHLT) continue;
+    lagen[i] = await einzel[i].evaluate(LAGE, null, { timeout: 60000 }).catch(() => FEHLT);
+    if (lagen[i] === FEHLT) throw new SchrittFehler(`Werkzeug: Lage eines Kandidaten (Stufe ${stufe}) nicht lesbar (Browser unter Last) – Lauf wiederholen`);
+  }
   const idx = lagen.map((lage, i) => (lage && lage.sichtbar ? i : -1)).filter((i) => i >= 0);
   const namen = await Promise.all(idx.map((i) => beschreibe(einzel[i])));
   const sichtbar = idx.map((i, k) => ({ loc: einzel[i], stufe, lage: lagen[i], beschreibung: namen[k] }))
