@@ -1,0 +1,339 @@
+{
+ "satz": "e2-tor",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 25,
+ "ernst_kritisch_knoten": 76,
+ "je_regel": {
+  "serious:color-contrast": 76
+ },
+ "ergebnisse": [
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".bg-orange-600.whitespace-nowrap.shadow-md",
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".bg-orange-600.whitespace-nowrap.shadow-md",
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(4) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 2,
+     "ziele": [
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ]
+    }
+   ]
+  }
+ ]
+}

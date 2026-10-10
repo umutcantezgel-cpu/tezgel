@@ -1,0 +1,519 @@
+=== register-m390-slash
+{
+ "modus": "register",
+ "seite": "/",
+ "ansicht": "m390",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/register-m390-slash/ergebnis.json",
+ "gefundene_kennungen": [
+  "anriss",
+  "aufklappen",
+  "auftritt",
+  "druck",
+  "sig-flucht",
+  "sig-kreuzlinie",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "ohne_register_anzahl": 0,
+ "ohne_register_erste": [],
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 29
+ }
+}
+RC=0
+=== reduziert-m390-slash
+{
+ "modus": "reduziert",
+ "seite": "/",
+ "ansicht": "m390",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/reduziert-m390-slash/ergebnis.json",
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "zustand",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "button",
+   "gruende": [
+    "Deckkraft 0.40"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "button#whatsapp-floating-btn",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "geprueft": 163,
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 29
+ }
+}
+RC=0
+=== reduziert-d1440-slash
+{
+ "modus": "reduziert",
+ "seite": "/",
+ "ansicht": "d1440",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/reduziert-d1440-slash/ergebnis.json",
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "button",
+   "gruende": [
+    "Deckkraft 0.40"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  },
+  {
+   "kennung": "anriss",
+   "sel": "mark",
+   "gruende": [
+    "außerhalb des Dokuments"
+   ]
+  }
+ ],
+ "geprueft": 163,
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 20
+ }
+}
+RC=0
+=== einzelbilder-sig-kreuzlinie-m390-slash
+{
+ "modus": "einzelbilder",
+ "seite": "/",
+ "ansicht": "m390",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/einzelbilder-sig-kreuzlinie-m390-slash/ergebnis.json",
+ "meldung": "1 Kennungen, 163 Elemente auf /.",
+ "bilder_gesamt": 5,
+ "kennungen": [
+  "sig-kreuzlinie: 5 Bilder, Modus zeit, Dauer 1200 ms"
+ ]
+}
+RC=0
+=== einzelbilder-sig-kreuzlinie-d1440-slash
+{
+ "modus": "einzelbilder",
+ "seite": "/",
+ "ansicht": "d1440",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/einzelbilder-sig-kreuzlinie-d1440-slash/ergebnis.json",
+ "meldung": "1 Kennungen, 163 Elemente auf /.",
+ "bilder_gesamt": 5,
+ "kennungen": [
+  "sig-kreuzlinie: 5 Bilder, Modus zeit, Dauer 1200 ms"
+ ]
+}
+RC=0
+=== einzelbilder-sig-flucht-d1440-slash
+{
+ "modus": "einzelbilder",
+ "seite": "/",
+ "ansicht": "d1440",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/einzelbilder-sig-flucht-d1440-slash/ergebnis.json",
+ "meldung": "1 Kennungen, 163 Elemente auf /.",
+ "bilder_gesamt": 5,
+ "kennungen": [
+  "sig-flucht: 5 Bilder, Modus zeit, Dauer 860 ms"
+ ]
+}
+RC=0
+=== bildrate-m390-slash
+{
+ "modus": "bildrate",
+ "seite": "/",
+ "ansicht": "m390",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/bildrate-m390-slash/ergebnis.json",
+ "wiederholungen": 3,
+ "bilder_gesamt": 4419,
+ "verworfen": 2,
+ "anteil_verworfen_prozent": 0.05,
+ "loaf_anzahl": 0,
+ "loaf_summe_ms": 0,
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame"
+}
+RC=0
+=== bildrate-d1440-slash
+ABBRUCH: bildrate läuft fest in Ansicht m390 (DPR 2)
+RC=1
+=== register-m390-kontakt
+{
+ "modus": "register",
+ "seite": "/kontakt",
+ "ansicht": "m390",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/register-m390-kontakt/ergebnis.json",
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "ohne_register_anzahl": 6,
+ "ohne_register_erste": [
+  {
+   "art": "transition",
+   "sel": "button.flex.min-h-11",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 10
+  },
+  {
+   "art": "transition",
+   "sel": "a.inline-flex.min-h-11",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 4
+  },
+  {
+   "art": "transition",
+   "sel": "button.inline-flex.min-h-11",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 4
+  },
+  {
+   "art": "transition",
+   "sel": "a.flex.items-center",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 4
+  },
+  {
+   "art": "transition",
+   "sel": "a.flex.items-center",
+   "eigenschaften": [
+    "outline-offset"
+   ],
+   "anzahl": 4
+  },
+  {
+   "art": "transition",
+   "sel": "a.flex.items-center",
+   "eigenschaften": [
+    "outline-width"
+   ],
+   "anzahl": 4
+  }
+ ],
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 5
+ }
+}
+RC=0
+=== reduziert-m390-kontakt
+{
+ "modus": "reduziert",
+ "seite": "/kontakt",
+ "ansicht": "m390",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/reduziert-m390-kontakt/ergebnis.json",
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "zustand",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "button#whatsapp-floating-btn",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "geprueft": 134,
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 5
+ }
+}
+RC=0
+=== reduziert-d1440-kontakt
+{
+ "modus": "reduziert",
+ "seite": "/kontakt",
+ "ansicht": "d1440",
+ "ergebnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/reduziert-d1440-kontakt/ergebnis.json",
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "geprueft": 134,
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 19
+ }
+}
+RC=0
+ALLE_FERTIG

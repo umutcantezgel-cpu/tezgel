@@ -1,0 +1,8 @@
+Schritt 2 · 2026-10-10 22:17:28 UTC · Reinraum-Server 1ad2e45 auf 127.0.0.1:4312 (PORT=4312 server.sh start 1ad2e45 → läuft)
+GET / → 200
+GET /kontakt → 200
+GET /kontakt/ → 308
+Status 4312: OK
+Kontrolle 4310 (Produktion, nicht angefasst): 200
+Kontrolle 4320 (Entwicklung, nicht angefasst): 200
+Hinweis: /kontakt/ liefert 308 (Weiterleitung auf /kontakt, Schrägstrich-Regel); /kontakt ist 200.

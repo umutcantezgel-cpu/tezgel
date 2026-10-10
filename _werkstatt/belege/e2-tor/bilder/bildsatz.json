@@ -1,0 +1,527 @@
+{
+ "satz": "e2-tor",
+ "base": "http://127.0.0.1:4312",
+ "ziel": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bildsatz",
+ "protokoll": {
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "dpr": 1,
+  "ansichten": [
+   "m390",
+   "t768",
+   "d1440"
+  ],
+  "max_ausschnitte": 12,
+  "qualitaet": 70
+ },
+ "seiten": [
+  "/",
+  "/kontakt"
+ ],
+ "zusammenfassung": {
+  "aufnahmen": 66,
+  "fehler": 0,
+  "nicht200": 0,
+  "ueberlauf": {
+   "ansichten": 0,
+   "befunde": 0
+  },
+  "ueberlappung": {
+   "ansichten": 0,
+   "befunde": 0,
+   "nachArt": {}
+  },
+  "konsole": {
+   "ansichten": 0,
+   "meldungen": 0
+  }
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "d1440",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 16644,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 6300,
+     "datei": "d1440/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 7200,
+     "y_wirksam": 7200,
+     "datei": "d1440/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 8100,
+     "y_wirksam": 8100,
+     "datei": "d1440/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 9000,
+     "y_wirksam": 9000,
+     "datei": "d1440/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9900,
+     "y_wirksam": 9900,
+     "datei": "d1440/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 6890,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2700,
+     "datei": "d1440/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3600,
+     "y_wirksam": 3600,
+     "datei": "d1440/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4500,
+     "y_wirksam": 4500,
+     "datei": "d1440/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5400,
+     "y_wirksam": 5400,
+     "datei": "d1440/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 6300,
+     "y_wirksam": 5990,
+     "datei": "d1440/kontakt/07.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 30282,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 12523,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/kontakt/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6752,
+     "datei": "m390/kontakt/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 7596,
+     "y_wirksam": 7596,
+     "datei": "m390/kontakt/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 8440,
+     "y_wirksam": 8440,
+     "datei": "m390/kontakt/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 9284,
+     "y_wirksam": 9284,
+     "datei": "m390/kontakt/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/",
+   "status": 200,
+   "hoehe": 23969,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/start/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/start/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/start/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/start/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/start/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/start/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/start/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/start/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/start/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 9216,
+     "datei": "t768/start/09.jpg"
+    },
+    {
+     "nr": 10,
+     "y": 10240,
+     "y_wirksam": 10240,
+     "datei": "t768/start/10.jpg"
+    },
+    {
+     "nr": 11,
+     "y": 11264,
+     "y_wirksam": 11264,
+     "datei": "t768/start/11.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/kontakt",
+   "status": 200,
+   "hoehe": 9766,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/kontakt/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/kontakt/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/kontakt/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/kontakt/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/kontakt/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 5120,
+     "datei": "t768/kontakt/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 6144,
+     "y_wirksam": 6144,
+     "datei": "t768/kontakt/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 7168,
+     "y_wirksam": 7168,
+     "datei": "t768/kontakt/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 8192,
+     "y_wirksam": 8192,
+     "datei": "t768/kontakt/08.jpg"
+    },
+    {
+     "nr": 9,
+     "y": 9216,
+     "y_wirksam": 8742,
+     "datei": "t768/kontakt/09.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  }
+ ]
+}

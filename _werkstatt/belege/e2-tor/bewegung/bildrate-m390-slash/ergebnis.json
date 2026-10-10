@@ -1,0 +1,106 @@
+{
+ "modus": "bildrate",
+ "seite": "/",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-10T22:06:38.612Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 4419,
+ "verworfen": 2,
+ "anteil_verworfen_prozent": 0.05,
+ "loaf_anzahl": 0,
+ "loaf_summe_ms": 0,
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 4419,
+   "verworfen": 4,
+   "anteil_verworfen_prozent": 0.09,
+   "loaf_anzahl": 24,
+   "loaf_summe_ms": 5464,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4415,
+     "verworfen": 4
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4477,
+     "verworfen": 4
+    }
+   },
+   "scroll": {
+    "hoehe": 29439,
+    "nach_abwaerts": 29439,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 112.9
+  },
+  {
+   "bilder_gesamt": 4419,
+   "verworfen": 0,
+   "anteil_verworfen_prozent": 0,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4419,
+     "verworfen": 0
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4448,
+     "verworfen": 1
+    }
+   },
+   "scroll": {
+    "hoehe": 29439,
+    "nach_abwaerts": 29439,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 106.2
+  },
+  {
+   "bilder_gesamt": 4421,
+   "verworfen": 2,
+   "anteil_verworfen_prozent": 0.05,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4419,
+     "verworfen": 2
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4449,
+     "verworfen": 2
+    }
+   },
+   "scroll": {
+    "hoehe": 29439,
+    "nach_abwaerts": 29439,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 103.1
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/bewegung/bildrate-m390-slash"
+}
