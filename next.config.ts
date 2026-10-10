@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
       '@phosphor-icons/react',
       '@phosphor-icons/react/dist/ssr',
       'lucide-react',
-      'motion',
       'framer-motion'
     ],
   },
