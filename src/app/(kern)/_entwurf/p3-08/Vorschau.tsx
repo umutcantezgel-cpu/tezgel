@@ -49,7 +49,6 @@ function BannerProbe({ consent, einstellungen, sichtbar = true }: { consent: Con
       handleOpenSettings={() => setShowSettings(true)}
       handleDeclineAll={nichts}
       handleAcceptAll={nichts}
-      handleShieldClick={nichts}
     />
   );
 }
@@ -66,8 +65,12 @@ export function BannerZustaende() {
       <Zustand titel="2 · Einstellungen offen (Umschalter und Details bedienbar)">
         <BannerProbe consent={GESPEICHERT} einstellungen />
       </Zustand>
-      <Zustand titel="3 · Nach Wahl: Banner verborgen, Schild „Cookie-Einstellungen verwalten“">
+      <Zustand titel="3 · Nach Wahl: Banner verborgen (kein Schild, Widerruf über den Fußlink)">
         <BannerProbe consent={GESPEICHERT} einstellungen={false} sichtbar={false} />
+        <p className="k-text border border-dashed border-k-strich p-k-4 text-k-2 text-k-tinte-2">
+          Vorschau: Der Banner ist verborgen. Der Fokus kehrt dorthin zurück, wo er vor dem Banner war, sonst auf main.
+          Widerruf jederzeit über den Fußlink zu #cookie-settings.
+        </p>
       </Zustand>
     </div>
   );

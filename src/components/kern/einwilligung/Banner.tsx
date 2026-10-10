@@ -9,15 +9,16 @@
 // - Lage: mobil volle Breite direkt über der unteren Leiste samt Sicherheitsrand (`--k-leiste-platz`, P3-07, Rückfall 0), ab 768 px links unten
 //   mit höchstens 28rem und Abstand `--k-rand`.
 // - Nie das LCP-Element (Bauregel 8): kleiner gesetzt als jede Einstiegsüberschrift (Text k-1/k-2) und als Komposition
-//   aus kurzen Satzblöcken (Satz bzw. Satzteil je Zeile) – jeder Block ist für die LCP-Messung ein eigenes, kleines
+//   aus Satzblöcken (je ganzer Satz ein Block, fließend umbrechend) – jeder Block ist für die LCP-Messung ein eigenes
 //   Textelement; der Wortlaut bleibt Zeichen für Zeichen gleich (textContent). Kein Zeitverzug hier.
-// - Schild erst, wenn eine Wahl gespeichert ist (consent): kein 400-ms-Aufblitzen vor dem Banner beim Erstbesuch.
-// - Fokus nie verdeckt (WCAG 2.4.11): Solange Banner oder Schild stehen, misst die Ansicht die belegte Höhe vom unteren Rand
+// - Kein schwebendes Schild (P3-08b, K-003 Prinzip 7: feste Ebenen nur Kopf und untere Leiste). Widerruf jederzeit über den
+//   Fußlink „Cookie-Einstellungen“ (`#cookie-settings`, P3-07); `handleShieldClick` des Hooks bleibt unverdrahtet.
+// - Fokus nie verdeckt (WCAG 2.4.11): Solange der Banner steht, misst die Ansicht die belegte Höhe vom unteren Rand
 //   (`--k-banner-unten` am <html>) und gibt dem Dokument genau so viel scroll-padding und Platz am Ende.
 import { useEffect, useRef } from 'react';
 import { useEinwilligungsBanner } from '@/lib/formulare/useEinwilligungsBanner';
 import { CONSENT_CATEGORY_INFO, COOKIE_INVENTORY, type ConsentCategory } from '@/lib/cookie-inventory';
-import { AkkordeonEintrag, Ankreuzfeld, Etikett, Knopf, Textlink, fokus, verbinde } from '@/components/kern/basis';
+import { AkkordeonEintrag, Ankreuzfeld, Etikett, Knopf, Textlink, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 
 type Einwilligung = ReturnType<typeof useEinwilligungsBanner>;
@@ -37,21 +38,18 @@ export type BannerAnsichtProps = Pick<
   | 'handleOpenSettings'
   | 'handleDeclineAll'
   | 'handleAcceptAll'
-  | 'handleShieldClick'
 > & {
   /** fest = echte Lage am Bildschirmrand (Standard) · vorschau = im Fluss, für die Entwurfsseite */
   lage?: 'fest' | 'vorschau';
 };
 
-// Belegte Höhe vom unteren Rand (Banner bzw. Schild samt Leiste darunter); Tailwind liest die Klassen wörtlich aus dieser Datei.
+// Belegte Höhe vom unteren Rand (Banner samt Leiste darunter); Tailwind liest die Klassen wörtlich aus dieser Datei.
 const UNTEN = '--k-banner-unten';
 const HTML_KLASSEN = ['scroll-pb-(--k-banner-unten)', 'pb-(--k-banner-unten)'] as const;
 
 // Lage am Rand: mobil volle Breite über der Leiste; ab md links unten (≤ 28rem) über der Leiste; ab lg ohne Leiste.
 const FEST_BANNER =
   'fixed inset-x-0 bottom-(--k-leiste-platz) z-50 md:right-auto md:left-(--k-rand) md:mb-(--k-rand) md:w-full md:max-w-md lg:bottom-(--k-rand) lg:mb-0';
-const FEST_SCHILD =
-  'fixed bottom-(--k-leiste-platz) left-(--k-rand) z-50 mb-k-3 md:mb-(--k-rand) lg:bottom-(--k-rand) lg:mb-0';
 
 const SATZ = 'block';
 
@@ -90,33 +88,52 @@ export function BannerAnsicht({
   handleOpenSettings,
   handleDeclineAll,
   handleAcceptAll,
-  handleShieldClick,
   lage = 'fest',
 }: BannerAnsichtProps) {
   const fest = lage === 'fest';
   const dialogRef = useRef<HTMLDivElement>(null);
   const kopfRef = useRef<HTMLParagraphElement>(null);
-  const schildRef = useRef<HTMLButtonElement>(null);
+  // Letztes fokussiertes Element außerhalb des Banners (z. B. der Fußlink „Cookie-Einstellungen“): Ziel nach der Wahl.
+  const vorherRef = useRef<HTMLElement | null>(null);
   // Fokusführung: Wechselt die Ansicht durch eine Handlung im Banner, verschwindet das fokussierte Element.
-  // Dann rückt der Fokus auf den Feldkopf der neuen Ansicht bzw. nach der Wahl auf das Schild – nie beim ersten Erscheinen.
-  const fokusNach = useRef<'ansicht' | 'schild' | null>(null);
-  const mitFokus = (ziel: 'ansicht' | 'schild', handlung: () => void) => {
+  // Dann rückt der Fokus auf den Feldkopf der neuen Ansicht bzw. nach der Wahl dorthin, wo er vor dem Banner war,
+  // sonst auf <main> (Kern-Layout: tabIndex=-1) – nie beim ersten Erscheinen.
+  const fokusNach = useRef<'ansicht' | 'zurueck' | null>(null);
+  const mitFokus = (ziel: 'ansicht' | 'zurueck', handlung: () => void) => {
     fokusNach.current = ziel;
     handlung();
   };
+
+  useEffect(() => {
+    if (!showBanner) return;
+    const merken = (el: Element | null) => {
+      if (el instanceof HTMLElement && el !== document.body && !dialogRef.current?.contains(el)) vorherRef.current = el;
+    };
+    merken(document.activeElement);
+    const beiFokus = (e: FocusEvent) => merken(e.target as Element | null);
+    document.addEventListener('focusin', beiFokus);
+    return () => document.removeEventListener('focusin', beiFokus);
+  }, [showBanner]);
 
   useEffect(() => {
     const ziel = fokusNach.current;
     if (!ziel) return;
     fokusNach.current = null;
     if (ziel === 'ansicht' && showBanner) kopfRef.current?.focus();
-    if (ziel === 'schild' && !showBanner) schildRef.current?.focus();
+    if (ziel === 'zurueck' && !showBanner) {
+      const vorher = vorherRef.current;
+      vorherRef.current = null;
+      if (vorher?.isConnected) vorher.focus({ preventScroll: true });
+      if (!vorher?.isConnected || document.activeElement !== vorher) {
+        document.querySelector<HTMLElement>('main')?.focus({ preventScroll: true });
+      }
+    }
   }, [showBanner, showSettings]);
 
-  // Fokus nie verdeckt: belegte Höhe messen, solange die feste Ebene steht (Banner oder Schild).
+  // Fokus nie verdeckt: belegte Höhe messen, solange der Banner fest am Rand steht.
   useEffect(() => {
-    if (!fest) return;
-    const el = showBanner ? dialogRef.current : schildRef.current;
+    if (!fest || !showBanner) return;
+    const el = dialogRef.current;
     if (!el) return;
     const root = document.documentElement;
     const messen = () => {
@@ -134,7 +151,7 @@ export function BannerAnsicht({
       root.classList.remove(...HTML_KLASSEN);
       root.style.removeProperty(UNTEN);
     };
-  }, [fest, showBanner, consent]);
+  }, [fest, showBanner]);
 
   return (
     <>
@@ -159,7 +176,7 @@ export function BannerAnsicht({
                 {/* Schließen = Nur Essentiell */}
                 <button
                   type="button"
-                  onClick={() => mitFokus('schild', handleClose)}
+                  onClick={() => mitFokus('zurueck', handleClose)}
                   data-motion="zustand"
                   className={verbinde(
                     'flex size-k-7 shrink-0 cursor-pointer items-center justify-center text-k-kalk pointer-fine:hover:bg-k-nacht-fuge active:bg-k-nacht-fuge',
@@ -179,12 +196,12 @@ export function BannerAnsicht({
                 <p id="cookie-consent-description" className="k-text flex flex-col text-k-1 text-k-tinte md:text-k-2">
                   <span className={SATZ}>Wir nutzen Cookies auf unserer Website.</span>{' '}
                   <span className={SATZ}>
-                    Einige sind <strong className="font-semibold">technisch notwendig</strong> für den Betrieb,
+                    Einige sind <strong className="font-semibold">technisch notwendig</strong> für den Betrieb, während andere
+                    uns helfen, unser Online-Angebot zu verbessern und interaktive Karten bereitzustellen.
                   </span>{' '}
-                  <span className={SATZ}>während andere uns helfen, unser Online-Angebot zu verbessern</span>{' '}
-                  <span className={SATZ}>und interaktive Karten bereitzustellen.</span>{' '}
-                  <span className={SATZ}>Nicht-essentielle Cookies setzen wir nur mit Ihrer Einwilligung</span>{' '}
-                  <span className={SATZ}>(§25 TTDSG, Art. 6 Abs. 1 lit. a DSGVO).</span>{' '}
+                  <span className={SATZ}>
+                    Nicht-essentielle Cookies setzen wir nur mit Ihrer Einwilligung (§25 TTDSG, Art. 6 Abs. 1 lit. a DSGVO).
+                  </span>{' '}
                   <span className={verbinde(SATZ, 'mt-k-2 text-k-2')}>
                     <Textlink href="/datenschutz" aria-label="Datenschutzerklärung von Fliesenverlegung Tezgel lesen">
                       Datenschutz
@@ -213,10 +230,10 @@ export function BannerAnsicht({
               <div className={FUSS}>
                 {/* Knöpfe: „Alle ablehnen“ gleichwertig zu „Alle akzeptieren“ (gleiche Art, Größe, Breite) */}
                 <div className={KNOPFREIHE}>
-                  <Knopf art="neben" breit onClick={() => mitFokus('schild', handleAcceptAll)}>
+                  <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleAcceptAll)}>
                     Alle akzeptieren
                   </Knopf>
-                  <Knopf art="neben" breit onClick={() => mitFokus('schild', handleDeclineAll)}>
+                  <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleDeclineAll)}>
                     Alle ablehnen
                   </Knopf>
                   <Knopf art="text" groesse="klein" breit className="col-span-2" onClick={() => mitFokus('ansicht', handleOpenSettings)}>
@@ -237,8 +254,10 @@ export function BannerAnsicht({
               <div className={MITTE}>
                 <p className="k-text flex flex-col text-k-1 text-k-tinte-2 md:text-k-2">
                   <span className={SATZ}>Bestimmen Sie selbst, welche Kategorien Sie zulassen möchten.</span>{' '}
-                  <span className={SATZ}>Technisch notwendige Cookies sind für den reibungslosen Betrieb erforderlich</span>{' '}
-                  <span className={SATZ}>und können nicht abgewählt werden (§25 Abs. 2 TTDSG).</span>
+                  <span className={SATZ}>
+                    Technisch notwendige Cookies sind für den reibungslosen Betrieb erforderlich und können nicht abgewählt
+                    werden (§25 Abs. 2 TTDSG).
+                  </span>
                 </p>
 
                 <ul className="flex flex-col border-t border-k-fuge">
@@ -310,13 +329,13 @@ export function BannerAnsicht({
               <div className={FUSS}>
                 {/* Knöpfe der Einstellungen: alle drei Wahlknöpfe gleichwertig */}
                 <div className={KNOPFREIHE}>
-                  <Knopf art="neben" breit className="col-span-2" onClick={() => mitFokus('schild', handleSaveSettings)}>
+                  <Knopf art="neben" breit className="col-span-2" onClick={() => mitFokus('zurueck', handleSaveSettings)}>
                     Auswahl speichern
                   </Knopf>
-                  <Knopf art="neben" breit onClick={() => mitFokus('schild', handleAcceptAll)}>
+                  <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleAcceptAll)}>
                     Alle akzeptieren
                   </Knopf>
-                  <Knopf art="neben" breit onClick={() => mitFokus('schild', handleDeclineAll)}>
+                  <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleDeclineAll)}>
                     Alle ablehnen
                   </Knopf>
                   <Knopf art="text" groesse="klein" breit className="col-span-2" onClick={() => mitFokus('ansicht', () => setShowSettings(false))}>
@@ -329,25 +348,6 @@ export function BannerAnsicht({
         </div>
       )}
 
-      {/* Schild: Widerruf jederzeit möglich (Bestand: schwebendes Schild) – hier ein flacher Feldknopf */}
-      {!showBanner && consent && (
-        <button
-          ref={schildRef}
-          type="button"
-          onClick={() => mitFokus('ansicht', handleShieldClick)}
-          data-motion="zustand"
-          className={verbinde(
-            'flex w-fit min-h-k-7 cursor-pointer items-center gap-k-2 border border-k-strich bg-k-kalk px-k-3 k-mono text-k-1 text-k-tinte',
-            'pointer-fine:hover:border-k-tinte pointer-fine:hover:bg-k-fliese active:border-k-tinte active:bg-k-fuge',
-            fokus('hell'),
-            fest && FEST_SCHILD,
-          )}
-          aria-label="Cookie-Einstellungen verwalten"
-          title="Cookie-Einstellungen öffnen"
-        >
-          Cookie-Einstellungen
-        </button>
-      )}
     </>
   );
 }
