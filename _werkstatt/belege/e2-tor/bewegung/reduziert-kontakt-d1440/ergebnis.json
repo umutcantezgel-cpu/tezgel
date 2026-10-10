@@ -1,0 +1,68 @@
+{
+ "modus": "reduziert",
+ "seite": "/kontakt",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-10T22:49:08.484Z",
+ "reducedMotion": "reduce",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 19
+ },
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "geprueft": 145,
+ "verdeckt_durch_zustand": [
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-0",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-2",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-3",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-4",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "klassen": {
+  "k_bewegung": false,
+  "k_bereit": false
+ },
+ "erfasste_eintraege": 38,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/bewegung/reduziert-kontakt-d1440"
+}
