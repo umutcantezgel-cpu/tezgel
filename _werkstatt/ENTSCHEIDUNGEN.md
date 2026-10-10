@@ -121,3 +121,4 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|
 | 10.10. | Kundschafter (Planung) | Workflow-Agent | Leerer Auftrag („NaN“) bei einem von fünf Agenten | 1 | Paket über Agent-Werkzeug neu gestartet; Briefings künftig als Datei + kurzer Verweis |
+| 10.10. | Orchestrator | Funnel-Zerlegung (E2-ORCH-06) | Import einer verschobenen Teilkomponente fehlte (FK/Erfolg → ResultSummary); der Text-Fingerabdruck prüft keine Bezeichner | 1 | Bei jeder Zerlegung zusätzlich freie Bezeichner je Teil prüfen (`kennungen.cjs modul`); Lint-Befund `react/jsx-no-undef` in Prüfstufe A als ROT werten |
