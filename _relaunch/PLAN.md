@@ -297,3 +297,62 @@ Dazu:
 - V-04 (Z-06, P4): Weiterleitungen/410 nach Plan.
 - V-05 (Z-05/Mikrotext, P5): `tel:`-Ziel in DirectContactCard ohne Leerzeichen; feste Telefonnummern in BookingCalendar/LeadQuickForm aus COMPANY_DATA.
 - V-06 (Z-05/Z-04, P4): Menü-Schalter wirkt erst nach der Hydrierung (Tippen davor bleibt wirkungslos); Drawer kann beim ersten Öffnen neu einhängen → Menü so bauen, dass es ohne JS/vor Hydrierung funktioniert (z. B. Navigation als Link zum Fußbereich/<details>-Fallback) und Zustand stabil bleibt.
+
+---
+
+# Gesamtplan P3–P7 (L0 Runde 1 · Kern v1 · 10.10.2026)
+
+## Mengengerüst
+| Größe | Menge | Quelle |
+|---|---|---|
+| Seiten (Grundmenge) | 120 (76 Seitendateien: 70 statisch, 6 dynamisch → 170 HTML) | GRUNDMENGE.json |
+| Codezeilen in Seitendateien | ≈ 20.600 (viele Abschnitte inline) | `wc -l` |
+| Vorlagen (Seitentypen) | 13: Start · Cluster-Übersicht (bad, leistungen, fliesen, standorte, untergrund, balkon, naturstein, treppen) · Fachthema-Detail (≈ 35) · Leistung `[id]` · Leistung × Stadt · Stadt · Blog-Liste · Blog-Artikel · Musterbad/Referenz · Firmenseiten · Arbeitsseiten · Rechtsseiten · 404 | Atlas A01–A06 |
+| Schale (global) | 8: Kopf, Mega-Menü, Mobilmenü, Fuß, untere Leiste, WhatsApp-Widget, Einwilligungsbanner, Sprunglink | A01 |
+| Formulare/Rechner | 9 (F-01–F-09) + Karten-Platzhalter + FAQ + Karussell | FUNKTIONSLISTE |
+| Gemeinsame Bausteine | 72 Komponentendateien, davon ≈ 35 Abschnitts-/UI-Bausteine | A06 |
+| Icons | Bestand 133 lucide + Phosphor + 5 eigene → neu ≈ 30 im Formsystem (K-010) | statisch.json |
+| Motive (SVG) | ≈ 14 Verlegepläne (6 Leistungen + 8 Fachgruppen) · 3 Muster · Fugenkreuz · Trenner · 404-Plan | K-010 |
+| Bewegungen | 12 Registereinträge, 3 Signaturmomente | K-009 |
+| Sprachen | 1 (de) | – |
+| Tests | 289 Funktionsfälle (Bestand) + je Welle: Register-Abgleich, Zustände, axe, forced-colors, ohne JS, Überlauf, Pixelvergleich | werkzeuge/ |
+
+## Bauweise
+- Neues System lebt in `src/components/kern/` (Bausteine) und `src/lib/motion/` (Bewegung). P3 nutzt es nur auf `/`; bestehende gemeinsame Komponenten (FAQAccordion, FinalCTA, TrustStrip, ReviewCarousel …) bleiben für andere Seiten unverändert, bis ihre Welle sie auf das neue System umstellt; danach wird der alte Baustein mit Protokoll entfernt.
+- Formulare (HeroContactForm, PricingCalculator, TezgelAnfrageFunnel …): Logik unverändert; neue Darstellung über eine Erscheinungs-Eigenschaft `erscheinung="kern"`, Standard bleibt alt, bis die letzte Seite umgestellt ist. Funktionstests laufen gegen beide.
+- Seiten: Texte wörtlich übernehmen (Text-Invarianten je Welle), Struktur auf Vorlagen-Bausteine umstellen.
+
+## Pakete und Wellen
+### P3 Durchstich `/` (12 Pakete, alle mit Kern v1)
+| Kennung | Inhalt | Wer | hängt ab von |
+|---|---|---|---|
+| P3-01 | Schriften `src/app/fonts/` (Archivo var, Plex Mono; latin + latin-ext; LIZENZEN.md), am Wrapper von `/` | Orchestrator | – |
+| P3-02 | Tokens `--k-*` additiv (globals.css), Tailwind-Zuordnung additiv | Orchestrator | – |
+| P3-03 | Bewegungsmodul `src/lib/motion/` + Head-Startklasse + Zeitlimit (layout.tsx) | Orchestrator | P3-02 |
+| P3-04 | Icon-Komponente + Sprite (Grundbestand für `/`) | Opus | P3-02 |
+| P3-05 | Motive: Verlegeplan Start, Fugenkreuz, Trenner, Muster | Orchestrator | P3-02 |
+| P3-06 | Einstieg mit SIG-1 Kreuzlinie, Schriftfeld, Mobilkomposition | Orchestrator | P3-01–05 |
+| P3-07 | Leistungsabschnitt mit Plan-Vignetten (SIG-3 vorbereitet) | Opus | P3-04/05 |
+| P3-08 | Ablauf mit SIG-2 und Prüfhaken | Orchestrator | P3-03/05 |
+| P3-09 | Vertrauen: Kundenstimmen mit Anriss, Einzugsgebiet/Karte | Opus | P3-04 |
+| P3-10 | Anfrage-Einstiege (`erscheinung="kern"`): HeroContactForm, PricingCalculator (Vorab-Haken aus, E-014), Funnel, Abschluss; alle Zustände | Opus | P3-04 |
+| P3-11 | FAQ, Großformat-Abschnitt, übrige Abschnitte von `/` | Haiku | P3-04 |
+| P3-12 | Tor `/`: Funktion, axe, Fotos, Pixeldiff andere Seiten = 0, Jury, Slop, Lighthouse | Orchestrator | alle |
+
+### P4 Fundament (14 Pakete) – globaler Umstieg
+P4-01 Tokens global (`@theme`, `tokens.css`-Umdeutungen auflösen) · P4-02 Schriften global · P4-03 Kopf + Mega-Menü (Hamburger nur < lg) · P4-04 Mobilmenü (vor Hydrierung bedienbar, V-06) · P4-05 Fuß + Schriftfeld · P4-06 untere Leiste + WhatsApp-Widget (E-012) · P4-07 Einwilligungsbanner (E-013) · P4-08 Basisbausteine mit allen Zuständen (Knopf, Link, Feld, Auswahl, Checkbox, Akkordeon, Hinweis, Tabelle, Feldraster) · P4-09 Fokus, Sprunglink, `scroll-padding-top`, `#main-content tabindex=-1`, `data-scroll-behavior` · P4-10 404 mit Charakter · P4-11 View Transitions + h1-Fokus · P4-12 Icon-Sprite vollständig + `iconMapper`-Abbildung · P4-13 WaterCursor und MotionProvider raus (E-009, E-011) · P4-14 Wege: `redirects()` 308 + 410 über `proxy.ts` (V-04) · dazu P4-15 Vorlagen-Bausteine für Fachseiten (Einstieg, Faktenfeld, Tabelle, Ablauf, FAQ, Abschluss).
+
+### P5 Ausrollen (10 Wellen, je 4–10 Pakete à 3–5 Seiten)
+W1 Bad-Cluster (8 Seiten + BadanfrageFunnel, Projekt-Check) · W2 Leistungen + `[id]` + `[id]/[stadt]` (≈ 20 Seiten) · W3 Standorte + `[stadt]` + Karten (V-02 nicht hier) · W4 Fliesen + 13 Unterseiten + Konfigurator · W5 Untergrund, Balkon, Naturstein, Treppen, Reparatur, Schadensanalyse (≈ 20) · W6 Blog (Liste, Artikel, TBT/LCP) · W7 Musterbäder, Referenzen · W8 Firmenseiten · W9 Arbeitsseiten (kontakt + V-02, termin, beratung, faq, preise, downloads, login; V-03, V-05) · W10 Rechtsseiten (nur Darstellung). Jede Welle: alte Bausteine ohne Nutzer entfernen (knip), Slop-Zählung, Text-Invarianten, Push.
+
+### P6 Feinschliff (≈ 10 Pakete)
+Mikrointeraktionen, Lade-/Leer-/Fehlerzustände, Auswahlfarbe, Favicon im Formsystem (Logo bleibt), Teilen-Bilder, Konsistenzdurchgang, Signaturmomente schärfen; Tor Z-08 (Jury ≥ 8,0, Blindvergleich ≥ 90 %).
+
+### P7 Abnahme (≈ 6 Pakete)
+Volltest 8 Ebenen, BERICHT mit Galerie, KERN als Dokumentation, README/DESIGN_SYSTEM ehrlich, Rückroll-Anleitung, MENSCHEN vollständig, Gegenprüfer über ABNAHME.
+
+## Summe, Kapazität, kritischer Pfad
+- Pakete: P3 12 + P4 15 + P5 ≈ 70 + P6 10 + P7 6 ≈ **113**.
+- Kapazität (Formel): Tage = 113 ÷ (5 × 4 Wellen/Tag) × 1,2 ≈ **6,8 Tage**.
+- Kritischer Pfad: P3-01/02 → P3-03 → P3-06 → P3-12 → P4-01/02 → P4-08 → P4-15 → P5 W1…W10 (nacheinander, je Welle ein Push) → P6 → P7.
+- Vorrat (V-01…V-06) ist den Wellen zugeordnet.
