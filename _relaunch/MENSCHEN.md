@@ -15,3 +15,4 @@ Vertrauliche Details (Sicherheit, Recht) stehen bewusst nicht in diesem öffentl
 - M-09 · Lizenzen: Maskottchen (I-08); Schrift-Kaufempfehlung folgt in P2.
 - M-10 · Node-Version: `npm test` braucht Node ≥ 22.6; `.nvmrc` sagt 20 (E-004). Annahme: unverändert.
 - M-11 · Vercel: Das Repo ist mit zwei Vercel-Projekten verbunden (`uus-projects-dd41487b/tezgel`, `codays-projects/tezgel`); beide bauen jeden Push. Live (www.tezgel.de) ist `codays-projects`. Prüfen, ob das zweite Projekt gebraucht wird. Annahme: unverändert.
+- M-05 (Ergänzung): weitere Geschäftslogik-Befunde aus den Funktionstests (Details I-18).
