@@ -148,6 +148,18 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
     if (istOffen(b)) b?.hidePopover();
   };
 
+  // Ein aufgeklappter Bereich rückt an den oberen Blattrand, damit seine Links ohne Wischen im Bild stehen
+  // (Probelauf P3-16b: „Philosophie & Fachbetrieb“, „Alle 13 Standorte“ lagen unter dem Blattrand). Sofort, ohne Bewegung.
+  const umschalten = (i: number) => {
+    const aufklappen = bereich !== i;
+    setBereich(aufklappen ? i : null);
+    if (!aufklappen) return;
+    requestAnimationFrame(() => {
+      const knopf = document.getElementById(`${blattId}-bereich-${i}`)?.previousElementSibling;
+      if (knopf instanceof HTMLElement) knopf.scrollIntoView({ block: 'start' });
+    });
+  };
+
   const beiWhatsApp = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     openWhatsApp({ phone: kontakt.whatsappNummer });
@@ -188,7 +200,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
               pfad={pfad}
               offen={bereich}
               idPraefix={blattId}
-              umschalten={(i) => setBereich((o) => (o === i ? null : i))}
+              umschalten={umschalten}
               beimFolgen={schliessen}
               beiWhatsApp={beiWhatsApp}
             />

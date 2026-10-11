@@ -55,3 +55,4 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/` | `Cookie-Einstellungen verwalten` | `–` | 2 | P3-08 | Schwebendes Schild entfällt im Kern (E-020); Widerruf über den Fußlink „Cookie-Einstellungen“ |
 | `/` | `Cookie-Einstellungen öffnen` | `–` | 2 | P3-08 | `title` des schwebenden Schilds entfällt mit dem Schild (E-020) |
 | `/` | `Frei verschiebbar & werfbar` | `–` | 2 | P3-08 | `title` der Wurfphysik am Banner entfällt; der Kern-Banner ist fest und ohne Physik (E-013) |
+| `/` | `1. Ihr Vorhaben wählen` | `Ihr Vorhaben wählen` | 1 | P3-16 | Legende der Projektauswahl im Hero-Formular: Die Auswahl steht im Kern nach den Kontaktfeldern (Probelauf Aufgabe 3, Desktop), die Ziffer „1.“ würde die Reihenfolge falsch angeben |
