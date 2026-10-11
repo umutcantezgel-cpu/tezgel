@@ -1,0 +1,100 @@
+{
+ "protokoll": "PROBELAUF §8",
+ "server": "127.0.0.1:4310 (707a93d)",
+ "einwilligung": "erstbesuch",
+ "erstbetrachter": "je Bild 5 frische Haiku-Agenten",
+ "zuordnung": {
+  "q7": {
+   "satz": "ausgangsstand",
+   "seite": "/",
+   "ansicht": "m375"
+  },
+  "k3": {
+   "satz": "ausgangsstand",
+   "seite": "/",
+   "ansicht": "d1440"
+  }
+ },
+ "antworten": [
+  {
+   "bild": "k3",
+   "durchgang": 1,
+   "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb in Aßlar und Wetzlar (XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, Terrassen), mit kostenlosem Aufmaß vor Ort und verbindlichem Festpreis; die Hauptüberschrift ist vom Cookie-Banner teils verdeckt.",
+   "zielgruppe": "Privatleute im Raum Aßlar und Wetzlar, die Fliesen in Wohnbereichen oder auf der Terrasse verlegen oder ihr Bad sanieren lassen wollen.",
+   "naechster_schritt": "Cookie-Banner schließen (Alle akzeptieren oder Alle ablehnen) und dann das Formular \"Kostenfreies Aufmaß anfragen\" ausfüllen, alternativ per WhatsApp oder unter 06441 / 44 83 567 anrufen.",
+   "sicherheit": 5
+  },
+  {
+   "bild": "k3",
+   "durchgang": 2,
+   "angebot": "Fliesenverlegung und Badsanierung in Aßlar und Wetzlar, unter anderem XXL-Großformatfliesen, barrierefreie Walk-in-Duschen und frostsichere Terrassen, mit kostenlosem Aufmaß vor Ort, Staubschutzgarantie und Festpreis.",
+   "zielgruppe": "Hausbesitzer und Wohnungseigentümer in Aßlar, Wetzlar und Umgebung, die Bad, Wohnbereich, Balkon oder Terrasse neu fliesen oder sanieren lassen wollen.",
+   "naechster_schritt": "Den Cookie-Banner schließen und über \"Aufmaß vor Ort anfragen\" oder das Formular \"Kostenfreies Aufmaß anfragen\" ein Aufmaß anfordern, alternativ per WhatsApp oder Telefon.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "k3",
+   "durchgang": 3,
+   "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb aus Aßlar (Standorte Aßlar und Wetzlar), mit XXL-Großformatfliesen, barrierefreien Walk-in-Duschen, Wohnbereichs-, Balkon- und Terrassenfliesen sowie Reparatur und Fugen.",
+   "zielgruppe": "Hausbesitzer und Wohnungseigentümer in Aßlar und Wetzlar, die ein Bad, einen Wohnbereich, einen Balkon oder eine Terrasse neu fliesen oder sanieren lassen wollen.",
+   "naechster_schritt": "Ich würde das Cookie-Banner schließen oder beantworten und dann über das Formular \"Kostenfreies Aufmaß anfragen\" ein kostenloses Aufmaß vor Ort anfragen, alternativ per WhatsApp oder Telefon 06441 / 44 83 567.",
+   "sicherheit": 5
+  },
+  {
+   "bild": "k3",
+   "durchgang": 4,
+   "angebot": "Fliesenverlegung und Badsanierung aus Aßlar (Fachbetrieb, Wetzlar-Raum): XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, Wohnbereiche und frostsichere Terrassen, mit kostenlosem Aufmaß vor Ort, Staubschutzgarantie und Festpreis.",
+   "zielgruppe": "Privatleute in und um Aßlar und Wetzlar, die ihr Bad, ihre Wohnräume oder ihre Terrasse fliesen oder sanieren lassen wollen.",
+   "naechster_schritt": "Den roten Button \"Aufmaß vor Ort anfragen\" klicken oder im Formular rechts Name, Telefon und Ort eintragen; alternativ per WhatsApp oder unter 06441 / 44 83 567 anrufen.",
+   "sicherheit": 5
+  },
+  {
+   "bild": "k3",
+   "durchgang": 5,
+   "angebot": "Fliesenverlegung und Badsanierung aus Aßlar mit XXL-Großformatfliesen, barrierefreien Walk-in-Duschen, Wohnbereichen und frostsicheren Terrassen; die große Überschrift ist vom Cookie-Banner teilweise verdeckt.",
+   "zielgruppe": "Hausbesitzer und Eigentümer im Raum Aßlar und Wetzlar, die ein Bad, Wohnräume, einen Balkon oder eine Terrasse neu verfliesen oder sanieren lassen wollen.",
+   "naechster_schritt": "Das Cookie-Banner mit „Alle ablehnen“ oder „Alle akzeptieren“ schließen und dann über den Button „Aufmaß vor Ort anfragen“ oder das Formular rechts ein kostenloses Aufmaß anfordern.",
+   "sicherheit": 5
+  },
+  {
+   "bild": "q7",
+   "durchgang": 1,
+   "angebot": "Fliesenverlegung durch den Betrieb \"Tezgel\", fachgerecht abgedichtet nach DIN 18534 mit Staubschutzgarantie; die Leistungsliste ist hinter dem Cookie-Banner nicht zu erkennen.",
+   "zielgruppe": "Vermutlich Privatleute mit bewohntem Zuhause, die Fliesen verlegen oder sanieren lassen wollen, geschlossen aus dem Satzteil \"im bewohnten Zuhause\" und nicht eindeutig erkennbar.",
+   "naechster_schritt": "Den Button \"Aufmaß vor Ort anfragen\" antippen oder per WhatsApp bzw. Anruf unter 06441 / 44 83 567 Kontakt aufnehmen.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "q7",
+   "durchgang": 2,
+   "angebot": "Fliesenverlegung durch den Betrieb „Fliesenverlegung Tezgel“, inklusive Abdichtung nach DIN 18534 und Staubschutzgarantie; die Hauptüberschrift ist vom Cookie-Banner verdeckt, daher ist der volle Leistungsumfang nicht sicher erkennbar.",
+   "zielgruppe": "Privatleute, die Fliesen in ihrem bewohnten Zuhause verlegen lassen wollen (Eigentümer oder Bauherren); das ist aus dem Textfragment geschlossen und nicht ausdrücklich genannt.",
+   "naechster_schritt": "Cookie-Banner schließen und „Aufmaß vor Ort anfragen“ wählen; alternativ direkt unter 06441 / 44 83 567 anrufen oder per WhatsApp schreiben.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "q7",
+   "durchgang": 3,
+   "angebot": "Fliesenverlegung (Firma Tezgel), laut Text fachgerecht und abgedichtet nach DIN 18534 mit Staubschutzgarantie im bewohnten Zuhause; die Hauptüberschrift und der genaue Leistungsumfang sind vom Cookie-Banner verdeckt.",
+   "zielgruppe": "Privatleute, die Fliesen in ihrem bewohnten Haus oder ihrer Wohnung verlegen lassen wollen (aus den sichtbaren Texten abgeleitet).",
+   "naechster_schritt": "Cookie-Banner schließen (etwa mit \"Alle ablehnen\") und dann \"Aufmaß vor Ort anfragen\" drücken; alternativ anrufen oder per WhatsApp schreiben.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "q7",
+   "durchgang": 4,
+   "angebot": "Fliesenverlegung (laut Logo \"Fliesenverlegung Tezgel\"), abgedichtet nach DIN 18534 und mit Staubschutzgarantie im bewohnten Zuhause; die Hauptüberschrift ist vom Cookie-Banner verdeckt, daher ist das Leistungsspektrum nur teilweise erkennbar.",
+   "zielgruppe": "Hausbesitzer und Bewohner, die Fliesen in einer bewohnten Wohnung oder einem Haus verlegen oder sanieren lassen wollen (aus dem sichtbaren Text erschlossen, nicht ausdrücklich genannt).",
+   "naechster_schritt": "Auf \"Aufmaß vor Ort anfragen\" tippen; alternativ über den Anruf-Button, WhatsApp oder die angezeigte Telefonnummer Kontakt aufnehmen.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "q7",
+   "durchgang": 5,
+   "angebot": "Fliesenverlegung: Die Firma verlegt Fliesen fachgerecht, abgedichtet nach DIN 18534 und mit Staubschutzgarantie im bewohnten Zuhause (der Satz ist vom Cookie-Banner teilweise verdeckt).",
+   "zielgruppe": "Privatleute mit bewohntem Zuhause, die Fliesen verlegen lassen wollen; Gewerbekunden oder das Einzugsgebiet sind auf diesem Bildschirm nicht erkennbar.",
+   "naechster_schritt": "Zuerst das Cookie-Banner schließen oder ablehnen, dann den orangen Button \"Aufmaß vor Ort anfragen\" antippen oder direkt anrufen bzw. per WhatsApp schreiben.",
+   "sicherheit": 4
+  }
+ ]
+}
