@@ -1,8 +1,9 @@
 // Mega-Menü-Inhalt Variante B „Achse“: ein weites Blatt (12 Spalten, 1-px-Fugen statt Karten) unter der Waage.
-// Links der Bereich (Name in Anzeige-Satz, Beschreibung), dann die Kategorien als nummerierte Listen (Mono-Ziffern 01 …,
-// laufend über das Blatt), rechts der „featured“-Block als Feld mit Mono-Etikett. Wortlaut vollständig aus der Konfiguration.
+// Links der Bereich (Name in Anzeige-Satz, Beschreibung), dann die Kategorien als nummerierte Listen: `<ol
+// class="k-liste-nummern">`, die Ziffern 01 … sind Listenmarken (kein Text im HTML, P3-06d), laufend über das Blatt
+// per `start`; Marke außen (`list-outside`) in der Polsterung der Liste, damit der Punkt-Link ein Block bleibt. Rechts der „featured“-Block als Feld mit Mono-Etikett. Wortlaut vollständig aus der Konfiguration.
 // Rein darstellend (keine Hooks): die Navigation reicht `beimFolgen` (Menü schließen) herein, die Vorschau zeigt es statisch.
-// Hover-Ziel und aktiver Punkt: 2-px-Laserlot links am Punkt; aktiv zusätzlich Ziffer und Name in Laser tief + aria-current.
+// Hover-Ziel und aktiver Punkt: 2-px-Laserlot links am Punkt; aktiv zusätzlich Marke (`marker:`) und Name in Laser tief + aria-current.
 import Link from 'next/link';
 import { Etikett, Knopf, fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
@@ -23,7 +24,7 @@ function Punkt({ punkt, pfad, beimFolgen }: { punkt: Unterpunkt; pfad: string; b
       onClick={beimFolgen}
       aria-current={aktiv ? 'page' : undefined}
       data-motion="zustand"
-      className={verbinde('group/punkt relative flex min-h-k-7 gap-k-3 rounded-k-1 py-k-2 pl-k-3 pr-k-2', fokus('hell'))}
+      className={verbinde('group/punkt relative block min-h-k-7 rounded-k-1 py-k-2 pl-k-3 pr-k-2', fokus('hell'))}
     >
       <span
         aria-hidden="true"
@@ -32,13 +33,8 @@ function Punkt({ punkt, pfad, beimFolgen }: { punkt: Unterpunkt; pfad: string; b
           aktiv ? 'opacity-100' : 'opacity-0 pointer-fine:group-hover/punkt:opacity-100',
         )}
       />
-      <span aria-hidden="true" className={verbinde('w-k-5 shrink-0 k-mono text-k-1', aktiv ? 'text-k-laser-tief' : 'text-k-tinte-2')}>
-        {punkt.nummer}
-      </span>
-      <span className="min-w-0 k-text">
-        <span className={verbinde('block text-k-2 font-semibold', aktiv ? 'text-k-laser-tief' : 'text-k-tinte')}>{punkt.name}</span>
-        {punkt.beschreibung ? <span className="mt-k-1 block text-k-1 text-k-tinte-2">{punkt.beschreibung}</span> : null}
-      </span>
+      <span className={verbinde('block k-text text-k-2 font-semibold', aktiv ? 'text-k-laser-tief' : 'text-k-tinte')}>{punkt.name}</span>
+      {punkt.beschreibung ? <span className="mt-k-1 block k-text text-k-1 text-k-tinte-2">{punkt.beschreibung}</span> : null}
     </Link>
   );
 }
@@ -57,12 +53,13 @@ export default function MegaBlatt({ eintrag, pfad, beimFolgen }: BlattProps) {
       <div className={verbinde('grid border-l border-k-fuge', h ? 'col-span-6' : 'col-span-9', mehrere ? 'grid-cols-2' : 'grid-cols-1')}>
         {eintrag.kategorien.map((kat, j) => (
           <div key={kat.titel} className={verbinde('min-w-0 px-k-4', j > 0 && 'border-l border-k-fuge')}>
-            <Etikett als="p" className="pl-k-3">
-              {kat.titel}
-            </Etikett>
-            <ol role="list" className={verbinde('mt-k-3 grid', zweispaltig && 'grid-cols-2 gap-x-k-4')}>
+            <Etikett als="p">{kat.titel}</Etikett>
+            <ol
+              start={kat.punkte[0]?.nr ?? 1}
+              className={verbinde('k-liste-nummern mt-k-3 grid list-outside pl-k-6', zweispaltig && 'grid-cols-2 gap-x-k-7')}
+            >
               {kat.punkte.map((p) => (
-                <li key={p.pfad + p.name}>
+                <li key={p.pfad + p.name} className={pfad === p.pfad ? 'marker:text-k-laser-tief' : undefined}>
                   <Punkt punkt={p} pfad={pfad} beimFolgen={beimFolgen} />
                 </li>
               ))}

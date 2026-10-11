@@ -5,8 +5,8 @@ export type Unterpunkt = {
   name: string;
   pfad: string;
   beschreibung?: string;
-  /** Laufende Nummer im Blatt, zweistellig in Mono („01“ …); rein darstellend (aria-hidden). */
-  nummer: string;
+  /** Laufende Nummer im Blatt (1 …); erscheint nur als Listenmarke (`ol.k-liste-nummern`, `start`), nie als Text. */
+  nr: number;
 };
 
 export type Kategorie = { titel: string; punkte: Unterpunkt[] };

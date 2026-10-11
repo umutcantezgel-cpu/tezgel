@@ -1,5 +1,6 @@
 // Mobilmenü-Inhalt Variante B „Achse“ (K-003 Prinzip 7 „Mobil ist ein eigenes Blatt“): die Achse steht als Lot am
-// linken Rand (2 px Laser auf --k-rand), die Bereiche groß im Anzeige-Satz, Mono-Ziffern 01–05 davor. Der aktive Bereich
+// linken Rand (2 px Laser auf --k-rand), die Bereiche groß im Anzeige-Satz. Die Ziffern 01–05 sind Listenmarken
+// (`<ol class="k-liste-nummern">`, außen in der Polsterung zwischen Lot und Eintrag; kein Text im HTML, P3-06d). Der aktive Bereich
 // trägt ein Fugenkreuz auf dem Lot (Laser) und den Namen in Laser tief – nicht nur Farbe. Darunter Anfrage, Telefon,
 // WhatsApp (Ziele aus COMPANY_DATA), Erreichbarkeit und Rechtliches wie im Bestand.
 // Rein darstellend: Zustand (welcher Bereich aufgeklappt ist) und Handler kommen von `Mobilmenue`, die Vorschau zeigt
@@ -33,8 +34,6 @@ export type MobilBlattProps = {
   beiWhatsApp?: (e: MouseEvent<HTMLAnchorElement>) => void;
 };
 
-const zweistellig = (n: number) => String(n).padStart(2, '0');
-
 export default function MobilBlatt({ eintraege, kontakt, anfrage, pfad, offen, idPraefix, umschalten, beimFolgen, beiWhatsApp }: MobilBlattProps) {
   const aktiv = aktiverBereich(pfad, eintraege);
   return (
@@ -47,15 +46,15 @@ export default function MobilBlatt({ eintraege, kontakt, anfrage, pfad, offen, i
       </div>
 
       <nav aria-label={TEXT.navMobil} className="mt-k-3">
-        <ul className="border-t border-k-fuge">
+        <ol className="k-liste-nummern list-outside border-t border-k-fuge pl-k-7">
           {eintraege.map((eintrag, i) => {
             const istAuf = offen === i;
             const istAktiv = aktiv === i;
             const bereichId = `${idPraefix}-bereich-${i}`;
             return (
-              <li key={eintrag.pfad} className="relative border-b border-k-fuge pl-k-5">
+              <li key={eintrag.pfad} className={verbinde('relative border-b border-k-fuge', istAktiv && 'marker:text-k-laser-tief')}>
                 {istAktiv ? (
-                  <span aria-hidden="true" className="absolute left-0 top-k-5 flex -translate-x-1/2 text-k-laser">
+                  <span aria-hidden="true" className="absolute -left-k-7 top-k-5 flex -translate-x-1/2 text-k-laser">
                     <Fugenkreuz className="size-k-4" />
                   </span>
                 ) : null}
@@ -70,9 +69,6 @@ export default function MobilBlatt({ eintraege, kontakt, anfrage, pfad, offen, i
                     fokus('hell'),
                   )}
                 >
-                  <span aria-hidden="true" className={verbinde('flex h-lh shrink-0 items-center k-mono text-k-1', istAktiv ? 'text-k-laser-tief' : 'text-k-tinte-2')}>
-                    {zweistellig(i + 1)}
-                  </span>
                   <span className="min-w-0 flex-1">
                     <span
                       className={verbinde(
@@ -150,7 +146,7 @@ export default function MobilBlatt({ eintraege, kontakt, anfrage, pfad, offen, i
               </li>
             );
           })}
-        </ul>
+        </ol>
       </nav>
 
       <div className="flex flex-col gap-k-3 pl-k-5 pt-k-6">
