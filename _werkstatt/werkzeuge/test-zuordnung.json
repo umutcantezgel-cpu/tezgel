@@ -94,6 +94,14 @@
     ]
   },
   {
+    "muster": "\\(bestand\\)/bad/page\\.jsx$",
+    "specs": [
+      "funktion-projektcheck.spec.mjs",
+      "funktion-kontaktwege.spec.mjs",
+      "funktion-badanfrage.spec.mjs"
+    ]
+  },
+  {
     "muster": "app/(\\([a-z]+\\)/)?(layout|_dokument)\\.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon",
     "specs": [
       "ALLE"
