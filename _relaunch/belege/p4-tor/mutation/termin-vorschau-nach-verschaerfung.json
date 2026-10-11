@@ -1,0 +1,1013 @@
+{
+  "config": {
+    "configFile": "/home/user/tezgel/_relaunch/werkzeuge/playwright.config.mjs",
+    "rootDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-vor.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-vor-out",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobil",
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-vor-out",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "funktion-termin.spec.mjs",
+      "file": "funktion-termin.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "BookingCalendar (F-07) auf /termin",
+          "file": "funktion-termin.spec.mjs",
+          "line": 58,
+          "column": 8,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1257,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:20.200Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-680ff72cd2733a40690e",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1347,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:20.174Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-e49094be9fd248965185",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1257,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:21.614Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-6046f93c0b95544cffc0",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1216,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:21.683Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d8f66b2b0ae956afcdaf",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4920,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:30.864Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-292848b451d10d43a2b6",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6941,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:32.221Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d0c6933c182a7af297be",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6982,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:35.906Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-13b43ba5cb214c9c445d",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6073,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:39.404Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-cd035d3e15360923fb00",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "BookingCalendar (F-07) auf /kontakt#termin-buchen",
+          "file": "funktion-termin.spec.mjs",
+          "line": 58,
+          "column": 8,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1214,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:22.893Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-0c2748f0486e342748d7",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1313,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:22.926Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d5b2ea2323ac1664282b",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1136,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:24.131Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-4d1744d7e8cb2dad82c3",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1235,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:24.258Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-3cf9b60ea9b358c9bf0d",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1129,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:42.922Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-7300e535c57baced2263",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1328,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:44.078Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-8ce998a2342544588431",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1486,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:45.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-75bc05c73694538d2070",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1741,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:45.492Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-b1b4f39401a25464382f",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Termin-Formular (F-08) auf /termin",
+          "file": "funktion-termin.spec.mjs",
+          "line": 134,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1026,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:25.293Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-c3c28fdb8d3f0d6756de",
+              "file": "funktion-termin.spec.mjs",
+              "line": 135,
+              "column": 3
+            },
+            {
+              "title": "Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1443,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:25.515Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d48ee3c9e717d5717509",
+              "file": "funktion-termin.spec.mjs",
+              "line": 145,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1247,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:26.337Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-b1cc087f84392082031c",
+              "file": "funktion-termin.spec.mjs",
+              "line": 157,
+              "column": 3
+            },
+            {
+              "title": "gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2882,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:26.977Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-9bd20744684dba1b2244",
+              "file": "funktion-termin.spec.mjs",
+              "line": 168,
+              "column": 3
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2006,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:46.934Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-396aaad7a24e68e616f2",
+              "file": "funktion-termin.spec.mjs",
+              "line": 135,
+              "column": 3
+            },
+            {
+              "title": "Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3695,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:47.248Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-49eafe9b4f21e7b59c41",
+              "file": "funktion-termin.spec.mjs",
+              "line": 145,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3803,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:48.960Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-41d5ecffb2921142e2e8",
+              "file": "funktion-termin.spec.mjs",
+              "line": 157,
+              "column": 3
+            },
+            {
+              "title": "gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5529,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:50.959Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-6f528dcd137cbf2fcc0a",
+              "file": "funktion-termin.spec.mjs",
+              "line": 168,
+              "column": 3
+            }
+          ],
+          "suites": [
+            {
+              "title": "echte Route (Mock-Modus ohne Resend-Schlüssel)",
+              "file": "funktion-termin.spec.mjs",
+              "line": 195,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Server nimmt Termin-Formular an und vergibt echte Referenz",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3091,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T11:47:27.600Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "3e16c5684ec33e19cefe-187d572cc865e6d66764",
+                  "file": "funktion-termin.spec.mjs",
+                  "line": 197,
+                  "column": 5
+                },
+                {
+                  "title": "Server nimmt Termin-Formular an und vergibt echte Referenz",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 5170,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T11:47:52.788Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "3e16c5684ec33e19cefe-234344fa5a00c102adbb",
+                  "file": "funktion-termin.spec.mjs",
+                  "line": 197,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T11:47:19.186Z",
+    "duration": 38869.255,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

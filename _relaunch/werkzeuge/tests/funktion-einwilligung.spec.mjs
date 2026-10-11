@@ -216,8 +216,9 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
     test('/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)', async ({ page, context, protokoll, isMobile }) => {
       // Befund (Ausgangsstand 5a7a7b0, gemessen): Auf Smartphone-Breite (375, 390, 430 px) deckt der Info-Kasten der
       // Standortkarte (absolut unten, z-10) den Knopf vollständig ab; ein Tipp trifft den Kasten. Desktop ist nicht
-      // betroffen. Siehe OFFENE FRAGEN.
-      test.fixme(isMobile, 'Ausgangsstand: Info-Kasten der Standortkarte überdeckt den Platzhalter-Knopf auf Smartphone-Breite (OFFENE FRAGE)');
+      // betroffen. Siehe OFFENE FRAGEN. Im Kern steht der Kasten neben bzw. unter der Karte (P4-08c) – dort läuft der Fall auch
+      // mobil (P4-GEG M1); `fixme` gilt nur noch für die Bestandsfassung.
+      test.fixme(isMobile && !istKern('/standorte'), 'Ausgangsstand: Info-Kasten der Standortkarte überdeckt den Platzhalter-Knopf auf Smartphone-Breite (OFFENE FRAGE)');
       await oeffne(page, '/standorte', standortKarte(page).getByRole('button', { name: LADE_KNOPF }));
       const knopf = await ladeKnopf(page, '/standorte');
       await klick(knopf);

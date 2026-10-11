@@ -1,0 +1,1253 @@
+{
+  "config": {
+    "configFile": "/home/user/tezgel/_relaunch/werkzeuge/playwright.config.mjs",
+    "rootDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobil",
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "funktion-termin.spec.mjs",
+      "file": "funktion-termin.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "BookingCalendar (F-07) auf /termin",
+          "file": "funktion-termin.spec.mjs",
+          "line": 58,
+          "column": 8,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1187,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:30.184Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-680ff72cd2733a40690e",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1371,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:30.248Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-e49094be9fd248965185",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1139,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:31.524Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-6046f93c0b95544cffc0",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1251,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:31.761Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d8f66b2b0ae956afcdaf",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3436,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:43.801Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-292848b451d10d43a2b6",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5479,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:45.840Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d0c6933c182a7af297be",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3982,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:47.358Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-13b43ba5cb214c9c445d",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6334,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:51.364Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-cd035d3e15360923fb00",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "BookingCalendar (F-07) auf /kontakt#termin-buchen",
+          "file": "funktion-termin.spec.mjs",
+          "line": 58,
+          "column": 8,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 857,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:61:7",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:61:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:32.708Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-e00ea-er-blockieren-keine-Anfrage-mobil/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-0c2748f0486e342748d7",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 869,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:73:7",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:73:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:33.040Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-064b9-Fehlermeldung-keine-Anfrage-mobil/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d5b2ea2323ac1664282b",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1076,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:84:7",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:84:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:34.627Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-57d72-ird-blockiert-keine-Anfrage-mobil/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-4d1744d7e8cb2dad82c3",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1035,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:97:38",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:97:38"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:34.985Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-dca65-ge-raus-Erfolg-mit-Referenz-mobil/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-3cf9b60ea9b358c9bf0d",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1340,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:61:7",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:61:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:51.467Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-e00ea-er-blockieren-keine-Anfrage-desktop/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-7300e535c57baced2263",
+              "file": "funktion-termin.spec.mjs",
+              "line": 59,
+              "column": 5
+            },
+            {
+              "title": "nur Leerzeichen als Name: Fehlermeldung, keine Anfrage",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1225,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:73:7",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:73:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:54.085Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-064b9-Fehlermeldung-keine-Anfrage-desktop/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-8ce998a2342544588431",
+              "file": "funktion-termin.spec.mjs",
+              "line": 71,
+              "column": 5
+            },
+            {
+              "title": "ohne Einwilligung: Anfrage wird blockiert, keine Anfrage",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1177,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:84:7",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:84:7"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:56.545Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-57d72-ird-blockiert-keine-Anfrage-desktop/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-75bc05c73694538d2070",
+              "file": "funktion-termin.spec.mjs",
+              "line": 82,
+              "column": 5
+            },
+            {
+              "title": "gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1048,
+                      "error": {
+                        "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m",
+                        "stack": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:97:38",
+                        "location": {
+                          "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                          "column": 97,
+                          "line": 53
+                        },
+                        "snippet": "  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                            "column": 97,
+                            "line": 53
+                          },
+                          "message": "Error: gewählter Tag = angeklickter Tag-Knopf\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"1\u001b[7m3\u001b[27m.10.2026\"\u001b[39m\nReceived: \u001b[31m\"1\u001b[7m2\u001b[27m.10.2026\"\u001b[39m\n\n  51 |   await expect(kopf).toBeVisible();\n  52 |   const m = (await kopf.textContent()).match(/(\\d{2})\\.(\\d{2})\\.(\\d{4}) um (\\d{2}:\\d{2}) Uhr/);\n> 53 |   if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);\n     |                                                                                                 ^\n  54 |   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };\n  55 | }\n  56 |\n    at kalenderZuKontaktdaten (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:53:97)\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:97:38"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:57.719Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/termin-mut-out/funktion-termin-BookingCal-dca65-ge-raus-Erfolg-mit-Referenz-desktop/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs",
+                        "column": 97,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-b1b4f39401a25464382f",
+              "file": "funktion-termin.spec.mjs",
+              "line": 95,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Termin-Formular (F-08) auf /termin",
+          "file": "funktion-termin.spec.mjs",
+          "line": 134,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1174,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:36.927Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-c3c28fdb8d3f0d6756de",
+              "file": "funktion-termin.spec.mjs",
+              "line": 135,
+              "column": 3
+            },
+            {
+              "title": "Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1857,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:37.249Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-d48ee3c9e717d5717509",
+              "file": "funktion-termin.spec.mjs",
+              "line": 145,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3309,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:38.265Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-b1cc087f84392082031c",
+              "file": "funktion-termin.spec.mjs",
+              "line": 157,
+              "column": 3
+            },
+            {
+              "title": "gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3394,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:39.336Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-9bd20744684dba1b2244",
+              "file": "funktion-termin.spec.mjs",
+              "line": 168,
+              "column": 3
+            },
+            {
+              "title": "ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6567,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:59.158Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-396aaad7a24e68e616f2",
+              "file": "funktion-termin.spec.mjs",
+              "line": 135,
+              "column": 3
+            },
+            {
+              "title": "Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 8031,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:46:59.990Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-49eafe9b4f21e7b59c41",
+              "file": "funktion-termin.spec.mjs",
+              "line": 145,
+              "column": 3
+            },
+            {
+              "title": "ohne Einwilligung: blockiert, keine Anfrage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5637,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:05.924Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-41d5ecffb2921142e2e8",
+              "file": "funktion-termin.spec.mjs",
+              "line": 157,
+              "column": 3
+            },
+            {
+              "title": "gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 8538,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T11:47:08.210Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "3e16c5684ec33e19cefe-6f528dcd137cbf2fcc0a",
+              "file": "funktion-termin.spec.mjs",
+              "line": 168,
+              "column": 3
+            }
+          ],
+          "suites": [
+            {
+              "title": "echte Route (Mock-Modus ohne Resend-Schlüssel)",
+              "file": "funktion-termin.spec.mjs",
+              "line": 195,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "Server nimmt Termin-Formular an und vergibt echte Referenz",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3283,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T11:46:41.592Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "3e16c5684ec33e19cefe-187d572cc865e6d66764",
+                  "file": "funktion-termin.spec.mjs",
+                  "line": 197,
+                  "column": 5
+                },
+                {
+                  "title": "Server nimmt Termin-Formular an und vergibt echte Referenz",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 10,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6177,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T11:47:11.581Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "3e16c5684ec33e19cefe-234344fa5a00c102adbb",
+                  "file": "funktion-termin.spec.mjs",
+                  "line": 197,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T11:46:28.917Z",
+    "duration": 48933.417,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

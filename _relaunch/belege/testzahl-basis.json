@@ -1,57 +1,57 @@
 {
- "erstellt": "2026-10-10T18:47:40.811Z",
+ "erstellt": "2026-10-11T11:49:11.478Z",
  "specs": {
   "funktion-badanfrage.spec.mjs": {
    "faelle": 7,
-   "expects": 42,
+   "expects": 43,
    "fixme": 0,
    "skip": 0
   },
   "funktion-einwilligung.spec.mjs": {
-   "faelle": 13,
-   "expects": 46,
+   "faelle": 15,
+   "expects": 61,
    "fixme": 1,
    "skip": 0
   },
   "funktion-express-funnel.spec.mjs": {
    "faelle": 10,
-   "expects": 52,
+   "expects": 54,
    "fixme": 0,
    "skip": 0
   },
   "funktion-hero-kontakt.spec.mjs": {
-   "faelle": 3,
-   "expects": 8,
+   "faelle": 4,
+   "expects": 11,
    "fixme": 0,
    "skip": 0
   },
   "funktion-konfigurator.spec.mjs": {
    "faelle": 14,
-   "expects": 51,
+   "expects": 52,
    "fixme": 2,
    "skip": 0
   },
   "funktion-kontaktwege.spec.mjs": {
-   "faelle": 8,
-   "expects": 19,
+   "faelle": 9,
+   "expects": 23,
    "fixme": 0,
    "skip": 3
   },
   "funktion-navigation.spec.mjs": {
-   "faelle": 23,
-   "expects": 102,
+   "faelle": 24,
+   "expects": 120,
    "fixme": 0,
    "skip": 3
   },
   "funktion-preisrechner.spec.mjs": {
-   "faelle": 8,
-   "expects": 34,
+   "faelle": 9,
+   "expects": 37,
    "fixme": 0,
    "skip": 0
   },
   "funktion-projektcheck.spec.mjs": {
    "faelle": 7,
-   "expects": 46,
+   "expects": 47,
    "fixme": 0,
    "skip": 0
   },
@@ -63,7 +63,13 @@
   },
   "funktion-termin.spec.mjs": {
    "faelle": 9,
-   "expects": 37,
+   "expects": 38,
+   "fixme": 0,
+   "skip": 0
+  },
+  "funktion-uhr.spec.mjs": {
+   "faelle": 1,
+   "expects": 2,
    "fixme": 0,
    "skip": 0
   }
@@ -80,33 +86,33 @@
    "ausgelassen": 0
   },
   "funktion-einwilligung.spec.mjs::mobil": {
-   "faelle": 17,
-   "gruen": 16,
+   "faelle": 24,
+   "gruen": 23,
    "ausgelassen": 1
   },
   "funktion-einwilligung.spec.mjs::desktop": {
-   "faelle": 17,
-   "gruen": 17,
+   "faelle": 24,
+   "gruen": 24,
    "ausgelassen": 0
   },
   "funktion-express-funnel.spec.mjs::mobil": {
-   "faelle": 13,
-   "gruen": 13,
+   "faelle": 22,
+   "gruen": 22,
    "ausgelassen": 0
   },
   "funktion-express-funnel.spec.mjs::desktop": {
-   "faelle": 13,
-   "gruen": 13,
+   "faelle": 22,
+   "gruen": 22,
    "ausgelassen": 0
   },
   "funktion-hero-kontakt.spec.mjs::mobil": {
-   "faelle": 3,
-   "gruen": 3,
+   "faelle": 4,
+   "gruen": 4,
    "ausgelassen": 0
   },
   "funktion-hero-kontakt.spec.mjs::desktop": {
-   "faelle": 3,
-   "gruen": 3,
+   "faelle": 4,
+   "gruen": 4,
    "ausgelassen": 0
   },
   "funktion-konfigurator.spec.mjs::mobil": {
@@ -120,33 +126,33 @@
    "ausgelassen": 2
   },
   "funktion-kontaktwege.spec.mjs::mobil": {
-   "faelle": 16,
-   "gruen": 15,
-   "ausgelassen": 1
+   "faelle": 19,
+   "gruen": 17,
+   "ausgelassen": 2
   },
   "funktion-kontaktwege.spec.mjs::desktop": {
-   "faelle": 16,
-   "gruen": 14,
+   "faelle": 19,
+   "gruen": 17,
    "ausgelassen": 2
   },
   "funktion-navigation.spec.mjs::mobil": {
-   "faelle": 23,
-   "gruen": 19,
-   "ausgelassen": 4
+   "faelle": 31,
+   "gruen": 24,
+   "ausgelassen": 7
   },
   "funktion-navigation.spec.mjs::desktop": {
-   "faelle": 23,
-   "gruen": 21,
-   "ausgelassen": 1
+   "faelle": 31,
+   "gruen": 31,
+   "ausgelassen": 0
   },
   "funktion-preisrechner.spec.mjs::mobil": {
-   "faelle": 8,
-   "gruen": 8,
+   "faelle": 17,
+   "gruen": 17,
    "ausgelassen": 0
   },
   "funktion-preisrechner.spec.mjs::desktop": {
-   "faelle": 8,
-   "gruen": 8,
+   "faelle": 17,
+   "gruen": 17,
    "ausgelassen": 0
   },
   "funktion-projektcheck.spec.mjs::mobil": {
@@ -166,7 +172,7 @@
   },
   "funktion-schnellanfrage.spec.mjs::desktop": {
    "faelle": 12,
-   "gruen": 11,
+   "gruen": 12,
    "ausgelassen": 0
   },
   "funktion-termin.spec.mjs::mobil": {
@@ -176,7 +182,17 @@
   },
   "funktion-termin.spec.mjs::desktop": {
    "faelle": 13,
-   "gruen": 12,
+   "gruen": 13,
+   "ausgelassen": 0
+  },
+  "funktion-uhr.spec.mjs::mobil": {
+   "faelle": 16,
+   "gruen": 16,
+   "ausgelassen": 0
+  },
+  "funktion-uhr.spec.mjs::desktop": {
+   "faelle": 16,
+   "gruen": 16,
    "ausgelassen": 0
   }
  }

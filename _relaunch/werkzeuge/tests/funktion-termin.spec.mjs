@@ -41,11 +41,16 @@ const oeffneKalender = (page, ort) => oeffne(page, ort, ersterSchritt(page, ort)
 
 // Wählt Slot (zweiter Tag, damit das Datum nicht zufällig der erste Tag ist) und liefert Datum/Slot aus der Schritt-2-Überschrift.
 async function kalenderZuKontaktdaten(page, ort, uhrzeit = '15:00', tagIndex = 1) {
-  await (await bedienbar(ersterSchritt(page, ort, uhrzeit, tagIndex))).click();
+  const schritt = await bedienbar(ersterSchritt(page, ort, uhrzeit, tagIndex));
+  // Kern: Datum des angeklickten Tag-Knopfs („Di, 13.10.2026“). Die Auswahl muss genau diesen Tag treffen – sonst bliebe ein
+  // Kalender, der immer den ersten Tag wählt, unbemerkt (Mutationsprobe P4-Tor, P2).
+  const angeklickt = istKern(ort) ? (await schritt.textContent()).match(/\d{2}\.\d{2}\.\d{4}/)?.[0] : null;
+  await schritt.click();
   if (istKern(ort)) await page.getByRole('radio', { name: `${uhrzeit} Uhr`, exact: true }).click();
   const kopf = page.getByText(/Schritt 2: Kontaktdaten für \d{2}\.\d{2}\.\d{4} um \d{2}:\d{2} Uhr/);
   await expect(kopf).toBeVisible();
   const m = (await kopf.textContent()).match(/(\d{2})\.(\d{2})\.(\d{4}) um (\d{2}:\d{2}) Uhr/);
+  if (istKern(ort)) expect(`${m[1]}.${m[2]}.${m[3]}`, 'gewählter Tag = angeklickter Tag-Knopf').toBe(angeklickt);
   return { iso: `${m[3]}-${m[2]}-${m[1]}`, anzeige: `${m[1]}.${m[2]}.${m[3]}`, zeit: m[4] };
 }
 
