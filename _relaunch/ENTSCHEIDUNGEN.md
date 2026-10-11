@@ -236,7 +236,7 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - Endstand bcd8fcb-k: a2/a4 Touch 4/8, a3 Maus 5, a5 Touch 10, a3 Touch 12. Alle sind gleich der Basis.
 - **Abweichung mit Begründung:** a1-d1440-tastatur 26 statt 23, a5-d1440-tastatur 117 statt 114.
   - Ursache: Von der Kern-Seite `/` auf eine Bestandsseite wird das Dokument voll geladen (andere Wurzel-Layouts), der Fokus beginnt dort korrekt am Dokumentanfang, also +3 Tabs bis zum Untermenü.
-  - Der Bezugswert beruht auf dem Fehler des Bestands, der den Fokus nach clientseitigem Wechsel an der alten Stelle hält; das ist der Befund „hoch“ der Basis-Matrix.
+  - Der Bezugswert entsteht im Bestand durch den clientseitigen Wechsel (Next-Standard: Fokus bleibt am aktivierten Link); die Basis-Matrix führt dieses Verhalten als Befund „hoch“ (a5, 87 Tabs). Berichtigt nach P3-16-GEG M-3: Ursache des +3 ist der volle Neuladevorgang nach E-015, nicht ein Fehler des Kerns.
   - Folge: kein Rückbau. Die Zahl wird in der Welle der Zielseite (W1 `/bad`) mit der Fokusführung des Kerns neu gemessen. Bis dahin steht sie als offene Abweichung in ABNAHME Z-04.
 - **Weitere Korrekturen in diesem Tor:**
   - **Jury, alle drei:** Der WhatsApp-Kanal weicht jetzt allen Bedienelementen aus (FREIHALTEN um Links, Knöpfe, Beschriftungen, `summary`). Das Großformat-Bild füllt seine Zelle.
@@ -245,5 +245,28 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
     - Die Varianten A (Kopf, Einstieg) sind deshalb schon jetzt entfernt statt erst in W10 (Umkehrprobe E-022: Rückweg über git).
     - Dazu `content-visibility: hidden` für zugeklappte Bereiche und `memo` für das Mobilblatt.
     - Endstand: 48 ms (Basis 96).
-  - **Barrierefreiheit (P3-16a):** Die harten Kennzahlen stehen auf 0. Rest: ein Fokusring der Bewertungsleiste liegt bei offenem Banner mobil zu etwa 2 % unter dem Banner; das Element ist höher als die freie Fläche (Bestand: 44 solche Fälle).
+  - **Barrierefreiheit (P3-16a):** Alle harten Kennzahlen bis auf „dünn“ stehen auf 0. „dünn“ = 1: Ring des Stimmen-Bereichs bei offenem Banner mobil, 0,98 · U statt 1,5 · U, also rund die Hälfte der Ringpixel unter dem Banner (berichtigt nach P3-16-GEG M-1; Regel E-018 Nachtrag; Bestand 44).
 - **Prüfung:** Frischer Gegenprüfer P3-16-GEG über das Tor (ERGEBNIS `belege/t2-bcd8fcb/ERGEBNIS.md`).
+
+### E-018 · Nachtrag (11.10.2026, P3-16-GEG M-1): Fokusring teilweise unter dem nicht-modalen Einwilligungsbanner
+- **Befund:** Kandidat `/`, m375, Erstbesuch, Element nr 81 (Bereich des Stimmen-Karussells, 420 px hoch, Fokusring 2 px).
+  - Gemessen sind 1492 Kontrastpixel bei einem Umfang U = 1526, also 0,98 · U; „ok“ verlangt 1,5 · U (2-px-Ring ≈ 2 · U).
+  - Damit fehlt rund die Hälfte der erwarteten Ringpixel. Die frühere Angabe „2 %“ in ERGEBNIS/E-023 war falsch.
+  - Grund laut Werkzeug: `ring-unter-fester-ebene`. Der Banner belegt mobil 375 px; das Element ist höher als die freie Fläche zwischen Kopf und Banner, Ober- und Unterkante liegen unter fester Ebene.
+  - Ohne Banner (`abgelehnt`) misst dasselbe Element „ok“, die Mitte ist frei (`fokus_verdeckt_fest` 0, WCAG 2.4.11 erfüllt).
+- **Regel:** Ein Ring, der nur deshalb teilweise verdeckt ist, weil der nicht-modale Banner offen steht und das Element höher ist als die freie Fläche, zählt wie „Ring teilverdeckt (fest)“ als Information. Hart bleibt „dünn“, wenn derselbe Ring ohne Banner dünn ist.
+- **Umkehrprobe:** Wird der Banner modal oder deckt er die Mitte eines Fokusziels, greift wieder die harte Kennzahl „verdeckt“. Bestand: 44 „dünn“, 130 „verdeckt fest“.
+
+## E-024 · TBT mobil `/` über Budget bei besserer Leistung insgesamt (P3-16-GEG M-4)
+- **Befund:**
+  - Kandidat mit Hydrierungsgrenzen (b341543-k), Median aus 10 verschränkten Läufen: Lighthouse mobil 87 gegen 85, LCP 3.877 gegen 4.214 ms, TBT 226 gegen 148 ms (Budget 200), CLS 0.
+  - Lange Aufgaben: die Hydrierung (~160 ms bei 4×) und eine anfängliche Stil- und Layoutaufgabe (~130 ms).
+  - INP: alle sechs Interaktionen deutlich unter Basis und Budget (max 64 ms).
+- **Wege:**
+  1. Freischaltung zurückhalten, bis TBT ≤ 200 ms.
+  2. Freischalten mit Arbeitsauftrag; K-013 definiert „schlechter als der Bestand“ über Punkte (> 3) und LCP (> 10 %), beide besser.
+  3. Bewegung oder Formulare unter dem ersten Bildschirm erst bei Sicht hydrieren (größerer Umbau, eigenes Paket).
+- **Wahl: (2) mit Auftrag (3) in P4.**
+  - Grund: Für Besucher ist der Kandidat schneller (LCP, INP, Punkte). TBT ist ein Laborwert ohne Interaktion; die eingeführten Suspense-Grenzen senken ihn bereits (vorher 224–332 ms).
+  - Das Budget bleibt Ziel für das P4-Tor (ABNAHME „Offene Abweichungen“).
+- **Umkehrprobe:** Steigt TBT in einer späteren Welle weiter oder fällt der Punktwert unter den Bestand, greift (1).

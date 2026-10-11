@@ -21,3 +21,7 @@ Status: ☐ offen · ☑ erfüllt (mit Beleg) · ENTFÄLLT (nur durch Entscheidu
 | Z-14 | Übergabe | frischer Opus-Gegenprüfer | BERICHT mit Galerie, KERN als Doku, MENSCHEN vollständig, Anleitung Zurückrollen | Dateien | ☐ |
 
 Geltungsbereich: Z-05 und Z-11 gelten für alles, was der Lauf ändern darf. Vorbestehende Befunde in Unantastbarem, Geschäftslogik und Einbettungen dürfen nicht zunehmen und stehen mit Fundstelle in MENSCHEN.md bzw. `intern/`.
+
+## Offene Abweichungen (Stand Freischaltung `/`, P3-16; Prüfung am Phasentor)
+- **Z-04 · Tastatur a1/a5 +3 Schritte (d1440):** Eine Kern-Seite und eine Bestandsseite haben verschiedene Wurzel-Layouts (E-015). Beim Wechsel von `/` lädt die Bestandsseite deshalb voll, der Fokus beginnt am Dokumentanfang. Im Bestand bleibt der Fokus nach dem clientseitigen Wechsel am aktivierten Link (Next-Standard); die Basis-Matrix führt das als Befund „hoch“ (a5, 87 Tabs). Formal ist das ein Verstoß gegen „Schrittzahl nie höher“. Neu gemessen wird mit der Fokusführung des Kerns in W1 (`/bad`); hält die Abweichung bis zum Phasentor, wird sie über L7 zur AUSNAHME oder behoben. Belege: E-023, `belege/t2-bcd8fcb/probelauf/`.
+- **Z-12 · TBT mobil `/`:** Median aus 10 verschränkten Läufen: 226 ms gegen 148 ms im Bestand, Budget 200 ms. Leistungspunkte (87 gegen 85) und LCP (−8 %) sind besser, INP deutlich besser (E-024). Arbeitsauftrag in P4: Hydrierung und Bündel; Ziel ≤ 200 ms bis zum P4-Tor.
