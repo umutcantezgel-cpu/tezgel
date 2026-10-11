@@ -51,7 +51,13 @@ export const istEchteReferenz = (id) => /^TEZ-\d{2}-[A-Z0-9]{4,}$/.test(id) && !
 
 // Fassung je Seite (P3-14e): Im Kandidaten ist nur „/“ Kern, alle anderen Seiten sind Bestand. Läufe gegen ein Ziel ganz im
 // Bestand (Basis, Ausgangsstand) mit RELAUNCH_FASSUNG=bestand – dann ist die Liste leer. Nach jeder Freischaltung erweitern.
+// Vorschau-Kandidaten (P4-Tor): RELAUNCH_FASSUNG=vorschau und RELAUNCH_KERN_SEITEN="/,/bad,…" = die Routen aus dem
+// Stempel `.kandidat-stempel` des Builds (plus „/“, das live Kern ist). Ohne Liste bricht der Lauf ab.
 const FASSUNG = process.env.RELAUNCH_FASSUNG ?? 'kandidat';
-if (!['kandidat', 'bestand'].includes(FASSUNG)) throw new Error(`RELAUNCH_FASSUNG unbekannt: ${FASSUNG}`);
-export const KERN_SEITEN = FASSUNG === 'bestand' ? [] : ['/'];
+if (!['kandidat', 'bestand', 'vorschau'].includes(FASSUNG)) throw new Error(`RELAUNCH_FASSUNG unbekannt: ${FASSUNG}`);
+const VORSCHAU_SEITEN = (process.env.RELAUNCH_KERN_SEITEN ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+if (FASSUNG === 'vorschau' && (!VORSCHAU_SEITEN.length || VORSCHAU_SEITEN.some((s) => !s.startsWith('/')))) {
+  throw new Error('RELAUNCH_FASSUNG=vorschau braucht RELAUNCH_KERN_SEITEN="/,/bad,…"');
+}
+export const KERN_SEITEN = FASSUNG === 'bestand' ? [] : FASSUNG === 'vorschau' ? VORSCHAU_SEITEN : ['/'];
 export const istKern = (pfad) => KERN_SEITEN.includes(new URL(pfad, 'http://pfad.invalid').pathname);

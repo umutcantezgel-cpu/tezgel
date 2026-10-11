@@ -1,0 +1,4 @@
+{ "aufgabe": 4, "start": "/", "ansicht": "d1440", "eingabe": "maus",
+  "antwort": "Ja, Butzbach ist als Einsatzort gelistet: Seite Standorte, Gebietskarte „Unser 45-km-Einsatzgebiet in Mittelhessen“ mit dem Link „Butzbach“.",
+  "befunde": [],
+  "schritte": [ { "tippe": "Standorte", "in": "Hauptnavigation" } ] }

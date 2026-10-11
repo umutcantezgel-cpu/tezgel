@@ -1,0 +1,4 @@
+{ "aufgabe": 3, "start": "/", "ansicht": "d1440", "eingabe": "maus",
+  "antwort": "Ja, Anfrage über das Formular auf der Startseite abgesendet; Bestätigung: „Vielen Dank, Probe Läufer! Notiert. Ihre Anfrage für Badsanierung ist direkt bei Herrn Deniz Tezgel eingegangen.“ (Kennung TEZ-26-TEST).",
+  "befunde": [],
+  "schritte": [ { "fuelle": { "feld": "Name *", "text": "Probe Läufer" } }, { "fuelle": { "feld": "Telefonnummer *", "text": "0641 000000" } }, { "fuelle": { "feld": "E-Mail (für Bestätigung)", "text": "probe@example.org" } }, { "fuelle": { "feld": "Ort / PLZ", "text": "35614 Aßlar" } }, { "tippe": "Kostenfreies Aufmaß anfragen" } ] }

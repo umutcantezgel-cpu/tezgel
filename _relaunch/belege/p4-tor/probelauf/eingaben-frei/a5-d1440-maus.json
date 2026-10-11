@@ -1,0 +1,4 @@
+{ "aufgabe": 5, "start": "/", "ansicht": "d1440", "eingabe": "maus",
+  "antwort": "Ablauf: In 6 Schritten (Vor-Ort-Beratung und Aufmaß bis Endreinigung und Abnahme) auf der Seite Badsanierung komplett; Förderung: ja, Zuschüsse für barrierefreie Bäder (Pflegekassen-Zuschuss nach § 40 SGB XI).",
+  "befunde": [],
+  "schritte": [ { "tippe": "Badsanierung", "in": "Hauptnavigation" }, { "tippe": "Badsanierung komplett", "in": "Alles für Ihr neues Bad aus einer Hand" }, { "scrolle": "unten" }, { "tippe": "Untermenü Ratgeber öffnen" }, { "tippe": "Förderung Zuschüsse", "in": "Hauptnavigation" } ] }

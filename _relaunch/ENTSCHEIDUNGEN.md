@@ -357,3 +357,16 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - Die Bewertung wird nach Protokoll wiederholt: ein frischer Opus, alle 120 Antworten gemischt unter neutralen Kennungen (A001–A120, feste Mischung), ohne Bild, Stand oder Ansicht. Die Erstbetrachter-Antworten bleiben unverändert.
   - Wertung, vor der Neubewertung festgelegt: Eine Zielgruppe ist richtig, wenn sie sinngemäß dem Bezug entspricht (Privatkunden, Haus- oder Wohnungseigentümer, private Bauherren mit Bad-, Fliesen- oder Terrassenvorhaben), auch wenn sie als Vermutung formuliert ist. Die Erstbetrachter waren angewiesen, Unsicherheit offen zu sagen; ehrliche Vorsicht darf nicht bestraft werden. Falsch ist sie, wenn die Antwort die Gruppe offen lässt („nicht erkennbar“, „ob privat oder gewerblich, unklar“, ohne Festlegung), etwas anderes nennt oder nur einen Allgemeinplatz wie „Kunden“ bietet. Dieselbe Regel gilt für Angebot und nächsten Schritt.
 - **Umkehrprobe:** Weicht die Neubewertung bei derselben Antwort stark von der Rohwertung ab, wird eine zweite unabhängige Bewertung als Gegenprobe beigelegt; das Tor zählt die Wertung nach Protokoll.
+
+## E-031 · Probeläufer-Werkzeug zeigt die Zielbedingungen (P4-11, Vorbehalt des Probeläufers)
+- **Befund:** `probelauf.mjs` druckt nach jedem Lauf „Ziel: ERREICHT …“ und die Namen der Zielbedingungen. PROBELAUF §2 sagt, der Probeläufer erhält nur den Auftrag, nicht den Zielzustand.
+- **Wege:**
+  1. Werkzeug sofort ändern und alle 15 Läufe wiederholen.
+  2. Unverändert lassen und als gleiche Bedingung dokumentieren.
+  3. Wie (2), Behebung zusammen mit einer neuen Basis in P7.
+- **Wahl: (3).**
+  - Die Ausgabe gilt seit der Abnahme des Werkzeugs (P3-00g, c65946d) unverändert. Die Bezugswerte des Ausgangsstands (P3-00g-B), die P3-Läufe und die P4-Läufe entstanden unter derselben Bedingung; der Vergleich ist fair.
+  - Würde nur der Endstand ohne Anzeige laufen, wären die Läufe nicht mehr vergleichbar.
+  - Die Anzeige verkürzt Läufe nur am Ende (Stopp nach erreichtem Ziel), nicht den Weg dorthin.
+  - Für P7 bekommt das Werkzeug den Schalter `--blind` (keine Zielzeilen), und Ausgangsstand und Endstand laufen beide damit.
+- **Umkehrprobe:** Zeigt ein Lauf, dass ein Probeläufer die Zielzeilen als Wegweiser nutzt (Schritte nach einem „·“-Ziel gezielt korrigiert), wird der Lauf ohne Anzeige wiederholt.

@@ -1,0 +1,640 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "tastatur",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T11:02:03.622Z",
+ "lauf": "a3-d1440-tastatur",
+ "aufgabe": 3,
+ "titel": "Aufmaß oder Anfrage stellen",
+ "auftrag": "Fordern Sie einen kostenlosen Vor-Ort-Termin an und senden Sie die Anfrage ab.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p4-tor/a3-d1440-tastatur.json",
+ "antwort": "Ja, Anfrage über das Formular auf der Startseite abgesendet; Bestätigung: „Vielen Dank, Probe Läufer! Notiert. Ihre Anfrage für Badsanierung ist direkt bei Herrn Deniz Tezgel eingegangen.“ (Kennung TEZ-26-TEST).",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "mittel",
+   "schritt": 1,
+   "text": "Ort: Kopfnavigation und Formular „Kostenloses Aufmaß vor Ort anfragen“ auf der Startseite. Bild 01-taste.jpg: Bis zum ersten Feld „Name“ sind 18 Tabs nötig, weil jede Rubrik der Kopfnavigation zwei Tab-Stopps hat (Link und Schaltfläche „Untermenü … öffnen“), dazu Telefon und Aufmaß-Link. Umweg von über 3 Handlungen gegenüber der Maus."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "(kein Element – Fokus auf der Seite)",
+    "imBild": false
+   },
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 129,
+    "aria": 297,
+    "ausschnitt": 40,
+    "bedien": 79
+   },
+   "dauer_ms": 2970
+  },
+  {
+   "nr": 1,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Name *"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 18,
+   "bildlauf_implizit": 0,
+   "summe": 18,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"Name *\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 284,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": [
+    "link \"Standorte\"",
+    "button \"Untermenü Standorte öffnen\"",
+    "link \"Ratgeber\"",
+    "button \"Untermenü Ratgeber öffnen\"",
+    "link \"Über uns\"",
+    "button \"Untermenü Über uns öffnen\"",
+    "link \"Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 567\"",
+    "link \"Aufmaß anfragen\"",
+    "link \"Aufmaß vor Ort anfragen\"",
+    "link \"WhatsApp\"",
+    "link \"Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 567\"",
+    "textbox \"Name *\""
+   ],
+   "hinweise": [
+    "18× Tab bis „Name *“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-taste.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 108,
+    "aria": 170,
+    "ausschnitt": 24,
+    "bedien": 36
+   },
+   "dauer_ms": 1058
+  },
+  {
+   "nr": 2,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "text": "Probe Läufer"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Name *\"",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 19,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"Name *\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 284,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-fuelle.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 78,
+    "aria": 255,
+    "ausschnitt": 17,
+    "bedien": 36
+   },
+   "dauer_ms": 753
+  },
+  {
+   "nr": 3,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Telefonnummer *"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 20,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"Telefonnummer *\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 284,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": [
+    "textbox \"Telefonnummer *\""
+   ],
+   "hinweise": [
+    "1× Tab bis „Telefonnummer *“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-taste.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 182,
+    "aria": 127,
+    "ausschnitt": 14,
+    "bedien": 34
+   },
+   "dauer_ms": 741
+  },
+  {
+   "nr": 4,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "text": "0641 000000"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Telefonnummer *\"",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 21,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"Telefonnummer *\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 284,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-fuelle.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 83,
+    "aria": 236,
+    "ausschnitt": 36,
+    "bedien": 37
+   },
+   "dauer_ms": 768
+  },
+  {
+   "nr": 5,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "E-Mail (für Bestätigung)"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 22,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"E-Mail (für Bestätigung)\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 399,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": [
+    "textbox \"E-Mail (für Bestätigung)\""
+   ],
+   "hinweise": [
+    "1× Tab bis „E-Mail (für Bestätigung)“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "05-taste.jpg",
+    "aria": "05-aria.txt",
+    "sichtbar": "05-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 78,
+    "aria": 274,
+    "ausschnitt": 23,
+    "bedien": 71
+   },
+   "dauer_ms": 828
+  },
+  {
+   "nr": 6,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "text": "probe@example.org"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"E-Mail (für Bestätigung)\"",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 23,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"E-Mail (für Bestätigung)\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 399,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "06-fuelle.jpg",
+    "aria": "06-aria.txt",
+    "sichtbar": "06-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 49,
+    "aria": 95,
+    "ausschnitt": 13,
+    "bedien": 21
+   },
+   "dauer_ms": 536
+  },
+  {
+   "nr": 7,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Ort / PLZ"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 24,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"Ort / PLZ\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 399,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": [
+    "textbox \"Ort / PLZ\""
+   ],
+   "hinweise": [
+    "1× Tab bis „Ort / PLZ“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "07-taste.jpg",
+    "aria": "07-aria.txt",
+    "sichtbar": "07-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 111,
+    "aria": 110,
+    "ausschnitt": 20,
+    "bedien": 35
+   },
+   "dauer_ms": 606
+  },
+  {
+   "nr": 8,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "text": "35614 Aßlar"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Ort / PLZ\"",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 25,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "textbox \"Ort / PLZ\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 399,
+    "href": null,
+    "editierbar": true,
+    "istSelect": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "08-fuelle.jpg",
+    "aria": "08-aria.txt",
+    "sichtbar": "08-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 76,
+    "aria": 145,
+    "ausschnitt": 17,
+    "bedien": 22
+   },
+   "dauer_ms": 680
+  },
+  {
+   "nr": 9,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Kostenfreies Aufmaß anfragen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 3,
+   "bildlauf_implizit": 0,
+   "summe": 28,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 1008,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "button \"Kostenfreies Aufmaß anfragen\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 259,
+    "href": null,
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": [
+    "radio \"Badsanierung\" [checked]",
+    "textbox \"Projektnotiz (optional)\"",
+    "button \"Kostenfreies Aufmaß anfragen\""
+   ],
+   "hinweise": [
+    "3× Tab bis „Kostenfreies Aufmaß anfragen“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "09-taste.jpg",
+    "aria": "09-aria.txt",
+    "sichtbar": "09-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 109,
+    "aria": 102,
+    "ausschnitt": 17,
+    "bedien": 20
+   },
+   "dauer_ms": 722
+  },
+  {
+   "nr": 10,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Enter"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 29,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 477,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "group \"Vielen Dank, Probe Läufer! Notiert. Ihre Anfrage für Badsanierung ist direkt bei Herrn Deniz Tezgel ei…",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": false,
+    "oben": 23,
+    "href": null,
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "10-taste.jpg",
+    "aria": "10-aria.txt",
+    "sichtbar": "10-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 105,
+    "aria": 75,
+    "ausschnitt": 12,
+    "bedien": 19
+   },
+   "dauer_ms": 1012
+  }
+ ],
+ "handlungen_gesamt": 29,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 10,
+  "handlungen_bis_ziel": 29,
+  "bedingungen": [
+   {
+    "name": "Anfrage abgesendet (Attrappe hat sie angenommen)",
+    "erfuellt": true,
+    "bei_schritt": 10,
+    "treffer": "1 Anfrage(n) an die Attrappe"
+   },
+   {
+    "name": "Bestätigung nach dem Absenden war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 10,
+    "treffer": "„…indlicher Festpreis “ Anfrage übermittelt TEZ-26-TEST Vielen Dank, Probe Läufer !…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [
+  {
+   "art": "anfrage",
+   "methode": "POST",
+   "url": "/api/anfrage",
+   "echteRoute": false
+  }
+ ],
+ "verlassen": [],
+ "konsolenfehler": []
+}

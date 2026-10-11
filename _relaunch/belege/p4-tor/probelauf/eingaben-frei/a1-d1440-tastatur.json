@@ -1,0 +1,4 @@
+{ "aufgabe": 1, "start": "/", "ansicht": "d1440", "eingabe": "tastatur",
+  "antwort": "Die Leistungsseite „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss“ liegt unter Badsanierung und ist auf der Übersicht als „Barrierefreies Bad“ verlinkt; erreicht über 16 Tabs.",
+  "befunde": [ { "schwere": "mittel", "schritt": 3, "text": "Ort: Kopfleiste und Übersicht /bad. Bild 03-taste.jpg: Jede Rubrik der Kopfnavigation hat zwei Tab-Stopps (Link und Schaltfläche „Untermenü … öffnen“), dazu Telefon und Aufmaß-Link; bis zum Link „Barrierefreies Bad“ im Inhalt sind 16 Tabs nötig. Umweg von über 3 Handlungen gegenüber der Maus." } ],
+  "schritte": [ { "taste": "Tab", "bis": "Badsanierung" }, { "taste": "Enter" }, { "taste": "Tab", "bis": "Barrierefreies Bad" }, { "taste": "Enter" } ] }

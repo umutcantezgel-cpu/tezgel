@@ -1,0 +1,132 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "maus",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T11:03:43.962Z",
+ "lauf": "a4-d1440-maus",
+ "aufgabe": 4,
+ "titel": "Eigenen Ort prüfen",
+ "auftrag": "Prüfen Sie, ob der Betrieb auch in Butzbach arbeitet.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p4-tor/a4-d1440-maus.json",
+ "antwort": "Ja, Butzbach ist als Einsatzort gelistet: Seite Standorte, Gebietskarte „Unser 45-km-Einsatzgebiet in Mittelhessen“ mit dem Link „Butzbach“.",
+ "gegenprobe": false,
+ "befunde": [],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 57,
+    "aria": 195,
+    "ausschnitt": 34,
+    "bedien": 45
+   },
+   "dauer_ms": 2180
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Standorte",
+    "in": "Hauptnavigation"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Standorte\" · nav „Hauptnavigation“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/standorte",
+   "h1": "Standorte & Einsatzgebiete in Mittelhessen",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 38,
+    "aria": 61,
+    "ausschnitt": 9,
+    "bedien": 30
+   },
+   "dauer_ms": 860
+  }
+ ],
+ "handlungen_gesamt": 1,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 1,
+  "handlungen_bis_ziel": 1,
+  "bedingungen": [
+   {
+    "name": "Butzbach als Einsatzort bestätigt",
+    "erfuellt": true,
+    "bei_schritt": 1,
+    "treffer": "Butzbach im Bild zusammen mit Einsatzgebiet/Standorten: „…ad Nauheim Friedberg (Hessen) Butzbach Herborn Dillenburg Haiger Braunfels Sol…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

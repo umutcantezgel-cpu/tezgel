@@ -1,0 +1,327 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "m375",
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "isMobile": true,
+  "hasTouch": true,
+  "dpr": 1,
+  "eingabe": "touch",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T11:00:32.784Z",
+ "lauf": "a3-m375-touch",
+ "aufgabe": 3,
+ "titel": "Aufmaß oder Anfrage stellen",
+ "auftrag": "Fordern Sie einen kostenlosen Vor-Ort-Termin an und senden Sie die Anfrage ab.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p4-tor/a3-m375-touch.json",
+ "antwort": "Ja, die Anfrage ist über das Formular oben abgesendet; Bestätigung: „Notiert. Ihre Anfrage für Badsanierung ist direkt bei Herrn Deniz Tezgel eingegangen.“",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "gering",
+   "schritt": 1,
+   "text": "Ort: Startseite, Formular „Kostenloses Aufmaß vor Ort anfragen“. Bild 01-fuelle.jpg und 03-fuelle.jpg: Der Einwilligungsdialog am unteren Rand verdeckt beim Ausfüllen die Beschriftung E-Mail und Teile des Formulars; das Werkzeug musste dafür scrollen (2 Bildlauf-Handlungen)."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 5,
+   "text": "Ort: Startseite nach dem Absenden. Bild 05-tippe.jpg: Der Einwilligungsdialog verdeckt den unteren Teil der Bestätigung („Nächste Schritte“, Rückrufhinweis); die Bestätigung ist aber im Bild lesbar."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 52,
+    "aria": 270,
+    "ausschnitt": 59,
+    "bedien": 41
+   },
+   "dauer_ms": 2588
+  },
+  {
+   "nr": 1,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "Name *",
+     "text": "Probe Läufer"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Name *\" · form",
+   "auswahl": null,
+   "handlungen": 3,
+   "bildlauf_implizit": 2,
+   "summe": 3,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 1464,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Feld lag außerhalb des Bildes – 2 Bildlauf-Handlung(en) gezählt"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-fuelle.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 31,
+    "aria": 329,
+    "ausschnitt": 32,
+    "bedien": 103
+   },
+   "dauer_ms": 925
+  },
+  {
+   "nr": 2,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "Telefonnummer *",
+     "text": "0641 000000"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Telefonnummer *\" · form",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 1464,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-fuelle.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 40,
+    "aria": 175,
+    "ausschnitt": 13,
+    "bedien": 24
+   },
+   "dauer_ms": 721
+  },
+  {
+   "nr": 3,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "E-Mail (für Bestätigung)",
+     "text": "probe@example.org"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"E-Mail (für Bestätigung)\" · form",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 5,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 1690,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-fuelle.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 42,
+    "aria": 108,
+    "ausschnitt": 30,
+    "bedien": 65
+   },
+   "dauer_ms": 704
+  },
+  {
+   "nr": 4,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "Ort / PLZ",
+     "text": "35614 Aßlar"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Ort / PLZ\" · form",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 6,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 1690,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-fuelle.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 38,
+    "aria": 188,
+    "ausschnitt": 26,
+    "bedien": 30
+   },
+   "dauer_ms": 760
+  },
+  {
+   "nr": 5,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Kostenfreies Aufmaß anfragen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Kostenfreies Aufmaß anfragen\" · form",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 2,
+   "bildlauf_implizit": 1,
+   "summe": 8,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 1449,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Ziel lag außerhalb des Bildes – 1 Bildlauf-Handlung(en) gezählt"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "05-tippe.jpg",
+    "aria": "05-aria.txt",
+    "sichtbar": "05-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 103,
+    "aria": 92,
+    "ausschnitt": 12,
+    "bedien": 18
+   },
+   "dauer_ms": 1102
+  }
+ ],
+ "handlungen_gesamt": 8,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 5,
+  "handlungen_bis_ziel": 8,
+  "bedingungen": [
+   {
+    "name": "Anfrage abgesendet (Attrappe hat sie angenommen)",
+    "erfuellt": true,
+    "bei_schritt": 5,
+    "treffer": "1 Anfrage(n) an die Attrappe"
+   },
+   {
+    "name": "Bestätigung nach dem Absenden war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 5,
+    "treffer": "„…direkt bei Herrn Deniz Tezgel eingegangen. Eine schriftliche Zusammenfassung wurd…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [
+  {
+   "art": "anfrage",
+   "methode": "POST",
+   "url": "/api/anfrage",
+   "echteRoute": false
+  }
+ ],
+ "verlassen": [],
+ "konsolenfehler": []
+}
