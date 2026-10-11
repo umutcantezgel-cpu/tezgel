@@ -3,7 +3,7 @@
 // mit inquiryType „projekt_check“ und projektCheckDetails raus; Erfolg mit Referenz. Der WhatsApp-Knopf sendet
 // nichts an die Anfrage-Route, sondern öffnet WhatsApp mit denselben Projektdaten.
 // Geprüft wird Verhalten (Nutzlast, Zustand, Ziel-Link), nicht Aussehen. Altverhalten = Ausgangsstand 5a7a7b0.
-import { test, expect, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
 
 // Desktop-Läufe brauchen bis ~45 s je Test (volle Seite mit Animationen); das Projekt-Timeout von 60 s ist dafür zu knapp.
 test.setTimeout(120_000);
@@ -13,6 +13,12 @@ const WHATSAPP_NUMMER = '491726728504';
 
 // Wurzel der Prüfung: auf /bad nur der eingebettete Projektcheck, sonst die ganze Seite.
 const wurzel = (page, seite) => (seite === '/bad' ? page.locator('#projekt-check') : page);
+// Seite öffnen und erst bedienen, wenn React den Regler übernommen hat (T2 35c0883: unter Last gingen Eingaben vor dem
+// Hydrieren verloren; Zustand statt Wartezeit wie in den übrigen Specs).
+async function oeffne(page, seite) {
+  await page.goto(seite);
+  await bedienbar(groesse(wurzel(page, seite)));
+}
 
 // Bedienelemente über Labels, Rollen und sichtbare Texte (keine Gestaltungsklassen).
 const groesse = (w) => w.getByLabel(/^1\. Badezimmer-Größe in Quadratmetern/);
@@ -61,7 +67,7 @@ async function kontaktAusfuellen(w, { mitEmail = true } = {}) {
 
 test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   test('ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp', async ({ page, anfragen, protokoll }) => {
-    await page.goto('/bad/projekt-check');
+    await oeffne(page, '/bad/projekt-check');
     await zaehleAnfragen(page);
     await anfordern(page).click();
     await online(page).click();
@@ -76,7 +82,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   });
 
   test('Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage', async ({ page, anfragen }) => {
-    await page.goto('/bad/projekt-check');
+    await oeffne(page, '/bad/projekt-check');
     await zaehleAnfragen(page);
     await anfordern(page).click();
     await name(page).fill('Prüf Person');
@@ -89,7 +95,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   });
 
   test('ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage', async ({ page, anfragen }) => {
-    await page.goto('/bad/projekt-check');
+    await oeffne(page, '/bad/projekt-check');
     await zaehleAnfragen(page);
     await anfordern(page).click();
     await name(page).fill('Prüf Person');
@@ -103,7 +109,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   });
 
   test('nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt', async ({ page, anfragen }) => {
-    await page.goto('/bad/projekt-check');
+    await oeffne(page, '/bad/projekt-check');
     const w = wurzel(page, '/bad/projekt-check');
     await kontaktAusfuellen(w, { mitEmail: false });
     await online(w).click();
@@ -133,7 +139,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   test.describe('echte Route (Mock-Modus ohne Resend-Schlüssel)', () => {
     test.use({ echteRoute: true });
     test('Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page }) => {
-      await page.goto('/bad/projekt-check');
+      await oeffne(page, '/bad/projekt-check');
       await warteBotSchwelle(page);
       await anfordern(page).click();
       await name(page).fill(`Prüf ${Date.now() % 100000}`);
@@ -150,7 +156,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
 test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () => {
   for (const seite of SEITEN) {
     test(`${seite}: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz`, async ({ page, anfragen }) => {
-      await page.goto(seite);
+      await oeffne(page, seite);
       const w = wurzel(page, seite);
       await konfiguriere(w);
       await kontaktAusfuellen(w);
@@ -178,7 +184,7 @@ test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () =>
     });
 
     test(`${seite}: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route`, async ({ page, anfragen }) => {
-      await page.goto(seite);
+      await oeffne(page, seite);
       const w = wurzel(page, seite);
       await zaehleAnfragen(page);
       await konfiguriere(w);
