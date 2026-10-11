@@ -88,6 +88,12 @@
     ]
   },
   {
+    "muster": "standorte/page",
+    "specs": [
+      "funktion-einwilligung.spec.mjs"
+    ]
+  },
+  {
     "muster": "app/(\\([a-z]+\\)/)?(layout|_dokument)\\.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon",
     "specs": [
       "ALLE"
