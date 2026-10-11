@@ -90,7 +90,7 @@ Ein Vollvergleich aller Bestandsseiten läuft als Nachtrag.
 **Auflagen vor dem Push und ihr Stand:**
 1. **E-034 berichtigen (N-B):** erledigt. Der Weg ohne Banner ist nachgemessen (Ausgangsstand 5, Live 7, Kandidat 7). Folge: Paket P4-15.
 2. **ABNAHME nachführen (N-C):** erledigt. Nachgetragen sind die Z-12-Frist (E-035), die Budgets Lighthouse/LCP und a3-d1440.
-3. **axe „Einstellungen“ (N-A):** erledigt. Vorschau: 35 Läufe in Menü, Erstbesuch und Einstellungen über 7 Seiten × m375/d1440, **0 Verstöße**. Live (Bestandsseiten): 179 color-contrast. Kontrastmodus, Reflow, Textabstand und Zoom mit offenem Banner bzw. in der Einstellungen-Ansicht: siehe unten (`../p4r2-a11y-banner/`).
+3. **axe „Einstellungen“ (N-A):** erledigt. Die erweiterte a11y-Prüfung mit offenem Banner fand zwei echte Befunde: Schließen-Knopf ohne Grenze im Kontrastmodus (14) und am Desktop abgeschnittenen Text bei größerem Textabstand (7 + 7). Beide sind mit **P4-13b** (923a167) behoben und nachgeprüft (`../p4-13b/ERGEBNIS.md`: forced 0, textabstand 0, axe 35/0, Specs 137/0/11, Pixel `/` nur Kopf). Davor: Vorschau: 35 Läufe in Menü, Erstbesuch und Einstellungen über 7 Seiten × m375/d1440, **0 Verstöße**. Live (Bestandsseiten): 179 color-contrast. Kontrastmodus, Reflow, Textabstand und Zoom mit offenem Banner bzw. in der Einstellungen-Ansicht: siehe unten (`../p4r2-a11y-banner/`).
 4. **Kopf 1280 mit Scrollleiste (N-E):** gemessen, −3 px ohne Folgen für das Logo; Behebung in P4-15.
 
 **Weitere Punkte:**
