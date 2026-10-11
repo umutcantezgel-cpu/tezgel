@@ -23,6 +23,7 @@
 | Z-11 Werkzeug | a11y-zusatz: Umfang mehrzeiliger Inline-Links | Messkorrektur E-029. U ist die umrandete Fläche (Vereinigung der Zeilenstücke, gestapelte als ein Umriss); der erste Ansatz (Summe) ist verworfen. Nachtrag N1: Verbindungsabstand aus `outline-width`/`outline-offset` statt fest 8 px; Umriss < 2 px gilt immer als „dünn“; Selbsttest mit fünf Formen (`node a11y-zusatz.mjs --selbsttest`). Alle 80 mehrteiligen Elemente der Vorschau: Verhältnis ≥ 2,03 (Gegenprüfer) | `../p4tor-a11y-vorschau2/` (verworfen), `../../werkzeuge/a11y-zusatz.mjs` |
 | Z-13 Darstellung | Fotos 6 Seiten × 4 Ansichten, Überlaufprüfung, selbst gesichtet | 24/24, 0 Fehler, **0 Überlauf**, kein abgeschnittener oder überlappender Text | `../p4tor-fotos-vorschau/` |
 | Z-13 Darstellung | Wortbruch 6 Seiten × 320/375/768/1024/1440/1920 | **0** | `../p4tor-wortbruch/wortbruch.json` |
+| Z-13 Pixel (P4-GEG M3) | nicht freigeschaltete Seiten der Vorschau gegen Live 4337, feste Stichprobe 16 Seiten (je Vorlage eine + statische) × 4 Ansichten | **64 Vergleiche, 0 abweichend**. Der Rauschlauf Live gegen Live brach am Zeitlimit ab; bei 0 Abweichungen trägt das Ergebnis ohne ihn. Für das Live-Produkt trägt zusätzlich T1 1752144 (HTML 172 gleich, CSS gleich) | `pixel/ergebnis.json` |
 | Z-06 (mitgeprüft) | texte2 gegen f2c4180 mit MIKROTEXTE | 0 rot (E-028) | `../p4tor-texte2/` |
 | Z-06 (mitgeprüft) | SEO-Invarianten | 0 Abweichungen Meta/SEO; Sitemap 163; 0 kaputte Links | `../p4tor-seo-vorschau/` |
 | Z-07 (Zwischenstand) | Slop-Jäger (Haiku) + Opus-Gegenprüfer je Seite | weich 23 (P0 58, −60 %) · hart 0 (P0 13). Rest: Floskeln in unantastbarem Wortlaut (→ TEXTVORSCHLAEGE) und Strukturfunde als Auflagen W1, W2, W6, W8 | `../p4tor-slop/slop-jaeger.json` |
@@ -35,7 +36,7 @@
 | Gegenprobe Bezugswege (E-023) | 14/15 ≤ Bezug. **a3-m375 14 statt 12**: Das Kern-Anfrageformular auf `/kontakt` braucht in Schritt 3 mobil zwei Bildläufe mehr → Auflage W9. Hinweis N3: Die Befunde in `gegenprobe/matrix.json` sind aus den Eingaben des Ausgangsstands übernommen (z. B. „hoch: 87 Tabs“), nicht neu; die Gegenproben a4 enden nach erreichtem Ziel mit „nicht gefunden“ (Ortsknöpfe heißen im Kern anders) | `probelauf/ERGEBNIS.md` |
 | Fünf-Sekunden-Probe (§8, E-030) | **rot.** Protokoll (zwei Bewerter, 118/120 gleich): /kontakt m375 und /leistungen m375 unter Bestand. Strenge Lesart (P4-GEG H2): gesamt 39 gegen 31, mobil durchweg besser, **am Desktop vier Rückschritte** (/standorte 5→3, /ueber-uns 4→2, /blog 5→4, /leistungen 5→4): Der Kern-Banner sitzt links unten über dem Einleitungsabsatz. Region 60 statt 35 erkannt. → **P4-13** (Banner am Desktop als Leiste) und M-20 (Zielgruppe im Wortlaut /kontakt, /leistungen, /ueber-uns) | `fuenf/ERGEBNIS.md` |
 | Mutationsprobe Kern-Zweige | 6/6 erkannt (eine Testlücke F-07 geschlossen) | `mutation/MUTATION.md` |
-| Gegenprüfer (Opus, frisch) | **nicht bestanden** (Z-11 und L3 nein, Abweichungen nicht vollständig): H1, H2, M1–M4, N1–N8. Umgesetzt: M1, M2, M4, N1, N2, N3, N5, N7, N8 sowie die Dokumentation zu H1/H2; offen: H1 und Banner (P4-13), M3 Pixel (läuft) | `../../pakete/P4-GEG.rueckgabe.md` |
+| Gegenprüfer (Opus, frisch) | **nicht bestanden** (Z-11 und L3 nein, Abweichungen nicht vollständig): H1, H2, M1–M4, N1–N8. Umgesetzt: M1, M2, M4, N1, N2, N3, N5, N7, N8 sowie die Dokumentation zu H1/H2; offen: H1 und Banner (P4-13); M3 erledigt (Pixel 64/0) | `../../pakete/P4-GEG.rueckgabe.md` |
 
 ## Mutationsprobe
 **6/6 Mutationen erkannt** (`mutation/MUTATION.md`). Mutiert wurden sechs Kern-Zweige der Entwürfe: Projekt-Check `/bad`, Kalender `/kontakt`, Blog-Suche, Festnetz im Kontaktblatt, Anfrage-Funnel (`/kontakt`, `/leistungen`, `/`) und Karteneinwilligung (`/standorte`, `/kontakt`, `/`). Rot wurden nur die zugehörigen Fälle.
@@ -72,7 +73,6 @@
 - **Offen:**
   1. **Z-11 „ohne JS“ (H1)** → P4-13.
   2. **Fünf-Sekunden-Probe:** Banner am Desktop → P4-13; Zielgruppe im Wortlaut → M-20, Entscheidung des Auftraggebers.
-  3. **M3 Pixel** der nicht freigeschalteten Seiten (läuft).
   4. **Z-12** (offene Abweichung aus P3) → P4-12.
 - **Danach:**
   - Neue Vorschau mit Suite, a11y-zusatz und axe.

@@ -378,3 +378,17 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Wahl:** Gemessen wird mit dem Formular der Fehlermeldung an seiner Oberkante unter dem Kopf, also `scrollIntoView({block: 'start'})` mit dem scroll-padding der Seite, wie bei Sprungzielen. Das ist ein fester, für Bestand und Kern gleicher Zustand, so wie ihn ein Besucher am Formular sieht. Ergebnis Vorschau: 0 ernst/kritisch. Bestand in denselben Zuständen: 28 (color-contrast).
 - **Umkehrprobe:** Meldet axe in diesem Zustand ein verdecktes Element **innerhalb** des Formulars, ist das ein echter Befund; der feste Kopf deckt den Formularbereich dann nicht ab.
 - **Grenze:** Der Projekt-Check des Bestands zeigt seinen Serverfehler ohne `role="alert"`; der Ablauf findet die Meldung dort nicht (2 Läufe als Fehler protokolliert). Der Bezug für /bad fehlt daher.
+
+## E-033 · TBT `/` (P4-12): keine der Maßnahmen A/B eingespielt, Ursache 1 in P4-13
+- **Befund P4-12** (Spur 4× CPU, Profil mit Quellkarten):
+  1. Banner setzt beim Erscheinen Variable, `scroll-padding` und `padding` am `<html>` → volle Stilneuberechnung (Lighthouse 61–165 ms).
+  2. HTML-Parsen mit Stil und Layout (2 746 Elemente, Kopf 671).
+  3. Framework-Start und Hydrierung, ohne Hebel im Kern.
+  4. Bündel: Der Bestands-Banner kommt über `TrackingScripts`/`ConsentManager` in den Kern-Start (15,5 KB), lucide über `company.js`.
+- **Wege:**
+  - A: `content-visibility: auto` unter dem Einstieg (Lighthouse TBT 292 → 124 ms, Punkte 83 → 89). Die Prüfwerkzeuge lesen dann leeren `innerText` in nicht dargestellten Abschnitten (forced 0 → 241, Zoom „nie im Bild“ 5 → 93, texte/probelauf).
+  - B: Banner ohne `<html>`-Stil, Fokus per `focusin`. Verlust: In-Sicht-Rollen außerhalb des Fokus spart den Banner nicht mehr aus, `fokus_unter_2px` 1 → 19.
+  - C: Zustand „Banner offen“ vor dem ersten Bild per Kopfskript, feste Werte in CSS. Keine Stiländerung nach dem Laden, `scroll-padding` bleibt.
+- **Wahl: C** (in P4-13, zusammen mit der Banner-Leiste). B ist verworfen (Verlust). A wird zurückgestellt: erst messen, was C bringt. Reicht es nicht, kommt A als eigene Entscheidung mit Werkzeugregel zur Gegenprüfung. Die Werkzeuge müssten dafür aufgeschobene Abschnitte vor dem Lesen darstellen; ob das eine zulässige Messregel ist, entscheidet ein Gegenprüfer.
+- **Zurückgestellt als eigene Pakete (mit build-vergleich, außerhalb Kern):** `TrackingScripts` ohne Bestands-Banner und `company.js` ohne lucide; K-009-Zeitlimit von 2 s (greift bei 4× vor der Hydrierung, volle Neuberechnung, keine Bewegung); Maß-Token `66ch` und `h-lh` (Scroll-Sperre des Menüs, INP).
+- **Messregel:** Lighthouse nur im ruhigen Fenster. Unter Last streute die TBT im selben Build zwischen 240 und 1 450 ms.
