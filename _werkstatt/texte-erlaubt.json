@@ -738,5 +738,35 @@
   "teil": "main_zeilen",
   "alt": "5,0",
   "vermerk": "E-020 Fusion: Google-Kennwert zeigt „5,0 von 5“ einmal statt „5,0“ und „5,0 von 5“ untereinander – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Erfahrene Fachkräfte • Inhabergeführte Baustelle • Feste Terminzusagen",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, alle Seiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-07"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, alle Seiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-07"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß • Verbindlicher Festpreis • Über 15 Jahre Erfahrung",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, alle Seiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-07"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Über 15 Jahre Praxiserfahrung • Verbindlicher Festpreis • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, alle Seiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-07"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Reaktionszeit • Persönliche Betreuung vor Ort • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, alle Seiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-07"
  }
 ]
