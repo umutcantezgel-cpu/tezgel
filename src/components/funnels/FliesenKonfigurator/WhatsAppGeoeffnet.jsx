@@ -1,41 +1,47 @@
-import { ArrowLeft, CheckCircle2, Phone } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen, knopfKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import ResultSummary from './ResultSummary';
 
 // Ansicht nach dem Öffnen von WhatsApp (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
+// E3-BAU-15: Darstellung nach dem KERN-Formularmuster (wie BadanfrageFunnel/WhatsAppGeoeffnet); Texte, IDs, role und
+// Verhalten unverändert.
 export default function WhatsAppGeoeffnet({ data, setSentVia }) {
     return (
-        <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 max-w-3xl mx-auto" role="status">
-            <div className="text-center">
-                <div className="icon-chip w-16 h-16 rounded-full mx-auto mb-5">
-                    <CheckCircle2 className="w-9 h-9" />
-                </div>
-                <span className="eyebrow mb-4">
-                    WhatsApp wurde geöffnet
-                </span>
-                <p className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
-                    WhatsApp wurde geöffnet – bitte absenden
-                </p>
-                <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
-                    Ihre Anfrage ist vorbereitet, aber noch nicht verschickt. Senden Sie die Nachricht in{' '}
-                    WhatsApp ab. Fotos von Raum, Untergrund oder Treppe
-                    können Sie gern per WhatsApp nachsenden. Auf dieser Website wird nichts gespeichert.
-                </p>
+        <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12" role="status">
+            <span className={etikettKlassen}>
+                <Icon name="sprechblase" groesse={4} className="text-tinte" />
+                WhatsApp wurde geöffnet
+            </span>
+            <p className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">
+                WhatsApp wurde geöffnet – bitte absenden
+            </p>
+            <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
+                Ihre Anfrage ist vorbereitet, aber noch nicht verschickt. Senden Sie die Nachricht in{' '}
+                WhatsApp ab. Fotos von Raum, Untergrund oder Treppe
+                können Sie gern per WhatsApp nachsenden. Auf dieser Website wird nichts gespeichert.
+            </p>
+
+            <div className="mt-8">
+                <ResultSummary data={data} />
             </div>
 
-            <ResultSummary data={data} />
-
-            <p className="mt-6 text-sm text-slate-800 font-bold text-center">
+            <p className="mt-8 text-fs-2 font-semibold text-tinte">
                 Das verbindliche Festpreisangebot folgt nach dem kostenfreien Vor-Ort-Aufmaß durch {COMPANY_DATA.owner.fullName}.
             </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto text-xs">
-                    <Phone className="w-4 h-4" />
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+                <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon" className="w-full sm:w-auto">
                     Direkt anrufen: {COMPANY_DATA.contact.phone}
-                </a>
-                <button type="button" onClick={() => setSentVia(null)} className="btn-ghost w-full sm:w-auto text-xs">
-                    <ArrowLeft className="w-4 h-4" />
+                </Knopf>
+                <button
+                    type="button"
+                    onClick={() => setSentVia(null)}
+                    className={knopfKlassen('neben', 'w-full sm:w-auto')}
+                    data-motion="druck"
+                >
+                    <Icon name="pfeil-links" groesse={5} />
                     Zurück zur Anfrage
                 </button>
             </div>
