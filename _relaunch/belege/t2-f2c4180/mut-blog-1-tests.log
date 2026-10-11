@@ -1,0 +1,63 @@
+
+Running 4 tests using 2 workers
+
+  ✓  2 [mobil] › tests/funktion-navigation.spec.mjs:381:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück (5.1s)
+  ✘  1 [mobil] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her (12.3s)
+  ✓  4 [desktop] › tests/funktion-navigation.spec.mjs:381:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück (4.5s)
+  ✘  3 [desktop] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her (12.5s)
+
+
+  1) [mobil] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('h3 a[href="/blog/feinsteinzeug-oder-naturstein-vergleich"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for locator('h3 a[href="/blog/feinsteinzeug-oder-naturstein-vergleich"]')[22m
+
+
+      369 |     const gesamt = await karten(page).count();
+      370 |     await suche(page).fill('Feinsteinzeug');
+    > 371 |     await expect(page.locator('h3 a[href="/blog/feinsteinzeug-oder-naturstein-vergleich"]')).toBeVisible();
+          |                                                                                              ^
+      372 |     await expect.poll(() => karten(page).count()).toBeLessThan(gesamt);
+      373 |     await suche(page).fill('xqzwjkpv');
+      374 |     await expect(page.getByText('Keine Artikel zur Suchanfrage gefunden.')).toBeVisible();
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs:371:94
+
+    Error Context: ../cache/test-results/funktion-navigation-Blog-Ü-d2a5f-en“-stellt-alles-wieder-her-mobil/error-context.md
+
+  2) [desktop] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('h3 a[href="/blog/feinsteinzeug-oder-naturstein-vergleich"]')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for locator('h3 a[href="/blog/feinsteinzeug-oder-naturstein-vergleich"]')[22m
+
+
+      369 |     const gesamt = await karten(page).count();
+      370 |     await suche(page).fill('Feinsteinzeug');
+    > 371 |     await expect(page.locator('h3 a[href="/blog/feinsteinzeug-oder-naturstein-vergleich"]')).toBeVisible();
+          |                                                                                              ^
+      372 |     await expect.poll(() => karten(page).count()).toBeLessThan(gesamt);
+      373 |     await suche(page).fill('xqzwjkpv');
+      374 |     await expect(page.getByText('Keine Artikel zur Suchanfrage gefunden.')).toBeVisible();
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs:371:94
+
+    Error Context: ../cache/test-results/funktion-navigation-Blog-Ü-d2a5f-en“-stellt-alles-wieder-her-desktop/error-context.md
+
+  2 failed
+    [mobil] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+    [desktop] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+  2 passed (19.9s)
