@@ -1,0 +1,19 @@
+{
+ "vorher": "47fedc7",
+ "nachher": "c92d345",
+ "laufzeit_reste": {
+  "vorher": [],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 0,
+ "abweichungen": [],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": []
+}
