@@ -290,3 +290,18 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Umkehrprobe:**
   - Liefert Search Console (MENSCHEN) Adressen der früheren tezgel.de, kommen sie als 308 auf die passende Seite dazu.
   - Wird eine Altadresse wieder zu einer echten Seite, schlägt `test/wege.test.mjs` an (Seite trifft Liste).
+
+## E-026 · Icon-Vollsatz im Kern-Layout (P4-04, offene Frage 1)
+- **Frage:** Rendert das Kern-Layout den ganzen Satz (34 Familienzeichen + WhatsApp) oder nur den Grundsatz? Mit dem Grundsatz bliebe `/` byte-gleich; Seiten mit Fachzeichen bräuchten dann ein eigenes Zusatz-Sprite.
+- **Wahl: ganzer Satz.**
+  - +3,1 KB roh, +373 B gzip je Kern-Seite; das Sprite hat dann 1,9 KB gzip. Unsichtbar (`aria-hidden`), ohne Text und ohne Fokus.
+  - Grund: Ein vergessenes Zusatz-Sprite ergäbe leere Icons ohne Fehlermeldung. Zwei Sprites mit demselben Namen ergäben doppelte IDs. Beides fällt bei je einem Sprite pro Seite weg.
+  - Die Zusatzlast ist gegen LCP und TBT bedeutungslos: Inline-SVG wird geparst, aber erst bei `use` gezeichnet.
+- **Folge für `/` (live):**
+  - P4-04 ändert das HTML von `/` und der Kern-404 nur im Sprite-Block.
+  - Nachweis per build-vergleich mit herausgenommenem Sprite-Block (Rest gleich) und Pixelvergleich `/` in 4 Ansichten. Das ist sofort wirksam, also T2 im kleinen Umfang.
+- **Offene Fragen 2–4 der Rückgabe:**
+  - (2) Zeichen, die auf einer Fachseite etwas anderes bedeuten (z. B. `Thermometer` als Messung, `ShieldCheck` als Siegel), entscheidet die Welle der Seite; Vorgabe „kein Icon“.
+  - (3) Teilen-Knöpfe mit Facebook, LinkedIn und X entscheidet W6 (Blog). Vorgabe: `teilen` (Web Share) und „Link kopieren“, keine Fremdlogos.
+  - (4) Fugenkreuz bleibt eigenes Inline-SVG (P3-03).
+- **Umkehrprobe:** Wächst der Satz über 60 Zeichen oder das Sprite über 4 KB gzip, gilt die Seitenauswahl (`namen`) mit einer Prüfung „jedes `use` hat ein Ziel“ (`svg.mjs`).
