@@ -68,7 +68,7 @@ nav a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 </head>
 <body>
 <main>
-<p class="etikett">Fehler 410</p>
+<p class="etikett">Fliesenverlegung Tezgel · Fehler 410</p>
 <h1>Seite dauerhaft entfernt</h1>
 <p>Die von Ihnen aufgerufene Seite gibt es nicht mehr. Kehren Sie zur Startseite zurück oder informieren Sie sich über unsere Fachleistungen.</p>
 <nav aria-label="Weiter">

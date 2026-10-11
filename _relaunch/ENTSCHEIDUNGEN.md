@@ -286,7 +286,7 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - Seiten, `_next`, Bilder und `/api` laufen nie durch den Proxy. Beleg: `wege.mjs` gegen die kompilierten matcher des Builds.
 - **Antwortseite:**
   - Kleines eigenes Dokument ohne Skripte, mit Systemfarben und Systemschriften. Der Proxy kennt die gebauten CSS-Dateien nicht, und Markenwerte im Code wären freie Werte.
-  - `noindex`, Wortlaut nach der 404: „Fehler 410 · Seite dauerhaft entfernt · Die von Ihnen aufgerufene Seite gibt es nicht mehr. Kehren Sie zur Startseite zurück oder informieren Sie sich über unsere Fachleistungen.“ Dazu die Links „Zur Startseite“ und „Zur Leistungsübersicht“ (Mikrotexte, neue Seite).
+  - `noindex`, Wortlaut nach der 404: „Fliesenverlegung Tezgel · Fehler 410 · Seite dauerhaft entfernt · Die von Ihnen aufgerufene Seite gibt es nicht mehr. Kehren Sie zur Startseite zurück oder informieren Sie sich über unsere Fachleistungen.“ Dazu die Links „Zur Startseite“ und „Zur Leistungsübersicht“ (Mikrotexte, neue Seite).
 - **Umkehrprobe:**
   - Liefert Search Console (MENSCHEN) Adressen der früheren tezgel.de, kommen sie als 308 auf die passende Seite dazu.
   - Wird eine Altadresse wieder zu einer echten Seite, schlägt `test/wege.test.mjs` an (Seite trifft Liste).
