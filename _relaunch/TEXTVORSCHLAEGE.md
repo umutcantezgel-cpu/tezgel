@@ -61,3 +61,24 @@ Stand 10.10.2026 · P3-00j · Kriterium Z-07 (S-13) · Fundstellen aus `belege/p
 1. **Stufenname „Premium“** (Zeilen musterbaeder.js 245–657, bad/page.jsx, BadanfrageFunnel.jsx:37): Die Stufe heißt überall gleich. Eine Umbenennung (Vorschlag „Komfort“) braucht eine Entscheidung des Auftraggebers und muss an allen Stellen gleichzeitig erfolgen.
 2. **Metadaten-Kurztexte:** Die TEXTE-Regel in AUFTRAG.md nennt Metadaten-Kurztexte als Mikrotexte. K-012 erlaubt in Klasse 4 nur Wahrheitskorrekturen. Deshalb stehen Floskeln in Metadaten (z. B. `karriere/ausbildung/page.jsx:12`, `faq/layout.tsx:22`, `lib/schema.ts:109`) hier nur als Vorschlag. Bitte die Regel klären.
 3. **JSON-LD** (`src/lib/schema.ts:109`): Jede Änderung ändert den Schema-Hash. Dafür fehlt eine Freigabe mit beiden Hashes (offene Frage aus P3-00e).
+
+### Nachtrag P4-Tor · Slop-Jäger der Hauptseiten-Entwürfe (Vorschau 1c6c9cd-v, `belege/p4tor-slop/slop-jaeger.json`)
+Nur Vorschläge: Überschriften und Fließtext bleiben bis zur Entscheidung des Auftraggebers wörtlich. Fundstelle = Quelle des Wortlauts (Bestand bzw. Konfiguration; der Kern-Entwurf übernimmt ihn wörtlich).
+
+| Datei:Zeile | Original (wörtlich) | Vorschlag | Begründung (Floskel) |
+|---|---|---|---|
+| `src/app/(bestand)/bad/page.jsx:61` (H1 /bad) | Ihr Traumbad schlüsselfertig in Fachqualität | Ihr Bad schlüsselfertig in Fachqualität | „Traumbad“ (S-13): Werbewort ohne Sachgehalt; die Aussage tragen „schlüsselfertig“ und „Fachqualität“. Überschrift → Vorschlag. |
+| `src/components/funnels/BadanfrageFunnel.jsx:165` (Formularüberschrift) | Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar | Planen Sie Ihr neues Bad mit dem Fachbetrieb aus Aßlar | „Traumbad“ (S-13), wie oben. |
+| `src/config/musterbaeder.js:663` (Stufe Luxus) | High-End Spa & Maßanfertigungen ohne Kompromisse | Spa-Ausstattung & Maßanfertigungen | „High-End“, „ohne Kompromisse“ (S-13); „Maßanfertigungen“ ist konkret und bleibt. |
+| `src/config/services.js:30` (Leistungstext Bäder) | … bis zur fugenarmen Luxusoase … | … bis zum fugenarmen Bad … | „Luxusoase“ (S-13); „innovativen“ im selben Text steht schon oben. |
+| `src/config/services.js:65` (Leistungstext Wohnbereiche) | … verbinden elegante Architektur mit unübertroffener Robustheit. | … verbinden elegante Architektur mit hoher Robustheit. | „unübertroffen“ (S-13): Steigerung ohne Beleg. |
+| `src/app/(bestand)/leistungen/page.jsx:202` (Abschnittsüberschrift) | Ihr verlässlicher Weg zum neuen Traumbelag | Ihr Weg zum neuen Belag in drei Schritten | „Traumbelag“ (S-13); die drei Schritte stehen darunter. |
+| `src/components/pricing/PricingCalculator.tsx:326` (Preisrechner-Text) | Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Bauvorhaben ist einzigartig. | Wir zeigen keine pauschalen Scheinpreise im Netz: Untergrund, Fläche und Material bestimmen den Preis. | „Jedes Bauvorhaben ist einzigartig“ (S-13): austauschbare Floskel; Vorschlag nennt die Gründe aus dem Formular. |
+| `src/config/services.js:129` (Leistungstext Untergrund) | Wir bereiten Böden und Wände kompromisslos fachgerecht vor. | Wir bereiten Böden und Wände fachgerecht vor. | „kompromisslos“ (S-13): Verstärker ohne Inhalt. |
+| `src/app/(bestand)/standorte/page.tsx:73` (Einleitung) | … mit persönlicher Beratung vor Ort und handwerklicher Präzision. | … mit persönlicher Beratung vor Ort. | „handwerkliche Präzision“ (S-13, Grenzfall): ohne Beleg im Satz. |
+| `src/config/cities.ts:65` (Butzbach) | … mit höchster Präzision … | … nach DIN-Vorgaben … | „höchste Präzision“ (S-13): Steigerung ohne Beleg; DIN steht auf der Seite. |
+| `src/app/(bestand)/blog/page.jsx:43` (Einleitung /blog) | Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um … | Praxisnaher Fliesen-Ratgeber rund um … | „wertvolle Tipps“ (S-13, Grenzfall). |
+| `src/components/sections/QualityPromise.jsx:81` (Abschluss Qualitätsversprechen) | Überzeugen Sie sich selbst von unserer Fachqualität | Vor-Ort-Aufmaß vereinbaren und Ausführung prüfen | „Überzeugen Sie sich selbst“ (S-13, Familie „Entdecken Sie …“). |
+| `src/app/(bestand)/ueber-uns/page.jsx:137` (Abschluss /ueber-uns) | Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel. | Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel. | „Lernen Sie uns persönlich kennen“ (S-13, Grenzfall); die Sachaussage steht im zweiten Teil. |
+
+Mikrotext (Knopf), Umsetzung in W1 mit MIKROTEXTE-Zeile: `src/app/(bestand)/bad/page.jsx:74` „Musterbäder entdecken“ → „Musterbäder ansehen“ (so heißt derselbe Weg sonst auf der Seite; S-13 „entdecken“).

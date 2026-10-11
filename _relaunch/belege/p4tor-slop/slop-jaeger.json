@@ -1,0 +1,384 @@
+{
+ "satz": "p4tor-slop",
+ "stand": "1c6c9cd-v",
+ "seiten": {
+  "/bad": {
+   "pfad": "/bad",
+   "weich": 5,
+   "hart": 0,
+   "gemeldet": 9,
+   "verworfen": 4,
+   "nachgetragen": 0,
+   "funde": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/bad/00.jpg (Kopfbereich, Zeilen über der H1); t768/bad/00.jpg (Hero, Zeile über der H1); d1440/bad/00.jpg (Hero, Zeilen über der H1); d1920/bad/00.jpg (Hero, Zeilen über der H1)",
+     "begruendung": "Zwei Meta-Zeilen (Plus-Kicker „HWK Fachbetrieb für Badsanierung · Aßlar & Wetzlar“ und Stern-Bewertung „5,0 · 27 Google-Rezensionen“) stehen als Badge über der Einstiegsüberschrift.",
+     "urteil": "In allen vier Ansichten stehen über der H1 zwei kleine Mono-Zeilen als Vorspann: „+ HWK Fachbetrieb für Badsanierung · Aßlar & Wetzlar“ und „★ 5,0 · 27 Google-Rezensionen“. Die Zeilen haben keine Pillenform. Die Sternbewertung als Vorzeile der Einstiegsüberschrift ist trotzdem das typische Vertrauens-Badge über dem Hero. Der Kicker allein wäre nur das Überschriften-System der Seite. Zusammen zählt das als ein Fund in vier Ansichten."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/bad/00.jpg, t768/bad/00.jpg, d1440/bad/00.jpg, d1920/bad/00.jpg (Hero-H1, wörtlich: „Ihr Traumbad schlüsselfertig in Fachqualität“)",
+     "begruendung": "„Traumbad“ ist ein Standard-Werbewort ohne Sachgehalt und steht in der Hauptüberschrift.",
+     "urteil": "Wörtlich in der H1: „Ihr Traumbad schlüsselfertig in Fachqualität“. „Traumbad“ ist ein inhaltsleeres Werbewort. Die Sachaussage tragen „schlüsselfertig“ und „Fachqualität“. Im selben Hero wiederholt der Fließtext die Formel („Übergabe Ihres Traumbads in Fachqualität“). Das gehört zum selben Abschnitt und zählt deshalb nicht extra. Ein Fund in vier Ansichten."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/bad/08.jpg, d1440/bad/05.jpg, d1920/bad/04.jpg (Überschrift der Badanfrage, wörtlich: „Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar“)",
+     "begruendung": "Dasselbe Werbewort „Traumbad“ kehrt als Formularüberschrift in einem eigenen Abschnitt ohne Sachgehalt wieder.",
+     "urteil": "Eigene Fundstelle in einem anderen Abschnitt, der Badanfrage (m375/08, d1440/05, d1920/04). Wörtlich: „Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar“. Die Formularüberschrift wiederholt dasselbe Werbewort ohne Sachgehalt. Es ist keine Doppelzählung zu Fund 5, weil Element und Stelle verschieden sind."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/bad/03.jpg, t768/bad/02.jpg, d1440/bad/02.jpg, d1920/bad/01.jpg (Kategorie Luxus, Überschrift, wörtlich: „High-End Spa & Maßanfertigungen ohne Kompromisse“)",
+     "begruendung": "„ohne Kompromisse“ und „High-End“ sind Werbeformeln ohne Sachaussage, nah an der Katalogfloskel „maßgeschneidert“.",
+     "urteil": "Wörtlich: „High-End Spa & Maßanfertigungen ohne Kompromisse“. „ohne Kompromisse“ und „High-End“ sind leere Werbeformeln. „Maßanfertigungen“ ist dagegen konkret und nicht die Floskel „maßgeschneidert“. Der Fund stützt sich deshalb auf „ohne Kompromisse“ und „High-End“. Für den Stufen-Abschnitt ist das ein Fund. Die Schwesterüberschrift „Gehobener Komfort mit edlen Oberflächen“ zählt nicht extra."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "t768/bad/00.jpg, d1440/bad/00.jpg, d1920/bad/00.jpg (Hero, sekundärer Knopf, wörtlich: „Musterbäder entdecken“)",
+     "begruendung": "Das Knopf-Verb „entdecken“ liegt nah an der Floskel „Entdecken Sie …“, ist aber nicht wörtlich; Gegenprüfung nötig.",
+     "urteil": "Wörtlich als sekundärer Hero-Knopf: „Musterbäder entdecken“. Das ist das Katalogmuster „Entdecken Sie …“ in Knopfform, also dasselbe Verb in derselben Marketing-Funktion. Die Seite verwendet für dasselbe Ziel sonst nüchtern „Musterbäder ansehen“. Ein Fund (t768/00, d1440/00, d1920/00)."
+    }
+   ],
+   "verworfene": [
+    {
+     "kennung": "S-04",
+     "hart": true,
+     "ort": "m375/bad/00.jpg, t768/bad/00.jpg, d1440/bad/00.jpg, d1920/bad/00.jpg (Hero, Bewertungszeile über der H1)",
+     "begruendung": "Der gefüllte Stern vor „5,0 · 27 Google-Rezensionen“ ist das einzige Füll-Icon, alle übrigen Icons (Telefon, WhatsApp, Kalender, Pfeil, Haken) sind linear gezeichnet; Grenzfall, da nur ein Glyph betroffen ist.",
+     "grund": "Fehlalarm. Der gefüllte Stern ist das übliche Zeichen für eine Bewertung. Ein Umriss-Stern würde als leere Bewertung gelesen. Er steht als ein einzelnes Zeichen in Textfarbe und Textgröße da. Im Bild (Vergrößerung d1920/00) ist keine zweite Icon-Familie zu sehen und auch keine abweichende Strichstärke. Telefon, Haken, Pfeil und Kalender sind einheitlich dünn gezeichnet. Ein hartes S-04 lässt sich damit nicht belegen."
+    },
+    {
+     "kennung": "S-04",
+     "hart": true,
+     "ort": "m375/bad/10.jpg, t768/bad/06.jpg, d1440/bad/06.jpg, d1920/bad/05.jpg (CTA-Abschnitt „Planen Sie ein Fliesen- oder Badprojekt?“, Bewertungsleiste unten)",
+     "begruendung": "Derselbe gefüllte Stern vor „5,0 Google-Bewertung bei 27 echten Kundenstimmen“ steht im selben Abschnitt neben linear gezeichneten Telefon- und WhatsApp-Icons; Grenzfall wie oben.",
+     "grund": "Doppelzählung zu Fund 2: Es ist dasselbe Sternzeichen, nur im CTA-Abschnitt. Außerdem gilt derselbe Grund. Der Stern ist ein einheitliches Bewertungszeichen und keine gemischte Bildsprache. Telefon- und WhatsApp-Icon daneben sind gleich dünn gezeichnet, das WhatsApp-Zeichen ist eine Markenmarke."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "m375/bad/01.jpg (Abschnitt „Alles für Ihr neues Bad aus einer Hand“, vier Zeilen); t768/bad/00.jpg (gleiche Liste, Anfang); d1440/bad/00.jpg (rechte Spalte, fünf Zeilen); d1440/bad/01.jpg (Listenende „Badplaner“); d1920/bad/00.jpg (rechte Spalte, sechs Zeilen)",
+     "begruendung": "Sechs gleich gebaute Zeilen aus Überschrift, zwei Textzeilen und Pfeil bilden das ganze Muster des Abschnitts; ein Icon fehlt, daher nur Teiltreffer.",
+     "grund": "Das sind keine Karten. Es ist eine Linkliste mit Haarlinien, ohne Container, ohne Icon und ohne Fläche. Jede Zeile hat Titel, eine Beschreibungszeile und einen Pfeil; zwei Zeilen entstehen nur durch den Umbruch auf m375. Inhaltlich ist es das Verzeichnis der Bad-Unterseiten, also mit klarer Logik. Auf der Seite herrscht das Muster auch nicht vor, denn dort gibt es außerdem Stufenliste, Konfigurator, Mehrschritt-Formular und CTA."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "d1440/bad/01.jpg, d1920/bad/01.jpg (Abschnitt „Unsere Qualitäts-Kategorien im Überblick“, Einleitungsabsatz, wörtlich: „Wählen Sie das passende Konzept für Ihre Ansprüche“)",
+     "begruendung": "Die stehende Formel „für Ihre Ansprüche“ hat keinen konkreten Inhalt.",
+     "grund": "Streng gegen Fehlalarme: „Wählen Sie das passende Konzept für Ihre Ansprüche“ ist eine sachliche Handlungsanweisung zur Wahl zwischen drei Stufen. Sie ist kein Modewort aus der Katalogklasse (nahtlos, innovativ, ganzheitlich …). Die zweite Satzhälfte („den verbindlichen Festpreis erhalten Sie nach dem kostenfreien Vor-Ort-Aufmaß“) ist konkret. Die Wendung ist blass, aber keine KI-Floskel."
+    }
+   ],
+   "gesamteindruck": "Die Seite wirkt überwiegend eigenständig und handwerklich präzise: Das Raster ist streng, ohne Radien und Schatten, die Mess-Leiste markiert die Abschnitte, und die Kontraste sind sicher (Stichprobe über 8:1). Dazu kommen konkrete Sachangaben (DIN 18534, DIN 18040-2, 4.180 € Zuschuss, m²-Stufen) und ein echter Konfigurator statt Kartenraster. Generisch bleibt sie vor allem in der Sprache („Traumbad“ in H1 und Formularüberschrift, „ohne Kompromisse“, „entdecken“) und im Vorspann mit Sternbewertung über der H1. Außerdem folgen zwei fast gleich gebaute Anfrage-Module (Projektcheck und Badanfrage) direkt aufeinander und verwässern den Blickfang."
+  },
+  "/leistungen": {
+   "pfad": "/leistungen",
+   "weich": 8,
+   "hart": 0,
+   "gemeldet": 12,
+   "verworfen": 6,
+   "nachgetragen": 2,
+   "funde": [
+    {
+     "kennung": "S-12",
+     "hart": false,
+     "ort": "Vier aufeinanderfolgende Gewerk-Abschnitte. Bäder & Wellness: d1440/leistungen/00.jpg (unten), d1920/leistungen/00.jpg (Mitte), m375/leistungen/01.jpg (unten), m375/leistungen/03.jpg (unten). Wohnbereiche & Neubau: t768/leistungen/02.jpg, d1440/leistungen/02.jpg, m375/leistungen/04.jpg, d1920/leistungen/02.jpg (oben). Balkon- & Terrassensanierung: m375/leistungen/06.jpg, m375/leistungen/07.jpg, t768/leistungen/04.jpg, d1440/leistungen/03.jpg, d1920/leistungen/02.jpg (unten). Untergrund & DIN 18534 Abdichtung: m375/leistungen/08.jpg (oben), d1440/leistungen/05.jpg, d1920/leistungen/04.jpg.",
+     "begruendung": "Die vier Abschnitte haben denselben Aufbau (Kasten-Badge, Überschrift, Absatz, Gewerk-Liste, Häkchenliste „Ausstattungsmerkmale & Vorteile“, Fachdetails-Link, Button, Grundriss) in gleicher Dichte und ohne klaren Blickfang.",
+     "urteil": "Am Bild bestätigt (d1440/00, 02, 03, 05; d1920/00, 02, 04; t768/02, 04; m375/01–08): Die vier Gewerk-Blöcke folgen nacheinander demselben Raster. Links steht ein Grundriss in gleicher Größe, rechts der Kasten „Geprüfte Fachkompetenz“, dann H2, Absatz, Gewerk-Liste, „Ausstattungsmerkmale & Vorteile:“ mit sechs Häkchen, Fachdetails-Link und „Aufmaß anfragen“. Die Dichte ist gleich, und kein Block sticht hervor. Das ist ein Fund für die ganze Folge, richtig gezählt."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/leistungen/01.jpg (unten, Kasten „Geprüfte Fachkompetenz“ über „Bäder & Wellness“; die H2 liegt unterhalb des Ausschnitts und ist per Text-Datei belegt), d1440/leistungen/00.jpg (rechts unten), d1920/leistungen/00.jpg (Mitte rechts).",
+     "begruendung": "Ein gerahmter Badge-Kasten steht über der Abschnittsüberschrift; die Zuordnung zu „Badge über der Einstiegsüberschrift“ ist eine Auslegung für den Abschnitts-Einstieg.",
+     "urteil": "Der gerahmte Kasten „Geprüfte Fachkompetenz“ steht als inhaltsleeres Etikett über der H2 (d1440/00, d1920/00, m375/01). Er wiederholt sich wortgleich über allen vier Gewerk-Überschriften und hat damit keinen Grund: ein Klischee aus der Familie „Badge über Überschrift“. Gewertet wird er als EIN Fund für dieses eine wiederkehrende Element in allen vier Blöcken (Bäder, Wohnbereiche, Balkon, Untergrund)."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "d1920/leistungen/00.jpg (Bäder-Absatz unten: „…fugenarmen Luxusoase…“ und „Mit innovativen XXL-Großformaten reduzieren wir Fugen auf ein Minimum“); Text-Datei leistungen.json, Feld main_zeilen (Absatz Bäder & Wellness).",
+     "begruendung": "Das Katalogwort „innovativen“ steht als Werbeaussage im Bäder-Absatz, zusätzlich steht „Luxusoase“ als Werbefloskel im selben Absatz.",
+     "urteil": "Wörtlich in d1920/00 und in main_zeilen: „Mit innovativen XXL-Großformaten …“ (Katalogwort „innovativ“), im selben Absatz „fugenarmen Luxusoase“ und „für maximale Ästhetik und spielend leichte Pflege“. Das ist ein Fund für den Bäder-Absatz."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/leistungen/06.jpg (Absatz oben: „…setzt auf innovative Trockenverlegung auf Stelzlagern“), d1440/leistungen/03.jpg (Absatz), d1920/leistungen/02.jpg (Absatz unten); Text-Datei leistungen.json, Feld main_zeilen (Absatz Balkon- & Terrassensanierung).",
+     "begruendung": "Das Katalogwort „innovative“ steht als Werbeaussage im Einleitungsabsatz des Balkon-Abschnitts.",
+     "urteil": "Wörtlich in m375/06, d1440/03 und d1920/02: „setzt auf innovative Trockenverlegung auf Stelzlagern“. Das Katalogwort steht in einem eigenen Absatz (Balkon) und ist damit eine eigene Fundstelle."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/leistungen/04.jpg (oben, „…elegante Architektur mit unübertroffener Robustheit“), t768/leistungen/02.jpg (Absatz), d1440/leistungen/02.jpg (Absatz); Text-Datei leistungen.json, Feld main_zeilen (Absatz Wohnbereiche & Neubau).",
+     "begruendung": "Die Steigerungsfloskel „unübertroffener Robustheit“ steht nicht im Katalog-Beispiel; Grenzfall.",
+     "urteil": "Wörtlich in m375/04, t768/02 und d1440/02: „Moderne Fliesenbeläge verbinden elegante Architektur mit unübertroffener Robustheit.“ Das ist eine typische „verbindet X mit Y“-Floskel mit unbelegbarem Superlativ. Sie steht nicht wörtlich im Katalog, ist aber gleicher Machart. Weich, eine Fundstelle."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/leistungen/10.jpg (oben, H2 „Ihr verlässlicher Weg zum neuen Traumbelag“), d1440/leistungen/06.jpg (oben, dieselbe H2); Text-Datei leistungen.json, Feld ueberschriften.",
+     "begruendung": "„Traumbelag“ ist eine stehende Werbewendung in der Abschnittsüberschrift; nicht im Katalog-Beispiel, daher Grenzfall.",
+     "urteil": "Wörtlich in m375/10, d1440/06 und im Feld ueberschriften: H2 „Ihr verlässlicher Weg zum neuen Traumbelag“. Das ist eine stehende Werbewendung („Traum…“, „Ihr Weg zu…“) in der Abschnittsüberschrift über einem sonst sachlichen Ablauf. Weich, eine Fundstelle."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "t768/leistungen/09.jpg (Absatz unter „Unverbindliche Projektanfrage“), d1440/leistungen/08.jpg (unten, gleicher Absatz), d1920/leistungen/07.jpg (Mitte); Text-Datei leistungen.json, Feld main_zeilen.",
+     "begruendung": "Wörtlich steht dort „Jedes Bauvorhaben ist einzigartig.“, eine austauschbare Standardfloskel ohne Aussage. Sie steht direkt vor dem Formular.",
+     "nachgetragen": true
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/leistungen/08.jpg (Absatz unter H2 „Untergrund & DIN 18534 Abdichtung“), d1920/leistungen/04.jpg (oben, Absatzende angeschnitten); Text-Datei leistungen.json, Feld main_zeilen (Absatz Untergrund).",
+     "begruendung": "Wörtlich steht dort „Wir bereiten Böden und Wände kompromisslos fachgerecht vor.“ Der Verstärker „kompromisslos“ ist eine typische Werbe- bzw. KI-Floskel in einem sonst sachlichen Absatz. Grenzfall, aber eine eigene Fundstelle, die die Fundliste nicht erfasst.",
+     "nachgetragen": true
+    }
+   ],
+   "verworfene": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/leistungen/00.jpg (oben, Zeile „+ HWK Wiesbaden Fachbetrieb“ über der H1), t768/leistungen/00.jpg (oben, gleiche Zeile), d1440/leistungen/00.jpg (oben), d1920/leistungen/00.jpg (oben).",
+     "begruendung": "Eine Plus-Kicker-Zeile steht über der Einstiegsüberschrift; sie hat keinen Kasten, daher ist es ein Grenzfall zu „Badge über der Einstiegsüberschrift“.",
+     "grund": "Das ist kein Badge, sondern eine Dachzeile ohne Rahmen und ohne Pillenform. Sie trägt konkrete Angaben (HWK Wiesbaden, Orte) und ist durch eine Haarlinie abgesetzt. Das Pluszeichen gehört zum durchgehenden Bauzeichnungs-Motiv, das auch als Marke auf der Hero-Haarlinie steht (d1440/00, d1920/00). Unter „Badge über der Einstiegsüberschrift“ fällt die Zeile nicht. Fehlalarm."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "t768/leistungen/02.jpg (Mitte, Kasten „Geprüfte Fachkompetenz“ über „Wohnbereiche & Neubau“), d1440/leistungen/02.jpg (rechts oben, Kasten über der H2).",
+     "begruendung": "Ein gerahmter Badge-Kasten steht über der Abschnittsüberschrift; die Zuordnung zu „Badge über der Einstiegsüberschrift“ ist eine Auslegung für den Abschnitts-Einstieg.",
+     "grund": "Doppelzählung: Es ist dasselbe Element mit demselben Text wie in Fund 3, nur im Block Wohnbereiche (t768/02, d1440/02). Es ist schon in Fund 3 erfasst und gehört außerdem zur Struktur von Fund 1 (S-12)."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "d1440/leistungen/03.jpg (rechts oben, Kasten über „Balkon- & Terrassensanierung“), d1920/leistungen/02.jpg (unten rechts, Kasten über der H2).",
+     "begruendung": "Ein gerahmter Badge-Kasten steht über der Abschnittsüberschrift; die Zuordnung zu „Badge über der Einstiegsüberschrift“ ist eine Auslegung für den Abschnitts-Einstieg.",
+     "grund": "Doppelzählung: Es ist derselbe Kasten „Geprüfte Fachkompetenz“ wie in Fund 3, nur im Block Balkon (d1440/03, d1920/02). Er ist in Fund 3 erfasst."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/leistungen/08.jpg (oben, Kasten „Geprüfte Fachkompetenz“ über „Untergrund & DIN 18534 Abdichtung“).",
+     "begruendung": "Ein gerahmter Badge-Kasten steht über der Abschnittsüberschrift; die Zuordnung zu „Badge über der Einstiegsüberschrift“ ist eine Auslegung für den Abschnitts-Einstieg.",
+     "grund": "Doppelzählung: Es ist derselbe Kasten „Geprüfte Fachkompetenz“ wie in Fund 3, nur im Block Untergrund (m375/08). Er ist in Fund 3 erfasst."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/leistungen/11.jpg (oben, „+ Projekt & Ausgangslage“ über der H2 „Projekt anfragen & Situation schildern“), t768/leistungen/07.jpg (oben, Kicker angeschnitten), d1440/leistungen/06.jpg (unten, Kicker über der H2).",
+     "begruendung": "Eine Plus-Kicker-Zeile steht über der Abschnittsüberschrift in gleicher Machart wie der Kopf-Kicker; Grenzfall.",
+     "grund": "„+ Projekt & Ausgangslage“ (m375/11, d1440/06, t768/07) ist wie die Hero-Zeile eine Dachzeile ohne Rahmen und kein Badge. Sie steht auch nicht über der Einstiegsüberschrift. Dachzeilen sind ein übliches redaktionelles Mittel und gehören hier zu einem durchgehenden System aus „Ausführungs-Standards“, „Projekt & Ausgangslage“ und „Online-Bedarfsabfrage“. Keine Katalog-Entsprechung, Fehlalarm."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "t768/leistungen/09.jpg (Mitte, Kasten „+ Preise individuell auf Anfrage“ über „Unverbindliche Projektanfrage“), d1440/leistungen/08.jpg (unten, gleicher Kasten), d1920/leistungen/07.jpg (Mitte).",
+     "begruendung": "Ein gerahmter Badge mit Pluszeichen steht über der H2 des Formulars, also über einer Abschnittsüberschrift; Grenzfall zur Badge-Regel.",
+     "grund": "Der Kasten „+ Preise individuell auf Anfrage“ (t768/09, d1440/08, d1920/07) steht innerhalb des Formulars über einer Zwischenüberschrift, nicht über der Einstiegsüberschrift. Er trägt eine konkrete Sachinformation (die Preispolitik) und ist damit nicht „ohne Grund“. Auch einmalig kommt er nicht als dekoratives Badge-Klischee in Betracht."
+    }
+   ],
+   "gesamteindruck": "Die Seite wirkt durch ihre eigene Bauzeichnungs-Sprache eigenständig und handwerklich präzise: Grundrisse mit Maßlinien, Monospace-Metazeilen, eckige Kästen und gut lesbare Kontraste. Dazu kommen konkrete Fachangaben wie DIN 18534, 1,5 bis 2 % Gefälle, CM-Messung und R10/R11. Generisch bleibt sie in den vier gleich gebauten Gewerk-Blöcken mit dem wortgleichen Badge „Geprüfte Fachkompetenz“, in den Werbefloskeln der Einleitungsabsätze („innovative“, „Luxusoase“, „unübertroffener Robustheit“, „Traumbelag“) und in der lückenhaften Bebilderung der Gewerk-Listen: Balkon hat nur eine Skizze, Untergrund keine."
+  },
+  "/standorte": {
+   "pfad": "/standorte",
+   "weich": 2,
+   "hart": 0,
+   "gemeldet": 5,
+   "verworfen": 3,
+   "nachgetragen": 0,
+   "funde": [
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/00, t768/00, d1440/00, d1920/00: Einleitungstext unter der H1, letzter Satzteil (Text-Datei main_zeilen: „mit persönlicher Beratung vor Ort und handwerklicher Präzision.“)",
+     "begruendung": "Wörtlich „handwerklicher Präzision“ ist eine generische Leistungs-Floskel ohne belegbaren Inhalt; Grenzfall, da es Branchensprache ist.",
+     "urteil": "Wörtlich im Bild (m375/00, t768/00, d1440/00, d1920/00) und in main_zeilen: „mit persönlicher Beratung vor Ort und handwerklicher Präzision.“ „handwerkliche Präzision“ ist eine unbelegte, austauschbare Leistungsfloskel. Dasselbe Element in vier Ansichten zählt richtig als ein Fund."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "d1440/03: Abschnitt „13 Städte & Gemeinden“, Eintrag Butzbach, Fließtext (Text-Datei main_zeilen: „mit höchster Präzision aus dem Lahn-Dill-Kreis.“)",
+     "begruendung": "Wörtlich „mit höchster Präzision“ ist eine austauschbare Steigerungsfloskel ohne konkreten Beleg.",
+     "urteil": "In d1440/03 sichtbar, Eintrag Butzbach: „mit höchster Präzision aus dem Lahn-Dill-Kreis.“ Das ist eine Steigerungsfloskel ohne Beleg. Die Fundstelle liegt in einem anderen Abschnitt als Fund 2 und ist ein anderes Element, also keine Doppelzählung."
+    }
+   ],
+   "verworfene": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/00, t768/00, d1440/00, d1920/00: Hero-Bereich, Label „+ Mittelhessen & Lahn-Dill-Kreis“ oberhalb der H1 „Standorte & Einsatzgebiete in Mittelhessen“ (dieselbe Stelle in vier Ansichten, einmal gezählt)",
+     "begruendung": "Eyebrow-Label mit Plus-Zeichen direkt über der Einstiegsüberschrift, ein Badge-Klischee; Grenzfall, weil es die Region benennt.",
+     "grund": "In m375/00, t768/00, d1440/00 und d1920/00 ist das kein Badge, sondern ein Kicker in Monospace ohne Rahmen, Hintergrund und Pillenform. Er folgt demselben Abschnittssystem wie „+ Interaktive Gebietskarte“, „+ 13 Städte & Gemeinden“, „+ In allen Einsatzgebieten“ und „+ Firmensitz & Anfahrt“ und nennt die Region konkret. Das Katalogmuster „Badge über der Einstiegsüberschrift“ liegt damit nicht vor."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/07, t768/04, d1440/04, d1920/03: Abschnitt „13 Städte & Gemeinden“, Eintrag Aßlar („Unser Firmensitz“), Fließtext (Text-Datei main_zeilen: „Hier sind wir zu Hause“)",
+     "begruendung": "Wörtlich „Hier sind wir zu Hause“ ist eine warme Standard-Floskel ohne Inhalt; Grenzfall.",
+     "grund": "„Hier sind wir zu Hause“ stimmt sachlich: Aßlar ist der Firmensitz, und derselbe Satz belegt das mit der Hohwardstraße 14 und dem Inhaber Deniz Tezgel (m375/07, t768/04, d1440/04, d1920/03). Es ist eine normale deutsche Wendung und keine KI-Floskel der Katalogart (nahtlos, innovativ, maßgeschneidert …)."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "t768/08 und d1440/09: Fußbereich unter dem Firmennamen, Zitat „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“",
+     "begruendung": "Wörtlich ein austauschbarer Motto-Spruch ohne Bezug zum Betrieb; Grenzfall, weil er als Zitat formuliert ist.",
+     "grund": "Das Zitat im Fußbereich (t768/08, d1440/08, d1440/09, d1920/07, d1920/08) ist als Zitat gesetzt und klingt durch das altmodische Wort „Reklame“ nach einem eigenen Betriebsmotto, nicht nach typischem KI-Vokabular. Ein Katalogmuster liegt nicht vor. Weil es ein Grenzfall ist, wird zugunsten der Seite entschieden."
+    }
+   ],
+   "gesamteindruck": "Die Seite wirkt überwiegend eigenständig: Der Einstieg ist linksbündig und ohne Effekte, dazu kommen ein durchgehendes Kicker-System in Monospace, ein Fliesenraster als Kartenhintergrund und eine Städteliste in Zeilen mit Landkreis, Entfernung und eigenem Ortstext statt Karten-Einerlei. Generisch bleibt sie bei den zwei Präzisions-Floskeln („handwerklicher Präzision“, „mit höchster Präzision“) und im Schlussteil: Dort wiederholen zwei aufeinanderfolgende Kontaktblöcke dieselbe Aufforderung zu Telefon und WhatsApp, und ein zweiter DSGVO-Kartenplatzhalter mit einer Adresskarte voller Leerfläche trägt wenig Eigenes bei."
+  },
+  "/blog": {
+   "pfad": "/blog",
+   "weich": 4,
+   "hart": 0,
+   "gemeldet": 7,
+   "verworfen": 3,
+   "nachgetragen": 0,
+   "funde": [
+    {
+     "kennung": "S-14",
+     "hart": false,
+     "ort": "Artikelkarten-Bilder im Kartenraster, alle Ansichten: Nischen-Foto (Feinsteinzeug, Balkonaustritt, Allergiker) im identischen Ausschnitt in d1920/blog/01 und 02, d1440/blog/01 und 03, t768/blog/01 sowie m375/blog/06. Dampf-Bad (Undichte Dusche, Schimmel) im identischen Ausschnitt in d1920/blog/01 und 02, d1440/blog/01 und 03, t768/blog/01. Gäste-WC-Spiegeldisplay mit nur '27°C' lesbarem Text und unlesbaren Symbolen in d1440/blog/04 (Bild links) und d1920/blog/03.",
+     "begruendung": "Glatt gerenderte, personenlose Badräume wirken wie Stock- oder KI-Bilder, dieselben Fotos erscheinen mehrfach als verschiedene Artikelkarten, und die Spiegel-Symbole sind bis auf '27°C' nicht lesbar.",
+     "urteil": "Am Bild bestätigt: Das Dampf-Bad-Foto steht bei vier Artikeln (Handwerkerbonus, Undichte Dusche, Schimmel und Duschrinne, letzteres anders beschnitten), das Nischen-Foto bei drei (Feinsteinzeug, Balkonaustritt, Allergiker). Sieben von dreizehn Artikeln teilen sich also zwei Fotos. Das Gäste-WC-Bild zeigt kein kleines WC, sondern ein großes Luxusbad mit Doppel-Regendusche und Fantasie-Spiegeldisplay ('27°C', unscharfe Symbole). Das ist ein Fund für das Bildraster über alle Ansichten und richtig gezählt. Er schließt die Generator-Wasserzeichen aus Fund 2 und die vier nicht beschnittenen, mit Seitenrändern eingesetzten Bilder (Wandnischen, Rutschfeste, 5 Mythen, Neuigkeiten, z. B. d1440/blog/03-04, d1920/blog/02-03) als uneinheitliche Bildbearbeitung mit ein."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "Abschnitt '8-Punkte-Qualitätsversprechen', alle Ansichten: m375/blog/10 und m375/blog/11 (Karten Punkt 01 bis 07, einspaltig); t768/blog/04 (Punkt 01 und 02 im Zweier-Raster); d1440/blog/05 (Punkt 01 bis 04) und d1440/blog/06 (Punkt 05 bis 08); d1920/blog/04 (Punkt 01 bis 04) und d1920/blog/05 (Punkt 05 bis 08).",
+     "begruendung": "Acht identische Karten mit Label 'Punkt 0X', Überschrift, zwei bis vier Zeilen Text und Häkchen-Fußzeile 'Garantierter Standard' bilden das alleinige Muster des Abschnitts.",
+     "urteil": "Bestätigt in m375/10-11, t768/04, d1440/05-06 und d1920/04-05: Acht formgleiche Karten tragen 'Punkt 0X' an Stelle des Icons, eine Überschrift, zwei bis fünf Zeilen Text und achtmal dieselbe Häkchen-Fußzeile 'Garantierter Standard' ohne Informationswert. Sie sind das einzige Gestaltungsmittel des Abschnitts. Ein Fund über alle Ansichten, richtig gezählt."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "Einstiegs-Unterzeile unter der H1 'Fliesen-Ratgeber & Badsanierung Tipps', Zitat 'Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung': m375/blog/00, t768/blog/00, d1440/blog/00, d1920/blog/00 (Text-Datei main_zeilen identisch).",
+     "begruendung": "Grenzfall: 'wertvollen Tipps' ist eine allgemeine Lobfloskel ohne Inhalt, nicht wörtlich in der Beispielliste, aber gleicher Gattung wie die genannten KI-Floskeln.",
+     "urteil": "Wörtlich im Bild (m375/t768/d1440/d1920 je 00) und in main_zeilen: 'Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung'. 'wertvollen Tipps' ist ein inhaltsleeres Selbstlob derselben Gattung wie die Katalog-Floskeln. Ein Fund im Einstiegsabschnitt."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "CTA-Block vor dem Footer, Überschrift 'Überzeugen Sie sich selbst von unserer Fachqualität' (Zitat aus Bild und Text-Datei): d1440/blog/06 und d1920/blog/05.",
+     "begruendung": "Sie-Imperativ-Verkaufsformel ohne konkreten Inhalt, vergleichbar mit der Katalog-Floskel 'Entdecken Sie …'.",
+     "urteil": "Wörtlich in d1440/06, d1920/05 und main_zeilen: 'Überzeugen Sie sich selbst von unserer Fachqualität'. Das ist eine Sie-Imperativ-Werbeformel ohne Inhalt, gleichwertig zu 'Entdecken Sie …'. Sie steht in einem anderen Abschnitt (Schluss-CTA) als Fund 6, daher keine Doppelzählung."
+    }
+   ],
+   "verworfene": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Kleines weißes Vier-Strahlen-Sternchen unten rechts auf vier Kartenbildern (Wandnischen, Rutschfeste, 5 Mythen, Neuigkeiten), als ein Fund über alle Ansichten gezählt: m375/blog/04 (Wandnischen), m375/blog/07 (5 Mythen), m375/blog/08 (Neuigkeiten); t768/blog/03 (Rutschfeste, 5 Mythen, Neuigkeiten); d1440/blog/02 (Wandnischen), d1440/blog/03 (Rutschfeste, 5 Mythen), d1440/blog/04 (Neuigkeiten); d1920/blog/02 (Wandnischen), d1920/blog/03 (Rutschfeste, 5 Mythen, Neuigkeiten).",
+     "begruendung": "Das statische Sternchen ist als Dekor auf die Bilder gesetzt und hat keine Funktion, es ist ein Funkel-Klischee aus dem Katalog.",
+     "grund": "Falsche Kennung und Doppelzählung. Das Vier-Strahlen-Sternchen ist kein aufgesetztes Dekor-Funkeln. Es sitzt im Bildinhalt an der unteren rechten Ecke des Fotos, nicht der Karte, bei schmaleren Bildern mit grauen Seitenrändern also nach innen versetzt (z. B. d1920/blog/03 x≈670 statt Kartenrand 732). Es ist das sichtbare Wasserzeichen eines KI-Bildgenerators, also S-14 (Bildfehler). Als S-14 betrifft es dieselbe Fundstelle wie Fund 1 (Bilder des Artikelrasters) und ist dort eingerechnet."
+    },
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "Eyebrow '+ Ratgeber & Fachwissen' als kleines Mono-Label über der Einstiegs-H1: m375/blog/00 (oben), t768/blog/00 (oben), d1440/blog/00 (oben), d1920/blog/00 (oben).",
+     "begruendung": "Grenzfall: Das Label ist formal ein Badge über der Einstiegsüberschrift, der Informationsgehalt ist aber gering, weil der Bereich in der Navigation bereits hervorgehoben ist.",
+     "grund": "Kein Badge: Die Zeile '+ Ratgeber & Fachwissen' ist eine schlichte Kicker-Zeile ohne Rahmen oder Fläche. Sie gehört zum durchgängigen Mono-Label-System der Seite ('+ Suche', '+ Kategorien', '+ Empfohlener Leitfaden', '+ HWK Fachbetrieb · HWK Wiesbaden'). Dass sie die Navigation wiederholt, ist kein Katalogmuster. Fehlalarm."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "Artikelraster, alle Ansichten mit Artikelkarten: m375/blog/01, 03, 04, 06, 07, 08; t768/blog/00, 01, 03, 04; d1440/blog/00 bis 05; d1920/blog/00 bis 04.",
+     "begruendung": "Grenzfall: Zwölf Artikelkarten mit gleichem Aufbau (Bild, Kategorie-Label, Lesezeit, Datum, Überschrift, dreizeiliger Auszug, Link) im Zweier-Raster, aber mit Bildern statt Icons, daher nur teilweise das Katalogmuster.",
+     "grund": "Fehlalarm: Artikel-Teaser mit eigenem Bild, Kategorie, Lesezeit, Titel und Auszug sind das funktional begründete Muster einer Blog-Übersicht. Es sind keine Icon-Feature-Karten mit zwei Zeilen. Der handwerkliche Mangel dieses Rasters liegt in den Bildern (Fund 1), nicht in der Kartenform. Der Slop-Jäger stuft den Fund selbst nur als teilweise katalogkonform ein."
+    }
+   ],
+   "gesamteindruck": "Das typografische Gerüst wirkt eigenständig und ruhig: kondensierte Display-Schrift, Mono-Labels, kantige Rahmen ohne Standardradien und Schatten, dazu sachlich konkrete Artikelauszüge (R-Klassen, DIN EN 16165, Handwerkerbonus). Generisch und handwerklich unpräzise bleibt die Seite bei der Bebilderung (zwei KI-Fotos für sieben Artikel, sichtbare Generator-Wasserzeichen, ungleich beschnittene Bilder, ein Luxusbad für den Gäste-WC-Artikel), beim Acht-Karten-Versprechen mit achtfachem 'Garantierter Standard', bei den Floskeln in Einstieg und Schluss-CTA sowie in Details: dasselbe Datum '24. September 2026' auf allen dreizehn Artikeln, die Fügung 'Badsanierung Tipps' in der H1 und Suchbeschriftungen, die zwischen Desktop ('Artikel suchen', 'Alle Artikel') und Tablet/Mobil ('Ratgeber durchsuchen', 'Alle Themen') wechseln."
+  },
+  "/ueber-uns": {
+   "pfad": "/ueber-uns",
+   "weich": 4,
+   "hart": 0,
+   "gemeldet": 6,
+   "verworfen": 2,
+   "nachgetragen": 0,
+   "funde": [
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "m375/03 (Einträge Termintreue, Großformat, Kundenbegeisterung), d1440/01 und d1440/02, d1920/01 und d1920/02 – Abschnitt „Wofür wir stehen / Unsere Werte im Handwerk“, sechs Einträge",
+     "begruendung": "Sechs gleich gebaute Einträge aus Plus-Marker, Überschrift und zwei Textzeilen im Zweierraster; ohne Kastenrahmen, aber gleichförmig, deshalb als ein Fund für den Abschnitt gezählt.",
+     "urteil": "In m375/03, d1440/01–02 und d1920/01–02 liegt das Muster vor: sechs formal identische Einträge aus Plus-Marker, Überschrift und ein bis drei Zeilen im 2×3-Raster. Kartenrahmen fehlen, aber es ist das klassische Feature-Raster. Vier der sechs Einträge (DIN 18534, Staubschutz, Termintreue & Festpreis, Großformat) wiederholen die 8-Punkte-Karten. „Kundenbegeisterung“ ist nur Füllung mit dem Inhaberzitat. Zusammen mit den 8 Karten ist das gleichförmige Kachelmuster auf der Seite vorherrschend. Es zählt richtig als ein Fund für diesen Abschnitt."
+    },
+    {
+     "kennung": "S-11",
+     "hart": false,
+     "ort": "m375/06, m375/07, m375/08 (Punkt 01 bis 07), t768/05, d1440/05, d1920/04 – Abschnitt „Unser 8-Punkte-Qualitätsversprechen“, acht Karten im 4×2-Raster",
+     "begruendung": "Acht identisch gebaute Karten mit Punkt-Kennzeichnung, Überschrift, Text und Häkchenzeile „Garantierter Standard“ bilden das vorherrschende Muster des Abschnitts.",
+     "urteil": "In d1440/05, d1920/04 und m375/06–08 sind acht identisch gebaute, gerahmte Karten zu sehen: „Punkt 0X“, Überschrift, Text und darunter jedes Mal dieselbe Häkchenzeile „Garantierter Standard“. Diese Zeile trägt keine Information und ist reine Musterfüllung. Es zählt richtig als ein Fund für den Abschnitt und ist kein Doppel zu Fund 2, weil es ein anderer Abschnitt ist."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "t768/05 (Ende der 8-Punkte-Karten), d1440/05, d1920/04 – Zeile „Überzeugen Sie sich selbst von unserer Fachqualität“ über den Knöpfen",
+     "begruendung": "Wörtlich „Überzeugen Sie sich selbst von unserer Fachqualität“: imperativische Sie-Floskel der Familie „Entdecken Sie …“ als CTA-Einstieg.",
+     "urteil": "Der Wortlaut „Überzeugen Sie sich selbst von unserer Fachqualität“ steht im Bild (t768/05, d1440/05, angeschnitten in d1920/04) und in der Text-Datei. Das ist ein leerer Sie-Imperativ mit Eigenlob als Einleitung zu den Knöpfen, also die Familie „Entdecken Sie …“. Die konkrete Unterzeile („Kostenfreies Vor-Ort-Aufmaß durch Deniz Tezgel …“) könnte die Überschrift ersetzen."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/10, t768/05, d1440/06, d1920/05 – dunkler Abschluss-Block, Überschrift „Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel.“",
+     "begruendung": "Wörtlich „Lernen Sie uns persönlich kennen“: Sie-Imperativ-Floskel als CTA-Überschrift, gleiche Familie wie „Entdecken Sie …“.",
+     "urteil": "Der Wortlaut „Lernen Sie uns persönlich kennen“ steht in m375/10, t768/05, d1440/06 und d1920/05. Der Teil vor dem Doppelpunkt ist eine austauschbare Sie-Imperativ-Formel, die auf jeder Firmenseite stehen könnte. Erst die zweite Hälfte („Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel.“) ist konkret und würde allein tragen. Weich, ein Fund. Es ist ein anderes Element als Fund 4 und deshalb kein Doppel."
+    }
+   ],
+   "verworfene": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/00, t768/00, d1440/00, d1920/00 – Hero oben: Zeile „+ Gegründet 2008 · HWK Wiesbaden“ über der H1 „Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar“",
+     "begruendung": "Kleine Plus-Zeile direkt über der Einstiegsüberschrift übernimmt die Funktion eines Badges; Grenzfall, weil es keine Pille, sondern eine Mono-Textzeile ist. Die Plus-Eyebrows über den H2-Abschnitten sind nicht gezählt, da sie nicht über der Einstiegsüberschrift stehen.",
+     "grund": "Kein Badge: Die Zeile hat keine Pille, keine Füllung und keinen Rahmen. Sie ist die Mono-Eyebrow mit Plus-Marker, die die Seite durchgehend über jedem Abschnitt verwendet („+ Unser Betrieb“, „+ Wofür wir stehen“, „+ Gegründet 2008 in Aßlar“, „+ HWK Fachbetrieb“). Hier trägt sie dazu belegbare Fakten (2008, HWK Wiesbaden) und ist durch eine Haarlinie von der H1 getrennt (m375/00, t768/00, d1440/00, d1920/00). Das ist eine typografische Kennzeichnung und nicht das Klischee „Badge über der Einstiegsüberschrift“."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "d1440/01, d1920/01 (Zitat nach dem Betriebstext); t768/03, d1440/03, d1920/03 (Zitat nach der Geschichte); m375/03, d1440/02, d1920/01 (Werte-Eintrag „Kundenbegeisterung“); m375/11, t768/06, d1440/07 (Zitatblock im Fußbereich) – Satz „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“",
+     "begruendung": "Derselbe Satz steht an mehreren Stellen; Grenzfall, da er als Zitat des Inhabers auftritt und keine KI-typische Floskel ist, deshalb nicht hart und für den Gegenprüfer zur Entscheidung offen.",
+     "grund": "Es ist keine KI-Floskel im Sinne des Katalogs (nahtlos, innovativ, Entdecken Sie …), sondern ein namentlich zugeordnetes Inhaberzitat mit altmodisch-menschlichem Ton („Reklame“). Das echte Problem ist redaktionell: Das Zitat steht dreimal im Hauptinhalt (nach dem Betriebstext d1440/01, als Werte-Eintrag „Kundenbegeisterung“ d1440/02, als großes Zitat nach der Zeitleiste d1920/03) und noch einmal im globalen Fuß. Diese Wiederholung deckt S-13 nicht ab. Den Werte-Eintrag als Füllung erfasst bereits Fund 2."
+    }
+   ],
+   "gesamteindruck": "Gestalterisch wirkt die Seite eigenständig und handwerklich präzise: Sie arbeitet mit Haarlinien, eckigen Rahmen, einer schmalen Grotesk mit Mono-Kennzeichnungen und einer echten Zeitleiste, verzichtet auf Verläufe, Effekte und Framework-Standard, und alle Stichproben liegen deutlich über AA-Kontrast. Generisch bleibt sie im Inhalt: Werte-Raster und 8-Punkte-Karten wiederholen dieselben Versprechen, „Garantierter Standard“ steht achtmal da und dasselbe Inhaberzitat viermal, dazu kommen ein SEO-lastiger Einstiegssatz („Über uns und Fliesenverlegung Tezgel: …“) und Sie-Imperative vor den CTAs, und auf der ganzen Über-uns-Seite gibt es kein Foto von Inhaber, Team oder Arbeit."
+  },
+  "/kontakt": {
+   "pfad": "/kontakt",
+   "weich": 0,
+   "hart": 0,
+   "gemeldet": 2,
+   "verworfen": 2,
+   "nachgetragen": 0,
+   "funde": [],
+   "verworfene": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "m375/kontakt/00.jpg, t768/kontakt/00.jpg, d1440/kontakt/00.jpg, d1920/kontakt/00.jpg: Hero, Kennzeile „+ Fachbetrieb Aßlar · Wetzlar · Hessen“ direkt über der H1",
+     "begruendung": "Die Mono-Kennzeile mit Pluszeichen steht als Badge-artiger Vorspann über der Einstiegsüberschrift und wiederholt nur die Ortsangabe, die der Einleitungstext ohnehin nennt.",
+     "grund": "In m375/00, t768/00, d1440/00 und d1920/00 steht über der H1 nur eine Dachzeile: einfacher Mono-Text mit vorangestelltem „+“, ohne Rahmen, Fläche oder Pillenform. Das ist kein abgesetzter Badge im Sinne von S-09. Dieselbe Spitzmarke steht vor fast jeder Überschrift der Seite („+ Qualitätsversprechen“, „+ Interaktive Karte & Standorte“, „+ Standort & Einsatzradius“, „+ Verbindlicher Vor-Ort-Termin“, „+ Oder detailliert konfigurieren“). Sie ist also ein durchgehendes typografisches Mittel und kein Hero-Badge. Dass die Dachzeile den Ort wiederholt, den auch der Einleitungstext nennt, ist ein Redaktionsthema und kein Katalogmuster."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "m375/kontakt/11.jpg (Footer-Block unter dem Firmennamen); t768/kontakt/06.jpg (Footer-Block); d1440/kontakt/01.jpg (Mittelkarte „Persönliche Fachberatung“); d1440/kontakt/06.jpg und d1440/kontakt/07.jpg (Footer-Block); d1920/kontakt/00.jpg (Mittelkarte, angeschnitten), d1920/kontakt/01.jpg (Mittelkarte) und d1920/kontakt/06.jpg (Footer-Block)",
+     "begruendung": "Der wörtliche Stehsatz „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“ bleibt ohne Bezug zu einer konkreten Leistung und ist als Zitat des Inhabers gesetzt; ob das Zitat erfunden ist, lässt sich aus Bild und Text-Datei nicht prüfen.",
+     "grund": "Der Satz „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“ enthält keine KI-Floskel der Art „nahtlos/innovativ/ganzheitlich/maßgeschneidert/Entdecken Sie“. Mit dem altmodischen Wort „Reklame“ wirkt er eher wie ein überkommenes Firmenmotto des Inhabers als wie generierter Text. Ein Verdacht auf ein erfundenes Zitat wäre S-01. Der Jäger räumt selbst ein, dass sich das nicht prüfen lässt, und nach der Vorlage wird nichts gemeldet, was nicht belegt ist. Dass das Motto auf derselben Seite zweimal erscheint (Mittelkarte in d1440/01 bzw. d1920/00–01 und Footer), ist eine Wiederholung, aber kein S-13-Fund."
+    }
+   ],
+   "gesamteindruck": "Das eigene Typosystem gibt der Seite ein eigenständiges, handwerklich klares Gerüst: schmale Grotesk-Überschriften, Mono-Beschriftungen, eckige Rahmen und Navy auf gebrochenem Weiß. Dazu kommen greifbare Angaben wie Festnetz, Mobil, Fax, HWK Wiesbaden, USt-IdNr. und Kilometerangaben je Ort, und Katalogmuster sind in den Ansichten nicht belegbar. Generisch und unpräzise bleibt die Seite an zwei Stellen: Das gleiche Versprechen „kostenfreies/kostenloses Vor-Ort-Aufmaß“ kehrt rund zehnmal wieder, verteilt auf drei konkurrierende Anfragewege (Kalender, Express-Formular, Schluss-Aufruf), und die Bürozeiten widersprechen sich – Kontaktkarte „Mo–Do 07:30–18:00, Fr 07:30–17:00“, Regionalblock und Footer dagegen „Mo - Fr: 07:30 – 18:00 Uhr“ (d1440/00 gegenüber d1920/02 und d1920/06)."
+  }
+ }
+}
