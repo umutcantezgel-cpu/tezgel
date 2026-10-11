@@ -41,3 +41,17 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/` | `Menü schließen` | `–` | 2 | P3-06 | Mobilmenü im Kern als Popover: Schließen über den Menü-Schalter am selben Ort („… schließen“), Escape und Tippen daneben; kein zweiter Schließen-Knopf |
 | `/` | `Navigation schließen` | `–` | 2 | P3-06 | Überlagerungsfläche des Bestands-Drawers entfällt (Popover schließt per Tippen daneben) |
 | `/` | `Fliesen-Katalog & Gewerke` | `–` | 2 | P3-06 | `title`-Attribut (Tooltip) am Bestands-Menüschalter entfällt; der zugängliche Name des Schalters bleibt |
+| `/` | `Google` | `–` | 2 | P3-12 | Google-Markenzeichen (aria-label und SVG-Titel) an Bewertungsabzeichen und Kundenstimmen entfällt (Fremdmarke, K-010); die Quelle steht je Stimme als Text „Google Rezension“ |
+| `/` | `Verifizierter Kunde` | `–` | 4 | P3-12 | Wahrheitskorrektur: „verifiziert“ ist für die Kundenstimmen nicht belegt (Quelle ist Google, keine Prüfung durch den Betrieb); Liste intern |
+| `/` | `Badsanierung DIN 18534` | `Badsanierung Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen DIN 18534` | 1 | P3-06 | Navigationseintrag im Kern-Mobilblatt: Name, Beschreibung aus `navigationLinks` und Etikett in einem Eintrag; Wortlaut aus der Konfiguration |
+| `/` | `Fachgewerke Konfigurator` | `Unsere Fachgewerke` | 1 | P3-06 | Navigationseintrag im Kern-Mobilblatt: Kategorietitel aus `navigationLinks` („Unsere Fachgewerke“); „Konfigurator“ steht als Etikett im Planblatt |
+| `/` | `Impressum · Datenschutz` | `Impressum Datenschutz` | 1 | P3-08 | Linkzeile im Einwilligungsbanner: Trenner „·“ als Gestaltung statt Text; beide Links unverändert |
+| `/` | `Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel ·` | `Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel` | 1 | P3-09 | Kennzeile im Einstieg (Zeichensetzung): Trenner „·“ zwischen Etikett und Bewertung entfällt (Fuge statt Zeichen), Wortlaut gleich |
+| `/` | `WhatsApp-Chat starten` | `–` | 2 | P3-06 | WhatsApp-Link im Desktop-Kopf des Bestands entfällt (Jury E-022: Kopf ruhig); WhatsApp bleibt im Einstieg, als Kanal am Desktop und in der unteren Leiste (gleicher Name) |
+| `/` | `Aufmaß buchen` | `–` | 1 | P3-06 | Zweiter „Aufmaß buchen“-Knopf (Bestands-Drawer) entfällt; der Kopf trägt „Aufmaß anfragen“, mobil die untere Leiste „Aufmaß“ |
+| `/` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite` | `–` | 2 | P3-06 | Dublette: Logo-Link im Bestands-Drawer; der Logo-Link im Kopf trägt den Namen unverändert |
+| `/` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar` | `–` | 2 | P3-06 | Dublette: Logo-Bild im Bestands-Drawer; das Logo im Kopf trägt den Alt-Text unverändert |
+| `/` | `Vertrauenssignale und Fachbetriebs-Garantien` | `–` | 2 | P3-12 | aria-label der Vertrauensleiste wird zu aria-labelledby auf einen nur für Screenreader sichtbaren Titel mit demselben Wortlaut |
+| `/` | `Cookie-Einstellungen verwalten` | `–` | 2 | P3-08 | Schwebendes Schild entfällt im Kern (E-020); Widerruf über den Fußlink „Cookie-Einstellungen“ |
+| `/` | `Cookie-Einstellungen öffnen` | `–` | 2 | P3-08 | `title` des schwebenden Schilds entfällt mit dem Schild (E-020) |
+| `/` | `Frei verschiebbar & werfbar` | `–` | 2 | P3-08 | `title` der Wurfphysik am Banner entfällt; der Kern-Banner ist fest und ohne Physik (E-013) |

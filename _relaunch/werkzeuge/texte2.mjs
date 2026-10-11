@@ -873,6 +873,30 @@ function vergleicheFolge(route, A, B, F, volatil, kontext = '') {
     const doppelt = kb.indexOf(kb[j]) !== j;
     befunde.push({ farbe: f ? 'gruen' : 'gelb', art: 'hinzu', typ: typVon(b), neu: b.wert, abschnitt: absB[j], ...(f ? { freigabe: f } : {}), ...(doppelt ? { grund: 'Dublette eines vorhandenen Eintrags' } : istVolatil(b) ? { grund: 'volatil' } : {}), kontext });
   }
+  // 3b) Enthaltensein (P3-16): Ein roter Text-Befund (entfernt oder geändert, keine Überschrift), dessen alter Wortlaut
+  //     (mindestens 8 Zeichen) vollständig in einem Text-Eintrag des neuen Stands steht oder genau der Folge von bis zu
+  //     4 aufeinanderfolgenden neuen Text-Einträgen entspricht, ist neu gegliedert, nicht verloren → GELB mit Grund.
+  //     Überschriften, Attribute (alt, aria-*, title) und Metadaten bleiben streng.
+  const n1 = (w) => w.replace(/\s+/g, ' ').trim();
+  const textB = B.filter((e) => typVon(e) === 'text').map((e) => n1(e.wert));
+  const enthalten = (alt) => {
+    const t = n1(alt || '');
+    if (t.length < 8) return false;
+    if (textB.some((w) => w.includes(t))) return true;
+    for (let k = 0; k < textB.length; k++) {
+      let folge = '';
+      for (let m = k; m < Math.min(k + 4, textB.length); m++) {
+        folge = n1(`${folge} ${textB[m]}`);
+        if (folge === t) return true;
+        if (folge.length > t.length) break;
+      }
+    }
+    return false;
+  };
+  for (const b of befunde) {
+    if (b.farbe !== 'rot' || !['entfernt', 'geaendert'].includes(b.art) || b.typ !== 'text' || !enthalten(b.alt)) continue;
+    b.farbe = 'gelb'; b.art_vorher = b.art; b.art = 'neu-gegliedert'; b.grund = 'Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)';
+  }
   // 4) zusätzliche H1
   const h1A = A.filter((e) => e.ebene === 'h1').length, h1B = B.filter((e) => e.ebene === 'h1').length;
   if (h1B > 1 && h1B > h1A) befunde.push({ farbe: 'rot', art: 'h1-doppelt', anzahl_alt: h1A, anzahl_neu: h1B, grund: 'jede zweite H1', kontext });
@@ -970,7 +994,24 @@ function modusVergleich() {
           continue;
         }
         if (za.gefunden && zb.gefunden === false) add(route, [{ farbe: 'rot', art: 'zustand-nicht-erreicht', zustand: name }]);
-        add(route, vergleicheFolge(route, za.neu, zb.neu, F, volatil, name).filter((b) => b.art !== 'h1-fehlt'));
+        // Ein Eintrag, der im Bestand erst im Zustand erscheint (z. B. Mobilmenü), im neuen Stand aber schon im Grundzustand
+        // der Seite steht (serverseitig gerendertes Menü), ist vorhanden, nicht entfernt → GELB mit Grund.
+        const basisB = SB && SB.seiten[route] ? ladeSeite(dirB, SB.seiten[route].datei).eintraege || [] : [];
+        const nz = (w) => String(w || '').replace(/\s+/g, ' ').trim();
+        const imGrundB = (alt, typ) => { const t = nz(alt); return basisB.some((e) => typVon(e) === typ && (nz(e.wert) === t || (typ === 'text' && t.length >= 8 && nz(e.wert).includes(t)))); };
+        add(route, vergleicheFolge(route, za.neu, zb.neu, F, volatil, name).filter((b) => b.art !== 'h1-fehlt')
+          .map((b) => (b.farbe === 'rot' && b.art === 'entfernt' && imGrundB(b.alt, b.typ) ? { ...b, farbe: 'gelb', grund: 'im Grundzustand des neuen Stands bereits vorhanden' } : b)));
+      }
+    }
+    // Erst nach dem Laden vorhanden: Ein im Build-HTML „entfernter“ Eintrag, den der neue Stand im Zustand „geladen“ zeigt
+    // (clientseitig ergänzte Bedienelemente, z. B. Karussell-Knöpfe), ist für Besucher vorhanden → GELB mit Grund.
+    for (const [route, liste] of Object.entries(seiten)) {
+      const geladen = ZB?.seiten?.[route]?.zustaende?.geladen?.neu || [];
+      if (!geladen.length) continue;
+      for (const b of liste) {
+        if (b.farbe === 'rot' && b.art === 'entfernt' && !b.kontext && geladen.some((e) => typVon(e) === b.typ && e.wert === b.alt)) {
+          b.farbe = 'gelb'; b.grund = 'im neuen Stand erst nach dem Laden vorhanden (Zustand „geladen“)';
+        }
       }
     }
     const fa = clientFragmente(ZA, idsAusSatz(fs.existsSync(path.join(dirA, '_satz.json')) ? dirA : null));
@@ -992,7 +1033,7 @@ function modusVergleich() {
   const ergebnis = summe.rot ? 'ROT' : 'GRÜN';
   const bericht = {
     satz: `${nameA} → ${nameB}`, base: ZB?.base ?? null,
-    bedingungen: { a: rel(dirA), b: rel(dirB), freigabe: F.datei ? rel(F.datei) : null, volatil: args('volatil'), regeln: 'Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert, vorbestehend, volatil. GRÜN: per Freigabeliste.' },
+    bedingungen: { a: rel(dirA), b: rel(dirB), freigabe: F.datei ? rel(F.datei) : null, volatil: args('volatil'), regeln: 'Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste.' },
     erstellt: jetzt(), ergebnis, summe, freigabe: { datei: F.datei ? rel(F.datei) : null, warnungen: F.warnungen, genutzt: [...new Set(alle.flatMap((b) => b.freigabe || []))].sort((x, y) => x - y) },
     seiten: Object.fromEntries(Object.entries(seiten).sort(([x], [y]) => x.localeCompare(y)).map(([r, bs]) => [r, { rot: bs.filter((b) => b.farbe === 'rot'), gelb: bs.filter((b) => b.farbe === 'gelb'), gruen: bs.filter((b) => b.farbe === 'gruen') }])),
   };
