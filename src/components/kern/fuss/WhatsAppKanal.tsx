@@ -5,16 +5,19 @@
 // Logik nur über den Hook `useWhatsAppKanal` (P3-00p): seitenbezogener Text, Ereignis `whatsapp_click`, 450-ms-Sperre,
 // Desktop über window.open. Ohne Nummer kein Knopf – Sperre wie im Bestand (`companyInfo.socialMedia.whatsapp`).
 // `id="whatsapp-floating-btn"` und der zugängliche Name bleiben wörtlich (Tests, Analyse).
-// Als Link mit echtem Ziel: vor der Hydrierung öffnet ein Klick dasselbe Ziel (gleicher Text) in einem neuen Tab.
+// Als Link mit echtem Ziel (gleicher Text): Mittelklick, „Link kopieren“ und Hilfstechnik sehen dasselbe Ziel.
 //
 // Verdeckt nie ein Bedienelement: Liegt ein Feld, ein Link, ein Knopf, eine Beschriftung, ein Element mit
 // `data-hauptaktion` oder ein Bereich mit `data-kanal-frei` (z. B. Abschlusszeile des Fußes) unter dem Knopf, oder hat ein
 // Element unter ihm den Fokus (WCAG 2.4.11), ist er unsichtbar (visibility: hidden – auch aus Tab-Folge und Barrierebaum).
 // Seit P3-16 alle Bedienelemente statt nur Formular und Hauptaktion (Jury t2-ad80754: Knopf über „Zum Fachbereich …“).
-// Er startet unsichtbar und erscheint nach der ersten Prüfung; ohne JavaScript bleibt er aus (WhatsApp steht im Fuß).
+// Er startet unsichtbar und erscheint nach der ersten Prüfung.
+// Nur im Browser (P4-13, E-029 Berichtigung): Der Kanal wird wie der Bestands-Kanal (`ClientWidgets`, ssr:false) erst nach
+// der Hydrierung eingehängt und steht nicht im Server-HTML – ohne JavaScript gibt es also kein verborgenes Element, das
+// nie erscheinen kann. Der WhatsApp-Weg ohne JavaScript steht ab lg im Kopf (`kopf-b/Kopf.tsx`) und im Fuß.
 // Bewegung nur über das Register: `druck` (1 px, :active) und Farbwechsel; Ein-/Ausblenden ohne Übergang.
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState, type MouseEvent } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore, type MouseEvent } from 'react';
 import { companyInfo } from '@/lib/data/company';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import { useWhatsAppKanal } from '@/lib/formulare/useWhatsAppKanal';
@@ -31,7 +34,18 @@ function ueberlappt(a: DOMRect, b: DOMRect): boolean {
   return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
 }
 
+// Hülle „nur im Browser“: Server und Hydrierung lesen den Server-Schnappschuss (false), direkt danach rendert React mit
+// dem Browser-Schnappschuss (true) neu und hängt den Knopf ein. Kein Abonnement nötig, der Wert ändert sich nie mehr.
+const keinAbo = () => () => {};
+const imBrowser = () => true;
+const aufDemServer = () => false;
+
 export default function WhatsAppKanal() {
+  const eingehaengt = useSyncExternalStore(keinAbo, imBrowser, aufDemServer);
+  return eingehaengt ? <KanalKnopf /> : null;
+}
+
+function KanalKnopf() {
   const pathname = usePathname() || '';
   const { triggerWhatsAppAction, contextMessage } = useWhatsAppKanal(pathname);
   const knopfRef = useRef<HTMLAnchorElement>(null);

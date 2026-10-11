@@ -100,6 +100,59 @@
   :root { --k-rand: var(--spacing-k-7); --k-leiste-hoehe: 0px; --k-leiste-sicher: 0px; }
 }
 
+/* Einwilligungsbanner (P4-13, E-033 Weg C): belegter Raum unten als feste Werte je Breite, nicht gemessen.
+   Das Kopfskript setzt html[data-k-banner="offen"] vor dem ersten Bild, solange keine Entscheidung gespeichert ist;
+   der Banner wechselt nach einem Klick auf "einstellungen" bzw. zurück und entfernt das Attribut nach der Wahl.
+   Ohne JavaScript fehlt das Attribut: kein Banner, kein Platz.
+   --k-banner-hoehe           Höchsthöhe der ersten Ansicht (max-height des Banners) und ihr Platz. Wert je Stufe = Höhe des
+                              Inhalts an der ungünstigsten Breite der Stufe (Archivo/Plex, gemessen P4-13), höchstens die
+                              halbe Bildschirmhöhe wie bisher: < 360 px bis 396 px (Feldkopf zweizeilig) · 360–767 px
+                              bis 340 · 768–1023 px (Feld links unten) bis 365 · Leiste 1024–1279 px bis 182 · ab 1280 px 143.
+   --k-banner-einstellungen   Höchsthöhe der Einstellungen (wie bisher drei Viertel der Bildschirmhöhe).
+   --k-banner-abstand         Abstand des Banners über der unteren Leiste (md: --k-rand).
+   --k-banner-unten           belegter Raum vom unteren Rand = Leiste + Abstand + Banner: scroll-padding und Platz am Ende.
+   Bildschirmhöhe als svh (statisch): Ein- und Ausblenden der Adressleiste ändert weder Banner noch Platz, also keine
+   Stilneuberechnung am <html> beim Rollen. */
+:root {
+  --k-banner-hoehe: min(25rem, 50svh);
+  --k-banner-einstellungen: 75svh;
+  --k-banner-abstand: 0px;
+}
+@media (min-width: 360px) {
+  :root { --k-banner-hoehe: min(21.25rem, 50svh); }
+}
+@media (min-width: 768px) {
+  :root { --k-banner-hoehe: min(23rem, 50svh); --k-banner-abstand: var(--k-rand); }
+}
+@media (min-width: 1024px) {
+  :root { --k-banner-hoehe: min(12rem, 50svh); --k-banner-abstand: 0px; }
+}
+@media (min-width: 1280px) {
+  :root { --k-banner-hoehe: min(9.5rem, 50svh); }
+}
+html[data-k-banner] {
+  --k-banner-unten: calc(var(--k-leiste-platz) + var(--k-banner-abstand) + var(--k-banner-hoehe));
+  scroll-padding-bottom: var(--k-banner-unten);
+  padding-bottom: var(--k-banner-unten);
+}
+html[data-k-banner="einstellungen"] {
+  --k-banner-unten: calc(var(--k-leiste-platz) + var(--k-banner-abstand) + var(--k-banner-einstellungen));
+}
+/* Leiste ab lg: Text links über beide Zeilen, rechts Feldkopf und Knöpfe (Spalte so breit wie die Knopfreihe).
+   Inhalt auf der Flucht des Kopfs (--k-seite, --k-rand); links bleibt --spacing-k-4 Innenabstand des Textfelds,
+   damit der Fokusring der Links nicht am Rand des Rollbereichs abgeschnitten wird. */
+@layer components {
+  @media (min-width: 64rem) {
+    .k-banner-leiste {
+      --k-banner-flucht: max(var(--k-rand), calc((100% - var(--k-seite)) / 2 + var(--k-rand)));
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-rows: auto minmax(0, 1fr);
+      padding-left: calc(var(--k-banner-flucht) - var(--spacing-k-4));
+      padding-right: var(--k-banner-flucht);
+    }
+  }
+}
+
 /* --------------------------------------------------------------------------
    Satzbausteine (K-005)
    -------------------------------------------------------------------------- */

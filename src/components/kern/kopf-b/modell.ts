@@ -52,6 +52,8 @@ export const TEXT = {
   mobilAnfrage: 'Kostenfreies Vor-Ort-Aufmaß anfragen',
   anrufen: 'Anrufen',
   whatsapp: 'WhatsApp',
+  /** WhatsApp-Link im Desktop-Kopf (ab lg, P4-13): Name wörtlich wie derselbe Link im Bestandskopf (Header.jsx). */
+  whatsappKopf: 'WhatsApp-Chat starten',
   impressum: 'Impressum',
   datenschutz: 'Datenschutz',
 } as const;
