@@ -87,7 +87,9 @@ export default function BadPage() {
                     }
                     rand={
                         <div className="border border-fuge bg-fliese p-6 lg:p-8">
-                            <Verlegeplan plan="bad" ohneAchse bemassung={false} />
+                            {/* Großer Moment (E3-ORCH-01): der Plan rückt das Fugenbild in die Flucht – am Desktop beim
+                                Zeigen, mobil beim Eintritt (Register sig-plan); ohne Bewegung steht er fertig */}
+                            <Verlegeplan plan="bad" ohneAchse bemassung={false} interaktiv />
                         </div>
                     }
                 />

@@ -31,7 +31,8 @@ export default function SzeneAblauf({ schritte, plan = 'bad', titelEbene = 'h3',
       {schritte.slice(0, 3).map((s, i) => (
         <li key={i} className="flex flex-col bg-fliese p-6 lg:p-8">
           <div className="szene-plan border border-fuge bg-fliese p-4">
-            <Verlegeplan plan={plan} zustand={ZUSTAENDE[i]} bemassung={i === 0} />
+            {/* ohne Laserachse: das eine Rot je Bildschirm trägt die Leitachse bzw. der Einstieg (E3-ORCH-01) */}
+            <Verlegeplan plan={plan} zustand={ZUSTAENDE[i]} bemassung={i === 0} ohneAchse />
           </div>
           <div className="mt-6 font-mono text-fs-1 text-tinte">{s.nummer}</div>
           {untertitelOben && s.untertitel && <div className="mt-2 font-mono text-fs-2 text-tinte-2">{s.untertitel}</div>}
