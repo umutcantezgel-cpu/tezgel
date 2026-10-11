@@ -1,19 +1,9 @@
-"use client";
-
-import React from 'react';
-import Link from 'next/link';
-import {
-  Droplets,
-  Sparkles,
-  Sun,
-  ShieldCheck,
-  Check,
-  ArrowRight,
-  Award,
-  Phone,
-  MessageSquare,
-  ChevronRight
-} from 'lucide-react';
+// Leistungen (E3-BAU-02, KERN v2): Erzählansicht nach dem Muster der Startseite. Einstieg mit Laserachse, H1 links,
+// Vorspann und Knöpfe, rechts ein gezeichneter Verlegeplan ohne Achse. Danach die Leitachse über die Abschnitte:
+// Fachgewerke als Feldraster (je Leistung eine Plan-Vignette, Name, Text, Merkmale, zwei Wege), Ablauf als
+// Schrittfolge, Projekt mit Rechner, Express-Anfrage mit Funnel. Wortlaut, Überschriften, Links und IDs wie im Bestand
+// (#gewerke, #express-anfrage, Leistungs-IDs). Kein Auftritt und kein großer Moment (setzt der Orchestrator).
+import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
@@ -21,6 +11,17 @@ import JsonLd from '@/components/seo/JsonLd';
 import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen } from '@/components/kern/stile';
+import { VIGNETTEN, istVignette } from '@/components/start/vignetten';
 
 const pageUrl = `${SITE_URL}/leistungen`;
 const breadcrumbs = [
@@ -58,208 +59,166 @@ const leistungenSchema = buildGraph([
   },
 ]);
 
+// Schritte des Ablaufs aus dem Bestand (processSteps): Nummer, Untertitel, Titel, Text
+const schritte = processSteps.map((schritt) => ({
+  nummer: schritt.step,
+  untertitel: schritt.subtitle,
+  titel: schritt.title,
+  text: schritt.description,
+}));
+
 export default function ServiceHubPage() {
   return (
-    <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
+    <>
       <JsonLd schema={leistungenSchema} />
 
-      {/* Ambient Lighting Orbs */}
-      <div className="ambient-glow-orange -top-24 -left-24 opacity-70" />
-      <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-      <div className="ambient-glow-slate top-[1200px] left-1/3 opacity-40" />
-
-      {/* Hero Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
-
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <span className="eyebrow">
-              <Award className="w-3.5 h-3.5" />
-              {COMPANY_DATA.authority.shortName} Fachbetrieb
-            </span>
-            <span className="eyebrow eyebrow-red">
-              Aßlar &middot; Wetzlar &middot; Mittelhessen
-            </span>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-tight">
-            Fliesenleger Leistungen &amp;{' '}
-            <span className="text-ceramic-gradient">Fachgewerke Wetzlar</span>
-          </h1>
-
-          <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen bieten wir hochwertige Handwerksleistungen: Unsere Fachgewerke umfassen fugenarme XXL-Großformate im Badezimmer, repräsentatives Feinsteinzeug im Neubau sowie witterungsbeständige Außenbeläge auf Stelzlagern – mit millimetergenauer Präzision, normgerechter Verbundabdichtung nach DIN 18534 und konsequentem Staubschutz.
+      {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts der Verlegeplan Großformat ohne Achse */}
+      <Einstieg
+        art="erzaehl"
+        etikett={
+          <>
+            <span>{COMPANY_DATA.authority.shortName} Fachbetrieb</span>
+            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+            <span>Aßlar &middot; Wetzlar &middot; Mittelhessen</span>
+          </>
+        }
+        titel="Fliesenleger Leistungen & Fachgewerke Wetzlar"
+        vorspann={
+          <p>
+            Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen bieten wir hochwertige
+            Handwerksleistungen: Unsere Fachgewerke umfassen fugenarme XXL-Großformate im Badezimmer, repräsentatives
+            Feinsteinzeug im Neubau sowie witterungsbeständige Außenbeläge auf Stelzlagern – mit millimetergenauer
+            Präzision, normgerechter Verbundabdichtung nach DIN 18534 und konsequentem Staubschutz.
           </p>
-
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-            <a href="#express-anfrage" className="btn-primary">
-              <span>Vor-Ort-Aufmaß vereinbaren</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <a
+        }
+        aktionen={
+          <>
+            <Knopf href="#express-anfrage" icon="pfeil-rechts">
+              Vor-Ort-Aufmaß vereinbaren
+            </Knopf>
+            <Knopf
               href={COMPANY_DATA.contact.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-button-whatsapp text-sm"
+              extern
+              variante="neben"
+              vorne={<WhatsAppLogo className="size-5 shrink-0" />}
             >
-              <MessageSquare className="w-4 h-4 fill-current" />
-              <span>WhatsApp Schnellkontakt</span>
-            </a>
-            <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost">
-              <Phone className="w-4 h-4 text-orange-700" />
-              <span>{COMPANY_DATA.contact.phone}</span>
-            </a>
+              WhatsApp Schnellkontakt
+            </Knopf>
+            <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+              <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+            </Knopf>
+          </>
+        }
+        rand={
+          <div className="border border-fuge bg-fliese p-6 lg:p-8">
+            <Verlegeplan plan="grossformat" ohneAchse bemassung={false} />
           </div>
+        }
+      />
 
-        </div>
-      </div>
+      <Leitachse>
+        {/* 2. FACHGEWERKE als Feldraster: je Leistung eine Plan-Vignette, Name, Text, Merkmale und zwei Wege */}
+        <Abschnitt id="gewerke" art="erzaehl" leitachse>
+          <Feldraster spalten={2} als="div">
+            {SERVICES.map((srv) => {
+              const Vignette = istVignette(srv.id) ? VIGNETTEN[srv.id] : null;
+              return (
+                <div key={srv.id} id={srv.id} className="flex">
+                  <Feld als="article" className="flex-1">
+                    {Vignette && (
+                      <div className="border border-fuge bg-kalk p-6 text-tinte">
+                        <Vignette />
+                      </div>
+                    )}
 
-      {/* Grid der 4 Fachgewerke */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10" id="gewerke">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {SERVICES.map((srv) => (
-            <article
-              key={srv.id}
-              id={srv.id}
-              className="scroll-mt-28 glass-surface rounded-2xl p-8 sm:p-10 hover:border-orange-500/80 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-6">
-                  <div className="icon-chip w-14 h-14">
-                    {srv.id === 'bad' && <Droplets className="w-7 h-7" />}
-                    {srv.id === 'wohnen' && <Sparkles className="w-7 h-7" />}
-                    {srv.id === 'aussen' && <Sun className="w-7 h-7" />}
-                    {srv.id === 'untergrund' && <ShieldCheck className="w-7 h-7" />}
-                  </div>
-                  <span className="eyebrow eyebrow-neutral">
-                    Geprüfte Fachkompetenz
-                  </span>
+                    <p className={clsx(etikettKlassen, 'mt-6')}>Geprüfte Fachkompetenz</p>
+                    <h2 className="mt-3 text-fs-5 text-tinte">{srv.name}</h2>
+                    <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">{srv.detailText}</p>
+
+                    <ul className="mt-6 grid gap-2">
+                      {srv.subcategories.map((sub) => (
+                        <li key={sub.id} className="flex items-center gap-3 font-mono text-fs-1 text-tinte-2">
+                          <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                          {sub.name}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <p className={clsx(etikettKlassen, 'mt-8')}>Ausstattungsmerkmale &amp; Vorteile:</p>
+                    <ul className="mb-8 mt-3 grid gap-3">
+                      {srv.features.map((merkmal) => (
+                        <li key={merkmal} className="flex gap-3 font-text text-fs-2 text-tinte">
+                          <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                            <Fugenkreuz className="size-3" />
+                          </span>
+                          <span className="min-w-0">{merkmal}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-auto flex flex-col gap-3 border-t border-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
+                      <Knopf href={`/leistungen/${srv.id}`} variante="text" icon="pfeil-rechts">
+                        Fachdetails &amp; Ratgeber: {srv.name}
+                      </Knopf>
+                      <Knopf href="#express-anfrage" variante="neben" className="w-full sm:w-auto">
+                        Aufmaß anfragen
+                      </Knopf>
+                    </div>
+                  </Feld>
                 </div>
+              );
+            })}
+          </Feldraster>
+        </Abschnitt>
 
-                <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mb-3 group-hover:text-orange-800 transition-colors">
-                  {srv.name}
-                </h2>
+        {/* 3. ABLAUF als Schrittfolge: Nummer, Untertitel, Titel und Text je Schritt, waagrecht ab lg */}
+        <Abschnitt
+          art="erzaehl"
+          titelId="ablauf-heading"
+          leitachse
+          etikett="Ausführungs-Standards"
+          titel="Ihr verlässlicher Weg zum neuen Traumbelag"
+        >
+          <Schrittfolge ausrichtung="waagrecht" untertitelOben schritte={schritte} />
+        </Abschnitt>
 
-                <p className="text-sm text-neutral-700 mb-6 leading-relaxed">
-                  {srv.detailText}
-                </p>
+        {/* 4. PROJEKT: Vorhaben und Ausgangslage schildern, danach der Rechner */}
+        <Abschnitt
+          art="erzaehl"
+          titelId="projekt-heading"
+          leitachse
+          etikett="Projekt & Ausgangslage"
+          titel="Projekt anfragen & Situation schildern"
+          einleitung={
+            <p>
+              Geben Sie uns einen ersten Einblick in Ihr Vorhaben vor Ort für eine fundierte Einschätzung durch
+              Fachbetriebsleiter Deniz Tezgel.
+            </p>
+          }
+        >
+          <PricingCalculator />
+        </Abschnitt>
 
-                {/* Subcategories Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {srv.subcategories.map((sub) => (
-                    <span
-                      key={sub.id}
-                      className="text-[11px] font-bold px-3 py-1 rounded-xl bg-neutral-50 text-neutral-700 border border-neutral-200"
-                    >
-                      {sub.name}
-                    </span>
-                  ))}
-                </div>
+        {/* 5. EXPRESS-ANFRAGE: Kopf links, Assistent rechts; Anker #express-anfrage */}
+        <Abschnitt
+          id="express-anfrage"
+          art="erzaehl"
+          titelId="anfrage-heading"
+          flaeche="fliese"
+          kopf="seitlich"
+          leitachse
+          etikett="Online-Bedarfsabfrage"
+          titel="Fordern Sie Ihr persönliches Angebot an"
+          einleitung={
+            <p>Wählen Sie Ihr Vorhaben in Aßlar, Wetzlar oder Hessen für ein kostenfreies Vor-Ort-Aufmaß.</p>
+          }
+        >
+          <TezgelAnfrageFunnel />
+        </Abschnitt>
+      </Leitachse>
 
-                {/* Feature Bullet Points */}
-                <div className="space-y-2 mb-8">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-neutral-600 block mb-2">
-                    Ausstattungsmerkmale &amp; Vorteile:
-                  </span>
-                  <ul className="space-y-2">
-                    {srv.features.map((feat, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-neutral-700">
-                        <Check className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-5 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <Link
-                  href={`/leistungen/${srv.id}`}
-                  className="w-full sm:w-auto text-sm font-bold text-orange-800 hover:text-orange-700 flex items-center gap-1.5 transition-colors"
-                >
-                  <span>Fachdetails &amp; Ratgeber: {srv.name}</span>
-                  <ChevronRight className="w-4 h-4 shrink-0" />
-                </Link>
-                <a
-                  href="#express-anfrage"
-                  className="btn-ghost w-full sm:w-auto px-5 py-2.5 text-xs"
-                >
-                  Aufmaß anfragen
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-
-      {/* 3-Schritte Ablauf */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="eyebrow eyebrow-red mb-4">
-            Ausführungs-Standards
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Ihr verlässlicher Weg zum neuen Traumbelag
-          </h2>
-        </div>
-
-        <ol className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {processSteps.map((step) => (
-            <li
-              key={step.step}
-              className="group glass-surface rounded-2xl p-7 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
-            >
-              <span className="font-display text-3xl font-black text-orange-700 tabular-nums block mb-3" aria-hidden="true">
-                {step.step}
-              </span>
-              <span className="text-[11px] font-black uppercase tracking-widest text-orange-800 block mb-1">
-                {step.subtitle}
-              </span>
-              <h3 className="text-lg font-black text-neutral-900 mb-2">
-                {step.title}
-              </h3>
-              <p className="text-sm text-neutral-700 leading-relaxed">
-                {step.description}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      {/* Umfassendes Projektanfrage-Formular */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="eyebrow mb-3">Projekt &amp; Ausgangslage</span>
-          <h2 className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
-            Projekt anfragen &amp; Situation schildern
-          </h2>
-          <p className="text-sm sm:text-base text-neutral-700 mt-2">
-            Geben Sie uns einen ersten Einblick in Ihr Vorhaben vor Ort für eine fundierte Einschätzung durch Fachbetriebsleiter Deniz Tezgel.
-          </p>
-        </div>
-        <PricingCalculator />
-      </div>
-
-      {/* Express-Anfrage Funnel */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10 scroll-mt-28" id="express-anfrage">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="eyebrow mb-4">
-            Online-Bedarfsabfrage
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
-            Fordern Sie Ihr persönliches Angebot an
-          </h2>
-          <p className="text-sm sm:text-base text-neutral-700 mt-3">
-            Wählen Sie Ihr Vorhaben in Aßlar, Wetzlar oder Hessen für ein kostenfreies Vor-Ort-Aufmaß.
-          </p>
-        </div>
-
-        <TezgelAnfrageFunnel />
-      </div>
-
-      {/* Final Conversion CTA */}
+      {/* 6. ABSCHLUSS */}
       <FinalCTA />
-
-    </div>
+    </>
   );
 }
