@@ -1,13 +1,16 @@
 "use client";
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, Calendar, ArrowRight, Clock } from 'lucide-react';
 import { useBlogListe } from '@/lib/formulare/useBlogListe';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSidebar from '@/components/blog/BlogSidebar';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen, feldKlassen, wahlKlassen } from '@/components/kern/stile';
 
-// Filter-Insel der Ratgeber-Liste /blog: der einzige Client-Teil der Seite. Hook und das davon abhängige Markup
-// (Suche und Kategorien, Hervorhebung, Liste, Leerzustand, Seitenleiste) liegen hier; die Seite selbst ist Server-Komponente.
+// Filter-Insel der Ratgeber-Liste /blog: Hook und das davon abhängige Markup (Suche und Kategorien mobil, Hervorhebung,
+// Liste, Leerzustand, Seitenleiste). Reihenfolge und Texte wie im Bestand; Zeilen an der Fuge statt Karten.
 export default function BlogFilter() {
   const {
     activeCategory,
@@ -24,150 +27,127 @@ export default function BlogFilter() {
   } = useBlogListe();
 
   return (
-        <div className="flex flex-col lg:flex-row gap-10">
+    <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+      <div className="col-span-4 min-w-0 md:col-span-8 lg:col-span-8">
 
-          {/* MAIN CONTENT */}
-          <div className="flex-1">
+        {/* Suche und Kategorien (mobil und Tablett) */}
+        <div className="mb-8 flex flex-col gap-4 border-b border-fuge pb-6 lg:hidden">
+          <input
+            type="text"
+            aria-label="Ratgeber durchsuchen"
+            placeholder="Ratgeber durchsuchen..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className={feldKlassen}
+          />
 
-            {/* Search and Category Filter (Mobile & Tablet) */}
-            <div className="lg:hidden mb-8 space-y-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  aria-label="Ratgeber durchsuchen"
-                  placeholder="Ratgeber durchsuchen..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3.5 rounded-tile-md border border-slate-300 bg-white shadow-sm text-sm font-semibold text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600"
-                />
-                <Search className="absolute left-3.5 top-4 w-4 h-4 text-slate-600" aria-hidden="true" />
-              </div>
-
-              {visibleCategories.length > 0 && (
-                <div className="overflow-x-auto pb-2 flex gap-2 scrollbar-hide">
-                  <button
-                    type="button"
-                    onClick={() => setActiveCategory('all')}
-                    aria-pressed={activeCategory === 'all'}
-                    className={`px-4 py-2 rounded-tile-pill whitespace-nowrap text-xs font-black transition-all ${
-                      activeCategory === 'all'
-                        ? 'bg-orange-600 text-white shadow-md'
-                        : 'bg-white text-slate-700 border border-slate-300 hover:border-orange-500/80'
-                    }`}
-                  >
-                    Alle Themen
-                  </button>
-                  {visibleCategories.map(category => (
-                    <button
-                      type="button"
-                      key={category.id}
-                      onClick={() => setActiveCategory(category.id)}
-                      aria-pressed={activeCategory === category.id}
-                      className={`px-4 py-2 rounded-tile-pill whitespace-nowrap text-xs font-black transition-all ${
-                        activeCategory === category.id
-                          ? 'bg-orange-600 text-white shadow-md'
-                          : 'bg-white text-slate-700 border border-slate-300 hover:border-orange-500/80'
-                      }`}
-                    >
-                      {category.name}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Featured Post Hero Card - Double Bezel */}
-            {showFeatured && (
-              <div className="mb-10">
-                <div className="glass-bezel-outer">
-                  <Link
-                    href={`/blog/${featuredPost.slug}`}
-                    className="glass-bezel-inner p-6 sm:p-8 block group"
-                  >
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                      <div className="relative h-60 sm:h-72 rounded-tile-md overflow-hidden shadow-md">
-                        <Image
-                          src={featuredPost.image}
-                          alt={featuredPost.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-700"
-                          priority
-                        />
-                        <span className="absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10">
-                          Empfohlener Leitfaden
-                        </span>
-                      </div>
-
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3 text-xs text-slate-600 font-bold">
-                          {featuredPost.date && (
-                            <span className="flex items-center gap-1.5 bg-orange-50 border border-orange-200 text-orange-800 px-3 py-1 rounded-tile-pill">
-                              <Calendar className="w-3.5 h-3.5" />
-                              {featuredPost.date}
-                            </span>
-                          )}
-                          <span className="flex items-center gap-1.5">
-                            <Clock className="w-3.5 h-3.5 text-orange-600" />
-                            {getReadTime(featuredPost)} Lesezeit
-                          </span>
-                        </div>
-
-                        <h2 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-orange-700 transition-colors leading-tight">
-                          {featuredPost.title}
-                        </h2>
-
-                        <p className="text-sm text-slate-700 line-clamp-3 leading-relaxed">
-                          {featuredPost.excerpt}
-                        </p>
-
-                        <div className="inline-flex items-center gap-1.5 text-orange-700 font-black text-xs group-hover:text-orange-600 transition-colors pt-2">
-                          Vollständigen Leitfaden lesen
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            )}
-
-            {/* Post Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {gridPosts
-                .map((post) => (
-                  <div key={post.id}>
-                    <BlogCard post={post} />
-                  </div>
-                ))}
-            </div>
-
-            {/* Empty State */}
-            {filteredPosts.length === 0 && (
-              <div className="glass-surface p-12 rounded-tile-xl text-center space-y-4">
-                <Search className="w-10 h-10 text-orange-600 mx-auto" aria-hidden="true" />
-                <p className="text-slate-700 font-bold text-sm">Keine Artikel zur Suchanfrage gefunden.</p>
+          {visibleCategories.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => setActiveCategory('all')}
+                aria-pressed={activeCategory === 'all'}
+                className={wahlKlassen}
+              >
+                {activeCategory === 'all' && <Fugenkreuz className="size-3 shrink-0" />}
+                Alle Themen
+              </button>
+              {visibleCategories.map(category => (
                 <button
                   type="button"
-                  onClick={resetFilters}
-                  className="btn-primary px-6 py-2.5 text-xs"
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  aria-pressed={activeCategory === category.id}
+                  className={wahlKlassen}
                 >
-                  Filter zurücksetzen
+                  {activeCategory === category.id && <Fugenkreuz className="size-3 shrink-0" />}
+                  {category.name}
                 </button>
-              </div>
-            )}
-          </div>
-
-          {/* SIDEBAR (Desktop) */}
-          <div className="hidden lg:block w-80 shrink-0">
-            <BlogSidebar
-              activeCategory={activeCategory}
-              setActiveCategory={setActiveCategory}
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-            />
-          </div>
-
+              ))}
+            </div>
+          )}
         </div>
+
+        {/* Hervorgehobener Beitrag (nur ohne Filter) */}
+        {showFeatured && (
+          <div className="mb-12">
+            <Link
+              href={`/blog/${featuredPost.slug}`}
+              data-motion="zustand"
+              className="group grid border border-fuge bg-fliese transition-colors dauer-1 ease-setzen hover:border-strich md:grid-cols-2"
+            >
+              <div className="relative h-32 border-b border-fuge md:h-auto md:border-b-0 md:border-r">
+                <Image
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              <div className="flex min-w-0 flex-col gap-4 p-6 sm:p-8">
+                <p className={etikettKlassen}>
+                  <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                  Empfohlener Leitfaden
+                </p>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-fs-1 text-tinte-2">
+                  {featuredPost.date && <span>{featuredPost.date}</span>}
+                  <span className="flex items-center gap-2">
+                    <Icon name="uhr" groesse={4} />
+                    {getReadTime(featuredPost)} Lesezeit
+                  </span>
+                </div>
+                <h2 className="text-fs-4 text-tinte group-hover:underline underline-offset-4">
+                  {featuredPost.title}
+                </h2>
+                <p className="font-text text-fs-3 text-tinte-2 line-clamp-3">
+                  {featuredPost.excerpt}
+                </p>
+                <span className="mt-4 flex items-center gap-2 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
+                  Vollständigen Leitfaden lesen
+                  <Icon name="pfeil-rechts" groesse={5} />
+                </span>
+              </div>
+            </Link>
+          </div>
+        )}
+
+        {/* Beiträge als Zeilen an der Fuge */}
+        {gridPosts.length > 0 && (
+          <ul className="border-t border-fuge">
+            {gridPosts.map((post) => (
+              <li key={post.id}>
+                <BlogCard post={post} />
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Leerzustand */}
+        {filteredPosts.length === 0 && (
+          <div className="flex flex-col items-start gap-4 border border-fuge bg-fliese p-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-start gap-3">
+              <Icon name="suche" groesse={6} />
+              <p className="font-text text-fs-3 font-semibold text-tinte">Keine Artikel zur Suchanfrage gefunden.</p>
+            </div>
+            <Knopf type="button" onClick={resetFilters}>
+              Filter zurücksetzen
+            </Knopf>
+          </div>
+        )}
+      </div>
+
+      {/* Seitenleiste (ab lg) */}
+      <div className="hidden lg:col-span-4 lg:block">
+        <BlogSidebar
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
+      </div>
+    </div>
   );
 }
