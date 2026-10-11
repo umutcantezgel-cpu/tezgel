@@ -31,7 +31,9 @@ export default function Einstieg({ formular }: { formular?: ReactNode }) {
   const titelId = `einstieg-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`;
   const einzug = wandEinzug(PLAN);
   const wand = { '--wand': `${(einzug * 100).toFixed(3)}%` } as CSSProperties;
-  const wandAussen = { '--wand-aussen': `${((einzug / (1 - 2 * einzug)) * 100).toFixed(3)}%` } as CSSProperties;
+  // unter lg: Plan ohne Bemaßung (schmaler Rand), damit die Zeichnung beim Herausrücken nicht über den Bildschirm ragt
+  const einzugMobil = wandEinzug(PLAN, false);
+  const wandAussen = { '--wand-aussen': `${((einzugMobil / (1 - 2 * einzugMobil)) * 100).toFixed(3)}%` } as CSSProperties;
 
   return (
     <section aria-labelledby={titelId} className="relative border-b border-fuge pt-24 pb-16 lg:pb-24">
@@ -114,7 +116,7 @@ export default function Einstieg({ formular }: { formular?: ReactNode }) {
           <div className="mt-12 md:w-3/4 lg:col-span-6 lg:col-start-7 lg:row-start-2 lg:mt-6 lg:w-auto lg:self-end">
             {/* unter lg auf Spaltenbreite, die Wand fluchtet mit der Textkante */}
             <div className="plan-buendig lg:hidden" style={wandAussen}>
-              <Verlegeplan plan={PLAN} ohneAchse />
+              <Verlegeplan plan={PLAN} ohneAchse bemassung={false} />
             </div>
             {/* das Lot des Plans wächst mit der Waage aus dem Kreuzpunkt an der Schnittkante */}
             <div data-motion="sig-kreuzlinie" className="hidden lg:block">

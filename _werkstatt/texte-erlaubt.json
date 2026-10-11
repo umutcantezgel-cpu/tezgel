@@ -768,5 +768,11 @@
   "block": "main",
   "entfernt": "Schnelle Reaktionszeit • Persönliche Betreuung vor Ort • HWK-Fachbetrieb",
   "vermerk": "E-020 Abschluss-Baustein (FinalCTA, alle Seiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-07"
+ },
+ {
+  "seite": "/standorte",
+  "block": "main",
+  "entfernt": "5 km",
+  "vermerk": "E-020 Fusion: Entfernungen ab Aßlar aus CITY_HUB_DATA (main); Aßlar ist der Firmensitz und steht als „Firmensitz“ statt „5 km“ in der Ortsliste der Karte (behebt M-17) – TEXTVORSCHLAEGE; festgestellt in E3-PRUEF-A-1"
  }
 ]
