@@ -4,7 +4,7 @@
 - `src/components/funnels/BadProjektCheck/`: `index.jsx`, `Schritt1.jsx` bis `Schritt4.jsx`, `Zusammenfassung.jsx`
 - `_werkstatt/pakete/E3-BAU-19.rueckgabe.md`
 
-Kein Commit, Push, Build oder Serverstart von mir. Git-Stand: Die Zwischenstände `ad1a5f0` bis `8175222` (Orchestrator) enthalten diese Dateien; der Arbeitsbaum entspricht HEAD. Vergleichsbasis ist `23810e4`.
+Kein Commit, Push, Build oder Serverstart von mir. Git-Stand: Die Werkstatt-Zwischenstände `ad1a5f0` bis `8175222` (nicht von mir) enthalten diese Dateien; der Arbeitsbaum entspricht HEAD. Vergleichsbasis ist `23810e4`.
 
 ## WAS UND WARUM
 - **Kopf (index):** Etikett mit `Fugenkreuz`, Festpreis-Etikett `max-sm:hidden`, H2 `font-anzeige fs-5`, Rahmen `border-strich bg-fliese p-6 sm:p-8 lg:p-12`, Raster ab `lg` 7/5. Entfallen: `max-w-4xl`, Glas- und Keramikklassen.
@@ -40,7 +40,7 @@ Kein Commit, Push, Build oder Serverstart von mir. Git-Stand: Die Zwischenständ
 
 ## OFFENE FRAGEN
 1. Zwei KERN-Fassungen des Projektchecks: diese Umstellung (stile.ts, Knopf, Hinweis) und `kern/formulare/c/ProjektCheckAnsicht.tsx` (basis, k-Tokens). Welche gilt?
-2. Der Startwert 8,2 m² liegt nicht im Reglerraster (3,5 + n·0,5). Der Regler rastet auf 8,0 bzw. 8,5, die Anzeige zeigt 8,2 m² (I-18, Hook gesperrt).
+2. Der Startwert 8,2 m² liegt nicht im Reglerraster (3,5 + n·0,5). Der Regler rastet auf die nächste Stufe ein, die Anzeige nennt 8,2 m² (I-18, Hook gesperrt).
 3. Pflichtmarke: `required` ist gesetzt, der Stern `aria-hidden`. Ein sr-only-„Pflichtfeld“ würde die exakten Namen ändern. Bestätigen?
 4. `Hinweis` ergänzt ohne Titel ein sr-only-Präfix („Hinweis:“, „Fehler:“, „Erledigt:“), wie in E3-BAU-17/18. Im Textvergleich als „hinzu“ (2× „Hinweis:“). Freigabe?
 5. Lesebreite: Der Rahmen nimmt die Containerbreite (`max-w-7xl`) ein. Max-Breite in den Seiten setzen?
