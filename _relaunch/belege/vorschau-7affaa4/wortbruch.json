@@ -1,0 +1,1430 @@
+{
+ "base": "http://127.0.0.1:4320",
+ "seiten": [
+  "/p4-01",
+  "/p4-02",
+  "/p4-03",
+  "/p4-04",
+  "/p4-05a",
+  "/p4-05b",
+  "/p4-05c"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": [
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "grossformat",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Fachzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Kurzbeschreibung",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Großformate",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "durchgängige",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Fugenachsen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "grossformat",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Bedeutungen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Wandnischen,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Staubschutz",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "„Wohnbereiche",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "grossformat",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Fachzeichen)",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Bedeutungen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Wandnischen,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Staubschutz",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "„Wohnbereiche",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "grossformat",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Fachzeichen)",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(iconMapper",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ShieldCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "LayoutGrid",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Newspaper",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ArrowRight",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "CheckCircle2",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "MessageCircle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "sprechblase",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ShieldCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Bedeutungen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Wandnischen,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Staubschutz",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "„Wohnbereiche",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "grossformat",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Fachzeichen)",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "grossformat",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "AlertCircle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ArrowLeft",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Footprints",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "LayoutGrid",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Kundenstimme",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "typografischen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Anführungszeichen,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "CalendarCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ChevronDown",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Ladeanzeige",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "HelpCircle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Ersatzzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Beschriftung",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "TriangleAlert",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "AlertTriangle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "CircleCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ClipboardCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ClipboardList",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Maximize2",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "grossformat",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Navigation",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Snowflake",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ExternalLink",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "BadgePercent",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Building2",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "MessageSquare",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "sprechblase",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Thermometer",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Calculator",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Zierzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Bedeutung)",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Zierzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ScanSearch",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ShowerHead",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "SquareStack",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Schichtaufbau",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Entkopplung,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Accessibility",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ArrowDownRight",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(iconMapper",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ChevronRight",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ChevronUp",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "CloudRain",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Zierzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Bedeutung)",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "FacebookLogo",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Markenlogo:",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "unverändert,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "FlaskConical",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "GraduationCap",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "HeartHandshake",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "LinkedinLogo",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Markenlogo:",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "unverändert,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "PaintRoller",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Zierzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "TwitterLogo",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Markenlogo:",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "unverändert,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Feldsymbol;",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Beschriftung",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "UserCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ArrowUpRight",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Briefcase",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "CalendarClock",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "CheckCircle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ChevronLeft",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "CircleDot",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Zierzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Bedeutung)",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "FileCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Fingerprint",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "FolderOpen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Zierzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Lightbulb",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ListChecks",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Microscope",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "MoveHorizontal",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Newspaper",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "PhoneCall",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "RotateCcw",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "(Zierzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Bedeutung)",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "Settings2",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "SplitSquareHorizontal",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "SquareSplitVertical",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 320,
+   "wort": "ThermometerSun",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "Kurzbeschreibung",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "„Wohnbereiche",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "„Wohnbereiche",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ShieldCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "CheckCircle2",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "MessageCircle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ShieldCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "„Wohnbereiche",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "AlertCircle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "(Kundenstimme",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "typografischen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "Anführungszeichen,",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "CalendarCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ChevronDown",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "(Ersatzzeichen",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.text-k-tinte-2.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "TriangleAlert",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "AlertTriangle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "CircleCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ClipboardCheck",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ClipboardList",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ExternalLink",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "BadgePercent",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "MessageSquare",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "Thermometer",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "tr > td.min-w-0.border > div.flex.flex-wrap > div.k-mono.text-k-1",
+   "groesse": "13.015px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "SquareStack",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "Accessibility",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ArrowDownRight",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ChevronRight",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "FacebookLogo",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "FlaskConical",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "GraduationCap",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "HeartHandshake",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "LinkedinLogo",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "PaintRoller",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "TwitterLogo",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ArrowUpRight",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "CalendarClock",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "CheckCircle",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ChevronLeft",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "Fingerprint",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "MoveHorizontal",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "SplitSquareHorizontal",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "SquareSplitVertical",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 375,
+   "wort": "ThermometerSun",
+   "art": "text",
+   "element": "table.mt-k-4.w-full > tbody > tr > td.k-mono.min-w-0",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 768,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15.552px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 768,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15.552px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 1024,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-04",
+   "breite": 1024,
+   "wort": "fussbodenheizung",
+   "art": "text",
+   "element": "section.mt-k-7 > div.mt-k-4.grid > div.flex.min-w-0 > div.k-mono.text-k-2",
+   "groesse": "15.936px"
+  }
+ ]
+}
