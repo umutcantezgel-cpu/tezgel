@@ -9,7 +9,9 @@ import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPa
 import { findCityConfig, getCityLandingPageSchema } from '@/lib/schemaPyramid';
 import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
-import { MapPin, Phone, ArrowRight, ShieldCheck, Sparkles, Award, Droplets, Sun } from 'lucide-react';
+import KernIcon from '@/components/icons/Icon';
+import { Droplets, Sparkles, Sun, ShieldCheck, MapPin, Award } from '@/components/icons/ersatz';
+type LucideIcon = import('react').ComponentType<{ className?: string; 'aria-label'?: string }>;
 import QualityPromise from '@/components/sections/QualityPromise';
 import RouteVisualization from '@/components/locations/RouteVisualization';
 import LocationContact from '@/components/locations/LocationContact';
@@ -144,37 +146,35 @@ export default async function StandortPage({
       <JsonLd schema={cityGraph} />
 
       {/* Ambient Glow */}
-      <div className="ambient-glow-orange -top-20 -left-20" />
-      <div className="ambient-glow-red top-96 -right-20" />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
-          <span className="eyebrow">
-            <MapPin className="w-3.5 h-3.5" />
+      <div className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
+        <div className="border border-fuge bg-fliese p-8 sm:p-16 text-center space-y-6 relative overflow-hidden">
+          <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2">
+            <KernIcon name="ort" groesse={4} />
             <span>
               {city.region} &middot; {distanceLabel(city)}
             </span>
           </span>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 leading-tight">
+          <h1 className="text-fs-7 text-tinte">
             Fliesenverlegung &amp; Badsanierung in{' '}
-            <span className="text-ceramic-gradient">{city.name}</span>
+            <span>{city.name}</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-fs-3 text-tinte-2 max-w-mass mx-auto">
             Fliesenverlegung &amp; Badsanierung in {city.name}: {COMPANY_DATA.legalName} – Ihr Fachbetrieb für moderne Bäder, fugenarme Großformate, Wohnbereiche,
             Balkone &amp; Terrassen sowie DIN 18534 Verbundabdichtung in {city.name} und Umgebung.{' '}
             {distanceSentence(city)}
           </p>
 
-          <div className="flex flex-wrap gap-3.5 justify-center pt-2">
-            <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+          <div className="flex flex-wrap gap-4 justify-center pt-2">
+            <Link href="/kontakt" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-tinte bg-tinte text-kalk hover:border-tinte-2 hover:bg-tinte-2">
               Aufmaß in {city.name} anfragen
-              <ArrowRight className="w-4 h-4" />
+              <KernIcon name="pfeil-rechts" groesse={4} />
             </Link>
-            <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-              <Phone className="w-4 h-4 text-orange-700" />
+            <a href={`tel:${contact.phoneLink}`} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-strich bg-fliese text-tinte hover:border-tinte">
+              <KernIcon name="telefon" groesse={4} className="text-laser-tief" />
               {contact.phone}
             </a>
           </div>
@@ -182,17 +182,17 @@ export default async function StandortPage({
       </div>
 
       {/* ── About this city - Double Bezel Console ───────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="glass-bezel-outer shadow-2xl max-w-5xl mx-auto">
-          <div className="glass-bezel-inner p-8 sm:p-12 space-y-8">
+      <div className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <div className="max-w-seite mx-auto">
+          <div className="p-8 sm:p-12 space-y-8">
             <div>
-              <span className="eyebrow mb-3">Regionaler Fachservice</span>
-              <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
+              <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-3">Regionaler Fachservice</span>
+              <h2 className="text-fs-6 text-tinte">
                 Ihr Fliesen-Fachbetrieb für {city.name}
               </h2>
             </div>
 
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+            <p className="text-fs-3 text-tinte-2">
               {city.description}
             </p>
 
@@ -200,11 +200,11 @@ export default async function StandortPage({
               {stats.map(({ value, label, icon: Icon }) => (
                 <li
                   key={label}
-                  className="rounded-xl bg-white border border-neutral-200 p-6 text-center flex flex-col items-center gap-1"
+                  className="bg-fliese border border-fuge p-6 text-center flex flex-col items-center gap-1"
                 >
-                  <Icon className="w-5 h-5 text-orange-600 mb-2" aria-hidden="true" />
-                  <span className="font-display text-2xl font-black text-neutral-900 tabular-nums">{value}</span>
-                  <span className="text-xs text-neutral-600 font-semibold">{label}</span>
+                  <Icon className="w-5 h-5 text-laser-tief mb-2" aria-hidden="true" />
+                  <span className="font-anzeige text-fs-5 font-semibold text-tinte tabular-nums">{value}</span>
+                  <span className="text-fs-1 text-tinte-2 font-semibold">{label}</span>
                 </li>
               ))}
             </ul>
@@ -216,14 +216,14 @@ export default async function StandortPage({
       <RouteVisualization city={city} />
 
       {/* ── Regional Dominance & Service Radius Radar ──────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-label={`Einsatzgebiet und Marktabdeckung ${city.name}`}>
-        <div className="max-w-5xl mx-auto space-y-4">
+      <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-label={`Einsatzgebiet und Marktabdeckung ${city.name}`}>
+        <div className="max-w-seite mx-auto space-y-4">
           <div className="text-center sm:text-left">
-            <span className="eyebrow eyebrow-orange mb-2">Regionale Marktabdeckung</span>
-            <p className="text-xl sm:text-2xl font-black text-neutral-900">
+            <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-2">Regionale Marktabdeckung</span>
+            <p className="text-fs-5 font-semibold text-tinte">
               Einsatzgebiet {city.name} &amp; Mittelhessen
             </p>
-            <p className="text-xs sm:text-sm text-neutral-600 mt-1">
+            <p className="text-fs-2 text-tinte-2 mt-1">
               Feste Anfahrtsrouten ab Aßlar im gesamten Lahn-Dill-Kreis &amp; Umgebung.
             </p>
           </div>
@@ -241,13 +241,13 @@ export default async function StandortPage({
       </section>
 
       {/* ── Services in this city ────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="stadt-leistungen">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="eyebrow eyebrow-red mb-4">Unsere Fachgewerke</span>
-          <h2 id="stadt-leistungen" className="text-2xl sm:text-3xl font-black text-neutral-900">
+      <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="stadt-leistungen">
+        <div className="text-center max-w-mass mx-auto mb-12">
+          <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-4">Unsere Fachgewerke</span>
+          <h2 id="stadt-leistungen" className="text-fs-6 text-tinte">
             Unsere Leistungen in {city.name}
           </h2>
-          <p className="text-neutral-700 text-sm sm:text-base mt-2">
+          <p className="text-tinte-2 text-fs-3 mt-2">
             Vom Vor-Ort-Aufmaß bis zur fertigen Fuge – alle Fliesengewerke aus einer Hand.
           </p>
         </div>
@@ -260,20 +260,17 @@ export default async function StandortPage({
                 <Link
                   href={`/leistungen/${srv.id}/${city.slug}`}
                   aria-label={`${srv.name} in ${city.name} ansehen`}
-                  className="group glass-surface rounded-2xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
+                  className="group border border-fuge bg-fliese p-6 h-full flex flex-col justify-between hover:border-strich transition-colors dauer-1"
                 >
                   <div>
-                    <span className="icon-chip w-11 h-11 mb-4">
-                      <Icon className="w-5 h-5" />
-                    </span>
-                    <p className="text-base font-black text-neutral-900 mb-2 group-hover:text-orange-800 transition-colors">
+                    <p className="text-fs-3 font-semibold text-tinte mb-2 group-hover:text-laser-tief transition-colors">
                       {srv.name}
                     </p>
-                    <p className="text-sm text-neutral-700 leading-relaxed">{srv.shortDescription}</p>
+                    <p className="text-fs-2 text-tinte-2">{srv.shortDescription}</p>
                   </div>
-                  <span className="mt-5 pt-4 border-t border-neutral-200 text-sm font-bold text-orange-800 flex items-center gap-1.5">
+                  <span className="mt-6 pt-4 border-t border-fuge text-fs-2 font-semibold text-laser-tief flex items-center gap-2">
                     In {city.name}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <KernIcon name="pfeil-rechts" groesse={4} />
                   </span>
                 </Link>
               </li>
@@ -283,12 +280,12 @@ export default async function StandortPage({
       </section>
 
       {/* ── Nearby Cities ────────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="weitere-orte">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 id="weitere-orte" className="text-2xl sm:text-3xl font-black text-neutral-900">
+      <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="weitere-orte">
+        <div className="text-center max-w-mass mx-auto mb-12">
+          <h2 id="weitere-orte" className="text-fs-6 text-tinte">
             Weitere Einsatzgebiete in der Region
           </h2>
-          <p className="text-neutral-700 text-sm sm:text-base mt-2">
+          <p className="text-tinte-2 text-fs-3 mt-2">
             Neben {city.name} betreuen wir auch die angrenzenden Gemeinden im {city.region} sowie im gesamten Lahn-Dill- und Gießener Umland.
           </p>
         </div>
@@ -298,36 +295,36 @@ export default async function StandortPage({
             <li key={nearbyCity.slug}>
               <Link
                 href={`/standorte/${nearbyCity.slug}`}
-                className="group glass-surface p-6 rounded-2xl h-full block hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
+                className="group border border-fuge bg-fliese p-6 h-full block hover:border-strich transition-colors dauer-1"
               >
                 <div className="flex items-center justify-between gap-3 mb-3">
-                  <p className="text-base font-black text-neutral-900 group-hover:text-orange-800 transition-colors">
+                  <p className="text-fs-3 font-semibold text-tinte group-hover:text-laser-tief transition-colors">
                     {nearbyCity.name}
                   </p>
-                  <span className="text-[11px] text-neutral-700 bg-white px-3 py-1 rounded-xl font-bold border border-neutral-200 whitespace-nowrap tabular-nums">
+                  <span className="text-fs-1 text-tinte-2 bg-fliese px-3 py-1 font-semibold border border-fuge whitespace-nowrap tabular-nums">
                     {distanceLabel(nearbyCity)}
                   </span>
                 </div>
-                <p className="text-xs text-neutral-600 mb-3 font-medium">{nearbyCity.region}</p>
-                <span className="text-xs text-orange-800 font-black flex items-center gap-1">
+                <p className="text-fs-1 text-tinte-2 mb-3 font-medium">{nearbyCity.region}</p>
+                <span className="text-fs-1 text-laser-tief font-semibold flex items-center gap-1">
                   <span>Fliesenleger für {nearbyCity.name} ansehen</span>
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  <KernIcon name="pfeil-rechts" groesse={4} />
                 </span>
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="mt-10 text-center">
-          <Link href="/standorte" className="btn-ghost px-7 py-3.5 text-xs">
+        <div className="mt-12 text-center">
+          <Link href="/standorte" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-strich bg-fliese text-tinte hover:border-tinte">
             Alle Standorte ansehen
-            <ArrowRight className="w-4 h-4" />
+            <KernIcon name="pfeil-rechts" groesse={4} />
           </Link>
         </div>
       </section>
 
       {/* Direct Contact Box for this City */}
-      <LocationContact cityName={city.name} className="bg-neutral-50" />
+      <LocationContact cityName={city.name} className="bg-kalk" />
 
       <QualityPromise />
 
