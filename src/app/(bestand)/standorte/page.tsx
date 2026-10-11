@@ -1,6 +1,10 @@
-import React from 'react';
+// Standorte (E3-BAU-04, KERN v2): Erzählansicht nach dem Muster der Startseite und von /leistungen. Einstieg mit
+// Laserachse, H1 links, Vorspann und Knöpfe, rechts ein Verlegeplan ohne Achse. Danach die Leitachse über die
+// Abschnitte: Gebietskarte (Karte hinter Einwilligung unverändert), Städte als Feldraster mit je einem Link,
+// Leistungen als Merkliste, Orte auf Anfrage, Anfahrt mit Standortkarte, regionaler Kontakt. Der Abschluss steht
+// außerhalb der Leitachse. Wortlaut, Überschriften, Links und IDs wie im Bestand (#karte-ueberschrift,
+// #leistungen-ueberall). Kein großer Moment: das Einzugsband (E3-ORCH-03) setzt der Orchestrator.
 import Link from 'next/link';
-import { MapPin, PhoneCall, CheckCircle2, ArrowRight } from 'lucide-react';
 import { CITIES, type CityData } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
@@ -10,6 +14,14 @@ import ServiceMapWrapper from '@/components/maps/ServiceMapWrapper';
 import InteractiveMap from '@/components/maps/InteractiveMap';
 import LocationContact from '@/components/locations/LocationContact';
 import FinalCTA from '@/components/ui/FinalCTA';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Merkliste from '@/components/kern/Merkliste';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 
 export const metadata = createMetadata({
   title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
@@ -42,6 +54,11 @@ const standorteGraph = buildGraph([
 
 const REGIONS = Array.from(new Set(CITIES.map((city) => city.region)));
 
+// Stadtfeld: das ganze Feld ist der Link (Fuge statt Karte); der Name unterstreicht sich bei feinem Zeiger
+const STADT_LINK = 'group flex flex-1 flex-col justify-between after:absolute after:inset-0';
+const STADT_NAME =
+  'font-anzeige text-fs-4 font-semibold text-tinte decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
 function distanceLabel(city: CityData) {
   if (city.name === COMPANY_DATA.headquarters.city) return 'Unser Firmensitz';
   if (city.distanceKm === 0) return 'Direkt neben unserem Firmensitz';
@@ -52,182 +69,157 @@ export default function StandorteOverviewPage() {
   const { headquarters, contact, business } = COMPANY_DATA;
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <>
       <JsonLd schema={standorteGraph} />
 
-      {/* Hero Section */}
-      <section className="ceramic-band relative pt-32 pb-20 px-4">
-        <div className="max-w-5xl mx-auto text-center space-y-6 relative z-10">
-          <span className="eyebrow">
-            <MapPin className="w-3.5 h-3.5" />
-            Mittelhessen &amp; Lahn-Dill-Kreis
-          </span>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-900 leading-tight">
-            Standorte &amp; Einsatzgebiete in <span className="text-ceramic-gradient">Mittelhessen</span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+      {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts der Verlegeplan ohne Achse */}
+      <Einstieg
+        art="erzaehl"
+        etikett={<>Mittelhessen &amp; Lahn-Dill-Kreis</>}
+        titel="Standorte & Einsatzgebiete in Mittelhessen"
+        vorspann={
+          <p>
             Als Fachbetrieb mit Firmensitz in der {headquarters.street} in {headquarters.postalCode}{' '}
             {headquarters.city} betreuen wir Privatkunden, Architekten und Bauherren in Wetzlar, Gießen, Herborn und
             ganz Mittelhessen – mit persönlicher Beratung vor Ort und handwerklicher Präzision.
           </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
-            <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+        }
+        aktionen={
+          <>
+            <Knopf href="/kontakt" icon="pfeil-rechts">
               Vor-Ort-Aufmaß anfragen
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-              <PhoneCall className="w-4 h-4 text-orange-700" />
-              {contact.phone}
-            </a>
+            </Knopf>
+            <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+              <span className="font-mono font-normal">{contact.phone}</span>
+            </Knopf>
+          </>
+        }
+        rand={
+          <div className="border border-fuge bg-fliese p-6 lg:p-8">
+            <Verlegeplan plan="wohnen" ohneAchse bemassung={false} />
           </div>
-        </div>
-      </section>
+        }
+      />
 
-      {/* Interactive Service Map */}
-      <section className="py-12 px-4 max-w-7xl mx-auto relative z-10" aria-labelledby="karte-ueberschrift">
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <span className="eyebrow mb-2">Interaktive Gebietskarte</span>
-          <h2 id="karte-ueberschrift" className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Unser 45-km-Einsatzgebiet in Mittelhessen
-          </h2>
-          <p className="text-sm text-neutral-600 mt-1">
-            Klicken Sie auf eine Stadt für Details zu Entfernung, Anfahrt und schnellem Vor-Ort-Aufmaß.
-          </p>
-        </div>
-        <ServiceMapWrapper />
-      </section>
+      <Leitachse>
+        {/* 2. GEBIETSKARTE: das 45-km-Einsatzgebiet; die Karte liegt hinter der Einwilligung (unverändert) */}
+        <Abschnitt
+          titelId="karte-ueberschrift"
+          leitachse
+          spaet
+          etikett="Interaktive Gebietskarte"
+          titel="Unser 45-km-Einsatzgebiet in Mittelhessen"
+          einleitung={<p>Klicken Sie auf eine Stadt für Details zu Entfernung, Anfahrt und schnellem Vor-Ort-Aufmaß.</p>}
+        >
+          <ServiceMapWrapper />
+        </Abschnitt>
 
-      {/* Cities Grid */}
-      <section className="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <div className="ambient-glow-orange -top-10 -left-32 opacity-60" />
-        <div className="text-center max-w-3xl mx-auto mb-14 relative z-10">
-          <span className="eyebrow eyebrow-red mb-4">{CITIES.length} Städte &amp; Gemeinden</span>
-          <h2 className="text-3xl font-black text-neutral-900 mb-4 tracking-tight">
-            Wählen Sie Ihre Stadt oder Gemeinde
-          </h2>
-          <p className="text-neutral-700">
-            Klicken Sie auf Ihren Wohnort, um mehr über unsere Fliesen- und Badleistungen und den Ablauf vor Ort zu
-            erfahren. Entfernungen sind ungefähre Angaben ab Wetzlar.
-          </p>
-        </div>
-
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
-          {CITIES.map((city) => (
-            <li key={city.slug}>
-              <Link
-                href={`/standorte/${city.slug}`}
-                className="group glass-surface rounded-2xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <span className="text-[11px] font-black uppercase tracking-widest text-orange-800">
-                      {city.region}
-                    </span>
-                    <span className="text-xs font-bold text-neutral-700 bg-neutral-100 border border-neutral-200 px-2.5 py-1 rounded-xl whitespace-nowrap tabular-nums">
-                      {distanceLabel(city)}
-                    </span>
+        {/* 3. STÄDTE: je Stadt ein Feld, das ganze Feld ist der Link */}
+        <Abschnitt
+          leitachse
+          spaet
+          etikett={<>{CITIES.length} Städte &amp; Gemeinden</>}
+          titel="Wählen Sie Ihre Stadt oder Gemeinde"
+          einleitung={
+            <p>
+              Klicken Sie auf Ihren Wohnort, um mehr über unsere Fliesen- und Badleistungen und den Ablauf vor Ort zu
+              erfahren. Entfernungen sind ungefähre Angaben ab Wetzlar.
+            </p>
+          }
+        >
+          {/* E3-ORCH-03: Hier bindet der Orchestrator das Einzugsband ein (großer Moment); der Baumeister setzt es nicht. */}
+          <Feldraster spalten={3}>
+            {CITIES.map((city) => (
+              <Feld key={city.slug} className="relative">
+                <Link href={`/standorte/${city.slug}`} className={STADT_LINK}>
+                  <div>
+                    <div className="mb-4 flex items-center justify-between gap-3">
+                      <span className="font-mono text-fs-1 text-tinte-2">{city.region}</span>
+                      <span className="whitespace-nowrap font-mono text-fs-1 text-tinte-2 tabular-nums">
+                        {distanceLabel(city)}
+                      </span>
+                    </div>
+                    <p className={STADT_NAME}>{city.name}</p>
+                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{city.description}</p>
                   </div>
-
-                  <p className="text-xl font-black text-neutral-900 mb-3 group-hover:text-orange-800 transition-colors">
-                    {city.name}
-                  </p>
-
-                  <p className="text-neutral-700 text-sm leading-relaxed mb-6">
-                    {city.description}
-                  </p>
-                </div>
-
-                <span className="pt-4 border-t border-neutral-200 flex items-center justify-between text-sm font-bold text-orange-800">
-                  <span>Fliesenleger in {city.name}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Services everywhere */}
-      <section className="py-16 bg-white border-y border-neutral-200 relative z-10" aria-labelledby="leistungen-ueberall">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <span className="eyebrow mb-4">In allen Einsatzgebieten</span>
-            <h2 id="leistungen-ueberall" className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-              Unsere Leistungen vor Ort
-            </h2>
-          </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {business.primaryServices.map((service) => (
-              <li
-                key={service}
-                className="flex items-start gap-3 rounded-xl bg-neutral-50 border border-neutral-200 p-4 text-sm font-semibold text-neutral-800"
-              >
-                <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0" />
-                <span>{service}</span>
-              </li>
+                  <span className="mt-6 flex items-center justify-between gap-3 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
+                    <span>Fliesenleger in {city.name}</span>
+                    <Icon name="pfeil-rechts" groesse={5} />
+                  </span>
+                </Link>
+              </Feld>
             ))}
-          </ul>
-          <div className="mt-8 text-center">
-            <Link
-              href="/leistungen"
-              className="text-sm font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2 inline-flex items-center gap-1.5"
-            >
+          </Feldraster>
+        </Abschnitt>
+
+        {/* 4. LEISTUNGEN VOR ORT: Merkliste aus den Leistungen des Betriebs, Fläche Fliese */}
+        <Abschnitt
+          titelId="leistungen-ueberall"
+          flaeche="fliese"
+          leitachse
+          spaet
+          etikett="In allen Einsatzgebieten"
+          titel="Unsere Leistungen vor Ort"
+        >
+          <Merkliste spalten={2} eintraege={business.primaryServices.map((titel: string) => ({ titel }))} />
+          <div className="mt-8">
+            <Knopf href="/leistungen" variante="text" icon="pfeil-rechts">
               Alle Leistungen im Überblick
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            </Knopf>
           </div>
-        </div>
-      </section>
+        </Abschnitt>
 
-      {/* CTA Box */}
-      <section className="py-20 px-4 max-w-5xl mx-auto relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-          <span className="eyebrow eyebrow-neutral">Weitere Orte auf Anfrage</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
-            Ihre Stadt ist nicht aufgeführt?
-          </h2>
-          <p className="text-neutral-700 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            Wir sind unter anderem im {REGIONS.join(', ')} unterwegs. Rufen Sie uns einfach an – wir klären gern,
-            ob wir Ihr Projekt an Ihrem Wohnort übernehmen können.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
-            <a href={`tel:${contact.phoneLink}`} className="btn-primary px-7 py-3.5 text-xs w-full sm:w-auto">
-              <PhoneCall className="w-4 h-4" />
-              <span>{contact.phone}</span>
-            </a>
-            <Link href="/kontakt" className="btn-ghost px-7 py-3.5 text-xs w-full sm:w-auto">
+        {/* 5. ORT NICHT AUFGEFÜHRT: Erläuterung links, Telefon und Beratung rechts */}
+        <Abschnitt
+          kopf="seitlich"
+          leitachse
+          spaet
+          etikett="Weitere Orte auf Anfrage"
+          titel="Ihre Stadt ist nicht aufgeführt?"
+          einleitung={
+            <p>
+              Wir sind unter anderem im {REGIONS.join(', ')} unterwegs. Rufen Sie uns einfach an – wir klären gern, ob
+              wir Ihr Projekt an Ihrem Wohnort übernehmen können.
+            </p>
+          }
+        >
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Knopf href={`tel:${contact.phoneLink}`} iconLinks="telefon">
+              <span className="font-mono font-normal">{contact.phone}</span>
+            </Knopf>
+            <Knopf href="/kontakt" variante="neben">
               Kostenlose Beratung anfragen
-            </Link>
+            </Knopf>
           </div>
-        </div>
-      </section>
+        </Abschnitt>
 
-      {/* Google Maps HQ Embed */}
-      <section className="py-12 px-4 max-w-5xl mx-auto relative z-10" aria-label="Anfahrt und Hauptsitz">
-        <div className="space-y-4 mb-6 text-center">
-          <span className="eyebrow">Firmensitz &amp; Anfahrt</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900">
-            Unser Hauptstandort in Aßlar
-          </h2>
-          <p className="text-sm text-neutral-600 max-w-2xl mx-auto">
-            Von der Hohwardstraße 14 in Aßlar starten wir täglich zu unseren Projekten in Wetzlar, Gießen und ganz Hessen.
-          </p>
-        </div>
-        <InteractiveMap height="400px" />
-      </section>
+        {/* 6. ANFAHRT: Firmensitz mit der Standortkarte (hinter Einwilligung, unverändert) */}
+        <Abschnitt
+          titelId="hauptsitz-heading"
+          leitachse
+          spaet
+          etikett="Firmensitz & Anfahrt"
+          titel="Unser Hauptstandort in Aßlar"
+          einleitung={
+            <p>
+              Von der Hohwardstraße 14 in Aßlar starten wir täglich zu unseren Projekten in Wetzlar, Gießen und ganz
+              Hessen.
+            </p>
+          }
+        >
+          <InteractiveMap height="400px" />
+        </Abschnitt>
 
-      {/* Regional Quick Contact Box */}
-      <LocationContact cityName="Mittelhessen & Lahn-Dill-Kreis" className="bg-neutral-50" />
+        {/* 7. REGIONALER KONTAKT: Bestandsbaustein, unverändert */}
+        <LocationContact cityName="Mittelhessen & Lahn-Dill-Kreis" />
+      </Leitachse>
 
-      {/* Final Conversion Anchor */}
+      {/* 8. ABSCHLUSS */}
       <FinalCTA
         headline="Planen Sie ein Fliesen- oder Badprojekt in Mittelhessen? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel."
         subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
         buttonText="Jetzt Vor-Ort-Termin anfragen"
       />
-    </div>
+    </>
   );
 }
