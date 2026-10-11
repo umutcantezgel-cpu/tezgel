@@ -99,8 +99,8 @@ export default function HeroContactForm() {
                     Rückruf &lt; 24h
                 </span>
             </div>
-            <p className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">
-                Kostenloses Aufmaß vor&nbsp;Ort anfragen
+            <p className="mt-6 font-anzeige text-fs-5 font-semibold text-balance text-tinte">
+                Kostenloses Aufmaß vor Ort anfragen
             </p>
             <p className="mt-2 text-fs-2 text-tinte-2">
                 Beschreiben Sie Ihr Projekt in 30 Sekunden – Herr Tezgel meldet sich direkt persönlich bei Ihnen.

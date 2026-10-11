@@ -46,6 +46,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E-020 Fusion | `src/components/layout/MobileBottomBar.tsx` | Icons Sprechblase (WhatsApp), Winkel (Aufmaß) | WhatsApp-Markenzeichen, Kalender | Symbole waren unverständlich (Gutachten); Texte unverändert |
 | E-020 Fusion | `src/components/start/Einstieg.tsx` (Startseite) | Knopf „Per WhatsApp schreiben“ mit Sprechblase | gleicher Text mit WhatsApp-Markenzeichen | erkennbarer Kanal (Gutachten) |
 | E-020 Fusion | `src/components/ui/FinalCTA.tsx` (Abschluss, alle Seiten) | zweiter Aufruf „Kostenloses Vor-Ort-Aufmaß anfordern“ (→ /kontakt#express-anfrage) neben dem Hauptknopf | (entfällt) | doppelter Aufmaß-Aufruf (beide Gutachter); der Hauptknopf (`buttonText`) bleibt der eine Aufruf |
+| E-020 Fusion | `src/components/reviews/GoogleReviewsBadge.tsx` | „5,0“ (groß, für Screenreader verborgen) und darunter „5,0 von 5“ | „5,0 von 5“ in einer Zeile (Wert groß, „von 5“ in Mono) | Bewertung stand doppelt (Gutachten) |
 
 ## Vorschläge (Überschriften, Fließtext)
 _noch keine_

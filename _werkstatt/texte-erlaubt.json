@@ -732,5 +732,11 @@
   "teil": "meta",
   "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
   "vermerk": "E-020 Fusion: Beschreibung mit der Wahrheitskorrektur von main („fugenarme … Abdichtung DIN 18534“) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "5,0",
+  "vermerk": "E-020 Fusion: Google-Kennwert zeigt „5,0 von 5“ einmal statt „5,0“ und „5,0 von 5“ untereinander – TEXTVORSCHLAEGE"
  }
 ]

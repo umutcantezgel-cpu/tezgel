@@ -42,6 +42,9 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
     await page.goto('/');
     const nav = hauptnav(page);
     const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
+    // Zustand statt Wartezeit: erst nach dem Hydrieren bedienen (wie die übrigen Fälle; vor dem Hydrieren ist das
+    // Mega-Menü noch nicht bedienbar – Ausgangsstand, PLAN V-06). Gleiche Schritte, gleiche Erwartungen.
+    await bedienbar(schalter);
     await schalter.focus();
     await page.keyboard.press('Enter');
     await expect(schalter).toHaveAttribute('aria-expanded', 'true');
