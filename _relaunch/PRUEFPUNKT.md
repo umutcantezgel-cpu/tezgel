@@ -1,8 +1,9 @@
 # PRUEFPUNKT
 
 - Lauf: 1 (angepasst, E-000) · Phase: P4 (Fundament, ruhend) · P3 abgeschlossen
-- Live auf main: 8b4f9cd (P4-07 Wege, P4-04 Sprite, P4-05a/b/c/d Hooks + Kalender-Fix, P4-09 Zuklappen, Fuß-Sockel; ruhend P4-01/02/03/10a/10b). Server: 4334 = 35c0883, 4335 = 4bd371f (≈ Live-Produkt), 4320 = Vorschau a361e9c-v (veraltet).
-- Tests: `KERN_SEITEN = ['/']` in `tests/fixtures.mjs` entspricht jetzt dem Live-Stand; Läufe gegen 4310/4323 mit `RELAUNCH_FASSUNG=bestand`.
-- Laufend: P4-08a /bad, P4-08b /leistungen, P4-08c /standorte, P4-08d /blog (+ Hook F-16, braucht T2), P4-08e /ueber-uns (Opus, Hintergrund, seit ≈ 10:00 CEST). Live-Prüfung 8b4f9cd grün.
-- Nächster exakter Schritt: Je Rückgabe prüfen und committen (ruhend; P4-08d mit Gegenprüfer + T2). Sobald ein Platz frei ist: P4-08f /kontakt, danach P4-06 (Briefing liegt). SIG-2-Regel aus P4-08a in `kern.css` eintragen. Dann Vorschau-Kandidat `VORSCHAU="bad leistungen standorte blog ueber-uns kontakt"`: texte2, SEO-Invarianten, axe, a11y-zusatz, Wortbruch, Überlauf, Fotos → P4-Tor (T3: Z-05, Z-11, Z-13 + Probeläufer, Fünf-Sekunden, Gegenprüfer, Mutationsprobe). Offen aus P4-10a: Einstieg der Fachseiten mit Plan ohne Rot (K-003).
+- Live auf main: 849aa69 (Produkt = 31fc739). Lokal: 9dc1942 (Fotos Fünf-Sekunden), 1c6c9cd (Fokusring innen Kontaktblatt/Kalender, a11y-zusatz Umfang je Zeilenstück, E-029), ruhend.
+- Server: 4321 = Vorschau 1c6c9cd-v (sechs Hauptseiten-Entwürfe; Reinraum grün), 4320 = Vorschau 5913897-v (alt), 4337 = f2c4180 (Basis = Live-Produkt), 4310/4335 = P4-06.
+- Laufend: P4-06 Testschreiber (Opus) · P4-11 Probeläufer (Haiku, 15 Läufe, Satz p4-tor) · Fünf-Sekunden-Workflow (fuenf-p4) · a11y-zusatz `p4tor-a11y-vorschau2` · Gegenprobe `gegenprobe-1c6c9cd` (Skript scratchpad/gegenprobe-p4.sh) · Fotos `p4tor-fotos-vorschau`.
+- Erledigt im P4-Tor: texte2 0 rot (E-028) · SEO 0 Abweichungen · axe 0 ernst/kritisch · Wortbruch 0 (6 Seiten × 6 Breiten, `belege/p4tor-wortbruch`) · Reinraum 1c6c9cd-v grün · Texte für Slop `belege/p4tor-slop/texte`.
+- Nächster exakter Schritt: Fotos sichten (Z-13) → `jury-material.mjs p4tor-fotos-vorschau belege … p4tor-slop` → Slop-Workflow (Haiku-Jäger + Opus-Gegenprüfer je Seite, Vorlage `pakete/_vorlage-slopjaeger.md`) sobald der Fünf-Sekunden-Workflow fertig ist (Parallelität 5) → a11y v2 auswerten (Ziel harte Kennzahlen 0) → Fünf-Sekunden auswerten → P4-06 abnehmen → Suite gegen 4321 mit Kern-Zweigen + Mutationsprobe → Gegenprüfer P4-Tor → `belege/p4-tor/ERGEBNIS.md` → Commit → Bereichsprüfung → Push.
 - Offene Abweichungen: ABNAHME „Offene Abweichungen“ (Z-04 Tastatur, Z-12 TBT).

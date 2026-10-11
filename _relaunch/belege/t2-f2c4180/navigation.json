@@ -1,0 +1,2419 @@
+{
+  "config": {
+    "configFile": "/home/user/tezgel/_relaunch/werkzeuge/playwright.config.mjs",
+    "rootDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "dot"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/user/tezgel/_relaunch/cache/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "mobil",
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/home/user/tezgel/_relaunch/cache/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "funktion-navigation.spec.mjs",
+      "file": "funktion-navigation.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Mega-Menü (Desktop, ab lg)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 56,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/: Hover öffnet das Untermenü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                      "location": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                        "line": 57,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 7,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.579Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                            "line": 57,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-6d41555493dc39fd56da",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 60,
+              "column": 5
+            },
+            {
+              "title": "/: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                      "location": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                        "line": 57,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 5,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.590Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                            "line": 57,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-db4d5993e775616f81e6",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 76,
+              "column": 5
+            },
+            {
+              "title": "/: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                      "location": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                        "line": 57,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.643Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                            "line": 57,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-a8a0853b5e000bd443cf",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Hover öffnet das Untermenü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                      "location": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                        "line": 57,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.655Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                            "line": 57,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-176776f04bf6eee8c0a9",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 60,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                      "location": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                        "line": 57,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.665Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                            "line": 57,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-2a0d0a4ddc19e08a19f7",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 76,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                      "location": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                        "line": 57,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 1,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.679Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Mega-Menü ist mobil ausgeblendet (hidden lg:flex)",
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                            "line": 57,
+                            "column": 8
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-6338b25787a99b254e43",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/: Hover öffnet das Untermenü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 842,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:19.969Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-6f16a6d283ded5c52fc3",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 60,
+              "column": 5
+            },
+            {
+              "title": "/: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 741,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:20.932Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-763a448dc6c84b635aec",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 76,
+              "column": 5
+            },
+            {
+              "title": "/: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1666,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:22.912Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-b5b25312d2511b7cde2d",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 90,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Hover öffnet das Untermenü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1450,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:21.692Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-27125203476688310ace",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 60,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 951,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:23.163Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-7789ca103975b695136f",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 76,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3434,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:24.141Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-abfc88dce04ab35a524d",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 90,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Mobilmenü (Drawer)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 118,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 678,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.692Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-be590a781dbed55942be",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "/: Schalter öffnet das Menü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1200,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:06.702Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-41d7e0b0ee6f3e73e5b3",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 134,
+              "column": 5
+            },
+            {
+              "title": "/: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1414,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:07.493Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-6e88cff7cbc155163123",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 148,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 529,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:08.006Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-63a6241994ab419f50ea",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Schalter öffnet das Menü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 975,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:08.555Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-93d8eb0fe87382f6fe51",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 134,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2552,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:08.928Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-a8b2a81024aa30172e04",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 148,
+              "column": 5
+            },
+            {
+              "title": "/: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 584,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:24.740Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-194e4d6fc6353a7c688d",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "/: Schalter öffnet das Menü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1041,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:25.350Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-85dc9eedec8eaa498f5e",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 134,
+              "column": 5
+            },
+            {
+              "title": "/: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1782,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:26.406Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-6b88b38093d5383ec265",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 148,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 580,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:27.594Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-6f2576e61027e47471a2",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 120,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Schalter öffnet das Menü, Escape schließt es",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1025,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:28.199Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-8713a05a54fc34ff84ee",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 134,
+              "column": 5
+            },
+            {
+              "title": "/leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5636,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:28.202Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-c86edf5b5fc504a7f98e",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 148,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Menü vor der Hydrierung (V-06)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 177,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 547,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:09.548Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-f38c4d91fec1aa73d845",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 180,
+              "column": 3
+            },
+            {
+              "title": "Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 572,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:29.249Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-5094f2bb80e949f1012f",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 180,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Sprunglink",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 201,
+          "column": 6,
+          "specs": [
+            {
+              "title": "/leistungen: erster Tabstopp, führt zu #main-content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 619,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:10.113Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-b22f65a3cfe03a59d089",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 203,
+              "column": 44
+            },
+            {
+              "title": "/: erster Tabstopp, führt zu #main-content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 752,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:10.745Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-01dee12c8c27a271f206",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 203,
+              "column": 44
+            },
+            {
+              "title": "/leistungen: erster Tabstopp, führt zu #main-content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 896,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:29.843Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-cf3b63537360a33d4736",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 203,
+              "column": 44
+            },
+            {
+              "title": "/: erster Tabstopp, führt zu #main-content",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 841,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:30.782Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-c3b14492ebdc96575d93",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 203,
+              "column": 44
+            }
+          ]
+        },
+        {
+          "title": "FAQ-Akkordeon (/faq)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 215,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 926,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:11.508Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-82ee9cd96c5a478c32cd",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 219,
+              "column": 3
+            },
+            {
+              "title": "Kategorie wechseln zeigt nur deren Fragen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1616,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:11.511Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-e1595fd328da2e66396f",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 232,
+              "column": 3
+            },
+            {
+              "title": "Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 573,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:12.448Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-c88443d45a685635d5fb",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 242,
+              "column": 3
+            },
+            {
+              "title": "Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1023,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:13.033Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-44ba1f94a67f06d260d3",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 254,
+              "column": 3
+            },
+            {
+              "title": "Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1242,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:31.653Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-cc23ec1d97d644a0b20a",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 219,
+              "column": 3
+            },
+            {
+              "title": "Kategorie wechseln zeigt nur deren Fragen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 854,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:32.915Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-db419c18f7c6cc1d0b5f",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 232,
+              "column": 3
+            },
+            {
+              "title": "Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1035,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:33.791Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-1bb1b7b69707c46b1190",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 242,
+              "column": 3
+            },
+            {
+              "title": "Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1477,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:33.885Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-3f767fab2e52a139d4c8",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 254,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "404",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 271,
+          "column": 6,
+          "specs": [
+            {
+              "title": "unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 622,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:13.141Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-f5e969f29afa86b57a10",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 272,
+              "column": 3
+            },
+            {
+              "title": "Link „Zur Startseite“ führt zurück zur Startseite",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 956,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:13.778Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-f4ea9aae9dead1201d4c",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 280,
+              "column": 3
+            },
+            {
+              "title": "unbekannter Ratgeber-Artikel liefert ebenfalls Status 404",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1030,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:14.073Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-e4b92d8b421c47a1d619",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 287,
+              "column": 3
+            },
+            {
+              "title": "unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 565,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:34.842Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-1048cc59ee1c98aa53de",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 272,
+              "column": 3
+            },
+            {
+              "title": "Link „Zur Startseite“ führt zurück zur Startseite",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1161,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:35.385Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-aa88bbac114cd6393525",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 280,
+              "column": 3
+            },
+            {
+              "title": "unbekannter Ratgeber-Artikel liefert ebenfalls Status 404",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 795,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:35.424Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-062149ca1ebd3b358f7a",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 287,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Login (deaktiviert)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 294,
+          "column": 6,
+          "specs": [
+            {
+              "title": "leere Pflichtfelder: Anmeldung wird nicht ausgelöst",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 834,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:14.750Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-2b623b75a1e4c487bb42",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 295,
+              "column": 3
+            },
+            {
+              "title": "falsche Daten: Meldung, Passwort wird geleert, kein Absturz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 847,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:15.124Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-b018b8ec22b75103e45e",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 305,
+              "column": 3
+            },
+            {
+              "title": "leere Pflichtfelder: Anmeldung wird nicht ausgelöst",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 922,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:36.238Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-4ecc419a3e31e91a397f",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 295,
+              "column": 3
+            },
+            {
+              "title": "falsche Daten: Meldung, Passwort wird geleert, kein Absturz",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1393,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:36.566Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-1a51ae1d68ea3c34be3b",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 305,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Bewertungs-Karussell (/)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 321,
+          "column": 6,
+          "specs": [
+            {
+              "title": "am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 758,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:15.606Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-8d58a6eabe31cc34d224",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 327,
+              "column": 3
+            },
+            {
+              "title": "„Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1459,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:15.987Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-469ba51fc04b3160b6e1",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 335,
+              "column": 3
+            },
+            {
+              "title": "Tastatur: „Nächste“ mit Enter blättert vor",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 688,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:16.381Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-299b251d749e5433cb5b",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 352,
+              "column": 3
+            },
+            {
+              "title": "am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 970,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:37.181Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-873ae0d623caa2ba8b7d",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 327,
+              "column": 3
+            },
+            {
+              "title": "„Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2823,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:38.038Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-de6cfd056edfde85ebca",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 335,
+              "column": 3
+            },
+            {
+              "title": "Tastatur: „Nächste“ mit Enter blättert vor",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 911,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:38.172Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-c67afa8e9f8489b98d21",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 352,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Blog-Übersicht (/blog)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 361,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 952,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:17.086Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-2115a33cc633cd96edb9",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 366,
+              "column": 3
+            },
+            {
+              "title": "Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4120,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:17.462Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-af2e0b71216e2cdc373b",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 381,
+              "column": 3
+            },
+            {
+              "title": "Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1018,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:39.110Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-01d7f02f35afac142b64",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 366,
+              "column": 3
+            },
+            {
+              "title": "Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6695,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:40.148Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-482692ecba6ac68fdd8e",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 381,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Blog-Artikel (/blog/fliesen-reinigen-pflegen)",
+          "file": "funktion-navigation.spec.mjs",
+          "line": 396,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 843,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:18.061Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-b16fb5fa9d5b13fe4758",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 397,
+              "column": 3
+            },
+            {
+              "title": "Inhaltsverzeichnis: Klick springt zur Überschrift",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Inhaltsverzeichnis ist mobil ausgeblendet (hidden lg:block)",
+                      "location": {
+                        "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                        "line": 425,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "mobil",
+                  "projectName": "mobil",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "skipped",
+                      "duration": 62,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:18.920Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "Inhaltsverzeichnis ist mobil ausgeblendet (hidden lg:block)",
+                          "location": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs",
+                            "line": 425,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-4e6a50de65402a450756",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 424,
+              "column": 3
+            },
+            {
+              "title": "Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2989,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:40.894Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-dd50f717022015ec4276",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 397,
+              "column": 3
+            },
+            {
+              "title": "Inhaltsverzeichnis: Klick springt zur Überschrift",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop",
+                  "projectName": "desktop",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1598,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-11T09:58:43.906Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "9d36a74972c7efb0068e-55debd0cbee5a98a937b",
+              "file": "funktion-navigation.spec.mjs",
+              "line": 424,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T09:58:05.561Z",
+    "duration": 41386.22,
+    "expected": 55,
+    "skipped": 7,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -367,3 +367,31 @@ html.k-bewegung [data-motion="sig-kreuzlinie"] .k-laser-lot {
     }
   }
 }
+
+/* --------------------------------------------------------------------------
+   SIG-2 Laser zieht den Ablauf (K-009, Register `sig-ablauf`, P4-08a): an jeder Schrittfuge einer Station auf /bad
+   zieht der Laser die Achse (ab lg Waage von links, darunter Lot von oben), dann setzt sich das Fugenkreuz am
+   Kreuzpunkt und der Prüfhaken. Auslöser IO 30 % an der Schrittfuge (data-schwelle="0.3"). Nur transform/opacity.
+   Ohne html.k-bewegung (reduziert, ohne JS, Zeitlimit) steht der Endzustand sofort.
+   -------------------------------------------------------------------------- */
+[data-motion="sig-ablauf"] .k-ablauf-waage { transform-origin: left center; }
+[data-motion="sig-ablauf"] .k-ablauf-lot { transform-origin: center top; }
+[data-motion="sig-ablauf"] .k-ablauf-waage,
+[data-motion="sig-ablauf"] .k-ablauf-lot {
+  transition: transform var(--k-dauer-5) var(--ease-k-laser);
+}
+[data-motion="sig-ablauf"] .k-ablauf-kreuz,
+[data-motion="sig-ablauf"] .k-ablauf-haken {
+  transition: opacity var(--k-dauer-2) var(--ease-k-setzen), transform var(--k-dauer-2) var(--ease-k-setzen);
+}
+[data-motion="sig-ablauf"] .k-ablauf-haken { transition-delay: calc(var(--k-staffel) * 4); }
+html.k-bewegung [data-motion="sig-ablauf"][data-ausloeser="sicht"]:not([data-sichtbar]) .k-ablauf-waage { transform: scaleX(0); }
+html.k-bewegung [data-motion="sig-ablauf"][data-ausloeser="sicht"]:not([data-sichtbar]) .k-ablauf-lot { transform: scaleY(0); }
+html.k-bewegung [data-motion="sig-ablauf"][data-ausloeser="sicht"]:not([data-sichtbar]) .k-ablauf-kreuz,
+html.k-bewegung [data-motion="sig-ablauf"][data-ausloeser="sicht"]:not([data-sichtbar]) .k-ablauf-haken {
+  opacity: 0;
+  transform: scale(0.5);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-motion="sig-ablauf"] * { transition-duration: 0s !important; transition-delay: 0s !important; }
+}

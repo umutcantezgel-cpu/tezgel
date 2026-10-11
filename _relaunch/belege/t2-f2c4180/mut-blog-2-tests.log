@@ -1,0 +1,95 @@
+
+Running 4 tests using 2 workers
+
+  ✓  1 [mobil] › tests/funktion-navigation.spec.mjs:381:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück (5.0s)
+  ✘  2 [mobil] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her (12.0s)
+  ✘  3 [desktop] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her (13.5s)
+  ✘  4 [desktop] › tests/funktion-navigation.spec.mjs:381:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück (13.5s)
+
+
+  1) [mobil] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveValue[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  getByRole('textbox', { name: /Ratgeber durchsuchen|Artikel suchen/ })
+    Expected: [32m""[39m
+    Received: [31m"xqzwjkpv"[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveValue" with timeout 10000ms[22m
+    [2m  - waiting for getByRole('textbox', { name: /Ratgeber durchsuchen|Artikel suchen/ })[22m
+    [2m    14 × locator resolved to <input type="text" value="xqzwjkpv" aria-label="Ratgeber durchsuchen" placeholder="Ratgeber durchsuchen..." class="w-full pl-11 pr-4 py-3.5 rounded-tile-md border border-slate-300 bg-white shadow-sm text-sm font-semibold text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600"/>[22m
+    [2m       - unexpected value "xqzwjkpv"[22m
+
+
+      375 |     await expect(karten(page)).toHaveCount(0);
+      376 |     await page.getByRole('button', { name: 'Filter zurücksetzen', exact: true }).click();
+    > 377 |     await expect(suche(page)).toHaveValue('');
+          |                               ^
+      378 |     await expect.poll(() => karten(page).count()).toBe(gesamt);
+      379 |   });
+      380 |
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs:377:31
+
+    Error Context: ../cache/test-results/funktion-navigation-Blog-Ü-d2a5f-en“-stellt-alles-wieder-her-mobil/error-context.md
+
+  2) [desktop] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveValue[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  getByRole('textbox', { name: /Ratgeber durchsuchen|Artikel suchen/ })
+    Expected: [32m""[39m
+    Received: [31m"xqzwjkpv"[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveValue" with timeout 10000ms[22m
+    [2m  - waiting for getByRole('textbox', { name: /Ratgeber durchsuchen|Artikel suchen/ })[22m
+    [2m    13 × locator resolved to <input type="text" value="xqzwjkpv" aria-label="Artikel suchen" placeholder="Artikel suchen..." class="w-full pl-4 pr-12 py-4 rounded-tile-md border border-slate-300 bg-white text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all"/>[22m
+    [2m       - unexpected value "xqzwjkpv"[22m
+
+
+      375 |     await expect(karten(page)).toHaveCount(0);
+      376 |     await page.getByRole('button', { name: 'Filter zurücksetzen', exact: true }).click();
+    > 377 |     await expect(suche(page)).toHaveValue('');
+          |                               ^
+      378 |     await expect.poll(() => karten(page).count()).toBe(gesamt);
+      379 |   });
+      380 |
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs:377:31
+
+    Error Context: ../cache/test-results/funktion-navigation-Blog-Ü-d2a5f-en“-stellt-alles-wieder-her-desktop/error-context.md
+
+  3) [desktop] › tests/funktion-navigation.spec.mjs:381:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  getByRole('button', { name: 'Pflege & Werterhalt', exact: true })
+    Expected: [32m"[7mfals[27me"[39m
+    Received: [31m"[7mtru[27me"[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for getByRole('button', { name: 'Pflege & Werterhalt', exact: true })[22m
+    [2m    13 × locator resolved to <button type="button" aria-pressed="true" class="w-full flex items-center justify-between p-4 rounded-tile-md border transition-all duration-300 bg-orange-600 border-orange-600 text-white shadow-md">…</button>[22m
+    [2m       - unexpected value "true"[22m
+
+
+      389 |     await expect.poll(() => karten(page).count()).toBeLessThan(gesamt);
+      390 |     await alleKnopf(page).click();
+    > 391 |     await expect(kategorie).toHaveAttribute('aria-pressed', 'false');
+          |                             ^
+      392 |     await expect.poll(() => karten(page).count()).toBe(gesamt);
+      393 |   });
+      394 | });
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs:391:29
+
+    Error Context: ../cache/test-results/funktion-navigation-Blog-Ü-3e963-tegorie-„Alle“-setzt-zurück-desktop/error-context.md
+
+  3 failed
+    [mobil] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+    [desktop] › tests/funktion-navigation.spec.mjs:366:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her 
+    [desktop] › tests/funktion-navigation.spec.mjs:381:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück 
+  1 passed (28.2s)
