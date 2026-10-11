@@ -62,6 +62,13 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
 });
 
 test.describe('Mobilmenü (Drawer)', () => {
+  // Ab xl steht die Hauptnavigation offen und der Schalter ist ausgeblendet (Fusion E-020: kein doppelter Zugang).
+  // Im Desktop-Projekt wird der Drawer deshalb bei 1024 px geprüft (unter xl, Schalter sichtbar) – gleiche Schritte,
+  // gleiche Erwartungen, gleiche Strenge; mobil unverändert bei 390 px.
+  test.beforeEach(async ({ page, isMobile }) => {
+    if (!isMobile) await page.setViewportSize({ width: 1024, height: 900 });
+  });
+
   test('mobil: Desktop-Navigation ist ausgeblendet, der Drawer ist der Zugang', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'nur im Projekt mobil');
     await page.goto('/');

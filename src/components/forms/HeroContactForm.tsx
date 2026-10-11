@@ -5,6 +5,7 @@
 // Zustände, Prüfung, Absenden und WhatsApp-Weg kommen aus useHeroKontakt (P3-00l, eine Logik für Bestand und Kern).
 
 import Icon from '@/components/icons/Icon';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, feldKlassen, fehlerKlassen, labelKlassen, linkKlassen, pflichtKlassen, wahlKlassen } from '@/components/kern/stile';
@@ -139,7 +140,7 @@ export default function HeroContactForm() {
                 </div>
 
                 {/* 2. Kontaktdaten */}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
+                <div className="grid grid-cols-1 gap-4">
                     <div>
                         <label htmlFor="hero-name" className={labelKlassen}>
                             Name <span className={pflichtKlassen}>*</span>
@@ -176,7 +177,7 @@ export default function HeroContactForm() {
                 </div>
 
                 {/* 3. Ort & E-Mail */}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
+                <div className="grid grid-cols-1 gap-4">
                     <div>
                         <label htmlFor="hero-email" className={labelKlassen}>
                             E-Mail <span className="font-mono text-fs-1 font-normal text-tinte-2">(für Bestätigung)</span>
@@ -259,7 +260,7 @@ export default function HeroContactForm() {
                             onClick={handleWhatsAppClick}
                             className={`${linkKlassen} inline-flex min-h-11 items-center gap-2 font-semibold`}
                         >
-                            <Icon name="sprechblase" groesse={4} />
+                            <WhatsAppLogo className="size-4 shrink-0" />
                             <span>Oder via WhatsApp</span>
                         </a>
                     </div>

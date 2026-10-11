@@ -9,6 +9,8 @@ interface Gemeinsam {
   variante?: KnopfVariante;
   icon?: IconName;
   iconLinks?: IconName;
+  /** Zeichen vor dem Text, das nicht zur Icon-Familie gehört (z. B. ein Markenlogo wie WhatsApp) */
+  vorne?: ReactNode;
   className?: string;
   children: ReactNode;
   'aria-label'?: string;
@@ -18,9 +20,10 @@ type AlsLink = Gemeinsam & { href: string; extern?: boolean; transitionTypes?: s
 type AlsKnopf = Gemeinsam & { href?: undefined; type?: 'button' | 'submit'; onClick?: MouseEventHandler<HTMLButtonElement>; deaktiviert?: boolean; laedt?: boolean; ladeText?: string };
 
 export default function Knopf(props: AlsLink | AlsKnopf) {
-  const { variante = 'haupt', icon, iconLinks, className, children } = props;
+  const { variante = 'haupt', icon, iconLinks, vorne, className, children } = props;
   const inhalt = (
     <>
+      {vorne}
       {iconLinks && <Icon name={iconLinks} groesse={5} />}
       <span>{children}</span>
       {icon && <Icon name={icon} groesse={5} />}

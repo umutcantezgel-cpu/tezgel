@@ -225,7 +225,7 @@ export default function Header({ isMobileMenuOpen }) {
                         type="button"
                         popoverTarget="mobile-menu"
                         onClick={ohnePopover}
-                        className="inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte"
+                        className="inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte xl:hidden"
                         aria-label={isMobileMenuOpen ? 'Architektur-Menü schließen' : 'Architektur-Menü öffnen'}
                         aria-expanded={isMobileMenuOpen}
                         aria-controls="mobile-menu"

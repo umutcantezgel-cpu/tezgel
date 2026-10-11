@@ -19,6 +19,7 @@
 @source not "../components/kern/motive";
 @source not "../components/kern/schale";
 @source not "../components/kern/start";
+@source not "../components/kern/vorlagen";
 @source not "../lib/kern";
 @source not "./(kern)";
 
@@ -223,10 +224,18 @@
     font-weight: 760;
     color: var(--color-tinte);
     letter-spacing: -0.01em;
-    /* Der schmale Schnitt hat einen engen Wortzwischenraum: jede Wortlücke deutlich breiter als die Buchstabenfuge */
-    word-spacing: 0.12em;
+    /* Der schmale Schnitt hat einen engen Wortzwischenraum: jede Wortlücke sichtbar breiter als die Buchstabenfuge,
+       aber nicht gesperrt (Fusion E-020: 0,12em wirkte locker, 0 ließ die Wortgrenzen verschwimmen) */
+    word-spacing: 0.06em;
     text-wrap: balance;
     hyphens: manual;
+  }
+
+  /* Textschnitt innerhalb einer Überschrift (z. B. Unterzeile der H1): normale Breite und Abstände */
+  :is(h1, h2, h3, h4, h5, h6) .font-text {
+    font-stretch: 100%;
+    letter-spacing: normal;
+    word-spacing: normal;
   }
 
   /* Fließtext: Silbentrennung mit lang="de", ruhige Zeilen */
@@ -478,6 +487,13 @@
   .font-anzeige {
     font-stretch: 74%;
     letter-spacing: -0.01em;
-    word-spacing: 0.12em;
+    word-spacing: 0.06em;
+  }
+  /* Planblatt der Startseite: Das Formular setzt die Wände des geschnittenen Plans nach unten fort (--wand aus
+     wandEinzug() in Verlegeplan.tsx, Anteil der Zeichnungsbreite) */
+  @media (width >= 64rem) {
+    .planblatt-wand {
+      margin-inline: var(--wand, 0);
+    }
   }
 }

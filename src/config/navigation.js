@@ -133,7 +133,7 @@ export const navigationLinks = [
 ];
 
 /** Primary header call-to-action. */
-export const primaryCta = { name: 'Aufmaß buchen', path: '/kontakt' };
+export const primaryCta = { name: 'Aufmaß anfragen', path: '/kontakt' };
 
 export const footerBathLinks = [
     { name: 'Badsanierung im Überblick', path: '/bad' },

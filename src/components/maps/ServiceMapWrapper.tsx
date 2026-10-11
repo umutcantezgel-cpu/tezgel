@@ -40,13 +40,23 @@ export function ServiceStadtleiste({
             >
               <Icon name="ort" groesse={4} />
               <span>{city.name}</span>
-              <span className="font-mono text-fs-1">{city.distanceKm === 0 ? "HQ" : `${city.distanceKm} km`}</span>
+              <Entfernung slug={city.slug} />
             </button>
           );
         })}
       </div>
     </div>
   );
+}
+
+/**
+ * Entfernung ab dem Firmensitz Aßlar aus `CITY_HUB_DATA` (wie die Kern-Startseite, P3-12b), nicht `CITIES.distanceKm`
+ * (misst ab Wetzlar und zeigte Wetzlar als „HQ“). Der Sitz selbst heißt „Firmensitz“ (Bestandswortlaut); ohne Wert keine Angabe.
+ */
+function Entfernung({ slug }: { slug: string }) {
+  const km = CITY_HUB_DATA[slug]?.distanceKm;
+  if (km === undefined) return null;
+  return <span className="font-mono text-fs-1">{km === 0 ? "Firmensitz" : `${km} km`}</span>;
 }
 
 /** Kurzprofil des gewählten Ortes. Es steht von Anfang an im Dokument, damit nichts unter der Karte nachwächst. */
@@ -171,6 +181,33 @@ function KarteBeimSehen({
         <KartenPlatzhalter />
       )}
     </div>
+  );
+}
+
+/**
+ * Höhe der Kartenfläche neben der Ortsliste im Abschnitt Servicegebiet der Startseite: 13 Orte in zwei Spalten
+ * (7 Zeilen à 54 px) plus Maßzeile (61 px) ergeben 440 px – die Karte ist nicht höher als die Liste.
+ */
+const KARTE_HOEHE_NEBEN_LISTE = "440px";
+
+/**
+ * Nur die Kartenfläche (Einwilligungs-Tor, dann Karte, sobald sie im Blick ist) für den Abschnitt Servicegebiet der
+ * Startseite. Ohne Stadtleiste und Kurzprofil, weil dort die Ortsliste steht und das Kurzprofil darunter folgt.
+ * Der Default-Export bleibt unverändert; diese Komponente nimmt keine Props, damit sie aus Server-Komponenten
+ * ohne Übergabe von Funktionen eingebunden werden kann.
+ */
+export function ServiceKartenflaeche() {
+  const [selectedSlug, setSelectedSlug] = useState<string>("asslar");
+  const currentCity = CITY_HUB_DATA[selectedSlug] || CITY_HUB_DATA.asslar;
+
+  return (
+    <MapConsentGate
+      title={`Einsatzgebiet Fliesenverlegung Tezgel – ${currentCity.name}`}
+      height={KARTE_HOEHE_NEBEN_LISTE}
+      className="w-full"
+    >
+      <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={setSelectedSlug} />
+    </MapConsentGate>
   );
 }
 

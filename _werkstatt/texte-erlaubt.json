@@ -654,5 +654,23 @@
   "block": "main",
   "entfernt": "45 km",
   "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "header_zeilen",
+  "alt": "Aufmaß buchen",
+  "vermerk": "E-020 Fusion: Kopf-Knopf „Aufmaß buchen“ → „Aufmaß anfragen“ (überall sonst „anfragen“; Abschnittsgutachten) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "HQ",
+  "vermerk": "E-020 Fusion: Stadtknopf „HQ“ (Wetzlar) → „Firmensitz“ (Aßlar), Entfernungen ab Aßlar – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Kostenloses Vor-Ort-Aufmaß anfordern",
+  "vermerk": "E-020 Fusion: Abschluss (FinalCTA) mit einem Aufmaß-Aufruf statt zwei – TEXTVORSCHLAEGE"
  }
 ]

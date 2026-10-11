@@ -121,7 +121,7 @@ export default function PricingCalculator() {
                   data-motion="zustand"
                 >
                   {/* Planmarke statt Piktogramm: das Gewerk als kleiner Verlegeplan (Formsystem K-008), auf Kalk in beiden Zuständen lesbar */}
-                  <span className="w-14 shrink-0 border border-fuge bg-kalk p-1">
+                  <span className="w-12 shrink-0 border border-fuge bg-kalk p-1">
                     <Verlegeplan plan={SERVICE_PLAENE[srv.id]} bemassung={false} ohneAchse />
                   </span>
                   <span className="min-w-0 flex-1">
@@ -242,7 +242,7 @@ export default function PricingCalculator() {
       </div>
 
       {/* ── Rechte Spalte: Zusammenfassung und Kontakt (Schriftfeld auf Tinte) ── */}
-      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:col-span-2 lg:p-12">
+      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:col-span-2 lg:self-start lg:p-12">
         {status === "success" ? (
           /* Erfolgsansicht nach Absenden */
           <div className="my-auto flex flex-col gap-6" role="status">
@@ -273,7 +273,7 @@ export default function PricingCalculator() {
           </div>
         ) : (
           /* Formular-Ansicht */
-          <form onSubmit={handleSubmit} className="flex h-full flex-col justify-between gap-8">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             <div>
               <span className={`${etikettForm} text-nacht-2`}>
                 <Fugenkreuz className="size-3 text-nacht-2" />
@@ -356,7 +356,7 @@ export default function PricingCalculator() {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4">
                   <div>
                     <label htmlFor="calc-phone" className={labelHell}>
                       Telefonnummer <span className="ml-1 font-mono text-fs-1 text-nacht-2">*</span>
@@ -391,7 +391,7 @@ export default function PricingCalculator() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-4">
                   <div>
                     <label htmlFor="calc-location" className={labelHell}>
                       Einsatzort / PLZ
@@ -412,20 +412,25 @@ export default function PricingCalculator() {
                     <label htmlFor="calc-timing" className={labelHell}>
                       Gewünschter Zeitraum
                     </label>
-                    <select
-                      id="calc-timing"
-                      name="timing"
-                      aria-label="Gewünschter Zeitraum"
-                      value={timing}
-                      onChange={(e) => setTiming(e.target.value)}
-                      className={feldKlassen}
-                    >
-                      {TIMING_OPTIONS.map((t) => (
-                        <option key={t} value={t}>
-                          {t}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        id="calc-timing"
+                        name="timing"
+                        aria-label="Gewünschter Zeitraum"
+                        value={timing}
+                        onChange={(e) => setTiming(e.target.value)}
+                        className={`${feldKlassen} appearance-none pr-12`}
+                      >
+                        {TIMING_OPTIONS.map((t) => (
+                          <option key={t} value={t}>
+                            {t}
+                          </option>
+                        ))}
+                      </select>
+                      <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                        <Icon name="winkel-unten" groesse={5} className="text-tinte" />
+                      </span>
+                    </div>
                   </div>
                 </div>
 

@@ -3,6 +3,9 @@
 // am Desktop rückt das Raster bei Hover/Fokus in die Flucht, mobil beim Eintritt (Register K-007).
 // `zustand` zeigt den Plan im Ablauf (Szene „Verlegeplan entsteht“): aufmass (Raum, Achsen, drei Prüfmarken),
 // fugenbild (Standard: Raster mit Passstücken), verlegt (Belag und Abnahme-Haken).
+// `schnitt` zeigt den Plan an der waagrechten Achse geschnitten (obere Hälfte, Planblatt der Startseite): Das Lot bleibt
+// und endet an der Schnittkante; die Waage zeichnet das umgebende Blatt als Schnittlinie. `wandEinzug()` liefert den
+// Abstand der Wand vom Rand der Zeichnung als Anteil der Breite – damit setzt das Blatt die Wände nach unten fort.
 import { useId } from 'react';
 import clsx from 'clsx';
 import { fugenbild, startversatz } from '@/lib/plaene/geometrie';
@@ -21,7 +24,19 @@ export interface VerlegeplanProps {
   ohneAchse?: boolean;
   /** Stand im Ablauf (K-007 szene-ablauf); Standard fugenbild */
   zustand?: 'aufmass' | 'fugenbild' | 'verlegt';
+  /** an der waagrechten Achse geschnitten: nur die obere Hälfte, Lot bis zur Schnittkante, keine Waage */
+  schnitt?: boolean;
   className?: string;
+}
+
+const RAND_MIT_BEMASSUNG = 22;
+const RAND_OHNE_BEMASSUNG = 6;
+
+/** Wandabstand vom linken bzw. rechten Rand der Zeichnung als Anteil ihrer Breite (0–1) */
+export function wandEinzug(plan: PlanName | Planvorgabe, bemassung = true): number {
+  const vorgabe: Planvorgabe = typeof plan === 'string' ? PLAENE[plan] : plan;
+  const rand = bemassung ? RAND_MIT_BEMASSUNG : RAND_OHNE_BEMASSUNG;
+  return rand / (vorgabe.raum.b * S + rand * 2);
 }
 
 function Element({ e, b, h }: { e: Planelement; b: number; h: number }) {
@@ -66,7 +81,7 @@ function Element({ e, b, h }: { e: Planelement; b: number; h: number }) {
   }
 }
 
-export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, ohneAchse = false, zustand = 'fugenbild', className }: VerlegeplanProps) {
+export default function Verlegeplan({ plan, beschriftet = false, bemassung = true, interaktiv = false, ohneAchse = false, zustand = 'fugenbild', schnitt = false, className }: VerlegeplanProps) {
   const vorgabe: Planvorgabe = typeof plan === 'string' ? PLAENE[plan] : plan;
   const bild = fugenbild(vorgabe);
   const uid = useId().replace(/[^a-zA-Z0-9-]/g, '');
@@ -74,22 +89,22 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
   const titelId = `plan-titel-${uid}`;
   const { b, h } = vorgabe.raum;
   const W = b * S, H = h * S;
-  const rand = bemassung ? 22 : 6;
+  const rand = bemassung ? RAND_MIT_BEMASSUNG : RAND_OHNE_BEMASSUNG;
   const elemente = vorgabe.elemente ?? [];
   const fehl = elemente.find((e) => e.art === 'fehlstelle');
   const stelz = elemente.some((e) => e.art === 'stelzlager');
   const kreuzpunkte = stelz ? bild.waagrecht.flatMap((y) => bild.senkrecht.filter(([, y1, y2]) => y1 <= y * 1 && y2 >= y).map(([x]) => [x, y])) : [];
   const links = bild.passstuecke.find(([x]) => x === 0);
   const zeigeLot = !ohneAchse && vorgabe.achse !== 'waage';
-  const zeigeWaage = !ohneAchse && vorgabe.achse !== 'lot';
+  const zeigeWaage = !ohneAchse && !schnitt && vorgabe.achse !== 'lot';
   const zeigeRaster = zustand !== 'aufmass';
   // Prüfmarken beim Aufmaß (Ebenheit, Restfeuchte, Tragfähigkeit): drei Messpunkte auf der Diagonale
   const pruefpunkte = [[0.22, 0.28], [0.5, 0.5], [0.78, 0.72]].map(([fx, fy]) => [fx * W, fy * H]);
 
   return (
     <svg
-      viewBox={`${-rand} ${-rand} ${W + rand * 2} ${H + rand * 2}`}
-      className={clsx('verlegeplan block h-auto w-full', className)}
+      viewBox={`${-rand} ${-rand} ${W + rand * 2} ${schnitt ? bild.achseY * S + rand : H + rand * 2}`}
+      className={clsx('verlegeplan block h-auto w-full', schnitt && 'overflow-hidden', className)}
       {...(beschriftet ? { role: 'img', 'aria-labelledby': titelId } : { 'aria-hidden': true, focusable: false })}
       data-motion={interaktiv ? 'sig-plan' : undefined}
     >

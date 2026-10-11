@@ -1,14 +1,10 @@
-"use client";
-
-import React from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import clsx from "clsx";
 import Icon from "@/components/icons/Icon";
-import Fugenkreuz from "@/components/kern/Fugenkreuz";
-import { knopfKlassen } from "@/components/kern/stile";
-import { triggerHaptic } from "@/lib/haptics";
+import Knopf from "@/components/kern/Knopf";
+import { seitenKlassen } from "@/components/kern/stile";
 import { siteConfig } from "@/lib/config";
 import { LeadQuickForm } from "@/components/forms/LeadQuickForm";
+import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 
 interface FinalCTAProps {
   className?: string;
@@ -28,8 +24,19 @@ const defaultBenefits = [
   "Saubere Baustelle mit Staubschutz-Garantie",
 ];
 
-// Abschluss (KERN K-009): Tinte-Fläche, Überschrift links an der Fuge, Merkliste mit Fugenkreuz,
-// drei Wege (Anrufen · Aufmaß anfragen · WhatsApp). Props und Texte bleiben wie im Bestand.
+// Telefonnummer groß in Mono, als tel:-Link (Farbwechsel der Linie: zustand)
+const TELEFON_KLASSEN =
+  "inline-flex w-fit font-mono text-fs-5 text-kalk underline decoration-nacht-fuge decoration-1 underline-offset-8 transition-colors dauer-1 ease-setzen hover:decoration-kalk";
+
+// WhatsApp als Nebenknopf auf Tinte: Kontur in Nacht-Farben (die Knopf-Varianten sind für helle Flächen gedacht)
+const NEBENKNOPF_AUF_TINTE =
+  "inline-flex min-h-11 w-full items-center justify-center gap-2 border border-nacht-2 bg-transparent px-6 py-3 font-text text-fs-2 font-semibold text-kalk no-underline transition-colors dauer-1 ease-setzen hover:border-kalk";
+
+// Abschluss (KERN v2, nach src/components/kern/start/Abschluss.tsx): Tinte-Fläche, gerahmtes Feld mit klarer Rangfolge
+// (Überschrift, Untertitel, große Telefonnummer, gefüllter Hauptknopf, WhatsApp mit Markenzeichen, ruhige Leiste).
+// Ein Aufmaß-Aufruf: der Hauptknopf (buttonText). Props und Standardwerte wie im Bestand.
+// Das Schnellformular erscheint nur bei showQuickForm (Unterseiten mit Standorten/Leistungen), wie bisher.
+// Server-Komponente: kein Zustand, daher keine Haptik beim Klick.
 export default function FinalCTA({
   className,
   headline = "Planen Sie ein Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
@@ -44,70 +51,59 @@ export default function FinalCTA({
   return (
     <section
       aria-labelledby="final-cta-heading"
-      className={cn("flaeche-tinte relative w-full border-t border-nacht-fuge bg-tinte py-24 text-kalk lg:py-32", className)}
+      className={clsx("flaeche-tinte relative w-full border-t border-nacht-fuge bg-tinte py-24 text-kalk lg:py-32", className)}
     >
-      <div className="mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12">
-        <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
-          <div className="col-span-4 md:col-span-8 lg:col-span-7">
-            {serviceContext && (
-              <p className="mb-4 font-mono text-fs-1 text-nacht-2">{serviceContext}</p>
-            )}
-            <h2 id="final-cta-heading" className="text-fs-6 text-kalk">
-              {headline}
-            </h2>
-            <ul className="mt-8 grid gap-px border border-nacht-fuge bg-nacht-fuge md:grid-cols-3">
-              {benefits.map((benefit, i) => (
-                <li key={i} className="flex items-start gap-3 bg-tinte p-4 text-fs-2 text-kalk">
-                  <Fugenkreuz className="mt-1 size-3 text-nacht-2" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className={seitenKlassen}>
+        <div className="border border-nacht-fuge">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            {/* Anliegen: Kontext, Überschrift, Untertitel, Zusagen */}
+            <div className="flex flex-col gap-6 p-4 md:p-8 lg:col-span-7 lg:p-12">
+              {serviceContext && <p className="font-mono text-fs-1 text-nacht-2">{serviceContext}</p>}
+              <h2 id="final-cta-heading" className="font-anzeige text-fs-6 text-kalk">
+                {headline}
+              </h2>
+              <p className="font-text text-fs-2 text-nacht-2">{subtitle}</p>
+              <ul className="flex flex-col border-t border-nacht-fuge">
+                {benefits.map((benefit, i) => (
+                  <li key={i} className="flex items-start gap-3 border-b border-nacht-fuge py-3 font-text text-fs-3 text-kalk">
+                    <Icon name="haken" groesse={5} className="mt-1 text-nacht-2" />
+                    <span className="min-w-0">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div className="col-span-4 flex flex-col gap-4 md:col-span-8 lg:col-span-5">
-            <a
-              href={siteConfig.contact.phone.link}
-              onClick={() => triggerHaptic("light")}
-              aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${siteConfig.contact.phone.formatted}`}
-              className="font-mono text-fs-5 text-kalk underline decoration-nacht-fuge underline-offset-8 hover:decoration-kalk"
-            >
-              {siteConfig.contact.phone.formatted}
-            </a>
-            <a
-              href={siteConfig.contact.phone.link}
-              onClick={() => triggerHaptic("medium")}
-              className={knopfKlassen("hell", "w-full")}
-              data-motion="druck"
-            >
-              <Icon name="telefon" />
-              <span>{buttonText}</span>
-            </a>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <Link
-                href="/kontakt#express-anfrage"
-                className="inline-flex min-h-11 items-center justify-center gap-2 border border-nacht-2 px-4 py-3 text-center text-fs-2 font-semibold text-kalk transition-colors dauer-1 ease-setzen hover:border-kalk"
-                data-motion="druck"
+            {/* Wege: Telefonnummer, Hauptknopf, WhatsApp */}
+            <div className="flex flex-col justify-center gap-4 border-t border-nacht-fuge p-4 md:p-8 lg:col-span-5 lg:border-l lg:border-t-0 lg:p-12">
+              <a
+                href={siteConfig.contact.phone.link}
+                aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${siteConfig.contact.phone.formatted}`}
+                data-motion="zustand"
+                className={TELEFON_KLASSEN}
               >
-                <Icon name="aufmass" />
-                <span>Kostenloses Vor-Ort-Aufmaß anfordern</span>
-              </Link>
+                {siteConfig.contact.phone.formatted}
+              </a>
+              <Knopf href={siteConfig.contact.phone.link} variante="hell" className="w-full">
+                {buttonText}
+              </Knopf>
               <a
                 href={siteConfig.contact.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => triggerHaptic("light")}
-                className="inline-flex min-h-11 items-center justify-center gap-2 border border-nacht-2 px-4 py-3 text-fs-2 font-semibold text-kalk transition-colors dauer-1 ease-setzen hover:border-kalk"
                 aria-label="WhatsApp Nachricht an Fliesenverlegung Tezgel senden"
                 data-motion="druck"
+                className={NEBENKNOPF_AUF_TINTE}
               >
+                <WhatsAppLogo className="size-5" />
                 <span>Per WhatsApp schreiben</span>
               </a>
             </div>
-            <p className="mt-4 border-t border-nacht-fuge pt-4 font-mono text-fs-1 text-nacht-2">
-              {socialProof}
-            </p>
-            <p className="text-fs-2 text-nacht-2">{subtitle}</p>
+          </div>
+
+          {/* Leiste: Beleg in Mono, ruhig */}
+          <div className="flex items-center gap-2 border-t border-nacht-fuge px-4 py-4 md:px-8 lg:px-12">
+            <Icon name="stern" groesse={4} className="text-nacht-2" />
+            <p className="font-mono text-fs-1 text-nacht-2">{socialProof}</p>
           </div>
         </div>
 
@@ -115,7 +111,7 @@ export default function FinalCTA({
           <div className="mx-auto mt-12 w-full max-w-mass text-left">
             <LeadQuickForm
               variant="card"
-              sourceTag={quickFormSource || serviceContext || 'final-cta'}
+              sourceTag={quickFormSource || serviceContext || "final-cta"}
               heading="Kostenfreies Vor-Ort-Aufmaß anfordern"
               subheading="Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
             />

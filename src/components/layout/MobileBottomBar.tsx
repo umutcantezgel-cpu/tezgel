@@ -4,12 +4,14 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "@/components/icons/Icon";
+import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 import { siteConfig } from "@/lib/config";
 import { buildWhatsAppUrl, kontextNachricht, openWhatsApp } from "@/lib/whatsapp";
 import { triggerHaptic } from "@/lib/haptics";
 
 // Untere Leiste (KERN K-009): einzige feste Ebene neben dem Kopf, bis lg; drei Wege an der Fuge, die Anfrage als
-// Hauptaktion auf Tinte. Das erste Feld ist der Platz des Widerruf-Schilds der Einwilligung (#leiste-schild): die
+// Hauptaktion auf Tinte (Kalender für den Aufmaß-Termin, WhatsApp mit Markenzeichen – Fusion E-020). Das erste Feld
+// ist der Platz des Widerruf-Schilds der Einwilligung (#leiste-schild): die
 // Einwilligungs-Komponente hängt ihren Knopf dort ein, sobald sie geladen ist – so verdeckt kein schwebender Knopf Inhalt.
 const feld =
   "flex min-h-12 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen";
@@ -62,7 +64,7 @@ export default function MobileBottomBar() {
           aria-label="WhatsApp-Chat starten"
           data-motion="druck"
         >
-          <Icon name="sprechblase" groesse={5} />
+          <WhatsAppLogo className="size-5" />
           <span>WhatsApp</span>
         </a>
 
@@ -72,7 +74,7 @@ export default function MobileBottomBar() {
           className={`${feld} bg-tinte text-kalk hover:bg-tinte-2`}
           data-motion="druck"
         >
-          <Icon name="aufmass" groesse={5} />
+          <Icon name="kalender" groesse={5} />
           <span>Aufmaß</span>
         </Link>
       </div>

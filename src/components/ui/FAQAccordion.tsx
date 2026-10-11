@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
-import Fugenkreuz from "@/components/kern/Fugenkreuz";
+import Icon from "@/components/icons/Icon";
 import { pickVariant } from "@/lib/textRotation";
 import { siteConfig } from "@/lib/config";
 
@@ -23,8 +23,8 @@ const callVariants = [
   `Rückfragen unter ${siteConfig.contact.phone.formatted}`,
 ];
 
-// FAQ (KERN K-009): Fragen an der Fuge, das Fugenkreuz dreht sich zum Schließen-Zeichen,
-// die Antwort klappt über grid-template-rows auf (Register „aufklappen“).
+// FAQ (KERN K-009, Erscheinung der Kern-Startseite): Fragen in der Grundschrift zur Abschnittsüberschrift, ohne Kästen,
+// nur mit Fuge unten; Plus rechts, Minus wenn offen. Die Antwort klappt über grid-template-rows auf (Register „aufklappen“).
 export default function FAQAccordion({ question, answer, isDarkerBg = false }: FAQAccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
   const uniqueId = useId();
@@ -34,24 +34,20 @@ export default function FAQAccordion({ question, answer, isDarkerBg = false }: F
   const linkText = pickVariant(callVariants, question);
 
   return (
-    <div className={`border-b border-fuge first:border-t ${isDarkerBg ? "bg-kalk" : "bg-fliese"}`}>
+    <div className={`border-b border-fuge first:border-t${isDarkerBg ? " bg-kalk" : ""}`}>
       <div>
         <button
           id={buttonId}
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex w-full cursor-pointer items-start justify-between gap-6 px-4 py-6 text-left transition-colors dauer-1 ease-setzen hover:bg-kalk md:px-6"
+          className="flex min-h-12 w-full cursor-pointer items-center justify-between gap-6 py-4 text-left font-text text-fs-3 font-semibold text-tinte transition-colors dauer-1 ease-setzen hover:text-tinte-2"
           aria-expanded={isOpen}
           aria-controls={panelId}
           data-motion="zustand"
         >
-          <span className="font-text text-fs-4 font-semibold text-tinte">{question}</span>
-          <span
-            className={`mt-2 shrink-0 text-tinte motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen motion-reduce:transition-none ${isOpen ? "rotate-45" : "rotate-0"}`}
-            aria-hidden="true"
-            data-motion="aufklappen"
-          >
-            <Fugenkreuz className="size-4" />
+          <span className="min-w-0">{question}</span>
+          <span className="flex shrink-0 items-center text-tinte" aria-hidden="true" data-motion="aufklappen">
+            <Icon name={isOpen ? "minus" : "plus"} groesse={6} />
           </span>
         </button>
       </div>
@@ -65,15 +61,16 @@ export default function FAQAccordion({ question, answer, isDarkerBg = false }: F
         inert={!isOpen}
       >
         <div>
-          <div className="flex max-w-mass flex-col gap-4 px-4 pb-6 md:px-6">
-            <p className="text-fs-3 text-tinte">
+          <div className="flex max-w-mass flex-col gap-4 pb-6">
+            <p className="font-text text-fs-2 text-tinte-2">
               {answer}
             </p>
-            <p className="flex flex-col gap-2 border-t border-fuge pt-4 text-fs-2 text-tinte-2 sm:flex-row sm:items-center">
+            <p className="flex flex-col gap-2 border-t border-fuge pt-4 font-text text-fs-2 text-tinte-2 sm:flex-row sm:items-center">
               <span>Haben Sie eine Frage zu Ihrem Bauvorhaben?</span>
               <a
                 href={siteConfig.contact.phone.link}
                 aria-label={`Fliesenverlegung Tezgel telefonisch kontaktieren: ${linkText}`}
+                data-motion="zustand"
                 className="font-semibold text-tinte underline decoration-strich underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-tinte"
               >
                 {linkText}
