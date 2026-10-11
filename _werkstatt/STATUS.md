@@ -1,4 +1,4 @@
-STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 2/9 (E2) · Zusammenführung mit main (E-020): Startseite fusioniert, Branch enthält main · Push auf main wartet auf Freigabe · Bestand grün (289/290, 1 Ausreißer) · Nächster Schritt: Freigabe main, dann Tor Anlauf 2
+STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 2/9 (E2) · Zusammenführung mit main (E-020): Startseite fusioniert, Branch enthält main · main = Branch (Push auf Anweisung) · Bestand grün (289/290, 1 Ausreißer) · Nächster Schritt: Vercel-Status, dann Tor Anlauf 2
 
 # STATUS · Werkstatt-Lauf „Tezgel auf Spitzenniveau“
 
