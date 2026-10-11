@@ -1,10 +1,16 @@
 # PRUEFPUNKT
 
-- Lauf: 1 (angepasst, E-000) · Phase: P4 (Fundament, ruhend) · P3 abgeschlossen
-- Live auf main: 9ee1d23 (Produkt seit 74be0fb unverändert; letzter src-Commit 1c6c9cd ruhend, T1 grün).
-- Server: 4321 = Vorschau 1c6c9cd-v (sechs Entwürfe), 4337 = f2c4180 (Basis), 4310 = 707a93d (Ausgangsstand), 4323 = a8e049f (Bestand-`/` für Lighthouse), 4340–4342 = P4-12.
-- P4-Tor (`belege/p4-tor/ERGEBNIS.md`): Z-05 Suite 382/0/16 + Reinraum grün · Z-11 harte Kennzahlen 0, axe 0 · Z-13 0 Überlauf, 0 Wortbruch · Mutationsprobe 6/6 (Testlücke F-07 geschlossen) · Probeläufer 15/15, 0 hoch · Gegenprobe 14/15 (a3 mobil +2 → Auflage W9) · Fünf-Sekunden 10/12 (/kontakt, /leistungen mobil → M-20, Auflage W2/W9) · Slop weich 23 (P0 58), hart 0.
-- Laufend: P4-12 TBT `/` (Opus) · Pixelvergleich Stichprobe 16 Bestandsseiten 4337 gegen 4321 (M3).
-- Gegenprüfer P4-GEG: Tor **nicht bestanden** (H1 ohne JS, H2 Fünf-Sekunden/Banner, M1–M4, N1–N8). Umgesetzt: M1, M2, M4 (E-032), N1–N3, N5, N7, N8; H1/H2 dokumentiert (E-029 berichtigt, E-030 Nachtrag, M-20 erweitert).
-- Nächster exakter Schritt: P4-12 abnehmen → P4-13 starten (Banner Desktop als Leiste, WhatsApp im Kopf, Kanal nur im Browser; Auftrag `pakete/P4-13.md`) → neue Vorschau → Suite, a11y-zusatz, axe, Fünf-Sekunden betroffene Ansichten (zwei Bewerter + strenge Lesart), Mutation P6 mobil → Lighthouse `/` 10 Paare → T2 `/` → Gegenprüfer Runde 2 → Push.
-- Offene Abweichungen: ABNAHME „Offene Abweichungen“ (Z-04 Tastatur, Z-12 TBT); neu M-20.
+- Lauf: 1 (angepasst, E-000) · Phase: P4 (Fundament) · P3 abgeschlossen
+- Live auf main: f60360d (Produkt f2c4180). Lokal, nicht gepusht: P4-13 (0d26ca5, wirkt sofort auf `/`), Abnahme c5ef582, Belege und Entscheidungen der Runde 2 bis f4584fb.
+- Server: 4321 = Vorschau c5ef582-v (sieben Kern-Seiten), 4324 = Kandidat c5ef582, 4337 = Live f2c4180, 4323 = Bestand-`/` a8e049f, 4310 = Ausgangsstand 707a93d.
+- P4-Tor Runde 2 (`belege/p4-tor-r2/ERGEBNIS.md`):
+  - H1 und H2 behoben (ohne JS 0; Fünf-Sekunden Desktop ≥ Bestand, `/standorte` streng 3 → 5).
+  - Suite 382/1/15: 1 Lastfall auf einer Bestandsseite, einzeln 6/6 auf Vorschau und Live.
+  - a11y harte Kennzahlen 0 (ausgenommen „dünn“ 1 nach E-018), axe 57/0, Fotos und Wortbruch 0, texte2 1 rot (erklärt: H1).
+  - Gegenprobe 13/15 (W9, E-034), Mutation P6 6/6.
+  - T2 `/`: Pixel nur Kopf; Lighthouse gegen Live gleich; INP max 80 ms.
+  - Z-12 TBT verfehlt → E-035, P4-14 vor W1.
+- Werkzeugbefund E-036: Pixelvergleiche seit P2-PLAN-01 blind (Maske). Berichtigt und nachgeprüft (M3 und rückwirkend Stichprobe: nur der gewollte Haken auf `/leistungen/aussen`). Vollvergleich rückwirkend läuft (`cache/pixel/p4r2-voll-rueckwirkend/`).
+- Laufend: Gegenprüfer P4-GEG2 (Opus, Auftrag `pakete/P4-GEG2.md`, 5 Urteile inkl. Werkzeugregel E-035).
+- Nächster exakter Schritt: Rückgabe P4-GEG2 auswerten. Bei bestanden: Bereichsprüfung, `git fetch`, `git push origin HEAD:main`, danach `live-rauchtest.sh` und `live-browser.mjs` mit fester Kennung. Dann P4-14 (Aufschub mit Werkzeugregel, falls zugelassen), danach P5 W1 `/bad`.
+- Offen für den Auftraggeber: M-20 (Zielgruppe im Wortlaut /kontakt, /leistungen, /ueber-uns), M-19 und weitere in MENSCHEN.

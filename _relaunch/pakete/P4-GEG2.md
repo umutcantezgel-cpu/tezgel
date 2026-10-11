@@ -11,8 +11,9 @@ Runde 1 (`_relaunch/pakete/P4-GEG.rueckgabe.md`) hat das P4-Tor nicht bestehen l
 Bestätige nur, was ein Beleg trägt. Öffne jede Belegdatei und rechne nach. Übernimm keine Behauptung aus einem Ergebnisprotokoll ungeprüft.
 
 ## Material
-- **Ergebnis:** `_relaunch/belege/p4-tor/ERGEBNIS.md` (Stand nach Runde 2) und `_relaunch/belege/p4-tor/` (Unterordner).
-- **Entscheidungen** in `_relaunch/ENTSCHEIDUNGEN.md`: E-013, E-017, E-018, E-023, E-024, E-029 (mit Berichtigung), E-030 (mit Nachtrag), E-031 bis E-035.
+- **Ergebnis Runde 2:** `_relaunch/belege/p4-tor-r2/ERGEBNIS.md` mit Unterordnern; Belege außerdem in `_relaunch/belege/p4tor-r2-a11y/`, `p4tor-r2-axe/`, `p4tor-r2-fotos/`, `p4tor-r2-wortbruch/`, `fuenf-p4r2-vorschau/`, `t2-c5ef582-gegen-live/`, `t2-c5ef582-gegen-bestand/`, `build-vergleich-f2c4180-c5ef582-streng/`. Runde 1: `_relaunch/belege/p4-tor/ERGEBNIS.md`.
+- **Werkzeugbefund dieser Runde:** E-036 (Pixelvergleiche seit P2-PLAN-01 blind; Berichtigung `werkzeuge/pixel.mjs`, Nachprüfung). Prüfe, ob die Berichtigung trägt und ob weitere Belege betroffen sind. Ein Vollvergleich aller Bestandsseiten (Ausgangsstand 4310 gegen Live 4337) läuft während deiner Prüfung; sein Ergebnis kommt als Nachtrag in `cache/pixel/p4r2-voll-rueckwirkend/ergebnis.json`, falls fertig.
+- **Entscheidungen** in `_relaunch/ENTSCHEIDUNGEN.md`: E-013, E-017, E-018, E-023, E-024, E-029 (mit Berichtigung), E-030 (mit Nachtrag), E-031 bis E-036.
 - **P4-13:** Auftrag `_relaunch/pakete/P4-13.md`, Rückgabe `P4-13.rueckgabe.md`, Belege `_relaunch/belege/p4-13/`, Code `git show 0d26ca5`.
 - **P4-12:** Rückgabe `_relaunch/pakete/P4-12.rueckgabe.md`. Messungen zu A: `_relaunch/cache/p4-12/` (lokal, nur lesen).
 - **Regeln:**
