@@ -186,6 +186,17 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });
       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);
     });
+
+    // Befund M-16: Im Bestand öffnet dieser Knopf nur eine eigene Hook-Instanz und erreicht den Banner nicht.
+    // Im Kern geht er über #cookie-settings wie der Fußlink; die Einwilligung bleibt dabei unverändert.
+    test('/: „Cookie-Einstellungen“ im Kartenplatzhalter öffnet die Einstellungen, ohne die Einwilligung zu ändern', async ({ page, context }) => {
+      await page.goto('/');
+      await ladeKnopf(page, '/');
+      const vorher = await lesEinwilligung(context);
+      await klick(page.locator('#servicegebiet').getByRole('button', { name: 'Cookie-Einstellungen', exact: true }));
+      await expect(banner(page).getByText('Cookie-Einstellungen individuell anpassen')).toBeVisible();
+      expect(await lesEinwilligung(context)).toEqual(vorher);
+    });
   });
 
   test.describe('mit Marketing-Einwilligung (alle)', () => {
