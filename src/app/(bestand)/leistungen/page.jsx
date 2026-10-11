@@ -156,7 +156,7 @@ export default function ServiceHubPage() {
                       ))}
                     </ul>
 
-                    <div className="mt-auto flex flex-col gap-3 border-t border-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="mt-auto flex flex-col items-start gap-4 border-t border-fuge pt-6">
                       <Knopf href={`/leistungen/${srv.id}`} variante="text" icon="pfeil-rechts">
                         Fachdetails &amp; Ratgeber: {srv.name}
                       </Knopf>
