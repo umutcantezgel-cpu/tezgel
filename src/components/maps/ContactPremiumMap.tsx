@@ -9,7 +9,7 @@ import MapConsentGate from "@/components/legal/MapConsentGate";
 import Einzugsband from "@/components/kern/Einzugsband";
 import { ZONEN } from "@/lib/einzugszonen";
 import Icon from "@/components/icons/Icon";
-import { etikettKlassen, feldKlassen, knopfKlassen, wahlKlassen } from "@/components/kern/stile";
+import { etikettKlassen, feldKlassen, knopfKlassen } from "@/components/kern/stile";
 import { triggerHaptic } from "@/lib/haptics";
 import {
   CITY_HUB_DATA,
@@ -105,14 +105,15 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
             />
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          {/* Filterzeile: vier gleich breite Spalten im 1-px-Raster (Strich), eine Zeile auch bei 390 px */}
+          <div className="grid grid-cols-4 divide-x divide-strich border border-strich">
             {ENTFERNUNGEN.map((f) => (
               <button
                 key={f.label}
                 type="button"
                 aria-pressed={distanceFilter === f.val}
                 onClick={() => setDistanceFilter(f.val)}
-                className={wahlKlassen}
+                className="min-h-11 bg-fliese px-2 py-3 text-center font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
               >
                 {f.label}
               </button>
