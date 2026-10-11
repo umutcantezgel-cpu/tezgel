@@ -2,7 +2,7 @@
 // Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Keine Logikänderung (G9): auch die bekannten Lücken
 // (Tage aus `new Date()` beim Rendern in der Zeitzone des Rechners, `_t` als feste Vergangenheit, `preferredDate` und
 // `serviceType` verwirft die Prüfung der API; intern I-12, I-18) bleiben, wie sie sind.
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useSyncExternalStore } from 'react';
 
 export const AVAILABLE_SLOTS = [
   { time: '08:30', label: '08:30 – 10:00 Uhr (Morgens)' },
@@ -16,6 +16,14 @@ export type TerminKalenderEingaben = {
   initialServiceType: string;
   onBookingConfirmed?: (data: { date: string; timeSlot: string; name: string; phone: string }) => void;
 };
+
+// Kalendertag des Browsers als stabile Kennung (gleicher Wert über den Tag, `useSyncExternalStore` vergleicht mit Object.is).
+function tagesKennung(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+}
+const keinTag = (): null => null;
+const ohneAbo = () => () => {};
 
 export function useTerminKalender({ initialServiceType, onBookingConfirmed }: TerminKalenderEingaben) {
   const [step, setStep] = useState<1 | 2>(1);
@@ -37,10 +45,17 @@ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: Te
     websiteUrl: '', // Honeypot
   });
 
+  // P4-05d (I-19): „heute“ erst im Browser. Das HTML wird am Build-Tag vorgerendert; standen die Tage schon dort, passte es
+  // ab dem Folgetag nicht mehr zum Browser (React #418 auf /termin und /kontakt). Server und Hydrieren sehen `null`
+  // (Kalender ohne Tage), danach gilt das Datum des Browsers – dieselben Tage wie bisher.
+  const heute = useSyncExternalStore(ohneAbo, tagesKennung, keinTag);
+
   // Generate 12 available workdays starting tomorrow (skipping Sundays)
   const availableDays = useMemo(() => {
     const days: Array<{ dateStr: string; displayDate: string; weekday: string; isSaturday: boolean }> = [];
-    const date = new Date();
+    if (heute === null) return days;
+    const [jahr, monat, tag] = heute.split('-').map(Number);
+    const date = new Date(jahr, monat - 1, tag, 12);
 
     while (days.length < 10) {
       date.setDate(date.getDate() + 1);
@@ -64,7 +79,7 @@ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: Te
     }
 
     return days;
-  }, []);
+  }, [heute]);
 
   const handleSelectSlot = (dateStr: string, time: string) => {
     setSelectedDate(dateStr);
