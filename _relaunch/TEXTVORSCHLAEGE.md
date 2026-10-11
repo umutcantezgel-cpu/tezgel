@@ -82,3 +82,9 @@ Nur Vorschläge: Überschriften und Fließtext bleiben bis zur Entscheidung des 
 | `src/app/(bestand)/ueber-uns/page.jsx:137` (Abschluss /ueber-uns) | Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel. | Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel. | „Lernen Sie uns persönlich kennen“ (S-13, Grenzfall); die Sachaussage steht im zweiten Teil. |
 
 Mikrotext (Knopf), Umsetzung in W1 mit MIKROTEXTE-Zeile: `src/app/(bestand)/bad/page.jsx:74` „Musterbäder entdecken“ → „Musterbäder ansehen“ (so heißt derselbe Weg sonst auf der Seite; S-13 „entdecken“).
+
+### Nachtrag P4-Tor · Fünf-Sekunden-Probe (Zielgruppe im ersten Bildschirm, MENSCHEN M-20)
+| Datei:Zeile | Original (wörtlich) | Vorschlag | Begründung |
+|---|---|---|---|
+| `src/app/(bestand)/kontakt/page.jsx:29` (Einleitung /kontakt) | Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, … | Ihr Fliesenleger für Privatkunden, Architekten und Bauherren in Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, … | Mobil erkennen 2 von 5 Erstbetrachtern die Zielgruppe („Kunden … ob privat oder gewerblich, unklar“). Wortlaut der Zielgruppe aus /standorte (`src/app/(bestand)/standorte/page.tsx:72`), also belegt. |
+| `src/app/(bestand)/leistungen/page.jsx:91` (Einleitung /leistungen) | Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen bieten wir hochwertige Handwerksleistungen: … | Als eingetragener Fliesenleger-Fachbetrieb für Privatkunden, Architekten und Bauherren in Wetzlar, Aßlar und Mittelhessen bieten wir hochwertige Handwerksleistungen: … | Mobil 4 von 5 (Bestand 5 von 5 durch Raten hinter dem Banner); gleiche Quelle wie oben. |

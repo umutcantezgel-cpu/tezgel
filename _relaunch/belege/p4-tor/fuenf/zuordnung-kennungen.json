@@ -1,0 +1,482 @@
+{
+ "A001": {
+  "bild": "b14",
+  "durchgang": 5
+ },
+ "A002": {
+  "bild": "b15",
+  "durchgang": 5
+ },
+ "A003": {
+  "bild": "b05",
+  "durchgang": 2
+ },
+ "A004": {
+  "bild": "b15",
+  "durchgang": 1
+ },
+ "A005": {
+  "bild": "b15",
+  "durchgang": 2
+ },
+ "A006": {
+  "bild": "b21",
+  "durchgang": 4
+ },
+ "A007": {
+  "bild": "b02",
+  "durchgang": 5
+ },
+ "A008": {
+  "bild": "b24",
+  "durchgang": 5
+ },
+ "A009": {
+  "bild": "b11",
+  "durchgang": 2
+ },
+ "A010": {
+  "bild": "b11",
+  "durchgang": 5
+ },
+ "A011": {
+  "bild": "b23",
+  "durchgang": 5
+ },
+ "A012": {
+  "bild": "b16",
+  "durchgang": 5
+ },
+ "A013": {
+  "bild": "b18",
+  "durchgang": 3
+ },
+ "A014": {
+  "bild": "b20",
+  "durchgang": 1
+ },
+ "A015": {
+  "bild": "b15",
+  "durchgang": 4
+ },
+ "A016": {
+  "bild": "b16",
+  "durchgang": 1
+ },
+ "A017": {
+  "bild": "b03",
+  "durchgang": 3
+ },
+ "A018": {
+  "bild": "b20",
+  "durchgang": 2
+ },
+ "A019": {
+  "bild": "b07",
+  "durchgang": 2
+ },
+ "A020": {
+  "bild": "b14",
+  "durchgang": 4
+ },
+ "A021": {
+  "bild": "b09",
+  "durchgang": 3
+ },
+ "A022": {
+  "bild": "b03",
+  "durchgang": 1
+ },
+ "A023": {
+  "bild": "b19",
+  "durchgang": 3
+ },
+ "A024": {
+  "bild": "b10",
+  "durchgang": 5
+ },
+ "A025": {
+  "bild": "b18",
+  "durchgang": 5
+ },
+ "A026": {
+  "bild": "b17",
+  "durchgang": 4
+ },
+ "A027": {
+  "bild": "b22",
+  "durchgang": 2
+ },
+ "A028": {
+  "bild": "b23",
+  "durchgang": 2
+ },
+ "A029": {
+  "bild": "b11",
+  "durchgang": 3
+ },
+ "A030": {
+  "bild": "b23",
+  "durchgang": 4
+ },
+ "A031": {
+  "bild": "b17",
+  "durchgang": 2
+ },
+ "A032": {
+  "bild": "b18",
+  "durchgang": 2
+ },
+ "A033": {
+  "bild": "b22",
+  "durchgang": 3
+ },
+ "A034": {
+  "bild": "b07",
+  "durchgang": 4
+ },
+ "A035": {
+  "bild": "b10",
+  "durchgang": 4
+ },
+ "A036": {
+  "bild": "b19",
+  "durchgang": 2
+ },
+ "A037": {
+  "bild": "b21",
+  "durchgang": 1
+ },
+ "A038": {
+  "bild": "b19",
+  "durchgang": 5
+ },
+ "A039": {
+  "bild": "b21",
+  "durchgang": 3
+ },
+ "A040": {
+  "bild": "b23",
+  "durchgang": 1
+ },
+ "A041": {
+  "bild": "b13",
+  "durchgang": 5
+ },
+ "A042": {
+  "bild": "b11",
+  "durchgang": 1
+ },
+ "A043": {
+  "bild": "b22",
+  "durchgang": 5
+ },
+ "A044": {
+  "bild": "b06",
+  "durchgang": 2
+ },
+ "A045": {
+  "bild": "b05",
+  "durchgang": 4
+ },
+ "A046": {
+  "bild": "b12",
+  "durchgang": 2
+ },
+ "A047": {
+  "bild": "b09",
+  "durchgang": 2
+ },
+ "A048": {
+  "bild": "b21",
+  "durchgang": 2
+ },
+ "A049": {
+  "bild": "b16",
+  "durchgang": 2
+ },
+ "A050": {
+  "bild": "b24",
+  "durchgang": 1
+ },
+ "A051": {
+  "bild": "b20",
+  "durchgang": 5
+ },
+ "A052": {
+  "bild": "b04",
+  "durchgang": 4
+ },
+ "A053": {
+  "bild": "b19",
+  "durchgang": 4
+ },
+ "A054": {
+  "bild": "b05",
+  "durchgang": 3
+ },
+ "A055": {
+  "bild": "b03",
+  "durchgang": 2
+ },
+ "A056": {
+  "bild": "b12",
+  "durchgang": 1
+ },
+ "A057": {
+  "bild": "b17",
+  "durchgang": 3
+ },
+ "A058": {
+  "bild": "b24",
+  "durchgang": 3
+ },
+ "A059": {
+  "bild": "b22",
+  "durchgang": 1
+ },
+ "A060": {
+  "bild": "b08",
+  "durchgang": 5
+ },
+ "A061": {
+  "bild": "b22",
+  "durchgang": 4
+ },
+ "A062": {
+  "bild": "b03",
+  "durchgang": 5
+ },
+ "A063": {
+  "bild": "b07",
+  "durchgang": 5
+ },
+ "A064": {
+  "bild": "b04",
+  "durchgang": 1
+ },
+ "A065": {
+  "bild": "b02",
+  "durchgang": 2
+ },
+ "A066": {
+  "bild": "b14",
+  "durchgang": 2
+ },
+ "A067": {
+  "bild": "b17",
+  "durchgang": 1
+ },
+ "A068": {
+  "bild": "b12",
+  "durchgang": 5
+ },
+ "A069": {
+  "bild": "b09",
+  "durchgang": 1
+ },
+ "A070": {
+  "bild": "b08",
+  "durchgang": 2
+ },
+ "A071": {
+  "bild": "b10",
+  "durchgang": 2
+ },
+ "A072": {
+  "bild": "b15",
+  "durchgang": 3
+ },
+ "A073": {
+  "bild": "b24",
+  "durchgang": 2
+ },
+ "A074": {
+  "bild": "b20",
+  "durchgang": 4
+ },
+ "A075": {
+  "bild": "b02",
+  "durchgang": 4
+ },
+ "A076": {
+  "bild": "b12",
+  "durchgang": 3
+ },
+ "A077": {
+  "bild": "b05",
+  "durchgang": 1
+ },
+ "A078": {
+  "bild": "b03",
+  "durchgang": 4
+ },
+ "A079": {
+  "bild": "b14",
+  "durchgang": 1
+ },
+ "A080": {
+  "bild": "b23",
+  "durchgang": 3
+ },
+ "A081": {
+  "bild": "b06",
+  "durchgang": 4
+ },
+ "A082": {
+  "bild": "b08",
+  "durchgang": 4
+ },
+ "A083": {
+  "bild": "b06",
+  "durchgang": 1
+ },
+ "A084": {
+  "bild": "b21",
+  "durchgang": 5
+ },
+ "A085": {
+  "bild": "b11",
+  "durchgang": 4
+ },
+ "A086": {
+  "bild": "b07",
+  "durchgang": 3
+ },
+ "A087": {
+  "bild": "b04",
+  "durchgang": 3
+ },
+ "A088": {
+  "bild": "b01",
+  "durchgang": 3
+ },
+ "A089": {
+  "bild": "b08",
+  "durchgang": 3
+ },
+ "A090": {
+  "bild": "b16",
+  "durchgang": 4
+ },
+ "A091": {
+  "bild": "b12",
+  "durchgang": 4
+ },
+ "A092": {
+  "bild": "b10",
+  "durchgang": 3
+ },
+ "A093": {
+  "bild": "b05",
+  "durchgang": 5
+ },
+ "A094": {
+  "bild": "b04",
+  "durchgang": 5
+ },
+ "A095": {
+  "bild": "b07",
+  "durchgang": 1
+ },
+ "A096": {
+  "bild": "b06",
+  "durchgang": 5
+ },
+ "A097": {
+  "bild": "b01",
+  "durchgang": 1
+ },
+ "A098": {
+  "bild": "b01",
+  "durchgang": 4
+ },
+ "A099": {
+  "bild": "b13",
+  "durchgang": 1
+ },
+ "A100": {
+  "bild": "b04",
+  "durchgang": 2
+ },
+ "A101": {
+  "bild": "b14",
+  "durchgang": 3
+ },
+ "A102": {
+  "bild": "b16",
+  "durchgang": 3
+ },
+ "A103": {
+  "bild": "b17",
+  "durchgang": 5
+ },
+ "A104": {
+  "bild": "b06",
+  "durchgang": 3
+ },
+ "A105": {
+  "bild": "b24",
+  "durchgang": 4
+ },
+ "A106": {
+  "bild": "b18",
+  "durchgang": 1
+ },
+ "A107": {
+  "bild": "b20",
+  "durchgang": 3
+ },
+ "A108": {
+  "bild": "b19",
+  "durchgang": 1
+ },
+ "A109": {
+  "bild": "b01",
+  "durchgang": 2
+ },
+ "A110": {
+  "bild": "b18",
+  "durchgang": 4
+ },
+ "A111": {
+  "bild": "b01",
+  "durchgang": 5
+ },
+ "A112": {
+  "bild": "b13",
+  "durchgang": 2
+ },
+ "A113": {
+  "bild": "b10",
+  "durchgang": 1
+ },
+ "A114": {
+  "bild": "b02",
+  "durchgang": 1
+ },
+ "A115": {
+  "bild": "b02",
+  "durchgang": 3
+ },
+ "A116": {
+  "bild": "b08",
+  "durchgang": 1
+ },
+ "A117": {
+  "bild": "b09",
+  "durchgang": 4
+ },
+ "A118": {
+  "bild": "b13",
+  "durchgang": 4
+ },
+ "A119": {
+  "bild": "b09",
+  "durchgang": 5
+ },
+ "A120": {
+  "bild": "b13",
+  "durchgang": 3
+ }
+}
