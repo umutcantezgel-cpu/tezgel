@@ -45,8 +45,9 @@ export default function Grossformat() {
 
           {/* Bildfeld: Rahmen aus den Fugen des Rasters */}
           <Rasterfeld breite={{ mobil: 4, tablett: 8, desktop: 7 }} innen="keiner" flaeche="fliese" className="flex flex-col">
-            <figure>
-              <div className="relative aspect-2/1 overflow-hidden bg-k-kalk">
+            {/* Bild wächst mit der Zeilenhöhe (Mindestmaß 2:1), damit unter der Bildunterschrift keine leere Fläche bleibt */}
+            <figure className="flex flex-1 flex-col">
+              <div className="relative aspect-2/1 flex-1 overflow-hidden bg-k-kalk">
                 <Image
                   src="/images/bad/bad-freistehende-wanne.webp"
                   alt="Freistehende Badewanne vor bodentiefen Fenstern, Boden aus großformatigen hellen Natursteinplatten (generierte Darstellung)"

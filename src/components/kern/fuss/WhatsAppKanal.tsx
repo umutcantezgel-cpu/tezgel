@@ -7,9 +7,10 @@
 // `id="whatsapp-floating-btn"` und der zugängliche Name bleiben wörtlich (Tests, Analyse).
 // Als Link mit echtem Ziel: vor der Hydrierung öffnet ein Klick dasselbe Ziel (gleicher Text) in einem neuen Tab.
 //
-// Verdeckt nie Formularfelder oder die Hauptaktion: Liegt ein Feld, ein Knopf in einem Formular, ein Element mit
+// Verdeckt nie ein Bedienelement: Liegt ein Feld, ein Link, ein Knopf, eine Beschriftung, ein Element mit
 // `data-hauptaktion` oder ein Bereich mit `data-kanal-frei` (z. B. Abschlusszeile des Fußes) unter dem Knopf, oder hat ein
 // Element unter ihm den Fokus (WCAG 2.4.11), ist er unsichtbar (visibility: hidden – auch aus Tab-Folge und Barrierebaum).
+// Seit P3-16 alle Bedienelemente statt nur Formular und Hauptaktion (Jury t2-ad80754: Knopf über „Zum Fachbereich …“).
 // Er startet unsichtbar und erscheint nach der ersten Prüfung; ohne JavaScript bleibt er aus (WhatsApp steht im Fuß).
 // Bewegung nur über das Register: `druck` (1 px, :active) und Farbwechsel; Ein-/Ausblenden ohne Übergang.
 import { usePathname } from 'next/navigation';
@@ -20,9 +21,9 @@ import { useWhatsAppKanal } from '@/lib/formulare/useWhatsAppKanal';
 import { fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 
-/** Was der Kanal nie verdecken darf. Seiten markieren ihre Hauptaktion mit `data-hauptaktion`. */
+/** Was der Kanal nie verdecken darf: jedes Bedienelement samt Beschriftung, dazu markierte Bereiche. */
 export const FREIHALTEN =
-  'input:not([type="hidden"]), select, textarea, form button, [data-hauptaktion], [data-kanal-frei]';
+  'input:not([type="hidden"]), select, textarea, button, a[href], label, summary, [role="button"], [data-hauptaktion], [data-kanal-frei]';
 
 const BREIT = '(min-width: 1024px)';
 

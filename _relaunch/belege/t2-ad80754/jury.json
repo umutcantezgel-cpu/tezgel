@@ -1,0 +1,336 @@
+{
+ "satz": "t2-ad80754",
+ "seiten": {
+  "/": {
+   "urteile": [
+    {
+     "seite": "/",
+     "jurorin": 1,
+     "urteil": {
+      "design": {
+       "wert": 7,
+       "belege": [
+        "f/15.jpg (1440), Hero: sehr große, eng gesetzte Grotesk-Headline \"Perfektion auf jedem Quadratmeter.\" neben einer Fliesenplan-Strichzeichnung mit Maßketten. Eine rote Achslinie läuft durch Zeichnung und Hero-Unterkante und verbindet beide präzise.",
+        "f/27.jpg (1920), Fachgewerke-Raster: einheitliche Liniengrafiken (Duschrinne mit Gefällepfeilen, Läuferverband, Stelzlager-Raster, Abdichtungsschnitt) mit Mono-Labels in einem Haarlinien-Raster. Das ist eine durchgängige, eigenständige Bildsprache ohne Stockfotos.",
+        "Abzug f/22.jpg, rechte Bildzelle: Unter dem Badfoto steht eine kurze Mono-Bildunterschrift, darunter bleibt eine große leere weiße Fläche. Abzug f/24.jpg Mitte und f/28.jpg oben: sehr große Leerräume ohne Funktion, die den Rhythmus zerreißen."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6.5,
+       "belege": [
+        "f/17.jpg (1440), Navigationsraster \"Alles für Ihr Vorhaben\": vier Spalten (Komplettbäder, Planungshilfen, Standorte, Referenzen) mit klaren Zeilenlinks und Pfeilen. Die Orientierung gelingt sehr gut, auch mobil (f/04.jpg, f/05.jpg).",
+        "f/18.jpg (1440), Formular: Schrittleiste \"1 Gewerk / 2 Fläche / 3 Situation\", gewählte Option invertiert in Dunkelblau, große Klickflächen. Mobil gibt es eine feste Leiste \"Anrufen / WhatsApp / Aufmaß\" (f/00.jpg unten).",
+        "Abzug f/20.jpg unten rechts: Der schwebende WhatsApp-Knopf verdeckt den Primärknopf \"Zum Fachbereich Badsanierung\", in f/19.jpg unten rechts verdeckt er den Flächenwert \"ca. 10 - 25 m²\". Abzug f/02.jpg oben: Nach dem Hero-Formular folgt mobil eine leere Zone mit roter Seitenlinie."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 7,
+       "belege": [
+        "f/15.jpg und f/23.jpg, Hero: Leitidee \"Verlegeplan/Bauzeichnung\". Die rote Achslinie (Fugenachse) schneidet die Zeichnung und wird zur Grundlinie des Formulars. Das ist ein echter Signaturmoment mit Bezug zum Handwerk.",
+        "f/27.jpg, Fachgewerke: Jedes Gewerk bekommt eine eigene technische Schnittzeichnung statt eines Icons, etwa Stelzlager-Kreise für Terrasse oder den Wand-Boden-Anschluss mit Dichtband für die Abdichtung. Die Überraschung hat Sinn.",
+        "Abzug f/22.jpg: Die Fotosektion \"Fugenarme XXL-Großformate\" fällt in ein übliches Bild-Text-Teaser-Muster zurück und bricht die Zeichnungs-Idee."
+       ]
+      },
+      "inhalt": {
+       "wert": 6.5,
+       "belege": [
+        "f/21.jpg, Fachgewerk-Karten: konkrete Fachangaben wie \"2-cm-Außenkeramik auf Stelzlagern\", \"Gefälleherstellung (mind. 1,5 bis 2 %)\", \"Eckdichtbänder mit Dehnzone\" und \"DIN 18534\". Das wirkt kompetent und echt.",
+        "f/29.jpg, Einsatzgebiet: Städteliste mit km-Angaben (Wetzlar 5 km, Gießen 25 km …) und einem ehrlichen DSGVO-Platzhalter für die Karte. Das ist konkret und lokal.",
+        "Abzug f/22.jpg, Badfoto unten rechts: Ein Sternsymbol in der Bildecke lässt ein generiertes Bild vermuten, und die freistehende Wanne vor der Glasfront wirkt nicht wie ein eigenes Projekt. Abzug f/02.jpg: Das Vertrauensraster wiederholt \"5,0 Google-Bewertungen (27 Rezensionen)\" doppelt in zwei Nachbarzellen."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Schwebender WhatsApp-Knopf überdeckt Inhalte und Primärknöpfe (f/19.jpg, f/20.jpg unten rechts), obwohl Kopfzeile und Mobilleiste WhatsApp schon anbieten.",
+        "reparatur": "Den schwebenden Knopf auf Desktop entfernen oder in die Kopfzeile integrieren. Alternativ einen Sicherheitsabstand am Seitenende bzw. für Karten-Fußzeilen einplanen."
+       },
+       {
+        "schwaeche": "Funktionslose Leerräume und leere Zellen: große Lücken zwischen Abschnitten (f/24.jpg Mitte, f/28.jpg oben, f/02.jpg oben mobil) und die fast leere Bildunterschrift-Zelle (f/22.jpg).",
+        "reparatur": "Abschnittsabstände auf ein festes Raster kürzen. Die leere Zelle mit Projektdaten füllen (Format, Ort, Fläche, Kleber) oder die Bildunterschrift direkt unter das Foto setzen und die Zelle streichen."
+       },
+       {
+        "schwaeche": "Stilbruch und fraglicher Inhalt in der Fotosektion: generisch wirkendes Wannenbild mit Sternsymbol (f/22.jpg), das der Zeichnungs-Leitidee widerspricht.",
+        "reparatur": "Durch ein echtes eigenes Projektfoto ersetzen, im gleichen Raster und mit Maßkette bzw. Achslinie als Überlagerung. Alternativ auch hier eine Planzeichnung mit Vorher/Nachher-Bezug verwenden."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 5,
+       "belege": [
+        "g/23.jpg (1920), Hero: saubere Headline mit orangefarbenem Akzentwort \"Quadratmeter.\", rechts eine Formularkarte mit weichem Schatten, Pillen-Badges. Das ist ordentlich, aber das bekannte SaaS-Landingpage-Muster.",
+        "g/10.jpg und g/18.jpg: Jeder Abschnitt zeigt dasselbe Schema, also orange Pill-Eyebrow, zentrierte Headline und Karten mit Icon im abgerundeten Quadrat. Es gibt keine eigene Bild- oder Grafiksprache, die Wiederholung ermüdet.",
+        "Abzug g/17.jpg, linke Formularspalte: Die Optionskarten sind zu eng, der Badge \"Schnellhilfe\" läuft über den Kartenrand, Titel wie \"XXL-Großformat (ab 120 cm)\" brechen unschön über drei Zeilen."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5.5,
+       "belege": [
+        "g/15.jpg (1440), Kopfzeile: Telefonnummer, WhatsApp und \"Aufmaß buchen\" sind ständig sichtbar, die Primärhandlung ist eindeutig hervorgehoben. Das hilft der Handlungsklarheit.",
+        "Abzug g/01.jpg und g/05.jpg (mobil): Schwebende WhatsApp-Blase mit roter \"1\", Tooltip \"Chat starten\", Schild-Knopf links und Mobilleiste überdecken gleichzeitig Formularfelder (E-Mail, Ort/PLZ) und Fließtext.",
+        "Abzug g/22.jpg und g/24.jpg: drei konkurrierende Anfrageformulare (Hero, \"Projekt anfragen\", \"Express-Anfrage in 3 Klicks\"). In g/14.jpg und g/15.jpg werden Städte-Chips bzw. die Vertrauensleiste ohne Scroll-Hinweis abgeschnitten (\"Bad Na\", \"XXL-Großformat Ni\")."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "g/18.jpg, Fachgewerke-Karten: Stockartiges Foto oben, Icon-Kachel, Häkchenliste und Link bilden ein austauschbares Kartenmuster ohne Leitidee zum Thema Fliese, Fuge oder Maß.",
+        "g/14.jpg und g/21.jpg, Kartenbereich: Dunkle Box mit Punktraster und Pin-Icon ist der einzige Ansatz zu einer Inszenierung, aber ebenfalls ein gängiges Muster. Einen erkennbaren Signaturmoment gibt es auf der ganzen Seite nicht."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "g/20.jpg, Kundenstimmen: Namen, Gewerk-Tag, Google-Quelle sowie Zusatzwert \"9,6/10, 25 Trustlocal-Bewertungen\". g/29.jpg Fußbereich: vollständige Adresse, Mobil-/WhatsApp-Nummer, Öffnungszeiten, Kammer und USt-IdNr. Das wirkt echt und vertrauensbildend.",
+        "Abzug g/12.jpg: Das Bild mit Label \"Balkon & Terrasse\" zeigt ein Bad mit Waschtisch und WC, \"Wohnbereiche & Neubau\" zeigt eine freistehende Badewanne. Bild und Aussage passen nicht zusammen, die Fotos wirken generisch bzw. generiert."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Überlagerungen auf Mobil: WhatsApp-Blase mit Zähler, Tooltip \"Chat starten\", Schild-Knopf und Mobilleiste verdecken Formularfelder und Text (g/01.jpg, g/05.jpg).",
+        "reparatur": "Blase, Zähler und Tooltip auf Mobil entfernen, weil die Mobilleiste WhatsApp bereits enthält. Den Cookie-Schild-Knopf in den Fußbereich verlegen und unten einen Innenabstand in Höhe der Leiste einplanen."
+       },
+       {
+        "schwaeche": "Austauschbares Template-Design ohne Leitidee: überall Pill-Eyebrows, Icon-Kacheln und weiche Schatten (g/10.jpg, g/18.jpg, g/22.jpg).",
+        "reparatur": "Ein handwerksbezogenes Gestaltungsprinzip festlegen, etwa Fugenraster, Maßketten oder echte Materialnahaufnahmen. Danach Pill-Badges auf einen Einsatz pro Seite reduzieren und die Icon-Kacheln durch eigene Grafiken oder Projektdetails ersetzen."
+       },
+       {
+        "schwaeche": "Unpassende, generisch wirkende Bilder (Badfoto unter \"Balkon & Terrasse\", Badewanne unter \"Wohnbereiche\", g/12.jpg) und drei konkurrierende Anfrageformulare (g/22.jpg, g/24.jpg).",
+        "reparatur": "Jedes Gewerk mit einem echten, thematisch passenden Projektfoto belegen. Die Formulare auf eines (Hero-Kurzform plus ein ausführlicher Anfrageweg) zusammenführen und die übrigen Stellen per Anker darauf verweisen."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/",
+     "jurorin": 2,
+     "urteil": {
+      "design": {
+       "wert": 7,
+       "belege": [
+        "f/23.jpg (1920), Hero rechts: eine SVG-Verlegezeichnung mit Schraffur, Maßketten ('=') und roter Mittelachse trifft auf eine rote Grundlinie, die quer durch den Hero läuft. Das ist präzise und eigenständig.",
+        "f/27.jpg (1920), Fachgewerke-Raster: jede Karte zeigt eine eigene technische Zeichnung (Gefälle-Pfeile im Bad, versetzter Verband mit roter Achse, Stelzlager-Raster, Wandanschluss im Schnitt). Haarlinienraster, Monospace-Labels und schmale Grotesk-Headlines wirken wie ein System.",
+        "f/28.jpg (1920) und f/22.jpg (1440), Bildkarte rechts: unter dem Foto bleibt ein großes leeres weißes Feld zwischen Bildunterschrift und 'Regional verwurzelt'. Die Komposition fällt dort auseinander.",
+        "f/13.jpg (768), Karte 'Bäder & Wellness': die linke obere Zelle ist komplett leer (die Zeichnung fehlt bei dieser Breite), rechts steht Text. Das wirkt wie ein Fehler."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6.5,
+       "belege": [
+        "f/00.jpg (375): ruhige Leiste unten mit Anrufen, WhatsApp und Aufmaß, keine überlagernden Blasen. Die Kopfleiste ist schlank und die Lesbarkeit gut.",
+        "f/26.jpg (1920), Formularende: klare Primäraktion 'Unverbindliche Anfrage absenden' neben der Telefonalternative, Felder mit eindeutigen Labels.",
+        "f/18.jpg (1440) und f/08.jpg (375): ausgewählte Optionen zeigen ein '+' im Kästchen, echte Checkboxen dagegen ein Häkchen. Der Auswahlzustand ist dadurch semantisch missverständlich.",
+        "f/20.jpg (1440), Karte 'Bäder & Wellness' unten rechts: der schwebende WhatsApp-Button verdeckt den Button 'Zum Fachbereich Badsanierung'."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 7.5,
+       "belege": [
+        "f/15.jpg (1440), Hero: die Leitidee 'Bauplan/Fugenachse' ist konsequent umgesetzt. Die rote Achslinie der Zeichnung verlängert sich in eine Seitenlinie, die Headline und Formular trennt. Das ist ein echtes Signaturmoment mit Sinn für ein Fliesenhandwerk.",
+        "f/29.jpg (1920), Einsatzgebiete: statt Pillenkette eine Maßstabsleiste 'Einsatzgebiet 45 km' und eine Tabelle Stadt/km in Monospace, daneben eine Rasterfläche als Kartenplatzhalter. Thematisch stimmig umgesetzt.",
+        "f/14.jpg (768), Ablauf: Prozessschritte als vertikale Linie mit abgehakten Kästchen und Nummern 02/03, gestalterisch wie ein Protokoll. Das passt zum Konzept, ist aber nur zurückhaltend inszeniert."
+       ]
+      },
+      "inhalt": {
+       "wert": 6.5,
+       "belege": [
+        "f/21.jpg und f/27.jpg: fachlich konkrete Listen (AIV nach DIN 18534, Dichtmanschetten, 2-cm-Außenkeramik, Gefälle 1,5 bis 2 %), die von den Zeichnungen illustriert werden. Bild und Text stützen sich gegenseitig.",
+        "f/29.jpg (1920), Entfernungstabelle: echte, prüfbare Angaben (Wetzlar 5 km, Solms 8 km, Braunfels 10 km), die Echtheit und Ortsnähe vermitteln.",
+        "f/12.jpg (768) und f/19.jpg (1440): Zusammenfassung 'Gewerk / Fläche / Vor-Ort-Aufmaß 0 € / Verbindlicher Festpreis' vor dem Absenden gibt Klarheit. Der Satz 'Wir zeigen keine pauschalen Scheinpreise' hat einen glaubwürdigen Ton.",
+        "f/23.jpg (1920) und f/15.jpg: im Hero zwei Formular-Einstiege (Hero-Formular und später ausführliche Projektanfrage in f/25), der Inhalt wiederholt sich doppelt."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Leere Flächen und Lücken im Raster: großes weißes Feld unter der Bildunterschrift (f/22, f/28), leere Zeichnungszelle bei 768 px (f/13) und auf Mobil eine rote Randlinie, die ins Leere läuft (f/02).",
+        "reparatur": "Die Bildkarte so umbauen, dass das Bild die Zelle füllt oder die Bildunterschrift direkt am Kartenfuß sitzt. Die Bad-Zeichnung bei Tablet-Breite einblenden oder die Karte einspaltig stapeln. Die rote Linie mit dem Hero-Ende abschließen."
+       },
+       {
+        "schwaeche": "Zustände und Überlagerungen sind unklar: '+' als Auswahlzeichen konkurriert mit dem Häkchen der Checkboxen (f/18, f/25), und der schwebende WhatsApp-Button verdeckt Buttons (f/20).",
+        "reparatur": "Für ausgewählte Optionen ein einheitliches Häkchen oder einen gefüllten Radio-Punkt verwenden. Den schwebenden WhatsApp-Button auf Desktop ausblenden, da WhatsApp im Hero und in der Kopfleiste schon vorhanden ist, oder ihm einen Sicherheitsabstand zum Inhalt geben."
+       },
+       {
+        "schwaeche": "Monospace wird überdehnt: Telefonnummern ('06441 / 44 83 567'), Städtenamen und Hinweisfelder in Monospace mit weiten Abständen lesen sich schwer. Im Hero bricht der Telefon-Button in eine eigene Zeile (f/15, f/23). Dazu kommen sehr große Abstände zwischen Abschnitten (f/24, f/29).",
+        "reparatur": "Monospace auf kurze Labels und Maßangaben beschränken und Telefonnummern sowie Ortsnamen in der Grundschrift setzen. Die drei Hero-Aktionen in eine Zeile bringen oder Telefon als Textlink ausführen. Die Abschnittsabstände um etwa ein Drittel kürzen."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 5,
+       "belege": [
+        "g/15.jpg (1440), Hero links: saubere Hierarchie aus großer Grotesk-Headline mit orangem Akzent 'Quadratmeter.', Unterzeile und Fließtext. Ordentlich, aber das bekannte Muster aus Pill-Badge, Headline mit Farbwort, drei Buttons und Häkchenleiste.",
+        "g/10.jpg (768), Kachelraster 'Alles für Ihr Vorhaben': runde Karten, Icon in orangem Quadrat, Kicker in Versalien, Pfeil-Links. Austauschbares Kartensystem, das auf jeder Branchenseite gleich aussieht.",
+        "g/12.jpg (768), untere Karte 'DIN 18534 Abdichtung': das Kartenbild ist stark unscharf (grüne Fliesen, verschwommene Messingarmatur) und wirkt wie ein Platzhalter.",
+        "g/21.jpg (1440), Karte 'Interaktive Karte geschützt (DSGVO)': dunkler Block mit Punktraster bricht die helle Seite. Die Pillenleiste mit den Städten darüber ist rechts abgeschnitten ('Bad Na…' in g/14)."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "g/00.jpg (375), unteres Drittel: WhatsApp kommt dreimal gleichzeitig vor (Button im Hero, Leiste unten, schwebende Blase mit roter '1'), dazu das Cookie-Schild. Der Hero-Button 'WhatsApp' wird vom Schild teilweise verdeckt.",
+        "g/05.jpg (375), Mitte: Das Hinweisfeld 'Chat starten' und die WhatsApp-Blase liegen über dem Fließtext ('…meldet sich zeitnah für eine persönliche…'), der Text ist dort nicht lesbar.",
+        "g/15.jpg, g/17.jpg und g/22.jpg (1440): drei verschiedene Anfrageformulare auf einer Seite ('Kostenloses Aufmaß', 'Projekt anfragen & Situation schildern', 'Express-Anfrage in 3 Klicks'). Damit ist unklar, welcher Weg der richtige ist.",
+        "g/15.jpg (1440), Kopfleiste: Navigation mit Dropdowns, Telefon, WhatsApp und der Primäraktion 'Aufmaß buchen' ist klar gegliedert und bleibt beim Scrollen sichtbar (g/18 bis g/29)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "g/09.jpg (768) und g/15.jpg (1440), Hero: keine Leitidee über Orange als Akzentfarbe hinaus, kein eigenes Bild- oder Grafikmotiv zum Thema Fliese oder Präzision.",
+        "g/18.jpg (1440), Fachgewerk-Karten: Stock- bzw. KI-artige Badfotos mit Label-Chip und Checklisten. Das ist ein generisches Muster ohne Signaturmoment.",
+        "g/22.jpg (1440), 'Express-Anfrage': ein Wizard mit Schrittzähler 1 2 3 und Badges 'SEHR BELIEBT'. Er wirkt wie ein SaaS-Baustein und überrascht nicht."
+       ]
+      },
+      "inhalt": {
+       "wert": 6,
+       "belege": [
+        "g/18.jpg und g/19.jpg (1440), Fachgewerk-Karten: konkrete Fachangaben (XXL-Fliesen bis 120 × 278 cm, Gefälle mindestens 1,5 bis 2 %, Dichtmanschetten, DIN 18534) wirken kompetent und echt.",
+        "g/20.jpg (1440), Kundenstimmen: namentliche Google-Rezensionen (Elke S., C. W., Rabia Ö.) und Trustlocal 9,6/10 schaffen Glaubwürdigkeit.",
+        "g/29.jpg (1440), Footer: vollständige Adresse, Öffnungszeiten, Kammer und USt-IdNr. sind echt und vertrauensbildend.",
+        "g/00.jpg (375), WhatsApp-Blase mit roter Benachrichtigung '1' täuscht eine ungelesene Nachricht vor. Das schadet der Ehrlichkeit des Tons."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Mobil überladen: Kopfleiste, Leiste unten mit drei Buttons, schwebende WhatsApp-Blase mit '1' und 'Chat starten'-Hinweis sowie Cookie-Schild verdecken Inhalt (g/00, g/01, g/05).",
+        "reparatur": "Die schwebende WhatsApp-Blase und den 'Chat starten'-Hinweis auf Mobil streichen, weil die Leiste unten WhatsApp schon anbietet. Die künstliche '1' entfernen. Das Cookie-Schild in den Footer verlegen."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare auf einer Seite (Hero, 'Projekt anfragen', 'Express-Anfrage'), was Orientierung und Vertrauen schwächt (g/15, g/17, g/22).",
+        "reparatur": "Ein einziges Formular als Abschluss behalten, etwa die ausführliche Projektanfrage. Im Hero nur noch einen Ankerbutton dorthin setzen und das Express-Formular streichen oder in eine Variante dieses einen Formulars überführen."
+       },
+       {
+        "schwaeche": "Austauschbare Vorlagenoptik ohne Leitidee: Pill-Badges, Icon-Kacheln, Karten mit Schatten und unscharfe Stockbilder (g/10, g/12, g/18).",
+        "reparatur": "Ein eigenes Motiv aus dem Handwerk entwickeln, etwa Fugenraster, Maßlinien oder echte Baustellenfotos von Deniz Tezgel. Das unscharfe Abdichtungsbild durch ein scharfes Detailfoto ersetzen, Schatten und Badges reduzieren."
+       }
+      ]
+     }
+    },
+    {
+     "seite": "/",
+     "jurorin": 3,
+     "urteil": {
+      "design": {
+       "wert": 7,
+       "belege": [
+        "f/15.jpg, Hero oben: sehr große, eng gesetzte Condensed-Grotesk „Perfektion auf jedem Quadratmeter.“ neben einer Bauzeichnung mit Schraffur, Bemaßung und roter Mittelachse; die rote Linie läuft als Grundlinie in die Formularkarte weiter. Das ist eigenständig und präzise gesetzt.",
+        "f/27.jpg, Fachgewerke-Raster: jedes Gewerk hat eine eigene Strich-SVG (Gefällepfeile, Stelzlager-Punkte, Abdichtungsdetail im Schnitt). Haarlinien und Mono-Labels („+ Balkon & Terrasse  Fachgewerk“) bilden ein schlüssiges Planblatt-System.",
+        "f/24.jpg, Mitte: zwischen dem Ende der Vorteilsliste und „Alles für Ihr Vorhaben“ steht rund 250 px leere Fläche. Ähnlich in f/28.jpg oben. Der Rhythmus der Abschnitte zerfällt.",
+        "f/22.jpg, rechte Karte: unter dem Badfoto steht nur eine zweizeilige Mono-Bildunterschrift, darunter ein großes, leeres weißes Feld bis „Regional verwurzelt“. Das wirkt wie ein vergessener Platzhalter."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 6.5,
+       "belege": [
+        "f/17.jpg, Übersicht in vier Spalten (Komplettbäder / Planungshilfen / Standorte / Referenzen) mit Pfeilzeilen und Städteraster: sehr klare Orientierung in mehr als 100 Seiten.",
+        "f/00.jpg, unten: die feste Leiste „Anrufen | WhatsApp | Aufmaß“ ist ruhig, beschriftet und hebt die Hauptaktion dunkel hervor. Auf dem Handy ist das gut nutzbar.",
+        "f/20.jpg, rechts unten: der schwebende WhatsApp-Kasten verdeckt den Button „Zum Fachbereich Badsanierung“ (Text abgeschnitten „Badsanieru“).",
+        "f/18.jpg und f/12.jpg: neben der Hero-Kurzanfrage gibt es ein zweites, langes Projektformular mit einem dritten Schritt-Raster. Es bleibt unklar, welches Formular man nutzen soll."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 7.5,
+       "belege": [
+        "f/15.jpg, Hero rechts: die Leitidee „Bauplan / Fliesenspiegel“ mit Bemaßungszeichen „=“, Schraffur der Randfliesen und roter Fugenachse ist ein echter Signaturmoment für einen Fliesenleger.",
+        "f/21.jpg, Kartenköpfe: Wohnbereich mit Halbverband und roter Achse, Terrasse mit Stelzlager-Kreisen, Abdichtung als Wand-Boden-Schnitt. Jede Grafik erklärt das Gewerk inhaltlich.",
+        "f/22.jpg, unten rechts: ein Kachelraster als Ornament, das in den Rand ausläuft. Der Einfall ist da, im Ausschnitt aber nur angerissen und nicht zu Ende geführt."
+       ]
+      },
+      "inhalt": {
+       "wert": 6.5,
+       "belege": [
+        "f/14.jpg, Ablauf 01–03: konkrete Fachaussagen (Restfeuchte, Tragfähigkeit, R10/R11, Edelstahlschienen) wirken kompetent und echt.",
+        "f/29.jpg, Einsatzgebiet: Städteliste mit Kilometerangaben ab Aßlar. Das ist konkret und glaubwürdig.",
+        "f/16.jpg und f/03.jpg: Fließtext mit Floskeln („Handwerkliche Perfektion, geprüfte Standards“). Mehrfach wiederholte Versprechen (Staubschutz, DIN 18534 in Hero, Leiste, Liste, Karten) ermüden.",
+        "f/22.jpg: nur ein einziges Badfoto, ohne Ort oder Projektbezug. Echte Referenzbilder fehlen im gesehenen Material."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Große Leerflächen und unvollständig gefüllte Felder zerreißen den Rhythmus (f/24.jpg Mitte, f/28.jpg oben, f/22.jpg weißes Feld unter dem Foto, f/02.jpg rote Randlinie endet im Nichts).",
+        "reparatur": "Abschnittsabstände auf eine feste Skala begrenzen (z. B. 96/128 px). Das Bildunterschrift-Feld auf Inhaltshöhe schrumpfen lassen oder mit Projektdaten füllen (Ort, m², Format). Die rote Hero-Linie sauber auf der Grundlinie enden lassen."
+       },
+       {
+        "schwaeche": "Der schwebende WhatsApp-Kasten am Desktop überdeckt Bedienelemente (f/20.jpg Button „Zum Fachbereich Badsanieru…“, f/19.jpg Flächenwert „ca. 10 - 25“).",
+        "reparatur": "Auf dem Desktop durch ein kleines Icon in einer Ecke ersetzen, mit Sicherheitsabstand zum Inhaltsraster (Inhalt endet bei 1328 px). Alternativ nur in der Kopfzeile anbieten, wie es ohnehin schon geschieht."
+       },
+       {
+        "schwaeche": "Zwei bis drei konkurrierende Anfrageformulare (Hero-Kurzform f/15.jpg, Langform mit Schrittleiste f/18.jpg/f/25.jpg, Projektanfrage-Block f/12.jpg) verdoppeln Inhalt und machen die Seite unnötig lang.",
+        "reparatur": "Ein einziges Formular behalten: die Hero-Kurzform mit „Mehr Angaben“-Aufklapper. Die Langform als eigene Seite verlinken, die von allen Aufmaß-CTAs aus erreichbar ist."
+       }
+      ]
+     },
+     "lockvogel": {
+      "design": {
+       "wert": 5,
+       "belege": [
+        "g/16.jpg, Hero: zentrierter Plus-Jakarta-Stil mit orangefarbenem Akzentwort „Quadratmeter.“, Pill-Badge darüber, weiche Schatten und abgerundete Karte. Das ist sauber, aber das bekannte Landingpage-Schema.",
+        "g/18.jpg, Fachgewerke: Fotokarten mit Icon-Kachel, Label „FACHGEWERK“ und Häkchenliste. Ordentlich ausgerichtet, aber austauschbar. Das Foto in g/12.jpg unten (grüne Fliesen) ist so stark weichgezeichnet, dass es nach Platzhalter aussieht.",
+        "g/17.jpg, Formular: hellorange umrandete Auswahlkarten links, schwarzes Panel rechts mit grünen Werten („0 € (Kostenfrei)“). Im Ausschnitt ragt „Schnellhilfe“ über den Kartenrand der Karte „Reparatur & Schadensbeseitigung“ hinaus.",
+        "g/29.jpg, Fußbereich: dunkler, gut gegliederter Footer mit Vertrauensleiste und vier Linkspalten. Solide Handwerksarbeit."
+       ]
+      },
+      "bedienbarkeit": {
+       "wert": 5,
+       "belege": [
+        "g/01.jpg und g/02.jpg (Mobil): grüner WhatsApp-Kreis mit roter „1“, Tooltip „Chat starten“, Schild-Icon links unten und dreiteilige Leiste liegen gleichzeitig über dem Inhalt und verdecken Formularfelder („T / PLZ“) und Überschriften („Alles für Ihr Vorhaben“).",
+        "g/16.jpg (Desktop): die Kopfzeile bietet die Telefonnummer, WhatsApp und „Aufmaß buchen“ direkt an, die Hero-Kurzform hat klare Pflichtfelder. Die Hauptaktion ist sofort verständlich.",
+        "g/22.jpg und g/24.jpg: nach der Hero-Form folgen „Projekt anfragen & Situation schildern“ und zusätzlich „Ihre Express-Anfrage in 3 Klicks“. Das sind drei Anfragewege mit unterschiedlichen Schritt-Logiken.",
+        "g/14.jpg: die Städte-Chips laufen ohne Scroll-Hinweis rechts aus („Bad Na…“). Auch die Vertrauensleiste in g/23.jpg unten wird abgeschnitten („XXL-Großformat Ni…“)."
+       ]
+      },
+      "kreativitaet": {
+       "wert": 3.5,
+       "belege": [
+        "g/09.jpg, Hero Tablet: die Formel aus zentrierter Überschrift, Akzentwort im Farbverlauf und drei Pill-Buttons ist eine austauschbare Vorlage ohne Bezug zum Fliesenhandwerk.",
+        "g/10.jpg und g/18.jpg: die Icon-Kacheln (Tropfen, Funken, Sonne, Schild) in orangen Quadraten sind generische Symbolik und keine Leitidee, die nur zu diesem Betrieb gehört.",
+        "g/14.jpg, Karte: der dunkle DSGVO-Platzhalter mit Punktraster ist der einzige gestaltete Moment, doch auch er ist ein bekanntes Muster."
+       ]
+      },
+      "inhalt": {
+       "wert": 6.5,
+       "belege": [
+        "g/20.jpg, Bewertungen: namentliche Stimmen (Elke S., C. W., Rabia Ö.) mit Gewerk-Tag, Quelle Google und Zweitquelle „9,6/10 Trustlocal“. Das macht die Seite echt und glaubwürdig.",
+        "g/29.jpg, Footer: vollständige Kontaktdaten (Adresse Aßlar, Mobil, Fax, Öffnungszeiten, Kammer, USt-IdNr.). Das ist transparent.",
+        "g/28.jpg: FAQ mit konkreten Fachfragen („Verbundabdichtung nach DIN 18534“, „XXL-Großformate planeben ohne Überzähne“), passend zum Leistungsprofil.",
+        "g/18.jpg, Fotos: das erste Bild zeigt ein Pflegebad mit Haltegriffen, passt also nur bedingt zu „Wellness“. Bei keinem Bild ist erkennbar, dass es ein eigenes Projekt ist."
+       ]
+      },
+      "schwaechen": [
+       {
+        "schwaeche": "Überladene Schwebe-Elemente auf dem Handy: WhatsApp-Kreis mit Benachrichtigungs-„1“, Tooltip „Chat starten“, Schild-Icon und Bottom-Bar verdecken gleichzeitig Inhalte und Formularfelder (g/01.jpg, g/02.jpg, g/06.jpg).",
+        "reparatur": "Auf dem Handy nur die dreiteilige Bottom-Bar behalten. Den WhatsApp-Kreis samt Tooltip und künstlicher „1“ entfernen, das Consent-Schild in den Footer verlegen und unten ein Innenpolster in Höhe der Leiste einplanen."
+       },
+       {
+        "schwaeche": "Generische Vorlagen-Ästhetik ohne Leitidee: Akzentwort im Verlauf, Pill-Badges über jeder Überschrift, Icon-Kacheln und weiche Schatten wiederholen sich in jedem Abschnitt (g/09.jpg, g/10.jpg, g/21.jpg).",
+        "reparatur": "Ein handwerksbezogenes Signaturelement einführen, etwa Fugenraster, Bemaßung oder echte Materialtexturen als Abschnittstrenner. Die Pill-Badges auf wenige Ankerstellen reduzieren und die Überschriften linksbündig setzen, damit sie mehr Charakter bekommen."
+       },
+       {
+        "schwaeche": "Drei konkurrierende Anfrageformulare (Hero-Kurzform g/16.jpg, Projektanfrage mit dunklem Panel g/17.jpg, Express-Anfrage g/22.jpg) und abgeschnittene horizontale Leisten (g/14.jpg, g/23.jpg) erzeugen Länge und Unklarheit.",
+        "reparatur": "Auf eine einzige, schrittweise Anfrage zusammenführen. Die Städte-Chips umbrechen lassen statt horizontal zu scrollen und die Vertrauensleiste als umbrechendes Raster setzen. Weichgezeichnete Fotos (g/12.jpg) durch scharfe eigene Projektbilder ersetzen."
+       }
+      ]
+     }
+    }
+   ],
+   "median": {
+    "design": 7,
+    "bedienbarkeit": 6.5,
+    "kreativitaet": 7.5,
+    "inhalt": 6.5
+   },
+   "gewichtet": 6.9,
+   "einzel_gewichtet": [
+    6.8,
+    6.9,
+    6.9
+   ],
+   "lockvogel_gewichtet": [
+    4.95,
+    4.8,
+    4.85
+   ]
+  }
+ }
+}
