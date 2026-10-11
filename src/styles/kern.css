@@ -294,3 +294,76 @@ html.k-bewegung [data-motion="sig-kreuzlinie"] .k-laser-lot {
     .k-zelle[data-spalte]::before { content: none; }
   }
 }
+
+/* --------------------------------------------------------------------------
+   Regler (P4-10b, K-006, K-011, WCAG 1.4.11): natives range, Spur und Griff aus Kern-Farben.
+   Ungefüllte Spur Strich (3,62 : 1 auf Fliese, 3,29 : 1 auf Kalk), gefüllter Teil und Griff Tinte (18,66 : 1 auf Fliese;
+   5,15 : 1 gegen die Spur). Der Griff trägt eine 2-px-Kante in Fliese, damit er sich vom gefüllten Teil abhebt.
+   WebKit zeichnet die Füllung über --k-regler-stand (setzt Regler.tsx), Firefox über ::-moz-range-progress.
+   Höhe (48 px Trefferfläche), Fokusrahmen und Cursor kommen aus den Klassen am Element; Tastatur bleibt nativ.
+   forced-colors: Browser-Darstellung in Systemfarben. Je Engine eigene Regeln (eine unbekannte Pseudo-Klasse in einer
+   Selektorliste verwirft die ganze Regel).
+   -------------------------------------------------------------------------- */
+@layer components {
+  @media not (forced-colors: active) {
+    .k-regler {
+      appearance: none;
+      background: transparent;
+    }
+    .k-regler::-webkit-slider-runnable-track {
+      height: var(--spacing-k-1);
+      border-radius: var(--radius-k-1);
+      background: linear-gradient(to right, var(--color-k-tinte) var(--k-regler-stand, 0%), var(--color-k-strich) var(--k-regler-stand, 0%));
+    }
+    .k-regler::-webkit-slider-thumb {
+      appearance: none;
+      box-sizing: border-box;
+      width: var(--spacing-k-5);
+      height: var(--spacing-k-5);
+      margin-top: calc((var(--spacing-k-1) - var(--spacing-k-5)) / 2);
+      border: var(--k-linie-2) solid var(--color-k-fliese);
+      border-radius: var(--radius-k-1);
+      background: var(--color-k-tinte);
+    }
+    .k-regler::-moz-range-track {
+      height: var(--spacing-k-1);
+      border-radius: var(--radius-k-1);
+      background: var(--color-k-strich);
+    }
+    .k-regler::-moz-range-progress {
+      height: var(--spacing-k-1);
+      border-radius: var(--radius-k-1);
+      background: var(--color-k-tinte);
+    }
+    .k-regler::-moz-range-thumb {
+      box-sizing: border-box;
+      width: var(--spacing-k-5);
+      height: var(--spacing-k-5);
+      border: var(--k-linie-2) solid var(--color-k-fliese);
+      border-radius: var(--radius-k-1);
+      background: var(--color-k-tinte);
+    }
+    /* Hover (feiner Zeiger) wie Hauptknopf: Griff Tinte-2 */
+    @media (hover: hover) and (pointer: fine) {
+      .k-regler:enabled:hover::-webkit-slider-thumb { background: var(--color-k-tinte-2); }
+      .k-regler:enabled:hover::-moz-range-thumb { background: var(--color-k-tinte-2); }
+    }
+    /* Deaktiviert (K-011: nicht nur blasser): Füllung Strich, Griff Kalk mit gestrichelter Kante in Strich */
+    .k-regler:disabled::-webkit-slider-runnable-track {
+      background: var(--color-k-strich);
+    }
+    .k-regler:disabled::-webkit-slider-thumb {
+      border-style: dashed;
+      border-color: var(--color-k-strich);
+      background: var(--color-k-kalk);
+    }
+    .k-regler:disabled::-moz-range-progress {
+      background: var(--color-k-strich);
+    }
+    .k-regler:disabled::-moz-range-thumb {
+      border-style: dashed;
+      border-color: var(--color-k-strich);
+      background: var(--color-k-kalk);
+    }
+  }
+}
