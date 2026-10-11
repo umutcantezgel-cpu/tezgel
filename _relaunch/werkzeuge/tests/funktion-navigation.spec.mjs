@@ -7,7 +7,8 @@ const ARTIKEL = '/blog/fliesen-reinigen-pflegen';
 
 // Hauptnavigation des Desktops (exakt benannt – die Mobilnavigation heißt „Hauptnavigation Kategorien“).
 const hauptnav = (page) => page.getByRole('navigation', { name: 'Hauptnavigation', exact: true });
-// Mobil-Drawer (Dialog); im geschlossenen Zustand per aria-hidden nicht im Accessibility-Baum.
+// Mobil-Drawer (Dialog) hinter dem Menü-Schalter; im geschlossenen Zustand nicht im Accessibility-Baum
+// (Bestand: aria-hidden, Kern: Popover mit display:none).
 const drawer = (page) => page.getByRole('dialog', { name: 'Hauptnavigation' });
 const menueSchalter = (page) => page.getByRole('button', { name: /^Architektur-Menü (öffnen|schließen)$/ });
 // Ein Klick vor der Hydrierung bleibt wirkungslos (Ausgangsstand, siehe PLAN V-06). Verhalten prüfen: Öffnen gelingt.
@@ -18,6 +19,19 @@ async function oeffneMenue(page) {
     await expect(schalter).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
   }).toPass({ timeout: 15_000 });
 }
+// Akkordeon-Frage auf `/`: Bestand = Knopf mit aria-expanded, Kern = <summary> im <details> (kein Knopf, kein aria-expanded).
+const akkordeonKnopf = (page, frage) => page.getByRole('button', { name: frage }).or(page.locator('summary').filter({ hasText: frage }));
+// Antwortbereich: Bestand = region mit der Frage als Name, Kern = Inhaltsfeld direkt unter dem <details>.
+const akkordeonAntwort = (page, frage) =>
+  page.getByRole('region', { name: frage }).or(page.locator('details').filter({ has: page.locator('summary', { hasText: frage }) }).locator('xpath=./div'));
+// Aufgeklappt: aria-expanded (Bestand) bzw. open des <details> (Kern) – dieselbe Aussage.
+const istOffen = (knopf) => knopf.evaluate((el) => {
+  const d = el.closest('details');
+  return d ? d.open : el.getAttribute('aria-expanded') === 'true';
+});
+// Sichtbare Höhe der Antwort: 0, solange sie nicht angezeigt wird. Zugeklappt rendert das Kern-<details> den Inhalt
+// nicht, seine Box bleibt aber messbar; checkVisibility() unterscheidet beides. Bestand: unverändert die Box-Höhe.
+const sichtbareHoehe = (bereich) => bereich.evaluate((el) => (el.checkVisibility() ? el.getBoundingClientRect().height : 0));
 
 test.describe('Mega-Menü (Desktop, ab lg)', () => {
   test.skip(({ isMobile }) => isMobile, 'Mega-Menü ist mobil ausgeblendet (hidden lg:flex)');
@@ -62,15 +76,31 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
 });
 
 test.describe('Mobilmenü (Drawer)', () => {
-  test('mobil: Desktop-Navigation ist ausgeblendet, der Drawer ist der Zugang', async ({ page, isMobile }) => {
-    test.skip(!isMobile, 'nur im Projekt mobil');
+  // Der Desktop (1440 px) zeigt im Kern die Hauptnavigation (Kopf B: ab xl), der Menü-Schalter fehlt dort.
+  // Je Projekt ein eigener Weg zur selben Aussage; beide Wege laufen in jedem Projekt.
+  test('mobil: Desktop-Navigation ist ausgeblendet, der Drawer ist der Zugang; am Desktop ist sie sichtbar', async ({ page, isMobile }) => {
     await page.goto('/');
-    await expect(hauptnav(page)).toBeHidden();
-    await expect(menueSchalter(page)).toBeVisible();
+    if (isMobile) {
+      await expect(hauptnav(page)).toBeHidden();
+      await expect(menueSchalter(page)).toBeVisible();
+    } else {
+      await expect(hauptnav(page)).toBeVisible();
+    }
   });
 
-  test('Schalter öffnet den Drawer, Escape schließt ihn', async ({ page }) => {
+  test('Schalter öffnet das Menü, Escape schließt es (Drawer; am Desktop das Untermenü)', async ({ page, isMobile }) => {
     await page.goto('/');
+    if (!isMobile) {
+      const schalter = hauptnav(page).getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
+      await expect(schalter).toHaveAttribute('aria-expanded', 'false');
+      await schalter.focus();
+      await page.keyboard.press('Enter');
+      await expect(schalter).toHaveAttribute('aria-expanded', 'true');
+      await page.keyboard.press('Escape');
+      await expect(schalter).toHaveAttribute('aria-expanded', 'false');
+      await expect(schalter).toBeFocused();
+      return;
+    }
     const schalter = menueSchalter(page);
     await expect(schalter).toHaveAttribute('aria-expanded', 'false');
     await expect(drawer(page)).toHaveCount(0);
@@ -81,8 +111,16 @@ test.describe('Mobilmenü (Drawer)', () => {
     await expect(drawer(page)).toHaveCount(0);
   });
 
-  test('Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Drawer schließt', async ({ page }) => {
+  test('Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt (am Desktop über das Untermenü)', async ({ page, isMobile }) => {
     await page.goto('/');
+    if (!isMobile) {
+      const nav = hauptnav(page);
+      await (await bedienbar(nav.getByRole('link', { name: 'Badsanierung', exact: true }))).hover();
+      await nav.getByRole('link', { name: /^Badsanierung komplett/ }).click();
+      await expect(page).toHaveURL(/\/bad\/badsanierung$/);
+      await expect(nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ })).toHaveAttribute('aria-expanded', 'false');
+      return;
+    }
     await oeffneMenue(page);
     const dialog = drawer(page);
     await expect(dialog).toBeVisible();
@@ -98,6 +136,33 @@ test.describe('Mobilmenü (Drawer)', () => {
     await dialog.getByRole('link', { name: /^Badsanierung komplett/ }).click();
     await expect(page).toHaveURL(/\/bad\/badsanierung$/);
     await expect(drawer(page)).toHaveCount(0);
+  });
+});
+
+// V-06: Der Kern-Kopf öffnet Menü und Blätter nativ (popover), also vor und ohne Hydrierung. Ohne Skript ist die
+// Seite nie hydriert; das ist die deterministische Form von „vor der Hydrierung“. Aria-expanded bleibt dabei
+// auf false (das Skript setzt es erst nach dem Laden), geprüft wird daher die Sichtbarkeit des Blatts.
+test.describe('Menü vor der Hydrierung (V-06)', () => {
+  test.use({ javaScriptEnabled: false });
+
+  test('Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)', async ({ page, isMobile }) => {
+    await page.goto('/');
+    if ((await page.locator('header[data-kopf="b"]').count()) === 0) {
+      test.skip(true, 'nur Kern-Kopf: der Bestand öffnet das Menü erst nach der Hydrierung (V-06, Ausgangsstand)');
+    }
+    if (isMobile) {
+      await menueSchalter(page).click();
+      await expect(drawer(page)).toBeVisible();
+      await page.keyboard.press('Escape');
+      await expect(drawer(page)).toHaveCount(0);
+      return;
+    }
+    const nav = hauptnav(page);
+    const punkt = nav.getByRole('link', { name: /^Badsanierung komplett/ });
+    await nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ }).click();
+    await expect(punkt).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(punkt).toHaveCount(0);
   });
 });
 
@@ -156,16 +221,17 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
   test('Startseite: Akkordeon-Frage wechselt aria-expanded und blendet die Antwort ein/aus', async ({ page }) => {
     const frageStart = 'Wie garantieren Sie den Staubschutz bei bewohnten Sanierungen?';
     await page.goto('/');
-    const knopf = page.getByRole('button', { name: frageStart });
-    const bereich = page.getByRole('region', { name: frageStart });
-    await expect(knopf).toHaveAttribute('aria-expanded', 'false');
-    await expect.poll(() => bereich.evaluate((el) => el.getBoundingClientRect().height)).toBe(0);
+    const knopf = akkordeonKnopf(page, frageStart);
+    const bereich = akkordeonAntwort(page, frageStart);
+    await expect(knopf).toBeVisible();
+    await expect.poll(() => istOffen(knopf)).toBe(false);
+    await expect.poll(() => sichtbareHoehe(bereich)).toBe(0);
     await knopf.click();
-    await expect(knopf).toHaveAttribute('aria-expanded', 'true');
-    await expect.poll(() => bereich.evaluate((el) => el.getBoundingClientRect().height)).toBeGreaterThan(0);
+    await expect.poll(() => istOffen(knopf)).toBe(true);
+    await expect.poll(() => sichtbareHoehe(bereich)).toBeGreaterThan(0);
     await knopf.click();
-    await expect(knopf).toHaveAttribute('aria-expanded', 'false');
-    await expect.poll(() => bereich.evaluate((el) => el.getBoundingClientRect().height)).toBe(0);
+    await expect.poll(() => istOffen(knopf)).toBe(false);
+    await expect.poll(() => sichtbareHoehe(bereich)).toBe(0);
   });
 });
 
