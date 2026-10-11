@@ -1,35 +1,27 @@
 "use client";
-import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, Calendar, ArrowRight, Clock, BookOpen } from 'lucide-react';
-import { useContent } from '@/contexts/ContentContext';
+import { useBlogListe } from '@/lib/formulare/useBlogListe';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSidebar from '@/components/blog/BlogSidebar';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
 
 export default function BlogPage() {
-  const { blogCategories = [], blogPosts = [] } = useContent();
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const allPosts = blogPosts || [];
-
-  // Only offer category filters that actually contain articles (generic, data-driven).
-  const visibleCategories = (blogCategories || []).filter(category =>
-    category.id !== 'all' && allPosts.some(post => post.category === category.id)
-  );
-
-  // Filter posts based on category and search query
-  const filteredPosts = allPosts.filter(post => {
-    const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  const featuredPost = allPosts.find(post => post.featured);
+  const {
+    activeCategory,
+    setActiveCategory,
+    searchQuery,
+    setSearchQuery,
+    visibleCategories,
+    filteredPosts,
+    featuredPost,
+    showFeatured,
+    gridPosts,
+    getReadTime,
+    resetFilters,
+  } = useBlogListe();
 
   return (
     <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
@@ -116,7 +108,7 @@ export default function BlogPage() {
             </div>
 
             {/* Featured Post Hero Card - Double Bezel */}
-            {featuredPost && activeCategory === 'all' && !searchQuery && (
+            {showFeatured && (
               <div className="mb-10">
                 <div className="glass-bezel-outer">
                   <Link
@@ -148,7 +140,7 @@ export default function BlogPage() {
                           )}
                           <span className="flex items-center gap-1.5">
                             <Clock className="w-3.5 h-3.5 text-orange-600" />
-                            {featuredPost.readTime || `${featuredPost.reading_time || '5'} Min.`} Lesezeit
+                            {getReadTime(featuredPost)} Lesezeit
                           </span>
                         </div>
 
@@ -173,8 +165,7 @@ export default function BlogPage() {
 
             {/* Post Grid */}
             <div className="grid md:grid-cols-2 gap-6">
-              {filteredPosts
-                .filter(post => !(featuredPost && activeCategory === 'all' && !searchQuery && post.id === featuredPost.id))
+              {gridPosts
                 .map((post) => (
                   <div key={post.id}>
                     <BlogCard post={post} />
@@ -189,7 +180,7 @@ export default function BlogPage() {
                 <p className="text-slate-700 font-bold text-sm">Keine Artikel zur Suchanfrage gefunden.</p>
                 <button
                   type="button"
-                  onClick={() => { setActiveCategory('all'); setSearchQuery(''); }}
+                  onClick={resetFilters}
                   className="btn-primary px-6 py-2.5 text-xs"
                 >
                   Filter zurücksetzen
