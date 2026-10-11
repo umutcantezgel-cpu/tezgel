@@ -33,6 +33,21 @@ const nextConfig: NextConfig = {
     };
     return config;
   },
+  // P4-07 (V-04): umbenannte und zusammengelegte Tezgel-Seiten, dauerhaft (308). 410 für fremde Altadressen: src/proxy.ts.
+  async redirects() {
+    return [
+      {
+        source: '/bad/budgetkalkulator',
+        destination: '/bad/projekt-check',
+        permanent: true,
+      },
+      {
+        source: '/blog/barrierefreies-bad-planung-zuschuesse',
+        destination: '/bad/barrierefreies-bad',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
