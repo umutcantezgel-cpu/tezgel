@@ -30,6 +30,7 @@
 - `werte.mjs`: 0 Befunde (4 Dateien, 223 Klassenvorkommen).
 - Textprobe gegen Start-HEAD 7f28abd: ENTFERNT 0. HINZU nur Icon-Namen (`A:name=…`).
 - `bezeichner.cjs`: leer in allen vier Dateien.
+- Nicht im Bild geprüft: Leerzustand, Hover, Fokus (Klassen nach System, Funktion über Tests).
 - Git: nur meine vier Dateien und diese Rückgabe geändert; fremde Änderungen (u. a. `[slug]/page.jsx`, `ReadingProgress.jsx`, Funnel-Dateien) unberührt.
 - Commit-Stand: HEAD ist f12978c, der Zwischenstand der Verschiebung (nicht von mir). Die Gestaltung liegt unkommittiert im Arbeitsbaum. Kein Commit, kein Push, kein Build, keine Server-Änderung, nur GET-Anfragen.
 
