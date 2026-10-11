@@ -1,5 +1,5 @@
 // Fliesen-Ratgeber (E3-BAU-06, KERN v2): Erzählansicht nach dem Muster der Startseite und der Leistungen. Einstieg mit
-// Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts der Verlegeplan „wohnen“ ohne Achse. Danach die Leitachse über
+// Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts der Verband-Umschalter (E3-ORCH-04). Danach die Leitachse über
 // die Abschnitte: Themen und Nachbarthemen als Register, Wissen als Feldraster mit Etikett, Überschrift, Text und Links,
 // Projekt seitlich mit Merkmalen, Bewertung und drei Wegen, Weiterführende Ratgeber als Merkliste, Konfigurator in
 // Lesebreite. Wortlaut, Überschriften, Links und IDs wie im Bestand. Kein Auftritt und kein großer Moment; den
@@ -21,7 +21,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import Leitachse from '@/components/kern/Leitachse';
 import Merkliste from '@/components/kern/Merkliste';
-import Verlegeplan from '@/components/kern/Verlegeplan';
+import VerbandUmschalter from '@/components/kern/VerbandUmschalter';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
@@ -111,7 +111,7 @@ export default function FliesenRatgeberPage() {
 
     return (
         <>
-            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts der Verlegeplan ohne Achse */}
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts der Verband-Umschalter */}
             <Einstieg
                 art="erzaehl"
                 etikett={
@@ -137,7 +137,8 @@ export default function FliesenRatgeberPage() {
                 }
                 rand={
                     <div className="border border-fuge bg-fliese p-6 lg:p-8">
-                        <Verlegeplan plan="wohnen" ohneAchse bemassung={false} />
+                        {/* Großer Moment (E3-ORCH-04): derselbe Raum im Kreuzfugen-, Halb- und Drittelverband zum Umschalten */}
+                        <VerbandUmschalter />
                     </div>
                 }
             />

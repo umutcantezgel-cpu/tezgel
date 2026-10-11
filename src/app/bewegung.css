@@ -105,6 +105,46 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   }
 }
 
+/* verband (K-007, /fliesen, E3-ORCH-04) – Radiogruppe ohne JavaScript: die Auswahl blendet über :has() den passenden
+   Plan ein (Überblendung dauer-2 · setzen, nur opacity) und setzt das gewählte Feld in Tinte. Ohne :has() stehen alle
+   drei Pläne untereinander; reduziert und ohne Startklasse wechselt der Plan sofort. */
+.verband-wahl:has(input:focus-visible) {
+  outline: 2px solid var(--color-tinte);
+  outline-offset: -4px;
+}
+@supports selector(:has(*)) {
+  .verband .verband-plaene {
+    display: grid;
+  }
+  .verband .verband-plan {
+    grid-area: 1 / 1;
+    opacity: 0;
+  }
+  .verband:has([data-verband-wahl="kreuz"]:checked) .verband-plan[data-verband="kreuz"],
+  .verband:has([data-verband-wahl="halb"]:checked) .verband-plan[data-verband="halb"],
+  .verband:has([data-verband-wahl="drittel"]:checked) .verband-plan[data-verband="drittel"] {
+    opacity: 1;
+  }
+  .verband-wahl:has(input:checked) {
+    background: var(--color-tinte);
+    color: var(--color-kalk);
+  }
+  html.k-bewegung .verband .verband-plan {
+    transition: opacity var(--dauer-2) var(--ease-setzen);
+  }
+}
+@media print, (forced-colors: active) {
+  .verband .verband-plan {
+    transition: none !important;
+  }
+}
+@media (forced-colors: active) {
+  .verband-wahl:has(input:checked) {
+    outline: 3px solid CanvasText;
+    outline-offset: -5px;
+  }
+}
+
 /* aufklappen – Höhe über grid-template-rows (Menü, Akkordeon); zu: eine Stufe kürzer */
 .aufklappen {
   display: grid;

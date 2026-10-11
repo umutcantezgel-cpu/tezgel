@@ -56,6 +56,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E3-BAU-20 | `src/lib/formulare/useSchnellanfrage.ts` (Sendefehler) | Rufnummer als fester Text | Rufnummer aus `COMPANY_DATA.contact.phone` (gleicher Wert, gleicher Wortlaut) | V-05: eine Quelle für die Rufnummer |
 | E3-NACH-03 | `src/components/forms/HeroContactForm.tsx` (Platzhalter Projektnotiz) | „z. B. ca. 15 m² Fliesen, Altbau, Walk-In Dusche“ | „z. B. 15 m², Altbau, Walk-In Dusche“ | bei 390 px abgeschnitten (E2-SICHT-2 Befund 13) |
 | E3-NACH-03 | `src/components/start/Fachgewerke.tsx` (Aufklapper unter md, neu) | – | „Leistungsumfang“ | Merkmale mobil im Aufklapper (Befund 9); ab md offen wie bisher |
+| E3-ORCH-04 | `src/components/kern/VerbandUmschalter.tsx` (neu, /fliesen Einstieg) | – | Radiogruppe „Kreuzfuge“ · „Halbverband“ · „Drittelverband“, Legende (nur Screenreader) „Verband“ | Begriffe aus dem Bestand (/fliesen/verlegemuster, Konfigurator „Halb- / Drittelverband“); Bedienelement des großen Moments |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |
