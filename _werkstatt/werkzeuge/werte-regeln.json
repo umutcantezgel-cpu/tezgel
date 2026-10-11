@@ -166,7 +166,8 @@
    "src/components/kern/start/**",
    "src/components/kern/vorlagen/**",
    "src/lib/kern/**",
-   "src/styles/**"
+   "src/styles/**",
+   "src/components/kern/seiten/**"
   ],
   "svg_pfaddaten": [
    "d",
