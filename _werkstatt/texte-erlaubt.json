@@ -930,5 +930,11 @@
   "block": "main",
   "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Aßlar • Festpreisangebot • HWK-Fachbetrieb",
   "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "anfordernSofort",
+  "vermerk": "E3-BAU-19: Wortgrenze – im Ausgangsstand standen die Knöpfe „… anfordern“ und „Sofort …“ ohne Trennung im Textfluss (Wortfolge „anfordernSofort“); jetzt getrennte Knöpfe, beide Wörter unverändert vorhanden"
  }
 ]
