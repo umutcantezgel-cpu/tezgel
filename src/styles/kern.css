@@ -189,6 +189,12 @@ html.k-bewegung [data-motion="anriss"][data-ausloeser="sicht"]:not([data-sichtba
 [data-motion="aufklappen"] > * { overflow: hidden; min-height: 0; transition: content-visibility var(--k-dauer-1) allow-discrete; }
 [data-motion="aufklappen"]:not([data-offen]) > * { content-visibility: hidden; }
 
+/* SIG-3 Plan rückt in die Flucht (P4-03, Register `sig-plan`): Belag, Achse und Maßstriche verschieben sich bei Hover oder
+   Fokus des Auslösers (`group/plan` an Feld oder Karte). Reduziert: Sofortzustand über die allgemeine [data-motion]-Regel. */
+[data-motion="sig-plan"] {
+  transition: translate var(--k-dauer-2) var(--ease-k-setzen), opacity var(--k-dauer-2) var(--ease-k-setzen);
+}
+
 /* Notiert: Haken zeichnet sich (SVG mit pathLength="1") */
 [data-motion="notiert"] path {
   stroke-dasharray: 1;
@@ -267,5 +273,24 @@ html.k-bewegung [data-motion="sig-kreuzlinie"] .k-laser-lot {
     font-family: var(--font-k-mono);
     font-size: var(--text-k-1);
     color: var(--color-k-tinte-2);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tabellen mobil (P4-01, offene Frage 2): Unter md stehen die Zellen als Block, und der Spaltenkopf erscheint als Etikett
+   über dem Wert. Über `content: attr(…) / ""` ist das Etikett nur sichtbar, liegt nicht doppelt im DOM und fehlt im
+   Barrierebaum (dort trägt die echte Tabellen-Semantik den Kopf).
+   -------------------------------------------------------------------------- */
+@layer components {
+  .k-zelle[data-spalte]::before {
+    content: attr(data-spalte) / "";
+    display: block;
+    margin-bottom: var(--spacing-k-1);
+    font-family: var(--font-k-mono);
+    font-size: var(--text-k-1);
+    color: var(--color-k-tinte-2);
+  }
+  @media (min-width: 48rem) {
+    .k-zelle[data-spalte]::before { content: none; }
   }
 }

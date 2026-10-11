@@ -1,0 +1,80 @@
+{
+ "base": "http://127.0.0.1:4331",
+ "seiten": [
+  "/"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": [
+  {
+   "seite": "/",
+   "breite": 320,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/",
+   "breite": 320,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/",
+   "breite": 375,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/",
+   "breite": 768,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.552px"
+  },
+  {
+   "seite": "/",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/",
+   "breite": 1024,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/",
+   "breite": 1440,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/",
+   "breite": 1920,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  }
+ ]
+}

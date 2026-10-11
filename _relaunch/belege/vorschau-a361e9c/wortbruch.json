@@ -1,0 +1,731 @@
+{
+ "base": "http://127.0.0.1:4320",
+ "seiten": [
+  "/p4-01",
+  "/p4-02",
+  "/p4-03",
+  "/p4-05a"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": [
+  {
+   "seite": "/p4-01",
+   "breite": 320,
+   "wort": "Verbundabdichtung",
+   "art": "überschrift",
+   "element": "h1#din-heading > span.block",
+   "groesse": "44px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 320,
+   "wort": "Wassereinwirkungsklassen",
+   "art": "überschrift",
+   "element": "h2#klassen-heading",
+   "groesse": "32px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 320,
+   "wort": "Badmodernisierung",
+   "art": "überschrift",
+   "element": "h1#barrierefrei-heading > span.block",
+   "groesse": "44px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 320,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 320,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 320,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 320,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 320,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 320,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 320,
+   "wort": "Komplettbadsanierung",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "17px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 320,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 320,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 375,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 375,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 375,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 375,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 768,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.552px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 768,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.552px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 768,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.552px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 768,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.552px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Großformatverlegung",
+   "art": "text",
+   "element": "div.min-w-0.mt-k-8 > ul.grid.grid-cols-4 > li.min-w-0.border-r > p.mt-k-3.k-anzeige",
+   "groesse": "23.008px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.mt-k-8 > ul.grid.grid-cols-4 > li.min-w-0.border-r > p.mt-k-3.k-anzeige",
+   "groesse": "23.008px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "überschrift",
+   "element": "h1#din-heading > span.block",
+   "groesse": "73.6px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Großformatverlegung",
+   "art": "text",
+   "element": "div.min-w-0.mt-k-8 > ul.grid.grid-cols-4 > li.min-w-0.border-r > p.mt-k-3.k-anzeige",
+   "groesse": "23.008px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.mt-k-8 > ul.grid.grid-cols-4 > li.min-w-0.border-r > p.mt-k-3.k-anzeige",
+   "groesse": "23.008px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Badmodernisierung",
+   "art": "überschrift",
+   "element": "h1#barrierefrei-heading > span.block",
+   "groesse": "73.6px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Untergrundprüfung",
+   "art": "überschrift",
+   "element": "div.min-w-0.mt-k-8 > ol.relative.ml-k-4 > li.relative.min-w-0 > h3.k-anzeige.text-k-5",
+   "groesse": "31.264px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Wohnumfeldverbesserung,",
+   "art": "text",
+   "element": "ul.grid.grid-cols-4 > li.min-w-0.border-r > div.mt-k-3.k-text > p",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Pflegegrad",
+   "art": "text",
+   "element": "div.min-w-0.mt-k-8 > ul.grid.grid-cols-4 > li.min-w-0.border-r > div.k-mono.text-k-5",
+   "groesse": "31.264px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1024,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 1024,
+   "wort": "Handwerkerbonus:",
+   "art": "überschrift",
+   "element": "article.group.relative > div.flex.min-w-0 > h2.k-anzeige.text-k-5 > a.rounded-k-1.decoration-1",
+   "groesse": "31.264px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 1024,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 1024,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Komplettbadsanierung",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Barrierefreies",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Modernisierung",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Basic",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Solide",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Markenqualität,",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "funktional",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "zeitlos",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Premium",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Gehobener",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Komfort",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Oberflächen",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Echtglas",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Luxus",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Freistehende",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Wanne,",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "maßgefertigtes",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Design",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Bodengleiche",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Badewanne",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Doppelwaschtisch",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Komfort",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Fußbodenheizung",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "18.368px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Verbundabdichtung",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-text.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1024,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "15.936px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1440,
+   "wort": "Verbundabdichtung",
+   "art": "überschrift",
+   "element": "h1#din-heading > span.block",
+   "groesse": "94.4px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1440,
+   "wort": "Badmodernisierung",
+   "art": "überschrift",
+   "element": "h1#barrierefrei-heading > span.block",
+   "groesse": "94.4px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1440,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 1440,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 1440,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Komplettbadsanierung",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Markenqualität,",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Freistehende",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "maßgefertigtes",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Bodengleiche",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Badewanne",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Doppelwaschtisch",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Fußbodenheizung",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1440,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1920,
+   "wort": "Verbundabdichtung",
+   "art": "überschrift",
+   "element": "h1#din-heading > span.block",
+   "groesse": "104px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1920,
+   "wort": "Badmodernisierung",
+   "art": "überschrift",
+   "element": "h1#barrierefrei-heading > span.block",
+   "groesse": "104px"
+  },
+  {
+   "seite": "/p4-01",
+   "breite": 1920,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-02",
+   "breite": 1920,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-03",
+   "breite": 1920,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Komplettbadsanierung",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.min-w-0.wrap-break-word",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Markenqualität,",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Freistehende",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "maßgefertigtes",
+   "art": "bedienelement",
+   "element": "label.group.relative > span.min-w-0 > span.flex.flex-col > span.text-k-2.font-normal",
+   "groesse": "16px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Bodengleiche",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Badewanne",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Doppelwaschtisch",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Fußbodenheizung",
+   "art": "bedienelement",
+   "element": "div.flex.min-w-0 > label.group.flex > span.min-w-0 > span.font-semibold.min-w-0",
+   "groesse": "19px"
+  },
+  {
+   "seite": "/p4-05a",
+   "breite": 1920,
+   "wort": "Festpreisgarantie",
+   "art": "text",
+   "element": "div.min-w-0.border-r > ul.grid.grid-cols-2 > li.flex.min-w-0 > span.k-mono.text-k-2",
+   "groesse": "16px"
+  }
+ ]
+}

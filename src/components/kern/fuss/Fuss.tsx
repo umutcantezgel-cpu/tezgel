@@ -184,9 +184,10 @@ export default function Fuss() {
             </Knopf>
           </Rasterfeld>
 
-          {/* Feld 2 · Garantie-Sockel: vier Felder mit Fugen (mobil 2 × 2, ab Tablett 4 nebeneinander) */}
+          {/* Feld 2 · Garantie-Sockel: vier Felder mit Fugen (unter sm untereinander, darüber 2 × 2). In vier Spalten war
+              „Festpreisgarantie“ in Mono in jeder Breite breiter als die Zelle und brach mitten im Wort (wortbruch.mjs, P4-10). */}
           <Rasterfeld flaeche="tinte" innen="keiner" breite={{ mobil: 4, tablett: 8, desktop: 8 }}>
-            <ul className="grid grid-cols-2 gap-px bg-k-nacht-fuge md:grid-cols-4">
+            <ul className="grid grid-cols-1 gap-px bg-k-nacht-fuge sm:grid-cols-2">
               {GARANTIEN.map(({ title, text }) => (
                 <li key={title} className="flex min-w-0 flex-col gap-k-1 bg-k-tinte p-k-4 lg:p-k-5">
                   {/* Lange Einzelwörter („Festpreisgarantie“) brechen bei 320 px in der Zelle um statt die Seite zu verbreitern (Reflow, P3-16) */}
