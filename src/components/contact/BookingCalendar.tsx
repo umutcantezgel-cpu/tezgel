@@ -1,63 +1,22 @@
 'use client';
 
 // Terminkalender (E2-ORCH-09, Arbeitsansicht): Tage und Zeitfenster als Auswahlfelder an der Fuge, Formular mit
-// verknüpften Labels. Nutzlast, Texte und getestete Namen unverändert; Tage erst im Browser (V-02), Rufnummer aus
-// COMPANY_DATA (V-05).
-import React, { useState, useMemo, useSyncExternalStore } from 'react';
+// verknüpften Labels. Logik aus useTerminKalender (F-07, gemeinsam mit der Kern-Ansicht): Tage erst im Browser und je
+// Kalender festgehalten (V-02, P4-05d). Nutzlast, Texte und getestete Namen unverändert.
+import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, feldKlassen, labelKlassen, linkKlassen, pflichtKlassen, wahlKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
-
-const AVAILABLE_SLOTS = [
-  { time: '08:30', label: '08:30 – 10:00 Uhr (Morgens)' },
-  { time: '10:30', label: '10:30 – 12:00 Uhr (Vormittags)' },
-  { time: '13:00', label: '13:00 – 14:30 Uhr (Mittags)' },
-  { time: '15:00', label: '15:00 – 16:30 Uhr (Nachmittags)' },
-  { time: '16:30', label: '16:30 – 18:00 Uhr (Spätnachmittag)' },
-];
-
-type Tag = { dateStr: string; displayDate: string; weekday: string; isSaturday: boolean };
-
-// Heutiger Tag des Browsers als YYYY-MM-DD (stabiler Wert für useSyncExternalStore); auf dem Server kein Datum.
-const ohneAbo = () => () => {};
-const heutigerTag = () => {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-};
-const keinTag = () => null;
-
-// 10 Werktage ab dem Tag nach „heute“ (Sonntage ausgelassen) – Rechnung wie im Bestand
-function tageAb(heute: string): Tag[] {
-  const [y, m, t] = heute.split('-').map(Number);
-  const date = new Date(y, m - 1, t);
-  const days: Tag[] = [];
-  while (days.length < 10) {
-    date.setDate(date.getDate() + 1);
-    const dayOfWeek = date.getDay();
-    if (dayOfWeek === 0) continue; // Skip Sunday
-
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    days.push({
-      dateStr: `${year}-${month}-${day}`,
-      displayDate: date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }),
-      weekday: date.toLocaleDateString('de-DE', { weekday: 'short' }),
-      isSaturday: dayOfWeek === 6,
-    });
-  }
-  return days;
-}
+import { AVAILABLE_SLOTS, useTerminKalender } from '@/lib/formulare/useTerminKalender';
 
 export interface BookingCalendarProps {
   className?: string;
   initialServiceType?: string;
   onBookingConfirmed?: (data: { date: string; timeSlot: string; name: string; phone: string }) => void;
 }
-
 
 /**
  * 2-Step Self-Hosted Appointment Booking Calendar
@@ -69,108 +28,25 @@ export function BookingCalendar({
   initialServiceType = 'Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse',
   onBookingConfirmed,
 }: BookingCalendarProps) {
-  const [step, setStep] = useState<1 | 2>(1);
-  const [selectedDate, setSelectedDate] = useState<string>('');
-  const [selectedTime, setSelectedTime] = useState<string>('');
-  const [bookedSlots, setBookedSlots] = useState<string[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [isConfirmed, setIsConfirmed] = useState(false);
-  const [referenceId, setReferenceId] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const [contactData, setContactData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    zipCity: '',
-    notes: '',
-    privacyConsent: false,
-    websiteUrl: '', // Honeypot
-  });
-
-  // Verfügbare Tage ab morgen (ohne Sonntag) – erst im Browser berechnet (V-02): Server und Hydrierung sehen
-  // „kein Datum“, danach rechnet der Browser mit seinem heutigen Tag. So weicht der vorgerenderte Stand nie vom
-  // Besuchstag ab (vorher React-Fehler #418, wenn Build-Tag und Besuchstag verschieden waren).
-  const heute = useSyncExternalStore(ohneAbo, heutigerTag, keinTag);
-  const availableDays = useMemo(() => (heute ? tageAb(heute) : []), [heute]);
-
-  const handleSelectSlot = (dateStr: string, time: string) => {
-    setSelectedDate(dateStr);
-    setSelectedTime(time);
-    setErrorMessage('');
-    setStep(2);
-  };
-
-  const handleConfirmBooking = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    // Honeypot trap
-    if (contactData.websiteUrl && contactData.websiteUrl.trim().length > 0) {
-      setIsConfirmed(true);
-      setReferenceId('TEZ-BOT-IGN');
-      return;
-    }
-
-    if (!contactData.name.trim() || !contactData.phone.trim() || !contactData.privacyConsent) {
-      setErrorMessage('Bitte füllen Sie Name und Telefonnummer aus und willigen Sie in den Datenschutz ein.');
-      return;
-    }
-
-    setLoading(true);
-    setErrorMessage('');
-
-    try {
-      const res = await fetch('/api/anfrage', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          inquiryType: 'termin',
-          projectType: 'termin',
-          projectTitle: `Vor-Ort-Termin: ${initialServiceType}`,
-          terminDetails: {
-            preferredDate: selectedDate,
-            timeSlot: selectedTime,
-            serviceType: initialServiceType,
-          },
-          contact: {
-            name: contactData.name.trim(),
-            phone: contactData.phone.trim(),
-            email: contactData.email.trim() || undefined,
-            zipCity: contactData.zipCity.trim() || undefined,
-          },
-          notes: contactData.notes.trim() || undefined,
-          privacyConsent: contactData.privacyConsent,
-          honeypot: contactData.websiteUrl,
-          _t: Date.now() - 3000,
-        }),
-      });
-
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        throw new Error(data.error || 'Fehler bei der Terminübertragung.');
-      }
-
-      setReferenceId(data.referenceId || '');
-      setBookedSlots((prev) => [...prev, `${selectedDate}_${selectedTime}`]);
-      setIsConfirmed(true);
-      if (onBookingConfirmed) {
-        onBookingConfirmed({
-          date: selectedDate,
-          timeSlot: selectedTime,
-          name: contactData.name,
-          phone: contactData.phone,
-        });
-      }
-    } catch {
-      setErrorMessage(`Termin konnte nicht online bestätigt werden. Bitte rufen Sie uns direkt an: ${COMPANY_DATA.contact.phone}.`);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const {
+    step,
+    setStep,
+    selectedDate,
+    selectedTime,
+    bookedSlots,
+    loading,
+    isConfirmed,
+    referenceId,
+    errorMessage,
+    contactData,
+    setContactData,
+    availableDays,
+    handleSelectSlot,
+    handleConfirmBooking,
+    formattedDate,
+  } = useTerminKalender({ initialServiceType, onBookingConfirmed });
 
   if (isConfirmed) {
-    const formattedDate = selectedDate.split('-').reverse().join('.');
-
     return (
       <div className={`border border-strich bg-fliese p-6 sm:p-8 lg:p-12 ${className}`} role="status">
         <span className={etikettKlassen}>

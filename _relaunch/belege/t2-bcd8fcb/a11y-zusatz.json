@@ -1,0 +1,1135 @@
+{
+ "satz": "t2-bcd8fcb",
+ "base": "http://127.0.0.1:4331",
+ "erstellt": "2026-10-11T03:26:33.048Z",
+ "werkzeug": "a11y-zusatz.mjs",
+ "kriterium": "Z-11",
+ "bedingungen": {
+  "server": "http://127.0.0.1:4331",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "seiten": [
+   "/"
+  ],
+  "ansichten": [
+   "m375",
+   "d1440"
+  ],
+  "pruefungen": [
+   "tastatur",
+   "reflow",
+   "zoom",
+   "textabstand",
+   "forced",
+   "ohnejs"
+  ],
+  "einwilligung": "abgelehnt",
+  "einwilligung_tastatur": [
+   "abgelehnt",
+   "erstbesuch"
+  ],
+  "reducedMotion": "reduce",
+  "locale": "de-DE",
+  "timezoneId": "Europe/Berlin",
+  "colorScheme": "light",
+  "deviceScaleFactor": 1,
+  "ansichten_px": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "worker": 2,
+  "gegenprobe": null,
+  "regeln": {
+   "tastatur": {
+    "obergrenze_schritte": 400,
+    "ende": "Fokus verlässt das Dokument (activeElement = body, document.hasFocus() = false) oder Rückkehr zum ersten Element",
+    "sprung_rueckwaerts": "Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen",
+    "fokus_sichtbar": "Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung (je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang. Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als „Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).",
+    "fokus_verdeckt": "elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; „fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; „abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei",
+    "falle": "derselbe Fokus 10× hintereinander → Abbruch; Zyklus = ein Element zum 3. Mal fokussiert → Abbruch, danach Escape + Tab: verlässt der Fokus den Zyklus?",
+    "sprunglink": "erster Tab fokussiert <a href=\"#main-content\"> und das Ziel #main-content existiert",
+    "iframes": "ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)"
+   },
+   "reflow": {
+    "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
+    "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
+   },
+   "zoom": {
+    "css": "1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)",
+    "aequivalent": "640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)",
+    "verdeckt": "sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist",
+    "nie_im_bild": "Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen",
+    "info": "im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar"
+   },
+   "textabstand": {
+    "stilblatt": "*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}",
+    "befund": "Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde",
+    "scroll_ueberhang": "Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info"
+   },
+   "forced": {
+    "emulation": "page.emulateMedia({ forcedColors: 'active' })",
+    "befund": "sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert"
+   },
+   "ohnejs": {
+    "kontext": "javaScriptEnabled: false",
+    "text": "sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)",
+    "erster_bildschirm": "Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert",
+    "navigation": "mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten"
+   }
+  },
+  "rohdaten": "cache/a11y-zusatz/t2-bcd8fcb"
+ },
+ "laufzeit_s": 94,
+ "status": {
+  "tastatur": {
+   "reihenfolge": "gruen",
+   "fokus_sichtbar": "gruen",
+   "fokus_2px": "rot",
+   "fokus_outline": "gruen",
+   "fokus_verdeckt": "gruen",
+   "tastaturfalle": "gruen",
+   "sprunglink": "gruen"
+  },
+  "reflow": "gruen",
+  "zoom": {
+   "css": "rot",
+   "aequivalent": "gruen"
+  },
+  "textabstand": "gruen",
+  "forced": "gruen",
+  "ohnejs": "gruen"
+ },
+ "kennzahlen": {
+  "tastatur": {
+   "fokus_nicht_sichtbar": 0,
+   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+   "fokus_ring_teilverdeckt_fest": 36,
+   "fokus_unter_2px": 1,
+   "fokus_nicht_messbar": 0,
+   "fokus_ohne_outline_schatten": 0,
+   "fokus_verdeckt": 0,
+   "fokus_verdeckt_fest": 0,
+   "sprung_rueckwaerts": 0,
+   "falle": 0,
+   "zyklus_ohne_ausweg": 0,
+   "sprunglink_fehlt": 0,
+   "laeufe": 4,
+   "fehler": 0,
+   "schritte": 709,
+   "m375_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "m375_erstbesuch": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 1,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_erstbesuch": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   }
+  },
+  "reflow": {
+   "horizontal": 0,
+   "ueberlauf": 0,
+   "ragt_heraus": 0,
+   "text_abgeschnitten": 0,
+   "laeufe": 1,
+   "fehler": 0
+  },
+  "zoom": {
+   "horizontal": 1,
+   "verdeckt": 1,
+   "verdeckt_fest": 0,
+   "nie_im_bild": 5,
+   "ueberlauf": 12,
+   "laeufe": 2,
+   "fehler": 0,
+   "css": {
+    "horizontal": 1,
+    "verdeckt": 1,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 5,
+    "ueberlauf": 12
+   },
+   "aequivalent": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 0,
+    "ueberlauf": 0
+   }
+  },
+  "textabstand": {
+   "abgeschnitten_neu": 0,
+   "scroll_ueberhang_neu": 0,
+   "davon_line_clamp": 0,
+   "ueberlauf_neu": 0,
+   "horizontal_neu": 0,
+   "laeufe": 2,
+   "fehler": 0
+  },
+  "forced": {
+   "ohne_grenze": 0,
+   "davon_mit_grafik": 0,
+   "felder_ohne_grenze": 0,
+   "laeufe": 2,
+   "fehler": 0
+  },
+  "ohnejs": {
+   "text_unter_80": 0,
+   "erster_bildschirm_versteckt": 0,
+   "erster_bildschirm_ebenso_mit_js": 1,
+   "navigation_fehlt": 0,
+   "kopf_ohne_interne_links": 0,
+   "laeufe": 2,
+   "fehler": 0
+  }
+ },
+ "je_seite": {
+  "/": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+    "fokus_ring_teilverdeckt_fest": 36,
+    "fokus_unter_2px": 1,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "reflow": {
+    "horizontal": 0,
+    "ueberlauf": 0,
+    "ragt_heraus": 0,
+    "text_abgeschnitten": 0
+   },
+   "zoom": {
+    "horizontal": 1,
+    "verdeckt": 1,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 5,
+    "ueberlauf": 12
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 0,
+    "horizontal_neu": 0
+   },
+   "forced": {
+    "ohne_grenze": 0,
+    "davon_mit_grafik": 0,
+    "felder_ohne_grenze": 0
+   },
+   "ohnejs": {
+    "text_unter_80": 0,
+    "erster_bildschirm_versteckt": 0,
+    "erster_bildschirm_ebenso_mit_js": 1,
+    "navigation_fehlt": 0,
+    "kopf_ohne_interne_links": 0
+   }
+  }
+ },
+ "ergebnisse": {
+  "tastatur": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 178,
+    "instabil": 0,
+    "fokus": {
+     "ok": 178,
+     "duenn": 0,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 30.1
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 185,
+    "instabil": 0,
+    "fokus": {
+     "ok": 185,
+     "duenn": 0,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 6,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      },
+      {
+       "nr": 31,
+       "pfad": "article.flex.flex-col > ul.divide-y.divide-k-fuge > li > a.group.flex",
+       "name": "Bad aus einer Hand",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 37,
+       "pfad": "article.flex.flex-col > ul.divide-y.divide-k-fuge > li > a.group.flex",
+       "name": "Beratung vor Ort",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 60,
+       "pfad": "div.mt-k-8.grid > ul.border-t.border-k-tinte > li.border-b.border-k-fuge > a.group.flex",
+       "name": "Untergrund & Abdichtung 6 Seiten · Das Fundament jedes dauer",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 78,
+       "pfad": "input#calc-location",
+       "name": "z. B. Aßlar, Wetzlar...",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 92,
+       "pfad": "section.py-k-9 > div.mx-auto.max-w-(--k-seite) > div.mt-k-8 > div.relative.snap-x",
+       "name": "Bad „Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir k",
+       "ebene": "div.flex.flex-col"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 31.9
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 170,
+    "instabil": 0,
+    "fokus": {
+     "ok": 170,
+     "duenn": 0,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 28.5
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 176,
+    "instabil": 0,
+    "fokus": {
+     "ok": 175,
+     "duenn": 1,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 28,
+     "fokus_unter_2px": 1,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 81,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "section.py-k-9 > div.mx-auto.max-w-(--k-seite) > div.mt-k-8 > div.relative.snap-x",
+       "name": "Bad „Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir k",
+       "kontrast": 1492,
+       "maxKontrast": 16.96,
+       "umfang": 1526,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      },
+      {
+       "nr": 19,
+       "pfad": "article.flex.flex-col > ul.divide-y.divide-k-fuge > li > a.group.flex",
+       "name": "Barrierefreies Bad",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 25,
+       "pfad": "article.flex.flex-col > ul.divide-y.divide-k-fuge > li > a.group.flex",
+       "name": "Geführte Badanfrage",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 34,
+       "pfad": "article.flex.flex-col > ul.flex.flex-wrap > li.grow.bg-k-fliese > a.group.flex",
+       "name": "Friedberg (Hessen)",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 35,
+       "pfad": "article.flex.flex-col > ul.flex.flex-wrap > li.grow.bg-k-fliese > a.group.flex",
+       "name": "Butzbach",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 36,
+       "pfad": "article.flex.flex-col > ul.flex.flex-wrap > li.grow.bg-k-fliese > a.group.flex",
+       "name": "Herborn",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 45,
+       "pfad": "article.flex.flex-col > ul.divide-y.divide-k-fuge > li > a.group.flex",
+       "name": "Häufige Fragen",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 48,
+       "pfad": "div.mt-k-8.grid > ul.border-t.border-k-tinte > li.border-b.border-k-fuge > a.group.flex",
+       "name": "Fliesen & Verlegung 15 Seiten · Formate, Materialien, Verleg",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 51,
+       "pfad": "div.mt-k-8.grid > ul.border-t.border-k-tinte > li.border-b.border-k-fuge > a.group.flex",
+       "name": "Naturstein & Granit 3 Seiten · Natursteinböden und Wandbeläg",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 59,
+       "pfad": "input#k-feld_R_7674aumivb_",
+       "name": "on",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 61,
+       "pfad": "input#k-feld_R_b674aumivb_",
+       "name": "on",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 81,
+       "pfad": "section.py-k-9 > div.mx-auto.max-w-(--k-seite) > div.mt-k-8 > div.relative.snap-x",
+       "name": "Bad „Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir k",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 92,
+       "pfad": "div.min-w-0.border-r > ul.mt-k-5.grid > li.flex.items-center > a.rounded-k-1.underline",
+       "name": "Butzbach",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 93,
+       "pfad": "div.min-w-0.border-r > ul.mt-k-5.grid > li.flex.items-center > a.rounded-k-1.underline",
+       "name": "Herborn",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 101,
+       "pfad": "div.mx-auto.grid > div.border-t.border-k-fuge > details.group.border-b > summary.flex.min-h-k-7",
+       "name": "Warum ist die Verbundabdichtung nach DIN 18534 im Bad unverz",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 108,
+       "pfad": "div.grid.grid-cols-4 > div.min-w-0.border-r > div.flex.flex-col > a.relative.inline-flex",
+       "name": "WhatsApp Nachricht an Fliesenverlegung Tezgel senden",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 123,
+       "pfad": "nav.flex.flex-col > ul.grid.grid-cols-2 > li.min-w-0 > a.inline-flex.min-h-k-7",
+       "name": "Badanfrage",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 132,
+       "pfad": "nav.flex.flex-col > ul.grid.grid-cols-2 > li.min-w-0 > a.inline-flex.min-h-k-7",
+       "name": "Fliesenreparatur",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 141,
+       "pfad": "nav.flex.flex-col > ul.grid.grid-cols-2 > li.min-w-0 > a.inline-flex.min-h-k-7",
+       "name": "Dillenburg",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 142,
+       "pfad": "nav.flex.flex-col > ul.grid.grid-cols-2 > li.min-w-0 > a.inline-flex.min-h-k-7",
+       "name": "Haiger",
+       "ebene": "div.flex.flex-col"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 31.2
+   }
+  ],
+  "reflow": [
+   {
+    "pruefung": "reflow",
+    "seite": "/",
+    "ansicht": "r320",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 320,
+     "clientWidth": 320,
+     "scrollX": 0
+    },
+    "befunde": [],
+    "kennzahlen": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 8.2
+   }
+  ],
+  "zoom": [
+   {
+    "pruefung": "zoom",
+    "seite": "/",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": true,
+     "scrollWidth": 2135,
+     "clientWidth": 1280,
+     "scrollX": 855
+    },
+    "bedienelemente": 192,
+    "scrollpositionen": 122,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 1,
+    "befunde": {
+     "verdeckt": [
+      {
+       "pfad": "header.z-40.h-(--k-kopf-hoehe) > div.mx-auto.flex > div.flex.min-w-0 > a.flex.h-k-7",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "durch": "nav.flex.h-full > ul.flex.h-full > li.group.relative > a.flex.h-full",
+       "fest": null,
+       "ebene": null
+      }
+     ],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.flex.h-full > ul.flex.h-full > li.group.relative > button.flex.h-full",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1264,
+       "y": 0,
+       "w": 96,
+       "fest": true
+      },
+      {
+       "pfad": "nav.flex.h-full > ul.flex.h-full > li.group.relative > a.flex.h-full",
+       "name": "Über uns",
+       "x": 1360,
+       "y": 0,
+       "w": 172,
+       "fest": true
+      },
+      {
+       "pfad": "nav.flex.h-full > ul.flex.h-full > li.group.relative > button.flex.h-full",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1532,
+       "y": 0,
+       "w": 96,
+       "fest": true
+      },
+      {
+       "pfad": "header.z-40.h-(--k-kopf-hoehe) > div.mx-auto.flex > div.hidden.shrink-0 > a.flex.h-k-7",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1662,
+       "y": 16,
+       "w": 96,
+       "fest": true
+      },
+      {
+       "pfad": "header.z-40.h-(--k-kopf-hoehe) > div.mx-auto.flex > div.hidden.shrink-0 > a.relative.inline-flex",
+       "name": "Aufmaß anfragen",
+       "x": 1782,
+       "y": 16,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "hidden h-full border-l border-k-fuge xl:flex",
+       "left": 128,
+       "right": 1628
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "flex h-full",
+       "left": 130,
+       "right": 1628
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "ul",
+       "cls": "flex h-full",
+       "left": 130,
+       "right": 1628
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "li",
+       "cls": "group relative flex h-full",
+       "left": 1088,
+       "right": 1360
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex h-full w-k-7 cursor-pointer items-center justify-center text-k-tinte-2 poin",
+       "left": 1264,
+       "right": 1360
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "li",
+       "cls": "group relative flex h-full",
+       "left": 1360,
+       "right": 1628
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex h-full items-center whitespace-nowrap pl-k-3 k-text text-k-2 font-semibold ",
+       "left": 1360,
+       "right": 1532
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex h-full w-k-7 cursor-pointer items-center justify-center text-k-tinte-2 poin",
+       "left": 1532,
+       "right": 1628
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "hidden shrink-0 items-center gap-k-3 border-l border-k-fuge px-k-4 md:flex xl:pr",
+       "left": 1628,
+       "right": 2135
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "group/tel flex h-k-7 min-w-k-7 items-center justify-center gap-k-2 rounded-k-1 t",
+       "left": 1662,
+       "right": 1758
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "relative inline-flex items-center justify-center gap-k-2 rounded-k-0 border k-te",
+       "left": 1782,
+       "right": 2135
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-k-7 items-center rounded-k-1 k-text text-k-nacht-2 decoration-",
+       "left": 1051,
+       "right": 1355
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 1,
+     "verdeckt": 1,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 5,
+     "ueberlauf": 12
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 8.4
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 184,
+    "scrollpositionen": 124,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 1,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 14.5
+   }
+  ],
+  "textabstand": [
+   {
+    "pruefung": "textabstand",
+    "seite": "/",
+    "ansicht": "d1440",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 0,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/",
+    "ansicht": "m375",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 0,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 6.5
+   }
+  ],
+  "forced": [
+   {
+    "pruefung": "forced",
+    "seite": "/",
+    "ansicht": "d1440",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/t2-bcd8fcb/forced-colors/d1440/start.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 192,
+    "befunde": {
+     "ohne_grenze": [],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 0,
+     "davon_mit_grafik": 0,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.7
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/",
+    "ansicht": "m375",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/t2-bcd8fcb/forced-colors/m375/start.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 184,
+    "befunde": {
+     "ohne_grenze": [],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 0,
+     "davon_mit_grafik": 0,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7
+   }
+  ],
+  "ohnejs": [
+   {
+    "pruefung": "ohnejs",
+    "seite": "/",
+    "ansicht": "d1440",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 14541,
+     "ohne_js": 14350,
+     "anteil": 0.987,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 8,
+     "kopf_intern": 7,
+     "fuss_sichtbar": 58,
+     "fuss_intern": 54,
+     "hauptseiten_erreichbar": 7,
+     "hauptseiten_fehlen": []
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [
+      {
+       "pfad": "a#whatsapp-floating-btn",
+       "art": "visibility-hidden",
+       "inhalt": true,
+       "ariaHidden": false,
+       "text": "WhatsApp",
+       "y": 820,
+       "h": 48
+      }
+     ],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 5
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 1,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.7
+   },
+   {
+    "pruefung": "ohnejs",
+    "seite": "/",
+    "ansicht": "m375",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 14541,
+     "ohne_js": 14350,
+     "anteil": 0.987,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 1,
+     "kopf_intern": 1,
+     "fuss_sichtbar": 58,
+     "fuss_intern": 54,
+     "hauptseiten_erreichbar": 6,
+     "hauptseiten_fehlen": [
+      "/standorte"
+     ]
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 0
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7
+   }
+  ]
+ }
+}

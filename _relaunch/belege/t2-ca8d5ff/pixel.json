@@ -1,0 +1,149 @@
+{
+ "satz": "t2-ca8d5ff",
+ "a": "http://127.0.0.1:4331",
+ "b": "http://127.0.0.1:4333",
+ "laeufe": 20,
+ "abweichend": 0,
+ "ergebnis": [
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 15697920
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10596000
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 23709600
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 31766400
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3900000
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5769216
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 8056800
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10742400
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 2905500
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3879168
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4756320
+  },
+  {
+   "seite": "/bad/badanfrage",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6341760
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4658688
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3364500
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5575680
+  },
+  {
+   "seite": "/bad/projekt-check",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7434240
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5372160
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3987000
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6894720
+  },
+  {
+   "seite": "/bad/badsanierung",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9192960
+  }
+ ]
+}

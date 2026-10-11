@@ -1,0 +1,316 @@
+{
+  "build": "74e768c",
+  "base": "http://127.0.0.1:4331",
+  "live": false,
+  "manifeste": [
+    ".next/server/functions-config-manifest.json"
+  ],
+  "matcher": 25,
+  "unbeteiligt": 200,
+  "entfernt": 32,
+  "sitemap": 163,
+  "http": [
+    {
+      "pfad": "/energie",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/energieberatung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/gewerbe",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/haustechnik",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/lueftung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/notdienst",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/energie/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/energieberatung/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/gewerbe/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/haustechnik/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizung/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/lueftung/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/notdienst/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/waermepumpen-foerderung-2024",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/wasserschaden-vermeiden-tipps",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/solarthermie-vs-photovoltaik-vergleich",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/heizungswartung-pflicht-oder-kuer",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/smart-home-heizungssteuerung-nachruesten",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/heizkoerper-richtig-entlueften",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/legionellen-trinkwasser-vermeiden",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/klimaanlage-reinigen-allergiker",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/solarpflicht-deutschland-hausbesitzer",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/waermepumpen-mythen-faktencheck",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/smart-bad-wellness-hightech",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/team-verstaerkung-gesucht-jobs",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-001",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-002",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-003",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-004",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-005",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-006",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizung/waermepumpe/",
+      "erwartet": "308 → ohne /",
+      "status": 308,
+      "ort": "/heizung/waermepumpe",
+      "ok": true
+    },
+    {
+      "pfad": "HEAD /energie",
+      "erwartet": "410",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/bad/budgetkalkulator",
+      "erwartet": "308 → /bad/projekt-check",
+      "status": 308,
+      "ort": "/bad/projekt-check",
+      "ok": true
+    },
+    {
+      "pfad": "/bad/projekt-check",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/barrierefreies-bad-planung-zuschuesse",
+      "erwartet": "308 → /bad/barrierefreies-bad",
+      "status": 308,
+      "ort": "/bad/barrierefreies-bad",
+      "ok": true
+    },
+    {
+      "pfad": "/bad/barrierefreies-bad",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizungen",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/energie-sparen",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-007",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/fliesen-reinigen-pflegen",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    }
+  ],
+  "fehler": []
+}

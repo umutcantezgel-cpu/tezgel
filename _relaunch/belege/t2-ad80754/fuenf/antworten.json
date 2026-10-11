@@ -1,0 +1,100 @@
+{
+ "protokoll": "PROBELAUF §8",
+ "server": "127.0.0.1:4326 (ad80754-k)",
+ "einwilligung": "erstbesuch",
+ "erstbetrachter": "je Bild 5 frische Haiku-Agenten",
+ "zuordnung": {
+  "w2": {
+   "satz": "kandidat ad80754",
+   "seite": "/",
+   "ansicht": "m375"
+  },
+  "p5": {
+   "satz": "kandidat ad80754",
+   "seite": "/",
+   "ansicht": "d1440"
+  }
+ },
+ "antworten": [
+  {
+   "bild": "p5",
+   "durchgang": 1,
+   "angebot": "Fliesenverlegung und Badsanierung, mit kostenlosem Aufmaß vor Ort, angeboten von einem Fachbetrieb mit Handwerkskammer-Eintragung (5,0 bei 27 Bewertungen); der Untertext ist vom Cookie-Banner größtenteils verdeckt, Details wie die Erwähnung barrierefreier Bäder sind nicht lesbar.",
+   "zielgruppe": "Private Eigentümer und Bewohner, die ihr Bad, Fliesen, Balkon oder Terrasse erneuern wollen, da das Formular nach \"Ihr Vorhaben\" fragt und vom Zuhause spricht.",
+   "naechster_schritt": "Im Formular \"Kostenloses Aufmaß vor Ort anfragen\" das Vorhaben wählen (z. B. Badsanierung) und das Projekt beschreiben, oder direkt unter 06441 / 44 83 567 anrufen.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "p5",
+   "durchgang": 2,
+   "angebot": "Fliesenverlegung und Badsanierung (auch Balkon und Terrasse, Reparatur und Fugen) vom Fachbetrieb Fliesenverlegung Tezgel, Inhaber Deniz Tezgel; Preise und Einzugsgebiet sind auf dem ersten Bildschirm nicht erkennbar, und der Fließtext ist vom Cookie-Banner verdeckt.",
+   "zielgruppe": "Privatpersonen, die ein Bad sanieren oder Fliesen in ihrem Zuhause neu verlegen oder reparieren lassen wollen (Ansprache per \"Sie\"); ob auch Gewerbekunden gemeint sind, ist nicht erkennbar.",
+   "naechster_schritt": "Im Formular rechts das Vorhaben wählen und ein kostenloses Aufmaß vor Ort anfragen (Rückruf laut Seite innerhalb von 24 Stunden), oder direkt unter 06441 / 44 83 567 anrufen.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "p5",
+   "durchgang": 3,
+   "angebot": "Fliesenverlegung und Badsanierung durch den Fachbetrieb Deniz Tezgel (Handwerkskammer-eingetragen, 5,0 Sterne bei 27 Bewertungen); der Fließtext ist vom Cookie-Banner verdeckt, Preise und Einsatzgebiet sind auf diesem Bildschirm nicht erkennbar.",
+   "zielgruppe": "Privatpersonen und Eigentümer, die ein Bad sanieren oder Fliesen verlegen lassen wollen; das Formular zeigt zusätzlich Balkon und Terrasse sowie Reparatur und Fugen.",
+   "naechster_schritt": "Im Formular \"Direktanfrage an Deniz Tezgel\" das Vorhaben wählen (Badsanierung ist vorausgewählt) und ein kostenloses Aufmaß anfragen, oder direkt unter 06441 / 44 83 567 anrufen.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "p5",
+   "durchgang": 4,
+   "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Deniz Tezgel, laut Anzeige Handwerkskammer-eingetragen und mit 5,0 Sternen aus 27 Bewertungen; der Teasertext ist vom Cookie-Banner verdeckt, nur \"barrierefreie\" ist teilweise lesbar.",
+   "zielgruppe": "Privatleute und Hausbesitzer, die ein Bad sanieren oder Fliesen für Bad, Balkon oder Terrasse verlegen lassen wollen und vorab ein kostenloses Aufmaß vor Ort möchten; die Region ist auf dem ersten Bildschirm nicht erkennbar.",
+   "naechster_schritt": "Im Formular \"Direktanfrage an Deniz Tezgel\" das Vorhaben wählen (etwa Badsanierung) und das kostenlose Aufmaß anfragen, oder direkt unter 06441 / 44 83 567 anrufen.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "p5",
+   "durchgang": 5,
+   "angebot": "Fliesenverlegung und Badsanierung durch einen Fachbetrieb, der laut Anzeige in der Handwerkskammer eingetragen ist (5,0 Sterne aus 27 Bewertungen), mit kostenlosem Aufmaß vor Ort.",
+   "zielgruppe": "Privatpersonen wie Hausbesitzer und Mieter, die ein Bad sanieren, Fliesen verlegen lassen oder Balkon, Terrasse, Fugen bzw. Reparaturen erledigen wollen.",
+   "naechster_schritt": "Im Formular \"Kostenloses Aufmaß vor Ort anfragen\" das Vorhaben wählen (Rückruf laut Anzeige innerhalb 24 Stunden) oder unter 06441 / 44 83 567 anrufen, nachdem das Cookie-Banner geschlossen wurde.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "w2",
+   "durchgang": 1,
+   "angebot": "Fliesenverlegung und Badsanierung mit fugenarmen XXL-Großformatfliesen vom Handwerksbetrieb Deniz Tezgel (Handwerkskammer-eingetragen, 5,0 Sterne aus 27 Bewertungen).",
+   "zielgruppe": "Vermutlich Privatleute in und um Aßlar, die ein Bad sanieren oder Fliesen verlegen lassen wollen; das ist aus der Überschrift geschlossen, nicht ausdrücklich genannt.",
+   "naechster_schritt": "Unten auf \"Aufmaß\" tippen (vermutlich ein Termin zur Vermessung), alternativ \"Anrufen\" oder \"WhatsApp\"; ob das Aufmaß kostenlos ist, geht aus dem ersten Bildschirm nicht hervor.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "w2",
+   "durchgang": 2,
+   "angebot": "Fliesenverlegung und Badsanierung, laut Überschrift mit fugenarmen XXL-Großformatfliesen, von einem Handwerksbetrieb aus Aßlar.",
+   "zielgruppe": "Hausbesitzer und Privatleute in und um Aßlar, die ein Bad sanieren oder Fliesen neu verlegen lassen wollen; ausdrücklich genannt ist das nicht, es ergibt sich aus dem Ortsbezug.",
+   "naechster_schritt": "Zuerst den Cookie-Banner schließen oder bestätigen, dann im unteren Balken \"Aufmaß\" antippen, was vermutlich zu einem Termin zum Ausmessen führt; alternativ anrufen oder per WhatsApp schreiben.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "w2",
+   "durchgang": 3,
+   "angebot": "Fliesenverlegung und Badsanierung, laut Überschrift mit fugenarmen XXL-Großformatfliesen, von einem Handwerksbetrieb aus Aßlar (Meister Deniz Tezgel, Handwerkskammer-eingetragen, 5,0 Sterne bei 27 Bewertungen).",
+   "zielgruppe": "Vermutlich Privatleute und Bauherren im Raum Aßlar, die ein Bad oder Fliesen erneuern wollen; ob auch Gewerbekunden angesprochen werden, ist auf dem Bildschirm nicht erkennbar.",
+   "naechster_schritt": "Über den Button „Aufmaß“ unten rechts einen Termin zur Vermessung anfragen, alternativ anrufen oder per WhatsApp schreiben; vorher das Cookie-Banner schließen oder bestätigen.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "w2",
+   "durchgang": 4,
+   "angebot": "Fliesenverlegung und Badsanierung, laut Überschrift mit Fokus auf großformatige XXL-Fliesen; der Beschreibungstext ist vom Cookie-Banner verdeckt, also nicht lesbar.",
+   "zielgruppe": "Vermutlich Hausbesitzer und Bauherren in und um Aßlar, die ein Bad oder Böden neu fliesen lassen wollen; das ist aus Ortsangabe und Leistung geschlossen, nicht ausdrücklich genannt.",
+   "naechster_schritt": "Unten auf den Button \"Aufmaß\" (Kalender-Symbol) tippen, was wohl einen Termin für das Ausmessen vor Ort meint, alternativ über \"Anrufen\" oder \"WhatsApp\" Kontakt aufnehmen; das Cookie-Banner vorher per Klick beantworten.",
+   "sicherheit": 4
+  },
+  {
+   "bild": "w2",
+   "durchgang": 5,
+   "angebot": "Fliesenverlegung und Badsanierung mit XXL-Großformatfliesen, laut Seite von einem Fachbetrieb (Deniz Tezgel) im Raum Aßlar; die Leistungsbeschreibung ist vom Cookie-Banner abgeschnitten, Preise und Umfang sind nicht zu sehen.",
+   "zielgruppe": "Hausbesitzer und Privatkunden in und um Aßlar, die ein Bad sanieren oder neue Fliesen verlegen lassen wollen.",
+   "naechster_schritt": "Den Cookie-Banner schließen oder beantworten und dann \"Aufmaß\" antippen (vermutlich ein Termin zum Ausmessen vor Ort), oder direkt über \"Anrufen\" oder \"WhatsApp\" Kontakt aufnehmen.",
+   "sicherheit": 4
+  }
+ ]
+}

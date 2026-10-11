@@ -15,8 +15,6 @@ type RohEintrag = {
   featured?: { eyebrow: string; title: string; text: string; cta: { label: string; path: string } };
 };
 
-const zweistellig = (n: number) => String(n).padStart(2, '0');
-
 export function kopfEintraege(): Eintrag[] {
   return (navigationLinks as RohEintrag[]).map((link) => {
     let lauf = 0;
@@ -28,7 +26,7 @@ export function kopfEintraege(): Eintrag[] {
         titel: kat.category,
         punkte: kat.items.map((p) => {
           lauf += 1;
-          return { name: p.name, pfad: p.path, beschreibung: p.desc, nummer: zweistellig(lauf) };
+          return { name: p.name, pfad: p.path, beschreibung: p.desc, nr: lauf };
         }),
       })),
       hervorhebung: link.featured

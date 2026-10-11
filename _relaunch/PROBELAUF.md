@@ -54,6 +54,11 @@ Start ist immer `/`. Der Probeläufer erhält **nur** den Auftrag (Spalte 2), ni
 ## 3 Matrix
 5 Aufgaben × {`m375` Touch, `d1440` Maus, `d1440` Tastatur} = 15 Läufe; mobil mit Tastatur entfällt. Laufname `a<N>-<ansicht>-<eingabe>` (z. B. `a3-d1440-tastatur`), Satz `ausgangsstand` für die Bezugswerte, später der Wellen- bzw. Phasenname. Gegenproben und Erkundungen nie im Bewertungssatz (eigener Satz, z. B. `gegenprobe`, `erkundung`).
 
+### Gegenprobe auf Bezugswegen (ab P3-16, E-023)
+Die freien Läufe streuen: Probeläufer wählen andere Wege und andere Banner-Entscheidungen. Für den Vergleich mit dem Bezugswert spielt das Tor deshalb zusätzlich die Eingaben des Ausgangsstands unverändert am Kandidaten nach (Satz `gegenprobe-<kandidat>`), je Weg mindestens einmal am Endstand. Unterschiede, die auf demselben Weg wiederkehren, gelten als Wirkung des Kandidaten.
+- Existiert ein Bedienelement des Weges im Kern unter neuem Namen (MIKROTEXTE) oder ist ein Schritt dort weder nötig noch möglich (z. B. Banner unter dem offenen Menü), wird eine Kern-Fassung desselben Weges abgelegt (`eingaben/gegenprobe-*`, mit Begründung im Feld `antwort`).
+- Die Bezugswerte in Abschnitt 7 bleiben unverändert; der freie Lauf bleibt Pflicht je Phasentor.
+
 ## 4 Zählregeln
 - Ein Schritt = eine Besucherhandlung. Lesezeit zählt nicht.
 - Tippen/Klick = 1. Liegt das Ziel außerhalb des Bildes, zählt das Werkzeug den nötigen Bildlauf dazu (1 je angefangene Bildschirmhöhe Abstand).
@@ -80,12 +85,28 @@ Chromium (Playwright 1.56.1), Ansichten aus `lib.mjs` (`m375` 375 × 812 Touch, 
 ## 7 Bezugswerte Ausgangsstand (`127.0.0.1:4310`, Satz `ausgangsstand`)
 | Aufgabe | m375 Touch | d1440 Maus | d1440 Tastatur |
 |---|---|---|---|
-| 1 | folgt (Probeläufer-Paket) | folgt | folgt |
-| 2 | folgt | folgt | folgt |
-| 3 | folgt | folgt | folgt |
+| 1 | gelöst · 4 Schritte | gelöst · 2 Schritte | gelöst · 23 Schritte |
+| 2 | gelöst · 4 Schritte | gelöst · 2 Schritte | gelöst · 12 Schritte |
+| 3 | gelöst · 12 Schritte | gelöst · 5 Schritte | gelöst · 34 Schritte |
 | 4 | gelöst · 8 Schritte | gelöst · 1 Schritt | gelöst · 8 Schritte |
-| 5 | folgt | folgt | folgt |
+| 5 | gelöst · 10 Schritte | gelöst · 5 Schritte | gelöst · 114 Schritte |
+
+Erhoben von P3-00g-B (Haiku, 11.10.2026), Belege `belege/p0-ausgangsstand/probelauf/` (Eingaben, `lauf.json` je Lauf, `matrix.json`). Befunde des Ausgangsstands:
+- hoch (offen bis Gegenprüfung): a5-d1440-tastatur, nach einem Seitenwechsel per Enter setzt die Tab-Folge an der alten Stelle fort; bis zur Kopfnavigation 87 Tabs.
+- mittel: Tastatur-Umwege bis zum Ziel (a1 18 Tabs bis zur Karte, a2 11 Tabs bis „Über uns“, a3 24 Tabs bis zum Feld „Name“).
+- gering, mehrfach: Banner verdeckt beim Erstbesuch Zeilen und H1; die Chat-Blase verdeckt Zeilenenden.
+- Abweichungen: a2-d1440-maus brach einmal beim Klick auf „Alle ablehnen“ ab (Werkzeug, Stabilitätsprüfung), Wiederholung nicht gezählt; a3-m375-touch: Bezugswert 12 aus dem letzten Lauf (Bestätigung zeitabhängig sichtbar).
 
 Wege Aufgabe 4 (Lauf-Dateien unter `cache/probelauf/eingaben/ausgangsstand/`): Touch – „Alle ablehnen“ (Banner liegt über dem Mobilmenü), Menü, „Standorte“, „Alle 13 Standorte“, 1 Bildlauf, 3× Wischen in der Stadt-Leiste → „Butzbach 35 km“ unter „Unser 45-km-Einsatzgebiet“ (ohne Wischen: 10 Schritte, Satz `erkundung`). Maus – Klick „Standorte“ → Stadt-Leiste mit „Butzbach 35 km“ im ersten Bild (Banner bleibt stehen, verdeckt nichts Nötiges). Tastatur – 7× Tab bis „Standorte“, Enter. Banner-Probe Tastatur (`banner-d1440-tastatur`): „Alle ablehnen“ erst nach 190× Tab erreichbar.
 
 Z-04 vergleicht jeden späteren Lauf mit dieser Tabelle (Schrittzahl bis Ziel ≤ Bezugswert, gelöst, 0 Befunde „hoch“).
+
+## 8 Fünf-Sekunden-Probe (Z-04, zweiter Teil)
+- **Material:** erster Bildschirm jeder Hauptseite, so wie er beim ersten Besuch erscheint: `fotos.mjs --einwilligung erstbesuch --max 1 --ansichten m375,d1440`, also mit Einwilligungsbanner und Bedingungen wie in Abschnitt 6, aber reducedMotion „reduce“. Satz `fuenf-<stand>`. Die Bilder werden vor der Probe unter neutralen Namen kopiert, damit kein Dateiname den Stand verrät.
+- **Erstbetrachter:** je Bild 5 frisch gestartete Haiku-Agenten. Jeder liest genau dieses eine Bild, ohne Web, Repo und Suche, und beantwortet aus dem ersten Eindruck: Angebot, Zielgruppe, nächster Schritt, dazu die Sicherheit 1–5. Werkzeug: Workflow `fuenf-sekunden-basis` (Antworten roh, Schema).
+- **Bezug (aus den Seiteninhalten, nicht erfunden):**
+  - Angebot: Fliesenverlegung bzw. Badsanierung, also ein Fliesenleger-Fachbetrieb.
+  - Zielgruppe: Privatkunden, also Haus- oder Wohnungseigentümer mit einem Bad-, Fliesen- oder Terrassenvorhaben. Die Region Aßlar/Wetzlar/Mittelhessen wird gesondert gezählt („regional erkannt“).
+  - Nächster Schritt: kostenloses Vor-Ort-Aufmaß bzw. eine Anfrage stellen, oder Kontakt per Telefon/WhatsApp aufnehmen.
+- **Bewertung:** Ein frischer Opus-Agent bewertet alle Antworten blind (Stand und Ansicht gemischt, nur Kennungen) gegen den Bezug, je Frage richtig/falsch, mit einem Satz Begründung.
+- **Schwelle:** Je Seite und Ansicht nennen ≥ 4 von 5 Erstbetrachtern alle drei richtig, und die Zahl richtiger Gesamtantworten liegt nie unter dem Ausgangsstand.

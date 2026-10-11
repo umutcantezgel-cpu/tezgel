@@ -146,7 +146,7 @@ Regel: Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk. Genau 
 
 ## K-011 Komponenten, Zustände, Seitenarten
 - Zustände für jedes Bedienelement: Ruhe, Hover, Fokus, aktiv, deaktiviert, lädt, Fehler, Erfolg; Leerzustände; 404 mit Charakter (Plan mit verrutschter Fliese, Weg zurück).
-- Kopf: Logo (unverändert), Hauptnavigation ab `lg` mit Mega-Menü, Telefon in Mono, Knopf „Aufmaß anfragen“. Hamburger nur unter `lg`. Fest, 1-px-Fuge unten. Mobil schlank.
+- Kopf: Logo (unverändert), Hauptnavigation ab `xl` mit Mega-Menü, Telefon in Mono, Knopf „Aufmaß anfragen“, Zonen durch 1-px-Fugen auf der Inhaltsflucht getrennt. Menü-Schalter nur unter `xl` (ab `md` mit Telefon und Knopf im Kopf). Fest, 1-px-Fuge unten. Mobil schlank.
 - Mobil unten: eine Leiste (Anrufen · WhatsApp · Anfrage), die einzige feste Ebene neben dem Kopf. WhatsApp-Bubble und Chat-Blase entfallen mobil, ihre Funktion liegt in der Leiste (E-012).
 - Knöpfe: Hauptknopf Tinte auf Kalk, Text Kalk, `--k-r-0`; Nebenknopf Rahmen 1 px Strich; Textlink mit Unterstreichung. Knöpfe sagen, was passiert.
 - Formulare: sichtbare Beschriftung über dem Feld, `autocomplete`, Hilfetext in Tinte-2, Fehler mit Versatz-Zeichen + Text + `role="alert"`, Erfolg „Notiert.“ mit Inhabername und Referenz. Ein Formular je Bildschirm; vier Anfrage-Einstiege auf `/` bleiben erhalten, klar gestaffelt (P3-13).
@@ -183,6 +183,7 @@ Lighthouse mobil ≥ 90 · LCP ≤ 2,5 s · CLS ≤ 0,1 · TBT ≤ 200 ms · INP
 - **Flucht:** Zustand, in dem Elemente auf Raster und Achse ausgerichtet sind; Ziel jeder Bewegung.
 
 ## Änderungsprotokoll
+- v1.3 (11.10.2026, P3): Kopf nach E-022 – Hauptnavigation ab `xl` statt `lg`: Mit Hauptpunkten in `text-k-2` und Treffern ≥ 44 px braucht die Zeile 1101 px, bei `lg` stehen 928 px Inhalt zur Verfügung; unter `xl` gilt das Menü-Blatt (P3-06c). Betroffene Pakete: P3-06b.
 - v1 (10.10.2026, P2): erste Fassung nach E-008.
 - v1.2 (10.10.2026, P2): nach P2-GEG-02 – Tokens nur im Kern-CSS, Schriften am Kern-`<html>`, 404-Weg unter E-015, Teilmenge und Ersatzschrift so wie gebaut, Seitenwechsel optional nur im Kern. Betroffene Pakete: P3-00-Aufträge verweisen auf v1.2.
 - v1.1 (10.10.2026, P2): nach P2-GEG-01 – Seitenart je URL, ein Signaturmoment je Seite (SIG-1 `/`, SIG-2 `/bad`, SIG-3 Leistungen), Mikrotext-Klassen und Badge-Regel, Randnotiz nur als Verweis, Schriftteilmenge und Ersatzschrift, Bildregel, Bauweise E-015 in K-004. Betroffene Pakete: noch keine gebaut.

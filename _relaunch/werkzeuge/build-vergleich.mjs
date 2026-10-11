@@ -1,6 +1,6 @@
 // Vergleicht zwei Reinraum-Builds deterministisch: vorgerendertes HTML (normalisiert) und CSS-Selektoren.
 // Für Wellen ohne sichtbare Änderung (z. B. W0 Aufräumen) stärker als ein Pixelvergleich.
-// Nutzung: node build-vergleich.mjs <shaVorher> <shaNachher>
+// Nutzung: node build-vergleich.mjs <shaVorher> <shaNachher> [--streng | --ohne-sprite]
 import fs from 'node:fs';
 import path from 'node:path';
 import { RELAUNCH, ensureDir } from './lib.mjs';
@@ -36,7 +36,12 @@ const normWeich = (h) => h
   .replace(/\\"b\\":\\"[A-Za-z0-9_-]{15,}\\"/g, '\\"b\\":\\"X\\"')
   .replace(/\[\\"\$\\",\\"meta\\",\\"\d+\\",\{\\"name\\":\\"x-build\\",\\"content\\":\\"[^\\]*\\"\}\],?/g, '')
   .replace(/\\"\$\\",\\"([a-z]+)\\",\\"\d+\\"/g, (m, t) => `\\"$\\",\\"${t}\\",\\"N\\"`);
-const norm = STRENG ? normStreng : normWeich;
+// --ohne-sprite (E-026): nimmt den unsichtbaren Icon-Sprite-Block des Kern-Layouts heraus (nur mit weicher Normalisierung,
+// die Flight-Skripte entfernt). Belegt „nur das Sprite ist anders“, wenn sich der Icon-Satz ändert; Sprite-Block ohne innere div.
+const OHNE_SPRITE = process.argv.includes('--ohne-sprite');
+if (OHNE_SPRITE && STRENG) { console.error('--ohne-sprite nur ohne --streng'); process.exit(2); }
+const ohneSprite = (h) => h.replace(/<div[^>]*data-sprite="kern-icons"[^>]*>[\s\S]*?<\/div>/g, '<!--sprite-->');
+const norm = STRENG ? normStreng : OHNE_SPRITE ? (h) => ohneSprite(normWeich(h)) : normWeich;
 // Nur vom Build vorgerenderte Seiten zählen (prerender-manifest); Dateien, die `next start` zur Laufzeit zwischenspeichert
 // (z. B. 404-Hüllen nach Testaufrufen unbekannter Adressen), werden getrennt ausgewiesen und nicht verglichen.
 const vorgerendert = (d) => { try { const r = JSON.parse(fs.readFileSync(path.join(d, 'prerender-manifest.json'), 'utf8')).routes; return new Set(Object.keys(r).map((k) => (k === '/' ? 'index.html' : k.replace(/^\//, '') + '.html'))); } catch { return null; } };
@@ -62,7 +67,7 @@ const ea = eigenschaften(dir(A)), eb = eigenschaften(dir(B)), ka = keyframes(dir
 const varWeg = [...ea].filter((x) => !eb.has(x)).sort(), varNeu = [...eb].filter((x) => !ea.has(x)).sort();
 const kfWeg = [...ka].filter((x) => !kb.has(x)).sort(), kfNeu = [...kb].filter((x) => !ka.has(x)).sort();
 const bericht = { vorher: A, nachher: B, laufzeit_reste: { vorher: laufzeitA, nachher: laufzeitB }, variablen_weg: varWeg, variablen_neu: varNeu, keyframes_weg: kfWeg, keyframes_neu: kfNeu, html_dateien: Object.keys(htmlA).length, nur_vorher: nurA, nur_nachher: nurB, html_abweichend: anders.length, abweichungen: anders.slice(0, 40), css_selektoren_weg: weg, css_selektoren_neu: neu };
-const out = ensureDir(path.join(RELAUNCH, 'belege', `build-vergleich-${A}-${B}${STRENG ? '-streng' : ''}`));
+const out = ensureDir(path.join(RELAUNCH, 'belege', `build-vergleich-${A}-${B}${STRENG ? '-streng' : ''}${OHNE_SPRITE ? '-ohne-sprite' : ''}`));
 fs.writeFileSync(path.join(out, 'bericht.json'), JSON.stringify(bericht, null, 1));
 console.log(JSON.stringify({ html: bericht.html_dateien, nur_vorher: nurA.length, nur_nachher: nurB.length, html_abweichend: anders.length, css_weg: weg.length, css_neu: neu.length, var_weg: varWeg.length, var_neu: varNeu.length, keyframes_weg: kfWeg.length, keyframes_neu: kfNeu.length }));
 for (const a of anders.slice(0, 5)) console.log('≠', a.datei, '\n  vorher: ', a.vorher.replace(/\n/g, ' '), '\n  nachher:', a.nachher.replace(/\n/g, ' '));

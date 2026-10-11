@@ -1,0 +1,4186 @@
+{
+ "satz": "t2-81846c0-basis → t2-bcd8fcb-k",
+ "base": "http://127.0.0.1:4331",
+ "bedingungen": {
+  "a": "cache/texte2/t2-81846c0-basis",
+  "b": "cache/texte2/t2-bcd8fcb-k",
+  "freigabe": "MIKROTEXTE.md",
+  "volatil": [
+   "^[A-ZÄÖÜ]$",
+   "^[0-9] / [0-9]$"
+  ],
+  "regeln": "Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste."
+ },
+ "erstellt": "2026-10-11T03:27:23.810Z",
+ "ergebnis": "GRÜN",
+ "summe": {
+  "rot": 0,
+  "gelb": 345,
+  "gruen_freigegeben": 76,
+  "seiten_rot": 0,
+  "rot_nach_art": {},
+  "gelb_nach_art": {
+   "umgestellt": 46,
+   "verschoben": 4,
+   "neu-gegliedert": 110,
+   "geaendert": 15,
+   "entfernt": 54,
+   "hinzu": 115,
+   "seite-neu": 1
+  },
+  "seiten_verglichen": 172,
+  "zustaende_verglichen": 7,
+  "freigabe_zeilen": 42,
+  "freigabe_warnungen": 0,
+  "laufzeit_s": 0.1
+ },
+ "freigabe": {
+  "datei": "MIKROTEXTE.md",
+  "warnungen": [],
+  "genutzt": [
+   25,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   41,
+   42,
+   43,
+   44,
+   45,
+   46,
+   47,
+   48,
+   49,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58
+  ]
+ },
+ "seiten": {
+  "/": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.region",
+     "wert": "DE-HE",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.placename",
+     "wert": "Aßlar",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.position",
+     "wert": "50.5900;8.4600",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:ICBM",
+     "wert": "50.5900, 8.4600",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "aria:aria-label",
+     "wert": "Hauptnavigation",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Balkon & Terrasse",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Fliesenverlegung innen & außen, Untergrund & Abdichtung",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Standorte",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Aßlar, Wetzlar, Gießen, Marburg und ganz Hessen",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Ratgeber",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Wissen, Förderung, Referenzen & Service",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Über uns",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Fachbetrieb Deniz Tezgel in Aßlar",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Badsanierung",
+     "abschnitt_alt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Fliesenverlegung",
+     "abschnitt_alt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "abschnitt_neu": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Reparatur & Fugen",
+     "abschnitt_alt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "abschnitt_neu": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "DIN 18534 Verbundabdichtung",
+     "abschnitt_alt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "abschnitt_neu": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Zur Bad-Übersicht",
+     "abschnitt_alt": "h3: Badsanierung & Wellness",
+     "abschnitt_neu": "h3: Badsanierung & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Projektcheck starten",
+     "abschnitt_alt": "h3: Rechner & Planung",
+     "abschnitt_neu": "h3: Rechner & Planung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Alle Standorte",
+     "abschnitt_alt": "h3: 13 Städte & Regionen",
+     "abschnitt_neu": "h3: 13 Städte & Regionen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Zu den Bewertungen",
+     "abschnitt_alt": "h3: Bewertungen & Ratgeber",
+     "abschnitt_neu": "h3: Bewertungen & Ratgeber",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Badsanierung & Walk-In Dusche",
+     "abschnitt_alt": "h2: Projekt anfragen & Situation schildern",
+     "abschnitt_neu": "h2: Projekt anfragen & Situation schildern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "ca. 10 - 25 m²",
+     "abschnitt_alt": "h2: Projekt anfragen & Situation schildern",
+     "abschnitt_neu": "h2: Projekt anfragen & Situation schildern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Normgerechte Verbundabdichtung",
+     "abschnitt_alt": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "abschnitt_neu": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "DIN 18534",
+     "abschnitt_alt": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "abschnitt_neu": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Großformate für fugenarme Wand- & Bodenflächen",
+     "abschnitt_alt": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "abschnitt_neu": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "XXL",
+     "abschnitt_alt": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "abschnitt_neu": "h2: Fugenarme XXL-Großformate & fachgerechte Badsanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Elke S.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "C. W.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Rabia Ö.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Hasan Ö.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Ute T.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Peter P.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Christian D.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Sara J.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "K. D.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Christian S.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Thorsten A.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Erik S.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Kathrin W.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Janet T.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Ortwin L.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Jan G.",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Regionale Einsatzgebiete",
+     "abschnitt_alt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "abschnitt_neu": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "aria:aria-label",
+     "wert": "Fortschritt",
+     "abschnitt_alt": "h2: Ihre Express-Anfrage in 3 Klicks",
+     "abschnitt_neu": "h2: Ihre Express-Anfrage in 3 Klicks",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "HWK Fachbetrieb HWK Wiesbaden",
+     "abschnitt_alt": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "abschnitt_neu": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Staubschutz-Garantie bei bewohnten Sanierungen",
+     "abschnitt_alt": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "abschnitt_neu": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Festpreisgarantie transparent kalkuliert",
+     "abschnitt_alt": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "abschnitt_neu": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Kostenfreies Vor-Ort-Aufmaß",
+     "abschnitt_alt": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "abschnitt_neu": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Badsanierung im Überblick",
+      "Alle Leistungen rund ums neue Bad"
+     ],
+     "neu": [
+      "Badsanierung im Überblick Alle Leistungen rund ums neue Bad"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Badsanierung komplett",
+      "Von der Demontage bis zur fertigen Fuge"
+     ],
+     "neu": [
+      "Badsanierung komplett Von der Demontage bis zur fertigen Fuge"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesen & XXL-Großformate",
+      "Fugenarme Großkeramik im Bad"
+     ],
+     "neu": [
+      "Fliesen & XXL-Großformate Fugenarme Großkeramik im Bad"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Barrierefreies Bad",
+      "Bodengleiche Walk-In-Duschen nach DIN 18040"
+     ],
+     "neu": [
+      "Barrierefreies Bad Bodengleiche Walk-In-Duschen nach DIN 18040"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Bad aus einer Hand",
+      "Gewerke koordiniert, ein Ansprechpartner"
+     ],
+     "neu": [
+      "Bad aus einer Hand Gewerke koordiniert, ein Ansprechpartner"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Badplaner",
+      "Schritt für Schritt zum geplanten Bad"
+     ],
+     "neu": [
+      "Badplaner Schritt für Schritt zum geplanten Bad"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Bad-Projektcheck",
+      "Badprojekt in 2 Minuten beschreiben"
+     ],
+     "neu": [
+      "Bad-Projektcheck Badprojekt in 2 Minuten beschreiben"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Musterbäder",
+      "Konzepte von Basic bis Luxus"
+     ],
+     "neu": [
+      "Musterbäder Konzepte von Basic bis Luxus"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Badanfrage",
+      "Unverbindliche Anfrage für Ihr Bad"
+     ],
+     "neu": [
+      "Badanfrage Unverbindliche Anfrage für Ihr Bad"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Alle Fachgewerke",
+      "Leistungsübersicht unseres Fachbetriebs"
+     ],
+     "neu": [
+      "Alle Fachgewerke Leistungsübersicht unseres Fachbetriebs"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Bäder & Wellness",
+      "Walk-In-Duschen, Gehrungen & Nischen"
+     ],
+     "neu": [
+      "Bäder & Wellness Walk-In-Duschen, Gehrungen & Nischen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Wohnbereiche & Neubau",
+      "Feinsteinzeug, Naturstein, Flure & Treppen"
+     ],
+     "neu": [
+      "Wohnbereiche & Neubau Feinsteinzeug, Naturstein, Flure & Treppen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesen & Verlegung",
+      "Formate, Materialien, Verlegemuster und Verlegetechnik"
+     ],
+     "neu": [
+      "Fliesen & Verlegung Formate, Materialien, Verlegemuster und Verlegetechnik"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Untergrund & Abdichtung",
+      "Das Fundament jedes dauerhaften Fliesenbelags"
+     ],
+     "neu": [
+      "Untergrund & Abdichtung Das Fundament jedes dauerhaften Fliesenbelags"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Balkon & Terrasse",
+      "Außenbeläge, die Frost und Regen standhalten"
+     ],
+     "neu": [
+      "Balkon & Terrasse Außenbeläge, die Frost und Regen standhalten"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Naturstein & Granit",
+      "Natursteinböden und Wandbeläge fachgerecht verlegt"
+     ],
+     "neu": [
+      "Naturstein & Granit Natursteinböden und Wandbeläge fachgerecht verlegt"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Treppen",
+      "Treppen neu belegen – innen, im Treppenhaus und außen"
+     ],
+     "neu": [
+      "Treppen Treppen neu belegen – innen, im Treppenhaus und außen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesenreparatur",
+      "Einzelne Fliesen, Fugen, Sockel"
+     ],
+     "neu": [
+      "Fliesenreparatur Einzelne Fliesen, Fugen, Sockel"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Schadensanalyse",
+      "Ursachen vor Ort klären"
+     ],
+     "neu": [
+      "Schadensanalyse Ursachen vor Ort klären"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesenleger Wetzlar",
+      "Direkt neben unserem Firmensitz Aßlar"
+     ],
+     "neu": [
+      "Fliesenleger Wetzlar Direkt neben unserem Firmensitz Aßlar"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesenleger Gießen",
+      "Stadt und Landkreis Gießen"
+     ],
+     "neu": [
+      "Fliesenleger Gießen Stadt und Landkreis Gießen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesenleger Marburg",
+      "Landkreis Marburg-Biedenkopf"
+     ],
+     "neu": [
+      "Fliesenleger Marburg Landkreis Marburg-Biedenkopf"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Alle 13 Standorte",
+      "Lahn-Dill-Kreis, Wetterau & Umland"
+     ],
+     "neu": [
+      "Alle 13 Standorte Lahn-Dill-Kreis, Wetterau & Umland"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesenberatung Wetzlar",
+      "Materialauswahl nach Terminvereinbarung"
+     ],
+     "neu": [
+      "Fliesenberatung Wetzlar Materialauswahl nach Terminvereinbarung"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Fliesenberatung Gießen",
+      "Beratung für den Raum Gießen"
+     ],
+     "neu": [
+      "Fliesenberatung Gießen Beratung für den Raum Gießen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Ratgeber & Blog",
+      "Tipps rund um Bad und Fliesen"
+     ],
+     "neu": [
+      "Ratgeber & Blog Tipps rund um Bad und Fliesen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Häufige Fragen",
+      "Antworten zu Ablauf, Kosten & Pflege"
+     ],
+     "neu": [
+      "Häufige Fragen Antworten zu Ablauf, Kosten & Pflege"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Vor-Ort-Beratung",
+      "Aufmaß und Materialberatung"
+     ],
+     "neu": [
+      "Vor-Ort-Beratung Aufmaß und Materialberatung"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Förderung",
+      "Zuschüsse für barrierefreie Bäder"
+     ],
+     "neu": [
+      "Förderung Zuschüsse für barrierefreie Bäder"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Referenzen & Bewertungen",
+      "5,0 Sterne aus 27 Google-Rezensionen"
+     ],
+     "neu": [
+      "Referenzen & Bewertungen 5,0 Sterne aus 27 Google-Rezensionen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Über Deniz Tezgel",
+      "Philosophie & Fachbetrieb"
+     ],
+     "neu": [
+      "Über Deniz Tezgel Philosophie & Fachbetrieb"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Qualitätsversprechen",
+      "Staubschutz, Termintreue & DIN-Normen"
+     ],
+     "neu": [
+      "Qualitätsversprechen Staubschutz, Termintreue & DIN-Normen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Team",
+      "Ihre Ansprechpartner"
+     ],
+     "neu": [
+      "Team Ihre Ansprechpartner"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Karriere & Jobs",
+      "Verstärkung für unser Team"
+     ],
+     "neu": [
+      "Karriere & Jobs Verstärkung für unser Team"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Kontakt",
+      "Hohwardstraße 14, 35614 Aßlar"
+     ],
+     "neu": [
+      "Kontakt Hohwardstraße 14, 35614 Aßlar"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "1. Welches Projekt planen Sie?",
+      "Auswahl erforderlich"
+     ],
+     "neu": [
+      "1. Welches Projekt planen Sie? Auswahl erforderlich"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Kompakt / Gäste-WC",
+      "bis ca. 10 m²"
+     ],
+     "neu": [
+      "Kompakt / Gäste-WC bis ca. 10 m²"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Vor-Ort-Aufmaß: 0 € (Kostenfrei)"
+     ],
+     "neu": [
+      "Vor-Ort-Aufmaß:",
+      "0 € (Kostenfrei)"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Angebot: Verbindlicher Festpreis"
+     ],
+     "neu": [
+      "Angebot:",
+      "Verbindlicher Festpreis"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Komplettbad & Dusche",
+      "Fachgewerk"
+     ],
+     "neu": [
+      "Komplettbad & Dusche Fachgewerk"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Wohnbereiche & Neubau",
+      "Fachgewerk"
+     ],
+     "neu": [
+      "Wohnbereiche & Neubau Fachgewerk"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Balkon & Terrasse",
+      "Fachgewerk"
+     ],
+     "neu": [
+      "Balkon & Terrasse Fachgewerk"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "DIN 18534 Abdichtung",
+      "Fachgewerk"
+     ],
+     "neu": [
+      "DIN 18534 Abdichtung Fachgewerk"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "\"Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir können diese Firma uneingeschränkt und wärmstens empfehlen.Handwerklich perfekt, saubere u.präzise …\""
+     ],
+     "neu": [
+      "\"Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir können diese Firma uneingeschränkt und wärmstens empfehlen.Handwerklich perfekt, saubere u. präzise …\""
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Sehr beliebt",
+      "Bad & Wellness",
+      "Walk-In-Dusche, Großformate, Ablagenischen"
+     ],
+     "neu": [
+      "Sehr beliebt Bad & Wellness Walk-In-Dusche, Großformate, Ablagenischen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Großformat",
+      "Wohnbereich & Neubau",
+      "Feinsteinzeug, Küche, Diele & Flure"
+     ],
+     "neu": [
+      "Großformat Wohnbereich & Neubau Feinsteinzeug, Küche, Diele & Flure"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Frostsicher",
+      "Balkon & Terrasse",
+      "2-cm-Keramikplatten auf Stelzlagern"
+     ],
+     "neu": [
+      "Frostsicher Balkon & Terrasse 2-cm-Keramikplatten auf Stelzlagern"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Präzision",
+      "Treppen & Naturstein",
+      "Granit, Naturstein & Treppenstufen"
+     ],
+     "neu": [
+      "Präzision Treppen & Naturstein Granit, Naturstein & Treppenstufen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "DIN-Norm",
+      "Untergrund & Abdichtung",
+      "Estrichausgleich & DIN 18534 Verbundabdichtung"
+     ],
+     "neu": [
+      "DIN-Norm Untergrund & Abdichtung Estrichausgleich & DIN 18534 Verbundabdichtung"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Frostsichere Keramik auf Stelzlagern",
+     "neu": "Balkon & Terrasse Frostsichere Keramik auf Stelzlagern",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Untergrund & DIN 18534",
+     "neu": "Untergrund & DIN 18534 Estrichspachtelung & Verbundabdichtung",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "06441 / 44 83 567",
+     "neu": "06441 / 44 83 567 Aufmaß anfragen",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wand & Boden, Gefälle, Nischen & Komplettbad",
+     "neu": "Badsanierung & Walk-In Dusche Sehr gefragt Wand & Boden, Gefälle, Nischen & Komplettbad",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "XXL-Großformat (ab 120 cm)",
+     "neu": "XXL-Großformat (ab 120 cm) Spezialgebiet Fugenarme Fliesen, Vakuumheber & Kalibrierung",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Fugenarme Fliesen, Vakuumheber & Kalibrierung",
+     "neu": "Reparatur & Schadensbeseitigung Schnellhilfe Fliesentausch, Silikonfugen & Ursachenprüfung",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wohnraum, Flur & Küche",
+     "neu": "Wohnraum, Flur & Küche Klassiker Feinsteinzeug, Holzoptik & durchgehende Fugen",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Balkon, Terrasse & Außen",
+     "neu": "Balkon, Terrasse & Außen Außenbereich Frostsichere 2-cm-Keramik, Stelzlager & Gefälle",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "DIN 18534 Abdichtung & Estrich",
+     "neu": "DIN 18534 Abdichtung & Estrich Zertifiziert Verbundabdichtung, Dichtbänder & Nivellierung",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Standard-Raum / Bad",
+     "neu": "Standard-Raum / Bad ca. 10 - 25 m²",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Großraum / Wohnbereich",
+     "neu": "Großraum / Wohnbereich ca. 25 - 50 m²",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Gesamtes Objekt / Etage",
+     "neu": "Gesamtes Objekt / Etage ab 50 m²",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Fläche: ca. 10 - 25 m²",
+     "neu": "Fläche:",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "C",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "R",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "H",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "U",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "P",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "C",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "S",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "K",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "C",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "T",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "E",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "K",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "J",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "O",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "J",
+     "neu": "5 / 5",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Estrichspachtelung & Verbundabdichtung",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Fachbetrieb Aßlar · Wetzlar",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Balkon & Terrasse",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Aßlar & Wetzlar regional vor Ort",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Eingetragener HWK Wiesbaden Fachbetrieb",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "XXL-Großformat Nivelliertechnik",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Staubschutz & Sauberkeits-Garantie",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Verbindliche Festpreis-Kalkulation",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "5,0 Google-Bewertungen (27 Rezensionen)",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Sehr gefragt",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Spezialgebiet",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Klassiker",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Feinsteinzeug, Holzoptik & durchgehende Fugen",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Außenbereich",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Frostsichere 2-cm-Keramik, Stelzlager & Gefälle",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Zertifiziert",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Verbundabdichtung, Dichtbänder & Nivellierung",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Reparatur & Schadensbeseitigung",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Schnellhilfe",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Fliesentausch, Silikonfugen & Ursachenprüfung",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "ca. 25 - 50 m²",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "ab 50 m²",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Gewerk: Badsanierung & Walk-In Dusche",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Vorherige Rezensionen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "im neuen Stand erst nach dem Laden vorhanden (Zustand „geladen“)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Nächste Rezensionen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "im neuen Stand erst nach dem Laden vorhanden (Zustand „geladen“)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "E",
+     "grund": "volatil",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "DIN 18534 Verbundabdichtung",
+     "abschnitt": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fachgewerke",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Bäder & Sanierung",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Badsanierung im Überblick Alle Leistungen rund ums neue Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Badsanierung komplett Von der Demontage bis zur fertigen Fuge",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesen & XXL-Großformate Fugenarme Großkeramik im Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Barrierefreies Bad Bodengleiche Walk-In-Duschen nach DIN 18040",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Bad aus einer Hand Gewerke koordiniert, ein Ansprechpartner",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Planung & Inspiration",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Badplaner Schritt für Schritt zum geplanten Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Bad-Projektcheck Badprojekt in 2 Minuten beschreiben",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Musterbäder Konzepte von Basic bis Luxus",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Badanfrage Unverbindliche Anfrage für Ihr Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle Leistungen zu Badsanierung ansehen",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fachgewerke Fliesenverlegung innen & außen, Untergrund & Abdichtung Konfigurator",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle Fachgewerke Leistungsübersicht unseres Fachbetriebs",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Bäder & Wellness Walk-In-Duschen, Gehrungen & Nischen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Wohnbereiche & Neubau Feinsteinzeug, Naturstein, Flure & Treppen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Balkon & Terrasse Frostsichere Keramik auf Stelzlagern",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Untergrund & DIN 18534 Estrichspachtelung & Verbundabdichtung",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fachthemen & Service",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesen & Verlegung Formate, Materialien, Verlegemuster und Verlegetechnik",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Untergrund & Abdichtung Das Fundament jedes dauerhaften Fliesenbelags",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Balkon & Terrasse Außenbeläge, die Frost und Regen standhalten",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Naturstein & Granit Natursteinböden und Wandbeläge fachgerecht verlegt",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Treppen Treppen neu belegen – innen, im Treppenhaus und außen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenreparatur Einzelne Fliesen, Fugen, Sockel",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Schadensanalyse Ursachen vor Ort klären",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle Leistungen zu Fachgewerke ansehen",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Standorte Aßlar, Wetzlar, Gießen, Marburg und ganz Hessen",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Einsatzgebiet Hessen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenleger Wetzlar Direkt neben unserem Firmensitz Aßlar",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenleger Gießen Stadt und Landkreis Gießen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenleger Marburg Landkreis Marburg-Biedenkopf",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle 13 Standorte Lahn-Dill-Kreis, Wetterau & Umland",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Beratung & Fliesenauswahl",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenberatung Wetzlar Materialauswahl nach Terminvereinbarung",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenberatung Gießen Beratung für den Raum Gießen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle Leistungen zu Standorte ansehen",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Ratgeber Wissen, Förderung, Referenzen & Service",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Wissen & Service",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Ratgeber & Blog Tipps rund um Bad und Fliesen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Häufige Fragen Antworten zu Ablauf, Kosten & Pflege",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Vor-Ort-Beratung Aufmaß und Materialberatung",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Förderung Zuschüsse für barrierefreie Bäder",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Referenzen & Bewertungen 5,0 Sterne aus 27 Google-Rezensionen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle Leistungen zu Ratgeber ansehen",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Über uns Fachbetrieb Deniz Tezgel in Aßlar",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Das Unternehmen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Über Deniz Tezgel Philosophie & Fachbetrieb",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Qualitätsversprechen Staubschutz, Termintreue & DIN-Normen",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Team Ihre Ansprechpartner",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Karriere & Jobs Verstärkung für unser Team",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kontakt Hohwardstraße 14, 35614 Aßlar",
+     "abschnitt": "(Anfang)",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle Leistungen zu Über uns ansehen",
+     "abschnitt": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Badsanierung",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Wird gesendet …",
+     "abschnitt": "h1: Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk:",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Wird gesendet …",
+     "abschnitt": "h2: Projekt anfragen & Situation schildern",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01 Planung & Aufmaß vor Ort",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:svg-title",
+     "neu": "Verifizierter Kunde",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "5 / 5",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Einsatzgebiet 45 km Mittelhessen",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Wetzlar 5 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gießen 25 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Marburg 40 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Limburg an der Lahn 35 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Bad Nauheim 40 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Friedberg (Hessen) 45 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Butzbach 35 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Herborn 20 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Dillenburg 25 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Haiger 30 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Braunfels 10 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Solms 8 km",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Aßlar Firmensitz",
+     "abschnitt": "h2: In ganz Mittelhessen schnell auf Ihrer Baustelle",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "1 von 3",
+     "abschnitt": "h2: Ihre Express-Anfrage in 3 Klicks",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+     "abschnitt": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "WhatsApp",
+     "abschnitt": "h2: Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "geladen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Vorherige Rezensionen",
+     "abschnitt": "(Anfang)",
+     "kontext": "geladen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "1 von 16",
+     "abschnitt": "(Anfang)",
+     "kontext": "geladen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Nächste Rezensionen",
+     "abschnitt": "(Anfang)",
+     "kontext": "geladen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Bäder & Sanierung",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Badsanierung im Überblick Alle Leistungen rund ums neue Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Badsanierung komplett Von der Demontage bis zur fertigen Fuge",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesen & XXL-Großformate Fugenarme Großkeramik im Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Barrierefreies Bad Bodengleiche Walk-In-Duschen nach DIN 18040",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Bad aus einer Hand Gewerke koordiniert, ein Ansprechpartner",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Planung & Inspiration",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Badplaner Schritt für Schritt zum geplanten Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Bad-Projektcheck Badprojekt in 2 Minuten beschreiben",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Musterbäder Konzepte von Basic bis Luxus",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Badanfrage Unverbindliche Anfrage für Ihr Bad",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Alle Leistungen zu Badsanierung ansehen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Unsere Fachgewerke",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Alle Fachgewerke Leistungsübersicht unseres Fachbetriebs",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Bäder & Wellness Walk-In-Duschen, Gehrungen & Nischen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Wohnbereiche & Neubau Feinsteinzeug, Naturstein, Flure & Treppen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Balkon & Terrasse Frostsichere Keramik auf Stelzlagern",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Untergrund & DIN 18534 Estrichspachtelung & Verbundabdichtung",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fachthemen & Service",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesen & Verlegung Formate, Materialien, Verlegemuster und Verlegetechnik",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Untergrund & Abdichtung Das Fundament jedes dauerhaften Fliesenbelags",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Balkon & Terrasse Außenbeläge, die Frost und Regen standhalten",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Naturstein & Granit Natursteinböden und Wandbeläge fachgerecht verlegt",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Treppen Treppen neu belegen – innen, im Treppenhaus und außen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesenreparatur Einzelne Fliesen, Fugen, Sockel",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Schadensanalyse Ursachen vor Ort klären",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Alle Leistungen zu Fachgewerke ansehen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Einsatzgebiet Hessen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesenleger Wetzlar Direkt neben unserem Firmensitz Aßlar",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesenleger Gießen Stadt und Landkreis Gießen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesenleger Marburg Landkreis Marburg-Biedenkopf",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Alle 13 Standorte Lahn-Dill-Kreis, Wetterau & Umland",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Beratung & Fliesenauswahl",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesenberatung Wetzlar Materialauswahl nach Terminvereinbarung",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Fliesenberatung Gießen Beratung für den Raum Gießen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Alle Leistungen zu Standorte ansehen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Wissen & Service",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Ratgeber & Blog Tipps rund um Bad und Fliesen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Häufige Fragen Antworten zu Ablauf, Kosten & Pflege",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Vor-Ort-Beratung Aufmaß und Materialberatung",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Förderung Zuschüsse für barrierefreie Bäder",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Referenzen & Bewertungen 5,0 Sterne aus 27 Google-Rezensionen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Alle Leistungen zu Ratgeber ansehen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Das Unternehmen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Über Deniz Tezgel Philosophie & Fachbetrieb",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Qualitätsversprechen Staubschutz, Termintreue & DIN-Normen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Team Ihre Ansprechpartner",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Karriere & Jobs Verstärkung für unser Team",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Kontakt Hohwardstraße 14, 35614 Aßlar",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Alle Leistungen zu Über uns ansehen",
+     "abschnitt": "(Anfang)",
+     "grund": "im Grundzustand des neuen Stands bereits vorhanden",
+     "kontext": "mobilmenue"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Wir nutzen Cookies auf unserer Website. Einige sind technisch notwendig für den Betrieb, während andere uns helfen, unser Online-Angebot zu verbessern und interaktive Karten bereitzustellen. Nicht-essentielle Cookies setzen wir nur mit Ihrer Einwilligung (§25 TTDSG, Art. 6 Abs. 1 lit. a DSGVO). Datenschutz",
+      "· Impressum"
+     ],
+     "neu": [
+      "Wir nutzen Cookies auf unserer Website. Einige sind technisch notwendig für den Betrieb, während andere uns helfen, unser Online-Angebot zu verbessern und interaktive Karten bereitzustellen. Nicht-essentielle Cookies setzen wir nur mit Ihrer Einwilligung (§25 TTDSG, Art. 6 Abs. 1 lit. a DSGVO). Datenschutz · Impressum"
+     ],
+     "kontext": "banner_erstbesuch"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "tezgel_consent_status 365 Tage",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Speichert Ihre Cookie-Einwilligung (Kategorien, Zeitstempel, Version)",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "tezgel_wa_button_pos Sitzung",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Speichert die gewählte Andockposition des schwebenden WhatsApp-Buttons für konsistente Seitennavigation",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "visitor_type 365 Tage",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Unterscheidet Erstbesucher von wiederkehrenden Besuchern für optimierte Ladezeiten",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "_ga 2 Jahre",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wird von Google Analytics verwendet, um Nutzer pseudonymisiert zu unterscheiden.",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "_ga_* 2 Jahre",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wird von Google Analytics verwendet, um den Sitzungsstatus zu erhalten.",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "_fbp 3 Monate",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wird von Meta/Facebook genutzt, um Werbemaßnahmen zu messen und relevante Anzeigen bereitzustellen.",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Anbieter: Meta Platforms Ireland Ltd.",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "NID / AEC / SOCS 6 Monate",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wird von Google Maps in interaktiven Umgebungskarten genutzt, um Nutzerpräferenzen zu speichern.",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Calendly_* App-Sitzung",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Wird für die Funktionsfähigkeit des Terminbuchungs-Widgets (Vor-Ort-Aufmaß & Beratung) verwendet.",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Anbieter: Calendly LLC",
+     "abschnitt": "(Anfang)",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "banner_einstellungen",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "tezgel_consent_status 365 Tage Speichert Ihre Cookie-Einwilligung (Kategorien, Zeitstempel, Version) Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "tezgel_wa_button_pos Sitzung Speichert die gewählte Andockposition des schwebenden WhatsApp-Buttons für konsistente Seitennavigation Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "visitor_type 365 Tage Unterscheidet Erstbesucher von wiederkehrenden Besuchern für optimierte Ladezeiten Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "_ga 2 Jahre Wird von Google Analytics verwendet, um Nutzer pseudonymisiert zu unterscheiden. Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "_ga_* 2 Jahre Wird von Google Analytics verwendet, um den Sitzungsstatus zu erhalten. Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "_fbp 3 Monate Wird von Meta/Facebook genutzt, um Werbemaßnahmen zu messen und relevante Anzeigen bereitzustellen. Anbieter: Meta Platforms Ireland Ltd.",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "NID / AEC / SOCS 6 Monate Wird von Google Maps in interaktiven Umgebungskarten genutzt, um Nutzerpräferenzen zu speichern. Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Calendly_* App-Sitzung Wird für die Funktionsfähigkeit des Terminbuchungs-Widgets (Vor-Ort-Aufmaß & Beratung) verwendet. Anbieter: Calendly LLC",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Alle ablehnen",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_einstellungen"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "tezgel_consent_status 365 Tage Speichert Ihre Cookie-Einwilligung (Kategorien, Zeitstempel, Version) Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "tezgel_wa_button_pos Sitzung Speichert die gewählte Andockposition des schwebenden WhatsApp-Buttons für konsistente Seitennavigation Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "visitor_type 365 Tage Unterscheidet Erstbesucher von wiederkehrenden Besuchern für optimierte Ladezeiten Anbieter: Fliesenverlegung Tezgel",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "_ga 2 Jahre Wird von Google Analytics verwendet, um Nutzer pseudonymisiert zu unterscheiden. Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "_ga_* 2 Jahre Wird von Google Analytics verwendet, um den Sitzungsstatus zu erhalten. Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "_fbp 3 Monate Wird von Meta/Facebook genutzt, um Werbemaßnahmen zu messen und relevante Anzeigen bereitzustellen. Anbieter: Meta Platforms Ireland Ltd.",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "NID / AEC / SOCS 6 Monate Wird von Google Maps in interaktiven Umgebungskarten genutzt, um Nutzerpräferenzen zu speichern. Anbieter: Google Ireland Limited",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Calendly_* App-Sitzung Wird für die Funktionsfähigkeit des Terminbuchungs-Widgets (Vor-Ort-Aufmaß & Beratung) verwendet. Anbieter: Calendly LLC",
+     "abschnitt": "(Anfang)",
+     "kontext": "banner_hash_cookie-settings"
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "meta:description",
+     "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+     "neu": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+     "freigabe": [
+      32,
+      33
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "meta:og:description",
+     "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+     "neu": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+     "freigabe": [
+      32,
+      33
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "meta:twitter:description",
+     "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+     "neu": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+     "freigabe": [
+      32,
+      33
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Badsanierung DIN 18534",
+     "neu": "Badsanierung Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen DIN 18534",
+     "freigabe": [
+      46
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Fachgewerke Konfigurator",
+     "neu": "Unsere Fachgewerke",
+     "freigabe": [
+      47
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Impressum · Datenschutz",
+     "neu": "Impressum Datenschutz",
+     "freigabe": [
+      48
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel ·",
+     "neu": "Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel",
+     "freigabe": [
+      49
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Oder via WhatsApp",
+     "neu": "Per WhatsApp schreiben",
+     "freigabe": [
+      25
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "alt",
+     "alt": "Freistehende Badewanne mit fugenlosem XXL-Fliesenbelag von Fliesenverlegung Tezgel",
+     "neu": "Freistehende Badewanne vor bodentiefen Fenstern, Boden aus großformatigen hellen Natursteinplatten (generierte Darstellung)",
+     "freigabe": [
+      27
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "1. Ihr Vorhaben wählen",
+     "neu": "Ihr Vorhaben wählen",
+     "freigabe": [
+      58
+     ],
+     "verschoben": true,
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "WhatsApp-Chat starten",
+     "freigabe": [
+      50
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:title",
+     "alt": "Fliesen-Katalog & Gewerke",
+     "freigabe": [
+      43
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Aufmaß buchen",
+     "freigabe": [
+      51
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Navigation schließen",
+     "freigabe": [
+      42
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite",
+     "freigabe": [
+      52
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "alt",
+     "alt": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar",
+     "freigabe": [
+      53
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Menü schließen",
+     "freigabe": [
+      41
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Vertrauenssignale und Fachbetriebs-Garantien",
+     "freigabe": [
+      54
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "alt",
+     "alt": "Bodengleiche Walk-In Dusche und Badgestaltung Tezgel",
+     "freigabe": [
+      28
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "alt",
+     "alt": "Wohnbereich und Fliesenverlegung mit Feinsteinzeug",
+     "freigabe": [
+      29
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "alt",
+     "alt": "Terrassenplatten auf Stelzlagern und Außenbereiche",
+     "freigabe": [
+      30
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "alt",
+     "alt": "Verbundabdichtung DIN 18534 und Estrichausgleich",
+     "freigabe": [
+      31
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Verifizierter Kunde",
+     "freigabe": [
+      45
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:svg-title",
+     "alt": "Google",
+     "freigabe": [
+      44
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Cookie-Einstellungen verwalten",
+     "freigabe": [
+      55
+     ],
+     "kontext": "geladen"
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:title",
+     "alt": "Cookie-Einstellungen öffnen",
+     "freigabe": [
+      56
+     ],
+     "kontext": "geladen"
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:title",
+     "alt": "Frei verschiebbar & werfbar",
+     "freigabe": [
+      57
+     ],
+     "kontext": "banner_erstbesuch"
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:title",
+     "alt": "Frei verschiebbar & werfbar",
+     "freigabe": [
+      57
+     ],
+     "kontext": "banner_hash_cookie-settings"
+    }
+   ]
+  },
+  "/blog/gibt-es-nicht": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "seite-neu",
+     "quelle": "blog/gibt-es-nicht.html",
+     "eintraege": 26
+    }
+   ],
+   "gruen": []
+  }
+ }
+}

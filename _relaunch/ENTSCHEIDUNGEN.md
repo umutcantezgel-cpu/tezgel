@@ -178,3 +178,157 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Bewertung:** (3) erhält die Funktion „Widerruf jederzeit“ (F-11) auf jeder Seite, ohne feste Ebene. Die Einwilligungslogik bleibt unberührt (G9); `#cookie-settings` öffnet die Einstellungen mit dem aktuellen Stand.
 - **Wahl: (3).** Der Test „Schild öffnet die Einstellungen“ wird im Testschreiber-Paket P3-14c auf den Fußlink umgestellt; Fälle und `expect` bleiben gleich viele. Prüfhinweis an den Auftraggeber: MENSCHEN M-18.
 - **Umkehrprobe:** Schild wieder einhängen (Hook liefert `handleShieldClick` unverändert).
+
+## E-021 · Servicegebiet auf `/` im Kern: Städteregister + Karte nach Einwilligung, ohne Radar und Kartenumschalter
+- **Bestand:** `InteractiveServiceMap` mit Radar-Ansicht (Animation), Umschalter Radar/OpenStreetMap/Google-JS-Karte und Stadtwahl auf der Karte. Alles hinter dem Zwei-Klick-Platzhalter.
+- **Ziel:** Besucheraufgabe 4 „Eigenen Ort prüfen“ (K-002) und F-12 bleiben erhalten. Die Gestaltungsmerkmale folgen KERN.
+- **Wege:**
+  1. Alles nachbauen. Das wäre eine Kopie der Bestands-Logik und der Google-Bibliothek, dazu eine Radar-Bewegung ohne Registereintrag.
+  2. Städteregister mit Links zu den Standortseiten plus OSM-Karte des Bestands nach Einwilligung, ohne Radar und Umschalter.
+  3. Karte ganz streichen. Das verlöre F-12 auf `/`.
+- **Bewertung:** (2) löst die Aufgabe ohne Karte: jede Stadt als Link mit Entfernung ab Aßlar, die Karte nur nach Einwilligung. Das Radar hat keine Aufgabe und keinen Registereintrag (S-09-nah). Der Umschalter verdoppelt die Fremdanfragen.
+- **Wahl: (2)** (P3-12). Die Entfernungen werden ab dem Firmensitz Aßlar angezeigt (`CITY_HUB_DATA`). Im Bestand standen sie ab Wetzlar, aber als Abstand zum Firmensitz bezeichnet; das ist eine Wahrheitskorrektur. Die Stadtwahl auf der Karte prüft W3 (`/standorte`) erneut.
+- **Umkehrprobe:** Revert. Der Bestand bleibt bis zur Freischaltung unverändert.
+
+## E-022 · Variantenwahl Kopf (P3-06) und Einstieg (P3-09) – Jury 3 × Opus, Bildmaterial (Belege `belege/p3-varianten/`)
+| Juror (Schwerpunkt) | Kopf A | Kopf B | Einstieg A | Einstieg B | Wahl |
+|---|---|---|---|---|---|
+| 1 Gestaltung | 36 | 42 | 45 | 42 | Kopf B · Einstieg B (unter Auflagen) |
+| 2 Nutzerführung, Barrierefreiheit | 41 | 47 | 45 | 42 | Kopf B · Einstieg A |
+| 3 Marke, Handwerk | 40 | 36 | 36 | 48 | Kopf A (unter Auflagen) · Einstieg B |
+
+- **Denkprotokoll:**
+  - **Kopf:** B gewinnt 2 : 1. Es fluchtet an der Inhaltskante, ist mobil sauber (A läuft auf 396 px über) und ruhiger. Die Stärke von A, Felder mit 1-px-Fugen, wird als Auflage in B übernommen.
+  - **Einstieg:** B gewinnt 2 : 1. Nur B besteht die Austauschprobe K-001, mit dem gezeichneten Verlegeplan und dem Kreuzpunkt auf dem Plan. Die Mängel von B liegen in der Anordnung und sind behebbar; bei A fehlt die eigene Bildwelt grundsätzlich.
+  - A bleibt die Rückfallwahl, falls die Auflagen nicht erfüllt werden.
+- **Wahl: Kopf B + Einstieg B**, mit diesen Auflagen vor der Freischaltung:
+  - **Kopf B:**
+    1. Zonen (Marke | Navigation | Telefon + Knopf) mit 1-px-Fugen, Kanten auf der Inhaltsflucht (`--k-seite`/`--k-rand`), keine leeren Felder.
+    2. Hauptpunkte mindestens `text-k-2`, Knopf „Aufmaß anfragen“ mindestens 44 px hoch.
+    3. Geöffnetes Mega-Blatt fotografisch belegen, ebenso den Tastaturweg.
+  - **Einstieg B:**
+    1. Das Formular steht in einem eigenen Feld an einer Fuge des Plans, ohne die Zeichnung zu überdecken. Seine Oberkante liegt bei 1440 × 900 im ersten Bildschirm, einschließlich des Kopfs.
+    2. Mobil gilt die Reihenfolge Kennzeile → H1 → Unterzeile → Absatz → „Aufmaß vor Ort anfragen“ → Plan vollständig (nicht angeschnitten) → Formular. Das Lot läuft über die volle Höhe.
+    3. Die Unterzeile wird nicht gestaucht.
+    4. „DIN 18534“ in Mono ohne breite Wortlücken.
+    5. Der Einstieg trägt `data-hauptaktion`, damit der WhatsApp-Kanal ihn nie überdeckt (K-011, E-013).
+- **Umkehrprobe:** Variante A liegt im Repo (`kopf-a`, `einstieg-a`), ein Import tauscht sie zurück. Nicht gewählte Varianten werden in W10 mit knip entfernt.
+
+## E-013 · Nachtrag (11.10.2026, Vorschau 77ef851-v): „verdeckt nie die Hauptaktion“ – Auslegung
+- **Befund:** Beim Erstbesuch am Desktop (1440 × 900) liegt der Banner links unten (≤ 28rem) über den Knöpfen des Einstiegs, „Aufmaß vor Ort anfragen“ und WhatsApp. Frei bleiben der Knopf „Aufmaß anfragen“ im Kopf, das Hero-Formular ab seiner Überschrift und die H1 (LCP). Mobil liegt der Banner über dem Absatz, und die untere Leiste mit „Aufmaß“ bleibt frei.
+- **Wege:**
+  1. Banner rechts: verdeckt das Formular.
+  2. Banner oben: verdeckt die H1, also das LCP-Element.
+  3. Banner im Fluss: verschiebt die Seite nach dem Laden (CLS).
+  4. Links unten wie gebaut.
+- **Wahl: (4).** Ausgelegt heißt die Regel: In jeder Ansicht bleibt mindestens ein vollständiger Anfrageweg frei sichtbar und bedienbar (Kopf-Knopf + Formular am Desktop, untere Leiste mobil). Der Banner deckt höchstens Zweitwege ab. Er ist nicht blockierend (`aria-modal="false"`) und mit einer gleichwertigen Wahl sofort weg.
+- **Prüfung:** Probeläufer-Aufgabe 3 (Anfrage) am Kandidaten mit Einwilligung „erstbesuch“ – Schrittzahl ≤ Bezugswert, kein Befund „verdeckt durch …“ auf dem Weg.
+
+## E-023 · Kandidat-Tor `/` (P3-16): Probeläufe per Gegenprobe, Tastatur-Abweichung, Korrekturen aus den Messungen
+- **Befund:** Der freie Probelauf am Kandidaten (P3-16b, Haiku) lag in 7 von 15 Läufen über dem Bezugswert. Probeläufer wählen frei, Wege und Banner-Entscheidungen streuen.
+- **Weg zur Trennung:** Die Eingaben des Ausgangsstands werden unverändert am Kandidaten nachgespielt (Satz `gegenprobe-*`, PROBELAUF §3), je mindestens zweimal und, wo nötig, auch an der Basis. Nur Unterschiede, die sich auf demselben Weg wiederholen, gelten als Wirkung des Kandidaten.
+- **Ergebnis:**
+  - Echt und behoben waren drei Unterschiede:
+    1. Im Mobilmenü lagen Links aufgeklappter Gruppen unter dem Blattrand. Der Bereich rückt jetzt an den Rand.
+    2. Im Hero-Formular lag das Namensfeld am Desktop unter dem ersten Bildschirm (y 998 bei 900). Die Kontaktfelder stehen jetzt vor der Projektauswahl, die Legende ohne „1.“ steht in MIKROTEXTE.
+    3. Aufgabe 5 mobil: Mit den Kern-Menünamen ist der Weg gleich lang.
+  - Messrauschen war a3-m375-touch: Die Basis selbst schwankt auf demselben Weg zwischen 12 und 15 Schritten.
+  - Endstand bcd8fcb-k: a2/a4 Touch 4/8, a3 Maus 5, a5 Touch 10, a3 Touch 12. Alle sind gleich der Basis.
+- **Abweichung mit Begründung:** a1-d1440-tastatur 26 statt 23, a5-d1440-tastatur 117 statt 114.
+  - Ursache: Von der Kern-Seite `/` auf eine Bestandsseite wird das Dokument voll geladen (andere Wurzel-Layouts), der Fokus beginnt dort korrekt am Dokumentanfang, also +3 Tabs bis zum Untermenü.
+  - Der Bezugswert entsteht im Bestand durch den clientseitigen Wechsel (Next-Standard: Fokus bleibt am aktivierten Link); die Basis-Matrix führt dieses Verhalten als Befund „hoch“ (a5, 87 Tabs). Berichtigt nach P3-16-GEG M-3: Ursache des +3 ist der volle Neuladevorgang nach E-015, nicht ein Fehler des Kerns.
+  - Folge: kein Rückbau. Die Zahl wird in der Welle der Zielseite (W1 `/bad`) mit der Fokusführung des Kerns neu gemessen. Bis dahin steht sie als offene Abweichung in ABNAHME Z-04.
+- **Weitere Korrekturen in diesem Tor:**
+  - **Jury, alle drei:** Der WhatsApp-Kanal weicht jetzt allen Bedienelementen aus (FREIHALTEN um Links, Knöpfe, Beschriftungen, `summary`). Das Großformat-Bild füllt seine Zelle.
+  - **INP „Menü öffnen“ mobil:** vorher 248 ms gegen 104 ms Basis.
+    - Ursache war Stilarbeit, kein JavaScript: die `:has(:is([open],:popover-open,:open))`-Regeln der verworfenen Variante A.
+    - Die Varianten A (Kopf, Einstieg) sind deshalb schon jetzt entfernt statt erst in W10 (Umkehrprobe E-022: Rückweg über git).
+    - Dazu `content-visibility: hidden` für zugeklappte Bereiche und `memo` für das Mobilblatt.
+    - Endstand: 48 ms (Basis 96).
+  - **Barrierefreiheit (P3-16a):** Alle harten Kennzahlen bis auf „dünn“ stehen auf 0. „dünn“ = 1: Ring des Stimmen-Bereichs bei offenem Banner mobil, 0,98 · U statt 1,5 · U, also rund die Hälfte der Ringpixel unter dem Banner (berichtigt nach P3-16-GEG M-1; Regel E-018 Nachtrag; Bestand 44).
+- **Prüfung:** Frischer Gegenprüfer P3-16-GEG über das Tor (ERGEBNIS `belege/t2-bcd8fcb/ERGEBNIS.md`).
+
+### E-018 · Nachtrag (11.10.2026, P3-16-GEG M-1): Fokusring teilweise unter dem nicht-modalen Einwilligungsbanner
+- **Befund:** Kandidat `/`, m375, Erstbesuch, Element nr 81 (Bereich des Stimmen-Karussells, 420 px hoch, Fokusring 2 px).
+  - Gemessen sind 1492 Kontrastpixel bei einem Umfang U = 1526, also 0,98 · U; „ok“ verlangt 1,5 · U (2-px-Ring ≈ 2 · U).
+  - Damit fehlt rund die Hälfte der erwarteten Ringpixel. Die frühere Angabe „2 %“ in ERGEBNIS/E-023 war falsch.
+  - Grund laut Werkzeug: `ring-unter-fester-ebene`. Der Banner belegt mobil 375 px; das Element ist höher als die freie Fläche zwischen Kopf und Banner, Ober- und Unterkante liegen unter fester Ebene.
+  - Ohne Banner (`abgelehnt`) misst dasselbe Element „ok“, die Mitte ist frei (`fokus_verdeckt_fest` 0, WCAG 2.4.11 erfüllt).
+- **Regel:** Ein Ring, der nur deshalb teilweise verdeckt ist, weil der nicht-modale Banner offen steht und das Element höher ist als die freie Fläche, zählt wie „Ring teilverdeckt (fest)“ als Information. Hart bleibt „dünn“, wenn derselbe Ring ohne Banner dünn ist.
+- **Umkehrprobe:** Wird der Banner modal oder deckt er die Mitte eines Fokusziels, greift wieder die harte Kennzahl „verdeckt“. Bestand: 44 „dünn“, 130 „verdeckt fest“.
+
+## E-024 · TBT mobil `/` über Budget bei besserer Leistung insgesamt (P3-16-GEG M-4)
+- **Befund:**
+  - Kandidat bcd8fcb-k, Median aus 5 verschränkten Läufen: Lighthouse mobil 84 gegen 84, LCP −7,8 %, TBT 224 gegen 140 ms (Budget 200), CLS 0.
+  - Versuch mit Suspense-Grenzen (b341543-k, 10 Läufe: 87 gegen 85, TBT 226 gegen 148) **verworfen**: Der Prerender von Next legt den Inhalt der Grenzen in verborgene `<div hidden id="S:n">` und zeigt ihn erst per Skript (`$RC`). Ohne JavaScript war alles unter dem Einstieg unsichtbar (a11y-zusatz „ohne JS“: Text < 80 %). Die Grenzen sind wieder entfernt.
+  - Lange Aufgaben: die Hydrierung (~160 ms bei 4×) und eine anfängliche Stil- und Layoutaufgabe (~130 ms).
+  - INP: alle sechs Interaktionen deutlich unter Basis und Budget (max 64 ms).
+- **Wege:**
+  1. Freischaltung zurückhalten, bis TBT ≤ 200 ms.
+  2. Freischalten mit Arbeitsauftrag; K-013 definiert „schlechter als der Bestand“ über Punkte (> 3) und LCP (> 10 %), beide besser.
+  3. Bewegung oder Formulare unter dem ersten Bildschirm erst bei Sicht hydrieren (größerer Umbau, eigenes Paket).
+- **Wahl: (2) mit Auftrag (3) in P4.**
+  - Grund: Für Besucher ist der Kandidat schneller (LCP, INP) und nicht schlechter in den Punkten. TBT ist ein Laborwert ohne Interaktion; der Wert sank durch das Entfernen der Variante-A-Regeln von 332 auf 224 ms.
+  - Das Budget bleibt Ziel für das P4-Tor (ABNAHME „Offene Abweichungen“).
+- **Umkehrprobe:** Steigt TBT in einer späteren Welle weiter oder fällt der Punktwert unter den Bestand, greift (1).
+
+## E-025 · Wege alter Adressen (P4-07, V-04, Z-06)
+- **Ziel:** Alte Adressen enden nicht mehr im gewöhnlichen 404. Umbenannte Tezgel-Seiten leiten dauerhaft weiter, Adressen der Vorgängerfirma melden „dauerhaft entfernt“, damit Suchmaschinen sie schneller vergessen.
+- **308 (`redirects()` in `next.config.ts`):**
+  - `/bad/budgetkalkulator` → `/bad/projekt-check` (Umbenennung, Stand 757d8a9~1).
+  - `/blog/barrierefreies-bad-planung-zuschuesse` → `/bad/barrierefreies-bad` (einziger Altbeitrag mit Fliesen-/Badthema; die Fachseite deckt das Thema ab).
+- **410 (`src/proxy.ts`):**
+  - Ganze Bereiche: `/energie`, `/energieberatung`, `/gewerbe`, `/haustechnik`, `/heizung`, `/lueftung`, `/notdienst`, jeweils samt Unterseiten.
+  - Einzeladressen: 12 Altbeiträge im Blog und `/referenzen/project-001` bis `-006`.
+  - Beleg: Seitendateien sowie `src/config/posts.js` und `projects.js` im Stand 757d8a9~1. Alle übrigen dynamischen Adressen (Städte, Leistungen, Musterbäder) sind gleich geblieben.
+- **Warum ein Proxy:** `redirects()` kennt nur 307/308. Eigene Routen-Handler für 410 kollidieren mit `blog/[slug]` und `referenzen/[id]`.
+  - Der `matcher` nennt nur diese Adressen. Die Funktion prüft zusätzlich exakt, weil ein Muster auch längere Pfade treffen kann.
+  - Seiten, `_next`, Bilder und `/api` laufen nie durch den Proxy. Beleg: `wege.mjs` gegen die kompilierten matcher des Builds.
+- **Antwortseite:**
+  - Kleines eigenes Dokument ohne Skripte, mit Systemfarben und Systemschriften. Der Proxy kennt die gebauten CSS-Dateien nicht, und Markenwerte im Code wären freie Werte.
+  - `noindex`, Wortlaut nach der 404: „Fliesenverlegung Tezgel · Fehler 410 · Seite dauerhaft entfernt · Die von Ihnen aufgerufene Seite gibt es nicht mehr. Kehren Sie zur Startseite zurück oder informieren Sie sich über unsere Fachleistungen.“ Dazu die Links „Zur Startseite“ und „Zur Leistungsübersicht“ (Mikrotexte, neue Seite).
+- **Umkehrprobe:**
+  - Liefert Search Console (MENSCHEN) Adressen der früheren tezgel.de, kommen sie als 308 auf die passende Seite dazu.
+  - Wird eine Altadresse wieder zu einer echten Seite, schlägt `test/wege.test.mjs` an (Seite trifft Liste).
+
+## E-026 · Icon-Vollsatz im Kern-Layout (P4-04, offene Frage 1)
+- **Frage:** Rendert das Kern-Layout den ganzen Satz (34 Familienzeichen + WhatsApp) oder nur den Grundsatz? Mit dem Grundsatz bliebe `/` byte-gleich; Seiten mit Fachzeichen bräuchten dann ein eigenes Zusatz-Sprite.
+- **Wahl: ganzer Satz.**
+  - +3,1 KB roh, +373 B gzip je Kern-Seite; das Sprite hat dann 1,9 KB gzip. Unsichtbar (`aria-hidden`), ohne Text und ohne Fokus.
+  - Grund: Ein vergessenes Zusatz-Sprite ergäbe leere Icons ohne Fehlermeldung. Zwei Sprites mit demselben Namen ergäben doppelte IDs. Beides fällt bei je einem Sprite pro Seite weg.
+  - Die Zusatzlast ist gegen LCP und TBT bedeutungslos: Inline-SVG wird geparst, aber erst bei `use` gezeichnet.
+- **Folge für `/` (live):**
+  - P4-04 ändert das HTML von `/` und der Kern-404 nur im Sprite-Block.
+  - Nachweis per build-vergleich mit herausgenommenem Sprite-Block (Rest gleich) und Pixelvergleich `/` in 4 Ansichten. Das ist sofort wirksam, also T2 im kleinen Umfang.
+- **Offene Fragen 2–4 der Rückgabe:**
+  - (2) Zeichen, die auf einer Fachseite etwas anderes bedeuten (z. B. `Thermometer` als Messung, `ShieldCheck` als Siegel), entscheidet die Welle der Seite; Vorgabe „kein Icon“.
+  - (3) Teilen-Knöpfe mit Facebook, LinkedIn und X entscheidet W6 (Blog). Vorgabe: `teilen` (Web Share) und „Link kopieren“, keine Fremdlogos.
+  - (4) Fugenkreuz bleibt eigenes Inline-SVG (P3-03).
+- **Umkehrprobe:** Wächst der Satz über 60 Zeichen oder das Sprite über 4 KB gzip, gilt die Seitenauswahl (`namen`) mit einer Prüfung „jedes `use` hat ein Ziel“ (`svg.mjs`).
+
+## E-027 · Abnahme P4-01 bis P4-05c: Antworten auf die offenen Fragen, Vorschau-Befunde, Kalender
+- **Vorschau a361e9c-v** (Fotos in 3 Ansichten, `wortbruch.mjs`):
+  - Pläne (P4-03), Icon-Tafel (P4-04) und die Übersichtslisten (P4-02) tragen die Leitidee.
+  - 89 Wortbrüche ohne Trennstrich in Überschriften, Werten und Kacheln.
+  - Formular-Raster hängen an der Fensterbreite statt an der Behälterbreite.
+  - Das Bild des empfohlenen Leitfadens füllt seine Spalte nicht.
+  - Doppelte Teile in `fachseite/` und `uebersicht/`.
+  - → P4-10a (Vorlagen) und P4-10b (Formulare).
+- **Live `/`:** 8 Wortbrüche, alle im Garantie-Sockel des Fußes („Festpreisgarantie“ in Mono passte in vier Spalten in keiner Breite). Korrigiert: unter `sm` einspaltig, darüber 2 × 2 (3fa28fd, sofort wirksam → T2 mit P4-09).
+- **Offene Fragen:**
+  - P4-01 F1 (Schriftfeld auf Fachseiten): ja, aus vorhandenem Kern-Wortlaut (Kennzeile, Bewertung, „Kammer“). MIKROTEXTE-Zeilen der Klasse 3 kommen mit der Welle, die es nutzt.
+  - P4-01 F2 (Tabellen-Etiketten ohne doppeltes DOM): ja, Regel `.k-zelle[data-spalte]::before` in `kern.css`.
+  - P4-01 F3 (ein Ablauf für `/` und Fachseiten): jetzt nicht, `/` bleibt; Prüfung in P6.
+  - P4-01 F4 (Anruf-Hinweis je FAQ-Antwort): erst bei Bedarf, dann nach `kern/basis`.
+  - P4-01 F6 (Halbverband als Feldvariante): nein, erst nach der Jury W1.
+  - P4-02 (Seitenart `/bad/musterbaeder`, `/referenzen`): es gilt `GRUNDMENGE.json`.
+  - P4-02 (Hooks für F-16: Filter, Inhaltsverzeichnis, Teilen, Abstimmung): kommen mit W6 als eigenes Paket mit T2.
+  - P4-03 F1–F3: W5 entscheidet mit dem Seiteninhalt; bis dahin der Plan der Leistung.
+  - P4-03 F4: SIG_PLAN_AUSLOESER setzen die Vorlagen (P4-10a); die zentrale Regel `[data-motion="sig-plan"]` steht in `kern.css`.
+  - P4-05a/b/c (Kern-Zweig der Tests): P4-06 baut ihn, sobald die Bad-, Fliesen- und Termin-Seiten in `KERN_SEITEN` kommen; Werkzeugregel: Fassung je Seite aus `KERN_SEITEN` (Lehre 10).
+- **Kalender (P4-05c, I-19):**
+  - BookingCalendar berechnet die Tage beim Rendern aus `new Date()`. Ab dem Tag nach dem Build wirft React auf `/termin` und `/kontakt` den Hydrationsfehler #418 (gemessen mit Uhr +1/+3 Tage am Live-Produkt 74e768c).
+  - Das ist ein technischer Fehler, keine Geschäftslogik. Er widerspricht Z-11 („keine Hydrationsfehler“).
+  - **Wahl:** beheben als eigenes Paket P4-05d. Die Tage werden erst im Browser berechnet (nach dem Einhängen); bis dahin zeigt der Kalender seinen Rahmen ohne Tage. Auswahl, Slots und Nutzlast bleiben gleich. T2 mit Uhrprobe.
+  - **Umkehrprobe:** Ändert P4-05d etwas an Nutzlast oder Slotlogik, gilt G9 und das Paket wird verworfen.
+- **Wunschtermin geht verloren (I-12):** Geschäftslogik (API-Prüfung, Mailvorlagen) → MENSCHEN M-19 mit Vorschlag; keine eigene Korrektur.

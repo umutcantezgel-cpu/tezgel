@@ -1,0 +1,268 @@
+{
+ "protokoll": "PROBELAUF §8",
+ "bewerter": "Opus, frisch, blind (Kennungen gemischt)",
+ "zusammenfassung": {
+  "ausgangsstand · d1440": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 5
+  },
+  "kandidat 5421e5b · d1440": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 5
+  },
+  "kandidat 5421e5b · m375": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 5
+  },
+  "ausgangsstand · m375": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 0
+  }
+ },
+ "bewertungen": [
+  {
+   "id": "B00",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Haus- und Wohnungseigentümer mit Bad-, Balkon- oder Terrassenvorhaben in Aßlar/Wetzlar und die Aufmaß-Anfrage per Formular, WhatsApp oder Telefon.",
+   "bild": "k3",
+   "durchgang": 2,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B01",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute in der Region Aßlar mit Bad- oder Fliesenvorhaben und das Formular für das kostenlose Aufmaß vor Ort.",
+   "bild": "r4",
+   "durchgang": 4,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B02",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt den Fliesenleger-Fachbetrieb für Fliesenverlegung und Badsanierung, Hausbesitzer und Mieter (Bewohner) in Aßlar und Umgebung sowie die Aufmaß-Anfrage.",
+   "bild": "r4",
+   "durchgang": 2,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B03",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute in der Region Aßlar mit Bad- oder Fliesenvorhaben und das Formular für das kostenlose Aufmaß vor Ort.",
+   "bild": "r4",
+   "durchgang": 3,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B04",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute und Eigentümer aus der Region Aßlar sowie den Aufmaß-Button, Anruf oder WhatsApp.",
+   "bild": "h9",
+   "durchgang": 2,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B05",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung, Privatleute im bewohnten Haus und die Aufmaß-Anfrage, Anruf oder WhatsApp; Aßlar, Wetzlar oder Mittelhessen werden nicht genannt.",
+   "bild": "q7",
+   "durchgang": 3,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B06",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, vorsichtig formuliert Privatleute und Bauherren um Aßlar mit Bad- oder Fliesenvorhaben sowie Aufmaß, Anruf oder WhatsApp.",
+   "bild": "h9",
+   "durchgang": 5,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B07",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatkunden sowie Haus- und Wohnungseigentümer in Aßlar und die Aufmaß-Anfrage, Anruf oder WhatsApp.",
+   "bild": "h9",
+   "durchgang": 1,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B08",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute um Aßlar mit Bad- oder Fliesenvorhaben und das Formular für das kostenlose Aufmaß vor Ort.",
+   "bild": "r4",
+   "durchgang": 1,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B09",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute in Aßlar/Wetzlar mit Bad-, Wohnraum- oder Terrassenvorhaben sowie die Aufmaß-Anfrage, WhatsApp oder Telefon.",
+   "bild": "k3",
+   "durchgang": 4,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B10",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute im Raum Aßlar/Wetzlar mit Bad-, Fliesen- oder Terrassenvorhaben sowie das Aufmaß-Formular, WhatsApp oder Telefon.",
+   "bild": "k3",
+   "durchgang": 1,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B11",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Haus- und Wohnungseigentümer in Aßlar/Wetzlar sowie das kostenlose Aufmaß vor Ort, WhatsApp oder Telefon.",
+   "bild": "k3",
+   "durchgang": 3,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B12",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, vorsichtig Privatleute und Hausbesitzer um Aßlar sowie Anruf, WhatsApp oder die Aufmaß-Anfrage.",
+   "bild": "h9",
+   "durchgang": 3,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B13",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Hausbesitzer und Bauherren in Aßlar und eine Anfrage über Aufmaß, WhatsApp oder Anrufen.",
+   "bild": "h9",
+   "durchgang": 4,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B14",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung, vorsichtig Privatleute mit bewohntem Zuhause und die Aufmaß-Anfrage, WhatsApp oder Anruf; nur die Vorwahl steht da, kein Ort und keine Region.",
+   "bild": "q7",
+   "durchgang": 1,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B15",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung, Privatleute mit bewohntem Zuhause und die Aufmaß-Anfrage, Anruf oder WhatsApp; das Einzugsgebiet wird ausdrücklich als nicht erkennbar bezeichnet.",
+   "bild": "q7",
+   "durchgang": 5,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B16",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung, Hausbesitzer und Bewohner mit Fliesenvorhaben und die Aufmaß-Anfrage, Anruf oder WhatsApp; keine Region genannt.",
+   "bild": "q7",
+   "durchgang": 4,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "B17",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Hausbesitzer und Eigentümer im Raum Aßlar/Wetzlar mit Bad-, Balkon- oder Terrassenvorhaben sowie das kostenlose Aufmaß.",
+   "bild": "k3",
+   "durchgang": 5,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B18",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt den Fachbetrieb für Fliesenverlegung und Badsanierung, Hausbesitzer in Aßlar mit Bad- oder Fliesenvorhaben und das Aufmaß-Formular.",
+   "bild": "r4",
+   "durchgang": 5,
+   "satz": "kandidat 5421e5b",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "B19",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung, Privatleute und Eigentümer im bewohnten Zuhause und die Aufmaß-Anfrage, Anruf oder WhatsApp; nur die Telefonnummer, keine Region genannt.",
+   "bild": "q7",
+   "durchgang": 2,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  }
+ ]
+}

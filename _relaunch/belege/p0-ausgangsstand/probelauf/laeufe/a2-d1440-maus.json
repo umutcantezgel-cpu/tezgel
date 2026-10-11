@@ -1,0 +1,184 @@
+{
+ "satz": "ausgangsstand",
+ "base": "http://127.0.0.1:4310",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "maus",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T00:15:07.749Z",
+ "lauf": "a2-d1440-maus",
+ "aufgabe": 2,
+ "titel": "Vertrauen prüfen",
+ "auftrag": "Prüfen Sie, wie lange es den Betrieb gibt und wie Kunden ihn bewerten.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/ausgangsstand/a2-d1440-maus.json",
+ "antwort": "Betrieb seit 2008 (Betriebsgründung in Aßlar); Bewertung 5,0 mit 27 Bewertungen (Google-Bewertungen).",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "gering",
+   "schritt": 0,
+   "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Zeile „Handwerkskammer-eingetragener Fachbetrieb … 5,0 (27 Bewertungen)“; erst nach „Alle ablehnen“ lesbar. Bild 00-start.jpg."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 2,
+   "text": "Die Chat-Blase verdeckt auf /ueber-uns die Karte „HWK“ (Eingetragener Fachbetrieb) teilweise. Bild 02-tippe.jpg."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 3662,
+    "aria": 5945,
+    "ausschnitt": 40,
+    "bedien": 56
+   },
+   "dauer_ms": 22416
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle ablehnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Alle ablehnen\" · dialog „Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 17602,
+    "aria": 7371,
+    "ausschnitt": 1002,
+    "bedien": 2445
+   },
+   "dauer_ms": 46536
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Über uns",
+    "in": "Hauptnavigation"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Über uns\" · nav „Hauptnavigation“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/ueber-uns",
+   "h1": "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 17823,
+    "aria": 7709,
+    "ausschnitt": 882,
+    "bedien": 1600
+   },
+   "dauer_ms": 74494
+  }
+ ],
+ "handlungen_gesamt": 2,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 2,
+  "handlungen_bis_ziel": 2,
+  "bedingungen": [
+   {
+    "name": "Angabe, seit wann es den Betrieb gibt, war im Bild (Gründungsjahr 2008 oder „über N Jahre“)",
+    "erfuellt": true,
+    "bei_schritt": 2,
+    "treffer": "„…3 567 Aufmaß buchen Gegründet 2008 · HWK Wiesbaden Über uns – Fliesenleger…“"
+   },
+   {
+    "name": "Kundenbewertung (Note mit Bewertungen/Rezensionen) war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 0,
+    "treffer": "„…verbindlich Oder via WhatsApp 5,0 Google-Bewertungen (27 Rezensionen) Aßl…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
   // Dev-Schaufenster der Bausteine (src/app/(bestand)/werkstatt-schaufenster/**/page.dev.tsx) existiert nur in der
   // Entwicklung; im Build gibt es die Route nicht (KERN K-004).
   pageExtensions: process.env.NODE_ENV === 'development' ? ['dev.tsx', 'tsx', 'ts', 'jsx', 'js'] : ['tsx', 'ts', 'jsx', 'js'],
-  // Umbenannte Adressen dauerhaft weiterleiten (308, V-04); belegt im Vorlauf (_relaunch/PLAN.md, „Wege“)
+  // Umbenannte Adressen dauerhaft weiterleiten (308, V-04 / P4-07); belegt im Vorlauf (_relaunch/PLAN.md, „Wege“).
+  // 410 für fremde Altadressen: src/proxy.ts.
   async redirects() {
     return [
       { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },

@@ -1,0 +1,19 @@
+{
+ "aufgabe": 5, "start": "/", "ansicht": "d1440", "eingabe": "tastatur",
+ "antwort": "Ablauf: „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“ (/bad/badsanierung). Förderung: ja – bis zu 4.180 € Pflegekasse (§ 40 SGB XI) und KfW 159 (/foerderung).",
+ "befunde": [
+  {"schwere": "hoch", "schritt": 5, "text": "Nach dem Seitenwechsel per Enter beginnt die Tab-Folge nicht am Seitenanfang, sondern an der Stelle des zuvor gewählten Links: bis zur Kopfnavigation „Untermenü Ratgeber öffnen“ sind 87 Tab-Drücke nötig (der Fokus wandert ans Seitenende und springt dann zum Anfang). Dasselbe Muster zeigt sich bei a1 und a4 (je 18 Tabs nach Seitenwechsel). Ursache vermutlich fehlende Fokus-Rücksetzung nach der Seitennavigation; Gegenprüfung nötig. Bild 05-taste.jpg."},
+  {"schwere": "gering", "schritt": 4, "text": "Der Einwilligungsbanner verdeckt auf /bad/badsanierung die H1 teilweise. Bild 04-taste.jpg."},
+  {"schwere": "gering", "schritt": 8, "text": "Im Hauptmenü ist „Förderung“ kein eigener Punkt; der Weg führt über „Ratgeber“ und dessen Untermenü („Förderung Zuschüsse für barrierefreie Bäder“, auf der Startseite „Förderung & Zuschüsse“)."}
+ ],
+ "schritte": [
+  {"taste": "Tab", "bis": "Badsanierung"},
+  {"taste": "Enter"},
+  {"taste": "Tab", "bis": "Badsanierung komplett Komplettbad schlüsselfertig zum Festpreis"},
+  {"taste": "Enter"},
+  {"taste": "Tab", "bis": "Untermenü Ratgeber öffnen"},
+  {"taste": "Enter"},
+  {"taste": "Tab", "bis": "Förderung Zuschüsse für barrierefreie Bäder"},
+  {"taste": "Enter"}
+ ]
+}

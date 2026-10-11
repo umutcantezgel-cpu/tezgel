@@ -1,0 +1,41 @@
+{
+ "satz": "t2-ad80754",
+ "basis": "/home/user/tezgel/_relaunch/belege/t2-ad80754/fotos/",
+ "material": {
+  "/": [
+   "m375/start/00.jpg",
+   "m375/start/01.jpg",
+   "m375/start/03.jpg",
+   "m375/start/04.jpg",
+   "m375/start/06.jpg",
+   "m375/start/07.jpg",
+   "m375/start/08.jpg",
+   "m375/start/10.jpg",
+   "m375/start/11.jpg",
+   "t768/start/00.jpg",
+   "t768/start/02.jpg",
+   "t768/start/04.jpg",
+   "t768/start/07.jpg",
+   "t768/start/09.jpg",
+   "t768/start/11.jpg",
+   "d1440/start/00.jpg",
+   "d1440/start/02.jpg",
+   "d1440/start/03.jpg",
+   "d1440/start/05.jpg",
+   "d1440/start/06.jpg",
+   "d1440/start/08.jpg",
+   "d1440/start/09.jpg",
+   "d1440/start/11.jpg",
+   "d1920/start/00.jpg",
+   "d1920/start/02.jpg",
+   "d1920/start/04.jpg",
+   "d1920/start/06.jpg",
+   "d1920/start/07.jpg",
+   "d1920/start/09.jpg",
+   "d1920/start/11.jpg"
+  ]
+ },
+ "texte": {
+  "/": "/home/user/tezgel/_relaunch/belege/t2-ad80754/texte/start.json"
+ }
+}

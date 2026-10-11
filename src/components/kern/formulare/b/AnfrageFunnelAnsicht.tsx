@@ -200,9 +200,10 @@ export default function AnfrageFunnelAnsicht({ funnel }: { funnel: AnfrageFunnel
 
       <div className="flex flex-col gap-k-6 p-k-5 lg:p-k-7">
         <div className="flex flex-col gap-k-2">
-          <h3 id={kopfId} ref={setzeZiel} tabIndex={-1} className={verbinde('k-anzeige text-k-5 text-k-tinte', fokus('hell'))}>
+          {/* Kein Überschriften-Element: im Bestand ist der Schritttitel Text, keine Überschrift (Text v2: keine neuen Überschriften). */}
+          <p id={kopfId} ref={setzeZiel} tabIndex={-1} className={verbinde('k-anzeige text-k-5 text-k-tinte', fokus('hell'))}>
             Schritt {step}: {aktuell.title}
-          </h3>
+          </p>
           <p className="k-text text-k-3 text-k-tinte-2">{aktuell.text}</p>
         </div>
 

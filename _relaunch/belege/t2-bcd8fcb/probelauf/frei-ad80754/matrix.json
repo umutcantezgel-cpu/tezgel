@@ -1,0 +1,270 @@
+{
+ "satz": "p3-16",
+ "base": "http://127.0.0.1:4326",
+ "bedingungen": {
+  "quelle": "lauf.json je Lauf (Messbedingungen dort)",
+  "modi": [
+   "m375 touch",
+   "d1440 maus",
+   "d1440 tastatur"
+  ],
+  "protokoll": "_relaunch/PROBELAUF.md"
+ },
+ "erstellt": "2026-10-11T02:19:13.441Z",
+ "laeufe": [
+  {
+   "lauf": "a1-d1440-maus",
+   "aufgabe": 1,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 2,
+   "handlungen_gesamt": 2,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T01:36:32.718Z"
+  },
+  {
+   "lauf": "a1-d1440-tastatur",
+   "aufgabe": 1,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 26,
+   "handlungen_gesamt": 26,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 3,
+     "text": "Auf der Kategorieseite /bad sind 21 Tab-Stopps bis zur Karte „Barrierefreies Bad“ nötig (Umweg ≥ 3 Handlungen); der Fokus läuft über Kopf, Hero und Karten (Bild 03-taste.jpg)."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "In der Hauptnavigation sind „Badsanierung“ (Link, öffnet die Kategorieseite) und „Untermenü Badsanierung öffnen“ (Button) zwei getrennte Tab-Stopps; Enter auf dem Link führt nicht ins Untermenü (Bild 01-taste.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T02:18:33.903Z"
+  },
+  {
+   "lauf": "a1-m375-touch",
+   "aufgabe": 1,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 3,
+   "handlungen_gesamt": 3,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 3,
+     "text": "Auf der Zielseite überdeckt das Einwilligungs-Sheet beim Erstbesuch die H1 und den Seitenanfang (Bild 03-tippe.jpg); der Seitentitel ist vor der Einwilligung nicht lesbar."
+    }
+   ],
+   "erstellt": "2026-10-11T01:35:42.977Z"
+  },
+  {
+   "lauf": "a2-d1440-maus",
+   "aufgabe": 2,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 1,
+   "handlungen_gesamt": 1,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T01:43:11.470Z"
+  },
+  {
+   "lauf": "a2-d1440-tastatur",
+   "aufgabe": 2,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 12,
+   "handlungen_gesamt": 12,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "„Über uns“ liegt erst nach 11 Tab-Stopps: Jede Kategorie der Hauptnavigation hat zwei Stopps (Link und „Untermenü … öffnen“-Button), die Untermenü-Buttons verlängern den Weg (Bild 01-taste.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T01:43:40.376Z"
+  },
+  {
+   "lauf": "a2-m375-touch",
+   "aufgabe": 2,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 5,
+   "handlungen_gesamt": 5,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "Die Jahreszahl 2008 steht beim Erreichen am unteren Bildrand und ist teils von der Schnellleiste (Anrufen/WhatsApp/Aufmaß) überlagert; beim nächsten Bildlauf ist sie verschwunden (Bild 04-scrolle.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T01:42:40.257Z"
+  },
+  {
+   "lauf": "a3-d1440-maus",
+   "aufgabe": 3,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 6,
+   "handlungen_gesamt": 6,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T01:48:57.929Z"
+  },
+  {
+   "lauf": "a3-d1440-tastatur",
+   "aufgabe": 3,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 29,
+   "handlungen_gesamt": 29,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "Bis zum ersten Formularfeld „Name“ sind 19 Tab-Stopps nötig (Hauptnavigation mit je zwei Stopps pro Kategorie, dann Hero-Bereich); der Fokus steht erst danach im Formular (Bild 01-taste.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T01:49:25.725Z"
+  },
+  {
+   "lauf": "a3-m375-touch",
+   "aufgabe": 3,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 14,
+   "handlungen_gesamt": 14,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "„Aufmaß vor Ort anfragen“ (Hero) führt auf /kontakt; das Anfrage-Formular liegt erst rund neun Bildschirme tiefer und das Einwilligungs-Sheet überdeckt den Weg (Bild 01-tippe.jpg). Der Weg zum Formular gelingt erst über „Aufmaß“ in der Daumenleiste (Bild 02-tippe.jpg)."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 7,
+     "text": "Nach „Weiter zu Schritt 2“ springt die Ansicht zum Abschnitt „Sie möchten Ihr Bad …“, Schritt 2 liegt darüber; der Besucher muss zurückscrollen (Bild 07-tippe.jpg). Außerdem überlagert die Kopfleiste beim Erreichen den oberen Teil des Weiter-Buttons (Bild 06-scrolle.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T01:48:09.421Z"
+  },
+  {
+   "lauf": "a4-d1440-maus",
+   "aufgabe": 4,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 1,
+   "handlungen_gesamt": 1,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T01:53:12.234Z"
+  },
+  {
+   "lauf": "a4-d1440-tastatur",
+   "aufgabe": 4,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 8,
+   "handlungen_gesamt": 8,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T01:53:50.561Z"
+  },
+  {
+   "lauf": "a4-m375-touch",
+   "aufgabe": 4,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 11,
+   "handlungen_gesamt": 11,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 9,
+     "text": "Butzbach steht erst in der Ortsliste „Wählen Sie Ihre Stadt oder Gemeinde“ (Wetteraukreis-Karte), rund sechs Bildschirme nach den Standorten; das Einwilligungsbanner deckt die Karte beim Vorbeiscrollen ab (Bild 09-scrolle.jpg)."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "Die Gebietskarte mit den Stadt-Schaltflächen (u. a. „Butzbach 35 km“) ist hinter „Karte laden & zustimmen“ gesperrt; ohne Einwilligung in externe Medien gibt es dort keinen Einstieg (Bild 04-scrolle.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T01:52:01.311Z"
+  },
+  {
+   "lauf": "a5-d1440-maus",
+   "aufgabe": 5,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 5,
+   "handlungen_gesamt": 5,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T02:07:02.122Z"
+  },
+  {
+   "lauf": "a5-d1440-tastatur",
+   "aufgabe": 5,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 117,
+   "handlungen_gesamt": 117,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "hoch",
+     "schritt": 5,
+     "text": "Vom Badsanierung-komplett-Abschnitt bis zum Untermenü „Ratgeber“ sind 87 Tab-Stopps nötig (Schritt 5), bevor „Förderung“ erreichbar ist; Ursache (Fokus-Startpunkt nach der Navigation oder Fokusstopps im Seiteninhalt) nicht geprüft, vorläufig hoch (Bild 05-taste.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T02:14:30.624Z"
+  },
+  {
+   "lauf": "a5-m375-touch",
+   "aufgabe": 5,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 13,
+   "handlungen_gesamt": 13,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 5,
+     "text": "Im geöffneten Menü liegt das Einwilligungs-Sheet über dem Menüpunkt „Ratgeber“ (Wissen, Förderung, Referenzen); das Antippen scheiterte am Banner, erst „Alle ablehnen“ gab den Punkt frei (Bild 05-fehler.jpg)."
+    },
+    {
+     "schwere": "mittel",
+     "schritt": 3,
+     "text": "Die Überblicksseite „Badsanierung im Überblick“ zeigt die Überschrift „Ihr Badprojekt in vier Schritten beschreiben“ (Projektanfrage), der Ablauf „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“ liegt erst auf „Badsanierung komplett“; zwei Schritt-Überschriften für Verschiedenes, Umweg von 2 Seiten (Textauszug 03-aria.txt, Bild 03-tippe.jpg)."
+    }
+   ],
+   "erstellt": "2026-10-11T02:00:42.136Z"
+  }
+ ]
+}

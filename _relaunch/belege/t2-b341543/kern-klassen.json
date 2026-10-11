@@ -1,0 +1,42 @@
+{
+  "satz": "t2-b341543",
+  "base": null,
+  "bedingungen": {
+    "modus": "statisch: Server-HTML (server/app) und verlinkte CSS (static); kein Browserlauf, kein Server, kein Netz",
+    "build": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-b341543-k/.next",
+    "seitenwahl": "--seiten /",
+    "klassen": "class-Attribute des Server-HTML; script, style und Kommentare ausgenommen",
+    "regeln": "Klassen-Selektoren aus verlinkten CSS (/_next/static/) und Inline-style; Kommentare und Strings übersprungen; @-Blöcke einbezogen; Escapes entmaskiert",
+    "zustandsmarker_ohne_regel": [
+      "k-bewegung",
+      "k-bereit"
+    ],
+    "exit": "0 keine fehlenden Klassen · 1 fehlende Klassen in mindestens einer Kern-Seite · 2 Abbruch"
+  },
+  "erstellt": "2026-10-11T04:12:30.497Z",
+  "seiten": [
+    {
+      "seite": "/",
+      "url": "/",
+      "kern": true,
+      "datei": "server/app/index.html",
+      "css": [
+        "/_next/static/chunks/16zejdze4gurq.css"
+      ],
+      "inline_style_bloecke": 0,
+      "klassen_im_html": 480,
+      "klassen_mit_regel": 480,
+      "fehlend": [],
+      "ausgenommen": [],
+      "warnungen": [],
+      "status": "ok"
+    }
+  ],
+  "nicht_geprueft": [],
+  "ergebnis": {
+    "seiten_geprueft": 1,
+    "seiten_mit_fehlenden_klassen": 0,
+    "fehlende_eintraege": 0,
+    "status": "ok"
+  }
+}

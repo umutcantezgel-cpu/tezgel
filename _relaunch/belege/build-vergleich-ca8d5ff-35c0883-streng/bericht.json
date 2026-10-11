@@ -1,0 +1,129 @@
+{
+ "vorher": "ca8d5ff",
+ "nachher": "35c0883",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 16,
+ "abweichungen": [
+  {
+   "datei": "fliesen/auf-fussbodenheizung.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/festpreisangebot.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/fliesenarten.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/flur-diele.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/grossformat.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/holzoptik.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/konfigurator.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/kueche.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/neubau.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/renovierung.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen/verlegemuster.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"next-size-adjust\" content=\"\"/><meta name=\"geo.region\" content=\"DE-HE\"/><",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"next-size-adjust\" content=\"\"/><meta name=\"geo.region\" content=\"DE-HE\"/><"
+  },
+  {
+   "datei": "fliesen/verlegetechnik.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/1yyhe-1k8qwgt.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "fliesen.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/0q6kii0h9gxzj.js\" async=\"\"></script><script src=\"/_next/static/chunks/43w4h0gvdv1i5.js\" async=\"\"></script><script src=\"/_next/static/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/",
+   "nachher": "ic/chunks/0q6kii0h9gxzj.js\" async=\"\"></script><script src=\"/_next/static/chunks/1d5vrrckhrcwz.js\" async=\"\"></script><script src=\"/_next/static/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/"
+  },
+  {
+   "datei": "index.html",
+   "ab": 1038,
+   "vorher": ".webp&amp;w=384&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0tqq7y-80nip3.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunk",
+   "nachher": ".webp&amp;w=384&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/1zax6c7eq14p1.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunk"
+  },
+  {
+   "datei": "kontakt.html",
+   "ab": 1928,
+   "vorher": "ic/chunks/0ai8zhobo9662.js\" async=\"\"></script><script src=\"/_next/static/chunks/38qowxhnk735l.js\" async=\"\"></script><script src=\"/_next/static/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/",
+   "nachher": "ic/chunks/0ai8zhobo9662.js\" async=\"\"></script><script src=\"/_next/static/chunks/2bezni6nut861.js\" async=\"\"></script><script src=\"/_next/static/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/"
+  },
+  {
+   "datei": "termin.html",
+   "ab": 1859,
+   "vorher": "c/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/42t45mxko4ni8.js\" async=\"\"></script><script src=\"/_next/static/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/_",
+   "nachher": "c/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/44a8gurd9l7xa.js\" async=\"\"></script><script src=\"/_next/static/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/_"
+  }
+ ],
+ "css_selektoren_weg": [
+  "@media (prefers-reduced-motion:reduce){[data-motion]{transition-duration:0s!important",
+  "[data-motion=aufklappen]>*{min-height:0;overflow:hidden"
+ ],
+ "css_selektoren_neu": [
+  ".gap-y-k-3{row-gap:var(--spacing-k-3)",
+  ".k-zelle[data-spalte]:before{content:attr(data-spalte) / \"\";margin-bottom:var(--spacing-k-1);font-family:var(--font-k-mono);font-size:var(--text-k-1);color:var(--color-k-tinte-2);display:block",
+  ".line-through{text-decoration-line:line-through",
+  "@media (min-width:48rem){.k-zelle[data-spalte]:before{content:none",
+  "@media (prefers-reduced-motion:reduce){[data-motion],[data-motion=aufklappen]>*{transition-duration:0s!important",
+  "[data-motion=aufklappen]>*{min-height:0;transition:content-visibility var(--k-dauer-1) allow-discrete;overflow:hidden",
+  "[data-motion=sig-plan]{transition:translate var(--k-dauer-2) var(--ease-k-setzen), opacity var(--k-dauer-2) var(--ease-k-setzen)"
+ ]
+}

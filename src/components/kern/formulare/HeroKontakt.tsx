@@ -149,25 +149,7 @@ export function HeroKontaktAnsicht({ k }: { k: HeroKontaktZustand }) {
           </Rasterfeld>
         )}
 
-        {/* 1. Vorhaben-Auswahl: Auswahlknöpfe im Raster */}
-        <Rasterfeld breite={{ mobil: 4, tablett: 8, desktop: 12 }} flaeche="fliese" innen="eng">
-          <Feldgruppe legende="1. Ihr Vorhaben wählen" anordnung="kacheln" spalten={2}>
-            {PROJECT_OPTIONS.map((opt) => (
-              <Auswahlknopf
-                key={opt.id}
-                art="kachel"
-                name="projectType"
-                value={opt.id}
-                checked={projectType === opt.id}
-                onChange={() => setProjectType(opt.id)}
-              >
-                {opt.label}
-              </Auswahlknopf>
-            ))}
-          </Feldgruppe>
-        </Rasterfeld>
-
-        {/* 2. Kontaktdaten */}
+        {/* Kontaktdaten */}
         <Rasterfeld breite={{ mobil: 4, tablett: 4, desktop: 6 }} flaeche="fliese" innen="eng">
           <Feld
             id="hero-name"
@@ -196,7 +178,7 @@ export function HeroKontaktAnsicht({ k }: { k: HeroKontaktZustand }) {
           />
         </Rasterfeld>
 
-        {/* 3. Ort & E-Mail */}
+        {/* Ort & E-Mail */}
         <Rasterfeld breite={{ mobil: 4, tablett: 4, desktop: 6 }} flaeche="fliese" innen="eng">
           <Feld
             id="hero-email"
@@ -222,7 +204,26 @@ export function HeroKontaktAnsicht({ k }: { k: HeroKontaktZustand }) {
           />
         </Rasterfeld>
 
-        {/* 4. Kurzbeschreibung */}
+        {/* Vorhaben-Auswahl nach den Kontaktfeldern: Name und Telefon stehen am Desktop im ersten Bildschirm (Probelauf P3-16b,
+            Aufgabe 3 mit Maus: vorher ein Bildlauf mehr als im Bestand). Voreinstellung und Logik unverändert (Hook). */}
+        <Rasterfeld breite={{ mobil: 4, tablett: 8, desktop: 12 }} flaeche="fliese" innen="eng">
+          <Feldgruppe legende="Ihr Vorhaben wählen" anordnung="kacheln" spalten={2}>
+            {PROJECT_OPTIONS.map((opt) => (
+              <Auswahlknopf
+                key={opt.id}
+                art="kachel"
+                name="projectType"
+                value={opt.id}
+                checked={projectType === opt.id}
+                onChange={() => setProjectType(opt.id)}
+              >
+                {opt.label}
+              </Auswahlknopf>
+            ))}
+          </Feldgruppe>
+        </Rasterfeld>
+
+        {/* Kurzbeschreibung */}
         <Rasterfeld breite={{ mobil: 4, tablett: 8, desktop: 12 }} flaeche="fliese" innen="eng">
           <Feld
             id="hero-notes"

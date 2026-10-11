@@ -1,141 +1,28 @@
 "use client";
-import React, { useState } from 'react';
 import Link from 'next/link';
 import { CalendarCheck, CheckCircle2, Phone, MessageCircle, Send, Lock, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
-import { openWhatsApp } from '@/lib/whatsapp';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 import BookingCalendar from '@/components/contact/BookingCalendar';
-
-const TOPICS = [
-    { value: 'badsanierung', label: 'Badsanierung / Komplettbad aus einer Hand' },
-    { value: 'barrierefrei', label: 'Barrierefreie Badmodernisierung (Pflegekassenzuschuss)' },
-    { value: 'grossformate', label: 'Fliesen & fugenarme XXL-Großformate' },
-    { value: 'wohnen', label: 'Wohnbereiche, Küche, Flure & Treppen' },
-    { value: 'aussen', label: 'Balkon & Terrasse auf Stelzlagern' },
-    { value: 'untergrund', label: 'Untergrund & DIN 18534 Verbundabdichtung' },
-    { value: 'naturstein', label: 'Naturstein- und Granitverlegung' }
-];
-
-const TIME_SLOTS = [
-    { value: 'vormittags', label: 'Vormittags (08:00 – 12:00 Uhr)' },
-    { value: 'nachmittags', label: 'Nachmittags (13:00 – 17:00 Uhr)' },
-    { value: 'flexibel', label: 'Flexibel nach telefonischer Vereinbarung' }
-];
+import { useTerminAnfrage, TOPICS, TIME_SLOTS, labelOf, formatDate } from '@/lib/formulare/useTerminAnfrage';
 
 const inputClass =
     'w-full px-4 py-3 rounded-tile-sm bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
 
-const labelOf = (list, value) => list.find((item) => item.value === value)?.label ?? value;
-
-const formatDate = (isoDate) => {
-    if (!isoDate) return 'nach Absprache';
-    const [year, month, day] = isoDate.split('-');
-    return `${day}.${month}.${year}`;
-};
-
 export default function TerminPage() {
-    const [bookingMode, setBookingMode] = useState('calendar'); // 'calendar' | 'form'
-    const [sentVia, setSentVia] = useState(null); // 'whatsapp' | 'online'
-    const [referenceId, setReferenceId] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-    const [formData, setFormData] = useState({
-        topic: 'badsanierung',
-        date: '',
-        timeSlot: 'vormittags',
-        name: '',
-        phone: '',
-        email: '',
-        zipCity: '',
-        notes: '',
-        privacyConsent: false
-    });
-
-    const update = (field) => (e) => {
-        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-        setFormData((prev) => ({ ...prev, [field]: value }));
-    };
-
-    const buildMessage = () =>
-        `Hallo Herr Tezgel,\nich möchte einen Termin für eine Beratung / ein Vor-Ort-Aufmaß vereinbaren:\n\n` +
-        `Thema: ${labelOf(TOPICS, formData.topic)}\n` +
-        `Wunschdatum: ${formatDate(formData.date)}\n` +
-        `Zeitfenster: ${labelOf(TIME_SLOTS, formData.timeSlot)}\n` +
-        `Ort: ${formData.zipCity || 'Nicht angegeben'}\n\n` +
-        `Name: ${formData.name}\n` +
-        `Telefon: ${formData.phone}\n` +
-        `E-Mail: ${formData.email || 'Nicht angegeben'}\n` +
-        (formData.notes ? `Anmerkungen: ${formData.notes}\n\n` : '\n') +
-        `Bitte bestätigen Sie mir den Termin oder schlagen Sie einen Alternativtermin vor. Vielen Dank!`;
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const submitter = e.nativeEvent?.submitter;
-        const channel = submitter?.value === 'whatsapp' ? 'whatsapp' : 'online';
-        const message = buildMessage();
-
-        if (channel === 'whatsapp') {
-            openWhatsApp({
-                phone: COMPANY_DATA.contact.whatsappNumber,
-                text: message,
-            });
-            setSentVia('whatsapp');
-            return;
-        }
-
-        // Online API Submission
-        setIsSubmitting(true);
-        setErrorMessage('');
-
-        try {
-            const topicLabel = labelOf(TOPICS, formData.topic);
-            const timeSlotLabel = labelOf(TIME_SLOTS, formData.timeSlot);
-            const formattedDate = formatDate(formData.date);
-
-            const res = await fetch('/api/anfrage', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    inquiryType: 'termin',
-                    projectType: 'termin',
-                    projectTitle: `Termin: ${topicLabel}`,
-                    contact: {
-                        name: formData.name,
-                        phone: formData.phone,
-                        email: formData.email || undefined,
-                        zipCity: formData.zipCity || undefined,
-                        location: formData.zipCity || 'Aßlar / Wetzlar'
-                    },
-                    terminDetails: {
-                        topic: formData.topic,
-                        topicLabel,
-                        date: formData.date,
-                        formattedDate,
-                        timeSlot: formData.timeSlot,
-                        timeSlotLabel
-                    },
-                    timing: `${formattedDate} (${timeSlotLabel})`,
-                    notes: formData.notes ? formData.notes.trim() : undefined
-                })
-            });
-
-            const data = await res.json();
-            if (!res.ok || !data.success) {
-                throw new Error(data.error || 'Übertragung fehlgeschlagen.');
-            }
-
-            if (data.referenceId) {
-                setReferenceId(data.referenceId);
-            }
-            setSentVia('online');
-        } catch (err) {
-            console.error('Termin submission error:', err);
-            setErrorMessage(err.message || 'Verbindungsfehler beim Absenden.');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    const {
+        bookingMode,
+        setBookingMode,
+        sentVia,
+        setSentVia,
+        referenceId,
+        isSubmitting,
+        errorMessage,
+        formData,
+        update,
+        handleSubmit,
+        handleNewRequest
+    } = useTerminAnfrage();
 
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
@@ -204,7 +91,7 @@ export default function TerminPage() {
                             </a>
                             <button
                                 type="button"
-                                onClick={() => { setSentVia(null); setReferenceId(''); }}
+                                onClick={handleNewRequest}
                                 className="btn-ghost w-full sm:w-auto"
                             >
                                 Weiteren Termin anfragen

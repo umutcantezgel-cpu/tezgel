@@ -1,0 +1,9 @@
+{
+ "aufnahmen": 12,
+ "fehler": 0,
+ "status_nicht_200": [],
+ "mit_ueberlauf": [
+  "/p3-06-b [m375] horizontal,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus,ragt-heraus"
+ ],
+ "mit_konsolenfehler": []
+}

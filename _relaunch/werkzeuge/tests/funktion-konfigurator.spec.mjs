@@ -3,7 +3,7 @@
 // Versand POST /api/anfrage mit inquiryType „fliesen“ und fliesenDetails. Geprüft wird Verhalten, nicht Aussehen.
 // Richtwert-Tabelle: aus dem Code berechnet (calculateArea + fmt, Ausgangsstand 5a7a7b0).
 // Verschnitt: Kreuzfuge / Halb-Drittelverband / Wilder Verband 5–10 %, Diagonal / Fischgrät 10–15 %, Noch offen 5–15 %.
-import { test, expect, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
 
 const SEITE = '/fliesen/konfigurator';
 
@@ -31,9 +31,15 @@ const gruppe = (page, legende) => page.getByRole('group', { name: legende, exact
 // Live-Vorschau des Materialbedarfs (oben im Konfigurator, aria-live)
 const vorschau = (page) => page.locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' });
 const onlineSenden = (page) => page.getByRole('button', { name: /Online absenden/ });
+// Seite öffnen und erst bedienen, wenn React die Bereichsknöpfe übernommen hat (T2 35c0883: unter Last gingen Klicks
+// vor dem Hydrieren verloren; Zustand statt Wartezeit wie in den übrigen Specs).
+async function oeffnen(page) {
+  await page.goto(SEITE);
+  await bedienbar(raum(page, 'Küche'));
+}
 
 async function zuSchritt3(page, raumAnfang) {
-  await page.goto(SEITE);
+  await oeffnen(page);
   await raum(page, raumAnfang).click();
   await weiter(page, 2).click();
   await expect(schritt(page, 2)).toBeVisible();
@@ -52,7 +58,7 @@ async function kontaktAusfuellen(page, { mitEinwilligung = true } = {}) {
 
 // Gutfall-Kette: Küche + Flur, Zementestrich, Großformat, Feinsteinzeug, Kreuzfuge, 24,5 m² → Schritt 4.
 async function bisSchritt4Gutfall(page) {
-  await page.goto(SEITE);
+  await oeffnen(page);
   await raum(page, 'Küche').click();
   await raum(page, 'Flur & Diele').click();
   await weiter(page, 2).click();
@@ -70,7 +76,7 @@ async function bisSchritt4Gutfall(page) {
 
 test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
   test('Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben', async ({ page, anfragen }) => {
-    await page.goto(SEITE);
+    await oeffnen(page);
     await expect(weiter(page, 2)).toBeDisabled();
     await expect(page.getByText('Bitte wählen Sie mindestens einen Bereich aus.')).toBeVisible();
     await raum(page, 'Küche').click();

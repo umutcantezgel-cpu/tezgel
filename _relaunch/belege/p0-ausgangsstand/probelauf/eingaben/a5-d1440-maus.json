@@ -1,0 +1,15 @@
+{
+ "aufgabe": 5, "start": "/", "ansicht": "d1440", "eingabe": "maus",
+ "antwort": "Ablauf: „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“ (Schritt 01–06 auf /bad/badsanierung). Förderung: ja – bis zu 4.180 € Pflegekasse (§ 40 SGB XI) und KfW 159 (/foerderung).",
+ "befunde": [
+  {"schwere": "gering", "schritt": 4, "text": "„Förderung“ ist im Hauptmenü kein eigener Punkt; der Weg führt über „Ratgeber“ und dessen Untermenü (2 Handlungen). Bild 04-tippe.jpg."},
+  {"schwere": "gering", "schritt": 5, "text": "Dieselbe Förderseite heißt im Untermenü „Förderung Zuschüsse für barrierefreie Bäder“, auf der Startseite „Förderung & Zuschüsse“. Bild 05-tippe.jpg."}
+ ],
+ "schritte": [
+  {"tippe": "Alle ablehnen"},
+  {"tippe": "Badsanierung", "in": "Hauptnavigation"},
+  {"tippe": "Badsanierung komplett Komplettbad schlüsselfertig zum Festpreis"},
+  {"tippe": "Untermenü Ratgeber öffnen"},
+  {"tippe": "Förderung Zuschüsse für barrierefreie Bäder"}
+ ]
+}

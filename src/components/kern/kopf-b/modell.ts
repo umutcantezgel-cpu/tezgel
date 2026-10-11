@@ -5,8 +5,8 @@ export type Unterpunkt = {
   name: string;
   pfad: string;
   beschreibung?: string;
-  /** Laufende Nummer im Blatt, zweistellig in Mono („01“ …); rein darstellend (aria-hidden). */
-  nummer: string;
+  /** Laufende Nummer im Blatt (1 …); erscheint nur als Listenmarke (`ol.k-liste-nummern`, `start`), nie als Text. */
+  nr: number;
 };
 
 export type Kategorie = { titel: string; punkte: Unterpunkt[] };
@@ -97,5 +97,6 @@ export function aufklappenAuf(el: Element | null | undefined): void {
   el.setAttribute('data-offen', '');
 }
 
-/** Breite ab der die Hauptnavigation steht (Tailwind `lg` = 64rem). */
-export const AB_LG = '(min-width: 64rem)';
+/** Breite, ab der die Hauptnavigation steht (Tailwind `xl` = 80rem; P3-06c: bei 64rem passt die Zeile mit Hauptpunkten
+ * in text-k-2, 48-px-Schaltern und 48-px-Hauptknopf nicht, gemessen 1101 px Bedarf gegen 928 px Inhalt). */
+export const AB_XL = '(min-width: 80rem)';

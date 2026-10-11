@@ -1,0 +1,423 @@
+{
+ "satz": "ausgangsstand",
+ "base": "http://127.0.0.1:4310",
+ "bedingungen": {
+  "quelle": "lauf.json je Lauf (Messbedingungen dort)",
+  "modi": [
+   "m375 touch",
+   "d1440 maus",
+   "d1440 tastatur"
+  ],
+  "protokoll": "_relaunch/PROBELAUF.md"
+ },
+ "erstellt": "2026-10-11T00:55:03.600Z",
+ "laeufe": [
+  {
+   "lauf": "a1-d1440-maus",
+   "aufgabe": 1,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 2,
+   "handlungen_gesamt": 2,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 1,
+     "text": "Der Einwilligungsbanner verdeckt auf /bad die H1 („Ihr Traumbad schlüsselfertig in Fachqualität“) teilweise. Bild 01-tippe.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 1,
+     "text": "Die Chat-Blase „Chat starten“ verdeckt auf /bad das Ende des Kartentextes „bis zu 4.180 € Zuschuss“ teilweise. Bild 01-tippe.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "Der Einwilligungsbanner verdeckt auf der Leistungsseite die ersten Zeilen der H1. Bild 02-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-10T23:52:19.277Z"
+  },
+  {
+   "lauf": "a1-d1440-tastatur",
+   "aufgabe": 1,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 23,
+   "handlungen_gesamt": 23,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 3,
+     "text": "Auf /bad liegt die Karte „Barrierefreies Bad“ erst nach 18 Tab-Stopps: davor die Untermenü-Schaltflächen der Kopfnavigation, die Hero-Schaltflächen und zwei Karten (Umweg ≥ 3 Schritte). Bild 03-taste.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "Der Einwilligungsbanner verdeckt auf /bad die H1 „Ihr Traumbad schlüsselfertig in Fachqualität“ teilweise. Bild 02-taste.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 3,
+     "text": "Die Chat-Blase verdeckt das Ende des Kartentextes „bis zu 4.180 € Zuschuss“ teilweise. Bild 03-taste.jpg."
+    }
+   ],
+   "erstellt": "2026-10-10T23:58:37.930Z"
+  },
+  {
+   "lauf": "a1-m375-touch",
+   "aufgabe": 1,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 4,
+   "handlungen_gesamt": 4,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 1,
+     "text": "Der Einwilligungsbanner liegt über dem geöffneten Mobilmenü; die Menüpunkte sind erst nach „Alle ablehnen“ lesbar (1 Handlung, zählt). Bild 01-tippe.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "Auf der Leistungsseite verdeckt die Chat-Blase das Zeilenende „bis zu“ im Vorspann teilweise. Bild 04-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-10T23:47:13.150Z"
+  },
+  {
+   "lauf": "a2-d1440-maus",
+   "aufgabe": 2,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 2,
+   "handlungen_gesamt": 2,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 0,
+     "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Zeile „Handwerkskammer-eingetragener Fachbetrieb … 5,0 (27 Bewertungen)“; erst nach „Alle ablehnen“ lesbar. Bild 00-start.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "Die Chat-Blase verdeckt auf /ueber-uns die Karte „HWK“ (Eingetragener Fachbetrieb) teilweise. Bild 02-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:15:07.749Z"
+  },
+  {
+   "lauf": "a2-d1440-tastatur",
+   "aufgabe": 2,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 12,
+   "handlungen_gesamt": 12,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "Bis zum Nav-Punkt „Über uns“ liegen 11 Tab-Stopps (Kopfnavigation mit fünf Untermenü-Schaltflächen); mit der Tastatur sind es 12 Handlungen statt 2 mit der Maus (Umweg ≥ 3 Schritte). Bild 01-taste.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 0,
+     "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Zeile mit Handwerkskammer-Eintrag und Bewertung teilweise. Bild 00-start.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:22:28.390Z"
+  },
+  {
+   "lauf": "a2-m375-touch",
+   "aufgabe": 2,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 4,
+   "handlungen_gesamt": 4,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 0,
+     "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Zeile mit Handwerkskammer-Eintrag und „5,0 (27 Bewertungen)“; erst nach „Alle ablehnen“ lesbar. Bild 00-start.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "Das Gründungsjahr steht auf der Startseite nicht; es ist nur auf der Unterseite „Über uns“ zu finden (Menü, „Über uns“, „Über Deniz Tezgel“: 3 Handlungen). Bild 04-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:03:31.058Z"
+  },
+  {
+   "lauf": "a3-d1440-maus",
+   "aufgabe": 3,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 5,
+   "handlungen_gesamt": 5,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 0,
+     "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Kopfzeile des Anfrageformulars rechts („Kostenloses Aufmaß vor Ort anfragen“) teilweise. Bild 00-start.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 5,
+     "text": "Die Bestätigung erscheint oben rechts im Formularkasten; der Einwilligungsbanner überdeckt dessen oberen Rand. Bild 05-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:29:04.412Z"
+  },
+  {
+   "lauf": "a3-d1440-tastatur",
+   "aufgabe": 3,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 34,
+   "handlungen_gesamt": 34,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "Bis zum Feld „Name“ des Anfrageformulars liegen 24 Tab-Stopps (Kopfnavigation mit Untermenü-Schaltflächen, Kontakt-Schaltflächen, vier Vorhaben-Chips); mit der Maus ist das Feld ein Klick. Bild 01-taste.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 0,
+     "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Kopfzeile des Anfrageformulars teilweise. Bild 00-start.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 10,
+     "text": "Der Einwilligungsbanner überdeckt den oberen linken Rand der Bestätigungskarte. Bild 10-taste.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:35:58.388Z"
+  },
+  {
+   "lauf": "a3-m375-touch",
+   "aufgabe": 3,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 12,
+   "handlungen_gesamt": 13,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "Der Button „Aufmaß vor Ort anfragen“ führt auf /kontakt zu einer Übersicht; das Formular liegt erst nach „Zur Express-Anfrage“ (1 Handlung mehr). Bild 02-tippe.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 3,
+     "text": "Auf /kontakt stehen zwei Anfrageformen untereinander („Wunschtermin in 2 Schritten reservieren“ mit Tag/Uhrzeit und „Ihr Vor-Ort-Aufmaß anfordern“); der Besucher muss zwischen ihnen unterscheiden. Bild 03-tippe.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 10,
+     "text": "Nach dem Absenden liegt die Bestätigung im Bild teils unter der Kopfzeile: im ersten Lauf zeigte das Bild nur „Nächste Schritte“, im Wiederholungslauf die Bestätigung mit „gesendet“. Bestätigung erst nach dem Bildlauf (Schritt 11) sicher sichtbar. Bild 10-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:25:51.171Z"
+  },
+  {
+   "lauf": "a4-d1440-maus",
+   "aufgabe": 4,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 1,
+   "handlungen_gesamt": 3,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 1,
+     "text": "Der (nicht geschlossene) Einwilligungsbanner verdeckt auf /standorte die H1 „Standorte & Einsatzgebiete in Mittelhessen“."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 1,
+     "text": "Die Blase „Chat starten“ verdeckt den Chip „Butzbach 35 km“ teilweise („Butzbac…“)."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "Klick auf den Stadt-Chip: die Details erscheinen unterhalb der Karte außerhalb des Bildes."
+    }
+   ],
+   "erstellt": "2026-10-11T00:39:40.986Z"
+  },
+  {
+   "lauf": "a4-d1440-tastatur",
+   "aufgabe": 4,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 8,
+   "handlungen_gesamt": 28,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 0,
+     "text": "Einwilligungsbanner erst nach 190× Tab erreichbar (liegt am Ende der Tab-Reihenfolge, der Fokus wird beim Erscheinen nicht hineingesetzt); nach dem Schließen fällt der Fokus auf die Seite zurück (Lauf banner-d1440-tastatur). Für Aufgabe 4 nicht hinderlich, weil der Banner die Navigation nicht verdeckt."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "Der Einwilligungsbanner verdeckt auf /standorte die H1."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 3,
+     "text": "Fokussierter Chip „Butzbach 35 km“ teilweise von der Blase „Chat starten“ verdeckt (Fokusrahmen nur halb sichtbar)."
+    }
+   ],
+   "erstellt": "2026-10-11T00:41:32.775Z"
+  },
+  {
+   "lauf": "a4-m375-touch",
+   "aufgabe": 4,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 8,
+   "handlungen_gesamt": 10,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 8,
+     "text": "Butzbach steht auf /standorte mobil erst nach 1 Bildlauf und 3× Wischen in der Stadt-Leiste im Bild (Desktop: sofort nach Klick auf „Standorte“). Ohne Wischen erst die Ortskarte nach 6 Bildschirmhöhen (Erkundung: Ziel bei Schritt 10)."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 1,
+     "text": "Der Einwilligungsbanner liegt über dem geöffneten Mobilmenü – „Standorte“ ist verdeckt (Abbruch „verdeckt durch … Cookie-Einwilligungsbanner“), der Banner muss zuerst geschlossen werden."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 9,
+     "text": "Antippen des Chips „Butzbach 35 km“ ändert im Bild nur die Markierung; die Details erscheinen unterhalb der Karte außerhalb des Bildes (erst nach Bildlauf in Schritt 10 sichtbar)."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "Die Blase „Chat starten“ verdeckt auf /standorte mobil Teile des Telefon-Knopfs bzw. von „Karte laden & zustimmen“."
+    }
+   ],
+   "erstellt": "2026-10-11T00:39:31.091Z"
+  },
+  {
+   "lauf": "a5-d1440-maus",
+   "aufgabe": 5,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 5,
+   "handlungen_gesamt": 5,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "„Förderung“ ist im Hauptmenü kein eigener Punkt; der Weg führt über „Ratgeber“ und dessen Untermenü (2 Handlungen). Bild 04-tippe.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 5,
+     "text": "Dieselbe Förderseite heißt im Untermenü „Förderung Zuschüsse für barrierefreie Bäder“, auf der Startseite „Förderung & Zuschüsse“. Bild 05-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:48:47.975Z"
+  },
+  {
+   "lauf": "a5-d1440-tastatur",
+   "aufgabe": 5,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 114,
+   "handlungen_gesamt": 114,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "hoch",
+     "schritt": 5,
+     "text": "Nach dem Seitenwechsel per Enter beginnt die Tab-Folge nicht am Seitenanfang, sondern an der Stelle des zuvor gewählten Links: bis zur Kopfnavigation „Untermenü Ratgeber öffnen“ sind 87 Tab-Drücke nötig (der Fokus wandert ans Seitenende und springt dann zum Anfang). Dasselbe Muster zeigt sich bei a1 und a4 (je 18 Tabs nach Seitenwechsel). Ursache vermutlich fehlende Fokus-Rücksetzung nach der Seitennavigation; Gegenprüfung nötig. Bild 05-taste.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "Der Einwilligungsbanner verdeckt auf /bad/badsanierung die H1 teilweise. Bild 04-taste.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 8,
+     "text": "Im Hauptmenü ist „Förderung“ kein eigener Punkt; der Weg führt über „Ratgeber“ und dessen Untermenü („Förderung Zuschüsse für barrierefreie Bäder“, auf der Startseite „Förderung & Zuschüsse“)."
+    }
+   ],
+   "erstellt": "2026-10-11T00:52:30.285Z"
+  },
+  {
+   "lauf": "a5-m375-touch",
+   "aufgabe": 5,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 10,
+   "handlungen_gesamt": 10,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 5,
+     "text": "Die Überschrift „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“ liegt auf /bad/badsanierung erst nach zwei Bildläufen im Bild. Bild 05-scrolle.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 5,
+     "text": "Die Chat-Blase verdeckt in der Schritt-Karte „01“ das Zeilenende des Textes teilweise. Bild 05-scrolle.jpg."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 8,
+     "text": "„Förderung“ ist im mobilen Menü kein eigener Punkt; der Weg führt über die Karte „Ratgeber Wissen, Förderung, Referenzen & Service“ (2 Handlungen). Bild 08-tippe.jpg."
+    }
+   ],
+   "erstellt": "2026-10-11T00:54:52.502Z"
+  },
+  {
+   "lauf": "banner-d1440-tastatur",
+   "aufgabe": null,
+   "modus": "d1440 tastatur",
+   "geloest": null,
+   "handlungen_bis_ziel": null,
+   "handlungen_gesamt": 191,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-10T19:35:22.521Z"
+  }
+ ]
+}

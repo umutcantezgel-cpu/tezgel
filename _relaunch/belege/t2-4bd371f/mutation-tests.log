@@ -1,0 +1,782 @@
+
+Running 76 tests using 2 workers
+
+  ✓   2 [mobil] › tests/funktion-konfigurator.spec.mjs:78:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben (927ms)
+  ✓   1 [mobil] › tests/funktion-konfigurator.spec.mjs:87:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Fläche ohne gültige Zahl → Hinweis statt Richtwert (2.6s)
+  ✓   3 [mobil] › tests/funktion-konfigurator.spec.mjs:94:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Treppe mit Stufenmaßen → Treppen-Richtwert (Trittstufen + Setzstufen) (1.7s)
+  ✓   4 [mobil] › tests/funktion-konfigurator.spec.mjs:104:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Blockstufen → keine m²-Menge im Richtwert (1.9s)
+  ✓   5 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 1: 20 m² · Kreuzfuge → ca. 21–22 m² (netto 20 m²) (3.8s)
+  ✓   6 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 2: 20 m² · Diagonal → ca. 22–23 m² (netto 20 m²) (3.7s)
+  ✓   7 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 3: 20 m² · Noch offen → ca. 21–23 m² (netto 20 m²) (3.6s)
+  ✘   8 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²) (13.7s)
+  ✘   9 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²) (13.7s)
+  ✓  10 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 6: 12 m² · Wilder Verband → ca. 12,6–13,2 m² (netto 12 m²) (3.7s)
+  ✓  12 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 8: 150 m² · Diagonal → ca. 165–172,5 m² (netto 150 m²) (3.7s)
+  ✘  11 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²) (13.9s)
+  ✘  13 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²) (13.6s)
+  ✘  14 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²) (13.7s)
+  ✘  15 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²) (13.7s)
+  ✓  17 [mobil] › tests/funktion-konfigurator.spec.mjs:127:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: leere Pflichtfelder blockieren den Versand, keine Anfrage (8.0s)
+  ✘  16 [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²) (13.8s)
+  ✓  18 [mobil] › tests/funktion-konfigurator.spec.mjs:138:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: Telefonnummer unter 6 Zeichen blockiert den Versand (6.8s)
+  ✓  19 [mobil] › tests/funktion-konfigurator.spec.mjs:148:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: ohne Einwilligung blockiert der Versand, keine Anfrage (6.6s)
+  ✘  21 [mobil] › tests/funktion-konfigurator.spec.mjs:189:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage (7.9s)
+  ✓  22 [mobil] › tests/funktion-konfigurator.spec.mjs:203:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall nur Treppe: Versand als POST „fliesen“ mit Bereich „treppe“ (4.3s)
+  -  23 [mobil] › tests/funktion-konfigurator.spec.mjs:216:8 › FliesenKonfigurator (/fliesen/konfigurator) › Fußbodenheizung „Weiß nicht“ wird im Versand nicht als „Nein“ gemeldet
+  -  24 [mobil] › tests/funktion-konfigurator.spec.mjs:231:8 › FliesenKonfigurator (/fliesen/konfigurator) › Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast
+  ✘  20 [mobil] › tests/funktion-konfigurator.spec.mjs:156:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz (16.7s)
+  ✓  26 [mobil] › tests/funktion-termin.spec.mjs:45:5 › BookingCalendar (F-07) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage (883ms)
+  ✓  27 [mobil] › tests/funktion-termin.spec.mjs:57:5 › BookingCalendar (F-07) auf /termin › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage (752ms)
+  ✓  28 [mobil] › tests/funktion-termin.spec.mjs:68:5 › BookingCalendar (F-07) auf /termin › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage (753ms)
+  ✘  29 [mobil] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz (895ms)
+  ✓  25 [mobil] › tests/funktion-konfigurator.spec.mjs:248:5 › FliesenKonfigurator (/fliesen/konfigurator) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt die Konfiguration an und vergibt echte Referenz (8.4s)
+  ✓  30 [mobil] › tests/funktion-termin.spec.mjs:45:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage (1.8s)
+  ✓  31 [mobil] › tests/funktion-termin.spec.mjs:57:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage (1.9s)
+  ✓  32 [mobil] › tests/funktion-termin.spec.mjs:68:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage (2.7s)
+  ✘  33 [mobil] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz (1.9s)
+  ✓  34 [mobil] › tests/funktion-termin.spec.mjs:119:3 › Termin-Formular (F-08) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage (750ms)
+  ✓  35 [mobil] › tests/funktion-termin.spec.mjs:141:3 › Termin-Formular (F-08) auf /termin › ohne Einwilligung: blockiert, keine Anfrage (1.2s)
+  ✓  36 [mobil] › tests/funktion-termin.spec.mjs:129:3 › Termin-Formular (F-08) auf /termin › Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage (1.5s)
+  ✘  37 [mobil] › tests/funktion-termin.spec.mjs:152:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz (2.8s)
+  ✓  38 [mobil] › tests/funktion-termin.spec.mjs:181:5 › Termin-Formular (F-08) auf /termin › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Termin-Formular an und vergibt echte Referenz (2.9s)
+  ✓  39 [desktop] › tests/funktion-konfigurator.spec.mjs:78:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben (868ms)
+  ✓  40 [desktop] › tests/funktion-konfigurator.spec.mjs:94:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Treppe mit Stufenmaßen → Treppen-Richtwert (Trittstufen + Setzstufen) (4.4s)
+  ✓  41 [desktop] › tests/funktion-konfigurator.spec.mjs:87:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Fläche ohne gültige Zahl → Hinweis statt Richtwert (4.7s)
+  ✓  42 [desktop] › tests/funktion-konfigurator.spec.mjs:104:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Blockstufen → keine m²-Menge im Richtwert (6.5s)
+  ✓  43 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 1: 20 m² · Kreuzfuge → ca. 21–22 m² (netto 20 m²) (5.6s)
+  ✓  44 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 2: 20 m² · Diagonal → ca. 22–23 m² (netto 20 m²) (5.3s)
+  ✓  45 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 3: 20 m² · Noch offen → ca. 21–23 m² (netto 20 m²) (5.3s)
+  ✘  46 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²) (14.6s)
+  ✘  47 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²) (15.1s)
+  ✓  48 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 6: 12 m² · Wilder Verband → ca. 12,6–13,2 m² (netto 12 m²) (5.6s)
+  ✓  50 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 8: 150 m² · Diagonal → ca. 165–172,5 m² (netto 150 m²) (6.8s)
+  ✘  49 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²) (16.2s)
+  ✘  51 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²) (15.1s)
+  ✘  52 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²) (15.3s)
+  ✘  53 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²) (15.8s)
+  ✘  54 [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²) (14.9s)
+  ✓  55 [desktop] › tests/funktion-konfigurator.spec.mjs:127:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: leere Pflichtfelder blockieren den Versand, keine Anfrage (14.4s)
+  ✓  56 [desktop] › tests/funktion-konfigurator.spec.mjs:138:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: Telefonnummer unter 6 Zeichen blockiert den Versand (18.6s)
+  ✓  57 [desktop] › tests/funktion-konfigurator.spec.mjs:148:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: ohne Einwilligung blockiert der Versand, keine Anfrage (15.5s)
+  ✘  59 [desktop] › tests/funktion-konfigurator.spec.mjs:189:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage (15.5s)
+  ✘  58 [desktop] › tests/funktion-konfigurator.spec.mjs:156:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz (26.2s)
+  -  61 [desktop] › tests/funktion-konfigurator.spec.mjs:216:8 › FliesenKonfigurator (/fliesen/konfigurator) › Fußbodenheizung „Weiß nicht“ wird im Versand nicht als „Nein“ gemeldet
+  -  62 [desktop] › tests/funktion-konfigurator.spec.mjs:231:8 › FliesenKonfigurator (/fliesen/konfigurator) › Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast
+  ✓  60 [desktop] › tests/funktion-konfigurator.spec.mjs:203:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall nur Treppe: Versand als POST „fliesen“ mit Bereich „treppe“ (9.9s)
+  ✓  64 [desktop] › tests/funktion-termin.spec.mjs:45:5 › BookingCalendar (F-07) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage (3.6s)
+  ✓  65 [desktop] › tests/funktion-termin.spec.mjs:57:5 › BookingCalendar (F-07) auf /termin › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage (3.8s)
+  ✓  66 [desktop] › tests/funktion-termin.spec.mjs:68:5 › BookingCalendar (F-07) auf /termin › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage (4.4s)
+  ✓  63 [desktop] › tests/funktion-konfigurator.spec.mjs:248:5 › FliesenKonfigurator (/fliesen/konfigurator) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt die Konfiguration an und vergibt echte Referenz (17.9s)
+  ✘  67 [desktop] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz (4.6s)
+  ✓  68 [desktop] › tests/funktion-termin.spec.mjs:45:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage (6.7s)
+  ✓  69 [desktop] › tests/funktion-termin.spec.mjs:57:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage (5.8s)
+  ✓  70 [desktop] › tests/funktion-termin.spec.mjs:68:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage (5.8s)
+  ✓  72 [desktop] › tests/funktion-termin.spec.mjs:119:3 › Termin-Formular (F-08) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage (1.2s)
+  ✘  71 [desktop] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz (5.1s)
+  ✓  73 [desktop] › tests/funktion-termin.spec.mjs:129:3 › Termin-Formular (F-08) auf /termin › Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage (3.6s)
+  ✓  74 [desktop] › tests/funktion-termin.spec.mjs:141:3 › Termin-Formular (F-08) auf /termin › ohne Einwilligung: blockiert, keine Anfrage (3.1s)
+  ✘  75 [desktop] › tests/funktion-termin.spec.mjs:152:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz (4.0s)
+  ✓  76 [desktop] › tests/funktion-termin.spec.mjs:181:5 › Termin-Formular (F-08) auf /termin › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Termin-Formular an und vergibt echte Referenz (4.4s)
+
+
+  1) [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 2[7m7[27m–28,[7m2 m²[27m"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 2[7m6,9[27m–28,[7m1 m²aus 24,5 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    14 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 26,9–28,1 m²aus 24,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-f07b8-a-27–28-2-m²-netto-24-5-m²--mobil/error-context.md
+
+  2) [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 25,7–27 m²"[39m
+    Received string:    [31m"Materialbedarf inkl. Verschnitt (Richtwert):ca. 25,7–26,9 m²aus 24,5 m² netto"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    14 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 25,7–26,9 m²aus 24,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-7c574-a-25-7–27-m²-netto-24-5-m²--mobil/error-context.md
+
+  3) [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 3,[7m2[27m–3,3 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 3,[7m1[27m–3,3 m²[7maus 3 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    14 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 3,1–3,3 m²aus 3 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-8c4bb-→-ca-3-2–3-3-m²-netto-3-m²--mobil/error-context.md
+
+  4) [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 1.296,2–1.419,7 m²"[39m
+    Received string:    [31m"Materialbedarf inkl. Verschnitt (Richtwert):ca. 1.296,2–1.419,6 m²aus 1.234,5 m² netto"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    14 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 1.296,2–1.419,6 m²aus 1.234,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-d5028--419-7-m²-netto-1-234-5-m²--mobil/error-context.md
+
+  5) [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 3[7m5[27m–36,6 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 3[7m4,9[27m–36,6 m²[7maus 33,3 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    14 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 34,9–36,6 m²aus 33,3 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-89469-a-35–36-6-m²-netto-33-3-m²--mobil/error-context.md
+
+  6) [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 78,[7m8[27m–82,5 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 78,[7m7[27m–82,5 m²[7maus 75 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    14 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 78,7–82,5 m²aus 75 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-e1dce-a-78-8–82-5-m²-netto-75-m²--mobil/error-context.md
+
+  7) [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 8,[7m3[27m–8,6 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 8,[7m2[27m–8,6 m²[7maus 7,5 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    14 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 8,2–8,6 m²aus 7,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-d40de-ca-8-3–8-6-m²-netto-7-5-m²--mobil/error-context.md
+
+  8) [mobil] › tests/funktion-konfigurator.spec.mjs:156:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('ca. 25,7–27 m²')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for getByText('ca. 25,7–27 m²')[22m
+
+
+      162 |     await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      163 |     // Richtwert 24,5 m² Kreuzfuge (5–10 %) = ca. 25,7–27 m²
+    > 164 |     await expect(page.getByText('ca. 25,7–27 m²')).toBeVisible();
+          |                                                    ^
+      165 |     expect(anfragen).toHaveLength(1);
+      166 |     expect(anfragen[0]).toMatchObject({
+      167 |       inquiryType: 'fliesen',
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:164:52
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-fe559-ben-und-Erfolg-mit-Referenz-mobil/error-context.md
+
+  9) [mobil] › tests/funktion-konfigurator.spec.mjs:189:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+    Expected substring: [32m"Fläche: 24,5 m² netto; Richtwert inkl. Verschnitt (5–10 %): ca. 25,7–27 m²"[39m
+    Received string:    [31m"Hallo Herr Tezgel,[39m
+    [31mich habe mein Fliesenprojekt im Fliesen-Konfigurator vorbereitet:·[39m
+    [31mBereich: Küche, Flur & Diele[39m
+    [31mUntergrund: Neuer Zementestrich[39m
+    [31mFußbodenheizung: Weiß nicht[39m
+    [31mRückbau Altbelag: Nein[39m
+    [31mNassbereich: Nein[39m
+    [31mFormat: Großformat[39m
+    [31mMaterial: Feinsteinzeug / Keramik[39m
+    [31mVerlegemuster: Kreuzfuge·[39m
+    [31mMaterialbedarf (Richtwert, unverbindlich):[39m
+    [31m- Fläche: 24,5 m² netto; Richtwert inkl. Verschnitt (5–10 %): ca. 25,7–26,9 m²·[39m
+    [31mOrt: Aßlar[39m
+    [31mGewünschter Zeitraum: In 1 – 3 Monaten·[39m
+    [31mName: Prüf Person[39m
+    [31mTelefon: 0170 0000000[39m
+    [31mE-Mail: pruef@example.de·[39m
+    [31mNotiz: Testnotiz Konfigurator·[39m
+    [31mBitte melden Sie sich wegen eines kostenfreien Vor-Ort-Aufmaßes. Vielen Dank!"[39m
+
+      195 |     expect(url.searchParams.get('phone')).toBe('491726728504');
+      196 |     const text = url.searchParams.get('text') ?? '';
+    > 197 |     expect(text).toContain('Fläche: 24,5 m² netto; Richtwert inkl. Verschnitt (5–10 %): ca. 25,7–27 m²');
+          |                  ^
+      198 |     expect(text).toContain('Name: Prüf Person');
+      199 |     await expect(page.getByText('WhatsApp wurde geöffnet – bitte absenden')).toBeVisible();
+      200 |     expect(anfragen).toHaveLength(0);
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:197:18
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-5b6a2-kein-Versand-an-api-anfrage-mobil/error-context.md
+
+  10) [mobil] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [33m@@ -8,8 +8,8 @@[39m
+    [2m    "privacyConsent": true,[22m
+    [2m    "projectType": "termin",[22m
+    [2m    "terminDetails": Object {[22m
+    [2m      "preferredDate": "2026-10-13",[22m
+    [2m      "serviceType": "Kostenfreies Vor-Ort-Aufmaß & Beratung",[22m
+    [32m-     "timeSlot": "15:00",[39m
+    [31m+     "timeSlot": "2026-10-13",[39m
+    [2m    },[22m
+    [2m  }[22m
+
+      89 |       await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      90 |       expect(anfragen).toHaveLength(1);
+    > 91 |       expect(anfragen[0]).toMatchObject({
+         |                           ^
+      92 |         inquiryType: 'termin',
+      93 |         projectType: 'termin',
+      94 |         terminDetails: { preferredDate: iso, timeSlot: zeit, serviceType },
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:91:27
+
+    Error Context: ../cache/test-results/funktion-termin-BookingCal-31532-ge-raus-Erfolg-mit-Referenz-mobil/error-context.md
+
+  11) [mobil] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [33m@@ -8,8 +8,8 @@[39m
+    [2m    "privacyConsent": true,[22m
+    [2m    "projectType": "termin",[22m
+    [2m    "terminDetails": Object {[22m
+    [2m      "preferredDate": "2026-10-13",[22m
+    [2m      "serviceType": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse",[22m
+    [32m-     "timeSlot": "15:00",[39m
+    [31m+     "timeSlot": "2026-10-13",[39m
+    [2m    },[22m
+    [2m  }[22m
+
+      89 |       await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      90 |       expect(anfragen).toHaveLength(1);
+    > 91 |       expect(anfragen[0]).toMatchObject({
+         |                           ^
+      92 |         inquiryType: 'termin',
+      93 |         projectType: 'termin',
+      94 |         terminDetails: { preferredDate: iso, timeSlot: zeit, serviceType },
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:91:27
+
+    Error Context: ../cache/test-results/funktion-termin-BookingCal-dca65-ge-raus-Erfolg-mit-Referenz-mobil/error-context.md
+
+  12) [mobil] › tests/funktion-termin.spec.mjs:152:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [33m@@ -11,8 +11,8 @@[39m
+    [2m    "projectType": "termin",[22m
+    [2m    "terminDetails": Object {[22m
+    [2m      "date": "2026-10-18",[22m
+    [2m      "formattedDate": "18.10.2026",[22m
+    [2m      "timeSlot": "nachmittags",[22m
+    [32m-     "topic": "grossformate",[39m
+    [31m+     "topic": "nachmittags",[39m
+    [2m    },[22m
+    [2m  }[22m
+
+      166 |     await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      167 |     expect(anfragen).toHaveLength(1);
+    > 168 |     expect(anfragen[0]).toMatchObject({
+          |                         ^
+      169 |       inquiryType: 'termin',
+      170 |       projectType: 'termin',
+      171 |       contact: { name: 'Prüf Person', phone: '0170 0000000', email: 'pruef@beispiel.de', zipCity: '35614 Aßlar', location: '35614 Aßlar' },
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:168:25
+
+    Error Context: ../cache/test-results/funktion-termin-Termin-For-b975c-ht-raus-Erfolg-mit-Referenz-mobil/error-context.md
+
+  13) [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 2[7m7[27m–28,[7m2 m²[27m"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 2[7m6,9[27m–28,[7m1 m²aus 24,5 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    13 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 26,9–28,1 m²aus 24,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-f07b8-a-27–28-2-m²-netto-24-5-m²--desktop/error-context.md
+
+  14) [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 25,7–27 m²"[39m
+    Received string:    [31m"Materialbedarf inkl. Verschnitt (Richtwert):ca. 25,7–26,9 m²aus 24,5 m² netto"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    13 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 25,7–26,9 m²aus 24,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-7c574-a-25-7–27-m²-netto-24-5-m²--desktop/error-context.md
+
+  15) [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 3,[7m2[27m–3,3 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 3,[7m1[27m–3,3 m²[7maus 3 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    13 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 3,1–3,3 m²aus 3 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-8c4bb-→-ca-3-2–3-3-m²-netto-3-m²--desktop/error-context.md
+
+  16) [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 1.296,2–1.419,7 m²"[39m
+    Received string:    [31m"Materialbedarf inkl. Verschnitt (Richtwert):ca. 1.296,2–1.419,6 m²aus 1.234,5 m² netto"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    13 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 1.296,2–1.419,6 m²aus 1.234,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-d5028--419-7-m²-netto-1-234-5-m²--desktop/error-context.md
+
+  17) [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 3[7m5[27m–36,6 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 3[7m4,9[27m–36,6 m²[7maus 33,3 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    13 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 34,9–36,6 m²aus 33,3 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-89469-a-35–36-6-m²-netto-33-3-m²--desktop/error-context.md
+
+  18) [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 78,[7m8[27m–82,5 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 78,[7m7[27m–82,5 m²[7maus 75 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    13 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 78,7–82,5 m²aus 75 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-e1dce-a-78-8–82-5-m²-netto-75-m²--desktop/error-context.md
+
+  19) [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²) 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoContainText[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })
+    Expected substring: [32m"ca. 8,[7m3[27m–8,6 m²"[39m
+    Received string:    [31m"[7mMaterialbedarf inkl. Verschnitt (Richtwert):[27mca. 8,[7m2[27m–8,6 m²[7maus 7,5 m² netto[27m"[39m
+    Timeout: 10000ms
+
+    Call log:
+    [2m  - Expect "toContainText" with timeout 10000ms[22m
+    [2m  - waiting for locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' })[22m
+    [2m    13 × locator resolved to <div aria-live="polite" class="mt-4 p-3.5 rounded-tile-sm bg-white border border-slate-200 space-y-1">…</div>[22m
+    [2m       - unexpected value "Materialbedarf inkl. Verschnitt (Richtwert):ca. 8,2–8,6 m²aus 7,5 m² netto"[22m
+
+
+      120 |       await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
+      121 |       await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+    > 122 |       await expect(vorschau(page)).toContainText(r.richtwert);
+          |                                    ^
+      123 |       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
+      124 |     });
+      125 |   }
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:122:36
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-d40de-ca-8-3–8-6-m²-netto-7-5-m²--desktop/error-context.md
+
+  20) [desktop] › tests/funktion-konfigurator.spec.mjs:156:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('ca. 25,7–27 m²')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for getByText('ca. 25,7–27 m²')[22m
+
+
+      162 |     await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      163 |     // Richtwert 24,5 m² Kreuzfuge (5–10 %) = ca. 25,7–27 m²
+    > 164 |     await expect(page.getByText('ca. 25,7–27 m²')).toBeVisible();
+          |                                                    ^
+      165 |     expect(anfragen).toHaveLength(1);
+      166 |     expect(anfragen[0]).toMatchObject({
+      167 |       inquiryType: 'fliesen',
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:164:52
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-fe559-ben-und-Erfolg-mit-Referenz-desktop/error-context.md
+
+  21) [desktop] › tests/funktion-konfigurator.spec.mjs:189:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
+
+    Expected substring: [32m"Fläche: 24,5 m² netto; Richtwert inkl. Verschnitt (5–10 %): ca. 25,7–27 m²"[39m
+    Received string:    [31m"Hallo Herr Tezgel,[39m
+    [31mich habe mein Fliesenprojekt im Fliesen-Konfigurator vorbereitet:·[39m
+    [31mBereich: Küche, Flur & Diele[39m
+    [31mUntergrund: Neuer Zementestrich[39m
+    [31mFußbodenheizung: Weiß nicht[39m
+    [31mRückbau Altbelag: Nein[39m
+    [31mNassbereich: Nein[39m
+    [31mFormat: Großformat[39m
+    [31mMaterial: Feinsteinzeug / Keramik[39m
+    [31mVerlegemuster: Kreuzfuge·[39m
+    [31mMaterialbedarf (Richtwert, unverbindlich):[39m
+    [31m- Fläche: 24,5 m² netto; Richtwert inkl. Verschnitt (5–10 %): ca. 25,7–26,9 m²·[39m
+    [31mOrt: Aßlar[39m
+    [31mGewünschter Zeitraum: In 1 – 3 Monaten·[39m
+    [31mName: Prüf Person[39m
+    [31mTelefon: 0170 0000000[39m
+    [31mE-Mail: pruef@example.de·[39m
+    [31mNotiz: Testnotiz Konfigurator·[39m
+    [31mBitte melden Sie sich wegen eines kostenfreien Vor-Ort-Aufmaßes. Vielen Dank!"[39m
+
+      195 |     expect(url.searchParams.get('phone')).toBe('491726728504');
+      196 |     const text = url.searchParams.get('text') ?? '';
+    > 197 |     expect(text).toContain('Fläche: 24,5 m² netto; Richtwert inkl. Verschnitt (5–10 %): ca. 25,7–27 m²');
+          |                  ^
+      198 |     expect(text).toContain('Name: Prüf Person');
+      199 |     await expect(page.getByText('WhatsApp wurde geöffnet – bitte absenden')).toBeVisible();
+      200 |     expect(anfragen).toHaveLength(0);
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-konfigurator.spec.mjs:197:18
+
+    Error Context: ../cache/test-results/funktion-konfigurator-Flie-5b6a2-kein-Versand-an-api-anfrage-desktop/error-context.md
+
+  22) [desktop] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [33m@@ -8,8 +8,8 @@[39m
+    [2m    "privacyConsent": true,[22m
+    [2m    "projectType": "termin",[22m
+    [2m    "terminDetails": Object {[22m
+    [2m      "preferredDate": "2026-10-13",[22m
+    [2m      "serviceType": "Kostenfreies Vor-Ort-Aufmaß & Beratung",[22m
+    [32m-     "timeSlot": "15:00",[39m
+    [31m+     "timeSlot": "2026-10-13",[39m
+    [2m    },[22m
+    [2m  }[22m
+
+      89 |       await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      90 |       expect(anfragen).toHaveLength(1);
+    > 91 |       expect(anfragen[0]).toMatchObject({
+         |                           ^
+      92 |         inquiryType: 'termin',
+      93 |         projectType: 'termin',
+      94 |         terminDetails: { preferredDate: iso, timeSlot: zeit, serviceType },
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:91:27
+
+    Error Context: ../cache/test-results/funktion-termin-BookingCal-31532-ge-raus-Erfolg-mit-Referenz-desktop/error-context.md
+
+  23) [desktop] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [33m@@ -8,8 +8,8 @@[39m
+    [2m    "privacyConsent": true,[22m
+    [2m    "projectType": "termin",[22m
+    [2m    "terminDetails": Object {[22m
+    [2m      "preferredDate": "2026-10-13",[22m
+    [2m      "serviceType": "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse",[22m
+    [32m-     "timeSlot": "15:00",[39m
+    [31m+     "timeSlot": "2026-10-13",[39m
+    [2m    },[22m
+    [2m  }[22m
+
+      89 |       await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      90 |       expect(anfragen).toHaveLength(1);
+    > 91 |       expect(anfragen[0]).toMatchObject({
+         |                           ^
+      92 |         inquiryType: 'termin',
+      93 |         projectType: 'termin',
+      94 |         terminDetails: { preferredDate: iso, timeSlot: zeit, serviceType },
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:91:27
+
+    Error Context: ../cache/test-results/funktion-termin-BookingCal-dca65-ge-raus-Erfolg-mit-Referenz-desktop/error-context.md
+
+  24) [desktop] › tests/funktion-termin.spec.mjs:152:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [33m@@ -11,8 +11,8 @@[39m
+    [2m    "projectType": "termin",[22m
+    [2m    "terminDetails": Object {[22m
+    [2m      "date": "2026-10-18",[22m
+    [2m      "formattedDate": "18.10.2026",[22m
+    [2m      "timeSlot": "nachmittags",[22m
+    [32m-     "topic": "grossformate",[39m
+    [31m+     "topic": "nachmittags",[39m
+    [2m    },[22m
+    [2m  }[22m
+
+      166 |     await expect(page.getByText('TEZ-26-TEST')).toBeVisible();
+      167 |     expect(anfragen).toHaveLength(1);
+    > 168 |     expect(anfragen[0]).toMatchObject({
+          |                         ^
+      169 |       inquiryType: 'termin',
+      170 |       projectType: 'termin',
+      171 |       contact: { name: 'Prüf Person', phone: '0170 0000000', email: 'pruef@beispiel.de', zipCity: '35614 Aßlar', location: '35614 Aßlar' },
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-termin.spec.mjs:168:25
+
+    Error Context: ../cache/test-results/funktion-termin-Termin-For-b975c-ht-raus-Erfolg-mit-Referenz-desktop/error-context.md
+
+  24 failed
+    [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²) 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²) 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²) 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²) 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²) 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²) 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²) 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:156:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz 
+    [mobil] › tests/funktion-konfigurator.spec.mjs:189:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage 
+    [mobil] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+    [mobil] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+    [mobil] › tests/funktion-termin.spec.mjs:152:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²) 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²) 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²) 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²) 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²) 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²) 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:117:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²) 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:156:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz 
+    [desktop] › tests/funktion-konfigurator.spec.mjs:189:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage 
+    [desktop] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+    [desktop] › tests/funktion-termin.spec.mjs:81:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz 
+    [desktop] › tests/funktion-termin.spec.mjs:152:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz 
+  4 skipped
+  48 passed (4.7m)

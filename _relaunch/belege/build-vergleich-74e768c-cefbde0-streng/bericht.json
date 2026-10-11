@@ -1,0 +1,152 @@
+{
+ "vorher": "74e768c",
+ "nachher": "cefbde0",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html",
+   "referenzen/project-007.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 21,
+ "abweichungen": [
+  {
+   "datei": "bad/bad-aus-einer-hand.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/badanfrage.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/badplaner.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/badsanierung.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/barrierefreies-bad.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/fliesen.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-15_9.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-4_6.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-7.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-8_2.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-15_9.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-4_6.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-7.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-8_2.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-15_9.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-4_6.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-7.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-8_2.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/2v8py7qbbtcx1.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/3pwqir39_4dkb.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad/projekt-check.html",
+   "ab": 1858,
+   "vorher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/07o-vl9mqp6qr.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/06c3vkkzwigb2.js\" async=\"\"></script><script src=\"/_next/static/chunks/42pdnvbte_e80.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "bad.html",
+   "ab": 1998,
+   "vorher": "ic/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/_next/static/chunks/3do_1imffdn95.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light",
+   "nachher": "ic/chunks/2pj_y7v8ppuqf.js\" async=\"\"></script><script src=\"/_next/static/chunks/07tsxupj_09b4.js\" async=\"\"></script><meta name=\"theme-color\" content=\"#FFFFFF\"/><meta name=\"color-scheme\" content=\"light"
+  },
+  {
+   "datei": "index.html",
+   "ab": 1038,
+   "vorher": ".webp&amp;w=384&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/16zejdze4gurq.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunk",
+   "nachher": ".webp&amp;w=384&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/25fcx12zticjm.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunk"
+  }
+ ],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": [
+  ".accent-k-tinte{accent-color:var(--color-k-tinte)",
+  ".h-k-2{height:var(--spacing-k-2)"
+ ]
+}

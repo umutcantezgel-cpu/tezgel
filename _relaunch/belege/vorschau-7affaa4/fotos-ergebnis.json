@@ -1,0 +1,106 @@
+{
+ "satz": "vorschau-7affaa4",
+ "base": "http://127.0.0.1:4320",
+ "einwilligung": "abgelehnt",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/p4-01",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 26955,
+   "blockiert": []
+  },
+  {
+   "seite": "/p4-01",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 42047,
+   "blockiert": []
+  },
+  {
+   "seite": "/p4-02",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 31041,
+   "blockiert": []
+  },
+  {
+   "seite": "/p4-02",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 48608,
+   "blockiert": []
+  },
+  {
+   "seite": "/p4-05a",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 34138,
+   "blockiert": []
+  },
+  {
+   "seite": "/p4-05a",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 58140,
+   "blockiert": []
+  },
+  {
+   "seite": "/p4-05c",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 19515,
+   "blockiert": []
+  },
+  {
+   "seite": "/p4-05c",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 40722,
+   "blockiert": []
+  }
+ ]
+}

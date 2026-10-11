@@ -1,0 +1,32 @@
+{
+ "vorher": "74e768c",
+ "nachher": "cefbde0",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html",
+   "referenzen/project-007.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 1,
+ "abweichungen": [
+  {
+   "datei": "index.html",
+   "ab": 16451,
+   "vorher": " 0 1 1-4.95 0Z\"></path></symbol></svg><svg viewBox=\"0 0 24 24\" focusable=\"false\" data-marke=\"whatsapp\"><symbol id=\"k-icon-whatsapp\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M17.472 14.382c-.29",
+   "nachher": " 0 1 1-4.95 0Z\"></path></symbol></svg><svg viewBox=\"0 0 24 24\" focusable=\"false\"><symbol id=\"k-icon-dusche\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"squ"
+  }
+ ],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": [
+  ".accent-k-tinte",
+  ".h-k-2"
+ ]
+}

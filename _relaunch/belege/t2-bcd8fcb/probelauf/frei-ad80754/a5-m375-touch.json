@@ -1,0 +1,580 @@
+{
+ "satz": "p3-16",
+ "base": "http://127.0.0.1:4326",
+ "bedingungen": {
+  "ansicht": "m375",
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "isMobile": true,
+  "hasTouch": true,
+  "dpr": 1,
+  "eingabe": "touch",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T02:00:42.136Z",
+ "lauf": "a5-m375-touch",
+ "aufgabe": 5,
+ "titel": "Ablauf, Förderung und Planung verstehen",
+ "auftrag": "Finden Sie heraus, wie der Ablauf einer Badsanierung ist und ob es Förderung gibt.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p3-16/a5-m375-touch.json",
+ "antwort": "Ablauf: „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“ (Beratung & Aufmaß bis Endreinigung & Abnahme), Förderung: ja, Pflegekassen-Zuschuss bis 4.180 € (Seite „Förderung & Zuschüsse für Ihr barrierefreies Bad“).",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "gering",
+   "schritt": 5,
+   "text": "Im geöffneten Menü liegt das Einwilligungs-Sheet über dem Menüpunkt „Ratgeber“ (Wissen, Förderung, Referenzen); das Antippen scheiterte am Banner, erst „Alle ablehnen“ gab den Punkt frei (Bild 05-fehler.jpg)."
+  },
+  {
+   "schwere": "mittel",
+   "schritt": 3,
+   "text": "Die Überblicksseite „Badsanierung im Überblick“ zeigt die Überschrift „Ihr Badprojekt in vier Schritten beschreiben“ (Projektanfrage), der Ablauf „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“ liegt erst auf „Badsanierung komplett“; zwei Schritt-Überschriften für Verschiedenes, Umweg von 2 Seiten (Textauszug 03-aria.txt, Bild 03-tippe.jpg)."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 33,
+    "aria": 146,
+    "ausschnitt": 19,
+    "bedien": 27
+   },
+   "dauer_ms": 1938
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Architektur-Menü öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Architektur-Menü öffnen\" · header",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\"",
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 23,
+    "aria": 164,
+    "ausschnitt": 16,
+    "bedien": 22
+   },
+   "dauer_ms": 755
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Schlüsselfertige Bäder"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Badsanierung Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen DIN 18534\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\"",
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 23,
+    "aria": 118,
+    "ausschnitt": 13,
+    "bedien": 16
+   },
+   "dauer_ms": 711
+  },
+  {
+   "nr": 3,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle Leistungen rund ums neue Bad"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Badsanierung im Überblick Alle Leistungen rund ums neue Bad\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 3,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-tippe.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 36,
+    "aria": 69,
+    "ausschnitt": 8,
+    "bedien": 13
+   },
+   "dauer_ms": 1785
+  },
+  {
+   "nr": 4,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Architektur-Menü öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Architektur-Menü öffnen\" · header",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\"",
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "04-tippe.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 46,
+    "aria": 64,
+    "ausschnitt": 12,
+    "bedien": 30
+   },
+   "dauer_ms": 1040
+  },
+  {
+   "nr": 5,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle ablehnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Alle ablehnen\" · dialog „Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 5,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "05-tippe.jpg",
+    "aria": "05-aria.txt",
+    "sichtbar": "05-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 37,
+    "aria": 56,
+    "ausschnitt": 5,
+    "bedien": 15
+   },
+   "dauer_ms": 486
+  },
+  {
+   "nr": 6,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Wissen, Förderung, Referenzen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Ratgeber Wissen, Förderung, Referenzen & Service\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 2,
+   "bildlauf_implizit": 1,
+   "summe": 7,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Ziel lag außerhalb des Bildes – 1 Bildlauf-Handlung(en) gezählt"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "06-tippe.jpg",
+    "aria": "06-aria.txt",
+    "sichtbar": "06-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 40,
+    "aria": 54,
+    "ausschnitt": 8,
+    "bedien": 17
+   },
+   "dauer_ms": 802
+  },
+  {
+   "nr": 7,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Zuschüsse für barrierefreie Bäder"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Förderung Zuschüsse für barrierefreie Bäder\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 8,
+   "url": "/foerderung",
+   "h1": "Förderung & Zuschüsse für Ihr barrierefreies Bad",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "07-tippe.jpg",
+    "aria": "07-aria.txt",
+    "sichtbar": "07-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 26,
+    "aria": 39,
+    "ausschnitt": 6,
+    "bedien": 11
+   },
+   "dauer_ms": 549
+  },
+  {
+   "nr": 8,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Architektur-Menü öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Architektur-Menü öffnen\" · header",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 9,
+   "url": "/foerderung",
+   "h1": "Förderung & Zuschüsse für Ihr barrierefreies Bad",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "08-tippe.jpg",
+    "aria": "08-aria.txt",
+    "sichtbar": "08-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 51,
+    "aria": 45,
+    "ausschnitt": 6,
+    "bedien": 12
+   },
+   "dauer_ms": 531
+  },
+  {
+   "nr": 9,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "oben"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 10,
+   "url": "/foerderung",
+   "h1": "Förderung & Zuschüsse für Ihr barrierefreies Bad",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf 0 px (Seite bewegte sich nicht – Anfang/Ende erreicht)"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "09-scrolle.jpg",
+    "aria": "09-aria.txt",
+    "sichtbar": "09-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 40,
+    "aria": 43,
+    "ausschnitt": 9,
+    "bedien": 19
+   },
+   "dauer_ms": 596
+  },
+  {
+   "nr": 10,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Schlüsselfertige Bäder"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Badsanierung DIN 18534 Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 11,
+   "url": "/foerderung",
+   "h1": "Förderung & Zuschüsse für Ihr barrierefreies Bad",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "10-tippe.jpg",
+    "aria": "10-aria.txt",
+    "sichtbar": "10-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 38,
+    "aria": 52,
+    "ausschnitt": 6,
+    "bedien": 15
+   },
+   "dauer_ms": 967
+  },
+  {
+   "nr": 11,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Von der Demontage bis zur fertigen Fuge"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Badsanierung komplett Von der Demontage bis zur fertigen Fuge\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 12,
+   "url": "/bad/badsanierung",
+   "h1": "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "11-tippe.jpg",
+    "aria": "11-aria.txt",
+    "sichtbar": "11-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 52,
+    "aria": 29,
+    "ausschnitt": 12,
+    "bedien": 11
+   },
+   "dauer_ms": 560
+  },
+  {
+   "nr": 12,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "unten"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 13,
+   "url": "/bad/badsanierung",
+   "h1": "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis",
+   "scrollY": 690,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf 690 px"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "12-scrolle.jpg",
+    "aria": "12-aria.txt",
+    "sichtbar": "12-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 20,
+    "aria": 23,
+    "ausschnitt": 5,
+    "bedien": 10
+   },
+   "dauer_ms": 525
+  }
+ ],
+ "handlungen_gesamt": 13,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 12,
+  "handlungen_bis_ziel": 13,
+  "bedingungen": [
+   {
+    "name": "Ablauf (Arbeitsschritte) war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 12,
+    "treffer": "Überschrift „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“"
+   },
+   {
+    "name": "Förderung war im Bild (als Überschrift)",
+    "erfuellt": true,
+    "bei_schritt": 7,
+    "treffer": "Überschrift „Förderung & Zuschüsse für Ihr barrierefreies Bad“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

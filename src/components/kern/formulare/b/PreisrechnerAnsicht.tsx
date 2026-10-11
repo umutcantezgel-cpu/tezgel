@@ -3,8 +3,10 @@
 // Ansicht des Preisrechners (F-02, P3-13b, KERN v1.2) ohne eigene Logik: bekommt das Ergebnis von `usePreisrechner`
 // (Bestand und Kern nutzen denselben Hook, G9). So kann die Vorschau einen Zustand setzen, ohne zu senden.
 // Struktur (K-003 „Fuge statt Karte“): Feldraster aus zwei Feldern ohne Zwischenraum, getrennt durch 1-px-Fugen –
-// links die Situation (Gewerk, Fläche, Vorarbeiten, Freitext; wie im Bestand außerhalb des Formulars),
-// rechts Zusammenfassung und Kontaktformular bzw. die Erfolgsmeldung. Mobil eine Spalte.
+// zuerst die Situation (Gewerk, Fläche, Vorarbeiten, Freitext; wie im Bestand außerhalb des Formulars),
+// darunter Zusammenfassung und Kontaktformular bzw. die Erfolgsmeldung. Auf jeder Breite untereinander (P3-16a):
+// Nebeneinander sprang die Tab-Folge vom Freitext unten links zurück nach oben rechts (WCAG 2.4.3, E-018).
+// Ab md stehen Kontaktfelder und Zusammenfassung zweispaltig, damit das Formular in voller Breite ruhig bleibt.
 // Projektart und Fläche als Auswahlknöpfe im Raster (Radios, Pfeiltasten), Vorarbeiten als Ankreuzfelder.
 // Wortlaut, IDs, name, type und autocomplete wie `src/components/pricing/PricingCalculator.tsx`;
 // geändert nur nach MIKROTEXTE.md: Ladetext „Wird gesendet …“ (SendeKnopf), Erfolg mit vorangestelltem „Notiert.“.
@@ -82,9 +84,9 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
   useFokusBeiWechsel(ansicht, fokusZiel);
 
   return (
-    <div className="grid grid-cols-1 border-l border-t border-k-fuge lg:grid-cols-12">
+    <div className="grid grid-cols-1 border-l border-t border-k-fuge">
       {/* ── Situation: Gewerk, Fläche, Vorarbeiten, Freitext ── */}
-      <div className="flex min-w-0 flex-col gap-k-7 border-r border-b border-k-fuge p-k-5 lg:col-span-7 lg:p-k-6">
+      <div className="flex min-w-0 flex-col gap-k-7 border-r border-b border-k-fuge p-k-5 lg:p-k-6">
         <ol className="grid grid-cols-3 border-l border-t border-k-fuge">
           {PHASEN.map((phase) => (
             <li key={phase.nr} className="flex min-w-0 items-baseline gap-k-2 border-r border-b border-k-fuge px-k-3 py-k-2">
@@ -174,7 +176,7 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
       </div>
 
       {/* ── Zusammenfassung & Kontakt ── */}
-      <div className="flex min-w-0 flex-col border-r border-b border-k-fuge bg-k-fliese p-k-5 lg:col-span-5 lg:p-k-6">
+      <div className="flex min-w-0 flex-col border-r border-b border-k-fuge bg-k-fliese p-k-5 lg:p-k-6">
         {status === 'success' ? (
           <div
             ref={(el) => {
@@ -218,7 +220,7 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
               >
                 Unverbindliche Projektanfrage
               </p>
-              <p className="k-text text-k-2 text-k-tinte-2">
+              <p className="max-w-(--k-mass) k-text text-k-2 text-k-tinte-2">
                 Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Bauvorhaben ist einzigartig.
                 Beschreiben Sie Ihr Vorhaben – wir melden uns für ein kostenfreies Vor-Ort-Aufmaß
                 und Ihr verlässliches Festpreisangebot.
@@ -226,7 +228,7 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
             </div>
 
             {/* Projekt-Zusammenfassung: Tabelle mit Fugen */}
-            <dl className="border-l border-t border-k-fuge k-text text-k-2">
+            <dl className="border-l border-t border-k-fuge k-text text-k-2 md:grid md:grid-cols-2">
               {[
                 { begriff: 'Gewerk:', wert: selectedService.title, mono: false },
                 { begriff: 'Fläche:', wert: customArea.trim() ? `${customArea.trim()} m²` : selectedSize.areaText, mono: true },
@@ -257,7 +259,7 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
               autoComplete="off"
             />
 
-            <div className="grid grid-cols-1 gap-k-5 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <div className="grid grid-cols-1 gap-k-5 md:grid-cols-2">
               <Feld
                 id="calc-name"
                 name="name"
@@ -268,7 +270,7 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
                 placeholder="Vor- und Nachname"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="md:col-span-2 lg:col-span-1 xl:col-span-2"
+                className="md:col-span-2"
               />
               <Feld
                 id="calc-phone"
@@ -318,7 +320,7 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
             </div>
 
             {/* Datenschutz-Einwilligung: startet leer (E-014), Wortlaut unverändert */}
-            <Ankreuzfeld id="calc-privacy" name="privacyAccepted" checked={privacyAccepted} onChange={(e) => setPrivacyAccepted(e.target.checked)}>
+            <Ankreuzfeld id="calc-privacy" name="privacyAccepted" checked={privacyAccepted} onChange={(e) => setPrivacyAccepted(e.target.checked)} className="max-w-(--k-mass)">
               <span className="text-k-2">
                 Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner
                 Anfrage verarbeitet werden.
@@ -328,7 +330,7 @@ export default function PreisrechnerAnsicht({ rechner }: { rechner: Preisrechner
             {/* Fehler direkt über dem Knopf: Versatz-Zeichen + Text, role="alert" */}
             {errorMessage ? <Hinweis art="fehler">{errorMessage}</Hinweis> : null}
 
-            <div className="flex flex-col gap-k-4 border-t border-k-fuge pt-k-5">
+            <div className="flex flex-col gap-k-4 border-t border-k-fuge pt-k-5 md:grid md:grid-cols-2 md:items-end md:gap-k-5">
               <SendeKnopf sendet={status === 'submitting'} breit groesse="gross" hinten={<Icon name="pfeil" groesse={20} />}>
                 Unverbindliche Anfrage absenden
               </SendeKnopf>

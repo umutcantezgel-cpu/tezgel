@@ -1,0 +1,1603 @@
+{
+ "satz": "t2-b341543",
+ "base": "http://127.0.0.1:4323",
+ "kandidat": "http://127.0.0.1:4332",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 10 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4323, B = Kandidat http://127.0.0.1:4332) im selben Messfenster",
+ "erstellt": "2026-10-11T03:55:26.320Z",
+ "laeufe": 10,
+ "seiten": {
+  "/": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 85,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4214,
+      "cls": 0,
+      "tbt": 148,
+      "fcp": 1360,
+      "si": 1360,
+      "js_kb": 416,
+      "font_kb": 77,
+      "gesamt_kb": 632,
+      "benchmark": 2372,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+       "rechteck": {
+        "top": 368,
+        "left": 16,
+        "width": 380,
+        "height": 156
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 10,
+       "elementRenderDelay": 237
+      },
+      "streuung_perf": [
+       83,
+       88
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 83,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4226.175499999999,
+       "cls": 0,
+       "tbt": 203.7648999999999,
+       "fcp": 1360.4701999999997,
+       "si": 1360.4701999999997,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2331,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 304
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4223.49,
+       "cls": 0,
+       "tbt": 131.9999999999991,
+       "fcp": 1359.396,
+       "si": 1359.396,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2441,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 239
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4150.28,
+       "cls": 0,
+       "tbt": 118.5,
+       "fcp": 1360.112,
+       "si": 1360.112,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2455.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 256
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4148.245,
+       "cls": 0,
+       "tbt": 130.99999999999955,
+       "fcp": 1359.2979999999998,
+       "si": 1359.2979999999998,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2217,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 227
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3748.005,
+       "cls": 0,
+       "tbt": 164,
+       "fcp": 1362.402,
+       "si": 1362.402,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2276,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 83,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4214.312,
+       "cls": 0,
+       "tbt": 202,
+       "fcp": 1362.1040000000003,
+       "si": 1362.1040000000003,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2181.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 9,
+        "elementRenderDelay": 243
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4231.205,
+       "cls": 0,
+       "tbt": 134,
+       "fcp": 1362.482,
+       "si": 1362.482,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2372,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 220
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3764.9400000000005,
+       "cls": 0,
+       "tbt": 130.5,
+       "fcp": 1356.64,
+       "si": 1356.64,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2531,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 214
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4221.5650000000005,
+       "cls": 0,
+       "tbt": 151,
+       "fcp": 1358.6260000000002,
+       "si": 1358.6260000000002,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2443,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4189.638000000001,
+       "cls": 0,
+       "tbt": 148.00000000000045,
+       "fcp": 1358.0460000000003,
+       "si": 1358.0460000000003,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2290,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 226
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 87,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3877,
+      "cls": 0,
+      "tbt": 226,
+      "fcp": 1062,
+      "si": 1521,
+      "js_kb": 451,
+      "font_kb": 182,
+      "gesamt_kb": 818,
+      "benchmark": 2346,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+       "rechteck": {
+        "top": 368,
+        "left": 32,
+        "width": 364,
+        "height": 213
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 169
+      },
+      "streuung_perf": [
+       83,
+       90
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3460.8971,
+       "cls": 0,
+       "tbt": 233.27572499999997,
+       "fcp": 1060.8971,
+       "si": 1224.8794902914308,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2346,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 124
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3907.191999999999,
+       "cls": 0,
+       "tbt": 236.5,
+       "fcp": 1063.128,
+       "si": 1534.9724474384634,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2334.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 169
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3464.885,
+       "cls": 0,
+       "tbt": 226,
+       "fcp": 1065.4425,
+       "si": 1352.8979546526648,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2310,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 177
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3901.5465,
+       "cls": 0,
+       "tbt": 193.98450000000003,
+       "fcp": 1060.031,
+       "si": 1412.596804391911,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2372.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 170
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 83,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3912.7604999999994,
+       "cls": 0,
+       "tbt": 238.5000000000009,
+       "fcp": 1069.2535,
+       "si": 1523.2030545343391,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2372,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 190
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3464.505,
+       "cls": 0,
+       "tbt": 134.74749999999995,
+       "fcp": 1064.505,
+       "si": 1520.584529683332,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2344,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 150
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3461.7650000000003,
+       "cls": 0,
+       "tbt": 203,
+       "fcp": 1061.765,
+       "si": 1666.7749198881302,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2368,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 150
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3877.428,
+       "cls": 0,
+       "tbt": 192.01199999999972,
+       "fcp": 1061.9520000000002,
+       "si": 1482.7462591274598,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2422,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 168
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3461.008,
+       "cls": 0,
+       "tbt": 201.4960000000001,
+       "fcp": 1061.0079999999998,
+       "si": 1438.8268438136529,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2302.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 151
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3907.2535,
+       "cls": 0,
+       "tbt": 234.5,
+       "fcp": 1059.1689999999999,
+       "si": 1536.48362697969,
+       "js_kb": 451,
+       "font_kb": 182,
+       "gesamt_kb": 818,
+       "benchmark": 2338,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 173
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 2,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -337,
+     "cls": 0,
+     "tbt": 78,
+     "fcp": -298,
+     "si": 161,
+     "js_kb": 35,
+     "font_kb": 105,
+     "gesamt_kb": 186,
+     "benchmark": -26,
+     "lcp_relativ": -0.08
+    },
+    "lcp_element_gleich": false,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 2 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "innerhalb der Streuung oder besser"
+   },
+   "desktop": {
+    "basis": {
+     "median": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 819,
+      "cls": 0,
+      "tbt": 4,
+      "fcp": 375,
+      "si": 401,
+      "js_kb": 649,
+      "font_kb": 77,
+      "gesamt_kb": 921,
+      "benchmark": 2408,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+       "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+       "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+       "rechteck": {
+        "top": 200,
+        "left": 60,
+        "width": 689,
+        "height": 218
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 10,
+       "elementRenderDelay": 284
+      },
+      "streuung_perf": [
+       99,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 820.955,
+       "cls": 0,
+       "tbt": 1.5,
+       "fcp": 366.985,
+       "si": 401.116192415848,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2408,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 9,
+        "elementRenderDelay": 295
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 819.1639999999998,
+       "cls": 0,
+       "tbt": 2,
+       "fcp": 376.388,
+       "si": 424.82553333428007,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2399.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 318
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 819.2610000000001,
+       "cls": 0,
+       "tbt": 4,
+       "fcp": 378.004,
+       "si": 401.8127954159238,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2446.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 284
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 813.185,
+       "cls": 0.009103415733918544,
+       "tbt": 5.5,
+       "fcp": 375.274,
+       "si": 375.274,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2288,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 9,
+        "elementRenderDelay": 218
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 99,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 835.2980000000002,
+       "cls": 0,
+       "tbt": 14,
+       "fcp": 366.766,
+       "si": 402.9891911668541,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2369,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 297
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 815.2850000000001,
+       "cls": 0,
+       "tbt": 6,
+       "fcp": 376.114,
+       "si": 379.3819034154247,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2374.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 241
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 814.4375,
+       "cls": 0,
+       "tbt": 0.5,
+       "fcp": 365.25,
+       "si": 368.2591395007074,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2512,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 235
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 816.314,
+       "cls": 0,
+       "tbt": 13,
+       "fcp": 365.438,
+       "si": 438.21996049878226,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2352.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 344
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 99,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 828.0747500000001,
+       "cls": 0,
+       "tbt": 1.5,
+       "fcp": 370.20900000000006,
+       "si": 378.27667700009897,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2446.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 251
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 786.136,
+       "cls": 0,
+       "tbt": 3.5,
+       "fcp": 378.712,
+       "si": 378.712,
+       "js_kb": 649,
+       "font_kb": 77,
+       "gesamt_kb": 921,
+       "benchmark": 2476.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl",
+        "text": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+        "snippet": "<h1 class=\"text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tigh…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,1,H1",
+        "rechteck": {
+         "top": 200,
+         "left": 60,
+         "width": 689,
+         "height": 218
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 236
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 787,
+      "cls": 0,
+      "tbt": 11,
+      "fcp": 290,
+      "si": 441,
+      "js_kb": 664,
+      "font_kb": 182,
+      "gesamt_kb": 1063,
+      "benchmark": 2406.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+       "text": "Perfektion auf jedem Quadrat­meter.",
+       "snippet": "<span class=\"block\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+       "rechteck": {
+        "top": 138,
+        "left": 60,
+        "width": 576,
+        "height": 291
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 195
+      },
+      "streuung_perf": [
+       100,
+       100
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 786.6079999999998,
+       "cls": 0,
+       "tbt": 13.5,
+       "fcp": 290.402,
+       "si": 440.85964358626285,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2406.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 778.01,
+       "cls": 0,
+       "tbt": 11,
+       "fcp": 298.505,
+       "si": 401.7784567509634,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2392,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 790.1880000000003,
+       "cls": 0,
+       "tbt": 8,
+       "fcp": 291.53600000000006,
+       "si": 429.9918331169821,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2351.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 189
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 787.14325,
+       "cls": 0,
+       "tbt": 9.5,
+       "fcp": 288.939,
+       "si": 464.5477042686531,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2334,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 143
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 792.864,
+       "cls": 0,
+       "tbt": 18,
+       "fcp": 292.432,
+       "si": 469.68008122979427,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2315,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 169
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 778.556,
+       "cls": 0,
+       "tbt": 25,
+       "fcp": 289.778,
+       "si": 441.7438062947597,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2474,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 800.6589999999999,
+       "cls": 0,
+       "tbt": 6.5,
+       "fcp": 290.948,
+       "si": 449.9408566929493,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2358,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 783.7859999999998,
+       "cls": 0,
+       "tbt": 14.5,
+       "fcp": 289.592,
+       "si": 432.88067916827487,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2416.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 184
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 791.9442499999999,
+       "cls": 0,
+       "tbt": 8.5,
+       "fcp": 287.5555,
+       "si": 434.41078381359034,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2536.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 195
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 100,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 781.82425,
+       "cls": 0,
+       "tbt": 10,
+       "fcp": 288.471,
+       "si": 422.55681543229366,
+       "js_kb": 664,
+       "font_kb": 182,
+       "gesamt_kb": 1063,
+       "benchmark": 2504,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > h1#k-einstieg-b_S_1_ > span.block",
+        "text": "Perfektion auf jedem Quadrat­meter.",
+        "snippet": "<span class=\"block\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,2,H1,0,SPAN",
+        "rechteck": {
+         "top": 138,
+         "left": 60,
+         "width": 576,
+         "height": 291
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 182
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -32,
+     "cls": 0,
+     "tbt": 7,
+     "fcp": -85,
+     "si": 40,
+     "js_kb": 15,
+     "font_kb": 105,
+     "gesamt_kb": 142,
+     "benchmark": -1.5,
+     "lcp_relativ": -0.039
+    },
+    "lcp_element_gleich": false,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 1.53,
+  "last_1min_start": 1.53,
+  "last_1min_ende": 1.65
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}

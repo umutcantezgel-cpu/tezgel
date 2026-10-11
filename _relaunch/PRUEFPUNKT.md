@@ -1,10 +1,8 @@
 # PRUEFPUNKT
 
-- Lauf: 1 (angepasst, E-000) · Phase: P3 (Durchstich `/`, ruhend) · L0 abgeschlossen
-- Letzter grüner Commit live: 57470f8 (P3-00l Formular-Hooks; T2 grün, Live-Rauchtest + Live-Browser grün)
-- Lokal, noch nicht gepusht: 70a77a8 P3-00p (Hooks F-10/F-11 – braucht T2), af2cf20 P3-04, 8f6f470 P3-03, 7dbfb18 P3-11, 6d1539c (Sprite im Kern-Layout, Staffel-Regel, Alt-Text) – Kern-Teile ruhend (T1 streng)
-- Laufende Pakete: P3-03b (Zeichen an Icon-Familie, enter-sicherer SendeKnopf), P3-06a/b (Kopf-Varianten), P3-07 (Fuß, Leiste, WhatsApp-Kanal), P3-08 (Banner, Karten-Platzhalter)
-- Server: 4310 Ausgangsstand 707a93d · 4311 a32b6de · 4312 56fd0dd (= Live-Quelltext) · 4320 Vorschau 444298e-v
-- Nächster exakter Schritt: Reinraum 6d1539c + `build-vergleich 56fd0dd 6d1539c --streng` (läuft) → T2 P3-00p: volle Suite, Mutationsprobe (W1 Kontexttext /bad, W2 Entprellung 0, B1 Ablehnen→Annehmen, B2 Hash, B3 Auswahl vertauscht), Gegenprüfer P3-00p-GEG, Pixel-Stichprobe Banner Erstbesuch → Push nur auf main (E-005: kein Vorab-Push auf den Sitzungs-Branch) → Live-Rauchtest + Live-Browser. Danach Vorschau-Kandidat (p3-03, p3-04, p3-05, p3-11, später p3-06-a/b, p3-07, p3-08) fotografieren und prüfen.
-- Offen danach: Basis-Matrix Probeläufer (15 Läufe), Fünf-Sekunden-Probe, Slop-Stichprobe Vorlagen, INP-Basis im ruhigen Fenster (`node inp.mjs --satz p0-ausgangsstand --seiten /,/kontakt,/blog --ansichten m375`).
-- Ruhender Code auf main: `src/app/fonts/`, `src/styles/kern*.css`, `src/lib/motion/`, `src/lib/kern/`, `src/components/kern/`, `src/app/(kern)/` (nur Layout + `_entwurf`).
+- Lauf: 1 (angepasst, E-000) · Phase: P4 (Fundament, ruhend) · P3 abgeschlossen
+- Live auf main: 8b4f9cd (P4-07 Wege, P4-04 Sprite, P4-05a/b/c/d Hooks + Kalender-Fix, P4-09 Zuklappen, Fuß-Sockel; ruhend P4-01/02/03/10a/10b). Server: 4334 = 35c0883, 4335 = 4bd371f (≈ Live-Produkt), 4320 = Vorschau a361e9c-v (veraltet).
+- Tests: `KERN_SEITEN = ['/']` in `tests/fixtures.mjs` entspricht jetzt dem Live-Stand; Läufe gegen 4310/4323 mit `RELAUNCH_FASSUNG=bestand`.
+- Laufend: P4-08a /bad, P4-08b /leistungen, P4-08c /standorte, P4-08d /blog (+ Hook F-16, braucht T2), P4-08e /ueber-uns (Opus, Hintergrund, seit ≈ 10:00 CEST). Live-Prüfung 8b4f9cd grün.
+- Nächster exakter Schritt: Je Rückgabe prüfen und committen (ruhend; P4-08d mit Gegenprüfer + T2). Sobald ein Platz frei ist: P4-08f /kontakt, danach P4-06 (Briefing liegt). SIG-2-Regel aus P4-08a in `kern.css` eintragen. Dann Vorschau-Kandidat `VORSCHAU="bad leistungen standorte blog ueber-uns kontakt"`: texte2, SEO-Invarianten, axe, a11y-zusatz, Wortbruch, Überlauf, Fotos → P4-Tor (T3: Z-05, Z-11, Z-13 + Probeläufer, Fünf-Sekunden, Gegenprüfer, Mutationsprobe). Offen aus P4-10a: Einstieg der Fachseiten mit Plan ohne Rot (K-003).
+- Offene Abweichungen: ABNAHME „Offene Abweichungen“ (Z-04 Tastatur, Z-12 TBT).

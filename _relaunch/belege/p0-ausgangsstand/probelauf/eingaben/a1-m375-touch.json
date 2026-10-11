@@ -1,0 +1,14 @@
+{
+ "aufgabe": 1, "start": "/", "ansicht": "m375", "eingabe": "touch",
+ "antwort": "Gefunden: „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss“ (/bad/barrierefreies-bad) – über das Menü „Badsanierung“ und „Barrierefreies Bad“.",
+ "befunde": [
+  {"schwere": "gering", "schritt": 1, "text": "Der Einwilligungsbanner liegt über dem geöffneten Mobilmenü; die Menüpunkte sind erst nach „Alle ablehnen“ lesbar (1 Handlung, zählt). Bild 01-tippe.jpg."},
+  {"schwere": "gering", "schritt": 4, "text": "Auf der Leistungsseite verdeckt die Chat-Blase das Zeilenende „bis zu“ im Vorspann teilweise. Bild 04-tippe.jpg."}
+ ],
+ "schritte": [
+  {"tippe": "Architektur-Menü öffnen"},
+  {"tippe": "Alle ablehnen"},
+  {"tippe": "Badsanierung DIN 18534"},
+  {"tippe": "Barrierefreies Bad Bodengleiche Walk-In-Duschen nach DIN 18040"}
+ ]
+}

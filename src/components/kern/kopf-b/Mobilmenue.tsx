@@ -1,20 +1,20 @@
 'use client';
 
-// Mobilmenü unter lg (Variante B „Achse“, F-13, V-06). Der Schalter öffnet das Blatt als natives Popover
+// Mobilmenü unter xl (Variante B „Achse“, F-13, V-06). Der Schalter öffnet das Blatt als natives Popover
 // (`popovertarget` → `popover="auto"`, role="dialog" „Hauptnavigation“): Öffnen, Escape (Fokus zurück zum Schalter)
 // und Schließen per Tippen außerhalb leistet der Browser – auch bevor React geladen ist; der Zustand bleibt beim
 // Hydrieren stabil (das Skript liest ihn nur aus dem toggle-Ereignis bzw. `:popover-open`).
 // Das Blatt liegt unter dem Kopf (top = --k-kopf-hoehe, bis zum unteren Rand); der Schalter bleibt sichtbar und wird
 // zum Schließen-Zeichen. Client-JS ergänzt nur: aria-expanded und Zeichen, Scroll-Sperre, Fokus-Ring zwischen Schalter
-// und Blatt (Tab), Bereiche aufklappen (aria-expanded), Schließen beim Folgen eines Links, beim Pfadwechsel und ab lg,
+// und Blatt (Tab), Bereiche aufklappen (aria-expanded), Schließen beim Folgen eines Links, beim Pfadwechsel und ab xl,
 // Aufklappen über das Register (`aufklappen`; reduziert sofort).
 import { usePathname } from 'next/navigation';
-import { useEffect, useId, useRef, useState, type MouseEvent } from 'react';
+import { useCallback, useEffect, useId, useRef, useState, type MouseEvent } from 'react';
 import { fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import MobilBlatt from '@/components/kern/kopf-b/MobilBlatt';
 import {
-  AB_LG,
+  AB_XL,
   TEXT,
   aktiverBereich,
   aufklappenAb,
@@ -54,7 +54,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
     pfadRef.current = pfad;
   }, [pfad]);
 
-  // toggle-Ereignis → Zustand, Scroll-Sperre, Aufklappen; ab lg schließen.
+  // toggle-Ereignis → Zustand, Scroll-Sperre, Aufklappen; ab xl schließen.
   useEffect(() => {
     const b = blatt.current;
     if (!b) return undefined;
@@ -95,7 +95,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
       }
     });
 
-    const mq = window.matchMedia(AB_LG);
+    const mq = window.matchMedia(AB_XL);
     const breite = () => {
       if (mq.matches && istOffen(b)) b.hidePopover();
     };
@@ -143,18 +143,39 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
     if (istOffen(b)) b?.hidePopover();
   }, [pfad]);
 
-  const schliessen = () => {
+  // Rückrufe stabil halten: Das Blatt (memo) rendert beim Öffnen und Schließen nicht neu – nur der Schalter ändert sich
+  // (INP „Menü öffnen“ mobil, 4× Drosselung: vorher 248 ms, davon 159 ms Verarbeitung für das ganze Blatt).
+  const schliessen = useCallback(() => {
     const b = blatt.current;
     if (istOffen(b)) b?.hidePopover();
-  };
+  }, []);
 
-  const beiWhatsApp = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    openWhatsApp({ phone: kontakt.whatsappNummer });
-  };
+  // Ein aufgeklappter Bereich rückt an den oberen Blattrand, damit seine Links ohne Wischen im Bild stehen
+  // (Probelauf P3-16b: „Philosophie & Fachbetrieb“, „Alle 13 Standorte“ lagen unter dem Blattrand). Sofort, ohne Bewegung.
+  const umschalten = useCallback(
+    (i: number) => {
+      setBereich((o) => (o === i ? null : i));
+      // Nach dem Rendern: nur ein aufgeklappter (nicht mehr inerter) Bereich wird an den Rand geholt.
+      requestAnimationFrame(() => {
+        const bereichEl = document.getElementById(`${blattId}-bereich-${i}`);
+        const knopf = bereichEl?.previousElementSibling;
+        if (bereichEl && !bereichEl.inert && knopf instanceof HTMLElement) knopf.scrollIntoView({ block: 'start' });
+      });
+    },
+    [blattId],
+  );
+
+  const whatsappNummer = kontakt.whatsappNummer;
+  const beiWhatsApp = useCallback(
+    (e: MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      openWhatsApp({ phone: whatsappNummer });
+    },
+    [whatsappNummer],
+  );
 
   return (
-    <div className="ml-auto flex lg:hidden">
+    <div className="flex shrink-0 items-center border-l border-k-fuge pl-k-2 xl:hidden">
       <button
         ref={schalter}
         type="button"
@@ -165,6 +186,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
         data-motion="druck"
         className={verbinde(
           'flex size-k-7 cursor-pointer items-center justify-center rounded-k-0 text-k-tinte pointer-fine:hover:bg-k-fliese active:bg-k-fuge',
+          'forced-colors:border',
           fokus('hell'),
         )}
       >
@@ -176,7 +198,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
         popover="auto"
         role="dialog"
         aria-label={TEXT.dialog}
-        className="inset-x-0 top-(--k-kopf-hoehe) bottom-0 h-auto w-full overflow-y-auto overscroll-contain bg-k-kalk text-k-tinte lg:hidden"
+        className="inset-x-0 top-(--k-kopf-hoehe) bottom-0 h-auto w-full overflow-y-auto overscroll-contain bg-k-kalk text-k-tinte xl:hidden"
       >
         <div data-motion="aufklappen" data-offen="">
           <div>
@@ -187,7 +209,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
               pfad={pfad}
               offen={bereich}
               idPraefix={blattId}
-              umschalten={(i) => setBereich((o) => (o === i ? null : i))}
+              umschalten={umschalten}
               beimFolgen={schliessen}
               beiWhatsApp={beiWhatsApp}
             />

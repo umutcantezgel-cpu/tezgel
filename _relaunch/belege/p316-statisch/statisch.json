@@ -1,0 +1,3729 @@
+{
+ "satz": "p316-statisch",
+ "wurzel": "/home/user/tezgel",
+ "dateien": 373,
+ "familien": {
+  "lucide": 121,
+  "phosphor": 2,
+  "inline_svg_dateien": 14
+ },
+ "kurz": {
+  "S-05 Tailwind-Beliebigwert": {
+   "anzahl": 308,
+   "dateien": 100
+  },
+  "S-05 Hex-Farbe im Code": {
+   "anzahl": 49,
+   "dateien": 12
+  },
+  "S-05 rgb/rgba/hsl im Code": {
+   "anzahl": 19,
+   "dateien": 6
+  },
+  "S-05 Inline-style": {
+   "anzahl": 37,
+   "dateien": 22
+  },
+  "S-05 Bewegungswert (Zahl in duration/delay/stagger)": {
+   "anzahl": 7,
+   "dateien": 5
+  },
+  "S-04 lucide-Import": {
+   "anzahl": 123,
+   "dateien": 121
+  },
+  "S-04 phosphor-Import": {
+   "anzahl": 2,
+   "dateien": 2
+  },
+  "S-04 Inline-<svg>": {
+   "anzahl": 28,
+   "dateien": 14
+  },
+  "S-04 Emoji": {
+   "anzahl": 20,
+   "dateien": 12
+  },
+  "S-01 Platzhalter": {
+   "anzahl": 21,
+   "dateien": 9
+  },
+  "S-09 Verlaufstext": {
+   "anzahl": 96,
+   "dateien": 70
+  },
+  "S-09 Glow/Leuchtkugel": {
+   "anzahl": 162,
+   "dateien": 80
+  },
+  "S-09 Glas/Unschärfe": {
+   "anzahl": 256,
+   "dateien": 96
+  },
+  "S-09 Funkeln-Icon": {
+   "anzahl": 94,
+   "dateien": 42
+  },
+  "S-09 Laufband": {
+   "anzahl": 4,
+   "dateien": 2
+  },
+  "S-09 Nachlaufcursor": {
+   "anzahl": 1,
+   "dateien": 1
+  },
+  "S-09 Badge über Überschrift (eyebrow)": {
+   "anzahl": 474,
+   "dateien": 92
+  },
+  "S-11 Icon-Kachel": {
+   "anzahl": 135,
+   "dateien": 64
+  },
+  "S-13 Floskel": {
+   "anzahl": 44,
+   "dateien": 25
+  },
+  "S-09 Hover-Anheben": {
+   "anzahl": 131,
+   "dateien": 79
+  }
+ },
+ "funde": {
+  "S-05 Tailwind-Beliebigwert": {
+   "anzahl": 308,
+   "dateien": {
+    "src/app/(bestand)/_dokument.tsx": [
+     "114: bg-[#FAFAFA]"
+    ],
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "113: text-[11px]",
+     "213: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "112: text-[11px]",
+     "212: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "92: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "105: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "127: hover:shadow-[0_12px_28px_-10px_rgba(15,23,42,0.18)]"
+    ],
+    "src/app/(bestand)/bad/badsanierung/page.jsx": [
+     "85: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "83: text-[11px]",
+     "125: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "89: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "124: text-[11px]"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx": [
+     "112: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/page.jsx": [
+     "60: hover:shadow-[0_24px_48px_-16px_rgba(15,23,42,0.18)]",
+     "83: text-[11px]"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "106: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "143: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "161: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "205: min-w-[720px]",
+     "302: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "198: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "154: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "217: min-w-[560px]"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "116: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/blog/page.jsx": [
+     "136: text-[10px]"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "81: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "173: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "205: min-w-[620px]",
+     "240: rounded-[2rem]",
+     "249: rounded-[2rem]"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "122: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "126: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "178: min-w-[560px]"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "130: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "116: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "159: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "188: text-[11px]"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "109: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "315: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "112: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "192: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "184: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "221: text-[11px]",
+     "249: text-[11px]",
+     "298: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "234: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "131: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "136: text-[11px]",
+     "277: min-w-[640px]"
+    ],
+    "src/app/(bestand)/foerderung/page.jsx": [
+     "86: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "52: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "98: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "118: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "317: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "350: text-[11px]"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "69: top-[1200px]",
+     "124: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "152: text-[11px]",
+     "161: text-[10px]",
+     "215: text-[11px]"
+    ],
+    "src/app/(bestand)/login/page.jsx": [
+     "43: min-h-[calc(100vh-200px)]"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "170: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "241: min-w-[640px]",
+     "288: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/not-found.tsx": [
+     "16: min-h-[70vh]"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "37: min-h-[460px]",
+     "40: min-h-[380px]",
+     "172: top-[1500px]",
+     "196: leading-[1.05]",
+     "281: text-[11px]",
+     "312: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "318: text-[11px]",
+     "356: text-[11px]",
+     "364: hover:shadow-[0_12px_28px_-10px_rgba(23,23,23,0.18)]",
+     "423: hover:shadow-[0_24px_48px_-16px_rgba(23,23,23,0.18)]",
+     "439: text-[11px]",
+     "448: text-[11px]",
+     "507: text-[11px]",
+     "521: rounded-[2rem]",
+     "582: text-[11px]"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "45: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/referenzen/[id]/page.jsx": [
+     "198: aspect-[4/3]"
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "87: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "226: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "263: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "301: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "307: text-[11px]"
+    ],
+    "src/app/(bestand)/standorte/page.tsx": [
+     "122: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "126: text-[11px]"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "46: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "126: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "163: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "191: min-w-[720px]"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "144: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "228: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "143: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "99: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "138: min-w-[600px]"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "224: min-w-[720px]"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "191: min-w-[520px]"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "155: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "57: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/components/blog/BlogAuthorCard.jsx": [
+     "62: text-[10px]",
+     "102: min-h-[44px] min-w-[44px]"
+    ],
+    "src/components/blog/BlogCard.jsx": [
+     "19: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/components/blog/ReadingProgress.jsx": [
+     "35: z-[9999]"
+    ],
+    "src/components/blog/RelatedPosts.jsx": [
+     "59: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/components/blog/ShareButtons.jsx": [
+     "63: min-h-[44px]",
+     "72: min-w-[250px]",
+     "83: text-[#1877f2]",
+     "105: text-[#0a66c2]",
+     "116: text-[#25D366]"
+    ],
+    "src/components/blog/TableOfContents.jsx": [
+     "52: w-[2px]",
+     "65: -ml-[2px]",
+     "66: -ml-[2px]"
+    ],
+    "src/components/common/CalendlySection.jsx": [
+     "37: rounded-[2.5rem]",
+     "57: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]",
+     "62: text-[11px]"
+    ],
+    "src/components/common/CookieConsent.tsx": [
+     "435: shadow-[0_12px_44px_rgba(0,0,0,0.18)] max-h-[82vh]",
+     "436: shadow-[0_20px_50px_rgba(0,0,0,0.3)]",
+     "510: active:scale-[0.99] min-h-[44px]",
+     "517: active:scale-[0.99] min-h-[44px]",
+     "524: min-h-[44px]",
+     "629: text-[10px]",
+     "633: text-[10px]",
+     "663: text-[11px]",
+     "666: text-[11px]",
+     "669: text-[10px]",
+     "687: active:scale-[0.99] min-h-[44px]",
+     "694: active:scale-[0.99] min-h-[44px]",
+     "701: active:scale-[0.99] min-h-[44px]",
+     "708: min-h-[44px]",
+     "723: z-[9995] shadow-[0_4px_18px_rgba(0,0,0,0.12)]"
+    ],
+    "src/components/common/Footer.jsx": [
+     "81: group-hover:scale-[1.02]",
+     "83: text-[11px]"
+    ],
+    "src/components/common/GoogleMap.tsx": [
+     "69: bg-[radial-gradient(#ffffff_1px,transparent_1px)]",
+     "115: text-[11px]",
+     "150: saturate-[0.95]"
+    ],
+    "src/components/common/Header.jsx": [
+     "34: group-hover:scale-[1.02]",
+     "38: text-[10px] sm:text-[11px]",
+     "93: transition-[background-color,border-color,box-shadow]",
+     "95: shadow-[0_8px_30px_rgba(23,23,23,0.08)]",
+     "96: shadow-[0_4px_20px_rgba(23,23,23,0.04)]",
+     "112: w-[760px] w-[560px]",
+     "113: w-[600px]",
+     "126: text-[13px]",
+     "153: max-w-[calc(100vw-4rem)] shadow-[0_24px_60px_-12px_rgba(23,23,23,0.18)]",
+     "157: text-[10px]",
+     "176: text-[13px]"
+    ],
+    "src/components/common/MobileMenu.jsx": [
+     "82: z-[70]",
+     "103: bg-[#FAFAFA] shadow-[0_0_50px_rgba(0,0,0,0.25)]",
+     "126: text-[11px]",
+     "151: min-h-[58px]",
+     "168: text-[10px]",
+     "189: text-[10px]",
+     "223: text-[11px]",
+     "261: shadow-[0_-4px_20px_rgba(0,0,0,0.06)]",
+     "296: text-[11px]"
+    ],
+    "src/components/common/TileCraftIcons.jsx": [
+     "130: text-[9px]"
+    ],
+    "src/components/contact/BookingCalendar.tsx": [
+     "238: max-h-[420px]",
+     "246: text-[10px]",
+     "425: text-[11px]"
+    ],
+    "src/components/contact/DirectContactCard.tsx": [
+     "45: text-[11px]",
+     "64: text-[11px]",
+     "81: text-[11px]",
+     "94: text-[11px]",
+     "101: text-[11px]",
+     "113: text-[11px]"
+    ],
+    "src/components/forms/HeroContactForm.tsx": [
+     "50: text-[11px]",
+     "54: text-[11px]",
+     "77: text-[11px]",
+     "100: text-[10px] sm:text-[11px]",
+     "103: text-[11px]",
+     "127: text-[11px]",
+     "154: text-[11px]",
+     "171: text-[11px]",
+     "191: text-[11px]",
+     "192: text-[10px]",
+     "207: text-[11px]",
+     "225: text-[11px]",
+     "274: text-[11px]"
+    ],
+    "src/components/forms/LeadQuickForm.tsx": [
+     "72: text-[11px]",
+     "210: text-[11px]"
+    ],
+    "src/components/funnels/BadProjektCheck.jsx": [
+     "199: text-[10px] sm:text-[11px]",
+     "228: text-[11px]",
+     "256: text-[11px]",
+     "268: min-[420px]",
+     "374: text-[11px]",
+     "387: text-[11px]",
+     "491: text-[11px]"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "438: text-[11px]"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "379: sm:grid-cols-[max-content_1fr]",
+     "639: rounded-[2.5rem]",
+     "698: rounded-[2.5rem]",
+     "929: text-[11px]",
+     "994: text-[10px]",
+     "1040: text-[11px]"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "228: text-[10px]"
+    ],
+    "src/components/kern/kopf-b/Hauptnavigation.tsx": [
+     "242: max-h-[calc(100dvh-var(--k-kopf-hoehe))]"
+    ],
+    "src/components/layout/FloatingDock.tsx": [
+     "26: pb-[env(safe-area-inset-bottom,0px)]",
+     "27: shadow-[0_8px_30px_rgba(23,23,23,0.12)]",
+     "30: min-h-[44px]",
+     "45: min-h-[44px]",
+     "54: min-h-[44px]"
+    ],
+    "src/components/layout/MobileBottomBar.tsx": [
+     "28: pb-[env(safe-area-inset-bottom,0px)]",
+     "30: shadow-[0_8px_30px_rgba(23,23,23,0.14)]",
+     "34: min-h-[46px]",
+     "50: min-h-[46px]",
+     "60: min-h-[46px]"
+    ],
+    "src/components/legal/MapConsentGate.tsx": [
+     "59: bg-[radial-gradient(#ffffff_1px,transparent_1px)]"
+    ],
+    "src/components/locations/LocationContact.tsx": [
+     "23: bg-[radial-gradient(#ffffff_1px,transparent_1px)]"
+    ],
+    "src/components/maps/ContactMapWrapper.tsx": [
+     "17: h-[450px]"
+    ],
+    "src/components/maps/ContactPremiumMap.tsx": [
+     "124: text-[10px]",
+     "147: scale-[1.02]",
+     "157: text-[10px]",
+     "174: text-[11px]",
+     "180: text-[11px]",
+     "209: min-h-[440px] lg:min-h-[520px]",
+     "214: min-h-[440px] lg:min-h-[520px]",
+     "218: min-h-[440px] lg:min-h-[520px]",
+     "226: min-h-[440px] lg:min-h-[520px]",
+     "259: min-h-[440px] lg:min-h-[520px]",
+     "268: min-h-[440px] lg:min-h-[520px]"
+    ],
+    "src/components/maps/InteractiveServiceMap.tsx": [
+     "77: h-[460px]",
+     "132: max-w-[240px]",
+     "137: text-[11px]",
+     "141: text-[10px]",
+     "148: text-[11px]",
+     "179: h-[460px]",
+     "204: h-[460px]",
+     "206: bg-[radial-gradient(#334155_1px,transparent_1px)]",
+     "210: translate-y-[-72px] text-[10px]",
+     "215: translate-y-[-128px] text-[10px]",
+     "220: translate-y-[-200px] text-[10px]",
+     "236: text-[11px]",
+     "267: text-[11px]",
+     "350: text-[10px]",
+     "387: text-[11px]",
+     "390: text-[11px]",
+     "408: text-[11px]"
+    ],
+    "src/components/maps/LocalDominanceMap.tsx": [
+     "46: min-h-[360px]",
+     "49: bg-[radial-gradient(#334155_1px,transparent_1px)]",
+     "70: text-[11px]",
+     "77: max-w-[calc(100%-2rem)]"
+    ],
+    "src/components/maps/ServiceMapWrapper.tsx": [
+     "17: h-[450px]"
+    ],
+    "src/components/pricing/PriceCard.tsx": [
+     "39: text-[11px]"
+    ],
+    "src/components/pricing/PricingCalculator.tsx": [
+     "76: flex-[3]",
+     "85: h-[2px]",
+     "92: h-[2px]",
+     "107: text-[11px]",
+     "142: text-[10px]",
+     "177: text-[11px]",
+     "189: max-w-[140px]",
+     "240: text-[11px]",
+     "259: text-[11px]",
+     "275: flex-[2]",
+     "381: text-[11px]",
+     "399: text-[11px]",
+     "416: text-[11px]",
+     "434: text-[11px]",
+     "450: text-[11px]",
+     "471: text-[11px]",
+     "511: text-[11px]"
+    ],
+    "src/components/reviews/GoogleReviewsBadge.tsx": [
+     "39: text-[11px]"
+    ],
+    "src/components/reviews/ReviewCard.tsx": [
+     "22: min-w-[280px] sm:min-w-[340px] max-w-[380px]",
+     "24: h-[3px] group-hover:h-[4px]",
+     "66: text-[11px]"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "44: w-[3px]",
+     "67: md:w-[42%]",
+     "69: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "97: md:w-[42%]"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "55: hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)]",
+     "61: text-[10px]"
+    ],
+    "src/components/sections/ReviewsSection.jsx": [
+     "123: hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)]"
+    ],
+    "src/components/sections/home/ContactSection.tsx": [
+     "97: text-[11px]"
+    ],
+    "src/components/ui/FAQAccordion.tsx": [
+     "58: grid-rows-[1fr] grid-rows-[0fr]"
+    ],
+    "src/components/ui/FinalCTA.tsx": [
+     "50: bg-[radial-gradient(ellipse_at_top,#ea580c_0%,transparent_70%)]",
+     "52: opacity-[0.04] bg-[radial-gradient(#ffffff_1px,transparent_1px)]"
+    ],
+    "src/components/ui/SkipNav.tsx": [
+     "5: focus:z-[9999]"
+    ]
+   }
+  },
+  "S-05 Hex-Farbe im Code": {
+   "anzahl": 49,
+   "dateien": {
+    "src/app/(bestand)/_dokument.tsx": [
+     "94: #FFFFFF",
+     "114: #FAFAFA"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "129: #94A3B8"
+    ],
+    "src/components/blog/ShareButtons.jsx": [
+     "83: #1877f2",
+     "105: #0a66c2",
+     "116: #25D366"
+    ],
+    "src/components/common/FloatingWhatsAppWidget.tsx": [
+     "608: #ffffff",
+     "657: #25D366",
+     "658: #ffffff",
+     "685: #ef4444",
+     "686: #ffffff",
+     "692: #ffffff",
+     "708: #ffffff"
+    ],
+    "src/components/common/GoogleMap.tsx": [
+     "136: #ea580c #ffffff #c2410c"
+    ],
+    "src/components/common/MobileMenu.jsx": [
+     "103: #FAFAFA"
+    ],
+    "src/components/common/TileCraftIcons.jsx": [
+     "79: #EA580C",
+     "80: #EA580C",
+     "81: #FB923C",
+     "82: #EA580C",
+     "83: #EA580C",
+     "114: #EA580C",
+     "124: #FFFFFF",
+     "125: #EA580C"
+    ],
+    "src/components/maps/ContactPremiumMap.tsx": [
+     "232: #EA580C #FFFFFF #FFFFFF",
+     "238: #171717 #EA580C #FFFFFF"
+    ],
+    "src/components/maps/InteractiveMap.tsx": [
+     "70: #ea580c #ffffff #c2410c"
+    ],
+    "src/components/maps/InteractiveServiceMap.tsx": [
+     "96: #EA580C",
+     "97: #FFFFFF",
+     "98: #FFFFFF",
+     "117: #EA580C #FFFFFF",
+     "118: #EA580C",
+     "119: #FFFFFF #EA580C"
+    ],
+    "src/components/ui/WaterCursor.tsx": [
+     "52: #0284c7",
+     "61: #000",
+     "87: #0284c7",
+     "88: #EA580C",
+     "89: #5B2D8C",
+     "90: #ffffff"
+    ],
+    "src/lib/kern/metadaten.ts": [
+     "68: #FFFFFF"
+    ]
+   }
+  },
+  "S-05 rgb/rgba/hsl im Code": {
+   "anzahl": 19,
+   "dateien": {
+    "src/app/(bestand)/referenzen/[id]/page.jsx": [
+     "21: rgba( rgba("
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "23: rgba( rgba("
+    ],
+    "src/components/common/FloatingWhatsAppWidget.tsx": [
+     "607: rgba(",
+     "614: rgba(",
+     "615: rgba(",
+     "667: rgba( rgba(",
+     "668: rgba( rgba(",
+     "693: rgba("
+    ],
+    "src/components/ui/SpotlightCard.tsx": [
+     "19: rgba("
+    ],
+    "src/components/ui/TiltCard.tsx": [
+     "85: rgba( rgba("
+    ],
+    "src/components/ui/WaterCursor.tsx": [
+     "532: rgb(",
+     "533: rgba( rgba( rgba("
+    ]
+   }
+  },
+  "S-05 Inline-style": {
+   "anzahl": 37,
+   "dateien": {
+    "src/components/blog/ReadingProgress.jsx": [
+     "38: style={{"
+    ],
+    "src/components/blog/TableOfContents.jsx": [
+     "68: style={{"
+    ],
+    "src/components/common/CookieConsent.tsx": [
+     "423: style={{"
+    ],
+    "src/components/common/FloatingWhatsAppWidget.tsx": [
+     "595: style={{",
+     "606: style={{",
+     "645: style={{",
+     "678: style={{",
+     "708: style={{"
+    ],
+    "src/components/common/GoogleMap.tsx": [
+     "64: style={{",
+     "123: style={{",
+     "127: style={{",
+     "146: style={{"
+    ],
+    "src/components/common/MobileMenu.jsx": [
+     "204: style={{"
+    ],
+    "src/components/common/TileCraftIcons.jsx": [
+     "28: style={{",
+     "40: style={{",
+     "53: style={{"
+    ],
+    "src/components/contact/BookingCalendar.tsx": [
+     "288: style={{"
+    ],
+    "src/components/forms/HeroContactForm.tsx": [
+     "241: style={{"
+    ],
+    "src/components/forms/LeadQuickForm.tsx": [
+     "83: style={{"
+    ],
+    "src/components/kern/kopf-a/Kopf.tsx": [
+     "27: style={{"
+    ],
+    "src/components/kern/start/Fachgewerke.tsx": [
+     "44: style={{"
+    ],
+    "src/components/kern/start/einstieg-a/Platzhalter.tsx": [
+     "10: style={{"
+    ],
+    "src/components/legal/MapConsentGate.tsx": [
+     "26: style={{",
+     "41: style={{",
+     "55: style={{"
+    ],
+    "src/components/maps/ContactPremiumMap.tsx": [
+     "265: style={{"
+    ],
+    "src/components/maps/InteractiveMap.tsx": [
+     "50: style={{",
+     "61: style={{"
+    ],
+    "src/components/maps/InteractiveServiceMap.tsx": [
+     "185: style={{",
+     "254: style={{"
+    ],
+    "src/components/reviews/ReviewCarousel.tsx": [
+     "81: style={{"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "47: style={{"
+    ],
+    "src/components/ui/OptimizedImage.tsx": [
+     "34: style={{"
+    ],
+    "src/components/ui/SpotlightCard.tsx": [
+     "65: style={{"
+    ],
+    "src/components/ui/TiltCard.tsx": [
+     "63: style={{",
+     "71: style={{",
+     "83: style={{"
+    ]
+   }
+  },
+  "S-05 Bewegungswert (Zahl in duration/delay/stagger)": {
+   "anzahl": 7,
+   "dateien": {
+    "src/app/(bestand)/beratung/page.jsx": [
+     "72: duration: 0.6"
+    ],
+    "src/components/animations/HeartbeatCTA.tsx": [
+     "27: duration: 0.2"
+    ],
+    "src/components/maps/InteractiveServiceMap.tsx": [
+     "225: duration:4",
+     "226: duration:6"
+    ],
+    "src/components/maps/LocalDominanceMap.tsx": [
+     "52: duration:3",
+     "55: duration:4.5"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "66: duration: 0.8"
+    ]
+   }
+  },
+  "S-04 lucide-Import": {
+   "anzahl": 123,
+   "dateien": {
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "12: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/badanfrage/page.jsx": [
+     "2: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "10: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/badsanierung/page.jsx": [
+     "9: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx": [
+     "10: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/page.jsx": [
+     "10: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "14: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/bad/projekt-check/page.jsx": [
+     "2: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "21: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "21: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "19: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "18: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/blog/[slug]/page.jsx": [
+     "12: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/blog/page.jsx": [
+     "5: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "14: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "14: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "20: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "13: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "13: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "14: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "25: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/renovierung/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "13: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "14: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/fliesenreparatur/page.tsx": [
+     "18: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/foerderung/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/kontakt/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "10: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/login/page.jsx": [
+     "5: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "18: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx": [
+     "21: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "21: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/not-found.tsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "5: from 'lucide-react'",
+     "21: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/preise/page.jsx": [
+     "10: from \"lucide-react\""
+    ],
+    "src/app/(bestand)/referenzen/[id]/page.jsx": [
+     "5: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "21: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "3: from 'lucide-react'",
+     "12: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/standorte/page.tsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "15: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "18: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/app/(bestand)/widerruf/page.jsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/blog/BlogAuthorCard.jsx": [
+     "5: from 'lucide-react'"
+    ],
+    "src/components/blog/BlogCard.jsx": [
+     "5: from 'lucide-react'"
+    ],
+    "src/components/blog/BlogSidebar.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/components/blog/BlogVoteButton.jsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/blog/RelatedPosts.jsx": [
+     "2: from 'lucide-react'"
+    ],
+    "src/components/blog/ShareButtons.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/components/blog/TableOfContents.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/components/common/CalendlySection.jsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/common/CookieConsent.tsx": [
+     "22: from \"lucide-react\""
+    ],
+    "src/components/common/Footer.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/components/common/GoogleMap.tsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/common/Header.jsx": [
+     "13: from 'lucide-react'"
+    ],
+    "src/components/common/MobileMenu.jsx": [
+     "18: from 'lucide-react'"
+    ],
+    "src/components/contact/BookingCalendar.tsx": [
+     "19: from 'lucide-react'"
+    ],
+    "src/components/contact/DirectContactCard.tsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/forms/HeroContactForm.tsx": [
+     "11: from 'lucide-react'"
+    ],
+    "src/components/forms/LeadQuickForm.tsx": [
+     "5: from 'lucide-react'"
+    ],
+    "src/components/funnels/BadProjektCheck.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "17: from 'lucide-react'"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "19: from 'lucide-react'"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "16: from 'lucide-react'"
+    ],
+    "src/components/layout/FloatingDock.tsx": [
+     "6: from 'lucide-react'"
+    ],
+    "src/components/layout/MobileBottomBar.tsx": [
+     "6: from \"lucide-react\""
+    ],
+    "src/components/legal/MapConsentGate.tsx": [
+     "3: from \"lucide-react\""
+    ],
+    "src/components/locations/LocationContact.tsx": [
+     "4: from \"lucide-react\""
+    ],
+    "src/components/locations/RouteVisualization.tsx": [
+     "4: from \"lucide-react\""
+    ],
+    "src/components/maps/ContactPremiumMap.tsx": [
+     "21: from \"lucide-react\""
+    ],
+    "src/components/maps/InteractiveMap.tsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/maps/InteractiveServiceMap.tsx": [
+     "33: from \"lucide-react\""
+    ],
+    "src/components/maps/LocalDominanceMap.tsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/pricing/PriceCard.tsx": [
+     "2: from \"lucide-react\""
+    ],
+    "src/components/pricing/PricingCalculator.tsx": [
+     "24: from \"lucide-react\""
+    ],
+    "src/components/providers/ErrorBoundary.tsx": [
+     "4: from \"lucide-react\""
+    ],
+    "src/components/reviews/GoogleReviewsBadge.tsx": [
+     "2: from \"lucide-react\""
+    ],
+    "src/components/reviews/ReviewCard.tsx": [
+     "2: from \"lucide-react\""
+    ],
+    "src/components/reviews/ReviewCarousel.tsx": [
+     "4: from \"lucide-react\""
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "4: from 'lucide-react'"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "14: from 'lucide-react'"
+    ],
+    "src/components/sections/ReviewsSection.jsx": [
+     "3: from 'lucide-react'"
+    ],
+    "src/components/sections/home/ContactSection.tsx": [
+     "4: from \"lucide-react\""
+    ],
+    "src/components/trust/TrustBadges.tsx": [
+     "2: from \"lucide-react\""
+    ],
+    "src/components/trust/TrustSignals.tsx": [
+     "2: from \"lucide-react\""
+    ],
+    "src/components/trust/TrustStrip.tsx": [
+     "3: from \"lucide-react\""
+    ],
+    "src/components/ui/FAQAccordion.tsx": [
+     "4: from \"lucide-react\""
+    ],
+    "src/components/ui/FinalCTA.tsx": [
+     "5: from \"lucide-react\""
+    ],
+    "src/config/blog.js": [
+     "10: from 'lucide-react'"
+    ],
+    "src/config/company.js": [
+     "4: from 'lucide-react'"
+    ],
+    "src/lib/formulare/useAnfrageFunnel.ts": [
+     "10: from 'lucide-react'"
+    ],
+    "src/utils/iconMapper.jsx": [
+     "2: from 'lucide-react'"
+    ]
+   }
+  },
+  "S-04 phosphor-Import": {
+   "anzahl": 2,
+   "dateien": {
+    "src/components/blog/BlogAuthorCard.jsx": [
+     "6: from '@phosphor-icons/react'"
+    ],
+    "src/components/blog/ShareButtons.jsx": [
+     "4: from '@phosphor-icons/react'"
+    ]
+   }
+  },
+  "S-04 Inline-<svg>": {
+   "anzahl": 28,
+   "dateien": {
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "114: <svg"
+    ],
+    "src/app/(kern)/_entwurf/not-found.tsx": [
+     "20: <svg"
+    ],
+    "src/components/common/CookieConsent.tsx": [
+     "602: <svg"
+    ],
+    "src/components/common/FloatingWhatsAppWidget.tsx": [
+     "704: <svg"
+    ],
+    "src/components/common/TileCraftIcons.jsx": [
+     "11: <svg",
+     "71: <svg",
+     "142: <svg",
+     "157: <svg",
+     "170: <svg",
+     "184: <svg",
+     "194: <svg",
+     "205: <svg",
+     "214: <svg",
+     "227: <svg",
+     "237: <svg",
+     "250: <svg",
+     "259: <svg"
+    ],
+    "src/components/kern/basis/Zeichen.tsx": [
+     "14: <svg"
+    ],
+    "src/components/kern/icons/Icon.tsx": [
+     "40: <svg"
+    ],
+    "src/components/kern/icons/IconSprite.tsx": [
+     "23: <svg",
+     "39: <svg"
+    ],
+    "src/components/kern/motive/Verband.tsx": [
+     "19: <svg"
+    ],
+    "src/components/kern/motive/VerlegeplanBad.tsx": [
+     "9: <svg"
+    ],
+    "src/components/kern/motive/vignetten/zeichnen.tsx": [
+     "49: <svg"
+    ],
+    "src/components/kern/start/einstieg-a/Kreuzlinie.tsx": [
+     "20: <svg"
+    ],
+    "src/components/kern/start/einstieg-b/Laser.tsx": [
+     "11: <svg",
+     "27: <svg"
+    ],
+    "src/components/ui/GoogleIcon.tsx": [
+     "16: <svg"
+    ]
+   }
+  },
+  "S-04 Emoji": {
+   "anzahl": 20,
+   "dateien": {
+    "src/app/(bestand)/referenzen/layout.tsx": [
+     "6: ★"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "236: ★"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "183: ✉",
+     "255: 📅",
+     "266: 📝"
+    ],
+    "src/components/common/FloatingWhatsAppWidget.tsx": [
+     "620: 💬"
+    ],
+    "src/components/forms/HeroContactForm.tsx": [
+     "67: ✉"
+    ],
+    "src/components/funnels/BadProjektCheck.jsx": [
+     "383: ✉"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "219: ✉"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "659: ✉"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "97: ✉"
+    ],
+    "src/components/maps/LocalDominanceMap.tsx": [
+     "27: ★"
+    ],
+    "src/config/reviews.js": [
+     "148: 😊"
+    ],
+    "src/lib/formulare/useAnfrageFunnel.ts": [
+     "81: 📌",
+     "82: 📐",
+     "83: 📍",
+     "85: 👤",
+     "86: 📞",
+     "87: ✉",
+     "88: 📝"
+    ]
+   }
+  },
+  "S-01 Platzhalter": {
+   "anzahl": 21,
+   "dateien": {
+    "src/app/(kern)/_entwurf/p3-06-a/page.tsx": [
+     "23: Platzhalter",
+     "51: Platzhalter"
+    ],
+    "src/app/(kern)/_entwurf/p3-07/page.tsx": [
+     "19: Platzhalter",
+     "23: Platzhalter",
+     "26: Platzhalter",
+     "27: Platzhalter platzhalter",
+     "31: Platzhalter"
+    ],
+    "src/app/(kern)/_entwurf/p3-08/page.tsx": [
+     "39: Platzhalter",
+     "45: Platzhalter"
+    ],
+    "src/app/(kern)/_entwurf/p3-09-a/page.tsx": [
+     "2: Platzhalter"
+    ],
+    "src/app/(kern)/_entwurf/p3-11/page.tsx": [
+     "12: Platzhalter"
+    ],
+    "src/app/(kern)/_entwurf/p3-12/page.tsx": [
+     "32: Platzhalter"
+    ],
+    "src/components/kern/fuss/UntereLeiste.tsx": [
+     "56: Platzhalter"
+    ],
+    "src/components/kern/start/einstieg-a/Platzhalter.tsx": [
+     "23: Platzhalter"
+    ],
+    "src/config/projects.js": [
+     "13: placeholder: true",
+     "29: placeholder: true",
+     "44: placeholder: true",
+     "59: placeholder: true",
+     "74: placeholder: true",
+     "90: placeholder: true"
+    ]
+   }
+  },
+  "S-09 Verlaufstext": {
+   "anzahl": 96,
+   "dateien": {
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "61: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "61: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "51: text-ceramic-gradient",
+     "78: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/badanfrage/page.jsx": [
+     "27: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "49: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/badsanierung/page.jsx": [
+     "49: text-ceramic-gradient",
+     "74: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "55: text-ceramic-gradient",
+     "112: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "54: text-ceramic-gradient",
+     "79: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx": [
+     "79: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/page.jsx": [
+     "37: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "62: text-ceramic-gradient",
+     "95: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/bad/projekt-check/page.jsx": [
+     "27: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "130: text-ceramic-gradient",
+     "210: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "136: text-ceramic-gradient",
+     "196: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "120: text-ceramic-gradient",
+     "189: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "123: text-ceramic-gradient",
+     "185: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "80: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/blog/page.jsx": [
+     "48: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "40: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "90: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "122: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "91: text-ceramic-gradient",
+     "113: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "87: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "99: text-ceramic-gradient",
+     "121: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "82: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "89: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "126: text-ceramic-gradient",
+     "150: text-ceramic-gradient",
+     "215: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "78: text-ceramic-gradient",
+     "100: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "124: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "81: text-ceramic-gradient",
+     "103: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "99: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "146: text-ceramic-gradient",
+     "170: text-ceramic-gradient",
+     "210: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/renovierung/page.jsx": [
+     "99: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "201: text-ceramic-gradient",
+     "223: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "94: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/fliesenreparatur/page.tsx": [
+     "83: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/foerderung/page.jsx": [
+     "52: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "39: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "70: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/kontakt/page.jsx": [
+     "26: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "240: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "87: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "88: text-ceramic-gradient",
+     "161: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx": [
+     "108: text-ceramic-gradient",
+     "186: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "163: text-ceramic-gradient",
+     "232: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "198: <GradientText",
+     "407: text-ceramic-gradient",
+     "530: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "32: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/preise/page.jsx": [
+     "47: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "47: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "165: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "162: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/standorte/page.tsx": [
+     "67: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "33: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "154: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "95: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "119: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "107: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "111: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "34: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "101: text-ceramic-gradient",
+     "279: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "152: text-ceramic-gradient",
+     "295: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx": [
+     "102: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "119: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "122: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "128: text-ceramic-gradient",
+     "181: text-ceramic-gradient"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "33: text-ceramic-gradient"
+    ],
+    "src/app/globals.css": [
+     "217: text-ceramic-gradient"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "35: text-ceramic-gradient"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "41: text-ceramic-gradient"
+    ],
+    "src/components/ui/GradientText.tsx": [
+     "25: bg-clip-text"
+    ]
+   }
+  },
+  "S-09 Glow/Leuchtkugel": {
+   "anzahl": 162,
+   "dateien": {
+    "src/app/(bestand)/agb/page.jsx": [
+     "11: ambient-glow-orange",
+     "12: ambient-glow-red"
+    ],
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "49: ambient-glow-orange",
+     "50: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "49: ambient-glow-orange",
+     "50: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "39: ambient-glow-orange",
+     "40: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/badanfrage/page.jsx": [
+     "16: ambient-glow-mint",
+     "17: ambient-glow-sky"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "37: ambient-glow-orange",
+     "38: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/badsanierung/page.jsx": [
+     "37: ambient-glow-orange",
+     "38: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "43: ambient-glow-orange",
+     "44: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "42: ambient-glow-orange",
+     "43: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx": [
+     "54: ambient-glow-orange",
+     "55: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/page.jsx": [
+     "25: ambient-glow-orange",
+     "26: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "44: ambient-glow-orange",
+     "45: ambient-glow-red"
+    ],
+    "src/app/(bestand)/bad/projekt-check/page.jsx": [
+     "16: ambient-glow-mint",
+     "17: ambient-glow-sky"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "118: ambient-glow-orange",
+     "119: ambient-glow-red"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "124: ambient-glow-orange",
+     "125: ambient-glow-red"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "108: ambient-glow-orange",
+     "109: ambient-glow-red"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "111: ambient-glow-orange",
+     "112: ambient-glow-red"
+    ],
+    "src/app/(bestand)/barrierefreiheit/page.jsx": [
+     "16: ambient-glow-orange",
+     "17: ambient-glow-red"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "66: ambient-glow-orange",
+     "67: ambient-glow-red"
+    ],
+    "src/app/(bestand)/blog/[slug]/page.jsx": [
+     "80: ambient-glow-orange",
+     "81: ambient-glow-red"
+    ],
+    "src/app/(bestand)/blog/page.jsx": [
+     "37: ambient-glow-orange",
+     "38: ambient-glow-red"
+    ],
+    "src/app/(bestand)/cookie-richtlinie/page.jsx": [
+     "17: ambient-glow-orange",
+     "18: ambient-glow-red"
+    ],
+    "src/app/(bestand)/datenschutz/page.jsx": [
+     "11: ambient-glow-orange",
+     "12: ambient-glow-red"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "29: ambient-glow-orange",
+     "30: ambient-glow-red"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "78: ambient-glow-orange",
+     "79: ambient-glow-red"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "110: ambient-glow-orange",
+     "111: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "79: ambient-glow-orange",
+     "80: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "75: ambient-glow-orange",
+     "76: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "87: ambient-glow-orange",
+     "88: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "70: ambient-glow-orange",
+     "71: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "77: ambient-glow-orange",
+     "78: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "114: ambient-glow-orange",
+     "115: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "66: ambient-glow-orange",
+     "67: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "112: ambient-glow-orange",
+     "113: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "69: ambient-glow-orange",
+     "70: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "87: ambient-glow-orange",
+     "88: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "134: ambient-glow-orange",
+     "135: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/renovierung/page.jsx": [
+     "87: ambient-glow-orange",
+     "88: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "189: ambient-glow-orange",
+     "190: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "82: ambient-glow-orange",
+     "83: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/fliesenreparatur/page.tsx": [
+     "71: ambient-glow-warm",
+     "72: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/foerderung/page.jsx": [
+     "40: ambient-glow-orange",
+     "41: ambient-glow-red"
+    ],
+    "src/app/(bestand)/impressum/page.jsx": [
+     "11: ambient-glow-orange",
+     "12: ambient-glow-red"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "28: ambient-glow-orange",
+     "29: ambient-glow-red"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "58: ambient-glow-orange",
+     "59: ambient-glow-red"
+    ],
+    "src/app/(bestand)/kontakt/page.jsx": [
+     "16: ambient-glow-orange",
+     "17: ambient-glow-red"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "199: ambient-glow-orange",
+     "200: ambient-glow-red"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "155: ambient-glow-orange",
+     "156: ambient-glow-red"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "67: ambient-glow-orange",
+     "68: ambient-glow-red",
+     "69: ambient-glow-slate"
+    ],
+    "src/app/(bestand)/login/page.jsx": [
+     "44: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "76: ambient-glow-orange",
+     "77: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx": [
+     "96: ambient-glow-orange",
+     "97: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "151: ambient-glow-orange",
+     "152: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "170: ambient-glow-orange",
+     "171: ambient-glow-red",
+     "172: ambient-glow-slate"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "20: ambient-glow-orange",
+     "21: ambient-glow-red"
+    ],
+    "src/app/(bestand)/preise/page.jsx": [
+     "29: ambient-glow-orange",
+     "30: ambient-glow-red"
+    ],
+    "src/app/(bestand)/referenzen/[id]/page.jsx": [
+     "64: ambient-glow-orange",
+     "65: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "36: ambient-glow-orange",
+     "37: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "153: ambient-glow-orange",
+     "154: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "147: ambient-glow-orange",
+     "148: ambient-glow-red"
+    ],
+    "src/app/(bestand)/standorte/page.tsx": [
+     "105: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "21: ambient-glow-orange",
+     "22: ambient-glow-red"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "143: ambient-glow-orange",
+     "144: ambient-glow-red"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "83: ambient-glow-orange",
+     "84: ambient-glow-red"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "107: ambient-glow-orange",
+     "108: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "95: ambient-glow-orange",
+     "96: ambient-glow-warm"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "99: ambient-glow-orange",
+     "100: ambient-glow-red"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "26: ambient-glow-orange",
+     "27: ambient-glow-red"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "89: ambient-glow-warm",
+     "90: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "140: ambient-glow-warm",
+     "141: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx": [
+     "90: ambient-glow-warm",
+     "91: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "107: ambient-glow-warm",
+     "108: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "110: ambient-glow-warm",
+     "111: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "116: ambient-glow-warm",
+     "117: ambient-glow-orange"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "21: ambient-glow-orange",
+     "22: ambient-glow-red"
+    ],
+    "src/app/(bestand)/widerruf/page.jsx": [
+     "22: ambient-glow-orange",
+     "23: ambient-glow-red"
+    ],
+    "src/app/globals.css": [
+     "384: ambient-glow-orange",
+     "395: ambient-glow-red",
+     "406: ambient-glow-slate",
+     "418: ambient-glow-mint",
+     "429: ambient-glow-sky"
+    ],
+    "src/components/contact/DirectContactCard.tsx": [
+     "21: blur-3xl"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "25: ambient-glow-orange",
+     "26: ambient-glow-red"
+    ],
+    "src/components/sections/ReviewsSection.jsx": [
+     "44: ambient-glow-mint",
+     "45: ambient-glow-sky"
+    ]
+   }
+  },
+  "S-09 Glas/Unschärfe": {
+   "anzahl": 256,
+   "dateien": {
+    "src/app/(bestand)/agb/page.jsx": [
+     "15: glass-surface"
+    ],
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "107: glass-surface",
+     "136: glass-surface",
+     "213: glass-surface"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "106: glass-surface",
+     "135: glass-surface",
+     "212: glass-surface"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "92: glass-surface"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "105: glass-surface"
+    ],
+    "src/app/(bestand)/bad/badsanierung/page.jsx": [
+     "85: glass-surface"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "125: glass-surface"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "89: glass-surface",
+     "138: glass-surface"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx": [
+     "112: glass-surface"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "106: glass-surface"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "161: glass-surface",
+     "217: glass-surface",
+     "355: glass-surface"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "169: glass-surface",
+     "259: glass-surface",
+     "302: glass-surface",
+     "356: glass-surface"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "160: glass-surface",
+     "198: glass-surface",
+     "215: glass-surface",
+     "239: glass-surface",
+     "266: glass-surface",
+     "355: glass-surface"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "154: glass-surface",
+     "250: glass-surface",
+     "330: glass-surface"
+    ],
+    "src/app/(bestand)/barrierefreiheit/page.jsx": [
+     "20: glass-surface"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "132: glass-surface"
+    ],
+    "src/app/(bestand)/blog/[slug]/page.jsx": [
+     "138: glass-surface"
+    ],
+    "src/app/(bestand)/blog/page.jsx": [
+     "187: glass-surface"
+    ],
+    "src/app/(bestand)/cookie-richtlinie/page.jsx": [
+     "21: glass-surface"
+    ],
+    "src/app/(bestand)/datenschutz/page.jsx": [
+     "15: glass-surface"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "50: glass-surface",
+     "81: glass-surface"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "158: glass-surface",
+     "188: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "142: glass-surface",
+     "173: glass-surface",
+     "240: glass-surface",
+     "249: glass-surface",
+     "258: glass-surface",
+     "271: glass-surface",
+     "349: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "122: glass-surface",
+     "189: glass-surface-subtle"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "126: glass-surface",
+     "203: glass-surface",
+     "225: glass-surface",
+     "287: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "130: glass-surface",
+     "302: glass-surface-subtle"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "116: glass-surface",
+     "193: glass-surface",
+     "210: glass-surface",
+     "237: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "111: glass-surface",
+     "199: glass-surface",
+     "215: glass-surface",
+     "266: glass-surface",
+     "292: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "159: glass-surface",
+     "219: glass-surface",
+     "237: glass-surface",
+     "256: glass-surface",
+     "307: glass-surface",
+     "320: glass-surface-subtle"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "109: glass-surface",
+     "253: glass-surface-subtle"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "169: glass-surface",
+     "205: glass-surface",
+     "229: glass-surface",
+     "268: glass-surface",
+     "295: glass-surface",
+     "315: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "112: glass-surface",
+     "241: glass-surface",
+     "253: glass-surface-subtle"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "164: glass-surface",
+     "192: glass-surface",
+     "208: glass-surface",
+     "222: glass-surface",
+     "235: glass-surface",
+     "247: glass-surface",
+     "270: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "184: glass-surface",
+     "298: glass-surface",
+     "347: glass-surface",
+     "384: glass-surface-subtle"
+    ],
+    "src/app/(bestand)/fliesen/renovierung/page.jsx": [
+     "141: glass-surface",
+     "189: glass-surface",
+     "207: glass-surface",
+     "289: glass-surface"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "234: glass-surface",
+     "327: glass-surface",
+     "386: glass-surface-subtle"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "131: glass-surface",
+     "189: glass-surface",
+     "209: glass-surface",
+     "231: glass-surface",
+     "319: glass-surface",
+     "346: glass-surface"
+    ],
+    "src/app/(bestand)/fliesenreparatur/page.tsx": [
+     "112: glass-surface",
+     "129: glass-surface",
+     "194: glass-surface",
+     "254: glass-surface",
+     "332: glass-surface"
+    ],
+    "src/app/(bestand)/foerderung/page.jsx": [
+     "86: glass-surface",
+     "132: glass-surface"
+    ],
+    "src/app/(bestand)/impressum/page.jsx": [
+     "15: glass-surface"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "52: glass-surface"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "98: glass-surface",
+     "118: glass-surface",
+     "155: glass-surface"
+    ],
+    "src/app/(bestand)/kontakt/page.jsx": [
+     "52: glass-surface"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "317: glass-surface",
+     "345: glass-surface",
+     "364: glass-surface"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "217: glass-surface",
+     "238: glass-surface",
+     "268: glass-surface",
+     "292: glass-surface",
+     "316: glass-surface"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "124: glass-surface",
+     "210: glass-surface"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "170: glass-surface",
+     "187: glass-surface",
+     "337: glass-surface"
+    ],
+    "src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx": [
+     "204: glass-surface",
+     "236: glass-surface",
+     "306: glass-surface",
+     "367: glass-surface"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "207: glass-surface",
+     "288: glass-surface",
+     "334: glass-surface",
+     "455: glass-surface"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "245: glass-surface",
+     "423: glass-surface",
+     "439: backdrop-blur-xs",
+     "502: glass-surface",
+     "565: glass-surface",
+     "605: glass-surface",
+     "612: glass-surface"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "45: glass-surface"
+    ],
+    "src/app/(bestand)/preise/page.jsx": [
+     "163: glass-surface"
+    ],
+    "src/app/(bestand)/referenzen/[id]/page.jsx": [
+     "127: glass-surface",
+     "194: glass-surface",
+     "234: glass-surface"
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "87: glass-surface"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "189: glass-surface",
+     "226: glass-surface",
+     "281: glass-surface",
+     "336: glass-surface",
+     "415: glass-surface"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "263: glass-surface",
+     "301: glass-surface"
+    ],
+    "src/app/(bestand)/standorte/page.tsx": [
+     "122: glass-surface"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "46: glass-surface"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "164: glass-surface",
+     "215: glass-surface"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "126: glass-surface",
+     "180: glass-surface",
+     "208: glass-surface",
+     "219: glass-surface",
+     "230: glass-surface",
+     "295: glass-surface"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "163: glass-surface",
+     "230: glass-surface",
+     "252: glass-surface",
+     "280: glass-surface"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "144: glass-surface",
+     "228: glass-surface",
+     "268: glass-surface",
+     "282: glass-surface",
+     "352: glass-surface"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "143: glass-surface",
+     "203: glass-surface",
+     "257: glass-surface"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "60: glass-surface",
+     "70: glass-surface",
+     "99: glass-surface"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "249: glass-surface",
+     "316: glass-surface",
+     "347: glass-surface"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "189: glass-surface",
+     "272: glass-surface",
+     "364: glass-surface"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx": [
+     "138: glass-surface",
+     "190: glass-surface",
+     "206: glass-surface",
+     "221: glass-surface",
+     "300: glass-surface"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "174: glass-surface",
+     "288: glass-surface",
+     "369: glass-surface",
+     "389: glass-surface"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "154: glass-surface",
+     "206: glass-surface",
+     "223: glass-surface",
+     "264: glass-surface",
+     "284: glass-surface",
+     "295: glass-surface",
+     "321: glass-surface"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "155: glass-surface",
+     "192: glass-surface",
+     "244: glass-surface",
+     "259: glass-surface",
+     "274: glass-surface",
+     "289: glass-surface"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "57: glass-surface"
+    ],
+    "src/app/(bestand)/widerruf/page.jsx": [
+     "26: glass-surface"
+    ],
+    "src/app/globals.css": [
+     "281: glass-surface",
+     "287: glass-surface-subtle"
+    ],
+    "src/components/blog/BlogAuthorCard.jsx": [
+     "38: glass-surface"
+    ],
+    "src/components/blog/BlogCard.jsx": [
+     "19: glass-surface",
+     "58: backdrop-blur-md"
+    ],
+    "src/components/blog/BlogSidebar.jsx": [
+     "32: glass-surface",
+     "56: glass-surface"
+    ],
+    "src/components/blog/ReadingProgress.jsx": [
+     "35: backdrop-blur-sm",
+     "43: backdrop-blur-sm"
+    ],
+    "src/components/blog/RelatedPosts.jsx": [
+     "46: glass-surface"
+    ],
+    "src/components/blog/ShareButtons.jsx": [
+     "72: glass-surface"
+    ],
+    "src/components/common/CookieConsent.tsx": [
+     "435: backdrop-blur-xl",
+     "723: backdrop-blur-md"
+    ],
+    "src/components/common/GoogleMap.tsx": [
+     "160: backdrop-blur-sm"
+    ],
+    "src/components/common/Header.jsx": [
+     "93: backdrop-blur-sm"
+    ],
+    "src/components/common/MobileMenu.jsx": [
+     "94: backdrop-blur-md"
+    ],
+    "src/components/forms/HeroContactForm.tsx": [
+     "96: backdrop-blur-md"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "639: glass-surface",
+     "698: glass-surface"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "80: glass-surface",
+     "138: glass-surface",
+     "166: glass-surface"
+    ],
+    "src/components/layout/FloatingDock.tsx": [
+     "27: backdrop-blur-sm"
+    ],
+    "src/components/layout/MobileBottomBar.tsx": [
+     "30: backdrop-blur-md"
+    ],
+    "src/components/maps/ContactPremiumMap.tsx": [
+     "249: backdrop-blur-md",
+     "275: backdrop-blur-md"
+    ],
+    "src/components/maps/InteractiveMap.tsx": [
+     "79: backdrop-blur-md"
+    ],
+    "src/components/maps/InteractiveServiceMap.tsx": [
+     "193: backdrop-blur-md",
+     "236: backdrop-blur-md",
+     "267: backdrop-blur-md",
+     "287: backdrop-blur-md"
+    ],
+    "src/components/maps/LocalDominanceMap.tsx": [
+     "67: backdrop-blur-md",
+     "70: backdrop-blur-md",
+     "81: backdrop-blur-md",
+     "97: backdrop-blur-md"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "69: glass-surface"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "55: glass-surface"
+    ],
+    "src/components/sections/ReviewsSection.jsx": [
+     "65: glass-surface",
+     "79: glass-surface",
+     "123: glass-surface"
+    ],
+    "src/components/trust/TrustStrip.tsx": [
+     "21: backdrop-blur-md"
+    ]
+   }
+  },
+  "S-09 Funkeln-Icon": {
+   "anzahl": 94,
+   "dateien": {
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "12: Sparkles",
+     "33: Sparkles",
+     "209: Sparkles"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "12: Sparkles",
+     "33: Sparkles",
+     "208: Sparkles"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "4: Sparkles",
+     "33: Sparkles"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "11: Sparkles",
+     "32: Sparkles"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "7: Sparkles",
+     "32: Sparkles"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "7: Sparkles",
+     "33: Sparkles"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "10: Sparkles",
+     "37: Sparkles"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "10: Sparkles",
+     "111: Sparkles"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "12: Sparkles",
+     "53: Sparkles"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "14: Sparkles",
+     "32: Sparkles"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "9: Sparkles",
+     "44: Sparkles"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "14: Sparkles",
+     "37: Sparkles"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "12: Sparkles",
+     "52: Sparkles"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "10: Sparkles",
+     "119: Sparkles"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "14: Sparkles",
+     "43: Sparkles"
+    ],
+    "src/app/(bestand)/kontakt/page.jsx": [
+     "3: Sparkles",
+     "83: Sparkles"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "10: Sparkles",
+     "221: Sparkles"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "7: Sparkles",
+     "130: Sparkles"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "9: Sparkles",
+     "140: Sparkles",
+     "417: Sparkles"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "16: Sparkles",
+     "32: Sparkles"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "12: Sparkles",
+     "21: Sparkles",
+     "257: Sparkles"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "4: Sparkles",
+     "190: Sparkles"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "10: Sparkles",
+     "219: Sparkles"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "12: Sparkles",
+     "40: Sparkles",
+     "235: Sparkles"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "8: Sparkles",
+     "286: Sparkles"
+    ],
+    "src/components/common/Footer.jsx": [
+     "13: Sparkles",
+     "37: Sparkles"
+    ],
+    "src/components/common/MobileMenu.jsx": [
+     "13: Sparkles",
+     "29: Sparkles",
+     "37: Sparkles"
+    ],
+    "src/components/contact/BookingCalendar.tsx": [
+     "12: Sparkles",
+     "207: Sparkles",
+     "432: Sparkles"
+    ],
+    "src/components/forms/LeadQuickForm.tsx": [
+     "5: Sparkles",
+     "73: Sparkles"
+    ],
+    "src/components/funnels/BadProjektCheck.jsx": [
+     "16: Sparkles",
+     "389: Sparkles"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "14: Sparkles",
+     "226: Sparkles",
+     "294: Sparkles"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "16: Sparkles",
+     "667: Sparkles",
+     "746: Sparkles"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "5: Sparkles",
+     "104: Sparkles",
+     "174: Sparkles"
+    ],
+    "src/components/pricing/PricingCalculator.tsx": [
+     "20: Sparkles",
+     "114: Sparkles",
+     "317: Sparkles"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "9: Sparkles",
+     "25: Sparkles"
+    ],
+    "src/components/trust/TrustBadges.tsx": [
+     "2: Sparkles",
+     "18: Sparkles"
+    ],
+    "src/components/trust/TrustStrip.tsx": [
+     "3: Sparkles",
+     "11: Sparkles"
+    ],
+    "src/config/blog.js": [
+     "7: Sparkles",
+     "18: Sparkles"
+    ],
+    "src/config/company.js": [
+     "4: Sparkles",
+     "147: Sparkles",
+     "191: Sparkles"
+    ],
+    "src/config/services.js": [
+     "44: Sparkles"
+    ],
+    "src/lib/formulare/useAnfrageFunnel.ts": [
+     "6: Sparkles",
+     "26: Sparkles"
+    ],
+    "src/lib/kern/icons.ts": [
+     "47: Sparkles"
+    ]
+   }
+  },
+  "S-09 Laufband": {
+   "anzahl": 4,
+   "dateien": {
+    "src/app/globals.css": [
+     "621: marquee",
+     "630: animate-marquee",
+     "631: marquee"
+    ],
+    "src/components/trust/TrustStrip.tsx": [
+     "26: animate-marquee"
+    ]
+   }
+  },
+  "S-09 Nachlaufcursor": {
+   "anzahl": 1,
+   "dateien": {
+    "src/components/layout/ClientWidgets.tsx": [
+     "36: <WaterCursor"
+    ]
+   }
+  },
+  "S-09 Badge über Überschrift (eyebrow)": {
+   "anzahl": 474,
+   "dateien": {
+    "src/app/(bestand)/agb/page.jsx": [
+     "17: eyebrow"
+    ],
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "55: eyebrow eyebrow-orange",
+     "97: eyebrow eyebrow-orange",
+     "137: eyebrow eyebrow-orange",
+     "202: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "55: eyebrow eyebrow-orange",
+     "96: eyebrow eyebrow-orange",
+     "136: eyebrow eyebrow-orange",
+     "201: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "45: eyebrow",
+     "72: eyebrow eyebrow-amber"
+    ],
+    "src/app/(bestand)/bad/badanfrage/page.jsx": [
+     "21: eyebrow"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "43: eyebrow",
+     "92: eyebrow eyebrow-sky"
+    ],
+    "src/app/(bestand)/bad/badsanierung/page.jsx": [
+     "43: eyebrow",
+     "71: eyebrow eyebrow-sky"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "49: eyebrow",
+     "109: eyebrow eyebrow-sky"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "48: eyebrow",
+     "76: eyebrow eyebrow-sky",
+     "106: eyebrow"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx": [
+     "99: eyebrow eyebrow-sky"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/page.jsx": [
+     "31: eyebrow"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "51: eyebrow",
+     "55: eyebrow eyebrow-amber",
+     "92: eyebrow eyebrow-sky",
+     "129: eyebrow"
+    ],
+    "src/app/(bestand)/bad/projekt-check/page.jsx": [
+     "21: eyebrow"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "124: eyebrow",
+     "150: eyebrow",
+     "178: eyebrow",
+     "207: eyebrow",
+     "326: eyebrow"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "130: eyebrow",
+     "156: eyebrow",
+     "193: eyebrow",
+     "250: eyebrow",
+     "290: eyebrow",
+     "326: eyebrow"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "114: eyebrow",
+     "141: eyebrow",
+     "186: eyebrow",
+     "299: eyebrow",
+     "326: eyebrow"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "117: eyebrow",
+     "143: eyebrow",
+     "182: eyebrow",
+     "272: eyebrow",
+     "301: eyebrow"
+    ],
+    "src/app/(bestand)/barrierefreiheit/page.jsx": [
+     "22: eyebrow"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "74: eyebrow",
+     "103: eyebrow",
+     "162: eyebrow"
+    ],
+    "src/app/(bestand)/blog/[slug]/page.jsx": [
+     "96: eyebrow",
+     "101: eyebrow eyebrow-amber"
+    ],
+    "src/app/(bestand)/blog/page.jsx": [
+     "43: eyebrow"
+    ],
+    "src/app/(bestand)/cookie-richtlinie/page.jsx": [
+     "23: eyebrow"
+    ],
+    "src/app/(bestand)/datenschutz/page.jsx": [
+     "18: eyebrow"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "35: eyebrow"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "84: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "116: eyebrow",
+     "162: eyebrow eyebrow-orange",
+     "190: eyebrow",
+     "291: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "85: eyebrow",
+     "111: eyebrow eyebrow-orange",
+     "153: eyebrow",
+     "217: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "81: eyebrow",
+     "110: eyebrow eyebrow-orange",
+     "143: eyebrow",
+     "168: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "93: eyebrow",
+     "119: eyebrow eyebrow-orange",
+     "175: eyebrow",
+     "270: eyebrow eyebrow-orange",
+     "336: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "76: eyebrow",
+     "102: eyebrow eyebrow-orange",
+     "133: eyebrow",
+     "155: eyebrow eyebrow-orange",
+     "171: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "83: eyebrow",
+     "112: eyebrow eyebrow-orange",
+     "135: eyebrow eyebrow-amber",
+     "160: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "120: eyebrow",
+     "148: eyebrow eyebrow-orange",
+     "176: eyebrow",
+     "213: eyebrow eyebrow-orange",
+     "348: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "72: eyebrow",
+     "98: eyebrow eyebrow-orange",
+     "126: eyebrow",
+     "212: eyebrow eyebrow-orange",
+     "287: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "118: eyebrow",
+     "154: eyebrow eyebrow-orange",
+     "190: eyebrow",
+     "259: eyebrow",
+     "286: eyebrow eyebrow-neutral"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "75: eyebrow",
+     "101: eyebrow eyebrow-orange",
+     "129: eyebrow",
+     "291: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "93: eyebrow",
+     "119: eyebrow eyebrow-orange",
+     "150: eyebrow",
+     "181: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "66: eyebrow",
+     "77: eyebrow",
+     "88: eyebrow",
+     "99: eyebrow",
+     "110: eyebrow",
+     "140: eyebrow",
+     "167: eyebrow eyebrow-orange",
+     "207: eyebrow",
+     "222: eyebrow",
+     "285: eyebrow eyebrow-neutral",
+     "319: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/renovierung/page.jsx": [
+     "93: eyebrow",
+     "120: eyebrow eyebrow-orange",
+     "156: eyebrow",
+     "227: eyebrow eyebrow-orange",
+     "252: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "195: eyebrow",
+     "221: eyebrow eyebrow-orange",
+     "253: eyebrow",
+     "303: eyebrow eyebrow-orange",
+     "424: eyebrow"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "88: eyebrow",
+     "118: eyebrow eyebrow-orange",
+     "148: eyebrow",
+     "176: eyebrow eyebrow-orange",
+     "259: eyebrow",
+     "303: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/fliesenreparatur/page.tsx": [
+     "77: eyebrow",
+     "154: eyebrow eyebrow-orange",
+     "179: eyebrow eyebrow-orange",
+     "275: eyebrow"
+    ],
+    "src/app/(bestand)/foerderung/page.jsx": [
+     "46: eyebrow eyebrow-amber",
+     "73: eyebrow",
+     "101: eyebrow",
+     "125: eyebrow"
+    ],
+    "src/app/(bestand)/impressum/page.jsx": [
+     "18: eyebrow"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "34: eyebrow"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "64: eyebrow",
+     "91: eyebrow",
+     "150: eyebrow"
+    ],
+    "src/app/(bestand)/kontakt/page.jsx": [
+     "22: eyebrow",
+     "55: eyebrow eyebrow-red",
+     "112: eyebrow",
+     "130: eyebrow",
+     "148: eyebrow"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "231: eyebrow",
+     "267: eyebrow",
+     "332: eyebrow eyebrow-red"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "169: eyebrow",
+     "317: eyebrow",
+     "368: eyebrow",
+     "382: eyebrow",
+     "405: eyebrow"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "76: eyebrow",
+     "80: eyebrow eyebrow-red",
+     "134: eyebrow eyebrow-neutral",
+     "198: eyebrow eyebrow-red",
+     "232: eyebrow",
+     "246: eyebrow"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "82: eyebrow eyebrow-orange",
+     "109: eyebrow eyebrow-orange",
+     "158: eyebrow eyebrow-orange",
+     "213: eyebrow eyebrow-orange",
+     "308: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx": [
+     "102: eyebrow eyebrow-orange",
+     "129: eyebrow eyebrow-orange",
+     "180: eyebrow eyebrow-orange",
+     "227: eyebrow eyebrow-orange",
+     "308: eyebrow eyebrow-neutral",
+     "338: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "157: eyebrow eyebrow-orange",
+     "184: eyebrow eyebrow-orange",
+     "229: eyebrow eyebrow-orange",
+     "294: eyebrow eyebrow-neutral",
+     "325: eyebrow eyebrow-orange",
+     "359: eyebrow eyebrow-orange",
+     "387: eyebrow eyebrow-orange",
+     "426: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/not-found.tsx": [
+     "18: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "79: eyebrow",
+     "87: eyebrow",
+     "101: eyebrow",
+     "115: eyebrow",
+     "123: eyebrow",
+     "298: eyebrow",
+     "309: eyebrow",
+     "311: eyebrow",
+     "318: eyebrow",
+     "387: eyebrow eyebrow-red",
+     "404: eyebrow",
+     "488: eyebrow eyebrow-red",
+     "524: eyebrow",
+     "600: eyebrow eyebrow-amber",
+     "636: eyebrow",
+     "652: eyebrow",
+     "689: eyebrow"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "26: eyebrow"
+    ],
+    "src/app/(bestand)/preise/page.jsx": [
+     "36: eyebrow",
+     "40: eyebrow eyebrow-red",
+     "79: eyebrow",
+     "201: eyebrow"
+    ],
+    "src/app/(bestand)/referenzen/[id]/page.jsx": [
+     "77: eyebrow eyebrow-orange",
+     "82: eyebrow",
+     "86: eyebrow eyebrow-neutral",
+     "92: eyebrow eyebrow-neutral"
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "42: eyebrow eyebrow-amber",
+     "70: eyebrow eyebrow-orange",
+     "159: eyebrow"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "159: eyebrow eyebrow-orange",
+     "210: eyebrow eyebrow-orange",
+     "239: eyebrow eyebrow-orange",
+     "272: eyebrow eyebrow-orange",
+     "297: eyebrow eyebrow-orange",
+     "329: eyebrow eyebrow-orange",
+     "383: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "153: eyebrow",
+     "189: eyebrow",
+     "222: eyebrow eyebrow-orange",
+     "246: eyebrow eyebrow-red"
+    ],
+    "src/app/(bestand)/standorte/page.tsx": [
+     "61: eyebrow",
+     "92: eyebrow",
+     "107: eyebrow eyebrow-red",
+     "157: eyebrow",
+     "188: eyebrow eyebrow-neutral",
+     "211: eyebrow"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "27: eyebrow",
+     "62: eyebrow"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "149: eyebrow",
+     "169: eyebrow",
+     "219: eyebrow"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "89: eyebrow",
+     "115: eyebrow",
+     "143: eyebrow",
+     "172: eyebrow",
+     "202: eyebrow",
+     "257: eyebrow eyebrow-neutral"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "113: eyebrow eyebrow-orange",
+     "148: eyebrow eyebrow-orange",
+     "180: eyebrow eyebrow-orange",
+     "218: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "101: eyebrow eyebrow-orange",
+     "127: eyebrow eyebrow-orange",
+     "169: eyebrow eyebrow-orange",
+     "216: eyebrow eyebrow-orange",
+     "258: eyebrow eyebrow-orange",
+     "305: eyebrow eyebrow-neutral"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "105: eyebrow",
+     "132: eyebrow",
+     "160: eyebrow",
+     "193: eyebrow"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "29: eyebrow",
+     "45: eyebrow eyebrow-red",
+     "90: eyebrow"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "95: eyebrow",
+     "122: eyebrow eyebrow-orange",
+     "177: eyebrow eyebrow-orange",
+     "206: eyebrow eyebrow-orange",
+     "235: eyebrow eyebrow-orange",
+     "273: eyebrow eyebrow-orange",
+     "317: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "146: eyebrow",
+     "175: eyebrow eyebrow-orange",
+     "210: eyebrow eyebrow-orange",
+     "258: eyebrow eyebrow-orange",
+     "292: eyebrow eyebrow-orange",
+     "335: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx": [
+     "96: eyebrow",
+     "123: eyebrow eyebrow-orange",
+     "165: eyebrow eyebrow-orange",
+     "240: eyebrow eyebrow-amber",
+     "267: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "113: eyebrow",
+     "142: eyebrow eyebrow-amber",
+     "167: eyebrow eyebrow-orange",
+     "230: eyebrow eyebrow-orange",
+     "270: eyebrow eyebrow-orange",
+     "319: eyebrow eyebrow-orange",
+     "354: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "116: eyebrow",
+     "142: eyebrow eyebrow-orange",
+     "170: eyebrow eyebrow-orange",
+     "249: eyebrow eyebrow-orange"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "122: eyebrow",
+     "178: eyebrow eyebrow-orange",
+     "215: eyebrow",
+     "310: eyebrow eyebrow-orange",
+     "340: eyebrow"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "27: eyebrow eyebrow-amber",
+     "44: eyebrow",
+     "80: eyebrow"
+    ],
+    "src/app/globals.css": [
+     "124: eyebrow",
+     "139: eyebrow-red",
+     "145: eyebrow-neutral",
+     "151: eyebrow-amber"
+    ],
+    "src/components/common/Header.jsx": [
+     "195: eyebrow",
+     "197: eyebrow"
+    ],
+    "src/components/common/MobileMenu.jsx": [
+     "167: eyebrow",
+     "169: eyebrow"
+    ],
+    "src/components/funnels/BadProjektCheck.jsx": [
+     "159: eyebrow",
+     "163: eyebrow eyebrow-neutral",
+     "297: eyebrow eyebrow-sky"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "205: eyebrow",
+     "262: eyebrow",
+     "293: eyebrow",
+     "297: eyebrow eyebrow-neutral"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "645: eyebrow",
+     "703: eyebrow",
+     "745: eyebrow"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "85: eyebrow",
+     "142: eyebrow",
+     "173: eyebrow"
+    ],
+    "src/components/kern/kopf-a/MobilInhalt.tsx": [
+     "73: eyebrow"
+    ],
+    "src/components/kern/kopf-a/Planblatt.tsx": [
+     "34: eyebrow"
+    ],
+    "src/components/kern/kopf-a/daten.ts": [
+     "8: eyebrow"
+    ],
+    "src/components/kern/kopf-b/daten.ts": [
+     "15: eyebrow",
+     "34: eyebrow"
+    ],
+    "src/components/kern/start/Fachbereiche.tsx": [
+     "83: eyebrow",
+     "88: eyebrow"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "30: eyebrow"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "35: eyebrow"
+    ],
+    "src/components/sections/ReviewsSection.jsx": [
+     "50: eyebrow eyebrow-amber"
+    ],
+    "src/config/navigation.js": [
+     "35: eyebrow",
+     "70: eyebrow"
+    ],
+    "src/lib/kern/start/daten.ts": [
+     "12: eyebrow",
+     "21: eyebrow",
+     "34: eyebrow",
+     "47: eyebrow",
+     "54: eyebrow"
+    ]
+   }
+  },
+  "S-11 Icon-Kachel": {
+   "anzahl": 135,
+   "dateien": {
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "215: icon-chip"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "214: icon-chip"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "94: icon-chip"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "72: icon-chip",
+     "130: icon-chip"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "79: icon-chip",
+     "127: icon-chip"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "91: icon-chip"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "108: icon-chip"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "163: icon-chip",
+     "219: icon-chip",
+     "245: icon-chip",
+     "265: icon-chip",
+     "292: icon-chip"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "170: icon-chip",
+     "260: icon-chip",
+     "304: icon-chip"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "200: icon-chip",
+     "216: icon-chip",
+     "240: icon-chip",
+     "267: icon-chip"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "156: icon-chip",
+     "251: icon-chip"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "134: icon-chip"
+    ],
+    "src/app/(bestand)/blog/[slug]/page.jsx": [
+     "215: icon-chip"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "52: icon-chip",
+     "84: icon-chip"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "147: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "143: icon-chip",
+     "175: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "124: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "128: icon-chip",
+     "153: icon-chip",
+     "204: icon-chip",
+     "226: icon-chip",
+     "254: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "132: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "118: icon-chip",
+     "194: icon-chip",
+     "211: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "177: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "161: icon-chip",
+     "220: icon-chip",
+     "238: icon-chip",
+     "257: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "111: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "171: icon-chip",
+     "270: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "114: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "194: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "186: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/renovierung/page.jsx": [
+     "173: icon-chip",
+     "190: icon-chip",
+     "208: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "260: icon-chip",
+     "274: icon-chip",
+     "286: icon-chip"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "133: icon-chip",
+     "191: icon-chip",
+     "210: icon-chip",
+     "232: icon-chip",
+     "321: icon-chip"
+    ],
+    "src/app/(bestand)/fliesenreparatur/page.tsx": [
+     "114: icon-chip",
+     "131: icon-chip"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "100: icon-chip"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "319: icon-chip"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "219: icon-chip"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "128: icon-chip"
+    ],
+    "src/app/(bestand)/login/page.jsx": [
+     "50: icon-chip"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "172: icon-chip",
+     "188: icon-chip",
+     "245: icon-chip",
+     "264: icon-chip"
+    ],
+    "src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx": [
+     "205: icon-chip",
+     "237: icon-chip",
+     "255: icon-chip",
+     "276: icon-chip"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "291: icon-chip",
+     "335: icon-chip"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "278: icon-chip",
+     "315: icon-chip",
+     "445: icon-chip"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "47: icon-chip"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "194: icon-chip",
+     "253: icon-chip",
+     "282: icon-chip",
+     "307: icon-chip"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "266: icon-chip"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "49: icon-chip"
+    ],
+    "src/app/(bestand)/termin/page.jsx": [
+     "165: icon-chip",
+     "216: icon-chip"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "128: icon-chip",
+     "209: icon-chip",
+     "220: icon-chip",
+     "231: icon-chip"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "165: icon-chip",
+     "231: icon-chip"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "146: icon-chip",
+     "230: icon-chip"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "145: icon-chip",
+     "174: icon-chip",
+     "222: icon-chip",
+     "234: icon-chip"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "101: icon-chip"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "219: icon-chip"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "273: icon-chip",
+     "307: icon-chip"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx": [
+     "175: icon-chip"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "244: icon-chip",
+     "329: icon-chip"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "155: icon-chip",
+     "207: icon-chip",
+     "224: icon-chip",
+     "285: icon-chip",
+     "296: icon-chip"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "157: icon-chip",
+     "193: icon-chip",
+     "245: icon-chip",
+     "260: icon-chip",
+     "275: icon-chip",
+     "290: icon-chip"
+    ],
+    "src/app/(bestand)/widerruf/page.jsx": [
+     "34: icon-chip"
+    ],
+    "src/app/globals.css": [
+     "226: icon-chip",
+     "238: icon-chip"
+    ],
+    "src/components/blog/BlogSidebar.jsx": [
+     "95: icon-chip"
+    ],
+    "src/components/common/CalendlySection.jsx": [
+     "39: icon-chip",
+     "59: icon-chip"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "201: icon-chip",
+     "259: icon-chip"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "641: icon-chip",
+     "700: icon-chip"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "81: icon-chip",
+     "139: icon-chip",
+     "225: icon-chip"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "58: icon-chip"
+    ]
+   }
+  },
+  "S-13 Floskel": {
+   "anzahl": 44,
+   "dateien": {
+    "src/app/(bestand)/bad/badanfrage/page.jsx": [
+     "30: maßgeschneidertes"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/[slug]/page.jsx": [
+     "82: Entdecken Sie"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/page.jsx": [
+     "40: Entdecken Sie"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "34: Premium"
+    ],
+    "src/app/(bestand)/faq/layout.tsx": [
+     "22: Premium"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "16: Premium"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "204: Entdecken Sie"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "12: modernste"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "40: erstklassiges"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "47: exklusive maßgeschneiderte",
+     "48: exklusives"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "197: Perfektion",
+     "675: modernste"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "36: Perfektion"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "37: Premium"
+    ],
+    "src/components/kern/basis/Akkordeon.tsx": [
+     "22: exklusives"
+    ],
+    "src/components/kern/start/Fragen.tsx": [
+     "12: modernste"
+    ],
+    "src/components/kern/start/einstieg-a/Einstieg.tsx": [
+     "50: Perfektion"
+    ],
+    "src/components/kern/start/einstieg-b/Einstieg.tsx": [
+     "69: Perfektion"
+    ],
+    "src/config/company.js": [
+     "141: Perfektion",
+     "179: Premium",
+     "214: modernstem"
+    ],
+    "src/config/musterbaeder.js": [
+     "4: Premium",
+     "245: Premium",
+     "299: Premium",
+     "300: Premium",
+     "340: Premium",
+     "341: Premium",
+     "388: Premium",
+     "450: High-End",
+     "459: High-End",
+     "556: High-End",
+     "602: High-End",
+     "657: Premium",
+     "663: High-End"
+    ],
+    "src/config/services.js": [
+     "30: innovativen",
+     "65: unübertroffener",
+     "97: innovative"
+    ],
+    "src/lib/config.ts": [
+     "114: exklusive"
+    ],
+    "src/lib/maps/getMapEmbedUrl.ts": [
+     "152: Premium"
+    ],
+    "src/lib/schema.ts": [
+     "109: exklusive"
+    ],
+    "src/shared/config/site.ts": [
+     "29: exklusive"
+    ],
+    "src/styles/tokens.css": [
+     "56: Premium"
+    ]
+   }
+  },
+  "S-09 Hover-Anheben": {
+   "anzahl": 131,
+   "dateien": {
+    "src/app/(bestand)/ausstellung/giessen/page.jsx": [
+     "107: hover:-translate-y-0.5",
+     "213: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/ausstellung/wetzlar/page.jsx": [
+     "106: hover:-translate-y-0.5",
+     "212: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/bad/bad-aus-einer-hand/page.jsx": [
+     "92: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/bad/badplaner/page.jsx": [
+     "105: hover:-translate-y-0.5",
+     "127: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/bad/badsanierung/page.jsx": [
+     "85: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/bad/barrierefreies-bad/page.jsx": [
+     "125: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/bad/fliesen/page.jsx": [
+     "89: hover:-translate-y-0.5",
+     "119: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/bad/musterbaeder/page.jsx": [
+     "60: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/bad/page.jsx": [
+     "106: hover:-translate-y-0.5",
+     "143: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/balkon-terrasse/balkonsanierung/page.jsx": [
+     "161: hover:-translate-y-0.5",
+     "217: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/balkon-terrasse/page.jsx": [
+     "169: hover:-translate-y-0.5",
+     "302: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/balkon-terrasse/stelzlager/page.jsx": [
+     "198: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/balkon-terrasse/terrassenplatten/page.jsx": [
+     "154: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/beratung/page.jsx": [
+     "116: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/blog/page.jsx": [
+     "133: group-hover:scale-105"
+    ],
+    "src/app/(bestand)/downloads/page.jsx": [
+     "81: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/faq/page.jsx": [
+     "128: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/abnahme/page.jsx": [
+     "173: hover:-translate-y-0.5",
+     "349: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/auf-fussbodenheizung/page.jsx": [
+     "122: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/festpreisangebot/page.jsx": [
+     "126: hover:-translate-y-0.5",
+     "287: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/fliesenarten/page.jsx": [
+     "130: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/flur-diele/page.jsx": [
+     "116: hover:-translate-y-0.5",
+     "237: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/fugensanierung/page.jsx": [
+     "171: hover:-translate-y-0.5",
+     "292: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/grossformat/page.jsx": [
+     "159: hover:-translate-y-0.5",
+     "187: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/holzoptik/page.jsx": [
+     "109: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/konfigurator/page.jsx": [
+     "169: hover:-translate-y-0.5",
+     "315: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/kueche/page.jsx": [
+     "112: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/neubau/page.jsx": [
+     "192: hover:-translate-y-0.5",
+     "270: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/page.jsx": [
+     "184: hover:-translate-y-0.5",
+     "298: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/renovierung/page.jsx": [
+     "167: hover:-translate-y-0.5",
+     "289: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/verlegemuster/page.jsx": [
+     "234: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesen/verlegetechnik/page.jsx": [
+     "131: hover:-translate-y-0.5",
+     "319: hover:-translate-y-0.5",
+     "346: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/fliesenreparatur/page.tsx": [
+     "163: hover:-translate-y-0.5",
+     "332: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/foerderung/page.jsx": [
+     "86: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/karriere/ausbildung/page.jsx": [
+     "52: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/karriere/page.jsx": [
+     "98: hover:-translate-y-0.5",
+     "118: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/leistungen/[id]/[stadt]/page.tsx": [
+     "317: hover:-translate-y-0.5",
+     "345: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/leistungen/[id]/page.jsx": [
+     "217: hover:-translate-y-0.5",
+     "277: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/leistungen/page.jsx": [
+     "124: hover:-translate-y-0.5",
+     "210: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/naturstein/granit/page.jsx": [
+     "170: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/naturstein/marmor-kalkstein/page.jsx": [
+     "204: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/naturstein/page.jsx": [
+     "288: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/page.tsx": [
+     "277: hover:-translate-y-0.5",
+     "312: hover:-translate-y-0.5",
+     "364: hover:-translate-y-0.5",
+     "423: hover:-translate-y-0.5",
+     "436: group-hover:scale-105",
+     "502: hover:-translate-y-0.5",
+     "573: group-hover:scale-105"
+    ],
+    "src/app/(bestand)/partner/page.jsx": [
+     "45: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/referenzen/page.jsx": [
+     "87: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/schadensanalyse/page.jsx": [
+     "226: hover:-translate-y-0.5",
+     "250: hover:-translate-y-0.5",
+     "415: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/standorte/[stadt]/page.tsx": [
+     "263: hover:-translate-y-0.5",
+     "301: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/standorte/page.tsx": [
+     "122: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/team/page.jsx": [
+     "46: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/treppen/aussentreppe/page.jsx": [
+     "126: hover:-translate-y-0.5",
+     "295: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/treppen/innentreppe/page.jsx": [
+     "163: hover:-translate-y-0.5",
+     "280: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/treppen/page.jsx": [
+     "144: hover:-translate-y-0.5",
+     "228: hover:-translate-y-0.5",
+     "352: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/treppen/treppenhaus/page.jsx": [
+     "143: hover:-translate-y-0.5",
+     "171: hover:-translate-y-0.5",
+     "257: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/ueber-uns/page.jsx": [
+     "70: hover:-translate-y-0.5",
+     "99: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/ausgleich-gefaelle/page.jsx": [
+     "218: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/din-18534/page.jsx": [
+     "272: hover:-translate-y-0.5",
+     "306: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/entkopplung/page.jsx": [
+     "174: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/estrich-belegreife/page.jsx": [
+     "243: hover:-translate-y-0.5",
+     "328: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/fliesen-auf-fliesen/page.jsx": [
+     "154: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/untergrund-abdichtung/page.jsx": [
+     "155: hover:-translate-y-0.5",
+     "192: hover:-translate-y-0.5",
+     "320: hover:-translate-y-0.5"
+    ],
+    "src/app/(bestand)/unternehmen/page.jsx": [
+     "57: hover:-translate-y-0.5"
+    ],
+    "src/components/blog/BlogCard.jsx": [
+     "19: hover:-translate-y-0.5",
+     "29: group-hover:scale-105"
+    ],
+    "src/components/blog/RelatedPosts.jsx": [
+     "59: hover:-translate-y-0.5",
+     "69: group-hover:scale-105"
+    ],
+    "src/components/blog/ShareButtons.jsx": [
+     "65: group-hover:scale-110"
+    ],
+    "src/components/common/CalendlySection.jsx": [
+     "57: hover:-translate-y-0.5"
+    ],
+    "src/components/common/CookieConsent.tsx": [
+     "723: hover:scale-105"
+    ],
+    "src/components/common/Footer.jsx": [
+     "81: group-hover:scale-[1.02]"
+    ],
+    "src/components/common/Header.jsx": [
+     "34: group-hover:scale-[1.02]"
+    ],
+    "src/components/contact/DirectContactCard.tsx": [
+     "41: group-hover:scale-105",
+     "60: group-hover:scale-105",
+     "77: group-hover:scale-105"
+    ],
+    "src/components/funnels/BadProjektCheck.jsx": [
+     "224: hover:-translate-y-0.5",
+     "252: hover:-translate-y-0.5"
+    ],
+    "src/components/funnels/BadanfrageFunnel.jsx": [
+     "66: hover:-translate-y-0.5"
+    ],
+    "src/components/funnels/FliesenKonfigurator.jsx": [
+     "143: hover:-translate-y-0.5"
+    ],
+    "src/components/funnels/TezgelAnfrageFunnel.tsx": [
+     "38: hover:-translate-y-0.5",
+     "221: hover:-translate-y-0.5"
+    ],
+    "src/components/maps/InteractiveServiceMap.tsx": [
+     "230: hover:scale-110",
+     "275: group-hover:scale-125"
+    ],
+    "src/components/pricing/PriceCard.tsx": [
+     "29: hover:-translate-y-1.5",
+     "30: hover:-translate-y-1"
+    ],
+    "src/components/sections/CompanyHistory.jsx": [
+     "69: hover:-translate-y-0.5"
+    ],
+    "src/components/sections/QualityPromise.jsx": [
+     "55: hover:-translate-y-0.5"
+    ],
+    "src/components/sections/ReviewsSection.jsx": [
+     "123: hover:-translate-y-0.5"
+    ],
+    "src/components/ui/FinalCTA.tsx": [
+     "99: hover:-translate-y-0.5",
+     "112: hover:-translate-y-0.5"
+    ]
+   }
+  }
+ }
+}

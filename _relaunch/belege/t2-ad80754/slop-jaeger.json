@@ -1,0 +1,175 @@
+{
+ "satz": "t2-ad80754",
+ "seiten": {
+  "/": {
+   "weich": 5,
+   "hart": 0,
+   "gemeldet": 11,
+   "verworfen": 6,
+   "nachgetragen": 0,
+   "funde": [
+    {
+     "kennung": "S-09",
+     "hart": false,
+     "ort": "fotos/m375/start/00.jpg (oben, Meta-Zeilen über der H1); fotos/t768/start/00.jpg (oben); fotos/d1440/start/00.jpg (oben); fotos/d1920/start/00.jpg (oben)",
+     "begruendung": "Zwei Kleinzeilen, „+ Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel“ und „★ 5,0 (27 Bewertungen)“, stehen als Badge über der Einstiegsüberschrift „Perfektion auf jedem Quadratmeter.“, das katalogtypische Muster. Die gleiche Kastenform über dem Abschnitt „Fugenarme XXL-Großformate …“ (Fachbetrieb für anspruchsvolle Architektur) ist kein Einstiegs-Badge und deshalb nicht eigens gezählt."
+    },
+    {
+     "kennung": "S-14",
+     "hart": false,
+     "ort": "fotos/d1440/start/11.jpg (Foto rechts oben im Abschnitt „Fugenarme XXL-Großformate & fachgerechte Badsanierung“); fotos/d1920/start/09.jpg (gleicher Abschnitt, rechte Fotofläche)",
+     "begruendung": "Warmes Gegenlicht, glatte Flächen und ein leerer, makelloser Raum wirken wie ein KI- oder Stock-Render. Der Alt-Text in der Text-Datei nennt das Bild „(generierte Darstellung)“, die Bildunterschrift im Bild selbst nicht."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1440/start/08.jpg (Lead unter „Fliesen-, Platten- & Verlegearbeiten in Fachqualität“); fotos/d1920/start/06.jpg (gleicher Lead)",
+     "begruendung": "Wörtlich: „Ob barrierefreie Wellnessoase, offenes Wohnen mit Feinsteinzeug oder die wetterfeste Terrasse: Fachqualität aus Aßlar für den Lahn-Dill-Kreis und Hessen.“ Rhetorische Ob-oder-Aufzählung mit Schlagwort „Fachqualität“. Kein Wort aus der Floskelliste, daher weich und schwach."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "fotos/d1440/start/02.jpg (Mitte, zweite Zeile); fotos/m375/start/04.jpg (Mitte); fotos/t768/start/04.jpg (Mitte); fotos/d1920/start/02.jpg (oben)",
+     "begruendung": "Wörtlich: „Handwerkliche Perfektion, geprüfte Standards und fachgerechte Präzision bei Großformaten, Schnittbildern und Fugenachsen.“ Dreifache Substantivkette mit „Perfektion“, im Stil austauschbarer Werbetexte; schwacher Fund."
+    },
+    {
+     "kennung": "S-13",
+     "hart": false,
+     "ort": "texte/start.json, Zeile 31 (h2) und Zeile 464 (Absatz); im Bildausschnitt nicht sichtbar",
+     "begruendung": "Wörtlich: „Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.“ Stehende Abschluss-Frage nach KI-Textmuster („Bereit für …?“, verwandt mit „Entdecken Sie …“). Nur aus dem Text belegt."
+    }
+   ],
+   "roh": {
+    "seite": "/",
+    "jagd": [
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/m375/start/00.jpg (oben, Meta-Zeilen über der H1); fotos/t768/start/00.jpg (oben); fotos/d1440/start/00.jpg (oben); fotos/d1920/start/00.jpg (oben)",
+      "begruendung": "Zwei Kleinzeilen, „+ Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel“ und „★ 5,0 (27 Bewertungen)“, stehen als Badge über der Einstiegsüberschrift „Perfektion auf jedem Quadratmeter.“, das katalogtypische Muster. Die gleiche Kastenform über dem Abschnitt „Fugenarme XXL-Großformate …“ (Fachbetrieb für anspruchsvolle Architektur) ist kein Einstiegs-Badge und deshalb nicht eigens gezählt."
+     },
+     {
+      "kennung": "S-09",
+      "hart": false,
+      "ort": "fotos/d1440/start/11.jpg (rechts unten im Badfoto); fotos/d1920/start/09.jpg (rechts unten im Badfoto)",
+      "begruendung": "Ein kleiner vierzackiger Funkelstern (✦) liegt als Dekor in der Fotoecke; Funkeln ist im Katalog ausdrücklich genannt. In beiden Ansichten an derselben Stelle, daher ein Fund."
+     },
+     {
+      "kennung": "S-14",
+      "hart": false,
+      "ort": "fotos/d1440/start/11.jpg (Foto rechts oben im Abschnitt „Fugenarme XXL-Großformate & fachgerechte Badsanierung“); fotos/d1920/start/09.jpg (gleicher Abschnitt, rechte Fotofläche)",
+      "begruendung": "Warmes Gegenlicht, glatte Flächen und ein leerer, makelloser Raum wirken wie ein KI- oder Stock-Render. Der Alt-Text in der Text-Datei nennt das Bild „(generierte Darstellung)“, die Bildunterschrift im Bild selbst nicht."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/m375/start/03.jpg (Mitte, Raster „Vertrauenssignale und Fachbetriebs-Garantien“); fotos/t768/start/02.jpg (oben, gleiches Raster)",
+      "begruendung": "Acht gleichförmige Zellen im Zweispalten-Raster, sieben mit „+“-Marker, je Überschrift und zwei bis drei Textzeilen; das Raster ist das vorherrschende Muster dieses Abschnitts."
+     },
+     {
+      "kennung": "S-12",
+      "hart": false,
+      "ort": "fotos/m375/start/04.jpg (Mitte); fotos/t768/start/04.jpg (Mitte); fotos/d1440/start/02.jpg (oben, drei Zeilen); fotos/d1920/start/02.jpg (oben)",
+      "begruendung": "Drei aufeinanderfolgende Blöcke mit gleichem Aufbau (Plus-Kennzeile, Überschrift „Normgerechte Verbundabdichtung (DIN 18534)“ / „Eingetragener HWK-Wiesbaden Fachbetrieb“ / „Staubschutz & Sauberkeitsversprechen“, zwei Zeilen Text) ohne Blickfang. Grenzfall, weil die Startseite keine Erzählseite ist."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/d1440/start/03.jpg (Mitte, Raster „Alles für Ihr Vorhaben auf über 100 Fachseiten“); fotos/d1920/start/02.jpg (unten, gleiches Raster); fotos/m375/start/06.jpg und fotos/m375/start/07.jpg (mobile Fassung); fotos/t768/start/07.jpg (oben, Standorte- und Ratgeber-Felder)",
+      "begruendung": "Vier gleich gebaute Spalten mit Kopfzeile, Überschrift, Absatz, Link und Liste. Das Raster ist inhaltlich gegliedert, daher nur ein schwacher Fund."
+     },
+     {
+      "kennung": "S-11",
+      "hart": false,
+      "ort": "fotos/d1440/start/08.jpg (Karte „Bäder & Wellness“, breit oben); fotos/d1440/start/09.jpg (Karten „Wohnbereiche & Neubau“, „Balkon- & Terrassensanierung“, „Untergrund & DIN 18534 Abdichtung“); fotos/d1920/start/07.jpg (Karten unten); fotos/t768/start/09.jpg (Karten)",
+      "begruendung": "Vier Karten im gleichen Gerüst: Zeichnung oben, Kennzeile „+ … Fachgewerk“, Überschrift, Untertitel, drei bis vier Listenpunkte, Knopf oder Link. Die eigens gezeichneten Schnitte mindern das Muster, daher ein schwacher Fund."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "fotos/d1440/start/08.jpg (Lead unter „Fliesen-, Platten- & Verlegearbeiten in Fachqualität“); fotos/d1920/start/06.jpg (gleicher Lead)",
+      "begruendung": "Wörtlich: „Ob barrierefreie Wellnessoase, offenes Wohnen mit Feinsteinzeug oder die wetterfeste Terrasse: Fachqualität aus Aßlar für den Lahn-Dill-Kreis und Hessen.“ Rhetorische Ob-oder-Aufzählung mit Schlagwort „Fachqualität“. Kein Wort aus der Floskelliste, daher weich und schwach."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "fotos/d1440/start/02.jpg (Mitte, zweite Zeile); fotos/m375/start/04.jpg (Mitte); fotos/t768/start/04.jpg (Mitte); fotos/d1920/start/02.jpg (oben)",
+      "begruendung": "Wörtlich: „Handwerkliche Perfektion, geprüfte Standards und fachgerechte Präzision bei Großformaten, Schnittbildern und Fugenachsen.“ Dreifache Substantivkette mit „Perfektion“, im Stil austauschbarer Werbetexte; schwacher Fund."
+     },
+     {
+      "kennung": "S-13",
+      "hart": false,
+      "ort": "texte/start.json, Zeile 31 (h2) und Zeile 464 (Absatz); im Bildausschnitt nicht sichtbar",
+      "begruendung": "Wörtlich: „Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel.“ Stehende Abschluss-Frage nach KI-Textmuster („Bereit für …?“, verwandt mit „Entdecken Sie …“). Nur aus dem Text belegt."
+     },
+     {
+      "kennung": "S-03",
+      "hart": true,
+      "ort": "fotos/d1440/start/09.jpg (Kartenkopf rechts, „Fachgewerk“); fotos/d1920/start/07.jpg (Kartenkopf rechts, „Fachgewerk“); fotos/d1440/start/00.jpg und fotos/d1920/start/00.jpg („Rückruf < 24h“ im Formularkopf)",
+      "begruendung": "Sichtverdacht, nicht gemessen: Die hellgraue Kleinschrift auf hellem Grund wirkt unter 4,5:1. Ein Kontrastwert fehlt und muss am Bild oder per Stichprobe bestätigt werden."
+     }
+    ],
+    "pruefung": {
+     "urteile": [
+      {
+       "nr": 1,
+       "urteil": "anerkannt",
+       "grund": "In m375/00, t768/00, d1440/00 und d1920/00 sichtbar: Über der H1 „Perfektion auf jedem Quadratmeter.“ steht eine Meta-Zeile in Monoschrift mit „+ Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel“ und „★ 5,0 (27 Bewertungen)“. Die Angaben sind echt. Trotzdem ist es das Katalogmuster „Badge über der Einstiegsüberschrift“, hier als Zeile über einer Trennlinie statt als Pille. Richtig als ein Fund über alle Ansichten gezählt."
+      },
+      {
+       "nr": 2,
+       "urteil": "verworfen",
+       "grund": "Das ist kein Gestaltungsdekor. Vergrößert (d1440/11, rechts unten) ist es die vierzackige Wasserzeichen-Raute eines KI-Bildgenerators, die mit dem Foto mitgeliefert wird. Sie gehört also zum Bildinhalt und belegt Fund 3 (S-14, Bildfehler und KI-Anmutung). Als eigener S-09-Fund wäre dasselbe Bild doppelt gezählt."
+      },
+      {
+       "nr": 3,
+       "urteil": "anerkannt",
+       "grund": "d1440/11 und d1920/09 zeigen dasselbe Badfoto: warmes Gegenlicht, makelloser leerer Raum, typische KI-Render-Anmutung. Laut Alt-Text ist es eine „generierte Darstellung“. Dazu kommt das sichtbare Generator-Wasserzeichen (die Raute aus Fund 2) in der rechten unteren Ecke, ein klarer Bildfehler. Die Bildunterschrift „Bad mit freistehender Wanne / Millimetergenauer Gehrungsschnitt & C2TE S1 Flexkleber“ stellt das Bild wie eigene Arbeit dar. Ein Fund."
+      },
+      {
+       "nr": 4,
+       "urteil": "verworfen",
+       "grund": "In m375/03 und t768/02 ist das Vertrauensraster eine kompakte Merkmalsleiste. Jede Zelle hat nur einen „+“ und ein kurzes Stichwort von zwei bis drei Wörtern, das umbricht. Es gibt keine Überschrift mit zwei Zeilen Text, und eine Zelle ist ein Bewertungs-Widget. Das ist kein Karten-Einerlei mit Icon, Überschrift und zwei Zeilen, und auf der Seite herrscht es auch nicht vor."
+      },
+      {
+       "nr": 5,
+       "urteil": "verworfen",
+       "grund": "S-12 gilt für aufeinanderfolgende Abschnitte auf Erzählseiten. Die drei Zeilen (d1440/02, t768/02, m375/04) sind Einträge einer einzigen Liste in einem Abschnitt und keine drei Abschnitte. Die Startseite ist außerdem keine Erzählseite, wie der Jäger selbst einräumt. Fehlalarm."
+      },
+      {
+       "nr": 6,
+       "urteil": "verworfen",
+       "grund": "Das Vierspalten-Raster „Alles für Ihr Vorhaben …“ (d1440/03, d1920/02, m375/06–07) ist ein inhaltlich gegliederter Navigations-Knoten. Die Spalten sind verschieden gebaut: Linklisten, Stadt-Kacheln, Ratgeber-Links. Es gibt keine Icons, und das Raster folgt einer klaren Ordnung, nicht dem Muster aus Icon, Überschrift und zwei Zeilen. Die genannte Belegstelle t768/07 zeigt zudem das Anfrageformular und nicht dieses Raster."
+      },
+      {
+       "nr": 7,
+       "urteil": "verworfen",
+       "grund": "Die Fachgewerk-Karten (d1440/08–09, d1920/07, t768/09) tragen eigens gezeichnete technische Schnitte statt Icons. Die erste Karte ist breit hervorgehoben, und jede Karte hat drei bis sechs inhaltliche Listenpunkte. Das ist weder „Icon, Überschrift und zwei Zeilen“ noch das vorherrschende Muster der Seite. Der Jäger hält den Fund selbst für schwach."
+      },
+      {
+       "nr": 8,
+       "urteil": "anerkannt",
+       "grund": "Wörtlich in d1440/08 und d1920/06: „Ob barrierefreie Wellnessoase, offenes Wohnen mit Feinsteinzeug oder die wetterfeste Terrasse: Fachqualität aus Aßlar …“. Die Ob-oder-Reihung mit Doppelpunkt ist eine typische KI-Werbeformel, und „Wellnessoase“ ist eine Leerfloskel. Weich, aber belegt."
+      },
+      {
+       "nr": 9,
+       "urteil": "anerkannt",
+       "grund": "Wörtlich in d1440/02, d1920/02, t768/02 und m375/04: „Handwerkliche Perfektion, geprüfte Standards und fachgerechte Präzision …“. Das ist eine austauschbare Dreierkette ohne Aussage im KI-Werbestil. Ein Fund über alle Ansichten."
+      },
+      {
+       "nr": 10,
+       "urteil": "anerkannt",
+       "grund": "Laut Text-Datei (h2 in Zeile 31, Absatz in Zeile 464) lautet die Abschlussüberschrift „Bereit für Ihr Fliesen- oder Badprojekt? …“. „Bereit für …?“ ist eine stehende KI-Abschlussformel wie „Entdecken Sie …“. Das Briefing lässt die Text-Datei als Grundlage zu, und das Zitat ist wörtlich."
+      },
+      {
+       "nr": 11,
+       "urteil": "verworfen",
+       "grund": "Es ist nur ein Sichtverdacht, und die Stichprobe am Bild widerlegt ihn eher. „Fachgewerk“ (d1440/09), „Fachgewerk“ (d1440/08) und „Rückruf < 24h“ (d1440/00) haben dunkelste Strichpixel bei Grau 52–66 auf Weiß (etwa 10–12:1). Auch das 1-Prozent-Perzentil liegt bei Grau 80–82, also über 7:1 auf Weiß. Die helle Anmutung kommt von der Kantenglättung der dünnen Monoschrift. Eine Unterschreitung von AA ist nicht sichtbar belegt, und ein harter Fund ohne Beleg ist nicht zulässig."
+      }
+     ],
+     "nachgetragen": []
+    }
+   }
+  }
+ }
+}

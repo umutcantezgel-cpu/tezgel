@@ -1,0 +1,268 @@
+{
+ "protokoll": "PROBELAUF §8",
+ "bewerter": "Opus, frisch, blind (Kennungen gemischt)",
+ "zusammenfassung": {
+  "ausgangsstand · d1440": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 5
+  },
+  "ausgangsstand · m375": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 0
+  },
+  "kandidat ad80754 · d1440": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 0
+  },
+  "kandidat ad80754 · m375": {
+   "n": 5,
+   "alle_drei": 5,
+   "regional": 5
+  }
+ },
+ "bewertungen": [
+  {
+   "id": "A00",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Haus- und Wohnungseigentümer in Aßlar und Wetzlar sowie Aufmaßanfrage, WhatsApp und Telefon.",
+   "bild": "k3",
+   "durchgang": 3,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A01",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Privatleute mit Fliesenvorhaben, aber keine Region; als nächsten Schritt Aufmaß vor Ort, Anruf oder WhatsApp.",
+   "bild": "q7",
+   "durchgang": 5,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A02",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie vermutlich Hausbesitzer in und um Aßlar mit Bad- oder Fliesenvorhaben; als nächsten Schritt Aufmaß, Anruf oder WhatsApp.",
+   "bild": "w2",
+   "durchgang": 4,
+   "satz": "kandidat ad80754",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A03",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung, Haus- und Wohnungseigentümer in Aßlar und Wetzlar sowie Aufmaßanfrage, WhatsApp und Telefon.",
+   "bild": "k3",
+   "durchgang": 2,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A04",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Privatleute oder Eigentümer mit Fliesenvorhaben, aber keine Region; als nächsten Schritt Aufmaß vor Ort, Anruf oder WhatsApp.",
+   "bild": "q7",
+   "durchgang": 2,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A05",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Hausbesitzer und Eigentümer im Raum Aßlar und Wetzlar; als nächsten Schritt kostenloses Aufmaß über Button oder Formular.",
+   "bild": "k3",
+   "durchgang": 5,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A06",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie vermutlich Privatleute im Raum Aßlar; als nächsten Schritt Aufmaßtermin anfragen, anrufen oder WhatsApp.",
+   "bild": "w2",
+   "durchgang": 3,
+   "satz": "kandidat ad80754",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A07",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Privatleute in und um Aßlar und Wetzlar; als nächsten Schritt Aufmaßanfrage, Formular, WhatsApp oder Telefon.",
+   "bild": "k3",
+   "durchgang": 4,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A08",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Privatpersonen und Eigentümer, aber ausdrücklich keine Region; als nächsten Schritt Aufmaßanfrage per Formular oder Anruf.",
+   "bild": "p5",
+   "durchgang": 3,
+   "satz": "kandidat ad80754",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A09",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Hausbesitzer und Privatleute in und um Aßlar; als nächsten Schritt Aufmaß, Anruf oder WhatsApp.",
+   "bild": "w2",
+   "durchgang": 2,
+   "satz": "kandidat ad80754",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A10",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Privatleute und Hausbesitzer, aber ausdrücklich keine Region; als nächsten Schritt Aufmaßanfrage oder Anruf.",
+   "bild": "p5",
+   "durchgang": 4,
+   "satz": "kandidat ad80754",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A11",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Privatleute in Haus oder Wohnung, aber keine Region; als nächsten Schritt Aufmaß vor Ort, Anruf oder WhatsApp.",
+   "bild": "q7",
+   "durchgang": 3,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A12",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und vermutlich Privatleute mit Fliesenvorhaben, aber keine Region; als nächsten Schritt Aufmaß, WhatsApp oder Anruf.",
+   "bild": "q7",
+   "durchgang": 1,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A13",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Hausbesitzer und Mieter als Bewohner, aber keine Region; als nächsten Schritt Aufmaßanfrage per Formular oder Anruf.",
+   "bild": "p5",
+   "durchgang": 5,
+   "satz": "kandidat ad80754",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A14",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Privatleute im Raum Aßlar und Wetzlar; als nächsten Schritt Aufmaßformular, WhatsApp oder Telefon.",
+   "bild": "k3",
+   "durchgang": 1,
+   "satz": "ausgangsstand",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A15",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung sowie Hausbesitzer und Bewohner mit Fliesenvorhaben, aber keine Region; als nächsten Schritt Aufmaß, Anruf oder WhatsApp.",
+   "bild": "q7",
+   "durchgang": 4,
+   "satz": "ausgangsstand",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A16",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie private Eigentümer und Bewohner, aber keine Region; als nächsten Schritt Aufmaßanfrage oder Anruf.",
+   "bild": "p5",
+   "durchgang": 1,
+   "satz": "kandidat ad80754",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A17",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Hausbesitzer und Privatkunden in und um Aßlar; als nächsten Schritt Aufmaß, Anruf oder WhatsApp.",
+   "bild": "w2",
+   "durchgang": 5,
+   "satz": "kandidat ad80754",
+   "ansicht": "m375"
+  },
+  {
+   "id": "A18",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": false,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie Privatpersonen mit Bad- oder Fliesenvorhaben, aber ausdrücklich keine Region; als nächsten Schritt Aufmaßanfrage oder Anruf.",
+   "bild": "p5",
+   "durchgang": 2,
+   "satz": "kandidat ad80754",
+   "ansicht": "d1440"
+  },
+  {
+   "id": "A19",
+   "angebot": true,
+   "zielgruppe": true,
+   "naechster_schritt": true,
+   "regional": true,
+   "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie vermutlich Privatleute in und um Aßlar; als nächsten Schritt Aufmaß, Anruf oder WhatsApp.",
+   "bild": "w2",
+   "durchgang": 1,
+   "satz": "kandidat ad80754",
+   "ansicht": "m375"
+  }
+ ]
+}

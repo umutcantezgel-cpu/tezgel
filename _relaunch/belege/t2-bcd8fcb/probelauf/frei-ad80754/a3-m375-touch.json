@@ -1,0 +1,659 @@
+{
+ "satz": "p3-16",
+ "base": "http://127.0.0.1:4326",
+ "bedingungen": {
+  "ansicht": "m375",
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "isMobile": true,
+  "hasTouch": true,
+  "dpr": 1,
+  "eingabe": "touch",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T01:48:09.421Z",
+ "lauf": "a3-m375-touch",
+ "aufgabe": 3,
+ "titel": "Aufmaß oder Anfrage stellen",
+ "auftrag": "Fordern Sie einen kostenlosen Vor-Ort-Termin an und senden Sie die Anfrage ab.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p3-16/a3-m375-touch.json",
+ "antwort": "Über „Aufmaß“ in der Daumenleiste die Express-Anfrage gefunden und abgesendet: „Anfrage erfolgreich übermittelt“, Vorgangs-Nr. TEZ-26-TEST.",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "mittel",
+   "schritt": 1,
+   "text": "„Aufmaß vor Ort anfragen“ (Hero) führt auf /kontakt; das Anfrage-Formular liegt erst rund neun Bildschirme tiefer und das Einwilligungs-Sheet überdeckt den Weg (Bild 01-tippe.jpg). Der Weg zum Formular gelingt erst über „Aufmaß“ in der Daumenleiste (Bild 02-tippe.jpg)."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 7,
+   "text": "Nach „Weiter zu Schritt 2“ springt die Ansicht zum Abschnitt „Sie möchten Ihr Bad …“, Schritt 2 liegt darüber; der Besucher muss zurückscrollen (Bild 07-tippe.jpg). Außerdem überlagert die Kopfleiste beim Erreichen den oberen Teil des Weiter-Buttons (Bild 06-scrolle.jpg)."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 31,
+    "aria": 161,
+    "ausschnitt": 16,
+    "bedien": 38
+   },
+   "dauer_ms": 1836
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Aufmaß vor Ort anfragen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Aufmaß vor Ort anfragen\" · section „Perfektion auf jedem Quadrat­meter.Fliesenverlegun“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/kontakt",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 43,
+    "aria": 89,
+    "ausschnitt": 11,
+    "bedien": 18
+   },
+   "dauer_ms": 1794
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Aufmaß",
+    "in": "Schnellkontakt"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Aufmaß\" · aside „Schnellkontakt Daumenleiste“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 4888,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 39,
+    "aria": 74,
+    "ausschnitt": 8,
+    "bedien": 15
+   },
+   "dauer_ms": 902
+  },
+  {
+   "nr": 3,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle ablehnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Alle ablehnen\" · dialog „Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 3,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 4977,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-tippe.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 21,
+    "aria": 30,
+    "ausschnitt": 9,
+    "bedien": 14
+   },
+   "dauer_ms": 575
+  },
+  {
+   "nr": 4,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Bad & Wellness"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Sehr beliebt Bad & Wellness Walk-In-Dusche, Großformate, Ablagenischen\" [pressed] · section „Ihr Vor-Ort-Aufmaß anfordern“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 4977,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-tippe.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 31,
+    "aria": 36,
+    "ausschnitt": 10,
+    "bedien": 14
+   },
+   "dauer_ms": 473
+  },
+  {
+   "nr": 5,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "unten"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 5,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf 690 px"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "05-scrolle.jpg",
+    "aria": "05-aria.txt",
+    "sichtbar": "05-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 27,
+    "aria": 32,
+    "ausschnitt": 6,
+    "bedien": 17
+   },
+   "dauer_ms": 565
+  },
+  {
+   "nr": 6,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "unten"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 6,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 6357,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf 690 px"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "06-scrolle.jpg",
+    "aria": "06-aria.txt",
+    "sichtbar": "06-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 20,
+    "aria": 33,
+    "ausschnitt": 6,
+    "bedien": 12
+   },
+   "dauer_ms": 561
+  },
+  {
+   "nr": 7,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Weiter zu Schritt 2"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Weiter zu Schritt 2: Fläche & Ort\" · section „Ihr Vor-Ort-Aufmaß anfordern“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 7,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 6357,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "07-tippe.jpg",
+    "aria": "07-aria.txt",
+    "sichtbar": "07-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 23,
+    "aria": 43,
+    "ausschnitt": 6,
+    "bedien": 12
+   },
+   "dauer_ms": 511
+  },
+  {
+   "nr": 8,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "oben"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 8,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf -690 px"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "08-scrolle.jpg",
+    "aria": "08-aria.txt",
+    "sichtbar": "08-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 32,
+    "aria": 35,
+    "ausschnitt": 7,
+    "bedien": 16
+   },
+   "dauer_ms": 828
+  },
+  {
+   "nr": 9,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "Einsatzort / Postleitzahl",
+     "text": "35614 Aßlar"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Einsatzort / Postleitzahl\" · section „Ihr Vor-Ort-Aufmaß anfordern“",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 9,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "09-fuelle.jpg",
+    "aria": "09-aria.txt",
+    "sichtbar": "09-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 35,
+    "aria": 34,
+    "ausschnitt": 6,
+    "bedien": 14
+   },
+   "dauer_ms": 430
+  },
+  {
+   "nr": 10,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Weiter zu Schritt 3"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Weiter zu Schritt 3: Kontaktdaten\" · section „Ihr Vor-Ort-Aufmaß anfordern“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 10,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "10-tippe.jpg",
+    "aria": "10-aria.txt",
+    "sichtbar": "10-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 34,
+    "aria": 32,
+    "ausschnitt": 6,
+    "bedien": 18
+   },
+   "dauer_ms": 517
+  },
+  {
+   "nr": 11,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "Ihr Name",
+     "text": "Probe Läufer"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Ihr Name *\" · form",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 11,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "11-fuelle.jpg",
+    "aria": "11-aria.txt",
+    "sichtbar": "11-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 24,
+    "aria": 37,
+    "ausschnitt": 6,
+    "bedien": 14
+   },
+   "dauer_ms": 421
+  },
+  {
+   "nr": 12,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "Telefon- oder Mobilnummer",
+     "text": "0641 000000"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"Telefon- oder Mobilnummer *\" · form",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 12,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "12-fuelle.jpg",
+    "aria": "12-aria.txt",
+    "sichtbar": "12-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 33,
+    "aria": 36,
+    "ausschnitt": 7,
+    "bedien": 20
+   },
+   "dauer_ms": 452
+  },
+  {
+   "nr": 13,
+   "art": "fuelle",
+   "eingabe": {
+    "fuelle": {
+     "feld": "E-Mail-Adresse",
+     "text": "probe@example.org"
+    }
+   },
+   "ergebnis": "ok",
+   "ziel_element": "textbox \"E-Mail-Adresse (für die Eingangsbestätigung)\" · form",
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 13,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "13-fuelle.jpg",
+    "aria": "13-aria.txt",
+    "sichtbar": "13-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 24,
+    "aria": 38,
+    "ausschnitt": 7,
+    "bedien": 16
+   },
+   "dauer_ms": 435
+  },
+  {
+   "nr": 14,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Anfrage verbindlich absenden"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Anfrage verbindlich absenden\" · form",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 14,
+   "url": "/kontakt#express-anfrage",
+   "h1": "Kontakt & Aufmaß Fliesenleger Tezgel",
+   "scrollY": 5667,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "14-tippe.jpg",
+    "aria": "14-aria.txt",
+    "sichtbar": "14-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 32,
+    "aria": 31,
+    "ausschnitt": 6,
+    "bedien": 14
+   },
+   "dauer_ms": 921
+  }
+ ],
+ "handlungen_gesamt": 14,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 14,
+  "handlungen_bis_ziel": 14,
+  "bedingungen": [
+   {
+    "name": "Anfrage abgesendet (Attrappe hat sie angenommen)",
+    "erfuellt": true,
+    "bei_schritt": 14,
+    "treffer": "1 Anfrage(n) an die Attrappe"
+   },
+   {
+    "name": "Bestätigung nach dem Absenden war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 14,
+    "treffer": "„…en wurde an probe@example.org gesendet. Nächste Schritte: 1. Unser Team prüft…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [
+  {
+   "art": "anfrage",
+   "methode": "POST",
+   "url": "/api/anfrage",
+   "echteRoute": false
+  }
+ ],
+ "verlassen": [],
+ "konsolenfehler": [
+  "pageerror: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+ ]
+}

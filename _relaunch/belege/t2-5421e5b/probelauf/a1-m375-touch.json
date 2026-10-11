@@ -1,0 +1,19 @@
+{
+ "aufgabe": 1,
+ "start": "/",
+ "ansicht": "m375",
+ "eingabe": "touch",
+ "antwort": "Gegenprobe: Weg des Ausgangsstands am Kern-Mobilmenü; „Alle ablehnen“ entfällt, weil das Menü über dem Banner liegt (im Bestand lag der Banner über dem Menü).",
+ "befunde": [],
+ "schritte": [
+  {
+   "tippe": "Architektur-Menü öffnen"
+  },
+  {
+   "tippe": "Badsanierung Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen DIN 18534"
+  },
+  {
+   "tippe": "Barrierefreies Bad Bodengleiche Walk-In-Duschen nach DIN 18040"
+  }
+ ]
+}

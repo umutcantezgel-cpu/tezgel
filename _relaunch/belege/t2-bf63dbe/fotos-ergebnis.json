@@ -1,0 +1,34 @@
+{
+ "satz": "t2-bf63dbe",
+ "base": "http://127.0.0.1:4327",
+ "einwilligung": "abgelehnt",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 16558,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 28275,
+   "blockiert": []
+  }
+ ]
+}

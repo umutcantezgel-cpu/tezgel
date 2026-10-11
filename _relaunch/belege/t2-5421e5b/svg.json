@@ -1,0 +1,413 @@
+{
+  "satz": "t2-5421e5b",
+  "base": "http://127.0.0.1:4310",
+  "bedingungen": {
+    "werkzeug": "svg.mjs (P3-00b), Kern-Version 1.2",
+    "kern": "K-010 (Formsystem), K-013 (Budgets), Z-10",
+    "messmodus": "statisch, kein Browserlauf: keine Anfragen, daher ohne assertLocal/installSperre",
+    "quellen": {
+      "public": "public/**/*.svg",
+      "src": "src/**/*.{tsx,jsx}, nur Inline-<svg>-Blöcke (Datei-Ebene für IDs und Verweise)",
+      "build": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-5421e5b-k/.next/server/app",
+      "nur": null
+    },
+    "src_stand": "git HEAD 5421e5b (Arbeitsbaum ohne Änderungen an src/ und public/)",
+    "build_stand": "Ausgangsstand 707a93d (reinraum-707a93d/.next/server/app), nur lesen",
+    "einheiten": {
+      "kilobyte": 1024,
+      "icon_budget_roh_bytes": 1536,
+      "illustration_budget_gzip_bytes": 40960,
+      "gzip": "zlib, Level 9"
+    },
+    "strichstaerke_soll": 1.5,
+    "klassifikation": {
+      "familie": "marke (Liste) · lucide (class enthält lucide) · phosphor (viewBox 0 0 256 256 oder class ph) · sonst eigene",
+      "art": "marke (Liste) · icon (lucide/phosphor oder quadratische viewBox ≤ 256) · illustration (übrige mit viewBox) · unbekannt (ohne viewBox)",
+      "strichstaerke": "je Geometrie-Element mit wirksamer Kontur, vererbt; ohne stroke-width = 1 (SVG-Standard)"
+    },
+    "marken_liste": [
+      "Dateien: public/images/logo/tezgel-*.svg (Bestand, unverändert)",
+      "Attribut data-marke an <svg>",
+      "Google: <title>Google</title> oder aria-label=\"Google\"",
+      "WhatsApp: Pfad beginnt mit \"M17.472 14.382\""
+    ],
+    "a11y_regel": "dekorativ = aria-hidden=\"true\" am SVG oder an einem Vorfahren; bedeutungstragend = role=\"img\" + aria-labelledby, alle Ziele in Datei bzw. Seite; sonst fehlt; Ausdruck in aria-labelledby = unbestimmt",
+    "id_regel": "Quelle: Dopplung innerhalb der Datei (alle <svg>-Blöcke zusammen); Build: Dopplung im gesamten Seiten-DOM; url(#…) und href=\"#…\" ohne Ziel gemeldet",
+    "grenzen": [
+      "JSX-Ausdrücke (z. B. fill={c}, viewBox per Template) werden nur über Literale geprüft; nicht auswertbare Werte bleiben ungezählt",
+      "Phosphor-Imports im Quellcode sind nicht im Markup sichtbar; Familie wird nur über Markup erkannt",
+      "Build-Stand (707a93d) und Arbeitsbaum (HEAD) unterscheiden sich in 25 Dateien unter src/ und public/",
+      "Marken-Erkennung über Liste; neue Marken brauchen einen Eintrag",
+      "Budgets gelten für ausgelieferte Markups (public, Build); Quellblöcke aus src/ werden nur gezählt, nicht gegen das Budget geprüft (JSX-Text ist größer als das Ergebnis)",
+      "Quelle wird als ganze Datei geparst; Parser ist ein Tokenizer ohne TypeScript-Parser (keine Abhängigkeit im Paket), Zählung gegen grep geprüft"
+    ],
+    "laufzeit_s": 0.2
+  },
+  "erstellt": "2026-10-11T04:29:35.474Z",
+  "zaehlung": {
+    "public": {
+      "dateien": 3,
+      "svg": 3
+    },
+    "src": {
+      "dateien": 13,
+      "svg": 27
+    },
+    "build": {
+      "seiten": 1,
+      "svg_instanzen": 238,
+      "muster": 53,
+      "seiten_mit_id_kollision": 0
+    },
+    "nur": []
+  },
+  "regeln": {
+    "eingebettetes Pixelbild (image)": {
+      "instanzen": 2,
+      "muster": 2,
+      "orte": 2,
+      "beispiele": [
+        {
+          "ort": "public/images/logo/tezgel-logo-dark.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        },
+        {
+          "ort": "public/images/logo/tezgel-logo.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        }
+      ]
+    },
+    "Zugänglichkeit nicht belegt": {
+      "instanzen": 5,
+      "muster": 5,
+      "orte": 5,
+      "beispiele": [
+        {
+          "ort": "public/images/logo/tezgel-logo-dark.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        },
+        {
+          "ort": "public/images/logo/tezgel-logo.svg",
+          "art": "marke",
+          "familie": "marke",
+          "kurz": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 200\" width=\"640\" height=\"200\"> <image href=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAAIuCAYA…"
+        },
+        {
+          "ort": "src/app/(bestand)/fliesen/verlegemuster/page.jsx:114",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className=\"w-full h-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden\" role=\"img\" aria-label={`Sche…"
+        }
+      ]
+    },
+    "feste Farbe statt currentColor/Variable": {
+      "instanzen": 2,
+      "muster": 2,
+      "orte": 2,
+      "beispiele": [
+        {
+          "ort": "src/app/(bestand)/fliesen/verlegemuster/page.jsx:114",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className=\"w-full h-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden\" role=\"img\" aria-label={`Sche…"
+        },
+        {
+          "ort": "src/components/common/TileCraftIcons.jsx:71",
+          "art": "illustration",
+          "familie": "eigene",
+          "kurz": "<svg className=\"w-full h-full\" viewBox=\"0 0 400 12\" preserveAspectRatio=\"none\" aria-hidden=\"true\" > <defs> <linearGradient id=\"laserGrad\" x1=\"0%\" y1=\"0%\" x2=\"1…"
+        }
+      ]
+    },
+    "Strichstärke ≠ 1,5": {
+      "instanzen": 17,
+      "muster": 17,
+      "orte": 17,
+      "beispiele": [
+        {
+          "ort": "src/app/(bestand)/fliesen/verlegemuster/page.jsx:114",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className=\"w-full h-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden\" role=\"img\" aria-label={`Sche…"
+        },
+        {
+          "ort": "src/components/common/CookieConsent.tsx:602",
+          "art": "icon",
+          "familie": "eigene",
+          "kurz": "<svg className=\"w-3.5 h-3.5 text-white\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={3} > <path strokeLinecap=\"round\" strokeLinejoin=\"rou…"
+        },
+        {
+          "ort": "src/components/common/TileCraftIcons.jsx:11",
+          "art": "icon",
+          "familie": "eigene",
+          "kurz": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2.5\" strokeLinecap=\"round\" strokeLinejoin=\"round\" className={`${className} transition-t…"
+        }
+      ]
+    },
+    "viewBox fehlt": {
+      "instanzen": 2,
+      "muster": 2,
+      "orte": 2,
+      "beispiele": [
+        {
+          "ort": "src/components/kern/motive/Verband.tsx:19",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg className={`pointer-events-none absolute inset-0 h-full w-full ${className}`} aria-hidden=\"true\" focusable=\"false\"> <defs> <pattern id={id} width={b} heig…"
+        },
+        {
+          "ort": "/",
+          "art": "unbekannt",
+          "familie": "eigene",
+          "kurz": "<svg class=\"pointer-events-none absolute inset-0 h-full w-full \" aria-hidden=\"true\" focusable=\"false\"><defs><pattern id=\"k-verband-drittelverband-_S_1l_\" width…"
+        }
+      ]
+    },
+    "ID-Kollision": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": [],
+      "einheit": "SVG-Instanzen mit doppelter ID (Quelle: Datei; Build: Seiten-DOM)"
+    },
+    "url(#…)/href ohne Ziel": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "Budget Icon über 1,5 KB (roh)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "Budget Illustration über 40 KB (gzip)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": []
+    },
+    "mehrere Icon-Familien je Seite": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": [],
+      "einheit": "Seiten"
+    },
+    "ID-Dopplung im Seiten-DOM (Build, alle Elemente)": {
+      "instanzen": 0,
+      "muster": 0,
+      "orte": 0,
+      "beispiele": [],
+      "einheit": "doppelte IDs je Seite (instanzen = Anzahl IDs)"
+    }
+  },
+  "a11y": {
+    "zaehlung": {
+      "fehlt": 5,
+      "bedeutung": 1,
+      "dekorativ": 261,
+      "unbestimmt": 1
+    },
+    "gruende": {
+      "weder aria-hidden noch role=img": 3,
+      "role=img nur mit aria-label": 2
+    }
+  },
+  "familien": {
+    "marke": {
+      "instanzen": 15,
+      "arten": {
+        "marke": 15
+      },
+      "strich": {}
+    },
+    "eigene": {
+      "instanzen": 253,
+      "arten": {
+        "unbekannt": 4,
+        "icon": 237,
+        "illustration": 12
+      },
+      "strich": {
+        "1": 4,
+        "3": 1,
+        "1.5": 72,
+        "2.5": 6,
+        "0.8": 1,
+        "1.8": 41
+      }
+    }
+  },
+  "budgets": {
+    "icon": {
+      "geprueft": 221,
+      "groesstes_roh_bytes": 350,
+      "ueber_budget": 0
+    },
+    "illustration": {
+      "geprueft": 9,
+      "groesstes_gzip_bytes": 1003,
+      "ueber_budget": 0
+    },
+    "marke_quelle": [
+      {
+        "ort": "public/images/logo/tezgel-logo-dark.svg",
+        "marke": "Tezgel-Logo (Bestand)",
+        "bytes": 395903,
+        "gzip": 297820,
+        "pixel": 1
+      },
+      {
+        "ort": "public/images/logo/tezgel-logo.svg",
+        "marke": "Tezgel-Logo (Bestand)",
+        "bytes": 395903,
+        "gzip": 297822,
+        "pixel": 1
+      },
+      {
+        "ort": "public/images/logo/tezgel-mark.svg",
+        "marke": "Tezgel-Logo (Bestand)",
+        "bytes": 976,
+        "gzip": 435,
+        "pixel": 0
+      },
+      {
+        "ort": "src/components/common/FloatingWhatsAppWidget.tsx:704",
+        "marke": "WhatsApp-Logo",
+        "bytes": 1394,
+        "gzip": 738,
+        "pixel": 0
+      },
+      {
+        "ort": "src/components/kern/icons/Icon.tsx:40",
+        "marke": "data-marke=null",
+        "bytes": 658,
+        "gzip": 345,
+        "pixel": 0
+      },
+      {
+        "ort": "src/components/kern/icons/IconSprite.tsx:39",
+        "marke": "data-marke=null",
+        "bytes": 224,
+        "gzip": 161,
+        "pixel": 0
+      },
+      {
+        "ort": "src/components/ui/GoogleIcon.tsx:16",
+        "marke": "Google-Logo",
+        "bytes": 878,
+        "gzip": 499,
+        "pixel": 0
+      }
+    ],
+    "marke_build": {
+      "instanzen": 8,
+      "muster": 3,
+      "marken": [
+        "data-marke=whatsapp"
+      ]
+    }
+  },
+  "familien_je_seite": {
+    "1": 1
+  },
+  "seiten": [
+    {
+      "seite": "/",
+      "svg": 238,
+      "muster": 53,
+      "familien": {
+        "eigene": 230,
+        "marke": 8
+      },
+      "icon_familien": 1,
+      "familien_liste": [
+        "eigene"
+      ],
+      "id_doppelt": 0,
+      "befunde": {
+        "viewBox fehlt": 1,
+        "Strichstärke ≠ 1,5": 1
+      }
+    }
+  ],
+  "dateien": {
+    "public": [
+      {
+        "datei": "public/images/logo/tezgel-logo-dark.svg",
+        "svg": 1
+      },
+      {
+        "datei": "public/images/logo/tezgel-logo.svg",
+        "svg": 1
+      },
+      {
+        "datei": "public/images/logo/tezgel-mark.svg",
+        "svg": 1
+      }
+    ],
+    "src": [
+      {
+        "datei": "src/app/(bestand)/fliesen/verlegemuster/page.jsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/app/(kern)/_entwurf/not-found.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/common/CookieConsent.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/common/FloatingWhatsAppWidget.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/common/TileCraftIcons.jsx",
+        "svg": 13
+      },
+      {
+        "datei": "src/components/kern/basis/Zeichen.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/kern/icons/Icon.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/kern/icons/IconSprite.tsx",
+        "svg": 2
+      },
+      {
+        "datei": "src/components/kern/motive/Verband.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/kern/motive/VerlegeplanBad.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/kern/motive/vignetten/zeichnen.tsx",
+        "svg": 1
+      },
+      {
+        "datei": "src/components/kern/start/einstieg-b/Laser.tsx",
+        "svg": 2
+      },
+      {
+        "datei": "src/components/ui/GoogleIcon.tsx",
+        "svg": 1
+      }
+    ],
+    "nur": []
+  }
+}

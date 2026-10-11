@@ -1,0 +1,188 @@
+{
+ "satz": "gegenprobe-5421e5b",
+ "base": "http://127.0.0.1:4334",
+ "bedingungen": {
+  "ansicht": "m375",
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "isMobile": true,
+  "hasTouch": true,
+  "dpr": 1,
+  "eingabe": "touch",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T04:40:18.719Z",
+ "lauf": "a1-m375-touch",
+ "aufgabe": 1,
+ "titel": "Passende Leistung finden",
+ "auftrag": "Sie möchten Ihr Bad barrierefrei umbauen. Finden Sie die passende Leistungsseite.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/ausgangsstand/a1-m375-touch.json",
+ "antwort": "Gefunden: „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss“ (/bad/barrierefreies-bad) – über das Menü „Badsanierung“ und „Barrierefreies Bad“.",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "gering",
+   "schritt": 1,
+   "text": "Der Einwilligungsbanner liegt über dem geöffneten Mobilmenü; die Menüpunkte sind erst nach „Alle ablehnen“ lesbar (1 Handlung, zählt). Bild 01-tippe.jpg."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 4,
+   "text": "Auf der Leistungsseite verdeckt die Chat-Blase das Zeilenende „bis zu“ im Vorspann teilweise. Bild 04-tippe.jpg."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 25,
+    "aria": 145,
+    "ausschnitt": 14,
+    "bedien": 28
+   },
+   "dauer_ms": 1780
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Architektur-Menü öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Architektur-Menü öffnen\" · header",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\"",
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 42,
+    "aria": 140,
+    "ausschnitt": 20,
+    "bedien": 26
+   },
+   "dauer_ms": 731
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle ablehnen"
+   },
+   "ergebnis": "fehler",
+   "grund": "nicht bedienbar: „Alle ablehnen“ ist verdeckt durch span.block.k-anzeige.text-k-5 in Ebene „Hauptnavigation“",
+   "handlungen": 0,
+   "summe": 1,
+   "url": "/",
+   "dateien": {
+    "bild": "02-fehler.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "dauer_ms": 4272
+  }
+ ],
+ "handlungen_gesamt": 1,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": false,
+  "bei_schritt": null,
+  "handlungen_bis_ziel": null,
+  "bedingungen": [
+   {
+    "name": "Leistungsseite zum barrierefreien Bad geöffnet",
+    "erfuellt": false,
+    "bei_schritt": null,
+    "treffer": null
+   }
+  ]
+ },
+ "abbruch": {
+  "schritt": 2,
+  "eingabe": {
+   "tippe": "Alle ablehnen"
+  },
+  "grund": "nicht bedienbar: „Alle ablehnen“ ist verdeckt durch span.block.k-anzeige.text-k-5 in Ebene „Hauptnavigation“",
+  "kandidaten": [
+   "1) button \"Alle ablehnen\" · dialog „Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG“ · im Bild, verdeckt durch span.block.k-anzeige.text-k-5 in Ebene „Hauptnavigation“"
+  ],
+  "pw_log": [
+   "- <span class=\"block k-anzeige text-k-5 decoration-2 underline-offset-4 pointer-fine:group-hover/bereich:underline text-k-tinte\">Über uns</span> from <header data-kopf=\"b\" class=\"z-40 h-(--k-kopf-hoehe) shrink-0 bg-k-kalk text-k-tinte shadow-k-1 sticky top-0\">…</header> subtree intercepts pointer events",
+   "- retrying tap action",
+   "- waiting 100ms",
+   "8 × waiting for element to be visible, enabled and stable",
+   "- element is visible, enabled and stable",
+   "- scrolling into view if needed",
+   "- done scrolling",
+   "- <span class=\"block k-anzeige text-k-5 decoration-2 underline-offset-4 pointer-fine:group-hover/bereich:underline text-k-tinte\">Über uns</span> from <header data-kopf=\"b\" class=\"z-40 h-(--k-kopf-hoehe) shrink-0 bg-k-kalk text-k-tinte shadow-k-1 sticky top-0\">…</header> subtree intercepts pointer events",
+   "- retrying tap action",
+   "- waiting 500ms"
+  ],
+  "url": "/",
+  "dateien": {
+   "bild": "02-fehler.jpg",
+   "aria": "02-aria.txt",
+   "sichtbar": "02-sichtbar.txt"
+  }
+ },
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

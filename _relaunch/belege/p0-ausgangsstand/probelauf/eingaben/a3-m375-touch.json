@@ -1,0 +1,22 @@
+{
+ "aufgabe": 3, "start": "/", "ansicht": "m375", "eingabe": "touch",
+ "antwort": "Anfrage über die Express-Anfrage gesendet; Bestätigung „Anfrage erfolgreich übermittelt, Vorgangs-Nr.: TEZ-26-TEST“ mit Hinweis „gesendet“ an probe@example.org.",
+ "befunde": [
+  {"schwere": "gering", "schritt": 2, "text": "Der Button „Aufmaß vor Ort anfragen“ führt auf /kontakt zu einer Übersicht; das Formular liegt erst nach „Zur Express-Anfrage“ (1 Handlung mehr). Bild 02-tippe.jpg."},
+  {"schwere": "gering", "schritt": 3, "text": "Auf /kontakt stehen zwei Anfrageformen untereinander („Wunschtermin in 2 Schritten reservieren“ mit Tag/Uhrzeit und „Ihr Vor-Ort-Aufmaß anfordern“); der Besucher muss zwischen ihnen unterscheiden. Bild 03-tippe.jpg."},
+  {"schwere": "gering", "schritt": 10, "text": "Nach dem Absenden liegt die Bestätigung im Bild teils unter der Kopfzeile: im ersten Lauf zeigte das Bild nur „Nächste Schritte“, im Wiederholungslauf die Bestätigung mit „gesendet“. Bestätigung erst nach dem Bildlauf (Schritt 11) sicher sichtbar. Bild 10-tippe.jpg."}
+ ],
+ "schritte": [
+  {"tippe": "Alle ablehnen"},
+  {"tippe": "Aufmaß vor Ort anfragen"},
+  {"tippe": "Zur Express-Anfrage"},
+  {"tippe": "Weiter zu Schritt 2: Fläche & Ort"},
+  {"fuelle": {"feld": "Einsatzort / Postleitzahl", "text": "35614 Aßlar"}},
+  {"tippe": "Weiter zu Schritt 3: Kontaktdaten"},
+  {"fuelle": {"feld": "Ihr Name *", "text": "Probe Läufer"}},
+  {"fuelle": {"feld": "Telefon- oder Mobilnummer *", "text": "0641 000000"}},
+  {"fuelle": {"feld": "E-Mail-Adresse (für die Eingangsbestätigung)", "text": "probe@example.org"}},
+  {"tippe": "Anfrage verbindlich absenden"},
+  {"scrolle": "oben"}
+ ]
+}

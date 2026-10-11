@@ -1,0 +1,186 @@
+{
+ "satz": "ausgangsstand",
+ "base": "http://127.0.0.1:4310",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "tastatur",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-10T19:35:22.521Z",
+ "lauf": "banner-d1440-tastatur",
+ "aufgabe": null,
+ "titel": null,
+ "auftrag": null,
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/ausgangsstand/banner-d1440-tastatur.json",
+ "antwort": null,
+ "gegenprobe": false,
+ "befunde": [],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "(kein Element – Fokus auf der Seite)",
+    "imBild": false
+   },
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 2019,
+    "aria": 5149,
+    "ausschnitt": 1320,
+    "bedien": 32
+   },
+   "dauer_ms": 11376
+  },
+  {
+   "nr": 1,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Alle ablehnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 190,
+   "bildlauf_implizit": 0,
+   "summe": 190,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 11982,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "button \"Alle ablehnen\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 260,
+    "href": null,
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": [
+    "link \"Datenschutz\"",
+    "link \"AGB\"",
+    "link \"Widerruf\"",
+    "link \"Cookie-Richtlinie\"",
+    "link \"Cookie-Einstellungen\"",
+    "link \"Barrierefreiheit\"",
+    "link \"Webdesign Wetzlar – Coday\"",
+    "button \"Cookie-Banner schließen – nur essentielle Cookies werden gesetzt\"",
+    "link \"Datenschutzerklärung von Fliesenverlegung Tezgel lesen\"",
+    "link \"Impressum\"",
+    "button \"Alle akzeptieren\"",
+    "button \"Alle ablehnen\""
+   ],
+   "hinweise": [
+    "190× Tab bis „Alle ablehnen“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-taste.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 1550,
+    "aria": 4105,
+    "ausschnitt": 567,
+    "bedien": 572
+   },
+   "dauer_ms": 75810
+  },
+  {
+   "nr": 2,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Enter"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 191,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 11982,
+   "ebenen": [],
+   "fokus": {
+    "beschreibung": "(kein Element – Fokus auf der Seite)",
+    "imBild": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "obergrenze",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-taste.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 425,
+    "aria": 746,
+    "ausschnitt": 319,
+    "bedien": 432
+   },
+   "dauer_ms": 17967
+  }
+ ],
+ "handlungen_gesamt": 191,
+ "ziel": null,
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}
