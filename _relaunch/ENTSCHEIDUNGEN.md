@@ -271,3 +271,22 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - Grund: Für Besucher ist der Kandidat schneller (LCP, INP) und nicht schlechter in den Punkten. TBT ist ein Laborwert ohne Interaktion; der Wert sank durch das Entfernen der Variante-A-Regeln von 332 auf 224 ms.
   - Das Budget bleibt Ziel für das P4-Tor (ABNAHME „Offene Abweichungen“).
 - **Umkehrprobe:** Steigt TBT in einer späteren Welle weiter oder fällt der Punktwert unter den Bestand, greift (1).
+
+## E-025 · Wege alter Adressen (P4-07, V-04, Z-06)
+- **Ziel:** Alte Adressen enden nicht mehr im gewöhnlichen 404. Umbenannte Tezgel-Seiten leiten dauerhaft weiter, Adressen der Vorgängerfirma melden „dauerhaft entfernt“, damit Suchmaschinen sie schneller vergessen.
+- **308 (`redirects()` in `next.config.ts`):**
+  - `/bad/budgetkalkulator` → `/bad/projekt-check` (Umbenennung, Stand 757d8a9~1).
+  - `/blog/barrierefreies-bad-planung-zuschuesse` → `/bad/barrierefreies-bad` (einziger Altbeitrag mit Fliesen-/Badthema; die Fachseite deckt das Thema ab).
+- **410 (`src/proxy.ts`):**
+  - Ganze Bereiche: `/energie`, `/energieberatung`, `/gewerbe`, `/haustechnik`, `/heizung`, `/lueftung`, `/notdienst`, jeweils samt Unterseiten.
+  - Einzeladressen: 12 Altbeiträge im Blog und `/referenzen/project-001` bis `-006`.
+  - Beleg: Seitendateien sowie `src/config/posts.js` und `projects.js` im Stand 757d8a9~1. Alle übrigen dynamischen Adressen (Städte, Leistungen, Musterbäder) sind gleich geblieben.
+- **Warum ein Proxy:** `redirects()` kennt nur 307/308. Eigene Routen-Handler für 410 kollidieren mit `blog/[slug]` und `referenzen/[id]`.
+  - Der `matcher` nennt nur diese Adressen. Die Funktion prüft zusätzlich exakt, weil ein Muster auch längere Pfade treffen kann.
+  - Seiten, `_next`, Bilder und `/api` laufen nie durch den Proxy. Beleg: `wege.mjs` gegen die kompilierten matcher des Builds.
+- **Antwortseite:**
+  - Kleines eigenes Dokument ohne Skripte, mit Systemfarben und Systemschriften. Der Proxy kennt die gebauten CSS-Dateien nicht, und Markenwerte im Code wären freie Werte.
+  - `noindex`, Wortlaut nach der 404: „Fehler 410 · Seite dauerhaft entfernt · Die von Ihnen aufgerufene Seite gibt es nicht mehr. Kehren Sie zur Startseite zurück oder informieren Sie sich über unsere Fachleistungen.“ Dazu die Links „Zur Startseite“ und „Zur Leistungsübersicht“ (Mikrotexte, neue Seite).
+- **Umkehrprobe:**
+  - Liefert Search Console (MENSCHEN) Adressen der früheren tezgel.de, kommen sie als 308 auf die passende Seite dazu.
+  - Wird eine Altadresse wieder zu einer echten Seite, schlägt `test/wege.test.mjs` an (Seite trifft Liste).
