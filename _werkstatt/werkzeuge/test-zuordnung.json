@@ -79,6 +79,15 @@
     ]
   },
   {
+    "muster": "leistungen/\\[id\\]/page",
+    "specs": [
+      "funktion-express-funnel.spec.mjs",
+      "funktion-preisrechner.spec.mjs",
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
     "muster": "app/(\\([a-z]+\\)/)?(layout|_dokument)\\.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon",
     "specs": [
       "ALLE"
