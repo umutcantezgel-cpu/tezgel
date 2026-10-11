@@ -180,6 +180,9 @@ export function BannerAnsicht({
             'flex flex-col overflow-hidden border-t border-k-strich bg-k-kalk text-k-tinte md:border',
             fest ? FEST_BANNER : 'w-full max-w-md border',
             fest && (showSettings ? 'max-h-(--k-banner-einstellungen)' : 'max-h-(--k-banner-hoehe)'),
+            // Leiste ab lg (Raster): Bei größerem Textabstand (WCAG 1.4.12) rollt die Leiste, statt Text abzuschneiden;
+            // bei normalem Satz passt alles, es rollt nichts (P4-13b, P4-GEG2 N-A).
+            fest && 'lg:overflow-y-auto',
           )}
         >
           {!showSettings ? (
@@ -199,6 +202,8 @@ export function BannerAnsicht({
                   data-motion="zustand"
                   className={verbinde(
                     'flex size-k-7 shrink-0 cursor-pointer items-center justify-center text-k-kalk pointer-fine:hover:bg-k-nacht-fuge active:bg-k-nacht-fuge',
+                    // forced-colors: reines Symbol braucht eine Grenze; Farbe setzt das System (currentColor) – wie im Kopf.
+                    'forced-colors:border',
                     FOKUS_INNEN,
                   )}
                   aria-label="Cookie-Banner schließen – nur essentielle Cookies werden gesetzt"
