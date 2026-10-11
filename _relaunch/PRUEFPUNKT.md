@@ -1,8 +1,8 @@
 # PRUEFPUNKT
 
 - Lauf: 1 (angepasst, E-000) · Phase: P4 (Fundament, ruhend) · P3 abgeschlossen
-- Live auf main: 8622329 (zusätzlich: Hook F-16 /blog; Rauchtest + Live-Browser grün). Ruhend: Entwürfe /bad, /leistungen, /standorte, /blog, /ueber-uns (P4-08a–e), SIG-2-Regel. Server: 4335 = 4bd371f, 4337 = f2c4180 (= Live-Produkt).
+- Live auf main: ed4b84f → Redeploy auf Wunsch des Auftraggebers mit diesem Stand (nur Arbeitsordner seit ed4b84f; Produkt = 31fc739, T1 grün). Ruhend: Entwürfe aller sechs Hauptseiten (P4-08a–f). Server: 4320 = Vorschau 5913897-v, 4337 = f2c4180 (= Live-Produkt).
 - Tests: `KERN_SEITEN = ['/']` in `tests/fixtures.mjs` entspricht jetzt dem Live-Stand; Läufe gegen 4310/4323 mit `RELAUNCH_FASSUNG=bestand`.
-- Laufend: P4-08f /kontakt (Opus, nach Limit fortgesetzt).
-- Nächster exakter Schritt: P4-08f abnehmen + committen. Dann Vorschau-Kandidat `VORSCHAU="bad leistungen standorte blog ueber-uns kontakt" reinraum.sh HEAD` (Port 4320) → P4-Tor: texte2 (--build -v gegen f2c4180, --freigabe MIKROTEXTE), texte.mjs + texte-vergleich (SEO), axe + a11y-zusatz (gegen Bestand), wortbruch, fotos 4 Ansichten; dann L3 (Probeläufer 15, Fünf-Sekunden, Gegenprüfer, Mutationsprobe Kern-Zweige nach P4-06). Danach P4-06 starten.
+- Laufend: P4-06 Testschreiber (Opus); a11y-zusatz der Vorschau (Basis fertig).
+- Nächster exakter Schritt: a11y-zusatz Vorschau gegen Basis auswerten (Z-11 „ohne Verlust“); Wortbruch + Fotos 4 Ansichten (Z-13); nach P4-06: Suite gegen Vorschau mit Kern-Zweigen (Z-05); L3 als Workflow (Gegenprüfer P4-Tor, Fünf-Sekunden-Probe, Jury-Stichprobe, Probeläufer); Ergebnis `belege/p4-tor/ERGEBNIS.md`.
 - Offene Abweichungen: ABNAHME „Offene Abweichungen“ (Z-04 Tastatur, Z-12 TBT).
