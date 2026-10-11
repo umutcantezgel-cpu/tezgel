@@ -509,6 +509,22 @@
       content-visibility: visible;
     }
   }
+  /* Seitenwechsel /leistungen → /leistungen/[id] (E3-ORCH-02, K-007 seitenwechsel): der Plan der Leistung gleitet in den
+     Einstieg der Leistungsseite – nur bei der Übergangsart „plan-vor“ (Knopf „Fachdetails“), Dauer 4 · setzen. Unter lg
+     und bei reduzierter Bewegung ohne Animation (sofortiger Wechsel). */
+  ::view-transition-group(.plan-morph) {
+    animation-duration: var(--dauer-4);
+    animation-timing-function: var(--ease-setzen);
+  }
+  @media (width < 64rem), (prefers-reduced-motion: reduce) {
+    ::view-transition-group(.plan-morph),
+    ::view-transition-old(.plan-morph),
+    ::view-transition-new(.plan-morph),
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none !important;
+    }
+  }
   /* Lesefortschritt (Ratgeber, E3-BAU-10): die Linie wächst mit --lesefortschritt (0–1), ohne Übergang; steht in
      utilities, damit sie den Startzustand scale-x-0 überschreibt */
   .lesefortschritt-linie {

@@ -4,6 +4,7 @@
 // Hinweis zur Fachqualität, Städteregister, Direktkontakt, Projektanfrage mit Rechner, Fragen, Express-Anfrage mit
 // Funnel. Wortlaut, Überschriften, Links, IDs (#express-anfrage) und Lesefolge wie im Bestand. Keine Icon-Kacheln,
 // kein Auftritt und kein großer Moment (setzt der Orchestrator). Daten und Metadaten unverändert.
+import { ViewTransition } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import clsx from 'clsx';
@@ -187,9 +188,12 @@ export default async function ServiceDetailPage({ params }) {
           </>
         }
         rand={
-          <div className="border border-fuge bg-fliese p-6 lg:p-8">
-            <Verlegeplan plan={service.id} ohneAchse bemassung={false} />
-          </div>
+          // Seitenwechsel (E3-ORCH-02): derselbe Plan wie im Feld der Leistungsübersicht, gleitet bei „Fachdetails“ hierher
+          <ViewTransition name={`plan-${service.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
+            <div className="border border-fuge bg-fliese p-6 lg:p-8">
+              <Verlegeplan plan={service.id} ohneAchse bemassung={false} />
+            </div>
+          </ViewTransition>
         }
       />
 

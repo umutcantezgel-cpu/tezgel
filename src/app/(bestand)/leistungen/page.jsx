@@ -1,8 +1,9 @@
 // Leistungen (E3-BAU-02, KERN v2): Erzählansicht nach dem Muster der Startseite. Einstieg mit Laserachse, H1 links,
 // Vorspann und Knöpfe, rechts ein gezeichneter Verlegeplan ohne Achse. Danach die Leitachse über die Abschnitte:
-// Fachgewerke als Feldraster (je Leistung eine Plan-Vignette, Name, Text, Merkmale, zwei Wege), Ablauf als
+// Fachgewerke als Feldraster (je Leistung ihr Verlegeplan mit SIG-3 und Seitenwechsel, Name, Text, Merkmale, zwei Wege), Ablauf als
 // Schrittfolge, Projekt mit Rechner, Express-Anfrage mit Funnel. Wortlaut, Überschriften, Links und IDs wie im Bestand
 // (#gewerke, #express-anfrage, Leistungs-IDs). Kein Auftritt und kein großer Moment (setzt der Orchestrator).
+import { ViewTransition } from 'react';
 import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
@@ -21,7 +22,6 @@ import Knopf from '@/components/kern/Knopf';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettKlassen } from '@/components/kern/stile';
-import { VIGNETTEN, istVignette } from '@/components/start/vignetten';
 
 const pageUrl = `${SITE_URL}/leistungen`;
 const breadcrumbs = [
@@ -117,19 +117,21 @@ export default function ServiceHubPage() {
       />
 
       <Leitachse>
-        {/* 2. FACHGEWERKE als Feldraster: je Leistung eine Plan-Vignette, Name, Text, Merkmale und zwei Wege */}
+        {/* 2. FACHGEWERKE als Feldraster: je Leistung ihr Verlegeplan (SIG-3), Name, Text, Merkmale und zwei Wege */}
         <Abschnitt id="gewerke" art="erzaehl" leitachse>
           <Feldraster spalten={2} als="div">
             {SERVICES.map((srv) => {
-              const Vignette = istVignette(srv.id) ? VIGNETTEN[srv.id] : null;
               return (
-                <div key={srv.id} id={srv.id} className="flex">
+                // SIG-3 (E3-ORCH-02): Verlegeplan je Leistung – das Fugenbild rückt beim Zeigen auf das Feld bzw. beim
+                // Fokus auf einen seiner Links in die Flucht, mobil beim Eintritt; derselbe Plan gleitet beim Weg zu den
+                // Fachdetails in den Einstieg der Leistungsseite (ViewTransition, nur vorwärts, ab lg, nicht reduziert)
+                <div key={srv.id} id={srv.id} className="sig-plan-ziel flex" data-motion="sig-plan">
                   <Feld als="article" className="flex-1">
-                    {Vignette && (
-                      <div className="border border-fuge bg-kalk p-6 text-tinte">
-                        <Vignette />
+                    <ViewTransition name={`plan-${srv.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
+                      <div className="border border-fuge bg-kalk p-6">
+                        <Verlegeplan plan={srv.id} ohneAchse bemassung={false} />
                       </div>
-                    )}
+                    </ViewTransition>
 
                     <p className={clsx(etikettKlassen, 'mt-6')}>Geprüfte Fachkompetenz</p>
                     <h2 className="mt-3 text-fs-5 text-tinte">{srv.name}</h2>
@@ -157,7 +159,7 @@ export default function ServiceHubPage() {
                     </ul>
 
                     <div className="mt-auto flex flex-col items-start gap-4 border-t border-fuge pt-6">
-                      <Knopf href={`/leistungen/${srv.id}`} variante="text" icon="pfeil-rechts">
+                      <Knopf href={`/leistungen/${srv.id}`} variante="text" icon="pfeil-rechts" transitionTypes={['plan-vor']}>
                         Fachdetails &amp; Ratgeber: {srv.name}
                       </Knopf>
                       <Knopf href="#express-anfrage" variante="neben" className="w-full sm:w-auto">
