@@ -21,7 +21,7 @@ Kandidat: Reinraum-Kopie mit `freischalten.sh` (nur `/`), Basis a8e049f (Bestand
 | INP verschränkt (4×, je 5) | alle sechs Interaktionen unter Basis und Budget, max 56 ms | `inp.json` |
 | Probeläufer: Basis-Wege am Endstand (15) | 13 gleich oder besser (a3 Tastatur 34 → 29, a1 Touch mit Kern-Weg 4 → 3, a5 Touch mit Kern-Namen 10 → 10); Tastatur a1 23 → 26, a5 114 → 117 (E-023, ABNAHME „Offene Abweichungen“) | `probelauf/` |
 | Probeläufer frei (P3-16b, ad80754-k) | 15/15 gelöst | `../t2-bcd8fcb/probelauf/frei-ad80754/` |
-| Fünf-Sekunden-Probe (blind) | siehe unten | `fuenf/` |
+| Fünf-Sekunden-Probe (blind, mit Basis gemischt) | Kandidat 10/10 alle drei richtig, regional 10/10 (m375 5/5, d1440 5/5) · Ausgangsstand 10/10, regional 5/10 (m375 0/5) | `fuenf/` |
 | Slop `/` · Jury | weich 5 / hart 0 (Basis 16/4) · 6,9 (Bestand 4,30) – an ad80754-k; danach nur Korrekturen aus Jury, Probelauf und Gegenprüfung | `../t2-ad80754/` |
 | Gegenprüfer | Runde 1 P3-16-GEG: nein (H-1, M-1 … M-6) → umgesetzt; Runde 2: siehe `pakete/P3-16-GEG2.rueckgabe.md` | – |
 
