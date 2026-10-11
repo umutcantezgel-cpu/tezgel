@@ -62,6 +62,8 @@ export function KopfRahmen({ vorschauPfad, vorschauOffen }: KopfRahmenProps) {
             data-motion="zustand"
             className={verbinde(
               'group/tel flex h-k-7 min-w-k-7 items-center justify-center gap-k-2 rounded-k-1 text-k-tinte',
+              // forced-colors: reines Symbol (unter lg) braucht eine Grenze; Farbe setzt das System (currentColor).
+              'forced-colors:border',
               fokus('hell'),
             )}
           >

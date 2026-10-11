@@ -165,6 +165,7 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
         data-motion="druck"
         className={verbinde(
           'flex size-k-7 cursor-pointer items-center justify-center rounded-k-0 text-k-tinte pointer-fine:hover:bg-k-fliese active:bg-k-fuge',
+          'forced-colors:border',
           fokus('hell'),
         )}
       >

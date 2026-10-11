@@ -12,7 +12,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent, type MouseEvent, type PointerEvent } from 'react';
-import { fokus, verbinde } from '@/components/kern/basis';
+import { verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import MegaBlatt from '@/components/kern/kopf-b/MegaBlatt';
 import {
@@ -25,6 +25,10 @@ import {
   untermenueName,
   type Eintrag,
 } from '@/components/kern/kopf-b/modell';
+
+// Fokus innen (K-006: 2 px Tinte, 2 px Abstand zur Kante): Punkt und Schalter füllen die volle Kopfhöhe, ein äußerer
+// Ring läge oben über dem Bildrand (Kopf klebt bei top-0) und fiele dort weg. Innen bleibt er ganz sichtbar.
+const FOKUS_INNEN = 'focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-k-tinte';
 
 /** Zeit, die der Zeiger hat, um vom Punkt ins Blatt zu wandern (Hover-Absicht). Verhalten, keine Bewegungsdauer. */
 const SCHLIESS_VERZUG_MS = 200;
@@ -201,9 +205,9 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
                 data-motion="zustand"
                 className={verbinde(
                   'flex h-full items-center whitespace-nowrap pl-k-3 k-text text-k-2 font-semibold',
-                  hatSchalter ? 'pr-0' : 'pr-k-3',
+                  hatSchalter ? 'pr-k-2' : 'pr-k-3',
                   istAktiv ? 'text-k-laser-tief' : 'text-k-tinte',
-                  fokus('hell'),
+                  FOKUS_INNEN,
                 )}
               >
                 {eintrag.name}
@@ -222,7 +226,8 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
                   data-motion="zustand"
                   className={verbinde(
                     'flex h-full w-k-7 cursor-pointer items-center justify-center text-k-tinte-2 pointer-fine:hover:text-k-tinte',
-                    fokus('hell'),
+                    'forced-colors:border',
+                    FOKUS_INNEN,
                   )}
                 >
                   <Icon name="winkel" richtung={istAuf ? 'oben' : 'unten'} groesse={16} />

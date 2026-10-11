@@ -28,11 +28,14 @@ const OHNE_LEISTE = ['/badanfrage', '/projekt-check', '/badplaner', '/konfigurat
 
 // Feld: ≥ 48 px hoch, ein Drittel der Breite (≥ 106 px bei 320 px); Zeichen über der Beschriftung.
 // Fokus innen (die Leiste liegt am Bildschirmrand, ein äußerer Rahmen würde dort abgeschnitten).
+// Reflow (320 px, erhöhte Textabstände): Felder dürfen schrumpfen (min-w-0), die Beschriftung bricht innerhalb des
+// Feldes um (BESCHRIFTUNG), statt die Leiste zu verbreitern; der Wortlaut bleibt ganz, die Höhe wächst (min-h-k-7).
 const FELD = verbinde(
-  'flex min-h-k-7 flex-col items-center justify-center gap-k-1 px-k-2 py-k-1',
+  'flex min-h-k-7 min-w-0 flex-col items-center justify-center gap-k-1 px-k-2 py-k-1 text-center',
   'k-text text-k-1 font-semibold',
   'focus-visible:outline-2 focus-visible:-outline-offset-4',
 );
+const BESCHRIFTUNG = 'max-w-full wrap-break-word';
 const HELL = 'bg-k-fliese text-k-tinte pointer-fine:hover:bg-k-kalk active:bg-k-fuge focus-visible:outline-k-tinte';
 const TINTE = 'bg-k-tinte text-k-kalk pointer-fine:hover:bg-k-tinte-2 active:bg-k-tinte-2 focus-visible:outline-k-kalk';
 
@@ -68,7 +71,7 @@ export default function UntereLeiste() {
             aria-label={`Fliesenverlegung Tezgel anrufen: ${contact.phone}`}
           >
             <Icon name="telefon" groesse={20} />
-            <span>Anrufen</span>
+            <span className={BESCHRIFTUNG}>Anrufen</span>
           </a>
           <a
             href={buildWhatsAppUrl(contact.whatsappNumber, contextMessage)}
@@ -80,11 +83,11 @@ export default function UntereLeiste() {
             aria-label="WhatsApp-Chat starten"
           >
             <Icon name="whatsapp" groesse={20} />
-            <span>WhatsApp</span>
+            <span className={BESCHRIFTUNG}>WhatsApp</span>
           </a>
           <Link href="/kontakt#express-anfrage" data-motion="druck" className={verbinde(FELD, TINTE)}>
             <Icon name="kalender" groesse={20} />
-            <span>Aufmaß</span>
+            <span className={BESCHRIFTUNG}>Aufmaß</span>
           </Link>
         </div>
       </aside>

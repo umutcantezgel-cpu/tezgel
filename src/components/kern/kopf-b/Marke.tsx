@@ -12,7 +12,7 @@ export default function Marke({ etikett = true }: { etikett?: boolean }) {
     <Link
       href="/"
       aria-label={TEXT.logoLink}
-      className={verbinde('flex h-k-7 shrink-0 items-center gap-k-3 rounded-k-1', fokus('hell'))}
+      className={verbinde('flex h-k-7 shrink-0 items-center gap-k-3 rounded-k-1 forced-colors:border', fokus('hell'))}
     >
       <Image
         src="/images/logo/tezgel-logo.webp"

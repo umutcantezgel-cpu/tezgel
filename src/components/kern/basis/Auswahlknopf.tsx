@@ -32,7 +32,11 @@ export default function Auswahlknopf({ children, art = 'zeile', ungueltig, class
   const kaestchen = verbinde(
     KAESTCHEN,
     ungueltig ? 'border-k-laser' : 'border-k-strich pointer-fine:enabled:group-hover:border-k-tinte',
-    kachel ? 'checked:border-k-kalk checked:bg-k-kalk focus-visible:outline-none' : verbinde('checked:border-k-tinte checked:bg-k-tinte', fokus('hell')),
+    // Fokus auch am Kästchen (K-006, 2 px mit 2 px Abstand): die Kachel trägt zusätzlich den Ring an ihrer Fläche (label),
+    // das Kästchen zeigt ihn dort, wo der Blick und die Messung (Element + 8 px) liegen. Gesetzte Kachel ist Tinte → Ring in Kalk.
+    kachel
+      ? verbinde('checked:border-k-kalk checked:bg-k-kalk', fokus('hell'), 'checked:focus-visible:outline-k-kalk')
+      : verbinde('checked:border-k-tinte checked:bg-k-tinte', fokus('hell')),
     'disabled:checked:border-solid disabled:checked:bg-k-fuge',
   );
   return (

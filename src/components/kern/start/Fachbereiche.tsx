@@ -23,10 +23,12 @@ const ZEILE = verbinde(
   fokus(),
 );
 const ZEILE_TEXT = 'decoration-1 underline-offset-4 decoration-k-tinte pointer-fine:group-hover:underline group-active:underline';
+// Fokus über den Nachbar-Etiketten malen: Flex-Elemente malen atomar, sonst deckt das nächste `li` den Ring ab (P3-16a).
 const ETIKETT_LINK = verbinde(
   'group flex min-h-k-7 items-center justify-center px-k-3 py-k-2 k-mono text-k-1 text-k-tinte',
   'pointer-fine:hover:bg-k-kalk active:bg-k-kalk',
   fokus(),
+  'focus-visible:relative focus-visible:z-10',
 );
 
 function Linkliste({ links }: { links: PortalLink[] }) {
