@@ -5,7 +5,7 @@ import { projektClass } from './stile';
 
 // Schritt 1: Projekt (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
 // Je Gewerk ein Fachzeichen der Icon-Familie (E3-NACH-05, Befund 18); dekorativ, ohne Beschriftung.
-const PROJEKT_ICONS = { bad: 'bad', wohnen: 'fliese', balkon: 'balkon', treppe: 'naturstein', untergrund: 'untergrund' };
+const PROJEKT_ICONS = { bad: 'bad', wohnen: 'fliese', balkon: 'balkon', treppe: 'treppe', untergrund: 'untergrund' };
 
 export default function Schritt1({ setStep, projectType, setProjectType }) {
     return (

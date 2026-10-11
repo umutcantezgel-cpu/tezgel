@@ -135,11 +135,6 @@
   }
 }
 
-/* Terminliste im Kalender: höchstens etwa dreieinhalb Tage sichtbar, scrollt in sich (Region mit tabindex) */
-@utility hoehe-terminliste {
-  max-height: min(calc(var(--spacing) * 32 * 3.5), 70dvh);
-}
-
 /* Einwilligungsbanner: höchstens so hoch, dass Kopf, Leiste und ein Rand frei bleiben (scrollt sonst in sich) */
 @utility hoehe-banner {
   max-height: calc(100dvh - var(--spacing) * 32);
