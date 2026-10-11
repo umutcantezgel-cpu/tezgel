@@ -75,7 +75,7 @@ const REGELN = {
       + 'Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). '
       + 'Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach '
       + 'werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung '
-      + '(je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Summe der Umfänge der Zeilenstücke im Bild (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel '
+      + '(je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Umfang der Vereinigung der Zeilenstücke im Bild; übereinander liegende Stücke mit Abstand ≤ 8 px bilden wie bei Chrome einen Umriss (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel '
       + '(≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) '
       + 'geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. '
       + 'grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. '
@@ -234,6 +234,31 @@ function HELFER() {
   window.__a11yZ = Z;
 }
 
+// Umfang (1 px) der Fläche, die Chrome bei einem mehrzeiligen Inline-Element umrandet: Vereinigung der Zeilenstücke; liegen
+// zwei Stücke übereinander (waagerechte Überdeckung) mit Abstand ≤ 2·(Versatz + Breite) = 8 px, verbindet Chrome ihre Ringe zu
+// einem Umriss (innere Kanten entfallen) – die Lücke wird geschlossen. Getrennt liegende Stücke behalten je einen eigenen Ring.
+// Rechnung im 1-px-Raster: gezählt werden die Zellkanten zwischen belegt und frei.
+const LUECKE_MAX = 8;
+function umfangStuecke(stuecke) {
+  const x0 = Math.min(...stuecke.map((q) => q.x)), y0 = Math.min(...stuecke.map((q) => q.y));
+  const W = Math.max(...stuecke.map((q) => q.x + q.w)) - x0, H = Math.max(...stuecke.map((q) => q.y + q.h)) - y0;
+  const feld = new Uint8Array((W + 2) * (H + 2));
+  const fuelle = (x, y, w, h) => { for (let j = y; j < y + h; j++) for (let i = x; i < x + w; i++) feld[(j - y0 + 1) * (W + 2) + (i - x0 + 1)] = 1; };
+  for (const q of stuecke) fuelle(q.x, q.y, q.w, q.h);
+  for (const a of stuecke) for (const b of stuecke) {
+    if (a === b || b.y < a.y + a.h) continue;
+    const luecke = b.y - (a.y + a.h), l = Math.max(a.x, b.x), r = Math.min(a.x + a.w, b.x + b.w);
+    if (luecke > 0 && luecke <= LUECKE_MAX && r > l) fuelle(l, a.y + a.h, r - l, luecke);
+  }
+  let kanten = 0;
+  for (let j = 0; j < H + 2; j++) for (let i = 0; i < W + 2; i++) {
+    const v = feld[j * (W + 2) + i];
+    if (i + 1 < W + 2 && v !== feld[j * (W + 2) + i + 1]) kanten++;
+    if (j + 1 < H + 2 && v !== feld[(j + 1) * (W + 2) + i]) kanten++;
+  }
+  return kanten;
+}
+
 // ---- Seitenfunktionen ----
 async function SCHRITT(maxMs) {
   const Z = window.__a11yZ;
@@ -315,10 +340,10 @@ async function MESSLAGE([pad, maxMs]) {
   const radien = ecken.map((e) => Math.min(e.h, e.v) * f);
   // Inline über mehrere Zeilen: Zeilenstücke (im Bild) – der Ring folgt ihnen, nicht dem umschließenden Rechteck
   const stuecke = cs.display === 'inline'
-    ? [...el.getClientRects()].map((q) => ({ w: Math.max(0, Math.min(innerWidth, q.right) - Math.max(0, q.left)), h: Math.max(0, Math.min(innerHeight, q.bottom) - Math.max(0, q.top)) })).filter((q) => q.w > 0 && q.h > 0)
+    ? [...el.getClientRects()].map((q) => { const x = Math.max(0, q.left), y = Math.max(0, q.top); return { x, y, w: Math.max(0, Math.min(innerWidth, q.right) - x), h: Math.max(0, Math.min(innerHeight, q.bottom) - y) }; }).filter((q) => q.w > 0 && q.h > 0)
     : [];
   const mitte = mitteVon();
-  return { rect: { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.w), h: Math.round(b.h) }, radien: radien.map((r) => Math.round(r * 10) / 10), stuecke: stuecke.length > 1 ? stuecke.map((q) => ({ w: Math.round(q.w), h: Math.round(q.h) })) : null, verschoben, rand_fest_natuerlich: randNatur, rand_fest_messlage: verschoben ? randFest(b) : randNatur, mitte_messlage: mitte };
+  return { rect: { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.w), h: Math.round(b.h) }, radien: radien.map((r) => Math.round(r * 10) / 10), stuecke: stuecke.length > 1 ? stuecke.map((q) => ({ x: Math.round(q.x), y: Math.round(q.y), w: Math.round(q.w), h: Math.round(q.h) })) : null, verschoben, rand_fest_natuerlich: randNatur, rand_fest_messlage: verschoben ? randFest(b) : randNatur, mitte_messlage: mitte };
 }
 async function LAGE_ZURUECK(maxMs) {
   const lage = window.__a11yLage; if (!lage) return false;
@@ -594,7 +619,7 @@ async function pruefeTastatur(s, a, zustand) {
         if (!refok) befunde.refokus.push({ nr: n, pfad: info.pfad });
         const px = vergleiche(bildF, bildR);
         const Urechteck = 2 * ((sx1 - sx0) + (sy1 - sy0));
-        const Uform = lage.stuecke ? lage.stuecke.reduce((s, q) => s + 2 * (q.w + q.h), 0) : Urechteck;
+        const Uform = lage.stuecke ? umfangStuecke(lage.stuecke) : Urechteck;
         const U = Math.max(0.5 * Uform, Uform - lage.radien.reduce((s, r) => s + (2 - Math.PI / 2) * r, 0));
         const stilAenderung = Object.keys(info.stil).filter((k) => info.stil[k] !== ruhe.stil[k]);
         let status;
