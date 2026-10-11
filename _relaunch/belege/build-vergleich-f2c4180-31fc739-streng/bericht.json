@@ -1,0 +1,35 @@
+{
+ "vorher": "f2c4180",
+ "nachher": "31fc739",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 1,
+ "abweichungen": [
+  {
+   "datei": "index.html",
+   "ab": 1038,
+   "vorher": ".webp&amp;w=384&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/3liqgp7w13f3m.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunk",
+   "nachher": ".webp&amp;w=384&amp;q=75 2x\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/1dr0pnyvyh-vk.css\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"/_next/static/chunk"
+  }
+ ],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": [
+  ".\\@sm\\:odd\\:border-r:nth-child(odd){border-right-style:var(--tw-border-style);border-right-width:1px",
+  ".decoration-transparent{text-decoration-color:#0000",
+  ".gap-y-k-6{row-gap:var(--spacing-k-6)",
+  ".sm\\:gap-k-3{gap:var(--spacing-k-3)",
+  ".sm\\:items-baseline{align-items:baseline",
+  ".sm\\:px-k-5{padding-inline:var(--spacing-k-5)"
+ ]
+}
