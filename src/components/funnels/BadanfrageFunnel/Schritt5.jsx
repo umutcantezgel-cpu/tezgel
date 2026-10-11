@@ -1,16 +1,20 @@
 import Link from 'next/link';
-import { ArrowLeft, Send, MessageCircle, Lock, Loader2, AlertCircle } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Hinweis from '@/components/kern/Hinweis';
+import { knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import { inputClass } from './stile';
 
-// Schritt 5: Kontaktdaten und Absenden (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).
+// Schritt 5: Kontaktdaten und Absenden (E-011: aus BadanfrageFunnel.jsx verschoben). E3-BAU-17: Darstellung nach dem
+// KERN-Formularmuster. V-03: Sendefehler als Hinweis (art fehler, rolle alert), Text unverändert. Texte, IDs, Labels,
+// Namen und Nutzlast unverändert.
 export default function Schritt5({ setStep, status, errorMessage, formData, setFormData, handleWhatsApp, handleOnlineSubmit }) {
     return (
         <form onSubmit={handleOnlineSubmit} className="space-y-4">
-            <p className="text-base sm:text-lg font-black text-slate-900 mb-1">
+            <p className={`${labelKlassen} mb-1`}>
                 5. Kontaktdaten &amp; Versand Ihrer Anfrage
             </p>
-            <p className="text-sm text-slate-700 mb-4">
+            <p className="text-fs-2 text-tinte-2 mb-4">
                 Senden Sie Ihre Badanfrage direkt online an {COMPANY_DATA.owner.fullName} oder nutzen Sie WhatsApp. Keine
                 Weitergabe an Dritte.
             </p>
@@ -30,16 +34,15 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
             </div>
 
             {errorMessage && (
-                <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs flex items-center gap-2.5 font-medium" role="alert">
-                    <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
-                    <span>{errorMessage}</span>
-                </div>
+                <Hinweis art="fehler" rolle="alert">
+                    {errorMessage}
+                </Hinweis>
             )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                    <label htmlFor="badanfrage-name" className="block text-sm font-bold text-slate-800 mb-1.5">
-                        Vor- &amp; Nachname <span className="text-orange-600">*</span>
+                    <label htmlFor="badanfrage-name" className={labelKlassen}>
+                        Vor- &amp; Nachname <span className={pflichtKlassen}>*</span>
                     </label>
                     <input
                         id="badanfrage-name"
@@ -53,8 +56,8 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                     />
                 </div>
                 <div>
-                    <label htmlFor="badanfrage-phone" className="block text-sm font-bold text-slate-800 mb-1.5">
-                        Telefonnummer für Rückfragen <span className="text-orange-600">*</span>
+                    <label htmlFor="badanfrage-phone" className={labelKlassen}>
+                        Telefonnummer für Rückfragen <span className={pflichtKlassen}>*</span>
                     </label>
                     <input
                         id="badanfrage-phone"
@@ -69,7 +72,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                     />
                 </div>
                 <div>
-                    <label htmlFor="badanfrage-email" className="block text-sm font-bold text-slate-800 mb-1.5">E-Mail-Adresse (optional)</label>
+                    <label htmlFor="badanfrage-email" className={labelKlassen}>E-Mail-Adresse (optional)</label>
                     <input
                         id="badanfrage-email"
                         type="email"
@@ -81,7 +84,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                     />
                 </div>
                 <div>
-                    <label htmlFor="badanfrage-street" className="block text-sm font-bold text-slate-800 mb-1.5">Straße &amp; Hausnummer (optional)</label>
+                    <label htmlFor="badanfrage-street" className={labelKlassen}>Straße &amp; Hausnummer (optional)</label>
                     <input
                         id="badanfrage-street"
                         type="text"
@@ -95,7 +98,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
             </div>
 
             <div>
-                <label htmlFor="badanfrage-zip" className="block text-sm font-bold text-slate-800 mb-1.5">PLZ &amp; Ort des Bauvorhabens</label>
+                <label htmlFor="badanfrage-zip" className={labelKlassen}>PLZ &amp; Ort des Bauvorhabens</label>
                 <input
                     id="badanfrage-zip"
                     type="text"
@@ -108,7 +111,7 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
             </div>
 
             <div>
-                <label htmlFor="badanfrage-notes" className="block text-sm font-bold text-slate-800 mb-1.5">Anmerkungen oder besondere Wünsche (optional)</label>
+                <label htmlFor="badanfrage-notes" className={labelKlassen}>Anmerkungen oder besondere Wünsche (optional)</label>
                 <textarea
                     id="badanfrage-notes"
                     rows={3}
@@ -119,22 +122,23 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 />
             </div>
 
-            <div className="pt-4 border-t border-slate-200 space-y-3">
+            <div className="pt-4 border-t border-fuge space-y-3">
                 <div className="flex flex-col sm:flex-row items-center gap-3">
                     <button
                         type="submit"
                         disabled={status === 'submitting'}
-                        className="btn-primary w-full sm:flex-1 text-sm justify-center py-3.5 shadow-md shadow-orange-900/10 disabled:opacity-50"
+                        className={knopfKlassen('haupt', 'w-full sm:flex-1')}
+                        data-motion="druck"
                     >
                         {status === 'submitting' ? (
-                            <>
-                                <Loader2 className="w-4 h-4 animate-spin" />
+                            <span className="flex flex-col items-center gap-2">
                                 <span>Übermittle Anfrage an Fachbetrieb …</span>
-                            </>
+                                <span className="laden-fuge w-16" aria-hidden="true" />
+                            </span>
                         ) : (
                             <>
-                                <Send className="w-4 h-4" />
                                 <span>Badanfrage jetzt absenden (Online)</span>
+                                <Icon name="pfeil-rechts" groesse={5} />
                             </>
                         )}
                     </button>
@@ -142,19 +146,20 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                         type="button"
                         onClick={handleWhatsApp}
                         disabled={status === 'submitting'}
-                        className="glass-button-whatsapp w-full sm:w-auto text-sm justify-center py-3.5 disabled:opacity-50"
+                        className={knopfKlassen('neben', 'w-full sm:w-auto')}
+                        data-motion="druck"
                     >
-                        <MessageCircle className="w-4 h-4" />
+                        <Icon name="sprechblase" groesse={5} />
                         <span>Per WhatsApp</span>
                     </button>
                 </div>
 
-                <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
-                    <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
+                <p className="flex items-start gap-2 text-fs-1 text-tinte-2">
+                    <Icon name="schloss" groesse={4} className="mt-px" />
                     <span>
                         Ihre Angaben werden vertraulich zur Angebotserstellung genutzt. Beim optionalen Versand per WhatsApp gelten
                         zusätzlich die Richtlinien von WhatsApp. Mehr in unserer{' '}
-                        <Link href="/datenschutz" className="font-bold text-orange-600 underline underline-offset-2 hover:text-orange-700">
+                        <Link href="/datenschutz" className={linkKlassen}>
                             Datenschutzerklärung
                         </Link>
                         .
@@ -166,9 +171,10 @@ export default function Schritt5({ setStep, status, errorMessage, formData, setF
                 <button
                     type="button"
                     onClick={() => setStep(4)}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-700 hover:text-orange-600 transition-colors"
+                    className={knopfKlassen('text')}
+                    data-motion="druck"
                 >
-                    <ArrowLeft className="w-4 h-4" />
+                    <Icon name="pfeil-links" groesse={5} />
                     Zurück zu Schritt 4
                 </button>
             </div>
