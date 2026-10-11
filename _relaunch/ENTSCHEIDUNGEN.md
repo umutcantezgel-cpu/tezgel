@@ -332,3 +332,14 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - **Wahl:** beheben als eigenes Paket P4-05d. Die Tage werden erst im Browser berechnet (nach dem Einhängen); bis dahin zeigt der Kalender seinen Rahmen ohne Tage. Auswahl, Slots und Nutzlast bleiben gleich. T2 mit Uhrprobe.
   - **Umkehrprobe:** Ändert P4-05d etwas an Nutzlast oder Slotlogik, gilt G9 und das Paket wird verworfen.
 - **Wunschtermin geht verloren (I-12):** Geschäftslogik (API-Prüfung, Mailvorlagen) → MENSCHEN M-19 mit Vorschlag; keine eigene Korrektur.
+
+## E-028 · Freigaben der Hülle gelten für alle Kern-Seiten (P4-Tor, texte2 Vorschau 5913897-v)
+- **Befund:** Der Textabgleich der sechs Hauptseiten-Entwürfe zeigte 68 rote Einträge.
+  - 60 davon stammen von der Hülle: Kopf, Mobilblatt, Banner (P3-06, P3-08). Sie traten auf jeder Seite gleich auf und waren für `/` schon freigegeben.
+  - Hinzu kommt „Treppen“: Die Kopf-Navigation fasst den Eintrag mit seiner Beschreibung zu einer Texteinheit zusammen; der Link `/treppen` bleibt (auf `/blog` 3× statt 2×).
+  - Seitenspezifisch: 2 `aria-label` auf `/blog` (derselbe Wortlaut steht jetzt als sichtbare Beschriftung) und 5 Filtertexte der Karte auf `/kontakt` (E-021).
+- **Wahl:**
+  - Die 14 Hüllen-Zeilen in `MIKROTEXTE.md` gelten jetzt für `*` statt `/`. Die Hülle ist auf jeder Kern-Seite dieselbe; Bestandsseiten berührt das nicht, weil sich dort nichts ändert.
+  - Dazu 1 Zeile `*` für „Treppen“, 2 Zeilen `/blog` (Klasse 2), 5 Zeilen `/kontakt` (Klasse 1, E-021).
+- **Ergebnis:** texte2 GRÜN – 0 rot, 68 freigegeben, 785 gelb (umgestellt, neu gegliedert, hinzu, verschoben), keine neue Überschrift.
+- **Umkehrprobe:** Ändert eine Welle die Hülle seitenabhängig, bekommt die Zeile wieder eine Seitenangabe.

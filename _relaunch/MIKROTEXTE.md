@@ -37,23 +37,31 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/` | `✉️ Eine ausführliche Bestätigung mit allen Angaben wurde an` | `Eine ausführliche Bestätigung mit allen Angaben wurde an` | 1 | P3-13b | Erfolgszustand Anfrage-Funnel: Emoji durch Kern-Icon „mail“ (aria-hidden) ersetzt, Wortlaut unverändert |
 | `/` | `HQ` | `5 km` | 4 | P3-12b | Wahrheitskorrektur Servicegebiet: Firmensitz ist Aßlar, nicht Wetzlar; Entfernung Wetzlar ab Aßlar aus `CITY_HUB_DATA` (E-021) |
 | `/` | `5 km` | `Firmensitz` | 4 | P3-12b | Wahrheitskorrektur Servicegebiet: Aßlar ist der Firmensitz (Wortlaut „Firmensitz“ aus dem Bestand); Entfernungsangaben ab Aßlar (E-021) |
-| `/` | `Aufmaß buchen` | `Aufmaß anfragen` | 1 | P3-06 | Hauptknopf im Kern-Kopf (K-012 nennt „Aufmaß anfragen“); Ziel bleibt `/kontakt`, es wird nichts gebucht |
-| `/` | `Menü schließen` | `–` | 2 | P3-06 | Mobilmenü im Kern als Popover: Schließen über den Menü-Schalter am selben Ort („… schließen“), Escape und Tippen daneben; kein zweiter Schließen-Knopf |
-| `/` | `Navigation schließen` | `–` | 2 | P3-06 | Überlagerungsfläche des Bestands-Drawers entfällt (Popover schließt per Tippen daneben) |
-| `/` | `Fliesen-Katalog & Gewerke` | `–` | 2 | P3-06 | `title`-Attribut (Tooltip) am Bestands-Menüschalter entfällt; der zugängliche Name des Schalters bleibt |
+| `*` | `Aufmaß buchen` | `Aufmaß anfragen` | 1 | P3-06 | Hauptknopf im Kern-Kopf (K-012 nennt „Aufmaß anfragen“); Ziel bleibt `/kontakt`, es wird nichts gebucht |
+| `*` | `Menü schließen` | `–` | 2 | P3-06 | Mobilmenü im Kern als Popover: Schließen über den Menü-Schalter am selben Ort („… schließen“), Escape und Tippen daneben; kein zweiter Schließen-Knopf |
+| `*` | `Navigation schließen` | `–` | 2 | P3-06 | Überlagerungsfläche des Bestands-Drawers entfällt (Popover schließt per Tippen daneben) |
+| `*` | `Fliesen-Katalog & Gewerke` | `–` | 2 | P3-06 | `title`-Attribut (Tooltip) am Bestands-Menüschalter entfällt; der zugängliche Name des Schalters bleibt |
 | `/` | `Google` | `–` | 2 | P3-12 | Google-Markenzeichen (aria-label und SVG-Titel) an Bewertungsabzeichen und Kundenstimmen entfällt (Fremdmarke, K-010); die Quelle steht je Stimme als Text „Google Rezension“ |
 | `/` | `Verifizierter Kunde` | `–` | 4 | P3-12 | Wahrheitskorrektur: „verifiziert“ ist für die Kundenstimmen nicht belegt (Quelle ist Google, keine Prüfung durch den Betrieb); Liste intern |
-| `/` | `Badsanierung DIN 18534` | `Badsanierung Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen DIN 18534` | 1 | P3-06 | Navigationseintrag im Kern-Mobilblatt: Name, Beschreibung aus `navigationLinks` und Etikett in einem Eintrag; Wortlaut aus der Konfiguration |
-| `/` | `Fachgewerke Konfigurator` | `Unsere Fachgewerke` | 1 | P3-06 | Navigationseintrag im Kern-Mobilblatt: Kategorietitel aus `navigationLinks` („Unsere Fachgewerke“); „Konfigurator“ steht als Etikett im Planblatt |
-| `/` | `Impressum · Datenschutz` | `Impressum Datenschutz` | 1 | P3-08 | Linkzeile im Einwilligungsbanner: Trenner „·“ als Gestaltung statt Text; beide Links unverändert |
+| `*` | `Badsanierung DIN 18534` | `Badsanierung Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen DIN 18534` | 1 | P3-06 | Navigationseintrag im Kern-Mobilblatt: Name, Beschreibung aus `navigationLinks` und Etikett in einem Eintrag; Wortlaut aus der Konfiguration |
+| `*` | `Fachgewerke Konfigurator` | `Unsere Fachgewerke` | 1 | P3-06 | Navigationseintrag im Kern-Mobilblatt: Kategorietitel aus `navigationLinks` („Unsere Fachgewerke“); „Konfigurator“ steht als Etikett im Planblatt |
+| `*` | `Impressum · Datenschutz` | `Impressum Datenschutz` | 1 | P3-08 | Linkzeile im Einwilligungsbanner: Trenner „·“ als Gestaltung statt Text; beide Links unverändert |
 | `/` | `Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel ·` | `Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel` | 1 | P3-09 | Kennzeile im Einstieg (Zeichensetzung): Trenner „·“ zwischen Etikett und Bewertung entfällt (Fuge statt Zeichen), Wortlaut gleich |
-| `/` | `WhatsApp-Chat starten` | `–` | 2 | P3-06 | WhatsApp-Link im Desktop-Kopf des Bestands entfällt (Jury E-022: Kopf ruhig); WhatsApp bleibt im Einstieg, als Kanal am Desktop und in der unteren Leiste (gleicher Name) |
-| `/` | `Aufmaß buchen` | `–` | 1 | P3-06 | Zweiter „Aufmaß buchen“-Knopf (Bestands-Drawer) entfällt; der Kopf trägt „Aufmaß anfragen“, mobil die untere Leiste „Aufmaß“ |
-| `/` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite` | `–` | 2 | P3-06 | Dublette: Logo-Link im Bestands-Drawer; der Logo-Link im Kopf trägt den Namen unverändert |
-| `/` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar` | `–` | 2 | P3-06 | Dublette: Logo-Bild im Bestands-Drawer; das Logo im Kopf trägt den Alt-Text unverändert |
+| `*` | `WhatsApp-Chat starten` | `–` | 2 | P3-06 | WhatsApp-Link im Desktop-Kopf des Bestands entfällt (Jury E-022: Kopf ruhig); WhatsApp bleibt im Einstieg, als Kanal am Desktop und in der unteren Leiste (gleicher Name) |
+| `*` | `Aufmaß buchen` | `–` | 1 | P3-06 | Zweiter „Aufmaß buchen“-Knopf (Bestands-Drawer) entfällt; der Kopf trägt „Aufmaß anfragen“, mobil die untere Leiste „Aufmaß“ |
+| `*` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite` | `–` | 2 | P3-06 | Dublette: Logo-Link im Bestands-Drawer; der Logo-Link im Kopf trägt den Namen unverändert |
+| `*` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar` | `–` | 2 | P3-06 | Dublette: Logo-Bild im Bestands-Drawer; das Logo im Kopf trägt den Alt-Text unverändert |
 | `/` | `Vertrauenssignale und Fachbetriebs-Garantien` | `–` | 2 | P3-12 | aria-label der Vertrauensleiste wird zu aria-labelledby auf einen nur für Screenreader sichtbaren Titel mit demselben Wortlaut |
-| `/` | `Cookie-Einstellungen verwalten` | `–` | 2 | P3-08 | Schwebendes Schild entfällt im Kern (E-020); Widerruf über den Fußlink „Cookie-Einstellungen“ |
-| `/` | `Cookie-Einstellungen öffnen` | `–` | 2 | P3-08 | `title` des schwebenden Schilds entfällt mit dem Schild (E-020) |
-| `/` | `Frei verschiebbar & werfbar` | `–` | 2 | P3-08 | `title` der Wurfphysik am Banner entfällt; der Kern-Banner ist fest und ohne Physik (E-013) |
+| `*` | `Cookie-Einstellungen verwalten` | `–` | 2 | P3-08 | Schwebendes Schild entfällt im Kern (E-020); Widerruf über den Fußlink „Cookie-Einstellungen“ |
+| `*` | `Cookie-Einstellungen öffnen` | `–` | 2 | P3-08 | `title` des schwebenden Schilds entfällt mit dem Schild (E-020) |
+| `*` | `Frei verschiebbar & werfbar` | `–` | 2 | P3-08 | `title` der Wurfphysik am Banner entfällt; der Kern-Banner ist fest und ohne Physik (E-013) |
 | `/` | `1. Ihr Vorhaben wählen` | `Ihr Vorhaben wählen` | 1 | P3-16 | Legende der Projektauswahl im Hero-Formular: Die Auswahl steht im Kern nach den Kontaktfeldern (Probelauf Aufgabe 3, Desktop), die Ziffer „1.“ würde die Reihenfolge falsch angeben |
 | `/` | `verifizierte Google-Rezensionen` | `Google-Rezensionen` | 4 | P3-16 | Wahrheitskorrektur wie „Verifizierter Kunde“ (P3-12): „verifiziert“ ist nicht belegt, die Quelle ist Google ohne Prüfung durch den Betrieb (P3-16-GEG H-1); Liste intern |
+| `*` | `Treppen` | `–` | 1 | P4-08 (E-028) | Kopf-Navigation im Kern: der Eintrag „Treppen“ steht als Link zusammen mit seiner Beschreibung (eine Texteinheit statt zwei); der Link `/treppen` bleibt (auf `/blog` 3× statt 2×) |
+| `/blog` | `Ratgeber durchsuchen` | `–` | 2 | P4-08d | `aria-label` des mobilen Suchfelds entfällt: derselbe Wortlaut steht als sichtbare `<label>` (K-011), der zugängliche Name bleibt gleich |
+| `/blog` | `Artikel suchen` | `–` | 2 | P4-08d | `aria-label` des Desktop-Suchfelds entfällt wie oben; sichtbare Beschriftung mit gleichem Wortlaut |
+| `/kontakt` | `Stadt oder Kreis filtern...` | `–` | 1 | P4-08f | Suchfeld der Kartenstadtwahl entfällt (E-021 wie auf `/`): alle 13 Städte stehen im Register, jede als Link zur Standortseite, auch ohne JavaScript |
+| `/kontakt` | `Alle` | `–` | 1 | P4-08f | Entfernungsfilter der Karte entfällt (E-021); die Entfernung steht je Stadt im Register |
+| `/kontakt` | `≤ 15 km` | `–` | 1 | P4-08f | wie oben |
+| `/kontakt` | `≤ 30 km` | `–` | 1 | P4-08f | wie oben |
+| `/kontakt` | `≤ 45 km` | `–` | 1 | P4-08f | wie oben |
