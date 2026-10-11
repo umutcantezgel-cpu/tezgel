@@ -20,7 +20,7 @@ export const MODI = ['einzelbilder', 'bildrate', 'register', 'reduziert'];
 
 // Auslöser je Kennung nach K-009 (Bewegungsregister). Unbekannte Kennungen gelten als Scroll-Auslöser (Annahme, im Ergebnis vermerkt).
 export const AUSLOESER = {
-  'sig-kreuzlinie': 'seite', 'sig-flucht': 'seite', 'sig-ablauf': 'scroll', 'sig-plan': 'hover',
+  'sig-kreuzlinie': 'seite', 'sig-flucht': 'seite', 'szene-ablauf': 'scroll', 'sig-plan': 'hover',
   anriss: 'scroll', auftritt: 'scroll', aufklappen: 'klick', druck: 'aktiv', zustand: 'hover+fokus',
   notiert: 'erfolg', laden: 'absenden', seitenwechsel: 'navigation',
 };

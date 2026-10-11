@@ -17,14 +17,23 @@ stoppe() {
   # (auch ohne PID-Datei gestartete; der Dev-Server läuft im Repo und bleibt unberührt)
   # Verzeichnisse anderer Ports (server-<Port>.dir) bleiben unberührt; kennt dieser Port sein Verzeichnis,
   # wird nur dieses beendet.
-  local eigen="" fremd=" "
+  # Prozessgruppen anderer Ports (server-<Port>.pid) bleiben in jedem Fall unberührt – auch wenn zwei Ports
+  # denselben Build ausliefern (E3-PRUEF-W1, Frage 1: sonst beendete ein Stop von 4312 auch 4310).
+  local eigen="" fremd=" " fremdgruppen=" "
   [ -s "$DIRFILE" ] && eigen="$(cat "$DIRFILE")"
   for f in "$SCRATCH"/server-*.dir; do
     [ -e "$f" ] && [ "$f" != "$DIRFILE" ] && fremd="$fremd$(cat "$f") "
   done
+  for f in "$SCRATCH"/server-*.pid; do
+    [ -e "$f" ] && [ "$f" != "$PIDFILE" ] || continue
+    g="$(ps -o pgid= -p "$(cat "$f")" 2>/dev/null | tr -d ' ')"
+    [ -n "$g" ] && fremdgruppen="$fremdgruppen$g "
+  done
   for p in $(pgrep -f "next-server|next start" 2>/dev/null); do
     cwd="$(readlink "/proc/$p/cwd" 2>/dev/null)"
     case "$cwd" in "$SCRATCH"/reinraum-*) ;; *) continue;; esac
+    g="$(ps -o pgid= -p "$p" 2>/dev/null | tr -d ' ')"
+    case "$fremdgruppen" in *" $g "*) continue;; esac
     if [ -n "$eigen" ]; then [ "$cwd" = "$eigen" ] || continue
     else case "$fremd" in *" $cwd "*) continue;; esac; fi
     kill -TERM "$p" 2>/dev/null
