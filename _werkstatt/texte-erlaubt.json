@@ -774,5 +774,161 @@
   "block": "main",
   "entfernt": "5 km",
   "vermerk": "E-020 Fusion: Entfernungen ab Aßlar aus CITY_HUB_DATA (main); Aßlar ist der Firmensitz und steht als „Firmensitz“ statt „5 km“ in der Ortsliste der Karte (behebt M-17) – TEXTVORSCHLAEGE; festgestellt in E3-PRUEF-A-1"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Wetzlar • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Wetzlar • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Gießen • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Gießen • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Marburg • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Marburg • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Limburg an der Lahn • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Limburg an der Lahn • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Bad Nauheim • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Bad Nauheim • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Friedberg (Hessen) • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Friedberg (Hessen) • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Butzbach • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Butzbach • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Herborn • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Herborn • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Dillenburg • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Dillenburg • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Haiger • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Haiger • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Braunfels • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Braunfels • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Solms • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Solms • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Schnelle Anfahrt nach Aßlar • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß in Aßlar • Festpreisangebot • HWK-Fachbetrieb",
+  "vermerk": "E-020 Abschluss-Baustein (FinalCTA, Stadtseiten): Untertitel wortgleich vorhanden, steht jetzt unter der Überschrift statt am Ende des Blocks (verschoben, nicht entfernt) – TEXTVORSCHLAEGE; festgestellt in E3-BAU-21"
  }
 ]

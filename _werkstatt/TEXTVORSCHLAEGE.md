@@ -53,4 +53,6 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E3-BAU-17 | `src/components/funnels/BadanfrageFunnel/Schritt5.jsx` (Sendefehler über `kern/Hinweis art="fehler"`) | – | nur für Screenreader „Fehler: “ vor der Meldung (Baustein ohne Titel) | Zugänglichkeit: Art der Meldung wird vorgelesen (Fehler = Rahmen + Zeichen + Text, K-005); sichtbarer Wortlaut unverändert |
 
 ## Vorschläge (Überschriften, Fließtext)
-_noch keine_
+| Paket | Fundstelle | heute | Vorschlag | Grund |
+|---|---|---|---|---|
+| E3-BAU-21 | `src/components/locations/RouteVisualization.tsx` (Hauptknopf, Stadtseiten) | „Jetzt Vor-Ort-Termin für {Stadt} anfragen“ → `tel:` | „Vor-Ort-Termin für {Stadt} telefonisch anfragen“ oder Ziel `/kontakt#express-anfrage` | Knopftext verspricht eine Anfrage, der Knopf startet einen Anruf |
