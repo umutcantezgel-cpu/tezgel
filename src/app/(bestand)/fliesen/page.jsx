@@ -1,28 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import {
-    ArrowRight,
-    Award,
-    BookOpen,
-    Building2,
-    ChefHat,
-    CheckCircle2,
-    ClipboardCheck,
-    DoorOpen,
-    FileText,
-    Hammer,
-    Layers,
-    LayoutGrid,
-    Maximize2,
-    MessageCircle,
-    Phone,
-    Ruler,
-    Sliders,
-    Star,
-    Thermometer,
-    Trees,
-    Wrench
-} from 'lucide-react';
+import KernIcon from '@/components/icons/Icon';
+import { Maximize2, Thermometer, Trees, Layers, ChefHat, DoorOpen, LayoutGrid, Hammer, Wrench, Building2, Sliders, ClipboardCheck, FileText, Ruler } from '@/components/icons/ersatz';
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
@@ -131,30 +110,28 @@ export default function FliesenRatgeberPage() {
 
     return (
         <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
 
             {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fliesen-hub-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <BookOpen className="w-3.5 h-3.5" />
+            <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="fliesen-hub-heading">
+                <div className="border border-fuge bg-fliese p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
+                    <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2">
+                        <KernIcon name="dokument" groesse={4} />
                         Fliesen-Ratgeber &middot; Gegründet {COMPANY_DATA.business.establishmentYear} &middot; Fachbetrieb ({COMPANY_DATA.authority.shortName})
                     </span>
-                    <h1 id="fliesen-hub-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                    <h1 id="fliesen-hub-heading" className="text-fs-7 text-tinte">
                         Fliesen-Ratgeber:{' '}
-                        <span className="text-ceramic-gradient">Formate, Räume und Verlegetechnik</span>{' '}
+                        <span>Formate, Räume und Verlegetechnik</span>{' '}
                         verständlich erklärt
                     </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-fs-3 text-tinte-2 max-w-mass mx-auto">
                         In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegetechnik verständlich aus der Praxis. Welche Fliese passt in welchen Raum, was verlangen Großformate vom Untergrund und woran erkennen Sie eine saubere Verlegung? Hier bündeln wir das Fachwissen aus unserem Alltag als Fachbetrieb Fliesen Tezgel – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/fliesen/konfigurator" className="btn-primary px-7 py-3.5 text-xs group">
+                    <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+                        <Link href="/fliesen/konfigurator" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-tinte bg-tinte text-kalk hover:border-tinte-2 hover:bg-tinte-2 group">
                             Projekt im Konfigurator vorbereiten
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                            <KernIcon name="pfeil-rechts" groesse={4} />
                         </Link>
-                        <Link href="/leistungen/wohnen" className="btn-ghost px-7 py-3.5 text-xs">
+                        <Link href="/leistungen/wohnen" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-strich bg-fliese text-tinte hover:border-tinte">
                             Leistung: Wohnbereiche &amp; Neubau
                         </Link>
                     </div>
@@ -162,37 +139,34 @@ export default function FliesenRatgeberPage() {
             </section>
 
             {/* All subpages */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-themen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Alle Themen</span>
-                    <h2 id="fliesen-themen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-themen-heading">
+                <div className="text-center max-w-mass mx-auto mb-12">
+                    <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-4">Alle Themen</span>
+                    <h2 id="fliesen-themen-heading" className="text-fs-6 text-tinte">
                         {FLIESEN_HUB ? FLIESEN_HUB.name : 'Fliesen & Verlegung'}{' '}
-                        <span className="text-ceramic-gradient">im Überblick</span>
+                        <span>im Überblick</span>
                     </h2>
                     {FLIESEN_HUB && (
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">{FLIESEN_HUB.description}.</p>
+                        <p className="mt-3 text-fs-3 text-tinte-2">{FLIESEN_HUB.description}.</p>
                     )}
                 </div>
 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {HUB_PAGES.map((page) => {
                         const Icon = PAGE_ICONS[page.path] || LayoutGrid;
                         return (
                             <li key={page.path}>
                                 <Link
                                     href={page.path}
-                                    className="group glass-surface h-full p-6 rounded-tile-lg flex items-start gap-4 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                    className="group border border-fuge bg-fliese h-full p-6 flex items-start gap-4 hover:border-strich transition-colors dauer-2"
                                 >
-                                    <span className="icon-chip w-11 h-11 shrink-0">
-                                        <Icon className="w-5 h-5" />
-                                    </span>
                                     <span className="flex-1">
-                                        <span className="block font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
+                                        <span className="block font-semibold text-fs-3 text-tinte group-hover:text-laser-tief transition-colors">
                                             {page.name}
                                         </span>
-                                        <span className="block mt-1 text-sm text-slate-700 leading-relaxed">{page.desc}</span>
+                                        <span className="block mt-1 text-fs-2 text-tinte-2">{page.desc}</span>
                                     </span>
-                                    <ArrowRight className="w-4 h-4 mt-1 text-orange-600 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                                    <KernIcon name="pfeil-rechts" groesse={4} className="mt-1 text-laser-tief" />
                                 </Link>
                             </li>
                         );
@@ -201,13 +175,13 @@ export default function FliesenRatgeberPage() {
             </section>
 
             {/* Guide sections */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="fliesen-wissen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-14">
-                        <span className="eyebrow mb-4">Wissen kompakt</span>
-                        <h2 id="fliesen-wissen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            <section className="py-24 bg-fliese border-y border-fuge relative z-10" aria-labelledby="fliesen-wissen-heading">
+                <div className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-mass mx-auto mb-16">
+                        <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-4">Wissen kompakt</span>
+                        <h2 id="fliesen-wissen-heading" className="text-fs-6 text-tinte">
                             Vom Raum bis zur Abnahme:{' '}
-                            <span className="text-ceramic-gradient">die wichtigsten Weichen</span>
+                            <span>die wichtigsten Weichen</span>
                         </h2>
                     </div>
 
@@ -216,24 +190,24 @@ export default function FliesenRatgeberPage() {
                             <article
                                 key={section.id}
                                 aria-labelledby={`guide-${section.id}`}
-                                className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:border-orange-500/80 transition-all duration-300"
+                                className="p-8 sm:p-8 bg-kalk border border-fuge hover:bg-fliese hover:border-strich transition-colors dauer-2"
                             >
-                                <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-2">
+                                <span className="block text-fs-1 font-semibold text-laser-tief mb-2">
                                     {section.eyebrow}
                                 </span>
-                                <h3 id={`guide-${section.id}`} className="text-xl font-black text-slate-900 mb-3 leading-snug">
+                                <h3 id={`guide-${section.id}`} className="text-fs-4 text-tinte mb-3">
                                     {section.title}
                                 </h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{section.text}</p>
-                                <ul className="mt-5 flex flex-wrap gap-2">
+                                <p className="text-fs-2 text-tinte-2">{section.text}</p>
+                                <ul className="mt-6 flex flex-wrap gap-2">
                                     {section.links.map((link) => (
                                         <li key={link.href}>
                                             <Link
                                                 href={link.href}
-                                                className="inline-flex items-center gap-1 rounded-tile-pill bg-orange-50 border border-orange-200 text-orange-700 hover:text-orange-800 hover:border-orange-500/80 px-3.5 py-1.5 text-xs font-bold transition-colors"
+                                                className="inline-flex items-center gap-1 bg-kalk border border-strich text-laser-tief hover:text-laser-tief hover:border-strich px-4 py-2 text-fs-1 font-semibold transition-colors"
                                             >
                                                 {link.label}
-                                                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                                                <KernIcon name="pfeil-rechts" groesse={4} />
                                             </Link>
                                         </li>
                                     ))}
@@ -244,20 +218,20 @@ export default function FliesenRatgeberPage() {
                         {/* Bad */}
                         <article
                             aria-labelledby="guide-bad"
-                            className="p-7 sm:p-8 rounded-tile-xl bg-slate-50 border border-slate-200 text-slate-700"
+                            className="p-8 sm:p-8 bg-kalk border border-fuge text-tinte-2"
                         >
-                            <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-2">
+                            <span className="block text-fs-1 font-semibold text-laser-tief mb-2">
                                 Bad, Dusche &amp; Gäste-WC
                             </span>
-                            <h3 id="guide-bad" className="text-xl font-black text-slate-900 mb-3 leading-snug">
+                            <h3 id="guide-bad" className="text-fs-4 text-tinte mb-3">
                                 Badsanierung hat einen eigenen Bereich
                             </h3>
-                            <p className="text-sm leading-relaxed">
+                            <p className="text-fs-2">
                                 Rund ums Bad – Walk-In-Dusche, Abdichtung nach DIN 18534, Fliesen im Nassbereich, Gäste-WC – finden
                                 Sie alles gesammelt im Bad-Bereich. Dieser Ratgeber konzentriert sich auf die übrigen Räume und die
                                 Verlegetechnik.
                             </p>
-                            <ul className="mt-5 flex flex-wrap gap-2">
+                            <ul className="mt-6 flex flex-wrap gap-2">
                                 {[
                                     { label: 'Zum Bad-Bereich', href: '/bad' },
                                     { label: 'Fliesen im Bad', href: '/bad/fliesen' },
@@ -266,10 +240,10 @@ export default function FliesenRatgeberPage() {
                                     <li key={link.href}>
                                         <Link
                                             href={link.href}
-                                            className="inline-flex items-center gap-1 rounded-tile-pill bg-white border border-slate-200 text-slate-900 hover:border-orange-500 px-3.5 py-1.5 text-xs font-bold transition-colors"
+                                            className="inline-flex items-center gap-1 bg-fliese border border-fuge text-tinte hover:border-strich px-4 py-2 text-fs-1 font-semibold transition-colors"
                                         >
                                             {link.label}
-                                            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                                            <KernIcon name="pfeil-rechts" groesse={4} />
                                         </Link>
                                     </li>
                                 ))}
@@ -280,30 +254,30 @@ export default function FliesenRatgeberPage() {
             </section>
 
             {/* Other topic hubs */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="fliesen-weitere-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-neutral mb-4">Weitere Fachthemen</span>
-                    <h2 id="fliesen-weitere-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10" aria-labelledby="fliesen-weitere-heading">
+                <div className="text-center max-w-mass mx-auto mb-12">
+                    <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-4">Weitere Fachthemen</span>
+                    <h2 id="fliesen-weitere-heading" className="text-fs-6 text-tinte">
                         Unter der Fliese und über das Wohnen hinaus
                     </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                    <p className="mt-3 text-fs-3 text-tinte-2">
                         Ein Fliesenbelag ist nur so gut wie sein Untergrund. Diese Ratgeber-Bereiche vertiefen die angrenzenden Themen.
                     </p>
                 </div>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {OTHER_HUBS.map((hub) => (
                         <li key={hub.id}>
                             <Link
                                 href={hub.path}
-                                className="group glass-surface h-full p-6 rounded-tile-lg block hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className="group border border-fuge bg-fliese h-full p-6 block hover:border-strich transition-colors dauer-2"
                             >
-                                <span className="block font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
+                                <span className="block font-semibold text-fs-3 text-tinte group-hover:text-laser-tief transition-colors">
                                     {hub.name}
                                 </span>
-                                <span className="block mt-1 text-sm text-slate-700 leading-relaxed">{hub.description}</span>
-                                <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-orange-600">
+                                <span className="block mt-1 text-fs-2 text-tinte-2">{hub.description}</span>
+                                <span className="mt-3 inline-flex items-center gap-1 text-fs-1 font-semibold text-laser-tief">
                                     {hub.pages.length} {hub.pages.length === 1 ? 'Seite' : 'Seiten'}
-                                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                                    <KernIcon name="pfeil-rechts" groesse={4} />
                                 </span>
                             </Link>
                         </li>
@@ -312,65 +286,64 @@ export default function FliesenRatgeberPage() {
             </section>
 
             {/* Link band to /leistungen/wohnen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative z-10" aria-labelledby="fliesen-projekt-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 relative overflow-hidden">
+            <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 pb-8 relative z-10" aria-labelledby="fliesen-projekt-heading">
+                <div className="border border-fuge bg-fliese p-8 sm:p-12 relative overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                         <div className="lg:col-span-3 space-y-4">
-                            <span className="eyebrow">
-                                <Award className="w-3.5 h-3.5" />
+                            <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2">
                                 Vom Ratgeber zum Projekt
                             </span>
-                            <h2 id="fliesen-projekt-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
+                            <h2 id="fliesen-projekt-heading" className="text-fs-6 text-tinte">
                                 Wohnbereiche, Küche, Flur und Neubau – ausgeführt vom Fachbetrieb
                             </h2>
-                            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                            <p className="text-fs-3 text-tinte-2">
                                 Seit {COMPANY_DATA.business.establishmentYear} verlegt {COMPANY_DATA.legalName} Fliesen,
                                 Platten und Naturstein. Der Betrieb ist eingetragener Fachbetrieb der {COMPANY_DATA.authority.name}. Sie
                                 erhalten ein kostenfreies Vor-Ort-Aufmaß, danach ein verbindliches Festpreisangebot, und bei
                                 Arbeiten im bewohnten Bestand gilt unsere Staubschutz-Garantie. Kundinnen und Kunden haben bei uns
                                 vom einzelnen Raum bis zum kompletten Haus fliesen lassen.
                             </p>
-                            <ul className="space-y-2 text-sm text-slate-700">
+                            <ul className="space-y-2 text-fs-2 text-tinte-2">
                                 {[
                                     'Kostenfreies Vor-Ort-Aufmaß mit Prüfung des Untergrunds',
                                     'Verbindliche Festpreis-Kalkulation ohne versteckte Zusatzkosten',
                                     `Persönliche Betreuung durch ${COMPANY_DATA.owner.fullName}`
                                 ].map((item) => (
                                     <li key={item} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-orange-600 shrink-0" aria-hidden="true" />
+                                        <KernIcon name="haken" groesse={4} className="mt-px text-laser-tief shrink-0" />
                                         {item}
                                     </li>
                                 ))}
                             </ul>
                         </div>
                         <div className="lg:col-span-2 space-y-4">
-                            <div className="glass-surface rounded-tile-xl p-6 text-center">
-                                <span className="flex items-center justify-center gap-0.5 text-amber-500" aria-hidden="true">
+                            <div className="border border-fuge bg-fliese p-6 text-center">
+                                <span className="flex items-center justify-center gap-px text-laser-tief" aria-hidden="true">
                                     {Array.from({ length: 5 }, (_, i) => (
-                                        <Star key={i} className="w-5 h-5 fill-current" />
+                                        <KernIcon name="stern" groesse={5} />
                                     ))}
                                 </span>
-                                <p className="mt-2 text-3xl font-black text-slate-900 tabular-nums">{google.displayRating}</p>
-                                <p className="text-sm text-slate-700">
+                                <p className="mt-2 text-fs-6 font-semibold text-tinte tabular-nums">{google.displayRating}</p>
+                                <p className="text-fs-2 text-tinte-2">
                                     aus {google.count} {google.label} (Stand {RATING_SUMMARY.asOf})
                                 </p>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <Link href="/leistungen/wohnen" className="btn-primary w-full px-7 py-3.5 text-xs group">
+                                <Link href="/leistungen/wohnen" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-tinte bg-tinte text-kalk hover:border-tinte-2 hover:bg-tinte-2 w-full group">
                                     Zur Leistungsseite Wohnbereiche &amp; Neubau
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                    <KernIcon name="pfeil-rechts" groesse={4} />
                                 </Link>
-                                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost w-full px-7 py-3.5 text-xs">
-                                    <Phone className="w-4 h-4 text-slate-700" />
+                                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-strich bg-fliese text-tinte hover:border-tinte w-full">
+                                    <KernIcon name="telefon" groesse={4} className="text-tinte-2" />
                                     {COMPANY_DATA.contact.phone}
                                 </a>
                                 <a
                                     href={COMPANY_DATA.contact.whatsappLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="glass-button-whatsapp w-full px-7 py-3.5 text-xs"
+                                    className="w-full px-8 py-4 text-fs-1"
                                 >
-                                    <MessageCircle className="w-4 h-4" />
+                                    <KernIcon name="sprechblase" groesse={4} />
                                     Fotos per WhatsApp senden
                                 </a>
                             </div>
@@ -380,29 +353,29 @@ export default function FliesenRatgeberPage() {
             </section>
 
             {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-ratgeber-heading">
-                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
-                    <h2 id="fliesen-ratgeber-heading" className="text-lg font-black text-slate-900 mb-4">Weiterführende Ratgeber zur Fliesenverlegung</h2>
+            <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="fliesen-ratgeber-heading">
+                <div className="p-6 sm:p-8">
+                    <h2 id="fliesen-ratgeber-heading" className="text-fs-6 text-tinte mb-4">Weiterführende Ratgeber zur Fliesenverlegung</h2>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {WEITERLESEN.map((link) => (
                             <li key={link.href}>
                                 <Link
                                     href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
+                                    className="inline-flex items-center gap-2 text-fs-2 font-semibold text-laser-tief hover:text-laser-tief hover:underline underline-offset-2"
                                 >
-                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                                    <KernIcon name="pfeil-rechts" groesse={4} />
                                     {link.label}
                                 </Link>
                             </li>
                         ))}
                     </ul>
-                    <p className="mt-4 text-sm text-slate-700">
+                    <p className="mt-4 text-fs-2 text-tinte-2">
                         Persönliche Beratung vor Ihrer Entscheidung?{' '}
-                        <Link href="/beratung" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
+                        <Link href="/beratung" className="font-semibold text-laser-tief hover:text-laser-tief hover:underline underline-offset-2">
                             Fachberatung anfragen
                         </Link>{' '}
                         oder unseren{' '}
-                        <Link href="/blog" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
+                        <Link href="/blog" className="font-semibold text-laser-tief hover:text-laser-tief hover:underline underline-offset-2">
                             Fliesen-Ratgeber-Blog
                         </Link>{' '}
                         durchstöbern.
@@ -411,7 +384,7 @@ export default function FliesenRatgeberPage() {
             </section>
 
             {/* Konfigurator */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="konfigurator" aria-label="Fliesen-Konfigurator">
+            <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 scroll-mt-28" id="konfigurator" aria-label="Fliesen-Konfigurator">
                 <FliesenKonfigurator />
             </section>
 
