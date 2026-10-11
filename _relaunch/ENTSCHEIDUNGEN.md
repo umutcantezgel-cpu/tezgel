@@ -305,3 +305,30 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - (3) Teilen-Knöpfe mit Facebook, LinkedIn und X entscheidet W6 (Blog). Vorgabe: `teilen` (Web Share) und „Link kopieren“, keine Fremdlogos.
   - (4) Fugenkreuz bleibt eigenes Inline-SVG (P3-03).
 - **Umkehrprobe:** Wächst der Satz über 60 Zeichen oder das Sprite über 4 KB gzip, gilt die Seitenauswahl (`namen`) mit einer Prüfung „jedes `use` hat ein Ziel“ (`svg.mjs`).
+
+## E-027 · Abnahme P4-01 bis P4-05c: Antworten auf die offenen Fragen, Vorschau-Befunde, Kalender
+- **Vorschau a361e9c-v** (Fotos in 3 Ansichten, `wortbruch.mjs`):
+  - Pläne (P4-03), Icon-Tafel (P4-04) und die Übersichtslisten (P4-02) tragen die Leitidee.
+  - 89 Wortbrüche ohne Trennstrich in Überschriften, Werten und Kacheln.
+  - Formular-Raster hängen an der Fensterbreite statt an der Behälterbreite.
+  - Das Bild des empfohlenen Leitfadens füllt seine Spalte nicht.
+  - Doppelte Teile in `fachseite/` und `uebersicht/`.
+  - → P4-10a (Vorlagen) und P4-10b (Formulare).
+- **Live `/`:** 8 Wortbrüche, alle im Garantie-Sockel des Fußes („Festpreisgarantie“ in Mono passte in vier Spalten in keiner Breite). Korrigiert: unter `sm` einspaltig, darüber 2 × 2 (3fa28fd, sofort wirksam → T2 mit P4-09).
+- **Offene Fragen:**
+  - P4-01 F1 (Schriftfeld auf Fachseiten): ja, aus vorhandenem Kern-Wortlaut (Kennzeile, Bewertung, „Kammer“). MIKROTEXTE-Zeilen der Klasse 3 kommen mit der Welle, die es nutzt.
+  - P4-01 F2 (Tabellen-Etiketten ohne doppeltes DOM): ja, Regel `.k-zelle[data-spalte]::before` in `kern.css`.
+  - P4-01 F3 (ein Ablauf für `/` und Fachseiten): jetzt nicht, `/` bleibt; Prüfung in P6.
+  - P4-01 F4 (Anruf-Hinweis je FAQ-Antwort): erst bei Bedarf, dann nach `kern/basis`.
+  - P4-01 F6 (Halbverband als Feldvariante): nein, erst nach der Jury W1.
+  - P4-02 (Seitenart `/bad/musterbaeder`, `/referenzen`): es gilt `GRUNDMENGE.json`.
+  - P4-02 (Hooks für F-16: Filter, Inhaltsverzeichnis, Teilen, Abstimmung): kommen mit W6 als eigenes Paket mit T2.
+  - P4-03 F1–F3: W5 entscheidet mit dem Seiteninhalt; bis dahin der Plan der Leistung.
+  - P4-03 F4: SIG_PLAN_AUSLOESER setzen die Vorlagen (P4-10a); die zentrale Regel `[data-motion="sig-plan"]` steht in `kern.css`.
+  - P4-05a/b/c (Kern-Zweig der Tests): P4-06 baut ihn, sobald die Bad-, Fliesen- und Termin-Seiten in `KERN_SEITEN` kommen; Werkzeugregel: Fassung je Seite aus `KERN_SEITEN` (Lehre 10).
+- **Kalender (P4-05c, I-19):**
+  - BookingCalendar berechnet die Tage beim Rendern aus `new Date()`. Ab dem Tag nach dem Build wirft React auf `/termin` und `/kontakt` den Hydrationsfehler #418 (gemessen mit Uhr +1/+3 Tage am Live-Produkt 74e768c).
+  - Das ist ein technischer Fehler, keine Geschäftslogik. Er widerspricht Z-11 („keine Hydrationsfehler“).
+  - **Wahl:** beheben als eigenes Paket P4-05d. Die Tage werden erst im Browser berechnet (nach dem Einhängen); bis dahin zeigt der Kalender seinen Rahmen ohne Tage. Auswahl, Slots und Nutzlast bleiben gleich. T2 mit Uhrprobe.
+  - **Umkehrprobe:** Ändert P4-05d etwas an Nutzlast oder Slotlogik, gilt G9 und das Paket wird verworfen.
+- **Wunschtermin geht verloren (I-12):** Geschäftslogik (API-Prüfung, Mailvorlagen) → MENSCHEN M-19 mit Vorschlag; keine eigene Korrektur.
