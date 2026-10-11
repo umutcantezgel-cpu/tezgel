@@ -1,0 +1,22 @@
+{
+ "aufgabe": 4, "start": "/", "ansicht": "m375", "eingabe": "touch",
+ "antwort": "Ja – Butzbach gehört zum 45-km-Einsatzgebiet: Chip „Butzbach 35 km“ unter „Unser 45-km-Einsatzgebiet in Mittelhessen“ auf /standorte; nach dem Antippen „Einsatzgebiet Butzbach ca. 44 Min. ab Aßlar“.",
+ "befunde": [
+  {"schwere": "mittel", "schritt": 8, "text": "Butzbach steht auf /standorte mobil erst nach 1 Bildlauf und 3× Wischen in der Stadt-Leiste im Bild (Desktop: sofort nach Klick auf „Standorte“). Ohne Wischen erst die Ortskarte nach 6 Bildschirmhöhen (Erkundung: Ziel bei Schritt 10)."},
+  {"schwere": "gering", "schritt": 1, "text": "Der Einwilligungsbanner liegt über dem geöffneten Mobilmenü – „Standorte“ ist verdeckt (Abbruch „verdeckt durch … Cookie-Einwilligungsbanner“), der Banner muss zuerst geschlossen werden."},
+  {"schwere": "gering", "schritt": 9, "text": "Antippen des Chips „Butzbach 35 km“ ändert im Bild nur die Markierung; die Details erscheinen unterhalb der Karte außerhalb des Bildes (erst nach Bildlauf in Schritt 10 sichtbar)."},
+  {"schwere": "gering", "schritt": 4, "text": "Die Blase „Chat starten“ verdeckt auf /standorte mobil Teile des Telefon-Knopfs bzw. von „Karte laden & zustimmen“."}
+ ],
+ "schritte": [
+  {"tippe": "Alle ablehnen"},
+  {"tippe": "Architektur-Menü öffnen"},
+  {"tippe": "Standorte"},
+  {"tippe": "Alle 13 Standorte"},
+  {"scrolle": "unten"},
+  {"wische": "links", "an": "Gießen 25 km"},
+  {"wische": "links", "an": "Limburg an der Lahn 35 km"},
+  {"wische": "links", "an": "Friedberg (Hessen) 45 km"},
+  {"tippe": "Butzbach 35 km"},
+  {"scrolle": "unten"}
+ ]
+}

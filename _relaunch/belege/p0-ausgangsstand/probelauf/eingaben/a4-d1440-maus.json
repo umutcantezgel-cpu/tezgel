@@ -1,0 +1,14 @@
+{
+ "aufgabe": 4, "start": "/", "ansicht": "d1440", "eingabe": "maus",
+ "antwort": "Ja – nach Klick auf „Standorte“ steht „Butzbach 35 km“ in der Stadt-Leiste unter „Unser 45-km-Einsatzgebiet in Mittelhessen“; nach dem Klick darauf „Einsatzgebiet Butzbach“.",
+ "befunde": [
+  {"schwere": "gering", "schritt": 1, "text": "Der (nicht geschlossene) Einwilligungsbanner verdeckt auf /standorte die H1 „Standorte & Einsatzgebiete in Mittelhessen“."},
+  {"schwere": "gering", "schritt": 1, "text": "Die Blase „Chat starten“ verdeckt den Chip „Butzbach 35 km“ teilweise („Butzbac…“)."},
+  {"schwere": "gering", "schritt": 2, "text": "Klick auf den Stadt-Chip: die Details erscheinen unterhalb der Karte außerhalb des Bildes."}
+ ],
+ "schritte": [
+  {"tippe": "Standorte"},
+  {"tippe": "Butzbach 35 km"},
+  {"scrolle": "unten"}
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "aufgabe": 1, "start": "/", "ansicht": "d1440", "eingabe": "tastatur",
+ "antwort": "Gefunden: „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss“ (/bad/barrierefreies-bad) – über „Badsanierung“ in der Kopfnavigation und die Karte „Barrierefreies Bad“.",
+ "befunde": [
+  {"schwere": "mittel", "schritt": 3, "text": "Auf /bad liegt die Karte „Barrierefreies Bad“ erst nach 18 Tab-Stopps: davor die Untermenü-Schaltflächen der Kopfnavigation, die Hero-Schaltflächen und zwei Karten (Umweg ≥ 3 Schritte). Bild 03-taste.jpg."},
+  {"schwere": "gering", "schritt": 2, "text": "Der Einwilligungsbanner verdeckt auf /bad die H1 „Ihr Traumbad schlüsselfertig in Fachqualität“ teilweise. Bild 02-taste.jpg."},
+  {"schwere": "gering", "schritt": 3, "text": "Die Chat-Blase verdeckt das Ende des Kartentextes „bis zu 4.180 € Zuschuss“ teilweise. Bild 03-taste.jpg."}
+ ],
+ "schritte": [
+  {"taste": "Tab", "bis": "Badsanierung"},
+  {"taste": "Enter"},
+  {"taste": "Tab", "bis": "Barrierefreies Bad"},
+  {"taste": "Enter"}
+ ]
+}

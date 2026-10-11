@@ -80,11 +80,17 @@ Chromium (Playwright 1.56.1), Ansichten aus `lib.mjs` (`m375` 375 × 812 Touch, 
 ## 7 Bezugswerte Ausgangsstand (`127.0.0.1:4310`, Satz `ausgangsstand`)
 | Aufgabe | m375 Touch | d1440 Maus | d1440 Tastatur |
 |---|---|---|---|
-| 1 | folgt (Probeläufer-Paket) | folgt | folgt |
-| 2 | folgt | folgt | folgt |
-| 3 | folgt | folgt | folgt |
+| 1 | gelöst · 4 Schritte | gelöst · 2 Schritte | gelöst · 23 Schritte |
+| 2 | gelöst · 4 Schritte | gelöst · 2 Schritte | gelöst · 12 Schritte |
+| 3 | gelöst · 12 Schritte | gelöst · 5 Schritte | gelöst · 34 Schritte |
 | 4 | gelöst · 8 Schritte | gelöst · 1 Schritt | gelöst · 8 Schritte |
-| 5 | folgt | folgt | folgt |
+| 5 | gelöst · 10 Schritte | gelöst · 5 Schritte | gelöst · 114 Schritte |
+
+Erhoben von P3-00g-B (Haiku, 11.10.2026), Belege `belege/p0-ausgangsstand/probelauf/` (Eingaben, `lauf.json` je Lauf, `matrix.json`). Befunde des Ausgangsstands:
+- hoch (offen bis Gegenprüfung): a5-d1440-tastatur, nach einem Seitenwechsel per Enter setzt die Tab-Folge an der alten Stelle fort; bis zur Kopfnavigation 87 Tabs.
+- mittel: Tastatur-Umwege bis zum Ziel (a1 18 Tabs bis zur Karte, a2 11 Tabs bis „Über uns“, a3 24 Tabs bis zum Feld „Name“).
+- gering, mehrfach: Banner verdeckt beim Erstbesuch Zeilen und H1; die Chat-Blase verdeckt Zeilenenden.
+- Abweichungen: a2-d1440-maus brach einmal beim Klick auf „Alle ablehnen“ ab (Werkzeug, Stabilitätsprüfung), Wiederholung nicht gezählt; a3-m375-touch: Bezugswert 12 aus dem letzten Lauf (Bestätigung zeitabhängig sichtbar).
 
 Wege Aufgabe 4 (Lauf-Dateien unter `cache/probelauf/eingaben/ausgangsstand/`): Touch – „Alle ablehnen“ (Banner liegt über dem Mobilmenü), Menü, „Standorte“, „Alle 13 Standorte“, 1 Bildlauf, 3× Wischen in der Stadt-Leiste → „Butzbach 35 km“ unter „Unser 45-km-Einsatzgebiet“ (ohne Wischen: 10 Schritte, Satz `erkundung`). Maus – Klick „Standorte“ → Stadt-Leiste mit „Butzbach 35 km“ im ersten Bild (Banner bleibt stehen, verdeckt nichts Nötiges). Tastatur – 7× Tab bis „Standorte“, Enter. Banner-Probe Tastatur (`banner-d1440-tastatur`): „Alle ablehnen“ erst nach 190× Tab erreichbar.
 

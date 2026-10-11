@@ -1,0 +1,8 @@
+{
+ "start": "/", "ansicht": "d1440", "eingabe": "tastatur",
+ "zweck": "Banner-Probe: Wie viele Tastendrücke braucht ein Tastaturbesucher, um den Einwilligungsbanner zu schließen?",
+ "schritte": [
+  {"taste": "Tab", "bis": "Alle ablehnen"},
+  {"taste": "Enter"}
+ ]
+}

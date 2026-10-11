@@ -1,0 +1,15 @@
+{
+ "aufgabe": 3, "start": "/", "ansicht": "d1440", "eingabe": "maus",
+ "antwort": "Anfrage abgesendet; Bestätigung „Vielen Dank, Probe Läufer! Anfrage übermittelt, TEZ-26-TEST“, mit Hinweis „gesendet“ an probe@example.org.",
+ "befunde": [
+  {"schwere": "gering", "schritt": 0, "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Kopfzeile des Anfrageformulars rechts („Kostenloses Aufmaß vor Ort anfragen“) teilweise. Bild 00-start.jpg."},
+  {"schwere": "gering", "schritt": 5, "text": "Die Bestätigung erscheint oben rechts im Formularkasten; der Einwilligungsbanner überdeckt dessen oberen Rand. Bild 05-tippe.jpg."}
+ ],
+ "schritte": [
+  {"fuelle": {"feld": "Name *", "text": "Probe Läufer"}},
+  {"fuelle": {"feld": "Telefonnummer *", "text": "0641 000000"}},
+  {"fuelle": {"feld": "E-Mail (für Bestätigung)", "text": "probe@example.org"}},
+  {"fuelle": {"feld": "Ort / PLZ", "text": "35614 Aßlar"}},
+  {"tippe": "Kostenfreies Aufmaß anfragen"}
+ ]
+}

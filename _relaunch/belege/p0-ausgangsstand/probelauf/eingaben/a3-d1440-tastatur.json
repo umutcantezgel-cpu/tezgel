@@ -1,0 +1,69 @@
+{
+ "aufgabe": 3,
+ "start": "/",
+ "ansicht": "d1440",
+ "eingabe": "tastatur",
+ "antwort": "Anfrage abgesendet; Bestätigung „Vielen Dank, Probe Läufer! Anfrage übermittelt, TEZ-26-TEST“ mit Hinweis „gesendet“ an probe@example.org.",
+ "befunde": [
+  {
+   "schwere": "mittel",
+   "schritt": 1,
+   "text": "Bis zum Feld „Name“ des Anfrageformulars liegen 24 Tab-Stopps (Kopfnavigation mit Untermenü-Schaltflächen, Kontakt-Schaltflächen, vier Vorhaben-Chips); mit der Maus ist das Feld ein Klick. Bild 01-taste.jpg."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 0,
+   "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Kopfzeile des Anfrageformulars teilweise. Bild 00-start.jpg."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 10,
+   "text": "Der Einwilligungsbanner überdeckt den oberen linken Rand der Bestätigungskarte. Bild 10-taste.jpg."
+  }
+ ],
+ "schritte": [
+  {
+   "taste": "Tab",
+   "bis": "Name *"
+  },
+  {
+   "fuelle": {
+    "text": "Probe Läufer"
+   }
+  },
+  {
+   "taste": "Tab",
+   "bis": "Telefonnummer *"
+  },
+  {
+   "fuelle": {
+    "text": "0641 000000"
+   }
+  },
+  {
+   "taste": "Tab",
+   "bis": "E-Mail (für Bestätigung)"
+  },
+  {
+   "fuelle": {
+    "text": "probe@example.org"
+   }
+  },
+  {
+   "taste": "Tab",
+   "bis": "Ort / PLZ"
+  },
+  {
+   "fuelle": {
+    "text": "35614 Aßlar"
+   }
+  },
+  {
+   "taste": "Tab",
+   "bis": "Kostenfreies Aufmaß anfragen"
+  },
+  {
+   "taste": "Enter"
+  }
+ ]
+}
