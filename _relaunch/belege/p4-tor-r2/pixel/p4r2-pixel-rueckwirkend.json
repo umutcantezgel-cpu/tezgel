@@ -1,0 +1,457 @@
+{
+ "satz": "p4r2-pixel-rueckwirkend",
+ "a": "http://127.0.0.1:4310",
+ "b": "http://127.0.0.1:4337",
+ "laeufe": 64,
+ "abweichend": 4,
+ "ergebnis": [
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5396736
+  },
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3973125
+  },
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6148800
+  },
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 8198400
+  },
+  {
+   "seite": "/bad/musterbaeder/basic-bad-8_2",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4033536
+  },
+  {
+   "seite": "/bad/musterbaeder/basic-bad-8_2",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 2596125
+  },
+  {
+   "seite": "/bad/musterbaeder/basic-bad-8_2",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6839040
+  },
+  {
+   "seite": "/bad/musterbaeder/basic-bad-8_2",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5129280
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7388928
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5473500
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9200160
+  },
+  {
+   "seite": "/balkon-terrasse/stelzlager",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12266880
+  },
+  {
+   "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5880576
+  },
+  {
+   "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4546500
+  },
+  {
+   "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10713600
+  },
+  {
+   "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 8035200
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9334272
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6784125
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12444480
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 16592640
+  },
+  {
+   "seite": "/fliesen/flur-diele",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5454000
+  },
+  {
+   "seite": "/fliesen/flur-diele",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7339776
+  },
+  {
+   "seite": "/fliesen/flur-diele",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12733440
+  },
+  {
+   "seite": "/fliesen/flur-diele",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9550080
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6756864
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5125875
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 8881920
+  },
+  {
+   "seite": "/fliesenreparatur",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 11842560
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4644375
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6448896
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9030240
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12040320
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4269312
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3184875
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5186880
+  },
+  {
+   "seite": "/karriere/ausbildung",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6915840
+  },
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "t768",
+   "gleich": false,
+   "abweichende_pixel": 76,
+   "flaeche": 7292928
+  },
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "m375",
+   "gleich": false,
+   "abweichende_pixel": 76,
+   "flaeche": 4886625
+  },
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "d1920",
+   "gleich": false,
+   "abweichende_pixel": 384,
+   "flaeche": 13071360
+  },
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "d1440",
+   "gleich": false,
+   "abweichende_pixel": 76,
+   "flaeche": 9803520
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7448064
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5383875
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9319680
+  },
+  {
+   "seite": "/naturstein/marmor-kalkstein",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12426240
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4903680
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3474750
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5552640
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7403520
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7843584
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5523750
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 11580480
+  },
+  {
+   "seite": "/standorte/asslar",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 15440640
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4899375
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6297600
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 8074080
+  },
+  {
+   "seite": "/treppen/treppenhaus",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10765440
+  },
+  {
+   "seite": "/untergrund-abdichtung/ausgleich-gefaelle",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7994880
+  },
+  {
+   "seite": "/untergrund-abdichtung/ausgleich-gefaelle",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5766750
+  },
+  {
+   "seite": "/untergrund-abdichtung/ausgleich-gefaelle",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10496160
+  },
+  {
+   "seite": "/untergrund-abdichtung/ausgleich-gefaelle",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 13994880
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3685875
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5488128
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7413120
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9884160
+  }
+ ]
+}

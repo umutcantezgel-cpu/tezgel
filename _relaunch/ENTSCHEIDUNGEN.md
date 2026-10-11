@@ -435,3 +435,23 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - Vorschlag: Werkzeuge, die die ganze Seite auf einmal lesen (a11y-zusatz `forced`/`zoom`, `texte.mjs`, `probelauf.mjs` für Überschriften), setzen im Messkontext einen eingespeisten Stil `.k-aufschub { content-visibility: visible }`. Das ist der Zustand jedes Abschnitts im Bild.
   - Nicht für Leistung (Lighthouse, INP, Spur), Bewegung und Fotos: Diese messen den echten Zustand.
   - Kein Eingriff im Produkt (G7). Der Schalter steht in jeder Ausgabe unter „bedingungen“.
+
+## E-036 · Berichtigung: Pixelvergleiche seit P2-PLAN-01 waren blind (Maskenfehler in `pixel.mjs`)
+- **Befund (P4-Tor R2, 11.10.2026):**
+  - Der Vergleich `/` Live gegen Kandidat c5ef582 meldete 0 Abweichungen, obwohl der Kandidat im Kopf einen neuen WhatsApp-Link zeigt (per Foto bestätigt).
+  - Ursache: Die Maske `#whatsapp-floating-btn, *:has(> #whatsapp-floating-btn) { visibility: hidden }` blendete auch das Elternelement des Knopfs aus. Im Kern ist das `<body>`, im Bestand ein `div.contents` mit fast der ganzen Seite (1 316 von 1 421 Elementen). Erschien der Knopf vor der Aufnahme (Leerlauf-Rückruf, praktisch immer), waren beide Aufnahmen nahezu leer.
+  - Erkannt wurden so nur Höhenänderungen (Kategorie „Maße“, z. B. T2 4bd371f `/` +37…+122 px). Die Maske stand so seit der Einführung des Werkzeugs (82a13a8, P2-PLAN-01).
+- **Betroffene Belege** („0 abweichend“ ist dort nicht tragfähig): Pixelzeilen in `belege/t2-5421e5b`, `t2-bcd8fcb`, `t2-ad80754`, `t2-926059b`, `t2-a32b6de`, `t2-35c0883`, `t2-4bd371f`, `t2-ca8d5ff`, `t2-f2c4180`, `t2-8319525`, `t2-56fd0dd`, `t2-74e768c`, `t1-31fc739` sowie P4-GEG M3 (`belege/p4-tor/pixel/`, 64/0).
+  - Die Aussage „Pixeldiff 0 auf allen anderen Seiten“ (P3) stand damit nur auf den übrigen Säulen. Das sind T1 streng (HTML 172 gleich, CSS gleich bzw. nur additiv) für ruhende Pushes, Text v2, die Funktionstests und gesichtete Fotos.
+- **Berichtigung des Werkzeugs (ca2dea6 und Folgecommit):**
+  - Maskiert werden nur noch `#whatsapp-floating-btn` (in beiden Fassungen selbst `position: fixed`) und die zeitabhängige Sprechblase „Chat starten“ des Bestands-Kanals (`[style*="z-index: 9996"]`).
+  - Selbstprüfungen: Abbruch, wenn ein maskiertes Element mehr als 40 Nachfahren hat, und Abbruch bei einer fast einfarbigen Aufnahme (> 98 %).
+  - Positiv-Selbsttest: `--maske body` bricht ab.
+- **Nachprüfung mit dem berichtigten Werkzeug (`belege/p4-tor-r2/pixel/`, `belege/p4-tor-r2/pixel-start/`):**
+  1. `/` Live f2c4180 gegen Kandidat c5ef582: Rauschen 4/0. m375 und t768 gleich; d1440 und d1920 je 4 060 px nur im Kopf (Zeile 8–55: WhatsApp-Link, Navigation rückt zusammen). Das ist erwartet (P4-13).
+  2. M3-Stichprobe (16 Bestandsseiten × 4 Ansichten), Vorschau c5ef582-v gegen Live f2c4180: Rauschen 64/0. Erster Lauf 1 abweichend (`/fliesen` m375: die Sprechblase „Chat starten“, zeitabhängig). Mit ergänzter Maske zwei Wiederholungen je 4/0.
+  3. **Rückwirkend Ausgangsstand 707a93d gegen Live f2c4180** (dieselbe Stichprobe): Abweichend ist nur `/leistungen/aussen`, 76 px in allen vier Ansichten. Das ist der Einwilligungshaken im Anfrageformular, im Ausgangsstand vorab gesetzt und seit P3-00k (N-14, E-014) leer, also gewollt. Ein zusätzlicher Textversatz bei d1920 im ersten Lauf trat bei der Wiederholung nicht auf (Rauschen 4310/4310: 0).
+- **Wahl:**
+  - Die alten Pixelzeilen gelten als „ungültig (E-036)“. Zwischenstände lassen sich nicht nachprüfen, weil die Builds verworfen sind; die Endpunkte (Ausgangsstand gegen heutiges Live) sind verglichen.
+  - Die Stichprobe deckt 16 Seiten. Ein Vollvergleich aller Bestandsseiten (Ausgangsstand gegen Live, 4 Ansichten) läuft als Nachtrag zu diesem Tor.
+- **Umkehrprobe:** Zeigt der Vollvergleich eine ungewollte Abweichung, ist sie ein Befund am Live-Stand und wird vor W1 behoben.

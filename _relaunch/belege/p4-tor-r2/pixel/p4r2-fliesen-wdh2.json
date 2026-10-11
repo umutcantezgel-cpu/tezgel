@@ -1,0 +1,37 @@
+{
+ "satz": "p4r2-fliesen-wdh2",
+ "a": "http://127.0.0.1:4337",
+ "b": "http://127.0.0.1:4321",
+ "laeufe": 4,
+ "abweichend": 0,
+ "ergebnis": [
+  {
+   "seite": "/fliesen",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9334272
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6784125
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12444480
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 16592640
+  }
+ ]
+}

@@ -25,7 +25,9 @@ const ansichten = (arg('ansichten') || 'm375,t768,d1440,d1920').split(',');
 //   jeder Vergleich „gleich“ (nur Höhenänderungen fielen auf). Der Knopf ist in beiden Fassungen selbst `position: fixed`;
 //   maskiert wird nur er. Selbstprüfungen: Abbruch, wenn ein maskiertes Element mehr als MASKE_MAX Nachfahren hat, und
 //   Abbruch, wenn eine Aufnahme fast einfarbig ist (LEER_ANTEIL).
-const MASKE_SELEKTOR = ['#whatsapp-floating-btn', arg('maske')].filter(Boolean).join(', ');
+//   Dazu die zeitabhängige Sprechblase „Chat starten“ des Bestands-Kanals (eigenes festes Element vor dem Knopf,
+//   Inline-Stil z-index 9996, `FloatingWhatsAppWidget.tsx`).
+const MASKE_SELEKTOR = ['#whatsapp-floating-btn', '[style*="z-index: 9996"]', arg('maske')].filter(Boolean).join(', ');
 const MASKE = MASKE_SELEKTOR + ' { visibility: hidden !important; }';
 const MASKE_MAX = 40;
 const LEER_ANTEIL = 0.98;

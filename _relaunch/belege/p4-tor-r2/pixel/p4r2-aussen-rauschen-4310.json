@@ -1,0 +1,16 @@
+{
+ "satz": "p4r2-aussen-rauschen-4310",
+ "a": "http://127.0.0.1:4310",
+ "b": "http://127.0.0.1:4310",
+ "laeufe": 1,
+ "abweichend": 0,
+ "ergebnis": [
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 13071360
+  }
+ ]
+}
