@@ -1,5 +1,12 @@
 # PRUEFPUNKT
 
+- Etappe: E3 · Stand 12.10.2026 ~01:00 CEST · alle E3-Baupakete abgenommen (E3-BAU-01…21), Nacharbeiten E3-NACH-03/-05 abgenommen; E3-ORCH-01…05 und E3-NACH-01/-02/-04/-06/-07 umgesetzt, Abnahme am E3-Tor (E-022…E-024). main = 6156079 (live), Push nur auf den Arbeitsbranch.
+- Jetzt: E3-Tor (Workflow): Prüfer A Reinraum + Server 4310 neu (+ Nachweis server.sh-Stop schont 4310), Prüfer B Funktion/Texte/axe/Werte, Prüfer C Bilder (Abschnitte 12 Hauptansichten, Bildsatz-Kennzahlen, Ersatzpfad, Bewegung), zwei Gutachter (Erzähl-/Arbeitsansichten), Lighthouse im Ruhefenster (12 Ansichten gegen e0). Bilder im Scratchpad `belege-roh/e3-tor/`, Berichte unter `_werkstatt/belege/e3-tor/` und `_werkstatt/berichte/E3-SICHT-*.md`.
+- Danach: Befunde → Nacharbeit (höchstens 2 je Ansicht und Kategorie), dann E4 (Familien auf Systemstand).
+- Offene Menschen-Fragen: M-15 bis M-22; Textvorschläge in TEXTVORSCHLAEGE (Abschnitt Vorschläge).
+
+## Vorheriger Stand (überholt)
+
 - Etappe: E3 · Stand 11.10.2026 22:50 CEST · Branch = 5324b62 + Werkstatt-Dokumente; main = 6156079 (live). Push nur auf den Arbeitsbranch (G2/G3 gelten wieder; main nur auf neue ausdrückliche Anweisung).
 - E2-Tor abgeschlossen nach Anlauf 2 (E-021): Sichtabnahme `/` 6,7 · 6,2, `/kontakt` 5,7 · 5,8; Lighthouse `belege/e2-tor-3/LIGHTHOUSE.md`. Befunde → PLAN „Offene Punkte“: E3-NACH-01…07, E3-PRUEF-W1.
 - Jetzt E3 Welle 1:
