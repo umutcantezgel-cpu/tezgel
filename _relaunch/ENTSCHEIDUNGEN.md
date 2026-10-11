@@ -455,3 +455,17 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - Die alten Pixelzeilen gelten als „ungültig (E-036)“. Zwischenstände lassen sich nicht nachprüfen, weil die Builds verworfen sind; die Endpunkte (Ausgangsstand gegen heutiges Live) sind verglichen.
   - Die Stichprobe deckt 16 Seiten. Ein Vollvergleich aller Bestandsseiten (Ausgangsstand gegen Live, 4 Ansichten) läuft als Nachtrag zu diesem Tor.
 - **Umkehrprobe:** Zeigt der Vollvergleich eine ungewollte Abweichung, ist sie ein Befund am Live-Stand und wird vor W1 behoben.
+
+## E-037 · Entscheidung des Auftraggebers: Startseite als Vorbild, Unterseiten einzeln aufwerten, immer auf main, regelmäßige Updates
+- **Wortlaut (Chat, 11.10.2026, ≈ 18:20 CEST):** „vereinheitlich das design konzept auf main so das die Startseite als vorbil genommen wird und alle unterseiten stück für stück aufgewertet werden immer auf main mit immer regelmäßigen updates“
+- **Auslegung:**
+  1. **Vorbild:** der Kern der live geschalteten Startseite `/`. Das umfasst KERN.md, Kopf, Fuß, Banner, Register, Schriften, Formsystem und Bausteine. Jede Unterseite bekommt diese Gestaltung, keine zweite Linie.
+  2. **Stück für Stück:** Freischaltung **je Seite oder je Vorlage** (eine dynamische Vorlage schaltet alle ihre Instanzen) statt ganzer Cluster-Wellen. Jeder Schritt hat ein eigenes T2 und einen eigenen Push.
+  3. **Immer auf main:** unverändert (E-000, E-005). Kein Sammeln über Tage; ein grüner Schritt geht sofort live.
+  4. **Regelmäßige Updates:**
+     - Nach jedem Push eine kurze Meldung im Chat: was live ist, wichtigste Messwerte, Link auf den Beleg.
+     - Dazu der Morgenbericht und die stündliche Protokollzeile in STATUS.
+- **Unverändert:**
+  - UNANTASTBAR, G1–G9, Tore T1/T2/T3, Bauregeln (Einfrieren, ruhende Entwürfe, `freischalten.sh`), E-035 (P4-14 vor der nächsten Freischaltung) und M-20 (Zielgruppe im Wortlaut für `/kontakt`, `/leistungen`, `/ueber-uns`).
+  - Das Phasentor T3 (L3) gilt weiter am Ende von P5; die Freischalt-Schwelle je Schritt ist T2.
+- **Folge:** Die Wellentabelle P5 wird zu einer Schrittfolge (PLAN.md, Abschnitt „Ausrollung Stück für Stück“), erarbeitet über einen Plan-Workflow mit Gegenprüfung. Planwert und Pushfrequenz stehen danach in STATUS.
