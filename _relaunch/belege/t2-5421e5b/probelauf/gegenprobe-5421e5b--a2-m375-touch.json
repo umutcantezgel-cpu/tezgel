@@ -1,0 +1,261 @@
+{
+ "satz": "gegenprobe-5421e5b",
+ "base": "http://127.0.0.1:4334",
+ "bedingungen": {
+  "ansicht": "m375",
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "isMobile": true,
+  "hasTouch": true,
+  "dpr": 1,
+  "eingabe": "touch",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T04:41:19.838Z",
+ "lauf": "a2-m375-touch",
+ "aufgabe": 2,
+ "titel": "Vertrauen prüfen",
+ "auftrag": "Prüfen Sie, wie lange es den Betrieb gibt und wie Kunden ihn bewerten.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/ausgangsstand/a2-m375-touch.json",
+ "antwort": "Gegründet 2008 (laut Seite „Über uns“, „Gegründet 2008 · HWK Wiesbaden“); Kundenbewertung 5,0 mit 27 Bewertungen.",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "gering",
+   "schritt": 0,
+   "text": "Der Einwilligungsbanner verdeckt beim Erstbesuch die Zeile mit Handwerkskammer-Eintrag und „5,0 (27 Bewertungen)“; erst nach „Alle ablehnen“ lesbar. Bild 00-start.jpg."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 4,
+   "text": "Das Gründungsjahr steht auf der Startseite nicht; es ist nur auf der Unterseite „Über uns“ zu finden (Menü, „Über uns“, „Über Deniz Tezgel“: 3 Handlungen). Bild 04-tippe.jpg."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 40,
+    "aria": 139,
+    "ausschnitt": 18,
+    "bedien": 24
+   },
+   "dauer_ms": 1787
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle ablehnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Alle ablehnen\" · dialog „Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 34,
+    "aria": 119,
+    "ausschnitt": 13,
+    "bedien": 21
+   },
+   "dauer_ms": 627
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Architektur-Menü öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Architektur-Menü öffnen\" · header",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 24,
+    "aria": 101,
+    "ausschnitt": 23,
+    "bedien": 22
+   },
+   "dauer_ms": 651
+  },
+  {
+   "nr": 3,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Über uns"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Über uns Fachbetrieb Deniz Tezgel in Aßlar\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 3,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "03-tippe.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 23,
+    "aria": 91,
+    "ausschnitt": 32,
+    "bedien": 23
+   },
+   "dauer_ms": 700
+  },
+  {
+   "nr": 4,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Über Deniz Tezgel Philosophie & Fachbetrieb"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Über Deniz Tezgel Philosophie & Fachbetrieb\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/ueber-uns",
+   "h1": "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-tippe.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 23,
+    "aria": 40,
+    "ausschnitt": 6,
+    "bedien": 22
+   },
+   "dauer_ms": 1256
+  }
+ ],
+ "handlungen_gesamt": 4,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 4,
+  "handlungen_bis_ziel": 4,
+  "bedingungen": [
+   {
+    "name": "Angabe, seit wann es den Betrieb gibt, war im Bild (Gründungsjahr 2008 oder „über N Jahre“)",
+    "erfuellt": true,
+    "bei_schritt": 4,
+    "treffer": "„…Gegründet 2008 · HWK Wiesbaden Über uns – Fliesenleger…“"
+   },
+   {
+    "name": "Kundenbewertung (Note mit Bewertungen/Rezensionen) war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 0,
+    "treffer": "„…ener Fachbetrieb Deniz Tezgel 5,0 ( 27 Bewertungen) Perfektion auf jedem…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

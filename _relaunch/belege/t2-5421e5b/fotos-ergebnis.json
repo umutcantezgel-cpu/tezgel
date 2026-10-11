@@ -1,0 +1,58 @@
+{
+ "satz": "t2-5421e5b",
+ "base": "http://127.0.0.1:4334",
+ "einwilligung": "abgelehnt",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 16465,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 16545,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 28256,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 20440,
+   "blockiert": []
+  }
+ ]
+}
