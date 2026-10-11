@@ -5,7 +5,6 @@
 // Lesebreite. Wortlaut, Überschriften, Links und IDs wie im Bestand. Kein Auftritt und kein großer Moment; den
 // Verband-Umschalter setzt der Orchestrator.
 import Link from 'next/link';
-import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
@@ -241,7 +240,7 @@ export default function FliesenRatgeberPage() {
                             <li key={hub.id} className="border-b border-fuge">
                                 <Link href={hub.path} data-motion="zustand" className={ZEILE}>
                                     <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
-                                        <span className={clsx(NAME)}>{hub.name}</span>
+                                        <span className={NAME}>{hub.name}</span>
                                         <span className="font-text text-fs-2 text-tinte-2">{hub.description}</span>
                                         <span className="font-mono text-fs-1 text-tinte-2">
                                             {hub.pages.length} {hub.pages.length === 1 ? 'Seite' : 'Seiten'}
@@ -344,8 +343,8 @@ export default function FliesenRatgeberPage() {
                     </p>
                 </Abschnitt>
 
-                {/* 7. KONFIGURATOR: Funnel in Lesebreite; Anker #konfigurator und ARIA-Name bleiben */}
-                <Abschnitt id="konfigurator" aria-label="Fliesen-Konfigurator" breite="mass" leitachse>
+                {/* 7. KONFIGURATOR: Funnel in Lesebreite (seitlich mit 8 Spalten, ohne Kopf); Anker #konfigurator und ARIA-Name bleiben */}
+                <Abschnitt id="konfigurator" aria-label="Fliesen-Konfigurator" kopf="seitlich" leitachse>
                     <FliesenKonfigurator />
                 </Abschnitt>
             </Leitachse>
