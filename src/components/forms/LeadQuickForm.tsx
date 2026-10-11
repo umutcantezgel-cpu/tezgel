@@ -85,7 +85,7 @@ export function LeadQuickForm({
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         {/* HONEYPOT - Hidden from real visitors and assistive tech */}
         <div className="hidden" aria-hidden="true">
-          <label htmlFor={`websiteUrl-${sourceTag}`}>Do not fill this</label>
+          <label htmlFor={`websiteUrl-${sourceTag}`}>Bitte dieses Feld freilassen</label>
           <input
             id={`websiteUrl-${sourceTag}`}
             type="text"
@@ -168,7 +168,7 @@ export function LeadQuickForm({
           </label>
           <textarea
             id={feldId('notiz')}
-            rows={2}
+            rows={3}
             placeholder="z. B. Komplettbadsanierung ca. 12 m², barrierefreie Dusche, Baustart ab Mai..."
             value={formData.notes}
             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
@@ -216,12 +216,13 @@ export function LeadQuickForm({
             )}
           </button>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-4">
             <span className={etikettKlassen}>
               <Icon name="schloss" groesse={4} />
               100% DSGVO-konform
             </span>
-            <span className="font-mono text-fs-1 text-tinte-2">&middot;</span>
+            {/* Trennpunkt nur ab sm sichtbar; mobil untereinander ohne hängendes Zeichen am Zeilenende (Text bleibt im DOM) */}
+            <span className="sr-only font-mono text-fs-1 text-tinte-2 sm:not-sr-only">&middot;</span>
             <span className={etikettKlassen}>
               <Icon name="telefon" groesse={4} />
               Kostenfreie Erstberatung

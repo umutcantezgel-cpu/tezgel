@@ -52,6 +52,8 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E3-BAU-11 | `src/components/funnels/FliesenKonfigurator/Schritt1.jsx` (Bad-Hinweis über `kern/Hinweis`) | – | nur für Screenreader „Hinweis: “ vor dem Hinweistext (Baustein ohne Titel) | Zugänglichkeit: Art des Kastens wird vorgelesen; sichtbarer Wortlaut unverändert |
 | E3-BAU-17 | `src/components/funnels/BadanfrageFunnel/Schritt5.jsx` (Sendefehler über `kern/Hinweis art="fehler"`) | – | nur für Screenreader „Fehler: “ vor der Meldung (Baustein ohne Titel) | Zugänglichkeit: Art der Meldung wird vorgelesen (Fehler = Rahmen + Zeichen + Text, K-005); sichtbarer Wortlaut unverändert |
 | E3-BAU-18 / -15 / -19 | Erfolgsansichten von Badanfrage, Konfigurator und Bad-Projekt-Check (Bestätigungszeile, nur mit E-Mail) | „✉️ Eine … Bestätigung …“ | „Eine … Bestätigung …“ (Wortlaut sonst gleich) | Emoji als Schmuck widerspricht dem System (Slop-Katalog); nur der Schmuck entfällt |
+| E3-BAU-20 | `src/components/forms/LeadQuickForm.tsx` (Honeypot, unsichtbar) | „Do not fill this“ | „Bitte dieses Feld freilassen“ | Deutsch wie im Einstiegsformular (HeroContactForm); Feld bleibt verborgen, Verhalten gleich |
+| E3-BAU-20 | `src/lib/formulare/useSchnellanfrage.ts` (Sendefehler) | Rufnummer als fester Text | Rufnummer aus `COMPANY_DATA.contact.phone` (gleicher Wert, gleicher Wortlaut) | V-05: eine Quelle für die Rufnummer |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |

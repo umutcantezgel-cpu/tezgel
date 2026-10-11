@@ -430,14 +430,14 @@
  {
   "seite": "/kontakt",
   "block": "main",
-  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
-  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\.?, \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\.?, \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418) · E3-BAU-20: Wochentag mit oder ohne Punkt (Format aus useTerminKalender, E-020)"
  },
  {
   "seite": "/kontakt",
   "teil": "main_zeilen",
-  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}",
-  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\.?, \\d{2}\\.\\d{2}\\.\\d{4}",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418) · E3-BAU-20: Wochentag mit oder ohne Punkt (Format aus useTerminKalender, E-020)"
  },
  {
   "seite": "/kontakt",
@@ -454,14 +454,14 @@
  {
   "seite": "/termin",
   "block": "main",
-  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
-  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\.?, \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\.?, \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418) · E3-BAU-20: Wochentag mit oder ohne Punkt (Format aus useTerminKalender, E-020)"
  },
  {
   "seite": "/termin",
   "teil": "main_zeilen",
-  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}",
-  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\.?, \\d{2}\\.\\d{2}\\.\\d{4}",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418) · E3-BAU-20: Wochentag mit oder ohne Punkt (Format aus useTerminKalender, E-020)"
  },
  {
   "seite": "/termin",
