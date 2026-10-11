@@ -514,4 +514,9 @@
       content-visibility: visible;
     }
   }
+  /* Lesefortschritt (Ratgeber, E3-BAU-10): die Linie wächst mit --lesefortschritt (0–1), ohne Übergang; steht in
+     utilities, damit sie den Startzustand scale-x-0 überschreibt */
+  .lesefortschritt-linie {
+    scale: var(--lesefortschritt, 0) 1;
+  }
 }
