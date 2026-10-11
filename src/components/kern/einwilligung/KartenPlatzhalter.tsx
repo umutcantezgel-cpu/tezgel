@@ -79,10 +79,14 @@ export type KartenPlatzhalterProps = Omit<KartenPlatzhalterAnsichtProps, 'zustan
 
 /** Platzhalter mit Logik (F-12): zeigt `children` erst nach Marketing-Einwilligung. */
 export default function KartenPlatzhalter({ children, verhaeltnis, className }: KartenPlatzhalterProps) {
-  const { isHydrated, hasConsent, handleAccept, openSettings } = useKartenEinwilligung();
+  const { isHydrated, hasConsent, handleAccept } = useKartenEinwilligung();
+  // „Cookie-Einstellungen“ geht im Kern über denselben Weg wie der Fußlink (#cookie-settings, den der Banner-Hook auswertet).
+  // Das openSettings des Hooks öffnet nur seine eigene useConsent-Instanz und erreicht den Banner nicht (Befund M-16);
+  // die Einwilligungslogik bleibt unverändert (G9).
+  const zuDenEinstellungen = () => { window.location.hash = 'cookie-settings'; };
   const zustand = !isHydrated ? 'laedt' : hasConsent ? 'karte' : 'frage';
   return (
-    <KartenPlatzhalterAnsicht zustand={zustand} onLaden={handleAccept} onEinstellungen={openSettings} verhaeltnis={verhaeltnis} className={className}>
+    <KartenPlatzhalterAnsicht zustand={zustand} onLaden={handleAccept} onEinstellungen={zuDenEinstellungen} verhaeltnis={verhaeltnis} className={className}>
       {children}
     </KartenPlatzhalterAnsicht>
   );
