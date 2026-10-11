@@ -60,4 +60,5 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |
 |---|---|---|---|---|
+| E3-ORCH-03 | `src/app/(bestand)/standorte/page.tsx` (Einleitung „Wählen Sie Ihre Stadt“ und Entfernung je Stadtfeld) | „Entfernungen sind ungefähre Angaben ab Wetzlar.“ und Entfernungen aus `CITIES` (ab Wetzlar) | „Entfernungen sind ungefähre Angaben ab unserem Firmensitz in Aßlar.“ und Entfernungen aus `CITY_HUB_DATA` | Firmensitz ist Aßlar (M-17); Karte und Einzugsband rechnen bereits ab Aßlar, die Stadtfelder noch ab Wetzlar |
 | E3-BAU-21 | `src/components/locations/RouteVisualization.tsx` (Hauptknopf, Stadtseiten) | „Jetzt Vor-Ort-Termin für {Stadt} anfragen“ → `tel:` | „Vor-Ort-Termin für {Stadt} telefonisch anfragen“ oder Ziel `/kontakt#express-anfrage` | Knopftext verspricht eine Anfrage, der Knopf startet einen Anruf |

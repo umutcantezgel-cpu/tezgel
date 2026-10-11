@@ -32,3 +32,23 @@ test('Zonen 4: innerhalb einer Zone nach Entfernung, dann alphabetisch', () => {
   assert.deepEqual(gruppen[1].orte.map((o) => o.name), ['C', 'A', 'B']);
   assert.deepEqual(gruppen[2].orte, []);
 });
+
+// E3-ORCH-03: Entfernungen ab dem Firmensitz Aßlar (CITY_HUB_DATA, dieselbe Quelle wie die Karte), nicht ab Wetzlar.
+test('Zonen 5: Entfernungen ab dem Firmensitz – jeder Ort hat einen Eintrag, Aßlar ist 0, Wetzlar nicht', async () => {
+  const { mitEntfernungAbSitz } = await import('../src/lib/einzugszonen.ts');
+  const { CITY_HUB_DATA } = await import('../src/lib/maps/getMapEmbedUrl.ts');
+  for (const o of CITIES) assert.ok(CITY_HUB_DATA[o.slug], `Eintrag fehlt: ${o.slug}`);
+  const vorher = CITIES.map((o) => o.distanceKm);
+  const orte = mitEntfernungAbSitz(CITIES, CITY_HUB_DATA);
+  assert.equal(orte.length, CITIES.length);
+  assert.equal(orte.find((o) => o.slug === 'asslar').distanceKm, 0);
+  assert.ok(orte.find((o) => o.slug === 'wetzlar').distanceKm > 0);
+  // Konfiguration bleibt unverändert (reine Funktion)
+  assert.deepEqual(CITIES.map((o) => o.distanceKm), vorher);
+});
+
+test('Zonen 6: ohne Eintrag bleibt die Angabe der Konfiguration', async () => {
+  const { mitEntfernungAbSitz } = await import('../src/lib/einzugszonen.ts');
+  const orte = mitEntfernungAbSitz([{ slug: 'x', name: 'X', distanceKm: 17 }], {});
+  assert.equal(orte[0].distanceKm, 17);
+});

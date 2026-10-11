@@ -14,6 +14,8 @@ interface MapConsentGateProps {
   height?: string | number;
   /** gezeichnete Vorschau im Platzhalter (dekorativ, ab md), z. B. das Einzugsband – statt leerer Fläche */
   vorschau?: React.ReactNode;
+  /** ab welcher Breite die Vorschau erscheint (Standard md); schmale Kartenflächen zeigen sie erst ab xl */
+  vorschauAb?: "md" | "xl";
 }
 
 export function MapConsentGate({
@@ -23,6 +25,7 @@ export function MapConsentGate({
   className = "",
   height = "420px",
   vorschau,
+  vorschauAb = "md",
 }: MapConsentGateProps) {
   // Einwilligungslogik (Hydrierung, Zustimmung per Klick, Marketing-Kategorie, Einstellungen öffnen) im gemeinsamen
   // Hook useKartenEinwilligung (P3-00l) – dieselbe Logik wie die Kern-Ansicht; hier nur das Markup.
@@ -72,7 +75,7 @@ export function MapConsentGate({
           Karte
         </span>
         {vorschau && (
-          <div aria-hidden="true" className="hidden min-h-0 flex-1 overflow-hidden pt-4 md:block">
+          <div aria-hidden="true" className={clsx("hidden min-h-0 flex-1 overflow-hidden pt-4", vorschauAb === "xl" ? "xl:block" : "md:block")}>
             {vorschau}
           </div>
         )}

@@ -1,6 +1,6 @@
 // Einzugsband (KERN K-007 einzugsband): das Einzugsgebiet als Fugenband in drei Zonen (≤ 10 / ≤ 25 / ≤ 50 km,
 // Breiten 3 : 3 : 4 ab md (K-007: 2 : 3 : 5 – dort wurden Ortsnamen der Zone ≤ 10 km gekürzt, E3-NACH-05),
-// am linken Rand das rote Lot des Firmensitzes Aßlar. Je Zone die Orte – als Linkliste die
+// am linken Rand das rote Lot des Firmensitzes Aßlar; Entfernungen ab Aßlar (E3-ORCH-03). Je Zone die Orte – als Linkliste die
 // Hauptform; das Band ordnet nur (kein Maßstab: die Entfernungen der Konfiguration sind gerundete Angaben).
 // `kompakt`: ruhige Vorschau ohne Links und ohne Bewegung (z. B. im Kartenplatzhalter vor der Einwilligung).
 // Sonst setzen sich die Zonenkanten beim Eintritt nacheinander (bewegung.css); reduziert und ohne JS stehen sie fertig.
@@ -10,11 +10,13 @@ import clsx from 'clsx';
 import Fugenkreuz from './Fugenkreuz';
 import { etikettKlassen } from './stile';
 import { CITIES } from '@/config/cities';
-import { gruppiereNachZone } from '@/lib/einzugszonen';
+import { CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
+import { gruppiereNachZone, mitEntfernungAbSitz } from '@/lib/einzugszonen';
 
 const BREITE: Record<string, string> = { nah: 'md:col-span-3', mittel: 'md:col-span-3', weit: 'md:col-span-4' };
 
-const entfernung = (km: number) => (km === 0 ? 'angrenzend' : `ca. ${km} km`);
+// Entfernung ab dem Firmensitz (wie die Ortsliste der Karte): der Sitz selbst heißt „Firmensitz“ (Bestandswortlaut)
+const entfernung = (km: number) => (km === 0 ? 'Firmensitz' : `ca. ${km} km`);
 
 export interface EinzugsbandProps {
   /** Slug der aktuellen Stadtseite: der Ort bekommt das Fugenkreuz und aria-current */
@@ -24,7 +26,7 @@ export interface EinzugsbandProps {
 }
 
 export default function Einzugsband({ aktuell, kompakt = false, className }: EinzugsbandProps) {
-  const gruppen = gruppiereNachZone(CITIES);
+  const gruppen = gruppiereNachZone(mitEntfernungAbSitz(CITIES, CITY_HUB_DATA));
   return (
     <div className={clsx('einzugsband relative', className)} data-motion={kompakt ? undefined : 'einzugsband'}>
       <p className={clsx(etikettKlassen, kompakt ? 'mb-1' : 'mb-4')}>

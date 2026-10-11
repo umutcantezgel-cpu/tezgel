@@ -3,7 +3,7 @@
 // Abschnitte: Gebietskarte (Karte hinter Einwilligung unverändert), Städte als Feldraster mit je einem Link,
 // Leistungen als Merkliste, Orte auf Anfrage, Anfahrt mit Standortkarte, regionaler Kontakt. Der Abschluss steht
 // außerhalb der Leitachse. Wortlaut, Überschriften, Links und IDs wie im Bestand (#karte-ueberschrift,
-// #leistungen-ueberall). Kein großer Moment: das Einzugsband (E3-ORCH-03) setzt der Orchestrator.
+// #leistungen-ueberall). Großer Moment: das Einzugsband über den Stadtfeldern (E3-ORCH-03).
 import Link from 'next/link';
 import { CITIES, type CityData } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
@@ -22,6 +22,7 @@ import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Knopf from '@/components/kern/Knopf';
 import Merkliste from '@/components/kern/Merkliste';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import Einzugsband from '@/components/kern/Einzugsband';
 
 export const metadata = createMetadata({
   title: 'Fliesenleger Standorte & Einsatzgebiete | Tezgel',
@@ -127,7 +128,9 @@ export default function StandorteOverviewPage() {
             </p>
           }
         >
-          {/* E3-ORCH-03: Hier bindet der Orchestrator das Einzugsband ein (großer Moment); der Baumeister setzt es nicht. */}
+          {/* Großer Moment (E3-ORCH-03): das Einzugsband ordnet die Orte in Zonen ab dem Firmensitz Aßlar; darunter die
+              Stadtfelder (Entfernungen dort laut Einleitung ab Wetzlar – Angleichung als Textvorschlag, M-17) */}
+          <Einzugsband className="mb-12" />
           <Feldraster spalten={3}>
             {CITIES.map((city) => (
               <Feld key={city.slug} className="relative">

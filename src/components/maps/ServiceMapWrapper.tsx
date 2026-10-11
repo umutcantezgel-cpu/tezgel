@@ -187,9 +187,11 @@ function KarteBeimSehen({
 
 /**
  * Höhe der Kartenfläche neben der Ortsliste im Abschnitt Servicegebiet der Startseite: 13 Orte in zwei Spalten
- * (7 Zeilen à 54 px) plus Maßzeile (61 px) ergeben 440 px – die Karte ist nicht höher als die Liste.
+ * (7 Zeilen à 54 px) plus Maßzeile (61 px) ergeben 440 px. Mit 460 px (erlaubte Kartenhöhe, E-018) passt die
+ * kompakte Einzugsband-Vorschau ganz in den Platzhalter (bei 440 px unten beschnitten, Rückgabe E3-NACH-05);
+ * die Vorschau erscheint erst ab xl, weil die Spalte darunter zu schmal ist.
  */
-const KARTE_HOEHE_NEBEN_LISTE = "440px";
+const KARTE_HOEHE_NEBEN_LISTE = "460px";
 
 /**
  * Nur die Kartenfläche (Einwilligungs-Tor, dann Karte, sobald sie im Blick ist) für den Abschnitt Servicegebiet der
@@ -207,6 +209,7 @@ export function ServiceKartenflaeche() {
       height={KARTE_HOEHE_NEBEN_LISTE}
       className="w-full"
       vorschau={<Einzugsband kompakt />}
+      vorschauAb="xl"
     >
       <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={setSelectedSlug} />
     </MapConsentGate>
