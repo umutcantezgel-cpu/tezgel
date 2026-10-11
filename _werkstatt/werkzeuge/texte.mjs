@@ -48,7 +48,7 @@ async function bearbeite(s, a) {
   // Zeilen (innerText) ohne CSS-Großschreibung lesen: gemessen wird der Text, nicht seine Auszeichnung (wie bei der Wortfolge).
   // Ebenso spätes Zeichnen (content-visibility: auto, E-022) aufheben: innerText lässt übersprungene Abschnitte aus, obwohl
   // ihr Text im Dokument steht und beim Scrollen erscheint – gemessen wird der Text, nicht der Zeichenzeitpunkt.
-  await page.addStyleTag({ content: '*, *::before, *::after { text-transform: none !important; } * { content-visibility: visible !important; }' });
+  await page.addStyleTag({ content: '*, *::before, *::after { text-transform: none !important; } .spaet-zeichnen { content-visibility: visible !important; }' });
   const d = await page.evaluate(() => {
     const norm = (t) => (t || '').replace(/ /g, ' ').replace(/[ \t]+/g, ' ').trim();
     const meta = (sel, attr = 'content') => document.querySelector(sel)?.getAttribute(attr) ?? null;

@@ -78,7 +78,7 @@ for (const a of ansichten) {
     if (voll) {
       // Ganzseitenbild: spätes Zeichnen (content-visibility: auto, E-022) aufheben, sonst bleiben Abschnitte außerhalb des
       // Bildschirms leer, die beim Scrollen gezeichnet werden
-      await page.addStyleTag({ content: '* { content-visibility: visible !important; }' });
+      await page.addStyleTag({ content: '.spaet-zeichnen { content-visibility: visible !important; }' });
       await page.screenshot({ path: datei, type: 'jpeg', quality: 70, fullPage: true });
     } else {
       const anker = await setzeScroll(page);
