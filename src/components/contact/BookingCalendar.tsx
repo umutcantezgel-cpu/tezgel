@@ -104,7 +104,7 @@ export function BookingCalendar({
             <span>Schritt 1: Verfügbaren Tag &amp; Uhrzeit wählen</span>
           </p>
 
-          <div className="hoehe-terminliste overflow-y-auto border-t border-fuge" tabIndex={0} role="region" aria-label="Verfügbare Termine">
+          <div className="hoehe-terminliste overflow-y-auto border-t border-b border-fuge" tabIndex={0} role="region" aria-label="Verfügbare Termine">
             {availableDays.length === 0 && (
               <p className="py-6 text-fs-2 text-tinte-2">
                 Die freien Termine erscheinen, sobald die Seite vollständig geladen ist. Telefonisch erreichen Sie uns unter{' '}
@@ -133,7 +133,7 @@ export function BookingCalendar({
                         type="button"
                         disabled={isTaken}
                         onClick={() => handleSelectSlot(day.dateStr, slot.time)}
-                        className={`${wahlKlassen} disabled:border-fuge disabled:bg-kalk disabled:text-tinte-2`}
+                        className={`${wahlKlassen} last:odd:col-span-2 md:last:odd:col-span-1 disabled:border-fuge disabled:bg-kalk disabled:text-tinte-2`}
                         data-motion="zustand"
                       >
                         {slot.time} Uhr

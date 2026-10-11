@@ -1,5 +1,6 @@
 // Einzugsband (KERN K-007 einzugsband): das Einzugsgebiet als Fugenband in drei Zonen (≤ 10 / ≤ 25 / ≤ 50 km,
-// Breiten 2 : 3 : 5), am linken Rand das rote Lot des Firmensitzes Aßlar. Je Zone die Orte – als Linkliste die
+// Breiten 3 : 3 : 4 ab md – K-007 nannte 2 : 3 : 5, dort wurden Ortsnamen der Zone ≤ 10 km gekürzt, E3-NACH-05),
+// am linken Rand das rote Lot des Firmensitzes Aßlar. Je Zone die Orte – als Linkliste die
 // Hauptform; das Band ordnet nur (kein Maßstab: die Entfernungen der Konfiguration sind gerundete Angaben).
 // `kompakt`: ruhige Vorschau ohne Links und ohne Bewegung (z. B. im Kartenplatzhalter vor der Einwilligung).
 // Sonst setzen sich die Zonenkanten beim Eintritt nacheinander (bewegung.css); reduziert und ohne JS stehen sie fertig.
@@ -11,7 +12,7 @@ import { etikettKlassen } from './stile';
 import { CITIES } from '@/config/cities';
 import { gruppiereNachZone } from '@/lib/einzugszonen';
 
-const BREITE: Record<string, string> = { nah: 'md:col-span-2', mittel: 'md:col-span-3', weit: 'md:col-span-5' };
+const BREITE: Record<string, string> = { nah: 'md:col-span-3', mittel: 'md:col-span-3', weit: 'md:col-span-4' };
 
 const entfernung = (km: number) => (km === 0 ? 'angrenzend' : `ca. ${km} km`);
 
@@ -45,7 +46,7 @@ export default function Einzugsband({ aktuell, kompakt = false, className }: Ein
                     <>
                       <span className="flex min-w-0 items-center gap-2">
                         {ist && <Fugenkreuz className="size-3 text-laser" />}
-                        <span className={clsx('truncate', ist && 'font-semibold')}>{o.name}</span>
+                        <span className={clsx('min-w-0 wrap-break-word hyphens-auto', ist && 'font-semibold')}>{o.name}</span>
                       </span>
                       <span className="shrink-0 font-mono text-fs-1 text-tinte-2">{entfernung(o.distanceKm)}</span>
                     </>
