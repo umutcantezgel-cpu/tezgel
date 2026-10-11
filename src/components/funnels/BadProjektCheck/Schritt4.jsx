@@ -1,14 +1,16 @@
-import { Check } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import { labelKlassen, wahlKlassen } from '@/components/kern/stile';
 import { EXTRA_OPTIONS } from '@/lib/formulare/useProjektCheck';
 
-// 4. Wunschausstattung und Extras (E-011: aus BadProjektCheck.jsx verschoben, Markup unverändert).
+// 4. Wunschausstattung und Extras (E-011: aus BadProjektCheck.jsx verschoben). E3-BAU-19: Darstellung nach dem KERN-Formularmuster;
+// Haken-Icon bei Auswahl statt lucide Check. Texte, IDs, aria-pressed, Reihenfolge und Nutzlast unverändert.
 export default function Schritt4({ selectedOptions, toggleOption }) {
     return (
-        <fieldset>
-            <legend className="block text-sm font-black text-slate-900 mb-2">
+        <fieldset className="min-w-0">
+            <legend className={labelKlassen}>
                 4. Wunschausstattung &amp; Extras:
             </legend>
-            <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-2">
+            <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {EXTRA_OPTIONS.map((opt) => {
                     const isSelected = selectedOptions.includes(opt.id);
                     return (
@@ -17,16 +19,13 @@ export default function Schritt4({ selectedOptions, toggleOption }) {
                             type="button"
                             aria-pressed={isSelected}
                             onClick={() => toggleOption(opt.id)}
-                            className={`px-3 py-2 rounded-tile-sm border text-xs font-bold text-left transition-all duration-300 flex items-center justify-between gap-2 ${
-                                isSelected
-                                    ? 'bg-orange-50 border-orange-600 text-orange-950'
-                                    : 'bg-white border-slate-200 text-slate-700 hover:border-orange-500'
-                            }`}
+                            className={wahlKlassen}
+                            data-motion="zustand"
                         >
-                            <span>{opt.label}</span>
-                            {isSelected && (
-                                <Check className="w-3.5 h-3.5 text-orange-600 shrink-0" />
-                            )}
+                            <span className="flex w-full items-center justify-between gap-2 text-left">
+                                <span>{opt.label}</span>
+                                {isSelected && <Icon name="haken" groesse={4} />}
+                            </span>
                         </button>
                     );
                 })}

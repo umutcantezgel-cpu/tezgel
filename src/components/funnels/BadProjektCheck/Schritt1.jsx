@@ -1,12 +1,15 @@
-// 1. Badgröße (Schieberegler) (E-011: aus BadProjektCheck.jsx verschoben, Markup unverändert).
+import { labelKlassen } from '@/components/kern/stile';
+
+// 1. Badgröße (Schieberegler) (E-011: aus BadProjektCheck.jsx verschoben). E3-BAU-19: Darstellung nach dem KERN-Formularmuster;
+// Label, IDs, Grenzen, Schrittweite, Anzeige und Skalenbeschriftung unverändert.
 export default function Schritt1({ sqm, changeSqm, sqmLabel }) {
     return (
-        <div>
-            <div className="flex items-center justify-between gap-3 mb-2">
-                <label htmlFor="budget-sqm" className="text-sm font-black text-slate-900">
+        <div className="min-w-0">
+            <div className="mb-2 flex items-center justify-between gap-4">
+                <label htmlFor="budget-sqm" className={labelKlassen}>
                     1. Badezimmer-Größe in Quadratmetern:
                 </label>
-                <span className="font-display text-base sm:text-lg font-black text-orange-950 bg-orange-50 px-3.5 py-1 rounded-tile-sm border border-orange-200 tabular-nums whitespace-nowrap">
+                <span className="whitespace-nowrap border border-strich bg-fliese px-4 py-1 font-anzeige text-fs-4 font-semibold tabular-nums text-tinte">
                     {sqmLabel} m²
                 </span>
             </div>
@@ -18,13 +21,13 @@ export default function Schritt1({ sqm, changeSqm, sqmLabel }) {
                 step="0.5"
                 value={sqm}
                 onChange={(e) => changeSqm(e.target.value)}
-                className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
+                className="block h-2 w-full cursor-pointer appearance-none bg-strich accent-tinte"
             />
-            <div className="flex justify-between text-[10px] sm:text-[11px] text-slate-600 font-semibold mt-1 tabular-nums">
+            <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 font-mono text-fs-1 tabular-nums text-tinte-2 sm:flex sm:justify-between">
                 <span>3,5 m² (Gäste-WC)</span>
-                <span>8,2 m² (Standard)</span>
+                <span className="text-right">8,2 m² (Standard)</span>
                 <span>15,9 m² (Komfort)</span>
-                <span>25 m² (Spa)</span>
+                <span className="text-right">25 m² (Spa)</span>
             </div>
         </div>
     );

@@ -1,6 +1,9 @@
 "use client";
 // Bad-Projektcheck (E-011): Logik aus useProjektCheck (gemeinsam mit der Kern-Ansicht), Markup in Schritt1–4 und Zusammenfassung.
-import { ClipboardCheck } from 'lucide-react';
+// E3-BAU-19: Darstellung nach dem KERN-Formularmuster (wie BadanfrageFunnel/index.jsx): Feld an der Fuge, Etikett mit Fugenkreuz,
+// Angaben links, Zusammenfassung auf Kalk rechts (ab lg). Texte, IDs, ARIA und Nutzlast unverändert.
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { etikettKlassen } from '@/components/kern/stile';
 import { useProjektCheck } from '@/lib/formulare/useProjektCheck';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
@@ -37,45 +40,43 @@ export default function BadProjektCheck() {
     } = useProjektCheck();
 
     return (
-        <div className="glass-bezel-outer max-w-4xl mx-auto overflow-hidden">
-            <div className="glass-bezel-inner overflow-hidden">
-                {/* Header */}
-                <div className="ceramic-band p-6 sm:p-10">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                        <span className="eyebrow">
-                            <ClipboardCheck className="w-3.5 h-3.5" />
-                            Bad-Projektcheck
-                        </span>
-                        <span className="eyebrow eyebrow-neutral hidden sm:inline-flex">
-                            Festpreis nach Vor-Ort-Aufmaß
-                        </span>
-                    </div>
-                    <h2 className="text-2xl sm:text-3xl font-black mb-2 text-slate-900">
-                        Ihr Badprojekt in vier Schritten beschreiben
-                    </h2>
-                    <p className="text-sm text-slate-700 max-w-2xl leading-relaxed">
-                        Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und
-                        melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.
-                    </p>
+        <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12">
+            {/* Kopf */}
+            <div className="border-b border-fuge pb-6">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                    <span className={etikettKlassen}>
+                        <Fugenkreuz className="size-3 text-strich" />
+                        Bad-Projektcheck
+                    </span>
+                    <span className={`${etikettKlassen} max-sm:hidden`}>
+                        Festpreis nach Vor-Ort-Aufmaß
+                    </span>
+                </div>
+                <h2 className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">
+                    Ihr Badprojekt in vier Schritten beschreiben
+                </h2>
+                <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">
+                    Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und
+                    melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.
+                </p>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12">
+                {/* Angaben 1–4 (links, 7 Spalten) */}
+                <div className="flex min-w-0 flex-col gap-8 lg:col-span-7">
+                    <Schritt1 sqm={sqm} changeSqm={changeSqm} sqmLabel={sqmLabel} />
+                    <Schritt2 sanitaryScope={sanitaryScope} setSanitaryScope={setSanitaryScope} />
+                    <Schritt3 tier={tier} setTier={setTier} />
+                    <Schritt4 selectedOptions={selectedOptions} toggleOption={toggleOption} />
                 </div>
 
-                <div className="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    {/* Controls (Left 7 Cols) */}
-                    <div className="lg:col-span-7 space-y-7">
-                        <Schritt1 sqm={sqm} changeSqm={changeSqm} sqmLabel={sqmLabel} />
-                        <Schritt2 sanitaryScope={sanitaryScope} setSanitaryScope={setSanitaryScope} />
-                        <Schritt3 tier={tier} setTier={setTier} />
-                        <Schritt4 selectedOptions={selectedOptions} toggleOption={toggleOption} />
-                    </div>
-
-                    <Zusammenfassung
-                        sqmLabel={sqmLabel} scopeLabel={scopeLabel} tierLabel={tierLabel} extras={extras} matchingBath={matchingBath}
-                        contactOpen={contactOpen} setContactOpen={setContactOpen}
-                        sentVia={sentVia} setSentVia={setSentVia} referenceId={referenceId} handleNewRequest={handleNewRequest}
-                        leadData={leadData} setLeadData={setLeadData}
-                        isSubmitting={isSubmitting} errorMessage={errorMessage} handleLeadSubmit={handleLeadSubmit}
-                    />
-                </div>
+                <Zusammenfassung
+                    sqmLabel={sqmLabel} scopeLabel={scopeLabel} tierLabel={tierLabel} extras={extras} matchingBath={matchingBath}
+                    contactOpen={contactOpen} setContactOpen={setContactOpen}
+                    sentVia={sentVia} setSentVia={setSentVia} referenceId={referenceId} handleNewRequest={handleNewRequest}
+                    leadData={leadData} setLeadData={setLeadData}
+                    isSubmitting={isSubmitting} errorMessage={errorMessage} handleLeadSubmit={handleLeadSubmit}
+                />
             </div>
         </div>
     );
