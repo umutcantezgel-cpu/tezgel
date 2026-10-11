@@ -11,3 +11,5 @@
 | Pixel | entfällt: HTML aller 172 Dateien und CSS gleich |
 
 Lernpunkt: Der erste Mutationslauf traf einen alten Erprobungsserver auf demselben Port (EADDRINUSE im Log des neuen Servers) und war ungültig. `server.sh` prüft künftig das Server-Log auf `EADDRINUSE` und das Arbeitsverzeichnis des lauschenden Prozesses.
+
+> **Berichtigung (E-036, 11.10.2026):** Die Pixelvergleiche in diesem Beleg sind ungültig. Die Maske von `pixel.mjs` blendete die ganze Seite aus; erkannt wurden nur Höhenänderungen. Nachgeprüft mit dem berichtigten Werkzeug: `../p4-tor-r2/pixel/` (Stichprobe und rückwirkend gegen den Ausgangsstand).

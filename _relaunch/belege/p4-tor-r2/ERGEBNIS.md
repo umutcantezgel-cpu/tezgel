@@ -45,11 +45,15 @@
 ## T2 `/` (P4-13 wirkt sofort live)
 | Prüfung | Ergebnis | Beleg |
 |---|---|---|
-| build-vergleich streng f2c4180 → c5ef582 | HTML 172: nur `index.html` abweichend. CSS: 7 Selektoren weg (alte Banner-Mess-Klassen, `k-anzeige` umgestellt), 29 neu (Leiste, Tokens), 5 Variablen neu (`--k-banner-*`) | `../build-vergleich-f2c4180-c5ef582-streng/bericht.json` |
+| build-vergleich streng f2c4180 → c5ef582 | HTML 172: nur `index.html` abweichend. CSS: 7 Selektoren weg (alte Banner-Mess-Klassen; `k-anzeige` nur umsortiert), 29 neu (Leiste und Tokens aus P4-13, dazu Klassen der ruhenden Kontakt-Entwürfe aus 1c6c9cd, schon in T1 additiv; P4-GEG2 N-I), 5 Variablen neu (`--k-banner-*`) | `../build-vergleich-f2c4180-c5ef582-streng/bericht.json` |
 | Pixel `/` Live gegen Kandidat (berichtigtes Werkzeug) | Rauschen 4/0. m375, t768 gleich; d1440/d1920 je 4 060 px nur Zeile 8–55 (Kopf: WhatsApp-Link, Navigation rückt zusammen), erwartet | `pixel-start/` |
-| Lighthouse `/` mobil, 10 verschränkte Paare, ruhiges Fenster | gegen Live: Punkte 86 → 85, TBT 253 → 249, LCP 3 465 → 3 469, Speed Index 1 507 → 1 074; Desktop 100 = 100. Gegen Bestand: Punkte 84 → 86, LCP −17,9 %, **TBT 159 → 247** → E-035 | `../t2-c5ef582-gegen-live/`, `../t2-c5ef582-gegen-bestand/` |
+| Lighthouse `/` mobil, 10 verschränkte Paare, ruhiges Fenster | **echter Median (berichtigt, P4-GEG2 N-G):** gegen Live Punkte 85,5 → 85, TBT 251 → 233,5, LCP 3 464 → 3 469, Speed Index 1 496 → 1 072; Desktop 100 = 100. Gegen Bestand: Punkte 84 → 86, LCP −17,9 %, **TBT 152 → 221** → E-035 (`lighthouse-median-berichtigt.json`) | `../t2-c5ef582-gegen-live/`, `../t2-c5ef582-gegen-bestand/` |
 | INP `/` verschränkt gegen Bestand (4×, je 5) | Kandidat **max 80 ms**, keine Interaktion über Budget (200) oder über Bestand: m375 Menü 136 → 64, Formular 112 → 56, Seitenwechsel 80 = 80; d1440 Menü 296 → 48, Formular 376 → 64 (1 Lauf Messqualität „unsicher“), Seitenwechsel 280 → 72 ms | `inp.json` |
-| Suite, a11y, axe, Fotos, Wortbruch, texte2, Fünf-Sekunden `/` | wie oben (alle schließen `/` ein) | oben |
+| INP d1440 im ruhigen Fenster wiederholt (P4-GEG2 N-H) | Start bei Last 0,08 (die Last im Lauf erzeugt der gemessene Chrome selbst, Software-Grafik); Kandidat max 72 ms, Bestand 200/384/256 ms; Messqualität „ok“ | `inp-d1440-ruhig.json` |
+| Gegenprobe a3-d1440-maus `/` | **einzige Verschlechterung gegen Live:** Erstbesuch 5 → 6 (E-034). Ohne Banner (Diagnose): Ausgangsstand 5, Live 7, Kandidat 7 → Hero-Formular nicht ganz im ersten Bildschirm, seit P3-16; Paket P4-15 | `gegenprobe/`, `diagnose-a3/` |
+| Kopf mit klassischer Scrollleiste (P4-GEG2 N-E) | 1280 px: Reserve −3 px (Live +21); Logo unverändert 128 × 40, Innenabstand 13 statt 16 px; kein Überlauf, kein Umbruch → P4-15 | `kopfplatz/` |
+| Suite, a11y, axe, Fotos, Wortbruch, texte2, Fünf-Sekunden `/` | wie oben (alle schließen `/` ein); texte2 mit Freigabezeile für das nur im Browser stehende Kanal-aria-label: **grün** | oben, `texte2/vergleich-mit-freigabe.json` |
+| Nicht im T2 `/` gemessen | Bewegung, SVG, SEO-Invarianten, Slop, Jury. Durch die Bauart begründet: kein neues SVG, kein Metadaten-Diff, Register-ID `zustand` vorhanden | – |
 
 **Z-12:** Die Frist „TBT ≤ 200 ms und ≤ Bestand bis zum P4-Tor“ ist verfehlt (E-035). P4-13 verschlechtert nichts gegen Live. Maßnahme A (Aufschub) kommt als P4-14 vor der Freischaltung von W1. Die nötige Werkzeugregel entscheidet der Gegenprüfer (P4-GEG2, Frage 5).
 
@@ -72,5 +76,33 @@ Ein Vollvergleich aller Bestandsseiten läuft als Nachtrag.
 ## Urteil (Orchestrator, vor dem Gegenprüfer)
 - **Z-05, Z-11, Z-13 auf den Hauptseiten:** erfüllt. Ausnahmen sind der erklärte Lastfall der Suite (Bestandsseite, einzeln grün) und „dünn“ 1 (E-018-Nachtrag, wie Live).
 - **L3:** ausgewertet. Die Fünf-Sekunden-Probe bleibt im Wortlaut rot; das ist eine Auflage an W2, W8 und W9 und hängt an M-20.
-- **T2 `/`:** Ränge 1–4 grün, nichts schlechter als Live. Gegen den Bestand bleibt TBT offen (E-035, P4-14).
+- **T2 `/`:** Ränge 1–4 grün. Gegen Live eine Verschlechterung: a3-d1440-maus im Erstbesuch 5 → 6. Sie ist der Preis für H2 (E-034 berichtigt) und kommt mit P4-15 auf ≤ 5. Gegen den Bestand bleibt TBT offen (E-035, P4-14).
 - **Entscheidung über Push und Tor:** P4-GEG2.
+
+## Nachtrag nach P4-GEG2 (Gegenprüfer Runde 2, `../../pakete/P4-GEG2.rueckgabe.md`)
+**Urteile:**
+- Z-05 ja · Z-11 ja unter Auflage (Banner-Zustände) · Z-13 ja
+- L3 ja
+- T2 `/` ja unter Auflagen
+- Abweichungen ehrlich und vollständig: **nein**
+- Werkzeugregel E-035: **nein in dieser Fassung** (zulässig mit den Änderungen a–d)
+
+**Auflagen vor dem Push und ihr Stand:**
+1. **E-034 berichtigen (N-B):** erledigt. Der Weg ohne Banner ist nachgemessen (Ausgangsstand 5, Live 7, Kandidat 7). Folge: Paket P4-15.
+2. **ABNAHME nachführen (N-C):** erledigt. Nachgetragen sind die Z-12-Frist (E-035), die Budgets Lighthouse/LCP und a3-d1440.
+3. **axe „Einstellungen“ (N-A):** erledigt. Vorschau: 35 Läufe in Menü, Erstbesuch und Einstellungen über 7 Seiten × m375/d1440, **0 Verstöße**. Live (Bestandsseiten): 179 color-contrast. Kontrastmodus, Reflow, Textabstand und Zoom mit offenem Banner bzw. in der Einstellungen-Ansicht: siehe unten (`../p4r2-a11y-banner/`).
+4. **Kopf 1280 mit Scrollleiste (N-E):** gemessen, −3 px ohne Folgen für das Logo; Behebung in P4-15.
+
+**Weitere Punkte:**
+- **N-G Median:** berichtigt.
+- **N-H INP:** im ruhigen Fenster wiederholt.
+- **N-I CSS-Zeile:** berichtigt.
+- **N-J texte2:** jetzt grün.
+- **N-M E-036:** in allen betroffenen Belegen vermerkt.
+- **N-K strenge Lesart:** am Desktop 33 → 26, für die sechs Entwürfe 28 → 22. Dabei `/standorte` 3 → 5 (Banner), `/ueber-uns` 4 → 0 und `/kontakt` 5 → 4 (Wortlaut bzw. Streuung). Die Gesamtsumme 37 → 46 kommt aus mobil (4 → 20).
+- **N-L Probeläufer frei:** nicht wiederholt. Die Gegenprobe deckt dieselben Wege. Freie Läufe d1440-Maus an der Vorschau folgen vor W1 (Paket P4-16, Haiku).
+- **N-D Vollvergleich rückwirkend:** 476 Vergleiche, 36 abweichend. 28 davon sind der gewollt leere Einwilligungshaken, **8 sind unerklärt** (`/ueber-uns` ×3, `/fliesen/konfigurator` d1920, `/standorte/braunfels`, `/giessen`, `/solms`, `/blog/barrierefreier-balkonaustritt` t768). Das ist ein Befund am Live-Stand, nicht an P4-13 (die Stichprobe Vorschau gegen Live ist 0). Klärung vor W1: A/A über alle Seiten, Wiederholung, Sichtung.
+- **N-F Touch-Weiche am Kopf-Link:** in P4-15.
+- **N-O Restfälle:** in E-034 aufgenommen.
+- **Sperrklinke (Hinweis zu Z-05):** Die Laufzeit-Sperrklinke zählt Fälle, nicht „grün“. Konfigurator desktop hat 22 statt 23 grün (der erklärte Lastfall).
+

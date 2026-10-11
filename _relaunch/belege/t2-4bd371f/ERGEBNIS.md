@@ -29,3 +29,5 @@ P4-10a (Vorlagen auf gemeinsame Teile) und P4-10b (Formulare nach Behälterbreit
 | Mutationsprobe (Kopie 4bd371f-m, gebaut) | 3/3 rot, 24 Fälle: `Math.floor` in `fmt` (Konfigurator-Rechner und Gutfälle) · `timeSlot: selectedDate` (Kalender `/kontakt` und `/termin`) · `topic: formData.timeSlot` (Terminformular) | `mutation-tests.log` |
 
 **Urteil: T2 grün.** Push `git push origin HEAD:main` (E-005), danach Live-Rauchtest und Live-Browser.
+
+> **Berichtigung (E-036, 11.10.2026):** Die Pixelvergleiche in diesem Beleg sind ungültig. Die Maske von `pixel.mjs` blendete die ganze Seite aus; erkannt wurden nur Höhenänderungen. Nachgeprüft mit dem berichtigten Werkzeug: `../p4-tor-r2/pixel/` (Stichprobe und rückwirkend gegen den Ausgangsstand).
