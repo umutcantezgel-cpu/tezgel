@@ -1,0 +1,1122 @@
+{
+ "A001": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "c14",
+  "durchgang": 1
+ },
+ "A002": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "q7",
+  "durchgang": 4
+ },
+ "A003": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "c11",
+  "durchgang": 1
+ },
+ "A004": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "c14",
+  "durchgang": 2
+ },
+ "A005": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "c09",
+  "durchgang": 5
+ },
+ "A006": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "c13",
+  "durchgang": 4
+ },
+ "A007": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "b10",
+  "durchgang": 4
+ },
+ "A008": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "c07",
+  "durchgang": 2
+ },
+ "A009": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "b08",
+  "durchgang": 1
+ },
+ "A010": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "b20",
+  "durchgang": 3
+ },
+ "A011": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "b09",
+  "durchgang": 5
+ },
+ "A012": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "b21",
+  "durchgang": 1
+ },
+ "A013": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "c06",
+  "durchgang": 1
+ },
+ "A014": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "b05",
+  "durchgang": 2
+ },
+ "A015": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "c05",
+  "durchgang": 4
+ },
+ "A016": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "q7",
+  "durchgang": 2
+ },
+ "A017": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "c13",
+  "durchgang": 3
+ },
+ "A018": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "b15",
+  "durchgang": 1
+ },
+ "A019": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "b20",
+  "durchgang": 2
+ },
+ "A020": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "b15",
+  "durchgang": 2
+ },
+ "A021": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "c08",
+  "durchgang": 5
+ },
+ "A022": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "c12",
+  "durchgang": 4
+ },
+ "A023": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "c10",
+  "durchgang": 3
+ },
+ "A024": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "b05",
+  "durchgang": 5
+ },
+ "A025": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "c14",
+  "durchgang": 5
+ },
+ "A026": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "c10",
+  "durchgang": 4
+ },
+ "A027": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "b01",
+  "durchgang": 3
+ },
+ "A028": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "c01",
+  "durchgang": 4
+ },
+ "A029": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "b20",
+  "durchgang": 4
+ },
+ "A030": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "c05",
+  "durchgang": 5
+ },
+ "A031": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "c10",
+  "durchgang": 2
+ },
+ "A032": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "k3",
+  "durchgang": 1
+ },
+ "A033": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "b08",
+  "durchgang": 2
+ },
+ "A034": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "b23",
+  "durchgang": 5
+ },
+ "A035": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "b20",
+  "durchgang": 1
+ },
+ "A036": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "b02",
+  "durchgang": 1
+ },
+ "A037": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "b10",
+  "durchgang": 2
+ },
+ "A038": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "b20",
+  "durchgang": 5
+ },
+ "A039": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "c02",
+  "durchgang": 3
+ },
+ "A040": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "c12",
+  "durchgang": 3
+ },
+ "A041": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "c08",
+  "durchgang": 4
+ },
+ "A042": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "b01",
+  "durchgang": 5
+ },
+ "A043": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "c07",
+  "durchgang": 3
+ },
+ "A044": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "b02",
+  "durchgang": 3
+ },
+ "A045": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "c14",
+  "durchgang": 4
+ },
+ "A046": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "c10",
+  "durchgang": 1
+ },
+ "A047": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "b21",
+  "durchgang": 3
+ },
+ "A048": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "b08",
+  "durchgang": 3
+ },
+ "A049": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "b08",
+  "durchgang": 4
+ },
+ "A050": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "c02",
+  "durchgang": 1
+ },
+ "A051": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "c02",
+  "durchgang": 2
+ },
+ "A052": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "c01",
+  "durchgang": 2
+ },
+ "A053": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "c04",
+  "durchgang": 3
+ },
+ "A054": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "b05",
+  "durchgang": 4
+ },
+ "A055": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "c03",
+  "durchgang": 1
+ },
+ "A056": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "c13",
+  "durchgang": 2
+ },
+ "A057": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "b03",
+  "durchgang": 2
+ },
+ "A058": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "b15",
+  "durchgang": 5
+ },
+ "A059": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "c04",
+  "durchgang": 4
+ },
+ "A060": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "b05",
+  "durchgang": 1
+ },
+ "A061": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "b19",
+  "durchgang": 1
+ },
+ "A062": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "q7",
+  "durchgang": 3
+ },
+ "A063": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "b09",
+  "durchgang": 1
+ },
+ "A064": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "c11",
+  "durchgang": 4
+ },
+ "A065": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "c03",
+  "durchgang": 3
+ },
+ "A066": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "c12",
+  "durchgang": 1
+ },
+ "A067": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "c07",
+  "durchgang": 5
+ },
+ "A068": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "b15",
+  "durchgang": 3
+ },
+ "A069": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "b19",
+  "durchgang": 2
+ },
+ "A070": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "b01",
+  "durchgang": 1
+ },
+ "A071": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "c13",
+  "durchgang": 5
+ },
+ "A072": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "c01",
+  "durchgang": 5
+ },
+ "A073": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "c08",
+  "durchgang": 3
+ },
+ "A074": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "b09",
+  "durchgang": 3
+ },
+ "A075": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "b02",
+  "durchgang": 5
+ },
+ "A076": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "b23",
+  "durchgang": 2
+ },
+ "A077": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "b21",
+  "durchgang": 5
+ },
+ "A078": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "k3",
+  "durchgang": 3
+ },
+ "A079": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "c12",
+  "durchgang": 2
+ },
+ "A080": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "c11",
+  "durchgang": 3
+ },
+ "A081": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "c11",
+  "durchgang": 5
+ },
+ "A082": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "c09",
+  "durchgang": 3
+ },
+ "A083": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "b09",
+  "durchgang": 2
+ },
+ "A084": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "k3",
+  "durchgang": 4
+ },
+ "A085": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "b23",
+  "durchgang": 1
+ },
+ "A086": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "q7",
+  "durchgang": 1
+ },
+ "A087": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "c05",
+  "durchgang": 2
+ },
+ "A088": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "c07",
+  "durchgang": 1
+ },
+ "A089": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "b09",
+  "durchgang": 4
+ },
+ "A090": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "c12",
+  "durchgang": 5
+ },
+ "A091": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "c09",
+  "durchgang": 1
+ },
+ "A092": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "q7",
+  "durchgang": 5
+ },
+ "A093": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "b03",
+  "durchgang": 5
+ },
+ "A094": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "b02",
+  "durchgang": 2
+ },
+ "A095": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "b03",
+  "durchgang": 4
+ },
+ "A096": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "c06",
+  "durchgang": 4
+ },
+ "A097": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "b02",
+  "durchgang": 4
+ },
+ "A098": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "b10",
+  "durchgang": 5
+ },
+ "A099": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "b23",
+  "durchgang": 4
+ },
+ "A100": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "b15",
+  "durchgang": 4
+ },
+ "A101": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "c02",
+  "durchgang": 5
+ },
+ "A102": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "b19",
+  "durchgang": 5
+ },
+ "A103": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "b10",
+  "durchgang": 1
+ },
+ "A104": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "b21",
+  "durchgang": 2
+ },
+ "A105": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "c04",
+  "durchgang": 2
+ },
+ "A106": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "c01",
+  "durchgang": 3
+ },
+ "A107": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "c04",
+  "durchgang": 1
+ },
+ "A108": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "c05",
+  "durchgang": 3
+ },
+ "A109": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "c02",
+  "durchgang": 4
+ },
+ "A110": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/kontakt",
+  "ansicht": "d1440",
+  "bild": "b08",
+  "durchgang": 5
+ },
+ "A111": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "b19",
+  "durchgang": 3
+ },
+ "A112": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "c06",
+  "durchgang": 5
+ },
+ "A113": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "b21",
+  "durchgang": 4
+ },
+ "A114": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "c03",
+  "durchgang": 5
+ },
+ "A115": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "b19",
+  "durchgang": 4
+ },
+ "A116": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "b03",
+  "durchgang": 3
+ },
+ "A117": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "k3",
+  "durchgang": 5
+ },
+ "A118": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "d1440",
+  "bild": "c04",
+  "durchgang": 5
+ },
+ "A119": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "d1440",
+  "bild": "c05",
+  "durchgang": 1
+ },
+ "A120": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "b01",
+  "durchgang": 4
+ },
+ "A121": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "b23",
+  "durchgang": 3
+ },
+ "A122": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "b10",
+  "durchgang": 3
+ },
+ "A123": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/blog",
+  "ansicht": "m375",
+  "bild": "c10",
+  "durchgang": 5
+ },
+ "A124": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "c08",
+  "durchgang": 2
+ },
+ "A125": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "c09",
+  "durchgang": 2
+ },
+ "A126": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "c07",
+  "durchgang": 4
+ },
+ "A127": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "c06",
+  "durchgang": 3
+ },
+ "A128": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "c14",
+  "durchgang": 3
+ },
+ "A129": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "c03",
+  "durchgang": 2
+ },
+ "A130": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/leistungen",
+  "ansicht": "m375",
+  "bild": "b05",
+  "durchgang": 3
+ },
+ "A131": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/kontakt",
+  "ansicht": "m375",
+  "bild": "c03",
+  "durchgang": 4
+ },
+ "A132": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "b03",
+  "durchgang": 1
+ },
+ "A133": {
+  "quelle": "p0-ausgangsstand",
+  "stand": "bestand 707a93d",
+  "seite": "/",
+  "ansicht": "d1440",
+  "bild": "k3",
+  "durchgang": 2
+ },
+ "A134": {
+  "quelle": "r1-basis",
+  "stand": "bestand f2c4180",
+  "seite": "/bad",
+  "ansicht": "m375",
+  "bild": "b01",
+  "durchgang": 2
+ },
+ "A135": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "d1440",
+  "bild": "c01",
+  "durchgang": 1
+ },
+ "A136": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/standorte",
+  "ansicht": "m375",
+  "bild": "c06",
+  "durchgang": 2
+ },
+ "A137": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "d1440",
+  "bild": "c11",
+  "durchgang": 2
+ },
+ "A138": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/bad",
+  "ansicht": "d1440",
+  "bild": "c08",
+  "durchgang": 1
+ },
+ "A139": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/ueber-uns",
+  "ansicht": "m375",
+  "bild": "c13",
+  "durchgang": 1
+ },
+ "A140": {
+  "quelle": "r2-vorschau",
+  "stand": "vorschau c5ef582-v",
+  "seite": "/",
+  "ansicht": "m375",
+  "bild": "c09",
+  "durchgang": 4
+ }
+}
