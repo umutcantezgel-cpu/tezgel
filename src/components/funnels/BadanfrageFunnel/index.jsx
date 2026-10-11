@@ -1,7 +1,10 @@
 "use client";
 // Badanfrage (E-011): Schrittwechsel und Rahmen hier. Logik aus useBadanfrage (gemeinsam mit der Kern-Ansicht); Markup in Schritt1–5,
-// Erfolg und WhatsAppGeoeffnet.
-import { ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
+// Erfolg und WhatsAppGeoeffnet. E3-BAU-18: Darstellung nach dem KERN-Formularmuster (wie TezgelAnfrageFunnel/index.tsx):
+// Feld an der Fuge, Fortschritt in Tinte und Fliese, Zurück als Textlink, Weiter als Hauptknopf.
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { etikettKlassen, knopfKlassen } from '@/components/kern/stile';
 import { useBadanfrage, TOTAL_STEPS } from '@/lib/formulare/useBadanfrage';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
@@ -42,77 +45,72 @@ export default function BadanfrageFunnel() {
     }
 
     return (
-        <div className="glass-bezel-outer max-w-3xl mx-auto overflow-hidden">
-            <div className="glass-bezel-inner overflow-hidden">
-                {/* Header / Progress Bar */}
-                <div className="ceramic-band p-6 sm:p-8">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                        <span className="eyebrow">
-                            <Sparkles className="w-3.5 h-3.5" />
-                            Interaktive Badanfrage &middot; Schritt {step} von {TOTAL_STEPS}
-                        </span>
-                        <span className="eyebrow eyebrow-neutral">
-                            Kostenlos &amp; unverbindlich
-                        </span>
-                    </div>
-                    <h2 className="text-xl sm:text-2xl font-black text-neutral-900">
-                        Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar
-                    </h2>
-
-                    {/* Progress Indicators */}
-                    <div className="grid grid-cols-5 gap-2 mt-6" aria-hidden="true">
-                        {Array.from({ length: TOTAL_STEPS }, (_, i) => i + 1).map((s) => (
-                            <div
-                                key={s}
-                                className={`h-2 rounded-full transition-all duration-300 ${
-                                    s <= step ? 'bg-orange-600' : 'bg-neutral-200'
-                                }`}
-                            />
-                        ))}
-                    </div>
+        <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12">
+            {/* Kopf und Fortschritt */}
+            <div className="border-b border-fuge pb-6">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                    <span className={etikettKlassen}>
+                        <Fugenkreuz className="size-3 text-strich" />
+                        Interaktive Badanfrage &middot; Schritt {step} von {TOTAL_STEPS}
+                    </span>
+                    <span className={etikettKlassen}>
+                        Kostenlos &amp; unverbindlich
+                    </span>
                 </div>
+                <h2 className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">
+                    Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar
+                </h2>
 
-                {/* Form Content */}
-                <div className="p-6 sm:p-10">
-                    {step === 1 && <Schritt1 formData={formData} setFormData={setFormData} />}
-                    {step === 2 && <Schritt2 formData={formData} setFormData={setFormData} />}
-                    {step === 3 && <Schritt3 formData={formData} setFormData={setFormData} calculatedSqm={calculatedSqm} />}
-                    {step === 4 && <Schritt4 formData={formData} setFormData={setFormData} toggleFeature={toggleFeature} />}
-                    {step === 5 && (
-                        <Schritt5
-                            setStep={setStep} status={status} errorMessage={errorMessage} formData={formData} setFormData={setFormData}
-                            handleWhatsApp={handleWhatsApp} handleOnlineSubmit={handleOnlineSubmit}
+                {/* Fortschritt: Felder in Tinte (erreicht) und Fliese, getrennt durch 1-px-Linien */}
+                <div className="mt-6 grid grid-cols-5 border-l border-t border-strich" aria-hidden="true">
+                    {Array.from({ length: TOTAL_STEPS }, (_, i) => i + 1).map((s) => (
+                        <div
+                            key={s}
+                            className={`h-2 border-b border-r border-strich ${s <= step ? 'bg-tinte' : 'bg-fliese'}`}
                         />
-                    )}
-
-                    {/* Navigation Buttons for Steps 1-4 */}
-                    {step < TOTAL_STEPS && (
-                        <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-200">
-                            {step > 1 ? (
-                                <button
-                                    type="button"
-                                    onClick={() => setStep(step - 1)}
-                                    className="flex items-center gap-1.5 px-4 py-2.5 rounded-full text-slate-700 hover:text-orange-600 font-bold text-xs transition-colors"
-                                >
-                                    <ArrowLeft className="w-4 h-4" />
-                                    Zurück
-                                </button>
-                            ) : (
-                                <div />
-                            )}
-
-                            <button
-                                type="button"
-                                onClick={() => setStep(step + 1)}
-                                className="btn-primary px-6 py-3 text-xs"
-                            >
-                                Weiter zu Schritt {step + 1}
-                                <ArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    )}
+                    ))}
                 </div>
             </div>
+
+            {/* Formularinhalt */}
+            <div className="mt-8">
+                {step === 1 && <Schritt1 formData={formData} setFormData={setFormData} />}
+                {step === 2 && <Schritt2 formData={formData} setFormData={setFormData} />}
+                {step === 3 && <Schritt3 formData={formData} setFormData={setFormData} calculatedSqm={calculatedSqm} />}
+                {step === 4 && <Schritt4 formData={formData} setFormData={setFormData} toggleFeature={toggleFeature} />}
+                {step === 5 && (
+                    <Schritt5
+                        setStep={setStep} status={status} errorMessage={errorMessage} formData={formData} setFormData={setFormData}
+                        handleWhatsApp={handleWhatsApp} handleOnlineSubmit={handleOnlineSubmit}
+                    />
+                )}
+            </div>
+
+            {/* Navigation für die Schritte 1–4 */}
+            {step < TOTAL_STEPS && (
+                <div className={`mt-8 flex flex-col gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center ${step === 1 ? 'sm:justify-end' : 'sm:justify-between'}`}>
+                    {step > 1 && (
+                        <button
+                            type="button"
+                            onClick={() => setStep(step - 1)}
+                            className={knopfKlassen('text', 'self-start')}
+                            data-motion="druck"
+                        >
+                            <Icon name="pfeil-links" groesse={5} />
+                            Zurück
+                        </button>
+                    )}
+                    <button
+                        type="button"
+                        onClick={() => setStep(step + 1)}
+                        className={knopfKlassen('haupt', 'w-full sm:w-auto')}
+                        data-motion="druck"
+                    >
+                        Weiter zu Schritt {step + 1}
+                        <Icon name="pfeil-rechts" groesse={5} />
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
