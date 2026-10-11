@@ -1,0 +1,351 @@
+{
+  "build": "74e768c-m",
+  "base": "http://127.0.0.1:4332",
+  "live": false,
+  "manifeste": [
+    ".next/server/functions-config-manifest.json"
+  ],
+  "matcher": 26,
+  "unbeteiligt": 200,
+  "entfernt": 32,
+  "sitemap": 163,
+  "http": [
+    {
+      "pfad": "/energie",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/energieberatung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/gewerbe",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/haustechnik",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/heizung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/lueftung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/notdienst",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/energie/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/energieberatung/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/gewerbe/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/haustechnik/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/heizung/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/lueftung/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/notdienst/unterseite",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/waermepumpen-foerderung-2024",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/wasserschaden-vermeiden-tipps",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/solarthermie-vs-photovoltaik-vergleich",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/heizungswartung-pflicht-oder-kuer",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/smart-home-heizungssteuerung-nachruesten",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/heizkoerper-richtig-entlueften",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/legionellen-trinkwasser-vermeiden",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/klimaanlage-reinigen-allergiker",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/solarpflicht-deutschland-hausbesitzer",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/waermepumpen-mythen-faktencheck",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/smart-bad-wellness-hightech",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/blog/team-verstaerkung-gesucht-jobs",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/referenzen/project-001",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/referenzen/project-002",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/referenzen/project-003",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/referenzen/project-004",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/referenzen/project-005",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/referenzen/project-006",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/heizung/waermepumpe/",
+      "erwartet": "308 → ohne /",
+      "status": 308,
+      "ort": "/heizung/waermepumpe",
+      "ok": true
+    },
+    {
+      "pfad": "HEAD /energie",
+      "erwartet": "410",
+      "status": 404,
+      "ort": null,
+      "ok": false
+    },
+    {
+      "pfad": "/bad/budgetkalkulator",
+      "erwartet": "308 → /bad/projekt-check",
+      "status": 308,
+      "ort": "/bad/projekt-check",
+      "ok": true
+    },
+    {
+      "pfad": "/bad/projekt-check",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/barrierefreies-bad-planung-zuschuesse",
+      "erwartet": "308 → /bad/barrierefreies-bad",
+      "status": 308,
+      "ort": "/bad/barrierefreies-bad",
+      "ok": true
+    },
+    {
+      "pfad": "/bad/barrierefreies-bad",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizungen",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/energie-sparen",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-007",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/fliesen-reinigen-pflegen",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    }
+  ],
+  "fehler": [
+    "matcher trifft unbeteiligte Adressen: /blog, /blog/barrierefreier-balkonaustritt, /blog/duschrinne-oder-punktablauf, /blog/feinsteinzeug-oder-naturstein-vergleich, /blog/fliesen-fuer-allergiker, /blog/fliesen-mythen-faktencheck, /blog/fliesen-reinigen-pflegen, /blog/fliesenleger-gesucht-geselle-meister, /blog/gaeste-wc-fliesen, /blog/handwerkerbonus-fliesenarbeiten, /blog/rutschfeste-fliesen-r-klassen, /blog/schimmel-fliesenfugen-vermeiden, /blog/undichte-dusche-warnzeichen, /blog/wandnischen-dusche-planen, /blog/[slug], /blog/barrierefreies-bad-planung-zuschuesse",
+    "/energie: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/energieberatung: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/gewerbe: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/haustechnik: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/heizung: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/lueftung: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/notdienst: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/energie/unterseite: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/energieberatung/unterseite: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/gewerbe/unterseite: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/haustechnik/unterseite: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/heizung/unterseite: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/lueftung/unterseite: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/notdienst/unterseite: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/waermepumpen-foerderung-2024: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/wasserschaden-vermeiden-tipps: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/solarthermie-vs-photovoltaik-vergleich: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/heizungswartung-pflicht-oder-kuer: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/smart-home-heizungssteuerung-nachruesten: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/heizkoerper-richtig-entlueften: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/legionellen-trinkwasser-vermeiden: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/klimaanlage-reinigen-allergiker: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/solarpflicht-deutschland-hausbesitzer: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/waermepumpen-mythen-faktencheck: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/smart-bad-wellness-hightech: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/blog/team-verstaerkung-gesucht-jobs: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/referenzen/project-001: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/referenzen/project-002: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/referenzen/project-003: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/referenzen/project-004: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/referenzen/project-005: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "/referenzen/project-006: erwartet 410 + Seite + Köpfe, erhalten 404",
+    "HEAD /energie: erwartet 410, erhalten 404"
+  ]
+}
