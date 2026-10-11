@@ -259,7 +259,8 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 
 ## E-024 · TBT mobil `/` über Budget bei besserer Leistung insgesamt (P3-16-GEG M-4)
 - **Befund:**
-  - Kandidat mit Hydrierungsgrenzen (b341543-k), Median aus 10 verschränkten Läufen: Lighthouse mobil 87 gegen 85, LCP 3.877 gegen 4.214 ms, TBT 226 gegen 148 ms (Budget 200), CLS 0.
+  - Kandidat bcd8fcb-k, Median aus 5 verschränkten Läufen: Lighthouse mobil 84 gegen 84, LCP −7,8 %, TBT 224 gegen 140 ms (Budget 200), CLS 0.
+  - Versuch mit Suspense-Grenzen (b341543-k, 10 Läufe: 87 gegen 85, TBT 226 gegen 148) **verworfen**: Der Prerender von Next legt den Inhalt der Grenzen in verborgene `<div hidden id="S:n">` und zeigt ihn erst per Skript (`$RC`). Ohne JavaScript war alles unter dem Einstieg unsichtbar (a11y-zusatz „ohne JS“: Text < 80 %). Die Grenzen sind wieder entfernt.
   - Lange Aufgaben: die Hydrierung (~160 ms bei 4×) und eine anfängliche Stil- und Layoutaufgabe (~130 ms).
   - INP: alle sechs Interaktionen deutlich unter Basis und Budget (max 64 ms).
 - **Wege:**
@@ -267,6 +268,6 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   2. Freischalten mit Arbeitsauftrag; K-013 definiert „schlechter als der Bestand“ über Punkte (> 3) und LCP (> 10 %), beide besser.
   3. Bewegung oder Formulare unter dem ersten Bildschirm erst bei Sicht hydrieren (größerer Umbau, eigenes Paket).
 - **Wahl: (2) mit Auftrag (3) in P4.**
-  - Grund: Für Besucher ist der Kandidat schneller (LCP, INP, Punkte). TBT ist ein Laborwert ohne Interaktion; die eingeführten Suspense-Grenzen senken ihn bereits (vorher 224–332 ms).
+  - Grund: Für Besucher ist der Kandidat schneller (LCP, INP) und nicht schlechter in den Punkten. TBT ist ein Laborwert ohne Interaktion; der Wert sank durch das Entfernen der Variante-A-Regeln von 332 auf 224 ms.
   - Das Budget bleibt Ziel für das P4-Tor (ABNAHME „Offene Abweichungen“).
 - **Umkehrprobe:** Steigt TBT in einer späteren Welle weiter oder fällt der Punktwert unter den Bestand, greift (1).
