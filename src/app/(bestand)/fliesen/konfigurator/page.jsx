@@ -12,10 +12,8 @@ import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Knopf from '@/components/kern/Knopf';
 import { Feld, Feldraster } from '@/components/kern/Feldraster';
-import Merkliste from '@/components/kern/Merkliste';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Tabelle from '@/components/kern/Tabelle';
-import RatgeberListe from '@/components/kern/RatgeberListe';
 import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
@@ -197,40 +195,23 @@ export default function FliesenKonfiguratorPage() {
                 />
             </Abschnitt>
 
-            {/* 5. Treppen: die drei Regeln als Merkliste an der Fuge */}
+            {/* 5. Treppen: die drei Regeln als Liste an der Fuge, je Regel ein Absatz mit fettem Einstieg */}
             <Abschnitt art="arbeit" titelId="treppen-heading" titel="Bei Treppen nur die Nettofläche">
-                <Merkliste
-                    eintraege={[
-                        {
-                            titel: <>Zählweise:</>,
-                            text: (
-                                <>
-                                    Eine Treppe mit n Steigungen hat n Setzstufen und in der Regel n − 1 Trittstufen. Die Trittstufenfläche ergibt sich aus Laufbreite × Auftrittstiefe inklusive Überstand, die Setzstufenfläche aus Laufbreite × Steigungshöhe.
-                                </>
-                            )
-                        },
-                        {
-                            titel: <>Ohne Verschnittzuschlag:</>,
-                            text: (
-                                <>
-                                    Bei Stufen hängt der Verschnitt stark vom Format und vom Stufenmaß ab. Ein pauschaler Prozentsatz wäre irreführend, deshalb zeigt der Konfigurator nur die Nettofläche.
-                                </>
-                            )
-                        },
-                        {
-                            titel: <>Keine Menge</>,
-                            text: (
-                                <>
-                                    gibt es bei gewendelten Treppen, bei Blockstufen (eine massive Bauart, kein Belag) und bei unvollständigen Maßen. Treppensockel und Kantenausbildung werden beim Aufmaß festgelegt. Mehr dazu unter{' '}
-                                    <Link href="/treppen" className={linkKlassen}>
-                                        Treppen neu belegen
-                                    </Link>
-                                    .
-                                </>
-                            )
-                        }
-                    ]}
-                />
+                <ul className="border-t border-fuge">
+                    <li className="max-w-mass border-b border-fuge py-6 font-text text-fs-3 text-tinte">
+                        <strong className="font-semibold">Zählweise:</strong> Eine Treppe mit n Steigungen hat n Setzstufen und in der Regel n − 1 Trittstufen. Die Trittstufenfläche ergibt sich aus Laufbreite × Auftrittstiefe inklusive Überstand, die Setzstufenfläche aus Laufbreite × Steigungshöhe.
+                    </li>
+                    <li className="max-w-mass border-b border-fuge py-6 font-text text-fs-3 text-tinte">
+                        <strong className="font-semibold">Ohne Verschnittzuschlag:</strong> Bei Stufen hängt der Verschnitt stark vom Format und vom Stufenmaß ab. Ein pauschaler Prozentsatz wäre irreführend, deshalb zeigt der Konfigurator nur die Nettofläche.
+                    </li>
+                    <li className="max-w-mass border-b border-fuge py-6 font-text text-fs-3 text-tinte">
+                        <strong className="font-semibold">Keine Menge</strong> gibt es bei gewendelten Treppen, bei Blockstufen (eine massive Bauart, kein Belag) und bei unvollständigen Maßen. Treppensockel und Kantenausbildung werden beim Aufmaß festgelegt. Mehr dazu unter{' '}
+                        <Link href="/treppen" className={linkKlassen}>
+                            Treppen neu belegen
+                        </Link>
+                        .
+                    </li>
+                </ul>
             </Abschnitt>
 
             {/* 6. Nächste Schritte: Aufmaß und Festpreisangebot als Schrittfolge */}
@@ -268,11 +249,18 @@ export default function FliesenKonfiguratorPage() {
                 </div>
             </Abschnitt>
 
-            {/* 8. Weiterführende Ratgeber als Zeilen an der Fuge, danach der direkte Kontaktweg */}
+            {/* 8. Weiterführende Ratgeber als Feldraster mit Links (Titel wie im Bestand, keine zusätzlichen Überschriften), danach der direkte Kontaktweg */}
             <Abschnitt art="arbeit" titelId="ratgeber-heading" titel="Weiterführende Ratgeber zur Fliesenplanung">
-                <RatgeberListe
-                    artikel={RELATED_LINKS.map((link) => ({ href: link.href, titel: link.title, anriss: link.desc }))}
-                />
+                <Feldraster spalten={4} als="ul">
+                    {RELATED_LINKS.map((link) => (
+                        <Feld key={link.href} als="li" className="relative">
+                            <Link href={link.href} className={`${linkKlassen} font-anzeige text-fs-4 font-semibold after:absolute after:inset-0`}>
+                                {link.title}
+                            </Link>
+                            <span className="mt-2 block font-text text-fs-2 text-tinte-2">{link.desc}</span>
+                        </Feld>
+                    ))}
+                </Feldraster>
                 <p className="mt-8 font-text text-fs-2 text-tinte-2">
                     Lieber direkt sprechen?{' '}
                     <Link href="/kontakt" className={linkKlassen}>
