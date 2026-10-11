@@ -1,0 +1,37 @@
+{
+ "satz": "t2-c5ef582-pixel-rauschen",
+ "a": "http://127.0.0.1:4337",
+ "b": "http://127.0.0.1:4337",
+ "laeufe": 4,
+ "abweichend": 0,
+ "ergebnis": [
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 15726336
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10641750
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 23764320
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 31839360
+  }
+ ]
+}
