@@ -75,7 +75,7 @@ const REGELN = {
       + 'Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). '
       + 'Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach '
       + 'werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung '
-      + '(je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang. Status: ok ≥ 1,5·U Kontrastpixel '
+      + '(je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Summe der Umfänge der Zeilenstücke im Bild (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel '
       + '(≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) '
       + 'geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. '
       + 'grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. '
@@ -313,8 +313,12 @@ async function MESSLAGE([pad, maxMs]) {
   const ecken = ['TopLeft', 'TopRight', 'BottomRight', 'BottomLeft'].map((k) => { const t = cs[`border${k}Radius`].split(' '); return { h: px(t[0], b.w), v: px(t[1] || t[0], b.h) }; });
   const f = Math.min(1, ...[[0, 1, 'h', b.w], [3, 2, 'h', b.w], [0, 3, 'v', b.h], [1, 2, 'v', b.h]].map(([i, j, a, s]) => { const sum = ecken[i][a] + ecken[j][a]; return sum > 0 ? s / sum : 1; }));
   const radien = ecken.map((e) => Math.min(e.h, e.v) * f);
+  // Inline über mehrere Zeilen: Zeilenstücke (im Bild) – der Ring folgt ihnen, nicht dem umschließenden Rechteck
+  const stuecke = cs.display === 'inline'
+    ? [...el.getClientRects()].map((q) => ({ w: Math.max(0, Math.min(innerWidth, q.right) - Math.max(0, q.left)), h: Math.max(0, Math.min(innerHeight, q.bottom) - Math.max(0, q.top)) })).filter((q) => q.w > 0 && q.h > 0)
+    : [];
   const mitte = mitteVon();
-  return { rect: { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.w), h: Math.round(b.h) }, radien: radien.map((r) => Math.round(r * 10) / 10), verschoben, rand_fest_natuerlich: randNatur, rand_fest_messlage: verschoben ? randFest(b) : randNatur, mitte_messlage: mitte };
+  return { rect: { x: Math.round(b.x), y: Math.round(b.y), w: Math.round(b.w), h: Math.round(b.h) }, radien: radien.map((r) => Math.round(r * 10) / 10), stuecke: stuecke.length > 1 ? stuecke.map((q) => ({ w: Math.round(q.w), h: Math.round(q.h) })) : null, verschoben, rand_fest_natuerlich: randNatur, rand_fest_messlage: verschoben ? randFest(b) : randNatur, mitte_messlage: mitte };
 }
 async function LAGE_ZURUECK(maxMs) {
   const lage = window.__a11yLage; if (!lage) return false;
@@ -590,7 +594,8 @@ async function pruefeTastatur(s, a, zustand) {
         if (!refok) befunde.refokus.push({ nr: n, pfad: info.pfad });
         const px = vergleiche(bildF, bildR);
         const Urechteck = 2 * ((sx1 - sx0) + (sy1 - sy0));
-        const U = Math.max(0.5 * Urechteck, Urechteck - lage.radien.reduce((s, r) => s + (2 - Math.PI / 2) * r, 0));
+        const Uform = lage.stuecke ? lage.stuecke.reduce((s, q) => s + 2 * (q.w + q.h), 0) : Urechteck;
+        const U = Math.max(0.5 * Uform, Uform - lage.radien.reduce((s, r) => s + (2 - Math.PI / 2) * r, 0));
         const stilAenderung = Object.keys(info.stil).filter((k) => info.stil[k] !== ruhe.stil[k]);
         let status;
         if (!ruhe.frei || !px) status = 'nicht-messbar';
@@ -598,7 +603,7 @@ async function pruefeTastatur(s, a, zustand) {
         else if (px.kontrast < MIN_FAKTOR * U) status = 'kontrastarm';
         else if (px.kontrast < OK_FAKTOR * U) status = 'duenn';
         else status = 'ok';
-        fokus = { status, grund: status === 'ok' ? undefined : grundSichtbar, ...px, umfang: Math.round(U), umfang_rechteck: Urechteck, radien: lage.radien, messlage_verschoben: lage.verschoben, rand_fest: lage.rand_fest_messlage, clip, stilAenderung, stabil: info.stabil.ok && ruhe.stabil.ok };
+        fokus = { status, grund: status === 'ok' ? undefined : grundSichtbar, ...px, umfang: Math.round(U), umfang_rechteck: Urechteck, stuecke: lage.stuecke, radien: lage.radien, messlage_verschoben: lage.verschoben, rand_fest: lage.rand_fest_messlage, clip, stilAenderung, stabil: info.stabil.ok && ruhe.stabil.ok };
         if (status !== 'ok' && bilder < 12) {
           ensureDir(bildDir);
           fs.writeFileSync(path.join(bildDir, `${String(n).padStart(3, '0')}-fokus.png`), bildF);

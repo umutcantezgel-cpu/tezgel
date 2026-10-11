@@ -12,7 +12,7 @@
 import type { ReactNode } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { siteConfig } from '@/lib/config';
-import { Etikett, fokus, verbinde } from '@/components/kern/basis';
+import { Etikett, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import type { IconName } from '@/components/kern/icons/geometrie';
 import { UMBRUCH } from '@/components/kern/vorlagen/teile';
@@ -23,9 +23,8 @@ const WEG = verbinde(
   ZEILE,
   'group min-h-k-8 text-k-tinte',
   'pointer-fine:hover:bg-k-kalk active:bg-k-kalk',
-  // Ring am Link selbst, über den Nachbarzeilen (Lehre 4)
-  'focus-visible:relative focus-visible:z-10',
-  fokus('hell'),
+  // Ring innen (P4-Tor, a11y-zusatz „dünn“): außen lag seine Oberkante auf dem Tinte-Kopf des Blatts
+  'focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-k-tinte',
 );
 
 function Zeichen({ name }: { name: IconName }) {

@@ -43,13 +43,13 @@ const TAGE = 'm-0 grid list-none grid-cols-1 border-l border-t border-k-strich p
 const UHRZEITEN = 'grid grid-cols-1 border-l border-t border-k-strich @md:grid-cols-2 @xl:grid-cols-3';
 const SCHRITT = 'flex items-center gap-k-2 k-text text-k-2 font-semibold text-k-tinte';
 const TEXT = 'min-w-0 wrap-break-word hyphens-auto';
+// Ring innen (P4-Tor, a11y-zusatz „dünn“): außen lag er auf dem gewählten Nachbartag in Tinte; Farbe nach Grund der Zelle.
 const TAG = verbinde(
   'flex size-full min-h-k-8 flex-col items-start gap-k-1 p-k-3 text-left k-mono text-k-2',
-  'focus-visible:relative focus-visible:z-10',
-  fokus('hell'),
+  'focus-visible:outline-2 focus-visible:-outline-offset-4',
 );
-const TAG_RUHE = 'cursor-pointer bg-k-fliese text-k-tinte pointer-fine:hover:bg-k-kalk active:bg-k-fuge';
-const TAG_GEWAEHLT = 'cursor-pointer bg-k-tinte text-k-kalk';
+const TAG_RUHE = 'cursor-pointer bg-k-fliese text-k-tinte pointer-fine:hover:bg-k-kalk active:bg-k-fuge focus-visible:outline-k-tinte';
+const TAG_GEWAEHLT = 'cursor-pointer bg-k-tinte text-k-kalk focus-visible:outline-k-kalk';
 
 export default function TerminKalenderAnsicht({ kalender, initialServiceType }: { kalender: TerminKalenderDaten; initialServiceType: string }) {
   const {
