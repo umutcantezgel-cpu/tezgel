@@ -1,0 +1,544 @@
+{
+ "satz": "t2-ad80754",
+ "base": "http://127.0.0.1:4326",
+ "erstellt": "2026-10-11T01:34:24.221Z",
+ "bedingungen": {
+  "einwilligung": "abgelehnt",
+  "dpr": 1,
+  "page_clock": false,
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "farbschema": "light",
+  "browser": "chromium 141.0.7390.37 (Playwright 1.56.1, headless)",
+  "ansichten": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "seiten": [
+   "/"
+  ],
+  "laeufe": [
+   "normal",
+   "reduziert",
+   "bildfolge"
+  ],
+  "gegenprobe": false,
+  "zusammengefuehrt": null,
+  "sammellauf": {
+   "reduced_motion": {
+    "normal": "no-preference",
+    "reduziert": "reduce"
+   },
+   "drosselung": "keine",
+   "abfrage_ms": 50,
+   "ereignisse": [
+    "animationstart",
+    "animationiteration",
+    "transitionrun",
+    "transitionstart"
+   ],
+   "skriptbewegung": "MutationObserver style + SVG-Geometrie, ≥ 3 verschiedene Werte je Eigenschaft",
+   "raf_schleife": "≥ 0.5 Seiten-rAF-Aufrufe je Bild im Ruhefenster (≥ 5 Bilder); mit sichtbarer Canvas = animiertes Element",
+   "scroll": "Schritte 0.5 Bildschirmhöhe, je Schritt 2 Bilder + 120 ms",
+   "abklingen": "Zustandsabfrage, max 4000 ms",
+   "ruhefenster_ms": 1500
+  },
+  "framelauf": {
+   "reduced_motion": "no-preference",
+   "drosselung": "mobil 4×, Desktop 1× (CDP Emulation.setCPUThrottlingRate)",
+   "scroll": "40 px je Bild (rAF-gekoppelt, behavior instant) + 30 Bilder Nachlauf",
+   "einstieg": "rAF ab Dokumentbeginn bis Scrollbeginn (nach load, fonts.ready, networkidle ≤ 5 s)",
+   "exklusiv": true,
+   "wiederholungen": 1,
+   "ruhetor": "vor jedem Framelauf ungedrosselte Rechenprobe (1e7 Schleifen, Median aus 3) ≤ 1,3 × beste Basis, Abfragetakt 2 s, höchstens 90 s",
+   "messqualitaet": "ok bei effektiver Drosselung (gedrosselt / beste Basis) im Bereich 0,75–1,35 × Soll; sonst „unsicher“ (Fremdlast)",
+   "verworfen": "Intervall ≥ 2 vsync (= „> 16,7 ms“ ohne Rundungsrauschen; rAF-Zeitstempel sind auf 0,1 ms gerundet)",
+   "ueber_50ms": "Intervall ≥ 4 vsync (> 50 ms)",
+   "z09_soll": "mobil (4×) – Desktop 1× informativ",
+   "gl_renderer": null,
+   "leistungsbasis_ms": 16
+  },
+  "loaf": {
+   "quelle": "PerformanceObserver long-animation-frame (buffered) im Framelauf",
+   "bewegungsbezug": "rAF-Rückruf (invoker FrameRequestCallback) · Funktionsname /anim|motion|tween|spring|scroll/ · Chunk-Inhalt: framer-motion, gsap, lenis, lottie, bewegungsmodul, reduced-motion-abfrage"
+  },
+  "register": {
+   "quelle": "KERN.md K-009 Bewegungsregister, Spalte „Kennung“",
+   "kern_version": "1.2",
+   "kennungen": [
+    "sig-kreuzlinie",
+    "sig-flucht",
+    "sig-ablauf",
+    "sig-plan",
+    "anriss",
+    "auftritt",
+    "aufklappen",
+    "druck",
+    "zustand",
+    "notiert",
+    "laden",
+    "seitenwechsel"
+   ]
+  },
+  "maschine": {
+   "cpus": 4,
+   "last_1min_start": 8.33
+  },
+  "laufzeit_s": 29,
+  "worker": 2
+ },
+ "zusammenfassung": {
+  "laeufe": 2,
+  "fehler": [
+   "/ [d1440] bildfolge: cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+  ],
+  "registriert": {
+   "elemente_animiert": 17,
+   "mit_data_motion": 14,
+   "im_register": 14,
+   "anteil": 0.824,
+   "im_register_mit_vorfahr": 17,
+   "unregistriert_muster": [
+    {
+     "sel": "svg[data-motion=\"sig-kreuzlinie\"].block.h-full > path.k-laser-lot.stroke-k-laser",
+     "pseudo": null,
+     "motion": null,
+     "namen": [
+      "k-lot"
+     ],
+     "eigenschaften": [
+      "transform"
+     ],
+     "arten": [
+      "css-animation"
+     ],
+     "dauer_ms": [
+      1200
+     ],
+     "kurve": [
+      "cubic-bezier(0.7, 0, 0.2, 1)"
+     ],
+     "vorkommen": 2,
+     "seiten": [
+      "/ [d1440]",
+      "/ [m375]"
+     ]
+    },
+    {
+     "sel": "svg[data-motion=\"sig-kreuzlinie\"].block.absolute > path.k-laser-waage.stroke-k-laser",
+     "pseudo": null,
+     "motion": null,
+     "namen": [
+      "k-waage"
+     ],
+     "eigenschaften": [
+      "transform"
+     ],
+     "arten": [
+      "css-animation"
+     ],
+     "dauer_ms": [
+      1200
+     ],
+     "kurve": [
+      "cubic-bezier(0.7, 0, 0.2, 1)"
+     ],
+     "vorkommen": 1,
+     "seiten": [
+      "/ [d1440]"
+     ]
+    }
+   ]
+  },
+  "technik": {
+   "elemente_ausserhalb_transform_opacity": 0,
+   "davon_layout": 0,
+   "muster": []
+  },
+  "frames_scroll": {
+   "gesamt": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   },
+   "mobil": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   },
+   "m375": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   },
+   "d1440": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   }
+  },
+  "frames_messqualitaet": {
+   "ok": 0,
+   "unsicher": [],
+   "regel": "ok, wenn Rechenprobe gedrosselt / beste ungedrosselte Basis im Bereich 0,75–1,35 × Soll-Drosselung liegt"
+  },
+  "loaf": {
+   "anzahl": 0,
+   "laengster_ms": 0,
+   "laengste_skriptdauer_ms": 0,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "bewegung_laengste_ms": 0,
+   "bewegung_top": []
+  },
+  "reduziert": {
+   "verstoesse": 0,
+   "elemente_animiert": 0,
+   "muster": []
+  },
+  "deklariert": {
+   "elemente_mit_transition": 626,
+   "mit_data_motion": 626
+  },
+  "raf_schleifen": [],
+  "z09": {
+   "registriert_100": false,
+   "verworfene_frames_max_5_prozent": null,
+   "verworfene_frames_max_5_prozent_je_seite_mobil": null,
+   "kein_loaf_bewegung_ueber_20ms": null,
+   "reduziert_ohne_orts_groessenaenderung": true,
+   "reduziert_ohne_autoplay": true
+  }
+ },
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "fehler": [
+    "bildfolge: cdpSession.send: Protocol error (Page.captureScreenshot): Unable to capture screenshot"
+   ],
+   "normal": {
+    "modus": "normal",
+    "status": 200,
+    "dauer_ms": 9073,
+    "seitenhoehe": 16558,
+    "schritte": 35,
+    "html_klasse": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 10,
+    "mit_data_motion": 8,
+    "im_register": 8,
+    "anteil_registriert": 0.8,
+    "im_register_mit_vorfahr": 10,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 91,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 169,
+    "ereignisse": 28,
+    "mutationen": 1,
+    "hinweise": [],
+    "unregistriert": [
+     {
+      "sel": "div.pointer-events-none.relative:nth-of-type(2) > div.absolute.top-0 > svg[data-motion=\"sig-kreuzlinie\"].block.h-full > path.k-laser-lot.stroke-k-laser",
+      "pseudo": null,
+      "motion": null,
+      "motion_vorfahr": "sig-kreuzlinie",
+      "registriert": false,
+      "registriert_mit_vorfahr": true,
+      "arten": [
+       "css-animation"
+      ],
+      "namen": [
+       "k-lot"
+      ],
+      "eigenschaften": [
+       "transform"
+      ],
+      "dauer_ms": [
+       1200
+      ],
+      "kurve": [
+       "cubic-bezier(0.7, 0, 0.2, 1)"
+      ],
+      "iterationen": 1,
+      "ort": [
+       "skalierung"
+      ],
+      "laeuft_in_ruhe": false,
+      "phasen": [
+       "laden"
+      ],
+      "technik": []
+     },
+     {
+      "sel": "div.relative.grid > div.pointer-events-none.absolute:nth-of-type(4) > svg[data-motion=\"sig-kreuzlinie\"].block.absolute > path.k-laser-waage.stroke-k-laser",
+      "pseudo": null,
+      "motion": null,
+      "motion_vorfahr": "sig-kreuzlinie",
+      "registriert": false,
+      "registriert_mit_vorfahr": true,
+      "arten": [
+       "css-animation"
+      ],
+      "namen": [
+       "k-waage"
+      ],
+      "eigenschaften": [
+       "transform"
+      ],
+      "dauer_ms": [
+       1200
+      ],
+      "kurve": [
+       "cubic-bezier(0.7, 0, 0.2, 1)"
+      ],
+      "iterationen": 1,
+      "ort": [
+       "skalierung"
+      ],
+      "laeuft_in_ruhe": false,
+      "phasen": [
+       "laden"
+      ],
+      "technik": []
+     }
+    ],
+    "technik": [],
+    "technik_layout": 0,
+    "deklariert": {
+     "elemente": 313,
+     "mit_data_motion": 313,
+     "haeufigste": [
+      {
+       "transition_property": "background-color, color, border-color",
+       "elemente": 257
+      },
+      {
+       "transition_property": "transform, background-color, color, border-color",
+       "elemente": 35
+      },
+      {
+       "transition_property": "grid-template-rows",
+       "elemente": 16
+      },
+      {
+       "transition_property": "opacity, transform",
+       "elemente": 5
+      }
+     ]
+    }
+   },
+   "reduziert": {
+    "modus": "reduziert",
+    "status": 200,
+    "dauer_ms": 8030,
+    "seitenhoehe": 16558,
+    "schritte": 35,
+    "html_klasse": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 0,
+    "mit_data_motion": 0,
+    "im_register": 0,
+    "anteil_registriert": 1,
+    "im_register_mit_vorfahr": 0,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 88,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 154,
+    "ereignisse": 0,
+    "mutationen": 1,
+    "hinweise": [],
+    "verstoesse": [],
+    "elemente": []
+   }
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "fehler": [],
+   "normal": {
+    "modus": "normal",
+    "status": 200,
+    "dauer_ms": 13544,
+    "seitenhoehe": 28275,
+    "schritte": 68,
+    "html_klasse": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 7,
+    "mit_data_motion": 6,
+    "im_register": 6,
+    "anteil_registriert": 0.857,
+    "im_register_mit_vorfahr": 7,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 89,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 253,
+    "ereignisse": 23,
+    "mutationen": 1,
+    "hinweise": [],
+    "unregistriert": [
+     {
+      "sel": "section.relative.pt-k-6:nth-of-type(1) > div.pointer-events-none.absolute:nth-of-type(2) > svg[data-motion=\"sig-kreuzlinie\"].block.h-full > path.k-laser-lot.stroke-k-laser",
+      "pseudo": null,
+      "motion": null,
+      "motion_vorfahr": "sig-kreuzlinie",
+      "registriert": false,
+      "registriert_mit_vorfahr": true,
+      "arten": [
+       "css-animation"
+      ],
+      "namen": [
+       "k-lot"
+      ],
+      "eigenschaften": [
+       "transform"
+      ],
+      "dauer_ms": [
+       1200
+      ],
+      "kurve": [
+       "cubic-bezier(0.7, 0, 0.2, 1)"
+      ],
+      "iterationen": 1,
+      "ort": [
+       "skalierung"
+      ],
+      "laeuft_in_ruhe": false,
+      "phasen": [
+       "laden"
+      ],
+      "technik": []
+     }
+    ],
+    "technik": [],
+    "technik_layout": 0,
+    "deklariert": {
+     "elemente": 313,
+     "mit_data_motion": 313,
+     "haeufigste": [
+      {
+       "transition_property": "background-color, color, border-color",
+       "elemente": 257
+      },
+      {
+       "transition_property": "transform, background-color, color, border-color",
+       "elemente": 35
+      },
+      {
+       "transition_property": "grid-template-rows",
+       "elemente": 16
+      },
+      {
+       "transition_property": "opacity, transform",
+       "elemente": 5
+      }
+     ]
+    }
+   },
+   "reduziert": {
+    "modus": "reduziert",
+    "status": 200,
+    "dauer_ms": 12402,
+    "seitenhoehe": 28275,
+    "schritte": 68,
+    "html_klasse": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 0,
+    "mit_data_motion": 0,
+    "im_register": 0,
+    "anteil_registriert": 1,
+    "im_register_mit_vorfahr": 0,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 91,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 240,
+    "ereignisse": 0,
+    "mutationen": 1,
+    "hinweise": [],
+    "verstoesse": [],
+    "elemente": []
+   },
+   "bildfolge": {
+    "bilder": 21,
+    "ist_ms": [
+     223,
+     279,
+     378,
+     451,
+     476,
+     560,
+     655,
+     768,
+     833,
+     937,
+     1020,
+     1122,
+     1239,
+     1319,
+     1419,
+     1519,
+     1623,
+     1759,
+     1818,
+     1916,
+     2032
+    ],
+    "ordner": "cache/bewegung/t2-ad80754/bildfolge/m375/start"
+   }
+  }
+ ]
+}
