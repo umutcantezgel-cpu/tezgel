@@ -64,7 +64,8 @@
   --text-fs-6--line-height: 1.1;
   --text-fs-6--letter-spacing: -0.015em;
   --text-fs-7: clamp(2.75rem, 1.4rem + 5vw, 6.5rem);
-  --text-fs-7--line-height: 1.04;
+  /* ≥ Inhaltshöhe der Archivo (Ascender 878 + Descender 210 = 1,088 em): Zeilen der H1 berühren sich nie */
+  --text-fs-7--line-height: 1.1;
   --text-fs-7--letter-spacing: -0.015em;
 
   /* Satzspiegel */
@@ -478,13 +479,5 @@
     font-stretch: 74%;
     letter-spacing: -0.01em;
     word-spacing: 0.12em;
-  }
-}
-
-/* Widerruf-Schild der Einwilligung (E2-ORCH-10): unter lg sitzt es in der unteren Leiste; das schwebende Schild
-   erscheint dort nur auf Seiten ohne Leiste (Abläufe). Außerhalb der Ebenen, damit es die Anzeige-Utility schlägt. */
-@media (width < 64rem) {
-  body:has([data-leiste]) .widerruf-schwebend {
-    display: none;
   }
 }
