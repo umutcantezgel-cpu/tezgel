@@ -17,6 +17,8 @@
     hyphens: auto;
     text-size-adjust: 100%;
     scroll-padding-top: calc(var(--k-kopf-hoehe) + var(--spacing-k-4));
+    /* Fokus und Sprungziele nie unter der festen unteren Leiste (WCAG 2.4.11, mobil; ab lg ist die Leiste 0) */
+    scroll-padding-bottom: calc(var(--k-leiste-platz) + var(--spacing-k-4));
   }
   body {
     background-color: var(--color-k-kalk);
