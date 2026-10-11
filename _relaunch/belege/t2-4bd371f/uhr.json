@@ -1,0 +1,53 @@
+{
+  "base": "http://127.0.0.1:4335",
+  "ergebnis": [
+    {
+      "tage": 0,
+      "seite": "/termin",
+      "fehler": [],
+      "knoepfe": 67
+    },
+    {
+      "tage": 0,
+      "seite": "/kontakt",
+      "fehler": [],
+      "knoepfe": 90
+    },
+    {
+      "tage": 1,
+      "seite": "/termin",
+      "fehler": [],
+      "knoepfe": 67
+    },
+    {
+      "tage": 1,
+      "seite": "/kontakt",
+      "fehler": [],
+      "knoepfe": 90
+    },
+    {
+      "tage": 3,
+      "seite": "/termin",
+      "fehler": [],
+      "knoepfe": 67
+    },
+    {
+      "tage": 3,
+      "seite": "/kontakt",
+      "fehler": [],
+      "knoepfe": 90
+    },
+    {
+      "tage": 30,
+      "seite": "/termin",
+      "fehler": [],
+      "knoepfe": 67
+    },
+    {
+      "tage": 30,
+      "seite": "/kontakt",
+      "fehler": [],
+      "knoepfe": 90
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+ "satz": "t2-4bd371f",
+ "a": "http://127.0.0.1:4334",
+ "b": "http://127.0.0.1:4335",
+ "laeufe": 16,
+ "abweichend": 0,
+ "ergebnis": [
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 15726336
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10641750
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 23764320
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 31839360
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 1950375
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3220224
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4448160
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5930880
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 3874125
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 6184704
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9102240
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12136320
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 5119125
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "t768",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7013376
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1920",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 12627840
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 9470880
+  }
+ ]
+}
