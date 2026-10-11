@@ -23,13 +23,17 @@ Kandidat: Reinraum-Kopie mit `freischalten.sh` (nur `/`), Basis a8e049f (Bestand
 | Probeläufer frei (P3-16b, ad80754-k) | 15/15 gelöst | `../t2-bcd8fcb/probelauf/frei-ad80754/` |
 | Fünf-Sekunden-Probe (blind, mit Basis gemischt) | Kandidat 10/10 alle drei richtig, regional 10/10 (m375 5/5, d1440 5/5) · Ausgangsstand 10/10, regional 5/10 (m375 0/5) | `fuenf/` |
 | Slop `/` · Jury | weich 5 / hart 0 (Basis 16/4) · 6,9 (Bestand 4,30) – an ad80754-k; danach nur Korrekturen aus Jury, Probelauf und Gegenprüfung | `../t2-ad80754/` |
-| Gegenprüfer | Runde 1 P3-16-GEG: nein (H-1, M-1 … M-6) → umgesetzt; Runde 2: siehe `pakete/P3-16-GEG2.rueckgabe.md` | – |
+| Gegenprüfer | Runde 1 P3-16-GEG: nein (H-1, M-1 … M-6) → umgesetzt; Runde 2 P3-16-GEG2: **Freischaltung ja** (bedingt: Kandidat an HEAD + `freischalten.sh --commit`), nichts schlechter als der Bestand mit begründeten Abweichungen | – |
 
 Offene Abweichungen für spätere Tore (ABNAHME):
 - Tastatur a1/a5 +3 (E-023).
 - TBT liegt jetzt unter dem Budget, aber über dem Bestand (E-024).
+- Nur Information (E-018): CSS-Zoom-Emulation horizontal 0 → 1; die gleichwertige Zoom-Probe ist 0.
 
-Befunde für P6:
+Befunde für P4/P6:
+- P3-16-GEG2 N2-1: `content-visibility: hidden` (kern.css) setzt beim Zuklappen sofort ein; der Inhalt verschwindet, während die Höhe noch animiert. Erst nach `transitionend` setzen, dann `bewegung.mjs` (Paket P4).
+- P3-16-GEG2 N2-4: „verifiziert“ in `llms.txt` und auf den Referenzseiten (Bestand) – in deren Welle korrigieren.
+- Region am Desktop nur bei 1440 × 900 gemessen; bei geringerer Höhe erneut prüfen.
 - Leerräume zwischen Abschnitten.
 - „+“ als Auswahlzeichen.
 - Mono überdehnt.

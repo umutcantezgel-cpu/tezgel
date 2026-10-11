@@ -54,6 +54,11 @@ Start ist immer `/`. Der Probeläufer erhält **nur** den Auftrag (Spalte 2), ni
 ## 3 Matrix
 5 Aufgaben × {`m375` Touch, `d1440` Maus, `d1440` Tastatur} = 15 Läufe; mobil mit Tastatur entfällt. Laufname `a<N>-<ansicht>-<eingabe>` (z. B. `a3-d1440-tastatur`), Satz `ausgangsstand` für die Bezugswerte, später der Wellen- bzw. Phasenname. Gegenproben und Erkundungen nie im Bewertungssatz (eigener Satz, z. B. `gegenprobe`, `erkundung`).
 
+### Gegenprobe auf Bezugswegen (ab P3-16, E-023)
+Die freien Läufe streuen: Probeläufer wählen andere Wege und andere Banner-Entscheidungen. Für den Vergleich mit dem Bezugswert spielt das Tor deshalb zusätzlich die Eingaben des Ausgangsstands unverändert am Kandidaten nach (Satz `gegenprobe-<kandidat>`), je Weg mindestens einmal am Endstand. Unterschiede, die auf demselben Weg wiederkehren, gelten als Wirkung des Kandidaten.
+- Existiert ein Bedienelement des Weges im Kern unter neuem Namen (MIKROTEXTE) oder ist ein Schritt dort weder nötig noch möglich (z. B. Banner unter dem offenen Menü), wird eine Kern-Fassung desselben Weges abgelegt (`eingaben/gegenprobe-*`, mit Begründung im Feld `antwort`).
+- Die Bezugswerte in Abschnitt 7 bleiben unverändert; der freie Lauf bleibt Pflicht je Phasentor.
+
 ## 4 Zählregeln
 - Ein Schritt = eine Besucherhandlung. Lesezeit zählt nicht.
 - Tippen/Klick = 1. Liegt das Ziel außerhalb des Bildes, zählt das Werkzeug den nötigen Bildlauf dazu (1 je angefangene Bildschirmhöhe Abstand).
