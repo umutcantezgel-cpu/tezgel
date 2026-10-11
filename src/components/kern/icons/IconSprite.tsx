@@ -7,7 +7,11 @@ import { ICONS, MARKEN, symbolId, type FamilienIconName, type IconName, type Mar
 // Markenzeichen liegen in eigenen Behältern mit data-marke: sie zählen nicht zur Familie (AUFTRAG Abschnitt 7).
 
 type SpriteProps = {
-  /** Nur diese Zeichen aufnehmen (Seiten mit wenigen Icons). Ohne Angabe: der ganze Grundsatz. */
+  /**
+   * Nur diese Zeichen aufnehmen (statische Auswahl je Seite, z. B. GRUNDSATZ_NAMEN oder eine eigene Liste). Ohne Angabe: der ganze Satz.
+   * P4-04: Ein automatisches „nur benutzte Zeichen“ bräuchte Laufzeitlogik (Sammeln beim Rendern, Sprite steht vor den Instanzen);
+   * darum bleibt der ganze Satz im Kern-Layout (Budget in der Rückgabe P4-04). Doppelte Namen in zwei Sprites ergeben doppelte IDs.
+   */
   namen?: readonly IconName[];
 };
 

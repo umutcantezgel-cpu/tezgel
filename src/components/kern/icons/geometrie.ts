@@ -1,4 +1,4 @@
-// Icon-Grundsatz des Formsystems (K-010) · Paket P3-04 · Kern v1.2
+// Icon-Familie des Formsystems (K-010) · Grundsatz P3-04, Vollsatz P4-04 · Kern v1.2
 // Reine Daten ohne Importe: Sprite, Komponente, Abbildung und die Prüfdateien lesen dieselbe Geometrie.
 //
 // Regeln (K-010): 24er-Raster · Strich 1,5 · Enden square · Ecken miter · Farbe currentColor.
@@ -71,6 +71,38 @@ export const ICONS = {
   bad: { teile: [{ d: 'M3.5 12h17m-15 0v5h13v-5m-11 5v2.5m9-2.5v2.5m-9-7.5V5h4v2' }] },
   grossformat: { teile: [{ d: 'M3.5 11.5h17v9h-17Zm0-8v4m17-4v4m-17-2h17' }] },
   abdichtung: { teile: [{ d: 'M3.5 12.5v8h17v-8M9.525 6.975 12 4.5l2.475 2.475a3.5 3.5 0 1 1-4.95 0Z' }] },
+
+  // ---- Vollsatz (P4-04): nur angehängt, damit Reihenfolge und Ausgabe der Zeichen oben byte-gleich bleiben (Startseite live). ----
+  // Fachzeichen (K-010)
+  /** Dusche/Rinne: Wandarm mit Brausekopf, Wasser, Boden mit eingelassener Rinne. */
+  dusche: { teile: [{ d: 'M3.5 3.5H12v3m-4.5 0h9M9 10v3m3-3v3m3-3v3M3.5 17.5H9v3h6v-3h5.5' }] },
+  /** Untergrund: Schnitt durch den Bodenaufbau (Fliesenlage mit Fugen, Estrich, Rohdecke). */
+  untergrund: { teile: [{ d: 'M3.5 6.5h17v11h-17Zm0 3h17m-17 5h17M9 6.5v3m6-3v3' }] },
+  /** Treppe: Treppenkörper im Schnitt, vier gleiche Stufen. */
+  treppe: { teile: [{ d: 'M4 20v-4h4v-4h4V8h4V4h4v16Z' }] },
+  /** Balkon: Wand, auskragende Platte, Geländer mit Stäben (Ansicht von der Seite). */
+  balkon: { teile: [{ d: 'M3.5 3.5v17m0-6h17v3h-17m17-3v-6h-17m4 0v6m4.5-6v6m4.5-6v6' }] },
+  /** Naturstein: Platte mit Maserung. */
+  naturstein: {
+    teile: [{ d: 'M3.5 3.5h17v17h-17Z' }, { d: 'M3.5 15.5c5 0 6-6 10-6 3 0 4 2 7 2' }, { d: 'M10.5 12.5c1 2.5 3 4.5 6 5' }],
+    schraege: 'Maserung als freie Kurve (nur so von Fliese und Feld unterscheidbar)',
+  },
+  /** Reparatur: Fliesenfeld 2 × 2, eine Fliese zum Tausch herausgehoben. */
+  reparatur: { teile: [{ d: 'M3.5 6.5h7v7h7v7h-14Zm0 7h7v7' }, { d: 'M13.5 3.5h7v7h-7Z' }] },
+  /** Fußbodenheizung: Belag oben, Heizrohr als Schlange mit Bögen darunter. */
+  fussbodenheizung: { teile: [{ d: 'M3.5 4.5h17m-17 5H18a2.5 2.5 0 0 1 0 5H6a2.5 2.5 0 0 0 0 5h14.5' }] },
+  /** Aufmaß: Maßstab mit Teilung (offene Frage 2 aus P3-04). */
+  aufmass: { teile: [{ d: 'M3.5 8.5h17v7h-17Zm2.5 0v3m3-3v2m3-2v3m3-3v2m3-2v3' }] },
+  // Grundzeichen, die der Bestand mit Aufgabe nutzt
+  /** Externer Link: Rahmen mit offener Ecke, Pfeil nach außen. */
+  extern: {
+    teile: [{ d: 'M10 3.5H3.5v17h17V14M14 3.5h6.5V10m-1-5.5-8 8' }],
+    schraege: 'Pfeil nach außen unter 45° (Spitze als rechter Winkel)',
+  },
+  /** Dokument: Blatt mit Zeilen (Downloads, Protokolle, Angebote). */
+  dokument: { teile: [{ d: 'M5.5 3.5h13v17h-13Zm3 4.5h7m-7 4h7m-7 4h4' }] },
+  /** Schloss: Anmeldung und geschützte Bereiche. */
+  schloss: { teile: [{ d: 'M5.5 10h13v10h-13ZM8 10V8a4 4 0 0 1 8 0v2m-4 3.5v3' }] },
 } as const satisfies Record<string, IconZeichnung>;
 
 // Markenzeichen: nicht Teil der Familie (AUFTRAG Abschnitt 7, K-010). Offizielle Form unverändert, einfarbig currentColor.
@@ -90,6 +122,12 @@ export type DrehbarerIconName = { [K in FamilienIconName]: (typeof ICONS)[K] ext
 export const FAMILIEN_NAMEN = Object.keys(ICONS) as FamilienIconName[];
 export const MARKEN_NAMEN = Object.keys(MARKEN) as MarkenIconName[];
 export const ICON_NAMEN: readonly IconName[] = [...FAMILIEN_NAMEN, ...MARKEN_NAMEN];
+
+/** Mit dem Vollsatz P4-04 ergänzte Zeichen. Grundsatz P3-04 = die übrigen Familiennamen. Für statische Auswahl (`IconSprite namen`). */
+export const VOLLSATZ_NAMEN = [
+  'dusche', 'untergrund', 'treppe', 'balkon', 'naturstein', 'reparatur', 'fussbodenheizung', 'aufmass', 'extern', 'dokument', 'schloss',
+] as const satisfies readonly FamilienIconName[];
+export const GRUNDSATZ_NAMEN = FAMILIEN_NAMEN.filter((n) => !(VOLLSATZ_NAMEN as readonly string[]).includes(n));
 
 /** Sprite-ID eines Symbols. Präfix k-icon- hält den Namensraum frei von anderen IDs. */
 export const symbolId = (name: IconName) => `k-icon-${name}`;
