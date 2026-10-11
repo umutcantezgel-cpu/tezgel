@@ -1,7 +1,7 @@
 // Funktionstests F-13 (Navigation), F-14 (FAQ), F-16 (Blog-Werkzeuge), F-17 (404), F-18 (Login), F-19 (Bewertungs-Karussell).
 // Prüft Verhalten (Zustand, Ziel, Status, Fehlermeldung, Fokus), nicht Aussehen. Keine Wartezeiten, nur Zustandsabfragen.
 // Kein Test gegen die echte Route nötig: keines dieser Elemente sendet an /api/anfrage (Login wird clientseitig abgewiesen).
-import { test, expect, bedienbar, KERN_SEITEN, istKern } from './fixtures.mjs';
+import { test, expect, bedienbar, istKern, oeffne, sprunglink } from './fixtures.mjs';
 
 const ARTIKEL = '/blog/fliesen-reinigen-pflegen';
 
@@ -30,6 +30,10 @@ const hauptnav = (page) => page.getByRole('navigation', { name: 'Hauptnavigation
 // (Bestand: aria-hidden, Kern: Popover mit display:none).
 const drawer = (page) => page.getByRole('dialog', { name: 'Hauptnavigation' });
 const menueSchalter = (page) => page.getByRole('button', { name: /^Architektur-Menü (öffnen|schließen)$/ });
+// Derselbe Schalter auch verborgen (Kern ab xl: display:none) – als Wartebedingung für oeffne in beiden Fassungen.
+const menueSchalterImDom = (page) => page.getByRole('button', { name: /^Architektur-Menü (öffnen|schließen)$/, includeHidden: true });
+// Schalter des Untermenüs „Badsanierung“ in der Hauptnavigation (Desktop).
+const untermenue = (page) => hauptnav(page).getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
 // Ein Klick vor der Hydrierung bleibt wirkungslos (Ausgangsstand, siehe PLAN V-06). Verhalten prüfen: Öffnen gelingt.
 async function oeffneMenue(page) {
   const schalter = menueSchalter(page);
@@ -58,7 +62,7 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
 
   for (const pfad of KOPF_SEITEN) {
     test(`${pfad}: Hover öffnet das Untermenü, Escape schließt es`, async ({ page }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, untermenue(page));
       const nav = hauptnav(page);
       const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
       const punkt = nav.getByRole('link', { name: /^Badsanierung komplett/ });
@@ -74,7 +78,7 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
     });
 
     test(`${pfad}: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter`, async ({ page }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, untermenue(page));
       const nav = hauptnav(page);
       const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
       await schalter.focus();
@@ -89,7 +93,7 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
     // N-4: „schließt“ wird vor dem Seitenwechsel geprüft (Kern → Bestand lädt neu) bzw. am selben Kopf (Bestand → Bestand).
     test(`${pfad}: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü`, async ({ page }) => {
       await merkeMenueBeimVerlassen(page);
-      await page.goto(pfad);
+      await oeffne(page, pfad, hauptnav(page).getByRole('link', { name: 'Badsanierung', exact: true }));
       const nav = hauptnav(page);
       await (await bedienbar(nav.getByRole('link', { name: 'Badsanierung', exact: true }))).hover();
       await expect(nav.getByRole('link', { name: /^Badsanierung komplett/ })).toBeVisible();
@@ -118,7 +122,7 @@ async function zumDrawer(page, pfad, isMobile) {
 test.describe('Mobilmenü (Drawer)', () => {
   for (const pfad of KOPF_SEITEN) {
     test(`${pfad}: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)`, async ({ page, isMobile }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, menueSchalterImDom(page));
       if (isMobile) {
         await expect(hauptnav(page)).toBeHidden();
         await expect(menueSchalter(page)).toBeVisible();
@@ -132,7 +136,7 @@ test.describe('Mobilmenü (Drawer)', () => {
     });
 
     test(`${pfad}: Schalter öffnet das Menü, Escape schließt es`, async ({ page, isMobile }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, menueSchalterImDom(page));
       await zumDrawer(page, pfad, isMobile);
       const schalter = menueSchalter(page);
       await expect(schalter).toHaveAttribute('aria-expanded', 'false');
@@ -147,7 +151,7 @@ test.describe('Mobilmenü (Drawer)', () => {
     // N-4: „Menü schließt“ vor dem Seitenwechsel (Kern → Bestand lädt neu) bzw. am selben Kopf (Bestand → Bestand).
     test(`${pfad}: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt`, async ({ page, isMobile }) => {
       await merkeMenueBeimVerlassen(page);
-      await page.goto(pfad);
+      await oeffne(page, pfad, menueSchalterImDom(page));
       await zumDrawer(page, pfad, isMobile);
       await oeffneMenue(page);
       const dialog = drawer(page);
@@ -179,6 +183,7 @@ test.describe('Menü vor der Hydrierung (V-06)', () => {
 
   test('Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)', async ({ page, isMobile }) => {
     test.skip(!istKern('/'), 'nur Kern-Kopf (KERN_SEITEN): der Bestand öffnet das Menü erst nach der Hydrierung (V-06, Ausgangsstand)');
+    // Ausnahme von oeffne (P4-06): Prüfung des Zustands vor dem Hydrieren – ohne JavaScript wird nie hydriert.
     await page.goto('/');
     // Die Liste sagt Kern: dann muss auch der Kern-Kopf ausgeliefert sein (sonst rot statt übersprungen).
     await expect(page.locator('header[data-kopf="b"]')).toHaveCount(1);
@@ -201,7 +206,7 @@ test.describe('Menü vor der Hydrierung (V-06)', () => {
 test.describe('Sprunglink', () => {
   // Beide Fassungen: Bestand (/leistungen) und Kern (/).
   for (const pfad of ['/leistungen', '/']) test(`${pfad}: erster Tabstopp, führt zu #main-content`, async ({ page }) => {
-    await page.goto(pfad);
+    await oeffne(page, pfad, sprunglink(page));
     await page.keyboard.press('Tab');
     const sprung = page.getByRole('link', { name: 'Zum Hauptinhalt springen', exact: true });
     await expect(sprung).toBeFocused();
@@ -217,8 +222,8 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
   const antwort = 'Wir verwenden ausschließlich flexible C2-TE-S1/S2 Fliesenkleber';
 
   test('Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)', async ({ page }) => {
-    await page.goto('/faq');
     const knopf = page.getByRole('button', { name: frage });
+    await oeffne(page, '/faq', knopf);
     await expect(knopf).toHaveAttribute('aria-expanded', 'false');
     await expect(page.getByText(antwort)).toHaveCount(0);
     await knopf.click();
@@ -230,8 +235,8 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
   });
 
   test('Kategorie wechseln zeigt nur deren Fragen', async ({ page }) => {
-    await page.goto('/faq');
     const bad = page.getByRole('button', { name: 'Bad & Walk-In-Dusche', exact: true });
+    await oeffne(page, '/faq', bad);
     await expect(page.getByRole('button', { name: frage })).toBeVisible();
     await bad.click();
     await expect(bad).toHaveAttribute('aria-pressed', 'true');
@@ -240,8 +245,8 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
   });
 
   test('Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung', async ({ page }) => {
-    await page.goto('/faq');
     const suche = page.getByLabel('Frage oder Stichwort suchen', { exact: true });
+    await oeffne(page, '/faq', suche);
     // Stichwort steht nur in den Antworten zweier Fragen (Pflegekasse).
     await suche.fill('Pflegekasse');
     await expect(page.getByRole('button', { name: /Gibt es Zuschüsse für barrierefreie Bäder/ })).toBeVisible();
@@ -253,8 +258,8 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
 
   test('Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus', async ({ page }) => {
     const frageStart = 'Wie garantieren Sie den Staubschutz bei bewohnten Sanierungen?';
-    await page.goto('/');
     const knopf = akkordeonKnopf(page, '/', frageStart);
+    await oeffne(page, '/', knopf);
     const bereich = akkordeonAntwort(page, '/', frageStart);
     await expect(knopf).toBeVisible();
     await expect.poll(() => istOffen('/', knopf)).toBe(false);
@@ -269,8 +274,9 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
 });
 
 test.describe('404', () => {
+  const zurStartseite = (page) => page.getByRole('link', { name: 'Zur Startseite', exact: true });
   test('unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück', async ({ page }) => {
-    const antwort = await page.goto('/gibt-es-nicht');
+    const antwort = await oeffne(page, '/gibt-es-nicht', zurStartseite(page));
     expect(antwort.status()).toBe(404);
     await expect(page.getByRole('heading', { name: 'Seite nicht gefunden' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Zur Startseite', exact: true })).toHaveAttribute('href', '/');
@@ -278,22 +284,23 @@ test.describe('404', () => {
   });
 
   test('Link „Zur Startseite“ führt zurück zur Startseite', async ({ page }) => {
-    await page.goto('/gibt-es-nicht');
+    await oeffne(page, '/gibt-es-nicht', zurStartseite(page));
     await page.getByRole('link', { name: 'Zur Startseite', exact: true }).click();
     await expect.poll(() => new URL(page.url()).pathname).toBe('/');
     await expect(page.getByRole('heading', { name: 'Seite nicht gefunden' })).toHaveCount(0);
   });
 
   test('unbekannter Ratgeber-Artikel liefert ebenfalls Status 404', async ({ page }) => {
-    const antwort = await page.goto('/blog/gibt-es-nicht');
+    const antwort = await oeffne(page, '/blog/gibt-es-nicht', zurStartseite(page));
     expect(antwort.status()).toBe(404);
     await expect(page.getByRole('heading', { name: 'Seite nicht gefunden' })).toBeVisible();
   });
 });
 
 test.describe('Login (deaktiviert)', () => {
+  const anmelden = (page) => page.getByRole('button', { name: 'Anmelden', exact: true });
   test('leere Pflichtfelder: Anmeldung wird nicht ausgelöst', async ({ page }) => {
-    await page.goto('/login');
+    await oeffne(page, '/login', anmelden(page));
     await page.getByRole('button', { name: 'Anmelden', exact: true }).click();
     const benutzer = page.getByLabel('Benutzername', { exact: true });
     expect(await benutzer.evaluate((el) => !el.checkValidity())).toBe(true);
@@ -305,7 +312,7 @@ test.describe('Login (deaktiviert)', () => {
   test('falsche Daten: Meldung, Passwort wird geleert, kein Absturz', async ({ page }) => {
     const fehler = [];
     page.on('pageerror', (e) => fehler.push(String(e)));
-    await page.goto('/login');
+    await oeffne(page, '/login', anmelden(page));
     await page.getByLabel('Benutzername', { exact: true }).fill('pruefer');
     await page.getByLabel('Passwort', { exact: true }).fill('geheim-123');
     await page.getByRole('button', { name: 'Anmelden', exact: true }).click();
@@ -325,7 +332,7 @@ test.describe('Bewertungs-Karussell (/)', () => {
   const spur = (page) => weiter(page).locator('xpath=../../following-sibling::div[1]');
 
   test('am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei', async ({ page }) => {
-    await page.goto('/');
+    await oeffne(page, '/', weiter(page));
     await expect(zurueck(page)).toBeDisabled();
     await expect(weiter(page)).toBeEnabled();
     // Startposition: mobil rastet die Spur bei 4 px ein, nicht bei 0 px.
@@ -333,7 +340,7 @@ test.describe('Bewertungs-Karussell (/)', () => {
   });
 
   test('„Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang', async ({ page }) => {
-    await page.goto('/');
+    await oeffne(page, '/', weiter(page));
     const position = () => spur(page).evaluate((el) => el.scrollLeft);
     await weiter(page).click();
     await expect(zurueck(page)).toBeEnabled();
@@ -350,7 +357,7 @@ test.describe('Bewertungs-Karussell (/)', () => {
   });
 
   test('Tastatur: „Nächste“ mit Enter blättert vor', async ({ page }) => {
-    await page.goto('/');
+    await oeffne(page, '/', weiter(page));
     await weiter(page).focus();
     await page.keyboard.press('Enter');
     await expect.poll(() => spur(page).evaluate((el) => el.scrollLeft)).toBeGreaterThan(0);
@@ -358,13 +365,15 @@ test.describe('Bewertungs-Karussell (/)', () => {
   });
 });
 
+// F-16: Die Selektoren greifen in Kern und Bestand ohne Zweig nach Fassung (Rückgabe P4-08d, Abschnitt 3); das Suchfeld
+// ist je Ansicht genau einmal im Barrierebaum. Bedienung erst nach der Hydrierung (oeffne, P4-08d RISIKEN).
 test.describe('Blog-Übersicht (/blog)', () => {
   const suche = (page) => page.getByRole('textbox', { name: /Ratgeber durchsuchen|Artikel suchen/ });
   const karten = (page) => page.locator('h3 a[href^="/blog/"]');
   const alleKnopf = (page) => page.getByRole('button', { name: /^Alle (Themen|Artikel)$/ });
 
   test('Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her', async ({ page }) => {
-    await page.goto('/blog');
+    await oeffne(page, '/blog', suche(page));
     await expect(karten(page).first()).toBeVisible();
     const gesamt = await karten(page).count();
     await suche(page).fill('Feinsteinzeug');
@@ -379,7 +388,7 @@ test.describe('Blog-Übersicht (/blog)', () => {
   });
 
   test('Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück', async ({ page }) => {
-    await page.goto('/blog');
+    await oeffne(page, '/blog', alleKnopf(page));
     await expect(karten(page).first()).toBeVisible();
     const gesamt = await karten(page).count();
     const kategorie = page.getByRole('button', { name: 'Pflege & Werterhalt', exact: true });
@@ -395,9 +404,9 @@ test.describe('Blog-Übersicht (/blog)', () => {
 
 test.describe('Blog-Artikel (/blog/fliesen-reinigen-pflegen)', () => {
   test('Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt', async ({ page }) => {
-    await page.goto(ARTIKEL);
-    const artikelUrl = page.url();
     const teilen = page.getByRole('button', { name: 'Teilen', exact: true });
+    await oeffne(page, ARTIKEL, teilen);
+    const artikelUrl = page.url();
     await expect(teilen).toHaveAttribute('aria-expanded', 'false');
     await teilen.click();
     await expect(teilen).toHaveAttribute('aria-expanded', 'true');
@@ -423,8 +432,8 @@ test.describe('Blog-Artikel (/blog/fliesen-reinigen-pflegen)', () => {
 
   test('Inhaltsverzeichnis: Klick springt zur Überschrift', async ({ page, isMobile }) => {
     test.skip(isMobile, 'Inhaltsverzeichnis ist mobil ausgeblendet (hidden lg:block)');
-    await page.goto(ARTIKEL);
     const verzeichnis = page.getByRole('navigation', { name: 'Inhaltsverzeichnis', exact: true });
+    await oeffne(page, ARTIKEL, verzeichnis.getByRole('link').first());
     const ziel = page.getByRole('heading', { name: 'Silikonfugen als Wartungsfugen im Blick behalten', exact: true });
     await expect(ziel).not.toBeInViewport();
     await verzeichnis.getByRole('link', { name: 'Silikonfugen als Wartungsfugen im Blick behalten', exact: true }).click();

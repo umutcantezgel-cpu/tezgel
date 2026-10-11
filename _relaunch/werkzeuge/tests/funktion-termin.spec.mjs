@@ -3,7 +3,7 @@
 // Der Kalender zeigt Tage ab morgen (relativ zu heute): Datum und Slot werden aus der Auswahl gelesen, nicht fest vorgegeben.
 // Bekannter Ausgangsfehler (Datum/Uhrzeit des Kalenders erreichen die Mail nicht): hier nicht als Soll festgeschrieben,
 // geprüft wird nur, was der Client sendet, und welcher Zustand folgt.
-import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar, oeffne, istKern } from './fixtures.mjs';
 
 const ORTE_KALENDER = [
   { ort: '/termin', url: '/termin', serviceType: 'Kostenfreies Vor-Ort-Aufmaß & Beratung' },
@@ -31,9 +31,18 @@ const submitsGezaehlt = (page) => page.evaluate(() => window.__terminSubmits ?? 
 // ---------- F-07 BookingCalendar ----------
 const kalenderFormular = (page) => page.locator('form').filter({ has: page.locator('#booking-consent') });
 
+// Fassung je Seite (Lehre 10, P4-06): KERN_SEITEN (fixtures.mjs), nie das DOM. Weg zum Slot nach Fassung (P4-05c):
+// Bestand = Slot-Knopf „15:00 Uhr“ des Tages (n-ter Knopf mit dem Namen); Kern = erst der Tag-Knopf („Di, 13.10.2026“,
+// über den Namen gesucht, nicht über aria-pressed), dann das Radio der Uhrzeit. Texte, Felder und Nutzlast sind gleich.
+const tagKnopf = (page, tagIndex) => page.getByRole('button', { name: /^\w{2}, \d{2}\.\d{2}\.\d{4}/ }).nth(tagIndex);
+const ersterSchritt = (page, ort, uhrzeit = '15:00', tagIndex = 1) =>
+  istKern(ort) ? tagKnopf(page, tagIndex) : page.getByRole('button', { name: `${uhrzeit} Uhr`, exact: true }).nth(tagIndex);
+const oeffneKalender = (page, ort) => oeffne(page, ort, ersterSchritt(page, ort));
+
 // Wählt Slot (zweiter Tag, damit das Datum nicht zufällig der erste Tag ist) und liefert Datum/Slot aus der Schritt-2-Überschrift.
-async function kalenderZuKontaktdaten(page, uhrzeit = '15:00', tagIndex = 1) {
-  await (await bedienbar(page.getByRole('button', { name: `${uhrzeit} Uhr`, exact: true }).nth(tagIndex))).click();
+async function kalenderZuKontaktdaten(page, ort, uhrzeit = '15:00', tagIndex = 1) {
+  await (await bedienbar(ersterSchritt(page, ort, uhrzeit, tagIndex))).click();
+  if (istKern(ort)) await page.getByRole('radio', { name: `${uhrzeit} Uhr`, exact: true }).click();
   const kopf = page.getByText(/Schritt 2: Kontaktdaten für \d{2}\.\d{2}\.\d{4} um \d{2}:\d{2} Uhr/);
   await expect(kopf).toBeVisible();
   const m = (await kopf.textContent()).match(/(\d{2})\.(\d{2})\.(\d{4}) um (\d{2}:\d{2}) Uhr/);
@@ -43,8 +52,8 @@ async function kalenderZuKontaktdaten(page, uhrzeit = '15:00', tagIndex = 1) {
 for (const { ort, url, serviceType } of ORTE_KALENDER) {
   test.describe(`BookingCalendar (F-07) auf ${ort}`, () => {
     test('ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage', async ({ page, anfragen }) => {
-      await page.goto(url);
-      await kalenderZuKontaktdaten(page);
+      await oeffneKalender(page, url);
+      await kalenderZuKontaktdaten(page, url);
       const formular = kalenderFormular(page);
       await sammleSubmits(formular);
       await formular.getByRole('button', { name: /Vor-Ort-Termin anfragen/ }).click();
@@ -55,8 +64,8 @@ for (const { ort, url, serviceType } of ORTE_KALENDER) {
     });
 
     test('nur Leerzeichen als Name: Fehlermeldung, keine Anfrage', async ({ page, anfragen }) => {
-      await page.goto(url);
-      await kalenderZuKontaktdaten(page);
+      await oeffneKalender(page, url);
+      await kalenderZuKontaktdaten(page, url);
       await page.getByPlaceholder('Vor- und Nachname').fill('   ');
       await page.getByPlaceholder('0172 / 1234567').fill('0170 0000000');
       await page.locator('#booking-consent').check();
@@ -66,8 +75,8 @@ for (const { ort, url, serviceType } of ORTE_KALENDER) {
     });
 
     test('ohne Einwilligung: Anfrage wird blockiert, keine Anfrage', async ({ page, anfragen }) => {
-      await page.goto(url);
-      await kalenderZuKontaktdaten(page);
+      await oeffneKalender(page, url);
+      await kalenderZuKontaktdaten(page, url);
       await page.getByPlaceholder('Vor- und Nachname').fill('Prüf Person');
       await page.getByPlaceholder('0172 / 1234567').fill('0170 0000000');
       const formular = kalenderFormular(page);
@@ -79,8 +88,8 @@ for (const { ort, url, serviceType } of ORTE_KALENDER) {
     });
 
     test('gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz', async ({ page, anfragen }) => {
-      await page.goto(url);
-      const { iso, anzeige, zeit } = await kalenderZuKontaktdaten(page);
+      await oeffneKalender(page, url);
+      const { iso, anzeige, zeit } = await kalenderZuKontaktdaten(page, url);
       await page.getByPlaceholder('Vor- und Nachname').fill('Prüf Person');
       await page.getByPlaceholder('0172 / 1234567').fill('0170 0000000');
       await page.locator('#booking-consent').check();
@@ -109,9 +118,11 @@ for (const { ort, url, serviceType } of ORTE_KALENDER) {
 // ---------- F-08 Termin-Formular ----------
 const termin = (page) => page.locator('form').filter({ has: page.locator('#termin-name') });
 
+// F-08: in beiden Fassungen gleich (P4-05c), kein Zweig nach Fassung.
 async function zumTerminFormular(page) {
-  await page.goto('/termin');
-  await page.getByRole('button', { name: /Individuelles Formular/ }).click();
+  const umschalter = page.getByRole('button', { name: /Individuelles Formular/ });
+  await oeffne(page, '/termin', umschalter);
+  await umschalter.click();
   await expect(page.locator('#termin-name')).toBeVisible();
 }
 

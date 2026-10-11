@@ -7,7 +7,7 @@
 // („Anfrage senden“ nur Kern, MIKROTEXTE Z. 26; Bestand „Anfrage verbindlich absenden“). Die Hilfen unten wählen den Weg
 // nach der Fassung der Seite (Liste KERN_SEITEN, P3-14e); die Erwartungen bleiben gleich.
 // Bedienung erst nach der Hydrierung (bedienbar).
-import { test, expect, bedienbar, warteBotSchwelle, istEchteReferenz, KERN_SEITEN, istKern } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, oeffne, istKern } from './fixtures.mjs';
 
 // Fassung je Seite (P3-14e, M-4): Welche Seiten des Ziels Kern sind, steht in dieser Liste – nie im DOM oder Laufzeitverhalten.
 // Rolle einer Auswahl nach Fassung: Kern = Radio, Bestand = Knopf.
@@ -42,10 +42,7 @@ const absenden = (page, seite) =>
 const whatsappDirekt = (page) => page.getByRole('button', { name: 'Direkt per WhatsApp', exact: true });
 
 // Seite öffnen und warten, bis der Funnel hydriert ist (erster Schritt-Knopf ist bedienbar).
-async function bereit(page, pfad) {
-  await page.goto(pfad);
-  await bedienbar(weiterZu(page, 2));
-}
+const bereit = (page, pfad) => oeffne(page, pfad, weiterZu(page, 2));
 
 // Jeder Schrittwechsel wird abgewartet (Überschrift des neuen Schritts sichtbar), bevor der nächste Knopf gedrückt wird.
 async function zuSchritt3(page) {

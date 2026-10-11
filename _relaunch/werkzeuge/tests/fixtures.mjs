@@ -33,6 +33,19 @@ export async function bedienbar(locator) {
   await expect.poll(() => locator.first().evaluate((el) => Object.keys(el).some((k) => k.startsWith('__reactProps$'))), { timeout: 15_000 }).toBe(true);
   return locator;
 }
+// Seitenaufruf mit Wartebedingung (P4-06, LERNEN 11.10. „Klicks vor dem Hydrieren“): Nach jedem page.goto erst bedienen,
+// wenn React das erste Bedienelement übernommen hat. `erstesBedienelement` ist ein Locator oder (page) => Locator; ohne
+// Element bricht der Aufruf ab (die Wartebedingung ist Pflicht). Liefert die Antwort von page.goto (z. B. Status 404).
+// Ausnahme nur für Prüfungen des Zustands vor dem Hydrieren (ohne JavaScript): dort page.goto mit Kommentar.
+export async function oeffne(page, pfad, erstesBedienelement) {
+  if (!erstesBedienelement) throw new Error(`oeffne(${pfad}): erstes Bedienelement fehlt`);
+  const antwort = await page.goto(pfad);
+  await bedienbar(typeof erstesBedienelement === 'function' ? erstesBedienelement(page) : erstesBedienelement);
+  return antwort;
+}
+// Erstes Bedienelement jeder Seite in beiden Fassungen (Bestand SkipNav, Kern Sprunglink): für Seiten, deren eigentliche
+// Bedienelemente erst später eingehängt werden (Banner, Karte im Blick) oder die nur gelesen werden (Links, Status).
+export const sprunglink = (page) => page.getByRole('link', { name: 'Zum Hauptinhalt springen', exact: true });
 export const warteBotSchwelle = (page) => page.waitForTimeout(1700);
 export const istEchteReferenz = (id) => /^TEZ-\d{2}-[A-Z0-9]{4,}$/.test(id) && !/IGN/.test(id);
 

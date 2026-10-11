@@ -2,7 +2,7 @@
 // Kernaufgabe: Pflichtfelder und Einwilligung blockieren den Versand; gültige Angaben senden POST /api/anfrage
 // mit inquiryType „general“ und der Quelle der Seite und zeigen Erfolg mit Referenz; gefülltes Honeypot-Feld → kein Versand im Client.
 // Geprüft wird Verhalten (Nutzlast, Zustand), nicht Aussehen. Altverhalten = Ausgangsstand 5a7a7b0.
-import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar, oeffne } from './fixtures.mjs';
 
 const ORTE = [
   { seite: '/standorte/wetzlar', quelle: 'standort-wetzlar' },
@@ -21,6 +21,8 @@ const notizen = (page) => formular(page).locator('textarea');
 const einwilligung = (page) => formular(page).getByRole('checkbox');
 const absenden = (page) => formular(page).locator('button[type="submit"]');
 const erfolg = (page) => page.getByText('Anfrage erfolgreich übermittelt');
+// Seite öffnen und erst bedienen, wenn React das Formular übernommen hat (Namensfeld; P4-06).
+const oeffneSeite = (page, seite) => oeffne(page, seite, name(page));
 
 // Blockiert = Pflichtfeld ungültig (native Prüfung) oder eigene Validierungsmeldung da; beides gilt als „blockiert“.
 async function warteAufBlockade(page, feld) {
@@ -36,7 +38,7 @@ async function warteAufBlockade(page, feld) {
 for (const { seite, quelle } of ORTE) {
   test.describe(`LeadQuickForm (${seite})`, () => {
     test('Name und Telefon leer: Versand blockiert, keine Anfrage', async ({ page, anfragen }) => {
-      await page.goto(seite);
+      await oeffneSeite(page, seite);
       await einwilligung(page).check();
       await absenden(page).click();
       await warteAufBlockade(page, name(page));
@@ -44,7 +46,7 @@ for (const { seite, quelle } of ORTE) {
     });
 
     test('Einwilligung fehlt: Versand blockiert, keine Anfrage', async ({ page, anfragen }) => {
-      await page.goto(seite);
+      await oeffneSeite(page, seite);
       await name(page).fill('Prüf Person');
       await telefon(page).fill('0170 0000000');
       await absenden(page).click();
@@ -53,7 +55,7 @@ for (const { seite, quelle } of ORTE) {
     });
 
     test('Name nur aus Leerzeichen: eigene Meldung, keine Anfrage', async ({ page, anfragen }) => {
-      await page.goto(seite);
+      await oeffneSeite(page, seite);
       await name(page).fill('   ');
       await telefon(page).fill('0170 0000000');
       await einwilligung(page).check();
@@ -63,7 +65,7 @@ for (const { seite, quelle } of ORTE) {
     });
 
     test('vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)', async ({ page, anfragen }) => {
-      await page.goto(seite);
+      await oeffneSeite(page, seite);
       await name(page).fill('Prüf Person');
       await telefon(page).fill('0170 0000000');
       await email(page).fill('pruef@example.de');
@@ -87,7 +89,7 @@ for (const { seite, quelle } of ORTE) {
     });
 
     test('Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus', async ({ page, anfragen }) => {
-      await page.goto(seite);
+      await oeffneSeite(page, seite);
       // Ein Bot füllt verborgene Felder über das DOM aus (kein Fokus nötig); React erhält das Input-Ereignis.
       await bedienbar(honeypot(page));
       await honeypot(page).evaluate((el) => {
@@ -107,7 +109,7 @@ for (const { seite, quelle } of ORTE) {
 
 test.describe('LeadQuickForm (/standorte/wetzlar) · Sonderfälle', () => {
   test('nur Pflichtfelder: optionale Angaben fehlen in der Nutzlast, Erfolg mit Referenz', async ({ page, anfragen }) => {
-    await page.goto('/standorte/wetzlar');
+    await oeffneSeite(page, '/standorte/wetzlar');
     await name(page).fill('Prüf Person');
     await telefon(page).fill('0170 0000000');
     await einwilligung(page).check();
@@ -127,7 +129,7 @@ test.describe('LeadQuickForm (/standorte/wetzlar) · Sonderfälle', () => {
   test.describe('echte Route (Mock-Modus ohne Resend-Schlüssel)', () => {
     test.use({ echteRoute: true });
     test('Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page, anfragen }) => {
-      await page.goto('/standorte/wetzlar');
+      await oeffneSeite(page, '/standorte/wetzlar');
       await warteBotSchwelle(page);
       await name(page).fill(`Prüf ${Date.now() % 100000}`);
       await telefon(page).fill(`0170 ${String(Date.now()).slice(-7)}`);

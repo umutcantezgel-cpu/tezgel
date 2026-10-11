@@ -3,9 +3,14 @@
 // Versand POST /api/anfrage mit inquiryType „fliesen“ und fliesenDetails. Geprüft wird Verhalten, nicht Aussehen.
 // Richtwert-Tabelle: aus dem Code berechnet (calculateArea + fmt, Ausgangsstand 5a7a7b0).
 // Verschnitt: Kreuzfuge / Halb-Drittelverband / Wilder Verband 5–10 %, Diagonal / Fischgrät 10–15 %, Noch offen 5–15 %.
-import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, oeffne, istKern } from './fixtures.mjs';
 
 const SEITE = '/fliesen/konfigurator';
+// Fassung je Seite (Lehre 10, P4-06): KERN_SEITEN (fixtures.mjs), nie das DOM. Kern (P4-05b): Bereiche und Untergrund sind
+// Ankreuzfelder, Einfachauswahlen (Format, Material, Verlegemuster, Bauart) Radios; „Weiter“ ist per aria-disabled gesperrt
+// (toBeDisabled/toBeEnabled werten aria-disabled aus, per Probe P4-06 mit Playwright 1.56.1 bestätigt). Bestand: Knöpfe mit aria-pressed.
+// Knopfnamen, Labels, Legenden, Live-Bereich und Nutzlast sind in beiden Fassungen gleich.
+const KERN = istKern(SEITE);
 
 // Rechner-Pflicht: 12 Eingabekombinationen (Fläche, Verlegemuster) mit erwartetem Richtwert = heutiges Verhalten.
 const RICHTWERT = [
@@ -26,20 +31,22 @@ const RICHTWERT = [
 // Bedienelemente über Rollen, Namen und Labels; Gruppen über ihre Legende.
 const schritt = (page, n) => page.getByText(`Schritt ${n} von 4`, { exact: true });
 const weiter = (page, n) => page.getByRole('button', { name: `Weiter zu Schritt ${n}`, exact: true });
-const raum = (page, anfang) => page.getByRole('button', { name: new RegExp(`^${anfang}`) });
+const raum = (page, anfang) => page.getByRole(KERN ? 'checkbox' : 'button', { name: new RegExp(`^${anfang}`) });
+const untergrund = (page, name) => page.getByRole(KERN ? 'checkbox' : 'button', { name, exact: true });
+// Einfachauswahl: Kern-Radio bzw. Bestands-Knopf (gleicher Name).
+const einfach = (bereich, name, exact = false) => bereich.getByRole(KERN ? 'radio' : 'button', { name, exact });
 const gruppe = (page, legende) => page.getByRole('group', { name: legende, exact: true });
+// Gewählt: Kern über checked, Bestand über aria-pressed (dieselbe Aussage). Aufruf: gewaehlt(expect(locator)).
+const gewaehlt = (erwartung) => (KERN ? erwartung.toBeChecked() : erwartung.toHaveAttribute('aria-pressed', 'true'));
 // Live-Vorschau des Materialbedarfs (oben im Konfigurator, aria-live)
 const vorschau = (page) => page.locator('[aria-live="polite"]').filter({ hasText: 'Materialbedarf inkl. Verschnitt' });
 const onlineSenden = (page) => page.getByRole('button', { name: /Online absenden/ });
-// Seite öffnen und erst bedienen, wenn React die Bereichsknöpfe übernommen hat (T2 35c0883: unter Last gingen Klicks
-// vor dem Hydrieren verloren; Zustand statt Wartezeit wie in den übrigen Specs).
-async function oeffnen(page) {
-  await page.goto(SEITE);
-  await bedienbar(raum(page, 'Küche'));
-}
+// Seite öffnen und erst bedienen, wenn React die Bereichsauswahl übernommen hat (T2 35c0883: unter Last gingen Klicks
+// vor dem Hydrieren verloren). Gemeinsame Hilfe `oeffne` aus fixtures.mjs (P4-06).
+const oeffneSeite = (page) => oeffne(page, SEITE, raum(page, 'Küche'));
 
 async function zuSchritt3(page, raumAnfang) {
-  await oeffnen(page);
+  await oeffneSeite(page);
   await raum(page, raumAnfang).click();
   await weiter(page, 2).click();
   await expect(schritt(page, 2)).toBeVisible();
@@ -58,17 +65,17 @@ async function kontaktAusfuellen(page, { mitEinwilligung = true } = {}) {
 
 // Gutfall-Kette: Küche + Flur, Zementestrich, Großformat, Feinsteinzeug, Kreuzfuge, 24,5 m² → Schritt 4.
 async function bisSchritt4Gutfall(page) {
-  await oeffnen(page);
+  await oeffneSeite(page);
   await raum(page, 'Küche').click();
   await raum(page, 'Flur & Diele').click();
   await weiter(page, 2).click();
   await expect(schritt(page, 2)).toBeVisible();
-  await page.getByRole('button', { name: 'Neuer Zementestrich', exact: true }).click();
+  await untergrund(page, 'Neuer Zementestrich').click();
   await weiter(page, 3).click();
   await expect(schritt(page, 3)).toBeVisible();
-  await page.getByRole('button', { name: /^Großformat/ }).click();
-  await gruppe(page, 'Material bzw. Optik:').getByRole('button', { name: 'Feinsteinzeug / Keramik', exact: true }).click();
-  await gruppe(page, 'Verlegemuster:').getByRole('button', { name: 'Kreuzfuge', exact: true }).click();
+  await einfach(page, /^Großformat/).click();
+  await einfach(gruppe(page, 'Material bzw. Optik:'), 'Feinsteinzeug / Keramik', true).click();
+  await einfach(gruppe(page, 'Verlegemuster:'), 'Kreuzfuge', true).click();
   await page.getByLabel('Zu belegende Fläche in m²').fill('24,5');
   await page.getByRole('button', { name: 'Zur Zusammenfassung' }).click();
   await expect(schritt(page, 4)).toBeVisible();
@@ -76,7 +83,7 @@ async function bisSchritt4Gutfall(page) {
 
 test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
   test('Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben', async ({ page, anfragen }) => {
-    await oeffnen(page);
+    await oeffneSeite(page);
     await expect(weiter(page, 2)).toBeDisabled();
     await expect(page.getByText('Bitte wählen Sie mindestens einen Bereich aus.')).toBeVisible();
     await raum(page, 'Küche').click();
@@ -108,7 +115,7 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
     await page.getByLabel('Auftrittstiefe inkl. Überstand (cm)').fill('30');
     await page.getByLabel('Steigungshöhe (cm)').fill('18');
     await expect(vorschau(page)).toContainText('6,42 m² netto');
-    await page.getByRole('button', { name: /^Blockstufen/ }).click();
+    await einfach(page, /^Blockstufen/).click();
     await expect(vorschau(page)).toContainText('Menge nach Stufenmaßen bzw. beim Aufmaß');
     await expect(vorschau(page)).not.toContainText('6,42');
   });
@@ -117,8 +124,8 @@ test.describe('FliesenKonfigurator (/fliesen/konfigurator)', () => {
     test(`Rechner ${i + 1}: ${r.flaeche} m² · ${r.muster} → ${r.richtwert} (netto ${r.netto} m²)`, async ({ page }) => {
       await zuSchritt3(page, 'Küche');
       await page.getByLabel('Zu belegende Fläche in m²').fill(r.flaeche);
-      await gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true }).click();
-      await expect(gruppe(page, 'Verlegemuster:').getByRole('button', { name: r.muster, exact: true })).toHaveAttribute('aria-pressed', 'true');
+      await einfach(gruppe(page, 'Verlegemuster:'), r.muster, true).click();
+      await gewaehlt(expect(einfach(gruppe(page, 'Verlegemuster:'), r.muster, true)));
       await expect(vorschau(page)).toContainText(r.richtwert);
       await expect(vorschau(page)).toContainText(`aus ${r.netto} m² netto`);
     });

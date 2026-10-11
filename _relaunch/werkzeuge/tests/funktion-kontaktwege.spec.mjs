@@ -1,7 +1,7 @@
 // Funktionstests F-10 (WhatsApp-Links und Widget) und F-15 (Telefon/E-Mail).
 // Prüft Ziele (href bzw. geöffnetes Ziel), vorbelegten Text und Versand, nicht Aussehen.
 // Kein Formular: ein Test gegen die echte Route entfällt. Jeder Browserlauf läuft hinter der Sperre (G5).
-import { test, expect, bedienbar, istKern } from './fixtures.mjs';
+import { test, expect, bedienbar, istKern, oeffne, sprunglink } from './fixtures.mjs';
 
 const WA_NUMMER = '491726728504';
 const TEL_FESTNETZ = '4964414483567';
@@ -57,10 +57,13 @@ const KANAL_NAME = 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden';
 const LEISTE_NAME = 'WhatsApp-Chat starten';
 const SCROLL_ANTEILE = [0.5, 0.25, 0.75, 0.125, 0.375, 0.625, 0.875, 1, 0];
 const wegIstLeiste = (pfad, isMobile) => istKern(pfad) && isMobile;
+// Leiste über ihren Ort, nicht über den Namen (M-3): der Name wird danach eigens geprüft.
+const leisteWhatsApp = (page) => page.locator('aside[aria-label="Schnellkontakt Daumenleiste"] a[href*="whatsapp"]');
+// Erstes Bedienelement des Widget-Falls nach demselben festen Weg (für oeffne, P4-06).
+const whatsappKnopf = (page, pfad, isMobile) => (wegIstLeiste(pfad, isMobile) ? leisteWhatsApp(page) : page.locator('#whatsapp-floating-btn'));
 async function wegWhatsApp(page, pfad, isMobile) {
   if (wegIstLeiste(pfad, isMobile)) {
-    // Leiste über ihren Ort, nicht über den Namen (M-3): der Name wird danach eigens geprüft.
-    const leiste = page.locator('aside[aria-label="Schnellkontakt Daumenleiste"] a[href*="whatsapp"]');
+    const leiste = leisteWhatsApp(page);
     await expect(leiste).toBeVisible();
     await bedienbar(leiste);
     return { knopf: leiste, name: LEISTE_NAME };
@@ -84,7 +87,7 @@ const WIDGET_SEITEN = [
 test.describe('F-10 WhatsApp-Links und Widget', () => {
   for (const [pfad, textMuster] of WIDGET_SEITEN) {
     test(`Widget ${pfad}: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage`, async ({ page, anfragen, isMobile }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, whatsappKnopf(page, pfad, isMobile));
       const { knopf } = await wegWhatsApp(page, pfad, isMobile);
       const ziele = await waAufrufen(page, () => knopf.click());
       const z = waZiel(ziele[0]);
@@ -98,7 +101,7 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
   // Abzeichen und Entprellung in beiden Fassungen (H-2): „/“ (Kern) und „/kontakt“ (Bestand).
   for (const pfad of ['/', '/kontakt']) {
     test(`Widget ${pfad}: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)`, async ({ page, isMobile }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, whatsappKnopf(page, pfad, isMobile));
       const { knopf, name } = await wegWhatsApp(page, pfad, isMobile);
       await expect(knopf).toBeVisible();
       // Name exakt: das Bestand-Abzeichen stand auch im Namen („1 – WhatsApp-Nachricht …“).
@@ -109,7 +112,7 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
 
     test(`Widget ${pfad}: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)`, async ({ page, isMobile }) => {
       test.skip(test.info().project.name !== 'desktop', 'Am Desktop über window.open synchron prüfbar; mobil ist es eine Navigation');
-      await page.goto(pfad);
+      await oeffne(page, pfad, whatsappKnopf(page, pfad, isMobile));
       const { knopf } = await wegWhatsApp(page, pfad, isMobile);
       await knopf.dblclick();
       expect(await oeffnungen(page)).toBe(1);
@@ -118,7 +121,8 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
 
   for (const pfad of ['/', '/kontakt', '/bad']) {
     test(`${pfad}: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer`, async ({ page }) => {
-      await page.goto(pfad);
+      // Nach der Hydrierung lesen: auch erst im Client eingehängte Links (Widget, Leiste) werden mitgeprüft.
+      await oeffne(page, pfad, sprunglink(page));
       const alle = (await hrefs(page.locator('a[href*="whatsapp.com"], a[href*="wa.me"]'))).map(waZiel);
       expect(alle.length).toBeGreaterThan(0);
       expect(alle.filter((z) => !z.passt || z.nummer !== WA_NUMMER).map((z) => z.url)).toEqual([]);
@@ -127,10 +131,10 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
 
   test('Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer', async ({ page }) => {
     test.skip(test.info().project.name !== 'mobil', 'MobileBottomBar ist nur mobil sichtbar');
-    await page.goto('/');
     const knopf = page
       .getByRole('complementary', { name: 'Schnellkontakt Daumenleiste' })
       .getByRole('link', { name: 'WhatsApp-Chat starten' });
+    await oeffne(page, '/', knopf);
     const ziele = await waAufrufen(page, () => knopf.click());
     const z = waZiel(ziele[0]);
     expect(z.passt, z.url).toBe(true);
@@ -141,14 +145,14 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
 test.describe('F-15 Telefon und E-Mail', () => {
   for (const pfad of ['/', '/kontakt', '/bad']) {
     test(`${pfad}: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz`, async ({ page }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, sprunglink(page));
       const ziele = (await hrefs(page.locator('a[href^="tel:"]'))).map(telZiel);
       expect(ziele).toContain(TEL_FESTNETZ);
       expect(ziele.filter((z) => z !== TEL_FESTNETZ && z !== TEL_MOBIL)).toEqual([]);
     });
 
     test(`${pfad}: alle E-Mail-Links zeigen auf ${MAIL}`, async ({ page }) => {
-      await page.goto(pfad);
+      await oeffne(page, pfad, sprunglink(page));
       const mails = await hrefs(page.locator('a[href^="mailto:"]'));
       expect(mails.length).toBeGreaterThan(0);
       expect(mails.filter((m) => m !== `mailto:${MAIL}`)).toEqual([]);
@@ -156,7 +160,7 @@ test.describe('F-15 Telefon und E-Mail', () => {
   }
 
   test('/bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt', async ({ page }) => {
-    await page.goto('/bad');
+    await oeffne(page, '/bad', sprunglink(page));
     const fuss = page.getByRole('contentinfo');
     const tel = (await hrefs(fuss.locator('a[href^="tel:"]'))).map(telZiel);
     const mail = await hrefs(fuss.locator('a[href^="mailto:"]'));
@@ -169,8 +173,8 @@ test.describe('F-15 Telefon und E-Mail', () => {
 
   test('Mobil-Leiste: Anrufen zeigt auf die Festnetznummer', async ({ page }) => {
     test.skip(test.info().project.name !== 'mobil', 'MobileBottomBar ist nur mobil sichtbar');
-    await page.goto('/');
     const anrufen = page.locator('aside[aria-label="Schnellkontakt Daumenleiste"] a[href^="tel:"]');
+    await oeffne(page, '/', anrufen);
     expect(await hrefs(anrufen)).toEqual([`tel:+${TEL_FESTNETZ}`]);
   });
 });
