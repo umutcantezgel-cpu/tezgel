@@ -13,7 +13,7 @@ Sofort wirksames Paket außerhalb der Kern-Ordner (Plan Runde 3, Einfrieren N-01
 | 410-Seite | axe 0, kein Überlauf (375, 1440); einzige Konsolenmeldung ist der Dokumentstatus 410 selbst (wie bei 404) | `seite-410-m375.jpg`, `seite-410-d1440.jpg` |
 | Mutationsprobe Unit-Test | 5/5 rot: `/bad` als Bereich · breiter matcher `/blog/:pfad*` · fehlender matcher-Eintrag · 307 statt 308 · Präfix ohne Segmentgrenze | Protokoll unten |
 | Mutationsprobe Werkzeug | Kopie 74e768c-m (matcher `/blog/:pfad*` + Status 404): ROT, 16 unbeteiligte Treffer, 33 HTTP-Proben rot | `../t2-74e768c-mutation/wege.json` |
-| Funktionstests | SUITE | `suite.json` |
+| Funktionstests | 350 bestanden, 0 rot, 16 übersprungen (fassungsbedingt), 0 wackelig, 8,7 min (wie Endstand P3) | `suite.json` |
 
 Pixel, Text v2, SEO-Invarianten, Lighthouse und Jury entfallen begründet: Der strenge build-vergleich belegt gleiches HTML, gleiche Skripte und gleiches CSS für alle 172 Seiten. Der Proxy läuft auf keiner dieser Adressen (0 Treffer).
 
@@ -23,3 +23,5 @@ Pixel, Text v2, SEO-Invarianten, Lighthouse und Jury entfallen begründet: Der s
 - M3 matcher `/referenzen/project-006` fehlt → Test 4 rot
 - M4 `permanent: false` (307) → Test 5 rot
 - M5 `startsWith(bereich)` ohne `/` → Test 3 rot
+
+**Urteil: T2 grün.** Push `git push origin HEAD:main` (E-005), danach Live-Rauchtest und `wege.mjs --live`.
