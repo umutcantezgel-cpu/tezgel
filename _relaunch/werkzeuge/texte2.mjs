@@ -892,7 +892,15 @@ function aehnlich(a, b) {
   return na + nb ? (2 * gem) / (na + nb) : 0;
 }
 
-function ladeSeite(dir, datei) { return JSON.parse(fs.readFileSync(path.join(dir, datei), 'utf8')); }
+// Vergleichsregel (P3-16): Anführungszeichen sind Satz, nicht Wortlaut – „…“, “…”, »…«, ‚…‘ und gerade "…" werden vor dem
+// Vergleich auf " vereinheitlicht (Kundenstimmen im Kern typografisch, im Bestand gerade). Alles andere bleibt Zeichen für Zeichen.
+const ANFUEHRUNG = /[„“”‟«»"]/gu;
+function vereinheitlicheZitat(e) { return typeof e?.wert === 'string' ? { ...e, wert: e.wert.replace(ANFUEHRUNG, '"') } : e; }
+function ladeSeite(dir, datei) {
+  const p = JSON.parse(fs.readFileSync(path.join(dir, datei), 'utf8'));
+  if (Array.isArray(p.eintraege)) p.eintraege = p.eintraege.map(vereinheitlicheZitat);
+  return p;
+}
 function modusVergleich() {
   const i = ARGV.indexOf('--vergleich');
   const nameA = ARGV[i + 1], nameB = ARGV[i + 2];
@@ -984,7 +992,7 @@ function modusVergleich() {
   const ergebnis = summe.rot ? 'ROT' : 'GRÜN';
   const bericht = {
     satz: `${nameA} → ${nameB}`, base: ZB?.base ?? null,
-    bedingungen: { a: rel(dirA), b: rel(dirB), freigabe: F.datei ? rel(F.datei) : null, volatil: args('volatil'), regeln: 'ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert, vorbestehend, volatil. GRÜN: per Freigabeliste.' },
+    bedingungen: { a: rel(dirA), b: rel(dirB), freigabe: F.datei ? rel(F.datei) : null, volatil: args('volatil'), regeln: 'Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert, vorbestehend, volatil. GRÜN: per Freigabeliste.' },
     erstellt: jetzt(), ergebnis, summe, freigabe: { datei: F.datei ? rel(F.datei) : null, warnungen: F.warnungen, genutzt: [...new Set(alle.flatMap((b) => b.freigabe || []))].sort((x, y) => x - y) },
     seiten: Object.fromEntries(Object.entries(seiten).sort(([x], [y]) => x.localeCompare(y)).map(([r, bs]) => [r, { rot: bs.filter((b) => b.farbe === 'rot'), gelb: bs.filter((b) => b.farbe === 'gelb'), gruen: bs.filter((b) => b.farbe === 'gruen') }])),
   };

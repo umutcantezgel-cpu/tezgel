@@ -7,17 +7,14 @@
 // Inhalt wörtlich aus dem Bestand (Abschnitt „8. INTERAKTIVE KARTE & SERVICEGEBIET“, `ServiceMapWrapper`,
 // `InteractiveServiceMap` mit der Voreinstellung Aßlar), Städte aus `@/config/cities`, Kartendaten aus `@/lib/maps/*`.
 import type { ReactNode } from 'react';
-import { COMPANY_DATA } from '@/config/company';
 import { CITIES } from '@/config/cities';
 import {
   CITY_COORDINATES,
   CITY_HUB_DATA,
   TEZGEL_SERVICE_RADIUS_KM,
-  getDirectionsUrl,
   getOsmEmbedUrl,
 } from '@/lib/maps/getMapEmbedUrl';
-import { Etikett, Feldraster, Fugenkreuz, Knopf, Rasterfeld, Textlink } from '@/components/kern/basis';
-import Icon from '@/components/kern/icons/Icon';
+import { Etikett, Feldraster, Rasterfeld, Textlink } from '@/components/kern/basis';
 import KarteImBlick from '@/components/kern/start/vertrauen/KarteImBlick';
 
 const FIRMENSITZ = CITY_HUB_DATA.asslar;
@@ -61,7 +58,6 @@ function Masslinie() {
 
 /** Rahmen des Abschnitts; `karte` ist die Planfläche (live: Platzhalter mit Straßenkarte, Vorschau: ohne Kartenaufruf). */
 export function ServicegebietRahmen({ karte }: { karte: ReactNode }) {
-  const route = getDirectionsUrl(COMPANY_DATA.address.fullAddress);
   return (
     <section id="servicegebiet" aria-labelledby="map-heading" className="py-k-9 lg:py-k-10">
       <div className="mx-auto max-w-(--k-seite) px-(--k-rand)">
@@ -98,36 +94,6 @@ export function ServicegebietRahmen({ karte }: { karte: ReactNode }) {
             </ul>
           </Rasterfeld>
 
-          {/* Firmensitz (Bestand: Info-Feld der Karte, Voreinstellung Aßlar) */}
-          <Rasterfeld breite={{ mobil: 4, tablett: 8, desktop: 12 }} className="grid grid-cols-1 gap-k-5 lg:grid-cols-12 lg:gap-0">
-            <div className="lg:col-span-5 lg:pr-k-7">
-              <div className="flex flex-wrap gap-k-2">
-                <Etikett rahmen>Firmensitz &amp; Meister-Erfahrung</Etikett>
-                <Etikett rahmen>{FIRMENSITZ.driveTimeText}</Etikett>
-              </div>
-              <h3 className="mt-k-4 k-anzeige text-k-5 text-k-tinte">Fliesenverlegung &amp; Badsanierung in {FIRMENSITZ.name}</h3>
-              <p className="mt-k-3 max-w-(--k-mass) k-text text-k-3 text-k-tinte-2">{FIRMENSITZ.tagline}</p>
-            </div>
-            <ul className="flex flex-col gap-k-2 lg:col-span-4 lg:pr-k-6">
-              {FIRMENSITZ.services.map((leistung) => (
-                <li key={leistung} className="flex items-start gap-k-2 k-text text-k-2 text-k-tinte">
-                  <span className="flex h-lh shrink-0 items-center text-k-strich">
-                    <Fugenkreuz className="size-k-3" />
-                  </span>
-                  {leistung}
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-col items-start gap-k-4 lg:col-span-3">
-              <Knopf art="neben" href="/kontakt#express-anfrage" hinten={<Icon name="pfeil" groesse={20} />}>
-                Kostenloses Vor-Ort-Aufmaß
-              </Knopf>
-              <Textlink href={route} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-k-7 items-center gap-k-2 k-text text-k-2">
-                <Icon name="ort" groesse={20} />
-                Route in Google Maps
-              </Textlink>
-            </div>
-          </Rasterfeld>
         </Feldraster>
       </div>
     </section>

@@ -18,7 +18,7 @@ import Abschluss from '@/components/kern/start/Abschluss';
 // mit den Wahrheitskorrekturen aus MIKROTEXTE (Klasse 4: „Abdichtung nach DIN 18534“, „fugenarme“ Großformate).
 export const metadata: Metadata = createMetadata({
   title: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
-  description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung nach DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
+  description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
   path: '/',
 });
 

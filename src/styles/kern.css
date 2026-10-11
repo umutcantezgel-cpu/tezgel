@@ -248,3 +248,19 @@ html.k-bewegung [data-motion="sig-kreuzlinie"] .k-laser-lot {
     background-size: var(--k-muster) var(--k-muster);
   }
 }
+
+/* --------------------------------------------------------------------------
+   Nummerierte Listen (Mega-Blatt, Mobilmenü): Nummern als Listenmarke in Mono, nicht als Text –
+   Einträge bleiben wortgleich, die Ziffern sind Gliederung (K-005 Mono für Zählbares).
+   -------------------------------------------------------------------------- */
+@layer components {
+  .k-liste-nummern {
+    list-style-type: decimal-leading-zero;
+    list-style-position: inside;
+  }
+  .k-liste-nummern > li::marker {
+    font-family: var(--font-k-mono);
+    font-size: var(--text-k-1);
+    color: var(--color-k-tinte-2);
+  }
+}
