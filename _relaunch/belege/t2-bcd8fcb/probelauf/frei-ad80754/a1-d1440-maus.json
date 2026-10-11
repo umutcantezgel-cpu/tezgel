@@ -1,0 +1,171 @@
+{
+ "satz": "p3-16",
+ "base": "http://127.0.0.1:4326",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "maus",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T01:36:32.718Z",
+ "lauf": "a1-d1440-maus",
+ "aufgabe": 1,
+ "titel": "Passende Leistung finden",
+ "auftrag": "Sie möchten Ihr Bad barrierefrei umbauen. Finden Sie die passende Leistungsseite.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p3-16/a1-d1440-maus.json",
+ "antwort": "offen",
+ "gegenprobe": false,
+ "befunde": [],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 65,
+    "aria": 209,
+    "ausschnitt": 25,
+    "bedien": 39
+   },
+   "dauer_ms": 2387
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Badsanierung",
+    "nr": 1
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Badsanierung\" · nav „Hauptnavigation“",
+   "auswahl": "nr 1 von 2, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 2815,
+    "aria": 4781,
+    "ausschnitt": 7,
+    "bedien": 2520
+   },
+   "dauer_ms": 15726
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Bodengleiche Walk-In-Duschen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Barrierefreies Bad Bodengleiche Walk-In-Duschen nach DIN 18040\" · nav „Hauptnavigation“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/bad/barrierefreies-bad",
+   "h1": "Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 3153,
+    "aria": 7633,
+    "ausschnitt": 7,
+    "bedien": 2070
+   },
+   "dauer_ms": 35047
+  }
+ ],
+ "handlungen_gesamt": 2,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 2,
+  "handlungen_bis_ziel": 2,
+  "bedingungen": [
+   {
+    "name": "Leistungsseite zum barrierefreien Bad geöffnet",
+    "erfuellt": true,
+    "bei_schritt": 2,
+    "treffer": "/bad/barrierefreies-bad · H1 „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfo…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

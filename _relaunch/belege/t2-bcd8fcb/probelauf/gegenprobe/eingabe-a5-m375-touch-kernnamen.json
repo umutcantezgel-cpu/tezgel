@@ -1,0 +1,37 @@
+{
+ "aufgabe": 5,
+ "start": "/",
+ "ansicht": "m375",
+ "eingabe": "touch",
+ "antwort": "Gegenprobe: Weg des Ausgangsstands mit den Namen des Kern-Mobilmenüs (MIKROTEXTE: „Badsanierung DIN 18534“ → Name mit Beschreibung).",
+ "befunde": [],
+ "schritte": [
+  {
+   "tippe": "Alle ablehnen"
+  },
+  {
+   "tippe": "Architektur-Menü öffnen"
+  },
+  {
+   "tippe": "Badsanierung Schlüsselfertige Bäder, Walk-In-Duschen & Fliesen DIN 18534"
+  },
+  {
+   "tippe": "Badsanierung komplett Von der Demontage"
+  },
+  {
+   "scrolle": "unten"
+  },
+  {
+   "scrolle": "unten"
+  },
+  {
+   "tippe": "Architektur-Menü öffnen"
+  },
+  {
+   "tippe": "Ratgeber Wissen, Förderung, Referenzen & Service"
+  },
+  {
+   "tippe": "Förderung Zuschüsse für barrierefreie Bäder"
+  }
+ ]
+}

@@ -223,3 +223,27 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   4. Links unten wie gebaut.
 - **Wahl: (4).** Ausgelegt heißt die Regel: In jeder Ansicht bleibt mindestens ein vollständiger Anfrageweg frei sichtbar und bedienbar (Kopf-Knopf + Formular am Desktop, untere Leiste mobil). Der Banner deckt höchstens Zweitwege ab. Er ist nicht blockierend (`aria-modal="false"`) und mit einer gleichwertigen Wahl sofort weg.
 - **Prüfung:** Probeläufer-Aufgabe 3 (Anfrage) am Kandidaten mit Einwilligung „erstbesuch“ – Schrittzahl ≤ Bezugswert, kein Befund „verdeckt durch …“ auf dem Weg.
+
+## E-023 · Kandidat-Tor `/` (P3-16): Probeläufe per Gegenprobe, Tastatur-Abweichung, Korrekturen aus den Messungen
+- **Befund:** Der freie Probelauf am Kandidaten (P3-16b, Haiku) lag in 7 von 15 Läufen über dem Bezugswert. Probeläufer wählen frei, Wege und Banner-Entscheidungen streuen.
+- **Weg zur Trennung:** Die Eingaben des Ausgangsstands werden unverändert am Kandidaten nachgespielt (Satz `gegenprobe-*`, PROBELAUF §3), je mindestens zweimal und, wo nötig, auch an der Basis. Nur Unterschiede, die sich auf demselben Weg wiederholen, gelten als Wirkung des Kandidaten.
+- **Ergebnis:**
+  - Echt und behoben waren drei Unterschiede:
+    1. Im Mobilmenü lagen Links aufgeklappter Gruppen unter dem Blattrand. Der Bereich rückt jetzt an den Rand.
+    2. Im Hero-Formular lag das Namensfeld am Desktop unter dem ersten Bildschirm (y 998 bei 900). Die Kontaktfelder stehen jetzt vor der Projektauswahl, die Legende ohne „1.“ steht in MIKROTEXTE.
+    3. Aufgabe 5 mobil: Mit den Kern-Menünamen ist der Weg gleich lang.
+  - Messrauschen war a3-m375-touch: Die Basis selbst schwankt auf demselben Weg zwischen 12 und 15 Schritten.
+  - Endstand bcd8fcb-k: a2/a4 Touch 4/8, a3 Maus 5, a5 Touch 10, a3 Touch 12. Alle sind gleich der Basis.
+- **Abweichung mit Begründung:** a1-d1440-tastatur 26 statt 23, a5-d1440-tastatur 117 statt 114.
+  - Ursache: Von der Kern-Seite `/` auf eine Bestandsseite wird das Dokument voll geladen (andere Wurzel-Layouts), der Fokus beginnt dort korrekt am Dokumentanfang, also +3 Tabs bis zum Untermenü.
+  - Der Bezugswert beruht auf dem Fehler des Bestands, der den Fokus nach clientseitigem Wechsel an der alten Stelle hält; das ist der Befund „hoch“ der Basis-Matrix.
+  - Folge: kein Rückbau. Die Zahl wird in der Welle der Zielseite (W1 `/bad`) mit der Fokusführung des Kerns neu gemessen. Bis dahin steht sie als offene Abweichung in ABNAHME Z-04.
+- **Weitere Korrekturen in diesem Tor:**
+  - **Jury, alle drei:** Der WhatsApp-Kanal weicht jetzt allen Bedienelementen aus (FREIHALTEN um Links, Knöpfe, Beschriftungen, `summary`). Das Großformat-Bild füllt seine Zelle.
+  - **INP „Menü öffnen“ mobil:** vorher 248 ms gegen 104 ms Basis.
+    - Ursache war Stilarbeit, kein JavaScript: die `:has(:is([open],:popover-open,:open))`-Regeln der verworfenen Variante A.
+    - Die Varianten A (Kopf, Einstieg) sind deshalb schon jetzt entfernt statt erst in W10 (Umkehrprobe E-022: Rückweg über git).
+    - Dazu `content-visibility: hidden` für zugeklappte Bereiche und `memo` für das Mobilblatt.
+    - Endstand: 48 ms (Basis 96).
+  - **Barrierefreiheit (P3-16a):** Die harten Kennzahlen stehen auf 0. Rest: ein Fokusring der Bewertungsleiste liegt bei offenem Banner mobil zu etwa 2 % unter dem Banner; das Element ist höher als die freie Fläche (Bestand: 44 solche Fälle).
+- **Prüfung:** Frischer Gegenprüfer P3-16-GEG über das Tor (ERGEBNIS `belege/t2-bcd8fcb/ERGEBNIS.md`).

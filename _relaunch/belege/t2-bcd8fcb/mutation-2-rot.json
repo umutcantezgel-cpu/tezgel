@@ -1,0 +1,142 @@
+[
+ [
+  "mobil",
+  "einwilligung",
+  "/kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu"
+ ],
+ [
+  "mobil",
+  "einwilligung",
+  "/: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)"
+ ],
+ [
+  "mobil",
+  "einwilligung",
+  "/: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)"
+ ],
+ [
+  "mobil",
+  "einwilligung",
+  "/kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)"
+ ],
+ [
+  "desktop",
+  "einwilligung",
+  "/kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu"
+ ],
+ [
+  "desktop",
+  "einwilligung",
+  "/: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)"
+ ],
+ [
+  "desktop",
+  "einwilligung",
+  "/: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)"
+ ],
+ [
+  "desktop",
+  "einwilligung",
+  "/kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)"
+ ],
+ [
+  "mobil",
+  "einwilligung",
+  "/standorte: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing"
+ ],
+ [
+  "desktop",
+  "einwilligung",
+  "/standorte: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing"
+ ],
+ [
+  "mobil",
+  "einwilligung",
+  "/: „Cookie-Einstellungen“ im Kartenplatzhalter öffnet die Einstellungen, ohne die Einwilligung zu ändern"
+ ],
+ [
+  "desktop",
+  "einwilligung",
+  "/: „Cookie-Einstellungen“ im Kartenplatzhalter öffnet die Einstellungen, ohne die Einwilligung zu ändern"
+ ],
+ [
+  "mobil",
+  "hero-kontakt",
+  "Vorhaben „Balkon & Terrasse“ landet als projectType in der Nutzlast (Attrappe)"
+ ],
+ [
+  "desktop",
+  "hero-kontakt",
+  "Vorhaben „Balkon & Terrasse“ landet als projectType in der Nutzlast (Attrappe)"
+ ],
+ [
+  "mobil",
+  "kontaktwege",
+  "Widget /kontakt: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)"
+ ],
+ [
+  "desktop",
+  "kontaktwege",
+  "Widget /: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)"
+ ],
+ [
+  "desktop",
+  "kontaktwege",
+  "Widget /kontakt: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)"
+ ],
+ [
+  "mobil",
+  "navigation",
+  "/leistungen: Schalter öffnet das Menü, Escape schließt es"
+ ],
+ [
+  "mobil",
+  "navigation",
+  "/leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt"
+ ],
+ [
+  "desktop",
+  "navigation",
+  "/: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)"
+ ],
+ [
+  "desktop",
+  "navigation",
+  "/: Schalter öffnet das Menü, Escape schließt es"
+ ],
+ [
+  "desktop",
+  "navigation",
+  "/: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt"
+ ],
+ [
+  "desktop",
+  "navigation",
+  "/leistungen: Schalter öffnet das Menü, Escape schließt es"
+ ],
+ [
+  "desktop",
+  "navigation",
+  "/leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt"
+ ],
+ [
+  "mobil",
+  "navigation",
+  "Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)"
+ ],
+ [
+  "desktop",
+  "navigation",
+  "Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)"
+ ],
+ [
+  "mobil",
+  "navigation",
+  "Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus"
+ ],
+ [
+  "desktop",
+  "navigation",
+  "Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus"
+ ]
+]
