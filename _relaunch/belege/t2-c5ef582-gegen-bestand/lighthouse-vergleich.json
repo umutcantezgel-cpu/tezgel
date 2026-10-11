@@ -1,0 +1,816 @@
+{
+ "satz": "t2-c5ef582-gegen-bestand",
+ "base": "http://127.0.0.1:4323",
+ "kandidat": "http://127.0.0.1:4324",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 10 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4323, B = Kandidat http://127.0.0.1:4324) im selben Messfenster",
+ "erstellt": "2026-10-11T15:00:47.511Z",
+ "laeufe": 10,
+ "seiten": {
+  "/": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 84,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 4219,
+      "cls": 0,
+      "tbt": 159,
+      "fcp": 1362,
+      "si": 1362,
+      "js_kb": 416,
+      "font_kb": 77,
+      "gesamt_kb": 632,
+      "benchmark": 2229,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+       "rechteck": {
+        "top": 368,
+        "left": 16,
+        "width": 380,
+        "height": 156
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 250
+      },
+      "streuung_perf": [
+       73,
+       87
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 73,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4256.07525,
+       "cls": 0,
+       "tbt": 290.50000000000045,
+       "fcp": 3236.21505,
+       "si": 3603.5606424013977,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 1895.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 27,
+        "elementRenderDelay": 1362
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4219.469999999999,
+       "cls": 0,
+       "tbt": 143,
+       "fcp": 1364.4899999999998,
+       "si": 1364.4899999999998,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2220.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 269
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4211.698,
+       "cls": 0,
+       "tbt": 167.49999999999955,
+       "fcp": 1367.5659999999998,
+       "si": 1367.5659999999998,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2399,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 259
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4210.4400000000005,
+       "cls": 0,
+       "tbt": 144.4999999999991,
+       "fcp": 1364.98,
+       "si": 1364.98,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2363.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 250
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4198.59,
+       "cls": 0,
+       "tbt": 138.99999999999955,
+       "fcp": 1359.5299999999997,
+       "si": 1359.5299999999997,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2055,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 228
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4225.740000000001,
+       "cls": 0,
+       "tbt": 131.5000000000009,
+       "fcp": 1360.2960000000003,
+       "si": 1360.2960000000003,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2198.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 299
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4223.27,
+       "cls": 0,
+       "tbt": 159.49999999999955,
+       "fcp": 1359.308,
+       "si": 1359.308,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2288.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 234
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 83,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4220.753999999999,
+       "cls": 0,
+       "tbt": 182,
+       "fcp": 1361.918,
+       "si": 1361.918,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2247.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 242
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3761.8250000000007,
+       "cls": 0,
+       "tbt": 143,
+       "fcp": 1361.9300000000003,
+       "si": 1361.9300000000003,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2229,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 230
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 83,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4203.864,
+       "cls": 0,
+       "tbt": 172.5,
+       "fcp": 1361.288,
+       "si": 1361.288,
+       "js_kb": 416,
+       "font_kb": 77,
+       "gesamt_kb": 632,
+       "benchmark": 2138.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto lg:mx-0 leading-re…\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,2,DIV,2,MAIN,0,DIV,3,SECTION,1,DIV,0,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 368,
+         "left": 16,
+         "width": 380,
+         "height": 156
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 244
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 86,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3464,
+      "cls": 0,
+      "tbt": 247,
+      "fcp": 1072,
+      "si": 1072,
+      "js_kb": 452,
+      "font_kb": 182,
+      "gesamt_kb": 823,
+      "benchmark": 2117,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+       "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+       "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+       "rechteck": {
+        "top": 368,
+        "left": 32,
+        "width": 364,
+        "height": 213
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 192
+      },
+      "streuung_perf": [
+       80,
+       90
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 83,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3461.1578,
+       "cls": 0,
+       "tbt": 338,
+       "fcp": 1061.1578,
+       "si": 1061.1578,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2024,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 23,
+        "elementRenderDelay": 207
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3762.4987499999997,
+       "cls": 0,
+       "tbt": 193,
+       "fcp": 1059.9995,
+       "si": 1059.9995,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2100.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 187
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3462.46,
+       "cls": 0,
+       "tbt": 195,
+       "fcp": 1090.23,
+       "si": 1090.23,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2172.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 179
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 80,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 4014.8460000000005,
+       "cls": 0,
+       "tbt": 329.35899999999947,
+       "fcp": 1072.2820000000002,
+       "si": 1072.2820000000002,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2289,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 193
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3466.2919999999995,
+       "cls": 0,
+       "tbt": 310.00000000000045,
+       "fcp": 1120.146,
+       "si": 1218.8610837727645,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2117,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 210
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3463.8740000000007,
+       "cls": 0,
+       "tbt": 250,
+       "fcp": 1076.937,
+       "si": 1076.937,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 1974.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 190
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3462.242,
+       "cls": 0,
+       "tbt": 190.0000000000009,
+       "fcp": 1078.121,
+       "si": 1078.121,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2129,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 25,
+        "elementRenderDelay": 194
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3460.9739999999993,
+       "cls": 0,
+       "tbt": 192.51300000000015,
+       "fcp": 1060.974,
+       "si": 1060.974,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 1979,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 140
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 83,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3910.8315,
+       "cls": 0,
+       "tbt": 247.00000000000045,
+       "fcp": 1070.6105,
+       "si": 1070.6105,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2043,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3460.853,
+       "cls": 0,
+       "tbt": 146.57349999999997,
+       "fcp": 1060.853,
+       "si": 1060.853,
+       "js_kb": 452,
+       "font_kb": 182,
+       "gesamt_kb": 823,
+       "benchmark": 2200,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.mx-auto > div.relative > div.mt-k-5 > p.max-w-(--k-mass)",
+        "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Walk-in-Duschen, repräsentative …",
+        "snippet": "<p class=\"max-w-(--k-mass) k-text text-k-4 text-k-tinte\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,SECTION,0,DIV,0,DIV,3,DIV,0,P",
+        "rechteck": {
+         "top": 368,
+         "left": 32,
+         "width": 364,
+         "height": 213
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 155
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 2,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -755,
+     "cls": 0,
+     "tbt": 88,
+     "fcp": -290,
+     "si": -290,
+     "js_kb": 36,
+     "font_kb": 105,
+     "gesamt_kb": 191,
+     "benchmark": -112,
+     "lcp_relativ": -0.179
+    },
+    "lcp_element_gleich": false,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 2 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 1.28,
+  "last_1min_start": 1.28,
+  "last_1min_ende": 1.58
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}
