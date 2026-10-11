@@ -33,7 +33,7 @@ export default function Schritt4({ formData, setFormData, toggleFeature }) {
 
             <fieldset className="pt-3">
                 <legend className={labelKlassen}>Wunschausstattung auswählen</legend>
-                <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 gap-2">
+                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
                     {FEATURES.map((item) => {
                         const isSelected = formData.features.includes(item.id);
                         return (
