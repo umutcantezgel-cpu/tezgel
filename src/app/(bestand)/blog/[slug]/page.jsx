@@ -1,15 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import {
-  Clock,
-  Download,
-  ArrowLeft,
-  Calendar,
-  Tag
-} from 'lucide-react';
 import ReadingProgress from '@/components/blog/ReadingProgress';
 import BlogAuthorCard from '@/components/blog/BlogAuthorCard';
 import RelatedPosts from '@/components/blog/RelatedPosts';
@@ -17,6 +9,10 @@ import ShareButtons from '@/components/blog/ShareButtons';
 import TableOfContents from '@/components/blog/TableOfContents';
 import BlogVoteButton from '@/components/blog/BlogVoteButton';
 import QualityPromise from '@/components/sections/QualityPromise';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen, knopfKlassen, linkKlassen, seitenKlassen } from '@/components/kern/stile';
 import { posts } from '@/config/posts';
 import { categories } from '@/config/blog';
 import { createMetadata } from '@/lib/metadata';
@@ -73,173 +69,171 @@ export default async function BlogPostPage({ params }) {
   const readingTime = post.readTime || `${post.reading_time || '5'} Min.`;
 
   return (
-    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+    <>
       <ReadingProgress />
 
-      {/* Ambient Glow */}
-      <div className="ambient-glow-orange -top-20 -left-20" />
-      <div className="ambient-glow-red top-96 -right-20" />
-
-      {/* HERO SECTION */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-xs font-bold text-orange-800 hover:text-orange-700 transition-colors group mb-2"
-          >
-            <ArrowLeft className="w-4 h-4 mr-1.5 group-hover:-translate-x-1 transition-transform" />
+      {/* KOPF (Arbeitsansicht, wie Einstieg art="arbeit"): Rückweg zuerst, dann Etikett, H1 und Angaben an der Fuge */}
+      <header className="relative border-b border-fuge pt-32 pb-12 lg:pb-16">
+        <div className={seitenKlassen}>
+          <Knopf variante="text" href="/blog" iconLinks="pfeil-links">
             Zurück zur Ratgeber-Übersicht
-          </Link>
+          </Knopf>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {categoryData && (
-              <span className="eyebrow">
-                {categoryData.name}
-              </span>
-            )}
-            {post.featured && (
-              <span className="eyebrow eyebrow-amber">
-                Empfehlung
-              </span>
-            )}
-          </div>
+          <div className="mt-8 grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-8">
+            <div className="col-span-4 md:col-span-8 lg:col-span-9">
+              {(categoryData || post.featured) && (
+                <p className={`${etikettKlassen} mb-6 flex-wrap`}>
+                  {categoryData && <span>{categoryData.name}</span>}
+                  {categoryData && post.featured && <Fugenkreuz className="size-3 shrink-0 text-strich" />}
+                  {post.featured && <span>Empfehlung</span>}
+                </p>
+              )}
 
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-tight max-w-4xl mx-auto">
-            {post.title}
-          </h1>
+              <h1 className="text-fs-6 text-tinte">{post.title}</h1>
 
-          <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto pt-1 leading-relaxed">
-            {post.title} – Fachwissen, Praxistipps und rechtliche Vorgaben für Bauherren und Modernisierer von Fachbetrieb Tezgel.
-          </p>
+              <p className="mt-8 max-w-mass text-fs-3 text-tinte-2">
+                {post.title} – Fachwissen, Praxistipps und rechtliche Vorgaben für Bauherren und Modernisierer von Fachbetrieb Tezgel.
+              </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-neutral-700 text-xs font-bold pt-2">
-            {displayDate && (
-              <>
-                <div className="flex items-center gap-1.5">
-                  <Calendar className="w-4 h-4 text-orange-600" />
-                  {displayDate}
-                </div>
-                <div className="w-1 h-1 rounded-full bg-neutral-300" aria-hidden="true" />
-              </>
-            )}
-            <div className="flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-orange-600" />
-              {readingTime} Lesezeit
+              <p className={`${etikettKlassen} mt-6 flex-wrap`}>
+                {displayDate && (
+                  <>
+                    <span className="inline-flex items-center gap-2">
+                      <Icon name="kalender" groesse={4} />
+                      {displayDate}
+                    </span>
+                    <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                  </>
+                )}
+                <span className="inline-flex items-center gap-2">
+                  <Icon name="uhr" groesse={4} />
+                  {readingTime} Lesezeit
+                </span>
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+      {/* LESEMODUS: Inhaltsverzeichnis links (ab lg), Artikel im Satzspiegel max-w-mass rechts */}
+      <div className={`${seitenKlassen} py-12 lg:py-16`}>
+        <div className="grid grid-cols-4 items-start gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-8">
 
-          {/* TABLE OF CONTENTS (Left - Desktop) */}
-          <aside className="hidden lg:block lg:col-span-3 sticky top-28">
-            <div className="glass-surface p-6 rounded-2xl">
-              <TableOfContents content={post.content} />
-            </div>
+          {/* INHALTSVERZEICHNIS (Left - Desktop) */}
+          <aside className="hidden lg:sticky lg:top-24 lg:col-span-3 lg:block">
+            <TableOfContents content={post.content} />
           </aside>
 
-          {/* MAIN ARTICLE (Center) */}
-          <main className="lg:col-span-9">
-            <div className="glass-bezel-outer mb-12">
-              <div className="glass-bezel-inner p-8 sm:p-12 space-y-8">
+          {/* ARTIKEL (Rechts) */}
+          <div className="col-span-4 md:col-span-8 lg:col-span-9">
 
-                {/* Excerpt */}
-                <p className="text-base sm:text-lg text-neutral-800 font-bold leading-relaxed border-l-4 border-orange-600 pl-6 bg-orange-50/60 py-3 rounded-r-xl">
-                  Praxis-Leitfaden von Fachbetriebsleiter Deniz Tezgel: {post.excerpt}
-                </p>
+            {/* Vorspann */}
+            <p className="max-w-mass border-l-2 border-tinte pl-6 text-fs-4 text-tinte">
+              Praxis-Leitfaden von Fachbetriebsleiter Deniz Tezgel: {post.excerpt}
+            </p>
 
-                {/* Markdown Body */}
-                <div className="prose-ceramic max-w-none">
-                  <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    /* eslint-disable @typescript-eslint/no-unused-vars */
-                    components={{
-                      h1: ({ _node, ...props }) => <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 mt-0 mb-4" {...props} />,
-                      h2: ({ _node, ...props }) => <h2 id={generateSlug(props.children)} className="text-2xl font-black text-neutral-900 mt-10 mb-4 pb-2 border-b border-neutral-200" {...props} />,
-                      h3: ({ _node, ...props }) => <h3 id={generateSlug(props.children)} className="text-lg font-black text-neutral-900 mt-8 mb-3" {...props} />,
-                      ul: ({ _node, ...props }) => <ul className="list-disc pl-6 mb-6 space-y-1.5 marker:text-orange-600" {...props} />,
-                      ol: ({ _node, ...props }) => <ol className="list-decimal pl-6 mb-6 space-y-1.5 marker:text-orange-600 marker:font-black" {...props} />,
-                      blockquote: ({ _node, ...props }) => <blockquote className="border-l-4 border-orange-600 bg-orange-50 pl-6 py-4 my-6 rounded-r-xl italic text-neutral-700 text-sm font-medium" {...props} />,
-                      table: ({ _node, ...props }) => (
-                        <div className="my-8 overflow-x-auto rounded-xl border border-neutral-200 shadow-sm">
-                          <table className="w-full border-collapse text-left text-sm" {...props} />
-                        </div>
-                      ),
-                      thead: ({ _node, ...props }) => (
-                        <thead className="bg-neutral-100 text-neutral-900" {...props} />
-                      ),
-                      th: ({ _node, ...props }) => (
-                        <th className="px-5 py-3.5 font-black uppercase tracking-wider text-xs border-b border-neutral-200" {...props} />
-                      ),
-                      td: ({ _node, ...props }) => (
-                        <td className="px-5 py-3 text-neutral-700 border-b border-neutral-100 bg-white" {...props} />
-                      ),
-                      tr: ({ _node, ...props }) => (
-                        <tr className="hover:bg-neutral-50 transition-colors" {...props} />
-                      ),
-                    }}
-                    /* eslint-enable @typescript-eslint/no-unused-vars */
-                  >
-                    {post.content}
-                  </ReactMarkdown>
-                </div>
-
-                {/* Tags */}
-                {post.tags && post.tags.length > 0 && (
-                  <div className="pt-6 border-t border-neutral-200 flex flex-wrap gap-2">
-                    {post.tags.map((tag, index) => (
-                      <span key={index} className="bg-neutral-100 text-neutral-700 px-3 py-1 rounded-xl text-xs font-bold flex items-center gap-1.5">
-                        <Tag className="w-3 h-3 text-orange-600" />
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                {/* Helpful Voting */}
-                <div className="p-6 rounded-xl bg-orange-50/50 border border-orange-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-black text-neutral-900">War dieser Leitfaden hilfreich?</span>
-                    <BlogVoteButton />
-                  </div>
-
-                  <ShareButtons title={post.title} description={post.excerpt} />
-                </div>
-
-                {/* PDF Download Checklist if available */}
-                {post.download_url && (
-                  <div className="p-6 rounded-xl bg-orange-50/50 border border-orange-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="icon-chip w-12 h-12">
-                        <Download className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <h4 className="font-black text-neutral-900 text-sm">Kostenlose Checkliste (PDF)</h4>
-                        <p className="text-xs text-neutral-600">Zum Ausdrucken &amp; Vorbereiten Ihres Projekts</p>
-                      </div>
+            {/* Artikeltext */}
+            <div className="mt-12 max-w-mass text-fs-3 text-tinte">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                /* eslint-disable @typescript-eslint/no-unused-vars */
+                components={{
+                  h1: ({ node: _node, children }) => (
+                    <h2 className="mt-0 mb-6 text-fs-5 text-tinte">{children}</h2>
+                  ),
+                  h2: ({ node: _node, children }) => (
+                    <h2 id={generateSlug(children)} className="mt-16 mb-6 border-t border-fuge pt-8 text-fs-5 text-tinte first:mt-0 first:border-t-0 first:pt-0">{children}</h2>
+                  ),
+                  h3: ({ node: _node, children }) => (
+                    <h3 id={generateSlug(children)} className="mt-12 mb-4 text-fs-4 text-tinte">{children}</h3>
+                  ),
+                  p: ({ node: _node, children }) => (
+                    <p className="mt-6 first:mt-0">{children}</p>
+                  ),
+                  a: ({ node: _node, children, ...props }) => (
+                    <a className={linkKlassen} {...props}>{children}</a>
+                  ),
+                  ul: ({ node: _node, children }) => (
+                    <ul className="mt-6 border-t border-fuge">
+                      {React.Children.map(children, (eintrag) => (React.isValidElement(eintrag) ? (
+                        <li className="flex items-start gap-4 border-b border-fuge py-3">
+                          <Fugenkreuz className="mt-2 size-3 shrink-0 text-strich" />
+                          <div className="min-w-0 flex-1">{eintrag.props.children}</div>
+                        </li>
+                      ) : null))}
+                    </ul>
+                  ),
+                  ol: ({ node: _node, children }) => (
+                    <ol className="mt-6 list-decimal space-y-3 pl-8 marker:font-mono marker:text-tinte-2">{children}</ol>
+                  ),
+                  blockquote: ({ node: _node, children }) => (
+                    <blockquote className="mt-8 border-l-2 border-tinte pl-6 text-fs-3 text-tinte-2">{children}</blockquote>
+                  ),
+                  table: ({ node: _node, children }) => (
+                    <div className="mt-8 overflow-x-auto border border-fuge bg-fliese">
+                      <table className="w-full border-collapse text-left">{children}</table>
                     </div>
-                    <a
-                      href={post.download_url}
-                      className="btn-primary px-6 py-3 text-xs"
-                      download
-                    >
-                      PDF jetzt herunterladen
-                    </a>
-                  </div>
-                )}
-
-              </div>
+                  ),
+                  th: ({ node: _node, children }) => (
+                    <th scope="col" className="border-b-2 border-tinte px-4 py-3 text-left align-bottom font-mono text-fs-1 font-normal text-tinte-2">{children}</th>
+                  ),
+                  td: ({ node: _node, children }) => (
+                    <td className="border-b border-fuge px-4 py-3 align-top text-fs-2 text-tinte">{children}</td>
+                  ),
+                }}
+                /* eslint-enable @typescript-eslint/no-unused-vars */
+              >
+                {post.content}
+              </ReactMarkdown>
             </div>
 
-            {/* Author */}
-            <div className="mb-12">
+            {/* Schlagworte */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="mt-16 flex flex-wrap gap-x-6 gap-y-2 border-t border-fuge pt-6">
+                {post.tags.map((tag, index) => (
+                  <span key={index} className="font-mono text-fs-1 text-tinte-2">{tag}</span>
+                ))}
+              </div>
+            )}
+
+            {/* Rückmeldung und Teilen */}
+            <div className="mt-16 flex flex-col gap-6 border-y border-fuge py-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="font-semibold text-fs-2 text-tinte">War dieser Leitfaden hilfreich?</span>
+                <BlogVoteButton />
+              </div>
+
+              <ShareButtons title={post.title} description={post.excerpt} />
+            </div>
+
+            {/* PDF-Checkliste, falls vorhanden */}
+            {post.download_url && (
+              <div className="mt-8 flex flex-col gap-6 border border-fuge bg-fliese p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+                <div className="flex items-center gap-4">
+                  <Icon name="download" groesse={6} />
+                  <div>
+                    <h4 className="text-fs-3 text-tinte">Kostenlose Checkliste (PDF)</h4>
+                    <p className="mt-1 text-fs-2 text-tinte-2">Zum Ausdrucken &amp; Vorbereiten Ihres Projekts</p>
+                  </div>
+                </div>
+                <a
+                  href={post.download_url}
+                  className={knopfKlassen('haupt')}
+                  data-motion="druck"
+                  download
+                >
+                  PDF jetzt herunterladen
+                </a>
+              </div>
+            )}
+
+            {/* Autor */}
+            <div className="mt-16">
               <BlogAuthorCard author={post.author} />
             </div>
 
-            {/* Related Posts */}
-            <div className="mb-12">
+            {/* Weitere Artikel */}
+            <div className="mt-16">
               <RelatedPosts
                 currentPost={post}
                 allPosts={posts}
@@ -247,11 +241,11 @@ export default async function BlogPostPage({ params }) {
               />
             </div>
 
-          </main>
+          </div>
         </div>
       </div>
 
       <QualityPromise />
-    </div>
+    </>
   );
 }

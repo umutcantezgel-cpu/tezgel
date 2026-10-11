@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from 'react';
-import { Share2, Mail, Link as LinkIcon, MessageCircle, Check } from 'lucide-react';
-import { FacebookLogo as Facebook, TwitterLogo as Twitter, LinkedinLogo as Linkedin } from '@phosphor-icons/react';
+import Icon from '@/components/icons/Icon';
+import { knopfKlassen } from '@/components/kern/stile';
+import { FacebookLogo, TwitterLogo, LinkedinLogo } from '@/components/ui/Markenlogos';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { COMPANY_DATA } from '@/config/company';
 
 /**
@@ -51,110 +53,116 @@ const ShareButtons = ({ url, title, description }) => {
         }
     };
 
-    const itemClass = "flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 transition-colors";
+    const itemClass = "flex min-h-11 items-center gap-4 border-b border-fuge py-2 text-tinte hover:border-strich";
 
     return (
         <div className="relative">
-            {/* Main Share Button */}
+            {/* Main Share Button (Nebenknopf) */}
             <button
                 type="button"
                 onClick={handleNativeShare}
                 aria-expanded={showShareMenu}
-                className="btn-ghost min-h-[44px] px-5 py-2.5 text-xs group rounded-tile-sm"
+                className={knopfKlassen('neben')}
+                data-motion="druck"
             >
-                <Share2 className="w-4 h-4 text-orange-600 group-hover:scale-110 transition-transform" />
+                <Icon name="teilen" groesse={5} />
                 Teilen
             </button>
 
             {/* Share Menu (fallback for desktop) */}
             {showShareMenu && (
-                <div className="absolute top-full mt-2 right-0 z-50">
-                    <div className="glass-surface rounded-tile-md shadow-2xl p-4 min-w-[250px]">
-                        <h4 className="font-black text-slate-900 mb-4">Artikel teilen</h4>
+                <div className="absolute left-0 top-full z-50 mt-2 w-max max-w-md border border-fuge bg-fliese p-6 sm:left-auto sm:right-0">
+                    <h4 className="text-fs-3 text-tinte">Artikel teilen</h4>
 
-                        <div className="space-y-2">
-                            {/* Facebook */}
-                            <a
-                                href={shareLinks.facebook}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={itemClass}
-                            >
-                                <Facebook className="w-5 h-5 text-[#1877f2]" />
-                                <span className="text-sm font-semibold text-slate-800">Facebook</span>
-                            </a>
+                    <div className="mt-4 border-t border-fuge">
+                        {/* Facebook */}
+                        <a
+                            href={shareLinks.facebook}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={itemClass}
+                            data-motion="zustand"
+                        >
+                            <FacebookLogo className="size-5 shrink-0" />
+                            <span className="text-fs-2">Facebook</span>
+                        </a>
 
-                            {/* Twitter/X */}
-                            <a
-                                href={shareLinks.twitter}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={itemClass}
-                            >
-                                <Twitter className="w-5 h-5 text-sky-600" />
-                                <span className="text-sm font-semibold text-slate-800">Twitter/X</span>
-                            </a>
+                        {/* Twitter/X */}
+                        <a
+                            href={shareLinks.twitter}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={itemClass}
+                            data-motion="zustand"
+                        >
+                            <TwitterLogo className="size-5 shrink-0" />
+                            <span className="text-fs-2">Twitter/X</span>
+                        </a>
 
-                            {/* LinkedIn */}
-                            <a
-                                href={shareLinks.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={itemClass}
-                            >
-                                <Linkedin className="w-5 h-5 text-[#0a66c2]" />
-                                <span className="text-sm font-semibold text-slate-800">LinkedIn</span>
-                            </a>
+                        {/* LinkedIn */}
+                        <a
+                            href={shareLinks.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={itemClass}
+                            data-motion="zustand"
+                        >
+                            <LinkedinLogo className="size-5 shrink-0" />
+                            <span className="text-fs-2">LinkedIn</span>
+                        </a>
 
-                            {/* WhatsApp - user explicitly requested WhatsApp remains green */}
-                            <a
-                                href={shareLinks.whatsapp}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={itemClass}
-                            >
-                                <MessageCircle className="w-5 h-5 text-[#25D366]" />
-                                <span className="text-sm font-semibold text-slate-800">WhatsApp</span>
-                            </a>
+                        {/* WhatsApp - auf ausdrücklichen Wunsch bleibt die Markenfarbe im Logo */}
+                        <a
+                            href={shareLinks.whatsapp}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={itemClass}
+                            data-motion="zustand"
+                        >
+                            <WhatsAppLogo className="size-5 shrink-0" />
+                            <span className="text-fs-2">WhatsApp</span>
+                        </a>
 
-                            {/* Email */}
-                            <a
-                                href={shareLinks.email}
-                                className={itemClass}
-                            >
-                                <Mail className="w-5 h-5 text-slate-700" />
-                                <span className="text-sm font-semibold text-slate-800">E-Mail</span>
-                            </a>
+                        {/* Email */}
+                        <a
+                            href={shareLinks.email}
+                            className={itemClass}
+                            data-motion="zustand"
+                        >
+                            <Icon name="mail" groesse={5} />
+                            <span className="text-fs-2">E-Mail</span>
+                        </a>
 
-                            {/* Copy Link */}
-                            <button
-                                type="button"
-                                onClick={handleCopyLink}
-                                className={`w-full ${itemClass}`}
-                            >
-                                {copied ? (
-                                    <>
-                                        <Check className="w-5 h-5 text-orange-600" />
-                                        <span className="text-sm font-semibold text-orange-700">Link kopiert!</span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <LinkIcon className="w-5 h-5 text-slate-700" />
-                                        <span className="text-sm font-semibold text-slate-800">Link kopieren</span>
-                                    </>
-                                )}
-                            </button>
-                        </div>
-
-                        {/* Close button */}
+                        {/* Copy Link */}
                         <button
                             type="button"
-                            onClick={() => setShowShareMenu(false)}
-                            className="mt-4 w-full p-2 text-sm font-semibold text-slate-700 hover:text-orange-700 transition-colors"
+                            onClick={handleCopyLink}
+                            className={`w-full text-left ${itemClass}`}
+                            data-motion="zustand"
                         >
-                            Schließen
+                            {copied ? (
+                                <>
+                                    <Icon name="haken" groesse={5} className="text-abnahme" />
+                                    <span className="text-fs-2 text-abnahme">Link kopiert!</span>
+                                </>
+                            ) : (
+                                <>
+                                    <Icon name="link-extern" groesse={5} />
+                                    <span className="text-fs-2">Link kopieren</span>
+                                </>
+                            )}
                         </button>
                     </div>
+
+                    {/* Close button */}
+                    <button
+                        type="button"
+                        onClick={() => setShowShareMenu(false)}
+                        className={knopfKlassen('text', 'mt-4')}
+                        data-motion="druck"
+                    >
+                        Schließen
+                    </button>
                 </div>
             )}
 

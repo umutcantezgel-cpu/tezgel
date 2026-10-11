@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState, useMemo } from 'react';
-import { List } from 'lucide-react';
+import { etikettKlassen } from '@/components/kern/stile';
 
 const TableOfContents = ({ content }) => {
     const [activeId, setActiveId] = useState('');
@@ -43,14 +43,8 @@ const TableOfContents = ({ content }) => {
 
     return (
         <div>
-            <p className="flex items-center gap-2 font-black text-slate-900 mb-4 text-sm uppercase tracking-wider">
-                <List className="w-4 h-4 text-orange-600" />
-                Inhalt
-            </p>
-            <nav aria-label="Inhaltsverzeichnis" className="space-y-1 relative">
-                {/* Active Indicator Line matches list height via CSS or direct styling */}
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-slate-200 rounded-full" />
-
+            <p className={`${etikettKlassen} mb-4`}>Inhalt</p>
+            <nav aria-label="Inhaltsverzeichnis" className="border-t border-fuge">
                 {headings.map(({ id, text, level }) => (
                     <a
                         key={id}
@@ -61,11 +55,11 @@ const TableOfContents = ({ content }) => {
                             setActiveId(id);
                         }}
                         aria-current={activeId === id ? 'location' : undefined}
-                        className={`block text-sm py-2 pl-4 border-l-2 transition-all duration-300 ${activeId === id
-                            ? 'border-orange-600 text-orange-950 font-bold -ml-[2px]'
-                            : 'border-transparent text-slate-700 hover:text-slate-900 hover:border-slate-300 -ml-[2px]'
+                        data-motion="zustand"
+                        className={`flex min-h-11 items-center border-b border-l-2 border-fuge py-2 pl-4 pr-2 text-fs-2 ${level === 3 ? 'ml-4' : 'ml-0'} ${activeId === id
+                            ? 'border-l-tinte font-semibold text-tinte'
+                            : 'border-l-transparent text-tinte-2 hover:border-l-strich hover:text-tinte'
                             }`}
-                        style={{ marginLeft: level === 3 ? '1rem' : '0' }}
                     >
                         {text}
                     </a>

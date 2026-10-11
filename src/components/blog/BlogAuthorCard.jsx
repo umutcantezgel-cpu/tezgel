@@ -1,10 +1,14 @@
 "use client";
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, ArrowRight } from 'lucide-react';
-import { LinkedinLogo as Linkedin, TwitterLogo as Twitter, FacebookLogo as Facebook } from '@phosphor-icons/react';
+import Icon from '@/components/icons/Icon';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen } from '@/components/kern/stile';
+import { FacebookLogo, TwitterLogo, LinkedinLogo } from '@/components/ui/Markenlogos';
 import { COMPANY_DATA } from '@/config/company';
+
+/** Umschlag für E-Mail-Profile, aus der eigenen Icon-Familie */
+const MailZeichen = ({ className }) => <Icon name="mail" groesse={5} className={className} />;
 
 /**
  * Blog Author Card Component
@@ -16,10 +20,10 @@ const BlogAuthorCard = ({ author }) => {
     if (!author) return null;
 
     const socialIcons = {
-        twitter: Twitter,
-        linkedin: Linkedin,
-        facebook: Facebook,
-        email: Mail
+        twitter: TwitterLogo,
+        linkedin: LinkedinLogo,
+        facebook: FacebookLogo,
+        email: MailZeichen
     };
 
     // Normalize author data if it's just a string name
@@ -35,21 +39,22 @@ const BlogAuthorCard = ({ author }) => {
         : rawAuthor;
 
     return (
-        <div className="glass-surface rounded-3xl p-8">
-            <div className="flex flex-col md:flex-row gap-6">
+        <div className="border border-fuge bg-fliese p-6 sm:p-8 lg:p-12">
+            <div className="flex flex-col gap-6 md:flex-row">
                 {/* Avatar */}
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                     {authorData.avatar ? (
                         <Image
                             src={authorData.avatar}
                             alt={authorData.name}
                             width={96}
                             height={96}
-                            className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
+                            sizes="96px"
+                            className="size-24 border border-fuge object-cover"
                         />
                     ) : (
                         <div
-                            className="w-24 h-24 rounded-full bg-orange-600 flex items-center justify-center text-white text-4xl font-black shadow-lg ring-4 ring-white"
+                            className="flex size-24 items-center justify-center bg-tinte font-anzeige text-fs-5 text-kalk"
                             aria-hidden="true"
                         >
                             {authorData.name?.charAt(0).toUpperCase()}
@@ -59,50 +64,47 @@ const BlogAuthorCard = ({ author }) => {
 
                 {/* Info */}
                 <div className="flex-1">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-1">
-                        Verfasst von
-                    </p>
-                    <h3 className="text-2xl font-black text-slate-900 mb-1">
+                    <p className={etikettKlassen}>Verfasst von</p>
+                    <h3 className="mt-2 text-fs-4 text-tinte">
                         {authorData.name}
                     </h3>
 
                     {authorData.title && (
-                        <p className="text-orange-950 font-bold text-sm mb-3">
+                        <p className="mt-1 text-fs-2 font-semibold text-tinte">
                             {authorData.title}
                         </p>
                     )}
 
                     {authorData.bio && (
-                        <p className="text-slate-700 leading-relaxed mb-4">
+                        <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
                             {authorData.bio}
                         </p>
                     )}
 
                     {isCompanyAuthor && (
-                        <Link
-                            href="/ueber-uns"
-                            className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                        >
-                            Mehr über {COMPANY_DATA.owner.fullName}
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
+                        <div className="mt-6">
+                            <Knopf variante="text" href="/ueber-uns" icon="pfeil-rechts">
+                                Mehr über {COMPANY_DATA.owner.fullName}
+                            </Knopf>
+                        </div>
                     )}
 
                     {/* Social Links */}
                     {authorData.social && Object.keys(authorData.social).length > 0 && (
-                        <div className="flex gap-3">
+                        <div className="mt-6 flex gap-3">
                             {Object.entries(authorData.social).map(([platform, url]) => {
-                                const Icon = socialIcons[platform] || Mail;
+                                const Zeichen = socialIcons[platform] || MailZeichen;
                                 return (
                                     <a
                                         key={platform}
                                         href={url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="min-h-[44px] min-w-[44px] flex items-center justify-center bg-slate-100 hover:bg-orange-50 border border-slate-200 hover:border-orange-500 rounded-full transition-all duration-300 group"
+                                        className="flex size-11 items-center justify-center border border-strich text-tinte hover:border-tinte"
+                                        data-motion="zustand"
                                         aria-label={platform}
                                     >
-                                        <Icon className="w-5 h-5 text-slate-700 group-hover:text-orange-600 transition-colors" />
+                                        <Zeichen className="size-5" />
                                     </a>
                                 );
                             })}

@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 
 /**
  * Reading Progress Bar Component
- * Shows scroll progress as a sticky bar at the top
+ * Zeigt den Scrollfortschritt als 2-px-Linie in Laser am oberen Rand. Der Anteil (0–1) steht in der CSS-Variablen
+ * --lesefortschritt; die Klasse lesefortschritt-linie zieht die Linie über scale auf (ohne Übergang, ohne data-motion).
  */
 const ReadingProgress = () => {
     const [progress, setProgress] = useState(0);
@@ -16,8 +17,8 @@ const ReadingProgress = () => {
             // Get total scrollable height
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-            // Calculate percentage
-            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            // Calculate percentage (Seiten ohne Scrollweg zeigen 0)
+            const scrollPercentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
 
             setProgress(Math.min(scrollPercentage, 100));
         };
@@ -32,18 +33,17 @@ const ReadingProgress = () => {
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-[9999] h-1 bg-slate-200/60 backdrop-blur-sm">
+        <div className="fixed inset-x-0 top-0 z-40 h-0">
             <div
-                className="h-full bg-gradient-to-r from-orange-600 to-red-600 transition-all duration-150 ease-out"
-                style={{ width: `${progress}%` }}
+                aria-hidden="true"
+                className="lesefortschritt-linie h-0 origin-left scale-x-0 border-t-2 border-laser"
+                style={{ '--lesefortschritt': progress / 100 }}
             />
 
             {/* Optional: Show percentage */}
             {progress > 5 && progress < 95 && (
-                <div className="absolute top-2 right-4 bg-white/95 border border-slate-200 backdrop-blur-sm px-3 py-1 rounded-full shadow-md">
-                    <span className="text-xs font-bold text-slate-800 tabular-nums">
-                        {Math.round(progress)}%
-                    </span>
+                <div className="absolute top-2 right-4 border border-fuge bg-fliese px-3 py-1 font-mono text-fs-1 text-tinte tabular-nums">
+                    {Math.round(progress)}%
                 </div>
             )}
         </div>
