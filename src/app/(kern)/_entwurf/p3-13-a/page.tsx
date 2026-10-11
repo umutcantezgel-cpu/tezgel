@@ -1,4 +1,4 @@
-import Einstieg from '@/components/kern/start/einstieg-a/Einstieg';
+import Einstieg from '@/components/kern/start/einstieg-b/Einstieg';
 import { AbschlussAnsicht } from '@/components/kern/start/Abschluss';
 import { HeroVorschau, SchnellVorschau, VorschauRaster, VorschauZelle } from '@/components/kern/formulare/a/Vorschau';
 
