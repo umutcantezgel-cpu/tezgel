@@ -1,20 +1,22 @@
-import React from 'react';
+// Fliesen-Konfigurator (E3-BAU-08, Arbeitsansicht nach dem Muster /kontakt): kompakter Einstieg, danach der
+// abgenommene Konfigurator in Lesebreite (8 Spalten), anschließend Ablauf, Berechnung, Treppen, nächste Schritte,
+// FAQ und Ratgeber in ruhigen Abschnitten. Reihenfolge, Texte, Links und IDs wie im Bestand; der Konfigurator
+// selbst (src/components/funnels/FliesenKonfigurator) bleibt unverändert.
 import Link from 'next/link';
-import {
-    ArrowRight,
-    ClipboardList,
-    Layers,
-    MessageCircle,
-    Ruler,
-    Send,
-    Sparkles,
-    CalendarCheck,
-    FileText
-} from 'lucide-react';
+import Icon from '@/components/icons/Icon';
 import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Knopf from '@/components/kern/Knopf';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Merkliste from '@/components/kern/Merkliste';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Tabelle from '@/components/kern/Tabelle';
+import RatgeberListe from '@/components/kern/RatgeberListe';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Fliesen-Konfigurator & Bedarfsrechner | Tezgel',
@@ -25,22 +27,18 @@ export const metadata = createMetadata({
 
 const STEP_CARDS = [
     {
-        icon: Layers,
         title: 'Schritt 1: Raum und Einsatzbereich',
         text: 'Wohn- und Essbereich, Küche, Flur, Treppe, Balkon/Terrasse oder ein reines Untergrundprojekt – auch mehrere Bereiche gleichzeitig. Für Bäder verweisen wir auf Badplaner und Bad-Projektcheck.'
     },
     {
-        icon: ClipboardList,
         title: 'Schritt 2: Untergrund und Bestand',
         text: 'Neuer Estrich, Heizestrich, alte Fliesen, Holz oder Betonplatte? Dazu Fußbodenheizung, Rückbau und Nassbereich. Wer es nicht weiß, wählt „unbekannt“.'
     },
     {
-        icon: Ruler,
         title: 'Schritt 3: Format, Material, Muster und Menge',
         text: 'Vom Standardformat bis XXL, Holzoptik oder Naturstein, Kreuzfuge bis Fischgrät. Flächen geben Sie in m² an, Treppen über Stufenanzahl und Stufenmaße.'
     },
     {
-        icon: Send,
         title: 'Schritt 4: Kontakt und Versand',
         text: 'Sie sehen eine Zusammenfassung mit Materialbedarf und Vorab-Checkliste und senden sie per WhatsApp oder E-Mail – ohne Speicherung auf dieser Website.'
     }
@@ -83,17 +81,14 @@ const FAQS = [
 
 const NEXT_STEPS = [
     {
-        icon: MessageCircle,
         title: 'Anfrage absenden',
         text: 'Sie schicken die vorbereitete Zusammenfassung per WhatsApp oder E-Mail ab – gern mit Fotos vom Raum, vom Untergrund oder von der Treppe.'
     },
     {
-        icon: CalendarCheck,
         title: 'Kostenfreies Vor-Ort-Aufmaß',
         text: `${COMPANY_DATA.owner.fullName} sieht sich die Flächen persönlich an, misst auf und prüft Untergrund, Ebenheit und Anschlüsse.`
     },
     {
-        icon: FileText,
         title: 'Verbindliches Festpreisangebot',
         text: 'Auf Basis des Aufmaßes erhalten Sie eine verbindliche Festpreis-Kalkulation mit den tatsächlich benötigten Mengen.'
     }
@@ -108,238 +103,190 @@ const RELATED_LINKS = [
 
 export default function FliesenKonfiguratorPage() {
     return (
-        <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-24 -left-32 opacity-60" aria-hidden="true" />
-            <div className="ambient-glow-warm top-1/3 -right-40 opacity-50" aria-hidden="true" />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 relative">
-                {/* Hero */}
-                <section className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Sparkles className="w-3.5 h-3.5" />
-                        Fliesen-Konfigurator
-                    </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesen-Konfigurator &amp; Bedarfsrechner von{' '}
-                        <span className="text-ceramic-gradient">Tezgel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+        <>
+            {/* 1. Einstieg: kompakter Kopf, Aktionen und der Hinweis auf die Badseiten */}
+            <Einstieg
+                art="arbeit"
+                etikett="Fliesen-Konfigurator"
+                titel={
+                    <>
+                        Fliesen-Konfigurator &amp; Bedarfsrechner von <span>Tezgel</span>
+                    </>
+                }
+                vorspann={
+                    <p>
                         Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechnen Sie Materialbedarf und Verschnitt für Raum, Untergrund und Format vorab – unverbindlich und kostenfrei.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <a href="#konfigurator" className="btn-primary px-7 py-3.5 text-xs">
-                            Konfigurator starten
-                            <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <Link href="/kontakt" className="btn-ghost px-7 py-3.5 text-xs">
-                            Direkt Aufmaß anfragen
-                        </Link>
-                    </div>
-                    <p className="text-xs text-slate-600 pt-2">
+                }
+                aktionen={
+                    <>
+                        <Knopf href="#konfigurator" icon="pfeil-rechts">Konfigurator starten</Knopf>
+                        <Knopf href="/kontakt" variante="neben">Direkt Aufmaß anfragen</Knopf>
+                    </>
+                }
+                merkmale={
+                    <p className="max-w-mass text-fs-2 text-tinte-2">
                         Sie planen ein Bad?{' '}
-                        <Link href="/bad/badplaner" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold">
+                        <Link href="/bad/badplaner" className={linkKlassen}>
                             Zum Badplaner
                         </Link>{' '}
                         oder zum{' '}
-                        <Link href="/bad/projekt-check" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold">
+                        <Link href="/bad/projekt-check" className={linkKlassen}>
                             Bad-Projektcheck
                         </Link>
                         .
                     </p>
-                </section>
+                }
+            />
 
-                {/* Explanation */}
-                <section aria-labelledby="ablauf-heading" className="space-y-8">
-                    <div className="text-center max-w-3xl mx-auto space-y-3">
-                        <span className="eyebrow eyebrow-orange">So funktioniert es</span>
-                        <h2 id="ablauf-heading" className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Vier Schritte bis zur strukturierten Anfrage
-                        </h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Der Konfigurator ist für Fliesenprojekte außerhalb der Badsanierung gedacht: Wohnräume, Küche, Flur, Treppen,
-                            Balkon und Terrasse sowie Untergrundarbeiten.
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                        {STEP_CARDS.map((card) => {
-                            const Icon = card.icon;
-                            return (
-                                <div
-                                    key={card.title}
-                                    className="group glass-surface rounded-tile-xl p-6 space-y-3 border border-slate-200 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                                >
-                                    <span className="icon-chip w-11 h-11 rounded-tile-md">
-                                        <Icon className="w-5 h-5" />
-                                    </span>
-                                    <h3 className="text-base font-black text-slate-900">{card.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{card.text}</p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </section>
+            {/* 2. Ablauf in vier Schritten als Feldraster an der Fuge */}
+            <Abschnitt
+                art="arbeit"
+                titelId="ablauf-heading"
+                etikett="So funktioniert es"
+                titel="Vier Schritte bis zur strukturierten Anfrage"
+                einleitung={
+                    <p>
+                        Der Konfigurator ist für Fliesenprojekte außerhalb der Badsanierung gedacht: Wohnräume, Küche, Flur, Treppen,
+                        Balkon und Terrasse sowie Untergrundarbeiten.
+                    </p>
+                }
+            >
+                <Feldraster spalten={4} als="ol">
+                    {STEP_CARDS.map((card) => (
+                        <Feld key={card.title} als="li">
+                            <h3 className="font-text text-fs-4 font-semibold text-tinte">{card.title}</h3>
+                            <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{card.text}</p>
+                        </Feld>
+                    ))}
+                </Feldraster>
+            </Abschnitt>
 
-                {/* Tool */}
-                <section id="konfigurator" aria-label="Fliesen-Konfigurator" className="scroll-mt-32">
-                    <FliesenKonfigurator />
-                </section>
+            {/* 3. Konfigurator (abgenommen, unverändert): im Seitenkörper in Lesebreite, 8 Spalten statt Vollbreite */}
+            <Abschnitt art="arbeit" id="konfigurator" aria-label="Fliesen-Konfigurator" kopf="seitlich">
+                <FliesenKonfigurator />
+            </Abschnitt>
 
-                {/* Calculation method */}
-                <section aria-labelledby="rechnung-heading" className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* 4. Berechnung: Erläuterung links, Verschnitt-Richtwerte als Tabelle rechts */}
+            <Abschnitt
+                art="arbeit"
+                titelId="rechnung-heading"
+                kopf="seitlich"
+                etikett="Berechnung"
+                titel="So rechnet der Konfigurator: Fläche, Muster, Verschnitt"
+                einleitung={
                     <div className="space-y-4">
-                        <span className="eyebrow">Berechnung</span>
-                        <h2 id="rechnung-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                            So rechnet der Konfigurator: Fläche, Muster, Verschnitt
-                        </h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                        <p>
                             Grundlage ist die Nettofläche, die Sie in m² angeben. Darauf schlägt der Konfigurator einen typischen
                             Verschnitt für das gewählte Verlegemuster auf und zeigt das Ergebnis als Spanne. Sockel in laufenden Metern
                             werden getrennt ausgewiesen.
                         </p>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                        <p>
                             Die Werte sind Richtwerte zur Orientierung. Kleine oder verwinkelte Räume, große Formate und aufwendige
                             Fugenbilder können mehr Verschnitt erzeugen. Die tatsächlich benötigte Menge legen wir beim kostenfreien
                             Vor-Ort-Aufmaß fest.
                         </p>
                     </div>
-                    <div className="glass-surface rounded-tile-xl border border-slate-200 overflow-hidden">
-                        <table className="w-full text-sm text-left">
-                            <caption className="sr-only">Verschnitt-Richtwerte je Verlegemuster</caption>
-                            <thead className="bg-slate-100 text-slate-900">
-                                <tr>
-                                    <th scope="col" className="px-4 py-3 font-black border-b border-slate-200">Verlegemuster</th>
-                                    <th scope="col" className="px-4 py-3 font-black border-b border-slate-200">Verschnitt (Richtwert)</th>
-                                    <th scope="col" className="px-4 py-3 font-black border-b border-slate-200 hidden sm:table-cell">Warum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {WASTE_ROWS.map((row) => (
-                                    <tr key={row.pattern} className="border-b border-slate-200 last:border-b-0">
-                                        <th scope="row" className="px-4 py-3 font-bold text-slate-900">{row.pattern}</th>
-                                        <td className="px-4 py-3 text-slate-700 tabular-nums">{row.value}</td>
-                                        <td className="px-4 py-3 text-slate-700 hidden sm:table-cell">{row.note}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+                }
+            >
+                <Tabelle
+                    name="Verschnitt-Richtwerte je Verlegemuster"
+                    kopf={[<>Verlegemuster</>, <>Verschnitt (Richtwert)</>, <>Warum</>]}
+                    zeilen={WASTE_ROWS.map((row) => [row.pattern, row.value, row.note])}
+                    ausrichtung={['links', 'rechts', 'links']}
+                />
+            </Abschnitt>
 
-                {/* Stairs */}
-                <section aria-labelledby="treppen-heading" className="glass-surface rounded-tile-xl p-6 sm:p-10 border border-slate-200 space-y-4">
-                    <h2 id="treppen-heading" className="text-xl sm:text-2xl font-black text-slate-900">
-                        Bei Treppen nur die Nettofläche
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-sm text-slate-700 leading-relaxed">
-                        <p>
-                            <strong className="text-slate-900">Zählweise:</strong> Eine Treppe mit n Steigungen hat n Setzstufen und in
-                            der Regel n − 1 Trittstufen. Die Trittstufenfläche ergibt sich aus Laufbreite × Auftrittstiefe inklusive
-                            Überstand, die Setzstufenfläche aus Laufbreite × Steigungshöhe.
-                        </p>
-                        <p>
-                            <strong className="text-slate-900">Ohne Verschnittzuschlag:</strong> Bei Stufen hängt der Verschnitt stark
-                            vom Format und vom Stufenmaß ab. Ein pauschaler Prozentsatz wäre irreführend, deshalb zeigt der Konfigurator
-                            nur die Nettofläche.
-                        </p>
-                        <p>
-                            <strong className="text-slate-900">Keine Menge</strong> gibt es bei gewendelten Treppen, bei Blockstufen
-                            (eine massive Bauart, kein Belag) und bei unvollständigen Maßen. Treppensockel und Kantenausbildung werden
-                            beim Aufmaß festgelegt. Mehr dazu unter{' '}
-                            <Link href="/treppen" className="text-orange-600 hover:text-orange-700 underline underline-offset-2 font-bold">
-                                Treppen neu belegen
-                            </Link>
-                            .
-                        </p>
-                    </div>
-                </section>
+            {/* 5. Treppen: die drei Regeln als Merkliste an der Fuge */}
+            <Abschnitt art="arbeit" titelId="treppen-heading" titel="Bei Treppen nur die Nettofläche">
+                <Merkliste
+                    eintraege={[
+                        {
+                            titel: <>Zählweise:</>,
+                            text: (
+                                <>
+                                    Eine Treppe mit n Steigungen hat n Setzstufen und in der Regel n − 1 Trittstufen. Die Trittstufenfläche ergibt sich aus Laufbreite × Auftrittstiefe inklusive Überstand, die Setzstufenfläche aus Laufbreite × Steigungshöhe.
+                                </>
+                            )
+                        },
+                        {
+                            titel: <>Ohne Verschnittzuschlag:</>,
+                            text: (
+                                <>
+                                    Bei Stufen hängt der Verschnitt stark vom Format und vom Stufenmaß ab. Ein pauschaler Prozentsatz wäre irreführend, deshalb zeigt der Konfigurator nur die Nettofläche.
+                                </>
+                            )
+                        },
+                        {
+                            titel: <>Keine Menge</>,
+                            text: (
+                                <>
+                                    gibt es bei gewendelten Treppen, bei Blockstufen (eine massive Bauart, kein Belag) und bei unvollständigen Maßen. Treppensockel und Kantenausbildung werden beim Aufmaß festgelegt. Mehr dazu unter{' '}
+                                    <Link href="/treppen" className={linkKlassen}>
+                                        Treppen neu belegen
+                                    </Link>
+                                    .
+                                </>
+                            )
+                        }
+                    ]}
+                />
+            </Abschnitt>
 
-                {/* Next steps */}
-                <section aria-labelledby="weiter-heading" className="space-y-8">
-                    <div className="text-center max-w-3xl mx-auto space-y-3">
-                        <span className="eyebrow">Nach der Anfrage</span>
-                        <h2 id="weiter-heading" className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Wie es weitergeht: Aufmaß und Festpreisangebot
-                        </h2>
-                    </div>
-                    <ol className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                        {NEXT_STEPS.map((item, idx) => {
-                            const Icon = item.icon;
-                            return (
-                                <li key={item.title} className="glass-surface rounded-tile-xl p-6 border border-slate-200 space-y-3">
-                                    <div className="flex items-center gap-3">
-                                        <span className="icon-chip w-11 h-11 rounded-tile-md">
-                                            <Icon className="w-5 h-5" />
-                                        </span>
-                                        <span className="text-xs font-black text-slate-600 tabular-nums">0{idx + 1}</span>
-                                    </div>
-                                    <h3 className="text-base font-black text-slate-900">{item.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
-                                </li>
-                            );
-                        })}
-                    </ol>
-                </section>
+            {/* 6. Nächste Schritte: Aufmaß und Festpreisangebot als Schrittfolge */}
+            <Abschnitt
+                art="arbeit"
+                titelId="weiter-heading"
+                etikett="Nach der Anfrage"
+                titel="Wie es weitergeht: Aufmaß und Festpreisangebot"
+            >
+                <Schrittfolge
+                    ausrichtung="waagrecht"
+                    schritte={NEXT_STEPS.map((item) => ({ titel: item.title, text: item.text }))}
+                />
+            </Abschnitt>
 
-                {/* FAQ */}
-                <section aria-labelledby="faq-heading" className="max-w-4xl mx-auto space-y-6">
-                    <div className="text-center space-y-3">
-                        <span className="eyebrow eyebrow-neutral">FAQ</span>
-                        <h2 id="faq-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                            Häufige Fragen zum Konfigurator
-                        </h2>
-                    </div>
-                    <div className="space-y-3">
-                        {FAQS.map((faq) => (
-                            <details
-                                key={faq.q}
-                                className="group glass-surface rounded-tile-md border border-slate-200 p-5 open:border-orange-500/80 transition-all duration-300"
-                            >
-                                <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-slate-900">
-                                    {faq.q}
-                                    <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 transition-transform duration-300 group-open:rotate-90" aria-hidden="true" />
-                                </summary>
-                                <p className="mt-3 text-sm text-slate-700 leading-relaxed">{faq.a}</p>
-                            </details>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Weiterführende Ratgeber */}
-                <section aria-labelledby="ratgeber-heading" className="space-y-6">
-                    <h2 id="ratgeber-heading" className="text-xl sm:text-2xl font-black text-slate-900">Weiterführende Ratgeber zur Fliesenplanung</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {RELATED_LINKS.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="group glass-surface rounded-tile-md p-5 border border-slate-200 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
-                                    {link.title}
-                                    <ArrowRight className="w-4 h-4 text-orange-500" aria-hidden="true" />
+            {/* 7. FAQ: native Aufklapper (ohne Skript), Fuge statt Kasten; Plus geschlossen, Minus offen */}
+            <Abschnitt art="arbeit" titelId="faq-heading" etikett="FAQ" titel="Häufige Fragen zum Konfigurator">
+                <div className="border-t border-fuge">
+                    {FAQS.map((faq) => (
+                        <details key={faq.q} className="group border-b border-fuge">
+                            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-6 py-4 font-text text-fs-3 font-semibold text-tinte hover:text-tinte-2 [&::-webkit-details-marker]:hidden">
+                                <span className="min-w-0">{faq.q}</span>
+                                <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+                                    <span className="group-open:hidden">
+                                        <Icon name="plus" groesse={6} />
+                                    </span>
+                                    <span className="hidden group-open:block">
+                                        <Icon name="minus" groesse={6} />
+                                    </span>
                                 </span>
-                                <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
-                            </Link>
-                        ))}
-                    </div>
-                    <p className="text-sm text-slate-700">
-                        Lieber direkt sprechen?{' '}
-                        <Link href="/kontakt" className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold">
-                            Zur Kontaktseite
-                        </Link>{' '}
-                        oder telefonisch unter{' '}
-                        <a
-                            href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className="text-orange-600 hover:text-orange-700 hover:underline underline-offset-2 font-bold tabular-nums"
-                        >
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        .
-                    </p>
-                </section>
-            </div>
+                            </summary>
+                            <p className="max-w-mass pb-6 font-text text-fs-2 text-tinte-2">{faq.a}</p>
+                        </details>
+                    ))}
+                </div>
+            </Abschnitt>
+
+            {/* 8. Weiterführende Ratgeber als Zeilen an der Fuge, danach der direkte Kontaktweg */}
+            <Abschnitt art="arbeit" titelId="ratgeber-heading" titel="Weiterführende Ratgeber zur Fliesenplanung">
+                <RatgeberListe
+                    artikel={RELATED_LINKS.map((link) => ({ href: link.href, titel: link.title, anriss: link.desc }))}
+                />
+                <p className="mt-8 font-text text-fs-2 text-tinte-2">
+                    Lieber direkt sprechen?{' '}
+                    <Link href="/kontakt" className={linkKlassen}>
+                        Zur Kontaktseite
+                    </Link>{' '}
+                    oder telefonisch unter{' '}
+                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={`${linkKlassen} font-mono`}>
+                        {COMPANY_DATA.contact.phone}
+                    </a>
+                    .
+                </p>
+            </Abschnitt>
 
             <QualityPromise />
-        </div>
+        </>
     );
 }
