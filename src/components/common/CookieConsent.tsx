@@ -52,13 +52,16 @@ export default function CookieConsent() {
     handleShieldClick,
   } = useEinwilligungsBanner();
 
-  // Platz des Widerruf-Schilds in der unteren Leiste (unter lg). Das Schild bleibt dieser Knopf mit dieser Logik;
-  // es wird nur dorthin eingehängt, sobald die Komponente geladen ist. Seiten ohne Leiste: schwebendes Schild.
+  // Plätze des Widerruf-Schilds: unter lg das erste Feld der unteren Leiste, sonst die Rechtszeile im Fuß (E3-NACH-06 –
+  // keine schwebende Ebene mehr über dem Inhalt). Das Schild bleibt dieser Knopf mit dieser Logik; es wird nur dorthin
+  // eingehängt, sobald die Komponente geladen ist. Je Breite ist genau ein Schild sichtbar.
   const pathname = usePathname();
   const [schildPlatz, setSchildPlatz] = useState<HTMLElement | null>(null);
+  const [fussPlatz, setFussPlatz] = useState<HTMLElement | null>(null);
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSchildPlatz(document.getElementById("leiste-schild"));
+    setFussPlatz(document.getElementById("fuss-schild"));
   }, [pathname]);
 
   return (
@@ -263,8 +266,8 @@ export default function CookieConsent() {
         </div>
       )}
 
-      {/* Widerruf jederzeit (Art. 7 Abs. 3 DSGVO): kleiner, flacher Knopf. Unter lg im ersten Feld der unteren Leiste
-          (eingehängt per Portal, dieselbe Logik), ab lg schwebend links unten; auf Seiten ohne Leiste immer schwebend. */}
+      {/* Widerruf jederzeit (Art. 7 Abs. 3 DSGVO): flacher Knopf. Unter lg im ersten Feld der unteren Leiste, ab lg und auf
+          Seiten ohne Leiste in der Rechtszeile des Fußes (eingehängt per Portal, dieselbe Logik). */}
       {!showBanner && schildPlatz && createPortal(
         <button
           type="button"
@@ -278,21 +281,22 @@ export default function CookieConsent() {
         </button>,
         schildPlatz,
       )}
-      {!showBanner && (
+      {!showBanner && fussPlatz && createPortal(
         <button
           type="button"
           onClick={handleShieldClick}
           className={clsx(
-            "fixed z-30 size-11 items-center justify-center border border-strich bg-fliese text-tinte-2 transition-colors dauer-1 ease-setzen hover:border-tinte hover:text-tinte lg:bottom-6 lg:left-6",
-            schildPlatz ? "hidden lg:inline-flex" : "bottom-4 left-4 inline-flex",
+            "min-h-11 items-center gap-2 py-1 text-kalk underline decoration-nacht-fuge underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk",
+            schildPlatz ? "hidden lg:inline-flex" : "inline-flex",
           )}
           aria-label="Cookie-Einstellungen verwalten"
           title="Cookie-Einstellungen öffnen"
-          data-feste-ebene
           data-motion="zustand"
         >
-          <Icon name="schloss" groesse={5} />
-        </button>
+          <Icon name="schloss" groesse={4} />
+          <span>Cookie-Einstellungen</span>
+        </button>,
+        fussPlatz,
       )}
     </>
   );
