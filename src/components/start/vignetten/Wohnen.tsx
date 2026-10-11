@@ -1,7 +1,8 @@
 import { Linie, Planrahmen, gleich, schraffur, type VignetteProps } from '@/components/start/vignetten/zeichnen';
 
 // Vignette „wohnen“ (P3-10, K-010): Draufsicht eines Raums, Großformat 2 : 1 im Drittelverband (Reihenversatz 1/3 Platte).
-// Die Laserachse (Waage) läuft mittig durch den Raum und liegt auf einer Fuge – das einzige Rot der vier Vignetten.
+// Die Achse (Waage) läuft mittig durch den Raum und liegt auf einer Fuge – in Strichgrau, nicht rot: seit die Leitachse
+// über die Erzählansichten läuft, trägt sie das eine Rot je Bildschirm (E3-NACH-02, Rückgabe E3-BAU-02).
 // Passstücke an den Reihenenden schraffiert, Bemaßung links: Achse mittig („=“ über und unter ihr). Türöffnung unten.
 const X0 = 24;
 const X1 = 228;
@@ -39,8 +40,8 @@ export default function VignetteWohnen({ className }: VignetteProps) {
       {/* Wände mit Türöffnung unten */}
       <Linie d="M84 112H228V16H24V112H48" />
       <Linie d={MASS} />
-      {/* Laserachse (Waage) durch den Raum, auf der mittleren Fuge */}
-      <g className="text-laser">
+      {/* Achse (Waage) durch den Raum, auf der mittleren Fuge */}
+      <g className="text-strich">
         <Linie d="M18 64H236" />
       </g>
     </Planrahmen>
