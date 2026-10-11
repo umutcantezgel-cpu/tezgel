@@ -62,10 +62,8 @@ function Stimmenkarte({ stimme }: { stimme: Stimme }) {
         </blockquote>
         {notiz ? <Randnotiz schritt={notiz} /> : null}
         <figcaption className="mt-auto flex flex-wrap items-center gap-x-k-4 gap-y-k-1 border-t border-k-fuge pt-k-4 k-mono text-k-1 text-k-tinte-2">
-          <span className="inline-flex items-center gap-k-1 text-k-tinte">
-            {stimme.author}
-            <Icon name="haken" groesse={16} titel="Verifizierter Kunde" />
-          </span>
+          {/* Kein Haken „Verifizierter Kunde“: nicht belegt, Quelle ist Google (MIKROTEXTE Kl. 4, P3-16-GEG H-1) */}
+          <span className="text-k-tinte">{stimme.author}</span>
           <span>{stimme.source} Rezension</span>
           <span className="inline-flex items-center gap-k-1">
             <span aria-hidden="true" className="flex text-k-tinte">

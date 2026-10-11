@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { createMetadata } from '@/lib/metadata';
 import Einstieg from '@/components/kern/start/einstieg-b/Einstieg';
@@ -26,16 +27,28 @@ export default function Startseite() {
   return (
     <>
       <Einstieg formular={<HeroKontakt />} />
-      <Vertrauen />
-      <Fachbereiche />
-      <Projektanfrage />
-      <Fachgewerke />
-      <Ablauf />
-      <Grossformat />
-      <Stimmen />
-      <Servicegebiet />
-      <Fragen />
-      <ExpressAnfrage />
+      {/* Hydrierungsgrenzen (P3-16-GEG M-4, TBT): Jede Grenze hydriert für sich, React gibt dazwischen den Hauptfaden frei.
+          Inhalt und HTML bleiben gleich (statisch vorgerendert, nichts setzt aus); fallback wird nie gezeigt. */}
+      <Suspense fallback={null}>
+        <Vertrauen />
+        <Fachbereiche />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Projektanfrage />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Fachgewerke />
+        <Ablauf />
+        <Grossformat />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Stimmen />
+        <Servicegebiet />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Fragen />
+        <ExpressAnfrage />
+      </Suspense>
       <Abschluss
         headline="Bereit für Ihr Fliesen- oder Badprojekt? Sprechen Sie direkt mit Fachbetriebsleiter Deniz Tezgel."
         subtitle="Kostenfreies Vor-Ort-Aufmaß • Verbindlicher Festpreis • Über 15 Jahre Erfahrung"

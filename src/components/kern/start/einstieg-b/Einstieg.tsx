@@ -67,8 +67,9 @@ export default function Einstieg({ formular }: EinstiegProps) {
             className="mt-k-5 k-anzeige text-k-7 text-k-tinte lg:col-span-6 lg:row-start-2 lg:mt-k-4 lg:self-end lg:pr-k-6 lg:pb-k-3"
           >
             <span className="block">Perfektion auf jedem Quadrat&shy;meter.</span>
-            {/* Unterzeile ungestaucht: Textbreite 100 %, Laufweite normal (P3-09c, Auflage 3) */}
-            <span className="mt-k-2 block k-text text-k-5 font-semibold tracking-normal text-k-tinte-2">
+            {/* Unterzeile ungestaucht: Textbreite 100 %, Laufweite normal (P3-09c, Auflage 3). Ab xl eine Stufe kleiner und
+                einzeilig: „aus Aßlar“ steht dann rechts neben dem Erstbesuchs-Banner (Fünf-Sekunden-Probe, P3-16-GEG M-6). */}
+            <span className="mt-k-2 block k-text text-k-5 font-semibold tracking-normal text-k-tinte-2 xl:text-k-4">
               Fliesenverlegung &amp; Badsanierung aus Aßlar
             </span>
           </h1>

@@ -53,7 +53,7 @@ function Bewertungsabzeichen() {
         </span>
         <span className="flex items-start justify-between gap-k-2 k-text text-k-1 font-semibold text-k-tinte-2 md:text-k-2">
           <span className="underline decoration-k-strich decoration-1 underline-offset-4">
-            <span className="k-mono font-normal">{google.count}</span> verifizierte Google-Rezensionen
+            <span className="k-mono font-normal">{google.count}</span> Google-Rezensionen
           </span>
           <span className="flex h-lh shrink-0 items-center">
             <Icon name="pfeil" groesse={16} />
