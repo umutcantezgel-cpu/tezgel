@@ -1,0 +1,173 @@
+"use client";
+import Link from 'next/link';
+import Image from 'next/image';
+import { Search, Calendar, ArrowRight, Clock } from 'lucide-react';
+import { useBlogListe } from '@/lib/formulare/useBlogListe';
+import BlogCard from '@/components/blog/BlogCard';
+import BlogSidebar from '@/components/blog/BlogSidebar';
+
+// Filter-Insel der Ratgeber-Liste /blog: der einzige Client-Teil der Seite. Hook und das davon abhängige Markup
+// (Suche und Kategorien, Hervorhebung, Liste, Leerzustand, Seitenleiste) liegen hier; die Seite selbst ist Server-Komponente.
+export default function BlogFilter() {
+  const {
+    activeCategory,
+    setActiveCategory,
+    searchQuery,
+    setSearchQuery,
+    visibleCategories,
+    filteredPosts,
+    featuredPost,
+    showFeatured,
+    gridPosts,
+    getReadTime,
+    resetFilters,
+  } = useBlogListe();
+
+  return (
+        <div className="flex flex-col lg:flex-row gap-10">
+
+          {/* MAIN CONTENT */}
+          <div className="flex-1">
+
+            {/* Search and Category Filter (Mobile & Tablet) */}
+            <div className="lg:hidden mb-8 space-y-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  aria-label="Ratgeber durchsuchen"
+                  placeholder="Ratgeber durchsuchen..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-11 pr-4 py-3.5 rounded-tile-md border border-slate-300 bg-white shadow-sm text-sm font-semibold text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600"
+                />
+                <Search className="absolute left-3.5 top-4 w-4 h-4 text-slate-600" aria-hidden="true" />
+              </div>
+
+              {visibleCategories.length > 0 && (
+                <div className="overflow-x-auto pb-2 flex gap-2 scrollbar-hide">
+                  <button
+                    type="button"
+                    onClick={() => setActiveCategory('all')}
+                    aria-pressed={activeCategory === 'all'}
+                    className={`px-4 py-2 rounded-tile-pill whitespace-nowrap text-xs font-black transition-all ${
+                      activeCategory === 'all'
+                        ? 'bg-orange-600 text-white shadow-md'
+                        : 'bg-white text-slate-700 border border-slate-300 hover:border-orange-500/80'
+                    }`}
+                  >
+                    Alle Themen
+                  </button>
+                  {visibleCategories.map(category => (
+                    <button
+                      type="button"
+                      key={category.id}
+                      onClick={() => setActiveCategory(category.id)}
+                      aria-pressed={activeCategory === category.id}
+                      className={`px-4 py-2 rounded-tile-pill whitespace-nowrap text-xs font-black transition-all ${
+                        activeCategory === category.id
+                          ? 'bg-orange-600 text-white shadow-md'
+                          : 'bg-white text-slate-700 border border-slate-300 hover:border-orange-500/80'
+                      }`}
+                    >
+                      {category.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Featured Post Hero Card - Double Bezel */}
+            {showFeatured && (
+              <div className="mb-10">
+                <div className="glass-bezel-outer">
+                  <Link
+                    href={`/blog/${featuredPost.slug}`}
+                    className="glass-bezel-inner p-6 sm:p-8 block group"
+                  >
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                      <div className="relative h-60 sm:h-72 rounded-tile-md overflow-hidden shadow-md">
+                        <Image
+                          src={featuredPost.image}
+                          alt={featuredPost.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          priority
+                        />
+                        <span className="absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10">
+                          Empfohlener Leitfaden
+                        </span>
+                      </div>
+
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3 text-xs text-slate-600 font-bold">
+                          {featuredPost.date && (
+                            <span className="flex items-center gap-1.5 bg-orange-50 border border-orange-200 text-orange-800 px-3 py-1 rounded-tile-pill">
+                              <Calendar className="w-3.5 h-3.5" />
+                              {featuredPost.date}
+                            </span>
+                          )}
+                          <span className="flex items-center gap-1.5">
+                            <Clock className="w-3.5 h-3.5 text-orange-600" />
+                            {getReadTime(featuredPost)} Lesezeit
+                          </span>
+                        </div>
+
+                        <h2 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-orange-700 transition-colors leading-tight">
+                          {featuredPost.title}
+                        </h2>
+
+                        <p className="text-sm text-slate-700 line-clamp-3 leading-relaxed">
+                          {featuredPost.excerpt}
+                        </p>
+
+                        <div className="inline-flex items-center gap-1.5 text-orange-700 font-black text-xs group-hover:text-orange-600 transition-colors pt-2">
+                          Vollständigen Leitfaden lesen
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            {/* Post Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {gridPosts
+                .map((post) => (
+                  <div key={post.id}>
+                    <BlogCard post={post} />
+                  </div>
+                ))}
+            </div>
+
+            {/* Empty State */}
+            {filteredPosts.length === 0 && (
+              <div className="glass-surface p-12 rounded-tile-xl text-center space-y-4">
+                <Search className="w-10 h-10 text-orange-600 mx-auto" aria-hidden="true" />
+                <p className="text-slate-700 font-bold text-sm">Keine Artikel zur Suchanfrage gefunden.</p>
+                <button
+                  type="button"
+                  onClick={resetFilters}
+                  className="btn-primary px-6 py-2.5 text-xs"
+                >
+                  Filter zurücksetzen
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* SIDEBAR (Desktop) */}
+          <div className="hidden lg:block w-80 shrink-0">
+            <BlogSidebar
+              activeCategory={activeCategory}
+              setActiveCategory={setActiveCategory}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+            />
+          </div>
+
+        </div>
+  );
+}
