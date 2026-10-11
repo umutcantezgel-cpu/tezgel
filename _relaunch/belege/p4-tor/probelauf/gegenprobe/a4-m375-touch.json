@@ -1,0 +1,347 @@
+{
+ "satz": "gegenprobe-1c6c9cd",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "m375",
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "isMobile": true,
+  "hasTouch": true,
+  "dpr": 1,
+  "eingabe": "touch",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T10:47:04.416Z",
+ "lauf": "a4-m375-touch",
+ "aufgabe": 4,
+ "titel": "Eigenen Ort prüfen",
+ "auftrag": "Prüfen Sie, ob der Betrieb auch in Butzbach arbeitet.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/ausgangsstand/a4-m375-touch.json",
+ "antwort": "Ja – Butzbach gehört zum 45-km-Einsatzgebiet: Chip „Butzbach 35 km“ unter „Unser 45-km-Einsatzgebiet in Mittelhessen“ auf /standorte; nach dem Antippen „Einsatzgebiet Butzbach ca. 44 Min. ab Aßlar“.",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "mittel",
+   "schritt": 8,
+   "text": "Butzbach steht auf /standorte mobil erst nach 1 Bildlauf und 3× Wischen in der Stadt-Leiste im Bild (Desktop: sofort nach Klick auf „Standorte“). Ohne Wischen erst die Ortskarte nach 6 Bildschirmhöhen (Erkundung: Ziel bei Schritt 10)."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 1,
+   "text": "Der Einwilligungsbanner liegt über dem geöffneten Mobilmenü – „Standorte“ ist verdeckt (Abbruch „verdeckt durch … Cookie-Einwilligungsbanner“), der Banner muss zuerst geschlossen werden."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 9,
+   "text": "Antippen des Chips „Butzbach 35 km“ ändert im Bild nur die Markierung; die Details erscheinen unterhalb der Karte außerhalb des Bildes (erst nach Bildlauf in Schritt 10 sichtbar)."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 4,
+   "text": "Die Blase „Chat starten“ verdeckt auf /standorte mobil Teile des Telefon-Knopfs bzw. von „Karte laden & zustimmen“."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 62,
+    "aria": 284,
+    "ausschnitt": 43,
+    "bedien": 77
+   },
+   "dauer_ms": 2673
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle ablehnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Alle ablehnen\" · dialog „Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 70,
+    "aria": 231,
+    "ausschnitt": 51,
+    "bedien": 61
+   },
+   "dauer_ms": 903
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Architektur-Menü öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Architektur-Menü öffnen\" · header",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 46,
+    "aria": 473,
+    "ausschnitt": 36,
+    "bedien": 56
+   },
+   "dauer_ms": 1311
+  },
+  {
+   "nr": 3,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Standorte"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Standorte Aßlar, Wetzlar, Gießen, Marburg und ganz Hessen\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "einziger freier Treffer im Bild (von 2), Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 3,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-tippe.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 38,
+    "aria": 199,
+    "ausschnitt": 36,
+    "bedien": 31
+   },
+   "dauer_ms": 1194
+  },
+  {
+   "nr": 4,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle 13 Standorte"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Alle 13 Standorte Lahn-Dill-Kreis, Wetterau & Umland\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/standorte",
+   "h1": "Standorte & Einsatzgebiete in Mittelhessen",
+   "scrollY": 0,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-tippe.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 43,
+    "aria": 35,
+    "ausschnitt": 6,
+    "bedien": 10
+   },
+   "dauer_ms": 807
+  },
+  {
+   "nr": 5,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "unten"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 5,
+   "url": "/standorte",
+   "h1": "Standorte & Einsatzgebiete in Mittelhessen",
+   "scrollY": 690,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf 690 px"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "05-scrolle.jpg",
+    "aria": "05-aria.txt",
+    "sichtbar": "05-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 84,
+    "aria": 67,
+    "ausschnitt": 8,
+    "bedien": 46
+   },
+   "dauer_ms": 1218
+  },
+  {
+   "nr": 6,
+   "art": "wische",
+   "eingabe": {
+    "wische": "links",
+    "an": "Gießen 25 km"
+   },
+   "ergebnis": "fehler",
+   "grund": "nicht gefunden: kein sichtbares Element „Gießen 25 km“",
+   "handlungen": 0,
+   "summe": 5,
+   "url": "/standorte",
+   "dateien": {
+    "bild": "06-fehler.jpg",
+    "aria": "06-aria.txt",
+    "sichtbar": "06-sichtbar.txt"
+   },
+   "dauer_ms": 287
+  }
+ ],
+ "handlungen_gesamt": 5,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 5,
+  "handlungen_bis_ziel": 5,
+  "bedingungen": [
+   {
+    "name": "Butzbach als Einsatzort bestätigt",
+    "erfuellt": true,
+    "bei_schritt": 5,
+    "treffer": "Butzbach im Bild zusammen mit Einsatzgebiet/Standorten: „…ad Nauheim Friedberg (Hessen) Butzbach Herborn Dillenburg Haiger Braunfels Sol…“"
+   }
+  ]
+ },
+ "abbruch": {
+  "schritt": 6,
+  "eingabe": {
+   "wische": "links",
+   "an": "Gießen 25 km"
+  },
+  "grund": "nicht gefunden: kein sichtbares Element „Gießen 25 km“",
+  "kandidaten": [
+   "link \"Gießen\" (Ähnlichkeit 0.67)",
+   "link \"Fliesenleger in Gießen\" (Ähnlichkeit 0.41)",
+   "link \"Fliesenleger in Aßlar\" (Ähnlichkeit 0.36)",
+   "link \"Fliesenberatung Gießen\" (Ähnlichkeit 0.35)",
+   "link \"Friedberg (Hessen)\" (Ähnlichkeit 0.34)",
+   "link \"Fliesen & Verlegung\" (Ähnlichkeit 0.33)",
+   "link \"Fliesen & XXL-Großformate\" (Ähnlichkeit 0.32)",
+   "link \"Fliesenleger in Solms\" (Ähnlichkeit 0.31)"
+  ],
+  "pw_log": null,
+  "url": "/standorte",
+  "dateien": {
+   "bild": "06-fehler.jpg",
+   "aria": "06-aria.txt",
+   "sichtbar": "06-sichtbar.txt"
+  }
+ },
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

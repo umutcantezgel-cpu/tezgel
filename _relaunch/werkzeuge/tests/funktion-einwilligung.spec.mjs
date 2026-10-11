@@ -3,7 +3,7 @@
 // Prüft Verhalten: gespeicherter Zustand (Cookie tezgel_consent_status), Anfragen an Karten-Hosts (Protokoll, art 'fremd'),
 // Platzhalter vor und geladene Karte nach Einwilligung. Keine Gestaltungsklassen, keine festen Wartezeiten.
 // Selektoren über Rolle und Name; Bedienung erst nach der Hydrierung (bedienbar aus fixtures.mjs).
-import { test, expect, bedienbar, KERN_SEITEN, istKern } from './fixtures.mjs';
+import { test, expect, bedienbar, KERN_SEITEN, istKern, oeffne, sprunglink } from './fixtures.mjs';
 
 const ORTE = ['/', '/standorte', '/kontakt'];
 const COOKIE = 'tezgel_consent_status';
@@ -91,7 +91,7 @@ test.describe('Einwilligung (F-11, global)', () => {
 
     for (const ort of ORTE) {
       test(`${ort}: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie`, async ({ page, context }) => {
-        await page.goto(ort);
+        await oeffne(page, ort, schalter(page, 'Alle akzeptieren'));
         await expect(banner(page)).toBeVisible();
         await expect(schalter(page, 'Alle akzeptieren')).toBeEnabled();
         await expect(schalter(page, 'Alle ablehnen')).toBeEnabled();
@@ -102,7 +102,7 @@ test.describe('Einwilligung (F-11, global)', () => {
 
     for (const ort of BANNER_ORTE) {
       test(`${ort}: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)`, async ({ page, context }) => {
-        await page.goto(ort);
+        await oeffne(page, ort, banner(page).getByRole('button', { name: /Cookie-Banner schließen/ }));
         await expect(banner(page)).toBeVisible();
         await klick(banner(page).getByRole('button', { name: /Cookie-Banner schließen/ }));
         await expect(banner(page)).toHaveCount(0);
@@ -111,7 +111,7 @@ test.describe('Einwilligung (F-11, global)', () => {
 
       test(`${ort}: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu`, async ({ page, context }) => {
         await beobachteBanner(page);
-        await page.goto(ort);
+        await oeffne(page, ort, schalter(page, 'Alle ablehnen'));
         await expect(schalter(page, 'Alle ablehnen')).toBeVisible();
         await klick(schalter(page, 'Alle ablehnen'));
         await expect(banner(page)).toHaveCount(0);
@@ -135,7 +135,7 @@ test.describe('Einwilligung (F-11, global)', () => {
     }
 
     test('Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt', async ({ page, context }) => {
-      await page.goto('/kontakt');
+      await oeffne(page, '/kontakt', schalter(page, 'Alle akzeptieren'));
       await expect(schalter(page, 'Alle akzeptieren')).toBeVisible();
       await klick(schalter(page, 'Alle akzeptieren'));
       await expect(banner(page)).toHaveCount(0);
@@ -144,7 +144,7 @@ test.describe('Einwilligung (F-11, global)', () => {
 
     for (const ort of BANNER_ORTE) {
       test(`${ort}: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)`, async ({ page }) => {
-        await page.goto(`${ort}#cookie-settings`);
+        await oeffne(page, `${ort}#cookie-settings`, schalter(page, 'Auswahl speichern'));
         await expect(banner(page)).toBeVisible();
         await expect(banner(page).getByText('Cookie-Einstellungen individuell anpassen')).toBeVisible();
         await expect(schalter(page, 'Auswahl speichern')).toBeEnabled();
@@ -152,7 +152,7 @@ test.describe('Einwilligung (F-11, global)', () => {
       });
 
       test(`${ort}: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)`, async ({ page, context }) => {
-        await page.goto(ort);
+        await oeffne(page, ort, schalter(page, 'Einstellungen'));
         await expect(schalter(page, 'Einstellungen')).toBeVisible();
         await klick(schalter(page, 'Einstellungen'));
         await expect(schalter(page, 'Auswahl speichern')).toBeVisible();
@@ -172,7 +172,7 @@ test.describe('Einwilligung (F-11, global)', () => {
     const titel = (ort) => (istKern(ort) ? 'Fußlink „Cookie-Einstellungen“' : 'Schild „Cookie-Einstellungen verwalten“');
     for (const ort of ['/', '/standorte']) {
       test(`${ort}: ${titel(ort)} öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing`, async ({ page, context }) => {
-        await page.goto(ort);
+        await oeffne(page, ort, einstieg(page, ort));
         await expect(einstieg(page, ort)).toBeVisible();
         await expect(banner(page)).toHaveCount(0);
         await klick(einstieg(page, ort));
@@ -191,7 +191,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
     test.use({ einwilligung: 'erstbesuch' });
 
     test('/kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts', async ({ page, protokoll }) => {
-      await page.goto('/kontakt');
+      await oeffne(page, '/kontakt', schalter(page, 'Alle akzeptieren'));
       await expect(banner(page)).toBeVisible();
       const knopf = await ladeKnopf(page, '/kontakt');
       await expect(knopf).toBeVisible();
@@ -203,7 +203,8 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
   test.describe('ohne Marketing-Einwilligung (abgelehnt)', () => {
     for (const ort of ORTE) {
       test(`${ort}: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts`, async ({ page, protokoll }) => {
-        await page.goto(ort);
+        // Die Karte der Startseite wird erst im Blick eingehängt: Wartebedingung am Sprunglink (jede Seite, beide Fassungen).
+        await oeffne(page, ort, sprunglink(page));
         const knopf = await ladeKnopf(page, ort);
         await expect(knopf).toBeVisible();
         await expect(page.locator('iframe[src*="openstreetmap.org"], iframe[src*="google.com/maps"]')).toHaveCount(0);
@@ -217,7 +218,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
       // Standortkarte (absolut unten, z-10) den Knopf vollständig ab; ein Tipp trifft den Kasten. Desktop ist nicht
       // betroffen. Siehe OFFENE FRAGEN.
       test.fixme(isMobile, 'Ausgangsstand: Info-Kasten der Standortkarte überdeckt den Platzhalter-Knopf auf Smartphone-Breite (OFFENE FRAGE)');
-      await page.goto('/standorte');
+      await oeffne(page, '/standorte', standortKarte(page).getByRole('button', { name: LADE_KNOPF }));
       const knopf = await ladeKnopf(page, '/standorte');
       await klick(knopf);
       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });
@@ -226,7 +227,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
     });
 
     test('/kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)', async ({ page, context, protokoll }) => {
-      await page.goto('/kontakt');
+      await oeffne(page, '/kontakt', page.getByRole('button', { name: LADE_KNOPF }));
       const knopf = await ladeKnopf(page, '/kontakt');
       await klick(knopf);
       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });
@@ -235,7 +236,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
     });
 
     test('/: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter', async ({ page, context }) => {
-      await page.goto('/');
+      await oeffne(page, '/', sprunglink(page));
       const knopf = await ladeKnopf(page, '/');
       await klick(knopf);
       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });
@@ -248,7 +249,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
     // ganz im Bestand hat keine, dort entfällt er über die Liste (diese Datei hat kein skip-Kontingent, Sperrklinke).
     for (const ort of KERN_SEITEN.filter((s) => s === '/')) {
       test(`${ort}: „Cookie-Einstellungen“ im Kartenplatzhalter öffnet die Einstellungen, ohne die Einwilligung zu ändern`, async ({ page, context }) => {
-        await page.goto(ort);
+        await oeffne(page, ort, sprunglink(page));
         await ladeKnopf(page, ort);
         const vorher = await lesEinwilligung(context);
         expect(vorher).toMatchObject({ analytics: false, marketing: false });
@@ -266,7 +267,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
     test.use({ einwilligung: 'alle' });
 
     test('/standorte: Karte ohne Platzhalter, Anfrage an Karten-Host', async ({ page, protokoll }) => {
-      await page.goto('/standorte');
+      await oeffne(page, '/standorte', sprunglink(page));
       await standortKarte(page).scrollIntoViewIfNeeded();
       // Erst die geladene Karte abwarten (N-2), dann „kein Platzhalter“ prüfen.
       await expect(standortKarte(page).locator('iframe')).toBeAttached();
@@ -279,7 +280,7 @@ test.describe('Karten hinter Einwilligung (F-12)', () => {
     // „/standorte“ oben geprüft.
     for (const ort of KERN_SEITEN.filter((s) => s === '/')) {
       test(`${ort}: Karte ohne Platzhalter, Anfrage an Karten-Host (Servicegebiet im Blick)`, async ({ page, protokoll }) => {
-        await page.goto(ort);
+        await oeffne(page, ort, sprunglink(page));
         await page.locator('#servicegebiet').scrollIntoViewIfNeeded();
         // Erst die geladene Karte abwarten (N-2), dann „kein Platzhalter“ prüfen.
         await expect(page.locator('#servicegebiet iframe')).toBeAttached();

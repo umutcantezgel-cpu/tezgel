@@ -1,0 +1,4 @@
+{ "aufgabe": 1, "start": "/", "ansicht": "m375", "eingabe": "touch",
+  "antwort": "Die Leistungsseite „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss“ liegt im Menü unter Badsanierung als „Barrierefreies Bad“.",
+  "befunde": [ { "schwere": "gering", "schritt": 3, "text": "Ort: Leistungsseite /bad/barrierefreies-bad. Bild 03-tippe.jpg: Der Einwilligungsdialog liegt beim Aufruf über der Überschrift (H1) und dem Seitenanfang; der Seitentitel ist erst nach dem Schließen des Dialogs lesbar (sichtbar.txt führt die H1 nicht)." } ],
+  "schritte": [ { "tippe": "Architektur-Menü öffnen" }, { "tippe": "Badsanierung Schlüsselfertige Bäder" }, { "tippe": "Barrierefreies Bad", "in": "Hauptnavigation" } ] }

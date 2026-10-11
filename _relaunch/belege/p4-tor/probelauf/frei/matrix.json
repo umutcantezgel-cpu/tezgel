@@ -1,0 +1,266 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "quelle": "lauf.json je Lauf (Messbedingungen dort)",
+  "modi": [
+   "m375 touch",
+   "d1440 maus",
+   "d1440 tastatur"
+  ],
+  "protokoll": "_relaunch/PROBELAUF.md"
+ },
+ "erstellt": "2026-10-11T11:22:42.509Z",
+ "laeufe": [
+  {
+   "lauf": "a1-d1440-maus",
+   "aufgabe": 1,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 2,
+   "handlungen_gesamt": 2,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 2,
+     "text": "Ort: Leistungsseite /bad/barrierefreies-bad, Bild 02-tippe.jpg: Der Einwilligungsdialog liegt mittig oben über der Überschrift (H1); die Titelzeile ist nur angeschnitten lesbar."
+    }
+   ],
+   "erstellt": "2026-10-11T10:51:10.571Z"
+  },
+  {
+   "lauf": "a1-d1440-tastatur",
+   "aufgabe": 1,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 21,
+   "handlungen_gesamt": 21,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 3,
+     "text": "Ort: Kopfleiste und Übersicht /bad. Bild 03-taste.jpg: Jede Rubrik der Kopfnavigation hat zwei Tab-Stopps (Link und Schaltfläche „Untermenü … öffnen“), dazu Telefon und Aufmaß-Link; bis zum Link „Barrierefreies Bad“ im Inhalt sind 16 Tabs nötig. Umweg von über 3 Handlungen gegenüber der Maus."
+    }
+   ],
+   "erstellt": "2026-10-11T10:54:46.591Z"
+  },
+  {
+   "lauf": "a1-m375-touch",
+   "aufgabe": 1,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 3,
+   "handlungen_gesamt": 3,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 3,
+     "text": "Ort: Leistungsseite /bad/barrierefreies-bad. Bild 03-tippe.jpg: Der Einwilligungsdialog liegt beim Aufruf über der Überschrift (H1) und dem Seitenanfang; der Seitentitel ist erst nach dem Schließen des Dialogs lesbar (sichtbar.txt führt die H1 nicht)."
+    }
+   ],
+   "erstellt": "2026-10-11T10:45:53.254Z"
+  },
+  {
+   "lauf": "a2-d1440-maus",
+   "aufgabe": 2,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 1,
+   "handlungen_gesamt": 1,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T10:58:26.514Z"
+  },
+  {
+   "lauf": "a2-d1440-tastatur",
+   "aufgabe": 2,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 12,
+   "handlungen_gesamt": 12,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "Ort: Kopfnavigation auf der Startseite. Bild 01-taste.jpg: Jede Rubrik hat zwei Tab-Stopps (Link und Schaltfläche „Untermenü … öffnen“); bis zum Link „Über uns“ sind 11 Tabs nötig, mit der Maus 1 Klick. Umweg von über 3 Handlungen."
+    }
+   ],
+   "erstellt": "2026-10-11T10:59:06.065Z"
+  },
+  {
+   "lauf": "a2-m375-touch",
+   "aufgabe": 2,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 4,
+   "handlungen_gesamt": 4,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T10:57:59.528Z"
+  },
+  {
+   "lauf": "a3-d1440-maus",
+   "aufgabe": 3,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 5,
+   "handlungen_gesamt": 5,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T11:01:10.739Z"
+  },
+  {
+   "lauf": "a3-d1440-tastatur",
+   "aufgabe": 3,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 29,
+   "handlungen_gesamt": 29,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "Ort: Kopfnavigation und Formular „Kostenloses Aufmaß vor Ort anfragen“ auf der Startseite. Bild 01-taste.jpg: Bis zum ersten Feld „Name“ sind 18 Tabs nötig, weil jede Rubrik der Kopfnavigation zwei Tab-Stopps hat (Link und Schaltfläche „Untermenü … öffnen“), dazu Telefon und Aufmaß-Link. Umweg von über 3 Handlungen gegenüber der Maus."
+    }
+   ],
+   "erstellt": "2026-10-11T11:02:03.622Z"
+  },
+  {
+   "lauf": "a3-m375-touch",
+   "aufgabe": 3,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 8,
+   "handlungen_gesamt": 8,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 1,
+     "text": "Ort: Startseite, Formular „Kostenloses Aufmaß vor Ort anfragen“. Bild 01-fuelle.jpg und 03-fuelle.jpg: Der Einwilligungsdialog am unteren Rand verdeckt beim Ausfüllen die Beschriftung E-Mail und Teile des Formulars; das Werkzeug musste dafür scrollen (2 Bildlauf-Handlungen)."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 5,
+     "text": "Ort: Startseite nach dem Absenden. Bild 05-tippe.jpg: Der Einwilligungsdialog verdeckt den unteren Teil der Bestätigung („Nächste Schritte“, Rückrufhinweis); die Bestätigung ist aber im Bild lesbar."
+    }
+   ],
+   "erstellt": "2026-10-11T11:00:32.784Z"
+  },
+  {
+   "lauf": "a4-d1440-maus",
+   "aufgabe": 4,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 1,
+   "handlungen_gesamt": 1,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T11:03:43.962Z"
+  },
+  {
+   "lauf": "a4-d1440-tastatur",
+   "aufgabe": 4,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 8,
+   "handlungen_gesamt": 8,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 1,
+     "text": "Ort: Kopfnavigation der Startseite. Bild 01-taste.jpg: Bis zum Link „Standorte“ sind 7 Tabs nötig, weil jede Rubrik zwei Tab-Stopps hat (Link und Schaltfläche „Untermenü … öffnen“). Mit der Maus ist es ein Klick. Umweg von über 3 Handlungen."
+    }
+   ],
+   "erstellt": "2026-10-11T11:04:09.630Z"
+  },
+  {
+   "lauf": "a4-m375-touch",
+   "aufgabe": 4,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 5,
+   "handlungen_gesamt": 5,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "gering",
+     "schritt": 4,
+     "text": "Ort: Seite /standorte, Gebietskarte und Städteliste. Bild 04-scrolle.jpg: Der Einwilligungsdialog am unteren Rand verdeckt die Gebietskarte und die Städteliste mit „Butzbach“; erst „Alle ablehnen“ gibt sie frei (1 Handlung, Schritt 5)."
+    }
+   ],
+   "erstellt": "2026-10-11T11:03:21.876Z"
+  },
+  {
+   "lauf": "a5-d1440-maus",
+   "aufgabe": 5,
+   "modus": "d1440 maus",
+   "geloest": true,
+   "handlungen_bis_ziel": 5,
+   "handlungen_gesamt": 5,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [],
+   "erstellt": "2026-10-11T11:13:42.064Z"
+  },
+  {
+   "lauf": "a5-d1440-tastatur",
+   "aufgabe": 5,
+   "modus": "d1440 tastatur",
+   "geloest": true,
+   "handlungen_bis_ziel": 35,
+   "handlungen_gesamt": 35,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 5,
+     "text": "Ort: Kopfnavigation auf /bad/badsanierung. Bild 05-taste.jpg: Bis zur Schaltfläche „Untermenü Ratgeber öffnen“ sind 10 Tabs nötig (je Rubrik Link und Untermenü-Schaltfläche); auf der Übersicht /bad sind es 14 Tabs bis zum Link „Badsanierung komplett“. Umweg von über 3 Handlungen gegenüber der Maus."
+    },
+    {
+     "schwere": "gering",
+     "schritt": 7,
+     "text": "Ort: Untermenü Ratgeber. Bild 07-taste.jpg: Der Einwilligungsdialog liegt oben über dem geöffneten Untermenü; der Eintrag „Förderung“ ist nur angeschnitten lesbar, sichtbar ist der Fokusrahmen auf „Zuschüsse für barrierefreie Bäder“."
+    }
+   ],
+   "erstellt": "2026-10-11T11:20:55.067Z"
+  },
+  {
+   "lauf": "a5-m375-touch",
+   "aufgabe": 5,
+   "modus": "m375 touch",
+   "geloest": true,
+   "handlungen_bis_ziel": 11,
+   "handlungen_gesamt": 11,
+   "abbruch": null,
+   "gegenprobe": false,
+   "befunde": [
+    {
+     "schwere": "mittel",
+     "schritt": 3,
+     "text": "Ort: Übersichtsseite /bad, Menüweg Badsanierung im Überblick. Bild 03-tippe.jpg und 04-scrolle.jpg: Die Übersicht zeigt keinen Ablauf und verweist nicht darauf; der Ablauf („In 6 Schritten …“) steht erst auf „Badsanierung komplett“ (Bild 07-scrolle.jpg). Der Umweg kostet 3 Handlungen mehr."
+    }
+   ],
+   "erstellt": "2026-10-11T11:06:36.681Z"
+  }
+ ]
+}

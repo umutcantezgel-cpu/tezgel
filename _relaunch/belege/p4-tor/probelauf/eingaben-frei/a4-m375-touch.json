@@ -1,0 +1,4 @@
+{ "aufgabe": 4, "start": "/", "ansicht": "m375", "eingabe": "touch",
+  "antwort": "Ja, Butzbach gehört zum Einsatzgebiet (Wetteraukreis, ca. 35 km ab Wetzlar); Seite Standorte, Abschnitt „Unser 45-km-Einsatzgebiet in Mittelhessen“ mit Link „Butzbach“ und Hinweis „Butzbach und Umgebung gehören zu unserem Einsatzgebiet“.",
+  "befunde": [ { "schwere": "gering", "schritt": 4, "text": "Ort: Seite /standorte, Gebietskarte und Städteliste. Bild 04-scrolle.jpg: Der Einwilligungsdialog am unteren Rand verdeckt die Gebietskarte und die Städteliste mit „Butzbach“; erst „Alle ablehnen“ gibt sie frei (1 Handlung, Schritt 5)." } ],
+  "schritte": [ { "tippe": "Architektur-Menü öffnen" }, { "tippe": "Standorte Aßlar", "in": "Hauptnavigation" }, { "tippe": "Alle 13 Standorte", "in": "Hauptnavigation" }, { "scrolle": "unten" }, { "tippe": "Alle ablehnen" } ] }

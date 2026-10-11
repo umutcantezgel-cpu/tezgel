@@ -1,0 +1,218 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "tastatur",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T10:59:06.065Z",
+ "lauf": "a2-d1440-tastatur",
+ "aufgabe": 2,
+ "titel": "Vertrauen prüfen",
+ "auftrag": "Prüfen Sie, wie lange es den Betrieb gibt und wie Kunden ihn bewerten.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p4-tor/a2-d1440-tastatur.json",
+ "antwort": "Betrieb seit 2008 (Betriebsgründung in Aßlar, Seite Über uns); Bewertung 5,0 mit 27 Bewertungen (Startseite, im ersten Bild).",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "mittel",
+   "schritt": 1,
+   "text": "Ort: Kopfnavigation auf der Startseite. Bild 01-taste.jpg: Jede Rubrik hat zwei Tab-Stopps (Link und Schaltfläche „Untermenü … öffnen“); bis zum Link „Über uns“ sind 11 Tabs nötig, mit der Maus 1 Klick. Umweg von über 3 Handlungen."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "(kein Element – Fokus auf der Seite)",
+    "imBild": false
+   },
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 123,
+    "aria": 373,
+    "ausschnitt": 56,
+    "bedien": 58
+   },
+   "dauer_ms": 3398
+  },
+  {
+   "nr": 1,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Über uns"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 11,
+   "bildlauf_implizit": 0,
+   "summe": 11,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "link \"Über uns\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 0,
+    "href": "/ueber-uns",
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": [
+    "link \"Zum Hauptinhalt springen\"",
+    "link \"Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite\"",
+    "link \"Badsanierung\"",
+    "button \"Untermenü Badsanierung öffnen\"",
+    "link \"Fachgewerke\"",
+    "button \"Untermenü Fachgewerke öffnen\"",
+    "link \"Standorte\"",
+    "button \"Untermenü Standorte öffnen\"",
+    "link \"Ratgeber\"",
+    "button \"Untermenü Ratgeber öffnen\"",
+    "link \"Über uns\""
+   ],
+   "hinweise": [
+    "11× Tab bis „Über uns“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-taste.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 143,
+    "aria": 372,
+    "ausschnitt": 89,
+    "bedien": 177
+   },
+   "dauer_ms": 2015
+  },
+  {
+   "nr": 2,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Enter"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 12,
+   "url": "/ueber-uns",
+   "h1": "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "link \"Über uns\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 0,
+    "href": "/ueber-uns",
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-taste.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 68,
+    "aria": 129,
+    "ausschnitt": 8,
+    "bedien": 20
+   },
+   "dauer_ms": 1296
+  }
+ ],
+ "handlungen_gesamt": 12,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 2,
+  "handlungen_bis_ziel": 12,
+  "bedingungen": [
+   {
+    "name": "Angabe, seit wann es den Betrieb gibt, war im Bild (Gründungsjahr 2008 oder „über N Jahre“)",
+    "erfuellt": true,
+    "bei_schritt": 2,
+    "treffer": "„…uns Aufmaß anfragen Gegründet 2008 · HWK Wiesbaden Über uns – Fliesenleger…“"
+   },
+   {
+    "name": "Kundenbewertung (Note mit Bewertungen/Rezensionen) war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 0,
+    "treffer": "„…ener Fachbetrieb Deniz Tezgel 5,0 ( 27 Bewertungen) Perfektion auf jedem…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

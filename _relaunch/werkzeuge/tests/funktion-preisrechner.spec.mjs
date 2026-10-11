@@ -5,7 +5,7 @@
 // Die Einwilligungs-Checkbox wird in den Sendetests ausdrücklich gesetzt, nicht auf ihren Vorab-Haken vertraut.
 // P3-14a: Auf der Kern-Startseite sind Gewerk und Fläche Radios, die Vorarbeiten Ankreuzfelder (Bestand: Knöpfe).
 // `wahl()` und `vorarbeit()` nehmen beides über denselben zugänglichen Namen. Bedienung erst nach der Hydrierung (bedienbar).
-import { test, expect, bedienbar, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, oeffne } from './fixtures.mjs';
 
 // Rechner-Bereich: nächster Vorfahr des Namensfelds, der auch die Fläche (linke Spalte) enthält.
 const rechnerVon = (page) =>
@@ -32,10 +32,7 @@ async function abhaken(loc) {
 }
 
 // Seite öffnen und warten, bis der Rechner hydriert ist (vor jeder Bedienung).
-async function seiteOeffnen(page, ort) {
-  await page.goto(ort);
-  await bedienbar(page.locator('#calc-name'));
-}
+const seiteOeffnen = (page, ort) => oeffne(page, ort, page.locator('#calc-name'));
 
 // Der Browser meldet „invalid“ für jedes Pflichtfeld, das ein Absenden blockiert. Das ist das Signal, auf das gewartet wird.
 async function ungueltigeFelderMerken(page) {

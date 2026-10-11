@@ -1,0 +1,297 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "m375",
+  "viewport": {
+   "width": 375,
+   "height": 812
+  },
+  "isMobile": true,
+  "hasTouch": true,
+  "dpr": 1,
+  "eingabe": "touch",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T11:03:21.876Z",
+ "lauf": "a4-m375-touch",
+ "aufgabe": 4,
+ "titel": "Eigenen Ort prüfen",
+ "auftrag": "Prüfen Sie, ob der Betrieb auch in Butzbach arbeitet.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p4-tor/a4-m375-touch.json",
+ "antwort": "Ja, Butzbach gehört zum Einsatzgebiet (Wetteraukreis, ca. 35 km ab Wetzlar); Seite Standorte, Abschnitt „Unser 45-km-Einsatzgebiet in Mittelhessen“ mit Link „Butzbach“ und Hinweis „Butzbach und Umgebung gehören zu unserem Einsatzgebiet“.",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "gering",
+   "schritt": 4,
+   "text": "Ort: Seite /standorte, Gebietskarte und Städteliste. Bild 04-scrolle.jpg: Der Einwilligungsdialog am unteren Rand verdeckt die Gebietskarte und die Städteliste mit „Butzbach“; erst „Alle ablehnen“ gibt sie frei (1 Handlung, Schritt 5)."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 81,
+    "aria": 193,
+    "ausschnitt": 26,
+    "bedien": 38
+   },
+   "dauer_ms": 2759
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Architektur-Menü öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Architektur-Menü öffnen\" · header",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\"",
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "fertig"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 42,
+    "aria": 274,
+    "ausschnitt": 37,
+    "bedien": 43
+   },
+   "dauer_ms": 963
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Standorte Aßlar",
+    "in": "Hauptnavigation"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Standorte Aßlar, Wetzlar, Gießen, Marburg und ganz Hessen\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Hauptnavigation\"",
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 31,
+    "aria": 198,
+    "ausschnitt": 18,
+    "bedien": 34
+   },
+   "dauer_ms": 1043
+  },
+  {
+   "nr": 3,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle 13 Standorte",
+    "in": "Hauptnavigation"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Alle 13 Standorte Lahn-Dill-Kreis, Wetterau & Umland\" · nav „Hauptnavigation Kategorien“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 3,
+   "url": "/standorte",
+   "h1": "Standorte & Einsatzgebiete in Mittelhessen",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-tippe.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 25,
+    "aria": 67,
+    "ausschnitt": 7,
+    "bedien": 20
+   },
+   "dauer_ms": 810
+  },
+  {
+   "nr": 4,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "unten"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/standorte",
+   "h1": "Standorte & Einsatzgebiete in Mittelhessen",
+   "scrollY": 690,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf 690 px"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-scrolle.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 21,
+    "aria": 71,
+    "ausschnitt": 21,
+    "bedien": 23
+   },
+   "dauer_ms": 1098
+  },
+  {
+   "nr": 5,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Alle ablehnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Alle ablehnen\" · dialog „Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 5,
+   "url": "/standorte",
+   "h1": "Standorte & Einsatzgebiete in Mittelhessen",
+   "scrollY": 690,
+   "ebenen": [],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "05-tippe.jpg",
+    "aria": "05-aria.txt",
+    "sichtbar": "05-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 18,
+    "aria": 46,
+    "ausschnitt": 10,
+    "bedien": 23
+   },
+   "dauer_ms": 546
+  }
+ ],
+ "handlungen_gesamt": 5,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 5,
+  "handlungen_bis_ziel": 5,
+  "bedingungen": [
+   {
+    "name": "Butzbach als Einsatzort bestätigt",
+    "erfuellt": true,
+    "bei_schritt": 5,
+    "treffer": "Butzbach im Bild zusammen mit Einsatzgebiet/Standorten: „…ad Nauheim Friedberg (Hessen) Butzbach Herborn Dillenburg Haiger Braunfels Sol…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

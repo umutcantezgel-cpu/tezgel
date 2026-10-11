@@ -3,7 +3,7 @@
 // mit inquiryType „projekt_check“ und projektCheckDetails raus; Erfolg mit Referenz. Der WhatsApp-Knopf sendet
 // nichts an die Anfrage-Route, sondern öffnet WhatsApp mit denselben Projektdaten.
 // Geprüft wird Verhalten (Nutzlast, Zustand, Ziel-Link), nicht Aussehen. Altverhalten = Ausgangsstand 5a7a7b0.
-import { test, expect, warteBotSchwelle, istEchteReferenz, bedienbar } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, oeffne, istKern } from './fixtures.mjs';
 
 // Desktop-Läufe brauchen bis ~45 s je Test (volle Seite mit Animationen); das Projekt-Timeout von 60 s ist dafür zu knapp.
 test.setTimeout(120_000);
@@ -14,11 +14,17 @@ const WHATSAPP_NUMMER = '491726728504';
 // Wurzel der Prüfung: auf /bad nur der eingebettete Projektcheck, sonst die ganze Seite.
 const wurzel = (page, seite) => (seite === '/bad' ? page.locator('#projekt-check') : page);
 // Seite öffnen und erst bedienen, wenn React den Regler übernommen hat (T2 35c0883: unter Last gingen Eingaben vor dem
-// Hydrieren verloren; Zustand statt Wartezeit wie in den übrigen Specs).
-async function oeffne(page, seite) {
-  await page.goto(seite);
-  await bedienbar(groesse(wurzel(page, seite)));
-}
+// Hydrieren verloren). Gemeinsame Hilfe `oeffne` aus fixtures.mjs (P4-06).
+const oeffneSeite = (page, seite) => oeffne(page, seite, groesse(wurzel(page, seite)));
+
+// Fassung je Seite (Lehre 10, P4-06): KERN_SEITEN (fixtures.mjs), nie das DOM. Kern (P4-05a): Umfang und Niveau sind
+// Radios, die Extras Ankreuzfelder (Bestand: Knöpfe mit aria-pressed). Beschriftungen, Knopfnamen und Nutzlast gleich.
+const wahl = (w, seite, name) => w.getByRole(istKern(seite) ? 'radio' : 'button', { name });
+const extra = (w, seite, name) => w.getByRole(istKern(seite) ? 'checkbox' : 'button', { name, exact: true });
+// Gewählt bzw. abgewählt: Kern über checked, Bestand über aria-pressed (dieselbe Aussage).
+// Aufruf: gewaehlt(expect(locator), seite[, an]).
+const gewaehlt = (erwartung, seite, an = true) =>
+  istKern(seite) ? (an ? erwartung.toBeChecked() : erwartung.not.toBeChecked()) : erwartung.toHaveAttribute('aria-pressed', an ? 'true' : 'false');
 
 // Bedienelemente über Labels, Rollen und sichtbare Texte (keine Gestaltungsklassen).
 const groesse = (w) => w.getByLabel(/^1\. Badezimmer-Größe in Quadratmetern/);
@@ -44,17 +50,17 @@ async function zaehleAnfragen(page) {
 const anfrageAufrufe = (page) => page.evaluate(() => window.__anfrageAufrufe ?? 0);
 
 // Auswahl abweichend vom Standard: 3,5 m², Wanne zu Dusche, Exklusiv, LED-Lichtspiegel ab, Badewanne an.
-async function konfiguriere(w) {
+async function konfiguriere(w, seite) {
   await groesse(w).press('Home');
   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
-  await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
-  await w.getByRole('button', { name: /^Exklusiv/ }).click();
-  await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
-  await w.getByRole('button', { name: 'Badewanne / Komfortwanne', exact: true }).click();
-  await expect(w.getByRole('button', { name: /^Wanne zu Dusche/ })).toHaveAttribute('aria-pressed', 'true');
-  await expect(w.getByRole('button', { name: /^Exklusiv/ })).toHaveAttribute('aria-pressed', 'true');
-  await expect(w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true })).toHaveAttribute('aria-pressed', 'false');
-  await expect(w.getByRole('button', { name: 'Badewanne / Komfortwanne', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await wahl(w, seite, /^Wanne zu Dusche/).click();
+  await wahl(w, seite, /^Exklusiv/).click();
+  await extra(w, seite, 'LED-Lichtspiegel').click();
+  await extra(w, seite, 'Badewanne / Komfortwanne').click();
+  await gewaehlt(expect(wahl(w, seite, /^Wanne zu Dusche/)), seite);
+  await gewaehlt(expect(wahl(w, seite, /^Exklusiv/)), seite);
+  await gewaehlt(expect(extra(w, seite, 'LED-Lichtspiegel')), seite, false);
+  await gewaehlt(expect(extra(w, seite, 'Badewanne / Komfortwanne')), seite);
 }
 
 // Kontaktformular öffnen und ausfüllen.
@@ -67,7 +73,7 @@ async function kontaktAusfuellen(w, { mitEmail = true } = {}) {
 
 test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   test('ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp', async ({ page, anfragen, protokoll }) => {
-    await oeffne(page, '/bad/projekt-check');
+    await oeffneSeite(page, '/bad/projekt-check');
     await zaehleAnfragen(page);
     await anfordern(page).click();
     await online(page).click();
@@ -82,7 +88,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   });
 
   test('Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage', async ({ page, anfragen }) => {
-    await oeffne(page, '/bad/projekt-check');
+    await oeffneSeite(page, '/bad/projekt-check');
     await zaehleAnfragen(page);
     await anfordern(page).click();
     await name(page).fill('Prüf Person');
@@ -95,7 +101,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   });
 
   test('ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage', async ({ page, anfragen }) => {
-    await oeffne(page, '/bad/projekt-check');
+    await oeffneSeite(page, '/bad/projekt-check');
     await zaehleAnfragen(page);
     await anfordern(page).click();
     await name(page).fill('Prüf Person');
@@ -109,7 +115,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   });
 
   test('nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt', async ({ page, anfragen }) => {
-    await oeffne(page, '/bad/projekt-check');
+    await oeffneSeite(page, '/bad/projekt-check');
     const w = wurzel(page, '/bad/projekt-check');
     await kontaktAusfuellen(w, { mitEmail: false });
     await online(w).click();
@@ -139,7 +145,7 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
   test.describe('echte Route (Mock-Modus ohne Resend-Schlüssel)', () => {
     test.use({ echteRoute: true });
     test('Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page }) => {
-      await oeffne(page, '/bad/projekt-check');
+      await oeffneSeite(page, '/bad/projekt-check');
       await warteBotSchwelle(page);
       await anfordern(page).click();
       await name(page).fill(`Prüf ${Date.now() % 100000}`);
@@ -156,9 +162,9 @@ test.describe('BadProjektCheck (/bad/projekt-check)', () => {
 test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () => {
   for (const seite of SEITEN) {
     test(`${seite}: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz`, async ({ page, anfragen }) => {
-      await oeffne(page, seite);
+      await oeffneSeite(page, seite);
       const w = wurzel(page, seite);
-      await konfiguriere(w);
+      await konfiguriere(w, seite);
       await kontaktAusfuellen(w);
       await online(w).click();
       await expect(erfolg(w)).toBeVisible();
@@ -184,10 +190,10 @@ test.describe('BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten', () =>
     });
 
     test(`${seite}: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route`, async ({ page, anfragen }) => {
-      await oeffne(page, seite);
+      await oeffneSeite(page, seite);
       const w = wurzel(page, seite);
       await zaehleAnfragen(page);
-      await konfiguriere(w);
+      await konfiguriere(w, seite);
       await kontaktAusfuellen(w, { mitEmail: false });
       const waZiel = page.waitForRequest((r) => r.url().startsWith('https://api.whatsapp.com/send'));
       await whatsapp(w).click();

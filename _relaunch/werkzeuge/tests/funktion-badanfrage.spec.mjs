@@ -2,16 +2,24 @@
 // Kernaufgabe: Schritte vor/zurück (Auswahl bleibt erhalten), Pflichtfelder blockieren den Versand,
 // Gutfall sendet POST /api/anfrage mit inquiryType „bad“ und badDetails und zeigt Erfolg mit Referenz.
 // Geprüft wird Verhalten (Nutzlast, Zustand), nicht Aussehen. Altverhalten = Ausgangsstand 5a7a7b0.
-import { test, expect, warteBotSchwelle, istEchteReferenz } from './fixtures.mjs';
+import { test, expect, warteBotSchwelle, istEchteReferenz, oeffne, istKern } from './fixtures.mjs';
 
 const SEITE = '/bad/badanfrage';
+
+// Fassung je Seite (Lehre 10, P4-06): Welche Seiten Kern sind, steht in KERN_SEITEN (fixtures.mjs), nie im DOM.
+// Kern (P4-05a): Objektart, Umfang und Stufe sind Radios, die Wunschausstattung Ankreuzfelder (Bestand: Knöpfe mit
+// aria-pressed). Beschriftungen, Knopfnamen, „Schritt n von 5“ und die Nutzlast sind in beiden Fassungen gleich.
+const KERN = istKern(SEITE);
 
 // Bedienelemente über Rollen, Namen und Labels; Schrittanzeige über den sichtbaren Text.
 const schritt = (page, n) => page.getByText(new RegExp(`Schritt ${n} von 5`));
 const weiter = (page, n) => page.getByRole('button', { name: `Weiter zu Schritt ${n}`, exact: true });
 const zurueck = (page) => page.getByRole('button', { name: 'Zurück', exact: true });
 const zurueckZu = (page, n) => page.getByRole('button', { name: `Zurück zu Schritt ${n}`, exact: true });
-const option = (page, anfang) => page.getByRole('button', { name: new RegExp(`^${anfang}`) });
+const option = (page, anfang) => page.getByRole(KERN ? 'radio' : 'button', { name: new RegExp(`^${anfang}`) });
+// Gewählt: Kern über checked, Bestand über aria-pressed (dieselbe Aussage). Aufruf: gewaehlt(expect(option(…))).
+const gewaehlt = (erwartung) => (KERN ? erwartung.toBeChecked() : erwartung.toHaveAttribute('aria-pressed', 'true'));
+const ausstattung = (page, name) => page.getByRole(KERN ? 'checkbox' : 'button', { name, exact: true });
 const absenden = (page) => page.getByRole('button', { name: 'Badanfrage jetzt absenden (Online)', exact: true });
 const feld = {
   name: (page) => page.getByLabel(/^Vor- & Nachname/),
@@ -21,6 +29,9 @@ const feld = {
   plzOrt: (page) => page.getByLabel(/^PLZ & Ort/),
   anmerkungen: (page) => page.getByLabel(/^Anmerkungen/),
 };
+
+// Seite öffnen und erst bedienen, wenn React den Funnel übernommen hat (erster Knopf „Weiter zu Schritt 2“).
+const oeffneSeite = (page) => oeffne(page, SEITE, weiter(page, 2));
 
 // Vorwärts bis Schritt n (ohne Auswahl zu ändern); die Seite muss schon geöffnet sein.
 async function bisSchritt(page, n) {
@@ -32,9 +43,9 @@ async function bisSchritt(page, n) {
 
 test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
   test('Schritte vor und zurück: Auswahl und Maße bleiben erhalten, keine Anfrage', async ({ page, anfragen }) => {
-    await page.goto(SEITE);
+    await oeffneSeite(page);
     await option(page, 'Gewerbeobjekt').click();
-    await expect(option(page, 'Gewerbeobjekt')).toHaveAttribute('aria-pressed', 'true');
+    await gewaehlt(expect(option(page, 'Gewerbeobjekt')));
     await weiter(page, 2).click();
     await expect(schritt(page, 2)).toBeVisible();
     await option(page, 'Barrierefreies Bad').click();
@@ -51,22 +62,22 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
 
     await zurueckZu(page, 4).click();
     await expect(schritt(page, 4)).toBeVisible();
-    await expect(option(page, 'Basic')).toHaveAttribute('aria-pressed', 'true');
+    await gewaehlt(expect(option(page, 'Basic')));
     await zurueck(page).click();
     await expect(schritt(page, 3)).toBeVisible();
     await expect(page.getByLabel('Länge (m)', { exact: true })).toHaveValue('4');
     await expect(page.getByLabel('Breite (m)', { exact: true })).toHaveValue('2');
     await zurueck(page).click();
     await expect(schritt(page, 2)).toBeVisible();
-    await expect(option(page, 'Barrierefreies Bad')).toHaveAttribute('aria-pressed', 'true');
+    await gewaehlt(expect(option(page, 'Barrierefreies Bad')));
     await zurueck(page).click();
     await expect(schritt(page, 1)).toBeVisible();
-    await expect(option(page, 'Gewerbeobjekt')).toHaveAttribute('aria-pressed', 'true');
+    await gewaehlt(expect(option(page, 'Gewerbeobjekt')));
     expect(anfragen).toHaveLength(0);
   });
 
   test('Pflichtfelder: leerer Name und leere Telefonnummer blockieren den Versand, keine Anfrage', async ({ page, anfragen }) => {
-    await page.goto(SEITE);
+    await oeffneSeite(page);
     await bisSchritt(page, 5);
     await absenden(page).click();
     await expect(feld.name(page)).toBeFocused();
@@ -76,7 +87,7 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
   });
 
   test('Telefonnummer unter 6 Zeichen blockiert den Versand, keine Anfrage', async ({ page, anfragen }) => {
-    await page.goto(SEITE);
+    await oeffneSeite(page);
     await bisSchritt(page, 5);
     await feld.name(page).fill('Prüf Person');
     await feld.telefon(page).fill('0170');
@@ -87,7 +98,7 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
   });
 
   test('ungültige E-Mail-Adresse blockiert den Versand, keine Anfrage', async ({ page, anfragen }) => {
-    await page.goto(SEITE);
+    await oeffneSeite(page);
     await bisSchritt(page, 5);
     await feld.name(page).fill('Prüf Person');
     await feld.telefon(page).fill('0170 0000000');
@@ -99,7 +110,7 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
   });
 
   test('Gutfall online: POST /api/anfrage mit inquiryType „bad“ und badDetails, Erfolg mit Referenz', async ({ page, anfragen }) => {
-    await page.goto(SEITE);
+    await oeffneSeite(page);
     await option(page, 'Eigentumswohnung').click();
     await weiter(page, 2).click();
     await option(page, 'Wanne zu Dusche').click();
@@ -109,8 +120,8 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
     await page.getByLabel('Personen im Haushalt', { exact: true }).selectOption('3-4');
     await weiter(page, 4).click();
     await option(page, 'Luxus').click();
-    await page.getByRole('button', { name: 'Badewanne', exact: true }).click();
-    await page.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+    await ausstattung(page, 'Badewanne').click();
+    await ausstattung(page, 'LED-Lichtspiegel').click();
     await weiter(page, 5).click();
     await expect(schritt(page, 5)).toBeVisible();
     await feld.name(page).fill('Prüf Person');
@@ -156,7 +167,7 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
   });
 
   test('Gutfall nur Pflichtangaben: Standardauswahl wird gesendet, optionale Felder fehlen', async ({ page, anfragen }) => {
-    await page.goto(SEITE);
+    await oeffneSeite(page);
     await bisSchritt(page, 5);
     await feld.name(page).fill('Prüf Person');
     await feld.telefon(page).fill('0170 0000000');
@@ -185,7 +196,7 @@ test.describe('BadanfrageFunnel (/bad/badanfrage)', () => {
   test.describe('echte Route (Mock-Modus ohne Resend-Schlüssel)', () => {
     test.use({ echteRoute: true });
     test('Server nimmt Badanfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)', async ({ page }) => {
-      await page.goto(SEITE);
+      await oeffneSeite(page);
       await warteBotSchwelle(page);
       await bisSchritt(page, 5);
       await feld.name(page).fill(`Prüf ${Date.now() % 100000}`);

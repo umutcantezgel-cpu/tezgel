@@ -1,0 +1,298 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "maus",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T11:13:42.064Z",
+ "lauf": "a5-d1440-maus",
+ "aufgabe": 5,
+ "titel": "Ablauf, Förderung und Planung verstehen",
+ "auftrag": "Finden Sie heraus, wie der Ablauf einer Badsanierung ist und ob es Förderung gibt.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p4-tor/a5-d1440-maus.json",
+ "antwort": "Ablauf: In 6 Schritten (Vor-Ort-Beratung und Aufmaß bis Endreinigung und Abnahme) auf der Seite Badsanierung komplett; Förderung: ja, Zuschüsse für barrierefreie Bäder (Pflegekassen-Zuschuss nach § 40 SGB XI).",
+ "gegenprobe": false,
+ "befunde": [],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 95,
+    "aria": 196,
+    "ausschnitt": 21,
+    "bedien": 49
+   },
+   "dauer_ms": 2485
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Badsanierung",
+    "in": "Hauptnavigation"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Badsanierung\" · nav „Hauptnavigation“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 51,
+    "aria": 120,
+    "ausschnitt": 8,
+    "bedien": 52
+   },
+   "dauer_ms": 1188
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Badsanierung komplett",
+    "in": "Alles für Ihr neues Bad aus einer Hand"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Badsanierung komplett Komplettbad schlüsselfertig zum Festpreis\" · section „Alles für Ihr neues Bad aus einer Hand“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 2,
+   "url": "/bad/badsanierung",
+   "h1": "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "obergrenze",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-tippe.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 4070,
+    "aria": 13871,
+    "ausschnitt": 13,
+    "bedien": 4394
+   },
+   "dauer_ms": 48578
+  },
+  {
+   "nr": 3,
+   "art": "scrolle",
+   "eingabe": {
+    "scrolle": "unten"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 3,
+   "url": "/bad/badsanierung",
+   "h1": "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis",
+   "scrollY": 765,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [
+    "Bildlauf 0 px (Seite bewegte sich nicht – Anfang/Ende erreicht)"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-scrolle.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 3911,
+    "aria": 10488,
+    "ausschnitt": 357,
+    "bedien": 574
+   },
+   "dauer_ms": 36026
+  },
+  {
+   "nr": 4,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Untermenü Ratgeber öffnen"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "button \"Untermenü Ratgeber öffnen\" · nav „Hauptnavigation“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/bad/badsanierung",
+   "h1": "Badsanierung in Aßlar & Wetzlar: Ihr neues Traumbad ohne Stress & zum Festpreis",
+   "scrollY": 765,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-tippe.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 8822,
+    "aria": 5819,
+    "ausschnitt": 8,
+    "bedien": 3958
+   },
+   "dauer_ms": 52366
+  },
+  {
+   "nr": 5,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Förderung Zuschüsse",
+    "in": "Hauptnavigation"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Förderung Zuschüsse für barrierefreie Bäder\" · nav „Hauptnavigation“",
+   "auswahl": "eindeutig, Stufe rolle",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 5,
+   "url": "/foerderung",
+   "h1": "Förderung & Zuschüsse für Ihr barrierefreies Bad",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "05-tippe.jpg",
+    "aria": "05-aria.txt",
+    "sichtbar": "05-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 13379,
+    "aria": 4569,
+    "ausschnitt": 772,
+    "bedien": 1392
+   },
+   "dauer_ms": 45709
+  }
+ ],
+ "handlungen_gesamt": 5,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 5,
+  "handlungen_bis_ziel": 5,
+  "bedingungen": [
+   {
+    "name": "Ablauf (Arbeitsschritte) war im Bild",
+    "erfuellt": true,
+    "bei_schritt": 2,
+    "treffer": "Überschrift „In 6 Schritten zu Ihrem schlüsselfertigen Wohlfühlbad“"
+   },
+   {
+    "name": "Förderung war im Bild (als Überschrift)",
+    "erfuellt": true,
+    "bei_schritt": 5,
+    "treffer": "Überschrift „Förderung & Zuschüsse für Ihr barrierefreies Bad“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

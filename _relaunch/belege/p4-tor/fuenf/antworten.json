@@ -1,0 +1,962 @@
+[
+ {
+  "bild": "b01",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung und Badsanierung von Tezgel, mit Festpreisen und normgerechter Verbundabdichtung nach DIN 18534; das volle Leistungsspektrum ist hinter dem Cookie-Banner nicht ganz sichtbar.",
+    "zielgruppe": "Privatleute, die ein Bad sanieren oder neu fliesen lassen wollen; die Region ist auf dem Bildschirm nicht erkennbar.",
+    "naechster_schritt": "Das Cookie-Banner mit einem Klick schließen und dann \"Bad-Projektcheck starten\" antippen, oder direkt über \"Anrufen\" oder \"WhatsApp\" Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung (Firma Tezgel) mit Schwerpunkt Bad: laut sichtbarem Text alle Gewerke aus einer Hand, Festpreise und normgerechte Verbundabdichtung nach DIN 18534; das Cookie-Banner verdeckt den größten Teil der Seite, Details sind nicht erkennbar.",
+    "zielgruppe": "Vermutlich Hausbesitzer oder Bauherren, die ein Bad sanieren oder neu gestalten wollen (Hinweise: \"Bad-Projektcheck\", \"Musterbäder\"); genauer lässt sich das nicht erkennen.",
+    "naechster_schritt": "Das Cookie-Banner schließen (Alle ablehnen oder Einstellungen), dann \"Bad-Projektcheck starten\" antippen; alternativ direkt über \"Anrufen\", \"WhatsApp\" oder \"Aufmaß\" Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung und Badsanierung aus einer Hand, mit transparenten Festpreisen und normgerechter Verbundabdichtung nach DIN 18534; das Logo zeigt „Fliesenverlegung Tezgel“, die Hauptüberschrift ist vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Vermutlich Hausbesitzer und Bauherren, die ein Bad neu planen oder sanieren wollen, was aus „Bad-Projektcheck“ und „Musterbäder entdecken“ abgeleitet ist.",
+    "naechster_schritt": "Zuerst das Cookie-Banner mit „Alle akzeptieren“, „Alle ablehnen“ oder „Einstellungen“ schließen, dann „Bad-Projektcheck starten“ antippen oder unten direkt „Anrufen“ oder „WhatsApp“ nutzen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung und Badsanierung mit Festpreisen und normgerechter Abdichtung nach DIN 18534; Region und genauer Leistungsumfang sind hinter dem Cookie-Banner nicht erkennbar.",
+    "zielgruppe": "Privatleute, die ihr Bad neu fliesen oder sanieren lassen wollen.",
+    "naechster_schritt": "Den Cookie-Banner schließen und „Bad-Projektcheck starten“ wählen, oder per Anruf bzw. WhatsApp ein Aufmaß anfragen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Badsanierung mit Abdichtung nach DIN 18534 und Festpreisen; die Hauptüberschrift ist vom Cookie-Banner verdeckt, daher nur eine Teilansicht.",
+    "zielgruppe": "Vermutlich Privatleute, die ein Bad neu fliesen oder sanieren lassen wollen; das ergibt sich aus den Schaltflächen und ist nicht ausdrücklich genannt.",
+    "naechster_schritt": "Den Cookie-Banner entscheiden (Alle ablehnen ist sichtbar) und dann \"Bad-Projektcheck starten\" antippen; alternativ unten Anrufen, WhatsApp oder Aufmaß wählen.",
+    "sicherheit": 3
+   }
+  ]
+ },
+ {
+  "bild": "b02",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Der Betrieb \\\"Fliesenverlegung Tezgel\\\" verlegt Fliesen, das sagt das Logo eindeutig; welche Leistungen genau angeboten werden, ist hinter dem Cookie-Banner nicht erkennbar.",
+    "zielgruppe": "Vermutlich Privatleute und Bauherren, die Fliesenarbeiten planen und vor Ort ein Aufmaß wünschen; ob auch Gewerbekunden angesprochen werden, ist nicht erkennbar.",
+    "naechster_schritt": "Den Cookie-Banner schließen oder eine Auswahl treffen und dann über den Button \\\"Aufmaß\\\" (oder \\\"Anrufen\\\") einen Termin für eine Vor-Ort-Messung anfragen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Die Firma heißt laut Logo \"Fliesenverlegung Tezgel\" und bietet offenbar Fliesenverlegung an; konkrete Leistungen sind nicht erkennbar, weil ein Cookie-Banner den Inhalt verdeckt.",
+    "zielgruppe": "Vermutlich Privatkunden und Bauherren, die Fliesen verlegen lassen wollen; das lässt sich aus dem ersten Bildschirm nicht sicher ablesen.",
+    "naechster_schritt": "Den Cookie-Banner per \"Alle ablehnen\" oder dem Schließen-Kreuz wegklicken und dann über den Button \"Aufmaß\" einen Termin anfragen, alternativ anrufen oder per WhatsApp schreiben.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung durch die Firma Tezgel; die konkreten Leistungen sind auf diesem Bildschirm nicht lesbar, weil ein Cookie-Banner den Inhalt verdeckt.",
+    "zielgruppe": "Nicht eindeutig erkennbar; vermutlich Privatkunden und Bauherren, die Fliesen verlegen lassen wollen. Das schließe ich aus dem Firmennamen und den Schaltflächen, nicht aus einem Text auf dem Bild.",
+    "naechster_schritt": "Den Cookie-Banner mit \"Alle akzeptieren\", \"Alle ablehnen\" oder \"Einstellungen\" schließen und dann unten \"Aufmaß\" für eine Terminanfrage oder \"Anrufen\" nutzen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Der Firmenname \"Fliesenverlegung Tezgel\" deutet auf Fliesenverlegung hin, die Leistungen selbst sind auf dem Bild aber nicht zu lesen, weil ein Cookie-Fenster den Inhalt verdeckt.",
+    "zielgruppe": "Nicht eindeutig erkennbar; vermutlich Privatleute und Bauherren, die Fliesen verlegen lassen wollen, weil \"Aufmaß\" und \"Ratgeber\" darauf hindeuten.",
+    "naechster_schritt": "Das Cookie-Fenster schließen (z. B. mit \"Alle ablehnen\") und dann die Leistungen auf der Seite lesen oder über \"Aufmaß\" bzw. \"Anrufen\" Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Die Firma Tezgel bietet Fliesenverlegung an, laut Logo \"Fliesenverlegung Tezgel\". Welche Leistungen genau, ist wegen des Cookie-Banners nicht erkennbar.",
+    "zielgruppe": "Vermutlich Privatleute und Bauherren, die Fliesen verlegen lassen wollen; das ist nur aus Firmenname und Buttons (\"Aufmaß\", \"Anrufen\") geschlossen und nicht ausdrücklich genannt.",
+    "naechster_schritt": "Ich schließe den Cookie-Banner (X oder \"Alle ablehnen\") und lese dann die Leistungen auf der Seite, oder ich wähle unten \"Anrufen\", \"WhatsApp\" oder \"Aufmaß\".",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b03",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel aus Aßlar, Einsatz in Mittelhessen; die Hauptüberschrift ist vom Cookie-Banner verdeckt, weitere Leistungen sind nur als Menüpunkte (Fachgewerke, Ratgeber) zu sehen.",
+    "zielgruppe": "Privatkunden, Architekten und Bauherren in Wetzlar, Gießen, Herborn und dem Umland in Mittelhessen (rund 45 km Einsatzgebiet).",
+    "naechster_schritt": "Den Cookie-Banner beantworten und dann auf „Vor-Ort-Aufmaß anfragen“ klicken oder unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung und Badsanierung durch einen Fachbetrieb aus Aßlar (Mittelhessen), mit Vor-Ort-Aufmaß. Der Hinweis auf „Fachgewerke“ in der Navigation lässt weitere Gewerke vermuten, das ist aber nicht sicher erkennbar.",
+    "zielgruppe": "Privatkunden, Architekten und Bauherren im Umkreis von etwa 45 km um Aßlar, zum Beispiel in Wetzlar, Gießen und Herborn.",
+    "naechster_schritt": "Auf „Vor-Ort-Aufmaß anfragen“ klicken oder unter 06441 / 44 83 567 anrufen. Vorher das Cookie-Banner schließen, das die Hauptüberschrift verdeckt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung und Badsanierung als Fachbetrieb, mit Vor-Ort-Aufmaß und persönlicher Beratung; die Hauptüberschrift liegt hinter dem Cookie-Banner, daher ist der genaue Leistungsumfang nur aus Logo und Menü ablesbar.",
+    "zielgruppe": "Privatkunden, Architekten und Bauherren in Wetzlar, Gießen, Herborn und dem übrigen Mittelhessen, laut dem Begrüßungstext unterhalb des Banners.",
+    "naechster_schritt": "Zuerst das Cookie-Banner schließen oder bestätigen, dann den Button „Vor-Ort-Aufmaß anfragen“ klicken oder unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel aus Aßlar, mit Vor-Ort-Aufmaß im Umkreis von etwa 45 km in Mittelhessen.",
+    "zielgruppe": "Privatkunden, Architekten und Bauherren in Wetzlar, Gießen, Herborn und dem übrigen Mittelhessen.",
+    "naechster_schritt": "Zuerst das Cookie-Banner entscheiden (Alle akzeptieren, Alle ablehnen oder Einstellungen), dann auf \"Vor-Ort-Aufmaß anfragen\" klicken oder unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Badsanierung eines Fachbetriebs aus Aßlar mit Standort Wetzlar; welche \"Fachgewerke\" gemeint sind, ist nicht erkennbar, und die Hauptüberschrift ist vom Cookie-Fenster verdeckt.",
+    "zielgruppe": "Privatkunden, Architekten und Bauherren in Wetzlar, Gießen, Herborn und dem Umkreis von etwa 45 km in Mittelhessen.",
+    "naechster_schritt": "Das Cookie-Fenster schließen und dann \"Vor-Ort-Aufmaß anfragen\" klicken oder die Nummer 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b04",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung Tezgel ist ein eingetragener Fachbetrieb für Fliesen-, Platten- und Badsanierung in Aßlar (gegründet 2008, HWK Wiesbaden); ein Teil des Einleitungstexts ist vom Cookie-Banner verdeckt, daher ist der genaue Leistungsumfang nicht sicher erkennbar.",
+    "zielgruppe": "Privatleute und Hausbesitzer in Aßlar und Umgebung, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Auf den Button \"Aufmaß anfragen\" oben rechts klicken; alternativ per WhatsApp oder Telefon Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung Tezgel ist ein eingetragener Fachbetrieb (HWK Wiesbaden, gegründet 2008) für Fliesen-, Platten- und Badsanierung; der volle Leistungsumfang ist nicht erkennbar, weil der Cookie-Banner den Einleitungstext verdeckt.",
+    "zielgruppe": "Vermutlich Privatleute und Hausbesitzer in und um Aßlar, die Bad oder Fliesen erneuern lassen wollen; das steht nicht ausdrücklich auf dem Bildschirm, ist aber aus Navigation und Standortangaben abgeleitet.",
+    "naechster_schritt": "Auf den Button „Aufmaß anfragen“ oben rechts klicken; alternativ Telefon oder WhatsApp nutzen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesen-, Platten- und Badsanierung durch einen eingetragenen Fachbetrieb aus Aßlar; die Einleitung ist vom Cookie-Banner verdeckt, der genaue Leistungsumfang ist daher nicht sicher erkennbar.",
+    "zielgruppe": "Vermutlich Privatleute und Bauherren, die ein Bad oder Fliesen in Aßlar und Umgebung erneuern lassen wollen; das steht auf dem Bildschirm nicht ausdrücklich.",
+    "naechster_schritt": "Ich würde den Cookie-Banner schließen und dann oben rechts auf \"Aufmaß anfragen\" klicken (alternativ Telefon oder WhatsApp).",
+    "sicherheit": 3
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenleger-Fachbetrieb Tezgel aus Aßlar für Fliesen-, Platten- und Badsanierung (laut Seite seit 2008, HWK Wiesbaden eingetragen); der Einleitungstext ist vom Cookie-Banner verdeckt, Details sind nicht lesbar.",
+    "zielgruppe": "Hausbesitzer und Bauherren in Aßlar und Umgebung, die Fliesen verlegen oder ein Bad sanieren lassen wollen; der genaue Einsatzbereich ist im verdeckten Text nicht sicher erkennbar.",
+    "naechster_schritt": "Den Cookie-Banner mit „Alle ablehnen“ oder dem X schließen und dann oben rechts auf „Aufmaß anfragen“ klicken.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Badsanierung durch den eingetragenen Fachbetrieb Tezgel aus Aßlar, laut Menü mit Fachgewerken und mehreren Standorten; der Einleitungstext ist vom Cookie-Banner größtenteils verdeckt, die genaue Leistungsliste ist daher nicht erkennbar.",
+    "zielgruppe": "Vermutlich Privatleute, vor allem Hausbesitzer in und um Aßlar, die Fliesen verlegen oder ein Bad sanieren lassen wollen (aus Menü und Überschrift abgeleitet, nicht eindeutig belegt).",
+    "naechster_schritt": "Den dunklen Button „Aufmaß anfragen“ oben rechts anklicken; vorher den Cookie-Banner schließen oder beantworten.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b05",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung als Fachbetrieb: Großformat-Fliesen im Bad, Feinsteinzeug im Neubau und witterungsbeständige Außenbeläge auf Stelzlagern, mit Verbundabdichtung nach DIN 18534.",
+    "zielgruppe": "Vermutlich Bauherren und Hausbesitzer, die ein Bad, einen Neubau oder Außenflächen fliesen lassen wollen; ausdrücklich genannt ist das nicht, es ergibt sich nur aus den Leistungen.",
+    "naechster_schritt": "Das Cookie-Banner schließen (X oder Auswahl), dann per Anruf, WhatsApp oder über den Button „Aufmaß“ Kontakt aufnehmen; was „Aufmaß“ genau bedeutet, ist auf dem Bild nicht erkennbar.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Die Firma Fliesenverlegung Tezgel verlegt Fliesen: fugenarme XXL-Großformate im Bad, repräsentatives Feinsteinzeug im Neubau und witterungsbeständige Außenbeläge auf Stelzlagern.",
+    "zielgruppe": "Bauherren und Hausbesitzer, die Fliesen, Feinsteinzeug oder Außenbeläge verlegen lassen wollen; für welche Region das Angebot gilt, ist nicht erkennbar.",
+    "naechster_schritt": "Zuerst den Cookie-Banner beantworten, dann per Anrufen oder WhatsApp Kontakt aufnehmen; was der Button \"Aufmaß\" genau auslöst, ist nicht eindeutig, und der Button \"Termin vereinbaren\" ist nur angeschnitten zu sehen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung-Betrieb (Logo „Fliesenverlegung Tezgel“), der XXL-Großformate im Bad, Feinsteinzeug im Neubau und witterungsbeständige Außenbeläge auf Stelzlagern verlegt, mit Verbundabdichtung nach DIN 18534.",
+    "zielgruppe": "Vermutlich Bauherren und Eigentümer mit Bad-, Neubau- oder Außenprojekten; die Hauptüberschrift ist vom Cookie-Banner verdeckt, daher ist die Zielgruppe nur geschätzt.",
+    "naechster_schritt": "Den Cookie-Banner schließen (Alle ablehnen oder Einstellungen) und dann über den Button „Aufmaß“ oder „Anrufen“ bzw. das WhatsApp-Symbol Kontakt aufnehmen; der Button „…vereinbaren“ ist abgeschnitten.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung vom Betrieb Tezgel: XXL-Großformate im Bad, repräsentatives Feinsteinzeug im Neubau und witterungsbeständige Außenbeläge auf Stelzlagern.",
+    "zielgruppe": "Vermutlich Bauherren und Privatkunden, die Bad, Neubau oder Außenfläche fliesen lassen wollen; erschlossen aus dem sichtbaren Fließtext, weil die Hauptüberschrift vom Cookie-Banner verdeckt ist.",
+    "naechster_schritt": "Cookie-Banner per Auswahl schließen, dann über die untere Leiste Anrufen, WhatsApp oder Aufmaß Kontakt aufnehmen; der große Button darüber ist abgeschnitten (vermutlich \"Termin vereinbaren\").",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung durch einen Fachbetrieb: XXL-Großformate im Bad, Feinsteinzeug im Neubau und witterungsbeständige Außenbeläge auf Stelzlagern, mit Abdichtung nach DIN 18534.",
+    "zielgruppe": "Vermutlich Hausbesitzer und Bauherren, die ein Bad, einen Neubau oder einen Außenbereich fliesen lassen wollen; das ist nur indirekt erkennbar, weil das Cookie-Fenster den Großteil des Textes verdeckt.",
+    "naechster_schritt": "Das Cookie-Fenster schließen (z. B. über \"Alle ablehnen\"), dann per Button \"Aufmaß\" (vermutlich ein Termin vor Ort) oder \"Anrufen\" bzw. WhatsApp Kontakt aufnehmen; der rote Button \"...vereinbaren\" ist abgeschnitten und nicht lesbar.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b06",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Schlüsselfertige Badsanierung aus einer Hand durch den Fachbetrieb Fliesenverlegung Tezgel, mit Fliesen- und XXL-Großformatarbeiten, barrierefreien Bädern und verbindlichem Festpreis.",
+    "zielgruppe": "Hausbesitzer und Eigentümer in Mittelhessen, vor allem in Asslar und Wetzlar, die ihr Bad komplett oder barrierefrei sanieren lassen wollen.",
+    "naechster_schritt": "Auf den Button \"Aufmaß anfragen\" oben rechts klicken, um ein kostenloses Vor-Ort-Aufmaß anzufragen; vorher den Cookie-Banner schließen oder bestätigen, weil er Teile des Textes und einen Button verdeckt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Schlüsselfertige Badsanierung aus einer Hand, also ein Komplettbad zum Festpreis inklusive Fliesenarbeiten, vom Fachbetrieb Fliesenverlegung Tezgel.",
+    "zielgruppe": "Hausbesitzer und Eigentümer in Mittelhessen (Aßlar, Wetzlar und Umgebung), die ihr Bad sanieren wollen, ohne mehrere Gewerke selbst koordinieren zu müssen; barrierefreie Bäder sind ebenfalls ein Thema.",
+    "naechster_schritt": "Den dunklen Button „Aufmaß anfragen“ oben rechts anklicken, denn das Vor-Ort-Aufmaß wird auf der Seite als kostenfrei angeboten.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Schlüsselfertige Badsanierung aus einer Hand, also Komplettbad, Fliesen und XXL-Großformate, barrierefreies Bad und Musterbad-Konzepte, vom Fachbetrieb Fliesenverlegung Tezgel mit festem Preis und kostenfreiem Vor-Ort-Aufmaß.",
+    "zielgruppe": "Hausbesitzer in Mittelhessen, vor allem im Raum Aßlar und Wetzlar, die ihr Bad schlüsselfertig sanieren lassen wollen, auch barrierefrei.",
+    "naechster_schritt": "Oben rechts auf \"Aufmaß anfragen\" klicken; der Button unter dem Text ist vom Cookie-Fenster verdeckt, und der verdeckte Fließtext ist nicht lesbar.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Schlüsselfertige Badsanierung aus einer Hand, inklusive Festpreis, kostenlosem Vor-Ort-Aufmaß, Fliesen, XXL-Großformaten und barrierefreien Bädern (Fliesenverlegung Tezgel, Aßlar und Wetzlar).",
+    "zielgruppe": "Hausbesitzer in Mittelhessen (Aßlar, Wetzlar und Umgebung), die ihr Bad sanieren oder barrierefrei umbauen wollen und einen einzigen Ansprechpartner suchen.",
+    "naechster_schritt": "Oben rechts auf \"Aufmaß anfragen\" klicken, um ein kostenloses Vor-Ort-Aufmaß zu buchen; alternativ die Leistungen rechts ansehen (der Cookie-Banner verdeckt Teile des Textes und den Button \"Musterbad entdecken\").",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Komplette Badsanierung schlüsselfertig zum Festpreis aus einer Hand, inklusive Fliesenarbeiten und barrierefreiem Umbau, von einem Fachbetrieb in Aßlar und Wetzlar für ganz Mittelhessen.",
+    "zielgruppe": "Hausbesitzer und Eigentümer in Mittelhessen, die ihr Bad sanieren oder barrierefrei umbauen wollen und einen Ansprechpartner für alle Gewerke suchen.",
+    "naechster_schritt": "Oben rechts auf \"Aufmaß anfragen\" klicken, nachdem das Cookie-Banner geschlossen wurde, weil es Teile des Einleitungstexts und den Button in der Mitte verdeckt.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b07",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel aus Aßlar, dazu Ratgeber-Tipps zu Badsanierung, Fliesenverlegung und DIN 18534; Leistungsumfang und Preise sind auf dem ersten Bildschirm nicht zu erkennen.",
+    "zielgruppe": "Hausbesitzer und Bauherren, die ein Bad sanieren oder Fliesen verlegen lassen wollen, wohl vor allem aus der Region Aßlar; das Einzugsgebiet steht hier nicht.",
+    "naechster_schritt": "Den dunklen Button \"Projekt unverbindlich anfragen\" antippen, oder unten \"Anrufen\", \"WhatsApp\" oder \"Aufmaß\" wählen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Fliesenverlegung Tezgel aus Aßlar, dazu ein Ratgeberbereich zu Badsanierung und DIN 18534 Verbundabdichtung.",
+    "zielgruppe": "Vermutlich Privatleute wie Hausbesitzer und Bauherren in der Region Aßlar, die ein Bad sanieren oder Fliesen verlegen lassen wollen.",
+    "naechster_schritt": "Den Button \"Projekt unverbindlich anfragen\" antippen; vorher die Cookie-Leiste per \"Alle ablehnen\" oder \"Alle akzeptieren\" schließen, die den mittleren Teil der Seite verdeckt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel aus Aßlar, dazu Ratgeber-Artikel zu Fliesen, Badsanierung und DIN 18534 Verbundabdichtung.",
+    "zielgruppe": "Hausbesitzer und Bauherren, die ein Bad sanieren oder Fliesen verlegen lassen wollen, vor allem in Aßlar und Umgebung.",
+    "naechster_schritt": "Auf den dunklen Knopf \"Projekt unverbindlich anfragen\" klicken; alternativ unten Anrufen oder WhatsApp nutzen. Das Cookie-Banner verdeckt einen Teil des Textes, den ich deshalb nicht lesen konnte.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Fliesenverlegung Tezgel aus Aßlar, dazu ein Ratgeber-Bereich zu Badsanierung, Fliesenverlegung und DIN 18534 Verbundabdichtung.",
+    "zielgruppe": "Vermutlich Hausbesitzer und Bauherren, die ein Bad sanieren oder Fliesen verlegen lassen wollen; das ist aus dem Text erschlossen und nicht ausdrücklich genannt. Der Cookie-Banner verdeckt den Rest der Seite, deshalb ist das Angebot nur teilweise zu sehen.",
+    "naechster_schritt": "Zuerst den Cookie-Banner schließen, dann auf \"Projekt unverbindlich anfragen\" tippen; alternativ über die untere Leiste anrufen, per WhatsApp schreiben oder ein Aufmaß anfragen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Badsanierung durch den Fachbetrieb Fliesenverlegung Tezgel aus Aßlar, dazu ein Ratgeber rund um Badsanierung und DIN 18534 Verbundabdichtung.",
+    "zielgruppe": "Privatleute und Bauherren, die ein Bad sanieren oder Fliesen verlegen lassen wollen und sich vorab informieren möchten.",
+    "naechster_schritt": "Auf \"Projekt unverbindlich anfragen\" tippen, alternativ unten Anrufen oder WhatsApp nutzen; was \"Aufmaß\" genau bedeutet, ist mir nicht erklärt.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b08",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung und Badsanierung vom eingetragenen HWK-Fachbetrieb Tezgel in Aßlar und Wetzlar, mit kostenfreiem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot (die Hauptüberschrift ist vom Cookie-Banner verdeckt).",
+    "zielgruppe": "Private Bauherren und Hausbesitzer in Aßlar, Wetzlar und ganz Hessen, die Fliesen oder ein Bad erneuern lassen wollen.",
+    "naechster_schritt": "Zuerst das Cookie-Banner schließen (z.B. \"Alle ablehnen\"), dann über \"Zur Express-Anfrage\" ein Aufmaß anfragen oder direkt unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung und Badsanierung durch einen eingetragenen HWK-Fachbetrieb in Aßlar und Wetzlar, nach eigener Aussage auch für ganz Hessen (die Hauptüberschrift ist vom Cookie-Banner verdeckt, das Angebot ergibt sich aus Navigation und Begleittext).",
+    "zielgruppe": "Privatkunden und Hausbesitzer in Aßlar, Wetzlar und Umgebung, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Über die Express-Anfrage ein kostenfreies Vor-Ort-Aufmaß mit verbindlichem Festpreisangebot anfordern oder direkt unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung und Badsanierung vom eingetragenen HWK-Fachbetrieb Tezgel in Aßlar, Wetzlar und Hessen, mit kostenfreiem Vor-Ort-Aufmaß und Festpreisangebot (die Hauptüberschrift ist vom Cookie-Banner verdeckt, daher aus dem Untertext abgeleitet).",
+    "zielgruppe": "Privatleute und Bauherren in Aßlar, Wetzlar und Umgebung, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Die Express-Anfrage für das kostenfreie Vor-Ort-Aufmaß nutzen oder direkt unter 06441 / 44 83 567 anrufen, nachdem der Cookie-Banner geschlossen ist.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung Tezgel, ein Fachbetrieb in Aßlar und Wetzlar, bietet Badsanierung und Fliesenarbeiten an, mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot.",
+    "zielgruppe": "Privatkunden und Hausbesitzer in Aßlar, Wetzlar und Hessen, die ein Bad oder Fliesen sanieren lassen wollen.",
+    "naechster_schritt": "Über den Button \"Zur Express-Anfrage\" oder die Telefonnummer 06441 / 44 83 567 Kontakt aufnehmen und ein kostenloses Aufmaß anfragen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Badsanierung durch einen eingetragenen Fachbetrieb in Aßlar und Wetzlar, mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot.",
+    "zielgruppe": "Privatkunden und Bauherren in Aßlar, Wetzlar und ganz Hessen, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Auf \"Zur Express-Anfrage\" klicken oder unter 06441 / 44 83 567 anrufen, um ein kostenloses Vor-Ort-Aufmaß zu vereinbaren.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b09",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenleger-Fachbetrieb in Wetzlar, Aßlar und Mittelhessen, der Fliesenarbeiten für Bad, Neubau und Außenbereich ausführt (XXL-Großformate, Feinsteinzeug, witterungsbeständige Außenbeläge auf Stelzlagern, Verbundabdichtung nach DIN 18534).",
+    "zielgruppe": "Bauherren und Eigentümer in Wetzlar, Aßlar und Umgebung, die Bad, Neubau oder Terrasse/Balkon fliesen lassen wollen.",
+    "naechster_schritt": "Den Button \"Vor-Ort-Aufmaß vereinbaren\" klicken; alternativ per WhatsApp Schnellkontakt oder unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung im Raum Wetzlar, Aßlar und Mittelhessen: XXL-Großformate im Bad, Feinsteinzeug im Neubau und witterungsbeständige Außenbeläge auf Stelzlagern.",
+    "zielgruppe": "Privatleute und Bauherren in Wetzlar, Aßlar und Mittelhessen, die ein Bad, Wohnräume oder eine Terrasse bzw. einen Balkon fliesen lassen wollen.",
+    "naechster_schritt": "Den Button \"Vor-Ort-Aufmaß vereinbaren\" anklicken, alternativ \"WhatsApp Schnellkontakt\" oder die Nummer 06441 / 44 83 567 nutzen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenleger-Fachbetrieb aus Aßlar und Wetzlar, der Fliesenarbeiten für Bäder, Wohnbereiche und Neubau übernimmt, darunter fugenarme XXL-Großformate, Feinsteinzeug und witterungsbeständige Außenbeläge auf Stelzlagern.",
+    "zielgruppe": "Hausbesitzer und Bauherren in Wetzlar, Aßlar und Mittelhessen, die Fliesen im Bad, im Wohnbereich oder im Neubau verlegen lassen wollen.",
+    "naechster_schritt": "Den roten Button \"Vor-Ort-Aufmaß vereinbaren\" klicken, alternativ per WhatsApp-Schnellkontakt oder telefonisch unter 06441 / 44 83 567 Kontakt aufnehmen. Das Cookie-Banner verdeckt einen Teil des oberen Bereichs, die Angebotsbeschreibung ist trotzdem gut lesbar.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenleger-Fachbetrieb in Wetzlar und Aßlar: Fliesenverlegung für Bäder, Wohnbereiche, Neubau und Außenbeläge auf Stelzlagern, mit Vor-Ort-Aufmaß.",
+    "zielgruppe": "Bauherren und Hausbesitzer in Wetzlar, Aßlar und Mittelhessen, die ein Bad, Wohnräume oder Außenflächen fliesen lassen wollen.",
+    "naechster_schritt": "Den roten Button „Vor-Ort-Aufmaß vereinbaren“ klicken oder per WhatsApp bzw. unter 06441 / 44 83 567 Kontakt aufnehmen, nachdem der Cookie-Banner geschlossen ist.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung durch einen eingetragenen Fachbetrieb in Wetzlar, Aßlar und Mittelhessen: Bäder und Badsanierung, Wohnbereiche und Neubau sowie witterungsbeständige Außenbeläge, vor allem fugenarme XXL-Großformate und Feinsteinzeug (Preise sind auf diesem Bildschirm nicht zu sehen).",
+    "zielgruppe": "Hausbesitzer und Bauherren in Wetzlar, Aßlar und Umgebung, die ein Bad, Wohnräume, einen Neubau oder Außenflächen gefliest haben möchten.",
+    "naechster_schritt": "Den roten Button \"Vor-Ort-Aufmaß vereinbaren\" anklicken; alternativ anrufen (06441 / 44 83 567) oder den WhatsApp Schnellkontakt nutzen.",
+    "sicherheit": 5
+   }
+  ]
+ },
+ {
+  "bild": "b10",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung und Badsanierung durch den eingetragenen Fliesenleger-Fachbetrieb Tezgel in Aßlar, mit Fliesen-, Platten- und Mosaikverlegung, Naturstein und barrierefreien Walk-In-Duschen.",
+    "zielgruppe": "Auftraggeber, die in Aßlar, Wetzlar, Gießen oder Mittelhessen Fliesen verlegen lassen oder ein Bad sanieren wollen; ausdrücklich als Privatkunden benannt ist das auf dem Bildschirm nicht.",
+    "naechster_schritt": "Den roten Button \"Aufmaß buchen\" oben rechts anklicken oder unter 06441 / 44 83 567 anrufen; vorher das Cookie-Banner schließen oder bestätigen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung Tezgel, ein eingetragener Fachbetrieb in Aßlar, verlegt Fliesen, Platten und Mosaik, arbeitet mit Naturstein und saniert Bäder, auch als barrierefreie Walk-In-Dusche mit fugenarmen XXL-Großformaten.",
+    "zielgruppe": "Private Bauherren und Hausbesitzer in Aßlar, Wetzlar, Gießen und dem übrigen Mittelhessen, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Über den Button „Aufmaß buchen“ einen Termin vereinbaren oder direkt unter 06441 / 44 83 567 anrufen; alternativ gibt es einen WhatsApp-Button.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung Tezgel, ein eingetragener Fachbetrieb aus Aßlar, verlegt Fliesen, Platten und Mosaik, arbeitet an Naturstein und saniert Bäder, darunter barrierefreie Walk-In-Duschen und XXL-Großformate; die Hauptüberschrift ist vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Hausbesitzer und Bauherren in Aßlar, Wetzlar, Gießen und Mittelhessen, die Boden oder Bad fliesen oder sanieren lassen wollen.",
+    "naechster_schritt": "Ich würde auf den roten Button \"Aufmaß buchen\" klicken oder unter 06441 / 44 83 567 anrufen, nachdem ich das Cookie-Banner geschlossen habe.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung Tezgel ist ein eingetragener Fachbetrieb aus Aßlar, der Fliesen-, Platten-, Mosaikverlegung, Naturstein und Badsanierung anbietet, mit bis zu 12 Fachkräften.",
+    "zielgruppe": "Privatkunden und Bauherren in Aßlar, Wetzlar, Gießen und Mittelhessen, die ein Bad oder Fliesen- und Steinarbeiten umsetzen lassen wollen.",
+    "naechster_schritt": "Auf den roten Button \"Aufmaß buchen\" klicken oder unter 06441 / 44 83 567 anrufen; der Cookie-Banner verdeckt Teile der Überschrift, die Leistungen sind aber aus dem Einleitungstext erkennbar.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung Tezgel, ein eingetragener Fliesenleger-Fachbetrieb in Aßlar, bietet Fliesen-, Platten- und Mosaikverlegung, Naturstein- und Badsanierung sowie barrierefreie Walk-In-Duschen an.",
+    "zielgruppe": "Private Bauherren und Eigentümer in Aßlar, Wetzlar, Gießen und Mittelhessen, die ein Bad oder Fliesen erneuern lassen wollen.",
+    "naechster_schritt": "Den Cookie-Hinweis schließen oder über „Einstellungen“ bestätigen und dann oben rechts den Button „Aufmaß buchen“ wählen, alternativ unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 5
+   }
+  ]
+ },
+ {
+  "bild": "b11",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung durch den Fachbetrieb Tezgel in Aßlar, Wetzlar und ganz Hessen, mit kostenfreiem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot.",
+    "zielgruppe": "Kunden in Aßlar, Wetzlar und ganz Hessen, die Fliesenarbeiten planen und ein Festpreisangebot wollen.",
+    "naechster_schritt": "Auf \"Zur Express-Anfrage\" tippen, sobald das Cookie-Banner den Button nicht mehr verdeckt, sonst unten \"Anrufen\" oder \"WhatsApp\" nutzen oder den Tab \"Aufmaß\" wählen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung durch den Fachbetrieb Tezgel in Aßlar, Wetzlar und ganz Hessen, mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot.",
+    "zielgruppe": "Kunden in Aßlar, Wetzlar und Umgebung in Hessen, die Fliesen verlegen lassen wollen; ob Privat- oder Gewerbekunden gemeint sind, ist nicht erkennbar.",
+    "naechster_schritt": "Über die Leiste unten \"Anrufen\" oder \"WhatsApp\" Kontakt aufnehmen oder das Aufmaß über \"Zur Express-Anfrage\" anfragen; das Cookie-Banner verdeckt den Button teilweise, daher zuerst eine Cookie-Option wählen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung durch den Fliesenleger Tezgel, mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot.",
+    "zielgruppe": "Bauherren und Eigentümer in Aßlar, Wetzlar und ganz Hessen, die Fliesen verlegen lassen wollen. Ob Privat- oder Gewerbekunden gemeint sind, ist nicht eindeutig erkennbar.",
+    "naechster_schritt": "Über den Button \"Zur Express-Anfrage\" das kostenlose Aufmaß anfragen, alternativ direkt anrufen oder per WhatsApp schreiben. Das Cookie-Banner verdeckt den Button teilweise, Preise sind auf dem ersten Bildschirm nicht zu sehen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung Tezgel ist ein Fachbetrieb für Fliesenlegerarbeiten in Aßlar, Wetzlar und ganz Hessen und bietet ein kostenfreies Vor-Ort-Aufmaß mit verbindlichem Festpreisangebot.",
+    "zielgruppe": "Das Angebot richtet sich an Privatkunden und Bauherren in Aßlar, Wetzlar und Umgebung, die Fliesen verlegen lassen möchten.",
+    "naechster_schritt": "Über die untere Leiste anrufen oder per WhatsApp schreiben, oder die Express-Anfrage nutzen (der Button ist vom Cookie-Banner teilweise verdeckt).",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung Tezgel, ein Fachbetrieb für Fliesenleger in Aßlar, Wetzlar und ganz Hessen, bietet Fliesenverlegung an und ein kostenloses Vor-Ort-Aufmaß mit verbindlichem Festpreisangebot.",
+    "zielgruppe": "Kunden in Aßlar, Wetzlar und ganz Hessen, die einen Fliesenleger suchen; ob Privat- oder Gewerbekunden gemeint sind, ist auf diesem ersten Bildschirm nicht erkennbar.",
+    "naechster_schritt": "Auf den Button \"Zur Express-Anfrage\" tippen, den das Cookie-Fenster teilweise verdeckt (dafür das Fenster vorher mit \"Alle ablehnen\" oder \"Alle akzeptieren\" schließen), oder unten \"Aufmaß\", \"WhatsApp\" oder \"Anrufen\" wählen.",
+    "sicherheit": 5
+   }
+  ]
+ },
+ {
+  "bild": "b12",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung Tezgel aus Aßlar bietet Fliesenverlegung und Badsanierung an, dazu Fachwissen zu DIN 18534 Verbundabdichtung, das in einem Ratgeber-Bereich mit Artikeln aufbereitet ist.",
+    "zielgruppe": "Privatleute, die ein Bad sanieren oder Fliesen verlegen lassen wollen, und Bauherren, die sich vorab zu Material, Abdichtung und Kosten informieren möchten.",
+    "naechster_schritt": "Über den Button „Projekt unverbindlich anfragen“ oder „Aufmaß anfragen“ eine Anfrage stellen, alternativ die Ratgeber-Artikel durchlesen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Fliesenverlegung Tezgel aus Aßlar, dazu ein Ratgeber mit Fliesen- und Badtipps (Menüpunkte Fachgewerke und Standorte sind nur als Titel sichtbar, Details nicht erkennbar).",
+    "zielgruppe": "Privatleute, die ihr Bad sanieren oder Fliesen verlegen lassen wollen und sich vorab informieren möchten; Gewerbekunden sind auf diesem Bildschirm nicht erkennbar.",
+    "naechster_schritt": "Auf „Projekt unverbindlich anfragen“ oder „Aufmaß anfragen“ klicken, um ein kostenfreies Vor-Ort-Aufmaß anzufragen; vorher den Cookie-Banner beantworten, der einen Teil der Artikel verdeckt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung und Badsanierung, inklusive Abdichtung nach DIN 18534, von Fliesenverlegung Tezgel aus Aßlar; Preise und Einzugsgebiet sind auf dem ersten Bildschirm nicht zu sehen.",
+    "zielgruppe": "Hausbesitzer, die ihr Bad sanieren oder neue Fliesen verlegen lassen wollen, vermutlich in der Region Aßlar.",
+    "naechster_schritt": "Auf den dunklen Button \"Projekt unverbindlich anfragen\" klicken, um ein Projekt anzufragen, oder einen Ratgeber-Artikel lesen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel aus Aßlar, dazu ein Ratgeber zu Fliesen, Badsanierung und DIN 18534 (Abdichtung); welche Leistungen genau angeboten werden, ist auf diesem Bildschirm nur über die Menüpunkte Badsanierung und Fachgewerke erkennbar.",
+    "zielgruppe": "Hausbesitzer und Bauherren, die ein Bad sanieren oder Fliesen verlegen lassen wollen, sowie alle, die sich vorab zu Fliesen und Abdichtung informieren möchten.",
+    "naechster_schritt": "Ich würde auf \"Projekt unverbindlich anfragen\" klicken, alternativ im Ratgeber-Bereich passende Artikel lesen, nachdem ich das Cookie-Banner geschlossen habe.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Der Fachbetrieb Fliesenverlegung Tezgel aus Aßlar bietet Badsanierung, Fliesenverlegung und Abdichtung nach DIN 18534 an, wie Titel und Einleitung zeigen; das volle Leistungsspektrum ist im Menü (Fachgewerke, Standorte) nur angedeutet.",
+    "zielgruppe": "Vermutlich Privatleute, die ein Bad sanieren oder Fliesen verlegen lassen wollen, was der Verweis auf den Handwerkerbonus und das kostenlose Vor-Ort-Aufmaß nahelegt; ob auch Gewerbekunden gemeint sind, ist auf diesem Bildschirm nicht erkennbar.",
+    "naechster_schritt": "Das Cookie-Banner links schließen (Alle ablehnen oder Einstellungen) und dann den Button \"Projekt unverbindlich anfragen\" oder oben rechts \"Aufmaß anfragen\" nutzen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b13",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenleger-Fachbetrieb Tezgel (Fliesenverlegung und Badsanierung) mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot in Aßlar, Wetzlar und Hessen.",
+    "zielgruppe": "Privatleute und Bauherren in Aßlar, Wetzlar und Mittelhessen, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Die Express-Anfrage ausfüllen oder direkt anrufen (06441 / 44 83 567) bzw. per WhatsApp schreiben, um ein Aufmaß zu vereinbaren.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenlegerbetrieb Tezgel (Fliesenverlegung) mit Schwerpunkt Badsanierung, der ein kostenloses Vor-Ort-Aufmaß mit verbindlichem Festpreisangebot anbietet; welche Leistungen hinter dem Menüpunkt „Fachgewerke“ stecken, ist auf dem ersten Bildschirm nicht erkennbar.",
+    "zielgruppe": "Privatkunden und Bauherren in Aßlar, Wetzlar und ganz Hessen, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Über den Button „Zur Express-Anfrage“ ein Aufmaß anfragen oder direkt unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel in Aßlar, Wetzlar und ganz Hessen, mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot.",
+    "zielgruppe": "Privatleute und Bauherren in Aßlar, Wetzlar und Umgebung, die Fliesen verlegen oder ein Bad sanieren lassen wollen.",
+    "naechster_schritt": "Die Express-Anfrage nutzen oder direkt unter 06441 / 44 83 567 anrufen, um ein kostenloses Vor-Ort-Aufmaß zu vereinbaren.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenleger Tezgel, ein Fachbetrieb in Aßlar, Wetzlar und Hessen, bietet Fliesenverlegung und Badsanierung an, mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot; was unter „Fachgewerke“ genau fällt, ist auf dem Bildschirm nicht erkennbar.",
+    "zielgruppe": "Privatkunden und Bauherren in Aßlar, Wetzlar und dem Raum Mittelhessen, die Fliesen oder ein Bad erneuern lassen wollen.",
+    "naechster_schritt": "Über den Button „Zur Express-Anfrage“ ein kostenloses Vor-Ort-Aufmaß anfragen oder direkt unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Ein Fliesenleger-Fachbetrieb aus Aßlar (HWK-eingetragen), der Fliesen verlegt und Bäder saniert, mit kostenlosem Vor-Ort-Aufmaß und verbindlichem Festpreisangebot; weitere Leistungen sehe ich nur als Menüpunkte.",
+    "zielgruppe": "Privatkunden und Bauherren in Aßlar, Wetzlar und ganz Hessen, die einen Fliesenleger direkt und ohne Callcenter beauftragen wollen.",
+    "naechster_schritt": "Auf „Zur Express-Anfrage“ klicken, um das kostenlose Vor-Ort-Aufmaß anzufragen, oder direkt unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b14",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung Tezgel: Fliesenarbeiten und Badsanierung als eingetragener Fachbetrieb, mit Vor-Ort-Aufmaß im Raum Mittelhessen.",
+    "zielgruppe": "Vermutlich Privatleute und Bauherren im 45-km-Umkreis um Mittelhessen (u. a. Wetzlar, Gießen, Marburg), die ein Bad sanieren oder Fliesen verlegen lassen wollen; ob auch Architekten gemeint sind, ist wegen des Cookie-Banners nicht lesbar.",
+    "naechster_schritt": "Auf den Button \"Aufmaß anfragen\" oben rechts klicken, um ein Aufmaß anzufragen, oder in der Städteliste prüfen, ob mein Ort im Einsatzgebiet liegt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung und Badsanierung in Mittelhessen, erkennbar am Firmennamen \"Fliesenverlegung Tezgel\" und der Navigation (Badsanierung, Fachgewerke, Ratgeber); der Fließtext ist vom Cookie-Banner teilweise verdeckt, Details zum Leistungsumfang sind deshalb nicht sicher lesbar.",
+    "zielgruppe": "Privatleute und Bauherren in Mittelhessen (etwa Wetzlar, Gießen, Marburg, Lahn-Dill-Kreis), die im 45-km-Einsatzgebiet Fliesen- oder Badarbeiten brauchen; Architekten sind im sichtbaren Teilsatz ebenfalls genannt.",
+    "naechster_schritt": "Zuerst das Cookie-Banner schließen, dann den Button \"Aufmaß anfragen\" oben rechts nutzen oder eine Stadt aus der Liste im Einsatzgebiet wählen, um Entfernung und Anfahrt zu sehen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung Tezgel, ein Fachbetrieb, bietet laut Menü Badsanierung und Fachgewerke an, mit Schwerpunkt Mittelhessen; die genauen Leistungen sind vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Privatkunden und Bauherren in Mittelhessen, etwa in Gießen, Wetzlar, Marburg oder Herborn, und vermutlich auch Architekten, was im verdeckten Text nur teilweise lesbar ist.",
+    "naechster_schritt": "Ich würde oben rechts auf „Aufmaß anfragen“ klicken oder in der Gebietskarte eine Stadt wählen, um Entfernung und Anfahrt zu sehen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung und Badsanierung durch einen Handwerksbetrieb (laut Logo und Menü), mit Einsatzgebiet im Raum Mittelhessen; die konkreten Leistungen werden auf dieser Seite nicht erklärt.",
+    "zielgruppe": "Privatleute und Bauherren in Mittelhessen (etwa Wetzlar, Gießen, Marburg, Lahn-Dill-Kreis), die Fliesen oder ein Bad verlegen beziehungsweise sanieren lassen wollen; Architekten sind im Cookie-Banner nur angedeutet.",
+    "naechster_schritt": "Oben rechts auf \"Aufmaß anfragen\" klicken, oder in der Ortsliste eine Stadt wählen, um Entfernung und Anfahrt zu sehen (Telefonnummer und Adresse sind vom Cookie-Banner verdeckt).",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Badsanierung durch den Fachbetrieb Tezgel, tätig im 45-km-Einsatzgebiet in Mittelhessen (Lahn-Dill-Kreis).",
+    "zielgruppe": "Nur teilweise erkennbar: Die Seite nennt Architekten, und die Region Mittelhessen ist klar, aber der übrige Text wird vom Cookie-Banner verdeckt, daher ist die genaue Kundengruppe (vermutlich Privatleute und Bauherren) nicht sicher zu sagen.",
+    "naechster_schritt": "Den dunklen Button \"Aufmaß anfragen\" oben rechts anklicken, weil das die deutlichste Handlung ist; vorher das Cookie-Fenster bestätigen oder schließen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b15",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Komplette Badsanierung aus einer Hand (Planung, Fliesen und alle Gewerke) mit Festpreis, kostenlosem Vor-Ort-Aufmaß und Staubschutz-Garantie, von einem Fachbetrieb in Aßlar und Wetzlar.",
+    "zielgruppe": "Hausbesitzer und Eigentümer in Mittelhessen (Raum Aßlar, Wetzlar), die ihr Bad sanieren oder barrierefrei umbauen wollen.",
+    "naechster_schritt": "Auf den Button \"Bad-Projektcheck starten\" klicken, alternativ \"Aufmaß buchen\" oder unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Komplette Badsanierung aus einer Hand durch den Fliesenfachbetrieb Tezgel (Aßlar, Wetzlar): von der Planung bis zur schlüsselfertigen Übergabe mit Festpreis, inklusive Fliesen, XXL-Großformaten und barrierefreiem Bad.",
+    "zielgruppe": "Hausbesitzer in Mittelhessen (Raum Aßlar und Wetzlar), die ihr Bad sanieren oder barrierefrei umbauen möchten.",
+    "naechster_schritt": "Den Cookie-Banner schließen und auf \"Bad-Projektcheck starten\" klicken; alternativ \"Aufmaß buchen\" für ein kostenfreies Vor-Ort-Aufmaß.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung Tezgel, ein Fachbetrieb in Aßlar und Wetzlar, saniert Bäder komplett aus einer Hand, mit Fliesen und XXL-Großformaten sowie barrierefreien Bädern, zu einem verbindlichen Festpreis.",
+    "zielgruppe": "Hausbesitzer und Bauherren in Aßlar, Wetzlar und Mittelhessen, die ihr Bad sanieren oder barrierefrei umbauen wollen; die Überschrift ist vom Cookie-Banner teilweise verdeckt, daher ist die genaue Zielgruppe nur aus den Leistungen abgeleitet.",
+    "naechster_schritt": "Den Button \"Bad-Projektcheck starten\" anklicken, alternativ \"Musterbäder entdecken\" oder über \"Aufmaß buchen\" einen kostenfreien Vor-Ort-Termin vereinbaren; zuerst das Cookie-Banner schließen oder über \"Alle ablehnen\" beantworten.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung Tezgel (Fachbetrieb Aßlar · Wetzlar) bietet Badsanierung aus einer Hand: ein Komplettbad schlüsselfertig zum verbindlichen Festpreis, dazu Fliesen mit XXL-Großformaten und barrierefreie Bäder.",
+    "zielgruppe": "Hausbesitzer in Mittelhessen (Raum Aßlar und Wetzlar), die ihr Bad sanieren oder barrierefrei umbauen wollen.",
+    "naechster_schritt": "Im Cookie-Banner eine Option wählen (etwa \"Alle ablehnen\") und dann auf \"Bad-Projektcheck starten\" klicken.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Badsanierung aus einer Hand: ein Komplettbad schlüsselfertig zum Festpreis, dazu Fliesen und XXL-Großformate sowie barrierefreie Bäder (Fliesenverlegung Tezgel, Aßlar und Wetzlar).",
+    "zielgruppe": "Hausbesitzer und Bauherren in Mittelhessen, die ihr Bad sanieren oder barrierefrei umbauen wollen.",
+    "naechster_schritt": "Den roten Button \"Bad-Projektcheck starten\" klicken, alternativ unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b16",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenleger-Leistungen und weitere Fachgewerke aus Wetzlar, laut Einblendung ein HWK-Wiesbaden-Fachbetrieb; der Satz dazu ist vom Cookie-Banner verdeckt, Details sind daher nicht erkennbar.",
+    "zielgruppe": "Privatleute und Bauherren in Wetzlar, Aßlar und Mittelhessen, die Fliesen verlegen oder ein Bad bzw. Fachgewerk beauftragen wollen.",
+    "naechster_schritt": "Das Cookie-Banner schließen oder mit \"Alle ablehnen\" beantworten und dann unten \"Anrufen\" oder \"WhatsApp\" wählen; was \"Aufmaß\" genau bedeutet, ist aus dem Bild nicht erkennbar.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung und Fachgewerke als eingetragener Fliesenleger-Fachbetrieb (laut Seite HWK Wiesbaden) im Raum Wetzlar, Aßlar und Mittelhessen; der Text dazu ist vom Cookie-Banner verdeckt, Details sind nicht erkennbar.",
+    "zielgruppe": "Auftraggeber im Raum Wetzlar, Aßlar und Mittelhessen, die Fliesen- oder Fachgewerke-Arbeiten brauchen; ob es sich um Privat- oder Gewerbekunden handelt, ist aus dem Bildschirm nicht erkennbar.",
+    "naechster_schritt": "Über die untere Leiste anrufen oder per WhatsApp schreiben, oder den Punkt \"Aufmaß\" wählen, falls ich ein Aufmaß (Ausmessung vor Ort) anfragen möchte, auch wenn der Begriff für Laien nicht selbsterklärend ist.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung Tezgel bietet Fliesenleger-Leistungen und Fachgewerke an, laut Überschrift in Wetzlar, Aßlar und Mittelhessen; die Details hinter dem Cookie-Banner sind nicht lesbar.",
+    "zielgruppe": "Privatleute und Bauherren in Wetzlar, Aßlar und Umgebung, die Fliesen oder Fachgewerke für Bad, Wohnung oder Haus brauchen.",
+    "naechster_schritt": "Den Button \"Aufmaß\" unten rechts antippen, oder alternativ anrufen beziehungsweise per WhatsApp schreiben; vorher lässt sich das Cookie-Banner schließen oder bestätigen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenleger-Fachbetrieb Tezgel aus Wetzlar (HWK-Fachbetrieb) mit Fliesenverlegung und weiteren Fachgewerken; welche Arbeiten genau, ist auf diesem Bildschirm nicht erkennbar.",
+    "zielgruppe": "Vermutlich Privatleute und Bauherren in Wetzlar, Aßlar und Mittelhessen, die Fliesen- oder Handwerksarbeiten brauchen.",
+    "naechster_schritt": "Das Cookie-Banner verdeckt den Text, also zuerst mit \"Alle ablehnen\" oder \"Alle akzeptieren\" schließen und dann die Leistungen lesen, oder unten direkt \"Aufmaß\" für einen Termin oder \"Anrufen\" wählen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Fachgewerke von einem Fliesenleger-Fachbetrieb (HWK-Eintragung laut Seite) in Wetzlar, Aßlar und Mittelhessen.",
+    "zielgruppe": "Vermutlich Privatkunden und Bauherren in Wetzlar und Mittelhessen, die einen Fliesenleger suchen; das ist im Bild nicht ausdrücklich genannt, und der Einleitungstext ist vom Cookie-Banner verdeckt.",
+    "naechster_schritt": "Unten zwischen Anrufen, WhatsApp und Aufmaß wählen; was „Aufmaß“ genau umfasst, ist auf dem Bildschirm nicht erklärt.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b17",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung durch einen Fachbetrieb mit Sitz in Aßlar, der in Mittelhessen tätig ist; weitere Leistungen sind auf diesem Bildschirm nicht zu erkennen.",
+    "zielgruppe": "Laut dem Einleitungstext Privatkunden, Architekten und Bauherren, wobei das letzte Wort teils vom Cookie-Banner verdeckt ist.",
+    "naechster_schritt": "Über die untere Leiste Kontakt aufnehmen, am naheliegendsten über „Aufmaß“ für einen Termin vor Ort oder über „Anrufen“, nachdem das Cookie-Banner geschlossen oder entschieden ist.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Der Betrieb \"Fliesenverlegung Tezgel\" aus Aßlar (Firmensitz Hohwarstraße 14, 35614 Aßlar) verlegt Fliesen und ist in Mittelhessen und im Lahn-Dill-Kreis tätig; die vollständige Leistungsliste ist vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Die sichtbare Textstelle nennt Privatkunden, Architekten und Bauherren, die Zeile mit den Orten (Wetzlar und weitere) ist jedoch nur angeschnitten.",
+    "naechster_schritt": "Zuerst das Cookie-Banner schließen (X oder \"Alle ablehnen\"), dann über die untere Leiste \"Aufmaß\" (vermutlich ein Termin zur Vor-Ort-Vermessung) oder alternativ \"Anrufen\" bzw. \"WhatsApp\" nutzen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung durch den Fachbetrieb Tezgel mit Firmensitz in Aßlar (Hohwarstraße 14) in Mittelhessen, die konkreten Leistungen sind auf dem ersten Bildschirm nicht zu sehen.",
+    "zielgruppe": "Privatkunden, Architekten und Bauherren in Mittelhessen, genannt wird Wetzlar, der weitere Text ist vom Cookie-Banner verdeckt.",
+    "naechster_schritt": "Zuerst das Cookie-Banner schließen, dann die Leistungen lesen oder unten direkt über Anrufen oder WhatsApp Kontakt aufnehmen; was der Button „Aufmaß“ auslöst, ist ohne Erklärung nicht erkennbar.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Die Firma ist ein Fliesenverlegungs-Fachbetrieb (Logo: Fliesenverlegung Tezgel) mit Firmensitz in Aßlar; welche Leistungen genau angeboten werden, ist auf diesem Bildschirm nicht zu sehen.",
+    "zielgruppe": "Die Einleitung nennt Privatkunden, Architekten und Bauherren in Mittelhessen, aber das Cookie-Banner verdeckt den Text, daher ist die Liste der Orte nur teilweise lesbar (Wetzlar, Gie... angeschnitten).",
+    "naechster_schritt": "Unten stehen die Schaltflächen Anrufen, WhatsApp und Aufmaß; für eine Anfrage würde ich Aufmaß oder Anrufen wählen, wobei ich nur vermute, dass Aufmaß einen Vor-Ort-Termin zur Vermessung anfragt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung durch einen Fachbetrieb mit Firmensitz in Aßlar, mit Einsatzgebiet in Mittelhessen und dem Lahn-Dill-Kreis.",
+    "zielgruppe": "Privatkunden, Architekten und Bauherren in Mittelhessen; der Satz ist durch das Cookie-Banner verdeckt, sichtbar sind nur Wetzlar und Gie(ßen).",
+    "naechster_schritt": "Unten auf den hervorgehobenen Button \"Aufmaß\" tippen; alternativ über \"Anrufen\" oder \"WhatsApp\" Kontakt aufnehmen, wobei nicht erkennbar ist, was \"Aufmaß\" genau auslöst.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b18",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung Tezgel bietet eine schlüsselfertige Badsanierung in Fachqualität an, als HWK-Fachbetrieb für Badsanierung mit 5,0 Sternen aus 27 Google-Rezensionen.",
+    "zielgruppe": "Hausbesitzer in und um Aßlar und Wetzlar, die ihr Bad sanieren lassen wollen; der genaue Einzugsbereich liegt im Teil des Textes, den das Cookie-Banner verdeckt, und ist nicht lesbar.",
+    "naechster_schritt": "Unten rechts auf „Aufmaß“ tippen, um ein Aufmaß anzufragen, oder direkt über „Anrufen“ oder „WhatsApp“ Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Schlüsselfertige Badsanierung in Fachqualität durch den HWK-Fachbetrieb Fliesenverlegung Tezgel, tätig in Aßlar und Wetzlar (laut Seite 5,0 Sterne bei 27 Google-Rezensionen).",
+    "zielgruppe": "Hausbesitzer und Privatleute in Aßlar, Wetzlar und Umgebung, die ihr Bad sanieren lassen wollen; der genaue Einzugsbereich ist nicht erkennbar, weil ein Cookie-Banner den Einleitungstext verdeckt.",
+    "naechster_schritt": "Unten in der Leiste „Aufmaß“ antippen (vermutlich ein Termin für die Vermessung vor Ort, das ist nicht erklärt), alternativ direkt anrufen oder per WhatsApp schreiben.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Schlüsselfertige Badsanierung durch den Fliesenleger-Fachbetrieb Tezgel (HWK-Betrieb), laut Startbildschirm mit 5,0 Sternen aus 27 Google-Rezensionen bewertet.",
+    "zielgruppe": "Privatleute mit Badsanierungswunsch in Aßlar, Wetzlar und Umgebung; die Anrede \"Ihr Traumbad\" spricht vor allem Eigentümer an, der Fließtext dazu ist vom Cookie-Banner verdeckt.",
+    "naechster_schritt": "Ich würde auf \"Aufmaß\" in der unteren Leiste tippen (dort hervorgehoben), alternativ Anrufen oder WhatsApp nutzen; was \"Aufmaß\" genau bedeutet, ist auf dem Bild nicht erklärt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Schlüsselfertige Badsanierung in Fachqualität durch den Fachbetrieb Tezgel (Fliesenverlegung, HWK-Betrieb, 5,0 bei 27 Google-Rezensionen) in Aßlar und Wetzlar; der Text endet hinter dem Cookie-Banner, das volle Einzugsgebiet ist nicht erkennbar.",
+    "zielgruppe": "Privatleute in Aßlar und Wetzlar, die ihr Bad komplett erneuern lassen wollen; ausdrücklich genannt ist das auf dem Bild nicht.",
+    "naechster_schritt": "Unten zwischen Anrufen, WhatsApp und Aufmaß wählen; für ein neues Bad ist das Aufmaß (Termin vor Ort) der naheliegende Schritt, ob es kostenlos ist, ist hier nicht zu sehen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Schlüsselfertige Badsanierung in Fachqualität durch einen Fachbetrieb (HWK-Fachbetrieb für Badsanierung, Fliesenverlegung Tezgel), mit 5,0 Sternen aus 27 Google-Rezensionen.",
+    "zielgruppe": "Privatleute in Aßlar, Wetzlar und Umgebung, die ihr Bad komplett erneuern lassen wollen, ohne sich selbst um die Gewerke kümmern zu müssen.",
+    "naechster_schritt": "Unten in der Leiste Anrufen oder WhatsApp nutzen; der Button \"Aufmaß\" ist hervorgehoben, aber auf dem ersten Bildschirm nicht erklärt, und ich vermute einen Termin zur Vor-Ort-Vermessung.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b19",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Fliesenverlegung Tezgel in Aßlar und Wetzlar, dazu Verbundabdichtung; die Hauptüberschrift ist vom Cookie-Banner verdeckt, daher ist nur ein Teil des Angebots lesbar.",
+    "zielgruppe": "Privatleute und Hausbesitzer in Aßlar und Wetzlar, die ein Bad oder Fliesen sanieren lassen wollen und sich etwa zum Handwerkerbonus informieren.",
+    "naechster_schritt": "Den Cookie-Banner schließen und auf „Projekt unverbindlich anfragen“ klicken, alternativ „Aufmaß buchen“ wählen oder unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Fliesenverlegung Tezgel aus Aßlar, dazu Ratgeber-Artikel (z. B. zur Steuerermäßigung bei Fliesenarbeiten); die Hauptüberschrift ist vom Cookie-Fenster verdeckt, deshalb nur teilweise lesbar.",
+    "zielgruppe": "Hausbesitzer und Bauherren in Aßlar und Wetzlar, die ein Bad oder andere Fliesenarbeiten planen.",
+    "naechster_schritt": "Zuerst den Cookie-Hinweis schließen (z. B. über \"Alle ablehnen\") und dann auf \"Projekt unverbindlich anfragen\" klicken.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel aus Aßlar, dazu Ratgeber-Artikel; die Hauptüberschrift ist vom Cookie-Banner verdeckt, das Angebot ist daher nur aus Menü und Untertitel (u. a. Verbundabdichtung) abzuleiten.",
+    "zielgruppe": "Hausbesitzer im Raum Aßlar und Wetzlar, die ein Bad oder Fliesen erneuern wollen und sich zu Steuervorteilen informieren.",
+    "naechster_schritt": "Den Cookie-Banner schließen und dann über „Projekt unverbindlich anfragen“ oder „Aufmaß buchen“ eine Anfrage starten, alternativ die Nummer 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung, Badsanierung und Verbundabdichtung vom Fachbetrieb Fliesenverlegung Tezgel aus Aßlar, mit einem zweiten Standort in Wetzlar; die Hauptüberschrift ist vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Hausbesitzer und Mieter im Raum Aßlar und Wetzlar, die ein Bad sanieren oder Fliesen verlegen lassen wollen.",
+    "naechster_schritt": "Das Cookie-Banner schließen und dann über „Projekt unverbindlich anfragen“ eine Anfrage stellen; alternativ „Aufmaß buchen“ oder die Nummer 06441 / 44 83 567 nutzen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung und Badsanierung vom Fachbetrieb Tezgel aus Aßlar, dazu Ratgeber-Artikel rund um Fliesen und Steuervorteile; die große Hauptüberschrift ist vom Cookie-Fenster verdeckt und nur in Teilen lesbar.",
+    "zielgruppe": "Privatleute in Aßlar und Wetzlar, die ihr Bad oder ihre Fliesen sanieren lassen wollen und sich zu Kosten und Förderung informieren.",
+    "naechster_schritt": "Ich würde zuerst das Cookie-Fenster schließen und dann auf \"Projekt unverbindlich anfragen\" klicken, um ein Angebot für mein Projekt anzufragen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b20",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung durch den Fachbetrieb Tezgel, erkennbar am Firmennamen und dem Button „Aufmaß“; Details zu einzelnen Leistungen sind auf dem Bild nicht zu sehen.",
+    "zielgruppe": "Vermutlich Privatkunden und Bauherren, die Fliesen in Wohnung oder Haus verlegen lassen wollen; das ist aus dem Aufmaß-Button geschlossen, nicht ausdrücklich genannt.",
+    "naechster_schritt": "Die Firma anrufen (06441 / 44 83 567) oder per WhatsApp schreiben, oder den Aufmaß-Button nutzen; vorher das Cookie-Fenster schließen oder beantworten.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Dem Namen und den Buttons nach ist es ein Fliesenlegerbetrieb (\"Fliesenverlegung Tezgel\"), der Fliesen verlegt und Aufmaß-Termine anbietet; die genauen Leistungen sind unter dem Cookie-Fenster nicht zu lesen.",
+    "zielgruppe": "Vermutlich Privatkunden und Bauherren, die Fliesen verlegen lassen wollen; der Bildschirm nennt die Zielgruppe nicht ausdrücklich.",
+    "naechster_schritt": "Das Cookie-Fenster schließen (Alle ablehnen oder Einstellungen) und dann über \"Aufmaß\" einen Termin anfragen oder direkt über \"Anrufen\" bzw. \"WhatsApp\" Kontakt aufnehmen.",
+    "sicherheit": 3
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung durch den Betrieb „Tezgel“; laut Schaltfläche „Aufmaß“ lässt sich offenbar ein Aufmaß-Termin anfragen. Der Zusatz „UWK Fachbetrieb“ im unteren Bereich ist teilweise verdeckt und nicht sicher lesbar.",
+    "zielgruppe": "Nicht eindeutig erkennbar; vermutlich Privatkunden und Bauherren, die Fliesen verlegen lassen wollen. Eine Region wird auf dem ersten Bildschirm nicht genannt.",
+    "naechster_schritt": "Den Cookie-Banner entscheiden (etwa „Alle ablehnen“) und dann über „Anrufen“ oder „Aufmaß“ Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Der Bildschirm zeigt einen Fliesenleger-Betrieb namens Tezgel (Logo „Fliesenverlegung Tezgel“), der Fliesenverlegung anbietet; welche Leistungen genau, ist hinter dem Cookie-Fenster nicht zu erkennen.",
+    "zielgruppe": "Vermutlich Privatkunden und Bauherren, die Fliesen verlegen lassen wollen; das leite ich aus den Schaltflächen „Aufmaß“ und „Anrufen“ ab und ist nicht sicher erkennbar.",
+    "naechster_schritt": "Das Cookie-Fenster beantworten und dann per „Anrufen“ (06441 / 44 83 567) oder „WhatsApp“ Kontakt aufnehmen oder über „Aufmaß“ einen Vor-Ort-Termin anfragen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Die Firma Fliesenverlegung Tezgel verlegt Fliesen, das steht im Logo oben links; mehr Angebot ist vor dem Cookie-Banner nicht zu erkennen.",
+    "zielgruppe": "Nicht eindeutig erkennbar; vermutlich Privatkunden und Bauherren, die Fliesenarbeiten beauftragen wollen, weil der Inhaber im angeschnittenen Text unten direkt angesprochen wird.",
+    "naechster_schritt": "Ich schließe den Cookie-Banner und nutze dann die Schaltfläche \"Anrufen\" oder \"Aufmaß\", etwa über die Nummer 06441 / 44 83 567 im Bild.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b21",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung (laut Logo \"Fliesenverlegung Tezgel\") mit kostenlosem Vor-Ort-Aufmaß; der genaue Leistungsumfang ist nicht erkennbar, weil ein Cookie-Banner den größten Teil der Seite verdeckt.",
+    "zielgruppe": "Vermutlich Privatleute und Bauherren, die Fliesen verlegen lassen wollen; das lässt sich aus dem Bild allein nicht sicher ablesen.",
+    "naechster_schritt": "Zuerst den Cookie-Banner schließen (Alle akzeptieren oder Alle ablehnen), dann \"Vor-Ort-Aufmaß anfragen\" antippen oder direkt anrufen bzw. per WhatsApp schreiben.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung: Das Logo nennt \"Fliesenverlegung Tezgel\", und der Button \"Vor-Ort-Aufmaß anfragen\" deutet darauf hin, dass man vor Ort ausmisst und ein Angebot erhält; Leistungen und Preise sind auf dem Bild nicht zu erkennen.",
+    "zielgruppe": "Nicht eindeutig erkennbar; vermutlich Privatleute und Eigentümer, die Fliesen verlegen lassen wollen, ob auch Gewerbekunden angesprochen werden, lässt sich nicht erkennen.",
+    "naechster_schritt": "Den Cookie-Hinweis per \"Alle akzeptieren\" oder \"Alle ablehnen\" schließen und dann auf \"Vor-Ort-Aufmaß anfragen\" tippen oder die Nummer 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung (Firma \"Fliesenverlegung Tezgel\"): Fliesen verlegen, mit Vor-Ort-Aufmaß als Einstieg.",
+    "zielgruppe": "Nicht eindeutig erkennbar: vermutlich Bauherren und Hausbesitzer, die Fliesen verlegen lassen wollen; ob privat oder gewerblich und welche Region, ist auf diesem Bildschirm nicht zu erkennen.",
+    "naechster_schritt": "Das Cookie-Banner mit \"Alle ablehnen\" oder \"Alle akzeptieren\" schließen und dann \"Vor-Ort-Aufmaß anfragen\" tippen, alternativ direkt anrufen oder per WhatsApp schreiben.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung (so steht es im Logo), mit einem Vor-Ort-Aufmaß als Grundlage für ein Angebot; Leistungsumfang und Preise sind auf diesem Bildschirm nicht zu sehen.",
+    "zielgruppe": "Auftraggeber, die Fliesen verlegen lassen wollen, vermutlich Privatkunden und Betriebe; ob nur Privat oder auch Gewerbe und welche Region, ist nicht erkennbar.",
+    "naechster_schritt": "Das Cookie-Fenster beantworten und dann \"Vor-Ort-Aufmaß anfragen\" antippen, oder direkt anrufen bzw. per WhatsApp schreiben.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung: Die Firma Tezgel verlegt Fliesen und bietet laut Schaltfläche ein Vor-Ort-Aufmaß an; Leistungsumfang und Preise sind hinter dem Cookie-Fenster nicht zu sehen.",
+    "zielgruppe": "Wer Fliesen verlegen lassen möchte, vermutlich Privatleute und Bauherren, die ein Angebot nach Vor-Ort-Aufmaß wollen; ob auch Gewerbekunden gemeint sind, ist nicht erkennbar.",
+    "naechster_schritt": "Das Cookie-Fenster schließen und dann \"Vor-Ort-Aufmaß anfragen\" antippen, oder direkt unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b22",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung Tezgel ist ein Fliesenleger-Fachbetrieb in Aßlar (gegründet 2008, Handwerkskammer Wiesbaden), der Fliesen-, Platten- und weitere Verlegearbeiten anbietet; die Leistungsliste ist im sichtbaren Ausschnitt abgeschnitten.",
+    "zielgruppe": "Privat- und Bauherren in und um Aßlar, die Fliesen oder Platten verlegen lassen wollen; ob auch Gewerbekunden angesprochen werden, ist auf diesem Bildschirm nicht erkennbar.",
+    "naechster_schritt": "Das Cookie-Banner entscheiden (Alle akzeptieren, Alle ablehnen oder Einstellungen) und dann unten im Menü \"Aufmaß\" für einen Vor-Ort-Termin wählen oder per Anrufen oder WhatsApp Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung durch den eingetragenen Fliesenleger-Fachbetrieb Tezgel in Aßlar, gegründet 2008 (HWK Wiesbaden); der Angebotssatz ist abgeschnitten, und weitere Leistungen wie „Fliesen, Platten und …“ sind nicht erkennbar.",
+    "zielgruppe": "Nicht ausdrücklich genannt; geraten sind Privat- und Gewerbekunden in Aßlar und Umgebung, die Fliesen verlegen lassen wollen.",
+    "naechster_schritt": "Unten die Schaltflächen nutzen: Anrufen oder WhatsApp, oder „Aufmaß“ antippen, was vermutlich einen Termin für ein Aufmaß vor Ort anfragt (das ist auf dem Bild nicht eindeutig zu erkennen).",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenverlegung durch den Fliesenleger-Fachbetrieb Tezgel in Aßlar, seit 2008 tätig; welche Leistungen genau angeboten werden, ist auf diesem Bildschirm nicht zu erkennen.",
+    "zielgruppe": "Vermutlich Privatkunden und Bauherren in und um Aßlar, die Fliesen verlegen lassen wollen; ausdrücklich genannt wird das nicht, es ergibt sich aus Ort und Gewerk.",
+    "naechster_schritt": "Das Cookie-Fenster bestätigen oder schließen und dann unten Anrufen oder WhatsApp nutzen; was „Aufmaß“ genau bedeutet, ist hier nicht erklärt.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung durch den Fachbetrieb Tezgel in Aßlar (gegründet 2008, HWK Wiesbaden); die genauen Leistungen sind hinter dem Cookie-Banner nur angeschnitten (\"Fliesen-, Platten- und ...\") und nicht lesbar.",
+    "zielgruppe": "Nicht eindeutig erkennbar; vermutlich Privatkunden und Bauherren in Aßlar und Umgebung, denn die Seite ist regional auf Aßlar ausgerichtet, nennt aber keine Zielgruppe ausdrücklich.",
+    "naechster_schritt": "Unten in der Leiste auf \"Aufmaß\" tippen, weil das der hervorgehobene Schritt ist, oder alternativ direkt \"Anrufen\" oder \"WhatsApp\" wählen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung Tezgel, ein Fliesenleger-Fachbetrieb in Aßlar (gegründet 2008, eingetragen bei der HWK Wiesbaden), verlegt Fliesen und Platten; der Rest der Leistungsliste ist vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Die Seite nennt keine Zielgruppe ausdrücklich; vermutlich sind es Privat- und Bauherren in und um Aßlar, die Fliesen verlegen lassen wollen (geschlossen aus dem Ortsbezug und dem Button \"Aufmaß\").",
+    "naechster_schritt": "Cookie-Banner schließen und dann über \"Aufmaß\" (vermutlich ein Termin vor Ort, nicht erklärt) oder über \"Anrufen\" bzw. \"WhatsApp\" Kontakt aufnehmen.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b23",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Fliesenverlegung (laut Logo \"Fliesenverlegung Tezgel\"); die Einsatzbereiche, Leistungen und das Wort \"Aufmaß\" im Button deuten auf Vor-Ort-Aufmaß und Verlegung, die genauen Leistungen sind aber nicht zu erkennen.",
+    "zielgruppe": "Nicht ausdrücklich genannt; der sichtbare Text nennt einen Firmensitz in Aßlar und Einsatz in Wetzlar, Gießen und ganz Mittelhessen, also vermutlich Privat- und Gewerbekunden in dieser Region.",
+    "naechster_schritt": "Zuerst das Cookie-Banner beantworten (Alle akzeptieren, Alle ablehnen oder Einstellungen), danach über Anrufen, WhatsApp oder den Button Aufmaß Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenverlegung durch die Firma Tezgel, laut sichtbarem Text mit bis zu 12 qualifizierten Fachkräften; die Hauptüberschrift ist vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Nicht eindeutig erkennbar; wahrscheinlich Privat- und Gewerbekunden in Aßlar, Wetzlar, Gießen und Mittelhessen, weil diese Orte genannt werden.",
+    "naechster_schritt": "Cookie-Banner über „Alle ablehnen“ oder „Alle akzeptieren“ schließen und die Hauptüberschrift lesen; für Kontakt stehen unten „Anrufen“, „WhatsApp“ und „Aufmaß“ bereit.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Die Firma Tezgel (Logo: \"Fliesenverlegung Tezgel\") verlegt Fliesen; sichtbar ist außerdem ein Firmensitz in Aßlar mit Einsatz in Wetzlar, Gießen und Mittelhessen.",
+    "zielgruppe": "Nicht eindeutig erkennbar: vermutlich Auftraggeber in Mittelhessen, ob privat oder gewerblich, ist auf dem Bildschirm nicht zu sehen, weil das Cookie-Banner die Hauptüberschrift verdeckt.",
+    "naechster_schritt": "Zuerst das Cookie-Banner über \"Alle ablehnen\" oder \"Alle akzeptieren\" schließen und dann über den Button \"Aufmaß\" (vermutlich ein Vor-Ort-Termin) oder \"Anrufen\" Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung durch einen Fliesenlegerbetrieb mit bis zu 12 Fachkräften, Firmensitz in Aßlar und Einsatz in Wetzlar, Gießen und ganz Mittelhessen; die genauen Leistungen sind hinter dem Cookie-Banner nicht lesbar.",
+    "zielgruppe": "Vermutlich Privatkunden und Bauherren in Mittelhessen, die Fliesen verlegen lassen wollen; das Bild nennt keine Zielgruppe ausdrücklich.",
+    "naechster_schritt": "Den Cookie-Banner über eine der drei Schaltflächen schließen und danach über Anrufen, WhatsApp oder Aufmaß Kontakt aufnehmen.",
+    "sicherheit": 4
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenverlegung durch den Handwerksbetrieb Tezgel mit Firmensitz in Aßlar; der genaue Leistungsumfang ist auf dem Bild nicht zu sehen, weil ein Cookie-Banner den Hauptinhalt verdeckt.",
+    "zielgruppe": "Auftraggeber in Mittelhessen (Aßlar, Wetzlar, Gießen und Umgebung); ob sich das Angebot an Privatkunden, Gewerbe oder beides richtet, ist nicht erkennbar.",
+    "naechster_schritt": "Über die Buttons unten Anrufen, WhatsApp oder Aufmaß wählen (Aufmaß vermutlich eine Terminanfrage für ein Vor-Ort-Aufmaß); vorher muss der Cookie-Banner mit einem seiner drei Buttons geschlossen werden.",
+    "sicherheit": 4
+   }
+  ]
+ },
+ {
+  "bild": "b24",
+  "antworten": [
+   {
+    "durchgang": 1,
+    "angebot": "Ein Fliesenleger-Fachbetrieb aus Wetzlar bietet Fliesenleger-Handwerksleistungen für Bäder und Wohnräume an, sichtbar sind Badsanierung, Fachgewerke und Bäder & Wellness, der Fließtext ist vom Cookie-Banner teilweise verdeckt.",
+    "zielgruppe": "Hausbesitzer und Bauherren in Wetzlar, Aßlar und Mittelhessen, die ein Bad sanieren oder Fliesen neu verlegen lassen wollen.",
+    "naechster_schritt": "Oben rechts auf „Aufmaß anfragen“ klicken oder direkt per WhatsApp Schnellkontakt beziehungsweise unter 06441 / 44 83 567 anrufen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 2,
+    "angebot": "Fliesenleger-Fachbetrieb (Handwerkskammer-eingetragen) für Fliesenleger-Leistungen und Badsanierung in Wetzlar, Aßlar und Mittelhessen; die Details zu den Fachgewerken sind teils vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Private Bauherren und Hausbesitzer in Wetzlar, Aßlar und Mittelhessen, die ein Bad sanieren oder Fliesenarbeiten planen lassen wollen.",
+    "naechster_schritt": "Auf den Button \"Aufmaß anfragen\" oben rechts klicken, oder direkt per Telefon (06441 / 44 83 567) bzw. WhatsApp Schnellkontakt Kontakt aufnehmen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 3,
+    "angebot": "Fliesenleger-Fachbetrieb (HWK-eingetragen), der Fliesenarbeiten und Badsanierungen in Wetzlar, Aßlar und Mittelhessen anbietet; im Menü stehen auch Fachgewerke, Standorte und Ratgeber, und der Cookie-Banner verdeckt einen Teil der Beschreibung.",
+    "zielgruppe": "Privatleute und Hausbesitzer in Wetzlar, Aßlar und Mittelhessen, die Fliesen- oder Badarbeiten planen.",
+    "naechster_schritt": "Auf „Aufmaß anfragen“ klicken oder direkt anrufen (06441 / 44 83 567) bzw. über WhatsApp Schnellkontakt schreiben.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 4,
+    "angebot": "Fliesenverlegung Tezgel ist ein Fliesenleger-Fachbetrieb aus Wetzlar, der Badsanierungen und Fliesenarbeiten bis hin zu Bädern und Wellness ausführt; die Details im Fließtext sind vom Cookie-Banner verdeckt.",
+    "zielgruppe": "Privatpersonen und Bauherren in Wetzlar, Aßlar und Mittelhessen, die ein Bad oder Fliesenarbeiten planen (aus dem Seitentext abgeleitet, nicht ausdrücklich genannt).",
+    "naechster_schritt": "Den Cookie-Banner schließen und dann oben rechts auf \"Aufmaß anfragen\" klicken; alternativ telefonisch unter 06441 / 44 83 567 oder per WhatsApp Kontakt aufnehmen.",
+    "sicherheit": 5
+   },
+   {
+    "durchgang": 5,
+    "angebot": "Fliesenleger-Fachbetrieb in Wetzlar, Aßlar und Mittelhessen, der Fliesenarbeiten und Bäder (Badsanierung, Bäder & Wellness) umsetzt; die Einleitung ist vom Cookie-Banner verdeckt, daher ist der volle Leistungsumfang nicht erkennbar.",
+    "zielgruppe": "Hausbesitzer und Bauherren in Wetzlar, Aßlar und Mittelhessen, die ein Bad oder Fliesenarbeiten erneuern lassen wollen.",
+    "naechster_schritt": "Über den Button „Aufmaß anfragen“ oben rechts ein Aufmaß anfragen oder direkt per Telefon (06441 / 44 83 567) oder WhatsApp Kontakt aufnehmen.",
+    "sicherheit": 4
+   }
+  ]
+ }
+]

@@ -1,0 +1,122 @@
+{
+ "b01": {
+  "stand": "basis",
+  "ansicht": "m375",
+  "seite": "/bad"
+ },
+ "b02": {
+  "stand": "basis",
+  "ansicht": "m375",
+  "seite": "/blog"
+ },
+ "b03": {
+  "stand": "basis",
+  "ansicht": "d1440",
+  "seite": "/standorte"
+ },
+ "b04": {
+  "stand": "vorschau",
+  "ansicht": "d1440",
+  "seite": "/ueber-uns"
+ },
+ "b05": {
+  "stand": "basis",
+  "ansicht": "m375",
+  "seite": "/leistungen"
+ },
+ "b06": {
+  "stand": "vorschau",
+  "ansicht": "d1440",
+  "seite": "/bad"
+ },
+ "b07": {
+  "stand": "vorschau",
+  "ansicht": "m375",
+  "seite": "/blog"
+ },
+ "b08": {
+  "stand": "basis",
+  "ansicht": "d1440",
+  "seite": "/kontakt"
+ },
+ "b09": {
+  "stand": "basis",
+  "ansicht": "d1440",
+  "seite": "/leistungen"
+ },
+ "b10": {
+  "stand": "basis",
+  "ansicht": "d1440",
+  "seite": "/ueber-uns"
+ },
+ "b11": {
+  "stand": "vorschau",
+  "ansicht": "m375",
+  "seite": "/kontakt"
+ },
+ "b12": {
+  "stand": "vorschau",
+  "ansicht": "d1440",
+  "seite": "/blog"
+ },
+ "b13": {
+  "stand": "vorschau",
+  "ansicht": "d1440",
+  "seite": "/kontakt"
+ },
+ "b14": {
+  "stand": "vorschau",
+  "ansicht": "d1440",
+  "seite": "/standorte"
+ },
+ "b15": {
+  "stand": "basis",
+  "ansicht": "d1440",
+  "seite": "/bad"
+ },
+ "b16": {
+  "stand": "vorschau",
+  "ansicht": "m375",
+  "seite": "/leistungen"
+ },
+ "b17": {
+  "stand": "vorschau",
+  "ansicht": "m375",
+  "seite": "/standorte"
+ },
+ "b18": {
+  "stand": "vorschau",
+  "ansicht": "m375",
+  "seite": "/bad"
+ },
+ "b19": {
+  "stand": "basis",
+  "ansicht": "d1440",
+  "seite": "/blog"
+ },
+ "b20": {
+  "stand": "basis",
+  "ansicht": "m375",
+  "seite": "/kontakt"
+ },
+ "b21": {
+  "stand": "basis",
+  "ansicht": "m375",
+  "seite": "/standorte"
+ },
+ "b22": {
+  "stand": "vorschau",
+  "ansicht": "m375",
+  "seite": "/ueber-uns"
+ },
+ "b23": {
+  "stand": "basis",
+  "ansicht": "m375",
+  "seite": "/ueber-uns"
+ },
+ "b24": {
+  "stand": "vorschau",
+  "ansicht": "d1440",
+  "seite": "/leistungen"
+ }
+}

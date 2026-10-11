@@ -1,0 +1,1082 @@
+[
+ {
+  "bild": "b01",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Nennt ausdrücklich Fliesenverlegung und Badsanierung sowie Privatleute mit Bad-Vorhaben und als nächsten Schritt den Kontakt per Anruf oder WhatsApp, sagt aber selbst, dass die Region nicht erkennbar ist."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Nennt Fliesenverlegung mit Schwerpunkt Bad und, belegt durch sichtbare Hinweise, Hausbesitzer mit Bad-Vorhaben sowie den Kontakt über Anrufen, WhatsApp oder Aufmaß; Aßlar, Wetzlar oder Mittelhessen kommen nicht vor."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Nennt Fliesenverlegung und Badsanierung sowie, aus sichtbaren Schaltflächen abgeleitet, Hausbesitzer mit Bad-Vorhaben und den Kontakt per Anruf oder WhatsApp; eine Region wird nicht genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute mit Bad-Vorhaben und die Aufmaß-Anfrage per Anruf oder WhatsApp, sagt aber ausdrücklich, dass die Region nicht erkennbar ist."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Nennt Fliesenverlegung und Badsanierung, Privatleute mit Bad-Vorhaben (aus den Schaltflächen abgeleitet) und als Kontaktziel Anrufen, WhatsApp oder Aufmaß; eine Region wird nicht genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b02",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Die Antwort nennt Fliesenverlegung als Fachgebiet, und der nächste Schritt ist eine Aufmaß-Anfrage oder ein Anruf; die Zielgruppe ist dagegen ausdrücklich nur vermutet ('Vermutlich Privatleute und Bauherren'), was nach strenger Wertung als Raten gilt, und eine Region wird nicht genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung wird erkannt, und als Kontaktziel werden Aufmaß-Termin, Anruf oder WhatsApp genannt; die Zielgruppe ist laut eigener Aussage 'nicht sicher ablesbar' und damit geraten, und Aßlar, Wetzlar oder Mittelhessen kommen nicht vor."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Das Angebot (Fliesenverlegung) und der Kontaktweg (Aufmaß-Terminanfrage oder Anrufen) stimmen; die Zielgruppe bezeichnet die Antwort selbst als 'nicht eindeutig erkennbar' und aus dem Firmennamen erschlossen, also geraten, und eine Region fehlt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung wird als Fachgebiet genannt, und der nächste Schritt enthält mit Aufmaß bzw. Anrufen ein Kontaktziel; die Zielgruppe ist 'nicht eindeutig erkennbar' und nur vermutet, und eine Region wird nicht erwähnt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung wird erkannt, und als Kontaktweg werden Anrufen, WhatsApp oder Aufmaß genannt; die Zielgruppe ist laut Antwort nur aus Firmenname und Buttons geschlossen und 'nicht ausdrücklich genannt', also geraten, und ein regionaler Bezug fehlt."
+   }
+  ]
+ },
+ {
+  "bild": "b03",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb, führt Privatkunden ausdrücklich zuerst auf (Architekten und Bauherren kommen als Erweiterung hinzu), hat mit Aufmaß-Anfrage oder Anruf ein Kontaktziel und nennt Aßlar, Wetzlar und Mittelhessen."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Badsanierung vom Fachbetrieb sind klar benannt, Privatkunden ausdrücklich genannt, Aufmaß-Anfrage oder Anruf als Kontaktziel angegeben und Aßlar, Mittelhessen und Wetzlar erwähnt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Das Fachgebiet Fliesenverlegung und Badsanierung ist genannt, Privatkunden werden ausdrücklich angesprochen, nach dem Banner folgen Aufmaß-Anfrage oder Anruf, und Wetzlar sowie Mittelhessen kommen in der Zielgruppenantwort vor."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch den Fachbetrieb, Privatkunden ausdrücklich, Aufmaß-Anfrage oder Anruf als Kontaktziel sowie Aßlar, Wetzlar und Mittelhessen."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Badsanierung eines Fachbetriebs sind erkannt, Privatkunden werden ausdrücklich genannt, als Kontaktziel folgen Aufmaß-Anfrage oder Anruf, und Aßlar, Wetzlar und Mittelhessen sind erwähnt."
+   }
+  ]
+ },
+ {
+  "bild": "b04",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt klar einen Fachbetrieb für Fliesen- und Badsanierung, sagt ohne Vorbehalt, dass Privatleute und Hausbesitzer mit Fliesen- oder Badvorhaben angesprochen sind, und gibt mit Aufmaß anfragen sowie WhatsApp oder Telefon ein Kontaktziel an; Aßlar wird genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot und Aufmaß-Anfrage beziehungsweise Telefon oder WhatsApp sind richtig, doch die Zielgruppe ist ausdrücklich als Vermutung gekennzeichnet, die nicht auf dem Bildschirm steht, und zählt bei strenger Wertung als geraten; Aßlar wird genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen- und Badsanierung sowie Aufmaß anfragen (nach dem Schließen des Banners, mit Kontaktziel) sind richtig, die Zielgruppe ist aber nur als Vermutung angegeben ('steht nicht ausdrücklich') und daher falsch; Aßlar wird genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Der Fliesenleger-Fachbetrieb für Fliesen- und Badsanierung ist klar benannt, Hausbesitzer mit Fliesen- oder Badvorhaben werden als Zielgruppe ohne Vermutungsvorbehalt genannt, und nach dem Schließen des Banners folgt Aufmaß anfragen als Kontaktziel; Aßlar wird genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Badsanierung sowie der Klick auf Aufmaß anfragen sind richtig, doch die Zielgruppe ist ausdrücklich als Vermutung 'nicht eindeutig belegt' und gilt deshalb bei strenger Wertung als falsch; Aßlar wird genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b05",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Angebot als Fliesenverlegungs-Fachbetrieb klar benannt; Zielgruppe trotz 'vermutlich' konkret als Hausbesitzer mit Bad- und Außenvorhaben aus dem sichtbaren Leistungstext abgeleitet; nächster Schritt geht über das Cookie-Banner hinaus zu Anruf, WhatsApp oder Aufmaß; keine Region genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung als Fachgebiet erkannt, Zielgruppe ohne Einschränkung als Bauherren und Hausbesitzer mit Fliesen- und Außenbelagvorhaben benannt, Kontakt per Anruf oder WhatsApp als Ziel genannt; die Region wird ausdrücklich als nicht erkennbar bezeichnet."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegungsbetrieb mit Bad, Neubau und Außenbelägen erkannt; die Zielgruppe ist als Eigentümer mit Bad- oder Außenprojekten ausdrücklich nur geschätzt, passt aber sinngemäß zum Bezug; Kontakt über Aufmaß, Anruf oder WhatsApp ist genannt; keine Region."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung erkannt; Privatkunden und Bauherren mit Bad- oder Außenvorhaben sind aus dem Fließtext begründet abgeleitet; Kontakt über Anruf, WhatsApp oder Aufmaß ist als Ziel genannt; keine Region."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegungs-Fachbetrieb erkannt; Hausbesitzer mit Bad- oder Außenvorhaben nur indirekt, aber sinngemäß zutreffend abgeleitet; Aufmaß vor Ort, Anruf oder WhatsApp als Kontaktziel genannt; keine Region."
+   }
+  ]
+ },
+ {
+  "bild": "b06",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung und Fliesenarbeiten durch den Fachbetrieb Fliesenverlegung Tezgel, als Zielgruppe Hausbesitzer und Eigentümer mit einem Badvorhaben und als nächsten Schritt das kostenlose Vor-Ort-Aufmaß über „Aufmaß anfragen“, wobei das Schließen des Cookie-Banners nur ein Vorschritt ist; Mittelhessen, Asslar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung inklusive Fliesenarbeiten vom Fliesen-Fachbetrieb, als Zielgruppe Hausbesitzer und Eigentümer mit Sanierungsabsicht und als nächsten Schritt das kostenfreie Aufmaß über „Aufmaß anfragen“; Mittelhessen, Aßlar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung sowie Fliesen und XXL-Großformate vom Fachbetrieb Fliesenverlegung Tezgel, als Zielgruppe Hausbesitzer mit einem Badvorhaben und als nächsten Schritt einen Klick auf „Aufmaß anfragen“; Mittelhessen, Aßlar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung mit Fliesen und XXL-Großformaten durch Fliesenverlegung Tezgel, als Zielgruppe Hausbesitzer mit einem Sanierungs- oder Umbauwunsch und als vorrangigen nächsten Schritt das kostenlose Vor-Ort-Aufmaß; das Ansehen der Leistungen ist nur eine Alternative, und Mittelhessen, Aßlar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung inklusive Fliesenarbeiten von einem Fachbetrieb, als Zielgruppe Hausbesitzer und Eigentümer mit einem Badvorhaben und als nächsten Schritt „Aufmaß anfragen“, wobei das Cookie-Banner nur vorher geschlossen wird; Aßlar, Wetzlar und Mittelhessen werden genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b07",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb, als Zielgruppe Hausbesitzer mit einem Bad- oder Fliesenvorhaben, als nächsten Schritt die Projektanfrage, Anruf, WhatsApp oder Aufmaß und als Ort Aßlar."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fachgebiet und Fachbetrieb sind genannt, die Zielgruppe ist trotz „vermutlich“ konkret und passend (Privatleute und Hausbesitzer mit Bad- oder Fliesenvorhaben), Ziel des nächsten Schritts ist die Projektanfrage und nicht nur das Schließen des Cookie-Banners, und Aßlar ist genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung vom Fachbetrieb, Hausbesitzer mit Bad- oder Fliesenvorhaben, als Kontaktziel die Projektanfrage oder Anruf und WhatsApp sowie Aßlar und Umgebung."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Das Fachgebiet des Fachbetriebs ist klar genannt, die erschlossene Zielgruppe (Hausbesitzer mit Bad- oder Fliesenvorhaben) ist konkret und richtig, der nächste Schritt führt nach dem Cookie-Banner zur Anfrage, zu Anruf, WhatsApp oder Aufmaß, und Aßlar ist genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung vom Fachbetrieb aus Aßlar, Privatleute mit Bad- oder Fliesenvorhaben und als Kontaktziel die Projektanfrage, Anruf oder WhatsApp; dass „Aufmaß“ unklar bleibt, ändert an der Richtigkeit nichts."
+   }
+  ]
+ },
+ {
+  "bild": "b08",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen HWK-Fachbetrieb und private Hausbesitzer mit Bad- oder Fliesenvorhaben. Als nächster Schritt kommt nach dem Cookie-Banner die Aufmaß-Anfrage oder ein Anruf, und Aßlar sowie Wetzlar sind genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb und Privatkunden mit Fliesen- oder Badvorhaben. Als nächster Schritt kommt die Anfrage für ein kostenfreies Vor-Ort-Aufmaß oder ein Anruf, und Aßlar sowie Wetzlar sind genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen HWK-Fachbetrieb und Privatleute mit Fliesen- oder Badvorhaben. Als nächster Schritt kommt die Express-Anfrage für das Aufmaß oder ein Anruf, und Aßlar sowie Wetzlar sind genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt einen Fachbetrieb für Badsanierung und Fliesenarbeiten und Privatkunden oder Hausbesitzer mit Bad- oder Fliesenvorhaben. Als nächster Schritt kommt eine Kontaktaufnahme per Express-Anfrage oder Telefon für ein kostenloses Aufmaß, und Aßlar sowie Wetzlar sind genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb und Privatkunden mit Fliesen- oder Badvorhaben. Als nächster Schritt kommt die Express-Anfrage oder ein Anruf für ein kostenloses Vor-Ort-Aufmaß, und Aßlar sowie Wetzlar sind genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b09",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt ausdrücklich einen Fliesenleger-Fachbetrieb, Eigentümer mit Bad- oder Terrassenvorhaben, das Vor-Ort-Aufmaß sowie WhatsApp und Telefon als Kontaktweg und dazu Wetzlar, Aßlar und Mittelhessen."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung als Fachgebiet, Privatleute mit einem Bad- oder Terrassenvorhaben, das Vor-Ort-Aufmaß sowie WhatsApp und Telefon und dazu Wetzlar, Aßlar und Mittelhessen."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt einen Fliesenleger-Fachbetrieb, Hausbesitzer mit Badvorhaben und als Ziel das Vor-Ort-Aufmaß, WhatsApp oder Telefon; die Bemerkung zum Cookie-Banner ändert daran nichts, und Aßlar, Wetzlar und Mittelhessen werden genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt einen Fliesenleger-Fachbetrieb und Hausbesitzer mit Bad- oder Außenflächenvorhaben; das Schließen des Cookie-Banners ist nur ein Vorschritt, das eigentliche Ziel ist der Kontakt über Aufmaß, WhatsApp oder Telefon, und Wetzlar, Aßlar und Mittelhessen werden genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb, Hausbesitzer mit Bad- oder Außenflächenvorhaben, das Vor-Ort-Aufmaß sowie Telefon und WhatsApp und dazu Wetzlar, Aßlar und Mittelhessen."
+   }
+  ]
+ },
+ {
+  "bild": "b10",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot (Fliesenverlegung, Badsanierung, Fliesenleger-Fachbetrieb) und nächster Schritt (Aufmaß buchen oder anrufen) stimmen; die Zielgruppe bleibt aber beim allgemeinen Begriff Auftraggeber, und die Antwort verneint selbst, dass Privatkunden erkennbar sind. Bei strenger Prüfung ist das falsch."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fachbetrieb für Fliesen und Badsanierung, private Bauherren und Hausbesitzer sowie der Weg über Aufmaß buchen, Telefon oder WhatsApp sind klar benannt; Aßlar, Wetzlar und Mittelhessen werden genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Badsanierung durch einen Fachbetrieb, Hausbesitzer mit einem Bad- oder Bodenvorhaben und das Ziel Aufmaß buchen oder anrufen sind richtig erkannt; die Region wird genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fachbetrieb für Fliesen, Naturstein und Badsanierung, Privatkunden und Bauherren mit Bad- oder Fliesenvorhaben sowie Aufmaß buchen oder anrufen sind richtig; Aßlar, Wetzlar und Mittelhessen werden genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb mit Badsanierung, private Bauherren und Eigentümer und als Kontaktziel Aufmaß buchen oder anrufen sind richtig; das Schließen des Cookie-Banners ist nur ein Zwischenschritt, und die Region wird genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b11",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung durch einen Fachbetrieb und als Schritt Express-Anfrage, Anruf, WhatsApp oder Aufmaß; die Zielgruppe bleibt aber bei unbestimmten „Kunden“, ohne Privatkunden oder Eigentümer zu nennen."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot und Kontaktweg (Anruf, WhatsApp, Aufmaß-Anfrage) sind richtig, aber die Antwort sagt ausdrücklich, dass Privat- oder Gewerbekunden nicht erkennbar sind, also wurde die Zielgruppe nicht erkannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger und Aufmaß-Anfrage, Anruf oder WhatsApp sind richtig; „Bauherren und Eigentümer“ ist dem Bezug nah, doch die Antwort lässt ausdrücklich offen, ob Privatkunden gemeint sind, und erfüllt das Kernmerkmal deshalb nicht."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt den Fliesenleger-Fachbetrieb, ausdrücklich Privatkunden mit einem Fliesenvorhaben und als Schritt Anruf, WhatsApp oder Express-Anfrage, dazu Aßlar und Wetzlar."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot und Kontaktweg (Express-Anfrage, Aufmaß, WhatsApp, Anruf) stimmen, aber die Zielgruppe bleibt allgemein „Kunden“, und offen bleibt ausdrücklich, ob Privat- oder Gewerbekunden gemeint sind."
+   }
+  ]
+ },
+ {
+  "bild": "b12",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt Fliesenverlegung und Badsanierung als Fachgebiet, Privatleute mit Bad- oder Fliesenvorhaben als Zielgruppe, die Anfrage bzw. das Aufmaß als nächsten Schritt und Aßlar als Ort."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt den Fliesen- und Badfachbetrieb, Privatleute mit Sanierungs- oder Fliesenvorhaben, ausdrücklich das kostenfreie Vor-Ort-Aufmaß als nächsten Schritt und Aßlar als Ort."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt Fliesenverlegung und Badsanierung mit Abdichtung, Hausbesitzer mit Bad- oder Fliesenvorhaben, die Projektanfrage als nächsten Schritt und Aßlar als Ort."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt den Fliesen- und Badfachbetrieb, Hausbesitzer und Bauherren mit Bad- oder Fliesenvorhaben, die unverbindliche Projektanfrage als nächsten Schritt und Aßlar als Ort."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt Badsanierung und Fliesenverlegung; die Zielgruppe Privatleute ist zwar mit „vermutlich“ eingeschränkt, aber mit Handwerkerbonus und Aufmaß belegt und kein bloßes Raten; als Ziel nach dem Cookie-Banner wird die Anfrage bzw. das Aufmaß genannt, dazu Aßlar als Ort."
+   }
+  ]
+ },
+ {
+  "bild": "b13",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt Fliesenverlegung und Badsanierung durch einen Fliesenleger-Fachbetrieb, Privatleute mit Fliesen- oder Badvorhaben, die Express-Anfrage, Telefon oder WhatsApp für ein Aufmaß sowie Aßlar, Wetzlar und Mittelhessen."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fliesenlegerbetrieb mit Schwerpunkt Badsanierung, Privatkunden mit Fliesen- oder Badvorhaben, eine Aufmaß-Anfrage oder einen Anruf als nächsten Schritt sowie Aßlar und Wetzlar."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt Fliesenverlegung und Badsanierung vom Fachbetrieb, Privatleute mit Fliesen- oder Badvorhaben, die Express-Anfrage oder einen Anruf für das kostenlose Aufmaß sowie Aßlar und Wetzlar."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fliesenleger-Fachbetrieb für Fliesenverlegung und Badsanierung, Privatkunden, die Fliesen oder ihr Bad erneuern lassen wollen, eine Aufmaß-Anfrage oder einen Anruf sowie Aßlar, Wetzlar und Mittelhessen."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fliesenleger-Fachbetrieb, der Fliesen verlegt und Bäder saniert, Privatkunden, die einen Fliesenleger beauftragen wollen (sinngemäß ein Fliesenvorhaben), eine Aufmaß-Anfrage oder einen Anruf sowie Aßlar und Wetzlar."
+   }
+  ]
+ },
+ {
+  "bild": "b14",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenarbeiten und Badsanierung durch einen Fachbetrieb und Privatleute mit Bad- oder Fliesenvorhaben. Das „vermutlich“ betrifft im Kern nur die Architekten. Als Schritt nennt sie „Aufmaß anfragen“, dazu Mittelhessen und Wetzlar."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung, Privatleute mit Fliesen- oder Badarbeiten und nach dem Cookie-Banner den Button „Aufmaß anfragen“, dazu Mittelhessen und Wetzlar."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt einen Fliesenleger-Fachbetrieb mit Badsanierung und ausdrücklich Privatkunden als Zielgruppe, die Architekten nur als Zusatz. Als Schritt nennt sie „Aufmaß anfragen“, dazu Mittelhessen und Wetzlar."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Handwerksbetrieb und Privatleute, die Fliesen verlegen oder ein Bad sanieren lassen wollen. Als Schritt nennt sie „Aufmaß anfragen“, dazu Mittelhessen und Wetzlar."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot, Schritt „Aufmaß anfragen“ und Region (Mittelhessen) stimmen. Bei der Zielgruppe stellt die Antwort aber Architekten in den Vordergrund und nennt Privatleute nur als unsichere Vermutung, was als Raten gilt."
+   }
+  ]
+ },
+ {
+  "bild": "b15",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung inklusive Fliesen durch einen Fachbetrieb, als Zielgruppe Hausbesitzer und Eigentümer mit einem Badvorhaben und als nächsten Schritt Projektcheck, Aufmaß oder Anruf; Aßlar, Wetzlar und Mittelhessen kommen vor."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung durch einen Fliesenfachbetrieb und als Zielgruppe Hausbesitzer mit Badvorhaben; der Schritt geht über das Schließen des Cookie-Banners hinaus zu Projektcheck und kostenfreiem Vor-Ort-Aufmaß, die Region ist genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung als Fachbetrieb mit Badsanierung; die Zielgruppe Hausbesitzer mit Badvorhaben ist zwar nur abgeleitet, trifft aber konkret und nicht vage, der Schritt nennt den kostenfreien Vor-Ort-Termin über Aufmaß buchen, und die Region ist genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung und Fliesen durch den Fachbetrieb sowie Hausbesitzer mit Badvorhaben; der Schritt endet nicht beim Cookie-Banner, sondern beim Bad-Projektcheck als dem Anfrage-Button, und die Region ist genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung mit Fliesen durch Fliesenverlegung Tezgel und Hausbesitzer mit Badvorhaben; als Schritt nennt sie Projektcheck oder Anruf unter der Telefonnummer, Aßlar, Wetzlar und Mittelhessen sind genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b16",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt den Fliesenleger-Fachbetrieb und Privatleute mit Fliesen- oder Badvorhaben, der Schritt führt über das Cookie-Banner hinaus zu Anruf oder WhatsApp, und Wetzlar, Aßlar und Mittelhessen sind genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot (Fliesenverlegung durch Fachbetrieb) und Kontaktweg (Anruf, WhatsApp, Aufmaß) stimmen, aber die Zielgruppe lässt ausdrücklich offen, ob Privat- oder Gewerbekunden gemeint sind, und erkennt damit die Privatkunden nicht."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt Fliesenleger-Leistungen, ohne Einschränkung Privatleute mit Vorhaben für Bad, Wohnung oder Haus und als Schritt Aufmaß, Anruf oder WhatsApp, die Region ist klar genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Der Fliesenleger-Fachbetrieb und der Schritt Aufmaß oder Anruf sind richtig, die Zielgruppe ist aber mit „vermutlich“ ausdrücklich geraten und zählt bei strenger Wertung nicht."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot, Kontaktschritt und Region stimmen, die Zielgruppe ist aber als Vermutung gekennzeichnet und laut Antwort im Bild nicht genannt, gilt also als geraten."
+   }
+  ]
+ },
+ {
+  "bild": "b17",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fachbetrieb für Fliesenverlegung und als Zielgruppe ausdrücklich Privatkunden; als nächsten Schritt nennt die Antwort den Vor-Ort-Termin über „Aufmaß“ oder einen Anruf und erwähnt Aßlar und Mittelhessen."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Erkennt den Fliesenverlegungsbetrieb und Privatkunden als Zielgruppe; nach dem Cookie-Banner führt der nächste Schritt über Aufmaß (Vor-Ort-Vermessung), Anrufen oder WhatsApp zum Kontakt, und Aßlar, Mittelhessen und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fachbetrieb für Fliesenverlegung und Privatkunden als Zielgruppe; Aufmaß ist unklar, der nächste Schritt (Kontakt per Anruf oder WhatsApp) zielt aber klar auf eine Kontaktaufnahme, und Aßlar, Mittelhessen und Wetzlar sind genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Erkennt den Fliesenverlegungs-Fachbetrieb und Privatkunden als Zielgruppe; als nächsten Schritt wählt die Antwort Aufmaß (Vor-Ort-Termin) oder Anrufen und nennt Aßlar, Mittelhessen und Wetzlar."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fachbetrieb für Fliesenverlegung und Privatkunden als Zielgruppe; als nächsten Schritt nennt sie den Aufmaß-Button oder alternativ Anrufen bzw. WhatsApp und erwähnt Aßlar, Mittelhessen und Wetzlar."
+   }
+  ]
+ },
+ {
+  "bild": "b18",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung durch den Fachbetrieb Fliesenverlegung Tezgel, Hausbesitzer mit Badvorhaben in Aßlar und Wetzlar sowie als Kontaktweg die Aufmaß-Anfrage, einen Anruf oder WhatsApp."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung durch den Fachbetrieb Fliesenverlegung Tezgel, Hausbesitzer und Privatleute in Aßlar und Wetzlar sowie Aufmaß-Termin, Anruf oder WhatsApp sind genannt und treffen den Bezug."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt den Fliesenleger-Fachbetrieb mit Badsanierung, Privatleute und Eigentümer mit Badwunsch in Aßlar und Wetzlar sowie Aufmaß, Anruf oder WhatsApp als nächsten Schritt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung durch den Fliesenverlegungs-Fachbetrieb, Privatleute in Aßlar und Wetzlar mit Badvorhaben sowie Aufmaß vor Ort, Anruf oder WhatsApp sind inhaltlich richtig erkannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Badsanierung durch den Fachbetrieb Fliesenverlegung Tezgel und Privatleute in Aßlar und Wetzlar; als nächster Schritt reicht der genannte Kontakt per Anruf oder WhatsApp, auch wenn die Bedeutung von Aufmaß nur vermutet wird."
+   }
+  ]
+ },
+ {
+  "bild": "b19",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb, Privatleute und Hausbesitzer mit einem Bad- oder Fliesenvorhaben sowie Anfrage, Aufmaß oder Anruf als Kontaktziel, und Aßlar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort erkennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb, Hausbesitzer und Bauherren mit Bad- oder Fliesenplänen als Zielgruppe und „Projekt unverbindlich anfragen“ als Kontaktziel nach dem Cookie-Hinweis, und Aßlar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt den Fachbetrieb für Fliesenverlegung und Badsanierung, Hausbesitzer mit einem Bad- oder Fliesenvorhaben sowie Anfrage, Aufmaß oder Anruf als nächsten Schritt, und Aßlar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb und als Kern der Zielgruppe Hausbesitzer mit Bad- oder Fliesenvorhaben (die Mieter sind eine kleine Überdehnung); Anfrage, Aufmaß oder Anruf sind das Kontaktziel, und Aßlar und Wetzlar werden genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und Badsanierung durch einen Fachbetrieb, Privatleute mit einem Bad- oder Fliesenvorhaben und „Projekt unverbindlich anfragen“ als Kontaktziel, und Aßlar und Wetzlar werden genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b20",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Die Antwort nennt Fliesenverlegung durch einen Fachbetrieb und als Kontaktweg Anruf, WhatsApp oder Aufmaß; die Zielgruppe ist nach eigener Angabe nur aus dem Aufmaß-Button erschlossen und damit geraten, und eine Region wird nicht genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Die Antwort erkennt einen Fliesenlegerbetrieb und nennt Aufmaß-Anfrage, Anruf oder WhatsApp als Ziel; die Zielgruppe ist ausdrücklich als nicht genannte Vermutung markiert, und eine Region fehlt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Die Antwort nennt Fliesenverlegung und den Kontakt über Anrufen oder Aufmaß richtig; die Zielgruppe ist laut Antwort nicht eindeutig erkennbar und nur vermutet, und eine Region wird nach eigener Aussage nicht genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Die Antwort nennt einen Fliesenleger-Betrieb und als Schritt Anruf, WhatsApp oder die Anfrage eines Vor-Ort-Aufmaßes; die Zielgruppe ist nur aus den Schaltflächen abgeleitet und ausdrücklich nicht sicher erkennbar, und eine Region fehlt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Die Antwort erkennt die Fliesenverlegung am Logo und nennt Anrufen oder Aufmaß als Kontaktweg; die Zielgruppe ist laut Antwort nicht eindeutig erkennbar und nur vermutet, und Aßlar, Wetzlar oder Mittelhessen werden nicht genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b21",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung ist klar genannt, und der nächste Schritt (Vor-Ort-Aufmaß anfragen, anrufen oder WhatsApp) ist richtig; die Zielgruppe ist dagegen nur mit 'vermutlich' geraten und ausdrücklich als nicht ablesbar bezeichnet, und keine Region wird genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und der nächste Schritt (Aufmaß anfragen oder anrufen) sind richtig; die Zielgruppe wird als 'nicht eindeutig erkennbar' und nur vermutet angegeben, und die Vorwahl 06441 ersetzt keine Nennung von Aßlar, Wetzlar oder Mittelhessen."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Angebot und nächster Schritt (Aufmaß anfragen, anrufen oder WhatsApp) sind richtig; die Zielgruppe ist ausdrücklich 'nicht eindeutig erkennbar' und nur geraten, und die Region wird als nicht erkennbar bezeichnet."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und der nächste Schritt (Aufmaß anfragen, anrufen oder WhatsApp) stimmen; die Zielgruppe ist ein vager Allgemeinplatz ('Auftraggeber', 'vermutlich Privatkunden und Betriebe'), und eine Region wird ausdrücklich nicht erkannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Angebot und nächster Schritt (Aufmaß anfragen oder anrufen) sind richtig; die Zielgruppe ist mit 'vermutlich Privatleute und Bauherren' nur geraten, und weder Aßlar noch Wetzlar oder Mittelhessen werden genannt."
+   }
+  ]
+ },
+ {
+  "bild": "b22",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt den Fliesenleger-Fachbetrieb für Fliesenverlegung und Privat- bzw. Bauherren mit Fliesenvorhaben, ohne das als Vermutung zu kennzeichnen. Als nächsten Schritt nennt es das Vor-Ort-Aufmaß oder Anruf und WhatsApp."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Das Fachgebiet Fliesenverlegung und der Kontakt per Anruf, WhatsApp oder Aufmaß stimmen. Die Zielgruppe ist ausdrücklich geraten und bezieht Gewerbekunden ein."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Der Fliesenleger-Fachbetrieb und der Kontakt per Anruf oder WhatsApp stimmen. Die Zielgruppe wird nur als Vermutung genannt und gilt bei strenger Bewertung als geraten."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Die Fliesenverlegung und der Schritt Aufmaß, Anrufen oder WhatsApp stimmen. Die Zielgruppe nennt die Antwort selbst nicht eindeutig erkennbar, sie ist also nur vermutet."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Der Fliesenleger-Fachbetrieb und die Kontaktaufnahme über Aufmaß, Anruf oder WhatsApp stimmen. Die Zielgruppe ist als Vermutung erschlossen und nicht erkannt."
+   }
+  ]
+ },
+ {
+  "bild": "b23",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung ist klar genannt und der Kontakt über Anrufen, WhatsApp oder Aufmaß als Ziel angegeben; die Zielgruppe ist aber nur geraten („vermutlich Privat- und Gewerbekunden“) und nicht auf Haus- oder Wohnungseigentümer mit Bad- oder Fliesenvorhaben eingegrenzt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung ist erkannt und Anrufen, WhatsApp und Aufmaß sind als Kontaktweg genannt; die Zielgruppe gilt ausdrücklich als „nicht eindeutig erkennbar“ und ist nur vermutet."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Das Fliesenverlegen ist erkannt und Aufmaß (Vor-Ort-Termin) oder Anrufen ist als Kontaktziel genannt; bei der Zielgruppe lässt die Antwort offen, ob privat oder gewerblich, und erfüllt den Bezug damit nicht."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Der Fliesenlegerbetrieb und der Kontakt über Anrufen, WhatsApp oder Aufmaß sind richtig genannt; die Zielgruppe „Privatkunden und Bauherren“ trifft zwar den Bezug, wird aber nur vermutet, und die Antwort sagt selbst, dass sie nicht genannt ist. Nach der strengen Regel zählt das als Raten."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und der Weg über Anrufen, WhatsApp oder Vor-Ort-Aufmaß sind richtig; bei der Zielgruppe bleibt ausdrücklich offen, ob Privat oder Gewerbe gemeint ist."
+   }
+  ]
+ },
+ {
+  "bild": "b24",
+  "bewertungen": [
+   {
+    "durchgang": 1,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt klar einen Fliesenleger-Fachbetrieb mit Badsanierung. Als Zielgruppe nennt die Antwort Hausbesitzer mit einem Bad- oder Fliesenvorhaben. Als nächster Schritt kommen Aufmaß-Anfrage, WhatsApp oder Telefon. Wetzlar, Aßlar und Mittelhessen werden genannt."
+   },
+   {
+    "durchgang": 2,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fliesenleger-Fachbetrieb mit Badsanierung. Als Zielgruppe nennt die Antwort private Bauherren und Hausbesitzer mit einem Bad- oder Fliesenvorhaben. Kontakt läuft über Aufmaß-Anfrage, Telefon oder WhatsApp, und die Region ist genannt."
+   },
+   {
+    "durchgang": 3,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fliesenleger-Fachbetrieb für Fliesenarbeiten und Badsanierung. Als Zielgruppe nennt die Antwort Privatleute und Hausbesitzer mit Bad- oder Fliesenplänen. Kontakt läuft über Aufmaß-Anfrage, Telefon oder WhatsApp, und Wetzlar, Aßlar und Mittelhessen sind genannt."
+   },
+   {
+    "durchgang": 4,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fliesenleger-Fachbetrieb mit Badsanierung. Die Zielgruppe (Privatpersonen mit Bad- oder Fliesenvorhaben) passt sinngemäß, auch wenn sie nur abgeleitet ist. Der Schritt endet trotz Cookie-Banner mit einem Kontaktziel (Aufmaß, Telefon, WhatsApp), und die Region ist genannt."
+   },
+   {
+    "durchgang": 5,
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nennt einen Fliesenleger-Fachbetrieb für Fliesenarbeiten und Badsanierung. Als Zielgruppe nennt die Antwort Hausbesitzer mit einem Bad- oder Fliesenvorhaben. Kontakt läuft über Aufmaß-Anfrage, Telefon oder WhatsApp, und Wetzlar, Aßlar und Mittelhessen sind genannt."
+   }
+  ]
+ }
+]

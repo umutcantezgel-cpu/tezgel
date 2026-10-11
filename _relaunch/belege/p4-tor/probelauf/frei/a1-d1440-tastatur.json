@@ -1,0 +1,310 @@
+{
+ "satz": "p4-tor",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "tastatur",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T10:54:46.591Z",
+ "lauf": "a1-d1440-tastatur",
+ "aufgabe": 1,
+ "titel": "Passende Leistung finden",
+ "auftrag": "Sie möchten Ihr Bad barrierefrei umbauen. Finden Sie die passende Leistungsseite.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/p4-tor/a1-d1440-tastatur.json",
+ "antwort": "Die Leistungsseite „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss“ liegt unter Badsanierung und ist auf der Übersicht als „Barrierefreies Bad“ verlinkt; erreicht über 16 Tabs.",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "mittel",
+   "schritt": 3,
+   "text": "Ort: Kopfleiste und Übersicht /bad. Bild 03-taste.jpg: Jede Rubrik der Kopfnavigation hat zwei Tab-Stopps (Link und Schaltfläche „Untermenü … öffnen“), dazu Telefon und Aufmaß-Link; bis zum Link „Barrierefreies Bad“ im Inhalt sind 16 Tabs nötig. Umweg von über 3 Handlungen gegenüber der Maus."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "(kein Element – Fokus auf der Seite)",
+    "imBild": false
+   },
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 79,
+    "aria": 178,
+    "ausschnitt": 32,
+    "bedien": 103
+   },
+   "dauer_ms": 3102
+  },
+  {
+   "nr": 1,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Badsanierung"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 3,
+   "bildlauf_implizit": 0,
+   "summe": 3,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "link \"Badsanierung\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 0,
+    "href": "/bad",
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": [
+    "link \"Zum Hauptinhalt springen\"",
+    "link \"Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite\"",
+    "link \"Badsanierung\""
+   ],
+   "hinweise": [
+    "3× Tab bis „Badsanierung“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-taste.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 77,
+    "aria": 299,
+    "ausschnitt": 29,
+    "bedien": 37
+   },
+   "dauer_ms": 882
+  },
+  {
+   "nr": 2,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Enter"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 4,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "link \"Badsanierung\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 0,
+    "href": "/bad",
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "02-taste.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 109,
+    "aria": 306,
+    "ausschnitt": 21,
+    "bedien": 64
+   },
+   "dauer_ms": 1385
+  },
+  {
+   "nr": 3,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Tab",
+    "bis": "Barrierefreies Bad"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 16,
+   "bildlauf_implizit": 0,
+   "summe": 20,
+   "url": "/bad",
+   "h1": "Ihr Traumbad schlüsselfertig in Fachqualität",
+   "scrollY": 273,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "link \"Barrierefreies Bad DIN 18040-2 & bis zu 4.180 € Zuschuss\"",
+    "imBild": true,
+    "focusVisible": true,
+    "ringHinweis": true,
+    "oben": 402,
+    "href": "/bad/barrierefreies-bad",
+    "editierbar": false,
+    "istSelect": false
+   },
+   "spur": [
+    "button \"Untermenü Standorte öffnen\"",
+    "link \"Ratgeber\"",
+    "button \"Untermenü Ratgeber öffnen\"",
+    "link \"Über uns\"",
+    "button \"Untermenü Über uns öffnen\"",
+    "link \"Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 567\"",
+    "link \"Aufmaß anfragen\"",
+    "link \"Bad-Projektcheck starten\"",
+    "link \"Musterbäder entdecken\"",
+    "link \"Badsanierung komplett Komplettbad schlüsselfertig zum Festpreis\"",
+    "link \"Fliesen & XXL-Großformate Fugenarm verlegt, abgedichtet nach DIN 18534\"",
+    "link \"Barrierefreies Bad DIN 18040-2 & bis zu 4.180 € Zuschuss\""
+   ],
+   "hinweise": [
+    "16× Tab bis „Barrierefreies Bad“"
+   ],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "03-taste.jpg",
+    "aria": "03-aria.txt",
+    "sichtbar": "03-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 73,
+    "aria": 182,
+    "ausschnitt": 24,
+    "bedien": 30
+   },
+   "dauer_ms": 1240
+  },
+  {
+   "nr": 4,
+   "art": "taste",
+   "eingabe": {
+    "taste": "Enter"
+   },
+   "ergebnis": "ok",
+   "ziel_element": null,
+   "auswahl": null,
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 21,
+   "url": "/bad/barrierefreies-bad",
+   "h1": "Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfort & bis zu 4.180 € Zuschuss",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": {
+    "beschreibung": "(kein Element – Fokus auf der Seite)",
+    "imBild": false
+   },
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "04-taste.jpg",
+    "aria": "04-aria.txt",
+    "sichtbar": "04-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 14535,
+    "aria": 34417,
+    "ausschnitt": 24,
+    "bedien": 34329
+   },
+   "dauer_ms": 120866
+  }
+ ],
+ "handlungen_gesamt": 21,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 4,
+  "handlungen_bis_ziel": 21,
+  "bedingungen": [
+   {
+    "name": "Leistungsseite zum barrierefreien Bad geöffnet",
+    "erfuellt": true,
+    "bei_schritt": 4,
+    "treffer": "/bad/barrierefreies-bad · H1 „Barrierefreie Badmodernisierung in Aßlar & Wetzlar: Sicherheit, Komfo…“"
+   }
+  ]
+ },
+ "abbruch": null,
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}
