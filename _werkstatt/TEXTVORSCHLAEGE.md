@@ -54,6 +54,8 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E3-BAU-18 / -15 / -19 | Erfolgsansichten von Badanfrage, Konfigurator und Bad-Projekt-Check (Bestätigungszeile, nur mit E-Mail) | „✉️ Eine … Bestätigung …“ | „Eine … Bestätigung …“ (Wortlaut sonst gleich) | Emoji als Schmuck widerspricht dem System (Slop-Katalog); nur der Schmuck entfällt |
 | E3-BAU-20 | `src/components/forms/LeadQuickForm.tsx` (Honeypot, unsichtbar) | „Do not fill this“ | „Bitte dieses Feld freilassen“ | Deutsch wie im Einstiegsformular (HeroContactForm); Feld bleibt verborgen, Verhalten gleich |
 | E3-BAU-20 | `src/lib/formulare/useSchnellanfrage.ts` (Sendefehler) | Rufnummer als fester Text | Rufnummer aus `COMPANY_DATA.contact.phone` (gleicher Wert, gleicher Wortlaut) | V-05: eine Quelle für die Rufnummer |
+| E3-NACH-03 | `src/components/forms/HeroContactForm.tsx` (Platzhalter Projektnotiz) | „z. B. ca. 15 m² Fliesen, Altbau, Walk-In Dusche“ | „z. B. 15 m², Altbau, Walk-In Dusche“ | bei 390 px abgeschnitten (E2-SICHT-2 Befund 13) |
+| E3-NACH-03 | `src/components/start/Fachgewerke.tsx` (Aufklapper unter md, neu) | – | „Leistungsumfang“ | Merkmale mobil im Aufklapper (Befund 9); ab md offen wie bisher |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |

@@ -936,5 +936,11 @@
   "block": "main",
   "entfernt": "anfordernSofort",
   "vermerk": "E3-BAU-19: Wortgrenze – im Ausgangsstand standen die Knöpfe „… anfordern“ und „Sofort …“ ohne Trennung im Textfluss (Wortfolge „anfordernSofort“); jetzt getrennte Knöpfe, beide Wörter unverändert vorhanden"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "XXL",
+  "vermerk": "E3-NACH-01: Großformat-Kennwert „XXL“ → Maß „120 × 260 cm“ aus dem Bestand der Seite (Sichtabnahme E2-SICHT-2 Befund 1) – TEXTVORSCHLAEGE"
  }
 ]
