@@ -1,0 +1,146 @@
+{
+ "base": "http://127.0.0.1:4321",
+ "name_erwartet": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+ "seiten": {
+  "/": {
+   "server": {
+    "kanal_im_html": false,
+    "kopf_whatsapp_link": true
+   },
+   "m375": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   },
+   "d1440": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   }
+  },
+  "/bad": {
+   "server": {
+    "kanal_im_html": false,
+    "kopf_whatsapp_link": true
+   },
+   "m375": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   },
+   "d1440": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   }
+  },
+  "/leistungen": {
+   "server": {
+    "kanal_im_html": false,
+    "kopf_whatsapp_link": true
+   },
+   "m375": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   },
+   "d1440": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   }
+  },
+  "/standorte": {
+   "server": {
+    "kanal_im_html": false,
+    "kopf_whatsapp_link": true
+   },
+   "m375": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   },
+   "d1440": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   }
+  },
+  "/blog": {
+   "server": {
+    "kanal_im_html": false,
+    "kopf_whatsapp_link": true
+   },
+   "m375": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   },
+   "d1440": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   }
+  },
+  "/ueber-uns": {
+   "server": {
+    "kanal_im_html": false,
+    "kopf_whatsapp_link": true
+   },
+   "m375": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   },
+   "d1440": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   }
+  },
+  "/kontakt": {
+   "server": {
+    "kanal_im_html": false,
+    "kopf_whatsapp_link": true
+   },
+   "m375": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   },
+   "d1440": {
+    "kanal_nach_hydrierung": {
+     "da": true,
+     "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden"
+    },
+    "kopf_link_im_dom": 1
+   }
+  }
+ }
+}

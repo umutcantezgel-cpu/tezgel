@@ -415,3 +415,23 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **E-013 Nachtrag (Hauptaktion):** Bei d1440 auf `/` liegt die erste Feldzeile des Hero-Formulars unter der Leiste. Frei bleiben der Hauptknopf „Aufmaß anfragen“ im Kopf, die Formular-Überschrift, Telefon und WhatsApp im Kopf; mindestens ein vollständiger Anfrageweg ist frei. Fokus auf ein Feld rollt es über die Leiste (scroll-padding).
 - **MIKROTEXTE:** Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) gestrichen. Es gibt kein neues Wort.
 - **Folge:** P4-13 wirkt sofort auf `/` (live) → T2 für `/` vor dem Push, Lighthouse im ruhigen Fenster (Z-12).
+
+## E-035 · Z-12 TBT `/` nach P4-13: Frist „bis zum P4-Tor“ verfehlt, Maßnahme A (Aufschub) als P4-14 mit Werkzeugregel
+- **Befund (Lighthouse 13.5, mobil, je 10 verschränkte Paare im ruhigen Fenster, Kandidat c5ef582 auf 4324; Belege `belege/t2-c5ef582-gegen-live/`, `belege/t2-c5ef582-gegen-bestand/`):**
+  - gegen Live f2c4180 (4337): Punkte 86 → 85, TBT 253 → 249 ms, LCP 3 465 → 3 469 ms, FCP gleich, Speed Index 1 507 → 1 074 ms, CLS 0; Desktop 100 = 100, TBT 18 = 18. P4-13 macht `/` also nicht langsamer; der Banner steht ab dem ersten Bild (Speed Index besser).
+  - gegen Bestand a8e049f (4323): Punkte 84 → 86, LCP 4 219 → 3 464 ms (−17,9 %), FCP −290 ms, **TBT 159 → 247 ms** (Budget 200).
+  - Die Spur-Schätzung von P4-13 (213 → 144 ms) zeigt sich in Lighthouse nicht: Die Banner-Aufgabe ist weg, aber die übrigen Aufgaben (HTML-Parsen mit Stil und Layout, Framework-Start) tragen die TBT weiter.
+  - Gegenüber E-024 (224 gegen 140 ms) ist der absolute Wert höher, das Verhältnis zum Bestand im selben Fenster ähnlich (1,55 gegen 1,60). Der Anstieg liegt nicht an P4-13 (gegen Live gleich); ein Vergleich im selben Fenster mit bcd8fcb ist nicht möglich (Build verworfen).
+- **Lage:** ABNAHME „Offene Abweichungen“ setzte für Z-12 die Frist „nicht über dem Bestand, ≤ 200 ms bis zum P4-Tor“. Die Frist ist verfehlt. Z-12 ist kein Kriterium des P4-Tors (Z-05, Z-11, Z-13, L3), aber eine Zusage.
+- **Wege:**
+  1. P4-13 zurückhalten, bis die TBT erfüllt ist. Verlust: H1 (ohne JS) und H2 (Banner verdeckt die Einleitung) blieben live offen, obwohl P4-13 die Leistung nicht verschlechtert.
+  2. P4-13 nach bestandenem T2 live; **A (Aufschub, `content-visibility: auto` unter dem Einstieg, P4-12: Lighthouse TBT 292 → 124 ms, Punkte 83 → 89)** als eigenes Paket P4-14, **bevor eine weitere Seite freigeschaltet wird** (W1 `/bad` wartet darauf).
+  3. Abweichung nach L7 dauerhaft annehmen. Verworfen: Der Hebel ist belegt.
+- **Wahl: (2).** Nach K-013 ist `/` nicht schlechter als der Bestand (Punkte +2, LCP −17,9 %), und gegen Live ändert sich nichts.
+  - **Neue Frist:** TBT ≤ 200 ms und ≤ Bestand mit P4-14, vor der Freischaltung von W1.
+  - **Umkehrprobe:** Bringt P4-14 die TBT nicht unter das Budget, oder verlangt die Werkzeugregel einen Sonderweg im Produkt, wird Z-12 nach L7 entschieden. Die Freischaltung weiterer Seiten trägt dann denselben Vorbehalt.
+- **Werkzeugregel für A, zur Entscheidung durch den Gegenprüfer P4-GEG2:**
+  - Nicht dargestellte Abschnitte liefern in Chrome leeres `innerText` und keine Lage. Bei Besuchern ist jeder Abschnitt dargestellt, sobald er ins Bild kommt.
+  - Vorschlag: Werkzeuge, die die ganze Seite auf einmal lesen (a11y-zusatz `forced`/`zoom`, `texte.mjs`, `probelauf.mjs` für Überschriften), setzen im Messkontext einen eingespeisten Stil `.k-aufschub { content-visibility: visible }`. Das ist der Zustand jedes Abschnitts im Bild.
+  - Nicht für Leistung (Lighthouse, INP, Spur), Bewegung und Fotos: Diese messen den echten Zustand.
+  - Kein Eingriff im Produkt (G7). Der Schalter steht in jeder Ausgabe unter „bedingungen“.

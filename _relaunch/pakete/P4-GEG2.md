@@ -1,19 +1,20 @@
 # P4-GEG2 · Frischer Gegenprüfer P4-Tor, Runde 2 · Stufe 3 · Modell: Opus (frisch) · Schreibrechte: `_relaunch/pakete/P4-GEG2.rueckgabe.md` · Kriterien: Z-05, Z-11, Z-13 (Hauptseiten) + L3; T2 für `/`
 
 ## Auftrag
-Runde 1 (`_relaunch/pakete/P4-GEG.rueckgabe.md`) hat das P4-Tor nicht bestehen lassen (H1, H2, M1–M4, N1–N8). Prüfe adversarial, ob die Befunde jetzt **wirklich** behoben oder tragfähig begründet sind. Prüfe außerdem, ob P4-13, das sofort auf die Live-Startseite `/` wirkt, das T2 für `/` besteht. Gefragt sind vier Urteile:
+Runde 1 (`_relaunch/pakete/P4-GEG.rueckgabe.md`) hat das P4-Tor nicht bestehen lassen (H1, H2, M1–M4, N1–N8). Prüfe adversarial, ob die Befunde jetzt **wirklich** behoben oder tragfähig begründet sind. Prüfe außerdem, ob P4-13, das sofort auf die Live-Startseite `/` wirkt, das T2 für `/` besteht. Gefragt sind fünf Urteile:
 1. „Z-05, Z-11, Z-13 auf den Hauptseiten-Entwürfen erfüllt: ja/nein“, je Kriterium.
 2. „L3 tragfähig ausgewertet: ja/nein“ (Probeläufer, Gegenprobe, Fünf-Sekunden-Probe, Mutationsprobe).
-3. „T2 `/` bestanden: ja/nein“. Schwelle E-017: Ränge 1–4 grün, nichts schlechter als der Bestand, Z-12 nach E-024/E-033.
+3. „T2 `/` bestanden: ja/nein“. Schwelle E-017: Ränge 1–4 grün, nichts schlechter als der Bestand, Z-12 nach E-024/E-033/E-035.
 4. „Abweichungen und Auflagen ehrlich und vollständig: ja/nein“.
+5. **E-035 Werkzeugregel:** „Ist die vorgeschlagene Messregel für den Aufschub (eingespeister Stil `.k-aufschub { content-visibility: visible }` nur in Werkzeugen, die die ganze Seite auf einmal lesen) zulässig: ja/nein“, mit Begründung. Prüfe dabei G7 und ob die Regel einen echten Verlust verdecken könnte (z. B. forced-colors, Zoom, Fokus).
 
 Bestätige nur, was ein Beleg trägt. Öffne jede Belegdatei und rechne nach. Übernimm keine Behauptung aus einem Ergebnisprotokoll ungeprüft.
 
 ## Material
 - **Ergebnis:** `_relaunch/belege/p4-tor/ERGEBNIS.md` (Stand nach Runde 2) und `_relaunch/belege/p4-tor/` (Unterordner).
-- **Entscheidungen** in `_relaunch/ENTSCHEIDUNGEN.md`: E-013, E-017, E-018, E-023, E-024, E-029 (mit Berichtigung), E-030 (mit Nachtrag), E-031 bis E-034.
+- **Entscheidungen** in `_relaunch/ENTSCHEIDUNGEN.md`: E-013, E-017, E-018, E-023, E-024, E-029 (mit Berichtigung), E-030 (mit Nachtrag), E-031 bis E-035.
 - **P4-13:** Auftrag `_relaunch/pakete/P4-13.md`, Rückgabe `P4-13.rueckgabe.md`, Belege `_relaunch/belege/p4-13/`, Code `git show 0d26ca5`.
-- **P4-12:** Rückgabe `_relaunch/pakete/P4-12.rueckgabe.md`.
+- **P4-12:** Rückgabe `_relaunch/pakete/P4-12.rueckgabe.md`. Messungen zu A: `_relaunch/cache/p4-12/` (lokal, nur lesen).
 - **Regeln:**
   - `_relaunch/AUFTRAG.md` §6, §7, §10, §11, §12; Z-01 … Z-14
   - `_relaunch/PLAN.md` (Tore)
