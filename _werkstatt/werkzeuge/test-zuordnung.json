@@ -108,6 +108,13 @@
     ]
   },
   {
+    "muster": "app/\\(bestand\\)/fliesen/page",
+    "specs": [
+      "funktion-konfigurator.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
     "muster": "app/(\\([a-z]+\\)/)?(layout|_dokument)\\.tsx|app/globals.css|app/bewegung.css|ClientWidgets|HeaderWrapper|components/kern/stile|components/kern/Knopf|components/icons/Icon",
     "specs": [
       "ALLE"
