@@ -14,7 +14,7 @@ import { inputClass } from './stile';
 // Mikrotext (freigegeben): Die Bestätigungszeile steht ohne vorangestelltes Briefsymbol (wie E3-BAU-18).
 export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extras, matchingBath, contactOpen, setContactOpen, sentVia, setSentVia, referenceId, handleNewRequest, leadData, setLeadData, isSubmitting, errorMessage, handleLeadSubmit }) {
     return (
-        <div className="flex min-w-0 flex-col justify-between gap-8 border border-fuge bg-kalk p-6 sm:p-8 lg:col-span-5">
+        <div className="flex min-w-0 flex-col justify-between gap-8 border border-fuge bg-kalk p-4 sm:p-8 lg:col-span-5">
             <div className="flex flex-col gap-6">
                 <span className={etikettKlassen}>
                     <Fugenkreuz className="size-3 text-strich" />
@@ -100,7 +100,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         <button
                             type="button"
                             onClick={handleNewRequest}
-                            className={knopfKlassen('text', 'mt-4')}
+                            className={knopfKlassen('text', 'mt-4 text-left')}
                             data-motion="druck"
                         >
                             Erneut anfragen oder anpassen
@@ -115,7 +115,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         <button
                             type="button"
                             onClick={() => setSentVia(null)}
-                            className={knopfKlassen('text', 'mt-4')}
+                            className={knopfKlassen('text', 'mt-4 text-left')}
                             data-motion="druck"
                         >
                             Erneut senden oder Kanal wechseln
