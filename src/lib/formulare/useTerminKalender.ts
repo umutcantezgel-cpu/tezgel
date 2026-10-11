@@ -2,7 +2,7 @@
 // Ohne Markup; Bestand und Kern-Ansicht nutzen denselben Hook. Keine Logikänderung (G9): auch die bekannten Lücken
 // (Tage aus `new Date()` beim Rendern in der Zeitzone des Rechners, `_t` als feste Vergangenheit, `preferredDate` und
 // `serviceType` verwirft die Prüfung der API; intern I-12, I-18) bleiben, wie sie sind.
-import React, { useState, useMemo, useSyncExternalStore } from 'react';
+import React, { useState, useMemo, useRef, useSyncExternalStore } from 'react';
 
 export const AVAILABLE_SLOTS = [
   { time: '08:30', label: '08:30 – 10:00 Uhr (Morgens)' },
@@ -47,8 +47,10 @@ export function useTerminKalender({ initialServiceType, onBookingConfirmed }: Te
 
   // P4-05d (I-19): „heute“ erst im Browser. Das HTML wird am Build-Tag vorgerendert; standen die Tage schon dort, passte es
   // ab dem Folgetag nicht mehr zum Browser (React #418 auf /termin und /kontakt). Server und Hydrieren sehen `null`
-  // (Kalender ohne Tage), danach gilt das Datum des Browsers – dieselben Tage wie bisher.
-  const heute = useSyncExternalStore(ohneAbo, tagesKennung, keinTag);
+  // (Kalender ohne Tage), danach gilt das Datum des Browsers – dieselben Tage wie bisher. Der Tag wird je Kalender beim
+  // ersten Lesen festgehalten: Über Mitternacht bleiben die Tage stehen wie vorher (Gegenprüfung P4-05d-GEG, Befund 1).
+  const gemerkterTag = useRef<string | null>(null);
+  const heute = useSyncExternalStore(ohneAbo, () => (gemerkterTag.current ??= tagesKennung()), keinTag);
 
   // Generate 12 available workdays starting tomorrow (skipping Sundays)
   const availableDays = useMemo(() => {
