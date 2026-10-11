@@ -90,7 +90,7 @@ Regel: Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk. Genau 
 | Nacht-Fuge | `--k-nacht-fuge` | #2B3352 | Deko | Fugen auf Tinte |
 
 - Bedeutung nie nur über Farbe: Fehler = Rahmen + Versatz-Zeichen + Text, Erfolg = Haken + Text.
-- Fokus: `outline: 2px solid var(--k-tinte)`, `outline-offset: 2px`; auf Tinte `--k-kalk`. Übersteht `forced-colors`.
+- Fokus: `outline: 2px solid var(--k-tinte)`, `outline-offset: 2px`; auf Tinte `--k-kalk`. Übersteht `forced-colors`. **Ring innen** (`outline-offset: -4px`, Klasse `-outline-offset-4`) dort, wo der Ring außen auf einer Fläche in Tinte bzw. auf Nachbarzellen läge: Zeilen und Zellen bündig an Tinte-Kopf oder gewähltem Nachbarn (Hauptnavigation, untere Leiste, Kontaktblatt, Kalendertage; E-029). Farbe nach Grund der Zelle (Tinte auf hell, Kalk auf Tinte).
 - Auswahlfarbe: Tinte auf Fuge.
 
 ## K-007 Raster und Abstände

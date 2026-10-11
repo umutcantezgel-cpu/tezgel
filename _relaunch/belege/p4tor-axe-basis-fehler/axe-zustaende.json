@@ -1,0 +1,177 @@
+{
+ "satz": "p4tor-axe-basis-fehler",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 8,
+ "ernst_kritisch_knoten": 28,
+ "je_regel": {
+  "serious:color-contrast": 28
+ },
+ "ergebnisse": [
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "fehler-funnel-server",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 5,
+     "ziele": [
+      ".mb-1\\.5.tracking-wider.uppercase > span",
+      ".shadow-orange-600\\/30 > .truncate.gap-2.items-center > .truncate",
+      ".h-11.hover\\:bg-orange-500.px-6",
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ],
+     "knoten": [
+      {
+       "html": "<span>Standort &amp; Einsatzradius</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ea580c, background color: #fcfbfb, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<span class=\"truncate\">Aßlar</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #ffffff, background color: #ea580c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<button type=\"button\" class=\"h-11 px-6 bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm rounded-xl transition-all shadow-md cursor-pointer\">Karte laden &amp; zustimmen</button>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #ffffff, background color: #ea580c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "fehler-funnel-server",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "fehler-funnel-server",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 5,
+     "ziele": [
+      ".shadow-2xl > .z-10.relative > .sm\\:text-2xl",
+      ".mb-1\\.5.tracking-wider.uppercase > span",
+      ".h-11.hover\\:bg-orange-500.px-6",
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ],
+     "knoten": [
+      {
+       "html": "<h3 class=\"text-xl sm:text-2xl font-black tracking-tight\">Direkter Kontakt</h3>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 1.01 (foreground color: #171717, background color: #18181b, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+      },
+      {
+       "html": "<span>Standort &amp; Einsatzradius</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ea580c, background color: #fcfbfb, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<button type=\"button\" class=\"h-11 px-6 bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm rounded-xl transition-all shadow-md cursor-pointer\">Karte laden &amp; zustimmen</button>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #ffffff, background color: #ea580c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "fehler-kalender-name",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 9,
+     "ziele": [
+      ".mb-1\\.5.tracking-wider.uppercase > span",
+      ".shadow-orange-600\\/30 > .truncate.gap-2.items-center > .truncate",
+      ".hover\\:bg-orange-500.bg-orange-600.px-6",
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ],
+     "knoten": [
+      {
+       "html": "<span>Standort &amp; Einsatzradius</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ea580c, background color: #fcfbfb, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<span class=\"truncate\">Aßlar</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #ffffff, background color: #ea580c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<button type=\"button\" class=\"h-11 px-6 bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm rounded-xl transition-all shadow-md cursor-pointer\">Karte laden &amp; zustimmen</button>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #ffffff, background color: #ea580c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "fehler-kalender-name",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 9,
+     "ziele": [
+      ".shadow-2xl > .z-10.relative > .sm\\:text-2xl",
+      ".mb-1\\.5.tracking-wider.uppercase > span",
+      ".hover\\:bg-orange-500.bg-orange-600.px-6",
+      ".px-8 > span",
+      ".bg-emerald-600 > span"
+     ],
+     "knoten": [
+      {
+       "html": "<h3 class=\"text-xl sm:text-2xl font-black tracking-tight\">Direkter Kontakt</h3>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 1.01 (foreground color: #171717, background color: #18181b, font size: 18.0pt (24px), font weight: bold). Expected contrast ratio of 3:1"
+      },
+      {
+       "html": "<span>Standort &amp; Einsatzradius</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ea580c, background color: #fcfbfb, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<button type=\"button\" class=\"h-11 px-6 bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm rounded-xl transition-all shadow-md cursor-pointer\">Karte laden &amp; zustimmen</button>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #ffffff, background color: #ea580c, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "fehler-funnel-server",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "fehler-projektcheck-server",
+   "fehler": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#projekt-check').getByRole('alert').first() to be visible\u001b[22m\n"
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "fehler-projektcheck-server",
+   "fehler": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#projekt-check').getByRole('alert').first() to be visible\u001b[22m\n"
+  }
+ ]
+}

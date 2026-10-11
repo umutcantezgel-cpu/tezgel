@@ -1,0 +1,1930 @@
+{
+ "umkehrprobe_e030": {
+  "bewertungen": [
+   {
+    "id": "A001",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad genannt; Zielgruppe als Vermutung Privatleute; Aufmaß anfragen; Mittelhessen genannt."
+   },
+   {
+    "id": "A002",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung/Fliesen; Hausbesitzer; Projektcheck bzw. Anruf; Aßlar/Wetzlar/Mittelhessen."
+   },
+   {
+    "id": "A003",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; Hausbesitzer genannt; Anrufen/WhatsApp; keine Region genannt."
+   },
+   {
+    "id": "A004",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung; Hausbesitzer/Eigentümer; Projektcheck/Aufmaß/Anruf; Aßlar, Wetzlar, Mittelhessen."
+   },
+   {
+    "id": "A005",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung durch Fliesenfachbetrieb; Hausbesitzer; Projektcheck/Aufmaß; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A006",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatkunden genannt, offen nur ob zusätzlich Gewerbe (Privat bleibt gesetzt); Aufmaß anfragen; keine Region."
+   },
+   {
+    "id": "A007",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatleute; Anrufen/WhatsApp/Aufmaß als Option; keine Region."
+   },
+   {
+    "id": "A008",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Hausbesitzer; Aufmaß anfragen/Telefon; Wetzlar, Aßlar."
+   },
+   {
+    "id": "A009",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nur 'Kunden' und ausdrücklich offen, ob Privat- oder Gewerbekunden; Kontakt/Aufmaß korrekt; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A010",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nur 'Kunden', ob Privat- oder Gewerbekunden ausdrücklich offen; Express-Anfrage/Kontakt korrekt; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A011",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nur 'Auftraggeber', offen ob Privat, Gewerbe oder beides; Anrufen/WhatsApp/Aufmaß; Mittelhessen/Aßlar."
+   },
+   {
+    "id": "A012",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; vermutlich Privatkunden; Anrufen/WhatsApp/Aufmaß; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A013",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung; Privatleute/Eigentümer; Aufmaß/Anrufen; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A014",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatkunden; Anrufen/WhatsApp/Aufmaß; kein Ort genannt."
+   },
+   {
+    "id": "A015",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung; Hausbesitzer; Bad-Projektcheck als Projektanfrage; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A016",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Leistungen; Privatleute; Anrufen/WhatsApp; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A017",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden plus weitere Gruppen; Aufmaß anfragen/Anruf; Wetzlar/Mittelhessen."
+   },
+   {
+    "id": "A018",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenlegerbetrieb; vermutlich Privatkunden; Aufmaß/Anrufen/WhatsApp; keine Region."
+   },
+   {
+    "id": "A019",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; vermutlich Privatleute/Hausbesitzer; Projekt anfragen; Aßlar."
+   },
+   {
+    "id": "A020",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Aufmaß anfragen; Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A021",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Hausbesitzer; Aufmaß/WhatsApp/Telefon; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A022",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden plus weitere; Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A023",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer; Anfrage/Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A024",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; private Bauherren/Eigentümer; Aufmaß buchen/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A025",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung; Privatleute; Anrufen/WhatsApp; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A026",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegungs-Fachbetrieb; Privatkunden plus weitere; Aufmaß/Anrufen; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A027",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger; Vermutung Privat- und Gewerbekunden, Privat enthalten; Anrufen/WhatsApp/Aufmaß; Aßlar."
+   },
+   {
+    "id": "A028",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Vermutung Privat- und Gewerbekunden, Privat enthalten; Kontakt über Anrufen/WhatsApp/Aufmaß benannt; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A029",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Eigentümer genannt, aber ausdrücklich offen, ob Privat- oder Gewerbekunden; Aufmaß/Kontakt korrekt; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A030",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenlegerbetrieb; vermutlich Privatkunden; Anrufen/WhatsApp/Aufmaß; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A031",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen; Privatkunden plus weitere; Aufmaß/Anrufen; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A032",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung; Hausbesitzer/Privatleute; Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A033",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger; vermutlich Privatkunden; Anrufen/WhatsApp; Aßlar."
+   },
+   {
+    "id": "A034",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; vermutlich Hausbesitzer; Projekt anfragen; Aßlar."
+   },
+   {
+    "id": "A035",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen-Fachbetrieb; Privatkunden; Aufmaß buchen/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A036",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer; Projekt anfragen; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A037",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatleute; Aufmaß anfragen/Kontakt; keine Region."
+   },
+   {
+    "id": "A038",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Projekt anfragen; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A039",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Hausbesitzer vermutet, aber ausdrücklich offen, ob privat oder gewerblich; Aufmaß anfragen korrekt; keine Region."
+   },
+   {
+    "id": "A040",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Vermutung Privat- und Gewerbekunden, Privat enthalten; Kontakt/Aufmaß; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A041",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Privatkunden; Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A042",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Zielgruppe nur Allgemeinplatz 'Kunden'; Express-Anfrage/Kontakt korrekt; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A043",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger; vermutlich Privat- und Bauherren; Aufmaß/Anrufen; Aßlar."
+   },
+   {
+    "id": "A044",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung inkl. Fliesen; Hausbesitzer/Eigentümer; Aufmaß anfragen; Mittelhessen/Aßlar."
+   },
+   {
+    "id": "A045",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatkunden; Anrufen/WhatsApp/Aufmaß; keine Region."
+   },
+   {
+    "id": "A046",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Projekt/Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A047",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Privatleute; Aufmaß vereinbaren/WhatsApp; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A048",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatleute/Eigentümer, offen nur ob zusätzlich Gewerbe; Aufmaß/Anruf; keine Region."
+   },
+   {
+    "id": "A049",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nur 'Auftraggeber', ausdrücklich offen ob Privat- oder Gewerbekunden; Anrufen/Aufmaß korrekt; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A050",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Hausbesitzer; Aufmaß/WhatsApp/Anruf; Wetzlar."
+   },
+   {
+    "id": "A051",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; als Vermutung Privatkunden genannt; Anrufen/Aufmaß; keine Region."
+   },
+   {
+    "id": "A052",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger/Bad; Hausbesitzer; Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A053",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer (plus Mieter); Projekt anfragen/Aufmaß; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A054",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Eigentümer; Aufmaß/Anrufen/WhatsApp; keine Region."
+   },
+   {
+    "id": "A055",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden plus weitere; Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A056",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Anfrage stellen; Aßlar."
+   },
+   {
+    "id": "A057",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Privatkunden plus weitere; Anrufen/WhatsApp; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A058",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Privatleute/Hausbesitzer; Aufmaß/Anruf; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A059",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger; Privat- und Bauherren, offen nur ob zusätzlich Gewerbe; Aufmaß/Kontakt; Aßlar."
+   },
+   {
+    "id": "A060",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden; Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A061",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; als Vermutung Privatkunden genannt; Aufmaß/Anrufen; Aßlar."
+   },
+   {
+    "id": "A062",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden plus weitere; Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A063",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Projekt anfragen/Anrufen; Aßlar."
+   },
+   {
+    "id": "A064",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad-Fachbetrieb; Privatleute/Hausbesitzer; Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A065",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatkunden; Aufmaß/Anruf; keine Region."
+   },
+   {
+    "id": "A066",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Aufmaß anfragen; Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A067",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Privatkunden plus weitere; Aufmaß/Anrufen; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A068",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; vermutlich Privatleute, offen nur ob zusätzlich Gewerbe; Projekt/Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A069",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Eigentümer mit Bad/Terrasse; Aufmaß/WhatsApp/Anruf; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A070",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden/Hausbesitzer; Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A071",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; private Bauherren/Hausbesitzer; Aufmaß buchen/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A072",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung/Fliesen; Hausbesitzer; Projektcheck/Aufmaß buchen; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A073",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger/Bad; private Bauherren/Hausbesitzer; Aufmaß/Telefon; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A074",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenleger; vermutlich Privatkunden; Anrufen/WhatsApp/Aufmaß; keine Region."
+   },
+   {
+    "id": "A075",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung (vermutet); als Vermutung Privatleute; Aufmaß/Anrufen; keine Region."
+   },
+   {
+    "id": "A076",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer; Projekt anfragen; Aßlar."
+   },
+   {
+    "id": "A077",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Hausbesitzer; Anruf/WhatsApp/Aufmaß; keine Region."
+   },
+   {
+    "id": "A078",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden plus weitere; Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A079",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; vermutlich Privatleute; Aufmaß anfragen; Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A080",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nur 'Auftraggeber', ausdrücklich offen ob privat oder gewerblich; Aufmaß/Anrufen korrekt; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A081",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung/Fliesen; Hausbesitzer; Aufmaß anfragen; Mittelhessen/Aßlar."
+   },
+   {
+    "id": "A082",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Bad/Fliesen; Privatkunden/Hausbesitzer; Express-Anfrage/Telefon; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A083",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung/Fliesen; Hausbesitzer/Eigentümer; Aufmaß anfragen; Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A084",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatleute, offen nur ob zusätzlich Gewerbe; Aufmaß/Anruf; keine Region."
+   },
+   {
+    "id": "A085",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Privatkunden; Anrufen/WhatsApp/Express-Anfrage; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A086",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer; Projekt anfragen/Anrufen; Aßlar."
+   },
+   {
+    "id": "A087",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; vermutlich Privatleute; Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A088",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad; vermutlich Hausbesitzer; Projektcheck/Anrufen/WhatsApp; keine Region."
+   },
+   {
+    "id": "A089",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A090",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger; vermutlich Privatleute; Aufmaß/Anrufen als Option; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A091",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer; Projekt anfragen; Aßlar."
+   },
+   {
+    "id": "A092",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer; Aufmaß buchen/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A093",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Hausbesitzer; Aufmaß/Anrufen/WhatsApp; keine Region."
+   },
+   {
+    "id": "A094",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; vermutlich Privatleute/Hausbesitzer; Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A095",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Hausbesitzer; Projekt anfragen/Anrufen; Aßlar."
+   },
+   {
+    "id": "A096",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung/Fliesen; Hausbesitzer/Eigentümer; Aufmaß anfragen; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A097",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad; Privatleute; Projektcheck/Anrufen/WhatsApp; Region ausdrücklich nicht erkannt."
+   },
+   {
+    "id": "A098",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad; Privatleute; Projektcheck/Anruf/WhatsApp-Aufmaß; keine Region."
+   },
+   {
+    "id": "A099",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger/Bad; Privatleute; Express-Anfrage/Anruf/WhatsApp; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A100",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; vermutlich Privatleute/Hausbesitzer; Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A101",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung/Bad; Privatkunden; Aufmaß anfragen; Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A102",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Leistungen; Privatleute; Aufmaß/Anruf/WhatsApp; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A103",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Privatkunden plus weitere; Aufmaß/Anrufen; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A104",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung/Fliesen; Hausbesitzer; Aufmaß anfragen; Mittelhessen/Aßlar."
+   },
+   {
+    "id": "A105",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Privatpersonen; Aufmaß/Telefon; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A106",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung; Hausbesitzer; Aufmaß/Anrufen; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A107",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; als Vermutung Privatkunden genannt; Anrufen/Aufmaß; Region ausdrücklich nicht genannt."
+   },
+   {
+    "id": "A108",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute/Hausbesitzer; Projekt anfragen/Aufmaß; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A109",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung/Bad; vermutlich Hausbesitzer; Projektcheck/Anrufen; keine Region."
+   },
+   {
+    "id": "A110",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung; Privatleute; Aufmaß/Anrufen; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A111",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad; vermutlich Privatleute; Projektcheck/Anrufen; keine Region."
+   },
+   {
+    "id": "A112",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenlegerbetrieb; Privatkunden; Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A113",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Nur 'Auftraggeber', Privatkunden ausdrücklich nicht benannt; Aufmaß buchen/Anruf korrekt; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A114",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; vermutlich Privatleute, offen nur ob zusätzlich Gewerbe; Aufmaß/Anrufen; keine Region."
+   },
+   {
+    "id": "A115",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung; als Vermutung Privatkunden genannt; Aufmaß/Anrufen; keine Region."
+   },
+   {
+    "id": "A116",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; private Bauherren/Hausbesitzer; Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A117",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb; Hausbesitzer; Aufmaß/WhatsApp/Anruf; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A118",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatkunden; Express-Anfrage/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A119",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung/Bad; Hausbesitzer; Aufmaß/Anruf/WhatsApp; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A120",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad; Privatleute; Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   }
+  ]
+ },
+ "streng": {
+  "bewertungen": [
+   {
+    "id": "A001",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Angebot und Aufmaß-Anfrage zutreffend; Zielgruppe nur als 'vermutlich Privatleute und Bauherren, nicht sicher' genannt, daher falsch; Mittelhessen genannt."
+   },
+   {
+    "id": "A002",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung genannt, Hausbesitzer/Bauherren ohne Vorbehalt, Projektcheck bzw. Anruf als Kontakt; Aßlar/Wetzlar/Mittelhessen genannt."
+   },
+   {
+    "id": "A003",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung genannt, Bauherren/Hausbesitzer ohne Vorbehalt (nur die Region offen), Anruf/WhatsApp; kein Ort genannt."
+   },
+   {
+    "id": "A004",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Hausbesitzer/Eigentümer ohne Vorbehalt, Projektcheck/Aufmaß/Anruf; Aßlar, Wetzlar, Mittelhessen genannt."
+   },
+   {
+    "id": "A005",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung durch Fliesenfachbetrieb, Hausbesitzer ohne Vorbehalt, Projektcheck/Aufmaß; Region genannt."
+   },
+   {
+    "id": "A006",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Aufmaß-Anfrage korrekt; Zielgruppe 'vermutlich', privat/gewerblich offen; keine Region."
+   },
+   {
+    "id": "A007",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung korrekt, Kontakt über Anrufen/WhatsApp/Aufmaß genannt; Zielgruppe ausdrücklich vermutet und abgeleitet; keine Region."
+   },
+   {
+    "id": "A008",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Hausbesitzer/Bauherren ohne Vorbehalt, Aufmaß/Telefon/WhatsApp; Wetzlar, Aßlar, Mittelhessen."
+   },
+   {
+    "id": "A009",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Kontakt korrekt; Zielgruppe nur 'Kunden', privat/gewerblich offen; Aßlar/Wetzlar genannt."
+   },
+   {
+    "id": "A010",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Express-Anfrage korrekt; nur 'Kunden', privat/gewerblich ausdrücklich offen; Aßlar/Wetzlar genannt."
+   },
+   {
+    "id": "A011",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Kontaktbuttons korrekt; nur 'Auftraggeber', privat/gewerblich offen; Mittelhessen/Aßlar genannt."
+   },
+   {
+    "id": "A012",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb und Kontaktwege korrekt; Zielgruppe 'vermutlich', 'nicht ausdrücklich genannt'; Region genannt."
+   },
+   {
+    "id": "A013",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Privatleute ohne Vorbehalt genannt und auf sichtbare Anrede gestützt, Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A014",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Anruf/WhatsApp korrekt; Zielgruppe vermutet und aus Button geschlossen; keine Region."
+   },
+   {
+    "id": "A015",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Hausbesitzer ohne Vorbehalt, Bad-Projektcheck als Anfrage; Aßlar/Wetzlar/Mittelhessen."
+   },
+   {
+    "id": "A016",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Leistungen, Privatleute/Bauherren ohne Vorbehalt, Anruf/WhatsApp; Wetzlar, Aßlar, Mittelhessen."
+   },
+   {
+    "id": "A017",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden laut Begrüßungstext, Vor-Ort-Aufmaß/Anruf; Wetzlar/Mittelhessen."
+   },
+   {
+    "id": "A018",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenlegerbetrieb und Aufmaß/Anruf korrekt; Zielgruppe 'vermutlich', nicht ausdrücklich genannt; keine Region."
+   },
+   {
+    "id": "A019",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Projektanfrage korrekt; Zielgruppe mit 'vermutlich' gekennzeichnet; Aßlar genannt."
+   },
+   {
+    "id": "A020",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute/Bauherren ohne Vorbehalt, Aufmaß anfragen; Mittelhessen genannt."
+   },
+   {
+    "id": "A021",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Hausbesitzer/Bauherren ohne Vorbehalt, Vor-Ort-Aufmaß/WhatsApp/Telefon; Region genannt."
+   },
+   {
+    "id": "A022",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden ohne Vorbehalt, Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A023",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Hausbesitzer mit Badvorhaben ohne Vorbehalt, Projektanfrage/Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A024",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, private Bauherren/Eigentümer ohne Vorbehalt, Aufmaß buchen/Anruf; Region genannt."
+   },
+   {
+    "id": "A025",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Privatleute ohne Vorbehalt, Anruf/WhatsApp; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A026",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Privatkunden mit Hinweis 'Die Einleitung nennt' abgelesen; Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A027",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Kontaktwege korrekt; Zielgruppe 'nicht ausdrücklich genannt; geraten'; Aßlar genannt."
+   },
+   {
+    "id": "A028",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung korrekt, Kontakt über Anrufen/WhatsApp/Aufmaß benannt; Zielgruppe 'nicht eindeutig, wahrscheinlich'; Region genannt."
+   },
+   {
+    "id": "A029",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Aufmaß-Anfrage korrekt; Zielgruppe lässt ausdrücklich offen, ob privat oder gewerblich; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A030",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Kontakt korrekt; Zielgruppe 'vermutlich', nicht ausdrücklich genannt; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A031",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Privatkunden laut 'sichtbarer Textstelle'; Aufmaß/Anruf/WhatsApp; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A032",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Hausbesitzer/Privatleute ohne Vorbehalt (nur Einzugsbereich offen), Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A033",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Anruf/WhatsApp korrekt; Zielgruppe 'vermutlich', aus Ort und Gewerk erschlossen; Aßlar."
+   },
+   {
+    "id": "A034",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Projektanfrage korrekt; Zielgruppe 'vermutlich', 'erschlossen, nicht ausdrücklich'; Aßlar."
+   },
+   {
+    "id": "A035",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenfachbetrieb, Privatkunden/Bauherren ohne Vorbehalt, Aufmaß buchen/Anruf; Region genannt."
+   },
+   {
+    "id": "A036",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Hausbesitzer/Bauherren ohne Vorbehalt, Projektanfrage; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A037",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Aufmaß-Anfrage korrekt; Zielgruppe 'vermutlich', nicht sicher ablesbar; keine Region."
+   },
+   {
+    "id": "A038",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute ohne Vorbehalt, Projektanfrage; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A039",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Aufmaß-Anfrage korrekt; Zielgruppe 'nicht eindeutig, vermutlich', privat/gewerblich offen; keine Region."
+   },
+   {
+    "id": "A040",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Kontakt korrekt; Zielgruppe 'nicht ausdrücklich genannt, vermutlich'; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A041",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Privatkunden/Bauherren ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A042",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Anfrage/Anruf korrekt; Zielgruppe nur 'Kunden'; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A043",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb und Kontakt korrekt; Zielgruppe 'nicht ausdrücklich, vermutlich, geschlossen'; Aßlar."
+   },
+   {
+    "id": "A044",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung inkl. Fliesen, Hausbesitzer/Eigentümer ohne Vorbehalt, Aufmaß anfragen; Mittelhessen/Aßlar/Wetzlar."
+   },
+   {
+    "id": "A045",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Kontakt korrekt; Zielgruppe 'vermutlich', 'erschlossen'; keine Region."
+   },
+   {
+    "id": "A046",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute ohne Vorbehalt (nur Gewerbe als nicht erkennbar vermerkt), Projekt-/Aufmaß-Anfrage; Aßlar."
+   },
+   {
+    "id": "A047",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung, Privatleute/Bauherren mit Bad/Terrasse ohne Vorbehalt, Vor-Ort-Aufmaß/WhatsApp; Region genannt."
+   },
+   {
+    "id": "A048",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Aufmaß/Anruf korrekt; Zielgruppe 'nicht eindeutig, vermutlich'; keine Region."
+   },
+   {
+    "id": "A049",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb und Kontakt korrekt; nur 'Auftraggeber', privat/gewerblich offen; Region genannt."
+   },
+   {
+    "id": "A050",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Hausbesitzer/Bauherren ohne Vorbehalt, Aufmaß/WhatsApp/Anruf; Region genannt."
+   },
+   {
+    "id": "A051",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Anruf/Aufmaß korrekt; Zielgruppe 'nicht eindeutig, vermutlich'; keine Region."
+   },
+   {
+    "id": "A052",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Hausbesitzer/Bauherren ohne Vorbehalt (nur Einsatzbereich offen), Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A053",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Hausbesitzer ohne Vorbehalt genannt, Projektanfrage/Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A054",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Kontakt korrekt; Zielgruppe 'vermutlich', 'nur geschätzt'; keine Region."
+   },
+   {
+    "id": "A055",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden ohne Vorbehalt, Vor-Ort-Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A056",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute/Bauherren ohne Vorbehalt, Projekt-/Aufmaß-Anfrage; Aßlar."
+   },
+   {
+    "id": "A057",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung, Privatkunden ohne Vorbehalt, Anruf/WhatsApp; Aßlar/Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A058",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Privatleute/Hausbesitzer ohne Vorbehalt, Aufmaß/Anruf/WhatsApp; Region genannt."
+   },
+   {
+    "id": "A059",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Privat-/Bauherren ohne Vorbehalt (nur zusätzliche Gewerbekunden offen), Aufmaß/Anruf; Aßlar."
+   },
+   {
+    "id": "A060",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden/Bauherren ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A061",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Aufmaß/Anruf korrekt; Zielgruppe 'nicht eindeutig, vermutlich, nicht ausdrücklich'; Aßlar."
+   },
+   {
+    "id": "A062",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden ohne Vorbehalt, Vor-Ort-Aufmaß/Anruf; Aßlar/Wetzlar/Mittelhessen."
+   },
+   {
+    "id": "A063",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute/Bauherren ohne Vorbehalt, Projektanfrage/Anruf; Aßlar."
+   },
+   {
+    "id": "A064",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen-/Badfachbetrieb, Privatleute/Hausbesitzer ohne Vorbehalt, Aufmaß anfragen; Aßlar."
+   },
+   {
+    "id": "A065",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung (Vorbehalt unschädlich) und Aufmaß/Anruf korrekt; Zielgruppe 'vermutlich', nicht sicher ablesbar; keine Region."
+   },
+   {
+    "id": "A066",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute/Bauherren ohne Vorbehalt, Aufmaß anfragen; Mittelhessen."
+   },
+   {
+    "id": "A067",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung; Privatkunden 'laut dem Einleitungstext'; Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A068",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Anfrage korrekt; Zielgruppe 'vermutlich', Gewerbe offen; Aßlar."
+   },
+   {
+    "id": "A069",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Bauherren/Eigentümer ohne Vorbehalt, Vor-Ort-Aufmaß/Anruf; Region genannt."
+   },
+   {
+    "id": "A070",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden/Hausbesitzer ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A071",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenfachbetrieb, private Bauherren/Hausbesitzer ohne Vorbehalt, Aufmaß buchen/Anruf; Region genannt."
+   },
+   {
+    "id": "A072",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung und Projektcheck/Aufmaß korrekt; Zielgruppe ausdrücklich 'nur aus den Leistungen abgeleitet'; Region genannt."
+   },
+   {
+    "id": "A073",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, private Bauherren/Hausbesitzer ohne Vorbehalt, Aufmaß/Telefon; Region genannt."
+   },
+   {
+    "id": "A074",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Anruf/Aufmaß korrekt; Zielgruppe 'vermutlich', aus Schaltflächen abgeleitet; keine Region."
+   },
+   {
+    "id": "A075",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung (Vorbehalt unschädlich), Kontakt über Aufmaß/Anruf; Zielgruppe 'nicht eindeutig, vermutlich'; keine Region."
+   },
+   {
+    "id": "A076",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Hausbesitzer ohne Vorbehalt (nur Region vermutet), Projektanfrage; Aßlar."
+   },
+   {
+    "id": "A077",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Kontakt korrekt; Zielgruppe 'vermutlich', 'nicht ausdrücklich genannt'; keine Region."
+   },
+   {
+    "id": "A078",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden ohne Vorbehalt, Vor-Ort-Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A079",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Aufmaß-Anfrage korrekt; Zielgruppe mit 'vermutlich' gekennzeichnet; Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A080",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung und Aufmaß/Anruf korrekt; Zielgruppe 'nicht eindeutig', privat/gewerblich offen; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A081",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Hausbesitzer ohne Vorbehalt, Aufmaß anfragen; Mittelhessen/Aßlar/Wetzlar."
+   },
+   {
+    "id": "A082",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden/Hausbesitzer ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A083",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung mit Fliesen, Hausbesitzer/Eigentümer ohne Vorbehalt, Aufmaß anfragen; Mittelhessen/Wetzlar."
+   },
+   {
+    "id": "A084",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Aufmaß/Anruf korrekt; Zielgruppe 'vermutlich', Gewerbe offen; keine Region."
+   },
+   {
+    "id": "A085",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenfachbetrieb, Privatkunden/Bauherren ohne Vorbehalt, Anruf/WhatsApp/Express-Anfrage; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A086",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Hausbesitzer/Bauherren ohne Vorbehalt, Projektanfrage/Anruf; Aßlar."
+   },
+   {
+    "id": "A087",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Aufmaß-Anfrage korrekt; Zielgruppe 'vermutlich', 'steht nicht ausdrücklich'; Aßlar."
+   },
+   {
+    "id": "A088",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad und Projektcheck/Anruf korrekt; Zielgruppe 'vermutlich', 'abgeleitet'; keine Region."
+   },
+   {
+    "id": "A089",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute/Bauherren ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A090",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb und Aufmaß/Anruf korrekt; Zielgruppe mit 'vermutlich' gekennzeichnet; Wetzlar/Aßlar."
+   },
+   {
+    "id": "A091",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Hausbesitzer/Bauherren ohne Vorbehalt, Projektanfrage; Aßlar."
+   },
+   {
+    "id": "A092",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenfachbetrieb, Hausbesitzer/Bauherren ohne Vorbehalt, Aufmaß buchen/Anruf; Region genannt."
+   },
+   {
+    "id": "A093",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Kontakt korrekt; Zielgruppe 'vermutlich', 'nur indirekt erkennbar'; keine Region."
+   },
+   {
+    "id": "A094",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Aufmaß-Anfrage korrekt; Zielgruppe 'vermutlich', 'abgeleitet, nicht eindeutig belegt'; Aßlar."
+   },
+   {
+    "id": "A095",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Hausbesitzer/Bauherren ohne Vorbehalt (nur Region mit 'wohl'), Projektanfrage/Anruf; Aßlar."
+   },
+   {
+    "id": "A096",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung inkl. Fliesen, Hausbesitzer/Eigentümer ohne Vorbehalt, Aufmaß anfragen; Aßlar/Wetzlar/Mittelhessen."
+   },
+   {
+    "id": "A097",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad, Privatleute ohne Vorbehalt (nur Region offen), Projektcheck/Anruf; keine Region genannt."
+   },
+   {
+    "id": "A098",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad, Privatleute ohne Vorbehalt, Projektcheck/Anruf/Aufmaß; keine Region genannt."
+   },
+   {
+    "id": "A099",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Privatleute/Bauherren ohne Vorbehalt, Express-Anfrage/Anruf; Region genannt."
+   },
+   {
+    "id": "A100",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Aufmaß-Anfrage korrekt; Zielgruppe 'vermutlich', 'nicht ausdrücklich, abgeleitet'; Aßlar."
+   },
+   {
+    "id": "A101",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung/Badsanierung, Privatkunden ohne Vorbehalt (nur Architekten vermutet), Aufmaß anfragen; Mittelhessen."
+   },
+   {
+    "id": "A102",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Leistungen, Privatleute/Bauherren ohne Vorbehalt, Aufmaß/Anruf/WhatsApp; Region genannt."
+   },
+   {
+    "id": "A103",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung, Privatkunden ohne Vorbehalt als Text der Seite genannt, Aufmaß/Anruf; Aßlar/Mittelhessen."
+   },
+   {
+    "id": "A104",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Hausbesitzer ohne Vorbehalt, Aufmaß anfragen; Mittelhessen/Aßlar/Wetzlar."
+   },
+   {
+    "id": "A105",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb und Aufmaß/Anruf korrekt; Zielgruppe 'abgeleitet, nicht ausdrücklich genannt'; Region genannt."
+   },
+   {
+    "id": "A106",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung, Hausbesitzer ohne Vorbehalt (nur Einzugsbereich offen), Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A107",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Anruf/Aufmaß korrekt; Zielgruppe 'nicht eindeutig, vermutlich'; keine Region."
+   },
+   {
+    "id": "A108",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute/Hausbesitzer ohne Vorbehalt, Projektanfrage/Aufmaß/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A109",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad und Projektcheck/Anruf korrekt; Zielgruppe 'vermutlich' aus Buttons; keine Region."
+   },
+   {
+    "id": "A110",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Badsanierung und Aufmaß/Anruf korrekt; Zielgruppe ausdrücklich 'nicht genannt auf dem Bild'; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A111",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesen/Bad und Projektcheck/Anruf korrekt; Zielgruppe 'vermutlich', nicht ausdrücklich genannt; keine Region."
+   },
+   {
+    "id": "A112",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenlegerbetrieb mit Bad, Privatkunden/Bauherren ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A113",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad und Aufmaß/Anruf korrekt; nur 'Auftraggeber', ausdrücklich nicht als Privatkunden benannt; Region genannt."
+   },
+   {
+    "id": "A114",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Aufmaß/Anruf korrekt; Zielgruppe 'vermutlich', Gewerbe offen; keine Region."
+   },
+   {
+    "id": "A115",
+    "angebot": true,
+    "zielgruppe": false,
+    "naechster_schritt": true,
+    "regional": false,
+    "begruendung": "Fliesenverlegung und Aufmaß/Anruf korrekt; Zielgruppe 'vermutlich', aus Firmenname und Buttons geschlossen; keine Region."
+   },
+   {
+    "id": "A116",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, private Bauherren/Hausbesitzer ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   },
+   {
+    "id": "A117",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenleger-Fachbetrieb, Bauherren/Hausbesitzer ohne Vorbehalt, Vor-Ort-Aufmaß/WhatsApp/Anruf; Region genannt."
+   },
+   {
+    "id": "A118",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatkunden/Bauherren ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar/Mittelhessen."
+   },
+   {
+    "id": "A119",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesenverlegung, Hausbesitzer/Bauherren ohne Vorbehalt, Vor-Ort-Aufmaß/Anruf; Region genannt."
+   },
+   {
+    "id": "A120",
+    "angebot": true,
+    "zielgruppe": true,
+    "naechster_schritt": true,
+    "regional": true,
+    "begruendung": "Fliesen/Bad, Privatleute/Bauherren ohne Vorbehalt, Express-Anfrage/Anruf; Aßlar/Wetzlar."
+   }
+  ]
+ }
+}
