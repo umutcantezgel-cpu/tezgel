@@ -32,7 +32,7 @@
 - `bezeichner.cjs`: leer in allen vier Dateien.
 - Nicht im Bild geprüft: Leerzustand, Hover, Fokus (Klassen nach System, Funktion über Tests).
 - Git: nur meine vier Dateien und diese Rückgabe geändert; fremde Änderungen (u. a. `[slug]/page.jsx`, `ReadingProgress.jsx`, Funnel-Dateien) unberührt.
-- Commit-Stand: HEAD ist f12978c, der Zwischenstand der Verschiebung (nicht von mir). Die Gestaltung liegt unkommittiert im Arbeitsbaum. Kein Commit, kein Push, kein Build, keine Server-Änderung, nur GET-Anfragen.
+- Commit-Stand: Gestaltung in cc02925 (Orchestrator). Diese Rückgabe ist danach um die Prüfzeile oben ergänzt, unkommittiert. Ich habe nicht committet, gepusht oder gebaut; nur GET-Anfragen.
 
 ## BILDBELEGE
 Ordner `/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E3-BAU-09/`:
