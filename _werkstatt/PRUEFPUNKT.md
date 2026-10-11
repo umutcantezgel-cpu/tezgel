@@ -1,7 +1,7 @@
 # PRUEFPUNKT
 
 - Etappe: E2 · Zusammenführung mit main (E-020) · Stand 11.10.2026 ~14:30 CEST
-- Arbeitsbranch `claude/amazing-mendel-b0g40w` = zusammengeführter Stand (Werkstatt + Relaunch main bis ecdc508 + Fusion der Startseite). Push auf `main` am 11.10. auf ausdrückliche Anweisung: main = Branch (Fast-Forward). Danach Vercel-Status prüfen.
+- Arbeitsbranch `claude/amazing-mendel-b0g40w` = zusammengeführter Stand (Werkstatt + Relaunch main bis ecdc508 + Fusion der Startseite). Push auf `main` am 11.10. auf ausdrückliche Anweisung: main = Branch = 6156079 (Fast-Forward), Vercel success, live geprüft. Probe-Worktree entfernt; Prüfserver gestoppt (für weitere Arbeit nach EINRICHTUNG.md neu starten).
 - Gesamtprüfung auf cf91c38 (Belege im Scratchpad `vergleich/`): Reinraum grün; Funktionstests 289 bestanden, 1 Ausreißer (Mega-Menü Tastatur, einzeln bestanden); Sitemap 163 × 200; axe / und /kontakt 0; Register ohne Lücke; Unterseiten-Stichprobe ohne Bruch (Altbefunde auf din-18534/Blog unverändert); Fremdsuite 337/45 (erwartet: sie prüft die Kern-Startseite, M-21); Fusionsgutachten Desktop 6,5 (A 6, B 5,5), Handy 7 (A 6, B 5,5).
 - Nacharbeit nach dem Gutachten eingespielt (Rechnerspalte volle Höhe, Kennzeilen einheitlich, Großformat ohne zweites Motiv, Kennwert ohne Doppelung, Karten-Vorschau, Abschluss-Knopf, Einstiegsformular); danach Reinraum und betroffene Funktionstests erneut.
 - Danach Werkstatt-Lauf weiter: Tor Anlauf 2 (Sichtabnahme auf dem zusammengeführten Stand), Lighthouse-Ruhefenster, E3. Probe-Worktree `scratchpad/merge-probe` nach dem Push auf main entfernen.
