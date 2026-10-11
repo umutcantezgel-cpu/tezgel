@@ -49,6 +49,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E-020 Fusion | `src/components/reviews/GoogleReviewsBadge.tsx` | „5,0“ (groß, für Screenreader verborgen) und darunter „5,0 von 5“ | „5,0 von 5“ in einer Zeile (Wert groß, „von 5“ in Mono) | Bewertung stand doppelt (Gutachten) |
 | E3-NACH-01 | `src/components/start/Grossformat.tsx` (Kennzahl) | „XXL“ | „120 × 260 cm“ | Sichtabnahme E2-SICHT-2 Befund 1: große Mono-Werte sind Maß oder Norm; das Format steht auf derselben Seite (Fragen: „z. B. 120x120 cm oder 120x260 cm“) |
 | E3-NACH-01 | `src/components/start/Grossformat.tsx` (Bildfeld, neu) | (Verlegeplan „grossformat“, Beschreibung „Großformat-Platten mit wenigen Fugen, Achse mittig auf der Fuge.“) | zwei Pläne mit Beschriftung „60 × 60 cm“ / „120 × 260 cm“, Beschreibungen „Wand mit Fliesen 60 × 60 cm: dichtes Fugenraster mit Passstücken.“ / „Dieselbe Wand mit Großformat 120 × 260 cm: eine einzige Fuge.“ | Befund 3: kein Motiv doppelt; Formate aus dem Bestand der Seite (Fragen, Rechner) |
+| E3-BAU-11 | `src/components/funnels/FliesenKonfigurator/Schritt1.jsx` (Bad-Hinweis über `kern/Hinweis`) | – | nur für Screenreader „Hinweis: “ vor dem Hinweistext (Baustein ohne Titel) | Zugänglichkeit: Art des Kastens wird vorgelesen; sichtbarer Wortlaut unverändert |
 
 ## Vorschläge (Überschriften, Fließtext)
 _noch keine_
