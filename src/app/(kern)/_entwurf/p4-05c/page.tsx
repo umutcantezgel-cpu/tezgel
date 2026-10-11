@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { VorschauRaster, VorschauZustand } from '@/components/kern/formulare/b/Vorschau';
+import { VorschauBreiten } from '@/components/kern/formulare/c/Vorschau';
 import { TerminAnfrageVorschau, TerminKalenderVorschau } from '@/components/kern/formulare/e/Vorschau';
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 // (bedienbar), darunter alle Zustände. Die Formulare laufen über Vorschau-Hüllen mit fester Uhrzeit (Tage ab 13.10.2026),
 // die nie senden (G5). Kein eigenes IconSprite (steht im Kern-Layout). Nur Klassen aus gescannten Kern-Dateien
 // (`_entwurf` ist von @source ausgenommen).
+// P4-10b: Am Ende dieselben Ansichten in drei Behälterbreiten (18, 28, 48 rem) nebeneinander.
 export default function VorschauTerminFormulare() {
   return (
     <>
@@ -56,6 +58,17 @@ export default function VorschauTerminFormulare() {
         <VorschauZustand kennung="WhatsApp geöffnet">
           <TerminAnfrageVorschau zustand="whatsapp" />
         </VorschauZustand>
+      </VorschauRaster>
+
+      <VorschauRaster titel="Behälterbreiten · Terminkalender Schritt 2 (Tage, Uhrzeiten, Kontakt)" breit>
+        <VorschauBreiten>
+          <TerminKalenderVorschau zustand="formular" />
+        </VorschauBreiten>
+      </VorschauRaster>
+      <VorschauRaster titel="Behälterbreiten · Terminanfrage /termin (Individuelles Formular)" breit>
+        <VorschauBreiten>
+          <TerminAnfrageVorschau zustand="formular" />
+        </VorschauBreiten>
       </VorschauRaster>
     </>
   );

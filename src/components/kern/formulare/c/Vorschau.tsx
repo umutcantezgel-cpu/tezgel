@@ -5,11 +5,12 @@
 // sind hier durch leere Handlungen ersetzt, die Vorschau sendet nie und öffnet nichts.
 // Die Fehlertexte sind die wörtlichen Meldungen der Hooks; Name, Telefon, E-Mail und Referenz sind erkennbare
 // Vorschau-Werte. Klassen hier, weil `_entwurf` nicht von Tailwind gelesen wird.
-import { useState, type FormEvent } from 'react';
+import { useState, type FormEvent, type ReactNode } from 'react';
 import { useBadanfrage } from '@/lib/formulare/useBadanfrage';
 import { useProjektCheck } from '@/lib/formulare/useProjektCheck';
 import BadanfrageAnsicht, { type BadanfrageDaten } from '@/components/kern/formulare/c/BadanfrageAnsicht';
 import ProjektCheckAnsicht, { type ProjektCheckDaten } from '@/components/kern/formulare/c/ProjektCheckAnsicht';
+import { verbinde } from '@/components/kern/basis/klassen';
 
 const nichtSenden = async (e: FormEvent) => {
   e.preventDefault();
@@ -66,4 +67,26 @@ export function ProjektCheckVorschau({ zustand = 'ruhe' }: { zustand?: ProjektCh
   }
   if (zustand === 'whatsapp') daten.sentVia = 'whatsapp';
   return <ProjektCheckAnsicht check={daten} />;
+}
+
+// Behälterbreiten der Probe (P4-10b): 18 rem (320 px abzüglich Rand, schmalste Spalte), 28 rem (mittlere Spalte; strenger
+// als 30 rem bei derselben Stufe @md–@lg) und 48 rem (breite Spalte). Container-Größen aus dem Tailwind-Standard.
+const PROBEN = [
+  { kennung: 'Behälter 18 rem', breite: 'w-2xs' },
+  { kennung: 'Behälter 28 rem', breite: 'w-md' },
+  { kennung: 'Behälter 48 rem', breite: 'w-3xl' },
+] as const;
+
+/** Dieselbe Ansicht in drei Behälterbreiten nebeneinander (umbrechend, nie breiter als das Fenster). */
+export function VorschauBreiten({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex flex-wrap items-start gap-k-6">
+      {PROBEN.map((probe) => (
+        <div key={probe.kennung} className={verbinde('flex min-w-0 max-w-full shrink-0 flex-col gap-k-3', probe.breite)}>
+          <p className="k-mono text-k-1 text-k-tinte-2">{probe.kennung}</p>
+          {children}
+        </div>
+      ))}
+    </div>
+  );
 }

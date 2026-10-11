@@ -11,7 +11,9 @@ import { buildChecklist, buildSummaryLines, calculateArea, calculateStairs, fmt,
 import Textlink from '@/components/kern/basis/Textlink';
 import { Fugenkreuz } from '@/components/kern/basis/Zeichen';
 
-const FELD = 'flex min-w-0 flex-col gap-k-3 border-r border-b border-k-fuge bg-k-fliese p-k-4 lg:p-k-5';
+// Spalten und Innenabstand nach der Breite des Konfigurator-Behälters (`@container` an der Ansicht, P4-10b): Begriff und
+// Wert nebeneinander ab 36 rem (längster Begriff „Fußbodenheizung“ 16 px ≈ 131 px im Drittel).
+const FELD = 'flex min-w-0 flex-col gap-k-3 border-r border-b border-k-fuge bg-k-fliese p-k-3 @xs:p-k-4 @2xl:p-k-5';
 const KOPF = 'flex items-center gap-k-2 k-text text-k-3 font-semibold text-k-tinte';
 const TEXT = 'min-w-0 wrap-break-word hyphens-auto';
 
@@ -45,9 +47,9 @@ export default function KonfiguratorErgebnis({ data }: { data: FliesenDaten }) {
         <Kopf>Ihr Projekt in Kürze</Kopf>
         <dl className="m-0 border-l border-t border-k-fuge k-text text-k-2">
           {summary.map(([k, v]) => (
-            <div key={k} className="grid grid-cols-1 gap-x-k-4 gap-y-k-1 border-r border-b border-k-fuge px-k-3 py-k-2 md:grid-cols-3">
+            <div key={k} className="grid grid-cols-1 gap-x-k-4 gap-y-k-1 border-r border-b border-k-fuge px-k-3 py-k-2 @xl:grid-cols-3">
               <dt className={`font-semibold text-k-tinte ${TEXT}`}>{k}</dt>
-              <dd className={`m-0 text-k-tinte-2 md:col-span-2 ${TEXT}`}>{v}</dd>
+              <dd className={`m-0 text-k-tinte-2 @xl:col-span-2 ${TEXT}`}>{v}</dd>
             </div>
           ))}
         </dl>

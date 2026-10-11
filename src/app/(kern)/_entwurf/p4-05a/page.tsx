@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { VorschauRaster, VorschauZustand } from '@/components/kern/formulare/b/Vorschau';
-import { BadanfrageVorschau, ProjektCheckVorschau } from '@/components/kern/formulare/c/Vorschau';
+import { BadanfrageVorschau, ProjektCheckVorschau, VorschauBreiten } from '@/components/kern/formulare/c/Vorschau';
 
 export const metadata: Metadata = {
   title: 'Vorschau P4-05a Badanfrage und Projektcheck',
@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 // Vorschau P4-05a (wird nie freigeschaltet): Badanfrage (F-04) und Bad-Projektcheck (F-05) zuerst in Ruhe (bedienbar),
 // darunter alle Schritte und Zustände. Die Formulare laufen über Vorschau-Hüllen, die nie senden (G5). Kein eigenes
 // IconSprite (steht im Kern-Layout). Nur Klassen aus gescannten Kern-Dateien (`_entwurf` ist von @source ausgenommen).
+// P4-10b: Am Ende dieselben Ansichten in drei Behälterbreiten (18, 28, 48 rem) nebeneinander – Raster, Kacheln und Felder
+// richten sich nach dem Behälter, nicht nach dem Fenster.
 export default function VorschauBadFormulare() {
   return (
     <>
@@ -67,6 +69,27 @@ export default function VorschauBadFormulare() {
         <VorschauZustand kennung="WhatsApp geöffnet">
           <ProjektCheckVorschau zustand="whatsapp" />
         </VorschauZustand>
+      </VorschauRaster>
+
+      <VorschauRaster titel="Behälterbreiten · Badanfrage Schritt 2 (Sanierungsumfang)" breit>
+        <VorschauBreiten>
+          <BadanfrageVorschau schritt={2} />
+        </VorschauBreiten>
+      </VorschauRaster>
+      <VorschauRaster titel="Behälterbreiten · Badanfrage Schritt 4 (Qualität & Ausstattung)" breit>
+        <VorschauBreiten>
+          <BadanfrageVorschau schritt={4} />
+        </VorschauBreiten>
+      </VorschauRaster>
+      <VorschauRaster titel="Behälterbreiten · Badanfrage Schritt 5 (Kontakt)" breit>
+        <VorschauBreiten>
+          <BadanfrageVorschau schritt={5} />
+        </VorschauBreiten>
+      </VorschauRaster>
+      <VorschauRaster titel="Behälterbreiten · Bad-Projektcheck (Kontaktformular offen)" breit>
+        <VorschauBreiten>
+          <ProjektCheckVorschau zustand="formular" />
+        </VorschauBreiten>
       </VorschauRaster>
     </>
   );

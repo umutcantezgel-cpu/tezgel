@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { VorschauRaster, VorschauZustand } from '@/components/kern/formulare/b/Vorschau';
+import { VorschauBreiten } from '@/components/kern/formulare/c/Vorschau';
 import { KonfiguratorVorschau } from '@/components/kern/formulare/d/Vorschau';
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 // Schritte und Zustände. Der Konfigurator läuft über eine Vorschau-Hülle, die nie sendet (G5). Kein eigenes IconSprite
 // (steht im Kern-Layout). Nur Klassen aus gescannten Kern-Dateien (`_entwurf` ist von @source ausgenommen).
 // Die Eingaben-Objekte stehen außerhalb der Seite, damit sie zwischen Renderläufen gleich bleiben.
+// P4-10b: Am Ende dieselben Ansichten in drei Behälterbreiten (18, 28, 48 rem) nebeneinander.
 const TREPPE_MASSE = { stairRises: '14', stairWidth: '100', treadDepth: '30', riserHeight: '18' };
 const FLAECHE_UNGUELTIG = { area: 'abc' };
 const BLOCKSTUFEN = { ...TREPPE_MASSE, stairType: 'blockstufen' };
@@ -74,6 +76,22 @@ export default function VorschauFliesenKonfigurator() {
         <VorschauZustand kennung="WhatsApp geöffnet">
           <KonfiguratorVorschau schritt={4} zustand="whatsapp" vorgaben={{ area: ['kueche', 'flur'], substrate: 'zement', format: 'gross' }} eingaben={GUTFALL} />
         </VorschauZustand>
+      </VorschauRaster>
+
+      <VorschauRaster titel="Behälterbreiten · Schritt 2 (Untergrund)" breit>
+        <VorschauBreiten>
+          <KonfiguratorVorschau schritt={2} vorgaben={{ area: 'kueche', substrate: 'heizestrich', floorHeating: true }} />
+        </VorschauBreiten>
+      </VorschauRaster>
+      <VorschauRaster titel="Behälterbreiten · Schritt 3 (Fläche und Treppe)" breit>
+        <VorschauBreiten>
+          <KonfiguratorVorschau schritt={3} vorgaben={{ area: ['flur', 'treppe'] }} eingaben={GUTFALL_TREPPE} />
+        </VorschauBreiten>
+      </VorschauRaster>
+      <VorschauRaster titel="Behälterbreiten · Schritt 4 (Zusammenfassung & Kontakt)" breit>
+        <VorschauBreiten>
+          <KonfiguratorVorschau schritt={4} vorgaben={{ area: ['kueche', 'flur', 'treppe'], substrate: 'zement', format: 'gross' }} eingaben={GUTFALL_TREPPE} />
+        </VorschauBreiten>
       </VorschauRaster>
     </>
   );
