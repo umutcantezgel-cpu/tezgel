@@ -1,143 +1,123 @@
-"use client";
-import React from 'react';
-import { Award, Star, ArrowRight, Phone, MapPin } from 'lucide-react';
-import Link from 'next/link';
+// Über uns · Erzählansicht (E3-BAU-07, KERN v2): Einstieg mit Achse und H1, „Unser Betrieb“ seitlich (Text, Motto und
+// Kennzahlen als Kennwerte), „Unsere Werte im Handwerk“ als Feldraster mit den drei Wegen darunter. Überschriften,
+// Fließtexte, Links und Lesefolge wie im Bestand. CompanyHistory (Umbau in E3-ORCH-05), QualityPromise und FinalCTA
+// bleiben unverändert eingebunden.
 import { values, COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
 import CompanyHistory from '@/components/sections/CompanyHistory';
 import QualityPromise from '@/components/sections/QualityPromise';
 import FinalCTA from '@/components/ui/FinalCTA';
+import Icon from '@/components/icons/Icon';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Kennwerte from '@/components/kern/Kennwerte';
+import Knopf from '@/components/kern/Knopf';
 
 export default function AboutPage() {
   const { legalName, owner, authority, headquarters, business, contact, motto } = COMPANY_DATA;
   const google = RATING_SUMMARY.google;
 
-  const stats = [
-    { value: String(business.establishmentYear), label: `Betriebsgründung in ${headquarters.city}` },
-    { value: 'HWK', label: `Eingetragener Fachbetrieb (${authority.name})` },
-    { value: 'Bis zu 12', label: 'Fachkräfte im Einsatz vor Ort' },
-    { value: google.displayRating, label: `${google.count} ${google.label}`, stars: true }
+  // Kennzahlen des Bestands in alter Reihenfolge
+  const kennwerte = [
+    { wert: String(business.establishmentYear), etikett: `Betriebsgründung in ${headquarters.city}` },
+    { wert: 'HWK', etikett: `Eingetragener Fachbetrieb (${authority.name})` },
+    { wert: 'Bis zu 12', etikett: 'Fachkräfte im Einsatz vor Ort' },
+    {
+      wert: google.displayRating,
+      etikett: `${google.count} ${google.label}`,
+      quelle: (
+        <span className="flex gap-1 text-tinte" aria-hidden="true">
+          {Array.from({ length: 5 }, (_, i) => (
+            <Icon key={i} name="stern" groesse={4} />
+          ))}
+        </span>
+      ),
+    },
   ];
 
   return (
-    <div className="min-h-screen pt-28 pb-20">
-      {/* Hero */}
-      <div className="ceramic-band py-16 px-4 relative overflow-hidden">
-        <div className="ambient-glow-orange -top-24 -left-24 opacity-70" />
-        <div className="ambient-glow-red -bottom-24 -right-24 opacity-60" />
-        <div className="max-w-5xl mx-auto text-center space-y-4 relative z-10">
-          <span className="eyebrow">
-            <Award className="w-3.5 h-3.5" />
+    <>
+      {/* Einstieg: Kennzeile, H1 auf der Achse, Vorspann */}
+      <Einstieg
+        etikett={
+          <>
             Gegründet {business.establishmentYear} &middot; {authority.shortName}
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight text-neutral-900">
-            Über uns – <span className="text-ceramic-gradient">Fliesenleger-Fachbetrieb Tezgel</span> in {headquarters.city}
-          </h1>
-          <p className="text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed">
+          </>
+        }
+        titel={<>Über uns – Fliesenleger-Fachbetrieb Tezgel in {headquarters.city}</>}
+        vorspann={
+          <p>
             Über uns und {legalName}: Ihr eingetragener Fliesenleger-Fachbetrieb Tezgel in {headquarters.city} für {business.industryType} – mit bis zu 12 qualifizierten Fachkräften, Firmensitz in {headquarters.city} und im Einsatz in Wetzlar, Gießen und ganz Mittelhessen.
           </p>
-        </div>
-      </div>
+        }
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 mb-20 items-center">
-          <div>
-            <span className="eyebrow eyebrow-red mb-4">Unser Betrieb</span>
-            <h2 className="text-3xl font-black text-neutral-900 mb-6 tracking-tight">
-              Handwerkliche Präzision aus {headquarters.city}
-            </h2>
-            <div className="space-y-4 text-sm sm:text-base text-neutral-700 leading-relaxed">
-              <p>
-                Seit der Gründung im Jahr {business.establishmentYear} steht <strong className="text-neutral-900">{legalName}</strong> für handwerkliche Präzision in Mittelhessen – als {authority.certification}.
-              </p>
-              <p>
-                Unter der Führung von Inhaber <strong className="text-neutral-900">{owner.fullName}</strong> und mit unserem Team von bis zu 12 Fachkräften liegt unser Schwerpunkt auf Badsanierungen und barrierefreien Walk-In-Duschen, fugenarmen XXL-Großformaten, Wohnbereichen, Balkonen und Terrassen sowie der normgerechten Verbundabdichtung nach DIN 18534.
-              </p>
-              <p>
-                Von unserem Firmensitz in der {headquarters.street}, {headquarters.postalCode} {headquarters.city} aus betreuen wir Großprojekte ebenso wie private Sanierungsvorhaben – persönlich, transparent und mit verbindlichem Festpreisangebot.
-              </p>
-            </div>
-            <figure className="glass-surface rounded-xl px-5 py-4 mt-6">
-              <blockquote className="text-sm italic text-neutral-800">&bdquo;{motto}&ldquo;</blockquote>
-              <figcaption className="mt-1 text-xs font-bold text-orange-800">— {owner.fullName}, {owner.title}</figcaption>
-            </figure>
-          </div>
-
-          <dl className="grid grid-cols-2 gap-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="glass-surface p-6 rounded-2xl text-center flex flex-col-reverse justify-end gap-1 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-200"
-              >
-                <dt className="text-xs text-neutral-600 font-semibold">{stat.label}</dt>
-                <dd className="font-display text-2xl sm:text-3xl font-black text-neutral-900 tabular-nums">
-                  {stat.value}
-                  {stat.stars && (
-                    <span className="flex items-center justify-center gap-0.5 mt-1 text-amber-500" aria-hidden="true">
-                      {Array.from({ length: 5 }, (_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                      ))}
-                    </span>
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
+      {/* Unser Betrieb: Kopf links, Text, Motto und Kennwerte rechts */}
+      <Abschnitt
+        id="betrieb"
+        flaeche="fliese"
+        kopf="seitlich"
+        etikett="Unser Betrieb"
+        titel={<>Handwerkliche Präzision aus {headquarters.city}</>}
+      >
+        <div className="flex max-w-mass flex-col gap-4 text-fs-3 text-tinte">
+          <p>
+            Seit der Gründung im Jahr {business.establishmentYear} steht <strong className="font-semibold text-tinte">{legalName}</strong> für handwerkliche Präzision in Mittelhessen – als {authority.certification}.
+          </p>
+          <p>
+            Unter der Führung von Inhaber <strong className="font-semibold text-tinte">{owner.fullName}</strong> und mit unserem Team von bis zu 12 Fachkräften liegt unser Schwerpunkt auf Badsanierungen und barrierefreien Walk-In-Duschen, fugenarmen XXL-Großformaten, Wohnbereichen, Balkonen und Terrassen sowie der normgerechten Verbundabdichtung nach DIN 18534.
+          </p>
+          <p>
+            Von unserem Firmensitz in der {headquarters.street}, {headquarters.postalCode} {headquarters.city} aus betreuen wir Großprojekte ebenso wie private Sanierungsvorhaben – persönlich, transparent und mit verbindlichem Festpreisangebot.
+          </p>
         </div>
 
-        {/* Values */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="eyebrow mb-4">Wofür wir stehen</span>
-          <h2 className="text-3xl font-black text-neutral-900 tracking-tight">Unsere Werte im Handwerk</h2>
-        </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {values.map((value) => {
-            const Icon = value.icon;
-            return (
-              <li
-                key={value.title}
-                className="group glass-surface rounded-2xl p-6 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200"
-              >
-                <span className="icon-chip w-11 h-11 mb-4">
-                  <Icon className="w-5 h-5" />
-                </span>
-                <h3 className="text-base font-black text-neutral-900 mb-1 group-hover:text-orange-800 transition-colors">{value.title}</h3>
-                <p className="text-sm text-neutral-700 leading-relaxed">{value.description}</p>
-              </li>
-            );
-          })}
-        </ul>
+        <figure className="mt-12 max-w-mass border-t border-fuge pt-6">
+          <blockquote className="font-anzeige text-fs-4 text-tinte">&bdquo;{motto}&ldquo;</blockquote>
+          <figcaption className="mt-3 font-mono text-fs-1 text-tinte-2">— {owner.fullName}, {owner.title}</figcaption>
+        </figure>
 
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link href="/kontakt" className="btn-primary w-full sm:w-auto">
+        <div className="mt-12">
+          <Kennwerte werte={kennwerte} />
+        </div>
+      </Abschnitt>
+
+      {/* Unsere Werte im Handwerk: Feldraster mit Fugenkreuz, darunter die drei Wege */}
+      <Abschnitt id="werte" etikett="Wofür wir stehen" titel="Unsere Werte im Handwerk">
+        <Feldraster spalten={3}>
+          {values.map((wert) => (
+            <Feld key={wert.title}>
+              <Fugenkreuz className="mb-6 size-3 shrink-0 text-strich" />
+              <h3 className="font-anzeige text-fs-4 text-tinte">{wert.title}</h3>
+              <p className="mt-2 text-fs-2 text-tinte-2">{wert.description}</p>
+            </Feld>
+          ))}
+        </Feldraster>
+
+        <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Knopf href="/kontakt" icon="pfeil-rechts" className="w-full sm:w-auto">
             Vor-Ort-Aufmaß vereinbaren
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
-            <Phone className="w-4 h-4 text-orange-700" />
-            {contact.phone}
-          </a>
-          <a
-            href={headquarters.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-ghost w-full sm:w-auto"
-          >
-            <MapPin className="w-4 h-4 text-orange-700" />
+          </Knopf>
+          <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full sm:w-auto">
+            <span className="font-mono font-normal">{contact.phone}</span>
+          </Knopf>
+          <Knopf href={headquarters.mapsUrl} extern variante="neben" iconLinks="ort" className="w-full sm:w-auto">
             {headquarters.street}, {headquarters.city}
-          </a>
+          </Knopf>
         </div>
-      </div>
+      </Abschnitt>
 
       <CompanyHistory />
       <QualityPromise />
 
-      {/* Final Conversion Anchor */}
+      {/* Abschluss */}
       <FinalCTA
         headline="Lernen Sie uns persönlich kennen: Kostenfreies Vor-Ort-Aufmaß mit Deniz Tezgel."
         subtitle="Über 15 Jahre Praxiserfahrung • Verbindlicher Festpreis • HWK-Fachbetrieb"
         buttonText="Jetzt persönlichen Termin anfragen"
       />
-    </div>
+    </>
   );
 }
