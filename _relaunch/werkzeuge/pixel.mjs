@@ -20,7 +20,24 @@ const ansichten = (arg('ansichten') || 'm375,t768,d1440,d1920').split(',');
 // Globale schwebende Ebenen erscheinen zeitabhängig (Leerlauf-Rückruf) und an Zieh-Positionen → beim Foto ausblenden;
 // sie werden in ihrer eigenen Welle (P4) gesondert geprüft.
 // Zusätzliche Masken (zeitabhängige Inhalte, z. B. Öffnungsstatus) per --maske "<CSS-Selektoren>"; A/A-Lauf zeigt, ob nötig.
-const MASKE = ['#whatsapp-floating-btn, *:has(> #whatsapp-floating-btn)', arg('maske')].filter(Boolean).join(', ') + ' { visibility: hidden !important; }';
+// Berichtigung P4-Tor R2 (E-036): Die frühere Maske `*:has(> #whatsapp-floating-btn)` traf das Elternelement des Knopfs –
+//   im Kern `<body>`, im Bestand ein `div.contents` mit fast der ganzen Seite. Beide Aufnahmen waren dann nahezu leer und
+//   jeder Vergleich „gleich“ (nur Höhenänderungen fielen auf). Der Knopf ist in beiden Fassungen selbst `position: fixed`;
+//   maskiert wird nur er. Selbstprüfungen: Abbruch, wenn ein maskiertes Element mehr als MASKE_MAX Nachfahren hat, und
+//   Abbruch, wenn eine Aufnahme fast einfarbig ist (LEER_ANTEIL).
+const MASKE_SELEKTOR = ['#whatsapp-floating-btn', arg('maske')].filter(Boolean).join(', ');
+const MASKE = MASKE_SELEKTOR + ' { visibility: hidden !important; }';
+const MASKE_MAX = 40;
+const LEER_ANTEIL = 0.98;
+function fastEinfarbig(png) {
+  // Anteil der häufigsten Farbe (auf 4 Bit je Kanal gerundet), Stichprobe jedes 7. Pixel
+  const z = new Map(); let n = 0;
+  for (let i = 0; i < png.data.length; i += 4 * 7) {
+    const k = ((png.data[i] >> 4) << 8) | ((png.data[i + 1] >> 4) << 4) | (png.data[i + 2] >> 4);
+    z.set(k, (z.get(k) || 0) + 1); n++;
+  }
+  return Math.max(...z.values()) / n;
+}
 const ziel = ensureDir(path.join(RELAUNCH, 'cache', 'pixel', satz));
 const browser = await chromium.launch();
 
@@ -34,9 +51,14 @@ async function foto(base, s, a) {
   await bereit(page);
   await durchscrollen(page);
   await bereit(page);
+  const zuViel = await page.evaluate(([sel, max]) => [...document.querySelectorAll(sel)].map((e) => e.querySelectorAll('*').length).filter((n) => n > max), [MASKE_SELEKTOR, MASKE_MAX]);
+  if (zuViel.length) throw new Error(`Maske trifft zu viel (${zuViel.join(', ')} Nachfahren > ${MASKE_MAX}): ${MASKE_SELEKTOR}`);
   const buf = await page.screenshot({ fullPage: true, animations: 'disabled', caret: 'hide', scale: 'css', style: MASKE });
   await context.close();
-  return PNG.sync.read(buf);
+  const png = PNG.sync.read(buf);
+  const anteil = fastEinfarbig(png);
+  if (anteil > LEER_ANTEIL) throw new Error(`Aufnahme fast einfarbig (${(anteil * 100).toFixed(1)} %) – Maske oder Seite prüfen`);
+  return png;
 }
 
 const ergebnis = [];
