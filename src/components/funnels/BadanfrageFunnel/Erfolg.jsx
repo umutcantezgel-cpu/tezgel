@@ -26,7 +26,7 @@ export default function Erfolg({ handleNewRequest, referenceId, formData, calcul
                 Ihre detaillierte Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist erfolgreich bei Fliesenverlegung Tezgel eingegangen.
                 {formData.email && (
                     <span className="mt-3 block border-l-2 border-tinte pl-4 text-fs-2 text-tinte">
-                        ✉️ Eine ausführliche Bestätigung mit allen Angaben wurde an <em>{formData.email}</em> gesendet.
+                        Eine ausführliche Bestätigung mit allen Angaben wurde an <em>{formData.email}</em> gesendet.
                     </span>
                 )}
             </p>

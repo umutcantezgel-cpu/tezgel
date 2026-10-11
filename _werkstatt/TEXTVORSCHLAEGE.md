@@ -51,6 +51,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E3-NACH-01 | `src/components/start/Grossformat.tsx` (Bildfeld, neu) | (Verlegeplan „grossformat“, Beschreibung „Großformat-Platten mit wenigen Fugen, Achse mittig auf der Fuge.“) | zwei Pläne mit Beschriftung „60 × 60 cm“ / „120 × 260 cm“, Beschreibungen „Wand mit Fliesen 60 × 60 cm: dichtes Fugenraster mit Passstücken.“ / „Dieselbe Wand mit Großformat 120 × 260 cm: eine einzige Fuge.“ | Befund 3: kein Motiv doppelt; Formate aus dem Bestand der Seite (Fragen, Rechner) |
 | E3-BAU-11 | `src/components/funnels/FliesenKonfigurator/Schritt1.jsx` (Bad-Hinweis über `kern/Hinweis`) | – | nur für Screenreader „Hinweis: “ vor dem Hinweistext (Baustein ohne Titel) | Zugänglichkeit: Art des Kastens wird vorgelesen; sichtbarer Wortlaut unverändert |
 | E3-BAU-17 | `src/components/funnels/BadanfrageFunnel/Schritt5.jsx` (Sendefehler über `kern/Hinweis art="fehler"`) | – | nur für Screenreader „Fehler: “ vor der Meldung (Baustein ohne Titel) | Zugänglichkeit: Art der Meldung wird vorgelesen (Fehler = Rahmen + Zeichen + Text, K-005); sichtbarer Wortlaut unverändert |
+| E3-BAU-18 / -15 / -19 | Erfolgsansichten von Badanfrage, Konfigurator und Bad-Projekt-Check (Bestätigungszeile, nur mit E-Mail) | „✉️ Eine … Bestätigung …“ | „Eine … Bestätigung …“ (Wortlaut sonst gleich) | Emoji als Schmuck widerspricht dem System (Slop-Katalog); nur der Schmuck entfällt |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |
