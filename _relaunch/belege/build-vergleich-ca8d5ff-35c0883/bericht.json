@@ -1,0 +1,33 @@
+{
+ "vorher": "ca8d5ff",
+ "nachher": "35c0883",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 1,
+ "abweichungen": [
+  {
+   "datei": "index.html",
+   "ab": 302643,
+   "vorher": "4 md:col-span-8 lg:col-span-8 bg-k-tinte text-k-kalk\"><ul class=\"grid grid-cols-2 gap-px bg-k-nacht-fuge md:grid-cols-4\"><li class=\"flex min-w-0 flex-col gap-k-1 bg-k-tinte p-k-4 lg:p-k-5\"><span class",
+   "nachher": "4 md:col-span-8 lg:col-span-8 bg-k-tinte text-k-kalk\"><ul class=\"grid grid-cols-1 gap-px bg-k-nacht-fuge sm:grid-cols-2\"><li class=\"flex min-w-0 flex-col gap-k-1 bg-k-tinte p-k-4 lg:p-k-5\"><span class"
+  }
+ ],
+ "css_selektoren_weg": [],
+ "css_selektoren_neu": [
+  ".gap-y-k-3",
+  ".k-zelle[data-spalte]:before",
+  ".line-through",
+  "[data-motion=sig-plan]"
+ ]
+}

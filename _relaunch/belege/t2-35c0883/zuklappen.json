@@ -1,0 +1,50 @@
+{
+  "base": "http://127.0.0.1:4334",
+  "ergebnis": {
+    "no-preference": {
+      "bereich": "k-kopf-b-mobil_R_8iivb_-bereich-0",
+      "aufklappen": {
+        "zwischenhoehen": 17,
+        "sichtbar_ab_ms": 62,
+        "ende": {
+          "t": 711,
+          "h": 838,
+          "cv": "visible"
+        }
+      },
+      "zuklappen": {
+        "zwischenhoehen": 8,
+        "start_h": 838,
+        "ende": {
+          "t": 709,
+          "h": 0,
+          "cv": "hidden"
+        },
+        "hidden_ab_ms": 209
+      }
+    },
+    "reduce": {
+      "bereich": "k-kopf-b-mobil_R_8iivb_-bereich-0",
+      "aufklappen": {
+        "zwischenhoehen": 0,
+        "sichtbar_ab_ms": 43,
+        "ende": {
+          "t": 710,
+          "h": 838,
+          "cv": "visible"
+        }
+      },
+      "zuklappen": {
+        "zwischenhoehen": 0,
+        "start_h": 838,
+        "ende": {
+          "t": 712,
+          "h": 0,
+          "cv": "hidden"
+        },
+        "hidden_ab_ms": 46
+      }
+    }
+  },
+  "ok": true
+}
