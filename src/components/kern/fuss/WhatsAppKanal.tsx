@@ -72,10 +72,16 @@ export default function WhatsAppKanal() {
           },
           { rootMargin: rand },
         );
+        let beobachtet = 0;
         document.querySelectorAll(FREIHALTEN).forEach((el) => {
-          if (!knopf.contains(el)) beobachter.observe(el);
+          if (!knopf.contains(el)) { beobachter.observe(el); beobachtet++; }
         });
         io = beobachter;
+        pruefeFokus();
+        // Erst der erste Bericht des Beobachters weiß, was unter dem Knopf liegt – vorher nicht freigeben (kein Aufblitzen
+        // über der Hauptaktion beim Laden). Ohne beobachtete Elemente kommt kein Bericht: dann sofort melden.
+        if (beobachtet === 0) melden();
+        return;
       }
       pruefeFokus();
       melden();

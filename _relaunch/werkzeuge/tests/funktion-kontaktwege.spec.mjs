@@ -1,7 +1,7 @@
 // Funktionstests F-10 (WhatsApp-Links und Widget) und F-15 (Telefon/E-Mail).
 // Prüft Ziele (href bzw. geöffnetes Ziel), vorbelegten Text und Versand, nicht Aussehen.
 // Kein Formular: ein Test gegen die echte Route entfällt. Jeder Browserlauf läuft hinter der Sperre (G5).
-import { test, expect } from './fixtures.mjs';
+import { test, expect, bedienbar } from './fixtures.mjs';
 
 const WA_NUMMER = '491726728504';
 const TEL_FESTNETZ = '4964414483567';
@@ -45,6 +45,31 @@ async function waAufrufen(page, ausloeser) {
   }
 }
 
+// Der WhatsApp-Knopf der Seite in dieser Fassung (E-012, P3-07). Der Weg ist der, den ein Besucher hier sieht:
+// der Kanal `#whatsapp-floating-btn` (Kern am Desktop, Bestand überall), sonst die untere Leiste (Kern mobil).
+// Der Kern-Kanal weicht Formularen, der Hauptaktion und der Abschlusszeile aus (P3-07): am Desktop
+// ist er je nach Scrollstand unsichtbar. Deshalb wird Stelle für Stelle durch die Seite gescrollt, bis er sichtbar
+// ist. Namen wörtlich aus dem Bau (Kanal und Leiste).
+const KANAL_NAME = 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden';
+const LEISTE_NAME = 'WhatsApp-Chat starten';
+const SCROLL_ANTEILE = [0.5, 0.25, 0.75, 0.125, 0.375, 0.625, 0.875, 1, 0];
+async function wegWhatsApp(page) {
+  const kanal = page.locator('#whatsapp-floating-btn');
+  const leiste = page
+    .getByRole('complementary', { name: 'Schnellkontakt Daumenleiste' })
+    .getByRole('link', { name: LEISTE_NAME, exact: true });
+  await bedienbar(kanal);
+  for (const anteil of SCROLL_ANTEILE) {
+    await page.evaluate((a) => window.scrollTo(0, (document.documentElement.scrollHeight - window.innerHeight) * a), anteil);
+    if (await kanal.waitFor({ state: 'visible', timeout: 1000 }).then(() => true, () => false)) return { knopf: kanal, name: KANAL_NAME };
+    if (await leiste.isVisible()) {
+      await bedienbar(leiste);
+      return { knopf: leiste, name: LEISTE_NAME };
+    }
+  }
+  throw new Error('Kein sichtbarer WhatsApp-Weg auf dieser Seite: weder Kanal noch Leiste erreichbar');
+}
+
 // Seite → erwartetes Textmuster des vorbelegten Widget-Textes (kontextuell nach Pfad).
 const WIDGET_SEITEN = [
   ['/', /Fliesen/],
@@ -56,7 +81,8 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
   for (const [pfad, textMuster] of WIDGET_SEITEN) {
     test(`Widget ${pfad}: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage`, async ({ page, anfragen }) => {
       await page.goto(pfad);
-      const ziele = await waAufrufen(page, () => page.locator('#whatsapp-floating-btn').click());
+      const { knopf } = await wegWhatsApp(page);
+      const ziele = await waAufrufen(page, () => knopf.click());
       const z = waZiel(ziele[0]);
       expect(z.passt, z.url).toBe(true);
       expect(z.nummer).toBe(WA_NUMMER);
@@ -67,9 +93,9 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
 
   test('Widget: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)', async ({ page }) => {
     await page.goto('/');
-    const knopf = page.locator('#whatsapp-floating-btn');
+    const { knopf, name } = await wegWhatsApp(page);
     await expect(knopf).toBeVisible();
-    await expect(knopf).toHaveAttribute('aria-label', 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden');
+    await expect(knopf).toHaveAttribute('aria-label', name);
     // Das Abzeichen saß im Knopf selbst (Ausgangsstand: ein Element mit Text „1“); Schrittnummern der Seite zählen nicht.
     await expect(knopf.getByText('1', { exact: true })).toHaveCount(0);
   });
@@ -77,7 +103,8 @@ test.describe('F-10 WhatsApp-Links und Widget', () => {
   test('Widget: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)', async ({ page }) => {
     test.skip(test.info().project.name !== 'desktop', 'Am Desktop über window.open synchron prüfbar; mobil ist es eine Navigation');
     await page.goto('/');
-    await page.locator('#whatsapp-floating-btn').dblclick();
+    const { knopf } = await wegWhatsApp(page);
+    await knopf.dblclick();
     expect(await oeffnungen(page)).toBe(1);
   });
 
