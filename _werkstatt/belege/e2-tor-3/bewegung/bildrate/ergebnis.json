@@ -1,0 +1,106 @@
+{
+ "modus": "bildrate",
+ "seite": "/",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-11T19:42:37.277Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 4036,
+ "verworfen": 4,
+ "anteil_verworfen_prozent": 0.1,
+ "loaf_anzahl": 3,
+ "loaf_summe_ms": 172,
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 4036,
+   "verworfen": 4,
+   "anteil_verworfen_prozent": 0.1,
+   "loaf_anzahl": 24,
+   "loaf_summe_ms": 7591,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4032,
+     "verworfen": 4
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4095,
+     "verworfen": 4
+    }
+   },
+   "scroll": {
+    "hoehe": 26873,
+    "nach_abwaerts": 26873,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 106.6
+  },
+  {
+   "bilder_gesamt": 4036,
+   "verworfen": 3,
+   "anteil_verworfen_prozent": 0.07,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4033,
+     "verworfen": 3
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4057,
+     "verworfen": 4
+    }
+   },
+   "scroll": {
+    "hoehe": 26873,
+    "nach_abwaerts": 26873,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 98
+  },
+  {
+   "bilder_gesamt": 4035,
+   "verworfen": 5,
+   "anteil_verworfen_prozent": 0.12,
+   "loaf_anzahl": 3,
+   "loaf_summe_ms": 172,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4030,
+     "verworfen": 5
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4054,
+     "verworfen": 6
+    }
+   },
+   "scroll": {
+    "hoehe": 26873,
+    "nach_abwaerts": 26873,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 94
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor-3/bewegung/bildrate"
+}

@@ -1,0 +1,62 @@
+a...a...
+/
+  mobil: perf 76 [76–77] · LCP 4112 ms [3494–4260] · TBT 415 ms [373–593] · CLS 0 [0–0] · LCP-Element div.max-w-7xl > div.grid > div.lg:col-span-7 > p.text-base
+  desktop: perf 100 [99–100] · LCP 815 ms [796–827] · TBT 34 ms [14–47] · CLS 0 [0–0] · LCP-Element div.max-w-7xl > div.grid > div.lg:col-span-7 > h1.text-4xl
+/: mobil 76 (LCP 4112 ms, TBT 415, CLS 0) · desktop 100
+aw...a...
+/bad
+  mobil: perf 84 [83–85] · LCP 3648 ms [3359–3923] · TBT 259 ms [240–354] · CLS 0 [0–0] · LCP-Element div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm
+  desktop: perf 100 [100–100] · LCP 777 ms [769–777] · TBT 27 ms [12–32] · CLS 0 [0–0] · LCP-Element div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm
+/bad: mobil 84 (LCP 3648 ms, TBT 259, CLS 0) · desktop 100
+a...a.w..
+/leistungen
+  mobil: perf 85 [84–86] · LCP 3670 ms [3651–3683] · TBT 252 ms [223–267] · CLS 0 [0–0] · LCP-Element div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm
+  desktop: perf 100 [99–100] · LCP 760 ms [649–780] · TBT 22 ms [11–86] · CLS 0 [0–0] · LCP-Element div.pt-36 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl
+/leistungen: mobil 85 (LCP 3670 ms, TBT 252, CLS 0) · desktop 100
+aw...a...
+/leistungen/bad
+  mobil: perf 85 [84–87] · LCP 3665 ms [3657–3709] · TBT 259 ms [169–274] · CLS 0 [0–0] · LCP-Element div.ceramic-hero > div.flex > div.flex-1 > p.text-sm
+  desktop: perf 100 [100–100] · LCP 758 ms [749–767] · TBT 14 ms [14–17] · CLS 0 [0–0] · LCP-Element div.ceramic-hero > div.flex > div.flex-1 > h1.text-3xl
+/leistungen/bad: mobil 85 (LCP 3665 ms, TBT 259, CLS 0) · desktop 100
+a...a...
+/standorte
+  mobil: perf 57 [48–64] · LCP 3833 ms [3794–3870] · TBT 427 ms [198–774] · CLS 0.516 [0.516–0.516] · LCP-Element div.min-h-screen > section.ceramic-band > div.max-w-5xl > p.text-lg
+  desktop: perf 83 [83–100] · LCP 779 ms [757–823] · TBT 20 ms [20–25] · CLS 0.338 [0–0.338] · LCP-Element div.min-h-screen > section.ceramic-band > div.max-w-5xl > h1.text-4xl
+/standorte: mobil 57 (LCP 3833 ms, TBT 427, CLS 0.516) · desktop 83
+aw...a.w..
+/standorte/wetzlar
+  mobil: perf 76 [74–76] · LCP 4985 ms [4859–5020] · TBT 305 ms [289–331] · CLS 0 [0–0] · LCP-Element div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description
+  desktop: perf 100 [100–100] · LCP 715 ms [700–770] · TBT 17 ms [14–22] · CLS 0 [0–0] · LCP-Element div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl
+/standorte/wetzlar: mobil 76 (LCP 4985 ms, TBT 305, CLS 0) · desktop 100
+a...aww...
+/fliesen
+  mobil: perf 82 [81–88] · LCP 3785 ms [3335–4181] · TBT 267 ms [215–315] · CLS 0 [0–0] · LCP-Element div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm
+  desktop: perf 100 [100–100] · LCP 795 ms [782–806] · TBT 19 ms [16–43] · CLS 0 [0–0] · LCP-Element div.pt-32 > section.max-w-7xl > div.ceramic-hero > h1#fliesen-hub-heading
+/fliesen: mobil 82 (LCP 3785 ms, TBT 267, CLS 0) · desktop 100
+a...a...
+/ueber-uns
+  mobil: perf 86 [83–87] · LCP 3639 ms [3633–3918] · TBT 236 ms [207–258] · CLS 0 [0–0] · LCP-Element div.min-h-screen > div.ceramic-band > div.max-w-5xl > p.text-base
+  desktop: perf 100 [100–100] · LCP 743 ms [738–764] · TBT 13 ms [12–28] · CLS 0 [0–0] · LCP-Element div.min-h-screen > div.ceramic-band > div.max-w-5xl > h1.text-4xl
+/ueber-uns: mobil 86 (LCP 3639 ms, TBT 236, CLS 0) · desktop 100
+a.w..a..ww.
+/kontakt
+  mobil: perf 75 [75–76] · LCP 4849 ms [4836–4871] · TBT 326 ms [305–337] · CLS 0 [0–0] · LCP-Element div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description
+  desktop: perf 96 [96–96] · LCP 1408 ms [1395–1436] · TBT 18 ms [13–25] · CLS 0 [0–0] · LCP-Element div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description · Benchmark außerhalb des Bands
+/kontakt: mobil 75 (LCP 4849 ms, TBT 326, CLS 0) · desktop 96
+a...a...
+/fliesen/konfigurator
+  mobil: perf 74 [72–77] · LCP 5371 ms [5207–5429] · TBT 291 ms [216–367] · CLS 0 [0–0] · LCP-Element div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description
+  desktop: perf 100 [100–100] · LCP 716 ms [676–765] · TBT 18 ms [9–27] · CLS 0 [0–0] · LCP-Element div.pt-32 > div.max-w-7xl > section.ceramic-hero > h1.text-3xl
+/fliesen/konfigurator: mobil 74 (LCP 5371 ms, TBT 291, CLS 0) · desktop 100
+aw.w.w.a...
+/blog
+  mobil: perf 66 [65–68] · LCP 6608 ms [6553–6635] · TBT 437 ms [392–470] · CLS 0 [0–0] · LCP-Element div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description
+  desktop: perf 100 [100–100] · LCP 720 ms [704–745] · TBT 11 ms [7–14] · CLS 0 [0–0] · LCP-Element a.glass-bezel-inner > div.grid > div.relative > img.object-cover
+/blog: mobil 66 (LCP 6608 ms, TBT 437, CLS 0) · desktop 100
+a...a...
+/blog/rutschfeste-fliesen-r-klassen
+  mobil: perf 65 [65–68] · LCP 6435 ms [6326–6505] · TBT 475 ms [378–492] · CLS 0 [0–0] · LCP-Element div.p-5 > div.flex > div.flex-1 > p#cookie-consent-description
+  desktop: perf 100 [100–100] · LCP 787 ms [753–789] · TBT 17 ms [16–27] · CLS 0 [0–0] · LCP-Element div.pt-32 > div.max-w-7xl > div.ceramic-hero > h1.text-3xl
+/blog/rutschfeste-fliesen-r-klassen: mobil 65 (LCP 6435 ms, TBT 475, CLS 0) · desktop 100
+
+Ergebnis: /home/user/tezgel/_werkstatt/belege/e0/lighthouse.json · Benchmark-Referenz 1351.5

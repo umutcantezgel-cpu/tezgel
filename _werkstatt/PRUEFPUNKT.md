@@ -1,5 +1,17 @@
 # PRUEFPUNKT
 
+- Etappe: E3 · Stand 11.10.2026 22:50 CEST · Branch = 5324b62 + Werkstatt-Dokumente; main = 6156079 (live). Push nur auf den Arbeitsbranch (G2/G3 gelten wieder; main nur auf neue ausdrückliche Anweisung).
+- E2-Tor abgeschlossen nach Anlauf 2 (E-021): Sichtabnahme `/` 6,7 · 6,2, `/kontakt` 5,7 · 5,8; Lighthouse `belege/e2-tor-3/LIGHTHOUSE.md`. Befunde → PLAN „Offene Punkte“: E3-NACH-01…07, E3-PRUEF-W1.
+- Jetzt E3 Welle 1:
+  1. Server: 4310 = Reinraum 5324b62 (Produktion, Stand des letzten src-Commits), 4320 = Dev (Arbeitsbaum). 4312 frei.
+  2. Baumeister (ARBEITSMODELL, 4 Plätze): E3-BAU-11, -16, -02, -07 aus `scratchpad/orch/spez/e3/` (Briefing mit `briefing.mjs`, nie umleiten). Danach Welle 2: -12, -17, -03, -21 → -13, -18, -09, -10 → -14, -19, -15, -20; E3-NACH-03/-05 und E3-PRUEF-W1 in freie Plätze.
+  3. Orchestrator-Spur parallel (keine Dateiüberschneidung): E3-NACH-07 (Tempo /), -01 (Komposition /), -02 (Bewegung /), -04 (/kontakt).
+  4. Je Welle Reinraum (Prüfer), Prüfstufe A, Commit und Push auf den Arbeitsbranch.
+- Offene Menschen-Fragen: M-15 bis M-22.
+- Bei Wiederaufnahme nach Abbruch: laufende Pakete in ihren Dateien auf den letzten Commit zurücksetzen und neu starten; Server nach `_werkstatt/werkzeuge/EINRICHTUNG.md`.
+
+## Vorheriger Stand (überholt)
+
 - Etappe: E2 · Zusammenführung mit main (E-020) · Stand 11.10.2026 ~14:30 CEST
 - Arbeitsbranch `claude/amazing-mendel-b0g40w` = zusammengeführter Stand (Werkstatt + Relaunch main bis ecdc508 + Fusion der Startseite). Push auf `main` am 11.10. auf ausdrückliche Anweisung: main = Branch = 6156079 (Fast-Forward), Vercel success, live geprüft. Probe-Worktree entfernt; Prüfserver gestoppt (für weitere Arbeit nach EINRICHTUNG.md neu starten).
 - Gesamtprüfung auf cf91c38 (Belege im Scratchpad `vergleich/`): Reinraum grün; Funktionstests 289 bestanden, 1 Ausreißer (Mega-Menü Tastatur, einzeln bestanden); Sitemap 163 × 200; axe / und /kontakt 0; Register ohne Lücke; Unterseiten-Stichprobe ohne Bruch (Altbefunde auf din-18534/Blog unverändert); Fremdsuite 337/45 (erwartet: sie prüft die Kern-Startseite, M-21); Fusionsgutachten Desktop 6,5 (A 6, B 5,5), Handy 7 (A 6, B 5,5).
