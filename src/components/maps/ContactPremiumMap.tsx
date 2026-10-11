@@ -80,7 +80,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
   return (
     <div className={clsx("flex w-full flex-col border border-fuge bg-fliese lg:flex-row", className)}>
       {/* Links: Standort, Suche, Stadtliste, Kurzprofil des gewählten Ortes */}
-      <div className="flex w-full shrink-0 flex-col justify-between gap-6 border-b border-fuge bg-kalk p-4 sm:p-6 lg:w-1/3 lg:border-b-0 lg:border-r">
+      <div className="flex w-full shrink-0 flex-col justify-between gap-6 border-b border-fuge bg-kalk p-4 sm:p-6 lg:w-2/5 lg:border-b-0 lg:border-r">
         <div className="flex flex-col gap-4">
           <p className={etikettKlassen}>
             <Icon name="ort" groesse={4} />
@@ -130,7 +130,7 @@ export default function ContactPremiumMap({ className = "" }: { className?: stri
                     type="button"
                     aria-pressed={isSelected}
                     onClick={() => handleSelectCity(city.slug)}
-                    className="flex h-11 w-full items-center justify-between gap-3 px-4 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
+                    className="flex h-11 w-full items-center justify-between gap-3 px-3 text-left font-text text-fs-2 text-tinte hover:bg-kalk aria-pressed:bg-tinte aria-pressed:text-kalk"
                   >
                     <span className="flex min-w-0 items-center gap-2">
                       <Icon name="ort" groesse={4} />
