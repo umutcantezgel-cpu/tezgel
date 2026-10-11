@@ -54,6 +54,7 @@ Stand 10.10.2026 · P3-00j · Kriterium Z-07 (S-13) · Fundstellen aus `belege/p
 | `src/styles/index.css:83` (Kommentar) | `/* Premium typography defaults */` | entfällt: Datei nicht mehr im Arbeitsbaum (nur im Ausgangsstand 707a93d) | „Premium“ (S-13). Kommentar, ohne Seitenwirkung. |
 | `src/app/(bestand)/page.tsx:576–578` (Kern: `src/components/kern/start/Grossformat.tsx`) | Bad mit freistehender Wanne / Millimetergenauer Gehrungsschnitt &amp; C2TE S1 Flexkleber | Bildunterschrift streichen oder durch eine belegte Angabe zu einem echten Tezgel-Projekt ersetzen (Foto vom Auftraggeber) | Bildunterschrift nennt Ausführungsdetails unter einem generierten Bild (K-008: Bildunterschrift nur mit belegten Angaben). Nur Vorschlag (P3-11). |
 | `src/app/(bestand)/page.tsx:533` | Großformatige Platten verlangen höchste Präzision: … | Großformatige Platten verlangen Präzision: … | Superlativ „höchste“ (K-012). Absatz, nur Vorschlag (P3-11). |
+| `src/app/(bestand)/bad/page.jsx` (Kern: Entwurf `_entwurf/bad`, P4-08a) | – (kein Abschnitt zu Ablauf und Förderung auf `/bad`) | Neuer Abschnitt „Ablauf und Förderung“: die sechs Schritte aus `processSteps` (Wortlaut wie auf `/` bzw. `/bad/badsanierung`) und ein Verweis auf `/foerderung` mit vorhandener Überschrift | Probeläufer-Aufgabe 5 („Ablauf, Förderung und Planung verstehen“) braucht von `/bad` aus heute 4 Schritte (Ziel ≤ 3). Neuer Text auf der Seite → nur mit Freigabe (TEXTE-Regel). Bis dahin: Weg über die Leistungsliste. |
 
 ## Offene Fragen zu den Vorschlägen
 
