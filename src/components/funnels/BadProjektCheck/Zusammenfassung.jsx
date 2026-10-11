@@ -28,9 +28,9 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         ['Ausstattung', tierLabel],
                         ['Wünsche', extras.join(', ') || 'Keine Extras gewählt']
                     ].map(([term, value]) => (
-                        <div key={term} className="flex justify-between gap-3 py-2">
+                        <div key={term} className="flex flex-col gap-1 py-2 sm:flex-row sm:justify-between sm:gap-3">
                             <dt className="shrink-0 text-tinte-2">{term}</dt>
-                            <dd className="break-words text-right font-semibold text-tinte">{value}</dd>
+                            <dd className="break-words font-semibold text-tinte sm:text-right">{value}</dd>
                         </div>
                     ))}
                 </dl>
@@ -130,9 +130,12 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         )}
 
                         <div>
-                            <label htmlFor="budget-lead-name" className={labelKlassen}>
-                                Ihr Name <span aria-hidden="true" className={pflichtKlassen}>*</span>
-                            </label>
+                            <div className="flex items-baseline">
+                                <label htmlFor="budget-lead-name" className={labelKlassen}>
+                                    Ihr Name
+                                </label>
+                                <span aria-hidden="true" className={pflichtKlassen}>*</span>
+                            </div>
                             <input
                                 id="budget-lead-name"
                                 type="text"
@@ -145,9 +148,12 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             />
                         </div>
                         <div>
-                            <label htmlFor="budget-lead-phone" className={labelKlassen}>
-                                Ihre Telefonnummer <span aria-hidden="true" className={pflichtKlassen}>*</span>
-                            </label>
+                            <div className="flex items-baseline">
+                                <label htmlFor="budget-lead-phone" className={labelKlassen}>
+                                    Ihre Telefonnummer
+                                </label>
+                                <span aria-hidden="true" className={pflichtKlassen}>*</span>
+                            </div>
                             <input
                                 id="budget-lead-phone"
                                 type="tel"
