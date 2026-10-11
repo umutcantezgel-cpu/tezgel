@@ -1,9 +1,28 @@
 // Funktionstests F-13 (Navigation), F-14 (FAQ), F-16 (Blog-Werkzeuge), F-17 (404), F-18 (Login), F-19 (Bewertungs-Karussell).
 // Prüft Verhalten (Zustand, Ziel, Status, Fehlermeldung, Fokus), nicht Aussehen. Keine Wartezeiten, nur Zustandsabfragen.
 // Kein Test gegen die echte Route nötig: keines dieser Elemente sendet an /api/anfrage (Login wird clientseitig abgewiesen).
-import { test, expect, bedienbar } from './fixtures.mjs';
+import { test, expect, bedienbar, KERN_SEITEN, istKern } from './fixtures.mjs';
 
 const ARTIKEL = '/blog/fliesen-reinigen-pflegen';
+
+// Fassung je Seite (P3-14e, M-4): Welche Seiten des Ziels Kern sind, steht in dieser Liste – nie im DOM oder Laufzeitverhalten.
+// Jede Kopf-Funktion in beiden Fassungen: „/“ (Kern im Kandidaten) und eine Bestandsseite (H-1).
+const KOPF_SEITEN = ['/', '/leistungen'];
+// Kern-Kopf B: Menü-Schalter unter xl (1280 px), Hauptnavigation ab xl. Breite knapp unter xl für den Drawer am Desktop.
+const UNTER_XL = { width: 1279, height: 900 };
+
+// Schließen vor dem Seitenwechsel festhalten (N-4): Führt der Link in eine andere Fassung (Kern → Bestand), lädt das Ziel
+// neu und das Menü ist dort trivial zu. Beim Verlassen der Seite wird darum die Zahl offener Popover (Kern-Menü, -Blatt)
+// gemerkt; ohne Neuladen (Bestand → Bestand) bleibt der Eintrag leer und der Kopf derselbe.
+const OFFEN_BEIM_VERLASSEN = '__relaunchOffeneMenues';
+async function merkeMenueBeimVerlassen(page) {
+  await page.addInitScript((schluessel) => {
+    addEventListener('pagehide', () => {
+      try { sessionStorage.setItem(schluessel, String(document.querySelectorAll(':popover-open').length)); } catch {}
+    });
+  }, OFFEN_BEIM_VERLASSEN);
+}
+const offenBeimVerlassen = (page) => page.evaluate((s) => sessionStorage.getItem(s), OFFEN_BEIM_VERLASSEN);
 
 // Hauptnavigation des Desktops (exakt benannt – die Mobilnavigation heißt „Hauptnavigation Kategorien“).
 const hauptnav = (page) => page.getByRole('navigation', { name: 'Hauptnavigation', exact: true });
@@ -19,16 +38,17 @@ async function oeffneMenue(page) {
     await expect(schalter).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
   }).toPass({ timeout: 15_000 });
 }
-// Akkordeon-Frage auf `/`: Bestand = Knopf mit aria-expanded, Kern = <summary> im <details> (kein Knopf, kein aria-expanded).
-const akkordeonKnopf = (page, frage) => page.getByRole('button', { name: frage }).or(page.locator('summary').filter({ hasText: frage }));
+// Akkordeon-Frage, Weg nach Fassung: Bestand = Knopf mit aria-expanded, Kern = <summary> im <details> (kein Knopf, kein aria-expanded).
+const akkordeonKnopf = (page, pfad, frage) =>
+  istKern(pfad) ? page.locator('summary').filter({ hasText: frage }) : page.getByRole('button', { name: frage });
 // Antwortbereich: Bestand = region mit der Frage als Name, Kern = Inhaltsfeld direkt unter dem <details>.
-const akkordeonAntwort = (page, frage) =>
-  page.getByRole('region', { name: frage }).or(page.locator('details').filter({ has: page.locator('summary', { hasText: frage }) }).locator('xpath=./div'));
+const akkordeonAntwort = (page, pfad, frage) =>
+  istKern(pfad)
+    ? page.locator('details').filter({ has: page.locator('summary', { hasText: frage }) }).locator('xpath=./div')
+    : page.getByRole('region', { name: frage });
 // Aufgeklappt: aria-expanded (Bestand) bzw. open des <details> (Kern) – dieselbe Aussage.
-const istOffen = (knopf) => knopf.evaluate((el) => {
-  const d = el.closest('details');
-  return d ? d.open : el.getAttribute('aria-expanded') === 'true';
-});
+const istOffen = (pfad, knopf) =>
+  knopf.evaluate((el, kern) => (kern ? el.closest('details').open : el.getAttribute('aria-expanded') === 'true'), istKern(pfad));
 // Sichtbare Höhe der Antwort: 0, solange sie nicht angezeigt wird. Zugeklappt rendert das Kern-<details> den Inhalt
 // nicht, seine Box bleibt aber messbar; checkVisibility() unterscheidet beides. Bestand: unverändert die Box-Höhe.
 const sichtbareHoehe = (bereich) => bereich.evaluate((el) => (el.checkVisibility() ? el.getBoundingClientRect().height : 0));
@@ -36,120 +56,132 @@ const sichtbareHoehe = (bereich) => bereich.evaluate((el) => (el.checkVisibility
 test.describe('Mega-Menü (Desktop, ab lg)', () => {
   test.skip(({ isMobile }) => isMobile, 'Mega-Menü ist mobil ausgeblendet (hidden lg:flex)');
 
-  test('Hover öffnet das Untermenü, Escape schließt es', async ({ page }) => {
-    await page.goto('/');
-    const nav = hauptnav(page);
-    const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
-    const punkt = nav.getByRole('link', { name: /^Badsanierung komplett/ });
-    // Blockierfall: ohne Auslöser bleibt das Menü zu.
-    await expect(schalter).toHaveAttribute('aria-expanded', 'false');
-    await expect(punkt).toHaveCount(0);
-    await nav.getByRole('link', { name: 'Badsanierung', exact: true }).hover();
-    await expect(schalter).toHaveAttribute('aria-expanded', 'true');
-    await expect(punkt).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(schalter).toHaveAttribute('aria-expanded', 'false');
-    await expect(punkt).toHaveCount(0);
-  });
-
-  test('Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter', async ({ page }) => {
-    await page.goto('/');
-    const nav = hauptnav(page);
-    const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
-    await schalter.focus();
-    await page.keyboard.press('Enter');
-    await expect(schalter).toHaveAttribute('aria-expanded', 'true');
-    await expect(nav.getByRole('link', { name: /^Badsanierung komplett/ })).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(schalter).toHaveAttribute('aria-expanded', 'false');
-    await expect(schalter).toBeFocused();
-  });
-
-  test('Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü', async ({ page }) => {
-    await page.goto('/');
-    const nav = hauptnav(page);
-    await (await bedienbar(nav.getByRole('link', { name: 'Badsanierung', exact: true }))).hover();
-    await nav.getByRole('link', { name: /^Badsanierung komplett/ }).click();
-    await expect(page).toHaveURL(/\/bad\/badsanierung$/);
-    await expect(nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ })).toHaveAttribute('aria-expanded', 'false');
-  });
-});
-
-test.describe('Mobilmenü (Drawer)', () => {
-  // Der Desktop (1440 px) zeigt im Kern die Hauptnavigation (Kopf B: ab xl), der Menü-Schalter fehlt dort.
-  // Je Projekt ein eigener Weg zur selben Aussage; beide Wege laufen in jedem Projekt.
-  test('mobil: Desktop-Navigation ist ausgeblendet, der Drawer ist der Zugang; am Desktop ist sie sichtbar', async ({ page, isMobile }) => {
-    await page.goto('/');
-    if (isMobile) {
-      await expect(hauptnav(page)).toBeHidden();
-      await expect(menueSchalter(page)).toBeVisible();
-    } else {
-      await expect(hauptnav(page)).toBeVisible();
-    }
-  });
-
-  test('Schalter öffnet das Menü, Escape schließt es (Drawer; am Desktop das Untermenü)', async ({ page, isMobile }) => {
-    await page.goto('/');
-    if (!isMobile) {
-      const schalter = hauptnav(page).getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
+  for (const pfad of KOPF_SEITEN) {
+    test(`${pfad}: Hover öffnet das Untermenü, Escape schließt es`, async ({ page }) => {
+      await page.goto(pfad);
+      const nav = hauptnav(page);
+      const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
+      const punkt = nav.getByRole('link', { name: /^Badsanierung komplett/ });
+      // Blockierfall: ohne Auslöser bleibt das Menü zu.
       await expect(schalter).toHaveAttribute('aria-expanded', 'false');
+      await expect(punkt).toHaveCount(0);
+      await nav.getByRole('link', { name: 'Badsanierung', exact: true }).hover();
+      await expect(schalter).toHaveAttribute('aria-expanded', 'true');
+      await expect(punkt).toBeVisible();
+      await page.keyboard.press('Escape');
+      await expect(schalter).toHaveAttribute('aria-expanded', 'false');
+      await expect(punkt).toHaveCount(0);
+    });
+
+    test(`${pfad}: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter`, async ({ page }) => {
+      await page.goto(pfad);
+      const nav = hauptnav(page);
+      const schalter = nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ });
       await schalter.focus();
       await page.keyboard.press('Enter');
       await expect(schalter).toHaveAttribute('aria-expanded', 'true');
+      await expect(nav.getByRole('link', { name: /^Badsanierung komplett/ })).toBeVisible();
       await page.keyboard.press('Escape');
       await expect(schalter).toHaveAttribute('aria-expanded', 'false');
       await expect(schalter).toBeFocused();
-      return;
-    }
-    const schalter = menueSchalter(page);
-    await expect(schalter).toHaveAttribute('aria-expanded', 'false');
-    await expect(drawer(page)).toHaveCount(0);
-    await oeffneMenue(page);
-    await expect(drawer(page)).toBeVisible();
-    await page.keyboard.press('Escape');
-    await expect(schalter).toHaveAttribute('aria-expanded', 'false');
-    await expect(drawer(page)).toHaveCount(0);
-  });
+    });
 
-  test('Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt (am Desktop über das Untermenü)', async ({ page, isMobile }) => {
-    await page.goto('/');
-    if (!isMobile) {
+    // N-4: „schließt“ wird vor dem Seitenwechsel geprüft (Kern → Bestand lädt neu) bzw. am selben Kopf (Bestand → Bestand).
+    test(`${pfad}: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü`, async ({ page }) => {
+      await merkeMenueBeimVerlassen(page);
+      await page.goto(pfad);
       const nav = hauptnav(page);
       await (await bedienbar(nav.getByRole('link', { name: 'Badsanierung', exact: true }))).hover();
+      await expect(nav.getByRole('link', { name: /^Badsanierung komplett/ })).toBeVisible();
       await nav.getByRole('link', { name: /^Badsanierung komplett/ }).click();
       await expect(page).toHaveURL(/\/bad\/badsanierung$/);
+      if (istKern(pfad)) await expect.poll(() => offenBeimVerlassen(page)).toBe('0');
+      else expect(await offenBeimVerlassen(page)).toBeNull();
       await expect(nav.getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ })).toHaveAttribute('aria-expanded', 'false');
-      return;
-    }
-    await oeffneMenue(page);
-    const dialog = drawer(page);
-    await expect(dialog).toBeVisible();
-    // Zustand statt Wartezeit: Einblend-Übergang des Drawers abschließen lassen, dann aufklappen
-    await dialog.evaluate((el) => Promise.all(el.getAnimations({ subtree: true }).map((a) => a.finished.catch(() => null))));
-    const kategorie = dialog.getByRole('button', { name: /^Badsanierung/ });
-    // Der Drawer wird beim ersten Öffnen nachgeladen und kann einmal neu einhängen (Zustand zurückgesetzt).
-    // Verhalten „Kategorie lässt sich aufklappen“ prüfen: Klick wiederholen, bis aufgeklappt (max. 10 s).
-    await expect(async () => {
-      if ((await kategorie.getAttribute('aria-expanded')) !== 'true') await kategorie.click();
-      await expect(kategorie).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
-    }).toPass({ timeout: 10_000 });
-    await dialog.getByRole('link', { name: /^Badsanierung komplett/ }).click();
-    await expect(page).toHaveURL(/\/bad\/badsanierung$/);
-    await expect(drawer(page)).toHaveCount(0);
-  });
+    });
+  }
+});
+
+// Drawer in beiden Fassungen (H-1): „/“ (Kern) und „/leistungen“ (Bestand), mobil und am Desktop.
+// Am Desktop (1440 px) fehlt der Kern-Schalter ab xl, die Hauptnavigation ist der Zugang. Der Kern-Drawer selbst wird dort
+// knapp unter xl (1279 px) mit Maus und Tastatur geprüft; der Bestand zeigt den Schalter auch bei 1440 px.
+// Weg nach Fassung und Projekt: Kern am Desktop → Breite unter xl, sonst unverändert.
+async function zumDrawer(page, pfad, isMobile) {
+  if (istKern(pfad) && !isMobile) {
+    await expect(menueSchalter(page)).toBeHidden();
+    await page.setViewportSize(UNTER_XL);
+    await expect(hauptnav(page)).toBeHidden();
+  }
+  await expect(menueSchalter(page)).toBeVisible();
+}
+
+test.describe('Mobilmenü (Drawer)', () => {
+  for (const pfad of KOPF_SEITEN) {
+    test(`${pfad}: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)`, async ({ page, isMobile }) => {
+      await page.goto(pfad);
+      if (isMobile) {
+        await expect(hauptnav(page)).toBeHidden();
+        await expect(menueSchalter(page)).toBeVisible();
+      } else if (istKern(pfad)) {
+        await expect(hauptnav(page)).toBeVisible();
+        await expect(menueSchalter(page)).toBeHidden();
+      } else {
+        await expect(hauptnav(page)).toBeVisible();
+        await expect(menueSchalter(page)).toBeVisible();
+      }
+    });
+
+    test(`${pfad}: Schalter öffnet das Menü, Escape schließt es`, async ({ page, isMobile }) => {
+      await page.goto(pfad);
+      await zumDrawer(page, pfad, isMobile);
+      const schalter = menueSchalter(page);
+      await expect(schalter).toHaveAttribute('aria-expanded', 'false');
+      await expect(drawer(page)).toHaveCount(0);
+      await oeffneMenue(page);
+      await expect(drawer(page)).toBeVisible();
+      await page.keyboard.press('Escape');
+      await expect(schalter).toHaveAttribute('aria-expanded', 'false');
+      await expect(drawer(page)).toHaveCount(0);
+    });
+
+    // N-4: „Menü schließt“ vor dem Seitenwechsel (Kern → Bestand lädt neu) bzw. am selben Kopf (Bestand → Bestand).
+    test(`${pfad}: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt`, async ({ page, isMobile }) => {
+      await merkeMenueBeimVerlassen(page);
+      await page.goto(pfad);
+      await zumDrawer(page, pfad, isMobile);
+      await oeffneMenue(page);
+      const dialog = drawer(page);
+      await expect(dialog).toBeVisible();
+      // Zustand statt Wartezeit: Einblend-Übergang des Drawers abschließen lassen, dann aufklappen
+      await dialog.evaluate((el) => Promise.all(el.getAnimations({ subtree: true }).map((a) => a.finished.catch(() => null))));
+      const kategorie = dialog.getByRole('button', { name: /^Badsanierung/ });
+      // Der Drawer wird beim ersten Öffnen nachgeladen und kann einmal neu einhängen (Zustand zurückgesetzt).
+      // Verhalten „Kategorie lässt sich aufklappen“ prüfen: Klick wiederholen, bis aufgeklappt (max. 10 s).
+      await expect(async () => {
+        if ((await kategorie.getAttribute('aria-expanded')) !== 'true') await kategorie.click();
+        await expect(kategorie).toHaveAttribute('aria-expanded', 'true', { timeout: 1500 });
+      }).toPass({ timeout: 10_000 });
+      await dialog.getByRole('link', { name: /^Badsanierung komplett/ }).click();
+      await expect(page).toHaveURL(/\/bad\/badsanierung$/);
+      if (istKern(pfad)) await expect.poll(() => offenBeimVerlassen(page)).toBe('0');
+      else expect(await offenBeimVerlassen(page)).toBeNull();
+      await expect(drawer(page)).toHaveCount(0);
+    });
+  }
 });
 
 // V-06: Der Kern-Kopf öffnet Menü und Blätter nativ (popover), also vor und ohne Hydrierung. Ohne Skript ist die
 // Seite nie hydriert; das ist die deterministische Form von „vor der Hydrierung“. Aria-expanded bleibt dabei
 // auf false (das Skript setzt es erst nach dem Laden), geprüft wird daher die Sichtbarkeit des Blatts.
+// Nur Kern (Liste KERN_SEITEN, M-4): Der Bestand öffnet das Menü erst nach der Hydrierung (Ausgangsstand).
 test.describe('Menü vor der Hydrierung (V-06)', () => {
   test.use({ javaScriptEnabled: false });
 
   test('Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)', async ({ page, isMobile }) => {
+    test.skip(!istKern('/'), 'nur Kern-Kopf (KERN_SEITEN): der Bestand öffnet das Menü erst nach der Hydrierung (V-06, Ausgangsstand)');
     await page.goto('/');
-    if ((await page.locator('header[data-kopf="b"]').count()) === 0) {
-      test.skip(true, 'nur Kern-Kopf: der Bestand öffnet das Menü erst nach der Hydrierung (V-06, Ausgangsstand)');
-    }
+    // Die Liste sagt Kern: dann muss auch der Kern-Kopf ausgeliefert sein (sonst rot statt übersprungen).
+    await expect(page.locator('header[data-kopf="b"]')).toHaveCount(1);
     if (isMobile) {
       await menueSchalter(page).click();
       await expect(drawer(page)).toBeVisible();
@@ -167,8 +199,9 @@ test.describe('Menü vor der Hydrierung (V-06)', () => {
 });
 
 test.describe('Sprunglink', () => {
-  test('erster Tabstopp, führt zu #main-content', async ({ page }) => {
-    await page.goto('/leistungen');
+  // Beide Fassungen: Bestand (/leistungen) und Kern (/).
+  for (const pfad of ['/leistungen', '/']) test(`${pfad}: erster Tabstopp, führt zu #main-content`, async ({ page }) => {
+    await page.goto(pfad);
     await page.keyboard.press('Tab');
     const sprung = page.getByRole('link', { name: 'Zum Hauptinhalt springen', exact: true });
     await expect(sprung).toBeFocused();
@@ -218,19 +251,19 @@ test.describe('FAQ-Akkordeon (/faq)', () => {
     await expect(page.getByText('Keine passenden Fragen gefunden')).toBeVisible();
   });
 
-  test('Startseite: Akkordeon-Frage wechselt aria-expanded und blendet die Antwort ein/aus', async ({ page }) => {
+  test('Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus', async ({ page }) => {
     const frageStart = 'Wie garantieren Sie den Staubschutz bei bewohnten Sanierungen?';
     await page.goto('/');
-    const knopf = akkordeonKnopf(page, frageStart);
-    const bereich = akkordeonAntwort(page, frageStart);
+    const knopf = akkordeonKnopf(page, '/', frageStart);
+    const bereich = akkordeonAntwort(page, '/', frageStart);
     await expect(knopf).toBeVisible();
-    await expect.poll(() => istOffen(knopf)).toBe(false);
+    await expect.poll(() => istOffen('/', knopf)).toBe(false);
     await expect.poll(() => sichtbareHoehe(bereich)).toBe(0);
     await knopf.click();
-    await expect.poll(() => istOffen(knopf)).toBe(true);
+    await expect.poll(() => istOffen('/', knopf)).toBe(true);
     await expect.poll(() => sichtbareHoehe(bereich)).toBeGreaterThan(0);
     await knopf.click();
-    await expect.poll(() => istOffen(knopf)).toBe(false);
+    await expect.poll(() => istOffen('/', knopf)).toBe(false);
     await expect.poll(() => sichtbareHoehe(bereich)).toBe(0);
   });
 });

@@ -35,3 +35,10 @@ export async function bedienbar(locator) {
 }
 export const warteBotSchwelle = (page) => page.waitForTimeout(1700);
 export const istEchteReferenz = (id) => /^TEZ-\d{2}-[A-Z0-9]{4,}$/.test(id) && !/IGN/.test(id);
+
+// Fassung je Seite (P3-14e): Im Kandidaten ist nur „/“ Kern, alle anderen Seiten sind Bestand. Läufe gegen ein Ziel ganz im
+// Bestand (Basis, Ausgangsstand) mit RELAUNCH_FASSUNG=bestand – dann ist die Liste leer. Nach jeder Freischaltung erweitern.
+const FASSUNG = process.env.RELAUNCH_FASSUNG ?? 'kandidat';
+if (!['kandidat', 'bestand'].includes(FASSUNG)) throw new Error(`RELAUNCH_FASSUNG unbekannt: ${FASSUNG}`);
+export const KERN_SEITEN = FASSUNG === 'bestand' ? [] : ['/'];
+export const istKern = (pfad) => KERN_SEITEN.includes(new URL(pfad, 'http://pfad.invalid').pathname);
