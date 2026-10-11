@@ -1,8 +1,10 @@
 // Startseite · Großformat (E020-F-3, KERN v2): „Fugenarme XXL-Großformate & fachgerechte Badsanierung“, Anker spotlight-heading.
 // Nachbau des Vorbilds (src/components/kern/start/Grossformat.tsx) im KERN-v2-System: Feldraster mit Fugen, links das
 // Textfeld, rechts das Bildfeld, darunter die Kennzahlen über die volle Breite (ohne zweites Fliesenmotiv).
-// Abweichung zum Vorbild: Das KI-generierte Badfoto entfällt (Leitplanke M-19). An seiner Stelle zeichnet der Verlegeplan
-// „grossformat“ das Feld; die Bildunterschrift bleibt der Bestandstext.
+// Abweichung zum Vorbild: Das KI-generierte Badfoto entfällt (Leitplanke M-19). An seiner Stelle steht ein gezeichneter
+// Formatvergleich (E3-NACH-01): dieselbe Wand mit 60 × 60 cm und mit 120 × 260 cm – zwei Verlegepläne ohne Achse, damit
+// der Einstiegsplan das einzige Achsmotiv bleibt. Beide Formate stehen im Bestand der Seite (Fragen, Rechner); die
+// Wand ist unbemaßt (Rastereinheiten, Leitplanke Wahrheit). Die Bildunterschrift bleibt der Bestandstext.
 // Knöpfe stehen im Textfeld, nicht in einer Mittelspalte. Kennzahlen mit Etikett oben und Wert darunter; der Wert
 // bricht nicht um („DIN 18534“). Kein Auftritt (wie im Vorbild).
 // Wortlaut wie im Bestand (src/app/(bestand)/page.tsx, Abschnitt 7); Telefon und Inhaber aus `@/config/company`.
@@ -12,11 +14,25 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import { etikettForm, etikettKlassen, seitenKlassen } from '@/components/kern/stile';
+import type { Planvorgabe } from '@/lib/plaene/typen';
+
+// Dieselbe Wand (Rastereinheiten) in zwei Formaten aus dem Bestand: 60 × 60 cm und 120 × 260 cm
+const WAND = { b: 24, h: 26 };
+const FORMATE: Array<{ mass: string; plan: Planvorgabe }> = [
+  {
+    mass: '60 × 60 cm',
+    plan: { name: 'format-60', beschreibung: 'Wand mit Fliesen 60 × 60 cm: dichtes Fugenraster mit Passstücken.', raum: WAND, platte: { b: 6, h: 6 }, verband: 'kreuz', achse: 'lot' },
+  },
+  {
+    mass: '120 × 260 cm',
+    plan: { name: 'format-120x260', beschreibung: 'Dieselbe Wand mit Großformat 120 × 260 cm: eine einzige Fuge.', raum: WAND, platte: { b: 12, h: 26 }, verband: 'kreuz', achse: 'lot' },
+  },
+];
 
 export default function Grossformat() {
   const { contact, owner } = COMPANY_DATA;
   return (
-    <section aria-labelledby="spotlight-heading" className="py-16 lg:py-24">
+    <section aria-labelledby="spotlight-heading" className="spaet-zeichnen py-16 lg:py-24">
       <div className={seitenKlassen}>
         <div className="grid grid-cols-4 gap-px border border-fuge bg-fuge md:grid-cols-8 lg:grid-cols-12">
           {/* Textfeld */}
@@ -51,8 +67,13 @@ export default function Grossformat() {
           {/* Bildfeld: gezeichneter Verlegeplan statt Foto, Bildunterschrift und Regionalzeile darunter */}
           <div className="col-span-4 flex flex-col bg-fliese md:col-span-8 lg:col-span-7">
             <figure className="flex flex-1 flex-col">
-              <div className="flex flex-1 flex-col justify-center bg-kalk p-6 lg:p-8">
-                <Verlegeplan plan="grossformat" beschriftet />
+              <div className="grid flex-1 grid-cols-2 content-center gap-6 bg-kalk p-6 lg:gap-8 lg:p-8">
+                {FORMATE.map(({ mass, plan }) => (
+                  <div key={plan.name} className="flex flex-col gap-3">
+                    <Verlegeplan plan={plan} beschriftet ohneAchse bemassung={false} />
+                    <span className="font-mono text-fs-1 text-tinte">{mass}</span>
+                  </div>
+                ))}
               </div>
               <figcaption className="border-t border-fuge px-6 py-4 font-mono text-fs-1 text-tinte lg:px-8">
                 Millimetergenauer Gehrungsschnitt &amp; C2TE S1 Flexkleber
@@ -78,7 +99,7 @@ export default function Grossformat() {
               </div>
               <div className="flex flex-col gap-2 p-6 lg:p-8">
                 <dt className="font-text text-fs-2 text-tinte-2">Großformate für fugenarme Wand- &amp; Bodenflächen</dt>
-                <dd className="font-mono text-fs-5 whitespace-nowrap text-tinte">XXL</dd>
+                <dd className="font-mono text-fs-5 whitespace-nowrap text-tinte">120 × 260 cm</dd>
               </div>
             </dl>
           </div>

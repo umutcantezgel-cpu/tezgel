@@ -37,6 +37,8 @@ export default function Servicegebiet() {
   return (
     <Abschnitt
       id="servicegebiet"
+      leitachse
+      spaet
       titelId="map-heading"
       etikett="Regionale Einsatzgebiete"
       titel="In ganz Mittelhessen schnell auf Ihrer Baustelle"

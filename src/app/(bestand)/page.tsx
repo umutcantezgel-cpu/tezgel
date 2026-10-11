@@ -13,6 +13,7 @@ import FAQAccordion from '@/components/ui/FAQAccordion';
 import FinalCTA from '@/components/ui/FinalCTA';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Leitachse from '@/components/kern/Leitachse';
 import Einstieg from '@/components/start/Einstieg';
 import Fachbereiche from '@/components/start/Fachbereiche';
 import Fachgewerke from '@/components/start/Fachgewerke';
@@ -43,15 +44,18 @@ export default function HomePage() {
             {/* 1. EINSTIEG „Planblatt“: Verlegeplan an der Achse geschnitten, die Waage trägt H1 und Formular */}
             <Einstieg formular={<HeroContactForm />} />
 
+            {/* LEITACHSE (K-007): Das Lot setzt die Achse des Einstiegs über alle Abschnitte bis zur Anfrage fort; das rote
+                Stück wächst mit dem Lesefortschritt, Abschnittsköpfe setzen ein Fugenkreuz auf das Lot (E3-NACH-02) */}
+            <Leitachse>
             {/* VERTRAUENSZEILE: sechs Zusagen und der Google-Kennwert über zwei Felder im selben Raster */}
-            <div className="border-b border-fuge bg-kalk">
+            <div className="spaet-zeichnen border-b border-fuge bg-kalk">
                 <div className={`${seitenKlassen} py-8`}>
                     <TrustStrip ende={<GoogleReviewsBadge imRaster />} />
                 </div>
             </div>
 
             {/* 2. GARANTIEN als Zeilen an der Fuge: Etikett, Zusage, Text – oben bündig */}
-            <Abschnitt id="vertrauen" aria-label="Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel">
+            <Abschnitt id="vertrauen" leitachse spaet aria-label="Garantien &amp; Qualitätsversprechen von Fliesenverlegung Tezgel">
                 <ul className="border-t border-strich">
                     {COMPANY_DATA.trustPillars.map((pillar: { title: string; description: string }, idx: number) => (
                         <li key={pillar.title} className="grid grid-cols-4 items-start gap-x-6 gap-y-3 border-b border-fuge py-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-8">
@@ -72,6 +76,8 @@ export default function HomePage() {
             {/* 4. PROJEKTANFRAGE & SITUATIONSSCHILDERUNG */}
             <Abschnitt
                 id="kosten-rechner"
+                leitachse
+                spaet
                 titelId="rechner-heading"
                 etikett="Umfassende Projektanfrage"
                 titel="Projekt anfragen & Situation schildern"
@@ -103,6 +109,8 @@ export default function HomePage() {
             {/* 10. HÄUFIGE FRAGEN */}
             <Abschnitt
                 id="faq"
+                leitachse
+                spaet
                 titelId="home-faq-heading"
                 kopf="seitlich"
                 etikett="Transparente Antworten"
@@ -136,6 +144,8 @@ export default function HomePage() {
             {/* 11. EXPRESS-ANFRAGE: Kopf links, Assistent rechts */}
             <Abschnitt
                 id="express-anfrage"
+                leitachse
+                spaet
                 titelId="anfrage-heading"
                 flaeche="fliese"
                 kopf="seitlich"
@@ -150,6 +160,7 @@ export default function HomePage() {
             >
                 <TezgelAnfrageFunnel />
             </Abschnitt>
+            </Leitachse>
 
             {/* 12. ABSCHLUSS */}
             <FinalCTA

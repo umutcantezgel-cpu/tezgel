@@ -13,7 +13,7 @@ import { etikettKlassen, seitenKlassen } from '@/components/kern/stile';
 export default function Ablauf() {
   const { owner } = COMPANY_DATA;
   return (
-    <section id="ablauf" aria-labelledby="ablauf-heading" className="py-16 lg:py-24">
+    <section id="ablauf" aria-labelledby="ablauf-heading" className="spaet-zeichnen py-16 lg:py-24">
       <div className={seitenKlassen}>
         <div className="max-w-mass">
           <span className={etikettKlassen}>

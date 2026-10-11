@@ -38,7 +38,7 @@ export default function Footer() {
     const { headquarters, contact, hours, authority, tax, owner, motto, business } = COMPANY_DATA;
 
     return (
-        <footer className="flaeche-tinte border-t border-nacht-fuge bg-tinte text-kalk">
+        <footer className="flaeche-tinte border-t border-nacht-fuge bg-tinte pb-16 text-kalk lg:pb-0">
             <div className="border-b border-nacht-fuge">
                 <div className={clsx(seitenKlassen, 'flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between')}>
                     <ul className="grid grid-cols-2 gap-px bg-nacht-fuge md:grid-cols-4 lg:flex-1">

@@ -114,7 +114,7 @@ export default function Fachgewerke() {
   const nebenIds = SERVICES.filter((s) => s.id !== 'bad').map((s) => s.id);
   const breitId = nebenIds.length % 2 === 1 ? nebenIds[nebenIds.length - 1] : null;
   return (
-    <section id="leistungen" aria-labelledby="leistungen-heading" className="py-16 lg:py-24">
+    <section id="leistungen" aria-labelledby="leistungen-heading" className="spaet-zeichnen py-16 lg:py-24">
       <div className={seitenKlassen}>
         <div className="max-w-mass">
           <p className={etikettKlassen}>

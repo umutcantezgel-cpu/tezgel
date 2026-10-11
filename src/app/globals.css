@@ -497,4 +497,21 @@
       margin-inline: var(--wand, 0);
     }
   }
+  /* Plan bündig mit der Textkante (unter lg): die Zeichnung ragt um ihren Rand nach außen, damit die Wand an der
+     Inhaltskante steht (--wand-aussen = Rand / (1 − 2 · Rand) des Zeichnungsanteils, E3-NACH-01) */
+  .plan-buendig {
+    margin-inline: calc(var(--wand-aussen, 0%) * -1);
+  }
+  /* Abschnitte unterhalb des ersten Bildschirms: Stil und Layout erst in Sichtnähe (E3-NACH-07 – Lighthouse e2-tor-3:
+     „Style & Layout“ 1,6 s auf / mobil, Ausgang 0,7 s). `auto` merkt sich die gezeichnete Höhe; der Schätzwert gilt
+     nur bis zum ersten Zeichnen. Nur an Hüllen ohne überstehende Zeichen (Inhalt wird am Rand beschnitten). */
+  .spaet-zeichnen {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 50rem;
+  }
+  @media print {
+    .spaet-zeichnen {
+      content-visibility: visible;
+    }
+  }
 }

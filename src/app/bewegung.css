@@ -308,7 +308,7 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stan
   scale: 0 1;
 }
 
-/* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, laser); mobil nur das Lot.
+/* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, linear seit E3-NACH-02); mobil nur das Lot.
    Lage (oben, links) über Klassen am Element; Endzustand = beide Linien voll. */
 .kreuzlinie {
   pointer-events: none;
@@ -342,40 +342,59 @@ html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stan
   inset-inline-start: 0;
   translate: -50% -50%;
 }
-html.k-bewegung .kreuzlinie-lot,
-html.k-bewegung .kreuzlinie-waage {
-  transition: scale var(--dauer-5) var(--ease-laser);
+/* Waage auf dem Planblatt: wächst aus dem Kreuzpunkt mit dem Lot des Plans – der Plan steht mittig in der rechten
+   Blatthälfte, sein Lot also bei 75 % der Blattbreite (Einstieg, E3-NACH-02) */
+.kreuzlinie-aus-plan {
+  transform-origin: 75% center;
 }
-html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-lot {
-  scale: 1 0;
+/* SIG-1 läuft als CSS-Animation ab dem ersten Bild (Startklasse aus dem Kopfskript), nicht erst nach der Hydrierung:
+   kein Startverzug und kein Notaus-Sprung auf langsamen Geräten. Der Laser zieht gleichmäßig (linear): bei 25/50/75 %
+   der Dauer ist die Linie ¼/½/¾ lang (E2-SICHT-2 Befunde 5 und 11). Das Lot im Plan wächst von der Schnittkante nach oben. */
+@keyframes kreuzlinie-lot-wachsen {
+  from { scale: 1 0; }
 }
-html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-waage {
-  scale: 0 1;
+@keyframes kreuzlinie-waage-wachsen {
+  from { scale: 0 1; }
+}
+@keyframes flucht-einruecken {
+  from { translate: calc(var(--spacing) * 3) 0; }
+}
+html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-lot {
+  animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
+}
+html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage {
+  animation: kreuzlinie-waage-wachsen var(--dauer-5) linear both;
+}
+/* das Lot nach der Waage (ab lg) folgt, wenn die Waage ihr linkes Ende erreicht hat */
+html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
+  animation-duration: var(--dauer-3);
+  animation-delay: var(--dauer-5);
+}
+html.k-bewegung [data-motion="sig-kreuzlinie"] .plan-achse {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
 }
 
-/* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht; Deckkraft bleibt 1 (LCP) */
+/* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht, nacheinander (je Zeile zwei Staffelstufen),
+   während die Linien wachsen; Deckkraft bleibt 1 */
 html.k-bewegung [data-motion="sig-flucht"] > * {
-  transition: translate var(--dauer-4) var(--ease-setzen);
+  animation: flucht-einruecken var(--dauer-4) var(--ease-setzen) both;
 }
-/* Staffel: je Zeile zwei Stufen (2 × --staffel), damit die Zeilen sichtbar nacheinander einrücken */
 html.k-bewegung [data-motion="sig-flucht"] > :nth-child(2) {
-  transition-delay: calc(var(--staffel) * 2);
+  animation-delay: calc(var(--staffel) * 2);
 }
 html.k-bewegung [data-motion="sig-flucht"] > :nth-child(3) {
-  transition-delay: calc(var(--staffel) * 4);
+  animation-delay: calc(var(--staffel) * 4);
 }
 html.k-bewegung [data-motion="sig-flucht"] > :nth-child(4) {
-  transition-delay: calc(var(--staffel) * 6);
-}
-html.k-bewegung:not(.k-notaus) [data-motion="sig-flucht"]:not([data-motion-stand="an"]) > * {
-  translate: calc(var(--spacing) * 3) 0;
+  animation-delay: calc(var(--staffel) * 6);
 }
 @media print, (forced-colors: active) {
   html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
-  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage {
-    scale: none !important;
-  }
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage,
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .plan-achse,
   html.k-bewegung [data-motion="sig-flucht"] > * {
-    translate: none !important;
+    animation: none !important;
   }
 }
