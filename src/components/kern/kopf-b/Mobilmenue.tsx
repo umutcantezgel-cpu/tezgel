@@ -9,7 +9,7 @@
 // und Blatt (Tab), Bereiche aufklappen (aria-expanded), Schließen beim Folgen eines Links, beim Pfadwechsel und ab xl,
 // Aufklappen über das Register (`aufklappen`; reduziert sofort).
 import { usePathname } from 'next/navigation';
-import { useEffect, useId, useRef, useState, type MouseEvent } from 'react';
+import { useCallback, useEffect, useId, useRef, useState, type MouseEvent } from 'react';
 import { fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import MobilBlatt from '@/components/kern/kopf-b/MobilBlatt';
@@ -143,27 +143,36 @@ export default function Mobilmenue({ eintraege, kontakt, anfrage }: MobilmenuePr
     if (istOffen(b)) b?.hidePopover();
   }, [pfad]);
 
-  const schliessen = () => {
+  // Rückrufe stabil halten: Das Blatt (memo) rendert beim Öffnen und Schließen nicht neu – nur der Schalter ändert sich
+  // (INP „Menü öffnen“ mobil, 4× Drosselung: vorher 248 ms, davon 159 ms Verarbeitung für das ganze Blatt).
+  const schliessen = useCallback(() => {
     const b = blatt.current;
     if (istOffen(b)) b?.hidePopover();
-  };
+  }, []);
 
   // Ein aufgeklappter Bereich rückt an den oberen Blattrand, damit seine Links ohne Wischen im Bild stehen
   // (Probelauf P3-16b: „Philosophie & Fachbetrieb“, „Alle 13 Standorte“ lagen unter dem Blattrand). Sofort, ohne Bewegung.
-  const umschalten = (i: number) => {
-    const aufklappen = bereich !== i;
-    setBereich(aufklappen ? i : null);
-    if (!aufklappen) return;
-    requestAnimationFrame(() => {
-      const knopf = document.getElementById(`${blattId}-bereich-${i}`)?.previousElementSibling;
-      if (knopf instanceof HTMLElement) knopf.scrollIntoView({ block: 'start' });
-    });
-  };
+  const umschalten = useCallback(
+    (i: number) => {
+      setBereich((o) => (o === i ? null : i));
+      // Nach dem Rendern: nur ein aufgeklappter (nicht mehr inerter) Bereich wird an den Rand geholt.
+      requestAnimationFrame(() => {
+        const bereichEl = document.getElementById(`${blattId}-bereich-${i}`);
+        const knopf = bereichEl?.previousElementSibling;
+        if (bereichEl && !bereichEl.inert && knopf instanceof HTMLElement) knopf.scrollIntoView({ block: 'start' });
+      });
+    },
+    [blattId],
+  );
 
-  const beiWhatsApp = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    openWhatsApp({ phone: kontakt.whatsappNummer });
-  };
+  const whatsappNummer = kontakt.whatsappNummer;
+  const beiWhatsApp = useCallback(
+    (e: MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      openWhatsApp({ phone: whatsappNummer });
+    },
+    [whatsappNummer],
+  );
 
   return (
     <div className="flex shrink-0 items-center border-l border-k-fuge pl-k-2 xl:hidden">

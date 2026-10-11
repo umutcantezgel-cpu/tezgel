@@ -6,7 +6,7 @@
 // Rein darstellend: Zustand (welcher Bereich aufgeklappt ist) und Handler kommen von `Mobilmenue`, die Vorschau zeigt
 // das Blatt statisch. Aufklappen über das Register (`aufklappen`); zugeklappte Bereiche sind `inert`.
 import Link from 'next/link';
-import type { MouseEvent } from 'react';
+import { memo, type MouseEvent } from 'react';
 import { Etikett, Fugenkreuz, Knopf, Textlink, fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import {
@@ -34,7 +34,7 @@ export type MobilBlattProps = {
   beiWhatsApp?: (e: MouseEvent<HTMLAnchorElement>) => void;
 };
 
-export default function MobilBlatt({ eintraege, kontakt, anfrage, pfad, offen, idPraefix, umschalten, beimFolgen, beiWhatsApp }: MobilBlattProps) {
+function MobilBlatt({ eintraege, kontakt, anfrage, pfad, offen, idPraefix, umschalten, beimFolgen, beiWhatsApp }: MobilBlattProps) {
   const aktiv = aktiverBereich(pfad, eintraege);
   return (
     <div className="relative px-(--k-rand) pb-k-8">
@@ -192,3 +192,6 @@ export default function MobilBlatt({ eintraege, kontakt, anfrage, pfad, offen, i
     </div>
   );
 }
+
+// memo: Öffnen und Schließen des Menüs ändern keine Eigenschaft des Blatts – kein Neurendern der rund hundert Links (INP).
+export default memo(MobilBlatt);
