@@ -1,0 +1,2 @@
+375x812 laufzeitfehler: {"attr":"offen","banner":false,"spb":"389px","pb":"389px","leer_unter_fuss":437,"kopf_whatsapp":true}
+1440x900 laufzeitfehler: {"attr":"offen","banner":false,"spb":"152px","pb":"152px","leer_unter_fuss":152,"kopf_whatsapp":true}

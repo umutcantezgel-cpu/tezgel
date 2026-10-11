@@ -1,0 +1,765 @@
+[
+ {
+  "ansicht": "320x640",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 830,
+    "a": "style",
+    "v": "--k-banner-unten: 369px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 830,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 369,
+   "spb": 369,
+   "pb": 369
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 529,
+   "spb": 529,
+   "pb": 529
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "320x640",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 88,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 783,
+    "a": "style",
+    "v": "--k-banner-unten: 369px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 783,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 369,
+   "spb": 369,
+   "pb": 369
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "360x740",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 810,
+    "a": "style",
+    "v": "--k-banner-unten: 389px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 810,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 389,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 604,
+   "spb": 604,
+   "pb": 604
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "360x740",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 84,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 815,
+    "a": "style",
+    "v": "--k-banner-unten: 389px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 815,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 389,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "375x812",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 798,
+    "a": "style",
+    "v": "--k-banner-unten: 375px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 798,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 375,
+   "spb": 375,
+   "pb": 375
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 658,
+   "spb": 658,
+   "pb": 658
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "375x812",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 79,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 776,
+    "a": "style",
+    "v": "--k-banner-unten: 375px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 776,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 375,
+   "spb": 375,
+   "pb": 375
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "430x932",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 761,
+    "a": "style",
+    "v": "--k-banner-unten: 375px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 762,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 375,
+   "spb": 375,
+   "pb": 375
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 748,
+   "spb": 748,
+   "pb": 748
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "430x932",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 75,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 780,
+    "a": "style",
+    "v": "--k-banner-unten: 375px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 780,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 375,
+   "spb": 375,
+   "pb": 375
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "768x1024",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 771,
+    "a": "style",
+    "v": "--k-banner-unten: 441px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 771,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 441,
+   "spb": 441,
+   "pb": 441
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 849,
+   "spb": 849,
+   "pb": 849
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "768x1024",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 80,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 781,
+    "a": "style",
+    "v": "--k-banner-unten: 441px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 781,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 441,
+   "spb": 441,
+   "pb": 441
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1000x800",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 757,
+    "a": "style",
+    "v": "--k-banner-unten: 446px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 757,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 446,
+   "spb": 446,
+   "pb": 446
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 681,
+   "spb": 681,
+   "pb": 681
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1000x800",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 72,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 805,
+    "a": "style",
+    "v": "--k-banner-unten: 446px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 805,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 446,
+   "spb": 446,
+   "pb": 446
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1024x768",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 778,
+    "a": "style",
+    "v": "--k-banner-unten: 413px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 778,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 413,
+   "spb": 413,
+   "pb": 413
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 624,
+   "spb": 624,
+   "pb": 624
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1024x768",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 90,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 832,
+    "a": "style",
+    "v": "--k-banner-unten: 413px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 832,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 413,
+   "spb": 413,
+   "pb": 413
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1100x800",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 813,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 813,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 648,
+   "spb": 648,
+   "pb": 648
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1100x800",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 78,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 771,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 771,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1280x800",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 896,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 896,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 648,
+   "spb": 648,
+   "pb": 648
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1280x800",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 79,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 805,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 805,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1440x900",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 821,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 821,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 723,
+   "spb": 723,
+   "pb": 723
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1440x900",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 77,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 933,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 933,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1920x1080",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 772,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 772,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": null,
+   "belegt": 858,
+   "spb": 858,
+   "pb": 858
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1920x1080",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 74,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   },
+   {
+    "t": 799,
+    "a": "style",
+    "v": "--k-banner-unten: 414px;",
+    "lesbar": "complete"
+   },
+   {
+    "t": 799,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung scroll-pb-(--k-banner-unten) pb-(--k-banner-unten)",
+    "lesbar": "complete"
+   }
+  ],
+  "erste": {
+   "attr": null,
+   "belegt": 414,
+   "spb": 414,
+   "pb": 414
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "klickfolge": [
+   [
+    "start",
+    [
+     "noch kein html",
+     null
+    ]
+   ],
+   [
+    "Einstellungen",
+    null
+   ],
+   [
+    "Zurück",
+    null
+   ],
+   [
+    "Alle ablehnen",
+    null
+   ],
+   [
+    "Fußlink Cookie-Einstellungen",
+    null
+   ],
+   [
+    "Auswahl speichern",
+    null
+   ],
+   [
+    "Neu laden mit Entscheidung",
+    [
+     "noch kein html",
+     null,
+     false,
+     []
+    ]
+   ]
+  ]
+ },
+ {
+  "abgelehnt": [
+   "noch kein html",
+   null,
+   [],
+   "0px"
+  ]
+ }
+]

@@ -1,0 +1,8 @@
+1024x768 erstbesuch: /: hidden unter-banner · /standorte: hidden unter-banner · /blog: hidden unter-banner · /ueber-uns: hidden unter-banner
+1024x768 abgelehnt: /: hidden · /standorte: visible · /blog: hidden · /ueber-uns: visible
+1280x800 erstbesuch: /: hidden unter-banner · /standorte: hidden unter-banner · /blog: hidden unter-banner · /ueber-uns: hidden unter-banner
+1280x800 abgelehnt: /: hidden · /standorte: visible · /blog: visible · /ueber-uns: visible
+1440x900 erstbesuch: /: hidden unter-banner · /standorte: hidden unter-banner · /blog: hidden unter-banner · /ueber-uns: hidden unter-banner
+1440x900 abgelehnt: /: hidden · /standorte: visible · /blog: visible · /ueber-uns: visible
+1920x1080 erstbesuch: /: hidden unter-banner · /standorte: hidden unter-banner · /blog: hidden unter-banner · /ueber-uns: hidden unter-banner
+1920x1080 abgelehnt: /: hidden · /standorte: visible · /blog: visible · /ueber-uns: visible

@@ -392,3 +392,26 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Wahl: C** (in P4-13, zusammen mit der Banner-Leiste). B ist verworfen (Verlust). A wird zurückgestellt: erst messen, was C bringt. Reicht es nicht, kommt A als eigene Entscheidung mit Werkzeugregel zur Gegenprüfung. Die Werkzeuge müssten dafür aufgeschobene Abschnitte vor dem Lesen darstellen; ob das eine zulässige Messregel ist, entscheidet ein Gegenprüfer.
 - **Zurückgestellt als eigene Pakete (mit build-vergleich, außerhalb Kern):** `TrackingScripts` ohne Bestands-Banner und `company.js` ohne lucide; K-009-Zeitlimit von 2 s (greift bei 4× vor der Hydrierung, volle Neuberechnung, keine Bewegung); Maß-Token `66ch` und `h-lh` (Scroll-Sperre des Menüs, INP).
 - **Messregel:** Lighthouse nur im ruhigen Fenster. Unter Last streute die TBT im selben Build zwischen 240 und 1 450 ms.
+
+## E-034 · Abnahme P4-13 (Banner als Leiste, WhatsApp im Kopf, Kanal nur im Browser, Banner-Zustand vor dem ersten Bild)
+- **Ergebnis der Rückgabe** (Arbeitskopien, vorher HEAD bd6f877 gegen nachher; Belege `belege/p4-13/`):
+  - ohne JS: rot 4 → grün 0
+  - Einleitung bei 1440 und 1920 auf allen sieben Kern-Seiten frei (vorher bis 74 % verdeckt), H1 überall frei
+  - `<html>`-Mutationen nach dem Laden: 2 → 0; Banner-Aufgabe in der Spur 5/5 → 0/5; TBT-Schätzung 213 → 144 ms
+  - a11y-zusatz: harte Kennzahlen 0
+  - axe 57 Läufe 0, Specs 137/0/11, Wortbruch 0, Fotos 0 Fehler
+  - unter lg geometrisch gleich
+- **Orchestrator-Prüfung des Diffs:**
+  - Logik und Texte: Wortlaut, Knopffolge und gleichwertiges Paar des Banners unverändert (E-013). Das Kopfskript liest Cookie und Version nur, aus derselben Quelle wie `useConsent` (`@/lib/cookie-inventory`); keine Logikänderung.
+  - Kanal: mit `useSyncExternalStore` nur im Browser, das Verhalten des Knopfs bleibt (Hook, Verdeckungsprüfung, `id`, Name).
+  - Kopf-Link: echtes `<a>` mit Bestandsziel und Bestandsnamen, Fokus nach K-006.
+  - Die neuen festen Werte stehen als Tokens in `kern.css`.
+  - Lint, typecheck und `npm test` (22/22) grün.
+- **Offene Fragen der Rückgabe – Wahl:**
+  1. **Gegenprobe a3-d1440-maus 6 statt 5 (Bezug 5): begründete Abweichung.** Ohne Banner kostet derselbe Weg in Bestand und Kern 7 Handlungen. Die 5 waren ein Nebeneffekt des großen alten Feldes: Sein scroll-padding von 414 px rollte das Hero-Formular so, dass der Absende-Knopf ins Bild kam. **Auflage P6** (Startseite): Nach dem Ausfüllen des Hero-Formulars liegt „Absenden“ im Bild; Ziel ≤ 5.
+  2. **Einleitung bei 1024 × 768 und 1280 × 800 teils verdeckt: angenommen.** Geometrisch geht es nicht ganz: Die Einleitung reicht dort bis 17 px an den Bildrand oder darüber hinaus, und die schmalste Leiste mit vollem Inhalt ist ~140 px hoch. Vorher war es auf 6 von 7 Seiten bis 97 %, jetzt auf 4 bzw. 3 Seiten weniger. **Auflage** an W1 (`/bad`), W3 (`/standorte`), W8 (`/ueber-uns`) und P6 (`/`): kürzere Einstiege prüfen.
+  3. **Restfall Laufzeitfehler: angenommen.** Laden alle App-Skripte, werfen aber, bleibt am Seitenende Leerraum (152 bzw. 389 px). Inhalt, Links und WhatsApp im Kopf bleiben erreichbar. Eine breitere Sicherung würde bei wiederherstellbaren Hydrierungsfehlern den Platz fälschlich entfernen.
+  4. **Token 360–767 px bleibt `21.25rem`** (gemessen); bei einer zusätzlichen Zeile rollt der Textteil, nichts wird verdeckt.
+- **E-013 Nachtrag (Hauptaktion):** Bei d1440 auf `/` liegt die erste Feldzeile des Hero-Formulars unter der Leiste. Frei bleiben der Hauptknopf „Aufmaß anfragen“ im Kopf, die Formular-Überschrift, Telefon und WhatsApp im Kopf; mindestens ein vollständiger Anfrageweg ist frei. Fokus auf ein Feld rollt es über die Leiste (scroll-padding).
+- **MIKROTEXTE:** Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) gestrichen. Es gibt kein neues Wort.
+- **Folge:** P4-13 wirkt sofort auf `/` (live) → T2 für `/` vor dem Push, Lighthouse im ruhigen Fenster (Z-12).
