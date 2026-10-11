@@ -1,10 +1,10 @@
 import Icon from '@/components/icons/Icon';
 import { hilfeKlassen, knopfKlassen, labelKlassen } from '@/components/kern/stile';
-import { AREA_OPTIONS, TIMING_OPTIONS } from './logik';
+import { AREA_OPTIONS, TIMING_OPTIONS } from '@/lib/formulare/useAnfrageFunnel';
 import { inputClass, optionClass } from './stile';
 
 // Schritt 2: Fläche, Zeitraum und Ort (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).
-export default function Schritt2({ setStep, selectedArea, setSelectedArea, customArea, setCustomArea, timing, setTiming, location, setLocation }) {
+export default function Schritt2({ setStep, selectedArea, selectArea, customArea, setCustomArea, timing, setTiming, location, setLocation }) {
     return (
         <div className="flex flex-col gap-8">
           <div>
@@ -16,10 +16,7 @@ export default function Schritt2({ setStep, selectedArea, setSelectedArea, custo
                 <button
                   type="button"
                   key={opt}
-                  onClick={() => {
-                    setSelectedArea(opt);
-                    setCustomArea('');
-                  }}
+                  onClick={() => selectArea(opt)}
                   aria-pressed={selectedArea === opt && !customArea}
                   className={optionClass}
                   data-motion="zustand"

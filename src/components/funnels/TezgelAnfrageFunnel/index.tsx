@@ -1,14 +1,12 @@
 'use client';
 
-// Express-Anfrage (E-011): Zustand, Schrittwechsel und Absenden hier; Logik in logik.ts (gesperrt), Markup in Schritt1–3,
-// Erfolg und WhatsAppGeoeffnet. Darstellung nach KERN (E2-ORCH-08): Feld an der Fuge, Fortschritt als Mono-Felder.
-import React, { useState } from 'react';
+// Express-Anfrage (E-011): Schrittwechsel und Markup hier. Logik aus useAnfrageFunnel (gemeinsam mit der Kern-Ansicht);
+// Schritttexte in logik.ts, Markup in Schritt1–3, Erfolg und WhatsAppGeoeffnet. Darstellung nach KERN (E2-ORCH-08): Feld an der Fuge, Fortschritt als Mono-Felder.
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen } from '@/components/kern/stile';
-import { COMPANY_DATA } from '@/config/company';
-import { openWhatsApp } from '@/lib/whatsapp';
-import { STEPS, beschriftungen, nachricht, nutzlast, type SubmissionStatus } from './logik';
+import { useAnfrageFunnel } from '@/lib/formulare/useAnfrageFunnel';
+import { STEPS } from './logik';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
 import Schritt3 from './Schritt3';
@@ -16,76 +14,49 @@ import Erfolg from './Erfolg';
 import WhatsAppGeoeffnet from './WhatsAppGeoeffnet';
 
 export default function TezgelAnfrageFunnel() {
-  const [step, setStep] = useState(1);
-  const [projectType, setProjectType] = useState('bad');
-  const [selectedArea, setSelectedArea] = useState('15 - 35 m²');
-  const [customArea, setCustomArea] = useState('');
-  const [timing, setTiming] = useState('In 1 - 3 Monaten');
-  const [location, setLocation] = useState('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [notes, setNotes] = useState('');
-  const [honeypot, setHoneypot] = useState('');
-  const [formInitTime] = useState<number>(() => Date.now());
-  const [status, setStatus] = useState<SubmissionStatus>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [referenceId, setReferenceId] = useState('');
+  const {
+    step,
+    setStep,
+    projectType,
+    setProjectType,
+    selectedArea,
+    customArea,
+    setCustomArea,
+    timing,
+    setTiming,
+    location,
+    setLocation,
+    name,
+    setName,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    notes,
+    setNotes,
+    honeypot,
+    setHoneypot,
+    status,
+    errorMessage,
+    referenceId,
+    projectTitle,
+    finalArea,
+    locationText,
+    handleWhatsAppDirect,
+    handleOnlineSubmit,
+    handleNewRequest,
+    handleBackToOverview,
+    selectArea
+  } = useAnfrageFunnel();
 
-  const { projectTitle, finalArea, locationText } = beschriftungen(projectType, customArea, selectedArea, location);
-
-  const getWhatsAppMessage = () => nachricht({ projectTitle, finalArea, locationText, timing, name, phone, email, notes });
-
-  const handleWhatsAppDirect = () => {
-    if (!name || !phone) {
-      setErrorMessage('Bitte tragen Sie zumindest Ihren Namen und eine Telefonnummer ein.');
-      return;
-    }
-    openWhatsApp({
-      phone: COMPANY_DATA.contact.whatsappNumber,
-      text: getWhatsAppMessage(),
-    });
-    setStatus('whatsapp_opened');
-  };
-
-  const handleOnlineSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setErrorMessage('');
-    setStatus('submitting');
-
-    try {
-      const response = await fetch('/api/anfrage', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(nutzlast({ projectType, projectTitle, finalArea, locationText, name, phone, email, timing, notes, honeypot, formInitTime }))
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.error || 'Übertragung fehlgeschlagen.');
-      }
-
-      if (data.referenceId) {
-        setReferenceId(data.referenceId);
-      }
-
-      setStatus('success');
-    } catch (err: unknown) {
-      console.error('Submission error:', err);
-      const msg = err instanceof Error ? err.message : 'Es gab ein Problem bei der Übertragung.';
-      setErrorMessage(msg);
-      setStatus('error');
-    }
-  };
 
   if (status === 'success') {
-    return <Erfolg setStep={setStep} name={name} setName={setName} setPhone={setPhone} email={email} setEmail={setEmail} setNotes={setNotes} setStatus={setStatus} referenceId={referenceId} setReferenceId={setReferenceId} projectTitle={projectTitle} finalArea={finalArea} locationText={locationText} />;
+    return <Erfolg name={name} email={email} referenceId={referenceId} projectTitle={projectTitle} finalArea={finalArea} locationText={locationText} handleNewRequest={handleNewRequest} />;
   }
 
   // WHATSAPP OPENED STATE
   if (status === 'whatsapp_opened') {
-    return <WhatsAppGeoeffnet setStep={setStep} setStatus={setStatus} />;
+    return <WhatsAppGeoeffnet handleBackToOverview={handleBackToOverview} />;
   }
 
   return (
@@ -131,7 +102,7 @@ export default function TezgelAnfrageFunnel() {
       {/* STEP 2: DETAILS */}
       {step === 2 && (
         <Schritt2
-          setStep={setStep} selectedArea={selectedArea} setSelectedArea={setSelectedArea} customArea={customArea} setCustomArea={setCustomArea}
+          setStep={setStep} selectedArea={selectedArea} selectArea={selectArea} customArea={customArea} setCustomArea={setCustomArea}
           timing={timing} setTiming={setTiming} location={location} setLocation={setLocation}
         />
       )}

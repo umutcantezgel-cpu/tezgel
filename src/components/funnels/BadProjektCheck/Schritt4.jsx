@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react';
-import { EXTRA_OPTIONS } from './logik';
+import { EXTRA_OPTIONS } from '@/lib/formulare/useProjektCheck';
 
 // 4. Wunschausstattung und Extras (E-011: aus BadProjektCheck.jsx verschoben, Markup unverändert).
 export default function Schritt4({ selectedOptions, toggleOption }) {

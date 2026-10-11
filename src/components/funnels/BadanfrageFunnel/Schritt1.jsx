@@ -1,4 +1,4 @@
-import { OBJECT_TYPES } from './logik';
+import { OBJECT_TYPES } from '@/lib/formulare/useBadanfrage';
 import { optionClass } from './stile';
 
 // Schritt 1: Objekttyp (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).

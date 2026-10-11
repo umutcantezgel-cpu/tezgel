@@ -1,10 +1,10 @@
 import { CheckCircle2, Phone, Sparkles } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
-import { labelOf, ROOM_OPTIONS } from './logik';
+import { labelOf, ROOM_OPTIONS } from '@/lib/formulare/useFliesenKonfigurator';
 import ResultSummary from './ResultSummary';
 
 // Erfolgsansicht nach dem Absenden (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
-export default function Erfolg({ setStep, data, setSentVia, referenceId, setReferenceId }) {
+export default function Erfolg({ data, referenceId, handleNewRequest }) {
     const roomsText = data.rooms.map((id) => labelOf(ROOM_OPTIONS, id)).join(', ') || 'Fliesenprojekt';
     return (
         <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 max-w-3xl mx-auto shadow-xl" role="status">
@@ -54,7 +54,7 @@ export default function Erfolg({ setStep, data, setSentVia, referenceId, setRefe
                 </a>
                 <button
                     type="button"
-                    onClick={() => { setSentVia(null); setStep(1); setReferenceId(''); }}
+                    onClick={handleNewRequest}
                     className="btn-ghost w-full sm:w-auto text-xs"
                 >
                     Neue Konfiguration starten

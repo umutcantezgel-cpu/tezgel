@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Check, ClipboardList, Info, Ruler } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
-import { buildChecklist, buildSummaryLines, calculateArea, calculateStairs, fmt } from './logik';
+import { buildChecklist, buildSummaryLines, calculateArea, calculateStairs, fmt } from '@/lib/formulare/useFliesenKonfigurator';
 import { linkClass } from './stile';
 
 // Ergebnis: Zusammenfassung, Materialbedarf, Checkliste (E-011: aus FliesenKonfigurator.jsx verschoben, unverändert).

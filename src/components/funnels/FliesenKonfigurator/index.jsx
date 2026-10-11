@@ -1,11 +1,9 @@
 'use client';
-// Fliesen-Konfigurator (E-011): Zustand, Schrittwechsel mit Fokus und Absenden hier; Logik in logik.js (gesperrt),
+// Fliesen-Konfigurator (E-011): Markup hier. Logik aus useFliesenKonfigurator (gemeinsam mit der Kern-Ansicht);
 // Markup in Schritt1–4, Erfolg, WhatsAppGeoeffnet, OptionGroup und ResultSummary.
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { ArrowRight, ArrowLeft, Check, Sparkles } from 'lucide-react';
-import { COMPANY_DATA } from '@/config/company';
-import { openWhatsApp } from '@/lib/whatsapp';
-import { STEPS, AREA_ROOMS, calculateArea, calculateStairs, parseCount, fmt, anfangsdaten, nachricht, nutzlast } from './logik';
+import { STEPS, fmt, useFliesenKonfigurator } from '@/lib/formulare/useFliesenKonfigurator';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
 import Schritt3 from './Schritt3';
@@ -19,78 +17,31 @@ import WhatsAppGeoeffnet from './WhatsAppGeoeffnet';
  * format ('xxl' | …), material ('holzoptik' | …), floorHeating (boolean).
  */
 export default function FliesenKonfigurator({ area, substrate, format, material, floorHeating } = {}) {
-    const [step, setStep] = useState(1);
-    const [sentVia, setSentVia] = useState(null); // 'whatsapp' | 'online'
-    const [referenceId, setReferenceId] = useState('');
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-    const headingRef = useRef(null);
-
-    const [data, setData] = useState(() => anfangsdaten({ area, substrate, format, material, floorHeating }));
-
-    const update = (patch) => setData((prev) => ({ ...prev, ...patch }));
-
-    const hasAreaRooms = data.rooms.some((r) => AREA_ROOMS.includes(r));
-    const hasStairs = data.rooms.includes('treppe');
-    const areaCalc = calculateArea(data);
-    const stairCalc = calculateStairs(data);
-    const rises = parseCount(data.stairRises);
-
-    const goToStep = (next) => {
-        setStep(next);
-        requestAnimationFrame(() => headingRef.current?.focus());
-    };
-
-    const buildMessage = () => nachricht(data);
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        const submitter = event.nativeEvent?.submitter;
-        const channel = submitter?.value === 'whatsapp' ? 'whatsapp' : 'online';
-        const message = buildMessage();
-
-        if (channel === 'whatsapp') {
-            openWhatsApp({
-                phone: COMPANY_DATA.contact.whatsappNumber,
-                text: message,
-            });
-            setSentVia('whatsapp');
-            return;
-        }
-
-        // Online Direct API Submission
-        setIsSubmitting(true);
-        setErrorMessage('');
-
-        try {
-            const res = await fetch('/api/anfrage', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(nutzlast(data))
-            });
-
-            const resData = await res.json();
-            if (!res.ok || !resData.success) {
-                throw new Error(resData.error || 'Übertragung fehlgeschlagen.');
-            }
-
-            if (resData.referenceId) {
-                setReferenceId(resData.referenceId);
-            }
-            setSentVia('online');
-        } catch (err) {
-            console.error('Fliesen-Konfigurator submission error:', err);
-            setErrorMessage(err.message || 'Verbindungsfehler beim Absenden.');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    const {
+        step,
+        sentVia,
+        setSentVia,
+        referenceId,
+        isSubmitting,
+        errorMessage,
+        headingRef,
+        data,
+        update,
+        hasAreaRooms,
+        hasStairs,
+        areaCalc,
+        stairCalc,
+        rises,
+        goToStep,
+        handleSubmit,
+        handleNewRequest
+    } = useFliesenKonfigurator({ area, substrate, format, material, floorHeating });
 
     // -----------------------------------------------------------------------
     // Success view
     // -----------------------------------------------------------------------
     if (sentVia === 'online') {
-        return <Erfolg setStep={setStep} data={data} setSentVia={setSentVia} referenceId={referenceId} setReferenceId={setReferenceId} />;
+        return <Erfolg data={data} referenceId={referenceId} handleNewRequest={handleNewRequest} />;
     }
 
     if (sentVia === 'whatsapp') {

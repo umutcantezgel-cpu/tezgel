@@ -4,7 +4,7 @@ import { etikettKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 
 // Erfolgsansicht nach dem Absenden (E2-ORCH-08: Darstellung nach KERN; Texte und Verhalten unverändert, ohne Emoji).
-export default function Erfolg({ setStep, name, setName, setPhone, email, setEmail, setNotes, setStatus, referenceId, setReferenceId, projectTitle, finalArea, locationText }) {
+export default function Erfolg({ name, email, referenceId, projectTitle, finalArea, locationText, handleNewRequest }) {
     return (
         <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12" role="status">
           <div className="flex flex-wrap items-center gap-3">
@@ -50,15 +50,7 @@ export default function Erfolg({ setStep, name, setName, setPhone, email, setEma
             </Knopf>
             <Knopf
               variante="neben"
-              onClick={() => {
-                setStatus('idle');
-                setStep(1);
-                setName('');
-                setPhone('');
-                setEmail('');
-                setNotes('');
-                setReferenceId('');
-              }}
+              onClick={handleNewRequest}
             >
               Weitere Anfrage starten
             </Knopf>

@@ -2,7 +2,7 @@ import { Phone, CheckCircle2, Sparkles } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 
 // Erfolgsansicht nach dem Absenden (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).
-export default function Erfolg({ setStep, setStatus, referenceId, setReferenceId, formData, calculatedSqm, objectTitle, scopeTitle, tierTitle, featureLabels, addressText }) {
+export default function Erfolg({ handleNewRequest, referenceId, formData, calculatedSqm, objectTitle, scopeTitle, tierTitle, featureLabels, addressText }) {
     return (
         <div className="glass-bezel-outer max-w-2xl mx-auto shadow-xl">
             <div className="glass-bezel-inner p-8 md:p-12 text-center" role="status">
@@ -49,7 +49,7 @@ export default function Erfolg({ setStep, setStatus, referenceId, setReferenceId
                     </a>
                     <button
                         type="button"
-                        onClick={() => { setStatus('idle'); setStep(1); setReferenceId(''); }}
+                        onClick={handleNewRequest}
                         className="btn-ghost w-full sm:w-auto text-xs"
                     >
                         Neue Badanfrage starten

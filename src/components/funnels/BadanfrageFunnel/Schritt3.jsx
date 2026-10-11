@@ -1,4 +1,4 @@
-import { PERSON_OPTIONS } from './logik';
+import { PERSON_OPTIONS } from '@/lib/formulare/useBadanfrage';
 import { inputClass } from './stile';
 
 // Schritt 3: Raummaße (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).

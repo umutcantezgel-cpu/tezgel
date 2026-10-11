@@ -4,7 +4,7 @@ import { COMPANY_DATA } from '@/config/company';
 import { inputClass } from './stile';
 
 // Zusammenfassung, Musterbad, Zuschuss und Anfrage (Formular, Erfolg, Fehler) (E-011: aus BadProjektCheck.jsx verschoben, Markup unverändert).
-export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extras, matchingBath, contactOpen, setContactOpen, sentVia, setSentVia, referenceId, setReferenceId, leadData, setLeadData, isSubmitting, errorMessage, handleLeadSubmit }) {
+export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extras, matchingBath, contactOpen, setContactOpen, sentVia, setSentVia, referenceId, handleNewRequest, leadData, setLeadData, isSubmitting, errorMessage, handleLeadSubmit }) {
     return (
         <div className="lg:col-span-5 flex flex-col justify-between space-y-6 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200">
             <div className="space-y-4">
@@ -108,7 +108,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         </div>
                         <button
                             type="button"
-                            onClick={() => { setSentVia(null); setReferenceId(''); }}
+                            onClick={handleNewRequest}
                             className="font-bold text-orange-600 hover:text-orange-700 underline underline-offset-2"
                         >
                             Erneut anfragen oder anpassen

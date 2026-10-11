@@ -4,7 +4,7 @@ import { etikettKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 
 // Ansicht nach dem Öffnen von WhatsApp (E2-ORCH-08: Darstellung nach KERN; Texte und Verhalten unverändert).
-export default function WhatsAppGeoeffnet({ setStep, setStatus }) {
+export default function WhatsAppGeoeffnet({ handleBackToOverview }) {
     return (
         <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12" role="status">
           <span className={etikettKlassen}>
@@ -22,10 +22,7 @@ export default function WhatsAppGeoeffnet({ setStep, setStatus }) {
             </Knopf>
             <Knopf
               variante="neben"
-              onClick={() => {
-                setStatus('idle');
-                setStep(1);
-              }}
+              onClick={handleBackToOverview}
             >
               Zurück zur Übersicht
             </Knopf>

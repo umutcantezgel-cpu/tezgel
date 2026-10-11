@@ -2,7 +2,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 
 // Ansicht nach dem Öffnen von WhatsApp (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).
-export default function WhatsAppGeoeffnet({ setStep, setStatus, calculatedSqm, scopeTitle }) {
+export default function WhatsAppGeoeffnet({ handleBackFromWhatsApp, calculatedSqm, scopeTitle }) {
     return (
         <div className="glass-bezel-outer max-w-2xl mx-auto shadow-xl">
             <div className="glass-bezel-inner p-8 md:p-12 text-center" role="status">
@@ -23,7 +23,7 @@ export default function WhatsAppGeoeffnet({ setStep, setStatus, calculatedSqm, s
                     </a>
                     <button
                         type="button"
-                        onClick={() => { setStatus('idle'); setStep(1); }}
+                        onClick={handleBackFromWhatsApp}
                         className="btn-ghost w-full sm:w-auto text-xs"
                     >
                         Zurück

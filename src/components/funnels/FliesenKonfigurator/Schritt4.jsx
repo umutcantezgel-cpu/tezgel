@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft, Lock, MessageCircle, Send, Loader2, AlertCircle } from 'lucide-react';
-import { TIMING_OPTIONS } from './logik';
+import { TIMING_OPTIONS } from '@/lib/formulare/useFliesenKonfigurator';
 import { inputClass, labelClass, linkClass } from './stile';
 import OptionGroup from './OptionGroup';
 import ResultSummary from './ResultSummary';

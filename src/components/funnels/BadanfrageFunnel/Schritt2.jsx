@@ -1,4 +1,4 @@
-import { SCOPES } from './logik';
+import { SCOPES } from '@/lib/formulare/useBadanfrage';
 import { optionClass } from './stile';
 
 // Schritt 2: Sanierungsumfang (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).

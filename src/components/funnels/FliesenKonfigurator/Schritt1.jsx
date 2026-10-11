@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Check } from 'lucide-react';
-import { ROOM_OPTIONS, toggleInList } from './logik';
+import { ROOM_OPTIONS, toggleInList } from '@/lib/formulare/useFliesenKonfigurator';
 import { cardOptionClass, linkClass } from './stile';
 
 // Schritt 1: Bereiche (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).

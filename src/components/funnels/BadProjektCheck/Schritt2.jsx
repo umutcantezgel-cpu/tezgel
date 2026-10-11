@@ -1,4 +1,4 @@
-import { SCOPE_OPTIONS } from './logik';
+import { SCOPE_OPTIONS } from '@/lib/formulare/useProjektCheck';
 
 // 2. Sanierungsumfang (E-011: aus BadProjektCheck.jsx verschoben, Markup unverändert).
 export default function Schritt2({ sanitaryScope, setSanitaryScope }) {

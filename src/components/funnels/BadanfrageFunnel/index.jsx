@@ -1,11 +1,8 @@
 "use client";
-// Badanfrage (E-011): Zustand, Schrittwechsel und Absenden hier; Logik in logik.js (gesperrt), Markup in Schritt1–5,
+// Badanfrage (E-011): Schrittwechsel und Rahmen hier. Logik aus useBadanfrage (gemeinsam mit der Kern-Ansicht); Markup in Schritt1–5,
 // Erfolg und WhatsAppGeoeffnet.
-import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
-import { COMPANY_DATA } from '@/config/company';
-import { openWhatsApp } from '@/lib/whatsapp';
-import { TOTAL_STEPS, beschriftungen, nachricht, nutzlast } from './logik';
+import { useBadanfrage, TOTAL_STEPS } from '@/lib/formulare/useBadanfrage';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
 import Schritt3 from './Schritt3';
@@ -15,88 +12,33 @@ import Erfolg from './Erfolg';
 import WhatsAppGeoeffnet from './WhatsAppGeoeffnet';
 
 export default function BadanfrageFunnel() {
-    const [step, setStep] = useState(1);
-    const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error' | 'whatsapp_opened'
-    const [errorMessage, setErrorMessage] = useState('');
-    const [referenceId, setReferenceId] = useState('');
-    const [formData, setFormData] = useState({
-        objectType: 'efh',
-        scope: 'komplett',
-        length: '3.0',
-        width: '2.5',
-        persons: '2',
-        tier: 'premium',
-        features: ['walkin', 'led-spiegel'],
-        name: '',
-        phone: '',
-        email: '',
-        street: '',
-        zipCity: '',
-        notes: '',
-        honeypot: ''
-    });
-
-    const toggleFeature = (feat) => {
-        setFormData(prev => {
-            const exists = prev.features.includes(feat);
-            return {
-                ...prev,
-                features: exists ? prev.features.filter(f => f !== feat) : [...prev.features, feat]
-            };
-        });
-    };
-
-    const { calculatedSqm, objectTitle, scopeTitle, tierTitle, personsLabel, featureLabels, addressText } = beschriftungen(formData);
-
-    const getMessage = () => nachricht({ ownerLastName: COMPANY_DATA.owner.lastName, formData, calculatedSqm, objectTitle, scopeTitle, tierTitle, personsLabel, featureLabels, addressText });
-
-    const handleWhatsApp = () => {
-        if (!formData.name || !formData.phone) {
-            setErrorMessage('Bitte tragen Sie zumindest Name und Telefonnummer ein.');
-            return;
-        }
-        openWhatsApp({
-            phone: COMPANY_DATA.contact.whatsappNumber,
-            text: getMessage(),
-        });
-        setStatus('whatsapp_opened');
-    };
-
-    const handleOnlineSubmit = async (e) => {
-        e.preventDefault();
-        setErrorMessage('');
-        setStatus('submitting');
-
-        try {
-            const response = await fetch('/api/anfrage', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(nutzlast({ formData, calculatedSqm, objectTitle, scopeTitle, tierTitle, personsLabel, featureLabels, addressText }))
-            });
-
-            const data = await response.json();
-            if (!response.ok || !data.success) {
-                throw new Error(data.error || 'Übertragung fehlgeschlagen.');
-            }
-
-            if (data.referenceId) {
-                setReferenceId(data.referenceId);
-            }
-
-            setStatus('success');
-        } catch (err) {
-            console.error('Submission error:', err);
-            setErrorMessage(err.message || 'Verbindungsfehler beim Absenden.');
-            setStatus('error');
-        }
-    };
+    const {
+        step,
+        setStep,
+        status,
+        errorMessage,
+        referenceId,
+        formData,
+        setFormData,
+        toggleFeature,
+        calculatedSqm,
+        objectTitle,
+        scopeTitle,
+        tierTitle,
+        featureLabels,
+        addressText,
+        handleWhatsApp,
+        handleOnlineSubmit,
+        handleNewRequest,
+        handleBackFromWhatsApp
+    } = useBadanfrage();
 
     if (status === 'success') {
-        return <Erfolg setStep={setStep} setStatus={setStatus} referenceId={referenceId} setReferenceId={setReferenceId} formData={formData} calculatedSqm={calculatedSqm} objectTitle={objectTitle} scopeTitle={scopeTitle} tierTitle={tierTitle} featureLabels={featureLabels} addressText={addressText} />;
+        return <Erfolg handleNewRequest={handleNewRequest} referenceId={referenceId} formData={formData} calculatedSqm={calculatedSqm} objectTitle={objectTitle} scopeTitle={scopeTitle} tierTitle={tierTitle} featureLabels={featureLabels} addressText={addressText} />;
     }
 
     if (status === 'whatsapp_opened') {
-        return <WhatsAppGeoeffnet setStep={setStep} setStatus={setStatus} calculatedSqm={calculatedSqm} scopeTitle={scopeTitle} />;
+        return <WhatsAppGeoeffnet handleBackFromWhatsApp={handleBackFromWhatsApp} calculatedSqm={calculatedSqm} scopeTitle={scopeTitle} />;
     }
 
     return (

@@ -1,6 +1,6 @@
 import Icon from '@/components/icons/Icon';
 import { knopfKlassen } from '@/components/kern/stile';
-import { PROJECT_TYPES } from './logik';
+import { PROJECT_TYPES } from '@/lib/formulare/useAnfrageFunnel';
 import { projektClass } from './stile';
 
 // Schritt 1: Projekt (E2-ORCH-08: Darstellung nach KERN; Texte, Namen und Verhalten unverändert).

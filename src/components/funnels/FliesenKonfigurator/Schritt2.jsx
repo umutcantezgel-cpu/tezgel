@@ -1,4 +1,4 @@
-import { SUBSTRATE_OPTIONS, YES_NO, YES_NO_UNSURE, toggleInList } from './logik';
+import { SUBSTRATE_OPTIONS, YES_NO, YES_NO_UNSURE, toggleInList } from '@/lib/formulare/useFliesenKonfigurator';
 import OptionGroup from './OptionGroup';
 
 // Schritt 2: Untergrund (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).

@@ -1,5 +1,5 @@
 import { Check, Plus } from 'lucide-react';
-import { TIERS, FEATURES } from './logik';
+import { TIERS, FEATURES } from '@/lib/formulare/useBadanfrage';
 import { optionClass } from './stile';
 
 // Schritt 4: Ausstattung und Qualitätsstufe (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).

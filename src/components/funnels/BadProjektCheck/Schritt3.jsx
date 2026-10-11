@@ -1,4 +1,4 @@
-import { TIER_OPTIONS } from './logik';
+import { TIER_OPTIONS } from '@/lib/formulare/useProjektCheck';
 
 // 3. Ausstattungsniveau (E-011: aus BadProjektCheck.jsx verschoben, Markup unverändert).
 export default function Schritt3({ tier, setTier }) {
