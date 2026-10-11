@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import type { LucideIcon } from 'lucide-react';
 import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
@@ -9,21 +8,30 @@ import { buildGraph, buildCityLocalBusinessNode, buildBreadcrumbNode, buildWebPa
 import { findCityConfig, getCityLandingPageSchema } from '@/lib/schemaPyramid';
 import { createMetadata } from '@/lib/metadata';
 import JsonLd from '@/components/seo/JsonLd';
-import KernIcon from '@/components/icons/Icon';
-import { Droplets, Sparkles, Sun, ShieldCheck, MapPin, Award } from '@/components/icons/ersatz';
-type LucideIcon = import('react').ComponentType<{ className?: string; 'aria-label'?: string }>;
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 import QualityPromise from '@/components/sections/QualityPromise';
 import RouteVisualization from '@/components/locations/RouteVisualization';
 import LocationContact from '@/components/locations/LocationContact';
 import LocalDominanceMap from '@/components/maps/LocalDominanceMap';
 import FinalCTA from '@/components/ui/FinalCTA';
 
-const SERVICE_ICONS: Record<string, LucideIcon> = {
-  bad: Droplets,
-  wohnen: Sparkles,
-  aussen: Sun,
-  untergrund: ShieldCheck,
-};
+// Standortseite (E3-BAU-05, KERN v2): Erzählansicht nach dem Muster der Standorte-Übersicht (E3-BAU-04) und von
+// /leistungen/[id]. Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts ein Verlegeplan ohne Achse. Danach
+// die Leitachse über die Abschnitte: Kennzahlen, Anfahrt, Einsatzgebiet mit Karte, Leistungen vor Ort als Felder, Orte
+// der Region, regionaler Kontakt und Qualitätsversprechen. Der Abschluss steht außerhalb der Leitachse. Wortlaut,
+// Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein großer Moment: das Einzugsband (E3-ORCH-03) setzt der
+// Orchestrator.
+
+// Stadtfeld: das ganze Feld ist der Link (Fuge statt Karte); der Name unterstreicht sich bei feinem Zeiger
+const STADT_LINK = 'group flex flex-1 flex-col justify-between after:absolute after:inset-0';
+const STADT_NAME =
+  'font-anzeige text-fs-4 font-semibold text-tinte decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
 
 function isHeadquartersCity(city: CityData) {
   return city.name === COMPANY_DATA.headquarters.city;
@@ -127,106 +135,89 @@ export default async function StandortPage({
     ...cityTierNodes,
   ]);
 
-  const stats = [
+  // Kennzahlen mit dem Wert vor dem Etikett: die Lesefolge des Bestands bleibt erhalten (das Kennwerte-Raster stellt das Etikett voran)
+  const kennzahlen = [
     {
-      value: isHeadquartersCity(city) ? city.name : city.distanceKm === 0 ? 'Nachbarstadt' : `ca. ${city.distanceKm} km`,
-      label: isHeadquartersCity(city)
+      wert: isHeadquartersCity(city) ? city.name : city.distanceKm === 0 ? 'Nachbarstadt' : `ca. ${city.distanceKm} km`,
+      etikett: isHeadquartersCity(city)
         ? 'Unser Firmensitz'
         : city.distanceKm === 0
           ? `Direkt neben unserem Firmensitz in ${COMPANY_DATA.headquarters.city}`
           : 'Entfernung ab Wetzlar',
-      icon: MapPin,
     },
-    { value: 'DIN 18534', label: 'Normgerechte Verbundabdichtung', icon: ShieldCheck },
-    { value: authority.shortName, label: 'Eingetragener Fachbetrieb', icon: Award },
+    { wert: 'DIN 18534', etikett: 'Normgerechte Verbundabdichtung' },
+    { wert: authority.shortName, etikett: 'Eingetragener Fachbetrieb' },
   ];
 
   return (
-    <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
+    <>
       <JsonLd schema={cityGraph} />
 
-      {/* Ambient Glow */}
-
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <div className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="border border-fuge bg-fliese p-8 sm:p-16 text-center space-y-6 relative overflow-hidden">
-          <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2">
-            <KernIcon name="ort" groesse={4} />
-            <span>
-              {city.region} &middot; {distanceLabel(city)}
-            </span>
-          </span>
-
-          <h1 className="text-fs-7 text-tinte">
-            Fliesenverlegung &amp; Badsanierung in{' '}
-            <span>{city.name}</span>
-          </h1>
-
-          <p className="text-fs-3 text-tinte-2 max-w-mass mx-auto">
-            Fliesenverlegung &amp; Badsanierung in {city.name}: {COMPANY_DATA.legalName} – Ihr Fachbetrieb für moderne Bäder, fugenarme Großformate, Wohnbereiche,
-            Balkone &amp; Terrassen sowie DIN 18534 Verbundabdichtung in {city.name} und Umgebung.{' '}
+      {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts der Verlegeplan ohne Achse */}
+      <Einstieg
+        art="erzaehl"
+        etikett={<>{city.region} &middot; {distanceLabel(city)}</>}
+        titel={<>Fliesenverlegung &amp; Badsanierung in {city.name}</>}
+        vorspann={
+          <p>
+            Fliesenverlegung &amp; Badsanierung in {city.name}: {COMPANY_DATA.legalName} – Ihr Fachbetrieb für moderne Bäder,
+            fugenarme Großformate, Wohnbereiche, Balkone &amp; Terrassen sowie DIN 18534 Verbundabdichtung in {city.name} und
+            Umgebung.{' '}
             {distanceSentence(city)}
           </p>
-
-          <div className="flex flex-wrap gap-4 justify-center pt-2">
-            <Link href="/kontakt" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-tinte bg-tinte text-kalk hover:border-tinte-2 hover:bg-tinte-2">
+        }
+        aktionen={
+          <>
+            <Knopf href="/kontakt" icon="pfeil-rechts">
               Aufmaß in {city.name} anfragen
-              <KernIcon name="pfeil-rechts" groesse={4} />
-            </Link>
-            <a href={`tel:${contact.phoneLink}`} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-strich bg-fliese text-tinte hover:border-tinte">
-              <KernIcon name="telefon" groesse={4} className="text-laser-tief" />
-              {contact.phone}
-            </a>
+            </Knopf>
+            <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+              <span className="font-mono font-normal">{contact.phone}</span>
+            </Knopf>
+          </>
+        }
+        rand={
+          <div className="border border-fuge bg-fliese p-6 lg:p-8">
+            <Verlegeplan plan="bad" ohneAchse bemassung={false} />
           </div>
-        </div>
-      </div>
+        }
+      />
 
-      {/* ── About this city - Double Bezel Console ───────────────────────── */}
-      <div className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="max-w-seite mx-auto">
-          <div className="p-8 sm:p-12 space-y-8">
-            <div>
-              <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-3">Regionaler Fachservice</span>
-              <h2 className="text-fs-6 text-tinte">
-                Ihr Fliesen-Fachbetrieb für {city.name}
-              </h2>
-            </div>
+      <Leitachse>
+        {/* 2. ÜBER DIE STADT: Etikett und H2 an der Achse, Vorspann, drei Kennzahlen im Feldraster */}
+        <Abschnitt
+          leitachse
+          spaet
+          etikett="Regionaler Fachservice"
+          titel={<>Ihr Fliesen-Fachbetrieb für {city.name}</>}
+          einleitung={<p>{city.description}</p>}
+        >
+          <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge md:grid-cols-3">
+            {kennzahlen.map(({ wert, etikett }) => (
+              <li key={etikett} className="flex flex-col gap-2 bg-fliese p-6 lg:p-8">
+                <span className="font-anzeige text-fs-4 font-semibold tabular-nums text-tinte">{wert}</span>
+                <span className="font-mono text-fs-1 text-tinte-2">{etikett}</span>
+              </li>
+            ))}
+          </ul>
+        </Abschnitt>
 
-            <p className="text-fs-3 text-tinte-2">
-              {city.description}
-            </p>
+        {/* 3. ANFAHRT: Bestandsbaustein, unverändert eingebunden */}
+        <RouteVisualization city={city} />
 
-            <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              {stats.map(({ value, label, icon: Icon }) => (
-                <li
-                  key={label}
-                  className="bg-fliese border border-fuge p-6 text-center flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 text-laser-tief mb-2" aria-hidden="true" />
-                  <span className="font-anzeige text-fs-5 font-semibold text-tinte tabular-nums">{value}</span>
-                  <span className="text-fs-1 text-tinte-2 font-semibold">{label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Route Visualization from Aßlar to this city ────────────────────── */}
-      <RouteVisualization city={city} />
-
-      {/* ── Regional Dominance & Service Radius Radar ──────────────────── */}
-      <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-label={`Einsatzgebiet und Marktabdeckung ${city.name}`}>
-        <div className="max-w-seite mx-auto space-y-4">
-          <div className="text-center sm:text-left">
-            <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-2">Regionale Marktabdeckung</span>
-            <p className="text-fs-5 font-semibold text-tinte">
-              Einsatzgebiet {city.name} &amp; Mittelhessen
-            </p>
-            <p className="text-fs-2 text-tinte-2 mt-1">
-              Feste Anfahrtsrouten ab Aßlar im gesamten Lahn-Dill-Kreis &amp; Umgebung.
-            </p>
-          </div>
+        {/* 4. EINSATZGEBIET: Titelzeile und Anfahrtshinweis, darunter die Karte des Einsatzgebiets (Bestandsbaustein) */}
+        <Abschnitt
+          aria-label={`Einsatzgebiet und Marktabdeckung ${city.name}`}
+          leitachse
+          spaet
+          etikett="Regionale Marktabdeckung"
+          einleitung={
+            <>
+              <p className="font-anzeige text-fs-4 font-semibold text-tinte">Einsatzgebiet {city.name} &amp; Mittelhessen</p>
+              <p className="mt-2 text-fs-2 text-tinte-2">Feste Anfahrtsrouten ab Aßlar im gesamten Lahn-Dill-Kreis &amp; Umgebung.</p>
+            </>
+          }
+        >
           <LocalDominanceMap
             centerCity={`${city.name} (${city.region})`}
             citySlug={city.slug}
@@ -237,98 +228,87 @@ export default async function StandortPage({
               'Eingetragener HWK-Betrieb',
             ]}
           />
-        </div>
-      </section>
+        </Abschnitt>
 
-      {/* ── Services in this city ────────────────────────────────────────── */}
-      <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="stadt-leistungen">
-        <div className="text-center max-w-mass mx-auto mb-12">
-          <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2 mb-4">Unsere Fachgewerke</span>
-          <h2 id="stadt-leistungen" className="text-fs-6 text-tinte">
-            Unsere Leistungen in {city.name}
-          </h2>
-          <p className="text-tinte-2 text-fs-3 mt-2">
-            Vom Vor-Ort-Aufmaß bis zur fertigen Fuge – alle Fliesengewerke aus einer Hand.
-          </p>
-        </div>
-
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SERVICES.map((srv) => {
-            const Icon = SERVICE_ICONS[srv.id] || Sparkles;
-            return (
-              <li key={srv.id}>
+        {/* 5. LEISTUNGEN IN DER STADT: je Fachgewerk ein Feld, das ganze Feld ist der Link */}
+        <Abschnitt
+          titelId="stadt-leistungen"
+          leitachse
+          spaet
+          etikett="Unsere Fachgewerke"
+          titel={<>Unsere Leistungen in {city.name}</>}
+          einleitung={<p>Vom Vor-Ort-Aufmaß bis zur fertigen Fuge – alle Fliesengewerke aus einer Hand.</p>}
+        >
+          <Feldraster spalten={4}>
+            {SERVICES.map((srv) => (
+              <Feld key={srv.id} className="relative">
                 <Link
                   href={`/leistungen/${srv.id}/${city.slug}`}
                   aria-label={`${srv.name} in ${city.name} ansehen`}
-                  className="group border border-fuge bg-fliese p-6 h-full flex flex-col justify-between hover:border-strich transition-colors dauer-1"
+                  className={STADT_LINK}
                 >
                   <div>
-                    <p className="text-fs-3 font-semibold text-tinte mb-2 group-hover:text-laser-tief transition-colors">
-                      {srv.name}
-                    </p>
-                    <p className="text-fs-2 text-tinte-2">{srv.shortDescription}</p>
+                    <p className={STADT_NAME}>{srv.name}</p>
+                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{srv.shortDescription}</p>
                   </div>
-                  <span className="mt-6 pt-4 border-t border-fuge text-fs-2 font-semibold text-laser-tief flex items-center gap-2">
-                    In {city.name}
-                    <KernIcon name="pfeil-rechts" groesse={4} />
+                  <span className="mt-6 flex items-center justify-between gap-3 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
+                    <span>In {city.name}</span>
+                    <Icon name="pfeil-rechts" groesse={5} />
                   </span>
                 </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+              </Feld>
+            ))}
+          </Feldraster>
+        </Abschnitt>
 
-      {/* ── Nearby Cities ────────────────────────────────────────────────── */}
-      <section className="max-w-seite mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="weitere-orte">
-        <div className="text-center max-w-mass mx-auto mb-12">
-          <h2 id="weitere-orte" className="text-fs-6 text-tinte">
-            Weitere Einsatzgebiete in der Region
-          </h2>
-          <p className="text-tinte-2 text-fs-3 mt-2">
-            Neben {city.name} betreuen wir auch die angrenzenden Gemeinden im {city.region} sowie im gesamten Lahn-Dill- und Gießener Umland.
-          </p>
-        </div>
-
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {nearbyCities.map((nearbyCity) => (
-            <li key={nearbyCity.slug}>
-              <Link
-                href={`/standorte/${nearbyCity.slug}`}
-                className="group border border-fuge bg-fliese p-6 h-full block hover:border-strich transition-colors dauer-1"
-              >
-                <div className="flex items-center justify-between gap-3 mb-3">
-                  <p className="text-fs-3 font-semibold text-tinte group-hover:text-laser-tief transition-colors">
-                    {nearbyCity.name}
-                  </p>
-                  <span className="text-fs-1 text-tinte-2 bg-fliese px-3 py-1 font-semibold border border-fuge whitespace-nowrap tabular-nums">
-                    {distanceLabel(nearbyCity)}
+        {/* 6. WEITERE ORTE DER REGION: je Ort ein Feld mit Link */}
+        <Abschnitt
+          titelId="weitere-orte"
+          leitachse
+          spaet
+          titel="Weitere Einsatzgebiete in der Region"
+          einleitung={
+            <p>
+              Neben {city.name} betreuen wir auch die angrenzenden Gemeinden im {city.region} sowie im gesamten Lahn-Dill- und
+              Gießener Umland.
+            </p>
+          }
+        >
+          {/* E3-ORCH-03: Hier bindet der Orchestrator das Einzugsband ein (großer Moment); der Baumeister setzt es nicht. */}
+          <Feldraster spalten={3}>
+            {nearbyCities.map((nearbyCity) => (
+              <Feld key={nearbyCity.slug} className="relative">
+                <Link href={`/standorte/${nearbyCity.slug}`} className={STADT_LINK}>
+                  <div>
+                    <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                      <p className={STADT_NAME}>{nearbyCity.name}</p>
+                      <span className="font-mono text-fs-1 text-tinte-2 tabular-nums">{distanceLabel(nearbyCity)}</span>
+                    </div>
+                    <p className="font-mono text-fs-1 text-tinte-2">{nearbyCity.region}</p>
+                  </div>
+                  <span className="mt-6 flex items-center justify-between gap-3 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
+                    <span>Fliesenleger für {nearbyCity.name} ansehen</span>
+                    <Icon name="pfeil-rechts" groesse={5} />
                   </span>
-                </div>
-                <p className="text-fs-1 text-tinte-2 mb-3 font-medium">{nearbyCity.region}</p>
-                <span className="text-fs-1 text-laser-tief font-semibold flex items-center gap-1">
-                  <span>Fliesenleger für {nearbyCity.name} ansehen</span>
-                  <KernIcon name="pfeil-rechts" groesse={4} />
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                </Link>
+              </Feld>
+            ))}
+          </Feldraster>
+          <div className="mt-12">
+            <Knopf href="/standorte" variante="neben" icon="pfeil-rechts">
+              Alle Standorte ansehen
+            </Knopf>
+          </div>
+        </Abschnitt>
 
-        <div className="mt-12 text-center">
-          <Link href="/standorte" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setzen motion-safe:active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 border border-strich bg-fliese text-tinte hover:border-tinte">
-            Alle Standorte ansehen
-            <KernIcon name="pfeil-rechts" groesse={4} />
-          </Link>
-        </div>
-      </section>
+        {/* 7. REGIONALER KONTAKT: Bestandsbaustein, unverändert eingebunden (Hintergrundklasse entfällt wie in E3-BAU-04) */}
+        <LocationContact cityName={city.name} />
 
-      {/* Direct Contact Box for this City */}
-      <LocationContact cityName={city.name} className="bg-kalk" />
+        {/* 8. QUALITÄT: Bestandsbaustein (Merkliste), unverändert eingebunden */}
+        <QualityPromise />
+      </Leitachse>
 
-      <QualityPromise />
-
-      {/* Final Conversion Anchor for this City */}
+      {/* 9. ABSCHLUSS: Bestandsbaustein, unverändert eingebunden, außerhalb der Leitachse */}
       <FinalCTA
         headline={`Ihr Fliesenleger für ${city.name}: Jetzt kostenfreies Vor-Ort-Aufmaß vereinbaren.`}
         subtitle={`Schnelle Anfahrt nach ${city.name} • Festpreisangebot • HWK-Fachbetrieb`}
@@ -337,6 +317,6 @@ export default async function StandortPage({
         showQuickForm={true}
         quickFormSource={`standort-${city.slug}`}
       />
-    </div>
+    </>
   );
 }
