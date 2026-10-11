@@ -1,4 +1,4 @@
-STATUS · Phase P4 (Fundament, ruhend) · live 544c42d (Startseite `/` im Kern; Wege 308/410 live) · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · `/`: Jury 6,9 (4,30) · Lighthouse mobil 88 (85) · INP max 56 ms · axe 0 · Slop weich 5/hart 0 (16/4) · übrige Seiten unverändert · Planwert 8–13 Tage · Nächster Schritt: P4-Pakete (Vorlagen, Formulare, Wege), dann W1 `/bad`
+STATUS · Phase P4 (Fundament, ruhend) · live 8b4f9cd (Startseite `/` im Kern; Wege 308/410; Formular-Hooks; Kalender ohne Hydrationsfehler) · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · `/`: Jury 6,9 (4,30) · Lighthouse mobil 88 (85) · INP max 56 ms · axe 0 · Slop weich 5/hart 0 (16/4) · übrige Seiten unverändert · Planwert 8–13 Tage · Nächster Schritt: P4-Pakete (Vorlagen, Formulare, Wege), dann W1 `/bad`
 
 # STATUS · Lauf 1 „Rückführung und Veredelung“ (angepasst: nur Aufwertung)
 
@@ -43,3 +43,4 @@ STATUS · Phase P4 (Fundament, ruhend) · live 544c42d (Startseite `/` im Kern; 
 
 - 2026-10-11 07:28 CEST · **Startseite `/` live (d4da429)** nach Kandidat-Tor 5421e5b-k und zwei Gegenprüfungen (Runde 1 nein → behoben, Runde 2 ja); Live-Rauchtest und Live-Browser grün (0 Konsole, 0 CSP). P3 abgeschlossen; offene Abweichungen Z-04 (Tastatur +3) und Z-12 (TBT über Bestand) in ABNAHME.
 - 2026-10-11 08:08 CEST · P4-07 Wege live (544c42d): 308 für 2 Tezgel-Adressen, 410 für 7 Altbereiche + 18 Einzeladressen über `proxy.ts`; T2 grün (HTML 172 gleich, Proxy trifft keine Seite, Suite 350/0/16, Mutationsprobe 5/5 + Werkzeug), Live-Rauchtest + `wege --live` grün. P4-01…P4-05a zurück und lokal committet; Gegenprüfer P4-05a: Verhalten gleich. P4-05b/c laufen.
+- 2026-10-11 09:35 CEST · Push 8b4f9cd nach T2: Icon-Vollsatz (E-026), Formular-Hooks F-04…F-08 (je Gegenprüfer „gleich“), Kalender-Hydrationsfehler ab Tag 2 behoben (I-19, P4-05d), Zuklappen animiert (P4-09), Wortbruch im Fuß behoben; Vorlagen P4-01/02/03 und deren Überarbeitung P4-10a/b ruhend. Wunschtermin-Verlust (I-12) als M-19 an den Auftraggeber.
