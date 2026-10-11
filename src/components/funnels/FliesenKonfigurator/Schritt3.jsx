@@ -1,40 +1,8 @@
-import Icon from '@/components/icons/Icon';
 import Hinweis from '@/components/kern/Hinweis';
 import { hilfeKlassen, labelKlassen } from '@/components/kern/stile';
 import { FORMAT_OPTIONS, MATERIAL_OPTIONS, PATTERN_OPTIONS, STAIR_COVERING_OPTIONS, STAIR_TYPE_OPTIONS, YES_NO, parseNumber } from '@/lib/formulare/useFliesenKonfigurator';
-import { cardOptionClass, inputClass, legendClass } from './stile';
-
-// Auswahlgruppe im Kartenraster wie in Schritt1 und Schritt2 (E3-BAU-11/-12): Legende, Karten mit aria-pressed,
-// Haken bei gewählter Karte. Nebentext (desc) wie in Schritt1 mit Farbe je Zustand.
-function Auswahlgruppe({ legend, options, value, columns, onChange }) {
-    return (
-        <fieldset className="m-0 min-w-0 border-0 p-0">
-            <legend className={labelKlassen}>{legend}</legend>
-            <div className={`mt-2 grid gap-2 ${columns}`}>
-                {options.map((o) => {
-                    const selected = value === o.id;
-                    return (
-                        <button
-                            key={o.id}
-                            type="button"
-                            aria-pressed={selected}
-                            onClick={() => onChange(o.id)}
-                            className={cardOptionClass(selected)}
-                        >
-                            <span className="flex items-center justify-between gap-2">
-                                <span className="block text-fs-3 font-semibold">{o.label ?? o.title}</span>
-                                {selected && <Icon name="haken" groesse={4} />}
-                            </span>
-                            {o.desc && (
-                                <span className={`block text-fs-2 ${selected ? 'text-nacht-2' : 'text-tinte-2'}`}>{o.desc}</span>
-                            )}
-                        </button>
-                    );
-                })}
-            </div>
-        </fieldset>
-    );
-}
+import { inputClass, legendClass } from './stile';
+import Auswahlgruppe from './Auswahlgruppe';
 
 // Schritt 3: Format, Material und Menge (E-011: aus FliesenKonfigurator.jsx verschoben; E3-BAU-13: Darstellung nach KERN
 // wie Schritt1/2, Zahlenfelder wie E3-BAU-17; Texte, IDs, ARIA, Bedingungen, Reihenfolge und Nutzlast unverändert).
