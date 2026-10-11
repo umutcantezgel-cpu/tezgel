@@ -1,18 +1,12 @@
-import React from 'react';
+// Leistung (E3-BAU-03, KERN v2): Seitenkörper der Leistungsseiten als Erzählansicht nach dem Muster der
+// Leistungsübersicht (E3-BAU-02). Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts der Verlegeplan der
+// Leistung ohne Achse. Danach die Leitachse über die Abschnitte: Spezialisierungen und Merkmale als Feldraster,
+// Hinweis zur Fachqualität, Städteregister, Direktkontakt, Projektanfrage mit Rechner, Fragen, Express-Anfrage mit
+// Funnel. Wortlaut, Überschriften, Links, IDs (#express-anfrage) und Lesefolge wie im Bestand. Keine Icon-Kacheln,
+// kein Auftritt und kein großer Moment (setzt der Orchestrator). Daten und Metadaten unverändert.
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import {
-  ArrowLeft,
-  CheckCircle2,
-  ArrowRight,
-  Phone,
-  ShieldCheck,
-  Sparkles,
-  MessageSquare,
-  Droplets,
-  Sun,
-  MapPin
-} from 'lucide-react';
+import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
@@ -22,6 +16,17 @@ import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Hinweis from '@/components/kern/Hinweis';
+import Knopf from '@/components/kern/Knopf';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export function generateStaticParams() {
   return SERVICES.map((service) => ({ id: service.id }));
@@ -148,273 +153,212 @@ export default async function ServiceDetailPage({ params }) {
   ]);
 
   return (
-    <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
+    <>
       <JsonLd schema={serviceSchemaGraph} />
 
-      {/* Ambient Lighting Orbs */}
-      <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-      <div className="ambient-glow-red top-96 -right-20 opacity-60" />
-
-      {/* Hero Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-12 space-y-6 relative overflow-hidden">
-
-          <Link href="/leistungen" className="inline-flex items-center text-xs font-bold text-neutral-700 hover:text-orange-800 transition-colors group">
-            <ArrowLeft className="w-4 h-4 mr-1.5 group-hover:-translate-x-1 transition-transform" />
-            Zurück zur Leistungsübersicht
-          </Link>
-
-          <div className="flex flex-col md:flex-row gap-8 items-start justify-between">
-            <div className="flex-1 space-y-4">
-              <span className="eyebrow">
-                Fachgewerk &middot; {COMPANY_DATA.legalName}
-              </span>
-
-              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-tight">
-                {h1Title}
-              </h1>
-
-              <p className="text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed">
-                {serviceIntroTexts[service.id] || service.detailText}
-              </p>
-            </div>
-
-            <div className="shrink-0 flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto">
-              <a
-                href="#express-anfrage"
-                className="btn-primary"
-              >
-                <span>Aufmaß anfordern</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href={COMPANY_DATA.contact.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-button-whatsapp text-sm"
-              >
-                <MessageSquare className="w-4 h-4 fill-current" />
-                <span>WhatsApp Direkt</span>
-              </a>
-            </div>
+      {/* 1. EINSTIEG: Rückweg und Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts der Verlegeplan ohne Achse */}
+      <Einstieg
+        art="erzaehl"
+        etikett={
+          <>
+            <Link href="/leistungen" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-text text-fs-2')}>
+              <Icon name="pfeil-links" groesse={4} />
+              Zurück zur Leistungsübersicht
+            </Link>
+            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+            <span>Fachgewerk &middot; {COMPANY_DATA.legalName}</span>
+          </>
+        }
+        titel={h1Title}
+        vorspann={<p>{serviceIntroTexts[service.id] || service.detailText}</p>}
+        aktionen={
+          <>
+            <Knopf href="#express-anfrage" icon="pfeil-rechts">
+              Aufmaß anfordern
+            </Knopf>
+            <Knopf
+              href={COMPANY_DATA.contact.whatsappLink}
+              extern
+              variante="neben"
+              vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+            >
+              WhatsApp Direkt
+            </Knopf>
+          </>
+        }
+        rand={
+          <div className="border border-fuge bg-fliese p-6 lg:p-8">
+            <Verlegeplan plan={service.id} ohneAchse bemassung={false} />
           </div>
+        }
+      />
 
-        </div>
-      </div>
+      <Leitachse>
+        {/* 2. SPEZIALISIERUNGEN als Feldraster: je Unterpunkt ein Feld mit Fugenkreuz, ohne Icon-Kacheln */}
+        {service.subcategories && service.subcategories.length > 0 && (
+          <Abschnitt titelId="spezialisierung-heading" leitachse titel={<>Spezialisierungen in {service.name}</>}>
+            <Feldraster spalten={service.subcategories.length > 3 ? 4 : 3}>
+              {service.subcategories.map((sub) => (
+                <Feld key={sub.id}>
+                  <Fugenkreuz className="size-3 text-strich" />
+                  <p className="mt-6 font-text text-fs-3 font-semibold text-tinte">{sub.name}</p>
+                </Feld>
+              ))}
+            </Feldraster>
+          </Abschnitt>
+        )}
 
-      {/* Subcategories Bento */}
-      {service.subcategories && service.subcategories.length > 0 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h2 className="text-2xl font-black text-neutral-900">
-              Spezialisierungen in {service.name}
-            </h2>
-          </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {service.subcategories.map((sub) => (
-              <li
-                key={sub.id}
-                className="group glass-surface p-6 rounded-2xl text-center hover:border-orange-500/80 hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <div className="icon-chip w-12 h-12 mx-auto mb-3">
-                  {service.id === 'bad' && <Droplets className="w-5 h-5" />}
-                  {service.id === 'wohnen' && <Sparkles className="w-5 h-5" />}
-                  {service.id === 'aussen' && <Sun className="w-5 h-5" />}
-                  {service.id === 'untergrund' && <ShieldCheck className="w-5 h-5" />}
-                </div>
-                <p className="font-bold text-sm text-neutral-900">{sub.name}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Detail Content & Sticky Sidebar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-
-          {/* Main Description & Features */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="glass-surface p-8 sm:p-10 rounded-2xl space-y-6">
-              <h2 className="text-2xl font-black text-neutral-900">Fachkompetenz &amp; Ausführungsdetails</h2>
-
-              <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                {service.shortDescription}
-              </p>
-
-              <div className="space-y-3 pt-2">
-                <span className="text-xs font-black uppercase tracking-wider text-orange-800 block">
-                  Ihre handwerklichen Vorteile:
-                </span>
-                <ul className="space-y-3">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                      <span className="text-sm text-neutral-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="p-6 rounded-xl bg-orange-50/50 border border-orange-200 text-sm text-neutral-700 leading-relaxed">
-                <p className="font-black text-neutral-900 text-sm mb-1">
-                  Warum Fachqualität von {COMPANY_DATA.legalName}?
-                </p>
-                {serviceQualityNotes[service.id] || serviceQualityNotes.bad}
-              </div>
-            </div>
-
-            {/* Other Services */}
-            <div className="glass-surface p-8 rounded-2xl">
-              <h2 className="text-lg font-black text-neutral-900 mb-4">
-                Weitere Gewerke von {COMPANY_DATA.legalName}:
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {relatedServices.map((rel) => (
-                  <Link
-                    key={rel.id}
-                    href={`/leistungen/${rel.id}`}
-                    className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 hover:bg-white hover:border-orange-500/80 hover:-translate-y-0.5 transition-all duration-200 group block"
-                  >
-                    <p className="font-bold text-sm text-neutral-900 group-hover:text-orange-800 transition-colors">
-                      {rel.name}
-                    </p>
-                    <span className="text-xs font-bold text-orange-800 flex items-center gap-1 mt-1">
-                      Gewerk {rel.name} ansehen
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+        {/* 3. FACHKOMPETENZ: Vorspann, Merkmale mit Fugenkreuz, Hinweis zur Fachqualität */}
+        <Abschnitt
+          titelId="fachkompetenz-heading"
+          leitachse
+          titel={<>Fachkompetenz &amp; Ausführungsdetails</>}
+          einleitung={<p>{service.shortDescription}</p>}
+        >
+          <div className="flex flex-col gap-12">
+            <div>
+              <p className={etikettKlassen}>Ihre handwerklichen Vorteile:</p>
+              <ul className="mt-6 grid gap-3 lg:grid-cols-2 lg:gap-x-8">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex gap-3 font-text text-fs-2 text-tinte">
+                    <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                      <Fugenkreuz className="size-3" />
                     </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Service by city */}
-            <div className="glass-surface p-8 rounded-2xl">
-              <h2 className="text-lg font-black text-neutral-900 mb-1">
-                {service.name} in Ihrer Region
-              </h2>
-              <p className="text-sm text-neutral-700 mb-4">
-                Vom Firmensitz in {COMPANY_DATA.headquarters.city} aus im Lahn-Dill-Kreis und in Mittelhessen im Einsatz.
-              </p>
-              <ul className="flex flex-wrap gap-2">
-                {CITIES.map((city) => (
-                  <li key={city.slug}>
-                    <Link
-                      href={`/leistungen/${service.id}/${city.slug}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-neutral-200 text-xs font-semibold text-neutral-800 hover:border-orange-500/80 hover:text-orange-800 transition-colors"
-                    >
-                      <MapPin className="w-3 h-3 text-orange-600" />
-                      {city.name}
-                    </Link>
+                    <span className="min-w-0">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
+            <Hinweis titel={<>Warum Fachqualität von {COMPANY_DATA.legalName}?</>}>
+              {serviceQualityNotes[service.id] || serviceQualityNotes.bad}
+            </Hinweis>
           </div>
+        </Abschnitt>
 
-          {/* Sticky Sidebar */}
-          <aside className="glass-surface border-neutral-200 p-8 rounded-2xl shadow-xl lg:sticky lg:top-28 space-y-6">
-            <span className="eyebrow">
-              Direktkontakt
-            </span>
+        {/* 4. WEITERE GEWERKE als Feldraster: Name und Verweis je Leistung */}
+        <Abschnitt titelId="weitere-heading" leitachse titel={<>Weitere Gewerke von {COMPANY_DATA.legalName}:</>}>
+          <Feldraster spalten={3}>
+            {relatedServices.map((rel) => (
+              <Feld key={rel.id}>
+                <Link href={`/leistungen/${rel.id}`} className="group flex flex-1 flex-col gap-3">
+                  <span className="font-text text-fs-4 font-semibold text-tinte">{rel.name}</span>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-3 font-text text-fs-2 text-tinte underline decoration-strich underline-offset-4 group-hover:decoration-tinte">
+                    Gewerk {rel.name} ansehen
+                    <Icon name="pfeil-rechts" groesse={4} />
+                  </span>
+                </Link>
+              </Feld>
+            ))}
+          </Feldraster>
+        </Abschnitt>
 
-            <h2 className="text-xl font-black text-neutral-900">
-              Projekt in {service.name} anfragen?
-            </h2>
-
-            <p className="text-sm text-neutral-700 leading-relaxed">
-              {serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}
+        {/* 5. REGION: Orte als Städteregister, je Ort ein Link auf die Seite der Leistung vor Ort */}
+        <Abschnitt
+          titelId="region-heading"
+          leitachse
+          titel={<>{service.name} in Ihrer Region</>}
+          einleitung={
+            <p>
+              Vom Firmensitz in {COMPANY_DATA.headquarters.city} aus im Lahn-Dill-Kreis und in Mittelhessen im Einsatz.
             </p>
+          }
+        >
+          <ul className="grid grid-cols-2 border-l border-t border-fuge md:grid-cols-4">
+            {CITIES.map((city) => (
+              <li key={city.slug} className="border-b border-r border-fuge">
+                <Link
+                  href={`/leistungen/${service.id}/${city.slug}`}
+                  className={clsx(linkKlassen, 'flex min-h-11 items-center gap-2 px-4 py-3 font-text text-fs-2')}
+                >
+                  <Icon name="ort" groesse={4} className="shrink-0 text-strich" />
+                  {city.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Abschnitt>
 
-            <div className="space-y-3 pt-2 text-sm">
-              <a
-                href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                className="flex items-center gap-3 p-3.5 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-900 font-bold hover:bg-white hover:border-orange-500/80 transition-all"
-              >
-                <Phone className="w-4 h-4 text-orange-600" />
-                <span>{COMPANY_DATA.contact.phone}</span>
-              </a>
-
-              <a
+        {/* 6. DIREKTKONTAKT: Telefon, WhatsApp, Aufmaß-Knopf und Leitsatz des Inhabers (vormals Seitenleiste) */}
+        <Abschnitt
+          titelId="direktkontakt-heading"
+          flaeche="fliese"
+          kopf="seitlich"
+          leitachse
+          etikett="Direktkontakt"
+          titel={<>Projekt in {service.name} anfragen?</>}
+          einleitung={<p>{serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}</p>}
+        >
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+              </Knopf>
+              <Knopf
                 href={COMPANY_DATA.contact.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3.5 rounded-xl bg-green-50 border border-green-200 text-green-800 font-bold hover:border-green-500/80 transition-all"
+                extern
+                variante="neben"
+                vorne={<WhatsAppLogo className="size-5 shrink-0" />}
               >
-                <MessageSquare className="w-4 h-4 fill-current" />
-                <span>WhatsApp Chat</span>
-              </a>
+                WhatsApp Chat
+              </Knopf>
             </div>
-
-            <a
-              href="#express-anfrage"
-              className="btn-primary w-full text-xs"
-            >
+            <Knopf href="#express-anfrage" icon="pfeil-rechts" className="w-full sm:w-auto">
               Kostenfreies Aufmaß buchen
-              <ArrowRight className="w-4 h-4" />
-            </a>
-
-            <p className="pt-4 border-t border-neutral-200 text-xs text-neutral-600 italic">
+            </Knopf>
+            <p className="border-t border-fuge pt-6 font-text text-fs-2 text-tinte-2">
               &bdquo;{COMPANY_DATA.motto}&ldquo;
             </p>
-          </aside>
+          </div>
+        </Abschnitt>
 
-        </div>
-      </div>
+        {/* 7. PROJEKT: Vorhaben und Ausgangslage schildern, danach der Rechner */}
+        <Abschnitt
+          titelId="projekt-heading"
+          leitachse
+          etikett="Individuelle Anfrage"
+          titel="Projekt anfragen & Situation schildern"
+          einleitung={
+            <p>
+              Schildern Sie uns Ihr Vorhaben für {service.name} für eine fachmännische Einschätzung und ein Festpreisangebot
+              nach Vor-Ort-Aufmaß.
+            </p>
+          }
+        >
+          <PricingCalculator />
+        </Abschnitt>
 
-      {/* Umfassendes Projektanfrage-Formular */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="eyebrow mb-3">Individuelle Anfrage</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Projekt anfragen &amp; Situation schildern
-          </h2>
-          <p className="text-sm text-neutral-700 mt-2">
-            Schildern Sie uns Ihr Vorhaben für {service.name} für eine fachmännische Einschätzung und ein Festpreisangebot nach Vor-Ort-Aufmaß.
-          </p>
-        </div>
-        <PricingCalculator />
-      </div>
+        {/* 8. FRAGEN: Etikett, Überschrift und Vorspann links, die Antworten rechts als Fugenliste */}
+        <Abschnitt
+          titelId="faq-heading"
+          leitachse
+          kopf="seitlich"
+          etikett="Transparenz & Ratgeber"
+          titel={<>Häufige Fragen zu {service.name}</>}
+          einleitung={<p>Antworten unseres Handwerksteams für eine reibungslose Planung und Ausführung.</p>}
+        >
+          <div>
+            {currentFaqs.map((faq) => (
+              <FAQAccordion key={faq.q} question={faq.q} answer={faq.a} />
+            ))}
+          </div>
+        </Abschnitt>
 
-      {/* Häufige Fragen & Antworten */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="eyebrow mb-3">Transparenz &amp; Ratgeber</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Häufige Fragen zu {service.name}
-          </h2>
-          <p className="text-sm text-neutral-700 mt-2">
-            Antworten unseres Handwerksteams für eine reibungslose Planung und Ausführung.
-          </p>
-        </div>
+        {/* 9. EXPRESS-ANFRAGE: Kopf links, Assistent rechts; Anker #express-anfrage */}
+        <Abschnitt
+          id="express-anfrage"
+          titelId="anfrage-heading"
+          flaeche="fliese"
+          kopf="seitlich"
+          leitachse
+          etikett="Express-Aufmaß"
+          titel="Jetzt unverbindlich anfragen"
+        >
+          <TezgelAnfrageFunnel />
+        </Abschnitt>
+      </Leitachse>
 
-        <div className="space-y-4">
-          {currentFaqs.map((faq) => (
-            <FAQAccordion
-              key={faq.q}
-              question={faq.q}
-              answer={faq.a}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Embedded Funnel */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 relative z-10 scroll-mt-28" id="express-anfrage">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="eyebrow mb-4">
-            Express-Aufmaß
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Jetzt unverbindlich anfragen
-          </h2>
-        </div>
-        <TezgelAnfrageFunnel />
-      </div>
-
-      {/* Final Conversion CTA */}
+      {/* 10. ABSCHLUSS */}
       <FinalCTA />
-
-    </div>
+    </>
   );
 }
