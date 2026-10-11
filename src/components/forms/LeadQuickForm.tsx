@@ -1,8 +1,15 @@
 'use client';
 
-import React from 'react';
+// E3-BAU-20: Kurzformular im KERN-Formularmuster (wie HeroContactForm und BadanfrageFunnel). Klassen aus kern/stile.ts,
+// Fehler als Hinweis mit role="alert", Knopf über knopfKlassen, Labels mit ihren Feldern verknüpft.
+// Logik, Nutzlast, Honeypot, Einwilligung und Texte bleiben unverändert (Logik in useSchnellanfrage, gemeinsam mit dem Bestand).
+
+import { useId } from 'react';
 import Link from 'next/link';
-import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles, Phone, Lock } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Hinweis from '@/components/kern/Hinweis';
+import { etikettKlassen, feldKlassen, kontrollKlassen, knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { useSchnellanfrage } from '@/lib/formulare/useSchnellanfrage';
 
 export interface LeadQuickFormProps {
@@ -34,22 +41,22 @@ export function LeadQuickForm({
 }: LeadQuickFormProps) {
   const { formData, setFormData, status, errorMessage, referenceId, handleSubmit } = useSchnellanfrage({ sourceTag, onSuccess });
 
+  // Feld-IDs je Instanz eindeutig (useId), damit jedes Label zu seinem Feld gehört, auch bei mehreren Formularen auf einer Seite
+  const kennung = useId().replace(/[^A-Za-z0-9_-]/g, '');
+  const feldId = (feld: string) => `schnell-${kennung}-${feld}`;
+
   if (status === 'success') {
     return (
-      <div
-        className={`p-6 sm:p-8 rounded-2xl bg-orange-50/80 border border-orange-200/80 text-center shadow-lg transition-all ${className}`}
-      >
-        <div className="inline-flex p-3 rounded-full bg-orange-500/10 text-orange-600 mb-4 ring-8 ring-orange-500/5">
-          <CheckCircle2 className="w-8 h-8" />
-        </div>
-        <p className="text-xl font-bold text-neutral-900">Anfrage erfolgreich übermittelt!</p>
-        <p className="mt-2 text-sm text-neutral-700 max-w-md mx-auto leading-relaxed">
-          Vielen Dank, <strong>{formData.name}</strong>. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.
+      <div className={`border border-strich bg-fliese p-6 text-left lg:p-8 ${className}`}>
+        <p className="flex items-center gap-3 font-anzeige text-fs-5 font-semibold text-tinte">
+          <Icon name="haken" groesse={6} className="text-abnahme" />
+          Anfrage erfolgreich übermittelt!
+        </p>
+        <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
+          Vielen Dank, <strong className="font-semibold text-tinte">{formData.name}</strong>. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.
         </p>
         {referenceId && (
-          <div className="mt-4 inline-block px-3 py-1 rounded-md bg-white border border-orange-200 text-xs font-mono text-orange-950">
-            Vorgangsnummer: {referenceId}
-          </div>
+          <p className="mt-6 w-fit border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">Vorgangsnummer: {referenceId}</p>
         )}
       </div>
     );
@@ -57,30 +64,27 @@ export function LeadQuickForm({
 
   const containerClasses =
     variant === 'card'
-      ? 'p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 shadow-xl relative overflow-hidden'
+      ? 'border border-strich bg-fliese p-6 text-left lg:p-8'
       : variant === 'sheet'
-      ? 'p-6 bg-white'
-      : 'p-0';
+      ? 'bg-fliese p-6 text-left'
+      : 'text-left';
 
   return (
     <div className={`${containerClasses} ${className}`}>
-      {/* Decorative Warm Highlight Bar */}
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-amber-500 to-red-500" />
-
       {heading && (
-        <div className="mb-6">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-800 text-[11px] font-bold uppercase tracking-wider mb-2">
-            <Sparkles className="w-3 h-3 text-orange-600" />
-            <span>Kostenloses Vor-Ort-Aufmaß</span>
-          </div>
-          <p className="text-xl sm:text-2xl font-black text-neutral-900 tracking-tight">{heading}</p>
-          {subheading && <p className="mt-1 text-xs sm:text-sm text-neutral-600 leading-relaxed">{subheading}</p>}
+        <div className="mb-6 border-b border-fuge pb-6">
+          <span className={etikettKlassen}>
+            <Fugenkreuz className="size-3 text-strich" />
+            Kostenloses Vor-Ort-Aufmaß
+          </span>
+          <p className="mt-4 font-anzeige text-fs-5 font-semibold text-balance text-tinte">{heading}</p>
+          {subheading && <p className="mt-2 max-w-mass text-fs-2 text-tinte-2">{subheading}</p>}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
         {/* HONEYPOT - Hidden from real visitors and assistive tech */}
-        <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+        <div className="hidden" aria-hidden="true">
           <label htmlFor={`websiteUrl-${sourceTag}`}>Do not fill this</label>
           <input
             id={`websiteUrl-${sourceTag}`}
@@ -92,90 +96,99 @@ export function LeadQuickForm({
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              Ihr Name <span className="text-orange-600">*</span>
+            <label htmlFor={feldId('name')} className={labelKlassen}>
+              Ihr Name <span className={pflichtKlassen}>*</span>
             </label>
             <input
+              id={feldId('name')}
               type="text"
               required
+              autoComplete="name"
               placeholder="z. B. Markus Schmidt"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              Telefonnummer <span className="text-orange-600">*</span>
+            <label htmlFor={feldId('telefon')} className={labelKlassen}>
+              Telefonnummer <span className={pflichtKlassen}>*</span>
             </label>
             <input
+              id={feldId('telefon')}
               type="tel"
               required
+              autoComplete="tel"
               placeholder="z. B. 0172 / 1234567"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              E-Mail Adresse <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+            <label htmlFor={feldId('email')} className={labelKlassen}>
+              E-Mail Adresse <span className="font-mono text-fs-1 font-normal text-tinte-2">(optional)</span>
             </label>
             <input
+              id={feldId('email')}
               type="email"
+              autoComplete="email"
               placeholder="ihre-adresse@beispiel.de"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-neutral-700 mb-1">
-              PLZ / Wohnort <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+            <label htmlFor={feldId('ort')} className={labelKlassen}>
+              PLZ / Wohnort <span className="font-mono text-fs-1 font-normal text-tinte-2">(optional)</span>
             </label>
             <input
+              id={feldId('ort')}
               type="text"
+              autoComplete="address-level2"
               placeholder="z. B. 35614 Aßlar"
               value={formData.zipCity}
               onChange={(e) => setFormData({ ...formData, zipCity: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
+              className={feldKlassen}
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-neutral-700 mb-1">
-            Ihr Projekt / Anmerkungen <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+          <label htmlFor={feldId('notiz')} className={labelKlassen}>
+            Ihr Projekt / Anmerkungen <span className="font-mono text-fs-1 font-normal text-tinte-2">(optional)</span>
           </label>
           <textarea
+            id={feldId('notiz')}
             rows={2}
             placeholder="z. B. Komplettbadsanierung ca. 12 m², barrierefreie Dusche, Baustart ab Mai..."
             value={formData.notes}
             onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400 resize-none"
+            className={`${feldKlassen} resize-none`}
           />
         </div>
 
-        {/* Privacy Consent Checkbox */}
-        <div className="flex items-start gap-2.5 pt-1">
+        {/* Einwilligung (Rechtstext unverändert) */}
+        <div className="flex items-start gap-3">
           <input
             id={`consent-${sourceTag}`}
             type="checkbox"
             required
             checked={formData.privacyConsent}
             onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
-            className="mt-0.5 w-4 h-4 rounded border-neutral-300 text-orange-600 focus:ring-orange-500 cursor-pointer accent-orange-600"
+            className={kontrollKlassen}
           />
-          <label htmlFor={`consent-${sourceTag}`} className="text-xs text-neutral-600 leading-tight cursor-pointer">
+          <label htmlFor={`consent-${sourceTag}`} className="cursor-pointer text-fs-2 text-tinte">
             Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der{' '}
-            <Link href="/datenschutz" className="text-orange-700 underline hover:text-orange-900 font-medium">
+            <Link href="/datenschutz" className={linkKlassen}>
               Datenschutzerklärung
             </Link>
             .
@@ -183,40 +196,37 @@ export function LeadQuickForm({
         </div>
 
         {status === 'error' && errorMessage && (
-          <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-medium text-red-700">
-            <AlertCircle className="w-4 h-4 shrink-0" />
-            <span>{errorMessage}</span>
-          </div>
+          <Hinweis art="fehler" rolle="alert">
+            {errorMessage}
+          </Hinweis>
         )}
 
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-bold text-sm shadow-md shadow-orange-500/25 hover:shadow-lg hover:shadow-orange-500/35 transition-all disabled:opacity-50 cursor-pointer"
-        >
-          {status === 'loading' ? (
-            <>
-              <Loader2 className="w-4 h-4 animate-spin" />
-              <span>Wird gesendet...</span>
-            </>
-          ) : (
-            <>
-              <span>{submitLabel}</span>
-              <Send className="w-4 h-4" />
-            </>
-          )}
-        </button>
+        <div className="flex flex-col gap-4 border-t border-fuge pt-6">
+          <button type="submit" disabled={status === 'loading'} className={knopfKlassen('haupt', 'w-full')} data-motion="druck">
+            {status === 'loading' ? (
+              <span className="flex flex-col items-center gap-2">
+                <span>Wird gesendet...</span>
+                <span className="laden-fuge w-16" aria-hidden="true" />
+              </span>
+            ) : (
+              <>
+                <span>{submitLabel}</span>
+                <Icon name="pfeil-rechts" groesse={5} />
+              </>
+            )}
+          </button>
 
-        <div className="flex items-center justify-center gap-4 pt-1 text-[11px] text-neutral-500">
-          <span className="flex items-center gap-1">
-            <Lock className="w-3 h-3 text-neutral-400" />
-            100% DSGVO-konform
-          </span>
-          <span>&middot;</span>
-          <span className="flex items-center gap-1">
-            <Phone className="w-3 h-3 text-neutral-400" />
-            Kostenfreie Erstberatung
-          </span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className={etikettKlassen}>
+              <Icon name="schloss" groesse={4} />
+              100% DSGVO-konform
+            </span>
+            <span className="font-mono text-fs-1 text-tinte-2">&middot;</span>
+            <span className={etikettKlassen}>
+              <Icon name="telefon" groesse={4} />
+              Kostenfreie Erstberatung
+            </span>
+          </div>
         </div>
       </form>
     </div>
