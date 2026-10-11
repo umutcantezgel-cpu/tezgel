@@ -184,6 +184,9 @@ html.k-bewegung [data-motion="anriss"][data-ausloeser="sicht"]:not([data-sichtba
   transition-timing-function: var(--ease-k-setzen);
 }
 [data-motion="aufklappen"] > * { overflow: hidden; min-height: 0; }
+/* Zugeklappt: Inhalt ohne Stil- und Layoutarbeit, bis er aufgeht (P3-16, INP „Menü öffnen“ mobil: der Browser berechnete beim
+   Öffnen alle rund tausend Elemente des Blatts neu). Wirkt erst mit dem Entfernen von data-offen; das Aufgehen bleibt animiert. */
+[data-motion="aufklappen"]:not([data-offen]) > * { content-visibility: hidden; }
 
 /* Notiert: Haken zeichnet sich (SVG mit pathLength="1") */
 [data-motion="notiert"] path {
