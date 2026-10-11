@@ -1,5 +1,5 @@
 // Ebene 5: axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa) je Seite und Ansicht, dazu Zustände:
-// offenes Mobilmenü (m375) und Erstbesuch mit Einwilligungsbanner.
+// offenes Mobilmenü (m375), Erstbesuch mit Einwilligungsbanner und Banner in der Einstellungen-Ansicht (P4-GEG2 N-A).
 // Nutzung: node axe.mjs --satz <name> [--seiten …] [--ansichten m375,d1440] [--zustaende] [--fehler] [--nur-zustaende]
 // --fehler (P4-GEG M4): sichtbare Fehlerzustände der Formulare, Abläufe wie in den Funktionstests, für Bestand und Kern gleich
 //   (Knopfnamen beider Fassungen): Funnel-Serverfehler (/kontakt, /leistungen), Kalender mit leerem Namen (/kontakt),
@@ -75,7 +75,7 @@ async function pruefe(s, a, zustand = 'normal') {
   const v = ANSICHTEN[a];
   const context = await browser.newContext({ viewport: { width: v.width, height: v.height }, isMobile: v.isMobile, hasTouch: v.hasTouch, reducedMotion: 'reduce', locale: 'de-DE' });
   await installSperre(context);
-  await setzeEinwilligung(context, zustand === 'erstbesuch' ? 'erstbesuch' : 'abgelehnt');
+  await setzeEinwilligung(context, ['erstbesuch', 'einstellungen'].includes(zustand) ? 'erstbesuch' : 'abgelehnt');
   const page = await context.newPage();
   await page.goto(BASE + s, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await bereit(page);
@@ -84,6 +84,14 @@ async function pruefe(s, a, zustand = 'normal') {
     if (await knopf.count()) { await knopf.click(); await page.waitForTimeout(400); }
   }
   if (zustand === 'erstbesuch') await page.waitForTimeout(900); // Banner erscheint nach 400 ms
+  // P4-GEG2 N-A: Banner in der Einstellungen-Ansicht (Knopf „Einstellungen“ im Banner, Bestand und Kern gleich benannt)
+  if (zustand === 'einstellungen') {
+    const dialog = page.getByRole('dialog').filter({ hasText: /Cookie/ }).first();
+    await dialog.waitFor({ state: 'visible', timeout: 10000 });
+    await dialog.getByRole('button', { name: 'Einstellungen', exact: true }).click();
+    await page.waitForTimeout(500);
+    if (!(await dialog.getByText('Cookie-Einstellungen individuell anpassen').first().isVisible())) throw new Error('Einstellungen-Ansicht nicht geöffnet');
+  }
   if (FEHLER[zustand]) await FEHLER[zustand].ablauf(page);
   const res = await new AxeBuilder({ page }).withTags(TAGS).analyze();
   const v2 = res.violations.map((x) => ({ id: x.id, impact: x.impact, hilfe: x.help, anzahl: x.nodes.length, ziele: x.nodes.slice(0, 5).map((n) => n.target.join(' ')), knoten: x.nodes.slice(0, 3).map((n) => ({ html: n.html.slice(0, 240), grund: (n.failureSummary || '').slice(0, 300) })) }));
@@ -94,7 +102,7 @@ async function pruefe(s, a, zustand = 'normal') {
 
 const jobs = [];
 if (!process.argv.includes('--nur-zustaende')) for (const s of seiten) for (const a of ansichten) jobs.push([s, a, 'normal']);
-if (process.argv.includes('--zustaende')) for (const s of G.hauptseiten) { jobs.push([s, 'm375', 'menue']); jobs.push([s, 'm375', 'erstbesuch']); jobs.push([s, 'd1440', 'erstbesuch']); }
+if (process.argv.includes('--zustaende')) for (const s of G.hauptseiten) { jobs.push([s, 'm375', 'menue']); jobs.push([s, 'm375', 'erstbesuch']); jobs.push([s, 'd1440', 'erstbesuch']); jobs.push([s, 'm375', 'einstellungen']); jobs.push([s, 'd1440', 'einstellungen']); }
 if (process.argv.includes('--fehler')) for (const [z, f] of Object.entries(FEHLER)) for (const s of f.seiten) if (seiten.includes(s)) for (const a of ['m375', 'd1440']) jobs.push([s, a, z]);
 let i = 0;
 await Promise.all(Array.from({ length: 3 }, async () => { while (i < jobs.length) { const j = jobs[i++]; try { await pruefe(...j); } catch (e) { ergebnisse.push({ seite: j[0], ansicht: j[1], zustand: j[2], fehler: String(e.message).slice(0, 200) }); } } }));

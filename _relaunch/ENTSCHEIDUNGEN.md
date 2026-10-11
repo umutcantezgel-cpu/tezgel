@@ -412,6 +412,22 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   2. **Einleitung bei 1024 × 768 und 1280 × 800 teils verdeckt: angenommen.** Geometrisch geht es nicht ganz: Die Einleitung reicht dort bis 17 px an den Bildrand oder darüber hinaus, und die schmalste Leiste mit vollem Inhalt ist ~140 px hoch. Vorher war es auf 6 von 7 Seiten bis 97 %, jetzt auf 4 bzw. 3 Seiten weniger. **Auflage** an W1 (`/bad`), W3 (`/standorte`), W8 (`/ueber-uns`) und P6 (`/`): kürzere Einstiege prüfen.
   3. **Restfall Laufzeitfehler: angenommen.** Laden alle App-Skripte, werfen aber, bleibt am Seitenende Leerraum (152 bzw. 389 px). Inhalt, Links und WhatsApp im Kopf bleiben erreichbar. Eine breitere Sicherung würde bei wiederherstellbaren Hydrierungsfehlern den Platz fälschlich entfernen.
   4. **Token 360–767 px bleibt `21.25rem`** (gemessen); bei einer zusätzlichen Zeile rollt der Textteil, nichts wird verdeckt.
+- **Berichtigung Punkt 1 (P4-GEG2 N-B, nachgemessen 11.10.2026):** Der Satz „ohne Banner kostet derselbe Weg in Bestand und Kern 7“ war nicht gemessen; gemessen war nur der Kern vorher/nachher. Diagnose ohne Banner (`probelauf.mjs --diagnose-ohne-banner`, Eingabe des Ausgangsstands, `belege/p4-tor-r2/diagnose-a3/`):
+  - **Ausgangsstand 707a93d: 5** (alle vier Felder und „Absenden“ im ersten Bildschirm, kein Bildlauf).
+  - **Live f2c4180** (Kern vor P4-13): **7**.
+  - **Kandidat c5ef582: 7**. Feld 3 liegt unter dem Bildrand (+1 Bildlauf), „Absenden“ auch (+1).
+  - Richtig ist also: Das Hero-Formular des Kerns braucht bei 1440 × 900 ohne Banner **zwei Handlungen mehr als der Ausgangsstand**, seit P3-16 live, für alle wiederkehrenden Besucher. Die Messungen der Tore liefen nur im Erstbesuch; dort verdeckte bis P4-13 das große scroll-padding des alten Banners den Mehraufwand (5), mit der Leiste sind es 6.
+  - **Folge:** Die Auflage „Absenden im Bild“ (bisher P6) wird ein eigenes Paket **P4-15** (Hero-Formular `/` am Desktop vollständig im ersten Bildschirm; Ziel a3-d1440-maus ≤ 5 mit **und** ohne Banner), direkt nach P4-14 und vor W1. In ABNAHME „Offene Abweichungen“ eingetragen.
+- **Nachtrag P4-GEG2 (N-E, N-F, N-O):**
+  - **Kopf mit klassischer Scrollleiste (N-E), gemessen** (`werkzeuge/kopfplatz-scrollleiste.mjs`, ohne `--hide-scrollbars`, Leiste 15 px, `belege/p4-tor-r2/kopfplatz/`):
+    - Kandidat bei 1280 px: Reserve **−3 px** (Bedarf 1 172, verfügbar 1 169); ab 1290 px +7, bei 1296 +13. Live: +21.
+    - Folge: Das Markenfeld wird 3 px schmaler. Der Innenabstand rechts vom Logo sinkt von 16 auf 13 px; das Logo bleibt 128 × 40 (unverändert). Kein Überlauf, kein Umbruch, keine Überlappung.
+    - Angenommen bis **P4-15**: Kopf ab xl so verengen, dass mit 17-px-Leiste ≥ 12 px Reserve bleiben.
+  - **Touch-Weiche am Kopf-Link (N-F):** Der Bestand öffnet WhatsApp auf Touch-Geräten im selben Fenster (`openWhatsApp`), der Kern-Kopf-Link immer in einem neuen Tab (iPad quer ≥ 1024 px). Ziel und Name sind gleich. Ergänzung als progressive Verbesserung in **P4-15**.
+  - **Weitere Restfälle „Platz ohne Banner“ (N-O), angenommen:**
+    - Ein App-Skript schlägt fehl, bevor der Lauscher des Kopfskripts hängt (11 von 12 Skripten stehen vor ihm).
+    - Banner-Blocker blenden den Dialog per CSS aus.
+    - Dann bleiben 152 bzw. 389 px Leerraum am Seitenende samt scroll-padding. Inhalt und Wege bleiben erreichbar. Live ist es heute schlechter: Die alte Messung reservierte bis zur vollen Bildhöhe.
 - **E-013 Nachtrag (Hauptaktion):** Bei d1440 auf `/` liegt die erste Feldzeile des Hero-Formulars unter der Leiste. Frei bleiben der Hauptknopf „Aufmaß anfragen“ im Kopf, die Formular-Überschrift, Telefon und WhatsApp im Kopf; mindestens ein vollständiger Anfrageweg ist frei. Fokus auf ein Feld rollt es über die Leiste (scroll-padding).
 - **MIKROTEXTE:** Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) gestrichen. Es gibt kein neues Wort.
 - **Folge:** P4-13 wirkt sofort auf `/` (live) → T2 für `/` vor dem Push, Lighthouse im ruhigen Fenster (Z-12).
@@ -422,6 +438,7 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - gegen Bestand a8e049f (4323): Punkte 84 → 86, LCP 4 219 → 3 464 ms (−17,9 %), FCP −290 ms, **TBT 159 → 247 ms** (Budget 200).
   - Die Spur-Schätzung von P4-13 (213 → 144 ms) zeigt sich in Lighthouse nicht: Die Banner-Aufgabe ist weg, aber die übrigen Aufgaben (HTML-Parsen mit Stil und Layout, Framework-Start) tragen die TBT weiter.
   - Gegenüber E-024 (224 gegen 140 ms) ist der absolute Wert höher, das Verhältnis zum Bestand im selben Fenster ähnlich (1,55 gegen 1,60). Der Anstieg liegt nicht an P4-13 (gegen Live gleich); ein Vergleich im selben Fenster mit bcd8fcb ist nicht möglich (Build verworfen).
+- **Berichtigung (P4-GEG2 N-G, N-N):** `lighthouse.mjs` nahm bei 10 Läufen den oberen Mittelwert als Median. Echte Mediane: gegen Live TBT 251 → 233,5 ms, Punkte 85,5 → 85; gegen Bestand TBT 152 → 221 ms, Punkte 84 → 86, LCP −17,9 % (`belege/p4-tor-r2/lighthouse-median-berichtigt.json`). Verhältnis zum Bestand 1,45 (nicht 1,55). Gegen den letzten Live-T2 vor P4 (5421e5b: 196/141 = 1,39) ist der Abstand während P4 gewachsen, nicht durch P4-13 (gegen Live gleich); verschiedene Fenster, daher nicht schlüssig. Die Folge (keine Freischaltung vor P4-14) bleibt.
 - **Lage:** ABNAHME „Offene Abweichungen“ setzte für Z-12 die Frist „nicht über dem Bestand, ≤ 200 ms bis zum P4-Tor“. Die Frist ist verfehlt. Z-12 ist kein Kriterium des P4-Tors (Z-05, Z-11, Z-13, L3), aber eine Zusage.
 - **Wege:**
   1. P4-13 zurückhalten, bis die TBT erfüllt ist. Verlust: H1 (ohne JS) und H2 (Banner verdeckt die Einleitung) blieben live offen, obwohl P4-13 die Leistung nicht verschlechtert.

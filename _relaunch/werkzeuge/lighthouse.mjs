@@ -40,7 +40,8 @@ const formen = (arg('formen') || 'mobil,desktop').split(',');
 const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
 const blocked = ['*google-analytics.com*', '*googletagmanager.com*', '*facebook.net*', '*facebook.com*', '*vercel-insights.com*', '*vercel-scripts.com*', '*googleapis.com*', '*gstatic.com*', '*openstreetmap.org*', '*whatsapp.com*', '*wa.me*'];
 const rawDir = ensureDir(path.join(RELAUNCH, 'cache', 'lighthouse', satz));
-const median = (a) => { const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
+// Median: bei gerader Laufzahl Mittel der beiden mittleren Werte (berichtigt nach P4-GEG2 N-G; vorher oberer Mittelwert).
+const median = (a) => { const s = [...a].sort((x, y) => x - y); const n = s.length; return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2; };
 const ausDatei = arg('aus') ? path.resolve(arg('aus')) : path.join(RELAUNCH, 'belege', satz, KANDIDAT ? 'lighthouse-vergleich.json' : 'lighthouse.json');
 const basisDatei = path.join(RELAUNCH, 'belege', 'p0-ausgangsstand', 'lighthouse.json');
 if (path.resolve(ausDatei) === basisDatei && fs.existsSync(basisDatei) && !flag('zusammenfuehren') && !flag('ueberschreiben')) {

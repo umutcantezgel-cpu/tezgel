@@ -1,0 +1,150 @@
+{
+ "base": "http://127.0.0.1:4337",
+ "bedingungen": {
+  "scrollleiste": "klassisch (ohne --hide-scrollbars)",
+  "einwilligung": "abgelehnt",
+  "dpr": 1
+ },
+ "messungen": [
+  {
+   "seite": "/",
+   "breite": 1264,
+   "scrollleiste_px": 15,
+   "xl_aktiv": false,
+   "verfuegbar": 1153,
+   "bedarf": 764,
+   "reserve": 389,
+   "felder": [
+    683,
+    413,
+    57
+   ],
+   "logo_ragt_ueber_markenfeld_px": 0,
+   "logo_ueberlappt_nav": null,
+   "ueberlauf_kopf": false,
+   "ueberlauf_seite": false,
+   "nav_eintraege": 0,
+   "nav_mehrzeilig": 0
+  },
+  {
+   "seite": "/",
+   "breite": 1280,
+   "scrollleiste_px": 15,
+   "xl_aktiv": true,
+   "verfuegbar": 1169,
+   "bedarf": 1148,
+   "reserve": 21,
+   "felder": [
+    165,
+    750,
+    254
+   ],
+   "logo_ragt_ueber_markenfeld_px": 0,
+   "logo_ueberlappt_nav": false,
+   "ueberlauf_kopf": false,
+   "ueberlauf_seite": false,
+   "nav_eintraege": 10,
+   "nav_mehrzeilig": 0
+  },
+  {
+   "seite": "/",
+   "breite": 1290,
+   "scrollleiste_px": 15,
+   "xl_aktiv": true,
+   "verfuegbar": 1179,
+   "bedarf": 1148,
+   "reserve": 31,
+   "felder": [
+    175,
+    750,
+    254
+   ],
+   "logo_ragt_ueber_markenfeld_px": 0,
+   "logo_ueberlappt_nav": false,
+   "ueberlauf_kopf": false,
+   "ueberlauf_seite": false,
+   "nav_eintraege": 10,
+   "nav_mehrzeilig": 0
+  },
+  {
+   "seite": "/",
+   "breite": 1296,
+   "scrollleiste_px": 15,
+   "xl_aktiv": true,
+   "verfuegbar": 1185,
+   "bedarf": 1148,
+   "reserve": 37,
+   "felder": [
+    181,
+    750,
+    254
+   ],
+   "logo_ragt_ueber_markenfeld_px": 0,
+   "logo_ueberlappt_nav": false,
+   "ueberlauf_kopf": false,
+   "ueberlauf_seite": false,
+   "nav_eintraege": 10,
+   "nav_mehrzeilig": 0
+  },
+  {
+   "seite": "/",
+   "breite": 1300,
+   "scrollleiste_px": 15,
+   "xl_aktiv": true,
+   "verfuegbar": 1189,
+   "bedarf": 1148,
+   "reserve": 41,
+   "felder": [
+    185,
+    750,
+    254
+   ],
+   "logo_ragt_ueber_markenfeld_px": 0,
+   "logo_ueberlappt_nav": false,
+   "ueberlauf_kopf": false,
+   "ueberlauf_seite": false,
+   "nav_eintraege": 10,
+   "nav_mehrzeilig": 0
+  },
+  {
+   "seite": "/",
+   "breite": 1310,
+   "scrollleiste_px": 15,
+   "xl_aktiv": true,
+   "verfuegbar": 1199,
+   "bedarf": 1148,
+   "reserve": 51,
+   "felder": [
+    195,
+    750,
+    254
+   ],
+   "logo_ragt_ueber_markenfeld_px": 0,
+   "logo_ueberlappt_nav": false,
+   "ueberlauf_kopf": false,
+   "ueberlauf_seite": false,
+   "nav_eintraege": 10,
+   "nav_mehrzeilig": 0
+  },
+  {
+   "seite": "/",
+   "breite": 1366,
+   "scrollleiste_px": 15,
+   "xl_aktiv": true,
+   "verfuegbar": 1216,
+   "bedarf": 1148,
+   "reserve": 68,
+   "felder": [
+    212,
+    750,
+    254
+   ],
+   "logo_ragt_ueber_markenfeld_px": 0,
+   "logo_ueberlappt_nav": false,
+   "ueberlauf_kopf": false,
+   "ueberlauf_seite": false,
+   "nav_eintraege": 10,
+   "nav_mehrzeilig": 0
+  }
+ ]
+}
