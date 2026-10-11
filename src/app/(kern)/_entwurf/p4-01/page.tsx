@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Badsanierung from '@/app/(kern)/_entwurf/p4-01/Badsanierung';
-import Din18534 from '@/app/(kern)/_entwurf/p4-01/Din18534';
-import Zustaende from '@/app/(kern)/_entwurf/p4-01/Zustaende';
+import Badsanierung from './Badsanierung';
+import Din18534 from './Din18534';
+import Zustaende from './Zustaende';
 import { VorschauTrenner } from '@/components/kern/vorlagen/fachseite/Vorschau';
 
 // Vorschau P4-01 · Vorlage Fachseite (wird nie freigeschaltet). Zwei echte Seiten wortgetreu aus den Vorlagen-Teilen

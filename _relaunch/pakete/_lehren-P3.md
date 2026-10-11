@@ -31,3 +31,4 @@ Jede Regel unten hat im Tor von `/` mindestens eine Runde gekostet. Halte sie be
 11. **Mikrotexte:**
     - Was nicht in `MIKROTEXTE.md` steht, bleibt wörtlich; das gilt auch für Ziffern in Legenden wie „1. …“.
     - Brauchst du eine Änderung, schlage sie in der Rückgabe als Zeile im Tabellenformat von `MIKROTEXTE.md` vor. Der Orchestrator trägt sie ein.
+12. **Importe in Entwürfen (P4-01, Vorschau dc1217e-v):** Bausteine außerhalb des Entwurfs werden über `@/components/…` bzw. `@/lib/…` importiert. **Nachbardateien desselben Entwurfsordners** werden relativ (`./Teil`) importiert, nie über `@/app/(kern)/_entwurf/…`. Die Freischaltung und die Vorschau verschieben den Ordner, danach gibt es den `_entwurf`-Pfad nicht mehr (Build bricht ab).
