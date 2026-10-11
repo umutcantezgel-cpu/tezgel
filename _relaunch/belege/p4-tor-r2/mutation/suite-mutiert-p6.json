@@ -1,0 +1,1965 @@
+{
+  "config": {
+    "configFile": "/home/user/tezgel/_relaunch/werkzeuge/playwright.config.mjs",
+    "rootDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../belege/p4-tor-r2/mutation/suite-mutiert-p6.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobil",
+        "name": "mobil",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "/home/user/tezgel/_relaunch/werkzeuge/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "funktion-einwilligung.spec.mjs",
+      "file": "funktion-einwilligung.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Einwilligung (F-11, global)",
+          "file": "funktion-einwilligung.spec.mjs",
+          "line": 88,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Erstbesuch (kein Cookie)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 89,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1760,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:18.544Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-58f2d2ef11df4b34192c",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 93,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1396,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:20.422Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-974457c27909d3819815",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 93,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1444,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:21.839Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-1526c71fa8159a5152c2",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 93,
+                  "column": 7
+                },
+                {
+                  "title": "/: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1561,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:23.306Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-88cf5c21afe18d261100",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 104,
+                  "column": 7
+                },
+                {
+                  "title": "/: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3017,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:24.883Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-a6a6e7010e802d01c1e9",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 112,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1615,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:27.921Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-0599c4441cdf2f193430",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 104,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2243,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:29.568Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-9559c803fa65a4a79762",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 112,
+                  "column": 7
+                },
+                {
+                  "title": "Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1560,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:31.835Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-18929a8194a974a93e77",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 137,
+                  "column": 5
+                },
+                {
+                  "title": "/: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 977,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:33.420Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-25b2f872d991edc61f10",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 146,
+                  "column": 7
+                },
+                {
+                  "title": "/: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1881,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:34.425Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-39f6f94559694ec32ffd",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 154,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 965,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:36.330Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-33f2136217f572ade586",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 146,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1748,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:37.333Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-890e6a6c2f6faa66ce72",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 154,
+                  "column": 7
+                },
+                {
+                  "title": "/: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1745,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:31.451Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-1f2350d9ceb4caf198d7",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 93,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1550,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:33.391Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-b1c16fc1062cc2fcc686",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 93,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1470,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:34.958Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-45ee2a61f1354f75302c",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 93,
+                  "column": 7
+                },
+                {
+                  "title": "/: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1706,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:36.449Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-727e1acca54ea5c570de",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 104,
+                  "column": 7
+                },
+                {
+                  "title": "/: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2154,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:38.176Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-e1047de53eac16c1f3b6",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 112,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1363,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:40.346Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-e45b60ece9adbb3300a3",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 104,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2061,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:41.724Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-c830ad4c2cea4d1a46ce",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 112,
+                  "column": 7
+                },
+                {
+                  "title": "Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1318,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:43.801Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-cb828111bc89034ea14f",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 137,
+                  "column": 5
+                },
+                {
+                  "title": "/: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 716,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:45.152Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-730e9222f640ac455fe4",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 146,
+                  "column": 7
+                },
+                {
+                  "title": "/: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1759,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:45.889Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-aba9c822444a558d98a7",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 154,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 602,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:47.664Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-2318b4b8ee4295cee225",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 146,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1526,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:48.280Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-b7b2e395128e91796e49",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 154,
+                  "column": 7
+                }
+              ]
+            },
+            {
+              "title": "Widerruf (Zustimmung vorhanden)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 168,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/: Fußlink „Cookie-Einstellungen“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1127,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:39.113Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-22ba19feddcbcb56f049",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 174,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Fußlink „Cookie-Einstellungen“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 958,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:40.266Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-89ba9f5adf0b162ad6e9",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 174,
+                  "column": 7
+                },
+                {
+                  "title": "/: Fußlink „Cookie-Einstellungen“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1036,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:49.820Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-7ea23d9e534ea9566d30",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 174,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Fußlink „Cookie-Einstellungen“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 914,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:50.872Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-87cc11c456cca3f8f212",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 174,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Karten hinter Einwilligung (F-12)",
+          "file": "funktion-einwilligung.spec.mjs",
+          "line": 189,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Erstbesuch (keine Entscheidung)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 190,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1800,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:41.241Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-e9f85f1b029ac2b532ce",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 193,
+                  "column": 5
+                },
+                {
+                  "title": "/kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1388,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:51.808Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-594f0f248f52135b6b23",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 193,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "ohne Marketing-Einwilligung (abgelehnt)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 203,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1613,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:43.065Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-775c11ee5e188b537198",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 205,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1271,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:44.704Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-8cd41d065bddf982f08d",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 205,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1208,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:45.992Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-4306fd411f3c8b30884c",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 205,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 10927,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:225:7",
+                            "location": {
+                              "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                              "column": 7,
+                              "line": 225
+                            },
+                            "snippet": "  223 |       const knopf = await ladeKnopf(page, '/standorte');\n  224 |       await klick(knopf);\n> 225 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  226 |       await expect(standortKarte(page).getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  227 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  228 |     });"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                                "column": 7,
+                                "line": 225
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n\n  223 |       const knopf = await ladeKnopf(page, '/standorte');\n  224 |       await klick(knopf);\n> 225 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  226 |       await expect(standortKarte(page).getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  227 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  228 |     });\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:225:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:47.225Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out/funktion-einwilligung-Kart-7898b-rte-Anfrage-an-Karten-Host--mobil/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                            "column": 7,
+                            "line": 225
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-c751bd3638a8ce03e414",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 216,
+                  "column": 5
+                },
+                {
+                  "title": "/kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 11045,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:234:7",
+                            "location": {
+                              "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                              "column": 7,
+                              "line": 234
+                            },
+                            "snippet": "  232 |       const knopf = await ladeKnopf(page, '/kontakt');\n  233 |       await klick(knopf);\n> 234 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  235 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  236 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  237 |     });"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                                "column": 7,
+                                "line": 234
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n\n  232 |       const knopf = await ladeKnopf(page, '/kontakt');\n  233 |       await klick(knopf);\n> 234 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  235 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  236 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  237 |     });\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:234:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:34:59.354Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out/funktion-einwilligung-Kart-76089-rte-Anfrage-an-Karten-Host--mobil/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                            "column": 7,
+                            "line": 234
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-df51b545e3ee92db8381",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 230,
+                  "column": 5
+                },
+                {
+                  "title": "/: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 12299,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:243:7",
+                            "location": {
+                              "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                              "column": 7,
+                              "line": 243
+                            },
+                            "snippet": "  241 |       const knopf = await ladeKnopf(page, '/');\n  242 |       await klick(knopf);\n> 243 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  244 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  245 |     });\n  246 |"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                                "column": 7,
+                                "line": 243
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n\n  241 |       const knopf = await ladeKnopf(page, '/');\n  242 |       await klick(knopf);\n> 243 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  244 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  245 |     });\n  246 |\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:243:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:12.267Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out/funktion-einwilligung-Kart-829c7-und-ersetzt-den-Platzhalter-mobil/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                            "column": 7,
+                            "line": 243
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-0afa0823d8bc4f6a3a13",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 239,
+                  "column": 5
+                },
+                {
+                  "title": "/: „Cookie-Einstellungen“ im Kartenplatzhalter öffnet die Einstellungen, ohne die Einwilligung zu ändern",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1647,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:26.638Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-9962985c59ac68ee85cc",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 252,
+                  "column": 7
+                },
+                {
+                  "title": "/: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1587,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:53.210Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-b9db778a3177efd0c34f",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 205,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1148,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:54.811Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-ae804df0cb5394ac6d67",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 205,
+                  "column": 7
+                },
+                {
+                  "title": "/kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1108,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:55.978Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-ddc1d161cc80774776cc",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 205,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 10691,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:225:7",
+                            "location": {
+                              "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                              "column": 7,
+                              "line": 225
+                            },
+                            "snippet": "  223 |       const knopf = await ladeKnopf(page, '/standorte');\n  224 |       await klick(knopf);\n> 225 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  226 |       await expect(standortKarte(page).getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  227 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  228 |     });"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                                "column": 7,
+                                "line": 225
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n\n  223 |       const knopf = await ladeKnopf(page, '/standorte');\n  224 |       await klick(knopf);\n> 225 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  226 |       await expect(standortKarte(page).getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  227 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  228 |     });\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:225:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:57.099Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out/funktion-einwilligung-Kart-7898b-rte-Anfrage-an-Karten-Host--desktop/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                            "column": 7,
+                            "line": 225
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-f9b5a44eb20da2f52db8",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 216,
+                  "column": 5
+                },
+                {
+                  "title": "/kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 10736,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:234:7",
+                            "location": {
+                              "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                              "column": 7,
+                              "line": 234
+                            },
+                            "snippet": "  232 |       const knopf = await ladeKnopf(page, '/kontakt');\n  233 |       await klick(knopf);\n> 234 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  235 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  236 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  237 |     });"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                                "column": 7,
+                                "line": 234
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n\n  232 |       const knopf = await ladeKnopf(page, '/kontakt');\n  233 |       await klick(knopf);\n> 234 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  235 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  236 |       await expect.poll(() => kartenAnfragen(protokoll).length).toBeGreaterThan(0);\n  237 |     });\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:234:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:36:08.737Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out/funktion-einwilligung-Kart-76089-rte-Anfrage-an-Karten-Host--desktop/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                            "column": 7,
+                            "line": 234
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-88b71da03cde29332661",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 230,
+                  "column": 5
+                },
+                {
+                  "title": "/: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 11092,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:243:7",
+                            "location": {
+                              "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                              "column": 7,
+                              "line": 243
+                            },
+                            "snippet": "  241 |       const knopf = await ladeKnopf(page, '/');\n  242 |       await klick(knopf);\n> 243 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  244 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  245 |     });\n  246 |"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                                "column": 7,
+                                "line": 243
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoMatchObject\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"marketing\": true,\u001b[39m\n\u001b[31m+   \"marketing\": false,\u001b[39m\n\u001b[2m  }\u001b[22m\n\nCall Log:\n- Timeout 10000ms exceeded while waiting on the predicate\n\n  241 |       const knopf = await ladeKnopf(page, '/');\n  242 |       await klick(knopf);\n> 243 |       await expect.poll(() => lesEinwilligung(context)).toMatchObject({ marketing: true });\n      |       ^\n  244 |       await expect(page.getByRole('button', { name: LADE_KNOPF })).toHaveCount(0);\n  245 |     });\n  246 |\n    at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs:243:7"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:36:20.608Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r2-mut-out/funktion-einwilligung-Kart-829c7-und-ersetzt-den-Platzhalter-desktop/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-einwilligung.spec.mjs",
+                            "column": 7,
+                            "line": 243
+                          }
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-1b3201ce2e3a4e36afb5",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 239,
+                  "column": 5
+                },
+                {
+                  "title": "/: „Cookie-Einstellungen“ im Kartenplatzhalter öffnet die Einstellungen, ohne die Einwilligung zu ändern",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1386,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:36:32.799Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-4de5ab466875d6fc0c8b",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 252,
+                  "column": 7
+                }
+              ]
+            },
+            {
+              "title": "mit Marketing-Einwilligung (alle)",
+              "file": "funktion-einwilligung.spec.mjs",
+              "line": 267,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "/standorte: Karte ohne Platzhalter, Anfrage an Karten-Host",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 911,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:28.514Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-9f855af18e1c5b601dc1",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 270,
+                  "column": 5
+                },
+                {
+                  "title": "/: Karte ohne Platzhalter, Anfrage an Karten-Host (Servicegebiet im Blick)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "mobil",
+                      "projectName": "mobil",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 935,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:35:29.448Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-d592ab268fa7944f1122",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 283,
+                  "column": 7
+                },
+                {
+                  "title": "/standorte: Karte ohne Platzhalter, Anfrage an Karten-Host",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 682,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:36:34.335Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-753d611d303b0de5d5a0",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 270,
+                  "column": 5
+                },
+                {
+                  "title": "/: Karte ohne Platzhalter, Anfrage an Karten-Host (Servicegebiet im Blick)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "desktop",
+                      "projectName": "desktop",
+                      "results": [
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 952,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-10-11T15:36:35.031Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "e5132cc41cb5df5e4500-4abcac9cd50aa05c0673",
+                  "file": "funktion-einwilligung.spec.mjs",
+                  "line": 283,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-11T15:34:17.089Z",
+    "duration": 138973.092,
+    "expected": 42,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}
