@@ -42,7 +42,9 @@ case "${1:-}" in
     DIR="${REINRAUM_DIR:-$SCRATCH/reinraum-$SHA}"
     [ -d "$DIR/.next" ] || { echo "kein Build in $DIR – zuerst reinraum.sh $SHA"; exit 2; }
     stoppe
-    cd "$DIR" && setsid nohup npx next start -H 127.0.0.1 -p "$PORT" > "$SCRATCH/server-$SHA-$PORT.log" 2>&1 < /dev/null &
+    # Die Unterschale gibt Ausgabe und Eingabe vollständig frei (sonst hält sie die Pipe des Aufrufers offen).
+    # exec macht den Server selbst zum Prozessgruppenführer: $! ist dann PID = PGID, und stop trifft die richtige Gruppe.
+    ( cd "$DIR" && exec setsid nohup npx next start -H 127.0.0.1 -p "$PORT" > "$SCRATCH/server-$SHA-$PORT.log" 2>&1 < /dev/null ) > /dev/null 2>&1 &
     echo $! > "$PIDFILE"
     echo "$DIR" > "$DIRFILE"
     for i in $(seq 1 60); do curl -s -o /dev/null "http://127.0.0.1:$PORT/" && { echo "läuft: $SHA auf $PORT"; exit 0; }; sleep 1; done
