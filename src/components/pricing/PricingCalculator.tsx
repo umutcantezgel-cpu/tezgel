@@ -241,8 +241,9 @@ export default function PricingCalculator() {
         </div>
       </div>
 
-      {/* ── Rechte Spalte: Zusammenfassung und Kontakt (Schriftfeld auf Tinte) ── */}
-      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:col-span-2 lg:self-start lg:p-12">
+      {/* ── Rechte Spalte: Zusammenfassung und Kontakt (Schriftfeld auf Tinte, volle Höhe; das Formular bleibt ab lg beim
+          Scrollen im Blick, der Absenden-Knopf steht direkt unter der Einwilligung) ── */}
+      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:col-span-2 lg:p-12">
         {status === "success" ? (
           /* Erfolgsansicht nach Absenden */
           <div className="my-auto flex flex-col gap-6" role="status">
@@ -273,7 +274,7 @@ export default function PricingCalculator() {
           </div>
         ) : (
           /* Formular-Ansicht */
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8 lg:sticky lg:top-24">
             <div>
               <span className={`${etikettForm} text-nacht-2`}>
                 <Fugenkreuz className="size-3 text-nacht-2" />

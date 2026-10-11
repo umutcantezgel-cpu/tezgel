@@ -100,7 +100,7 @@ export default function HeroContactForm() {
                 </span>
             </div>
             <p className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">
-                Kostenloses Aufmaß vor Ort anfragen
+                Kostenloses Aufmaß vor&nbsp;Ort anfragen
             </p>
             <p className="mt-2 text-fs-2 text-tinte-2">
                 Beschreiben Sie Ihr Projekt in 30 Sekunden – Herr Tezgel meldet sich direkt persönlich bei Ihnen.
@@ -140,7 +140,7 @@ export default function HeroContactForm() {
                 </div>
 
                 {/* 2. Kontaktdaten */}
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
                     <div>
                         <label htmlFor="hero-name" className={labelKlassen}>
                             Name <span className={pflichtKlassen}>*</span>

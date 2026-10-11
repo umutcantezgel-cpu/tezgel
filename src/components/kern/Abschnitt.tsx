@@ -35,6 +35,7 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
     <div className={clsx(kopf === 'seitlich' ? 'col-span-4 md:col-span-8 lg:col-span-4' : 'max-w-mass')}>
       {(etikett || nummer) && (
         <p className={clsx(etikettForm, 'mb-4', tinte ? 'text-nacht-2' : 'text-tinte-2')}>
+          {!nummer && <Fugenkreuz className={clsx('size-3 shrink-0', tinte ? 'text-nacht-2' : 'text-strich')} />}
           {nummer && <span className={tinte ? 'text-kalk' : 'text-tinte'}>{nummer}</span>}
           {nummer && etikett && <span aria-hidden="true">·</span>}
           {etikett}

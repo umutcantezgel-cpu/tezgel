@@ -12,7 +12,7 @@ import { RATING_SUMMARY } from '@/config/reviews';
 export default function Stimmen() {
   const { google, trustlocal } = RATING_SUMMARY;
   return (
-    <section aria-labelledby="bewertungen-heading" className="py-24 lg:py-32">
+    <section aria-labelledby="bewertungen-heading" className="py-16 lg:py-24">
       <div className={seitenKlassen}>
         <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:items-end">
           <div className="col-span-4 md:col-span-8 lg:col-span-7 lg:pr-12">

@@ -7,6 +7,7 @@ import { CITIES } from "@/config/cities";
 import { COMPANY_DATA } from "@/config/company";
 import Icon from "@/components/icons/Icon";
 import MapConsentGate from "@/components/legal/MapConsentGate";
+import Einzugsband from "@/components/kern/Einzugsband";
 import { etikettKlassen, knopfKlassen } from "@/components/kern/stile";
 import { CITY_HUB_DATA, getDirectionsUrl } from "@/lib/maps/getMapEmbedUrl";
 
@@ -205,6 +206,7 @@ export function ServiceKartenflaeche() {
       title={`Einsatzgebiet Fliesenverlegung Tezgel – ${currentCity.name}`}
       height={KARTE_HOEHE_NEBEN_LISTE}
       className="w-full"
+      vorschau={<Einzugsband kompakt />}
     >
       <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={setSelectedSlug} />
     </MapConsentGate>

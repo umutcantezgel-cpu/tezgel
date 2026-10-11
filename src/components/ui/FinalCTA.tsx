@@ -83,7 +83,7 @@ export default function FinalCTA({
               >
                 {siteConfig.contact.phone.formatted}
               </a>
-              <Knopf href={siteConfig.contact.phone.link} variante="hell" className="w-full">
+              <Knopf href={siteConfig.contact.phone.link} variante="hell" iconLinks="telefon" className="w-full">
                 {buttonText}
               </Knopf>
               <a

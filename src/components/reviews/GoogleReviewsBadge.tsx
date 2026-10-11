@@ -1,5 +1,6 @@
 import React from "react";
 import GoogleIcon from "@/components/ui/GoogleIcon";
+import Icon from "@/components/icons/Icon";
 import { RATING_SUMMARY } from "@/config/reviews";
 
 interface GoogleReviewsBadgeProps {
@@ -11,7 +12,8 @@ interface GoogleReviewsBadgeProps {
 }
 
 // Kennwert-Link (KERN K-009): eckig an der Fuge, das Google-Logo in Form und Farbe, der Wert in der
-// Anzeigeschrift, Sterne als „x von 5“ und die Anzahl in Mono (wie ReviewCard). Hover wechselt nur die Randfarbe.
+// Anzeigeschrift mit „von 5“ in Mono dahinter (einmal, nicht doppelt) und die Anzahl in Mono (wie ReviewCard); im
+// Raster mit Verweiszeichen am rechten Rand (externer Link). Hover wechselt nur die Randfarbe bzw. den Unterstrich.
 export default function GoogleReviewsBadge({
   rating = RATING_SUMMARY.google.rating,
   count = RATING_SUMMARY.google.count,
@@ -30,12 +32,12 @@ export default function GoogleReviewsBadge({
     >
       <GoogleIcon size={24} className="shrink-0" />
       <span className="flex flex-col">
-        <span aria-hidden="true" className="font-anzeige text-fs-5 font-semibold">
-          {wert}
+        <span className="font-anzeige text-fs-5 font-semibold">
+          {wert} <span className="font-mono text-fs-1 font-normal text-tinte-2">von 5</span>
         </span>
-        <span className="font-mono text-fs-1 text-tinte-2">{wert} von 5</span>
         <span className="font-mono text-fs-1 text-tinte-2">{count} Google-Rezensionen</span>
       </span>
+      {imRaster && <Icon name="link-extern" groesse={5} className="ml-auto shrink-0 text-tinte-2" />}
     </a>
   );
 }

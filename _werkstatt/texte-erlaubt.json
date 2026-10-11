@@ -672,5 +672,65 @@
   "teil": "main_zeilen",
   "alt": "Kostenloses Vor-Ort-Aufmaß anfordern",
   "vermerk": "E-020 Fusion: Abschluss (FinalCTA) mit einem Aufmaß-Aufruf statt zwei – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Zur Bad-Übersicht",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Projektcheck starten",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Alle Standorte",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Zu den Bewertungen",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Normgerechte Verbundabdichtung DIN 18534",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "für fugenarme Wand- & Bodenflächen XXL Großformate",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß • Verbindlicher Festpreis • Über 15 Jahre Erfahrung",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "5,0",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE (Abschluss-Baustein: Untertitel steht jetzt unter der Überschrift)"
+ },
+ {
+  "seite": "*",
+  "teil": "meta",
+  "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "vermerk": "E-020 Fusion: Beschreibung mit der Wahrheitskorrektur von main („fugenarme … Abdichtung DIN 18534“) – TEXTVORSCHLAEGE"
  }
 ]

@@ -1,5 +1,14 @@
 # PRUEFPUNKT
 
+- Etappe: E2 · Zusammenführung mit main (E-020) · Stand 11.10.2026 ~14:30 CEST
+- Arbeitsbranch `claude/amazing-mendel-b0g40w` = zusammengeführter Stand (Werkstatt + Relaunch main bis ecdc508 + Fusion der Startseite). Push auf `main` wurde von der Berechtigungsprüfung der Sitzung blockiert – wartet auf Freigabe der Nutzerin/des Nutzers (oder eigenes Vorziehen von main auf den Branch). Branch enthält main vollständig (Fast-Forward möglich).
+- Gesamtprüfung auf cf91c38 (Belege im Scratchpad `vergleich/`): Reinraum grün; Funktionstests 289 bestanden, 1 Ausreißer (Mega-Menü Tastatur, einzeln bestanden); Sitemap 163 × 200; axe / und /kontakt 0; Register ohne Lücke; Unterseiten-Stichprobe ohne Bruch (Altbefunde auf din-18534/Blog unverändert); Fremdsuite 337/45 (erwartet: sie prüft die Kern-Startseite, M-21); Fusionsgutachten Desktop 6,5 (A 6, B 5,5), Handy 7 (A 6, B 5,5).
+- Nacharbeit nach dem Gutachten eingespielt (Rechnerspalte volle Höhe, Kennzeilen einheitlich, Großformat ohne zweites Motiv, Kennwert ohne Doppelung, Karten-Vorschau, Abschluss-Knopf, Einstiegsformular); danach Reinraum und betroffene Funktionstests erneut.
+- Danach Werkstatt-Lauf weiter: Tor Anlauf 2 (Sichtabnahme auf dem zusammengeführten Stand), Lighthouse-Ruhefenster, E3. Probe-Worktree `scratchpad/merge-probe` nach dem Push auf main entfernen.
+- Offene Menschen-Fragen: M-15 bis M-22 (neu: M-21 Zusammenführung/andere Sitzung, M-22 Fotos fürs Großformat).
+
+## Vorheriger Stand (überholt)
+
 - Etappe: E2 Referenz, Tor Anlauf 2 · Stand 11.10.2026 02:00 CEST
 - Prüfstufe B am Tor abgeschlossen und grün auf f8899dc (Belege `_werkstatt/belege/e2-tor/PRUEFSTUFE-B2.md`; Lauf 1 auf 1ad2e45 in `PRUEFSTUFE-B.md`).
 - Server: 4310 = Reinraum 745335f (Ausgang), 4311 = GA-Variante f8899dc, 4312 = Reinraum f8899dc, 4320 = Dev.

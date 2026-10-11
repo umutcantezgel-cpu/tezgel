@@ -78,7 +78,7 @@ export default function ReviewCarousel({
 
   return (
     <div className={`relative w-full ${className}`}>
-      <div className="mb-4 flex items-center justify-between gap-4">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
         <span className="font-mono text-fs-1 text-tinte-2">
           Echte Kundenstimmen aus Mittelhessen
         </span>
