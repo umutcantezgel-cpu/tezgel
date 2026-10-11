@@ -302,7 +302,7 @@ export default async function ServiceDetailPage({ params }) {
                 WhatsApp Chat
               </Knopf>
             </div>
-            <Knopf href="#express-anfrage" icon="pfeil-rechts" className="w-full sm:w-auto">
+            <Knopf href="#express-anfrage" icon="pfeil-rechts" className="w-full sm:w-auto sm:self-start">
               Kostenfreies Aufmaß buchen
             </Knopf>
             <p className="border-t border-fuge pt-6 font-text text-fs-2 text-tinte-2">
