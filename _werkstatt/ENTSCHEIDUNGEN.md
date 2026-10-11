@@ -153,6 +153,14 @@ In Repo-Dateien stehen nur die Rollen ORCHESTRATOR und ARBEITSMODELL aus Abschni
 - Werkzeuglücken aus dem Tor: Bildsatz endet nach zwölf Aufnahmen (unterer Teil von `/` unbelegt) → künftige Sichtabnahmen mit Abschnittsbildern über die ganze Höhe; Ersatzpfad-Lauf mit reduzierter Bewegung ist mit dem Bildsatz identisch → mit normaler Bewegung wiederholen; Namensfehler `sig-ablauf` im Bewegungswerkzeug (E3-PRUEF-W1).
 - Reihenfolge: E3-W1 = vier Baumeister-Pakete laut PRUEFPUNKT (E3-BAU-11, -16, -02, -07) und E3-PRUEF-W1; parallel Orchestrator-Spur E3-NACH-07 (Tempo), -01, -02, -04 – ohne Dateiüberschneidung mit den Baumeister-Paketen.
 
+## E-022 · SIG-1 ab dem ersten Bild, Leitachse auf `/`, spätes Zeichnen langer Seiten
+- Anlass: E2-SICHT-2 Befunde 5, 6, 11 (Lot ohne Startverzug, beide Linien aus dem Kreuzpunkt, `sig-flucht` und `leitachse` fehlen auf `/`) und Lighthouse e2-tor-3 (TBT `/` mobil 779 ms; „Style & Layout“ 1,6 s gegen 0,7 s im Ausgang, Skriptausführung 0,9 s gegen 1,7 s – der Rückschritt liegt im Zeichnen der langen Seite, nicht im JavaScript; 2 972 Elemente).
+- Entscheidung (Denkprotokoll):
+  1. SIG-1 läuft als CSS-Animation unter `html.k-bewegung` (Kopfskript vor dem ersten Bild) statt als Übergang nach dem Signal des Bewegungsmoduls: Das Modul meldet sich erst nach der Hydrierung; auf langsamen Geräten griff nach 2 s das Notaus, die Linien sprangen. Der große Moment hängt damit an keinem Skript. Zeitverlauf linear – ein Laser zieht mit gleicher Geschwindigkeit, und bei 25/50/75 % ist die Linie ¼/½/¾ lang (Abnahmekriterium). Register-Zeilen in KERN angepasst; reduzierte Bewegung, Druck und erzwungene Farben ohne Animation.
+  2. Ab lg wächst die Waage aus dem Kreuzpunkt mit dem Plan-Lot (Ursprung 75 % der Blattbreite), knickt am linken Ende ins Lot und übergibt am Fuß des Einstiegs an die Leitachse der Seite (gleiche Lage `ACHSE_LAGE`); unter lg steht das Lot des Einstiegs in derselben Lage wie die Leitachse, der Text an der Inhaltskante (wie E-019). Die Leitachse kehrt auf `/` zurück (in der Fusion E-020 entfallen); die Abschnitte mit `Abschnitt` setzen ihr Fugenkreuz.
+  3. Abschnitte unterhalb des ersten Bildschirms von `/` tragen `content-visibility: auto` (`.spaet-zeichnen`, Abschnitt-Eigenschaft `spaet`): Stil und Layout entstehen erst in Sichtnähe. Inhalte bleiben im DOM, in der Zugänglichkeitsstruktur und in der Seitensuche; gedruckt wird alles. Nur an Hüllen ohne überstehende Zeichen (Inhalt wird am Rand beschnitten) – deshalb bei `Abschnitt` am inneren Rahmen, nicht an der Sektion mit dem Fugenkreuz.
+- Prüfung: Prüfstufe A (Funktion, Bilder, Register, reduziert) und Lighthouse-Nachmessung `/` mobil gegen e2-tor-3 durch den Prüfer; Ziel TBT ≤ E0 + Spanne (≤ 635 ms), „Style & Layout“ deutlich unter 1,6 s.
+
 ## L6 · Lernen
 | Datum | Rolle | Pakettyp | Fehler | Häufigkeit | Maßnahme |
 |---|---|---|---|---|---|
