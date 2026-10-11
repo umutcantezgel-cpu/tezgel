@@ -4,6 +4,9 @@ import { test as base, expect } from '@playwright/test';
 import { installSperre, setzeEinwilligung, ATTRAPPE_ANFRAGE } from '../lib.mjs';
 
 let ipZaehler = 0;
+// Zweites Oktett je Lauf verschieden (Startsekunde des Worker-Prozesses): Wiederholte Läufe gegen denselben Server teilen
+// sonst IPs und laufen in dessen Rate-Limit (5 je IP in 10 min; Befund P3-14a).
+const LAUF_OKTETT = 20 + (Math.floor(Date.now() / 1000) % 200);
 export const test = base.extend({
   echteRoute: [false, { option: true }],
   einwilligung: ['abgelehnt', { option: true }],
@@ -12,7 +15,7 @@ export const test = base.extend({
   context: async ({ context, echteRoute, einwilligung, protokoll, anfragen, baseURL }, use, testInfo) => {
     await installSperre(context, { protokoll, echteRoute });
     // Anfrage-Körper mitschneiden (vor der Sperre registriert → läuft zuerst)
-    const ip = `10.99.${testInfo.workerIndex}.${(ipZaehler++ % 250) + 1}`; // eigene IP je Test → kein Rate-Limit
+    const ip = `10.${LAUF_OKTETT}.${testInfo.workerIndex}.${(ipZaehler++ % 250) + 1}`; // eigene IP je Test → kein Rate-Limit
     await context.route('**/api/anfrage', async (route) => {
       const req = route.request();
       if (req.method() === 'POST') { try { anfragen.push(JSON.parse(req.postData() || '{}')); } catch { anfragen.push({ roh: req.postData() }); } }
