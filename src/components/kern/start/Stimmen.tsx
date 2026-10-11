@@ -63,7 +63,8 @@ function Stimmenkarte({ stimme }: { stimme: Stimme }) {
         {notiz ? <Randnotiz schritt={notiz} /> : null}
         <figcaption className="mt-auto flex flex-wrap items-center gap-x-k-4 gap-y-k-1 border-t border-k-fuge pt-k-4 k-mono text-k-1 text-k-tinte-2">
           {/* Kein Haken „Verifizierter Kunde“: nicht belegt, Quelle ist Google (MIKROTEXTE Kl. 4, P3-16-GEG H-1) */}
-          <span className="text-k-tinte">{stimme.author}</span>
+          {/* Eigenes Element: Der Name bleibt eine eigene Texteinheit (Text-Invarianten), auch ohne Zeichen daneben */}
+          <div className="text-k-tinte">{stimme.author}</div>
           <span>{stimme.source} Rezension</span>
           <span className="inline-flex items-center gap-k-1">
             <span aria-hidden="true" className="flex text-k-tinte">
