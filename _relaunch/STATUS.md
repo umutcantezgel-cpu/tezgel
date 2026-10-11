@@ -1,4 +1,4 @@
-STATUS · Phase P3-16 (Kandidat-Tor `/`) · live 5225fb3 (Kern ruhend, T1 gleich) · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · Slop hart 479 · Slop weich 74 (Hauptseiten) · Jury 4,15–4,40 · Lighthouse mobil 67–88 · axe 1.661 · Planwert 10–13 Tage · Nächster Schritt: Gegenprüfer P3-16-GEG, dann Freischaltung `/`
+STATUS · Phase P4 (Fundament, ruhend) · live d4da429 (Startseite `/` im Kern freigeschaltet, Rauchtest + Live-Browser grün) · Erfüllt 0/14 (Z-01, Z-02 ENTFÄLLT) · `/`: Jury 6,9 (4,30) · Lighthouse mobil 88 (85) · INP max 56 ms · axe 0 · Slop weich 5/hart 0 (16/4) · übrige Seiten unverändert · Planwert 8–13 Tage · Nächster Schritt: P4-Pakete (Vorlagen, Formulare, Wege), dann W1 `/bad`
 
 # STATUS · Lauf 1 „Rückführung und Veredelung“ (angepasst: nur Aufwertung)
 
@@ -40,3 +40,5 @@ STATUS · Phase P3-16 (Kandidat-Tor `/`) · live 5225fb3 (Kern ruhend, T1 gleich
 - 2026-10-11 02:48 CEST · Kandidat `/` (926059b-k): Text v2, Pixel, SVG, axe, Klassen grün; a11y-zusatz zeigt 5 Verschlechterungen → P3-16a; Navigationstests P3-14d und Probeläufer-Basis laufen.
 - 2026-10-11 03:48 CEST · P3-16a Barrierefreiheit (harte Kennzahlen 0), Reflow-Ursache im Fuß behoben, Mutationsprobe 9/9, Fünf-Sekunden-Probe, Slop, Jury 6,9 (≥ Schwelle 6,3); Jury-Korrekturen (Kanal, Großformat); Gegenprüfung Tests → P3-14e; ruhende Commits live (5225fb3, Rauchtest grün).
 - 2026-10-11 05:35 CEST · Kandidat-Tor `/` (bcd8fcb-k) grün: Suite 350/0, Mutation 9/9 + 11/11, Text v2 rot 0, a11y hart 0, INP max 64 ms, Lighthouse gleich/besser, Jury 6,9, Fünf-Sekunden 10/10, Probeläufe gleich (Tastatur +3 begründet, E-023); Varianten A entfernt; Gegenprüfer P3-16-GEG läuft.
+
+- 2026-10-11 07:28 CEST · **Startseite `/` live (d4da429)** nach Kandidat-Tor 5421e5b-k und zwei Gegenprüfungen (Runde 1 nein → behoben, Runde 2 ja); Live-Rauchtest und Live-Browser grün (0 Konsole, 0 CSP). P3 abgeschlossen; offene Abweichungen Z-04 (Tastatur +3) und Z-12 (TBT über Bestand) in ABNAHME.

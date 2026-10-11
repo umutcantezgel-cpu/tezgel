@@ -1,8 +1,7 @@
 # PRUEFPUNKT
 
-- Lauf: 1 (angepasst, E-000) · Phase: P3-16 (Kandidat-Tor `/`, vor Freischaltung) · L0 abgeschlossen
-- Live auf main: 6cfad0b-Stand (Kern ruhend, T1 gleich, Rauchtest grün).
-- Endstand-Kandidat `/`: 5421e5b-k (Port 4334); Quelltext seither unverändert (nur `_relaunch/`). Basis a8e049f (4323), Ausgangsstand 707a93d (4310).
-- Tor-Ergebnis: `_relaunch/belege/t2-5421e5b/ERGEBNIS.md` (alles grün; offene Abweichungen Tastatur a1/a5 +3 E-023, TBT über Bestand E-024 in ABNAHME).
-- Laufend: P3-16-GEG2 (Gegenprüfer Runde 2).
-- Nächster exakter Schritt: Rückgabe GEG2 lesen → ggf. beheben → sauberer Baum → `KANDIDAT="/" _relaunch/werkzeuge/reinraum.sh HEAD` (Quelltext-Gleichheit zu 5421e5b: `git diff --stat 5421e5b HEAD -- src public package.json package-lock.json next.config.ts tsconfig.json` leer) → `KANDIDAT_BASIS=$(git rev-parse --short HEAD) _relaunch/werkzeuge/freischalten.sh --commit /` → `git push origin HEAD:main` → `_relaunch/werkzeuge/live-rauchtest.sh <sha>` + `node _relaunch/werkzeuge/live-browser.mjs` → STATUS/PRUEFPUNKT → P3-Phasentor-Rest (ABNAHME) → P4.
+- Lauf: 1 (angepasst, E-000) · Phase: P4 (Fundament, ruhend) · P3 abgeschlossen
+- Live auf main: d4da429 (`/` im Kern, alle anderen Seiten Bestand). Server: 4310 Ausgangsstand 707a93d · 4323 Basis a8e049f (Bestand-Startseite, nur noch für Vergleiche) · neue Basis für W1 = Reinraum am Live-Stand (`reinraum.sh HEAD`, ohne KANDIDAT) bauen.
+- Tests: `KERN_SEITEN = ['/']` in `tests/fixtures.mjs` entspricht jetzt dem Live-Stand; Läufe gegen 4310/4323 mit `RELAUNCH_FASSUNG=bestand`.
+- Nächster exakter Schritt: P4-Briefings schreiben und starten (P4-01 Vorlage Fachseite, P4-02 Vorlagen Übersicht/Liste/Artikel/Detail, P4-03 Verlegepläne, P4-04 Icon-Vollsatz, P4-05a/b Formulare im Kern, P4-07 Wege 308/410, P4-09 Zuklappen nach transitionend (GEG2 N2-1)); danach W1 `/bad`.
+- Offene Abweichungen: ABNAHME „Offene Abweichungen“ (Z-04 Tastatur, Z-12 TBT).
