@@ -17,7 +17,8 @@ export interface ReviewItem {
 
 // Kundenstimme (KERN K-009): wörtliches Zitat mit genau einem Anriss, Quelle und Bewertung in Mono,
 // Randnotiz mit Verweis auf Tezgels Ablauf oder Leistung. Lesefolge wie im Bestand: Name, Thema (und Ort), Zitat, Quelle.
-export default function ReviewCard({ review }: { review: ReviewItem }) {
+// mitAnriss (Standard an): ohne Anriss steht derselbe Text ohne Markierung (ReviewCarousel gibt ihn nur der ersten sichtbaren Stimme).
+export default function ReviewCard({ review, mitAnriss = true }: { review: ReviewItem; mitAnriss?: boolean }) {
   const name = review.authorName || review.author || "Kunde";
   const zusatz = review.id ? STIMMEN[review.id] : undefined;
   const teile = teileAnriss(review.text, zusatz?.anriss);
@@ -35,7 +36,7 @@ export default function ReviewCard({ review }: { review: ReviewItem }) {
       </header>
       <blockquote className="mt-4 flex-1 text-fs-3 text-tinte">
         <p>
-          „{teile ? <>{teile[0]}<mark data-motion="anriss">{teile[1]}</mark>{teile[2]}</> : review.text}“
+          „{teile ? <>{teile[0]}{mitAnriss ? <mark data-motion="anriss">{teile[1]}</mark> : teile[1]}{teile[2]}</> : review.text}“
         </p>
       </blockquote>
       <footer className="mt-6 border-t border-fuge pt-4">
