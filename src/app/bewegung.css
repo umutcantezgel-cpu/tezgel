@@ -370,8 +370,9 @@ html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-nach-waage {
   animation-duration: var(--dauer-3);
   animation-delay: var(--dauer-5);
 }
+/* Ursprung = Unterkante der Zeichenfläche: im geschnittenen Plan ist das die Schnittkante, also der Kreuzpunkt */
 html.k-bewegung [data-motion="sig-kreuzlinie"] .plan-achse {
-  transform-box: fill-box;
+  transform-box: view-box;
   transform-origin: center bottom;
   animation: kreuzlinie-lot-wachsen var(--dauer-5) linear both;
 }

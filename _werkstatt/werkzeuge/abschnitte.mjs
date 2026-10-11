@@ -46,6 +46,9 @@ for (const a of ansichten) {
     const erst = path.join(dir, `${name('erster-bildschirm')}.jpg`);
     await page.screenshot({ path: erst, type: 'jpeg', quality: 70 });
     r.bilder.push({ name: 'erster Bildschirm', datei: erst });
+    // spätes Zeichnen (content-visibility: auto, E-022) aufheben: Ganzseiten-Ausschnitte zeigen sonst Abschnitte außerhalb
+    // des Bildschirms leer, die beim Scrollen gezeichnet werden – das Bild soll den Abschnitt zeigen, wie er in Sicht aussieht
+    await page.addStyleTag({ content: '* { content-visibility: visible !important; }' });
     // Abschnitte in Dokumentreihenfolge mit absoluter Lage; der feste Kopf wird für Ausschnitte ausgeblendet
     const teile = await page.evaluate(() => {
       const els = [...document.querySelectorAll('main section, main header')].filter((el) => !el.parentElement.closest('main section, main header'));

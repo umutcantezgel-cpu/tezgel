@@ -76,6 +76,9 @@ for (const a of ansichten) {
     r.ueberlappungNachArt = zahl.nachArt;
     const datei = path.join(ziel, voll ? `${a}-voll.jpg` : `${a}.jpg`);
     if (voll) {
+      // Ganzseitenbild: spätes Zeichnen (content-visibility: auto, E-022) aufheben, sonst bleiben Abschnitte außerhalb des
+      // Bildschirms leer, die beim Scrollen gezeichnet werden
+      await page.addStyleTag({ content: '* { content-visibility: visible !important; }' });
       await page.screenshot({ path: datei, type: 'jpeg', quality: 70, fullPage: true });
     } else {
       const anker = await setzeScroll(page);
