@@ -198,18 +198,24 @@ export default function FliesenKonfiguratorPage() {
             {/* 5. Treppen: die drei Regeln als Liste an der Fuge, je Regel ein Absatz mit fettem Einstieg */}
             <Abschnitt art="arbeit" titelId="treppen-heading" titel="Bei Treppen nur die Nettofläche">
                 <ul className="border-t border-fuge">
-                    <li className="max-w-mass border-b border-fuge py-6 font-text text-fs-3 text-tinte">
-                        <strong className="font-semibold">Zählweise:</strong> Eine Treppe mit n Steigungen hat n Setzstufen und in der Regel n − 1 Trittstufen. Die Trittstufenfläche ergibt sich aus Laufbreite × Auftrittstiefe inklusive Überstand, die Setzstufenfläche aus Laufbreite × Steigungshöhe.
+                    <li className="border-b border-fuge py-6">
+                        <p className="max-w-mass font-text text-fs-3 text-tinte">
+                            <strong className="font-semibold">Zählweise:</strong> Eine Treppe mit n Steigungen hat n Setzstufen und in der Regel n − 1 Trittstufen. Die Trittstufenfläche ergibt sich aus Laufbreite × Auftrittstiefe inklusive Überstand, die Setzstufenfläche aus Laufbreite × Steigungshöhe.
+                        </p>
                     </li>
-                    <li className="max-w-mass border-b border-fuge py-6 font-text text-fs-3 text-tinte">
-                        <strong className="font-semibold">Ohne Verschnittzuschlag:</strong> Bei Stufen hängt der Verschnitt stark vom Format und vom Stufenmaß ab. Ein pauschaler Prozentsatz wäre irreführend, deshalb zeigt der Konfigurator nur die Nettofläche.
+                    <li className="border-b border-fuge py-6">
+                        <p className="max-w-mass font-text text-fs-3 text-tinte">
+                            <strong className="font-semibold">Ohne Verschnittzuschlag:</strong> Bei Stufen hängt der Verschnitt stark vom Format und vom Stufenmaß ab. Ein pauschaler Prozentsatz wäre irreführend, deshalb zeigt der Konfigurator nur die Nettofläche.
+                        </p>
                     </li>
-                    <li className="max-w-mass border-b border-fuge py-6 font-text text-fs-3 text-tinte">
-                        <strong className="font-semibold">Keine Menge</strong> gibt es bei gewendelten Treppen, bei Blockstufen (eine massive Bauart, kein Belag) und bei unvollständigen Maßen. Treppensockel und Kantenausbildung werden beim Aufmaß festgelegt. Mehr dazu unter{' '}
-                        <Link href="/treppen" className={linkKlassen}>
-                            Treppen neu belegen
-                        </Link>
-                        .
+                    <li className="border-b border-fuge py-6">
+                        <p className="max-w-mass font-text text-fs-3 text-tinte">
+                            <strong className="font-semibold">Keine Menge</strong> gibt es bei gewendelten Treppen, bei Blockstufen (eine massive Bauart, kein Belag) und bei unvollständigen Maßen. Treppensockel und Kantenausbildung werden beim Aufmaß festgelegt. Mehr dazu unter{' '}
+                            <Link href="/treppen" className={linkKlassen}>
+                                Treppen neu belegen
+                            </Link>
+                            .
+                        </p>
                     </li>
                 </ul>
             </Abschnitt>
