@@ -2,11 +2,11 @@
 // Wortlaut, Ziele, IDs und Reihenfolge wörtlich aus `src/app/(bestand)/bad/badsanierung/page.jsx`; Daten aus `@/config/*`.
 // Keine Tailwind-Klassen in dieser Datei (`_entwurf` wird nicht gescannt) – nur Vorlagen-Teile mit Props.
 // Der BadanfrageFunnel (F-04) bekommt seine Kern-Ansicht in P4-05a; bis dahin steht ein markierter Platzhalter.
+// P4-10a: Einstieg mit dem ruhenden Plan der Seite (`PLAN_JE_PFAD`: wandnische) und dem Schriftfeld (E-027).
 import { COMPANY_DATA } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
-import VerlegeplanBad from '@/components/kern/motive/VerlegeplanBad';
 import { ANRISS } from '@/components/kern/start/vertrauen/stimmen-daten';
-import { Ablauf, Anfrage, Einstieg, Qualitaetsversprechen, Stimme, Trenner } from '@/components/kern/vorlagen/fachseite';
+import { Ablauf, Anfrage, Einstieg, PlanDerSeite, Qualitaetsversprechen, SchriftfeldBetrieb, Stimme, Trenner } from '@/components/kern/vorlagen/fachseite';
 import { VorschauPlatzhalter } from '@/components/kern/vorlagen/fachseite/Vorschau';
 
 const WORKFLOW_STEPS = [
@@ -40,7 +40,8 @@ export default function Badsanierung() {
           { text: 'Bad-Projektcheck starten', href: '/bad/projekt-check', zeichen: 'pfeil' },
           { text: contact.phone, href: `tel:${contact.phoneLink}`, zeichen: 'telefon', mono: true },
         ]}
-        motiv={<VerlegeplanBad achse={false} />}
+        motiv={<PlanDerSeite pfad="/bad/badsanierung" />}
+        schriftfeld={<SchriftfeldBetrieb />}
       />
 
       <Ablauf

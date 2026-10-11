@@ -6,7 +6,7 @@
 // `titel`: Überschrift im Kasten, wo der Bestand eine trägt (Granit: H3).
 import type { ReactNode } from 'react';
 import { Hinweis, verbinde } from '@/components/kern/basis';
-import { UMBRUCH, istText } from '@/components/kern/vorlagen/fachseite/typen';
+import { UMBRUCH, istText } from '@/components/kern/vorlagen/teile/typen';
 
 export type NotizProps = {
   children: ReactNode;

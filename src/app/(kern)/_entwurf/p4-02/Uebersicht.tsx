@@ -3,17 +3,17 @@
 // Gemeinsame Abschnitte: Abschluss als Kern-Abschnitt (Standardwortlaut FinalCTA), Konfigurator und Qualitätsversprechen
 // als markierte Platzflächen.
 // Nur Komponenten, keine eigenen Klassen (`_entwurf` wird von Tailwind nicht gelesen).
+// P4-10a: dieselben Inhalte über die gemeinsamen Teile (`@/components/kern/vorlagen/teile` bzw. die Namen der Übersicht).
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY } from '@/config/reviews';
 import { TOPIC_HUBS } from '@/config/topics';
 import { Textlink } from '@/components/kern/basis';
-import { Abschnitt } from '@/components/kern/vorlagen/uebersicht/Abschnitt';
+import { Abschnitt, Querverweise } from '@/components/kern/vorlagen/teile';
 import Einstieg from '@/components/kern/vorlagen/uebersicht/Einstieg';
 import Verzeichnis from '@/components/kern/vorlagen/uebersicht/Verzeichnis';
 import Felder from '@/components/kern/vorlagen/uebersicht/Felder';
 import Projektband from '@/components/kern/vorlagen/uebersicht/Projektband';
-import Weiterlesen from '@/components/kern/vorlagen/uebersicht/Weiterlesen';
-import { Platzflaeche, Tafelkopf } from '@/components/kern/vorlagen/detail/Vorschautafel';
+import { Platzflaeche, Tafelkopf } from '@/components/kern/vorlagen/teile/Vorschau';
 import Abschluss from '@/components/kern/start/Abschluss';
 
 const FLIESEN_HUB = TOPIC_HUBS.find((hub) => hub.id === 'fliesen');
@@ -108,57 +108,62 @@ export default function VorschauUebersicht() {
         titelId="fliesen-hub-heading"
         etiketten={[`Fliesen-Ratgeber · Gegründet ${business.establishmentYear} · Fachbetrieb (${authority.shortName})`]}
         titel="Fliesen-Ratgeber: Formate, Räume und Verlegetechnik verständlich erklärt"
-        text="In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegetechnik verständlich aus der Praxis. Welche Fliese passt in welchen Raum, was verlangen Großformate vom Untergrund und woran erkennen Sie eine saubere Verlegung? Hier bündeln wir das Fachwissen aus unserem Alltag als Fachbetrieb Fliesen Tezgel – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen."
-        aktionen={[
-          { label: 'Projekt im Konfigurator vorbereiten', href: '/fliesen/konfigurator', art: 'haupt', pfeil: true },
-          { label: 'Leistung: Wohnbereiche & Neubau', href: '/leistungen/wohnen' },
+        vorspann="In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegetechnik verständlich aus der Praxis. Welche Fliese passt in welchen Raum, was verlangen Großformate vom Untergrund und woran erkennen Sie eine saubere Verlegung? Hier bündeln wir das Fachwissen aus unserem Alltag als Fachbetrieb Fliesen Tezgel – damit Sie Ihre Möglichkeiten kennen, bevor Sie anfragen."
+        knoepfe={[
+          { text: 'Projekt im Konfigurator vorbereiten', href: '/fliesen/konfigurator', art: 'haupt', zeichen: 'pfeil' },
+          { text: 'Leistung: Wohnbereiche & Neubau', href: '/leistungen/wohnen' },
         ]}
       />
 
       <Abschnitt
         titelId="fliesen-themen-heading"
-        kopf={{
-          etikett: 'Alle Themen',
-          titel: `${FLIESEN_HUB ? FLIESEN_HUB.name : 'Fliesen & Verlegung'} im Überblick`,
-          text: FLIESEN_HUB ? `${FLIESEN_HUB.description}.` : undefined,
-        }}
+        kopfLage="geteilt"
+        etikett="Alle Themen"
+        titel={`${FLIESEN_HUB ? FLIESEN_HUB.name : 'Fliesen & Verlegung'} im Überblick`}
+        einleitung={FLIESEN_HUB ? `${FLIESEN_HUB.description}.` : undefined}
       >
-        <Verzeichnis labelledBy="fliesen-themen-heading" eintraege={HUB_PAGES.map((p) => ({ href: p.path, titel: p.name, text: p.desc }))} />
+        <Verzeichnis labelledBy="fliesen-themen-heading" eintraege={HUB_PAGES.map((p) => ({ href: p.path, titel: p.name, beschreibung: p.desc }))} />
       </Abschnitt>
 
-      <Abschnitt titelId="fliesen-wissen-heading" flaeche="fliese" fuge kopf={{ etikett: 'Wissen kompakt', titel: 'Vom Raum bis zur Abnahme: die wichtigsten Weichen' }}>
+      <Abschnitt
+        titelId="fliesen-wissen-heading"
+        flaeche="fliese"
+        fugen="oben"
+        kopfLage="geteilt"
+        etikett="Wissen kompakt"
+        titel="Vom Raum bis zur Abnahme: die wichtigsten Weichen"
+      >
         <Felder
           flaeche="kalk"
-          felder={[...GUIDE_SECTIONS, BAD_FELD].map((s) => ({
+          eintraege={[...GUIDE_SECTIONS, BAD_FELD].map((s) => ({
             id: `guide-${s.id}`,
             etiketten: [s.eyebrow],
             titel: s.title,
-            text: s.text,
-            verweise: s.links,
+            inhalt: s.text,
+            verweise: s.links.map((l) => ({ titel: l.label, href: l.href })),
           }))}
         />
       </Abschnitt>
 
       <Abschnitt
         titelId="fliesen-weitere-heading"
-        kopf={{
-          etikett: 'Weitere Fachthemen',
-          titel: 'Unter der Fliese und über das Wohnen hinaus',
-          text: 'Ein Fliesenbelag ist nur so gut wie sein Untergrund. Diese Ratgeber-Bereiche vertiefen die angrenzenden Themen.',
-        }}
+        kopfLage="geteilt"
+        etikett="Weitere Fachthemen"
+        titel="Unter der Fliese und über das Wohnen hinaus"
+        einleitung="Ein Fliesenbelag ist nur so gut wie sein Untergrund. Diese Ratgeber-Bereiche vertiefen die angrenzenden Themen."
       >
         <Verzeichnis
           labelledBy="fliesen-weitere-heading"
           eintraege={OTHER_HUBS.map((hub) => ({
             href: hub.path,
             titel: hub.name,
-            text: hub.description,
+            beschreibung: hub.description,
             zusatz: `${hub.pages.length} ${hub.pages.length === 1 ? 'Seite' : 'Seiten'}`,
           }))}
         />
       </Abschnitt>
 
-      <Abschnitt titelId="fliesen-projekt-heading" abstand="eng">
+      <Abschnitt titelId="fliesen-projekt-heading" dichte="eng">
         <Projektband
           titelId="fliesen-projekt-heading"
           etikett="Vom Ratgeber zum Projekt"
@@ -170,27 +175,28 @@ export default function VorschauUebersicht() {
             `Persönliche Betreuung durch ${owner.fullName}`,
           ]}
           beleg={{ wert: google.displayRating, text: `aus ${google.count} ${google.label} (Stand ${RATING_SUMMARY.asOf})` }}
-          aktionen={[
-            { label: 'Zur Leistungsseite Wohnbereiche & Neubau', href: '/leistungen/wohnen', art: 'haupt', pfeil: true },
-            { label: contact.phone, href: `tel:${contact.phoneLink}`, zeichen: 'telefon', mono: true },
-            { label: 'Fotos per WhatsApp senden', href: contact.whatsappLink, zeichen: 'whatsapp', extern: true },
+          knoepfe={[
+            { text: 'Zur Leistungsseite Wohnbereiche & Neubau', href: '/leistungen/wohnen', art: 'haupt', zeichen: 'pfeil' },
+            { text: contact.phone, href: `tel:${contact.phoneLink}`, zeichen: 'telefon', mono: true },
+            { text: 'Fotos per WhatsApp senden', href: contact.whatsappLink, zeichen: 'whatsapp', extern: true },
           ]}
         />
       </Abschnitt>
 
-      <Abschnitt titelId="fliesen-ratgeber-heading" abstand="eng">
-        <Weiterlesen
-          titelId="fliesen-ratgeber-heading"
-          titel="Weiterführende Ratgeber zur Fliesenverlegung"
-          verweise={WEITERLESEN}
+      <Querverweise
+        form="liste"
+        landmarke="section"
+        dichte="eng"
+        titelId="fliesen-ratgeber-heading"
+        titel="Weiterführende Ratgeber zur Fliesenverlegung"
+        verweise={WEITERLESEN.map((l) => ({ titel: l.label, href: l.href }))}
           nachsatz={
             <>
               Persönliche Beratung vor Ihrer Entscheidung? <Textlink href="/beratung">Fachberatung anfragen</Textlink> oder unseren{' '}
               <Textlink href="/blog">Fliesen-Ratgeber-Blog</Textlink> durchstöbern.
             </>
           }
-        />
-      </Abschnitt>
+      />
 
       <Platzflaeche>#konfigurator · Fliesen-Konfigurator (F-06, eigener Kern-Baustein)</Platzflaeche>
       <Platzflaeche>Qualitätsversprechen (gemeinsamer Abschnitt, nicht P4-02)</Platzflaeche>

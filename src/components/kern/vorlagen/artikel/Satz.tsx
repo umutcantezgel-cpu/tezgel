@@ -8,25 +8,28 @@
 import type { ReactNode } from 'react';
 import type { Components } from 'react-markdown';
 import { Textlink, verbinde } from '@/components/kern/basis';
+import { stufeNachWort } from '@/components/kern/vorlagen/teile/satz';
+import { UMBRUCH } from '@/components/kern/vorlagen/teile/typen';
 
 export type Anker = (kinder: ReactNode) => string | undefined;
 
-const H2 = 'mt-k-8 mb-k-4 border-b border-k-fuge pb-k-3 k-anzeige text-k-5 text-k-tinte wrap-break-word hyphens-auto first:mt-0';
-const H3 = 'mt-k-7 mb-k-3 k-anzeige text-k-4 text-k-tinte wrap-break-word hyphens-auto';
+// Überschriften: Stufe nach dem längsten Wort (P4-10a, Ort `abschnitt`), höchstens k-5 bzw. k-4.
+const H2 = verbinde('mt-k-8 mb-k-4 border-b border-k-fuge pb-k-3 k-anzeige text-k-tinte first:mt-0', UMBRUCH);
+const H3 = verbinde('mt-k-7 mb-k-3 k-anzeige text-k-tinte', UMBRUCH);
 const ABSATZ = 'mb-k-5 max-w-(--k-mass) k-text text-k-3 text-k-tinte';
 const LISTE = 'mb-k-5 max-w-(--k-mass) pl-k-6 k-text text-k-3 text-k-tinte marker:text-k-tinte-2';
 
 /** Bausteine für `<ReactMarkdown components={lesesatz({ anker })}>`. */
 export function lesesatz({ anker }: { anker: Anker }): Components {
   return {
-    h1: ({ children }) => <h2 className={H2}>{children}</h2>,
+    h1: ({ children }) => <h2 className={verbinde(H2, stufeNachWort(children, 'abschnitt', 'text-k-5'))}>{children}</h2>,
     h2: ({ children }) => (
-      <h2 id={anker(children)} className={H2}>
+      <h2 id={anker(children)} className={verbinde(H2, stufeNachWort(children, 'abschnitt', 'text-k-5'))}>
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 id={anker(children)} className={H3}>
+      <h3 id={anker(children)} className={verbinde(H3, stufeNachWort(children, 'abschnitt', 'text-k-4'))}>
         {children}
       </h3>
     ),

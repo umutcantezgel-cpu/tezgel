@@ -1,5 +1,5 @@
 // Verwandte Artikel (P4-02, KERN v1.2): „Das könnte Sie auch interessieren“ unter dem Artikel. Drei Felder im
-// Fugenraster (mobil untereinander): Bild 2:1, Kategorie als Mono-Etikett, Titel als Link (Bestand: <p> mit Link, keine
+// Fugenraster (Spalten nach Behälterbreite, höchstens drei je Reihe; P4-10a): Bild 2:1, Kategorie als Mono-Etikett, Titel als Link (Bestand: <p> mit Link, keine
 // Überschrift), Kurztext, „Artikel lesen“. Ganzes Feld über den Link anklickbar, Fokus-Ring am Link (Lehre 4).
 // Die Auswahl (gleiche Kategorie, gemeinsame Schlagworte, sonst neueste) trifft der Aufrufer – im Bestand steckt sie in
 // `RelatedPosts.jsx` und gehört in einen gemeinsamen Helfer (OFFENE FRAGE, G9).
@@ -8,6 +8,9 @@ import type { ReactNode } from 'react';
 import { Etikett, fokus, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import Bild, { type BildAngaben } from '@/components/kern/vorlagen/liste/Bild';
+import { Fugenfeld, Fugenraster } from '@/components/kern/vorlagen/teile/Fugenraster';
+import { stufeNachWort } from '@/components/kern/vorlagen/teile/satz';
+import { UMBRUCH } from '@/components/kern/vorlagen/teile/typen';
 
 export type VerwandterArtikel = { href: string; titel: ReactNode; kategorie?: ReactNode; text?: ReactNode; bild?: BildAngaben };
 
@@ -28,20 +31,20 @@ export default function Verwandte({ titel, titelId, artikel, mehr, className }: 
   if (artikel.length === 0) return null;
   return (
     <div className={verbinde('flex flex-col gap-k-6', className)}>
-      <h2 id={titelId} className="k-anzeige text-k-5 text-k-tinte wrap-break-word hyphens-auto">
+      <h2 id={titelId} className={verbinde('k-anzeige text-k-tinte', stufeNachWort(titel, 'abschnitt', 'text-k-5'), UMBRUCH)}>
         {titel}
       </h2>
-      <ul aria-labelledby={titelId} className="grid gap-px border border-k-fuge bg-k-fuge md:grid-cols-3">
+      <Fugenraster als="ul" spalten={3} aria-labelledby={titelId}>
         {artikel.map((a) => (
-          <li key={a.href} className="group relative flex min-w-0 flex-col bg-k-fliese pointer-fine:hover:bg-k-kalk">
-            {a.bild ? <Bild {...a.bild} sizes="(min-width: 768px) 33vw, 100vw" rahmen="unten" /> : null}
+          <Fugenfeld key={a.href} als="li" innen="keiner" flaeche="fliese" className="group relative flex flex-col pointer-fine:hover:bg-k-kalk">
+            {a.bild ? <Bild {...a.bild} sizes="(min-width: 1024px) 25vw, 100vw" rahmen="unten" /> : null}
             <div className="flex flex-1 flex-col gap-k-3 p-k-5">
               {a.kategorie ? (
                 <Etikett rahmen ton="tinte">
                   {a.kategorie}
                 </Etikett>
               ) : null}
-              <p className="k-text text-k-3 font-semibold text-k-tinte wrap-break-word hyphens-auto">
+              <p className={verbinde('k-text text-k-3 font-semibold text-k-tinte', UMBRUCH)}>
                 <Link href={a.href} data-motion="zustand" className={LINK}>
                   {a.titel}
                 </Link>
@@ -54,9 +57,9 @@ export default function Verwandte({ titel, titelId, artikel, mehr, className }: 
                 </span>
               </span>
             </div>
-          </li>
+          </Fugenfeld>
         ))}
-      </ul>
+      </Fugenraster>
     </div>
   );
 }

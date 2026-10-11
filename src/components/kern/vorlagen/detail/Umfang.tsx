@@ -9,13 +9,16 @@ import type { ReactNode } from 'react';
 import { verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import type { IconName } from '@/components/kern/icons/geometrie';
-import { Merkmale, Pfeillink, type Verweis } from '@/components/kern/vorlagen/uebersicht/Abschnitt';
+import { Pfeillink } from '@/components/kern/vorlagen/teile/Pfeillink';
+import { Punkte } from '@/components/kern/vorlagen/teile/Punkte';
+import { stufeNachWort } from '@/components/kern/vorlagen/teile/satz';
+import { UMBRUCH, type Verweis } from '@/components/kern/vorlagen/teile/typen';
 
 export type UmfangProps = {
   titel: ReactNode;
   titelId?: string;
   text?: ReactNode;
-  gruppen?: { titel: ReactNode; punkte: ReactNode[]; spalten?: 1 | 2 }[];
+  gruppen?: { titel: ReactNode; punkte: readonly ReactNode[]; spalten?: 1 | 2 }[];
   className?: string;
 };
 
@@ -23,15 +26,15 @@ export function Umfang({ titel, titelId, text, gruppen = [], className }: Umfang
   return (
     <div className={verbinde('flex flex-col gap-k-6', className)}>
       <div className="flex flex-col gap-k-4">
-        <h2 id={titelId} className="k-anzeige text-k-5 text-k-tinte wrap-break-word hyphens-auto">
+        <h2 id={titelId} className={verbinde('k-anzeige text-k-tinte', stufeNachWort(titel, 'abschnitt', 'text-k-5'), UMBRUCH)}>
           {titel}
         </h2>
         {text ? <div className="max-w-(--k-mass) k-text text-k-3 text-k-tinte-2">{text}</div> : null}
       </div>
       {gruppen.map((g, i) => (
         <div key={i} className="flex flex-col gap-k-3">
-          <h3 className="k-anzeige text-k-4 text-k-tinte wrap-break-word hyphens-auto">{g.titel}</h3>
-          <Merkmale punkte={g.punkte} spalten={g.spalten ?? 1} dicht />
+          <h3 className={verbinde('k-anzeige text-k-tinte', stufeNachWort(g.titel, 'abschnitt', 'text-k-4'), UMBRUCH)}>{g.titel}</h3>
+          <Punkte punkte={g.punkte} spalten={g.spalten ?? 1} groesse="dicht" />
         </div>
       ))}
     </div>
@@ -45,13 +48,13 @@ export function Vermerk({ titel, text, verweis, className }: { titel: ReactNode;
         <span aria-hidden="true" className="flex h-lh shrink-0 items-center">
           <Icon name="hinweis" groesse={24} />
         </span>
-        <span className="min-w-0 wrap-break-word hyphens-auto">{titel}</span>
+        <span className={UMBRUCH}>{titel}</span>
       </h2>
       {text ? <div className="max-w-(--k-mass) k-text text-k-2 text-k-tinte-2">{text}</div> : null}
       {verweis ? (
         <div>
           <Pfeillink href={verweis.href} ariaLabel={verweis.ariaLabel}>
-            {verweis.label}
+            {verweis.titel}
           </Pfeillink>
         </div>
       ) : null}

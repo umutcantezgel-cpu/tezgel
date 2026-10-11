@@ -9,7 +9,7 @@
 // 320 px: über das Ansichtsraster des Orchestrators (Fotos 320/390/768/1440); alle Teile sind mobil zuerst gebaut.
 // Keine Tailwind-Klassen in dieser Datei (`_entwurf` wird nicht gescannt).
 import { COMPANY_DATA } from '@/config/company';
-import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
+import { REVIEWS } from '@/config/reviews';
 import { Textlink } from '@/components/kern/basis';
 import { ANRISS } from '@/components/kern/start/vertrauen/stimmen-daten';
 import {
@@ -21,9 +21,10 @@ import {
   Fragen,
   Mass,
   Merkfeld,
+  PlanDerSeite,
   Punkte,
   Querverweise,
-  Schriftfeld,
+  SchriftfeldBetrieb,
   Stimme,
   Tabelle,
   Trenner,
@@ -161,7 +162,7 @@ const WASSER_TRITT_AUS = [
 ];
 
 export default function Zustaende() {
-  const { authority, business, contact, hours, owner, headquarters } = COMPANY_DATA;
+  const { contact, hours } = COMPANY_DATA;
   const treppe = REVIEWS.find((r) => r.id === 'sara-j');
 
   return (
@@ -185,6 +186,7 @@ export default function Zustaende() {
           { text: 'Pflegekassen-Beratung vereinbaren', href: '/kontakt', zeichen: 'pfeil' },
           { text: contact.phone, href: `tel:${contact.phoneLink}`, zeichen: 'telefon', mono: true },
         ]}
+        motiv={<PlanDerSeite pfad="/bad/barrierefreies-bad" />}
       />
       <Merkfeld
         ebene="h2"
@@ -203,7 +205,7 @@ export default function Zustaende() {
         eintraege={SOLUTIONS.map((s) => ({ titel: s.title, inhalt: s.desc }))}
       />
 
-      <VorschauTrenner hinweis="Einstieg ohne Motiv mit Schriftfeld (Feldköpfe offen, siehe Rückgabe) und Nachsatz; Tabelle mit vier Spalten ohne Beschriftung; Stimme als eigener Abschnitt; Querverweise mit Beschreibung und Knöpfen">
+      <VorschauTrenner hinweis="Einstieg ohne Motiv mit Schriftfeld (E-027: Kennzeile, Kammer, Bewertung) und Nachsatz; Tabelle mit vier Spalten ohne Beschriftung (mobil Etiketten über data-spalte); Stimme als eigener Abschnitt; Querverweise mit Beschreibung und Knöpfen">
         Zustand · Innentreppe
       </VorschauTrenner>
       <Einstieg
@@ -228,17 +230,7 @@ export default function Zustaende() {
             geeignet. <Textlink href="/treppen">Was sich belegen lässt</Textlink>
           </p>
         }
-        schriftfeld={
-          <Schriftfeld
-            titel="Schriftfeld (Vorschau – Feldköpfe offen)"
-            eintraege={[
-              { kopf: 'Inhaber', wert: owner.fullName },
-              { kopf: authority.shortName, wert: `seit ${business.establishmentYear}`, mono: true },
-              { kopf: 'Sitz', wert: `${headquarters.postalCode} ${headquarters.city}`, mono: true },
-              { kopf: 'Google', wert: `${RATING_SUMMARY.google.displayRating} bei ${RATING_SUMMARY.google.count} Bewertungen`, mono: true },
-            ]}
-          />
-        }
+        schriftfeld={<SchriftfeldBetrieb />}
       />
       <Tabelle
         titelId="kanten-heading"
@@ -331,7 +323,7 @@ export default function Zustaende() {
         ]}
       />
 
-      <VorschauTrenner hinweis="Felder mit H2 ohne Abschnittsüberschrift (aria-label), Listen im Feld, eigene Breiten; Abschluss mit Punkten, Hinweiszeile und WhatsApp als Hauptweg">
+      <VorschauTrenner hinweis="Felder mit H2 ohne Abschnittsüberschrift (aria-label), Listen im Feld, großes Feld über zwei Spalten (spanne); Abschluss mit Punkten, Hinweiszeile und WhatsApp als Hauptweg">
         Zustand · Fliesenreparatur
       </VorschauTrenner>
       <Felder
@@ -358,11 +350,12 @@ export default function Zustaende() {
       <Felder
         ariaLabel="Grenzen der Reparatur"
         ebene="h2"
+        spalten={4}
         dichte="normal"
         eintraege={[
           {
             titel: 'Wann eine Reparatur nicht mehr sinnvoll ist',
-            breite: { mobil: 4, tablett: 8, desktop: 6 },
+            spanne: 2,
             inhalt: (
               <>
                 <Punkte punkte={NOT_WORTH_IT} zeichen="hinweis" groesse="klein" />
@@ -375,7 +368,6 @@ export default function Zustaende() {
           },
           {
             titel: 'Fugen und Silikon erneuern',
-            breite: { mobil: 4, tablett: 4, desktop: 3 },
             inhalt: (
               <>
                 <p>Sitzen die Fliesen fest und nur die Fugen sind verschlissen, genügt oft eine Fugensanierung.</p>
@@ -387,7 +379,6 @@ export default function Zustaende() {
           },
           {
             titel: 'Ursache unklar?',
-            breite: { mobil: 4, tablett: 4, desktop: 3 },
             inhalt: (
               <>
                 <p>Wenn Risse wiederkehren oder Feuchtigkeit im Spiel ist, klären wir zuerst die Ursache.</p>

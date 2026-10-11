@@ -1,17 +1,22 @@
 // Ablauf der Fachseite (P4-01, KERN v1.2 K-003 „Fuge statt Karte“, K-007, K-009): gleiche Logik wie der Ablauf von `/`
-// (`src/components/kern/start/Ablauf.tsx`, P3-11), aber mit Schritten als Prop und beliebiger Schrittzahl.
-// Abfolge an einer Linie statt Kachelraster: Desktop je Reihe eine Waage (1-px-Linie Strich) über den Schritten –
-// 2, 3 oder 4 Schritte stehen in einer Reihe, 5–6 in Reihen zu drei, 7–8 in Reihen zu vier; mobil und Tablett ein Lot
-// am linken Rand. Je Schritt ein statischer Prüfhaken als Kreuzpunkt auf der Linie (K-009: kein Signaturmoment außerhalb
-// von `/bad`; Ablaufabschnitte nutzen `auftritt` und statische Prüfhaken). Die Linie ist nicht die Seitenachse: Strich, kein Rot.
+// (`src/components/kern/start/Ablauf.tsx`, P3-11; bleibt unverändert, E-027), aber mit Schritten als Prop und beliebiger
+// Schrittzahl. Abfolge an einer Linie statt Kachelraster: Je Reihe eine Waage (1-px-Linie Strich) über den Schritten, bei
+// wenig Platz ein Lot am linken Rand. Je Schritt ein statischer Prüfhaken als Kreuzpunkt auf der Linie (K-009: kein
+// Signaturmoment außerhalb von `/bad`; Ablaufabschnitte nutzen `auftritt` und statische Prüfhaken). Die Linie ist nicht die
+// Seitenachse: Strich, kein Rot.
+// Reihen nach dem Platz des Behälters (Container-Abfrage, P4-10a; vorher je Fensterbreite, bei 1024 px vier Schritte je
+// 208 px, „Untergrundprüfung“ brach): höchstens 2, 3 oder 4 Schritte je Reihe (2–4 Schritte: alle, 5–6: drei, ab 7: vier).
+//   zwei je Reihe ab Behälter 42rem · drei je Reihe ab 56rem · vier je Reihe: ab 42rem zwei, ab 72rem vier; darunter Lot.
+// Schritttitel: eine Stufe für alle nach dem längsten Wort (Ort `ablauf`, höchstens k-5).
 // Schrittnummer in Mono, `aria-hidden` wie im Bestand (die Liste nummeriert); `titelVorsatz` hält den nur vorgelesenen
 // Vorsatz des Bestands („Schritt 01: “, `sr-only`). Ein Auftritt für die ganze Schrittfolge (IO 20 %), abschaltbar.
 // `children` steht unter der Schrittfolge (Bestand Badsanierung: Kundenstimme im selben Abschnitt).
 import type { ReactNode } from 'react';
 import { verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
-import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/fachseite/Abschnitt';
-import { UMBRUCH, istText, type Ebene, type Flaeche } from '@/components/kern/vorlagen/fachseite/typen';
+import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/teile/Abschnitt';
+import { stufeFuerAlle } from '@/components/kern/vorlagen/teile/satz';
+import { UMBRUCH, istText, type Ebene, type Flaeche } from '@/components/kern/vorlagen/teile/typen';
 
 export type Schritt = {
   /** Schrittnummer wörtlich („01“, „1“) */
@@ -29,13 +34,28 @@ export type AblaufProps = AbschnittProps & {
   ebene?: Exclude<Ebene, 'h2'>;
 };
 
-// Wörtliche Klassen, damit Tailwind sie findet: Spalten je Schritt ab lg.
-const SPANNE: Record<number, string> = { 1: 'lg:col-span-12', 2: 'lg:col-span-6', 3: 'lg:col-span-4', 4: 'lg:col-span-3' };
+// Wörtliche Klassen, damit Tailwind sie findet. Je Reihenform: Liste (Lot → Raster), Schritt (Lot → Waage), Prüfhaken.
+type Form = 2 | 3 | 4;
+const LISTE: Record<Form, string> = {
+  2: '@2xl:ml-0 @2xl:grid @2xl:grid-cols-2 @2xl:gap-y-k-9 @2xl:border-l-0',
+  3: '@4xl:ml-0 @4xl:grid @4xl:grid-cols-3 @4xl:gap-y-k-9 @4xl:border-l-0',
+  4: '@2xl:ml-0 @2xl:grid @2xl:grid-cols-2 @2xl:gap-y-k-9 @2xl:border-l-0 @6xl:grid-cols-4',
+};
+const SCHRITT: Record<Form, string> = {
+  2: '@2xl:border-t @2xl:border-k-strich @2xl:pt-k-8 @2xl:pb-0 @2xl:pl-0 @2xl:pr-k-7',
+  3: '@4xl:border-t @4xl:border-k-strich @4xl:pt-k-8 @4xl:pb-0 @4xl:pl-0 @4xl:pr-k-7',
+  4: '@2xl:border-t @2xl:border-k-strich @2xl:pt-k-8 @2xl:pb-0 @2xl:pl-0 @2xl:pr-k-5',
+};
+const HAKEN: Record<Form, string> = {
+  2: '@2xl:-top-k-4 @2xl:left-0',
+  3: '@4xl:-top-k-4 @4xl:left-0',
+  4: '@2xl:-top-k-4 @2xl:left-0',
+};
 
-function spanne(anzahl: number): string {
-  if (anzahl <= 4) return SPANNE[anzahl] ?? SPANNE[4];
-  if (anzahl <= 6) return SPANNE[3];
-  return SPANNE[4];
+function form(anzahl: number): Form {
+  if (anzahl <= 2) return 2;
+  if (anzahl === 3 || anzahl === 5 || anzahl === 6) return 3;
+  return 4;
 }
 
 export function Schrittfolge({
@@ -51,42 +71,46 @@ export function Schrittfolge({
   flaeche?: Flaeche;
 }) {
   if (schritte.length === 0) return null;
-  const breite = spanne(schritte.length);
-  const eng = schritte.length >= 4 && schritte.length !== 5 && schritte.length !== 6;
+  const f = form(schritte.length);
+  const eng = f === 4;
+  const titelStufe = stufeFuerAlle(schritte.map((s) => s.titel), 'ablauf', 'text-k-5');
   return (
-    <ol
-      data-motion={auftritt ? 'auftritt' : undefined}
-      data-ausloeser={auftritt ? 'sicht' : undefined}
-      className="relative ml-k-4 border-l border-k-strich lg:ml-0 lg:grid lg:grid-cols-12 lg:gap-y-k-9 lg:border-l-0"
-    >
-      {schritte.map((s) => (
-        <li key={s.nummer} className={verbinde('relative min-w-0 pb-k-7 pl-k-7 last:pb-0 lg:border-t lg:border-k-strich lg:pt-k-8 lg:pb-0 lg:pl-0', eng ? 'lg:pr-k-5' : 'lg:pr-k-7', breite)}>
-          {/* Prüfhaken als Kreuzpunkt auf der Linie – dekorativ, die Nummerierung trägt die Liste */}
-          <span
-            aria-hidden="true"
-            className={verbinde(
-              'absolute -left-k-4 top-0 flex size-k-6 items-center justify-center border border-k-strich text-k-tinte lg:-top-k-4 lg:left-0',
-              flaeche === 'fliese' ? 'bg-k-fliese' : 'bg-k-kalk',
-            )}
-          >
-            <Icon name="haken" groesse={20} />
-          </span>
-          <span aria-hidden="true" className="block k-mono text-k-4 text-k-tinte">
-            {s.nummer}
-          </span>
-          {s.unterzeile ? <span className="mt-k-4 block k-text text-k-2 font-semibold text-k-tinte-2">{s.unterzeile}</span> : null}
-          <Titel className={verbinde('k-anzeige text-k-5 text-k-tinte', s.unterzeile ? 'mt-k-2' : 'mt-k-4', UMBRUCH)}>
-            {s.titelVorsatz ? <span className="sr-only">{s.titelVorsatz}</span> : null}
-            {s.titel}
-          </Titel>
-          {s.text ? (
-            <div className={verbinde('mt-k-4 max-w-(--k-mass) k-text text-k-tinte-2', eng ? 'text-k-2' : 'text-k-3', UMBRUCH)}>
-              {istText(s.text) ? <p>{s.text}</p> : s.text}
-            </div>
-          ) : null}
-        </li>
-      ))}
-    </ol>
+    <div className="@container">
+      <ol
+        data-motion={auftritt ? 'auftritt' : undefined}
+        data-ausloeser={auftritt ? 'sicht' : undefined}
+        className={verbinde('relative ml-k-4 border-l border-k-strich', LISTE[f])}
+      >
+        {schritte.map((s) => (
+          <li key={s.nummer} className={verbinde('relative min-w-0 pb-k-7 pl-k-7 last:pb-0', SCHRITT[f])}>
+            {/* Prüfhaken als Kreuzpunkt auf der Linie – dekorativ, die Nummerierung trägt die Liste */}
+            <span
+              aria-hidden="true"
+              className={verbinde(
+                'absolute -left-k-4 top-0 flex size-k-6 items-center justify-center border border-k-strich text-k-tinte',
+                HAKEN[f],
+                flaeche === 'fliese' ? 'bg-k-fliese' : 'bg-k-kalk',
+              )}
+            >
+              <Icon name="haken" groesse={20} />
+            </span>
+            <span aria-hidden="true" className="block k-mono text-k-4 text-k-tinte">
+              {s.nummer}
+            </span>
+            {s.unterzeile ? <span className="mt-k-4 block k-text text-k-2 font-semibold text-k-tinte-2">{s.unterzeile}</span> : null}
+            <Titel className={verbinde('k-anzeige text-k-tinte', titelStufe, s.unterzeile ? 'mt-k-2' : 'mt-k-4', UMBRUCH)}>
+              {s.titelVorsatz ? <span className="sr-only">{s.titelVorsatz}</span> : null}
+              {s.titel}
+            </Titel>
+            {s.text ? (
+              <div className={verbinde('mt-k-4 max-w-(--k-mass) k-text text-k-tinte-2', eng ? 'text-k-2' : 'text-k-3', UMBRUCH)}>
+                {istText(s.text) ? <p>{s.text}</p> : s.text}
+              </div>
+            ) : null}
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 

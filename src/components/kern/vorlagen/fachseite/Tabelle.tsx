@@ -1,15 +1,17 @@
 // Tabelle (P4-01, KERN v1.2 K-003 „Fuge statt Karte“, K-005, K-007, Lehre 6): echte <table> mit Beschriftung,
 // Spaltenköpfen (`scope="col"`) und Zeilenköpfen (`scope="row"`), Zeilen durch 1-px-Fugen getrennt, Kopfzeile in Mono.
 // Mobil lesbar ohne Querscrollen (Reflow 320): unter md wird jede Zeile zu einem Block – Zeilenkopf oben, darunter je Zelle
-// ihr Spaltenname (Etikett, `aria-hidden`, nur Sicht) und der Inhalt. Weil `display: block` in manchen Browsern die
-// Tabellensemantik löscht, tragen alle Teile ihre Rolle ausdrücklich (table, rowgroup, row, columnheader, rowheader, cell);
-// die Kopfzeile bleibt mobil für Screenreader erhalten (`sr-only`), sichtbar sind die Etiketten je Zelle.
+// ihr Spaltenname als Etikett und der Inhalt. Das Etikett kommt aus der zentralen Regel `.k-zelle[data-spalte]::before` in
+// `kern.css` (E-027, Antwort auf P4-01 F2): Jede Datenzelle trägt `className="k-zelle"` und `data-spalte="<Spaltenkopf>"`;
+// der Pseudotext liegt nicht doppelt im DOM und fehlt im Barrierebaum (`content: attr(…) / ""`). Ab md (48rem) entfällt er.
+// Weil `display: block` in manchen Browsern die Tabellensemantik löscht, tragen alle Teile ihre Rolle ausdrücklich (table,
+// rowgroup, row, columnheader, rowheader, cell); die Kopfzeile bleibt mobil für Screenreader erhalten (`sr-only`).
 // Kein Bedienelement, kein Querscrollen, keine Zebrastreifen, keine Farben als Bedeutung. Wortlaut vollständig von der Seite.
 import type { ReactNode } from 'react';
 import { verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
-import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/fachseite/Abschnitt';
-import { UMBRUCH, feldFlaeche, istText } from '@/components/kern/vorlagen/fachseite/typen';
+import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/teile/Abschnitt';
+import { UMBRUCH, feldFlaeche, istText } from '@/components/kern/vorlagen/teile/typen';
 
 export type Tabellenzeile = {
   /** Zeilenkopf (erste Spalte, `th scope="row"`) */
@@ -21,7 +23,7 @@ export type Tabellenzeile = {
 };
 
 export type TabelleProps = AbschnittProps & {
-  /** Spaltenköpfe, erste = Spalte der Zeilenköpfe (Wortlaut gleich; mobil als Etikett je Zelle wiederholt) */
+  /** Spaltenköpfe, erste = Spalte der Zeilenköpfe (Wortlaut gleich; mobil als Etikett je Zelle über `data-spalte`) */
   spalten: readonly string[];
   zeilen: readonly Tabellenzeile[];
   /** <caption>; im Bestand meist `sr-only` */
@@ -79,12 +81,12 @@ export function Tabellenblock({
                   {z.zusatz ? <span className={verbinde('mt-k-1 block k-mono text-k-1 text-k-tinte-2', UMBRUCH)}>{z.zusatz}</span> : null}
                 </th>
                 {z.zellen.map((zelle, i) => (
-                  <td key={i} role="cell" className="px-k-4 py-k-4 align-top k-text text-k-2 text-k-tinte max-md:block max-md:px-0 max-md:pt-k-4 max-md:pb-0 lg:px-k-5">
-                    {datenSpalten[i] ? (
-                      <span aria-hidden="true" className="mb-k-1 block k-mono text-k-1 text-k-tinte-2 md:hidden">
-                        {datenSpalten[i]}
-                      </span>
-                    ) : null}
+                  <td
+                    key={i}
+                    role="cell"
+                    data-spalte={datenSpalten[i]}
+                    className="k-zelle px-k-4 py-k-4 align-top k-text text-k-2 text-k-tinte max-md:block max-md:px-0 max-md:pt-k-4 max-md:pb-0 lg:px-k-5"
+                  >
                     <span className={verbinde('block', UMBRUCH)}>{zelle}</span>
                   </td>
                 ))}

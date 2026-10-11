@@ -3,10 +3,13 @@
 // Ersetzt `glass-bezel`/`ceramic-hero`-Seitenleisten (Schatten, Doppelrahmen, Icon-Chip) durch ein Feld auf Fliese mit
 // Blattkante in Tinte. `klebend` hält es ab lg unter dem Kopf (top = Kopfhöhe); mobil steht es in Lesefolge
 // nach dem Hauptinhalt bzw. dort, wo der Aufrufer es einsetzt. Kein Signaturmoment, kein Rot.
+// P4-10a: Wege aus `teile/Knopfreihe`, Zusagen aus `teile/Punkte › Zusagen`, Titelstufe nach dem längsten Wort (Ort `rand`).
 import type { ReactNode } from 'react';
 import { verbinde } from '@/components/kern/basis';
-import Icon from '@/components/kern/icons/Icon';
-import { Aktionen, type Aktion } from '@/components/kern/vorlagen/uebersicht/Abschnitt';
+import Knopfreihe from '@/components/kern/vorlagen/teile/Knopfreihe';
+import { Zusagen } from '@/components/kern/vorlagen/teile/Punkte';
+import { stufeNachWort } from '@/components/kern/vorlagen/teile/satz';
+import { UMBRUCH, type KnopfAngabe } from '@/components/kern/vorlagen/teile/typen';
 
 export type RandfeldProps = {
   /** Motiv über dem Titel (dekorativ, z. B. Musterfeld) */
@@ -20,9 +23,9 @@ export type RandfeldProps = {
   children?: ReactNode;
   /** Satz direkt über den Wegen (Bestand: „Planen Sie ein ähnliches Projekt?“) */
   vorWegen?: ReactNode;
-  aktionen?: Aktion[];
+  aktionen?: readonly KnopfAngabe[];
   /** Zusagen unter den Wegen mit eigenem Kopf (Bestand: „Ihre Sicherheiten bei …:“) */
-  zusagen?: { titel: ReactNode; punkte: ReactNode[] };
+  zusagen?: { titel: ReactNode; punkte: readonly ReactNode[] };
   klebend?: boolean;
   className?: string;
 };
@@ -31,26 +34,17 @@ export default function Randfeld({ motiv, titel, titelId, titelEbene: Titel = 'h
   return (
     <div className={verbinde('flex flex-col gap-k-4 border border-k-fuge border-t-k-tinte bg-k-fliese p-k-5 lg:p-k-6', klebend && 'lg:sticky lg:top-(--k-kopf-hoehe)', className)}>
       {motiv}
-      <Titel id={titelId} className="k-anzeige text-k-4 text-k-tinte wrap-break-word hyphens-auto">
+      <Titel id={titelId} className={verbinde('k-anzeige text-k-tinte', stufeNachWort(titel, 'rand', 'text-k-4'), UMBRUCH)}>
         {titel}
       </Titel>
       {text ? <div className="k-text text-k-2 text-k-tinte-2">{text}</div> : null}
       {children}
       {vorWegen ? <p className="k-text text-k-2 font-semibold text-k-tinte">{vorWegen}</p> : null}
-      <Aktionen aktionen={aktionen} gestapelt />
+      <Knopfreihe knoepfe={aktionen} anordnung="spalte" />
       {zusagen ? (
         <div className="flex flex-col gap-k-2 border-t border-k-fuge pt-k-4">
           <p className="k-text text-k-2 font-semibold text-k-tinte">{zusagen.titel}</p>
-          <ul className="flex flex-col gap-k-1">
-            {zusagen.punkte.map((p, i) => (
-              <li key={i} className="flex min-w-0 items-start gap-k-2 k-mono text-k-1 text-k-tinte">
-                <span aria-hidden="true" className="flex h-lh shrink-0 items-center">
-                  <Icon name="haken" groesse={16} />
-                </span>
-                <span className="min-w-0 wrap-break-word hyphens-auto">{p}</span>
-              </li>
-            ))}
-          </ul>
+          <Zusagen punkte={zusagen.punkte} form="mono" />
         </div>
       ) : null}
     </div>

@@ -11,10 +11,10 @@ import type { ReactNode } from 'react';
 import { Textlink, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
 import Sterne from '@/components/kern/start/vertrauen/Sterne';
-import Abschnitt, { type AbschnittRahmenProps } from '@/components/kern/vorlagen/fachseite/Abschnitt';
-import Knopfreihe from '@/components/kern/vorlagen/fachseite/Knopfreihe';
-import { Trenner } from '@/components/kern/vorlagen/fachseite/Mass';
-import type { KnopfAngabe } from '@/components/kern/vorlagen/fachseite/typen';
+import Abschnitt, { type AbschnittRahmenProps } from '@/components/kern/vorlagen/teile/Abschnitt';
+import Knopfreihe from '@/components/kern/vorlagen/teile/Knopfreihe';
+import { Trenner } from '@/components/kern/vorlagen/teile/Mass';
+import type { KnopfAngabe } from '@/components/kern/vorlagen/teile/typen';
 
 export type StimmeProps = {
   /** Zitat wörtlich (ohne Anführungszeichen) */

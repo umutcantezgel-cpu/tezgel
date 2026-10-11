@@ -5,14 +5,14 @@
 import { COMPANY_DATA } from '@/config/company';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { PORTFOLIO_PROJECTS, categories as projektKategorien, isPlaceholderProject } from '@/config/projects';
-import { Abschnitt } from '@/components/kern/vorlagen/uebersicht/Abschnitt';
+import { Abschnitt } from '@/components/kern/vorlagen/teile';
 import Kopf from '@/components/kern/vorlagen/liste/Kopf';
 import Raster from '@/components/kern/vorlagen/detail/Raster';
 import Randfeld from '@/components/kern/vorlagen/detail/Randfeld';
 import Steckbrief from '@/components/kern/vorlagen/detail/Steckbrief';
 import Bestandteile from '@/components/kern/vorlagen/detail/Bestandteile';
 import { Musterfeld, Umfang, Vermerk } from '@/components/kern/vorlagen/detail/Umfang';
-import { Platzflaeche, Tafelkopf } from '@/components/kern/vorlagen/detail/Vorschautafel';
+import { Platzflaeche, Tafelkopf } from '@/components/kern/vorlagen/teile/Vorschau';
 
 function Referenz({ id }: { id: string }) {
   const project = PORTFOLIO_PROJECTS.find((p) => p.id === id)!;
@@ -23,13 +23,13 @@ function Referenz({ id }: { id: string }) {
       <Kopf
         seitenart="erzaehl"
         titelId={`referenz-${id}`}
-        ruecklink={{ href: '/referenzen', label: 'Zurück zur Referenzen-Übersicht' }}
+        ruecklink={{ href: '/referenzen', titel: 'Zurück zur Referenzen-Übersicht' }}
         etiketten={[...(placeholder ? ['Projektdokumentation in Vorbereitung'] : []), categoryName]}
         titel={project.title}
-        text={project.description}
-        aktionen={[
-          ...(project.serviceLink ? [{ label: `Leistungsdetails: ${project.title}`, href: project.serviceLink, art: 'haupt' as const, pfeil: true }] : []),
-          { label: 'Vor-Ort-Aufmaß anfragen', href: '/kontakt' },
+        vorspann={project.description}
+        knoepfe={[
+          ...(project.serviceLink ? [{ text: `Leistungsdetails: ${project.title}`, href: project.serviceLink, art: 'haupt' as const, zeichen: 'pfeil' as const }] : []),
+          { text: 'Vor-Ort-Aufmaß anfragen', href: '/kontakt', art: 'neben' },
         ]}
       />
       <Abschnitt>
@@ -52,7 +52,7 @@ function Referenz({ id }: { id: string }) {
                 <Vermerk
                   titel="Fotos und Details folgen"
                   text={`Detaillierte Baustellenfotos und Kundendokumentationen für ${project.title} veröffentlichen wir aus Diskretionsgründen ausschließlich mit ausdrücklicher Freigabe der Bauherren. Authentische Erfahrungsberichte finden Sie in unseren Google-Bewertungen.`}
-                  verweis={{ label: 'Echte Kundenbewertungen lesen', href: '/referenzen#bewertungen' }}
+                  verweis={{ titel: 'Echte Kundenbewertungen lesen', href: '/referenzen#bewertungen' }}
                 />
               ) : null}
             </div>
@@ -64,8 +64,8 @@ function Referenz({ id }: { id: string }) {
               titel={placeholder ? 'Auf einen Blick' : 'Projektdaten im Detail'}
               vorWegen="Planen Sie ein ähnliches Projekt?"
               aktionen={[
-                { label: 'Jetzt Beratung anfragen', href: '/kontakt', art: 'haupt', pfeil: true },
-                ...(project.serviceLink ? [{ label: `Fachbereich zu ${project.title} ansehen`, href: project.serviceLink }] : []),
+                { text: 'Jetzt Beratung anfragen', href: '/kontakt', art: 'haupt', zeichen: 'pfeil' },
+                ...(project.serviceLink ? [{ text: `Fachbereich zu ${project.title} ansehen`, href: project.serviceLink }] : []),
               ]}
             >
               <Steckbrief
@@ -93,20 +93,19 @@ function Musterbad({ slug }: { slug: string }) {
       <Kopf
         seitenart="erzaehl"
         titelId="musterbad-heading"
-        ruecklink={{ href: '/bad/musterbaeder', label: 'Zurück zur Musterbad-Übersicht' }}
+        ruecklink={{ href: '/bad/musterbaeder', titel: 'Zurück zur Musterbad-Übersicht' }}
         etiketten={[bath.size, bath.tier]}
         titel={`Musterbad ${bath.title} – Komplettbad & Badsanierung`}
-        text={`${bath.headline}: Unser Musterbad ${bath.title} bietet Ihnen ein schlüsselfertiges Komplettbad und eine professionelle Badsanierung von Fachbetrieb Tezgel in Aßlar und Wetzlar. Entdecken Sie alle Ausstattungsdetails, Sanitärobjekte und Markenkomponenten für Ihre Badplanung.`}
+        vorspann={`${bath.headline}: Unser Musterbad ${bath.title} bietet Ihnen ein schlüsselfertiges Komplettbad und eine professionelle Badsanierung von Fachbetrieb Tezgel in Aßlar und Wetzlar. Entdecken Sie alle Ausstattungsdetails, Sanitärobjekte und Markenkomponenten für Ihre Badplanung.`}
         hinweis="Verbindlicher Festpreis nach kostenfreiem Vor-Ort-Aufmaß – abgestimmt auf Ihren Grundriss."
       />
       <Abschnitt
         titelId="komponenten-heading"
-        kopf={{
-          etikett: 'Ausstattung',
-          titel: 'Detaillierte Ausstattungs- und Komponentenliste',
-          groesse: 'mittel',
-          text: `Transparente Komponentenübersicht für das ${bath.title} (${groesse} m²): Alle Sanitärelemente, Armaturen und Fliesenoberflächen stimmen wir passgenau auf Ihren Grundriss ab.`,
-        }}
+        kopfLage="geteilt"
+        kopfGroesse="mittel"
+        etikett="Ausstattung"
+        titel="Detaillierte Ausstattungs- und Komponentenliste"
+        einleitung={`Transparente Komponentenübersicht für das ${bath.title} (${groesse} m²): Alle Sanitärelemente, Armaturen und Fliesenoberflächen stimmen wir passgenau auf Ihren Grundriss ab.`}
       >
         <Raster
           haupt={<Bestandteile gruppen={bath.components.map((c) => ({ name: c.category, punkte: c.items }))} />}
@@ -117,8 +116,8 @@ function Musterbad({ slug }: { slug: string }) {
               titel="Dieses Musterbad anfragen"
               text={`Möchten Sie das ${bath.title} (${groesse} m²) in Ihrem Zuhause umsetzen? Wir passen Fliesenraster, Sanitärobjekte und Anschlüsse exakt an Ihre Raumsituation an.`}
               aktionen={[
-                { label: 'Konzept unverbindlich anfragen', href: '#anfrage', art: 'haupt', pfeil: true },
-                { label: `Direkt anrufen: ${contact.phone}`, href: `tel:${contact.phoneLink}`, zeichen: 'telefon' },
+                { text: 'Konzept unverbindlich anfragen', href: '#anfrage', art: 'haupt', zeichen: 'pfeil' },
+                { text: `Direkt anrufen: ${contact.phone}`, href: `tel:${contact.phoneLink}`, zeichen: 'telefon' },
               ]}
               zusagen={{ titel: `Ihre Sicherheiten bei ${legalName}:`, punkte: ['Festpreisgarantie', 'Verbindlicher Bauzeitplan', 'Staubarme Sanierung'] }}
             />

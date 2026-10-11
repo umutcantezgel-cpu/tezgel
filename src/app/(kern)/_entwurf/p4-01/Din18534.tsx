@@ -5,9 +5,9 @@
 // Strukturwechsel (K-011): Einstieg · Kennliste seitlich · Tabelle auf Fliese · Felder-Raster · Felder-Zeilen auf Fliese
 // mit Notiz · Prüfpunkte · Fragen seitlich · Abschluss · Querverweise · Qualitätsversprechen.
 // Auftritte: Stoffe und Prüfpunkte (2 von 10 Abschnitten, K-009).
+// P4-10a: Einstieg mit dem ruhenden Plan der Seite (`PLAN_JE_PFAD`: abdichtung) statt der Vignette und mit dem Schriftfeld (E-027).
 import { COMPANY_DATA } from '@/config/company';
 import { Textlink } from '@/components/kern/basis';
-import VignetteUntergrund from '@/components/kern/motive/vignetten/Untergrund';
 import {
   Abschluss,
   Einstieg,
@@ -15,9 +15,11 @@ import {
   Felder,
   Fragen,
   Notiz,
+  PlanDerSeite,
   Punkteliste,
   Qualitaetsversprechen,
   Querverweise,
+  SchriftfeldBetrieb,
   Tabelle,
   Trenner,
 } from '@/components/kern/vorlagen/fachseite';
@@ -151,7 +153,8 @@ export default function Din18534({ qualitaetId }: { qualitaetId?: string }) {
           { text: 'Abdichtung besprechen', href: '/kontakt', zeichen: 'pfeil' },
           { text: 'Details zur Badsanierung', href: '/bad/badsanierung', art: 'neben' },
         ]}
-        motiv={<VignetteUntergrund />}
+        motiv={<PlanDerSeite pfad="/untergrund-abdichtung/din-18534" />}
+        schriftfeld={<SchriftfeldBetrieb />}
       />
 
       <Faktenfeld

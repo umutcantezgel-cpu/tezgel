@@ -11,7 +11,9 @@
 // --k-plan-x/-y im style, Ausnahme K-004), Achse außermittig, Passstücke ungleich. Bei Hover (nur feiner Zeiger), Fokus
 // im Auslöser oder :active (Touch) rückt er in die Flucht: Achse auf der Mitte, Passstücke gleich, „=“ erscheint.
 // Auslöser ist das umgebende Feld mit der Klasse SIG_PLAN_AUSLOESER (z. B. die Leistungskarte mit ihren Links).
-// Reduziert: kern.css setzt für [data-motion] die Dauer auf 0 – Sofortzustand. Nur transform (translate) und opacity.
+// Übergang zentral im Register: `[data-motion="sig-plan"]` in kern.css (translate und opacity, dauer-2 · setzen); hier stehen
+// nur Ruhe- und Zielzustand (P4-10a, vorher eigene Übergangsklassen). Reduziert: kern.css setzt für [data-motion] die Dauer
+// auf 0 – Sofortzustand. Nur transform (translate) und opacity.
 // `ruhend` (Fachseiten, K-009): Endzustand ohne Register, ohne Versatz, ohne Übergang. Ohne JavaScript gleich.
 // Zugänglichkeit: dekorativ (aria-hidden) als Standard; mit `titel` role="img" + title über aria-labelledby.
 import { useId, type CSSProperties, type ReactNode } from 'react';
@@ -41,14 +43,15 @@ type PlanblattProps = PlanProps & {
   gleich: string;
 };
 
-// Wörtliche Klassen, damit Tailwind sie findet (Ordner wird gescannt, `_entwurf` nicht).
+// Wörtliche Klassen, damit Tailwind sie findet (Ordner wird gescannt, `_entwurf` nicht). Kein Übergang hier: den setzt das
+// Register (`data-motion="sig-plan"`).
 const BEWEGT =
-  'transition-transform duration-(--k-dauer-2) ease-k-setzen translate-x-(--k-plan-x) translate-y-(--k-plan-y) ' +
+  'translate-x-(--k-plan-x) translate-y-(--k-plan-y) ' +
   'pointer-fine:group-hover/plan:translate-x-0 pointer-fine:group-hover/plan:translate-y-0 ' +
   'group-focus-within/plan:translate-x-0 group-focus-within/plan:translate-y-0 ' +
   'group-active/plan:translate-x-0 group-active/plan:translate-y-0';
 const ERSCHEINT =
-  'opacity-0 transition-opacity duration-(--k-dauer-2) ease-k-setzen ' +
+  'opacity-0 ' +
   'pointer-fine:group-hover/plan:opacity-100 group-focus-within/plan:opacity-100 group-active/plan:opacity-100';
 
 const KLASSE = 'block h-auto w-full';

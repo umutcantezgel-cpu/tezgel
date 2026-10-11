@@ -6,7 +6,9 @@
 import type { ReactNode } from 'react';
 import { Etikett, Knopf, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
-import { Pfeillink } from '@/components/kern/vorlagen/uebersicht/Abschnitt';
+import { Pfeillink } from '@/components/kern/vorlagen/teile/Pfeillink';
+import { stufeNachWort } from '@/components/kern/vorlagen/teile/satz';
+import { UMBRUCH } from '@/components/kern/vorlagen/teile/typen';
 
 /** Vorspann über dem Lesetext (Bestand: „Praxis-Leitfaden von …: {Auszug}“), Fuge in Tinte links. */
 export function Vorspann({ children, className }: { children: ReactNode; className?: string }) {
@@ -72,7 +74,7 @@ export type VerfasserProps = {
   text?: ReactNode;
   /** Initiale (Bestand: Avatar-Ersatz, aria-hidden) */
   initiale?: string;
-  verweis?: { label: ReactNode; href: string };
+  verweis?: { titel: ReactNode; href: string };
   className?: string;
 };
 
@@ -86,12 +88,12 @@ export function Verfasser({ kopf, name, rolle, text, initiale, verweis, classNam
       ) : null}
       <div className="flex min-w-0 flex-col gap-k-2">
         <p className="k-mono text-k-1 text-k-tinte-2">{kopf}</p>
-        <h3 className="k-anzeige text-k-5 text-k-tinte wrap-break-word hyphens-auto">{name}</h3>
+        <h3 className={verbinde('k-anzeige text-k-tinte', stufeNachWort(name, 'feld', 'text-k-5'), UMBRUCH)}>{name}</h3>
         {rolle ? <p className="k-mono text-k-1 text-k-tinte">{rolle}</p> : null}
         {text ? <p className="max-w-(--k-mass) k-text text-k-3 text-k-tinte-2">{text}</p> : null}
         {verweis ? (
           <div>
-            <Pfeillink href={verweis.href}>{verweis.label}</Pfeillink>
+            <Pfeillink href={verweis.href}>{verweis.titel}</Pfeillink>
           </div>
         ) : null}
       </div>

@@ -4,7 +4,7 @@
 // (P4-05a ff.) und stehen als `children` hier. Anker und Name wörtlich aus dem Bestand; Sprungziele landen unter dem Kopf
 // (scroll-padding-top in kern-global.css). `data-hauptaktion`: der WhatsApp-Kanal verdeckt das Formular nie.
 import type { ReactNode } from 'react';
-import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/fachseite/Abschnitt';
+import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/teile/Abschnitt';
 
 export type AnfrageProps = Omit<AbschnittProps, 'hauptaktion'> & { children: ReactNode };
 

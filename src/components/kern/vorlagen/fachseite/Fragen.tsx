@@ -8,9 +8,9 @@
 // Server-Komponente; nur `AkkordeonEintrag` ist eine Client-Insel.
 import type { ReactNode } from 'react';
 import { Akkordeon, AkkordeonEintrag, verbinde } from '@/components/kern/basis';
-import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/fachseite/Abschnitt';
-import Knopfreihe from '@/components/kern/vorlagen/fachseite/Knopfreihe';
-import { UMBRUCH, istText, type KnopfAngabe } from '@/components/kern/vorlagen/fachseite/typen';
+import Abschnitt, { type AbschnittProps } from '@/components/kern/vorlagen/teile/Abschnitt';
+import Knopfreihe from '@/components/kern/vorlagen/teile/Knopfreihe';
+import { UMBRUCH, istText, type KnopfAngabe } from '@/components/kern/vorlagen/teile/typen';
 
 export type Frage = {
   frage: ReactNode;

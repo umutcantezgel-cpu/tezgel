@@ -6,7 +6,8 @@
 // das ein Hook aus dem toggle-Ereignis setzt. Ebenso Hook-Sache (Bestand `ShareButtons.jsx`, OFFENE FRAGE G9):
 // die Ziel-Adressen (aus Artikel-Adresse, Titel, Beschreibung), der native Teilen-Dialog (`navigator.share`, mobil statt des
 // Blatts), das Kopieren in die Zwischenablage mit Rückmeldung „Link kopiert!“ für 2 s.
-// Blatt: mobil unten über der Leiste (volle Breite), ab lg in der Bildmitte (Vorgabe des Browsers); Blattkante Tinte,
+// Blatt: mobil unten über der Leiste (volle Breite), ab lg in der Bildmitte (Vorgabe des Browsers), vier von zwölf Spalten breit
+// (P4-10a: Kern-Raster statt einer Tailwind-Standardbreite); Blattkante Tinte,
 // Ziele als Zeilen mit 48 px Trefferfläche, Marken-Zeichen nur WhatsApp (Markenlogo, unverändert) – die übrigen Ziele
 // tragen den Namen ohne fremde Logos (K-010, eine Icon-Familie). Fokus 2 px Tinte; Rückmeldung „kopiert“ = Haken + Text.
 import type { ReactNode } from 'react';
@@ -67,7 +68,7 @@ export default function Teilen({ id, knopf, titel, ziele, kopieren, schliessen, 
         aria-labelledby={titelId}
         className={verbinde(
           'm-0 inset-x-0 top-auto bottom-(--k-leiste-platz) w-full border-0 border-t-2 border-t-k-tinte bg-k-fliese p-0 text-k-tinte',
-          'lg:inset-0 lg:m-auto lg:h-fit lg:w-sm lg:border lg:border-t-2 lg:border-k-fuge lg:border-t-k-tinte',
+          'lg:inset-0 lg:m-auto lg:h-fit lg:w-4/12 lg:border lg:border-t-2 lg:border-k-fuge lg:border-t-k-tinte',
         )}
       >
         <p id={titelId} className="border-b border-k-fuge px-k-4 py-k-3 k-anzeige text-k-4 text-k-tinte">

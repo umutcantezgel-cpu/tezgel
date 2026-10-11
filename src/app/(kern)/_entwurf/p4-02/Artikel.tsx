@@ -10,7 +10,7 @@ import type { ReactNode } from 'react';
 import { COMPANY_DATA } from '@/config/company';
 import { posts } from '@/config/posts';
 import { SITE_URL } from '@/lib/schema';
-import { Abschnitt } from '@/components/kern/vorlagen/uebersicht/Abschnitt';
+import { Abschnitt } from '@/components/kern/vorlagen/teile';
 import Kopf from '@/components/kern/vorlagen/liste/Kopf';
 import Raster from '@/components/kern/vorlagen/detail/Raster';
 import Inhaltsverzeichnis from '@/components/kern/vorlagen/artikel/Inhaltsverzeichnis';
@@ -18,7 +18,7 @@ import { Lesetext, lesesatz } from '@/components/kern/vorlagen/artikel/Satz';
 import Teilen, { type TeilenZiel } from '@/components/kern/vorlagen/artikel/Teilen';
 import { Rueckmeldung, Schlagworte, Verfasser, Vorspann } from '@/components/kern/vorlagen/artikel/Teile';
 import Verwandte from '@/components/kern/vorlagen/artikel/Verwandte';
-import { Platzflaeche, Tafelkopf } from '@/components/kern/vorlagen/detail/Vorschautafel';
+import { Platzflaeche, Tafelkopf } from '@/components/kern/vorlagen/teile/Vorschau';
 import { bild, kategorieName } from './daten';
 
 const SLUG = 'fliesen-reinigen-pflegen';
@@ -60,16 +60,16 @@ export default function VorschauArtikel() {
       <Tafelkopf>Vorschau P4-02 · Vorlage Artikel · /blog/{SLUG} wortgetreu (Arbeitsseite, Lesemodus)</Tafelkopf>
       <Kopf
         titelId="artikel-titel"
-        ruecklink={{ href: '/blog', label: 'Zurück zur Ratgeber-Übersicht' }}
+        ruecklink={{ href: '/blog', titel: 'Zurück zur Ratgeber-Übersicht' }}
         etiketten={[kategorieName(post.category), ...(post.featured ? ['Empfehlung'] : [])]}
         titel={post.title}
-        text={`${post.title} – Fachwissen, Praxistipps und rechtliche Vorgaben für Bauherren und Modernisierer von Fachbetrieb Tezgel.`}
+        vorspann={`${post.title} – Fachwissen, Praxistipps und rechtliche Vorgaben für Bauherren und Modernisierer von Fachbetrieb Tezgel.`}
         kennungen={[
           { zeichen: 'kalender', text: post.date },
           { zeichen: 'uhr', text: `${post.readTime} Lesezeit` },
         ]}
       />
-      <Abschnitt seitenart="arbeit" abstand="eng">
+      <Abschnitt dichte="eng">
         <Raster
           rand="links"
           randBreite={3}
@@ -105,7 +105,7 @@ export default function VorschauArtikel() {
                 rolle={`${owner.fullName} · ${owner.title}`}
                 text={`${authority.certification} – ${authority.responsibility} mit Sitz in ${headquarters.city}.`}
                 initiale={legalName.charAt(0).toUpperCase()}
-                verweis={{ label: `Mehr über ${owner.fullName}`, href: '/ueber-uns' }}
+                verweis={{ titel: `Mehr über ${owner.fullName}`, href: '/ueber-uns' }}
               />
               <Verwandte
                 className="mt-k-7"

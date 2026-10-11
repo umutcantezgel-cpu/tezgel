@@ -18,22 +18,29 @@
 //    (Kern-Fassung von FinalCTA); Formulare → Kern-Ansichten aus `@/components/kern/formulare` in `Anfrage`.
 // 7. FAQ-JSON-LD und Metadaten bleiben Sache der Seite (`createMetadata`, `JsonLd`).
 // 8. Messbares im Fließtext mit `Mass` in Mono (DIN 18534, W2-I, R10); „·“ zwischen Texteinheiten mit `Trenner`.
-export { default as Abschnitt, Abschnittskopf, Nachsatz, type AbschnittProps, type AbschnittKopfProps, type AbschnittRahmenProps } from '@/components/kern/vorlagen/fachseite/Abschnitt';
-export { default as Einstieg, type EinstiegProps } from '@/components/kern/vorlagen/fachseite/Einstieg';
-export { default as Schriftfeld, type SchriftfeldProps, type SchriftfeldEintrag } from '@/components/kern/vorlagen/fachseite/Schriftfeld';
+// 9. Einstieg (P4-10a): `motiv={<Plan ruhend />}` mit dem Plan der Seite aus `PLAN_JE_PFAD` (`@/components/kern/motive/plaene`),
+//    `schriftfeld={<SchriftfeldBetrieb />}` (E-027; MIKROTEXTE-Zeilen Klasse 3 trägt der Orchestrator mit der Welle ein).
+// 10. Kein Wort bricht mitten im Wort (Z-13): Überschriften wählen ihre Stufe selbst (`stufeNachWort`), Raster ihre Spalten nach
+//    dem Platz (Container-Abfragen). Seiten setzen keine eigene Schriftgröße und kein `&shy;` in Überschriften.
+// Gemeinsame Teile mit Übersicht, Liste, Artikel und Detail liegen seit P4-10a in `../teile`; hier stehen sie unter altem Namen.
+export { default as Abschnitt, Abschnittskopf, Nachsatz, type AbschnittProps, type AbschnittKopfProps, type AbschnittRahmenProps } from '@/components/kern/vorlagen/teile/Abschnitt';
+export { default as Einstieg, type EinstiegProps } from '@/components/kern/vorlagen/teile/Einstieg';
+export { default as Schriftfeld, SchriftfeldBetrieb, type SchriftfeldProps, type SchriftfeldEintrag } from '@/components/kern/vorlagen/teile/Schriftfeld';
 export { default as Faktenfeld, Faktenliste, type FaktenfeldProps, type Fakt } from '@/components/kern/vorlagen/fachseite/Faktenfeld';
 export { default as Tabelle, Tabellenblock, type TabelleProps, type Tabellenzeile } from '@/components/kern/vorlagen/fachseite/Tabelle';
 export { default as Ablauf, Schrittfolge, type AblaufProps, type Schritt } from '@/components/kern/vorlagen/fachseite/Ablauf';
-export { default as Felder, Feldliste, type FelderProps, type Feld } from '@/components/kern/vorlagen/fachseite/Felder';
-export { default as Punkteliste, Punkte, type PunktelisteProps, type PunkteProps } from '@/components/kern/vorlagen/fachseite/Punkte';
+export { default as Felder, Feldliste, type FelderProps, type Feld } from '@/components/kern/vorlagen/teile/Felder';
+export { default as Punkteliste, type PunktelisteProps } from '@/components/kern/vorlagen/fachseite/Punkte';
+export { Punkte, type PunkteProps } from '@/components/kern/vorlagen/teile/Punkte';
 export { default as Notiz, type NotizProps } from '@/components/kern/vorlagen/fachseite/Notiz';
 export { default as Stimme, Stimmenfigur, type StimmeProps } from '@/components/kern/vorlagen/fachseite/Stimme';
 export { default as Merkfeld, type MerkfeldProps } from '@/components/kern/vorlagen/fachseite/Merkfeld';
 export { default as Fragen, type FragenProps, type Frage } from '@/components/kern/vorlagen/fachseite/Fragen';
 export { default as Abschluss, type AbschlussProps } from '@/components/kern/vorlagen/fachseite/Abschluss';
-export { default as Querverweise, type QuerverweiseProps, type Verweis } from '@/components/kern/vorlagen/fachseite/Querverweise';
+export { default as Querverweise, type QuerverweiseProps } from '@/components/kern/vorlagen/teile/Verweise';
 export { default as Qualitaetsversprechen, type QualitaetsversprechenProps } from '@/components/kern/vorlagen/fachseite/Qualitaetsversprechen';
 export { default as Anfrage, type AnfrageProps } from '@/components/kern/vorlagen/fachseite/Anfrage';
-export { default as Knopfreihe, type KnopfreiheProps } from '@/components/kern/vorlagen/fachseite/Knopfreihe';
-export { Mass, Trenner } from '@/components/kern/vorlagen/fachseite/Mass';
-export type { KnopfAngabe, Flaeche, Dichte, Ebene } from '@/components/kern/vorlagen/fachseite/typen';
+export { default as PlanDerSeite } from '@/components/kern/vorlagen/teile/PlanDerSeite';
+export { default as Knopfreihe, type KnopfreiheProps } from '@/components/kern/vorlagen/teile/Knopfreihe';
+export { Mass, Trenner } from '@/components/kern/vorlagen/teile/Mass';
+export type { KnopfAngabe, Flaeche, Dichte, Ebene, Verweis } from '@/components/kern/vorlagen/teile/typen';
