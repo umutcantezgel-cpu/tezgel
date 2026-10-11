@@ -858,6 +858,21 @@ function vergleicheFolge(route, A, B, F, volatil, kontext = '') {
       else befunde.push({ farbe: 'rot', art: 'geaendert', typ: typVon(a), alt: a.wert, neu: b.wert, abschnitt: absA[i], grund: istUeberschrift(a) ? 'Überschrift – keine Mikrotext-Klasse (K-012)' : 'nicht in der Freigabeliste', kontext });
     }
   }
+  // 2b) Verschoben und geändert: Paar nur, wenn die Freigabeliste genau dieses alt → neu nennt (keine Ähnlichkeit,
+  //     kein Raten) – z. B. eine Legende, die mit neuem Wortlaut an anderer Stelle des Abschnitts steht (P3-16).
+  for (const i of [...freiA].sort((x, y) => x - y)) {
+    const a = A[i];
+    if (istUeberschrift(a)) continue;
+    for (const j of [...freiB].sort((x, y) => x - y)) {
+      const b = B[j];
+      if (typVon(b) !== typVon(a)) continue;
+      const f = freigabeAenderung(F, route, a, b);
+      if (!f) continue;
+      freiA.delete(i); freiB.delete(j);
+      befunde.push({ farbe: 'gruen', art: 'geaendert', typ: typVon(a), alt: a.wert, neu: b.wert, freigabe: f, verschoben: true, kontext });
+      break;
+    }
+  }
   // 3) Rest: entfernt / hinzu
   for (const i of [...freiA].sort((x, y) => x - y)) {
     const a = A[i];
