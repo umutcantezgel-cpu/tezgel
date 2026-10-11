@@ -25,3 +25,7 @@ Pixel, Text v2, SEO-Invarianten, Lighthouse und Jury entfallen begründet: Der s
 - M5 `startsWith(bereich)` ohne `/` → Test 3 rot
 
 **Urteil: T2 grün.** Push `git push origin HEAD:main` (E-005), danach Live-Rauchtest und `wege.mjs --live`.
+
+## Live (544c42d)
+- `live-rauchtest.sh`: x-build = 544c42d, Hauptseiten 200, Sitemap 163, 404 für unbekannte Adresse: GRÜN.
+- `wege.mjs --live` (≤ 1 Anfrage/s, nur GET/HEAD): 20 Proben (7 Bereiche, Unterseite, 2 Einzeladressen, HEAD, 2 × 308 + Ziele, 5 Grenzfälle) rot 0: GRÜN → `../t2-74e768c-live/wege.json`.

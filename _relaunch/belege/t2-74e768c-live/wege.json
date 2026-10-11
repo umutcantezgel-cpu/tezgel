@@ -1,0 +1,155 @@
+{
+  "build": "74e768c",
+  "base": "https://www.tezgel.de",
+  "live": true,
+  "manifeste": [
+    ".next/server/functions-config-manifest.json"
+  ],
+  "matcher": 25,
+  "unbeteiligt": 200,
+  "entfernt": 32,
+  "sitemap": 0,
+  "http": [
+    {
+      "pfad": "/energie",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/energieberatung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/gewerbe",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/haustechnik",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/lueftung",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/notdienst",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizung/waermepumpe",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/waermepumpen-foerderung-2024",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-006",
+      "erwartet": "410 + Seite + Köpfe",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "HEAD /energie",
+      "erwartet": "410",
+      "status": 410,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/bad/budgetkalkulator",
+      "erwartet": "308 → /bad/projekt-check",
+      "status": 308,
+      "ort": "/bad/projekt-check",
+      "ok": true
+    },
+    {
+      "pfad": "/bad/projekt-check",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/barrierefreies-bad-planung-zuschuesse",
+      "erwartet": "308 → /bad/barrierefreies-bad",
+      "status": 308,
+      "ort": "/bad/barrierefreies-bad",
+      "ok": true
+    },
+    {
+      "pfad": "/bad/barrierefreies-bad",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/heizungen",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/energie-sparen",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/referenzen/project-007",
+      "erwartet": "404",
+      "status": 404,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/blog/fliesen-reinigen-pflegen",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    },
+    {
+      "pfad": "/",
+      "erwartet": "200",
+      "status": 200,
+      "ort": null,
+      "ok": true
+    }
+  ],
+  "fehler": []
+}

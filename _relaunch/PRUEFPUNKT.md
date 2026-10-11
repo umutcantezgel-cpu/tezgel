@@ -1,8 +1,8 @@
 # PRUEFPUNKT
 
 - Lauf: 1 (angepasst, E-000) · Phase: P4 (Fundament, ruhend) · P3 abgeschlossen
-- Live auf main: d4da429 (`/` im Kern, alle anderen Seiten Bestand). Server: 4310 Ausgangsstand 707a93d · 4323 Basis a8e049f (Bestand-Startseite, nur noch für Vergleiche) · neue Basis für W1 = Reinraum am Live-Stand (`reinraum.sh HEAD`, ohne KANDIDAT) bauen.
+- Live auf main: 544c42d (P4-07 Wege live: 308 × 2, 410 über proxy.ts; `/` im Kern, übrige Seiten Bestand). Server: 4331 = 74e768c (Live-Produkt), 4333 = ca8d5ff (P4-04/05a + ruhende P4-01/02/03).
 - Tests: `KERN_SEITEN = ['/']` in `tests/fixtures.mjs` entspricht jetzt dem Live-Stand; Läufe gegen 4310/4323 mit `RELAUNCH_FASSUNG=bestand`.
-- Laufend: P4-01, P4-02, P4-03, P4-04, P4-05a (Opus, Hintergrund, seit 05:31 UTC) – Rückgaben abnehmen (prüfen, Vorschau, T1/T2, Commit, Push).
-- Nächster exakter Schritt: P4-07 Wege (244aec3, lokal) – Reinraum 0f44c9b gegen 244aec3, `build-vergleich --streng`, `wege.mjs` lokal, Suite-Stichprobe, Mutationsprobe (Liste, matcher), dann `git push origin HEAD:main`, `live-rauchtest.sh`, `wege.mjs --live`. Danach P4-05b, P4-06, P4-09, P4-08; dann W1 `/bad`.
+- Laufend: P4-05b (Konfigurator) und P4-05c (Termin), Opus im Hintergrund. T2 für 570f24b…ca8d5ff (P4-04 Sprite, P4-05a Hooks, P4-01/02/03 ruhend): build-vergleich ohne Sprite gleich, strenger Vergleich nur Skripte /bad + CSS-Zusatzregeln, Mutationsprobe Hooks 3/3, Gegenprüfer ja; Pixel + Suite laufen.
+- Nächster exakter Schritt: Pixel/Suite ca8d5ff auswerten → ERGEBNIS `belege/t2-ca8d5ff/` → `git push origin HEAD:main` → Live-Rauchtest. Dann Vorschau-Kandidat (`VORSCHAU="p4-01 p4-02 p4-03 p4-04 p4-05a" reinraum.sh HEAD`, Port 4320), Fotos prüfen, Briefing P4-10 (Vorlagen zusammenführen, Pläne einbinden, Tabelle `data-spalte`, `lg:w-sm` → Kern-Maß), P4-09 (Zuklappen nach transitionend), P4-06 (Tests Kern-Zweig + Mutationsprobe), P4-08 (Entwürfe Hauptseiten). Danach W1 `/bad`.
 - Offene Abweichungen: ABNAHME „Offene Abweichungen“ (Z-04 Tastatur, Z-12 TBT).
