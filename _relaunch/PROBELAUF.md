@@ -89,3 +89,13 @@ Chromium (Playwright 1.56.1), Ansichten aus `lib.mjs` (`m375` 375 × 812 Touch, 
 Wege Aufgabe 4 (Lauf-Dateien unter `cache/probelauf/eingaben/ausgangsstand/`): Touch – „Alle ablehnen“ (Banner liegt über dem Mobilmenü), Menü, „Standorte“, „Alle 13 Standorte“, 1 Bildlauf, 3× Wischen in der Stadt-Leiste → „Butzbach 35 km“ unter „Unser 45-km-Einsatzgebiet“ (ohne Wischen: 10 Schritte, Satz `erkundung`). Maus – Klick „Standorte“ → Stadt-Leiste mit „Butzbach 35 km“ im ersten Bild (Banner bleibt stehen, verdeckt nichts Nötiges). Tastatur – 7× Tab bis „Standorte“, Enter. Banner-Probe Tastatur (`banner-d1440-tastatur`): „Alle ablehnen“ erst nach 190× Tab erreichbar.
 
 Z-04 vergleicht jeden späteren Lauf mit dieser Tabelle (Schrittzahl bis Ziel ≤ Bezugswert, gelöst, 0 Befunde „hoch“).
+
+## 8 Fünf-Sekunden-Probe (Z-04, zweiter Teil)
+- **Material:** erster Bildschirm jeder Hauptseite, so wie er beim ersten Besuch erscheint: `fotos.mjs --einwilligung erstbesuch --max 1 --ansichten m375,d1440`, also mit Einwilligungsbanner und Bedingungen wie in Abschnitt 6, aber reducedMotion „reduce“. Satz `fuenf-<stand>`. Die Bilder werden vor der Probe unter neutralen Namen kopiert, damit kein Dateiname den Stand verrät.
+- **Erstbetrachter:** je Bild 5 frisch gestartete Haiku-Agenten. Jeder liest genau dieses eine Bild, ohne Web, Repo und Suche, und beantwortet aus dem ersten Eindruck: Angebot, Zielgruppe, nächster Schritt, dazu die Sicherheit 1–5. Werkzeug: Workflow `fuenf-sekunden-basis` (Antworten roh, Schema).
+- **Bezug (aus den Seiteninhalten, nicht erfunden):**
+  - Angebot: Fliesenverlegung bzw. Badsanierung, also ein Fliesenleger-Fachbetrieb.
+  - Zielgruppe: Privatkunden, also Haus- oder Wohnungseigentümer mit einem Bad-, Fliesen- oder Terrassenvorhaben. Die Region Aßlar/Wetzlar/Mittelhessen wird gesondert gezählt („regional erkannt“).
+  - Nächster Schritt: kostenloses Vor-Ort-Aufmaß bzw. eine Anfrage stellen, oder Kontakt per Telefon/WhatsApp aufnehmen.
+- **Bewertung:** Ein frischer Opus-Agent bewertet alle Antworten blind (Stand und Ansicht gemischt, nur Kennungen) gegen den Bezug, je Frage richtig/falsch, mit einem Satz Begründung.
+- **Schwelle:** Je Seite und Ansicht nennen ≥ 4 von 5 Erstbetrachtern alle drei richtig, und die Zahl richtiger Gesamtantworten liegt nie unter dem Ausgangsstand.
