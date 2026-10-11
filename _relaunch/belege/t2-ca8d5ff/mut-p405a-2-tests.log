@@ -1,0 +1,335 @@
+
+Running 18 tests using 2 workers
+
+  ✓   1 [mobil] › tests/funktion-projektcheck.spec.mjs:78:3 › BadProjektCheck (/bad/projekt-check) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage (1.0s)
+  ✓   2 [mobil] › tests/funktion-projektcheck.spec.mjs:63:3 › BadProjektCheck (/bad/projekt-check) › ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp (1.2s)
+  ✓   3 [mobil] › tests/funktion-projektcheck.spec.mjs:91:3 › BadProjektCheck (/bad/projekt-check) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage (976ms)
+  ✘   4 [mobil] › tests/funktion-projektcheck.spec.mjs:105:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt (951ms)
+  ✓   5 [mobil] › tests/funktion-projektcheck.spec.mjs:135:5 › BadProjektCheck (/bad/projekt-check) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren) (2.4s)
+  ✘   6 [mobil] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz (10.5s)
+  ✘   7 [mobil] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route (10.5s)
+  ✘   8 [mobil] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz (10.7s)
+  ✘   9 [mobil] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route (10.7s)
+  ✓  10 [desktop] › tests/funktion-projektcheck.spec.mjs:63:3 › BadProjektCheck (/bad/projekt-check) › ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp (2.9s)
+  ✓  11 [desktop] › tests/funktion-projektcheck.spec.mjs:78:3 › BadProjektCheck (/bad/projekt-check) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage (3.6s)
+  ✓  12 [desktop] › tests/funktion-projektcheck.spec.mjs:91:3 › BadProjektCheck (/bad/projekt-check) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage (3.3s)
+  ✘  13 [desktop] › tests/funktion-projektcheck.spec.mjs:105:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt (2.4s)
+  ✓  14 [desktop] › tests/funktion-projektcheck.spec.mjs:135:5 › BadProjektCheck (/bad/projekt-check) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren) (5.8s)
+  ✘  15 [desktop] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz (10.9s)
+  ✘  16 [desktop] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route (10.9s)
+  ✘  17 [desktop] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz (10.9s)
+  ✘  18 [desktop] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route (10.9s)
+
+
+  1) [mobil] › tests/funktion-projektcheck.spec.mjs:105:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Object {[22m
+    [32m-   "area": "ca. 8,2 m²",[39m
+    [31m+   "area": "ca. 8.2 m²",[39m
+    [2m    "contact": Object {[22m
+    [2m      "name": "Prüf Person",[22m
+    [2m      "phone": "0170 0000000",[22m
+    [2m    },[22m
+    [2m    "inquiryType": "projekt_check",[22m
+    [32m-   "projectTitle": "Bad-Projektcheck (ca. 8,2 m²)",[39m
+    [31m+   "projectTitle": "Bad-Projektcheck (ca. 8.2 m²)",[39m
+    [2m    "projectType": "bad",[22m
+    [2m    "projektCheckDetails": Object {[22m
+    [2m      "extras": Array [[22m
+    [2m        "Bodengleiche Walk-In-Dusche",[22m
+    [2m        "Design-Heizkörper",[22m
+    [2m        "LED-Lichtspiegel",[22m
+    [2m        "Großformat-Fliesenverlegung",[22m
+    [2m      ],[22m
+    [2m      "scope": "komplett",[22m
+    [2m      "scopeLabel": "Komplettbad",[22m
+    [32m-     "sqm": "8,2",[39m
+    [31m+     "sqm": "8.2",[39m
+    [2m      "tier": "premium",[22m
+    [2m      "tierLabel": "Gehoben",[22m
+    [2m    },[22m
+    [2m    "timing": "Nach Aufmaß",[22m
+    [2m  }[22m
+
+      111 |     await expect(w.getByText('TEZ-26-TEST')).toBeVisible();
+      112 |     expect(anfragen).toHaveLength(1);
+    > 113 |     expect(anfragen[0]).toMatchObject({
+          |                         ^
+      114 |       inquiryType: 'projekt_check',
+      115 |       projectType: 'bad',
+      116 |       projectTitle: 'Bad-Projektcheck (ca. 8,2 m²)',
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:113:25
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-15b20-ätigungs-E-Mail-angekündigt-mobil/error-context.md
+
+  2) [mobil] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:155:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-e05a4-Details-Erfolg-mit-Referenz-mobil/error-context.md
+
+  3) [mobil] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:184:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-9c2b9--keine-Anfrage-an-die-Route-mobil/error-context.md
+
+  4) [mobil] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('#projekt-check').getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for locator('#projekt-check').getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:155:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-9936e-Details-Erfolg-mit-Referenz-mobil/error-context.md
+
+  5) [mobil] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('#projekt-check').getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for locator('#projekt-check').getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:184:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-d1366--keine-Anfrage-an-die-Route-mobil/error-context.md
+
+  6) [desktop] › tests/funktion-projektcheck.spec.mjs:105:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoMatchObject[2m([22m[32mexpected[39m[2m)[22m
+
+    [32m- Expected  - 3[39m
+    [31m+ Received  + 3[39m
+
+    [2m  Object {[22m
+    [32m-   "area": "ca. 8,2 m²",[39m
+    [31m+   "area": "ca. 8.2 m²",[39m
+    [2m    "contact": Object {[22m
+    [2m      "name": "Prüf Person",[22m
+    [2m      "phone": "0170 0000000",[22m
+    [2m    },[22m
+    [2m    "inquiryType": "projekt_check",[22m
+    [32m-   "projectTitle": "Bad-Projektcheck (ca. 8,2 m²)",[39m
+    [31m+   "projectTitle": "Bad-Projektcheck (ca. 8.2 m²)",[39m
+    [2m    "projectType": "bad",[22m
+    [2m    "projektCheckDetails": Object {[22m
+    [2m      "extras": Array [[22m
+    [2m        "Bodengleiche Walk-In-Dusche",[22m
+    [2m        "Design-Heizkörper",[22m
+    [2m        "LED-Lichtspiegel",[22m
+    [2m        "Großformat-Fliesenverlegung",[22m
+    [2m      ],[22m
+    [2m      "scope": "komplett",[22m
+    [2m      "scopeLabel": "Komplettbad",[22m
+    [32m-     "sqm": "8,2",[39m
+    [31m+     "sqm": "8.2",[39m
+    [2m      "tier": "premium",[22m
+    [2m      "tierLabel": "Gehoben",[22m
+    [2m    },[22m
+    [2m    "timing": "Nach Aufmaß",[22m
+    [2m  }[22m
+
+      111 |     await expect(w.getByText('TEZ-26-TEST')).toBeVisible();
+      112 |     expect(anfragen).toHaveLength(1);
+    > 113 |     expect(anfragen[0]).toMatchObject({
+          |                         ^
+      114 |       inquiryType: 'projekt_check',
+      115 |       projectType: 'bad',
+      116 |       projectTitle: 'Bad-Projektcheck (ca. 8,2 m²)',
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:113:25
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-15b20-ätigungs-E-Mail-angekündigt-desktop/error-context.md
+
+  7) [desktop] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:155:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-e05a4-Details-Erfolg-mit-Referenz-desktop/error-context.md
+
+  8) [desktop] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:184:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-9c2b9--keine-Anfrage-an-die-Route-desktop/error-context.md
+
+  9) [desktop] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('#projekt-check').getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for locator('#projekt-check').getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:155:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-9936e-Details-Erfolg-mit-Referenz-desktop/error-context.md
+
+  10) [desktop] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('#projekt-check').getByText('3,5 m²', { exact: true })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 10000ms[22m
+    [2m  - waiting for locator('#projekt-check').getByText('3,5 m²', { exact: true })[22m
+
+
+      41 | async function konfiguriere(w) {
+      42 |   await groesse(w).press('Home');
+    > 43 |   await expect(w.getByText('3,5 m²', { exact: true })).toBeVisible();
+         |                                                        ^
+      44 |   await w.getByRole('button', { name: /^Wanne zu Dusche/ }).click();
+      45 |   await w.getByRole('button', { name: /^Exklusiv/ }).click();
+      46 |   await w.getByRole('button', { name: 'LED-Lichtspiegel', exact: true }).click();
+        at konfiguriere (/home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:43:56)
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-projektcheck.spec.mjs:184:7
+
+    Error Context: ../cache/test-results/funktion-projektcheck-BadP-d1366--keine-Anfrage-an-die-Route-desktop/error-context.md
+
+  10 failed
+    [mobil] › tests/funktion-projektcheck.spec.mjs:105:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt 
+    [mobil] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+    [mobil] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+    [mobil] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+    [mobil] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+    [desktop] › tests/funktion-projektcheck.spec.mjs:105:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt 
+    [desktop] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+    [desktop] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+    [desktop] › tests/funktion-projektcheck.spec.mjs:152:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz 
+    [desktop] › tests/funktion-projektcheck.spec.mjs:180:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route 
+  8 passed (1.0m)
