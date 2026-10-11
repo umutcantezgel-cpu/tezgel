@@ -81,8 +81,9 @@
   --k-gewicht-anzeige: 760;
 }
 
-/* Fester Kopf (P3-06): 64 px in jeder Breite; Sprungziele landen darunter (scroll-padding-top in kern-global.css) */
-:root { --k-kopf-hoehe: var(--spacing-k-8); }
+/* Fester Kopf (P3-06): 64 px in jeder Breite; Sprungziele landen darunter (scroll-padding-top in kern-global.css).
+   --k-kopf-rest: Höhe unter dem Kopf (Mega-Blatt, ersetzt den freien Wert aus Slop statisch P3-16) */
+:root { --k-kopf-hoehe: var(--spacing-k-8); --k-kopf-rest: calc(100dvh - var(--k-kopf-hoehe)); }
 
 /* Untere Leiste (P3-07): sichtbare Höhe · Sicherheitsrand (0 ohne viewport-fit=cover) · belegter Raum unten; ab lg keine Leiste */
 :root {

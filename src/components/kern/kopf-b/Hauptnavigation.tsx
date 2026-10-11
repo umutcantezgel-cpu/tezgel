@@ -244,7 +244,7 @@ export default function Hauptnavigation({ eintraege, pfad: pfadVorgabe, statisch
                   }}
                   id={blattId}
                   popover="auto"
-                  className="inset-x-0 top-(--k-kopf-hoehe) bottom-auto h-auto max-h-[calc(100dvh-var(--k-kopf-hoehe))] w-full overflow-y-auto overscroll-contain border-t-2 border-b border-t-k-laser border-b-k-strich bg-k-fliese text-k-tinte"
+                  className="inset-x-0 top-(--k-kopf-hoehe) bottom-auto h-auto max-h-(--k-kopf-rest) w-full overflow-y-auto overscroll-contain border-t-2 border-b border-t-k-laser border-b-k-strich bg-k-fliese text-k-tinte"
                 >
                   <div data-motion="aufklappen" data-offen="">
                     <div>

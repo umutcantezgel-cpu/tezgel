@@ -188,9 +188,10 @@ export default function Fuss() {
           <Rasterfeld flaeche="tinte" innen="keiner" breite={{ mobil: 4, tablett: 8, desktop: 8 }}>
             <ul className="grid grid-cols-2 gap-px bg-k-nacht-fuge md:grid-cols-4">
               {GARANTIEN.map(({ title, text }) => (
-                <li key={title} className="flex flex-col gap-k-1 bg-k-tinte p-k-4 lg:p-k-5">
-                  <span className="k-mono text-k-2 text-k-kalk">{title}</span>
-                  <span className="k-text text-k-2 text-k-nacht-2">{text}</span>
+                <li key={title} className="flex min-w-0 flex-col gap-k-1 bg-k-tinte p-k-4 lg:p-k-5">
+                  {/* Lange Einzelwörter („Festpreisgarantie“) brechen bei 320 px in der Zelle um statt die Seite zu verbreitern (Reflow, P3-16) */}
+                  <span className="k-mono text-k-2 text-k-kalk wrap-break-word hyphens-auto">{title}</span>
+                  <span className="k-text text-k-2 text-k-nacht-2 wrap-break-word hyphens-auto">{text}</span>
                 </li>
               ))}
             </ul>
