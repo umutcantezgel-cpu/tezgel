@@ -1,0 +1,16 @@
+{
+ "base": "http://127.0.0.1:4350",
+ "seiten": [
+  "/standorte/giessen",
+  "/standorte/limburg"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": []
+}

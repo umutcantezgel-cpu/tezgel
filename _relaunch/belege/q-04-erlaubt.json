@@ -1,0 +1,10 @@
+[
+ { "seite": "*", "alt": "STARTPUNKT", "_grund": "Q-04: nur Darstellung – CSS uppercase entfällt (Etiketten ohne Versalien), Quelltext unverändert „Startpunkt“" },
+ { "seite": "*", "neu": "Startpunkt", "_grund": "Q-04: wie oben" },
+ { "seite": "*", "alt": "FAHRTZEIT & STRECKE", "_grund": "Q-04: nur Darstellung – CSS uppercase entfällt, Quelltext unverändert" },
+ { "seite": "*", "neu": "Fahrtzeit & Strecke", "_grund": "Q-04: wie oben" },
+ { "seite": "*", "alt": "IHR PROJEKT", "_grund": "Q-04: nur Darstellung – CSS uppercase entfällt, Quelltext unverändert" },
+ { "seite": "*", "neu": "Ihr Projekt", "_grund": "Q-04: wie oben" },
+ { "seite": "*", "alt": "KOSTENLOSES VOR-ORT-AUFMASS", "_grund": "nicht Q-04: LeadQuickForm (Q-03, 3a64a6b, schon auf main) – ebenfalls nur uppercase entfallen" },
+ { "seite": "*", "neu": "Kostenloses Vor-Ort-Aufmaß", "_grund": "nicht Q-04: wie oben" }
+]

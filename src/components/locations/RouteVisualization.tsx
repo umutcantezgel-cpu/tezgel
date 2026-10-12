@@ -1,84 +1,141 @@
-"use client";
-
-import React from "react";
-import { Navigation, MapPin, Clock, ArrowRight, ShieldCheck } from "lucide-react";
-import { siteConfig } from "@/lib/config";
-import { CityData } from "@/config/cities";
+// Standortseite · Anfahrt ab Aßlar (Q-04, KERN v2): „Schnell bei Ihnen in {Stadt}“ als gezeichneter Plan.
+// Kopf über `Abschnitt` (Mono-Etikett mit Fugenkreuz, H2, Vorspann). Darunter das Planfeld: drei Felder an der Fuge –
+// Startpunkt · Fahrtzeit & Strecke · Ihr Projekt –, jedes mit einem Planstreifen im feinen Fugenraster (24 px, je Feld
+// neu angesetzt wie eine Fliese). Die Strecke ist das einzige rote Element (Laser, 2 px): Sie läuft vom Fugenkreuz am
+// Firmensitz zum Fugenkreuz am Ziel, ab md als Waage im Streifen über den Feldern, mobil als Lot im Streifen links
+// (K-003 Nr. 7). Beide Marken sitzen auf einem Rasterkreuz, die Angaben fluchten an ihnen. Beschriftungen als
+// Mono-Etiketten, Fahrzeit und Entfernung in Mono; darunter die Anfrage als Hauptknopf (Telefon).
+// Zeichnung dekorativ (aria-hidden), alle Angaben als echter Text in einer geordneten Liste (Start → Strecke → Ziel).
+// Serverkomponente ohne Zustand und ohne Bewegung. Texte, Fahrzeit-Rechnung und Ziel des Links wie im Bestand;
+// Entfernungen aus `@/config/cities` (gemessen ab Wetzlar, dargestellt ab Aßlar – I-16/WM-17, bewusst unverändert).
+import { useId } from 'react';
+import clsx from 'clsx';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen } from '@/components/kern/stile';
+import { siteConfig } from '@/lib/config';
+import type { CityData } from '@/config/cities';
 
 interface RouteVisualizationProps {
   city: CityData;
   className?: string;
 }
 
-export default function RouteVisualization({ city, className = "" }: RouteVisualizationProps) {
-  // Approximate driving time calculation (1.5 min per km + 5 min base)
+type Lage = 'start' | 'strecke' | 'ziel';
+
+/**
+ * Planstreifen eines Feldes mit feinem Fugenraster (24 px): mobil links (48 px breit), ab md oben (48 px hoch).
+ * Nur der Streifen trägt das Raster, die Angaben stehen auf ruhigem Grund. Erzwungene Farben: Raster entfällt.
+ */
+function Raster() {
+  const muster = `anfahrt-raster-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`;
+  return (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      className="pointer-events-none absolute inset-y-0 left-0 h-full w-12 border-r border-fuge text-fuge forced-colors:hidden md:inset-x-0 md:top-0 md:bottom-auto md:h-12 md:w-full md:border-r-0 md:border-b"
+    >
+      <defs>
+        <pattern id={muster} width="24" height="24" patternUnits="userSpaceOnUse">
+          <path d="M0 23.5H24M23.5 0V24" fill="none" stroke="currentColor" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill={`url(#${muster})`} />
+    </svg>
+  );
+}
+
+/**
+ * Teilstück der Strecke in einem Feld, Mitte jeweils 24 px von der Feldkante (Rasterlinie):
+ * mobil Lot von oben nach unten, ab md Waage von links nach rechts. Die Stücke der Folgefelder überdecken deren Fuge
+ * (-top-px bzw. -left-px), damit die Linie ohne Lücke durchläuft; Start- und Zielstück enden am Fugenkreuz.
+ */
+function Streckenstueck({ lage }: { lage: Lage }) {
+  return (
+    <>
+      <span
+        aria-hidden="true"
+        className={clsx(
+          'absolute left-6 -translate-x-1/2 border-l-2 border-laser md:hidden',
+          lage === 'start' && 'top-6 bottom-0',
+          lage === 'strecke' && '-top-px bottom-0',
+          lage === 'ziel' && '-top-px h-6',
+        )}
+      />
+      <span
+        aria-hidden="true"
+        className={clsx(
+          'absolute top-6 hidden -translate-y-1/2 border-t-2 border-laser md:block',
+          lage === 'start' && 'left-6 right-0',
+          lage === 'strecke' && '-left-px right-0',
+          lage === 'ziel' && '-left-px w-6',
+        )}
+      />
+    </>
+  );
+}
+
+/** Ein Feld des Plans: Raster, Streckenstück, Marke (nur Start und Ziel) und die Angaben an der Flucht der Marke. */
+function Feld({ lage, etikett, wert, notiz, mono = false }: { lage: Lage; etikett: string; wert: string; notiz: string; mono?: boolean }) {
+  return (
+    <li className={clsx('relative min-w-0', lage !== 'start' && 'border-t border-fuge md:border-t-0 md:border-l')}>
+      <Raster />
+      <Streckenstueck lage={lage} />
+      {lage !== 'strecke' && <Fugenkreuz className="absolute top-6 left-6 size-4 -translate-x-1/2 -translate-y-1/2 text-tinte" />}
+      <div className="relative pt-4 pr-6 pb-8 pl-16 md:px-6 md:pt-16">
+        <p className={etikettKlassen}>{etikett}</p>
+        <p
+          className={clsx(
+            'mt-2 text-fs-5 text-tinte md:text-fs-4 lg:text-fs-5',
+            mono ? 'font-mono' : 'font-anzeige font-extrabold',
+          )}
+        >
+          {wert}
+        </p>
+        <p className={clsx('mt-2 text-fs-2 text-tinte-2', mono && 'font-mono')}>{notiz}</p>
+      </div>
+    </li>
+  );
+}
+
+export default function RouteVisualization({ city, className = '' }: RouteVisualizationProps) {
+  // Fahrzeit wie im Bestand: 1,3 min je km + 5 min, mindestens 8 min (alter Kommentar nannte 1,5 min je km)
   const drivingMinutes = Math.max(8, Math.round(city.distanceKm * 1.3 + 5));
 
   return (
-    <section className={`py-12 sm:py-16 bg-gradient-to-b from-neutral-50 to-white border-y border-neutral-200/80 ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-bold mb-3">
-            <Navigation className="w-3.5 h-3.5 text-orange-600" />
-            <span>Kurze Anfahrtswege in Mittelhessen</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-900 tracking-tight">
-            Schnell bei Ihnen in {city.name}
-          </h2>
-          <p className="text-sm sm:text-base text-neutral-600 mt-2 leading-relaxed">
-            {city.distanceKm === 0
-              ? `Als direkte Nachbarstadt erreichen wir ${city.name} von unserem Betriebssitz in Aßlar in wenigen Fahrminuten für Ihr persönliches Vor-Ort-Aufmaß.`
-              : `Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in ${city.name} (ca. ${city.distanceKm} km) über die B49/A45 in rund ${drivingMinutes} Minuten.`}
-          </p>
-        </div>
+    <Abschnitt
+      id="anfahrt"
+      flaeche="fliese"
+      etikett="Kurze Anfahrtswege in Mittelhessen"
+      titel={`Schnell bei Ihnen in ${city.name}`}
+      einleitung={
+        <p>
+          {city.distanceKm === 0
+            ? `Als direkte Nachbarstadt erreichen wir ${city.name} von unserem Betriebssitz in Aßlar in wenigen Fahrminuten für Ihr persönliches Vor-Ort-Aufmaß.`
+            : `Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in ${city.name} (ca. ${city.distanceKm} km) über die B49/A45 in rund ${drivingMinutes} Minuten.`}
+        </p>
+      }
+      className={className || undefined}
+    >
+      {/* Planfeld: Start → Strecke → Ziel */}
+      <ol className="grid grid-cols-1 border border-fuge bg-kalk md:grid-cols-3">
+        <Feld lage="start" etikett="Startpunkt" wert="Aßlar (Firmensitz)" notiz={siteConfig.company.street} />
+        <Feld
+          lage="strecke"
+          etikett="Fahrtzeit & Strecke"
+          wert={`ca. ${drivingMinutes} Min.`}
+          notiz={city.distanceKm === 0 ? 'Direkte Nachbarschaft' : `ca. ${city.distanceKm} km Entfernung`}
+          mono
+        />
+        <Feld lage="ziel" etikett="Ihr Projekt" wert={city.name} notiz="Kostenfreies Vor-Ort-Aufmaß" />
+      </ol>
 
-        {/* 3 Step Visual Route */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-center">
-          {/* Step 1: Start HQ */}
-          <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm text-center flex flex-col items-center">
-            <div className="w-12 h-12 rounded-xl bg-neutral-100 text-neutral-800 flex items-center justify-center mb-3">
-              <MapPin className="w-6 h-6 text-neutral-700" />
-            </div>
-            <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">Startpunkt</span>
-            <div className="text-lg font-bold text-neutral-900 mt-0.5">Aßlar (Firmensitz)</div>
-            <p className="text-xs text-neutral-500 mt-1">{siteConfig.company.street}</p>
-          </div>
-
-          {/* Step 2: Route details */}
-          <div className="bg-orange-50/80 rounded-2xl p-6 border border-orange-200/80 text-center flex flex-col items-center shadow-xs">
-            <div className="w-12 h-12 rounded-xl bg-orange-600 text-white flex items-center justify-center mb-3 shadow-sm">
-              <Clock className="w-6 h-6" />
-            </div>
-            <span className="text-xs font-bold uppercase tracking-wider text-orange-700">Fahrtzeit & Strecke</span>
-            <div className="text-2xl font-black text-orange-600 mt-0.5">
-              ca. {drivingMinutes} Min.
-            </div>
-            <p className="text-xs font-medium text-neutral-600 mt-1">
-              {city.distanceKm === 0 ? "Direkte Nachbarschaft" : `ca. ${city.distanceKm} km Entfernung`}
-            </p>
-          </div>
-
-          {/* Step 3: Destination */}
-          <div className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm text-center flex flex-col items-center">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3 border border-emerald-200">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">Ihr Projekt</span>
-            <div className="text-lg font-bold text-neutral-900 mt-0.5">{city.name}</div>
-            <p className="text-xs text-neutral-500 mt-1">Kostenfreies Vor-Ort-Aufmaß</p>
-          </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <a
-            href={siteConfig.contact.phone.link}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white text-sm font-bold shadow-md transition-all"
-          >
-            <span>Jetzt Vor-Ort-Termin für {city.name} anfragen</span>
-            <ArrowRight className="w-4 h-4 text-orange-400" />
-          </a>
-        </div>
+      <div className="mt-8">
+        <Knopf href={siteConfig.contact.phone.link} iconLinks="telefon" className="w-full sm:w-auto">
+          Jetzt Vor-Ort-Termin für {city.name} anfragen
+        </Knopf>
       </div>
-    </section>
+    </Abschnitt>
   );
 }
