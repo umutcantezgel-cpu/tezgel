@@ -1,0 +1,5 @@
+[
+ { "seite": "/widerruf", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß (nicht in den Schreibrechten): CookieConsent hängt die Zeile nach der Hydrierung an, auf dem Dev-Server je nach Zeitpunkt (bekannt, R-01a; s-20-, s-23-, s-26-erlaubt.json)" },
+ { "seite": "/cookie-richtlinie", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß, Dev-Zeitpunkt (wie oben)" },
+ { "seite": "/barrierefreiheit", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß, Dev-Zeitpunkt (wie oben)" }
+]

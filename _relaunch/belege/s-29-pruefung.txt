@@ -1,0 +1,16 @@
+S-29 · Prüfungen 1–9 (12.10.2026, Dev 4350 gegen Live 4362)
+1 tsc --noEmit -p .            : Exit 0, keine Ausgabe
+2 eslint (3 Dateien)           : Exit 0, 0 Fehler, 0 Warnungen
+3 werte.mjs (3 Dateien)        : Exit 0, befunde gesamt 0
+4 Altsystem-grep               : 0 Treffer (vorher widerruf 26 Zeilen/37 Treffer, cookie-richtlinie 23/37, barrierefreiheit 26/43)
+5 texte 4362 -> 4350           : ohne Freigabe entfernt 3 = je Seite Fußzeile „Cookie-Einstellungen“ (Dev-Zeitpunkt);
+                                 mit s-29-erlaubt.json {"seiten_mit_abweichung":0,"entfernt":0,"hinzu":0,"meta":0,"seo":0,"kaputte_links":0,"ergebnis":"GRÜN"}
+                                 Lesefolge main LCS 23/23, 17/17, 27/27; Überschriften, H1, JSON-LD, Links, Metadaten gleich
+6 einzelbild m390,t768,d1440   : 9x HTTP 200, Konsole 0, Überlauf 0, Überlappung 0
+7 wortbruch (320–1920)         : Wortbrüche 0
+8 playwright navigation+kontaktwege+einwilligung (mobil+desktop): 130 passed, 14 skipped, 0 failed (erster Lauf, ohne Wiederholung)
+9 git status                   : von S-29 nur die 3 page.jsx und _relaunch/belege/s-29*
+Zusatz axe m375/d1440          : 6 Läufe, 0 Verstöße
+Zusatz Druckprobe /widerruf    : Knopf ruft window.print (1x), mailto unverändert (subject=Widerruf), Rückweg /agb;
+                                 im Druckmedium Knopf, E-Mail und Rückweg ausgeblendet, Formular sichtbar
+textprobe.cjs                  : nur Props (titel=, etikett=) und um Mono-/nowrap-Spannen geteilte Textstücke; bezeichner: widerruf ["window"], sonst []

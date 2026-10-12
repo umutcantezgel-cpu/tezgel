@@ -1,71 +1,75 @@
 "use client";
+// Widerruf (E6-BAU-10, S-29): Lesemodus wie die Ratgeber-Artikel – kompakter Kopf (Einstieg art="arbeit", H1 text-fs-6),
+// darunter Hinweis, Muster-Formular als Feld an der Fuge, Aktionen und Widerrufsfolgen im Satzspiegel max-w-mass.
+// Rechtstext, Reihenfolge und Wege (Drucken, E-Mail) unverändert; Client bleibt nur wegen des Druck-Knopfs (onClick).
 import React from 'react';
-import Link from 'next/link';
-import { ArrowLeft, Printer, Mail, FileText } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import SEO from '@/components/SEO';
+import Einstieg from '@/components/kern/Einstieg';
+import Knopf from '@/components/kern/Knopf';
+import Icon from '@/components/icons/Icon';
+import { seitenKlassen } from '@/components/kern/stile';
 
 export default function Widerruf() {
     const handlePrint = () => {
         window.print();
     };
 
-    const fieldLine = "border-b-2 border-slate-300 h-12 bg-slate-50 rounded print:bg-white";
+    // Schreiblinie zum Ausfüllen auf dem Ausdruck: Strich-Linie (≥ 3:1) auf Kalk, gedruckt auf Weiß
+    const fieldLine = "h-12 border-b border-strich bg-kalk print:bg-white";
 
     return (
-        <div className="relative min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <>
             <SEO
                 title="Widerrufsformular"
                 description={`Muster-Widerrufsformular gemäß § 246a Abs. 1 EGBGB für ${siteConfig.legalName}.`}
             />
-            {/* Ambient Lighting Orbs */}
-            <div className="ambient-glow-orange -top-20 -left-20 opacity-30 print:hidden" />
-            <div className="ambient-glow-red top-96 -right-20 opacity-25 print:hidden" />
 
-            <div className="max-w-3xl mx-auto relative z-10">
-                <div className="glass-surface rounded-tile-xl p-8 md:p-12">
-                    {/* Back Link */}
-                    <Link href="/agb" className="inline-flex items-center text-sm font-bold text-orange-700 hover:text-orange-600 mb-6 transition-colors print:hidden">
-                        <ArrowLeft className="w-4 h-4 mr-2" />
+            {/* KOPF: Rückweg zuerst, dann H1 und Rechtsgrundlage (Norm in Mono) */}
+            <Einstieg
+                art="arbeit"
+                pfad={
+                    <Knopf variante="text" href="/agb" iconLinks="pfeil-links" className="print:hidden">
                         Zurück zu den AGB
-                    </Link>
+                    </Knopf>
+                }
+                titel={<>Widerrufsbelehrung &amp; Muster-Widerrufsformular</>}
+                vorspann={
+                    <p className="text-fs-2 text-tinte-2">gemäß <span className="font-mono">§ 246a Abs. 1 EGBGB</span></p>
+                }
+            />
 
-                    <div className="flex items-center gap-4 mb-8">
-                        <div className="icon-chip w-12 h-12">
-                            <FileText className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900">Widerrufsbelehrung &amp; Muster-Widerrufsformular</h1>
-                            <p className="text-slate-600 text-sm mt-1">gemäß § 246a Abs. 1 EGBGB</p>
-                        </div>
-                    </div>
-
-                    <div className="bg-amber-50 border border-amber-200 rounded-tile-md p-4 mb-8 text-sm text-amber-900">
+            {/* LESEMODUS: alles im Satzspiegel, links an derselben Kante wie die H1 */}
+            <div className={`${seitenKlassen} py-12 lg:py-16`}>
+                <div className="max-w-mass text-fs-3 text-tinte">
+                    {/* Hinweis (Muster wie kern/Hinweis „merk“; die Art steht hier schon im Text) */}
+                    <div className="flex items-start gap-4 border border-l-2 border-strich bg-fliese p-6 text-fs-2 text-tinte">
+                        <Icon name="info" groesse={5} className="mt-1 text-tinte" />
                         <p>
-                            <strong>Hinweis:</strong> Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie
+                            <strong className="font-semibold">Hinweis:</strong> Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie
                             bitte dieses Formular aus und senden Sie es zurück.
                         </p>
                     </div>
 
-                    {/* Form Content */}
-                    <div className="border-2 border-slate-300 rounded-tile-lg p-6 md:p-8 space-y-6 bg-white print:border print:shadow-none">
-                        {/* Address */}
-                        <div className="border-b border-slate-200 pb-4">
-                            <p className="font-bold text-slate-900 mb-2">An:</p>
-                            <p className="text-slate-700">
+                    {/* Muster-Formular: ein Feld, Teile durch Fugen getrennt */}
+                    <div className="mt-8 border border-fuge bg-fliese print:border-strich">
+                        {/* Anschrift */}
+                        <div className="border-b border-fuge p-6 md:p-8">
+                            <p className="mb-2 font-semibold text-tinte">An:</p>
+                            <p className="text-tinte">
                                 {siteConfig.legalName}<br />
                                 Inhaber: {siteConfig.legal.owner}<br />
                                 {siteConfig.contact.address.street}<br />
                                 {siteConfig.contact.address.zipCity}<br />
-                                Telefax: <span className="tabular-nums">{siteConfig.contact.fax}</span><br />
+                                Telefax: <span className="font-mono">{siteConfig.contact.fax}</span><br />
                                 E-Mail: {siteConfig.contact.email}
                             </p>
                         </div>
 
-                        {/* Declaration */}
-                        <div className="space-y-4">
+                        {/* Erklärung mit Schreiblinien */}
+                        <div className="space-y-6 p-6 md:p-8">
                             <div>
-                                <p className="font-bold text-slate-900 mb-2">
+                                <p className="mb-2 font-semibold text-tinte">
                                     Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag
                                     über die Erbringung der folgenden Dienstleistung:
                                 </p>
@@ -73,54 +77,52 @@ export default function Widerruf() {
                             </div>
 
                             <div>
-                                <p className="font-bold text-slate-900 mb-2">Bestellt am (*) / erhalten am (*):</p>
+                                <p className="mb-2 font-semibold text-tinte">Bestellt am (*) / erhalten am (*):</p>
                                 <div className={fieldLine} />
                             </div>
 
                             <div>
-                                <p className="font-bold text-slate-900 mb-2">Name des/der Verbraucher(s):</p>
+                                <p className="mb-2 font-semibold text-tinte">Name des/der Verbraucher(s):</p>
                                 <div className={fieldLine} />
                             </div>
 
                             <div>
-                                <p className="font-bold text-slate-900 mb-2">Anschrift des/der Verbraucher(s):</p>
+                                <p className="mb-2 font-semibold text-tinte">Anschrift des/der Verbraucher(s):</p>
                                 <div className={fieldLine} />
                                 <div className={`${fieldLine} mt-2`} />
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <p className="font-bold text-slate-900 mb-2">Datum:</p>
+                                    <p className="mb-2 font-semibold text-tinte">Datum:</p>
                                     <div className={fieldLine} />
                                 </div>
                                 <div>
-                                    <p className="font-bold text-slate-900 mb-2">Unterschrift:</p>
+                                    <p className="mb-2 font-semibold text-tinte">Unterschrift:</p>
                                     <div className={fieldLine} />
                                 </div>
                             </div>
                         </div>
 
-                        <p className="text-sm text-slate-600 italic pt-4 border-t border-slate-200">
+                        <p className="border-t border-fuge px-6 py-4 text-fs-2 text-tinte-2 md:px-8">
                             (*) Unzutreffendes streichen.
                         </p>
                     </div>
 
-                    {/* Actions */}
-                    <div className="mt-8 flex flex-wrap gap-3.5 justify-center print:hidden">
-                        <button type="button" onClick={handlePrint} className="btn-primary px-7 py-3.5 text-xs">
-                            <Printer className="w-4 h-4" />
+                    {/* Aktionen: ein Hauptknopf (Drucken), E-Mail als Nebenknopf; auf dem Ausdruck ausgeblendet */}
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap print:hidden">
+                        <Knopf onClick={handlePrint} iconLinks="dokument">
                             Formular drucken
-                        </button>
-                        <a href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent('Widerruf')}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Mail className="w-4 h-4 text-orange-600" />
+                        </Knopf>
+                        <Knopf variante="neben" href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent('Widerruf')}`} iconLinks="mail">
                             Per E-Mail senden
-                        </a>
+                        </Knopf>
                     </div>
 
-                    {/* Additional Info */}
-                    <div className="mt-8 p-5 bg-slate-50 border border-slate-200 rounded-tile-md text-sm text-slate-700 leading-relaxed">
-                        <p className="font-bold text-slate-900 mb-2">Widerrufsfolgen:</p>
-                        <p className="mb-2">
+                    {/* Widerrufsfolgen: Text an der Fuge */}
+                    <div className="mt-12 border-t border-fuge pt-8">
+                        <p className="mb-4 font-semibold text-tinte">Widerrufsfolgen:</p>
+                        <p className="mb-4">
                             Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen
                             erhalten haben, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen,
                             an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist.
@@ -135,6 +137,6 @@ export default function Widerruf() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
