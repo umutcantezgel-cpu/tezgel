@@ -1,0 +1,362 @@
+[
+  {
+    "ansicht": "w320",
+    "zustand": "s1-leer",
+    "datei": "breiten/w320-s1-leer.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "s1-auswahl",
+    "datei": "breiten/w320-s1-auswahl.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "s2",
+    "datei": "breiten/w320-s2.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "s3",
+    "datei": "breiten/w320-s3.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "s3-blockstufen",
+    "datei": "breiten/w320-s3-blockstufen.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "s4",
+    "datei": "breiten/w320-s4.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "s4-fehler",
+    "datei": "breiten/w320-s4-fehler.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "erfolg",
+    "datei": "breiten/w320-erfolg.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w320",
+    "zustand": "whatsapp",
+    "datei": "breiten/w320-whatsapp.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "s1-leer",
+    "datei": "breiten/m375-s1-leer.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "s1-auswahl",
+    "datei": "breiten/m375-s1-auswahl.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "s2",
+    "datei": "breiten/m375-s2.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "s3",
+    "datei": "breiten/m375-s3.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "s3-blockstufen",
+    "datei": "breiten/m375-s3-blockstufen.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "s4",
+    "datei": "breiten/m375-s4.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "s4-fehler",
+    "datei": "breiten/m375-s4-fehler.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "erfolg",
+    "datei": "breiten/m375-erfolg.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m375",
+    "zustand": "whatsapp",
+    "datei": "breiten/m375-whatsapp.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "s1-leer",
+    "datei": "breiten/t768-s1-leer.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "s1-auswahl",
+    "datei": "breiten/t768-s1-auswahl.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "s2",
+    "datei": "breiten/t768-s2.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "s3",
+    "datei": "breiten/t768-s3.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "s3-blockstufen",
+    "datei": "breiten/t768-s3-blockstufen.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "s4",
+    "datei": "breiten/t768-s4.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "s4-fehler",
+    "datei": "breiten/t768-s4-fehler.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "erfolg",
+    "datei": "breiten/t768-erfolg.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "t768",
+    "zustand": "whatsapp",
+    "datei": "breiten/t768-whatsapp.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "s1-leer",
+    "datei": "breiten/w1024-s1-leer.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "s1-auswahl",
+    "datei": "breiten/w1024-s1-auswahl.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "s2",
+    "datei": "breiten/w1024-s2.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "s3",
+    "datei": "breiten/w1024-s3.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "s3-blockstufen",
+    "datei": "breiten/w1024-s3-blockstufen.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "s4",
+    "datei": "breiten/w1024-s4.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "s4-fehler",
+    "datei": "breiten/w1024-s4-fehler.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "erfolg",
+    "datei": "breiten/w1024-erfolg.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1024",
+    "zustand": "whatsapp",
+    "datei": "breiten/w1024-whatsapp.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "s1-leer",
+    "datei": "breiten/w1920-s1-leer.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "s1-auswahl",
+    "datei": "breiten/w1920-s1-auswahl.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "s2",
+    "datei": "breiten/w1920-s2.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "s3",
+    "datei": "breiten/w1920-s3.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "s3-blockstufen",
+    "datei": "breiten/w1920-s3-blockstufen.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "s4",
+    "datei": "breiten/w1920-s4.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "s4-fehler",
+    "datei": "breiten/w1920-s4-fehler.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "erfolg",
+    "datei": "breiten/w1920-erfolg.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "w1920",
+    "zustand": "whatsapp",
+    "datei": "breiten/w1920-whatsapp.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  }
+]

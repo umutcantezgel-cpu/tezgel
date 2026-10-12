@@ -1,0 +1,17 @@
+{
+ "vorher": "q-05-vorher",
+ "nachher": "q-05-nachher",
+ "seiten": {},
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 0,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

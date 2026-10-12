@@ -1,0 +1,56 @@
+[
+  {
+    "ansicht": "m390",
+    "zustand": "s1-leer",
+    "datei": "zustaende-grossformat/m390-s1-leer.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "s4-fehler",
+    "datei": "zustaende-grossformat/m390-s4-fehler.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "erfolg",
+    "datei": "zustaende-grossformat/m390-erfolg.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s1-leer",
+    "datei": "zustaende-grossformat/d1440-s1-leer.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s4-fehler",
+    "datei": "zustaende-grossformat/d1440-s4-fehler.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "erfolg",
+    "datei": "zustaende-grossformat/d1440-erfolg.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  }
+]

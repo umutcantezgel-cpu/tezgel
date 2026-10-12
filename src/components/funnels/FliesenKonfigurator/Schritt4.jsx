@@ -1,20 +1,26 @@
 import Link from 'next/link';
-import { ArrowLeft, Lock, MessageCircle, Send, Loader2, AlertCircle } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import { kontrollKlassen, knopfKlassen, pflichtKlassen } from '@/components/kern/stile';
 import { TIMING_OPTIONS } from '@/lib/formulare/useFliesenKonfigurator';
-import { inputClass, labelClass, linkClass } from './stile';
+import { hintClass, inputClass, labelClass, linkClass, zusatzClass } from './stile';
 import OptionGroup from './OptionGroup';
 import ResultSummary from './ResultSummary';
 
-// Schritt 4: Zusammenfassung und Kontakt (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
+// Schritt 4: Zusammenfassung und Kontakt (Q-05, KERN v2): Ergebnis als Schriftfeld, Felder mit Beschriftung darüber,
+// Fehler mit Rahmen, Fehler-Zeichen und role="alert" direkt über den Knöpfen, ein Hauptknopf (online), WhatsApp als
+// Nebenknopf mit Markenzeichen; „Wird übertragen …“ mit laufender Fuge (Register „laden“).
+// Beide Absende-Knöpfe bleiben type="submit" mit name="channel" (der Hook liest den auslösenden Knopf); Texte, IDs,
+// autocomplete, Pflichtfelder und Verhalten unverändert.
 export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmitting, errorMessage }) {
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             <ResultSummary data={data} />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-1 gap-6 @xl:grid-cols-2 @xl:gap-4">
                 <div>
                     <label htmlFor="fk-name" className={labelClass}>
-                        Name <span className="text-orange-600">*</span>
+                        Name <span className={pflichtKlassen}>*</span>
                     </label>
                     <input
                         id="fk-name"
@@ -29,7 +35,7 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                 </div>
                 <div>
                     <label htmlFor="fk-phone" className={labelClass}>
-                        Telefon- oder Mobilnummer <span className="text-orange-600">*</span>
+                        Telefon- oder Mobilnummer <span className={pflichtKlassen}>*</span>
                     </label>
                     <input
                         id="fk-phone"
@@ -44,7 +50,9 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     />
                 </div>
                 <div>
-                    <label htmlFor="fk-email" className={labelClass}>E-Mail-Adresse (optional)</label>
+                    <label htmlFor="fk-email" className={labelClass}>
+                        E-Mail-Adresse <span className={zusatzClass}>(optional)</span>
+                    </label>
                     <input
                         id="fk-email"
                         type="email"
@@ -73,12 +81,14 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                 legend="Gewünschter Zeitraum:"
                 options={TIMING_OPTIONS.map((t) => ({ id: t, label: t }))}
                 value={data.timing}
-                columns="grid-cols-1 sm:grid-cols-3"
+                columns="grid-cols-1 @xl:grid-cols-3"
                 onChange={(id) => update({ timing: id })}
             />
 
             <div>
-                <label htmlFor="fk-notes" className={labelClass}>Notiz (optional)</label>
+                <label htmlFor="fk-notes" className={labelClass}>
+                    Notiz <span className={zusatzClass}>(optional)</span>
+                </label>
                 <textarea
                     id="fk-notes"
                     rows={3}
@@ -87,49 +97,51 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                     onChange={(e) => update({ notes: e.target.value })}
                     className={`${inputClass} resize-none`}
                 />
-                <p className="mt-1 text-xs text-slate-600">Fotos senden Sie gern im Anschluss per WhatsApp nach.</p>
+                <p className={hintClass}>Fotos senden Sie gern im Anschluss per WhatsApp nach.</p>
             </div>
 
-            <label className="flex items-start gap-2.5 cursor-pointer text-xs text-slate-700">
+            <label className="flex cursor-pointer items-start gap-3 font-text text-fs-2 text-tinte">
                 <input
                     type="checkbox"
                     required
                     checked={data.privacyConsent}
                     onChange={(e) => update({ privacyConsent: e.target.checked })}
-                    className="mt-0.5 rounded accent-orange-600"
+                    className={kontrollKlassen}
                 />
                 <span>
                     Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Details in der{' '}
                     <Link href="/datenschutz" className={linkClass}>Datenschutzerklärung</Link>.{' '}
-                    <span className="text-orange-600">*</span>
+                    <span className={pflichtKlassen}>*</span>
                 </span>
             </label>
 
             {errorMessage && (
-                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-bold text-red-800 flex items-start gap-2">
-                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
+                <div role="alert" className="flex items-start gap-3 border border-l-2 border-laser-tief bg-fliese p-4 font-text text-fs-2 text-tinte">
+                    <Icon name="fehler" groesse={5} className="mt-px text-laser-tief" />
                     <span>{errorMessage}</span>
                 </div>
             )}
 
-            <div className="pt-4 border-t border-slate-200 space-y-3">
-                <div className="flex flex-col sm:flex-row items-center gap-3">
+            <div className="flex flex-col gap-4 border-t border-fuge pt-6">
+                <div className="flex flex-col items-stretch gap-3 @xl:flex-row @xl:items-center">
                     <button
                         type="submit"
                         name="channel"
                         value="online"
                         disabled={isSubmitting}
-                        className="btn-primary w-full sm:flex-1 text-sm flex items-center justify-center gap-2"
+                        aria-busy={isSubmitting || undefined}
+                        className={knopfKlassen('haupt', 'w-full @xl:w-auto @xl:flex-1')}
+                        data-motion="druck"
                     >
                         {isSubmitting ? (
-                            <>
-                                <Loader2 className="w-4 h-4 animate-spin" />
-                                Wird übertragen …
-                            </>
+                            <span className="flex flex-col items-center gap-2">
+                                <span>Wird übertragen …</span>
+                                <span className="laden-fuge w-16" data-motion="laden" aria-hidden="true" />
+                            </span>
                         ) : (
                             <>
-                                <Send className="w-4 h-4" />
-                                Online absenden (mit E-Mail-Bestätigung)
+                                <span>Online absenden (mit E-Mail-Bestätigung)</span>
+                                <Icon name="pfeil-rechts" groesse={5} />
                             </>
                         )}
                     </button>
@@ -138,14 +150,15 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                         name="channel"
                         value="whatsapp"
                         disabled={isSubmitting}
-                        className="glass-button-whatsapp w-full sm:w-auto text-sm flex items-center justify-center gap-2"
+                        className={knopfKlassen('neben', 'w-full @xl:w-auto')}
+                        data-motion="druck"
                     >
-                        <MessageCircle className="w-4 h-4" />
-                        Per WhatsApp senden
+                        <WhatsAppLogo className="size-5 shrink-0" />
+                        <span>Per WhatsApp senden</span>
                     </button>
                 </div>
-                <p className="flex items-start justify-center gap-1.5 text-xs text-slate-700 text-center leading-relaxed">
-                    <Lock className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
+                <p className="flex items-start gap-2 font-text text-fs-1 text-tinte-2">
+                    <Icon name="schloss" groesse={4} className="mt-px" />
                     <span>
                         Bei Online-Absendung erhalten Sie unmittelbar eine schriftliche Zusammenfassung per E-Mail. Bei Auswahl von WhatsApp öffnet sich WhatsApp mit Ihren vorbereiteten Angaben.
                     </span>
@@ -156,9 +169,10 @@ export default function Schritt4({ data, update, goToStep, handleSubmit, isSubmi
                 <button
                     type="button"
                     onClick={() => goToStep(3)}
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-slate-700 hover:text-orange-600 font-bold text-xs transition-colors"
+                    className={knopfKlassen('text')}
+                    data-motion="druck"
                 >
-                    <ArrowLeft className="w-4 h-4" />
+                    <Icon name="pfeil-links" groesse={5} />
                     Zurück zu Schritt 3
                 </button>
             </div>

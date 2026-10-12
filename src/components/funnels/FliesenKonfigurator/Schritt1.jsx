@@ -1,15 +1,16 @@
 import Link from 'next/link';
-import { Check } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
 import { ROOM_OPTIONS, toggleInList } from '@/lib/formulare/useFliesenKonfigurator';
-import { cardOptionClass, linkClass } from './stile';
+import { absatzHintClass, cardOptionClass, linkClass, merkClass, nebenClass } from './stile';
 
-// Schritt 1: Bereiche (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
+// Schritt 1: Bereiche (Q-05, KERN v2): Kacheln wie die Projektwahl der Express-Anfrage (aria-pressed = Tinte-Fläche,
+// Haken bei gewählt). Texte, Namen, IDs und Verhalten unverändert.
 export default function Schritt1({ data, update }) {
     return (
-        <div className="space-y-5">
-            <fieldset>
+        <div className="flex flex-col gap-6">
+            <fieldset className="min-w-0">
                 <legend className="sr-only">Raum und Einsatzbereich (Mehrfachauswahl)</legend>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-2 @xl:grid-cols-2 @4xl:grid-cols-4">
                     {ROOM_OPTIONS.map((r) => {
                         const selected = data.rooms.includes(r.id);
                         return (
@@ -18,13 +19,13 @@ export default function Schritt1({ data, update }) {
                                 type="button"
                                 aria-pressed={selected}
                                 onClick={() => update({ rooms: toggleInList(data.rooms, r.id) })}
-                                className={cardOptionClass(selected)}
+                                className={cardOptionClass}
                             >
-                                <span className="flex items-center justify-between gap-2">
-                                    <span className="block font-black text-slate-900 text-sm">{r.title}</span>
-                                    {selected && <Check className="w-4 h-4 text-orange-600" aria-hidden="true" />}
+                                <span className="flex items-start justify-between gap-2">
+                                    <span className="block text-fs-3 font-semibold">{r.title}</span>
+                                    {selected && <Icon name="haken" groesse={5} className="mt-px" />}
                                 </span>
-                                <span className="block text-xs text-slate-600 mt-0.5">{r.desc}</span>
+                                <span className={`block text-fs-2 ${nebenClass(selected)}`}>{r.desc}</span>
                             </button>
                         );
                     })}
@@ -32,7 +33,8 @@ export default function Schritt1({ data, update }) {
             </fieldset>
 
             {data.rooms.includes('bad') && (
-                <div className="p-4 rounded-2xl bg-sky-50 border border-sky-200 text-sm text-slate-700">
+                <div className={merkClass}>
+                    <Icon name="info" groesse={5} className="mt-px" />
                     <p>
                         Für Bad, Dusche und Gäste-WC gibt es eigene Werkzeuge: den{' '}
                         <Link href="/bad/badplaner" className={linkClass}>Badplaner</Link> und den{' '}
@@ -43,7 +45,7 @@ export default function Schritt1({ data, update }) {
             )}
 
             {data.rooms.length === 0 && (
-                <p id="konfigurator-step1-hint" className="text-xs text-slate-700">
+                <p id="konfigurator-step1-hint" className={absatzHintClass}>
                     Bitte wählen Sie mindestens einen Bereich aus.
                 </p>
             )}

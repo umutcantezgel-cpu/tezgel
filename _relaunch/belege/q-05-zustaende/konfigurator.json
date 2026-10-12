@@ -1,0 +1,162 @@
+[
+  {
+    "ansicht": "m390",
+    "zustand": "s1-leer",
+    "datei": "zustaende-final/m390-s1-leer.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "s1-auswahl",
+    "datei": "zustaende-final/m390-s1-auswahl.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "s2",
+    "datei": "zustaende-final/m390-s2.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "s3",
+    "datei": "zustaende-final/m390-s3.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "s3-blockstufen",
+    "datei": "zustaende-final/m390-s3-blockstufen.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "s4",
+    "datei": "zustaende-final/m390-s4.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "s4-fehler",
+    "datei": "zustaende-final/m390-s4-fehler.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "erfolg",
+    "datei": "zustaende-final/m390-erfolg.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "m390",
+    "zustand": "whatsapp",
+    "datei": "zustaende-final/m390-whatsapp.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s1-leer",
+    "datei": "zustaende-final/d1440-s1-leer.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s1-auswahl",
+    "datei": "zustaende-final/d1440-s1-auswahl.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s2",
+    "datei": "zustaende-final/d1440-s2.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s3",
+    "datei": "zustaende-final/d1440-s3.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s3-blockstufen",
+    "datei": "zustaende-final/d1440-s3-blockstufen.png",
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s4",
+    "datei": "zustaende-final/d1440-s4.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "s4-fehler",
+    "datei": "zustaende-final/d1440-s4-fehler.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "erfolg",
+    "datei": "zustaende-final/d1440-erfolg.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  },
+  {
+    "ansicht": "d1440",
+    "zustand": "whatsapp",
+    "datei": "zustaende-final/d1440-whatsapp.png",
+    "axe": [],
+    "ueberlauf": [],
+    "kleineZiele": [],
+    "wortbruch": []
+  }
+]

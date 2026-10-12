@@ -1,43 +1,45 @@
-import { ArrowLeft, CheckCircle2, Phone } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import ResultSummary from './ResultSummary';
 
-// Ansicht nach dem Öffnen von WhatsApp (E-011: aus FliesenKonfigurator.jsx verschoben, Markup unverändert).
+// Ansicht nach dem Öffnen von WhatsApp (Q-05, KERN v2, wie die WhatsApp-Ansicht der Express-Anfrage): Etikett mit
+// Sprechblase, Hinweis, dass noch nicht gesendet ist, Ergebnis als Schriftfeld, Anrufen als Hauptknopf.
+// Texte und Verhalten unverändert.
 export default function WhatsAppGeoeffnet({ data, setSentVia }) {
     return (
-        <div className="glass-surface rounded-[2.5rem] p-6 sm:p-10 max-w-3xl mx-auto" role="status">
-            <div className="text-center">
-                <div className="icon-chip w-16 h-16 rounded-full mx-auto mb-5">
-                    <CheckCircle2 className="w-9 h-9" />
-                </div>
-                <span className="eyebrow mb-4">
+        <div className="@container">
+            <div className="border border-strich bg-fliese p-6 @xl:p-8 @4xl:p-12" role="status">
+                <span className={etikettKlassen}>
+                    <Icon name="sprechblase" groesse={4} className="text-tinte" />
                     WhatsApp wurde geöffnet
                 </span>
-                <p className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+                <p className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">
                     WhatsApp wurde geöffnet – bitte absenden
                 </p>
-                <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">
                     Ihre Anfrage ist vorbereitet, aber noch nicht verschickt. Senden Sie die Nachricht in{' '}
                     WhatsApp ab. Fotos von Raum, Untergrund oder Treppe
                     können Sie gern per WhatsApp nachsenden. Auf dieser Website wird nichts gespeichert.
                 </p>
-            </div>
 
-            <ResultSummary data={data} />
+                <div className="mt-8">
+                    <ResultSummary data={data} />
+                </div>
 
-            <p className="mt-6 text-sm text-slate-800 font-bold text-center">
-                Das verbindliche Festpreisangebot folgt nach dem kostenfreien Vor-Ort-Aufmaß durch {COMPANY_DATA.owner.fullName}.
-            </p>
+                <p className="mt-8 max-w-mass font-text text-fs-3 font-semibold text-tinte">
+                    Das verbindliche Festpreisangebot folgt nach dem kostenfreien Vor-Ort-Aufmaß durch {COMPANY_DATA.owner.fullName}.
+                </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto text-xs">
-                    <Phone className="w-4 h-4" />
-                    Direkt anrufen: {COMPANY_DATA.contact.phone}
-                </a>
-                <button type="button" onClick={() => setSentVia(null)} className="btn-ghost w-full sm:w-auto text-xs">
-                    <ArrowLeft className="w-4 h-4" />
-                    Zurück zur Anfrage
-                </button>
+                <div className="mt-6 flex flex-col items-stretch gap-3 @xl:flex-row @xl:items-center">
+                    <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon" className="text-center">
+                        Direkt anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+                    </Knopf>
+                    <Knopf variante="neben" onClick={() => setSentVia(null)} iconLinks="pfeil-links">
+                        Zurück zur Anfrage
+                    </Knopf>
+                </div>
             </div>
         </div>
     );
