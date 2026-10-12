@@ -13,6 +13,8 @@ import { etikettKlassen, seitenKlassen } from './stile';
 
 export interface EinstiegProps {
   art?: 'erzaehl' | 'arbeit';
+  /** Pfad über dem Etikett (Brotkrumen-Navigation als eigenes Element, nicht im Etikett-Absatz) */
+  pfad?: ReactNode;
   etikett?: ReactNode;
   titel: ReactNode;
   /** H1 in festen Zeilen (je Zeile ein Block); mit kreuzlinie rücken die Zeilen gestaffelt in die Flucht */
@@ -50,7 +52,7 @@ const LANGER_TITEL = 44;
  *  unter sm immer text-fs-3, damit Plan bzw. Kennwerte mobil früher kommen (Befund Q4) */
 const LANGER_VORSPANN = 280;
 
-export default function Einstieg({ art = 'erzaehl', etikett, titel, titelZeilen, unterzeile, vorspann, aktionen, merkmale, rand, fuss, achse = art === 'erzaehl', kreuzlinie = false, id, className }: EinstiegProps) {
+export default function Einstieg({ art = 'erzaehl', pfad, etikett, titel, titelZeilen, unterzeile, vorspann, aktionen, merkmale, rand, fuss, achse = art === 'erzaehl', kreuzlinie = false, id, className }: EinstiegProps) {
   const erzaehl = art === 'erzaehl';
   const langerTitel = textLaenge(titelZeilen ?? titel) > LANGER_TITEL;
   const langerVorspann = textLaenge(vorspann) > LANGER_VORSPANN;
@@ -60,6 +62,7 @@ export default function Einstieg({ art = 'erzaehl', etikett, titel, titelZeilen,
         {kreuzlinie ? <Kreuzlinie className={clsx('-top-8', ACHSE_LAGE)} /> : achse && <Laserachse className={ACHSE_LAGE} />}
         <div className={clsx('grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12', erzaehl ? 'lg:gap-x-12' : 'lg:gap-x-8')}>
           <div className={clsx('col-span-4 md:col-span-8', rand ? 'lg:col-span-7' : 'lg:col-span-9')}>
+            {pfad && <div className="mb-6">{pfad}</div>}
             {etikett && <p className={clsx(etikettKlassen, 'etikett-zeile mb-6 flex-wrap')}>{etikett}</p>}
             <h1 className={clsx('text-tinte', erzaehl && !langerTitel ? 'text-fs-7' : 'text-fs-6')} data-motion={kreuzlinie ? 'sig-flucht' : undefined}>
               {titelZeilen ? (

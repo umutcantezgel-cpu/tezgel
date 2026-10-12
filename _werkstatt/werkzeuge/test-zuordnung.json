@@ -88,6 +88,14 @@
     ]
   },
   {
+    "muster": "leistungen/\\[id\\]/\\[stadt\\]/page",
+    "specs": [
+      "funktion-schnellanfrage.spec.mjs",
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
     "muster": "standorte/\\[stadt\\]/page",
     "specs": [
       "funktion-schnellanfrage.spec.mjs"
