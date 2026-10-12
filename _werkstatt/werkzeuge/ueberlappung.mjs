@@ -140,9 +140,20 @@ function ausschnittPruefen() {
       if (c.r - c.l <= 2 || c.b - c.t <= 2) continue; // Rest eines Textes am Bildschirmrand oder sr-only
       // Lage ohne Ausschnitt und ohne Überlaufzuschnitt, damit dieselbe Zeile in verschiedenen Schritten gleich aussieht
       const d = fix ? { l: r0.left, t: r0.top, r: r0.right, b: r0.bottom } : { l: r0.left, t: r0.top + sy, r: r0.right, b: r0.bottom + sy };
-      texte.push({ el, text: kurz(knoten.nodeValue), r: c, d, feste });
+      texte.push({ el, text: kurz(knoten.nodeValue), r: c, d, feste, fix });
     }
   }
+
+  // Stapelhöhe: z-index des nächsten positionierten Vorfahren mit gesetztem z-index (sonst 0). Damit gilt ein klebendes
+  // Element im Seitenfluss nicht als Verdecker von Text in einer höher gestapelten festen Ebene (Kopf z-40 über einer
+  // klebenden Rückfrage) – sichtbar liegt dort der Kopf oben (E4-Rückgaben: Rückfrage am Abschnittsende „unter“ dem Kopf).
+  const stapel = (el) => {
+    for (let e = el; e && e !== document.body; e = e.parentElement) {
+      const cs = getComputedStyle(e);
+      if (cs.position !== 'static' && cs.zIndex !== 'auto') return Number(cs.zIndex) || 0;
+    }
+    return 0;
+  };
 
   // 2) Fixierte und klebende Elemente im Sichtfeld
   const fest = [];
@@ -172,6 +183,7 @@ function ausschnittPruefen() {
     for (const f of fest) {
       if (voll()) break;
       if (f.el.contains(t.el) || !ueberlappt(t.r, f.r, 1)) continue;
+      if (f.art === 'sticky' && t.fix && stapel(t.el) > stapel(f.el)) continue; // Text der festen Ebene liegt darüber
       roh.push({ art: f.art, t, durch: f.el, s: schnitt(t.r, f.r) });
     }
     for (const a of achsen) {
