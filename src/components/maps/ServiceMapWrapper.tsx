@@ -15,11 +15,11 @@ import { CITY_HUB_DATA, getDirectionsUrl } from "@/lib/maps/getMapEmbedUrl";
  *  folgt das Tor dem Inhalt (hoehenModus „inhalt“), die geladene Karte bleibt auf dieser Höhe. */
 export const KARTE_HOEHE = "460px";
 
-/** Stadtknopf: mindestens 44 px hoch, ohne vertikales Padding, damit die Leiste genau 44 px hoch bleibt. */
+/** Stadtknopf: mindestens 44 px hoch (Touch-Ziel); in der umbrechenden Stadtleiste nebeneinander, bei Platzmangel untereinander. */
 export const STADT_KLASSEN =
   "inline-flex min-h-11 items-center gap-2 rounded-none border border-strich bg-fliese px-4 py-2 font-text text-fs-2 text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
 
-/** Stadtleiste (feste Höhe h-11, darunter mb-4). Die Auswahl hält das übergeordnete Element. */
+/** Stadtleiste: die Knöpfe brechen um, keiner wird am Rand abgeschnitten (E3-SICHT-2-ERZ Befund 17). Die Auswahl hält das übergeordnete Element. */
 export function ServiceStadtleiste({
   selectedSlug,
   onSelectCity,
@@ -28,25 +28,23 @@ export function ServiceStadtleiste({
   onSelectCity: (slug: string) => void;
 }) {
   return (
-    <div className="mb-4 h-11 overflow-x-auto ohne-scrollleiste">
-      <div className="flex h-full min-w-max items-center gap-2">
-        {CITIES.map((city) => {
-          const isSelected = selectedSlug === city.slug;
-          return (
-            <button
-              key={city.slug}
-              type="button"
-              aria-pressed={isSelected}
-              onClick={() => onSelectCity(city.slug)}
-              className={STADT_KLASSEN}
-            >
-              <Icon name="ort" groesse={4} />
-              <span>{city.name}</span>
-              <Entfernung slug={city.slug} />
-            </button>
-          );
-        })}
-      </div>
+    <div className="mb-4 flex flex-wrap gap-2">
+      {CITIES.map((city) => {
+        const isSelected = selectedSlug === city.slug;
+        return (
+          <button
+            key={city.slug}
+            type="button"
+            aria-pressed={isSelected}
+            onClick={() => onSelectCity(city.slug)}
+            className={STADT_KLASSEN}
+          >
+            <Icon name="ort" groesse={4} />
+            <span>{city.name}</span>
+            <Entfernung slug={city.slug} />
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -239,6 +237,8 @@ export default function ServiceMapWrapper({ className = "" }: { className?: stri
         height={KARTE_HOEHE}
         className="w-full"
         hoehenModus="inhalt"
+        vorschau={<Einzugsband form="band" kompakt />}
+        vorschauAb="md"
       >
         <KarteBeimSehen selectedSlug={selectedSlug} onSelectCity={handleSelectCity} />
       </MapConsentGate>

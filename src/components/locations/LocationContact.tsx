@@ -6,7 +6,9 @@
 import React, { useId } from "react";
 import clsx from "clsx";
 import Icon from "@/components/icons/Icon";
+import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 import { etikettKlassen, knopfKlassen, seitenKlassen } from "@/components/kern/stile";
+import { COMPANY_DATA } from "@/config/company";
 import { siteConfig } from "@/lib/config";
 import { triggerHaptic } from "@/lib/haptics";
 
@@ -15,17 +17,20 @@ interface LocationContactProps {
   className?: string;
   /** Standortseiten (E4-NACH-09, Tempo Z-08): Inhalt erst in Sichtnähe zeichnen; opt-in, damit andere Seiten unverändert bleiben */
   spaet?: boolean;
+  /** in einem Abschnitt eingebettet: ohne eigenen Seitenrand und Abstand (sonst doppelter Einzug, Rückgabe E4-N2-07) */
+  eingebettet?: boolean;
 }
 
 export default function LocationContact({
   cityName = "Aßlar & Wetzlar",
   className = "",
   spaet = false,
+  eingebettet = false,
 }: LocationContactProps) {
   const titelId = useId();
   return (
-    <section aria-labelledby={titelId} className={clsx("py-12 lg:py-16", className)}>
-      <div className={clsx(seitenKlassen, spaet && "spaet-zeichnen")}>
+    <section aria-labelledby={titelId} className={clsx(!eingebettet && "py-12 lg:py-16", className)}>
+      <div className={clsx(!eingebettet && seitenKlassen, spaet && "spaet-zeichnen")}>
         <div className="grid grid-cols-1 gap-8 border border-fuge bg-fliese p-6 sm:p-8 md:grid-cols-2 lg:gap-12 lg:p-12">
           <div>
             <span className={etikettKlassen}>
@@ -48,11 +53,12 @@ export default function LocationContact({
               <a
                 href={siteConfig.contact.phone.link}
                 onClick={() => triggerHaptic("medium")}
-                className={knopfKlassen("haupt", "font-mono")}
+                className={knopfKlassen("haupt")}
                 data-motion="druck"
               >
                 <Icon name="telefon" groesse={5} />
-                <span>{siteConfig.contact.phone.formatted}</span>
+                {/* Telefon in Mono (wie überall im Bestand, E3-SICHT-2-ERZ Befund 17): der Schriftschnitt steht am Text, nicht an der Klasse */}
+                <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
               </a>
 
               <a
@@ -63,7 +69,7 @@ export default function LocationContact({
                 className={knopfKlassen("neben")}
                 data-motion="druck"
               >
-                <Icon name="sprechblase" groesse={5} />
+                <WhatsAppLogo className="size-5" />
                 <span>WhatsApp Chat</span>
               </a>
             </div>

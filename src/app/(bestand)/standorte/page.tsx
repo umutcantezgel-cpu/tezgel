@@ -1,9 +1,10 @@
 // Standorte (E3-BAU-04, KERN v2): Erzählansicht nach dem Muster der Startseite und von /leistungen. Einstieg mit
 // Laserachse, H1 links, Vorspann und Knöpfe, rechts das Planblatt mit dem Einzugsband (E4-NACH-01). Danach die Leitachse über die
-// Abschnitte: Gebietskarte (Karte hinter Einwilligung unverändert), Städte als Feldraster mit je einem Link,
-// Leistungen als Merkliste, Orte auf Anfrage, Anfahrt mit Standortkarte, regionaler Kontakt. Der Abschluss steht
-// außerhalb der Leitachse. Wortlaut, Überschriften, Links und IDs wie im Bestand (#karte-ueberschrift,
-// #leistungen-ueberall). Großer Moment: das Einzugsband im Planblatt des Einstiegs (E3-ORCH-03, E4-NACH-01).
+// Abschnitte: Gebietskarte (Einzugsband als Vorschau vor der Einwilligung, Karte dahinter unverändert), Städte als Feldraster mit
+// je einem Link, Leistungen als Merkliste, Anfahrt mit der Standortkarte, Anfrage (Orte auf Anfrage und regionaler Ansprechpartner
+// in einem Abschnitt; E4-N2-07). Der Abschluss steht außerhalb der Leitachse. Wortlaut, Überschriften, Links und IDs wie im
+// Bestand (#karte-ueberschrift, #leistungen-ueberall, #hauptsitz-heading, #weitere-orte-titel).
+// Großer Moment: das Einzugsband im Planblatt des Einstiegs (E3-ORCH-03, E4-NACH-01).
 import Link from 'next/link';
 import clsx from 'clsx';
 import { CITIES, type CityData } from '@/config/cities';
@@ -112,7 +113,8 @@ export default function StandorteOverviewPage() {
       />
 
       <Leitachse>
-        {/* 2. GEBIETSKARTE: das 45-km-Einsatzgebiet; die Karte liegt hinter der Einwilligung (unverändert) */}
+        {/* 2. GEBIETSKARTE: das 45-km-Einsatzgebiet; vor der Einwilligung zeigt der Platzhalter das gezeichnete Einzugsband
+              als Vorschau (E4-N2-07, Befund 16), die Karte liegt dahinter (unverändert). Stadtleiste und Kurzprofil wie im Bestand. */}
         <Abschnitt
           titelId="karte-ueberschrift"
           leitachse
@@ -181,37 +183,13 @@ export default function StandorteOverviewPage() {
           </div>
         </Abschnitt>
 
-        {/* 5. ORT NICHT AUFGEFÜHRT: Erläuterung links, Telefon und Beratung rechts */}
-        <Abschnitt
-          kopf="seitlich"
-          leitachse
-          spaet
-          etikett="Weitere Orte auf Anfrage"
-          titel="Ihre Stadt ist nicht aufgeführt?"
-          einleitung={
-            <p>
-              Wir sind unter anderem im {REGIONS.join(', ')} unterwegs. Rufen Sie uns einfach an – wir klären gern, ob
-              wir Ihr Projekt an Ihrem Wohnort übernehmen können.
-            </p>
-          }
-        >
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <Knopf href={`tel:${contact.phoneLink}`} iconLinks="telefon">
-              <span className="font-mono font-normal">{contact.phone}</span>
-            </Knopf>
-            <Knopf href="/kontakt" variante="neben">
-              Kostenlose Beratung anfragen
-            </Knopf>
-          </div>
-        </Abschnitt>
-
-        {/* 6. ANFAHRT: Firmensitz. Die Karte bleibt hinter der Einwilligung (unverändert, ohne eigenen Infokasten); daneben
+        {/* 5. ANFAHRT: Firmensitz. Die Karte bleibt hinter der Einwilligung (unverändert, ohne eigenen Infokasten); daneben
               Anschrift, Telefon, Zeiten und der Weg als Schriftfeld, damit keine leere Fläche neben der Karte bleibt
               (E4-NACH-09, Befund 23). Name, Routenlink und Wortlaut des Infokastens bleiben erhalten. */}
+        {/* ohne spaet: der Kartenbereich zeichnet sich sofort, damit die Standortkarte (lazy) beim Anspringen mitlädt */}
         <Abschnitt
           titelId="hauptsitz-heading"
           leitachse
-          spaet
           etikett="Firmensitz & Anfahrt"
           titel="Unser Hauptstandort in Aßlar"
           einleitung={
@@ -258,8 +236,34 @@ export default function StandorteOverviewPage() {
           </div>
         </Abschnitt>
 
-        {/* 7. REGIONALER KONTAKT: Bestandsbaustein, unverändert bis auf den Tempo-Schalter */}
-        <LocationContact cityName="Mittelhessen & Lahn-Dill-Kreis" spaet />
+        {/* 6. ANFRAGE (ein Abschnitt vor dem Abschluss, E4-N2-07 Befund 15): Kopf seitlich „Ihre Stadt ist nicht aufgeführt?“,
+              rechts Telefon und Beratung, darunter der regionale Ansprechpartner (LocationContact eingebettet: Etikett,
+              Überschrift, Zusagen, Wege unverändert) – keine leere Hälfte, kein doppelter Einzug */}
+        <Abschnitt
+          titelId="weitere-orte-titel"
+          kopf="seitlich"
+          leitachse
+          etikett="Weitere Orte auf Anfrage"
+          titel="Ihre Stadt ist nicht aufgeführt?"
+          einleitung={
+            <p>
+              Wir sind unter anderem im {REGIONS.join(', ')} unterwegs. Rufen Sie uns einfach an – wir klären gern, ob
+              wir Ihr Projekt an Ihrem Wohnort übernehmen können.
+            </p>
+          }
+        >
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Knopf href={`tel:${contact.phoneLink}`} iconLinks="telefon">
+              <span className="font-mono font-normal">{contact.phone}</span>
+            </Knopf>
+            <Knopf href="/kontakt" variante="neben">
+              Kostenlose Beratung anfragen
+            </Knopf>
+          </div>
+          <div className="mt-8">
+            <LocationContact cityName="Mittelhessen & Lahn-Dill-Kreis" eingebettet />
+          </div>
+        </Abschnitt>
       </Leitachse>
 
       {/* 8. ABSCHLUSS */}

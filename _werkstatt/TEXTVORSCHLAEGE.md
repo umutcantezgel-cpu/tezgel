@@ -72,6 +72,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E-020 (Meta, E3-Tor 2) | Meta-Beschreibung `/` (und og-Beschreibung von `/login`, erbt sie) | „… fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. …“ | „… fugenarme Großformate & Terrassen. Abdichtung DIN 18534. …“ (von main übernommen, 2e5317f, live seit 6156079) | keine Behauptung ohne Beleg (fugenlos, zertifiziert) |
 | E4-N2-05 | `/leistungen`, Fachgewerke | Zwischenzeile „Ausstattungsmerkmale & Vorteile:“ über der Merkmalliste | Aufklapper „Merkmale · N“ (Mono, N = Zahl der Merkmale); Liste wortgleich | Komposition: kürzere Felder (E3-SICHT-2-ERZ Befund 8) |
 | E4-N2-06 | `/leistungen/[id]` | – | Etiketten „Spezialisierungen“, „Fachkompetenz“, „Gewerke“, „Region“; im Direktkontakt Schriftfeld „Telefon“, „WhatsApp“, „E-Mail“ (Werte aus der Konfiguration) | jedes H2 mit Etikett, kein Leerfeld (Befunde 11, 12) |
+| E4-N2-07 | `/standorte`; `LocationContact` (auch /kontakt, Stadtseiten) | Block „Weitere Orte auf Anfrage“ zwischen Leistungen und Anfahrt; Telefonknopf in Archivo, WhatsApp als Sprechblase | Block wortgleich vor dem Abschluss im Anfrageabschnitt (Verschiebung); Telefon in Mono, WhatsApp-Markenzeichen | ein Anfrageabschnitt, eine Schreibweise (Befunde 15, 17) |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |
