@@ -1,0 +1,4096 @@
+{
+ "fassung": "F",
+ "fokus": {
+  "m390": [
+   {
+    "id": "45439782",
+    "tag": "input",
+    "type": "range",
+    "name": "1. Badezimmer-Größe in Quadratmetern:",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     672,
+     308,
+     44
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "60084378",
+    "tag": "button",
+    "type": "button",
+    "name": "KomplettbadSchlüsselfertig",
+    "pressed": "true",
+    "gruppe": "2. Sanierungsumfang:",
+    "rect": [
+     41,
+     563,
+     308,
+     73
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "04905782",
+    "tag": "button",
+    "type": "button",
+    "name": "TeilsanierungSanitär & Keramik",
+    "pressed": "false",
+    "gruppe": "2. Sanierungsumfang:",
+    "rect": [
+     41,
+     450,
+     308,
+     73
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "84511975",
+    "tag": "button",
+    "type": "button",
+    "name": "Wanne zu DuscheNur Duschbereich",
+    "pressed": "false",
+    "gruppe": "2. Sanierungsumfang:",
+    "rect": [
+     41,
+     451,
+     308,
+     73
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "91853764",
+    "tag": "button",
+    "type": "button",
+    "name": "SolideFunktional & zeitlos",
+    "pressed": "false",
+    "gruppe": "3. Ausstattungsniveau:",
+    "rect": [
+     41,
+     527,
+     308,
+     73
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "59287126",
+    "tag": "button",
+    "type": "button",
+    "name": "GehobenEdle Oberflächen",
+    "pressed": "true",
+    "gruppe": "3. Ausstattungsniveau:",
+    "rect": [
+     41,
+     450,
+     308,
+     73
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "67905984",
+    "tag": "button",
+    "type": "button",
+    "name": "ExklusivSpa-Charakter, Dusch-WC",
+    "pressed": "false",
+    "gruppe": "3. Ausstattungsniveau:",
+    "rect": [
+     41,
+     450,
+     308,
+     73
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "46681586",
+    "tag": "button",
+    "type": "button",
+    "name": "Bodengleiche Walk-In-Dusche",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     526,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "06402585",
+    "tag": "button",
+    "type": "button",
+    "name": "Badewanne / Komfortwanne",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     438,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "76155217",
+    "tag": "button",
+    "type": "button",
+    "name": "Dusch-WC mit Hygiene-Spülung",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     439,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "96141995",
+    "tag": "button",
+    "type": "button",
+    "name": "Möbel-Doppelwaschtisch",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     439,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "14651549",
+    "tag": "button",
+    "type": "button",
+    "name": "Fußbodenheizung",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     438,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "43335446",
+    "tag": "button",
+    "type": "button",
+    "name": "Design-Heizkörper",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     438,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "68520342",
+    "tag": "button",
+    "type": "button",
+    "name": "LED-Lichtspiegel",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     439,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "46843489",
+    "tag": "button",
+    "type": "button",
+    "name": "Großformat-Fliesenverlegung",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     41,
+     439,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "21190714",
+    "tag": "a",
+    "type": null,
+    "name": "Katalog",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     259,
+     384,
+     73,
+     44
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": [
+     "Kompaktbad 8,2 m²"
+    ]
+   },
+   {
+    "id": "07852558",
+    "tag": "a",
+    "type": null,
+    "name": "Kompaktbad 8,2 m²",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     124,
+     431,
+     134,
+     16
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": [
+     "Katalog"
+    ]
+   },
+   {
+    "id": "83574652",
+    "tag": "a",
+    "type": null,
+    "name": "Details zum barrierefreien Bad & Zuschüssen",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     103,
+     589,
+     214,
+     39
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 40,
+      "dicke_px": 0,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 56,
+      "dicke_px": 9,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": false,
+    "ring_min_dicke_px": 0,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "72043269",
+    "tag": "button",
+    "type": "button",
+    "name": "Angebot mit Festpreis anfordern",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     511,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "02816777",
+    "tag": "a",
+    "type": null,
+    "name": "Sofort anrufen: 06441 / 44 83 567",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     443,
+     308,
+     74
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "16868479",
+    "tag": "input",
+    "type": "text",
+    "name": "Ihr Name",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     340,
+     308,
+     53
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 3,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "65490955",
+    "tag": "input",
+    "type": "tel",
+    "name": "Ihre Telefonnummer",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     480,
+     308,
+     53
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 3,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "33158431",
+    "tag": "input",
+    "type": "email",
+    "name": "Ihre E-Mail-Adresse (optional)",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     480,
+     308,
+     53
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 3,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "35906394",
+    "tag": "button",
+    "type": "submit",
+    "name": "Online anfragen (mit E-Mail-Bestätigung)",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     456,
+     308,
+     73
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "80740067",
+    "tag": "button",
+    "type": "submit",
+    "name": "Anfrage per WhatsApp senden",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     41,
+     455,
+     308,
+     49
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "50908876",
+    "tag": "a",
+    "type": null,
+    "name": "Datenschutz",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     180,
+     469,
+     73,
+     14
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "m390",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   }
+  ],
+  "d1440": [
+   {
+    "id": "54738653",
+    "tag": "input",
+    "type": "range",
+    "name": "1. Badezimmer-Größe in Quadratmetern:",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     161,
+     712,
+     612,
+     44
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "61395525",
+    "tag": "button",
+    "type": "button",
+    "name": "KomplettbadSchlüsselfertig",
+    "pressed": "true",
+    "gruppe": "2. Sanierungsumfang:",
+    "rect": [
+     161,
+     586,
+     199,
+     76
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "05664373",
+    "tag": "button",
+    "type": "button",
+    "name": "TeilsanierungSanitär & Keramik",
+    "pressed": "false",
+    "gruppe": "2. Sanierungsumfang:",
+    "rect": [
+     368,
+     412,
+     199,
+     76
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "11206621",
+    "tag": "button",
+    "type": "button",
+    "name": "Wanne zu DuscheNur Duschbereich",
+    "pressed": "false",
+    "gruppe": "2. Sanierungsumfang:",
+    "rect": [
+     574,
+     412,
+     199,
+     76
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "11846149",
+    "tag": "button",
+    "type": "button",
+    "name": "SolideFunktional & zeitlos",
+    "pressed": "false",
+    "gruppe": "3. Ausstattungsniveau:",
+    "rect": [
+     161,
+     573,
+     199,
+     76
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "36801569",
+    "tag": "button",
+    "type": "button",
+    "name": "GehobenEdle Oberflächen",
+    "pressed": "true",
+    "gruppe": "3. Ausstattungsniveau:",
+    "rect": [
+     368,
+     413,
+     199,
+     76
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "57705376",
+    "tag": "button",
+    "type": "button",
+    "name": "ExklusivSpa-Charakter, Dusch-WC",
+    "pressed": "false",
+    "gruppe": "3. Ausstattungsniveau:",
+    "rect": [
+     574,
+     413,
+     199,
+     76
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "86399222",
+    "tag": "button",
+    "type": "button",
+    "name": "Bodengleiche Walk-In-Dusche",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     161,
+     573,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "55899390",
+    "tag": "button",
+    "type": "button",
+    "name": "Badewanne / Komfortwanne",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     471,
+     425,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "67997121",
+    "tag": "button",
+    "type": "button",
+    "name": "Dusch-WC mit Hygiene-Spülung",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     161,
+     484,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "65681142",
+    "tag": "button",
+    "type": "button",
+    "name": "Möbel-Doppelwaschtisch",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     471,
+     425,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "43130652",
+    "tag": "button",
+    "type": "button",
+    "name": "Fußbodenheizung",
+    "pressed": "false",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     161,
+     484,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "71302025",
+    "tag": "button",
+    "type": "button",
+    "name": "Design-Heizkörper",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     471,
+     425,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "21982322",
+    "tag": "button",
+    "type": "button",
+    "name": "LED-Lichtspiegel",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     161,
+     483,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "07719643",
+    "tag": "button",
+    "type": "button",
+    "name": "Großformat-Fliesenverlegung",
+    "pressed": "true",
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "rect": [
+     471,
+     424,
+     302,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "16874468",
+    "tag": "a",
+    "type": null,
+    "name": "Katalog",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     1186,
+     196,
+     76,
+     44
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "19774032",
+    "tag": "a",
+    "type": null,
+    "name": "Kompaktbad 8,2 m²",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     958,
+     475,
+     143,
+     17
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "44496314",
+    "tag": "a",
+    "type": null,
+    "name": "Details zum barrierefreien Bad & Zuschüssen",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     932,
+     590,
+     295,
+     42
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 63,
+      "dicke_px": 2,
+      "kontrast_median": 18.7
+     },
+     "unten": {
+      "abdeckung": 47,
+      "dicke_px": 0,
+      "kontrast_median": 18.7
+     },
+     "links": {
+      "abdeckung": 47,
+      "dicke_px": 9,
+      "kontrast_median": 18.7
+     },
+     "rechts": {
+      "abdeckung": 53,
+      "dicke_px": 0,
+      "kontrast_median": 18.7
+     }
+    },
+    "ring_ringsum_sichtbar": false,
+    "ring_min_dicke_px": 0,
+    "ring_min_kontrast": 18.7,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "59819338",
+    "tag": "button",
+    "type": "button",
+    "name": "Angebot mit Festpreis anfordern",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     870,
+     558,
+     409,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "80053653",
+    "tag": "a",
+    "type": null,
+    "name": "Sofort anrufen: 06441 / 44 83 567",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     870,
+     488,
+     409,
+     52
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "start",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "29859377",
+    "tag": "input",
+    "type": "text",
+    "name": "Ihr Name",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     870,
+     394,
+     409,
+     56
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 3,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "11830420",
+    "tag": "input",
+    "type": "tel",
+    "name": "Ihre Telefonnummer",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     870,
+     527,
+     409,
+     56
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 3,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "10038307",
+    "tag": "input",
+    "type": "email",
+    "name": "Ihre E-Mail-Adresse (optional)",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     870,
+     527,
+     409,
+     56
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 3,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 3,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "53552920",
+    "tag": "button",
+    "type": "submit",
+    "name": "Online anfragen (mit E-Mail-Bestätigung)",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     870,
+     503,
+     409,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "13506337",
+    "tag": "button",
+    "type": "submit",
+    "name": "Anfrage per WhatsApp senden",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     870,
+     487,
+     409,
+     51
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   },
+   {
+    "id": "20819647",
+    "tag": "a",
+    "type": null,
+    "name": "Datenschutz",
+    "pressed": null,
+    "gruppe": null,
+    "rect": [
+     966,
+     515,
+     79,
+     15
+    ],
+    "outline": "solid 2px rgb(10, 17, 41) offset 2px",
+    "schatten": "none",
+    "fokusVisible": true,
+    "verdeckt": [],
+    "phase": "formular",
+    "ansicht": "d1440",
+    "ring": {
+     "oben": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "unten": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "links": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     },
+     "rechts": {
+      "abdeckung": 100,
+      "dicke_px": 2,
+      "kontrast_median": 17
+     }
+    },
+    "ring_ringsum_sichtbar": true,
+    "ring_min_dicke_px": 2,
+    "ring_min_kontrast": 17,
+    "nachbarn_im_ringbereich": []
+   }
+  ]
+ },
+ "ziele": {
+  "m390-start": [
+   {
+    "el": "input#budget-sqm[range]",
+    "name": "",
+    "b": 308,
+    "h": 44,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "KomplettbadSchlüsselfertig",
+    "b": 308,
+    "h": 72.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "TeilsanierungSanitär & Keramik",
+    "b": 308,
+    "h": 72.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Wanne zu DuscheNur Duschbereich",
+    "b": 308,
+    "h": 72.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "SolideFunktional & zeitlos",
+    "b": 308,
+    "h": 72.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "GehobenEdle Oberflächen",
+    "b": 308,
+    "h": 72.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "ExklusivSpa-Charakter, Dusch-WC",
+    "b": 308,
+    "h": 72.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Bodengleiche Walk-In-Dusche",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Badewanne / Komfortwanne",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Dusch-WC mit Hygiene-Spülung",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Möbel-Doppelwaschtisch",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Fußbodenheizung",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Design-Heizkörper",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "LED-Lichtspiegel",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Großformat-Fliesenverlegung",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Katalog",
+    "b": 72.8,
+    "h": 44,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Kompaktbad 8,2 m²",
+    "b": 133.9,
+    "h": 16,
+    "unter44": true,
+    "inline": true
+   },
+   {
+    "el": "a",
+    "name": "Details zum barrierefreien Bad & Zuschüssen",
+    "b": 213.7,
+    "h": 39.3,
+    "unter44": true,
+    "inline": true
+   },
+   {
+    "el": "button[button]",
+    "name": "Angebot mit Festpreis anfordern",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Sofort anrufen: 06441 / 44 83 567",
+    "b": 308,
+    "h": 73.5,
+    "unter44": false,
+    "inline": false
+   }
+  ],
+  "m390-formular": [
+   {
+    "el": "input#budget-sqm[range]",
+    "name": "",
+    "b": 308,
+    "h": 44,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "input#budget-lead-name[text]",
+    "name": "Ihr Name *",
+    "b": 308,
+    "h": 53.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "input#budget-lead-phone[tel]",
+    "name": "Ihre Telefonnummer *",
+    "b": 308,
+    "h": 53.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "input#budget-lead-email[email]",
+    "name": "Ihre E-Mail-Adresse (optional für Bestätigung",
+    "b": 308,
+    "h": 53.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[submit]",
+    "name": "Online anfragen (mit E-Mail-Bestätigung)",
+    "b": 308,
+    "h": 72.5,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[submit]",
+    "name": "Anfrage per WhatsApp senden",
+    "b": 308,
+    "h": 49.3,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Datenschutz",
+    "b": 73.4,
+    "h": 14,
+    "unter44": true,
+    "inline": true
+   }
+  ],
+  "d1440-start": [
+   {
+    "el": "input#budget-sqm[range]",
+    "name": "",
+    "b": 612.2,
+    "h": 44,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "KomplettbadSchlüsselfertig",
+    "b": 198.7,
+    "h": 75.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "TeilsanierungSanitär & Keramik",
+    "b": 198.7,
+    "h": 75.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Wanne zu DuscheNur Duschbereich",
+    "b": 198.7,
+    "h": 75.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "SolideFunktional & zeitlos",
+    "b": 198.7,
+    "h": 75.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "GehobenEdle Oberflächen",
+    "b": 198.7,
+    "h": 75.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "ExklusivSpa-Charakter, Dusch-WC",
+    "b": 198.7,
+    "h": 75.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Bodengleiche Walk-In-Dusche",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Badewanne / Komfortwanne",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Dusch-WC mit Hygiene-Spülung",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Möbel-Doppelwaschtisch",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Fußbodenheizung",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Design-Heizkörper",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "LED-Lichtspiegel",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[button]",
+    "name": "Großformat-Fliesenverlegung",
+    "b": 302.1,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Katalog",
+    "b": 76.4,
+    "h": 44,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Kompaktbad 8,2 m²",
+    "b": 142.9,
+    "h": 17,
+    "unter44": true,
+    "inline": true
+   },
+   {
+    "el": "a",
+    "name": "Details zum barrierefreien Bad & Zuschüssen",
+    "b": 294.7,
+    "h": 41.8,
+    "unter44": true,
+    "inline": true
+   },
+   {
+    "el": "button[button]",
+    "name": "Angebot mit Festpreis anfordern",
+    "b": 408.8,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Sofort anrufen: 06441 / 44 83 567",
+    "b": 408.8,
+    "h": 51.8,
+    "unter44": false,
+    "inline": false
+   }
+  ],
+  "d1440-formular": [
+   {
+    "el": "input#budget-sqm[range]",
+    "name": "",
+    "b": 612.2,
+    "h": 44,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "input#budget-lead-name[text]",
+    "name": "Ihr Name *",
+    "b": 408.8,
+    "h": 56.4,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "input#budget-lead-phone[tel]",
+    "name": "Ihre Telefonnummer *",
+    "b": 408.8,
+    "h": 56.4,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "input#budget-lead-email[email]",
+    "name": "Ihre E-Mail-Adresse (optional für Bestätigung",
+    "b": 408.8,
+    "h": 56.4,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[submit]",
+    "name": "Online anfragen (mit E-Mail-Bestätigung)",
+    "b": 408.8,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "button[submit]",
+    "name": "Anfrage per WhatsApp senden",
+    "b": 408.8,
+    "h": 50.8,
+    "unter44": false,
+    "inline": false
+   },
+   {
+    "el": "a",
+    "name": "Datenschutz",
+    "b": 78.9,
+    "h": 15,
+    "unter44": true,
+    "inline": true
+   }
+  ],
+  "m390-erfolg": [
+   {
+    "el": "button",
+    "name": "Erneut anfragen oder anpassen",
+    "b": 216,
+    "h": 44,
+    "unter44": false
+   }
+  ],
+  "d1440-erfolg": [
+   {
+    "el": "button",
+    "name": "Erneut anfragen oder anpassen",
+    "b": 230,
+    "h": 44,
+    "unter44": false
+   }
+  ]
+ },
+ "labels": {
+  "m390-start": {
+   "felder": [
+    {
+     "id": "budget-sqm",
+     "type": "range",
+     "label": "1. Badezimmer-Größe in Quadratmetern:",
+     "label_sichtbar": true,
+     "placeholder": null,
+     "required": false,
+     "aria_required": null,
+     "autocomplete": null,
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": "8,2 m²",
+     "min": "3.5",
+     "max": "25",
+     "step": "0.5",
+     "value": "8"
+    }
+   ],
+   "gruppen": [
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "2. Sanierungsumfang:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "3. Ausstattungsniveau:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "4. Wunschausstattung & Extras:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 8
+    }
+   ],
+   "knoepfe": [
+    {
+     "text": "KomplettbadSchlüsselfertig",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "TeilsanierungSanitär & Keramik",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Wanne zu DuscheNur Duschbereich",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "SolideFunktional & zeitlos",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "GehobenEdle Oberflächen",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "ExklusivSpa-Charakter, Dusch-WC",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Bodengleiche Walk-In-Dusche",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Badewanne / Komfortwanne",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Dusch-WC mit Hygiene-Spülung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Möbel-Doppelwaschtisch",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Fußbodenheizung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Design-Heizkörper",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "LED-Lichtspiegel",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Großformat-Fliesenverlegung",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    }
+   ],
+   "ids": [
+    "budget-sqm"
+   ],
+   "wurzel_id": null,
+   "vorfahr_ids": [
+    "section#projekt-check",
+    "main#main-content"
+   ],
+   "projekt_check_anker": true,
+   "links": [
+    {
+     "text": "Katalog",
+     "href": "/bad/musterbaeder",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Kompaktbad 8,2 m²",
+     "href": "/bad/musterbaeder/basic-bad-8_2",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Details zum barrierefreien Bad & Zuschüssen",
+     "href": "/bad/barrierefreies-bad",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Sofort anrufen: 06441 / 44 83 567",
+     "href": "tel:+4964414483567",
+     "target": null,
+     "rel": null
+    }
+   ]
+  },
+  "m390-formular": {
+   "felder": [
+    {
+     "id": "budget-sqm",
+     "type": "range",
+     "label": "1. Badezimmer-Größe in Quadratmetern:",
+     "label_sichtbar": true,
+     "placeholder": null,
+     "required": false,
+     "aria_required": null,
+     "autocomplete": null,
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": "8,2 m²",
+     "min": "3.5",
+     "max": "25",
+     "step": "0.5",
+     "value": "8"
+    },
+    {
+     "id": "budget-lead-name",
+     "type": "text",
+     "label": "Ihr Name",
+     "label_sichtbar": true,
+     "placeholder": "Ihr Name *",
+     "required": true,
+     "aria_required": null,
+     "autocomplete": "name",
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": null,
+     "min": null,
+     "max": null,
+     "step": null,
+     "value": ""
+    },
+    {
+     "id": "budget-lead-phone",
+     "type": "tel",
+     "label": "Ihre Telefonnummer",
+     "label_sichtbar": true,
+     "placeholder": "Ihre Telefonnummer *",
+     "required": true,
+     "aria_required": null,
+     "autocomplete": "tel",
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": null,
+     "min": null,
+     "max": null,
+     "step": null,
+     "value": ""
+    },
+    {
+     "id": "budget-lead-email",
+     "type": "email",
+     "label": "Ihre E-Mail-Adresse (optional)",
+     "label_sichtbar": true,
+     "placeholder": "Ihre E-Mail-Adresse (optional für Bestätigung)",
+     "required": false,
+     "aria_required": null,
+     "autocomplete": "email",
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": null,
+     "min": null,
+     "max": null,
+     "step": null,
+     "value": ""
+    }
+   ],
+   "gruppen": [
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "2. Sanierungsumfang:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "3. Ausstattungsniveau:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "4. Wunschausstattung & Extras:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 8
+    }
+   ],
+   "knoepfe": [
+    {
+     "text": "KomplettbadSchlüsselfertig",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "TeilsanierungSanitär & Keramik",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Wanne zu DuscheNur Duschbereich",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "SolideFunktional & zeitlos",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "GehobenEdle Oberflächen",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "ExklusivSpa-Charakter, Dusch-WC",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Bodengleiche Walk-In-Dusche",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Badewanne / Komfortwanne",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Dusch-WC mit Hygiene-Spülung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Möbel-Doppelwaschtisch",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Fußbodenheizung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Design-Heizkörper",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "LED-Lichtspiegel",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Großformat-Fliesenverlegung",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    }
+   ],
+   "ids": [
+    "budget-sqm",
+    "budget-lead-name",
+    "budget-lead-phone",
+    "budget-lead-email"
+   ],
+   "wurzel_id": null,
+   "vorfahr_ids": [
+    "section#projekt-check",
+    "main#main-content"
+   ],
+   "projekt_check_anker": true,
+   "links": [
+    {
+     "text": "Katalog",
+     "href": "/bad/musterbaeder",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Kompaktbad 8,2 m²",
+     "href": "/bad/musterbaeder/basic-bad-8_2",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Details zum barrierefreien Bad & Zuschüssen",
+     "href": "/bad/barrierefreies-bad",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Datenschutz",
+     "href": "/datenschutz",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Sofort anrufen: 06441 / 44 83 567",
+     "href": "tel:+4964414483567",
+     "target": null,
+     "rel": null
+    }
+   ]
+  },
+  "d1440-start": {
+   "felder": [
+    {
+     "id": "budget-sqm",
+     "type": "range",
+     "label": "1. Badezimmer-Größe in Quadratmetern:",
+     "label_sichtbar": true,
+     "placeholder": null,
+     "required": false,
+     "aria_required": null,
+     "autocomplete": null,
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": "8,2 m²",
+     "min": "3.5",
+     "max": "25",
+     "step": "0.5",
+     "value": "8"
+    }
+   ],
+   "gruppen": [
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "2. Sanierungsumfang:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "3. Ausstattungsniveau:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "4. Wunschausstattung & Extras:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 8
+    }
+   ],
+   "knoepfe": [
+    {
+     "text": "KomplettbadSchlüsselfertig",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "TeilsanierungSanitär & Keramik",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Wanne zu DuscheNur Duschbereich",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "SolideFunktional & zeitlos",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "GehobenEdle Oberflächen",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "ExklusivSpa-Charakter, Dusch-WC",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Bodengleiche Walk-In-Dusche",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Badewanne / Komfortwanne",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Dusch-WC mit Hygiene-Spülung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Möbel-Doppelwaschtisch",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Fußbodenheizung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Design-Heizkörper",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "LED-Lichtspiegel",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Großformat-Fliesenverlegung",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    }
+   ],
+   "ids": [
+    "budget-sqm"
+   ],
+   "wurzel_id": null,
+   "vorfahr_ids": [
+    "section#projekt-check",
+    "main#main-content"
+   ],
+   "projekt_check_anker": true,
+   "links": [
+    {
+     "text": "Katalog",
+     "href": "/bad/musterbaeder",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Kompaktbad 8,2 m²",
+     "href": "/bad/musterbaeder/basic-bad-8_2",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Details zum barrierefreien Bad & Zuschüssen",
+     "href": "/bad/barrierefreies-bad",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Sofort anrufen: 06441 / 44 83 567",
+     "href": "tel:+4964414483567",
+     "target": null,
+     "rel": null
+    }
+   ]
+  },
+  "d1440-formular": {
+   "felder": [
+    {
+     "id": "budget-sqm",
+     "type": "range",
+     "label": "1. Badezimmer-Größe in Quadratmetern:",
+     "label_sichtbar": true,
+     "placeholder": null,
+     "required": false,
+     "aria_required": null,
+     "autocomplete": null,
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": "8,2 m²",
+     "min": "3.5",
+     "max": "25",
+     "step": "0.5",
+     "value": "8"
+    },
+    {
+     "id": "budget-lead-name",
+     "type": "text",
+     "label": "Ihr Name",
+     "label_sichtbar": true,
+     "placeholder": "Ihr Name *",
+     "required": true,
+     "aria_required": null,
+     "autocomplete": "name",
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": null,
+     "min": null,
+     "max": null,
+     "step": null,
+     "value": ""
+    },
+    {
+     "id": "budget-lead-phone",
+     "type": "tel",
+     "label": "Ihre Telefonnummer",
+     "label_sichtbar": true,
+     "placeholder": "Ihre Telefonnummer *",
+     "required": true,
+     "aria_required": null,
+     "autocomplete": "tel",
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": null,
+     "min": null,
+     "max": null,
+     "step": null,
+     "value": ""
+    },
+    {
+     "id": "budget-lead-email",
+     "type": "email",
+     "label": "Ihre E-Mail-Adresse (optional)",
+     "label_sichtbar": true,
+     "placeholder": "Ihre E-Mail-Adresse (optional für Bestätigung)",
+     "required": false,
+     "aria_required": null,
+     "autocomplete": "email",
+     "inputmode": null,
+     "name": null,
+     "describedby": null,
+     "beschreibung": null,
+     "sternchen_sichtbar": false,
+     "sternchen_aria_hidden": false,
+     "valuetext": null,
+     "min": null,
+     "max": null,
+     "step": null,
+     "value": ""
+    }
+   ],
+   "gruppen": [
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "2. Sanierungsumfang:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "3. Ausstattungsniveau:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 3
+    },
+    {
+     "tag": "fieldset",
+     "role": null,
+     "legend": "4. Wunschausstattung & Extras:",
+     "aria_label": null,
+     "labelledby": null,
+     "knoepfe": 8
+    }
+   ],
+   "knoepfe": [
+    {
+     "text": "KomplettbadSchlüsselfertig",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "TeilsanierungSanitär & Keramik",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Wanne zu DuscheNur Duschbereich",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "SolideFunktional & zeitlos",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "GehobenEdle Oberflächen",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "ExklusivSpa-Charakter, Dusch-WC",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Bodengleiche Walk-In-Dusche",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Badewanne / Komfortwanne",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Dusch-WC mit Hygiene-Spülung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Möbel-Doppelwaschtisch",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Fußbodenheizung",
+     "role": null,
+     "pressed": "false",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Design-Heizkörper",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "LED-Lichtspiegel",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    },
+    {
+     "text": "Großformat-Fliesenverlegung",
+     "role": null,
+     "pressed": "true",
+     "checked": null,
+     "type": "button"
+    }
+   ],
+   "ids": [
+    "budget-sqm",
+    "budget-lead-name",
+    "budget-lead-phone",
+    "budget-lead-email"
+   ],
+   "wurzel_id": null,
+   "vorfahr_ids": [
+    "section#projekt-check",
+    "main#main-content"
+   ],
+   "projekt_check_anker": true,
+   "links": [
+    {
+     "text": "Katalog",
+     "href": "/bad/musterbaeder",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Kompaktbad 8,2 m²",
+     "href": "/bad/musterbaeder/basic-bad-8_2",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Details zum barrierefreien Bad & Zuschüssen",
+     "href": "/bad/barrierefreies-bad",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Datenschutz",
+     "href": "/datenschutz",
+     "target": null,
+     "rel": null
+    },
+    {
+     "text": "Sofort anrufen: 06441 / 44 83 567",
+     "href": "tel:+4964414483567",
+     "target": null,
+     "rel": null
+    }
+   ]
+  },
+  "m390-erfolg": {
+   "fokus_nach_absenden": "div Erledigt: Projektcheck übermitteltTEZ-26-TESTViele",
+   "meldung": {
+    "text_element": "p",
+    "naechste_rolle": "div role=status",
+    "aria_live": null,
+    "tabindex": "-1"
+   },
+   "felder_invalid": [
+    "budget-sqm: aria-invalid=null describedby=null"
+   ]
+  },
+  "m390-serverfehler": {
+   "fokus_nach_absenden": "div Fehler: Test-Ausfall",
+   "meldung": {
+    "text_element": "div",
+    "naechste_rolle": "div role=alert",
+    "aria_live": null,
+    "tabindex": null
+   },
+   "felder_invalid": [
+    "budget-sqm: aria-invalid=null describedby=null",
+    "budget-lead-name: aria-invalid=null describedby=null",
+    "budget-lead-phone: aria-invalid=null describedby=null",
+    "budget-lead-email: aria-invalid=null describedby=null"
+   ]
+  },
+  "d1440-erfolg": {
+   "fokus_nach_absenden": "div Erledigt: Projektcheck übermitteltTEZ-26-TESTViele",
+   "meldung": {
+    "text_element": "p",
+    "naechste_rolle": "div role=status",
+    "aria_live": null,
+    "tabindex": "-1"
+   },
+   "felder_invalid": [
+    "budget-sqm: aria-invalid=null describedby=null"
+   ]
+  },
+  "d1440-serverfehler": {
+   "fokus_nach_absenden": "div Fehler: Test-Ausfall",
+   "meldung": {
+    "text_element": "div",
+    "naechste_rolle": "div role=alert",
+    "aria_live": null,
+    "tabindex": null
+   },
+   "felder_invalid": [
+    "budget-sqm: aria-invalid=null describedby=null",
+    "budget-lead-name: aria-invalid=null describedby=null",
+    "budget-lead-phone: aria-invalid=null describedby=null",
+    "budget-lead-email: aria-invalid=null describedby=null"
+   ]
+  }
+ },
+ "aria": {
+  "m390": {
+   "regler_vorher": {
+    "value": "8",
+    "valuetext": "8,2 m²",
+    "valuenow": null
+   },
+   "regler_nach_4x_pfeil_rechts": {
+    "value": "10",
+    "valuetext": "10 m²",
+    "valuenow": null,
+    "anzeige": [
+     "dl live=polite: Badgrößeca. 10 m²UmfangKomplettbadAussta"
+    ]
+   },
+   "extra_badewanne": {
+    "vorher": "false",
+    "nach_leertaste": "true",
+    "nach_enter": "false"
+   },
+   "stufe_solide": {
+    "vorher": "false",
+    "nach_leertaste": "true",
+    "gedrueckte_in_gruppe_danach": 1
+   },
+   "pfeil_rechts_in_stufengruppe_fokus_auf": "SolideFunktional & zeitlos"
+  },
+  "d1440": {
+   "regler_vorher": {
+    "value": "8",
+    "valuetext": "8,2 m²",
+    "valuenow": null
+   },
+   "regler_nach_4x_pfeil_rechts": {
+    "value": "10",
+    "valuetext": "10 m²",
+    "valuenow": null,
+    "anzeige": [
+     "dl live=polite: Badgrößeca. 10 m²UmfangKomplettbadAussta"
+    ]
+   },
+   "extra_badewanne": {
+    "vorher": "false",
+    "nach_leertaste": "true",
+    "nach_enter": "false"
+   },
+   "stufe_solide": {
+    "vorher": "false",
+    "nach_leertaste": "true",
+    "gedrueckte_in_gruppe_danach": 1
+   },
+   "pfeil_rechts_in_stufengruppe_fokus_auf": "SolideFunktional & zeitlos"
+  }
+ },
+ "baum": {
+  "m390-start": "- text: Bad-Projektcheck\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- button \"Angebot mit Festpreis anfordern\"\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567",
+  "m390-formular": "- text: Bad-Projektcheck\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- text: Ihr Name\n- textbox \"Ihr Name\":\n  - /placeholder: Ihr Name *\n- text: Ihre Telefonnummer\n- textbox \"Ihre Telefonnummer\":\n  - /placeholder: Ihre Telefonnummer *\n- text: Ihre E-Mail-Adresse (optional)\n- textbox \"Ihre E-Mail-Adresse (optional)\":\n  - /placeholder: Ihre E-Mail-Adresse (optional für Bestätigung)\n- button \"Online anfragen (mit E-Mail-Bestätigung)\"\n- button \"Anfrage per WhatsApp senden\"\n- paragraph:\n  - text: Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet.\n  - link \"Datenschutz\":\n    - /url: /datenschutz\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567",
+  "d1440-start": "- text: Bad-Projektcheck Festpreis nach Vor-Ort-Aufmaß\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- button \"Angebot mit Festpreis anfordern\"\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567",
+  "d1440-formular": "- text: Bad-Projektcheck Festpreis nach Vor-Ort-Aufmaß\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- text: Ihr Name\n- textbox \"Ihr Name\":\n  - /placeholder: Ihr Name *\n- text: Ihre Telefonnummer\n- textbox \"Ihre Telefonnummer\":\n  - /placeholder: Ihre Telefonnummer *\n- text: Ihre E-Mail-Adresse (optional)\n- textbox \"Ihre E-Mail-Adresse (optional)\":\n  - /placeholder: Ihre E-Mail-Adresse (optional für Bestätigung)\n- button \"Online anfragen (mit E-Mail-Bestätigung)\"\n- button \"Anfrage per WhatsApp senden\"\n- paragraph:\n  - text: Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet.\n  - link \"Datenschutz\":\n    - /url: /datenschutz\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567",
+  "m390-erfolg": "- text: Bad-Projektcheck\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- status:\n  - paragraph: \"Erledigt: Projektcheck übermittelt\"\n  - text: TEZ-26-TEST\n  - paragraph:\n    - text: Vielen Dank,\n    - strong: Prüf Person\n    - text: \"! Ihre Projektangaben für ca. 8,2 m² (Komplettbad) sind direkt bei Herrn Deniz Tezgel eingegangen.\"\n  - strong: \"Nächste Schritte:\"\n  - paragraph: 1. Herr Tezgel prüft Ihre Angaben & Materialbedarf.\n  - paragraph: 2. Rückruf binnen 24–48 Std. zur Vor-Ort-Aufmaß-Abstimmung.\n  - button \"Erneut anfragen oder anpassen\"\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567",
+  "m390-serverfehler": "- text: Bad-Projektcheck\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- alert: \"Fehler: Test-Ausfall\"\n- text: Ihr Name\n- textbox \"Ihr Name\":\n  - /placeholder: Ihr Name *\n  - text: Prüf Person\n- text: Ihre Telefonnummer\n- textbox \"Ihre Telefonnummer\":\n  - /placeholder: Ihre Telefonnummer *\n  - text: 0170 0000000\n- text: Ihre E-Mail-Adresse (optional)\n- textbox \"Ihre E-Mail-Adresse (optional)\":\n  - /placeholder: Ihre E-Mail-Adresse (optional für Bestätigung)\n- button \"Online anfragen (mit E-Mail-Bestätigung)\"\n- button \"Anfrage per WhatsApp senden\"\n- paragraph:\n  - text: Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet.\n  - link \"Datenschutz\":\n    - /url: /datenschutz\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567",
+  "d1440-erfolg": "- text: Bad-Projektcheck Festpreis nach Vor-Ort-Aufmaß\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- status:\n  - paragraph: \"Erledigt: Projektcheck übermittelt\"\n  - text: TEZ-26-TEST\n  - paragraph:\n    - text: Vielen Dank,\n    - strong: Prüf Person\n    - text: \"! Ihre Projektangaben für ca. 8,2 m² (Komplettbad) sind direkt bei Herrn Deniz Tezgel eingegangen.\"\n  - strong: \"Nächste Schritte:\"\n  - paragraph: 1. Herr Tezgel prüft Ihre Angaben & Materialbedarf.\n  - paragraph: 2. Rückruf binnen 24–48 Std. zur Vor-Ort-Aufmaß-Abstimmung.\n  - button \"Erneut anfragen oder anpassen\"\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567",
+  "d1440-serverfehler": "- text: Bad-Projektcheck Festpreis nach Vor-Ort-Aufmaß\n- heading \"Ihr Badprojekt in vier Schritten beschreiben\" [level=2]\n- paragraph: Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.\n- text: \"1. Badezimmer-Größe in Quadratmetern: 8,2 m²\"\n- slider \"1. Badezimmer-Größe in Quadratmetern:\": \"8\"\n- text: 3,5 m² (Gäste-WC) 8,2 m² (Standard) 15,9 m² (Komfort) 25 m² (Spa)\n- group \"2. Sanierungsumfang:\":\n  - text: \"2. Sanierungsumfang:\"\n  - button \"Komplettbad Schlüsselfertig\" [pressed]\n  - button \"Teilsanierung Sanitär & Keramik\"\n  - button \"Wanne zu Dusche Nur Duschbereich\"\n- group \"3. Ausstattungsniveau:\":\n  - text: \"3. Ausstattungsniveau:\"\n  - button \"Solide Funktional & zeitlos\"\n  - button \"Gehoben Edle Oberflächen\" [pressed]\n  - button \"Exklusiv Spa-Charakter, Dusch-WC\"\n- group \"4. Wunschausstattung & Extras:\":\n  - text: \"4. Wunschausstattung & Extras:\"\n  - button \"Bodengleiche Walk-In-Dusche\" [pressed]\n  - button \"Badewanne / Komfortwanne\"\n  - button \"Dusch-WC mit Hygiene-Spülung\"\n  - button \"Möbel-Doppelwaschtisch\"\n  - button \"Fußbodenheizung\"\n  - button \"Design-Heizkörper\" [pressed]\n  - button \"LED-Lichtspiegel\" [pressed]\n  - button \"Großformat-Fliesenverlegung\" [pressed]\n- text: Ihre Zusammenfassung\n- term: Badgröße\n- definition: ca. 8,2 m²\n- term: Umfang\n- definition: Komplettbad\n- term: Ausstattung\n- definition: Gehoben\n- term: Wünsche\n- definition: Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung\n- paragraph: \"Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.\"\n- paragraph:\n  - text: \"Hinweis: Musterbad-Vergleich:\"\n  - link \"Katalog\":\n    - /url: /bad/musterbaeder\n- paragraph:\n  - text: \"Passend:\"\n  - link \"Kompaktbad 8,2 m²\":\n    - /url: /bad/musterbaeder/basic-bad-8_2\n- text: \"Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.\"\n- link \"Details zum barrierefreien Bad & Zuschüssen\":\n  - /url: /bad/barrierefreies-bad\n- alert: \"Fehler: Test-Ausfall\"\n- text: Ihr Name\n- textbox \"Ihr Name\":\n  - /placeholder: Ihr Name *\n  - text: Prüf Person\n- text: Ihre Telefonnummer\n- textbox \"Ihre Telefonnummer\":\n  - /placeholder: Ihre Telefonnummer *\n  - text: 0170 0000000\n- text: Ihre E-Mail-Adresse (optional)\n- textbox \"Ihre E-Mail-Adresse (optional)\":\n  - /placeholder: Ihre E-Mail-Adresse (optional für Bestätigung)\n- button \"Online anfragen (mit E-Mail-Bestätigung)\"\n- button \"Anfrage per WhatsApp senden\"\n- paragraph:\n  - text: Ihre Angaben werden nur zur Bearbeitung Ihrer Anfrage verwendet.\n  - link \"Datenschutz\":\n    - /url: /datenschutz\n- 'link \"Sofort anrufen: 06441 / 44 83 567\"':\n  - /url: tel:+4964414483567"
+ },
+ "ueberlauf": {
+  "m390-start": [],
+  "m390-formular": [],
+  "d1440-start": [],
+  "d1440-formular": [],
+  "w320": {
+   "start": [],
+   "formular": []
+  },
+  "zoom200-css-1280": {
+   "start": [],
+   "formular": []
+  },
+  "zoom200-aequivalent-640x400-dpr2": {
+   "start": [],
+   "formular": []
+  },
+  "textabstand-m390": {
+   "start": [],
+   "formular": [],
+   "hinweis": "nur neu gegenüber ohne Textabstand"
+  },
+  "textabstand-d1440": {
+   "start": [],
+   "formular": [],
+   "hinweis": "nur neu gegenüber ohne Textabstand"
+  }
+ },
+ "kontrast": {
+  "m390": [
+   {
+    "gruppe": "2. Sanierungsumfang:",
+    "gedrueckt": "true",
+    "rand": "1px rgb(10, 17, 41)",
+    "hintergrund": "rgb(10, 17, 41)",
+    "text": "rgb(245, 244, 240)",
+    "kontrast_rand_zu_umgebung": 18.66,
+    "kontrast_hintergrund_zu_umgebung": 18.66,
+    "kontrast_text": 16.96,
+    "indikator": null
+   },
+   {
+    "gruppe": "2. Sanierungsumfang:",
+    "gedrueckt": "false",
+    "rand": "1px rgb(129, 134, 152)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 3.62,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": null
+   },
+   {
+    "gruppe": "3. Ausstattungsniveau:",
+    "gedrueckt": "true",
+    "rand": "1px rgb(10, 17, 41)",
+    "hintergrund": "rgb(10, 17, 41)",
+    "text": "rgb(245, 244, 240)",
+    "kontrast_rand_zu_umgebung": 18.66,
+    "kontrast_hintergrund_zu_umgebung": 18.66,
+    "kontrast_text": 16.96,
+    "indikator": null
+   },
+   {
+    "gruppe": "3. Ausstattungsniveau:",
+    "gedrueckt": "false",
+    "rand": "1px rgb(129, 134, 152)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 3.62,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": null
+   },
+   {
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "gedrueckt": "true",
+    "rand": "1px rgb(10, 17, 41)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 18.66,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": {
+     "tag": "span",
+     "groesse": "20×20",
+     "rand": "1px rgb(10, 17, 41)",
+     "hintergrund": "rgb(10, 17, 41)",
+     "farbe": "rgb(245, 244, 240)",
+     "stroke": "none",
+     "kontrast_rand_zu_knopf": 18.66,
+     "kontrast_fuellung_zu_knopf": 18.66,
+     "kontrast_farbe_zu_knopf": 1.1
+    }
+   },
+   {
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "gedrueckt": "false",
+    "rand": "1px rgb(129, 134, 152)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 3.62,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": {
+     "tag": "span",
+     "groesse": "20×20",
+     "rand": "1px rgb(129, 134, 152)",
+     "hintergrund": "rgb(255, 255, 255)",
+     "farbe": "rgb(10, 17, 41)",
+     "stroke": "none",
+     "kontrast_rand_zu_knopf": 3.62,
+     "kontrast_fuellung_zu_knopf": 1,
+     "kontrast_farbe_zu_knopf": 18.66
+    }
+   },
+   {
+    "regler": true,
+    "hoehe": 44,
+    "appearance": "auto",
+    "accent": "rgb(10, 17, 41)",
+    "hintergrund": "rgba(0, 0, 0, 0)",
+    "kontrast_spur_zu_umgebung": null
+   }
+  ],
+  "d1440": [
+   {
+    "gruppe": "2. Sanierungsumfang:",
+    "gedrueckt": "true",
+    "rand": "1px rgb(10, 17, 41)",
+    "hintergrund": "rgb(10, 17, 41)",
+    "text": "rgb(245, 244, 240)",
+    "kontrast_rand_zu_umgebung": 18.66,
+    "kontrast_hintergrund_zu_umgebung": 18.66,
+    "kontrast_text": 16.96,
+    "indikator": null
+   },
+   {
+    "gruppe": "2. Sanierungsumfang:",
+    "gedrueckt": "false",
+    "rand": "1px rgb(129, 134, 152)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 3.62,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": null
+   },
+   {
+    "gruppe": "3. Ausstattungsniveau:",
+    "gedrueckt": "true",
+    "rand": "1px rgb(10, 17, 41)",
+    "hintergrund": "rgb(10, 17, 41)",
+    "text": "rgb(245, 244, 240)",
+    "kontrast_rand_zu_umgebung": 18.66,
+    "kontrast_hintergrund_zu_umgebung": 18.66,
+    "kontrast_text": 16.96,
+    "indikator": null
+   },
+   {
+    "gruppe": "3. Ausstattungsniveau:",
+    "gedrueckt": "false",
+    "rand": "1px rgb(129, 134, 152)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 3.62,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": null
+   },
+   {
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "gedrueckt": "true",
+    "rand": "1px rgb(10, 17, 41)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 18.66,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": {
+     "tag": "span",
+     "groesse": "20×20",
+     "rand": "1px rgb(10, 17, 41)",
+     "hintergrund": "rgb(10, 17, 41)",
+     "farbe": "rgb(245, 244, 240)",
+     "stroke": "none",
+     "kontrast_rand_zu_knopf": 18.66,
+     "kontrast_fuellung_zu_knopf": 18.66,
+     "kontrast_farbe_zu_knopf": 1.1
+    }
+   },
+   {
+    "gruppe": "4. Wunschausstattung & Extras:",
+    "gedrueckt": "false",
+    "rand": "1px rgb(129, 134, 152)",
+    "hintergrund": "rgb(255, 255, 255)",
+    "text": "rgb(10, 17, 41)",
+    "kontrast_rand_zu_umgebung": 3.62,
+    "kontrast_hintergrund_zu_umgebung": 1,
+    "kontrast_text": 18.66,
+    "indikator": {
+     "tag": "span",
+     "groesse": "20×20",
+     "rand": "1px rgb(129, 134, 152)",
+     "hintergrund": "rgb(255, 255, 255)",
+     "farbe": "rgb(10, 17, 41)",
+     "stroke": "none",
+     "kontrast_rand_zu_knopf": 3.62,
+     "kontrast_fuellung_zu_knopf": 1,
+     "kontrast_farbe_zu_knopf": 18.66
+    }
+   },
+   {
+    "regler": true,
+    "hoehe": 44,
+    "appearance": "auto",
+    "accent": "rgb(10, 17, 41)",
+    "hintergrund": "rgba(0, 0, 0, 0)",
+    "kontrast_spur_zu_umgebung": null
+   }
+  ]
+ },
+ "probleme": []
+}

@@ -1,0 +1,164 @@
+{
+ "vorher": "f-05-vorher-b",
+ "nachher": "f-05-nachher",
+ "seiten": {
+  "/bad/projekt-check": {
+   "main_zeilen": {
+    "entfernt": [
+     "HWK Fachbetrieb · HWK Wiesbaden",
+     "Punkt 01",
+     "Garantierter Standard",
+     "Punkt 02",
+     "Garantierter Standard",
+     "Punkt 03",
+     "Garantierter Standard",
+     "Punkt 04",
+     "Garantierter Standard",
+     "Punkt 05",
+     "Garantierter Standard",
+     "Punkt 06",
+     "Garantierter Standard",
+     "Punkt 07",
+     "Garantierter Standard",
+     "Punkt 08",
+     "Garantierter Standard"
+    ],
+    "hinzu": [
+     "Hinweis:",
+     "Hinweis:",
+     "Ansprechpartner",
+     "Deniz Tezgel",
+     "Telefon",
+     "Mobil & WhatsApp",
+     "0172 / 67 28 504",
+     "E-Mail",
+     "info@tezgel.de",
+     "Sitz",
+     "Hohwardstraße 14, 35614 Aßlar",
+     "HWK Fachbetrieb · HWK Wiesbaden · Garantierter Standard",
+     "01",
+     "02",
+     "03",
+     "04",
+     "05",
+     "06",
+     "07",
+     "08",
+     "06441 / 44 83 567"
+    ]
+   },
+   "header_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "WhatsApp"
+    ]
+   }
+  },
+  "/bad": {
+   "main_zeilen": {
+    "entfernt": [
+     "Bad-Projektcheck",
+     "Festpreis nach Vor-Ort-Aufmaß",
+     "Ihr Badprojekt in vier Schritten beschreiben",
+     "Wählen Sie Größe, Umfang, Ausstattungsniveau und Wünsche – wir erhalten eine strukturierte Anfrage und melden uns für einen kostenfreien Aufmaßtermin in Aßlar, Wetzlar und Mittelhessen.",
+     "1. Badezimmer-Größe in Quadratmetern:",
+     "8,2 m²",
+     "3,5 m² (Gäste-WC)",
+     "8,2 m² (Standard)",
+     "15,9 m² (Komfort)",
+     "25 m² (Spa)",
+     "2. Sanierungsumfang:",
+     "Komplettbad",
+     "Schlüsselfertig",
+     "Teilsanierung",
+     "Sanitär & Keramik",
+     "Wanne zu Dusche",
+     "Nur Duschbereich",
+     "3. Ausstattungsniveau:",
+     "Solide",
+     "Funktional & zeitlos",
+     "Gehoben",
+     "Edle Oberflächen",
+     "Exklusiv",
+     "Spa-Charakter, Dusch-WC",
+     "4. Wunschausstattung & Extras:",
+     "Bodengleiche Walk-In-Dusche",
+     "Badewanne / Komfortwanne",
+     "Dusch-WC mit Hygiene-Spülung",
+     "Möbel-Doppelwaschtisch",
+     "Fußbodenheizung",
+     "Design-Heizkörper",
+     "LED-Lichtspiegel",
+     "Großformat-Fliesenverlegung",
+     "Ihre Zusammenfassung",
+     "Badgröße",
+     "ca. 8,2 m²",
+     "Umfang",
+     "Komplettbad",
+     "Ausstattung",
+     "Gehoben",
+     "Wünsche",
+     "Bodengleiche Walk-In-Dusche, Design-Heizkörper, LED-Lichtspiegel, Großformat-Fliesenverlegung",
+     "Jedes Bad ist anders: Untergrund, Leitungswege und Materialwahl entscheiden über den Aufwand. Den verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.",
+     "Musterbad-Vergleich:",
+     "Katalog",
+     "Passend: Kompaktbad 8,2 m²",
+     "Bis zu 4.180 € Pflegekassen-Zuschuss",
+     "Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2. Details zum barrierefreien Bad & Zuschüssen",
+     "Angebot mit Festpreis anfordern",
+     "Sofort anrufen: 06441 / 44 83 567",
+     "Interaktive Badanfrage · Schritt 1 von 5",
+     "Kostenlos & unverbindlich",
+     "Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "1. Um welche Art von Immobilie handelt es sich?",
+     "Einfamilienhaus",
+     "Freistehend oder Reihenhaus",
+     "Eigentumswohnung",
+     "Im Mehrparteienhaus",
+     "Mehrfamilienhaus",
+     "Vermieter / Hausverwaltung",
+     "Gewerbeobjekt",
+     "Büro, Praxis, Betrieb",
+     "Weiter zu Schritt 2"
+    ],
+    "hinzu": [
+     "Blatt",
+     "Badsanierung",
+     "Verband",
+     "Halbverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008"
+    ]
+   },
+   "header_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "WhatsApp"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 85,
+  "hinzu": 35,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

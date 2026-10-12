@@ -1,39 +1,68 @@
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Hinweis from '@/components/kern/Hinweis';
 import Knopf from '@/components/kern/Knopf';
-import { etikettKlassen, knopfKlassen, labelKlassen, linkKlassen, pflichtKlassen } from '@/components/kern/stile';
+import { etikettKlassen, knopfKlassen, labelKlassen, linkKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
-import { inputClass } from './stile';
+import { NBSP, inputClass, pflichtClass } from './stile';
+
+// Badgröße über beide Spalten (der Messwert, in Mono), Umfang und Ausstattung nebeneinander, Wünsche über beide Spalten.
+const BREIT = { Badgröße: '@sm:col-span-2', Wünsche: '@sm:col-span-2' };
+
+// Zahl und Einheit zusammenhalten („Kompaktbad 8,2 m²“ aus dem Hook): nur die Anzeige, Wortlaut gleich.
+const mitEinheit = (text) => text.replace(/ m²/g, `${NBSP}m²`);
 
 // Zusammenfassung, Musterbad, Zuschuss und Anfrage (Formular, Erfolg, Fehler) (E-011: aus BadProjektCheck.jsx verschoben).
-// E3-BAU-19: Darstellung nach dem KERN-Formularmuster. Infokästen als Hinweis; Erfolg als Hinweis art="erfolg" mit role="status";
-// WhatsApp-Zustand als Hinweis art="merk" (die Anfrage ist mit dem Öffnen von WhatsApp noch nicht zugestellt); Sendefehler als
-// Hinweis art="fehler" mit role="alert". Beschriftungen stehen sichtbar über den Feldern (bisher nur für Screenreader), Wortlaut gleich.
-// Mikrotext (freigegeben): Die Bestätigungszeile steht ohne vorangestelltes Briefsymbol (wie E3-BAU-18).
+// Darstellung KERN v2 (Q-02): Spalte auf Kalk an der Fuge; Zusammenfassung als Schriftfeld (Mono-Etikett über dem Wert,
+// Felder an 1-px-Fugen), Zuschuss als Hinweis, Knöpfe aus knopfKlassen/Knopf (ein Hauptknopf je Zustand), sichtbare
+// Beschriftungen über den Feldern (bisher nur für Screenreader, Wortlaut gleich), Erfolg mit Haken. Props, Handler, IDs,
+// name/value der Absende-Knöpfe, Texte und aria-live unverändert.
+// F-05 (Fusion II, E-039; Grundgerüst B, Übernahmen aus A nach Gutachten u5):
+// - sichtbares Pflichtsternchen hinter „Ihr Name“ und „Ihre Telefonnummer“ (aria-hidden, Tinte-2; der Name bleibt das Label)
+// - Serverfehler als Hinweis art="fehler" (Rahmen laser-tief, Versatz-Zeichen, Text, role="alert", Vorsatz „Fehler:“ nur für
+//   Screenreader) über den Feldern
+// - Vorsätze nur für Screenreader: „Erledigt:“ (Erfolg), „Hinweis:“ (WhatsApp, Musterbad, Pflegekasse); Erfolgsbox mit
+//   Rahmen in Abnahme (nur Linie)
+// - Fokus nach Zustandswechsel: „Angebot … anfordern“ und beide Rückwege → erstes Feld; Erfolg und WhatsApp → Statusbox;
+//   Serverfehler → Fehlermeldung (tabIndex -1). Bisher fiel der Fokus auf body (auslösender Knopf entfernt bzw. gesperrt).
+// - geschütztes Leerzeichen vor „m²“ und in „DIN 18040-2“
 export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extras, matchingBath, contactOpen, setContactOpen, sentVia, setSentVia, referenceId, handleNewRequest, leadData, setLeadData, isSubmitting, errorMessage, handleLeadSubmit }) {
+    const nameRef = useRef(null);
+    const statusRef = useRef(null);
+    const fehlerRef = useRef(null);
+    const vorher = useRef({ contactOpen, sentVia, errorMessage });
+
+    // Fokusführung nur bei einem Wechsel, nie beim ersten Zeichnen
+    useEffect(() => {
+        const alt = vorher.current;
+        vorher.current = { contactOpen, sentVia, errorMessage };
+        if (sentVia && sentVia !== alt.sentVia) statusRef.current?.focus();
+        else if (errorMessage && errorMessage !== alt.errorMessage) fehlerRef.current?.focus();
+        else if (contactOpen && !sentVia && (!alt.contactOpen || alt.sentVia)) nameRef.current?.focus();
+    }, [contactOpen, sentVia, errorMessage]);
+
     return (
-        <div className="flex min-w-0 flex-col justify-between gap-8 border border-fuge bg-kalk p-4 sm:p-8 xl:col-span-6">
+        <div className="@container flex min-w-0 flex-col justify-between gap-8 border-t border-fuge bg-kalk p-6 @lg:p-8 @5xl:col-span-5 @5xl:border-l @5xl:border-t-0 @5xl:p-12">
             <div className="flex flex-col gap-6">
                 <span className={etikettKlassen}>
                     <Fugenkreuz className="size-3 text-strich" />
                     Ihre Zusammenfassung
                 </span>
 
-                <dl aria-live="polite" className="divide-y divide-fuge border border-fuge bg-fliese px-4 text-fs-2">
+                <dl aria-live="polite" className="grid grid-cols-1 gap-px border border-fuge bg-fuge @sm:grid-cols-2">
                     {[
-                        ['Badgröße', <span key="groesse" className="font-mono">{`ca. ${sqmLabel} m²`}</span>],
+                        ['Badgröße', `ca. ${sqmLabel}${NBSP}m²`],
                         ['Umfang', scopeLabel],
                         ['Ausstattung', tierLabel],
                         ['Wünsche', extras.join(', ') || 'Keine Extras gewählt']
                     ].map(([term, value]) => (
-                        // Etikett (Mono, klein) über dem Wert, Wert linksbündig. Nebeneinander blieb der Wert in der schmalen
-                        // Spalte bei ca. 93 px (E3-SICHT-2-ERZ Befund 6). Umbruch an Silbengrenzen (hyphens-auto); break-words
-                        // greift nur, wenn kein Silbenschnitt möglich ist (E3-SICHT-2-ERZ Befund 5)
-                        <div key={term} className="flex min-w-0 flex-col gap-1 py-2">
+                        <div key={term} className={clsx('min-w-0 bg-fliese p-4', BREIT[term])}>
                             <dt className="font-mono text-fs-1 text-tinte-2">{term}</dt>
-                            <dd className="min-w-0 break-words font-semibold text-tinte hyphens-auto">{value}</dd>
+                            <dd className={clsx('mt-1 break-words text-tinte', term === 'Badgröße' ? 'font-mono text-fs-3' : 'text-fs-2 font-semibold')}>{value}</dd>
                         </div>
                     ))}
                 </dl>
@@ -42,104 +71,119 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     verbindlichen Festpreis erhalten Sie deshalb nach dem kostenfreien Vor-Ort-Aufmaß.
                 </p>
 
-                {/* Reference to exact Musterbad */}
-                <Hinweis art="merk">
-                    <p className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 font-semibold text-tinte">
-                        <span>Musterbad-Vergleich:</span>
-                        <Link href="/bad/musterbaeder" className={`${linkKlassen} inline-flex items-center gap-1 whitespace-nowrap font-semibold`}>
+                {/* Verweis auf das passende Musterbad */}
+                <div className="border border-fuge bg-fliese p-4 text-fs-2 text-tinte">
+                    <p className="flex flex-wrap items-center justify-between gap-x-3 font-semibold">
+                        <span>
+                            <span className="sr-only">Hinweis: </span>
+                            Musterbad-Vergleich:
+                        </span>
+                        <Link href="/bad/musterbaeder" className={`${linkKlassen} inline-flex min-h-11 items-center gap-1`}>
                             Katalog
                             <Icon name="pfeil-rechts" groesse={4} />
                         </Link>
                     </p>
-                    <p className="mt-2">
+                    <p className="text-tinte-2">
                         Passend:{' '}
                         <Link href={`/bad/musterbaeder/${matchingBath.slug}`} className={`${linkKlassen} font-semibold`}>
-                            {matchingBath.label}
+                            {mitEinheit(matchingBath.label)}
                         </Link>
                     </p>
-                </Hinweis>
+                </div>
 
-                {/* Subsidies banner */}
-                <Hinweis art="merk">
-                    <p className="font-semibold text-tinte">Bis zu 4.180 € Pflegekassen-Zuschuss</p>
-                    <p className="mt-2">
-                        Bei Pflegegrad für barrierefreie Bäder nach DIN 18040-2.{' '}
-                        <Link href="/bad/barrierefreies-bad" className={`${linkKlassen} font-semibold`}>
-                            Details zum barrierefreien Bad &amp; Zuschüssen
-                        </Link>
-                    </p>
+                {/* Zuschuss-Hinweis */}
+                <Hinweis titel={<><span className="sr-only">Hinweis: </span>Bis zu 4.180 € Pflegekassen-Zuschuss</>}>
+                    Bei Pflegegrad für barrierefreie Bäder nach <span className="whitespace-nowrap font-mono">DIN{NBSP}18040-2</span>.{' '}
+                    <Link href="/bad/barrierefreies-bad" className={linkKlassen}>
+                        Details zum barrierefreien Bad &amp; Zuschüssen
+                    </Link>
                 </Hinweis>
             </div>
 
-            {/* Action Block */}
-            <div className="flex flex-col gap-4 border-t border-fuge pt-6">
+            {/* Anfrage */}
+            <div className="flex flex-col gap-3 border-t border-fuge pt-6">
                 {!contactOpen ? (
-                    <Knopf onClick={() => setContactOpen(true)} icon="pfeil-rechts" className="w-full">
+                    <Knopf
+                        onClick={() => setContactOpen(true)}
+                        icon="pfeil-rechts"
+                        className="w-full"
+                    >
                         Angebot mit Festpreis anfordern
                     </Knopf>
                 ) : sentVia === 'online' ? (
-                    <Hinweis art="erfolg" rolle="status">
+                    <div ref={statusRef} tabIndex={-1} className="border border-l-2 border-abnahme bg-fliese p-6 text-fs-2 text-tinte-2" role="status">
                         <div className="flex flex-wrap items-center justify-between gap-2">
-                            <p className="font-semibold text-tinte">Projektcheck übermittelt</p>
+                            <p className="flex items-center gap-2 text-fs-3 font-semibold text-tinte">
+                                <span className="inline-flex text-abnahme" data-motion="notiert">
+                                    <Icon name="haken" groesse={5} />
+                                </span>
+                                <span className="sr-only">Erledigt: </span>
+                                Projektcheck übermittelt
+                            </p>
                             {referenceId && (
                                 <span className="border border-fuge bg-kalk px-2 py-1 font-mono text-fs-1 text-tinte">
                                     {referenceId}
                                 </span>
                             )}
                         </div>
-                        <p className="mt-2">
-                            Vielen Dank, <strong className="font-semibold text-tinte">{leadData.name}</strong>! Ihre Projektangaben für ca. {sqmLabel} m² ({scopeLabel}) sind direkt bei Herrn Deniz Tezgel eingegangen.
+                        <p className="mt-4">
+                            Vielen Dank, <strong className="font-semibold text-tinte">{leadData.name}</strong>! Ihre Projektangaben für ca. <span className="whitespace-nowrap font-mono text-tinte">{sqmLabel}{NBSP}m²</span> ({scopeLabel}) sind direkt bei Herrn Deniz Tezgel eingegangen.
                             {leadData.email && (
-                                <span className="mt-2 block border-l-2 border-tinte pl-4 text-tinte">
-                                    Eine Bestätigung wurde an <em>{leadData.email}</em> gesendet.
+                                <span className="mt-3 flex items-start gap-2 border-l-2 border-tinte pl-4 text-tinte">
+                                    <Icon name="mail" groesse={4} className="mt-1" />
+                                    <span className="min-w-0 break-words">
+                                        Eine Bestätigung wurde an <em>{leadData.email}</em> gesendet.
+                                    </span>
                                 </span>
                             )}
                         </p>
-                        <div className="mt-4 border-t border-fuge pt-4 text-fs-1 text-tinte-2">
-                            <strong className="font-semibold text-tinte">Nächste Schritte:</strong>
+                        <div className="mt-4 border-t border-fuge pt-4">
+                            <strong className="flex items-center gap-2 font-semibold text-tinte">
+                                <Icon name="uhr" groesse={4} />
+                                Nächste Schritte:
+                            </strong>
                             <p className="mt-2">1. Herr Tezgel prüft Ihre Angaben &amp; Materialbedarf.</p>
-                            <p>2. Rückruf binnen 24–48 Std. zur Vor-Ort-Aufmaß-Abstimmung.</p>
+                            <p className="mt-1">2. Rückruf binnen 24–48 Std. zur Vor-Ort-Aufmaß-Abstimmung.</p>
                         </div>
-                        <button
-                            type="button"
-                            onClick={handleNewRequest}
-                            className={knopfKlassen('text', 'mt-4 text-left')}
-                            data-motion="druck"
-                        >
-                            Erneut anfragen oder anpassen
-                        </button>
-                    </Hinweis>
+                        <div className="mt-4">
+                            <Knopf variante="text" onClick={handleNewRequest}>
+                                Erneut anfragen oder anpassen
+                            </Knopf>
+                        </div>
+                    </div>
                 ) : sentVia === 'whatsapp' ? (
-                    <Hinweis art="merk" rolle="status">
-                        <p className="font-semibold text-tinte">WhatsApp wurde geöffnet</p>
-                        <p className="mt-2">
+                    <div ref={statusRef} tabIndex={-1} className="border border-strich bg-fliese p-6 text-fs-2 text-tinte-2" role="status">
+                        <p className="flex items-center gap-2 text-fs-3 font-semibold text-tinte">
+                            <Icon name="sprechblase" groesse={5} />
+                            <span className="sr-only">Hinweis: </span>
+                            WhatsApp wurde geöffnet
+                        </p>
+                        <p className="mt-3">
                             Bitte senden Sie die vorbereitete Nachricht mit Ihren Angaben dort ab – erst dann erreicht sie uns.
                         </p>
-                        <button
-                            type="button"
-                            onClick={() => setSentVia(null)}
-                            className={knopfKlassen('text', 'mt-4 text-left')}
-                            data-motion="druck"
-                        >
-                            Erneut senden oder Kanal wechseln
-                        </button>
-                    </Hinweis>
+                        <div className="mt-4">
+                            <Knopf variante="text" onClick={() => setSentVia(null)}>
+                                Erneut senden oder Kanal wechseln
+                            </Knopf>
+                        </div>
+                    </div>
                 ) : (
                     <form onSubmit={handleLeadSubmit} className="flex flex-col gap-4">
                         {errorMessage && (
-                            <Hinweis art="fehler" rolle="alert">
-                                {errorMessage}
-                            </Hinweis>
+                            <div ref={fehlerRef} tabIndex={-1}>
+                                <Hinweis art="fehler" rolle="alert">
+                                    {errorMessage}
+                                </Hinweis>
+                            </div>
                         )}
 
                         <div>
                             <div className="flex items-baseline">
-                                <label htmlFor="budget-lead-name" className={labelKlassen}>
-                                    Ihr Name
-                                </label>
-                                <span aria-hidden="true" className={pflichtKlassen}>*</span>
+                                <label htmlFor="budget-lead-name" className={labelKlassen}>Ihr Name</label>
+                                <span aria-hidden="true" className={pflichtClass}>*</span>
                             </div>
                             <input
+                                ref={nameRef}
                                 id="budget-lead-name"
                                 type="text"
                                 required
@@ -152,10 +196,8 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                         </div>
                         <div>
                             <div className="flex items-baseline">
-                                <label htmlFor="budget-lead-phone" className={labelKlassen}>
-                                    Ihre Telefonnummer
-                                </label>
-                                <span aria-hidden="true" className={pflichtKlassen}>*</span>
+                                <label htmlFor="budget-lead-phone" className={labelKlassen}>Ihre Telefonnummer</label>
+                                <span aria-hidden="true" className={pflichtClass}>*</span>
                             </div>
                             <input
                                 id="budget-lead-phone"
@@ -170,9 +212,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             />
                         </div>
                         <div>
-                            <label htmlFor="budget-lead-email" className={labelKlassen}>
-                                Ihre E-Mail-Adresse (optional)
-                            </label>
+                            <label htmlFor="budget-lead-email" className={labelKlassen}>Ihre E-Mail-Adresse (optional)</label>
                             <input
                                 id="budget-lead-email"
                                 type="email"
@@ -184,19 +224,20 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                             />
                         </div>
 
-                        <div className="flex flex-col gap-3 border-t border-fuge pt-6">
+                        <div className="flex flex-col gap-3 pt-2">
                             <button
                                 type="submit"
                                 name="channel"
                                 value="online"
                                 disabled={isSubmitting}
+                                aria-busy={isSubmitting || undefined}
                                 className={knopfKlassen('haupt', 'w-full')}
                                 data-motion="druck"
                             >
                                 {isSubmitting ? (
                                     <span className="flex flex-col items-center gap-2">
                                         <span>Wird übertragen …</span>
-                                        <span className="laden-fuge w-16" aria-hidden="true" />
+                                        <span className="laden-fuge w-16" data-motion="laden" aria-hidden="true" />
                                     </span>
                                 ) : (
                                     <>
@@ -213,7 +254,7 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                                 className={knopfKlassen('neben', 'w-full')}
                                 data-motion="druck"
                             >
-                                <Icon name="sprechblase" groesse={5} />
+                                <WhatsAppLogo className="size-5 shrink-0" />
                                 <span>Anfrage per WhatsApp senden</span>
                             </button>
                         </div>
@@ -229,8 +270,14 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
                     </form>
                 )}
 
-                <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
-                    Sofort anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+                <Knopf
+                    href={`tel:${COMPANY_DATA.contact.phoneLink}`}
+                    variante="neben"
+                    iconLinks="telefon"
+                    className="w-full text-center"
+                >
+                    {/* Nummer bricht nur als Ganzes um (mobil zweite Zeile), nie mitten in den Ziffern */}
+                    Sofort anrufen: <span className="whitespace-nowrap font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
                 </Knopf>
             </div>
         </div>

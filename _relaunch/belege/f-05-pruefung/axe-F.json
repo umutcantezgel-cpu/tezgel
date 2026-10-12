@@ -1,0 +1,138 @@
+{
+ "fassung": "F",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "zustand": "seite-start",
+   "umfang": "ganze Seite",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "start",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "auswahl",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "formular",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "pflichtfeld",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "laden",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "serverfehler-500",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "erfolg",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "m390",
+   "zustand": "whatsapp",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "seite-start",
+   "umfang": "ganze Seite",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "start",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "auswahl",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "formular",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "pflichtfeld",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "laden",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "serverfehler-500",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "erfolg",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  },
+  {
+   "ansicht": "d1440",
+   "zustand": "whatsapp",
+   "umfang": "Baustein",
+   "verstoesse": [],
+   "unvollstaendig": []
+  }
+ ]
+}

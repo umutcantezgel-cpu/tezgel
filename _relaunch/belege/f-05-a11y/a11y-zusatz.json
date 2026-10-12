@@ -1,0 +1,2352 @@
+{
+ "satz": "f-05-a11y",
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T10:46:07.646Z",
+ "werkzeug": "a11y-zusatz.mjs",
+ "kriterium": "Z-11",
+ "bedingungen": {
+  "server": "http://127.0.0.1:4350",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "seiten": [
+   "/bad/projekt-check"
+  ],
+  "ansichten": [
+   "m375",
+   "d1440"
+  ],
+  "pruefungen": [
+   "tastatur",
+   "reflow",
+   "zoom",
+   "textabstand",
+   "forced",
+   "ohnejs"
+  ],
+  "einwilligung": "abgelehnt",
+  "banner_zustaende": [
+   "abgelehnt"
+  ],
+  "einwilligung_tastatur": [
+   "abgelehnt",
+   "erstbesuch"
+  ],
+  "reducedMotion": "reduce",
+  "locale": "de-DE",
+  "timezoneId": "Europe/Berlin",
+  "colorScheme": "light",
+  "deviceScaleFactor": 1,
+  "ansichten_px": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "worker": 2,
+  "gegenprobe": null,
+  "regeln": {
+   "tastatur": {
+    "obergrenze_schritte": 400,
+    "ende": "Fokus verlässt das Dokument (activeElement = body, document.hasFocus() = false) oder Rückkehr zum ersten Element",
+    "sprung_rueckwaerts": "Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen",
+    "fokus_sichtbar": "Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung (je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Umfang der Vereinigung der Zeilenstücke im Bild; übereinander liegende Stücke mit Abstand ≤ 2·(Versatz + Breite) des Umrisses bilden wie bei Chrome einen Umriss; Umriss < 2 px gilt als dünn (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als „Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).",
+    "fokus_verdeckt": "elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; „fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; „abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei",
+    "falle": "derselbe Fokus 10× hintereinander → Abbruch; Zyklus = ein Element zum 3. Mal fokussiert → Abbruch, danach Escape + Tab: verlässt der Fokus den Zyklus?",
+    "sprunglink": "erster Tab fokussiert <a href=\"#main-content\"> und das Ziel #main-content existiert",
+    "iframes": "ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)"
+   },
+   "reflow": {
+    "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
+    "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
+   },
+   "zoom": {
+    "css": "1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)",
+    "aequivalent": "640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)",
+    "verdeckt": "sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist",
+    "nie_im_bild": "Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen",
+    "info": "im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar"
+   },
+   "textabstand": {
+    "stilblatt": "*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}",
+    "befund": "Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde",
+    "scroll_ueberhang": "Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info"
+   },
+   "forced": {
+    "emulation": "page.emulateMedia({ forcedColors: 'active' })",
+    "befund": "sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert"
+   },
+   "ohnejs": {
+    "kontext": "javaScriptEnabled: false",
+    "text": "sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)",
+    "erster_bildschirm": "Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert",
+    "navigation": "mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten"
+   }
+  },
+  "rohdaten": "cache/a11y-zusatz/f-05-a11y"
+ },
+ "laufzeit_s": 78,
+ "status": {
+  "tastatur": {
+   "reihenfolge": "gruen",
+   "fokus_sichtbar": "rot",
+   "fokus_2px": "rot",
+   "fokus_outline": "gruen",
+   "fokus_verdeckt": "rot",
+   "tastaturfalle": "gruen",
+   "sprunglink": "gruen"
+  },
+  "reflow": "gruen",
+  "zoom": {
+   "css": "rot",
+   "aequivalent": "gruen"
+  },
+  "textabstand": "rot",
+  "forced": "rot",
+  "ohnejs": "gruen"
+ },
+ "kennzahlen": {
+  "tastatur": {
+   "fokus_nicht_sichtbar": 8,
+   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 8,
+   "fokus_ring_teilverdeckt_fest": 14,
+   "fokus_unter_2px": 26,
+   "fokus_nicht_messbar": 0,
+   "fokus_ohne_outline_schatten": 0,
+   "fokus_verdeckt": 75,
+   "fokus_verdeckt_fest": 75,
+   "sprung_rueckwaerts": 0,
+   "falle": 0,
+   "zyklus_ohne_ausweg": 0,
+   "sprunglink_fehlt": 0,
+   "laeufe": 4,
+   "fehler": 0,
+   "schritte": 379,
+   "m375_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 2,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "m375_erstbesuch": {
+    "fokus_nicht_sichtbar": 8,
+    "fokus_unter_2px": 21,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 67,
+    "fokus_verdeckt_fest": 67,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_erstbesuch": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 3,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 8,
+    "fokus_verdeckt_fest": 8,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   }
+  },
+  "reflow": {
+   "horizontal": 0,
+   "ueberlauf": 0,
+   "ragt_heraus": 0,
+   "text_abgeschnitten": 0,
+   "laeufe": 1,
+   "fehler": 0
+  },
+  "zoom": {
+   "horizontal": 0,
+   "verdeckt": 0,
+   "verdeckt_fest": 0,
+   "nie_im_bild": 7,
+   "ueberlauf": 15,
+   "laeufe": 2,
+   "fehler": 0,
+   "css": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   },
+   "aequivalent": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 0,
+    "ueberlauf": 0
+   }
+  },
+  "textabstand": {
+   "abgeschnitten_neu": 1,
+   "scroll_ueberhang_neu": 1,
+   "davon_line_clamp": 0,
+   "ueberlauf_neu": 5,
+   "horizontal_neu": 0,
+   "laeufe": 2,
+   "fehler": 0
+  },
+  "forced": {
+   "ohne_grenze": 7,
+   "davon_mit_grafik": 7,
+   "felder_ohne_grenze": 0,
+   "laeufe": 2,
+   "fehler": 0
+  },
+  "ohnejs": {
+   "text_unter_80": 0,
+   "erster_bildschirm_versteckt": 0,
+   "erster_bildschirm_ebenso_mit_js": 0,
+   "navigation_fehlt": 0,
+   "kopf_ohne_interne_links": 0,
+   "laeufe": 2,
+   "fehler": 0
+  }
+ },
+ "je_seite": {
+  "/bad/projekt-check": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 8,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 8,
+    "fokus_ring_teilverdeckt_fest": 14,
+    "fokus_unter_2px": 26,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 75,
+    "fokus_verdeckt_fest": 75,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "reflow": {
+    "horizontal": 0,
+    "ueberlauf": 0,
+    "ragt_heraus": 0,
+    "text_abgeschnitten": 0
+   },
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 1,
+    "scroll_ueberhang_neu": 1,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 5,
+    "horizontal_neu": 0
+   },
+   "forced": {
+    "ohne_grenze": 7,
+    "davon_mit_grafik": 7,
+    "felder_ohne_grenze": 0
+   },
+   "ohnejs": {
+    "text_unter_80": 0,
+    "erster_bildschirm_versteckt": 0,
+    "erster_bildschirm_ebenso_mit_js": 0,
+    "navigation_fehlt": 0,
+    "kopf_ohne_interne_links": 0
+   }
+  }
+ },
+ "ergebnisse": {
+  "tastatur": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/bad/projekt-check",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 98,
+    "instabil": 0,
+    "fokus": {
+     "ok": 96,
+     "duenn": 2,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 2,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 498,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 490,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 25.6
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/bad/projekt-check",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 103,
+    "instabil": 0,
+    "fokus": {
+     "ok": 100,
+     "duenn": 3,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 8,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 4
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 5,
+     "fokus_unter_2px": 3,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 8,
+     "fokus_verdeckt_fest": 8,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 498,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 490,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 42,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "kontrast": 1286,
+       "maxKontrast": 16.96,
+       "umfang": 984,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [
+      {
+       "nr": 17,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Komplettbad Schlüsselfertig",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 161,
+        "y": 586,
+        "w": 199,
+        "h": 76
+       }
+      },
+      {
+       "nr": 18,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Teilsanierung Sanitär & Keramik",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 368,
+        "y": 586,
+        "w": 199,
+        "h": 76
+       }
+      },
+      {
+       "nr": 20,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Solide Funktional & zeitlos",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 161,
+        "y": 729,
+        "w": 199,
+        "h": 76
+       }
+      },
+      {
+       "nr": 21,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Gehoben Edle Oberflächen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 368,
+        "y": 729,
+        "w": 199,
+        "h": 76
+       }
+      },
+      {
+       "nr": 25,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Dusch-WC mit Hygiene-Spülung",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 161,
+        "y": 484,
+        "w": 302,
+        "h": 51
+       }
+      },
+      {
+       "nr": 27,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Fußbodenheizung",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 161,
+        "y": 543,
+        "w": 302,
+        "h": 51
+       }
+      },
+      {
+       "nr": 29,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "LED-Lichtspiegel",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 161,
+        "y": 601,
+        "w": 302,
+        "h": 51
+       }
+      },
+      {
+       "nr": 42,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 112,
+        "y": 707,
+        "w": 395,
+        "h": 97
+       }
+      }
+     ],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 26,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Möbel-Doppelwaschtisch",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 28,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Design-Heizkörper",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 30,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Großformat-Fliesenverlegung",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 45,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "E-Mail an Fliesenverlegung Tezgel senden: info@tezgel.de",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 27.2
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/bad/projekt-check",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 86,
+    "instabil": 0,
+    "fokus": {
+     "ok": 86,
+     "duenn": 0,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 24.7
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/bad/projekt-check",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 92,
+    "instabil": 0,
+    "fokus": {
+     "ok": 63,
+     "duenn": 21,
+     "kontrastarm": 0,
+     "unsichtbar": 8,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 67,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 67
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 8,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 8,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 21,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 67,
+     "fokus_verdeckt_fest": 67,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 5,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Komplettbad Schlüsselfertig",
+       "kontrast": 858,
+       "maxKontrast": 18.66,
+       "umfang": 732,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 6,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Teilsanierung Sanitär & Keramik",
+       "kontrast": 858,
+       "maxKontrast": 18.66,
+       "umfang": 732,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 7,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Wanne zu Dusche Nur Duschbereich",
+       "kontrast": 862,
+       "maxKontrast": 18.66,
+       "umfang": 732,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 8,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Solide Funktional & zeitlos",
+       "kontrast": 858,
+       "maxKontrast": 18.66,
+       "umfang": 732,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 9,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Gehoben Edle Oberflächen",
+       "kontrast": 858,
+       "maxKontrast": 18.66,
+       "umfang": 732,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 10,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Exklusiv Spa-Charakter, Dusch-WC",
+       "kontrast": 858,
+       "maxKontrast": 18.66,
+       "umfang": 732,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 11,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Bodengleiche Walk-In-Dusche",
+       "kontrast": 814,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 12,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Badewanne / Komfortwanne",
+       "kontrast": 810,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 13,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Dusch-WC mit Hygiene-Spülung",
+       "kontrast": 814,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 14,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Möbel-Doppelwaschtisch",
+       "kontrast": 814,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 15,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Fußbodenheizung",
+       "kontrast": 814,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 16,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Design-Heizkörper",
+       "kontrast": 810,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 17,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "LED-Lichtspiegel",
+       "kontrast": 814,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 18,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Großformat-Fliesenverlegung",
+       "kontrast": 814,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 22,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-1 > div.@container.flex > div.flex.flex-col > button.inline-flex.min-h-11",
+       "name": "Angebot mit Festpreis anfordern",
+       "kontrast": 858,
+       "maxKontrast": 16.96,
+       "umfang": 732,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 23,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-1 > div.@container.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Sofort anrufen: 06441 / 44 83 567",
+       "kontrast": 862,
+       "maxKontrast": 16.96,
+       "umfang": 734,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 27,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "kontrast": 918,
+       "maxKontrast": 16.96,
+       "umfang": 786,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 28,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "kontrast": 910,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 29,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "footer.flaeche-tinte.border-t > div.border-b.border-nacht-fuge > div.mx-auto.w-full > a.inline-flex.min-h-11",
+       "name": "Kostenfreies Vor-Ort-Aufmaß",
+       "kontrast": 776,
+       "maxKontrast": 16.96,
+       "umfang": 646,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 30,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "kontrast": 1010,
+       "maxKontrast": 16.96,
+       "umfang": 884,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 78,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Kontakt",
+       "kontrast": 194,
+       "maxKontrast": 16.96,
+       "umfang": 164,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 79,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Impressum",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 196,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 80,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Datenschutz",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 228,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 81,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "AGB",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 102,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 82,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Widerruf",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 180,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 83,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Cookie-Richtlinie",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 322,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 84,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Cookie-Einstellungen",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 368,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 85,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Barrierefreiheit",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 306,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 86,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "div.border-t.border-nacht-fuge > div.mx-auto.w-full > p > a.text-kalk.underline",
+       "name": "Webdesign Wetzlar – Coday",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 446,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [
+      {
+       "nr": 5,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Komplettbad Schlüsselfertig",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 547,
+        "w": 293,
+        "h": 73
+       }
+      },
+      {
+       "nr": 6,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Teilsanierung Sanitär & Keramik",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 612,
+        "w": 293,
+        "h": 73
+       }
+      },
+      {
+       "nr": 8,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Solide Funktional & zeitlos",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 510,
+        "w": 293,
+        "h": 73
+       }
+      },
+      {
+       "nr": 9,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Gehoben Edle Oberflächen",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 591,
+        "w": 293,
+        "h": 73
+       }
+      },
+      {
+       "nr": 10,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Exklusiv Spa-Charakter, Dusch-WC",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 612,
+        "w": 293,
+        "h": 73
+       }
+      },
+      {
+       "nr": 12,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Badewanne / Komfortwanne",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 423,
+        "w": 293,
+        "h": 49
+       }
+      },
+      {
+       "nr": 13,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Dusch-WC mit Hygiene-Spülung",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 480,
+        "w": 293,
+        "h": 49
+       }
+      },
+      {
+       "nr": 14,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Möbel-Doppelwaschtisch",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 537,
+        "w": 293,
+        "h": 49
+       }
+      },
+      {
+       "nr": 15,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Fußbodenheizung",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 594,
+        "w": 293,
+        "h": 49
+       }
+      },
+      {
+       "nr": 16,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Design-Heizkörper",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 635,
+        "w": 293,
+        "h": 49
+       }
+      },
+      {
+       "nr": 18,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Großformat-Fliesenverlegung",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 422,
+        "w": 293,
+        "h": 49
+       }
+      },
+      {
+       "nr": 20,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > div.border.border-fuge > p.text-tinte-2 > a.text-tinte.underline",
+       "name": "Kompaktbad 8,2 m²",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 124,
+        "y": 415,
+        "w": 134,
+        "h": 16
+       }
+      },
+      {
+       "nr": 21,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.items-start > div.min-w-0 > div.mt-2 > a.text-tinte.underline",
+       "name": "Details zum barrierefreien Bad & Zuschüssen",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 103,
+        "y": 606,
+        "w": 200,
+        "h": 39
+       }
+      },
+      {
+       "nr": 23,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-1 > div.@container.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Sofort anrufen: 06441 / 44 83 567",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 438,
+        "w": 293,
+        "h": 74
+       }
+      },
+      {
+       "nr": 25,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "0172 / 67 28 504",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 462,
+        "w": 144,
+        "h": 19
+       }
+      },
+      {
+       "nr": 26,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "info@tezgel.de",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 543,
+        "w": 101,
+        "h": 16
+       }
+      },
+      {
+       "nr": 28,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 427,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 30,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 512,
+        "w": 343,
+        "h": 99
+       }
+      },
+      {
+       "nr": 32,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "Mobil & WhatsApp: 0172 / 67 28 504 – Chat mit Deniz Tezgel s",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 463,
+        "w": 309,
+        "h": 23
+       }
+      },
+      {
+       "nr": 33,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "E-Mail an Fliesenverlegung Tezgel senden: info@tezgel.de",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 631,
+        "w": 309,
+        "h": 23
+       }
+      },
+      {
+       "nr": 35,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Badsanierung komplett",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 413,
+        "w": 154,
+        "h": 31
+       }
+      },
+      {
+       "nr": 36,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Fliesen & XXL-Großformate",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start > p.pt-2.text-fs-3",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 453,
+        "w": 183,
+        "h": 31
+       }
+      },
+      {
+       "nr": 37,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Barrierefreies Bad",
+       "durch": "p#cookie-consent-description > span.block > strong.font-semibold.text-tinte",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 492,
+        "w": 120,
+        "h": 31
+       }
+      },
+      {
+       "nr": 38,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Bad aus einer Hand",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 531,
+        "w": 130,
+        "h": 31
+       }
+      },
+      {
+       "nr": 39,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Badplaner",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 570,
+        "w": 69,
+        "h": 31
+       }
+      },
+      {
+       "nr": 40,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Bad-Projektcheck",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 610,
+        "w": 119,
+        "h": 31
+       }
+      },
+      {
+       "nr": 41,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Musterbäder",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 649,
+        "w": 85,
+        "h": 31
+       }
+      },
+      {
+       "nr": 43,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Alle Fachgewerke",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 478,
+        "w": 118,
+        "h": 31
+       }
+      },
+      {
+       "nr": 44,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Fliesen & Verlegung",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 517,
+        "w": 133,
+        "h": 31
+       }
+      },
+      {
+       "nr": 45,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Untergrund & Abdichtung",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 556,
+        "w": 169,
+        "h": 31
+       }
+      },
+      {
+       "nr": 46,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Balkon & Terrasse",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 596,
+        "w": 121,
+        "h": 31
+       }
+      },
+      {
+       "nr": 47,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Naturstein & Granit",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 635,
+        "w": 127,
+        "h": 31
+       }
+      },
+      {
+       "nr": 48,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Treppen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 653,
+        "w": 55,
+        "h": 31
+       }
+      },
+      {
+       "nr": 50,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Schadensanalyse",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 414,
+        "w": 119,
+        "h": 31
+       }
+      },
+      {
+       "nr": 51,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Fliesenreparatur",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 453,
+        "w": 109,
+        "h": 31
+       }
+      },
+      {
+       "nr": 52,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Wetzlar",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 557,
+        "w": 50,
+        "h": 31
+       }
+      },
+      {
+       "nr": 53,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Gießen",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 596,
+        "w": 50,
+        "h": 31
+       }
+      },
+      {
+       "nr": 54,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Marburg",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 635,
+        "w": 56,
+        "h": 31
+       }
+      },
+      {
+       "nr": 55,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Limburg an der Lahn",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 652,
+        "w": 135,
+        "h": 31
+       }
+      },
+      {
+       "nr": 57,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Friedberg (Hessen)",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 414,
+        "w": 129,
+        "h": 31
+       }
+      }
+     ],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 7,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.inline-flex.min-h-11",
+       "name": "Wanne zu Dusche Nur Duschbereich",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 11,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "Bodengleiche Walk-In-Dusche",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 17,
+       "pfad": "div.@container.flex > fieldset.min-w-0 > div.mt-3.grid > button.flex.min-h-11",
+       "name": "LED-Lichtspiegel",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 22,
+       "pfad": "div.grid.grid-cols-1 > div.@container.flex > div.flex.flex-col > button.inline-flex.min-h-11",
+       "name": "Angebot mit Festpreis anfordern",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 27,
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 29,
+       "pfad": "footer.flaeche-tinte.border-t > div.border-b.border-nacht-fuge > div.mx-auto.w-full > a.inline-flex.min-h-11",
+       "name": "Kostenfreies Vor-Ort-Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 32.2
+   }
+  ],
+  "reflow": [
+   {
+    "pruefung": "reflow",
+    "seite": "/bad/projekt-check",
+    "ansicht": "r320",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 320,
+     "clientWidth": 320,
+     "scrollX": 0
+    },
+    "befunde": [],
+    "kennzahlen": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.3
+   }
+  ],
+  "zoom": [
+   {
+    "pruefung": "zoom",
+    "seite": "/bad/projekt-check",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 1280,
+     "clientWidth": 1280,
+     "scrollX": 0
+    },
+    "bedienelemente": 97,
+    "scrollpositionen": 36,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Ratgeber",
+       "x": 1249,
+       "y": 0,
+       "w": 160,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1409,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Über uns",
+       "x": 1473,
+       "y": 0,
+       "w": 156,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1629,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1725,
+       "y": 20,
+       "w": 372,
+       "fest": true
+      },
+      {
+       "pfad": "button#whatsapp-floating-btn",
+       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "x": 2113,
+       "y": 20,
+       "w": 88,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "x": 2217,
+       "y": 13,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "hidden h-full items-stretch xl:flex",
+       "left": 435,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1249,
+       "right": 1409
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1409,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1473,
+       "right": 1629
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1629,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1725,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:tex",
+       "left": 1725,
+       "right": 2097
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "hidden lg:inline",
+       "left": 1797,
+       "right": 2081
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "hidden size-11 shrink-0 items-center justify-center border border-strich bg-flie",
+       "left": 2113,
+       "right": 2201
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 2217,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 ",
+       "left": 1068,
+       "right": 1372
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.8
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/bad/projekt-check",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 87,
+    "scrollpositionen": 36,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7.2
+   }
+  ],
+  "textabstand": [
+   {
+    "pruefung": "textabstand",
+    "seite": "/bad/projekt-check",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1021,
+       "right": 1514
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 1306,
+       "right": 1514
+      }
+     ],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.1
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/bad/projekt-check",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [
+      {
+       "id": 1,
+       "pfad": "footer.flaeche-tinte.border-t",
+       "text": "Verbundabdichtung",
+       "ueberstand": 2,
+       "achse": "x",
+       "lineClamp": false
+      }
+     ],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "text-fs-2",
+       "left": 216,
+       "right": 377
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "block font-semibold text-kalk",
+       "left": 216,
+       "right": 377
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "text-nacht-2",
+       "left": 216,
+       "right": 377
+      }
+     ],
+     "vorher": [],
+     "scroll_ueberhang_neu": [
+      {
+       "id": 1,
+       "pfad": "footer.flaeche-tinte.border-t",
+       "dx": 2,
+       "dy": 0
+      }
+     ]
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 3,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 6.2
+   }
+  ],
+  "forced": [
+   {
+    "pruefung": "forced",
+    "seite": "/bad/projekt-check",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/f-05-a11y/forced-colors/d1440/bad__projekt-check.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 96,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Badsanierung öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Fachgewerke öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Standorte öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 6,
+     "davon_mit_grafik": 6,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 3.6
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/bad/projekt-check",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/f-05-a11y/forced-colors/m375/bad__projekt-check.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 84,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 1,
+     "davon_mit_grafik": 1,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 6.1
+   }
+  ],
+  "ohnejs": [
+   {
+    "pruefung": "ohnejs",
+    "seite": "/bad/projekt-check",
+    "ansicht": "d1440",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 3374,
+     "ohne_js": 3374,
+     "anteil": 1,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 8,
+     "kopf_intern": 7,
+     "fuss_sichtbar": 57,
+     "fuss_intern": 53,
+     "hauptseiten_erreichbar": 7,
+     "hauptseiten_fehlen": []
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 0
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 3.8
+   },
+   {
+    "pruefung": "ohnejs",
+    "seite": "/bad/projekt-check",
+    "ansicht": "m375",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 3345,
+     "ohne_js": 3345,
+     "anteil": 1,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 1,
+     "kopf_intern": 1,
+     "fuss_sichtbar": 58,
+     "fuss_intern": 54,
+     "hauptseiten_erreichbar": 6,
+     "hauptseiten_fehlen": [
+      "/standorte"
+     ]
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 0
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.2
+   }
+  ]
+ }
+}

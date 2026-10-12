@@ -1,16 +1,19 @@
 import Icon from '@/components/icons/Icon';
-import { labelKlassen, wahlKlassen } from '@/components/kern/stile';
+import { labelKlassen } from '@/components/kern/stile';
 import { EXTRA_OPTIONS } from '@/lib/formulare/useProjektCheck';
+import { extraClass, markeClass, nummerClass } from './stile';
 
-// 4. Wunschausstattung und Extras (E-011: aus BadProjektCheck.jsx verschoben). E3-BAU-19: Darstellung nach dem KERN-Formularmuster;
-// Haken-Icon bei Auswahl statt lucide Check. Texte, IDs, aria-pressed, Reihenfolge und Nutzlast unverändert.
+// 4. Wunschausstattung und Extras (E-011: aus BadProjektCheck.jsx verschoben). Darstellung KERN v2 (Q-02): Mehrfachauswahl
+// mit Ankreuzmarke (Muster „Rahmenbedingungen“ im Preisrechner der Startseite), gewählt = Marke Tinte mit Haken und Rahmen
+// Tinte. Der Haken ist dekorativ (aria-hidden): Der Name des Knopfs bleibt genau die Beschriftung, der Zustand steht in aria-pressed.
+// F-05: zwei Spalten erst ab 28 rem Schrittspalte (@container); die Beschriftung bricht in der Zelle um statt überzustehen.
 export default function Schritt4({ selectedOptions, toggleOption }) {
     return (
         <fieldset className="min-w-0">
             <legend className={labelKlassen}>
-                4. Wunschausstattung &amp; Extras:
+                <span className={nummerClass}>4.</span> Wunschausstattung &amp; Extras:
             </legend>
-            <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            <div className="mt-3 grid grid-cols-1 gap-2 @md:grid-cols-2">
                 {EXTRA_OPTIONS.map((opt) => {
                     const isSelected = selectedOptions.includes(opt.id);
                     return (
@@ -19,13 +22,13 @@ export default function Schritt4({ selectedOptions, toggleOption }) {
                             type="button"
                             aria-pressed={isSelected}
                             onClick={() => toggleOption(opt.id)}
-                            className={wahlKlassen}
+                            className={extraClass}
                             data-motion="zustand"
                         >
-                            <span className="flex w-full items-center justify-between gap-2 text-left">
-                                <span>{opt.label}</span>
+                            <span className={markeClass(isSelected)}>
                                 {isSelected && <Icon name="haken" groesse={4} />}
                             </span>
+                            <span className="min-w-0 break-words">{opt.label}</span>
                         </button>
                     );
                 })}
