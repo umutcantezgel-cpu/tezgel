@@ -73,6 +73,9 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E4-N2-05 | `/leistungen`, Fachgewerke | Zwischenzeile „Ausstattungsmerkmale & Vorteile:“ über der Merkmalliste | Aufklapper „Merkmale · N“ (Mono, N = Zahl der Merkmale); Liste wortgleich | Komposition: kürzere Felder (E3-SICHT-2-ERZ Befund 8) |
 | E4-N2-06 | `/leistungen/[id]` | – | Etiketten „Spezialisierungen“, „Fachkompetenz“, „Gewerke“, „Region“; im Direktkontakt Schriftfeld „Telefon“, „WhatsApp“, „E-Mail“ (Werte aus der Konfiguration) | jedes H2 mit Etikett, kein Leerfeld (Befunde 11, 12) |
 | E4-N2-07 | `/standorte`; `LocationContact` (auch /kontakt, Stadtseiten) | Block „Weitere Orte auf Anfrage“ zwischen Leistungen und Anfahrt; Telefonknopf in Archivo, WhatsApp als Sprechblase | Block wortgleich vor dem Abschluss im Anfrageabschnitt (Verschiebung); Telefon in Mono, WhatsApp-Markenzeichen | ein Anfrageabschnitt, eine Schreibweise (Befunde 15, 17) |
+| E4-BAU-04 | `/bad/musterbaeder/[slug]` (Knopfpaar Anfrage) | „Konzept unverbindlich anfragen“ und „Direkt anrufen“ ohne Wortgrenze im Textauszug | gleicher Wortlaut, gleiche Reihenfolge, Knöpfe als getrennte Blöcke (Textvergleich: Spanne „anfragenDirekt“ erlaubt) | Baustein `Knopf`; kein Wortverlust |
+| E4-BAU-04 | `/bad/musterbaeder/[slug]` | – | Rückfrage neben der Anfrage (Etiketten Ansprechpartner, Telefon, Mobil & WhatsApp, E-Mail, Sitz; Werte aus der Konfiguration); Festpreis-Zeile als Fugenkreuz-Punkt im Einstieg | Kompositionsregel „Rückfrage neben dem Ablauf“ |
+| E4-BAU-06 | `/fliesen/festpreisangebot`, `/fliesen/fliesenarten` | Badges | Mono-Etiketten, Wortlaut gleich; Ladehinweis „Anfrageformular wird geladen...“ (Konfigurator nachgeladen); Tabellenname nur für Screenreader | Baustein `Abschnitt`, `Tabelle` verlangt einen Namen |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |
