@@ -1,5 +1,17 @@
-import React from "react";
-import { Check } from "lucide-react";
+// PriceCard (S-26, KERN v2 K-005/K-009; nur /preise): Leistungspaket als Feld im Fugenraster statt als Karte – kein
+// Abheben, kein Schatten, keine Rundung. Folge wie im Bestand: Etikett (nur beim hervorgehobenen Paket), Titel mit
+// Beschreibung, Preis, Merkmale, ein Weg. Preis und Preiszusatz in Mono; Maße und Normen in Merkmalen und Beschreibung
+// ebenfalls in Mono (Wortlaut gleich, nur die Schrift wechselt). Merkmale an Fugenkreuzen in Textschrift.
+// „Empfohlener Standard“ (isPopular) bleibt wörtlich als Mono-Etikett mit Fugenkreuz (wertende Eckmarke, Rückgabe S-26);
+// das hervorgehobene Paket trägt den Hauptknopf, die übrigen den Nebenknopf (ein Hauptknopf je Bildschirm).
+// Fluchten: Im Raster der Seite (Feldraster) spannt jedes Feld fünf Zeilen und übernimmt sie als Subgrid – Etikett, Titel,
+// Preis, Merkmale und Knopf stehen in einer Reihe von Feldern auf denselben Linien. Ohne umgebendes Raster stapelt das
+// Feld einfach. Server-Komponente.
+import clsx from "clsx";
+import type { ReactNode } from "react";
+import Fugenkreuz from "@/components/kern/Fugenkreuz";
+import Knopf from "@/components/kern/Knopf";
+import { etikettKlassen } from "@/components/kern/stile";
 
 interface PriceCardProps {
   title: string;
@@ -10,6 +22,19 @@ interface PriceCardProps {
   isPopular?: boolean;
   ctaText?: string;
   ctaHref?: string;
+  /** Element des Feldes: li im Feldraster (als Liste), sonst div */
+  als?: "div" | "li";
+  className?: string;
+}
+
+// Maße, Normen, Klassen: Formate („60x60 cm“), Plattenstärke („2 cm“), DIN-Normen, Rutschhemmung, Kleberklassen
+const MASS = /(\d+x\d+ cm|\d+ cm|DIN \d+|R\d+\b|S1\/S2|C2-TE)/;
+
+/** Text mit Maßen in Mono, eine Stufe kleiner wie die Mengen im Rechner (Wortlaut unverändert, die Maße brechen nicht in sich um) */
+function mitMassen(text: string): ReactNode {
+  return text
+    .split(MASS)
+    .map((teil, i) => (i % 2 === 1 ? <span key={i} className="whitespace-nowrap font-mono text-fs-1">{teil}</span> : teil));
 }
 
 export default function PriceCard({
@@ -21,63 +46,52 @@ export default function PriceCard({
   isPopular = false,
   ctaText = "Vor-Ort-Aufmaß anfordern",
   ctaHref = "/kontakt#express-anfrage",
+  als = "div",
+  className,
 }: PriceCardProps) {
+  const Tag = als;
   return (
-    <div
-      className={`group relative flex flex-col rounded-3xl bg-white p-7 sm:p-8 transition-all duration-300 overflow-hidden ${
-        isPopular
-          ? "border-2 border-orange-500 shadow-xl ring-2 ring-orange-500/10 hover:-translate-y-1.5"
-          : "border border-neutral-200 shadow-sm hover:shadow-md hover:-translate-y-1"
-      }`}
-    >
-      {isPopular && (
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500" />
+    <Tag className={clsx("row-span-5 grid grid-rows-subgrid bg-fliese p-6 lg:p-8", className)}>
+      {/* 1 · Etikett: nur beim hervorgehobenen Paket; die übrigen Felder halten die Zeile leer */}
+      {isPopular ? (
+        <p className={clsx(etikettKlassen, "mb-4 text-tinte")}>
+          <Fugenkreuz className="size-3 shrink-0 text-strich" />
+          Empfohlener Standard
+        </p>
+      ) : (
+        <span aria-hidden="true" />
       )}
 
-      {isPopular && (
-        <div className="mb-4">
-          <span className="inline-flex items-center gap-1.5 bg-orange-600 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-xs">
-            <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-            Empfohlener Standard
-          </span>
-        </div>
-      )}
-
-      <div className="mb-5">
-        <p className="text-xl font-bold text-neutral-900 tracking-tight">{title}</p>
-        <p className="text-xs text-neutral-500 mt-1 leading-relaxed">{description}</p>
+      {/* 2 · Titel und Beschreibung */}
+      <div>
+        <p className="font-anzeige text-fs-4 font-semibold text-tinte">{title}</p>
+        <p className="mt-2 font-text text-fs-2 text-pretty text-tinte-2">{mitMassen(description)}</p>
       </div>
 
-      <div className="mb-6 flex flex-col items-start gap-1">
-        <span className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
+      {/* 3 · Preis in Mono an der Fuge */}
+      <div className="mt-6 flex flex-col items-start gap-1 border-t border-fuge pt-6">
+        <span className="font-mono text-fs-4 text-tinte">
           {typeof price === "number" ? `ab ${price} €` : price}
         </span>
-        {priceSubtitle && (
-          <span className="text-xs font-semibold text-neutral-500">{priceSubtitle}</span>
-        )}
+        {priceSubtitle && <span className="font-mono text-fs-1 text-tinte-2">{priceSubtitle}</span>}
       </div>
 
-      <ul className="space-y-3 mb-8 flex-1 text-sm text-neutral-700">
+      {/* 4 · Merkmale an Fugenkreuzen */}
+      <ul className="mt-6 flex flex-col gap-3 font-text text-fs-2 text-tinte">
         {features.map((feature, i) => (
-          <li key={i} className="flex items-start gap-2.5">
-            <div className="w-5 h-5 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 mt-0.5 border border-orange-200/60">
-              <Check className="w-3.5 h-3.5" />
-            </div>
-            <span className="leading-snug">{feature}</span>
+          <li key={i} className="flex items-start gap-3">
+            <Fugenkreuz className="mt-2 size-3 shrink-0 text-strich" />
+            <span className="min-w-0">{mitMassen(feature)}</span>
           </li>
         ))}
       </ul>
 
-      <a
-        href={ctaHref}
-        className={`w-full py-3 px-4 rounded-xl text-center text-sm font-bold transition-all ${
-          isPopular
-            ? "bg-orange-600 hover:bg-orange-500 text-white shadow-md shadow-orange-950/20"
-            : "bg-neutral-100 hover:bg-neutral-200 text-neutral-900"
-        }`}
-      >
-        {ctaText}
-      </a>
-    </div>
+      {/* 5 · ein Weg */}
+      <div className="mt-8 flex items-end">
+        <Knopf href={ctaHref} variante={isPopular ? "haupt" : "neben"} className="w-full">
+          {ctaText}
+        </Knopf>
+      </div>
+    </Tag>
   );
 }

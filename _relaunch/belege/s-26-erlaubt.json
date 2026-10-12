@@ -1,0 +1,5 @@
+[
+ { "seite": "/preise", "alt": "EMPFOHLENER STANDARD", "grund": "Darstellung, nicht Wortlaut: Die Eckmarke stand im Bestand mit CSS-Versalien (uppercase) und innerText las sie groß; im Code steht unverändert „Empfohlener Standard“, jetzt als Mono-Etikett ohne Versalien (KERN K-006: keine Versalien-Sperrung). Build-HTML (texte2) gleich" },
+ { "seite": "/preise", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß (nicht in den Schreibrechten): CookieConsent hängt die Zeile nach der Hydrierung an, auf dem Dev-Server je nach Zeitpunkt (bekannt, R-01a; s-20-erlaubt.json, s-23-erlaubt.json)" },
+ { "seite": "/faq", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß, Dev-Zeitpunkt (wie oben)" }
+]

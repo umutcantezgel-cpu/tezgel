@@ -1,0 +1,26 @@
+{
+ "vorher": "s-26-vorher",
+ "nachher": "s-26-nachher",
+ "seiten": {
+  "/preise": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Empfohlener Standard"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 1,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

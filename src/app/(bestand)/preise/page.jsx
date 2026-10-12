@@ -1,19 +1,28 @@
-import React from "react";
-import {
-  Calculator,
-  ShieldCheck,
-  CheckCircle2,
-  ArrowRight,
-  Phone,
-  MessageSquare,
-  Ruler
-} from "lucide-react";
-import { siteConfig } from "@/lib/config";
-import { createMetadata } from "@/lib/metadata";
-import PriceCard from "@/components/pricing/PriceCard";
-import { PricingCalculator } from "@/components/pricing/PricingCalculator";
-import FAQAccordion from "@/components/ui/FAQAccordion";
-import { FinalCTA } from "@/components/ui/FinalCTA";
+// Preise (S-26, KERN v2, Arbeitsansicht nach /kontakt): kompakter Einstieg (zwei Etiketten mit Fugenkreuz, H1 text-fs-6,
+// Vorspann, drei Wege), danach die Leistungspakete als Feldraster (PriceCard: Preis in Mono, Zeilen fluchten über die Felder),
+// die Projektanfrage (#anfrage, Rechner nachgeladen mit Platzhalter), die drei Zusagen als Feldraster, die Kostenfragen
+// (FAQAccordion unverändert, Kopf seitlich) und der Abschluss ohne Achse. Kein großer Moment, kein Rot, Flächen
+// Kalk · Kalk · Fliese · Kalk · Fliese · Kalk. Überschriften, Texte, Links, IDs (#anfrage), Metadaten und Lesefolge wie im
+// Bestand; Sprungziel #anfrage nur über scroll-padding-top (kein eigenes scroll-mt).
+import dynamic from 'next/dynamic';
+import { siteConfig } from '@/lib/config';
+import { createMetadata } from '@/lib/metadata';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
+import PriceCard from '@/components/pricing/PriceCard';
+import FAQAccordion from '@/components/ui/FAQAccordion';
+import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Knopf from '@/components/kern/Knopf';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { Feldraster, Feld } from '@/components/kern/Feldraster';
+
+// Rechner nachgeladen wie auf der Startseite (Tempo, E4-NACH-17); ohne JavaScript bleibt der Platzhalter mit Anruf,
+// WhatsApp und E-Mail stehen (R-01b)
+const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalculator'), {
+  loading: () => <FormularPlatzhalter />,
+});
 
 export const metadata = createMetadata({
   title: "Fliesenleger Preise auf Anfrage | Festpreisangebote · Tezgel",
@@ -24,69 +33,64 @@ export const metadata = createMetadata({
 
 export default function PreisePage() {
   return (
-    <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
-      {/* Ambient Lighting Orbs */}
-      <div className="ambient-glow-orange -top-24 -left-24 opacity-70" />
-      <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-      {/* Hero Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-14 text-center space-y-5 relative overflow-hidden">
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <span className="eyebrow">
-              <Calculator className="w-3.5 h-3.5" />
+    <>
+      {/* 1. EINSTIEG: Etiketten (vormals Badges) in Mono mit Fugenkreuz, H1, Vorspann, Hauptknopf zur Anfrage, WhatsApp und Telefon */}
+      <Einstieg
+        art="arbeit"
+        etikett={
+          <>
+            <span className="mr-4 inline-flex items-center gap-2 text-tinte">
+              <Fugenkreuz className="size-3 shrink-0 text-strich" />
               Preise auf Anfrage
             </span>
-            <span className="eyebrow eyebrow-red">
+            <span className="inline-flex items-center gap-2">
+              <Fugenkreuz className="size-3 shrink-0 text-strich" />
               Verbindliche Festpreisgarantie
             </span>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-tight">
-            Kosten &amp; Preise auf Anfrage –{" "}
-            <span className="text-ceramic-gradient">Verbindliche Festpreise</span>
-          </h1>
-
-          <p className="text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed">
+          </>
+        }
+        titel={<>Kosten &amp; Preise auf Anfrage – Verbindliche Festpreise</>}
+        vorspann={
+          <p>
             Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Raummaßen und Gestaltungswünschen. Bei {siteConfig.company.name} erhalten Sie nach einem kostenfreien Vor-Ort-Aufmaß ein detailliertes und verbindliches Festpreisangebot – garantiert ohne versteckte Nebenkosten.
           </p>
-
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-            <a href="#anfrage" className="btn-primary">
-              <span>Projektanfrage starten</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <a
+        }
+        aktionen={
+          <>
+            <Knopf href="#anfrage" icon="pfeil-rechts">
+              Projektanfrage starten
+            </Knopf>
+            <Knopf
               href={siteConfig.contact.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-button-whatsapp text-sm"
+              extern
+              variante="neben"
+              vorne={<WhatsAppLogo className="size-5 shrink-0" />}
             >
-              <MessageSquare className="w-4 h-4 fill-current" />
-              <span>WhatsApp Schnellkontakt</span>
-            </a>
-            <a href={siteConfig.contact.phone.link} className="btn-ghost">
-              <Phone className="w-4 h-4 text-orange-700" />
-              <span>{siteConfig.contact.phone.formatted}</span>
-            </a>
-          </div>
-        </div>
-      </div>
+              WhatsApp Schnellkontakt
+            </Knopf>
+            <Knopf href={siteConfig.contact.phone.link} variante="neben" iconLinks="telefon">
+              <span className="font-mono font-normal">{siteConfig.contact.phone.formatted}</span>
+            </Knopf>
+          </>
+        }
+      />
 
-      {/* Price Cards Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="eyebrow mb-3">Leistungspakete im Überblick</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Unsere Fachgewerke
-          </h2>
-          <p className="text-sm text-neutral-700 mt-2">
+      {/* 2. LEISTUNGSPAKETE als Feldraster: vier Felder, ab lg in einer Reihe; Preise in Mono */}
+      <Abschnitt
+        art="arbeit"
+        id="leistungspakete"
+        titelId="leistungspakete-heading"
+        etikett="Leistungspakete im Überblick"
+        titel="Unsere Fachgewerke"
+        einleitung={
+          <p className="max-w-mass">
             Fachmännische Ausführung von der Untergrundvorbereitung bis zur perfekten Fuge – verbindliches Angebot nach Aufmaß.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        }
+      >
+        <Feldraster spalten={4}>
           <PriceCard
+            als="li"
             title="Boden & Wand Standard"
             price="Auf Anfrage"
             priceSubtitle="Individuelles Angebot"
@@ -103,6 +107,7 @@ export default function PreisePage() {
           />
 
           <PriceCard
+            als="li"
             title="XXL-Großformate"
             price="Auf Anfrage"
             priceSubtitle="Individuelles Angebot"
@@ -120,6 +125,7 @@ export default function PreisePage() {
           />
 
           <PriceCard
+            als="li"
             title="Bad-Sanierung"
             price="Auf Anfrage"
             priceSubtitle="Individuelles Angebot"
@@ -136,6 +142,7 @@ export default function PreisePage() {
           />
 
           <PriceCard
+            als="li"
             title="Balkon & Terrasse"
             price="Auf Anfrage"
             priceSubtitle="Individuelles Angebot"
@@ -150,61 +157,51 @@ export default function PreisePage() {
             ctaText="Terrasse anfragen"
             ctaHref="#anfrage"
           />
-        </div>
-      </div>
+        </Feldraster>
+      </Abschnitt>
 
-      {/* Interactive Pricing Calculator / Project Inquiry */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 scroll-mt-28" id="anfrage">
+      {/* 3. PROJEKTANFRAGE (#anfrage, Sprungziel aus Einstieg und Paketen): Rechner unverändert; ohne spaet (Formular) */}
+      <Abschnitt art="arbeit" id="anfrage" flaeche="fliese">
         <PricingCalculator />
-      </div>
+      </Abschnitt>
 
-      {/* Trust & Guarantee Highlights */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
-        <div className="glass-surface rounded-2xl p-8 sm:p-12 border border-neutral-200">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center mx-auto md:mx-0">
-                <Ruler className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-neutral-900">Kostenfreies Vor-Ort-Aufmaß</h3>
-              <p className="text-sm text-neutral-700 leading-relaxed">
-                Vor jedem Angebot begutachtet Inhaber {siteConfig.company.owner.fullName} Ihre Räume persönlich, prüft den Untergrund und nimmt exakte Maße.
-              </p>
-            </div>
+      {/* 4. ZUSAGEN als Feldraster: drei Felder (ab lg eine Reihe; md zwei Spalten, das dritte Feld über beide) */}
+      <Abschnitt art="arbeit" spaet>
+        <Feldraster spalten={3}>
+          <Feld>
+            <h3 className="text-fs-4 text-tinte">Kostenfreies Vor-Ort-Aufmaß</h3>
+            <p className="mt-2 text-fs-2 text-tinte-2">
+              Vor jedem Angebot begutachtet Inhaber {siteConfig.company.owner.fullName} Ihre Räume persönlich, prüft den Untergrund und nimmt exakte Maße.
+            </p>
+          </Feld>
 
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center mx-auto md:mx-0">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-neutral-900">Verbindliche Festpreisgarantie</h3>
-              <p className="text-sm text-neutral-700 leading-relaxed">
-                Der vereinbarte Preis ist garantiert. Es gibt bei uns keine nachträglichen Überraschungen oder unklare Stundenlohnabrechnungen.
-              </p>
-            </div>
+          <Feld>
+            <h3 className="text-fs-4 text-tinte">Verbindliche Festpreisgarantie</h3>
+            <p className="mt-2 text-fs-2 text-tinte-2">
+              Der vereinbarte Preis ist garantiert. Es gibt bei uns keine nachträglichen Überraschungen oder unklare Stundenlohnabrechnungen.
+            </p>
+          </Feld>
 
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center mx-auto md:mx-0">
-                <CheckCircle2 className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-neutral-900">DIN &amp; Gewährleistung</h3>
-              <p className="text-sm text-neutral-700 leading-relaxed">
-                Volle 5 Jahre VOB-Gewährleistung auf alle Verlege- und Abdichtungsarbeiten nach den strengen Richtlinien der Handwerkskammer Wiesbaden.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+          <Feld spanne={2} className="lg:col-span-1">
+            <h3 className="text-fs-4 text-tinte">DIN &amp; Gewährleistung</h3>
+            <p className="mt-2 text-fs-2 text-tinte-2">
+              Volle 5 Jahre VOB-Gewährleistung auf alle Verlege- und Abdichtungsarbeiten nach den strengen Richtlinien der Handwerkskammer Wiesbaden.
+            </p>
+          </Feld>
+        </Feldraster>
+      </Abschnitt>
 
-      {/* Pricing FAQs */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="eyebrow mb-3">Häufige Fragen zu den Kosten</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Transparente Antworten zur Kalkulation
-          </h2>
-        </div>
-
-        <div className="space-y-4">
+      {/* 5. KOSTENFRAGEN: Kopf seitlich, Fragen rechts (FAQAccordion unverändert) */}
+      <Abschnitt
+        art="arbeit"
+        id="kostenfragen"
+        titelId="kostenfragen-heading"
+        flaeche="fliese"
+        kopf="seitlich"
+        etikett="Häufige Fragen zu den Kosten"
+        titel="Transparente Antworten zur Kalkulation"
+      >
+        <div>
           <FAQAccordion
             question="Wie setzen sich die Gesamtkosten einer Fliesenverlegung zusammen?"
             answer="Die Kosten bestehen aus: 1. Untergrundvorbereitung (Prüfen, Schleifen, Grundieren, Ausgleichen), 2. Verbundabdichtung (besonders im Bad nach DIN 18534), 3. Verlegearbeit & Kleber (Formatabhängig), 4. Verfugung & Silikonanschlussfugen sowie 5. ggf. Zuschnitt- und Profilzulagen."
@@ -222,10 +219,10 @@ export default function PreisePage() {
             answer="Ja! 20 % der reinen Handwerker-Arbeitskosten (bis zu 1.200 € pro Jahr) können Sie direkt von der Einkommensteuer absetzen. Bei barrierefreien Bädern gewährt die Pflegekasse zudem bis zu 4.180 € Zuschuss pro pflegebedürftiger Person."
           />
         </div>
-      </div>
+      </Abschnitt>
 
-      {/* Final Conversion CTA */}
-      <FinalCTA />
-    </div>
+      {/* 6. ABSCHLUSS (Arbeitsansicht: ohne Achse) */}
+      <FinalCTA achse={false} />
+    </>
   );
 }
