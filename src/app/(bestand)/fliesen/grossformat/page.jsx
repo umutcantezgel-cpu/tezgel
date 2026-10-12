@@ -1,22 +1,31 @@
-import React from 'react';
+// Großformat (E4-BAU-08, KERN v2): Seitenkörper der Produktseite nach dem Muster des Fliesen-Ratgebers (E3-BAU-06) und der
+// Leistungsseiten. Einstieg mit Achse, H1 links, Vorspann und zwei Knöpfe; rechts der Verlegeplan „grossformat“ im Planblatt
+// (ohne Bemaßung, interaktiv). Danach die Leitachse über die Abschnitte: Vorteile, Formatklassen als Feldraster, Technik,
+// Grenzen als Merkliste, Fragen, Ratgeber, Konfigurator mit Rückfrage. Der Konfigurator wird nachgeladen (Tempo). Wortlaut,
+// Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein großer Moment und keine neue Bewegung.
 import Link from 'next/link';
-import {
-    AlertTriangle,
-    ArrowRight,
-    CheckCircle2,
-    Layers,
-    Maximize2,
-    MessageCircle,
-    Move,
-    Phone,
-    Ruler,
-    Scissors,
-    Sparkles
-} from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
-import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Knopf from '@/components/kern/Knopf';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+
+// Konfigurator nachladen (Tempo, wie auf der Startseite und den Fliesen-Seiten); ID #konfigurator liegt am Abschnitt
+const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export const metadata = createMetadata({
     title: 'Großformatfliesen verlegen lassen | Fliesen Tezgel',
@@ -28,18 +37,15 @@ export const metadata = createMetadata({
 const BENEFITS = [
     {
         title: 'Weniger Fugen',
-        desc: 'Große Kantenlängen reduzieren die Zahl der Fugen deutlich. Die Fläche wirkt ruhig und zusammenhängend, und es gibt weniger Fugenmeter, die gereinigt werden müssen.',
-        icon: Maximize2
+        desc: 'Große Kantenlängen reduzieren die Zahl der Fugen deutlich. Die Fläche wirkt ruhig und zusammenhängend, und es gibt weniger Fugenmeter, die gereinigt werden müssen.'
     },
     {
         title: 'Großzügige Raumwirkung',
-        desc: 'Durchgehende Flächen lassen Räume größer und offener wirken – besonders dort, wo Wohnen, Essen und Kochen ineinander übergehen.',
-        icon: Sparkles
+        desc: 'Durchgehende Flächen lassen Räume größer und offener wirken – besonders dort, wo Wohnen, Essen und Kochen ineinander übergehen.'
     },
     {
         title: 'Wand und Boden aus einem Guss',
-        desc: 'Großformate eignen sich auch für Wandflächen, etwa als Küchenrückwand oder raumhohe Wandverkleidung mit wenigen, sauber geplanten Stößen.',
-        icon: Layers
+        desc: 'Großformate eignen sich auch für Wandflächen, etwa als Küchenrückwand oder raumhohe Wandverkleidung mit wenigen, sauber geplanten Stößen.'
     }
 ];
 
@@ -110,265 +116,263 @@ const WEITERLESEN = [
 
 export default function GrossformatPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="grossformat-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Maximize2 className="w-3.5 h-3.5" />
-                        Fugenarme Großformatverlegung
-                    </span>
-                    <h1 id="grossformat-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Großformatfliesen verlegen:{' '}
-                        <span className="text-ceramic-gradient">fugenarm, planeben, präzise</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Formate ab 60 × 120 cm bis hin zu XXL-Platten verändern die Wirkung eines Raums. Sie verlangen aber
-                        einen sehr ebenen Untergrund, eine vollflächige Bettung und sicheres Handling. Hier erfahren Sie, was
-                        technisch dahintersteckt und wann Großformate die richtige Wahl sind.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Aufmaß anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/leistungen/wohnen" className="btn-ghost px-7 py-3.5 text-xs">
-                            Leistung: Wohnbereiche &amp; Neubau
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts der Plan „grossformat“ im Planblatt */}
+            <section aria-labelledby="grossformat-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett="Fugenarme Großformatverlegung"
+                    titel={
+                        <span id="grossformat-heading">
+                            Großformatfliesen verlegen:{' '}
+                            <span>fugenarm, planeben, präzise</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Formate ab 60 × 120 cm bis hin zu XXL-Platten verändern die Wirkung eines Raums. Sie verlangen aber
+                            einen sehr ebenen Untergrund, eine vollflächige Bettung und sicheres Handling. Hier erfahren Sie, was
+                            technisch dahintersteckt und wann Großformate die richtige Wahl sind.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">Aufmaß anfragen</Knopf>
+                            <Knopf href="/leistungen/wohnen" variante="neben">Leistung: Wohnbereiche &amp; Neubau</Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Großformatfliesen verlegen lassen', 'grossformat')}>
+                            <Verlegeplan plan="grossformat" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Warum Großformat */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="gf-warum-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Warum Großformat</span>
-                    <h2 id="gf-warum-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Weniger Fugen, <span className="text-ceramic-gradient">ruhigere Flächen</span>
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {BENEFITS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li
-                                key={item.title}
-                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
+            <Leitachse>
+                {/* 2. VORTEILE als Feldraster: je Vorteil ein Feld; das dritte Feld füllt die Zeile ab md */}
+                <Abschnitt
+                    titelId="gf-warum-heading"
+                    leitachse
+                    spaet
+                    etikett="Warum Großformat"
+                    titel={
+                        <>
+                            Weniger Fugen, <span>ruhigere Flächen</span>
+                        </>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {BENEFITS.map((item, i) => (
+                            <Feld key={item.title} className={i === BENEFITS.length - 1 ? 'md:col-span-2 lg:col-span-1' : undefined}>
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* Formatklassen */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="gf-formate-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Formatklassen im Vergleich</span>
-                        <h2 id="gf-formate-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            60 × 120, 120 × 120 und bis 120 × 278 cm
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                {/* 3. FORMATKLASSEN als Feldraster auf Fliese, Kopf seitlich: je Format Etikett, Überschrift und drei Angaben */}
+                <Abschnitt
+                    titelId="gf-formate-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    flaeche="fliese"
+                    etikett="Formatklassen im Vergleich"
+                    titel="60 × 120, 120 × 120 und bis 120 × 278 cm"
+                    einleitung={
+                        <p>
                             Mit jeder Formatstufe steigen die Anforderungen an Untergrund, Bettung und Transport. Die Übersicht
                             hilft bei der ersten Einordnung – die Entscheidung fällt nach dem Aufmaß.
                         </p>
-                    </div>
-                    <ul className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        {FORMAT_CLASSES.map((format) => (
-                            <li key={format.name} className="p-7 rounded-tile-xl bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
-                                <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-1">{format.label}</span>
-                                <h3 className="text-2xl font-black text-slate-900 tabular-nums mb-5">{format.name}</h3>
-                                <dl className="space-y-4 text-sm">
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {FORMAT_CLASSES.map((format, i) => (
+                            <Feld
+                                key={format.name}
+                                className={`gap-6${i === FORMAT_CLASSES.length - 1 ? ' md:col-span-2 lg:col-span-1' : ''}`}
+                            >
+                                <p className={etikettKlassen}>{format.label}</p>
+                                <h3 className="font-anzeige text-fs-5 text-tinte tabular-nums">{format.name}</h3>
+                                <dl className="grid gap-4">
                                     <div>
-                                        <dt className="font-bold text-slate-900">Einsatzbereich</dt>
-                                        <dd className="text-slate-700 leading-relaxed">{format.use}</dd>
+                                        <dt className="font-text text-fs-2 font-semibold text-tinte">Einsatzbereich</dt>
+                                        <dd className="mt-1 font-text text-fs-2 text-tinte-2">{format.use}</dd>
                                     </div>
                                     <div>
-                                        <dt className="font-bold text-slate-900">Untergrund</dt>
-                                        <dd className="text-slate-700 leading-relaxed">{format.substrate}</dd>
+                                        <dt className="font-text text-fs-2 font-semibold text-tinte">Untergrund</dt>
+                                        <dd className="mt-1 font-text text-fs-2 text-tinte-2">{format.substrate}</dd>
                                     </div>
                                     <div>
-                                        <dt className="font-bold text-slate-900">Handling</dt>
-                                        <dd className="text-slate-700 leading-relaxed">{format.handling}</dd>
+                                        <dt className="font-text text-fs-2 font-semibold text-tinte">Handling</dt>
+                                        <dd className="mt-1 font-text text-fs-2 text-tinte-2">{format.handling}</dd>
                                     </div>
                                 </dl>
-                            </li>
+                            </Feld>
                         ))}
-                    </ul>
-                </div>
-            </section>
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* Technik */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="gf-technik-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Technik</span>
-                    <h2 id="gf-technik-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Was ein XXL-Belag <span className="text-ceramic-gradient">wirklich braucht</span>
-                    </h2>
-                </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <article className="glass-surface rounded-tile-lg p-7" aria-labelledby="gf-ebenheit">
-                        <span className="icon-chip w-11 h-11 mb-5">
-                            <Ruler className="w-5 h-5" />
-                        </span>
-                        <h3 id="gf-ebenheit" className="text-lg font-black text-slate-900 mb-3">Ebenheit als Voraussetzung</h3>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Große Platten überbrücken Unebenheiten nicht – sie liegen hohl oder bilden Überzähne. Die
-                            Ebenheitstoleranzen nach DIN 18202 für normale Anforderungen reichen bei großen Kantenlängen oft
-                            nicht aus. Dann wird erhöhte Ebenheit vereinbart oder der Untergrund vorab ausgeglichen.
-                        </p>
-                        <Link
-                            href="/untergrund-abdichtung/ausgleich-gefaelle"
-                            className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                        >
-                            Mehr zu Ausgleich &amp; Gefälle
-                            <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                        </Link>
-                    </article>
-                    <article className="glass-surface rounded-tile-lg p-7" aria-labelledby="gf-bettung">
-                        <span className="icon-chip w-11 h-11 mb-5">
-                            <Layers className="w-5 h-5" />
-                        </span>
-                        <h3 id="gf-bettung" className="text-lg font-black text-slate-900 mb-3">Vollflächige Bettung</h3>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Großformate werden im kombinierten Verfahren verlegt: Kleber auf den Untergrund (Floating) und
-                            zusätzlich auf die Plattenrückseite (Buttering). So entsteht eine möglichst hohlraumarme Bettung,
-                            wie sie die anerkannten Regeln des Fachs – etwa das ZDB-Merkblatt zu großformatigen Fliesen – vorsehen.
-                            Wir verwenden dafür flexible C2-Kleber mit Verformbarkeit S1 bzw. S2.
-                        </p>
-                        <Link
-                            href="/fliesen/verlegetechnik"
-                            className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                        >
-                            Kleberklassen erklärt
-                            <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                        </Link>
-                    </article>
-                    <article className="glass-surface rounded-tile-lg p-7" aria-labelledby="gf-handling">
-                        <span className="icon-chip w-11 h-11 mb-5">
-                            <Move className="w-5 h-5" />
-                        </span>
-                        <h3 id="gf-handling" className="text-lg font-black text-slate-900 mb-3">Transport, Zuschnitt, Nivellierung</h3>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Große Platten werden auf Gestellen bewegt, mit Vakuumhebern angehoben und auf einem Schneidsystem
-                            präzise zugeschnitten. Ein Nivelliersystem hält benachbarte Kanten während des Abbindens auf einer
-                            Höhe – das Ziel ist eine planebene Fläche ohne Überzähne.
-                        </p>
-                        <p className="mt-3 text-sm text-slate-700 leading-relaxed flex items-start gap-2">
-                            <Scissors className="w-4 h-4 mt-0.5 text-orange-600 shrink-0" aria-hidden="true" />
-                            Ausschnitte für Steckdosen, Rohre oder Türzargen planen wir vor dem ersten Schnitt.
-                        </p>
-                    </article>
-                </div>
-            </section>
+                {/* 4. TECHNIK als Feldraster: je Thema Überschrift, Text und – wo der Bestand einen hat – ein Link */}
+                <Abschnitt
+                    titelId="gf-technik-heading"
+                    leitachse
+                    spaet
+                    etikett="Technik"
+                    titel={
+                        <>
+                            Was ein XXL-Belag <span>wirklich braucht</span>
+                        </>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        <Feld className="gap-6">
+                            <article aria-labelledby="gf-ebenheit" className="flex flex-1 flex-col gap-6">
+                                <h3 id="gf-ebenheit" className="font-anzeige text-fs-4 text-tinte">Ebenheit als Voraussetzung</h3>
+                                <p className="font-text text-fs-2 text-tinte-2">
+                                    Große Platten überbrücken Unebenheiten nicht – sie liegen hohl oder bilden Überzähne. Die
+                                    Ebenheitstoleranzen nach DIN 18202 für normale Anforderungen reichen bei großen Kantenlängen oft
+                                    nicht aus. Dann wird erhöhte Ebenheit vereinbart oder der Untergrund vorab ausgeglichen.
+                                </p>
+                                <div className="mt-auto">
+                                    <Knopf href="/untergrund-abdichtung/ausgleich-gefaelle" variante="text" icon="pfeil-rechts">
+                                        Mehr zu Ausgleich &amp; Gefälle
+                                    </Knopf>
+                                </div>
+                            </article>
+                        </Feld>
+                        <Feld className="gap-6">
+                            <article aria-labelledby="gf-bettung" className="flex flex-1 flex-col gap-6">
+                                <h3 id="gf-bettung" className="font-anzeige text-fs-4 text-tinte">Vollflächige Bettung</h3>
+                                <p className="font-text text-fs-2 text-tinte-2">
+                                    Großformate werden im kombinierten Verfahren verlegt: Kleber auf den Untergrund (Floating) und
+                                    zusätzlich auf die Plattenrückseite (Buttering). So entsteht eine möglichst hohlraumarme Bettung,
+                                    wie sie die anerkannten Regeln des Fachs – etwa das ZDB-Merkblatt zu großformatigen Fliesen – vorsehen.
+                                    Wir verwenden dafür flexible C2-Kleber mit Verformbarkeit S1 bzw. S2.
+                                </p>
+                                <div className="mt-auto">
+                                    <Knopf href="/fliesen/verlegetechnik" variante="text" icon="pfeil-rechts">
+                                        Kleberklassen erklärt
+                                    </Knopf>
+                                </div>
+                            </article>
+                        </Feld>
+                        <Feld className="gap-6 md:col-span-2 lg:col-span-1">
+                            <article aria-labelledby="gf-handling" className="flex flex-1 flex-col gap-6">
+                                <h3 id="gf-handling" className="font-anzeige text-fs-4 text-tinte">Transport, Zuschnitt, Nivellierung</h3>
+                                <p className="font-text text-fs-2 text-tinte-2">
+                                    Große Platten werden auf Gestellen bewegt, mit Vakuumhebern angehoben und auf einem Schneidsystem
+                                    präzise zugeschnitten. Ein Nivelliersystem hält benachbarte Kanten während des Abbindens auf einer
+                                    Höhe – das Ziel ist eine planebene Fläche ohne Überzähne.
+                                </p>
+                                <p className="flex items-start gap-3 font-text text-fs-2 text-tinte-2">
+                                    <Fugenkreuz className="mt-1 size-3 text-strich" />
+                                    Ausschnitte für Steckdosen, Rohre oder Türzargen planen wir vor dem ersten Schnitt.
+                                </p>
+                            </article>
+                        </Feld>
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* Grenzen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 relative z-10" aria-labelledby="gf-grenzen-heading">
-                <div className="rounded-tile-xl bg-slate-50 border border-slate-200 text-slate-700 p-7 sm:p-10">
-                    <div className="flex items-center gap-3 mb-6">
-                        <AlertTriangle className="w-6 h-6 text-orange-600" aria-hidden="true" />
-                        <h2 id="gf-grenzen-heading" className="text-2xl font-black text-slate-900">Grenzen: wann ein kleineres Format besser passt</h2>
-                    </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {LIMITS.map((item) => (
-                            <li key={item.title} className="bg-white/80 border border-slate-200 rounded-tile-md p-5">
-                                <h3 className="font-black text-slate-900 mb-1">{item.title}</h3>
-                                <p className="text-sm leading-relaxed">{item.desc}</p>
-                            </li>
-                        ))}
-                    </ul>
-                    <p className="mt-6 text-sm leading-relaxed">
+                {/* 5. GRENZEN als Merkliste im Halbverband-Raster, darunter der Verweis auf das Verlegemuster */}
+                <Abschnitt titelId="gf-grenzen-heading" leitachse spaet titel="Grenzen: wann ein kleineres Format besser passt">
+                    <Merkliste
+                        spalten={2}
+                        titelAls="h3"
+                        eintraege={LIMITS.map((item) => ({ titel: item.title, text: item.desc }))}
+                    />
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
                         Welches Verlegemuster sich für lange Formate eignet und warum sie meist nur begrenzt versetzt werden,
                         lesen Sie unter{' '}
-                        <Link href="/fliesen/verlegemuster" className="font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
+                        <Link href="/fliesen/verlegemuster" className={linkKlassen}>
                             Verlegemuster &amp; Abschlüsse
                         </Link>
                         .
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* FAQ */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="gf-faq-heading">
-                <h2 id="gf-faq-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-center mb-8">
-                    Häufige Fragen zu Großformaten
-                </h2>
-                <div className="space-y-3">
-                    {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-tile-md p-5 open:border-orange-500/80">
-                            <summary className="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-slate-900">
-                                {item.q}
-                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 transition-transform group-open:rotate-90" aria-hidden="true" />
-                            </summary>
-                            <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
-                        </details>
-                    ))}
-                </div>
-            </section>
+                {/* 6. FRAGEN als Fugenliste: jede Frage ein Aufklapper, Antwort darunter */}
+                <Abschnitt titelId="gf-faq-heading" leitachse spaet titel="Häufige Fragen zu Großformaten">
+                    <div className="border-t border-fuge">
+                        {FAQ.map((item) => (
+                            <details key={item.q} className="group border-b border-fuge">
+                                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-6 py-4 font-text text-fs-3 font-semibold text-tinte [&::-webkit-details-marker]:hidden">
+                                    {item.q}
+                                    <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+                                        <span className="group-open:hidden">
+                                            <Icon name="plus" groesse={6} />
+                                        </span>
+                                        <span className="hidden group-open:block">
+                                            <Icon name="minus" groesse={6} />
+                                        </span>
+                                    </span>
+                                </summary>
+                                <p className="max-w-mass pb-6 font-text text-fs-2 text-tinte-2">{item.a}</p>
+                            </details>
+                        ))}
+                    </div>
+                </Abschnitt>
 
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-labelledby="gf-ratgeber-heading">
-                <div className="glass-surface-subtle rounded-tile-xl p-6 sm:p-8">
-                    <h2 id="gf-ratgeber-heading" className="text-lg font-black text-slate-900 mb-4">Weiterführende Ratgeber zu Großformatfliesen &amp; XXL-Fliesen</h2>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {WEITERLESEN.map((link) => (
-                            <li key={link.href}>
-                                <Link
-                                    href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2"
-                                >
-                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                {/* 7. WEITERFÜHRENDE RATGEBER als Merkliste im Zweier-Raster */}
+                <Abschnitt titelId="gf-ratgeber-heading" leitachse spaet titel="Weiterführende Ratgeber zu Großformatfliesen & XXL-Fliesen">
+                    <Merkliste
+                        spalten={2}
+                        eintraege={WEITERLESEN.map((link) => ({
+                            titel: (
+                                <Link href={link.href} className={linkKlassen}>
                                     {link.label}
                                 </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+                            )
+                        }))}
+                    />
+                </Abschnitt>
 
-            {/* Konfigurator */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="konfigurator" aria-label="Fliesen-Konfigurator">
-                <FliesenKonfigurator format="xxl" />
-            </section>
+                {/* 8. KONFIGURATOR: der Funnel (nachgeladen) im Raster mit 8 Spalten, rechts die Rückfrage in 4 Spalten (ab lg) */}
+                <Abschnitt id="konfigurator" aria-label="Fliesen-Konfigurator" leitachse spaet>
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="min-w-0 lg:col-span-8">
+                            <FliesenKonfigurator format="xxl" />
+                        </div>
+                        <div className="lg:col-span-4">
+                            <Rueckfrage />
+                        </div>
+                    </div>
+                </Abschnitt>
+            </Leitachse>
 
+            {/* 9. QUALITÄT und ABSCHLUSS */}
             <QualityPromise />
 
-            {/* Closing CTA */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 relative z-10" aria-labelledby="gf-cta-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                        Kostenfreies Vor-Ort-Aufmaß
-                    </span>
-                    <h2 id="gf-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
-                        Passt ein Großformat zu Ihrem Raum?
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        {COMPANY_DATA.owner.fullName} prüft Untergrund, Zugänge und Raumzuschnitt vor Ort und empfiehlt das
-                        passende Format – danach erhalten Sie ein verbindliches Festpreisangebot.
+            <Abschnitt
+                titelId="gf-cta-heading"
+                flaeche="fliese"
+                spaet
+                etikett="Kostenfreies Vor-Ort-Aufmaß"
+                titel="Passt ein Großformat zu Ihrem Raum?"
+                einleitung={
+                    <p>
+                        {COMPANY_DATA.owner.fullName} prüft Untergrund, Zugänge und Raumzuschnitt vor Ort und empfiehlt das passende
+                        Format – danach erhalten Sie ein verbindliches Festpreisangebot.
                     </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">Aufmaß anfragen</Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-slate-700" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4" />
-                            WhatsApp
-                        </a>
-                    </div>
+                }
+            >
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Knopf href="/kontakt">Aufmaß anfragen</Knopf>
+                    <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                        <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                    </Knopf>
+                    <Knopf
+                        href={COMPANY_DATA.contact.whatsappLink}
+                        extern
+                        variante="neben"
+                        vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                    >
+                        WhatsApp
+                    </Knopf>
                 </div>
-            </section>
-        </div>
+            </Abschnitt>
+        </>
     );
 }
