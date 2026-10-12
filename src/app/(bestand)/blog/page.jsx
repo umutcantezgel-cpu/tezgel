@@ -31,7 +31,7 @@ export default function BlogPage() {
         <BlogFilter />
       </Abschnitt>
 
-      <QualityPromise />
+      <QualityPromise art="arbeit" />
     </>
   );
 }
