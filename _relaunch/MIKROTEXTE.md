@@ -65,5 +65,6 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/kontakt` | `≤ 30 km` | `–` | 1 | P4-08f | wie oben |
 | `/kontakt` | `≤ 45 km` | `–` | 1 | P4-08f | wie oben |
 | `*` | `WhatsApp-Nachricht an Fliesenverlegung Tezgel senden` | `–` | 2 | P4-13 | Nur im **Server-HTML** entfernt: Der schwebende Kanal wird wie im Bestand erst im Browser eingehängt (H1, E-029 Berichtigung, E-034). Im Browser steht er unverändert mit diesem Namen (`belege/p4-tor-r2/kanal/kanal-probe-4321.json`, 7 Seiten × m375/d1440; Funktionstest F-10 „Widget /“). Keine Textänderung (P4-GEG2 N-J). |
+| `/leistungen` | `Merkmale · 6` | `Ausstattungsmerkmale & Vorteile:` | 1 | F-01 (E-039) | Beschriftung des Aufklappers je Gewerk: zurück zum Bestandswortlaut (Werkstatt-Fassung hatte „Merkmale · {Anzahl}“ gesetzt; Gutachten u1, Stolperstein Wortlaut). Die Zahl entfällt, die Liste nennt die Merkmale selbst |
 
 Aufgehoben: Die Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) ist gestrichen. Der Kern-Kopf führt den Link ab lg wieder mit dem Bestandsnamen (P4-13, E-029 Berichtigung, E-034).
