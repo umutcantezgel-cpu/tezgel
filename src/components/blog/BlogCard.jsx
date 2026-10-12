@@ -1,102 +1,96 @@
 "use client";
-import React from 'react';
+// Ratgeber-Beitrag als Feld im Fugenraster (S-03, KERN v2 K-005/K-009): Bild im festen Rahmen 16:9 oben an der Fuge,
+// darunter Kennzeile in Mono (Kategorie · Lesezeit · Datum), Titel als H3 mit Link, Auszug und „Artikel lesen“.
+// Statt Karte mit Schatten, Heben und Zoom beim Hover, Verlauf über dem Foto und Pillen auf dem Bild: kein Text auf dem
+// Bild, Hover wechselt nur die Fläche (Fliese → Kalk, Register `zustand`). Der Titel-Link dehnt sich über das ganze Feld
+// (::after), der Fokus-Ring sitzt am Link selbst. Wortlaut, Link-Ziel und Alt-Text wie im Bestand.
+// Das Feld selbst (Fuge rechts/unten) setzt die Liste (`BlogListe`), damit Raster und Hervorhebung dieselben Fugen haben.
 import Link from 'next/link';
 import Image from 'next/image';
-import { Clock, ArrowRight } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { useContent } from '@/contexts/ContentContext';
-import { IconWrapper } from '@/utils/iconMapper';
 
-/**
- * Blog Card Component
- * Ceramic light card with photo, category badge and stretched link.
- */
+// Bilder mit sichtbarem Zeichen eines Bildgenerators unten rechts (Befund P4-08d, `kern/seiten/blog/bilder.ts`):
+// Zuschnitt nur oben und links (`object-right-bottom`), damit die Kennzeichnung im Bild bleibt. Alle übrigen mittig.
+export const BILDER_MIT_ZEICHEN = new Set([
+    '/images/bad/bad-beleuchtete-nischen.webp',
+    '/images/bad/bad-freistehende-wanne.webp',
+    '/images/bad/bad-tageslicht.webp',
+    '/images/bad/walk-in-dusche.webp',
+]);
+
+/** Zuschnitt auf den Rahmen; Bilder mit Kennzeichnung behalten die untere rechte Ecke */
+export const bildZuschnitt = (src) => (BILDER_MIT_ZEICHEN.has(src) ? 'object-cover object-right-bottom' : 'object-cover');
+
+// Bildbreite je Ansicht: mobil volle Breite, ab md zwei Spalten, ab lg zwei Spalten in 8 von 12 Spalten
+// (Satzbreite 1216 px ab 1312 px Ansicht), Seitenleiste daneben.
+export const BEITRAG_BILD_SIZES = '(min-width: 1312px) 400px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw';
+
 const BlogCard = ({ post }) => {
     const { blogCategories = [] } = useContent();
     const categoryData = (blogCategories || []).find(c => c.id === post.category);
 
     return (
-        <div className="group relative block h-full">
-            <div className="relative h-full flex flex-col glass-surface rounded-tile-lg overflow-hidden hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300">
-                {/* Image Container */}
-                <div className="relative h-52 overflow-hidden">
-                    {post.image ? (
-                        <>
-                            <Image
-                                src={post.image}
-                                alt={post.title}
-                                width={400}
-                                height={208}
-                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                                loading="lazy"
-                            />
-                            {/* Photo Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-                        </>
-                    ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center">
-                            <div className="w-20 h-20 rounded-tile-md bg-orange-600 flex items-center justify-center shadow-lg">
-                                {categoryData && <IconWrapper name={categoryData.icon} className="w-10 h-10 text-white" />}
-                            </div>
-                        </div>
-                    )}
+        <article
+            data-motion="zustand"
+            className="group relative flex h-full flex-col bg-fliese pointer-fine:hover:bg-kalk"
+        >
+            {post.image ? (
+                <div className="relative aspect-video border-b border-fuge bg-kalk">
+                    <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        sizes={BEITRAG_BILD_SIZES}
+                        className={bildZuschnitt(post.image)}
+                    />
+                </div>
+            ) : null}
 
-                    {/* Category Badge */}
-                    <div className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 rounded-tile-pill bg-white/95 border border-white/80 shadow-md pointer-events-none">
-                        {categoryData && (
-                            <IconWrapper
-                                name={categoryData.icon}
-                                className="w-4 h-4 text-orange-600"
-                            />
-                        )}
-                        <span className="text-xs font-black text-orange-950 uppercase tracking-wide">
-                            {categoryData?.name || post.category}
-                        </span>
-                    </div>
-
-                    {/* Reading Time Badge */}
+            <div className="flex flex-1 flex-col p-6 lg:p-8">
+                {/* Kennzeile: Kategorie (vormals Badge auf dem Bild), Lesezeit, Datum */}
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-fs-1 text-tinte-2">
+                    <span className="inline-flex items-center gap-2 text-tinte">
+                        <Fugenkreuz className="size-3 text-strich" />
+                        {categoryData?.name || post.category}
+                    </span>
                     {post.readTime && (
-                        <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-tile-pill bg-slate-900/75 backdrop-blur-md text-white text-xs font-bold pointer-events-none">
-                            <Clock className="w-3.5 h-3.5" />
+                        <span className="inline-flex items-center gap-2">
+                            <Icon name="uhr" groesse={4} />
                             {post.readTime}
-                        </div>
+                        </span>
+                    )}
+                    {post.date && (
+                        <span className="inline-flex items-center gap-2">
+                            <Icon name="kalender" groesse={4} />
+                            {post.date}
+                        </span>
                     )}
                 </div>
 
-                {/* Content */}
-                <div className="p-6 flex-1 flex flex-col">
-                    {/* Date */}
-                    {post.date && (
-                        <p className="text-sm text-slate-600 mb-2 font-semibold">
-                            {post.date}
-                        </p>
-                    )}
+                {/* Titel mit gedehntem Link: das ganze Feld ist anklickbar, Ankertext bleibt der Titel */}
+                <h3 className="mt-4 text-fs-4 text-tinte">
+                    <Link
+                        href={`/blog/${post.slug}`}
+                        data-motion="zustand"
+                        className="underline decoration-transparent decoration-1 underline-offset-4 after:absolute after:inset-0 pointer-fine:group-hover:decoration-tinte"
+                    >
+                        {post.title}
+                    </Link>
+                </h3>
 
-                    {/* Title with Stretched Link for perfect SEO Anchor Text */}
-                    <h3 className="text-xl font-black text-slate-900 mb-3 group-hover:text-orange-600 transition-colors line-clamp-2 leading-tight">
-                        <Link
-                            href={`/blog/${post.slug}`}
-                            className="hover:underline underline-offset-2 focus-visible:outline-none after:absolute after:inset-0 after:rounded-tile-lg focus-visible:after:ring-2 focus-visible:after:ring-orange-600"
-                        >
-                            {post.title}
-                        </Link>
-                    </h3>
+                <p className="mt-3 max-w-mass flex-1 text-fs-2 text-tinte-2">
+                    {post.excerpt}
+                </p>
 
-                    {/* Excerpt */}
-                    <p className="text-slate-700 mb-4 flex-grow line-clamp-3 leading-relaxed">
-                        {post.excerpt}
-                    </p>
-
-                    {/* Footer */}
-                    <div className="flex items-center justify-between pt-4 border-t border-slate-200">
-                        {/* Read More Arrow */}
-                        <div className="flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none">
-                            Artikel lesen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                    </div>
+                {/* Wegtext: Teil der Fläche des Titel-Links, kein zweiter Link */}
+                <div className="mt-6 flex items-center gap-2 border-t border-fuge pt-4 text-fs-2 font-semibold text-tinte">
+                    <span>Artikel lesen</span>
+                    <Icon name="pfeil-rechts" groesse={5} />
                 </div>
             </div>
-        </div>
+        </article>
     );
 };
 

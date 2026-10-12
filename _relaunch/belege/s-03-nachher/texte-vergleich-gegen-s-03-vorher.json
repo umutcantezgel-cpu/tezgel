@@ -1,0 +1,39 @@
+{
+ "vorher": "s-03-vorher",
+ "nachher": "s-03-nachher",
+ "seiten": {
+  "/blog": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Artikel suchen",
+     "Empfohlener Leitfaden",
+     "Untergrund & Abdichtung",
+     "Fliesen & Material",
+     "Pflege & Werterhalt",
+     "Balkon & Terrasse",
+     "Bad & Dusche",
+     "Bad & Dusche",
+     "Pflege & Werterhalt",
+     "Fliesen & Material",
+     "Fliesen & Material",
+     "Ratgeber & Kosten",
+     "Bad & Dusche",
+     "Neuigkeiten"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 14,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}
