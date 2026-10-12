@@ -4,7 +4,7 @@ import { chromium } from '@playwright/test';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { BASE, assertLocal, installSperre, setzeEinwilligung, bereit, grundmenge, slug, ensureDir, RELAUNCH } from './lib.mjs';
+import { BASE, assertLocal, installSperre, setzeEinwilligung, bereit, grundmenge, slug, ensureDir, RELAUNCH, spaetZeichnen } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 assertLocal();
@@ -25,6 +25,7 @@ async function bearbeite(s) {
   const page = await context.newPage();
   const resp = await page.goto(BASE + s, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await bereit(page);
+  await spaetZeichnen(page);
   // Aufklappbares öffnen, damit FAQ- und Akkordeon-Texte im Text stehen (nur lesen, keine Navigation)
   await page.evaluate(() => { document.querySelectorAll('details').forEach((d) => d.setAttribute('open', '')); });
   const d = await page.evaluate(() => {

@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from '@playwright/test';
-import { assertLocal, installSperre, setzeEinwilligung, ensureDir, RELAUNCH } from './lib.mjs';
+import { assertLocal, installSperre, setzeEinwilligung, ensureDir, RELAUNCH, spaetZeichnen } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 const BASE = arg('base', 'http://127.0.0.1:4310'); assertLocal(BASE);
@@ -22,7 +22,7 @@ for (const breite of breiten) {
   await installSperre(context); await setzeEinwilligung(context, 'abgelehnt', BASE);
   const page = await context.newPage();
   for (const seite of seiten) {
-    await page.goto(BASE + seite); await page.waitForLoadState('networkidle');
+    await page.goto(BASE + seite); await page.waitForLoadState('networkidle'); await spaetZeichnen(page);
     const liste = await page.evaluate(() => {
       const raus = [];
       const sel = (el) => { const teile = []; for (let e = el, d = 0; e && e !== document.body && d < 4; e = e.parentElement, d++) { let s = e.tagName.toLowerCase(); if (e.id) { s += `#${e.id}`; teile.unshift(s); break; } const k = [...e.classList].slice(0, 2).join('.'); if (k) s += `.${k}`; teile.unshift(s); } return teile.join(' > '); };

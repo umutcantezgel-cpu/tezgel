@@ -119,6 +119,12 @@ export async function bereit(page) {
   try { await page.waitForLoadState('networkidle', { timeout: 5000 }); } catch {}
 }
 
+// Abschnitte mit content-visibility:auto (`.spaet-zeichnen`) überspringt der Browser außerhalb der Sichtnähe – auch für
+// innerText. Werkzeuge, die Text bzw. Bedienelement-Inhalte auslesen (texte, wortbruch, forced-colors), zeichnen sie
+// deshalb vor dem Lesen sichtbar (Befund R-01b, S-13, S-17). Prüfungen von Lage, Fokus und Leistung nutzen das nie.
+export async function spaetZeichnen(page) {
+  await page.addStyleTag({ content: '.spaet-zeichnen{content-visibility:visible !important}' });
+}
 export function grundmenge() {
   return JSON.parse(fs.readFileSync(path.join(RELAUNCH, 'GRUNDMENGE.json'), 'utf8'));
 }

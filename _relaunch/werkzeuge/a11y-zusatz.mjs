@@ -39,7 +39,7 @@ import { chromium } from '@playwright/test';
 import { PNG } from 'pngjs';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, ANSICHTEN, installSperre, setzeEinwilligung, durchscrollen, bereit, grundmenge, slug, ensureDir, ueberlauf, RELAUNCH } from './lib.mjs';
+import { BASE, assertLocal, ANSICHTEN, installSperre, setzeEinwilligung, durchscrollen, bereit, grundmenge, slug, ensureDir, ueberlauf, RELAUNCH, spaetZeichnen } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); if (i < 0) return d; const v = process.argv[i + 1]; return v === undefined || v.startsWith('--') ? true : v; };
 const flag = (k) => process.argv.includes(`--${k}`);
@@ -796,7 +796,7 @@ async function pruefeForced(s, a, banner = 'abgelehnt') {
     await page.emulateMedia({ forcedColors: 'active', reducedMotion: 'reduce' });
     r.status = await laden(page, s);
     await bannerZustand(page, banner);
-    await durchscrollen(page); await bereit(page);
+    await durchscrollen(page); await bereit(page); await spaetZeichnen(page);
     r.gegenprobe = await gegenprobenAnwenden(page, 'forced');
     const dir = ensureDir(path.join(CACHE, 'forced-colors', a));
     const datei = path.join(dir, `${slug(s)}${banner === 'abgelehnt' ? '' : '-' + banner}.jpg`);
