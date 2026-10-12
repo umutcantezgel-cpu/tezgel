@@ -1,20 +1,23 @@
-import React from 'react';
+// Abnahme (E4-BAU-05, KERN v2): Erzählansicht nach dem Muster der Familie Fliesen (/fliesen) und der Leistungsseiten.
+// Einstieg mit Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts das Planblatt mit dem Fugenbild (Verlegeplan „fugen“,
+// interaktiv). Danach die Leitachse über die Abschnitte: Warum gemeinsam, fünf Prüfpunkte als Feldraster, Toleranzen als
+// Tabelle, vier Erläuterungen als Feldraster, Checkliste als Merkliste (Anker #checkliste), Konfigurator-Hinweis mit
+// Knöpfen und die weiterführenden Ratgeber als Merkliste. Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
+// Kein großer Moment, kein Auftritt. Metadaten unverändert.
 import Link from 'next/link';
-import {
-    ClipboardCheck,
-    ArrowRight,
-    Phone,
-    Ruler,
-    Grid,
-    Ear,
-    Droplets,
-    FileText,
-    Users,
-    Printer
-} from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Tabelle from '@/components/kern/Tabelle';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Fliesenarbeiten abnehmen: Checkliste & Normen | Tezgel',
@@ -25,27 +28,22 @@ export const metadata = createMetadata({
 
 const CHECKPOINTS = [
     {
-        icon: Ruler,
         title: 'Ebenheit & Winkel',
         desc: 'Mit Richtscheit und Messkeil wird geprüft, ob Boden und Wand innerhalb der vereinbarten Toleranzen liegen. Maßstab ist in der Regel DIN 18202.'
     },
     {
-        icon: Grid,
         title: 'Überzähne & Fugenbild',
         desc: 'Stehen benachbarte Fliesenkanten spürbar über? Sind Fugen gleichmäßig breit, geradlinig und vollständig gefüllt? Laufen die Achsen wie geplant?'
     },
     {
-        icon: Ear,
         title: 'Hohlstellen',
         desc: 'Die Klopfprobe gibt Hinweise auf nicht vollflächig gebettete Fliesen. Ein hohler Klang allein ist aber noch kein Urteil – es kommt auf Lage, Größe und Beanspruchung an.'
     },
     {
-        icon: Droplets,
         title: 'Anschlüsse & Silikon',
         desc: 'Elastische Fugen an Wanne, Dusche, Wandanschlüssen und Übergängen müssen an beiden Flanken haften, glatt abgezogen und frei von Fehlstellen sein.'
     },
     {
-        icon: FileText,
         title: 'Unterlagen & Restmaterial',
         desc: 'Pflegehinweise, Angaben zu verwendetem Kleber, Fugenmörtel und Silikon sowie einige Restfliesen für spätere Reparaturen gehören zur Übergabe.'
     }
@@ -106,260 +104,232 @@ const CROSS_LINKS = [
 
 export default function AbnahmePage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="abnahme-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <ClipboardCheck className="w-3.5 h-3.5" />
-                        Abnahme &middot; DIN 18202
-                    </span>
-                    <h1 id="abnahme-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesenarbeiten abnehmen: Checkliste &amp; Normen bei{' '}
-                        <span className="text-ceramic-gradient">Tezgel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Fliesenarbeiten fachgerecht abnehmen nach DIN 18202 und anerkannten Regeln der Technik: Fachbetrieb Tezgel erklärt Checkliste, Ebenheitstoleranzen, Fugenbild und worauf Bauherren bei der Übergabe achten sollten.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Projekt besprechen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href="#checkliste" className="btn-ghost px-7 py-3.5 text-xs">
-                            <Printer className="w-4 h-4 text-slate-700" />
-                            Zur Checkliste
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            {/* Warum gemeinsam */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10" aria-labelledby="gemeinsam-heading">
-                <div className="glass-surface rounded-tile-xl p-8 sm:p-10 flex flex-col sm:flex-row gap-6 items-start">
-                    <span className="icon-chip w-12 h-12 shrink-0">
-                        <Users className="w-6 h-6" />
-                    </span>
-                    <div>
-                        <h2 id="gemeinsam-heading" className="text-2xl font-black text-slate-900 mb-3">Warum eine gemeinsame Abnahme sinnvoll ist</h2>
-                        <p className="text-base text-slate-700 leading-relaxed">
-                            Bei einer gemeinsamen Begehung sehen Sie die Flächen mit dem Handwerker zusammen an, klären Fragen
-                            direkt am Objekt und halten offene Punkte fest. Das schafft Klarheit für beide Seiten. Bei
-                            Fliesenverlegung Tezgel schließt {COMPANY_DATA.owner.fullName} Projekte persönlich mit einer
-                            gemeinsamen Abnahme ab. Rechtliche Fragen zu Abnahme und Gewährleistung beantwortet im Zweifel eine
-                            fachkundige Rechtsberatung – diese Seite ist eine technische Orientierung.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* 5 Prüfpunkte */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="pruefpunkte-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Prüfpunkte</span>
-                    <h2 id="pruefpunkte-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Fünf Punkte, die bei jeder Abnahme dazugehören
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-                    {CHECKPOINTS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li
-                                key={item.title}
-                                className="group glass-surface p-6 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-11 h-11 mb-4">
-                                    <Icon className="w-5 h-5" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Toleranzen */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="toleranzen-heading">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-10">
-                        <span className="eyebrow mb-4">
-                            <Ruler className="w-3.5 h-3.5" />
-                            Toleranzen
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Fugenbild */}
+            <section aria-labelledby="abnahme-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Abnahme &middot; DIN 18202</>}
+                    titel={
+                        <span id="abnahme-heading">
+                            Fliesenarbeiten abnehmen: Checkliste &amp; Normen bei{' '}
+                            <span>Tezgel</span>
                         </span>
-                        <h2 id="toleranzen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Ebenheit und Winkel: Toleranzen nach DIN 18202 für Boden und Wand
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            DIN 18202 legt Grenzwerte für Ebenheitsabweichungen als sogenannte Stichmaße fest: Ein Richtscheit
-                            wird auf zwei Hochpunkte gelegt, gemessen wird der Abstand zur Fläche dazwischen. Je größer der
-                            Abstand der Auflagepunkte, desto größer die zulässige Abweichung. Winkeltoleranzen regelt Tabelle 2
-                            der Norm.
+                    }
+                    vorspann={
+                        <p>
+                            Fliesenarbeiten fachgerecht abnehmen nach DIN 18202 und anerkannten Regeln der Technik: Fachbetrieb Tezgel erklärt Checkliste, Ebenheitstoleranzen, Fugenbild und worauf Bauherren bei der Übergabe achten sollten.
                         </p>
-                    </div>
-                    <div className="overflow-x-auto rounded-3xl border border-slate-200 bg-white">
-                        <table className="w-full min-w-[620px] text-left text-sm">
-                            <caption className="sr-only">Grenzwerte für Ebenheitsabweichungen nach DIN 18202, Tabelle 3 (Auszug)</caption>
-                            <thead className="bg-slate-100 text-slate-900">
-                                <tr>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200">Tabelle 3</th>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200">Bezug</th>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200 text-right">0,1 m</th>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200 text-right">1 m</th>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200 text-right">4 m</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {TOLERANCES.map((row) => (
-                                    <tr key={row.row} className="border-b border-slate-200 last:border-b-0">
-                                        <th scope="row" className="p-4 font-bold text-slate-900">{row.row}</th>
-                                        <td className="p-4 text-slate-700">{row.area}</td>
-                                        <td className="p-4 text-slate-900 text-right tabular-nums">{row.v01} mm</td>
-                                        <td className="p-4 text-slate-900 text-right tabular-nums">{row.v1} mm</td>
-                                        <td className="p-4 text-slate-900 text-right tabular-nums">{row.v4} mm</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-                        Stichmaße als Grenzwerte bei den genannten Messpunktabständen, Auszug nach DIN 18202:2019-07. Die Werte
-                        dienen der Orientierung. Erhöhte Anforderungen (Zeilen 4 und 7) gelten nur, wenn sie ausdrücklich
-                        vereinbart wurden – etwa bei Großformaten. Maßgeblich ist immer der konkrete Vertrag.
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Projekt besprechen
+                            </Knopf>
+                            <Knopf href="#checkliste" variante="neben">
+                                Zur Checkliste
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Fliesenarbeiten abnehmen', 'fugen')}>
+                            <Verlegeplan plan="fugen" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
+            </section>
+
+            <Leitachse>
+                {/* 2. WARUM GEMEINSAM: Überschrift links, Text rechts */}
+                <Abschnitt titelId="gemeinsam-heading" kopf="seitlich" leitachse spaet titel="Warum eine gemeinsame Abnahme sinnvoll ist">
+                    <p className="max-w-mass font-text text-fs-3 text-tinte">
+                        Bei einer gemeinsamen Begehung sehen Sie die Flächen mit dem Handwerker zusammen an, klären Fragen direkt am
+                        Objekt und halten offene Punkte fest. Das schafft Klarheit für beide Seiten. Bei Fliesenverlegung Tezgel
+                        schließt {COMPANY_DATA.owner.fullName} Projekte persönlich mit einer gemeinsamen Abnahme ab. Rechtliche Fragen
+                        zu Abnahme und Gewährleistung beantwortet im Zweifel eine fachkundige Rechtsberatung – diese Seite ist eine
+                        technische Orientierung.
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Überzähne, Hohlstellen, Silikon, Unterlagen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="ueberzaehne-heading">
-                        <h2 id="ueberzaehne-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Überzähne, Fugenbreite und Fugenbild</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Beurteilt wird aus der normalen Gebrauchsperspektive und bei üblicher Beleuchtung – nicht mit der
-                            Taschenlampe im Streiflicht, das jede Kante überzeichnet. Kalibrierte und rektifizierte Fliesen
-                            ermöglichen schmalere und gleichmäßigere Fugen als Fliesen mit größeren Maßtoleranzen. Wichtig ist,
-                            dass das Fugenbild dem entspricht, was vorher vereinbart wurde.
-                        </p>
-                    </article>
-                    <article className="glass-surface rounded-[2rem] p-8" aria-labelledby="hohlstellen-heading">
-                        <h2 id="hohlstellen-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Hohlstellen: die Klopfprobe richtig einordnen</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Ein Kugelkopf- oder Klopfhammer macht nicht vollflächig gebettete Bereiche hörbar. Einzelne,
-                            kleinflächige Hohlstellen – etwa an einer Fliesenecke – sind nicht automatisch ein Mangel. Kritischer
-                            sind größere Hohllagen an stark belasteten Stellen, in Nassbereichen und im Außenbereich. Die
-                            Bewertung hängt immer vom Einzelfall ab.
-                        </p>
-                    </article>
-                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="anschluesse-heading">
-                        <h2 id="anschluesse-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Anschlüsse, Silikonfugen und Abdichtungsdetails</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Elastische Fugen sind Wartungsfugen: Sie müssen bei der Übergabe einwandfrei sein, werden später aber
-                            regelmäßig kontrolliert und bei Bedarf erneuert. Die Abdichtung nach DIN 18534 selbst ist nach dem
-                            Fliesen nicht mehr sichtbar – fragen Sie deshalb schon während der Ausführung nach, wie sie
-                            dokumentiert wird. Details zur Norm finden Sie unter{' '}
-                            <Link href="/untergrund-abdichtung/din-18534" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
-                                Abdichtung nach DIN 18534
-                            </Link>
-                            .
-                        </p>
-                    </article>
-                    <article className="glass-surface rounded-tile-xl p-8" aria-labelledby="unterlagen-heading">
-                        <h2 id="unterlagen-heading" className="text-xl sm:text-2xl font-black text-slate-900 mb-3">Unterlagen: Pflegehinweise, Restfliesen, Materialliste</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            Notieren Sie sich Serie, Farbe und Chargennummer der Fliesen sowie die Bezeichnungen von Kleber,
-                            Fugenmörtel und Silikon. Mit einigen Restfliesen aus derselben Charge lassen sich spätere Schäden
-                            passend reparieren. Pflegehinweise helfen, Fugen und Oberflächen richtig zu behandeln –
-                            Grundlagen dazu im Ratgeber{' '}
-                            <Link href="/blog/fliesen-reinigen-pflegen" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
-                                Fliesen reinigen und pflegen
-                            </Link>
-                            .
-                        </p>
-                    </article>
-                </div>
-            </section>
+                {/* 3. PRÜFPUNKTE: fünf Felder im Feldraster; das letzte Feld füllt die Zeile */}
+                <Abschnitt titelId="pruefpunkte-heading" etikett="Prüfpunkte" titel="Fünf Punkte, die bei jeder Abnahme dazugehören" leitachse spaet>
+                    <Feldraster spalten={2}>
+                        {CHECKPOINTS.map((item, i) => (
+                            <Feld key={item.title} spanne={i === CHECKPOINTS.length - 1 ? 2 : undefined}>
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">{item.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* Checkliste */}
-            <section id="checkliste" className="py-20 bg-white border-y border-slate-200 relative z-10 scroll-mt-28" aria-labelledby="checkliste-heading">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-10">
-                        <span className="eyebrow eyebrow-orange mb-4">
-                            <Printer className="w-3.5 h-3.5" />
-                            Zum Ausdrucken
-                        </span>
-                        <h2 id="checkliste-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Checkliste zum Ausdrucken
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            Drucken Sie diese Seite über die Druckfunktion Ihres Browsers aus und nehmen Sie die Liste zur
-                            Abnahme mit.
+                {/* 4. TOLERANZEN: Einleitung, Tabelle in der Region mit Name, Hinweis darunter */}
+                <Abschnitt
+                    titelId="toleranzen-heading"
+                    etikett="Toleranzen"
+                    titel="Ebenheit und Winkel: Toleranzen nach DIN 18202 für Boden und Wand"
+                    einleitung={
+                        <p>
+                            DIN 18202 legt Grenzwerte für Ebenheitsabweichungen als sogenannte Stichmaße fest: Ein Richtscheit wird auf
+                            zwei Hochpunkte gelegt, gemessen wird der Abstand zur Fläche dazwischen. Je größer der Abstand der
+                            Auflagepunkte, desto größer die zulässige Abweichung. Winkeltoleranzen regelt Tabelle 2 der Norm.
                         </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {CHECKLIST.map((block) => (
-                            <div key={block.group} className="rounded-tile-lg bg-slate-50 border border-slate-200 p-6 break-inside-avoid">
-                                <h3 className="font-black text-slate-900 mb-4">{block.group}</h3>
-                                <ul className="space-y-3">
+                    }
+                    leitachse
+                    spaet
+                >
+                    <Tabelle
+                        name="Grenzwerte für Ebenheitsabweichungen nach DIN 18202, Tabelle 3 (Auszug)"
+                        kopf={['Tabelle 3', 'Bezug', '0,1 m', '1 m', '4 m']}
+                        zeilen={TOLERANCES.map((row) => [row.row, row.area, `${row.v01} mm`, `${row.v1} mm`, `${row.v4} mm`])}
+                        ausrichtung={['links', 'links', 'rechts', 'rechts', 'rechts']}
+                    />
+                    <p className="mt-6 max-w-mass font-text text-fs-2 text-tinte-2">
+                        Stichmaße als Grenzwerte bei den genannten Messpunktabständen, Auszug nach DIN 18202:2019-07. Die Werte dienen
+                        der Orientierung. Erhöhte Anforderungen (Zeilen 4 und 7) gelten nur, wenn sie ausdrücklich vereinbart wurden –
+                        etwa bei Großformaten. Maßgeblich ist immer der konkrete Vertrag.
+                    </p>
+                </Abschnitt>
+
+                {/* 5. ERLÄUTERUNGEN: vier Felder im Feldraster, je Feld eine Überschrift (Artikel) mit Text */}
+                <Abschnitt leitachse spaet>
+                    <Feldraster spalten={2}>
+                        <Feld>
+                            <article aria-labelledby="ueberzaehne-heading" className="flex flex-1 flex-col">
+                                <h2 id="ueberzaehne-heading" className="font-anzeige text-fs-5 text-tinte">
+                                    Überzähne, Fugenbreite und Fugenbild
+                                </h2>
+                                <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">
+                                    Beurteilt wird aus der normalen Gebrauchsperspektive und bei üblicher Beleuchtung – nicht mit der
+                                    Taschenlampe im Streiflicht, das jede Kante überzeichnet. Kalibrierte und rektifizierte Fliesen
+                                    ermöglichen schmalere und gleichmäßigere Fugen als Fliesen mit größeren Maßtoleranzen. Wichtig ist,
+                                    dass das Fugenbild dem entspricht, was vorher vereinbart wurde.
+                                </p>
+                            </article>
+                        </Feld>
+                        <Feld>
+                            <article aria-labelledby="hohlstellen-heading" className="flex flex-1 flex-col">
+                                <h2 id="hohlstellen-heading" className="font-anzeige text-fs-5 text-tinte">
+                                    Hohlstellen: die Klopfprobe richtig einordnen
+                                </h2>
+                                <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">
+                                    Ein Kugelkopf- oder Klopfhammer macht nicht vollflächig gebettete Bereiche hörbar. Einzelne,
+                                    kleinflächige Hohlstellen – etwa an einer Fliesenecke – sind nicht automatisch ein Mangel. Kritischer
+                                    sind größere Hohllagen an stark belasteten Stellen, in Nassbereichen und im Außenbereich. Die Bewertung
+                                    hängt immer vom Einzelfall ab.
+                                </p>
+                            </article>
+                        </Feld>
+                        <Feld>
+                            <article aria-labelledby="anschluesse-heading" className="flex flex-1 flex-col">
+                                <h2 id="anschluesse-heading" className="font-anzeige text-fs-5 text-tinte">
+                                    Anschlüsse, Silikonfugen und Abdichtungsdetails
+                                </h2>
+                                <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">
+                                    Elastische Fugen sind Wartungsfugen: Sie müssen bei der Übergabe einwandfrei sein, werden später aber
+                                    regelmäßig kontrolliert und bei Bedarf erneuert. Die Abdichtung nach DIN 18534 selbst ist nach dem
+                                    Fliesen nicht mehr sichtbar – fragen Sie deshalb schon während der Ausführung nach, wie sie dokumentiert
+                                    wird. Details zur Norm finden Sie unter{' '}
+                                    <Link href="/untergrund-abdichtung/din-18534" className={linkKlassen}>
+                                        Abdichtung nach DIN 18534
+                                    </Link>
+                                    .
+                                </p>
+                            </article>
+                        </Feld>
+                        <Feld>
+                            <article aria-labelledby="unterlagen-heading" className="flex flex-1 flex-col">
+                                <h2 id="unterlagen-heading" className="font-anzeige text-fs-5 text-tinte">
+                                    Unterlagen: Pflegehinweise, Restfliesen, Materialliste
+                                </h2>
+                                <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">
+                                    Notieren Sie sich Serie, Farbe und Chargennummer der Fliesen sowie die Bezeichnungen von Kleber,
+                                    Fugenmörtel und Silikon. Mit einigen Restfliesen aus derselben Charge lassen sich spätere Schäden passend
+                                    reparieren. Pflegehinweise helfen, Fugen und Oberflächen richtig zu behandeln – Grundlagen dazu im Ratgeber{' '}
+                                    <Link href="/blog/fliesen-reinigen-pflegen" className={linkKlassen}>
+                                        Fliesen reinigen und pflegen
+                                    </Link>
+                                    .
+                                </p>
+                            </article>
+                        </Feld>
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 6. CHECKLISTE: vier Gruppen als Merkliste an der Fuge; die Punkte mit Kästchen zum Ausdrucken */}
+                <Abschnitt
+                    id="checkliste"
+                    titelId="checkliste-heading"
+                    etikett="Zum Ausdrucken"
+                    titel="Checkliste zum Ausdrucken"
+                    einleitung={
+                        <p>
+                            Drucken Sie diese Seite über die Druckfunktion Ihres Browsers aus und nehmen Sie die Liste zur Abnahme mit.
+                        </p>
+                    }
+                    leitachse
+                    spaet
+                >
+                    <Merkliste
+                        titelAls="h3"
+                        eintraege={CHECKLIST.map((block) => ({
+                            titel: block.group,
+                            fuss: (
+                                <ul className="grid gap-3">
                                     {block.items.map((item) => (
-                                        <li key={item} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                            <span className="mt-0.5 w-4 h-4 shrink-0 rounded border-2 border-orange-600 bg-white" aria-hidden="true" />
+                                        <li key={item} className="flex gap-3 font-text text-fs-2 text-tinte">
+                                            <span aria-hidden="true" className="mt-1 size-4 shrink-0 border border-strich" />
                                             {item}
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                            )
+                        }))}
+                    />
+                </Abschnitt>
 
-            {/* Konfigurator-CTA + Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-6 relative z-10" aria-labelledby="ratgeber-heading">
-                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-10 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                    <div>
-                        <h2 className="text-2xl font-black text-slate-900">Neues Fliesenprojekt geplant?</h2>
-                        <p className="mt-2 text-base text-slate-700 max-w-2xl">
-                            Mit dem Fliesen-Konfigurator bereiten Sie Raum, Untergrund, Format und Fläche in vier Schritten vor.
-                            Das verbindliche Festpreisangebot folgt nach dem kostenfreien Aufmaß vor Ort.
+                {/* 7. KONFIGURATOR-HINWEIS: Überschrift links, zwei Knöpfe rechts; Fläche Fliese */}
+                <Abschnitt
+                    flaeche="fliese"
+                    kopf="seitlich"
+                    titel="Neues Fliesenprojekt geplant?"
+                    einleitung={
+                        <p>
+                            Mit dem Fliesen-Konfigurator bereiten Sie Raum, Untergrund, Format und Fläche in vier Schritten vor. Das
+                            verbindliche Festpreisangebot folgt nach dem kostenfreien Aufmaß vor Ort.
                         </p>
-                    </div>
-                    <div className="flex flex-wrap gap-3">
-                        <Link href="/fliesen/konfigurator" className="btn-primary px-7 py-3.5 text-xs">
+                    }
+                    leitachse
+                    spaet
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/fliesen/konfigurator" icon="pfeil-rechts">
                             Zum Konfigurator
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-slate-700" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
                     </div>
-                </div>
+                </Abschnitt>
 
-                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-5">Weiterführende Ratgeber zur Fliesenverlegung &amp; Bauabnahme</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {CROSS_LINKS.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
+                {/* 8. WEITERFÜHRENDE RATGEBER: vier Verweise als Merkliste im Feldraster mit Beschreibung */}
+                <Abschnitt titelId="ratgeber-heading" titel="Weiterführende Ratgeber zur Fliesenverlegung & Bauabnahme" leitachse spaet>
+                    <Merkliste
+                        spalten={2}
+                        eintraege={CROSS_LINKS.map((link) => ({
+                            titel: (
+                                <Link href={link.href} className={linkKlassen}>
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-600" />
-                                </span>
-                                <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+                                </Link>
+                            ),
+                            text: link.desc
+                        }))}
+                    />
+                </Abschnitt>
+            </Leitachse>
 
+            {/* 9. ABSCHLUSS */}
             <QualityPromise />
-        </div>
+        </>
     );
 }
