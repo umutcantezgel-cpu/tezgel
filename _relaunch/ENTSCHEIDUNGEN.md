@@ -510,3 +510,21 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   6. **Übergabe:** `_werkstatt/STATUS.md` und `PRUEFPUNKT.md` tragen den Vermerk „ÜBERGEBEN – nicht fortsetzen, nicht pushen“; M-21 ist beantwortet. Der WERKSTATT-Block in der committeten `CLAUDE.md` bleibt stehen (`commit.sh` committet `CLAUDE.md` nie), ist aber durch diese Vermerke und den lokalen Orchestrator-Block überholt.
   7. **Merge-Commits** laufen über `commit.sh --merge`: nur `ORCHESTRATOR=1`, keine ungelösten Konflikte, `CLAUDE.md` im Index ohne lokalen Block, keine Datei > 5 MB.
 - **Umkehrprobe:** Bringt ein Schritt eine Seite unter den Stand vor dem Umbau (Funktion, Barrierefreiheit, Text, Leistung), wird er per Revert-Commit zurückgenommen und neu gebaut.
+
+## E-039 · Fusion II: beide Sitzungsstände ohne Verlust zusammenführen (12.10.2026)
+- **Anlass:** Der Auftraggeber im Chat: „ey sorry wir haben anscheinend 2 Sitzungen an dem gelichem Projekt laufen gehabt, kannst du den aktuellen stand von Main nehmen und all deine design elemente mit implementieren und das was du hast um beide versionen zu fusionieren ohne die eine zu überschreiben“.
+- **Befund:**
+  - Die Werkstatt hat nach dem Übergabevermerk weitergebaut: E3-Nacharbeit, E4 Familien und E5 teilweise.
+  - Sie hat 5c3c359 eingemischt und a1aeda6 auf `main` gepusht (191 Commits). Seit 09:40 CEST steht sie auf HALT.
+  - Lokal lagen 22 ungepushte Commits dieser Sitzung: N-01/N-01b, S-01, S-03, S-01b/c, S-04, Q-01…Q-05, Suite, Prüftor.
+  - Probe-Merge: 29 Konflikte, alle in doppelt gebauten Einheiten. `globals.css` mischt sauber.
+- **Entscheidungen des Auftraggebers (Auswahl im Chat):**
+  1. „Abschnittsweise fusionieren“: Doppelt gebaute Seiten und Formulare werden je Abschnitt bzw. Zustand blind verglichen und fusioniert. Verbesserungen ohne Optik kommen aus beiden Fassungen.
+  2. „Werkstatt nehmen“: `/bad`, `/fliesen` und die Ratgeber-Artikel bleiben in der Werkstatt-Fassung. Die abgebrochenen Teilstände dieser Sitzung liegen nur im Scratchpad (`wip-e039/`).
+  3. „Nur diese Sitzung“: Nur die Relaunch-Sitzung pusht, die Werkstatt bleibt angehalten.
+- **Umsetzung:**
+  - **F0:** Merge-Commit c4f2a04. Die Konflikte stehen vorläufig einheitsweise in der Werkstatt-Fassung (samt `stile.js`/`OptionGroup.jsx`). Die Fassung B dieser Sitzung bleibt in f53181e.
+  - **F1:** blindes Gutachten je Einheit (U1 `/leistungen`, U2 `/leistungen/[id]`, U3 `/blog`, U4 Badanfrage, U5 Projekt-Check, U6 Konfigurator, U7 Schnellanfrage, U8 Routenkarte).
+  - **F2:** Fusion je Einheit mit Gegenprüfung.
+  - **F3:** zwei Lieferungen, zuerst die Formulare, dann die Seiten.
+- **Umkehrprobe:** Ein Revert von c4f2a04 stellt den Stand vor der Zusammenführung wieder her. Fusionsschritte sind einzeln revertierbar.

@@ -1,5 +1,7 @@
 STATUS · HALT auf Anweisung (12.10. 09:40 CEST) · Etappe 4 abgeschlossen (11/11), Etappe 5: E5-BAU-01, -02, -10 fertig · main = Arbeitsbranch
 
+> **HALT BESTÄTIGT – 12.10.2026 (E-039).** Nur die Relaunch-Sitzung arbeitet und pusht weiter (`_relaunch/PLAN.md`, „Fusion II“). Nicht fortsetzen, nicht pushen.
+
 STATUS · ÜBERGEBEN an die Relaunch-Sitzung (11.10.2026, Entscheidung des Auftraggebers) · Werkstatt-Lauf beendet · nicht fortsetzen
 
 > **ÜBERGEBEN – 11.10.2026 (Entscheidung des Auftraggebers).** Der Werkstatt-Lauf ist beendet: **nicht fortsetzen, nicht pushen.** Vorbild für alle Unterseiten ist die live laufende Fusions-Startseite (KERN v2, `_werkstatt/KERN.md`); nur die Relaunch-Sitzung baut weiter, Seite für Seite direkt auf `main` (`_relaunch/ENTSCHEIDUNGEN.md` E-037, E-038; Plan `_relaunch/PLAN.md`, Abschnitt „Vereinheitlichung“). Die Pakete E3–E6 und die Kür dieses PLANs werden dort als Gerüst übernommen; Werkzeuge in `_werkstatt/werkzeuge` werden weiter benutzt. Der WERKSTATT-Block in `CLAUDE.md` ist damit überholt.

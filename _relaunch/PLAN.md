@@ -720,3 +720,104 @@ Danach das Phasentor E3.
   - Lighthouse nicht schlechter als der Ausgangsstand, Budgets erreicht oder als begründete Abweichung;
   - Sichtabnahme ≥ 8 auf den 12 Hauptansichten (`_werkstatt/HAUPTANSICHTEN.json`).
 
+## Fusion II (E-039, 12.10. ~10:00 CEST) – beide Sitzungsstände ohne Verlust zusammenführen
+
+### Context
+- Die Werkstatt-Sitzung hat trotz des Übergabevermerks weitergebaut: E3-Nacharbeit, E4 Familien (bad/*, fliesen/*) und Teile von E5 (untergrund, `[id]/[stadt]`).
+  - Sie hat meinen Stand 5c3c359 eingemischt und auf `main` gepusht: **a1aeda6 = live**, 191 Commits, die mir fehlen.
+  - Seit 09:40 CEST steht sie auf HALT; ihre Routinen sind deaktiviert.
+- Lokal: 22 eigene, ungepushte Commits (HEAD e185941).
+  - N-01/N-01b Ladelast: live ist mobil TBT 1 045 ms, Ursache ist `html:has()` und steckt noch in main;
+  - S-01 `/leistungen`, S-03 `/blog`, S-01b/c, S-04 `/leistungen/[id]`;
+  - Q-01…Q-05 (Formulare, Routenkarte);
+  - vereinheitlichte Suite, Prüftor `tor-s.sh`, Werkzeugfixes.
+  - Dazu ungecommittete Teilstände S-05 `/bad`, S-08 `/fliesen`, S-10 Ratgeber-Artikel; ihre Agenten wurden durch das Nutzungslimit abgebrochen.
+- Probe-Merge (`git merge-tree`):
+  - 29 Konflikte, alle in den doppelt gebauten Einheiten: `/leistungen`, `/leistungen/[id]`, `/blog` + BlogCard/BlogSidebar, BadanfrageFunnel, BadProjektCheck, FliesenKonfigurator, LeadQuickForm, RouteVisualization;
+  - `globals.css` führt sauber zusammen (`html:has` weg, `body:has` + `main/footer`-clip bleiben);
+  - `_relaunch/` und `_werkstatt/` ohne Konflikt.
+- **Entscheidungen des Auftraggebers (AskUserQuestion, 12.10.):**
+  1. Doppelt gebaute Seiten und Formulare **abschnittsweise blind vergleichen und fusionieren**. Verbesserungen ohne Optik kommen aus beiden.
+  2. `/bad`, `/fliesen` und Ratgeber-Artikel: **Werkstatt-Fassung**. Meine Teilstände werden nur gesichert.
+  3. **Nur diese Sitzung pusht**; die Werkstatt bleibt angehalten.
+- Ziel: ein `main`, das alle fertigen Seiten beider Sitzungen trägt. Jede doppelt gebaute Einheit wird die bessere Fusion aus beiden, die Ladelast ist behoben, eine grüne Suite. Danach geht es Stück für Stück weiter mit den offenen Seiten.
+
+### F0 · Sicherung und Merge-Basis M (ein Push, sichtbar nur Ladelast + Preisrechner-Phasen)
+1. **Sichern:**
+   - Lokalen `CLAUDE.md`-Block → `$S/claude-lokal.md`, dann `git checkout -- CLAUDE.md`.
+   - WIP S-05/S-08/S-10: `git diff` als Patch und die ungetrackten Ordner (`src/components/{bad,fliesen,blog/artikel}`, `belege/s-05*`, `s-08*`, `s-10*`, `t-sammel-1`, `sammel-live`) → `$S/wip-e039/`.
+   - Danach die getrackten WIP-Dateien auf HEAD zurück und die ungetrackten Ordner entfernen (sie liegen im Archiv).
+2. `git fetch origin main`, dann `git merge --no-ff --no-commit origin/main`.
+3. **Konflikte einheitsweise vorläufig in der Werkstatt-Fassung** (`git checkout --theirs`):
+   - für die ganze Einheit, auch meine nur dort geänderten Nebendateien (`stile.js` der Funnels, `OptionGroup.jsx`). Sonst passen Exporte nicht zusammen; das zeigte sich in Q-01 als 500er „optionClass“.
+   - Meine Fassungen bleiben in 5acf5e1/d33959a abrufbar (`git show`) für F2.
+   - Auto-gemischt bleiben: `globals.css` (N-01/N-01b), `PricingCalculator` (Phasen-Fix), Suite, Werkzeuge, Dokumente.
+   - Meine dann verwaisten Bausteine (`src/components/leistungen/*`, `BlogListe.jsx`) bleiben vorerst liegen; F2 nutzt oder entfernt sie.
+4. Merge-Commit mit `ORCHESTRATOR=1 commit.sh --merge` (CLAUDE.md-Prüfung), dann den lokalen Block wiederherstellen.
+5. **Suite auf M grün machen:**
+   - Erst ein Lauf gegen den Build von M und gegen den Live-Build a1aeda6.
+   - Für Werkstatt-Seiten die Testanpassungen aus `_werkstatt/werkzeuge/tests` übernehmen, dabei die Sperrklinke beachten. Fallen Fälle weg, gilt eine Begründung in LERNEN plus `--basis`.
+6. **Sammel-Tor** `tor-s.sh a1aeda6 m-e039 /,/leistungen,/blog,/bad,/fliesen <alle Specs> --q` mit `BEREICH_AUCH='*'`:
+   - erwartet nur CSS-Änderungen (N-01) und die Preisrechner-Seiten m375.
+   - Ruhiges Fenster: Lighthouse `/` mobil + Desktop, 10 Paare gegen 707a93d **und** gegen a1aeda6; INP `/`.
+7. Push `git push origin HEAD:main` (vorher fetch), dann `vercel-status`, `live-rauchtest` und `live-browser` mit fester Kennung, dann die Meldung.
+8. **Dokumente:**
+   - E-039 in `_relaunch/ENTSCHEIDUNGEN.md` (Wortlaut der drei Antworten);
+   - Vermerk in `_werkstatt/PRUEFPUNKT.md`: HALT bestätigt, weiter nur über die Relaunch-Sitzung;
+   - PLAN-Abschnitt „Fusion II“, STATUS und PRUEFPUNKT.
+   - Werkstatt-Routinen nicht anfassen; sie sind deaktiviert und gehören der anderen Sitzung.
+
+### F1 · Blindes Gutachten je Einheit (Workflow, Opus, ≈ 2 h)
+- **Server:**
+  - A = Build von M (Werkstatt-Fassungen + Ladelast-Fix), Port 4370;
+  - B = Build von e185941 (meine Fassungen), Port 4371;
+  - beide aus Reinraum-Kopien.
+- **Material je Einheit, vom Orchestrator per Skript:**
+  - Seiten: `_werkstatt/werkzeuge/abschnitte.mjs` (m390, d1440, je Abschnitt ein Bild).
+  - Formulare: Zustandsbilder (Schritte, Fehler, Serverfehler, Erfolg, WhatsApp); die Skripte der Q-Agenten liegen in `$S/q-0x/`.
+  - Dazu a11y-zusatz und axe für A und B.
+- **Einheiten:** U1 `/leistungen` · U2 `/leistungen/[id]` (4 Seiten) · U3 `/blog` (+ Karten, Seitenleiste, Filter) · U4 Badanfrage · U5 Projekt-Check · U6 Konfigurator · U7 Schnellanfrage · U8 Routenkarte.
+- **Gutachter (frischer Opus je Einheit):**
+  - Fassungen als X/Y, die Zuordnung zufällig je Einheit und nur im Workflow-Skript bekannt.
+  - Wertet je Abschnitt bzw. Zustand nach KERN v2: Fuge statt Karte, ein Rot je Bildschirm, Komposition, mobil, Lesbarkeit, Zustände.
+  - Ausgabe (Schema): Wahl je Abschnitt mit Begründung, dazu Liste der **Verbesserungen der unterlegenen Fassung**, die übernommen werden müssen: Fokusringe, `role="alert"`, `autocomplete`, `aria-valuetext`, Überlauf-Fixes, sichtbare Labels, Kontrast.
+  - Beleg: `_relaunch/belege/e039-gutachten/<einheit>.{json,md}`.
+
+### F2 · Fusion bauen (Workflow-Pipeline je Einheit: Bau → Gegenprüfung; Dateien je Einheit disjunkt)
+- **Baumeister (Opus) auf M im Arbeitsbaum (`next dev` 4350):**
+  - Werkstatt-Datei als Grundlage, wo sie gewinnt; Abschnitte aus meiner Fassung, wo sie gewinnt (aus `git show 5acf5e1:<pfad>` bzw. d33959a).
+  - Alle Verbesserungen der Liste übernehmen.
+  - Werkstatt-Bausteine nutzen (Planblatt, Rückfrage, Zeitband, VerbandUmschalter).
+  - Wortlaut, Anker, IDs und JSON-LD: Vereinigungsmenge, nichts geht verloren.
+  - Selektoren beider Suiten bleiben gültig.
+- **Gegenprüfer (frischer Opus):**
+  - jede Wahl des Gutachtens umgesetzt;
+  - `texte-vergleich` gegen live ohne Verlust;
+  - a11y-zusatz je Kennzahl ≤ dem besseren Wert von A und B;
+  - Specs grün; Bilder gesichtet.
+  - Bei Befund ein Nachbau (höchstens zwei Runden).
+- Danach je Einheit ein Commit (`PAKET=F-0x`, Auftrag `_relaunch/pakete/F-0x.md` mit Commit-Muster).
+
+### F3 · Tore und Pushes in zwei Lieferungen (regelmäßige Meldungen)
+- **Lieferung 1:** Formulare U4–U8 (geteilte Komponenten, T2-Q mit allen einbindenden Seiten und Pixel-Stichprobe). Danach Push und Meldung.
+- **Lieferung 2:** Seiten U1–U3 (T2-Q, Lighthouse der Hauptansichten im ruhigen Fenster). Danach Push und Meldung.
+- Danach die Schrittfolge neu zuschneiden: Von der Werkstatt erledigt sind E4 und E5-BAU-01/-02/-10. Offen bleiben:
+  - meine S-06 `/standorte` mit Einzugsband, S-07 `[stadt]`, S-09 `/fliesen/konfigurator`, S-11 SIG-3/Fugenband, R-01 Fokus/Überlauf;
+  - Werkstatt E5-BAU-03…09/-11, E6, Abbau, Kür.
+  - Seiten, die beide schon gebaut haben, werden nicht erneut gebaut.
+
+### Verifikation
+- **F0:**
+  - Reinraum grün; Probe-Merge = echter Merge (29 Konflikte, alle Werkstatt-Fassung);
+  - `build-vergleich a1aeda6 M`: HTML gleich außer den Preisrechner-Seiten, CSS nur N-01/N-01b;
+  - Pixel = 0 außer Preisrechner m375;
+  - Suite grün auf M;
+  - Lighthouse `/` mobil: TBT deutlich unter a1aeda6;
+  - Live-Prüfung grün.
+- **F1/F2 je Einheit:**
+  - Gutachten mit Wahl je Abschnitt;
+  - Fusion enthält jede gewählte Fassung; texte2 rot 0;
+  - axe 0 auf den umgebauten Teilen; a11y-zusatz nicht schlechter als der bessere Elternteil;
+  - Specs beider Formulare grün; Wortbruch 0; Bilder selbst gesichtet.
+- **F3:** Sammel-Tor grün, Lighthouse im Budget oder als belegte Abweichung, Live-Prüfung grün.
+
