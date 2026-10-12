@@ -1534,5 +1534,11 @@
   "block": "main",
   "entfernt": "Weitere Orte auf Anfrage Ihre Stadt ist nicht aufgeführt? Wir sind unter anderem im Lahn-Dill-Kreis, Landkreis Gießen, Landkreis Marburg-Biedenkopf, Landkreis Limburg-Weilburg, Wetteraukreis unterwegs. Rufen Sie uns einfach an – wir klären gern, ob wir Ihr Projekt an Ihrem Wohnort übernehmen können. 06441 / 44 83 567 Kostenlose Beratung anfragen",
   "vermerk": "E4-N2-07 /standorte: Block „Weitere Orte auf Anfrage“ wortgleich vor den Abschluss verschoben und mit dem regionalen Ansprechpartner zu einem Anfrageabschnitt zusammengefasst (E3-SICHT-2-ERZ Befund 15) – Verschiebung, kein Wortverlust – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "anfragenDirekt",
+  "vermerk": "E4-BAU-04 Musterbad-Detailseiten: Knopfpaar „Konzept unverbindlich anfragen“ / „Direkt anrufen“ – e0 las beide Knöpfe ohne Wortgrenze, jetzt mit Grenze zwischen den Knöpfen; Wortlaut und Reihenfolge gleich, kein Wortverlust – TEXTVORSCHLAEGE"
  }
 ]

@@ -1,17 +1,27 @@
-import React from 'react';
-import Link from 'next/link';
+// Musterbad-Detail (E4-BAU-04, KERN v2): Erzählansicht nach dem Muster der Familienreferenz (bad/page.jsx). Einstieg mit Achse,
+// Rücklink und Maße im Etikett, H1 links bündig, Vorspann und Festpreis-Merkmal; rechts das Planblatt „badsanierung“ mit dem
+// Verlegeplan (interaktiv, ohne Bemaßung). Danach die Leitachse: Ausstattung als Feldraster, Anfrage zu diesem Musterbad im
+// Seitenlayout, Badanfrage mit Rückfrage. Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
+// Die Badanfrage wird nachgeladen (TEMPO). Kein großer Moment und keine neue Bewegung (setzt der Orchestrator).
+import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
-import {
-    Check,
-    ArrowLeft,
-    ArrowRight,
-    Phone,
-    CheckCircle2
-} from 'lucide-react';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { COMPANY_DATA } from '@/config/company';
-import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
 import { createMetadata } from '@/lib/metadata';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+
+// Badanfrage nachladen wie auf der Familienreferenz (TEMPO, Z-08 / E-025)
+const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export async function generateStaticParams() {
     return MUSTERBAEDER.map((b) => ({
@@ -48,131 +58,136 @@ export default async function MusterbadDetailPage({ params }) {
         notFound();
     }
 
+    // Bei ungerader Zahl der Ausstattungsgruppen belegt die letzte Gruppe beide Spalten (keine graue Restzelle)
+    const gruppen = bath.components.length;
+    const letzteBreit = gruppen % 2 === 1;
+
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Header */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="musterbad-heading">
-                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 space-y-4 relative overflow-hidden">
-                    <Link
-                        href="/bad/musterbaeder"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-950 hover:text-orange-700 bg-white px-3.5 py-1.5 rounded-tile-pill border border-neutral-200 hover:border-orange-500 transition-colors"
-                    >
-                        <ArrowLeft className="w-3.5 h-3.5" />
-                        Zurück zur Musterbad-Übersicht
-                    </Link>
-
-                    <div className="flex flex-wrap items-center gap-2 pt-2">
-                        <span className="text-xs font-black bg-orange-600 text-white px-3.5 py-1 rounded-tile-pill tabular-nums">
-                            {bath.size}
+        <>
+            {/* 1. EINSTIEG: Rücklink und Maße im Etikett, H1 auf der Achse, Vorspann, Festpreis-Merkmal; rechts der Plan */}
+            <section aria-labelledby="musterbad-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={
+                        <>
+                            <Knopf href="/bad/musterbaeder" variante="text" iconLinks="pfeil-links" className="font-text text-fs-2">
+                                Zurück zur Musterbad-Übersicht
+                            </Knopf>
+                            <span className="tabular-nums">{bath.size}</span>
+                            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                            <span>{bath.tier}</span>
+                        </>
+                    }
+                    titel={
+                        <span id="musterbad-heading">
+                            Musterbad {bath.title} –{' '}
+                            <span>Komplettbad &amp; Badsanierung</span>
                         </span>
-                        <span className="text-xs font-bold bg-orange-50 text-orange-950 px-3.5 py-1 rounded-tile-pill border border-orange-200">
-                            {bath.tier}
-                        </span>
-                    </div>
-
-                    <h1 id="musterbad-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Musterbad {bath.title} –{' '}
-                        <span className="text-ceramic-gradient">Komplettbad &amp; Badsanierung</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed">
-                        {bath.headline}: Unser Musterbad {bath.title} bietet Ihnen ein schlüsselfertiges Komplettbad und eine professionelle Badsanierung von Fachbetrieb Tezgel in Aßlar und Wetzlar. Entdecken Sie alle Ausstattungsdetails, Sanitärobjekte und Markenkomponenten für Ihre Badplanung.
-                    </p>
-
-                    <div className="p-4 sm:px-6 rounded-tile-sm bg-white border border-slate-200 inline-flex flex-wrap items-center gap-x-6 gap-y-1">
-                        <span className="text-sm text-slate-700 font-medium">
-                            Verbindlicher Festpreis nach kostenfreiem Vor-Ort-Aufmaß – abgestimmt auf Ihren Grundriss.
-                        </span>
-                    </div>
-                </div>
-            </section>
-
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10" aria-labelledby="komponenten-heading">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-
-                    {/* Components Breakdown (Left 8 Cols) */}
-                    <div className="lg:col-span-8 space-y-8">
-                        <div>
-                            <span className="eyebrow eyebrow-sky mb-3">Ausstattung</span>
-                            <h2 id="komponenten-heading" className="text-2xl sm:text-3xl font-black text-slate-900 mb-2">
-                                Detaillierte Ausstattungs- und Komponentenliste
-                            </h2>
-                            <p className="text-sm text-slate-700">
-                                Transparente Komponentenübersicht für das {bath.title} ({bath.sizeM2} m²): Alle Sanitärelemente, Armaturen und Fliesenoberflächen stimmen wir passgenau auf Ihren Grundriss ab.
-                            </p>
-                        </div>
-
-                        <ul className="space-y-6">
-                            {bath.components.map((comp) => (
-                                <li
-                                    key={comp.category}
-                                    className="group glass-surface rounded-tile-md p-6 sm:p-8 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                >
-                                    <div className="border-b border-slate-200 pb-3 mb-4">
-                                        <p className="font-black text-base text-slate-900 group-hover:text-orange-600 transition-colors">
-                                            {comp.category}
-                                        </p>
-                                    </div>
-
-                                    <ul className="space-y-2.5">
-                                        {comp.items.map((item) => (
-                                            <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700 leading-relaxed">
-                                                <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </li>
-                            ))}
+                    }
+                    vorspann={
+                        <p>
+                            {bath.headline}: Unser Musterbad {bath.title} bietet Ihnen ein schlüsselfertiges Komplettbad und eine professionelle Badsanierung von Fachbetrieb Tezgel in Aßlar und Wetzlar. Entdecken Sie alle Ausstattungsdetails, Sanitärobjekte und Markenkomponenten für Ihre Badplanung.
+                        </p>
+                    }
+                    merkmale={
+                        <ul className="grid gap-3">
+                            <li className="flex items-center gap-3 font-text text-fs-2 text-tinte">
+                                <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                                Verbindlicher Festpreis nach kostenfreiem Vor-Ort-Aufmaß – abgestimmt auf Ihren Grundriss.
+                            </li>
                         </ul>
-                    </div>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder(`Musterbad ${bath.title}`, 'badsanierung')}>
+                            <Verlegeplan plan="badsanierung" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
+            </section>
 
-                    {/* Sidebar / Actions (Right 4 Cols) - Double Bezel */}
-                    <aside className="lg:col-span-4 space-y-6" aria-labelledby="musterbad-anfragen-heading">
-                        <div className="glass-bezel-outer sticky top-28">
-                            <div className="glass-bezel-inner p-6 sm:p-8 space-y-4">
-                                <h2 id="musterbad-anfragen-heading" className="font-black text-lg text-slate-900">
-                                    Dieses Musterbad anfragen
-                                </h2>
-                                <p className="text-sm text-slate-700 leading-relaxed">
-                                    Möchten Sie das {bath.title} ({bath.sizeM2} m²) in Ihrem Zuhause umsetzen? Wir passen Fliesenraster, Sanitärobjekte und Anschlüsse exakt an Ihre Raumsituation an.
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. AUSSTATTUNG als Feldraster: je Gruppe ein Feld mit Fugenkreuz-Liste der Komponenten */}
+                <Abschnitt
+                    titelId="komponenten-heading"
+                    etikett="Ausstattung"
+                    titel="Detaillierte Ausstattungs- und Komponentenliste"
+                    einleitung={
+                        <p>
+                            Transparente Komponentenübersicht für das {bath.title} ({bath.sizeM2} m²): Alle Sanitärelemente, Armaturen und Fliesenoberflächen stimmen wir passgenau auf Ihren Grundriss ab.
+                        </p>
+                    }
+                    leitachse
+                    spaet
+                >
+                    <Feldraster spalten={2}>
+                        {bath.components.map((comp, i) => (
+                            <Feld key={comp.category} spanne={letzteBreit && i === gruppen - 1 ? 2 : undefined} className="gap-4">
+                                <p className="border-b border-fuge pb-4 font-anzeige text-fs-4 font-semibold text-tinte">
+                                    {comp.category}
                                 </p>
-
-                                <div className="space-y-3 pt-2">
-                                    <a href="#anfrage" className="btn-primary w-full text-xs">
-                                        Konzept unverbindlich anfragen
-                                        <ArrowRight className="w-4 h-4" />
-                                    </a>
-
-                                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost w-full text-xs">
-                                        <Phone className="w-4 h-4 text-orange-600" />
-                                        Direkt anrufen: {COMPANY_DATA.contact.phone}
-                                    </a>
-                                </div>
-
-                                <div className="border-t border-slate-200 pt-4 space-y-2 text-sm text-slate-800 font-semibold">
-                                    <p className="font-black text-slate-900">Ihre Sicherheiten bei {COMPANY_DATA.legalName}:</p>
-                                    {['Festpreisgarantie', 'Verbindlicher Bauzeitplan', 'Staubarme Sanierung'].map((item) => (
-                                        <p key={item} className="flex items-center gap-1.5">
-                                            <Check className="w-4 h-4 text-orange-600" />
-                                            {item}
-                                        </p>
+                                <ul className="grid gap-3">
+                                    {comp.items.map((item) => (
+                                        <li key={item} className="flex items-start gap-3 font-text text-fs-2 text-tinte">
+                                            <Fugenkreuz className="mt-1 size-3 shrink-0 text-strich" />
+                                            <span>{item}</span>
+                                        </li>
                                     ))}
-                                </div>
-                            </div>
+                                </ul>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 3. ANFRAGE ZU DIESEM MUSTERBAD: Kopf links, die beiden Wege und die Sicherheiten rechts */}
+                <Abschnitt
+                    titelId="musterbad-anfragen-heading"
+                    kopf="seitlich"
+                    titel="Dieses Musterbad anfragen"
+                    einleitung={
+                        <p>
+                            Möchten Sie das {bath.title} ({bath.sizeM2} m²) in Ihrem Zuhause umsetzen? Wir passen Fliesenraster, Sanitärobjekte und Anschlüsse exakt an Ihre Raumsituation an.
+                        </p>
+                    }
+                    leitachse
+                    spaet
+                >
+                    <div className="space-y-8">
+                        <div className="space-y-3 pt-2">
+                            <Knopf href="#anfrage" icon="pfeil-rechts" className="w-full">Konzept unverbindlich anfragen</Knopf>
+                            <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
+                                Direkt anrufen: {COMPANY_DATA.contact.phone}
+                            </Knopf>
                         </div>
-                    </aside>
 
-                </div>
-            </section>
+                        <div className="border-t border-fuge pt-6">
+                            <p className="font-text text-fs-3 font-semibold text-tinte">
+                                Ihre Sicherheiten bei {COMPANY_DATA.legalName}:
+                            </p>
+                            <ul className="mt-4 grid gap-3">
+                                {['Festpreisgarantie', 'Verbindlicher Bauzeitplan', 'Staubarme Sanierung'].map((item) => (
+                                    <li key={item} className="flex items-center gap-3 font-text text-fs-2 text-tinte">
+                                        <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </Abschnitt>
 
-            {/* Funnel */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="anfrage" aria-label="Badanfrage">
-                <BadanfrageFunnel />
-            </section>
-        </div>
+                {/* 4. BADANFRAGE auf Fliese: das Formular (8 Spalten) und die Rückfrage (4 Spalten, ab lg klebend) */}
+                <Abschnitt id="anfrage" aria-label="Badanfrage" flaeche="fliese" leitachse spaet>
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="min-w-0 lg:col-span-8">
+                            <BadanfrageFunnel />
+                        </div>
+                        <div className="lg:col-span-4">
+                            <Rueckfrage />
+                        </div>
+                    </div>
+                </Abschnitt>
+            </Leitachse>
+        </>
     );
 }
