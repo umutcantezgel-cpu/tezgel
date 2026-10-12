@@ -1,0 +1,184 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/bad",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-12T02:34:57.155Z",
+ "dpr": 2,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "sig-plan",
+   "elemente": 1,
+   "ausloeser": "seite",
+   "ausgeloest": 1,
+   "modus": "echtzeit",
+   "animationen": 27,
+   "laengste_dauer_ms": 1120,
+   "bilder": [
+    {
+     "datei": "sig-plan-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ausschnitt",
+     "soll_ms": 0,
+     "ms_nach_dom": 366,
+     "ist_ms": 88,
+     "ist_nach_aufnahme_ms": 112,
+     "animationen_laufen": 27,
+     "scroll_y": 909,
+     "oberkante_unter_kopf_px": 80,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 62,
+      "width": 390,
+      "height": 400
+     },
+     "anteil_zu_vorher_prozent": null,
+     "anteil_zu_nachher_prozent": 0
+    },
+    {
+     "datei": "sig-plan-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ausschnitt",
+     "soll_ms": 280,
+     "ms_nach_dom": 2278,
+     "ist_ms": 285,
+     "ist_nach_aufnahme_ms": 308,
+     "animationen_laufen": 27,
+     "scroll_y": 909,
+     "oberkante_unter_kopf_px": 80,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 62,
+      "width": 390,
+      "height": 400
+     },
+     "anteil_zu_vorher_prozent": 0,
+     "anteil_zu_nachher_prozent": 1.75
+    },
+    {
+     "datei": "sig-plan-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ausschnitt",
+     "soll_ms": 560,
+     "ms_nach_dom": 5163,
+     "ist_ms": 567,
+     "ist_nach_aufnahme_ms": 588,
+     "animationen_laufen": 27,
+     "scroll_y": 909,
+     "oberkante_unter_kopf_px": 80,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 62,
+      "width": 390,
+      "height": 400
+     },
+     "anteil_zu_vorher_prozent": 1.75,
+     "anteil_zu_nachher_prozent": 2
+    },
+    {
+     "datei": "sig-plan-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ausschnitt",
+     "soll_ms": 840,
+     "ms_nach_dom": 7794,
+     "ist_ms": 845,
+     "ist_nach_aufnahme_ms": 858,
+     "animationen_laufen": 27,
+     "scroll_y": 909,
+     "oberkante_unter_kopf_px": 80,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 62,
+      "width": 390,
+      "height": 400
+     },
+     "anteil_zu_vorher_prozent": 2,
+     "anteil_zu_nachher_prozent": 1.25
+    },
+    {
+     "datei": "sig-plan-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ausschnitt",
+     "soll_ms": 1270,
+     "ms_nach_dom": 10724,
+     "ist_ms": 1120,
+     "ist_nach_aufnahme_ms": 1120,
+     "animationen_laufen": 27,
+     "scroll_y": 909,
+     "oberkante_unter_kopf_px": 80,
+     "ausschnitt_px": {
+      "x": 0,
+      "y": 62,
+      "width": 390,
+      "height": 400
+     },
+     "anteil_zu_vorher_prozent": 1.25,
+     "anteil_zu_nachher_prozent": null
+    }
+   ],
+   "befund": [
+    "Element nicht vollständig sichtbar (Oberkante 1054 px, Unterkante 1288 px, sichtbar bis 783 px): vor dem ersten Bild auf 909 px gescrollt, Oberkante 80 px unter dem Kopf (Ziel 80 px)"
+   ],
+   "vorlauf": {
+    "gerendert": 1,
+    "kopf_px": 65,
+    "fuss_px": 783,
+    "oben_px": 1054,
+    "unten_px": 1288,
+    "scroll_max_px": 9596,
+    "laengste_ms": 1120
+   },
+   "cpu_drosselung": 1,
+   "anker_modus": "animation",
+   "zeitlupe": 0.1,
+   "puffer_ms": 150,
+   "anker": "Beginn der CSS-Animation: auf die Animationszeit warten (soll ms); Ende: alle beendet + 150 ms Wartezeit",
+   "ms_nach_dom_bezug": "Element im DOM (attached)",
+   "zeitpunkte_ms": [
+    0,
+    280,
+    560,
+    840,
+    1270
+   ],
+   "scroll_ziel_px": 909,
+   "pixel": {
+    "groesse": "780x800",
+    "schwelle_grau": 24,
+    "paare": [
+     0,
+     1.75,
+     2,
+     1.25
+    ],
+    "ende_0_4": 1.8
+   },
+   "sichtbare_bilder": 4,
+   "sichtbar_je_bild": [
+    false,
+    true,
+    true,
+    true,
+    true
+   ]
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 112,
+ "meldung": "1 Kennungen, 112 Elemente auf /bad.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung2/einzel-bad-sig-plan-m390"
+}

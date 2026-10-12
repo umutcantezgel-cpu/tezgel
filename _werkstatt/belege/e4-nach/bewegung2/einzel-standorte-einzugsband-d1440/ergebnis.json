@@ -1,0 +1,154 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/standorte",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T02:38:40.573Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "einzugsband",
+   "elemente": 1,
+   "ausloeser": "seite",
+   "ausgeloest": 1,
+   "modus": "echtzeit",
+   "animationen": 3,
+   "laengste_dauer_ms": 1200,
+   "bilder": [
+    {
+     "datei": "einzugsband-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ansicht",
+     "soll_ms": 0,
+     "ms_nach_dom": 272,
+     "ist_ms": 78,
+     "ist_nach_aufnahme_ms": 92,
+     "animationen_laufen": 3,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 96,
+     "anteil_zu_vorher_prozent": null,
+     "anteil_zu_nachher_prozent": 0.12
+    },
+    {
+     "datei": "einzugsband-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ansicht",
+     "soll_ms": 300,
+     "ms_nach_dom": 2435,
+     "ist_ms": 305,
+     "ist_nach_aufnahme_ms": 315,
+     "animationen_laufen": 3,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 96,
+     "anteil_zu_vorher_prozent": 0.12,
+     "anteil_zu_nachher_prozent": 0.21
+    },
+    {
+     "datei": "einzugsband-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ansicht",
+     "soll_ms": 600,
+     "ms_nach_dom": 5745,
+     "ist_ms": 605,
+     "ist_nach_aufnahme_ms": 617,
+     "animationen_laufen": 3,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 96,
+     "anteil_zu_vorher_prozent": 0.21,
+     "anteil_zu_nachher_prozent": 0.49
+    },
+    {
+     "datei": "einzugsband-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ansicht",
+     "soll_ms": 900,
+     "ms_nach_dom": 8519,
+     "ist_ms": 905,
+     "ist_nach_aufnahme_ms": 920,
+     "animationen_laufen": 3,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 96,
+     "anteil_zu_vorher_prozent": 0.49,
+     "anteil_zu_nachher_prozent": 0
+    },
+    {
+     "datei": "einzugsband-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ansicht",
+     "soll_ms": 1350,
+     "ms_nach_dom": 11782,
+     "ist_ms": 1200,
+     "ist_nach_aufnahme_ms": 1200,
+     "animationen_laufen": 3,
+     "scroll_y": 0,
+     "oberkante_unter_kopf_px": 96,
+     "anteil_zu_vorher_prozent": 0,
+     "anteil_zu_nachher_prozent": null
+    }
+   ],
+   "befund": [
+    "nur 0 von 5 Bildern unterscheiden sich sichtbar (Nachbar über 0.5 %, mindestens 3 gefordert)"
+   ],
+   "vorlauf": {
+    "gerendert": 1,
+    "kopf_px": 65,
+    "fuss_px": 900,
+    "oben_px": 161,
+    "unten_px": 813,
+    "scroll_max_px": 9697,
+    "laengste_ms": 1200
+   },
+   "cpu_drosselung": 1,
+   "anker_modus": "animation",
+   "zeitlupe": 0.1,
+   "puffer_ms": 150,
+   "anker": "Beginn der CSS-Animation: auf die Animationszeit warten (soll ms); Ende: alle beendet + 150 ms Wartezeit",
+   "ms_nach_dom_bezug": "Element im DOM (attached)",
+   "zeitpunkte_ms": [
+    0,
+    300,
+    600,
+    900,
+    1350
+   ],
+   "scroll_ziel_px": 0,
+   "pixel": {
+    "groesse": "1440x900",
+    "schwelle_grau": 24,
+    "paare": [
+     0.12,
+     0.21,
+     0.49,
+     0
+    ],
+    "ende_0_4": 0.82
+   },
+   "sichtbare_bilder": 0,
+   "sichtbar_je_bild": [
+    false,
+    false,
+    false,
+    false,
+    false
+   ]
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 98,
+ "meldung": "1 Kennungen, 98 Elemente auf /standorte.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung2/einzel-standorte-einzugsband-d1440"
+}
