@@ -1,0 +1,9 @@
+[
+ { "seite": "/team", "alt": "INHABER & FACHBETRIEBSLEITER", "grund": "Darstellung: CSS-Versalien (uppercase tracking) entfallen, Quelltext `team[].role` unverändert; neu „Inhaber & Fachbetriebsleiter“ (Mono-Etikett)" },
+ { "seite": "/team", "alt": "FLIESEN-, PLATTEN- & MOSAIKLEGER", "grund": "Darstellung: CSS-Versalien entfallen; neu „Fliesen-, Platten- & Mosaikleger“ (Mono-Etikett)" },
+ { "seite": "/unternehmen", "alt": "h2: Unsere Unternehmensgeschichte seit 2008", "grund": "Darstellung: weiches Trennzeichen (&shy;) in „Unternehmens|geschichte“ (K-006); Wortlaut gleich, textContent enthält U+00AD. Ohne: Wortbruch bei 320 px bzw. Beschnitt in der spaet-Hülle bei erhöhten Textabständen" },
+ { "seite": "/unternehmen", "alt": "Unsere Unternehmensgeschichte seit 2008", "grund": "wie oben (innerText enthält U+00AD)" },
+ { "seite": "/unternehmen", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß (nicht in den Schreibrechten): CookieConsent hängt die Zeile nach der Hydrierung an, auf dem Dev-Server je nach Zeitpunkt (bekannt, R-01a)" },
+ { "seite": "/team", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß, Dev-Zeitpunkt (wie oben)" },
+ { "seite": "/partner", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß, Dev-Zeitpunkt (wie oben)" }
+]

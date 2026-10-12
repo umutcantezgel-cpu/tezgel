@@ -1,0 +1,84 @@
+{
+ "vorher": "s-20-vorher",
+ "nachher": "s-20-nachher",
+ "seiten": {
+  "/team": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Unser Team",
+     "Verband",
+     "Halbverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Deniz Tezgel",
+     "Inhaber & Fachbetriebsleiter",
+     "Fliesen-, Platten- & Mosaikleger"
+    ]
+   }
+  },
+  "/unternehmen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Unternehmen & Qualitäts­versprechen",
+     "Verband",
+     "Halbverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "Unsere Unternehmens­geschichte seit 2008",
+     "2008",
+     "Inhaber"
+    ]
+   },
+   "ueberschriften": {
+    "entfernt": [],
+    "hinzu": [
+     "h2: Unsere Unternehmens­geschichte seit 2008"
+    ]
+   }
+  },
+  "/partner": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Materialpartner & Verlegesysteme",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 40,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

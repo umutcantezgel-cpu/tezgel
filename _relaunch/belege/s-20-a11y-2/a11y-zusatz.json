@@ -1,0 +1,1761 @@
+{
+ "satz": "s-20-a11y-2",
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T18:59:43.690Z",
+ "werkzeug": "a11y-zusatz.mjs",
+ "kriterium": "Z-11",
+ "bedingungen": {
+  "server": "http://127.0.0.1:4350",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "seiten": [
+   "/unternehmen",
+   "/team",
+   "/partner"
+  ],
+  "ansichten": [
+   "m375",
+   "d1440"
+  ],
+  "pruefungen": [
+   "tastatur",
+   "textabstand"
+  ],
+  "einwilligung": "abgelehnt",
+  "banner_zustaende": [
+   "abgelehnt"
+  ],
+  "einwilligung_tastatur": [
+   "abgelehnt",
+   "erstbesuch"
+  ],
+  "reducedMotion": "reduce",
+  "locale": "de-DE",
+  "timezoneId": "Europe/Berlin",
+  "colorScheme": "light",
+  "deviceScaleFactor": 1,
+  "ansichten_px": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "worker": 2,
+  "gegenprobe": null,
+  "regeln": {
+   "tastatur": {
+    "obergrenze_schritte": 400,
+    "ende": "Fokus verlässt das Dokument (activeElement = body, document.hasFocus() = false) oder Rückkehr zum ersten Element",
+    "sprung_rueckwaerts": "Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen",
+    "fokus_sichtbar": "Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung (je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Umfang der Vereinigung der Zeilenstücke im Bild; übereinander liegende Stücke mit Abstand ≤ 2·(Versatz + Breite) des Umrisses bilden wie bei Chrome einen Umriss; Umriss < 2 px gilt als dünn (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als „Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).",
+    "fokus_verdeckt": "elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; „fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; „abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei",
+    "falle": "derselbe Fokus 10× hintereinander → Abbruch; Zyklus = ein Element zum 3. Mal fokussiert → Abbruch, danach Escape + Tab: verlässt der Fokus den Zyklus?",
+    "sprunglink": "erster Tab fokussiert <a href=\"#main-content\"> und das Ziel #main-content existiert",
+    "iframes": "ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)"
+   },
+   "reflow": {
+    "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
+    "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
+   },
+   "zoom": {
+    "css": "1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)",
+    "aequivalent": "640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)",
+    "verdeckt": "sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist",
+    "nie_im_bild": "Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen",
+    "info": "im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar"
+   },
+   "textabstand": {
+    "stilblatt": "*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}",
+    "befund": "Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde",
+    "scroll_ueberhang": "Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info"
+   },
+   "forced": {
+    "emulation": "page.emulateMedia({ forcedColors: 'active' })",
+    "befund": "sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert"
+   },
+   "ohnejs": {
+    "kontext": "javaScriptEnabled: false",
+    "text": "sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)",
+    "erster_bildschirm": "Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert",
+    "navigation": "mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten"
+   }
+  },
+  "rohdaten": "cache/a11y-zusatz/s-20-a11y-2"
+ },
+ "laufzeit_s": 166,
+ "status": {
+  "tastatur": {
+   "reihenfolge": "gruen",
+   "fokus_sichtbar": "rot",
+   "fokus_2px": "rot",
+   "fokus_outline": "gruen",
+   "fokus_verdeckt": "gruen",
+   "tastaturfalle": "gruen",
+   "sprunglink": "gruen"
+  },
+  "textabstand": "rot"
+ },
+ "kennzahlen": {
+  "tastatur": {
+   "fokus_nicht_sichtbar": 21,
+   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 9,
+   "fokus_ring_teilverdeckt_fest": 21,
+   "fokus_unter_2px": 12,
+   "fokus_nicht_messbar": 0,
+   "fokus_ohne_outline_schatten": 0,
+   "fokus_verdeckt": 0,
+   "fokus_verdeckt_fest": 0,
+   "sprung_rueckwaerts": 0,
+   "falle": 0,
+   "zyklus_ohne_ausweg": 0,
+   "sprunglink_fehlt": 0,
+   "laeufe": 12,
+   "fehler": 0,
+   "schritte": 926,
+   "m375_abgelehnt": {
+    "fokus_nicht_sichtbar": 12,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 6,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "m375_erstbesuch": {
+    "fokus_nicht_sichtbar": 9,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_erstbesuch": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 6,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   }
+  },
+  "textabstand": {
+   "abgeschnitten_neu": 0,
+   "scroll_ueberhang_neu": 0,
+   "davon_line_clamp": 0,
+   "ueberlauf_neu": 6,
+   "horizontal_neu": 0,
+   "laeufe": 6,
+   "fehler": 0
+  }
+ },
+ "je_seite": {
+  "/unternehmen": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 7,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+    "fokus_ring_teilverdeckt_fest": 7,
+    "fokus_unter_2px": 4,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 2,
+    "horizontal_neu": 0
+   }
+  },
+  "/team": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 7,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+    "fokus_ring_teilverdeckt_fest": 7,
+    "fokus_unter_2px": 4,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 2,
+    "horizontal_neu": 0
+   }
+  },
+  "/partner": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 7,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+    "fokus_ring_teilverdeckt_fest": 7,
+    "fokus_unter_2px": 4,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 2,
+    "horizontal_neu": 0
+   }
+  }
+ },
+ "ergebnisse": {
+  "tastatur": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/partner",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 76,
+    "instabil": 0,
+    "fokus": {
+     "ok": 74,
+     "duenn": 2,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 2,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 494,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 21.8
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/partner",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 81,
+    "instabil": 0,
+    "fokus": {
+     "ok": 79,
+     "duenn": 2,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 2,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 494,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 26.2
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/partner",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 68,
+    "instabil": 0,
+    "fokus": {
+     "ok": 64,
+     "duenn": 0,
+     "kontrastarm": 3,
+     "unsichtbar": 1,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 4,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 65,
+       "status": "unsichtbar",
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "kontrast": 2,
+       "maxKontrast": 13.88,
+       "umfang": 216,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 66,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 67,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 68,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 122,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 19.5
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/partner",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 73,
+    "instabil": 0,
+    "fokus": {
+     "ok": 70,
+     "duenn": 0,
+     "kontrastarm": 3,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 3,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 4,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 65,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 66,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 67,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 65,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 66,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 67,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 19.8
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/team",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 81,
+    "instabil": 0,
+    "fokus": {
+     "ok": 79,
+     "duenn": 2,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 2,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 494,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 26.7
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/team",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 86,
+    "instabil": 0,
+    "fokus": {
+     "ok": 84,
+     "duenn": 2,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 2,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 494,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 27.3
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/team",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 73,
+    "instabil": 0,
+    "fokus": {
+     "ok": 69,
+     "duenn": 0,
+     "kontrastarm": 3,
+     "unsichtbar": 1,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 4,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 70,
+       "status": "unsichtbar",
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "kontrast": 2,
+       "maxKontrast": 13.88,
+       "umfang": 216,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 71,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 72,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 73,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 122,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 19.8
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/team",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 78,
+    "instabil": 0,
+    "fokus": {
+     "ok": 75,
+     "duenn": 0,
+     "kontrastarm": 3,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 3,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 4,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 70,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 71,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 72,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 70,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 71,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 72,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 21.5
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/unternehmen",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 79,
+    "instabil": 0,
+    "fokus": {
+     "ok": 77,
+     "duenn": 2,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 2,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 494,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 27.7
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/unternehmen",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 84,
+    "instabil": 0,
+    "fokus": {
+     "ok": 82,
+     "duenn": 2,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 2,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 494,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 29.3
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/unternehmen",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 71,
+    "instabil": 0,
+    "fokus": {
+     "ok": 67,
+     "duenn": 0,
+     "kontrastarm": 3,
+     "unsichtbar": 1,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 4,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 68,
+       "status": "unsichtbar",
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "kontrast": 2,
+       "maxKontrast": 13.88,
+       "umfang": 216,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 69,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 70,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 71,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 122,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 20.9
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/unternehmen",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 76,
+    "instabil": 0,
+    "fokus": {
+     "ok": 73,
+     "duenn": 0,
+     "kontrastarm": 3,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 3,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 3,
+     "fokus_ring_teilverdeckt_fest": 4,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 68,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 69,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 70,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 68,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 69,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 70,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 22.4
+   }
+  ],
+  "textabstand": [
+   {
+    "pruefung": "textabstand",
+    "seite": "/partner",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1021,
+       "right": 1514
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 1306,
+       "right": 1514
+      }
+     ],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.2
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/partner",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 0,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7.8
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/team",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1021,
+       "right": 1514
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 1306,
+       "right": 1514
+      }
+     ],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7.7
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/team",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 0,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 8.3
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/unternehmen",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1021,
+       "right": 1514
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 1306,
+       "right": 1514
+      }
+     ],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 9.7
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/unternehmen",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 0,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 6.4
+   }
+  ]
+ }
+}

@@ -1,0 +1,12 @@
+S-20 · Prüfung 12.10.2026 (Dev 4350, Live 4362)
+1 tsc --noEmit: Exit 0, 0 Fehler
+2 eslint --max-warnings 0 (3 Dateien): Exit 0
+3 werte.mjs: befunde gesamt 0, Exit 0
+4 Altsystem-grep: keine Treffer (vorher Zeilen/Treffer: unternehmen 26/37, team 22/30, partner 14/20)
+5 texte 4362 -> 4350: ohne Liste entfernt 4 (2 Versal-Rollen /team, H2 /unternehmen mit &shy; in main+Überschriften), meta 0, seo 0, kaputte Links 0;
+  mit s-20-erlaubt.json: entfernt 0, hinzu 40 (Schriftfelder der Planblätter), GRÜN. Überschriften (ohne U+00AD), Links, JSON-LD, Meta gleich; Lesefolge (LCS) 0 Abweichungen je Seite.
+6 einzelbild m390,t768,d1440 je Seite: HTTP 200, Konsole 0, Überlauf 0, Überlappung 0
+7 wortbruch (320…1920): 0
+8 navigation+kontaktwege (beide Projekte): Lauf 1 86 passed/13 skipped/1 failed (404 „Zur Startseite“ mobil) -> Wiederholung 2 passed;
+  Endstand-Lauf 86 passed/13 skipped/1 failed (Mobilmenü „Kategorie aufklappen …“ mobil, toHaveURL /bad/badsanierung) -> Wiederholungen: mobil passed, desktop 1x failed, dann 2/2 passed. Seiten von S-20 nicht berührt.
+a11y-zusatz (tastatur, textabstand; m375, d1440): Fokusbefunde im Seitenkörper 0, fokus_verdeckt 0, abgeschnitten_neu 0; Rest nur Rahmen (Kopf-Navigation dünn, untere Leiste, Schild, Kopfknopf bei Textabstand).

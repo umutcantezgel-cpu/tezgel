@@ -1,10 +1,22 @@
-import React from 'react';
-import Link from 'next/link';
-import { Award, CheckCircle2, ArrowRight } from 'lucide-react';
+// Unternehmen (S-20 nach E5-BAU-04 sinngemäß, KERN v2): Erzählansicht nach dem Vorbild von /ueber-uns. Einstieg mit
+// Laserachse, Kennzeile, H1 links und Vorspann; rechts das Planblatt „Unternehmen & Qualitätsversprechen“ mit dem Plan
+// „wohnen“ (interaktiv, die rote Achse trägt das Blatt). Danach die Leitachse über die Abschnitte, Flächen im Wechsel:
+// 2. Unternehmensgeschichte als ruhige Zeitleiste an der Fuge (Kalk, ohne das scroll-gebundene Fugenband von /ueber-uns) ·
+// 3. Inhaber als Text an der Fuge: Motto mit Quelle in Mono, daneben die vier Zusagen als Liste an der Fuge und der
+// Knopf (Fliese) · Qualitätsversprechen und Abschluss (geteilte Bausteine). Kein Auftritt, kein großer Moment.
+// Wortlaut, Überschriften, Links und Lesefolge wie im Bestand; Metadaten und Daten unverändert. Serverkomponente.
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 
 export const metadata = createMetadata({
     title: 'Unternehmen & Qualitätsversprechen | Tezgel Fachbetrieb',
@@ -16,106 +28,122 @@ export default function UnternehmenPage() {
     const { legalName, owner, business, authority, headquarters, motto } = COMPANY_DATA;
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
-
-            {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow eyebrow-amber">
-                        <Award className="w-3.5 h-3.5" />
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann; rechts das Planblatt „wohnen“ */}
+            <Einstieg
+                art="erzaehl"
+                etikett={
+                    <>
+                        <Fugenkreuz className="size-3 shrink-0 text-strich" />
                         Gegründet {business.establishmentYear} &middot; {authority.shortName}
-                    </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+                    </>
+                }
+                titel={
+                    <>
                         {legalName}:{' '}
-                        <span className="text-ceramic-gradient">Unternehmen &amp; Qualität</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                        <span>Unternehmen &amp; Qualität</span>
+                    </>
+                }
+                vorspann={
+                    <p>
                         Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit {business.establishmentYear} steht unser Fachbetrieb aus {headquarters.city} mit einem Team von bis zu 12 Handwerkern für Fliesen-, Platten- und Mosaikarbeiten in Wetzlar, Gießen und ganz Mittelhessen.
                     </p>
-                </div>
-            </div>
+                }
+                rand={
+                    <Planblatt felder={planfelder('Unternehmen & Qualitäts­versprechen', 'wohnen')}>
+                        <Verlegeplan plan="wohnen" ohneAchse bemassung={false} interaktiv />
+                    </Planblatt>
+                }
+            />
 
-            {/* History Timeline */}
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="eyebrow mb-4">Unsere Geschichte</span>
-                    <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Unsere Unternehmensgeschichte seit {business.establishmentYear}
-                    </h2>
-                    <p className="mt-3 text-sm sm:text-base text-slate-700">
-                        Von der Betriebsgründung in {headquarters.city} zum Fliesen-Fachbetrieb für ganz Mittelhessen.
-                    </p>
-                </div>
-
-                <ol className="space-y-8 relative before:absolute before:inset-y-0 before:left-8 md:before:left-1/2 before:-translate-x-px before:w-0.5 before:bg-orange-200">
-                    {historyTimeline.map((item) => (
-                        <li key={item.year} className="relative flex flex-col md:flex-row items-start md:items-center gap-6 group pl-16 md:pl-0">
-                            <div className="flex items-center justify-start md:justify-end w-full md:w-1/2 md:pr-10">
-                                <div className="glass-surface p-6 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300 w-full">
-                                    <span className="text-xs font-black tabular-nums px-3 py-1 rounded-tile-pill bg-orange-50 text-orange-800 inline-block mb-2 border border-orange-200">
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. UNTERNEHMENSGESCHICHTE als Zeitleiste an der Fuge: eine Linie in Strich (mobil links, ab md bei einem
+                    Viertel), je Jahr ein Fugenkreuz auf der Linie, das Jahr in Mono, Titel (H3) und Text rechts davon */}
+                <Abschnitt
+                    titelId="unternehmensgeschichte-heading"
+                    leitachse
+                    spaet
+                    etikett="Unsere Geschichte"
+                    // &shy; an der Fuge des Kompositums (K-006, Darstellung): bei 320 px und bei erhöhten Textabständen (WCAG 1.4.12)
+                    // trennt „Unternehmens-geschichte“ dort, statt über den Rand der spaet-Hülle zu laufen und beschnitten zu werden
+                    titel={<>Unsere Unternehmens&shy;geschichte seit {business.establishmentYear}</>}
+                    einleitung={
+                        <p>
+                            Von der Betriebsgründung in {headquarters.city} zum Fliesen-Fachbetrieb für ganz Mittelhessen.
+                        </p>
+                    }
+                >
+                    <div className="relative">
+                        <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-2 border-l border-strich md:left-1/4" />
+                        <ol className="relative">
+                            {historyTimeline.map((item) => (
+                                <li key={item.year} className="relative pb-12 pl-8 last:pb-0 md:grid md:grid-cols-12 md:pb-16 md:pl-0">
+                                    <p className="relative font-mono text-fs-4 text-tinte md:col-span-3 md:self-start md:pr-8 md:text-right md:text-fs-5 lg:pr-12">
+                                        <span
+                                            aria-hidden="true"
+                                            className="absolute top-1/2 -left-6 flex -translate-x-1/2 -translate-y-1/2 text-tinte md:right-0 md:left-auto md:translate-x-1/2"
+                                        >
+                                            <Fugenkreuz className="size-4" />
+                                        </span>
                                         {item.year}
-                                    </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">{item.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{item.description}</p>
-                                </div>
-                            </div>
+                                    </p>
+                                    <div className="mt-2 md:col-span-9 md:mt-0 md:pl-8 lg:col-span-7 lg:pl-12">
+                                        <h3 className="text-fs-5 text-tinte">{item.title}</h3>
+                                        <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">{item.description}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol>
+                    </div>
+                </Abschnitt>
 
-                            {/* Node Center Marker */}
-                            <div className="absolute left-8 md:left-1/2 top-8 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 w-5 h-5 rounded-tile-pill bg-orange-600 border-4 border-white shadow-md z-10" />
+                {/* 3. INHABER als Text an der Fuge (Fliese): links das Motto mit der Linie in Tinte und der Quelle in Mono,
+                    rechts die vier Zusagen als Liste an der Fuge und darunter der Knopf; mobil untereinander */}
+                <Abschnitt
+                    titelId="inhaber-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Inhaber"
+                    titel={<>{owner.fullName} &amp; das Fachverlegeteam</>}
+                >
+                    {/* pb-1: der Fokusrahmen des Knopfs (2 px Versatz + 2 px Linie) liegt unten am Rand der spaet-Hülle und würde
+                        dort vom Zeichenbeschnitt (content-visibility) abgeschnitten */}
+                    <div className="grid grid-cols-4 gap-y-12 border-t border-strich pt-8 pb-1 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:pt-12">
+                        <figure className="col-span-4 self-start border-l-2 border-tinte pl-6 md:col-span-8 lg:col-span-7">
+                            <blockquote className="max-w-mass font-anzeige text-fs-5 font-extrabold text-tinte">
+                                &bdquo;{motto}&ldquo;
+                            </blockquote>
+                            <figcaption className="mt-4 font-mono text-fs-1 text-tinte-2">
+                                — {owner.fullName}, {owner.title}
+                            </figcaption>
+                        </figure>
 
-                            <div className="hidden md:block md:w-1/2 md:pl-10" />
-                        </li>
-                    ))}
-                </ol>
-            </div>
-
-            {/* Leadership & Values - Double Bezel */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-                <div className="glass-bezel-outer shadow-2xl">
-                    <div className="glass-bezel-inner p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div className="lg:col-span-8 space-y-4">
-                            <span className="eyebrow">Inhaber</span>
-                            <h2 className="text-2xl sm:text-3xl font-black text-slate-900">
-                                {owner.fullName} &amp; das Fachverlegeteam
-                            </h2>
-                            <figure>
-                                <blockquote className="text-sm sm:text-base text-slate-700 leading-relaxed italic">
-                                    &bdquo;{motto}&ldquo;
-                                </blockquote>
-                                <figcaption className="mt-1 text-xs font-bold text-orange-700">
-                                    — {owner.fullName}, {owner.title}
-                                </figcaption>
-                            </figure>
-                            <ul className="pt-2 flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold text-slate-800">
+                        <div className="col-span-4 flex flex-col gap-8 md:col-span-8 lg:col-span-5">
+                            <ul className="border-t border-fuge">
                                 {[
                                     `Gegründet ${business.establishmentYear}`,
                                     'DIN 18534 Verbundabdichtung',
                                     `${authority.shortName} Mitglied`,
                                     'Bis zu 12 Fachkräfte'
                                 ].map((badge) => (
-                                    <li key={badge} className="flex items-center gap-1.5">
-                                        <CheckCircle2 className="w-4 h-4 text-orange-600" />
-                                        {badge}
+                                    <li key={badge} className="flex items-start gap-3 border-b border-fuge py-3 font-text text-fs-3 text-tinte">
+                                        <Icon name="haken" groesse={5} className="mt-1 text-strich" />
+                                        <span className="min-w-0">{badge}</span>
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-
-                        <div className="lg:col-span-4 text-center lg:text-right">
-                            <Link href="/kontakt" className="btn-primary px-7 py-4 text-xs">
-                                <span>Lernen Sie uns persönlich kennen</span>
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
+                            <Knopf href="/kontakt" icon="pfeil-rechts" className="w-full sm:w-auto sm:self-start">
+                                Lernen Sie uns persönlich kennen
+                            </Knopf>
                         </div>
                     </div>
-                </div>
-            </div>
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
             <FinalCTA />
-        </div>
+        </>
     );
 }
