@@ -1,0 +1,35 @@
+# N-01 · Prüfungen in der Arbeitskopie (git archive 29c9a95 + Patch; Server 4343) – wörtliche Ergebnisse
+## npx tsc --noEmit -p .
+tsc exit 0
+## npx eslint src/app/globals.css
+
+/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/n-01/kopie/src/app/globals.css
+  0:0  warning  File ignored because no matching configuration was supplied
+
+✖ 1 problem (0 errors, 1 warning)
+
+eslint exit 0
+## npm test
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+test exit 0
+## node _werkstatt/werkzeuge/werte.mjs --dateien src/app/globals.css
+werte: 1 Dateien · 0 Klassenvorkommen (0 eindeutig) · 0.2 s
+  befunde gesamt       0
+Bericht: _werkstatt/cache/werte/2026-10-12T04-15-30-278Z.json
+werte exit 0
+## pixel.mjs A/A (4337/4337) und A/B (4337/4343), Seiten /,/kontakt,/leistungen,/bad, m375+d1440
+A/A: pixel: 8 Vergleiche · abweichend 0
+A/B: pixel: 8 Vergleiche · abweichend 0
+## bewegung.mjs --seiten / --ansichten m375,d1440 --laeufe normal,reduziert
+4337: {"registriert":"14/16","technik_ausserhalb":0,"layout":0,"frames_ok":"0/0","verworfen_scroll_mobil":null,"verworfen_scroll_gesamt":null,"ueber_50":null,"loaf":0,"loaf_bewegung_ueber_20":0,"reduziert_verstoesse":0,"fehler":0}
+4343: {"registriert":"14/16","technik_ausserhalb":0,"layout":0,"frames_ok":"0/0","verworfen_scroll_mobil":null,"verworfen_scroll_gesamt":null,"ueber_50":null,"loaf":0,"loaf_bewegung_ueber_20":0,"reduziert_verstoesse":0,"fehler":0}
+## Funktionstests (Suite des Arbeitsbaums, c6e5be3): funktion-einwilligung, funktion-navigation, funktion-hero-kontakt
+4337:  10 skipped  104 passed (2.0m) 
+4343:  10 skipped  104 passed (1.6m) 
+## Menü-Bildvergleich offen (menue-foto.mjs, Viewport, m375+d1024, JS an/aus, y 0/1600) 4337 vs 4343: 8 × 0 Pixel; Positivprobe d1024 (y 0 gegen 1600): 41 299 Pixel

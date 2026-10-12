@@ -1,0 +1,146 @@
+# N-01 · Ursache: Spuren mit Invalidierungs-Kategorien (devtools.timeline + disabled-by-default-devtools.timeline.invalidationTracking + .stack), m375, Erstbesuch, ungedrosselt
+# Werkzeuge: scratchpad/n-01/werk/fang.mjs (Aufnahme), deute.mjs (je UpdateLayoutTree die Invalidierungen seit dem vorigen), summe.mjs
+
+## Summe je Spur (CPU inkl. Tracking-Mehraufwand)
+live-1.json UpdateLayoutTree 24 (885.9 ms CPU) · voll ≥2000 El.: 11 (842.1 ms CPU, El. 2586/2696/2697/2698/2699/2706/2705/2705/2705/2734/2735) · :has-Auslöser HTML 76, BODY 0
+neu-1.json UpdateLayoutTree 27 (88.7 ms CPU) · voll ≥2000 El.: 0 (0 ms CPU, El. ) · :has-Auslöser HTML 0, BODY 123
+live-ohnehas.json UpdateLayoutTree 25 (73.1 ms CPU) · voll ≥2000 El.: 0 (0 ms CPU, El. ) · :has-Auslöser HTML 0, BODY 0
+
+## Gegenproben auf 4337: Regel per CSSOM gelöscht und ersetzt (variante.js), nur im Prüflauf
+(gelöscht, ohne Ersatz)                                               UpdateLayoutTree 25 (73.1 ms CPU) · voll ≥2000 El.: 0 (0 ms CPU, El. ) · :has-Auslöser HTML 0, BODY 0
+html:has(.menue-blatt:popover-open){--x:1}                             UpdateLayoutTree 27 (545.1 ms CPU) · voll ≥2000 El.: 9 (510 ms CPU, El. 2175/2697/2698/2699/2705/2705/2705/2734/2735) · :has-Auslöser HTML 56, BODY 0
+html:has(#mobile-menu:popover-open){overflow:hidden}                   UpdateLayoutTree 25 (563.9 ms CPU) · voll ≥2000 El.: 9 (526.7 ms CPU, El. 2545/2546/2546/2699/2705/2705/2705/2734/2735) · :has-Auslöser HTML 72, BODY 0
+html:has(.menue-blatt:hover){--x:1}                                    UpdateLayoutTree 19 (699.5 ms CPU) · voll ≥2000 El.: 10 (644.9 ms CPU, El. 2543/2698/2698/2699/2706/2705/2705/2705/2734/2735) · :has-Auslöser HTML 48, BODY 0
+html:has(.menue-blatt){--x:1}                                          UpdateLayoutTree 24 (160.3 ms CPU) · voll ≥2000 El.: 1 (93.9 ms CPU, El. 2698) · :has-Auslöser HTML 1, BODY 0
+html:has(.gibtsnicht){--x:1}                                           UpdateLayoutTree 23 (86.9 ms CPU) · voll ≥2000 El.: 0 (0 ms CPU, El. ) · :has-Auslöser HTML 0, BODY 0
+body:has(.menue-blatt:popover-open){overflow:hidden}                   UpdateLayoutTree 24 (79.7 ms CPU) · voll ≥2000 El.: 0 (0 ms CPU, El. ) · :has-Auslöser HTML 0, BODY 57
+html.k-gibtsnicht:has(.menue-blatt:popover-open){overflow:hidden}      UpdateLayoutTree 22 (74.7 ms CPU) · voll ≥2000 El.: 0 (0 ms CPU, El. ) · :has-Auslöser HTML 0, BODY 0
+
+## Live 4337 (live-1): lange Stil-Aufgaben ≥ 40 ms und ihre Auslöser
+fcp 0 UpdateLayoutTree ≥ 40 ms: 11
+
+@76.8 ms cpu 51.5 elemente 2586 (Aufgabe @76.5 cpu 81.6 *) Invalidierungen 384
+    295 × LayoutInvalidationTracking
+     25 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung' · Affected by :has()
+      5 × Recalc DIV · Control
+      3 × Recalc svg id='pfeil-rechts' · Node was inserted into tree
+      3 × Recalc svg id='haken' · Node was inserted into tree
+      3 × Recalc P class='col-span-4 max-w-mass text-fs-3 text-tinte-2 md:col-span-5 md:col-start-4 lg:col-span-5 lg:col-start-auto' · Fonts
+
+@280.5 ms cpu 74.8 elemente 2696 (Aufgabe @279.5 cpu 85.8 *) Invalidierungen 2408
+   2370 × LayoutInvalidationTracking
+     12 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung' · Affected by :has()
+      5 × Recalc DIV · Control
+      4 × Recalc SCRIPT · Node was inserted into tree
+      2 × Recalc A class='flex min-h-12 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen bg-kalk text-tinte hover:bg-fliese' · Node was inserted into tree
+      2 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung' · Affected by :has() ⟵ $RV@http://127.0.0.1:4337/:1:290101
+
+@645.8 ms cpu 74.1 elemente 2697 (Aufgabe @645.7 cpu 78.6 *) Invalidierungen 13
+      8 × LayoutInvalidationTracking
+      1 × Recalc svg id='kalender' · Node was inserted into tree
+      1 × Recalc svg id='telefon' · Node was inserted into tree
+      1 × ScheduleStyleRecalculation
+      1 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung' · Affected by :has()
+      1 × Recalc SCRIPT · Node was inserted into tree
+
+@805.4 ms cpu 75.7 elemente 2698 (Aufgabe @805.3 cpu 78.1 *) Invalidierungen 49
+     24 × LayoutInvalidationTracking
+     11 × Recalc DIV · Control
+      3 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung' · Affected by :has()
+      1 × Recalc svg id='pfeil-rechts' · Node was inserted into tree
+      1 × Recalc svg id='bad' · Node was inserted into tree
+      1 × Recalc svg id='treppe' · Node was inserted into tree
+
+@1254.3 ms cpu 75.5 elemente 2699 (Aufgabe @1251.4 cpu 83.9 *) Invalidierungen 13
+      5 × Recalc DIV · Control
+      1 × Recalc NEXT-ROUTE-ANNOUNCER · Node was inserted into tree ⟵ (anon)@075_81sg-x3zl.js:1:6939 < (anon)@075_81sg-x3zl.js:1:6957 < iw@075_81sg-x3zl.js:1:112410 < ug@075_81sg-x3zl.js:1:136552
+      1 × ScheduleStyleRecalculation ⟵ (anon)@075_81sg-x3zl.js:1:6939 < (anon)@075_81sg-x3zl.js:1:6957 < iw@075_81sg-x3zl.js:1:112410 < ug@075_81sg-x3zl.js:1:136552
+      1 × Schedule SCRIPT · pseudo last-child · "0x4dc0001ab80" ⟵ (anon)@075_81sg-x3zl.js:1:6939 < (anon)@075_81sg-x3zl.js:1:6957 < iw@075_81sg-x3zl.js:1:112410 < ug@075_81sg-x3zl.js:1:136552
+      1 × Invalidator SCRIPT · Invalidation set invalidates self · [{"id":"0x4dc0001ab80"}]
+      1 × Recalc SCRIPT · Related style rule ⟵ (anon)@075_81sg-x3zl.js:1:6939 < (anon)@075_81sg-x3zl.js:1:6957 < iw@075_81sg-x3zl.js:1:112410 < ug@075_81sg-x3zl.js:1:136552
+
+@1462.3 ms cpu 94.4 elemente 2706 (Aufgabe @1457.5 cpu 100.7 *) Invalidierungen 7
+      1 × ScheduleStyleRecalculation ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+      1 × Recalc BUTTON class='fixed z-30 size-11 items-center justify-center border border-strich bg-fliese text-tinte-2 transition-colors dauer-1 ease-setzen hover:border-tinte hover:text-tinte lg:bottom-6 lg:left-6 bottom-4 left-4 inline-flex' · Node was inserted into tree ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+      1 × Schedule NEXT-ROUTE-ANNOUNCER · pseudo last-child · "0x4dc0001ab80" ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+      1 × Invalidator NEXT-ROUTE-ANNOUNCER · Invalidation set invalidates self · [{"id":"0x4dc0001ab80"}]
+      1 × Recalc NEXT-ROUTE-ANNOUNCER · Related style rule ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+      1 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul' · Affected by :has() ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+
+@1631.6 ms cpu 87.3 elemente 2705 (Aufgabe @1631.5 cpu 92.4 *) Invalidierungen 28
+     11 × Recalc DIV · Control
+      5 × LayoutInvalidationTracking
+      4 × Invalidator BUTTON class='fixed z-30 size-11 items-center justify-center border border-strich bg-fliese text-tinte-2 transition-colors dauer-1 ease-setzen hover:border-tinte hover:text-tinte lg:bottom-6 lg:left-6 hidden lg:inline-flex' · Invalidation set invalidates self · [{"id":"0x4dc0001ab80"}]
+      4 × Recalc BUTTON class='fixed z-30 size-11 items-center justify-center border border-strich bg-fliese text-tinte-2 transition-colors dauer-1 ease-setzen hover:border-tinte hover:text-tinte lg:bottom-6 lg:left-6 hidden lg:inline-flex' · Related style rule ⟵ ts@075_81sg-x3zl.js:1:30583 < co@075_81sg-x3zl.js:1:179217 < (anon)@075_81sg-x3zl.js:1:116857 < iN@075_81sg-x3zl.js:1:116874
+      1 × ScheduleStyleRecalculation ⟵ e@075_81sg-x3zl.js:1:133451 < us@075_81sg-x3zl.js:1:133686 < uu@075_81sg-x3zl.js:1:130530 < uo@075_81sg-x3zl.js:1:128096
+      1 × Recalc BUTTON class='flex size-full items-center justify-center text-tinte-2 hover:bg-fliese hover:text-tinte' · Node was inserted into tree ⟵ e@075_81sg-x3zl.js:1:133451 < us@075_81sg-x3zl.js:1:133686 < uu@075_81sg-x3zl.js:1:130530 < uo@075_81sg-x3zl.js:1:128096
+
+@1771.4 ms cpu 89.5 elemente 2705 (Aufgabe @1771.3 cpu 94.1 *) Invalidierungen 26
+     11 × Recalc DIV · Control
+     10 × LayoutInvalidationTracking
+      3 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul' · Affected by :has() ⟵ H@turbopack-2rkfwiq4peawj.js:1:8968 < loadChunkCached@turbopack-2rkfwiq4peawj.js:1:9640 < A@turbopack-2rkfwiq4peawj.js:1:4728 < R.L@turbopack-2rkfwiq4peawj.js:1:5217
+      1 × ScheduleStyleRecalculation
+      1 × Recalc SPAN class='kreuzlinie-lot' · Animation
+
+@1961.1 ms cpu 69 elemente 2705 (Aufgabe @1960.9 cpu 73.1 *) Invalidierungen 19
+     11 × Recalc DIV · Control
+      4 × LayoutInvalidationTracking
+      1 × Recalc svg id='schloss' · Node was inserted into tree
+      1 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul' · Affected by :has() ⟵ H@turbopack-2rkfwiq4peawj.js:1:8968 < loadChunkCached@turbopack-2rkfwiq4peawj.js:1:9640 < A@turbopack-2rkfwiq4peawj.js:1:4728 < (anon)@turbopack-2rkfwiq4peawj.js:1:4410
+      1 × ScheduleStyleRecalculation ⟵ H@turbopack-2rkfwiq4peawj.js:1:8968 < loadChunkCached@turbopack-2rkfwiq4peawj.js:1:9640 < A@turbopack-2rkfwiq4peawj.js:1:4728 < (anon)@turbopack-2rkfwiq4peawj.js:1:4410
+      1 × Recalc SPAN class='kreuzlinie-lot' · Animation
+
+@2066.9 ms cpu 86.6 elemente 2734 (Aufgabe @2066.8 cpu 93.8 *) Invalidierungen 28
+     11 × Recalc DIV · Control
+      5 × LayoutInvalidationTracking ⟵ un@075_81sg-x3zl.js:1:126329 < ut@075_81sg-x3zl.js:1:125728 < un@075_81sg-x3zl.js:1:126642 < uo@075_81sg-x3zl.js:1:127970
+      2 × Invalidator NEXT-ROUTE-ANNOUNCER · Invalidation set invalidates self · [{"id":"0x4dc0001ab80"}]
+      1 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul' · Affected by :has() ⟵ un@075_81sg-x3zl.js:1:126329 < ut@075_81sg-x3zl.js:1:125728 < un@075_81sg-x3zl.js:1:126642 < uo@075_81sg-x3zl.js:1:127970
+      1 × ScheduleStyleRecalculation ⟵ un@075_81sg-x3zl.js:1:126329 < ut@075_81sg-x3zl.js:1:125728 < un@075_81sg-x3zl.js:1:126642 < uo@075_81sg-x3zl.js:1:127970
+      1 × Schedule NEXT-ROUTE-ANNOUNCER · pseudo last-child · "0x4dc0001ab80" ⟵ un@075_81sg-x3zl.js:1:126329 < uo@075_81sg-x3zl.js:1:127970 < uu@075_81sg-x3zl.js:1:128341 < uo@075_81sg-x3zl.js:1:128096
+
+@2279.3 ms cpu 63.6 elemente 2735 (Aufgabe @2279.1 cpu 66.6 *) Invalidierungen 58
+     40 × LayoutInvalidationTracking
+     11 × Recalc DIV · Control
+      1 × Recalc BUTTON id='whatsapp-floating-btn' class='fixed bottom-6 right-6 z-30 hidden size-11 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte lg:inline-flex' · Node was inserted into tree ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+      1 × ScheduleStyleRecalculation ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+      1 × Schedule DIV class='hoehe-banner ueber-leiste-12 fixed left-0 right-0 z-50 overflow-y-auto overscroll-contain border-t border-tinte bg-fliese text-tinte lg:bottom-6 lg:left-6 lg:right-auto lg:w-full lg:max-w-md lg:border' · pseudo last-child · "0x4dc0001ab80" ⟵ e@075_81sg-x3zl.js:1:133451 < e@075_81sg-x3zl.js:1:133630 < e@075_81sg-x3zl.js:1:133630 < us@075_81sg-x3zl.js:1:133686
+      1 × Invalidator DIV class='hoehe-banner ueber-leiste-12 fixed left-0 right-0 z-50 overflow-y-auto overscroll-contain border-t border-tinte bg-fliese text-tinte lg:bottom-6 lg:left-6 lg:right-auto lg:w-full lg:max-w-md lg:border' · Invalidation set invalidates self · [{"id":"0x4dc0001ab80"}]
+
+## Kandidat 4343 (neu-1): alle Stil-Aufgaben ≥ 3 ms
+fcp 0 UpdateLayoutTree ≥ 3 ms: 6
+
+@-301.9 ms cpu 5 elemente 16 (Aufgabe @-302.1 cpu 7.8) Invalidierungen 4
+      1 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable' · Node was inserted into tree
+      1 × ScheduleStyleRecalculation
+      1 × LayoutInvalidationTracking
+      1 × Recalc HTML class='archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable' · PlatformColorChange
+
+@-251.7 ms cpu 8.5 elemente 146 (Aufgabe @-251.8 cpu 16.2) Invalidierungen 17
+     10 × Recalc BODY class='antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text' · Affected by :has()
+      1 × ScheduleStyleRecalculation
+      1 × Recalc DIV class='flex shrink-0 items-center gap-2' · Node was inserted into tree
+      1 × Schedule DIV class='mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 flex h-16 items-center justify-between gap-6 xl:gap-4 2xl:gap-6' · pseudo last-child · "0x387400104800"
+
+@-186.8 ms cpu 14 elemente 445 (Aufgabe @-188 cpu 28.2) Invalidierungen 227
+    151 × LayoutInvalidationTracking
+     61 × Recalc BODY class='antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text' · Affected by :has()
+      1 × ScheduleStyleRecalculation
+      1 × Schedule DIV class='hidden lg:block' · pseudo last-child · "0x387400104800"
+
+@-81.9 ms cpu 29.5 elemente 1313 (Aufgabe @-82.2 cpu 56.7) Invalidierungen 515
+    499 × LayoutInvalidationTracking
+      5 × Recalc BODY class='antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text' · Affected by :has()
+      2 × Schedule OPTION · pseudo checked · "0x387400104800"
+      2 × Invalidator OPTION · Invalidation set invalidates self · [{"id":"0x387400104800"}]
+
+@40 ms cpu 16.9 elemente 821 (Aufgabe @39 cpu 33 *) Invalidierungen 145
+     77 × LayoutInvalidationTracking
+     29 × Recalc BODY class='antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text' · Affected by :has()
+      6 × Recalc LI class='flex items-center justify-between gap-2 border-r border-b border-fuge pr-2' · Node was inserted into tree
+      6 × Recalc SCRIPT · Node was inserted into tree
+
+@1314.1 ms cpu 3.4 elemente 38 (Aufgabe @1313.9 cpu 9.9 *) Invalidierungen 16
+      5 × LayoutInvalidationTracking ⟵ un@075_81sg-x3zl.js:1:126329 < ut@075_81sg-x3zl.js:1:125728 < un@075_81sg-x3zl.js:1:126642 < uo@075_81sg-x3zl.js:1:127970
+      4 × LayoutInvalidationTracking
+      1 × Recalc svg id='schloss' · Node was inserted into tree
+      1 × Recalc BODY class='antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text' · Affected by :has() ⟵ un@075_81sg-x3zl.js:1:126329 < ut@075_81sg-x3zl.js:1:125728 < un@075_81sg-x3zl.js:1:126642 < uo@075_81sg-x3zl.js:1:127970

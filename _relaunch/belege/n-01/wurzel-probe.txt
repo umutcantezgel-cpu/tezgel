@@ -1,0 +1,13 @@
+# Kosten einer lokalen Stiländerung (Attribut ohne Wirkung) an html/body/main, je Server (wurzel.mjs)
+## 4310
+html UpdateLayoutTree 7 el 2.8 ms, 3 el 0.3 ms | HTML:Related style rule, DIV:Animation, ::before:Animation
+body UpdateLayoutTree 5 el 2.6 ms | BODY:Related style rule, DIV:Animation, ::before:Animation
+main UpdateLayoutTree 4 el 0.5 ms | MAIN:Related style rule, DIV:Animation, ::before:Animation
+## 4337
+html UpdateLayoutTree 2735 el 89.5 ms | HTML:Related style rule, DIV:Control
+body UpdateLayoutTree 2 el 0.3 ms | BODY:Related style rule
+main UpdateLayoutTree 1 el 0.2 ms | MAIN:Related style rule
+## 4343
+html UpdateLayoutTree 2735 el 55.2 ms | HTML:Related style rule, DIV:Control
+body UpdateLayoutTree 2 el 0.8 ms | BODY:Related style rule
+main UpdateLayoutTree 1 el 0.2 ms | MAIN:Related style rule

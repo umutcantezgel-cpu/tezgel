@@ -1,0 +1,2573 @@
+{
+ "name": "n01-vergleich-1",
+ "pfad": "/",
+ "drossel": 1,
+ "einwilligung": "erstbesuch",
+ "laeufe": 4,
+ "je_server": {
+  "http://127.0.0.1:4310": {
+   "median": {
+    "tbt_cpu": 342.1,
+    "tbt_wand": 33.7,
+    "cpu_gesamt": 655.7,
+    "fcp": 454.4,
+    "lcp": 454.4,
+    "arten_lang": {
+     "skript": 132.2,
+     "sonst": 1.4,
+     "gc": 1.4,
+     "rest": 0.7,
+     "kompilieren": 0
+    }
+   },
+   "tbt_cpu_alle": [
+    429.2,
+    342.1,
+    228.6,
+    251.8
+   ],
+   "ergebnisse": [
+    {
+     "fcp": 809.7,
+     "lcp": 809.7,
+     "tbt_cpu": 429.2,
+     "tbt_wand": 99.7,
+     "cpu_gesamt": 775,
+     "arten_lang": {
+      "skript": 165,
+      "sonst": 2.2,
+      "gc": 1.6,
+      "rest": 0.9,
+      "kompilieren": 0
+     },
+     "lang": [
+      {
+       "start": 112.2,
+       "wand": 131.1,
+       "cpu": 33.1,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 30.4,
+        "rest": 2.7
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 364.3,
+       "wand": 355.2,
+       "cpu": 153.5,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "layout": 70.8,
+        "stil": 57.3,
+        "malen": 21.3,
+        "rest": 3.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 57.3,
+         "elemente": 2197
+        },
+        {
+         "art": "layout",
+         "ms": 69.9,
+         "elemente": 2790
+        }
+       ]
+      },
+      {
+       "start": 804.7,
+       "wand": 147.5,
+       "cpu": 76.6,
+       "block": 256.3,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 75.9,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 76.4
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 1080.7,
+       "wand": 57.2,
+       "cpu": 41.9,
+       "block": 117.8,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 40.3,
+        "gc": 1
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 41.6
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 1139.4,
+       "wand": 19.4,
+       "cpu": 13,
+       "block": 2,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 11.9,
+        "gc": 0.7
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 12.8
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 1243.8,
+       "wand": 23.8,
+       "cpu": 21.3,
+       "block": 35.2,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 20.9
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 21.1
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 1339.9,
+       "wand": 22.2,
+       "cpu": 17,
+       "block": 17.8,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 16.1,
+        "sonst": 0.7
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 16,
+        "(Mikroaufgaben)": 0.7
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 2625,
+      "bewegung": false,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 419.3,
+     "lcp": 419.3,
+     "tbt_cpu": 342.1,
+     "tbt_wand": 33.7,
+     "cpu_gesamt": 655.7,
+     "arten_lang": {
+      "skript": 132.2,
+      "sonst": 1.4,
+      "gc": 1.2,
+      "rest": 0.7,
+      "kompilieren": 0
+     },
+     "lang": [
+      {
+       "start": 173.7,
+       "wand": 214.6,
+       "cpu": 109.1,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "layout": 47.1,
+        "stil": 44.8,
+        "malen": 13.9,
+        "rest": 2.9
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 44.8,
+         "elemente": 2197
+        },
+        {
+         "art": "layout",
+         "ms": 46.5,
+         "elemente": 2790
+        }
+       ]
+      },
+      {
+       "start": 453.5,
+       "wand": 83.7,
+       "cpu": 71.6,
+       "block": 236.4,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 71
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 71.4
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 628.5,
+       "wand": 38.4,
+       "cpu": 26.7,
+       "block": 56.6,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 25.1,
+        "gc": 1.2
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 26.4
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 757.4,
+       "wand": 23.5,
+       "cpu": 21.7,
+       "block": 36.6,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 21.2
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 21.4
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 891.4,
+       "wand": 24.9,
+       "cpu": 15.6,
+       "block": 12.5,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 14.9,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 14.7,
+        "(Mikroaufgaben)": 0.7
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 2625,
+      "bewegung": false,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 454.4,
+     "lcp": 454.4,
+     "tbt_cpu": 228.6,
+     "tbt_wand": 0,
+     "cpu_gesamt": 585.2,
+     "arten_lang": {
+      "skript": 92.8,
+      "sonst": 1,
+      "gc": 0.6,
+      "rest": 0.3,
+      "kompilieren": 0
+     },
+     "lang": [
+      {
+       "start": 42.2,
+       "wand": 57.9,
+       "cpu": 26.1,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 23.9,
+        "rest": 2.1
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 184.8,
+       "wand": 213.7,
+       "cpu": 112.8,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "layout": 55.5,
+        "stil": 42.8,
+        "malen": 11.8,
+        "rest": 2.3
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 42.8,
+         "elemente": 2197
+        },
+        {
+         "art": "layout",
+         "ms": 54.9,
+         "elemente": 2790
+        }
+       ]
+      },
+      {
+       "start": 423.9,
+       "wand": 72,
+       "cpu": 53.6,
+       "block": 164.5,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 53.3
+       },
+       "dateien": {
+        "2zx3q7e7c69qs.js": 53.5
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 561.9,
+       "wand": 34.9,
+       "cpu": 27.6,
+       "block": 60.2,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 26.6,
+        "gc": 0.6
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 27.4
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 745.8,
+       "wand": 14.7,
+       "cpu": 13.5,
+       "block": 3.9,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 12.9
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 12.7,
+        "(Mikroaufgaben)": 0.7
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 2625,
+      "bewegung": false,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 434.7,
+     "lcp": 434.7,
+     "tbt_cpu": 251.8,
+     "tbt_wand": 0,
+     "cpu_gesamt": 543.6,
+     "arten_lang": {
+      "skript": 109.8,
+      "gc": 1.4,
+      "sonst": 1.3,
+      "rest": 0.5,
+      "kompilieren": 0
+     },
+     "lang": [
+      {
+       "start": 159.2,
+       "wand": 223.2,
+       "cpu": 109.5,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "layout": 59.4,
+        "stil": 34.3,
+        "malen": 12.6,
+        "rest": 2.8
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 34.3,
+         "elemente": 2197
+        },
+        {
+         "art": "layout",
+         "ms": 58.7,
+         "elemente": 2790
+        }
+       ]
+      },
+      {
+       "start": 402.6,
+       "wand": 76.4,
+       "cpu": 54.2,
+       "block": 166.7,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 53.8
+       },
+       "dateien": {
+        "turbopack-1m7sgzau7206r.js": 54.1
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 545,
+       "wand": 42,
+       "cpu": 31.3,
+       "block": 75,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 29.3,
+        "gc": 1.4
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 31
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 659.3,
+       "wand": 13.4,
+       "cpu": 12.7,
+       "block": 0.9,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 12.6
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 12.6
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 720.3,
+       "wand": 18.1,
+       "cpu": 14.8,
+       "block": 9.1,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 14.1,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "2vh4q1xrp9pbj.js": 14.2,
+        "(Mikroaufgaben)": 0.5
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 2625,
+      "bewegung": false,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    }
+   ]
+  },
+  "http://127.0.0.1:4337": {
+   "median": {
+    "tbt_cpu": 2446.4,
+    "tbt_wand": 311.6,
+    "cpu_gesamt": 1134.2,
+    "fcp": 302.7,
+    "lcp": 302.7,
+    "arten_lang": {
+     "stil": 590.7,
+     "skript": 104.5,
+     "layout": 49.2,
+     "malen": 37.7,
+     "rest": 10.8,
+     "sonst": 1.9,
+     "kompilieren": 0.1,
+     "html": 0
+    }
+   },
+   "tbt_cpu_alle": [
+    2542.1,
+    2163.4,
+    2446.4,
+    2102.4
+   ],
+   "ergebnisse": [
+    {
+     "fcp": 479.3,
+     "lcp": 731,
+     "tbt_cpu": 2542.1,
+     "tbt_wand": 665.6,
+     "cpu_gesamt": 1154.8,
+     "arten_lang": {
+      "stil": 600.5,
+      "skript": 104.5,
+      "layout": 55.1,
+      "malen": 37.7,
+      "rest": 10.8,
+      "sonst": 1.9,
+      "kompilieren": 0.1
+     },
+     "lang": [
+      {
+       "start": 82.4,
+       "wand": 74.5,
+       "cpu": 26.2,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 23.7,
+        "rest": 2.4
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 479.7,
+       "wand": 227.4,
+       "cpu": 55.6,
+       "block": 172.4,
+       "nach_fcp": true,
+       "arten": {
+        "layout": 23.5,
+        "stil": 23,
+        "malen": 6.8,
+        "rest": 2
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 23.2,
+         "elemente": 882
+        },
+        {
+         "art": "layout",
+         "ms": 23.5,
+         "elemente": 956
+        }
+       ]
+      },
+      {
+       "start": 780.5,
+       "wand": 148.5,
+       "cpu": 82.8,
+       "block": 281.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 49.9,
+        "layout": 22.7,
+        "malen": 8.3,
+        "rest": 1.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 49.9,
+         "elemente": 2230
+        },
+        {
+         "art": "layout",
+         "ms": 22.7,
+         "elemente": 2082
+        }
+       ]
+      },
+      {
+       "start": 971,
+       "wand": 103.1,
+       "cpu": 89.3,
+       "block": 307.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 77.2,
+        "layout": 5.5,
+        "malen": 4.4,
+        "rest": 1.3,
+        "skript": 0.9
+       },
+       "dateien": {
+        "(rAF)": 0.9
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 77.2,
+         "elemente": 2697
+        },
+        {
+         "art": "layout",
+         "ms": 5.5,
+         "elemente": 710
+        }
+       ]
+      },
+      {
+       "start": 1074.8,
+       "wand": 99.4,
+       "cpu": 73.2,
+       "block": 243,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 72.6,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "0jvhpaew_uadu.js": 71.8,
+        "(Ereignis load)": 1.3
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 1196,
+       "wand": 56.3,
+       "cpu": 54.2,
+       "block": 166.6,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 50.8,
+        "malen": 2.2,
+        "rest": 0.6,
+        "layout": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 50.8,
+         "elemente": 2698
+        }
+       ]
+      },
+      {
+       "start": 1575.9,
+       "wand": 14.8,
+       "cpu": 13.6,
+       "block": 4.4,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 13.4
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 13.5
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 1597,
+       "wand": 13.7,
+       "cpu": 12.6,
+       "block": 0.4,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 12,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 12.4
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 1629.3,
+       "wand": 63.8,
+       "cpu": 58.3,
+       "block": 183.2,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 53.1,
+        "skript": 2.2,
+        "malen": 2,
+        "rest": 0.5
+       },
+       "dateien": {
+        "(rAF)": 1.6
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 53.1,
+         "elemente": 2699
+        }
+       ]
+      },
+      {
+       "start": 1714,
+       "wand": 76.7,
+       "cpu": 74,
+       "block": 245.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 70.1,
+        "malen": 1.9,
+        "skript": 0.8,
+        "rest": 0.7
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 70.1,
+         "elemente": 2706
+        }
+       ]
+      },
+      {
+       "start": 1794.9,
+       "wand": 75.2,
+       "cpu": 63.3,
+       "block": 203.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 58.2,
+        "malen": 3,
+        "rest": 0.8,
+        "skript": 0.7,
+        "layout": 0.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 58.2,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1893.4,
+       "wand": 56.2,
+       "cpu": 47.3,
+       "block": 139.2,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 43.6,
+        "malen": 2.1,
+        "rest": 0.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 43.6,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1976.2,
+       "wand": 64.6,
+       "cpu": 51.8,
+       "block": 157.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 49.1,
+        "malen": 1.5,
+        "rest": 0.7,
+        "skript": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 49.1,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 2209.8,
+       "wand": 84.8,
+       "cpu": 76.7,
+       "block": 256.8,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 71.3,
+        "malen": 2.9,
+        "layout": 1.1,
+        "rest": 0.9
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 71.3,
+         "elemente": 2734
+        },
+        {
+         "art": "layout",
+         "ms": 1.1,
+         "elemente": 46
+        }
+       ]
+      },
+      {
+       "start": 2304.3,
+       "wand": 68.8,
+       "cpu": 57.9,
+       "block": 181.5,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 54.2,
+        "malen": 2.6,
+        "rest": 0.7,
+        "skript": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 54.2,
+         "elemente": 2735
+        }
+       ]
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 253.9,
+     "lcp": 253.9,
+     "tbt_cpu": 2163.4,
+     "tbt_wand": 217.2,
+     "cpu_gesamt": 1026.1,
+     "arten_lang": {
+      "stil": 543.2,
+      "skript": 74.4,
+      "layout": 39.7,
+      "malen": 34.9,
+      "rest": 9.8,
+      "sonst": 1.4,
+      "kompilieren": 0.1
+     },
+     "lang": [
+      {
+       "start": 46.5,
+       "wand": 34.8,
+       "cpu": 17.4,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 15.4,
+        "rest": 2
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 151.7,
+       "wand": 53.2,
+       "cpu": 17.8,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "stil": 8.4,
+        "layout": 5.8,
+        "malen": 2.4,
+        "rest": 1
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 8.6,
+         "elemente": 179
+        },
+        {
+         "art": "layout",
+         "ms": 5.8,
+         "elemente": 185
+        }
+       ]
+      },
+      {
+       "start": 217.2,
+       "wand": 101.6,
+       "cpu": 33.5,
+       "block": 84.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 14.6,
+        "layout": 12.5,
+        "malen": 5.3,
+        "rest": 1.2
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 14.6,
+         "elemente": 716
+        },
+        {
+         "art": "layout",
+         "ms": 12.5,
+         "elemente": 617
+        }
+       ]
+      },
+      {
+       "start": 343.6,
+       "wand": 94.8,
+       "cpu": 90.3,
+       "block": 311.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 57.6,
+        "layout": 22.6,
+        "malen": 8.2,
+        "rest": 1.7
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 57.6,
+         "elemente": 2612
+        },
+        {
+         "art": "layout",
+         "ms": 22.6,
+         "elemente": 2633
+        }
+       ]
+      },
+      {
+       "start": 454.3,
+       "wand": 48.7,
+       "cpu": 47.2,
+       "block": 138.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 41.7,
+        "malen": 3,
+        "layout": 1.3,
+        "rest": 0.7,
+        "skript": 0.5
+       },
+       "dateien": {
+        "(rAF)": 0.5
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 41.7,
+         "elemente": 2698
+        },
+        {
+         "art": "layout",
+         "ms": 1.3,
+         "elemente": 108
+        }
+       ]
+      },
+      {
+       "start": 503.5,
+       "wand": 58.3,
+       "cpu": 56.7,
+       "block": 176.8,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 56.2
+       },
+       "dateien": {
+        "0jvhpaew_uadu.js": 55.5,
+        "(Ereignis load)": 1.1
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 562.4,
+       "wand": 46.4,
+       "cpu": 45.5,
+       "block": 131.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 42,
+        "malen": 1.9,
+        "rest": 1,
+        "layout": 0.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 42,
+         "elemente": 2698
+        }
+       ]
+      },
+      {
+       "start": 767.8,
+       "wand": 17.9,
+       "cpu": 13,
+       "block": 1.8,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 12.4,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 12.8
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 806.4,
+       "wand": 67.5,
+       "cpu": 66.5,
+       "block": 216.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 60.3,
+        "malen": 2.9,
+        "skript": 2,
+        "rest": 0.8,
+        "layout": 0.5
+       },
+       "dateien": {
+        "(rAF)": 1.4
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 60.3,
+         "elemente": 2699
+        }
+       ]
+      },
+      {
+       "start": 898.4,
+       "wand": 85,
+       "cpu": 78.4,
+       "block": 263.4,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 74.4,
+        "malen": 2.4,
+        "rest": 0.7,
+        "skript": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 74.4,
+         "elemente": 2706
+        }
+       ]
+      },
+      {
+       "start": 993.5,
+       "wand": 49.9,
+       "cpu": 48.6,
+       "block": 144.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 44.2,
+        "malen": 2.2,
+        "skript": 0.9,
+        "rest": 0.8
+       },
+       "dateien": {
+        "(Ereignis transitionrun)": 0.5
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 44.2,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1057.9,
+       "wand": 142.4,
+       "cpu": 82.1,
+       "block": 278.4,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 78.2,
+        "malen": 2.4,
+        "rest": 0.7,
+        "layout": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 78.2,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1232.3,
+       "wand": 51.5,
+       "cpu": 46.7,
+       "block": 136.8,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 43.8,
+        "malen": 1.8,
+        "rest": 0.6,
+        "skript": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 43.8,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1398.7,
+       "wand": 51.4,
+       "cpu": 48.3,
+       "block": 143.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 43.1,
+        "malen": 2.9,
+        "layout": 0.9,
+        "rest": 0.7,
+        "skript": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 43.1,
+         "elemente": 2734
+        }
+       ]
+      },
+      {
+       "start": 1532.1,
+       "wand": 51.5,
+       "cpu": 46.6,
+       "block": 136.2,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 43.4,
+        "malen": 1.9,
+        "rest": 0.8,
+        "skript": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 43.4,
+         "elemente": 2735
+        }
+       ]
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 302.7,
+     "lcp": 302.7,
+     "tbt_cpu": 2446.4,
+     "tbt_wand": 311.6,
+     "cpu_gesamt": 1134.2,
+     "arten_lang": {
+      "stil": 590.7,
+      "skript": 105.9,
+      "malen": 39.8,
+      "layout": 33.6,
+      "rest": 14.1,
+      "sonst": 2.5,
+      "kompilieren": 0.1
+     },
+     "lang": [
+      {
+       "start": 55.7,
+       "wand": 27,
+       "cpu": 16.3,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 14.9,
+        "rest": 1.4
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 133.3,
+       "wand": 136.1,
+       "cpu": 53.5,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "stil": 30.3,
+        "layout": 15.8,
+        "malen": 5.6,
+        "rest": 1.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 30.5,
+         "elemente": 1023
+        },
+        {
+         "art": "layout",
+         "ms": 15.8,
+         "elemente": 1120
+        }
+       ]
+      },
+      {
+       "start": 303.4,
+       "wand": 89.4,
+       "cpu": 82.1,
+       "block": 278.4,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 39.8,
+        "layout": 26.3,
+        "malen": 13.2,
+        "rest": 2.4
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 39.8,
+         "elemente": 2614
+        },
+        {
+         "art": "layout",
+         "ms": 26.3,
+         "elemente": 2351
+        }
+       ]
+      },
+      {
+       "start": 414.3,
+       "wand": 63.9,
+       "cpu": 61.7,
+       "block": 197,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 55.4,
+        "malen": 3.4,
+        "layout": 1.9,
+        "rest": 0.7
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 55.4,
+         "elemente": 2620
+        },
+        {
+         "art": "layout",
+         "ms": 1.9,
+         "elemente": 259
+        }
+       ]
+      },
+      {
+       "start": 478.9,
+       "wand": 74.6,
+       "cpu": 71.2,
+       "block": 235,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 70.5,
+        "sonst": 0.6
+       },
+       "dateien": {
+        "0jvhpaew_uadu.js": 69.9,
+        "(Ereignis load)": 1.2
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 556.8,
+       "wand": 42.7,
+       "cpu": 41.8,
+       "block": 117.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 39.5,
+        "malen": 1.4,
+        "rest": 1
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 39.5,
+         "elemente": 2620
+        }
+       ]
+      },
+      {
+       "start": 631.1,
+       "wand": 87.7,
+       "cpu": 76,
+       "block": 254.2,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 65.7,
+        "rest": 4.4,
+        "malen": 4,
+        "layout": 1.9
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 65.7,
+         "elemente": 2698
+        },
+        {
+         "art": "layout",
+         "ms": 1.9,
+         "elemente": 108
+        }
+       ]
+      },
+      {
+       "start": 862.2,
+       "wand": 18.8,
+       "cpu": 15.3,
+       "block": 11.1,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 14.5,
+        "sonst": 0.7
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 15
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 882,
+       "wand": 18.2,
+       "cpu": 15,
+       "block": 10.1,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 14.1,
+        "sonst": 0.6
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 14.7
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 907.5,
+       "wand": 92.5,
+       "cpu": 66.6,
+       "block": 216.4,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 61.1,
+        "skript": 2.6,
+        "malen": 1.9,
+        "rest": 0.6
+       },
+       "dateien": {
+        "(rAF)": 2.3
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 61.1,
+         "elemente": 2699
+        }
+       ]
+      },
+      {
+       "start": 1027.8,
+       "wand": 73.1,
+       "cpu": 55.4,
+       "block": 171.6,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 50.9,
+        "malen": 2.3,
+        "skript": 0.9,
+        "rest": 0.8
+       },
+       "dateien": {
+        "(Ereignis transitionrun)": 0.5
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 50.9,
+         "elemente": 2706
+        }
+       ]
+      },
+      {
+       "start": 1105.1,
+       "wand": 62.4,
+       "cpu": 50,
+       "block": 150.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 46.2,
+        "malen": 2.2,
+        "rest": 0.6,
+        "layout": 0.5,
+        "skript": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 46.2,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1187.7,
+       "wand": 64.3,
+       "cpu": 47,
+       "block": 137.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 42,
+        "malen": 3,
+        "skript": 0.9,
+        "rest": 0.8
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 42,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1270.1,
+       "wand": 81.3,
+       "cpu": 63.4,
+       "block": 203.6,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 60.2,
+        "malen": 1.9,
+        "rest": 0.8,
+        "skript": 0.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 60.2,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1505.5,
+       "wand": 106.5,
+       "cpu": 84.1,
+       "block": 286.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 76.8,
+        "malen": 4.1,
+        "layout": 1.4,
+        "rest": 0.9,
+        "skript": 0.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 76.8,
+         "elemente": 2734
+        },
+        {
+         "art": "layout",
+         "ms": 1.4,
+         "elemente": 46
+        }
+       ]
+      },
+      {
+       "start": 1616,
+       "wand": 65.8,
+       "cpu": 56.9,
+       "block": 177.6,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 53,
+        "malen": 2.4,
+        "rest": 0.6,
+        "layout": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 53,
+         "elemente": 2735
+        }
+       ]
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 219.7,
+     "lcp": 219.7,
+     "tbt_cpu": 2102.4,
+     "tbt_wand": 239.6,
+     "cpu_gesamt": 993.5,
+     "arten_lang": {
+      "stil": 487.5,
+      "skript": 91.3,
+      "layout": 49.2,
+      "malen": 37.2,
+      "html": 9.9,
+      "rest": 9.1,
+      "kompilieren": 2.1,
+      "sonst": 1.8
+     },
+     "lang": [
+      {
+       "start": 35.8,
+       "wand": 35.6,
+       "cpu": 17.1,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 15.4,
+        "rest": 1.7
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 116.8,
+       "wand": 59.6,
+       "cpu": 15.9,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "stil": 8.9,
+        "layout": 4,
+        "malen": 1.6,
+        "rest": 1.1
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 9.1,
+         "elemente": 61
+        },
+        {
+         "art": "layout",
+         "ms": 4,
+         "elemente": 60
+        }
+       ]
+      },
+      {
+       "start": 202.4,
+       "wand": 79.5,
+       "cpu": 61.4,
+       "block": 195.5,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 28.8,
+        "layout": 24.3,
+        "malen": 6.7,
+        "rest": 1.4
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 28.8,
+         "elemente": 2039
+        },
+        {
+         "art": "layout",
+         "ms": 24.3,
+         "elemente": 2372
+        }
+       ]
+      },
+      {
+       "start": 289.6,
+       "wand": 13.8,
+       "cpu": 12.5,
+       "block": 0.1,
+       "nach_fcp": true,
+       "arten": {
+        "html": 9.9,
+        "kompilieren": 2,
+        "skript": 0.5
+       },
+       "dateien": {
+        "/": 2.5
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 310.6,
+       "wand": 106.7,
+       "cpu": 105.7,
+       "block": 372.6,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 69.3,
+        "layout": 21,
+        "malen": 12.6,
+        "rest": 1.6,
+        "skript": 0.7
+       },
+       "dateien": {
+        "(rAF)": 0.7
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 69.3,
+         "elemente": 2698
+        },
+        {
+         "art": "layout",
+         "ms": 21,
+         "elemente": 1893
+        }
+       ]
+      },
+      {
+       "start": 419.7,
+       "wand": 77,
+       "cpu": 71.4,
+       "block": 235.7,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 70.7,
+        "sonst": 0.6
+       },
+       "dateien": {
+        "0jvhpaew_uadu.js": 70.3,
+        "(Ereignis load)": 1.1
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 501.5,
+       "wand": 61.1,
+       "cpu": 53.1,
+       "block": 162.2,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 47.4,
+        "malen": 2.8,
+        "rest": 1.5,
+        "layout": 1.3
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 47.4,
+         "elemente": 2698
+        },
+        {
+         "art": "layout",
+         "ms": 1.3,
+         "elemente": 128
+        }
+       ]
+      },
+      {
+       "start": 736.6,
+       "wand": 17.5,
+       "cpu": 15.1,
+       "block": 10.4,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 14.5
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 14.6
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 785.2,
+       "wand": 53.5,
+       "cpu": 44.7,
+       "block": 128.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 40.3,
+        "skript": 1.9,
+        "malen": 1.7,
+        "rest": 0.5
+       },
+       "dateien": {
+        "(rAF)": 1.5
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 40.3,
+         "elemente": 2699
+        }
+       ]
+      },
+      {
+       "start": 870.8,
+       "wand": 44.1,
+       "cpu": 43,
+       "block": 122.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 39.8,
+        "malen": 1.8,
+        "skript": 0.6,
+        "rest": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 39.8,
+         "elemente": 2706
+        }
+       ]
+      },
+      {
+       "start": 919.5,
+       "wand": 48.3,
+       "cpu": 46.4,
+       "block": 135.5,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 43.1,
+        "malen": 2,
+        "skript": 0.5,
+        "rest": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 43.1,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 984.7,
+       "wand": 55.4,
+       "cpu": 51.3,
+       "block": 155.1,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 47.8,
+        "malen": 2.2,
+        "rest": 0.5
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 47.8,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1070.9,
+       "wand": 57.3,
+       "cpu": 48.2,
+       "block": 142.6,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 45.7,
+        "malen": 1.5,
+        "rest": 0.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 45.7,
+         "elemente": 2705
+        }
+       ]
+      },
+      {
+       "start": 1336.5,
+       "wand": 145,
+       "cpu": 74.8,
+       "block": 249.4,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 67.6,
+        "malen": 4,
+        "layout": 1.3,
+        "rest": 0.9,
+        "skript": 0.7
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 67.6,
+         "elemente": 2734
+        },
+        {
+         "art": "layout",
+         "ms": 1.3,
+         "elemente": 46
+        }
+       ]
+      },
+      {
+       "start": 1503.4,
+       "wand": 71.5,
+       "cpu": 60.6,
+       "block": 192.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 57.8,
+        "malen": 1.8,
+        "rest": 0.6
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 57.8,
+         "elemente": 2735
+        }
+       ]
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    }
+   ]
+  },
+  "http://127.0.0.1:4343": {
+   "median": {
+    "tbt_cpu": 490.5,
+    "tbt_wand": 57.2,
+    "cpu_gesamt": 559.3,
+    "fcp": 292.3,
+    "lcp": 322.4,
+    "arten_lang": {
+     "skript": 102.1,
+     "stil": 38.7,
+     "layout": 34.2,
+     "malen": 14.5,
+     "html": 0,
+     "rest": 3.5,
+     "sonst": 1.9,
+     "kompilieren": 0
+    }
+   },
+   "tbt_cpu_alle": [
+    480.4,
+    524.9,
+    336,
+    490.5
+   ],
+   "ergebnisse": [
+    {
+     "fcp": 254,
+     "lcp": 322.4,
+     "tbt_cpu": 480.4,
+     "tbt_wand": 28.1,
+     "cpu_gesamt": 559.3,
+     "arten_lang": {
+      "skript": 102.1,
+      "stil": 43.7,
+      "layout": 32.5,
+      "malen": 12,
+      "html": 10.6,
+      "rest": 3.5,
+      "sonst": 2.1,
+      "kompilieren": 1.1
+     },
+     "lang": [
+      {
+       "start": 48.3,
+       "wand": 69.6,
+       "cpu": 24.8,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 23,
+        "rest": 1.8
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 329.6,
+       "wand": 54,
+       "cpu": 39.2,
+       "block": 106.8,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 18.6,
+        "layout": 12.4,
+        "malen": 6.6,
+        "rest": 1.3
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 18.6,
+         "elemente": 631
+        },
+        {
+         "art": "layout",
+         "ms": 12.4,
+         "elemente": 757
+        }
+       ]
+      },
+      {
+       "start": 383.6,
+       "wand": 12.7,
+       "cpu": 12.5,
+       "block": 0,
+       "nach_fcp": true,
+       "arten": {
+        "html": 10.6,
+        "kompilieren": 1,
+        "skript": 0.8
+       },
+       "dateien": {
+        "/": 1.5
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 404.5,
+       "wand": 62.3,
+       "cpu": 52.5,
+       "block": 159.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 25.1,
+        "layout": 20.1,
+        "malen": 5.4,
+        "rest": 1.5,
+        "skript": 0.5
+       },
+       "dateien": {
+        "(rAF)": 0.5
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 25.1,
+         "elemente": 1921
+        },
+        {
+         "art": "layout",
+         "ms": 20.1,
+         "elemente": 2258
+        }
+       ]
+      },
+      {
+       "start": 473.1,
+       "wand": 61.8,
+       "cpu": 56.7,
+       "block": 176.8,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 56.1,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 55.5,
+        "(Ereignis load)": 1
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 736.4,
+       "wand": 14,
+       "cpu": 13.9,
+       "block": 5.7,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 13.7
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 13.8
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 758.6,
+       "wand": 21.7,
+       "cpu": 18,
+       "block": 21.9,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 17,
+        "sonst": 0.9
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 17.7
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 781.9,
+       "wand": 18.5,
+       "cpu": 14.8,
+       "block": 9.2,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 14,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 14.4
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 381.3,
+     "lcp": 381.3,
+     "tbt_cpu": 524.9,
+     "tbt_wand": 86.2,
+     "cpu_gesamt": 641,
+     "arten_lang": {
+      "skript": 113.8,
+      "stil": 36.9,
+      "layout": 34.2,
+      "malen": 15.6,
+      "rest": 3.8,
+      "sonst": 1.9,
+      "kompilieren": 0
+     },
+     "lang": [
+      {
+       "start": 53.6,
+       "wand": 121.2,
+       "cpu": 21.3,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 18.9,
+        "rest": 2.3
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 224.9,
+       "wand": 93.8,
+       "cpu": 49.4,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "stil": 22.1,
+        "layout": 16.1,
+        "malen": 8.9,
+        "rest": 1.9
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 22.3,
+         "elemente": 1165
+        },
+        {
+         "art": "layout",
+         "ms": 16,
+         "elemente": 1270
+        }
+       ]
+      },
+      {
+       "start": 337.4,
+       "wand": 73.3,
+       "cpu": 30.2,
+       "block": 70.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 13.9,
+        "layout": 13.1,
+        "malen": 2.3,
+        "rest": 0.9
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 13.9,
+         "elemente": 725
+        },
+        {
+         "art": "layout",
+         "ms": 13.1,
+         "elemente": 961
+        }
+       ]
+      },
+      {
+       "start": 443.7,
+       "wand": 81.9,
+       "cpu": 60.8,
+       "block": 193.2,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 23.1,
+        "layout": 21.1,
+        "malen": 13.3,
+        "rest": 2.1,
+        "skript": 0.9
+       },
+       "dateien": {
+        "(rAF)": 0.8
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 23.1,
+         "elemente": 859
+        },
+        {
+         "art": "layout",
+         "ms": 21.1,
+         "elemente": 1951
+        }
+       ]
+      },
+      {
+       "start": 553.6,
+       "wand": 104.4,
+       "cpu": 66.5,
+       "block": 216.1,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 66
+       },
+       "dateien": {
+        "turbopack-2rkfwiq4peawj.js": 65.3,
+        "(Ereignis load)": 1.1
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 887.6,
+       "wand": 13.1,
+       "cpu": 12.8,
+       "block": 1.1,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 12.5
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 12.5
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 919.7,
+       "wand": 25.9,
+       "cpu": 19.3,
+       "block": 27.3,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 18.6,
+        "sonst": 0.6
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 19
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 947.3,
+       "wand": 20,
+       "cpu": 16.6,
+       "block": 16.2,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 15.8
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 16.2
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 236,
+     "lcp": 236,
+     "tbt_cpu": 336,
+     "tbt_wand": 12.5,
+     "cpu_gesamt": 486,
+     "arten_lang": {
+      "skript": 59.4,
+      "stil": 27,
+      "layout": 23.4,
+      "malen": 8.8,
+      "rest": 2,
+      "sonst": 0.7,
+      "kompilieren": 0
+     },
+     "lang": [
+      {
+       "start": 55.9,
+       "wand": 31.2,
+       "cpu": 16.6,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 15,
+        "rest": 1.5
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 127.1,
+       "wand": 73.5,
+       "cpu": 33.8,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "stil": 16.6,
+        "layout": 12,
+        "malen": 3.9,
+        "rest": 1.1
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 16.7,
+         "elemente": 747
+        },
+        {
+         "art": "layout",
+         "ms": 11.9,
+         "elemente": 818
+        }
+       ]
+      },
+      {
+       "start": 232.3,
+       "wand": 41.9,
+       "cpu": 35.6,
+       "block": 92.5,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 14.6,
+        "layout": 14.3,
+        "malen": 5.7,
+        "rest": 1
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 14.6,
+         "elemente": 1140
+        },
+        {
+         "art": "layout",
+         "ms": 14.3,
+         "elemente": 1743
+        }
+       ]
+      },
+      {
+       "start": 291.7,
+       "wand": 32.5,
+       "cpu": 26.2,
+       "block": 54.9,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 12.4,
+        "layout": 9.2,
+        "malen": 3.1,
+        "rest": 1
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 12.4,
+         "elemente": 853
+        },
+        {
+         "art": "layout",
+         "ms": 9.2,
+         "elemente": 969
+        }
+       ]
+      },
+      {
+       "start": 324.8,
+       "wand": 62.5,
+       "cpu": 59.6,
+       "block": 188.5,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 59,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "0jvhpaew_uadu.js": 58.6,
+        "(Ereignis load)": 0.9
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    },
+    {
+     "fcp": 292.3,
+     "lcp": 292.3,
+     "tbt_cpu": 490.5,
+     "tbt_wand": 57.2,
+     "cpu_gesamt": 525.6,
+     "arten_lang": {
+      "skript": 78.6,
+      "stil": 38.7,
+      "layout": 36.5,
+      "malen": 14.5,
+      "rest": 3,
+      "sonst": 1.3,
+      "kompilieren": 0
+     },
+     "lang": [
+      {
+       "start": 51.1,
+       "wand": 28.1,
+       "cpu": 16,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "sonst": 14.5,
+        "rest": 1.5
+       },
+       "dateien": {},
+       "stil_layout": []
+      },
+      {
+       "start": 158.7,
+       "wand": 95.5,
+       "cpu": 20,
+       "block": 0,
+       "nach_fcp": false,
+       "arten": {
+        "stil": 8.7,
+        "layout": 6.4,
+        "malen": 3.8,
+        "rest": 1
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 8.8,
+         "elemente": 274
+        },
+        {
+         "art": "layout",
+         "ms": 6.3,
+         "elemente": 309
+        }
+       ]
+      },
+      {
+       "start": 285.6,
+       "wand": 93,
+       "cpu": 65.6,
+       "block": 212.3,
+       "nach_fcp": true,
+       "arten": {
+        "stil": 31.2,
+        "layout": 25.7,
+        "malen": 6.9,
+        "rest": 1.7
+       },
+       "dateien": {},
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 31.2,
+         "elemente": 2178
+        },
+        {
+         "art": "layout",
+         "ms": 25.7,
+         "elemente": 2604
+        }
+       ]
+      },
+      {
+       "start": 396.1,
+       "wand": 29.2,
+       "cpu": 27.7,
+       "block": 60.7,
+       "nach_fcp": true,
+       "arten": {
+        "layout": 10.8,
+        "malen": 7.6,
+        "stil": 7.5,
+        "rest": 1.1,
+        "skript": 0.5
+       },
+       "dateien": {
+        "(rAF)": 0.5
+       },
+       "stil_layout": [
+        {
+         "art": "stil",
+         "ms": 7.5,
+         "elemente": 430
+        },
+        {
+         "art": "layout",
+         "ms": 10.8,
+         "elemente": 1677
+        }
+       ]
+      },
+      {
+       "start": 427.3,
+       "wand": 70.8,
+       "cpu": 64.4,
+       "block": 207.4,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 63.7,
+        "sonst": 0.5
+       },
+       "dateien": {
+        "0jvhpaew_uadu.js": 62.7,
+        "(Ereignis load)": 1.6
+       },
+       "stil_layout": []
+      },
+      {
+       "start": 688.5,
+       "wand": 19.9,
+       "cpu": 15,
+       "block": 10.1,
+       "nach_fcp": true,
+       "arten": {
+        "skript": 14.3,
+        "sonst": 0.7
+       },
+       "dateien": {
+        "075_81sg-x3zl.js": 14.8
+       },
+       "stil_layout": []
+      }
+     ],
+     "dom": {
+      "knoten": 3035,
+      "bewegung": true,
+      "modul": false,
+      "banner": true
+     },
+     "fremd": 0
+    }
+   ]
+  }
+ }
+}

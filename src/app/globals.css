@@ -195,7 +195,6 @@
     background-color: var(--color-kalk);
     color: var(--color-tinte);
     color-scheme: light;
-    overflow-x: clip;
   }
 
   @media (width >= 64rem) {
@@ -204,18 +203,23 @@
     }
   }
 
-  /* Offenes Menüblatt sperrt das Scrollen der Seite (ohne JavaScript, auch vor der Hydrierung) */
-  html:has(.menue-blatt:popover-open) {
-    overflow: hidden;
-  }
-
   body {
     background-color: var(--color-kalk);
     color: var(--color-tinte);
     font-family: var(--font-text);
     font-feature-settings: "kern" 1, "calt" 1;
+    /* <html> selbst setzt kein overflow: Dann gilt das overflow von <body> für den Viewport (CSS Overflow 3), waagerecht
+       beschnitten wie bisher, und die Menü-Sperre darunter kann an <body> hängen. */
     overflow-x: clip;
     min-height: 100vh;
+  }
+
+  /* Offenes Menüblatt sperrt das Scrollen der Seite (ohne JavaScript, auch vor der Hydrierung), über <body> am Viewport.
+     Nie an <html> (N-01): Eine :has()-Regel mit Pseudoklasse im Argument lässt Chrome ihr Bezugselement bei jedem
+     Einfügen oder Entfernen im DOM neu berechnen. An <html> zog das hier jedes Mal alle Elemente nach (rem mit ch/lh),
+     eine Kette langer Stil-Aufgaben beim Laden; an <body> bleibt es bei diesem einen Element. */
+  body:has(.menue-blatt:popover-open) {
+    overflow: hidden;
   }
 
   /* Überschriften: Archivo in Anzeigebreite; Silben nur an gesetzten Fugenstellen (&shy;) */

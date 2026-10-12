@@ -1,0 +1,10 @@
+4337 m375 js:an  offen:true ov-offen {"html":"hidden","body":"clip visible"} y 382→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700 ov-zu {"html":"clip visible","body":"clip visible","sw":375,"cw":375}
+4337 m375 js:aus offen:true ov-offen {"html":"hidden","body":"clip visible"} y 382→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700 ov-zu {"html":"clip visible","body":"clip visible","sw":375,"cw":375}
+4337 d1024 js:an  offen:true ov-offen {"html":"hidden","body":"clip visible"} y 392→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700 ov-zu {"html":"clip visible","body":"clip visible","sw":1024,"cw":1024}
+4337 d1024 js:aus offen:true ov-offen {"html":"hidden","body":"clip visible"} y 367→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700 ov-zu {"html":"clip visible","body":"clip visible","sw":1024,"cw":1024}
+4343 m375 js:an  offen:true ov-offen {"html":"visible","body":"hidden"} y 382→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700 ov-zu {"html":"visible","body":"clip visible","sw":375,"cw":375}
+4343 m375 js:aus offen:true ov-offen {"html":"visible","body":"hidden"} y 398→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700 ov-zu {"html":"visible","body":"clip visible","sw":375,"cw":375}
+4343 d1024 js:an  offen:true ov-offen {"html":"visible","body":"hidden"} y 382→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700 ov-zu {"html":"visible","body":"clip visible","sw":1024,"cw":1024}
+4343 d1024 js:aus offen:true ov-offen {"html":"visible","body":"hidden"} y 382→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700 ov-zu {"html":"visible","body":"clip visible","sw":1024,"cw":1024}
+4337 Wischen ohne Menü: y 400 → 1043
+4343 Wischen ohne Menü: y 400 → 1041

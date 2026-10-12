@@ -1,0 +1,503 @@
+{
+ "satz": "n-01-4343",
+ "base": "http://127.0.0.1:4343",
+ "erstellt": "2026-10-12T04:24:24.798Z",
+ "bedingungen": {
+  "einwilligung": "abgelehnt",
+  "dpr": 1,
+  "page_clock": false,
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "farbschema": "light",
+  "browser": "chromium 141.0.7390.37 (Playwright 1.56.1, headless)",
+  "ansichten": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "seiten": [
+   "/"
+  ],
+  "laeufe": [
+   "normal",
+   "reduziert"
+  ],
+  "gegenprobe": false,
+  "zusammengefuehrt": null,
+  "sammellauf": {
+   "reduced_motion": {
+    "normal": "no-preference",
+    "reduziert": "reduce"
+   },
+   "drosselung": "keine",
+   "abfrage_ms": 50,
+   "ereignisse": [
+    "animationstart",
+    "animationiteration",
+    "transitionrun",
+    "transitionstart"
+   ],
+   "skriptbewegung": "MutationObserver style + SVG-Geometrie, ≥ 3 verschiedene Werte je Eigenschaft",
+   "raf_schleife": "≥ 0.5 Seiten-rAF-Aufrufe je Bild im Ruhefenster (≥ 5 Bilder); mit sichtbarer Canvas = animiertes Element",
+   "scroll": "Schritte 0.5 Bildschirmhöhe, je Schritt 2 Bilder + 120 ms",
+   "abklingen": "Zustandsabfrage, max 4000 ms",
+   "ruhefenster_ms": 1500
+  },
+  "framelauf": {
+   "reduced_motion": "no-preference",
+   "drosselung": "mobil 4×, Desktop 1× (CDP Emulation.setCPUThrottlingRate)",
+   "scroll": "40 px je Bild (rAF-gekoppelt, behavior instant) + 30 Bilder Nachlauf",
+   "einstieg": "rAF ab Dokumentbeginn bis Scrollbeginn (nach load, fonts.ready, networkidle ≤ 5 s)",
+   "exklusiv": true,
+   "wiederholungen": 1,
+   "ruhetor": "vor jedem Framelauf ungedrosselte Rechenprobe (1e7 Schleifen, Median aus 3) ≤ 1,3 × beste Basis, Abfragetakt 2 s, höchstens 90 s",
+   "messqualitaet": "ok bei effektiver Drosselung (gedrosselt / beste Basis) im Bereich 0,75–1,35 × Soll; sonst „unsicher“ (Fremdlast)",
+   "verworfen": "Intervall ≥ 2 vsync (= „> 16,7 ms“ ohne Rundungsrauschen; rAF-Zeitstempel sind auf 0,1 ms gerundet)",
+   "ueber_50ms": "Intervall ≥ 4 vsync (> 50 ms)",
+   "z09_soll": "mobil (4×) – Desktop 1× informativ",
+   "gl_renderer": null,
+   "leistungsbasis_ms": 28
+  },
+  "loaf": {
+   "quelle": "PerformanceObserver long-animation-frame (buffered) im Framelauf",
+   "bewegungsbezug": "rAF-Rückruf (invoker FrameRequestCallback) · Funktionsname /anim|motion|tween|spring|scroll/ · Chunk-Inhalt: framer-motion, gsap, lenis, lottie, bewegungsmodul, reduced-motion-abfrage"
+  },
+  "register": {
+   "quelle": "KERN.md K-009 Bewegungsregister, Spalte „Kennung“",
+   "kern_version": "1.2",
+   "kennungen": [
+    "sig-kreuzlinie",
+    "sig-flucht",
+    "sig-ablauf",
+    "sig-plan",
+    "anriss",
+    "auftritt",
+    "aufklappen",
+    "druck",
+    "zustand",
+    "notiert",
+    "laden",
+    "seitenwechsel"
+   ]
+  },
+  "maschine": {
+   "cpus": 4,
+   "last_1min_start": 6.17
+  },
+  "laufzeit_s": 28,
+  "worker": 2
+ },
+ "zusammenfassung": {
+  "laeufe": 2,
+  "fehler": [],
+  "registriert": {
+   "elemente_animiert": 16,
+   "mit_data_motion": 14,
+   "im_register": 14,
+   "anteil": 0.875,
+   "im_register_mit_vorfahr": 16,
+   "unregistriert_muster": [
+    {
+     "sel": "div[data-motion=\"sig-kreuzlinie\"].pointer-events-none.absolute > span.kreuzlinie-waage",
+     "pseudo": null,
+     "motion": null,
+     "namen": [
+      "scale"
+     ],
+     "eigenschaften": [
+      "scale"
+     ],
+     "arten": [
+      "css-transition"
+     ],
+     "dauer_ms": [
+      1200
+     ],
+     "kurve": [
+      "cubic-bezier(0.7, 0, 0.2, 1)"
+     ],
+     "vorkommen": 1,
+     "seiten": [
+      "/ [d1440]"
+     ]
+    },
+    {
+     "sel": "div[data-motion=\"sig-kreuzlinie\"].pointer-events-none.absolute > span.kreuzlinie-lot",
+     "pseudo": null,
+     "motion": null,
+     "namen": [
+      "scale"
+     ],
+     "eigenschaften": [
+      "scale"
+     ],
+     "arten": [
+      "css-transition"
+     ],
+     "dauer_ms": [
+      1200
+     ],
+     "kurve": [
+      "cubic-bezier(0.7, 0, 0.2, 1)"
+     ],
+     "vorkommen": 1,
+     "seiten": [
+      "/ [m375]"
+     ]
+    }
+   ]
+  },
+  "technik": {
+   "elemente_ausserhalb_transform_opacity": 0,
+   "davon_layout": 0,
+   "muster": []
+  },
+  "frames_scroll": {
+   "gesamt": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   },
+   "mobil": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   },
+   "m375": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   },
+   "d1440": {
+    "laeufe": 0,
+    "intervalle": 0,
+    "anteil_verworfen": null,
+    "anteil_ueber_50ms": null,
+    "schlechteste_seite": null,
+    "einstieg_anteil_verworfen_max": 0
+   }
+  },
+  "frames_messqualitaet": {
+   "ok": 0,
+   "unsicher": [],
+   "regel": "ok, wenn Rechenprobe gedrosselt / beste ungedrosselte Basis im Bereich 0,75–1,35 × Soll-Drosselung liegt"
+  },
+  "loaf": {
+   "anzahl": 0,
+   "laengster_ms": 0,
+   "laengste_skriptdauer_ms": 0,
+   "bewegung_skripte": 0,
+   "bewegung_ueber_20ms": 0,
+   "bewegung_laengste_ms": 0,
+   "bewegung_top": []
+  },
+  "reduziert": {
+   "verstoesse": 0,
+   "elemente_animiert": 0,
+   "muster": []
+  },
+  "deklariert": {
+   "elemente_mit_transition": 510,
+   "mit_data_motion": 364
+  },
+  "raf_schleifen": [],
+  "z09": {
+   "registriert_100": false,
+   "verworfene_frames_max_5_prozent": null,
+   "verworfene_frames_max_5_prozent_je_seite_mobil": null,
+   "kein_loaf_bewegung_ueber_20ms": null,
+   "reduziert_ohne_orts_groessenaenderung": true,
+   "reduziert_ohne_autoplay": true
+  }
+ },
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "fehler": [],
+   "normal": {
+    "modus": "normal",
+    "status": 200,
+    "dauer_ms": 8644,
+    "seitenhoehe": 15807,
+    "schritte": 34,
+    "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 9,
+    "mit_data_motion": 8,
+    "im_register": 8,
+    "anteil_registriert": 0.889,
+    "im_register_mit_vorfahr": 9,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 90,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 163,
+    "ereignisse": 28,
+    "mutationen": 3,
+    "hinweise": [],
+    "unregistriert": [
+     {
+      "sel": "div.mx-auto.w-full > div.relative.grid:nth-of-type(2) > div[data-motion=\"sig-kreuzlinie\"].pointer-events-none.absolute:nth-of-type(4) > span.kreuzlinie-waage",
+      "pseudo": null,
+      "motion": null,
+      "motion_vorfahr": "sig-kreuzlinie",
+      "registriert": false,
+      "registriert_mit_vorfahr": true,
+      "arten": [
+       "css-transition"
+      ],
+      "namen": [
+       "scale"
+      ],
+      "eigenschaften": [
+       "scale"
+      ],
+      "dauer_ms": [
+       1200
+      ],
+      "kurve": [
+       "cubic-bezier(0.7, 0, 0.2, 1)"
+      ],
+      "iterationen": 1,
+      "ort": [
+       "skalierung"
+      ],
+      "laeuft_in_ruhe": false,
+      "phasen": [
+       "laden"
+      ],
+      "technik": []
+     }
+    ],
+    "technik": [],
+    "technik_layout": 0,
+    "deklariert": {
+     "elemente": 255,
+     "mit_data_motion": 182,
+     "haeufigste": [
+      {
+       "transition_property": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+       "elemente": 157
+      },
+      {
+       "transition_property": "background-color, border-color, color, text-decoration-color",
+       "elemente": 65
+      },
+      {
+       "transition_property": "transform, translate, scale, rotate",
+       "elemente": 10
+      },
+      {
+       "transition_property": "opacity, translate",
+       "elemente": 10
+      },
+      {
+       "transition_property": "grid-template-rows",
+       "elemente": 10
+      },
+      {
+       "transition_property": "scale",
+       "elemente": 2
+      },
+      {
+       "transition_property": "translate, display, overlay",
+       "elemente": 1
+      }
+     ]
+    }
+   },
+   "reduziert": {
+    "modus": "reduziert",
+    "status": 200,
+    "dauer_ms": 9230,
+    "seitenhoehe": 15807,
+    "schritte": 34,
+    "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 0,
+    "mit_data_motion": 0,
+    "im_register": 0,
+    "anteil_registriert": 1,
+    "im_register_mit_vorfahr": 0,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 93,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 167,
+    "ereignisse": 0,
+    "mutationen": 3,
+    "hinweise": [],
+    "verstoesse": [],
+    "elemente": []
+   }
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "fehler": [],
+   "normal": {
+    "modus": "normal",
+    "status": 200,
+    "dauer_ms": 13671,
+    "seitenhoehe": 28185,
+    "schritte": 68,
+    "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable k-bewegung k-modul",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 7,
+    "mit_data_motion": 6,
+    "im_register": 6,
+    "anteil_registriert": 0.857,
+    "im_register_mit_vorfahr": 7,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 86,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 262,
+    "ereignisse": 24,
+    "mutationen": 3,
+    "hinweise": [],
+    "unregistriert": [
+     {
+      "sel": "section.relative.border-b:nth-of-type(1) > div.mx-auto.w-full > div[data-motion=\"sig-kreuzlinie\"].pointer-events-none.absolute:nth-of-type(1) > span.kreuzlinie-lot",
+      "pseudo": null,
+      "motion": null,
+      "motion_vorfahr": "sig-kreuzlinie",
+      "registriert": false,
+      "registriert_mit_vorfahr": true,
+      "arten": [
+       "css-transition"
+      ],
+      "namen": [
+       "scale"
+      ],
+      "eigenschaften": [
+       "scale"
+      ],
+      "dauer_ms": [
+       1200
+      ],
+      "kurve": [
+       "cubic-bezier(0.7, 0, 0.2, 1)"
+      ],
+      "iterationen": 1,
+      "ort": [
+       "skalierung"
+      ],
+      "laeuft_in_ruhe": false,
+      "phasen": [
+       "laden"
+      ],
+      "technik": []
+     }
+    ],
+    "technik": [],
+    "technik_layout": 0,
+    "deklariert": {
+     "elemente": 255,
+     "mit_data_motion": 182,
+     "haeufigste": [
+      {
+       "transition_property": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+       "elemente": 157
+      },
+      {
+       "transition_property": "background-color, border-color, color, text-decoration-color",
+       "elemente": 65
+      },
+      {
+       "transition_property": "transform, translate, scale, rotate",
+       "elemente": 10
+      },
+      {
+       "transition_property": "opacity, translate",
+       "elemente": 10
+      },
+      {
+       "transition_property": "grid-template-rows",
+       "elemente": 10
+      },
+      {
+       "transition_property": "scale",
+       "elemente": 2
+      },
+      {
+       "transition_property": "translate, display, overlay",
+       "elemente": 1
+      }
+     ]
+    }
+   },
+   "reduziert": {
+    "modus": "reduziert",
+    "status": 200,
+    "dauer_ms": 13153,
+    "seitenhoehe": 28185,
+    "schritte": 68,
+    "html_klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable",
+    "konsole": [],
+    "fremd": 0,
+    "elemente_animiert": 0,
+    "mit_data_motion": 0,
+    "im_register": 0,
+    "anteil_registriert": 1,
+    "im_register_mit_vorfahr": 0,
+    "smil": 0,
+    "videos_laufend": 0,
+    "canvas_sichtbar": 0,
+    "raf_ruhe": {
+     "aufrufe_in_ruhe": 0,
+     "bilder_in_ruhe": 91,
+     "je_bild": 0,
+     "je_s": 0,
+     "quellen": []
+    },
+    "polls": 242,
+    "ereignisse": 0,
+    "mutationen": 3,
+    "hinweise": [],
+    "verstoesse": [],
+    "elemente": []
+   }
+  }
+ ]
+}
