@@ -1,0 +1,612 @@
+{
+ "satz": "e3-tor-2",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 60,
+ "ernst_kritisch_knoten": 81,
+ "je_regel": {
+  "serious:target-size": 3,
+  "serious:color-contrast": 78
+ },
+ "ergebnisse": [
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "target-size",
+     "impact": "serious",
+     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:self-auto"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.mt-2.hyphens-auto"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .flex-1.min-w-0 > .text-pretty.mt-2.hyphens-auto",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .flex-1.min-w-0 > .text-pretty.mt-2.hyphens-auto"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "target-size",
+     "impact": "serious",
+     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:self-auto"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "target-size",
+     "impact": "serious",
+     "hilfe": "All touch targets must be 24px large, or leave sufficient space",
+     "anzahl": 1,
+     "ziele": [
+      ".lg\\:self-auto"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.mt-2.hyphens-auto"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.text-fs-2",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.hyphens-auto.mt-2"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 6,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(4) > .flex-1.min-w-0 > .font-anzeige.text-fs-4",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(5) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(6) > .flex-1.min-w-0 > .text-pretty.mt-2.hyphens-auto"
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 4,
+     "ziele": [
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(7) > .flex-1.min-w-0 > .text-pretty.mt-2.hyphens-auto",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .w-8.font-mono.shrink-0",
+      ".last\\:border-b.md\\:even\\:mt-12.md\\:\\[\\&\\:nth-last-child\\(-n\\+2\\)\\]\\:border-b:nth-child(8) > .flex-1.min-w-0 > .text-pretty.mt-2.hyphens-auto"
+     ]
+    }
+   ]
+  }
+ ]
+}
