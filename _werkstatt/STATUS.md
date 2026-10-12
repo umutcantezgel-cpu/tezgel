@@ -1,4 +1,4 @@
-STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 3/9 (E3) · Nacharbeit E4-NACH-01…18 abgenommen bzw. umgesetzt und geprüft (Prüfstufe A grün) · main = 6156079 live · Nächster Schritt: E3-Tor Anlauf 2 (letzter Anlauf; Reinraum, Funktion/Texte/axe/Werte, Bilder und Bewegung der 12 Hauptansichten, zwei Sichtabnahmen, Lighthouse im Ruhefenster)
+STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 3/9 → 4 · E3-Tor Anlauf 2 ausgewertet (ERZ 6,5–7,7 · ARB 6,5–7,2; Funktion 290/0; LCP alle 12 unter E0, Budget als AUSNAHME, E-026) · zweiter Durchgang E4-N2-01…13 läuft · main = 6156079 live · Nächster Schritt: Seitenpakete abnehmen, dann E4 Familien
 
 # STATUS · Werkstatt-Lauf „Tezgel auf Spitzenniveau“
 

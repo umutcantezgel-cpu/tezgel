@@ -1,5 +1,12 @@
 # PRUEFPUNKT
 
+- Etappe: E3 → E4 · Stand 12.10.2026 ~07:00 CEST · E3-Tor Anlauf 2 ausgewertet (E-026: Ziel 8 nicht erreicht, ERZ 6,5–7,7, ARB 6,5–7,2; AUSNAHME LCP-Budget mit Ersatz). main = 6156079 (live), Push nur auf den Arbeitsbranch.
+- Jetzt: zweiter und letzter Durchgang E4-N2-01…13 (PLAN „Offene Punkte · E3-Tor, Anlauf 2“). Umgesetzt durch den Orchestrator: -01 (2229ba8, 066aa25), -02/-03 (172bd63). Laufend: E4-N2-01-PA (Prüfstufe A Mängel), Baumeister -05 (/leistungen), -06 (/leistungen/[id]), -07 (/standorte). Danach -04, -08, -09, -10 (nach -01-PA), -11, -12, -13; Prüfstufe A für -02/-03 (Bilder aller Erzählansichten, Bewegungsfolgen /bad, /standorte).
+- Danach: E4 Familien – Briefings E4-BAU-01…11 bereit (`_werkstatt/pakete/`), E5-Spezifikationen im Generator `scratchpad/orch/spez/e4/erzeuge.py` (E5-BAU-10 von Hand).
+- Offene Menschen-Fragen: M-15 bis M-26.
+
+## Vorheriger Stand (überholt)
+
 - Etappe: E3 · Stand 12.10.2026 ~05:00 CEST · Nacharbeit E4-NACH-01…18 fertig (PLAN-Status mit Commits; Prüfstufe A je Paket grün, Tempo-Inseln 79742a4). main = 6156079 (live), Push nur auf den Arbeitsbranch.
 - Jetzt: E3-Tor Anlauf 2 (letzter Anlauf, Workflow `e3-tor-2`): Prüfer Reinraum + Server 4310 neu auf dem Tor-Stand; Prüfer Funktion/Texte/axe/Werte; Prüfer Bilder (Abschnitte der 12 Hauptansichten, Bildsatz-Kennzahlen, Ersatzpfad, Bewegungsfolgen mit Echtzeit-Lademomenten); zwei frische Gutachter (Erzähl-/Arbeitsansichten, danach Abgleich mit den Befunden aus Anlauf 1); Lighthouse im Ruhefenster gegen e0 und e3-tor. Belege `_werkstatt/belege/e3-tor-2/`, Rohbilder `scratchpad/belege-roh/e3-tor-2/`, Berichte `berichte/E3-SICHT-2-*.md`.
 - Vorbereitet: Briefings E4-BAU-01…11 (`_werkstatt/pakete/`, Spezifikationen und Generator `scratchpad/orch/spez/e4/erzeuge.py`, dort auch E5-BAU-01…09/-11; E5-BAU-10 [id]/[stadt] von Hand). Reinraum adacabf grün.
