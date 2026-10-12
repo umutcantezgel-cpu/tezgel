@@ -43,7 +43,9 @@ BV="$REPO/_relaunch/belege/build-vergleich-$LIVE-$KOPF/bericht.json"
 node -e '
   const [bv, seiten] = process.argv.slice(1);
   const j = require(bv);
-  const erlaubt = new Set(seiten.split(",").map((s) => (s === "/" ? "index" : s.replace(/^\//, "")) + ".html"));
+  // BEREICH_AUCH (T2-Q): weitere Seiten, deren HTML sich durch eine geteilte Komponente ändern darf (Pixel und Specs decken sie).
+  const auch = (process.env.BEREICH_AUCH || "").split(",").filter(Boolean);
+  const erlaubt = new Set([...seiten.split(","), ...auch].map((s) => (s === "/" ? "index" : s.replace(/^\//, "")) + ".html"));
   const dateien = [...new Set(j.abweichungen.map((a) => a.datei))];
   const fremd = dateien.filter((d) => !erlaubt.has(d));
   console.log(JSON.stringify({ html_abweichend: dateien, fremd, nur_vorher: j.nur_vorher, nur_nachher: j.nur_nachher, css_weg: j.css_selektoren_weg.length, css_neu: j.css_selektoren_neu.length, keyframes_weg: j.keyframes_weg, keyframes_neu: j.keyframes_neu }));
