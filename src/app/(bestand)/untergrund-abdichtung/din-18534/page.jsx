@@ -1,23 +1,28 @@
-import React from 'react';
+// DIN 18534 Verbundabdichtung (E5-BAU-01, KERN v2): Seitenkörper der Unterseite als Erzählansicht nach dem Muster der
+// Referenz (leistungen/[id], fliesen). Einstieg mit Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts das Planblatt
+// „abdichtung“ ohne Achse, interaktiv. Danach die Leitachse über die Abschnitte: Geltungsbereich mit Halbverband,
+// Wassereinwirkungsklassen als Tabelle mit Hinweis, Abdichtungsstoffe als Feldraster, Kritische Punkte als Merkliste,
+// Schichtdicken als Schrittfolge, Fragen als Aufklapper, Abschluss mit Knöpfen, Ratgeber als Merkliste. Wortlaut,
+// Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein Auftritt und kein großer Moment (setzt der Orchestrator).
+// Metadaten und Daten unverändert.
 import Link from 'next/link';
-import {
-    ShieldCheck,
-    Droplets,
-    Layers,
-    Ruler,
-    ArrowRight,
-    Phone,
-    MessageCircle,
-    CircleCheck,
-    Info,
-    ChevronDown,
-    Wrench,
-    SquareStack,
-    PaintRoller
-} from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Hinweis from '@/components/kern/Hinweis';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Tabelle from '@/components/kern/Tabelle';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'DIN 18534 Verbundabdichtung: Bad & Dusche | Tezgel',
@@ -65,47 +70,47 @@ const WATER_CLASSES = [
 const MATERIALS = [
     {
         title: 'Flüssig verarbeitet (AIV-F)',
-        desc: 'Polymerdispersionen, rissüberbrückende mineralische Dichtschlämmen oder Reaktionsharze werden gestrichen, gerollt oder gespachtelt. Sie passen sich jeder Geometrie an und sind im privaten Bad der häufigste Fall.',
-        icon: PaintRoller
+        desc: 'Polymerdispersionen, rissüberbrückende mineralische Dichtschlämmen oder Reaktionsharze werden gestrichen, gerollt oder gespachtelt. Sie passen sich jeder Geometrie an und sind im privaten Bad der häufigste Fall.'
     },
     {
         title: 'Bahnen (AIV-B)',
-        desc: 'Werkseitig gefertigte Dichtbahnen mit gleichmäßiger Dicke werden im Kleberbett verlegt und an den Stößen überlappend verklebt. Sie eignen sich gut für große, ebene Flächen und enge Zeitpläne.',
-        icon: Layers
+        desc: 'Werkseitig gefertigte Dichtbahnen mit gleichmäßiger Dicke werden im Kleberbett verlegt und an den Stößen überlappend verklebt. Sie eignen sich gut für große, ebene Flächen und enge Zeitpläne.'
     },
     {
         title: 'Platten (AIV-P)',
-        desc: 'Abgedichtete Bauplatten dienen zugleich als Wandbekleidung oder Unterkonstruktion, etwa an Vorwänden oder Wannenschürzen. Stöße und Anschlüsse werden mit den zugehörigen Systemkomponenten gedichtet.',
-        icon: SquareStack
+        desc: 'Abgedichtete Bauplatten dienen zugleich als Wandbekleidung oder Unterkonstruktion, etwa an Vorwänden oder Wannenschürzen. Stöße und Anschlüsse werden mit den zugehörigen Systemkomponenten gedichtet.'
     }
 ];
 
 const DETAILS = [
     {
         title: 'Dichtband an Wand-Boden-Anschlüssen',
-        desc: 'Wo Wand und Boden oder zwei Wände aufeinandertreffen, entstehen Bewegungen. Ein Dichtband mit Dehnzone wird in die erste Abdichtungslage eingebettet und überbrückt diese Fuge, statt sie starr zu überspachteln.',
-        icon: Ruler
+        desc: 'Wo Wand und Boden oder zwei Wände aufeinandertreffen, entstehen Bewegungen. Ein Dichtband mit Dehnzone wird in die erste Abdichtungslage eingebettet und überbrückt diese Fuge, statt sie starr zu überspachteln.'
     },
     {
         title: 'Innen- und Außenecken',
-        desc: 'Vorgeformte Ecken aus demselben System schließen die Dichtbänder in den Raumecken lückenlos an. Eingeschnittene oder überlappend gefaltete Bänder sind hier die klassische Schwachstelle.',
-        icon: SquareStack
+        desc: 'Vorgeformte Ecken aus demselben System schließen die Dichtbänder in den Raumecken lückenlos an. Eingeschnittene oder überlappend gefaltete Bänder sind hier die klassische Schwachstelle.'
     },
     {
         title: 'Dichtmanschetten an Rohrdurchführungen',
-        desc: 'Jede Durchdringung – Armaturenanschluss, Wanddurchführung, Unterputz-Körper – erhält eine elastische Manschette, die in die Abdichtung eingebunden wird. So bleibt die Fläche auch an diesen Punkten geschlossen.',
-        icon: Wrench
+        desc: 'Jede Durchdringung – Armaturenanschluss, Wanddurchführung, Unterputz-Körper – erhält eine elastische Manschette, die in die Abdichtung eingebunden wird. So bleibt die Fläche auch an diesen Punkten geschlossen.'
     },
     {
         title: 'Bodenabläufe und Duschrinnen',
-        desc: 'Ablauf oder Rinne brauchen einen Anschlussflansch oder eine werkseitige Dichtmanschette, an die die Flächenabdichtung angebunden wird. Einbau und Anschluss ans Abwassernetz übernimmt der Installateur – wir stimmen die Höhen vorher ab.',
-        icon: Droplets
+        desc: 'Ablauf oder Rinne brauchen einen Anschlussflansch oder eine werkseitige Dichtmanschette, an die die Flächenabdichtung angebunden wird. Einbau und Anschluss ans Abwassernetz übernimmt der Installateur – wir stimmen die Höhen vorher ab.'
     },
     {
         title: 'Schichtdicke und Deckung',
-        desc: 'Flüssige Abdichtungen werden in mindestens zwei Arbeitsgängen aufgetragen, bis die vorgeschriebene Mindesttrockenschichtdicke erreicht ist. Sie ist je Stoffgruppe unterschiedlich und in den Produktunterlagen angegeben.',
-        icon: Layers
+        desc: 'Flüssige Abdichtungen werden in mindestens zwei Arbeitsgängen aufgetragen, bis die vorgeschriebene Mindesttrockenschichtdicke erreicht ist. Sie ist je Stoffgruppe unterschiedlich und in den Produktunterlagen angegeben.'
     }
+];
+
+const LAYER_STEPS = [
+    'Untergrund vorbereiten: tragfähig, sauber, eben und – je nach Produkt – grundiert. Auf einem ungeeigneten Untergrund haftet auch die beste Abdichtung nicht.',
+    'Dichtbänder, Ecken und Manschetten in die erste Lage einbetten, danach die Fläche in mindestens zwei Arbeitsgängen vollflächig und ohne Fehlstellen beschichten.',
+    'Die Mindesttrockenschichtdicke hängt von der Stoffgruppe ab und steht in den Produktunterlagen. Kontrolliert wird sie über die Verbrauchsmenge je Quadratmeter und stichprobenartig an der frischen Schicht.',
+    'Jede Lage trocknen lassen, bevor die nächste folgt, und erst fliesen, wenn die Abdichtung laut Hersteller belegbar ist. Temperatur und Luftfeuchte im Raum beeinflussen diese Zeiten deutlich.',
+    'Vor dem Fliesen alle Anschlüsse sichtprüfen. Wir empfehlen, den fertigen Zustand zu fotografieren, denn nach dem Verlegen ist er nicht mehr einsehbar.'
 ];
 
 const FAQ = [
@@ -136,288 +141,248 @@ const READ_MORE = [
 
 export default function Din18534Page() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="din-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <ShieldCheck className="w-3.5 h-3.5 text-orange-600" />
-                        Abdichtung im Verbund &middot; DIN 18534
-                    </span>
-                    <h1 id="din-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Verbundabdichtung nach DIN 18534:{' '}
-                        <span className="text-ceramic-gradient">dicht unter der Fliese</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Die Fliese sieht man, die Abdichtung darunter nicht – und doch entscheidet sie, ob Dusche, Wanne und Boden
-                        auf Dauer trocken bleiben. Wir erklären, wie DIN 18534 Flächen nach ihrer Wasserbelastung einteilt und
-                        welche Details in Bad, Dusche, Gäste-WC und Hauswirtschaftsraum wirklich zählen.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Abdichtung besprechen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/bad/badsanierung" className="btn-ghost px-7 py-3.5 text-xs">
-                            Details zur Badsanierung
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Scope */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="regelt-heading">
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-                    <div className="lg:col-span-2 space-y-4">
-                        <span className="eyebrow eyebrow-orange">Geltungsbereich</span>
-                        <h2 id="regelt-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Was DIN 18534 regelt – und was nicht
-                        </h2>
-                        <p className="text-base text-slate-700 leading-relaxed">
-                            DIN 18534 ist die Norm für die Abdichtung von Innenräumen. Sie legt fest, wie Wand- und Bodenflächen
-                            gegen Spritz- und Brauchwasser geschützt werden, und unterscheidet dafür Wassereinwirkungsklassen und
-                            Abdichtungsbauarten.
-                        </p>
-                        <p className="text-base text-slate-700 leading-relaxed">
-                            Nicht erfasst sind etwa Balkone, Loggien und Terrassen, erdberührte Bauteile und Schwimmbecken selbst –
-                            dafür gelten eigene Normen der Reihe DIN 18531 bis DIN 18535.
-                        </p>
-                    </div>
-                    <div className="lg:col-span-3 glass-surface rounded-tile-xl p-6 sm:p-8">
-                        <h3 className="text-lg font-black text-slate-900 mb-4">Die sechs Teile der Norm</h3>
-                        <ul className="divide-y divide-slate-200">
-                            {NORM_PARTS.map((item) => (
-                                <li key={item.part} className="flex gap-4 py-3">
-                                    <span className="shrink-0 w-16 text-sm font-black text-orange-700 tabular-nums">{item.part}</span>
-                                    <span className="text-sm text-slate-700 leading-relaxed">{item.text}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-                            Für Fliesenbeläge sind vor allem die Teile 1, 3, 5 und 6 maßgeblich: die Abdichtung im Verbund, kurz AIV.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Water exposure classes */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="klassen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">
-                            <Droplets className="w-3.5 h-3.5 text-orange-600" />
-                            DIN 18534-1
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „abdichtung“ ohne Achse */}
+            <section aria-labelledby="din-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Abdichtung im Verbund &middot; DIN 18534</>}
+                    titel={
+                        <span id="din-heading">
+                            Verbundabdichtung nach DIN 18534:{' '}
+                            <span>dicht unter der Fliese</span>
                         </span>
-                        <h2 id="klassen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Wassereinwirkungsklassen W0-I bis W3-I mit Beispielen
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            Das „I“ steht für Innenraum. Die Klasse wird für jede Fläche einzeln bestimmt – im selben Bad kann die
-                            Wand über dem Waschtisch W0-I sein, der Boden mit bodengleicher Dusche W2-I.
+                    }
+                    vorspann={
+                        <p>
+                            Die Fliese sieht man, die Abdichtung darunter nicht – und doch entscheidet sie, ob Dusche, Wanne und Boden auf Dauer
+                            trocken bleiben. Wir erklären, wie DIN 18534 Flächen nach ihrer Wasserbelastung einteilt und welche Details in Bad,
+                            Dusche, Gäste-WC und Hauswirtschaftsraum wirklich zählen.
                         </p>
-                    </div>
-
-                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
-                        <table className="w-full text-left text-sm min-w-[720px]">
-                            <caption className="sr-only">Wassereinwirkungsklassen nach DIN 18534-1 mit Anwendungsbeispielen</caption>
-                            <thead className="bg-slate-100 text-slate-900">
-                                <tr>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">Klasse</th>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">Wassereinwirkung</th>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">Anwendungsbeispiele</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-200 bg-white">
-                                {WATER_CLASSES.map((row) => (
-                                    <tr key={row.cls} className="align-top">
-                                        <th scope="row" className="px-5 py-4">
-                                            <span className="block font-black text-slate-900 tabular-nums">{row.cls}</span>
-                                            <span className="block text-xs font-bold text-orange-700 uppercase tracking-wider mt-1">{row.level}</span>
-                                        </th>
-                                        <td className="px-5 py-4 text-slate-700 leading-relaxed">{row.definition}</td>
-                                        <td className="px-5 py-4 text-slate-700 leading-relaxed">{row.examples}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    <p className="mt-4 text-sm text-slate-600 leading-relaxed flex gap-2">
-                        <Info className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                        Vereinfachte Wiedergabe der Beispiele aus DIN 18534-1, Tabelle 1. Maßgeblich ist die Norm in ihrer geltenden
-                        Fassung; die Zuordnung Ihrer Flächen klären wir bei der Planung.
-                    </p>
-                </div>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Abdichtung besprechen
+                            </Knopf>
+                            <Knopf href="/bad/badsanierung" variante="neben">
+                                Details zur Badsanierung
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('DIN 18534 Verbundabdichtung', 'abdichtung')}>
+                            <Verlegeplan plan="abdichtung" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Materials */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="stoffe-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Abdichtungsstoffe</span>
-                    <h2 id="stoffe-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Flüssige Abdichtung, Bahnen oder Platten?
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Alle drei Bauarten sind normgerecht, wenn das Produkt für die jeweilige Wassereinwirkungsklasse einen
-                        Verwendbarkeitsnachweis hat – je nach Produkt ein allgemeines bauaufsichtliches Prüfzeugnis (abP) oder eine
-                        Europäische Technische Bewertung mit CE-Kennzeichnung.
+            <Leitachse>
+                {/* 2. GELTUNGSBEREICH: Kopf links, Text; rechts die sechs Teile der Norm als Halbverband, darunter der Hinweis zu AIV */}
+                <Abschnitt
+                    titelId="regelt-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Geltungsbereich"
+                    titel="Was DIN 18534 regelt – und was nicht"
+                    einleitung={
+                        <>
+                            <p>
+                                DIN 18534 ist die Norm für die Abdichtung von Innenräumen. Sie legt fest, wie Wand- und Bodenflächen gegen
+                                Spritz- und Brauchwasser geschützt werden, und unterscheidet dafür Wassereinwirkungsklassen und
+                                Abdichtungsbauarten.
+                            </p>
+                            <p className="mt-4">
+                                Nicht erfasst sind etwa Balkone, Loggien und Terrassen, erdberührte Bauteile und Schwimmbecken selbst – dafür
+                                gelten eigene Normen der Reihe DIN 18531 bis DIN 18535.
+                            </p>
+                        </>
+                    }
+                >
+                    <h3 className="font-anzeige text-fs-4 text-tinte">Die sechs Teile der Norm</h3>
+                    <Merkliste
+                        verband
+                        spalten={2}
+                        className="mt-6"
+                        eintraege={NORM_PARTS.map((item) => ({
+                            titel: <span className="font-mono font-normal">{item.part}</span>,
+                            text: item.text
+                        }))}
+                    />
+                    <p className="mt-8 font-text text-fs-2 text-tinte-2">
+                        Für Fliesenbeläge sind vor allem die Teile 1, 3, 5 und 6 maßgeblich: die Abdichtung im Verbund, kurz AIV.
                     </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {MATERIALS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6 text-orange-600" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-                <p className="mt-6 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
-                    Wichtig ist das System: Abdichtung, Dichtbänder, Ecken, Manschetten und Fliesenkleber sollten aufeinander
-                    abgestimmt sein und als Kombination vom Hersteller freigegeben werden.
-                </p>
-            </section>
+                </Abschnitt>
 
-            {/* Details */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="details-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Kritische Punkte</span>
-                        <h2 id="details-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Dichtbänder, Manschetten, Abläufe:{' '}
-                            <span className="text-ceramic-gradient">wo Abdichtungen versagen</span>
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            Auf der freien Fläche ist eine Abdichtung selten das Problem. Undicht wird es an Übergängen,
-                            Durchdringungen und Abläufen – deshalb gehört dort die meiste Sorgfalt hin.
+                {/* 3. WASSEREINWIRKUNGSKLASSEN: Tabelle als benannte Region; der Hinweis zur Vereinfachung mit Info-Zeichen */}
+                <Abschnitt
+                    titelId="klassen-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="DIN 18534-1"
+                    titel="Wassereinwirkungsklassen W0-I bis W3-I mit Beispielen"
+                    einleitung={
+                        <p>
+                            Das „I“ steht für Innenraum. Die Klasse wird für jede Fläche einzeln bestimmt – im selben Bad kann die Wand über dem
+                            Waschtisch W0-I sein, der Boden mit bodengleicher Dusche W2-I.
                         </p>
+                    }
+                >
+                    <Tabelle
+                        name="Wassereinwirkungsklassen nach DIN 18534-1 mit Anwendungsbeispielen"
+                        kopf={['Klasse', 'Wassereinwirkung', 'Anwendungsbeispiele']}
+                        zeilen={WATER_CLASSES.map((row) => [
+                            <>
+                                <span className="block font-mono text-fs-2 text-tinte">{row.cls}</span>
+                                <span className="mt-1 block font-mono text-fs-1 text-tinte-2">{row.level}</span>
+                            </>,
+                            row.definition,
+                            row.examples
+                        ])}
+                    />
+                    <div className="mt-6">
+                        <Hinweis art="merk">
+                            Vereinfachte Wiedergabe der Beispiele aus DIN 18534-1, Tabelle 1. Maßgeblich ist die Norm in ihrer geltenden Fassung;
+                            die Zuordnung Ihrer Flächen klären wir bei der Planung.
+                        </Hinweis>
                     </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {DETAILS.map((item) => {
-                            const Icon = item.icon;
+                </Abschnitt>
+
+                {/* 4. ABDICHTUNGSSTOFFE: drei Bauarten als Feldraster; das dritte Feld überspannt in Md die freie Breite */}
+                <Abschnitt
+                    titelId="stoffe-heading"
+                    leitachse
+                    spaet
+                    etikett="Abdichtungsstoffe"
+                    titel="Flüssige Abdichtung, Bahnen oder Platten?"
+                    einleitung={
+                        <p>
+                            Alle drei Bauarten sind normgerecht, wenn das Produkt für die jeweilige Wassereinwirkungsklasse einen
+                            Verwendbarkeitsnachweis hat – je nach Produkt ein allgemeines bauaufsichtliches Prüfzeugnis (abP) oder eine
+                            Europäische Technische Bewertung mit CE-Kennzeichnung.
+                        </p>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {MATERIALS.map((item, i) => {
+                            const letzter = i === MATERIALS.length - 1;
                             return (
-                                <li key={item.title} className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
-                                    <span className="icon-chip w-11 h-11 mb-4">
-                                        <Icon className="w-5 h-5 text-orange-600" />
-                                    </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                                </li>
+                                <Feld key={item.title} spanne={letzter ? 2 : undefined} className={letzter ? 'lg:col-span-1' : undefined}>
+                                    <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                    <p className="mt-3 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                                </Feld>
                             );
                         })}
-                    </ul>
-                    <div className="mt-8 rounded-tile-xl bg-orange-50/50 border border-orange-200/60 text-slate-700 p-6 text-sm leading-relaxed">
+                    </Feldraster>
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
+                        Wichtig ist das System: Abdichtung, Dichtbänder, Ecken, Manschetten und Fliesenkleber sollten aufeinander abgestimmt
+                        sein und als Kombination vom Hersteller freigegeben werden.
+                    </p>
+                </Abschnitt>
+
+                {/* 5. KRITISCHE PUNKTE: Kopf links, fünf Punkte als Merkliste mit Fuge, darunter der Hinweis zur Installation */}
+                <Abschnitt
+                    titelId="details-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Kritische Punkte"
+                    titel="Dichtbänder, Manschetten, Abläufe: wo Abdichtungen versagen"
+                    einleitung={
                         <p>
-                            <strong className="text-slate-900">Zusammenspiel mit der Installation:</strong> Rohrleitungen, Vorwandelemente und
-                            den Ablauf setzt der Sanitärinstallateur. Wir sind als Fliesenleger für die Abdichtung und den Belag
-                            zuständig und stimmen Einbauhöhen, Flansche und Manschetten vorher mit ihm ab – bei Bedarf koordiniert im
-                            Rahmen von{' '}
-                            <Link href="/bad/bad-aus-einer-hand" className="font-bold text-orange-700 hover:text-orange-800 hover:underline underline-offset-2">
+                            Auf der freien Fläche ist eine Abdichtung selten das Problem. Undicht wird es an Übergängen, Durchdringungen und
+                            Abläufen – deshalb gehört dort die meiste Sorgfalt hin.
+                        </p>
+                    }
+                >
+                    <Merkliste spalten={1} titelAls="h3" eintraege={DETAILS.map((item) => ({ titel: item.title, text: item.desc }))} />
+                    <div className="mt-12 border border-l-2 border-strich bg-fliese p-6 font-text text-fs-2 text-tinte">
+                        <p>
+                            <strong className="font-semibold">Zusammenspiel mit der Installation:</strong> Rohrleitungen, Vorwandelemente und
+                            den Ablauf setzt der Sanitärinstallateur. Wir sind als Fliesenleger für die Abdichtung und den Belag zuständig und
+                            stimmen Einbauhöhen, Flansche und Manschetten vorher mit ihm ab – bei Bedarf koordiniert im Rahmen von{' '}
+                            <Link href="/bad/bad-aus-einer-hand" className={linkKlassen}>
                                 Bad aus einer Hand
                             </Link>
                             .
                         </p>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Layer thickness, drying, documentation */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="schicht-heading">
-                <div className="glass-bezel-outer">
-                    <div className="glass-bezel-inner p-7 sm:p-10">
-                        <span className="eyebrow eyebrow-orange mb-4">Vor dem Fliesen</span>
-                        <h2 id="schicht-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6">
-                            Schichtdicken, Trocknung und Dokumentation vor dem Fliesen
-                        </h2>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            {[
-                                'Untergrund vorbereiten: tragfähig, sauber, eben und – je nach Produkt – grundiert. Auf einem ungeeigneten Untergrund haftet auch die beste Abdichtung nicht.',
-                                'Dichtbänder, Ecken und Manschetten in die erste Lage einbetten, danach die Fläche in mindestens zwei Arbeitsgängen vollflächig und ohne Fehlstellen beschichten.',
-                                'Die Mindesttrockenschichtdicke hängt von der Stoffgruppe ab und steht in den Produktunterlagen. Kontrolliert wird sie über die Verbrauchsmenge je Quadratmeter und stichprobenartig an der frischen Schicht.',
-                                'Jede Lage trocknen lassen, bevor die nächste folgt, und erst fliesen, wenn die Abdichtung laut Hersteller belegbar ist. Temperatur und Luftfeuchte im Raum beeinflussen diese Zeiten deutlich.',
-                                'Vor dem Fliesen alle Anschlüsse sichtprüfen. Wir empfehlen, den fertigen Zustand zu fotografieren, denn nach dem Verlegen ist er nicht mehr einsehbar.'
-                            ].map((text) => (
-                                <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                                    <span>{text}</span>
-                                </li>
-                            ))}
-                        </ul>
+                {/* 6. VOR DEM FLIESEN: die fünf Arbeitsschritte als Schrittfolge */}
+                <Abschnitt titelId="schicht-heading" leitachse spaet etikett="Vor dem Fliesen" titel="Schichtdicken, Trocknung und Dokumentation vor dem Fliesen">
+                    <Schrittfolge titelEbene="div" nummerStumm schritte={LAYER_STEPS.map((text) => ({ titel: text }))} />
+                </Abschnitt>
+
+                {/* 7. FRAGEN: je Frage ein Aufklapper mit Fuge; die Antwort öffnet sich beim Klick */}
+                <Abschnitt titelId="faq-heading" leitachse spaet titel="Häufige Fragen zur Abdichtung">
+                    <div className="border-t border-tinte">
+                        {FAQ.map((item) => (
+                            <details key={item.q} className="group border-b border-fuge">
+                                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-6 py-4 font-text text-fs-3 font-semibold text-tinte [&::-webkit-details-marker]:hidden">
+                                    {item.q}
+                                    <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+                                        <span className="group-open:hidden">
+                                            <Icon name="plus" groesse={6} />
+                                        </span>
+                                        <span className="hidden group-open:block">
+                                            <Icon name="minus" groesse={6} />
+                                        </span>
+                                    </span>
+                                </summary>
+                                <p className="max-w-mass pb-6 font-text text-fs-2 text-tinte-2">{item.a}</p>
+                            </details>
+                        ))}
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* FAQ */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 relative z-10" aria-labelledby="faq-heading">
-                <h2 id="faq-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 text-center">
-                    Häufige Fragen zur Abdichtung
-                </h2>
-                <div className="space-y-3">
-                    {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-tile-lg px-6 py-4">
-                            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
-                                {item.q}
-                                <ChevronDown className="w-5 h-5 text-orange-600 shrink-0 transition-transform group-open:rotate-180" />
-                            </summary>
-                            <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
-                        </details>
-                    ))}
-                </div>
-            </section>
-
-            {/* CTA */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10" aria-labelledby="cta-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
-                    <h2 id="cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                        Neues Bad oder neue Dusche geplant?
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        Beim Vor-Ort-Termin ordnen wir Ihre Flächen den Wassereinwirkungsklassen zu und besprechen Abdichtung,
-                        Anschlüsse und Ablaufsituation – normgerecht nach DIN 18534.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+                {/* 8. ABSCHLUSS: Überschrift, Einleitung und drei Wege als Knöpfe */}
+                <Abschnitt
+                    titelId="cta-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    titel="Neues Bad oder neue Dusche geplant?"
+                    einleitung={
+                        <p>
+                            Beim Vor-Ort-Termin ordnen wir Ihre Flächen den Wassereinwirkungsklassen zu und besprechen Abdichtung, Anschlüsse und
+                            Ablaufsituation – normgerecht nach DIN 18534.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
                             Termin anfragen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4" />
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf href={COMPANY_DATA.contact.whatsappLink} extern variante="neben" vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
                             WhatsApp
-                        </a>
+                        </Knopf>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Weiterführende Ratgeber */}
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10" aria-labelledby="ratgeber-heading">
-                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-4">Weiterführende Ratgeber zur DIN 18534 Verbundabdichtung</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    {READ_MORE.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
-                            >
-                                {link.label}
-                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+                {/* 9. RATGEBER: vier Verweise als Merkliste mit zwei Spalten */}
+                <Abschnitt titelId="ratgeber-heading" leitachse spaet titel="Weiterführende Ratgeber zur DIN 18534 Verbundabdichtung">
+                    <Merkliste
+                        spalten={2}
+                        eintraege={READ_MORE.map((link) => ({
+                            titel: (
+                                <Link href={link.href} className={linkKlassen}>
+                                    {link.label}
+                                </Link>
+                            )
+                        }))}
+                    />
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
-        </div>
+        </>
     );
 }

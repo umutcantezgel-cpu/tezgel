@@ -1,25 +1,27 @@
-import React from 'react';
+// Untergrund & Abdichtung (E5-BAU-01, KERN v2): Seitenkörper der Themenseite als Erzählansicht nach dem Muster der
+// Referenz (leistungen/[id], fliesen). Einstieg mit Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts das Planblatt
+// „untergrund“ ohne Achse, interaktiv. Danach die Leitachse über die Abschnitte: Themen als Register, Ursachen als
+// Feldraster, Prüfkriterien als Schrittfolge, Überblick mit Ankern, Untergründe als Halbverband, Vor-Ort-Aufmaß mit
+// Knöpfen, Ratgeber als Merkliste. Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein Auftritt und
+// kein großer Moment (setzt der Orchestrator). Metadaten und Daten unverändert.
 import Link from 'next/link';
-import {
-    ShieldCheck,
-    Droplets,
-    Ruler,
-    Layers,
-    Hammer,
-    Gauge,
-    ArrowRight,
-    Phone,
-    MessageCircle,
-    CircleCheck,
-    TriangleAlert,
-    SquareStack,
-    Search
-} from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { TOPIC_HUBS } from '@/config/topics';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Untergrund & Abdichtung für Fliesen | Fachbetrieb Tezgel',
@@ -31,29 +33,18 @@ export const metadata = createMetadata({
 const HUB = TOPIC_HUBS.find((hub) => hub.id === 'untergrund-abdichtung');
 const SUBPAGES = HUB ? HUB.pages.filter((page) => page.path !== HUB.path) : [];
 
-const SUBPAGE_ICONS = {
-    '/untergrund-abdichtung/din-18534': ShieldCheck,
-    '/untergrund-abdichtung/estrich-belegreife': Gauge,
-    '/untergrund-abdichtung/fliesen-auf-fliesen': Hammer,
-    '/untergrund-abdichtung/entkopplung': SquareStack,
-    '/untergrund-abdichtung/ausgleich-gefaelle': Ruler
-};
-
 const DAMAGE_PATTERNS = [
     {
         title: 'Risse im Fliesenbelag',
-        desc: 'Bewegt sich der Untergrund – weil der Estrich noch schwindet, Holzdielen federn oder Bewegungsfugen überfliest wurden –, überträgt sich die Spannung auf die starre Keramik. Die Folge sind Risse quer durch Fliesen und Fugen.',
-        icon: TriangleAlert
+        desc: 'Bewegt sich der Untergrund – weil der Estrich noch schwindet, Holzdielen federn oder Bewegungsfugen überfliest wurden –, überträgt sich die Spannung auf die starre Keramik. Die Folge sind Risse quer durch Fliesen und Fugen.'
     },
     {
         title: 'Hohlstellen und lose Fliesen',
-        desc: 'Staub, Sinterschichten, Trennmittel oder ein zu saugfähiger Untergrund ohne Grundierung verhindern die Haftung des Klebers. Die Fliese klingt beim Abklopfen hohl und kann sich später lösen oder unter Last brechen.',
-        icon: Layers
+        desc: 'Staub, Sinterschichten, Trennmittel oder ein zu saugfähiger Untergrund ohne Grundierung verhindern die Haftung des Klebers. Die Fliese klingt beim Abklopfen hohl und kann sich später lösen oder unter Last brechen.'
     },
     {
         title: 'Feuchte hinter der Fliese',
-        desc: 'Fliesen und Fugen sind nicht wasserdicht. Fehlt im Nassbereich die Abdichtung oder ist sie an Ecken und Durchdringungen unterbrochen, zieht Wasser in Estrich und Mauerwerk – oft lange unbemerkt.',
-        icon: Droplets
+        desc: 'Fliesen und Fugen sind nicht wasserdicht. Fehlt im Nassbereich die Abdichtung oder ist sie an Ecken und Durchdringungen unterbrochen, zieht Wasser in Estrich und Mauerwerk – oft lange unbemerkt.'
     }
 ];
 
@@ -77,6 +68,37 @@ const CRITERIA = [
     {
         title: 'Dicht',
         desc: 'In Duschen, an Badewannen und auf Böden mit Ablauf gehört unter die Fliese eine Verbundabdichtung nach DIN 18534 – einschließlich Dichtbändern und Manschetten an allen Anschlüssen.'
+    }
+];
+
+const OVERVIEWS = [
+    {
+        id: 'din18534',
+        titel: 'Abdichtung im Verbund nach DIN 18534 im Überblick',
+        text: 'Im Bad liegt die Abdichtung direkt unter Fliese und Kleber – als flüssig aufgetragene Schicht, Bahn oder Platte. Welcher Aufwand nötig ist, richtet sich nach der Wassereinwirkungsklasse der jeweiligen Fläche.',
+        link: 'DIN 18534 im Detail',
+        href: '/untergrund-abdichtung/din-18534'
+    },
+    {
+        id: 'abbruch',
+        titel: 'Rückbau oder Überfliesen im Überblick',
+        text: 'Überfliesen spart Rückbau, setzt aber einen fest haftenden, ebenen Altbelag und genügend Aufbauhöhe voraus. Ob das zutrifft, entscheidet erst die Prüfung vor Ort.',
+        link: 'Fliesen auf Fliesen oder Rückbau?',
+        href: '/untergrund-abdichtung/fliesen-auf-fliesen'
+    },
+    {
+        id: 'ausgleich',
+        titel: 'Ausgleich und Gefälle im Überblick',
+        text: 'Unebenheiten werden gemessen und mit Spachtel- oder Nivelliermassen ausgeglichen. Vor Bodenabläufen und Duschrinnen sorgt ein sauber ausgebildetes Gefälle dafür, dass Wasser gezielt abläuft.',
+        link: 'Ausgleich & Gefälle im Detail',
+        href: '/untergrund-abdichtung/ausgleich-gefaelle'
+    },
+    {
+        id: 'rissverharzung',
+        titel: 'Risse und Entkopplung im Überblick',
+        text: 'Ruhende Risse im Estrich lassen sich kraftschlüssig verharzen. Entkopplungsmatten bauen Spannungen zwischen Untergrund und Belag ab – ersetzen aber keine fehlende Tragfähigkeit.',
+        link: 'Entkopplung & Holzuntergründe',
+        href: '/untergrund-abdichtung/entkopplung'
     }
 ];
 
@@ -110,285 +132,190 @@ const READ_MORE = [
     { label: 'Balkon, Terrasse und Außenbeläge', href: '/leistungen/aussen' }
 ];
 
+// Zeile des Registers (Themen): die ganze Zeile ist der Link; Hover färbt die Fläche auf Fliese
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 hover:bg-fliese active:bg-fliese';
+// Name in der Zeile: Unterstrich beim Überfahren
+const NAME =
+    'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte group-hover:underline group-active:underline';
+
 export default function UntergrundAbdichtungPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="untergrund-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Layers className="w-3.5 h-3.5 text-orange-600" />
-                        Fachwissen &middot; Untergrund &amp; Abdichtung
-                    </span>
-                    <h1 id="untergrund-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Untergrund und Abdichtung:{' '}
-                        <span className="text-ceramic-gradient">das Fundament jedes Fliesenbelags</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Untergrund und Abdichtung für Fliesen: Fundiertes Fachwissen und das Fundament jedes Fliesenbelags vom Fachbetrieb Tezgel. Eine Fliese ist nur so gut wie das, worauf sie liegt: Bevor wir verlegen, prüfen wir den Untergrund auf Tragfähigkeit, Ebenheit, Restfeuchte und Sauberkeit und führen im Nassbereich die normgerechte Verbundabdichtung nach DIN 18534 aus.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Untergrund prüfen lassen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/leistungen/untergrund" className="btn-ghost px-7 py-3.5 text-xs">
-                            Zur Leistungsseite
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Subpage navigation */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10" aria-labelledby="themen-heading">
-                <h2 id="themen-heading" className="sr-only">Themen rund um Untergrund und Abdichtung</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {SUBPAGES.map((page) => {
-                        const Icon = SUBPAGE_ICONS[page.path] || Layers;
-                        return (
-                            <li key={page.path}>
-                                <Link
-                                    href={page.path}
-                                    className="group glass-surface p-6 rounded-tile-xl h-full flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                >
-                                    <span className="icon-chip w-11 h-11 mb-4">
-                                        <Icon className="w-5 h-5 text-orange-600" />
-                                    </span>
-                                    <span className="font-black text-base text-slate-900 group-hover:text-orange-700 transition-colors mb-1">
-                                        {page.name}
-                                    </span>
-                                    <span className="text-sm text-slate-700 leading-relaxed flex-1">{page.desc}</span>
-                                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-orange-700">
-                                        Mehr zu {page.name} erfahren
-                                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                                    </span>
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Damage patterns */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="schaeden-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Ursachen</span>
-                    <h2 id="schaeden-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Warum viele Fliesenschäden{' '}
-                        <span className="text-ceramic-gradient">im Untergrund beginnen</span>
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Die sichtbare Oberfläche verzeiht wenig. Was darunter nicht stimmt, zeigt sich oft erst Monate nach der
-                        Verlegung – typischerweise in einem dieser drei Schadensbilder.
-                    </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {DAMAGE_PATTERNS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6 text-orange-600" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-                <p className="mt-6 text-sm text-slate-700 text-center">
-                    Sie haben bereits einen Schaden?{' '}
-                    <Link href="/schadensanalyse" className="font-bold text-orange-700 hover:text-orange-800 hover:underline underline-offset-2">
-                        So klären wir die Ursache vor Ort
-                    </Link>
-                    .
-                </p>
-            </section>
-
-            {/* Criteria */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="kriterien-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">
-                            <Search className="w-3.5 h-3.5 text-orange-600" />
-                            Untergrundprüfung
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „untergrund“ ohne Achse */}
+            <section aria-labelledby="untergrund-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Fachwissen &middot; Untergrund &amp; Abdichtung</>}
+                    titel={
+                        <span id="untergrund-heading">
+                            Untergrund und Abdichtung:{' '}
+                            <span>das Fundament jedes Fliesenbelags</span>
                         </span>
-                        <h2 id="kriterien-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Die Prüfkriterien: tragfähig, eben, trocken, sauber, dicht
+                    }
+                    vorspann={
+                        <p>
+                            Untergrund und Abdichtung für Fliesen: Fundiertes Fachwissen und das Fundament jedes Fliesenbelags vom Fachbetrieb Tezgel.
+                            Eine Fliese ist nur so gut wie das, worauf sie liegt: Bevor wir verlegen, prüfen wir den Untergrund auf Tragfähigkeit,
+                            Ebenheit, Restfeuchte und Sauberkeit und führen im Nassbereich die normgerechte Verbundabdichtung nach DIN 18534 aus.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Untergrund prüfen lassen
+                            </Knopf>
+                            <Knopf href="/leistungen/untergrund" variante="neben">
+                                Zur Leistungsseite
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Untergrund & Abdichtung für Fliesen', 'untergrund')}>
+                            <Verlegeplan plan="untergrund" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
+            </section>
+
+            <Leitachse>
+                {/* 2. THEMEN: Register der Unterseiten, je Zeile Name, Beschreibung und „Mehr zu …“; die Überschrift ist nur für Screenreader */}
+                <section aria-labelledby="themen-heading" className="relative scroll-mt-24 py-16 lg:py-24">
+                    <div className={`${seitenKlassen} spaet-zeichnen`}>
+                        <h2 id="themen-heading" className="sr-only">
+                            Themen rund um Untergrund und Abdichtung
                         </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            Diese fünf Punkte klären wir, bevor der erste Kleber aufgezogen wird. Erfüllt der Untergrund sie nicht,
-                            wird er zuerst vorbereitet – oder wir sprechen offen an, warum eine Verlegung so nicht sinnvoll ist.
-                        </p>
-                    </div>
-                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-                        {CRITERIA.map((item, idx) => (
-                            <li key={item.title} className="p-6 rounded-tile-lg bg-slate-50 border border-slate-200">
-                                <span className="font-display block text-4xl font-black tabular-nums text-orange-600/30 mb-3" aria-hidden="true">
-                                    {String(idx + 1).padStart(2, '0')}
-                                </span>
-                                <h3 className="text-lg font-black text-slate-900 mb-2">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
-            </section>
-
-            {/* Overviews with jump anchors */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-label="Themen im Überblick">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <article id="din18534" className="glass-surface rounded-tile-xl p-7 sm:p-9 scroll-mt-28">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <ShieldCheck className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Abdichtung im Verbund nach DIN 18534 im Überblick</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Im Bad liegt die Abdichtung direkt unter Fliese und Kleber – als flüssig aufgetragene Schicht, Bahn oder
-                            Platte. Welcher Aufwand nötig ist, richtet sich nach der Wassereinwirkungsklasse der jeweiligen Fläche.
-                        </p>
-                        <Link href="/untergrund-abdichtung/din-18534" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
-                            DIN 18534 im Detail
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-
-                    <article id="abbruch" className="glass-surface rounded-tile-xl p-7 sm:p-9 scroll-mt-28">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <Hammer className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Rückbau oder Überfliesen im Überblick</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Überfliesen spart Rückbau, setzt aber einen fest haftenden, ebenen Altbelag und genügend Aufbauhöhe voraus.
-                            Ob das zutrifft, entscheidet erst die Prüfung vor Ort.
-                        </p>
-                        <Link href="/untergrund-abdichtung/fliesen-auf-fliesen" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
-                            Fliesen auf Fliesen oder Rückbau?
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-
-                    <article id="ausgleich" className="glass-surface rounded-tile-xl p-7 sm:p-9 scroll-mt-28">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <Ruler className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Ausgleich und Gefälle im Überblick</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Unebenheiten werden gemessen und mit Spachtel- oder Nivelliermassen ausgeglichen. Vor Bodenabläufen und
-                            Duschrinnen sorgt ein sauber ausgebildetes Gefälle dafür, dass Wasser gezielt abläuft.
-                        </p>
-                        <Link href="/untergrund-abdichtung/ausgleich-gefaelle" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
-                            Ausgleich &amp; Gefälle im Detail
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-
-                    <article id="rissverharzung" className="glass-surface rounded-tile-xl p-7 sm:p-9 scroll-mt-28">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <SquareStack className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Risse und Entkopplung im Überblick</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Ruhende Risse im Estrich lassen sich kraftschlüssig verharzen. Entkopplungsmatten bauen Spannungen
-                            zwischen Untergrund und Belag ab – ersetzen aber keine fehlende Tragfähigkeit.
-                        </p>
-                        <Link href="/untergrund-abdichtung/entkopplung" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
-                            Entkopplung &amp; Holzuntergründe
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-                </div>
-            </section>
-
-            {/* Typical substrates */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="untergruende-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Typische Untergründe</span>
-                        <h2 id="untergruende-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Estrich, Altbelag, Holz: was jeder Untergrund braucht
-                        </h2>
-                    </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {SUBSTRATES.map((item) => (
-                            <li key={item.title}>
-                                <Link
-                                    href={item.href}
-                                    className="group flex gap-4 p-6 rounded-tile-lg bg-slate-50 border border-slate-200 h-full hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                                >
-                                    <CircleCheck className="w-6 h-6 text-orange-600 shrink-0 mt-0.5" />
-                                    <span>
-                                        <span className="block font-black text-base text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">
-                                            {item.title}
+                        <ul className="border-t border-tinte">
+                            {SUBPAGES.map((page) => (
+                                <li key={page.path} className="border-b border-fuge">
+                                    <Link href={page.path} className={ZEILE}>
+                                        <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                            <span className={NAME}>{page.name}</span>
+                                            <span className="font-text text-fs-2 text-tinte-2 md:min-w-0 md:flex-1">{page.desc}</span>
+                                            <span className="font-text text-fs-2 text-tinte">Mehr zu {page.name} erfahren</span>
                                         </span>
-                                        <span className="block text-sm text-slate-700 leading-relaxed">{item.desc}</span>
-                                    </span>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
-
-            {/* Survey CTA */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10" aria-labelledby="aufmass-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                    <div className="lg:col-span-3 space-y-3">
-                        <span className="eyebrow">Vor-Ort-Termin</span>
-                        <h2 id="aufmass-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                            Untergrundprüfung beim kostenfreien Vor-Ort-Aufmaß
-                        </h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                            {COMPANY_DATA.owner.fullName} sieht sich Ihren Untergrund persönlich an: Ebenheit, Haftung des Altbelags,
-                            Restfeuchte und die Situation an Abläufen und Anschlüssen. Danach wissen Sie, welche Vorarbeiten nötig
-                            sind – bevor sie im Angebot auftauchen.
-                        </p>
+                                        <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                            <Icon name="pfeil-rechts" groesse={5} />
+                                        </span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-                    <div className="lg:col-span-2 flex flex-col sm:flex-row lg:flex-col gap-3">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs w-full justify-center">
-                            Aufmaß anfragen
-                            <ArrowRight className="w-4 h-4" />
+                </section>
+
+                {/* 3. URSACHEN: Feldraster mit drei Schadensbildern; das dritte Feld überspannt in Md die freie Breite */}
+                <Abschnitt titelId="schaeden-heading" leitachse spaet etikett="Ursachen" titel="Warum viele Fliesenschäden im Untergrund beginnen" einleitung={<p>Die sichtbare Oberfläche verzeiht wenig. Was darunter nicht stimmt, zeigt sich oft erst Monate nach der Verlegung – typischerweise in einem dieser drei Schadensbilder.</p>}>
+                    <Feldraster spalten={3}>
+                        {DAMAGE_PATTERNS.map((item, i) => {
+                            const letzter = i === DAMAGE_PATTERNS.length - 1;
+                            return (
+                                <Feld key={item.title} spanne={letzter ? 2 : undefined} className={letzter ? 'lg:col-span-1' : undefined}>
+                                    <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                    <p className="mt-3 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                                </Feld>
+                            );
+                        })}
+                    </Feldraster>
+                    <p className="mt-8 font-text text-fs-2 text-tinte-2">
+                        Sie haben bereits einen Schaden?{' '}
+                        <Link href="/schadensanalyse" className={linkKlassen}>
+                            So klären wir die Ursache vor Ort
                         </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs w-full justify-center">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs w-full justify-center"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            Fotos per WhatsApp senden
-                        </a>
-                    </div>
-                </div>
-            </section>
+                        .
+                    </p>
+                </Abschnitt>
 
-            {/* Weiterführende Ratgeber */}
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10" aria-labelledby="ratgeber-heading">
-                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-4">Weiterführende Ratgeber zu Untergrund &amp; Abdichtung</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    {READ_MORE.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
-                            >
-                                {link.label}
-                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+                {/* 4. PRÜFKRITERIEN: fünf Schritte als Schrittfolge; die Nummern sind für Screenreader ausgeblendet */}
+                <Abschnitt titelId="kriterien-heading" leitachse spaet flaeche="fliese" etikett="Untergrundprüfung" titel="Die Prüfkriterien: tragfähig, eben, trocken, sauber, dicht" einleitung={<p>Diese fünf Punkte klären wir, bevor der erste Kleber aufgezogen wird. Erfüllt der Untergrund sie nicht, wird er zuerst vorbereitet – oder wir sprechen offen an, warum eine Verlegung so nicht sinnvoll ist.</p>}>
+                    <Schrittfolge nummerStumm schritte={CRITERIA.map((item) => ({ titel: item.title, text: item.desc }))} />
+                </Abschnitt>
+
+                {/* 5. ÜBERBLICK: vier Felder mit Anker je Thema, zwei Spalten ohne Rest */}
+                <Abschnitt aria-label="Themen im Überblick" leitachse spaet>
+                    <Feldraster spalten={2}>
+                        {OVERVIEWS.map((item) => (
+                            <Feld key={item.id}>
+                                <article id={item.id} className="flex flex-1 flex-col scroll-mt-24">
+                                    <h2 className="font-anzeige text-fs-5 text-tinte">{item.titel}</h2>
+                                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.text}</p>
+                                    <div className="mt-auto pt-6">
+                                        <Knopf href={item.href} variante="text" icon="pfeil-rechts">
+                                            {item.link}
+                                        </Knopf>
+                                    </div>
+                                </article>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 6. UNTERGRÜNDE: Halbverband an der Fuge, je Eintrag der Name als Link und die Beschreibung */}
+                <Abschnitt titelId="untergruende-heading" leitachse spaet etikett="Typische Untergründe" titel="Estrich, Altbelag, Holz: was jeder Untergrund braucht">
+                    <Merkliste
+                        spalten={2}
+                        verband
+                        eintraege={SUBSTRATES.map((item) => ({
+                            titel: (
+                                <Link href={item.href} className={linkKlassen}>
+                                    {item.title}
+                                </Link>
+                            ),
+                            text: item.desc
+                        }))}
+                    />
+                </Abschnitt>
+
+                {/* 7. VOR-ORT-AUFMASS: Überschrift, Einleitung und drei Wege als Knöpfe; Telefon und WhatsApp aus COMPANY_DATA */}
+                <Abschnitt
+                    titelId="aufmass-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Vor-Ort-Termin"
+                    titel="Untergrundprüfung beim kostenfreien Vor-Ort-Aufmaß"
+                    einleitung={
+                        <p>
+                            {COMPANY_DATA.owner.fullName} sieht sich Ihren Untergrund persönlich an: Ebenheit, Haftung des Altbelags,
+                            Restfeuchte und die Situation an Abläufen und Anschlüssen. Danach wissen Sie, welche Vorarbeiten nötig sind –
+                            bevor sie im Angebot auftauchen.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
+                            Aufmaß anfragen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf
+                            href={COMPANY_DATA.contact.whatsappLink}
+                            extern
+                            variante="neben"
+                            vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                        >
+                            Fotos per WhatsApp senden
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 8. RATGEBER: vier Verweise als Merkliste mit zwei Spalten */}
+                <Abschnitt titelId="ratgeber-heading" leitachse spaet titel="Weiterführende Ratgeber zu Untergrund & Abdichtung">
+                    <Merkliste
+                        spalten={2}
+                        eintraege={READ_MORE.map((link) => ({
+                            titel: (
+                                <Link href={link.href} className={linkKlassen}>
+                                    {link.label}
+                                </Link>
+                            )
+                        }))}
+                    />
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
             <FinalCTA />
-        </div>
+        </>
     );
 }
