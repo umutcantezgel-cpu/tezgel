@@ -56,3 +56,4 @@ STATUS · Vereinheitlichung (E-037/E-038) · Vorbild: live laufende Fusions-Star
 - 2026-10-12 10:55 CEST · F0: Sammel-Tor m-e039 (M gegen live a1aeda6) grün, Lighthouse ruhig gemessen; Push M; F1 Gutachten Formulare läuft.
 - 2026-10-12 12:20 CEST · F0 live 28ee443; F1 Gutachten U1–U8 fertig; F2 Baumeister F-01–F-05 gestartet, F-06/F-07 folgen.
 - 2026-10-12 14:50 CEST · Lieferung 1 (F-01–F-05) live e41b65f; Tor l2-e039 (F-06/F-07) läuft.
+- 2026-10-12 17:05 CEST · Lieferung 2 (F-06/F-07 + Kopf-Fix) live f3ec304; Fusion II abgeschlossen; R-01a/b laufen.
