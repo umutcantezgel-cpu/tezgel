@@ -1,126 +1,66 @@
-"use client";
-import React from 'react';
-import { MotionConfig, motion, useScroll, useSpring } from 'framer-motion';
-import { Quote, ShieldCheck } from 'lucide-react';
+// Über uns · Unternehmensgeschichte (KERN v2, S-02): Serverkomponente ohne Bewegungsbibliothek und ohne Fremd-Icons;
+// nur auf /ueber-uns eingebunden. Kopf wie `Abschnitt` (Mono-Etikett mit Fugenkreuz, H2 `company-history-heading`, Einleitung).
+// Zeitleiste als ruhige Fuge: eine durchgehende Linie in Strich (`fugenband-linie`), mobil links, ab md bei einem Viertel
+// der Breite; je Eintrag eine Jahresmarke mit Fugenkreuz auf der Linie (`fugenband-marke`), das Jahr in Mono links der
+// Linie, Titel (H3) und Text rechts. Kein Wechsel links/rechts – einspaltig an der Linie bleibt es ruhig.
+// Die scroll-gebundene Bewegung „Fugenband“ (Register `fugenband`, S-11) setzt später an Linie und Marken an; bis dahin
+// trägt der Container genau einen `auftritt` (ohne JS und bei reduzierter Bewegung sofort sichtbar).
+// Abschluss: das Motto als großes Zitat im Anzeigeschnitt auf einem Feld in Fliese (ohne Anführungs-Icon, nicht kursiv),
+// die Quelle in Mono in Satzschreibung. Wortlaut wörtlich aus dem Bestand, Daten aus `@/config/company`.
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
 
 export default function CompanyHistory() {
-    const containerRef = React.useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
+  const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
 
-    const scaleY = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
+  return (
+    <Abschnitt
+      titelId="company-history-heading"
+      etikett={<>Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}</>}
+      titel="Unsere Unternehmensgeschichte"
+      einleitung={
+        <p>
+          Von der Betriebsgründung in {headquarters.city} bis zum Fliesen-Fachbetrieb für ganz Mittelhessen: So hat sich {legalName} unter {owner.fullName} entwickelt.
+        </p>
+      }
+      auftritt
+    >
+      <div className="relative">
+        {/* Die Fuge: eine Linie über alle Einträge (mobil links, ab md an der Grenze Jahr | Text bei 1/4) */}
+        <span aria-hidden="true" className="fugenband-linie pointer-events-none absolute inset-y-0 left-2 border-l border-strich md:left-1/4" />
 
-    const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
-
-    // reduzierte Bewegung achten (vorher globaler MotionProvider, E-010)
-    return (
-        <MotionConfig reducedMotion="user">
-        <section className="py-24 relative overflow-hidden" ref={containerRef} aria-labelledby="company-history-heading">
-            {/* Background elements */}
-            <div className="ambient-glow-orange top-0 right-0 opacity-60" />
-            <div className="ambient-glow-red bottom-0 left-0 opacity-50" />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center mb-20">
-                    <span className="eyebrow mb-4">
-                        Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}
-                    </span>
-                    <h2 id="company-history-heading" className="text-4xl md:text-5xl font-black text-neutral-900 mb-4 tracking-tight">
-                        Unsere{' '}
-                        <span className="text-ceramic-gradient">Unternehmensgeschichte</span>
-                    </h2>
-                    <p className="text-base sm:text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed">
-                        Von der Betriebsgründung in {headquarters.city} bis zum Fliesen-Fachbetrieb für ganz Mittelhessen: So hat sich {legalName} unter {owner.fullName} entwickelt.
-                    </p>
-                </div>
-
-                <div className="relative">
-                    {/* Animated vertical line (Desktop) */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-neutral-200 hidden md:block">
-                        <motion.div
-                            className="w-full bg-orange-600 origin-top h-full"
-                            style={{ scaleY }}
-                        />
-                    </div>
-
-                    {/* Timeline items */}
-                    <ol className="space-y-16 md:space-y-24 relative">
-                        {historyTimeline.map((item, index) => {
-                            return (
-                                <li key={item.year} className="relative">
-                                    {/* Mobile Dot */}
-                                    <div className="md:hidden absolute left-0 top-6 w-4 h-4 rounded-full bg-orange-600 z-10" />
-
-                                    <div className={`flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0 pl-10 md:pl-0 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-
-                                        {/* Content Side */}
-                                        <motion.div
-                                            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true, margin: "-100px" }}
-                                            transition={{ duration: 0.8, ease: "easeOut" }}
-                                            className="w-full md:w-[42%]"
-                                        >
-                                            <div className="group relative p-8 rounded-2xl glass-surface hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(23,23,23,0.14)] transition-all duration-200">
-                                                <div className="flex items-center justify-between mb-3">
-                                                    <span className="text-xs font-black tabular-nums px-3 py-1 rounded-xl bg-orange-50 border border-orange-200 text-orange-800">
-                                                        {item.year}
-                                                    </span>
-                                                    <ShieldCheck className="w-5 h-5 text-orange-600" />
-                                                </div>
-
-                                                <h3 className="text-xl font-black text-neutral-900 mb-2 group-hover:text-orange-800 transition-colors">
-                                                    {item.title}
-                                                </h3>
-                                                <p className="text-neutral-700 leading-relaxed text-sm">
-                                                    {item.description}
-                                                </p>
-                                            </div>
-                                        </motion.div>
-
-                                        {/* Center Dot (Desktop) */}
-                                        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20">
-                                            <motion.div
-                                                initial={{ scale: 0 }}
-                                                whileInView={{ scale: 1 }}
-                                                viewport={{ once: true }}
-                                                className="w-5 h-5 rounded-full bg-white border-4 border-orange-600 shadow-md"
-                                            />
-                                        </div>
-
-                                        {/* Empty Side (Desktop only) */}
-                                        <div className="hidden md:block md:w-[42%]" />
-                                    </div>
-                                </li>
-                            );
-                        })}
-                    </ol>
-                </div>
-
-                {/* Final Vision Banner */}
-                <motion.figure
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-28 p-10 rounded-2xl ceramic-hero text-center relative overflow-hidden"
+        <ol className="relative">
+          {historyTimeline.map((eintrag) => (
+            <li key={eintrag.year} className="relative pb-12 pl-8 last:pb-0 md:grid md:grid-cols-12 md:pb-16 md:pl-0">
+              {/* Jahr: mobil über dem Titel, ab md links der Linie (rechtsbündig); die Marke sitzt mittig auf der Linie */}
+              <p className="relative font-mono text-fs-4 text-tinte md:col-span-3 md:self-start md:pr-8 md:text-right md:text-fs-5 lg:pr-12">
+                <span
+                  aria-hidden="true"
+                  className="fugenband-marke absolute top-1/2 -left-6 flex -translate-x-1/2 -translate-y-1/2 text-tinte md:right-0 md:left-auto md:translate-x-1/2"
                 >
-                    <Quote className="w-12 h-12 mx-auto mb-4 text-orange-600/60" aria-hidden="true" />
-                    <blockquote className="font-display text-2xl md:text-3xl font-black mb-3 italic text-neutral-900">
-                        &bdquo;{motto}&ldquo;
-                    </blockquote>
-                    <figcaption className="text-xs text-orange-800 font-black uppercase tracking-wider">
-                        {owner.fullName} &middot; {owner.title}, {legalName}
-                    </figcaption>
-                </motion.figure>
-            </div>
-        </section>
-        </MotionConfig>
-    );
+                  <Fugenkreuz className="size-4" />
+                </span>
+                {eintrag.year}
+              </p>
+              <div className="mt-2 md:col-span-9 md:mt-0 md:pl-8 lg:col-span-7 lg:pl-12">
+                <h3 className="text-fs-5 text-tinte">{eintrag.title}</h3>
+                <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">{eintrag.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {/* Leitsatz zum Schluss: Motto mit Unterschrift (Bestand: „Final Vision Banner“) */}
+      <figure className="mt-16 border border-fuge bg-fliese p-6 md:p-12 lg:mt-24">
+        <blockquote className="max-w-mass font-anzeige text-fs-5 font-extrabold text-tinte lg:text-fs-6">
+          &bdquo;{motto}&ldquo;
+        </blockquote>
+        <figcaption className="mt-6 font-mono text-fs-1 text-tinte-2">
+          {owner.fullName} &middot; {owner.title}, {legalName}
+        </figcaption>
+      </figure>
+    </Abschnitt>
+  );
 }
