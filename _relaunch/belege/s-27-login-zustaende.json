@@ -1,0 +1,20 @@
+{
+ "m390": {
+  "leerUngueltig": true,
+  "passwortLeer": true,
+  "url": "/login",
+  "axe_ausgang": [],
+  "axe_fehler": [],
+  "pageerror": [],
+  "anfragen_nach_aussen": []
+ },
+ "d1440": {
+  "leerUngueltig": true,
+  "passwortLeer": true,
+  "url": "/login",
+  "axe_ausgang": [],
+  "axe_fehler": [],
+  "pageerror": [],
+  "anfragen_nach_aussen": []
+ }
+}

@@ -1,9 +1,20 @@
-import React from 'react';
+// Downloads & Infomaterial (S-27 · E6-BAU-08, KERN v2): Arbeitsansicht nach dem Muster von (bestand)/kontakt. Kompakter Einstieg
+// (Kennzeile, H1, Vorspann), rechts daneben das Feld „Unterlagen auf Anfrage“ mit Anfrage als Hauptknopf und E-Mail als
+// Nebenknopf (mobil nach dem Vorspann, Lesefolge wie im Bestand) · Online-Ratgeber als Register: Zeilen an der Fuge mit
+// laufender Nummer in Mono, Titel, Text und Ziel; die ganze Zeile ist der Link (Fliese) · Qualitätsversprechen (Kalk).
+// Es gibt keine veröffentlichten Dateien (nichts unter /public): Unterlagen gehen auf Anfrage per E-Mail hinaus, die Online-Ratgeber
+// ersetzen die frühere PDF-Liste – darum stehen hier weder Dateityp noch Größe. Kein großer Moment, keine Auftritte.
+// Texte, Überschriften, Links und Lesefolge wie im Bestand; Metadaten unverändert.
 import Link from 'next/link';
-import { FileText, ArrowRight, ClipboardList, BadgePercent, HelpCircle, Layers, Phone, Mail, FolderOpen } from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Knopf from '@/components/kern/Knopf';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Downloads & Infomaterial | Fliesenverlegung Tezgel',
@@ -14,100 +25,91 @@ export const metadata = createMetadata({
 // No downloadable files are currently published (nothing under /public).
 // Documents are sent on request; these online guides replace the former PDF list.
 const RESOURCES = [
-    { icon: ClipboardList, title: 'Checkliste zur Terminvorbereitung', desc: 'Welche Maße, Fotos und Unterlagen Ihnen und uns beim Beratungstermin helfen.', href: '/beratung', cta: 'Zur Checkliste' },
-    { icon: BadgePercent, title: 'Förderung & Zuschüsse', desc: 'Pflegekassen-Zuschuss und KfW-Programm 159 für das barrierefreie Bad im Überblick.', href: '/foerderung', cta: 'Zur Förderung' },
-    { icon: HelpCircle, title: 'Häufige Fragen', desc: 'Antworten zu Großformaten, Abdichtung nach DIN 18534, Balkon & Terrasse und Festpreisangebot.', href: '/faq', cta: 'Zu den FAQ' },
-    { icon: Layers, title: 'Materialien & Systeme', desc: 'Verlegewerkstoffe, Abdichtungssysteme und Fliesen, mit denen wir arbeiten.', href: '/partner', cta: 'Zu den Materialien' }
+    { title: 'Checkliste zur Terminvorbereitung', desc: 'Welche Maße, Fotos und Unterlagen Ihnen und uns beim Beratungstermin helfen.', href: '/beratung', cta: 'Zur Checkliste' },
+    { title: 'Förderung & Zuschüsse', desc: 'Pflegekassen-Zuschuss und KfW-Programm 159 für das barrierefreie Bad im Überblick.', href: '/foerderung', cta: 'Zur Förderung' },
+    { title: 'Häufige Fragen', desc: 'Antworten zu Großformaten, Abdichtung nach DIN 18534, Balkon & Terrasse und Festpreisangebot.', href: '/faq', cta: 'Zu den FAQ' },
+    { title: 'Materialien & Systeme', desc: 'Verlegewerkstoffe, Abdichtungssysteme und Fliesen, mit denen wir arbeiten.', href: '/partner', cta: 'Zu den Materialien' }
 ];
 
 export default function DownloadsPage() {
     const { contact } = COMPANY_DATA;
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-20 opacity-60" />
-
-            {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-14 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <FolderOpen className="w-3.5 h-3.5" />
+        <>
+            {/* 1. EINSTIEG: Kennzeile (vormals Badge), H1, Vorspann; rechts (mobil darunter) die Unterlagen auf Anfrage */}
+            <Einstieg
+                art="arbeit"
+                etikett={
+                    <>
+                        <Icon name="dokument" groesse={4} />
                         Wissenscenter &amp; Dokumente
-                    </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Downloads &amp; <span className="text-ceramic-gradient">Infomaterial</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                    </>
+                }
+                titel={<>Downloads &amp; Infomaterial</>}
+                vorspann={
+                    <p>
                         Nützliche Downloads &amp; Infomaterial zu Ihrem Projekt senden wir Ihnen gern persönlich zu. Die wichtigsten Informationen rund um Fliesen und Badsanierung finden Sie direkt hier auf der Website.
                     </p>
-                </div>
-            </div>
-
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-                {/* On request */}
-                <div className="glass-surface rounded-tile-lg p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
-                    <div className="flex items-start gap-4">
-                        <span className="icon-chip w-12 h-12">
-                            <FileText className="w-6 h-6" />
-                        </span>
-                        <div>
-                            <h2 className="font-black text-lg text-slate-900 mb-1">Unterlagen auf Anfrage</h2>
-                            <p className="text-sm text-slate-700 leading-relaxed">
-                                Sie benötigen Dokumente zu Ihrem Vorhaben? Sprechen Sie uns an – wir senden Ihnen die gewünschten Informationen per E-Mail zu.
-                            </p>
+                }
+                rand={
+                    <section aria-labelledby="unterlagen-heading" className="border border-fuge bg-fliese p-6 lg:p-8">
+                        <h2 id="unterlagen-heading" className="text-fs-5 text-tinte">
+                            Unterlagen auf Anfrage
+                        </h2>
+                        <p className="mt-4 font-text text-fs-3 text-tinte-2">
+                            Sie benötigen Dokumente zu Ihrem Vorhaben? Sprechen Sie uns an – wir senden Ihnen die gewünschten Informationen per E-Mail zu.
+                        </p>
+                        <div className="mt-8 flex flex-col gap-3">
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Unterlagen anfragen
+                            </Knopf>
+                            <Knopf href={`mailto:${contact.email}?subject=${encodeURIComponent('Anfrage Unterlagen')}`} variante="neben" iconLinks="mail">
+                                {contact.email}
+                            </Knopf>
                         </div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
-                        <Link href="/kontakt" className="btn-primary px-6 py-3 text-xs">
-                            Unterlagen anfragen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a href={`mailto:${contact.email}?subject=${encodeURIComponent('Anfrage Unterlagen')}`} className="btn-ghost px-6 py-3 text-xs">
-                            <Mail className="w-4 h-4 text-orange-600" />
-                            {contact.email}
-                        </a>
-                    </div>
-                </div>
+                    </section>
+                }
+            />
 
-                {/* Online resources */}
-                <h2 className="text-2xl font-black text-slate-900 tracking-tight mb-6 text-center">Online-Ratgeber &amp; Checklisten</h2>
-                <ul className="space-y-4">
-                    {RESOURCES.map(({ icon: Icon, title, desc, href, cta }) => (
-                        <li key={href}>
+            {/* 2. ONLINE-RATGEBER als Register: Nummer in Mono (Marke, für Screenreader stumm), Titel und Text, rechts das Ziel;
+                Hover und Fokus wechseln die Fläche auf Kalk und ziehen die Unterstreichung des Ziels nach */}
+            <Abschnitt art="arbeit" id="online-ratgeber" flaeche="fliese" titel="Online-Ratgeber & Checklisten">
+                <ul className="border-t border-tinte">
+                    {RESOURCES.map(({ title, desc, href, cta }, i) => (
+                        <li key={href} className="border-b border-fuge">
                             <Link
                                 href={href}
-                                className="group glass-surface p-6 sm:p-8 rounded-tile-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6 hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                data-motion="zustand"
+                                className="group flex items-start gap-4 px-4 py-6 transition-colors dauer-1 ease-setzen hover:bg-kalk focus-visible:bg-kalk active:bg-kalk md:gap-6 md:px-6 lg:px-8"
                             >
-                                <span className="flex items-start gap-4">
-                                    <span className="icon-chip w-12 h-12">
-                                        <Icon className="w-6 h-6" />
-                                    </span>
-                                    <span>
-                                        <span className="block font-black text-base text-slate-900 mb-1 group-hover:text-orange-700 transition-colors">{title}</span>
-                                        <span className="block text-sm text-slate-700">{desc}</span>
-                                    </span>
+                                <span aria-hidden="true" className="w-8 shrink-0 font-mono text-fs-2 text-tinte-2">
+                                    {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <span className="shrink-0 inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 group-hover:text-orange-600">
-                                    {cta}
-                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                <span className="flex min-w-0 flex-1 flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-12">
+                                    <span className="min-w-0">
+                                        <span className="block font-text text-fs-4 font-semibold text-tinte">{title}</span>
+                                        <span className="mt-2 block max-w-mass font-text text-fs-3 text-tinte-2">{desc}</span>
+                                    </span>
+                                    <span className="inline-flex shrink-0 items-center gap-2 font-text text-fs-2 font-semibold text-tinte underline decoration-strich underline-offset-4 group-hover:decoration-tinte">
+                                        {cta}
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
                                 </span>
                             </Link>
                         </li>
                     ))}
                 </ul>
 
-                <p className="mt-10 text-center text-sm text-slate-700">
+                <p className="mt-8 flex flex-wrap items-center gap-x-3 font-text text-fs-3 text-tinte-2">
                     Lieber persönlich?{' '}
-                    <a href={`tel:${contact.phoneLink}`} className="inline-flex items-center gap-1 font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
-                        <Phone className="w-4 h-4" />
+                    <a href={`tel:${contact.phoneLink}`} className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-mono')}>
+                        <Icon name="telefon" groesse={4} />
                         {contact.phone}
                     </a>
                 </p>
-            </div>
+            </Abschnitt>
 
-            <QualityPromise />
-        </div>
+            <QualityPromise art="arbeit" />
+        </>
     );
 }

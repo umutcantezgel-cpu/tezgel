@@ -1,13 +1,18 @@
 "use client";
-import React, { useState } from 'react';
+// Mitarbeiter-Login (S-27 · E6-BAU-08, KERN v2): Arbeitsansicht als ruhiges Formular nach _formularregeln.md. Kompakter Einstieg
+// mit H1 und Vorspann, rechts daneben (mobil darunter) das Formularfeld: Fehlermeldung, Benutzername, Passwort, Anmelden und der
+// Hinweis in Mono an der Fuge. Beschriftung über dem Feld, Felder ohne eingelegte Icons, Fehler mit Fehler-Icon, Text und
+// role="alert", Ladezustand über den Knopf (Text „Anmeldung läuft …“ wie im Bestand). Ohne die frühere Seitenhülle mit
+// Einblendung (keine Register-Bewegung; Arbeitsansichten bewegen nur Rückmeldung und Zustand).
+// Anmeldelogik, Felder, IDs, autocomplete, Platzhalter, Meldungen und Weiterleitung unverändert; Metadaten in ./layout.tsx.
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { Lock, User, AlertCircle } from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Knopf from '@/components/kern/Knopf';
+import { feldKlassen, labelKlassen } from '@/components/kern/stile';
 import { useAuth } from '@/contexts/AuthContext';
-import PageWrapper from '@/components/common/PageWrapper';
-
-const inputClass =
-    'w-full pl-10 pr-4 py-3 rounded-tile-sm bg-white border border-slate-300 text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 transition-all';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -39,91 +44,72 @@ const Login = () => {
     };
 
     return (
-        <PageWrapper title="Admin Login">
-            <div className="min-h-[calc(100vh-200px)] flex items-center justify-center px-4 pt-32 pb-16 relative overflow-hidden">
-                <div className="ambient-glow-orange -top-20 -left-20 opacity-60" />
-                <div className="w-full max-w-md relative z-10">
-                    {/* Login Card */}
-                    <div className="ceramic-hero rounded-tile-xl p-8">
-                        {/* Header */}
-                        <div className="text-center mb-8">
-                            <span className="icon-chip w-16 h-16 rounded-tile-pill mx-auto mb-4">
-                                <Lock className="w-8 h-8" />
-                            </span>
-                            <h1 className="text-2xl font-black text-slate-900 mb-2">
-                                Mitarbeiter Login
-                            </h1>
-                            <p className="text-slate-700 text-sm">
-                                Melden Sie sich an, um den Admin-Bereich zu betreten
-                            </p>
+        <Einstieg
+            art="arbeit"
+            titel="Mitarbeiter Login"
+            vorspann={<p>Melden Sie sich an, um den Admin-Bereich zu betreten</p>}
+            rand={
+                // Formularfeld an der Fuge (vormals Karte mit Schloss-Kachel); ein Hauptknopf. Auf dem Tablett zwei Drittel breit
+                // (sonst liefen zwei Felder über die volle Satzbreite), ab lg füllt es die Randspalte
+                <div className="border border-fuge bg-fliese p-6 md:w-2/3 lg:w-full lg:p-8">
+                    {/* Error Message */}
+                    {error && (
+                        <div className="mb-6 flex items-start gap-3 border-l-2 border-laser bg-kalk p-4 font-text text-fs-2 text-tinte" role="alert">
+                            <Icon name="fehler" groesse={5} className="mt-px text-laser-tief" />
+                            <p>{error}</p>
+                        </div>
+                    )}
+
+                    {/* Login Form */}
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                        {/* Username*/}
+                        <div>
+                            <label htmlFor="login-username" className={labelKlassen}>
+                                Benutzername
+                            </label>
+                            <input
+                                id="login-username"
+                                type="text"
+                                autoComplete="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                className={feldKlassen}
+                                placeholder="Benutzername eingeben"
+                                required
+                            />
                         </div>
 
-                        {/* Error Message */}
-                        {error && (
-                            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-tile-sm flex items-center gap-3 text-red-800" role="alert">
-                                <AlertCircle className="w-5 h-5 flex-shrink-0" />
-                                <p className="text-sm">{error}</p>
-                            </div>
-                        )}
-
-                        {/* Login Form */}
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            {/* Username*/}
-                            <div>
-                                <label htmlFor="login-username" className="block text-sm font-bold text-slate-800 mb-2">
-                                    Benutzername
-                                </label>
-                                <div className="relative">
-                                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" aria-hidden="true" />
-                                    <input
-                                        id="login-username"
-                                        type="text"
-                                        autoComplete="username"
-                                        value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
-                                        className={inputClass}
-                                        placeholder="Benutzername eingeben"
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Password */}
-                            <div>
-                                <label htmlFor="login-password" className="block text-sm font-bold text-slate-800 mb-2">
-                                    Passwort
-                                </label>
-                                <div className="relative">
-                                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" aria-hidden="true" />
-                                    <input
-                                        id="login-password"
-                                        type="password"
-                                        autoComplete="current-password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        className={inputClass}
-                                        placeholder="Passwort eingeben"
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Submit Button */}
-                            <button type="submit" disabled={isLoading} className="btn-primary w-full">
-                                {isLoading ? 'Anmeldung läuft …' : 'Anmelden'}
-                            </button>
-                        </form>
-
-                        {/* Footer Note */}
-                        <div className="mt-6 pt-6 border-t border-slate-200 text-center">
-                            <p className="text-xs text-slate-600">
-                                Nur für autorisierte Mitarbeiter
-                            </p>
+                        {/* Password */}
+                        <div>
+                            <label htmlFor="login-password" className={labelKlassen}>
+                                Passwort
+                            </label>
+                            <input
+                                id="login-password"
+                                type="password"
+                                autoComplete="current-password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className={feldKlassen}
+                                placeholder="Passwort eingeben"
+                                required
+                            />
                         </div>
-                    </div>
+
+                        {/* Submit Button */}
+                        <Knopf type="submit" laedt={isLoading} ladeText="Anmeldung läuft …" className="w-full">
+                            Anmelden
+                        </Knopf>
+                    </form>
+
+                    {/* Footer Note */}
+                    <p className="mt-6 flex items-center gap-2 border-t border-fuge pt-6 font-mono text-fs-1 text-tinte-2">
+                        <Icon name="schloss" groesse={4} />
+                        Nur für autorisierte Mitarbeiter
+                    </p>
                 </div>
-            </div>
-        </PageWrapper>
+            }
+        />
     );
 };
 

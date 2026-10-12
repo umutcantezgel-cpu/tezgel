@@ -1,0 +1,58 @@
+{
+ "vorher": "s-27-vorher",
+ "nachher": "s-27-nachher",
+ "seiten": {
+  "/foerderung": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Ansprechpartner",
+     "Deniz Tezgel",
+     "Telefon",
+     "Mobil & WhatsApp",
+     "0172 / 67 28 504",
+     "E-Mail",
+     "info@tezgel.de",
+     "Sitz",
+     "Hohwardstraße 14, 35614 Aßlar",
+     "06441 / 44 83 567"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/downloads": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "01",
+     "02",
+     "03",
+     "04"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 2,
+  "hinzu": 14,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}
