@@ -1,24 +1,30 @@
-import React from 'react';
+// Terrassenplatten (E5-BAU-05 / S-14, KERN v2): Erzählansicht nach dem Muster der Familie Themen (/leistungen/[id],
+// /fliesen, /untergrund-abdichtung/ausgleich-gefaelle). Einstieg mit Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts
+// das Planblatt mit dem Plan „aussen“ (interaktiv, ohne Achse). Danach die Leitachse über die Abschnitte, Flächen im Wechsel:
+// 2. Materialien (Fliese): Feldraster, Felder Kalk, das fünfte Feld füllt die Zeile; darunter die Naturstein-Verweise ·
+// 3. Kennwerte (Kalk): zwei Spalten an der Fuge (Frost, Rutschhemmung), darunter die Tabelle Feinsteinzeug/Naturstein ·
+// 4. Erdreich und Fugen (Fliese): wie im Bestand zwei Teile mit eigener H2 in einem Abschnitt – als Zeilen an der Fuge,
+// Überschrift links, Text rechts; die Fugenarten als Merkliste, der Hinweis zur gebundenen Verlegung als Merkhinweis ·
+// 5. Beratung & Aufmaß (Kalk): Knöpfe mit Telefon und WhatsApp aus COMPANY_DATA · 6. Weiterführende Ratgeber (Fliese):
+// Navigation als Register wie auf der Startseite. Abschluss: QualityPromise. Kein großer Moment, kein Auftritt, keine
+// Icon-Kacheln (eine Icon-Familie). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand; Metadaten unverändert.
 import Link from 'next/link';
-import {
-    ArrowRight,
-    Phone,
-    MessageCircle,
-    LayoutGrid,
-    Layers,
-    Mountain,
-    Snowflake,
-    Footprints,
-    Weight,
-    Trees,
-    Grid3x3,
-    Palette,
-    Info,
-    BookOpen
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Icon from '@/components/icons/Icon';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse, { ACHSE_LAGE } from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Tabelle from '@/components/kern/Tabelle';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen, linkKlassen, seitenKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Terrassenplatten verlegen lassen | Fliesen Tezgel',
@@ -58,28 +64,23 @@ const MATERIAL_ROWS = [
 const PROPERTIES = [
     {
         title: '2-cm-Feinsteinzeug',
-        desc: 'Durchgesintert, dicht und in 2 cm Stärke tragfähig genug, um auf Stelzlagern oder im Splittbett frei zu spannen. Kratzfest, farbecht unter UV-Licht und unempfindlich gegen die meisten Haushaltsflecken.',
-        icon: Layers
+        desc: 'Durchgesintert, dicht und in 2 cm Stärke tragfähig genug, um auf Stelzlagern oder im Splittbett frei zu spannen. Kratzfest, farbecht unter UV-Licht und unempfindlich gegen die meisten Haushaltsflecken.'
     },
     {
         title: 'Naturstein im Freien',
-        desc: 'Granit, Quarzit oder Schiefer wirken im Außenbereich besonders natürlich. Ob eine Sorte frost- und tausalzbeständig ist, hängt vom Gestein ab – nicht vom Namen. Details auf unseren Natursteinseiten.',
-        icon: Mountain
+        desc: 'Granit, Quarzit oder Schiefer wirken im Außenbereich besonders natürlich. Ob eine Sorte frost- und tausalzbeständig ist, hängt vom Gestein ab – nicht vom Namen. Details auf unseren Natursteinseiten.'
     },
     {
         title: 'Holzoptik draußen',
-        desc: 'Keramik in Holzoptik muss im Freien frostbeständig sein. Die 2-cm-Stärke ist nötig für Stelzlager oder Splittbett; bei gebundener Verlegung ist frostbeständiges Feinsteinzeug in üblicher Stärke möglich.',
-        icon: Trees
+        desc: 'Keramik in Holzoptik muss im Freien frostbeständig sein. Die 2-cm-Stärke ist nötig für Stelzlager oder Splittbett; bei gebundener Verlegung ist frostbeständiges Feinsteinzeug in üblicher Stärke möglich.'
     },
     {
         title: 'Formate & Gewicht',
-        desc: 'Gängig sind quadratische und rechteckige Formate wie 60 × 60 oder 60 × 120 cm. 2-cm-Feinsteinzeug wiegt rund 45 bis 50 kg pro Quadratmeter – relevant für Balkonlasten, Transport und Verlegung.',
-        icon: Weight
+        desc: 'Gängig sind quadratische und rechteckige Formate wie 60 × 60 oder 60 × 120 cm. 2-cm-Feinsteinzeug wiegt rund 45 bis 50 kg pro Quadratmeter – relevant für Balkonlasten, Transport und Verlegung.'
     },
     {
         title: 'Oberflächen & Optiken',
-        desc: 'Strukturierte Oberflächen verbessern die Trittsicherheit bei Nässe. Beton-, Stein- und Holzoptiken lassen sich passend zum Innenbelag wählen, damit Wohnraum und Terrasse ineinander übergehen.',
-        icon: Palette
+        desc: 'Strukturierte Oberflächen verbessern die Trittsicherheit bei Nässe. Beton-, Stein- und Holzoptiken lassen sich passend zum Innenbelag wählen, damit Wohnraum und Terrasse ineinander übergehen.'
     }
 ];
 
@@ -105,107 +106,109 @@ const FURTHER_READING = [
     { label: 'Leistung: Außenbereiche & Balkone', href: '/leistungen/aussen' }
 ];
 
+// Zeile an der Fuge (Abschnitt 4): Überschrift links (5 Spalten ab lg), Text rechts in Lesebreite; die H2 bleibt H2
+const ZEILE = 'grid grid-cols-4 gap-y-6 border-t border-fuge py-12 first:border-t-0 first:pt-0 last:pb-0 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12';
+const ZEILE_KOPF = 'col-span-4 md:col-span-8 lg:col-span-5';
+const ZEILE_TEXT = 'col-span-4 max-w-mass md:col-span-8 lg:col-span-7';
+const ZEILE_TITEL = 'font-anzeige text-fs-5 text-tinte';
+
+// Unterstrich der Registerzeile erscheint beim Überfahren (wie „Fachthemen im Detail“ auf der Startseite)
+const UNTERSTRICH = 'decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
 export default function TerrassenplattenPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="terrassenplatten-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <LayoutGrid className="w-3.5 h-3.5" />
-                        Materialratgeber Außenbeläge
-                    </span>
-                    <h1 id="terrassenplatten-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Terrassenplatten richtig wählen:{' '}
-                        <span className="text-ceramic-gradient">Material, Stärke und Oberfläche</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Terrassenplatten richtig wählen: Material, Stärke und Oberfläche passend zu Untergrund und Witterung abstimmen. Ob 2-cm-Feinsteinzeug oder Naturstein, rutschfest strukturiert oder matt – wir beraten Sie zu Aufbau, Haltbarkeit und Pflegeaufwand für Terrasse und Balkon.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Beratung zu Terrassenplatten
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/balkon-terrasse" className="btn-ghost px-7 py-3.5 text-xs">
-                            Aufbauten vergleichen
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „aussen“ */}
+            <section aria-labelledby="terrassenplatten-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Materialratgeber Außenbeläge</>}
+                    titel={<span id="terrassenplatten-heading">Terrassenplatten richtig wählen: Material, Stärke und Oberfläche</span>}
+                    vorspann={
+                        <p>
+                            Terrassenplatten richtig wählen: Material, Stärke und Oberfläche passend zu Untergrund und Witterung abstimmen. Ob 2-cm-Feinsteinzeug oder Naturstein, rutschfest strukturiert oder matt – wir beraten Sie zu Aufbau, Haltbarkeit und Pflegeaufwand für Terrasse und Balkon.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Beratung zu Terrassenplatten
+                            </Knopf>
+                            <Knopf href="/balkon-terrasse" variante="neben">
+                                Aufbauten vergleichen
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Terrassenplatten verlegen lassen', 'aussen')}>
+                            <Verlegeplan plan="aussen" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Material cards */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="terrassenplatten-material-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow mb-4">Materialien</span>
-                    <h2 id="terrassenplatten-material-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Was Terrassenplatten draußen leisten müssen
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {PROPERTIES.map((item) => {
-                        const Icon = item.icon;
-                        return (
+            <Leitachse>
+                {/* 2. MATERIALIEN: fünf Felder auf Kalk im Band auf Fliese, das letzte Feld füllt die Zeile (keine Restzelle);
+                    darunter die Verweise auf die Natursteinseiten */}
+                <Abschnitt
+                    titelId="terrassenplatten-material-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Materialien"
+                    titel="Was Terrassenplatten draußen leisten müssen"
+                >
+                    <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-cols-3">
+                        {PROPERTIES.map((item, i) => (
                             <li
                                 key={item.title}
-                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+                                className={clsx('flex flex-col bg-kalk p-6 lg:p-8', i === PROPERTIES.length - 1 && 'md:col-span-2')}
                             >
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
                             </li>
-                        );
-                    })}
-                </ul>
-                <p className="mt-8 max-w-3xl mx-auto text-center text-sm text-slate-700 leading-relaxed">
-                    Mehr zu frostbeständigen Natursteinen:{' '}
-                    <Link href="/naturstein/granit" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
-                        Granit, Schiefer &amp; Quarzit
-                    </Link>{' '}
-                    und{' '}
-                    <Link href="/naturstein" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
-                        Naturstein-Ratgeber mit Imprägnierung
-                    </Link>
-                    .
-                </p>
-            </section>
+                        ))}
+                    </ul>
+                    <p className="mt-8 max-w-mass font-text text-fs-3 text-tinte-2">
+                        Mehr zu frostbeständigen Natursteinen:{' '}
+                        <Link href="/naturstein/granit" className={linkKlassen}>
+                            Granit, Schiefer &amp; Quarzit
+                        </Link>{' '}
+                        und{' '}
+                        <Link href="/naturstein" className={linkKlassen}>
+                            Naturstein-Ratgeber mit Imprägnierung
+                        </Link>
+                        .
+                    </p>
+                </Abschnitt>
 
-            {/* Material table + key values */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="terrassenplatten-kennwerte-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Kennwerte</span>
-                        <h2 id="terrassenplatten-kennwerte-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Frostbeständigkeit und Rutschhemmung:{' '}
-                            <span className="text-ceramic-gradient">worauf es ankommt</span>
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                        <article className="rounded-tile-lg bg-slate-50 border border-slate-200 p-7">
-                            <Snowflake className="w-7 h-7 text-orange-600 mb-4" aria-hidden="true" />
-                            <h3 className="font-black text-lg text-slate-900 mb-2">Frostbeständigkeit</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">
+                {/* 3. KENNWERTE: zwei Spalten an der Fuge, darunter die Tabelle (Name = bisherige Tabellenbeschriftung) und der
+                    Verweis auf den ausführlichen Vergleich */}
+                <Abschnitt
+                    titelId="terrassenplatten-kennwerte-heading"
+                    leitachse
+                    spaet
+                    etikett="Kennwerte"
+                    titel="Frostbeständigkeit und Rutschhemmung: worauf es ankommt"
+                >
+                    <div className="grid gap-y-12 md:grid-cols-2 md:gap-x-12">
+                        <article className="border-t border-tinte pt-6">
+                            <h3 className="font-anzeige text-fs-5 text-tinte">Frostbeständigkeit</h3>
+                            <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">
                                 Keramische Fliesen werden nach DIN EN ISO 10545-12 auf Frostbeständigkeit geprüft; Feinsteinzeug mit
                                 seiner sehr geringen Wasseraufnahme besteht diese Prüfung in der Regel. Bei Naturstein entscheidet die
                                 Sorte – maßgeblich ist die Frostwiderstandsprüfung nach DIN EN 12371. Lassen Sie sich den Nachweis
                                 für die konkrete Platte zeigen.
                             </p>
                         </article>
-                        <article className="rounded-tile-lg bg-slate-50 border border-slate-200 p-7">
-                            <Footprints className="w-7 h-7 text-orange-600 mb-4" aria-hidden="true" />
-                            <h3 className="font-black text-lg text-slate-900 mb-2">Rutschhemmung</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">
+                        <article className="border-t border-tinte pt-6">
+                            <h3 className="font-anzeige text-fs-5 text-tinte">Rutschhemmung</h3>
+                            <p className="mt-4 max-w-mass font-text text-fs-3 text-tinte-2">
                                 Die Rutschhemmung wird nach DIN EN 16165 ermittelt: R9 bis R13 für das Begehen mit Schuhen, A, B und C
                                 für barfuß begangene Nassbereiche. Für private Terrassen und Balkone gibt es keine feste Vorgabe; wir
                                 empfehlen strukturierte Oberflächen ab R11, an Pool-Rändern zusätzlich eine Barfuß-Klasse. Mehr im
                                 Beitrag{' '}
-                                <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
+                                <Link href="/blog/rutschfeste-fliesen-r-klassen" className={linkKlassen}>
                                     Rutschfeste Fliesen
                                 </Link>
                                 .
@@ -213,48 +216,30 @@ export default function TerrassenplattenPage() {
                         </article>
                     </div>
 
-                    <div className="overflow-x-auto rounded-tile-lg border border-slate-200">
-                        <table className="w-full min-w-[560px] text-left text-sm">
-                            <caption className="sr-only">Feinsteinzeug und Naturstein im Außenbereich</caption>
-                            <thead className="bg-slate-100 text-slate-900">
-                                <tr>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">Eigenschaft</th>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">2-cm-Feinsteinzeug</th>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">Naturstein</th>
-                                </tr>
-                            </thead>
-                            <tbody className="text-slate-700">
-                                {MATERIAL_ROWS.map((row) => (
-                                    <tr key={row.label} className="border-b border-slate-200 last:border-b-0 even:bg-slate-50">
-                                        <th scope="row" className="px-5 py-4 font-bold text-slate-900 align-top">{row.label}</th>
-                                        <td className="px-5 py-4 align-top leading-relaxed">{row.ceramic}</td>
-                                        <td className="px-5 py-4 align-top leading-relaxed">{row.stone}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    <p className="mt-5 text-sm text-slate-700 leading-relaxed">
+                    <Tabelle
+                        className="mt-12"
+                        name="Feinsteinzeug und Naturstein im Außenbereich"
+                        kopf={['Eigenschaft', '2-cm-Feinsteinzeug', 'Naturstein']}
+                        zeilen={MATERIAL_ROWS.map((row) => [row.label, row.ceramic, row.stone])}
+                    />
+                    <p className="mt-6 max-w-mass font-text text-fs-3 text-tinte-2">
                         Den ausführlichen Vergleich beider Materialien – auch für Innenräume – lesen Sie in{' '}
-                        <Link href="/blog/feinsteinzeug-oder-naturstein-vergleich" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
+                        <Link href="/blog/feinsteinzeug-oder-naturstein-vergleich" className={linkKlassen}>
                             Feinsteinzeug oder Naturstein? Der ehrliche Vergleich
                         </Link>
                         .
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Ground-level terrace + joints */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                    <article className="lg:col-span-2 glass-surface rounded-tile-lg p-7" aria-labelledby="terrassenplatten-erdreich-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <Trees className="w-5 h-5" />
-                        </span>
-                        <h2 id="terrassenplatten-erdreich-heading" className="text-xl font-black text-slate-900 mb-4">
-                            Terrasse auf Erdreich: der Unterbau als Voraussetzung
-                        </h2>
-                        <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
+                {/* 4. ERDREICH UND FUGEN: zwei Zeilen an der Fuge in einem Abschnitt ohne eigenen Kopf (wie im Bestand) */}
+                <Abschnitt flaeche="fliese" leitachse spaet>
+                    <article aria-labelledby="terrassenplatten-erdreich-heading" className={ZEILE}>
+                        <div className={ZEILE_KOPF}>
+                            <h2 id="terrassenplatten-erdreich-heading" className={ZEILE_TITEL}>
+                                Terrasse auf Erdreich: der Unterbau als Voraussetzung
+                            </h2>
+                        </div>
+                        <div className={clsx(ZEILE_TEXT, 'flex flex-col gap-4 font-text text-fs-3 text-tinte-2')}>
                             <p>
                                 Die beste Platte sackt ab oder kippelt, wenn der Unterbau nachgibt. Eine Terrasse auf Erdreich braucht
                                 deshalb eine tragfähige, frostsichere und verdichtete Tragschicht, die Wasser versickern lässt, und ein
@@ -268,87 +253,97 @@ export default function TerrassenplattenPage() {
                         </div>
                     </article>
 
-                    <div className="lg:col-span-3">
-                        <span className="eyebrow mb-4">
-                            <Grid3x3 className="w-3.5 h-3.5" />
-                            Fugen
-                        </span>
-                        <h2 id="terrassenplatten-fugen-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6">
-                            Fugen außen: offen, gebunden oder elastisch
+                    <div className={ZEILE}>
+                        <div className={ZEILE_KOPF}>
+                            <p className={clsx(etikettKlassen, 'mb-4')}>
+                                <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                                Fugen
+                            </p>
+                            <h2 id="terrassenplatten-fugen-heading" className={ZEILE_TITEL}>
+                                Fugen außen: offen, gebunden oder elastisch
+                            </h2>
+                        </div>
+                        <div className={ZEILE_TEXT}>
+                            <Merkliste titelAls="h3" eintraege={JOINTS.map((joint) => ({ titel: joint.title, text: joint.text }))} />
+                            {/* Merkhinweis wie `Hinweis` (Rahmen, Kante links, Info-Zeichen), ohne zusätzliches Vorwort: Wortlaut wie im Bestand */}
+                            <div className="mt-8 flex items-start gap-4 border border-l-2 border-strich bg-kalk p-6 font-text text-fs-2 text-tinte">
+                                <Icon name="info" groesse={5} className="mt-1 text-tinte" />
+                                <p className="min-w-0">
+                                    Bei gebundener Verlegung auf einer Verbundabdichtung werden die Fugen geschlossen und mit frostbeständigem
+                                    Fugenmörtel verfüllt; das Wasser läuft dann über die Belagsoberfläche im Gefälle ab.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </Abschnitt>
+
+                {/* 5. BERATUNG & AUFMASS: Hauptknopf, Telefon in Mono und WhatsApp aus COMPANY_DATA */}
+                <Abschnitt
+                    titelId="terrassenplatten-cta-heading"
+                    leitachse
+                    spaet
+                    etikett="Beratung & Aufmaß"
+                    titel="Die passende Platte für Ihren Aufbau"
+                    einleitung={
+                        <p>
+                            Wir stimmen Material, Stärke, Format und Oberfläche auf Ihre Fläche ab und sagen Ihnen, welche Platte zum
+                            gewählten Aufbau passt.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
+                            Terrassenplatten anfragen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf
+                            href={COMPANY_DATA.contact.whatsappLink}
+                            extern
+                            variante="neben"
+                            vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                        >
+                            WhatsApp
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 6. WEITERFÜHRENDE RATGEBER: Navigation wie im Bestand (eigener Landmark), Kopf und Fläche wie ein Abschnitt
+                    auf Fliese, die Verweise als Register mit Pfeil (Muster „Fachthemen im Detail“ der Startseite) */}
+                <nav aria-labelledby="terrassenplatten-ratgeber-heading" className="relative border-y border-fuge bg-fliese py-16 lg:py-24">
+                    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10">
+                        <div className={clsx(seitenKlassen, 'relative')}>
+                            <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2 text-tinte', ACHSE_LAGE)} />
+                        </div>
+                    </div>
+                    <div className={clsx(seitenKlassen, 'spaet-zeichnen')}>
+                        <h2 id="terrassenplatten-ratgeber-heading" className="max-w-mass text-fs-6 text-tinte">
+                            Weiterführende Ratgeber zu Terrassenplatten &amp; Außenbelägen
                         </h2>
-                        <ul className="space-y-4">
-                            {JOINTS.map((joint) => (
-                                <li key={joint.title} className="rounded-tile-md bg-white border border-slate-200 p-5">
-                                    <h3 className="font-black text-base text-slate-900 mb-1">{joint.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{joint.text}</p>
+                        <ul className="mt-12 border-t border-tinte">
+                            {FURTHER_READING.map((link) => (
+                                <li key={link.href} className="border-b border-fuge">
+                                    <Link
+                                        href={link.href}
+                                        data-motion="zustand"
+                                        className="group flex min-h-12 items-center gap-4 px-3 py-3 pointer-fine:hover:bg-kalk active:bg-kalk"
+                                    >
+                                        <span className={clsx('min-w-0 flex-1 font-text text-fs-3 font-semibold text-tinte', UNTERSTRICH)}>
+                                            {link.label}
+                                        </span>
+                                        <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                            <Icon name="pfeil-rechts" groesse={5} />
+                                        </span>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
-                        <div className="mt-6 flex gap-3 rounded-tile-md bg-orange-50 border border-orange-200 p-5 text-sm text-slate-700 leading-relaxed">
-                            <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                            <p>
-                                Bei gebundener Verlegung auf einer Verbundabdichtung werden die Fugen geschlossen und mit frostbeständigem
-                                Fugenmörtel verfüllt; das Wasser läuft dann über die Belagsoberfläche im Gefälle ab.
-                            </p>
-                        </div>
                     </div>
-                </div>
-            </section>
-
-            {/* CTA + further reading */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" aria-labelledby="terrassenplatten-cta-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">Beratung &amp; Aufmaß</span>
-                    <h2 id="terrassenplatten-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
-                        Die passende Platte für Ihren Aufbau
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Wir stimmen Material, Stärke, Format und Oberfläche auf Ihre Fläche ab und sagen Ihnen, welche Platte zum
-                        gewählten Aufbau passt.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Terrassenplatten anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-700" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="terrassenplatten-ratgeber-heading">
-                    <h2 id="terrassenplatten-ratgeber-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                        Weiterführende Ratgeber zu Terrassenplatten &amp; Außenbelägen
-                    </h2>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {FURTHER_READING.map((link) => (
-                            <li key={link.href}>
-                                <Link
-                                    href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2"
-                                >
-                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
                 </nav>
-            </section>
+            </Leitachse>
 
             <QualityPromise />
-        </div>
+        </>
     );
 }

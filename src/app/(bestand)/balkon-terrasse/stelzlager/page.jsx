@@ -1,25 +1,27 @@
-import React from 'react';
+// Stelzlager (E5-BAU-05 / S-14, KERN v2): Erzählansicht nach dem Muster der Familie Themen (/leistungen/[id], /fliesen,
+// /untergrund-abdichtung/ausgleich-gefaelle). Einstieg mit Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts das
+// Planblatt mit dem Plan „aussen“ (interaktiv, ohne Achse). Danach die Leitachse über die Abschnitte, Flächen im Wechsel:
+// 2. Prinzip (Kalk): Text an der Fuge neben dem gezeichneten Schnitt (Schichten als Bänder auf einem Blatt, Legende darunter)
+// · 3. Vorteile (Fliese): Feldraster, Felder Kalk · 4. Voraussetzungen, Höhenausgleich, Revision (Kalk): drei Zeilen an der
+// Fuge, Überschrift links, Text rechts · 5. Grenzen (Fliese): drei Spalten an der Fuge · 6. Aufmaß (Kalk): Knöpfe mit Telefon
+// und WhatsApp aus COMPANY_DATA · 7. Weiterführende Ratgeber (Fliese): Navigation als Register wie auf der Startseite.
+// Abschluss: QualityPromise. Kein großer Moment, kein Auftritt, keine Icon-Kacheln (eine Icon-Familie). Wortlaut,
+// Überschriften, Links, IDs und Lesefolge wie im Bestand; Metadaten unverändert.
 import Link from 'next/link';
-import {
-    ArrowRight,
-    Phone,
-    MessageCircle,
-    Layers,
-    Droplets,
-    ShieldCheck,
-    Ruler,
-    Wrench,
-    Sparkles,
-    Gauge,
-    Wind,
-    Weight,
-    TriangleAlert,
-    BookOpen,
-    CheckCircle2
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Icon from '@/components/icons/Icon';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse, { ACHSE_LAGE } from '@/components/kern/Leitachse';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen, seitenKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Terrassenplatten auf Stelzlagern verlegen | Tezgel',
@@ -28,44 +30,39 @@ export const metadata = createMetadata({
     path: '/balkon-terrasse/stelzlager'
 });
 
+// Schnitt von oben nach unten: Höhe und Fläche je Schicht (nur Tokens); das Lager zeigt seine Stützen
 const CROSS_SECTION = [
-    { label: '2-cm-Feinsteinzeugplatte', note: 'frostbeständig, liegt nur an den Ecken auf', className: 'bg-slate-200 border-slate-300 text-slate-900 h-9' },
-    { label: 'Stelzlager mit Fugensteg', note: 'höhenverstellbar, gibt die offene Fuge vor', className: 'bg-orange-50 border-orange-200 text-orange-900 h-14' },
-    { label: 'Schutzlage / Lagerpad', note: 'verteilt die Last, schont die Abdichtung', className: 'bg-stone-100 border-stone-200 text-slate-900 h-8' },
-    { label: 'Abdichtung im Gefälle', note: 'führt das Wasser zu Ablauf oder Rinne', className: 'bg-slate-800 border-slate-900 text-white h-8' },
-    { label: 'Tragender Untergrund', note: 'Balkonplatte, Dachdecke oder Betonplatte', className: 'bg-slate-100 border-slate-300 text-slate-900 h-10' }
+    { label: '2-cm-Feinsteinzeugplatte', note: 'frostbeständig, liegt nur an den Ecken auf', className: 'h-8 bg-fliese text-tinte' },
+    { label: 'Stelzlager mit Fugensteg', note: 'höhenverstellbar, gibt die offene Fuge vor', className: 'h-16 bg-kalk text-tinte', stuetzen: true },
+    { label: 'Schutzlage / Lagerpad', note: 'verteilt die Last, schont die Abdichtung', className: 'h-8 bg-fuge text-tinte' },
+    { label: 'Abdichtung im Gefälle', note: 'führt das Wasser zu Ablauf oder Rinne', className: 'h-8 bg-tinte text-kalk' },
+    { label: 'Tragender Untergrund', note: 'Balkonplatte, Dachdecke oder Betonplatte', className: 'h-12 bg-strich text-tinte' }
 ];
 
 const FEATURES = [
     {
         title: 'Punktförmige Auflage',
-        desc: 'Jedes Lager trägt die Ecken von bis zu vier Platten. Die Platte überspannt den Raum dazwischen – deshalb kommen hier 2-cm-Platten mit hoher Bruchlast zum Einsatz, keine dünnen Innenfliesen.',
-        icon: Layers
+        desc: 'Jedes Lager trägt die Ecken von bis zu vier Platten. Die Platte überspannt den Raum dazwischen – deshalb kommen hier 2-cm-Platten mit hoher Bruchlast zum Einsatz, keine dünnen Innenfliesen.'
     },
     {
         title: 'Offene Fugen',
-        desc: 'Der Fugensteg am Lagerkopf hält einen gleichmäßigen Abstand von wenigen Millimetern. Regenwasser läuft sofort durch die Fugen nach unten ab, statt auf dem Belag zu stehen.',
-        icon: Droplets
+        desc: 'Der Fugensteg am Lagerkopf hält einen gleichmäßigen Abstand von wenigen Millimetern. Regenwasser läuft sofort durch die Fugen nach unten ab, statt auf dem Belag zu stehen.'
     },
     {
         title: 'Kein Mörtelbett',
-        desc: 'Ohne Mörtel unter dem Belag gibt es auch keine Quelle für Kalkausblühungen an Fugen und Stirnkanten. Das ist ein Vorteil des Systems, der einen fachgerechten Aufbau voraussetzt.',
-        icon: Sparkles
+        desc: 'Ohne Mörtel unter dem Belag gibt es auch keine Quelle für Kalkausblühungen an Fugen und Stirnkanten. Das ist ein Vorteil des Systems, der einen fachgerechten Aufbau voraussetzt.'
     },
     {
         title: 'Zugängliche Abdichtung',
-        desc: 'Die Abdichtung liegt geschützt unter dem Belag und bleibt erreichbar. Abläufe, Rinnen und Anschlüsse lassen sich kontrollieren, ohne einen Belag zu zerstören.',
-        icon: ShieldCheck
+        desc: 'Die Abdichtung liegt geschützt unter dem Belag und bleibt erreichbar. Abläufe, Rinnen und Anschlüsse lassen sich kontrollieren, ohne einen Belag zu zerstören.'
     },
     {
         title: 'Stufenloser Höhenausgleich',
-        desc: 'Über ein Gewinde lassen sich die Lager in der Höhe einstellen. So entsteht auf einem Untergrund mit Gefälle und kleinen Unebenheiten eine ebene, trittsichere Oberfläche.',
-        icon: Ruler
+        desc: 'Über ein Gewinde lassen sich die Lager in der Höhe einstellen. So entsteht auf einem Untergrund mit Gefälle und kleinen Unebenheiten eine ebene, trittsichere Oberfläche.'
     },
     {
         title: 'Sofort begehbar',
-        desc: 'Da nichts abbinden oder trocknen muss, ist die Fläche direkt nach der Verlegung nutzbar. Das ist besonders bei bewohnten Häusern und Dachterrassen ein Plus.',
-        icon: Gauge
+        desc: 'Da nichts abbinden oder trocknen muss, ist die Fläche direkt nach der Verlegung nutzbar. Das ist besonders bei bewohnten Häusern und Dachterrassen ein Plus.'
     }
 ];
 
@@ -80,18 +77,15 @@ const REQUIREMENTS = [
 const LIMITS = [
     {
         title: 'Windsog',
-        desc: 'Auf hohen Gebäuden, an Gebäudeecken und auf frei liegenden Dachterrassen können Windkräfte lose aufliegende Platten anheben. Ob und wie der Belag gesichert werden muss, richtet sich nach Gebäude, Lage und den Angaben des Systemherstellers.',
-        icon: Wind
+        desc: 'Auf hohen Gebäuden, an Gebäudeecken und auf frei liegenden Dachterrassen können Windkräfte lose aufliegende Platten anheben. Ob und wie der Belag gesichert werden muss, richtet sich nach Gebäude, Lage und den Angaben des Systemherstellers.'
     },
     {
         title: 'Punktlasten',
-        desc: 'Schwere Pflanzkübel, Außenküchen oder Wasserbecken erzeugen hohe Einzellasten. Sie werden vor der Verlegung eingeplant, etwa mit zusätzlichen Lagern unter den betroffenen Platten.',
-        icon: Weight
+        desc: 'Schwere Pflanzkübel, Außenküchen oder Wasserbecken erzeugen hohe Einzellasten. Sie werden vor der Verlegung eingeplant, etwa mit zusätzlichen Lagern unter den betroffenen Platten.'
     },
     {
         title: 'Absturzsicherung',
-        desc: 'Jeder zusätzliche Zentimeter Belagshöhe verringert die wirksame Höhe von Geländer oder Brüstung. Das ist bei der Planung zu prüfen; Arbeiten am Geländer gehören nicht zu unseren Leistungen.',
-        icon: TriangleAlert
+        desc: 'Jeder zusätzliche Zentimeter Belagshöhe verringert die wirksame Höhe von Geländer oder Brüstung. Das ist bei der Planung zu prüfen; Arbeiten am Geländer gehören nicht zu unseren Leistungen.'
     }
 ];
 
@@ -102,47 +96,61 @@ const FURTHER_READING = [
     { label: 'Leistung: Außenbereiche & Balkone', href: '/leistungen/aussen' }
 ];
 
+const nummer = (i) => String(i + 1).padStart(2, '0');
+
+// Zeile an der Fuge (Abschnitt 4): Überschrift links (5 Spalten ab lg), Text rechts in Lesebreite; die H2 bleibt H2
+const ZEILE = 'grid grid-cols-4 gap-y-6 border-t border-fuge py-12 first:border-t-0 first:pt-0 last:pb-0 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12';
+const ZEILE_KOPF = 'col-span-4 md:col-span-8 lg:col-span-5';
+const ZEILE_TEXT = 'col-span-4 flex max-w-mass flex-col gap-4 font-text text-fs-3 text-tinte-2 md:col-span-8 lg:col-span-7';
+const ZEILE_TITEL = 'font-anzeige text-fs-5 text-tinte';
+
+// Unterstrich der Registerzeile erscheint beim Überfahren (wie „Fachthemen im Detail“ auf der Startseite)
+const UNTERSTRICH = 'decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
 export default function StelzlagerPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="stelzlager-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Layers className="w-3.5 h-3.5" />
-                        Balkon- &amp; Terrassensanierung auf Stelzlagern
-                    </span>
-                    <h1 id="stelzlager-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Terrassenplatten auf Stelzlagern verlegen mit{' '}
-                        <span className="text-ceramic-gradient">Tezgel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Terrassenplatten auf Stelzlagern verlegen lassen: Fachbetrieb Tezgel montiert 2-cm-Feinsteinzeug auf höhenverstellbaren Stelzlagern in Wetzlar &amp; Aßlar – frostsicher, dauerhaft drainagefähig und ohne Mörtelbett.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Terrassensanierung anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/balkon-terrasse" className="btn-ghost px-7 py-3.5 text-xs">
-                            Aufbauten vergleichen
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „aussen“ */}
+            <section aria-labelledby="stelzlager-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Balkon- &amp; Terrassensanierung auf Stelzlagern</>}
+                    titel={<span id="stelzlager-heading">Terrassenplatten auf Stelzlagern verlegen mit Tezgel</span>}
+                    vorspann={
+                        <p>
+                            Terrassenplatten auf Stelzlagern verlegen lassen: Fachbetrieb Tezgel montiert 2-cm-Feinsteinzeug auf höhenverstellbaren Stelzlagern in Wetzlar &amp; Aßlar – frostsicher, dauerhaft drainagefähig und ohne Mörtelbett.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Terrassensanierung anfragen
+                            </Knopf>
+                            <Knopf href="/balkon-terrasse" variante="neben">
+                                Aufbauten vergleichen
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Terrassenplatten auf Stelzlagern verlegen', 'aussen')}>
+                            <Verlegeplan plan="aussen" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Principle + cross-section */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="stelzlager-prinzip-heading">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <span className="eyebrow mb-4">Das Prinzip</span>
-                        <h2 id="stelzlager-prinzip-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            So funktioniert die Stelzlager-Verlegung
-                        </h2>
-                        <div className="mt-5 space-y-4 text-base text-slate-700 leading-relaxed">
+            <Leitachse>
+                {/* 2. PRINZIP: zwei Absätze an der Fuge, daneben der Schnitt als Zeichenblatt (Bänder dekorativ wie im Bestand),
+                    darunter die Legende mit denselben Nummern */}
+                <Abschnitt
+                    titelId="stelzlager-prinzip-heading"
+                    leitachse
+                    spaet
+                    etikett="Das Prinzip"
+                    titel="So funktioniert die Stelzlager-Verlegung"
+                >
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="flex max-w-mass flex-col gap-4 font-text text-fs-3 text-tinte-2 lg:col-span-6">
                             <p>
                                 Statt die Platten in ein Mörtelbett zu legen, stehen sie auf einzelnen, höhenverstellbaren Lagern. Das
                                 Wasser fließt durch die offenen Fugen auf die Abdichtungsebene und wird dort im Gefälle zu Ablauf oder
@@ -155,95 +163,102 @@ export default function StelzlagerPage() {
                                 Oberfläche liegt eben oder mit leichtem Restgefälle.
                             </p>
                         </div>
-                    </div>
 
-                    <figure className="glass-surface rounded-tile-lg p-6 sm:p-8">
-                        <div className="space-y-2" aria-hidden="true">
-                            {CROSS_SECTION.map((layer) => (
-                                <div key={layer.label} className={`rounded-tile-sm border flex items-center px-4 ${layer.className}`}>
-                                    <span className="text-xs font-black">{layer.label}</span>
+                        <figure className="self-start lg:col-span-6">
+                            <Planblatt>
+                                <div className="border border-strich" aria-hidden="true">
+                                    {CROSS_SECTION.map((layer, i) => (
+                                        <div key={layer.label} className={clsx('flex items-stretch border-b border-strich last:border-b-0', layer.className)}>
+                                            <span className="flex min-w-0 items-center gap-4 px-4 font-mono text-fs-1">
+                                                <span>{nummer(i)}</span>
+                                                <span>{layer.label}</span>
+                                            </span>
+                                            {layer.stuetzen && (
+                                                <span className="ml-auto flex w-2/5 shrink-0 justify-around">
+                                                    <span className="w-2 shrink-0 bg-tinte-2" />
+                                                    <span className="w-2 shrink-0 bg-tinte-2" />
+                                                    <span className="w-2 shrink-0 bg-tinte-2" />
+                                                </span>
+                                            )}
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            </Planblatt>
+                            <figcaption className="border-x border-b border-fuge bg-fliese p-6 lg:p-8">
+                                <p className="font-text text-fs-2 font-semibold text-tinte">Schematischer Aufbau von oben nach unten</p>
+                                <ol className="mt-4 border-t border-fuge">
+                                    {CROSS_SECTION.map((layer, i) => (
+                                        <li key={layer.label} className="flex items-baseline gap-4 border-b border-fuge py-3 font-text text-fs-2 text-tinte-2 last:border-b-0 last:pb-0">
+                                            <span aria-hidden="true" className="font-mono text-fs-1 text-tinte">
+                                                {nummer(i)}
+                                            </span>
+                                            <span className="min-w-0">
+                                                <span className="font-semibold text-tinte">{layer.label}</span> – {layer.note}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ol>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </Abschnitt>
+
+                {/* 3. VORTEILE: sechs Felder auf Kalk im Band auf Fliese (drei bzw. zwei Spalten ohne Restzelle) */}
+                <Abschnitt
+                    titelId="stelzlager-vorteile-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Vorteile"
+                    titel="Freier Wasserablauf, kein Mörtel, zugängliche Abdichtung"
+                >
+                    <ul className="grid grid-cols-1 gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-cols-3">
+                        {FEATURES.map((item) => (
+                            <li key={item.title} className="flex flex-col bg-kalk p-6 lg:p-8">
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </Abschnitt>
+
+                {/* 4. VORAUSSETZUNGEN, HÖHENAUSGLEICH, REVISION: wie im Bestand drei Teile mit eigener H2 in einem Abschnitt
+                    ohne eigenen Kopf – als Zeilen an der Fuge (Überschrift links, Text rechts) */}
+                <Abschnitt leitachse spaet>
+                    <article aria-labelledby="stelzlager-voraussetzungen-heading" className={ZEILE}>
+                        <div className={ZEILE_KOPF}>
+                            <h2 id="stelzlager-voraussetzungen-heading" className={ZEILE_TITEL}>
+                                Voraussetzungen: tragfähig und abgedichtet
+                            </h2>
                         </div>
-                        <figcaption className="mt-5">
-                            <p className="text-sm font-black text-slate-900 mb-2">Schematischer Aufbau von oben nach unten</p>
-                            <ol className="space-y-1.5 text-sm text-slate-700 list-decimal list-inside marker:text-orange-600">
-                                {CROSS_SECTION.map((layer) => (
-                                    <li key={layer.label}>
-                                        <span className="font-bold text-slate-900">{layer.label}</span> – {layer.note}
+                        <div className={ZEILE_TEXT}>
+                            <ul className="grid gap-3">
+                                {REQUIREMENTS.map((req) => (
+                                    <li key={req} className="flex gap-3 text-tinte">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                                            <Fugenkreuz className="size-3" />
+                                        </span>
+                                        <span className="min-w-0">{req}</span>
                                     </li>
                                 ))}
-                            </ol>
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            {/* Features */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="stelzlager-vorteile-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Vorteile</span>
-                        <h2 id="stelzlager-vorteile-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Freier Wasserablauf, kein Mörtel,{' '}
-                            <span className="text-ceramic-gradient">zugängliche Abdichtung</span>
-                        </h2>
-                    </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {FEATURES.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                                <li
-                                    key={item.title}
-                                    className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                >
-                                    <span className="icon-chip w-12 h-12 mb-5">
-                                        <Icon className="w-6 h-6" />
-                                    </span>
-                                    <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">{item.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
-            </section>
-
-            {/* Requirements, height, revision */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <article className="glass-surface rounded-tile-lg p-7 lg:col-span-1" aria-labelledby="stelzlager-voraussetzungen-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <ShieldCheck className="w-5 h-5" />
-                        </span>
-                        <h2 id="stelzlager-voraussetzungen-heading" className="text-xl font-black text-slate-900 mb-4">
-                            Voraussetzungen: tragfähig und abgedichtet
-                        </h2>
-                        <ul className="space-y-3">
-                            {REQUIREMENTS.map((req) => (
-                                <li key={req} className="flex gap-2.5 text-sm text-slate-700 leading-relaxed">
-                                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                                    {req}
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="mt-4 text-sm text-slate-700 leading-relaxed">
-                            Ist die vorhandene Abdichtung schadhaft, wird sie vor dem neuen Belag erneuert – mehr dazu unter{' '}
-                            <Link href="/balkon-terrasse/balkonsanierung" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
-                                Balkonsanierung
-                            </Link>
-                            .
-                        </p>
+                            </ul>
+                            <p>
+                                Ist die vorhandene Abdichtung schadhaft, wird sie vor dem neuen Belag erneuert – mehr dazu unter{' '}
+                                <Link href="/balkon-terrasse/balkonsanierung" className={linkKlassen}>
+                                    Balkonsanierung
+                                </Link>
+                                .
+                            </p>
+                        </div>
                     </article>
 
-                    <article className="glass-surface rounded-tile-lg p-7" aria-labelledby="stelzlager-hoehe-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <Ruler className="w-5 h-5" />
-                        </span>
-                        <h2 id="stelzlager-hoehe-heading" className="text-xl font-black text-slate-900 mb-4">
-                            Höhenausgleich: Gefälle und Unebenheiten auffangen
-                        </h2>
-                        <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
+                    <article aria-labelledby="stelzlager-hoehe-heading" className={ZEILE}>
+                        <div className={ZEILE_KOPF}>
+                            <h2 id="stelzlager-hoehe-heading" className={ZEILE_TITEL}>
+                                Höhenausgleich: Gefälle und Unebenheiten auffangen
+                            </h2>
+                        </div>
+                        <div className={ZEILE_TEXT}>
                             <p>
                                 Die Abdichtung muss Gefälle haben, damit Wasser abläuft – der Belag soll trotzdem eben sein. Die Lager
                                 werden deshalb einzeln eingestellt: am Hochpunkt niedriger, zum Ablauf hin höher.
@@ -255,7 +270,7 @@ export default function StelzlagerPage() {
                             <p>
                                 Die Gesamthöhe aus Lager und Platte muss zur Türschwelle passen. Wie niedrig der Übergang sein darf, erklärt
                                 unser Beitrag zum{' '}
-                                <Link href="/blog/barrierefreier-balkonaustritt" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
+                                <Link href="/blog/barrierefreier-balkonaustritt" className={linkKlassen}>
                                     barrierefreien Balkonaustritt
                                 </Link>
                                 .
@@ -263,14 +278,13 @@ export default function StelzlagerPage() {
                         </div>
                     </article>
 
-                    <article className="glass-surface rounded-tile-lg p-7" aria-labelledby="stelzlager-revision-heading">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <Wrench className="w-5 h-5" />
-                        </span>
-                        <h2 id="stelzlager-revision-heading" className="text-xl font-black text-slate-900 mb-4">
-                            Revision und Pflege
-                        </h2>
-                        <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
+                    <article aria-labelledby="stelzlager-revision-heading" className={ZEILE}>
+                        <div className={ZEILE_KOPF}>
+                            <h2 id="stelzlager-revision-heading" className={ZEILE_TITEL}>
+                                Revision und Pflege
+                            </h2>
+                        </div>
+                        <div className={ZEILE_TEXT}>
                             <p>
                                 Einzelne Platten lassen sich mit einem Saugheber anheben. So erreichen Sie Abläufe und Rinnen, ohne den
                                 Belag zu beschädigen, und eine beschädigte Platte wird einfach getauscht.
@@ -282,98 +296,107 @@ export default function StelzlagerPage() {
                             <p>
                                 Die Oberfläche des Feinsteinzeugs reinigen Sie mit Wasser und einem milden Reiniger; Tipps dazu im
                                 Beitrag{' '}
-                                <Link href="/blog/fliesen-reinigen-pflegen" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
+                                <Link href="/blog/fliesen-reinigen-pflegen" className={linkKlassen}>
                                     Fliesen richtig reinigen
                                 </Link>
                                 .
                             </p>
                         </div>
                     </article>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Limits */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="stelzlager-grenzen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Ehrlich geplant</span>
-                        <h2 id="stelzlager-grenzen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Grenzen: Wind, Möblierung, Punktlasten
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                {/* 5. GRENZEN: drei Spalten an der Fuge (ab lg nebeneinander), je Spalte Überschrift und Text */}
+                <Abschnitt
+                    titelId="stelzlager-grenzen-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Ehrlich geplant"
+                    titel="Grenzen: Wind, Möblierung, Punktlasten"
+                    einleitung={
+                        <p>
                             Stelzlager sind kein Universalsystem. Diese Punkte klären wir vor der Verlegung – und ziehen, wo nötig,
                             Fachplaner hinzu.
                         </p>
-                    </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {LIMITS.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                                <li key={item.title} className="rounded-tile-lg bg-slate-50 border border-slate-200 p-7">
-                                    <Icon className="w-7 h-7 text-amber-500 mb-4" aria-hidden="true" />
-                                    <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
-            </section>
-
-            {/* CTA + further reading */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 relative z-10" aria-labelledby="stelzlager-cta-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">Kostenfreies Aufmaß</span>
-                    <h2 id="stelzlager-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
-                        Passt ein Stelzlager-Belag auf Ihren Balkon?
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Wir messen Aufbauhöhe und Gefälle, prüfen die Abdichtung und sagen Ihnen offen, ob das System passt oder
-                        vorher saniert werden muss.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Terrassensanierung anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-700" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            Fotos per WhatsApp senden
-                        </a>
-                    </div>
-                </div>
-
-                <nav className="mt-10 glass-surface rounded-tile-xl p-7" aria-labelledby="stelzlager-ratgeber-heading">
-                    <h2 id="stelzlager-ratgeber-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                        Weiterführende Ratgeber zu Stelzlagern &amp; Terrassenbelägen
-                    </h2>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {FURTHER_READING.map((link) => (
-                            <li key={link.href}>
-                                <Link
-                                    href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2"
-                                >
-                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                                    {link.label}
-                                </Link>
+                    }
+                >
+                    <ul className="grid gap-y-12 lg:grid-cols-3 lg:gap-x-12">
+                        {LIMITS.map((item) => (
+                            <li key={item.title} className="border-t border-tinte pt-6">
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
                             </li>
                         ))}
                     </ul>
+                </Abschnitt>
+
+                {/* 6. AUFMASS: Hauptknopf, Telefon in Mono und WhatsApp aus COMPANY_DATA */}
+                <Abschnitt
+                    titelId="stelzlager-cta-heading"
+                    leitachse
+                    spaet
+                    etikett="Kostenfreies Aufmaß"
+                    titel="Passt ein Stelzlager-Belag auf Ihren Balkon?"
+                    einleitung={
+                        <p>
+                            Wir messen Aufbauhöhe und Gefälle, prüfen die Abdichtung und sagen Ihnen offen, ob das System passt oder
+                            vorher saniert werden muss.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
+                            Terrassensanierung anfragen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf
+                            href={COMPANY_DATA.contact.whatsappLink}
+                            extern
+                            variante="neben"
+                            vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+                        >
+                            Fotos per WhatsApp senden
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 7. WEITERFÜHRENDE RATGEBER: Navigation wie im Bestand (eigener Landmark), Kopf und Fläche wie ein Abschnitt
+                    auf Fliese, die Verweise als Register mit Pfeil (Muster „Fachthemen im Detail“ der Startseite) */}
+                <nav aria-labelledby="stelzlager-ratgeber-heading" className="relative border-y border-fuge bg-fliese py-16 lg:py-24">
+                    <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10">
+                        <div className={clsx(seitenKlassen, 'relative')}>
+                            <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2 text-tinte', ACHSE_LAGE)} />
+                        </div>
+                    </div>
+                    <div className={clsx(seitenKlassen, 'spaet-zeichnen')}>
+                        <h2 id="stelzlager-ratgeber-heading" className="max-w-mass text-fs-6 text-tinte">
+                            Weiterführende Ratgeber zu Stelzlagern &amp; Terrassenbelägen
+                        </h2>
+                        <ul className="mt-12 border-t border-tinte">
+                            {FURTHER_READING.map((link) => (
+                                <li key={link.href} className="border-b border-fuge">
+                                    <Link
+                                        href={link.href}
+                                        data-motion="zustand"
+                                        className="group flex min-h-12 items-center gap-4 px-3 py-3 pointer-fine:hover:bg-kalk active:bg-kalk"
+                                    >
+                                        <span className={clsx('min-w-0 flex-1 font-text text-fs-3 font-semibold text-tinte', UNTERSTRICH)}>
+                                            {link.label}
+                                        </span>
+                                        <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                            <Icon name="pfeil-rechts" groesse={5} />
+                                        </span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </nav>
-            </section>
+            </Leitachse>
 
             <QualityPromise />
-        </div>
+        </>
     );
 }

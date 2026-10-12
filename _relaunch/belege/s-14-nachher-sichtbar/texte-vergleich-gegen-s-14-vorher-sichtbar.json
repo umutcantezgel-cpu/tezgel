@@ -1,0 +1,78 @@
+{
+ "vorher": "s-14-vorher-sichtbar",
+ "nachher": "s-14-nachher-sichtbar",
+ "seiten": {
+  "/balkon-terrasse/terrassenplatten": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Terrassenplatten verlegen lassen",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/balkon-terrasse/stelzlager": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Terrassenplatten auf Stelzlagern verlegen",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "01",
+     "02",
+     "03",
+     "04",
+     "05",
+     "01",
+     "02",
+     "03",
+     "04",
+     "05"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 2,
+  "hinzu": 34,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

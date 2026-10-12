@@ -1,0 +1,48 @@
+{
+ "/balkon-terrasse/stelzlager": [
+  {
+   "ansicht": "m390",
+   "status": 200,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": []
+  },
+  {
+   "ansicht": "t768",
+   "status": 200,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": []
+  },
+  {
+   "ansicht": "d1440",
+   "status": 200,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": []
+  }
+ ],
+ "/balkon-terrasse/terrassenplatten": [
+  {
+   "ansicht": "m390",
+   "status": 200,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": []
+  },
+  {
+   "ansicht": "t768",
+   "status": 200,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": []
+  },
+  {
+   "ansicht": "d1440",
+   "status": 200,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": []
+  }
+ ]
+}
