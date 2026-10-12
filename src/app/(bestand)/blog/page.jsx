@@ -1,5 +1,6 @@
-// Ratgeber-Liste /blog (E3-BAU-09, Arbeitsansicht): Server-Komponente. Kopf (Einstieg) und Abschnitt sind Bausteine
-// der Kern-Schicht; Suche, Kategorien und Liste liegen in der Filter-Insel BlogFilter (Client). Texte wortgleich zum Bestand.
+// Ratgeber-Liste /blog (E3-BAU-09, Arbeitsansicht; Fusion E-039 F-03): Server-Komponente. Kopf (Einstieg) und Abschnitt
+// sind Bausteine der Kern-Schicht; Suche, Kategorien und Liste liegen in der Filter-Insel BlogFilter (Client). Texte
+// wortgleich zum Bestand; die Norm im Vorspann steht in Mono (K-003 Nr. 3, aus B), der Wortlaut bleibt gleich.
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Knopf from '@/components/kern/Knopf';
@@ -16,7 +17,7 @@ export default function BlogPage() {
         titel={<>Fliesen-Ratgeber &amp; <span>Badsanierung Tipps</span></>}
         vorspann={
           <p>
-            Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesenverlegung und DIN 18534 Verbundabdichtung – von Ihrem Fachbetrieb {COMPANY_DATA.legalName} aus {COMPANY_DATA.headquarters.city}.
+            Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesenverlegung und <span className="whitespace-nowrap font-mono text-fs-2 sm:text-fs-3">DIN 18534</span> Verbundabdichtung – von Ihrem Fachbetrieb {COMPANY_DATA.legalName} aus {COMPANY_DATA.headquarters.city}.
           </p>
         }
         aktionen={

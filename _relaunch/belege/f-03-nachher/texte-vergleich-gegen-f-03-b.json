@@ -1,0 +1,82 @@
+{
+ "vorher": "f-03-b",
+ "nachher": "f-03-nachher",
+ "seiten": {
+  "/blog": {
+   "main_zeilen": {
+    "entfernt": [
+     "HWK Fachbetrieb · HWK Wiesbaden",
+     "Punkt 01",
+     "Garantierter Standard",
+     "Punkt 02",
+     "Garantierter Standard",
+     "Punkt 03",
+     "Garantierter Standard",
+     "Punkt 04",
+     "Garantierter Standard",
+     "Punkt 05",
+     "Garantierter Standard",
+     "Punkt 06",
+     "Garantierter Standard",
+     "Punkt 07",
+     "Garantierter Standard",
+     "Punkt 08",
+     "Garantierter Standard"
+    ],
+    "hinzu": [
+     "HWK Fachbetrieb · HWK Wiesbaden · Garantierter Standard",
+     "01",
+     "02",
+     "03",
+     "04",
+     "05",
+     "06",
+     "07",
+     "08"
+    ]
+   },
+   "header_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "WhatsApp"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   },
+   "alt": {
+    "entfernt": [
+     "Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen",
+     "Undichte Dusche? 5 Warnzeichen für Feuchte hinter Fliesen",
+     "Feinsteinzeug oder Naturstein? Der ehrliche Vergleich",
+     "Fliesen richtig reinigen: Pflicht und Kür der Fliesenpflege",
+     "Barrierefreier Balkonaustritt: Wie niedrig darf die Türschwelle sein?",
+     "Wandnischen in Dusche und Bad: planen, abdichten, beleuchten",
+     "Duschrinne oder Punktablauf? Die Entwässerung der bodengleichen Dusche",
+     "Schimmel in Fliesenfugen vermeiden: Ursachen und Vorbeugung",
+     "Fliesen für Allergiker: Warum harte Böden entlasten können",
+     "Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?",
+     "5 Mythen über Fliesenböden im Faktencheck",
+     "Gäste-WC fliesen: So wirkt der kleine Raum größer",
+     "Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 31,
+  "hinzu": 10,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

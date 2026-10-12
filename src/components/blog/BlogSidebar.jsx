@@ -1,32 +1,38 @@
 "use client";
-import React from 'react';
+import { useId } from 'react';
 import { useContent } from '@/contexts/ContentContext';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import { zeichenFuer } from '@/components/blog/BlogCard';
-import { etikettKlassen, feldKlassen } from '@/components/kern/stile';
+import Suchfeld, { SUCHBEREICH_NAME } from '@/components/blog/liste/Suchfeld';
+import { etikettKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 
 // Kategorie-Zeile über die volle Breite des Feldes, durch 1-px-Fugen getrennt (Gruppen-Auswahl mit aria-pressed;
-// gedrückt: Tinte, Kalk-Text, Pfeil). Keine Karten mit Zwischenraum: die Zeilen stehen aneinander.
+// gedrückt: Tinte, Kalk-Text, Pfeil). Keine Karten mit Zwischenraum: die Zeilen stehen aneinander. Der Fokusring liegt
+// innen (2 px Abstand zur Kante), damit ihn die Nachbarzeile nicht verdeckt und er auf der gedrückten Zeile hell steht.
 const KATEGORIE =
-    'flex min-h-11 w-full items-center justify-between gap-4 border-b border-fuge bg-fliese px-4 py-2 text-left font-text text-fs-2 text-tinte hover:border-strich aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk';
+    'flex min-h-11 w-full items-center justify-between gap-4 border-b border-fuge bg-fliese px-4 py-2 text-left font-text text-fs-2 text-tinte last:border-b-0 hover:border-strich focus-visible:-outline-offset-4 aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk aria-pressed:focus-visible:outline-kalk';
 
 /**
- * Blog Sidebar Component
- * Features: Suche (fließt oben), darunter Kategorien und Beratung als ein Feld mit Fugen (keine Zwischenräume).
- * Ab xl klebt nur dieser untere Block unter dem Kopf, solange die Liste läuft; er ist kürzer als der Bildschirm
- * (1280 × 800 und 1440 × 900 vollständig sichtbar). Die Suche bleibt in der Fließrichtung.
- * (View counts and Popular Posts removed)
+ * Seitenleiste der Ratgeber-Liste ab lg (F-03, Fusion E-039): Grundgerüst A, Semantik aus B.
+ * Steht im DOM vor der Liste (Tab- und Lesefolge: Filter vor den Beiträgen, die sie steuern) und im Raster rechts.
+ * Suche (fließt oben): Such-Landmarke mit Namen, sichtbare Beschriftung „Artikel suchen“ und Lupe (B).
+ * Darunter Kategorien und Beratung als ein Feld mit Fugen; ab xl klebt nur dieser Block unter dem Kopf (top-24 =
+ * scroll-padding-top), solange die Liste läuft; er ist kürzer als der Bildschirm (1280 × 800 und 1440 × 900).
+ * Kategorien als benannte Gruppe (role="group" → „Kategorien“, B). „Kontakt aufnehmen“ als Nebenknopf und Telefon in Mono
+ * (B): die gedrückte Kategorie bleibt die einzige Tinte-Fläche der Leiste.
  */
 const BlogSidebar = ({
     activeCategory,
     setActiveCategory,
     searchQuery,
-    setSearchQuery
+    setSearchQuery,
+    suchfeldRef
 }) => {
     const { blogCategories = [], blogPosts = [] } = useContent();
+    const kategorienId = useId();
 
     // Only list categories that actually contain articles ("all" always stays).
     const categories = (blogCategories || []).filter(category =>
@@ -36,31 +42,31 @@ const BlogSidebar = ({
     return (
         <>
             {/* Suche (fließt) */}
-            <div className="border border-fuge bg-fliese px-4 py-3">
+            <div role="search" aria-label={SUCHBEREICH_NAME} className="border border-fuge bg-fliese px-4 py-3">
                 <p className={etikettKlassen}>
                     <Fugenkreuz className="size-3 shrink-0 text-strich" />
                     Suche
                 </p>
-                <input
-                    type="text"
-                    aria-label="Artikel suchen"
-                    placeholder="Artikel suchen..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className={feldKlassen}
+                <Suchfeld
+                    beschriftung="Artikel suchen"
+                    platzhalter="Artikel suchen..."
+                    wert={searchQuery}
+                    setzen={setSearchQuery}
+                    feldRef={suchfeldRef}
+                    className="mt-3"
                 />
             </div>
 
             {/* Kategorien und Beratung (ab xl klebend) */}
             <div className="divide-y divide-fuge border border-t-0 border-fuge bg-fliese xl:sticky xl:top-24">
-                {/* Kategorien */}
+                {/* Kategorien: Zeilen bis an die Fuge darunter, ohne Leerstreifen */}
                 {categories.length > 1 && (
-                    <div className="px-4 py-3">
-                        <p className={etikettKlassen}>
+                    <div className="pt-3">
+                        <p id={kategorienId} className={`${etikettKlassen} px-4`}>
                             <Fugenkreuz className="size-3 shrink-0 text-strich" />
                             Kategorien
                         </p>
-                        <div className="-mx-4 mt-2 flex flex-col border-t border-fuge">
+                        <div role="group" aria-labelledby={kategorienId} className="mt-2 flex flex-col border-t border-fuge">
                             {categories.map(category => {
                                 const zeichen = zeichenFuer(category.id);
                                 return (
@@ -93,11 +99,11 @@ const BlogSidebar = ({
                         persönlich – inklusive kostenfreiem Vor-Ort-Aufmaß.
                     </p>
                     <div className="mt-3 flex flex-col gap-3">
-                        <Knopf href="/kontakt" icon="pfeil-rechts" className="w-full">
+                        <Knopf href="/kontakt" variante="neben" icon="pfeil-rechts" className="w-full">
                             Kontakt aufnehmen
                         </Knopf>
-                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full tabular-nums">
-                            {COMPANY_DATA.contact.phone}
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
+                            <span className="font-mono">{COMPANY_DATA.contact.phone}</span>
                         </Knopf>
                     </div>
                 </div>

@@ -1,15 +1,29 @@
 "use client";
-import Link from 'next/link';
+import { useRef, useState } from 'react';
 import { useBlogListe } from '@/lib/formulare/useBlogListe';
-import BlogCard, { Themenmotiv, zeichenFuer } from '@/components/blog/BlogCard';
+import BlogCard, { zeichenFuer } from '@/components/blog/BlogCard';
 import BlogSidebar from '@/components/blog/BlogSidebar';
+import Leitfaden from '@/components/blog/liste/Leitfaden';
+import Suchfeld, { SUCHBEREICH_NAME } from '@/components/blog/liste/Suchfeld';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
-import { etikettKlassen, feldKlassen, labelKlassen, wahlKlassen } from '@/components/kern/stile';
+import { etikettKlassen, wahlKlassen } from '@/components/kern/stile';
 
-// Filter-Insel der Ratgeber-Liste /blog: Hook und das davon abhängige Markup (Suche und Kategorien mobil, Hervorhebung,
-// Liste, Leerzustand, Seitenleiste). Reihenfolge und Texte wie im Bestand; Zeilen an der Fuge statt Karten.
+// Filter-Insel der Ratgeber-Liste /blog (F-03, Fusion E-039; Grundgerüst A, Semantik und Robustheit aus B): Hook und
+// das davon abhängige Markup. Folge im DOM: Seitenleiste (ab lg, im Raster rechts) · Suche und Kategorien (unter lg) ·
+// Statusregion · Leitfaden · Beiträge als Zeilen an der Fuge. So stehen Suche und Filter in jeder Breite vor den Beiträgen,
+// die sie steuern (Tab- und Lesefolge, kein tabindex). Je Breite ist genau ein Suchfeld und eine Knopfgruppe im
+// Barrierebaum (die andere Fassung ist display:none); beide teilen einen Zustand.
+//
+// Suche: Das Feld zeigt die Eingabe, gefiltert wird mit dem getrimmten Begriff (die Logik in useBlogListe bleibt gleich).
+// Statusregion (role="status", immer vorhanden, im Ruhezustand leer): bei aktivem Filter die Trefferzahl in Mono, im
+// Leerzustand die Meldung samt „Filter zurücksetzen“ (Hauptknopf, A; Strich-Rahmen, B). Nach dem Zurücksetzen steht der
+// Fokus im sichtbaren Suchfeld statt auf <body>.
+
+/** Sichtbares Element aus einer Liste von Refs (das Suchfeld der aktuellen Breite) */
+const sichtbar = (refs) => refs.map((r) => r.current).find((el) => el && el.getClientRects().length > 0);
+
 export default function BlogFilter() {
   const {
     activeCategory,
@@ -25,48 +39,79 @@ export default function BlogFilter() {
     resetFilters,
   } = useBlogListe();
 
+  // Eingabe wie getippt; der Filter erhält den Begriff ohne Leerzeichen am Rand
+  const [eingabe, setEingabe] = useState(searchQuery);
+  const suchen = (wert) => {
+    setEingabe(wert);
+    setSearchQuery(wert.trim());
+  };
+
+  const sucheMobil = useRef(null);
+  const sucheDesktop = useRef(null);
+  const zuruecksetzen = () => {
+    resetFilters();
+    setEingabe('');
+    sichtbar([sucheMobil, sucheDesktop])?.focus();
+  };
+
+  const gefiltert = activeCategory !== 'all' || searchQuery !== '';
+  const anzahl = filteredPosts.length;
+
+  // Fokussierter Chip ganz ins Bild der querlaufenden Zeile: ragt er heraus, rückt er an den Anfang (= Rastpunkt von
+  // snap-start, sonst rastet die Zeile zurück); scroll-padding der Zeile gilt
+  const insBild = (e) => {
+    const chip = e.currentTarget.getBoundingClientRect();
+    const zeile = e.currentTarget.parentElement.getBoundingClientRect();
+    if (chip.left < zeile.left || chip.right > zeile.right) e.currentTarget.scrollIntoView({ block: 'nearest', inline: 'start' });
+  };
+
   return (
     <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
-      <div className="col-span-4 min-w-0 md:col-span-8 lg:col-span-8">
+
+      {/* Seitenleiste (ab lg): im DOM vor der Liste, im Raster rechts; volle Zeilenhöhe, damit der klebende Block darin
+          ab xl unter dem Kopf mitläuft */}
+      <div className="hidden lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:block">
+        <BlogSidebar
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          searchQuery={eingabe}
+          setSearchQuery={suchen}
+          suchfeldRef={sucheDesktop}
+        />
+      </div>
+
+      <div className="col-span-4 min-w-0 md:col-span-8 lg:col-span-8 lg:col-start-1 lg:row-start-1">
 
         {/* Suche (sichtbar beschriftet) und Kategorien als querlaufende Zeile (mobil und Tablett); die Zeile reicht bis
             an den Bildrand, die erste Schaltfläche steht auf dem Seitenrand (16 px) */}
         <div className="mb-6 flex flex-col gap-4 border-b border-fuge pb-6 lg:hidden">
-          <div>
-            <label htmlFor="blog-suche-mobil" className={labelKlassen}>Ratgeber durchsuchen</label>
-            <input
+          <div role="search" aria-label={SUCHBEREICH_NAME}>
+            <Suchfeld
               id="blog-suche-mobil"
-              type="text"
-              placeholder="Ratgeber durchsuchen..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className={feldKlassen}
+              beschriftung="Ratgeber durchsuchen"
+              platzhalter="Ratgeber durchsuchen..."
+              wert={eingabe}
+              setzen={suchen}
+              feldRef={sucheMobil}
             />
           </div>
 
           {visibleCategories.length > 0 && (
-            <div className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1">
-              <button
-                type="button"
-                onClick={() => setActiveCategory('all')}
-                aria-pressed={activeCategory === 'all'}
-                className={`${wahlKlassen} shrink-0 snap-start gap-2`}
-              >
-                {activeCategory === 'all' && <Fugenkreuz className="size-3 shrink-0" />}
-                Alle Themen
-              </button>
-              {visibleCategories.map(category => {
+            <div role="group" aria-label="Kategorien" className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 py-1">
+              {[{ id: 'all', name: 'Alle Themen' }, ...visibleCategories].map((category) => {
+                const gedrueckt = activeCategory === category.id;
                 const zeichen = zeichenFuer(category.id);
                 return (
                   <button
                     type="button"
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    aria-pressed={activeCategory === category.id}
+                    onFocus={insBild}
+                    aria-pressed={gedrueckt}
                     className={`${wahlKlassen} shrink-0 snap-start gap-2`}
                   >
-                    {activeCategory === category.id && <Fugenkreuz className="size-3 shrink-0" />}
-                    {zeichen && <Icon name={zeichen} groesse={4} />}
+                    {/* genau ein Zeichen: gedrückt das Fugenkreuz, sonst das Kategoriesymbol */}
+                    {gedrueckt ? <Fugenkreuz className="size-3 shrink-0" /> : zeichen && <Icon name={zeichen} groesse={4} />}
                     {category.name}
                   </button>
                 );
@@ -75,50 +120,28 @@ export default function BlogFilter() {
           )}
         </div>
 
-        {/* Hervorgehobener Beitrag (nur ohne Filter): auf dem Telefon die Zeichnung klein neben dem Text */}
+        {/* Statusregion: Trefferzahl bzw. Leerzustand werden angesagt */}
+        <div role="status">
+          {gefiltert && anzahl > 0 && (
+            <p className={`${etikettKlassen} mb-4`}>{anzahl} Artikel</p>
+          )}
+          {anzahl === 0 && (
+            <div className="flex flex-col items-start gap-4 border border-l-2 border-strich bg-fliese p-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex items-start gap-3">
+                <Icon name="suche" groesse={6} />
+                <p className="font-text text-fs-3 font-semibold text-tinte">Keine Artikel zur Suchanfrage gefunden.</p>
+              </div>
+              <Knopf type="button" onClick={zuruecksetzen}>
+                Filter zurücksetzen
+              </Knopf>
+            </div>
+          )}
+        </div>
+
+        {/* Hervorgehobener Beitrag (nur ohne Filter und Suche) */}
         {showFeatured && (
           <div className="mb-8 md:mb-12">
-            <Link
-              href={`/blog/${featuredPost.slug}`}
-              data-motion="zustand"
-              className="group flex flex-wrap items-start border border-fuge bg-fliese transition-colors dauer-1 ease-setzen hover:border-strich md:grid md:grid-cols-2 md:items-stretch"
-            >
-              <Themenmotiv
-                post={featuredPost}
-                className="m-4 size-24 shrink-0 border border-fuge bg-fliese md:m-0 md:size-auto md:border-0 md:border-r"
-              />
-
-              {/* Telefon: Kopf neben der Zeichnung, Auszug und Abschluss über die volle Breite (zwei Zeilen im Fluss);
-                  ab md eine Spalte rechts */}
-              <div className="contents md:flex md:min-w-0 md:flex-col md:gap-4">
-                <div className="flex min-w-0 flex-1 flex-col gap-3 pr-4 pt-4 md:flex-none md:gap-4 md:p-8 md:pb-0">
-                  <p className={etikettKlassen}>
-                    <Fugenkreuz className="size-3 shrink-0 text-strich" />
-                    Empfohlener Leitfaden
-                  </p>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-fs-1 text-tinte-2">
-                    {featuredPost.date && <span>{featuredPost.date}</span>}
-                    <span className="flex items-center gap-2">
-                      <Icon name="uhr" groesse={4} />
-                      {getReadTime(featuredPost)} Lesezeit
-                    </span>
-                  </div>
-                  <h2 className="text-fs-4 text-tinte group-hover:underline underline-offset-4">
-                    {featuredPost.title}
-                  </h2>
-                </div>
-
-                <div className="basis-full px-4 pb-4 md:px-8 md:pb-8">
-                  <p className="font-text text-fs-3 text-tinte-2 line-clamp-3">
-                    {featuredPost.excerpt}
-                  </p>
-                  <span className="mt-4 flex items-center gap-2 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte">
-                    Vollständigen Leitfaden lesen
-                    <Icon name="pfeil-rechts" groesse={5} />
-                  </span>
-                </div>
-              </div>
-            </Link>
+            <Leitfaden post={featuredPost} lesezeit={getReadTime(featuredPost)} />
           </div>
         )}
 
@@ -132,29 +155,6 @@ export default function BlogFilter() {
             ))}
           </ul>
         )}
-
-        {/* Leerzustand */}
-        {filteredPosts.length === 0 && (
-          <div className="flex flex-col items-start gap-4 border border-fuge bg-fliese p-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-start gap-3">
-              <Icon name="suche" groesse={6} />
-              <p className="font-text text-fs-3 font-semibold text-tinte">Keine Artikel zur Suchanfrage gefunden.</p>
-            </div>
-            <Knopf type="button" onClick={resetFilters}>
-              Filter zurücksetzen
-            </Knopf>
-          </div>
-        )}
-      </div>
-
-      {/* Seitenleiste (ab lg): volle Zeilenhöhe, damit der klebende Block darin ab xl unter dem Kopf mitläuft */}
-      <div className="hidden lg:col-span-4 lg:block">
-        <BlogSidebar
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
       </div>
     </div>
   );
