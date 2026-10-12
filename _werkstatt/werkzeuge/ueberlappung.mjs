@@ -10,7 +10,7 @@
 //        nicht verschachtelten Elementen).
 //   durch: das überdeckende oder gekreuzte Element bzw. der zweite Text (Zusatz zum Briefing-Format).
 // Toleranz: 1 px bei Überdeckung und Textkreuzung, bei Leitachsen jede Überschneidung.
-// Ausgenommen: Text unter display:none, opacity:0 oder visibility:hidden; sr-only-Text (Elementbox ≤ 2 px oder
+// Ausgenommen: Text unter display:none, opacity:0 oder visibility:hidden, Inhalt geschlossener <details> (außer summary); sr-only-Text (Elementbox ≤ 2 px oder
 // clip-Zuschnitt); Textteile außerhalb eines Behälters mit overflow (z. B. Liste mit eigenem Scroll); eigene
 // Vorfahren bzw. Nachfahren der Gegenseite. Die Gesamtzahl je Bildschirmausschnitt ist durch eine Sicherheitsgrenze (5000) begrenzt.
 // Feste Ebene (KERN K-009: fester Kopf und untere Leiste, Kennzeichen data-feste-ebene selbst oder über einen Vorfahren):
@@ -51,7 +51,9 @@ function ausschnittPruefen() {
     if (!el || el.nodeType !== 1) return false;
     if (memo.has(el)) return memo.get(el);
     const cs = getComputedStyle(el);
-    const ergebnis = cs.display === 'none' || cs.opacity === '0' || ausgeblendet(el.parentElement);
+    // Inhalt eines geschlossenen <details> (außer seinem <summary>) zeichnet der Browser nicht (content-visibility: hidden)
+    const zu = el.tagName === 'DETAILS' ? false : el.parentElement?.tagName === 'DETAILS' && !el.parentElement.open && el.tagName !== 'SUMMARY';
+    const ergebnis = cs.display === 'none' || cs.opacity === '0' || zu || ausgeblendet(el.parentElement);
     memo.set(el, ergebnis);
     return ergebnis;
   };
