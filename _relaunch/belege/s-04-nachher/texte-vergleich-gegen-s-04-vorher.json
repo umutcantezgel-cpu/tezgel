@@ -1,0 +1,99 @@
+{
+ "vorher": "s-04-vorher",
+ "nachher": "s-04-nachher",
+ "seiten": {
+  "/leistungen/bad": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "01",
+     "01",
+     "02",
+     "03",
+     "04",
+     "Ihre handwerklichen Vorteile:",
+     "02",
+     "03",
+     "04"
+    ]
+   }
+  },
+  "/leistungen/wohnen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "02",
+     "01",
+     "02",
+     "03",
+     "04",
+     "Ihre handwerklichen Vorteile:",
+     "01",
+     "03",
+     "04"
+    ]
+   }
+  },
+  "/leistungen/aussen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Balkon- & Terrassen­sanierung in Wetzlar & Mittelhessen",
+     "03",
+     "01",
+     "02",
+     "03",
+     "Ihre handwerklichen Vorteile:",
+     "Projekt in Balkon- & Terrassen­sanierung anfragen?",
+     "01",
+     "02",
+     "04",
+     "Häufige Fragen zu Balkon- & Terrassen­sanierung"
+    ]
+   },
+   "ueberschriften": {
+    "entfernt": [],
+    "hinzu": [
+     "h1: Balkon- & Terrassen­sanierung in Wetzlar & Mittelhessen",
+     "h2: Projekt in Balkon- & Terrassen­sanierung anfragen?",
+     "h2: Häufige Fragen zu Balkon- & Terrassen­sanierung"
+    ]
+   }
+  },
+  "/leistungen/untergrund": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "DIN 18534 Abdichtung & Untergrund­vorbereitung in Wetzlar",
+     "04",
+     "01",
+     "02",
+     "03",
+     "04",
+     "Ihre handwerklichen Vorteile:",
+     "01",
+     "02",
+     "03"
+    ]
+   },
+   "ueberschriften": {
+    "entfernt": [],
+    "hinzu": [
+     "h1: DIN 18534 Abdichtung & Untergrund­vorbereitung in Wetzlar"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 43,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

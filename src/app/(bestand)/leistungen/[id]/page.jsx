@@ -1,20 +1,18 @@
-import React from 'react';
+// /leistungen/[id] (S-04, KERN v2, Erzählansicht nach dem Vorbild der Startseite und von `/leistungen`): die vier
+// Leistungsseiten bad · wohnen · aussen · untergrund. Abschnittsfolge wie im Bestand:
+// 1. Einstieg an der Laserachse (Kalk): Rückweg und Etikett in der Kennzeile, H1, Vorspann, zwei Wege; Randspalte = Plan der
+//    Leistung (dieselbe Vignette und Nummer wie auf /leistungen) · 2. Spezialisierungen als Feldraster (Band auf Fliese, Felder
+//    Kalk, einziger Auftritt) · 3. Fachkompetenz & Ausführungsdetails (Kalk): Text an der Fuge (8 Spalten) neben dem
+//    Schriftfeld „Direktkontakt“ (4 Spalten, ohne Kleben), darunter die Wege: Index „Weitere Gewerke“ und Ortsliste ·
+//    4. Projektanfrage mit Preisrechner (Fliese) · 5. Fragen, Kopf seitlich (Kalk) · 6. Express-Anfrage #express-anfrage,
+//    Kopf seitlich (Fliese) · 7. Abschluss (Tinte). Lange Komposita in H1/H2 tragen ein weiches Trennzeichen (`fugen`, K-006).
+// Kein großer Moment (Auftrag S-04). Rot nur in der Laserachse des Einstiegs; auf /leistungen/wohnen trägt die Vignette
+// selbst die Laserachse (Waage), dort entfällt das Lot, damit je Bildschirm genau ein Rot steht.
+// Server-Komponente (async, params als Promise nach Next 16); Client-Inseln sind nur Formulare und Fragen.
+// Wortlaut, Anker, JSON-LD, generateStaticParams und notFound wie im Bestand; Metadaten im layout.jsx der Route.
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import {
-  ArrowLeft,
-  CheckCircle2,
-  ArrowRight,
-  Phone,
-  ShieldCheck,
-  Sparkles,
-  MessageSquare,
-  Droplets,
-  Sun,
-  MapPin
-} from 'lucide-react';
 import { SERVICES } from '@/config/services';
-import { CITIES } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
@@ -22,6 +20,16 @@ import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Icon from '@/components/icons/Icon';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Knopf from '@/components/kern/Knopf';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Planfeld from '@/components/leistungen/detail/Planfeld';
+import Unterkategorien from '@/components/leistungen/detail/Unterkategorien';
+import Fachdetails from '@/components/leistungen/detail/Fachdetails';
+import { fugen } from '@/components/leistungen/detail/satz';
 
 export function generateStaticParams() {
   return SERVICES.map((service) => ({ id: service.id }));
@@ -34,8 +42,6 @@ export default async function ServiceDetailPage({ params }) {
   if (!service) {
     notFound();
   }
-
-  const relatedServices = SERVICES.filter((s) => s.id !== service.id);
 
   const serviceH1Titles = {
     bad: 'Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar',
@@ -148,273 +154,106 @@ export default async function ServiceDetailPage({ params }) {
   ]);
 
   return (
-    <div className="pt-36 pb-24 min-h-screen relative overflow-hidden">
+    <>
       <JsonLd schema={serviceSchemaGraph} />
 
-      {/* Ambient Lighting Orbs */}
-      <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-      <div className="ambient-glow-red top-96 -right-20 opacity-60" />
-
-      {/* Hero Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="ceramic-hero rounded-2xl p-8 sm:p-12 space-y-6 relative overflow-hidden">
-
-          <Link href="/leistungen" className="inline-flex items-center text-xs font-bold text-neutral-700 hover:text-orange-800 transition-colors group">
-            <ArrowLeft className="w-4 h-4 mr-1.5 group-hover:-translate-x-1 transition-transform" />
-            Zurück zur Leistungsübersicht
-          </Link>
-
-          <div className="flex flex-col md:flex-row gap-8 items-start justify-between">
-            <div className="flex-1 space-y-4">
-              <span className="eyebrow">
-                Fachgewerk &middot; {COMPANY_DATA.legalName}
-              </span>
-
-              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-neutral-900 leading-tight">
-                {h1Title}
-              </h1>
-
-              <p className="text-sm sm:text-base text-neutral-700 max-w-2xl leading-relaxed">
-                {serviceIntroTexts[service.id] || service.detailText}
-              </p>
-            </div>
-
-            <div className="shrink-0 flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto">
-              <a
-                href="#express-anfrage"
-                className="btn-primary"
-              >
-                <span>Aufmaß anfordern</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href={COMPANY_DATA.contact.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-button-whatsapp text-sm"
-              >
-                <MessageSquare className="w-4 h-4 fill-current" />
-                <span>WhatsApp Direkt</span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      {/* Subcategories Bento */}
-      {service.subcategories && service.subcategories.length > 0 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h2 className="text-2xl font-black text-neutral-900">
-              Spezialisierungen in {service.name}
-            </h2>
-          </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {service.subcategories.map((sub) => (
-              <li
-                key={sub.id}
-                className="group glass-surface p-6 rounded-2xl text-center hover:border-orange-500/80 hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <div className="icon-chip w-12 h-12 mx-auto mb-3">
-                  {service.id === 'bad' && <Droplets className="w-5 h-5" />}
-                  {service.id === 'wohnen' && <Sparkles className="w-5 h-5" />}
-                  {service.id === 'aussen' && <Sun className="w-5 h-5" />}
-                  {service.id === 'untergrund' && <ShieldCheck className="w-5 h-5" />}
-                </div>
-                <p className="font-bold text-sm text-neutral-900">{sub.name}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Detail Content & Sticky Sidebar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-
-          {/* Main Description & Features */}
-          <div className="lg:col-span-2 space-y-6">
-            <div className="glass-surface p-8 sm:p-10 rounded-2xl space-y-6">
-              <h2 className="text-2xl font-black text-neutral-900">Fachkompetenz &amp; Ausführungsdetails</h2>
-
-              <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
-                {service.shortDescription}
-              </p>
-
-              <div className="space-y-3 pt-2">
-                <span className="text-xs font-black uppercase tracking-wider text-orange-800 block">
-                  Ihre handwerklichen Vorteile:
-                </span>
-                <ul className="space-y-3">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                      <span className="text-sm text-neutral-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="p-6 rounded-xl bg-orange-50/50 border border-orange-200 text-sm text-neutral-700 leading-relaxed">
-                <p className="font-black text-neutral-900 text-sm mb-1">
-                  Warum Fachqualität von {COMPANY_DATA.legalName}?
-                </p>
-                {serviceQualityNotes[service.id] || serviceQualityNotes.bad}
-              </div>
-            </div>
-
-            {/* Other Services */}
-            <div className="glass-surface p-8 rounded-2xl">
-              <h2 className="text-lg font-black text-neutral-900 mb-4">
-                Weitere Gewerke von {COMPANY_DATA.legalName}:
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {relatedServices.map((rel) => (
-                  <Link
-                    key={rel.id}
-                    href={`/leistungen/${rel.id}`}
-                    className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 hover:bg-white hover:border-orange-500/80 hover:-translate-y-0.5 transition-all duration-200 group block"
-                  >
-                    <p className="font-bold text-sm text-neutral-900 group-hover:text-orange-800 transition-colors">
-                      {rel.name}
-                    </p>
-                    <span className="text-xs font-bold text-orange-800 flex items-center gap-1 mt-1">
-                      Gewerk {rel.name} ansehen
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Service by city */}
-            <div className="glass-surface p-8 rounded-2xl">
-              <h2 className="text-lg font-black text-neutral-900 mb-1">
-                {service.name} in Ihrer Region
-              </h2>
-              <p className="text-sm text-neutral-700 mb-4">
-                Vom Firmensitz in {COMPANY_DATA.headquarters.city} aus im Lahn-Dill-Kreis und in Mittelhessen im Einsatz.
-              </p>
-              <ul className="flex flex-wrap gap-2">
-                {CITIES.map((city) => (
-                  <li key={city.slug}>
-                    <Link
-                      href={`/leistungen/${service.id}/${city.slug}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-neutral-200 text-xs font-semibold text-neutral-800 hover:border-orange-500/80 hover:text-orange-800 transition-colors"
-                    >
-                      <MapPin className="w-3 h-3 text-orange-600" />
-                      {city.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Sticky Sidebar */}
-          <aside className="glass-surface border-neutral-200 p-8 rounded-2xl shadow-xl lg:sticky lg:top-28 space-y-6">
-            <span className="eyebrow">
-              Direktkontakt
-            </span>
-
-            <h2 className="text-xl font-black text-neutral-900">
-              Projekt in {service.name} anfragen?
-            </h2>
-
-            <p className="text-sm text-neutral-700 leading-relaxed">
-              {serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}
-            </p>
-
-            <div className="space-y-3 pt-2 text-sm">
-              <a
-                href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                className="flex items-center gap-3 p-3.5 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-900 font-bold hover:bg-white hover:border-orange-500/80 transition-all"
-              >
-                <Phone className="w-4 h-4 text-orange-600" />
-                <span>{COMPANY_DATA.contact.phone}</span>
-              </a>
-
-              <a
-                href={COMPANY_DATA.contact.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3.5 rounded-xl bg-green-50 border border-green-200 text-green-800 font-bold hover:border-green-500/80 transition-all"
-              >
-                <MessageSquare className="w-4 h-4 fill-current" />
-                <span>WhatsApp Chat</span>
-              </a>
-            </div>
-
-            <a
-              href="#express-anfrage"
-              className="btn-primary w-full text-xs"
+      {/* 1. EINSTIEG an der Laserachse: Rückweg und Etikett in der Mono-Kennzeile, H1, Vorspann, zwei Wege; rechts der Plan */}
+      <Einstieg
+        achse={service.id !== 'wohnen'}
+        etikett={
+          <>
+            <Link
+              href="/leistungen"
+              data-motion="zustand"
+              className="group mr-4 inline-flex min-h-11 items-center gap-2 text-tinte"
             >
-              Kostenfreies Aufmaß buchen
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              <Icon name="pfeil-links" groesse={4} />
+              <span className="underline decoration-strich decoration-1 underline-offset-4 pointer-fine:group-hover:decoration-tinte group-active:decoration-tinte">
+                Zurück zur Leistungsübersicht
+              </span>
+            </Link>
+            <span className="inline-flex items-center gap-2">
+              <Fugenkreuz className="size-3 text-strich" />
+              Fachgewerk &middot; {COMPANY_DATA.legalName}
+            </span>
+          </>
+        }
+        titel={fugen(h1Title)}
+        vorspann={<p className="text-fs-3">{serviceIntroTexts[service.id] || service.detailText}</p>}
+        aktionen={
+          <>
+            <Knopf href="#express-anfrage" icon="pfeil-rechts">
+              Aufmaß anfordern
+            </Knopf>
+            <Knopf
+              href={COMPANY_DATA.contact.whatsappLink}
+              extern
+              variante="neben"
+              vorne={<WhatsAppLogo className="size-5 shrink-0" />}
+            >
+              WhatsApp Direkt
+            </Knopf>
+          </>
+        }
+        rand={<Planfeld id={service.id} />}
+      />
 
-            <p className="pt-4 border-t border-neutral-200 text-xs text-neutral-600 italic">
-              &bdquo;{COMPANY_DATA.motto}&ldquo;
-            </p>
-          </aside>
+      {/* 2. SPEZIALISIERUNGEN als Feldraster (Bestand „Subcategories Bento“) */}
+      <Unterkategorien leistung={service} />
 
-        </div>
-      </div>
+      {/* 3. FACHKOMPETENZ & AUSFÜHRUNGSDETAILS: Text an der Fuge, Index der weiteren Gewerke, Orte; Schriftfeld rechts */}
+      <Fachdetails
+        leistung={service}
+        qualitaet={serviceQualityNotes[service.id] || serviceQualityNotes.bad}
+        randText={serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}
+      />
 
-      {/* Umfassendes Projektanfrage-Formular */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="eyebrow mb-3">Individuelle Anfrage</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Projekt anfragen &amp; Situation schildern
-          </h2>
-          <p className="text-sm text-neutral-700 mt-2">
+      {/* 4. PROJEKTANFRAGE (umfassendes Formular mit Situationsschilderung) */}
+      <Abschnitt
+        id="kosten-rechner"
+        titelId="rechner-heading"
+        flaeche="fliese"
+        etikett="Individuelle Anfrage"
+        titel="Projekt anfragen & Situation schildern"
+        einleitung={
+          <p>
             Schildern Sie uns Ihr Vorhaben für {service.name} für eine fachmännische Einschätzung und ein Festpreisangebot nach Vor-Ort-Aufmaß.
           </p>
-        </div>
+        }
+      >
         <PricingCalculator />
-      </div>
+      </Abschnitt>
 
-      {/* Häufige Fragen & Antworten */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="eyebrow mb-3">Transparenz &amp; Ratgeber</span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Häufige Fragen zu {service.name}
-          </h2>
-          <p className="text-sm text-neutral-700 mt-2">
-            Antworten unseres Handwerksteams für eine reibungslose Planung und Ausführung.
-          </p>
-        </div>
-
-        <div className="space-y-4">
+      {/* 5. HÄUFIGE FRAGEN: Kopf links, Fragen rechts (wie auf der Startseite) */}
+      <Abschnitt
+        id="faq"
+        titelId="faq-heading"
+        kopf="seitlich"
+        etikett="Transparenz & Ratgeber"
+        titel={fugen(`Häufige Fragen zu ${service.name}`)}
+        einleitung={<p>Antworten unseres Handwerksteams für eine reibungslose Planung und Ausführung.</p>}
+      >
+        <div>
           {currentFaqs.map((faq) => (
-            <FAQAccordion
-              key={faq.q}
-              question={faq.q}
-              answer={faq.a}
-            />
+            <FAQAccordion key={faq.q} question={faq.q} answer={faq.a} />
           ))}
         </div>
-      </div>
+      </Abschnitt>
 
-      {/* Embedded Funnel */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 relative z-10 scroll-mt-28" id="express-anfrage">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="eyebrow mb-4">
-            Express-Aufmaß
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 tracking-tight">
-            Jetzt unverbindlich anfragen
-          </h2>
-        </div>
+      {/* 6. EXPRESS-ANFRAGE: Kopf links, Assistent rechts (wie auf der Startseite) */}
+      <Abschnitt
+        id="express-anfrage"
+        titelId="anfrage-heading"
+        flaeche="fliese"
+        kopf="seitlich"
+        etikett="Express-Aufmaß"
+        titel="Jetzt unverbindlich anfragen"
+      >
         <TezgelAnfrageFunnel />
-      </div>
+      </Abschnitt>
 
-      {/* Final Conversion CTA */}
+      {/* 7. ABSCHLUSS */}
       <FinalCTA />
-
-    </div>
+    </>
   );
 }

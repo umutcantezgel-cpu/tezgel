@@ -1,0 +1,47 @@
+[
+ {
+  "seite": "*",
+  "alt": "IHRE HANDWERKLICHEN VORTEILE:",
+  "grund": "Bestand: CSS uppercase; Quelltext „Ihre handwerklichen Vorteile:“ unverändert, KERN v2 verbietet Versal-Etiketten"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Terrassen­sanierung“, Wortlaut gleich; neu = „Balkon- & Terrassen­sanierung in Wetzlar & Mittelhessen“"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "h1: Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Terrassen­sanierung“, Wortlaut gleich; neu = „h1: Balkon- & Terrassen­sanierung in Wetzlar & Mittelhessen“"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "Projekt in Balkon- & Terrassensanierung anfragen?",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Terrassen­sanierung“, Wortlaut gleich; neu = „Projekt in Balkon- & Terrassen­sanierung anfragen?“"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Terrassen­sanierung“, Wortlaut gleich; neu = „h2: Projekt in Balkon- & Terrassen­sanierung anfragen?“"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "Häufige Fragen zu Balkon- & Terrassensanierung",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Terrassen­sanierung“, Wortlaut gleich; neu = „Häufige Fragen zu Balkon- & Terrassen­sanierung“"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "h2: Häufige Fragen zu Balkon- & Terrassensanierung",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Terrassen­sanierung“, Wortlaut gleich; neu = „h2: Häufige Fragen zu Balkon- & Terrassen­sanierung“"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Untergrund­vorbereitung“, Wortlaut gleich; neu = „DIN 18534 Abdichtung & Untergrund­vorbereitung in Wetzlar“"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "h1: DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar",
+  "grund": "Darstellung K-006: weiches Trennzeichen (U+00AD) in „Untergrund­vorbereitung“, Wortlaut gleich; neu = „h1: DIN 18534 Abdichtung & Untergrund­vorbereitung in Wetzlar“"
+ }
+]
