@@ -1,0 +1,1605 @@
+{
+ "satz": "e5-e039-lh10",
+ "base": "http://127.0.0.1:4363",
+ "kandidat": "http://127.0.0.1:4364",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 10 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4363, B = Kandidat http://127.0.0.1:4364) im selben Messfenster",
+ "erstellt": "2026-10-12T20:18:40.292Z",
+ "laeufe": 10,
+ "seiten": {
+  "/treppen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 93,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2693,
+      "cls": 0,
+      "tbt": 212,
+      "fcp": 1069,
+      "si": 1070,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 488,
+      "benchmark": 1476,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+       "rechteck": {
+        "top": 345,
+        "left": 49,
+        "width": 314,
+        "height": 228
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 12,
+       "elementRenderDelay": 214.5
+      },
+      "streuung_perf": [
+       87,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 92,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2563.3649,
+       "cls": 0,
+       "tbt": 266.5,
+       "fcp": 1070.04735,
+       "si": 1070.04735,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1477,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 222
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 90,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2561.306,
+       "cls": 0.002843726386312358,
+       "tbt": 323.5000000000007,
+       "fcp": 1066.959,
+       "si": 1066.959,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1475,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 182
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2616.8025000000002,
+       "cls": 0,
+       "tbt": 216.03950000000054,
+       "fcp": 962.921,
+       "si": 1219.4461270843835,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1477.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 219
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 87,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2770.87,
+       "cls": 0,
+       "tbt": 376.02600000000064,
+       "fcp": 913.896,
+       "si": 1142.1620524803975,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1425.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 249
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 94,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2768.9,
+       "cls": 0,
+       "tbt": 166.01999999999998,
+       "fcp": 1070.88,
+       "si": 1070.88,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1426.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 180
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 96,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2562.458,
+       "cls": 0,
+       "tbt": 136.38550000000032,
+       "fcp": 1068.6870000000001,
+       "si": 1068.6870000000001,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1474,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 175
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 88,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3153.8774999999996,
+       "cls": 0,
+       "tbt": 276.62449999999944,
+       "fcp": 941.751,
+       "si": 941.751,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1480.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 217
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 93,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2774.8725,
+       "cls": 0,
+       "tbt": 208.62550000000056,
+       "fcp": 1076.247,
+       "si": 1076.247,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1419,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 243
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 95,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2562.52,
+       "cls": 0,
+       "tbt": 164.5,
+       "fcp": 1068.78,
+       "si": 1068.78,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1664,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 212
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 94,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2777.1450000000004,
+       "cls": 0,
+       "tbt": 161.67100000000005,
+       "fcp": 1072.9740000000002,
+       "si": 1072.9740000000002,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1541,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 198
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 94.5,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2647,
+      "cls": 0,
+      "tbt": 164,
+      "fcp": 1072,
+      "si": 1072,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 487,
+      "benchmark": 1523.75,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 12,
+       "elementRenderDelay": 214
+      },
+      "streuung_perf": [
+       89,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2562.8635000000004,
+       "cls": 0,
+       "tbt": 179.5,
+       "fcp": 1069.29525,
+       "si": 1069.29525,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1491.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2563.876,
+       "cls": 0,
+       "tbt": 184.0309999999995,
+       "fcp": 1070.8139999999999,
+       "si": 1110.1033948815068,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1484.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 219
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.6500000000005,
+       "cls": 0,
+       "tbt": 164.18750000000045,
+       "fcp": 1071.9750000000001,
+       "si": 1071.9750000000001,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1586,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 159
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.186,
+       "cls": 0,
+       "tbt": 133.45350000000076,
+       "fcp": 1071.279,
+       "si": 1171.5445183705722,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1580,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 215
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2728.8799999999997,
+       "cls": 0,
+       "tbt": 84.09600000000023,
+       "fcp": 1079.856,
+       "si": 1227.1148999444163,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1515,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 213
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.068,
+       "cls": 0,
+       "tbt": 160.98300000000017,
+       "fcp": 1074.1019999999999,
+       "si": 1098.7385930859782,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1532.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 215
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3216.175,
+       "cls": 0,
+       "tbt": 164.365,
+       "fcp": 1065.81,
+       "si": 1065.81,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1570,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3148.58,
+       "cls": 0,
+       "tbt": 75.6840000000002,
+       "fcp": 1072.896,
+       "si": 1072.896,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1567.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 183
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3220.665,
+       "cls": 0,
+       "tbt": 224.36799999999994,
+       "fcp": 1071.198,
+       "si": 1071.198,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1456,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 241
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2785.29,
+       "cls": 0,
+       "tbt": 312.7100000000005,
+       "fcp": 1071.948,
+       "si": 1071.948,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1461,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 275
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 1.5,
+     "a11y": 3,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -46,
+     "cls": 0,
+     "tbt": -48,
+     "fcp": 3,
+     "si": 2,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -1,
+     "benchmark": 47.8,
+     "lcp_relativ": -0.017
+    },
+    "lcp_element_gleich": false,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/schadensanalyse": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 96.5,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2420,
+      "cls": 0,
+      "tbt": 98,
+      "fcp": 1070,
+      "si": 1071,
+      "js_kb": 262,
+      "font_kb": 72,
+      "gesamt_kb": 470,
+      "benchmark": 1487.75,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+       "rechteck": {
+        "top": 325,
+        "left": 49,
+        "width": 314,
+        "height": 228
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 13,
+       "elementRenderDelay": 193.5
+      },
+      "streuung_perf": [
+       92,
+       97
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 97,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2421.6025,
+       "cls": 0,
+       "tbt": 120.5,
+       "fcp": 1075.9229999999998,
+       "si": 1148.7815554280392,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1458.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 220
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 97,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2416.885,
+       "cls": 0,
+       "tbt": 81.99999999999977,
+       "fcp": 1070.2620000000002,
+       "si": 1070.2620000000002,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1391.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 96,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2418.0274999999997,
+       "cls": 0,
+       "tbt": 155.39449999999988,
+       "fcp": 1071.633,
+       "si": 1071.633,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1581,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 188
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 93,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3220.6799999999994,
+       "cls": 0,
+       "tbt": 89.85600000000045,
+       "fcp": 1062.216,
+       "si": 1062.216,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1488,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 195
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 97,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2414.3075,
+       "cls": 0,
+       "tbt": 79,
+       "fcp": 1067.1689999999999,
+       "si": 1097.9637530202021,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1598.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 181
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 96,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2417.2349999999997,
+       "cls": 0,
+       "tbt": 126.76499999999987,
+       "fcp": 1070.682,
+       "si": 1070.682,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1487.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 198
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 97,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2421.0800000000004,
+       "cls": 0,
+       "tbt": 97.49999999999977,
+       "fcp": 1075.296,
+       "si": 1075.296,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1393.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 251
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 92,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3244.661249999999,
+       "cls": 0,
+       "tbt": 123.66774999999939,
+       "fcp": 1072.9935,
+       "si": 1072.9935,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1422.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 96,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2600.6450000000004,
+       "cls": 0,
+       "tbt": 98.3710000000001,
+       "fcp": 1065.7740000000001,
+       "si": 1065.7740000000001,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1497.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 187
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 97,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2414.6637500000006,
+       "cls": 0,
+       "tbt": 69.99999999999977,
+       "fcp": 1067.5965,
+       "si": 1067.5965,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1595,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 168
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2547,
+      "cls": 0,
+      "tbt": 90,
+      "fcp": 1069,
+      "si": 1069,
+      "js_kb": 262,
+      "font_kb": 72,
+      "gesamt_kb": 470,
+      "benchmark": 1481.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 15.5,
+       "elementRenderDelay": 201.5
+      },
+      "streuung_perf": [
+       93,
+       97
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2415.9710000000005,
+       "cls": 0,
+       "tbt": 137.50725000000034,
+       "fcp": 1073.9565,
+       "si": 1076.3735708954619,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1549,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 191
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3147.4125000000004,
+       "cls": 0,
+       "tbt": 111.5,
+       "fcp": 1069.6950000000002,
+       "si": 1069.6950000000002,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1410.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 200
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 97,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2412.7789999999995,
+       "cls": 0,
+       "tbt": 101.80524999999989,
+       "fcp": 1069.1685,
+       "si": 1069.1685,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1448,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 217
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2621.165,
+       "cls": 0,
+       "tbt": 89.5,
+       "fcp": 1073.598,
+       "si": 1073.598,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1523.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3149.4874999999993,
+       "cls": 0,
+       "tbt": 123.11000000000035,
+       "fcp": 1068.585,
+       "si": 1068.585,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1499.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 209
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2609.0237499999994,
+       "cls": 0,
+       "tbt": 68.50000000000023,
+       "fcp": 1067.4285,
+       "si": 1067.4285,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1356,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 198
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 97,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2410.4469999999997,
+       "cls": 0,
+       "tbt": 75.5,
+       "fcp": 1065.6704999999997,
+       "si": 1065.6704999999997,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1230,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 195
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 97,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2484.4400000000005,
+       "cls": 0.010928173383983263,
+       "tbt": 82.05999999999995,
+       "fcp": 1064.16,
+       "si": 1064.16,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1527,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 97,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2413.914,
+       "cls": 0,
+       "tbt": 90.5,
+       "fcp": 1070.871,
+       "si": 1070.871,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1490.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 196
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3118.7824999999993,
+       "cls": 0,
+       "tbt": 77,
+       "fcp": 1068.9389999999999,
+       "si": 1068.9389999999999,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1472.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 216
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -0.5,
+     "a11y": 3,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 127,
+     "cls": 0,
+     "tbt": -8,
+     "fcp": -1,
+     "si": -2,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": 0,
+     "benchmark": -6.2,
+     "lcp_relativ": 0.052
+    },
+    "lcp_element_gleich": false,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 1.07,
+  "last_1min_start": 1.07,
+  "last_1min_ende": 2.06
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}

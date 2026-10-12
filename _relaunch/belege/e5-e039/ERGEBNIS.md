@@ -23,3 +23,11 @@ Fliesenreparatur (73dd96f, 3810261), S-17/S-18 Treppen (e98e281, dbca16b), S-19 
 
 ## Lighthouse (ruhiges Fenster, mobil, 5 verschränkte Paare, live 4363 gegen 4364)
 Siehe `belege/e5-e039-lh/lighthouse-vergleich.json` (Nachtrag unten).
+- 5 Paare (`belege/e5-e039-lh/`): /balkon-terrasse 92 → 91 (LCP +38 ms), /naturstein/granit 93 → 94 (LCP −782 ms) –
+  innerhalb der Streuung; /treppen 94 → 91 (LCP −3 ms) und /schadensanalyse 95 → 93 (LCP +612 ms) im Grenzbereich.
+  LCP in beiden Ständen zweigipflig (≈ 2,4–2,6 s bzw. ≈ 3,1–3,2 s, simulierte Drosselung).
+- Nachmessung 10 Paare (`belege/e5-e039-lh10/`, Z-12): /treppen 93 → 94,5 (LCP −46 ms), /schadensanalyse 96,5 → 96
+  (LCP +127 ms, 5,2 %) – beide innerhalb der Streuung. **Leistung nicht schlechter.**
+
+## Ergebnis
+Grün. Push genau des geprüften Stands 5be70eb.

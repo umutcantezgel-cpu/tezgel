@@ -1,0 +1,1823 @@
+{
+ "satz": "e5-e039-lh",
+ "base": "http://127.0.0.1:4363",
+ "kandidat": "http://127.0.0.1:4364",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 5 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4363, B = Kandidat http://127.0.0.1:4364) im selben Messfenster",
+ "erstellt": "2026-10-12T20:10:20.973Z",
+ "laeufe": 5,
+ "seiten": {
+  "/treppen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 94,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2568,
+      "cls": 0,
+      "tbt": 188,
+      "fcp": 1069,
+      "si": 1069,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 488,
+      "benchmark": 1500,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+       "rechteck": {
+        "top": 345,
+        "left": 49,
+        "width": 314,
+        "height": 228
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 12,
+       "elementRenderDelay": 206
+      },
+      "streuung_perf": [
+       91,
+       97
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 91,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2558.9219000000003,
+       "cls": 0,
+       "tbt": 275.5781000000002,
+       "fcp": 1063.38285,
+       "si": 1063.38285,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1513,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 274
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 91,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2767.165,
+       "cls": 0,
+       "tbt": 260.6680000000001,
+       "fcp": 1066.998,
+       "si": 1066.998,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1500,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 241
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 94,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2528.7875000000004,
+       "cls": 0,
+       "tbt": 188.21249999999986,
+       "fcp": 1068.9450000000002,
+       "si": 1068.9450000000002,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1342,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 176
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 97,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2567.6579999999994,
+       "cls": 0,
+       "tbt": 89.34199999999964,
+       "fcp": 1076.487,
+       "si": 1076.487,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1356.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 95,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2771.875,
+       "cls": 0,
+       "tbt": 130.92499999999973,
+       "fcp": 1074.45,
+       "si": 1074.45,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1503,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 345,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 189
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2565,
+      "cls": 0,
+      "tbt": 244,
+      "fcp": 1072,
+      "si": 1072,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 487,
+      "benchmark": 1475.5,
+      "werkzeug_wiederholungen": 2,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 12,
+       "elementRenderDelay": 212
+      },
+      "streuung_perf": [
+       91,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2561.7097,
+       "cls": 0,
+       "tbt": 244.07257499999923,
+       "fcp": 1067.56455,
+       "si": 1067.56455,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1315.5,
+       "werkzeug_wiederholungen": 1,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 186
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3211.795,
+       "cls": 0,
+       "tbt": 155.20500000000038,
+       "fcp": 1067.754,
+       "si": 1159.5551641436716,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1531,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 212
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.7181,
+       "cls": 0,
+       "tbt": 284.320475,
+       "fcp": 1072.07715,
+       "si": 1072.07715,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1550.5,
+       "werkzeug_wiederholungen": 1,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 205
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.8720000000003,
+       "cls": 0,
+       "tbt": 283.9099999999994,
+       "fcp": 1072.308,
+       "si": 1072.308,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1475.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 259
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2565.5280000000002,
+       "cls": 0,
+       "tbt": 152.61799999999994,
+       "fcp": 1073.292,
+       "si": 1073.292,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 487,
+       "benchmark": 1393,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen & Trep…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 214
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -3,
+     "a11y": 3,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -3,
+     "cls": 0,
+     "tbt": 56,
+     "fcp": 3,
+     "si": 3,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -1,
+     "benchmark": -24.5,
+     "lcp_relativ": -0.001
+    },
+    "lcp_element_gleich": false,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 3 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/balkon-terrasse": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2755,
+      "cls": 0,
+      "tbt": 228,
+      "fcp": 1069,
+      "si": 1071,
+      "js_kb": 277,
+      "font_kb": 72,
+      "gesamt_kb": 502,
+      "benchmark": 1491,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+       "rechteck": {
+        "top": 325,
+        "left": 49,
+        "width": 314,
+        "height": 182
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 13,
+       "elementRenderDelay": 239
+      },
+      "streuung_perf": [
+       87,
+       93
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2781.8275000000003,
+       "cls": 0,
+       "tbt": 217.03449999999998,
+       "fcp": 1070.7930000000001,
+       "si": 1071.160852251897,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1434,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 168
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2755.1375,
+       "cls": 0,
+       "tbt": 217.86249999999973,
+       "fcp": 1069.3650000000002,
+       "si": 1262.3820209372786,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1491,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 259
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2569.2529999999997,
+       "cls": 0,
+       "tbt": 230.18675000000007,
+       "fcp": 919.2529999999999,
+       "si": 919.2529999999999,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1406,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 239
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3185.3450000000003,
+       "cls": 0,
+       "tbt": 301.731,
+       "fcp": 911.076,
+       "si": 911.076,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1500.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 247
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2563.6859999999997,
+       "cls": 0,
+       "tbt": 227.8140000000003,
+       "fcp": 1070.529,
+       "si": 1297.9232946985153,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 502,
+       "benchmark": 1509,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 182
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2793,
+      "cls": 0,
+      "tbt": 155,
+      "fcp": 1068,
+      "si": 1071,
+      "js_kb": 277,
+      "font_kb": 72,
+      "gesamt_kb": 500,
+      "benchmark": 1431,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 276,
+        "left": 16,
+        "width": 380,
+        "height": 219
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 237
+      },
+      "streuung_perf": [
+       89,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3194.4425,
+       "cls": 0,
+       "tbt": 245.11149999999998,
+       "fcp": 911.5540000000001,
+       "si": 1007.9444973455315,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 500,
+       "benchmark": 1538,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 248
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2562.1459999999997,
+       "cls": 0,
+       "tbt": 274.3175000000001,
+       "fcp": 1068.219,
+       "si": 1161.3387883706494,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 500,
+       "benchmark": 1291,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 251
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3219.14125,
+       "cls": 0,
+       "tbt": 155.17174999999997,
+       "fcp": 1066.9695000000002,
+       "si": 1066.9695000000002,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 500,
+       "benchmark": 1352.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.185,
+       "cls": 0,
+       "tbt": 121.4537499999999,
+       "fcp": 1071.2775,
+       "si": 1071.2775,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 500,
+       "benchmark": 1431,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 217
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2793.0074999999997,
+       "cls": 0,
+       "tbt": 139.99250000000052,
+       "fcp": 1077.009,
+       "si": 1077.009,
+       "js_kb": 277,
+       "font_kb": 72,
+       "gesamt_kb": 500,
+       "benchmark": 1471.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Balkon und Terrasse: Belagsaufbauten im Vergleich für Beläge, die Frost und Reg…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 202
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 38,
+     "cls": 0,
+     "tbt": -73,
+     "fcp": -1,
+     "si": 0,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -2,
+     "benchmark": -60,
+     "lcp_relativ": 0.014
+    },
+    "lcp_element_gleich": false,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/schadensanalyse": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 95,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2490,
+      "cls": 0,
+      "tbt": 173,
+      "fcp": 1067,
+      "si": 1067,
+      "js_kb": 262,
+      "font_kb": 72,
+      "gesamt_kb": 470,
+      "benchmark": 1417,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+       "rechteck": {
+        "top": 325,
+        "left": 49,
+        "width": 314,
+        "height": 228
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 13,
+       "elementRenderDelay": 222
+      },
+      "streuung_perf": [
+       94,
+       97
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 97,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2416.9375,
+       "cls": 0,
+       "tbt": 98.50000000000023,
+       "fcp": 1070.325,
+       "si": 1070.325,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1412,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 222
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 94,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2579.5,
+       "cls": 0,
+       "tbt": 204.25,
+       "fcp": 915.5,
+       "si": 915.5,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1569.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 225
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 94,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2411.468,
+       "cls": 0,
+       "tbt": 213.13300000000027,
+       "fcp": 1067.2020000000002,
+       "si": 1067.2020000000002,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1417,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 95,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2490.464,
+       "cls": 0,
+       "tbt": 172.5,
+       "fcp": 915.4639999999999,
+       "si": 915.4639999999999,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1451.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 236
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 95,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2673.9712499999996,
+       "cls": 0.010928173383983263,
+       "tbt": 150.20575000000053,
+       "fcp": 1069.7655,
+       "si": 1312.3723044622388,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1347,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,3,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 228
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 219
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3102,
+      "cls": 0,
+      "tbt": 112,
+      "fcp": 1068,
+      "si": 1075,
+      "js_kb": 262,
+      "font_kb": 72,
+      "gesamt_kb": 470,
+      "benchmark": 1488,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17,
+       "elementRenderDelay": 237
+      },
+      "streuung_perf": [
+       90,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2600.1462500000002,
+       "cls": 0,
+       "tbt": 76.00000000000023,
+       "fcp": 1065.1754999999998,
+       "si": 1075.777048976303,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1488.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 207
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2416.7889999999998,
+       "cls": 0,
+       "tbt": 132.30275000000006,
+       "fcp": 1075.1835,
+       "si": 1075.1835,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1551,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 190
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3102.0675,
+       "cls": 0,
+       "tbt": 66,
+       "fcp": 1068.0810000000001,
+       "si": 1068.0810000000001,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1290.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3122.58375,
+       "cls": 0,
+       "tbt": 112.23299999999995,
+       "fcp": 1066.9005,
+       "si": 1066.9005,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1463.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 249
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3189.6974999999993,
+       "cls": 0,
+       "tbt": 215.4604999999999,
+       "fcp": 1077.2369999999999,
+       "si": 1077.2369999999999,
+       "js_kb": 262,
+       "font_kb": 72,
+       "gesamt_kb": 470,
+       "benchmark": 1488,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenschäden analysieren bei Rissen, Hohlstellen und Feuchte: Die fachgerecht…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 251
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -2,
+     "a11y": 3,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 612,
+     "cls": 0,
+     "tbt": -61,
+     "fcp": 1,
+     "si": 8,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": 0,
+     "benchmark": 71,
+     "lcp_relativ": 0.246
+    },
+    "lcp_element_gleich": false,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 2 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "schlechter jenseits der Streuung"
+   }
+  },
+  "/naturstein/granit": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3198,
+      "cls": 0,
+      "tbt": 110,
+      "fcp": 1069,
+      "si": 1073,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 488,
+      "benchmark": 1516.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+       "rechteck": {
+        "top": 325,
+        "left": 49,
+        "width": 314,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 215
+      },
+      "streuung_perf": [
+       91,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3219.6475,
+       "cls": 0,
+       "tbt": 110.37049999999999,
+       "fcp": 1068.777,
+       "si": 1261.5818560665534,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1601.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 184
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2419.2275000000004,
+       "cls": 0,
+       "tbt": 134.61799999999994,
+       "fcp": 1073.073,
+       "si": 1073.073,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1487,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 248
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3188.6050000000005,
+       "cls": 0,
+       "tbt": 76.50000000000023,
+       "fcp": 1069.9260000000002,
+       "si": 1069.9260000000002,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1482,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 200
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3201.9575,
+       "cls": 0,
+       "tbt": 171.4085,
+       "fcp": 914.366,
+       "si": 1191.5570095998087,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1614,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 216
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3197.9725,
+       "cls": 0,
+       "tbt": 78.5,
+       "fcp": 1067.967,
+       "si": 1067.967,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 488,
+       "benchmark": 1516.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > section.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,SECTION,0,DIV,2,P",
+        "rechteck": {
+         "top": 325,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 215
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2416,
+      "cls": 0,
+      "tbt": 155,
+      "fcp": 1071,
+      "si": 1071,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 486,
+      "benchmark": 1509.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 276,
+        "left": 16,
+        "width": 380,
+        "height": 165
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 12,
+       "elementRenderDelay": 192
+      },
+      "streuung_perf": [
+       93,
+       97
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2415.692,
+       "cls": 0,
+       "tbt": 210.577,
+       "fcp": 1073.538,
+       "si": 1073.538,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 486,
+       "benchmark": 1583,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 187
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2604.385,
+       "cls": 0,
+       "tbt": 186.00000000000023,
+       "fcp": 1066.662,
+       "si": 1066.662,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 486,
+       "benchmark": 1601.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 195
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 97,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2414.434,
+       "cls": 0,
+       "tbt": 107.00000000000023,
+       "fcp": 1071.6509999999998,
+       "si": 1071.6509999999998,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 486,
+       "benchmark": 1429,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 183
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3116.1650000000004,
+       "cls": 0,
+       "tbt": 104.5,
+       "fcp": 1071.198,
+       "si": 1071.198,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 486,
+       "benchmark": 1364.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2409.9219999999996,
+       "cls": 0,
+       "tbt": 155.01950000000033,
+       "fcp": 1064.883,
+       "si": 1064.883,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 486,
+       "benchmark": 1509.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Granit, Schiefer und Quarzit: silikatische Natursteine richtig verlegen mit ver…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,SECTION,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 9,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -782,
+     "cls": 0,
+     "tbt": 45,
+     "fcp": 2,
+     "si": -2,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": -2,
+     "benchmark": -7,
+     "lcp_relativ": -0.245
+    },
+    "lcp_element_gleich": false,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 3.23,
+  "last_1min_start": 3.23,
+  "last_1min_ende": 1.76
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}
