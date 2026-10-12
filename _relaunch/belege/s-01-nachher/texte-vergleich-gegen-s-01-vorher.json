@@ -1,0 +1,44 @@
+{
+ "vorher": "s-01-vorher",
+ "nachher": "s-01-nachher",
+ "seiten": {
+  "/leistungen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "04",
+     "01",
+     "Bäder & Wellness",
+     "Ausstattungsmerkmale & Vorteile:",
+     "02",
+     "Wohnbereiche & Neubau",
+     "Ausstattungsmerkmale & Vorteile:",
+     "03",
+     "Balkon- & Terrassensanierung",
+     "Ausstattungsmerkmale & Vorteile:",
+     "04",
+     "Untergrund & DIN 18534 Abdichtung",
+     "Ausstattungsmerkmale & Vorteile:",
+     "01",
+     "Begutachtung & Untergrundanalyse",
+     "02",
+     "Beratung zu Formaten & Rutschhemmung",
+     "03",
+     "Staubgeschützt, termintreu & DIN-gerecht"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 19,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

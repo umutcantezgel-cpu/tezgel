@@ -1,0 +1,6 @@
+[
+ { "seite": "/leistungen", "alt": "AUSSTATTUNGSMERKMALE & VORTEILE:", "grund": "Bestand: CSS uppercase; Quelltext „Ausstattungsmerkmale & Vorteile:“ unverändert, KERN v2 verbietet Versal-Etiketten" },
+ { "seite": "/leistungen", "alt": "BEGUTACHTUNG & UNTERGRUNDANALYSE", "grund": "Bestand: CSS uppercase auf processSteps[0].subtitle; Wortlaut unverändert" },
+ { "seite": "/leistungen", "alt": "BERATUNG ZU FORMATEN & RUTSCHHEMMUNG", "grund": "Bestand: CSS uppercase auf processSteps[1].subtitle; Wortlaut unverändert" },
+ { "seite": "/leistungen", "alt": "STAUBGESCHÜTZT, TERMINTREU & DIN-GERECHT", "grund": "Bestand: CSS uppercase auf processSteps[2].subtitle; Wortlaut unverändert" }
+]
