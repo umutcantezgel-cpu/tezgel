@@ -1,0 +1,77 @@
+{
+ "satz": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/s-28/t2-satz-live → /tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/s-28/t2-satz-dev",
+ "base": null,
+ "bedingungen": {
+  "a": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/s-28/t2-satz-live",
+  "b": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/s-28/t2-satz-dev",
+  "freigabe": "MIKROTEXTE.md",
+  "volatil": [],
+  "regeln": "Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste."
+ },
+ "erstellt": "2026-10-12T20:06:39.524Z",
+ "ergebnis": "GRÜN",
+ "summe": {
+  "rot": 0,
+  "gelb": 4,
+  "gruen_freigegeben": 0,
+  "seiten_rot": 0,
+  "rot_nach_art": {},
+  "gelb_nach_art": {
+   "pflichtanker-fehlt": 4
+  },
+  "seiten_verglichen": 3,
+  "zustaende_verglichen": 0,
+  "freigabe_zeilen": 74,
+  "freigabe_warnungen": 0,
+  "laufzeit_s": 0
+ },
+ "freigabe": {
+  "datei": "MIKROTEXTE.md",
+  "warnungen": [],
+  "genutzt": []
+ },
+ "seiten": {
+  "/": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/#express-anfrage",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/kontakt": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#express-anfrage",
+     "grund": "fehlte schon in A"
+    },
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#termin-buchen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/referenzen#bewertungen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  }
+ }
+}
