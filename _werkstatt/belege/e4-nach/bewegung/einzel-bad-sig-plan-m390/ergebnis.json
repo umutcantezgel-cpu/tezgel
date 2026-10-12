@@ -1,0 +1,68 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/bad",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-12T01:24:01.821Z",
+ "dpr": 2,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "sig-plan",
+   "elemente": 1,
+   "ausloeser": "seite",
+   "ausgeloest": 0,
+   "modus": "zeit",
+   "animationen": 1,
+   "laengste_dauer_ms": 1120,
+   "bilder": [
+    {
+     "datei": "sig-plan-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ausschnitt"
+    },
+    {
+     "datei": "sig-plan-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ausschnitt"
+    }
+   ],
+   "befund": [
+    "data-flucht=\"laden\": Auslöser seite (Ladeanimation)",
+    "Element unterhalb des ersten Bildschirms (oben 1054 px): Ausschnitt um das Element"
+   ]
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 110,
+ "meldung": "1 Kennungen, 110 Elemente auf /bad.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/einzel-bad-sig-plan-m390"
+}

@@ -1,8 +1,9 @@
 // Prüfwerkzeug Bewegung (E0-PRUEF-02b). Vier Modi; je Lauf ergebnis.json plus Zusammenfassung auf stdout:
-//   einzelbilder  je Bewegungskennung fünf Bilder bei 0/25/50/75/100 % der längsten Dauer,
-//                 bei scroll-gebundenen Animationen fünf Scrollpositionen über den Wirkbereich
+//   einzelbilder  je Bewegungskennung fünf Bilder bei 0/25/50/75/100 % der längsten Dauer (Zeitmodus; Auslöser wahl:
+//                 je Folge fünf Bilder), bei scroll-gebundenen Animationen fünf Bilder der ganzen Ansicht bei
+//                 10/30/50/70/90 % des Durchgangs des Elements (Eintritt bis Austritt)
 //   bildrate      präsentierte und verworfene Bilder sowie Long Animation Frames bei 4× CPU-Drosselung,
-//                 Scroll-Geste oben→unten→oben, Kennzahlen je Wiederholung und als Median
+//                 Scroll-Geste oben→unten→oben, Kennzahlen je Wiederholung, Median der Anteile je Lauf als Kopfwert
 //   register      data-motion im DOM gegen _werkstatt/register.json, Animationen ohne data-motion
 //   reduziert     Animationen bei prefers-reduced-motion: reduce und Sichtbarkeit der data-motion-Elemente
 // Nutzung:
@@ -18,9 +19,12 @@ import { BASE, RELAUNCH, ANSICHTEN_AUSBAU, assertLocal, installSperre, setzeEinw
 
 export const MODI = ['einzelbilder', 'bildrate', 'register', 'reduziert'];
 
-// Auslöser je Kennung nach K-009 (Bewegungsregister). Unbekannte Kennungen gelten als Scroll-Auslöser (Annahme, im Ergebnis vermerkt).
+// Auslöser je Kennung nach K-007 und src/lib/motion/register.ts. Unbekannte Kennungen gelten als Scroll-Auslöser (Annahme, im Ergebnis vermerkt).
+// sig-plan: trägt das Element data-flucht="laden", gilt zur Laufzeit „seite“ (Ladeanimation), sonst „hover“.
+// verband: „wahl“ = Radiofeld wechseln (Halb → Drittel, Drittel → Kreuz), je Wechsel eine Folge.
 export const AUSLOESER = {
   'sig-kreuzlinie': 'seite', 'sig-flucht': 'seite', 'szene-ablauf': 'scroll', 'sig-plan': 'hover',
+  einzugsband: 'seite', fugenband: 'scroll', leitachse: 'scroll', verband: 'wahl',
   anriss: 'scroll', auftritt: 'scroll', aufklappen: 'klick', druck: 'aktiv', zustand: 'hover+fokus',
   notiert: 'erfolg', laden: 'absenden', seitenwechsel: 'navigation',
 };
@@ -31,7 +35,9 @@ const NICHT_AUSLOESBAR = {
   navigation: 'Seitenwechsel entsteht nur per Navigation',
 };
 const ZEITPUNKTE = [0, 0.25, 0.5, 0.75, 1];
-const SCROLL_POSITIONEN = 5;
+const SCROLL_ANTEILE = [0.1, 0.3, 0.5, 0.7, 0.9];   // Scrollmodus: Anteile am Durchgang des Elements (Eintritt bis Austritt)
+const WAHL_FOLGEN = ['drittel', 'kreuz'];            // verband: Start ist Halb (Standard); Folgen Halb → Drittel, Drittel → Kreuz
+const MIN_HOEHE_SEITE = 400;                         // Auslöser seite unterhalb des ersten Bildschirms: Ausschnitt mindestens so hoch
 const MAX_AUSLOESER = 12;   // je Kennung höchstens so viele Elemente auslösen
 const SCHRITT_MS = 250;     // Wartezeit nach einem Auslöser (IntersectionObserver, Klassenwechsel)
 const VERBOTEN = ['transform', 'translate', 'scale', 'rotate', 'width', 'height', 'top', 'left', 'inset'];
@@ -171,28 +177,34 @@ function ermittleKennung(kennung) {
 }
 
 /**
- * Wirkbereich eines scroll-gebundenen Elements in Dokumentkoordinaten. Bevorzugt der Bereich, in dem das Element
- * ganz im Ansichtsfenster liegt (dort ist der Zustand sichtbar); nur bei Elementen größer als das Fenster der volle
- * Durchgang (Eintritt bis Austritt).
+ * Durchgang eines scroll-gebundenen Elements in Dokumentkoordinaten: Eintritt (Oberkante am unteren Fensterrand)
+ * bis Austritt (Unterkante am oberen Fensterrand), auch wenn das Element ganz ins Fenster passt. Die Scroll-Animationen
+ * laufen über `cover`, also über genau diesen Weg (E3-Befund c).
  */
 function wirkbereich(kennung) {
   const el = document.querySelector(`[data-motion="${kennung}"]`);
   const r = el.getBoundingClientRect();
   const vh = window.innerHeight;
   const oben = r.top + window.scrollY;
-  const max = document.documentElement.scrollHeight - vh;
-  const sichtbarVon = Math.max(0, oben + r.height - vh);
-  const sichtbarBis = Math.min(max, oben);
-  if (sichtbarBis > sichtbarVon) return { start: sichtbarVon, ende: sichtbarBis, max, lage: 'ganz sichtbar' };
-  return { start: Math.max(0, oben - vh), ende: Math.min(max, oben + r.height), max, lage: 'Durchgang' };
+  const max = Math.max(0, document.documentElement.scrollHeight - vh);
+  return {
+    start: Math.min(max, Math.max(0, oben - vh)),
+    ende: Math.min(max, Math.max(0, oben + r.height)),
+    max,
+    lage: 'Durchgang',
+  };
 }
 
 function mitteZeigen(el) { el.scrollIntoView({ block: 'center', behavior: 'instant' }); }
 
-/** Ausschnitt des Elements mit 24 px Rand, im Viewport. Liegt das Element nicht im Viewport, wird die Ansicht aufgenommen.
- *  Mit --ausschnitt ansicht (ganzeAnsicht): ganzer Viewport bei Scrollposition 0 (Lade-Momente im ersten Bildschirm). */
-async function ausschnitt(page, loc, datei, ganzeAnsicht = false) {
-  if (ganzeAnsicht) {
+/**
+ * Bildausschnitt. modus: 'ansicht' = ganzer Viewport bei Scrollposition 0 (Lade-Momente im ersten Bildschirm);
+ * 'hoch' = Ausschnitt über die volle Breite um das Element, mindestens MIN_HOEHE_SEITE hoch (Auslöser seite unterhalb
+ * des ersten Bildschirms; das Element ist davor mittig gezeigt, damit ein schmales Lot nicht als Streifen endet);
+ * 'element' = Element mit 24 px Rand, im Viewport. Liegt das Element nicht im Viewport, wird die Ansicht aufgenommen.
+ */
+async function ausschnitt(page, loc, datei, modus = 'element') {
+  if (modus === 'ansicht') {
     await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
     await page.evaluate(ZWEI_FRAMES);
     await page.screenshot({ path: datei, type: 'jpeg', quality: 70 });
@@ -202,7 +214,12 @@ async function ausschnitt(page, loc, datei, ganzeAnsicht = false) {
   const box = await loc.boundingBox();
   let clip = { x: 0, y: 0, width: vp.width, height: vp.height };
   let art = 'ansicht';
-  if (box) {
+  if (box && modus === 'hoch') {
+    const h = Math.floor(Math.min(vp.height, Math.max(MIN_HOEHE_SEITE, box.height + 48)));
+    const y0 = Math.floor(Math.min(Math.max(0, box.y + box.height / 2 - h / 2), vp.height - h));
+    clip = { x: 0, y: y0, width: vp.width, height: h };
+    art = 'ausschnitt';
+  } else if (box) {
     const x0 = Math.max(0, box.x - 24), y0 = Math.max(0, box.y - 24);
     const x1 = Math.min(vp.width, box.x + box.width + 24), y1 = Math.min(vp.height, box.y + box.height + 24);
     if (x1 - x0 >= 2 && y1 - y0 >= 2) { clip = { x: x0, y: y0, width: x1 - x0, height: y1 - y0 }; art = 'ausschnitt'; }
@@ -211,12 +228,85 @@ async function ausschnitt(page, loc, datei, ganzeAnsicht = false) {
   return art;
 }
 
-/** Eine Kennung: Auslöser, Pause, Zeitpunkte bzw. Scrollpositionen, fünf Bilder. */
+/** Scrollmodus: die ganze Ansicht an der aktuellen Position (Zusammenhang sichtbar). */
+async function vollbild(page, datei) {
+  await page.evaluate(ZWEI_FRAMES);
+  await page.screenshot({ path: datei, type: 'jpeg', quality: 70 });
+  return 'ansicht';
+}
+
+/** Zeitmodus: fünf Bilder bei 0/25/50/75/100 % der längsten Dauer der erfassten Animationen (Seek über __bewSeek). */
+async function zeitBilder(page, loc, { st, verzeichnis, praefix, bildModus, folge = null }) {
+  const bilder = [];
+  for (let k = 0; k < ZEITPUNKTE.length; k++) {
+    await page.evaluate(([p, T]) => window.__bewSeek(p, T), [ZEITPUNKTE[k], st.laengste_ms]);
+    await page.evaluate(ZWEI_FRAMES);
+    const datei = `${praefix}${k}.jpg`;
+    const art = await ausschnitt(page, loc, path.join(verzeichnis, datei), bildModus);
+    bilder.push({ datei, ...(folge ? { folge } : {}), zeitpunkt: ZEITPUNKTE[k], art });
+  }
+  return bilder;
+}
+
+/**
+ * Auslöser wahl (verband): je Radiowechsel in WAHL_FOLGEN eine Folge mit fünf Zeitpunkten. Der Start ist Halb (Standard),
+ * die Folgen sind Halb → Drittel und Drittel → Kreuz. Nach jeder Folge werden die Übergänge abgebrochen, damit die nächste
+ * Folge nur ihre eigenen zeigt. Das Feld wird über seinen Wert gewählt, nicht über die Position (Reihenfolge im Markup:
+ * Kreuz, Halb, Drittel).
+ */
+async function wahlFolgen(page, loc, info, { kennung, verzeichnis, bildModus }) {
+  const gewaehlt = () => page.evaluate((k) => {
+    const i = document.querySelector(`[data-motion="${k}"] [data-verband-wahl]:checked`);
+    return i ? i.getAttribute('data-verband-wahl') : 'ohne';
+  }, kennung);
+  const el = loc.first();
+  for (const ziel of WAHL_FOLGEN) {
+    const feld = el.locator(`[data-verband-wahl="${ziel}"]`);
+    if (!(await feld.count())) { info.befund.push(`Radiofeld ${ziel} fehlt: Folge übersprungen`); continue; }
+    const von = await gewaehlt();
+    if (von === ziel) { info.befund.push(`Radiofeld ${ziel} ist schon gewählt: Folge übersprungen`); continue; }
+    const folge = `${von} → ${ziel}`;
+    const praefix = `${kennung}-${von}-${ziel}-`;
+    // Dauer des Übergangs aus dem Stil (dauer-3); Zwischenstände sind nicht per Pause/Seek ins Bild zu bringen (siehe Befund)
+    const dauerMs = await page.evaluate(() => {
+      const r = document.querySelector('[data-motion="verband"] .verband-reihe');
+      return r ? Math.round(parseFloat(getComputedStyle(r).transitionDuration) * 1000) || 0 : 0;
+    });
+    await el.evaluate(mitteZeigen);
+    await page.evaluate(ZWEI_FRAMES);
+    const folgeBilder = [];
+    const schuss = async (k, zustand, t0) => {
+      const start = Date.now();
+      const art = await ausschnitt(page, el, path.join(verzeichnis, `${praefix}${k}.jpg`), bildModus);
+      folgeBilder.push({ datei: `${praefix}${k}.jpg`, folge, zustand, ...(t0 == null ? {} : { ms_nach_klick: start - t0 }), art });
+    };
+    await schuss(0, 'vorher', null);                 // 0 %: Zustand vor dem Wechsel
+    const t0 = Date.now();
+    // Das Radiofeld liegt unter seinem Textfeld (span über dem Eingang): wie ein Mensch über das Etikett wählen
+    await el.locator(`label:has([data-verband-wahl="${ziel}"])`).click({ timeout: 5000 });
+    if (!(await feld.isChecked())) { info.befund.push(`Radiofeld ${ziel} nach dem Klick nicht gewählt: Folge übersprungen`); continue; }
+    info.ausgeloest++;
+    // pausierInit hat die Übergänge beim Entstehen angehalten; für die Abtastung laufen sie in Echtzeit weiter
+    await page.evaluate(() => document.getAnimations().forEach((a) => { if (a instanceof CSSTransition) a.play(); }));
+    info.laengste_dauer_ms = Math.max(info.laengste_dauer_ms, dauerMs);
+    info.animationen += await page.evaluate(() => document.getAnimations().filter((a) => a instanceof CSSTransition).length);
+    for (let k = 1; k <= 3; k++) await schuss(k, 'echtzeit', t0);   // 1–3: Abtastung in Echtzeit nach dem Klick
+    const rest = dauerMs + 400 - (Date.now() - t0);
+    if (rest > 0) await page.waitForTimeout(rest);
+    await schuss(4, 'nachher', t0);                 // 4: Zustand nach dem Übergang
+    info.bilder.push(...folgeBilder);
+  }
+  if (!info.bilder.length) info.befund.push('keine Folge aufgenommen');
+  else info.befund.push('verband: Bilder 1–3 sind Echtzeit-Abtastungen nach dem Klick (ms_nach_klick), keine Zeitpunkte 25/50/75 %. In dieser Umgebung folgt das Bild bei translate-Übergängen weder JS-Pause noch CDP-Seek (getestet); der Übergang steht nach etwa 150 ms zu rund 85 % im Bild');
+  info.modus = 'echtzeit';
+  return info;
+}
+
+/** Eine Kennung: Auslöser, Pause, Zeitpunkte bzw. Scrollpositionen, fünf Bilder je Folge. */
 async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis, ganzeAnsicht = false }) {
-  const ausloeser = AUSLOESER[kennung] ?? 'scroll';
-  const info = { kennung, elemente: anzahl, ausloeser, ausgeloest: 0, modus: null, animationen: 0, laengste_dauer_ms: 0, bilder: [], befund: [] };
-  if (!(kennung in AUSLOESER)) info.befund.push('nicht im K-009-Auszug: Scroll-Auslöser angenommen');
-  if (NICHT_AUSLOESBAR[ausloeser]) { info.befund.push(`keine Bilder: ${NICHT_AUSLOESBAR[ausloeser]}`); return info; }
+  const info = { kennung, elemente: anzahl, ausloeser: AUSLOESER[kennung] ?? 'scroll', ausgeloest: 0, modus: null, animationen: 0, laengste_dauer_ms: 0, bilder: [], befund: [] };
+  if (!(kennung in AUSLOESER)) info.befund.push('nicht in AUSLOESER (K-007): Scroll-Auslöser angenommen');
+  if (NICHT_AUSLOESBAR[info.ausloeser]) { info.befund.push(`keine Bilder: ${NICHT_AUSLOESBAR[info.ausloeser]}`); return info; }
   const page = await context.newPage();
   let loslassen = null;
   try {
@@ -224,10 +314,33 @@ async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis, ga
     await bereit(page);
     await page.waitForTimeout(150);
     const loc = page.locator(`[data-motion="${kennung}"]`);
+    // sig-plan: mit data-flucht="laden" (Planblatt, E4-NACH-02) löst das Laden der Seite aus, sonst Hover/Fokus
+    if (kennung === 'sig-plan') {
+      const fluchten = await loc.evaluateAll((els) => els.map((e) => e.getAttribute('data-flucht') || ''));
+      if (fluchten[0] === 'laden') { info.ausloeser = 'seite'; info.befund.push('data-flucht="laden": Auslöser seite (Ladeanimation)'); }
+      if (new Set(fluchten).size > 1) info.befund.push(`data-flucht gemischt (${[...new Set(fluchten)].join(', ') || 'ohne'}): Auslöser nach dem ersten Element`);
+    }
+    const ausloeser = info.ausloeser;
     const n = Math.min(anzahl, MAX_AUSLOESER);
     if (anzahl > MAX_AUSLOESER) info.befund.push(`nur ${MAX_AUSLOESER} von ${anzahl} Elementen ausgelöst`);
+    // Bildausschnitt: Auslöser seite = ganze Ansicht bei Scrollposition 0; unterhalb des ersten Bildschirms ein Ausschnitt um das Element
+    let bildModus = ganzeAnsicht ? 'ansicht' : 'element';
+    if (ausloeser === 'seite') {
+      const lage = await loc.first().evaluate((el) => ({ oben: el.getBoundingClientRect().top + window.scrollY, vh: window.innerHeight }));
+      if (lage.oben >= lage.vh) {
+        bildModus = 'hoch';
+        await loc.first().evaluate(mitteZeigen);
+        info.befund.push(`Element unterhalb des ersten Bildschirms (oben ${Math.round(lage.oben)} px): Ausschnitt um das Element`);
+      } else {
+        bildModus = 'ansicht';
+        await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+      }
+    }
     if (ausloeser === 'scroll') {
       for (let i = 0; i < n; i++) { await loc.nth(i).evaluate(mitteZeigen); await page.waitForTimeout(SCHRITT_MS); info.ausgeloest++; }
+    } else if (ausloeser === 'wahl') {
+      // je Radiowechsel eine Folge (Auslöser ist der Wechsel selbst, Aufnahme folgt unten je Folge)
+      return await wahlFolgen(page, loc, info, { kennung, verzeichnis, bildModus });
     } else if (ausloeser === 'hover' || ausloeser === 'hover+fokus') {
       for (let i = 0; i < n; i++) { await loc.nth(i).hover({ timeout: 5000 }); await page.waitForTimeout(SCHRITT_MS); info.ausgeloest++; }
       await loc.first().hover({ timeout: 5000 }); // Zustand am ersten Element herstellen
@@ -247,7 +360,7 @@ async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis, ga
       await loc.first().click({ timeout: 5000 });
       info.ausgeloest = 1;
     }
-    if (ausloeser === 'scroll' || ausloeser === 'seite') await loc.first().evaluate(mitteZeigen);
+    if (ausloeser === 'scroll') await loc.first().evaluate(mitteZeigen);
     await page.waitForTimeout(350);
 
     const st = await page.evaluate(ermittleKennung, kennung);
@@ -258,28 +371,26 @@ async function aufnahme(context, { base, seite, kennung, anzahl, verzeichnis, ga
     if (st.scroll > 0 && st.zeit > 0) info.befund.push('Zeit- und Scroll-Animationen gemischt: Zeitpunkte nur für die zeitbasierten');
     const scrollModus = st.scroll > 0 && st.zeit === 0;
     info.modus = scrollModus ? 'scroll' : 'zeit';
-    if (ganzeAnsicht && scrollModus) info.befund.push('--ausschnitt ansicht im Scrollmodus: alle Bilder bei Scrollposition 0');
+    if (ganzeAnsicht && scrollModus) info.befund.push('--ausschnitt ansicht ohne Wirkung im Scrollmodus: die Ansicht steht dort immer ganz');
 
     if (scrollModus) {
       const bereich = await page.evaluate(wirkbereich, kennung);
       info.wirkbereich = bereich.lage;
-      for (let k = 0; k < SCROLL_POSITIONEN; k++) {
-        const y = Math.round(bereich.start + ((bereich.ende - bereich.start) * k) / (SCROLL_POSITIONEN - 1));
-        await page.evaluate((yy) => window.scrollTo({ top: yy, behavior: 'instant' }), y);
+      info.wirkbereich_px = { start: Math.round(bereich.start), ende: Math.round(bereich.ende) };
+      if (bereich.ende <= bereich.start) info.befund.push('Durchgang ohne Scrollweg: alle Bilder gleich');
+      for (let k = 0; k < SCROLL_ANTEILE.length; k++) {
+        const anteil = SCROLL_ANTEILE[k];
+        const soll = Math.round(bereich.start + (bereich.ende - bereich.start) * anteil);
+        await page.evaluate((yy) => window.scrollTo({ top: yy, behavior: 'instant' }), soll);
         await page.waitForTimeout(120);
         await page.evaluate(ZWEI_FRAMES);
+        const ist = await page.evaluate(() => Math.round(window.scrollY));
         const datei = `${kennung}-${k}.jpg`;
-        const art = await ausschnitt(page, loc.first(), path.join(verzeichnis, datei), ganzeAnsicht);
-        info.bilder.push({ datei, scroll_y: y, art });
+        const art = await vollbild(page, path.join(verzeichnis, datei));
+        info.bilder.push({ datei, scroll_y: ist, anteil, art });
       }
     } else {
-      for (let k = 0; k < ZEITPUNKTE.length; k++) {
-        await page.evaluate(([p, T]) => window.__bewSeek(p, T), [ZEITPUNKTE[k], st.laengste_ms]);
-        await page.evaluate(ZWEI_FRAMES);
-        const datei = `${kennung}-${k}.jpg`;
-        const art = await ausschnitt(page, loc.first(), path.join(verzeichnis, datei), ganzeAnsicht);
-        info.bilder.push({ datei, zeitpunkt: ZEITPUNKTE[k], art });
-      }
+      info.bilder.push(...(await zeitBilder(page, loc.first(), { st, verzeichnis, praefix: `${kennung}-`, bildModus })));
     }
     return info;
   } finally {
@@ -352,6 +463,9 @@ function zaehleEreignis(e, s) {
   }
 }
 
+/** Anteil verworfener Bilder in Prozent (zwei Nachkommastellen), null ohne Bilder. */
+const anteilProzent = (verworfen, gesamt) => (gesamt ? Math.round((verworfen / gesamt) * 10000) / 100 : null);
+
 /** Kennzahlen einer Messung. Quelle: Frame-Ereignisse, sonst PipelineReporter (Zustände stehen am b-Ereignis). */
 function kennzahlen(s, loaf) {
   const frame = s.praesentiert + s.verworfen > 0;
@@ -364,13 +478,13 @@ function kennzahlen(s, loaf) {
   return {
     bilder_gesamt: gesamt,
     verworfen,
-    anteil_verworfen_prozent: gesamt ? Math.round((verworfen / gesamt) * 10000) / 100 : null,
+    anteil_verworfen_prozent: anteilProzent(verworfen, gesamt),
     loaf_anzahl: loaf.length,
     loaf_summe_ms: Math.round(loaf.reduce((a, b) => a + b, 0)),
     quelle,
     zusatz: {
-      frame_ereignisse: { praesentiert: s.praesentiert, verworfen: s.verworfen },
-      pipeline_reporter: { praesentiert: s.prPraesentiert, verworfen: s.prVerworfen },
+      frame_ereignisse: { praesentiert: s.praesentiert, verworfen: s.verworfen, anteil_prozent: anteilProzent(s.verworfen, s.praesentiert + s.verworfen) },
+      pipeline_reporter: { praesentiert: s.prPraesentiert, verworfen: s.prVerworfen, anteil_prozent: anteilProzent(s.prVerworfen, s.prPraesentiert + s.prVerworfen) },
     },
   };
 }
@@ -434,9 +548,13 @@ async function bildrate({ browser, base, seite, ansicht, wiederholungen, vorbere
       wiederholungen,
       bilder_gesamt: m((l) => l.bilder_gesamt),
       verworfen: m((l) => l.verworfen),
+      // Kopfwert = Median der Anteile je Lauf; die Anteile je Lauf stehen daneben (nicht die Feldmediane teilen)
       anteil_verworfen_prozent: m((l) => l.anteil_verworfen_prozent),
+      anteile_je_lauf: laeufe.map((l) => l.anteil_verworfen_prozent),
+      anteile_pipeline_je_lauf: laeufe.map((l) => l.zusatz.pipeline_reporter.anteil_prozent),
       loaf_anzahl: m((l) => l.loaf_anzahl),
       loaf_summe_ms: m((l) => l.loaf_summe_ms),
+      hinweis: 'Median je Feld, nicht aus derselben Zeile (bilder_gesamt, verworfen, loaf_*). Kopfwert anteil_verworfen_prozent = Median der Anteile je Lauf (anteile_je_lauf).',
       quelle: [...new Set(laeufe.map((l) => l.quelle))].join(' | '),
       laeufe,
       gesperrt: zusammenfassung(protokoll),
@@ -629,7 +747,8 @@ function kurzfassung(e, datei) {
   }
   if (e.modus === 'bildrate') {
     return { ...basis, wiederholungen: e.wiederholungen, bilder_gesamt: e.bilder_gesamt, verworfen: e.verworfen,
-      anteil_verworfen_prozent: e.anteil_verworfen_prozent, loaf_anzahl: e.loaf_anzahl, loaf_summe_ms: e.loaf_summe_ms, quelle: e.quelle };
+      anteil_verworfen_prozent: e.anteil_verworfen_prozent, anteile_je_lauf: e.anteile_je_lauf, anteile_pipeline_je_lauf: e.anteile_pipeline_je_lauf,
+      loaf_anzahl: e.loaf_anzahl, loaf_summe_ms: e.loaf_summe_ms, hinweis: e.hinweis, quelle: e.quelle };
   }
   if (e.modus === 'register') {
     return { ...basis, gefundene_kennungen: e.gefundene_kennungen, unbekannt: e.unbekannt, ohne_register_anzahl: e.ohne_register.length,

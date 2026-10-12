@@ -1,0 +1,75 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/ueber-uns",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T01:25:08.103Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "fugenband",
+   "elemente": 1,
+   "ausloeser": "scroll",
+   "ausgeloest": 1,
+   "modus": "scroll",
+   "animationen": 1,
+   "laengste_dauer_ms": 0,
+   "bilder": [
+    {
+     "datei": "fugenband-0.jpg",
+     "scroll_y": 2143,
+     "anteil": 0.1,
+     "art": "ansicht"
+    },
+    {
+     "datei": "fugenband-1.jpg",
+     "scroll_y": 2489,
+     "anteil": 0.3,
+     "art": "ansicht"
+    },
+    {
+     "datei": "fugenband-2.jpg",
+     "scroll_y": 2835,
+     "anteil": 0.5,
+     "art": "ansicht"
+    },
+    {
+     "datei": "fugenband-3.jpg",
+     "scroll_y": 3180,
+     "anteil": 0.7,
+     "art": "ansicht"
+    },
+    {
+     "datei": "fugenband-4.jpg",
+     "scroll_y": 3526,
+     "anteil": 0.9,
+     "art": "ansicht"
+    }
+   ],
+   "befund": [],
+   "wirkbereich": "Durchgang",
+   "wirkbereich_px": {
+    "start": 1970,
+    "ende": 3699
+   }
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 90,
+ "meldung": "1 Kennungen, 90 Elemente auf /ueber-uns.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/einzel-ueber-uns-fugenband-d1440"
+}

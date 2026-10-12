@@ -1,0 +1,65 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/standorte/wetzlar",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-12T01:24:59.807Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "einzugsband",
+   "elemente": 1,
+   "ausloeser": "seite",
+   "ausgeloest": 0,
+   "modus": "zeit",
+   "animationen": 3,
+   "laengste_dauer_ms": 1200,
+   "bilder": [
+    {
+     "datei": "einzugsband-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ansicht"
+    },
+    {
+     "datei": "einzugsband-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ansicht"
+    },
+    {
+     "datei": "einzugsband-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ansicht"
+    },
+    {
+     "datei": "einzugsband-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ansicht"
+    },
+    {
+     "datei": "einzugsband-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ansicht"
+    }
+   ],
+   "befund": []
+  }
+ ],
+ "bilder_gesamt": 5,
+ "data_motion_elemente": 94,
+ "meldung": "1 Kennungen, 94 Elemente auf /standorte/wetzlar.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e4-nach/bewegung/einzel-standorte__wetzlar-einzugsband-d1440"
+}
