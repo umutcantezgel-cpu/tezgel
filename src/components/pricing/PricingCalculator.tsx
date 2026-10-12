@@ -82,7 +82,8 @@ export default function PricingCalculator() {
       {/* ── Linke Spalte: Angaben zu Vorhaben und Situation ── */}
       <div className="flex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12">
         {/* Phasen */}
-        <ol className="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage">
+        {/* Umbruch erlaubt (Tor S-01/03): bei 320 px und erhöhtem Textabstand ragten die Phasen sonst über den Rand */}
+        <ol className="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage">
           <li className="flex items-center gap-2">
             <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">1</span>
             <span>Gewerk</span>

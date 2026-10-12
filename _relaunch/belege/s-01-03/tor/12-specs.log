@@ -1,0 +1,145 @@
+
+Running 140 tests using 2 workers
+
+[1A[2K[1/140] [mobil] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[2/140] [mobil] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[3/140] [mobil] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[4/140] [mobil] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /kontakt) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[5/140] [mobil] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[6/140] [mobil] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[7/140] [mobil] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[8/140] [mobil] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[9/140] [mobil] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /kontakt) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[10/140] [mobil] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[11/140] [mobil] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[12/140] [mobil] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[13/140] [mobil] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[14/140] [mobil] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[15/140] [mobil] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[16/140] [mobil] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[17/140] [mobil] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[18/140] [mobil] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[19/140] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /kontakt: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[20/140] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /#express-anfrage: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[21/140] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /leistungen: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[22/140] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /foerderung: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[23/140] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[24/140] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[25/140] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[26/140] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[27/140] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[28/140] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[29/140] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[30/140] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[31/140] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[32/140] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[33/140] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[34/140] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[35/140] [mobil] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[36/140] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[37/140] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[38/140] [mobil] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[39/140] [mobil] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[40/140] [mobil] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[41/140] [mobil] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[42/140] [mobil] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[43/140] [mobil] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[44/140] [mobil] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[45/140] [mobil] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[46/140] [mobil] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[47/140] [mobil] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[48/140] [mobil] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[49/140] [mobil] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[50/140] [mobil] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[51/140] [mobil] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[52/140] [mobil] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[53/140] [mobil] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K[54/140] [mobil] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/preise) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[55/140] [mobil] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/preise) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[56/140] [mobil] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/preise) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[57/140] [mobil] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/preise) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[58/140] [mobil] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/preise) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[59/140] [mobil] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/preise) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[60/140] [mobil] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/preise) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[61/140] [mobil] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/preise) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[62/140] [mobil] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[63/140] [mobil] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[64/140] [mobil] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[65/140] [mobil] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[66/140] [mobil] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[67/140] [mobil] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[68/140] [mobil] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[69/140] [mobil] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[70/140] [mobil] › tests/funktion-preisrechner.spec.mjs:174:3 › PricingCalculator (/faq) › Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)
+[1A[2K[71/140] [desktop] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[72/140] [desktop] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[73/140] [desktop] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[74/140] [desktop] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /kontakt) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[75/140] [desktop] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[76/140] [desktop] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[77/140] [desktop] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[78/140] [desktop] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[79/140] [desktop] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /kontakt) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[80/140] [desktop] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[81/140] [desktop] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[82/140] [desktop] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[83/140] [desktop] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[84/140] [desktop] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[85/140] [desktop] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[86/140] [desktop] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[87/140] [desktop] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[88/140] [desktop] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[89/140] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /kontakt: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[90/140] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /#express-anfrage: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[91/140] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /leistungen: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[92/140] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /foerderung: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[93/140] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[94/140] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[95/140] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[96/140] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[97/140] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[98/140] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[99/140] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[100/140] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[101/140] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[102/140] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[103/140] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[104/140] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[105/140] [desktop] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[106/140] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[107/140] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[108/140] [desktop] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[109/140] [desktop] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[110/140] [desktop] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[111/140] [desktop] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[112/140] [desktop] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[113/140] [desktop] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[114/140] [desktop] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[115/140] [desktop] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[116/140] [desktop] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[117/140] [desktop] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[118/140] [desktop] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[119/140] [desktop] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[120/140] [desktop] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[121/140] [desktop] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[122/140] [desktop] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[123/140] [desktop] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K[124/140] [desktop] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/preise) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[125/140] [desktop] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/preise) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[126/140] [desktop] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/preise) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[127/140] [desktop] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/preise) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[128/140] [desktop] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/preise) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[129/140] [desktop] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/preise) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[130/140] [desktop] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/preise) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[131/140] [desktop] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/preise) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[132/140] [desktop] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[133/140] [desktop] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[134/140] [desktop] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[135/140] [desktop] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[136/140] [desktop] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[137/140] [desktop] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[138/140] [desktop] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[139/140] [desktop] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[140/140] [desktop] › tests/funktion-preisrechner.spec.mjs:174:3 › PricingCalculator (/faq) › Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)
+[1A[2K  9 skipped
+  131 passed (2.8m)

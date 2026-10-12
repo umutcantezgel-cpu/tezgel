@@ -3,6 +3,8 @@
 // Seite. Die Liste trägt ihren Namen „Fachgewerke“ nur per aria-label (keine neue sichtbare Überschrift).
 // Ab lg sitzt das Feld unten in der Randspalte, auf Höhe der Aktionen – wie das Schriftfeld eines Plans rechts unten.
 // Farbwechsel bei Hover/Fokus nach Register (`zustand`); Server-Komponente, keine weitere Bewegung.
+// Fokus (Tor S-01/03, a11y-zusatz): Die Zeile mit dem fokussierten Link liegt über ihren Nachbarn (`focus-within:z-10`),
+// sonst überdecken die Nachbarfelder im Fugenraster einen Teil des 2-px-Fokusrings.
 import { SERVICES } from '@/config/services';
 import Icon from '@/components/icons/Icon';
 
@@ -13,7 +15,7 @@ export default function Sprungindex() {
     <div className="flex h-full flex-col justify-end">
       <ol aria-label="Fachgewerke" className="grid gap-px border border-fuge bg-fuge">
         {SERVICES.map((leistung, nr) => (
-          <li key={leistung.id} className="bg-fliese">
+          <li key={leistung.id} className="relative bg-fliese focus-within:z-10">
             <a
               href={`#${leistung.id}`}
               data-motion="zustand"

@@ -1,0 +1,7 @@
+{"html":172,"nur_vorher":0,"nur_nachher":0,"html_abweichend":2,"css_weg":21,"css_neu":25,"var_weg":4,"var_neu":1,"keyframes_weg":0,"keyframes_neu":0}
+≠ blog.html 
+  vorher:   imageSrcSet="/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=640&amp;q=75 640w, /_next/image?url 
+  nachher:  imageSrcSet="/_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fimages%2Fbad%2Fbad-holz-waschtisch.webp&amp;w=384&amp;q=75 384w, /_next/image?url
+≠ leistungen.html 
+  vorher:  n></div></div></div></div><main id="main-content" class="flex-1 pb-16 lg:pb-0"><div class="pt-36 pb-24 min-h-screen relative overflow-hidden"><script type="application/ld+json">{"@context":"https://sc 
+  nachher: n></div></div></div></div><main id="main-content" class="flex-1 pb-16 lg:pb-0"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tezge

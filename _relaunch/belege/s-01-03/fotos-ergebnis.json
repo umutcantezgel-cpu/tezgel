@@ -1,0 +1,106 @@
+{
+ "satz": "s-01-03",
+ "base": "http://127.0.0.1:4360",
+ "einwilligung": "abgelehnt",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 9,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7684,
+   "blockiert": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7686,
+   "blockiert": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 15137,
+   "blockiert": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "t768",
+   "status": 200,
+   "hoehen": 9,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 9190,
+   "blockiert": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 10926,
+   "blockiert": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 11,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 10973,
+   "blockiert": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 18869,
+   "blockiert": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "t768",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 14350,
+   "blockiert": []
+  }
+ ]
+}

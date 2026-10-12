@@ -1,0 +1,200 @@
+{
+ "satz": "s-01-03-texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-607d822/.next/server/app/**/*.html",
+  "build_id": "QHACZ6TwvHwVoc1lAbYzr",
+  "dateien": 2,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T04:34:03.377Z",
+ "summe": {
+  "dateien": 2,
+  "im_manifest": 2,
+  "eintraege": 959,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 11,
+   "ok": 7,
+   "befehle": 2,
+   "fehlend": 0,
+   "ziel_unbekannt": 2,
+   "pflichtanker_ok": "0/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 0.5
+ },
+ "fragmente": {
+  "gesamt": 11,
+  "ok": 7,
+  "befehle": [
+   {
+    "seite": "/blog",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [
+   {
+    "seite": "/blog",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "/kontakt#express-anfrage"
+   }
+  ],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 2,
+    "von": [
+     "/blog",
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/blog",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "bad",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "wohnen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "aussen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "untergrund",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/blog": {
+   "datei": "blog.json",
+   "quelle": "blog.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 469,
+   "arten": {
+    "meta": 33,
+    "text": 369,
+    "aria": 36,
+    "alt": 16,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesen-Ratgeber & Badsanierung Tipps"
+   ],
+   "hash": "a144488b0e7bdd02"
+  },
+  "/leistungen": {
+   "datei": "leistungen.json",
+   "quelle": "leistungen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 490,
+   "arten": {
+    "meta": 33,
+    "text": 394,
+    "aria": 48,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "hash": "a5902f9bcb980217"
+  }
+ }
+}
