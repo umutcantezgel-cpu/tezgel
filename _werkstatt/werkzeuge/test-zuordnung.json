@@ -145,5 +145,12 @@
     "specs": [
       "funktion-kontaktwege.spec.mjs"
     ]
+  },
+  {
+    "muster": "app/\\(bestand\\)/ueber-uns/",
+    "specs": [
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
   }
 ]

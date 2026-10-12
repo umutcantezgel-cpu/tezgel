@@ -2,6 +2,7 @@
 
 - Etappe: E3 → E4 · Stand 12.10.2026 ~07:00 CEST · E3-Tor Anlauf 2 ausgewertet (E-026: Ziel 8 nicht erreicht, ERZ 6,5–7,7, ARB 6,5–7,2; AUSNAHME LCP-Budget mit Ersatz). main = 6156079 (live), Push nur auf den Arbeitsbranch.
 - Jetzt: zweiter und letzter Durchgang E4-N2-01…13 (PLAN „Offene Punkte · E3-Tor, Anlauf 2“). Umgesetzt durch den Orchestrator: -01 (2229ba8, 066aa25), -02/-03 (172bd63). Laufend: E4-N2-01-PA (Prüfstufe A Mängel), Baumeister -05 (/leistungen), -06 (/leistungen/[id]), -07 (/standorte). Danach -04, -08, -09, -10 (nach -01-PA), -11, -12, -13; Prüfstufe A für -02/-03 (Bilder aller Erzählansichten, Bewegungsfolgen /bad, /standorte).
+- Kleinpunkte nach E4-N2: `src/components/sections/CompanyHistory.jsx` verwaist (Firmengeschichte steht jetzt in /ueber-uns) → mit E6-BAU-11 entfernen; Rinne im Schnitt für `bad`/`untergrund` (vorgaben.ts); Leitachse mit Abschnittsbezug statt Verdeckung (/ueber-uns); mobil Einstieg der Arbeitsansichten kürzer (/blog erster Eintrag bei ~1150 px).
 - Danach: E4 Familien – Briefings E4-BAU-01…11 bereit (`_werkstatt/pakete/`), E5-Spezifikationen im Generator `scratchpad/orch/spez/e4/erzeuge.py` (E5-BAU-10 von Hand).
 - Offene Menschen-Fragen: M-15 bis M-26.
 
