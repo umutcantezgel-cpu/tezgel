@@ -1,0 +1,114 @@
+{
+ "vorher": "q-01-vorher",
+ "nachher": "q-01-nachher",
+ "seiten": {
+  "/bad": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/badanfrage": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/badsanierung": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/barrierefreies-bad": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/badplaner": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/bad-aus-einer-hand": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/fliesen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/musterbaeder/basic-bad-4_6": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 40,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

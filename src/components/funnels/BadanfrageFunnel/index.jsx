@@ -1,8 +1,13 @@
 "use client";
 // Badanfrage (E-011): Schrittwechsel und Rahmen hier. Logik aus useBadanfrage (gemeinsam mit der Kern-Ansicht); Markup in Schritt1–5,
-// Erfolg und WhatsAppGeoeffnet.
-import { ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
+// Erfolg und WhatsAppGeoeffnet. Darstellung nach KERN v2 (Q-01, Vorbild Express-Anfrage): ein Feld an der Fuge mit Kopf in Mono,
+// Fortschritt als Fugenband (dekorativ wie im Bestand; der Stand steht im Etikett), Fußleiste Zurück/Weiter.
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen } from '@/components/kern/stile';
 import { useBadanfrage, TOTAL_STEPS } from '@/lib/formulare/useBadanfrage';
+import { feldClass } from './stile';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
 import Schritt3 from './Schritt3';
@@ -42,76 +47,70 @@ export default function BadanfrageFunnel() {
     }
 
     return (
-        <div className="glass-bezel-outer max-w-3xl mx-auto overflow-hidden">
-            <div className="glass-bezel-inner overflow-hidden">
-                {/* Header / Progress Bar */}
-                <div className="ceramic-band p-6 sm:p-8">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                        <span className="eyebrow">
-                            <Sparkles className="w-3.5 h-3.5" />
-                            Interaktive Badanfrage &middot; Schritt {step} von {TOTAL_STEPS}
+        <div className="@container">
+            <div className={feldClass}>
+                {/* Kopf: Etiketten, Überschrift, Fortschritt */}
+                <div className="mb-8 border-b border-fuge pb-6">
+                    <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                        <span className={etikettKlassen}>
+                            {/* Kreuz an der ersten Zeile, auch wenn das Etikett mobil umbricht */}
+                            <Fugenkreuz className="mt-1 size-3 self-start text-strich" />
+                            <span>
+                                Interaktive Badanfrage &middot; <span className="whitespace-nowrap">Schritt {step} von {TOTAL_STEPS}</span>
+                            </span>
                         </span>
-                        <span className="eyebrow eyebrow-neutral">
+                        <span className={etikettKlassen}>
                             Kostenlos &amp; unverbindlich
                         </span>
                     </div>
-                    <h2 className="text-xl sm:text-2xl font-black text-neutral-900">
+                    <h2 className="mt-6 text-fs-5 text-tinte">
                         Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar
                     </h2>
 
-                    {/* Progress Indicators */}
-                    <div className="grid grid-cols-5 gap-2 mt-6" aria-hidden="true">
+                    {/* Fortschritt: erledigt = Haken, aktuell = Tinte, offen = Nummer in Tinte-2 */}
+                    <div className="mt-6 grid grid-cols-5 border-t border-l border-strich" aria-hidden="true">
                         {Array.from({ length: TOTAL_STEPS }, (_, i) => i + 1).map((s) => (
                             <div
                                 key={s}
-                                className={`h-2 rounded-full transition-all duration-300 ${
-                                    s <= step ? 'bg-orange-600' : 'bg-neutral-200'
+                                className={`flex h-8 items-center justify-center border-r border-b border-strich font-mono text-fs-1 tabular-nums ${
+                                    s === step ? 'bg-tinte text-kalk' : s < step ? 'bg-fliese text-tinte' : 'bg-fliese text-tinte-2'
                                 }`}
-                            />
+                            >
+                                {s < step ? <Icon name="haken" groesse={4} /> : s}
+                            </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Form Content */}
-                <div className="p-6 sm:p-10">
-                    {step === 1 && <Schritt1 formData={formData} setFormData={setFormData} />}
-                    {step === 2 && <Schritt2 formData={formData} setFormData={setFormData} />}
-                    {step === 3 && <Schritt3 formData={formData} setFormData={setFormData} calculatedSqm={calculatedSqm} />}
-                    {step === 4 && <Schritt4 formData={formData} setFormData={setFormData} toggleFeature={toggleFeature} />}
-                    {step === 5 && (
-                        <Schritt5
-                            setStep={setStep} status={status} errorMessage={errorMessage} formData={formData} setFormData={setFormData}
-                            handleWhatsApp={handleWhatsApp} handleOnlineSubmit={handleOnlineSubmit}
-                        />
-                    )}
+                {/* Inhalt des Schritts */}
+                {step === 1 && <Schritt1 formData={formData} setFormData={setFormData} />}
+                {step === 2 && <Schritt2 formData={formData} setFormData={setFormData} />}
+                {step === 3 && <Schritt3 formData={formData} setFormData={setFormData} calculatedSqm={calculatedSqm} />}
+                {step === 4 && <Schritt4 formData={formData} setFormData={setFormData} toggleFeature={toggleFeature} />}
+                {step === 5 && (
+                    <Schritt5
+                        setStep={setStep} status={status} errorMessage={errorMessage} formData={formData} setFormData={setFormData}
+                        handleWhatsApp={handleWhatsApp} handleOnlineSubmit={handleOnlineSubmit}
+                    />
+                )}
 
-                    {/* Navigation Buttons for Steps 1-4 */}
-                    {step < TOTAL_STEPS && (
-                        <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-200">
-                            {step > 1 ? (
-                                <button
-                                    type="button"
-                                    onClick={() => setStep(step - 1)}
-                                    className="flex items-center gap-1.5 px-4 py-2.5 rounded-full text-slate-700 hover:text-orange-600 font-bold text-xs transition-colors"
-                                >
-                                    <ArrowLeft className="w-4 h-4" />
-                                    Zurück
-                                </button>
-                            ) : (
-                                <div />
-                            )}
-
-                            <button
-                                type="button"
-                                onClick={() => setStep(step + 1)}
-                                className="btn-primary px-6 py-3 text-xs"
-                            >
-                                Weiter zu Schritt {step + 1}
-                                <ArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    )}
-                </div>
+                {/* Fußleiste für die Schritte 1–4: mobil Weiter oben in voller Breite, Zurück darunter */}
+                {step < TOTAL_STEPS && (
+                    <div
+                        className={`mt-8 flex flex-col-reverse items-stretch gap-4 border-t border-fuge pt-6 @md:flex-row @md:items-center ${
+                            step > 1 ? '@md:justify-between' : '@md:justify-end'
+                        }`}
+                    >
+                        {step > 1 && (
+                            <Knopf variante="text" onClick={() => setStep(step - 1)} iconLinks="pfeil-links">
+                                Zurück
+                            </Knopf>
+                        )}
+                        <Knopf onClick={() => setStep(step + 1)} icon="pfeil-rechts" className="w-full @md:w-auto">
+                            Weiter zu Schritt {step + 1}
+                        </Knopf>
+                    </div>
+                )}
             </div>
         </div>
     );

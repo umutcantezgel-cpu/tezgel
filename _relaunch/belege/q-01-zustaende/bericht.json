@@ -1,0 +1,198 @@
+[
+ {
+  "ansicht": "d1440",
+  "zustand": "s1",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-s1.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 556
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "s2",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-s2.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 577
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "s3",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-s3.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 642
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "s4",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-s4.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 752
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "s5",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-s5.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 1124
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "fehler-whatsapp",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-fehler-whatsapp.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 1197
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "fehler-whatsapp",
+  "axe": []
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "whatsapp",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-whatsapp.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 349
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "whatsapp",
+  "axe": []
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "whatsapp",
+  "geoeffnet": [
+   "https://api.whatsapp.com/send?phone=491726728504&text=Hallo%"
+  ]
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "fehler-server",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-fehler-server.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 1197
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "fehler-server",
+  "axe": []
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "erfolg",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/d1440-erfolg.png",
+  "ueberlauf": [],
+  "breite": 1216,
+  "hoehe": 682
+ },
+ {
+  "ansicht": "d1440",
+  "zustand": "erfolg",
+  "axe": []
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "s1",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-s1.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 865
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "s2",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-s2.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 944
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "s3",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-s3.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 820
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "s4",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-s4.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 1270
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "s5",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-s5.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 1543
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "fehler-whatsapp",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-fehler-whatsapp.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 1637
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "fehler-whatsapp",
+  "axe": []
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "whatsapp",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-whatsapp.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 474
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "whatsapp",
+  "axe": []
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "whatsapp",
+  "geoeffnet": []
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "fehler-server",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-fehler-server.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 1614
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "fehler-server",
+  "axe": []
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "erfolg",
+  "datei": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/q-01/endstand/m390-erfolg.png",
+  "ueberlauf": [],
+  "breite": 358,
+  "hoehe": 874
+ },
+ {
+  "ansicht": "m390",
+  "zustand": "erfolg",
+  "axe": []
+ }
+]

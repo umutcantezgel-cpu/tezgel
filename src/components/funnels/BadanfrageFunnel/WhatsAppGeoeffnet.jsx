@@ -1,33 +1,32 @@
-import { Phone, MessageCircle } from 'lucide-react';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen } from '@/components/kern/stile';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import { COMPANY_DATA } from '@/config/company';
+import { feldClass } from './stile';
 
-// Ansicht nach dem Öffnen von WhatsApp (E-011: aus BadanfrageFunnel.jsx verschoben, Markup unverändert).
+// Ansicht nach dem Öffnen von WhatsApp (Q-01: Darstellung nach KERN v2 wie die Express-Anfrage; Texte, Überschrift H3
+// und Verhalten unverändert). Markenzeichen nur als Logo (K-005), keine grüne Fläche.
 export default function WhatsAppGeoeffnet({ handleBackFromWhatsApp, calculatedSqm, scopeTitle }) {
     return (
-        <div className="glass-bezel-outer max-w-2xl mx-auto shadow-xl">
-            <div className="glass-bezel-inner p-8 md:p-12 text-center" role="status">
-                <div className="icon-chip w-20 h-20 rounded-tile-xl mx-auto mb-6 bg-green-100 text-green-700">
-                    <MessageCircle className="w-10 h-10" />
-                </div>
-                <span className="eyebrow mb-4">WhatsApp geöffnet</span>
-                <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">
+        <div className="@container">
+            <div className={feldClass} role="status">
+                <span className={etikettKlassen}>
+                    <WhatsAppLogo className="size-4 shrink-0" />
+                    WhatsApp geöffnet
+                </span>
+                <h3 className="mt-6 text-fs-5 text-tinte">
                     Fast geschafft – Nachricht jetzt absenden
                 </h3>
-                <p className="text-sm sm:text-base text-slate-700 mb-6 leading-relaxed">
+                <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
                     Ihre Badanfrage ({calculatedSqm} m² &middot; {scopeTitle}) ist in WhatsApp vorbereitet. Senden Sie die Nachricht einfach ab – {COMPANY_DATA.owner.fullName} meldet sich umgehend bei Ihnen.
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-primary w-full sm:w-auto text-xs">
-                        <Phone className="w-4 h-4" />
-                        Direkt anrufen: {COMPANY_DATA.contact.phone}
-                    </a>
-                    <button
-                        type="button"
-                        onClick={handleBackFromWhatsApp}
-                        className="btn-ghost w-full sm:w-auto text-xs"
-                    >
+                <div className="mt-8 flex flex-col items-stretch gap-3 @2xl:flex-row @2xl:items-center">
+                    <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} iconLinks="telefon">
+                        Direkt anrufen: <span className="whitespace-nowrap font-mono">{COMPANY_DATA.contact.phone}</span>
+                    </Knopf>
+                    <Knopf variante="neben" onClick={handleBackFromWhatsApp}>
                         Zurück
-                    </button>
+                    </Knopf>
                 </div>
             </div>
         </div>
