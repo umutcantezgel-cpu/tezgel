@@ -88,9 +88,10 @@ export default function BadPage() {
                     }
                     rand={
                         // Planblatt (E4-NACH-01): eigenes Motiv „badsanierung“ (der Badplan gehört zu /leistungen/bad);
-                        // großer Moment: das Fugenbild rückt in die Flucht – am Desktop beim Zeigen, mobil beim Eintritt
+                        // großer Moment (E4-NACH-02): beim Laden rückt das Fugenbild in die Flucht – die Lücke an der Wand
+                        // schließt sich, beide Passstücke werden gleich
                         <Planblatt felder={planfelder('Badsanierung', 'badsanierung')}>
-                            <Verlegeplan plan="badsanierung" ohneAchse bemassung={false} interaktiv />
+                            <Verlegeplan plan="badsanierung" ohneAchse bemassung={false} flucht="laden" />
                         </Planblatt>
                     }
                 />

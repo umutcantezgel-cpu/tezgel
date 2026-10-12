@@ -3,8 +3,9 @@
 // je Schritt ein Kästchen auf der Linie. Abweichung zum Vorbild: Im Kästchen steht die Schrittziffer (Mono), kein
 // Haken – ein Haken liest sich wie „bereits erledigt“. Dafür entfällt die zweite große Ziffer unter dem Kästchen,
 // damit es je Schritt nur eine Ziffer gibt.
-// Seit E3-ORCH-01 als Szene „Verlegeplan entsteht“ (SzeneAblauf, Register szene-ablauf) statt der Zeitleiste – die
-// Sichtabnahme E2-SICHT-2 nannte die Drei-Schritte-Leiste generisch. Ohne JS und bei reduzierter Bewegung fertig.
+// Seit E3-ORCH-01 mit den drei Planständen „Verlegeplan entsteht“ (SzeneAblauf) statt der Zeitleiste – die Sichtabnahme
+// E2-SICHT-2 nannte die Drei-Schritte-Leiste generisch. Seit E4-NACH-02 ruhig (ohne Scrollbindung): der große Moment der
+// Startseite ist SIG-1, je Erzählansicht genau einer (K-007; E3-SICHT-ERZ Befund 9).
 // Inhalt wörtlich aus dem Bestand, Daten aus `@/config/company` (processSteps, owner.fullName).
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
@@ -30,13 +31,13 @@ export default function Ablauf() {
           </p>
         </div>
 
-        {/* Szene „Verlegeplan entsteht“ (K-007 szene-ablauf, E3-ORCH-01): je Schritt der Plan im passenden Stand –
-            Aufmaß mit Prüfmarken, Fugenbild mit Passstücken, verlegt und abgenommen; zieht sich mit dem Scrollen.
-            Ohne animation-timeline, ohne JS oder reduziert stehen alle drei Stände fertig. Wortlaut und Reihenfolge
+        {/* „Verlegeplan entsteht“ (E3-ORCH-01): je Schritt der Plan im passenden Stand – Aufmaß mit Prüfmarken, Fugenbild
+            mit Passstücken, verlegt und abgenommen; ruhig, ohne Scrollbindung (E4-NACH-02). Wortlaut und Reihenfolge
             (Untertitel, Titel, Text) wie bisher; Motiv „wohnen“, damit der Badplan des Einstiegs nicht doppelt steht. */}
         <div className="mt-16">
           <SzeneAblauf
             plan="wohnen"
+            bewegt={false}
             untertitelOben
             schritte={processSteps.map((schritt) => ({
               nummer: schritt.step,

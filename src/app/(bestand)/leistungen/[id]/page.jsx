@@ -193,7 +193,8 @@ export default async function ServiceDetailPage({ params }) {
           // Planblatt (E4-NACH-01): nur die Zeichnung trägt den Namen, so gleitet sie aus dem Feld der Übersicht ins Blatt
           <Planblatt felder={planfelder(service.name, service.id)}>
             <ViewTransition name={`plan-${service.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
-              <Verlegeplan plan={service.id} ohneAchse bemassung={false} />
+              {/* beim Laden rückt das Raster in die Flucht (K-007, Fortsetzung von SIG-3; E4-NACH-02) */}
+              <Verlegeplan plan={service.id} ohneAchse bemassung={false} flucht="laden" />
             </ViewTransition>
           </Planblatt>
         }

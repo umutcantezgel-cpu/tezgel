@@ -3,7 +3,8 @@
 // am linken Rand das rote Lot des Firmensitzes Aßlar; Entfernungen ab Aßlar (E3-ORCH-03). Je Zone die Orte – als Linkliste die
 // Hauptform; das Band ordnet nur (kein Maßstab: die Entfernungen der Konfiguration sind gerundete Angaben).
 // `kompakt`: ruhige Vorschau ohne Links und ohne Bewegung (z. B. im Kartenplatzhalter vor der Einwilligung).
-// Sonst setzen sich die Zonenkanten beim Eintritt nacheinander (bewegung.css); reduziert und ohne JS stehen sie fertig.
+// Sonst legt sich das Band beim Laden Zone für Zone frei (CSS ab dem ersten Bild, ohne Skript; bewegung.css, E4-NACH-02);
+// reduziert, im Druck und nach dem Notaus steht es fertig.
 // Serverkomponente.
 import Link from 'next/link';
 import clsx from 'clsx';
@@ -42,6 +43,8 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', c
         {gruppen.map(({ zone, orte }) => (
           <li key={zone.id} className={clsx('einzugsband-zone relative border-b border-r border-fuge bg-fliese', !stapel && BREITE[zone.id])}>
             <span className="einzugsband-kante absolute inset-x-0 top-0 h-px bg-tinte" aria-hidden="true" />
+            {/* Abdeckung: legt die Zone beim Laden von links frei, Zone für Zone (bewegung.css, E4-NACH-02) */}
+            {!kompakt && <span className="einzugsband-decke absolute inset-0 z-10 bg-fliese" aria-hidden="true" />}
             <div className={kompakt ? 'px-3 pt-1 pb-px' : 'p-4 lg:p-6'}>
               <p className={etikettKlassen}>
                 <span className="text-tinte">{zone.etikett}</span>

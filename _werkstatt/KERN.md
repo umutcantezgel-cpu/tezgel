@@ -122,11 +122,11 @@ Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk; genau ein Akz
   | Ansicht | Moment | Austauschprobe |
   |---|---|---|
   | `/` | **SIG-1 Kreuzlinie**: Waage und Lot wachsen aus dem Kreuzpunkt, die Zeilen der H1 rücken in die Flucht; mobil nur das Lot | Laserrot = Logo-Rot; Achse auf Tezgels Plan mit Schriftfeld |
-  | `/bad` | **Szene „Verlegeplan entsteht“** (scroll-gebunden): Aufmaß mit Prüfhaken Ebenheit · Restfeuchte · Tragfähigkeit → Fugenbild mit Passstücken → verlegt und abgenommen | Tezgels eigener Ablauftext 01–03 |
+  | `/bad` | **Planblatt in die Flucht** (E4-NACH-02; die Szene „Verlegeplan entsteht“ braucht einen Ablauftext, den `/bad` im Bestand nicht hat – E-023): beim Laden schließt das Fugenbild die Lücke an der Wand, beide Passstücke werden gleich | Tezgels Badgrundriss mit bodengleicher Dusche |
   | `/leistungen` | **SIG-3 Verlegeplan je Leistung**: Achse rückt auf die Mitte, Passstücke werden gleich (Hover/Fokus, mobil beim Eintritt) | genau Tezgels vier Leistungen, gezeichnet |
   | `/leistungen/[id]` | Plan des Einstiegs ist das gemeinsame Element des Seitenwechsels (Morph ab `lg`, vorwärts); beim Laden rückt er in die Flucht | Fortsetzung von SIG-3 |
   | `/standorte`, `/standorte/[stadt]` | **Einzugsband**: Fugenband mit Zonen ≤ 10 / ≤ 25 / ≤ 50 km ab Aßlar; Zonen setzen sich nacheinander, die eigene Stadt (auf `[stadt]`) bekommt das Fugenkreuz | Tezgels 13 Orte aus `cities.ts` |
-  | `/fliesen` | **Verband-Umschalter**: Kreuzfuge · Halbverband · Drittelverband als Radiogruppe; die Reihen versetzen sich um ½ bzw. ⅓ Plattenlänge | Verlegemuster sind Tezgels Fachgebiet und Inhalt der Seite |
+  | `/fliesen` | **Verband-Umschalter**: Kreuzfuge · Halbverband · Drittelverband als Radiogruppe; die Reihen versetzen sich um ½ bzw. ⅓ Plattenlänge (ein Plan, Reihen gleiten; E4-NACH-02) | Verlegemuster sind Tezgels Fachgebiet und Inhalt der Seite |
   | `/ueber-uns` | **Fugenband der Firmengeschichte**: Laser zieht beim Scrollen von 2008 bis heute, je Jahresmarke ein Fugenkreuz | Tezgels eigene Zeitleiste |
 - Leitelement (alle Erzählansichten): **Laserachse** als Lot im Seitenfluss (`[data-leitachse]`), Grundschicht `fuge`, das rote Stück wächst mit dem Scrollfortschritt der Seite (`animation-timeline: scroll()`), rückwärts genauso; mobil ≥ 8 px Abstand zum Text; an Abschnittsgrenzen ein Fugenkreuz. Schneidet nie Text.
 - Register (jedes animierte Element trägt `data-motion="<Kennung>"`; `register.json` ist die Maschinenfassung):
@@ -135,10 +135,10 @@ Neutrale auf Farbton 228°, gestuft nach Soll-Kontrast gegen Kalk; genau ein Akz
   |---|---|---|---|---|
   | `sig-kreuzlinie` | Charakter (SIG-1) | Laden (CSS ab dem ersten Bild, E-022) | dauer-5 · linear (Laser zieht gleichmäßig) | Endzustand sofort |
   | `sig-flucht` | Hierarchie: H1-Zeilen in die Flucht | Laden (CSS ab dem ersten Bild, E-022) | dauer-4 · setzen, Staffel | kein Versatz |
-  | `szene-ablauf` | Zusammenhang: Plan entsteht im Ablauf | Scroll (view-timeline) | linear an Scroll | alle drei Zustände nebeneinander |
-  | `sig-plan` | Orientierung: Plan richtet sich aus | Hover/Fokus, mobil IO 40 % | dauer-2 · setzen | Sofortzustand |
-  | `einzugsband` | Orientierung: Zonen ab Aßlar | IO 30 % | dauer-3 · setzen, Staffel 3 | Endzustand sofort |
-  | `verband` | Rückmeldung: Verband wechselt | Auswahl (Radiogruppe) | dauer-2 · setzen | Sofortzustand |
+  | `szene-ablauf` | Zusammenhang: Plan entsteht im Ablauf (nur wo es der große Moment ist; auf `/` ruhig, E4-NACH-02) | Scroll (view-timeline) | linear an Scroll | alle drei Zustände nebeneinander |
+  | `sig-plan` | Orientierung: Plan richtet sich aus (Raster um ein gutes Drittel Plattenbreite versetzt → Flucht, Passstücke gleich) | Hover/Fokus, mobil IO 40 %; im Planblatt des Einstiegs Laden (`data-flucht="laden"`) | Übergang dauer-3 · setzen; Laden dauer-4 · setzen nach dauer-2 | Sofortzustand (Flucht) |
+  | `einzugsband` | Orientierung: Zonen ab Aßlar | Laden (CSS ab dem ersten Bild, Planblatt des Einstiegs; E4-NACH-02) | Abdeckung schrumpft, dauer-3 · setzen, Staffel 5 je Zone | Endzustand sofort |
+  | `verband` | Rückmeldung: Verband wechselt, Reihen gleiten um ½ bzw. ⅓ Platte | Auswahl (Radiogruppe) | dauer-3 · setzen | Sofortzustand |
   | `fugenband` | Zusammenhang: Jahre an der Fuge | Scroll (view-timeline) | linear an Scroll | Endzustand |
   | `leitachse` | Orientierung: Lesefortschritt an der Achse | Scroll (scroll-timeline) | linear an Scroll | rotes Stück voll, statisch |
   | `anriss` | Hierarchie: Schlüsselwort einer Stimme | IO 50 % | dauer-4 · setzen | Strich sofort sichtbar |

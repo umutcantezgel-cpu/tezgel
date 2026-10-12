@@ -4,6 +4,7 @@
 // Abnahme setzen sich. Ohne animation-timeline, ohne JavaScript oder bei reduzierter Bewegung stehen alle drei
 // Zustände fertig nebeneinander. Serverkomponente.
 import type { ReactNode } from 'react';
+import clsx from 'clsx';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import type { PlanName } from '@/lib/plaene/vorgaben';
 
@@ -22,12 +23,18 @@ export interface SzeneAblaufProps {
   plan?: PlanName;
   titelEbene?: 'h3' | 'h4';
   untertitelOben?: boolean;
+  /** scroll-gebundene Szene (großer Moment); false: die drei Stände ruhig nebeneinander – für Ansichten, deren großer
+   *  Moment ein anderer ist (je Erzählansicht genau einer, K-007; `/` trägt SIG-1, E4-NACH-02) */
+  bewegt?: boolean;
 }
 
-export default function SzeneAblauf({ schritte, plan = 'bad', titelEbene = 'h3', untertitelOben = false }: SzeneAblaufProps) {
+export default function SzeneAblauf({ schritte, plan = 'bad', titelEbene = 'h3', untertitelOben = false, bewegt = true }: SzeneAblaufProps) {
   const Titel = titelEbene;
   return (
-    <ol className="szene-ablauf grid grid-cols-1 gap-px border border-fuge bg-fuge lg:grid-cols-3" data-motion="szene-ablauf">
+    <ol
+      className={clsx(bewegt && 'szene-ablauf', 'grid grid-cols-1 gap-px border border-fuge bg-fuge lg:grid-cols-3')}
+      data-motion={bewegt ? 'szene-ablauf' : undefined}
+    >
       {schritte.slice(0, 3).map((s, i) => (
         <li key={i} className="flex flex-col bg-fliese p-6 lg:p-8">
           <div className="szene-plan border border-fuge bg-fliese p-4">

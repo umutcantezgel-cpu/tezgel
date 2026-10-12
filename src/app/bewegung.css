@@ -105,36 +105,39 @@ html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an
   }
 }
 
-/* verband (K-007, /fliesen, E3-ORCH-04) – Radiogruppe ohne JavaScript: die Auswahl blendet über :has() den passenden
-   Plan ein (Überblendung dauer-2 · setzen, nur opacity) und setzt das gewählte Feld in Tinte. Ohne :has() stehen alle
-   drei Pläne untereinander; reduziert und ohne Startklasse wechselt der Plan sofort. */
+/* verband (K-007, /fliesen, E3-ORCH-04, E4-NACH-02) – Radiogruppe ohne JavaScript: die Auswahl versetzt über :has() die
+   Reihen des einen Plans um ½ bzw. ⅓ Plattenlänge (Zeichnungseinheiten: Platte 80, also 40 bzw. 26,667/53,333), Übergang
+   dauer-3 · setzen, nur translate. Das gewählte Feld färbt Tailwind `has-checked:` (Utility-Layer). Ohne :has() stehen die
+   drei Verbände als eigene Pläne untereinander; reduziert, ohne Startklasse und im Druck wechselt der Plan sofort. */
 .verband-wahl:has(input:focus-visible) {
   outline: 2px solid var(--color-tinte);
   outline-offset: -4px;
 }
+.verband .verband-bewegt {
+  display: none;
+}
 @supports selector(:has(*)) {
+  .verband .verband-bewegt {
+    display: block;
+  }
   .verband .verband-plaene {
-    display: grid;
+    display: none;
   }
-  .verband .verband-plan {
-    grid-area: 1 / 1;
-    opacity: 0;
+  .verband:has([data-verband-wahl="halb"]:checked) .verband-reihe[data-halb="1"] {
+    translate: 40px 0;
   }
-  .verband:has([data-verband-wahl="kreuz"]:checked) .verband-plan[data-verband="kreuz"],
-  .verband:has([data-verband-wahl="halb"]:checked) .verband-plan[data-verband="halb"],
-  .verband:has([data-verband-wahl="drittel"]:checked) .verband-plan[data-verband="drittel"] {
-    opacity: 1;
+  .verband:has([data-verband-wahl="drittel"]:checked) .verband-reihe[data-drittel="1"] {
+    translate: 26.667px 0;
   }
-  .verband-wahl:has(input:checked) {
-    background: var(--color-tinte);
-    color: var(--color-kalk);
+  .verband:has([data-verband-wahl="drittel"]:checked) .verband-reihe[data-drittel="2"] {
+    translate: 53.333px 0;
   }
-  html.k-bewegung .verband .verband-plan {
-    transition: opacity var(--dauer-2) var(--ease-setzen);
+  html.k-bewegung .verband .verband-reihe {
+    transition: translate var(--dauer-3) var(--ease-setzen);
   }
 }
 @media print, (forced-colors: active) {
-  .verband .verband-plan {
+  .verband .verband-reihe {
     transition: none !important;
   }
 }
@@ -316,21 +319,36 @@ html.k-bewegung .laden-fuge::after {
 .verlegeplan .plan-abnahme circle { fill: var(--color-abnahme); stroke: none; }
 .verlegeplan .plan-abnahme path { fill: none; stroke: var(--color-fliese); stroke-width: 2; vector-effect: non-scaling-stroke; }
 
-/* sig-plan: das Raster steht versetzt, bis Hover/Fokus (fein) bzw. Eintritt (grob) es in die Flucht rückt */
-.verlegeplan .plan-raster { --plan-versatz: -9px; }
-html.k-bewegung [data-motion="sig-plan"] .plan-raster,
+/* sig-plan (K-007, E4-NACH-02): das Raster steht um ein gutes Drittel Plattenbreite versetzt (--plan-versatz am <svg>,
+   Verlegeplan.tsx) – an einer Wand klafft eine Lücke, an der anderen ist das Passstück zu schmal – und rückt in die Flucht:
+   beide Passstücke gleich, die Achse auf der Fuge. `zeigen`: am Desktop bei Hover/Fokus, mobil beim Eintritt (Übergang
+   dauer-3 · setzen). `laden`: einmal beim Laden (Planblatt im Einstieg, Animation dauer-4 · setzen nach dauer-2).
+   Startzustände nur unter html.k-bewegung ohne Notaus; reduziert, ohne JS und im Druck steht das Raster in der Flucht. */
+html.k-bewegung [data-motion="sig-plan"]:not([data-flucht="laden"]) .plan-raster,
 html.k-bewegung .sig-plan-ziel .plan-raster {
-  transition: translate var(--dauer-2) var(--ease-setzen);
+  transition: translate var(--dauer-3) var(--ease-setzen);
 }
 @media (hover: hover) and (pointer: fine) {
   html.k-bewegung:not(.k-notaus) .sig-plan-ziel:not(:hover):not(:focus-within) .plan-raster,
-  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not(:hover) .plan-raster {
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="zeigen"]:not(:hover) .plan-raster {
     translate: var(--plan-versatz) 0;
   }
 }
 @media (hover: none), (pointer: coarse) {
-  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-motion-stand="an"]) .plan-raster {
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-flucht="laden"]):not([data-motion-stand="an"]) .plan-raster {
     translate: var(--plan-versatz) 0;
+  }
+}
+@keyframes plan-flucht {
+  from { translate: var(--plan-versatz) 0; }
+}
+html.k-bewegung [data-motion="sig-plan"][data-flucht="laden"] .plan-raster {
+  animation: plan-flucht var(--dauer-4) var(--ease-setzen) var(--dauer-2) both;
+}
+@media print {
+  .verlegeplan .plan-raster {
+    translate: none !important;
+    animation: none !important;
   }
 }
 
@@ -372,16 +390,32 @@ html.k-bewegung .sig-plan-ziel .plan-raster {
 @keyframes szene-einblenden { from { opacity: 0; } to { opacity: 1; } }
 @keyframes szene-setzen { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
 
-/* einzugsband (K-007, /standorte und [stadt]): die Zonenkanten setzen sich nacheinander von links (dauer-3, setzen,
-   Staffel je Zone); Startzustand nur unter html.k-bewegung und solange der Stand nicht „an“ ist. */
-.einzugsband .einzugsband-kante { transform-origin: 0 50%; }
-html.k-bewegung [data-motion="einzugsband"] .einzugsband-kante {
-  transition: scale var(--dauer-3) var(--ease-setzen);
-}
-html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-kante { transition-delay: calc(var(--staffel) * 3); }
-html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-kante { transition-delay: calc(var(--staffel) * 6); }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stand="an"]) .einzugsband-kante {
+/* einzugsband (K-007, /standorte und [stadt], E4-NACH-02): das Band legt sich beim Laden Zone für Zone von links frei –
+   eine Abdeckung in Fliese schrumpft nach rechts (scale, Ursprung rechts), Zone 2 und 3 je fünf Staffelstufen später
+   (dauer-3 · setzen, gesamt 1,2 s). CSS ab dem ersten Bild unter html.k-bewegung (wie SIG-1, kein Warten auf Skript);
+   ohne Startklasse, reduziert, nach dem Notaus und im Druck ist keine Abdeckung zu sehen. */
+.einzugsband .einzugsband-decke {
+  transform-origin: right center;
   scale: 0 1;
+  pointer-events: none;
+}
+@keyframes einzugsband-freilegen {
+  from { scale: 1 1; }
+  to { scale: 0 1; }
+}
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-decke {
+  animation: einzugsband-freilegen var(--dauer-3) var(--ease-setzen) both;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-decke {
+  animation-delay: calc(var(--staffel) * 5);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-decke {
+  animation-delay: calc(var(--staffel) * 10);
+}
+@media print, (forced-colors: active) {
+  .einzugsband .einzugsband-decke {
+    display: none;
+  }
 }
 
 /* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, linear seit E3-NACH-02); mobil nur das Lot.
