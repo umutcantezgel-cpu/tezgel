@@ -1,29 +1,34 @@
-import React from 'react';
+// Naturstein & Granit (E5-BAU-06 · S-15, KERN v2): Seitenkörper der Themenseite als Erzählansicht nach dem Muster der
+// Familienreferenz (leistungen/[id], fliesen) und der Schwesterseiten (untergrund-abdichtung). Einstieg mit Laserachse,
+// H1 links, Vorspann und zwei Knöpfe; rechts das Planblatt „naturstein“ (Drittelverband), interaktiv. Danach die Leitachse
+// über die Abschnitte, Flächen Kalk und Fliese im Wechsel:
+// 2. Unikat (Kalk): Text an der Fuge, daneben das Feld „Was wir verlegen“ · 3. Silikatisch oder kalkhaltig (Fliese):
+// Tabelle, Hinweis zur Härte, die beiden Unterseiten als Feldraster · 4. Einsatzbereiche (Kalk): Halbverband ·
+// 5. Verlegung (Fliese): Schrittfolge, ab lg als Reihe · 6. Imprägnierung und Pflege (Kalk): Kopf seitlich mit Warnhinweis,
+// Pflegeregeln als Liste an der Fuge · 7. Beratung und Aufmaß (Fliese): drei Wege, darunter die weiterführenden Ratgeber.
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein Auftritt und kein großer Moment.
+// Metadaten und Daten unverändert; JSON-LD im layout.tsx der Route.
 import Link from 'next/link';
-import {
-    ArrowRight,
-    Phone,
-    MessageCircle,
-    Mountain,
-    Gem,
-    Fingerprint,
-    Home,
-    ShowerHead,
-    Footprints,
-    Trees,
-    Layers,
-    Droplets,
-    SprayCan,
-    CheckCircle2,
-    TriangleAlert,
-    Info,
-    BookOpen
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { TOPIC_HUBS } from '@/config/topics';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Tabelle from '@/components/kern/Tabelle';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Naturstein verlegen Wetzlar & Aßlar | Granit · Tezgel',
@@ -37,12 +42,10 @@ const SUBPAGES = HUB ? HUB.pages.filter((page) => page.path !== HUB.path) : [];
 
 const SUBPAGE_DETAILS = {
     '/naturstein/granit': {
-        icon: Mountain,
         group: 'Silikatisch',
         points: ['Granit, Gneis, Quarzit, Schiefer', 'Deutlich unempfindlicher gegen Säure', 'Viele Sorten auch für außen geeignet']
     },
     '/naturstein/marmor-kalkstein': {
-        icon: Gem,
         group: 'Kalkhaltig',
         points: ['Marmor, Travertin, Kalkstein', 'Säureempfindlich durch Kalkgehalt', 'Edel im Wohnbereich und an der Wand']
     }
@@ -65,28 +68,31 @@ const GROUPS = [
     }
 ];
 
+const GROUP_ROWS = [
+    { key: 'examples', label: 'Beispiele' },
+    { key: 'mineral', label: 'Hauptbestandteile' },
+    { key: 'acid', label: 'Säure' },
+    { key: 'care', label: 'Pflege' }
+];
+
 const AREAS = [
     {
         title: 'Böden im Wohnbereich',
-        text: 'Wohnzimmer, Flur und Diele profitieren von der Wertigkeit und Wärmespeicherung des Steins – auch auf Fußbodenheizung, wenn Kleber und Aufbau darauf abgestimmt sind.',
-        icon: Home
+        text: 'Wohnzimmer, Flur und Diele profitieren von der Wertigkeit und Wärmespeicherung des Steins – auch auf Fußbodenheizung, wenn Kleber und Aufbau darauf abgestimmt sind.'
     },
     {
         title: 'Bad und Dusche',
-        text: 'Naturstein ist im Bad möglich, wenn die Abdichtung darunter nach DIN 18534 ausgeführt ist und die Oberfläche im Duschbereich ausreichend rutschhemmend ist.',
-        icon: ShowerHead
+        text: 'Naturstein ist im Bad möglich, wenn die Abdichtung darunter nach DIN 18534 ausgeführt ist und die Oberfläche im Duschbereich ausreichend rutschhemmend ist.'
     },
     {
         title: 'Treppen',
         text: 'Stufen aus Naturstein sind langlebig und repräsentativ. Welche Lösung zu Ihrer Treppe passt, zeigt unser Treppen-Ratgeber.',
-        icon: Footprints,
         href: '/treppen',
         linkLabel: 'Zum Treppen-Ratgeber'
     },
     {
         title: 'Außenbereiche',
         text: 'Draußen kommen nur frostbeständige Sorten mit geeigneter Oberfläche infrage. Welche Platte zu Balkon und Terrasse passt, erklären wir bei den Terrassenplatten.',
-        icon: Trees,
         href: '/balkon-terrasse/terrassenplatten',
         linkLabel: 'Zu den Terrassenplatten'
     }
@@ -145,50 +151,71 @@ const FURTHER_READING = [
     { label: 'Ausstellung Wetzlar', href: '/ausstellung/wetzlar' }
 ];
 
+const WIR_VERLEGEN = [
+    'Bodenbeläge in Wohnräumen, Flur und Küche',
+    'Wand- und Bodenbeläge im Bad',
+    'Treppenbeläge innen und außen',
+    'Balkon- und Terrassenbeläge aus geeigneten Sorten'
+];
+
+// Hinweis von Hand (Gestalt wie kern/Hinweis): Der Merksatz beginnt mit seinem fetten Stichwort im selben Absatz wie im
+// Bestand – ohne den vorgesetzten Artnamen des Bausteins, der den Wortlaut der Zeile ändern würde.
+const HINWEIS = 'flex items-start gap-4 border border-l-2 bg-fliese p-6 font-text text-fs-2 text-tinte';
+
+// Eintrag einer Liste an der Fuge: Fugenkreuz als Marke, Text daneben
+function Punkt({ children }) {
+    return (
+        <li className="flex gap-3 font-text text-fs-2 text-tinte">
+            <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                <Fugenkreuz className="size-3" />
+            </span>
+            <span className="min-w-0">{children}</span>
+        </li>
+    );
+}
+
 export default function NatursteinPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="naturstein-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow eyebrow-orange">
-                        <Mountain className="w-3.5 h-3.5 text-orange-600" />
-                        Naturstein- und Granitverlegung
-                    </span>
-                    <h1 id="naturstein-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Naturstein- und Granitverlegung{' '}
-                        <span className="text-ceramic-gradient">vom Fachbetrieb</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Professionelle Naturstein- und Granitverlegung vom Fachbetrieb Tezgel in Mittelhessen: Hochwertigen Naturstein &amp; Granit fachgerecht verlegen lassen verlangt passenden Spezialkleber, hohlraumarme Bettung und typgerechte Pflege für Granit, Schiefer, Marmor oder Travertin. Hier erfahren Sie, worauf es in der Praxis ankommt.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Natursteinprojekt besprechen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/leistungen/wohnen" className="btn-ghost px-7 py-3.5 text-xs">
-                            Leistung Wohnbereiche
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „naturstein“ */}
+            <section aria-labelledby="naturstein-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Naturstein- und Granitverlegung</>}
+                    titel={
+                        <span id="naturstein-heading">
+                            Naturstein- und Granitverlegung{' '}
+                            <span>vom Fachbetrieb</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Professionelle Naturstein- und Granitverlegung vom Fachbetrieb Tezgel in Mittelhessen: Hochwertigen Naturstein &amp; Granit fachgerecht verlegen lassen verlangt passenden Spezialkleber, hohlraumarme Bettung und typgerechte Pflege für Granit, Schiefer, Marmor oder Travertin. Hier erfahren Sie, worauf es in der Praxis ankommt.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Natursteinprojekt besprechen
+                            </Knopf>
+                            <Knopf href="/leistungen/wohnen" variante="neben">
+                                Leistung Wohnbereiche
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Naturstein verlegen', 'naturstein')}>
+                            <Verlegeplan plan="naturstein" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Unique */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="naturstein-unikat-heading">
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                    <div className="lg:col-span-3">
-                        <span className="eyebrow eyebrow-orange mb-4">
-                            <Fingerprint className="w-3.5 h-3.5 text-orange-600" />
-                            Unikat
-                        </span>
-                        <h2 id="naturstein-unikat-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Warum Naturstein: jede Platte ein Unikat
-                        </h2>
-                        <div className="mt-5 space-y-4 text-base text-slate-700 leading-relaxed">
+            <Leitachse>
+                {/* 2. UNIKAT: Text an der Fuge (7 Spalten), daneben das Feld „Was wir verlegen“ mit Liste und Abgrenzung (5 Spalten) */}
+                <Abschnitt titelId="naturstein-unikat-heading" leitachse spaet etikett="Unikat" titel="Warum Naturstein: jede Platte ein Unikat">
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="max-w-mass space-y-4 font-text text-fs-3 text-tinte-2 lg:col-span-7">
                             <p>
                                 Naturstein ist über lange Zeiträume in der Erde entstanden. Adern, Einschlüsse, Farbwechsel und
                                 Maserung machen jeden Boden unverwechselbar – und sind kein Mangel, sondern Eigenschaft des Materials.
@@ -197,284 +224,212 @@ export default function NatursteinPage() {
                                 Das heißt auch: Eine Musterplatte zeigt nur einen Ausschnitt. Farbe und Zeichnung der gelieferten Ware
                                 können abweichen. Wer ein sehr gleichmäßiges Bild wünscht, sollte Naturstein und Feinsteinzeug in
                                 Steinoptik gegeneinander abwägen – der{' '}
-                                <Link href="/blog/feinsteinzeug-oder-naturstein-vergleich" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
+                                <Link href="/blog/feinsteinzeug-oder-naturstein-vergleich" className={linkKlassen}>
                                     Vergleich Feinsteinzeug oder Naturstein
                                 </Link>{' '}
                                 hilft bei der Entscheidung.
                             </p>
                         </div>
+                        <div className="border border-fuge bg-fliese p-6 lg:col-span-5 lg:p-8">
+                            <h3 className="font-anzeige text-fs-4 text-tinte">Was wir verlegen</h3>
+                            <ul className="mt-6 grid gap-3">
+                                {WIR_VERLEGEN.map((item) => (
+                                    <Punkt key={item}>{item}</Punkt>
+                                ))}
+                            </ul>
+                            <p className="mt-6 border-t border-fuge pt-6 font-text text-fs-2 text-tinte-2">
+                                Wir verlegen den Stein. Steinmetzarbeiten wie das Anfertigen von Massivstufen oder das Schleifen und
+                                Polieren von Flächen übernimmt ein Steinmetzbetrieb.
+                            </p>
+                        </div>
                     </div>
-                    <div className="lg:col-span-2 glass-surface rounded-tile-2xl p-7">
-                        <h3 className="font-black text-base text-slate-900 mb-4">Was wir verlegen</h3>
-                        <ul className="space-y-3 text-sm text-slate-700">
-                            {['Bodenbeläge in Wohnräumen, Flur und Küche', 'Wand- und Bodenbeläge im Bad', 'Treppenbeläge innen und außen', 'Balkon- und Terrassenbeläge aus geeigneten Sorten'].map((item) => (
-                                <li key={item} className="flex gap-2.5">
-                                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-                            Wir verlegen den Stein. Steinmetzarbeiten wie das Anfertigen von Massivstufen oder das Schleifen und
-                            Polieren von Flächen übernimmt ein Steinmetzbetrieb.
-                        </p>
-                    </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Silicate vs calcareous */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="naturstein-gruppen-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Die wichtigste Unterscheidung</span>
-                        <h2 id="naturstein-gruppen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Silikatisch oder kalkhaltig:{' '}
-                            <span className="text-ceramic-gradient">was für Säure, Pflege und Verlegung zählt</span>
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                {/* 3. SILIKATISCH ODER KALKHALTIG: Vergleich als Tabelle (Name = bisherige Beschriftung), Hinweis zur Härte,
+                    darunter die beiden Unterseiten als Feldraster – je Feld ein Link über das ganze Feld */}
+                <Abschnitt
+                    titelId="naturstein-gruppen-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Die wichtigste Unterscheidung"
+                    titel="Silikatisch oder kalkhaltig: was für Säure, Pflege und Verlegung zählt"
+                    einleitung={
+                        <p>
                             Ob ein Stein empfindlich auf Säure reagiert, hängt von seinen Mineralen ab – nicht davon, ob er als hart oder
                             weich gilt.
                         </p>
-                    </div>
+                    }
+                >
+                    <Tabelle
+                        name="Silikatische und kalkhaltige Natursteine im Vergleich"
+                        kopf={['Merkmal', ...GROUPS.map((group) => group.name)]}
+                        zeilen={GROUP_ROWS.map((row) => [row.label, ...GROUPS.map((group) => group[row.key])])}
+                    />
 
-                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200">
-                        <table className="w-full min-w-[640px] text-left text-sm">
-                            <caption className="sr-only">Silikatische und kalkhaltige Natursteine im Vergleich</caption>
-                            <thead className="bg-slate-100 text-slate-900">
-                                <tr>
-                                    <th scope="col" className="px-5 py-4 font-black border-b border-slate-200">Merkmal</th>
-                                    {GROUPS.map((group) => (
-                                        <th key={group.name} scope="col" className="px-5 py-4 font-black border-b border-slate-200">
-                                            {group.name}
-                                        </th>
-                                    ))}
-                                </tr>
-                            </thead>
-                            <tbody className="text-slate-700">
-                                {[
-                                    { key: 'examples', label: 'Beispiele' },
-                                    { key: 'mineral', label: 'Hauptbestandteile' },
-                                    { key: 'acid', label: 'Säure' },
-                                    { key: 'care', label: 'Pflege' }
-                                ].map((row) => (
-                                    <tr key={row.key} className="border-b border-slate-200 last:border-b-0 even:bg-slate-50">
-                                        <th scope="row" className="px-5 py-4 font-bold text-slate-900 align-top">{row.label}</th>
-                                        {GROUPS.map((group) => (
-                                            <td key={group.name} className="px-5 py-4 align-top leading-relaxed">{group[row.key]}</td>
-                                        ))}
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div className="mt-6 flex gap-3 rounded-tile-lg bg-orange-50/60 border border-orange-200/80 p-5 text-sm text-slate-700 leading-relaxed">
-                        <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                        <p>
-                            <strong className="text-slate-900">Härte ist etwas anderes:</strong> Die Härte sagt, wie kratzempfindlich ein
+                    <div className={clsx(HINWEIS, 'mt-6 border-strich')}>
+                        <Icon name="info" groesse={5} className="mt-1 text-tinte" />
+                        <p className="min-w-0">
+                            <strong className="font-semibold">Härte ist etwas anderes:</strong> Die Härte sagt, wie kratzempfindlich ein
                             Stein ist. Schiefer und viele Sandsteine sind vergleichsweise weich, bestehen aber überwiegend aus Silikaten.
                             Marmor ist weicher als Granit und zugleich säureempfindlich – aus zwei verschiedenen Gründen.
                         </p>
                     </div>
 
-                    <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Feldraster spalten={2} className="mt-12">
                         {SUBPAGES.map((page) => {
                             const details = SUBPAGE_DETAILS[page.path];
-                            const Icon = details ? details.icon : Layers;
                             return (
-                                <li key={page.path}>
-                                    <Link
-                                        href={page.path}
-                                        className="group glass-surface p-8 rounded-tile-2xl h-full flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                                    >
-                                        <div className="flex items-center gap-3 mb-5">
-                                            <span className="icon-chip w-12 h-12 text-orange-600">
-                                                <Icon className="w-6 h-6" />
-                                            </span>
-                                            {details && <span className="eyebrow eyebrow-neutral">{details.group}</span>}
-                                        </div>
-                                        <h3 className="font-black text-xl text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">
+                                <Feld key={page.path} className="relative">
+                                    <Link href={page.path} className="group flex flex-1 flex-col after:absolute after:inset-0">
+                                        {details && <span className={etikettKlassen}>{details.group}</span>}
+                                        <h3 className="mt-3 font-anzeige text-fs-5 text-tinte underline decoration-strich decoration-1 underline-offset-4 group-hover:decoration-tinte">
                                             {page.name}
                                         </h3>
-                                        <p className="text-sm text-slate-700 leading-relaxed mb-4">{page.desc}</p>
+                                        <p className="mt-3 font-text text-fs-3 text-tinte-2">{page.desc}</p>
                                         {details && (
-                                            <ul className="space-y-2 mb-6">
+                                            <ul className="mt-6 grid gap-3">
                                                 {details.points.map((point) => (
-                                                    <li key={point} className="flex gap-2 text-sm text-slate-700">
-                                                        <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                                                        {point}
-                                                    </li>
+                                                    <Punkt key={point}>{point}</Punkt>
                                                 ))}
                                             </ul>
                                         )}
-                                        <span className="mt-auto inline-flex items-center gap-1 text-sm font-bold text-orange-700">
+                                        <span className="mt-auto flex items-center gap-2 pt-6 font-text text-fs-2 font-semibold text-tinte">
                                             Details ansehen
-                                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                            <Icon name="pfeil-rechts" groesse={5} />
                                         </span>
                                     </Link>
-                                </li>
+                                </Feld>
                             );
                         })}
-                    </ul>
-                </div>
-            </section>
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* Areas */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="naturstein-bereiche-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Einsatzbereiche</span>
-                    <h2 id="naturstein-bereiche-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Böden, Wände, Treppen, außen
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {AREAS.map((area) => {
-                        const Icon = area.icon;
-                        return (
-                            <li key={area.title} className="glass-surface p-7 rounded-tile-2xl flex flex-col">
-                                <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
-                                    <Icon className="w-5 h-5" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2">{area.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{area.text}</p>
-                                {area.href && (
-                                    <Link
-                                        href={area.href}
-                                        className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
-                                    >
-                                        {area.linkLabel}
-                                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                                    </Link>
-                                )}
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
+                {/* 4. EINSATZBEREICHE: vier Bereiche im Halbverband an der Fuge; Treppen und Außenbereiche mit Weg zum Ratgeber */}
+                <Abschnitt titelId="naturstein-bereiche-heading" leitachse spaet etikett="Einsatzbereiche" titel="Böden, Wände, Treppen, außen">
+                    <Merkliste
+                        spalten={2}
+                        verband
+                        titelAls="h3"
+                        eintraege={AREAS.map((area) => ({
+                            titel: area.title,
+                            text: (
+                                <>
+                                    <p>{area.text}</p>
+                                    {area.href && (
+                                        <div className="mt-2">
+                                            <Knopf href={area.href} variante="text" icon="pfeil-rechts">
+                                                {area.linkLabel}
+                                            </Knopf>
+                                        </div>
+                                    )}
+                                </>
+                            )
+                        }))}
+                    />
+                </Abschnitt>
 
-            {/* Laying */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="naturstein-verlegung-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">
-                            <Layers className="w-3.5 h-3.5 text-orange-600" />
-                            Verlegung
-                        </span>
-                        <h2 id="naturstein-verlegung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Verfärbungsfreie Kleber und das passende Mörtelbett
-                        </h2>
-                    </div>
-                    <ol className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {LAYING.map((item, index) => (
-                            <li key={item.title} className="flex gap-5 p-7 rounded-tile-xl bg-slate-50 border border-slate-200">
-                                <span className="font-display text-4xl font-black tabular-nums text-orange-500/30 leading-none" aria-hidden="true">
-                                    {String(index + 1).padStart(2, '0')}
-                                </span>
-                                <div>
-                                    <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
-            </section>
+                {/* 5. VERLEGUNG: vier Punkte als Schrittfolge (ab lg in einer Reihe); die Nummern sind wie im Bestand stumm */}
+                <Abschnitt
+                    titelId="naturstein-verlegung-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Verlegung"
+                    titel="Verfärbungsfreie Kleber und das passende Mörtelbett"
+                >
+                    <Schrittfolge ausrichtung="waagrecht" nummerStumm schritte={LAYING.map((item) => ({ titel: item.title, text: item.text }))} />
+                </Abschnitt>
 
-            {/* Impregnation & care */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="naturstein-pflege-heading">
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                    <div className="lg:col-span-2">
-                        <span className="eyebrow eyebrow-orange mb-4">
-                            <SprayCan className="w-3.5 h-3.5 text-orange-600" />
-                            Schutz &amp; Pflege
-                        </span>
-                        <h2 id="naturstein-pflege-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Imprägnierung und Pflege im Überblick
-                        </h2>
-                        <p className="mt-4 text-base text-slate-700 leading-relaxed">
-                            Eine gute Pflege entscheidet darüber, wie ein Natursteinboden nach Jahren aussieht. Ob eine Imprägnierung für
-                            Ihren Stein sinnvoll ist und welches Mittel passt, besprechen wir bei der Planung.
-                        </p>
-                        <div className="mt-6 flex gap-3 rounded-tile-lg bg-amber-50 border border-amber-200 p-5 text-sm text-slate-700 leading-relaxed">
-                            <TriangleAlert className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" aria-hidden="true" />
+                {/* 6. IMPRÄGNIERUNG UND PFLEGE: Kopf links mit Einleitung und Warnhinweis, rechts sechs Regeln an der Fuge */}
+                <Abschnitt
+                    titelId="naturstein-pflege-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett={<>Schutz &amp; Pflege</>}
+                    titel="Imprägnierung und Pflege im Überblick"
+                    einleitung={
+                        <>
                             <p>
-                                <strong className="text-amber-800">Bei Marmor, Travertin und Kalkstein</strong> gilt zusätzlich: keine
-                                Säure, auch keine Kalk- oder Essigreiniger. Mehr dazu auf der Seite{' '}
-                                <Link href="/naturstein/marmor-kalkstein" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
-                                    Marmor, Travertin &amp; Kalkstein
-                                </Link>
-                                .
+                                Eine gute Pflege entscheidet darüber, wie ein Natursteinboden nach Jahren aussieht. Ob eine Imprägnierung für
+                                Ihren Stein sinnvoll ist und welches Mittel passt, besprechen wir bei der Planung.
                             </p>
-                        </div>
-                    </div>
-                    <ul className="lg:col-span-3 space-y-4">
+                            <div className={clsx(HINWEIS, 'mt-8 border-tinte')}>
+                                <Icon name="hinweis" groesse={5} className="mt-1 text-tinte" />
+                                <p className="min-w-0">
+                                    <strong className="font-semibold">Bei Marmor, Travertin und Kalkstein</strong> gilt zusätzlich: keine
+                                    Säure, auch keine Kalk- oder Essigreiniger. Mehr dazu auf der Seite{' '}
+                                    <Link href="/naturstein/marmor-kalkstein" className={linkKlassen}>
+                                        Marmor, Travertin &amp; Kalkstein
+                                    </Link>
+                                    .
+                                </p>
+                            </div>
+                        </>
+                    }
+                >
+                    <ul className="border-t border-tinte">
                         {CARE.map((item) => (
-                            <li key={item.title} className="flex gap-4 rounded-tile-lg bg-white border border-slate-200 p-5">
-                                <Droplets className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                                <p className="text-sm text-slate-700 leading-relaxed">
-                                    <strong className="text-slate-900">{item.title}:</strong> {item.text}
+                            <li key={item.title} className="flex items-start gap-4 border-b border-fuge py-6 lg:gap-6">
+                                <Fugenkreuz className="mt-2 size-3 shrink-0 text-strich" />
+                                <p className="min-w-0 max-w-mass font-text text-fs-3 text-tinte-2">
+                                    <strong className="font-semibold text-tinte">{item.title}:</strong> {item.text}
                                 </p>
                             </li>
                         ))}
                     </ul>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* CTA + further reading */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" aria-labelledby="naturstein-cta-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow eyebrow-orange">Beratung &amp; Aufmaß</span>
-                    <h2 id="naturstein-cta-heading" className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
-                        Beratung und Aufmaß für Ihren Naturstein
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        {COMPANY_DATA.owner.fullName} prüft vor Ort Untergrund, Aufbauhöhen und Einsatzbereich und sagt Ihnen
-                        ehrlich, ob Ihr Wunschstein dazu passt – oder ob eine Alternative die bessere Wahl ist.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
+                {/* 7. BERATUNG UND AUFMASS: Einleitung und drei Wege als Knöpfe; darunter die weiterführenden Ratgeber (Navigation) */}
+                <Abschnitt
+                    titelId="naturstein-cta-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett={<>Beratung &amp; Aufmaß</>}
+                    titel="Beratung und Aufmaß für Ihren Naturstein"
+                    einleitung={
+                        <p>
+                            {COMPANY_DATA.owner.fullName} prüft vor Ort Untergrund, Aufbauhöhen und Einsatzbereich und sagt Ihnen
+                            ehrlich, ob Ihr Wunschstein dazu passt – oder ob eine Alternative die bessere Wahl ist.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
                             Aufmaß anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            <MessageCircle className="w-4 h-4" />
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf href={COMPANY_DATA.contact.whatsappLink} extern variante="neben" vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
                             WhatsApp
-                        </a>
+                        </Knopf>
                     </div>
-                </div>
 
-                <nav className="mt-10 glass-surface rounded-tile-2xl p-7" aria-labelledby="naturstein-ratgeber-heading">
-                    <h2 id="naturstein-ratgeber-heading" className="flex items-center gap-2 font-black text-base text-slate-900 mb-4">
-                        <BookOpen className="w-5 h-5 text-orange-600" aria-hidden="true" />
-                        Weiterführende Ratgeber zu Naturstein &amp; Granit
-                    </h2>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {FURTHER_READING.map((link) => (
-                            <li key={link.href}>
-                                <Link
-                                    href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-sm font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
-                                >
-                                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </section>
+                    <nav aria-labelledby="naturstein-ratgeber-heading" className="mt-16 border-t border-fuge pt-12">
+                        <h2 id="naturstein-ratgeber-heading" className="font-anzeige text-fs-5 text-tinte">
+                            Weiterführende Ratgeber zu Naturstein &amp; Granit
+                        </h2>
+                        <Merkliste
+                            spalten={2}
+                            className="mt-8"
+                            eintraege={FURTHER_READING.map((link) => ({
+                                titel: (
+                                    <Link href={link.href} className={linkKlassen}>
+                                        {link.label}
+                                    </Link>
+                                )
+                            }))}
+                        />
+                    </nav>
+                </Abschnitt>
+            </Leitachse>
 
+            {/* 8. ABSCHLUSS */}
             <QualityPromise />
             <FinalCTA />
-        </div>
+        </>
     );
 }
