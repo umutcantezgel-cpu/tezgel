@@ -36,3 +36,4 @@ spaet auf /leistungen/[id]#kosten-rechner, scroll-mt-Reste).
 - Mit Bewegung: gezogenes Achsstück und Anfahrt-Strecke in einem Bildschirm (Stadtseiten).
 - scroll-mt-Reste in Fachbereiche, ReviewsSection, CalendlySection, /preise, /foerderung, Untergrund-Seiten.
 - PricingCalculator Tab-Rücksprung (Textfeld → Name); Messwerkzeuge lesen innerText in spaet-Abschnitten.
+- Planblatt unter lg in der Familie sehr hoch (t768) – Begrenzung (z. B. `max-w-md`) familienweit entscheiden (S-14, F-02).
