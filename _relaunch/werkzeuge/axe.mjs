@@ -8,7 +8,7 @@ import { chromium } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, assertLocal, ANSICHTEN, installSperre, setzeEinwilligung, bereit, grundmenge, ensureDir, RELAUNCH } from './lib.mjs';
+import { BASE, assertLocal, ANSICHTEN, installSperre, setzeEinwilligung, bereit, spaetZeichnen, grundmenge, ensureDir, RELAUNCH } from './lib.mjs';
 
 const arg = (k, d) => { const i = process.argv.indexOf(`--${k}`); return i > -1 ? process.argv[i + 1] : d; };
 assertLocal();
@@ -79,6 +79,9 @@ async function pruefe(s, a, zustand = 'normal') {
   const page = await context.newPage();
   await page.goto(BASE + s, { waitUntil: 'domcontentloaded', timeout: 45000 });
   await bereit(page);
+  // content-visibility (spaet) zeichnet Abschnitte außerhalb des Bildes nicht; axe läse dort Lage und Farben falsch
+  // (Scheinbefund Kontrast über dem Fuß, S-23). Wie texte, wortbruch und a11y-zusatz: alles sichtbar zeichnen.
+  await spaetZeichnen(page);
   if (zustand === 'menue') {
     const knopf = page.locator('header button[aria-expanded]:visible, header button[aria-controls]:visible, header button[aria-label*="enü"]:visible').first();
     if (await knopf.count()) { await knopf.click(); await page.waitForTimeout(400); }
