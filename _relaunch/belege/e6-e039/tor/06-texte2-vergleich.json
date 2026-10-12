@@ -1,0 +1,1999 @@
+{
+ "satz": "/home/user/tezgel/_relaunch/belege/e6-e039/tor/texte-live → /home/user/tezgel/_relaunch/belege/e6-e039/tor/texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "a": "belege/e6-e039/tor/texte-live",
+  "b": "belege/e6-e039/tor/texte-kopf",
+  "freigabe": "MIKROTEXTE.md",
+  "volatil": [],
+  "regeln": "Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste."
+ },
+ "erstellt": "2026-10-12T20:31:37.952Z",
+ "ergebnis": "GRÜN",
+ "summe": {
+  "rot": 0,
+  "gelb": 181,
+  "gruen_freigegeben": 30,
+  "seiten_rot": 0,
+  "rot_nach_art": {},
+  "gelb_nach_art": {
+   "neu-gegliedert": 14,
+   "hinzu": 160,
+   "umgestellt": 4,
+   "pflichtanker-fehlt": 3
+  },
+  "seiten_verglichen": 25,
+  "zustaende_verglichen": 0,
+  "freigabe_zeilen": 74,
+  "freigabe_warnungen": 0,
+  "laufzeit_s": 0.1
+ },
+ "freigabe": {
+  "datei": "MIKROTEXTE.md",
+  "warnungen": [],
+  "genutzt": [
+   75,
+   76,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   89,
+   90
+  ]
+ },
+ "seiten": {
+  "/": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/#express-anfrage",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/ausstellung/giessen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Firmensitz: Hohwardstraße 14, 35614 Aßlar"
+     ],
+     "neu": [
+      "Firmensitz:",
+      "Hohwardstraße 14, 35614 Aßlar"
+     ],
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/ausstellung/wetzlar": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Firmensitz: Hohwardstraße 14, 35614 Aßlar"
+     ],
+     "neu": [
+      "Firmensitz:",
+      "Hohwardstraße 14, 35614 Aßlar"
+     ],
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/downloads": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Checkliste zur Terminvorbereitung Welche Maße, Fotos und Unterlagen Ihnen und uns beim Beratungstermin helfen. Zur Checkliste",
+     "neu": "01 Checkliste zur Terminvorbereitung Welche Maße, Fotos und Unterlagen Ihnen und uns beim Beratungstermin helfen. Zur Checkliste",
+     "abschnitt": "h2: Online-Ratgeber & Checklisten",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Förderung & Zuschüsse Pflegekassen-Zuschuss und KfW-Programm 159 für das barrierefreie Bad im Überblick. Zur Förderung",
+     "neu": "02 Förderung & Zuschüsse Pflegekassen-Zuschuss und KfW-Programm 159 für das barrierefreie Bad im Überblick. Zur Förderung",
+     "abschnitt": "h2: Online-Ratgeber & Checklisten",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Häufige Fragen Antworten zu Großformaten, Abdichtung nach DIN 18534, Balkon & Terrasse und Festpreisangebot. Zu den FAQ",
+     "neu": "03 Häufige Fragen Antworten zu Großformaten, Abdichtung nach DIN 18534, Balkon & Terrasse und Festpreisangebot. Zu den FAQ",
+     "abschnitt": "h2: Online-Ratgeber & Checklisten",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Materialien & Systeme Verlegewerkstoffe, Abdichtungssysteme und Fliesen, mit denen wir arbeiten. Zu den Materialien",
+     "neu": "04 Materialien & Systeme Verlegewerkstoffe, Abdichtungssysteme und Fliesen, mit denen wir arbeiten. Zu den Materialien",
+     "abschnitt": "h2: Online-Ratgeber & Checklisten",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    }
+   ],
+   "gruen": []
+  },
+  "/faq": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Kategorien",
+     "abschnitt": "h1: FAQ: Häufige Fragen zu Fliesen & Bad bei Tezgel",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/foerderung": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Express-Anfrage",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Ansprechpartner",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Ansprechpartner",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Telefon",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "06441 / 44 83 567",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Mobil & WhatsApp",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "0172 / 67 28 504",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "E-Mail",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "info@tezgel.de",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Sitz",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Hohwardstraße 14, 35614 Aßlar",
+     "abschnitt": "h2: Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/kontakt": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#express-anfrage",
+     "grund": "fehlte schon in A"
+    },
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#termin-buchen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/partner": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Materialpartner & Verlegesysteme",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Materialpartner & Verlegesysteme: Tezgel Fachbetrieb",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/preise": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Preise auf Anfrage Verbindliche Festpreisgarantie"
+     ],
+     "neu": [
+      "Preise auf Anfrage",
+      "Verbindliche Festpreisgarantie"
+     ],
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.region",
+     "wert": "DE-HE",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.placename",
+     "wert": "Aßlar",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.position",
+     "wert": "50.5900;8.4600",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:ICBM",
+     "wert": "50.5900, 8.4600",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "\"Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir können diese Firma uneingeschränkt und wärmstens empfehlen.Handwerklich perfekt, saubere u.präzise …\""
+     ],
+     "neu": [
+      "\"Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir können diese Firma uneingeschränkt und wärmstens empfehlen.Handwerklich perfekt, saubere u. präzise …\""
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Referenzen & Bewertungen",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Referenzen & Bewertungen Fliesenleger Tezgel",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "5 von 5 Sternen",
+     "abschnitt": "h2: Was unsere Kunden in Mittelhessen sagen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "5 von 5 Sternen",
+     "freigabe": [
+      78
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Leistungsumfang ansehen: Komplette Badsanierung mit Großformatfliesen",
+     "freigabe": [
+      79
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Mehr zur Leistung: Komplette Badsanierung mit Großformatfliesen",
+     "freigabe": [
+      80
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Leistungsumfang ansehen: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "freigabe": [
+      81
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Mehr zur Leistung: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "freigabe": [
+      82
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Leistungsumfang ansehen: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "freigabe": [
+      83
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Mehr zur Leistung: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "freigabe": [
+      84
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Leistungsumfang ansehen: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "freigabe": [
+      85
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Mehr zur Leistung: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "freigabe": [
+      86
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Leistungsumfang ansehen: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "freigabe": [
+      87
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Mehr zur Leistung: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "freigabe": [
+      88
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Leistungsumfang ansehen: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "freigabe": [
+      89
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Mehr zur Leistung: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "freigabe": [
+      90
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/referenzen/badsanierung-grossformat": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Projektdokumentation in Vorbereitung Bad & Dusche"
+     ],
+     "neu": [
+      "Projektdokumentation in Vorbereitung",
+      "Bad & Dusche"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Komplette Badsanierung mit Großformatfliesen",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Komplette Badsanierung mit Großformatfliesen",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen/balkon-stelzlager": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Projektdokumentation in Vorbereitung Balkon & Terrasse"
+     ],
+     "neu": [
+      "Projektdokumentation in Vorbereitung",
+      "Balkon & Terrasse"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Balkonsanierung mit Terrassenplatten auf Stelzlagern",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen/barrierefreies-duschbad": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Projektdokumentation in Vorbereitung Bad & Dusche"
+     ],
+     "neu": [
+      "Projektdokumentation in Vorbereitung",
+      "Bad & Dusche"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen/einfamilienhaus-komplett": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Projektdokumentation in Vorbereitung Wohnen & Neubau"
+     ],
+     "neu": [
+      "Projektdokumentation in Vorbereitung",
+      "Wohnen & Neubau"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenarbeiten im kompletten Einfamilienhaus",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Fliesenarbeiten im kompletten Einfamilienhaus",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen/treppenanlage-wohnhaus": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Projektdokumentation in Vorbereitung Treppen"
+     ],
+     "neu": [
+      "Projektdokumentation in Vorbereitung",
+      "Treppen"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Treppenanlage mit Fliesen- oder Natursteinbelag",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen/wohnbereich-fussbodenheizung": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Projektdokumentation in Vorbereitung Wohnen & Neubau"
+     ],
+     "neu": [
+      "Projektdokumentation in Vorbereitung",
+      "Wohnen & Neubau"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kreuzfuge",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Fliesenboden auf Fußbodenheizung im Wohnbereich",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/team": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Unser Team",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/termin": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Ansprechpartner",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Ansprechpartner",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Telefon",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "06441 / 44 83 567",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Mobil & WhatsApp",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "0172 / 67 28 504",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "E-Mail",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "info@tezgel.de",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Sitz",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Hohwardstraße 14, 35614 Aßlar",
+     "abschnitt": "h3: Kostenfreies Vor-Ort-Aufmaß & Beratung",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "📅 2-Schritt Schnellauswahl",
+     "neu": "2-Schritt Schnellauswahl",
+     "freigabe": [
+      75
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "📝 Individuelles Formular",
+     "neu": "Individuelles Formular",
+     "freigabe": [
+      76
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/unternehmen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Blatt",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Unternehmen & Qualitätsversprechen",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Verband",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Halbverband",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Fliesenverlegung Tezgel",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Inhaber",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Deniz Tezgel",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Kammer",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "HWK Wiesbaden",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Betrieb seit",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2008",
+     "abschnitt": "h1: Fliesenverlegung Tezgel: Unternehmen & Qualität",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  }
+ }
+}

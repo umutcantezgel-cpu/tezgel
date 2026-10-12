@@ -1,0 +1,825 @@
+{
+ "satz": "e6-e039",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 135,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/unternehmen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/team",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/team",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/partner",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/team",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/team",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/partner",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/partner",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/partner",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/wetzlar",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/giessen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/giessen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/giessen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ausstellung/giessen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/badsanierung-grossformat",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/badsanierung-grossformat",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/badsanierung-grossformat",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/badsanierung-grossformat",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/einfamilienhaus-komplett",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/treppenanlage-wohnhaus",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/treppenanlage-wohnhaus",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/treppenanlage-wohnhaus",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/treppenanlage-wohnhaus",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/wohnbereich-fussbodenheizung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/wohnbereich-fussbodenheizung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/wohnbereich-fussbodenheizung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/barrierefreies-duschbad",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/wohnbereich-fussbodenheizung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/barrierefreies-duschbad",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/barrierefreies-duschbad",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/barrierefreies-duschbad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/balkon-stelzlager",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/balkon-stelzlager",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/balkon-stelzlager",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/referenzen/balkon-stelzlager",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/termin",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/beratung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/beratung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/beratung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/beratung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/downloads",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/foerderung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/downloads",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/downloads",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/downloads",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/login",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/login",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/login",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/impressum",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/impressum",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/login",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/impressum",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/datenschutz",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/impressum",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/datenschutz",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/datenschutz",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/datenschutz",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/widerruf",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/widerruf",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/widerruf",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/cookie-richtlinie",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/widerruf",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/cookie-richtlinie",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/cookie-richtlinie",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/cookie-richtlinie",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/barrierefreiheit",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/barrierefreiheit",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/barrierefreiheit",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/barrierefreiheit",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  }
+ ]
+}

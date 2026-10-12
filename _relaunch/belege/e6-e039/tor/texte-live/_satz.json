@@ -1,0 +1,973 @@
+{
+ "satz": "e6-e039-texte-live",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-5be70eb/.next/server/app/**/*.html",
+  "build_id": "T9W5KJ36GN86HC4Tovgkl",
+  "dateien": 25,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T20:31:35.040Z",
+ "summe": {
+  "dateien": 25,
+  "im_manifest": 25,
+  "eintraege": 9259,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 84,
+   "ok": 34,
+   "befehle": 25,
+   "fehlend": 0,
+   "ziel_unbekannt": 25,
+   "pflichtanker_ok": "1/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 1.3
+ },
+ "fragmente": {
+  "gesamt": 84,
+  "ok": 34,
+  "befehle": [
+   {
+    "seite": "/agb",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/ausstellung/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/ausstellung/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/barrierefreiheit",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/cookie-richtlinie",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/beratung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/datenschutz",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/downloads",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/faq",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/foerderung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/impressum",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/login",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/partner",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/preise",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/badsanierung-grossformat",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/balkon-stelzlager",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/barrierefreies-duschbad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/einfamilienhaus-komplett",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/treppenanlage-wohnhaus",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/referenzen/wohnbereich-fussbodenheizung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/team",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/termin",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/unternehmen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/widerruf",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [
+   {
+    "seite": "/agb",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/ausstellung/giessen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/ausstellung/wetzlar",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/barrierefreiheit",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/cookie-richtlinie",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/beratung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/datenschutz",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/downloads",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/faq",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/foerderung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/impressum",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/login",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/partner",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/preise",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/referenzen/badsanierung-grossformat",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/referenzen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/referenzen/balkon-stelzlager",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/referenzen/barrierefreies-duschbad",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/referenzen/einfamilienhaus-komplett",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/referenzen/treppenanlage-wohnhaus",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/referenzen/wohnbereich-fussbodenheizung",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/team",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/termin",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/unternehmen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/widerruf",
+    "href": "/kontakt#express-anfrage"
+   }
+  ],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 25,
+    "von": [
+     "/agb",
+     "/ausstellung/giessen",
+     "/ausstellung/wetzlar",
+     "/barrierefreiheit",
+     "/cookie-richtlinie"
+    ]
+   },
+   {
+    "ziel": "/referenzen",
+    "id": "bewertungen",
+    "verweise": 7,
+    "von": [
+     "/referenzen/badsanierung-grossformat",
+     "/referenzen",
+     "/referenzen/balkon-stelzlager",
+     "/referenzen/barrierefreies-duschbad",
+     "/referenzen/einfamilienhaus-komplett"
+    ]
+   },
+   {
+    "ziel": "/agb",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/agb"
+    ]
+   },
+   {
+    "ziel": "/ausstellung/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ausstellung/giessen"
+    ]
+   },
+   {
+    "ziel": "/ausstellung/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ausstellung/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/barrierefreiheit",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/barrierefreiheit"
+    ]
+   },
+   {
+    "ziel": "/cookie-richtlinie",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/cookie-richtlinie"
+    ]
+   },
+   {
+    "ziel": "/beratung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/beratung"
+    ]
+   },
+   {
+    "ziel": "/beratung",
+    "id": "booking",
+    "verweise": 1,
+    "von": [
+     "/beratung"
+    ]
+   },
+   {
+    "ziel": "/datenschutz",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/datenschutz"
+    ]
+   },
+   {
+    "ziel": "/downloads",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/downloads"
+    ]
+   },
+   {
+    "ziel": "/faq",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/faq"
+    ]
+   },
+   {
+    "ziel": "/foerderung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/foerderung"
+    ]
+   },
+   {
+    "ziel": "/impressum",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/impressum"
+    ]
+   },
+   {
+    "ziel": "/login",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/login"
+    ]
+   },
+   {
+    "ziel": "/partner",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/partner"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/referenzen/badsanierung-grossformat",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/badsanierung-grossformat"
+    ]
+   },
+   {
+    "ziel": "/referenzen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen"
+    ]
+   },
+   {
+    "ziel": "/referenzen/balkon-stelzlager",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/balkon-stelzlager"
+    ]
+   },
+   {
+    "ziel": "/referenzen/barrierefreies-duschbad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/barrierefreies-duschbad"
+    ]
+   },
+   {
+    "ziel": "/referenzen/einfamilienhaus-komplett",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/einfamilienhaus-komplett"
+    ]
+   },
+   {
+    "ziel": "/referenzen/treppenanlage-wohnhaus",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/treppenanlage-wohnhaus"
+    ]
+   },
+   {
+    "ziel": "/referenzen/wohnbereich-fussbodenheizung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/referenzen/wohnbereich-fussbodenheizung"
+    ]
+   },
+   {
+    "ziel": "/team",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/team"
+    ]
+   },
+   {
+    "ziel": "/termin",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/termin"
+    ]
+   },
+   {
+    "ziel": "/unternehmen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/unternehmen"
+    ]
+   },
+   {
+    "ziel": "/widerruf",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/widerruf"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": true,
+    "seite_vorhanden": true
+   }
+  ]
+ },
+ "seiten": {
+  "/agb": {
+   "datei": "agb.json",
+   "quelle": "agb.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 331,
+   "arten": {
+    "meta": 33,
+    "text": 254,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 6
+   },
+   "h1": [
+    "Allgemeine Geschäftsbedingungen (AGB)"
+   ],
+   "hash": "8be2726030d5c5f7"
+  },
+  "/ausstellung/giessen": {
+   "datei": "ausstellung__giessen.json",
+   "quelle": "ausstellung/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 387,
+   "arten": {
+    "meta": 32,
+    "text": 308,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenberatung & Materialauswahl in Gießen"
+   ],
+   "hash": "3e5818bfeb20ae80"
+  },
+  "/ausstellung/wetzlar": {
+   "datei": "ausstellung__wetzlar.json",
+   "quelle": "ausstellung/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 387,
+   "arten": {
+    "meta": 32,
+    "text": 308,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenberatung & Materialauswahl in Wetzlar"
+   ],
+   "hash": "e087f27f1c13a0b1"
+  },
+  "/barrierefreiheit": {
+   "datei": "barrierefreiheit.json",
+   "quelle": "barrierefreiheit.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 333,
+   "arten": {
+    "meta": 32,
+    "text": 259,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Erklärung zur Barrierefreiheit"
+   ],
+   "hash": "ce1a45a5b7fe43bc"
+  },
+  "/beratung": {
+   "datei": "beratung.json",
+   "quelle": "beratung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 374,
+   "arten": {
+    "meta": 33,
+    "text": 286,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Kostenlose Fliesenberatung in Wetzlar"
+   ],
+   "hash": "edee0d5ef91fb88f"
+  },
+  "/cookie-richtlinie": {
+   "datei": "cookie-richtlinie.json",
+   "quelle": "cookie-richtlinie.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 327,
+   "arten": {
+    "meta": 32,
+    "text": 249,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Cookie-Richtlinie (EU)"
+   ],
+   "hash": "f81e84f01c3e0823"
+  },
+  "/datenschutz": {
+   "datei": "datenschutz.json",
+   "quelle": "datenschutz.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 350,
+   "arten": {
+    "meta": 33,
+    "text": 268,
+    "aria": 36,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Datenschutzerklärung"
+   ],
+   "hash": "78a4b4bac719707a"
+  },
+  "/downloads": {
+   "datei": "downloads.json",
+   "quelle": "downloads.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 355,
+   "arten": {
+    "meta": 32,
+    "text": 281,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "Downloads & Infomaterial"
+   ],
+   "hash": "e6f6d3834b1b795b"
+  },
+  "/faq": {
+   "datei": "faq.json",
+   "quelle": "faq.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 432,
+   "arten": {
+    "meta": 33,
+    "text": 344,
+    "aria": 48,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "FAQ: Häufige Fragen zu Fliesen & Bad bei Tezgel"
+   ],
+   "hash": "5e5706474d8293fd"
+  },
+  "/foerderung": {
+   "datei": "foerderung.json",
+   "quelle": "foerderung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 401,
+   "arten": {
+    "meta": 33,
+    "text": 313,
+    "aria": 38,
+    "alt": 3,
+    "ueberschrift": 14
+   },
+   "h1": [
+    "Förderung & Zuschüsse für Ihr barrierefreies Bad"
+   ],
+   "hash": "e3a0fc27a63e465e"
+  },
+  "/impressum": {
+   "datei": "impressum.json",
+   "quelle": "impressum.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 348,
+   "arten": {
+    "meta": 33,
+    "text": 265,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Impressum"
+   ],
+   "hash": "7539758179a7e878"
+  },
+  "/login": {
+   "datei": "login.json",
+   "quelle": "login.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 310,
+   "arten": {
+    "meta": 23,
+    "text": 246,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 1
+   },
+   "h1": [
+    "Mitarbeiter Login"
+   ],
+   "hash": "2659a4313b70b65c"
+  },
+  "/partner": {
+   "datei": "partner.json",
+   "quelle": "partner.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 358,
+   "arten": {
+    "meta": 32,
+    "text": 280,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 8
+   },
+   "h1": [
+    "Materialpartner & Verlegesysteme: Tezgel Fachbetrieb"
+   ],
+   "hash": "c3b14ea8fdd71603"
+  },
+  "/preise": {
+   "datei": "preise.json",
+   "quelle": "preise.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 454,
+   "arten": {
+    "meta": 32,
+    "text": 361,
+    "aria": 51,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Kosten & Preise auf Anfrage – Verbindliche Festpreise"
+   ],
+   "hash": "8f8832a1c7270534"
+  },
+  "/referenzen": {
+   "datei": "referenzen.json",
+   "quelle": "referenzen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 462,
+   "arten": {
+    "meta": 33,
+    "text": 365,
+    "aria": 50,
+    "alt": 3,
+    "ueberschrift": 11
+   },
+   "h1": [
+    "Referenzen & Bewertungen Fliesenleger Tezgel"
+   ],
+   "hash": "17316609123b5e4a"
+  },
+  "/referenzen/badsanierung-grossformat": {
+   "datei": "referenzen__badsanierung-grossformat.json",
+   "quelle": "referenzen/badsanierung-grossformat.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 374,
+   "arten": {
+    "meta": 34,
+    "text": 295,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Komplette Badsanierung mit Großformatfliesen"
+   ],
+   "hash": "04c510169384a455"
+  },
+  "/referenzen/balkon-stelzlager": {
+   "datei": "referenzen__balkon-stelzlager.json",
+   "quelle": "referenzen/balkon-stelzlager.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 34,
+    "text": 294,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Balkonsanierung mit Terrassenplatten auf Stelzlagern"
+   ],
+   "hash": "d00d0fb89a79e253"
+  },
+  "/referenzen/barrierefreies-duschbad": {
+   "datei": "referenzen__barrierefreies-duschbad.json",
+   "quelle": "referenzen/barrierefreies-duschbad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 374,
+   "arten": {
+    "meta": 34,
+    "text": 295,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Barrierefreies Duschbad mit bodengleicher Walk-In-Dusche"
+   ],
+   "hash": "5873f3e7a58fbb51"
+  },
+  "/referenzen/einfamilienhaus-komplett": {
+   "datei": "referenzen__einfamilienhaus-komplett.json",
+   "quelle": "referenzen/einfamilienhaus-komplett.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 34,
+    "text": 294,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenarbeiten im kompletten Einfamilienhaus"
+   ],
+   "hash": "dd7bc01ce6897ddf"
+  },
+  "/referenzen/treppenanlage-wohnhaus": {
+   "datei": "referenzen__treppenanlage-wohnhaus.json",
+   "quelle": "referenzen/treppenanlage-wohnhaus.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 34,
+    "text": 294,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Treppenanlage mit Fliesen- oder Natursteinbelag"
+   ],
+   "hash": "feab3dd64b4c285c"
+  },
+  "/referenzen/wohnbereich-fussbodenheizung": {
+   "datei": "referenzen__wohnbereich-fussbodenheizung.json",
+   "quelle": "referenzen/wohnbereich-fussbodenheizung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 373,
+   "arten": {
+    "meta": 34,
+    "text": 294,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Fliesenboden auf Fußbodenheizung im Wohnbereich"
+   ],
+   "hash": "f503c0ddc1d2bc99"
+  },
+  "/team": {
+   "datei": "team.json",
+   "quelle": "team.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 368,
+   "arten": {
+    "meta": 32,
+    "text": 291,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 5
+   },
+   "h1": [
+    "Unser Team: Fliesenleger-Fachbetrieb Tezgel Aßlar"
+   ],
+   "hash": "d72a8fa17e8c403b"
+  },
+  "/termin": {
+   "datei": "termin.json",
+   "quelle": "termin.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 333,
+   "arten": {
+    "meta": 32,
+    "text": 257,
+    "aria": 38,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Termin vereinbaren bei Fliesenleger Tezgel"
+   ],
+   "hash": "c74a9fea932ef4ad"
+  },
+  "/unternehmen": {
+   "datei": "unternehmen.json",
+   "quelle": "unternehmen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 379,
+   "arten": {
+    "meta": 32,
+    "text": 298,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung Tezgel: Unternehmen & Qualität"
+   ],
+   "hash": "30ad36710aba846a"
+  },
+  "/widerruf": {
+   "datei": "widerruf.json",
+   "quelle": "widerruf.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 330,
+   "arten": {
+    "meta": 33,
+    "text": 258,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 1
+   },
+   "h1": [
+    "Widerrufsbelehrung & Muster-Widerrufsformular"
+   ],
+   "hash": "a2b6cca251b0178c"
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "base": "http://127.0.0.1:4365",
+ "seiten": [
+  "/unternehmen",
+  "/team",
+  "/partner",
+  "/ausstellung/wetzlar",
+  "/ausstellung/giessen",
+  "/referenzen",
+  "/referenzen/badsanierung-grossformat",
+  "/referenzen/einfamilienhaus-komplett",
+  "/referenzen/treppenanlage-wohnhaus",
+  "/referenzen/wohnbereich-fussbodenheizung",
+  "/referenzen/barrierefreies-duschbad",
+  "/referenzen/balkon-stelzlager",
+  "/termin",
+  "/beratung",
+  "/faq",
+  "/preise",
+  "/foerderung",
+  "/downloads",
+  "/login",
+  "/impressum",
+  "/datenschutz",
+  "/agb",
+  "/widerruf",
+  "/cookie-richtlinie",
+  "/barrierefreiheit"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": []
+}
