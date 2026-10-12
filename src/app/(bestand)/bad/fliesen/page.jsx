@@ -4,6 +4,7 @@
 // Kundenstimme, Badanfrage im Raster aus Funnel (8 Spalten) und Rückfrage (4 Spalten, ab lg klebend).
 // Der Anfragebereich wird nachgeladen (TEMPO). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
 import { createMetadata } from '@/lib/metadata';
@@ -20,7 +21,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 
 // Badanfrage nachladen wie auf der Referenzseite (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({

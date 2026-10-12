@@ -1,0 +1,130 @@
+[
+ {
+  "ansicht": "m390",
+  "formular": "Express (/)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "p[tabindex=-1]: Schritt 3: Kontaktdaten & Absenden",
+  "urteil": "ok"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Express (/kontakt)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "p[tabindex=-1]: Schritt 3: Kontaktdaten & Absenden",
+  "urteil": "ok"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Badanfrage (/bad/badanfrage)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "button: Weiter zu Schritt 4",
+  "urteil": "ok"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Konfigurator (/fliesen/konfigurator)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "p[tabindex=-1]: 3. Format, Material & Menge",
+  "urteil": "ok"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Express (/)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "p[tabindex=-1]: Schritt 3: Kontaktdaten & Absenden",
+  "urteil": "ok"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Express (/kontakt)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "p[tabindex=-1]: Schritt 3: Kontaktdaten & Absenden",
+  "urteil": "ok"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Badanfrage (/bad/badanfrage)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "button: Weiter zu Schritt 4",
+  "urteil": "ok"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Konfigurator (/fliesen/konfigurator)",
+  "richtung": "column",
+  "dom": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Zurück",
+  "fokus_nach_wechsel": "p[tabindex=-1]: 3. Format, Material & Menge",
+  "urteil": "ok"
+ }
+]

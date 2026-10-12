@@ -12,7 +12,7 @@ import Gewerk from '@/components/leistungen/Gewerk';
 
 export default function Gewerke() {
   return (
-    <Abschnitt id="gewerke" art="erzaehl" leitachse aria-label="Fachgewerke" className="scroll-mt-0!">
+    <Abschnitt id="gewerke" art="erzaehl" leitachse aria-label="Fachgewerke">
       <Feldraster spalten={2} als="div">
         {SERVICES.map((leistung, nr) => (
           <Gewerk key={leistung.id} leistung={leistung} nr={nr} />

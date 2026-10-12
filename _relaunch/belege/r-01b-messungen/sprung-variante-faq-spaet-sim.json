@@ -1,0 +1,202 @@
+{
+ "bad": {
+  "d1440": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": -459
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  },
+  "m390": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": 96
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  }
+ },
+ "aussen": {
+  "d1440": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": -337
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  },
+  "m390": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": -206
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  }
+ },
+ "wohnen": {
+  "d1440": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": -398
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  },
+  "m390": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": -205
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  }
+ },
+ "untergrund": {
+  "d1440": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": 96
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  },
+  "m390": {
+   "adresse": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "spezialisierungen": 96,
+    "fachdetails": 96,
+    "kosten-rechner": 96,
+    "faq": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {
+    "express-anfrage": -170
+   },
+   "spaet": [
+    "kosten-rechner",
+    "faq",
+    "express-anfrage"
+   ]
+  }
+ }
+}

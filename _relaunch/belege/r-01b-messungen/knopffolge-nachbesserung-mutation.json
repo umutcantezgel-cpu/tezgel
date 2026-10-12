@@ -1,0 +1,138 @@
+[
+ {
+  "ansicht": "m390",
+  "formular": "Express (/)",
+  "richtung": "column-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3: Kontaktdaten",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Express (/kontakt)",
+  "richtung": "column-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3: Kontaktdaten",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Badanfrage (/bad/badanfrage)",
+  "richtung": "column-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Konfigurator (/fliesen/konfigurator)",
+  "richtung": "column-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Express (/)",
+  "richtung": "row-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3: Kontaktdaten",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Express (/kontakt)",
+  "richtung": "row-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3: Kontaktdaten",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Badanfrage (/bad/badanfrage)",
+  "richtung": "row-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Konfigurator (/fliesen/konfigurator)",
+  "richtung": "row-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Weiter zu Schritt 3",
+  "fokus_nach_wechsel": null,
+  "letzter_schritt": null,
+  "urteil": "ABWEICHUNG"
+ }
+]

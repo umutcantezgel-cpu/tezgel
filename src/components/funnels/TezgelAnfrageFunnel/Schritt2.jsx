@@ -73,11 +73,14 @@ export default function Schritt2({ setStep, selectedArea, selectArea, customArea
             <p className={hilfeKlassen}>Wir arbeiten im Lahn-Dill-Kreis, Raum Gießen und ganz Hessen.</p>
           </div>
 
-          <div className="flex flex-col-reverse items-stretch justify-between gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center">
+          {/* Knopffolge (R-01b nach Gutachten u4, Rezept 2; WCAG 1.3.2/2.4.3): sichtbar = DOM- und Tab-Folge, kein
+              flex-col-reverse. Ab sm eine Zeile: „Zurück“ links, „Weiter“ rechts; darunter gestapelt in DOM-Folge
+              („Zurück“ über „Weiter“ in voller Breite). */}
+          <div className="flex flex-col items-stretch gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
             <button
               type="button"
               onClick={() => setStep(1)}
-              className={knopfKlassen('text')}
+              className={knopfKlassen('text', 'self-start sm:self-auto')}
               data-motion="druck"
             >
               <Icon name="pfeil-links" groesse={5} />

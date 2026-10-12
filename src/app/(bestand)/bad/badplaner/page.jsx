@@ -4,6 +4,7 @@
 // IDs und Lesefolge wie im Bestand; keine Auftritte außer aufklappen, druck, zustand.
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import Icon from '@/components/icons/Icon';
 import Einstieg from '@/components/kern/Einstieg';
@@ -18,7 +19,7 @@ import { createMetadata } from '@/lib/metadata';
 
 // Anfrageweg nachladen wie auf der Startseite (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({

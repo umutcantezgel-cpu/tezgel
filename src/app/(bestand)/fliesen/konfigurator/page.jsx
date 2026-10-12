@@ -3,6 +3,7 @@
 // Berechnung, Treppen, nächste Schritte, FAQ und Ratgeber in ruhigen Abschnitten. Texte, Links und IDs wie im Bestand;
 // der Konfigurator selbst (src/components/funnels/FliesenKonfigurator) wird nur eingebunden und nachgeladen.
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
@@ -17,7 +18,7 @@ import Tabelle from '@/components/kern/Tabelle';
 import { linkKlassen } from '@/components/kern/stile';
 
 const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({

@@ -2,6 +2,7 @@
 // danach der nachgeladene Anfrage-Funnel mit der Rückfrage daneben (ab lg 8 + 4 Spalten), dann die Qualitätszusagen.
 // Texte, Überschriften, Links, IDs und Lesefolge wie im Bestand; keine Auftritte, keine Dekorflächen.
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Rueckfrage from '@/components/kern/Rueckfrage';
@@ -10,7 +11,7 @@ import { createMetadata } from '@/lib/metadata';
 
 // Anfrageweg nachladen wie auf der Startseite (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({

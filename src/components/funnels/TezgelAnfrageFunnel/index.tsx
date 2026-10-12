@@ -2,6 +2,7 @@
 
 // Express-Anfrage (E-011): Schrittwechsel und Markup hier. Logik aus useAnfrageFunnel (gemeinsam mit der Kern-Ansicht);
 // Schritttexte in logik.ts, Markup in Schritt1–3, Erfolg und WhatsAppGeoeffnet. Darstellung nach KERN (E2-ORCH-08): Feld an der Fuge, Fortschritt als Mono-Felder.
+import { useEffect, useRef } from 'react';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen } from '@/components/kern/stile';
@@ -49,6 +50,18 @@ export default function TezgelAnfrageFunnel() {
     selectArea
   } = useAnfrageFunnel();
 
+  // Fokusführung beim Schrittwechsel (R-01b, wie Badanfrage und Konfigurator): Verschwindet der bediente Knopf (Weiter,
+  // Zurück, Ändern), läge der Fokus auf <body>; dann geht er auf den Schritttitel (tabIndex -1). Bleibt der Fokus auf einem
+  // Element, bleibt er dort. Beim ersten Zeichnen kein Fokus.
+  const titel = useRef<HTMLParagraphElement>(null);
+  const letzterSchritt = useRef(step);
+  useEffect(() => {
+    if (letzterSchritt.current === step) return;
+    letzterSchritt.current = step;
+    const aktiv = document.activeElement;
+    if (aktiv && aktiv !== document.body) return;
+    titel.current?.focus();
+  }, [step]);
 
   if (status === 'success') {
     return <Erfolg name={name} email={email} referenceId={referenceId} projectTitle={projectTitle} finalArea={finalArea} locationText={locationText} handleNewRequest={handleNewRequest} />;
@@ -90,7 +103,7 @@ export default function TezgelAnfrageFunnel() {
           </ol>
         </div>
 
-        <p className="font-anzeige text-fs-5 font-semibold text-tinte">
+        <p ref={titel} tabIndex={-1} className="font-anzeige text-fs-5 font-semibold text-tinte">
           Schritt {step}: {STEPS[step - 1].title}
         </p>
         <p className="mt-2 text-fs-2 text-tinte-2">{STEPS[step - 1].text}</p>

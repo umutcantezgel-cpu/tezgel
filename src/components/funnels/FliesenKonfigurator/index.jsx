@@ -212,10 +212,13 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                             <Schritt4 data={data} update={update} goToStep={goToStep} handleSubmit={handleSubmit} isSubmitting={isSubmitting} errorMessage={errorMessage} />
                         )}
 
-                        {/* Schrittnavigation: mobil die Hauptaktion zuerst (Weiter über Zurück), ab 36 rem Zurück links, Weiter rechts;
-                            gesperrt (Schritt 1 ohne Bereich) ist „Weiter“ als graue Fläche erkennbar (disabled, B) */}
+                        {/* Schrittnavigation, Knopffolge wie Express-Anfrage und Badanfrage (R-01b nach Gutachten u4, Rezept 2;
+                            WCAG 1.3.2/2.4.3): sichtbar = DOM- und Tab-Folge, kein flex-col-reverse. Ab 36 rem Behälterbreite eine
+                            Zeile: „Zurück“ links, „Weiter“ rechts; darunter gestapelt in DOM-Folge („Zurück“ über „Weiter“ in voller
+                            Breite). Gesperrt (Schritt 1 ohne Bereich) ist „Weiter“ als graue Fläche erkennbar (disabled, B). Fokus
+                            nach dem Schrittwechsel: Schritttitel (headingRef). */}
                         {step < 4 && (
-                            <div className="flex flex-col-reverse items-stretch gap-4 border-t border-fuge pt-6 @xl:flex-row @xl:items-center @xl:justify-between">
+                            <div className="flex flex-col items-stretch gap-4 border-t border-fuge pt-6 @xl:flex-row @xl:items-center @xl:justify-between">
                                 {step > 1 && (
                                     <button
                                         type="button"

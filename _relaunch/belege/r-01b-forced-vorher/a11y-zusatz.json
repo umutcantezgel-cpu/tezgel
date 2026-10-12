@@ -1,0 +1,509 @@
+{
+ "satz": "r-01b-forced-vorher",
+ "base": "http://127.0.0.1:4362",
+ "erstellt": "2026-10-12T15:57:16.733Z",
+ "werkzeug": "a11y-zusatz.mjs",
+ "kriterium": "Z-11",
+ "bedingungen": {
+  "server": "http://127.0.0.1:4362",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "seiten": [
+   "/leistungen/bad",
+   "/leistungen/aussen",
+   "/leistungen/wohnen",
+   "/leistungen/untergrund"
+  ],
+  "ansichten": [
+   "m375",
+   "d1440"
+  ],
+  "pruefungen": [
+   "forced"
+  ],
+  "einwilligung": "abgelehnt",
+  "banner_zustaende": [
+   "abgelehnt"
+  ],
+  "einwilligung_tastatur": [
+   "abgelehnt",
+   "erstbesuch"
+  ],
+  "reducedMotion": "reduce",
+  "locale": "de-DE",
+  "timezoneId": "Europe/Berlin",
+  "colorScheme": "light",
+  "deviceScaleFactor": 1,
+  "ansichten_px": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "worker": 2,
+  "gegenprobe": null,
+  "regeln": {
+   "tastatur": {
+    "obergrenze_schritte": 400,
+    "ende": "Fokus verlässt das Dokument (activeElement = body, document.hasFocus() = false) oder Rückkehr zum ersten Element",
+    "sprung_rueckwaerts": "Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen",
+    "fokus_sichtbar": "Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung (je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Umfang der Vereinigung der Zeilenstücke im Bild; übereinander liegende Stücke mit Abstand ≤ 2·(Versatz + Breite) des Umrisses bilden wie bei Chrome einen Umriss; Umriss < 2 px gilt als dünn (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als „Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).",
+    "fokus_verdeckt": "elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; „fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; „abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei",
+    "falle": "derselbe Fokus 10× hintereinander → Abbruch; Zyklus = ein Element zum 3. Mal fokussiert → Abbruch, danach Escape + Tab: verlässt der Fokus den Zyklus?",
+    "sprunglink": "erster Tab fokussiert <a href=\"#main-content\"> und das Ziel #main-content existiert",
+    "iframes": "ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)"
+   },
+   "reflow": {
+    "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
+    "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
+   },
+   "zoom": {
+    "css": "1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)",
+    "aequivalent": "640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)",
+    "verdeckt": "sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist",
+    "nie_im_bild": "Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen",
+    "info": "im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar"
+   },
+   "textabstand": {
+    "stilblatt": "*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}",
+    "befund": "Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde",
+    "scroll_ueberhang": "Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info"
+   },
+   "forced": {
+    "emulation": "page.emulateMedia({ forcedColors: 'active' })",
+    "befund": "sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert"
+   },
+   "ohnejs": {
+    "kontext": "javaScriptEnabled: false",
+    "text": "sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)",
+    "erster_bildschirm": "Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert",
+    "navigation": "mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten"
+   }
+  },
+  "rohdaten": "cache/a11y-zusatz/r-01b-forced-vorher"
+ },
+ "laufzeit_s": 19,
+ "status": {
+  "forced": "rot"
+ },
+ "kennzahlen": {
+  "forced": {
+   "ohne_grenze": 32,
+   "davon_mit_grafik": 32,
+   "felder_ohne_grenze": 0,
+   "laeufe": 8,
+   "fehler": 0
+  }
+ },
+ "je_seite": {
+  "/leistungen/bad": {
+   "forced": {
+    "ohne_grenze": 8,
+    "davon_mit_grafik": 8,
+    "felder_ohne_grenze": 0
+   }
+  },
+  "/leistungen/aussen": {
+   "forced": {
+    "ohne_grenze": 8,
+    "davon_mit_grafik": 8,
+    "felder_ohne_grenze": 0
+   }
+  },
+  "/leistungen/wohnen": {
+   "forced": {
+    "ohne_grenze": 8,
+    "davon_mit_grafik": 8,
+    "felder_ohne_grenze": 0
+   }
+  },
+  "/leistungen/untergrund": {
+   "forced": {
+    "ohne_grenze": 8,
+    "davon_mit_grafik": 8,
+    "felder_ohne_grenze": 0
+   }
+  }
+ },
+ "ergebnisse": {
+  "forced": [
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/aussen",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/d1440/leistungen__aussen.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 132,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Badsanierung öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Fachgewerke öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Standorte öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 6,
+     "davon_mit_grafik": 6,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.4
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/aussen",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/m375/leistungen__aussen.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 124,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 2,
+     "davon_mit_grafik": 2,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/bad",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/d1440/leistungen__bad.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 132,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Badsanierung öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Fachgewerke öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Standorte öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 6,
+     "davon_mit_grafik": 6,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.4
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/bad",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/m375/leistungen__bad.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 124,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 2,
+     "davon_mit_grafik": 2,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.4
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/untergrund",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/d1440/leistungen__untergrund.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 132,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Badsanierung öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Fachgewerke öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Standorte öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 6,
+     "davon_mit_grafik": 6,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.4
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/untergrund",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/m375/leistungen__untergrund.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 124,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 2,
+     "davon_mit_grafik": 2,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.1
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/wohnen",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/d1440/leistungen__wohnen.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 132,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Badsanierung öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Fachgewerke öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Standorte öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 6,
+     "davon_mit_grafik": 6,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.1
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/leistungen/wohnen",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/r-01b-forced-vorher/forced-colors/m375/leistungen__wohnen.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 124,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 2,
+     "davon_mit_grafik": 2,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.5
+   }
+  ]
+ }
+}

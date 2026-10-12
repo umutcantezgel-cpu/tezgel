@@ -45,8 +45,9 @@ export default function BadanfrageFunnel() {
     // Fokusführung beim Zustandswechsel (F-04, über A und B hinaus): Verschwindet das bediente Element (Weiter 4→5,
     // Zurück zu Schritt 4, Zurück 2→1, Absenden, WhatsApp, Neustart, Zurück aus WhatsApp), läge der Fokus auf <body>.
     // Dann geht er auf die neue Schrittfrage bzw. die Dank-Zeile oder die WhatsApp-Überschrift (tabIndex -1,
-    // data-fokusziel), nach einem Serverfehler auf den wieder aktiven Sendeknopf. Bleibt der Fokus auf einem Element
-    // (umbenannter Weiter-Knopf, Per WhatsApp bei fehlenden Angaben, Fokus außerhalb), bleibt er dort.
+    // data-fokusziel), nach einem Serverfehler auf den wieder aktiven Sendeknopf. Beim Schrittwechsel geht er auch dann
+    // auf die Schrittfrage, wenn der bediente Knopf stehen bleibt (umbenannter Weiter-Knopf, „Zurück“; R-01b, wie Express
+    // und Konfigurator). Sonst bleibt ein Fokus auf einem Element dort (Per WhatsApp bei fehlenden Angaben, Fokus außerhalb).
     const wurzel = useRef(null);
     const zuletzt = useRef({ step, status });
     useEffect(() => {
@@ -54,7 +55,8 @@ export default function BadanfrageFunnel() {
         zuletzt.current = { step, status };
         if ((vorher.step === step && vorher.status === status) || status === 'submitting') return;
         const aktiv = document.activeElement;
-        if (aktiv && aktiv !== document.body) return;
+        const schrittwechsel = vorher.step !== step && vorher.status === status && !!aktiv && !!wurzel.current?.contains(aktiv);
+        if (aktiv && aktiv !== document.body && !schrittwechsel) return;
         const nachFehler = status === 'error' && vorher.status !== 'error';
         const ziel = wurzel.current?.querySelector(nachFehler ? 'button[type="submit"]' : '[data-fokusziel]');
         ziel?.focus();
@@ -113,8 +115,8 @@ export default function BadanfrageFunnel() {
                     />
                 )}
 
-                {/* Fußleiste für die Schritte 1–4: mobil „Zurück“ über „Weiter“ wie DOM- und Tab-Folge (aus A, kein
-                    flex-col-reverse), ab breitem Behälter Zurück links, Weiter rechts */}
+                {/* Fußleiste für die Schritte 1–4 (Gutachten u4, Rezept 2; R-01b): mobil „Zurück“ über „Weiter“ wie DOM- und
+                    Tab-Folge (kein flex-col-reverse), ab breitem Behälter Zurück links, Weiter rechts */}
                 {step < TOTAL_STEPS && (
                     <div
                         className={`mt-8 flex flex-col items-stretch gap-4 border-t border-fuge pt-6 @md:flex-row @md:items-center ${

@@ -6,11 +6,17 @@ import Laserachse from "@/components/kern/Laserachse";
 import { ACHSE_LAGE } from "@/components/kern/Leitachse";
 import { siteConfig } from "@/lib/config";
 import dynamic from "next/dynamic";
+import FormularPlatzhalter from "@/components/funnels/TezgelAnfrageFunnel/Platzhalter";
 
 // Schnellformular nachgeladen (E4-NACH-06, Bündelanalyse: 62 KiB roh in der Erstladung von 9 Hauptansichten): eigenes
-// Paket statt im gemeinsamen Erstladungsbündel; Server-Rendering bleibt, sichtbar und bedienbar wie bisher.
+// Paket statt im gemeinsamen Erstladungsbündel; Server-Rendering bleibt, mit JavaScript sichtbar und bedienbar wie bisher.
+// Ohne JavaScript bleibt der Platzhalter stehen; er trägt Anruf, WhatsApp und E-Mail als Links (R-01b, Variante b).
+// Schalter Variante a (R-01b, Formular auch ohne JavaScript sichtbar): die drei Zeilen `const LeadQuickForm = dynamic(…)`
+// ersetzen durch `import LeadQuickForm from "@/components/forms/LeadQuickForm";` und den Import von FormularPlatzhalter
+// streichen. Messen: Lighthouse mobil auf /leistungen/bad/wetzlar (mit Schnellanfrage) und auf / und /bad (Abschluss ohne
+// Schnellanfrage: prüft, ob das Formularpaket wieder in die Erstladung fällt, E4-NACH-06).
 const LeadQuickForm = dynamic(() => import("@/components/forms/LeadQuickForm"), {
-  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+  loading: () => <FormularPlatzhalter />,
 });
 import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 
@@ -34,9 +40,10 @@ const defaultBenefits = [
   "Saubere Baustelle mit Staubschutz-Garantie",
 ];
 
-// Telefonnummer groß in Mono, als tel:-Link (Farbwechsel der Linie: zustand)
+// Telefonnummer groß in Mono, als tel:-Link (Farbwechsel der Linie: zustand). Ziel ≥ 44 px (R-01b): min-h-11 mit
+// mittiger Zeile; -my-2 gibt die 16 px Zuwachs an Abstand und Rand zurück, die Lage im Feld bleibt wie zuvor.
 const TELEFON_KLASSEN =
-  "inline-flex w-fit font-mono text-fs-5 text-tinte underline decoration-strich decoration-1 underline-offset-8 transition-colors dauer-1 ease-setzen hover:decoration-tinte";
+  "-my-2 inline-flex min-h-11 w-fit items-center font-mono text-fs-5 text-tinte underline decoration-strich decoration-1 underline-offset-8 transition-colors dauer-1 ease-setzen hover:decoration-tinte";
 
 // Abschluss (KERN v2, nach src/components/kern/start/Abschluss.tsx): helle Fläche (Kalk), gerahmtes Feld auf Fliese mit klarer Rangfolge
 // (Überschrift, Untertitel, große Telefonnummer, gefüllter Hauptknopf, WhatsApp mit Markenzeichen, ruhige Leiste).

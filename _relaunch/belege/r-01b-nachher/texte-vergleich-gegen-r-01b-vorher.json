@@ -1,0 +1,358 @@
+{
+ "vorher": "r-01b-vorher",
+ "nachher": "r-01b-nachher",
+ "seiten": {
+  "/leistungen/bad": {
+   "main_zeilen": {
+    "entfernt": [
+     "Individuelle Anfrage",
+     "Projekt anfragen & Situation schildern",
+     "Schildern Sie uns Ihr Vorhaben für Bäder & Wellness für eine fachmännische Einschätzung und ein Festpreisangebot nach Vor-Ort-Aufmaß.",
+     "1",
+     "Gewerk",
+     "2",
+     "Fläche",
+     "3",
+     "Situation",
+     "1. Welches Projekt planen Sie?",
+     "Auswahl erforderlich",
+     "Badsanierung & Walk-In Dusche",
+     "Sehr gefragt",
+     "Wand & Boden, Gefälle, Nischen & Komplettbad",
+     "XXL-Großformat (ab 120 cm)",
+     "Spezialgebiet",
+     "Fugenarme Fliesen, Vakuumheber & Kalibrierung",
+     "Wohnraum, Flur & Küche",
+     "Klassiker",
+     "Feinsteinzeug, Holzoptik & durchgehende Fugen",
+     "Balkon, Terrasse & Außen",
+     "Außenbereich",
+     "Frostsichere 2-cm-Keramik, Stelzlager & Gefälle",
+     "DIN 18534 Abdichtung & Estrich",
+     "Zertifiziert",
+     "Verbundabdichtung, Dichtbänder & Nivellierung",
+     "Reparatur & Schadensbeseitigung",
+     "Schnellhilfe",
+     "Fliesentausch, Silikonfugen & Ursachenprüfung",
+     "2. Geschätzte Grundfläche:",
+     "Kompakt / Gäste-WC",
+     "bis ca. 10 m²",
+     "Standard-Raum / Bad",
+     "ca. 10 - 25 m²",
+     "Großraum / Wohnbereich",
+     "ca. 25 - 50 m²",
+     "Gesamtes Objekt / Etage",
+     "ab 50 m²",
+     "Oder genaue Quadratmeterzahl bekannt:",
+     "m²",
+     "3. Rahmenbedingungen & Vorarbeiten:",
+     "Altfliesen entfernen & entsorgen",
+     "Bestehende Fliesen müssen vorab fachgerecht abgetragen werden",
+     "Untergrundausgleich / Estrich nötig",
+     "Unebene Böden oder Wände müssen vor der Verlegung gespachtelt werden",
+     "Fußbodenheizung vorhanden / geplant",
+     "Verlegung erfordert hochflexible S1/S2 Mörtel für thermische Spannungen",
+     "Barrierefreier / schwellenloser Zugang",
+     "Bodengleiche Dusche, flache Schwellen oder altersgerechte Planung",
+     "Staubschutz im bewohnten Wohnbereich",
+     "Einsatz von Staubschutztüren & HEPA-Luftreinigern während der Arbeiten",
+     "Material- & Fliesenberatung gewünscht",
+     "Unterstützung bei Fliesenauswahl, Rutschhemmung und Formatabstimmung",
+     "4. Schildern Sie kurz Ihre Situation & Ihr Vorhaben:",
+     "Sehr hilfreich für Rückfragen",
+     "Preise individuell auf Anfrage",
+     "Unverbindliche Projektanfrage",
+     "Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Bauvorhaben ist einzigartig. Beschreiben Sie Ihr Vorhaben – wir melden uns für ein kostenfreies Vor-Ort-Aufmaß und Ihr verlässliches Festpreisangebot.",
+     "Gewerk:",
+     "Badsanierung & Walk-In Dusche",
+     "Fläche:",
+     "ca. 10 - 25 m²",
+     "Vor-Ort-Aufmaß:",
+     "0 € (Kostenfrei)",
+     "Angebot:",
+     "Verbindlicher Festpreis",
+     "Faxnummer",
+     "Ihr Name *",
+     "Telefonnummer *",
+     "E-Mail-Adresse",
+     "Einsatzort / PLZ",
+     "Gewünschter Zeitraum",
+     "Schnellstmöglich",
+     "In den nächsten 1 - 3 Monaten",
+     "In 3 - 6 Monaten",
+     "Flexibel / In Planung",
+     "Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.",
+     "Unverbindliche Anfrage absenden",
+     "Oder bei dringenden Fragen direkt anrufen:",
+     "Express-Aufmaß",
+     "Jetzt unverbindlich anfragen",
+     "Express-Anfrage in 60 Sekunden",
+     "1",
+     "2",
+     "3",
+     "Schritt 1: Welches Projekt planen Sie?",
+     "Wählen Sie Ihr Fachgewerk für eine passende Planung.",
+     "Bad & Wellness",
+     "Walk-In-Dusche, Großformate, Ablagenischen",
+     "Wohnbereich & Neubau",
+     "Feinsteinzeug, Küche, Diele & Flure",
+     "Balkon & Terrasse",
+     "2-cm-Keramikplatten auf Stelzlagern",
+     "Treppen & Naturstein",
+     "Granit, Naturstein & Treppenstufen",
+     "Untergrund & Abdichtung",
+     "Estrichausgleich & DIN 18534 Verbundabdichtung",
+     "Weiter zu Schritt 2: Fläche & Ort",
+     "06441 / 44 83 567"
+    ],
+    "hinzu": []
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/leistungen": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/leistungen/aussen": {
+   "main_zeilen": {
+    "entfernt": [
+     "Individuelle Anfrage",
+     "Projekt anfragen & Situation schildern",
+     "Schildern Sie uns Ihr Vorhaben für Balkon- & Terrassensanierung für eine fachmännische Einschätzung und ein Festpreisangebot nach Vor-Ort-Aufmaß.",
+     "1",
+     "Gewerk",
+     "2",
+     "Fläche",
+     "3",
+     "Situation",
+     "1. Welches Projekt planen Sie?",
+     "Auswahl erforderlich",
+     "Badsanierung & Walk-In Dusche",
+     "Sehr gefragt",
+     "Wand & Boden, Gefälle, Nischen & Komplettbad",
+     "XXL-Großformat (ab 120 cm)",
+     "Spezialgebiet",
+     "Fugenarme Fliesen, Vakuumheber & Kalibrierung",
+     "Wohnraum, Flur & Küche",
+     "Klassiker",
+     "Feinsteinzeug, Holzoptik & durchgehende Fugen",
+     "Balkon, Terrasse & Außen",
+     "Außenbereich",
+     "Frostsichere 2-cm-Keramik, Stelzlager & Gefälle",
+     "DIN 18534 Abdichtung & Estrich",
+     "Zertifiziert",
+     "Verbundabdichtung, Dichtbänder & Nivellierung",
+     "Reparatur & Schadensbeseitigung",
+     "Schnellhilfe",
+     "Fliesentausch, Silikonfugen & Ursachenprüfung",
+     "2. Geschätzte Grundfläche:",
+     "Kompakt / Gäste-WC",
+     "bis ca. 10 m²",
+     "Standard-Raum / Bad",
+     "ca. 10 - 25 m²",
+     "Großraum / Wohnbereich",
+     "ca. 25 - 50 m²",
+     "Gesamtes Objekt / Etage",
+     "ab 50 m²",
+     "Oder genaue Quadratmeterzahl bekannt:",
+     "m²",
+     "3. Rahmenbedingungen & Vorarbeiten:",
+     "Altfliesen entfernen & entsorgen",
+     "Bestehende Fliesen müssen vorab fachgerecht abgetragen werden",
+     "Untergrundausgleich / Estrich nötig",
+     "Unebene Böden oder Wände müssen vor der Verlegung gespachtelt werden",
+     "Fußbodenheizung vorhanden / geplant",
+     "Verlegung erfordert hochflexible S1/S2 Mörtel für thermische Spannungen",
+     "Barrierefreier / schwellenloser Zugang",
+     "Bodengleiche Dusche, flache Schwellen oder altersgerechte Planung",
+     "Staubschutz im bewohnten Wohnbereich",
+     "Einsatz von Staubschutztüren & HEPA-Luftreinigern während der Arbeiten",
+     "Material- & Fliesenberatung gewünscht",
+     "Unterstützung bei Fliesenauswahl, Rutschhemmung und Formatabstimmung",
+     "4. Schildern Sie kurz Ihre Situation & Ihr Vorhaben:",
+     "Sehr hilfreich für Rückfragen",
+     "Preise individuell auf Anfrage",
+     "Unverbindliche Projektanfrage",
+     "Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Bauvorhaben ist einzigartig. Beschreiben Sie Ihr Vorhaben – wir melden uns für ein kostenfreies Vor-Ort-Aufmaß und Ihr verlässliches Festpreisangebot.",
+     "Gewerk:",
+     "Badsanierung & Walk-In Dusche",
+     "Fläche:",
+     "ca. 10 - 25 m²",
+     "Vor-Ort-Aufmaß:",
+     "0 € (Kostenfrei)",
+     "Angebot:",
+     "Verbindlicher Festpreis",
+     "Faxnummer",
+     "Ihr Name *",
+     "Telefonnummer *",
+     "E-Mail-Adresse",
+     "Einsatzort / PLZ",
+     "Gewünschter Zeitraum",
+     "Schnellstmöglich",
+     "In den nächsten 1 - 3 Monaten",
+     "In 3 - 6 Monaten",
+     "Flexibel / In Planung",
+     "Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden.",
+     "Unverbindliche Anfrage absenden",
+     "Oder bei dringenden Fragen direkt anrufen:",
+     "Express-Aufmaß",
+     "Jetzt unverbindlich anfragen",
+     "Express-Anfrage in 60 Sekunden",
+     "1",
+     "2",
+     "3",
+     "Schritt 1: Welches Projekt planen Sie?",
+     "Wählen Sie Ihr Fachgewerk für eine passende Planung.",
+     "Bad & Wellness",
+     "Walk-In-Dusche, Großformate, Ablagenischen",
+     "Wohnbereich & Neubau",
+     "Feinsteinzeug, Küche, Diele & Flure",
+     "Balkon & Terrasse",
+     "2-cm-Keramikplatten auf Stelzlagern",
+     "Treppen & Naturstein",
+     "Granit, Naturstein & Treppenstufen",
+     "Untergrund & Abdichtung",
+     "Estrichausgleich & DIN 18534 Verbundabdichtung",
+     "Weiter zu Schritt 2: Fläche & Ort",
+     "06441 / 44 83 567"
+    ],
+    "hinzu": []
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/bad/badanfrage": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/fliesen/konfigurator": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/leistungen/bad/wetzlar": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/kontakt": {
+   "main_zeilen": {
+    "entfernt": [
+     "Di, 13.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Mi, 14.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Do, 15.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Fr, 16.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Sa, 17.10.2026",
+     "Samstag (Aufmaßtermin)",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Mo, 19.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Di, 20.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Mi, 21.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Do, 22.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr",
+     "Fr, 23.10.2026",
+     "08:30 Uhr",
+     "10:30 Uhr",
+     "13:00 Uhr",
+     "15:00 Uhr",
+     "16:30 Uhr"
+    ],
+    "hinzu": [
+     "Die freien Termine erscheinen, sobald die Seite vollständig geladen ist. Telefonisch erreichen Sie uns unter 06441 / 44 83 567."
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 267,
+  "hinzu": 1,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

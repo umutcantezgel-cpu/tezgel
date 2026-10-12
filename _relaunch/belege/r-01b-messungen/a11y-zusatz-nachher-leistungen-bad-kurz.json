@@ -1,0 +1,190 @@
+{
+ "satz": "r-01b-nachher2",
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T15:55:56.939Z",
+ "laufzeit_s": 98,
+ "status": {
+  "tastatur": {
+   "reihenfolge": "rot",
+   "fokus_sichtbar": "rot",
+   "fokus_2px": "rot",
+   "fokus_outline": "gruen",
+   "fokus_verdeckt": "rot",
+   "tastaturfalle": "gruen",
+   "sprunglink": "gruen"
+  },
+  "reflow": "gruen",
+  "zoom": {
+   "css": "rot",
+   "aequivalent": "gruen"
+  },
+  "textabstand": "rot",
+  "forced": "rot",
+  "ohnejs": "gruen"
+ },
+ "kennzahlen": {
+  "tastatur": {
+   "fokus_nicht_sichtbar": 15,
+   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 11,
+   "fokus_ring_teilverdeckt_fest": 8,
+   "fokus_unter_2px": 7,
+   "fokus_nicht_messbar": 0,
+   "fokus_ohne_outline_schatten": 0,
+   "fokus_verdeckt": 8,
+   "fokus_verdeckt_fest": 8,
+   "sprung_rueckwaerts": 2,
+   "falle": 0,
+   "zyklus_ohne_ausweg": 0,
+   "sprunglink_fehlt": 0,
+   "laeufe": 4,
+   "fehler": 0,
+   "schritte": 530,
+   "m375_abgelehnt": {
+    "fokus_nicht_sichtbar": 4,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 3,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 1,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "m375_erstbesuch": {
+    "fokus_nicht_sichtbar": 11,
+    "fokus_unter_2px": 1,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 8,
+    "fokus_verdeckt_fest": 8,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_erstbesuch": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 3,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 1,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   }
+  },
+  "reflow": {
+   "horizontal": 0,
+   "ueberlauf": 0,
+   "ragt_heraus": 0,
+   "text_abgeschnitten": 0,
+   "laeufe": 1,
+   "fehler": 0
+  },
+  "zoom": {
+   "horizontal": 0,
+   "verdeckt": 0,
+   "verdeckt_fest": 0,
+   "nie_im_bild": 7,
+   "ueberlauf": 14,
+   "laeufe": 2,
+   "fehler": 0,
+   "css": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 14
+   },
+   "aequivalent": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 0,
+    "ueberlauf": 0
+   }
+  },
+  "textabstand": {
+   "abgeschnitten_neu": 0,
+   "scroll_ueberhang_neu": 0,
+   "davon_line_clamp": 0,
+   "ueberlauf_neu": 2,
+   "horizontal_neu": 0,
+   "laeufe": 2,
+   "fehler": 0
+  },
+  "forced": {
+   "ohne_grenze": 8,
+   "davon_mit_grafik": 8,
+   "felder_ohne_grenze": 0,
+   "laeufe": 2,
+   "fehler": 0
+  },
+  "ohnejs": {
+   "text_unter_80": 0,
+   "erster_bildschirm_versteckt": 0,
+   "erster_bildschirm_ebenso_mit_js": 0,
+   "navigation_fehlt": 0,
+   "kopf_ohne_interne_links": 0,
+   "laeufe": 2,
+   "fehler": 0
+  }
+ },
+ "je_seite": {
+  "/leistungen/bad": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 15,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 11,
+    "fokus_ring_teilverdeckt_fest": 8,
+    "fokus_unter_2px": 7,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 8,
+    "fokus_verdeckt_fest": 8,
+    "sprung_rueckwaerts": 2,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "reflow": {
+    "horizontal": 0,
+    "ueberlauf": 0,
+    "ragt_heraus": 0,
+    "text_abgeschnitten": 0
+   },
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 14
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 0,
+    "scroll_ueberhang_neu": 0,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 2,
+    "horizontal_neu": 0
+   },
+   "forced": {
+    "ohne_grenze": 8,
+    "davon_mit_grafik": 8,
+    "felder_ohne_grenze": 0
+   },
+   "ohnejs": {
+    "text_unter_80": 0,
+    "erster_bildschirm_versteckt": 0,
+    "erster_bildschirm_ebenso_mit_js": 0,
+    "navigation_fehlt": 0,
+    "kopf_ohne_interne_links": 0
+   }
+  }
+ }
+}

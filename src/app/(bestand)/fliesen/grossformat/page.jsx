@@ -5,6 +5,7 @@
 // Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein großer Moment und keine neue Bewegung.
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import Icon from '@/components/icons/Icon';
@@ -24,7 +25,7 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 // Konfigurator nachladen (Tempo, wie auf der Startseite und den Fliesen-Seiten); ID #konfigurator liegt am Abschnitt
 const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({

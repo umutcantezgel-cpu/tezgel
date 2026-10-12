@@ -4,6 +4,7 @@
 // Rahmen und gemeinsame Bausteine aus dem Werkstatt-Stand. Überschriften, Fließtexte, Links und Formulare wortgleich.
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import HeroContactForm from '@/components/forms/HeroContactForm';
 import TrustStrip from '@/components/trust/TrustStrip';
@@ -23,10 +24,13 @@ import Servicegebiet from '@/components/start/Servicegebiet';
 import { etikettKlassen, seitenKlassen } from '@/components/kern/stile';
 import { createMetadata } from '@/lib/metadata';
 
-// Rechner unterhalb des ersten Bildschirms nachgeladen (E4-NACH-17, Bündelanalyse); Server-Rendering bleibt
-const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalculator'));
+// Rechner unterhalb des ersten Bildschirms nachgeladen (E4-NACH-17, Bündelanalyse); Server-Rendering bleibt. Ohne JavaScript
+// stehen Rechner und Express-Anfrage nur als Platzhalter mit Anruf, WhatsApp und E-Mail (R-01b, Variante b; Startseite nur b)
+const PricingCalculator = dynamic(() => import('@/components/pricing/PricingCalculator'), {
+    loading: () => <FormularPlatzhalter />,
+});
 const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata: Metadata = createMetadata({

@@ -4,6 +4,7 @@
 // Qualitätsversprechen, die Badanfrage mit Rückfrage in EINEM Abschnitt auf Fliese.
 // Die Anfrage wird nachgeladen (TEMPO). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
 import Icon from '@/components/icons/Icon';
@@ -20,7 +21,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 
 // Anfrageformular nachladen wie auf der Startseite und in der Familienreferenz (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({

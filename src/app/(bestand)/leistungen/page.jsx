@@ -8,6 +8,7 @@
 // #ablauf und #kosten-rechner und benannte Bereiche. Sprungziele einheitlich nur über scroll-padding-top (96 px); kein
 // content-visibility (Gutachten Rezept 9). Kein Auftritt und kein weiterer großer Moment (SIG-3 trägt der Plan je Leistung).
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
@@ -34,7 +35,7 @@ const breadcrumbs = [
 
 // Express-Anfrage nachladen (Tempo, wie auf der Startseite)
 const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
-  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+  loading: () => <FormularPlatzhalter />,
 });
 
 const leistungenSchema = buildGraph([
@@ -150,7 +151,6 @@ export default function ServiceHubPage() {
           art="erzaehl"
           titelId="ablauf-heading"
           leitachse
-          className="scroll-mt-0!"
           etikett="Ausführungs-Standards"
           titel="Ihr verlässlicher Weg zum neuen Traumbelag"
         >
@@ -163,7 +163,6 @@ export default function ServiceHubPage() {
           art="erzaehl"
           titelId="rechner-heading"
           leitachse
-          className="scroll-mt-0!"
           etikett="Projekt & Ausgangslage"
           titel="Projekt anfragen & Situation schildern"
           einleitung={
@@ -184,7 +183,6 @@ export default function ServiceHubPage() {
           flaeche="fliese"
           kopf="seitlich"
           leitachse
-          className="scroll-mt-0!"
           etikett="Online-Bedarfsabfrage"
           titel="Fordern Sie Ihr persönliches Angebot an"
           einleitung={

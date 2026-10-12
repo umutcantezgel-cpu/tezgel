@@ -63,7 +63,7 @@ export default function Fachdetails({ leistung, qualitaet, randText }: Fachdetai
 
   return (
     <>
-      <section id="fachdetails" aria-labelledby="fachdetails-titel" className="relative scroll-mt-24 pt-16 pb-16 lg:pt-24">
+      <section id="fachdetails" aria-labelledby="fachdetails-titel" className="relative pt-16 pb-16 lg:pt-24">
         <div className={seitenKlassen}>
           <div className="grid grid-cols-4 gap-y-16 md:grid-cols-8 lg:grid-cols-12">
             {/* links: Text an der Fuge */}

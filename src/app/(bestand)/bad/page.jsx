@@ -7,6 +7,7 @@
 // Kein großer Moment und keine Bewegung (setzt der Orchestrator).
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { QUALITY_TIERS } from '@/config/musterbaeder';
@@ -27,10 +28,10 @@ import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 // Anfragewege nachladen wie auf der Startseite (TEMPO, Z-08 / E-025)
 const BadProjektCheck = dynamic(() => import('@/components/funnels/BadProjektCheck'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 // Grundrisse je Qualitäts-Kategorie (Befund 17): gezeichnet, ohne Achse und ohne Bemaßung, keine Flächenangaben.

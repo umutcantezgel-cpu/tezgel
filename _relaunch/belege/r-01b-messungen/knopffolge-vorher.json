@@ -1,0 +1,130 @@
+[
+ {
+  "ansicht": "m390",
+  "formular": "Express (/)",
+  "richtung": "column-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "06441 / 44 83 567",
+  "fokus_nach_wechsel": "body[tabindex=-1]: Zum Hauptinhalt springenFachbetriebAßlar · Wetzlar",
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Express (/kontakt)",
+  "richtung": "column-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3: Kontaktdaten",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "06441 / 44 83 567",
+  "fokus_nach_wechsel": "body[tabindex=-1]: Zum Hauptinhalt springenFachbetriebAßlar · Wetzlar",
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Badanfrage (/bad/badanfrage)",
+  "richtung": "column",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "nach_tab_vom_hauptknopf": "06441 / 44 83 567",
+  "fokus_nach_wechsel": "button: Weiter zu Schritt 4",
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "m390",
+  "formular": "Konfigurator (/fliesen/konfigurator)",
+  "richtung": "column-reverse",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Weiter zu Schritt 3",
+   "Zurück"
+  ],
+  "nach_tab_vom_hauptknopf": "Treppen neu belegen",
+  "fokus_nach_wechsel": "p[tabindex=-1]: 3. Format, Material & Menge",
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Express (/)",
+  "richtung": "row",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "nach_tab_vom_hauptknopf": "06441 / 44 83 567",
+  "fokus_nach_wechsel": "body[tabindex=-1]: Zum Hauptinhalt springenFachbetriebAßlar · Wetzlar",
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Express (/kontakt)",
+  "richtung": "row",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "sichtbar": [
+   "Zurück",
+   "Weiter zu Schritt 3: Kontaktdaten"
+  ],
+  "nach_tab_vom_hauptknopf": "06441 / 44 83 567",
+  "fokus_nach_wechsel": "body[tabindex=-1]: Zum Hauptinhalt springenFachbetriebAßlar · Wetzlar",
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Badanfrage (/bad/badanfrage)",
+  "richtung": "row",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "nach_tab_vom_hauptknopf": "06441 / 44 83 567",
+  "fokus_nach_wechsel": "button: Weiter zu Schritt 4",
+  "urteil": "ABWEICHUNG"
+ },
+ {
+  "ansicht": "d1440",
+  "formular": "Konfigurator (/fliesen/konfigurator)",
+  "richtung": "row",
+  "dom": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "sichtbar": [
+   "Zurück",
+   "Weiter zu Schritt 3"
+  ],
+  "nach_tab_vom_hauptknopf": "Verschnitt-Richtwerte je VerlegemusterVe",
+  "fokus_nach_wechsel": "p[tabindex=-1]: 3. Format, Material & Menge",
+  "urteil": "ABWEICHUNG"
+ }
+]

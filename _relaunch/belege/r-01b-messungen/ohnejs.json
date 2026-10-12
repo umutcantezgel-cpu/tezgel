@@ -1,0 +1,408 @@
+[
+ {
+  "ansicht": "m375",
+  "name": "express",
+  "pfad": "/leistungen",
+  "bereich": "#express-anfrage",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 153,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 144,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 101,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/express-m375.jpg"
+ },
+ {
+  "ansicht": "m375",
+  "name": "express-start",
+  "pfad": "/",
+  "bereich": "#express-anfrage",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 153,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 144,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 101,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/express-start-m375.jpg"
+ },
+ {
+  "ansicht": "m375",
+  "name": "rechner-start",
+  "pfad": "/",
+  "bereich": "#kosten-rechner",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 153,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 144,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 101,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/rechner-start-m375.jpg"
+ },
+ {
+  "ansicht": "m375",
+  "name": "badanfrage",
+  "pfad": "/bad/badanfrage",
+  "bereich": "#anfrage",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 153,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 144,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 101,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/badanfrage-m375.jpg"
+ },
+ {
+  "ansicht": "m375",
+  "name": "projektcheck",
+  "pfad": "/bad",
+  "bereich": "#projekt-check",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 153,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 144,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 101,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/projektcheck-m375.jpg"
+ },
+ {
+  "ansicht": "m375",
+  "name": "konfigurator",
+  "pfad": "/fliesen/konfigurator",
+  "bereich": "main",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 153,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 144,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 101,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/konfigurator-m375.jpg"
+ },
+ {
+  "ansicht": "m375",
+  "name": "schnellanfrage",
+  "pfad": "/leistungen/bad/wetzlar",
+  "bereich": "#final-cta-heading",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 153,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 144,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 101,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/schnellanfrage-m375.jpg"
+ },
+ {
+  "ansicht": "d1440",
+  "name": "express",
+  "pfad": "/leistungen",
+  "bereich": "#express-anfrage",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 163,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 154,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 107,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/express-d1440.jpg"
+ },
+ {
+  "ansicht": "d1440",
+  "name": "express-start",
+  "pfad": "/",
+  "bereich": "#express-anfrage",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 163,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 154,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 107,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/express-start-d1440.jpg"
+ },
+ {
+  "ansicht": "d1440",
+  "name": "rechner-start",
+  "pfad": "/",
+  "bereich": "#kosten-rechner",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 163,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 154,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 107,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/rechner-start-d1440.jpg"
+ },
+ {
+  "ansicht": "d1440",
+  "name": "badanfrage",
+  "pfad": "/bad/badanfrage",
+  "bereich": "#anfrage",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 163,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 154,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 107,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/badanfrage-d1440.jpg"
+ },
+ {
+  "ansicht": "d1440",
+  "name": "projektcheck",
+  "pfad": "/bad",
+  "bereich": "#projekt-check",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 163,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 154,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 107,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/projektcheck-d1440.jpg"
+ },
+ {
+  "ansicht": "d1440",
+  "name": "konfigurator",
+  "pfad": "/fliesen/konfigurator",
+  "bereich": "main",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 163,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 154,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 107,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/konfigurator-d1440.jpg"
+ },
+ {
+  "ansicht": "d1440",
+  "name": "schnellanfrage",
+  "pfad": "/leistungen/bad/wetzlar",
+  "bereich": "#final-cta-heading",
+  "platzhalter": 1,
+  "sichtbare_bedienelemente": 0,
+  "wege": [
+   {
+    "href": "tel:+4964414483567",
+    "text": "06441 / 44 83 567",
+    "w": 163,
+    "h": 44
+   },
+   {
+    "href": "https://api.whatsapp.com/send?phone=491726728504",
+    "text": "0172 / 67 28 504",
+    "w": 154,
+    "h": 44
+   },
+   {
+    "href": "mailto:info@tezgel.de",
+    "text": "info@tezgel.de",
+    "w": 107,
+    "h": 44
+   }
+  ],
+  "bild": "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/r-01b/ohnejs-nachher/schnellanfrage-d1440.jpg"
+ }
+]

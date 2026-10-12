@@ -4,6 +4,7 @@
 // Seitenlayout, Badanfrage mit Rückfrage. Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
 // Die Badanfrage wird nachgeladen (TEMPO). Kein großer Moment und keine neue Bewegung (setzt der Orchestrator).
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { notFound } from 'next/navigation';
 import { MUSTERBAEDER } from '@/config/musterbaeder';
 import { COMPANY_DATA } from '@/config/company';
@@ -20,7 +21,7 @@ import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 
 // Badanfrage nachladen wie auf der Familienreferenz (TEMPO, Z-08 / E-025)
 const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export async function generateStaticParams() {

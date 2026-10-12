@@ -10,14 +10,17 @@
 //    Kopf seitlich (Fliese) · 7. Abschluss (geteilter Baustein FinalCTA, ohne Achsenstück).
 // Rot: genau eines je Bildschirm – ab lg die Achse im Plan (das Lot des Einstiegs bleibt Grundschicht), unter lg das Lot im
 // Seitenrand (Plan ohne Achse); keine seitenlange Leitachse (Gutachten u2, Stolperstein d). In allen vier Instanzen gleich.
-// Kein großer Moment. Kein `spaet` (content-visibility): Die geschätzten Höhen verkürzten bei 200 % Zoom die Scrolllänge,
-// der Fuß blieb „nie im Bild“ (a11y-zusatz: A 65, B 6).
+// Kein großer Moment. `spaet` (content-visibility) nur auf der Projektanfrage (R-01b): Der frühere Befund (bei 200 % Zoom
+// Fuß „nie im Bild“) war ein Messfehler des Werkzeugs (01612f6). Nicht auf den Fragen (direkt über #express-anfrage: der
+// Sprung per next/link verfehlte das Ziel sonst um bis zu 555 px) und nicht auf der Express-Anfrage (a11y-zusatz forced liest
+// innerText; im übersprungenen Abschnitt galten die randlosen Kacheln als „ohne Grenze“).
 // H1: Stufe nach `Einstieg` (lange Titel > 44 Zeichen text-fs-6), weil mit text-fs-7 die Knöpfe von aussen/untergrund in
 // d1440 unter 900 px und in m390 unter die feste Leiste fallen (Rückgabe F-02, OFFENE FRAGE); weiche Trennung über `fugen`.
 // Server-Komponente (async, params als Promise nach Next 16); Client-Inseln sind nur Formulare und Fragen.
 // Wortlaut, Anker, JSON-LD, generateStaticParams und notFound wie im Bestand; Metadaten im layout.jsx der Route.
 import { ViewTransition } from 'react';
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SERVICES } from '@/config/services';
@@ -41,7 +44,7 @@ import { fugen, UNTERSTRICH } from '@/components/leistungen/detail/satz';
 
 // Express-Anfrage nachladen (Tempo, wie auf der Startseite; aus Fassung A)
 const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
-  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+  loading: () => <FormularPlatzhalter />,
 });
 
 export function generateStaticParams() {
@@ -222,6 +225,7 @@ export default async function ServiceDetailPage({ params }) {
       {/* 4. PROJEKTANFRAGE (umfassendes Formular mit Situationsschilderung) */}
       <Abschnitt
         id="kosten-rechner"
+        spaet
         titelId="rechner-heading"
         flaeche="fliese"
         etikett="Individuelle Anfrage"

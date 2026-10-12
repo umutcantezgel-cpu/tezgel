@@ -1,0 +1,1112 @@
+{
+ "satz": "r-01b-zoom-spaet",
+ "base": "http://127.0.0.1:4350",
+ "erstellt": "2026-10-12T15:21:05.090Z",
+ "werkzeug": "a11y-zusatz.mjs",
+ "kriterium": "Z-11",
+ "bedingungen": {
+  "server": "http://127.0.0.1:4350",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "seiten": [
+   "/leistungen/bad",
+   "/leistungen/aussen",
+   "/leistungen/wohnen",
+   "/leistungen/untergrund"
+  ],
+  "ansichten": [
+   "m375",
+   "d1440"
+  ],
+  "pruefungen": [
+   "zoom"
+  ],
+  "einwilligung": "abgelehnt",
+  "banner_zustaende": [
+   "abgelehnt"
+  ],
+  "einwilligung_tastatur": [
+   "abgelehnt",
+   "erstbesuch"
+  ],
+  "reducedMotion": "reduce",
+  "locale": "de-DE",
+  "timezoneId": "Europe/Berlin",
+  "colorScheme": "light",
+  "deviceScaleFactor": 1,
+  "ansichten_px": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "worker": 2,
+  "gegenprobe": null,
+  "regeln": {
+   "tastatur": {
+    "obergrenze_schritte": 400,
+    "ende": "Fokus verlässt das Dokument (activeElement = body, document.hasFocus() = false) oder Rückkehr zum ersten Element",
+    "sprung_rueckwaerts": "Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen",
+    "fokus_sichtbar": "Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung (je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Umfang der Vereinigung der Zeilenstücke im Bild; übereinander liegende Stücke mit Abstand ≤ 2·(Versatz + Breite) des Umrisses bilden wie bei Chrome einen Umriss; Umriss < 2 px gilt als dünn (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als „Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).",
+    "fokus_verdeckt": "elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; „fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; „abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei",
+    "falle": "derselbe Fokus 10× hintereinander → Abbruch; Zyklus = ein Element zum 3. Mal fokussiert → Abbruch, danach Escape + Tab: verlässt der Fokus den Zyklus?",
+    "sprunglink": "erster Tab fokussiert <a href=\"#main-content\"> und das Ziel #main-content existiert",
+    "iframes": "ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)"
+   },
+   "reflow": {
+    "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
+    "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
+   },
+   "zoom": {
+    "css": "1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)",
+    "aequivalent": "640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)",
+    "verdeckt": "sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist",
+    "nie_im_bild": "Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen",
+    "info": "im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar"
+   },
+   "textabstand": {
+    "stilblatt": "*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}",
+    "befund": "Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde",
+    "scroll_ueberhang": "Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info"
+   },
+   "forced": {
+    "emulation": "page.emulateMedia({ forcedColors: 'active' })",
+    "befund": "sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert"
+   },
+   "ohnejs": {
+    "kontext": "javaScriptEnabled: false",
+    "text": "sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)",
+    "erster_bildschirm": "Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert",
+    "navigation": "mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten"
+   }
+  },
+  "rohdaten": "cache/a11y-zusatz/r-01b-zoom-spaet"
+ },
+ "laufzeit_s": 40,
+ "status": {
+  "zoom": {
+   "css": "rot",
+   "aequivalent": "gruen"
+  }
+ },
+ "kennzahlen": {
+  "zoom": {
+   "horizontal": 0,
+   "verdeckt": 0,
+   "verdeckt_fest": 0,
+   "nie_im_bild": 28,
+   "ueberlauf": 60,
+   "laeufe": 8,
+   "fehler": 0,
+   "css": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 28,
+    "ueberlauf": 60
+   },
+   "aequivalent": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 0,
+    "ueberlauf": 0
+   }
+  }
+ },
+ "je_seite": {
+  "/leistungen/bad": {
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   }
+  },
+  "/leistungen/aussen": {
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   }
+  },
+  "/leistungen/wohnen": {
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   }
+  },
+  "/leistungen/untergrund": {
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   }
+  }
+ },
+ "ergebnisse": {
+  "zoom": [
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/aussen",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 1280,
+     "clientWidth": 1280,
+     "scrollX": 0
+    },
+    "bedienelemente": 133,
+    "scrollpositionen": 67,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Ratgeber",
+       "x": 1249,
+       "y": 0,
+       "w": 160,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1409,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Über uns",
+       "x": 1473,
+       "y": 0,
+       "w": 156,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1629,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1725,
+       "y": 20,
+       "w": 372,
+       "fest": true
+      },
+      {
+       "pfad": "button#whatsapp-floating-btn",
+       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "x": 2113,
+       "y": 20,
+       "w": 88,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "x": 2217,
+       "y": 13,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "hidden h-full items-stretch xl:flex",
+       "left": 435,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1249,
+       "right": 1409
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1409,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1473,
+       "right": 1629
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1629,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1725,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:tex",
+       "left": 1725,
+       "right": 2097
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "hidden lg:inline",
+       "left": 1797,
+       "right": 2081
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "hidden size-11 shrink-0 items-center justify-center border border-strich bg-flie",
+       "left": 2113,
+       "right": 2201
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 2217,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 ",
+       "left": 1068,
+       "right": 1372
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 8
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/aussen",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 127,
+    "scrollpositionen": 62,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 11.4
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/bad",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 1280,
+     "clientWidth": 1280,
+     "scrollX": 0
+    },
+    "bedienelemente": 133,
+    "scrollpositionen": 68,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Ratgeber",
+       "x": 1249,
+       "y": 0,
+       "w": 160,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1409,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Über uns",
+       "x": 1473,
+       "y": 0,
+       "w": 156,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1629,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1725,
+       "y": 20,
+       "w": 372,
+       "fest": true
+      },
+      {
+       "pfad": "button#whatsapp-floating-btn",
+       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "x": 2113,
+       "y": 20,
+       "w": 88,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "x": 2217,
+       "y": 13,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "hidden h-full items-stretch xl:flex",
+       "left": 435,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1249,
+       "right": 1409
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1409,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1473,
+       "right": 1629
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1629,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1725,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:tex",
+       "left": 1725,
+       "right": 2097
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "hidden lg:inline",
+       "left": 1797,
+       "right": 2081
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "hidden size-11 shrink-0 items-center justify-center border border-strich bg-flie",
+       "left": 2113,
+       "right": 2201
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 2217,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 ",
+       "left": 1068,
+       "right": 1372
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 6.9
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/bad",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 127,
+    "scrollpositionen": 62,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 9.8
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/untergrund",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 1280,
+     "clientWidth": 1280,
+     "scrollX": 0
+    },
+    "bedienelemente": 133,
+    "scrollpositionen": 67,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Ratgeber",
+       "x": 1249,
+       "y": 0,
+       "w": 160,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1409,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Über uns",
+       "x": 1473,
+       "y": 0,
+       "w": 156,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1629,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1725,
+       "y": 20,
+       "w": 372,
+       "fest": true
+      },
+      {
+       "pfad": "button#whatsapp-floating-btn",
+       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "x": 2113,
+       "y": 20,
+       "w": 88,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "x": 2217,
+       "y": 13,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "hidden h-full items-stretch xl:flex",
+       "left": 435,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1249,
+       "right": 1409
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1409,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1473,
+       "right": 1629
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1629,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1725,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:tex",
+       "left": 1725,
+       "right": 2097
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "hidden lg:inline",
+       "left": 1797,
+       "right": 2081
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "hidden size-11 shrink-0 items-center justify-center border border-strich bg-flie",
+       "left": 2113,
+       "right": 2201
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 2217,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 ",
+       "left": 1068,
+       "right": 1372
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7.5
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/untergrund",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 127,
+    "scrollpositionen": 63,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 9.7
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/wohnen",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 1280,
+     "clientWidth": 1280,
+     "scrollX": 0
+    },
+    "bedienelemente": 133,
+    "scrollpositionen": 66,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Ratgeber",
+       "x": 1249,
+       "y": 0,
+       "w": 160,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1409,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Über uns",
+       "x": 1473,
+       "y": 0,
+       "w": 156,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1629,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1725,
+       "y": 20,
+       "w": 372,
+       "fest": true
+      },
+      {
+       "pfad": "button#whatsapp-floating-btn",
+       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "x": 2113,
+       "y": 20,
+       "w": 88,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "x": 2217,
+       "y": 13,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "hidden h-full items-stretch xl:flex",
+       "left": 435,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1249,
+       "right": 1409
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1409,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1473,
+       "right": 1629
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1629,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1725,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:tex",
+       "left": 1725,
+       "right": 2097
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "hidden lg:inline",
+       "left": 1797,
+       "right": 2081
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "hidden size-11 shrink-0 items-center justify-center border border-strich bg-flie",
+       "left": 2113,
+       "right": 2201
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 2217,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 ",
+       "left": 1068,
+       "right": 1372
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7.3
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/leistungen/wohnen",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 127,
+    "scrollpositionen": 62,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 11.2
+   }
+  ]
+ }
+}

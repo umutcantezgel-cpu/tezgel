@@ -1,0 +1,52 @@
+{
+ "x": {
+  "d1440": {
+   "adresse": {
+    "gewerke": 96,
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96,
+    "ablauf": 96,
+    "kosten-rechner": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "gewerke": 96,
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96,
+    "ablauf": 96,
+    "kosten-rechner": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {},
+   "spaet": []
+  },
+  "m390": {
+   "adresse": {
+    "gewerke": 96,
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96,
+    "ablauf": 96,
+    "kosten-rechner": 96,
+    "express-anfrage": 96
+   },
+   "link": {
+    "gewerke": 96,
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96,
+    "ablauf": 96,
+    "kosten-rechner": 96,
+    "express-anfrage": 96
+   },
+   "knopf": {},
+   "spaet": []
+  }
+ }
+}

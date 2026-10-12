@@ -6,6 +6,7 @@
 // Kein großer Moment und kein Auftritt (setzt der Orchestrator).
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import Icon from '@/components/icons/Icon';
@@ -25,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
 
 // Konfigurator nachladen (Tempo, wie auf der Startseite und den Leistungsseiten); der Funnel steht am Abschnitt unten
 const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({

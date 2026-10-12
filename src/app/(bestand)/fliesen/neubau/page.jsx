@@ -5,6 +5,7 @@
 // Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import FormularPlatzhalter from '@/components/funnels/TezgelAnfrageFunnel/Platzhalter';
 import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
@@ -25,7 +26,7 @@ import { linkKlassen } from '@/components/kern/stile';
 
 // Konfigurator nachladen (Tempo, wie auf der Startseite und in der Familie)
 const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
-    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+    loading: () => <FormularPlatzhalter />,
 });
 
 export const metadata = createMetadata({
