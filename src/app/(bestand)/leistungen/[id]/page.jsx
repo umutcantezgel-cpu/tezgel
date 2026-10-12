@@ -5,6 +5,7 @@
 // Funnel. Wortlaut, Überschriften, Links, IDs (#express-anfrage) und Lesefolge wie im Bestand. Keine Icon-Kacheln,
 // kein Auftritt und kein großer Moment (setzt der Orchestrator). Daten und Metadaten unverändert.
 import { ViewTransition } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import clsx from 'clsx';
@@ -13,7 +14,6 @@ import { CITIES } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
-import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import FAQAccordion from '@/components/ui/FAQAccordion';
 import { FinalCTA } from '@/components/ui/FinalCTA';
@@ -26,9 +26,15 @@ import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Hinweis from '@/components/kern/Hinweis';
 import Knopf from '@/components/kern/Knopf';
+import Merkliste from '@/components/kern/Merkliste';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+
+// Express-Anfrage nachladen (Tempo, wie auf der Startseite)
+const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
+  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export function generateStaticParams() {
   return SERVICES.map((service) => ({ id: service.id }));
@@ -203,15 +209,8 @@ export default async function ServiceDetailPage({ params }) {
       <Leitachse>
         {/* 2. SPEZIALISIERUNGEN als Feldraster: je Unterpunkt ein Feld mit Fugenkreuz, ohne Icon-Kacheln */}
         {service.subcategories && service.subcategories.length > 0 && (
-          <Abschnitt titelId="spezialisierung-heading" leitachse titel={<>Spezialisierungen in {service.name}</>}>
-            <Feldraster spalten={service.subcategories.length > 3 ? 4 : 3}>
-              {service.subcategories.map((sub) => (
-                <Feld key={sub.id}>
-                  <Fugenkreuz className="size-3 text-strich" />
-                  <p className="mt-6 font-text text-fs-3 font-semibold text-tinte">{sub.name}</p>
-                </Feld>
-              ))}
-            </Feldraster>
+          <Abschnitt titelId="spezialisierung-heading" leitachse spaet titel={<>Spezialisierungen in {service.name}</>}>
+            <Merkliste spalten={2} verband eintraege={service.subcategories.map((sub) => ({ titel: sub.name }))} />
           </Abschnitt>
         )}
 
@@ -219,6 +218,8 @@ export default async function ServiceDetailPage({ params }) {
         <Abschnitt
           titelId="fachkompetenz-heading"
           leitachse
+          flaeche="fliese"
+          spaet
           titel={<>Fachkompetenz &amp; Ausführungsdetails</>}
           einleitung={<p>{service.shortDescription}</p>}
         >
@@ -243,17 +244,19 @@ export default async function ServiceDetailPage({ params }) {
         </Abschnitt>
 
         {/* 4. WEITERE GEWERKE als Feldraster: Name und Verweis je Leistung */}
-        <Abschnitt titelId="weitere-heading" leitachse titel={<>Weitere Gewerke von {COMPANY_DATA.legalName}:</>}>
+        <Abschnitt titelId="weitere-heading" leitachse spaet titel={<>Weitere Gewerke von {COMPANY_DATA.legalName}:</>}>
           <Feldraster spalten={3}>
             {relatedServices.map((rel) => (
-              <Feld key={rel.id}>
-                <Link href={`/leistungen/${rel.id}`} className="group flex flex-1 flex-col gap-3">
-                  <span className="font-text text-fs-4 font-semibold text-tinte">{rel.name}</span>
-                  <span className="mt-auto inline-flex items-center gap-2 pt-3 font-text text-fs-2 text-tinte underline decoration-strich underline-offset-4 group-hover:decoration-tinte">
-                    Gewerk {rel.name} ansehen
-                    <Icon name="pfeil-rechts" groesse={4} />
-                  </span>
-                </Link>
+              <Feld key={rel.id} className="gap-6">
+                {/* kleiner Verlegeplan des Gewerks, dekorativ; der Name ist der einzige Link des Feldes */}
+                <div className="w-32">
+                  <Verlegeplan plan={rel.id} ohneAchse bemassung={false} />
+                </div>
+                <h3 className="mt-auto font-anzeige text-fs-4 text-tinte">
+                  <Link href={`/leistungen/${rel.id}`} className={linkKlassen}>
+                    {rel.name}
+                  </Link>
+                </h3>
               </Feld>
             ))}
           </Feldraster>
@@ -263,6 +266,7 @@ export default async function ServiceDetailPage({ params }) {
         <Abschnitt
           titelId="region-heading"
           leitachse
+          spaet
           titel={<>{service.name} in Ihrer Region</>}
           einleitung={
             <p>
@@ -270,15 +274,18 @@ export default async function ServiceDetailPage({ params }) {
             </p>
           }
         >
-          <ul className="grid grid-cols-2 border-l border-t border-fuge md:grid-cols-4">
+          <ul className="border-t border-fuge md:columns-2 md:gap-x-12">
             {CITIES.map((city) => (
-              <li key={city.slug} className="border-b border-r border-fuge">
+              <li key={city.slug} className="break-inside-avoid border-b border-fuge">
                 <Link
                   href={`/leistungen/${service.id}/${city.slug}`}
-                  className={clsx(linkKlassen, 'flex min-h-11 items-center gap-2 px-4 py-3 font-text text-fs-2')}
+                  className={clsx(linkKlassen, 'flex min-h-11 items-center justify-between gap-4 py-3 font-text text-fs-2')}
                 >
-                  <Icon name="ort" groesse={4} className="shrink-0 text-strich" />
-                  {city.name}
+                  <span className="flex items-center gap-3">
+                    <Icon name="ort" groesse={4} className="shrink-0 text-strich" />
+                    {city.name}
+                  </span>
+                  <Icon name="pfeil-rechts" groesse={4} className="shrink-0 text-strich" />
                 </Link>
               </li>
             ))}
@@ -291,9 +298,18 @@ export default async function ServiceDetailPage({ params }) {
           flaeche="fliese"
           kopf="seitlich"
           leitachse
+          spaet
           etikett="Direktkontakt"
           titel={<>Projekt in {service.name} anfragen?</>}
-          einleitung={<p>{serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}</p>}
+          einleitung={
+            <>
+              <p>{serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}</p>
+              {/* Leitsatz des Inhabers unter dem Kopf, in der Kopfspalte (Befund 20b): keine Spalte nur für das Zitat */}
+              <p className="mt-6 border-t border-fuge pt-6 font-text text-fs-2 text-tinte-2">
+                &bdquo;{COMPANY_DATA.motto}&ldquo;
+              </p>
+            </>
+          }
         >
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -312,9 +328,6 @@ export default async function ServiceDetailPage({ params }) {
             <Knopf href="#express-anfrage" icon="pfeil-rechts" className="w-full sm:w-auto sm:self-start">
               Kostenfreies Aufmaß buchen
             </Knopf>
-            <p className="border-t border-fuge pt-6 font-text text-fs-2 text-tinte-2">
-              &bdquo;{COMPANY_DATA.motto}&ldquo;
-            </p>
           </div>
         </Abschnitt>
 
@@ -322,6 +335,7 @@ export default async function ServiceDetailPage({ params }) {
         <Abschnitt
           titelId="projekt-heading"
           leitachse
+          spaet
           etikett="Individuelle Anfrage"
           titel="Projekt anfragen & Situation schildern"
           einleitung={
@@ -338,6 +352,7 @@ export default async function ServiceDetailPage({ params }) {
         <Abschnitt
           titelId="faq-heading"
           leitachse
+          spaet
           kopf="seitlich"
           etikett="Transparenz & Ratgeber"
           titel={<>Häufige Fragen zu {service.name}</>}
@@ -357,6 +372,7 @@ export default async function ServiceDetailPage({ params }) {
           flaeche="fliese"
           kopf="seitlich"
           leitachse
+          spaet
           etikett="Express-Aufmaß"
           titel="Jetzt unverbindlich anfragen"
         >

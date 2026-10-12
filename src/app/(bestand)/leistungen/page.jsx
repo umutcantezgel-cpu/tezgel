@@ -4,12 +4,13 @@
 // Schrittfolge, Projekt mit Rechner, Express-Anfrage mit Funnel. Wortlaut, Überschriften, Links und IDs wie im Bestand
 // (#gewerke, #express-anfrage, Leistungs-IDs). Kein Auftritt und kein großer Moment (setzt der Orchestrator).
 import { ViewTransition } from 'react';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
-import TezgelAnfrageFunnel from '@/components/funnels/TezgelAnfrageFunnel';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
@@ -22,13 +23,18 @@ import Knopf from '@/components/kern/Knopf';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
-import { etikettKlassen } from '@/components/kern/stile';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 const pageUrl = `${SITE_URL}/leistungen`;
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Leistungen', path: '/leistungen' },
 ];
+
+// Express-Anfrage nachladen (Tempo, wie auf der Startseite)
+const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
+  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 const leistungenSchema = buildGraph([
   buildWebPageNode({
@@ -119,7 +125,7 @@ export default function ServiceHubPage() {
 
       <Leitachse>
         {/* 2. FACHGEWERKE als Feldraster: je Leistung ihr Verlegeplan (SIG-3), Name, Text, Merkmale und zwei Wege */}
-        <Abschnitt id="gewerke" art="erzaehl" leitachse>
+        <Abschnitt id="gewerke" art="erzaehl" leitachse spaet>
           <Feldraster spalten={2} als="div">
             {SERVICES.map((srv) => {
               return (
@@ -140,7 +146,7 @@ export default function ServiceHubPage() {
 
                     <ul className="mt-6 grid gap-2">
                       {srv.subcategories.map((sub) => (
-                        <li key={sub.id} className="flex items-center gap-3 font-mono text-fs-1 text-tinte-2">
+                        <li key={sub.id} className="flex items-center gap-3 font-text text-fs-2 text-tinte">
                           <Fugenkreuz className="size-3 shrink-0 text-strich" />
                           {sub.name}
                         </li>
@@ -159,13 +165,13 @@ export default function ServiceHubPage() {
                       ))}
                     </ul>
 
-                    <div className="mt-auto flex flex-col items-start gap-4 border-t border-fuge pt-6">
-                      <Knopf href={`/leistungen/${srv.id}`} variante="text" icon="pfeil-rechts" transitionTypes={['plan-vor']}>
+                    <div className="mt-auto flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-fuge pt-6">
+                      <Knopf href={`/leistungen/${srv.id}`} variante="neben" icon="pfeil-rechts" transitionTypes={['plan-vor']} className="min-w-0 sm:flex-1">
                         Fachdetails &amp; Ratgeber: {srv.name}
                       </Knopf>
-                      <Knopf href="#express-anfrage" variante="neben" className="w-full sm:w-auto">
+                      <Link href="#express-anfrage" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center font-text text-fs-2')}>
                         Aufmaß anfragen
-                      </Knopf>
+                      </Link>
                     </div>
                   </Feld>
                 </div>
@@ -179,6 +185,7 @@ export default function ServiceHubPage() {
           art="erzaehl"
           titelId="ablauf-heading"
           leitachse
+          spaet
           etikett="Ausführungs-Standards"
           titel="Ihr verlässlicher Weg zum neuen Traumbelag"
         >
@@ -190,6 +197,7 @@ export default function ServiceHubPage() {
           art="erzaehl"
           titelId="projekt-heading"
           leitachse
+          spaet
           etikett="Projekt & Ausgangslage"
           titel="Projekt anfragen & Situation schildern"
           einleitung={
@@ -210,6 +218,7 @@ export default function ServiceHubPage() {
           flaeche="fliese"
           kopf="seitlich"
           leitachse
+          spaet
           etikett="Online-Bedarfsabfrage"
           titel="Fordern Sie Ihr persönliches Angebot an"
           einleitung={
