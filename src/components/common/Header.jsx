@@ -61,8 +61,12 @@ export default function Header({ isMobileMenuOpen }) {
 
     useEffect(() => () => clearTimeout(closeTimerRef.current), []);
 
+    // Nur ein echter Seitenwechsel schließt das Blatt. Der Effekt läuft auch einmal direkt nach dem Hydrieren; ohne den
+    // Vergleich schloss er ein Blatt, das in diesem Augenblick per Klick oder Enter geöffnet wurde (Befund Tor l1/l2-e039).
+    const letzterPfadRef = useRef(pathname);
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
+        if (letzterPfadRef.current === pathname) return;
+        letzterPfadRef.current = pathname;
         setOpenMenu(null);
     }, [pathname]);
 
