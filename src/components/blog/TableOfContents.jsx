@@ -20,23 +20,34 @@ const TableOfContents = ({ content }) => {
     }, [content]);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveId(entry.target.id);
-                    }
-                });
-            },
-            { rootMargin: '-100px 0px -66% 0px' }
-        );
+        let frame = 0;
 
-        headings.forEach(({ id }) => {
-            const element = document.getElementById(id);
-            if (element) observer.observe(element);
-        });
+        // Aktiv ist der Abschnitt, dessen Überschrift zuletzt die Kopfunterkante passiert hat. Die Kante liegt bei
+        // scroll-padding-top (globals.css); dorthin springt auch der Klick aus dem Verzeichnis.
+        const aktualisieren = () => {
+            frame = 0;
+            const kante = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+            let aktiv = '';
+            headings.forEach(({ id }) => {
+                const element = document.getElementById(id);
+                if (element && element.getBoundingClientRect().top <= kante + 1) aktiv = id;
+            });
+            setActiveId(aktiv);
+        };
 
-        return () => observer.disconnect();
+        const planen = () => {
+            if (!frame) frame = window.requestAnimationFrame(aktualisieren);
+        };
+
+        planen();
+        window.addEventListener('scroll', planen, { passive: true });
+        window.addEventListener('resize', planen);
+
+        return () => {
+            window.removeEventListener('scroll', planen);
+            window.removeEventListener('resize', planen);
+            window.cancelAnimationFrame(frame);
+        };
     }, [headings]);
 
     if (headings.length === 0) return null;

@@ -53,6 +53,26 @@ const generateSlug = (children) => {
     .replace(/(^-|-$)+/g, '');
 };
 
+// Klartext einer Überschrift (ohne Markdown-Zeichen und Links) für den Namen einer Tabelle
+const klartext = (text) => text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_`]/g, '').trim();
+
+// Überschriften des Artikels mit ihrer Stelle im Quelltext: die nächste Überschrift vor einer Tabelle benennt sie
+const ueberschriften = (markdown) => {
+  const liste = [];
+  const muster = /^#{2,3}[ \t]+(.+)$/gm;
+  let treffer;
+  while ((treffer = muster.exec(markdown)) !== null) {
+    liste.push({ stelle: treffer.index, text: klartext(treffer[1]) });
+  }
+  return liste;
+};
+
+// Messwert in einer Tabellenzelle: kurz und mit Ziffer (R9, 12°, ca. 15 cm) oder eine Gruppe A, B, C
+const istMesswert = (text) => {
+  const t = text.trim();
+  return t.length > 0 && t.length <= 16 && (/\d/.test(t) || /^[ABC]$/.test(t));
+};
+
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
@@ -67,6 +87,7 @@ export default async function BlogPostPage({ params }) {
     ? new Date(post.created_date).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' })
     : null);
   const readingTime = post.readTime || `${post.reading_time || '5'} Min.`;
+  const kapitel = ueberschriften(post.content);
 
   return (
     <>
@@ -127,10 +148,12 @@ export default async function BlogPostPage({ params }) {
           {/* ARTIKEL (Rechts) */}
           <div className="col-span-4 md:col-span-8 lg:col-span-9">
 
-            {/* Vorspann */}
-            <p className="max-w-mass border-l-2 border-tinte pl-6 text-fs-4 text-tinte">
-              Praxis-Leitfaden von Fachbetriebsleiter Deniz Tezgel: {post.excerpt}
-            </p>
+            {/* Vorspann: gleiche Lesebreite wie der Text (66ch in Textgröße fs-3), die Schrift bleibt fs-4 */}
+            <div className="max-w-mass text-fs-3">
+              <p className="border-l-2 border-tinte pl-6 text-fs-4 text-tinte">
+                Praxis-Leitfaden von Fachbetriebsleiter Deniz Tezgel: {post.excerpt}
+              </p>
+            </div>
 
             {/* Artikeltext */}
             <div className="mt-12 max-w-mass text-fs-3 text-tinte">
@@ -169,17 +192,26 @@ export default async function BlogPostPage({ params }) {
                   blockquote: ({ node: _node, children }) => (
                     <blockquote className="mt-8 border-l-2 border-tinte pl-6 text-fs-3 text-tinte-2">{children}</blockquote>
                   ),
-                  table: ({ node: _node, children }) => (
-                    <div className="mt-8 overflow-x-auto border border-fuge bg-fliese">
-                      <table className="w-full border-collapse text-left">{children}</table>
-                    </div>
-                  ),
+                  table: ({ node, children }) => {
+                    // Name der Tabelle: die Überschrift davor, sonst der Artikeltitel
+                    const stelle = node?.position?.start?.offset;
+                    const ueber = stelle === undefined ? undefined : kapitel.filter((k) => k.stelle < stelle).pop();
+                    return (
+                      <div role="region" aria-label={`Tabelle: ${ueber ? ueber.text : post.title}`} tabIndex={0} className="mt-8 overflow-x-auto border border-fuge bg-fliese">
+                        <table className="w-full border-collapse text-left">{children}</table>
+                      </div>
+                    );
+                  },
                   th: ({ node: _node, children }) => (
-                    <th scope="col" className="border-b-2 border-tinte px-4 py-3 text-left align-bottom font-mono text-fs-1 font-normal text-tinte-2">{children}</th>
+                    <th scope="col" className="min-w-0 break-words hyphens-auto border-b-2 border-tinte px-3 py-3 text-left align-bottom font-mono text-fs-1 font-normal text-tinte-2 sm:px-4">{children}</th>
                   ),
-                  td: ({ node: _node, children }) => (
-                    <td className="border-b border-fuge px-4 py-3 align-top text-fs-2 text-tinte">{children}</td>
-                  ),
+                  td: ({ node: _node, children }) => {
+                    // Messwerte (R-Klassen, Winkel, Gruppen, Maße) in Mono; der Text bleibt unverändert
+                    const messwert = istMesswert(extractText(children));
+                    return (
+                      <td className={`min-w-0 break-words hyphens-auto border-b border-fuge px-3 py-3 align-top text-fs-2 text-tinte sm:px-4${messwert ? ' font-mono' : ''}`}>{children}</td>
+                    );
+                  },
                 }}
                 /* eslint-enable @typescript-eslint/no-unused-vars */
               >
@@ -189,7 +221,7 @@ export default async function BlogPostPage({ params }) {
 
             {/* Schlagworte */}
             {post.tags && post.tags.length > 0 && (
-              <div className="mt-16 flex flex-wrap gap-x-6 gap-y-2 border-t border-fuge pt-6">
+              <div className="mt-16 flex max-w-mass flex-wrap gap-x-6 gap-y-2 border-t border-fuge pt-6 text-fs-3">
                 {post.tags.map((tag, index) => (
                   <span key={index} className="font-mono text-fs-1 text-tinte-2">{tag}</span>
                 ))}
@@ -197,7 +229,7 @@ export default async function BlogPostPage({ params }) {
             )}
 
             {/* Rückmeldung und Teilen */}
-            <div className="mt-16 flex flex-col gap-6 border-y border-fuge py-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-16 flex max-w-mass flex-col gap-6 border-y border-fuge py-6 text-fs-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex flex-wrap items-center gap-4">
                 <span className="font-semibold text-fs-2 text-tinte">War dieser Leitfaden hilfreich?</span>
                 <BlogVoteButton />
@@ -208,7 +240,7 @@ export default async function BlogPostPage({ params }) {
 
             {/* PDF-Checkliste, falls vorhanden */}
             {post.download_url && (
-              <div className="mt-8 flex flex-col gap-6 border border-fuge bg-fliese p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
+              <div className="mt-8 flex max-w-mass flex-col gap-6 border border-fuge bg-fliese p-6 text-fs-3 sm:flex-row sm:items-center sm:justify-between sm:p-8">
                 <div className="flex items-center gap-4">
                   <Icon name="download" groesse={6} />
                   <div>
@@ -228,7 +260,7 @@ export default async function BlogPostPage({ params }) {
             )}
 
             {/* Autor */}
-            <div className="mt-16">
+            <div className="mt-16 max-w-mass text-fs-3">
               <BlogAuthorCard author={post.author} />
             </div>
 

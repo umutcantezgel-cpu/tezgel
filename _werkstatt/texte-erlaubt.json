@@ -1117,5 +1117,95 @@
   "teil": "alt",
   "alt_muster": ".+",
   "vermerk": "E4-NACH-14: Listen- und Hervorhebungsbilder der Ratgeber-Liste durch gezeichnete Themenmotive ersetzt (dekorativ, ohne Alt-Text; E3-SICHT-ARB Befund 24, M-19) – Fotos bleiben auf den Artikelseiten"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Fachbeitrag von Fliesenverlegung Tezgel – praxisnahe Hinweise zu Planung, Material und Ausführung.",
+  "vermerk": "E4-NACH-15: verwandte Artikel zeigen ihren eigenen Auszug statt des gemeinsamen Platzhalter-Anreißers (E3-SICHT-ARB Befund 36) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Fachbeitrag von Fliesenverlegung Tezgel – praxisnahe Hinweise zu Planung, Material und Ausführung.",
+  "vermerk": "E4-NACH-15: Platzhalter-Anreißer der verwandten Artikel → eigener Auszug – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/blog/barrierefreier-balkonaustritt",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/duschrinne-oder-punktablauf",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/feinsteinzeug-oder-naturstein-vergleich",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/fliesen-fuer-allergiker",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/fliesen-mythen-faktencheck",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/fliesen-reinigen-pflegen",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/fliesenleger-gesucht-geselle-meister",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/gaeste-wc-fliesen",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/handwerkerbonus-fliesenarbeiten",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/rutschfeste-fliesen-r-klassen",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/schimmel-fliesenfugen-vermeiden",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/undichte-dusche-warnzeichen",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "/blog/wandnischen-dusche-planen",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
  }
 ]

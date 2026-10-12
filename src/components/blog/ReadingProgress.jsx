@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { seitenKlassen } from '@/components/kern/stile';
 
 /**
  * Reading Progress Bar Component
  * Zeigt den Scrollfortschritt als 2-px-Linie in Laser am oberen Rand. Der Anteil (0–1) steht in der CSS-Variablen
  * --lesefortschritt; die Klasse lesefortschritt-linie zieht die Linie über scale auf (ohne Übergang, ohne data-motion).
+ * Das Prozentfeld entfällt unter lg; ab lg steht es rechts bündig mit der Seitenkante unter dem Kopf, nie darüber.
  */
 const ReadingProgress = () => {
     const [progress, setProgress] = useState(0);
@@ -33,20 +35,26 @@ const ReadingProgress = () => {
     }, []);
 
     return (
-        <div className="fixed inset-x-0 top-0 z-40 h-0">
-            <div
-                aria-hidden="true"
-                className="lesefortschritt-linie h-0 origin-left scale-x-0 border-t-2 border-laser"
-                style={{ '--lesefortschritt': progress / 100 }}
-            />
+        <>
+            <div className="fixed inset-x-0 top-0 z-40 h-0">
+                <div
+                    aria-hidden="true"
+                    className="lesefortschritt-linie h-0 origin-left scale-x-0 border-t-2 border-laser"
+                    style={{ '--lesefortschritt': progress / 100 }}
+                />
+            </div>
 
-            {/* Optional: Show percentage */}
+            {/* Prozentfeld: ab lg unter dem Kopf (top-24 = 96 px, Kopf h-16), rechts bündig mit dem Inhalt */}
             {progress > 5 && progress < 95 && (
-                <div className="absolute top-2 right-4 border border-fuge bg-fliese px-3 py-1 font-mono text-fs-1 text-tinte tabular-nums">
-                    {Math.round(progress)}%
+                <div className="pointer-events-none fixed inset-x-0 top-24 z-10 hidden lg:block">
+                    <div className={`${seitenKlassen} flex justify-end`}>
+                        <div className="border border-fuge bg-fliese px-3 py-1 font-mono text-fs-1 text-tinte tabular-nums">
+                            {Math.round(progress)}%
+                        </div>
+                    </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

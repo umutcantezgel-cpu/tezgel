@@ -41,7 +41,7 @@ const BlogAuthorCard = ({ author }) => {
     return (
         <div className="border border-fuge bg-fliese p-6 sm:p-8 lg:p-12">
             <div className="flex flex-col gap-6 md:flex-row">
-                {/* Avatar */}
+                {/* Avatar: beim Betrieb das Logo (dieselbe Datei und Alt-Text wie im Kopf) statt eines Monogramms */}
                 <div className="shrink-0">
                     {authorData.avatar ? (
                         <Image
@@ -52,6 +52,16 @@ const BlogAuthorCard = ({ author }) => {
                             sizes="96px"
                             className="size-24 border border-fuge object-cover"
                         />
+                    ) : isCompanyAuthor ? (
+                        <div className="flex h-24 w-32 items-center justify-center border border-fuge bg-fliese p-2">
+                            <Image
+                                src="/images/logo/tezgel-logo.webp"
+                                alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
+                                width={140}
+                                height={44}
+                                className="h-auto w-full object-contain"
+                            />
+                        </div>
                     ) : (
                         <div
                             className="flex size-24 items-center justify-center bg-tinte font-anzeige text-fs-5 text-kalk"

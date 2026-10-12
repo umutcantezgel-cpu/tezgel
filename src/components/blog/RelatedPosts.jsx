@@ -1,13 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Icon from '@/components/icons/Icon';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 import { linkKlassen } from '@/components/kern/stile';
+
+// Themenmotiv je Kategorie (IDs aus src/config/blog.js): Bad → bad, Pflege → fugen, Abdichtung → abdichtung,
+// Balkon → balkon, Naturstein → naturstein, sonst grossformat (wie in der Liste)
+const MOTIV_JE_KATEGORIE = { bad: 'bad', pflege: 'fugen', untergrund: 'abdichtung', aussen: 'balkon', naturstein: 'naturstein' };
+const motivFuer = (kategorie) => MOTIV_JE_KATEGORIE[kategorie] ?? 'grossformat';
 
 /**
  * Related Posts Component
- * Shows related blog posts based on category or tags, als Liste an der Fuge
+ * Shows related blog posts based on category or tags, als Liste an der Fuge.
+ * Ohne Foto: gezeichnetes Themenmotiv (dekorativ, ohne Laserachse) und als Anreißer der eigene Auszug.
  */
 const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }) => {
     const posts = allPosts || [];
@@ -52,7 +57,6 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
             <ul className="mt-8 border-t border-fuge">
                 {relatedPosts.map(post => {
                     const categoryData = categoryList.find(c => c.id === post.category);
-                    const image = post.image || post.image_url;
 
                     return (
                         <li
@@ -60,25 +64,13 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                             data-motion="zustand"
                             className="relative flex items-start gap-6 border-b border-fuge py-6 hover:bg-fliese focus-within:bg-fliese"
                         >
-                            {/* Bild oder Fugenkreuz als Marke */}
-                            {image ? (
-                                <Image
-                                    src={image}
-                                    alt={post.title}
-                                    width={300}
-                                    height={128}
-                                    sizes="96px"
-                                    className="size-24 shrink-0 border border-fuge object-cover"
-                                    loading="lazy"
-                                />
-                            ) : (
-                                <div
-                                    className="flex size-24 shrink-0 items-center justify-center border border-fuge bg-kalk"
-                                    aria-hidden="true"
-                                >
-                                    <Fugenkreuz className="size-3 text-strich" />
-                                </div>
-                            )}
+                            {/* Themenmotiv statt Foto: gezeichneter Verlegeplan, dekorativ */}
+                            <div
+                                className="flex size-24 shrink-0 items-center justify-center border border-fuge bg-kalk p-2"
+                                aria-hidden="true"
+                            >
+                                <Verlegeplan plan={motivFuer(post.category)} ohneAchse bemassung={false} />
+                            </div>
 
                             <div className="min-w-0 flex-1">
                                 {/* Category */}
@@ -89,7 +81,7 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                                 )}
 
                                 {/* Title with Stretched Link (kein neues Überschriftenelement: Gliederung wie bisher) */}
-                                <p className="mt-2 font-text text-fs-4 font-semibold text-tinte">
+                                <p className="mt-2 font-anzeige text-fs-4 font-semibold text-tinte">
                                     <Link
                                         href={`/blog/${post.slug}`}
                                         className={`${linkKlassen} after:absolute after:inset-0`}
@@ -98,9 +90,9 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                                     </Link>
                                 </p>
 
-                                {/* Teaser */}
+                                {/* Teaser: der eigene Auszug des Beitrags; Bestandstext nur, wenn kein Auszug im Datensatz steht */}
                                 <p className="mt-2 max-w-mass text-fs-3 text-tinte-2">
-                                    Fachbeitrag von Fliesenverlegung Tezgel – praxisnahe Hinweise zu Planung, Material und Ausführung.
+                                    {post.excerpt?.trim() || 'Fachbeitrag von Fliesenverlegung Tezgel – praxisnahe Hinweise zu Planung, Material und Ausführung.'}
                                 </p>
 
                                 {/* Read More */}
