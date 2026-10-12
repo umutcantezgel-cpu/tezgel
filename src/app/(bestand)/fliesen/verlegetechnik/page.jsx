@@ -1,21 +1,31 @@
-import React from 'react';
+// Verlegetechnik (E4-BAU-10, KERN v2): Erzählansicht nach dem Muster der Fliesen-Ratgeber-Seite und der Badseite.
+// Einstieg mit Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts das Planblatt mit dem Plan „fugen“ (der Verlegeplan
+// trägt die rote Achse des Blatts). Danach die Leitachse über die Abschnitte: Verfahren und Kleber als Feldraster mit
+// Verformbarkeit, Grundierung und Hohlstellen als Felder, Fugenmörtel als Tabelle, Bewegungsfugen als Merkliste,
+// Weiterführende Ratgeber als Merkliste. Danach QualityPromise und der Konfigurator (nachgeladen) mit Rückfrage daneben.
+// Wortlaut, Überschriften, Links und IDs wie im Bestand. Kein großer Moment und keine Bewegung außer dem Plan (interaktiv).
 import Link from 'next/link';
-import {
-    Layers,
-    ArrowRight,
-    Phone,
-    Gauge,
-    Blend,
-    Brush,
-    Droplets,
-    Split,
-    Hammer,
-    CheckCircle2
-} from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
-import FliesenKonfigurator from '@/components/funnels/FliesenKonfigurator';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Tabelle from '@/components/kern/Tabelle';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+
+// Konfigurator nachladen (Tempo, wie auf der Startseite und den Leistungsseiten)
+const FliesenKonfigurator = dynamic(() => import('@/components/funnels/FliesenKonfigurator'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export const metadata = createMetadata({
     title: 'Verlegetechnik Fliesen: Dünnbett & Kleber | Tezgel',
@@ -78,289 +88,271 @@ const CROSS_LINKS = [
 
 export default function VerlegetechnikPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="verlegetechnik-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Layers className="w-3.5 h-3.5" />
-                        DIN 18157 &middot; DIN EN 12004 &middot; DIN EN 13888
-                    </span>
-                    <h1 id="verlegetechnik-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Verlegetechnik und Werkstoffe:{' '}
-                        <span className="text-ceramic-gradient">Kleber, Bettung und Fugenmörtel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Was unter der Fliese passiert, sieht man nach der Verlegung nicht mehr – und doch entscheidet es über
-                        Jahrzehnte Haltbarkeit. Hier erfahren Sie, welches Verlegeverfahren wann passt, was die Kürzel auf dem
-                        Klebersack bedeuten und welcher Fugenmörtel zu welcher Fläche gehört. So können Sie Angebote
-                        fachlich einordnen.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Aufmaß &amp; Beratung anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe; rechts das Planblatt mit dem Plan „fugen“ */}
+            <section aria-labelledby="verlegetechnik-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>DIN 18157 &middot; DIN EN 12004 &middot; DIN EN 13888</>}
+                    titel={
+                        <span id="verlegetechnik-heading">
+                            Verlegetechnik und Werkstoffe:{' '}
+                            <span>Kleber, Bettung und Fugenmörtel</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Was unter der Fliese passiert, sieht man nach der Verlegung nicht mehr – und doch entscheidet es über
+                            Jahrzehnte Haltbarkeit. Hier erfahren Sie, welches Verlegeverfahren wann passt, was die Kürzel auf dem
+                            Klebersack bedeuten und welcher Fugenmörtel zu welcher Fläche gehört. So können Sie Angebote
+                            fachlich einordnen.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">Aufmaß &amp; Beratung anfragen</Knopf>
+                            <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                                <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Verlegetechnik Fliesen', 'fugen')}>
+                            <Verlegeplan plan="fugen" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Verfahren */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="verfahren-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Bettung</span>
-                    <h2 id="verfahren-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Dünnbett, Mittelbett, Dickbett: die Verfahren im Überblick
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Welches Verfahren passt, hängt vom Untergrund, vom Format und vom Material ab. Im Wohnungsbau ist das
-                        Dünnbett heute die Regel – vorausgesetzt, der Untergrund wurde vorher tragfähig und eben vorbereitet.
-                    </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {METHODS.map((item) => (
-                        <li
-                            key={item.title}
-                            className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                        >
-                            <span className="icon-chip w-12 h-12 mb-5">
-                                <Layers className="w-6 h-6" />
-                            </span>
-                            <span className="block text-[11px] font-black uppercase tracking-widest text-orange-600 mb-1">{item.norm}</span>
-                            <h3 className="font-black text-lg text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+            <Leitachse>
+                {/* 2. VERFAHREN: drei Felder, je Verfahren Norm, Titel und Text */}
+                <Abschnitt
+                    titelId="verfahren-heading"
+                    leitachse
+                    spaet
+                    etikett="Bettung"
+                    titel="Dünnbett, Mittelbett, Dickbett: die Verfahren im Überblick"
+                    einleitung={
+                        <p>
+                            Welches Verfahren passt, hängt vom Untergrund, vom Format und vom Material ab. Im Wohnungsbau ist das
+                            Dünnbett heute die Regel – vorausgesetzt, der Untergrund wurde vorher tragfähig und eben vorbereitet.
+                        </p>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {METHODS.map((item) => (
+                            <Feld key={item.title}>
+                                <p className={etikettKlassen}>{item.norm}</p>
+                                <h3 className="mt-6 font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* Kleberklassen */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="kleber-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Fliesenkleber</span>
-                        <h2 id="kleber-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Fliesenkleber nach DIN EN 12004: C1, C2, F, T, E
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                {/* 3. FLIESENKLEBER: fünf Klassen (letztes Feld über zwei Spalten), darunter Verformbarkeit S1 und S2 */}
+                <Abschnitt
+                    titelId="kleber-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Fliesenkleber"
+                    titel="Fliesenkleber nach DIN EN 12004: C1, C2, F, T, E"
+                    einleitung={
+                        <p>
                             Die Norm teilt Kleber nach ihrer Basis ein – C für zementär, D für Dispersion, R für Reaktionsharz –
                             und ergänzt Leistungsmerkmale. Eine Bezeichnung wie „C2 TE S1“ lässt sich damit Buchstabe für
                             Buchstabe lesen.
                         </p>
-                    </div>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-                        {ADHESIVE_CLASSES.map((item) => (
-                            <li key={item.code} className="p-6 rounded-tile-xl bg-slate-50 border border-slate-200">
-                                <span className="font-display block text-4xl font-black tabular-nums text-orange-500/40 mb-3" aria-hidden="true">
-                                    {item.code}
-                                </span>
-                                <h3 className="text-sm font-black text-slate-900 mb-2">
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {ADHESIVE_CLASSES.map((item, i) => (
+                            <Feld key={item.code} spanne={i === ADHESIVE_CLASSES.length - 1 ? 2 : undefined}>
+                                <span className={etikettKlassen} aria-hidden="true">{item.code}</span>
+                                <h3 className="mt-6 font-anzeige text-fs-4 text-tinte">
                                     <span className="sr-only">{item.code}: </span>
                                     {item.label}
                                 </h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
+                                <p className="mt-3 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
                         ))}
-                    </ul>
+                    </Feldraster>
 
-                    {/* S1 / S2 */}
-                    <div className="mt-16 grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-                        <div className="lg:col-span-2">
-                            <span className="eyebrow eyebrow-orange mb-4">Verformbarkeit</span>
-                            <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                                S1 und S2: wann flexibler Kleber nötig ist
-                            </h3>
-                            <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                    <div className="mt-16 grid gap-8 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="lg:col-span-4">
+                            <p className={etikettKlassen}>Verformbarkeit</p>
+                            <h3 className="mt-3 font-anzeige text-fs-5 text-tinte">S1 und S2: wann flexibler Kleber nötig ist</h3>
+                            <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">
                                 Fliesen, Kleber und Untergrund dehnen sich bei Temperaturwechseln unterschiedlich. Ein verformbarer
                                 Kleber baut diese Spannungen ab, bevor sie zu Rissen oder Hohlstellen führen. Wir setzen
                                 grundsätzlich flexible Kleber der Klasse C2 TE S1 oder S2 ein und wählen die Stufe passend zu
                                 Untergrund, Format und Beanspruchung.
                             </p>
                         </div>
-                        <ul className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            {DEFORMABILITY.map((item) => (
-                                <li key={item.code} className="glass-surface rounded-tile-xl p-6">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <span className="icon-chip w-11 h-11">
-                                            <Gauge className="w-5 h-5" />
-                                        </span>
-                                        <h4 className="font-black text-slate-900">
-                                             {item.code} <span className="font-semibold text-slate-600">– {item.label}</span>
+                        <div className="lg:col-span-8">
+                            <Feldraster spalten={2}>
+                                {DEFORMABILITY.map((item) => (
+                                    <Feld key={item.code}>
+                                        <h4 className="font-anzeige text-fs-4 text-tinte">
+                                            {item.code} <span className="font-normal text-tinte-2">– {item.label}</span>
                                         </h4>
-                                    </div>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                                </li>
-                            ))}
-                        </ul>
+                                        <p className="mt-3 font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                                    </Feld>
+                                ))}
+                            </Feldraster>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Grundierung */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="grundierung-heading">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <article className="glass-surface rounded-tile-xl p-8">
-                        <span className="icon-chip w-12 h-12 mb-5">
-                            <Brush className="w-6 h-6" />
-                        </span>
-                        <h2 id="grundierung-heading" className="text-2xl font-black text-slate-900 mb-3">
-                            Grundierung und Haftbrücke: die unsichtbare Schicht
-                        </h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
-                            Die Grundierung wird oft unterschätzt. Sie reguliert die Saugfähigkeit des Untergrunds, bindet
-                            Reststaub und sorgt dafür, dass der Kleber nicht zu schnell Wasser verliert.
-                        </p>
-                        <ul className="space-y-2.5 text-sm text-slate-700">
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Saugende Untergründe wie Zementestrich, Putz oder Gipskarton: Tiefengrund bzw. Grundierung nach Herstellerangabe.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Calciumsulfatestrich: wird angeschliffen, abgesaugt und grundiert, damit der zementäre Kleber keine schädlichen Reaktionen mit dem Gips eingeht.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Dichte, glatte Flächen wie alte Fliesen: gereinigt und mit einer Haftbrücke vorbereitet.</li>
-                        </ul>
-                        <Link href="/untergrund-abdichtung" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
-                            Mehr zu Untergrund &amp; Abdichtung
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
+                {/* 4. GRUNDIERUNG UND HOHLSTELLEN: zwei Felder nebeneinander, je Text, Fugenkreuz-Liste und ein Textlink */}
+                <Abschnitt leitachse spaet>
+                    <Feldraster spalten={2}>
+                        <Feld>
+                            <article className="flex flex-1 flex-col">
+                                <h2 id="grundierung-heading" className="font-anzeige text-fs-5 text-tinte">
+                                    Grundierung und Haftbrücke: die unsichtbare Schicht
+                                </h2>
+                                <p className="mt-3 font-text text-fs-3 text-tinte-2">
+                                    Die Grundierung wird oft unterschätzt. Sie reguliert die Saugfähigkeit des Untergrunds, bindet
+                                    Reststaub und sorgt dafür, dass der Kleber nicht zu schnell Wasser verliert.
+                                </p>
+                                <ul className="mt-6 grid gap-3 font-text text-fs-2 text-tinte-2">
+                                    <li className="flex gap-3">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich"><Fugenkreuz className="size-3" /></span>
+                                        <span className="min-w-0">Saugende Untergründe wie Zementestrich, Putz oder Gipskarton: Tiefengrund bzw. Grundierung nach Herstellerangabe.</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich"><Fugenkreuz className="size-3" /></span>
+                                        <span className="min-w-0">Calciumsulfatestrich: wird angeschliffen, abgesaugt und grundiert, damit der zementäre Kleber keine schädlichen Reaktionen mit dem Gips eingeht.</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich"><Fugenkreuz className="size-3" /></span>
+                                        <span className="min-w-0">Dichte, glatte Flächen wie alte Fliesen: gereinigt und mit einer Haftbrücke vorbereitet.</span>
+                                    </li>
+                                </ul>
+                                <div className="mt-auto pt-6">
+                                    <Knopf href="/untergrund-abdichtung" variante="text" icon="pfeil-rechts">Mehr zu Untergrund &amp; Abdichtung</Knopf>
+                                </div>
+                            </article>
+                        </Feld>
+                        <Feld>
+                            <article className="flex flex-1 flex-col">
+                                <h2 className="font-anzeige text-fs-5 text-tinte">Hohlstellen vermeiden: vollflächige Bettung</h2>
+                                <p className="mt-3 font-text text-fs-3 text-tinte-2">
+                                    Bodenfliesen, Großformate, Nassbereiche und Außenflächen müssen möglichst hohlraumarm im Kleber
+                                    liegen. Hohlräume unter der Fliese sind Schwachstellen: Bei Punktlast kann die Kante brechen, im
+                                    Außenbereich sammelt sich Wasser und friert.
+                                </p>
+                                <ul className="mt-6 grid gap-3 font-text text-fs-2 text-tinte-2">
+                                    <li className="flex gap-3">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich"><Fugenkreuz className="size-3" /></span>
+                                        <span className="min-w-0">Zahnung der Kelle passend zu Format und Rückseite wählen.</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich"><Fugenkreuz className="size-3" /></span>
+                                        <span className="min-w-0">Kombiniertes Verfahren (Buttering-Floating): Kleber auf Untergrund und Fliesenrückseite.</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich"><Fugenkreuz className="size-3" /></span>
+                                        <span className="min-w-0">Fliese einschieben statt nur aufdrücken, damit die Kleberstege zusammenfließen.</span>
+                                    </li>
+                                    <li className="flex gap-3">
+                                        <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich"><Fugenkreuz className="size-3" /></span>
+                                        <span className="min-w-0">Stichprobenartig eine frisch verlegte Fliese abheben und die Benetzung kontrollieren.</span>
+                                    </li>
+                                </ul>
+                                <div className="mt-auto pt-6">
+                                    <Knopf href="/fliesen/grossformat" variante="text" icon="pfeil-rechts">Großformate richtig verlegen</Knopf>
+                                </div>
+                            </article>
+                        </Feld>
+                    </Feldraster>
+                </Abschnitt>
 
-                    <article className="glass-surface rounded-tile-xl p-8">
-                        <span className="icon-chip w-12 h-12 mb-5">
-                            <Hammer className="w-6 h-6" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Hohlstellen vermeiden: vollflächige Bettung</h2>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-4">
-                            Bodenfliesen, Großformate, Nassbereiche und Außenflächen müssen möglichst hohlraumarm im Kleber
-                            liegen. Hohlräume unter der Fliese sind Schwachstellen: Bei Punktlast kann die Kante brechen, im
-                            Außenbereich sammelt sich Wasser und friert.
-                        </p>
-                        <ul className="space-y-2.5 text-sm text-slate-700">
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Zahnung der Kelle passend zu Format und Rückseite wählen.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Kombiniertes Verfahren (Buttering-Floating): Kleber auf Untergrund und Fliesenrückseite.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Fliese einschieben statt nur aufdrücken, damit die Kleberstege zusammenfließen.</li>
-                            <li className="flex gap-2.5"><CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />Stichprobenartig eine frisch verlegte Fliese abheben und die Benetzung kontrollieren.</li>
-                        </ul>
-                        <Link href="/fliesen/grossformat" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700">
-                            Großformate richtig verlegen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-                </div>
-            </section>
-
-            {/* Fugenmörtel */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="fuge-heading">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-10">
-                        <span className="eyebrow mb-4">
-                            <Droplets className="w-3.5 h-3.5" />
-                            Fugenmörtel
-                        </span>
-                        <h2 id="fuge-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Fugenmörtel nach DIN EN 13888: zementär oder Reaktionsharz
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                {/* 5. FUGENMÖRTEL: Text mit Verweis, darunter die Vergleichstabelle als benannte Region */}
+                <Abschnitt
+                    titelId="fuge-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Fugenmörtel"
+                    titel="Fugenmörtel nach DIN EN 13888: zementär oder Reaktionsharz"
+                    einleitung={
+                        <p>
                             Für die meisten Wohnflächen ist ein hochwertiger zementärer Fugenmörtel die richtige Wahl.
                             Reaktionsharz spielt seine Stärken dort aus, wo Säuren, Fett oder intensive Reinigung auf die Fuge
                             treffen. Farbe, Breite und Fugenbild behandeln wir auf der Seite{' '}
-                            <Link href="/fliesen/verlegemuster" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
+                            <Link href="/fliesen/verlegemuster" className={linkKlassen}>
                                 Verlegemuster &amp; Abschlüsse
                             </Link>
                             .
                         </p>
-                    </div>
-                    <div className="overflow-x-auto rounded-tile-xl border border-slate-200 bg-white">
-                        <table className="w-full min-w-[640px] text-left text-sm">
-                            <caption className="sr-only">Vergleich zementärer Fugenmörtel und Reaktionsharz-Fugenmörtel</caption>
-                            <thead className="bg-slate-100 text-slate-900">
-                                <tr>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200">Kriterium</th>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200">Zementär (CG2)</th>
-                                    <th scope="col" className="p-4 font-black border-b border-slate-200">Reaktionsharz (RG)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {GROUT_ROWS.map((row) => (
-                                    <tr key={row.label} className="border-b border-slate-200 last:border-b-0">
-                                        <th scope="row" className="p-4 font-bold text-slate-900 align-top">{row.label}</th>
-                                        <td className="p-4 text-slate-700 align-top">{row.cement}</td>
-                                        <td className="p-4 text-slate-700 align-top">{row.resin}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+                    }
+                >
+                    <Tabelle
+                        name="Vergleich zementärer Fugenmörtel und Reaktionsharz-Fugenmörtel"
+                        kopf={[<>Kriterium</>, <>Zementär (CG2)</>, <>Reaktionsharz (RG)</>]}
+                        zeilen={GROUT_ROWS.map((row) => [row.label, row.cement, row.resin])}
+                    />
+                </Abschnitt>
 
-            {/* Bewegungsfugen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="bewegungsfugen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">
-                        <Split className="w-3.5 h-3.5" />
-                        Fugenplanung
-                    </span>
-                    <h2 id="bewegungsfugen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Bewegungs-, Rand- und Anschlussfugen
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Ein Fliesenbelag ist starr, das Gebäude arbeitet. Fugen an den richtigen Stellen verhindern, dass sich
-                        diese Bewegungen als Risse oder abgelöste Fliesen zeigen.
+                {/* 6. BEWEGUNGSFUGEN: drei Fugenarten als Merkliste, darunter der Verweis auf die Fugensanierung */}
+                <Abschnitt
+                    titelId="bewegungsfugen-heading"
+                    leitachse
+                    spaet
+                    etikett="Fugenplanung"
+                    titel="Bewegungs-, Rand- und Anschlussfugen"
+                    einleitung={
+                        <p>
+                            Ein Fliesenbelag ist starr, das Gebäude arbeitet. Fugen an den richtigen Stellen verhindern, dass sich
+                            diese Bewegungen als Risse oder abgelöste Fliesen zeigen.
+                        </p>
+                    }
+                >
+                    <Merkliste
+                        titelAls="h3"
+                        eintraege={JOINTS.map((item) => ({ titel: item.title, text: item.desc }))}
+                    />
+                    <p className="mt-8 max-w-mass font-text text-fs-3 text-tinte-2">
+                        Wie elastische Fugen im Bestand erneuert werden, erklären wir auf der Seite{' '}
+                        <Link href="/fliesen/fugensanierung" className={linkKlassen}>
+                            Fugensanierung
+                        </Link>
+                        .
                     </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {JOINTS.map((item) => (
-                        <li
-                            key={item.title}
-                            className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                        >
-                            <span className="icon-chip w-11 h-11 mb-4">
-                                <Blend className="w-5 h-5" />
-                            </span>
-                            <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                        </li>
-                    ))}
-                </ul>
-                <p className="mt-6 text-sm text-slate-600 text-center max-w-3xl mx-auto">
-                    Wie elastische Fugen im Bestand erneuert werden, erklären wir auf der Seite{' '}
-                    <Link href="/fliesen/fugensanierung" className="font-semibold text-orange-600 hover:text-orange-700 hover:underline underline-offset-2">
-                        Fugensanierung
-                    </Link>
-                    .
-                </p>
-            </section>
+                </Abschnitt>
 
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 relative z-10" aria-labelledby="ratgeber-heading">
-                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-5">Weiterführende Ratgeber zur Verlegetechnik</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {CROSS_LINKS.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className="group block h-full glass-surface rounded-tile-md p-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="flex items-center justify-between gap-2 font-black text-slate-900 group-hover:text-orange-600 transition-colors">
+                {/* 7. WEITERFÜHRENDE RATGEBER: vier Verweise als Merkliste */}
+                <Abschnitt titelId="ratgeber-heading" flaeche="fliese" leitachse spaet titel="Weiterführende Ratgeber zur Verlegetechnik">
+                    <Merkliste
+                        spalten={2}
+                        eintraege={CROSS_LINKS.map((link) => ({
+                            titel: (
+                                <Link href={link.href} className={linkKlassen}>
                                     {link.label}
-                                    <ArrowRight className="w-4 h-4 shrink-0 text-orange-500" />
-                                </span>
-                                <span className="mt-1 block text-sm text-slate-600">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+                                </Link>
+                            ),
+                            text: link.desc
+                        }))}
+                    />
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
 
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10" aria-label="Fliesen-Konfigurator">
-                <FliesenKonfigurator />
-            </section>
-        </div>
+            {/* 8. KONFIGURATOR: Funnel (nachgeladen) mit 8 Spalten, rechts die Rückfrage in 4 Spalten (ab lg) */}
+            <Abschnitt aria-label="Fliesen-Konfigurator" spaet>
+                <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                    <div className="min-w-0 lg:col-span-8">
+                        <FliesenKonfigurator />
+                    </div>
+                    <div className="lg:col-span-4">
+                        <Rueckfrage />
+                    </div>
+                </div>
+            </Abschnitt>
+        </>
     );
 }
