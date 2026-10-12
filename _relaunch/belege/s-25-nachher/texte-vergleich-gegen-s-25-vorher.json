@@ -1,0 +1,28 @@
+{
+ "vorher": "s-25-vorher",
+ "nachher": "s-25-nachher",
+ "seiten": {
+  "/beratung": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Telefon",
+     "E-Mail",
+     "WhatsApp"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 3,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

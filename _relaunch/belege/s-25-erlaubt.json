@@ -1,0 +1,6 @@
+[
+ { "seite": "/beratung", "alt": "TELEFON", "grund": "Darstellung: CSS-Versalien (uppercase tracking-widest) des Wege-Etiketts in CalendlySection entfallen, Quelltext „Telefon“ unverändert; neu „Telefon“ als Mono-Etikett" },
+ { "seite": "/beratung", "alt": "WHATSAPP", "grund": "Darstellung: CSS-Versalien entfallen, Quelltext unverändert; neu „WhatsApp“" },
+ { "seite": "/beratung", "alt": "E-MAIL", "grund": "Darstellung: CSS-Versalien entfallen, Quelltext unverändert; neu „E-Mail“" },
+ { "seite": "*", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß (nicht in den Schreibrechten): CookieConsent hängt die Zeile nach der Hydrierung an, auf dem Dev-Server je nach Zeitpunkt (bekannt, R-01a)" }
+]

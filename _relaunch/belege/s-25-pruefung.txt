@@ -1,0 +1,18 @@
+S-25 · Prüfungen 1–9 · /beratung (CalendlySection nur dort eingebunden) · 2026-10-12
+1 tsc (flock): Exit 0, keine Ausgabe
+2 eslint (2 Dateien): Exit 0, 0 Fehler, 0 Warnungen
+3 werte.mjs: "2 Dateien · 125 Klassenvorkommen (62 eindeutig)", "befunde gesamt 0", Exit 0
+4 Altsystem-grep: keine Treffer (Exit 1); vorher page.jsx 55 Treffer/43 Zeilen, CalendlySection.jsx 19 Treffer/14 Zeilen → 0
+5 texte 4362 → 4350 (--erlaubt s-25-erlaubt.json): {"seiten_mit_abweichung":1,"entfernt":0,"hinzu":3,"meta":0,"seo":0,"sitemap_entfernt":0,"sitemap_hinzu":0,"robots_geaendert":false,"kaputte_links":0,"ergebnis":"GRÜN"}
+  ohne Liste: entfernt 4 = „TELEFON“, „WHATSAPP“, „E-MAIL“ (CSS-Versalien der Wege-Etiketten) + Fuß „Cookie-Einstellungen“ (Dev-Zeitpunkt, geteilt); hinzu 3 = „Telefon“, „E-Mail“, „WhatsApp“
+  Lesefolge main (Versalien angeglichen): gleich (63 Zeilen); Überschriften, Links, Kopf, alt, Metadaten, JSON-LD-Hash gleich
+  textprobe: ENTFERNT nur Wortlaute, die als titel=/etikett= wiederkehren, und id=booking-heading (jetzt titelId); bezeichner.cjs [] []
+6 einzelbild m390,t768,d1440 (--voll): HTTP 200, Konsole 0, Überlauf 0, Überlappung 0 (je Ansicht)
+7 wortbruch: Wortbrüche: 0
+8 navigation + kontaktwege + einwilligung + termin (mobil, desktop) gegen 4350: 170 Tests: 155 passed, 14 skipped, 1 failed (12,8 min)
+  failed: [mobil] funktion-navigation 404 › Link „Zur Startseite“ (expect.poll 10 s, Pfad blieb /gibt-es-nicht) – bekannte Zeitüberschreitung, fremde Seite
+  einmal wiederholt (-g "Zur Startseite", beide Projekte): 2 passed (13,8 s). Keiner der Tests öffnet /beratung
+  Zusatz axe (m375, d1440): 2 Läufe, 0 Verstöße
+  Zusatz Sprungprobe #booking (Klick im Einstieg, m390/d1440, reduziert und nicht): Landeplatz 96 px (Live 4362: 208 px wegen scroll-mt-28); vereinzelt löst der Klick im Dev-Server nichts aus, ebenso auf /kontakt (Dev-Zeitpunkt)
+  Zusatz Fokusprobe (Tab ab H1, reduzierte Bewegung, m390/d1440): je 12 Fokusstopps in main, 0 außerhalb des Bilds
+9 git status: von S-25 nur die 2 Dateien und _relaunch/belege/s-25*; daneben CLAUDE.md und Dateien anderer Baumeister

@@ -1,0 +1,27 @@
+{
+ "satz": "s-25-axe",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 2,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/beratung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/beratung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  }
+ ]
+}

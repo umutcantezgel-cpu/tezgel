@@ -1,10 +1,23 @@
-"use client";
-import React from 'react';
-import { MotionConfig, motion } from 'framer-motion';
-import { CheckCircle, ShieldCheck, FileText, Phone, Mail, HelpCircle, MessageCircle } from 'lucide-react';
-import CalendlySection from '@/components/common/CalendlySection';
+// Kostenlose Fachberatung (S-25 · E6-BAU-06, KERN v2): Arbeitsansicht nach dem Muster von (bestand)/kontakt. Kompakter
+// Einstieg (Kennzeile, H1, Vorspann, „Termin vereinbaren“ als Hauptknopf zum Sprungziel #booking, Telefon als Nebenknopf);
+// danach in der Lesefolge des Bestands:
+// 2. Beratungsablauf, Kopf seitlich, die vier Stufen als Zeitleiste (Schrittfolge senkrecht, Nummer stumm wie im Bestand) ·
+// 3. Checkliste (Fliese) als Liste an der Fuge, ab md zweispaltig mit Fuge dazwischen, Haken der eigenen Familie ·
+// 4. Terminvereinbarung (CalendlySection, #booking): Wege als Felder und Erreichbarkeit · 5. Häufige Fragen (Fliese), Kopf
+// seitlich, Frage und Antwort an der Fuge · 6. Direkter Kontakt mit den drei Wegen als Nebenknöpfe · Abschluss ohne Achse.
+// Flächen Kalk und Fliese im Wechsel; kein großer Moment, keine Auftritte, kein Rot (nur druck an den Knöpfen).
+// Serverkomponente; Bewegungsbibliothek und fremde Icons entfallen. `spaet` nur unterhalb des Sprungziels #booking (Fragen, Direktkontakt):
+// Abschnitte über dem Ziel zeichnen sofort, damit der Sprung vom Einstieg nicht daneben landet.
+// Texte, Überschriften, Links, IDs und Lesefolge wie im Bestand; Metadaten und JSON-LD bleiben in ./layout.tsx.
 import { COMPANY_DATA } from '@/config/company';
-import { FinalCTA } from '@/components/ui/FinalCTA';
+import CalendlySection from '@/components/common/CalendlySection';
+import FinalCTA from '@/components/ui/FinalCTA';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Knopf from '@/components/kern/Knopf';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Icon from '@/components/icons/Icon';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 
 // Keep in sync with the FAQPage JSON-LD in ./layout.tsx (same questions & answers).
 const consultationFaqs = [
@@ -56,173 +69,119 @@ const checklist = [
   { title: 'Wunschtermin & Budget', text: 'Ein grober Zeitrahmen für die geplante Umsetzung Ihrer Maßnahme.' }
 ];
 
-const Beratung = () => {
+export default function Beratung() {
     const { contact } = COMPANY_DATA;
 
-    // reduzierte Bewegung achten (vorher globaler MotionProvider, E-010)
     return (
-        <MotionConfig reducedMotion="user">
-        <div className="min-h-screen">
-            {/* ── Hero Section ─────────────────────────────────────────── */}
-            <section className="ceramic-band relative pt-32 pb-20 overflow-hidden">
-                <div className="ambient-glow-orange -top-24 -left-24 opacity-70" />
-                <div className="ambient-glow-red -bottom-24 -right-24 opacity-60" />
-                <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <span className="eyebrow mb-6">
-                            <ShieldCheck className="w-3.5 h-3.5" />
-                            Kostenlose Erstberatung vom Fliesen-Fachbetrieb
-                        </span>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
-                            Kostenlose{' '}
-                            <span className="text-ceramic-gradient">Fliesenberatung</span>{' '}
-                            in Wetzlar
-                        </h1>
-                        <p className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                            Jetzt Ihre kostenlose Fliesenberatung in Wetzlar und Aßlar vereinbaren: Ob Badsanierung, XXL-Großformate, Wohnbereich oder Terrasse – Fachbetrieb Tezgel nimmt sich Zeit für Ihre Fragen, prüft den Untergrund und findet mit Ihnen die optimale Lösung.
-                        </p>
-                        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                            <a href="#booking" className="btn-primary w-full sm:w-auto">
-                                Termin vereinbaren
-                            </a>
-                            <a href={`tel:${contact.phoneLink}`} className="btn-ghost w-full sm:w-auto">
-                                <Phone className="w-4 h-4 text-orange-600" />
-                                {contact.phone}
-                            </a>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+        <>
+            {/* 1. EINSTIEG: Kennzeile (vormals Badge), H1, Vorspann; Termin als Hauptknopf, Telefon als Nebenknopf */}
+            <Einstieg
+                art="arbeit"
+                etikett="Kostenlose Erstberatung vom Fliesen-Fachbetrieb"
+                titel="Kostenlose Fliesenberatung in Wetzlar"
+                vorspann={
+                    <p>
+                        Jetzt Ihre kostenlose Fliesenberatung in Wetzlar und Aßlar vereinbaren: Ob Badsanierung, XXL-Großformate, Wohnbereich oder Terrasse – Fachbetrieb Tezgel nimmt sich Zeit für Ihre Fragen, prüft den Untergrund und findet mit Ihnen die optimale Lösung.
+                    </p>
+                }
+                aktionen={
+                    <>
+                        <Knopf href="#booking" icon="pfeil-rechts">
+                            Termin vereinbaren
+                        </Knopf>
+                        <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{contact.phone}</span>
+                        </Knopf>
+                    </>
+                }
+            />
 
-            {/* ── Process & Value ──────────────────────────────────────── */}
-            <section className="py-16 sm:py-20 bg-white border-b border-slate-200">
-                <div className="max-w-6xl mx-auto px-4">
-                    <div className="text-center max-w-3xl mx-auto mb-14">
-                        <span className="eyebrow mb-4">Transparenter Ablauf</span>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 tracking-tight">
-                            Unser 4-Stufen-Beratungsablauf
-                        </h2>
-                        <p className="text-slate-700">
-                            Vom ersten Gespräch bis zum transparenten Angebot – strukturiert, kompetent und partnerschaftlich.
-                        </p>
-                    </div>
+            {/* 2. ABLAUF: Kopf seitlich, die vier Stufen als Zeitleiste (Titel bleiben h3, Nummer stumm wie im Bestand) */}
+            <Abschnitt
+                art="arbeit"
+                kopf="seitlich"
+                titelId="ablauf-heading"
+                etikett="Transparenter Ablauf"
+                titel="Unser 4-Stufen-Beratungsablauf"
+                einleitung={<p>Vom ersten Gespräch bis zum transparenten Angebot – strukturiert, kompetent und partnerschaftlich.</p>}
+            >
+                <Schrittfolge
+                    nummerStumm
+                    schritte={beratungSteps.map((step) => ({
+                        nummer: step.step,
+                        titel: step.title,
+                        text: step.desc
+                    }))}
+                />
+            </Abschnitt>
 
-                    <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {beratungSteps.map((step) => (
-                            <li
-                                key={step.step}
-                                className="group bg-slate-50 p-6 rounded-tile-lg border border-slate-200 relative hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <div className="font-display text-4xl font-black tabular-nums text-orange-600/25 group-hover:text-orange-600/40 transition-colors mb-3" aria-hidden="true">
-                                    {step.step}
-                                </div>
-                                <h3 className="text-lg font-black text-slate-900 mb-2">{step.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
-            </section>
+            {/* 3. CHECKLISTE: Liste an der Fuge, ab md zwei Spalten mit Fuge dazwischen; Titel und Text bleiben ein Satz */}
+            <Abschnitt
+                art="arbeit"
+                flaeche="fliese"
+                titelId="checkliste-heading"
+                titel="Checkliste: So bereiten Sie Ihren Termin optimal vor"
+                einleitung={<p>Bringen Sie gerne folgende Unterlagen mit (falls zur Hand)</p>}
+            >
+                <ul className="grid grid-cols-1 border-t border-fuge md:grid-cols-2">
+                    {checklist.map((item) => (
+                        <li key={item.title} className="flex items-start gap-4 border-b border-fuge py-6 md:odd:pr-6 md:even:border-l md:even:pl-6">
+                            <Icon name="haken" groesse={5} className="mt-1 text-strich" />
+                            <p className="min-w-0 text-fs-3 text-tinte-2">
+                                <strong className="font-semibold text-tinte">{item.title}:</strong> {item.text}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            </Abschnitt>
 
-            {/* ── Checklist Preparation ────────────────────────────────── */}
-            <section className="py-16 sm:py-20">
-                <div className="max-w-5xl mx-auto px-4">
-                    <div className="glass-surface rounded-tile-xl p-8 md:p-12">
-                        <div className="flex items-center gap-4 mb-8">
-                            <span className="icon-chip w-12 h-12">
-                                <FileText className="w-6 h-6" />
-                            </span>
-                            <div>
-                                <h2 className="text-2xl font-black text-slate-900">Checkliste: So bereiten Sie Ihren Termin optimal vor</h2>
-                                <p className="text-sm text-slate-600">Bringen Sie gerne folgende Unterlagen mit (falls zur Hand)</p>
-                            </div>
-                        </div>
-
-                        <ul className="grid sm:grid-cols-2 gap-4 text-slate-700 text-sm">
-                            {checklist.map((item) => (
-                                <li key={item.title} className="flex items-start gap-3 p-4 rounded-tile-md bg-slate-50 border border-slate-200">
-                                    <CheckCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
-                                    <span><strong className="text-slate-900">{item.title}:</strong> {item.text}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Terminvereinbarung ───────────────────────────────────── */}
+            {/* 4. TERMINVEREINBARUNG (#booking) */}
             <CalendlySection />
 
-            {/* ── Consultation FAQs ────────────────────────────────────── */}
-            <section className="py-16 sm:py-20 bg-white border-y border-slate-200">
-                <div className="max-w-4xl mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <span className="eyebrow mb-4">Häufige Fragen</span>
-                        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 tracking-tight">
-                            Häufige Fragen zur Beratung
-                        </h2>
-                        <p className="text-slate-700">
-                            Alles Wichtige rund um Ablauf, Kosten und Zuschüsse.
-                        </p>
-                    </div>
-
-                    <div className="space-y-4">
-                        {consultationFaqs.map((faq) => (
-                            <div key={faq.q} className="p-6 rounded-tile-md bg-slate-50 border border-slate-200">
-                                <h3 className="font-black text-lg text-slate-900 mb-2 flex items-start gap-2">
-                                    <HelpCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
-                                    {faq.q}
-                                </h3>
-                                <p className="text-slate-700 text-sm leading-relaxed pl-7">
-                                    {faq.a}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Direct Contact Section ───────────────────────────────── */}
-            <section className="py-16 sm:py-20">
-                <div className="max-w-5xl mx-auto px-4">
-                    <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 text-center">
-                        <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4">
-                            Sie möchten lieber direkt mit uns sprechen?
-                        </h2>
-                        <p className="text-slate-700 mb-8 max-w-xl mx-auto text-sm sm:text-base">
-                            Rufen Sie uns während unserer Geschäftszeiten an oder schreiben Sie uns eine kurze Nachricht.
-                        </p>
-                        <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3">
-                            <a href={`tel:${contact.phoneLink}`} className="btn-primary w-full sm:w-auto">
-                                <Phone className="w-4 h-4" />
-                                <span>{contact.phone}</span>
-                            </a>
-                            <a
-                                href={contact.whatsappLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="glass-button-whatsapp w-full sm:w-auto text-sm"
-                            >
-                                <MessageCircle className="w-4 h-4" />
-                                WhatsApp
-                            </a>
-                            <a href={`mailto:${contact.email}`} className="btn-ghost w-full sm:w-auto">
-                                <Mail className="w-4 h-4 text-orange-600" />
-                                <span>{contact.email}</span>
-                            </a>
+            {/* 5. HÄUFIGE FRAGEN: Kopf seitlich, Frage (h3) und Antwort an der Fuge – spiegeln das FAQPage-JSON-LD */}
+            <Abschnitt
+                art="arbeit"
+                flaeche="fliese"
+                kopf="seitlich"
+                spaet
+                titelId="fragen-heading"
+                etikett="Häufige Fragen"
+                titel="Häufige Fragen zur Beratung"
+                einleitung={<p>Alles Wichtige rund um Ablauf, Kosten und Zuschüsse.</p>}
+            >
+                <div className="border-t border-tinte">
+                    {consultationFaqs.map((faq) => (
+                        <div key={faq.q} className="border-b border-fuge py-6">
+                            <h3 className="text-fs-4 text-tinte">{faq.q}</h3>
+                            <p className="mt-2 max-w-mass font-text text-fs-3 text-tinte-2">{faq.a}</p>
                         </div>
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </Abschnitt>
 
-            <FinalCTA />
-        </div>
-        </MotionConfig>
+            {/* 6. DIREKTER KONTAKT: die drei Wege als Nebenknöpfe (der Hauptknopf dieses Bildschirms steht im Abschluss) */}
+            <Abschnitt
+                art="arbeit"
+                spaet
+                titelId="direkt-heading"
+                titel="Sie möchten lieber direkt mit uns sprechen?"
+                einleitung={<p>Rufen Sie uns während unserer Geschäftszeiten an oder schreiben Sie uns eine kurze Nachricht.</p>}
+            >
+                {/* pb-1: der Fokusring der Knöpfe bleibt innerhalb der spaet-Hülle (content-visibility beschneidet am Rand) */}
+                <div className="flex flex-col gap-3 pb-1 sm:flex-row sm:flex-wrap">
+                    <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                        <span className="font-mono font-normal">{contact.phone}</span>
+                    </Knopf>
+                    <Knopf href={contact.whatsappLink} extern variante="neben" vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
+                        WhatsApp
+                    </Knopf>
+                    <Knopf href={`mailto:${contact.email}`} variante="neben" iconLinks="mail">
+                        {contact.email}
+                    </Knopf>
+                </div>
+            </Abschnitt>
+
+            <FinalCTA achse={false} />
+        </>
     );
-};
-
-export default Beratung;
+}
