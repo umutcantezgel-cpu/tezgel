@@ -120,7 +120,7 @@ export default function BarrierefreiesBadPage() {
 
                     {review && (
                         <figure className="mt-12 max-w-mass border-l-2 border-laser-tief pl-6 sm:pl-8">
-                            <span className="flex items-center gap-1 text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
+                            <span role="img" className="flex items-center gap-1 text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
                                 {Array.from({ length: review.rating }, (_, i) => (
                                     <Icon key={i} name="stern-voll" groesse={4} />
                                 ))}

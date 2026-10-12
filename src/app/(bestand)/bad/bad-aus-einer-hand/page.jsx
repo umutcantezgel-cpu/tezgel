@@ -105,7 +105,7 @@ export default function BadAusEinerHandPage() {
 
                     {review && (
                         <figure className="mt-16 max-w-mass border-t border-fuge pt-12">
-                            <span className="flex items-center gap-px text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
+                            <span role="img" className="flex items-center gap-px text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
                                 {Array.from({ length: review.rating }, (_, i) => (
                                     <Icon key={i} name="stern-voll" groesse={4} />
                                 ))}
