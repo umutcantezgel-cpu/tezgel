@@ -1,0 +1,1918 @@
+{
+ "satz": "_relaunch/belege/l1-e039/tor/texte-live → _relaunch/belege/l1-e039/tor/texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "a": "belege/l1-e039/tor/texte-live",
+  "b": "belege/l1-e039/tor/texte-kopf",
+  "freigabe": "MIKROTEXTE.md",
+  "volatil": [],
+  "regeln": "Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste."
+ },
+ "erstellt": "2026-10-12T12:23:22.002Z",
+ "ergebnis": "GRÜN",
+ "summe": {
+  "rot": 0,
+  "gelb": 158,
+  "gruen_freigegeben": 37,
+  "seiten_rot": 0,
+  "rot_nach_art": {},
+  "gelb_nach_art": {
+   "neu-gegliedert": 24,
+   "hinzu": 87,
+   "verschoben": 19,
+   "umgestellt": 24,
+   "pflichtanker-fehlt": 4
+  },
+  "seiten_verglichen": 9,
+  "zustaende_verglichen": 0,
+  "freigabe_zeilen": 58,
+  "freigabe_warnungen": 0,
+  "laufzeit_s": 0.1
+ },
+ "freigabe": {
+  "datei": "MIKROTEXTE.md",
+  "warnungen": [],
+  "genutzt": [
+   61,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74
+  ]
+ },
+ "seiten": {
+  "/": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/#express-anfrage",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/bad": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Hinweis:",
+      "Musterbad-Vergleich: Katalog"
+     ],
+     "neu": [
+      "Hinweis: Musterbad-Vergleich: Katalog"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Hinweis:",
+      "Bis zu 4.180 € Pflegekassen-Zuschuss"
+     ],
+     "neu": [
+      "Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "1",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "3",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "5",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/bad/badanfrage": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "1",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "3",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "5",
+     "abschnitt": "h2: Planen Sie Ihr Traumbad mit dem Fachbetrieb aus Aßlar",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/bad/projekt-check": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Hinweis:",
+      "Musterbad-Vergleich: Katalog"
+     ],
+     "neu": [
+      "Hinweis: Musterbad-Vergleich: Katalog"
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": [
+      "Hinweis:",
+      "Bis zu 4.180 € Pflegekassen-Zuschuss"
+     ],
+     "neu": [
+      "Hinweis: Bis zu 4.180 € Pflegekassen-Zuschuss"
+     ],
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  },
+  "/blog": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Suche",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "aria:placeholder",
+     "wert": "Artikel suchen...",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Kategorien",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Alle Artikel",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Bad & Dusche",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Fliesen & Material",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Untergrund & Abdichtung",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Balkon & Terrasse",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Pflege & Werterhalt",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Ratgeber & Kosten",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Neuigkeiten",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Beratung gewünscht?",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Fragen zu Badsanierung, Fliesen oder Abdichtung? Deniz Tezgel berät Sie persönlich – inklusive kostenfreiem Vor-Ort-Aufmaß.",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Kontakt aufnehmen",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "06441 / 44 83 567",
+     "abschnitt_alt": "h3: Wir suchen Verstärkung: Fliesenleger/in oder Geselle (m/w/d)",
+     "abschnitt_neu": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Ratgeber durchsuchen",
+     "abschnitt": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Artikel suchen",
+     "abschnitt": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Ratgeber durchsuchen",
+     "abschnitt": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Kategorien",
+     "abschnitt": "h1: Fliesen-Ratgeber & Badsanierung Tipps",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h2: Handwerkerbonus: Fliesenarbeiten von der Steuer absetzen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "5 Min.",
+     "abschnitt": "h3: Undichte Dusche? 5 Warnzeichen für Feuchte hinter Fliesen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h3: Feinsteinzeug oder Naturstein? Der ehrliche Vergleich",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h3: Fliesen richtig reinigen: Pflicht und Kür der Fliesenpflege",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h3: Barrierefreier Balkonaustritt: Wie niedrig darf die Türschwelle sein?",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h3: Wandnischen in Dusche und Bad: planen, abdichten, beleuchten",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "5 Min.",
+     "abschnitt": "h3: Duschrinne oder Punktablauf? Die Entwässerung der bodengleichen Dusche",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h3: Schimmel in Fliesenfugen vermeiden: Ursachen und Vorbeugung",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "5 Min.",
+     "abschnitt": "h3: Fliesen für Allergiker: Warum harte Böden entlasten können",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h3: Rutschfeste Fliesen: Welche R-Klasse ist wo sinnvoll?",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "4 Min.",
+     "abschnitt": "h3: 5 Mythen über Fliesenböden im Faktencheck",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "2 Min.",
+     "abschnitt": "h3: Gäste-WC fliesen: So wirkt der kleine Raum größer",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Untergrund & Abdichtung ·",
+     "neu": "Untergrund & Abdichtung",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Fliesen & Material ·",
+     "neu": "Fliesen & Material",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "5 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      71
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Pflege & Werterhalt ·",
+     "neu": "Pflege & Werterhalt",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Balkon & Terrasse ·",
+     "neu": "Balkon & Terrasse",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Bad & Dusche ·",
+     "neu": "Bad & Dusche",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Bad & Dusche ·",
+     "neu": "Bad & Dusche",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Pflege & Werterhalt ·",
+     "neu": "Pflege & Werterhalt",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "5 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      71
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Fliesen & Material ·",
+     "neu": "Fliesen & Material",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Fliesen & Material ·",
+     "neu": "Fliesen & Material",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "5 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      71
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Ratgeber & Kosten ·",
+     "neu": "Ratgeber & Kosten",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Bad & Dusche ·",
+     "neu": "Bad & Dusche",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "4 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      70
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Neuigkeiten ·",
+     "neu": "Neuigkeiten",
+     "freigabe": [
+      69
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "2 Min. · 24. September 2026",
+     "neu": "24. September 2026",
+     "freigabe": [
+      72
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "aria:aria-label",
+     "alt": "Artikel suchen",
+     "freigabe": [
+      61
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/kontakt": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#express-anfrage",
+     "grund": "fehlte schon in A"
+    },
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#termin-buchen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/leistungen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "01 · Geprüfte Fachkompetenz",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "02 · Geprüfte Fachkompetenz",
+     "abschnitt": "h2: Bäder & Wellness",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "03 · Geprüfte Fachkompetenz",
+     "abschnitt": "h2: Wohnbereiche & Neubau",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "Geprüfte Fachkompetenz",
+     "neu": "04 · Geprüfte Fachkompetenz",
+     "abschnitt": "h2: Balkon- & Terrassensanierung",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "geaendert"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Fachgewerke",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01 Bäder & Wellness",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02 Wohnbereiche & Neubau",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03 Balkon- & Terrassensanierung",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04 Untergrund & DIN 18534 Abdichtung",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "aria:aria-label",
+     "neu": "Fachgewerke",
+     "abschnitt": "h1: Fliesenleger Leistungen & Fachgewerke Wetzlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Merkmale · 6",
+     "neu": "Ausstattungsmerkmale & Vorteile:",
+     "freigabe": [
+      68
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Merkmale · 6",
+     "neu": "Ausstattungsmerkmale & Vorteile:",
+     "freigabe": [
+      68
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Merkmale · 6",
+     "neu": "Ausstattungsmerkmale & Vorteile:",
+     "freigabe": [
+      68
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "geaendert",
+     "typ": "text",
+     "alt": "Merkmale · 6",
+     "neu": "Ausstattungsmerkmale & Vorteile:",
+     "freigabe": [
+      68
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/leistungen/aussen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Direktkontakt",
+     "abschnitt_alt": "h2: Balkon- & Terrassensanierung in Ihrer Region",
+     "abschnitt_neu": "h2: Fachkompetenz & Ausführungsdetails",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "h2",
+     "wert": "Projekt in Balkon- & Terrassensanierung anfragen?",
+     "abschnitt_alt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Fachbetriebsleiter Deniz Tezgel begutachtet Ihren Balkon oder Ihre Terrasse vor Ort: Gefälle, Abdichtungsanschlüsse und Stelzlagersysteme.",
+     "abschnitt_alt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "\"Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.\"",
+     "abschnitt_alt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "06441 / 44 83 567",
+     "abschnitt_alt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "WhatsApp Chat Kostenfreies Aufmaß buchen",
+     "abschnitt_alt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "WhatsApp",
+     "abschnitt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "0172 / 67 28 504",
+     "abschnitt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "info@tezgel.de",
+     "abschnitt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "06441 / 44 83 567",
+     "abschnitt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01",
+     "abschnitt": "h2: Spezialisierungen in Balkon- & Terrassensanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02",
+     "abschnitt": "h2: Spezialisierungen in Balkon- & Terrassensanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03",
+     "abschnitt": "h2: Spezialisierungen in Balkon- & Terrassensanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "E-Mail info@tezgel.de",
+     "abschnitt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01",
+     "abschnitt": "h2: Weitere Gewerke von Fliesenverlegung Tezgel:",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Bäder & Wellness ansehen",
+     "abschnitt": "h3: Bäder & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02",
+     "abschnitt": "h3: Bäder & Wellness",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Wohnbereiche & Neubau ansehen",
+     "abschnitt": "h3: Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04",
+     "abschnitt": "h3: Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Untergrund & DIN 18534 Abdichtung ansehen",
+     "abschnitt": "h3: Untergrund & DIN 18534 Abdichtung",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Telefon",
+     "freigabe": [
+      73
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "E-Mail",
+     "freigabe": [
+      74
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/leistungen/bad": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.region",
+     "wert": "DE-HE",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.placename",
+     "wert": "Aßlar",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:geo.position",
+     "wert": "50.5900;8.4600",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "meta:ICBM",
+     "wert": "50.5900, 8.4600",
+     "abschnitt_alt": "(Anfang)",
+     "abschnitt_neu": "(Anfang)",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Direktkontakt",
+     "abschnitt_alt": "h2: Bäder & Wellness in Ihrer Region",
+     "abschnitt_neu": "h2: Fachkompetenz & Ausführungsdetails",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "h2",
+     "wert": "Projekt in Bäder & Wellness anfragen?",
+     "abschnitt_alt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "abschnitt_neu": "h2: Projekt in Bäder & Wellness anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Fachbetriebsleiter Deniz Tezgel berät Sie zur schlüsselfertigen Badsanierung, Walk-In-Duschen und DIN 18534 Abdichtung persönlich bei Ihnen vor Ort in Aßlar, Wetzlar oder Mittelhessen.",
+     "abschnitt_alt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "abschnitt_neu": "h2: Projekt in Bäder & Wellness anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "\"Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.\"",
+     "abschnitt_alt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "abschnitt_neu": "h2: Projekt in Bäder & Wellness anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "06441 / 44 83 567",
+     "abschnitt_alt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "abschnitt_neu": "h2: Projekt in Bäder & Wellness anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "WhatsApp Chat Kostenfreies Aufmaß buchen",
+     "abschnitt_alt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "abschnitt_neu": "h2: Projekt in Bäder & Wellness anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "WhatsApp",
+     "abschnitt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "0172 / 67 28 504",
+     "abschnitt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "info@tezgel.de",
+     "abschnitt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "06441 / 44 83 567",
+     "abschnitt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01",
+     "abschnitt": "h2: Spezialisierungen in Bäder & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02",
+     "abschnitt": "h2: Spezialisierungen in Bäder & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03",
+     "abschnitt": "h2: Spezialisierungen in Bäder & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04",
+     "abschnitt": "h2: Spezialisierungen in Bäder & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "E-Mail info@tezgel.de",
+     "abschnitt": "h2: Projekt in Bäder & Wellness anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02",
+     "abschnitt": "h2: Weitere Gewerke von Fliesenverlegung Tezgel:",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Wohnbereiche & Neubau ansehen",
+     "abschnitt": "h3: Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03",
+     "abschnitt": "h3: Wohnbereiche & Neubau",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Balkon- & Terrassensanierung ansehen",
+     "abschnitt": "h3: Balkon- & Terrassensanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04",
+     "abschnitt": "h3: Balkon- & Terrassensanierung",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Untergrund & DIN 18534 Abdichtung ansehen",
+     "abschnitt": "h3: Untergrund & DIN 18534 Abdichtung",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Telefon",
+     "freigabe": [
+      73
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "E-Mail",
+     "freigabe": [
+      74
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/leistungen/untergrund": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Direktkontakt",
+     "abschnitt_alt": "h2: Untergrund & DIN 18534 Abdichtung in Ihrer Region",
+     "abschnitt_neu": "h2: Fachkompetenz & Ausführungsdetails",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "h2",
+     "wert": "Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "abschnitt_alt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Fachbetriebsleiter Deniz Tezgel prüft Ihren Estrich und Untergrund persönlich: CM-Restfeuchtemessung, Risssanierung und Entkopplungskonzepte.",
+     "abschnitt_alt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "\"Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.\"",
+     "abschnitt_alt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "06441 / 44 83 567",
+     "abschnitt_alt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "WhatsApp Chat Kostenfreies Aufmaß buchen",
+     "abschnitt_alt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "abschnitt_neu": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "WhatsApp",
+     "abschnitt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "0172 / 67 28 504",
+     "abschnitt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "info@tezgel.de",
+     "abschnitt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "06441 / 44 83 567",
+     "abschnitt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01",
+     "abschnitt": "h2: Spezialisierungen in Untergrund & DIN 18534 Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02",
+     "abschnitt": "h2: Spezialisierungen in Untergrund & DIN 18534 Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03",
+     "abschnitt": "h2: Spezialisierungen in Untergrund & DIN 18534 Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04",
+     "abschnitt": "h2: Spezialisierungen in Untergrund & DIN 18534 Abdichtung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "E-Mail info@tezgel.de",
+     "abschnitt": "h2: Projekt in Untergrund & DIN 18534 Abdichtung anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01",
+     "abschnitt": "h2: Weitere Gewerke von Fliesenverlegung Tezgel:",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Bäder & Wellness ansehen",
+     "abschnitt": "h3: Bäder & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02",
+     "abschnitt": "h3: Bäder & Wellness",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Wohnbereiche & Neubau ansehen",
+     "abschnitt": "h3: Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03",
+     "abschnitt": "h3: Wohnbereiche & Neubau",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Balkon- & Terrassensanierung ansehen",
+     "abschnitt": "h3: Balkon- & Terrassensanierung",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Telefon",
+     "freigabe": [
+      73
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "E-Mail",
+     "freigabe": [
+      74
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/leistungen/wohnen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Direktkontakt",
+     "abschnitt_alt": "h2: Wohnbereiche & Neubau in Ihrer Region",
+     "abschnitt_neu": "h2: Fachkompetenz & Ausführungsdetails",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "h2",
+     "wert": "Projekt in Wohnbereiche & Neubau anfragen?",
+     "abschnitt_alt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "abschnitt_neu": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Fachbetriebsleiter Deniz Tezgel berät Sie persönlich zu Großformaten, Wohnraumfliesen und Fußbodenheizungs-Belegreife direkt in Ihren Räumlichkeiten.",
+     "abschnitt_alt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "abschnitt_neu": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "\"Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.\"",
+     "abschnitt_alt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "abschnitt_neu": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "06441 / 44 83 567",
+     "abschnitt_alt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "abschnitt_neu": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "WhatsApp Chat Kostenfreies Aufmaß buchen",
+     "abschnitt_alt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "abschnitt_neu": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "WhatsApp",
+     "abschnitt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "0172 / 67 28 504",
+     "abschnitt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "info@tezgel.de",
+     "abschnitt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "neu-gegliedert",
+     "typ": "text",
+     "alt": "06441 / 44 83 567",
+     "abschnitt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "grund": "Wortlaut vollständig im neuen Stand enthalten (Block zusammengefasst oder geteilt)",
+     "kontext": "",
+     "art_vorher": "entfernt"
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Fliesenverlegung Wohnbereich & Neubau in Wetzlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Fliesenverlegung Wohnbereich & Neubau in Wetzlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Fliesenverlegung Wohnbereich & Neubau in Wetzlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "=",
+     "abschnitt": "h1: Fliesenverlegung Wohnbereich & Neubau in Wetzlar",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01",
+     "abschnitt": "h2: Spezialisierungen in Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "02",
+     "abschnitt": "h2: Spezialisierungen in Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03",
+     "abschnitt": "h2: Spezialisierungen in Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04",
+     "abschnitt": "h2: Spezialisierungen in Wohnbereiche & Neubau",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "E-Mail info@tezgel.de",
+     "abschnitt": "h2: Projekt in Wohnbereiche & Neubau anfragen?",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "01",
+     "abschnitt": "h2: Weitere Gewerke von Fliesenverlegung Tezgel:",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Bäder & Wellness ansehen",
+     "abschnitt": "h3: Bäder & Wellness",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "03",
+     "abschnitt": "h3: Bäder & Wellness",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Balkon- & Terrassensanierung ansehen",
+     "abschnitt": "h3: Balkon- & Terrassensanierung",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "04",
+     "abschnitt": "h3: Balkon- & Terrassensanierung",
+     "grund": "Dublette eines vorhandenen Eintrags",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "hinzu",
+     "typ": "text",
+     "neu": "Gewerk Untergrund & DIN 18534 Abdichtung ansehen",
+     "abschnitt": "h3: Untergrund & DIN 18534 Abdichtung",
+     "kontext": ""
+    }
+   ],
+   "gruen": [
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "Telefon",
+     "freigabe": [
+      73
+     ],
+     "kontext": ""
+    },
+    {
+     "farbe": "gruen",
+     "art": "entfernt",
+     "typ": "text",
+     "alt": "E-Mail",
+     "freigabe": [
+      74
+     ],
+     "kontext": ""
+    }
+   ]
+  },
+  "/referenzen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/referenzen#bewertungen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  }
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "base": "http://127.0.0.1:4361",
+ "seiten": [
+  "/leistungen",
+  "/leistungen/bad",
+  "/leistungen/wohnen",
+  "/leistungen/aussen",
+  "/leistungen/untergrund",
+  "/blog",
+  "/bad",
+  "/bad/badanfrage",
+  "/bad/projekt-check"
+ ],
+ "breiten": [
+  320,
+  375,
+  768,
+  1024,
+  1440,
+  1920
+ ],
+ "funde": []
+}

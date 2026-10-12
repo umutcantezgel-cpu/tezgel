@@ -1,0 +1,2 @@
+Nachlauf 13-pixel (Orchestrator): pixel.mjs --a 4360 --b 4361 --seiten /standorte/giessen --ansichten m375,d1440 → 2 Vergleiche, abweichend 0; Gegenprobe 4360 gegen 4360 d1440 → 0.
+Die Tor-Abweichung (d1440 285 526 px, ab dem Abschnitt Anfahrt verschoben) war ein Zeitartefakt unter Last (content-visibility im Abschnitt); HTML von /standorte/giessen gleich live.

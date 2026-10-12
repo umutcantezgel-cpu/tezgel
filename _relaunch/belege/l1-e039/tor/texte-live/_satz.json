@@ -1,0 +1,433 @@
+{
+ "satz": "l1-e039-texte-live",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-28ee443/.next/server/app/**/*.html",
+  "build_id": "lrJZEVHHpFlXEqoKA82hE",
+  "dateien": 9,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T11:49:31.067Z",
+ "summe": {
+  "dateien": 9,
+  "im_manifest": 9,
+  "eintraege": 4069,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 30,
+   "ok": 14,
+   "befehle": 9,
+   "fehlend": 0,
+   "ziel_unbekannt": 7,
+   "pflichtanker_ok": "0/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 1.5
+ },
+ "fragmente": {
+  "gesamt": 30,
+  "ok": 14,
+  "befehle": [
+   {
+    "seite": "/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/badanfrage",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad/projekt-check",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/blog",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/aussen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/wohnen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/untergrund",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [
+   {
+    "seite": "/bad",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/blog",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen/aussen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen/bad",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen/wohnen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen/untergrund",
+    "href": "/kontakt#express-anfrage"
+   }
+  ],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 7,
+    "von": [
+     "/bad",
+     "/blog",
+     "/leistungen",
+     "/leistungen/aussen",
+     "/leistungen/bad"
+    ]
+   },
+   {
+    "ziel": "/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad"
+    ]
+   },
+   {
+    "ziel": "/bad/badanfrage",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/badanfrage"
+    ]
+   },
+   {
+    "ziel": "/bad/projekt-check",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad/projekt-check"
+    ]
+   },
+   {
+    "ziel": "/blog",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/blog"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/aussen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/aussen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/wohnen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/wohnen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund"
+    ]
+   },
+   {
+    "ziel": "/leistungen/untergrund",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen/untergrund"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/bad": {
+   "datei": "bad.json",
+   "quelle": "bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 430,
+   "arten": {
+    "meta": 33,
+    "text": 345,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Ihr Traumbad schlüsselfertig in Fachqualität"
+   ],
+   "hash": "fff708369630625f"
+  },
+  "/bad/badanfrage": {
+   "datei": "bad__badanfrage.json",
+   "quelle": "bad/badanfrage.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 359,
+   "arten": {
+    "meta": 33,
+    "text": 286,
+    "aria": 34,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Badsanierung Angebot anfordern bei Tezgel Wetzlar"
+   ],
+   "hash": "1f6ff7bae1b8ac8f"
+  },
+  "/bad/projekt-check": {
+   "datei": "bad__projekt-check.json",
+   "quelle": "bad/projekt-check.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 392,
+   "arten": {
+    "meta": 33,
+    "text": 319,
+    "aria": 34,
+    "alt": 3,
+    "ueberschrift": 3
+   },
+   "h1": [
+    "Bad-Projektcheck: Badsanierung online prüfen bei Tezgel Wetzlar"
+   ],
+   "hash": "50bc3966ead28fda"
+  },
+  "/blog": {
+   "datei": "blog.json",
+   "quelle": "blog.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 439,
+   "arten": {
+    "meta": 33,
+    "text": 350,
+    "aria": 38,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesen-Ratgeber & Badsanierung Tipps"
+   ],
+   "hash": "87f2767d8671c81a"
+  },
+  "/leistungen": {
+   "datei": "leistungen.json",
+   "quelle": "leistungen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 502,
+   "arten": {
+    "meta": 33,
+    "text": 406,
+    "aria": 48,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "hash": "93b30764ff841807"
+  },
+  "/leistungen/aussen": {
+   "datei": "leistungen__aussen.json",
+   "quelle": "leistungen/aussen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 486,
+   "arten": {
+    "meta": 33,
+    "text": 386,
+    "aria": 51,
+    "alt": 3,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "Balkon- & Terrassensanierung in Wetzlar & Mittelhessen"
+   ],
+   "hash": "43cf383f6badf2a1"
+  },
+  "/leistungen/bad": {
+   "datei": "leistungen__bad.json",
+   "quelle": "leistungen/bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 487,
+   "arten": {
+    "meta": 33,
+    "text": 387,
+    "aria": 51,
+    "alt": 3,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar"
+   ],
+   "hash": "4fc689f1797e8ece"
+  },
+  "/leistungen/untergrund": {
+   "datei": "leistungen__untergrund.json",
+   "quelle": "leistungen/untergrund.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 487,
+   "arten": {
+    "meta": 33,
+    "text": 387,
+    "aria": 51,
+    "alt": 3,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar"
+   ],
+   "hash": "d62448abf7672bd0"
+  },
+  "/leistungen/wohnen": {
+   "datei": "leistungen__wohnen.json",
+   "quelle": "leistungen/wohnen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 487,
+   "arten": {
+    "meta": 33,
+    "text": 387,
+    "aria": 51,
+    "alt": 3,
+    "ueberschrift": 13
+   },
+   "h1": [
+    "Fliesenverlegung Wohnbereich & Neubau in Wetzlar"
+   ],
+   "hash": "c70a2a9bb0e7cff9"
+  }
+ }
+}

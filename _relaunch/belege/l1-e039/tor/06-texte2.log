@@ -1,0 +1,17 @@
+{"ergebnis":"ROT","rot":32,"gelb":158,"gruen_freigegeben":5,"seiten_rot":5,"rot_nach_art":{"geaendert":24,"entfernt":8},"gelb_nach_art":{"neu-gegliedert":24,"hinzu":87,"verschoben":19,"umgestellt":24,"pflichtanker-fehlt":4},"seiten_verglichen":9,"zustaende_verglichen":0,"freigabe_zeilen":52,"freigabe_warnungen":0,"laufzeit_s":0.1}
+ROT /blog geaendert text „Untergrund & Abdichtung ·“ → „Untergrund & Abdichtung“
+ROT /blog geaendert text „4 Min. · 24. September 2026“ → „24. September 2026“
+ROT /blog geaendert text „Fliesen & Material ·“ → „Fliesen & Material“
+ROT /blog geaendert text „5 Min. · 24. September 2026“ → „24. September 2026“
+ROT /blog geaendert text „Pflege & Werterhalt ·“ → „Pflege & Werterhalt“
+ROT /blog geaendert text „4 Min. · 24. September 2026“ → „24. September 2026“
+ROT /blog geaendert text „Balkon & Terrasse ·“ → „Balkon & Terrasse“
+ROT /blog geaendert text „4 Min. · 24. September 2026“ → „24. September 2026“
+ROT /blog geaendert text „Bad & Dusche ·“ → „Bad & Dusche“
+ROT /blog geaendert text „4 Min. · 24. September 2026“ → „24. September 2026“
+ROT /blog geaendert text „Bad & Dusche ·“ → „Bad & Dusche“
+ROT /blog geaendert text „4 Min. · 24. September 2026“ → „24. September 2026“
+ROT /blog geaendert text „Pflege & Werterhalt ·“ → „Pflege & Werterhalt“
+ROT /blog geaendert text „5 Min. · 24. September 2026“ → „24. September 2026“
+ROT /blog geaendert text „Fliesen & Material ·“ → „Fliesen & Material“
+→ belege/l1-e039/tor/06-texte2-vergleich.json

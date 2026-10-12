@@ -1,0 +1,441 @@
+
+Running 406 tests using 2 workers
+
+[1A[2K[1/406] [mobil] › tests/funktion-badanfrage.spec.mjs:45:3 › BadanfrageFunnel (/bad/badanfrage) › Schritte vor und zurück: Auswahl und Maße bleiben erhalten, keine Anfrage
+[1A[2K[2/406] [mobil] › tests/funktion-badanfrage.spec.mjs:79:3 › BadanfrageFunnel (/bad/badanfrage) › Pflichtfelder: leerer Name und leere Telefonnummer blockieren den Versand, keine Anfrage
+[1A[2K[3/406] [mobil] › tests/funktion-badanfrage.spec.mjs:89:3 › BadanfrageFunnel (/bad/badanfrage) › Telefonnummer unter 6 Zeichen blockiert den Versand, keine Anfrage
+[1A[2K[4/406] [mobil] › tests/funktion-badanfrage.spec.mjs:100:3 › BadanfrageFunnel (/bad/badanfrage) › ungültige E-Mail-Adresse blockiert den Versand, keine Anfrage
+[1A[2K[5/406] [mobil] › tests/funktion-badanfrage.spec.mjs:112:3 › BadanfrageFunnel (/bad/badanfrage) › Gutfall online: POST /api/anfrage mit inquiryType „bad“ und badDetails, Erfolg mit Referenz
+[1A[2K[6/406] [mobil] › tests/funktion-badanfrage.spec.mjs:169:3 › BadanfrageFunnel (/bad/badanfrage) › Gutfall nur Pflichtangaben: Standardauswahl wird gesendet, optionale Felder fehlen
+[1A[2K[7/406] [mobil] › tests/funktion-badanfrage.spec.mjs:198:5 › BadanfrageFunnel (/bad/badanfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Badanfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[8/406] [mobil] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[9/406] [mobil] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[10/406] [mobil] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[11/406] [mobil] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[12/406] [mobil] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[13/406] [mobil] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[14/406] [mobil] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[15/406] [mobil] › tests/funktion-einwilligung.spec.mjs:139:5 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt
+[1A[2K[16/406] [mobil] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[17/406] [mobil] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[18/406] [mobil] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[19/406] [mobil] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[20/406] [mobil] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[21/406] [mobil] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /standorte: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[22/406] [mobil] › tests/funktion-einwilligung.spec.mjs:195:5 › Karten hinter Einwilligung (F-12) › Erstbesuch (keine Entscheidung) › /kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts
+[1A[2K[23/406] [mobil] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[24/406] [mobil] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[25/406] [mobil] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[26/406] [mobil] › tests/funktion-einwilligung.spec.mjs:218:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[27/406] [mobil] › tests/funktion-einwilligung.spec.mjs:232:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[28/406] [mobil] › tests/funktion-einwilligung.spec.mjs:241:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter
+[1A[2K[29/406] [mobil] › tests/funktion-einwilligung.spec.mjs:272:5 › Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host
+[1A[2K[30/406] [mobil] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[31/406] [mobil] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[32/406] [mobil] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[33/406] [mobil] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /kontakt) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[34/406] [mobil] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[35/406] [mobil] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[36/406] [mobil] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[37/406] [mobil] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[38/406] [mobil] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /kontakt) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[39/406] [mobil] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[40/406] [mobil] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[41/406] [mobil] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[42/406] [mobil] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[43/406] [mobil] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[44/406] [mobil] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[45/406] [mobil] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[46/406] [mobil] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[47/406] [mobil] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[48/406] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /kontakt: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[49/406] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /#express-anfrage: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[50/406] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /leistungen: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[51/406] [mobil] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /foerderung: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[52/406] [mobil] › tests/funktion-hero-kontakt.spec.mjs:13:3 › HeroContactForm (/) › ohne Name/Telefon: Fehlermeldung, keine Anfrage
+[1A[2K[53/406] [mobil] › tests/funktion-hero-kontakt.spec.mjs:25:3 › HeroContactForm (/) › gültig: sendet Anfrage an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)
+[1A[2K[54/406] [mobil] › tests/funktion-hero-kontakt.spec.mjs:37:3 › HeroContactForm (/) › Vorhaben „Balkon & Terrasse“ landet als projectType in der Nutzlast (Attrappe)
+[1A[2K[55/406] [mobil] › tests/funktion-hero-kontakt.spec.mjs:50:5 › HeroContactForm (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[56/406] [mobil] › tests/funktion-konfigurator.spec.mjs:85:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben
+[1A[2K[57/406] [mobil] › tests/funktion-konfigurator.spec.mjs:94:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Fläche ohne gültige Zahl → Hinweis statt Richtwert
+[1A[2K[58/406] [mobil] › tests/funktion-konfigurator.spec.mjs:101:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Treppe mit Stufenmaßen → Treppen-Richtwert (Trittstufen + Setzstufen)
+[1A[2K[59/406] [mobil] › tests/funktion-konfigurator.spec.mjs:111:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Blockstufen → keine m²-Menge im Richtwert
+[1A[2K[60/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 1: 20 m² · Kreuzfuge → ca. 21–22 m² (netto 20 m²)
+[1A[2K[61/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 2: 20 m² · Diagonal → ca. 22–23 m² (netto 20 m²)
+[1A[2K[62/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 3: 20 m² · Noch offen → ca. 21–23 m² (netto 20 m²)
+[1A[2K[63/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²)
+[1A[2K[64/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²)
+[1A[2K[65/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 6: 12 m² · Wilder Verband → ca. 12,6–13,2 m² (netto 12 m²)
+[1A[2K[66/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²)
+[1A[2K[67/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 8: 150 m² · Diagonal → ca. 165–172,5 m² (netto 150 m²)
+[1A[2K[68/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²)
+[1A[2K[69/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²)
+[1A[2K[70/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²)
+[1A[2K[71/406] [mobil] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²)
+[1A[2K[72/406] [mobil] › tests/funktion-konfigurator.spec.mjs:134:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: leere Pflichtfelder blockieren den Versand, keine Anfrage
+[1A[2K[73/406] [mobil] › tests/funktion-konfigurator.spec.mjs:145:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: Telefonnummer unter 6 Zeichen blockiert den Versand
+[1A[2K[74/406] [mobil] › tests/funktion-konfigurator.spec.mjs:155:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: ohne Einwilligung blockiert der Versand, keine Anfrage
+[1A[2K[75/406] [mobil] › tests/funktion-konfigurator.spec.mjs:163:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz
+[1A[2K[76/406] [mobil] › tests/funktion-konfigurator.spec.mjs:196:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage
+[1A[2K[77/406] [mobil] › tests/funktion-konfigurator.spec.mjs:210:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall nur Treppe: Versand als POST „fliesen“ mit Bereich „treppe“
+[1A[2K[78/406] [mobil] › tests/funktion-konfigurator.spec.mjs:223:8 › FliesenKonfigurator (/fliesen/konfigurator) › Fußbodenheizung „Weiß nicht“ wird im Versand nicht als „Nein“ gemeldet
+[1A[2K[79/406] [mobil] › tests/funktion-konfigurator.spec.mjs:238:8 › FliesenKonfigurator (/fliesen/konfigurator) › Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast
+[1A[2K[80/406] [mobil] › tests/funktion-konfigurator.spec.mjs:255:5 › FliesenKonfigurator (/fliesen/konfigurator) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt die Konfiguration an und vergibt echte Referenz
+[1A[2K[81/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[82/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[83/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[84/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[85/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[86/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[87/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[88/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[89/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[90/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[91/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:133:3 › F-10 WhatsApp-Links und Widget › Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer
+[1A[2K[92/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[93/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[94/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[95/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /kontakt: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[96/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[97/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /bad: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[98/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:163:3 › F-15 Telefon und E-Mail › /bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt
+[1A[2K[99/406] [mobil] › tests/funktion-kontaktwege.spec.mjs:175:3 › F-15 Telefon und E-Mail › Mobil-Leiste: Anrufen zeigt auf die Festnetznummer
+[1A[2K[100/406] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[101/406] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[102/406] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[103/406] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[104/406] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[105/406] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[106/406] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[107/406] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[108/406] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[109/406] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[110/406] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[111/406] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[112/406] [mobil] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[113/406] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[114/406] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[115/406] [mobil] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[116/406] [mobil] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[117/406] [mobil] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[118/406] [mobil] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[119/406] [mobil] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[120/406] [mobil] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[121/406] [mobil] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[122/406] [mobil] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[123/406] [mobil] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[124/406] [mobil] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[125/406] [mobil] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[126/406] [mobil] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[127/406] [mobil] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[128/406] [mobil] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[129/406] [mobil] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[130/406] [mobil] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K[131/406] [mobil] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/preise) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[132/406] [mobil] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/preise) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[133/406] [mobil] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/preise) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[134/406] [mobil] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/preise) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[135/406] [mobil] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/preise) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[136/406] [mobil] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/preise) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[137/406] [mobil] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/preise) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[138/406] [mobil] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/preise) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[139/406] [mobil] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[140/406] [mobil] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[141/406] [mobil] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[142/406] [mobil] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[143/406] [mobil] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[144/406] [mobil] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[145/406] [mobil] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[146/406] [mobil] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[147/406] [mobil] › tests/funktion-preisrechner.spec.mjs:174:3 › PricingCalculator (/faq) › Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)
+[1A[2K[148/406] [mobil] › tests/funktion-projektcheck.spec.mjs:75:3 › BadProjektCheck (/bad/projekt-check) › ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp
+[1A[2K[149/406] [mobil] › tests/funktion-projektcheck.spec.mjs:90:3 › BadProjektCheck (/bad/projekt-check) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[150/406] [mobil] › tests/funktion-projektcheck.spec.mjs:103:3 › BadProjektCheck (/bad/projekt-check) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[151/406] [mobil] › tests/funktion-projektcheck.spec.mjs:117:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt
+[1A[2K[152/406] [mobil] › tests/funktion-projektcheck.spec.mjs:147:5 › BadProjektCheck (/bad/projekt-check) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[153/406] [mobil] › tests/funktion-projektcheck.spec.mjs:164:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz
+[1A[2K[154/406] [mobil] › tests/funktion-projektcheck.spec.mjs:192:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route
+[1A[2K[155/406] [mobil] › tests/funktion-projektcheck.spec.mjs:164:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz
+[1A[2K[156/406] [mobil] › tests/funktion-projektcheck.spec.mjs:192:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route
+[1A[2K[157/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:40:5 › LeadQuickForm (/standorte/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage
+[1A[2K[158/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:57:5 › LeadQuickForm (/standorte/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage
+[1A[2K[159/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:48:5 › LeadQuickForm (/standorte/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage
+[1A[2K[160/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:67:5 › LeadQuickForm (/standorte/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)
+[1A[2K[161/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:91:5 › LeadQuickForm (/standorte/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus
+[1A[2K[162/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:40:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage
+[1A[2K[163/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:48:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage
+[1A[2K[164/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:57:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage
+[1A[2K[165/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:67:5 › LeadQuickForm (/leistungen/bad/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)
+[1A[2K[166/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:91:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus
+[1A[2K[167/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:111:3 › LeadQuickForm (/standorte/wetzlar) · Sonderfälle › nur Pflichtfelder: optionale Angaben fehlen in der Nutzlast, Erfolg mit Referenz
+[1A[2K[168/406] [mobil] › tests/funktion-schnellanfrage.spec.mjs:131:5 › LeadQuickForm (/standorte/wetzlar) · Sonderfälle › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[169/406] [mobil] › tests/funktion-termin.spec.mjs:59:5 › BookingCalendar (F-07) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[170/406] [mobil] › tests/funktion-termin.spec.mjs:71:5 › BookingCalendar (F-07) auf /termin › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage
+[1A[2K[171/406] [mobil] › tests/funktion-termin.spec.mjs:82:5 › BookingCalendar (F-07) auf /termin › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage
+[1A[2K[172/406] [mobil] › tests/funktion-termin.spec.mjs:95:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz
+[1A[2K[173/406] [mobil] › tests/funktion-termin.spec.mjs:59:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[174/406] [mobil] › tests/funktion-termin.spec.mjs:71:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage
+[1A[2K[175/406] [mobil] › tests/funktion-termin.spec.mjs:82:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage
+[1A[2K[176/406] [mobil] › tests/funktion-termin.spec.mjs:95:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz
+[1A[2K[177/406] [mobil] › tests/funktion-termin.spec.mjs:135:3 › Termin-Formular (F-08) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[178/406] [mobil] › tests/funktion-termin.spec.mjs:145:3 › Termin-Formular (F-08) auf /termin › Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage
+[1A[2K[179/406] [mobil] › tests/funktion-termin.spec.mjs:157:3 › Termin-Formular (F-08) auf /termin › ohne Einwilligung: blockiert, keine Anfrage
+[1A[2K[180/406] [mobil] › tests/funktion-termin.spec.mjs:168:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz
+[1A[2K[181/406] [mobil] › tests/funktion-termin.spec.mjs:197:5 › Termin-Formular (F-08) auf /termin › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Termin-Formular an und vergibt echte Referenz
+[1A[2K[182/406] [mobil] › tests/funktion-tracking.spec.mjs:58:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (1) ohne Entscheidung: nach Laden und Scrollen keine Anfrage an GA4-Hosts
+[1A[2K[183/406] [mobil] › tests/funktion-tracking.spec.mjs:67:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (2) „Alle ablehnen“: auch nach Neuladen und Seitenwechsel keine Anfrage an GA4-Hosts
+[1A[2K[184/406] [mobil] › tests/funktion-tracking.spec.mjs:88:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (3) „Alle akzeptieren“: ab dem nächsten Seitenaufruf Anfrage an gtag/js?id=G-TEST000000 (Sperre antwortet mit 204)
+[1A[2K[185/406] [mobil] › tests/funktion-tracking.spec.mjs:104:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Widerruf (Zustimmung vorhanden) › (4) „Cookie-Einstellungen verwalten“ → „Alle ablehnen“: nach Neuladen keine neue Anfrage an GA4-Hosts
+[1A[2K[186/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[187/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /termin: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[188/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /kontakt: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[189/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /bad: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[190/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /leistungen: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[191/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /standorte: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[192/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /blog: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[193/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /ueber-uns: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[194/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[195/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /termin: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[196/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /kontakt: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[197/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /bad: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[198/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /leistungen: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[199/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /standorte: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[200/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /blog: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[201/406] [mobil] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /ueber-uns: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[202/406] [mobil] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /bad/budgetkalkulator → /bad/projekt-check: 308 und Ziel 200
+[1A[2K[203/406] [mobil] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /blog/barrierefreies-bad-planung-zuschuesse → /bad/barrierefreies-bad: 308 und Ziel 200
+[1A[2K[204/406] [desktop] › tests/funktion-badanfrage.spec.mjs:45:3 › BadanfrageFunnel (/bad/badanfrage) › Schritte vor und zurück: Auswahl und Maße bleiben erhalten, keine Anfrage
+[1A[2K[205/406] [desktop] › tests/funktion-badanfrage.spec.mjs:79:3 › BadanfrageFunnel (/bad/badanfrage) › Pflichtfelder: leerer Name und leere Telefonnummer blockieren den Versand, keine Anfrage
+[1A[2K[206/406] [desktop] › tests/funktion-badanfrage.spec.mjs:89:3 › BadanfrageFunnel (/bad/badanfrage) › Telefonnummer unter 6 Zeichen blockiert den Versand, keine Anfrage
+[1A[2K[207/406] [desktop] › tests/funktion-badanfrage.spec.mjs:100:3 › BadanfrageFunnel (/bad/badanfrage) › ungültige E-Mail-Adresse blockiert den Versand, keine Anfrage
+[1A[2K[208/406] [desktop] › tests/funktion-badanfrage.spec.mjs:112:3 › BadanfrageFunnel (/bad/badanfrage) › Gutfall online: POST /api/anfrage mit inquiryType „bad“ und badDetails, Erfolg mit Referenz
+[1A[2K[209/406] [desktop] › tests/funktion-badanfrage.spec.mjs:169:3 › BadanfrageFunnel (/bad/badanfrage) › Gutfall nur Pflichtangaben: Standardauswahl wird gesendet, optionale Felder fehlen
+[1A[2K[210/406] [desktop] › tests/funktion-badanfrage.spec.mjs:198:5 › BadanfrageFunnel (/bad/badanfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Badanfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[211/406] [desktop] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[212/406] [desktop] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[213/406] [desktop] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[214/406] [desktop] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[215/406] [desktop] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[216/406] [desktop] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[217/406] [desktop] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[218/406] [desktop] › tests/funktion-einwilligung.spec.mjs:139:5 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt
+[1A[2K[219/406] [desktop] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[220/406] [desktop] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[221/406] [desktop] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[222/406] [desktop] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[223/406] [desktop] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[224/406] [desktop] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /standorte: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[225/406] [desktop] › tests/funktion-einwilligung.spec.mjs:195:5 › Karten hinter Einwilligung (F-12) › Erstbesuch (keine Entscheidung) › /kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts
+[1A[2K[226/406] [desktop] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[227/406] [desktop] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[228/406] [desktop] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[229/406] [desktop] › tests/funktion-einwilligung.spec.mjs:218:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[230/406] [desktop] › tests/funktion-einwilligung.spec.mjs:232:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[231/406] [desktop] › tests/funktion-einwilligung.spec.mjs:241:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter
+[1A[2K[232/406] [desktop] › tests/funktion-einwilligung.spec.mjs:272:5 › Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host
+[1A[2K[233/406] [desktop] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[234/406] [desktop] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[235/406] [desktop] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[236/406] [desktop] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /kontakt) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[237/406] [desktop] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[238/406] [desktop] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[239/406] [desktop] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /kontakt) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[240/406] [desktop] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /kontakt) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[241/406] [desktop] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /kontakt) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[242/406] [desktop] › tests/funktion-express-funnel.spec.mjs:62:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Schritte vor und zurück: Auswahl bleibt erhalten, „Ändern“ führt zu Schritt 2
+[1A[2K[243/406] [desktop] › tests/funktion-express-funnel.spec.mjs:88:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Kontaktschritt ohne Name und Telefon: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[244/406] [desktop] › tests/funktion-express-funnel.spec.mjs:100:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[245/406] [desktop] › tests/funktion-express-funnel.spec.mjs:111:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[246/406] [desktop] › tests/funktion-express-funnel.spec.mjs:123:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp ohne Name und Telefon: Hinweis statt Öffnen, kein WhatsApp-Aufruf
+[1A[2K[247/406] [desktop] › tests/funktion-express-funnel.spec.mjs:134:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Gutfall mit allen Angaben: Projekt, Fläche, Zeitraum, Ort, Kontakt und Notiz landen in der Nutzlast
+[1A[2K[248/406] [desktop] › tests/funktion-express-funnel.spec.mjs:159:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › WhatsApp-Alternative mit gültigen Angaben: Ziel mit vorbelegtem Text, Zustand „WhatsApp geöffnet“, kein Versand
+[1A[2K[249/406] [desktop] › tests/funktion-express-funnel.spec.mjs:183:5 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › Serverfehler: Fehlermeldung mit WhatsApp-Alternative, Eingaben bleiben erhalten, kein Erfolg
+[1A[2K[250/406] [desktop] › tests/funktion-express-funnel.spec.mjs:203:7 › TezgelAnfrageFunnel (F-03, /#express-anfrage) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Anfrage an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[251/406] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /kontakt: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[252/406] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /#express-anfrage: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[253/406] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /leistungen: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[254/406] [desktop] › tests/funktion-express-funnel.spec.mjs:220:5 › TezgelAnfrageFunnel (F-03, Gutfall je Ort) › Gutfall auf /foerderung: POST general mit Standardauswahl, Erfolg mit Referenz
+[1A[2K[255/406] [desktop] › tests/funktion-hero-kontakt.spec.mjs:13:3 › HeroContactForm (/) › ohne Name/Telefon: Fehlermeldung, keine Anfrage
+[1A[2K[256/406] [desktop] › tests/funktion-hero-kontakt.spec.mjs:25:3 › HeroContactForm (/) › gültig: sendet Anfrage an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)
+[1A[2K[257/406] [desktop] › tests/funktion-hero-kontakt.spec.mjs:37:3 › HeroContactForm (/) › Vorhaben „Balkon & Terrasse“ landet als projectType in der Nutzlast (Attrappe)
+[1A[2K[258/406] [desktop] › tests/funktion-hero-kontakt.spec.mjs:50:5 › HeroContactForm (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[259/406] [desktop] › tests/funktion-konfigurator.spec.mjs:85:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 1: „Weiter“ ist ohne Bereich gesperrt, mit Bereich freigegeben
+[1A[2K[260/406] [desktop] › tests/funktion-konfigurator.spec.mjs:94:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Fläche ohne gültige Zahl → Hinweis statt Richtwert
+[1A[2K[261/406] [desktop] › tests/funktion-konfigurator.spec.mjs:101:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Treppe mit Stufenmaßen → Treppen-Richtwert (Trittstufen + Setzstufen)
+[1A[2K[262/406] [desktop] › tests/funktion-konfigurator.spec.mjs:111:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 3: Blockstufen → keine m²-Menge im Richtwert
+[1A[2K[263/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 1: 20 m² · Kreuzfuge → ca. 21–22 m² (netto 20 m²)
+[1A[2K[264/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 2: 20 m² · Diagonal → ca. 22–23 m² (netto 20 m²)
+[1A[2K[265/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 3: 20 m² · Noch offen → ca. 21–23 m² (netto 20 m²)
+[1A[2K[266/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 4: 24,5 m² · Fischgrät → ca. 27–28,2 m² (netto 24,5 m²)
+[1A[2K[267/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 5: 24,5 m² · Halb- / Drittelverband → ca. 25,7–27 m² (netto 24,5 m²)
+[1A[2K[268/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 6: 12 m² · Wilder Verband → ca. 12,6–13,2 m² (netto 12 m²)
+[1A[2K[269/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 7: 3 m² · Kreuzfuge → ca. 3,2–3,3 m² (netto 3 m²)
+[1A[2K[270/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 8: 150 m² · Diagonal → ca. 165–172,5 m² (netto 150 m²)
+[1A[2K[271/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 9: 1234,5 m² · Noch offen → ca. 1.296,2–1.419,7 m² (netto 1.234,5 m²)
+[1A[2K[272/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 10: 33,3 m² · Wilder Verband → ca. 35–36,6 m² (netto 33,3 m²)
+[1A[2K[273/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 11: 75 m² · Halb- / Drittelverband → ca. 78,8–82,5 m² (netto 75 m²)
+[1A[2K[274/406] [desktop] › tests/funktion-konfigurator.spec.mjs:124:5 › FliesenKonfigurator (/fliesen/konfigurator) › Rechner 12: 7,5 m² · Fischgrät → ca. 8,3–8,6 m² (netto 7,5 m²)
+[1A[2K[275/406] [desktop] › tests/funktion-konfigurator.spec.mjs:134:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: leere Pflichtfelder blockieren den Versand, keine Anfrage
+[1A[2K[276/406] [desktop] › tests/funktion-konfigurator.spec.mjs:145:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: Telefonnummer unter 6 Zeichen blockiert den Versand
+[1A[2K[277/406] [desktop] › tests/funktion-konfigurator.spec.mjs:155:3 › FliesenKonfigurator (/fliesen/konfigurator) › Schritt 4: ohne Einwilligung blockiert der Versand, keine Anfrage
+[1A[2K[278/406] [desktop] › tests/funktion-konfigurator.spec.mjs:163:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall online: POST /api/anfrage mit inquiryType „fliesen“, Richtwert-Eingaben und Erfolg mit Referenz
+[1A[2K[279/406] [desktop] › tests/funktion-konfigurator.spec.mjs:196:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall WhatsApp: vorbereitete Nachricht enthält den Richtwert, kein Versand an /api/anfrage
+[1A[2K[280/406] [desktop] › tests/funktion-konfigurator.spec.mjs:210:3 › FliesenKonfigurator (/fliesen/konfigurator) › Gutfall nur Treppe: Versand als POST „fliesen“ mit Bereich „treppe“
+[1A[2K[281/406] [desktop] › tests/funktion-konfigurator.spec.mjs:223:8 › FliesenKonfigurator (/fliesen/konfigurator) › Fußbodenheizung „Weiß nicht“ wird im Versand nicht als „Nein“ gemeldet
+[1A[2K[282/406] [desktop] › tests/funktion-konfigurator.spec.mjs:238:8 › FliesenKonfigurator (/fliesen/konfigurator) › Nur Treppe: keine erfundene Fläche (Vorgabe 20 m²) in der Nutzlast
+[1A[2K[283/406] [desktop] › tests/funktion-konfigurator.spec.mjs:255:5 › FliesenKonfigurator (/fliesen/konfigurator) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt die Konfiguration an und vergibt echte Referenz
+[1A[2K[284/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[285/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[286/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[287/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[288/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[289/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[290/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[291/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[292/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[293/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[294/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:133:3 › F-10 WhatsApp-Links und Widget › Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer
+[1A[2K[295/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[296/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[297/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[298/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /kontakt: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[299/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[300/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /bad: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[301/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:163:3 › F-15 Telefon und E-Mail › /bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt
+[1A[2K[302/406] [desktop] › tests/funktion-kontaktwege.spec.mjs:175:3 › F-15 Telefon und E-Mail › Mobil-Leiste: Anrufen zeigt auf die Festnetznummer
+[1A[2K[303/406] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[304/406] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[305/406] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[306/406] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[307/406] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[308/406] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[309/406] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[310/406] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[311/406] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[312/406] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[313/406] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K  1) [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  getByRole('navigation', { name: 'Hauptnavigation', exact: true }).getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ })
+    Expected: [32m"[7mtru[27me"[39m
+    Received: [31m"[7mfals[27me"[39m
+    Timeout:  10000ms
+
+    Call log:
+    [2m  - Expect "toHaveAttribute" with timeout 10000ms[22m
+    [2m  - waiting for getByRole('navigation', { name: 'Hauptnavigation', exact: true }).getByRole('button', { name: /^Untermenü Badsanierung (öffnen|schließen)$/ })[22m
+    [2m    13 × locator resolved to <button type="button" aria-expanded="false" data-motion="zustand" aria-controls="mega-0" aria-label="Untermenü Badsanierung öffnen" class="flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease-setzen hover:text-tinte">…</button>[22m
+    [2m       - unexpected value "false"[22m
+
+
+      84 |       await schalter.focus();
+      85 |       await page.keyboard.press('Enter');
+    > 86 |       await expect(schalter).toHaveAttribute('aria-expanded', 'true');
+         |                              ^
+      87 |       await expect(nav.getByRole('link', { name: /^Badsanierung komplett/ })).toBeVisible();
+      88 |       await page.keyboard.press('Escape');
+      89 |       await expect(schalter).toHaveAttribute('aria-expanded', 'false');
+        at /home/user/tezgel/_relaunch/werkzeuge/tests/funktion-navigation.spec.mjs:86:30
+
+    Error Context: ../../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/tor-l1-e039-pw/funktion-navigation-Mega-M-c66a9-ßt-Fokus-bleibt-am-Schalter-desktop/error-context.md
+
+
+[1A[2K[314/406] [desktop] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[315/406] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[316/406] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[317/406] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[318/406] [desktop] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[319/406] [desktop] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[320/406] [desktop] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[321/406] [desktop] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[322/406] [desktop] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[323/406] [desktop] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[324/406] [desktop] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[325/406] [desktop] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[326/406] [desktop] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[327/406] [desktop] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[328/406] [desktop] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[329/406] [desktop] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[330/406] [desktop] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[331/406] [desktop] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[332/406] [desktop] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[333/406] [desktop] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K[334/406] [desktop] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/preise) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[335/406] [desktop] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/preise) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[336/406] [desktop] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/preise) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[337/406] [desktop] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/preise) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[338/406] [desktop] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/preise) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[339/406] [desktop] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/preise) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[340/406] [desktop] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/preise) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[341/406] [desktop] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/preise) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[342/406] [desktop] › tests/funktion-preisrechner.spec.mjs:52:5 › PricingCalculator (/) › ohne Name: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[343/406] [desktop] › tests/funktion-preisrechner.spec.mjs:62:5 › PricingCalculator (/) › ohne Telefonnummer: Pflichtfeld blockiert, keine Anfrage
+[1A[2K[344/406] [desktop] › tests/funktion-preisrechner.spec.mjs:72:5 › PricingCalculator (/) › Name nur aus Leerzeichen: eigene Fehlermeldung, keine Anfrage
+[1A[2K[345/406] [desktop] › tests/funktion-preisrechner.spec.mjs:81:5 › PricingCalculator (/) › Einwilligung startet leer (E-014): ohne eigenen Haken Fehlermeldung, keine Anfrage
+[1A[2K[346/406] [desktop] › tests/funktion-preisrechner.spec.mjs:90:5 › PricingCalculator (/) › ohne Einwilligung abgewählt: Fehlermeldung, keine Anfrage
+[1A[2K[347/406] [desktop] › tests/funktion-preisrechner.spec.mjs:99:5 › PricingCalculator (/) › Vorauswahl Bad: sendet inquiryType "bad" mit Projektdetails in notes, Erfolg mit Referenz (Attrappe)
+[1A[2K[348/406] [desktop] › tests/funktion-preisrechner.spec.mjs:122:5 › PricingCalculator (/) › anderes Gewerk mit Fläche, Zeitraum, Vorarbeiten und Freitext: inquiryType "general", Details in notes, Erfolg
+[1A[2K[349/406] [desktop] › tests/funktion-preisrechner.spec.mjs:153:7 › PricingCalculator (/) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[350/406] [desktop] › tests/funktion-preisrechner.spec.mjs:174:3 › PricingCalculator (/faq) › Gutfall: Anfrage wird gesendet und mit Referenz bestätigt (Attrappe)
+[1A[2K[351/406] [desktop] › tests/funktion-projektcheck.spec.mjs:75:3 › BadProjektCheck (/bad/projekt-check) › ohne Name und Telefon: Online- und WhatsApp-Weg blockiert, keine Anfrage, kein WhatsApp
+[1A[2K[352/406] [desktop] › tests/funktion-projektcheck.spec.mjs:90:3 › BadProjektCheck (/bad/projekt-check) › Telefonnummer unter 6 Zeichen: Versand blockiert, keine Anfrage
+[1A[2K[353/406] [desktop] › tests/funktion-projektcheck.spec.mjs:103:3 › BadProjektCheck (/bad/projekt-check) › ungültige E-Mail-Adresse: Versand blockiert, keine Anfrage
+[1A[2K[354/406] [desktop] › tests/funktion-projektcheck.spec.mjs:117:3 › BadProjektCheck (/bad/projekt-check) › nur Pflichtangaben: Standardauswahl wird ohne E-Mail gesendet, keine Bestätigungs-E-Mail angekündigt
+[1A[2K[355/406] [desktop] › tests/funktion-projektcheck.spec.mjs:147:5 › BadProjektCheck (/bad/projekt-check) › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Projektcheck an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[356/406] [desktop] › tests/funktion-projektcheck.spec.mjs:164:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz
+[1A[2K[357/406] [desktop] › tests/funktion-projektcheck.spec.mjs:192:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad/projekt-check: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route
+[1A[2K[358/406] [desktop] › tests/funktion-projektcheck.spec.mjs:164:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: Auswahl und Kontakt gehen als POST /api/anfrage (projekt_check, projektCheckDetails), Erfolg mit Referenz
+[1A[2K[359/406] [desktop] › tests/funktion-projektcheck.spec.mjs:192:5 › BadProjektCheck · Gutfall und WhatsApp auf beiden Seiten › /bad: WhatsApp-Knopf öffnet WhatsApp mit den Projektdaten, sendet keine Anfrage an die Route
+[1A[2K[360/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:40:5 › LeadQuickForm (/standorte/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage
+[1A[2K[361/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:48:5 › LeadQuickForm (/standorte/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage
+[1A[2K[362/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:57:5 › LeadQuickForm (/standorte/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage
+[1A[2K[363/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:67:5 › LeadQuickForm (/standorte/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)
+[1A[2K[364/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:91:5 › LeadQuickForm (/standorte/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus
+[1A[2K[365/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:40:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Name und Telefon leer: Versand blockiert, keine Anfrage
+[1A[2K[366/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:48:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Einwilligung fehlt: Versand blockiert, keine Anfrage
+[1A[2K[367/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:57:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Name nur aus Leerzeichen: eigene Meldung, keine Anfrage
+[1A[2K[368/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:67:5 › LeadQuickForm (/leistungen/bad/wetzlar) › vollständig: sendet Nutzlast an /api/anfrage und zeigt Erfolg mit Referenz (Attrappe)
+[1A[2K[369/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:91:5 › LeadQuickForm (/leistungen/bad/wetzlar) › Honeypot gefüllt: Erfolg wird vorgetäuscht, aber keine Anfrage geht raus
+[1A[2K[370/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:111:3 › LeadQuickForm (/standorte/wetzlar) · Sonderfälle › nur Pflichtfelder: optionale Angaben fehlen in der Nutzlast, Erfolg mit Referenz
+[1A[2K[371/406] [desktop] › tests/funktion-schnellanfrage.spec.mjs:131:5 › LeadQuickForm (/standorte/wetzlar) · Sonderfälle › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt an und vergibt echte Referenz (kein Bot-/Spam-Ignorieren)
+[1A[2K[372/406] [desktop] › tests/funktion-termin.spec.mjs:59:5 › BookingCalendar (F-07) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[373/406] [desktop] › tests/funktion-termin.spec.mjs:71:5 › BookingCalendar (F-07) auf /termin › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage
+[1A[2K[374/406] [desktop] › tests/funktion-termin.spec.mjs:82:5 › BookingCalendar (F-07) auf /termin › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage
+[1A[2K[375/406] [desktop] › tests/funktion-termin.spec.mjs:95:5 › BookingCalendar (F-07) auf /termin › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz
+[1A[2K[376/406] [desktop] › tests/funktion-termin.spec.mjs:59:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[377/406] [desktop] › tests/funktion-termin.spec.mjs:71:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › nur Leerzeichen als Name: Fehlermeldung, keine Anfrage
+[1A[2K[378/406] [desktop] › tests/funktion-termin.spec.mjs:82:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › ohne Einwilligung: Anfrage wird blockiert, keine Anfrage
+[1A[2K[379/406] [desktop] › tests/funktion-termin.spec.mjs:95:5 › BookingCalendar (F-07) auf /kontakt#termin-buchen › gültig: gewählter Tag und Slot gehen als termin-Anfrage raus, Erfolg mit Referenz
+[1A[2K[380/406] [desktop] › tests/funktion-termin.spec.mjs:135:3 › Termin-Formular (F-08) auf /termin › ohne Name, Telefon und Einwilligung: Pflichtfelder blockieren, keine Anfrage
+[1A[2K[381/406] [desktop] › tests/funktion-termin.spec.mjs:145:3 › Termin-Formular (F-08) auf /termin › Telefonnummer unter 6 Zeichen: blockiert, keine Anfrage
+[1A[2K[382/406] [desktop] › tests/funktion-termin.spec.mjs:157:3 › Termin-Formular (F-08) auf /termin › ohne Einwilligung: blockiert, keine Anfrage
+[1A[2K[383/406] [desktop] › tests/funktion-termin.spec.mjs:168:3 › Termin-Formular (F-08) auf /termin › gültig: Termin-Anfrage mit terminDetails geht raus, Erfolg mit Referenz
+[1A[2K[384/406] [desktop] › tests/funktion-termin.spec.mjs:197:5 › Termin-Formular (F-08) auf /termin › echte Route (Mock-Modus ohne Resend-Schlüssel) › Server nimmt Termin-Formular an und vergibt echte Referenz
+[1A[2K[385/406] [desktop] › tests/funktion-tracking.spec.mjs:58:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (1) ohne Entscheidung: nach Laden und Scrollen keine Anfrage an GA4-Hosts
+[1A[2K[386/406] [desktop] › tests/funktion-tracking.spec.mjs:67:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (2) „Alle ablehnen“: auch nach Neuladen und Seitenwechsel keine Anfrage an GA4-Hosts
+[1A[2K[387/406] [desktop] › tests/funktion-tracking.spec.mjs:88:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (3) „Alle akzeptieren“: ab dem nächsten Seitenaufruf Anfrage an gtag/js?id=G-TEST000000 (Sperre antwortet mit 204)
+[1A[2K[388/406] [desktop] › tests/funktion-tracking.spec.mjs:104:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Widerruf (Zustimmung vorhanden) › (4) „Cookie-Einstellungen verwalten“ → „Alle ablehnen“: nach Neuladen keine neue Anfrage an GA4-Hosts
+[1A[2K[389/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[390/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /termin: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[391/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /kontakt: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[392/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /bad: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[393/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /leistungen: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[394/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /standorte: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[395/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /blog: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[396/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +1 Tage › /ueber-uns: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[397/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[398/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /termin: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[399/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /kontakt: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[400/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /bad: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[401/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /leistungen: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[402/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /standorte: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[403/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /blog: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[404/406] [desktop] › tests/funktion-uhr.spec.mjs:16:7 › Browseruhr +30 Tage › /ueber-uns: keine Seitenfehler und keine Konsolenfehler (React #418)
+[1A[2K[405/406] [desktop] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /bad/budgetkalkulator → /bad/projekt-check: 308 und Ziel 200
+[1A[2K[406/406] [desktop] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /blog/barrierefreies-bad-planung-zuschuesse → /bad/barrierefreies-bad: 308 und Ziel 200
+[1A[2K  1 failed
+    [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter 
+  26 skipped
+  379 passed (7.1m)

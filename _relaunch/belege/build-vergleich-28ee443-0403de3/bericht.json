@@ -1,0 +1,266 @@
+{
+ "vorher": "28ee443",
+ "nachher": "0403de3",
+ "laufzeit_reste": {
+  "vorher": [],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 26,
+ "abweichungen": [
+  {
+   "datei": "bad/bad-aus-einer-hand.html",
+   "ab": 120872,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/badanfrage.html",
+   "ab": 104676,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/badplaner.html",
+   "ab": 105920,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/badsanierung.html",
+   "ab": 123967,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/barrierefreies-bad.html",
+   "ab": 113682,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/fliesen.html",
+   "ab": 116454,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-15_9.html",
+   "ab": 119314,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-4_6.html",
+   "ab": 118475,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-7.html",
+   "ab": 118314,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/basic-bad-8_2.html",
+   "ab": 118305,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-15_9.html",
+   "ab": 116591,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-4_6.html",
+   "ab": 117732,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-7.html",
+   "ab": 117260,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/luxus-bad-8_2.html",
+   "ab": 116658,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-15_9.html",
+   "ab": 120443,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-4_6.html",
+   "ab": 118082,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-7.html",
+   "ab": 116421,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/musterbaeder/premium-bad-8_2.html",
+   "ab": 117219,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\" data-baustein=\"badanfrage\"><div class=\"border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12\"><div class=\"mb"
+  },
+  {
+   "datei": "bad/projekt-check.html",
+   "ab": 76599,
+   "vorher": "der-fuge bg-fliese\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 spaet-zeichnen\"><div class=\"\"><div class=\"grid gap-y-12 lg:grid-cols-12 lg:gap-x-12\"><div class=\"min-w-0 lg:col-span-8\"",
+   "nachher": "der-fuge bg-fliese\"><div class=\"mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12\"><div class=\"\"><div class=\"@container border border-strich bg-fliese\"><div class=\"border-b border-fuge p-6 @lg:p-8 @5xl"
+  },
+  {
+   "datei": "bad.html",
+   "ab": 131863,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-12\"><div class=\"border-b border-fuge pb-6\"><div class=\"flex flex-wrap ite",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container border border-strich bg-fliese\"><div class=\"border-b border-fuge p-6 @lg:p-8 @5xl:p-12\"><div class=\"flex flex"
+  },
+  {
+   "datei": "blog.html",
+   "ab": 75907,
+   "vorher": "liesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesenverlegung und DIN 18534 Verbundabdichtung – von Ihrem Fachbetrieb <!-- -->Fliesenverlegung Tezgel<!-- --> aus <!-- -->Aßlar<!-- -->.</",
+   "nachher": "liesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesenverlegung und <span class=\"whitespace-nowrap font-mono text-fs-2 sm:text-fs-3\">DIN 18534</span> Verbundabdichtung – von Ihrem Fachbetr"
+  },
+  {
+   "datei": "leistungen/aussen.html",
+   "ab": 77973,
+   "vorher": "-center gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><a class=\"text-tinte underline decoration-strich underline-offset-4 hover:decoration-tinte inline-flex min-h-11 items-cente",
+   "nachher": "-center gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><a data-motion=\"zustand\" class=\"group mr-4 inline-flex min-h-11 items-center gap-2 text-tinte\" href=\"/leistungen\"><svg clas"
+  },
+  {
+   "datei": "leistungen/bad.html",
+   "ab": 718,
+   "vorher": "me=\"theme-color\" content=\"#F5F4F0\"/><meta name=\"color-scheme\" content=\"light\"/><title>Badsanierung &amp; Komplettbäder Wetzlar | Tezgel</title><meta name=\"description\" content=\"Barrierefreie Walk-In-D",
+   "nachher": "me=\"theme-color\" content=\"#F5F4F0\"/><meta name=\"color-scheme\" content=\"light\"/><meta name=\"geo.region\" content=\"DE-HE\"/><meta name=\"geo.placename\" content=\"Aßlar\"/><meta name=\"geo.position\" content=\"5"
+  },
+  {
+   "datei": "leistungen/untergrund.html",
+   "ab": 78038,
+   "vorher": "-center gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><a class=\"text-tinte underline decoration-strich underline-offset-4 hover:decoration-tinte inline-flex min-h-11 items-cente",
+   "nachher": "-center gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><a data-motion=\"zustand\" class=\"group mr-4 inline-flex min-h-11 items-center gap-2 text-tinte\" href=\"/leistungen\"><svg clas"
+  },
+  {
+   "datei": "leistungen/wohnen.html",
+   "ab": 77971,
+   "vorher": "-center gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><a class=\"text-tinte underline decoration-strich underline-offset-4 hover:decoration-tinte inline-flex min-h-11 items-cente",
+   "nachher": "-center gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><a data-motion=\"zustand\" class=\"group mr-4 inline-flex min-h-11 items-center gap-2 text-tinte\" href=\"/leistungen\"><svg clas"
+  },
+  {
+   "datei": "leistungen.html",
+   "ab": 77248,
+   "vorher": "enter gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><span>HWK Wiesbaden<!-- --> Fachbetrieb</span><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\" focusable=\"false\" class=\"inline-blo",
+   "nachher": "enter gap-2 font-mono text-fs-1 text-tinte-2 etikett-zeile mb-6 flex-wrap\"><span class=\"mr-4 inline-flex items-center gap-2 text-tinte\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\" focusable=\"false\" cl"
+  }
+ ],
+ "css_selektoren_weg": [
+  ".-ml-px",
+  ".-mt-px",
+  ".aspect-4\\/3",
+  ".group-hover\\:text-tinte:is(:where(.group):hover *)",
+  ".h-2",
+  ".justify-self-stretch",
+  ".lg\\:col-start-6",
+  ".lg\\:grid-cols-1",
+  ".lg\\:py-12",
+  ".line-clamp-3",
+  ".m-4",
+  ".md\\:aspect-3\\/4",
+  ".md\\:border-l",
+  ".md\\:columns-2",
+  ".md\\:flex-wrap",
+  ".md\\:m-0",
+  ".md\\:odd\\:last\\:col-span-2:nth-child(odd):last-child",
+  ".md\\:overflow-visible",
+  ".md\\:pb-8",
+  ".md\\:px-0",
+  ".pl-px",
+  ".pt-px",
+  ".self-stretch",
+  ".sm\\:max-w-md",
+  ".xl\\:col-span-6",
+  ".xl\\:grid-cols-12"
+ ],
+ "css_selektoren_neu": [
+  ".\\@2xl\\:flex-1",
+  ".\\@2xl\\:flex-row",
+  ".\\@2xl\\:grid-cols-3",
+  ".\\@2xl\\:items-center",
+  ".\\@2xl\\:p-8",
+  ".\\@2xl\\:w-auto",
+  ".\\@3xl\\:gap-4",
+  ".\\@3xl\\:grid-cols-2",
+  ".\\@3xl\\:grid-cols-4",
+  ".\\@3xl\\:p-12",
+  ".\\@4xl\\:grid-cols-3",
+  ".\\@5xl\\:border-l",
+  ".\\@5xl\\:border-t-0",
+  ".\\@5xl\\:col-span-5",
+  ".\\@5xl\\:col-span-7",
+  ".\\@5xl\\:grid-cols-12",
+  ".\\@5xl\\:p-12",
+  ".\\@6xl\\:grid-cols-4",
+  ".\\@lg\\:grid-cols-3",
+  ".\\@lg\\:inline-flex",
+  ".\\@lg\\:p-8",
+  ".\\@md\\:flex-row",
+  ".\\@md\\:grid-cols-2",
+  ".\\@md\\:items-center",
+  ".\\@md\\:justify-between",
+  ".\\@md\\:justify-end",
+  ".\\@md\\:self-auto",
+  ".\\@md\\:w-auto",
+  ".\\@sm\\:col-span-2",
+  ".\\@sm\\:grid-cols-2",
+  ".\\@xl\\:grid-cols-2",
+  ".\\@xl\\:grid-cols-4",
+  ".\\@xl\\:inline",
+  ".\\@xl\\:p-6",
+  ".\\@xl\\:text-center",
+  ".align-middle",
+  ".aria-pressed\\:focus-visible\\:outline-kalk[aria-pressed=true]:focus-visible",
+  ".border-l-laser",
+  ".focus-visible\\:-outline-offset-4:focus-visible",
+  ".focus-visible\\:after\\:outline-2:focus-visible:after",
+  ".focus-visible\\:after\\:outline-offset-2:focus-visible:after",
+  ".focus-visible\\:after\\:outline-solid:focus-visible:after",
+  ".focus-visible\\:after\\:outline-tinte:focus-visible:after",
+  ".focus-visible\\:decoration-tinte:focus-visible",
+  ".focus-visible\\:outline-hidden:focus-visible",
+  ".lg\\:order-first",
+  ".lg\\:pt-24",
+  ".md\\:flex-nowrap",
+  ".md\\:gap-0",
+  ".md\\:mt-2",
+  ".md\\:p-0",
+  ".mr-1",
+  ".mr-4",
+  ".pointer-fine\\:group-hover\\:text-tinte:is(:where(.group):hover *)",
+  ".scroll-mt-0\\!",
+  ".sm\\:text-fs-3",
+  ".sm\\:w-16",
+  ".xl\\:gap-6",
+  ".xl\\:items-center",
+  ".xl\\:justify-between",
+  ".xl\\:shrink-0",
+  ":is(.lg\\:\\*\\:grid-cols-5>*)"
+ ]
+}

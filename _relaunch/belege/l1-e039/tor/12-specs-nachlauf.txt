@@ -1,0 +1,4 @@
+Nachlauf 12-specs (Orchestrator, gleicher Server 4361 = Build 0403de3, Maschine ohne Baumeister-Last):
+npx playwright test tests/funktion-navigation.spec.mjs --grep "Mega-Menü" --repeat-each 3
+Ergebnis: 18 passed (26.1s) – der im Tor rote Fall „/: Tastatur: Schalter per Enter öffnen …“ (desktop) 3 von 3 grün.
+Ursache des Ausfalls im Tor: Enter vor abgeschlossener Hydrierung unter Last (5 parallele Baumeister); / ist in dieser Lieferung unverändert (HTML gleich live).
