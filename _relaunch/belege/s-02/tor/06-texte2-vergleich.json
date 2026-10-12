@@ -1,0 +1,175 @@
+{
+ "satz": "/home/user/tezgel/_relaunch/belege/s-02/tor/texte-live → /home/user/tezgel/_relaunch/belege/s-02/tor/texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "a": "belege/s-02/tor/texte-live",
+  "b": "belege/s-02/tor/texte-kopf",
+  "freigabe": "MIKROTEXTE.md",
+  "volatil": [],
+  "regeln": "Anführungszeichen vor dem Vergleich vereinheitlicht. ROT: Entfernung/Änderung ohne Freigabe, hinzugekommene Überschrift, zusätzliche H1, fehlende Seite, Statuswechsel, neues kaputtes Fragment, verlorener Anker, verlorener Zustand. GELB: hinzugekommener sonstiger Text, Verschiebung, neu gegliedert (auch: alter Text vollständig in neuem Block enthalten), vorbestehend, volatil. GRÜN: per Freigabeliste."
+ },
+ "erstellt": "2026-10-12T04:20:27.947Z",
+ "ergebnis": "GRÜN",
+ "summe": {
+  "rot": 0,
+  "gelb": 14,
+  "gruen_freigegeben": 0,
+  "seiten_rot": 0,
+  "rot_nach_art": {},
+  "gelb_nach_art": {
+   "umgestellt": 7,
+   "verschoben": 3,
+   "pflichtanker-fehlt": 4
+  },
+  "seiten_verglichen": 1,
+  "zustaende_verglichen": 0,
+  "freigabe_zeilen": 51,
+  "freigabe_warnungen": 0,
+  "laufzeit_s": 0
+ },
+ "freigabe": {
+  "datei": "MIKROTEXTE.md",
+  "warnungen": [],
+  "genutzt": []
+ },
+ "seiten": {
+  "/": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/#express-anfrage",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/kontakt": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#express-anfrage",
+     "grund": "fehlte schon in A"
+    },
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/kontakt#termin-buchen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/referenzen": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "pflichtanker-fehlt",
+     "anker": "/referenzen#bewertungen",
+     "grund": "fehlte schon in A"
+    }
+   ],
+   "gruen": []
+  },
+  "/ueber-uns": {
+   "rot": [],
+   "gelb": [
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Unser Betrieb",
+     "abschnitt_alt": "h1: Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+     "abschnitt_neu": "h1: Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "h2",
+     "wert": "Handwerkliche Präzision aus Aßlar",
+     "abschnitt_alt": "h2: Handwerkliche Präzision aus Aßlar",
+     "abschnitt_neu": "h2: Handwerkliche Präzision aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Seit der Gründung im Jahr 2008 steht Fliesenverlegung Tezgel für handwerkliche Präzision in Mittelhessen – als Eingetragener Fachbetrieb der HWK Wiesbaden.",
+     "abschnitt_alt": "h2: Handwerkliche Präzision aus Aßlar",
+     "abschnitt_neu": "h2: Handwerkliche Präzision aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Unter der Führung von Inhaber Deniz Tezgel und mit unserem Team von bis zu 12 Fachkräften liegt unser Schwerpunkt auf Badsanierungen und barrierefreien Walk-In-Duschen, fugenarmen XXL-Großformaten, Wohnbereichen, Balkonen und Terrassen sowie der normgerechten Verbundabdichtung nach DIN 18534.",
+     "abschnitt_alt": "h2: Handwerkliche Präzision aus Aßlar",
+     "abschnitt_neu": "h2: Handwerkliche Präzision aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "Von unserem Firmensitz in der Hohwardstraße 14, 35614 Aßlar aus betreuen wir Großprojekte ebenso wie private Sanierungsvorhaben – persönlich, transparent und mit verbindlichem Festpreisangebot.",
+     "abschnitt_alt": "h2: Handwerkliche Präzision aus Aßlar",
+     "abschnitt_neu": "h2: Handwerkliche Präzision aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "\"Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.\"",
+     "abschnitt_alt": "h2: Handwerkliche Präzision aus Aßlar",
+     "abschnitt_neu": "h2: Handwerkliche Präzision aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "umgestellt",
+     "typ": "text",
+     "wert": "— Deniz Tezgel, Inhaber & Fachbetriebsleiter",
+     "abschnitt_alt": "h2: Handwerkliche Präzision aus Aßlar",
+     "abschnitt_neu": "h2: Handwerkliche Präzision aus Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Vor-Ort-Aufmaß vereinbaren",
+     "abschnitt_alt": "h3: Kundenbegeisterung",
+     "abschnitt_neu": "h1: Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "06441 / 44 83 567",
+     "abschnitt_alt": "h3: Kundenbegeisterung",
+     "abschnitt_neu": "h1: Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+     "kontext": ""
+    },
+    {
+     "farbe": "gelb",
+     "art": "verschoben",
+     "typ": "text",
+     "wert": "Hohwardstraße 14, Aßlar",
+     "abschnitt_alt": "h3: Kundenbegeisterung",
+     "abschnitt_neu": "h1: Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar",
+     "kontext": ""
+    }
+   ],
+   "gruen": []
+  }
+ }
+}

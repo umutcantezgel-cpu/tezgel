@@ -1,0 +1,63 @@
+{
+ "vorher": "c27fc77",
+ "nachher": "3c02fe5",
+ "laufzeit_reste": {
+  "vorher": [
+   "blog/gibt-es-nicht.html"
+  ],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 1,
+ "abweichungen": [
+  {
+   "datei": "ueber-uns.html",
+   "ab": 73575,
+   "vorher": "ion\":2,\"name\":\"Über uns\",\"item\":\"https://www.tezgel.de/ueber-uns\"}]}]}</script><div class=\"min-h-screen pt-28 pb-20\"><div class=\"ceramic-band py-16 px-4 relative overflow-hidden\"><div class=\"ambient-g",
+   "nachher": "ion\":2,\"name\":\"Über uns\",\"item\":\"https://www.tezgel.de/ueber-uns\"}]}]}</script><header class=\"relative border-b border-fuge pt-32 pb-16 lg:pt-32 lg:pb-24\"><div class=\"mx-auto w-full max-w-seite px-4 m"
+  }
+ ],
+ "css_selektoren_weg": [
+  ".left-1\\/2",
+  ".md\\:flex",
+  ".md\\:flex-row-reverse",
+  ".md\\:gap-0",
+  ".md\\:w-\\[42\\%\\]",
+  ".mt-28",
+  ".origin-top",
+  ".p-10",
+  ".pt-28",
+  ".text-orange-600\\/60",
+  ".top-6",
+  ".w-\\[3px\\]",
+  ":where(.md\\:space-y-24>:not(:last-child))",
+  ":where(.space-y-16>:not(:last-child))"
+ ],
+ "css_selektoren_neu": [
+  ".gap-x-3",
+  ".left-2",
+  ".lg\\:col-start-9",
+  ".lg\\:mt-24",
+  ".lg\\:pl-12",
+  ".lg\\:text-fs-6",
+  ".md\\:col-span-6",
+  ".md\\:col-span-9",
+  ".md\\:left-1\\/4",
+  ".md\\:left-auto",
+  ".md\\:mt-0",
+  ".md\\:pb-16",
+  ".md\\:pl-8",
+  ".md\\:pr-8",
+  ".md\\:right-0",
+  ".md\\:self-start",
+  ".md\\:text-fs-5",
+  ".md\\:translate-x-1\\/2",
+  ".pl-8"
+ ]
+}

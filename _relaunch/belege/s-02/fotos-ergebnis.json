@@ -1,0 +1,58 @@
+{
+ "satz": "s-02",
+ "base": "http://127.0.0.1:4360",
+ "einwilligung": "abgelehnt",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 9,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7643,
+   "blockiert": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 8,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7732,
+   "blockiert": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "status": 200,
+   "hoehen": 12,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 13065,
+   "blockiert": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "t768",
+   "status": 200,
+   "hoehen": 9,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 9059,
+   "blockiert": []
+  }
+ ]
+}

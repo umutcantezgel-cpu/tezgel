@@ -1,0 +1,125 @@
+{
+ "satz": "s-02-texte-kopf",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-3c02fe5/.next/server/app/**/*.html",
+  "build_id": "9i6h4nO7nthSFrwfePHgy",
+  "dateien": 1,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T04:20:27.037Z",
+ "summe": {
+  "dateien": 1,
+  "im_manifest": 1,
+  "eintraege": 410,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 3,
+   "ok": 1,
+   "befehle": 1,
+   "fehlend": 0,
+   "ziel_unbekannt": 1,
+   "pflichtanker_ok": "0/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 0.5
+ },
+ "fragmente": {
+  "gesamt": 3,
+  "ok": 1,
+  "befehle": [
+   {
+    "seite": "/ueber-uns",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [
+   {
+    "seite": "/ueber-uns",
+    "href": "/kontakt#express-anfrage"
+   }
+  ],
+  "ziele": [
+   {
+    "ziel": "/ueber-uns",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/ueber-uns"
+    ]
+   },
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/ueber-uns"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/ueber-uns": {
+   "datei": "ueber-uns.json",
+   "quelle": "ueber-uns.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 410,
+   "arten": {
+    "meta": 33,
+    "text": 322,
+    "aria": 36,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Über uns – Fliesenleger-Fachbetrieb Tezgel in Aßlar"
+   ],
+   "hash": "6f101073d2110da9"
+  }
+ }
+}

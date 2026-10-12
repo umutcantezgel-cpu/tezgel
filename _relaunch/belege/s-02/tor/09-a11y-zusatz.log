@@ -1,0 +1,9 @@
+xxx.xxx.xxx..
+a11y-zusatz: 13 Läufe in 60 s → belege/s-02/a11y-zusatz.json
+{"tastatur":{"reihenfolge":"gruen","fokus_sichtbar":"rot","fokus_2px":"rot","fokus_outline":"gruen","fokus_verdeckt":"rot","tastaturfalle":"gruen","sprunglink":"gruen"},"reflow":"gruen","zoom":{"css":"rot","aequivalent":"gruen"},"textabstand":"rot","forced":"rot","ohnejs":"gruen"}
+tastatur {"fokus_nicht_sichtbar":18,"fokus_nicht_sichtbar_davon_verdeckt_verborgen":11,"fokus_ring_teilverdeckt_fest":11,"fokus_unter_2px":15,"fokus_nicht_messbar":0,"fokus_ohne_outline_schatten":0,"fokus_verdeckt":57,"fokus_verdeckt_fest":57,"sprung_rueckwaerts":0,"falle":0,"zyklus_ohne_ausweg":0,"sprunglink_fehlt":0,"laeufe":4,"fehler":0,"schritte":320}
+reflow {"horizontal":0,"ueberlauf":0,"ragt_heraus":0,"text_abgeschnitten":0,"laeufe":1,"fehler":0}
+zoom {"horizontal":0,"verdeckt":0,"verdeckt_fest":0,"nie_im_bild":6,"ueberlauf":14,"laeufe":2,"fehler":0}
+textabstand {"abgeschnitten_neu":0,"scroll_ueberhang_neu":0,"davon_line_clamp":0,"ueberlauf_neu":5,"horizontal_neu":0,"laeufe":2,"fehler":0}
+forced {"ohne_grenze":8,"davon_mit_grafik":8,"felder_ohne_grenze":0,"laeufe":2,"fehler":0}
+ohnejs {"text_unter_80":0,"erster_bildschirm_versteckt":0,"erster_bildschirm_ebenso_mit_js":0,"navigation_fehlt":0,"kopf_ohne_interne_links":0,"laeufe":2,"fehler":0}

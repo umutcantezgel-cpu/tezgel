@@ -30,7 +30,7 @@ echo "T2 · $KENNUNG · live $LIVE → $KOPF · Seiten $SEITEN · $(date -Isecon
 node "$W/testzahl.mjs" > "$AUS/01-testzahl.log" 2>&1; stufe 01-sperrklinke $?
 
 # 2 Reinraum HEAD
-bash "$W/reinraum.sh" HEAD > "$AUS/02-reinraum.log" 2>&1
+bash "$W/reinraum.sh" "$KOPF" > "$AUS/02-reinraum.log" 2>&1
 E="$REPO/_relaunch/cache/reinraum-$KOPF/ergebnis.txt"; r=0
 for k in npm-ci build typecheck lint test qa-graph; do grep -qE "^$k 0 " "$E" 2>/dev/null || { r=1; echo "  rot: $k" | tee -a "$ROH"; }; done
 stufe 02-reinraum $r
@@ -68,13 +68,14 @@ node "$W/texte2.mjs" --vergleich "$AUS/texte-live" "$AUS/texte-kopf" --freigabe 
 stufe 06-texte2 $? "$(tail -1 "$AUS/06-texte2.log")"
 
 # 7 Server HEAD
-PORT=$PORT bash "$W/server.sh" start HEAD > "$AUS/07-server.log" 2>&1; stufe 07-server $?
+PORT=$PORT bash "$W/server.sh" start "$KOPF" > "$AUS/07-server.log" 2>&1; stufe 07-server $?
 export RELAUNCH_BASE="$HEAD_URL"
 
 # 8 axe mit Zuständen
 (cd "$W" && node axe.mjs --satz "$KENNUNG" --seiten "$SEITEN" --zustaende) > "$AUS/08-axe.log" 2>&1
-n="$(node -e 'const j=require(process.argv[1]);console.log(j.ernst_kritisch_knoten)' "$REPO/_relaunch/belege/$KENNUNG/axe.json" 2>/dev/null || echo fehlt)"
-[ "$n" = "0" ] && stufe 08-axe 0 "ernst/kritisch 0" || stufe 08-axe 1 "ernst/kritisch $n"
+# Zustände laufen über die Grundmenge (auch fremde Bestandsseiten); gezählt werden nur die Seiten des Schritts.
+n="$(node -e 'const [d,s]=process.argv.slice(1);const j=require(d);const S=new Set(s.split(","));let n=0;for(const e of j.ergebnisse){if(!S.has(e.seite))continue;for(const v of e.verstoesse||[])if(["serious","critical"].includes(v.impact))n+=v.anzahl}console.log(n)' "$REPO/_relaunch/belege/$KENNUNG/axe.json" "$SEITEN" 2>/dev/null || echo fehlt)"
+[ "$n" = "0" ] && stufe 08-axe 0 "ernst/kritisch auf den Seiten des Schritts 0" || stufe 08-axe 1 "ernst/kritisch auf den Seiten des Schritts $n"
 
 # 9 a11y-zusatz (Zahlen; Bewertung der harten Kennzahlen durch den Orchestrator)
 (cd "$W" && node a11y-zusatz.mjs --satz "$KENNUNG" --seiten "$SEITEN") > "$AUS/09-a11y-zusatz.log" 2>&1; stufe 09-a11y-zusatz-lauf $? "$(tail -2 "$AUS/09-a11y-zusatz.log" | tr '\n' ' ' | head -c 400)"
