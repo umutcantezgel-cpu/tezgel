@@ -1,0 +1,1605 @@
+{
+ "satz": "l1-e039-lh-detail10",
+ "base": "http://127.0.0.1:4360",
+ "kandidat": "http://127.0.0.1:4361",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 10 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4360, B = Kandidat http://127.0.0.1:4361) im selben Messfenster",
+ "erstellt": "2026-10-12T12:31:42.607Z",
+ "laeufe": 10,
+ "seiten": {
+  "/leistungen/bad": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 91.5,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2826,
+      "cls": 0,
+      "tbt": 219,
+      "fcp": 1219,
+      "si": 1222,
+      "js_kb": 283,
+      "font_kb": 72,
+      "gesamt_kb": 533,
+      "benchmark": 1429.75,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 321,
+        "left": 16,
+        "width": 380,
+        "height": 219
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17,
+       "elementRenderDelay": 223
+      },
+      "streuung_perf": [
+       88,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3190.0699999999997,
+       "cls": 0.005511956403297836,
+       "tbt": 266.9824999999994,
+       "fcp": 1068.07,
+       "si": 1094.579724107256,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1500.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 24,
+        "elementRenderDelay": 239
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2713.755,
+       "cls": 0,
+       "tbt": 319.24499999999944,
+       "fcp": 1216.5059999999999,
+       "si": 1337.5812955093304,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1476,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2929.045,
+       "cls": 0,
+       "tbt": 197.5,
+       "fcp": 1230.054,
+       "si": 1250.0544211446654,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1350.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 231
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2718.7425000000003,
+       "cls": 0,
+       "tbt": 339.25749999999994,
+       "fcp": 1222.491,
+       "si": 1383.4833169811736,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1225.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 281
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3283.5860000000002,
+       "cls": 0,
+       "tbt": 119.10349999999971,
+       "fcp": 1223.3790000000004,
+       "si": 1223.3790000000004,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1444,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 193
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2723.415,
+       "cls": 0,
+       "tbt": 150.817,
+       "fcp": 1228.098,
+       "si": 1228.098,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1415.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 209
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2574.424,
+       "cls": 0,
+       "tbt": 300.39400000000023,
+       "fcp": 1074.424,
+       "si": 1160.17386856974,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1311,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 33,
+        "elementRenderDelay": 280
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3275.242,
+       "cls": 0,
+       "tbt": 169.94750000000022,
+       "fcp": 1219.863,
+       "si": 1219.863,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1273,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 209
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2714.3225,
+       "cls": 0,
+       "tbt": 241.13549999999987,
+       "fcp": 1217.187,
+       "si": 1217.187,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1474.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 215
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3013.772,
+       "cls": 0,
+       "tbt": 152.5,
+       "fcp": 1063.772,
+       "si": 1063.772,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1473.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 90.5,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2719,
+      "cls": 0,
+      "tbt": 286,
+      "fcp": 1221,
+      "si": 1221,
+      "js_kb": 279,
+      "font_kb": 72,
+      "gesamt_kb": 527,
+      "benchmark": 1400,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 321,
+        "left": 16,
+        "width": 380,
+        "height": 219
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 18.5,
+       "elementRenderDelay": 231.5
+      },
+      "streuung_perf": [
+       85,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2715.643375,
+       "cls": 0,
+       "tbt": 178.35662499999967,
+       "fcp": 1218.7720499999998,
+       "si": 1218.7720499999998,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1516,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 236
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2720.0975000000003,
+       "cls": 0,
+       "tbt": 386.98049999999967,
+       "fcp": 1224.117,
+       "si": 1224.117,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1330,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 214
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2714.452,
+       "cls": 0,
+       "tbt": 308.04800000000023,
+       "fcp": 1221.678,
+       "si": 1221.678,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1229,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 23,
+        "elementRenderDelay": 259
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2709.439,
+       "cls": 0,
+       "tbt": 259.6402499999997,
+       "fcp": 1214.1585,
+       "si": 1214.1585,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1363.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 227
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2718.98375,
+       "cls": 0,
+       "tbt": 263.20325,
+       "fcp": 1222.7804999999998,
+       "si": 1222.7804999999998,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1397,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 185
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2928.66375,
+       "cls": 0,
+       "tbt": 345.8362500000003,
+       "fcp": 1219.9964999999997,
+       "si": 1219.9964999999997,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1477.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 24,
+        "elementRenderDelay": 239
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2719.3312499999993,
+       "cls": 0,
+       "tbt": 412.6687500000003,
+       "fcp": 1223.1974999999998,
+       "si": 1236.7732218189108,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1304.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 272
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3195.6350000000007,
+       "cls": 0,
+       "tbt": 342.50000000000045,
+       "fcp": 1217.4525,
+       "si": 1217.4525,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1403,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 196
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2719.60375,
+       "cls": 0,
+       "tbt": 210.89625,
+       "fcp": 1223.5245,
+       "si": 1223.5245,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1489,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 257
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2715.62,
+       "cls": 0,
+       "tbt": 201.37599999999998,
+       "fcp": 1218.7440000000001,
+       "si": 1218.7440000000001,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1479.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 179
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -107,
+     "cls": 0,
+     "tbt": 67,
+     "fcp": 2,
+     "si": -1,
+     "js_kb": -4,
+     "font_kb": 0,
+     "gesamt_kb": -6,
+     "benchmark": -29.7,
+     "lcp_relativ": -0.038
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/leistungen/untergrund": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2717,
+      "cls": 0,
+      "tbt": 174,
+      "fcp": 1219,
+      "si": 1219,
+      "js_kb": 283,
+      "font_kb": 72,
+      "gesamt_kb": 532,
+      "benchmark": 1448.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 321,
+        "left": 16,
+        "width": 380,
+        "height": 192
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 15.5,
+       "elementRenderDelay": 207.5
+      },
+      "streuung_perf": [
+       89,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2712.0024999999996,
+       "cls": 0,
+       "tbt": 163.49750000000017,
+       "fcp": 1214.4029999999998,
+       "si": 1214.4029999999998,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1509,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 196
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2574.2,
+       "cls": 0,
+       "tbt": 318.95000000000005,
+       "fcp": 1236.2999999999997,
+       "si": 1236.2999999999997,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1302.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 22,
+        "elementRenderDelay": 254
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3249.1279999999997,
+       "cls": 0,
+       "tbt": 146,
+       "fcp": 1225.6919999999998,
+       "si": 1225.6919999999998,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1453,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 212
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2719.0875000000005,
+       "cls": 0,
+       "tbt": 185.6824999999999,
+       "fcp": 1222.905,
+       "si": 1222.905,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1187,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 212
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2716.3999999999996,
+       "cls": 0,
+       "tbt": 170.10000000000014,
+       "fcp": 1219.6799999999998,
+       "si": 1219.6799999999998,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1477.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 209
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2718.2674999999995,
+       "cls": 0,
+       "tbt": 314.99999999999955,
+       "fcp": 1221.921,
+       "si": 1221.921,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1351.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 182
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2715.827500000001,
+       "cls": 0,
+       "tbt": 131.33449999999993,
+       "fcp": 1218.9930000000004,
+       "si": 1218.9930000000004,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1544,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 183
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2569.45,
+       "cls": 0,
+       "tbt": 223.61000000000035,
+       "fcp": 1065.56,
+       "si": 1109.3393131885286,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1444,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 222
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3273.8499999999995,
+       "cls": 0,
+       "tbt": 174.68749999999977,
+       "fcp": 1214.775,
+       "si": 1214.775,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1343.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3313.666,
+       "cls": 0,
+       "tbt": 173.33349999999928,
+       "fcp": 1218.9990000000003,
+       "si": 1218.9990000000003,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 532,
+       "benchmark": 1577.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 177
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 90.5,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2898,
+      "cls": 0,
+      "tbt": 250,
+      "fcp": 1222,
+      "si": 1222,
+      "js_kb": 279,
+      "font_kb": 72,
+      "gesamt_kb": 525,
+      "benchmark": 1464.75,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 321,
+        "left": 16,
+        "width": 380,
+        "height": 192
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 18.5,
+       "elementRenderDelay": 226.5
+      },
+      "streuung_perf": [
+       86,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2727.1800000000003,
+       "cls": 0,
+       "tbt": 228.0640000000003,
+       "fcp": 1232.616,
+       "si": 1244.0155786495566,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1396,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 223
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2713.103,
+       "cls": 0,
+       "tbt": 343.6212499999999,
+       "fcp": 1219.6545,
+       "si": 1219.6545,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1456,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 217
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3162.3950000000004,
+       "cls": 0,
+       "tbt": 163.60500000000093,
+       "fcp": 1218.5925,
+       "si": 1218.5925,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1400.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 230
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2714.2000000000003,
+       "cls": 0,
+       "tbt": 109.95000000000027,
+       "fcp": 1221.3000000000002,
+       "si": 1221.3000000000002,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1501.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 231
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2930.5975,
+       "cls": 0,
+       "tbt": 271.8805,
+       "fcp": 1221.717,
+       "si": 1221.717,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1566,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 205
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3137.4612500000003,
+       "cls": 0,
+       "tbt": 315.8077499999995,
+       "fcp": 1240.3845000000003,
+       "si": 1240.3845000000003,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1460.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 25,
+        "elementRenderDelay": 265
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2932.38875,
+       "cls": 0,
+       "tbt": 305.22225000000003,
+       "fcp": 1067.111,
+       "si": 1075.4462693690684,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1469,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 239
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3189.6859999999997,
+       "cls": 0,
+       "tbt": 319,
+       "fcp": 1060.686,
+       "si": 1060.686,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1558.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 300
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2865.785,
+       "cls": 0,
+       "tbt": 161.5,
+       "fcp": 1223.6775000000002,
+       "si": 1223.6775000000002,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1522.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 180
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2727.1400000000003,
+       "cls": 0,
+       "tbt": 215.49999999999955,
+       "fcp": 1232.568,
+       "si": 1232.568,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 525,
+       "benchmark": 1409.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Vor jedem Belagsaufbau steht die fachgerechte DIN 18534 Abdichtung & Untergrund…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 23,
+        "elementRenderDelay": 211
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -1.5,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 181,
+     "cls": 0,
+     "tbt": 76,
+     "fcp": 3,
+     "si": 3,
+     "js_kb": -4,
+     "font_kb": 0,
+     "gesamt_kb": -7,
+     "benchmark": 16.3,
+     "lcp_relativ": 0.067
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 1.16,
+  "last_1min_start": 1.16,
+  "last_1min_ende": 2.68
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}

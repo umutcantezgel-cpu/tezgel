@@ -1,0 +1,1823 @@
+{
+ "satz": "l1-e039-lh",
+ "base": "http://127.0.0.1:4360",
+ "kandidat": "http://127.0.0.1:4361",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 5 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4360, B = Kandidat http://127.0.0.1:4361) im selben Messfenster",
+ "erstellt": "2026-10-12T12:23:16.395Z",
+ "laeufe": 5,
+ "seiten": {
+  "/leistungen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3284,
+      "cls": 0,
+      "tbt": 155,
+      "fcp": 1222,
+      "si": 1222,
+      "js_kb": 272,
+      "font_kb": 72,
+      "gesamt_kb": 509,
+      "benchmark": 1415,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 263,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 18,
+       "elementRenderDelay": 231
+      },
+      "streuung_perf": [
+       86,
+       93
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3290.9411,
+       "cls": 0,
+       "tbt": 154.764725,
+       "fcp": 1222.41165,
+       "si": 1222.41165,
+       "js_kb": 272,
+       "font_kb": 72,
+       "gesamt_kb": 509,
+       "benchmark": 1481,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 263,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 231
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3283.6050000000005,
+       "cls": 0,
+       "tbt": 286.4937500000001,
+       "fcp": 1217.4075,
+       "si": 1217.4075,
+       "js_kb": 272,
+       "font_kb": 72,
+       "gesamt_kb": 509,
+       "benchmark": 1340,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 263,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 258
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2714.1549999999997,
+       "cls": 0,
+       "tbt": 184.96125000000006,
+       "fcp": 1221.2324999999998,
+       "si": 1221.2324999999998,
+       "js_kb": 272,
+       "font_kb": 72,
+       "gesamt_kb": 509,
+       "benchmark": 1415,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 263,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 260
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3290.258,
+       "cls": 0,
+       "tbt": 129.6855000000005,
+       "fcp": 1222.887,
+       "si": 1237.6317419786342,
+       "js_kb": 272,
+       "font_kb": 72,
+       "gesamt_kb": 509,
+       "benchmark": 1482.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 263,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 212
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3276.8899999999994,
+       "cls": 0,
+       "tbt": 145.00000000000023,
+       "fcp": 1237.335,
+       "si": 1237.335,
+       "js_kb": 272,
+       "font_kb": 72,
+       "gesamt_kb": 509,
+       "benchmark": 1365.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 263,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 211
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2721,
+      "cls": 0,
+      "tbt": 251,
+      "fcp": 1222,
+      "si": 1222,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 507,
+      "benchmark": 1418,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 334,
+        "left": 16,
+        "width": 380,
+        "height": 274
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 15,
+       "elementRenderDelay": 209
+      },
+      "streuung_perf": [
+       89,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2579.9004999999997,
+       "cls": 0,
+       "tbt": 319.01990000000023,
+       "fcp": 1073.9204,
+       "si": 1073.9204,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 507,
+       "benchmark": 1301,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 199
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3140.008,
+       "cls": 0,
+       "tbt": 234.5,
+       "fcp": 1233.0120000000002,
+       "si": 1233.0120000000002,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 507,
+       "benchmark": 1454.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 226
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2789.88,
+       "cls": 0,
+       "tbt": 91.11999999999989,
+       "fcp": 1222.3200000000002,
+       "si": 1222.3200000000002,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 507,
+       "benchmark": 1410,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 209
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2720.7960000000003,
+       "cls": 0,
+       "tbt": 251.00000000000045,
+       "fcp": 1231.194,
+       "si": 1231.194,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 507,
+       "benchmark": 1482.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 189
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2718.1275,
+       "cls": 0,
+       "tbt": 259.8724999999997,
+       "fcp": 1221.753,
+       "si": 1221.753,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 507,
+       "benchmark": 1418,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen …",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 334,
+         "left": 16,
+         "width": 380,
+         "height": 274
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 257
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -563,
+     "cls": 0,
+     "tbt": 96,
+     "fcp": 0,
+     "si": 0,
+     "js_kb": -3,
+     "font_kb": 0,
+     "gesamt_kb": -2,
+     "benchmark": 3,
+     "lcp_relativ": -0.171
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/leistungen/bad": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2792,
+      "cls": 0,
+      "tbt": 194,
+      "fcp": 1223,
+      "si": 1223,
+      "js_kb": 283,
+      "font_kb": 72,
+      "gesamt_kb": 533,
+      "benchmark": 1441,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 321,
+        "left": 16,
+        "width": 380,
+        "height": 219
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 213
+      },
+      "streuung_perf": [
+       90,
+       93
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2792.3959999999997,
+       "cls": 0,
+       "tbt": 246.75499999999988,
+       "fcp": 1226.0939999999998,
+       "si": 1226.0939999999998,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1081,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 22,
+        "elementRenderDelay": 253
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2722.2699999999995,
+       "cls": 0,
+       "tbt": 193.99999999999977,
+       "fcp": 1226.724,
+       "si": 1226.724,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1350,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 202
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3275.4399999999996,
+       "cls": 0,
+       "tbt": 128.69999999999936,
+       "fcp": 1223.16,
+       "si": 1223.16,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1448.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2709.6674999999996,
+       "cls": 0,
+       "tbt": 293.7660000000001,
+       "fcp": 1211.601,
+       "si": 1211.601,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1441,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 213
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3267.6059999999998,
+       "cls": 0,
+       "tbt": 169.59850000000006,
+       "fcp": 1217.4089999999999,
+       "si": 1217.4089999999999,
+       "js_kb": 283,
+       "font_kb": 72,
+       "gesamt_kb": 533,
+       "benchmark": 1491.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 213
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 89,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3211,
+      "cls": 0,
+      "tbt": 304,
+      "fcp": 1225,
+      "si": 1225,
+      "js_kb": 279,
+      "font_kb": 72,
+      "gesamt_kb": 527,
+      "benchmark": 1425,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 321,
+        "left": 16,
+        "width": 380,
+        "height": 219
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 20,
+       "elementRenderDelay": 223
+      },
+      "streuung_perf": [
+       81,
+       90
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2714.52,
+       "cls": 0,
+       "tbt": 354.884,
+       "fcp": 1217.424,
+       "si": 1217.424,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1434.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 275
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3210.5289999999995,
+       "cls": 0,
+       "tbt": 234.36775000000011,
+       "fcp": 1224.7935,
+       "si": 1224.7935,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1425,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 207
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 81,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3316.7690000000007,
+       "cls": 0,
+       "tbt": 433.0387500000004,
+       "fcp": 1228.1535000000001,
+       "si": 1281.3977836997203,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1333,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 23,
+        "elementRenderDelay": 269
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2714.8175,
+       "cls": 0,
+       "tbt": 303.5,
+       "fcp": 1217.7810000000002,
+       "si": 1217.7810000000002,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1417,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 223
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3224.7000000000003,
+       "cls": 0,
+       "tbt": 221.5,
+       "fcp": 1231.0500000000002,
+       "si": 1231.0500000000002,
+       "js_kb": 279,
+       "font_kb": 72,
+       "gesamt_kb": 527,
+       "benchmark": 1456,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Für Ihre professionelle Badsanierung & schlüsselfertige Komplettbäder sowie exk…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 321,
+         "left": 16,
+         "width": 380,
+         "height": 219
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 219
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -2,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 419,
+     "cls": 0,
+     "tbt": 110,
+     "fcp": 2,
+     "si": 2,
+     "js_kb": -4,
+     "font_kb": 0,
+     "gesamt_kb": -6,
+     "benchmark": -16,
+     "lcp_relativ": 0.15
+    },
+    "lcp_element_gleich": true,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 2 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "schlechter jenseits der Streuung"
+   }
+  },
+  "/blog": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 87,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3426,
+      "cls": 0,
+      "tbt": 362,
+      "fcp": 1070,
+      "si": 1070,
+      "js_kb": 388,
+      "font_kb": 72,
+      "gesamt_kb": 614,
+      "benchmark": 1411,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 110
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17,
+       "elementRenderDelay": 218
+      },
+      "streuung_perf": [
+       78,
+       89
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3505.719,
+       "cls": 0,
+       "tbt": 163.85674999999947,
+       "fcp": 1077.8595,
+       "si": 1077.8595,
+       "js_kb": 388,
+       "font_kb": 72,
+       "gesamt_kb": 614,
+       "benchmark": 1386.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 173
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2835.8774999999996,
+       "cls": 0,
+       "tbt": 361.5000000000002,
+       "fcp": 1072.7265,
+       "si": 1072.7265,
+       "js_kb": 388,
+       "font_kb": 72,
+       "gesamt_kb": 614,
+       "benchmark": 1411,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 207
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 78,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2837.0074999999997,
+       "cls": 0,
+       "tbt": 702.4992499999998,
+       "fcp": 1068.0045,
+       "si": 1068.0045,
+       "js_kb": 388,
+       "font_kb": 72,
+       "gesamt_kb": 614,
+       "benchmark": 1372.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 218
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 87,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3482.6874999999995,
+       "cls": 0,
+       "tbt": 219.00000000000023,
+       "fcp": 1069.6125,
+       "si": 1069.6125,
+       "js_kb": 388,
+       "font_kb": 72,
+       "gesamt_kb": 614,
+       "benchmark": 1562,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 228
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 82,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3425.74625,
+       "cls": 0,
+       "tbt": 410.65074999999933,
+       "fcp": 913.3969999999999,
+       "si": 923.3433247310352,
+       "js_kb": 388,
+       "font_kb": 72,
+       "gesamt_kb": 614,
+       "benchmark": 1516.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 282
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 86,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3000,
+      "cls": 0,
+      "tbt": 359,
+      "fcp": 1076,
+      "si": 1076,
+      "js_kb": 385,
+      "font_kb": 72,
+      "gesamt_kb": 612,
+      "benchmark": 1416.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 110
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 18,
+       "elementRenderDelay": 245
+      },
+      "streuung_perf": [
+       82,
+       91
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2703.3969999999995,
+       "cls": 0,
+       "tbt": 287.22900000000004,
+       "fcp": 1075.626,
+       "si": 1075.626,
+       "js_kb": 385,
+       "font_kb": 72,
+       "gesamt_kb": 612,
+       "benchmark": 1432,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 222
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3131.88,
+       "cls": 0,
+       "tbt": 359.2649999999999,
+       "fcp": 912.94,
+       "si": 912.94,
+       "js_kb": 385,
+       "font_kb": 72,
+       "gesamt_kb": 612,
+       "benchmark": 1416.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 238
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 82,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3506.484,
+       "cls": 0,
+       "tbt": 380.672,
+       "fcp": 1078.242,
+       "si": 1078.242,
+       "js_kb": 385,
+       "font_kb": 72,
+       "gesamt_kb": 612,
+       "benchmark": 1334.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 262
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2999.7520000000004,
+       "cls": 0,
+       "tbt": 214.77999999999997,
+       "fcp": 1067.0639999999999,
+       "si": 1067.0639999999999,
+       "js_kb": 385,
+       "font_kb": 72,
+       "gesamt_kb": 612,
+       "benchmark": 1491.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 247
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2714.191,
+       "cls": 0,
+       "tbt": 417.43499999999995,
+       "fcp": 1075.878,
+       "si": 1075.878,
+       "js_kb": 385,
+       "font_kb": 72,
+       "gesamt_kb": 612,
+       "benchmark": 1234,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps rund um Badsanierung, Fliesen…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 110
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 22,
+        "elementRenderDelay": 245
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -426,
+     "cls": 0,
+     "tbt": -3,
+     "fcp": 6,
+     "si": 6,
+     "js_kb": -3,
+     "font_kb": 0,
+     "gesamt_kb": -2,
+     "benchmark": 5.5,
+     "lcp_relativ": -0.124
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/bad/projekt-check": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2568,
+      "cls": 0,
+      "tbt": 165,
+      "fcp": 1072,
+      "si": 1072,
+      "js_kb": 235,
+      "font_kb": 72,
+      "gesamt_kb": 421,
+      "benchmark": 1494.5,
+      "werkzeug_wiederholungen": 1,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 276,
+        "left": 16,
+        "width": 380,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 203
+      },
+      "streuung_perf": [
+       89,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2748.8599999999997,
+       "cls": 0,
+       "tbt": 165.22800000000007,
+       "fcp": 1075.632,
+       "si": 1075.632,
+       "js_kb": 235,
+       "font_kb": 72,
+       "gesamt_kb": 421,
+       "benchmark": 1549.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2571.6187499999996,
+       "cls": 0,
+       "tbt": 163.6049999999998,
+       "fcp": 1072.3425,
+       "si": 1072.3425,
+       "js_kb": 235,
+       "font_kb": 72,
+       "gesamt_kb": 421,
+       "benchmark": 1494.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 238
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2563.9473,
+       "cls": 0,
+       "tbt": 224.01317500000005,
+       "fcp": 1070.9209500000002,
+       "si": 1070.9209500000002,
+       "js_kb": 235,
+       "font_kb": 72,
+       "gesamt_kb": 421,
+       "benchmark": 1363.5,
+       "werkzeug_wiederholungen": 1,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2567.8989999999994,
+       "cls": 0,
+       "tbt": 190.52525000000037,
+       "fcp": 1076.8484999999998,
+       "si": 1076.8484999999998,
+       "js_kb": 235,
+       "font_kb": 72,
+       "gesamt_kb": 421,
+       "benchmark": 1420,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 182
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2558.599,
+       "cls": 0.16586252049687975,
+       "tbt": 116.85024999999996,
+       "fcp": 1062.8985,
+       "si": 1062.8985,
+       "js_kb": 235,
+       "font_kb": 72,
+       "gesamt_kb": 421,
+       "benchmark": 1609.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 178
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2419,
+      "cls": 0,
+      "tbt": 133,
+      "fcp": 1072,
+      "si": 1072,
+      "js_kb": 232,
+      "font_kb": 72,
+      "gesamt_kb": 418,
+      "benchmark": 1355,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 276,
+        "left": 16,
+        "width": 380,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 18,
+       "elementRenderDelay": 212
+      },
+      "streuung_perf": [
+       93,
+       97
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2606.2875000000004,
+       "cls": 0,
+       "tbt": 133,
+       "fcp": 1072.545,
+       "si": 1072.545,
+       "js_kb": 232,
+       "font_kb": 72,
+       "gesamt_kb": 418,
+       "benchmark": 1486,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2416.5325000000003,
+       "cls": 0,
+       "tbt": 129.69350000000009,
+       "fcp": 1069.8390000000002,
+       "si": 1069.8390000000002,
+       "js_kb": 232,
+       "font_kb": 72,
+       "gesamt_kb": 418,
+       "benchmark": 1357.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 212
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 97,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2412.0325000000003,
+       "cls": 0,
+       "tbt": 121.0934999999995,
+       "fcp": 1064.4389999999999,
+       "si": 1064.4389999999999,
+       "js_kb": 232,
+       "font_kb": 72,
+       "gesamt_kb": 418,
+       "benchmark": 1355,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 191
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2420.2549999999997,
+       "cls": 0,
+       "tbt": 258.74499999999944,
+       "fcp": 1074.306,
+       "si": 1074.306,
+       "js_kb": 232,
+       "font_kb": 72,
+       "gesamt_kb": 418,
+       "benchmark": 1323,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 223
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2418.7325,
+       "cls": 0,
+       "tbt": 195.7534999999998,
+       "fcp": 1072.4790000000003,
+       "si": 1072.4790000000003,
+       "js_kb": 232,
+       "font_kb": 72,
+       "gesamt_kb": 418,
+       "benchmark": 1254.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Nutzen Sie den Bad-Projektcheck von Tezgel Wetzlar: Badsanierung in 2 Minuten o…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 276,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -149,
+     "cls": 0,
+     "tbt": -32,
+     "fcp": 0,
+     "si": 0,
+     "js_kb": -3,
+     "font_kb": 0,
+     "gesamt_kb": -3,
+     "benchmark": -139.5,
+     "lcp_relativ": -0.058
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 1.8,
+  "last_1min_start": 1.8,
+  "last_1min_ende": 1.92
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}
