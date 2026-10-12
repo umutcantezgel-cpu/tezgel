@@ -382,10 +382,12 @@ async function VERDECKUNG(SEL) {
   });
   const stand = els.map(() => ({ gesehen: 0, frei: 0, abgeschnitten: 0, t: null }));
   const se = document.scrollingElement || document.documentElement;
-  const max = Math.max(0, se.scrollHeight - innerHeight);
+  // Rollhöhe je Schritt neu lesen: Abschnitte mit content-visibility:auto (spaet-zeichnen) wachsen erst beim Einrollen
+  // auf ihre echte Höhe; ein einmal gelesenes Maximum endete sonst vor dem Fuß (Fuß fälschlich „nie im Bild“, F-02).
+  const maxJetzt = () => Math.max(0, se.scrollHeight - innerHeight);
   const schritt = Math.max(100, Math.floor(innerHeight / 2));
   let positionen = 0;
-  for (let y = 0; ; y = Math.min(y + schritt, max)) {
+  for (let y = 0; ; y = Math.min(y + schritt, maxJetzt())) {
     window.scrollTo({ top: y, left: 0, behavior: 'instant' });
     await Z.frames(2);
     positionen++;
@@ -397,7 +399,7 @@ async function VERDECKUNG(SEL) {
       stand[i].gesehen++;
       if (t.s === 'frei') stand[i].frei++; else if (!stand[i].t) stand[i].t = t;
     });
-    if (y >= max || positionen > 400) break;
+    if (y >= maxJetzt() || positionen > 400) break;
   }
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   const verdeckt = [], nieImBild = [];
