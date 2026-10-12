@@ -26,5 +26,12 @@ Anfahrt-Abschnitten der Stadtseiten), 9988385 (/faq bindet den Rechner wieder di
   /preise laden Funnel bzw. Rechner bewusst nach (R-01b, Lighthouse e6-e039) – Platzhalter mit Telefon/WhatsApp/E-Mail.
 - `sprung_rueckwaerts` und `fokus_verdeckt` je Seite wie live (Rechnerseiten d1440; Banner beim Erstbesuch, M-21).
 
-## Lighthouse
-Folgt (ruhiges Fenster).
+## Lighthouse (Last 2,5; 5 verschränkte Paare, live 4365 gegen 4366; `belege/r02-e039-lh/`) – alles innerhalb der Streuung oder besser
+| Seite | mobil Punkte · TBT | Desktop Punkte · LCP |
+|---|---|---|
+| / | 90 → 91 · 134 → 86 ms | 100 → 100 · +55 ms |
+| /faq | 95 → 96 · 166 → 97 ms (JS 281 → 270 KB, Rechner direkt) | 100 → 100 · ±0 |
+| /standorte/giessen | 95 → 95 · 143 → 180 ms | 100 → 100 · +35 ms |
+
+## Ergebnis
+Grün. Push des geprüften Produktstands 9988385 (danach nur Belege und Prüfwerkzeug).
