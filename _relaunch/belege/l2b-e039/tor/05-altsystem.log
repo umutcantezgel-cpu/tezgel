@@ -1,0 +1,1 @@
+src/components/common/Header.jsx:194:                                                        <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-nacht-2">{link.featured.eyebrow}</span>

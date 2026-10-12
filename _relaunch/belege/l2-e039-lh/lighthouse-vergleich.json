@@ -1,0 +1,1374 @@
+{
+ "satz": "l2-e039-lh",
+ "base": "http://127.0.0.1:4361",
+ "kandidat": "http://127.0.0.1:4362",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 5 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4361, B = Kandidat http://127.0.0.1:4362) im selben Messfenster",
+ "erstellt": "2026-10-12T14:31:30.454Z",
+ "laeufe": 5,
+ "seiten": {
+  "/fliesen/konfigurator": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2572,
+      "cls": 0,
+      "tbt": 184,
+      "fcp": 1071,
+      "si": 1077,
+      "js_kb": 295,
+      "font_kb": 72,
+      "gesamt_kb": 528,
+      "benchmark": 1386,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+       "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+       "snippet": "<p class=\"text-fs-3\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 15,
+       "elementRenderDelay": 215
+      },
+      "streuung_perf": [
+       86,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 86,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2985.4264000000003,
+       "cls": 0,
+       "tbt": 375.49999999999966,
+       "fcp": 962.4264000000001,
+       "si": 1180.3866258309895,
+       "js_kb": 295,
+       "font_kb": 72,
+       "gesamt_kb": 528,
+       "benchmark": 949.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 23,
+        "elementRenderDelay": 408
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2569.508,
+       "cls": 0,
+       "tbt": 172,
+       "fcp": 1079.262,
+       "si": 1079.262,
+       "js_kb": 295,
+       "font_kb": 72,
+       "gesamt_kb": 528,
+       "benchmark": 1572.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 185
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2567.6625000000004,
+       "cls": 0,
+       "tbt": 162,
+       "fcp": 1071.1950000000002,
+       "si": 1071.1950000000002,
+       "js_kb": 295,
+       "font_kb": 72,
+       "gesamt_kb": 528,
+       "benchmark": 1355,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 215
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2638.0550000000003,
+       "cls": 0,
+       "tbt": 183.6812500000001,
+       "fcp": 1069.5825,
+       "si": 1069.5825,
+       "js_kb": 295,
+       "font_kb": 72,
+       "gesamt_kb": 528,
+       "benchmark": 1518.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 191
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2572.141249999999,
+       "cls": 0,
+       "tbt": 186.2869999999998,
+       "fcp": 1076.5695,
+       "si": 1076.5695,
+       "js_kb": 295,
+       "font_kb": 72,
+       "gesamt_kb": 528,
+       "benchmark": 1386,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 220
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2572,
+      "cls": 0,
+      "tbt": 147,
+      "fcp": 1076,
+      "si": 1076,
+      "js_kb": 296,
+      "font_kb": 72,
+      "gesamt_kb": 530,
+      "benchmark": 1472,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+       "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+       "snippet": "<p class=\"text-fs-3\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 15,
+       "elementRenderDelay": 192
+      },
+      "streuung_perf": [
+       93,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2788.8616249999995,
+       "cls": 0,
+       "tbt": 196.5,
+       "fcp": 1088.83395,
+       "si": 1088.83395,
+       "js_kb": 296,
+       "font_kb": 72,
+       "gesamt_kb": 530,
+       "benchmark": 1335,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 204
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2571.93125,
+       "cls": 0,
+       "tbt": 181.11374999999998,
+       "fcp": 1076.3175,
+       "si": 1076.3175,
+       "js_kb": 296,
+       "font_kb": 72,
+       "gesamt_kb": 530,
+       "benchmark": 1477.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 200
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2569.3612500000004,
+       "cls": 0,
+       "tbt": 128.12775000000056,
+       "fcp": 1073.2335,
+       "si": 1073.2335,
+       "js_kb": 296,
+       "font_kb": 72,
+       "gesamt_kb": 530,
+       "benchmark": 1472,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.15125,
+       "cls": 0,
+       "tbt": 146.76975000000039,
+       "fcp": 1069.3815,
+       "si": 1069.3815,
+       "js_kb": 296,
+       "font_kb": 72,
+       "gesamt_kb": 530,
+       "benchmark": 1527,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 190
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2761.9212500000003,
+       "cls": 0,
+       "tbt": 144.6157499999997,
+       "fcp": 1076.3055,
+       "si": 1076.3055,
+       "js_kb": 296,
+       "font_kb": 72,
+       "gesamt_kb": 530,
+       "benchmark": 1339,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p.text-fs-3",
+        "text": "Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechne…",
+        "snippet": "<p class=\"text-fs-3\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 176
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 0,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 0,
+     "cls": 0,
+     "tbt": -37,
+     "fcp": 5,
+     "si": -1,
+     "js_kb": 1,
+     "font_kb": 0,
+     "gesamt_kb": 2,
+     "benchmark": 86,
+     "lcp_relativ": 0
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/fliesen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2724,
+      "cls": 0,
+      "tbt": 215,
+      "fcp": 1220,
+      "si": 1220,
+      "js_kb": 298,
+      "font_kb": 72,
+      "gesamt_kb": 546,
+      "benchmark": 1426,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 295,
+        "left": 16,
+        "width": 380,
+        "height": 247
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 19,
+       "elementRenderDelay": 208
+      },
+      "streuung_perf": [
+       84,
+       93
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 84,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2721.2487499999993,
+       "cls": 0,
+       "tbt": 500.0009999999995,
+       "fcp": 1225.4985,
+       "si": 1225.4985,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1370.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 40,
+        "elementRenderDelay": 279
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2711.584,
+       "cls": 0,
+       "tbt": 215,
+       "fcp": 1217.3760000000002,
+       "si": 1217.3760000000002,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1545,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 22,
+        "elementRenderDelay": 207
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2932.25875,
+       "cls": 0,
+       "tbt": 195,
+       "fcp": 1220.1104999999998,
+       "si": 1220.1104999999998,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1426,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 221
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2724.29125,
+       "cls": 0,
+       "tbt": 183.567,
+       "fcp": 1229.1495,
+       "si": 1229.1495,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1407.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3148.393,
+       "cls": 0.005511956403297836,
+       "tbt": 216.60699999999997,
+       "fcp": 1220.0895,
+       "si": 1220.0895,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1545.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 89,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 3275,
+      "cls": 0,
+      "tbt": 218,
+      "fcp": 1227,
+      "si": 1227,
+      "js_kb": 300,
+      "font_kb": 72,
+      "gesamt_kb": 549,
+      "benchmark": 1419,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 295,
+        "left": 16,
+        "width": 380,
+        "height": 247
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 18,
+       "elementRenderDelay": 208
+      },
+      "streuung_perf": [
+       88,
+       92
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3274.961,
+       "cls": 0,
+       "tbt": 217.5,
+       "fcp": 1238.9415000000004,
+       "si": 1238.9415000000004,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1396.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3275.049,
+       "cls": 0,
+       "tbt": 168,
+       "fcp": 1221.0735,
+       "si": 1221.0735,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1422.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 22,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3284.633,
+       "cls": 0,
+       "tbt": 195,
+       "fcp": 1224.9495,
+       "si": 1224.9495,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1422.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 211
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2722.1287500000003,
+       "cls": 0,
+       "tbt": 337.29699999999957,
+       "fcp": 1226.5545,
+       "si": 1226.5545,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1409.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 279
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2724.58,
+       "cls": 0,
+       "tbt": 236.99999999999955,
+       "fcp": 1229.4959999999996,
+       "si": 1229.4959999999996,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1419,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 172
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -3,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 551,
+     "cls": 0,
+     "tbt": 3,
+     "fcp": 7,
+     "si": 7,
+     "js_kb": 2,
+     "font_kb": 0,
+     "gesamt_kb": 3,
+     "benchmark": -7,
+     "lcp_relativ": 0.202
+    },
+    "lcp_element_gleich": true,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 3 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "schlechter jenseits der Streuung"
+   }
+  },
+  "/standorte/giessen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2565,
+      "cls": 0,
+      "tbt": 184,
+      "fcp": 1072,
+      "si": 1072,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 526,
+      "benchmark": 1519,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 312,
+        "left": 16,
+        "width": 380,
+        "height": 192
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17,
+       "elementRenderDelay": 206
+      },
+      "streuung_perf": [
+       93,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2779.6524999999997,
+       "cls": 0,
+       "tbt": 184.06950000000052,
+       "fcp": 1070.583,
+       "si": 1070.583,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 526,
+       "benchmark": 1519,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2787.665,
+       "cls": 0,
+       "tbt": 188.99999999999977,
+       "fcp": 1083.798,
+       "si": 1083.798,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 526,
+       "benchmark": 1370,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 24,
+        "elementRenderDelay": 210
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.7380000000003,
+       "cls": 0,
+       "tbt": 217.00000000000045,
+       "fcp": 1072.107,
+       "si": 1072.107,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 526,
+       "benchmark": 1545.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 215
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2562.362,
+       "cls": 0,
+       "tbt": 111.90949999999998,
+       "fcp": 1068.5430000000001,
+       "si": 1068.5430000000001,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 526,
+       "benchmark": 1357,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2565.198,
+       "cls": 0,
+       "tbt": 161.70049999999992,
+       "fcp": 1072.797,
+       "si": 1072.797,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 524,
+       "benchmark": 1534.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2566,
+      "cls": 0,
+      "tbt": 206,
+      "fcp": 1074,
+      "si": 1074,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 529,
+      "benchmark": 1471.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 312,
+        "left": 16,
+        "width": 380,
+        "height": 192
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 14,
+       "elementRenderDelay": 220
+      },
+      "streuung_perf": [
+       89,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.5319999999997,
+       "cls": 0,
+       "tbt": 161.36699999999996,
+       "fcp": 1071.798,
+       "si": 1071.798,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 529,
+       "benchmark": 1483.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 172
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2565.942,
+       "cls": 0,
+       "tbt": 198.0145,
+       "fcp": 1073.913,
+       "si": 1073.913,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 529,
+       "benchmark": 1521,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 220
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.5859999999993,
+       "cls": 0,
+       "tbt": 354.0000000000001,
+       "fcp": 914.586,
+       "si": 914.586,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 528,
+       "benchmark": 1471.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 232
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.7619999999997,
+       "cls": 0,
+       "tbt": 225.73800000000006,
+       "fcp": 1075.143,
+       "si": 1075.143,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 529,
+       "benchmark": 1310,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 222
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.9900000000002,
+       "cls": 0,
+       "tbt": 206.25250000000096,
+       "fcp": 1075.4850000000001,
+       "si": 1075.4850000000001,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 529,
+       "benchmark": 1440,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Fliesenverlegung & Badsanierung in Gießen: Fliesenverlegung Tezgel – Ihr Fachbe…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 312,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 195
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 1,
+     "cls": 0,
+     "tbt": 22,
+     "fcp": 2,
+     "si": 2,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": 3,
+     "benchmark": -47.5,
+     "lcp_relativ": 0
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 2.27,
+  "last_1min_start": 2.27,
+  "last_1min_ende": 1.26
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}

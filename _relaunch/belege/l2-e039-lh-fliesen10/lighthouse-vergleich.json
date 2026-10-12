@@ -1,0 +1,816 @@
+{
+ "satz": "l2-e039-lh-fliesen10",
+ "base": "http://127.0.0.1:4361",
+ "kandidat": "http://127.0.0.1:4362",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 10 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4361, B = Kandidat http://127.0.0.1:4362) im selben Messfenster",
+ "erstellt": "2026-10-12T14:37:38.437Z",
+ "laeufe": 10,
+ "seiten": {
+  "/fliesen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2895,
+      "cls": 0,
+      "tbt": 216,
+      "fcp": 1220,
+      "si": 1220,
+      "js_kb": 298,
+      "font_kb": 72,
+      "gesamt_kb": 546,
+      "benchmark": 1474,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 295,
+        "left": 16,
+        "width": 380,
+        "height": 247
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17,
+       "elementRenderDelay": 222
+      },
+      "streuung_perf": [
+       90,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2874.7654999999995,
+       "cls": 0,
+       "tbt": 225.23449999999934,
+       "fcp": 1218.3186,
+       "si": 1218.3186,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1369.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 256
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3132.227,
+       "cls": 0,
+       "tbt": 146,
+       "fcp": 1218.3405000000002,
+       "si": 1218.3405000000002,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1431,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 209
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2724.5550000000007,
+       "cls": 0,
+       "tbt": 217.00000000000045,
+       "fcp": 1229.4660000000001,
+       "si": 1229.4660000000001,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1487,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 200
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2718.0549999999994,
+       "cls": 0,
+       "tbt": 240.55599999999959,
+       "fcp": 1221.666,
+       "si": 1221.666,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1443,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 238
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3114.839,
+       "cls": 0,
+       "tbt": 137,
+       "fcp": 1223.7585,
+       "si": 1223.7585,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1480.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 216
+       },
+       "reihenfolge": 8
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3132.611,
+       "cls": 0,
+       "tbt": 215.09725000000003,
+       "fcp": 1214.4165000000003,
+       "si": 1214.4165000000003,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1365,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 22,
+        "elementRenderDelay": 228
+       },
+       "reihenfolge": 10
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2931.395,
+       "cls": 0,
+       "tbt": 200.88400000000001,
+       "fcp": 1219.674,
+       "si": 1219.674,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1502.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 233
+       },
+       "reihenfolge": 12
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2915.996250000001,
+       "cls": 0,
+       "tbt": 235.50000000000045,
+       "fcp": 1220.9955,
+       "si": 1220.9955,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1467.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 23,
+        "elementRenderDelay": 194
+       },
+       "reihenfolge": 14
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2720.257,
+       "cls": 0,
+       "tbt": 236.74299999999948,
+       "fcp": 1230.3855,
+       "si": 1230.3855,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1563.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 232
+       },
+       "reihenfolge": 16
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2712.699,
+       "cls": 0,
+       "tbt": 166.99999999999955,
+       "fcp": 1219.0485,
+       "si": 1219.0485,
+       "js_kb": 298,
+       "font_kb": 72,
+       "gesamt_kb": 546,
+       "benchmark": 1536.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 201
+       },
+       "reihenfolge": 18
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2795,
+      "cls": 0,
+      "tbt": 240,
+      "fcp": 1224,
+      "si": 1224,
+      "js_kb": 300,
+      "font_kb": 72,
+      "gesamt_kb": 549,
+      "benchmark": 1456.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 295,
+        "left": 16,
+        "width": 380,
+        "height": 247
+       },
+       "anteil": "10/10",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 17.5,
+       "elementRenderDelay": 214.5
+      },
+      "streuung_perf": [
+       88,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2796.8313,
+       "cls": 0,
+       "tbt": 240.49999999999977,
+       "fcp": 1232.7469499999997,
+       "si": 1232.7469499999997,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1300.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 173
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3301.3810000000003,
+       "cls": 0,
+       "tbt": 131.65475000000015,
+       "fcp": 1223.0715,
+       "si": 1223.0715,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1532.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 183
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2719.6674999999996,
+       "cls": 0,
+       "tbt": 151.5664999999999,
+       "fcp": 1223.6009999999999,
+       "si": 1223.6009999999999,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1370.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 198
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3022.9037500000004,
+       "cls": 0,
+       "tbt": 103.49999999999977,
+       "fcp": 1219.6845,
+       "si": 1219.6845,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1504,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 210
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 91,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2720.2025000000003,
+       "cls": 0,
+       "tbt": 262.45950000000016,
+       "fcp": 1224.2430000000002,
+       "si": 1224.2430000000002,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1438.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 257
+       },
+       "reihenfolge": 9
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2719.03625,
+       "cls": 0,
+       "tbt": 287.7710000000004,
+       "fcp": 1222.8435000000002,
+       "si": 1222.8435000000002,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1421.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 224
+       },
+       "reihenfolge": 11
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3292.65,
+       "cls": 0,
+       "tbt": 205.83749999999964,
+       "fcp": 1227.975,
+       "si": 1227.975,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1474.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 219
+       },
+       "reihenfolge": 13
+      },
+      {
+       "perf": 89,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2792.915,
+       "cls": 0,
+       "tbt": 296.1062499999998,
+       "fcp": 1226.8725,
+       "si": 1226.8725,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1590.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 15
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2723.38875,
+       "cls": 0,
+       "tbt": 240.82225000000017,
+       "fcp": 1228.0665000000001,
+       "si": 1228.0665000000001,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1504.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 20,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 17
+      },
+      {
+       "perf": 88,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3312.3559999999998,
+       "cls": 0,
+       "tbt": 239.05499999999984,
+       "fcp": 1221.5339999999999,
+       "si": 1221.5339999999999,
+       "js_kb": 300,
+       "font_kb": 72,
+       "gesamt_kb": 549,
+       "benchmark": 1345.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "In unserem Fliesen-Ratgeber erklären wir Formate, Räume, Material und Verlegete…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 295,
+         "left": 16,
+         "width": 380,
+         "height": 247
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 263
+       },
+       "reihenfolge": 19
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -100,
+     "cls": 0,
+     "tbt": 24,
+     "fcp": 4,
+     "si": 4,
+     "js_kb": 2,
+     "font_kb": 0,
+     "gesamt_kb": 3,
+     "benchmark": -17.5,
+     "lcp_relativ": -0.035
+    },
+    "lcp_element_gleich": true,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 1.14,
+  "last_1min_start": 1.14,
+  "last_1min_ende": 1.89
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}

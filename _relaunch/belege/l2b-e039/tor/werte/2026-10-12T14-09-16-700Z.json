@@ -1,0 +1,42 @@
+{
+ "werkzeug": "werte.mjs",
+ "zeitpunkt": "2026-10-12T14:09:16.700Z",
+ "basis": "--dateien",
+ "arbeitsbaum": false,
+ "regeln": "_werkstatt/werkzeuge/werte-regeln.json",
+ "dateien": [
+  "src/app/(bestand)/standorte/[stadt]/page.tsx",
+  "src/components/common/Header.jsx",
+  "src/components/forms/LeadQuickForm.tsx",
+  "src/components/funnels/FliesenKonfigurator/Erfolg.jsx",
+  "src/components/funnels/FliesenKonfigurator/OptionGroup.jsx",
+  "src/components/funnels/FliesenKonfigurator/ResultSummary.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt1.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt2.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt3.jsx",
+  "src/components/funnels/FliesenKonfigurator/Schritt4.jsx",
+  "src/components/funnels/FliesenKonfigurator/WhatsAppGeoeffnet.jsx",
+  "src/components/funnels/FliesenKonfigurator/index.jsx",
+  "src/components/funnels/FliesenKonfigurator/stile.js",
+  "src/components/locations/RouteVisualization.tsx"
+ ],
+ "kandidaten_vorkommen": 963,
+ "kandidaten_eindeutig": 217,
+ "stil_nicht_pruefbar": 0,
+ "laufzeit_ms": 274,
+ "zusammenfassung": {
+  "ohne_css": 0,
+  "beliebig": 0,
+  "farbe_ausserhalb": 0,
+  "abstand_ausserhalb": 0,
+  "groesse_ausserhalb": 0,
+  "schrift_ausserhalb": 0,
+  "radius_ausserhalb": 0,
+  "dauer_ausserhalb": 0,
+  "farbe_literal": 0,
+  "style_wert": 0,
+  "dauer_zahl": 0
+ },
+ "befunde": [],
+ "fehler": []
+}

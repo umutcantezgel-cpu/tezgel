@@ -1,0 +1,337 @@
+{
+ "satz": "l2b-e039-texte-live",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-e41b65f/.next/server/app/**/*.html",
+  "build_id": "aEuQiRw91cXPxZBM2P0qo",
+  "dateien": 7,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T14:09:18.535Z",
+ "summe": {
+  "dateien": 7,
+  "im_manifest": 7,
+  "eintraege": 3354,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 21,
+   "ok": 8,
+   "befehle": 7,
+   "fehlend": 0,
+   "ziel_unbekannt": 6,
+   "pflichtanker_ok": "0/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 0.8
+ },
+ "fragmente": {
+  "gesamt": 21,
+  "ok": 8,
+  "befehle": [
+   {
+    "seite": "/fliesen/konfigurator",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen/bad/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/fliesen/kueche",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/limburg",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [
+   {
+    "seite": "/fliesen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/leistungen/bad/wetzlar",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/fliesen/kueche",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/standorte/giessen",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/standorte/limburg",
+    "href": "/kontakt#express-anfrage"
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "href": "/kontakt#express-anfrage"
+   }
+  ],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 6,
+    "von": [
+     "/fliesen",
+     "/leistungen/bad/wetzlar",
+     "/fliesen/kueche",
+     "/standorte/giessen",
+     "/standorte/limburg"
+    ]
+   },
+   {
+    "ziel": "/fliesen/konfigurator",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/konfigurator"
+    ]
+   },
+   {
+    "ziel": "/fliesen/konfigurator",
+    "id": "konfigurator",
+    "verweise": 1,
+    "von": [
+     "/fliesen/konfigurator"
+    ]
+   },
+   {
+    "ziel": "/fliesen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen"
+    ]
+   },
+   {
+    "ziel": "/leistungen/bad/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen/bad/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/fliesen/kueche",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/fliesen/kueche"
+    ]
+   },
+   {
+    "ziel": "/standorte/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/giessen"
+    ]
+   },
+   {
+    "ziel": "/standorte/limburg",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/limburg"
+    ]
+   },
+   {
+    "ziel": "/standorte/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/wetzlar"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": false,
+    "seite_vorhanden": false
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/fliesen": {
+   "datei": "fliesen.json",
+   "quelle": "fliesen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 520,
+   "arten": {
+    "meta": 33,
+    "text": 423,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Fliesen-Ratgeber: Formate, Räume und Verlegetechnik verständlich erklärt"
+   ],
+   "hash": "eb231a7d53bac92b"
+  },
+  "/fliesen/konfigurator": {
+   "datei": "fliesen__konfigurator.json",
+   "quelle": "fliesen/konfigurator.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 448,
+   "arten": {
+    "meta": 33,
+    "text": 361,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 16
+   },
+   "h1": [
+    "Fliesen-Konfigurator & Bedarfsrechner von Tezgel"
+   ],
+   "hash": "fe6706aa8f291eed"
+  },
+  "/fliesen/kueche": {
+   "datei": "fliesen__kueche.json",
+   "quelle": "fliesen/kueche.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 437,
+   "arten": {
+    "meta": 33,
+    "text": 345,
+    "aria": 39,
+    "alt": 3,
+    "ueberschrift": 17
+   },
+   "h1": [
+    "Küchenfliesen verlegen in Wetzlar mit Fliesenleger Tezgel"
+   ],
+   "hash": "d43b2313b96c25b2"
+  },
+  "/leistungen/bad/wetzlar": {
+   "datei": "leistungen__bad__wetzlar.json",
+   "quelle": "leistungen/bad/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 436,
+   "arten": {
+    "meta": 33,
+    "text": 347,
+    "aria": 46,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Badsanierung & Bäder in Wetzlar"
+   ],
+   "hash": "ed769b3f87872dd5"
+  },
+  "/standorte/giessen": {
+   "datei": "standorte__giessen.json",
+   "quelle": "standorte/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 503,
+   "arten": {
+    "meta": 33,
+    "text": 411,
+    "aria": 47,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Gießen"
+   ],
+   "hash": "935bfc40e79287b7"
+  },
+  "/standorte/limburg": {
+   "datei": "standorte__limburg.json",
+   "quelle": "standorte/limburg.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 506,
+   "arten": {
+    "meta": 33,
+    "text": 414,
+    "aria": 47,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Limburg an der Lahn"
+   ],
+   "hash": "073f82ba4f0e6c6e"
+  },
+  "/standorte/wetzlar": {
+   "datei": "standorte__wetzlar.json",
+   "quelle": "standorte/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 504,
+   "arten": {
+    "meta": 33,
+    "text": 412,
+    "aria": 47,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Wetzlar"
+   ],
+   "hash": "83f545bb9191868c"
+  }
+ }
+}

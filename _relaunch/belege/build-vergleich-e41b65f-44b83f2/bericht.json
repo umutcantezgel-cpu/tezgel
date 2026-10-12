@@ -1,0 +1,364 @@
+{
+ "vorher": "e41b65f",
+ "nachher": "44b83f2",
+ "laufzeit_reste": {
+  "vorher": [],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 78,
+ "abweichungen": [
+  {
+   "datei": "fliesen/auf-fussbodenheizung.html",
+   "ab": 129677,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/festpreisangebot.html",
+   "ab": 136143,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/fliesenarten.html",
+   "ab": 138759,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/flur-diele.html",
+   "ab": 132904,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/grossformat.html",
+   "ab": 136809,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/holzoptik.html",
+   "ab": 134182,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/konfigurator.html",
+   "ab": 129301,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 @5xl:gr"
+  },
+  {
+   "datei": "fliesen/kueche.html",
+   "ab": 134858,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/neubau.html",
+   "ab": 135662,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/renovierung.html",
+   "ab": 134753,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/verlegemuster.html",
+   "ab": 199732,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen/verlegetechnik.html",
+   "ab": 141313,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "fliesen.html",
+   "ab": 215631,
+   "vorher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 sm:p-8 lg:p-6\"><div class=\"grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg",
+   "nachher": "_TO_CLIENT_SIDE_RENDERING\"></template><!--/$--><div hidden id=\"S:0\"><div class=\"@container\"><div class=\"border border-strich bg-fliese\"><div class=\"grid grid-cols-1 gap-6 p-6 @xl:p-8 @4xl:p-12 \"><div "
+  },
+  {
+   "datei": "leistungen/aussen/asslar.html",
+   "ab": 148824,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/bad-nauheim.html",
+   "ab": 149163,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/braunfels.html",
+   "ab": 149025,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/butzbach.html",
+   "ab": 148994,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/dillenburg.html",
+   "ab": 149096,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/friedberg.html",
+   "ab": 149331,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/giessen.html",
+   "ab": 148934,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/haiger.html",
+   "ab": 148873,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/herborn.html",
+   "ab": 148939,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/limburg.html",
+   "ab": 149397,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/marburg.html",
+   "ab": 148996,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/solms.html",
+   "ab": 148817,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/aussen/wetzlar.html",
+   "ab": 148994,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/asslar.html",
+   "ab": 148764,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/bad-nauheim.html",
+   "ab": 149083,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/braunfels.html",
+   "ab": 148961,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/butzbach.html",
+   "ab": 148931,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/dillenburg.html",
+   "ab": 149031,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/friedberg.html",
+   "ab": 149285,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/giessen.html",
+   "ab": 148873,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/haiger.html",
+   "ab": 148812,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/herborn.html",
+   "ab": 148877,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/limburg.html",
+   "ab": 149350,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/marburg.html",
+   "ab": 148934,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/solms.html",
+   "ab": 148757,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/bad/wetzlar.html",
+   "ab": 148953,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  },
+  {
+   "datei": "leistungen/untergrund/asslar.html",
+   "ab": 148782,
+   "vorher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8 \"><div class=\"mb-6 border-b border-fuge pb-6\"><span class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tint",
+   "nachher": " hidden id=\"S:0\"><div class=\"border border-strich bg-fliese p-6 text-left lg:p-8\"><div class=\"mb-6 border-b border-fuge pb-6\"><div class=\"border-b border-fuge pb-4\"><span class=\"inline-flex items-cent"
+  }
+ ],
+ "css_selektoren_weg": [
+  ".-mt-12",
+  ".cursor-not-allowed",
+  ".lg\\:-mt-24",
+  ".lg\\:gap-4",
+  ".lg\\:gap-y-4",
+  ".order-1",
+  ".order-2",
+  ".order-3",
+  ".order-4",
+  ".sm\\:first\\:pl-0:first-child",
+  ".sm\\:gap-y-2",
+  ".sm\\:justify-end",
+  ".sm\\:last\\:pr-0:last-child",
+  ".sm\\:mb-0",
+  ":where(.sm\\:divide-x>:not(:last-child))",
+  ":where(.sm\\:divide-y-0>:not(:last-child))"
+ ],
+ "css_selektoren_neu": [
+  ".-left-px",
+  ".-top-px",
+  ".\\@2xl\\:gap-4",
+  ".\\@2xl\\:grid-cols-2",
+  ".\\@2xl\\:items-end",
+  ".\\@2xl\\:items-start",
+  ".\\@2xl\\:px-3",
+  ".\\@2xl\\:text-fs-2",
+  ".\\@4xl\\:col-span-1",
+  ".\\@4xl\\:col-span-2",
+  ".\\@4xl\\:grid-cols-2",
+  ".\\@4xl\\:grid-cols-5",
+  ".\\@4xl\\:p-12",
+  ".\\@5xl\\:block",
+  ".\\@5xl\\:col-span-2",
+  ".\\@5xl\\:col-span-3",
+  ".\\@5xl\\:col-start-3",
+  ".\\@5xl\\:flex-col",
+  ".\\@5xl\\:gap-2",
+  ".\\@5xl\\:gap-x-12",
+  ".\\@5xl\\:grid-cols-3",
+  ".\\@5xl\\:p-4",
+  ".\\@5xl\\:row-span-2",
+  ".\\@5xl\\:row-start-1",
+  ".\\@5xl\\:row-start-2",
+  ".\\@5xl\\:self-start",
+  ".\\@5xl\\:sticky",
+  ".\\@5xl\\:top-24",
+  ".\\@max-xl\\:sr-only",
+  ".\\@md\\:col-span-2",
+  ".\\@xl\\:col-span-2",
+  ".\\@xl\\:flex-1",
+  ".\\@xl\\:flex-row",
+  ".\\@xl\\:gap-4",
+  ".\\@xl\\:gap-6",
+  ".\\@xl\\:grid-cols-3",
+  ".\\@xl\\:items-baseline",
+  ".\\@xl\\:items-center",
+  ".\\@xl\\:items-end",
+  ".\\@xl\\:items-start",
+  ".\\@xl\\:justify-between",
+  ".\\@xl\\:ml-auto",
+  ".\\@xl\\:p-8",
+  ".\\@xl\\:self-auto",
+  ".\\@xl\\:shrink-0",
+  ".\\@xl\\:w-2\\/5",
+  ".\\@xl\\:w-auto",
+  ".aria-busy\\:bg-kalk[aria-busy=true]",
+  ".aria-busy\\:border-strich[aria-busy=true]",
+  ".aria-busy\\:pointer-events-none[aria-busy=true]",
+  ".aria-busy\\:text-tinte[aria-busy=true]",
+  ".focus-visible\\:after\\:absolute:focus-visible:after",
+  ".focus-visible\\:after\\:inset-0:focus-visible:after",
+  ".focus-visible\\:after\\:outline-fliese:focus-visible:after",
+  ".focus-visible\\:after\\:outline-offset-4:focus-visible:after",
+  ".focus-visible\\:after\\:pointer-events-none:focus-visible:after",
+  ".focus-visible\\:before\\:absolute:focus-visible:before",
+  ".focus-visible\\:before\\:inset-0:focus-visible:before",
+  ".focus-visible\\:before\\:outline-2:focus-visible:before",
+  ".focus-visible\\:before\\:outline-fliese:focus-visible:before",
+  ".focus-visible\\:before\\:outline-offset-0:focus-visible:before",
+  ".focus-visible\\:before\\:pointer-events-none:focus-visible:before",
+  ".focus-visible\\:outline-tinte:focus-visible",
+  ".focus-visible\\:z-10:focus-visible",
+  ".forced-colors\\:after\\:hidden:after",
+  ".forced-colors\\:before\\:hidden:before",
+  ".forced-colors\\:hidden",
+  ".gap-y-6",
+  ".invisible",
+  ".left-6",
+  ".lg\\:text-fs-4",
+  ".md\\:border-b",
+  ".md\\:border-l",
+  ".md\\:border-r-0",
+  ".md\\:bottom-auto",
+  ".md\\:h-12",
+  ".md\\:pt-16",
+  ".md\\:text-fs-3",
+  ".md\\:text-fs-4",
+  ".outline-2",
+  ".outline-laser-tief",
+  ".outline-offset-2",
+  ".pb-8",
+  ".pr-6",
+  ".text-fuge",
+  ".top-6"
+ ]
+}

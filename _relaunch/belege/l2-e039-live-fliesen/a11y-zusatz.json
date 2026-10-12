@@ -1,0 +1,6241 @@
+{
+ "satz": "l2-e039-live-fliesen",
+ "base": "http://127.0.0.1:4361",
+ "erstellt": "2026-10-12T14:44:21.387Z",
+ "werkzeug": "a11y-zusatz.mjs",
+ "kriterium": "Z-11",
+ "bedingungen": {
+  "server": "http://127.0.0.1:4361",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "seiten": [
+   "/fliesen",
+   "/fliesen/kueche"
+  ],
+  "ansichten": [
+   "m375",
+   "d1440"
+  ],
+  "pruefungen": [
+   "tastatur",
+   "reflow",
+   "zoom",
+   "textabstand",
+   "forced",
+   "ohnejs"
+  ],
+  "einwilligung": "abgelehnt",
+  "banner_zustaende": [
+   "abgelehnt"
+  ],
+  "einwilligung_tastatur": [
+   "abgelehnt",
+   "erstbesuch"
+  ],
+  "reducedMotion": "reduce",
+  "locale": "de-DE",
+  "timezoneId": "Europe/Berlin",
+  "colorScheme": "light",
+  "deviceScaleFactor": 1,
+  "ansichten_px": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "worker": 2,
+  "gegenprobe": null,
+  "regeln": {
+   "tastatur": {
+    "obergrenze_schritte": 400,
+    "ende": "Fokus verlässt das Dokument (activeElement = body, document.hasFocus() = false) oder Rückkehr zum ersten Element",
+    "sprung_rueckwaerts": "Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen",
+    "fokus_sichtbar": "Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung (je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Umfang der Vereinigung der Zeilenstücke im Bild; übereinander liegende Stücke mit Abstand ≤ 2·(Versatz + Breite) des Umrisses bilden wie bei Chrome einen Umriss; Umriss < 2 px gilt als dünn (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als „Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).",
+    "fokus_verdeckt": "elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; „fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; „abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei",
+    "falle": "derselbe Fokus 10× hintereinander → Abbruch; Zyklus = ein Element zum 3. Mal fokussiert → Abbruch, danach Escape + Tab: verlässt der Fokus den Zyklus?",
+    "sprunglink": "erster Tab fokussiert <a href=\"#main-content\"> und das Ziel #main-content existiert",
+    "iframes": "ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)"
+   },
+   "reflow": {
+    "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
+    "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
+   },
+   "zoom": {
+    "css": "1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)",
+    "aequivalent": "640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)",
+    "verdeckt": "sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist",
+    "nie_im_bild": "Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen",
+    "info": "im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar"
+   },
+   "textabstand": {
+    "stilblatt": "*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}",
+    "befund": "Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde",
+    "scroll_ueberhang": "Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info"
+   },
+   "forced": {
+    "emulation": "page.emulateMedia({ forcedColors: 'active' })",
+    "befund": "sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert"
+   },
+   "ohnejs": {
+    "kontext": "javaScriptEnabled: false",
+    "text": "sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)",
+    "erster_bildschirm": "Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert",
+    "navigation": "mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten"
+   }
+  },
+  "rohdaten": "cache/a11y-zusatz/l2-e039-live-fliesen"
+ },
+ "laufzeit_s": 153,
+ "status": {
+  "tastatur": {
+   "reihenfolge": "gruen",
+   "fokus_sichtbar": "rot",
+   "fokus_2px": "rot",
+   "fokus_outline": "gruen",
+   "fokus_verdeckt": "rot",
+   "tastaturfalle": "gruen",
+   "sprunglink": "gruen"
+  },
+  "reflow": "gruen",
+  "zoom": {
+   "css": "rot",
+   "aequivalent": "gruen"
+  },
+  "textabstand": "rot",
+  "forced": "rot",
+  "ohnejs": "gruen"
+ },
+ "kennzahlen": {
+  "tastatur": {
+   "fokus_nicht_sichtbar": 38,
+   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 23,
+   "fokus_ring_teilverdeckt_fest": 60,
+   "fokus_unter_2px": 122,
+   "fokus_nicht_messbar": 0,
+   "fokus_ohne_outline_schatten": 0,
+   "fokus_verdeckt": 169,
+   "fokus_verdeckt_fest": 169,
+   "sprung_rueckwaerts": 0,
+   "falle": 0,
+   "zyklus_ohne_ausweg": 0,
+   "sprunglink_fehlt": 0,
+   "laeufe": 8,
+   "fehler": 0,
+   "schritte": 926,
+   "m375_abgelehnt": {
+    "fokus_nicht_sichtbar": 10,
+    "fokus_unter_2px": 15,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_abgelehnt": {
+    "fokus_nicht_sichtbar": 2,
+    "fokus_unter_2px": 22,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "m375_erstbesuch": {
+    "fokus_nicht_sichtbar": 24,
+    "fokus_unter_2px": 61,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 152,
+    "fokus_verdeckt_fest": 152,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_erstbesuch": {
+    "fokus_nicht_sichtbar": 2,
+    "fokus_unter_2px": 24,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 17,
+    "fokus_verdeckt_fest": 17,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   }
+  },
+  "reflow": {
+   "horizontal": 0,
+   "ueberlauf": 0,
+   "ragt_heraus": 0,
+   "text_abgeschnitten": 0,
+   "laeufe": 2,
+   "fehler": 0
+  },
+  "zoom": {
+   "horizontal": 0,
+   "verdeckt": 10,
+   "verdeckt_fest": 8,
+   "nie_im_bild": 14,
+   "ueberlauf": 30,
+   "laeufe": 4,
+   "fehler": 0,
+   "css": {
+    "horizontal": 0,
+    "verdeckt": 10,
+    "verdeckt_fest": 8,
+    "nie_im_bild": 14,
+    "ueberlauf": 30
+   },
+   "aequivalent": {
+    "horizontal": 0,
+    "verdeckt": 0,
+    "verdeckt_fest": 0,
+    "nie_im_bild": 0,
+    "ueberlauf": 0
+   }
+  },
+  "textabstand": {
+   "abgeschnitten_neu": 2,
+   "scroll_ueberhang_neu": 2,
+   "davon_line_clamp": 0,
+   "ueberlauf_neu": 10,
+   "horizontal_neu": 0,
+   "laeufe": 4,
+   "fehler": 0
+  },
+  "forced": {
+   "ohne_grenze": 104,
+   "davon_mit_grafik": 60,
+   "felder_ohne_grenze": 6,
+   "laeufe": 4,
+   "fehler": 0
+  },
+  "ohnejs": {
+   "text_unter_80": 0,
+   "erster_bildschirm_versteckt": 0,
+   "erster_bildschirm_ebenso_mit_js": 0,
+   "navigation_fehlt": 0,
+   "kopf_ohne_interne_links": 0,
+   "laeufe": 4,
+   "fehler": 0
+  }
+ },
+ "je_seite": {
+  "/fliesen": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 19,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 11,
+    "fokus_ring_teilverdeckt_fest": 40,
+    "fokus_unter_2px": 76,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 94,
+    "fokus_verdeckt_fest": 94,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "reflow": {
+    "horizontal": 0,
+    "ueberlauf": 0,
+    "ragt_heraus": 0,
+    "text_abgeschnitten": 0
+   },
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 6,
+    "verdeckt_fest": 4,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 1,
+    "scroll_ueberhang_neu": 1,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 5,
+    "horizontal_neu": 0
+   },
+   "forced": {
+    "ohne_grenze": 56,
+    "davon_mit_grafik": 38,
+    "felder_ohne_grenze": 6
+   },
+   "ohnejs": {
+    "text_unter_80": 0,
+    "erster_bildschirm_versteckt": 0,
+    "erster_bildschirm_ebenso_mit_js": 0,
+    "navigation_fehlt": 0,
+    "kopf_ohne_interne_links": 0
+   }
+  },
+  "/fliesen/kueche": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 19,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+    "fokus_ring_teilverdeckt_fest": 20,
+    "fokus_unter_2px": 46,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 75,
+    "fokus_verdeckt_fest": 75,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   },
+   "reflow": {
+    "horizontal": 0,
+    "ueberlauf": 0,
+    "ragt_heraus": 0,
+    "text_abgeschnitten": 0
+   },
+   "zoom": {
+    "horizontal": 0,
+    "verdeckt": 4,
+    "verdeckt_fest": 4,
+    "nie_im_bild": 7,
+    "ueberlauf": 15
+   },
+   "textabstand": {
+    "abgeschnitten_neu": 1,
+    "scroll_ueberhang_neu": 1,
+    "davon_line_clamp": 0,
+    "ueberlauf_neu": 5,
+    "horizontal_neu": 0
+   },
+   "forced": {
+    "ohne_grenze": 48,
+    "davon_mit_grafik": 22,
+    "felder_ohne_grenze": 0
+   },
+   "ohnejs": {
+    "text_unter_80": 0,
+    "erster_bildschirm_versteckt": 0,
+    "erster_bildschirm_ebenso_mit_js": 0,
+    "navigation_fehlt": 0,
+    "kopf_ohne_interne_links": 0
+   }
+  }
+ },
+ "ergebnisse": {
+  "tastatur": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 138,
+    "instabil": 0,
+    "fokus": {
+     "ok": 126,
+     "duenn": 11,
+     "kontrastarm": 0,
+     "unsichtbar": 1,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 1,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 11,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 490,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 7,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Standorte",
+       "kontrast": 438,
+       "maxKontrast": 16.96,
+       "umfang": 294,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 18,
+       "status": "unsichtbar",
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "halb",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 370,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 32,
+       "status": "duenn",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen-Konfigurator Projekt in 4 Schritten vorbereiten",
+       "kontrast": 2712,
+       "maxKontrast": 16.96,
+       "umfang": 2556,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 52,
+       "status": "duenn",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Untergrund & Abdichtung Das Fundament jedes dauerhaften Flie",
+       "kontrast": 1962,
+       "maxKontrast": 16.96,
+       "umfang": 1762,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 66,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 1014,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 67,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 1246,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 68,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 1014,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 69,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 1246,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 70,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 962,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 71,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 1144,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 29.4
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 143,
+    "instabil": 0,
+    "fokus": {
+     "ok": 130,
+     "duenn": 12,
+     "kontrastarm": 0,
+     "unsichtbar": 1,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 10,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 7
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 1,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 20,
+     "fokus_unter_2px": 12,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 10,
+     "fokus_verdeckt_fest": 10,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 490,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 7,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Standorte",
+       "kontrast": 438,
+       "maxKontrast": 16.96,
+       "umfang": 294,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 18,
+       "status": "unsichtbar",
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "halb",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 370,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 32,
+       "status": "duenn",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen-Konfigurator Projekt in 4 Schritten vorbereiten",
+       "kontrast": 2712,
+       "maxKontrast": 16.96,
+       "umfang": 2556,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 52,
+       "status": "duenn",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Untergrund & Abdichtung Das Fundament jedes dauerhaften Flie",
+       "kontrast": 1962,
+       "maxKontrast": 16.96,
+       "umfang": 1762,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 66,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 986,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 67,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 1246,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 68,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 986,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 69,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 1246,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 70,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 962,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 71,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 1144,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 82,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "kontrast": 1286,
+       "maxKontrast": 16.96,
+       "umfang": 984,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [
+      {
+       "nr": 16,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Projekt im Konfigurator vorbereiten",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 112,
+        "y": 605,
+        "w": 334,
+        "h": 51
+       }
+      },
+      {
+       "nr": 35,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.hidden > ul.mt-auto.grid > li > a.inline-flex.items-center",
+       "name": "Fugenachsen über mehrere Räume",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 145,
+        "y": 524,
+        "w": 285,
+        "h": 44
+       }
+      },
+      {
+       "nr": 41,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.hidden > ul.mt-auto.grid > li > a.inline-flex.items-center",
+       "name": "XXL-Großformate",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 145,
+        "y": 524,
+        "w": 158,
+        "h": 44
+       }
+      },
+      {
+       "nr": 47,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.hidden > ul.mt-auto.grid > li > a.inline-flex.items-center",
+       "name": "Abnahme & Qualität",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 145,
+        "y": 524,
+        "w": 175,
+        "h": 44
+       }
+      },
+      {
+       "nr": 48,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.hidden > ul.mt-auto.grid > li > a.inline-flex.items-center",
+       "name": "Fugensanierung",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 145,
+        "y": 572,
+        "w": 149,
+        "h": 44
+       }
+      },
+      {
+       "nr": 62,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "Fliesen richtig reinigen und pflegen",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 145,
+        "y": 535,
+        "w": 237,
+        "h": 21
+       }
+      },
+      {
+       "nr": 65,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "Fliesen-Ratgeber-Blog",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 112,
+        "y": 661,
+        "w": 191,
+        "h": 21
+       }
+      },
+      {
+       "nr": 68,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 138,
+        "y": 509,
+        "w": 371,
+        "h": 116
+       }
+      },
+      {
+       "nr": 70,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 138,
+        "y": 626,
+        "w": 371,
+        "h": 91
+       }
+      },
+      {
+       "nr": 82,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 112,
+        "y": 600,
+        "w": 395,
+        "h": 97
+       }
+      }
+     ],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 17,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Leistung: Wohnbereiche & Neubau",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 20,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen auf Fußbodenheizung Aufbau, Fugen und Kleberwahl",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 21,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen in Holzoptik Dielenlook mit keramischer Robustheit",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 22,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesenarten im Vergleich Feinsteinzeug, Steinzeug, Steingut",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 23,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Küche fliesen Küchenboden und Küchenrückwand",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 24,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Flur & Diele fliesen Robust vom Eingang bis ins Wohnen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 25,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Verlegemuster & Abschlüsse Fugenbild, Verband, Kanten und So",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 27,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Renovierung im Bestand Neuer Boden im bewohnten Haus",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 28,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen im Neubau Sauber eingeplant im Bauablauf",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 29,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fugensanierung Silikon- und Zementfugen erneuern",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 30,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Abnahme & Qualität Woran Sie gute Fliesenarbeit erkennen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 31,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Festpreisangebot Was den Aufwand bestimmt",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 32,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen-Konfigurator Projekt in 4 Schritten vorbereiten",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 34,
+       "pfad": "div.hidden > ul.mt-auto.grid > li > a.inline-flex.items-center",
+       "name": "Flur & Diele fliesen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 40,
+       "pfad": "div.hidden > ul.mt-auto.grid > li > a.inline-flex.items-center",
+       "name": "Fliesen in Holzoptik",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 46,
+       "pfad": "div.hidden > ul.mt-auto.grid > li > a.inline-flex.items-center",
+       "name": "Festpreisangebot verstehen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 66,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 72,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 85,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "E-Mail an Fliesenverlegung Tezgel senden: info@tezgel.de",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 32.6
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 117,
+    "instabil": 0,
+    "fokus": {
+     "ok": 103,
+     "duenn": 9,
+     "kontrastarm": 3,
+     "unsichtbar": 2,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 5,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 9,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 6,
+       "status": "unsichtbar",
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "halb",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 280,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 20,
+       "status": "duenn",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen-Konfigurator Projekt in 4 Schritten vorbereiten",
+       "kontrast": 1062,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 31,
+       "status": "duenn",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Service & Reparatur Schäden erkennen und fachgerecht beheben",
+       "kontrast": 1250,
+       "maxKontrast": 16.96,
+       "umfang": 952,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 34,
+       "status": "duenn",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-12.flex > a.inline-flex.min-h-11",
+       "name": "Fotos per WhatsApp senden",
+       "kontrast": 910,
+       "maxKontrast": 18.66,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 41,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 1070,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 42,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 1070,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 43,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 974,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 44,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 1070,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 45,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 978,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 46,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 1178,
+       "maxKontrast": 18.66,
+       "umfang": 856,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 114,
+       "status": "unsichtbar",
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "kontrast": 2,
+       "maxKontrast": 13.88,
+       "umfang": 216,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 115,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 116,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 117,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 122,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 24.3
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 122,
+    "instabil": 0,
+    "fokus": {
+     "ok": 66,
+     "duenn": 44,
+     "kontrastarm": 3,
+     "unsichtbar": 9,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 84,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 83
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 12,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 11,
+     "fokus_ring_teilverdeckt_fest": 18,
+     "fokus_unter_2px": 44,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 84,
+     "fokus_verdeckt_fest": 84,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 4,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Projekt im Konfigurator vorbereiten",
+       "kontrast": 914,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Leistung: Wohnbereiche & Neubau",
+       "kontrast": 910,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 6,
+       "status": "unsichtbar",
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "halb",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 280,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 7,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "XXL-Großformate Fugenarm, planeben, präzise verlegt",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 8,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen auf Fußbodenheizung Aufbau, Fugen und Kleberwahl",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 9,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen in Holzoptik Dielenlook mit keramischer Robustheit",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 10,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesenarten im Vergleich Feinsteinzeug, Steinzeug, Steingut",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 11,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Küche fliesen Küchenboden und Küchenrückwand",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 12,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Flur & Diele fliesen Robust vom Eingang bis ins Wohnen",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 13,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Verlegemuster & Abschlüsse Fugenbild, Verband, Kanten und So",
+       "kontrast": 986,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 14,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Verlegetechnik & Werkstoffe Kleber, Bettung und Fugenmörtel",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 15,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Renovierung im Bestand Neuer Boden im bewohnten Haus",
+       "kontrast": 986,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 16,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen im Neubau Sauber eingeplant im Bauablauf",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 17,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fugensanierung Silikon- und Zementfugen erneuern",
+       "kontrast": 986,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 18,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Abnahme & Qualität Woran Sie gute Fliesenarbeit erkennen",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 19,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Festpreisangebot Was den Aufwand bestimmt",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 20,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen-Konfigurator Projekt in 4 Schritten vorbereiten",
+       "kontrast": 990,
+       "maxKontrast": 16.96,
+       "umfang": 860,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 21,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Wohnbereich, Küche, Flur und Diele – worauf es jeweils ankom",
+       "kontrast": 946,
+       "maxKontrast": 18.66,
+       "umfang": 814,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 22,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Zwei Ausgangslagen, zwei Abläufe",
+       "kontrast": 886,
+       "maxKontrast": 18.66,
+       "umfang": 754,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 23,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Feinsteinzeug, Holzoptik, XXL-Großformate",
+       "kontrast": 882,
+       "maxKontrast": 18.66,
+       "umfang": 754,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 24,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Verlegetechnik, Verlegemuster und saubere Abschlüsse",
+       "kontrast": 882,
+       "maxKontrast": 18.66,
+       "umfang": 754,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 25,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Konfigurator, Angebot verstehen, Abnahme",
+       "kontrast": 882,
+       "maxKontrast": 18.66,
+       "umfang": 754,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 26,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Badsanierung hat einen eigenen Bereich",
+       "kontrast": 886,
+       "maxKontrast": 18.66,
+       "umfang": 754,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 27,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Untergrund & Abdichtung Das Fundament jedes dauerhaften Flie",
+       "kontrast": 1082,
+       "maxKontrast": 16.96,
+       "umfang": 952,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 28,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Balkon & Terrasse Außenbeläge, die Frost und Regen standhalt",
+       "kontrast": 1082,
+       "maxKontrast": 16.96,
+       "umfang": 952,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 29,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Naturstein & Granit Natursteinböden und Wandbeläge fachgerec",
+       "kontrast": 1078,
+       "maxKontrast": 16.96,
+       "umfang": 952,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 30,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Treppen Treppen neu belegen – innen, im Treppenhaus und auße",
+       "kontrast": 1082,
+       "maxKontrast": 16.96,
+       "umfang": 952,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 31,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Service & Reparatur Schäden erkennen und fachgerecht beheben",
+       "kontrast": 1082,
+       "maxKontrast": 16.96,
+       "umfang": 952,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 32,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-12.flex > a.inline-flex.min-h-11",
+       "name": "Zur Leistungsseite Wohnbereiche & Neubau",
+       "kontrast": 958,
+       "maxKontrast": 18.66,
+       "umfang": 832,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 33,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-12.flex > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "kontrast": 914,
+       "maxKontrast": 18.66,
+       "umfang": 786,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 34,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-12.flex > a.inline-flex.min-h-11",
+       "name": "Fotos per WhatsApp senden",
+       "kontrast": 910,
+       "maxKontrast": 18.66,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 41,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 930,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 42,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 926,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 43,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 882,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 44,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 930,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 45,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 882,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 46,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 982,
+       "maxKontrast": 18.66,
+       "umfang": 856,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 47,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge",
+       "kontrast": 926,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 51,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "kontrast": 914,
+       "maxKontrast": 16.96,
+       "umfang": 786,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 52,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "kontrast": 914,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [
+      {
+       "nr": 4,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Projekt im Konfigurator vorbereiten",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 597,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 5,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Leistung: Wohnbereiche & Neubau",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 635,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 8,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen auf Fußbodenheizung Aufbau, Fugen und Kleberwahl",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 434,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 9,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen in Holzoptik Dielenlook mit keramischer Robustheit",
+       "durch": "p#cookie-consent-description",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 522,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 10,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesenarten im Vergleich Feinsteinzeug, Steinzeug, Steingut",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 597,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 12,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Flur & Diele fliesen Robust vom Eingang bis ins Wohnen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 434,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 13,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Verlegemuster & Abschlüsse Fugenbild, Verband, Kanten und So",
+       "durch": "p#cookie-consent-description",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 522,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 14,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Verlegetechnik & Werkstoffe Kleber, Bettung und Fugenmörtel",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 598,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 16,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen im Neubau Sauber eingeplant im Bauablauf",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 435,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 17,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fugensanierung Silikon- und Zementfugen erneuern",
+       "durch": "p#cookie-consent-description",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 522,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 18,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Abnahme & Qualität Woran Sie gute Fliesenarbeit erkennen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 598,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 20,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Fliesen-Konfigurator Projekt in 4 Schritten vorbereiten",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 434,
+        "w": 343,
+        "h": 87
+       }
+      },
+      {
+       "nr": 22,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Zwei Ausgangslagen, zwei Abläufe",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 600,
+        "w": 293,
+        "h": 84
+       }
+      },
+      {
+       "nr": 24,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Verlegetechnik, Verlegemuster und saubere Abschlüsse",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 600,
+        "w": 293,
+        "h": 84
+       }
+      },
+      {
+       "nr": 26,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Badsanierung hat einen eigenen Bereich",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 600,
+        "w": 293,
+        "h": 84
+       }
+      },
+      {
+       "nr": 28,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Balkon & Terrasse Außenbeläge, die Frost und Regen standhalt",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 457,
+        "w": 343,
+        "h": 133
+       }
+      },
+      {
+       "nr": 29,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Naturstein & Granit Natursteinböden und Wandbeläge fachgerec",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 551,
+        "w": 343,
+        "h": 133
+       }
+      },
+      {
+       "nr": 31,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Service & Reparatur Schäden erkennen und fachgerecht beheben",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 457,
+        "w": 343,
+        "h": 133
+       }
+      },
+      {
+       "nr": 33,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-12.flex > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 438,
+        "w": 343,
+        "h": 50
+       }
+      },
+      {
+       "nr": 34,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-12.flex > a.inline-flex.min-h-11",
+       "name": "Fotos per WhatsApp senden",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 500,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 36,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "Rutschfeste Fliesen: R-Klassen erklärt",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start > p.pt-2.text-fs-3",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 457,
+        "w": 233,
+        "h": 19
+       }
+      },
+      {
+       "nr": 37,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "Fliesen richtig reinigen und pflegen",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 533,
+        "w": 213,
+        "h": 19
+       }
+      },
+      {
+       "nr": 38,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "Referenzen ansehen",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline > svg.inline-block.shrink-0",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 609,
+        "w": 125,
+        "h": 19
+       }
+      },
+      {
+       "nr": 40,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "Fliesen-Ratgeber-Blog",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 408,
+        "w": 240,
+        "h": 46
+       }
+      },
+      {
+       "nr": 42,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 446,
+        "w": 291,
+        "h": 110
+       }
+      },
+      {
+       "nr": 43,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 556,
+        "w": 291,
+        "h": 87
+       }
+      },
+      {
+       "nr": 44,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 574,
+        "w": 291,
+        "h": 110
+       }
+      },
+      {
+       "nr": 46,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 434,
+        "w": 291,
+        "h": 137
+       }
+      },
+      {
+       "nr": 47,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 572,
+        "w": 291,
+        "h": 110
+       }
+      },
+      {
+       "nr": 49,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "0172 / 67 28 504",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 461,
+        "w": 144,
+        "h": 19
+       }
+      },
+      {
+       "nr": 50,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "info@tezgel.de",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 543,
+        "w": 101,
+        "h": 16
+       }
+      },
+      {
+       "nr": 52,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 427,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 54,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.border.border-fuge > div.grid.grid-cols-1 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Jetzt kostenfrei anrufen",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 420,
+        "w": 309,
+        "h": 49
+       }
+      },
+      {
+       "nr": 55,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.border.border-fuge > div.grid.grid-cols-1 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "WhatsApp Nachricht an Fliesenverlegung Tezgel senden",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 485,
+        "w": 309,
+        "h": 49
+       }
+      },
+      {
+       "nr": 57,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 512,
+        "w": 343,
+        "h": 99
+       }
+      },
+      {
+       "nr": 59,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "Mobil & WhatsApp: 0172 / 67 28 504 – Chat mit Deniz Tezgel s",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 463,
+        "w": 309,
+        "h": 23
+       }
+      },
+      {
+       "nr": 60,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "E-Mail an Fliesenverlegung Tezgel senden: info@tezgel.de",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 632,
+        "w": 309,
+        "h": 23
+       }
+      },
+      {
+       "nr": 62,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Badsanierung komplett",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 414,
+        "w": 154,
+        "h": 31
+       }
+      },
+      {
+       "nr": 63,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Fliesen & XXL-Großformate",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 453,
+        "w": 183,
+        "h": 31
+       }
+      },
+      {
+       "nr": 64,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Barrierefreies Bad",
+       "durch": "p#cookie-consent-description > span.block > strong.font-semibold.text-tinte",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 492,
+        "w": 120,
+        "h": 31
+       }
+      }
+     ],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 7,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "XXL-Großformate Fugenarm, planeben, präzise verlegt",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 11,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Küche fliesen Küchenboden und Küchenrückwand",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 15,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Renovierung im Bestand Neuer Boden im bewohnten Haus",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 19,
+       "pfad": "div.mt-12 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Festpreisangebot Was den Aufwand bestimmt",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 21,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Wohnbereich, Küche, Flur und Diele – worauf es jeweils ankom",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 23,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Feinsteinzeug, Holzoptik, XXL-Großformate",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 25,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "Konfigurator, Angebot verstehen, Abnahme",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 27,
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Untergrund & Abdichtung Das Fundament jedes dauerhaften Flie",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 30,
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "Treppen Treppen neu belegen – innen, im Treppenhaus und auße",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 32,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-12.flex > a.inline-flex.min-h-11",
+       "name": "Zur Leistungsseite Wohnbereiche & Neubau",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 41,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 45,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 51,
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 56,
+       "pfad": "footer.flaeche-tinte.border-t > div.border-b.border-nacht-fuge > div.mx-auto.w-full > a.inline-flex.min-h-11",
+       "name": "Kostenfreies Vor-Ort-Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 114,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 115,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 116,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 33
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen/kueche",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 103,
+    "instabil": 0,
+    "fokus": {
+     "ok": 91,
+     "duenn": 11,
+     "kontrastarm": 1,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 1,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 11,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 490,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 7,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Standorte",
+       "kontrast": 438,
+       "maxKontrast": 16.96,
+       "umfang": 294,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 30,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 1014,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 31,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 1246,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 32,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 1006,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 33,
+       "status": "kontrastarm",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 504,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 34,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 962,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 35,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 1144,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 43,
+       "status": "duenn",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "kontrast": 586,
+       "maxKontrast": 16.96,
+       "umfang": 458,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 44,
+       "status": "duenn",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "kontrast": 714,
+       "maxKontrast": 16.96,
+       "umfang": 586,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 45,
+       "status": "duenn",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "WhatsApp",
+       "kontrast": 542,
+       "maxKontrast": 16.96,
+       "umfang": 414,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 21.7
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen/kueche",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 108,
+    "instabil": 0,
+    "fokus": {
+     "ok": 95,
+     "duenn": 12,
+     "kontrastarm": 1,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 7,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 5
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 1,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 7,
+     "fokus_unter_2px": 12,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 7,
+     "fokus_verdeckt_fest": 7,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 3,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Badsanierung",
+       "kontrast": 502,
+       "maxKontrast": 16.96,
+       "umfang": 356,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Fachgewerke",
+       "kontrast": 490,
+       "maxKontrast": 16.96,
+       "umfang": 346,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 7,
+       "status": "duenn",
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Standorte",
+       "kontrast": 438,
+       "maxKontrast": 16.96,
+       "umfang": 294,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 30,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 986,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 31,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 1246,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 32,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 978,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 33,
+       "status": "kontrastarm",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 504,
+       "maxKontrast": 18.66,
+       "umfang": 974,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 34,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 962,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 35,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 1144,
+       "maxKontrast": 18.66,
+       "umfang": 924,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 43,
+       "status": "duenn",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "kontrast": 586,
+       "maxKontrast": 16.96,
+       "umfang": 458,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 44,
+       "status": "duenn",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "kontrast": 714,
+       "maxKontrast": 16.96,
+       "umfang": 586,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 45,
+       "status": "duenn",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "WhatsApp",
+       "kontrast": 542,
+       "maxKontrast": 16.96,
+       "umfang": 414,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 47,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "kontrast": 1288,
+       "maxKontrast": 16.96,
+       "umfang": 984,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [
+      {
+       "nr": 16,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start > p.pt-2.text-fs-3",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 112,
+        "y": 506,
+        "w": 205,
+        "h": 51
+       }
+      },
+      {
+       "nr": 19,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > p.mt-3.font-text > a.text-tinte.underline",
+       "name": "Fugensanierung",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 216,
+        "y": 542,
+        "w": 138,
+        "h": 21
+       }
+      },
+      {
+       "nr": 26,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "Übergänge zu Parkett, Vinyl und Teppich",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 145,
+        "y": 535,
+        "w": 275,
+        "h": 21
+       }
+      },
+      {
+       "nr": 28,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "Fliesen im Bad",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 315,
+        "y": 630,
+        "w": 124,
+        "h": 21
+       }
+      },
+      {
+       "nr": 32,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 138,
+        "y": 509,
+        "w": 371,
+        "h": 116
+       }
+      },
+      {
+       "nr": 34,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 138,
+        "y": 626,
+        "w": 371,
+        "h": 91
+       }
+      },
+      {
+       "nr": 48,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 129,
+        "y": 738,
+        "w": 211,
+        "h": 25
+       }
+      }
+     ],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 17,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Leistung: Wohnbereiche & Küchen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 29,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "Küchenfliesen-Beratung anfragen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 30,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 36,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 47,
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 49,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "Mobil & WhatsApp: 0172 / 67 28 504 – Chat mit Deniz Tezgel s",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 24.8
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen/kueche",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 95,
+    "instabil": 0,
+    "fokus": {
+     "ok": 84,
+     "duenn": 6,
+     "kontrastarm": 4,
+     "unsichtbar": 1,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 5,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 6,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 18,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 1070,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 19,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 1070,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 20,
+       "status": "kontrastarm",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 392,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 21,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 1070,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 22,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 978,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 23,
+       "status": "duenn",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 1178,
+       "maxKontrast": 18.66,
+       "umfang": 856,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 33,
+       "status": "duenn",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "WhatsApp",
+       "kontrast": 906,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 92,
+       "status": "unsichtbar",
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "kontrast": 2,
+       "maxKontrast": 13.88,
+       "umfang": 216,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 93,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 94,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 124,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 95,
+       "status": "kontrastarm",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 122,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 19.9
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/fliesen/kueche",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 100,
+    "instabil": 0,
+    "fokus": {
+     "ok": 71,
+     "duenn": 17,
+     "kontrastarm": 4,
+     "unsichtbar": 8,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 68,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 67
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 12,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 12,
+     "fokus_ring_teilverdeckt_fest": 11,
+     "fokus_unter_2px": 17,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 68,
+     "fokus_verdeckt_fest": 68,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 4,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "kontrast": 914,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 5,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Leistung: Wohnbereiche & Küchen",
+       "kontrast": 910,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 18,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "kontrast": 930,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 19,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "kontrast": 930,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 20,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "kontrast": 300,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 21,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "kontrast": 930,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 22,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "kontrast": 882,
+       "maxKontrast": 18.66,
+       "umfang": 756,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 23,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "kontrast": 982,
+       "maxKontrast": 18.66,
+       "umfang": 856,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 24,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge",
+       "kontrast": 926,
+       "maxKontrast": 18.66,
+       "umfang": 802,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 25,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.grid.grid-cols-4 > div.order-3.col-span-4 > div.mt-8.flex > button.inline-flex.min-h-11",
+       "name": "Weiter zu Schritt 2",
+       "kontrast": 814,
+       "maxKontrast": 18.66,
+       "umfang": 684,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 29,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "kontrast": 918,
+       "maxKontrast": 16.96,
+       "umfang": 786,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 30,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "kontrast": 910,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 31,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "kontrast": 914,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 32,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "kontrast": 914,
+       "maxKontrast": 16.96,
+       "umfang": 786,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 33,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "WhatsApp",
+       "kontrast": 906,
+       "maxKontrast": 16.96,
+       "umfang": 784,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 34,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "footer.flaeche-tinte.border-t > div.border-b.border-nacht-fuge > div.mx-auto.w-full > a.inline-flex.min-h-11",
+       "name": "Kostenfreies Vor-Ort-Aufmaß",
+       "kontrast": 772,
+       "maxKontrast": 16.96,
+       "umfang": 646,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 35,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "kontrast": 1010,
+       "maxKontrast": 16.96,
+       "umfang": 884,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 83,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Kontakt",
+       "kontrast": 194,
+       "maxKontrast": 16.96,
+       "umfang": 164,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 84,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Impressum",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 196,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 85,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Datenschutz",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 228,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 86,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "AGB",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 102,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 87,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Widerruf",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 180,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 88,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Cookie-Richtlinie",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 322,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 89,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Cookie-Einstellungen",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 368,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 90,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "nav > ul.flex.flex-wrap > li > a.text-kalk.underline",
+       "name": "Barrierefreiheit",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 306,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 91,
+       "status": "unsichtbar",
+       "grund": "verdeckt-in-messlage",
+       "pfad": "div.border-t.border-nacht-fuge > div.mx-auto.w-full > p > a.text-kalk.underline",
+       "name": "Webdesign Wetzlar – Coday",
+       "kontrast": 0,
+       "maxKontrast": 1,
+       "umfang": 446,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 92,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 93,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      },
+      {
+       "nr": 94,
+       "status": "kontrastarm",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "kontrast": 98,
+       "maxKontrast": 16.96,
+       "umfang": 336,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [
+      {
+       "nr": 4,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start > p.pt-2.text-fs-3",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 441,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 5,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.grid.grid-cols-4 > div.col-span-4 > div.mt-8.flex > a.inline-flex.min-h-11",
+       "name": "Leistung: Wohnbereiche & Küchen",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 503,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 7,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > p.mt-3.font-text > a.text-tinte.underline",
+       "name": "Fugensanierung",
+       "durch": "p#cookie-consent-description > span.block > strong.font-semibold.text-tinte",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 502,
+        "w": 124,
+        "h": 19
+       }
+      },
+      {
+       "nr": 9,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > p.mt-3.font-text > a.text-tinte.underline",
+       "name": "Übergänge zu anderen Belägen",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 502,
+        "w": 238,
+        "h": 19
+       }
+      },
+      {
+       "nr": 13,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "XXL-Großformate für Boden und Rückwand",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start > p.pt-2.text-fs-3",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 456,
+        "w": 263,
+        "h": 19
+       }
+      },
+      {
+       "nr": 14,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "Übergänge zu Parkett, Vinyl und Teppich",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 533,
+        "w": 247,
+        "h": 19
+       }
+      },
+      {
+       "nr": 15,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "Referenzen ansehen",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline > svg.inline-block.shrink-0",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 41,
+        "y": 609,
+        "w": 125,
+        "h": 19
+       }
+      },
+      {
+       "nr": 17,
+       "art": "fest",
+       "ganz": false,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "Küchenfliesen-Beratung anfragen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 408,
+        "w": 253,
+        "h": 19
+       }
+      },
+      {
+       "nr": 19,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Küche Küchenboden und Küchenrückwand",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 446,
+        "w": 291,
+        "h": 110
+       }
+      },
+      {
+       "nr": 20,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Flur & Diele Eingang, Diele, Garderobe",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 557,
+        "w": 291,
+        "h": 87
+       }
+      },
+      {
+       "nr": 21,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Treppe Innen- oder Außentreppe, Tritt- und Setzstufen",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 574,
+        "w": 291,
+        "h": 110
+       }
+      },
+      {
+       "nr": 23,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtu",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 434,
+        "w": 291,
+        "h": 137
+       }
+      },
+      {
+       "nr": 24,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 42,
+        "y": 572,
+        "w": 291,
+        "h": 110
+       }
+      },
+      {
+       "nr": 26,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "06441 / 44 83 567",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline > svg.inline-block.shrink-0",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 610,
+        "w": 153,
+        "h": 19
+       }
+      },
+      {
+       "nr": 28,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "info@tezgel.de",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 462,
+        "w": 101,
+        "h": 16
+       }
+      },
+      {
+       "nr": 30,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 427,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 32,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "durch": "div.p-4 > div.flex.items-start > p.pt-2.text-fs-3 > span",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 427,
+        "w": 343,
+        "h": 50
+       }
+      },
+      {
+       "nr": 33,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "WhatsApp",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 489,
+        "w": 343,
+        "h": 49
+       }
+      },
+      {
+       "nr": 35,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "footer.flaeche-tinte.border-t > div.mx-auto.w-full > div.flex.flex-col > a.inline-block.self-start",
+       "name": "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aß",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 512,
+        "w": 343,
+        "h": 99
+       }
+      },
+      {
+       "nr": 37,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "Mobil & WhatsApp: 0172 / 67 28 504 – Chat mit Deniz Tezgel s",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 463,
+        "w": 309,
+        "h": 23
+       }
+      },
+      {
+       "nr": 38,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "div.flex.flex-col > address.grid.grid-cols-1 > div.bg-tinte.p-4 > a.text-kalk.underline",
+       "name": "E-Mail an Fliesenverlegung Tezgel senden: info@tezgel.de",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 33,
+        "y": 631,
+        "w": 309,
+        "h": 23
+       }
+      },
+      {
+       "nr": 40,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Badsanierung komplett",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 413,
+        "w": 154,
+        "h": 31
+       }
+      },
+      {
+       "nr": 41,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Fliesen & XXL-Großformate",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start > p.pt-2.text-fs-3",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 453,
+        "w": 183,
+        "h": 31
+       }
+      },
+      {
+       "nr": 42,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Barrierefreies Bad",
+       "durch": "p#cookie-consent-description > span.block > strong.font-semibold.text-tinte",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 492,
+        "w": 120,
+        "h": 31
+       }
+      },
+      {
+       "nr": 43,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Bad aus einer Hand",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 531,
+        "w": 130,
+        "h": 31
+       }
+      },
+      {
+       "nr": 44,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Badplaner",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 570,
+        "w": 69,
+        "h": 31
+       }
+      },
+      {
+       "nr": 45,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Bad-Projektcheck",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 610,
+        "w": 119,
+        "h": 31
+       }
+      },
+      {
+       "nr": 46,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Musterbäder",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 649,
+        "w": 85,
+        "h": 31
+       }
+      },
+      {
+       "nr": 48,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Alle Fachgewerke",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 478,
+        "w": 118,
+        "h": 31
+       }
+      },
+      {
+       "nr": 49,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Fliesen & Verlegung",
+       "durch": "p#cookie-consent-description > span.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 517,
+        "w": 133,
+        "h": 31
+       }
+      },
+      {
+       "nr": 50,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Untergrund & Abdichtung",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 556,
+        "w": 169,
+        "h": 31
+       }
+      },
+      {
+       "nr": 51,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Balkon & Terrasse",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 596,
+        "w": 121,
+        "h": 31
+       }
+      },
+      {
+       "nr": 52,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Naturstein & Granit",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 635,
+        "w": 127,
+        "h": 31
+       }
+      },
+      {
+       "nr": 53,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Treppen",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 653,
+        "w": 55,
+        "h": 31
+       }
+      },
+      {
+       "nr": 55,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Schadensanalyse",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 414,
+        "w": 119,
+        "h": 31
+       }
+      },
+      {
+       "nr": 56,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Fliesenreparatur",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.flex.items-start",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 453,
+        "w": 109,
+        "h": 31
+       }
+      },
+      {
+       "nr": 57,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Wetzlar",
+       "durch": "p#cookie-consent-description > span.mt-2.block",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 557,
+        "w": 50,
+        "h": 31
+       }
+      },
+      {
+       "nr": 58,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Gießen",
+       "durch": "p#cookie-consent-description > span.mt-2.block > a.text-tinte.underline",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 596,
+        "w": 50,
+        "h": 31
+       }
+      },
+      {
+       "nr": 59,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Marburg",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 635,
+        "w": 56,
+        "h": 31
+       }
+      },
+      {
+       "nr": 60,
+       "art": "fest",
+       "ganz": true,
+       "pfad": "nav > ul.mt-3.flex > li > a.inline-block.py-1",
+       "name": "Limburg an der Lahn",
+       "durch": "div.hoehe-banner.ueber-leiste-12 > div.p-4 > div.mt-4.grid > button.inline-flex.min-h-11",
+       "ebene": "div.hoehe-banner.ueber-leiste-12",
+       "rect": {
+        "x": 16,
+        "y": 653,
+        "w": 135,
+        "h": 31
+       }
+      }
+     ],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.kopf-anker.fixed"
+      },
+      {
+       "nr": 11,
+       "pfad": "div.col-span-4 > div.max-w-mass.font-text > p.mt-4 > a.text-tinte.underline",
+       "name": "Fliesen reinigen und pflegen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 18,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Wohn- & Essbereich Böden in Wohnräumen und offenen Grundriss",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 22,
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "Balkon & Terrasse Frostsichere Außenbeläge",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 25,
+       "pfad": "div.grid.grid-cols-4 > div.order-3.col-span-4 > div.mt-8.flex > button.inline-flex.min-h-11",
+       "name": "Weiter zu Schritt 2",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 29,
+       "pfad": "div.mt-12 > div.mt-12.flex > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 31,
+       "pfad": "div.mx-auto.w-full > div.mt-12 > div.flex.flex-col > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 34,
+       "pfad": "footer.flaeche-tinte.border-t > div.border-b.border-nacht-fuge > div.mx-auto.w-full > a.inline-flex.min-h-11",
+       "name": "Kostenfreies Vor-Ort-Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 92,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 93,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "WhatsApp-Chat starten",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      },
+      {
+       "nr": 94,
+       "pfad": "aside.unten-sicher.fixed > div.flex.gap-px > a.flex.min-h-12",
+       "name": "Aufmaß",
+       "ebene": "div.hoehe-banner.ueber-leiste-12"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 27.1
+   }
+  ],
+  "reflow": [
+   {
+    "pruefung": "reflow",
+    "seite": "/fliesen",
+    "ansicht": "r320",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 320,
+     "clientWidth": 320,
+     "scrollX": 0
+    },
+    "befunde": [],
+    "kennzahlen": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.6
+   },
+   {
+    "pruefung": "reflow",
+    "seite": "/fliesen/kueche",
+    "ansicht": "r320",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 320,
+     "clientWidth": 320,
+     "scrollX": 0
+    },
+    "befunde": [],
+    "kennzahlen": {
+     "horizontal": 0,
+     "ueberlauf": 0,
+     "ragt_heraus": 0,
+     "text_abgeschnitten": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5
+   }
+  ],
+  "zoom": [
+   {
+    "pruefung": "zoom",
+    "seite": "/fliesen",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 1280,
+     "clientWidth": 1280,
+     "scrollX": 0
+    },
+    "bedienelemente": 140,
+    "scrollpositionen": 82,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "kreuz",
+       "durch": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > span.relative",
+       "fest": null,
+       "ebene": null
+      },
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "halb",
+       "durch": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > span.relative",
+       "fest": null,
+       "ebene": null
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "durch": "aside > dl.grid.gap-px > div.p-4.bg-fliese > dt.font-mono.text-fs-1",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "durch": "aside > dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "durch": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      },
+      {
+       "pfad": "div.grid.grid-cols-4 > div.order-3.col-span-4 > div.mt-8.flex > button.inline-flex.min-h-11",
+       "name": "",
+       "durch": "aside > dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      }
+     ],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Ratgeber",
+       "x": 1249,
+       "y": 0,
+       "w": 160,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1409,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Über uns",
+       "x": 1473,
+       "y": 0,
+       "w": 156,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1629,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1725,
+       "y": 20,
+       "w": 372,
+       "fest": true
+      },
+      {
+       "pfad": "button#whatsapp-floating-btn",
+       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "x": 2113,
+       "y": 20,
+       "w": 88,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "x": 2217,
+       "y": 13,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "hidden h-full items-stretch xl:flex",
+       "left": 435,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1249,
+       "right": 1409
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1409,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1473,
+       "right": 1629
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1629,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1725,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:tex",
+       "left": 1725,
+       "right": 2097
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "hidden lg:inline",
+       "left": 1797,
+       "right": 2081
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "hidden size-11 shrink-0 items-center justify-center border border-strich bg-flie",
+       "left": 2113,
+       "right": 2201
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 2217,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 ",
+       "left": 1068,
+       "right": 1372
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 6,
+     "verdeckt_fest": 4,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 6.6
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/fliesen",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 121,
+    "scrollpositionen": 72,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 9.1
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/fliesen/kueche",
+    "variante": "css",
+    "ansicht": "d1280-zoom2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "zoom": "2",
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 1280,
+     "clientWidth": 1280,
+     "scrollX": 0
+    },
+    "bedienelemente": 102,
+    "scrollpositionen": 60,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "durch": "aside > dl.grid.gap-px > div.p-4.bg-fliese > dt.font-mono.text-fs-1",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "durch": "aside > dl.grid.gap-px > div.p-4.bg-fliese > dt.font-mono.text-fs-1",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "durch": "aside > dl.grid.gap-px > div.p-4.bg-fliese > dt.font-mono.text-fs-1",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      },
+      {
+       "pfad": "div.grid.grid-cols-4 > div.order-3.col-span-4 > div.mt-8.flex > button.inline-flex.min-h-11",
+       "name": "",
+       "durch": "aside > dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2",
+       "fest": "sticky",
+       "ebene": "div > div.grid.gap-y-12 > div > aside"
+      }
+     ],
+     "nie_im_bild": [
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Ratgeber",
+       "x": 1249,
+       "y": 0,
+       "w": 160,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "x": 1409,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > a.flex.items-center",
+       "name": "Über uns",
+       "x": 1473,
+       "y": 0,
+       "w": 156,
+       "fest": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "x": 1629,
+       "y": 0,
+       "w": 64,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.hidden.min-h-11",
+       "name": "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 5",
+       "x": 1725,
+       "y": 20,
+       "w": 372,
+       "fest": true
+      },
+      {
+       "pfad": "button#whatsapp-floating-btn",
+       "name": "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden",
+       "x": 2113,
+       "y": 20,
+       "w": 88,
+       "fest": true
+      },
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > div.flex.shrink-0 > a.inline-flex.min-h-11",
+       "name": "Aufmaß anfragen",
+       "x": 2217,
+       "y": 13,
+       "w": 354,
+       "fest": true
+      }
+     ],
+     "ueberlauf": [
+      {
+       "art": "ragt-heraus",
+       "tag": "nav",
+       "cls": "hidden h-full items-stretch xl:flex",
+       "left": 435,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1249,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1249,
+       "right": 1409
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1409,
+       "right": 1473
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex items-stretch border-b-2 border-transparent",
+       "left": 1473,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "flex items-center whitespace-nowrap pl-3 xl:pl-2 2xl:pl-3 text-fs-2 font-semibol",
+       "left": 1473,
+       "right": 1629
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "flex w-8 items-center justify-center text-tinte-2 transition-colors dauer-1 ease",
+       "left": 1629,
+       "right": 1693
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1725,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "hidden min-h-11 items-center gap-2 px-2 font-mono text-fs-2 xl:text-fs-1 2xl:tex",
+       "left": 1725,
+       "right": 2097
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "hidden lg:inline",
+       "left": 1797,
+       "right": 2081
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "button",
+       "cls": "hidden size-11 shrink-0 items-center justify-center border border-strich bg-flie",
+       "left": 2113,
+       "right": 2201
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 2217,
+       "right": 2570
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 ",
+       "left": 1068,
+       "right": 1372
+      }
+     ]
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 4,
+     "verdeckt_fest": 4,
+     "nie_im_bild": 7,
+     "ueberlauf": 15
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5
+   },
+   {
+    "pruefung": "zoom",
+    "seite": "/fliesen/kueche",
+    "variante": "aequivalent",
+    "ansicht": "v640x400-dpr2",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "horizontal": {
+     "horizontal": false,
+     "scrollWidth": 640,
+     "clientWidth": 640,
+     "scrollX": 0
+    },
+    "bedienelemente": 96,
+    "scrollpositionen": 56,
+    "im_overflow_verborgen": 0,
+    "im_scroller": 0,
+    "befunde": {
+     "verdeckt": [],
+     "nie_im_bild": [],
+     "ueberlauf": []
+    },
+    "kennzahlen": {
+     "horizontal": 0,
+     "verdeckt": 0,
+     "verdeckt_fest": 0,
+     "nie_im_bild": 0,
+     "ueberlauf": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 7.5
+   }
+  ],
+  "textabstand": [
+   {
+    "pruefung": "textabstand",
+    "seite": "/fliesen",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1021,
+       "right": 1514
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 1306,
+       "right": 1514
+      }
+     ],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.1
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/fliesen",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 1,
+    "befunde": {
+     "abgeschnitten_neu": [
+      {
+       "id": 2,
+       "pfad": "footer.flaeche-tinte.border-t",
+       "text": "Verbundabdichtung",
+       "ueberstand": 2,
+       "achse": "x",
+       "lineClamp": false
+      }
+     ],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "text-fs-2",
+       "left": 216,
+       "right": 377
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "block font-semibold text-kalk",
+       "left": 216,
+       "right": 377
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "text-nacht-2",
+       "left": 216,
+       "right": 377
+      }
+     ],
+     "vorher": [
+      {
+       "id": 1,
+       "pfad": "main#main-content",
+       "text": "Zusammenfassung & Kontakt",
+       "ueberstand": 82,
+       "achse": "x",
+       "lineClamp": false
+      }
+     ],
+     "scroll_ueberhang_neu": [
+      {
+       "id": 2,
+       "pfad": "footer.flaeche-tinte.border-t",
+       "dx": 2,
+       "dy": 0
+      }
+     ]
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 3,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.2
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/fliesen/kueche",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 0,
+    "befunde": {
+     "abgeschnitten_neu": [],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "div",
+       "cls": "flex shrink-0 items-center gap-2",
+       "left": 1021,
+       "right": 1514
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "a",
+       "cls": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 fo",
+       "left": 1306,
+       "right": 1514
+      }
+     ],
+     "vorher": [],
+     "scroll_ueberhang_neu": []
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 0,
+     "scroll_ueberhang_neu": 0,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 2,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 3
+   },
+   {
+    "pruefung": "textabstand",
+    "seite": "/fliesen/kueche",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "vorher_abgeschnitten": 1,
+    "befunde": {
+     "abgeschnitten_neu": [
+      {
+       "id": 2,
+       "pfad": "footer.flaeche-tinte.border-t",
+       "text": "Verbundabdichtung",
+       "ueberstand": 2,
+       "achse": "x",
+       "lineClamp": false
+      }
+     ],
+     "ueberlauf_neu": [
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "text-fs-2",
+       "left": 216,
+       "right": 377
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "block font-semibold text-kalk",
+       "left": 216,
+       "right": 377
+      },
+      {
+       "art": "ragt-heraus",
+       "tag": "span",
+       "cls": "text-nacht-2",
+       "left": 216,
+       "right": 377
+      }
+     ],
+     "vorher": [
+      {
+       "id": 1,
+       "pfad": "main#main-content",
+       "text": "Zusammenfassung & Kontakt",
+       "ueberstand": 82,
+       "achse": "x",
+       "lineClamp": false
+      }
+     ],
+     "scroll_ueberhang_neu": [
+      {
+       "id": 2,
+       "pfad": "footer.flaeche-tinte.border-t",
+       "dx": 2,
+       "dy": 0
+      }
+     ]
+    },
+    "kennzahlen": {
+     "abgeschnitten_neu": 1,
+     "scroll_ueberhang_neu": 1,
+     "davon_line_clamp": 0,
+     "ueberlauf_neu": 3,
+     "horizontal_neu": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.5
+   }
+  ],
+  "forced": [
+   {
+    "pruefung": "forced",
+    "seite": "/fliesen",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/l2-e039-live-fliesen/forced-colors/d1440/fliesen.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 140,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Badsanierung öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Fachgewerke öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Standorte öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      }
+     ],
+     "felder_ohne_grenze": [
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "kreuz",
+       "grafik": false
+      },
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "halb",
+       "grafik": false
+      },
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "drittel",
+       "grafik": false
+      }
+     ]
+    },
+    "kennzahlen": {
+     "ohne_grenze": 27,
+     "davon_mit_grafik": 18,
+     "felder_ohne_grenze": 3
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.7
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/fliesen",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/l2-e039-live-fliesen/forced-colors/m375/fliesen.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 119,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > details.group.mt-3 > summary.flex.min-h-12",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > ul.border-t.border-tinte > li.border-b.border-fuge > a.group.flex",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": [
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "kreuz",
+       "grafik": false
+      },
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "halb",
+       "grafik": false
+      },
+      {
+       "pfad": "fieldset.verband.m-0 > div.mt-6.grid > label.verband-wahl.relative > input.peer.absolute",
+       "name": "drittel",
+       "grafik": false
+      }
+     ]
+    },
+    "kennzahlen": {
+     "ohne_grenze": 29,
+     "davon_mit_grafik": 20,
+     "felder_ohne_grenze": 3
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.1
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/fliesen/kueche",
+    "ansicht": "d1440",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/l2-e039-live-fliesen/forced-colors/d1440/fliesen__kueche.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 102,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Badsanierung öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Fachgewerke öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Standorte öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Ratgeber öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "nav.hidden.h-full > div.flex.items-stretch > div.flex.items-stretch > button.flex.w-8",
+       "name": "Untermenü Über uns öffnen",
+       "grafik": true
+      },
+      {
+       "pfad": "div.col-span-4 > div.max-w-mass.font-text > p.mt-4 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.col-span-4 > div.max-w-mass.font-text > p.mt-4 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 24,
+     "davon_mit_grafik": 13,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 3.8
+   },
+   {
+    "pruefung": "forced",
+    "seite": "/fliesen/kueche",
+    "ansicht": "m375",
+    "banner": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "foto": "cache/a11y-zusatz/l2-e039-live-fliesen/forced-colors/m375/fliesen__kueche.jpg",
+    "forced_aktiv": true,
+    "bedienelemente": 94,
+    "befunde": {
+     "ohne_grenze": [
+      {
+       "pfad": "header.kopf-anker.fixed > div.mx-auto.w-full > a.shrink-0",
+       "name": "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Star",
+       "grafik": true
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > p.mt-3.font-text > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > p.mt-3.font-text > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > p.mt-3.font-text > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > article.flex.flex-1 > p.mt-3.font-text > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.col-span-4 > div.max-w-mass.font-text > p.mt-4 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.col-span-4 > div.max-w-mass.font-text > p.mt-4 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "li.flex.flex-col > div.flex.flex-1 > p.font-anzeige.text-fs-3 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.mx-auto.w-full > div.mt-12 > p.mt-8.max-w-mass > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "div.flex.flex-col > fieldset.m-0.min-w-0 > div.grid.grid-cols-1 > button.flex.min-h-11",
+       "name": "",
+       "grafik": true
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "dl.grid.gap-px > div.p-4.bg-fliese > dd.mt-1.text-fs-2 > a.text-tinte.underline",
+       "name": "",
+       "grafik": false
+      },
+      {
+       "pfad": "div#leiste-schild > button.flex.size-full",
+       "name": "Cookie-Einstellungen verwalten",
+       "grafik": true
+      }
+     ],
+     "felder_ohne_grenze": []
+    },
+    "kennzahlen": {
+     "ohne_grenze": 24,
+     "davon_mit_grafik": 9,
+     "felder_ohne_grenze": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.8
+   }
+  ],
+  "ohnejs": [
+   {
+    "pruefung": "ohnejs",
+    "seite": "/fliesen",
+    "ansicht": "d1440",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 8744,
+     "ohne_js": 7982,
+     "anteil": 0.913,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 10,
+     "kopf_intern": 9,
+     "fuss_sichtbar": 57,
+     "fuss_intern": 53,
+     "hauptseiten_erreichbar": 7,
+     "hauptseiten_fehlen": []
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 0
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.4
+   },
+   {
+    "pruefung": "ohnejs",
+    "seite": "/fliesen",
+    "ansicht": "m375",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 6466,
+     "ohne_js": 5704,
+     "anteil": 0.882,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 3,
+     "kopf_intern": 3,
+     "fuss_sichtbar": 58,
+     "fuss_intern": 54,
+     "hauptseiten_erreichbar": 6,
+     "hauptseiten_fehlen": [
+      "/standorte"
+     ]
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 0
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 5.7
+   },
+   {
+    "pruefung": "ohnejs",
+    "seite": "/fliesen/kueche",
+    "ansicht": "d1440",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 7089,
+     "ohne_js": 6382,
+     "anteil": 0.9,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 10,
+     "kopf_intern": 9,
+     "fuss_sichtbar": 57,
+     "fuss_intern": 53,
+     "hauptseiten_erreichbar": 7,
+     "hauptseiten_fehlen": []
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 1
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 3.7
+   },
+   {
+    "pruefung": "ohnejs",
+    "seite": "/fliesen/kueche",
+    "ansicht": "m375",
+    "status": 200,
+    "gegenprobe": [],
+    "text": {
+     "mit_js": 7089,
+     "ohne_js": 6382,
+     "anteil": 0.9,
+     "main": true
+    },
+    "navigation": {
+     "kopf_sichtbar": 3,
+     "kopf_intern": 3,
+     "fuss_sichtbar": 58,
+     "fuss_intern": 54,
+     "hauptseiten_erreichbar": 6,
+     "hauptseiten_fehlen": [
+      "/standorte"
+     ]
+    },
+    "befunde": {
+     "erster_bildschirm_versteckt": [],
+     "erster_bildschirm_ebenso_mit_js": [],
+     "erster_bildschirm_ohne_inhalt_oder_aria_hidden": 0
+    },
+    "kennzahlen": {
+     "text_unter_80": 0,
+     "erster_bildschirm_versteckt": 0,
+     "erster_bildschirm_ebenso_mit_js": 0,
+     "navigation_fehlt": 0,
+     "kopf_ohne_interne_links": 0
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 4.9
+   }
+  ]
+ }
+}
