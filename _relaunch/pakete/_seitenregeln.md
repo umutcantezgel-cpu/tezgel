@@ -113,3 +113,6 @@ Umgebung: `export PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers RELAUNCH_SCRATCH=/tm
 GEÄNDERTE DATEIEN · KOMPOSITION (Abschnittsfolge, Ansichtsart, großer Moment, Flächenwechsel) · WAS UND WARUM ·
 MIKROTEXTE (alt → neu, Grund) · GEMEINSAME DATEIEN (gewünschte Änderungen) · PRÜFUNG UND ERGEBNIS (1–9 wörtlich) ·
 BILDBELEGE (Pfade + eigene Sichtung) · TEXTVORSCHLÄGE · OFFENE FRAGEN
+
+## Ablage
+Bilder und andere große Belege (JPG/PNG, Spuren) nur im Scratchpad `…/scratchpad/<kennung>/`, nie unter `_relaunch/belege/` – dort nur JSON/Text (≤ 200 KB je Datei). Pfade in der Rückgabe nennen.
