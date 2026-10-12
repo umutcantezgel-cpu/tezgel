@@ -165,5 +165,12 @@
     "specs": [
       "funktion-badanfrage.spec.mjs"
     ]
+  },
+  {
+    "muster": "\\(bestand\\)/bad/(badplaner|badanfrage|projekt-check)/page",
+    "specs": [
+      "funktion-badanfrage.spec.mjs",
+      "funktion-projektcheck.spec.mjs"
+    ]
   }
 ]
