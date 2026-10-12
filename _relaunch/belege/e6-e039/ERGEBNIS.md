@@ -20,7 +20,7 @@ den 25 Seiten und den drei nur dort eingebundenen Bausteinen.
 - Harte Kennzahlen 0: Falle, Zyklus, Sprunglink, Reflow/Zoom/Textabstand waagerecht, forced-Felder, ohne JS (erster
   Bildschirm, Navigation).
 - `sprung_rueckwaerts` 4 = /faq und /preise d1440 je 1 (beide Bannerzustände): Tab-Rücksprung im Preisrechner.
-  **Live gleich** (`belege/e6-e039-live-ref/`, 4 auf denselben Seiten) – Bestandsbefund, Behebung in R-02b.
+  **Live gleich** (`belege/e6-e039-live-ref/`, 4 auf denselben Seiten) – Bestandsbefund; Umbau in R-02b geprüft und nicht übernommen (begründete Abweichung, `pakete/R-02b.rueckgabe.md` ABNAHME).
 - `ohnejs text_unter_80` 6 = /termin (live gleich) sowie /faq und /preise (neu): Der Rechner wird dort jetzt wie auf `/`
   und `/leistungen` nachgeladen (`next/dynamic` + FormularPlatzhalter mit Telefon/WhatsApp/E-Mail); ohne JS steht der
   Platzhalter. Entscheidung über Lighthouse (unten): ohne messbaren Gewinn Rückkehr zum direkten Einbau wie live.
