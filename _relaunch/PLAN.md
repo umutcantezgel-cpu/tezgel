@@ -679,12 +679,16 @@ Danach das Phasentor E3.
 - `/faq` und `/preise`.
 - `/foerderung`, `/downloads`, `/login`.
 - Rechtsseiten in 2 Schritten, nur Darstellung.
-- Restkomponenten.
+- Restkomponenten (E6-BAU-11): Befund 12.10. – HeartbeatCTA, TileCraftIcons, GradientText und SpotlightCard nutzt keine
+  lebende Seite mehr (HeartbeatCTA nur noch ruhende Kern-Entwürfe), PageWrapper nur /login (S-27). Kein eigener Bauauftrag:
+  Entfernen in E6-ORCH-01 mit knip/grep-Nachweis.
 - Danach das Phasentor.
 
 **E6-ORCH-01 · Abbau des alten Systems** (eigener Schritt mit build-vergleich und knip/grep-Nachweis):
 - Alias-Schicht `tokens.css` entfernen; lucide, framer-motion und Phosphor deinstallieren.
 - Ruhendes `(kern)` samt `src/components/kern/{basis,…}`, `src/styles/kern*.css` und `src/lib/kern` entfernen.
+- Restkomponenten ohne Nutzung entfernen: `animations/HeartbeatCTA.tsx`, `common/TileCraftIcons.jsx`, `ui/GradientText.tsx`,
+  `ui/SpotlightCard.tsx`, `common/PageWrapper.jsx` (sobald /login ohne).
 - `src/lib/kern/start/daten.ts` versorgt die Startseite. Vorher wird es nach `src/lib/start/daten.ts` verschoben.
 
 **Danach:** Kür (Werkstatt KÜR-01…09), P6/P7 nach `_relaunch/PLAN.md` mit ABSCHLUSS, dann Lauf 2 A0–A2 mit Halt am Freigabepunkt.
