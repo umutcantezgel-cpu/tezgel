@@ -1,11 +1,31 @@
-// Klassen der Badanfrage (E-011, E3-Vorlauf): aus kern/stile.ts abgeleitet, keine freien Werte.
-// Farbwechsel ohne Überblendung (E-016); gewählt = Tinte wie wahlKlassen, Signatur unverändert.
-import { feldKlassen } from '@/components/kern/stile';
+// Klassen der Badanfrage (E-011, Q-01 im KERN v2, Fusion F-04 nach E-039): aus kern/stile.ts abgeleitet, keine freien Werte.
+// Optik wie die Express-Anfrage (TezgelAnfrageFunnel): Auswahl über wahlKlassen (gewählt = Tinte über aria-pressed,
+// Farbwechsel ohne Überblendung), Felder über feldKlassen. Spalten richten sich nach der Breite des Behälters
+// (`@container` an der Wurzel in index), nicht nach dem Fenster: Der Funnel steht in Seiten verschiedener Breite,
+// auf allen /bad-Seiten in der 8/12-Spalte neben der Rückfrage (d1440 etwa 795 px).
+import { feldKlassen, wahlKlassen } from '@/components/kern/stile';
 
 export const inputClass = feldKlassen;
 
-/** Auswahlkarte; padding nur aus der Abstandsskala (p-4, p-6). Nebentexte: gewählt text-nacht-2, sonst text-tinte-2 */
-export const optionClass = (selected, padding = 'p-6') =>
-    `group flex h-full flex-col gap-2 ${padding} border text-left font-text text-fs-2 ${
-        selected ? 'border-tinte bg-tinte text-kalk' : 'border-strich bg-fliese text-tinte hover:border-tinte'
-    }`;
+/** Maße in Mono mit festen Ziffernbreiten (K-006: Messbares in Mono); sonst wie feldKlassen */
+export const zahlClass = `${feldKlassen.replace('font-text', 'font-mono')} tabular-nums`;
+
+/** Behälter: Rahmen Strich, Fläche Fliese, kein Abheben; Innenabstand nach Behälterbreite (wie die Express-Anfrage) */
+export const feldClass = 'border border-strich bg-fliese p-6 @2xl:p-8 @3xl:p-12';
+
+/** Schrittfrage (Absatz wie im Bestand) und ihre Nummer in Mono */
+export const frageClass = 'font-text text-fs-4 font-semibold text-tinte';
+export const nummerClass = 'font-mono font-normal text-tinte-2';
+
+/** Auswahlkachel mit Titel und Beschreibung (aria-pressed): wahlKlassen über die volle Rasterzelle,
+ *  der Inhalt steht links oben (self-start hebt die Mitte von wahlKlassen für das Kind auf) */
+export const kachelClass = `${wahlKlassen} h-full w-full`;
+export const kachelInhaltClass = 'flex w-full flex-col gap-1 self-start py-1 text-left';
+
+/** Wunschausstattung (aria-pressed): wahlKlassen, Zeichen und Text links */
+export const ausstattungClass = `${wahlKlassen} w-full`;
+export const ausstattungInhaltClass = 'flex w-full items-center gap-2 text-left';
+
+/** Fehlermeldung über den Sendeknöpfen (K-005: Rahmen + Versatz-Zeichen + Text): umlaufend 1 px Strich (aus A),
+ *  Kantenstrich links in Laser und Kalk-Grund (aus B); Rot nur an Kante und Zeichen, kein rundum roter Rahmen */
+export const fehlerClass = 'flex items-start gap-3 border border-l-2 border-strich border-l-laser bg-kalk p-4 text-fs-2 text-tinte';

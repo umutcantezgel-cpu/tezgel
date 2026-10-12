@@ -1,0 +1,479 @@
+{
+ "einheit": "u4-badanfrage",
+ "auftrag": "F-04",
+ "base": "http://127.0.0.1:4350",
+ "protokoll": "Skripte des Gutachtens (bilder.mjs, messung.mjs) mit Wurzel [data-baustein=badanfrage], Kopien unter scratchpad/f-04/werk",
+ "axe_baustein": [
+  "m390/01-schritt1-ruhe:0",
+  "m390/02-schritt1-auswahl:0",
+  "m390/03-schritt2-auswahl:0",
+  "m390/04-schritt3-auswahl:0",
+  "m390/05-schritt4-auswahl:0",
+  "m390/06-schritt5-ruhe:0",
+  "m390/07-schritt5-ausgefuellt:0",
+  "m390/13-whatsapp-geoeffnet:0",
+  "m390/08-pflicht-leer-absenden:0",
+  "m390/09-pflicht-whatsapp-leer:0",
+  "m390/11-serverfehler:0",
+  "m390/10-laden:0",
+  "m390/12-erfolg:0",
+  "d1440/01-schritt1-ruhe:0",
+  "d1440/02-schritt1-auswahl:0",
+  "d1440/03-schritt2-auswahl:0",
+  "d1440/04-schritt3-auswahl:0",
+  "d1440/05-schritt4-auswahl:0",
+  "d1440/06-schritt5-ruhe:0",
+  "d1440/07-schritt5-ausgefuellt:0",
+  "d1440/13-whatsapp-geoeffnet:0",
+  "d1440/08-pflicht-leer-absenden:0",
+  "d1440/09-pflicht-whatsapp-leer:0",
+  "d1440/11-serverfehler:0",
+  "d1440/10-laden:0",
+  "d1440/12-erfolg:0"
+ ],
+ "leer_absenden_anfragen": {
+  "d1440": 0,
+  "m390": 0
+ },
+ "whatsapp": [
+  {
+   "host": "api.whatsapp.com/send",
+   "phone": "491726728504",
+   "text": "Hallo Herr Tezgel,\nich interessiere mich für eine Badsanierung:\n\nImmobilie: Eigentumswohnung\nSanierungsumfang: Barrierefreies Bad\nRaummaße: ca. 3.2 x 2.4 m (7.7 m²)\nPersonen im Haushalt: 3 - 4 Personen (Familie)\nQualitätsstufe: Luxus\nWunschausstattung: Bodengleiche Walk-In-Dusche, Fußbodenheizung, LED-Lichtspiegel\n\nName: Prüf Person\nTelefon: 0170 0000000\nE-Mail: pruef@example.de\nAdresse: 35614 Aßlar\n\nBitte melden Sie sich bezüglich eines unverbindlichen Vor-Ort-Aufmaßes. Vielen Dank!"
+  }
+ ],
+ "fokusring_ok": {
+  "d1440": "61/61",
+  "m390": "61/61"
+ },
+ "schrittfokus": {
+  "d1440": {
+   "s1→s2": "button \"Weiter zu Schritt 3\"",
+   "s2→s3": "button \"Weiter zu Schritt 4\"",
+   "s3→s2 (Zurück)": "button \"Zurück\"",
+   "s2→s3 erneut": "button \"Weiter zu Schritt 4\"",
+   "s3→s4": "button \"Weiter zu Schritt 5\"",
+   "s4→s5": "p \"5. Kontaktdaten & Versand Ihrer Anfrage\"",
+   "s5→s4 (Zurück zu Schritt 4)": "p#badanfrage-frage-4 \"4. Qualitätskategorie & gewünschte Eleme\"",
+   "s4→s5 erneut": "p \"5. Kontaktdaten & Versand Ihrer Anfrage\"",
+   "leer absenden (Enter)": "input#badanfrage-name \"\"",
+   "WhatsApp leer (Enter)": "button \"Per WhatsApp\"",
+   "Serverfehler (Enter)": "button \"Badanfrage jetzt absenden (Online)\"",
+   "Serverfehler danach": "button \"Badanfrage jetzt absenden (Online)\"",
+   "Laden (Enter)": "body \"Zum Hauptinhalt springenFachbetriebAßlar\"",
+   "Erfolg danach": "p \"Vielen Dank, Prüf Person!\"",
+   "Erfolg: Neue Badanfrage starten (Enter)": "p#badanfrage-frage-1 \"1. Um welche Art von Immobilie handelt e\"",
+   "WhatsApp geöffnet (Enter)": "h3 \"Fast geschafft – Nachricht jetzt absende\"",
+   "WhatsApp: Zurück (Enter)": "p#badanfrage-frage-1 \"1. Um welche Art von Immobilie handelt e\""
+  },
+  "m390": {
+   "s1→s2": "button \"Weiter zu Schritt 3\"",
+   "s2→s3": "button \"Weiter zu Schritt 4\"",
+   "s3→s2 (Zurück)": "button \"Zurück\"",
+   "s2→s3 erneut": "button \"Weiter zu Schritt 4\"",
+   "s3→s4": "button \"Weiter zu Schritt 5\"",
+   "s4→s5": "p \"5. Kontaktdaten & Versand Ihrer Anfrage\"",
+   "s5→s4 (Zurück zu Schritt 4)": "p#badanfrage-frage-4 \"4. Qualitätskategorie & gewünschte Eleme\"",
+   "s4→s5 erneut": "p \"5. Kontaktdaten & Versand Ihrer Anfrage\"",
+   "leer absenden (Enter)": "input#badanfrage-name \"\"",
+   "WhatsApp leer (Enter)": "button \"Per WhatsApp\"",
+   "Serverfehler (Enter)": "button \"Badanfrage jetzt absenden (Online)\"",
+   "Serverfehler danach": "button \"Badanfrage jetzt absenden (Online)\"",
+   "Laden (Enter)": "body \"Zum Hauptinhalt springenFachbetriebAßlar\"",
+   "Erfolg danach": "p \"Vielen Dank, Prüf Person!\"",
+   "Erfolg: Neue Badanfrage starten (Enter)": "p#badanfrage-frage-1 \"1. Um welche Art von Immobilie handelt e\"",
+   "WhatsApp geöffnet (Enter)": "h3 \"Fast geschafft – Nachricht jetzt absende\"",
+   "WhatsApp: Zurück (Enter)": "p#badanfrage-frage-1 \"1. Um welche Art von Immobilie handelt e\""
+  }
+ },
+ "laden": {
+  "knoepfe": [
+   {
+    "text": "Übermittle Anfrage an Fachbetrieb …",
+    "disabled": true,
+    "ariaBusy": "true",
+    "ariaDisabled": null
+   },
+   {
+    "text": "Per WhatsApp",
+    "disabled": true,
+    "ariaBusy": null,
+    "ariaDisabled": null
+   },
+   {
+    "text": "Zurück zu Schritt 4",
+    "disabled": false,
+    "ariaBusy": null,
+    "ariaDisabled": null
+   }
+  ],
+  "live": {
+   "imBaustein": [
+    {
+     "el": "p",
+     "role": "status",
+     "ariaLive": null,
+     "ariaAtomic": null,
+     "text": "Übermittle Anfrage an Fachbetrieb …",
+     "srOnlyTeile": []
+    }
+   ],
+   "seiteAusserhalb": []
+  }
+ },
+ "meldungen": {
+  "d1440": {
+   "s1": {
+    "imBaustein": [],
+    "seiteAusserhalb": []
+   },
+   "s2": {
+    "imBaustein": [],
+    "seiteAusserhalb": []
+   },
+   "s3": {
+    "imBaustein": [
+     {
+      "el": "span",
+      "role": null,
+      "ariaLive": "polite",
+      "ariaAtomic": null,
+      "text": "7.7 m²",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "s4": {
+    "imBaustein": [],
+    "seiteAusserhalb": []
+   },
+   "s5": {
+    "imBaustein": [
+     {
+      "el": "p",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "fehler-whatsapp-leer": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "alert",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "Fehler: Bitte tragen Sie zumindest Name und Telefonnummer ein.",
+      "srOnlyTeile": [
+       "Fehler:"
+      ]
+     },
+     {
+      "el": "p",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "serverfehler": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "alert",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "Fehler: Test-Ausfall",
+      "srOnlyTeile": [
+       "Fehler:"
+      ]
+     },
+     {
+      "el": "p",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "erfolg": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "Badanfrage erfolgreich übermitteltVorgangs-Nr.: TEZ-26-TESTVielen Dank, Prüf Person!Ihre detaillierte Badanfrage (7.7 m² · Barrierefreies Bad) ist erfolgreich b",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "whatsapp": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "WhatsApp geöffnetFast geschafft – Nachricht jetzt absendenIhre Badanfrage (7.5 m² · Komplettbadsanierung) ist in WhatsApp vorbereitet. Senden Sie die Nachricht ",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   }
+  },
+  "m390": {
+   "s1": {
+    "imBaustein": [],
+    "seiteAusserhalb": []
+   },
+   "s2": {
+    "imBaustein": [],
+    "seiteAusserhalb": []
+   },
+   "s3": {
+    "imBaustein": [
+     {
+      "el": "span",
+      "role": null,
+      "ariaLive": "polite",
+      "ariaAtomic": null,
+      "text": "7.7 m²",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "s4": {
+    "imBaustein": [],
+    "seiteAusserhalb": []
+   },
+   "s5": {
+    "imBaustein": [
+     {
+      "el": "p",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "fehler-whatsapp-leer": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "alert",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "Fehler: Bitte tragen Sie zumindest Name und Telefonnummer ein.",
+      "srOnlyTeile": [
+       "Fehler:"
+      ]
+     },
+     {
+      "el": "p",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "serverfehler": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "alert",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "Fehler: Test-Ausfall",
+      "srOnlyTeile": [
+       "Fehler:"
+      ]
+     },
+     {
+      "el": "p",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "erfolg": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "Badanfrage erfolgreich übermitteltVorgangs-Nr.: TEZ-26-TESTVielen Dank, Prüf Person!Ihre detaillierte Badanfrage (7.7 m² · Barrierefreies Bad) ist erfolgreich b",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   },
+   "whatsapp": {
+    "imBaustein": [
+     {
+      "el": "div",
+      "role": "status",
+      "ariaLive": null,
+      "ariaAtomic": null,
+      "text": "WhatsApp geöffnetFast geschafft – Nachricht jetzt absendenIhre Badanfrage (7.5 m² · Komplettbadsanierung) ist in WhatsApp vorbereitet. Senden Sie die Nachricht ",
+      "srOnlyTeile": []
+     }
+    ],
+    "seiteAusserhalb": []
+   }
+  }
+ },
+ "reflow320": {
+  "s1": [],
+  "s2": [],
+  "s3": [],
+  "s4": [],
+  "s5": [
+   {
+    "art": "platzhalter-abgeschnitten",
+    "el": "badanfrage-phone",
+    "text": "Für die Rücksprache zum Aufmaß",
+    "textbreite": 255,
+    "verfuegbar": 204
+   }
+  ],
+  "fehler-whatsapp-leer": [
+   {
+    "art": "platzhalter-abgeschnitten",
+    "el": "badanfrage-phone",
+    "text": "Für die Rücksprache zum Aufmaß",
+    "textbreite": 255,
+    "verfuegbar": 204
+   }
+  ],
+  "serverfehler": [],
+  "erfolg": [],
+  "whatsapp": []
+ },
+ "zoom200_spalte": {
+  "s1": [],
+  "s2": [],
+  "s3": [],
+  "s4": [],
+  "s5": [
+   {
+    "art": "platzhalter-abgeschnitten",
+    "el": "badanfrage-phone",
+    "text": "Für die Rücksprache zum Aufmaß",
+    "textbreite": 283,
+    "verfuegbar": 263
+   }
+  ],
+  "fehler-whatsapp-leer": [
+   {
+    "art": "platzhalter-abgeschnitten",
+    "el": "badanfrage-phone",
+    "text": "Für die Rücksprache zum Aufmaß",
+    "textbreite": 283,
+    "verfuegbar": 263
+   }
+  ],
+  "serverfehler": [],
+  "erfolg": [],
+  "whatsapp": []
+ },
+ "zoom_aequivalent": {
+  "s1": [],
+  "s2": [],
+  "s3": [],
+  "s4": [],
+  "s5": [],
+  "fehler-whatsapp-leer": [],
+  "serverfehler": [],
+  "erfolg": [],
+  "whatsapp": []
+ },
+ "textabstand": {
+  "d1440": {
+   "s1": [],
+   "s2": [],
+   "s3": [],
+   "s4": [],
+   "s5": [
+    {
+     "art": "platzhalter-abgeschnitten",
+     "el": "badanfrage-phone",
+     "text": "Für die Rücksprache zum Aufmaß",
+     "textbreite": 366,
+     "verfuegbar": 306
+    }
+   ],
+   "fehler-whatsapp-leer": [
+    {
+     "art": "platzhalter-abgeschnitten",
+     "el": "badanfrage-phone",
+     "text": "Für die Rücksprache zum Aufmaß",
+     "textbreite": 366,
+     "verfuegbar": 306
+    }
+   ],
+   "serverfehler": [],
+   "erfolg": [],
+   "whatsapp": []
+  },
+  "m390": {
+   "s1": [],
+   "s2": [],
+   "s3": [],
+   "s4": [],
+   "s5": [
+    {
+     "art": "platzhalter-abgeschnitten",
+     "el": "badanfrage-phone",
+     "text": "Für die Rücksprache zum Aufmaß",
+     "textbreite": 329,
+     "verfuegbar": 274
+    }
+   ],
+   "fehler-whatsapp-leer": [
+    {
+     "art": "platzhalter-abgeschnitten",
+     "el": "badanfrage-phone",
+     "text": "Für die Rücksprache zum Aufmaß",
+     "textbreite": 329,
+     "verfuegbar": 274
+    }
+   ],
+   "serverfehler": [],
+   "erfolg": [],
+   "whatsapp": []
+  }
+ },
+ "mutationsprobe": {
+  "auswahl": "4 rot",
+  "pflicht": "2 rot",
+  "zurueck": "2 rot",
+  "ausstattung": "3 rot",
+  "absenden": "7 rot",
+  "verfahren": "Chunk-Mutation per page.route im Testbrowser (scratchpad/f-04/mut), Arbeitsbaum unberührt"
+ }
+}

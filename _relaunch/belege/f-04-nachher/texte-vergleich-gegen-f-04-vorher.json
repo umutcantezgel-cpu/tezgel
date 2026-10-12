@@ -1,0 +1,72 @@
+{
+ "vorher": "f-04-vorher",
+ "nachher": "f-04-nachher",
+ "seiten": {
+  "/bad/badanfrage": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   }
+  },
+  "/bad/barrierefreies-bad": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/bad/badplaner": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/bad/musterbaeder/premium-bad-7": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/bad/bad-aus-einer-hand": {
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 4,
+  "hinzu": 10,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

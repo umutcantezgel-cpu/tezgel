@@ -1,39 +1,41 @@
 import Icon from '@/components/icons/Icon';
-import { labelKlassen, wahlKlassen } from '@/components/kern/stile';
+import { labelKlassen } from '@/components/kern/stile';
 import { TIERS, FEATURES } from '@/lib/formulare/useBadanfrage';
-import { optionClass } from './stile';
+import { ausstattungClass, ausstattungInhaltClass, frageClass, kachelClass, kachelInhaltClass, nummerClass } from './stile';
 
-// Schritt 4: Ausstattung und Qualitätsstufe (E-011: aus BadanfrageFunnel.jsx verschoben). E3-BAU-17: Darstellung nach dem
-// KERN-Formularmuster; Texte, IDs, aria-pressed, Reihenfolge und Nutzlast unverändert.
+// Schritt 4: Ausstattung und Qualitätsstufe (Q-01: Darstellung nach KERN v2; Texte, Namen und Verhalten unverändert).
+// Qualitätsstufen als Kacheln (Gruppe über die Schrittfrage benannt, neu), Wunschausstattung als Auswahlknöpfe mit
+// Haken bzw. Plus; die Zeichen sind dekorativ, der Name bleibt der Text (z. B. „Badewanne“). F-04: Schrittfrage als
+// Fokusziel (tabIndex -1); Ausstattung erst ab 56rem Behälterbreite dreispaltig, damit „Bodengleiche Walk-In-Dusche“ in der
+// 8/12-Spalte (etwa 795 px) einzeilig bleibt.
 export default function Schritt4({ formData, setFormData, toggleFeature }) {
     return (
-        <div className="space-y-6">
-            <p className={labelKlassen}>
-                4. Qualitätskategorie &amp; gewünschte Elemente
+        <div className="flex flex-col gap-6">
+            <p id="badanfrage-frage-4" className={frageClass} tabIndex={-1} data-fokusziel>
+                <span className={nummerClass}>4.</span> Qualitätskategorie &amp; gewünschte Elemente
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                {TIERS.map((t) => {
-                    const gewaehlt = formData.tier === t.id;
-                    return (
-                        <button
-                            key={t.id}
-                            type="button"
-                            aria-pressed={gewaehlt}
-                            onClick={() => setFormData({ ...formData, tier: t.id })}
-                            className={optionClass(gewaehlt, 'p-4')}
-                            data-motion="zustand"
-                        >
-                            <span className="mb-1 block font-semibold">{t.title}</span>
-                            <span className={`block text-fs-1 ${gewaehlt ? 'text-nacht-2' : 'text-tinte-2'}`}>{t.desc}</span>
-                        </button>
-                    );
-                })}
+            <div role="group" aria-labelledby="badanfrage-frage-4" className="grid grid-cols-1 gap-2 @2xl:grid-cols-3">
+                {TIERS.map((t) => (
+                    <button
+                        key={t.id}
+                        type="button"
+                        aria-pressed={formData.tier === t.id}
+                        onClick={() => setFormData({ ...formData, tier: t.id })}
+                        className={kachelClass}
+                        data-motion="zustand"
+                    >
+                        <span className={kachelInhaltClass}>
+                            <span className="block text-fs-3 font-semibold">{t.title}</span>
+                            <span className="block text-fs-1">{t.desc}</span>
+                        </span>
+                    </button>
+                ))}
             </div>
 
-            <fieldset className="pt-3">
+            <fieldset className="pt-2">
                 <legend className={labelKlassen}>Wunschausstattung auswählen</legend>
-                <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-2 grid grid-cols-1 gap-2 @md:grid-cols-2 @4xl:grid-cols-3">
                     {FEATURES.map((item) => {
                         const isSelected = formData.features.includes(item.id);
                         return (
@@ -42,11 +44,13 @@ export default function Schritt4({ formData, setFormData, toggleFeature }) {
                                 type="button"
                                 aria-pressed={isSelected}
                                 onClick={() => toggleFeature(item.id)}
-                                className={`${wahlKlassen} gap-2`}
+                                className={ausstattungClass}
                                 data-motion="zustand"
                             >
-                                <Icon name={isSelected ? 'haken' : 'plus'} groesse={4} />
-                                {item.label}
+                                <span className={ausstattungInhaltClass}>
+                                    <Icon name={isSelected ? 'haken' : 'plus'} groesse={4} />
+                                    {item.label}
+                                </span>
                             </button>
                         );
                     })}
