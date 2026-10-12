@@ -1,5 +1,8 @@
 # PRUEFPUNKT
 
+> **ÜBERGEBEN – 11.10.2026 (Entscheidung des Auftraggebers).** Der Werkstatt-Lauf ist beendet: **nicht fortsetzen, nicht pushen.** Vorbild für alle Unterseiten ist die live laufende Fusions-Startseite (KERN v2, `_werkstatt/KERN.md`); nur die Relaunch-Sitzung baut weiter, Seite für Seite direkt auf `main` (`_relaunch/ENTSCHEIDUNGEN.md` E-037, E-038; Plan `_relaunch/PLAN.md`, Abschnitt „Vereinheitlichung“). Die Pakete E3–E6 und die Kür dieses PLANs werden dort als Gerüst übernommen; Werkzeuge in `_werkstatt/werkzeuge` werden weiter benutzt. Der WERKSTATT-Block in `CLAUDE.md` ist damit überholt.
+
+
 - Etappe: E2 · Zusammenführung mit main (E-020) · Stand 11.10.2026 ~14:30 CEST
 - Arbeitsbranch `claude/amazing-mendel-b0g40w` = zusammengeführter Stand (Werkstatt + Relaunch main bis ecdc508 + Fusion der Startseite). Push auf `main` am 11.10. auf ausdrückliche Anweisung: main = Branch (Fast-Forward). Danach Vercel-Status prüfen.
 - Gesamtprüfung auf cf91c38 (Belege im Scratchpad `vergleich/`): Reinraum grün; Funktionstests 289 bestanden, 1 Ausreißer (Mega-Menü Tastatur, einzeln bestanden); Sitemap 163 × 200; axe / und /kontakt 0; Register ohne Lücke; Unterseiten-Stichprobe ohne Bruch (Altbefunde auf din-18534/Blog unverändert); Fremdsuite 337/45 (erwartet: sie prüft die Kern-Startseite, M-21); Fusionsgutachten Desktop 6,5 (A 6, B 5,5), Handy 7 (A 6, B 5,5).

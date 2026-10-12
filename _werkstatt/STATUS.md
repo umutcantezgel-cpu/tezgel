@@ -1,3 +1,7 @@
+STATUS · ÜBERGEBEN an die Relaunch-Sitzung (11.10.2026, Entscheidung des Auftraggebers) · Werkstatt-Lauf beendet · nicht fortsetzen
+
+> **ÜBERGEBEN – 11.10.2026 (Entscheidung des Auftraggebers).** Der Werkstatt-Lauf ist beendet: **nicht fortsetzen, nicht pushen.** Vorbild für alle Unterseiten ist die live laufende Fusions-Startseite (KERN v2, `_werkstatt/KERN.md`); nur die Relaunch-Sitzung baut weiter, Seite für Seite direkt auf `main` (`_relaunch/ENTSCHEIDUNGEN.md` E-037, E-038; Plan `_relaunch/PLAN.md`, Abschnitt „Vereinheitlichung“). Die Pakete E3–E6 und die Kür dieses PLANs werden dort als Gerüst übernommen; Werkzeuge in `_werkstatt/werkzeuge` werden weiter benutzt. Der WERKSTATT-Block in `CLAUDE.md` ist damit überholt.
+
 STATUS · Branch claude/amazing-mendel-b0g40w · Etappe 2/9 (E2) · Zusammenführung mit main (E-020): Startseite fusioniert, Branch enthält main · main = Branch (Push auf Anweisung) · Bestand grün (289/290, 1 Ausreißer) · Nächster Schritt: Vercel-Status, dann Tor Anlauf 2
 
 # STATUS · Werkstatt-Lauf „Tezgel auf Spitzenniveau“

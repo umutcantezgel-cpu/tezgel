@@ -486,3 +486,27 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
   - UNANTASTBAR, G1–G9, Tore T1/T2/T3, Bauregeln (Einfrieren, ruhende Entwürfe, `freischalten.sh`), E-035 (P4-14 vor der nächsten Freischaltung) und M-20 (Zielgruppe im Wortlaut für `/kontakt`, `/leistungen`, `/ueber-uns`).
   - Das Phasentor T3 (L3) gilt weiter am Ende von P5; die Freischalt-Schwelle je Schritt ist T2.
 - **Folge:** Die Wellentabelle P5 wird zu einer Schrittfolge (PLAN.md, Abschnitt „Ausrollung Stück für Stück“), erarbeitet über einen Plan-Workflow mit Gegenprüfung. Planwert und Pushfrequenz stehen danach in STATUS.
+
+## E-038 · Ein Gestaltungssystem: KERN v2 der live laufenden Fusions-Startseite; nur diese Sitzung baut, direkt auf main
+- **Befund (11.10.2026):**
+  - Eine zweite Orchestrierung („Werkstatt“, `_werkstatt/`) hat auf Anweisung des Auftraggebers beide Arbeitsstände zusammengeführt und die Startseite aus beiden Fassungen fusioniert (Werkstatt E-020). Sie hat das auf `main` gepusht: 6156079, live seit ≈ 17:10 CEST.
+  - `/` liegt im Rahmen `(bestand)` und nutzt das Werkstatt-System **KERN v2**:
+    - Regeln in `_werkstatt/KERN.md`.
+    - Tokens in `src/app/globals.css` (`@theme static`) und `src/app/bewegung.css`.
+    - Bausteine flach in `src/components/kern/*.tsx` und `kern/stile.ts`; Startabschnitte in `src/components/start/*`.
+    - Icons in `src/components/icons/*`, Pläne in `src/lib/plaene/*`.
+  - Die Kern-Startseite dieser Sitzung liegt als Entwurf unter `src/app/(kern)/_entwurf/start/page.tsx`.
+  - Der Rahmen (Kopf, Menü, Fuß, untere Leiste, Banner, WhatsApp) ist auf allen Seiten KERN v2. Umgebaut sind erst `/`, `/kontakt` und die 404; 74 von 76 Seitendateien haben noch altes Markup.
+- **Entscheidung des Auftraggebers** (Chat, 11.10., Antwort auf zwei Fragen):
+  - Vorbild ist „die Live-Fusionsstartseite“.
+  - Weiter baut „nur diese Sitzung“.
+  - Zusammen mit E-037: Unterseiten Stück für Stück, immer auf `main`, regelmäßige Updates.
+- **Folgen:**
+  1. **KERN v2 ist das einzige Gestaltungssystem.** `_werkstatt/KERN.md` gilt für alle Seiten. `_relaunch/KERN.md` (v1.2) und die Kern-Bausteine in den Unterordnern von `src/components/kern/` (`basis`, `formulare`, `kopf-b`, `fuss`, `seiten`, `start`, `vorlagen` …) sind Archiv bzw. ruhend; Abbau in E6-ORCH-01.
+  2. **Die ruhenden Kern-Entwürfe** (`src/app/(kern)/_entwurf/{bad,leistungen,standorte,blog,ueber-uns}`) sind die **inhaltliche Vorlage**: Abschnittsfolge, Daten, Anker, Hooks und die Auflagen W1–W9. Die Optik entsteht neu aus KERN-v2-Bausteinen (Übersetzung `_werkstatt/pakete/FUSION-UEBERSETZUNG.md`). `/kontakt` ist bereits live umgebaut.
+  3. **Kein Freischalten mehr.** Seiten werden direkt im Rahmen `(bestand)` umgebaut; jeder Schritt (Seite, Vorlage oder geteilte Komponente) hat ein eigenes Tor (T2-S/T2-Q) und einen eigenen Push.
+  4. **Das Paketgerüst** sind die offenen Werkstatt-Pakete E3–E6 und die Kür (`_werkstatt/PLAN.md`), umsortiert in `PLAN.md`, Abschnitt „Vereinheitlichung“. Die Werkstatt-Werkzeuge (`werte.mjs`, `umbau.mjs`, `ueberlappung.mjs`, Register, `briefing.mjs`, Sichtabnahme-Vorlage) werden weiter benutzt.
+  5. **Überholt:** P4-14 (TBT) und P4-15 (Hero-Formular), weil sie an der Kern-Startseite gemessen wurden. Neumessung an der Fusions-`/` (Basiswerte Phase 1).
+  6. **Übergabe:** `_werkstatt/STATUS.md` und `PRUEFPUNKT.md` tragen den Vermerk „ÜBERGEBEN – nicht fortsetzen, nicht pushen“; M-21 ist beantwortet. Der WERKSTATT-Block in der committeten `CLAUDE.md` bleibt stehen (`commit.sh` committet `CLAUDE.md` nie), ist aber durch diese Vermerke und den lokalen Orchestrator-Block überholt.
+  7. **Merge-Commits** laufen über `commit.sh --merge`: nur `ORCHESTRATOR=1`, keine ungelösten Konflikte, `CLAUDE.md` im Index ohne lokalen Block, keine Datei > 5 MB.
+- **Umkehrprobe:** Bringt ein Schritt eine Seite unter den Stand vor dem Umbau (Funktion, Barrierefreiheit, Text, Leistung), wird er per Revert-Commit zurückgenommen und neu gebaut.
