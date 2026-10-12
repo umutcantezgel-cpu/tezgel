@@ -1,0 +1,611 @@
+{
+ "einheit": "u7-schnellanfrage",
+ "zuordnung": {
+  "X": "B",
+  "Y": "A"
+ },
+ "urteil": {
+  "einheit": "u7-schnellanfrage",
+  "je_abschnitt": [
+   {
+    "name": "Ruhe",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "In B ist die Karte auf beiden Seiten vollständig zu sehen: Mono-Etikett mit Fugenkreuz, Fuge, Archivo-Titel, Feldraster und Knopf. In Ruhe ist nichts rot, denn die Pflichtsterne sind grau (K-003: Rot nur für Achse, Anriss, Fokus-Akzent und Fehlerzeichen). Dunkle Karte mit Kalk-Knopf passt zum dunklen Abschluss des Vorbilds (06-abschluss-bereit) und zum dunklen Seitenfeld der Projektanfrage. A auf der Leistungsseite ist ruhig und sauber, setzt aber rote Pflichtsterne neben die rote Achse, also mehrere rote Punkte in einem Bildschirm. Auf der A-Stadtseite überdeckt der Abschluss die Kopfzeile und die obere Hälfte des Titels.",
+    "uebernehmen_aus_anderer": "Aus A: die Fugenlinie zwischen Einleitung und Feldblock, damit sich Kopf und Felder klar trennen (in B läuft die Einleitung ohne Trennung in „Ihr Name“). Dazu die Vertrauenszeile als Mono-Etikett (text-fs-1), wie die Kleinangaben im Vorbild („Rückruf < 24h“, „Oder bei dringenden Fragen direkt anrufen:“), mit dem Trennpunkt nach Art von B (aria-hidden).",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Ruhe",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Die B-Karte steht vollständig da, einspaltig, mit gut erkennbaren Feldern (weiß auf Tinte) und ohne Rot. Auf der A-Stadtseite fehlt die Kopfzeile (48 px überdeckt). Auf der A-Leistungsseite ist die Karte stimmig, hat aber rote Sterne und keine Fuge unter dem Etikett.",
+    "uebernehmen_aus_anderer": "Aus A: die Fuge zwischen Einleitung und erstem Feld und die Vertrauenszeile in Mono. Unter sm bleibt sie zweizeilig ohne Trennpunkt wie in B.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Umfeld: Abschluss-Abschnitt mit Formular (Hülle)",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "B: Auf beiden Seiten liegt die Karte in der benannten section final-cta ohne jede Überdeckung, beide Seitentypen sind gleich gebaut. Die Karte steht aber zentriert (x≈417) unter einem CTA-Kasten über die volle Breite (x 112–1328) und fluchtet mit keiner Kante. Das widerspricht der Leitidee „alles fluchtet“ (K-001, K-006). A-Stadtseite: Die Karte steht linksbündig in 8/12 an der Inhaltskante, rechts das Feld „Ansprechpartner“ bündig zur rechten Kante. Das ist Fugenraster statt Karte und entspricht ausdrücklich Befund 30 in _werkstatt/pakete/E4-NACH-09.md (Formular linksbündig 8 Spalten mit Rueckfrage 4 Spalten). Umgesetzt ist es aber mit negativem Außenabstand: Der Kartenkopf wird verdeckt, und der Block liegt außerhalb jeder benannten Region. Die A-Leistungsseite ist gleich wie B.",
+    "uebernehmen_aus_anderer": "Aus A für die Stadtseite: Rasterlage 8/4 mit Rueckfrage rechts (ab lg), Karte an der Inhaltskante, aber ohne -mt-12/lg:-mt-24 und innerhalb einer benannten Region (in der section final-cta oder in einer eigenen section mit aria-labelledby). Aus B: dass nichts überdeckt wird und dass die Leistungsseite im Abschnitt bleibt.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Umfeld: Abschluss-Abschnitt mit Formular (Hülle)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "In B folgt die Karte dem CTA-Kasten mit klarem Abstand und ist vollständig, auf beiden Seiten gleich. Auf der A-Stadtseite ist der Kartenkopf überdeckt. Der Kasten „Ansprechpartner“ unter der Karte ist mobil eine sinnvolle Reihenfolge (Formular vor Nebenweg), wiederholt aber die Telefonnummer, die direkt darüber im CTA-Kasten steht.",
+    "uebernehmen_aus_anderer": "Wird 8/4 aus A übernommen, steht Rueckfrage mobil unter der Karte, nicht darüber, und ohne Überdeckung.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Fokus im ersten Feld (Name, per Tastatur)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Beide setzen 2 px Ring mit 2 px Abstand, in der Farbe passend zur Fläche, wie K-009 es verlangt: Kalk auf Tinte (B), Tinte auf heller Fläche (A). Beide Ringe sind frei und erreichen ≥ 3:1. In B hebt sich der Ring etwas deutlicher ab, in A verschmilzt er optisch mit dem Strich-Rand zu einem dicken Rand. Beides ist regelkonform.",
+    "uebernehmen_aus_anderer": "Die Ringfarbe immer an die Kartenfläche koppeln (Kalk auf Tinte, Tinte auf Fliese), je nachdem, welche Fläche die Fusion wählt.",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Fokus im ersten Feld (Name, per Tastatur)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Der Fokusring ist in beiden gleich gut sichtbar und nicht verdeckt. Der Unterschied liegt nur in der Kartenfläche.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Pflichtfeldfehler: leer abgesendet (Browserprüfung)",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "In beiden greift nur die Browserprüfung (required): Der Fokus geht ins Namensfeld, die Prüfblase zeigt die Sprache des Prüfbrowsers. Gestalterisch gibt es keinen Unterschied. Dass auf der A-Stadtseite der Kopf fehlt, ist dieselbe Überdeckung wie in Ruhe.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Pflichtfeldfehler: leer abgesendet (Browserprüfung)",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Sichtbar ist nur der Fokus im Namensfeld, in beiden gleich.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Pflichtfeldfehler mit eigener Meldung",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "B erfüllt K-005 (Fehler = Rahmen + Versatz-Zeichen + Text) am richtigen Ort: Das Namensfeld bekommt einen roten Rahmen und aria-invalid, die Meldung ist knapp und kompakt (Laserlinie links, Versatz-Zeichen, laser-tief auf Fliese, etwa 7,5:1). Der Nutzer sieht sofort, welches Feld fehlt. In A ist die Meldung ein großer rot gerahmter Kasten mit viel Innenabstand und dunklem Text. Das Feld selbst bleibt unmarkiert, man muss es also suchen (3.3.1 nur über den Text).",
+    "uebernehmen_aus_anderer": "Aus A: den Vorsatz „Fehler: “ nur für Screenreader (sr-only) in der role=alert-Meldung. Der sichtbare Wortlaut bleibt gleich.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Pflichtfeldfehler mit eigener Meldung",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Der rote Feldrahmen ist auch mobil zu sehen, die Meldung braucht drei Zeilen. In A braucht der Kasten vier Zeilen mit großem Einzug, und das Feld ist nicht markiert.",
+    "uebernehmen_aus_anderer": "Aus A: sr-only „Fehler: “.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Laden",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Beide zeigen „Wird gesendet...“ mit laufender Fuge (Register „laden“). B setzt Tinte-Text auf den gesperrten Strich-Knopf (etwa 5:1, gut lesbar) und meldet den Zustand mit aria-busy. A setzt Weiß auf Strich (etwa 3,7:1), schlechter lesbar, ohne aria-busy.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Laden",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Gleiches Bild wie am Desktop: In B ist der Ladetext besser lesbar, aria-busy ist gesetzt.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Erfolg",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "In B ist die Überschrift auf beiden Seiten sichtbar. Der Haken steht in einem quadratischen Fliesenfeld, die Vorgangsnummer gerahmt in Mono, und role=status kündigt den Erfolg an. Auf der A-Stadtseite ist ausgerechnet „Anfrage erfolgreich übermittelt!“ überdeckt. Auf der A-Leistungsseite steht ein Haken in abnahme-Grün, wie es der Token verlangt, aber ohne Live-Ankündigung.",
+    "uebernehmen_aus_anderer": "Nur wenn die Karte hell wird: der Haken in abnahme aus A. Auf Tinte bleibt der gerahmte Kalk-Haken aus B, weil abnahme auf Tinte zu wenig Kontrast hat.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Erfolg",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "In B sind Überschrift, Haken und Nummer vollständig, auf der A-Stadtseite ist die Überschrift verdeckt. Die A-Leistungsseite ist gestalterisch gleichwertig.",
+    "uebernehmen_aus_anderer": "Wie bei d1440: abnahme-Haken nur bei heller Fläche.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Serverfehler 500",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Die Meldung steht an derselben Stelle und im selben Muster wie die Pflichtmeldung, die Eingaben bleiben erhalten, die Telefonnummer steht in einer Zeile. A bricht auf der Stadtseite die Nummer auseinander („06441 / 44“ | „83 567.“). Keine der beiden setzt die Nummer als tel:-Link.",
+    "uebernehmen_aus_anderer": "Aus A: sr-only „Fehler: “. In beiden fehlt: die Nummer als tel:-Link aus COMPANY_DATA mit whitespace-nowrap bzw. geschützten Leerzeichen.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Serverfehler 500",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "In B bleibt die Nummer am Zeilenende ganz. A bricht sie mitten auseinander („06441 / 44 83“ | „567.“), was bei einer Rufnummer am Handy besonders stört.",
+    "uebernehmen_aus_anderer": "sr-only „Fehler: “ aus A. Die Nummer als tel:-Link, ohne Umbruch.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Gegenprobe ohne Eingriff (Stadtseite, Kartenkopf im Bildschirm)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Ohne jeden Eingriff ist der Kartenkopf in B frei, elementFromPoint trifft die Karte. In A zeichnet die section des Abschlusses über die Karte. Das Etikett fehlt und der Titel ist abgeschnitten, ein echter Darstellungsfehler, kein Aufnahmeeffekt.",
+    "uebernehmen_aus_anderer": "Nur die Rasterlage 8/4 mit Rueckfrage, ohne negativen Abstand.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Gegenprobe ohne Eingriff (Stadtseite, Kartenkopf im Bildschirm)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "Auch mobil ist in B der Kopf mit Etikett und Fuge frei. In A fehlt die Kopfzeile, die Karte beginnt ohne oberen Rand direkt mit dem Titel.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   }
+  ],
+  "a11y_uebernehmen": [
+   {
+    "aus_fassung": "B",
+    "was": "Erfolgskarte mit role=\"status\", damit Hilfstechnik den Erfolg ankündigt (A hat weder role noch Live-Region)"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "aria-busy=\"true\" am gesperrten Absendeknopf während des Ladens"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "aria-invalid=\"true\" und roter Feldrahmen am fehlerhaften Feld bei der eigenen Pflichtmeldung. In der Fusion auf jedes betroffene Feld ausdehnen (Name, Telefon, Einwilligung)"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Keine Verdeckung der Karte auf beiden Seiten und in beiden Ansichten (Kopfzeile, Titel und Erfolgsüberschrift frei; elementFromPoint am Kartenkopf trifft die Karte)"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "axe ohne unvollständige Prüfungen (A: color-contrast auf der Stadtseite wegen Überdeckung nicht prüfbar)"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Formular steht direkt im ausgelieferten HTML und ist ohne JavaScript sichtbar (K-004). Kein verborgener Streaming-Container und kein Platzhalter „Anfrageformular wird geladen...“ wie in A"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Formular auf beiden Seitentypen innerhalb einer benannten Region (section aria-labelledby=\"final-cta-heading\"). Bei der Rasterlage 8/4 auf der Stadtseite muss auch dieser Block in einer benannten Region liegen"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Trennpunkt „·“ der Vertrauenszeile aria-hidden und unter sm ausgeblendet (statt sr-only wie in A, wo der Screenreader ein bedeutungsloses Zeichen vorliest)"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Pflichtstern nicht rot (grau bzw. tinte-2). Damit bleibt in Ruhe kein zusätzliches rotes Element (K-003)"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Lesbarer Ladetext: Tinte auf gesperrtem Strich-Knopf (etwa 5:1) statt Weiß auf Strich (etwa 3,7:1)"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Telefonnummer in der 500-Meldung bricht nicht um. Mit whitespace-nowrap bzw. geschützten Leerzeichen absichern, statt auf die Zeilenbreite zu vertrauen"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Fokusring Kalk auf Tinte-Fläche (K-009), solange die Karte dunkel ist"
+   },
+   {
+    "aus_fassung": "B",
+    "was": "autocomplete=\"postal-code\" für „PLZ / Wohnort“ (das Label beginnt mit PLZ, der Platzhalter mit der Postleitzahl). Einheitlich festlegen und das Feld nicht ohne Kennung lassen"
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Vorsatz „Fehler: “ nur für Screenreader (sr-only) in beiden role=alert-Meldungen (Pflichtfelder und 500), sichtbarer Text unverändert"
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Deutsches Label am Honigtopf-Feld „Bitte dieses Feld freilassen“ statt „Do not fill this“ (lang=\"de\", nur Deutsch laut K-004), weiter aria-hidden, tabindex -1, autocomplete off"
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Fokusring Tinte auf heller Fläche (K-009), falls die Karte hell gesetzt wird"
+   }
+  ],
+  "gesamt": {
+   "B_desktop": 7.5,
+   "B_handy": 7.5,
+   "A_desktop": 5,
+   "A_handy": 5
+  },
+  "rezept": "Grundgerüst: Fassung B (LeadQuickForm aus B mit allen Zuständen, ARIA und Server-Rendering ohne Suspense-Hülle). Aus A kommen gezielt drei sichtbare Feinheiten, zwei unsichtbare a11y-Stärken und auf der Stadtseite die Rasterlage.\n\nReihenfolge:\n1. Komponente B als Basis übernehmen: Karte, Feldraster (d1440 zwei Spalten, m390 einspaltig), Zustände Ruhe, Laden, Pflichtmeldung, 500 und Erfolg samt role=status, aria-busy und aria-invalid mit rotem Feldrahmen. Den Feldrahmen auf jedes fehlende Feld ausdehnen (Name, Telefon, Einwilligung), nicht nur auf den Namen.\n2. Fläche an den Abschluss koppeln. Stolperstein: Der Abschluss (FinalCTA) ist eine andere Einheit und in B dunkel, in A hell. Die Kartenfläche muss zur fusionierten Abschlussfläche passen. Bei Tinte (wie im Vorbild 06-abschluss-bereit) gilt B: Kalk-Knopf, Kalk-Fokusring, gerahmter Kalk-Haken, Fehlerkasten Fliese mit laser-tief. Bei heller Fläche: Fliese mit Strich-Rand, Tinte-Knopf, Tinte-Ring, Haken in abnahme (aus A). Pflichtsterne sind in beiden Fällen nie rot (tinte-2), denn Rot gibt es nur für die Achse und Fehlerzeichen. Am besten als eine Variante per Prop (z. B. flaeche=\\\"tinte\\\"|\\\"hell\\\") statt zwei Komponenten.\n3. Aus A übernehmen: (a) sr-only „Fehler: “ vor beiden role=alert-Meldungen, (b) Honigtopf-Label „Bitte dieses Feld freilassen“, (c) Fugenlinie zwischen Einleitung und erstem Feld, (d) Vertrauenszeile in Mono (text-fs-1, Etikett-Stil wie im Vorbild). Für den Trennpunkt gilt B: aria-hidden und unter sm ausgeblendet, nicht sr-only.\n4. Lage: Auf der Leistungsseite bleibt die Karte im Abschluss-Abschnitt (in beiden gleich). Auf der Stadtseite die Rasterlage 8/4 mit Rueckfrage rechts aus A übernehmen, wie sie Befund 30 in _werkstatt/pakete/E4-NACH-09.md verlangt (zentrierte Karte fluchtet nicht). Den negativen Außenabstand (-mt-12 lg:-mt-24 im Block nach FinalCTA in src/app/(bestand)/standorte/[stadt]/page.tsx) ersatzlos streichen, denn er ist die Ursache der Überdeckung: Die section mit position: relative zeichnet über die Karte. Den Block entweder in die section final-cta legen (z. B. als Slot von FinalCTA) oder in eine eigene section mit aria-labelledby, damit die Region benannt ist. Keine Ebenen außer z-0/z-10. Mobil folgt Rueckfrage unter der Karte. Wenn die Rückfrage nicht nur die CTA-Telefonnummer wiederholen soll, ihre Inhalte (Mobil/WhatsApp, E-Mail, Sitz) prüfen.\n5. Lücken schließen, die beide haben, damit die Fusion jede Kennzahl mindestens hält und besser wird: (a) Nach der eigenen Pflichtmeldung den Fokus ins erste fehlerhafte Feld setzen. (b) Die Meldung bekommt eine id (useId) und die Felder aria-describedby darauf. (c) Nach Erfolg den Fokus auf die Erfolgsüberschrift setzen (tabindex=-1), weil das Formular ersetzt wird und der Fokus sonst auf body fällt. Nach 500 den Fokus auf die Meldung oder zurück auf Absenden. (d) Im Laden prüfen, ob aria-disabled statt disabled den Fokus auf dem Knopf hält (die Doppelabsendung weiter im Handler sperren). (e) Die Telefonnummer der 500-Meldung als tel:-Link aus COMPANY_DATA, ohne Umbruch. (f) Kartentitel und Erfolgsüberschrift als echte Überschriften (h3 unter final-cta-heading), Wortlaut gleich. (g) Den Link „Datenschutzerklärung“ auf eine Zielhöhe von mindestens 24 px bringen (Innenabstand), die Einwilligung bleibt über das ganze Label klickbar.\n6. Messen auf beiden Seiten und in beiden Ansichten: axe 0 Verstöße und 0 unvollständige Prüfungen; elementFromPoint am Kartenkopf trifft die Karte; Fokus nicht verdeckt bei allen 8 Bedienelementen; 320 px und 200 % Zoom ohne Überlauf; Textabstand 1.4.12; Ladetext-Kontrast mindestens 4,5:1; Rot in Ruhe nur die Achse.\n\nStolpersteine:\n- Wortlaut: Alle sichtbaren Texte sind in beiden gleich und bleiben exakt, auch „Wird gesendet...“. Eine Angleichung an K-010 („Wird gesendet …“) nur über TEXTVORSCHLAEGE.md. Durch den sr-only-Vorsatz enthält der textContent der Meldungen „Fehler: “. Tests, die den Alert-Text exakt vergleichen, auf toContain umstellen oder anpassen.\n- IDs: Die Feld-IDs sind verschieden gebildet (B schnell-name<useId>, A schnell-<useId>-name). Vor der Wahl _werkstatt/werkzeuge/tests, E2E und berichte/E0-KUN-05-qualitaet.md Abschnitt 2 nach Selektoren durchsuchen. consent-<quelle> und websiteUrl-<quelle> bleiben exakt.\n- Nutzlast: inquiryType/projectType \\\"general\\\", projectTitle „Schnellanfrage: <quelle>“, source, contact, privacyConsent, honeypot und _t unverändert lassen.\n- Ohne JS: Den dynamic()-Import des LeadQuickForm in den Seiten so lassen bzw. setzen, dass das Formular im ausgelieferten HTML steht (Stand B). Kein Suspense-Fallback, der das Formular in einen verborgenen Container verschiebt.\n- Kein novalidate einführen, ohne eine eigene vollständige Prüfung samt Fokus auf das erste Feld. Sonst fällt der heutige Schutz beim leeren Absenden weg.\n- Tab-Folge: Mit 8/4 springt sie auf der Stadtseite nach Absenden zum Telefonlink der Rückfrage, auf der Leistungsseite zum Fuß-Link. Das ist gewollt und gehört in die Rückgabe.\n- autocomplete für „PLZ / Wohnort“ einheitlich festlegen (Empfehlung postal-code) und eine Prüfung, die darauf zielt, mitziehen."
+ },
+ "a11y_fakten": [
+  {
+   "merkmal": "axe ernst/kritisch, je Regel (nur Karte; Ruhe, eigene Pflichtmeldung, Erfolg, 500; m390 und d1440; beide Seiten; Tags wcag2a/2aa/21a/21aa/22aa)",
+   "B": "0 Verstöße, keine Regel betroffen",
+   "A": "0 Verstöße, keine Regel betroffen"
+  },
+  {
+   "merkmal": "axe übrige und unvollständige Prüfungen",
+   "B": "keine Verstöße geringerer Wirkung, keine unvollständigen Prüfungen",
+   "A": "keine Verstöße geringerer Wirkung. Stadtseite: color-contrast unvollständig (d1440: 2 Knoten, Kopfzeile „Kostenloses Vor-Ort-Aufmaß“ und Titel; m390: 1 Knoten, Kopfzeile), Grund laut axe „background color could not be determined because it is overlapped by another element“. Leistungsseite: keine"
+  },
+  {
+   "merkmal": "Verdeckung der Karte (elementFromPoint; Gegenprobe ohne Eingriff)",
+   "B": "keine, beide Seiten und beide Ansichten",
+   "A": "Stadtseite: Der vorangehende Abschluss-Abschnitt (position: relative, Fläche hell) überdeckt die oberen etwa 96 px (d1440) bzw. 48 px (m390) der Karte, also Kopfzeile und obere Titelhälfte; im Erfolgszustand die Überschrift „Anfrage erfolgreich übermittelt!“. Leistungsseite: keine"
+  },
+  {
+   "merkmal": "Fokusring der 8 Bedienelemente (5 Felder, Einwilligung, Link Datenschutzerklärung, Absenden)",
+   "B": "alle :focus-visible; outline solid 2px rgb(245,244,240) (hell auf dunkler Karte), Abstand 2px, kein box-shadow; gemessene Ringdicke 2 px; 98–100 % der geänderten Pixel mit Kontrast ≥ 3:1 zur Ruhe",
+   "A": "alle :focus-visible; outline solid 2px rgb(10,17,41) (dunkel auf heller Karte), Abstand 2px, kein box-shadow; gemessene Ringdicke 2 px; 98–100 % der geänderten Pixel mit Kontrast ≥ 3:1 zur Ruhe"
+  },
+  {
+   "merkmal": "Fokus nicht verdeckt (natürlicher Tab-Durchlauf, feste Ebenen aktiv; Mitte und 4 Ringecken)",
+   "B": "alle 8 frei, m390 und d1440, beide Seiten",
+   "A": "alle 8 frei, m390 und d1440, beide Seiten"
+  },
+  {
+   "merkmal": "Tab-Reihenfolge",
+   "B": "Name → Telefon → E-Mail → PLZ/Wohnort → Anmerkungen → Einwilligung → Datenschutzerklärung → Absenden; danach auf beiden Seiten der Fuß-Link „Kostenfreies Vor-Ort-Aufmaß“",
+   "A": "gleiche Reihenfolge im Formular; danach auf der Stadtseite der Telefonlink „06441 / 44 83 567“ im Kasten „Ansprechpartner“, auf der Leistungsseite der Fuß-Link „Kostenfreies Vor-Ort-Aufmaß“"
+  },
+  {
+   "merkmal": "Sichtbare Labels",
+   "B": "alle 6 Eingaben mit sichtbarem <label for>; Pflichtfelder mit „*“ im Label (Stern grau), sonst „(optional)“; Platzhalter zusätzlich",
+   "A": "alle 6 Eingaben mit sichtbarem <label for>; Pflichtfelder mit „*“ im Label (Stern rot), sonst „(optional)“; Platzhalter zusätzlich"
+  },
+  {
+   "merkmal": "Überschrift der Karte und der Erfolgsmeldung",
+   "B": "<p>, keine Überschriftenrolle",
+   "A": "<p>, keine Überschriftenrolle"
+  },
+  {
+   "merkmal": "autocomplete Name / Telefon / E-Mail",
+   "B": "name / tel / email",
+   "A": "name / tel / email"
+  },
+  {
+   "merkmal": "autocomplete übrige Felder",
+   "B": "PLZ/Wohnort: postal-code; Anmerkungen: keins; Honigtopf: off (tabindex -1, Hülle aria-hidden)",
+   "A": "PLZ/Wohnort: address-level2; Anmerkungen: keins; Honigtopf: off (tabindex -1, Hülle aria-hidden)"
+  },
+  {
+   "merkmal": "Pflichtkennzeichnung technisch",
+   "B": "HTML-required an Name, Telefon und Einwilligung; kein aria-required; form ohne novalidate",
+   "A": "HTML-required an Name, Telefon und Einwilligung; kein aria-required; form ohne novalidate"
+  },
+  {
+   "merkmal": "Fehlermeldung Pflichtfelder: role/aria-live",
+   "B": "<p role=\"alert\">; kein aria-live, keine id, nicht per aria-describedby verknüpft",
+   "A": "<div role=\"alert\"> mit Vorsatz „Fehler: “ nur für Screenreader (sr-only); kein aria-live, keine id, nicht per aria-describedby verknüpft"
+  },
+  {
+   "merkmal": "aria-invalid bei eigener Pflichtmeldung",
+   "B": "Namensfeld aria-invalid=\"true\" (roter Rand)",
+   "A": "kein Feld mit aria-invalid"
+  },
+  {
+   "merkmal": "Fokus auf erstes fehlerhaftes Feld",
+   "B": "leer abgesendet: ja, die Browserprüfung setzt den Fokus ins Namensfeld. Eigene Meldung (Name nur Leerzeichen): nein, der Fokus bleibt auf Absenden",
+   "A": "leer abgesendet: ja, die Browserprüfung setzt den Fokus ins Namensfeld. Eigene Meldung (Name nur Leerzeichen): nein, der Fokus bleibt auf Absenden"
+  },
+  {
+   "merkmal": "Serverfehler-Meldung (500)",
+   "B": "<p role=\"alert\">; Telefonnummer als Text, kein tel:-Link; Eingaben bleiben erhalten; Fokus danach auf body",
+   "A": "<div role=\"alert\"> mit sr-only-Vorsatz „Fehler: “; Telefonnummer als Text, kein tel:-Link; Eingaben bleiben erhalten; Fokus danach auf body"
+  },
+  {
+   "merkmal": "Ladezustand",
+   "B": "Knopf disabled und aria-busy=\"true\", Text „Wird gesendet...“; keine Live-Region; Felder nicht gesperrt; Fokus fällt beim Absenden per Tastatur auf body",
+   "A": "Knopf disabled, kein aria-busy, Text „Wird gesendet...“; keine Live-Region; Felder nicht gesperrt; Fokus fällt beim Absenden per Tastatur auf body"
+  },
+  {
+   "merkmal": "Erfolgsmeldung: role=status / Fokus",
+   "B": "Karte mit role=\"status\"; Fokus auf body, nicht in der Meldung",
+   "A": "weder role noch Live-Region; Fokus auf body, nicht in der Meldung"
+  },
+  {
+   "merkmal": "aria-pressed / aria-valuetext",
+   "B": "nicht anwendbar, keine Umschalter oder Regler im Baustein (0 / 0)",
+   "A": "nicht anwendbar, keine Umschalter oder Regler im Baustein (0 / 0)"
+  },
+  {
+   "merkmal": "Touch-Ziele ≥ 44 px",
+   "B": "Felder m390 308×53, d1440 262×56 (Anmerkungen 539×117); Absenden m390 308×73, d1440 539×51. Unter 44 px: Einwilligung 20×20 (Label daneben klickbar, m390 276×70) und Link „Datenschutzerklärung“ 153×16 (m390) bzw. 163×17 (d1440)",
+   "A": "Felder m390 308×53; d1440 Stadtseite 356×56, Leistungsseite 262×56; Absenden m390 308×73, d1440 729×51 (Stadt) bzw. 539×51 (Leistung). Unter 44 px: Einwilligung 20×20 (Label daneben klickbar, m390 276×70) und Link „Datenschutzerklärung“ 147×16 (m390) bzw. 157×17 (d1440)"
+  },
+  {
+   "merkmal": "Überlauf bei 320 px (Karte)",
+   "B": "keiner: kein horizontales Scrollen, nichts ragt aus der Karte, kein abgeschnittener Text (beide Seiten)",
+   "A": "keiner: kein horizontales Scrollen, nichts ragt aus der Karte, kein abgeschnittener Text (beide Seiten)"
+  },
+  {
+   "merkmal": "200 % Zoom (640×400 bei DPR 2 und 1280 px mit zoom 2)",
+   "B": "kein Überlauf, kein Abschneiden",
+   "A": "kein Überlauf, kein Abschneiden"
+  },
+  {
+   "merkmal": "Erhöhter Textabstand (WCAG 1.4.12)",
+   "B": "kein abgeschnittener Text, kein Überlauf; Kartenhöhe d1440 844→1014 px, m390 1132→1240 px",
+   "A": "kein abgeschnittener Text, kein Überlauf; Kartenhöhe d1440 841→933 px (Stadt) bzw. 841→1035 px (Leistung), m390 1109→1242 px"
+  },
+  {
+   "merkmal": "Kontrast (axe color-contrast)",
+   "B": "keine Verstöße",
+   "A": "keine Verstöße; Stadtseite 1–2 Knoten wegen Überdeckung nicht prüfbar"
+  },
+  {
+   "merkmal": "Trennpunkt „·“ in der Vertrauenszeile",
+   "B": "aria-hidden, unter sm ausgeblendet",
+   "A": "unter sm sr-only (unsichtbar, aber für Screenreader vorhanden), ab sm sichtbar"
+  },
+  {
+   "merkmal": "Benannte Region um das Formular",
+   "B": "beide Seiten innerhalb section aria-labelledby=\"final-cta-heading\"",
+   "A": "Leistungsseite innerhalb dieser section; Stadtseite außerhalb jeder benannten section (Block direkt in main, daneben aside aria-label=\"Ansprechpartner\")"
+  }
+ ],
+ "funktion": [
+  "Erreichbare Zustände: In B und A sind auf beiden Seiten und in beiden Ansichten alle verlangten Zustände erreichbar (Ruhe, Fokus im ersten Feld, Pflichtfeldfehler, Laden, Serverfehler 500, Erfolg). Leer absenden löst in beiden nur die Browserprüfung aus (required, kein novalidate). Die eigene Pflichtfeldmeldung erscheint nur, wenn die Browserprüfung bestanden ist, etwa bei einem Namen aus Leerzeichen; ohne Einwilligung blockiert ebenfalls die Browserprüfung (Fokus auf die Checkbox, keine Anfrage).",
+  "Ablauf in beiden gleich: Absenden sperrt den Knopf („Wird gesendet...“). Bei Erfolg ersetzt eine Erfolgskarte das ganze Formular, bei 500 erscheint eine Meldung über dem Absenden-Knopf, die Eingaben bleiben und der Knopf ist wieder frei. Die eigene Pflichtmeldung steht an derselben Stelle.",
+  "Gesendete Daten (nur gegen Attrappe gemessen) sind in beiden gleich aufgebaut: inquiryType \"general\", projectType \"general\", projectTitle „Schnellanfrage: standort-wetzlar“ bzw. „Schnellanfrage: leistung-bad-wetzlar“, contact {name, phone, email falls angegeben}, privacyConsent, honeypot, _t, source „standort-wetzlar“ bzw. „leistung-bad-wetzlar“.",
+  "Platzierung: In B steht die Karte auf beiden Seiten zentriert (max-w-mass, d1440 605 px) im Abschluss-Abschnitt unter dem CTA-Kasten. In A ist es auf der Leistungsseite ebenso. Auf der A-Stadtseite steht die Karte in einem eigenen Block nach dem Abschluss-Abschnitt: links eine 8/12-Spalte (d1440 795 px), rechts der Kasten aside „Ansprechpartner“ (lg:sticky) mit „Ansprechpartner Deniz Tezgel“, „Telefon 06441 / 44 83 567“, „Mobil & WhatsApp 0172 / 67 28 504“, „E-Mail info@tezgel.de“, „Sitz Hohwardstraße 14, 35614 Aßlar“. Der Block ist mit negativem Außenabstand unter den Abschnitt gezogen, der darüber gezeichnet wird; dadurch sind Kartenkopf und Erfolgsüberschrift verdeckt.",
+  "Erscheinung: B hat eine dunkle Karte (Fläche tinte, Text kalk) auf dunklem Abschnitt und einen hellen Absenden-Knopf. A hat eine helle Karte (fliese, Rand strich) auf hellem Abschnitt und einen dunklen Knopf. Feldraster d1440: B ein Raster mit 2 Spalten für die vier Felder, A zwei Raster mit je 2 Spalten (engere Abstände); m390 in beiden einspaltig. Vertrauenszeile in B in Textschrift, in A in Monoschrift.",
+  "Sichtbarer Wortlaut in Ruhe, Laden und Erfolg ist in B und A gleich. Kopfzeile „Kostenloses Vor-Ort-Aufmaß“; Titel „Kostenfreies Vor-Ort-Aufmaß anfordern“; Einleitung „Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.“; Labels „Ihr Name *“, „Telefonnummer *“, „E-Mail Adresse (optional)“, „PLZ / Wohnort (optional)“, „Ihr Projekt / Anmerkungen (optional)“; Einwilligung „Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.“; Knopf „Unverbindliches Angebot anfordern“; Vertrauenszeile „100% DSGVO-konform · Kostenfreie Erstberatung“; Laden „Wird gesendet...“; Erfolg „Anfrage erfolgreich übermittelt!“, „Vielen Dank, <Name>. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.“, „Vorgangsnummer: <Kennung>“.",
+  "Wortlaut der Fehlermeldungen: B „Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu.“ / „Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.“ A zeigt denselben sichtbaren Text, für Screenreader mit vorangestelltem „Fehler: “ (sr-only), also „Fehler: Bitte füllen Sie …“ bzw. „Fehler: Die Anfrage konnte …“.",
+  "Verborgene Texte: Das Label des Honigtopf-Felds lautet in B „Do not fill this“, in A „Bitte dieses Feld freilassen“ (beide aria-hidden). A hat zusätzlich den Ladeplatzhalter „Anfrageformular wird geladen...“ (Suspense-Fallback im ausgelieferten HTML, nur bis zum Einfügen der Karte sichtbar).",
+  "Ohne JavaScript (statische Auswertung des ausgelieferten HTML): In B ist das Formular direkt im HTML und sichtbar; Absenden hätte keine Wirkung, da es kein action und keine name-Attribute gibt. In A liegt das Formular in einem verborgenen Streaming-Container (div hidden id=\"S:0\"), sichtbar ist nur „Anfrageformular wird geladen...“. Das gilt auf beiden Seiten.",
+  "IDs und Anker: Gleich sind die Honigtopf-IDs websiteUrl-standort-wetzlar / websiteUrl-leistung-bad-wetzlar und die Einwilligungs-IDs consent-standort-wetzlar / consent-leistung-bad-wetzlar. Die Feld-IDs sind unterschiedlich gebildet: B schnell-name<useId>, schnell-telefon…, schnell-email…, schnell-ort…, schnell-notizen…; A schnell-<useId>-name, -telefon, -email, -ort, -notiz. In beiden haben Karte und Hülle keine ID, und es gibt keinen Anker oder Sprunglink auf das Formular. Seitenlinks mit Fragment sind in beiden nur #main-content, #cookie-settings und /kontakt#express-anfrage. Der CTA „Jetzt Aufmaß in Wetzlar anfragen“ bzw. „Jetzt Beratung für Wetzlar anfordern“ ist in beiden ein tel:-Link, kein Sprung zum Formular.",
+  "Tab-Folge nach dem Formular: In B auf beiden Seiten der Fuß-Link „Kostenfreies Vor-Ort-Aufmaß“. In A auf der Stadtseite der Telefonlink im Ansprechpartner-Kasten, auf der Leistungsseite der Fuß-Link.",
+  "Rückmeldung an Hilfstechnik: B kündigt Erfolg per role=status an, markiert den Ladezustand mit aria-busy und das Namensfeld bei eigener Meldung mit aria-invalid. A hat nichts davon, setzt aber „Fehler: “ für Screenreader vor die Meldungen. Fehler sind in beiden role=alert. In keiner Fassung springt der Fokus nach der eigenen Meldung, nach dem Serverfehler oder nach dem Erfolg zur Meldung oder ins Feld."
+ ],
+ "probleme": [
+  "Leer absenden erzeugt in beiden Fassungen keine eigene Fehleransicht, weil die Browserprüfung (required) vorher greift. Deshalb gibt es zwei Bilder: „leer abgesendet“ (Fokus im Namensfeld, bei d1440 die Prüfblase des Browsers in englischer Sprache des Prüfbrowsers, bei m390 ohne Blase, weil die Mobilemulation sie nicht zeichnet) und „mit eigener Meldung“ (Name nur Leerzeichen).",
+  "Die Hülle wurde nicht über section[aria-labelledby=\"final-cta-heading\"] .max-w-mass ausgeschnitten: In Y auf der Stadtseite liegt das Formular nicht in diesem Container. Ausgeschnitten ist daher in beiden Fassungen gleich die Karte (form.parentElement); die Lage zeigen die Umfeld-Bilder getrennt.",
+  "Für die Ausschnitte sind feste Ebenen ausgeblendet (Kopf, untere Leiste, Schwebeknöpfe). Die Überdeckung des Kartenkopfs in Y auf der Stadtseite liegt im Seitenfluss und bleibt deshalb sichtbar; die Gegenprobe-Bilder ohne jeden Eingriff bestätigen sie.",
+  "Die Repo-Werkzeuge axe.mjs und a11y-zusatz.mjs wurden nicht direkt ausgeführt, weil sie in belege/ bzw. cache/ im Repo schreiben. Stattdessen lief eine gleichwertige Messung nur auf der Karte: axe-core über @axe-core/playwright mit denselben WCAG-Tags sowie eigene Fokus-, Verdeckungs-, Überlauf- und Textabstandsmessung nach dem Muster von a11y-zusatz (Pixelvergleich Ruhe/Fokus, Kontrast ≥ 3:1 je Pixel, elementFromPoint an Mitte und Ecken). forced-colors wurde nicht gemessen.",
+  "„Ohne JavaScript“ ist nur statisch aus dem ausgelieferten HTML bewertet: Ein Browserlauf mit javaScriptEnabled:false blieb im Durchscrollen hängen und wurde abgebrochen.",
+  "Die Lageprüfung per elementFromPoint im a11y-Lauf ist für m390 nicht verwertbar (Karte höher als der Bildschirm, Messpunkte außerhalb oder unter dem festen Kopf). Ersetzt wurde sie durch die Gegenprobe mit Kartenoberkante bei y≈300 px.",
+  "Die Ladebilder entstanden mit einer um 5 s verzögerten Attrappe etwa 300 ms nach dem Sperren des Knopfes; der bewegte Ladebalken ist eine Momentaufnahme. Nichts wurde echt gesendet: Alle POST-Anfragen an /api/anfrage gingen an die Attrappe von installSperre bzw. an page.route mit 500."
+ ],
+ "abschnitte": [
+  {
+   "name": "Ruhe",
+   "ansicht": "d1440",
+   "hinweis": "Ausschnitt ist die Formularkarte (form.parentElement), in B und A gleich bestimmt; je Fassung zuerst /standorte/wetzlar, dann /leistungen/bad/wetzlar. Kartenbreite B 605 px auf beiden Seiten; A Leistungsseite 605 px, A Stadtseite 795 px (8/12-Spalte). In A Stadtseite überdeckt der vorangehende Abschluss-Abschnitt die oberen etwa 96 px der Karte: Kopfzeile „Kostenloses Vor-Ort-Aufmaß“ fehlt, die obere Hälfte des Titels „Kostenfreies Vor-Ort-Aufmaß anfordern“ ist abgeschnitten. Das ist kein Aufnahmefehler (siehe Gegenprobe ohne Eingriff).",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-00-ruhe.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-00-ruhe.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-00-ruhe.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-00-ruhe.png"
+   ]
+  },
+  {
+   "name": "Ruhe",
+   "ansicht": "m390",
+   "hinweis": "Kartenhöhe B 1132 px, A 1109 px. In A Stadtseite sind die oberen etwa 48 px überdeckt, die Kopfzeile „Kostenloses Vor-Ort-Aufmaß“ fehlt. Auf der Leistungsseite ist sie in A sichtbar.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-00-ruhe.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-00-ruhe.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-00-ruhe.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-00-ruhe.png"
+   ]
+  },
+  {
+   "name": "Umfeld: Abschluss-Abschnitt mit Formular (Hülle)",
+   "ansicht": "d1440",
+   "hinweis": "Ausschnitt: section[aria-labelledby=final-cta-heading] plus, falls getrennt, der Block mit dem Formular. Nur zur Einordnung der Lage, der CTA-Kasten gehört nicht zur Einheit. B: auf beiden Seiten liegt die Karte zentriert im Abschnitt unter dem CTA-Kasten. A Leistungsseite: ebenso. A Stadtseite: Die Karte steht in einem eigenen Block nach dem Abschnitt, links in einer 8/12-Spalte, rechts der Kasten aside „Ansprechpartner“. Der Block ist unter den Abschnitt gezogen, sodass dieser den Kartenkopf überdeckt.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-01-umfeld.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-01-umfeld.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-01-umfeld.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-01-umfeld.png"
+   ]
+  },
+  {
+   "name": "Umfeld: Abschluss-Abschnitt mit Formular (Hülle)",
+   "ansicht": "m390",
+   "hinweis": "In A Stadtseite folgt der Kasten „Ansprechpartner“ unter der Karte.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-01-umfeld.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-01-umfeld.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-01-umfeld.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-01-umfeld.png"
+   ]
+  },
+  {
+   "name": "Fokus im ersten Feld (Name, per Tastatur)",
+   "ansicht": "d1440",
+   "hinweis": "Fokus per Umschalt+Tab und Tab gesetzt (Tastaturmodus, :focus-visible). Ring B hell, A dunkel, beide 2 px mit 2 px Abstand.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-02-fokus-name.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-02-fokus-name.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-02-fokus-name.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-02-fokus-name.png"
+   ]
+  },
+  {
+   "name": "Fokus im ersten Feld (Name, per Tastatur)",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-02-fokus-name.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-02-fokus-name.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-02-fokus-name.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-02-fokus-name.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler: leer abgesendet (Browserprüfung)",
+   "ansicht": "d1440",
+   "hinweis": "Absenden-Knopf fokussiert und Enter gedrückt. In beiden Fassungen greift nur die Browserprüfung (required, kein novalidate): Der Fokus springt ins Namensfeld, und die Blase „Please fill out this field.“ erscheint (Browsersprache des Prüfbrowsers). Es gibt keine eigene Meldung und keine Anfrage.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-03-pflichtfehler-leer.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-03-pflichtfehler-leer.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-03-pflichtfehler-leer.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-03-pflichtfehler-leer.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler: leer abgesendet (Browserprüfung)",
+   "ansicht": "m390",
+   "hinweis": "In der Mobilemulation zeichnet der Browser die Prüfblase nicht. Sichtbar ist nur der Fokus im Namensfeld, in beiden Fassungen gleich.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-03-pflichtfehler-leer.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-03-pflichtfehler-leer.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-03-pflichtfehler-leer.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-03-pflichtfehler-leer.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler mit eigener Meldung",
+   "ansicht": "d1440",
+   "hinweis": "Name nur aus Leerzeichen, Telefon und Einwilligung gesetzt; das besteht die Browserprüfung. Die Meldung steht zwischen Einwilligung und Absenden-Knopf. B: Linie links, roter Text, Namensfeld mit rotem Rand (aria-invalid). A: umrandeter Kasten, dunkler Text, Namensfeld ohne Markierung. Es ging keine Anfrage hinaus.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-04-pflichtfehler-meldung.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-04-pflichtfehler-meldung.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-04-pflichtfehler-meldung.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-04-pflichtfehler-meldung.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler mit eigener Meldung",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-04-pflichtfehler-meldung.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-04-pflichtfehler-meldung.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-04-pflichtfehler-meldung.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-04-pflichtfehler-meldung.png"
+   ]
+  },
+  {
+   "name": "Laden",
+   "ansicht": "d1440",
+   "hinweis": "Die Attrappe antwortet erst nach 5 s; aufgenommen etwa 300 ms nach dem Sperren des Knopfes. In beiden steht „Wird gesendet...“ mit Ladebalken auf dem gesperrten Knopf.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-05-laden.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-05-laden.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-05-laden.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-05-laden.png"
+   ]
+  },
+  {
+   "name": "Laden",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-05-laden.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-05-laden.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-05-laden.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-05-laden.png"
+   ]
+  },
+  {
+   "name": "Erfolg",
+   "ansicht": "d1440",
+   "hinweis": "Die Erfolgskarte ersetzt das ganze Formular (Attrappe, Vorgangsnummer TEZ-26-TEST). B: Haken in quadratischem Rahmen neben der Überschrift. A: Haken direkt vor der Überschrift. In A Stadtseite überdeckt der vorangehende Abschnitt die Überschrift „Anfrage erfolgreich übermittelt!“; im Bild ist nur der Rest der Karte zu sehen.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-06-erfolg.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-06-erfolg.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-06-erfolg.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-06-erfolg.png"
+   ]
+  },
+  {
+   "name": "Erfolg",
+   "ansicht": "m390",
+   "hinweis": "A Stadtseite: Die Überschrift der Erfolgskarte ist überdeckt, ebenso wie bei d1440.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-06-erfolg.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-06-erfolg.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-06-erfolg.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-06-erfolg.png"
+   ]
+  },
+  {
+   "name": "Serverfehler 500",
+   "ansicht": "d1440",
+   "hinweis": "Erzeugt mit page.route, Antwort 500; es wurde nichts echt gesendet. Die Meldung steht an derselben Stelle wie die Pflichtfeldmeldung, die Eingaben bleiben erhalten.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-07-serverfehler.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/leistung-07-serverfehler.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-07-serverfehler.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/leistung-07-serverfehler.png"
+   ]
+  },
+  {
+   "name": "Serverfehler 500",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-07-serverfehler.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/leistung-07-serverfehler.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-07-serverfehler.png",
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/leistung-07-serverfehler.png"
+   ]
+  },
+  {
+   "name": "Gegenprobe ohne Eingriff (Stadtseite, Kartenkopf im Bildschirm)",
+   "ansicht": "d1440",
+   "hinweis": "Bildschirmfoto mit sichtbarem Kopf und ohne eingefügte Stile, Kartenoberkante bei y=330. elementFromPoint am Kartenkopf: in B die Karte selbst, in A die section des Abschluss-Abschnitts. Nur Stadtseite, da die Leistungsseite in beiden Fassungen keine Überdeckung hat.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/d1440/stadt-08-gegenprobe-ohne-eingriff.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/d1440/stadt-08-gegenprobe-ohne-eingriff.png"
+   ]
+  },
+  {
+   "name": "Gegenprobe ohne Eingriff (Stadtseite, Kartenkopf im Bildschirm)",
+   "ansicht": "m390",
+   "hinweis": "Kartenoberkante bei y=302, untere Leiste und Kopf sind sichtbar. In A ist die Kopfzeile der Karte überdeckt.",
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/X/m390/stadt-08-gegenprobe-ohne-eingriff.png"
+   ],
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u7-schnellanfrage/Y/m390/stadt-08-gegenprobe-ohne-eingriff.png"
+   ]
+  }
+ ]
+}

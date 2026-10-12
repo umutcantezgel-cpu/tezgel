@@ -1,0 +1,1226 @@
+{
+ "einheit": "u6-konfigurator",
+ "zuordnung": {
+  "X": "A",
+  "Y": "B"
+ },
+ "urteil": {
+  "einheit": "u6-konfigurator",
+  "je_abschnitt": [
+   {
+    "name": "Start: Schritt 1 „Raum & Einsatzbereich“ ohne Auswahl",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "A trifft die Leitidee besser: Die Bereichskarten liegen als Fugenraster mit gemeinsamen Kanten (K-003 „Fuge statt Karte“, wie die Express-Anfrage im Vorbild). Dazu kommen Fachzeichen und rechts ein gezeichneter Verlegeplan mit schraffierten Passstücken (K-008). Der deaktivierte „Weiter“-Knopf ist in A aber weiß mit Rahmen und sieht aus wie ein aktiver Nebenknopf. B zeigt den deaktivierten Zustand eindeutig (grau gefüllt) und „Schritt 1 von 4“ sichtbar in Mono. Dafür hat B einzelne Karten mit Abstand, ein Vierspaltenraster mit leerer Zelle und drei Fortschrittsanzeigen auf einmal (Kästchen, Balken, Text), was unruhig wirkt.",
+    "uebernehmen_aus_anderer": "Aus B: den deaktivierten Weiter-Knopf (graue Fläche) und das sichtbare Mono-Etikett „Schritt n von 4“. Aus A: das Fugenraster, die Fachzeichen und den Verlegeplan in der rechten Spalte.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Schritt 1 mit Auswahl (Küche, Treppe)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Die gewählten Felder sind in A mit Häkchen markiert und das Raster bleibt geschlossen. Die Ergebnisbox steht rechts neben der Auswahl, mit großer Mono-Zahl als klarem Blickfang, und der Plan bleibt im Blick. In B steht das Ergebnis im Kopf weit weg von der Auswahl, und der Bereich wirkt kartig.",
+    "uebernehmen_aus_anderer": "Aus B: Ergebniszeile durchgehend in Mono, „aus 20 m² netto“ ohne Umbruch zwischen Zahl und Einheit.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Schritt 1 mit „Bad, Dusche, Gäste-WC“ und Hinweis auf Badplaner/Bad-Projektcheck",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "Der Hinweis in A steht in der Spalte unter dem Raster und hält ein lesbares Zeilenmaß (K-006, max-w-mass). Er hat einen versteckten Vorsatz „Hinweis:“ für Screenreader. In B läuft der Hinweis über die ganze Breite (über 120 Zeichen je Zeile).",
+    "uebernehmen_aus_anderer": "Aus B: die ruhige Kalk-Fläche des Hinweiskastens mit Randstrich (passt zum Baustein `Hinweis`).",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Schritt 2 „Untergrund & Bestand“ mit Auswahl (Zementestrich, Alte Fliesen, Fußbodenheizung Ja, Rückbau Ja)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "A stellt eine Frage je Zeile, linksbündig, mit größerer Schrift und Häkchen an jeder gewählten Option. Das liest sich klar und ruhig. B setzt drei Fragen nebeneinander. Deren Beschriftungen sind ein- bis dreizeilig und stehen dadurch unruhig versetzt. Die Optionen sind zentriert und klein, und eine gewählte Option erkennt man nur an der Füllung.",
+    "uebernehmen_aus_anderer": "Aus B: die etwas großzügigeren Abstände zwischen den Fragegruppen.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Schritt 3 „Format, Material & Menge“ mit Auswahl und Flächeneingabe 24,5 m², Sockel 18, Treppenmaße",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "B hat den klar besseren Takt. Zwischen den Gruppen ist Luft, „Material“ und „Verlegemuster“ stehen sinnvoll nebeneinander, die Formate in fünf Spalten. Eingabewerte und Zahlen sind in Mono gesetzt (K-006). In A kleben die Gruppenbeschriftungen (Material, Verlegemuster, Menge, Belag, Treppensockel) fast ohne Abstand an der Unterkante des vorigen Rasters. Außerdem bricht die Ergebnisbox zwischen Zahl und Einheit um („aus 24,5 / m² netto“).",
+    "uebernehmen_aus_anderer": "Aus A: die Symbole an den Verlegemustern, Häkchen an allen gewählten Optionen, linksbündige Optionstexte und Raster mit gemeinsamen Kanten. Dazu die klebende rechte Spalte, damit Ergebnis und Plan beim Bedienen des Reglers sichtbar bleiben. In B liegt die Ergebnisbox dann außerhalb des Bildschirms.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Schritt 3: Schieberegler per Tastatur (Fokus auf Regler, 6 × Pfeil rechts → 31 m²)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "In A hat der Fokusring Abstand zur Skala „1 m² · 75 m² · 150 m²“. In B liegt der Ring auf der Skalenbeschriftung. Mit der klebenden Spalte von A bleibt das neu gerechnete Ergebnis beim Verschieben im Blick. Abgesehen davon gleicht der Zustand Bild 04.",
+    "uebernehmen_aus_anderer": "Aus B: Takt und Mono-Satz des übrigen Schritts (siehe 04).",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Schritt 3: Bauart „Blockstufen“ (Hinweiskasten, Setzstufenfelder entfallen)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "In B steht der Blockstufen-Hinweis mit Abstand und auf Kalk-Fläche, die verbleibenden Felder ordnen sich ruhig. In A sitzt der Hinweiskasten ohne Abstand direkt unter dem Hilfetext, und die Beschriftungen kleben an den Rastern.",
+    "uebernehmen_aus_anderer": "Aus A: den versteckten Vorsatz „Hinweis:“ und die Zeilenlänge des Hinweises innerhalb von max-w-mass.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Ergebnis-Zusammenfassung Schritt 4 „Zusammenfassung & Kontakt“ (Kontaktfelder leer)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Die Zusammenfassung in B ist als Schriftfeld gebaut. Die Begriffe stehen als Mono-Etiketten, die Zeilen sind durch 1-px-Fugen getrennt, daneben „Materialbedarf (Richtwert)“ auf Kalk und „Das prüfen wir vorab“ mit Pluszeichen in zwei Spalten. Das entspricht K-006 und K-003 und nutzt die Breite. In A ist alles einspaltig mit fetten Begriffen, und die rechte Spalte neben dem Formular bleibt bis auf Ergebnis und Plan leer.",
+    "uebernehmen_aus_anderer": "Aus A: Einwilligungstext, Fußnote und Hinweise auf das Zeilenmaß begrenzen. In B laufen sie über die volle Breite, rund 130 Zeichen je Zeile.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Pflichtfeldfehler: „Online absenden“ mit leeren Pflichtfeldern",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Beide Fassungen nutzen nur die Browser-Prüfung: kein sichtbarer Fehlertext, kein aria-invalid, nur der Fokus im Namensfeld. Beide bleiben damit hinter K-009 zurück (Fehler mit Versatz-Zeichen, Text und role=alert).",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Pflichtfeldfehler: „Per WhatsApp senden“ mit leeren Pflichtfeldern",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Pixelgleich mit Bild 08, in beiden Fassungen geprüft. Es gilt dieselbe Lücke bei der Fehlerkennzeichnung.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Schritt 4 mit ausgefülltem Kontaktteil und Einwilligung",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Das Formular in B fluchtet mit der Zusammenfassung über die ganze Breite. „(optional)“ ist leicht abgesetzt, der WhatsApp-Knopf trägt das Markenzeichen wie im Vorbild, und der Zeitraum steht kompakt in einer Zeile. In A hängt das Formular in der linken Spalte, rechts ist Leerraum.",
+    "uebernehmen_aus_anderer": "Aus A: Zeilenmaß für den Einwilligungstext.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Laden: Online-Absendung mit angehaltener Antwort („Wird übertragen …“)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Optisch sind beide gleich: grauer Knopf mit „Wird übertragen …“, laufende Fuge, WhatsApp deaktiviert. Nur B setzt aria-busy=\"true\".",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Serverfehler 500 (Attrappe per page.route) mit Meldung „Test-Ausfall“",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "Die Darstellung ist gleichwertig: roter Rahmen, Versatz-Zeichen und Text über der Knopfzeile, wie in K-005/K-009 verlangt. A liest zusätzlich den versteckten Vorsatz „Fehler:“ vor. B liefert den besseren Rest der Seite.",
+    "uebernehmen_aus_anderer": "Aus A: versteckter Vorsatz „Fehler:“ in der role=alert-Meldung.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Erfolg: „Konfiguration erfolgreich übermittelt“, Vorgangs-Nr., Zusammenfassung",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "In B ist die Zusammenfassung als Schriftfeld mit Fugen gesetzt, die Telefonnummer steht in Mono mit Abständen wie im Vorbild-Kopf („06441 / 44 83 567“), und vor der Bestätigungszeile sitzt ein Brief-Zeichen. In A ist die Zusammenfassung über die ganze Breite einspaltig mit sehr großem Abstand zwischen Begriff und Wert.",
+    "uebernehmen_aus_anderer": "Aus A: die größere Erfolgsüberschrift als klarer Blickfang (prüfen gegen die Stufe der Arbeitsansicht, höchstens fs-6).",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "WhatsApp-Weg: „WhatsApp wurde geöffnet – bitte absenden“",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Wortlaut und Aufbau sind gleich. B gewinnt wegen der Schriftfeld-Zusammenfassung und der Mono-Telefonnummer.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Ohne JavaScript (Baustein im Server-HTML)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "B liefert Schritt 1 vollständig im Server-HTML (pixelgleich mit 00, geprüft). A zeigt nur „Anfrageformular wird geladen...“. Das verstößt gegen K-004, wonach Inhalte auf dem Server rendern und ohne JavaScript sichtbar sind.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Tastaturfokus auf erster Auswahlkarte (Schritt 1)",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "In B ist der Fokusring rundum geschlossen (2 px Tinte, Abstand 2 px). In A überdeckt das Nachbarfeld den Ring oben und rechts, der Ring ist nicht voll sichtbar (37 von 152 Fokuszielen).",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Tastaturfokus auf gewählter Auswahlkarte",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Gleiches Bild wie 16. In B ist der Ring auf der gewählten Tinte-Karte vollständig sichtbar, in A an den Kanten abgeschnitten.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Tastaturfokus auf „Weiter zu Schritt 2“",
+    "ansicht": "d1440",
+    "wahl": "gleich",
+    "begruendung": "Bildgleich: vollständiger Ring mit Abstand um den Hauptknopf.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Detail: Gruppe „Menge (Fläche)“ mit fokussiertem Schieberegler (31 m²)",
+    "ansicht": "d1440",
+    "wahl": "X",
+    "begruendung": "In A hat der Ring Abstand zur Skala. In B liegt der Ring auf „1 m² … 150 m²“, die Skala wird angeschnitten.",
+    "uebernehmen_aus_anderer": "Aus B: Feldwerte und Platzhalter in Mono.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Detail: Ergebnisbox „Materialbedarf inkl. Verschnitt (Richtwert)“ (Live-Region) nach Reglerbewegung",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "In B bricht nichts zwischen Zahl und Einheit, die Zeile ist ruhig in Mono gesetzt, und die Live-Region hat das Leerzeichen vor „aus“. A trennt „aus 31 / m² netto“, und die Live-Region liest „m²aus“ ohne Leerzeichen.",
+    "uebernehmen_aus_anderer": "Aus A: die etwas kräftigere Hauptzahl als Blickfang (optional).",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: „Ihr Projekt in Kürze“, „Materialbedarf (Richtwert)“, „Das prüfen wir vorab“",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "B setzt Mono-Etiketten mit Fugen zwischen den Zeilen, zwei Spalten, Materialbedarf auf Kalk und die Liste mit Pluszeichen. Das ist ein Schriftfeld im Sinne von K-012 und deutlich gegliederter als die fett-proportionale Liste in A.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Kontaktteil nach leerem Absenden (Fokus im Namensfeld) bis „Zurück zu Schritt 3“",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "B fluchtet über die volle Breite, ohne Leerraum rechts. Fokus und Verhalten sind in beiden gleich.",
+    "uebernehmen_aus_anderer": "Aus A: Zeilenmaß für Einwilligung und Fußnote.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Knopfzeile im Ladezustand",
+    "ansicht": "d1440",
+    "wahl": "Y",
+    "begruendung": "Optisch gleich. B hat aria-busy und das WhatsApp-Markenzeichen wie im Vorbild.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Fehlermeldung bei Serverfehler 500",
+    "ansicht": "d1440",
+    "wahl": "beide",
+    "begruendung": "Optisch gleichwertig: roter Rahmen, Versatz-Zeichen, Text. A hat den versteckten Vorsatz „Fehler:“.",
+    "uebernehmen_aus_anderer": "Aus A: Vorsatz „Fehler:“ nur für Screenreader.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Start: Schritt 1 „Raum & Einsatzbereich“ ohne Auswahl",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "A zeigt die Auswahl direkt unter dem Titel als Fugenraster-Liste mit Fachzeichen, fast deckungsgleich mit der Express-Anfrage des Vorbilds (mobil). Die leere Ergebnisbox steht erst danach. In B belegt eine leere Ergebnisbox („Wählen Sie zuerst einen Bereich.“) samt Fortschrittsbalken den ersten Bildschirm, und die Karten rutschen nach unten.",
+    "uebernehmen_aus_anderer": "Aus B: den eindeutig deaktivierten Weiter-Knopf und das sichtbare „Schritt 1 von 4“.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Schritt 1 mit Auswahl (Küche, Treppe)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "A ist kompakt, mit Fachzeichen und Häkchen im geschlossenen Raster. B hat einzelne Karten mit Abstand und ist gut 100 px länger.",
+    "uebernehmen_aus_anderer": "Aus B: Ergebniszahl und „aus 20 m² netto“ ohne Umbruch, Box an fester Stelle.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Schritt 1 mit „Bad, Dusche, Gäste-WC“ und Hinweis auf Badplaner/Bad-Projektcheck",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Der Hinweis ist in beiden gut lesbar unter dem Raster, A weiß mit Rahmen, B auf Kalk. Der Rest entspricht 01.",
+    "uebernehmen_aus_anderer": "Aus A: versteckter Vorsatz „Hinweis:“.",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Schritt 2 „Untergrund & Bestand“ mit Auswahl (Zementestrich, Alte Fliesen, Fußbodenheizung Ja, Rückbau Ja)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "B setzt Ja, Nein und Weiß nicht in drei Spalten, das spart viel Höhe. „Weiter“ steht vor „Zurück“, die Hauptaktion zuerst. A stapelt jede Kurzoption in voller Breite (rund 300 px länger) und stellt „Zurück“ vor „Weiter“.",
+    "uebernehmen_aus_anderer": "Aus A: Häkchen an gewählten Optionen und linksbündige Optionstexte (bei den Untergrund-Optionen).",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Schritt 3 „Format, Material & Menge“ mit Auswahl und Flächeneingabe 24,5 m², Sockel 18, Treppenmaße",
+    "ansicht": "m390",
+    "wahl": "beide",
+    "begruendung": "B hat den besseren Takt: Abstand vor jeder Gruppenbeschriftung, Mono-Werte, Hauptaktion vor „Zurück“. In A kleben die Beschriftungen an den Rastern. Die zweispaltigen Kurzoptionen in B brechen bei langen Texten aber unruhig in zwei bis drei Zeilen um („2-cm- / Außenplatten“, „Marmor, / Travertin, / Kalkstein“). A hält diese Gruppen einspaltig sauber und zeigt die Mustersymbole.",
+    "uebernehmen_aus_anderer": "Aus A: Gruppen mit langen Texten (Material, Verlegemuster, Belag) einspaltig als Fugenraster mit Symbolen und Häkchen. Zweispaltig nur für kurze Paare wie Innen/Außen oder Ja/Nein (wie in B).",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Schritt 3: Schieberegler per Tastatur (Fokus auf Regler, 6 × Pfeil rechts → 31 m²)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "In A hat der Fokusring Abstand zur Skala. In B berührt der Ring die Skalenbeschriftung.",
+    "uebernehmen_aus_anderer": "Aus B: Feldwerte in Mono, Gruppentakt.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Schritt 3: Bauart „Blockstufen“ (Hinweiskasten, Setzstufenfelder entfallen)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "In B hat der Hinweiskasten Abstand zum Hilfetext und liegt auf Kalk. In A sitzt der Kasten direkt am Hilfetext.",
+    "uebernehmen_aus_anderer": "Aus A: versteckter Vorsatz „Hinweis:“.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Ergebnis-Zusammenfassung Schritt 4 „Zusammenfassung & Kontakt“ (Kontaktfelder leer)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "B setzt Mono-Etiketten über den Werten mit Fugen dazwischen, das ergibt eine klare Schriftfeld-Gliederung. A hat fette Begriffe ohne Trennlinien, und die Ergebnisbox springt ab Schritt 3 über den Inhalt, an eine andere Stelle als in Schritt 1–2.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Pflichtfeldfehler: „Online absenden“ mit leeren Pflichtfeldern",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "In beiden nur der Fokus im Namensfeld, keine sichtbare Fehlermeldung. Beide bleiben hinter K-009 zurück.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Pflichtfeldfehler: „Per WhatsApp senden“ mit leeren Pflichtfeldern",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Pixelgleich mit 08, in beiden geprüft.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Schritt 4 mit ausgefülltem Kontaktteil und Einwilligung",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Fast gleich. B setzt „(optional)“ ab, die Zeitraum-Optionen sind kompakter, und der WhatsApp-Knopf trägt das Markenzeichen wie im Vorbild.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Laden: Online-Absendung mit angehaltener Antwort („Wird übertragen …“)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Optisch gleich, B mit aria-busy.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Serverfehler 500 (Attrappe per page.route) mit Meldung „Test-Ausfall“",
+    "ansicht": "m390",
+    "wahl": "beide",
+    "begruendung": "Die Meldung steht in beiden gleichwertig über der Knopfzeile. A liest zusätzlich „Fehler:“ vor.",
+    "uebernehmen_aus_anderer": "Aus A: Vorsatz „Fehler:“ für Screenreader.",
+    "wahl_fassung": "beide"
+   },
+   {
+    "name": "Erfolg: „Konfiguration erfolgreich übermittelt“, Vorgangs-Nr., Zusammenfassung",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "B bricht den Zahlbereich sauber vor der Zahl um („ca. / 25,7–27 m²“). A trennt mitten im Bereich („25,7– / 27 m²“). Die Zusammenfassung in B ist ein Schriftfeld. Kleiner Mangel in B: Der Anrufknopf wird zweizeilig.",
+    "uebernehmen_aus_anderer": "Aus A: einzeiliger Anrufknopf. Den Abstand in der Mono-Nummer so wählen, dass „Direkt anrufen: 06441 / 44 83 567“ bei 390 px in eine Zeile passt, sonst zweizeilig wie in B belassen.",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "WhatsApp-Weg: „WhatsApp wurde geöffnet – bitte absenden“",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Wortgleich. B hat die gegliederte Zusammenfassung mit Mono-Etiketten und Fugen.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Ohne JavaScript (Baustein im Server-HTML)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "B zeigt Schritt 1 vollständig (pixelgleich mit 00). A zeigt nur den Platzhalter „Anfrageformular wird geladen...“ (K-004 verletzt).",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Tastaturfokus auf erster Auswahlkarte (Schritt 1)",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "In B ist der Ring geschlossen, in A an der unteren Kante vom Nachbarfeld überdeckt (40 von 152 Fokuszielen nicht voll sichtbar).",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Tastaturfokus auf gewählter Auswahlkarte",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Wie 16: In B vollständig sichtbar, in A teilweise verdeckt.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Tastaturfokus auf „Weiter zu Schritt 2“",
+    "ansicht": "m390",
+    "wahl": "gleich",
+    "begruendung": "Bildgleich, Ring vollständig.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "gleich"
+   },
+   {
+    "name": "Detail: Gruppe „Menge (Fläche)“ mit fokussiertem Schieberegler (31 m²)",
+    "ansicht": "m390",
+    "wahl": "X",
+    "begruendung": "In A hat der Ring Abstand zur Skala, in B liegt er auf „1 m² · 75 m² · 150 m²“.",
+    "uebernehmen_aus_anderer": "Aus B: Platzhalter und Werte in Mono.",
+    "wahl_fassung": "A"
+   },
+   {
+    "name": "Detail: Ergebnisbox „Materialbedarf inkl. Verschnitt (Richtwert)“ (Live-Region) nach Reglerbewegung",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "B setzt „aus 31 m² netto“ als eigene Mono-Zeile ohne Trennung von Zahl und Einheit. A bricht „aus 31 / m² netto“ um.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: „Ihr Projekt in Kürze“, „Materialbedarf (Richtwert)“, „Das prüfen wir vorab“",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Mono-Etiketten, Fugen, Kalk-Fläche für den Materialbedarf und Pluszeichen in der Liste: eine klare Schriftfeld-Gliederung. A ist eine fett-proportionale Liste ohne Trennung.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Kontaktteil nach leerem Absenden (Fokus im Namensfeld) bis „Zurück zu Schritt 3“",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Nahezu gleich. B mit abgesetztem „(optional)“, kompakterem Zeitraum und WhatsApp-Zeichen.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Knopfzeile im Ladezustand",
+    "ansicht": "m390",
+    "wahl": "Y",
+    "begruendung": "Optisch gleich, B mit aria-busy.",
+    "uebernehmen_aus_anderer": "",
+    "wahl_fassung": "B"
+   },
+   {
+    "name": "Detail: Fehlermeldung bei Serverfehler 500",
+    "ansicht": "m390",
+    "wahl": "beide",
+    "begruendung": "Optisch gleichwertig. A hat den versteckten Vorsatz „Fehler:“.",
+    "uebernehmen_aus_anderer": "Aus A: Vorsatz „Fehler:“.",
+    "wahl_fassung": "beide"
+   }
+  ],
+  "a11y_uebernehmen": [
+   {
+    "aus_fassung": "B",
+    "was": "Fokusring an allen Auswahlkarten vollständig sichtbar (d1440 152/152, m390 142/152; Rest nur zweizeilige Textlinks). In der Fusion darf kein Nachbarfeld den Ring überdecken, auch nicht im Fugenraster."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Schritt 1 vollständig im Server-HTML (ohne JavaScript sichtbar), nicht nur der Platzhalter „Anfrageformular wird geladen...“."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "200 % Zoom (CSS-Zoom 2 auf 1280 px): Schritte 1–3 ohne Befund, Schritt 4 nur zwei abgeschnittene Platzhalter (Telefon, E-Mail). Kein Überlauf der Kopfzeile (h2, Schrittliste, Ergebnisbox), kein scrollWidth > clientWidth."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Erhöhter Textabstand (WCAG 1.4.12) d1440 ohne Befund."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "aria-busy=\"true\" am Sendeknopf im Ladezustand (dazu disabled an Sende- und WhatsApp-Knopf)."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Live-Region vorgelesen als „ca. 21–23 m² aus 20 m² netto“ mit Leerzeichen vor „aus“."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Kein Umbruch zwischen Zahl und Einheit oder mitten im Zahlbereich (geschützte Leerzeichen, Umbruch vor der Zahl), in der Ergebnisbox und im Erfolg mobil."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "„Schritt n von 4“ sichtbar (Mono-Etikett). Nur einmal im Accessibility-Baum, nicht zusätzlich als sr-only-Text."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "„(optional)“ sichtbar abgesetzt (heller, nicht fett) neben der Beschriftung."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Deaktivierter Weiter-Knopf in Schritt 1 eindeutig als deaktiviert erkennbar (graue Fläche), nicht wie ein aktiver Nebenknopf."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Mobil: Hauptaktion „Weiter“ steht vor „Zurück“ (Schritte 2 und 3)."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "Ergebnisbox und Live-Region an einer festen Stelle je Ansicht, kein Wandern zwischen den Schritten und keine doppelte Live-Region."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "In beiden vorhanden und zu erhalten: aria-pressed an allen Auswahlknöpfen (7/15/31/3), Gruppen als fieldset/legend, sichtbare Labels (Regler-Label nur für Screenreader), autocomplete (name, tel, email, postal-code), required an Name, Telefon und Einwilligung, Weiter-Knopf mit aria-describedby → #konfigurator-step1-hint, Flächenfeld type=text inputmode=decimal mit aria-describedby → #fk-area-help, Stufenfelder inputmode=numeric."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "In beiden vorhanden und zu erhalten: Fokus nach Schrittwechsel auf den Schritttitel (p tabindex=-1, z. B. „2. Untergrund & Bestand“), Fokus nach leerem Absenden und WhatsApp-leer in #fk-name, Serverfehler mit role=alert, Erfolg und WhatsApp mit role=status, Schrittliste ol aria-label=„Fortschritt“ mit aria-current=step und „(erledigt)“."
+   },
+   {
+    "aus_fassung": "B",
+    "was": "In beiden vorhanden und zu erhalten: axe 0 Verstöße in 15 Zuständen × 2 Ansichten, Touch-Ziele ≥ 44 px, kein horizontales Scrollen bei 320 px, Fokusring 2 px Tinte mit 2 px Abstand, kein verdeckter Fokus."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Fokusring am Schieberegler mit Abstand zur Skalenbeschriftung („1 m² · 75 m² · 150 m²“). Der Ring darf die Skala nicht überdecken."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Versteckter Vorsatz „Hinweis:“ im Bad- und im Blockstufen-Hinweis (nur für Screenreader)."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Versteckter Vorsatz „Fehler:“ in der role=alert-Meldung bei Serverfehler."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Häkchen an jeder gewählten Option in allen Schritten. Die Auswahl ist damit nicht nur an der Flächenfarbe erkennbar (K-005 „Bedeutung nie nur über Farbe“); in B nur in Schritt 1."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Zeilenmaß für Hinweise, Einwilligung und Fußnote innerhalb von max-w-mass (66ch). In B rund 130 Zeichen je Zeile am Desktop."
+   },
+   {
+    "aus_fassung": "A",
+    "was": "Desktop: Ergebnis (Live-Region) bleibt beim Bedienen des Reglers in Schritt 3 sichtbar (klebende Spalte), ohne den Fokus zu verdecken (Fokus-verdeckt-Messung 0 Befunde)."
+   }
+  ],
+  "gesamt": {
+   "A_desktop": 6,
+   "A_handy": 5.5,
+   "B_desktop": 7.5,
+   "B_handy": 7.5
+  },
+  "rezept": "GRUNDGERÜST: B. B ist in den harten Kennzahlen überlegen: Server-HTML von Schritt 1, Fokus 152/152, 200 % Zoom und Textabstand ohne Befund, aria-busy, kein Umbruch bei Zahl und Einheit. B hat auch die bessere Typografie (Mono für Werte, Etiketten und die Telefonnummer nach K-006), die Schriftfeld-Zusammenfassung, den besseren Takt in Schritt 3 und 4 und die mobile Knopfreihenfolge. A liefert die gestalterischen Stärken der Leitidee, die B fehlen: Fugenraster, Fachzeichen, Häkchen und den gezeichneten Verlegeplan.\n\nREIHENFOLGE\n1. B unverändert als Basis übernehmen. Wortlaut, IDs und Anker bleiben (section#konfigurator, #konfigurator-step1-hint, #fk-*), ebenso Rechenlogik und POST-Körper (in A und B identisch).\n2. Auswahlraster aus A: Optionen als Fugenraster mit gemeinsamen 1-px-Kanten, linksbündig, mit Häkchen an jeder gewählten Option (alle Schritte und Schritt 4 „Zeitraum“). Fachzeichen an den Bereichskarten (Schritt 1) und an den Verlegemustern aus src/components/icons, aria-hidden. Desktop: Bereiche zweispaltig in der linken Spalte, der siebte Bereich über beide Spalten wie in A. Mobil: Gruppen mit langen Texten (Bereiche, Untergrund, Format, Material, Verlegemuster, Bauart, Belag) einspaltig. Kurze Paare und Dreier (Ja/Nein/Weiß nicht, Innen/Außen, Gerade/Gewendelt) mehrspaltig wie in B.\n3. Desktop Schritte 1–3 zweispaltig wie A: links die Schritte, rechts eine klebende Spalte mit der EINEN Ergebnisbox (Live-Region) und der Verlegeplan-Vorschau (reagiert auf das Format). Schritt 4, Erfolg und WhatsApp in voller Breite mit der zweispaltigen Schriftfeld-Zusammenfassung von B. Den Ergebniskasten im Kopf von B entfernen, solange die Spalte da ist. Mobil bleibt die Ergebnisbox an EINER festen Stelle im Kopf (wie B). Im leeren Zustand von Schritt 1 sie auf eine Zeile verkürzen, damit die Karten im ersten Bildschirm stehen (Stärke von A mobil).\n4. Fortschritt beruhigen: Schrittkästchen mit aria-current und sichtbares Mono-Etikett „Schritt n von 4“ behalten. Den vierteiligen Balken von B streichen (drei Fortschrittsanzeigen sind zu viel). Die rote Unterstreichung des aktiven Schritts aus A NICHT übernehmen: Rot bleibt Fehlerkasten und Pflichtsternchen vorbehalten, höchstens ein rotes Element je Bildschirm.\n5. Schieberegler: Abstand zwischen Regler und Skala wie in A, damit der Fokusring die Skala nicht berührt.\n6. Versteckte Vorsätze aus A: „Hinweis:“ (Bad, Blockstufen) und „Fehler:“ (Serverfehler, role=alert).\n7. Zeilenmaß: Hinweise, Einwilligungstext und Fußnoten auf max-w-mass begrenzen.\n8. Deaktivierten Weiter-Knopf, aria-busy, „(optional)“-Absetzung, Mono-Telefonnummer und WhatsApp-Markenzeichen (nur im Logo) aus B behalten. Mobil im Erfolg prüfen, ob der Anrufknopf einzeilig passt; sonst zweizeilig lassen.\n9. Danach neu messen: Fokussichtbarkeit (Soll 152/152 Desktop, ≥ 142/152 mobil), 200 % Zoom, Textabstand, axe, Server-HTML, Fokus-verdeckt.\n\nSTOLPERSTEINE\n(a) Fokus im Fugenraster: Mit gemeinsamen Kanten und outline-offset 2px überdeckt das Nachbarfeld den Ring. Das ist die Ursache der 37 bzw. 40 Befunde in A. Fokussierte Karte mit `relative focus-visible:z-10` anheben (z-10 ist laut K-005 erlaubt), Ring nicht nach innen verlegen (K-009 verlangt offset 2px).\n(b) Server-HTML: Die Verlegeplan-Vorschau und die klebende Spalte müssen auf dem Server rendern. Die Vorschau ist dekorativ (aria-hidden, focusable=false) oder role=img mit Namen. SVG-IDs (pattern#schraffur-…, clipPath#raum-…) je Instanz mit useId eindeutig (K-008). Tests und Werkzeuge nach dem Platzhalter „Anfrageformular wird geladen...“ durchsuchen. Er entfällt, und kein Test darf darauf warten.\n(c) Live-Region nur einmal im DOM. Nicht eine Box für Desktop und eine für mobil rendern und per CSS umschalten, sonst wird doppelt vorgelesen bzw. eine versteckte Region aktualisiert. Text mit Leerzeichen „m² aus“ und geschützten Leerzeichen vor Einheiten und im Bereich (25,7–27 m²).\n(d) 200 % Zoom: A lief mit seiner Kopfzeile 18 px über (scrollWidth 552 > 542). Die klebende Spalte darf erst ab lg greifen und muss bei Zoom einspaltig umbrechen. Die Kopfzeile (h2, Schrittliste) muss umbrechen dürfen.\n(e) Klebende Spalte: top-Abstand = Kopfhöhe + 16 px (scroll-padding-top), sie darf weder den festen Kopf überlagern noch Fokusziele verdecken. Die Aufnahmen setzten sie auf static. Live prüfen, ob sie neben dem Regler sichtbar bleibt.\n(f) „Schritt n von 4“ nur einmal ausgeben (sichtbar) und den sr-only-Zwilling aus A weglassen, sonst doppelte Ansage.\n(g) Mobile Knopfreihenfolge Weiter vor Zurück aus B. Die Fokusführung nach Schrittwechsel (p tabindex=-1) muss mit der neuen Reihenfolge weiter auf den Schritttitel gehen.\n(h) Wortlaut sonst unverändert lassen, auch „Wird übertragen …“ und die Erfolgs- und WhatsApp-Texte. Die einzigen gewollten Unterschiede gegenüber B sind die versteckten Vorsätze „Hinweis:“ und „Fehler:“.\n\nOFFEN IN BEIDEN (über den Mindeststand hinaus, keine Fusionsbedingung)\n1. Pflichtfeldfehler nur als Browser-Sprechblase. K-009 verlangt Versatz-Zeichen, Text, role=alert und aria-invalid; sichtbare Fehler bräuchten novalidate und eigene Meldungen.\n2. Kein aria-valuetext mit Einheit am Regler.\n3. Fokus geht nach Serverfehler, Erfolg und WhatsApp auf body. Besser wäre der Fokus auf die Meldung bzw. die Erfolgsüberschrift.\n4. Keine Statusmeldung beim Laden.\n5. Telefon-Platzhalter in Schritt 4 abgeschnitten. Einen kürzeren Platzhalter nur über TEXTVORSCHLAEGE.md vorschlagen."
+ },
+ "a11y_fakten": [
+  {
+   "merkmal": "axe (wcag2a/aa, 21a/aa, 22aa) im Baustein, 15 Zustände × 2 Ansichten",
+   "A": "0 Verstöße (keine ernst/kritisch, keine Regel betroffen)",
+   "B": "0 Verstöße (keine ernst/kritisch, keine Regel betroffen)"
+  },
+  {
+   "merkmal": "Fokusring-Stil (alle 152 Fokusziele je Ansicht über 9 Zustände)",
+   "A": "outline 2px solid rgb(10,17,41), Abstand 2px; höchster Kontrast 18,66:1",
+   "B": "outline 2px solid rgb(10,17,41), Abstand 2px; höchster Kontrast 18,66:1"
+  },
+  {
+   "merkmal": "Fokusring sichtbar (Pixelvergleich Ruhe/Fokus, ≥3:1 über den Umfang) d1440",
+   "A": "115/152 ok; 37 nicht voll sichtbar („dünn“/„kontrastarm“): Auswahlkarten in Rastern mit gemeinsamen Kanten (Schritt 1 alle Karten; Schritt 3 Format, Material, Verlegemuster, Bauart, Belag), dazu 3 umbrochene Textlinks in „Das prüfen wir vorab“. Der Ring wird vom Nachbarfeld teilweise überdeckt (Bild 16)",
+   "B": "152/152 ok"
+  },
+  {
+   "merkmal": "Fokusring sichtbar m390",
+   "A": "112/152 ok; 40 nicht voll sichtbar (dieselben Kartenraster, dazu die Textlinks „Ausgleich & Gefälle“ und „Treppen neu belegen“)",
+   "B": "142/152 ok; 10 nicht voll sichtbar (nur die zweizeilig umbrochenen Textlinks „Ausgleich & Gefälle“ und „Treppen neu belegen“ in 5 Zuständen)"
+  },
+  {
+   "merkmal": "Fokus verdeckt (Mittelpunkt, feste Ebenen, Ringpunkte)",
+   "A": "0 Befunde",
+   "B": "0 Befunde"
+  },
+  {
+   "merkmal": "Fokusring am Schieberegler (Bild 19)",
+   "A": "Ring mit Abstand zur Skalenbeschriftung",
+   "B": "Ring liegt auf der Skalenbeschriftung „1 m² … 150 m²“"
+  },
+  {
+   "merkmal": "Fokus nach Schrittwechsel (Weiter/Zurück per Enter)",
+   "A": "auf den Absatz „n. Schritttitel“ (p tabindex=-1), z. B. „2. Untergrund & Bestand“",
+   "B": "gleich: p tabindex=-1 „2. Untergrund & Bestand“ usw."
+  },
+  {
+   "merkmal": "Fokus nach leerem Absenden / WhatsApp leer",
+   "A": "#fk-name (eingebaute Browser-Prüfung)",
+   "B": "#fk-name (eingebaute Browser-Prüfung)"
+  },
+  {
+   "merkmal": "Fokus nach Serverfehler, Laden, Erfolg, WhatsApp, „Neue Konfiguration starten“",
+   "A": "body (Fokus geht verloren, Sendeknopf wird beim Senden deaktiviert)",
+   "B": "body (gleich)"
+  },
+  {
+   "merkmal": "Sichtbare Labels",
+   "A": "alle Felder mit sichtbarem Label außer Schieberegler (Label „Fläche in m² per Schieberegler“ nur für Screenreader); Gruppen als fieldset/legend",
+   "B": "gleich; „(optional)“ in hellerer, nicht fetter Schrift abgesetzt"
+  },
+  {
+   "merkmal": "Pflichtfelder und Fehlerkennzeichnung",
+   "A": "required an Name, Telefon und Einwilligung; kein aria-required; nach dem Fehler kein aria-invalid und kein sichtbarer Fehlertext (nur die Browser-Sprechblase)",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "role=alert / role=status an Meldungen",
+   "A": "Serverfehler: role=alert „Fehler: Test-Ausfall“ („Fehler:“ nur für Screenreader); Erfolg und WhatsApp: role=status; Hinweise Bad/Blockstufen mit verstecktem Vorsatz „Hinweis:“; Laden: keine Statusmeldung",
+   "B": "Serverfehler: role=alert „Test-Ausfall“ (ohne Vorsatz); Erfolg und WhatsApp: role=status; Hinweise ohne versteckten Vorsatz; Laden: keine Statusmeldung"
+  },
+  {
+   "merkmal": "Ladezustand Sendeknopf",
+   "A": "„Wird übertragen …“, disabled, ohne aria-busy; WhatsApp-Knopf disabled",
+   "B": "„Wird übertragen …“, disabled, aria-busy=\"true\"; WhatsApp-Knopf disabled"
+  },
+  {
+   "merkmal": "autocomplete",
+   "A": "fk-name=name, fk-phone=tel, fk-email=email, fk-zip=postal-code (Feld „PLZ & Ort“); Notiz und Mengenfelder ohne",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "aria-pressed an Auswahlknöpfen",
+   "A": "alle Auswahlknöpfe (7 in Schritt 1, 15 in Schritt 2, 31 in Schritt 3, 3 in Schritt 4)",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "aria-valuetext / hörbare Einheit am Schieberegler",
+   "A": "kein aria-valuetext; Accessibility-Baum: Wert „25“ ohne Einheit, min 1, max 150; Einheit nur im Namen „Fläche in m² per Schieberegler“; sichtbare Skala „1 m² · 75 m² · 150 m²“",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "Flächenfeld",
+   "A": "type=text, inputmode=decimal; Name „Zu belegende Fläche in m² (Boden und/oder Wand, netto)“; aria-describedby → Hilfetext; Eingabe „abc“: kein aria-invalid, keine Meldung, Ergebnis wird „Fläche in Schritt 3 eingeben.“; 400 m²: Regler bleibt bei 150; Stufenfelder type=number mit inputmode=numeric",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "Live-Region für das Rechenergebnis",
+   "A": "div aria-live=polite (ohne role, ohne aria-atomic) um „Materialbedarf inkl. Verschnitt (Richtwert)“; aktualisiert bei jedem Reglerschritt; vorgelesener Text „ca. 21–23 m²aus 20 m² netto“ (kein Leerzeichen vor „aus“)",
+   "B": "div aria-live=polite (ohne role, ohne aria-atomic), gleiche Aktualisierung; vorgelesener Text „ca. 21–23 m² aus 20 m² netto“"
+  },
+  {
+   "merkmal": "Schrittanzeige",
+   "A": "ol aria-label=„Fortschritt“ mit aria-current=step und „(erledigt)“; „Schritt n von 4“ nur für Screenreader",
+   "B": "gleich, „Schritt n von 4“ sichtbar; dazu ein vierteiliger Fortschrittsbalken"
+  },
+  {
+   "merkmal": "Touch-Ziele ≥ 44 px (m390)",
+   "A": "alle Knöpfe und Felder ≥ 44 px außer dem Einwilligungs-Kästchen 20×20 px (Label klickbar) und Textlinks im Fließtext",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "Überlauf bei 320 px",
+   "A": "kein horizontales Scrollen; nur der Platzhalter „Für die Rücksprache zum Aufmaß“ ist in Schritt 4 abgeschnitten",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "200 % Zoom (CSS-Zoom 2 auf 1280 px)",
+   "A": "9–13 Befunde je Zustand in den Schritten 1–4: Kopfzeile (h2, Schrittliste, Ergebnisbox) ragt etwa 18 px rechts über den Baustein, Baustein scrollWidth 552 > clientWidth 542; dazu abgeschnittene Platzhalter (Stufenfelder, Name, Telefon, E-Mail); Erfolg/WhatsApp 0; kein Fokusziel verdeckt",
+   "B": "Schritte 1–3: 0 Befunde; Schritt 4: 2 abgeschnittene Platzhalter (Telefon, E-Mail); Erfolg/WhatsApp 0; kein Fokusziel verdeckt"
+  },
+  {
+   "merkmal": "200 % Zoom gleichwertig (640×400, DPR 2)",
+   "A": "nur der Telefon-Platzhalter in Schritt 4 abgeschnitten",
+   "B": "gleich"
+  },
+  {
+   "merkmal": "Erhöhter Textabstand (WCAG 1.4.12)",
+   "A": "d1440: 1 neuer Befund (Telefon-Platzhalter in Schritt 4 abgeschnitten); m390: 1 (derselbe)",
+   "B": "d1440: 0; m390: 1 (Telefon-Platzhalter)"
+  },
+  {
+   "merkmal": "Ohne JavaScript",
+   "A": "Baustein fehlt im Server-HTML; sichtbar nur „Anfrageformular wird geladen...“",
+   "B": "Schritt 1 vollständig im Server-HTML (Bedienung braucht JavaScript)"
+  },
+  {
+   "merkmal": "Kontrast",
+   "A": "axe color-contrast 0; deaktivierter „Weiter“-Knopf weiß mit Rahmen und grauer Schrift (axe prüft deaktivierte Elemente nicht)",
+   "B": "axe color-contrast 0; deaktivierter „Weiter“-Knopf grau gefüllt mit weißer Schrift"
+  },
+  {
+   "merkmal": "Honigtopf-Feld",
+   "A": "keins gefunden",
+   "B": "keins gefunden"
+  }
+ ],
+ "funktion": [
+  "Ablauf identisch: vier Schritte mit denselben Optionen, Gruppen und Vorbelegungen (Fläche 20 m²; Fußbodenheizung „Weiß nicht“; Rückbau und Nassbereich „Nein“; Format, Material und Muster „Noch offen“; Treppe innen, gerade, Massivtreppe; Setzstufen „Ja“; Treppensockel „Ja“; Zeitraum „In 1 – 3 Monaten“). Der Weiter-Knopf in Schritt 1 ist ohne Auswahl deaktiviert (aria-describedby → #konfigurator-step1-hint).",
+  "Rechenwerte identisch: 24,5 m² mit Kreuzfuge → „ca. 25,7–27 m²“ (5–10 %); 31 m² mit „Noch offen“ → „ca. 32,6–35,7 m²“ (5–15 %); Treppe mit 14 Steigungen, 100/30/18 cm → „6,42 m² netto (ohne Verschnitt)“. Der Regler übernimmt die Feldeingabe (64 → 64, 400 → 150, „abc“ → 1).",
+  "Pflichtfelder: in beiden nur die eingebaute Browser-Prüfung. Leeres Absenden und WhatsApp mit leeren Feldern schicken kein POST, öffnen nichts und setzen den Fokus ins Namensfeld.",
+  "Laden: in beiden „Wird übertragen …“ mit Ladeanzeige; Sende- und WhatsApp-Knopf deaktiviert. Nur B setzt aria-busy=\"true\".",
+  "Serverfehler 500: in beiden roter Kasten über der Knopfzeile mit dem Servertext „Test-Ausfall“ (role=alert); A liest zusätzlich „Fehler:“ vor. Konsole in beiden: „Fliesen-Konfigurator submission error: Error: Test-Ausfall“.",
+  "Erfolg wortgleich: „Konfiguration erfolgreich übermittelt“, „Vorgangs-Nr.: TEZ-26-TEST“, „Vielen Dank, Prüf Person!“, „Nächste Schritte“ 1–3, Knöpfe „Direkt anrufen: 06441 / 44 83 567“ (tel:+4964414483567) und „Neue Konfiguration starten“. Der Neustart springt in beiden auf Schritt 1 und behält die Bereichsauswahl (Küche, Treppe).",
+  "WhatsApp-Weg wortgleich: „WhatsApp wurde geöffnet – bitte absenden“, „Zurück zur Anfrage“. Die Nachricht an api.whatsapp.com/send (phone=491726728504) ist in A und B zeichengleich. Am Desktop window.open, mobil Navigation – in beiden gleich.",
+  "POST-Körper an /api/anfrage (Attrappe) in A und B identisch (inquiryType „fliesen“, fliesenDetails, contact, timing, area „24,5 m²“, notes).",
+  "Wortlaut sonst in allen 15 Zuständen gleich, bis auf: (1) Ergebnisbox im Accessibility-Text A „ca. 21–23 m²aus 20 m² netto“, B „ca. 21–23 m² aus 20 m² netto“; (2) A hat versteckte Vorsätze „Hinweis:“ (Bad-Hinweis, Blockstufen-Hinweis) und „Fehler:“ (Serverfehler); (3) „Schritt n von 4“ ist in A nur für Screenreader, in B sichtbar.",
+  "Server-HTML: A liefert an Stelle des Bausteins „Anfrageformular wird geladen...“ (Aufbau erst im Browser). B liefert Schritt 1 vollständig.",
+  "Anker und IDs gleich: section#konfigurator (in main#main-content), #konfigurator-step1-hint, #fk-area, #fk-skirting, #fk-area-range, #fk-area-help, #fk-rises, #fk-risers, #fk-treads, #fk-width, #fk-depth, #fk-height, #fk-stairs-help, #fk-name, #fk-phone, #fk-email, #fk-zip, #fk-notes. Nur A hat zusätzlich SVG-IDs der Vorschaugrafik (pattern#schraffur-…, clippath#raum-…).",
+  "Aufbau d1440: A zweispaltig – links die Schritte, rechts eine klebende Spalte mit Ergebnisbox und schematischer Verlegevorschau (Raster mit schraffierten Randstreifen). B einspaltig – Ergebnisbox im Kopf neben dem Titel, darunter ein vierteiliger Fortschrittsbalken, ohne Vorschaugrafik.",
+  "Aufbau m390: A zeigt die Ergebnisbox in Schritt 1–2 unter dem Inhalt und ab Schritt 3 darüber. B zeigt sie immer im Kopf. Knopfreihenfolge in Schritt 2/3: A „Zurück“ über „Weiter“, B „Weiter“ über „Zurück“.",
+  "Auswahlelemente: A als Raster mit gemeinsamen Kanten, Symbole an den Bereichskarten (Schritt 1) und Verlegemustern, Häkchen an jeder gewählten Option, Kurzoptionen linksbündig und mobil untereinander. B als einzelne Karten mit Abstand, ohne Symbole, Häkchen nur an den Bereichskarten in Schritt 1, Kurzoptionen zentriert, Ja/Nein/Weiß-nicht mobil in drei Spalten.",
+  "Zusammenfassung Schritt 4, Erfolg und WhatsApp: A einspaltig, Begriffe fett, „Das prüfen wir vorab“ mit Häkchen. B bei d1440 zweispaltig („Ihr Projekt in Kürze“ | „Materialbedarf (Richtwert)“ grau hinterlegt), Begriffe in Festbreitenschrift, „Das prüfen wir vorab“ zweispaltig mit Pluszeichen. Erfolgstitel in A größer.",
+  "Typografie: B setzt Eingabewerte, Platzhalter, Zahlen und die Telefonnummer in Festbreitenschrift („06441 / 44 83 567“ mit Abständen). A setzt sie proportional.",
+  "WhatsApp-Knopf: A mit Sprechblasen-Linie als Symbol, B mit dem grünen WhatsApp-Zeichen.",
+  "Umbruch in der Ergebnisbox: A trennt „aus 31 / m² netto“ zwischen Zahl und Einheit (d1440 und m390) und im Erfolg mobil „ca. 25,7– / 27 m²“. B bricht vor der Zahl."
+ ],
+ "probleme": [
+  "Die Sprechblase der Browser-Prüfung bei leeren Pflichtfeldern ist in Headless-Aufnahmen nicht zu sehen. Die Zustände 08 und 09 zeigen nur den Fokus im Namensfeld und sind in beiden Fassungen bildgleich.",
+  "In X (d1440) versetzt die Seitenaufnahme über den Bildschirm hinaus die klebende Ergebnisspalte. Darum werden klebende Teile im Baustein für alle Aufnahmen in Ruhelage gesetzt (position: static), für X und Y nach derselben Regel; Y hat keine solchen Teile. Feste und klebende Ebenen außerhalb des Bausteins sind für die Ausschnitte ausgeblendet.",
+  "Der Ladezustand ist mit angehaltener Attrappen-Antwort aufgenommen, der Serverfehler per page.route mit 500. Kein echter Versand: Das Protokoll der Sperre zeigt in allen Läufen nur abgefangene Fremd-Hosts (api.whatsapp.com).",
+  "200 % Zoom ist als CSS-Zoom 2 auf 1280 px und als gleichwertiger Bildschirm 640×400 bei DPR 2 gemessen. Bilder vom Zoomzustand gibt es nicht, nur Messwerte.",
+  "Die Fokusmessung ist ein Pixelvergleich Ruhe/Fokus je Element: „dünn“ heißt weniger als 1,5 × Umfang an Pixeln mit ≥ 3:1, „kontrastarm“ weniger als 0,7 ×. Bei zweizeilig umbrochenen Textlinks misst die Methode gegen den Begrenzungsrahmen und fällt deshalb in beiden Fassungen auf.",
+  "Das Bild 15-ohne-javascript von X ist nur ein schmaler Streifen (Platzhaltertext), weil der Baustein im Server-HTML fehlt.",
+  "Die Detailbilder 21–24 stammen aus einem verkürzten Ablauf (z. B. Untergrund nicht gewählt, Fläche 31 m²), für X und Y gleich. Die Ganzbilder 07–14 stammen aus dem vollen Ablauf.",
+  "Seitenteile außerhalb des Bausteins (die alte Seite /fliesen/konfigurator) wurden nicht verglichen.",
+  "Vorbild: Startseite „/“ aus X mit abschnitte.mjs; je Ansicht 6 Abschnitte ausgewählt. Die Rohbilder liegen unter arbeit/vorbild-roh.",
+  "Zwei Erkundungsdateien (Server-HTML) wurden anfangs kurz im übergeordneten Ordner e039/ abgelegt und sofort nach u6-konfigurator/arbeit verschoben und in X/Y umbenannt. In den Arbeitsdateien sind die Basisadressen durch <BASIS-X>/<BASIS-Y> ersetzt. Im Repo wurde nichts geändert."
+ ],
+ "abschnitte": [
+  {
+   "name": "Start: Schritt 1 „Raum & Einsatzbereich“ ohne Auswahl",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/00-start.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/00-start.png"
+   ]
+  },
+  {
+   "name": "Schritt 1 mit Auswahl (Küche, Treppe)",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/01-schritt-1-auswahl.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/01-schritt-1-auswahl.png"
+   ]
+  },
+  {
+   "name": "Schritt 1 mit „Bad, Dusche, Gäste-WC“ und Hinweis auf Badplaner/Bad-Projektcheck",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/02-schritt-1-bad-hinweis.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/02-schritt-1-bad-hinweis.png"
+   ]
+  },
+  {
+   "name": "Schritt 2 „Untergrund & Bestand“ mit Auswahl (Zementestrich, Alte Fliesen, Fußbodenheizung Ja, Rückbau Ja)",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/03-schritt-2-auswahl.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/03-schritt-2-auswahl.png"
+   ]
+  },
+  {
+   "name": "Schritt 3 „Format, Material & Menge“ mit Auswahl und Flächeneingabe 24,5 m², Sockel 18, Treppenmaße",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/04-schritt-3-auswahl.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/04-schritt-3-auswahl.png"
+   ]
+  },
+  {
+   "name": "Schritt 3: Schieberegler per Tastatur (Fokus auf Regler, 6 × Pfeil rechts → 31 m²)",
+   "ansicht": "d1440",
+   "hinweis": "Ganzer Baustein; Ausschnitt dazu: 19-detail-schieberegler-fokus",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/05-schieberegler-tastatur.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/05-schieberegler-tastatur.png"
+   ]
+  },
+  {
+   "name": "Schritt 3: Bauart „Blockstufen“ (Hinweiskasten, Setzstufenfelder entfallen)",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/06-schritt-3-blockstufen.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/06-schritt-3-blockstufen.png"
+   ]
+  },
+  {
+   "name": "Ergebnis-Zusammenfassung Schritt 4 „Zusammenfassung & Kontakt“ (Kontaktfelder leer)",
+   "ansicht": "d1440",
+   "hinweis": "Ausschnitt dazu: 21-detail-zusammenfassung",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/07-ergebnis-schritt-4.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/07-ergebnis-schritt-4.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler: „Online absenden“ mit leeren Pflichtfeldern",
+   "ansicht": "d1440",
+   "hinweis": "In beiden nur die eingebaute Browser-Prüfung (required, Formular ohne novalidate): kein POST, Fokus springt ins Namensfeld. Die Sprechblase des Browsers ist in der Aufnahme nicht zu sehen. Ausschnitt: 22-detail-pflichtfeld-kontakt",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/08-pflichtfeldfehler.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/08-pflichtfeldfehler.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler: „Per WhatsApp senden“ mit leeren Pflichtfeldern",
+   "ansicht": "d1440",
+   "hinweis": "In beiden bildgleich mit 08 (WhatsApp öffnet sich nicht, Fokus im Namensfeld)",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/09-pflichtfeldfehler-whatsapp.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/09-pflichtfeldfehler-whatsapp.png"
+   ]
+  },
+  {
+   "name": "Schritt 4 mit ausgefülltem Kontaktteil und Einwilligung",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/10-kontakt-ausgefuellt.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/10-kontakt-ausgefuellt.png"
+   ]
+  },
+  {
+   "name": "Laden: Online-Absendung mit angehaltener Antwort („Wird übertragen …“)",
+   "ansicht": "d1440",
+   "hinweis": "Ausschnitt: 23-detail-laden-knoepfe",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/11-laden.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/11-laden.png"
+   ]
+  },
+  {
+   "name": "Serverfehler 500 (Attrappe per page.route) mit Meldung „Test-Ausfall“",
+   "ansicht": "d1440",
+   "hinweis": "Ausschnitt: 24-detail-serverfehler-meldung",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/12-serverfehler-500.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/12-serverfehler-500.png"
+   ]
+  },
+  {
+   "name": "Erfolg: „Konfiguration erfolgreich übermittelt“, Vorgangs-Nr., Zusammenfassung",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/13-erfolg.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/13-erfolg.png"
+   ]
+  },
+  {
+   "name": "WhatsApp-Weg: „WhatsApp wurde geöffnet – bitte absenden“",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/14-whatsapp.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/14-whatsapp.png"
+   ]
+  },
+  {
+   "name": "Ohne JavaScript (Baustein im Server-HTML)",
+   "ansicht": "d1440",
+   "hinweis": "A: an Stelle des Bausteins nur der Absatz „Anfrageformular wird geladen...“ (der Baustein entsteht erst im Browser). B: Schritt 1 vollständig gezeichnet (bildgleich mit 00-start).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/15-ohne-javascript.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/15-ohne-javascript.png"
+   ]
+  },
+  {
+   "name": "Detail: Tastaturfokus auf erster Auswahlkarte (Schritt 1)",
+   "ansicht": "d1440",
+   "hinweis": "In A ist der Ring an der Kartenkante teilweise verdeckt (obere Kante fehlt). Pixelmessung siehe a11y_fakten.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/16-detail-fokus-auswahlkarte.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/16-detail-fokus-auswahlkarte.png"
+   ]
+  },
+  {
+   "name": "Detail: Tastaturfokus auf gewählter Auswahlkarte",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/17-detail-fokus-auswahlkarte-gewaehlt.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/17-detail-fokus-auswahlkarte-gewaehlt.png"
+   ]
+  },
+  {
+   "name": "Detail: Tastaturfokus auf „Weiter zu Schritt 2“",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/18-detail-fokus-weiter.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/18-detail-fokus-weiter.png"
+   ]
+  },
+  {
+   "name": "Detail: Gruppe „Menge (Fläche)“ mit fokussiertem Schieberegler (31 m²)",
+   "ansicht": "d1440",
+   "hinweis": "B: Fokusring berührt die Skalenbeschriftung „1 m² · 75 m² · 150 m²“. A: Abstand zur Skala.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/19-detail-schieberegler-fokus.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/19-detail-schieberegler-fokus.png"
+   ]
+  },
+  {
+   "name": "Detail: Ergebnisbox „Materialbedarf inkl. Verschnitt (Richtwert)“ (Live-Region) nach Reglerbewegung",
+   "ansicht": "d1440",
+   "hinweis": "A: „aus 31 / m² netto“ bricht zwischen Zahl und Einheit um. B: eigene Zeile „aus 31 m² netto“.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/20-detail-ergebnis-richtwert.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/20-detail-ergebnis-richtwert.png"
+   ]
+  },
+  {
+   "name": "Detail: „Ihr Projekt in Kürze“, „Materialbedarf (Richtwert)“, „Das prüfen wir vorab“",
+   "ansicht": "d1440",
+   "hinweis": "Aus einem verkürzten Ablauf (Untergrund nicht gewählt, Fläche 31 m²), für A und B gleich",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/21-detail-zusammenfassung.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/21-detail-zusammenfassung.png"
+   ]
+  },
+  {
+   "name": "Detail: Kontaktteil nach leerem Absenden (Fokus im Namensfeld) bis „Zurück zu Schritt 3“",
+   "ansicht": "d1440",
+   "hinweis": "A: Kontaktteil in der linken Spalte (rechts leer, Ergebnisspalte). B: volle Breite.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/22-detail-pflichtfeld-kontakt.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/22-detail-pflichtfeld-kontakt.png"
+   ]
+  },
+  {
+   "name": "Detail: Knopfzeile im Ladezustand",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/23-detail-laden-knoepfe.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/23-detail-laden-knoepfe.png"
+   ]
+  },
+  {
+   "name": "Detail: Fehlermeldung bei Serverfehler 500",
+   "ansicht": "d1440",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/d1440/24-detail-serverfehler-meldung.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/d1440/24-detail-serverfehler-meldung.png"
+   ]
+  },
+  {
+   "name": "Start: Schritt 1 „Raum & Einsatzbereich“ ohne Auswahl",
+   "ansicht": "m390",
+   "hinweis": "A: Ergebnisbox unter den Auswahlkarten. B: Ergebnisbox im Kopf über dem Fortschrittsbalken.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/00-start.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/00-start.png"
+   ]
+  },
+  {
+   "name": "Schritt 1 mit Auswahl (Küche, Treppe)",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/01-schritt-1-auswahl.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/01-schritt-1-auswahl.png"
+   ]
+  },
+  {
+   "name": "Schritt 1 mit „Bad, Dusche, Gäste-WC“ und Hinweis auf Badplaner/Bad-Projektcheck",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/02-schritt-1-bad-hinweis.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/02-schritt-1-bad-hinweis.png"
+   ]
+  },
+  {
+   "name": "Schritt 2 „Untergrund & Bestand“ mit Auswahl (Zementestrich, Alte Fliesen, Fußbodenheizung Ja, Rückbau Ja)",
+   "ansicht": "m390",
+   "hinweis": "A: Ja/Nein/Weiß-nicht untereinander in voller Breite, „Zurück“ über „Weiter“. B: drei Spalten, „Weiter“ über „Zurück“.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/03-schritt-2-auswahl.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/03-schritt-2-auswahl.png"
+   ]
+  },
+  {
+   "name": "Schritt 3 „Format, Material & Menge“ mit Auswahl und Flächeneingabe 24,5 m², Sockel 18, Treppenmaße",
+   "ansicht": "m390",
+   "hinweis": "Lange Bilder (rund 4280 px hoch). A: Ergebnisbox ab Schritt 3 über dem Inhalt.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/04-schritt-3-auswahl.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/04-schritt-3-auswahl.png"
+   ]
+  },
+  {
+   "name": "Schritt 3: Schieberegler per Tastatur (Fokus auf Regler, 6 × Pfeil rechts → 31 m²)",
+   "ansicht": "m390",
+   "hinweis": "Ganzer Baustein; Ausschnitt dazu: 19-detail-schieberegler-fokus",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/05-schieberegler-tastatur.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/05-schieberegler-tastatur.png"
+   ]
+  },
+  {
+   "name": "Schritt 3: Bauart „Blockstufen“ (Hinweiskasten, Setzstufenfelder entfallen)",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/06-schritt-3-blockstufen.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/06-schritt-3-blockstufen.png"
+   ]
+  },
+  {
+   "name": "Ergebnis-Zusammenfassung Schritt 4 „Zusammenfassung & Kontakt“ (Kontaktfelder leer)",
+   "ansicht": "m390",
+   "hinweis": "Ausschnitt dazu: 21-detail-zusammenfassung",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/07-ergebnis-schritt-4.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/07-ergebnis-schritt-4.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler: „Online absenden“ mit leeren Pflichtfeldern",
+   "ansicht": "m390",
+   "hinweis": "In beiden nur die eingebaute Browser-Prüfung: kein POST, Fokus im Namensfeld. Die Sprechblase des Browsers ist in der Aufnahme nicht zu sehen. Ausschnitt: 22-detail-pflichtfeld-kontakt",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/08-pflichtfeldfehler.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/08-pflichtfeldfehler.png"
+   ]
+  },
+  {
+   "name": "Pflichtfeldfehler: „Per WhatsApp senden“ mit leeren Pflichtfeldern",
+   "ansicht": "m390",
+   "hinweis": "In beiden bildgleich mit 08",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/09-pflichtfeldfehler-whatsapp.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/09-pflichtfeldfehler-whatsapp.png"
+   ]
+  },
+  {
+   "name": "Schritt 4 mit ausgefülltem Kontaktteil und Einwilligung",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/10-kontakt-ausgefuellt.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/10-kontakt-ausgefuellt.png"
+   ]
+  },
+  {
+   "name": "Laden: Online-Absendung mit angehaltener Antwort („Wird übertragen …“)",
+   "ansicht": "m390",
+   "hinweis": "Ausschnitt: 23-detail-laden-knoepfe",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/11-laden.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/11-laden.png"
+   ]
+  },
+  {
+   "name": "Serverfehler 500 (Attrappe per page.route) mit Meldung „Test-Ausfall“",
+   "ansicht": "m390",
+   "hinweis": "Ausschnitt: 24-detail-serverfehler-meldung",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/12-serverfehler-500.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/12-serverfehler-500.png"
+   ]
+  },
+  {
+   "name": "Erfolg: „Konfiguration erfolgreich übermittelt“, Vorgangs-Nr., Zusammenfassung",
+   "ansicht": "m390",
+   "hinweis": "A: Zeilenumbruch mitten im Zahlbereich („ca. 25,7– / 27 m²“). B: Umbruch vor der Zahl („ca. / 25,7–27 m²“).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/13-erfolg.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/13-erfolg.png"
+   ]
+  },
+  {
+   "name": "WhatsApp-Weg: „WhatsApp wurde geöffnet – bitte absenden“",
+   "ansicht": "m390",
+   "hinweis": "Auf dem Mobilgerät in beiden Navigation zu api.whatsapp.com/send (von der Sperre mit 204 abgefangen) statt window.open",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/14-whatsapp.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/14-whatsapp.png"
+   ]
+  },
+  {
+   "name": "Ohne JavaScript (Baustein im Server-HTML)",
+   "ansicht": "m390",
+   "hinweis": "A: nur „Anfrageformular wird geladen...“. B: Schritt 1 vollständig gezeichnet (bildgleich mit 00-start).",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/15-ohne-javascript.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/15-ohne-javascript.png"
+   ]
+  },
+  {
+   "name": "Detail: Tastaturfokus auf erster Auswahlkarte (Schritt 1)",
+   "ansicht": "m390",
+   "hinweis": "In A ist der Ring an der Kartenkante teilweise verdeckt",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/16-detail-fokus-auswahlkarte.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/16-detail-fokus-auswahlkarte.png"
+   ]
+  },
+  {
+   "name": "Detail: Tastaturfokus auf gewählter Auswahlkarte",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/17-detail-fokus-auswahlkarte-gewaehlt.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/17-detail-fokus-auswahlkarte-gewaehlt.png"
+   ]
+  },
+  {
+   "name": "Detail: Tastaturfokus auf „Weiter zu Schritt 2“",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/18-detail-fokus-weiter.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/18-detail-fokus-weiter.png"
+   ]
+  },
+  {
+   "name": "Detail: Gruppe „Menge (Fläche)“ mit fokussiertem Schieberegler (31 m²)",
+   "ansicht": "m390",
+   "hinweis": "B: Fokusring berührt die Skalenbeschriftung. A: Abstand zur Skala.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/19-detail-schieberegler-fokus.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/19-detail-schieberegler-fokus.png"
+   ]
+  },
+  {
+   "name": "Detail: Ergebnisbox „Materialbedarf inkl. Verschnitt (Richtwert)“ (Live-Region) nach Reglerbewegung",
+   "ansicht": "m390",
+   "hinweis": "A: „aus 31 / m² netto“ bricht zwischen Zahl und Einheit um. B: eigene Zeile in Festbreitenschrift.",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/20-detail-ergebnis-richtwert.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/20-detail-ergebnis-richtwert.png"
+   ]
+  },
+  {
+   "name": "Detail: „Ihr Projekt in Kürze“, „Materialbedarf (Richtwert)“, „Das prüfen wir vorab“",
+   "ansicht": "m390",
+   "hinweis": "Aus einem verkürzten Ablauf, für A und B gleich",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/21-detail-zusammenfassung.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/21-detail-zusammenfassung.png"
+   ]
+  },
+  {
+   "name": "Detail: Kontaktteil nach leerem Absenden (Fokus im Namensfeld) bis „Zurück zu Schritt 3“",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/22-detail-pflichtfeld-kontakt.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/22-detail-pflichtfeld-kontakt.png"
+   ]
+  },
+  {
+   "name": "Detail: Knopfzeile im Ladezustand",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/23-detail-laden-knoepfe.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/23-detail-laden-knoepfe.png"
+   ]
+  },
+  {
+   "name": "Detail: Fehlermeldung bei Serverfehler 500",
+   "ansicht": "m390",
+   "hinweis": "",
+   "bilder_A": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/X/m390/24-detail-serverfehler-meldung.png"
+   ],
+   "bilder_B": [
+    "/tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/e039/u6-konfigurator/Y/m390/24-detail-serverfehler-meldung.png"
+   ]
+  }
+ ]
+}
