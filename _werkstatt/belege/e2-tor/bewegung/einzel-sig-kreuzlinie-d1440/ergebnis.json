@@ -1,0 +1,66 @@
+{
+ "modus": "einzelbilder",
+ "seite": "/",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-10T22:49:32.644Z",
+ "dpr": 1,
+ "reducedMotion": "no-preference",
+ "einwilligung": "abgelehnt",
+ "zeitpunkte_anteil": [
+  0,
+  0.25,
+  0.5,
+  0.75,
+  1
+ ],
+ "kennungen": [
+  {
+   "kennung": "sig-kreuzlinie",
+   "elemente": 1,
+   "ausloeser": "seite",
+   "ausgeloest": 0,
+   "modus": "zeit",
+   "animationen": 2,
+   "laengste_dauer_ms": 1200,
+   "bilder": [
+    {
+     "datei": "sig-kreuzlinie-0.jpg",
+     "zeitpunkt": 0,
+     "art": "ansicht"
+    },
+    {
+     "datei": "sig-kreuzlinie-1.jpg",
+     "zeitpunkt": 0.25,
+     "art": "ansicht"
+    },
+    {
+     "datei": "sig-kreuzlinie-2.jpg",
+     "zeitpunkt": 0.5,
+     "art": "ansicht"
+    },
+    {
+     "datei": "sig-kreuzlinie-3.jpg",
+     "zeitpunkt": 0.75,
+     "art": "ansicht"
+    },
+    {
+     "datei": "sig-kreuzlinie-4.jpg",
+     "zeitpunkt": 1,
+     "art": "ansicht"
+    }
+   ],
+   "befund": []
+  }
+ ],
+ "bilder_gesamt": 5,
+ "ausschnitt": "ansicht",
+ "data_motion_elemente": 172,
+ "meldung": "1 Kennungen, 172 Elemente auf /.",
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/bewegung/einzel-sig-kreuzlinie-d1440"
+}

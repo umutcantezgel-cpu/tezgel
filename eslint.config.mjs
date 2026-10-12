@@ -16,6 +16,7 @@ const eslintConfig = defineConfig([
     "coday-seo-toolkit/**",
     // Relaunch working area (docs, tools, prototypes) – never part of the app.
     "_relaunch/**",
+    "_werkstatt/**",
   ]),
 ]);
 

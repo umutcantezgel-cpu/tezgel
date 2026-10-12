@@ -1,0 +1,96 @@
+{
+ "modus": "reduziert",
+ "seite": "/werkstatt-schaufenster/szene",
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-10T23:00:50.484Z",
+ "reducedMotion": "reduce",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 30
+ },
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "zustand",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "a",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "druck",
+   "sel": "button#whatsapp-floating-btn",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "geprueft": 79,
+ "verdeckt_durch_zustand": [
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-0",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-1",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-2",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-3",
+   "gruende": [
+    "display none"
+   ]
+  },
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mega-4",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "klassen": {
+  "k_bewegung": false,
+  "k_bereit": false
+ },
+ "erfasste_eintraege": 1,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/szene/reduziert-m390"
+}

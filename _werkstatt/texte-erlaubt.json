@@ -1,0 +1,742 @@
+[
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "WhatsApp",
+  "vermerk": "E2-ORCH-04 FinalCTA: Knopftext „WhatsApp“ → „Per WhatsApp schreiben“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "header_zeilen",
+  "ansicht": "d1440",
+  "alt": "Fachbetrieb",
+  "vermerk": "E2-ORCH-05a Kopf: Unterzeile bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "header_zeilen",
+  "ansicht": "d1440",
+  "alt": "Aßlar · Wetzlar",
+  "vermerk": "E2-ORCH-05a Kopf: Unterzeile bei 1280–1535 px ausgeblendet (Platz für die Navigation), Text bleibt im DOM – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "E",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Die",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "…\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "C",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "R",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Wir",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "H",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Ich",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "U",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Top",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "P",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Sehr",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "S",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "K",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Herr",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "T",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Deniz",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "\"Immer",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Arbeit!\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "J",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "empfehlen\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "O",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "😊\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Preis.\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Rezension",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "footer",
+  "entfernt": "WhatsApp:",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "footer",
+  "entfernt": "Fax:",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "footer_zeilen",
+  "alt": "Fax: 06441 / 44 83 548",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "footer_zeilen",
+  "alt": "Mobil & WhatsApp: 0172 / 67 28 504",
+  "vermerk": "E2-ORCH-05a Fuß: Präfix vor der Nummer wird Mono-Etikett darüber (Mobil & WhatsApp, Fax) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "E",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir können diese Firma uneingeschränkt und wärmstens empfehlen.Handwerklich perfekt, saubere u.präzise …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "C",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Die Firma Tezgel hat für mich zwei Bäder saniert. Als einziges der Gewerke wurden die Arbeiten von der Firma Tezgel ordnungsgemäß, sauber und pünktlich …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "R",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Wir haben unser gesamtes Haus von der Firma Fliesenverlegung Tezgel verlegen lassen – und sind rundum zufrieden. Vom ersten Tag an lief alles absolut …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "H",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Ich kann die Firma Tezgel nur wärmstens empfehlen! Herr Tezgel hat bei mir die Fliesen auf dem Balkon neu verlegt, und ich bin mehr als zufrieden mit seiner …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "U",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Top Unternehmen! Herr Tezgel und sein Team haben unser Bad (barrierefrei) gefliest. Tolle Arbeit, wir sind sehr zufrieden. Können wir uneingeschränkt weiter empfehlen! …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "P",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Wir sind mit den Leistungen der Firma D. Tezgel sehr zufrieden. Unser neues Bad ist professionell und hochwertig, nach unseren Vorstellungen ausgeführt. Termine …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Sehr gute Kommunikation, super freundlich und das wichtigste: TOP Arbeit! Absolut empfehlenswert. Ein Handwerker, der sich auch nicht zu schade ist, kleinere Arbeiten durchzuführen! …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "S",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Wir haben unser komplettes Haus von Herrn Tezgel und seinen Angestellten fliesen lassen. Auch die Bäder und die Treppen. Wir sind mit der Arbeit mehr als …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "K",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Herr Tezgel und sein Team sind ausnahmslos professionell, zuverlässig und gut in dem was sie machen. Sie haben unser Badezimmer, Gäste WC und die Küche gefliest …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Sehr zuverlässiges Inhabergeführtes Unternehmen in Aßlar. Nach Kontaktaufnahme mit dem Inhaber kam Herr Tezgel kurzfristig zur Absprache und Abgabe eines …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "T",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Deniz Tezgel und sein Team haben erneut bei uns hervorragende Arbeit abgeliefert! Absolut zu empfehlen - top Beratung, top Organisation, sensationelle und …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Immer wieder HERVORRAGENDE!!! Jedes Bad, jede Treppe, jeder Bodenbelag immer wieder TOP! …\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Sehr zuverlässig, freundlich und qualitativ sehr hochwertige Arbeit!\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "J",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Sehr gute schnelle saubere und professionelle Arbeit . Nur zu empfehlen\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "O",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Sehr schnelle und saubere Arbeit, immer wieder gerne 😊\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "\"Top Arbeit zum fairen Preis.\"",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Google Rezension",
+  "vermerk": "E2-ORCH-04 Kundenstimme: Anfangsbuchstabe als Bild entfällt, Anführungszeichen \" → „“, Fußzeile „{Quelle} Rezension“ → „{Bewertung} von 5“ – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "27 verifizierte Google-Rezensionen",
+  "vermerk": "E2-BAU-01 Bewertungs-Kennwert: „verifizierte“ entfällt (nicht belegbar) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "verifizierte",
+  "vermerk": "E2-BAU-01 Bewertungs-Kennwert: „verifizierte“ entfällt (nicht belegbar) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Karte wird geladen...",
+  "vermerk": "E2-BAU-04 Karte: das Einwilligungs-Tor steht sofort im Dokument; der Ladehinweis „Karte wird geladen...“ erscheint nur noch nach Einwilligung – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "wird geladen...",
+  "vermerk": "E2-BAU-04 Karte: das Einwilligungs-Tor steht sofort im Dokument; der Ladehinweis „Karte wird geladen...“ erscheint nur noch nach Einwilligung – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Aßlar & Wetzlar regional vor Ort",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Eingetragener HWK Wiesbaden Fachbetrieb",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "DIN 18534 Verbundabdichtung",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "XXL-Großformat Nivelliertechnik",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Staubschutz & Sauberkeits-Garantie",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Verbindliche Festpreis-Kalkulation",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "5,0 Google-Bewertungen (27 Rezensionen)",
+  "vermerk": "E2-ORCH-08 TrustStrip: zweite Laufband-Hälfte (aria-hidden, im innerText doppelt) entfällt; jede Zusage steht einmal – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt_muster": "\\d{2}:\\d{2} Uhr",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt_muster": "Samstag \\(Aufmaßtermin\\)",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "block": "main",
+  "entfernt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5}(?: (?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}(?: Samstag \\(Aufmaßtermin\\))?(?: \\d{2}:\\d{2} Uhr){5})*",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "teil": "main_zeilen",
+  "alt_muster": "(?:Mo|Di|Mi|Do|Fr|Sa)\\., \\d{2}\\.\\d{2}\\.\\d{4}",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "teil": "main_zeilen",
+  "alt_muster": "\\d{2}:\\d{2} Uhr",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/termin",
+  "teil": "main_zeilen",
+  "alt_muster": "Samstag \\(Aufmaßtermin\\)",
+  "vermerk": "E2-ORCH-09 V-02: Kalendertage werden erst im Browser berechnet (vorher Build-Tag im vorgerenderten Stand, Hydrierungsfehler #418)"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Wohnbereiche & Neubau",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Wohnbereiche & Neubau",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Balkon & Terrasse",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Balkon & Terrasse",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "DIN 18534 Abdichtung",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "DIN 18534 Abdichtung",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Wohnbereich und Fliesenverlegung mit Feinsteinzeug",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Terrassenplatten auf Stelzlagern und Außenbereiche",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Verbundabdichtung DIN 18534 und Estrichausgleich",
+  "vermerk": "E2-ORCH-08-N2 Fachgewerke: Badfotos unter Wohnen, Außen, Untergrund entfallen (Bild zeigte nicht das Gewerk), Verlegeplan bleibt – TEXTVORSCHLAEGE, MENSCHEN M-18"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Komplettbad & Dusche",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Komplettbad & Dusche",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Bad mit freistehender Wanne",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Bad mit freistehender Wanne",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Bodengleiche Walk-In Dusche und Badgestaltung Tezgel",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "alt",
+  "alt": "Freistehende Badewanne mit fugenlosem XXL-Fliesenbelag von Fliesenverlegung Tezgel",
+  "vermerk": "E2-ORCH-10 Sichtabnahme: Fotos mit Zeichen eines Bildgenerators (✦) auf der Startseite durch gezeichnete Verlegepläne ersetzt – TEXTVORSCHLAEGE, MENSCHEN M-19"
+ },
+ {
+  "seite": "/",
+  "teil": "main_zeilen",
+  "alt": "Perfektion auf jedem Quadratmeter.",
+  "vermerk": "E2-ORCH-10 SIG-1: H1 in drei festen Zeilen (je Zeile ein Block für die gestaffelte Flucht); Wortlaut und Reihenfolge unverändert"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "≤ 15 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "≤ 30 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "≤ 45 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "teil": "main_zeilen",
+  "alt": "Firmensitz",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "≤ 15 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "≤ 30 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "≤ 45 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "Firmensitz",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "15",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "30",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "45",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "15 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "30 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "45 km",
+  "vermerk": "E2-ORCH-10 Karte /kontakt: Entfernungsfilter auf die Zonen des Einzugsbands (≤ 10/25/50 km statt 15/30/45), Wetzlar „angrenzend“ statt „Firmensitz“ (Firmensitz ist Aßlar, M-17) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "header_zeilen",
+  "alt": "Aufmaß buchen",
+  "vermerk": "E-020 Fusion: Kopf-Knopf „Aufmaß buchen“ → „Aufmaß anfragen“ (überall sonst „anfragen“; Abschnittsgutachten) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "HQ",
+  "vermerk": "E-020 Fusion: Stadtknopf „HQ“ (Wetzlar) → „Firmensitz“ (Aßlar), Entfernungen ab Aßlar – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Kostenloses Vor-Ort-Aufmaß anfordern",
+  "vermerk": "E-020 Fusion: Abschluss (FinalCTA) mit einem Aufmaß-Aufruf statt zwei – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Zur Bad-Übersicht",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Projektcheck starten",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Alle Standorte",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Zu den Bewertungen",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Normgerechte Verbundabdichtung DIN 18534",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "für fugenarme Wand- & Bodenflächen XXL Großformate",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß • Verbindlicher Festpreis • Über 15 Jahre Erfahrung",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/",
+  "block": "main",
+  "entfernt": "5,0",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/kontakt",
+  "block": "main",
+  "entfernt": "Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb",
+  "vermerk": "E-020 Fusion: Text unverändert vorhanden, steht in der neuen Komposition an anderer Stelle (Wortfolge über Elementgrenzen verschoben) – TEXTVORSCHLAEGE (Abschluss-Baustein: Untertitel steht jetzt unter der Überschrift)"
+ },
+ {
+  "seite": "*",
+  "teil": "meta",
+  "alt": "Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!",
+  "vermerk": "E-020 Fusion: Beschreibung mit der Wahrheitskorrektur von main („fugenarme … Abdichtung DIN 18534“) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "5,0",
+  "vermerk": "E-020 Fusion: Google-Kennwert zeigt „5,0 von 5“ einmal statt „5,0“ und „5,0 von 5“ untereinander – TEXTVORSCHLAEGE"
+ }
+]

@@ -1,21 +1,15 @@
 'use client';
 
+// Terminkalender (E2-ORCH-09, Arbeitsansicht): Tage und Zeitfenster als Auswahlfelder an der Fuge, Formular mit
+// verknüpften Labels. Logik aus useTerminKalender (F-07, gemeinsam mit der Kern-Ansicht): Tage erst im Browser und je
+// Kalender festgehalten (V-02, P4-05d). Nutzlast, Texte und getestete Namen unverändert.
+import React from 'react';
 import Link from 'next/link';
-import {
-  Calendar,
-  Clock,
-  CheckCircle2,
-  AlertCircle,
-  Loader2,
-  ArrowLeft,
-  Sparkles,
-  ShieldCheck,
-  User,
-  Phone,
-  Mail,
-  MapPin,
-  Lock,
-} from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen, feldKlassen, labelKlassen, linkKlassen, pflichtKlassen, wahlKlassen } from '@/components/kern/stile';
+import { COMPANY_DATA } from '@/config/company';
 import { AVAILABLE_SLOTS, useTerminKalender } from '@/lib/formulare/useTerminKalender';
 
 export interface BookingCalendarProps {
@@ -54,26 +48,24 @@ export function BookingCalendar({
 
   if (isConfirmed) {
     return (
-      <div
-        className={`p-6 sm:p-10 rounded-2xl bg-white border border-orange-200 shadow-xl text-center relative overflow-hidden ${className}`}
-      >
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-amber-500 to-green-500" />
-        <div className="inline-flex p-3 rounded-full bg-green-500/10 text-green-600 mb-4 ring-8 ring-green-500/5">
-          <CheckCircle2 className="w-10 h-10" />
-        </div>
-        <h3 className="text-2xl font-black text-neutral-900 tracking-tight">Terminanfrage bestätigt!</h3>
-        <p className="mt-2 text-sm text-neutral-700 max-w-md mx-auto leading-relaxed">
-          Vielen Dank, <strong>{contactData.name}</strong>. Wir haben Ihren Wunschtermin für den{' '}
-          <strong>{formattedDate} um {selectedTime} Uhr</strong> eingetragen.
+      <div className={`border border-strich bg-fliese p-6 sm:p-8 lg:p-12 ${className}`} role="status">
+        <span className={etikettKlassen}>
+          <Icon name="haken" groesse={4} className="text-abnahme" />
+          <span>Kostenloses Vor-Ort-Aufmaß</span>
+        </span>
+        <h3 className="mt-6 text-fs-5 text-tinte">Terminanfrage bestätigt!</h3>
+        <p className="mt-3 max-w-mass text-fs-3 text-tinte-2">
+          Vielen Dank, <strong className="font-semibold text-tinte">{contactData.name}</strong>. Wir haben Ihren Wunschtermin für den{' '}
+          <strong className="font-semibold text-tinte">{formattedDate} um {selectedTime} Uhr</strong> eingetragen.
         </p>
-        <div className="mt-4 p-4 rounded-xl bg-orange-50/70 border border-orange-200/80 max-w-sm mx-auto text-xs text-neutral-700 space-y-1 text-left">
-          <div className="font-bold text-orange-900">Termindetails:</div>
-          <div>&bull; Leistung: {initialServiceType}</div>
+        <div className="mt-6 border-t border-fuge pt-6 font-mono text-fs-2 text-tinte">
+          <div className="font-text font-semibold">Termindetails:</div>
+          <div className="mt-2">&bull; Leistung: {initialServiceType}</div>
           <div>&bull; Datum &amp; Zeit: {formattedDate}, ca. {selectedTime} Uhr</div>
           {contactData.zipCity && <div>&bull; Ort: {contactData.zipCity}</div>}
-          {referenceId && <div>&bull; Vorgangsnummer: <span className="font-mono font-bold text-orange-950">{referenceId}</span></div>}
+          {referenceId && <div>&bull; Vorgangsnummer: <span className="border border-fuge bg-kalk px-2 py-1">{referenceId}</span></div>}
         </div>
-        <p className="mt-4 text-xs text-neutral-500">
+        <p className="mt-6 text-fs-2 text-tinte-2">
           Inhaber Deniz Tezgel setzt sich vorab kurz telefonisch mit Ihnen in Verbindung, um eventuelle Besonderheiten abzustimmen.
         </p>
       </div>
@@ -81,61 +73,58 @@ export function BookingCalendar({
   }
 
   return (
-    <div
-      className={`p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200 shadow-xl relative overflow-hidden ${className}`}
-    >
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-orange-500 via-amber-500 to-red-500" />
-
-      {/* Header */}
-      <div className="flex flex-wrap items-center justify-between pb-5 border-b border-neutral-100 gap-3 mb-6">
+    <div className={`border border-strich bg-fliese p-6 sm:p-8 lg:p-12 ${className}`}>
+      {/* Kopf */}
+      <div className="mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-fuge pb-6">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+          <span className={etikettKlassen}>
+            <Fugenkreuz className="size-3 text-strich" />
             <span>Kostenloses Vor-Ort-Aufmaß</span>
-          </div>
-          <h3 className="text-lg sm:text-xl font-black text-neutral-900 tracking-tight mt-0.5">
+          </span>
+          <h3 className="mt-3 text-fs-5 text-tinte">
             {initialServiceType}
           </h3>
-          <p className="text-xs text-neutral-500 mt-0.5">
+          <p className="mt-2 text-fs-2 text-tinte-2">
             Persönliche Beratung &amp; Messung vor Ort durch Inhaber Deniz Tezgel
           </p>
         </div>
 
         {step === 2 && (
-          <button
-            type="button"
-            onClick={() => setStep(1)}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-600 hover:text-orange-800 transition-colors cursor-pointer"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Anderen Tag/Slot wählen</span>
-          </button>
+          <Knopf variante="text" onClick={() => setStep(1)} iconLinks="pfeil-links">
+            Anderen Tag/Slot wählen
+          </Knopf>
         )}
       </div>
 
       {step === 1 ? (
-        /* STEP 1: DATE & TIME SELECTION */
+        /* SCHRITT 1: Tag und Zeitfenster */
         <div>
-          <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-neutral-600">
-            <Calendar className="w-4 h-4 text-orange-600" />
+          <p className="mb-4 flex items-center gap-2 font-mono text-fs-1 text-tinte">
+            <Icon name="kalender" groesse={4} />
             <span>Schritt 1: Verfügbaren Tag &amp; Uhrzeit wählen</span>
-          </div>
+          </p>
 
-          <div className="space-y-4 max-h-[420px] overflow-y-auto pr-1">
+          <div className="hoehe-terminliste overflow-y-auto border-t border-fuge" tabIndex={0} role="region" aria-label="Verfügbare Termine">
+            {availableDays.length === 0 && (
+              <p className="py-6 text-fs-2 text-tinte-2">
+                Die freien Termine erscheinen, sobald die Seite vollständig geladen ist. Telefonisch erreichen Sie uns unter{' '}
+                <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={linkKlassen}>{COMPANY_DATA.contact.phone}</a>.
+              </p>
+            )}
             {availableDays.map((day) => (
-              <div key={day.dateStr} className="p-3.5 rounded-xl bg-neutral-50 border border-neutral-200/80">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-bold text-neutral-900">
+              <div key={day.dateStr} role="group" aria-label={`${day.weekday}, ${day.displayDate}`} className="border-b border-fuge py-4">
+                <div className="mb-3 flex items-center justify-between gap-2">
+                  <span className="font-mono text-fs-2 text-tinte">
                     {day.weekday}, {day.displayDate}
                   </span>
                   {day.isSaturday && (
-                    <span className="text-[10px] font-semibold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md">
+                    <span className={etikettKlassen}>
                       Samstag (Aufmaßtermin)
                     </span>
                   )}
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-5">
                   {AVAILABLE_SLOTS.map((slot) => {
                     const isTaken = bookedSlots.includes(`${day.dateStr}_${slot.time}`);
                     return (
@@ -144,11 +133,8 @@ export function BookingCalendar({
                         type="button"
                         disabled={isTaken}
                         onClick={() => handleSelectSlot(day.dateStr, slot.time)}
-                        className={`px-2.5 py-2 rounded-lg text-xs font-bold text-center border transition-all cursor-pointer ${
-                          isTaken
-                            ? 'bg-neutral-200 border-neutral-300 text-neutral-400 cursor-not-allowed'
-                            : 'bg-white hover:bg-orange-50 border-neutral-200 hover:border-orange-500 text-neutral-800 hover:text-orange-700 shadow-xs'
-                        }`}
+                        className={`${wahlKlassen} disabled:border-fuge disabled:bg-kalk disabled:text-tinte-2`}
+                        data-motion="zustand"
                       >
                         {slot.time} Uhr
                       </button>
@@ -160,18 +146,18 @@ export function BookingCalendar({
           </div>
         </div>
       ) : (
-        /* STEP 2: CONTACT DETAILS */
+        /* SCHRITT 2: Kontaktdaten */
         <div>
-          <div className="flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-wider text-neutral-600">
-            <Clock className="w-4 h-4 text-orange-600" />
+          <p className="mb-6 flex items-center gap-2 font-mono text-fs-1 text-tinte">
+            <Icon name="uhr" groesse={4} />
             <span>
               Schritt 2: Kontaktdaten für {selectedDate.split('-').reverse().join('.')} um {selectedTime} Uhr
             </span>
-          </div>
+          </p>
 
-          <form onSubmit={handleConfirmBooking} className="space-y-4">
+          <form onSubmit={handleConfirmBooking} className="flex flex-col gap-6">
             {/* Honeypot */}
-            <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+            <div className="hidden" aria-hidden="true">
               <input
                 type="text"
                 tabIndex={-1}
@@ -181,102 +167,99 @@ export function BookingCalendar({
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
               <div>
-                <label className="block text-xs font-bold text-neutral-700 mb-1">
-                  Ihr Name <span className="text-orange-600">*</span>
+                <label htmlFor="booking-name" className={labelKlassen}>
+                  Ihr Name <span className={pflichtKlassen}>*</span>
                 </label>
-                <div className="relative">
-                  <User className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
-                  <input
-                    type="text"
-                    required
-                    placeholder="Vor- und Nachname"
-                    value={contactData.name}
-                    onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
-                    className="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
-                  />
-                </div>
+                <input
+                  id="booking-name"
+                  type="text"
+                  required
+                  autoComplete="name"
+                  placeholder="Vor- und Nachname"
+                  value={contactData.name}
+                  onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
+                  className={feldKlassen}
+                />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-neutral-700 mb-1">
-                  Telefonnummer <span className="text-orange-600">*</span>
+                <label htmlFor="booking-phone" className={labelKlassen}>
+                  Telefonnummer <span className={pflichtKlassen}>*</span>
                 </label>
-                <div className="relative">
-                  <Phone className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
-                  <input
-                    type="tel"
-                    required
-                    placeholder="0172 / 1234567"
-                    value={contactData.phone}
-                    onChange={(e) => setContactData({ ...contactData, phone: e.target.value })}
-                    className="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
-                  />
-                </div>
+                <input
+                  id="booking-phone"
+                  type="tel"
+                  required
+                  autoComplete="tel"
+                  placeholder="0172 / 1234567"
+                  value={contactData.phone}
+                  onChange={(e) => setContactData({ ...contactData, phone: e.target.value })}
+                  className={feldKlassen}
+                />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
               <div>
-                <label className="block text-xs font-bold text-neutral-700 mb-1">
-                  E-Mail Adresse <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+                <label htmlFor="booking-email" className={labelKlassen}>
+                  E-Mail Adresse <span className="font-normal text-tinte-2">(optional)</span>
                 </label>
-                <div className="relative">
-                  <Mail className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
-                  <input
-                    type="email"
-                    placeholder="ihre-adresse@beispiel.de"
-                    value={contactData.email}
-                    onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
-                    className="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
-                  />
-                </div>
+                <input
+                  id="booking-email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="ihre-adresse@beispiel.de"
+                  value={contactData.email}
+                  onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                  className={feldKlassen}
+                />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-neutral-700 mb-1">
-                  Einsatzort / PLZ <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+                <label htmlFor="booking-zip" className={labelKlassen}>
+                  Einsatzort / PLZ <span className="font-normal text-tinte-2">(optional)</span>
                 </label>
-                <div className="relative">
-                  <MapPin className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
-                  <input
-                    type="text"
-                    placeholder="z. B. 35578 Wetzlar"
-                    value={contactData.zipCity}
-                    onChange={(e) => setContactData({ ...contactData, zipCity: e.target.value })}
-                    className="w-full pl-9 pr-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400"
-                  />
-                </div>
+                <input
+                  id="booking-zip"
+                  type="text"
+                  autoComplete="address-level2"
+                  placeholder="z. B. 35578 Wetzlar"
+                  value={contactData.zipCity}
+                  onChange={(e) => setContactData({ ...contactData, zipCity: e.target.value })}
+                  className={feldKlassen}
+                />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-neutral-700 mb-1">
-                Projekt-Kurzbeschreibung <span className="text-xs text-neutral-400 font-normal">(optional)</span>
+              <label htmlFor="booking-notes" className={labelKlassen}>
+                Projekt-Kurzbeschreibung <span className="font-normal text-tinte-2">(optional)</span>
               </label>
               <textarea
+                id="booking-notes"
                 rows={2}
                 placeholder="z. B. Bad ca. 10 qm, Altbausanierung, ebenerdige Dusche gewünscht..."
                 value={contactData.notes}
                 onChange={(e) => setContactData({ ...contactData, notes: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all placeholder:text-neutral-400 resize-none"
+                className={`${feldKlassen} resize-none`}
               />
             </div>
 
-            {/* Privacy Checkbox */}
-            <div className="flex items-start gap-2.5 pt-1">
+            {/* Datenschutz */}
+            <div className="flex items-start gap-3">
               <input
                 id="booking-consent"
                 type="checkbox"
                 required
                 checked={contactData.privacyConsent}
                 onChange={(e) => setContactData({ ...contactData, privacyConsent: e.target.checked })}
-                className="mt-0.5 w-4 h-4 rounded border-neutral-300 text-orange-600 focus:ring-orange-500 cursor-pointer accent-orange-600"
+                className="mt-1 size-5 shrink-0 cursor-pointer rounded-r1 border border-strich accent-tinte"
               />
-              <label htmlFor="booking-consent" className="text-xs text-neutral-600 leading-tight cursor-pointer">
+              <label htmlFor="booking-consent" className="cursor-pointer text-fs-2 text-tinte-2">
                 Ich stimme der Kontaktaufnahme zur Terminabstimmung gemäß{' '}
-                <Link href="/datenschutz" className="text-orange-700 underline hover:text-orange-900 font-medium">
+                <Link href="/datenschutz" className={linkKlassen}>
                   Datenschutzerklärung
                 </Link>{' '}
                 zu.
@@ -284,38 +267,24 @@ export function BookingCalendar({
             </div>
 
             {errorMessage && (
-              <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-medium text-red-700">
-                <AlertCircle className="w-4 h-4 shrink-0" />
+              <p className="flex items-start gap-2 border-l-2 border-laser bg-kalk p-3 text-fs-2 text-laser-tief" role="alert">
+                <Icon name="fehler" groesse={4} className="mt-1 shrink-0" />
                 <span>{errorMessage}</span>
-              </div>
+              </p>
             )}
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-bold text-sm shadow-md shadow-orange-500/25 hover:shadow-lg hover:shadow-orange-500/35 transition-all disabled:opacity-50 cursor-pointer"
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Termin wird reserviert...</span>
-                </>
-              ) : (
-                <>
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Verbindlichen Vor-Ort-Termin anfragen</span>
-                </>
-              )}
-            </button>
+            <Knopf type="submit" laedt={loading} ladeText="Termin wird reserviert..." iconLinks="haken" className="w-full">
+              Verbindlichen Vor-Ort-Termin anfragen
+            </Knopf>
 
-            <div className="flex items-center justify-center gap-4 pt-1 text-[11px] text-neutral-500">
-              <span className="flex items-center gap-1">
-                <Lock className="w-3 h-3 text-neutral-400" />
+            <div className="flex flex-wrap items-center justify-center gap-4 font-mono text-fs-1 text-tinte-2">
+              <span className="flex items-center gap-2">
+                <Icon name="schloss" groesse={4} />
                 100% kostenfrei &amp; unverbindlich
               </span>
               <span>&middot;</span>
-              <span className="flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-neutral-400" />
+              <span className="flex items-center gap-2">
+                <Fugenkreuz className="size-3 text-tinte" />
                 Aufmaß &amp; Festpreisberatung
               </span>
             </div>

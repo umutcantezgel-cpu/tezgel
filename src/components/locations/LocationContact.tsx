@@ -1,10 +1,14 @@
 "use client";
 
-import React from "react";
-import { Phone, MessageCircle, MapPin, Clock, Ruler, ShieldCheck } from "lucide-react";
+// Regionaler Kontakt (E2-ORCH-09-N3, Muster /kontakt): Schriftfeld an der Fuge – links Etikett, Frage und Zusage,
+// rechts Rufnummer (Hauptknopf) und WhatsApp (Nebenknopf), darunter die drei Zusagen als Zeilen an der Fuge.
+// Texte, Ziele und Haptik-Rückmeldung unverändert; Verlauf, Punktraster, Pill-Badge und Herzschlag entfallen.
+import React, { useId } from "react";
+import clsx from "clsx";
+import Icon from "@/components/icons/Icon";
+import { etikettKlassen, knopfKlassen, seitenKlassen } from "@/components/kern/stile";
 import { siteConfig } from "@/lib/config";
 import { triggerHaptic } from "@/lib/haptics";
-import HeartbeatCTA from "@/components/animations/HeartbeatCTA";
 
 interface LocationContactProps {
   cityName?: string;
@@ -15,68 +19,66 @@ export default function LocationContact({
   cityName = "Aßlar & Wetzlar",
   className = "",
 }: LocationContactProps) {
+  const titelId = useId();
   return (
-    <section className={`py-12 sm:py-16 bg-white border-y border-neutral-200/80 ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-        <div className="bg-gradient-to-br from-neutral-900 via-neutral-850 to-neutral-950 rounded-3xl p-6 sm:p-10 md:p-12 text-white shadow-xl border border-neutral-800 relative overflow-hidden text-center">
-          <div
-            className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"
-            aria-hidden="true"
-          />
-
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-600/30 border border-orange-500/30 text-orange-400 text-xs font-bold mb-4">
-              <MapPin className="w-3.5 h-3.5" />
+    <section aria-labelledby={titelId} className={clsx("py-12 lg:py-16", className)}>
+      <div className={seitenKlassen}>
+        <div className="grid grid-cols-1 gap-8 border border-fuge bg-fliese p-6 sm:p-8 md:grid-cols-2 lg:gap-12 lg:p-12">
+          <div>
+            <span className={etikettKlassen}>
+              <Icon name="ort" groesse={4} />
               <span>Ihr regionaler Ansprechpartner für {cityName}</span>
-            </div>
+            </span>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-4">
+            <h2 id={titelId} className="mt-4 text-fs-5 text-tinte">
               Fliesenleger oder Badsanierung in {cityName} gesucht?
             </h2>
 
-            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed mb-8">
+            <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">
               Fachbetriebsleiter Deniz Tezgel berät Sie in {cityName} persönlich und unverbindlich. Vereinbaren Sie
               direkt Ihr kostenfreies Aufmaß vor Ort.
             </p>
+          </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
-              <HeartbeatCTA className="w-full sm:w-auto">
-                <a
-                  href={siteConfig.contact.phone.link}
-                  onClick={() => triggerHaptic("medium")}
-                  className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-base shadow-lg shadow-orange-950/40 transition-all cursor-pointer"
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>{siteConfig.contact.phone.formatted}</span>
-                </a>
-              </HeartbeatCTA>
+          <div className="flex flex-col justify-between gap-8">
+            <div className="flex flex-col gap-3 sm:flex-row md:flex-col xl:flex-row">
+              <a
+                href={siteConfig.contact.phone.link}
+                onClick={() => triggerHaptic("medium")}
+                className={knopfKlassen("haupt", "font-mono")}
+                data-motion="druck"
+              >
+                <Icon name="telefon" groesse={5} />
+                <span>{siteConfig.contact.phone.formatted}</span>
+              </a>
 
               <a
                 href={siteConfig.contact.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => triggerHaptic("light")}
-                className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-md transition-all"
+                className={knopfKlassen("neben")}
+                data-motion="druck"
               >
-                <MessageCircle className="w-5 h-5" />
+                <Icon name="sprechblase" groesse={5} />
                 <span>WhatsApp Chat</span>
               </a>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-neutral-800 text-xs text-neutral-400">
-              <div className="flex items-center justify-center gap-1.5">
-                <Clock className="w-4 h-4 text-orange-400 shrink-0" />
+            <ul className="border-t border-fuge font-text text-fs-2 text-tinte">
+              <li className="flex items-center gap-3 border-b border-fuge py-3">
+                <Icon name="uhr" groesse={4} className="text-tinte-2" />
                 <span>{siteConfig.openingHours.store}</span>
-              </div>
-              <div className="flex items-center justify-center gap-1.5">
-                <Ruler className="w-4 h-4 text-orange-400 shrink-0" />
+              </li>
+              <li className="flex items-center gap-3 border-b border-fuge py-3">
+                <Icon name="aufmass" groesse={4} className="text-tinte-2" />
                 <span>Vor-Ort-Aufmaß kostenfrei</span>
-              </div>
-              <div className="flex items-center justify-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              </li>
+              <li className="flex items-center gap-3 border-b border-fuge py-3">
+                <Icon name="haken" groesse={4} className="text-abnahme" />
                 <span>Verbindlicher Festpreis</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

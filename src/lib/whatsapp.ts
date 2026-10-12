@@ -95,3 +95,41 @@ export function openWhatsApp(options: WhatsAppOpenOptions = {}): void {
     }
   }
 }
+
+/**
+ * Seitenbezogene Begrüßung für WhatsApp (aus FloatingWhatsAppWidget verschoben, E-015): genutzt vom
+ * Desktop-Knopf `#whatsapp-floating-btn` und vom WhatsApp-Feld der unteren Leiste (mobil). Wortlaut unverändert.
+ */
+export function kontextNachricht(pathname: string): string {
+  if (pathname.includes("/bad")) {
+    return "Hallo Herr Tezgel, ich interessiere mich für eine Badsanierung bzw. barrierefreie Walk-In-Dusche.";
+  }
+  if (pathname.includes("/balkon-terrasse")) {
+    return "Hallo Herr Tezgel, ich interessiere mich für eine Balkon- oder Terrassensanierung auf Stelzlagern.";
+  }
+  if (pathname.includes("/fliesenreparatur")) {
+    return "Hallo Herr Tezgel, ich benötige fachmännische Hilfe bei einer Fliesenreparatur oder Schadensbehebung.";
+  }
+  if (pathname.includes("/fliesen")) {
+    return "Hallo Herr Tezgel, ich habe eine Frage zu Großformatfliesen und Verlegearbeiten.";
+  }
+  if (pathname.includes("/naturstein")) {
+    return "Hallo Herr Tezgel, ich interessiere mich für Naturstein- und Granitverlegung.";
+  }
+  if (pathname.includes("/treppen")) {
+    return "Hallo Herr Tezgel, ich möchte eine Treppe mit Fliesen oder Naturstein belegen lassen.";
+  }
+  if (pathname.includes("/untergrund-abdichtung")) {
+    return "Hallo Herr Tezgel, ich habe eine Frage zur Untergrundvorbereitung und DIN 18534 Verbundabdichtung.";
+  }
+  if (pathname.includes("/schadensanalyse") || pathname.includes("/termin")) {
+    return "Hallo Herr Tezgel, ich möchte ein unverbindliches Vor-Ort-Aufmaß bzw. eine Schadensanalyse anfragen.";
+  }
+  if (pathname.includes("/kontakt")) {
+    return "Hallo Herr Tezgel, ich möchte ein Projekt anfragen bzw. einen Beratungstermin vereinbaren.";
+  }
+  if (pathname.includes("/standorte") || pathname.includes("/ausstellung")) {
+    return "Hallo Herr Tezgel, ich komme aus der Region und interessiere mich für Ihre Fliesenarbeiten.";
+  }
+  return "Hallo Herr Tezgel, ich hätte eine Frage zu Ihren Fliesen- und Sanierungsleistungen.";
+}

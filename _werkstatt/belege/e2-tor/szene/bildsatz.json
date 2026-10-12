@@ -1,0 +1,199 @@
+{
+ "satz": "e3-szene",
+ "base": "http://127.0.0.1:4320",
+ "ziel": "/tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B3/szene",
+ "protokoll": {
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "dpr": 1,
+  "ansichten": [
+   "m390",
+   "t768",
+   "d1440"
+  ],
+  "max_ausschnitte": 12,
+  "qualitaet": 70
+ },
+ "seiten": [
+  "/werkstatt-schaufenster/szene"
+ ],
+ "zusammenfassung": {
+  "aufnahmen": 19,
+  "fehler": 0,
+  "nicht200": 0,
+  "ueberlauf": {
+   "ansichten": 0,
+   "befunde": 0
+  },
+  "ueberlappung": {
+   "ansichten": 0,
+   "befunde": 0,
+   "nachArt": {}
+  },
+  "konsole": {
+   "ansichten": 0,
+   "meldungen": 0
+  }
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "d1440",
+   "seite": "/werkstatt-schaufenster/szene",
+   "status": 200,
+   "hoehe": 3312,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "d1440/werkstatt-schaufenster__szene/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 900,
+     "y_wirksam": 900,
+     "datei": "d1440/werkstatt-schaufenster__szene/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1800,
+     "y_wirksam": 1800,
+     "datei": "d1440/werkstatt-schaufenster__szene/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2700,
+     "y_wirksam": 2412,
+     "datei": "d1440/werkstatt-schaufenster__szene/03.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "m390",
+   "seite": "/werkstatt-schaufenster/szene",
+   "status": 200,
+   "hoehe": 7295,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "m390/werkstatt-schaufenster__szene/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 844,
+     "y_wirksam": 844,
+     "datei": "m390/werkstatt-schaufenster__szene/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 1688,
+     "y_wirksam": 1688,
+     "datei": "m390/werkstatt-schaufenster__szene/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 2532,
+     "y_wirksam": 2532,
+     "datei": "m390/werkstatt-schaufenster__szene/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 3376,
+     "y_wirksam": 3376,
+     "datei": "m390/werkstatt-schaufenster__szene/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 4220,
+     "y_wirksam": 4220,
+     "datei": "m390/werkstatt-schaufenster__szene/05.jpg"
+    },
+    {
+     "nr": 6,
+     "y": 5064,
+     "y_wirksam": 5064,
+     "datei": "m390/werkstatt-schaufenster__szene/06.jpg"
+    },
+    {
+     "nr": 7,
+     "y": 5908,
+     "y_wirksam": 5908,
+     "datei": "m390/werkstatt-schaufenster__szene/07.jpg"
+    },
+    {
+     "nr": 8,
+     "y": 6752,
+     "y_wirksam": 6451,
+     "datei": "m390/werkstatt-schaufenster__szene/08.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  },
+  {
+   "ansicht": "t768",
+   "seite": "/werkstatt-schaufenster/szene",
+   "status": 200,
+   "hoehe": 5706,
+   "aufnahmen": [
+    {
+     "nr": 0,
+     "y": 0,
+     "y_wirksam": 0,
+     "datei": "t768/werkstatt-schaufenster__szene/00.jpg"
+    },
+    {
+     "nr": 1,
+     "y": 1024,
+     "y_wirksam": 1024,
+     "datei": "t768/werkstatt-schaufenster__szene/01.jpg"
+    },
+    {
+     "nr": 2,
+     "y": 2048,
+     "y_wirksam": 2048,
+     "datei": "t768/werkstatt-schaufenster__szene/02.jpg"
+    },
+    {
+     "nr": 3,
+     "y": 3072,
+     "y_wirksam": 3072,
+     "datei": "t768/werkstatt-schaufenster__szene/03.jpg"
+    },
+    {
+     "nr": 4,
+     "y": 4096,
+     "y_wirksam": 4096,
+     "datei": "t768/werkstatt-schaufenster__szene/04.jpg"
+    },
+    {
+     "nr": 5,
+     "y": 5120,
+     "y_wirksam": 4682,
+     "datei": "t768/werkstatt-schaufenster__szene/05.jpg"
+    }
+   ],
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0
+  }
+ ]
+}

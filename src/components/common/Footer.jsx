@@ -1,20 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-    Phone,
-    Mail,
-    MapPin,
-    Clock,
-    ShieldCheck,
-    ArrowRight,
-    Award,
-    Printer,
-    Sparkles,
-    MessageCircle,
-    Landmark,
-    Receipt
-} from 'lucide-react';
+import clsx from 'clsx';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { knopfKlassen, seitenKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 import {
     footerBathLinks,
@@ -32,144 +22,140 @@ const LINK_COLUMNS = [
 ];
 
 const GUARANTEES = [
-    { icon: Award, title: 'HWK Fachbetrieb', text: COMPANY_DATA.authority.shortName },
-    { icon: ShieldCheck, title: 'DIN 18534', text: 'Verbundabdichtung' },
-    { icon: Sparkles, title: 'Staubschutz-Garantie', text: 'bei bewohnten Sanierungen' },
-    { icon: Receipt, title: 'Festpreisgarantie', text: 'transparent kalkuliert' }
+    { title: 'HWK Fachbetrieb', text: COMPANY_DATA.authority.shortName },
+    { title: 'DIN 18534', text: 'Verbundabdichtung' },
+    { title: 'Staubschutz-Garantie', text: 'bei bewohnten Sanierungen' },
+    { title: 'Festpreisgarantie', text: 'transparent kalkuliert' }
 ];
 
+const etikett = 'font-mono text-fs-1 text-nacht-2';
+const fussLink = 'text-kalk underline decoration-nacht-fuge underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk';
+
+// Fuß (KERN K-009): Tinte-Fläche; oben die Zusagen an der Fuge, links das Schriftfeld des Betriebs
+// (wie das Stempelfeld eines Verlegeplans), rechts der Seitenindex. Inhalte wie im Bestand.
 export default function Footer() {
     const currentYear = new Date().getFullYear();
-    const { headquarters, contact, hours, authority, tax, owner, motto } = COMPANY_DATA;
+    const { headquarters, contact, hours, authority, tax, owner, motto, business } = COMPANY_DATA;
 
     return (
-        <footer className="bg-neutral-900 text-neutral-300 border-t border-neutral-800 relative overflow-hidden">
-            {/* Guarantee plinth */}
-            <div className="border-b border-neutral-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
-                    <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
-                        {GUARANTEES.map(({ icon: Icon, title, text }) => (
-                            <li key={title} className="flex items-center gap-3">
-                                <span className="w-10 h-10 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-center shrink-0">
-                                    <Icon className="w-5 h-5 text-orange-400" />
-                                </span>
-                                <span className="text-xs leading-snug">
-                                    <span className="block font-black text-white">{title}</span>
-                                    <span className="text-neutral-300">{text}</span>
+        <footer className="flaeche-tinte border-t border-nacht-fuge bg-tinte text-kalk">
+            <div className="border-b border-nacht-fuge">
+                <div className={clsx(seitenKlassen, 'flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between')}>
+                    <ul className="grid grid-cols-2 gap-px bg-nacht-fuge md:grid-cols-4 lg:flex-1">
+                        {GUARANTEES.map(({ title, text }) => (
+                            <li key={title} className="flex items-start gap-3 bg-tinte py-4 pr-4 md:px-4 md:first:pl-0">
+                                <Fugenkreuz className="mt-1 size-4 shrink-0 text-nacht-2" />
+                                <span className="text-fs-2">
+                                    <span className="block font-semibold text-kalk">{title}</span>
+                                    <span className="text-nacht-2">{text}</span>
                                 </span>
                             </li>
                         ))}
                     </ul>
-                    <Link href="/kontakt" className="btn-primary shrink-0 self-start lg:self-auto">
+                    <Link href="/kontakt" className={knopfKlassen('hell', 'shrink-0 self-start lg:self-auto')} data-motion="druck">
                         Kostenfreies Vor-Ort-Aufmaß
-                        <ArrowRight className="w-4 h-4" />
+                        <Icon name="pfeil-rechts" groesse={4} />
                     </Link>
                 </div>
             </div>
 
-            {/* Link catalogue & master data */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
-                    {/* Master data */}
-                    <div className="lg:col-span-4 space-y-5">
-                        <Link href="/" className="inline-block group" aria-label={`Fliesenverlegung Tezgel – Inh. ${owner.fullName} · Fachbetrieb Aßlar / Wetzlar – Startseite`}>
-                            <Image
-                                src="/images/logo/tezgel-logo-dark.webp"
-                                alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
-                                width={220}
-                                height={68}
-                                className="h-12 sm:h-14 w-auto object-contain shrink-0 group-hover:scale-[1.02] transition-transform duration-200"
-                            />
-                            <span className="block mt-2.5 text-[11px] font-semibold tracking-wide text-neutral-400">
-                                Inh. {owner.fullName} &middot; Fachbetrieb Aßlar / Wetzlar
+            <div className={clsx(seitenKlassen, 'grid grid-cols-1 gap-12 py-16 lg:grid-cols-12 lg:gap-8')}>
+                <div className="flex flex-col gap-6 lg:col-span-5">
+                    <Link href="/" className="inline-block self-start" aria-label={`Fliesenverlegung Tezgel – Inh. ${owner.fullName} · Fachbetrieb Aßlar / Wetzlar – Startseite`}>
+                        <Image
+                            src="/images/logo/tezgel-logo-dark.webp"
+                            alt="Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar"
+                            width={220}
+                            height={68}
+                            className="h-12 w-auto shrink-0 object-contain sm:h-16"
+                        />
+                        <span className={clsx(etikett, 'mt-3 block')}>
+                            Inh. {owner.fullName} &middot; Fachbetrieb Aßlar / Wetzlar
+                        </span>
+                    </Link>
+
+                    <blockquote className="border-l-2 border-laser pl-4 text-fs-3 text-kalk">
+                        &bdquo;{motto}&ldquo;
+                    </blockquote>
+
+                    {/* Schriftfeld: Stammdaten in Feldern an der Fuge */}
+                    <address className="grid grid-cols-1 gap-px border border-nacht-fuge bg-nacht-fuge not-italic sm:grid-cols-2">
+                        <div className="bg-tinte p-4 sm:col-span-2">
+                            <span className={etikett}>Anschrift</span>
+                            <span className="mt-1 block text-fs-2">{headquarters.street}, {headquarters.postalCode} {headquarters.city}</span>
+                        </div>
+                        <div className="bg-tinte p-4">
+                            <span className={etikett}>Telefon</span>
+                            <a
+                                href={`tel:${contact.phoneLink}`}
+                                className={clsx(fussLink, 'mt-1 block font-mono text-fs-2')}
+                                aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${contact.phone}`}
+                            >
+                                {contact.phone}
+                            </a>
+                        </div>
+                        <div className="bg-tinte p-4">
+                            <span className={etikett}>Mobil &amp; WhatsApp</span>
+                            <a
+                                href={contact.whatsappLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={clsx(fussLink, 'mt-1 block font-mono text-fs-2')}
+                                aria-label={`Mobil & WhatsApp: ${contact.mobile} – Chat mit Deniz Tezgel starten`}
+                            >
+                                {contact.mobile}
+                            </a>
+                        </div>
+                        <div className="bg-tinte p-4">
+                            <span className={etikett}>Fax</span>
+                            <span className="mt-1 block font-mono text-fs-2">{contact.fax}</span>
+                        </div>
+                        <div className="bg-tinte p-4">
+                            <span className={etikett}>E-Mail</span>
+                            <a
+                                href={`mailto:${contact.email}`}
+                                className={clsx(fussLink, 'mt-1 block text-fs-2')}
+                                aria-label={`E-Mail an Fliesenverlegung Tezgel senden: ${contact.email}`}
+                            >
+                                {contact.email}
+                            </a>
+                        </div>
+                        <div className="bg-tinte p-4 sm:col-span-2">
+                            <span className={etikett}>Zeiten</span>
+                            <span className="mt-1 block text-fs-2">
+                                {hours.formattedWeekdays}
+                                <br />
+                                {hours.formattedSaturday}
                             </span>
-                        </Link>
+                        </div>
+                    </address>
 
-                        <blockquote className="rounded-xl bg-neutral-800/60 border border-neutral-700 px-4 py-3 text-sm italic text-neutral-200">
-                            &bdquo;{motto}&ldquo;
-                        </blockquote>
+                    <dl className="grid grid-cols-2 gap-px border border-nacht-fuge bg-nacht-fuge">
+                        <div className="col-span-2 bg-tinte p-4">
+                            <dt className={etikett}>Kammer</dt>
+                            <dd className="mt-1 text-fs-2">{authority.name}</dd>
+                        </div>
+                        <div className="bg-tinte p-4">
+                            <dt className={etikett}>Betrieb seit</dt>
+                            <dd className="mt-1 font-mono text-fs-2">{business.establishmentYear}</dd>
+                        </div>
+                        <div className="bg-tinte p-4">
+                            <dt className={etikett}>USt-IdNr.</dt>
+                            <dd className="mt-1 font-mono text-fs-2">{tax.ustId}</dd>
+                        </div>
+                    </dl>
+                </div>
 
-                        <address className="not-italic space-y-2.5 text-sm">
-                            <p className="flex items-start gap-2.5">
-                                <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                                <span>{headquarters.street}, {headquarters.postalCode} {headquarters.city}</span>
-                            </p>
-                            <p className="flex items-center gap-2.5">
-                                <Phone className="w-4 h-4 text-orange-400 shrink-0" />
-                                <a
-                                    href={`tel:${contact.phoneLink}`}
-                                    className="hover:text-white underline-offset-4 hover:underline"
-                                    aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${contact.phone}`}
-                                >
-                                    {contact.phone}
-                                </a>
-                            </p>
-                            <p className="flex items-center gap-2.5">
-                                <MessageCircle className="w-4 h-4 text-green-400 shrink-0" />
-                                <a
-                                    href={contact.whatsappLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-white underline-offset-4 hover:underline"
-                                    aria-label={`Mobil & WhatsApp: ${contact.mobile} – Chat mit Deniz Tezgel starten`}
-                                >
-                                    Mobil &amp; WhatsApp: {contact.mobile}
-                                </a>
-                            </p>
-                            <p className="flex items-center gap-2.5">
-                                <Printer className="w-4 h-4 text-orange-400 shrink-0" />
-                                <span>Fax: {contact.fax}</span>
-                            </p>
-                            <p className="flex items-center gap-2.5">
-                                <Mail className="w-4 h-4 text-orange-400 shrink-0" />
-                                <a
-                                    href={`mailto:${contact.email}`}
-                                    className="hover:text-white underline-offset-4 hover:underline"
-                                    aria-label={`E-Mail an Fliesenverlegung Tezgel senden: ${contact.email}`}
-                                >
-                                    {contact.email}
-                                </a>
-                            </p>
-                            <p className="flex items-start gap-2.5">
-                                <Clock className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
-                                <span>
-                                    {hours.formattedWeekdays}
-                                    <br />
-                                    {hours.formattedSaturday}
-                                </span>
-                            </p>
-                        </address>
-
-                        <dl className="grid grid-cols-2 gap-3 text-xs">
-                            <div className="rounded-xl bg-neutral-800/60 border border-neutral-700 p-3">
-                                <dt className="flex items-center gap-1.5 font-black text-white mb-0.5">
-                                    <Landmark className="w-3.5 h-3.5 text-orange-400" />
-                                    Kammer
-                                </dt>
-                                <dd>{authority.name}</dd>
-                            </div>
-                            <div className="rounded-xl bg-neutral-800/60 border border-neutral-700 p-3">
-                                <dt className="flex items-center gap-1.5 font-black text-white mb-0.5">
-                                    <Receipt className="w-3.5 h-3.5 text-orange-400" />
-                                    USt-IdNr.
-                                </dt>
-                                <dd>{tax.ustId}</dd>
-                            </div>
-                        </dl>
-                    </div>
-
-                    {/* Link columns */}
+                <div id="seitenindex" className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-4 lg:gap-6">
                     {LINK_COLUMNS.map((column) => (
-                        <nav key={column.title} aria-label={column.title} className="lg:col-span-2">
-                            <p className="font-display text-xs font-black uppercase tracking-widest text-white mb-4 pl-2.5 border-l-2 border-orange-500">
-                                {column.title}
-                            </p>
-                            <ul className="space-y-2 text-sm">
+                        <nav key={column.title} aria-label={column.title}>
+                            <p className={clsx(etikett, 'border-b border-nacht-fuge pb-2')}>{column.title}</p>
+                            <ul className="mt-3 flex flex-col gap-2 text-fs-2">
                                 {column.links.map((item) => (
                                     <li key={item.path + item.name}>
                                         <Link
                                             href={item.path}
-                                            className="inline-block py-0.5 text-neutral-300 hover:text-white hover:translate-x-0.5 transition-all duration-200"
+                                            className="inline-block py-1 text-kalk underline decoration-transparent underline-offset-4 transition-colors dauer-1 ease-setzen hover:decoration-kalk"
                                         >
                                             {item.name}
                                         </Link>
@@ -181,17 +167,16 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Bottom bar */}
-            <div className="bg-neutral-950 border-t border-neutral-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-28 md:pb-6 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-neutral-300">
-                    <p className="text-center lg:text-left">
+            <div className="border-t border-nacht-fuge">
+                <div className={clsx(seitenKlassen, 'flex flex-col items-start gap-4 pb-24 pt-6 font-mono text-fs-1 text-nacht-2 lg:pb-6 lg:flex-row lg:items-center lg:justify-between')}>
+                    <p>
                         &copy; {currentYear} {COMPANY_DATA.legalName} &middot; Inh. {owner.fullName} &middot; Alle Rechte vorbehalten.
                     </p>
                     <nav aria-label="Rechtliches">
-                        <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+                        <ul className="flex flex-wrap items-center gap-x-4 gap-y-2">
                             {footerLegalLinks.map((item) => (
                                 <li key={item.path}>
-                                    <Link href={item.path} className="inline-block py-1 hover:text-white underline-offset-4 hover:underline">
+                                    <Link href={item.path} className={clsx(fussLink, 'inline-block py-1')}>
                                         {item.name}
                                     </Link>
                                 </li>
@@ -205,7 +190,7 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener"
                             title="Coday – Webdesign-Agentur Wetzlar | Webseiten, SEO & Branding"
-                            className="inline-block py-1 font-bold text-white hover:text-orange-300 underline-offset-4 hover:underline"
+                            className={clsx(fussLink, 'inline-block py-1 font-semibold')}
                         >
                             Webdesign Wetzlar – Coday
                         </a>

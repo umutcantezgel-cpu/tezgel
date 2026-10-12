@@ -1,0 +1,32 @@
+{
+ "modus": "register",
+ "seite": "/werkstatt-schaufenster/szene",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/szene/register-m390/ergebnis.json",
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "szene-ablauf",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "ohne_register_anzahl": 1,
+ "ohne_register_erste": [
+  {
+   "art": "transition",
+   "sel": "a.inline-block.py-1",
+   "eigenschaften": [
+    "outline-color"
+   ],
+   "anzahl": 59
+  }
+ ],
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 30
+ }
+}

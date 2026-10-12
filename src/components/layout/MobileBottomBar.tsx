@@ -3,15 +3,23 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, MessageCircle, Ruler } from "lucide-react";
+import Icon from "@/components/icons/Icon";
+import WhatsAppLogo from "@/components/ui/WhatsAppLogo";
 import { siteConfig } from "@/lib/config";
-import { openWhatsApp } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, kontextNachricht, openWhatsApp } from "@/lib/whatsapp";
 import { triggerHaptic } from "@/lib/haptics";
+
+// Untere Leiste (KERN K-009): einzige feste Ebene neben dem Kopf, bis lg; drei Wege an der Fuge, die Anfrage als
+// Hauptaktion auf Tinte (Kalender für den Aufmaß-Termin, WhatsApp mit Markenzeichen – Fusion E-020). Das erste Feld
+// ist der Platz des Widerruf-Schilds der Einwilligung (#leiste-schild): die
+// Einwilligungs-Komponente hängt ihren Knopf dort ein, sobald sie geladen ist – so verdeckt kein schwebender Knopf Inhalt.
+const feld =
+  "flex min-h-12 flex-1 flex-col items-center justify-center gap-1 px-2 py-2 font-text text-fs-1 font-semibold transition-colors dauer-1 ease-setzen";
 
 export default function MobileBottomBar() {
   const pathname = usePathname() || "";
 
-  // Hide on dedicated interactive funnel pages to not block steps
+  // Auf den Abläufen selbst ausgeblendet, damit die Leiste keine Schritte verdeckt
   const isInteractiveFormPage =
     pathname.includes("/badanfrage") ||
     pathname.includes("/projekt-check") ||
@@ -25,41 +33,48 @@ export default function MobileBottomBar() {
   return (
     <aside
       aria-label="Schnellkontakt Daumenleiste"
-      className="fixed bottom-3 left-3 right-3 z-40 md:hidden pb-[env(safe-area-inset-bottom,0px)]"
+      className="unten-sicher fixed inset-x-0 bottom-0 z-30 border-t border-fuge bg-fuge lg:hidden"
+      data-feste-ebene
+      data-leiste
     >
-      <div className="p-1.5 flex items-center justify-between gap-1.5 max-w-md mx-auto rounded-2xl bg-white/98 backdrop-blur-md border border-neutral-200/90 shadow-[0_8px_30px_rgba(23,23,23,0.14)]">
+      <div className="flex gap-px">
+        <div id="leiste-schild" className="flex w-12 shrink-0 bg-kalk" />
         <a
           href={siteConfig.contact.phone.link}
           onClick={() => triggerHaptic("medium")}
-          className="flex-1 min-h-[46px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-orange-700 text-white text-xs font-bold hover:bg-orange-600 active:scale-95 transition-all shadow-xs"
+          className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
           aria-label={`Fliesenverlegung Tezgel anrufen: ${siteConfig.contact.phone.formatted}`}
+          data-motion="druck"
         >
-          <Phone className="w-4 h-4 shrink-0" />
+          <Icon name="telefon" groesse={5} />
           <span>Anrufen</span>
         </a>
 
         <a
-          href={siteConfig.contact.whatsappLink}
+          href={buildWhatsAppUrl(siteConfig.contact.whatsapp, kontextNachricht(pathname))}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => {
             e.preventDefault();
             triggerHaptic("light");
-            openWhatsApp({ phone: siteConfig.contact.whatsapp });
+            // seitenbezogene Nachricht wie beim Desktop-Knopf (E-015)
+            openWhatsApp({ phone: siteConfig.contact.whatsapp, text: kontextNachricht(pathname) });
           }}
-          className="flex-1 min-h-[46px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-600 active:scale-95 transition-all shadow-xs"
+          className={`${feld} bg-kalk text-tinte hover:bg-fliese`}
           aria-label="WhatsApp-Chat starten"
+          data-motion="druck"
         >
-          <MessageCircle className="w-4 h-4 shrink-0" />
+          <WhatsAppLogo className="size-5" />
           <span>WhatsApp</span>
         </a>
 
         <Link
           href="/kontakt#express-anfrage"
           onClick={() => triggerHaptic("light")}
-          className="flex-1 min-h-[46px] flex items-center justify-center gap-1.5 px-3 rounded-xl bg-neutral-900 text-white text-xs font-bold hover:bg-neutral-800 active:scale-95 transition-all shadow-xs"
+          className={`${feld} bg-tinte text-kalk hover:bg-tinte-2`}
+          data-motion="druck"
         >
-          <Ruler className="w-4 h-4 text-orange-400 shrink-0" />
+          <Icon name="kalender" groesse={5} />
           <span>Aufmaß</span>
         </Link>
       </div>

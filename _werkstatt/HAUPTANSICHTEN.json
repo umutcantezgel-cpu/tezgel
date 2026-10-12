@@ -1,0 +1,18 @@
+{
+  "festgelegt": "2026-10-10 (E0, danach unveränderlich)",
+  "geraete": { "m390": [390, 844], "t768": [768, 1024], "d1440": [1440, 900] },
+  "hauptansichten": [
+    { "pfad": "/", "art": "erzaehl", "rolle": "Referenzansicht" },
+    { "pfad": "/bad", "art": "erzaehl" },
+    { "pfad": "/leistungen", "art": "erzaehl" },
+    { "pfad": "/leistungen/bad", "art": "erzaehl" },
+    { "pfad": "/standorte", "art": "erzaehl" },
+    { "pfad": "/standorte/wetzlar", "art": "erzaehl" },
+    { "pfad": "/fliesen", "art": "erzaehl" },
+    { "pfad": "/ueber-uns", "art": "erzaehl" },
+    { "pfad": "/kontakt", "art": "arbeit", "rolle": "Referenz für Arbeitsansichten" },
+    { "pfad": "/fliesen/konfigurator", "art": "arbeit" },
+    { "pfad": "/blog", "art": "arbeit" },
+    { "pfad": "/blog/rutschfeste-fliesen-r-klassen", "art": "arbeit" }
+  ]
+}

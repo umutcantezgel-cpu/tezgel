@@ -1,0 +1,381 @@
+/* ==========================================================================
+   BEWEGUNGSREGISTER (KERN K-007) – CSS-Fassung.
+   Startzustände gelten nur unter html.k-bewegung (gesetzt vom Kopfskript bei
+   prefers-reduced-motion: no-preference) und nie nach html.k-notaus.
+   Animiert werden nur transform/translate/scale und opacity.
+   ========================================================================== */
+
+/* auftritt – Abschnitt rückt 8 px in die Flucht (IO 20 %) */
+html.k-bewegung [data-motion="auftritt"] {
+  transition-property: opacity, translate;
+  transition-duration: var(--dauer-3);
+  transition-timing-function: var(--ease-setzen);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="auftritt"]:not([data-motion-stand="an"]) {
+  opacity: 0;
+  translate: 0 calc(var(--spacing) * 2);
+}
+
+/* anriss – handgeführte Unterstreichung eines Schlüsselworts (IO 50 %) */
+[data-motion="anriss"] {
+  position: relative;
+  background: none;
+  color: inherit;
+  white-space: nowrap;
+}
+[data-motion="anriss"]::after {
+  content: "";
+  position: absolute;
+  inset-inline: -2px;
+  bottom: -0.12em;
+  height: 2px;
+  background: var(--color-laser-tief);
+  transform-origin: left center;
+  rotate: -0.6deg;
+}
+html.k-bewegung [data-motion="anriss"]::after {
+  transition: scale var(--dauer-4) var(--ease-setzen);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="anriss"]:not([data-motion-stand="an"])::after {
+  scale: 0 1;
+}
+
+/* leitachse – Lot im Seitenfluss, rotes Stück folgt dem Lesefortschritt */
+.leitachse {
+  pointer-events: none;
+  position: absolute;
+  inset-block: 0;
+  width: 1px;
+  background: var(--color-fuge);
+}
+.leitachse-rot {
+  display: block;
+  width: 2px;
+  margin-inline-start: -0.5px;
+  height: 100%;
+  background: var(--color-laser);
+  transform-origin: top center;
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .leitachse-rot {
+      animation: leitachse-ziehen linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+@keyframes leitachse-ziehen {
+  from { scale: 1 0; }
+  to { scale: 1 1; }
+}
+
+/* aufklappen – Höhe über grid-template-rows (Menü, Akkordeon); zu: eine Stufe kürzer */
+.aufklappen {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dauer-1) var(--ease-weg);
+}
+.aufklappen > * {
+  overflow: hidden;
+  min-height: 0;
+}
+.aufklappen[data-offen="true"] {
+  grid-template-rows: 1fr;
+  transition-duration: var(--dauer-2);
+  transition-timing-function: var(--ease-setzen);
+}
+
+/* aufklappen – Menüblatt (Popover) fährt von rechts ein, Mega-Menü rückt 4 px in die Flucht;
+   zu: eine Stufe kürzer. Ohne Bewegungswunsch erscheinen beide sofort. */
+.menue-blatt::backdrop {
+  background: color-mix(in oklab, var(--color-tinte) 60%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .menue-blatt {
+    transition: translate var(--dauer-1) var(--ease-weg), display var(--dauer-1) allow-discrete, overlay var(--dauer-1) allow-discrete;
+    translate: 100% 0;
+  }
+  .menue-blatt:popover-open {
+    translate: 0 0;
+    transition-duration: var(--dauer-2);
+    transition-timing-function: var(--ease-setzen);
+  }
+  @starting-style {
+    .menue-blatt:popover-open {
+      translate: 100% 0;
+    }
+  }
+  .mega-blatt {
+    transition: opacity var(--dauer-2) var(--ease-setzen), translate var(--dauer-2) var(--ease-setzen);
+  }
+  @starting-style {
+    .mega-blatt:not([hidden]) {
+      opacity: 0;
+      translate: 0 calc(var(--spacing) * -1);
+    }
+  }
+}
+/* Ohne Popover-Unterstützung (Safari < 17) bleibt das Blatt verborgen; der Schalter führt zum Seitenindex. */
+@supports not selector(:popover-open) {
+  .menue-blatt {
+    display: none;
+  }
+}
+
+/* druck – Knopf-Rückmeldung 1 px; zustand – Farbwechsel bei Hover/Fokus */
+[data-motion="druck"] {
+  transition: translate var(--dauer-1) var(--ease-setzen), background-color var(--dauer-1) var(--ease-setzen), border-color var(--dauer-1) var(--ease-setzen), color var(--dauer-1) var(--ease-setzen);
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion="druck"]:active {
+    translate: 0 1px;
+  }
+}
+[data-motion="zustand"] {
+  transition: background-color var(--dauer-1) var(--ease-setzen), border-color var(--dauer-1) var(--ease-setzen), color var(--dauer-1) var(--ease-setzen), text-decoration-color var(--dauer-1) var(--ease-setzen);
+}
+
+/* notiert – Erfolgshaken zeichnet sich (Maske über scale) */
+html.k-bewegung [data-motion="notiert"] {
+  animation: notiert-setzen var(--dauer-3) var(--ease-setzen) both;
+  transform-origin: left center;
+}
+@keyframes notiert-setzen {
+  from { scale: 0 1; opacity: 0.4; }
+  to { scale: 1 1; opacity: 1; }
+}
+
+/* laden – eine Fuge läuft (ab 300 ms, mindestens 500 ms sichtbar – Steuerung in der Komponente) */
+.laden-fuge {
+  position: relative;
+  overflow: hidden;
+  height: 2px;
+  background: var(--color-fuge);
+}
+.laden-fuge::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 30%;
+  background: var(--color-tinte);
+}
+html.k-bewegung .laden-fuge::after {
+  animation: laden-laufen var(--dauer-5) linear infinite;
+}
+@keyframes laden-laufen {
+  from { translate: -100% 0; }
+  to { translate: 340% 0; }
+}
+
+/* seitenwechsel – Morph des Plans und kurze Überblendung; Kopf bleibt stehen */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-group(root) {
+  animation-duration: var(--dauer-2);
+  animation-timing-function: var(--ease-setzen);
+}
+/* Der feste Kopf ist beim Seitenwechsel verankert (KERN K-007) */
+.kopf-anker {
+  view-transition-name: kopf;
+}
+::view-transition-group(kopf) {
+  animation: none;
+  z-index: 40;
+}
+::view-transition-old(kopf) {
+  display: none;
+}
+::view-transition-new(kopf) {
+  animation: none;
+}
+::view-transition-group(.plan-morph) {
+  animation-duration: var(--dauer-3);
+  animation-timing-function: var(--ease-setzen);
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* Druck und erzwungene Farben: keine Startzustände */
+@media print, (forced-colors: active) {
+  html.k-bewegung [data-motion] {
+    opacity: 1 !important;
+    translate: none !important;
+    scale: none !important;
+  }
+  html.k-bewegung [data-motion]::after {
+    scale: none !important;
+  }
+}
+
+/* ==========================================================================
+   VERLEGEPLAN (K-008) und sig-plan (K-007)
+   ========================================================================== */
+.verlegeplan { overflow: visible; }
+.verlegeplan .plan-raum { fill: none; stroke: var(--color-tinte); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-fuge { stroke: var(--color-strich); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-schraffur-linie { stroke: var(--color-strich); stroke-width: 1; }
+.verlegeplan .plan-passstueck { stroke: none; }
+.verlegeplan .plan-fehlstelle { fill: var(--color-kalk); stroke: var(--color-laser-tief); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-element, .verlegeplan .plan-tuer path:not(.plan-luecke) { fill: none; stroke: var(--color-tinte); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-element rect { fill: var(--color-fliese); }
+.verlegeplan .plan-luecke { stroke: var(--color-fliese); stroke-width: 4; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-heizung { fill: none; stroke: var(--color-strich); stroke-width: 1.5; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-dichtband { fill: none; stroke: var(--color-tinte-2); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-stelzlager { fill: var(--color-tinte); }
+.verlegeplan .plan-achse { stroke: var(--color-laser); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-kreuz { fill: var(--color-tinte); }
+.verlegeplan .plan-bemassung path { stroke: var(--color-tinte-2); stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; }
+.verlegeplan .plan-bemassung text { fill: var(--color-tinte-2); font-family: var(--font-mono); font-size: 11px; }
+/* Zustände im Ablauf (szene-ablauf): verlegter Belag in Kalk, Prüfmarken beim Aufmaß, Abnahme-Haken */
+.verlegeplan .plan-belag { fill: var(--color-kalk); stroke: none; }
+.verlegeplan .plan-marke circle { fill: var(--color-fliese); stroke: var(--color-tinte); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-marke path { fill: none; stroke: var(--color-tinte); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.verlegeplan .plan-abnahme circle { fill: var(--color-abnahme); stroke: none; }
+.verlegeplan .plan-abnahme path { fill: none; stroke: var(--color-fliese); stroke-width: 2; vector-effect: non-scaling-stroke; }
+
+/* sig-plan: das Raster steht versetzt, bis Hover/Fokus (fein) bzw. Eintritt (grob) es in die Flucht rückt */
+.verlegeplan .plan-raster { --plan-versatz: -9px; }
+html.k-bewegung [data-motion="sig-plan"] .plan-raster,
+html.k-bewegung .sig-plan-ziel .plan-raster {
+  transition: translate var(--dauer-2) var(--ease-setzen);
+}
+@media (hover: hover) and (pointer: fine) {
+  html.k-bewegung:not(.k-notaus) .sig-plan-ziel:not(:hover):not(:focus-within) .plan-raster,
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not(:hover) .plan-raster {
+    translate: var(--plan-versatz) 0;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-motion-stand="an"]) .plan-raster {
+    translate: var(--plan-versatz) 0;
+  }
+}
+
+/* szene-ablauf (großer Moment /bad, K-007): linear an Scroll, je Plan eine view-timeline; nur scale und opacity.
+   Ersatzpfad (ohne animation-timeline, reduziert, ohne JS, Druck) = Endzustand: alle drei Zustände fertig. */
+.szene-ablauf .szene-plan { view-timeline: --szene-plan block; }
+.szene-ablauf .plan-raster,
+.szene-ablauf .plan-belag,
+.szene-ablauf .plan-marke,
+.szene-ablauf .plan-abnahme {
+  transform-box: fill-box;
+}
+@supports (animation-timeline: view()) {
+  @media screen and (prefers-reduced-motion: no-preference) {
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-raster {
+      transform-origin: 50% 0;
+      animation: szene-ziehen linear both;
+      animation-timeline: --szene-plan;
+      animation-range: cover 15% cover 45%;
+    }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-belag {
+      animation: szene-einblenden linear both;
+      animation-timeline: --szene-plan;
+      animation-range: cover 30% cover 50%;
+    }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-marke,
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-abnahme {
+      transform-origin: 50% 50%;
+      animation: szene-setzen linear both;
+      animation-timeline: --szene-plan;
+    }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-pruefung > g:nth-child(1) .plan-marke { animation-range: cover 20% cover 32%; }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-pruefung > g:nth-child(2) .plan-marke { animation-range: cover 28% cover 40%; }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-pruefung > g:nth-child(3) .plan-marke { animation-range: cover 36% cover 48%; }
+    html.k-bewegung:not(.k-notaus) .szene-ablauf .plan-abnahme { animation-range: cover 45% cover 55%; }
+  }
+}
+@keyframes szene-ziehen { from { scale: 1 0; } to { scale: 1 1; } }
+@keyframes szene-einblenden { from { opacity: 0; } to { opacity: 1; } }
+@keyframes szene-setzen { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
+
+/* einzugsband (K-007, /standorte und [stadt]): die Zonenkanten setzen sich nacheinander von links (dauer-3, setzen,
+   Staffel je Zone); Startzustand nur unter html.k-bewegung und solange der Stand nicht „an“ ist. */
+.einzugsband .einzugsband-kante { transform-origin: 0 50%; }
+html.k-bewegung [data-motion="einzugsband"] .einzugsband-kante {
+  transition: scale var(--dauer-3) var(--ease-setzen);
+}
+html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-kante { transition-delay: calc(var(--staffel) * 3); }
+html.k-bewegung [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-kante { transition-delay: calc(var(--staffel) * 6); }
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"]:not([data-motion-stand="an"]) .einzugsband-kante {
+  scale: 0 1;
+}
+
+/* sig-kreuzlinie (SIG-1, nur /) – Waage und Lot wachsen aus dem Kreuzpunkt (dauer-5, laser); mobil nur das Lot.
+   Lage (oben, links) über Klassen am Element; Endzustand = beide Linien voll. */
+.kreuzlinie {
+  pointer-events: none;
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+}
+.kreuzlinie-lot,
+.kreuzlinie-waage {
+  position: absolute;
+  display: block;
+  background: var(--color-laser);
+}
+.kreuzlinie-lot {
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 2px;
+  margin-inline-start: -1px;
+  transform-origin: top center;
+}
+.kreuzlinie-waage {
+  inset-inline: 0;
+  inset-block-start: 0;
+  height: 2px;
+  margin-block-start: -1px;
+  transform-origin: center left;
+}
+.kreuzlinie-punkt {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  translate: -50% -50%;
+}
+html.k-bewegung .kreuzlinie-lot,
+html.k-bewegung .kreuzlinie-waage {
+  transition: scale var(--dauer-5) var(--ease-laser);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-lot {
+  scale: 1 0;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-kreuzlinie"]:not([data-motion-stand="an"]) .kreuzlinie-waage {
+  scale: 0 1;
+}
+
+/* sig-flucht (SIG-1) – die Zeilen der H1 rücken 12 px in die Flucht; Deckkraft bleibt 1 (LCP) */
+html.k-bewegung [data-motion="sig-flucht"] > * {
+  transition: translate var(--dauer-4) var(--ease-setzen);
+}
+/* Staffel: je Zeile zwei Stufen (2 × --staffel), damit die Zeilen sichtbar nacheinander einrücken */
+html.k-bewegung [data-motion="sig-flucht"] > :nth-child(2) {
+  transition-delay: calc(var(--staffel) * 2);
+}
+html.k-bewegung [data-motion="sig-flucht"] > :nth-child(3) {
+  transition-delay: calc(var(--staffel) * 4);
+}
+html.k-bewegung [data-motion="sig-flucht"] > :nth-child(4) {
+  transition-delay: calc(var(--staffel) * 6);
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-flucht"]:not([data-motion-stand="an"]) > * {
+  translate: calc(var(--spacing) * 3) 0;
+}
+@media print, (forced-colors: active) {
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-lot,
+  html.k-bewegung [data-motion="sig-kreuzlinie"] .kreuzlinie-waage {
+    scale: none !important;
+  }
+  html.k-bewegung [data-motion="sig-flucht"] > * {
+    translate: none !important;
+  }
+}

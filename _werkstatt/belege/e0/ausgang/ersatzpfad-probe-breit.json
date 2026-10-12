@@ -1,0 +1,330 @@
+{
+ "werkzeug": "E0-PRUEF-03 Schritt 7: Suche nach Chromium-Schaltern fuer animation-timeline und View Transitions",
+ "browser": "Chromium 141.0.7390.37 (chromium-1194), Playwright 1.56.1",
+ "pruefmethode": "Testseite per page.setContent; CSS.supports(animation-timeline: scroll()/view()), typeof document.startViewTransition, typeof window.ScrollTimeline/ViewTimeline",
+ "sanity_schalter_wirkt": [
+  {
+   "fall": "ohne Schalter",
+   "webdriver": true,
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC",
+   "version": "141.0.7390.37"
+  },
+  {
+   "fall": "AutomationControlled",
+   "webdriver": false,
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC",
+   "version": "141.0.7390.37"
+  },
+  {
+   "fall": "--no-sandbox ohne Playwright-Default-Ignore",
+   "webdriver": true,
+   "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessC",
+   "version": "141.0.7390.37"
+  }
+ ],
+ "kandidaten_einzeln_blink_und_base": [
+  {
+   "fall": "blink:ScrollTimelineCurrentTime",
+   "args": [
+    "--disable-blink-features=ScrollTimelineCurrentTime"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ScrollTimelineNamedRangeScroll",
+   "args": [
+    "--disable-blink-features=ScrollTimelineNamedRangeScroll"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTimelineOptions",
+   "args": [
+    "--disable-blink-features=ViewTimelineOptions"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ScopedViewTransitions",
+   "args": [
+    "--disable-blink-features=ScopedViewTransitions"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:NestedViewTransition",
+   "args": [
+    "--disable-blink-features=NestedViewTransition"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:CSSViewTransitionRule",
+   "args": [
+    "--disable-blink-features=CSSViewTransitionRule"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:CSSViewTransitionAutoName",
+   "args": [
+    "--disable-blink-features=CSSViewTransitionAutoName"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:SerializeViewTransitionStateInSPA",
+   "args": [
+    "--disable-blink-features=SerializeViewTransitionStateInSPA"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionAsyncFinished",
+   "args": [
+    "--disable-blink-features=ViewTransitionAsyncFinished"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionCommitDeferringCondition",
+   "args": [
+    "--disable-blink-features=ViewTransitionCommitDeferringCondition"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionCaptureAndDisplay",
+   "args": [
+    "--disable-blink-features=ViewTransitionCaptureAndDisplay"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionInheritAnimationProperties",
+   "args": [
+    "--disable-blink-features=ViewTransitionInheritAnimationProperties"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionAnimationDelayInherit",
+   "args": [
+    "--disable-blink-features=ViewTransitionAnimationDelayInherit"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionUpdateLifecycleBeforeReady",
+   "args": [
+    "--disable-blink-features=ViewTransitionUpdateLifecycleBeforeReady"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionFloorTransform",
+   "args": [
+    "--disable-blink-features=ViewTransitionFloorTransform"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransitionElementDescendantWithClipPath",
+   "args": [
+    "--disable-blink-features=ViewTransitionElementDescendantWithClipPath"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTransition",
+   "args": [
+    "--disable-blink-features=ViewTransition"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ScrollTimeline",
+   "args": [
+    "--disable-blink-features=ScrollTimeline"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "blink:ViewTimeline",
+   "args": [
+    "--disable-blink-features=ViewTimeline"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "base:ViewTransitionOnNavigation",
+   "args": [
+    "--disable-features=ViewTransitionOnNavigation"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "base:CSSScrollTimeline",
+   "args": [
+    "--disable-features=CSSScrollTimeline"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "base:ScrollDrivenAnimations",
+   "args": [
+    "--disable-features=ScrollDrivenAnimations"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "base:ViewTimeline",
+   "args": [
+    "--disable-features=ViewTimeline"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "base:ScrollTimeline",
+   "args": [
+    "--disable-features=ScrollTimeline"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  },
+  {
+   "fall": "base:ViewTransition",
+   "args": [
+    "--disable-features=ViewTransition"
+   ],
+   "webdriver": true,
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function"
+  }
+ ],
+ "kandidaten_gesammelt": [
+  {
+   "fall": "alle Blink-Namen",
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function",
+   "ViewTimeline": "function"
+  },
+  {
+   "fall": "alle Base-Namen",
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function",
+   "ViewTimeline": "function"
+  },
+  {
+   "fall": "alle Blink + Base",
+   "css_scroll": true,
+   "css_view": true,
+   "startViewTransition": "function",
+   "ScrollTimeline": "function",
+   "ViewTimeline": "function"
+  }
+ ],
+ "ergebnis": "Kein getesteter Schalter (Blink- oder Base-Feature) schaltet animation-timeline oder startViewTransition ab; der Schalter-Mechanismus selbst wirkt (AutomationControlled setzt navigator.webdriver auf false).",
+ "hinweis": "Eintraege mit Sanity-Fehler (Sandbox-Abbruch, weil ignoreDefaultArgs ohne --no-sandbox) sind hier nicht gelistet; gueltiger Sanity-Nachweis: sanity_schalter_wirkt. Anzahl entfernter Fehlläufe: 2"
+}

@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { MotionConfig, motion, useScroll, useSpring } from 'framer-motion';
 import { Quote, ShieldCheck } from 'lucide-react';
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
 
@@ -19,7 +19,9 @@ export default function CompanyHistory() {
 
     const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
 
+    // reduzierte Bewegung achten (vorher globaler MotionProvider, E-010)
     return (
+        <MotionConfig reducedMotion="user">
         <section className="py-24 relative overflow-hidden" ref={containerRef} aria-labelledby="company-history-heading">
             {/* Background elements */}
             <div className="ambient-glow-orange top-0 right-0 opacity-60" />
@@ -119,5 +121,6 @@ export default function CompanyHistory() {
                 </motion.figure>
             </div>
         </section>
+        </MotionConfig>
     );
 }

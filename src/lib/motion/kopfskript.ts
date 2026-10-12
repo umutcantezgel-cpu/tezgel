@@ -1,6 +1,14 @@
 import { CONSENT_COOKIE_NAME, CONSENT_VERSION } from '@/lib/cookie-inventory';
 
-// Inline-Kopfskript des Kern-Layouts: läuft im <head> vor dem ersten Rendern (CSP erlaubt Inline-Skripte).
+// Zwei Kopfskripte für zwei Dokumente. Beide setzen html.k-bewegung vor dem ersten Rendern, aber nur ohne Wunsch nach
+// reduzierter Bewegung; sie unterscheiden sich im Notaus, weil die beiden Bewegungsmodule sich verschieden melden.
+
+// Aktives Dokument (Gruppe (bestand), KERN v2, bewegung.css + BewegungsWaechter):
+// Meldet sich das Bewegungsmodul (html.k-modul) nicht binnen 2 s, setzt es html.k-notaus – dann gelten keine
+// Startzustände und alles ist sichtbar (KERN K-007).
+export const KOPFSKRIPT = `(function(){var d=document.documentElement;try{if(!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: no-preference)').matches)return;d.classList.add('k-bewegung');setTimeout(function(){if(!d.classList.contains('k-modul'))d.classList.add('k-notaus');},2000);}catch(e){d.classList.add('k-notaus');}})();`;
+
+// Ruhendes Dokument (Gruppe (kern), kern.css + BewegungsRegie): Inline-Kopfskript des Kern-Layouts, läuft im <head> vor dem ersten Rendern (CSP erlaubt Inline-Skripte).
 // Zwei unabhängige Teile, jeder in eigenem try – ein Fehler im einen hält den anderen nicht auf.
 //
 // 1. Einwilligungsbanner (P4-13, E-033 Weg C): Ist keine gültige Entscheidung gespeichert, steht `data-k-banner="offen"`

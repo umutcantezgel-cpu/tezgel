@@ -1,0 +1,439 @@
+{
+ "werkzeug": "schriften-mitschnitt (E0-PRUEF-03)",
+ "base": "http://127.0.0.1:4310",
+ "messung": "request.sizes().responseBodySize je Schrift-Datei, Erstbesuch, Einwilligung abgelehnt, reduzierte Bewegung",
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "d1440",
+   "status": 200,
+   "schriften": [
+    {
+     "datei": "83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+     "bytes_uebertragen": 48432
+    },
+    {
+     "datei": "fba5a26ea33df6a3-s.p.18rizl4rsrl42.woff2",
+     "bytes_uebertragen": 27272
+    }
+   ],
+   "summe_bytes": 75704,
+   "fehler": null,
+   "anfragen_fremd": 0
+  }
+ ]
+}

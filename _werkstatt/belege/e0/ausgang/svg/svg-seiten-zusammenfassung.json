@@ -1,0 +1,332 @@
+{
+ "werkzeug": "svg.mjs --seiten (12 Hauptansichten) --base http://127.0.0.1:4310 (E0-PRUEF-03, Schritt 6)",
+ "zeitpunkt": "2026-10-10T19:24:33.589Z",
+ "vollstaendiger_bericht": "_werkstatt/cache/svg/e0/2026-10-10T19-24-33-589Z.json (Rohbericht außerhalb des Repos, 2,7 MB)",
+ "gesamt": {
+  "inline_svgs": 3894,
+  "befunde": 3868,
+  "je_art": {
+   "focusable_fehlt": 3836,
+   "dekorativ_ohne_aria_hidden": 32
+  },
+  "doppelte_ids": 0,
+  "laeufe": 24,
+  "laeufe_mit_fehler": 0
+ },
+ "zeilen": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 355,
+   "befunde_je_art": {
+    "focusable_fehlt": 337,
+    "dekorativ_ohne_aria_hidden": 16
+   },
+   "befunde_gesamt": 353,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 355,
+   "befunde_je_art": {
+    "focusable_fehlt": 337,
+    "dekorativ_ohne_aria_hidden": 16
+   },
+   "befunde_gesamt": 353,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 127,
+   "befunde_je_art": {
+    "focusable_fehlt": 126
+   },
+   "befunde_gesamt": 126,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 127,
+   "befunde_je_art": {
+    "focusable_fehlt": 126
+   },
+   "befunde_gesamt": 126,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 157,
+   "befunde_je_art": {
+    "focusable_fehlt": 156
+   },
+   "befunde_gesamt": 156,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 157,
+   "befunde_je_art": {
+    "focusable_fehlt": 156
+   },
+   "befunde_gesamt": 156,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 119,
+   "befunde_je_art": {
+    "focusable_fehlt": 118
+   },
+   "befunde_gesamt": 118,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 119,
+   "befunde_je_art": {
+    "focusable_fehlt": 118
+   },
+   "befunde_gesamt": 118,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 185,
+   "befunde_je_art": {
+    "focusable_fehlt": 184
+   },
+   "befunde_gesamt": 184,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/fliesen",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 185,
+   "befunde_je_art": {
+    "focusable_fehlt": 184
+   },
+   "befunde_gesamt": 184,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 119,
+   "befunde_je_art": {
+    "focusable_fehlt": 118
+   },
+   "befunde_gesamt": 118,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/fliesen/konfigurator",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 119,
+   "befunde_je_art": {
+    "focusable_fehlt": 118
+   },
+   "befunde_gesamt": 118,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 145,
+   "befunde_je_art": {
+    "focusable_fehlt": 144
+   },
+   "befunde_gesamt": 144,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 145,
+   "befunde_je_art": {
+    "focusable_fehlt": 144
+   },
+   "befunde_gesamt": 144,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 148,
+   "befunde_je_art": {
+    "focusable_fehlt": 147
+   },
+   "befunde_gesamt": 147,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 148,
+   "befunde_je_art": {
+    "focusable_fehlt": 147
+   },
+   "befunde_gesamt": 147,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 150,
+   "befunde_je_art": {
+    "focusable_fehlt": 149
+   },
+   "befunde_gesamt": 149,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 150,
+   "befunde_je_art": {
+    "focusable_fehlt": 149
+   },
+   "befunde_gesamt": 149,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 152,
+   "befunde_je_art": {
+    "focusable_fehlt": 151
+   },
+   "befunde_gesamt": 151,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 152,
+   "befunde_je_art": {
+    "focusable_fehlt": 151
+   },
+   "befunde_gesamt": 151,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 157,
+   "befunde_je_art": {
+    "focusable_fehlt": 156
+   },
+   "befunde_gesamt": 156,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 157,
+   "befunde_je_art": {
+    "focusable_fehlt": 156
+   },
+   "befunde_gesamt": 156,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "status": 200,
+   "inline_svgs": 133,
+   "befunde_je_art": {
+    "focusable_fehlt": 132
+   },
+   "befunde_gesamt": 132,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m390",
+   "status": 200,
+   "inline_svgs": 133,
+   "befunde_je_art": {
+    "focusable_fehlt": 132
+   },
+   "befunde_gesamt": 132,
+   "fehler": null,
+   "anfragen_fremd": 0,
+   "anfragen_blockiert": 0
+  }
+ ]
+}

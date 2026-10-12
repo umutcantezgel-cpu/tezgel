@@ -1,0 +1,46 @@
+{
+ "modus": "register",
+ "seite": "/",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "d1440",
+ "zeitpunkt": "2026-10-10T22:47:00.504Z",
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 20
+ },
+ "data_motion_elemente": 172,
+ "gefundene_kennungen": [
+  "anriss",
+  "aufklappen",
+  "auftritt",
+  "druck",
+  "sig-flucht",
+  "sig-kreuzlinie",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "registriert_nicht_im_dom": [
+  "szene-ablauf",
+  "sig-plan",
+  "einzugsband",
+  "verband",
+  "fugenband",
+  "leitachse",
+  "notiert",
+  "laden",
+  "seitenwechsel"
+ ],
+ "ohne_register": [],
+ "mit_register_eintraege": 20,
+ "erfasste_eintraege": 20,
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/bewegung/register-start-d1440"
+}

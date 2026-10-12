@@ -4,9 +4,25 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  // Entwicklungsabzeichen aus: es liegt links unten über dem Cookie-Schild und fängt dort Klicks ab;
+  // Kompilier- und Laufzeitfehler zeigt Next weiterhin an (nur `next dev`, kein Einfluss auf den Build).
+  devIndicators: false,
+  // Dev-Schaufenster der Bausteine (src/app/(bestand)/werkstatt-schaufenster/**/page.dev.tsx) existiert nur in der
+  // Entwicklung; im Build gibt es die Route nicht (KERN K-004).
+  pageExtensions: process.env.NODE_ENV === 'development' ? ['dev.tsx', 'tsx', 'ts', 'jsx', 'js'] : ['tsx', 'ts', 'jsx', 'js'],
+  // Umbenannte Adressen dauerhaft weiterleiten (308, V-04 / P4-07); belegt im Vorlauf (_relaunch/PLAN.md, „Wege“).
+  // 410 für fremde Altadressen: src/proxy.ts.
+  async redirects() {
+    return [
+      { source: '/bad/budgetkalkulator', destination: '/bad/projekt-check', permanent: true },
+      { source: '/blog/barrierefreies-bad-planung-zuschuesse', destination: '/bad/barrierefreies-bad', permanent: true },
+    ];
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
+    // Ab Next 16 Pflicht: erlaubte Bildqualitäten (KERN K-004)
+    qualities: [75],
   },
   experimental: {
     // E-015: mehrere Root-Layouts (bestand/kern) → 404 für unbekannte Adressen über app/global-not-found.tsx
@@ -32,21 +48,6 @@ const nextConfig: NextConfig = {
       'next/dist/build/polyfills/polyfill-module.js': false,
     };
     return config;
-  },
-  // P4-07 (V-04): umbenannte und zusammengelegte Tezgel-Seiten, dauerhaft (308). 410 für fremde Altadressen: src/proxy.ts.
-  async redirects() {
-    return [
-      {
-        source: '/bad/budgetkalkulator',
-        destination: '/bad/projekt-check',
-        permanent: true,
-      },
-      {
-        source: '/blog/barrierefreies-bad-planung-zuschuesse',
-        destination: '/bad/barrierefreies-bad',
-        permanent: true,
-      },
-    ];
   },
   async headers() {
     return [

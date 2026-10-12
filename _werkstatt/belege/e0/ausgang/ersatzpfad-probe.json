@@ -1,0 +1,75 @@
+{
+ "browser": "141.0.7390.37",
+ "faelle": [
+  {
+   "fall": "ohne Schalter",
+   "args": [],
+   "css_scroll_timeline": true,
+   "css_view_timeline": true,
+   "startViewTransition": "function",
+   "js_ScrollTimeline": "function",
+   "js_ViewTimeline": "function",
+   "version": "141.0.7390.37"
+  },
+  {
+   "fall": "ScrollTimeline",
+   "args": [
+    "--disable-blink-features=ScrollTimeline"
+   ],
+   "css_scroll_timeline": true,
+   "css_view_timeline": true,
+   "startViewTransition": "function",
+   "js_ScrollTimeline": "function",
+   "js_ViewTimeline": "function",
+   "version": "141.0.7390.37"
+  },
+  {
+   "fall": "ViewTimeline",
+   "args": [
+    "--disable-blink-features=ViewTimeline"
+   ],
+   "css_scroll_timeline": true,
+   "css_view_timeline": true,
+   "startViewTransition": "function",
+   "js_ScrollTimeline": "function",
+   "js_ViewTimeline": "function",
+   "version": "141.0.7390.37"
+  },
+  {
+   "fall": "ViewTransition",
+   "args": [
+    "--disable-blink-features=ViewTransition"
+   ],
+   "css_scroll_timeline": true,
+   "css_view_timeline": true,
+   "startViewTransition": "function",
+   "js_ScrollTimeline": "function",
+   "js_ViewTimeline": "function",
+   "version": "141.0.7390.37"
+  },
+  {
+   "fall": "ScrollTimeline,ViewTimeline",
+   "args": [
+    "--disable-blink-features=ScrollTimeline,ViewTimeline"
+   ],
+   "css_scroll_timeline": true,
+   "css_view_timeline": true,
+   "startViewTransition": "function",
+   "js_ScrollTimeline": "function",
+   "js_ViewTimeline": "function",
+   "version": "141.0.7390.37"
+  },
+  {
+   "fall": "ScrollTimeline,ViewTimeline,ViewTransition",
+   "args": [
+    "--disable-blink-features=ScrollTimeline,ViewTimeline,ViewTransition"
+   ],
+   "css_scroll_timeline": true,
+   "css_view_timeline": true,
+   "startViewTransition": "function",
+   "js_ScrollTimeline": "function",
+   "js_ViewTimeline": "function",
+   "version": "141.0.7390.37"
+  }
+ ]
+}

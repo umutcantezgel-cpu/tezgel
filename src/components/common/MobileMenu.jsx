@@ -3,278 +3,191 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-    Phone,
-    MessageCircle,
-    ChevronDown,
-    X,
-    ArrowRight,
-    Bath,
-    Sparkles,
-    MapPin,
-    BookOpen,
-    ShieldCheck,
-    Clock
-} from 'lucide-react';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { navigationLinks, primaryCta } from '@/config/navigation';
 import { COMPANY_DATA } from '@/config/company';
 import { openWhatsApp } from '@/lib/whatsapp';
+import { etikettKlassen, knopfKlassen } from '@/components/kern/stile';
 import { BrandMark } from '@/components/common/Header';
 
-function getCategoryIcon(name) {
-    switch (name) {
-        case 'Badsanierung':
-            return <Bath className="w-5 h-5 text-orange-600" />;
-        case 'Fachgewerke':
-            return <Sparkles className="w-5 h-5 text-orange-600" />;
-        case 'Standorte':
-            return <MapPin className="w-5 h-5 text-orange-600" />;
-        case 'Ratgeber':
-            return <BookOpen className="w-5 h-5 text-orange-600" />;
-        case 'Über uns':
-            return <ShieldCheck className="w-5 h-5 text-orange-600" />;
-        default:
-            return <Sparkles className="w-5 h-5 text-orange-600" />;
+const istOffen = (el) => {
+    try {
+        return Boolean(el?.matches(':popover-open'));
+    } catch {
+        return false;
     }
-}
+};
 
-export default function MobileMenu({ isOpen, onClose }) {
+// Menü als Popover-Blatt (KERN K-009, E-009): öffnet nativ über popovertarget, auch bevor React hydriert ist;
+// Escape und Klick daneben schließen es. React hält nur aria-expanded, das Aufklappen der Bereiche und den Fokus.
+export default function MobileMenu({ isOpen, onToggle }) {
     const pathname = usePathname() || '/';
-    // Automatically match the current active section or keep all collapsed initially for clean readability
     const [expandedMenu, setExpandedMenu] = useState(null);
+    const blattRef = useRef(null);
     const closeButtonRef = useRef(null);
 
-    // Escape key & scroll lock
     useEffect(() => {
-        if (!isOpen) return undefined;
-        const previousOverflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
-        closeButtonRef.current?.focus();
+        const el = blattRef.current;
+        if (!el) return undefined;
+        const onToggleEvent = (event) => onToggle(event.newState === 'open');
+        el.addEventListener('toggle', onToggleEvent);
+        // Vor der Hydrierung geöffnet: Zustand übernehmen.
+        if (istOffen(el)) onToggle(true);
+        return () => el.removeEventListener('toggle', onToggleEvent);
+    }, [onToggle]);
 
-        const onKeyDown = (event) => {
-            if (event.key === 'Escape') onClose();
-        };
-        document.addEventListener('keydown', onKeyDown);
-
-        return () => {
-            document.body.style.overflow = previousOverflow;
-            document.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onClose]);
-
-    // Set initial expanded section according to active route when opened
+    // Jede Navigation schließt das Blatt (auch Zurück/Vor).
     useEffect(() => {
-        if (isOpen) {
-            const activeLink = navigationLinks.find((link) =>
-                pathname === link.path ||
-                pathname.startsWith(`${link.path}/`) ||
-                link.submenu?.some((cat) => cat.items.some((item) => pathname === item.path))
-            );
-            if (activeLink) {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setExpandedMenu(activeLink.name);
-            }
-        }
+        const el = blattRef.current;
+        if (istOffen(el)) el.hidePopover();
+    }, [pathname]);
+
+    // Beim Öffnen: aktiven Bereich aufklappen, Fokus auf „Schließen“.
+    useEffect(() => {
+        if (!isOpen) return;
+        const activeLink = navigationLinks.find((link) =>
+            pathname === link.path ||
+            pathname.startsWith(`${link.path}/`) ||
+            link.submenu?.some((cat) => cat.items.some((item) => pathname === item.path))
+        );
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        if (activeLink) setExpandedMenu(activeLink.name);
+        closeButtonRef.current?.focus({ preventScroll: true });
     }, [isOpen, pathname]);
+
+    const schliessen = () => {
+        const el = blattRef.current;
+        if (istOffen(el)) el.hidePopover();
+    };
 
     return (
         <div
-            className={`fixed inset-0 z-[70] transition-opacity duration-300 ${
-                isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`}
-            aria-hidden={!isOpen}
-            inert={!isOpen}
+            ref={blattRef}
+            id="mobile-menu"
+            popover="auto"
+            role="dialog"
+            aria-label="Hauptnavigation"
+            className="menue-blatt fixed inset-y-0 right-0 left-auto m-0 h-dvh max-h-none w-full max-w-md overflow-hidden border-0 bg-kalk p-0 text-tinte"
+            data-motion="aufklappen"
         >
-            {/* Backdrop: Dark blur with smooth opacity */}
-            <button
-                type="button"
-                tabIndex={-1}
-                aria-label="Navigation schließen"
-                onClick={onClose}
-                className="absolute inset-0 w-full h-full bg-neutral-950/60 backdrop-blur-md cursor-default transition-all"
-            />
-
-            {/* Clean, opaque, ceramic-style drawer */}
-            <div
-                id="mobile-menu"
-                role="dialog"
-                aria-modal="true"
-                aria-label="Hauptnavigation"
-                className={`absolute right-0 top-0 h-full w-full max-w-md bg-[#FAFAFA] shadow-[0_0_50px_rgba(0,0,0,0.25)] border-l border-neutral-200 flex flex-col transition-transform duration-300 ease-out ${
-                    isOpen ? 'translate-x-0' : 'translate-x-full'
-                }`}
-            >
-                {/* 1. Header Bar: Logo & Close Button */}
-                <header className="px-5 py-4 bg-white border-b border-neutral-200 flex items-center justify-between gap-3 shrink-0">
-                    <Link href="/" onClick={onClose} className="group focus-visible:outline-none" aria-label="Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite">
+            <div className="flex h-full flex-col border-l border-fuge">
+                <div className="flex h-16 shrink-0 items-center justify-between gap-3 border-b border-fuge px-4">
+                    <Link href="/" onClick={schliessen} aria-label="Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite">
                         <BrandMark sublineClassName="block" />
                     </Link>
-
                     <button
                         ref={closeButtonRef}
                         type="button"
-                        onClick={onClose}
-                        className="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-neutral-800 transition-colors focus-visible:outline-none"
+                        popoverTarget="mobile-menu"
+                        popoverTargetAction="hide"
+                        className="inline-flex size-11 items-center justify-center border border-strich bg-fliese text-tinte transition-colors dauer-1 ease-setzen hover:border-tinte"
                         aria-label="Menü schließen"
+                        data-motion="zustand"
                     >
-                        <X className="w-5 h-5" />
+                        <Icon name="schliessen" groesse={5} />
                     </button>
-                </header>
+                </div>
 
-                {/* 2. Scrollable Navigation Area */}
-                <div className="flex-1 overflow-y-auto px-4 py-4 space-y-2.5 pb-40">
-                    <p className="px-1 text-[11px] font-black uppercase tracking-wider text-neutral-600">
-                        Fachbereiche & Leistungen
-                    </p>
+                <div className="flex-1 overflow-y-auto px-4 py-6">
+                    <p className={etikettKlassen}>Fachbereiche & Leistungen</p>
 
-                    <nav aria-label="Hauptnavigation Kategorien" className="space-y-2.5">
-                        {navigationLinks.map((link, index) => {
-                            const isExpanded = expandedMenu === link.name;
-                            const panelId = `mobile-nav-panel-${index}`;
-                            let runningItemIndex = 0;
+                    <nav aria-label="Hauptnavigation Kategorien" className="mt-3">
+                        <ul className="border-t border-fuge">
+                            {navigationLinks.map((link, index) => {
+                                const isExpanded = expandedMenu === link.name;
+                                const panelId = `mobile-nav-panel-${index}`;
 
-                            return (
-                                <div
-                                    key={link.name}
-                                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                                        isExpanded
-                                            ? 'bg-white border-orange-300 shadow-md ring-1 ring-orange-200/50'
-                                            : 'bg-white border-neutral-200/90 shadow-xs hover:border-neutral-300'
-                                    }`}
-                                >
-                                    {/* Main Category Accordion Trigger */}
-                                    <button
-                                        type="button"
-                                        onClick={() => setExpandedMenu(isExpanded ? null : link.name)}
-                                        aria-expanded={isExpanded}
-                                        aria-controls={panelId}
-                                        className="w-full min-h-[58px] flex items-center justify-between gap-3 px-4 py-3 text-left focus-visible:outline-none group"
-                                    >
-                                        <div className="flex items-center gap-3 min-w-0">
-                                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-colors ${
-                                                isExpanded
-                                                    ? 'bg-orange-50 border-orange-200 text-orange-700'
-                                                    : 'bg-neutral-100 border-neutral-200 text-neutral-700 group-hover:border-orange-300'
-                                            }`}>
-                                                {getCategoryIcon(link.name)}
-                                            </div>
-
-                                            <div className="min-w-0">
-                                                <div className="flex items-center gap-2">
-                                                    <span className="font-display text-sm font-extrabold text-neutral-900">
-                                                        {link.name}
-                                                    </span>
-                                                    {link.featured?.eyebrow && (
-                                                        <span className="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-orange-50 text-orange-800 border border-orange-200">
-                                                            {link.featured.eyebrow}
-                                                        </span>
-                                                    )}
-                                                </div>
-                                                <p className="text-xs text-neutral-600 mt-0.5 leading-snug">
-                                                    {link.description}
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <ChevronDown className={`w-5 h-5 shrink-0 text-neutral-600 transition-transform duration-300 ${
-                                            isExpanded ? 'rotate-180 text-orange-600' : 'group-hover:text-neutral-900'
-                                        }`} />
-                                    </button>
-
-                                    {/* Expanded Category: Staggered Ceramic Platten sliding in from right to left */}
-                                    {isExpanded && (
-                                        <div id={panelId} className="border-t border-neutral-100 bg-neutral-50/80 p-3 space-y-3">
-                                            {link.submenu?.map((cat) => (
-                                                <div key={cat.category} className="space-y-1.5">
-                                                    <p className="px-2 text-[10px] font-black uppercase tracking-wider text-neutral-600 flex items-center gap-1.5">
-                                                        <span className="w-1.5 h-1.5 rounded-full bg-orange-600" />
-                                                        {cat.category}
-                                                    </p>
-
-                                                    <ul className="space-y-1.5">
-                                                        {cat.items.map((item) => {
-                                                            const active = pathname === item.path;
-                                                            const itemDelay = runningItemIndex * 40;
-                                                            runningItemIndex += 1;
-
-                                                            return (
-                                                                <li
-                                                                    key={item.path + item.name}
-                                                                    className="plate-enter"
-                                                                    style={{ animationDelay: `${itemDelay}ms` }}
-                                                                >
-                                                                    <Link
-                                                                        href={item.path}
-                                                                        onClick={onClose}
-                                                                        aria-current={active ? 'page' : undefined}
-                                                                        className={`group flex items-center justify-between gap-3 p-3 rounded-xl border transition-all duration-200 ${
-                                                                            active
-                                                                                ? 'bg-orange-500 text-white border-orange-600 shadow-sm'
-                                                                                : 'bg-white text-neutral-900 border-neutral-200/90 shadow-xs hover:border-orange-300 hover:bg-orange-50/40'
-                                                                        }`}
-                                                                    >
-                                                                        <div className="min-w-0 flex-1">
-                                                                            <span className={`block text-xs font-bold ${
-                                                                                active ? 'text-white' : 'text-neutral-900 group-hover:text-orange-800'
-                                                                            }`}>
-                                                                                {item.name}
-                                                                            </span>
-                                                                            {item.desc && (
-                                                                                <span className={`block text-[11px] leading-snug mt-0.5 ${
-                                                                                    active ? 'text-orange-100' : 'text-neutral-600'
-                                                                                }`}>
-                                                                                    {item.desc}
-                                                                                </span>
-                                                                            )}
-                                                                        </div>
-                                                                        <ArrowRight className={`w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1 ${
-                                                                            active ? 'text-white' : 'text-orange-600'
-                                                                        }`} />
-                                                                    </Link>
-                                                                </li>
-                                                            );
-                                                        })}
-                                                    </ul>
-                                                </div>
-                                            ))}
-
-                                            {/* Category Overview Hub Link */}
-                                            <div className="pt-1 flex justify-end">
-                                                <Link
-                                                    href={link.path}
-                                                    onClick={onClose}
-                                                    className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 hover:text-orange-800 py-1 px-2 rounded-lg hover:bg-orange-100/50 transition-colors"
+                                return (
+                                    <li key={link.name} className="border-b border-fuge">
+                                        <div className="flex items-stretch gap-2">
+                                            <Link
+                                                href={link.path}
+                                                onClick={schliessen}
+                                                aria-current={pathname === link.path ? 'page' : undefined}
+                                                className="flex min-w-0 flex-1 flex-col gap-1 py-4"
+                                            >
+                                                <span className="flex flex-wrap items-center gap-3">
+                                                    <span className="text-fs-4 font-semibold text-tinte">{link.name}</span>
+                                                    {link.featured?.eyebrow && <span className={etikettKlassen}>{link.featured.eyebrow}</span>}
+                                                </span>
+                                                <span className="text-fs-2 text-tinte-2">{link.description}</span>
+                                            </Link>
+                                            {link.submenu && (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setExpandedMenu(isExpanded ? null : link.name)}
+                                                    aria-expanded={isExpanded}
+                                                    aria-controls={panelId}
+                                                    aria-label={`${link.name} – Unterseiten ${isExpanded ? 'schließen' : 'öffnen'}`}
+                                                    className="flex w-11 shrink-0 items-center justify-center text-tinte"
+                                                    data-motion="aufklappen"
                                                 >
-                                                    <span>Alle Leistungen zu {link.name} ansehen</span>
-                                                    <ArrowRight className="w-3.5 h-3.5" />
-                                                </Link>
-                                            </div>
+                                                    <Fugenkreuz className={`size-4 motion-safe:transition-transform motion-safe:dauer-2 motion-safe:ease-setzen motion-reduce:transition-none ${isExpanded ? 'rotate-45' : 'rotate-0'}`} />
+                                                </button>
+                                            )}
                                         </div>
-                                    )}
-                                </div>
-                            );
-                        })}
+
+                                        {link.submenu && (
+                                            <div
+                                                id={panelId}
+                                                className="aufklappen"
+                                                data-offen={isExpanded ? 'true' : 'false'}
+                                                inert={!isExpanded}
+                                            >
+                                                <div>
+                                                    <div className="flex flex-col gap-6 pb-6">
+                                                        {link.submenu.map((cat) => (
+                                                            <div key={cat.category}>
+                                                                <p className={etikettKlassen}>{cat.category}</p>
+                                                                <ul className="mt-2 border-t border-fuge">
+                                                                    {cat.items.map((item) => (
+                                                                        <li key={item.path + item.name} className="border-b border-fuge">
+                                                                            <Link
+                                                                                href={item.path}
+                                                                                onClick={schliessen}
+                                                                                aria-current={pathname === item.path ? 'page' : undefined}
+                                                                                className="group flex items-center justify-between gap-3 py-3"
+                                                                            >
+                                                                                <span className="min-w-0">
+                                                                                    <span className="block text-fs-3 font-semibold text-tinte group-aria-[current=page]:text-laser-tief">{item.name}</span>
+                                                                                    {item.desc && <span className="block text-fs-2 text-tinte-2">{item.desc}</span>}
+                                                                                </span>
+                                                                                <Icon name="pfeil-rechts" groesse={4} className="text-tinte-2" />
+                                                                            </Link>
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
+                                                        ))}
+                                                        <Link href={link.path} onClick={schliessen} className={knopfKlassen('text', 'self-start')} data-motion="druck">
+                                                            Alle Leistungen zu {link.name} ansehen
+                                                            <Icon name="pfeil-rechts" groesse={4} />
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </nav>
                 </div>
 
-                {/* 3. Compact & Non-Obtrusive Bottom Footer */}
-                <footer className="absolute bottom-0 left-0 right-0 bg-white border-t border-neutral-200 p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] space-y-2">
-                    <Link
-                        href={primaryCta.path}
-                        onClick={onClose}
-                        className="btn-primary w-full py-2.5 text-xs justify-center font-bold"
-                    >
-                        <span>Kostenfreies Vor-Ort-Aufmaß anfragen</span>
-                        <ArrowRight className="w-4 h-4" />
+                <div className="shrink-0 border-t border-fuge bg-fliese p-4">
+                    <Link href={primaryCta.path} onClick={schliessen} className={knopfKlassen('haupt', 'w-full')} data-motion="druck">
+                        Kostenfreies Vor-Ort-Aufmaß anfragen
+                        <Icon name="pfeil-rechts" groesse={4} />
                     </Link>
-
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="mt-2 grid grid-cols-2 gap-2">
                         <a
                             href={`tel:${COMPANY_DATA.contact.phoneLink}`}
-                            className="btn-ghost py-2 px-3 text-xs justify-center font-bold"
+                            className={knopfKlassen('neben', 'px-3')}
                             aria-label={`Fliesenverlegung Tezgel telefonisch anrufen: ${COMPANY_DATA.contact.phone}`}
+                            data-motion="druck"
                         >
-                            <Phone className="w-4 h-4 text-orange-700 shrink-0" />
+                            <Icon name="telefon" groesse={4} />
                             <span>Anrufen</span>
                         </a>
                         <a
@@ -285,30 +198,27 @@ export default function MobileMenu({ isOpen, onClose }) {
                                 e.preventDefault();
                                 openWhatsApp({ phone: COMPANY_DATA.contact.whatsappNumber });
                             }}
-                            className="glass-button-whatsapp py-2 px-3 text-xs justify-center font-bold"
+                            className={knopfKlassen('neben', 'px-3')}
                             aria-label={`WhatsApp-Chat mit Deniz Tezgel starten: ${COMPANY_DATA.contact.whatsapp}`}
+                            data-motion="druck"
                         >
-                            <MessageCircle className="w-4 h-4 shrink-0" />
+                            <Icon name="sprechblase" groesse={4} />
                             <span>WhatsApp</span>
                         </a>
                     </div>
-
-                    <div className="pt-2 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-600">
-                        <div className="flex items-center gap-1">
-                            <Clock className="w-3 h-3 text-orange-600 shrink-0" />
-                            <span>{COMPANY_DATA.hours.formattedWeekdays}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Link href="/impressum" onClick={onClose} className="hover:text-neutral-900 underline-offset-2 hover:underline">
+                    <div className="mt-4 flex flex-wrap items-center justify-between gap-2 font-mono text-fs-1 text-tinte-2">
+                        <span>{COMPANY_DATA.hours.formattedWeekdays}</span>
+                        <span className="flex items-center gap-2">
+                            <Link href="/impressum" onClick={schliessen} className="underline decoration-strich underline-offset-4 hover:decoration-tinte">
                                 Impressum
                             </Link>
-                            <span>&middot;</span>
-                            <Link href="/datenschutz" onClick={onClose} className="hover:text-neutral-900 underline-offset-2 hover:underline">
+                            <span aria-hidden="true">&middot;</span>
+                            <Link href="/datenschutz" onClick={schliessen} className="underline decoration-strich underline-offset-4 hover:decoration-tinte">
                                 Datenschutz
                             </Link>
-                        </div>
+                        </span>
                     </div>
-                </footer>
+                </div>
             </div>
         </div>
     );

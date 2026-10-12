@@ -1,7 +1,7 @@
-// Dokument-Gerüst der Bestandsseiten (E-015): wörtlich aus dem früheren Root-Layout übernommen.
+// Dokument-Gerüst der Bestandsseiten (E-015): Inhalt des früheren Root-Layouts (Stand KERN v2), eingebunden über ./layout.tsx.
 import type { Metadata, Viewport } from 'next';
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
-import '@/styles/tokens.css';
+import localFont from 'next/font/local';
+// Pfad nach dem Umzug in die Gruppe (bestand); globals.css bindet tokens.css selbst in layer(alt) ein (KERN K-004).
 import '@/app/globals.css';
 import { HeaderWrapper } from '@/components/layout/HeaderWrapper';
 import { ClientWidgets } from '@/components/layout/ClientWidgets';
@@ -9,24 +9,30 @@ import MobileBottomBar from '@/components/layout/MobileBottomBar';
 import Footer from '@/components/common/Footer';
 import TrackingScripts from '@/components/common/TrackingScripts';
 import SkipNav from '@/components/ui/SkipNav';
-import { UIProvider } from '@/components/providers/UIProvider';
-import { MotionProvider } from '@/components/providers/MotionProvider';
 import { ErrorBoundary } from '@/components/providers/ErrorBoundary';
-import { ContentProvider } from '@/contexts/ContentContext';
-import { AuthProvider } from '@/contexts/AuthContext';
 import { buildRootGraph, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
+import BewegungsWaechter from '@/components/kern/BewegungsWaechter';
+import { KOPFSKRIPT } from '@/lib/motion/kopfskript';
 
-const inter = Inter({
-  subsets: ['latin'],
+// Schriften selbst gehostet (OFL 1.1, src/app/fonts/LIZENZEN.md). Archivo auf die genutzten Achsen beschnitten
+// (wdth 74–100, wght 400–800); Ersatzschriften mit Metrik-Anpassung stehen in globals.css (KERN K-006, E-010).
+const archivo = localFont({
+  src: '../fonts/archivo-variabel.woff2',
+  variable: '--font-archivo',
   display: 'swap',
-  variable: '--font-inter',
+  weight: '400 800',
+  adjustFontFallback: false,
+  declarations: [{ prop: 'font-stretch', value: '74% 100%' }],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
+const plexMono = localFont({
+  src: '../fonts/plex-mono-400.woff2',
+  variable: '--font-plex-mono',
   display: 'swap',
-  variable: '--font-jakarta',
+  weight: '400',
+  preload: false,
+  adjustFontFallback: false,
 });
 
 export const BESTAND_METADATA: Metadata = {
@@ -35,7 +41,7 @@ export const BESTAND_METADATA: Metadata = {
     default: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
     template: '%s | Fliesenverlegung Tezgel'
   },
-  description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
+  description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
   keywords: [
     'Fliesenverlegung Tezgel',
     'Deniz Tezgel',
@@ -58,7 +64,7 @@ export const BESTAND_METADATA: Metadata = {
     type: 'website',
     locale: 'de_DE',
     title: 'Fliesenleger Wetzlar & Aßlar | Fliesenverlegung Tezgel',
-    description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenlose Großformate & Terrassen. DIN 18534 zertifiziert. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
+    description: 'Ihr Fliesenleger für Wetzlar & Aßlar: Badsanierung, fugenarme Großformate & Terrassen. Abdichtung DIN 18534. Jetzt kostenfreies Vor-Ort-Aufmaß anfragen!',
     siteName: 'Fliesenverlegung Tezgel',
   },
   robots: {
@@ -91,7 +97,7 @@ export const BESTAND_METADATA: Metadata = {
 };
 
 export const BESTAND_VIEWPORT: Viewport = {
-  themeColor: '#FFFFFF',
+  themeColor: '#F5F4F0', // = --color-kalk (Metadaten verlangen einen Farbwert)
   colorScheme: 'light',
 };
 
@@ -103,33 +109,29 @@ export default function BestandDokument({
   const rootKnowledgeGraph = buildRootGraph();
 
   return (
-    <html lang="de" className={`${inter.variable} ${jakarta.variable}`}>
+    <html lang="de" data-scroll-behavior="smooth" suppressHydrationWarning className={`${archivo.variable} ${plexMono.variable}`}>
       <head>
+        {/* Bewegung: Startklasse vor dem ersten Rendern (KERN K-007) */}
+        <script dangerouslySetInnerHTML={{ __html: KOPFSKRIPT }} />
         <meta name="geo.region" content="DE-HE" />
         <meta name="geo.placename" content="Aßlar" />
         <meta name="geo.position" content="50.5900;8.4600" />
         <meta name="ICBM" content="50.5900, 8.4600" />
         <JsonLd schema={rootKnowledgeGraph} />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#FAFAFA] text-neutral-900 font-sans">
+      <body className="antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text">
         <SkipNav />
+        {/* Provider liegen an ihrem Nutzungsort (E-010): Inhalte unter /blog, Anmeldung unter /login */}
         <ErrorBoundary>
-          <UIProvider>
-            <MotionProvider>
-              <AuthProvider>
-                <ContentProvider>
-                  <TrackingScripts />
-                  <HeaderWrapper />
-                  <main id="main-content" className="flex-1 pb-16 md:pb-0">
-                    {children}
-                  </main>
-                  <Footer />
-                  <MobileBottomBar />
-                  <ClientWidgets />
-                </ContentProvider>
-              </AuthProvider>
-            </MotionProvider>
-          </UIProvider>
+          <TrackingScripts />
+          <HeaderWrapper />
+          <main id="main-content" className="flex-1 pb-16 lg:pb-0">
+            {children}
+          </main>
+          <Footer />
+          <MobileBottomBar />
+          <ClientWidgets />
+          <BewegungsWaechter />
         </ErrorBoundary>
       </body>
     </html>

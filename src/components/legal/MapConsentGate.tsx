@@ -1,7 +1,10 @@
 "use client";
 
-import { MapPin, Settings2 } from "lucide-react";
+import type { CSSProperties } from "react";
+import clsx from "clsx";
 import { useKartenEinwilligung } from "@/lib/formulare/useKartenEinwilligung";
+import Icon from "@/components/icons/Icon";
+import { etikettKlassen, knopfKlassen } from "@/components/kern/stile";
 
 interface MapConsentGateProps {
   children?: React.ReactNode;
@@ -9,6 +12,8 @@ interface MapConsentGateProps {
   title?: string;
   className?: string;
   height?: string | number;
+  /** gezeichnete Vorschau im Platzhalter (dekorativ, ab md), z. B. das Einzugsband – statt leerer Fläche */
+  vorschau?: React.ReactNode;
 }
 
 export function MapConsentGate({
@@ -17,80 +22,80 @@ export function MapConsentGate({
   title = "Google Maps Standort",
   className = "",
   height = "420px",
+  vorschau,
 }: MapConsentGateProps) {
-  const { isHydrated, hasConsent, handleAccept, openSettings } = useKartenEinwilligung();
+  // Einwilligungslogik (Hydrierung, Zustimmung per Klick, Marketing-Kategorie, Einstellungen öffnen) im gemeinsamen
+  // Hook useKartenEinwilligung (P3-00l) – dieselbe Logik wie die Kern-Ansicht; hier nur das Markup.
+  const { isHydrated, hasConsent: eingewilligt, handleAccept, openSettings } = useKartenEinwilligung();
 
-  if (!isHydrated) {
-    return (
-      <div
-        style={{ minHeight: height }}
-        className={`w-full bg-neutral-100 rounded-2xl animate-pulse ${className}`}
-      />
-    );
-  }
+  // Ein Rahmen mit fester Höhe für Platzhalter und geladene Karte: kein Sprung beim Laden (CLS).
+  const rahmen = clsx("karten-hoehe relative w-full overflow-hidden border border-fuge bg-fliese", className);
+  const rahmenStil = {
+    "--karten-hoehe": typeof height === "number" ? `${height}px` : height,
+  } as CSSProperties;
+
+  // Vor der Hydrierung (Server und erster Browserlauf) gilt noch keine Einwilligung: das Einwilligungs-Tor mit Texten
+  // und Knöpfen steht sofort im Dokument; die Karte erscheint erst danach und nur mit Einwilligung.
+  const hasConsent = isHydrated && eingewilligt;
 
   if (hasConsent) {
     if (children) {
-      return <div className={className}>{children}</div>;
+      return (
+        <div className={rahmen} style={rahmenStil}>
+          <div className="h-full w-full">{children}</div>
+        </div>
+      );
     }
     if (src) {
       return (
-        <iframe
-          width="100%"
-          height={height}
-          style={{ border: 0 }}
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-          src={src}
-          title={title}
-          className={`rounded-2xl ${className}`}
-        />
+        <div className={rahmen} style={rahmenStil}>
+          <iframe
+            width="100%"
+            height="100%"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            src={src}
+            title={title}
+            className="block h-full w-full border-0"
+          />
+        </div>
       );
     }
   }
 
   return (
-    <div
-      style={{ minHeight: height }}
-      className={`relative w-full flex flex-col items-center justify-center bg-gradient-to-br from-neutral-900 via-neutral-850 to-neutral-950 rounded-2xl text-center px-6 py-10 overflow-hidden border border-neutral-800 text-white ${className}`}
-    >
-      <div
-        className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"
-        aria-hidden="true"
-      />
-
-      <div className="relative z-10 max-w-md mx-auto flex flex-col items-center">
-        <div className="w-14 h-14 rounded-2xl bg-orange-600/20 border border-orange-500/30 flex items-center justify-center mb-4 text-orange-400">
-          <MapPin className="w-7 h-7 animate-pulse" />
-        </div>
-
-        <div className="font-bold text-white text-xl mb-2">
-          Interaktive Karte geschützt (DSGVO)
-        </div>
-
-        <p className="text-neutral-300 text-xs sm:text-sm leading-relaxed mb-6">
-          Um die interaktive Google Maps Karte mit Standorten und Routen anzuzeigen,
-          ist Ihre Einwilligung in externe Medien erforderlich.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-3 w-full justify-center">
-          <button
-            type="button"
-            onClick={handleAccept}
-            className="h-11 px-6 bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm rounded-xl transition-all shadow-md cursor-pointer"
-          >
-            Karte laden & zustimmen
-          </button>
-
-          <button
-            type="button"
-            onClick={openSettings}
-            className="h-11 px-4 flex items-center justify-center gap-2 text-xs font-semibold text-neutral-300 hover:bg-white/10 transition-colors rounded-xl border border-white/10 cursor-pointer"
-          >
-            <Settings2 className="w-4 h-4" />
-            Cookie-Einstellungen
-          </button>
+    <div className={rahmen} style={rahmenStil}>
+      <div className="flex h-full flex-col p-6">
+        <span className={etikettKlassen}>
+          <Icon name="schloss" groesse={4} />
+          Karte
+        </span>
+        {vorschau && (
+          <div aria-hidden="true" className="hidden min-h-0 flex-1 overflow-hidden pt-4 md:block">
+            {vorschau}
+          </div>
+        )}
+        <div
+          className={
+            vorschau
+              ? "flex flex-col items-center justify-center gap-4 py-6 text-center md:items-start md:border-t md:border-fuge md:pb-0 md:pt-4 md:text-left"
+              : "flex flex-1 flex-col items-center justify-center gap-4 py-6 text-center"
+          }
+        >
+          <p className="font-text text-fs-3 font-semibold text-tinte">Interaktive Karte geschützt (DSGVO)</p>
+          <p className="max-w-md font-text text-fs-2 text-tinte-2">
+            Um die interaktive Google Maps Karte mit Standorten und Routen anzuzeigen, ist Ihre Einwilligung in externe
+            Medien erforderlich.
+          </p>
+          <div className={clsx("flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center", vorschau && "md:justify-start")}>
+            <button type="button" onClick={handleAccept} className={knopfKlassen("haupt", "w-full sm:w-auto")} data-motion="druck">
+              Karte laden & zustimmen
+            </button>
+            <button type="button" onClick={openSettings} className={knopfKlassen("neben", "w-full sm:w-auto")} data-motion="druck">
+              Cookie-Einstellungen
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -3,10 +3,10 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
-const WaterCursor = dynamic(() => import('@/components/ui/WaterCursor'), { ssr: false });
 const FloatingWhatsAppWidget = dynamic(() => import('@/components/common/FloatingWhatsAppWidget'), { ssr: false });
 const CookieConsent = dynamic(() => import('@/components/common/CookieConsent'), { ssr: false });
 
+// Einwilligungsbanner sofort, WhatsApp-Knopf im Leerlauf (KERN K-009). Der Wasser-Cursor ist entfallen (E-008).
 export function ClientWidgets() {
   const [isIdleReady, setIsIdleReady] = useState(false);
 
@@ -31,12 +31,7 @@ export function ClientWidgets() {
   return (
     <>
       <CookieConsent />
-      {isIdleReady && (
-        <>
-          <WaterCursor tint="aqua" />
-          <FloatingWhatsAppWidget />
-        </>
-      )}
+      {isIdleReady && <FloatingWhatsAppWidget />}
     </>
   );
 }

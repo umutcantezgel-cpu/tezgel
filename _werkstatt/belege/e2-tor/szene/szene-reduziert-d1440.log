@@ -1,0 +1,25 @@
+{
+ "modus": "reduziert",
+ "seite": "/werkstatt-schaufenster/szene",
+ "ansicht": "d1440",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/szene/reduziert-d1440/ergebnis.json",
+ "bewegungsbefunde": [],
+ "unsichtbar": [
+  {
+   "kennung": "aufklappen",
+   "sel": "div#mobile-menu",
+   "gruende": [
+    "display none"
+   ]
+  }
+ ],
+ "geprueft": 79,
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 25
+ }
+}

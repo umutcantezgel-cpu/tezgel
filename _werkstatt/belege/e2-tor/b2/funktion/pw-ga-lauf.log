@@ -1,0 +1,13 @@
+
+Running 8 tests using 1 worker
+
+  ✓  1 [mobil] › tests/funktion-tracking.spec.mjs:57:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (1) ohne Entscheidung: nach Laden und Scrollen keine Anfrage an GA4-Hosts (7.2s)
+  ✓  2 [mobil] › tests/funktion-tracking.spec.mjs:66:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (2) „Alle ablehnen“: auch nach Neuladen und Seitenwechsel keine Anfrage an GA4-Hosts (10.1s)
+  ✓  3 [mobil] › tests/funktion-tracking.spec.mjs:87:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (3) „Alle akzeptieren“: ab dem nächsten Seitenaufruf Anfrage an gtag/js?id=G-TEST000000 (Sperre antwortet mit 204) (2.2s)
+  ✓  4 [mobil] › tests/funktion-tracking.spec.mjs:103:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Widerruf (Zustimmung vorhanden) › (4) „Cookie-Einstellungen verwalten“ → „Alle ablehnen“: nach Neuladen keine neue Anfrage an GA4-Hosts (7.5s)
+  ✓  5 [desktop] › tests/funktion-tracking.spec.mjs:57:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (1) ohne Entscheidung: nach Laden und Scrollen keine Anfrage an GA4-Hosts (4.5s)
+  ✓  6 [desktop] › tests/funktion-tracking.spec.mjs:66:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (2) „Alle ablehnen“: auch nach Neuladen und Seitenwechsel keine Anfrage an GA4-Hosts (6.4s)
+  ✓  7 [desktop] › tests/funktion-tracking.spec.mjs:87:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (3) „Alle akzeptieren“: ab dem nächsten Seitenaufruf Anfrage an gtag/js?id=G-TEST000000 (Sperre antwortet mit 204) (2.3s)
+  ✓  8 [desktop] › tests/funktion-tracking.spec.mjs:103:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Widerruf (Zustimmung vorhanden) › (4) „Cookie-Einstellungen verwalten“ → „Alle ablehnen“: nach Neuladen keine neue Anfrage an GA4-Hosts (5.2s)
+
+  8 passed (48.0s)

@@ -1,39 +1,46 @@
 "use client";
 
-import React from "react";
+// Projektanfrage auf der Startseite (E2-ORCH-08): links die Angaben als Felder an der Fuge, rechts Zusammenfassung
+// und Kontakt als Schriftfeld auf Tinte. Logik, Nutzlast, IDs, Knopfnamen und Texte unverändert (Test funktion-preisrechner);
+// das pulsierende Absende-Element (HeartbeatCTA) entfällt – Bewegung nur nach Register.
+// Zustände, Prüfung und Absenden kommen aus usePreisrechner (P3-00l, eine Logik für Bestand und Kern); dort startet die
+// Einwilligung leer (Fairness, E-014).
 import {
   CRAFT_SERVICES,
   ROOM_SIZES,
   SITUATION_OPTIONS,
   TIMING_OPTIONS,
   type CraftServiceType,
-} from "@/components/pricing/pricing.constants";
-import {
-  Bath,
-  Maximize2,
-  Home,
-  Sun,
-  ShieldCheck,
-  Wrench,
-  CheckCircle2,
-  Phone,
-  Sparkles,
-  Send,
-  Loader2,
-  AlertCircle,
-} from "lucide-react";
-import HeartbeatCTA from "@/components/animations/HeartbeatCTA";
+} from "./pricing.constants";
+import Icon from "@/components/icons/Icon";
+import Verlegeplan from "@/components/kern/Verlegeplan";
+import type { PlanName } from "@/lib/plaene/vorgaben";
+import Fugenkreuz from "@/components/kern/Fugenkreuz";
+import Knopf from "@/components/kern/Knopf";
+import { etikettForm, etikettKlassen, feldKlassen, labelKlassen } from "@/components/kern/stile";
 import { siteConfig } from "@/lib/config";
 import { usePreisrechner } from "@/lib/formulare/usePreisrechner";
 
-const SERVICE_ICONS: Record<CraftServiceType, React.ElementType> = {
-  bad: Bath,
-  grossformat: Maximize2,
-  wohnbereich: Home,
-  balkon: Sun,
-  abdichtung: ShieldCheck,
-  reparatur: Wrench,
+const SERVICE_PLAENE: Record<CraftServiceType, PlanName> = {
+  bad: "bad",
+  grossformat: "grossformat",
+  wohnbereich: "wohnen",
+  balkon: "balkon",
+  abdichtung: "abdichtung",
+  reparatur: "reparatur",
 };
+
+/** Beschriftung auf der Tinte-Fläche */
+const labelHell = "block font-text text-fs-2 font-semibold text-kalk";
+/** Auswahlfeld mit Titel und Unterzeile (aria-pressed) */
+const optionKlassen =
+  "flex w-full items-start gap-3 border border-strich bg-fliese p-4 text-left text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
+/** Flächenstufe (aria-pressed), zentriert */
+const stufeKlassen =
+  "flex w-full flex-col items-center gap-1 border border-strich bg-fliese p-4 text-center text-tinte hover:border-tinte aria-pressed:border-tinte aria-pressed:bg-tinte aria-pressed:text-kalk";
+/** kleines Zahlenfeld neben dem Label */
+const zahlFeldKlassen =
+  "block w-24 min-h-11 rounded-r1 border border-strich bg-fliese px-4 py-3 font-text text-fs-3 text-tinte placeholder:text-tinte-2 hover:border-tinte focus-visible:border-tinte";
 
 export default function PricingCalculator() {
   const {
@@ -71,122 +78,96 @@ export default function PricingCalculator() {
   } = usePreisrechner();
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl border border-neutral-200/90 overflow-hidden max-w-5xl mx-auto flex flex-col lg:flex-row">
-      {/* ── Linke Spalte: Ausführliche Situations- & Bedarfsangabe ── */}
-      <div className="flex-[3] p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-neutral-200 bg-neutral-50/50 flex flex-col">
-        {/* Phasen-Indikator */}
-        <div className="flex items-center gap-2 sm:gap-3 mb-8">
-          <div className="flex items-center gap-2">
-            <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange-700 text-white flex items-center justify-center text-xs font-bold shadow-xs">
-              1
-            </span>
-            <span className="text-xs sm:text-sm font-bold text-neutral-800">Gewerk</span>
-          </div>
-          <div className="flex-1 h-[2px] bg-orange-200" />
-          <div className="flex items-center gap-2">
-            <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange-700 text-white flex items-center justify-center text-xs font-bold shadow-xs">
-              2
-            </span>
-            <span className="text-xs sm:text-sm font-bold text-neutral-800">Fläche</span>
-          </div>
-          <div className="flex-1 h-[2px] bg-orange-200" />
-          <div className="flex items-center gap-2">
-            <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange-700 text-white flex items-center justify-center text-xs font-bold shadow-xs">
-              3
-            </span>
-            <span className="text-xs sm:text-sm font-bold text-neutral-800">Situation</span>
-          </div>
-        </div>
+    <div className="grid grid-cols-1 border border-strich lg:grid-cols-5">
+      {/* ── Linke Spalte: Angaben zu Vorhaben und Situation ── */}
+      <div className="flex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12">
+        {/* Phasen */}
+        <ol className="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage">
+          <li className="flex items-center gap-2">
+            <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">1</span>
+            <span>Gewerk</span>
+          </li>
+          <li aria-hidden="true" className="h-px flex-1 bg-fuge" />
+          <li className="flex items-center gap-2">
+            <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">2</span>
+            <span>Fläche</span>
+          </li>
+          <li aria-hidden="true" className="h-px flex-1 bg-fuge" />
+          <li className="flex items-center gap-2">
+            <span className="inline-flex size-6 items-center justify-center bg-tinte text-kalk">3</span>
+            <span>Situation</span>
+          </li>
+        </ol>
 
-        {/* 1. Gewerk Auswahl */}
-        <div className="mb-7">
-          <div className="flex items-center justify-between mb-3">
-            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700">
+        {/* 1. Gewerk */}
+        <div role="group" aria-labelledby="calc-gewerk">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p id="calc-gewerk" className={labelKlassen}>
               1. Welches Projekt planen Sie?
-            </label>
-            <span className="text-[11px] font-semibold text-orange-800 bg-orange-100/70 px-2 py-0.5 rounded-md">
-              Auswahl erforderlich
-            </span>
+            </p>
+            <span className={etikettKlassen}>Auswahl erforderlich</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {Object.values(CRAFT_SERVICES).map((srv) => {
-              const Icon = SERVICE_ICONS[srv.id] || Sparkles;
               const isSelected = serviceType === srv.id;
               return (
                 <button
                   key={srv.id}
                   type="button"
+                  aria-pressed={isSelected}
                   onClick={() => selectService(srv.id)}
-                  className={`p-3.5 rounded-xl border text-left transition-all flex items-start gap-3 cursor-pointer ${
-                    isSelected
-                      ? "bg-white border-orange-500 ring-2 ring-orange-500/20 shadow-sm"
-                      : "bg-white/80 border-neutral-200 hover:border-neutral-300 hover:bg-white"
-                  }`}
+                  className={optionKlassen}
+                  data-motion="zustand"
                 >
-                  <div
-                    className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                      isSelected
-                        ? "bg-orange-700 text-white"
-                        : "bg-neutral-100 text-neutral-600"
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between gap-1">
-                      <div className="text-sm font-bold text-neutral-900 leading-tight">
-                        {srv.title}
-                      </div>
+                  {/* Planmarke statt Piktogramm: das Gewerk als kleiner Verlegeplan (Formsystem K-008), auf Kalk in beiden Zuständen lesbar */}
+                  <span className="w-12 shrink-0 border border-fuge bg-kalk p-1">
+                    <Verlegeplan plan={SERVICE_PLAENE[srv.id]} bemassung={false} ohneAchse />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
+                      <span className="block min-w-0 text-fs-2 font-semibold">{srv.title}</span>
                       {srv.badge && (
-                        <span className="text-[10px] font-semibold text-neutral-500 hidden sm:inline-block">
-                          {srv.badge}
-                        </span>
+                        <span className="hidden whitespace-nowrap font-text text-fs-1 sm:inline-block">{srv.badge}</span>
                       )}
-                    </div>
-                    <div className="text-xs text-neutral-600 mt-1 leading-snug">
-                      {srv.subtitle}
-                    </div>
-                  </div>
+                    </span>
+                    <span className="mt-1 block text-fs-1">{srv.subtitle}</span>
+                  </span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* 2. Raumgröße / Fläche */}
-        <div className="mb-7">
-          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-3">
+        {/* 2. Fläche */}
+        <div role="group" aria-labelledby="calc-flaeche">
+          <p id="calc-flaeche" className={labelKlassen}>
             2. Geschätzte Grundfläche:
-          </label>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
+          </p>
+          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
             {Object.values(ROOM_SIZES).map((size) => {
               const isSelected = roomSize === size.id && !customArea;
               return (
                 <button
                   key={size.id}
                   type="button"
+                  aria-pressed={isSelected}
                   onClick={() => selectRoomSize(size.id)}
-                  className={`p-3 rounded-xl border text-center transition-all cursor-pointer ${
-                    isSelected
-                      ? "bg-white border-orange-500 ring-2 ring-orange-500/20 shadow-sm"
-                      : "bg-white/80 border-neutral-200 hover:border-neutral-300 hover:bg-white"
-                  }`}
+                  className={stufeKlassen}
+                  data-motion="zustand"
                 >
-                  <div className="text-xs font-bold text-neutral-900">{size.label}</div>
-                  <div className="text-[11px] font-bold text-orange-800 mt-0.5">
-                    {size.areaText}
-                  </div>
+                  <span className="block w-full text-fs-2 font-semibold">{size.label}</span>
+                  <span className="block w-full font-mono text-fs-1">{size.areaText}</span>
                 </button>
               );
             })}
           </div>
 
-          <div className="flex items-center gap-2">
-            <label htmlFor="calc-custom-area" className="text-xs text-neutral-700 font-medium shrink-0">
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <label htmlFor="calc-custom-area" className="text-fs-2 text-tinte-2">
               Oder genaue Quadratmeterzahl bekannt:
             </label>
-            <div className="relative flex-1 max-w-[140px]">
+            <span className="flex items-center gap-2">
               <input
                 id="calc-custom-area"
                 name="customArea"
@@ -196,67 +177,56 @@ export default function PricingCalculator() {
                 aria-label="Quadratmeterzahl manuell eingeben"
                 value={customArea}
                 onChange={(e) => setCustomArea(e.target.value)}
-                className="w-full px-3 py-1.5 text-xs rounded-lg border border-neutral-300 bg-white text-neutral-900 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                className={zahlFeldKlassen}
               />
-              <span className="absolute right-3 top-1.5 text-xs text-neutral-700 font-semibold" aria-hidden="true">
+              <span className="font-mono text-fs-2 text-tinte" aria-hidden="true">
                 m²
               </span>
-            </div>
+            </span>
           </div>
         </div>
 
-        {/* 3. Vorarbeiten & Ausgangssituation */}
-        <div className="mb-7">
-          <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-3">
-            3. Rahmenbedingungen & Vorarbeiten:
-          </label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {/* 3. Rahmenbedingungen */}
+        <div role="group" aria-labelledby="calc-rahmen">
+          <p id="calc-rahmen" className={labelKlassen}>
+            3. Rahmenbedingungen &amp; Vorarbeiten:
+          </p>
+          <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {SITUATION_OPTIONS.map((opt) => {
               const isChecked = selectedFeatures.includes(opt.id);
               return (
                 <button
                   key={opt.id}
                   type="button"
+                  aria-pressed={isChecked}
                   onClick={() => toggleFeature(opt.id)}
-                  className={`p-2.5 sm:p-3 rounded-xl border text-left flex items-start gap-2.5 transition-all cursor-pointer ${
-                    isChecked
-                      ? "bg-orange-50/70 border-orange-300 text-neutral-900"
-                      : "bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300"
-                  }`}
+                  className="flex items-start gap-3 border border-strich bg-fliese p-3 text-left text-tinte hover:border-tinte aria-pressed:border-tinte"
+                  data-motion="zustand"
                 >
-                  <div
-                    className={`w-4 h-4 rounded-md flex items-center justify-center border shrink-0 mt-0.5 ${
-                      isChecked
-                        ? "bg-orange-700 border-orange-700 text-white"
-                        : "border-neutral-300 bg-white"
+                  <span
+                    className={`mt-1 inline-flex size-4 shrink-0 items-center justify-center border ${
+                      isChecked ? "border-tinte bg-tinte text-kalk" : "border-strich bg-fliese"
                     }`}
                   >
-                    {isChecked && <CheckCircle2 className="w-3.5 h-3.5" />}
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-neutral-900 leading-snug">
-                      {opt.label}
-                    </div>
-                    <div className="text-[11px] text-neutral-500 mt-0.5 leading-snug">
-                      {opt.description}
-                    </div>
-                  </div>
+                    {isChecked && <Icon name="haken" groesse={4} />}
+                  </span>
+                  <span>
+                    <span className="block text-fs-2 font-semibold">{opt.label}</span>
+                    <span className="mt-1 block text-fs-1 text-tinte-2">{opt.description}</span>
+                  </span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* 4. Ausführliche Situationsbeschreibung (Freitext) */}
+        {/* 4. Situation (Freitext) */}
         <div>
-          <div className="flex items-center justify-between mb-2">
-            <label
-              htmlFor="situation-notes"
-              className="block text-xs font-bold uppercase tracking-wider text-neutral-700"
-            >
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <label htmlFor="situation-notes" className={labelKlassen}>
               4. Schildern Sie kurz Ihre Situation &amp; Ihr Vorhaben:
             </label>
-            <span className="text-[11px] text-neutral-500">Sehr hilfreich für Rückfragen</span>
+            <span className={etikettKlassen}>Sehr hilfreich für Rückfragen</span>
           </div>
           <textarea
             id="situation-notes"
@@ -266,96 +236,89 @@ export default function PricingCalculator() {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Beschreiben Sie hier Ihre Ausgangslage: z. B. Zustand des Untergrunds, alte Fliesen vorhanden, Neubau oder bewohnter Bestand, besondere Vorstellungen wie Nischen oder barrierefreie Dusche, zeitliche Wünsche..."
-            className="w-full p-3.5 rounded-xl border border-neutral-300 bg-white text-neutral-900 placeholder:text-neutral-500 text-xs sm:text-sm focus:outline-none focus:border-orange-600 focus:ring-2 focus:ring-orange-600/20 transition-all resize-y"
+            className={`${feldKlassen} resize-y`}
           />
         </div>
       </div>
 
-      {/* ── Rechte Spalte: Projektzusammenfassung & Kontaktübermittlung ── */}
-      <div className="flex-[2] p-6 sm:p-8 lg:p-10 bg-neutral-900 text-white flex flex-col justify-between">
+      {/* ── Rechte Spalte: Zusammenfassung und Kontakt (Schriftfeld auf Tinte über die volle Höhe; der Absenden-Knopf
+          steht direkt unter der Einwilligung) ── */}
+      <div className="flaeche-tinte flex flex-col bg-tinte p-6 text-kalk sm:p-8 lg:col-span-2 lg:p-12">
         {status === "success" ? (
           /* Erfolgsansicht nach Absenden */
-          <div className="my-auto py-6 text-center space-y-4">
-            <div className="w-16 h-16 rounded-2xl bg-orange-500/20 border border-orange-500/40 text-orange-400 flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-8 h-8" />
-            </div>
+          <div className="my-auto flex flex-col gap-6" role="status">
+            <span className={`${etikettForm} text-nacht-2`}>
+              <Icon name="haken" groesse={4} className="text-kalk" />
+              <span className="text-kalk">Referenz: {referenceId || "TEZ-ANFRAGE"}</span>
+            </span>
 
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-xs font-mono font-bold">
-              <span>Referenz: {referenceId || "TEZ-ANFRAGE"}</span>
-            </div>
-
-            <p className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            <p className="font-anzeige text-fs-5 font-semibold text-kalk">
               Anfrage erfolgreich übermittelt!
             </p>
 
-            <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed max-w-sm mx-auto">
-              Vielen Dank, <strong>{name}</strong>! Ihre Situationsbeschreibung und Kontaktdaten
+            <p className="text-fs-2 text-nacht-2">
+              Vielen Dank, <strong className="font-semibold text-kalk">{name}</strong>! Ihre Situationsbeschreibung und Kontaktdaten
               sind direkt bei Herrn Deniz Tezgel eingegangen.
             </p>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-left text-xs text-neutral-300 space-y-1.5">
-              <div className="font-bold text-white text-sm mb-1">So geht es weiter:</div>
-              <p>1. Deniz Tezgel prüft Ihre Angaben persönlich.</p>
-              <p>2. Sie erhalten zeitnah einen Anruf oder eine Nachricht zur Abstimmung.</p>
-              <p>3. Kostenfreies Vor-Ort-Aufmaß &amp; verbindliches Festpreisangebot.</p>
+            <div className="border-t border-nacht-fuge pt-6 text-fs-2 text-nacht-2">
+              <p className="font-semibold text-kalk">So geht es weiter:</p>
+              <p className="mt-2">1. Deniz Tezgel prüft Ihre Angaben persönlich.</p>
+              <p className="mt-1">2. Sie erhalten zeitnah einen Anruf oder eine Nachricht zur Abstimmung.</p>
+              <p className="mt-1">3. Kostenfreies Vor-Ort-Aufmaß &amp; verbindliches Festpreisangebot.</p>
             </div>
 
-            <button
-              type="button"
-              onClick={handleReset}
-              className="w-full py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-bold transition-colors cursor-pointer"
-            >
+            <Knopf variante="hell" onClick={handleReset} className="w-full">
               Weitere Projektanfrage senden
-            </button>
+            </Knopf>
           </div>
         ) : (
           /* Formular-Ansicht */
-          <form onSubmit={handleSubmit} className="flex flex-col h-full justify-between space-y-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             <div>
-              {/* Header Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-600/30 text-orange-300 border border-orange-500/40 text-xs font-bold mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
+              <span className={`${etikettForm} text-nacht-2`}>
+                <Fugenkreuz className="size-3 text-nacht-2" />
                 <span>Preise individuell auf Anfrage</span>
-              </div>
+              </span>
 
-              <p className="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
+              <p className="mt-6 font-anzeige text-fs-5 font-semibold text-kalk">
                 Unverbindliche Projektanfrage
               </p>
 
-              <p className="text-xs text-neutral-300 leading-relaxed mb-5">
+              <p className="mt-3 text-fs-2 text-nacht-2">
                 Wir zeigen keine pauschalen Scheinpreise im Netz. Jedes Bauvorhaben ist einzigartig.
                 Beschreiben Sie Ihr Vorhaben – wir melden uns für ein kostenfreies Vor-Ort-Aufmaß
                 und Ihr verlässliches Festpreisangebot.
               </p>
 
-              {/* Projekt-Zusammenfassung Box */}
-              <div className="rounded-xl bg-neutral-800/80 border border-neutral-700/80 p-3.5 space-y-2 mb-6 text-xs">
-                <div className="flex items-center justify-between text-neutral-300">
-                  <span className="text-neutral-400">Gewerk:</span>
-                  <span className="font-bold text-white">{selectedService.title}</span>
+              {/* Projekt-Zusammenfassung */}
+              <dl className="mt-6 border-t border-nacht-fuge text-fs-2">
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                  <dt className="text-nacht-2">Gewerk:</dt>
+                  <dd className="text-right font-semibold text-kalk">{selectedService.title}</dd>
                 </div>
-                <div className="flex items-center justify-between text-neutral-300">
-                  <span className="text-neutral-400">Fläche:</span>
-                  <span className="font-bold text-white">
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                  <dt className="text-nacht-2">Fläche:</dt>
+                  <dd className="text-right font-mono text-kalk">
                     {customArea.trim() ? `${customArea.trim()} m²` : selectedSize.areaText}
-                  </span>
+                  </dd>
                 </div>
-                <div className="flex items-center justify-between text-neutral-300">
-                  <span className="text-neutral-400">Vor-Ort-Aufmaß:</span>
-                  <span className="font-bold text-emerald-400">0 € (Kostenfrei)</span>
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                  <dt className="text-nacht-2">Vor-Ort-Aufmaß:</dt>
+                  <dd className="text-right font-mono text-kalk">0 € (Kostenfrei)</dd>
                 </div>
-                <div className="flex items-center justify-between text-neutral-300">
-                  <span className="text-neutral-400">Angebot:</span>
-                  <span className="font-bold text-emerald-400">Verbindlicher Festpreis</span>
+                <div className="flex items-center justify-between gap-4 border-b border-nacht-fuge py-3">
+                  <dt className="text-nacht-2">Angebot:</dt>
+                  <dd className="text-right font-semibold text-kalk">Verbindlicher Festpreis</dd>
                 </div>
-              </div>
+              </dl>
 
               {/* Fehleranzeige */}
               {errorMessage && (
-                <div className="mb-4 p-3 rounded-xl bg-red-950/60 border border-red-800/80 text-red-200 text-xs flex items-start gap-2">
-                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-400" />
+                <p className="mt-6 flex items-start gap-2 border-l-2 border-laser bg-fliese p-3 text-fs-2 text-laser-tief" role="alert">
+                  <Icon name="fehler" groesse={4} className="mt-1 shrink-0" />
                   <span>{errorMessage}</span>
-                </div>
+                </p>
               )}
 
               {/* Honeypot Feld für Bot-Schutz */}
@@ -375,11 +338,11 @@ export default function PricingCalculator() {
                 autoComplete="off"
               />
 
-              {/* Eingabefelder Kontaktdaten */}
-              <div className="space-y-3">
+              {/* Kontaktdaten */}
+              <div className="mt-6 flex flex-col gap-4">
                 <div>
-                  <label htmlFor="calc-name" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
-                    Ihr Name <span className="text-orange-400">*</span>
+                  <label htmlFor="calc-name" className={labelHell}>
+                    Ihr Name <span className="ml-1 font-mono text-fs-1 text-nacht-2">*</span>
                   </label>
                   <input
                     id="calc-name"
@@ -390,14 +353,14 @@ export default function PricingCalculator() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Vor- und Nachname"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-800 border border-neutral-700 text-white placeholder:text-neutral-500 text-xs sm:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                    className={feldKlassen}
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-1 gap-4">
                   <div>
-                    <label htmlFor="calc-phone" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
-                      Telefonnummer <span className="text-orange-400">*</span>
+                    <label htmlFor="calc-phone" className={labelHell}>
+                      Telefonnummer <span className="ml-1 font-mono text-fs-1 text-nacht-2">*</span>
                     </label>
                     <input
                       id="calc-phone"
@@ -408,12 +371,12 @@ export default function PricingCalculator() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="z. B. 0170 1234567"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-800 border border-neutral-700 text-white placeholder:text-neutral-500 text-xs sm:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                      className={feldKlassen}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="calc-email" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                    <label htmlFor="calc-email" className={labelHell}>
                       E-Mail-Adresse
                     </label>
                     <input
@@ -424,14 +387,14 @@ export default function PricingCalculator() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="ihre@email.de"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-800 border border-neutral-700 text-white placeholder:text-neutral-500 text-xs sm:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                      className={feldKlassen}
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-1 gap-4">
                   <div>
-                    <label htmlFor="calc-location" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                    <label htmlFor="calc-location" className={labelHell}>
                       Einsatzort / PLZ
                     </label>
                     <input
@@ -442,40 +405,45 @@ export default function PricingCalculator() {
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
                       placeholder="z. B. Aßlar, Wetzlar..."
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-neutral-800 border border-neutral-700 text-white placeholder:text-neutral-500 text-xs sm:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
+                      className={feldKlassen}
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="calc-timing" className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1">
+                    <label htmlFor="calc-timing" className={labelHell}>
                       Gewünschter Zeitraum
                     </label>
-                    <select
-                      id="calc-timing"
-                      name="timing"
-                      aria-label="Gewünschter Zeitraum"
-                      value={timing}
-                      onChange={(e) => setTiming(e.target.value)}
-                      className="w-full px-3 py-2.5 rounded-xl bg-neutral-800 border border-neutral-700 text-white text-xs sm:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all"
-                    >
-                      {TIMING_OPTIONS.map((t) => (
-                        <option key={t} value={t} className="bg-neutral-800 text-white">
-                          {t}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        id="calc-timing"
+                        name="timing"
+                        aria-label="Gewünschter Zeitraum"
+                        value={timing}
+                        onChange={(e) => setTiming(e.target.value)}
+                        className={`${feldKlassen} appearance-none pr-12`}
+                      >
+                        {TIMING_OPTIONS.map((t) => (
+                          <option key={t} value={t}>
+                            {t}
+                          </option>
+                        ))}
+                      </select>
+                      <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                        <Icon name="winkel-unten" groesse={5} className="text-tinte" />
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Datenschutz Checkbox */}
-                <label className="flex items-start gap-2 pt-2 cursor-pointer text-[11px] text-neutral-300">
+                {/* Datenschutz */}
+                <label className="flex cursor-pointer items-start gap-3 text-fs-2 text-nacht-2">
                   <input
                     type="checkbox"
                     id="calc-privacy"
                     name="privacyAccepted"
                     checked={privacyAccepted}
                     onChange={(e) => setPrivacyAccepted(e.target.checked)}
-                    className="mt-0.5 rounded border-neutral-700 bg-neutral-800 text-orange-600 focus:ring-orange-500"
+                    className="mt-1 size-5 shrink-0 rounded-r1 accent-kalk"
                   />
                   <span>
                     Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner
@@ -485,37 +453,17 @@ export default function PricingCalculator() {
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="mt-6 space-y-3 pt-2 border-t border-neutral-800">
-              <HeartbeatCTA className="w-full">
-                <button
-                  type="submit"
-                  disabled={status === "submitting"}
-                  className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-orange-700 hover:bg-orange-600 active:bg-orange-800 disabled:opacity-60 text-white font-bold text-sm shadow-lg shadow-orange-950/50 transition-all cursor-pointer"
-                >
-                  {status === "submitting" ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Anfrage wird übertragen...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>Unverbindliche Anfrage absenden</span>
-                    </>
-                  )}
-                </button>
-              </HeartbeatCTA>
+            {/* Absenden und Anruf */}
+            <div className="flex flex-col gap-4 border-t border-nacht-fuge pt-6">
+              <Knopf type="submit" variante="hell" laedt={status === "submitting"} ladeText="Anfrage wird übertragen..." icon="pfeil-rechts" className="w-full">
+                Unverbindliche Anfrage absenden
+              </Knopf>
 
-              <div className="text-center">
-                <span className="text-[11px] text-neutral-400">Oder bei dringenden Fragen direkt anrufen:</span>
-                <a
-                  href={siteConfig.contact.phone.link}
-                  className="mt-1 flex items-center justify-center gap-2 w-full h-10 rounded-xl bg-white/10 hover:bg-white/15 text-neutral-200 text-xs font-semibold border border-white/10 transition-colors"
-                >
-                  <Phone className="w-3.5 h-3.5 text-orange-400" />
-                  <span>{siteConfig.contact.phone.formatted}</span>
-                </a>
+              <div>
+                <span className="block font-mono text-fs-1 text-nacht-2">Oder bei dringenden Fragen direkt anrufen:</span>
+                <Knopf href={siteConfig.contact.phone.link} variante="neben" iconLinks="telefon" className="mt-2 w-full">
+                  {siteConfig.contact.phone.formatted}
+                </Knopf>
               </div>
             </div>
           </form>

@@ -1,0 +1,106 @@
+{
+ "modus": "bildrate",
+ "seite": "/",
+ "base": "http://127.0.0.1:4312",
+ "ansicht": "m390",
+ "zeitpunkt": "2026-10-10T22:49:42.705Z",
+ "dpr": 2,
+ "cpu_drosselung": 4,
+ "gesten": {
+  "befehl": "Input.synthesizeScrollGesture",
+  "gestureSourceType": "default",
+  "geschwindigkeit_px_s": 800,
+  "folge": "oben→unten, dann unten→oben"
+ },
+ "wiederholungen": 3,
+ "bilder_gesamt": 4258,
+ "verworfen": 0,
+ "anteil_verworfen_prozent": 0,
+ "loaf_anzahl": 0,
+ "loaf_summe_ms": 0,
+ "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+ "laeufe": [
+  {
+   "bilder_gesamt": 4256,
+   "verworfen": 3,
+   "anteil_verworfen_prozent": 0.07,
+   "loaf_anzahl": 23,
+   "loaf_summe_ms": 4539,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4253,
+     "verworfen": 3
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4313,
+     "verworfen": 4
+    }
+   },
+   "scroll": {
+    "hoehe": 28362,
+    "nach_abwaerts": 28361,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 98.2
+  },
+  {
+   "bilder_gesamt": 4258,
+   "verworfen": 0,
+   "anteil_verworfen_prozent": 0,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4258,
+     "verworfen": 0
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4286,
+     "verworfen": 0
+    }
+   },
+   "scroll": {
+    "hoehe": 28361,
+    "nach_abwaerts": 28361,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 98.4
+  },
+  {
+   "bilder_gesamt": 4258,
+   "verworfen": 0,
+   "anteil_verworfen_prozent": 0,
+   "loaf_anzahl": 0,
+   "loaf_summe_ms": 0,
+   "quelle": "Frame-Ereignisse: Display::FrameDisplayed, DroppedFrame",
+   "zusatz": {
+    "frame_ereignisse": {
+     "praesentiert": 4258,
+     "verworfen": 0
+    },
+    "pipeline_reporter": {
+     "praesentiert": 4285,
+     "verworfen": 1
+    }
+   },
+   "scroll": {
+    "hoehe": 28361,
+    "nach_abwaerts": 28361,
+    "nach_aufwaerts": 0
+   },
+   "trace_vollstaendig": true,
+   "dauer_s": 97.6
+  }
+ ],
+ "gesperrt": {
+  "fremd_abgefangen": 0,
+  "blockiert": 0,
+  "formular_attrappe": 0
+ },
+ "rohtrace": "nicht gespeichert (nur Kennzahlen)",
+ "verzeichnis": "/home/user/tezgel/_werkstatt/belege/e2-tor/bewegung/bildrate-start-m390"
+}

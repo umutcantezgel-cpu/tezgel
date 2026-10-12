@@ -1,0 +1,14 @@
+werte: 109 Dateien · 5138 Klassenvorkommen (530 eindeutig) · 0.6 s
+  ohne_css             20
+  beliebig             19
+  farbe_ausserhalb     323
+  abstand_ausserhalb   77
+  groesse_ausserhalb   45
+  schrift_ausserhalb   187
+  radius_ausserhalb    32
+  dauer_ausserhalb     9
+  farbe_literal        2
+  style_wert           1
+  dauer_zahl           6
+  befunde gesamt       721
+Bericht: ../../../tmp/claude-0/-home-user-tezgel/dace07c4-99ff-5ad3-8991-61c068a26ed1/scratchpad/E2-PRUEF-B/werte-1ad2e45/2026-10-10T22-18-01-924Z.json

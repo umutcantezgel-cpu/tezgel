@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowLeft, Home } from 'lucide-react';
+import Einstieg from '@/components/kern/Einstieg';
+import Knopf from '@/components/kern/Knopf';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 
 export const metadata: Metadata = {
   title: 'Seite nicht gefunden (404) | Fliesenverlegung Tezgel',
@@ -11,29 +12,30 @@ export const metadata: Metadata = {
   },
 };
 
+// 404 (KERN K-009): Arbeitsansicht mit dem Verlegeplan, in dem eine Fliese fehlt; Texte und Wege wie im Bestand.
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] flex items-center justify-center pt-32 pb-20 px-4 text-center">
-      <div className="max-w-xl mx-auto space-y-6">
-        <span className="eyebrow eyebrow-orange">Fehler 404</span>
-        <h1 className="text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight">
-          Seite nicht gefunden
-        </h1>
-        <p className="text-base text-neutral-700 leading-relaxed">
+    <Einstieg
+      art="arbeit"
+      etikett="Fehler 404"
+      titel="Seite nicht gefunden"
+      vorspann={
+        <p>
           Die von Ihnen aufgerufene Seite existiert leider nicht oder wurde verschoben.
           Kehren Sie zur Startseite zurück oder informieren Sie sich über unsere Fachleistungen.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <Link href="/" className="btn-primary">
-            <Home className="w-4 h-4 mr-2" />
-            Zur Startseite
-          </Link>
-          <Link href="/leistungen" className="btn-ghost">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Zur Leistungsübersicht
-          </Link>
+      }
+      aktionen={
+        <>
+          <Knopf href="/" iconLinks="haus">Zur Startseite</Knopf>
+          <Knopf href="/leistungen" variante="neben" iconLinks="pfeil-links">Zur Leistungsübersicht</Knopf>
+        </>
+      }
+      rand={
+        <div className="border border-fuge bg-fliese p-6">
+          <Verlegeplan plan="reparatur" beschriftet />
         </div>
-      </div>
-    </div>
+      }
+    />
   );
 }
