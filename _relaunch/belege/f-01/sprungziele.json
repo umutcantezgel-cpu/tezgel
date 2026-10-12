@@ -1,0 +1,98 @@
+{
+ "erstellt": "2026-10-12",
+ "base": "http://127.0.0.1:4350",
+ "seite": "/leistungen",
+ "hinweis": "Oberkante des Ziels nach Sprung (px vom Fensterrand); Kopf 65 px, scroll-padding-top 96 px",
+ "ansichten": {
+  "d1440": {
+   "h1": {
+    "schrift": "94.4px",
+    "zeilen": 4
+   },
+   "hauptknopf_y": [
+    835,
+    886
+   ],
+   "untere_leiste_y": null,
+   "schriftfeld_y": 533,
+   "einstieg_ende_y": 1047,
+   "scroll_margin": {
+    "gewerke": "0px",
+    "bad": "0px",
+    "wohnen": "0px",
+    "aussen": "0px",
+    "untergrund": "0px",
+    "ablauf": "0px",
+    "kosten-rechner": "0px",
+    "express-anfrage": "0px"
+   },
+   "landung_adresse": {
+    "gewerke": 96,
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96,
+    "ablauf": 96,
+    "kosten-rechner": 96,
+    "express-anfrage": 96
+   },
+   "landung_index_enter": {
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96
+   },
+   "naechster_tab_nach_index": {
+    "bad": "Ausstattungsmerkmale & Vorteile: | im Bild: true",
+    "wohnen": "Ausstattungsmerkmale & Vorteile: | im Bild: true",
+    "aussen": "Ausstattungsmerkmale & Vorteile: | im Bild: true",
+    "untergrund": "Ausstattungsmerkmale & Vorteile: | im Bild: true"
+   }
+  },
+  "m390": {
+   "h1": {
+    "schrift": "44px",
+    "zeilen": 3
+   },
+   "hauptknopf_y": [
+    639,
+    688
+   ],
+   "untere_leiste_y": 783,
+   "schriftfeld_y": 1311,
+   "einstieg_ende_y": 1641,
+   "scroll_margin": {
+    "gewerke": "0px",
+    "bad": "0px",
+    "wohnen": "0px",
+    "aussen": "0px",
+    "untergrund": "0px",
+    "ablauf": "0px",
+    "kosten-rechner": "0px",
+    "express-anfrage": "0px"
+   },
+   "landung_adresse": {
+    "gewerke": 96,
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96,
+    "ablauf": 96,
+    "kosten-rechner": 96,
+    "express-anfrage": 96
+   },
+   "landung_index_enter": {
+    "bad": 96,
+    "wohnen": 96,
+    "aussen": 96,
+    "untergrund": 96
+   },
+   "naechster_tab_nach_index": {
+    "bad": "Ausstattungsmerkmale & Vorteile: | im Bild: true",
+    "wohnen": "Ausstattungsmerkmale & Vorteile: | im Bild: true",
+    "aussen": "Ausstattungsmerkmale & Vorteile: | im Bild: true",
+    "untergrund": "Ausstattungsmerkmale & Vorteile: | im Bild: true"
+   }
+  }
+ }
+}

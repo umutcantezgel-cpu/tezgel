@@ -1,117 +1,110 @@
-// /leistungen · Gewerk (S-01, KERN v2 K-003 „Fuge statt Karte“, K-006, K-008): ein Fachgewerk als Plan-Feld im 12er-Raster.
-// Bestand: `article#<id>` im „Grid der 4 Fachgewerke“ (Glas-Karte mit Icon-Kachel). Jetzt: Planfeld (gezeichnete Vignette aus
-// `@/components/start/vignetten`, 5 Spalten) und Textfeld (7 Spalten), durch eine Fuge getrennt; die Seite des Plans wechselt
-// von Feld zu Feld (01 links, 02 rechts …), die Zeichnung steht mittig in ihrem Feld. Unter lg steht der Plan über dem Text:
-// Er eröffnet das Feld wie auf der Startseite, und der Text läuft danach ohne Unterbrechung bis zu den Wegen.
-// Inhalt in Bestandsreihenfolge: Feldkopf (Nummer, Etikett „Geprüfte Fachkompetenz“) · H2 · detailText · Unterleistungen als
-// Mono-Etiketten an der Fuge · „Ausstattungsmerkmale & Vorteile:“ · Merkmale mit Fugenkreuz · Fachdetails-Link und „Aufmaß
-// anfragen“. Wortlaut aus `SERVICES` (`@/config/services`) und `src/app/(bestand)/leistungen/page.jsx`.
-// Bewegung: ein `auftritt` je Feld (am Artikel), Link-Farbwechsel `zustand`, der Knopf trägt `druck` selbst. Kein Hover-Heben,
-// Rot nur in der Vignette „wohnen“ (ihre Laserachse).
-// Ansatz für SIG-3 (S-11, „Verlegeplan je Leistung“): Der Artikel ist der Auslöser (Hover/Fokus auf seinen Wegen), das
-// Element `[data-plan-feld]` trägt nur die Zeichnung – dort kann die Bewegung je Feld ansetzen, ohne Markup-Umbau.
+// /leistungen · Gewerk (F-01, Fusion E-039, KERN v2 K-003 „Fuge statt Karte“): ein Fachgewerk als Feld im Fugenraster der
+// Übersicht. Grundgerüst A (Gutachten u1): Verlegeplan auf Kalk-Feld, Etikett, H2, Text, Unterleistungen mit Fugenkreuz,
+// Merkmale im Aufklapper (natives <details>), zwei Wege. Das Feld ist ein Subgrid über sieben Zeilen des Feldrasters (Plan,
+// Etikett, Titel, Text, Unterleistungen, Merkmale, Wege), damit Titel und Werte je Reihe auf einer Grundlinie stehen (E4-N2-05).
+// Aus B: Nummer 01–04 im Mono-Etikett, `aria-labelledby` auf die H2 (`<id>-titel`), Wege-Rangfolge (Fachdetails als
+// Pfeil-Textlink, „Aufmaß anfragen“ als Nebenknopf, mobil über die volle Breite) und der Bestandswortlaut des Aufklappers
+// „Ausstattungsmerkmale & Vorteile:“. Wortlaut aus `SERVICES` (`@/config/services`).
+// Sprungziel `#<id>` ohne eigenes scroll-margin: Es gilt nur `scroll-padding-top` (K-005), Oberkante 96 px.
+// SIG-3 (E3-ORCH-02): Das Fugenbild rückt beim Zeigen auf das Feld bzw. beim Fokus auf einen seiner Links in die Flucht,
+// mobil beim Eintritt (`sig-plan`); derselbe Plan gleitet beim Weg zu den Fachdetails in den Einstieg der Leistungsseite
+// (PlanUebergang, Übergangsart „plan-vor“). Kein Hover-Heben; Links mit Farbwechsel (`zustand`), der Knopf trägt `druck`.
 import Link from 'next/link';
 import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
 import Icon from '@/components/icons/Icon';
 import Knopf from '@/components/kern/Knopf';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
-import { etikettKlassen } from '@/components/kern/stile';
-import { VIGNETTEN, istVignette } from '@/components/start/vignetten';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettForm } from '@/components/kern/stile';
+import { PLAENE, type PlanName } from '@/lib/plaene/vorgaben';
 import { gewerkNummer } from '@/components/leistungen/Sprungindex';
+import PlanUebergang from '@/components/leistungen/uebersicht/PlanUebergang';
 
 export type Leistung = (typeof SERVICES)[number];
 
-export default function Gewerk({ leistung, nr }: { leistung: Leistung; nr: number }) {
-  // Plan links bei 01, 03 …; rechts bei 02, 04 … (nur ab lg, darunter steht er über dem Text)
-  const planRechts = nr % 2 === 1;
-  const Vignette = istVignette(leistung.id) ? VIGNETTEN[leistung.id] : null;
-  const titelId = `${leistung.id}-titel`;
+const istPlan = (id: string): id is PlanName => id in PLAENE;
 
+export default function Gewerk({ leistung, nr }: { leistung: Leistung; nr: number }) {
+  const titelId = `${leistung.id}-titel`;
   return (
     <article
       id={leistung.id}
       aria-labelledby={titelId}
-      data-motion="auftritt"
-      className="grid scroll-mt-24 grid-cols-4 border-r border-b border-fuge bg-fliese md:grid-cols-8 lg:grid-cols-12"
+      className="sig-plan-ziel row-span-7 grid min-w-0 grid-rows-subgrid gap-0 bg-fliese p-6 lg:p-8"
+      data-motion="sig-plan"
     >
-      {/* Planfeld: Vignette mit fester Proportion; ab lg senkrecht mittig in der Höhe des Textfelds (wie die Zeichnung
-          auf einem Planblatt). Kein Kleben beim Scrollen: Ein klebendes Feld liefe am Feldende unter den festen Kopf. */}
-      {Vignette ? (
-        <div
-          className={clsx(
-            'col-span-4 border-b border-fuge md:col-span-8 lg:col-span-5 lg:row-start-1 lg:flex lg:items-center lg:border-b-0',
-            planRechts ? 'lg:col-start-8 lg:border-l' : 'lg:col-start-1 lg:border-r',
-          )}
+      <PlanUebergang id={leistung.id}>
+        <div className="flex items-center border border-fuge bg-kalk p-6">
+          {istPlan(leistung.id) ? <Verlegeplan plan={leistung.id} ohneAchse bemassung={false} /> : null}
+        </div>
+      </PlanUebergang>
+
+      {/* Etikett mit Nummer (wie der Abschnittskopf: Ziffer in Tinte, Trennpunkt, Etikett) */}
+      <p className={clsx(etikettForm, 'mt-6 text-tinte-2')}>
+        <span className="text-tinte">{gewerkNummer(nr)}</span>
+        <span aria-hidden="true">·</span>
+        <span>Geprüfte Fachkompetenz</span>
+      </p>
+      <h2 id={titelId} className="mt-3 text-fs-5 text-tinte">
+        {leistung.name}
+      </h2>
+      <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">{leistung.detailText}</p>
+
+      <ul className="mt-6 grid gap-2">
+        {leistung.subcategories.map((unter) => (
+          <li key={unter.id} className="flex items-center gap-3 font-text text-fs-2 text-tinte">
+            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+            {unter.name}
+          </li>
+        ))}
+      </ul>
+
+      {/* Merkmale im Aufklapper (Muster Startseite, <details>), geschlossen in allen Breiten; Wortlaut des Bestands */}
+      <details className="group mt-8 border-t border-fuge">
+        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 font-text text-fs-2 font-semibold text-tinte [&::-webkit-details-marker]:hidden">
+          <span className="min-w-0">Ausstattungsmerkmale &amp; Vorteile:</span>
+          <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+            <span className="group-open:hidden">
+              <Icon name="plus" groesse={6} />
+            </span>
+            <span className="hidden group-open:block">
+              <Icon name="minus" groesse={6} />
+            </span>
+          </span>
+        </summary>
+        <ul className="hidden gap-3 pt-2 pb-4 group-open:grid">
+          {leistung.features.map((merkmal) => (
+            <li key={merkmal} className="flex gap-3 font-text text-fs-2 text-tinte">
+              <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                <Fugenkreuz className="size-3" />
+              </span>
+              <span className="min-w-0">{merkmal}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
+
+      {/* Wege: Fachdetails (Pfeil-Textlink, Seitenwechsel mit Plan) und Aufmaß (Nebenknopf). Bis xl untereinander (mobil der
+          Knopf über die volle Breite), ab xl in einer Zeile wie in B – der Link bricht um, der Knopf steht rechts. So bricht die
+          Wege-Zeile in allen vier Feldern gleich, und der Knopf liegt nicht unter dem Einwilligungsbanner links unten. */}
+      <div className="mt-6 flex flex-col items-start gap-2 border-t border-fuge pt-4 xl:flex-row xl:items-center xl:justify-between xl:gap-6">
+        <Link
+          href={`/leistungen/${leistung.id}`}
+          transitionTypes={['plan-vor']}
+          data-motion="zustand"
+          className="group inline-flex min-h-12 min-w-0 items-center gap-2 font-text text-fs-2 font-semibold text-tinte"
         >
-          <div className="w-full p-6 md:p-12">
-            <div data-plan-feld={leistung.id} className="mx-auto max-w-md text-tinte">
-              <Vignette />
-            </div>
-          </div>
-        </div>
-      ) : null}
-
-      {/* Textfeld */}
-      <div
-        className={clsx(
-          'col-span-4 flex min-w-0 flex-col md:col-span-8 lg:row-start-1',
-          Vignette ? 'lg:col-span-7' : 'lg:col-span-12',
-          Vignette && (planRechts ? 'lg:col-start-1' : 'lg:col-start-6'),
-        )}
-      >
-        {/* Feldkopf: Nummer in Mono links, Etikett rechts */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-fuge px-6 py-3 lg:px-12">
-          <span className="font-mono text-fs-1 text-tinte">{gewerkNummer(nr)}</span>
-          <span className={etikettKlassen}>Geprüfte Fachkompetenz</span>
-        </div>
-
-        <div className="px-6 py-8 lg:px-12 lg:py-12">
-          <h2 id={titelId} className="text-fs-6 text-tinte">
-            {leistung.name}
-          </h2>
-          <p className="mt-6 max-w-mass text-fs-3 text-tinte-2">{leistung.detailText}</p>
-
-          {/* Unterleistungen: Mono-Etiketten an der Fuge (Ränder fallen zusammen, keine Pillen) */}
-          <ul className="mt-8 flex flex-wrap pt-px pl-px">
-            {leistung.subcategories.map((unter) => (
-              <li key={unter.id} className="-mt-px -ml-px border border-fuge px-3 py-2 font-mono text-fs-1 text-tinte">
-                {unter.name}
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-12 font-mono text-fs-1 text-tinte-2">Ausstattungsmerkmale &amp; Vorteile:</p>
-          <ul className="mt-4 grid gap-3 md:grid-cols-2 md:gap-x-8 lg:grid-cols-1 xl:grid-cols-2">
-            {leistung.features.map((merkmal) => (
-              <li key={merkmal} className="flex gap-3 font-text text-fs-2 text-tinte">
-                <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
-                  <Fugenkreuz className="size-3" />
-                </span>
-                <span className="min-w-0">{merkmal}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Wege: Fachdetails (Textlink) und Aufmaß (Nebenknopf) */}
-        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-fuge px-6 py-2 lg:px-12">
-          <Link
-            href={`/leistungen/${leistung.id}`}
-            data-motion="zustand"
-            className="group inline-flex min-h-12 items-center gap-2 font-text text-fs-2 font-semibold text-tinte"
-          >
-            <span className="underline decoration-strich decoration-1 underline-offset-4 pointer-fine:group-hover:decoration-tinte pointer-fine:group-hover:decoration-2 group-active:decoration-tinte group-active:decoration-2">
-              Fachdetails &amp; Ratgeber: {leistung.name}
-            </span>
-            <span aria-hidden="true" className="flex shrink-0">
-              <Icon name="pfeil-rechts" groesse={5} />
-            </span>
-          </Link>
-          <Knopf href="#express-anfrage" variante="neben" className="my-2 w-full sm:w-auto">
-            Aufmaß anfragen
-          </Knopf>
-        </div>
+          <span className="min-w-0 underline decoration-strich decoration-1 underline-offset-4 pointer-fine:group-hover:decoration-tinte pointer-fine:group-hover:decoration-2 group-active:decoration-tinte group-active:decoration-2">
+            Fachdetails &amp; Ratgeber: {leistung.name}
+          </span>
+          <span aria-hidden="true" className="flex shrink-0">
+            <Icon name="pfeil-rechts" groesse={5} />
+          </span>
+        </Link>
+        <Knopf href="#express-anfrage" variante="neben" className="w-full sm:w-auto xl:shrink-0">
+          Aufmaß anfragen
+        </Knopf>
       </div>
     </article>
   );

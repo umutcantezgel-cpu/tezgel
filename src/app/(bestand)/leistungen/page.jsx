@@ -1,14 +1,13 @@
-// Leistungen (E3-BAU-02, KERN v2): Erzählansicht nach dem Muster der Startseite. Einstieg mit Laserachse, H1 links,
-// Vorspann und Knöpfe, rechts ein gezeichneter Verlegeplan ohne Achse. Danach die Leitachse über die Abschnitte:
-// Fachgewerke als Feldraster (je Leistung ihr Verlegeplan mit SIG-3 und Seitenwechsel, Name, Text, Merkmale im Aufklapper, zwei
-// Wege), Ablauf mit den Planständen der Szene (SzeneAblauf, ruhig), Projekt mit Rechner, Express-Anfrage mit Funnel. Wortlaut,
-// Überschriften, Links und IDs wie im Bestand (#gewerke, #express-anfrage, Leistungs-IDs). Kein Auftritt und kein großer Moment
-// (setzt der Orchestrator). E4-N2-05: Jede Leistung ist ein Subgrid über sieben Zeilen des Feldrasters (Plan, Etikett, Titel,
-// Text, Unterleistungen, Merkmale, Wege), damit Titel und Werte je Reihe auf einer Grundlinie stehen.
-import { ViewTransition } from 'react';
+// Leistungen (F-01, Fusion II E-039, KERN v2): Erzählansicht nach dem Muster der Startseite, Grundgerüst A mit den Teilen
+// aus B nach Gutachten u1 (`_relaunch/belege/e039-gutachten/u1-leistungen.md`). Einstieg mit Laserachse: Etiketten mit
+// Fugenkreuz, H1 in text-fs-7, Vorspann mit Norm in Mono, drei Knöpfe; Randspalte ab lg Planblatt (Verlegeplan Großformat mit
+// Schriftfeld) über dem Sprungindex, mobil zuerst der Index, dann das Planblatt. Danach die Leitachse über die Abschnitte:
+// Fachgewerke als 2×2-Feldraster (Gewerke: je Leistung ihr Verlegeplan mit SIG-3, Nummer, Name, Text, Merkmale im Aufklapper,
+// zwei Wege), Ablauf mit den Planständen der Szene (SzeneAblauf, ruhig), Projekt mit Rechner, Express-Anfrage mit Funnel.
+// Wortlaut, Überschriften, Links und IDs wie im Bestand (#gewerke, #express-anfrage, Leistungs-IDs), dazu aus B die Anker
+// #ablauf und #kosten-rechner und benannte Bereiche. Sprungziele einheitlich nur über scroll-padding-top (96 px); kein
+// content-visibility (Gutachten Rezept 9). Kein Auftritt und kein weiterer großer Moment (SIG-3 trägt der Plan je Leistung).
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { buildGraph, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
@@ -16,17 +15,16 @@ import JsonLd from '@/components/seo/JsonLd';
 import { PricingCalculator } from '@/components/pricing/PricingCalculator';
 import { FinalCTA } from '@/components/ui/FinalCTA';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
-import Icon from '@/components/icons/Icon';
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Leitachse from '@/components/kern/Leitachse';
-import { Feldraster } from '@/components/kern/Feldraster';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import SzeneAblauf from '@/components/kern/SzeneAblauf';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 import Planblatt, { planfelder } from '@/components/kern/Planblatt';
-import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import Sprungindex from '@/components/leistungen/Sprungindex';
+import Gewerke from '@/components/leistungen/Gewerke';
 
 const pageUrl = `${SITE_URL}/leistungen`;
 const breadcrumbs = [
@@ -83,23 +81,33 @@ export default function ServiceHubPage() {
     <>
       <JsonLd schema={leistungenSchema} />
 
-      {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts der Verlegeplan Großformat ohne Achse */}
+      {/* 1. EINSTIEG: zwei Etiketten mit Fugenkreuz, H1 (fs-7) an der Laserachse, Vorspann (Norm in Mono), drei Knöpfe.
+          Randspalte: ab lg oben das Planblatt (Verlegeplan Großformat mit roter Achse, Schriftfeld), darunter der Sprungindex;
+          mobil folgt der Index direkt auf die Knöpfe, das Planblatt danach (Gutachten u1, Kopfbereich m390).
+          H1 in zwei festen Zeilen (Umbruch nach „&“): Erzählansicht in fs-7 nach K-006 und Gutachten. */}
       <Einstieg
         art="erzaehl"
         etikett={
           <>
-            <span>{COMPANY_DATA.authority.shortName} Fachbetrieb</span>
-            <Fugenkreuz className="size-3 shrink-0 text-strich" />
-            <span>Aßlar &middot; Wetzlar &middot; Mittelhessen</span>
+            <span className="mr-4 inline-flex items-center gap-2 text-tinte">
+              <Fugenkreuz className="size-3 shrink-0 text-strich" />
+              {COMPANY_DATA.authority.shortName} Fachbetrieb
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Fugenkreuz className="size-3 shrink-0 text-strich" />
+              Aßlar &middot; Wetzlar &middot; Mittelhessen
+            </span>
           </>
         }
         titel="Fliesenleger Leistungen & Fachgewerke Wetzlar"
+        titelZeilen={['Fliesenleger Leistungen &', 'Fachgewerke Wetzlar']}
         vorspann={
           <p>
             Als eingetragener Fliesenleger-Fachbetrieb für Wetzlar, Aßlar und Mittelhessen bieten wir hochwertige
             Handwerksleistungen: Unsere Fachgewerke umfassen fugenarme XXL-Großformate im Badezimmer, repräsentatives
             Feinsteinzeug im Neubau sowie witterungsbeständige Außenbeläge auf Stelzlagern – mit millimetergenauer
-            Präzision, normgerechter Verbundabdichtung nach DIN 18534 und konsequentem Staubschutz.
+            Präzision, normgerechter Verbundabdichtung nach{' '}
+            <span className="whitespace-nowrap font-mono text-fs-2">DIN 18534</span> und konsequentem Staubschutz.
           </p>
         }
         aktionen={
@@ -121,105 +129,41 @@ export default function ServiceHubPage() {
           </>
         }
         rand={
-          <Planblatt felder={planfelder('Leistungen', 'grossformat')}>
-            <Verlegeplan plan="grossformat" ohneAchse bemassung={false} />
-          </Planblatt>
+          <div className="flex flex-1 flex-col gap-6">
+            <Sprungindex />
+            <Planblatt felder={planfelder('Leistungen', 'grossformat')} className="flex-1 lg:order-first">
+              <Verlegeplan plan="grossformat" ohneAchse bemassung={false} />
+            </Planblatt>
+          </div>
         }
       />
 
       <Leitachse>
-        {/* 2. FACHGEWERKE als Feldraster: je Leistung ihr Verlegeplan (SIG-3), Name, Text, Merkmale im Aufklapper und zwei Wege.
-            E4-N2-05: sieben Zeilen je Leistung als Subgrid des Feldrasters, damit Titel und Werte je Reihe auf einer Grundlinie stehen */}
-        <Abschnitt id="gewerke" art="erzaehl" leitachse spaet>
-          <Feldraster spalten={2} als="div">
-            {SERVICES.map((srv) => {
-              return (
-                // SIG-3 (E3-ORCH-02): Verlegeplan je Leistung – das Fugenbild rückt beim Zeigen auf das Feld bzw. beim
-                // Fokus auf einen seiner Links in die Flucht, mobil beim Eintritt; derselbe Plan gleitet beim Weg zu den
-                // Fachdetails in den Einstieg der Leistungsseite (ViewTransition, nur vorwärts, ab lg, nicht reduziert)
-                <article
-                  key={srv.id}
-                  id={srv.id}
-                  className="sig-plan-ziel row-span-7 grid min-w-0 grid-rows-subgrid gap-0 bg-fliese p-6 lg:p-8"
-                  data-motion="sig-plan"
-                >
-                  <ViewTransition name={`plan-${srv.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
-                    <div className="flex items-center border border-fuge bg-kalk p-6">
-                      <Verlegeplan plan={srv.id} ohneAchse bemassung={false} />
-                    </div>
-                  </ViewTransition>
+        {/* 2. FACHGEWERKE als 2×2-Feldraster (#gewerke, je Leistung #<id>) */}
+        <Gewerke />
 
-                  <p className={clsx(etikettKlassen, 'mt-6')}>Geprüfte Fachkompetenz</p>
-                  <h2 className="mt-3 text-fs-5 text-tinte">{srv.name}</h2>
-                  <p className="mt-3 max-w-mass font-text text-fs-3 text-tinte-2">{srv.detailText}</p>
-
-                  <ul className="mt-6 grid gap-2">
-                    {srv.subcategories.map((sub) => (
-                      <li key={sub.id} className="flex items-center gap-3 font-text text-fs-2 text-tinte">
-                        <Fugenkreuz className="size-3 shrink-0 text-strich" />
-                        {sub.name}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Merkmale im Aufklapper (Muster Startseite, <details>), geschlossen in allen Breiten; das Etikett nennt die Zahl */}
-                  <details className="group mt-8 border-t border-fuge">
-                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 [&::-webkit-details-marker]:hidden">
-                      <span className={etikettKlassen}>Merkmale &middot; {srv.features.length}</span>
-                      <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
-                        <span className="group-open:hidden">
-                          <Icon name="plus" groesse={6} />
-                        </span>
-                        <span className="hidden group-open:block">
-                          <Icon name="minus" groesse={6} />
-                        </span>
-                      </span>
-                    </summary>
-                    <ul className="hidden gap-3 pb-4 group-open:grid">
-                      {srv.features.map((merkmal) => (
-                        <li key={merkmal} className="flex gap-3 font-text text-fs-2 text-tinte">
-                          <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
-                            <Fugenkreuz className="size-3" />
-                          </span>
-                          <span className="min-w-0">{merkmal}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-
-                  <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-fuge pt-6">
-                    <Knopf href={`/leistungen/${srv.id}`} variante="neben" icon="pfeil-rechts" transitionTypes={['plan-vor']} className="min-w-0 sm:flex-1">
-                      Fachdetails &amp; Ratgeber: {srv.name}
-                    </Knopf>
-                    <Link href="#express-anfrage" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center font-text text-fs-2')}>
-                      Aufmaß anfragen
-                    </Link>
-                  </div>
-                </article>
-              );
-            })}
-          </Feldraster>
-        </Abschnitt>
-
-        {/* 3. ABLAUF mit den Planständen der Szene „Verlegeplan entsteht“ (SzeneAblauf, ruhig, ohne Scrollbindung): je Schritt der
-            Plan im passenden Stand. Motiv „fugen“, damit der Plan des Einstiegs (Großformat) und die Fachgewerk-Pläne nicht doppelt stehen */}
+        {/* 3. ABLAUF (#ablauf) mit den Planständen der Szene „Verlegeplan entsteht“ (SzeneAblauf, ruhig, ohne Scrollbindung): je
+            Schritt der Plan im passenden Stand. Motiv „fugen“, damit der Plan des Einstiegs (Großformat) und die Fachgewerk-Pläne
+            nicht doppelt stehen */}
         <Abschnitt
+          id="ablauf"
           art="erzaehl"
           titelId="ablauf-heading"
           leitachse
-          spaet
+          className="scroll-mt-0!"
           etikett="Ausführungs-Standards"
           titel="Ihr verlässlicher Weg zum neuen Traumbelag"
         >
           <SzeneAblauf plan="fugen" bewegt={false} untertitelOben schritte={schritte} />
         </Abschnitt>
 
-        {/* 4. PROJEKT: Vorhaben und Ausgangslage schildern, danach der Rechner */}
+        {/* 4. PROJEKT (#kosten-rechner wie auf der Startseite): Vorhaben und Ausgangslage schildern, danach der Rechner */}
         <Abschnitt
+          id="kosten-rechner"
           art="erzaehl"
-          titelId="projekt-heading"
+          titelId="rechner-heading"
           leitachse
-          spaet
+          className="scroll-mt-0!"
           etikett="Projekt & Ausgangslage"
           titel="Projekt anfragen & Situation schildern"
           einleitung={
@@ -240,7 +184,7 @@ export default function ServiceHubPage() {
           flaeche="fliese"
           kopf="seitlich"
           leitachse
-          spaet
+          className="scroll-mt-0!"
           etikett="Online-Bedarfsabfrage"
           titel="Fordern Sie Ihr persönliches Angebot an"
           einleitung={
