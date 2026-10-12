@@ -231,8 +231,9 @@ export default function FliesenRatgeberPage() {
                 }
                 rand={
                     // Großer Moment (E3-ORCH-04) im Planblatt (E4-NACH-01): derselbe Raum im Kreuzfugen-, Halb- und
-                    // Drittelverband zum Umschalten; der Verband steht deshalb nicht im Schriftfeld
-                    <Planblatt felder={planfelder('Fliesen & Verlegung')}>
+                    // Drittelverband zum Umschalten; der Verband steht deshalb nicht im Schriftfeld. Unter lg rückt das
+                    // Blatt 24 px näher an den Vorspann (E4-N2-09, ERZ 24): der Umschalter bleibt an seiner Stelle.
+                    <Planblatt className="max-lg:-mt-6" felder={planfelder('Fliesen & Verlegung')}>
                         <VerbandUmschalter />
                     </Planblatt>
                 }
@@ -291,8 +292,9 @@ export default function FliesenRatgeberPage() {
                     einleitung={
                         <>
                             <p>Ein Fliesenbelag ist nur so gut wie sein Untergrund. Diese Ratgeber-Bereiche vertiefen die angrenzenden Themen.</p>
-                            <div className="mt-8">
-                                <Verlegeplan plan="abdichtung" schnitt ohneAchse bemassung={false} />
+                            {/* Plan ganz statt an der Achse geschnitten (E4-N2-09, ERZ 23); Höhe nach Inhalt, halbe Spaltenbreite wie die Feldpläne */}
+                            <div className="mt-8 w-1/2">
+                                <Verlegeplan plan="abdichtung" ohneAchse bemassung={false} />
                             </div>
                         </>
                     }
@@ -303,8 +305,9 @@ export default function FliesenRatgeberPage() {
                                 <Link href={hub.path} data-motion="zustand" className={ZEILE}>
                                     <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
                                         <span className={NAME}>{hub.name}</span>
-                                        <span className="font-text text-fs-2 text-tinte-2">{hub.description}</span>
-                                        <span className="whitespace-nowrap font-mono text-fs-1 text-tinte-2">
+                                        <span className="font-text text-fs-2 text-tinte-2 md:flex-1">{hub.description}</span>
+                                        {/* Zahlenspalte: ab md feste Breite, rechtsbündig in Mono (E4-N2-09, ERZ 23) */}
+                                        <span className="whitespace-nowrap font-mono text-fs-1 tabular-nums text-tinte-2 md:w-24 md:shrink-0 md:text-right">
                                             {hub.pages.length} {hub.pages.length === 1 ? 'Seite' : 'Seiten'}
                                         </span>
                                     </span>
@@ -406,8 +409,9 @@ export default function FliesenRatgeberPage() {
                     </p>
                 </Abschnitt>
 
-                {/* 7. KONFIGURATOR: Funnel (nachgeladen) im Raster mit 8 Spalten, rechts die Rückfrage in 4 Spalten (ab lg);
-                    Anker #konfigurator und ARIA-Name bleiben */}
+                {/* 7. KONFIGURATOR: der Kopf (Etikett „Fliesen-Konfigurator“, H2 „Fliesenprojekt vorbereiten“) steht im Werkzeug –
+                    kein zweites Etikett, kein zweiter H2; der ARIA-Name bleibt über aria-label. Funnel (nachgeladen) im Raster mit 8 Spalten,
+                    rechts die Rückfrage in 4 Spalten (ab lg); Anker #konfigurator bleibt */}
                 <Abschnitt id="konfigurator" aria-label="Fliesen-Konfigurator" leitachse spaet>
                     <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
                         <div className="min-w-0 lg:col-span-8">
