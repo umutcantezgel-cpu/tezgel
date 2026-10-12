@@ -1,0 +1,129 @@
+[
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+  "neu": "Balkon- & Terrassen­sanierung in Wetzlar & Mittelhessen",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar",
+  "neu": "DIN 18534 Abdichtung & Untergrund­vorbereitung in Wetzlar",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle (Zeile der H1 in main)"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle (Zeile der H1 in main)"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle (Wert „Blatt“ im Schriftfeld, Stolperstein b)"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "h1: Balkon- & Terrassensanierung in Wetzlar & Mittelhessen",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "h2: Projekt in Balkon- & Terrassensanierung anfragen?",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "h2: Häufige Fragen zu Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "h1: DIN 18534 Abdichtung & Untergrundvorbereitung in Wetzlar",
+  "grund": "Weiches Trennzeichen (U+00AD) aus Fassung B, Gutachten u2 a11y-Liste (WCAG 1.4.12): Wortlaut gleich, nur Trennstelle"
+ },
+ {
+  "seite": "/leistungen/bad",
+  "alt": "01",
+  "grund": "Bildnummer im Feldkopf des Plans von B entfällt (Gutachten u2, Fusionsrezept 1)"
+ },
+ {
+  "seite": "/leistungen/wohnen",
+  "alt": "02",
+  "grund": "Bildnummer im Feldkopf des Plans von B entfällt (Gutachten u2, Fusionsrezept 1)"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "alt": "03",
+  "grund": "Bildnummer im Feldkopf des Plans von B entfällt (Gutachten u2, Fusionsrezept 1)"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "04",
+  "grund": "Bildnummer im Feldkopf des Plans von B entfällt (Gutachten u2, Fusionsrezept 1)"
+ },
+ {
+  "seite": "*",
+  "alt": "Sehr beliebt",
+  "grund": "Etikett der Express-Kacheln: geteilter Baustein TezgelAnfrageFunnel im Baum (Auftrag F-02: unverändert), Lücke unter GEMEINSAME DATEIEN gemeldet"
+ },
+ {
+  "seite": "*",
+  "alt": "Großformat",
+  "grund": "Etikett der Express-Kacheln: geteilter Baustein TezgelAnfrageFunnel im Baum (Auftrag F-02: unverändert), Lücke unter GEMEINSAME DATEIEN gemeldet"
+ },
+ {
+  "seite": "*",
+  "alt": "Frostsicher",
+  "grund": "Etikett der Express-Kacheln: geteilter Baustein TezgelAnfrageFunnel im Baum (Auftrag F-02: unverändert), Lücke unter GEMEINSAME DATEIEN gemeldet"
+ },
+ {
+  "seite": "*",
+  "alt": "Präzision",
+  "grund": "Etikett der Express-Kacheln: geteilter Baustein TezgelAnfrageFunnel im Baum (Auftrag F-02: unverändert), Lücke unter GEMEINSAME DATEIEN gemeldet"
+ },
+ {
+  "seite": "*",
+  "alt": "DIN-Norm",
+  "grund": "Etikett der Express-Kacheln: geteilter Baustein TezgelAnfrageFunnel im Baum (Auftrag F-02: unverändert), Lücke unter GEMEINSAME DATEIEN gemeldet"
+ },
+ {
+  "seite": "*",
+  "alt": "Cookie-Einstellungen",
+  "grund": "Seitenrahmen (Fuß), nicht Teil der Einheit: auf 4350 erst nach der Hydrierung sichtbar, im Browser nach 1,5 s auf 4350 und 4360 gleich (Messung cookie.mjs)"
+ },
+ {
+  "seite": "/leistungen/bad",
+  "alt": "h3: Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) im Namen der Gewerk-Zeile (H3): Reflow bei 320 px (a11y-zusatz f-02, ragt_heraus 6 → 0), Wortlaut gleich"
+ },
+ {
+  "seite": "/leistungen/bad",
+  "alt": "Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) im Namen der Gewerk-Zeile (H3): Reflow bei 320 px (a11y-zusatz f-02, ragt_heraus 6 → 0), Wortlaut gleich"
+ },
+ {
+  "seite": "/leistungen/wohnen",
+  "alt": "h3: Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) im Namen der Gewerk-Zeile (H3): Reflow bei 320 px (a11y-zusatz f-02, ragt_heraus 6 → 0), Wortlaut gleich"
+ },
+ {
+  "seite": "/leistungen/wohnen",
+  "alt": "Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) im Namen der Gewerk-Zeile (H3): Reflow bei 320 px (a11y-zusatz f-02, ragt_heraus 6 → 0), Wortlaut gleich"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "h3: Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) im Namen der Gewerk-Zeile (H3): Reflow bei 320 px (a11y-zusatz f-02, ragt_heraus 6 → 0), Wortlaut gleich"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "alt": "Balkon- & Terrassensanierung",
+  "grund": "Weiches Trennzeichen (U+00AD) im Namen der Gewerk-Zeile (H3): Reflow bei 320 px (a11y-zusatz f-02, ragt_heraus 6 → 0), Wortlaut gleich"
+ }
+]

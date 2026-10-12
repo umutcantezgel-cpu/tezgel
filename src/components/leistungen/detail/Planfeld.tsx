@@ -1,32 +1,39 @@
-// /leistungen/[id] · Planfeld (S-04, KERN v2 K-006 Randspalte, K-008): die gezeichnete Vignette der Leistung in der
-// Randspalte des Einstiegs – dieselbe Zeichnung wie im Plan-Feld der Leistung auf `/leistungen` (S-01, `Gewerk`), mit
-// derselben Mono-Nummer im Feldkopf (01 Bäder … 04 Untergrund). So setzt die Detailseite die Übersicht sichtbar fort.
-// Ab lg sitzt das Feld unten in der Randspalte, auf Höhe der Aktionen (wie das Schriftfeld eines Planblatts rechts unten);
-// mobil steht es nach den Aktionen (Einstieg: H1 → Text → Aktionen → Plan).
-// Der Wrapper der Zeichnung trägt `[data-plan-feld]` wie auf `/leistungen`: Ansatzpunkt für den Plan-Morph des
-// Seitenwechsels (K-007, Register `seitenwechsel`), ohne Markup-Umbau. Dekorativ (Vignette aria-hidden), Server-Komponente.
-import { SERVICES } from '@/config/services';
-import { VIGNETTEN, istVignette } from '@/components/start/vignetten';
-import { gewerkNummer } from '@/components/leistungen/Sprungindex';
+// /leistungen/[id] · Planfeld (Fusion F-02, KERN v2 K-006 Randspalte, K-008 Verlegeplan, K-009 Schriftfeld): die Randspalte des
+// Einstiegs als Planblatt nach Fassung A – Blattfläche mit Eckmarken, darin der Verlegeplan der Leistung (Planvorgabe
+// `service.id`, Fugenkreuz am Kreuzpunkt der Achsen), darunter das Schriftfeld (Blatt, Verband, Betrieb, Inhaber, Kammer,
+// Betrieb seit) als echter Text in Mono-Etiketten, Werte nur aus `COMPANY_DATA` und der Planvorgabe (`planfelder`). Dazu aus
+// Fassung B die „=“-Bemaßung des Plans. Die Nummer „01–04“ im Feldkopf von B entfällt (Gutachten u2, Fusionsrezept 1).
+// Das Blatt füllt die Höhe der Textspalte und steht oben bündig mit der Kennzeile (Rückweg, Etikett).
+// Achsenlogik wie im Vorbild (Startseite): ab lg trägt nur der Plan das Rot (Lot bzw. Achsenkreuz), das Lot des Einstiegs
+// bleibt dort Grundschicht (`planblatt-achse`, globals.css); unter lg steht das rote Lot im Seitenrand und der Plan zeigt
+// keine Achse – so steht in jeder Ansicht und in allen vier Instanzen genau ein Rot je Bildschirm (Stolperstein d, g).
+// `children` ist die Zeichnung ab lg (die Seite hüllt sie in die ViewTransition des Plan-Morphs von /leistungen); ohne
+// `children` zeichnet das Feld den Plan selbst. Beide Pläne rücken beim Laden in die Flucht (`flucht="laden"`, Register
+// sig-plan). Zeichnungen dekorativ (aria-hidden), Server-Komponente.
+import type { ReactNode } from 'react';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import type { PlanName } from '@/lib/plaene/vorgaben';
+import { fugen } from '@/components/leistungen/detail/satz';
 
-export default function Planfeld({ id }: { id: string }) {
-  if (!istVignette(id)) return null;
-  const Vignette = VIGNETTEN[id];
-  const nr = SERVICES.findIndex((leistung) => leistung.id === id);
+export interface PlanfeldProps {
+  /** Planvorgabe = id der Leistung (bad, wohnen, aussen, untergrund) */
+  id: PlanName;
+  /** Name der Leistung (Wert „Blatt“ im Schriftfeld) */
+  name: string;
+  /** Zeichnung ab lg (mit roter Achse); Standard: Verlegeplan der Leistung */
+  children?: ReactNode;
+}
 
+export default function Planfeld({ id, name, children }: PlanfeldProps) {
   return (
-    <div className="flex h-full flex-col justify-end">
-      <div className="border border-fuge bg-fliese">
-        {/* Feldkopf: Nummer der Leistung in Mono (wie im Feldkopf auf /leistungen) */}
-        <div className="border-b border-fuge px-6 py-3">
-          <span className="font-mono text-fs-1 text-tinte">{gewerkNummer(nr)}</span>
-        </div>
-        <div className="p-6 md:p-12">
-          <div data-plan-feld={id} className="mx-auto max-w-md text-tinte">
-            <Vignette />
-          </div>
-        </div>
+    // weiche Trennung im Wert „Blatt“: „Balkon- & Terrassen­sanierung“ berührte sonst den Zellrand (Stolperstein b)
+    <Planblatt felder={planfelder(fugen(name), id)} mitAchse>
+      {/* unter lg höchstens max-w-md breit (wie das Planfeld von B): bei 768 px stünde der Plan sonst über 450 px hoch */}
+      <div className="mx-auto w-full max-w-md lg:hidden">
+        <Verlegeplan plan={id} ohneAchse flucht="laden" />
       </div>
-    </div>
+      <div className="hidden lg:block">{children ?? <Verlegeplan plan={id} flucht="laden" />}</div>
+    </Planblatt>
   );
 }

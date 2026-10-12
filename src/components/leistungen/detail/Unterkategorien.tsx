@@ -1,4 +1,5 @@
-// /leistungen/[id] · Spezialisierungen (S-04, KERN v2 K-003 „Fuge statt Karte“): Bestand „Subcategories Bento“ – zentrierte
+// /leistungen/[id] · Spezialisierungen (S-04, KERN v2 K-003 „Fuge statt Karte“; Fusion F-02: Feldraster aus Fassung B, Mono-Etikett
+// „Spezialisierungen“ aus Fassung A über der H2, wie jeder Abschnittskopf im Vorbild): Bestand „Subcategories Bento“ – zentrierte
 // H2 über Glas-Kacheln mit Icon-Chip. Jetzt ein Band auf Fliese (wie „Fachbereiche“ auf der Startseite) mit einem
 // Feldraster: Felder auf Kalk, getrennt nur durch 1-px-Fugen, je Feld oben die laufende Nummer in Mono, unten der Name;
 // unter md (eine Spalte) als dichte Zeilen, Nummer und Name nebeneinander. Die Spaltenzahl folgt der Zahl der Felder (3 oder
@@ -26,6 +27,7 @@ export default function Unterkategorien({ leistung }: { leistung: Leistung }) {
   return (
     <Abschnitt
       id="spezialisierungen"
+      etikett="Spezialisierungen"
       titel={`Spezialisierungen in ${leistung.name}`}
       auftritt
       // Fläche Fliese von Hand: nur die Unterkante, die Oberkante zieht schon der Einstieg (keine doppelte Fuge)

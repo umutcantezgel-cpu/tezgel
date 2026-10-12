@@ -1,0 +1,183 @@
+{
+ "vorher": "f-02-b",
+ "nachher": "f-02-nachher",
+ "seiten": {
+  "/leistungen/wohnen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "=",
+     "=",
+     "Blatt",
+     "Wohnbereiche & Neubau",
+     "Verband",
+     "Halbverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Spezialisierungen",
+     "Fachkompetenz",
+     "E-Mail",
+     "info@tezgel.de",
+     "Gewerke",
+     "Balkon- & Terrassen­sanierung",
+     "Region"
+    ]
+   },
+   "header_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "WhatsApp"
+    ]
+   },
+   "ueberschriften": {
+    "entfernt": [],
+    "hinzu": [
+     "h3: Bäder & Wellness",
+     "h3: Balkon- & Terrassen­sanierung",
+     "h3: Untergrund & DIN 18534 Abdichtung"
+    ]
+   }
+  },
+  "/leistungen/bad": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "=",
+     "=",
+     "Blatt",
+     "Bäder & Wellness",
+     "Verband",
+     "Halbverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Spezialisierungen",
+     "Fachkompetenz",
+     "E-Mail",
+     "info@tezgel.de",
+     "Gewerke",
+     "Balkon- & Terrassen­sanierung",
+     "Region"
+    ]
+   },
+   "header_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "WhatsApp"
+    ]
+   },
+   "ueberschriften": {
+    "entfernt": [],
+    "hinzu": [
+     "h3: Wohnbereiche & Neubau",
+     "h3: Balkon- & Terrassen­sanierung",
+     "h3: Untergrund & DIN 18534 Abdichtung"
+    ]
+   }
+  },
+  "/leistungen/aussen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "=",
+     "=",
+     "Blatt",
+     "Balkon- & Terrassen­sanierung",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Spezialisierungen",
+     "Fachkompetenz",
+     "E-Mail",
+     "info@tezgel.de",
+     "Gewerke",
+     "Region"
+    ]
+   },
+   "header_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "WhatsApp"
+    ]
+   },
+   "ueberschriften": {
+    "entfernt": [],
+    "hinzu": [
+     "h3: Bäder & Wellness",
+     "h3: Wohnbereiche & Neubau",
+     "h3: Untergrund & DIN 18534 Abdichtung"
+    ]
+   }
+  },
+  "/leistungen/untergrund": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Untergrund & DIN 18534 Abdichtung",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Spezialisierungen",
+     "Fachkompetenz",
+     "E-Mail",
+     "info@tezgel.de",
+     "Gewerke",
+     "Balkon- & Terrassen­sanierung",
+     "Region"
+    ]
+   },
+   "header_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "WhatsApp"
+    ]
+   },
+   "ueberschriften": {
+    "entfernt": [],
+    "hinzu": [
+     "h3: Bäder & Wellness",
+     "h3: Wohnbereiche & Neubau",
+     "h3: Balkon- & Terrassen­sanierung"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 97,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

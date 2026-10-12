@@ -1,0 +1,12 @@
+/leistungen/bad A 193 · B 187 · Fusion 201
+  aus A fehlt: ["Telefon","WhatsApp","0172 / 67 28 504","06441 / 44 83 567"]
+  aus B fehlt: ["01","Sehr beliebt","Großformat","Frostsicher","Präzision","DIN-Norm"]
+/leistungen/wohnen A 193 · B 187 · Fusion 201
+  aus A fehlt: ["Telefon","WhatsApp","0172 / 67 28 504","06441 / 44 83 567"]
+  aus B fehlt: ["02","Sehr beliebt","Großformat","Frostsicher","Präzision","DIN-Norm"]
+/leistungen/aussen A 192 · B 185 · Fusion 199
+  aus A fehlt: ["Telefon","WhatsApp","0172 / 67 28 504","06441 / 44 83 567"]
+  aus B fehlt: ["03","Sehr beliebt","Großformat","Frostsicher","Präzision","DIN-Norm"]
+/leistungen/untergrund A 193 · B 187 · Fusion 199
+  aus A fehlt: ["Telefon","WhatsApp","0172 / 67 28 504","06441 / 44 83 567"]
+  aus B fehlt: ["04","Sehr beliebt","Großformat","Frostsicher","Präzision","DIN-Norm"]

@@ -1,0 +1,63 @@
+{
+ "satz": "f-02-axe",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 8,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/leistungen/wohnen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/wohnen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/untergrund",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen/untergrund",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  }
+ ]
+}

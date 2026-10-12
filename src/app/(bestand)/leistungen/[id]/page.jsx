@@ -1,17 +1,26 @@
-// Leistung (E3-BAU-03, KERN v2): Seitenkörper der Leistungsseiten als Erzählansicht nach dem Muster der
-// Leistungsübersicht (E3-BAU-02). Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts der Verlegeplan der
-// Leistung ohne Achse. Danach die Leitachse über die Abschnitte: Spezialisierungen als dichte Liste an der Fuge,
-// Merkmale und Schnittzeichnung der Leistung, Städteregister, Direktkontakt als Schriftfeld mit Knöpfen, Projektanfrage
-// mit Rechner, Fragen, Express-Anfrage mit Funnel. Wortlaut, Überschriften, Links, IDs (#express-anfrage) und Lesefolge
-// wie im Bestand. Keine Icon-Kacheln, kein Auftritt und kein großer Moment (setzt der Orchestrator). Daten und
-// Metadaten unverändert.
+// /leistungen/[id] · die vier Leistungsseiten bad · wohnen · aussen · untergrund (Fusion F-02 nach Gutachten u2, E-039;
+// KERN v2, Erzählansicht nach dem Vorbild der Startseite). Grundgerüst Fassung B (S-04), aus Fassung A (E3-BAU-03) der
+// Einstieg als Planblatt, die Mono-Etiketten, die Gewerk-Pläne und die eigenen sections für Gewerke, Region, Direktkontakt.
+// Abschnittsfolge und Flächen:
+// 1. Einstieg (Kalk): Rückweg und Etikett in der Mono-Kennzeile, H1, Vorspann, zwei Wege; Randspalte = Planblatt (Plan der
+//    Leistung mit „=“-Bemaßung, Eckmarken, Schriftfeld aus COMPANY_DATA), oben bündig mit der Kennzeile · 2. Spezialisierungen
+//    als Feldraster (Band auf Fliese, Felder Kalk, einziger Auftritt) · 3. Fachkompetenz & Ausführungsdetails (Kalk): Text an
+//    der Fuge neben dem Schriftfeld „Direktkontakt“, darunter die Wege „Weitere Gewerke“ (mit Plan-Miniaturen) und Region ·
+//    4. Projektanfrage mit Preisrechner (Fliese) · 5. Fragen, Kopf seitlich (Kalk) · 6. Express-Anfrage #express-anfrage,
+//    Kopf seitlich (Fliese) · 7. Abschluss (geteilter Baustein FinalCTA, ohne Achsenstück).
+// Rot: genau eines je Bildschirm – ab lg die Achse im Plan (das Lot des Einstiegs bleibt Grundschicht), unter lg das Lot im
+// Seitenrand (Plan ohne Achse); keine seitenlange Leitachse (Gutachten u2, Stolperstein d). In allen vier Instanzen gleich.
+// Kein großer Moment. Kein `spaet` (content-visibility): Die geschätzten Höhen verkürzten bei 200 % Zoom die Scrolllänge,
+// der Fuß blieb „nie im Bild“ (a11y-zusatz: A 65, B 6).
+// H1: Stufe nach `Einstieg` (lange Titel > 44 Zeichen text-fs-6), weil mit text-fs-7 die Knöpfe von aussen/untergrund in
+// d1440 unter 900 px und in m390 unter die feste Leiste fallen (Rückgabe F-02, OFFENE FRAGE); weiche Trennung über `fugen`.
+// Server-Komponente (async, params als Promise nach Next 16); Client-Inseln sind nur Formulare und Fragen.
+// Wortlaut, Anker, JSON-LD, generateStaticParams und notFound wie im Bestand; Metadaten im layout.jsx der Route.
 import { ViewTransition } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import clsx from 'clsx';
 import { SERVICES } from '@/config/services';
-import { CITIES } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
 import { buildGraph, buildServiceNode, buildBreadcrumbNode, buildWebPageNode, SITE_URL } from '@/lib/schema';
 import JsonLd from '@/components/seo/JsonLd';
@@ -22,16 +31,15 @@ import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Icon from '@/components/icons/Icon';
 import Einstieg from '@/components/kern/Einstieg';
 import Abschnitt from '@/components/kern/Abschnitt';
-import Leitachse from '@/components/kern/Leitachse';
-import { Feld, Feldraster } from '@/components/kern/Feldraster';
-import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
-import Schriftfeld from '@/components/kern/Schriftfeld';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Verlegeplan from '@/components/kern/Verlegeplan';
-import Planblatt, { planfelder } from '@/components/kern/Planblatt';
-import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
+import Planfeld from '@/components/leistungen/detail/Planfeld';
+import Unterkategorien from '@/components/leistungen/detail/Unterkategorien';
+import Fachdetails from '@/components/leistungen/detail/Fachdetails';
+import { fugen, UNTERSTRICH } from '@/components/leistungen/detail/satz';
 
-// Express-Anfrage nachladen (Tempo, wie auf der Startseite)
+// Express-Anfrage nachladen (Tempo, wie auf der Startseite; aus Fassung A)
 const TezgelAnfrageFunnel = dynamic(() => import('@/components/funnels/TezgelAnfrageFunnel'), {
   loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
 });
@@ -47,8 +55,6 @@ export default async function ServiceDetailPage({ params }) {
   if (!service) {
     notFound();
   }
-
-  const relatedServices = SERVICES.filter((s) => s.id !== service.id);
 
   const serviceH1Titles = {
     bad: 'Badsanierung & Komplettbäder: Bäder & Wellness in Wetzlar',
@@ -164,20 +170,19 @@ export default async function ServiceDetailPage({ params }) {
     <>
       <JsonLd schema={serviceSchemaGraph} />
 
-      {/* 1. EINSTIEG: Rückweg und Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts der Verlegeplan ohne Achse */}
+      {/* 1. EINSTIEG: Rückweg und Etikett in der Mono-Kennzeile (B), H1, Vorspann, zwei Wege; rechts das Planblatt (A) */}
       <Einstieg
-        art="erzaehl"
         etikett={
           <>
-            <Link href="/leistungen" className={clsx(linkKlassen, 'inline-flex min-h-11 items-center gap-2 font-text text-fs-2')}>
+            <Link href="/leistungen" data-motion="zustand" className="group mr-4 inline-flex min-h-11 items-center gap-2 text-tinte">
               <Icon name="pfeil-links" groesse={4} />
-              Zurück zur Leistungsübersicht
+              <span className={UNTERSTRICH}>Zurück zur Leistungsübersicht</span>
             </Link>
             <Fugenkreuz className="size-3 shrink-0 text-strich" />
             <span>Fachgewerk &middot; {COMPANY_DATA.legalName}</span>
           </>
         }
-        titel={h1Title}
+        titel={fugen(h1Title)}
         vorspann={<p>{serviceIntroTexts[service.id] || service.detailText}</p>}
         aktionen={
           <>
@@ -195,252 +200,71 @@ export default async function ServiceDetailPage({ params }) {
           </>
         }
         rand={
-          // Seitenwechsel (E3-ORCH-02): derselbe Plan wie im Feld der Leistungsübersicht, gleitet bei „Fachdetails“ hierher
-          // Planblatt (E4-NACH-01): nur die Zeichnung trägt den Namen, so gleitet sie aus dem Feld der Übersicht ins Blatt
-          <Planblatt felder={planfelder(service.name, service.id)} mitAchse>
+          <Planfeld id={service.id} name={service.name}>
+            {/* Seitenwechsel (E3-ORCH-02): derselbe Plan wie im Feld der Leistungsübersicht gleitet ab lg hierher */}
             <ViewTransition name={`plan-${service.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
-              {/* beim Laden rückt das Raster in die Flucht und die rote Achse zieht sich auf (K-007; E4-NACH-02, E4-N2-02) */}
-              <Verlegeplan plan={service.id} bemassung={false} flucht="laden" />
+              <Verlegeplan plan={service.id} flucht="laden" />
             </ViewTransition>
-          </Planblatt>
+          </Planfeld>
         }
       />
 
-      <Leitachse>
-        {/* 2. SPEZIALISIERUNGEN als dichte Liste: Zeilen an der Fuge, Fugenkreuz als Marke, Höhe nach Inhalt (ohne Versatz) */}
-        {service.subcategories && service.subcategories.length > 0 && (
-          <Abschnitt
-            titelId="spezialisierung-heading"
-            leitachse
-            spaet
-            etikett="Spezialisierungen"
-            titel={<>Spezialisierungen in {service.name}</>}
-          >
-            {/* ungerade Anzahl: der letzte Eintrag füllt die Zeile über beide Spalten, keine leere Zelle */}
-            <ul className="grid border-b border-fuge md:grid-cols-2 md:gap-x-12">
-              {service.subcategories.map((sub) => (
-                <li key={sub.id} className="flex gap-3 border-t border-fuge py-4 font-text text-fs-2 text-tinte md:odd:last:col-span-2">
-                  <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
-                    <Fugenkreuz className="size-3" />
-                  </span>
-                  <span className="min-w-0">{sub.name}</span>
-                </li>
-              ))}
-            </ul>
-          </Abschnitt>
-        )}
+      {/* 2. SPEZIALISIERUNGEN als Feldraster (Bestand „Subcategories Bento“) */}
+      <Unterkategorien leistung={service} />
 
-        {/* 3. FACHKOMPETENZ: Vorspann, Merkmale mit Fugenkreuz, Hinweis zur Fachqualität mit Schnittzeichnung der Leistung */}
-        <Abschnitt
-          titelId="fachkompetenz-heading"
-          leitachse
-          flaeche="fliese"
-          spaet
-          etikett="Fachkompetenz"
-          titel={<>Fachkompetenz &amp; Ausführungsdetails</>}
-          einleitung={<p>{service.shortDescription}</p>}
-        >
-          <div className="flex flex-col gap-12">
-            <div>
-              <p className={etikettKlassen}>Ihre handwerklichen Vorteile:</p>
-              <ul className="mt-6 grid gap-3 lg:grid-cols-2 lg:gap-x-8">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 font-text text-fs-2 text-tinte">
-                    <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
-                      <Fugenkreuz className="size-3" />
-                    </span>
-                    <span className="min-w-0">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Hinweistext ohne Info-Zeichen; daneben die Schnittzeichnung der Leistung (Planvorgabe service.id, dekorativ) */}
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-x-12">
-              <div className="border border-l-2 border-strich bg-fliese p-6 font-text text-fs-2 text-tinte">
-                <div className="font-semibold">Warum Fachqualität von {COMPANY_DATA.legalName}?</div>
-                <div className="mt-2">{serviceQualityNotes[service.id] || serviceQualityNotes.bad}</div>
-              </div>
-              <div className="border border-fuge p-6">
-                {/* Schnittkante = untere Linie: die Zeichnung endet an der waagrechten Achse */}
-                <div className="border-b-2 border-tinte">
-                  <Verlegeplan plan={service.id} schnitt ohneAchse bemassung={false} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Abschnitt>
+      {/* 3. FACHKOMPETENZ & AUSFÜHRUNGSDETAILS mit Direktkontakt, danach die Wege: Weitere Gewerke, Region */}
+      <Fachdetails
+        leistung={service}
+        qualitaet={serviceQualityNotes[service.id] || serviceQualityNotes.bad}
+        randText={serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}
+      />
 
-        {/* 4. WEITERE GEWERKE als Feldraster: Name und Verweis je Leistung */}
-        <Abschnitt titelId="weitere-heading" leitachse spaet etikett="Gewerke" titel={<>Weitere Gewerke von {COMPANY_DATA.legalName}:</>}>
-          <Feldraster spalten={3}>
-            {relatedServices.map((rel) => (
-              <Feld key={rel.id} className="gap-6">
-                {/* kleiner Verlegeplan des Gewerks, dekorativ; der Name ist der einzige Link des Feldes */}
-                <div className="w-32">
-                  <Verlegeplan plan={rel.id} ohneAchse bemassung={false} />
-                </div>
-                <h3 className="mt-auto font-anzeige text-fs-4 text-tinte">
-                  <Link href={`/leistungen/${rel.id}`} className={linkKlassen}>
-                    {rel.name}
-                  </Link>
-                </h3>
-              </Feld>
-            ))}
-          </Feldraster>
-        </Abschnitt>
+      {/* 4. PROJEKTANFRAGE (umfassendes Formular mit Situationsschilderung) */}
+      <Abschnitt
+        id="kosten-rechner"
+        titelId="rechner-heading"
+        flaeche="fliese"
+        etikett="Individuelle Anfrage"
+        titel="Projekt anfragen & Situation schildern"
+        einleitung={
+          <p>
+            Schildern Sie uns Ihr Vorhaben für {service.name} für eine fachmännische Einschätzung und ein Festpreisangebot nach Vor-Ort-Aufmaß.
+          </p>
+        }
+      >
+        <PricingCalculator />
+      </Abschnitt>
 
-        {/* 5. REGION: Orte als Städteregister, je Ort ein Link auf die Seite der Leistung vor Ort */}
-        <Abschnitt
-          titelId="region-heading"
-          leitachse
-          spaet
-          etikett="Region"
-          titel={<>{service.name} in Ihrer Region</>}
-          einleitung={
-            <p>
-              Vom Firmensitz in {COMPANY_DATA.headquarters.city} aus im Lahn-Dill-Kreis und in Mittelhessen im Einsatz.
-            </p>
-          }
-        >
-          <ul className="border-t border-fuge md:columns-2 md:gap-x-12">
-            {CITIES.map((city) => (
-              <li key={city.slug} className="break-inside-avoid border-b border-fuge">
-                <Link
-                  href={`/leistungen/${service.id}/${city.slug}`}
-                  className={clsx(linkKlassen, 'flex min-h-11 items-center justify-between gap-4 py-3 font-text text-fs-2')}
-                >
-                  <span className="flex items-center gap-3">
-                    <Icon name="ort" groesse={4} className="shrink-0 text-strich" />
-                    {city.name}
-                  </span>
-                  <Icon name="pfeil-rechts" groesse={4} className="shrink-0 text-strich" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Abschnitt>
+      {/* 5. HÄUFIGE FRAGEN: Kopf links, Fragen rechts (wie auf der Startseite) */}
+      <Abschnitt
+        id="faq"
+        titelId="faq-heading"
+        kopf="seitlich"
+        etikett="Transparenz & Ratgeber"
+        titel={fugen(`Häufige Fragen zu ${service.name}`)}
+        einleitung={<p>Antworten unseres Handwerksteams für eine reibungslose Planung und Ausführung.</p>}
+      >
+        <div>
+          {currentFaqs.map((faq) => (
+            <FAQAccordion key={faq.q} question={faq.q} answer={faq.a} />
+          ))}
+        </div>
+      </Abschnitt>
 
-        {/* 6. DIREKTKONTAKT: Schriftfeld links (Telefon, WhatsApp, E-Mail aus COMPANY_DATA), rechts die Knöpfe; Leitsatz in der Kopfspalte */}
-        <Abschnitt
-          titelId="direktkontakt-heading"
-          flaeche="fliese"
-          kopf="seitlich"
-          leitachse
-          spaet
-          etikett="Direktkontakt"
-          titel={<>Projekt in {service.name} anfragen?</>}
-          einleitung={
-            <>
-              <p>{serviceSidebarIntros[service.id] || serviceSidebarIntros.bad}</p>
-              {/* Leitsatz des Inhabers unter dem Kopf, in der Kopfspalte (Befund 20b): keine Spalte nur für das Zitat */}
-              <p className="mt-6 border-t border-fuge pt-6 font-text text-fs-2 text-tinte-2">
-                &bdquo;{COMPANY_DATA.motto}&ldquo;
-              </p>
-            </>
-          }
-        >
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-x-12">
-            <Schriftfeld
-              spalten={1}
-              className="sm:max-w-md"
-              felder={[
-                {
-                  etikett: 'Telefon',
-                  wert: (
-                    <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className={clsx(linkKlassen, 'font-mono')}>
-                      {COMPANY_DATA.contact.phone}
-                    </a>
-                  ),
-                },
-                {
-                  etikett: 'WhatsApp',
-                  wert: (
-                    <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className={clsx(linkKlassen, 'font-mono')}>
-                      {COMPANY_DATA.contact.mobile}
-                    </a>
-                  ),
-                },
-                {
-                  etikett: 'E-Mail',
-                  wert: (
-                    <a href={`mailto:${COMPANY_DATA.contact.email}`} className={linkKlassen}>
-                      {COMPANY_DATA.contact.email}
-                    </a>
-                  ),
-                },
-              ]}
-            />
-            <div className="flex flex-col gap-3 sm:max-w-md">
-              <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon" className="w-full">
-                <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
-              </Knopf>
-              <Knopf
-                href={COMPANY_DATA.contact.whatsappLink}
-                extern
-                variante="neben"
-                vorne={<WhatsAppLogo className="size-5 shrink-0" />}
-                className="w-full"
-              >
-                WhatsApp Chat
-              </Knopf>
-              <Knopf href="#express-anfrage" icon="pfeil-rechts" className="w-full">
-                Kostenfreies Aufmaß buchen
-              </Knopf>
-            </div>
-          </div>
-        </Abschnitt>
+      {/* 6. EXPRESS-ANFRAGE: Kopf links, Assistent rechts (wie auf der Startseite) */}
+      <Abschnitt
+        id="express-anfrage"
+        titelId="anfrage-heading"
+        flaeche="fliese"
+        kopf="seitlich"
+        etikett="Express-Aufmaß"
+        titel="Jetzt unverbindlich anfragen"
+      >
+        <TezgelAnfrageFunnel />
+      </Abschnitt>
 
-        {/* 7. PROJEKT: Vorhaben und Ausgangslage schildern, danach der Rechner */}
-        <Abschnitt
-          titelId="projekt-heading"
-          leitachse
-          spaet
-          etikett="Individuelle Anfrage"
-          titel="Projekt anfragen & Situation schildern"
-          einleitung={
-            <p>
-              Schildern Sie uns Ihr Vorhaben für {service.name} für eine fachmännische Einschätzung und ein Festpreisangebot
-              nach Vor-Ort-Aufmaß.
-            </p>
-          }
-        >
-          <PricingCalculator />
-        </Abschnitt>
-
-        {/* 8. FRAGEN: Etikett, Überschrift und Vorspann links, die Antworten rechts als Fugenliste */}
-        <Abschnitt
-          titelId="faq-heading"
-          leitachse
-          spaet
-          kopf="seitlich"
-          etikett="Transparenz & Ratgeber"
-          titel={<>Häufige Fragen zu {service.name}</>}
-          einleitung={<p>Antworten unseres Handwerksteams für eine reibungslose Planung und Ausführung.</p>}
-        >
-          <div>
-            {currentFaqs.map((faq) => (
-              <FAQAccordion key={faq.q} question={faq.q} answer={faq.a} />
-            ))}
-          </div>
-        </Abschnitt>
-
-        {/* 9. EXPRESS-ANFRAGE: Kopf links, Assistent rechts; Anker #express-anfrage */}
-        <Abschnitt
-          id="express-anfrage"
-          titelId="anfrage-heading"
-          flaeche="fliese"
-          kopf="seitlich"
-          leitachse
-          spaet
-          etikett="Express-Aufmaß"
-          titel="Jetzt unverbindlich anfragen"
-        >
-          <TezgelAnfrageFunnel />
-        </Abschnitt>
-      </Leitachse>
-
-      {/* 10. ABSCHLUSS */}
-      <FinalCTA />
+      {/* 7. ABSCHLUSS (geteilter Baustein): ohne Achsenstück, die Seite hat keine Leitachse, an die es anschließen könnte */}
+      <FinalCTA achse={false} />
     </>
   );
 }
