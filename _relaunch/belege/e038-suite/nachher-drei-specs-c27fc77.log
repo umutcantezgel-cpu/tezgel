@@ -1,0 +1,161 @@
+
+Running 156 tests using 2 workers
+
+[1A[2K[1/156] [mobil] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[2/156] [mobil] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[3/156] [mobil] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[4/156] [mobil] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[5/156] [mobil] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[6/156] [mobil] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[7/156] [mobil] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[8/156] [mobil] › tests/funktion-einwilligung.spec.mjs:139:5 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt
+[1A[2K[9/156] [mobil] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[10/156] [mobil] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[11/156] [mobil] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[12/156] [mobil] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[13/156] [mobil] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[14/156] [mobil] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /standorte: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[15/156] [mobil] › tests/funktion-einwilligung.spec.mjs:195:5 › Karten hinter Einwilligung (F-12) › Erstbesuch (keine Entscheidung) › /kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts
+[1A[2K[16/156] [mobil] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[17/156] [mobil] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[18/156] [mobil] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[19/156] [mobil] › tests/funktion-einwilligung.spec.mjs:218:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[20/156] [mobil] › tests/funktion-einwilligung.spec.mjs:232:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[21/156] [mobil] › tests/funktion-einwilligung.spec.mjs:241:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter
+[1A[2K[22/156] [mobil] › tests/funktion-einwilligung.spec.mjs:272:5 › Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host
+[1A[2K[23/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[24/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[25/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[26/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[27/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[28/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[29/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[30/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[31/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[32/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[33/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:133:3 › F-10 WhatsApp-Links und Widget › Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer
+[1A[2K[34/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[35/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[36/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[37/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /kontakt: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[38/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[39/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /bad: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[40/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:163:3 › F-15 Telefon und E-Mail › /bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt
+[1A[2K[41/156] [mobil] › tests/funktion-kontaktwege.spec.mjs:175:3 › F-15 Telefon und E-Mail › Mobil-Leiste: Anrufen zeigt auf die Festnetznummer
+[1A[2K[42/156] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[43/156] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[44/156] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[45/156] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[46/156] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[47/156] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[48/156] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[49/156] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[50/156] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[51/156] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[52/156] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[53/156] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[54/156] [mobil] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[55/156] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[56/156] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[57/156] [mobil] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[58/156] [mobil] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[59/156] [mobil] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[60/156] [mobil] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[61/156] [mobil] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[62/156] [mobil] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[63/156] [mobil] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[64/156] [mobil] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[65/156] [mobil] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[66/156] [mobil] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[67/156] [mobil] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[68/156] [mobil] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[69/156] [mobil] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[70/156] [mobil] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[71/156] [mobil] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[72/156] [mobil] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K[73/156] [mobil] › tests/funktion-tracking.spec.mjs:58:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (1) ohne Entscheidung: nach Laden und Scrollen keine Anfrage an GA4-Hosts
+[1A[2K[74/156] [mobil] › tests/funktion-tracking.spec.mjs:67:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (2) „Alle ablehnen“: auch nach Neuladen und Seitenwechsel keine Anfrage an GA4-Hosts
+[1A[2K[75/156] [mobil] › tests/funktion-tracking.spec.mjs:88:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (3) „Alle akzeptieren“: ab dem nächsten Seitenaufruf Anfrage an gtag/js?id=G-TEST000000 (Sperre antwortet mit 204)
+[1A[2K[76/156] [mobil] › tests/funktion-tracking.spec.mjs:104:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Widerruf (Zustimmung vorhanden) › (4) „Cookie-Einstellungen verwalten“ → „Alle ablehnen“: nach Neuladen keine neue Anfrage an GA4-Hosts
+[1A[2K[77/156] [mobil] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /bad/budgetkalkulator → /bad/projekt-check: 308 und Ziel 200
+[1A[2K[78/156] [mobil] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /blog/barrierefreies-bad-planung-zuschuesse → /bad/barrierefreies-bad: 308 und Ziel 200
+[1A[2K[79/156] [desktop] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[80/156] [desktop] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /standorte: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[81/156] [desktop] › tests/funktion-einwilligung.spec.mjs:95:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Banner zeigt „Alle akzeptieren“, „Alle ablehnen“ und „Einstellungen“ in der ersten Ebene; ohne Wahl kein Cookie
+[1A[2K[82/156] [desktop] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[83/156] [desktop] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[84/156] [desktop] › tests/funktion-einwilligung.spec.mjs:106:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Schließen ohne Wahl setzt nur technisch notwendige Cookies (keine Voreinstellung für Analyse oder Marketing)
+[1A[2K[85/156] [desktop] › tests/funktion-einwilligung.spec.mjs:114:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Alle ablehnen: speichert Ablehnung in tezgel_consent_status, Banner schließt und bleibt nach Neuladen zu
+[1A[2K[86/156] [desktop] › tests/funktion-einwilligung.spec.mjs:139:5 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › Alle akzeptieren: speichert Analyse und Marketing in tezgel_consent_status, Banner schließt
+[1A[2K[87/156] [desktop] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[88/156] [desktop] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[89/156] [desktop] › tests/funktion-einwilligung.spec.mjs:148:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: #cookie-settings öffnet die Einstellungen direkt (Auswahl speichern und Zurück sichtbar)
+[1A[2K[90/156] [desktop] › tests/funktion-einwilligung.spec.mjs:156:7 › Einwilligung (F-11, global) › Erstbesuch (kein Cookie) › /kontakt: Einstellungen: „Auswahl speichern“ übernimmt nur die gewählte Kategorie (Marketing an, Analyse aus)
+[1A[2K[91/156] [desktop] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[92/156] [desktop] › tests/funktion-einwilligung.spec.mjs:176:7 › Einwilligung (F-11, global) › Widerruf (Zustimmung vorhanden) › /standorte: Schild „Cookie-Einstellungen verwalten“ öffnet die Einstellungen mit aktuellem Stand; „Alle ablehnen“ entzieht Analyse und Marketing
+[1A[2K[93/156] [desktop] › tests/funktion-einwilligung.spec.mjs:195:5 › Karten hinter Einwilligung (F-12) › Erstbesuch (keine Entscheidung) › /kontakt: vor jeder Entscheidung Platzhalter statt Karte und keine Anfrage an Karten-Hosts
+[1A[2K[94/156] [desktop] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[95/156] [desktop] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[96/156] [desktop] › tests/funktion-einwilligung.spec.mjs:207:7 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: Zwei-Klick-Platzhalter statt Karte, keine Anfrage an Karten-Hosts
+[1A[2K[97/156] [desktop] › tests/funktion-einwilligung.spec.mjs:218:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[98/156] [desktop] › tests/funktion-einwilligung.spec.mjs:232:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host)
+[1A[2K[99/156] [desktop] › tests/funktion-einwilligung.spec.mjs:241:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter
+[1A[2K[100/156] [desktop] › tests/funktion-einwilligung.spec.mjs:272:5 › Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host
+[1A[2K[101/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[102/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[103/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:90:5 › F-10 WhatsApp-Links und Widget › Widget /bad: Klick öffnet WhatsApp mit Firmennummer und seitenbezogenem Text, ohne Anfrage
+[1A[2K[104/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[105/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[106/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:104:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: kein vorgetäuschtes Benachrichtigungs-Abzeichen (E-012)
+[1A[2K[107/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:114:5 › F-10 WhatsApp-Links und Widget › Widget /kontakt: Doppelklick löst nur einen WhatsApp-Aufruf aus (Entprellung)
+[1A[2K[108/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[109/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /kontakt: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[110/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:124:5 › F-10 WhatsApp-Links und Widget › /bad: alle WhatsApp-Links (Hero, FinalCTA, Leiste, Fußbereich) zeigen auf die Firmennummer
+[1A[2K[111/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:133:3 › F-10 WhatsApp-Links und Widget › Mobil-Leiste: WhatsApp-Knopf öffnet Chat mit Firmennummer
+[1A[2K[112/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[113/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[114/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /kontakt: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[115/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /kontakt: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[116/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:148:5 › F-15 Telefon und E-Mail › /bad: alle Telefonlinks zeigen auf Festnetz oder Mobilnummer, mindestens einer auf Festnetz
+[1A[2K[117/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:155:5 › F-15 Telefon und E-Mail › /bad: alle E-Mail-Links zeigen auf info@tezgel.de
+[1A[2K[118/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:163:3 › F-15 Telefon und E-Mail › /bad Fußbereich: Festnetz, E-Mail und WhatsApp sind verlinkt
+[1A[2K[119/156] [desktop] › tests/funktion-kontaktwege.spec.mjs:175:3 › F-15 Telefon und E-Mail › Mobil-Leiste: Anrufen zeigt auf die Festnetznummer
+[1A[2K[120/156] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[121/156] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[122/156] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[123/156] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[124/156] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[125/156] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[126/156] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[127/156] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[128/156] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[129/156] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[130/156] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[131/156] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[132/156] [desktop] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[133/156] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[134/156] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[135/156] [desktop] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[136/156] [desktop] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[137/156] [desktop] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[138/156] [desktop] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[139/156] [desktop] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[140/156] [desktop] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[141/156] [desktop] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[142/156] [desktop] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[143/156] [desktop] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[144/156] [desktop] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[145/156] [desktop] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[146/156] [desktop] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[147/156] [desktop] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[148/156] [desktop] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[149/156] [desktop] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[150/156] [desktop] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K[151/156] [desktop] › tests/funktion-tracking.spec.mjs:58:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (1) ohne Entscheidung: nach Laden und Scrollen keine Anfrage an GA4-Hosts
+[1A[2K[152/156] [desktop] › tests/funktion-tracking.spec.mjs:67:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (2) „Alle ablehnen“: auch nach Neuladen und Seitenwechsel keine Anfrage an GA4-Hosts
+[1A[2K[153/156] [desktop] › tests/funktion-tracking.spec.mjs:88:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Erstbesuch (kein Cookie) › (3) „Alle akzeptieren“: ab dem nächsten Seitenaufruf Anfrage an gtag/js?id=G-TEST000000 (Sperre antwortet mit 204)
+[1A[2K[154/156] [desktop] › tests/funktion-tracking.spec.mjs:104:5 › Tracking erst nach Einwilligung (F-11-Erweiterung) › Widerruf (Zustimmung vorhanden) › (4) „Cookie-Einstellungen verwalten“ → „Alle ablehnen“: nach Neuladen keine neue Anfrage an GA4-Hosts
+[1A[2K[155/156] [desktop] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /bad/budgetkalkulator → /bad/projekt-check: 308 und Ziel 200
+[1A[2K[156/156] [desktop] › tests/funktion-weiterleitung.spec.mjs:13:5 › V-04 Weiterleitungen › /blog/barrierefreies-bad-planung-zuschuesse → /bad/barrierefreies-bad: 308 und Ziel 200
+[1A[2K  22 skipped
+  134 passed (3.6m)

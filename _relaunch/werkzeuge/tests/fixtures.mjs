@@ -59,5 +59,10 @@ const VORSCHAU_SEITEN = (process.env.RELAUNCH_KERN_SEITEN ?? '').split(',').map(
 if (FASSUNG === 'vorschau' && (!VORSCHAU_SEITEN.length || VORSCHAU_SEITEN.some((s) => !s.startsWith('/')))) {
   throw new Error('RELAUNCH_FASSUNG=vorschau braucht RELAUNCH_KERN_SEITEN="/,/bad,…"');
 }
-export const KERN_SEITEN = FASSUNG === 'bestand' ? [] : FASSUNG === 'vorschau' ? VORSCHAU_SEITEN : ['/'];
+// E-038 (Vereinheitlichung): Seit der Werkstatt-Fusion (6156079) tragen alle Seiten denselben Rahmen im KERN v2 (Kopf mit
+// Hauptnavigation ab xl, mobil untere Leiste statt schwebendem WhatsApp-Knopf, Banner als Schriftfeld). Die Kern-Entwürfe
+// dieser Sitzung gehen nie live (ruhend, nur Vorlage) → im Kandidaten ist KERN_SEITEN leer; RAHMEN_KERN gilt für jede Seite.
+// RELAUNCH_FASSUNG=bestand bleibt für Läufe gegen den Ausgangsstand (alter Rahmen): RAHMEN_KERN falsch.
+export const KERN_SEITEN = FASSUNG === 'vorschau' ? VORSCHAU_SEITEN : [];
+export const RAHMEN_KERN = FASSUNG !== 'bestand';
 export const istKern = (pfad) => KERN_SEITEN.includes(new URL(pfad, 'http://pfad.invalid').pathname);

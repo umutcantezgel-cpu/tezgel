@@ -88,7 +88,7 @@ n="$(node -e 'const j=require(process.argv[1]);console.log(j.ernst_kritisch_knot
 # 12 Funktionstests
 if [ -n "$SPECS" ]; then
   LISTE="$(echo "$SPECS" | tr ',' '\n' | sed 's#^#tests/#' | tr '\n' ' ')"
-  (cd "$W" && RELAUNCH_FASSUNG=bestand RELAUNCH_REPORT="$AUS/12-specs.json" RELAUNCH_OUTPUT="$SCRATCH/tor-$KENNUNG-pw" npx playwright test $LISTE --reporter=line) > "$AUS/12-specs.log" 2>&1
+  (cd "$W" && RELAUNCH_REPORT="$AUS/12-specs.json" RELAUNCH_OUTPUT="$SCRATCH/tor-$KENNUNG-pw" npx playwright test $LISTE --reporter=line) > "$AUS/12-specs.log" 2>&1
   stufe 12-specs $? "$(grep -E '[0-9]+ (passed|failed|skipped|flaky)' "$AUS/12-specs.log" | tr '\n' ' ')"
 fi
 
