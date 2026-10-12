@@ -29,7 +29,7 @@ async function bearbeite(s) {
   // Aufklappbares öffnen, damit FAQ- und Akkordeon-Texte im Text stehen (nur lesen, keine Navigation)
   await page.evaluate(() => { document.querySelectorAll('details').forEach((d) => d.setAttribute('open', '')); });
   const d = await page.evaluate(() => {
-    const norm = (t) => (t || '').replace(/ /g, ' ').replace(/[ \t]+/g, ' ').trim();
+    const norm = (t) => (t || '').replace(/[\u00AD\u200B\u2060\uFEFF]/g, '').replace(/ /g, ' ').replace(/[ \t]+/g, ' ').trim();
     const meta = (sel, attr = 'content') => document.querySelector(sel)?.getAttribute(attr) ?? null;
     const zeilen = (el) => (el ? el.innerText.split('\n').map(norm).filter((z) => z.length > 0) : []);
     const main = document.querySelector('main');
