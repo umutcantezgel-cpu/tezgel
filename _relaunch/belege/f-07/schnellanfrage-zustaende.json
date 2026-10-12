@@ -1,0 +1,206 @@
+{
+ "bilder": [
+  "../bilder/zustaende-final/standorte__wetzlar-m390-ruhe.png",
+  "../bilder/zustaende-final/standorte__wetzlar-m390-fokus-name.png",
+  "../bilder/zustaende-final/standorte__wetzlar-m390-fehler.png",
+  "../bilder/zustaende-final/standorte__wetzlar-m390-laden.png",
+  "../bilder/zustaende-final/standorte__wetzlar-m390-erfolg.png",
+  "../bilder/zustaende-final/standorte__wetzlar-m390-serverfehler.png",
+  "../bilder/zustaende-final/standorte__wetzlar-d1440-ruhe.png",
+  "../bilder/zustaende-final/standorte__wetzlar-d1440-fokus-name.png",
+  "../bilder/zustaende-final/standorte__wetzlar-d1440-fehler.png",
+  "../bilder/zustaende-final/standorte__wetzlar-d1440-laden.png",
+  "../bilder/zustaende-final/standorte__wetzlar-d1440-erfolg.png",
+  "../bilder/zustaende-final/standorte__wetzlar-d1440-serverfehler.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-m390-ruhe.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-m390-fokus-name.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-m390-fehler.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-m390-laden.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-m390-erfolg.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-m390-serverfehler.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-d1440-ruhe.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-d1440-fokus-name.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-d1440-fehler.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-d1440-laden.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-d1440-erfolg.png",
+  "../bilder/zustaende-final/leistungen__bad__wetzlar-d1440-serverfehler.png"
+ ],
+ "messung": [
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m390",
+   "kopf_frei": true,
+   "region": "stadt-schnellanfrage-titel → Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "ueberschrift": "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "ohne_js_platzhalter": false,
+   "autocomplete_ort": "postal-code",
+   "honigtopf_label": "Bitte dieses Feld freilassen",
+   "datenschutz_link": "146.9×24",
+   "pflichtstern_farbe": "rgb(75, 80, 103)",
+   "fokus_ring": "solid 2px rgb(10, 17, 41) off 2px",
+   "fehler_fokus": "input#schnell-_R_3clritperl9etb_-name[type=text] ",
+   "fehler_name": {
+    "invalid": "true",
+    "describedby": "schnell-_R_3clritperl9etb_-meldung",
+    "rand": "rgb(168, 23, 28)"
+   },
+   "fehler_meldung": {
+    "id": "schnell-_R_3clritperl9etb_-meldung",
+    "text": "Fehler: Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu."
+   },
+   "fehler_fokus_2": "input#schnell-_R_3clritperl9etb_-name[type=text] ",
+   "laden": {
+    "busy": "true",
+    "disabled": false,
+    "fokus": true,
+    "text": "Wird gesendet...",
+    "farbe": "rgb(10, 17, 41)",
+    "grund": "rgb(245, 244, 240)",
+    "deckkraft": "1"
+   },
+   "erfolg_fokus": "h3#stadt-schnellanfrage-titel Anfrage erfolgreich übermittelt!",
+   "erfolg_rolle": 1,
+   "erfolg_kopf_frei": true,
+   "s500_fokus": "button[type=submit] Unverbindliches Angebot anfordern",
+   "s500_meldung": {
+    "text": "Fehler: Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+    "tel": "tel:+4964414483567",
+    "zeilen_nummer": 1
+   },
+   "s500_felder_gueltig": null,
+   "s500_posts": 1
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "kopf_frei": true,
+   "region": "stadt-schnellanfrage-titel → Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "ueberschrift": "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "ohne_js_platzhalter": false,
+   "autocomplete_ort": "postal-code",
+   "honigtopf_label": "Bitte dieses Feld freilassen",
+   "datenschutz_link": "156.7×25",
+   "pflichtstern_farbe": "rgb(75, 80, 103)",
+   "fokus_ring": "solid 2px rgb(10, 17, 41) off 2px",
+   "fehler_fokus": "input#schnell-_R_3clritperl9etb_-name[type=text] ",
+   "fehler_name": {
+    "invalid": "true",
+    "describedby": "schnell-_R_3clritperl9etb_-meldung",
+    "rand": "rgb(168, 23, 28)"
+   },
+   "fehler_meldung": {
+    "id": "schnell-_R_3clritperl9etb_-meldung",
+    "text": "Fehler: Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu."
+   },
+   "fehler_fokus_2": "input#schnell-_R_3clritperl9etb_-name[type=text] ",
+   "laden": {
+    "busy": "true",
+    "disabled": false,
+    "fokus": true,
+    "text": "Wird gesendet...",
+    "farbe": "rgb(10, 17, 41)",
+    "grund": "rgb(245, 244, 240)",
+    "deckkraft": "1"
+   },
+   "erfolg_fokus": "h3#stadt-schnellanfrage-titel Anfrage erfolgreich übermittelt!",
+   "erfolg_rolle": 1,
+   "erfolg_kopf_frei": true,
+   "s500_fokus": "button[type=submit] Unverbindliches Angebot anfordern",
+   "s500_meldung": {
+    "text": "Fehler: Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+    "tel": "tel:+4964414483567",
+    "zeilen_nummer": 1
+   },
+   "s500_felder_gueltig": null,
+   "s500_posts": 1
+  },
+  {
+   "seite": "/leistungen/bad/wetzlar",
+   "ansicht": "m390",
+   "kopf_frei": false,
+   "region": "final-cta-heading → Badsanierung & Bäder in Wetzlar: Jetzt unverbindlich beraten lassen.",
+   "ueberschrift": "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "ohne_js_platzhalter": false,
+   "autocomplete_ort": "postal-code",
+   "honigtopf_label": "Bitte dieses Feld freilassen",
+   "datenschutz_link": "146.9×24",
+   "pflichtstern_farbe": "rgb(75, 80, 103)",
+   "fokus_ring": "solid 2px rgb(10, 17, 41) off 2px",
+   "fehler_fokus": "input#schnell-_R_nclritqbn9erl9etb_-name[type=text] ",
+   "fehler_name": {
+    "invalid": "true",
+    "describedby": "schnell-_R_nclritqbn9erl9etb_-meldung",
+    "rand": "rgb(168, 23, 28)"
+   },
+   "fehler_meldung": {
+    "id": "schnell-_R_nclritqbn9erl9etb_-meldung",
+    "text": "Fehler: Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu."
+   },
+   "fehler_fokus_2": "input#schnell-_R_nclritqbn9erl9etb_-name[type=text] ",
+   "laden": {
+    "busy": "true",
+    "disabled": false,
+    "fokus": true,
+    "text": "Wird gesendet...",
+    "farbe": "rgb(10, 17, 41)",
+    "grund": "rgb(245, 244, 240)",
+    "deckkraft": "1"
+   },
+   "erfolg_fokus": "h3 Anfrage erfolgreich übermittelt!",
+   "erfolg_rolle": 1,
+   "erfolg_kopf_frei": true,
+   "s500_fokus": "button[type=submit] Unverbindliches Angebot anfordern",
+   "s500_meldung": {
+    "text": "Fehler: Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+    "tel": "tel:+4964414483567",
+    "zeilen_nummer": 1
+   },
+   "s500_felder_gueltig": null,
+   "s500_posts": 1
+  },
+  {
+   "seite": "/leistungen/bad/wetzlar",
+   "ansicht": "d1440",
+   "kopf_frei": true,
+   "region": "final-cta-heading → Badsanierung & Bäder in Wetzlar: Jetzt unverbindlich beraten lassen.",
+   "ueberschrift": "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "ohne_js_platzhalter": false,
+   "autocomplete_ort": "postal-code",
+   "honigtopf_label": "Bitte dieses Feld freilassen",
+   "datenschutz_link": "156.7×25",
+   "pflichtstern_farbe": "rgb(75, 80, 103)",
+   "fokus_ring": "solid 2px rgb(10, 17, 41) off 2px",
+   "fehler_fokus": "input#schnell-_R_nclritqbn9erl9etb_-name[type=text] ",
+   "fehler_name": {
+    "invalid": "true",
+    "describedby": "schnell-_R_nclritqbn9erl9etb_-meldung",
+    "rand": "rgb(168, 23, 28)"
+   },
+   "fehler_meldung": {
+    "id": "schnell-_R_nclritqbn9erl9etb_-meldung",
+    "text": "Fehler: Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu."
+   },
+   "fehler_fokus_2": "input#schnell-_R_nclritqbn9erl9etb_-name[type=text] ",
+   "laden": {
+    "busy": "true",
+    "disabled": false,
+    "fokus": true,
+    "text": "Wird gesendet...",
+    "farbe": "rgb(10, 17, 41)",
+    "grund": "rgb(245, 244, 240)",
+    "deckkraft": "1"
+   },
+   "erfolg_fokus": "h3 Anfrage erfolgreich übermittelt!",
+   "erfolg_rolle": 1,
+   "erfolg_kopf_frei": true,
+   "s500_fokus": "button[type=submit] Unverbindliches Angebot anfordern",
+   "s500_meldung": {
+    "text": "Fehler: Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+    "tel": "tel:+4964414483567",
+    "zeilen_nummer": 1
+   },
+   "s500_felder_gueltig": null,
+   "s500_posts": 1
+  }
+ ]
+}

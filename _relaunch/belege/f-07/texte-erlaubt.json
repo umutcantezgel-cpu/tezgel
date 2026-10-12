@@ -1,0 +1,12 @@
+[
+ {
+  "seite": "*",
+  "alt": "Aßlar (Firmensitz)",
+  "grund": "F-07: weiches Trennzeichen (U+00AD) als Bruchstelle bei CSS-Zoom 2 (Gutachten u8, Rezept 3); sichtbarer Wortlaut gleich, texte2 entfernt U+00AD"
+ },
+ {
+  "seite": "*",
+  "neu": "Aßlar (Firmen­sitz)",
+  "grund": "wie oben"
+ }
+]

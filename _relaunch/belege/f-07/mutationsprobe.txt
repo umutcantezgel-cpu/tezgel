@@ -1,0 +1,13 @@
+F-07 Mutationsprobe funktion-schnellanfrage.spec.mjs (beide Projekte, 24 Fälle je Lauf, gegen 4350).
+Mutiert wurde nur der Chunk der Schnellanfrage im Testbrowser (context.route, scratchpad/f-07/mut/fixtures.mjs).
+absenden: 7 passed · 17 failed · Assertion-Meldungen 70 · Netzfehler 1
+einwilligung: 4 passed · 20 failed · Assertion-Meldungen 34 · Netzfehler 0
+erfolg: 19 passed · 5 failed · Assertion-Meldungen 16 · Netzfehler 0
+honigtopf: 19 passed · 5 failed · Assertion-Meldungen 12 · Netzfehler 0
+pflicht: 22 passed · 2 failed · Assertion-Meldungen 0 · Netzfehler 2
+pruefung: 20 passed · 4 failed · Assertion-Meldungen 16 · Netzfehler 0
+quelle: 15 passed · 9 failed · Assertion-Meldungen 22 · Netzfehler 3
+vorgang: 15 passed · 9 failed · Assertion-Meldungen 38 · Netzfehler 1
+Erkannt: absenden, honigtopf, erfolg, vorgang, quelle, pruefung, einwilligung (7 von 7 Verhaltensmutationen).
+Nicht wirksam: pflicht (required am Namensfeld im Client entfernt) – das Attribut kommt aus dem Server-HTML und bleibt
+beim Hydrieren stehen; die beiden Fehlschläge dieses Laufs sind Netzfehler (ECONNRESET). Ersatz: Mutation „pruefung“.

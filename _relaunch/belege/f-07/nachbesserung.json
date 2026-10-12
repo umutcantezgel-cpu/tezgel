@@ -1,0 +1,42 @@
+[
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m375",
+  "ruhe_h3_in_karte": 0,
+  "ruhe_titel": "p#stadt-schnellanfrage-titel 24.125px 600",
+  "region": "stadt-schnellanfrage-titel → p „Kostenfreies Vor-Ort-Aufmaß anfordern“",
+  "erfolg_h3": 0,
+  "erfolg_fokus": "p#stadt-schnellanfrage-titel tabindex=-1 „Anfrage erfolgreich übermittelt!“",
+  "region_nach_erfolg": "stadt-schnellanfrage-titel → „Anfrage erfolgreich übermittelt!“"
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "ruhe_h3_in_karte": 0,
+  "ruhe_titel": "p#stadt-schnellanfrage-titel 35.84px 600",
+  "region": "stadt-schnellanfrage-titel → p „Kostenfreies Vor-Ort-Aufmaß anfordern“",
+  "erfolg_h3": 0,
+  "erfolg_fokus": "p#stadt-schnellanfrage-titel tabindex=-1 „Anfrage erfolgreich übermittelt!“",
+  "region_nach_erfolg": "stadt-schnellanfrage-titel → „Anfrage erfolgreich übermittelt!“"
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m375",
+  "ruhe_h3_in_karte": 0,
+  "ruhe_titel": "p#- 24.125px 600",
+  "region": "final-cta-heading → h2 „Badsanierung & Bäder in Wetzlar: Jetzt unverbindlich beraten lassen.“",
+  "erfolg_h3": 0,
+  "erfolg_fokus": "p#- tabindex=-1 „Anfrage erfolgreich übermittelt!“",
+  "region_nach_erfolg": "final-cta-heading → „Badsanierung & Bäder in Wetzlar: Jetzt unverbindlich beraten lassen.“"
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "ruhe_h3_in_karte": 0,
+  "ruhe_titel": "p#- 35.84px 600",
+  "region": "final-cta-heading → h2 „Badsanierung & Bäder in Wetzlar: Jetzt unverbindlich beraten lassen.“",
+  "erfolg_h3": 0,
+  "erfolg_fokus": "p#- tabindex=-1 „Anfrage erfolgreich übermittelt!“",
+  "region_nach_erfolg": "final-cta-heading → „Badsanierung & Bäder in Wetzlar: Jetzt unverbindlich beraten lassen.“"
+ }
+]

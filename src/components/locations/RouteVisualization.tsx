@@ -1,80 +1,152 @@
-"use client";
-
-// Anfahrt je Standort (E3-BAU-21, Muster LocationContact und DirectContactCard): Abschnitt im System, drei Schritte als
-// Zeilen an der Fuge, Hauptknopf zum Anruf. E4-NACH-09 (Befund 30): die Schritte stehen dicht in einer Zeile (ab sm, mit
-// Fugen statt gefüllter Felder); untereinander nur auf dem Telefon. Höhe folgt dem Inhalt.
-// Texte, Ziele und die Fahrzeitformel unverändert; Verlauf, Schatten, Rundungen und Orange entfallen.
-import React from "react";
-import Icon from "@/components/icons/Icon";
-import Abschnitt from "@/components/kern/Abschnitt";
-import Knopf from "@/components/kern/Knopf";
-import { siteConfig } from "@/lib/config";
-import { CityData } from "@/config/cities";
+// Standortseite · Anfahrt ab Aßlar (Fusion F-07, E-039; Grundgerüst Q-04, KERN v2): „Schnell bei Ihnen in {Stadt}“ als
+// gezeichneter Plan. Kopf über `Abschnitt` (Mono-Etikett mit Fugenkreuz, H2, Vorspann), Erzähltakt, Fläche Fliese.
+// Darunter das Planfeld: drei Felder an der Fuge – Startpunkt · Fahrtzeit & Strecke · Ihr Projekt –, jedes mit einem
+// Planstreifen im feinen Fugenraster (24 px, je Feld neu angesetzt wie eine Fliese). Die Strecke ist das einzige rote
+// Element (Laser, 2 px): Sie läuft vom Fugenkreuz am Firmensitz zum Fugenkreuz am Ziel, ab md als Waage im Streifen über
+// den Feldern, mobil als Lot im Streifen links (K-003 Nr. 7). Beide Marken sitzen auf einem Rasterkreuz, die Angaben
+// fluchten an ihnen. Beschriftungen als Mono-Etiketten, Fahrzeit und Entfernung in Mono; darunter die Anfrage als
+// Hauptknopf (Telefon).
+// Aus der zweiten Fassung (Gutachten u8): spätes Zeichnen (`spaet`), Stationswerte brechen in ihrer Spalte (kein Überlauf
+// bei CSS-Zoom 2), echte Ränder für Streifen und Felder (bleiben in erzwungenen Farben, wenn das Raster entfällt),
+// die Fahrzeit ab md als stärkster Wert der Zeile, geschützte Leerzeichen vor Einheiten (K-006).
+// Zeichnung dekorativ (aria-hidden), alle Angaben als echter Text in einer geordneten Liste (Start → Strecke → Ziel).
+// Serverkomponente ohne Zustand und ohne Bewegung. Texte, Fahrzeit-Rechnung und Ziel des Links wie im Bestand;
+// Entfernungen aus `@/config/cities` (gemessen ab Wetzlar, dargestellt ab Aßlar – I-16/WM-17, bewusst unverändert).
+import { useId } from 'react';
+import clsx from 'clsx';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import { etikettKlassen } from '@/components/kern/stile';
+import { siteConfig } from '@/lib/config';
+import type { CityData } from '@/config/cities';
 
 interface RouteVisualizationProps {
   city: CityData;
   className?: string;
 }
 
-const etikett = "block font-mono text-fs-1 text-tinte-2";
+type Lage = 'start' | 'strecke' | 'ziel';
 
-export default function RouteVisualization({ city, className = "" }: RouteVisualizationProps) {
-  // Approximate driving time calculation (1.5 min per km + 5 min base)
+// Geschütztes Leerzeichen zwischen Zahl und Einheit (K-006): „35 km“ und „51 Minuten“ brechen nie auseinander. Der
+// Fahrzeitwert „ca. 51 Min.“ behält das normale Leerzeichen: Bei CSS-Zoom 2 bricht er sauber vor „Min.“ statt im Wort.
+const NBSP = '\u00A0';
+
+/**
+ * Planstreifen eines Feldes mit feinem Fugenraster (24 px): mobil links (48 px breit), ab md oben (48 px hoch).
+ * Die Begrenzung ist ein echter Rand am Streifen, das Raster ein SVG darin: In erzwungenen Farben entfällt das Raster,
+ * der Streifen bleibt abgegrenzt. Muster-ID je Instanz eindeutig (useId, K-008).
+ */
+function Raster() {
+  const muster = `anfahrt-raster-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`;
+  return (
+    <div className="pointer-events-none absolute inset-y-0 left-0 w-12 border-r border-fuge md:right-0 md:bottom-auto md:h-12 md:w-auto md:border-r-0 md:border-b">
+      <svg aria-hidden="true" focusable="false" className="block size-full text-fuge forced-colors:hidden">
+        <defs>
+          <pattern id={muster} width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M0 23.5H24M23.5 0V24" fill="none" stroke="currentColor" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#${muster})`} />
+      </svg>
+    </div>
+  );
+}
+
+/**
+ * Teilstück der Strecke in einem Feld, Mitte jeweils 24 px von der Feldkante (Rasterlinie):
+ * mobil Lot von oben nach unten, ab md Waage von links nach rechts. Die Stücke der Folgefelder überdecken deren Fuge
+ * (-top-px bzw. -left-px), damit die Linie ohne Lücke durchläuft; Start- und Zielstück enden am Fugenkreuz.
+ */
+function Streckenstueck({ lage }: { lage: Lage }) {
+  return (
+    <>
+      <span
+        aria-hidden="true"
+        className={clsx(
+          'absolute left-6 -translate-x-1/2 border-l-2 border-laser md:hidden',
+          lage === 'start' && 'top-6 bottom-0',
+          lage === 'strecke' && '-top-px bottom-0',
+          lage === 'ziel' && '-top-px h-6',
+        )}
+      />
+      <span
+        aria-hidden="true"
+        className={clsx(
+          'absolute top-6 hidden -translate-y-1/2 border-t-2 border-laser md:block',
+          lage === 'start' && 'left-6 right-0',
+          lage === 'strecke' && '-left-px right-0',
+          lage === 'ziel' && '-left-px w-6',
+        )}
+      />
+    </>
+  );
+}
+
+/**
+ * Ein Feld des Plans: Raster, Streckenstück, Marke (nur Start und Ziel) und die Angaben an der Flucht der Marke.
+ * Rangfolge: mobil stehen alle Werte in fs-5; ab md ist die Fahrzeit (Mono, `haupt`) eine Stufe größer als die
+ * Stationsnamen, damit sie neben den extrafetten Namen der stärkste Wert der Zeile bleibt (Plex Mono ist nur in 400
+ * geladen). Werte brechen in ihrer Spalte (min-w-0, wrap-break-word), auch bei starker Vergrößerung.
+ */
+function Feld({ lage, etikett, wert, notiz, haupt = false }: { lage: Lage; etikett: string; wert: string; notiz: string; haupt?: boolean }) {
+  return (
+    <li className={clsx('relative min-w-0', lage !== 'start' && 'border-t border-fuge md:border-t-0 md:border-l')}>
+      <Raster />
+      <Streckenstueck lage={lage} />
+      {lage !== 'strecke' && <Fugenkreuz className="absolute top-6 left-6 size-4 -translate-x-1/2 -translate-y-1/2 text-tinte" />}
+      <div className="relative pt-4 pr-6 pb-8 pl-16 md:px-6 md:pt-16">
+        <p className={etikettKlassen}>{etikett}</p>
+        <p
+          className={clsx(
+            'mt-2 min-w-0 text-fs-5 text-tinte wrap-break-word',
+            haupt ? 'font-mono md:text-fs-4 lg:text-fs-5' : 'font-anzeige font-extrabold md:text-fs-3 lg:text-fs-4',
+          )}
+        >
+          {wert}
+        </p>
+        <p className={clsx('mt-2 text-fs-2 text-tinte-2 wrap-break-word', haupt && 'font-mono')}>{notiz}</p>
+      </div>
+    </li>
+  );
+}
+
+export default function RouteVisualization({ city, className = '' }: RouteVisualizationProps) {
+  // Fahrzeit wie im Bestand: 1,3 min je km + 5 min, mindestens 8 min (alter Kommentar nannte 1,5 min je km)
   const drivingMinutes = Math.max(8, Math.round(city.distanceKm * 1.3 + 5));
 
   return (
     <Abschnitt
-      art="arbeit"
+      id="anfahrt"
+      flaeche="fliese"
       spaet
-      etikett={<>Kurze Anfahrtswege in Mittelhessen</>}
-      titel={<>Schnell bei Ihnen in {city.name}</>}
+      etikett="Kurze Anfahrtswege in Mittelhessen"
+      titel={`Schnell bei Ihnen in ${city.name}`}
       einleitung={
         <p>
           {city.distanceKm === 0
             ? `Als direkte Nachbarstadt erreichen wir ${city.name} von unserem Betriebssitz in Aßlar in wenigen Fahrminuten für Ihr persönliches Vor-Ort-Aufmaß.`
-            : `Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in ${city.name} (ca. ${city.distanceKm} km) über die B49/A45 in rund ${drivingMinutes} Minuten.`}
+            : `Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in ${city.name} (ca. ${city.distanceKm}${NBSP}km) über die B49/A45 in rund ${drivingMinutes}${NBSP}Minuten.`}
         </p>
       }
-      className={className}
+      className={className || undefined}
     >
-      <div className="flex flex-col divide-y divide-fuge border-y border-fuge sm:flex-row sm:divide-x sm:divide-y-0">
-        {/* Step 1: Start HQ */}
-        <div className="flex flex-1 items-start gap-3 py-4 sm:px-6 sm:first:pl-0 sm:last:pr-0">
-          <Icon name="ort" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
-          <div className="min-w-0">
-            <span className={etikett}>Startpunkt</span>
-            <div className="mt-1 font-text text-fs-3 font-semibold text-tinte">Aßlar (Firmensitz)</div>
-            <p className="mt-1 font-text text-fs-2 text-tinte-2">{siteConfig.company.street}</p>
-          </div>
-        </div>
-
-        {/* Step 2: Route details */}
-        <div className="flex flex-1 items-start gap-3 py-4 sm:px-6 sm:first:pl-0 sm:last:pr-0">
-          <Icon name="uhr" groesse={5} className="mt-1 shrink-0 text-tinte-2" />
-          <div className="min-w-0">
-            <span className={etikett}>Fahrtzeit & Strecke</span>
-            <div className="mt-1 font-anzeige text-fs-5 font-semibold text-tinte">
-              ca. {drivingMinutes} Min.
-            </div>
-            <p className="mt-1 font-text text-fs-2 text-tinte-2">
-              {city.distanceKm === 0 ? "Direkte Nachbarschaft" : `ca. ${city.distanceKm} km Entfernung`}
-            </p>
-          </div>
-        </div>
-
-        {/* Step 3: Destination – ohne Icon (Zuordnung: ShieldCheck entfällt); die leere Icon-Spalte hält den Text bündig */}
-        <div className="flex flex-1 items-start gap-3 py-4 sm:px-6 sm:first:pl-0 sm:last:pr-0">
-          <span aria-hidden="true" className="mt-1 size-5 shrink-0" />
-          <div className="min-w-0">
-            <span className={etikett}>Ihr Projekt</span>
-            <div className="mt-1 font-text text-fs-3 font-semibold text-tinte">{city.name}</div>
-            <p className="mt-1 font-text text-fs-2 text-tinte-2">Kostenfreies Vor-Ort-Aufmaß</p>
-          </div>
-        </div>
-      </div>
+      {/* Planfeld: Start → Strecke → Ziel */}
+      <ol className="grid grid-cols-1 border border-fuge bg-kalk md:grid-cols-3">
+        {/* Bruchstelle im Kompositum (weiches Trennzeichen), falls die Spalte bei starker Vergrößerung zu schmal wird */}
+        <Feld lage="start" etikett="Startpunkt" wert={'Aßlar (Firmen\u00ADsitz)'} notiz={siteConfig.company.street} />
+        <Feld
+          lage="strecke"
+          etikett="Fahrtzeit & Strecke"
+          wert={`ca. ${drivingMinutes} Min.`}
+          notiz={city.distanceKm === 0 ? 'Direkte Nachbarschaft' : `ca. ${city.distanceKm}${NBSP}km Entfernung`}
+          haupt
+        />
+        <Feld lage="ziel" etikett="Ihr Projekt" wert={city.name} notiz="Kostenfreies Vor-Ort-Aufmaß" />
+      </ol>
 
       <div className="mt-8">
-        <Knopf href={siteConfig.contact.phone.link} icon="pfeil-rechts">
+        <Knopf href={siteConfig.contact.phone.link} iconLinks="telefon" className="w-full sm:w-auto">
           Jetzt Vor-Ort-Termin für {city.name} anfragen
         </Knopf>
       </div>

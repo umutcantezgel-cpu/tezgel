@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { CITIES, type CityData } from '@/config/cities';
 import { SERVICES } from '@/config/services';
 import { COMPANY_DATA } from '@/config/company';
@@ -24,11 +23,10 @@ import LocationContact from '@/components/locations/LocationContact';
 import LocalDominanceMap from '@/components/maps/LocalDominanceMap';
 import FinalCTA from '@/components/ui/FinalCTA';
 import Einzugsband from '@/components/kern/Einzugsband';
-
-// Schnellformular nachgeladen wie auf / (Tempo, E-025): eigenes Paket, das Server-Rendering bleibt erhalten
-const LeadQuickForm = dynamic(() => import('@/components/forms/LeadQuickForm'), {
-  loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
-});
+// Schnellformular direkt eingebunden (F-07, Gutachten u7): Es steht so im ausgelieferten HTML und ist ohne JavaScript
+// sichtbar (K-004), statt in einem verborgenen Streaming-Container hinter „Anfrageformular wird geladen...“. Ein
+// dynamic()-Import aus einer Serverkomponente teilt Client-Code ohnehin nicht auf (Next 16, Leitfaden Lazy Loading).
+import LeadQuickForm from '@/components/forms/LeadQuickForm';
 
 // Standortseite (E3-BAU-05, KERN v2): Erzählansicht nach dem Muster der Standorte-Übersicht (E3-BAU-04) und von
 // /leistungen/[id]. Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts das Planblatt mit dem Einzugsband. Danach
@@ -212,8 +210,10 @@ export default async function StandortPage({
           </ul>
         </Abschnitt>
 
-        {/* 3. ANFAHRT: Bestandsbaustein, unverändert eingebunden */}
-        <RouteVisualization city={city} />
+        {/* 3. ANFAHRT: gezeichnete Strecke auf eigener Fliese-Fläche. Die Fläche liegt über der Zierebene der Leitachse
+            (z-10 = Inhalt über Deko, K-005; die Ebene käme sonst über den Baustein, axe „bgOverlap“): Im Band läuft die
+            Achse unter der Fläche, rot ist dort allein die Strecke (K-003 Nr. 2; Gutachten u8, Rezept Punkt 7) */}
+        <RouteVisualization city={city} className="z-10" />
 
         {/* 4. EINSATZGEBIET: Abschnitt mit H2 wie die übrigen Abschnitte (E3-SICHT-2-ERZ Befund 21); darunter der Ausschnitt
             der Zone der Stadt neben dem Text (LocalDominanceMap, Befund 19/20) – kein zweites volles Einzugsband */}
@@ -320,23 +320,26 @@ export default async function StandortPage({
       />
 
       {/* Anfrage: Schnellformular unter dem Abschlussband, linksbündig im Raster (8 Spalten), die Rückfrage rechts (4 Spalten,
-          ab lg klebend). Der negative Abstand holt das Formular an den Abschluss heran (dessen Abstand nach unten bleibt).
-          E4-NACH-09, Befund 30. */}
-      <div className={`${seitenKlassen} -mt-12 pb-24 lg:-mt-24 lg:pb-32`}>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
-          <div className="md:col-span-8 lg:col-span-8">
-            <LeadQuickForm
-              variant="card"
-              sourceTag={`standort-${city.slug}`}
-              heading="Kostenfreies Vor-Ort-Aufmaß anfordern"
-              subheading="Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
-            />
-          </div>
-          <div className="md:col-span-8 lg:col-span-4">
-            <Rueckfrage />
+          ab lg klebend), mobil darunter (E4-NACH-09, Befund 30). Ohne negativen Abstand (F-07, Gutachten u7: die Fläche des
+          Abschlusses verdeckte sonst Kopf und Titel der Karte) und als benannte Region (Name = Titel der Karte). */}
+      <section aria-labelledby="stadt-schnellanfrage-titel" className="pb-24 lg:pb-32">
+        <div className={seitenKlassen}>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+            <div className="md:col-span-8 lg:col-span-8">
+              <LeadQuickForm
+                variant="card"
+                sourceTag={`standort-${city.slug}`}
+                titelId="stadt-schnellanfrage-titel"
+                heading="Kostenfreies Vor-Ort-Aufmaß anfordern"
+                subheading="Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich."
+              />
+            </div>
+            <div className="md:col-span-8 lg:col-span-4">
+              <Rueckfrage />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

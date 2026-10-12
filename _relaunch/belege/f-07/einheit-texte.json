@@ -1,0 +1,668 @@
+{
+ "bericht": {
+  "/standorte/giessen route": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/giessen route-links": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/limburg route": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/limburg route-links": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar route": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar route-links": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar ruhe": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar ruhe verborgen": {
+   "fehlt_in_F": [
+    "·",
+    "Do not fill this"
+   ],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar pruefung": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar pruefung verborgen": {
+   "fehlt_in_F": [
+    "·",
+    "Do not fill this"
+   ],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar server500": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar server500 verborgen": {
+   "fehlt_in_F": [
+    "·",
+    "Do not fill this"
+   ],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar erfolg": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/standorte/wetzlar erfolg verborgen": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar ruhe": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar ruhe verborgen": {
+   "fehlt_in_F": [
+    "·",
+    "Do not fill this"
+   ],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar pruefung": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar pruefung verborgen": {
+   "fehlt_in_F": [
+    "·",
+    "Do not fill this"
+   ],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar server500": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar server500 verborgen": {
+   "fehlt_in_F": [
+    "·",
+    "Do not fill this"
+   ],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar erfolg": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  },
+  "/leistungen/bad/wetzlar erfolg verborgen": {
+   "fehlt_in_F": [],
+   "nur_in_F": []
+  }
+ },
+ "roh": {
+  "A /standorte/giessen route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Gießen",
+   "Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in Gießen (ca. 25 km) über die B49/A45 in rund 38 Minuten.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 38 Min.",
+   "ca. 25 km Entfernung",
+   "Ihr Projekt",
+   "Gießen",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Gießen anfragen"
+  ],
+  "A /standorte/giessen route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Gießen anfragen"
+  ],
+  "A /standorte/limburg route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Limburg an der Lahn",
+   "Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in Limburg an der Lahn (ca. 35 km) über die B49/A45 in rund 51 Minuten.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 51 Min.",
+   "ca. 35 km Entfernung",
+   "Ihr Projekt",
+   "Limburg an der Lahn",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Limburg an der Lahn anfragen"
+  ],
+  "A /standorte/limburg route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Limburg an der Lahn anfragen"
+  ],
+  "A /standorte/wetzlar route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Wetzlar",
+   "Als direkte Nachbarstadt erreichen wir Wetzlar von unserem Betriebssitz in Aßlar in wenigen Fahrminuten für Ihr persönliches Vor-Ort-Aufmaß.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 8 Min.",
+   "Direkte Nachbarschaft",
+   "Ihr Projekt",
+   "Wetzlar",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Wetzlar anfragen"
+  ],
+  "A /standorte/wetzlar route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Wetzlar anfragen"
+  ],
+  "A /standorte/wetzlar ruhe": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "A /standorte/wetzlar ruhe verborgen": [
+   "Bitte dieses Feld freilassen",
+   "·"
+  ],
+  "A /standorte/wetzlar pruefung": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "A /standorte/wetzlar pruefung verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:",
+   "·"
+  ],
+  "A /standorte/wetzlar server500": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "A /standorte/wetzlar server500 verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:",
+   "·"
+  ],
+  "A /standorte/wetzlar erfolg": [
+   "Anfrage erfolgreich übermittelt!",
+   "Vielen Dank, Prüf Person. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.",
+   "Vorgangsnummer: TEZ-26-TEST"
+  ],
+  "A /standorte/wetzlar erfolg verborgen": [],
+  "A /leistungen/bad/wetzlar ruhe": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "A /leistungen/bad/wetzlar ruhe verborgen": [
+   "Bitte dieses Feld freilassen",
+   "·"
+  ],
+  "A /leistungen/bad/wetzlar pruefung": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "A /leistungen/bad/wetzlar pruefung verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:",
+   "·"
+  ],
+  "A /leistungen/bad/wetzlar server500": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "A /leistungen/bad/wetzlar server500 verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:",
+   "·"
+  ],
+  "A /leistungen/bad/wetzlar erfolg": [
+   "Anfrage erfolgreich übermittelt!",
+   "Vielen Dank, Prüf Person. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.",
+   "Vorgangsnummer: TEZ-26-TEST"
+  ],
+  "A /leistungen/bad/wetzlar erfolg verborgen": [],
+  "B /standorte/giessen route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Gießen",
+   "Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in Gießen (ca. 25 km) über die B49/A45 in rund 38 Minuten.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 38 Min.",
+   "ca. 25 km Entfernung",
+   "Ihr Projekt",
+   "Gießen",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Gießen anfragen"
+  ],
+  "B /standorte/giessen route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Gießen anfragen"
+  ],
+  "B /standorte/limburg route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Limburg an der Lahn",
+   "Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in Limburg an der Lahn (ca. 35 km) über die B49/A45 in rund 51 Minuten.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 51 Min.",
+   "ca. 35 km Entfernung",
+   "Ihr Projekt",
+   "Limburg an der Lahn",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Limburg an der Lahn anfragen"
+  ],
+  "B /standorte/limburg route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Limburg an der Lahn anfragen"
+  ],
+  "B /standorte/wetzlar route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Wetzlar",
+   "Als direkte Nachbarstadt erreichen wir Wetzlar von unserem Betriebssitz in Aßlar in wenigen Fahrminuten für Ihr persönliches Vor-Ort-Aufmaß.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 8 Min.",
+   "Direkte Nachbarschaft",
+   "Ihr Projekt",
+   "Wetzlar",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Wetzlar anfragen"
+  ],
+  "B /standorte/wetzlar route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Wetzlar anfragen"
+  ],
+  "B /standorte/wetzlar ruhe": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "B /standorte/wetzlar ruhe verborgen": [
+   "Do not fill this"
+  ],
+  "B /standorte/wetzlar pruefung": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "B /standorte/wetzlar pruefung verborgen": [
+   "Do not fill this"
+  ],
+  "B /standorte/wetzlar server500": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "B /standorte/wetzlar server500 verborgen": [
+   "Do not fill this"
+  ],
+  "B /standorte/wetzlar erfolg": [
+   "Anfrage erfolgreich übermittelt!",
+   "Vielen Dank, Prüf Person. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.",
+   "Vorgangsnummer: TEZ-26-TEST"
+  ],
+  "B /standorte/wetzlar erfolg verborgen": [],
+  "B /leistungen/bad/wetzlar ruhe": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "B /leistungen/bad/wetzlar ruhe verborgen": [
+   "Do not fill this"
+  ],
+  "B /leistungen/bad/wetzlar pruefung": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "B /leistungen/bad/wetzlar pruefung verborgen": [
+   "Do not fill this"
+  ],
+  "B /leistungen/bad/wetzlar server500": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "B /leistungen/bad/wetzlar server500 verborgen": [
+   "Do not fill this"
+  ],
+  "B /leistungen/bad/wetzlar erfolg": [
+   "Anfrage erfolgreich übermittelt!",
+   "Vielen Dank, Prüf Person. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.",
+   "Vorgangsnummer: TEZ-26-TEST"
+  ],
+  "B /leistungen/bad/wetzlar erfolg verborgen": [],
+  "F /standorte/giessen route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Gießen",
+   "Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in Gießen (ca. 25 km) über die B49/A45 in rund 38 Minuten.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 38 Min.",
+   "ca. 25 km Entfernung",
+   "Ihr Projekt",
+   "Gießen",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Gießen anfragen"
+  ],
+  "F /standorte/giessen route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Gießen anfragen"
+  ],
+  "F /standorte/limburg route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Limburg an der Lahn",
+   "Von unserem Betriebssitz in Aßlar erreichen wir Ihre Baustelle in Limburg an der Lahn (ca. 35 km) über die B49/A45 in rund 51 Minuten.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 51 Min.",
+   "ca. 35 km Entfernung",
+   "Ihr Projekt",
+   "Limburg an der Lahn",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Limburg an der Lahn anfragen"
+  ],
+  "F /standorte/limburg route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Limburg an der Lahn anfragen"
+  ],
+  "F /standorte/wetzlar route": [
+   "Kurze Anfahrtswege in Mittelhessen",
+   "Schnell bei Ihnen in Wetzlar",
+   "Als direkte Nachbarstadt erreichen wir Wetzlar von unserem Betriebssitz in Aßlar in wenigen Fahrminuten für Ihr persönliches Vor-Ort-Aufmaß.",
+   "Startpunkt",
+   "Aßlar (Firmensitz)",
+   "Hohwardstraße 14",
+   "Fahrtzeit & Strecke",
+   "ca. 8 Min.",
+   "Direkte Nachbarschaft",
+   "Ihr Projekt",
+   "Wetzlar",
+   "Kostenfreies Vor-Ort-Aufmaß",
+   "Jetzt Vor-Ort-Termin für Wetzlar anfragen"
+  ],
+  "F /standorte/wetzlar route-links": [
+   "tel:+4964414483567 | Jetzt Vor-Ort-Termin für Wetzlar anfragen"
+  ],
+  "F /standorte/wetzlar ruhe": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "F /standorte/wetzlar ruhe verborgen": [
+   "Bitte dieses Feld freilassen"
+  ],
+  "F /standorte/wetzlar pruefung": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "F /standorte/wetzlar pruefung verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:"
+  ],
+  "F /standorte/wetzlar server500": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "F /standorte/wetzlar server500 verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:"
+  ],
+  "F /standorte/wetzlar erfolg": [
+   "Anfrage erfolgreich übermittelt!",
+   "Vielen Dank, Prüf Person. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.",
+   "Vorgangsnummer: TEZ-26-TEST"
+  ],
+  "F /standorte/wetzlar erfolg verborgen": [],
+  "F /leistungen/bad/wetzlar ruhe": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "F /leistungen/bad/wetzlar ruhe verborgen": [
+   "Bitte dieses Feld freilassen"
+  ],
+  "F /leistungen/bad/wetzlar pruefung": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Bitte füllen Sie Name und Telefonnummer aus und stimmen Sie der Datenschutzerklärung zu.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "F /leistungen/bad/wetzlar pruefung verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:"
+  ],
+  "F /leistungen/bad/wetzlar server500": [
+   "Kostenloses Vor-Ort-Aufmaß",
+   "Kostenfreies Vor-Ort-Aufmaß anfordern",
+   "Tragen Sie Ihre Kontaktdaten ein – Fachbetriebsleiter Deniz Tezgel meldet sich innerhalb von 24 Stunden persönlich.",
+   "Ihr Name *",
+   "Telefonnummer *",
+   "E-Mail Adresse (optional)",
+   "PLZ / Wohnort (optional)",
+   "Ihr Projekt / Anmerkungen (optional)",
+   "Ich willige in die Verarbeitung meiner Daten zur Kontaktaufnahme ein. Hinweise in der Datenschutzerklärung.",
+   "Fehler:",
+   "Die Anfrage konnte leider nicht übertragen werden. Bitte rufen Sie uns direkt an: 06441 / 44 83 567.",
+   "Unverbindliches Angebot anfordern",
+   "100% DSGVO-konform",
+   "·",
+   "Kostenfreie Erstberatung"
+  ],
+  "F /leistungen/bad/wetzlar server500 verborgen": [
+   "Bitte dieses Feld freilassen",
+   "Fehler:"
+  ],
+  "F /leistungen/bad/wetzlar erfolg": [
+   "Anfrage erfolgreich übermittelt!",
+   "Vielen Dank, Prüf Person. Inhaber Deniz Tezgel prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden telefonisch bei Ihnen.",
+   "Vorgangsnummer: TEZ-26-TEST"
+  ],
+  "F /leistungen/bad/wetzlar erfolg verborgen": []
+ }
+}

@@ -1,0 +1,179 @@
+[
+ {
+  "seite": "/standorte/giessen",
+  "pruefung": "zoom200-css",
+  "hoehe": 1579,
+  "horizontal": false,
+  "befunde": [
+   "p „Aßlar (Firmensitz)“ ragt 9 px über li",
+   "p „Aßlar (Firmensitz)“ scrollWidth 161 > 133"
+  ],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/giessen",
+  "pruefung": "zoom200-aequivalent",
+  "hoehe": 852,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/giessen",
+  "pruefung": "w320",
+  "hoehe": 943,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/giessen",
+  "pruefung": "textabstand-m390",
+  "hoehe": 1282,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/giessen",
+  "pruefung": "textabstand-d1440",
+  "hoehe": 989,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/giessen",
+  "pruefung": "zwangsfarben-m390",
+  "hoehe": 859,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/giessen",
+  "pruefung": "zwangsfarben-d1440",
+  "hoehe": 712,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/limburg",
+  "pruefung": "zoom200-css",
+  "hoehe": 1794,
+  "horizontal": false,
+  "befunde": [
+   "p „Aßlar (Firmensitz)“ ragt 9 px über li",
+   "p „Aßlar (Firmensitz)“ scrollWidth 161 > 133"
+  ],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/limburg",
+  "pruefung": "zoom200-aequivalent",
+  "hoehe": 852,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/limburg",
+  "pruefung": "w320",
+  "hoehe": 943,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/limburg",
+  "pruefung": "textabstand-m390",
+  "hoehe": 1308,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/limburg",
+  "pruefung": "textabstand-d1440",
+  "hoehe": 1042,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/limburg",
+  "pruefung": "zwangsfarben-m390",
+  "hoehe": 919,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/limburg",
+  "pruefung": "zwangsfarben-d1440",
+  "hoehe": 774,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "pruefung": "zoom200-css",
+  "hoehe": 1639,
+  "horizontal": false,
+  "befunde": [
+   "p „Aßlar (Firmensitz)“ ragt 9 px über li",
+   "p „Aßlar (Firmensitz)“ scrollWidth 161 > 133"
+  ],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "pruefung": "zoom200-aequivalent",
+  "hoehe": 852,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "pruefung": "w320",
+  "hoehe": 943,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "pruefung": "textabstand-m390",
+  "hoehe": 1308,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "pruefung": "textabstand-d1440",
+  "hoehe": 989,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "pruefung": "zwangsfarben-m390",
+  "hoehe": 910,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "pruefung": "zwangsfarben-d1440",
+  "hoehe": 712,
+  "horizontal": false,
+  "befunde": [],
+  "kreuze": 5
+ }
+]

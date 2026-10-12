@@ -1,0 +1,202 @@
+[
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-ruhe",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 11
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-fehler-pruefung",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 19
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-fehler-server",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 14
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-erfolg",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 6
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-ruhe",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 11
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-fehler-pruefung",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 19
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-fehler-server",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 14
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-erfolg",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 6
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-ruhe",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 11
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-fehler-pruefung",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 19
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-fehler-server",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 14
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "m390",
+  "zustand": "schnellanfrage-erfolg",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 5
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-ruhe",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 11
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-fehler-pruefung",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 19
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-fehler-server",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 14
+ },
+ {
+  "seite": "/leistungen/bad/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "schnellanfrage-erfolg",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 5
+ },
+ {
+  "seite": "/standorte/giessen",
+  "ansicht": "m390",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/giessen",
+  "ansicht": "t768",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/giessen",
+  "ansicht": "d1440",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/limburg",
+  "ansicht": "m390",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/limburg",
+  "ansicht": "t768",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/limburg",
+  "ansicht": "d1440",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "m390",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "t768",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "ansicht": "d1440",
+  "zustand": "routenkarte",
+  "verstoesse": [],
+  "unvollstaendig": [],
+  "bestanden": 12
+ }
+]
