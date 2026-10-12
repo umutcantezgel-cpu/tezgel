@@ -16,13 +16,14 @@ export default function Zeitband() {
     jahr: /^\d{4}$/.test(e.year) ? Number(e.year) : JAHR_HEUTE,
   }));
   const abschnitte = punkte.slice(0, -1).map((p, i) => ({ von: p, bis: punkte[i + 1], dauer: Math.max(1, punkte[i + 1].jahr - p.jahr) }));
-  let x = 0;
-  const stuecke = abschnitte.map((a, i) => {
-    const s = { ...a, x, b: a.dauer * E, i };
-    x += s.b;
-    return s;
-  });
-  const W = x;
+  // Lage je Stück = Summe der vorherigen Breiten (ohne veränderliche Zählvariable)
+  const stuecke = abschnitte.map((a, i) => ({
+    ...a,
+    i,
+    b: a.dauer * E,
+    x: abschnitte.slice(0, i).reduce((summe, v) => summe + v.dauer * E, 0),
+  }));
+  const W = stuecke.reduce((summe, s) => summe + s.b, 0);
 
   return (
     <div aria-hidden="true" className="w-full">

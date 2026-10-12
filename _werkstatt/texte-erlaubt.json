@@ -1207,5 +1207,227 @@
   "teil": "alt",
   "alt_muster": ".+",
   "vermerk": "E4-NACH-15: verwandte Artikel ohne Foto (gezeichnetes Themenmotiv, dekorativ), Autorfeld mit Logo (E3-SICHT-ARB Befunde 32, 34) – Alt-Texte der entfallenen Fotos"
+ },
+ {
+  "seite": "*",
+  "block": "main",
+  "entfernt": "Garantierter Standard Punkt",
+  "vermerk": "E4-NACH-04: Fuß „Garantierter Standard“ und Marke „Punkt“ je Qualitätspunkt entfallen (Merkliste mit Mono-Nummer) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Gewerk Bäder & Wellness ansehen",
+  "vermerk": "E4-NACH-08: „Weitere Gewerke“ – der Name der Leistung ist der Link, der zweite Linktext „Gewerk … ansehen“ entfällt (E3-SICHT-ERZ /leistungen/bad Details) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Gewerk Wohnbereiche & Neubau ansehen",
+  "vermerk": "E4-NACH-08: „Weitere Gewerke“ – der Name der Leistung ist der Link, der zweite Linktext „Gewerk … ansehen“ entfällt (E3-SICHT-ERZ /leistungen/bad Details) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Gewerk Balkon- & Terrassensanierung ansehen",
+  "vermerk": "E4-NACH-08: „Weitere Gewerke“ – der Name der Leistung ist der Link, der zweite Linktext „Gewerk … ansehen“ entfällt (E3-SICHT-ERZ /leistungen/bad Details) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "*",
+  "teil": "main_zeilen",
+  "alt": "Gewerk Untergrund & DIN 18534 Abdichtung ansehen",
+  "vermerk": "E4-NACH-08: „Weitere Gewerke“ – der Name der Leistung ist der Link, der zweite Linktext „Gewerk … ansehen“ entfällt (E3-SICHT-ERZ /leistungen/bad Details) – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/leistungen/bad",
+  "block": "main",
+  "entfernt_muster": "06441 / 44 83 567 WhatsApp Chat Kostenfreies Aufmaß buchen",
+  "vermerk": "E4-NACH-08: Direktkontakt – Leitsatz in die Kopfspalte vor die Knöpfe verschoben (E3-SICHT-ERZ Befund 20b, Reihenfolge erlaubt); Knopftexte unverändert vorhanden"
+ },
+ {
+  "seite": "/leistungen/wohnen",
+  "block": "main",
+  "entfernt_muster": "06441 / 44 83 567 WhatsApp Chat Kostenfreies Aufmaß buchen",
+  "vermerk": "E4-NACH-08: Direktkontakt – Leitsatz in die Kopfspalte vor die Knöpfe verschoben (E3-SICHT-ERZ Befund 20b, Reihenfolge erlaubt); Knopftexte unverändert vorhanden"
+ },
+ {
+  "seite": "/leistungen/aussen",
+  "block": "main",
+  "entfernt_muster": "06441 / 44 83 567 WhatsApp Chat Kostenfreies Aufmaß buchen",
+  "vermerk": "E4-NACH-08: Direktkontakt – Leitsatz in die Kopfspalte vor die Knöpfe verschoben (E3-SICHT-ERZ Befund 20b, Reihenfolge erlaubt); Knopftexte unverändert vorhanden"
+ },
+ {
+  "seite": "/leistungen/untergrund",
+  "block": "main",
+  "entfernt_muster": "06441 / 44 83 567 WhatsApp Chat Kostenfreies Aufmaß buchen",
+  "vermerk": "E4-NACH-08: Direktkontakt – Leitsatz in die Kopfspalte vor die Knöpfe verschoben (E3-SICHT-ERZ Befund 20b, Reihenfolge erlaubt); Knopftexte unverändert vorhanden"
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/wetzlar",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/giessen",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/giessen",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/marburg",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/marburg",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/limburg",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/limburg",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/bad-nauheim",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/bad-nauheim",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/friedberg",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/friedberg",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/butzbach",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/butzbach",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/herborn",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/herborn",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/dillenburg",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/dillenburg",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/haiger",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/haiger",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/braunfels",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/braunfels",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/solms",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/solms",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/asslar",
+  "block": "main",
+  "entfernt_muster": "#1 Fachbetrieb in .+ & Region( 5,0★ Google-Bewertung \\(\\d+ Rezensionen\\) Eingetragener HWK-Betrieb)?",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb in {Stadt} & Region“ entfällt (Mikrotext ohne Beleg, E3-SICHT-ERZ Befund 28); Bewertung und HWK-Zeile stehen unverändert weiter im Block – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte/asslar",
+  "teil": "main_zeilen",
+  "alt_muster": "#1 Fachbetrieb in .+ & Region",
+  "vermerk": "E4-NACH-09: Badge „#1 Fachbetrieb …“ entfällt – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/standorte",
+  "teil": "main_zeilen",
+  "alt": "Hohwardstraße 14",
+  "vermerk": "E4-NACH-09: Hauptstandort als Schriftfeld – Anschrift in einer Zeile „Hohwardstraße 14, 35614 Aßlar“ (gleicher Wortlaut)"
+ },
+ {
+  "seite": "/standorte",
+  "teil": "main_zeilen",
+  "alt": "35614 Aßlar",
+  "vermerk": "E4-NACH-09: Hauptstandort als Schriftfeld – Anschrift in einer Zeile „Hohwardstraße 14, 35614 Aßlar“ (gleicher Wortlaut)"
  }
 ]

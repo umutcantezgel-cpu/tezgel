@@ -103,6 +103,13 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
   const zeigeLot = !ohneAchse && vorgabe.achse !== 'waage';
   const zeigeWaage = !ohneAchse && !schnitt && vorgabe.achse !== 'lot';
   const zeigeRaster = zustand !== 'aufmass';
+  // Flucht (sig-plan, E4-NACH-02): Stoßfugen und Passstücke jeder Reihe rücken abwechselnd nach links bzw. rechts aus der
+  // Flucht (--richtung ±1) und kehren auf die Achse zurück; die Lagerfugen bleiben stehen
+  const reihenGrenzen = [0, ...bild.waagrecht];
+  const reihenStil = (y: number): CSSProperties => {
+    const reihe = Math.max(0, reihenGrenzen.findIndex((g) => Math.abs(g - y) < 1e-6));
+    return { '--richtung': reihe % 2 === 0 ? 1 : -1 } as CSSProperties;
+  };
   // Prüfmarken beim Aufmaß (Ebenheit, Restfeuchte, Tragfähigkeit): drei Messpunkte auf der Diagonale
   const pruefpunkte = [[0.22, 0.28], [0.5, 0.5], [0.78, 0.72]].map(([fx, fy]) => [fx * W, fy * H]);
 
@@ -132,13 +139,13 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
         <g clipPath={`url(#${raumClip})`}>
         <g className="plan-raster">
           {bild.passstuecke.map(([x, y, pb, ph], i) => (
-            <rect key={i} x={x * S} y={y * S} width={pb * S} height={ph * S} fill={`url(#${schraffur})`} className="plan-passstueck" />
+            <rect key={i} x={x * S} y={y * S} width={pb * S} height={ph * S} fill={`url(#${schraffur})`} className="plan-passstueck plan-reihenteil" style={reihenStil(y)} />
           ))}
           {fehl && fehl.art === 'fehlstelle' && (
             <rect className="plan-fehlstelle" x={(startversatz(b, vorgabe.platte.b) + fehl.spalte * vorgabe.platte.b) * S} y={(startversatz(h, vorgabe.platte.h) + fehl.zeile * vorgabe.platte.h) * S} width={vorgabe.platte.b * S} height={vorgabe.platte.h * S} />
           )}
           {bild.waagrecht.map((y, i) => <path key={`w${i}`} className="plan-fuge" d={`M0 ${y * S}H${W}`} />)}
-          {bild.senkrecht.map(([x, y1, y2], i) => <path key={`s${i}`} className="plan-fuge" d={`M${x * S} ${y1 * S}V${y2 * S}`} />)}
+          {bild.senkrecht.map(([x, y1, y2], i) => <path key={`s${i}`} className="plan-fuge plan-reihenteil" style={reihenStil(y1)} d={`M${x * S} ${y1 * S}V${y2 * S}`} />)}
           {kreuzpunkte.map(([x, y], i) => <rect key={`k${i}`} className="plan-stelzlager" x={x * S - 3} y={y * S - 3} width={6} height={6} />)}
         </g>
         </g>

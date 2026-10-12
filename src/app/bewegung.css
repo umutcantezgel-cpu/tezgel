@@ -319,34 +319,35 @@ html.k-bewegung .laden-fuge::after {
 .verlegeplan .plan-abnahme circle { fill: var(--color-abnahme); stroke: none; }
 .verlegeplan .plan-abnahme path { fill: none; stroke: var(--color-fliese); stroke-width: 2; vector-effect: non-scaling-stroke; }
 
-/* sig-plan (K-007, E4-NACH-02): das Raster steht um ein gutes Drittel Plattenbreite versetzt (--plan-versatz am <svg>,
-   Verlegeplan.tsx) – an einer Wand klafft eine Lücke, an der anderen ist das Passstück zu schmal – und rückt in die Flucht:
-   beide Passstücke gleich, die Achse auf der Fuge. `zeigen`: am Desktop bei Hover/Fokus, mobil beim Eintritt (Übergang
-   dauer-3 · setzen). `laden`: einmal beim Laden (Planblatt im Einstieg, Animation dauer-4 · setzen nach dauer-2).
-   Startzustände nur unter html.k-bewegung ohne Notaus; reduziert, ohne JS und im Druck steht das Raster in der Flucht. */
-html.k-bewegung [data-motion="sig-plan"]:not([data-flucht="laden"]) .plan-raster,
-html.k-bewegung .sig-plan-ziel .plan-raster {
+/* sig-plan (K-007, E4-NACH-02): Stoßfugen und Passstücke jeder Reihe stehen abwechselnd um ein gutes Drittel
+   Plattenbreite nach links bzw. rechts versetzt (--plan-versatz am <svg>, --richtung je Reihenteil; Verlegeplan.tsx) – das
+   Fugenbild ist aus der Flucht – und rücken in die Flucht: Stoßfugen auf der Achse, beide Passstücke gleich. `zeigen`: am
+   Desktop bei Hover/Fokus, mobil beim Eintritt (Übergang dauer-3 · setzen). `laden`: einmal beim Laden (Planblatt im
+   Einstieg, Animation dauer-4 · setzen nach dauer-2). Startzustände nur unter html.k-bewegung ohne Notaus; reduziert,
+   ohne JS und im Druck steht das Raster in der Flucht. */
+html.k-bewegung [data-motion="sig-plan"]:not([data-flucht="laden"]) .plan-reihenteil,
+html.k-bewegung .sig-plan-ziel .plan-reihenteil {
   transition: translate var(--dauer-3) var(--ease-setzen);
 }
 @media (hover: hover) and (pointer: fine) {
-  html.k-bewegung:not(.k-notaus) .sig-plan-ziel:not(:hover):not(:focus-within) .plan-raster,
-  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="zeigen"]:not(:hover) .plan-raster {
-    translate: var(--plan-versatz) 0;
+  html.k-bewegung:not(.k-notaus) .sig-plan-ziel:not(:hover):not(:focus-within) .plan-reihenteil,
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="zeigen"]:not(:hover) .plan-reihenteil {
+    translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0;
   }
 }
 @media (hover: none), (pointer: coarse) {
-  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-flucht="laden"]):not([data-motion-stand="an"]) .plan-raster {
-    translate: var(--plan-versatz) 0;
+  html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"]:not([data-flucht="laden"]):not([data-motion-stand="an"]) .plan-reihenteil {
+    translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0;
   }
 }
 @keyframes plan-flucht {
-  from { translate: var(--plan-versatz) 0; }
+  from { translate: calc(var(--plan-versatz) * var(--richtung, 1)) 0; }
 }
-html.k-bewegung [data-motion="sig-plan"][data-flucht="laden"] .plan-raster {
+html.k-bewegung [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
   animation: plan-flucht var(--dauer-4) var(--ease-setzen) var(--dauer-2) both;
 }
 @media print {
-  .verlegeplan .plan-raster {
+  .verlegeplan .plan-reihenteil {
     translate: none !important;
     animation: none !important;
   }
