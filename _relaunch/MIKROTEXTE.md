@@ -72,5 +72,8 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/blog` | `2 Min. ·` | `–` | 1 | F-03 (E-039) | wie oben; „2 Min.“ steht als eigenes Element vor dem Datum |
 | `/leistungen/*` | `Telefon` | `–` | 1 | F-02 (E-039) | Beschriftung der zweiten Kontaktliste der Werkstatt-Fassung im Direktkontakt entfällt mit der Liste (Gutachten u2: keine doppelte Kontaktliste mit 16–19 px hohen Links); Telefon-, WhatsApp- und E-Mail-Weg bleiben als Knöpfe bzw. Zeile mit 44 px (mailto 4×, wie live) |
 | `/leistungen/*` | `E-Mail` | `–` | 1 | F-02 (E-039) | wie oben; die E-Mail-Zeile steht als eigene Zeile mit Etikett im Direktkontakt |
+| `/termin` | `📅 2-Schritt Schnellauswahl` | `2-Schritt Schnellauswahl` | 1 | S-24 (E-038) | Umschalter der Terminwahl: Emoji entfällt (Emoji-Verbot, wurde vorgelesen), an seiner Stelle das Kern-Icon „kalender“ (aria-hidden); Wortlaut unverändert, Zustand jetzt über `aria-pressed` |
+| `/termin` | `📝 Individuelles Formular` | `Individuelles Formular` | 1 | S-24 (E-038) | wie oben, Kern-Icon „dokument“ |
+| `/termin` | `✉️ Eine Bestätigung mit allen Termindaten` | `Eine Bestätigung mit allen Termindaten` | 1 | S-24 (E-038) | Erfolgszustand der Terminwahl: Emoji durch Kern-Icon „mail“ (aria-hidden) ersetzt wie P3-13a/b; Wortlaut unverändert |
 
 Aufgehoben: Die Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) ist gestrichen. Der Kern-Kopf führt den Link ab lg wieder mit dem Bestandsnamen (P4-13, E-029 Berichtigung, E-034).
