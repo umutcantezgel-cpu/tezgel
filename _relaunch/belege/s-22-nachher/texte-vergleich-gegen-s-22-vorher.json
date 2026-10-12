@@ -1,0 +1,42 @@
+{
+ "vorher": "s-22-vorher",
+ "nachher": "s-22-nachher",
+ "seiten": {
+  "/ausstellung/wetzlar": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Begutachtung & Untergrundanalyse",
+     "Beratung zu Formaten & Rutschhemmung",
+     "Staubgeschützt, termintreu & DIN-gerecht",
+     "Firmensitz:",
+     "Hohwardstraße 14, 35614 Aßlar"
+    ]
+   }
+  },
+  "/ausstellung/giessen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Begutachtung & Untergrundanalyse",
+     "Beratung zu Formaten & Rutschhemmung",
+     "Staubgeschützt, termintreu & DIN-gerecht",
+     "Firmensitz:",
+     "Hohwardstraße 14, 35614 Aßlar"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 10,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

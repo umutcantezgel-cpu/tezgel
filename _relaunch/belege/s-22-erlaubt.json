@@ -1,0 +1,7 @@
+[
+ { "seite": "*", "alt": "BEGUTACHTUNG & UNTERGRUNDANALYSE", "grund": "Darstellung: CSS-Versalien (uppercase tracking) entfallen, Quelltext processSteps[].subtitle unverändert; neu „Begutachtung & Untergrundanalyse“ (Mono-Untertitel der Schrittfolge)" },
+ { "seite": "*", "alt": "BERATUNG ZU FORMATEN & RUTSCHHEMMUNG", "grund": "Darstellung: CSS-Versalien entfallen; neu „Beratung zu Formaten & Rutschhemmung“" },
+ { "seite": "*", "alt": "STAUBGESCHÜTZT, TERMINTREU & DIN-GERECHT", "grund": "Darstellung: CSS-Versalien entfallen; neu „Staubgeschützt, termintreu & DIN-gerecht“" },
+ { "seite": "*", "alt": "Firmensitz: Hohwardstraße 14, 35614 Aßlar", "grund": "Darstellung: Schriftfeld (Auftrag S-22) – „Firmensitz:“ als Mono-Etikett (dt) über der Adresse (dd); Wortlaut und Folge gleich, nur auf zwei Blöcke verteilt" },
+ { "seite": "*", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß (nicht in den Schreibrechten): CookieConsent hängt die Zeile nach der Hydrierung an, auf dem Dev-Server je nach Zeitpunkt (bekannt, R-01a)" }
+]

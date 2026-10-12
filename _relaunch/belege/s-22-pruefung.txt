@@ -1,0 +1,15 @@
+S-22 · Prüfungen 1–9 · /ausstellung/wetzlar, /ausstellung/giessen · 2026-10-12
+1 tsc (flock): Exit 0, keine Ausgabe
+2 eslint (2 Dateien): Exit 0, 0 Fehler, 0 Warnungen
+3 werte.mjs: "2 Dateien · 180 Klassenvorkommen (56 eindeutig)", "befunde gesamt 0", Exit 0
+4 Altsystem-grep: keine Treffer (Exit 1); vorher je Datei 78 Treffer/46 Zeilen → 0
+5 texte 4362 → 4350 (--erlaubt s-22-erlaubt.json): {"seiten_mit_abweichung":2,"entfernt":0,"hinzu":10,"meta":0,"seo":0,"sitemap_entfernt":0,"sitemap_hinzu":0,"robots_geaendert":false,"kaputte_links":0,"ergebnis":"GRÜN"}
+  ohne Liste: entfernt 10 = je Seite 3 CSS-Versalien-Untertitel, „Firmensitz: …“ (jetzt Etikett über Wert), Fuß „Cookie-Einstellungen“ (Dev-Zeitpunkt)
+  hinzu 10 = dieselben Zeilen in Normalschreibung bzw. auf zwei Blöcke verteilt
+  Lesefolge main (Versalien angeglichen, Firmensitz zusammengeführt): 0 Abweichungen; Überschriften, Links, Kopf, Metadaten, JSON-LD-Hash gleich
+6 einzelbild m390,t768,d1440 je Seite: HTTP 200, Konsole 0, Überlauf 0, Überlappung 0
+7 wortbruch (320,375,768,1024,1440,1920): Wortbrüche: 0
+8 navigation + kontaktwege + einwilligung (mobil, desktop) gegen 4350: 144 Tests: 128 passed, 14 skipped, 2 failed (8,5 min); beide fremd und zeitbedingt (mobil 404 „Zur Startseite“: poll 10 s; desktop / Einwilligung „Auswahl speichern“: Timeout 15 s). Einmal wiederholt (beide Projekte): 4 passed (12 s). Keiner der Tests öffnet /ausstellung/*
+  Zusatz axe (m375, d1440): 4 Läufe, ernst/kritisch 0, keine Verstöße
+  Zusatz a11y-zusatz (reflow, zoom, textabstand, ohnejs): reflow grün, ohnejs grün; zoom css 7 nie_im_bild/14 Überlauf und textabstand 2 Überlauf nur im festen Kopf (geteilt) – /kontakt zeigt dieselben Zahlen; aequivalent grün
+9 git status: von S-22 nur die 2 Seiten und _relaunch/belege/s-22*

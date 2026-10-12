@@ -1,23 +1,25 @@
-import React from 'react';
+// Fliesenberatung Wetzlar (S-22 · E6-BAU-03, KERN v2): Arbeitsansicht nach dem Muster von (bestand)/kontakt (Ort, Zeiten, Weg)
+// und (bestand)/standorte/[stadt] (Leistungen vor Ort als Felder). Kompakter Einstieg mit Kennzeile, H1, Vorspann und den drei
+// Wegen als Knöpfe; danach der Ablauf als Zeitleiste und daneben der Direktkontakt als Schriftfeld-Spalte (Firmensitz und
+// Geschäftszeiten in Mono, dazwischen die Wege an der Fuge, ab lg klebend wie im Bestand); dann die Beratungsthemen als
+// Feldraster (je Fachgewerk ein Feld, Fliese-Fläche) und das Qualitätsversprechen. Keine Karte (der Bestand hat keine), kein
+// großer Moment, keine Auftritte. Texte, Überschriften, Links, IDs, Metadaten und Lesefolge wie im Bestand.
 import Link from 'next/link';
-import {
-    MapPin,
-    Phone,
-    Mail,
-    Clock,
-    MessageCircle,
-    ArrowRight,
-    CalendarCheck,
-    Droplets,
-    Sparkles,
-    Sun,
-    ShieldCheck,
-    Info
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA, processSteps } from '@/config/company';
 import { SERVICES } from '@/config/services';
 import { CITIES } from '@/config/cities';
 import QualityPromise from '@/components/sections/QualityPromise';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Knopf from '@/components/kern/Knopf';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Schriftfeld from '@/components/kern/Schriftfeld';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Icon from '@/components/icons/Icon';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import { etikettKlassen, linkKlassen, seitenKlassen } from '@/components/kern/stile';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
@@ -28,12 +30,30 @@ export const metadata = createMetadata({
 
 const CITY_SLUG = 'wetzlar';
 
+// Fachzeichen der eigenen Icon-Familie je Leistung (vormals lucide; Zuordnung wie im Anfrage-Funnel)
 const SERVICE_ICONS = {
-    bad: Droplets,
-    wohnen: Sparkles,
-    aussen: Sun,
-    untergrund: ShieldCheck
+    bad: 'bad',
+    wohnen: 'fliese',
+    aussen: 'balkon',
+    untergrund: 'untergrund'
 };
+
+// Weg im Direktkontakt: Zeile an der Fuge, Wert in Mono, unterstrichen wie ein Textlink (Farbwechsel ohne Überblendung)
+const WEG = 'group flex min-h-11 items-center gap-3 bg-fliese p-4 font-mono text-fs-2 text-tinte';
+const WEG_WERT = 'underline decoration-strich underline-offset-4 group-hover:decoration-tinte';
+// Textlink in einer Überschrift: Unterstreichung erst bei Hover (die Aktion des Felds ist der Link darunter)
+const TITEL_LINK = 'underline decoration-transparent underline-offset-4 hover:decoration-tinte';
+
+// Zeitangabe mit Zusatz in Klammern: der Zusatz bricht mobil als Ganzes um, nicht am Bindestrich (Wortlaut unverändert)
+function mitZusatz(text) {
+    const i = text.indexOf(' (');
+    if (i < 0) return text;
+    return (
+        <>
+            {text.slice(0, i)} <span className="whitespace-nowrap">{text.slice(i + 1)}</span>
+        </>
+    );
+}
 
 export default function AusstellungWetzlarPage() {
     const { headquarters, contact, hours, owner } = COMPANY_DATA;
@@ -44,207 +64,193 @@ export default function AusstellungWetzlarPage() {
         : `direkt neben unserem Firmensitz in ${headquarters.city}`;
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-20 -left-20 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-20 opacity-60" />
-
-            {/* Hero */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow eyebrow-orange">
-                        <CalendarCheck className="w-3.5 h-3.5 text-orange-600" />
+        <>
+            {/* 1. EINSTIEG: Kennzeile (vormals Badge), H1, Vorspann; Anfrage als Hauptknopf, WhatsApp und Telefon als Nebenknöpfe */}
+            <Einstieg
+                art="arbeit"
+                etikett={
+                    <>
+                        <Icon name="kalender" groesse={4} />
                         Nach Terminvereinbarung
-                    </span>
-                    <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesenberatung &amp; Materialauswahl in{' '}
-                        <span className="text-ceramic-gradient">{cityName}</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
+                    </>
+                }
+                titel={<>Fliesenberatung &amp; Materialauswahl in {cityName}</>}
+                vorspann={
+                    <p>
                         Welche Fliese passt zu Ihrem Bad, Ihrem Wohnbereich oder Ihrer Terrasse? In einem persönlichen
                         Beratungstermin klärt Inhaber {owner.fullName} mit Ihnen Formate, Oberflächen, Fugenbild und
                         Rutschhemmung – für {cityName} und Umgebung, {locationNote}.
                     </p>
-
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
+                }
+                aktionen={
+                    <>
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
                             Beratung für Wetzlar anfragen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a
-                            href={contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            <MessageCircle className="w-4 h-4" />
+                        </Knopf>
+                        <Knopf href={contact.whatsappLink} extern variante="neben" vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
                             WhatsApp
-                        </a>
-                        <a href={`tel:${contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {contact.phone}
-                        </a>
+                        </Knopf>
+                        <Knopf href={`tel:${contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{contact.phone}</span>
+                        </Knopf>
+                    </>
+                }
+            />
+
+            {/* 2. ABLAUF UND DIREKTKONTAKT: links die Zeitleiste (Schrittfolge senkrecht, Nummer stumm wie im Bestand) mit dem
+                Terminhinweis, rechts der Direktkontakt als Schriftfeld-Spalte; mobil und Tablett untereinander */}
+            <div className="py-12 lg:py-16">
+                <div className={seitenKlassen}>
+                    <div className="grid grid-cols-4 items-start gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+                        <section className="col-span-4 md:col-span-8 lg:col-span-7" aria-labelledby="ablauf-heading">
+                            <p className={clsx(etikettKlassen, 'mb-4')}>
+                                <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                                Ihr Beratungstermin
+                            </p>
+                            <h2 id="ablauf-heading" className="text-fs-5 text-tinte">
+                                So läuft die Beratung ab
+                            </h2>
+
+                            <Schrittfolge
+                                className="mt-12"
+                                titelEbene="div"
+                                untertitelOben
+                                nummerStumm
+                                schritte={processSteps.map((step) => ({
+                                    nummer: step.step,
+                                    untertitel: step.subtitle,
+                                    titel: step.title,
+                                    text: step.description
+                                }))}
+                            />
+
+                            <div className="mt-12 flex items-start gap-4 border border-l-2 border-strich bg-fliese p-6 font-text text-fs-2 text-tinte">
+                                <Icon name="info" groesse={5} className="mt-1 text-tinte" />
+                                <p>
+                                    Für die Fliesenausstellung in Wetzlar vergeben wir Termine flexibel nach Vereinbarung – kontaktieren Sie uns direkt per WhatsApp, Telefon oder über unser{' '}
+                                    <Link href="/kontakt" className={linkKlassen}>
+                                        Kontaktformular
+                                    </Link>
+                                    .
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Direktkontakt: Firmensitz und Geschäftszeiten als Schriftfeld (Etikett in Mono über dem Wert), die drei
+                            Wege dazwischen als Zeilen derselben Fugenspalte; „Termin anfragen“ als Hauptknopf darunter */}
+                        <aside className="col-span-4 md:col-span-8 lg:sticky lg:top-24 lg:col-span-5" aria-labelledby="kontakt-heading">
+                            <p className={clsx(etikettKlassen, 'mb-4')}>
+                                <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                                Direktkontakt
+                            </p>
+                            <h2 id="kontakt-heading" className="text-fs-5 text-tinte">
+                                {COMPANY_DATA.legalName}
+                            </h2>
+
+                            <Schriftfeld
+                                spalten={1}
+                                className="mt-6"
+                                felder={[
+                                    {
+                                        etikett: 'Firmensitz:',
+                                        wert: (
+                                            <span className="font-mono">
+                                                {headquarters.street}, {headquarters.postalCode} {headquarters.city}
+                                            </span>
+                                        )
+                                    }
+                                ]}
+                            />
+                            <ul className="grid gap-px border-x border-fuge bg-fuge">
+                                <li>
+                                    <a href={`tel:${contact.phoneLink}`} className={WEG}>
+                                        <Icon name="telefon" groesse={5} className="text-tinte-2" />
+                                        <span className={WEG_WERT}>{contact.phone}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={contact.whatsappLink} target="_blank" rel="noopener noreferrer" className={WEG}>
+                                        <Icon name="sprechblase" groesse={5} className="text-tinte-2" />
+                                        <span className={WEG_WERT}>WhatsApp: {contact.mobile}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href={`mailto:${contact.email}`} className={WEG}>
+                                        <Icon name="mail" groesse={5} className="text-tinte-2" />
+                                        <span className={WEG_WERT}>{contact.email}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <Schriftfeld
+                                spalten={1}
+                                felder={[
+                                    {
+                                        etikett: 'Geschäftszeiten',
+                                        wert: (
+                                            <>
+                                                <p className="font-mono">{hours.formattedWeekdays}</p>
+                                                <p className="font-mono">{mitZusatz(hours.formattedSaturday)}</p>
+                                            </>
+                                        )
+                                    }
+                                ]}
+                            />
+
+                            <Knopf href="/kontakt" icon="pfeil-rechts" className="mt-6 w-full">
+                                Termin anfragen
+                            </Knopf>
+                        </aside>
                     </div>
                 </div>
             </div>
 
-            {/* Process + Contact */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                    <section className="lg:col-span-2 space-y-6" aria-labelledby="ablauf-heading">
-                        <div>
-                            <span className="eyebrow eyebrow-orange mb-4">Ihr Beratungstermin</span>
-                            <h2 id="ablauf-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                                So läuft die Beratung ab
-                            </h2>
-                        </div>
-
-                        <ol className="space-y-4">
-                            {processSteps.map((step) => (
-                                <li
-                                    key={step.step}
-                                    className="group glass-surface rounded-tile-xl p-6 sm:p-7 flex gap-5 hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                                >
-                                    <span className="font-display text-3xl font-black text-orange-600 tabular-nums shrink-0" aria-hidden="true">
-                                        {step.step}
-                                    </span>
-                                    <div>
-                                        <span className="text-[11px] font-black uppercase tracking-widest text-orange-700 block mb-1">
-                                            {step.subtitle}
-                                        </span>
-                                        <p className="text-lg font-black text-slate-900 mb-2">{step.title}</p>
-                                        <p className="text-sm text-slate-700 leading-relaxed">{step.description}</p>
-                                    </div>
-                                </li>
-                            ))}
-                        </ol>
-
-                        <div className="flex items-start gap-3 p-5 rounded-tile-lg bg-orange-50/60 border border-orange-200/80 text-sm text-slate-700 leading-relaxed">
-                            <Info className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
-                            <p>
-                                Für die Fliesenausstellung in Wetzlar vergeben wir Termine flexibel nach Vereinbarung – kontaktieren Sie uns direkt per WhatsApp, Telefon oder über unser{' '}
-                                <Link href="/kontakt" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
-                                    Kontaktformular
-                                </Link>
-                                .
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* Contact Card */}
-                    <aside className="glass-surface border-orange-200/80 rounded-tile-2xl p-8 space-y-6 lg:sticky lg:top-28" aria-labelledby="kontakt-heading">
-                        <span className="eyebrow eyebrow-orange">Direktkontakt</span>
-                        <div>
-                            <h2 id="kontakt-heading" className="text-xl font-black text-slate-900 mb-1">
-                                {COMPANY_DATA.legalName}
-                            </h2>
-                            <p className="text-sm text-slate-700 flex items-start gap-2">
-                                <MapPin className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                <span>
-                                    Firmensitz: {headquarters.street}, {headquarters.postalCode} {headquarters.city}
-                                </span>
-                            </p>
-                        </div>
-
-                        <ul className="space-y-3 text-sm">
-                            <li>
-                                <a
-                                    href={`tel:${contact.phoneLink}`}
-                                    className="flex items-center gap-3 p-3.5 rounded-tile-lg bg-slate-50 border border-slate-200 font-bold text-slate-900 hover:bg-white hover:border-orange-500/80 transition-all"
-                                >
-                                    <Phone className="w-4 h-4 text-orange-600" />
-                                    {contact.phone}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href={contact.whatsappLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="glass-button-whatsapp flex items-center gap-3 p-3.5 rounded-tile-lg font-bold transition-all text-xs"
-                                >
-                                    <MessageCircle className="w-4 h-4" />
-                                    WhatsApp: {contact.mobile}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href={`mailto:${contact.email}`}
-                                    className="flex items-center gap-3 p-3.5 rounded-tile-lg bg-slate-50 border border-slate-200 font-bold text-slate-900 hover:bg-white hover:border-orange-500/80 transition-all"
-                                >
-                                    <Mail className="w-4 h-4 text-orange-600" />
-                                    {contact.email}
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div className="pt-4 border-t border-slate-200 text-sm text-slate-700 space-y-1">
-                            <p className="flex items-center gap-2 font-bold text-slate-900">
-                                <Clock className="w-4 h-4 text-orange-600" />
-                                Geschäftszeiten
-                            </p>
-                            <p>{hours.formattedWeekdays}</p>
-                            <p>{hours.formattedSaturday}</p>
-                        </div>
-
-                        <Link href="/kontakt" className="btn-primary w-full text-xs">
-                            Termin anfragen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </aside>
-                </div>
-            </div>
-
-            {/* Consultation topics */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="themen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-10">
-                    <span className="eyebrow eyebrow-orange mb-4">Beratungsthemen</span>
-                    <h2 id="themen-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                        Wobei wir Sie in {cityName} beraten
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {/* 3. BERATUNGSTHEMEN: je Fachgewerk ein Feld mit Fachzeichen, Titel-Link, Kurztext und Verweis; zwei Spalten über die
+                volle Breite (in vier Spalten brechen die Komposita der Titel bei 1024 px, ein seitlicher Kopf ließe links eine leere
+                Rasterspalte); darunter der Verweis aufs Einsatzgebiet */}
+            <Abschnitt
+                art="arbeit"
+                flaeche="fliese"
+                spaet
+                titelId="themen-heading"
+                etikett="Beratungsthemen"
+                titel={<>Wobei wir Sie in {cityName} beraten</>}
+            >
+                <Feldraster spalten={2}>
                     {SERVICES.map((srv) => {
-                        const Icon = SERVICE_ICONS[srv.id] || Sparkles;
+                        const icon = SERVICE_ICONS[srv.id];
                         const serviceCityUrl = `/leistungen/${srv.id}/${CITY_SLUG}`;
                         return (
-                            <li key={srv.id}>
-                                <div className="group glass-surface rounded-tile-xl p-6 h-full flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300">
-                                    <div>
-                                        <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
-                                            <Icon className="w-5 h-5" />
-                                        </span>
-                                        <h3 className="text-base font-black text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">
-                                            <Link href={serviceCityUrl} className="hover:underline">
-                                                {srv.name} in {cityName}
-                                            </Link>
-                                        </h3>
-                                        <p className="text-sm text-slate-700 leading-relaxed">{srv.shortDescription}</p>
-                                    </div>
-                                    <Link
-                                        href={serviceCityUrl}
-                                        className="mt-5 pt-4 border-t border-slate-200 text-sm font-bold text-orange-700 flex items-center gap-1.5 hover:text-orange-800"
-                                    >
-                                        <span>{srv.name} für {cityName} ansehen</span>
-                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                    </Link>
+                            <Feld key={srv.id}>
+                                <div className="flex-1">
+                                    {icon && <Icon name={icon} groesse={6} className="text-tinte-2" />}
+                                    <h3 className="mt-4 text-fs-4 text-tinte">
+                                        <Link href={serviceCityUrl} className={TITEL_LINK}>
+                                            {srv.name} in {cityName}
+                                        </Link>
+                                    </h3>
+                                    <p className="mt-3 font-text text-fs-2 text-tinte-2">{srv.shortDescription}</p>
                                 </div>
-                            </li>
+                                <Link
+                                    href={serviceCityUrl}
+                                    className="group mt-6 flex min-h-11 items-center justify-between gap-3 border-t border-fuge pt-4 font-text text-fs-2 font-semibold text-tinte"
+                                >
+                                    <span className={WEG_WERT}>{srv.name} für {cityName} ansehen</span>
+                                    <Icon name="pfeil-rechts" groesse={5} />
+                                </Link>
+                            </Feld>
                         );
                     })}
-                </ul>
-                <p className="mt-8 text-center text-sm text-slate-700">
+                </Feldraster>
+                <p className="mt-8 font-text text-fs-2 text-tinte-2">
                     Mehr zu unserem Einsatzgebiet:{' '}
-                    <Link
-                        href={`/standorte/${CITY_SLUG}`}
-                        className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2"
-                    >
+                    <Link href={`/standorte/${CITY_SLUG}`} className={linkKlassen}>
                         Fliesenverlegung in {cityName}
                     </Link>
                 </p>
-            </section>
+            </Abschnitt>
 
-            <QualityPromise />
-        </div>
+            {/* 4. QUALITÄT: Bestandsbaustein (Merkliste), unverändert eingebunden, Stufen der Arbeitsansicht */}
+            <QualityPromise art="arbeit" />
+        </>
     );
 }
