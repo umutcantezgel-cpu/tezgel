@@ -1,0 +1,5 @@
+[
+ { "seite": "/referenzen", "alt": "5 von 5 Sternen", "grund": "Mikrotext Barrierefreiheit (Auftrag S-23: Bewertungssterne als Gruppe mit role=\"img\" und aria-label, Muster /fliesenreparatur): der bisher nur für Screenreader gesetzte Text (sr-only span) ist jetzt der Name der Sterne-Gruppe, Wortlaut gleich; innerText enthält ihn darum nicht mehr (16 Stimmen)" },
+ { "seite": "/referenzen", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß (nicht in den Schreibrechten): CookieConsent hängt die Zeile nach der Hydrierung an, auf dem Dev-Server je nach Zeitpunkt (bekannt, R-01a; s-20-erlaubt.json)" },
+ { "seite": "/referenzen/badsanierung-grossformat", "alt": "Cookie-Einstellungen", "grund": "geteilter Fuß, Dev-Zeitpunkt (wie oben)" }
+]

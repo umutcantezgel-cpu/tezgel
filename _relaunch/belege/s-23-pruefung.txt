@@ -1,0 +1,61 @@
+S-23 Prüfung 2026-10-12T19:18:40Z
+== 1 tsc
+exit 0 · Zeilen gesamt 0 · in meinen Dateien 0
+== 2 eslint
+exit 0
+== 3 werte
+werte: 3 Dateien · 406 Klassenvorkommen (109 eindeutig) · 0.7 s
+  befunde gesamt       0
+exit 0
+== 4 altsystem-grep
+grep exit 1 (1 = keine Treffer)
+== 5 texte (vorher 4362, nachher 4350)
+Seiten 2 · Sitemap 163 · interne Ziele 66 · kaputte Links 0
+ohne Liste:
+{"seiten_mit_abweichung":2,"entfernt":18,"hinzu":24,"meta":0,"seo":0,"sitemap_entfernt":0,"sitemap_hinzu":0,"robots_geaendert":false,"kaputte_links":0,"ergebnis":"ROT"}
+mit --erlaubt s-23-erlaubt.json:
+{"seiten_mit_abweichung":2,"entfernt":0,"hinzu":24,"meta":0,"seo":0,"sitemap_entfernt":0,"sitemap_hinzu":0,"robots_geaendert":false,"kaputte_links":0,"ergebnis":"GRÜN"}
+referenzen: Lesefolge gleich True (135/135), Ueberschriften gleich True, Links gleich True, alt gleich True, JSON-LD gleich True, Metadaten gleich True
+referenzen__badsanierung-grossformat: Lesefolge gleich True (63/63), Ueberschriften gleich True, Links gleich True, alt gleich True, JSON-LD gleich True, Metadaten gleich True
+== 7 wortbruch
+Wortbrüche: 0 {}
+== 6 bilder (einzelbild --voll m390,t768,d1440, Basis 4350)
+/referenzen m390: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen t768: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen d1440: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen/badsanierung-grossformat m390: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen/badsanierung-grossformat t768: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen/badsanierung-grossformat d1440: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen/barrierefreies-duschbad m390: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen/barrierefreies-duschbad t768: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+/referenzen/barrierefreies-duschbad d1440: HTTP 200 · Konsole 0 · Überlauf 0 · Überlappung 0
+== 8 funktionstests (navigation + kontaktwege, beide Projekte, 4350)
+    Error: expect(page).toHaveURL(expected) failed
+    Error: expect(locator).toBeVisible() failed
+  2 failed
+  13 skipped
+  85 passed (6.4m)
+Wiederholung der zwei Fehlschläge (-g, beide Projekte):
+    Error: expect(page).toHaveURL(expected) failed
+    Error: expect(page).toHaveURL(expected) failed
+  2 failed
+  2 skipped
+  4 passed (1.4m)
+dritter Lauf Mega-Menü desktop:
+  2 passed (16.7s)
+== 9 git status (meine Dateien)
+ M CLAUDE.md
+ M src/app/(bestand)/referenzen/[id]/page.jsx
+ M src/app/(bestand)/referenzen/page.jsx
+ M src/components/sections/ReviewsSection.jsx
+?? _relaunch/belege/s-23-a11y-2/
+?? _relaunch/belege/s-23-a11y/
+?? _relaunch/belege/s-23-axe-2/
+?? _relaunch/belege/s-23-axe/
+?? _relaunch/belege/s-23-erlaubt.json
+?? _relaunch/belege/s-23-nachher/
+?? _relaunch/belege/s-23-pruefung.txt
+?? _relaunch/belege/s-23-vorher/
+?? _relaunch/belege/s-23-wortbruch/
+== Zusatz axe (m375,d1440, --zustaende): s-23-axe: 39 Läufe · ernst/kritisch 0 (vorher mit spaet am Register: s-23-axe-2 1× color-contrast, Werkzeugartefakt)
+== Zusatz a11y-zusatz: s-23-a11y (beide Seiten, alle Prüfungen) und s-23-a11y-2 (/referenzen, tastatur, nach Änderung): alle Befunde im geteilten Rahmen (Kopf-Navigation, Sprunglink, untere Leiste, Cookie-Schild), keiner im main; fokus_verdeckt 0, reflow 0, ohnejs 0

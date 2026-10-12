@@ -1,7 +1,22 @@
 "use client";
-import React, { useMemo, useState } from 'react';
-import { Star, Quote } from 'lucide-react';
+// Bewertungen auf /referenzen (KERN v2, S-23; Muster: Startseite „Kundenstimmen“ src/components/start/Stimmen.tsx).
+// Kopf zweispaltig: links Etikett mit Fugenkreuz, H2 und Einleitung, rechts Google und Trustlocal als Maß in Mono mit
+// „Stand“. Darunter der Themenfilter (Insel mit Zustand: Auswahlknöpfe mit aria-pressed) und die Stimmen als Feldraster an
+// der Fuge. Jede Stimme ist eine Kundenstimme (K-009): Sterne als Gruppe mit role="img" und Namen, Zitat wörtlich in der
+// Grundschrift, Name und Quelle in Mono an einer Fuge. Genau ein Anriss je Ansicht: das Schlüsselwort (aus @/lib/stimmen)
+// der ersten Stimme der gewählten Gruppe – sonst stünden bis zu 16 rote Striche in einem Bildschirm (K-003 Nr. 2).
+// Das letzte Feld füllt seine Zeile (keine grauen Restzellen bei 16, 7, 5, 4 oder 3 Stimmen).
+// Sprungziel #bewertungen (Link „Bewertungen lesen“ und /referenzen#bewertungen): kein `spaet`, kein eigener Versatz.
+// Wortlaut, IDs (bewertungen, reviews-heading), Gruppenname und aria-pressed wie im Bestand.
+import { useEffect, useMemo, useRef, useState } from 'react';
+import clsx from 'clsx';
 import { REVIEWS, RATING_SUMMARY } from '@/config/reviews';
+import { STIMMEN, teileAnriss } from '@/lib/stimmen';
+import { beobachte } from '@/lib/motion/bewegung';
+import Icon from '@/components/icons/Icon';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { ACHSE_LAGE } from '@/components/kern/Leitachse';
+import { etikettKlassen, seitenKlassen, wahlKlassen } from '@/components/kern/stile';
 
 // Topic groups derived from the `topic` values in config/reviews.js
 // (keyword match, so new reviews are sorted in automatically).
@@ -13,19 +28,38 @@ const TOPIC_FILTERS = [
     { id: 'qualitaet', label: 'Qualität & Sauberkeit', match: (topic) => /Qualität|Sauberkeit|Preis/.test(topic) }
 ];
 
-function Stars({ count = 5, className = 'w-4 h-4' }) {
+function Stars({ count = 5 }) {
     return (
-        <span className="flex items-center gap-0.5 text-amber-500" aria-hidden="true">
+        <span className="flex items-center gap-1 text-tinte" aria-hidden="true">
             {Array.from({ length: count }, (_, i) => (
-                <Star key={i} className={`${className} fill-current`} />
+                <Icon key={i} name="stern-voll" groesse={4} />
             ))}
         </span>
     );
 }
 
-export default function ReviewsSection() {
+/** Letztes Feld füllt die Zeile: ab md zwei, ab lg drei Spalten (wörtliche Klassen für Tailwind) */
+function restKlassen(index, anzahl) {
+    if (index !== anzahl - 1) return undefined;
+    const md = anzahl % 2 === 1;
+    const lg = anzahl % 3;
+    return clsx(md && 'md:col-span-2', lg === 1 && 'lg:col-span-3', lg === 2 && 'lg:col-span-2', lg === 0 && md && 'lg:col-span-1');
+}
+
+/** Zitat mit genau einem Anriss (nur bei der ersten Stimme der Ansicht); ohne Schlüsselwort unverändert */
+function Zitat({ review, mitAnriss }) {
+    const teile = mitAnriss ? teileAnriss(review.text, STIMMEN[review.id]?.anriss) : null;
+    return (
+        <p>
+            „{teile ? <>{teile[0]}<mark data-motion="anriss">{teile[1]}</mark>{teile[2]}</> : review.text}“
+        </p>
+    );
+}
+
+export default function ReviewsSection({ leitachse = false }) {
     const [selectedTopic, setSelectedTopic] = useState('all');
     const { google, trustlocal, asOf } = RATING_SUMMARY;
+    const listeRef = useRef(null);
 
     const filters = useMemo(
         () =>
@@ -39,61 +73,68 @@ export default function ReviewsSection() {
     const activeFilter = filters.find((filter) => filter.id === selectedTopic) || filters[0];
     const filteredReviews = REVIEWS.filter((review) => activeFilter.match(review.topic));
 
+    // Nach einem Themenwechsel steht der Anriss an einer neu gezeichneten Stimme: dem Bewegungsmodul melden (K-007),
+    // sonst bliebe sein Strich bei erlaubter Bewegung unsichtbar. Ohne Bewegung tut beobachte() nichts.
+    useEffect(() => {
+        if (listeRef.current) beobachte(listeRef.current);
+    }, [selectedTopic]);
+
     return (
-        <section className="py-20 sm:py-24 relative overflow-hidden scroll-mt-20" id="bewertungen" aria-labelledby="reviews-heading">
-            <div className="ambient-glow-mint -top-24 right-0 opacity-60" />
-            <div className="ambient-glow-sky bottom-0 -left-24 opacity-50" />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Section Header */}
-                <div className="text-center max-w-3xl mx-auto mb-10">
-                    <span className="eyebrow eyebrow-amber mb-4">
-                        <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
-                        Echte Kundenstimmen
-                    </span>
-                    <h2 id="reviews-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                        Was unsere Kunden in Mittelhessen sagen
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Wörtliche Auszüge aus öffentlichen Rezensionen – zu Badsanierungen, Balkonen, Treppen und
-                        kompletten Häusern.
-                    </p>
-                </div>
-
-                {/* Rating Summary */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-                    <div className="glass-surface rounded-3xl p-6 flex items-center gap-5">
-                        <span className="font-display text-4xl font-black text-slate-900 tabular-nums">
-                            {google.displayRating}
-                        </span>
-                        <div className="space-y-1">
-                            <Stars count={Math.round(google.rating)} />
-                            <p className="text-sm font-bold text-slate-900">
-                                {google.source}: {google.displayRating} von {google.maxRating}
-                            </p>
-                            <p className="text-xs text-slate-600">
-                                aus {google.count} {google.label}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="glass-surface rounded-3xl p-6 flex items-center gap-5">
-                        <span className="font-display text-4xl font-black text-slate-900 tabular-nums">
-                            {trustlocal.displayRating.split('/')[0]}
-                        </span>
-                        <div className="space-y-1">
-                            <p className="text-sm font-bold text-slate-900">
-                                {trustlocal.source}: {trustlocal.displayRating}
-                            </p>
-                            <p className="text-xs text-slate-600">
-                                aus {trustlocal.count} {trustlocal.label}
-                            </p>
-                        </div>
+        <section className="relative py-16 lg:py-24" id="bewertungen" aria-labelledby="reviews-heading">
+            {leitachse && (
+                // Fugenkreuz auf dem Lot der Leitachse an der Oberkante (wie Abschnitt mit `leitachse`)
+                <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-10">
+                    <div className={clsx(seitenKlassen, 'relative')}>
+                        <Fugenkreuz className={clsx('absolute top-0 size-3 -translate-x-1/2 -translate-y-1/2 text-tinte', ACHSE_LAGE)} />
                     </div>
                 </div>
-                <p className="mt-3 text-center text-xs text-slate-600">Stand: {asOf}</p>
+            )}
 
-                {/* Topic Filter */}
-                <div className="flex flex-wrap items-center justify-center gap-2 mt-10 mb-10" role="group" aria-label="Bewertungen nach Thema filtern">
+            <div className={seitenKlassen}>
+                {/* Kopf: links Etikett, H2 und Einleitung; rechts die Bewertungen als Maß */}
+                <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:items-end lg:gap-x-12">
+                    <div className="col-span-4 md:col-span-8 lg:col-span-7">
+                        <p className={clsx(etikettKlassen, 'mb-4')}>
+                            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                            Echte Kundenstimmen
+                        </p>
+                        <h2 id="reviews-heading" className="text-fs-6 text-tinte">
+                            Was unsere Kunden in Mittelhessen sagen
+                        </h2>
+                        <p className="mt-6 max-w-mass font-text text-fs-3 text-tinte-2">
+                            Wörtliche Auszüge aus öffentlichen Rezensionen – zu Badsanierungen, Balkonen, Treppen und
+                            kompletten Häusern.
+                        </p>
+                    </div>
+
+                    <div className="col-span-4 md:col-span-8 lg:col-span-5">
+                        <div className="grid grid-cols-1 border-l border-t border-fuge sm:grid-cols-2">
+                            <div className="flex flex-col gap-2 border-b border-r border-fuge bg-fliese p-4 lg:p-6">
+                                <p className="font-mono text-fs-5 text-tinte">{google.displayRating}</p>
+                                <Stars count={Math.round(google.rating)} />
+                                <p className="font-text text-fs-2 font-semibold text-tinte">
+                                    {google.source}: {google.displayRating} von {google.maxRating}
+                                </p>
+                                <p className="font-mono text-fs-1 text-tinte-2">
+                                    aus {google.count} {google.label}
+                                </p>
+                            </div>
+                            <div className="flex flex-col gap-2 border-b border-r border-fuge bg-fliese p-4 lg:p-6">
+                                <p className="font-mono text-fs-5 text-tinte">{trustlocal.displayRating.split('/')[0]}</p>
+                                <p className="font-text text-fs-2 font-semibold text-tinte">
+                                    {trustlocal.source}: {trustlocal.displayRating}
+                                </p>
+                                <p className="font-mono text-fs-1 text-tinte-2">
+                                    aus {trustlocal.count} {trustlocal.label}
+                                </p>
+                            </div>
+                        </div>
+                        <p className="mt-3 font-mono text-fs-1 text-tinte-2">Stand: {asOf}</p>
+                    </div>
+                </div>
+
+                {/* Themenfilter: Auswahlknöpfe (aria-pressed), Zahl in Mono */}
+                <div className="mt-16 flex flex-wrap gap-2" role="group" aria-label="Bewertungen nach Thema filtern">
                     {filters.map((filter) => {
                         const isActive = filter.id === activeFilter.id;
                         return (
@@ -102,40 +143,35 @@ export default function ReviewsSection() {
                                 type="button"
                                 onClick={() => setSelectedTopic(filter.id)}
                                 aria-pressed={isActive}
-                                className={`px-4 py-2 rounded-tile-pill text-xs font-extrabold border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2 ${
-                                    isActive
-                                        ? 'bg-orange-600 border-orange-600 text-white'
-                                        : 'bg-white border-slate-200 text-slate-700 hover:border-orange-500 hover:text-orange-600'
-                                }`}
+                                className={wahlKlassen}
                             >
-                                {filter.label}
-                                <span className="ml-1.5 tabular-nums opacity-80">({filter.count})</span>
+                                {/* eine Zeile wie im Bestand: Name und Zahl in einem Element (der Knopf ist inline-flex) */}
+                                <span>
+                                    {filter.label}
+                                    <span className="ml-2 font-mono text-fs-1">({filter.count})</span>
+                                </span>
                             </button>
                         );
                     })}
                 </div>
 
-                {/* Reviews Grid */}
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredReviews.map((review) => (
-                        <li
-                            key={review.id}
-                            className="glass-surface rounded-tile-md p-7 flex flex-col justify-between hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                        >
-                            <figure className="h-full flex flex-col justify-between">
-                                <div>
-                                    <div className="flex items-center justify-between mb-4">
-                                        <Stars count={review.rating} />
-                                        <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
-                                    </div>
-                                    <span className="sr-only">{review.rating} von 5 Sternen</span>
-                                    <blockquote className="text-sm text-slate-800 leading-relaxed">
-                                        „{review.text}“
-                                    </blockquote>
-                                </div>
-                                <figcaption className="mt-5 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-2">
-                                    <span className="text-sm font-bold text-slate-900">{review.author}</span>
-                                    <span className="text-xs font-semibold text-slate-600">
+                {/* Stimmen als Feldraster an der Fuge */}
+                <ul ref={listeRef} className="mt-8 grid grid-cols-1 gap-px border border-fuge bg-fuge md:grid-cols-2 lg:grid-cols-3">
+                    {filteredReviews.map((review, index) => (
+                        <li key={review.id} className={clsx('flex flex-col bg-fliese p-6 lg:p-8', restKlassen(index, filteredReviews.length))}>
+                            <figure className="flex flex-1 flex-col">
+                                {/* role="img": aria-label an einem span ist ohne Rolle unzulässig (axe aria-prohibited-attr) */}
+                                <span role="img" className="flex items-center gap-1 text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
+                                    {Array.from({ length: review.rating }, (_, i) => (
+                                        <Icon key={i} name="stern-voll" groesse={4} />
+                                    ))}
+                                </span>
+                                <blockquote className="mt-4 max-w-mass flex-1 font-text text-fs-3 text-tinte">
+                                    <Zitat review={review} mitAnriss={index === 0} />
+                                </blockquote>
+                                <figcaption className="mt-6 flex flex-col gap-1 border-t border-fuge pt-4">
+                                    <span className="font-text text-fs-2 font-semibold text-tinte">{review.author}</span>
+                                    <span className="font-mono text-fs-1 text-tinte-2">
                                         {review.source}-Rezension &middot; {review.topic}
                                     </span>
                                 </figcaption>

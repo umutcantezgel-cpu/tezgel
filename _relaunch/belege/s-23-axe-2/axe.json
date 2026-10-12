@@ -1,0 +1,39 @@
+{
+ "satz": "s-23-axe-2",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 1,
+ "ernst_kritisch_knoten": 1,
+ "je_regel": {
+  "serious:color-contrast": 1
+ },
+ "ergebnisse": [
+  {
+   "seite": "/referenzen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 1,
+     "ziele": [
+      ".border-b.border-fuge:nth-child(6) > article > .md\\:col-span-5.lg\\:col-span-4.col-span-4 > .inline-flex"
+     ],
+     "knoten": [
+      {
+       "html": "<p class=\"inline-flex items-center gap-2 font-mono text-fs-1 text-tinte-2\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\" focusable=\"false\" class=\"inline-block shrink-0 fill-current size-3 shrink-0 text-strich\"><path d=\"M5 0h2v5h5v2H7v5H5V7H0V",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 2.34 (foreground color: #4b5067, background color: #0a1129, font size: 9.8pt (13.015px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
