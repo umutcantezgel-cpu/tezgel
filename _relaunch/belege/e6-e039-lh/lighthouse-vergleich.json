@@ -1,0 +1,1823 @@
+{
+ "satz": "e6-e039-lh",
+ "base": "http://127.0.0.1:4364",
+ "kandidat": "http://127.0.0.1:4365",
+ "modus": "verschraenkt",
+ "bedingungen": "lokal next start (komprimiert), Erstbesuch mit Banner (Speicher je Lauf zurückgesetzt), Dritt-Hosts blockiert, Lighthouse-Standard-Drosselung (mobil: simuliert 4× CPU, Slow 4G; Desktop-Preset), Chromium headless --no-sandbox --disable-gpu, eine Chrome-Instanz für alle Läufe; verschränkt: je Seite und Form 5 Paare, Reihenfolge A B A B … (A = Basis http://127.0.0.1:4364, B = Kandidat http://127.0.0.1:4365) im selben Messfenster",
+ "erstellt": "2026-10-12T22:31:51.210Z",
+ "laeufe": 5,
+ "seiten": {
+  "/preise": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 94,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2635,
+      "cls": 0,
+      "tbt": 159,
+      "fcp": 1065,
+      "si": 1065,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 473,
+      "benchmark": 1551.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+       "snippet": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+       "rechteck": {
+        "top": 339,
+        "left": 49,
+        "width": 314,
+        "height": 159
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 13,
+       "elementRenderDelay": 202
+      },
+      "streuung_perf": [
+       93,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 95,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2635.0962,
+       "cls": 0,
+       "tbt": 159.40380000000005,
+       "fcp": 1065.1443,
+       "si": 1065.1443,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1569,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 339,
+         "left": 49,
+         "width": 314,
+         "height": 159
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 233
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 93,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.8925,
+       "cls": 0,
+       "tbt": 229.10750000000007,
+       "fcp": 1070.271,
+       "si": 1070.271,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1551.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 339,
+         "left": 49,
+         "width": 314,
+         "height": 159
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 202
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 94,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2760.915,
+       "cls": 0,
+       "tbt": 153.61699999999996,
+       "fcp": 1064.298,
+       "si": 1064.298,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1579.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 339,
+         "left": 49,
+         "width": 314,
+         "height": 159
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 192
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 94,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2560.425,
+       "cls": 0,
+       "tbt": 187.57500000000027,
+       "fcp": 1062.5099999999998,
+       "si": 1062.5099999999998,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1536.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 339,
+         "left": 49,
+         "width": 314,
+         "height": 159
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 219
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 96,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2709.78,
+       "cls": 0,
+       "tbt": 83.5,
+       "fcp": 1064.67,
+       "si": 1064.67,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1359,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-36 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p class=\"text-sm sm:text-base text-neutral-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 339,
+         "left": 49,
+         "width": 314,
+         "height": 159
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 200
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2569,
+      "cls": 0,
+      "tbt": 93,
+      "fcp": 1079,
+      "si": 1082,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 480,
+      "benchmark": 1531.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 261,
+        "left": 16,
+        "width": 380,
+        "height": 192
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 13,
+       "elementRenderDelay": 197
+      },
+      "streuung_perf": [
+       93,
+       97
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.399,
+       "cls": 0,
+       "tbt": 227.40025000000014,
+       "fcp": 1086.1994999999997,
+       "si": 1086.1994999999997,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 480,
+       "benchmark": 1624,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 261,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 276
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 97,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2569.14,
+       "cls": 0,
+       "tbt": 81.5,
+       "fcp": 1078.71,
+       "si": 1196.3864129959143,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 480,
+       "benchmark": 1594,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 261,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 197
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2682.0062500000004,
+       "cls": 0,
+       "tbt": 74.5,
+       "fcp": 1072.2075,
+       "si": 1072.2075,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 480,
+       "benchmark": 1465.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 261,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 15,
+        "elementRenderDelay": 181
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2563.3579999999993,
+       "cls": 0,
+       "tbt": 92.5,
+       "fcp": 1070.037,
+       "si": 1070.037,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 480,
+       "benchmark": 1531.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 261,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 185
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2701.4500000000003,
+       "cls": 0,
+       "tbt": 173.60999999999945,
+       "fcp": 1082.34,
+       "si": 1082.34,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 480,
+       "benchmark": 1447.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Jedes Fliesen- und Badprojekt ist ein Unikat mit individuellen Untergründen, Ra…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 261,
+         "left": 16,
+         "width": 380,
+         "height": 192
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 210
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 2,
+     "a11y": 3,
+     "bp": 0,
+     "seo": 0,
+     "lcp": -66,
+     "cls": 0,
+     "tbt": -66,
+     "fcp": 14,
+     "si": 17,
+     "js_kb": 0,
+     "font_kb": 0,
+     "gesamt_kb": 7,
+     "benchmark": -20,
+     "lcp_relativ": -0.025
+    },
+    "lcp_element_gleich": false,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 2 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/faq": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 95,
+      "a11y": 96,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2562,
+      "cls": 0,
+      "tbt": 193,
+      "fcp": 1064,
+      "si": 1064,
+      "js_kb": 271,
+      "font_kb": 72,
+      "gesamt_kb": 473,
+      "benchmark": 1422.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+       "rechteck": {
+        "top": 296,
+        "left": 49,
+        "width": 314,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 10,
+       "elementRenderDelay": 205
+      },
+      "streuung_perf": [
+       92,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 94,
+       "a11y": 96,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2561.5175,
+       "cls": 0,
+       "tbt": 193,
+       "fcp": 1063.821,
+       "si": 1180.5246934024976,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1366,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 296,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 95,
+       "a11y": 96,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.6050000000005,
+       "cls": 0,
+       "tbt": 178.1790000000001,
+       "fcp": 1069.9260000000002,
+       "si": 1069.9260000000002,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1490,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 296,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 205
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 96,
+       "a11y": 96,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2561.4800000000005,
+       "cls": 0,
+       "tbt": 141.20399999999927,
+       "fcp": 1063.7759999999998,
+       "si": 1063.7759999999998,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1422.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 296,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 17,
+        "elementRenderDelay": 213
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 96,
+       "a11y": 96,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 1662.7200000000003,
+       "cls": 0,
+       "tbt": 211.45999999999935,
+       "fcp": 912.72,
+       "si": 980.2071810917562,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1406,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 296,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 9,
+        "elementRenderDelay": 168
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 92,
+       "a11y": 96,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2562.49,
+       "cls": 0,
+       "tbt": 264.37749999999994,
+       "fcp": 1009.245,
+       "si": 1009.245,
+       "js_kb": 271,
+       "font_kb": 72,
+       "gesamt_kb": 473,
+       "benchmark": 1527.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 296,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 231
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 94,
+      "a11y": 99,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2573,
+      "cls": 0,
+      "tbt": 185,
+      "fcp": 1070,
+      "si": 1070,
+      "js_kb": 281,
+      "font_kb": 72,
+      "gesamt_kb": 481,
+      "benchmark": 1515.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 238,
+        "left": 16,
+        "width": 380,
+        "height": 165
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 13,
+       "elementRenderDelay": 215
+      },
+      "streuung_perf": [
+       91,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 94,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2566.7700000000004,
+       "cls": 0,
+       "tbt": 184.73000000000047,
+       "fcp": 1070.124,
+       "si": 1070.124,
+       "js_kb": 281,
+       "font_kb": 72,
+       "gesamt_kb": 481,
+       "benchmark": 1462.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 238,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 19,
+        "elementRenderDelay": 215
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 94,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2753.4875,
+       "cls": 0,
+       "tbt": 143.90249999999992,
+       "fcp": 1068.585,
+       "si": 1068.585,
+       "js_kb": 281,
+       "font_kb": 72,
+       "gesamt_kb": 481,
+       "benchmark": 1515.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 238,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 172
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 91,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2564.5400000000004,
+       "cls": 0,
+       "tbt": 276.0920000000003,
+       "fcp": 911.6320000000001,
+       "si": 911.6320000000001,
+       "js_kb": 281,
+       "font_kb": 72,
+       "gesamt_kb": 481,
+       "benchmark": 1562,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 238,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 224
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 94,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2784.1474999999996,
+       "cls": 0,
+       "tbt": 151.35249999999974,
+       "fcp": 1077.177,
+       "si": 1077.177,
+       "js_kb": 281,
+       "font_kb": 72,
+       "gesamt_kb": 481,
+       "benchmark": 1589,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 238,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 206
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 92,
+       "a11y": 99,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2573.357499999999,
+       "cls": 0,
+       "tbt": 256.6424999999999,
+       "fcp": 1078.029,
+       "si": 1078.029,
+       "js_kb": 281,
+       "font_kb": 72,
+       "gesamt_kb": 481,
+       "benchmark": 1437,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "FAQ: Häufige Fragen zu Fliesen & Bad beantwortet vom Fliesenleger-Fachbetrieb T…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,0,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 238,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 245
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": -1,
+     "a11y": 3,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 11,
+     "cls": 0,
+     "tbt": -8,
+     "fcp": 6,
+     "si": 6,
+     "js_kb": 10,
+     "font_kb": 0,
+     "gesamt_kb": 8,
+     "benchmark": 93,
+     "lcp_relativ": 0.004
+    },
+    "lcp_element_gleich": false,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/referenzen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 90,
+      "a11y": 97,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2560,
+      "cls": 0,
+      "tbt": 255,
+      "fcp": 1065,
+      "si": 1065,
+      "js_kb": 270,
+      "font_kb": 72,
+      "gesamt_kb": 474,
+      "benchmark": 1565.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+       "rechteck": {
+        "top": 288,
+        "left": 49,
+        "width": 314,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 13,
+       "elementRenderDelay": 216
+      },
+      "streuung_perf": [
+       88,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 88,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3267.305,
+       "cls": 0,
+       "tbt": 254.7389999999998,
+       "fcp": 1069.5660000000003,
+       "si": 1069.5660000000003,
+       "js_kb": 270,
+       "font_kb": 72,
+       "gesamt_kb": 474,
+       "benchmark": 1657,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 221
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 89,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2558.2779999999993,
+       "cls": 0,
+       "tbt": 356.6525000000004,
+       "fcp": 1062.417,
+       "si": 1103.3573400009927,
+       "js_kb": 270,
+       "font_kb": 72,
+       "gesamt_kb": 474,
+       "benchmark": 1555.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 21,
+        "elementRenderDelay": 281
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 90,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2560.264,
+       "cls": 0,
+       "tbt": 320.9999999999999,
+       "fcp": 910.2639999999999,
+       "si": 910.2639999999999,
+       "js_kb": 270,
+       "font_kb": 72,
+       "gesamt_kb": 474,
+       "benchmark": 1565.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 13,
+        "elementRenderDelay": 216
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 95,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2750.005,
+       "cls": 0,
+       "tbt": 92.99900000000002,
+       "fcp": 1065.0059999999999,
+       "si": 1065.0059999999999,
+       "js_kb": 270,
+       "font_kb": 72,
+       "gesamt_kb": 474,
+       "benchmark": 1575,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 180
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 96,
+       "a11y": 97,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2260.25,
+       "cls": 0,
+       "tbt": 178.4375,
+       "fcp": 1065.375,
+       "si": 1065.375,
+       "js_kb": 270,
+       "font_kb": 72,
+       "gesamt_kb": 474,
+       "benchmark": 1545.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 189
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2625,
+      "cls": 0,
+      "tbt": 214,
+      "fcp": 1067,
+      "si": 1071,
+      "js_kb": 269,
+      "font_kb": 72,
+      "gesamt_kb": 491,
+      "benchmark": 1509,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 309,
+        "left": 16,
+        "width": 380,
+        "height": 165
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 225
+      },
+      "streuung_perf": [
+       90,
+       94
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2412.0862500000003,
+       "cls": 0,
+       "tbt": 272.91375000000016,
+       "fcp": 1064.5035000000003,
+       "si": 1260.479536131685,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 491,
+       "benchmark": 1497,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 309,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 27,
+        "elementRenderDelay": 237
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2790.598,
+       "cls": 0,
+       "tbt": 153.25250000000005,
+       "fcp": 1068.897,
+       "si": 1068.897,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 491,
+       "benchmark": 1471.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 309,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 18,
+        "elementRenderDelay": 167
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2624.6375,
+       "cls": 0,
+       "tbt": 218.36249999999973,
+       "fcp": 1066.3650000000002,
+       "si": 1093.2543504451837,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 491,
+       "benchmark": 1616.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 309,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 229
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 90,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3198.9287499999996,
+       "cls": 0,
+       "tbt": 188.5712500000002,
+       "fcp": 1067.3145,
+       "si": 1067.3145,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 491,
+       "benchmark": 1509,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 309,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 225
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2417.2137499999994,
+       "cls": 0,
+       "tbt": 213.5,
+       "fcp": 1070.6565,
+       "si": 1070.6565,
+       "js_kb": 269,
+       "font_kb": 72,
+       "gesamt_kb": 491,
+       "benchmark": 1543,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Echte Referenzen & Bewertungen für Fliesenleger Tezgel: Erfahren Sie, was unser…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,1,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 309,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 189
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 3,
+     "a11y": 3,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 65,
+     "cls": 0,
+     "tbt": -41,
+     "fcp": 2,
+     "si": 6,
+     "js_kb": -1,
+     "font_kb": 0,
+     "gesamt_kb": 17,
+     "benchmark": -56.5,
+     "lcp_relativ": 0.025
+    },
+    "lcp_element_gleich": false,
+    "hinweis": "Grenzbereich: |Δ Leistung| = 3 Punkte (2–5) – mit --laeufe 10 nachmessen",
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  },
+  "/unternehmen": {
+   "mobil": {
+    "basis": {
+     "median": {
+      "perf": 94,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2603,
+      "cls": 0,
+      "tbt": 144,
+      "fcp": 1063,
+      "si": 1063,
+      "js_kb": 267,
+      "font_kb": 72,
+      "gesamt_kb": 465,
+      "benchmark": 1586.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+       "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+       "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+       "rechteck": {
+        "top": 288,
+        "left": 49,
+        "width": 314,
+        "height": 137
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 12,
+       "elementRenderDelay": 189
+      },
+      "streuung_perf": [
+       85,
+       96
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 96,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2558.6579999999994,
+       "cls": 0,
+       "tbt": 112.83549999999991,
+       "fcp": 1062.987,
+       "si": 1062.987,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 465,
+       "benchmark": 1586.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 188
+       },
+       "reihenfolge": 0
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2602.9700000000003,
+       "cls": 0,
+       "tbt": 184.0060000000003,
+       "fcp": 919.988,
+       "si": 919.988,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 465,
+       "benchmark": 1609.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 189
+       },
+       "reihenfolge": 2
+      },
+      {
+       "perf": 94,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2769.5099999999993,
+       "cls": 0,
+       "tbt": 138.09800000000018,
+       "fcp": 1067.412,
+       "si": 1067.412,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 465,
+       "benchmark": 1376.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 181
+       },
+       "reihenfolge": 4
+      },
+      {
+       "perf": 92,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 3207.8125000000005,
+       "cls": 0,
+       "tbt": 144.33750000000032,
+       "fcp": 1065.975,
+       "si": 1065.975,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 465,
+       "benchmark": 1589.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 12,
+        "elementRenderDelay": 211
+       },
+       "reihenfolge": 6
+      },
+      {
+       "perf": 85,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2187.9839999999995,
+       "cls": 0,
+       "tbt": 532.0000000000002,
+       "fcp": 977.492,
+       "si": 977.492,
+       "js_kb": 267,
+       "font_kb": 72,
+       "gesamt_kb": 465,
+       "benchmark": 1500.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.pt-32 > div.max-w-7xl > div.ceramic-hero > p.text-sm",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p class=\"text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed\">",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,DIV,2,P",
+        "rechteck": {
+         "top": 288,
+         "left": 49,
+         "width": 314,
+         "height": 137
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 10,
+        "elementRenderDelay": 219
+       },
+       "reihenfolge": 8
+      }
+     ]
+    },
+    "kandidat": {
+     "median": {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 100,
+      "seo": 100,
+      "lcp": 2610,
+      "cls": 0,
+      "tbt": 192,
+      "fcp": 1072,
+      "si": 1076,
+      "js_kb": 266,
+      "font_kb": 72,
+      "gesamt_kb": 464,
+      "benchmark": 1519.5,
+      "werkzeug_wiederholungen": 0,
+      "lcp_element": {
+       "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+       "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+       "snippet": "<p>",
+       "art": "text",
+       "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+       "rechteck": {
+        "top": 239,
+        "left": 16,
+        "width": 380,
+        "height": 165
+       },
+       "anteil": "5/5",
+       "abweichend": []
+      },
+      "lcp_phasen": {
+       "timeToFirstByte": 16,
+       "elementRenderDelay": 208
+      },
+      "streuung_perf": [
+       81,
+       95
+      ]
+     },
+     "laeufe": [
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2414.12,
+       "cls": 0,
+       "tbt": 192.17600000000016,
+       "fcp": 911.296,
+       "si": 911.296,
+       "js_kb": 266,
+       "font_kb": 72,
+       "gesamt_kb": 464,
+       "benchmark": 1519.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 208
+       },
+       "reihenfolge": 1
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2612.06875,
+       "cls": 0,
+       "tbt": 159.38625000000002,
+       "fcp": 1071.6825,
+       "si": 1071.6825,
+       "js_kb": 266,
+       "font_kb": 72,
+       "gesamt_kb": 464,
+       "benchmark": 1527,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 11,
+        "elementRenderDelay": 190
+       },
+       "reihenfolge": 3
+      },
+      {
+       "perf": 93,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2614.82625,
+       "cls": 0,
+       "tbt": 205.7347500000003,
+       "fcp": 1075.5915,
+       "si": 1075.5915,
+       "js_kb": 266,
+       "font_kb": 72,
+       "gesamt_kb": 464,
+       "benchmark": 1367,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 14,
+        "elementRenderDelay": 203
+       },
+       "reihenfolge": 5
+      },
+      {
+       "perf": 95,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2609.9925,
+       "cls": 0,
+       "tbt": 156.2014999999999,
+       "fcp": 1075.791,
+       "si": 1147.5202369748356,
+       "js_kb": 266,
+       "font_kb": 72,
+       "gesamt_kb": 464,
+       "benchmark": 1630.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 16,
+        "elementRenderDelay": 218
+       },
+       "reihenfolge": 7
+      },
+      {
+       "perf": 81,
+       "a11y": 100,
+       "bp": 100,
+       "seo": 100,
+       "lcp": 2338.975,
+       "cls": 0.00019408760742348796,
+       "tbt": 701.0125,
+       "fcp": 913.9749999999999,
+       "si": 1505.344390219249,
+       "js_kb": 266,
+       "font_kb": 72,
+       "gesamt_kb": 464,
+       "benchmark": 1172.5,
+       "werkzeug_wiederholungen": 0,
+       "lcp_element": {
+        "selektor": "div.grid > div.col-span-4 > div.mt-6 > p",
+        "text": "Verlässlichkeit, handwerkliche Perfektion und saubere Baustellen: Seit 2008 ste…",
+        "snippet": "<p>",
+        "art": "text",
+        "pfad": "1,HTML,1,BODY,4,MAIN,0,HEADER,0,DIV,1,DIV,0,DIV,2,DIV,0,P",
+        "rechteck": {
+         "top": 239,
+         "left": 16,
+         "width": 380,
+         "height": 165
+        }
+       },
+       "lcp_phasen": {
+        "timeToFirstByte": 34,
+        "elementRenderDelay": 329
+       },
+       "reihenfolge": 9
+      }
+     ]
+    },
+    "differenz": {
+     "perf": 1,
+     "a11y": 0,
+     "bp": 0,
+     "seo": 0,
+     "lcp": 7,
+     "cls": 0,
+     "tbt": 48,
+     "fcp": 9,
+     "si": 13,
+     "js_kb": -1,
+     "font_kb": 0,
+     "gesamt_kb": -1,
+     "benchmark": -67,
+     "lcp_relativ": 0.003
+    },
+    "lcp_element_gleich": false,
+    "hinweis": null,
+    "z12": "innerhalb der Streuung oder besser"
+   }
+  }
+ },
+ "umgebung": {
+  "lighthouse": "13.5.0",
+  "chrome": "Chromium 1194 (Playwright-Build)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min": 0.48,
+  "last_1min_start": 0.48,
+  "last_1min_ende": 1.48
+ },
+ "schwellen": {
+  "grenzbereich_punkte": [
+   2,
+   5
+  ],
+  "z12_schlechter": "Δ Leistung < −3 Punkte oder Δ LCP > +10 %"
+ }
+}

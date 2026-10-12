@@ -27,5 +27,17 @@ den 25 Seiten und den drei nur dort eingebundenen Bausteinen.
 - Weich: Fokus verdeckt 4 (fest 4, Erstbesuch d1440), Zoom „nie im Bild“ 7 je Seite (Kopf, R-02a), Textabstand
   abgeschnitten 1.
 
-## Lighthouse
-Folgt im ruhigen Fenster (nach R-02a/b).
+## Lighthouse (ruhiges Fenster, Last 0,3; mobil, 5 verschränkte Paare, live 4364 gegen 4365; `belege/e6-e039-lh/`)
+| Seite | Punkte | LCP | TBT (Median) | Z-12 |
+|---|---|---|---|---|
+| /preise | 94 → 96 | −66 ms | 159 → 93 ms | besser |
+| /faq | 95 → 94 | +11 ms | 193 → 185 ms | innerhalb der Streuung |
+| /referenzen | 90 → 93 | +65 ms | 255 → 214 ms | besser |
+| /unternehmen | 94 → 95 | +7 ms | 144 → 192 ms (Ausreißer je Seite 532/701) | innerhalb der Streuung |
+
+Entscheidung Rechner-Einbindung: **/preise** behält `next/dynamic` + FormularPlatzhalter (TBT −66 ms, +2 Punkte);
+**/faq** ohne messbaren Gewinn (JS +10 KB, TBT −8 ms) → Rückkehr zum direkten Einbau wie live (ohne JS wieder sichtbar),
+mit der nächsten Lieferung (Tor zusammen mit R-02a).
+
+## Ergebnis
+Grün (Specs nach einer Wiederholung, Bestandsbefund belegt). Push genau des geprüften Stands 1d837bd.
