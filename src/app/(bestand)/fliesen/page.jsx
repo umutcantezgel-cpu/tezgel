@@ -16,6 +16,7 @@ import { FinalCTA } from '@/components/ui/FinalCTA';
 import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Einstieg from '@/components/kern/Einstieg';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
@@ -136,10 +137,11 @@ export default function FliesenRatgeberPage() {
                     </>
                 }
                 rand={
-                    <div className="border border-fuge bg-fliese p-6 lg:p-8">
-                        {/* Großer Moment (E3-ORCH-04): derselbe Raum im Kreuzfugen-, Halb- und Drittelverband zum Umschalten */}
+                    // Großer Moment (E3-ORCH-04) im Planblatt (E4-NACH-01): derselbe Raum im Kreuzfugen-, Halb- und
+                    // Drittelverband zum Umschalten; der Verband steht deshalb nicht im Schriftfeld
+                    <Planblatt felder={planfelder('Fliesen & Verlegung')}>
                         <VerbandUmschalter />
-                    </div>
+                    </Planblatt>
                 }
             />
 

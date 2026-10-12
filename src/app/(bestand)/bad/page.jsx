@@ -20,6 +20,7 @@ import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
@@ -86,11 +87,11 @@ export default function BadPage() {
                         </ul>
                     }
                     rand={
-                        <div className="border border-fuge bg-fliese p-6 lg:p-8">
-                            {/* Großer Moment (E3-ORCH-01): der Plan rückt das Fugenbild in die Flucht – am Desktop beim
-                                Zeigen, mobil beim Eintritt (Register sig-plan); ohne Bewegung steht er fertig */}
-                            <Verlegeplan plan="bad" ohneAchse bemassung={false} interaktiv />
-                        </div>
+                        // Planblatt (E4-NACH-01): eigenes Motiv „badsanierung“ (der Badplan gehört zu /leistungen/bad);
+                        // großer Moment: das Fugenbild rückt in die Flucht – am Desktop beim Zeigen, mobil beim Eintritt
+                        <Planblatt felder={planfelder('Badsanierung', 'badsanierung')}>
+                            <Verlegeplan plan="badsanierung" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
                     }
                 />
             </section>

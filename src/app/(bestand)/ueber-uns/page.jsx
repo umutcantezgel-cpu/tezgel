@@ -10,6 +10,8 @@ import FinalCTA from '@/components/ui/FinalCTA';
 import Icon from '@/components/icons/Icon';
 import Abschnitt from '@/components/kern/Abschnitt';
 import Einstieg from '@/components/kern/Einstieg';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Zeitband from '@/components/kern/Zeitband';
 import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Kennwerte from '@/components/kern/Kennwerte';
@@ -39,7 +41,7 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Einstieg: Kennzeile, H1 auf der Achse, Vorspann */}
+      {/* Einstieg: Kennzeile, H1 auf der Achse, Vorspann; rechts das Planblatt mit Zeitband und Schriftfeld */}
       <Einstieg
         etikett={
           <>
@@ -51,6 +53,13 @@ export default function AboutPage() {
           <p>
             Über uns und {legalName}: Ihr eingetragener Fliesenleger-Fachbetrieb Tezgel in {headquarters.city} für {business.industryType} – mit bis zu 12 qualifizierten Fachkräften, Firmensitz in {headquarters.city} und im Einsatz in Wetzlar, Gießen und ganz Mittelhessen.
           </p>
+        }
+        rand={
+          // Planblatt (E4-NACH-01, E3-SICHT-ERZ Befund 35): die Jahre der Firmengeschichte als Fliesenstreifen und das
+          // Schriftfeld des Betriebs statt einer leeren rechten Hälfte
+          <Planblatt felder={planfelder('Betrieb')}>
+            <Zeitband />
+          </Planblatt>
         }
       />
 

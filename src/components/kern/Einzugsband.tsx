@@ -22,10 +22,13 @@ export interface EinzugsbandProps {
   /** Slug der aktuellen Stadtseite: der Ort bekommt das Fugenkreuz und aria-current */
   aktuell?: string;
   kompakt?: boolean;
+  /** stapel: Zonen untereinander, auch ab md (schmale Randspalte, Planblatt des Einstiegs; E4-NACH-01) */
+  form?: 'band' | 'stapel';
   className?: string;
 }
 
-export default function Einzugsband({ aktuell, kompakt = false, className }: EinzugsbandProps) {
+export default function Einzugsband({ aktuell, kompakt = false, form = 'band', className }: EinzugsbandProps) {
+  const stapel = form === 'stapel';
   const gruppen = gruppiereNachZone(mitEntfernungAbSitz(CITIES, CITY_HUB_DATA));
   return (
     <div className={clsx('einzugsband relative', className)} data-motion={kompakt ? undefined : 'einzugsband'}>
@@ -33,15 +36,17 @@ export default function Einzugsband({ aktuell, kompakt = false, className }: Ein
         <Fugenkreuz className="size-3 text-laser" />
         <span className="text-tinte">Firmensitz Aßlar</span>
       </p>
-      <ol className="grid grid-cols-1 border-l-2 border-laser md:grid-cols-10">
+      {/* Lot des Firmensitzes: rot nur, wo es der einzige rote Blickfang ist; im Planblatt neben der Laserachse des
+          Einstiegs in Tinte (ein Rot je Bildschirm, E3-SICHT-ERZ Befund 26) – die Firmensitz-Marke bleibt rot */}
+      <ol className={clsx('grid grid-cols-1 border-l-2', stapel ? 'border-tinte' : 'border-laser md:grid-cols-10')}>
         {gruppen.map(({ zone, orte }) => (
-          <li key={zone.id} className={clsx('einzugsband-zone relative border-b border-r border-fuge bg-fliese', BREITE[zone.id])}>
+          <li key={zone.id} className={clsx('einzugsband-zone relative border-b border-r border-fuge bg-fliese', !stapel && BREITE[zone.id])}>
             <span className="einzugsband-kante absolute inset-x-0 top-0 h-px bg-tinte" aria-hidden="true" />
             <div className={kompakt ? 'px-3 pt-1 pb-px' : 'p-4 lg:p-6'}>
               <p className={etikettKlassen}>
                 <span className="text-tinte">{zone.etikett}</span>
               </p>
-              <ul className={clsx('flex flex-col', !kompakt && 'mt-4')}>
+              <ul className={clsx('flex flex-col', !kompakt && 'mt-4', stapel && 'sm:grid sm:grid-cols-2 sm:gap-x-6')}>
                 {orte.map((o) => {
                   const ist = o.slug === aktuell;
                   const inhalt = (
@@ -54,7 +59,7 @@ export default function Einzugsband({ aktuell, kompakt = false, className }: Ein
                     </>
                   );
                   return (
-                    <li key={o.slug} className={clsx(!kompakt && 'border-t border-fuge first:border-t-0')}>
+                    <li key={o.slug} className={clsx(!kompakt && 'border-t border-fuge first:border-t-0', stapel && !kompakt && 'sm:nth-2:border-t-0')}>
                       {kompakt ? (
                         <span className="flex flex-wrap items-center justify-between gap-x-3 font-text text-fs-1 text-tinte">{inhalt}</span>
                       ) : (

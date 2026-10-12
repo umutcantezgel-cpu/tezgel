@@ -525,6 +525,18 @@
       animation: none !important;
     }
   }
+  /* Etikett des Einstiegs unter sm: Glied für Glied untereinander statt mitten im Glied umzubrechen; die Trennkreuze
+     zwischen den Gliedern entfallen dort (E3-SICHT-ERZ Befund 4, E4-NACH-01) */
+  @media (width < 40rem) {
+    .etikett-zeile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing);
+    }
+    .etikett-zeile > svg {
+      display: none;
+    }
+  }
   /* Lesefortschritt (Ratgeber, E3-BAU-10): die Linie wächst mit --lesefortschritt (0–1), ohne Übergang; steht in
      utilities, damit sie den Startzustand scale-x-0 überschreibt */
   .lesefortschritt-linie {

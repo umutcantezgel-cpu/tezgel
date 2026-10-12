@@ -1,9 +1,9 @@
 // Standorte (E3-BAU-04, KERN v2): Erzählansicht nach dem Muster der Startseite und von /leistungen. Einstieg mit
-// Laserachse, H1 links, Vorspann und Knöpfe, rechts ein Verlegeplan ohne Achse. Danach die Leitachse über die
+// Laserachse, H1 links, Vorspann und Knöpfe, rechts das Planblatt mit dem Einzugsband (E4-NACH-01). Danach die Leitachse über die
 // Abschnitte: Gebietskarte (Karte hinter Einwilligung unverändert), Städte als Feldraster mit je einem Link,
 // Leistungen als Merkliste, Orte auf Anfrage, Anfahrt mit Standortkarte, regionaler Kontakt. Der Abschluss steht
 // außerhalb der Leitachse. Wortlaut, Überschriften, Links und IDs wie im Bestand (#karte-ueberschrift,
-// #leistungen-ueberall). Großer Moment: das Einzugsband über den Stadtfeldern (E3-ORCH-03).
+// #leistungen-ueberall). Großer Moment: das Einzugsband im Planblatt des Einstiegs (E3-ORCH-03, E4-NACH-01).
 import Link from 'next/link';
 import { CITIES, type CityData } from '@/config/cities';
 import { COMPANY_DATA } from '@/config/company';
@@ -21,7 +21,7 @@ import Leitachse from '@/components/kern/Leitachse';
 import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Knopf from '@/components/kern/Knopf';
 import Merkliste from '@/components/kern/Merkliste';
-import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import Einzugsband from '@/components/kern/Einzugsband';
 
 export const metadata = createMetadata({
@@ -73,7 +73,7 @@ export default function StandorteOverviewPage() {
     <>
       <JsonLd schema={standorteGraph} />
 
-      {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts der Verlegeplan ohne Achse */}
+      {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, Knöpfe; rechts das Planblatt mit dem Einzugsband */}
       <Einstieg
         art="erzaehl"
         etikett={<>Mittelhessen &amp; Lahn-Dill-Kreis</>}
@@ -96,9 +96,11 @@ export default function StandorteOverviewPage() {
           </>
         }
         rand={
-          <div className="border border-fuge bg-fliese p-6 lg:p-8">
-            <Verlegeplan plan="wohnen" ohneAchse bemassung={false} />
-          </div>
+          // Planblatt (E4-NACH-01, E3-SICHT-ERZ Befund 6): statt eines Badplans ohne Ortsbezug zeigt das Blatt das
+          // Einzugsband ab Aßlar – großer Moment der Seite; die Orte bleiben als Links die Hauptform
+          <Planblatt felder={planfelder('Einsatzgebiet')}>
+            <Einzugsband form="stapel" />
+          </Planblatt>
         }
       />
 
@@ -128,9 +130,8 @@ export default function StandorteOverviewPage() {
             </p>
           }
         >
-          {/* Großer Moment (E3-ORCH-03): das Einzugsband ordnet die Orte in Zonen ab dem Firmensitz Aßlar; darunter die
-              Stadtfelder (Entfernungen dort laut Einleitung ab Wetzlar – Angleichung als Textvorschlag, M-17) */}
-          <Einzugsband className="mb-12" />
+          {/* Stadtfelder (Entfernungen laut Einleitung ab Wetzlar – Angleichung als Textvorschlag, M-17); das Einzugsband
+              ab Aßlar steht seit E4-NACH-01 im Planblatt des Einstiegs */}
           <Feldraster spalten={3}>
             {CITIES.map((city) => (
               <Feld key={city.slug} className="relative">

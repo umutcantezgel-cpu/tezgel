@@ -27,6 +27,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Hinweis from '@/components/kern/Hinweis';
 import Knopf from '@/components/kern/Knopf';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export function generateStaticParams() {
@@ -189,11 +190,12 @@ export default async function ServiceDetailPage({ params }) {
         }
         rand={
           // Seitenwechsel (E3-ORCH-02): derselbe Plan wie im Feld der Leistungsübersicht, gleitet bei „Fachdetails“ hierher
-          <ViewTransition name={`plan-${service.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
-            <div className="border border-fuge bg-fliese p-6 lg:p-8">
+          // Planblatt (E4-NACH-01): nur die Zeichnung trägt den Namen, so gleitet sie aus dem Feld der Übersicht ins Blatt
+          <Planblatt felder={planfelder(service.name, service.id)}>
+            <ViewTransition name={`plan-${service.id}`} share={{ 'plan-vor': 'plan-morph', default: 'none' }} default="none">
               <Verlegeplan plan={service.id} ohneAchse bemassung={false} />
-            </div>
-          </ViewTransition>
+            </ViewTransition>
+          </Planblatt>
         }
       />
 

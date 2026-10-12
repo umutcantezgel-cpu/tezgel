@@ -13,7 +13,8 @@ export interface SchriftfeldFeld {
 
 export interface SchriftfeldProps {
   felder: SchriftfeldFeld[];
-  spalten?: 1 | 2 | 3;
+  /** blatt: Schriftfeld im Planblatt – zwei Spalten, ab md drei */
+  spalten?: 1 | 2 | 3 | 'blatt';
   flaeche?: 'fliese' | 'kalk';
   className?: string;
 }
@@ -22,6 +23,7 @@ const RASTER = {
   1: 'grid-cols-1',
   2: 'grid-cols-1 sm:grid-cols-2',
   3: 'grid-cols-1 sm:grid-cols-3',
+  blatt: 'grid-cols-2 md:grid-cols-3',
 } as const;
 
 export default function Schriftfeld({ felder, spalten = 2, flaeche = 'fliese', className }: SchriftfeldProps) {

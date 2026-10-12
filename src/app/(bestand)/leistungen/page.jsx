@@ -21,6 +21,7 @@ import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
 import Schrittfolge from '@/components/kern/Schrittfolge';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import { etikettKlassen } from '@/components/kern/stile';
 
 const pageUrl = `${SITE_URL}/leistungen`;
@@ -110,9 +111,9 @@ export default function ServiceHubPage() {
           </>
         }
         rand={
-          <div className="border border-fuge bg-fliese p-6 lg:p-8">
+          <Planblatt felder={planfelder('Leistungen', 'grossformat')}>
             <Verlegeplan plan="grossformat" ohneAchse bemassung={false} />
-          </div>
+          </Planblatt>
         }
       />
 

@@ -45,8 +45,9 @@ export default function Einstieg({ formular }: { formular?: ReactNode }) {
 
         <div className="relative grid grid-cols-1 lg:grid-cols-12">
           {/* Zeile 1 · Kennzeile des Blatts */}
-          <p className={clsx(etikettForm, 'text-tinte lg:col-span-6 lg:row-start-1 lg:border-b lg:border-fuge lg:pr-8 lg:pb-3')}>
-            <Fugenkreuz className="size-3 shrink-0 text-strich" />
+          {/* unter sm darf die lange Kennzeile umbrechen: Marke an der ersten Zeile, Text bündig (E4-NACH-01) */}
+          <p className={clsx(etikettForm, 'items-start text-tinte sm:items-center lg:col-span-6 lg:row-start-1 lg:border-b lg:border-fuge lg:pr-8 lg:pb-3')}>
+            <Fugenkreuz className="mt-1 size-3 shrink-0 text-strich sm:mt-0" />
             <span>Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel</span>
           </p>
           <p className={clsx(etikettForm, 'mt-2 text-tinte lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:mt-0 lg:border-b lg:border-fuge lg:pb-3')}>

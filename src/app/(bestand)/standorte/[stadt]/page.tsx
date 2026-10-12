@@ -14,7 +14,7 @@ import Abschnitt from '@/components/kern/Abschnitt';
 import Leitachse from '@/components/kern/Leitachse';
 import { Feld, Feldraster } from '@/components/kern/Feldraster';
 import Knopf from '@/components/kern/Knopf';
-import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
 import QualityPromise from '@/components/sections/QualityPromise';
 import RouteVisualization from '@/components/locations/RouteVisualization';
 import LocationContact from '@/components/locations/LocationContact';
@@ -23,11 +23,11 @@ import FinalCTA from '@/components/ui/FinalCTA';
 import Einzugsband from '@/components/kern/Einzugsband';
 
 // Standortseite (E3-BAU-05, KERN v2): Erzählansicht nach dem Muster der Standorte-Übersicht (E3-BAU-04) und von
-// /leistungen/[id]. Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts ein Verlegeplan ohne Achse. Danach
+// /leistungen/[id]. Einstieg mit Laserachse, H1 links, Vorspann und Knöpfe; rechts das Planblatt mit dem Einzugsband. Danach
 // die Leitachse über die Abschnitte: Kennzahlen, Anfahrt, Einsatzgebiet mit Karte, Leistungen vor Ort als Felder, Orte
 // der Region, regionaler Kontakt und Qualitätsversprechen. Der Abschluss steht außerhalb der Leitachse. Wortlaut,
-// Überschriften, Links, IDs und Lesefolge wie im Bestand. Großer Moment: das Einzugsband (E3-ORCH-03) vor den weiteren
-// Einsatzgebieten, die eigene Stadt mit Fugenkreuz.
+// Überschriften, Links, IDs und Lesefolge wie im Bestand. Großer Moment: das Einzugsband (E3-ORCH-03) im Planblatt des
+// Einstiegs (E4-NACH-01), die eigene Stadt mit Fugenkreuz.
 
 // Stadtfeld: das ganze Feld ist der Link (Fuge statt Karte); der Name unterstreicht sich bei feinem Zeiger
 const STADT_LINK = 'group flex flex-1 flex-col justify-between after:absolute after:inset-0';
@@ -178,9 +178,10 @@ export default async function StandortPage({
           </>
         }
         rand={
-          <div className="border border-fuge bg-fliese p-6 lg:p-8">
-            <Verlegeplan plan="bad" ohneAchse bemassung={false} />
-          </div>
+          // Planblatt (E4-NACH-01, E3-SICHT-ERZ Befund 6): das Einzugsband mit Fugenkreuz am eigenen Ort statt eines Badplans
+          <Planblatt felder={planfelder(city.name)}>
+            <Einzugsband aktuell={city.slug} form="stapel" />
+          </Planblatt>
         }
       />
 
@@ -275,9 +276,6 @@ export default async function StandortPage({
             </p>
           }
         >
-          {/* Großer Moment (E3-ORCH-03): das Einzugsband ordnet alle Orte in Zonen ab dem Firmensitz Aßlar; die eigene
-              Stadt trägt das Fugenkreuz und aria-current */}
-          <Einzugsband aktuell={city.slug} className="mb-12" />
           <Feldraster spalten={3}>
             {nearbyCities.map((nearbyCity) => (
               <Feld key={nearbyCity.slug} className="relative">
