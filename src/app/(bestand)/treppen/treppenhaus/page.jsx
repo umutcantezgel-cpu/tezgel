@@ -1,22 +1,28 @@
-import React from 'react';
+// Treppenhaus (S-18 nach E5-BAU-09, KERN v2): Seitenkörper der Unterseite als Erzählansicht nach dem Muster der
+// Familienreferenz (leistungen/[id], fliesen) und der Schwesterseiten /treppen und /treppen/innentreppe (S-17). Einstieg mit
+// Laserachse, H1 links, Vorspann, Knopf und Telefon; rechts das Planblatt „Treppenhaus sanieren“ mit dem Plan „treppe“
+// (interaktiv, die rote Achse trägt das Blatt). Danach die Leitachse über die Abschnitte, Flächen im Wechsel Fliese/Kalk, damit
+// der Ratgeber auf Fliese vor dem Qualitätsversprechen (Kalk) steht:
+// 2. Anforderungen als Feldraster mit zwei Spalten (Fliese) · 3. Planung und Ablauf als Schrittfolge an der Fuge (Kalk) ·
+// 4. Beläge als Feldraster mit drei Feldern (Fliese) · 5. Podeste und Staubschutz als zwei Texte an der Fuge (Kalk) ·
+// 6. Ratgeber als Register mit dem Weg zur Beratung (Fliese) · Qualitätsversprechen (geteilter Baustein).
+// Kein Auftritt, kein großer Moment.
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand; Metadaten und Daten unverändert. Serverkomponente.
 import Link from 'next/link';
-import {
-    Building2,
-    ArrowRight,
-    Phone,
-    Users,
-    CalendarCheck,
-    Footprints,
-    Layers,
-    DoorOpen,
-    Sparkles,
-    ShieldCheck,
-    CheckCircle2,
-    ClipboardList
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Treppenhaus sanieren: Fliesen & Naturstein | Tezgel',
@@ -27,22 +33,18 @@ export const metadata = createMetadata({
 
 const REQUIREMENTS = [
     {
-        icon: Footprints,
         title: 'Hohe Belastung',
         desc: 'Im Treppenhaus laufen alle Bewohner, Besucher und Lieferdienste über dieselben Stufen – oft mit Straßenschmutz und Splitt an den Sohlen. Gefragt sind abriebfeste, durchgefärbte Materialien.'
     },
     {
-        icon: ShieldCheck,
         title: 'Trittsicherheit',
         desc: 'Matte, rutschhemmende Oberflächen und gut erkennbare Stufenkanten sind im Gemeinschaftsbereich besonders wichtig. Die Rutschhemmung wird nach DIN EN 16165 geprüft und in R-Klassen angegeben.'
     },
     {
-        icon: Sparkles,
         title: 'Reinigung',
         desc: 'Treppenhäuser werden häufig und oft von Reinigungsdiensten gepflegt. Dichte Oberflächen, gut gefüllte Fugen und ein Sockel, der das Wischwasser von der Wand fernhält, erleichtern die Pflege.'
     },
     {
-        icon: Building2,
         title: 'Baustoffanforderungen',
         desc: 'Für Treppenräume können bauordnungsrechtliche Anforderungen an die Baustoffe gelten. Keramik und Naturstein sind nicht brennbar. Ob im konkreten Gebäude weitere Vorgaben bestehen, klären Eigentümer bzw. Verwaltung mit ihrem Planer.'
     }
@@ -50,22 +52,18 @@ const REQUIREMENTS = [
 
 const PROCESS = [
     {
-        icon: ClipboardList,
         title: 'Bestandsaufnahme und Angebot',
         desc: 'Beim Vor-Ort-Termin prüfen wir Stufen, Podeste und Altbelag, messen auf und klären, was erhalten werden kann. Das Angebot ist so gegliedert, dass es sich in der Eigentümerversammlung bzw. gegenüber der Verwaltung gut vorstellen lässt.'
     },
     {
-        icon: Users,
         title: 'Abstimmung mit Eigentümern oder Hausverwaltung',
         desc: 'Ein fester Ansprechpartner stimmt Material, Ablauf und Termine mit der Person ab, die die Gemeinschaft vertritt. Musterplatten helfen bei der Entscheidung. Fragen des Wohnungseigentumsrechts klären Sie bitte mit Ihrer Verwaltung.'
     },
     {
-        icon: CalendarCheck,
         title: 'Abschnittsweise im bewohnten Haus',
         desc: 'Damit das Haus erreichbar bleibt, arbeiten wir nach Absprache abschnittsweise – etwa geschossweise oder Stufe um Stufe im Wechsel, sodass immer ein begehbarer Weg bleibt. Wann frisch verlegte Flächen wieder belastbar sind, hängt vom verwendeten Kleber und Fugenmörtel ab.'
     },
     {
-        icon: CheckCircle2,
         title: 'Gemeinsame Abnahme',
         desc: 'Am Ende gehen wir die Treppe gemeinsam mit Ihnen bzw. der Verwaltung ab. Sie erhalten Hinweise zur Pflege des gewählten Belags.'
     }
@@ -93,186 +91,180 @@ const WEITERLESEN = [
     { title: 'Unser Betrieb', path: '/unternehmen', desc: 'Fachbetrieb aus Aßlar, HWK Wiesbaden' }
 ];
 
+// Hochkant-Plan im Planblatt: mittig, schmaler als das Blatt (wie auf /treppen und /treppen/innentreppe)
+const PLAN_HOCHKANT = 'mx-auto max-w-1/2 md:max-w-1/3 lg:max-w-1/2';
+
+// Zeile des Registers (Ratgeber auf Fliese): die ganze Zeile ist der Link; Hover färbt die Fläche auf Kalk
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-kalk active:bg-kalk';
+// Name in der Zeile: Unterstrich beim Überfahren
+const NAME =
+    'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
+// Text an der Fuge (Podeste, Staubschutz): Oberkante als Tinte-Linie, Überschrift (h2 wie im Bestand) und Text im Lesemaß
+const FUGENTEXT = 'border-t border-tinte pt-6';
+const FUGENTEXT_TITEL = 'font-anzeige text-fs-5 text-tinte';
+const FUGENTEXT_TEXT = 'mt-4 max-w-mass font-text text-fs-3 text-tinte-2';
+
 export default function TreppenhausPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="treppenhaus-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Building2 className="w-3.5 h-3.5" />
-                        Treppen &middot; Mehrfamilienhaus
-                    </span>
-                    <h1 id="treppenhaus-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Treppenhaus sanieren:{' '}
-                        <span className="text-ceramic-gradient">neue Beläge im Mehrfamilienhaus</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus für Trittsicherheit, Schallschutz und repräsentative Optik. Ausgetretene Stufen, gesprungene Platten und unpassend geflickte Podeste erneuern wir für Eigentümer und Hausverwaltungen termintreu und im bewohnten Bestand.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Besichtigung anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-700" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, Knopf und Telefon; rechts das Planblatt „treppe“ */}
+            <section aria-labelledby="treppenhaus-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Treppen &middot; Mehrfamilienhaus</>}
+                    titel={
+                        <span id="treppenhaus-heading">
+                            Treppenhaus sanieren:{' '}
+                            <span>neue Beläge im Mehrfamilienhaus</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Treppenhaus sanieren: neue Beläge im Mehrfamilienhaus für Trittsicherheit, Schallschutz und repräsentative Optik.
+                            Ausgetretene Stufen, gesprungene Platten und unpassend geflickte Podeste erneuern wir für Eigentümer und
+                            Hausverwaltungen termintreu und im bewohnten Bestand.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Besichtigung anfragen
+                            </Knopf>
+                            <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                                <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        // Der Plan „treppe“ steht hochkant (16 × 24): mittig auf halber bzw. (md) einem Drittel der Blattbreite
+                        <Planblatt felder={planfelder('Treppenhaus sanieren', 'treppe')}>
+                            <Verlegeplan plan="treppe" ohneAchse bemassung={false} interaktiv className={PLAN_HOCHKANT} />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Anforderungen */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="anforderungen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow mb-4">Anforderungen</span>
-                    <h2 id="anforderungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Belastung, Sicherheit, Reinigung
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {REQUIREMENTS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li
-                                key={item.title}
-                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-11 h-11 mb-4">
-                                    <Icon className="w-5 h-5" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. ANFORDERUNGEN auf Fliese: vier Felder in zwei Spalten (ohne Restzelle) */}
+                <Abschnitt
+                    titelId="anforderungen-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    etikett="Anforderungen"
+                    titel="Belastung, Sicherheit, Reinigung"
+                >
+                    <Feldraster spalten={2}>
+                        {REQUIREMENTS.map((item) => (
+                            <Feld key={item.title}>
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* Planung & Ablauf */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="planung-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Planung &amp; Ablauf</span>
-                        <h2 id="planung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Von der Eigentümerentscheidung bis zur Abnahme
-                        </h2>
-                    </div>
-                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {PROCESS.map((step, idx) => {
-                            const Icon = step.icon;
+                {/* 3. PLANUNG & ABLAUF: vier Schritte als Schrittfolge am Lot (Nummern nur sichtbar wie im Bestand); der lange
+                    Text je Schritt bleibt im Lesemaß */}
+                <Abschnitt
+                    titelId="planung-heading"
+                    leitachse
+                    spaet
+                    etikett={<>Planung &amp; Ablauf</>}
+                    titel="Von der Eigentümerentscheidung bis zur Abnahme"
+                >
+                    <Schrittfolge nummerStumm schritte={PROCESS.map((step) => ({ titel: step.title, text: step.desc }))} />
+                </Abschnitt>
+
+                {/* 4. BELÄGE auf Fliese: drei Felder; das dritte überspannt in md die freie Breite (keine Restzelle); darunter der
+                    Verweis auf die Kantenlösungen */}
+                <Abschnitt
+                    titelId="belaege-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    etikett="Beläge"
+                    titel="Feinsteinzeug, Granit und andere Natursteine"
+                >
+                    <Feldraster spalten={3}>
+                        {MATERIALS.map((item, i) => {
+                            const letzter = i === MATERIALS.length - 1;
                             return (
-                                <li
-                                    key={step.title}
-                                    className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                                >
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="icon-chip w-11 h-11">
-                                            <Icon className="w-5 h-5" />
-                                        </span>
-                                        <span className="font-display text-4xl font-black tabular-nums text-orange-600/25" aria-hidden="true">
-                                            {String(idx + 1).padStart(2, '0')}
-                                        </span>
-                                    </div>
-                                    <h3 className="text-base font-black text-slate-900 mb-2">{step.title}</h3>
-                                    <p className="text-sm text-slate-700 leading-relaxed">{step.desc}</p>
-                                </li>
+                                <Feld key={item.title} spanne={letzter ? 2 : undefined} className={clsx(letzter && 'lg:col-span-1')}>
+                                    <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.text}</p>
+                                </Feld>
                             );
                         })}
-                    </ol>
-                </div>
-            </section>
+                    </Feldraster>
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
+                        Kantenlösungen wie Gehrung, Stufenprofil oder Stufenplatte vergleichen wir auf der Seite{' '}
+                        <Link href="/treppen/innentreppe" className={linkKlassen}>
+                            Innentreppe fliesen
+                        </Link>
+                        ; für stark frequentierte Treppenhäuser sind Profile oder robuste Stufenplatten oft die praktischere Wahl.
+                    </p>
+                </Abschnitt>
 
-            {/* Beläge */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="belaege-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow mb-4">
-                        <Layers className="w-3.5 h-3.5" />
-                        Beläge
-                    </span>
-                    <h2 id="belaege-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Feinsteinzeug, Granit und andere Natursteine
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {MATERIALS.map((item) => (
-                        <li key={item.title} className="glass-surface p-7 rounded-tile-lg">
-                            <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">{item.text}</p>
-                        </li>
-                    ))}
-                </ul>
-                <p className="mt-8 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
-                    Kantenlösungen wie Gehrung, Stufenprofil oder Stufenplatte vergleichen wir auf der Seite{' '}
-                    <Link href="/treppen/innentreppe" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
-                        Innentreppe fliesen
-                    </Link>
-                    ; für stark frequentierte Treppenhäuser sind Profile oder robuste Stufenplatten oft die praktischere Wahl.
-                </p>
-            </section>
-
-            {/* Podeste & Staubschutz */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10" aria-label="Podeste und Staubschutz">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="ceramic-hero rounded-tile-xl p-8 space-y-3">
-                        <span className="icon-chip w-11 h-11">
-                            <DoorOpen className="w-5 h-5" />
-                        </span>
-                        <h2 className="text-xl font-black text-slate-900">Podeste, Sockel und Übergänge zu Wohnungstüren</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Podeste erhalten dasselbe Fugenraster wie die Stufen. Sockel werden – gestuft an der Treppe,
-                            gerade am Podest – umlaufend gesetzt. Vor Wohnungstüren achten wir auf die Aufbauhöhe: Die Tür
-                            muss weiterhin frei aufgehen, und der Übergang zur Schwelle wird sauber mit einem Profil oder
-                            einer Anschlussfuge ausgebildet.
-                        </p>
+                {/* 5. PODESTE UND STAUBSCHUTZ: Abschnitt ohne eigenen Kopf (Name wie im Bestand), zwei Texte an der Fuge
+                    nebeneinander, die Überschriften bleiben h2 */}
+                <Abschnitt aria-label="Podeste und Staubschutz" leitachse spaet>
+                    <div className="grid gap-12 md:grid-cols-2 md:gap-8 lg:gap-12">
+                        <div className={FUGENTEXT}>
+                            <h2 className={FUGENTEXT_TITEL}>Podeste, Sockel und Übergänge zu Wohnungstüren</h2>
+                            <p className={FUGENTEXT_TEXT}>
+                                Podeste erhalten dasselbe Fugenraster wie die Stufen. Sockel werden – gestuft an der Treppe, gerade am Podest –
+                                umlaufend gesetzt. Vor Wohnungstüren achten wir auf die Aufbauhöhe: Die Tür muss weiterhin frei aufgehen, und der
+                                Übergang zur Schwelle wird sauber mit einem Profil oder einer Anschlussfuge ausgebildet.
+                            </p>
+                        </div>
+                        <div className={FUGENTEXT}>
+                            <h2 className={FUGENTEXT_TITEL}>Staubschutz und Sauberkeit im Gemeinschaftsbereich</h2>
+                            <p className={FUGENTEXT_TEXT}>
+                                Das Entfernen alter Beläge und das Zuschneiden verursachen Staub. Wir schützen angrenzende Flächen und Türen mit
+                                Abdeckungen und Staubschutzwänden, arbeiten mit Absaugung und hinterlassen den Arbeitsbereich besenrein – damit
+                                Bewohner so wenig wie möglich beeinträchtigt werden.
+                            </p>
+                        </div>
                     </div>
-                    <div className="ceramic-hero rounded-tile-xl p-8 space-y-3">
-                        <span className="icon-chip w-11 h-11">
-                            <Sparkles className="w-5 h-5" />
-                        </span>
-                        <h2 className="text-xl font-black text-slate-900">Staubschutz und Sauberkeit im Gemeinschaftsbereich</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Das Entfernen alter Beläge und das Zuschneiden verursachen Staub. Wir schützen angrenzende
-                            Flächen und Türen mit Abdeckungen und Staubschutzwänden, arbeiten mit Absaugung und hinterlassen
-                            den Arbeitsbereich besenrein – damit Bewohner so wenig wie möglich beeinträchtigt werden.
-                        </p>
+                </Abschnitt>
+
+                {/* 6. RATGEBER auf Fliese: Register, je Zeile Titel, Beschreibung und Pfeil; darunter der Weg zur Beratung als
+                    Nebenknopf. Die Fläche trennt den Abschnitt vom folgenden Qualitätsversprechen (Kalk) */}
+                <Abschnitt
+                    titelId="treppenhaus-ratgeber-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    titel="Weiterführende Ratgeber zur Treppenhaussanierung"
+                >
+                    <ul className="border-t border-tinte">
+                        {WEITERLESEN.map((link) => (
+                            <li key={link.path} className="border-b border-fuge">
+                                <Link href={link.path} data-motion="zustand" className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{link.title}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2">{link.desc}</span>
+                                    </span>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/beratung" variante="neben">
+                            Persönliche Treppenberatung anfragen
+                        </Knopf>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
+            </Leitachse>
 
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="treppenhaus-ratgeber-heading">
-                <h2 id="treppenhaus-ratgeber-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
-                    Weiterführende Ratgeber zur Treppenhaussanierung
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {WEITERLESEN.map((link) => (
-                        <li key={link.path}>
-                            <Link
-                                href={link.path}
-                                className="group glass-surface rounded-tile-md p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="font-black text-slate-900 group-hover:text-orange-950 transition-colors flex items-center gap-1">
-                                    {link.title}
-                                    <ArrowRight className="w-4 h-4" />
-                                </span>
-                                <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-                <div className="mt-8">
-                    <Link href="/beratung" className="btn-ghost px-6 py-3 text-xs">
-                        Persönliche Treppenberatung anfragen
-                    </Link>
-                </div>
-            </section>
-
+            {/* 7. QUALITÄTSVERSPRECHEN (geteilter Baustein); einen Abschluss hat die Seite im Bestand nicht */}
             <QualityPromise />
-        </div>
+        </>
     );
 }

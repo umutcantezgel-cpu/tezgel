@@ -1,0 +1,13 @@
+S-18 · Prüfungen 1–9 · /treppen/aussentreppe, /treppen/treppenhaus · 2026-10-12
+1 tsc (flock): Exit 0, keine Ausgabe
+2 eslint (2 Dateien): Exit 0, 0 Fehler, 0 Warnungen
+3 werte.mjs: "2 Dateien · 129 Klassenvorkommen (37 eindeutig)", "befunde gesamt 0", Exit 0
+4 Altsystem-grep: keine Treffer (Exit 1); vorher aussentreppe 83 Treffer/62 Zeilen, treppenhaus 61/45 → 0
+5 texte 4362 → 4350: {"seiten_mit_abweichung":2,"entfernt":0,"hinzu":24,"meta":0,"seo":0,"sitemap_entfernt":0,"sitemap_hinzu":0,"robots_geaendert":false,"kaputte_links":0,"ergebnis":"GRÜN"}
+  hinzu = je 12 Zeilen Schriftfeld des Planblatts (Blatt/Verband/Betrieb/Inhaber/Kammer/Betrieb seit)
+  Lesefolge main: 0 Abweichungen; Überschriften in Reihenfolge gleich; Links gleich; JSON-LD-Hash gleich
+6 einzelbild m390,t768,d1440 je Seite: HTTP 200, Konsole 0, Überlauf 0, Überlappung 0
+7 wortbruch (320,375,768,1024,1440,1920): Wortbrüche: 0
+8 navigation + kontaktwege (mobil, desktop) gegen 4350: 87 passed, 13 skipped, 0 failed (7.6m); kein Formular eingebunden
+  Zusatz axe (m375, d1440): 4 Läufe, ernst/kritisch 0, keine Verstöße
+9 git status: von S-18 nur die 2 Seiten und _relaunch/belege/s-18*

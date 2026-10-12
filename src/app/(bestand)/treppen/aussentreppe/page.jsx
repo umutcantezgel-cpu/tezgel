@@ -1,22 +1,29 @@
-import React from 'react';
+// Außentreppe (S-18 nach E5-BAU-09, KERN v2): Seitenkörper der Unterseite als Erzählansicht nach dem Muster der
+// Familienreferenz (leistungen/[id], fliesen) und der Schwesterseiten /treppen und /treppen/innentreppe (S-17). Einstieg mit
+// Laserachse, H1 links, Vorspann und zwei Knöpfe; rechts das Planblatt „Außentreppe fliesen“ mit dem Plan „treppe“
+// (interaktiv, die rote Achse trägt das Blatt). Danach die Leitachse über die Abschnitte, Flächen im Wechsel Kalk/Fliese:
+// 2. Beanspruchung als Feldraster mit vier Feldern (Kalk) · 3. Typische Schäden als Merkliste im Halbverband (Fliese) ·
+// 4. Aufbau: Kopf seitlich, Liste an der Fuge (Kalk) · 5. Material als Feldraster mit drei Feldern (Fliese) · 6. Sanierung als
+// Schrittfolge waagrecht mit zwei Wegen (Kalk) · 7. Ratgeber als Register (Fliese, trennt vom Qualitätsversprechen) ·
+// Qualitätsversprechen (geteilter Baustein). Kein Auftritt, kein großer Moment.
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand; Metadaten und Daten unverändert. Serverkomponente.
 import Link from 'next/link';
-import {
-    Trees,
-    ArrowRight,
-    Phone,
-    Snowflake,
-    Droplets,
-    Footprints,
-    Ruler,
-    Hammer,
-    AlertTriangle,
-    Layers,
-    Mountain,
-    CheckCircle2
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Außentreppe fliesen: frostsicher & rutschfest | Tezgel',
@@ -27,22 +34,18 @@ export const metadata = createMetadata({
 
 const STRESS = [
     {
-        icon: Droplets,
         title: 'Wasser',
         desc: 'Regen, Schnee und Tauwasser treffen jede Stufe direkt. Dringt Wasser über Fugen oder Hohlstellen unter den Belag, fehlt ihm oft der Weg nach draußen.'
     },
     {
-        icon: Snowflake,
         title: 'Frost-Tau-Wechsel',
         desc: 'Gefriert eingedrungenes Wasser, dehnt es sich aus und sprengt Platten, Kanten und Mörtelbett. Gerade Winter mit häufigem Wechsel von Frost und Tauwetter setzen Außentreppen zu.'
     },
     {
-        icon: Ruler,
         title: 'Temperatur und Sonne',
         desc: 'Belag und Untergrund dehnen sich bei Sonneneinstrahlung unterschiedlich stark. Ohne flexiblen Kleber und fachgerechte Fugen entstehen Spannungen und Ablösungen.'
     },
     {
-        icon: Footprints,
         title: 'Nässe und Schmutz',
         desc: 'Nasses Laub, Moos und Eis machen Stufen rutschig. Die Oberfläche muss auch nass griffig sein und die Stufenkante gut erkennbar bleiben.'
     }
@@ -63,6 +66,38 @@ const BUILDUP = [
     'Überstand der Trittstufe mit ausgebildeter Tropfkante oder passendem Profil, damit Wasser an der Vorderkante abtropft und nicht in die Setzstufe läuft'
 ];
 
+// Material: drei Felder wie im Bestand (Text als JSX, Wortlaut unverändert)
+const MATERIAL = [
+    {
+        title: 'Frostbeständiges Feinsteinzeug',
+        text: (
+            <>
+                Feinsteinzeug nimmt kaum Wasser auf und ist deshalb in der Regel frostbeständig – maßgeblich ist die Herstellerangabe zur
+                Frostbeständigkeit. Für Stufen im Freien empfiehlt sich als Richtwert eine Rutschhemmung von R11 (Prüfung nach DIN EN 16165).
+            </>
+        )
+    },
+    {
+        title: 'Naturstein',
+        text: (
+            <>
+                Ob ein Naturstein frostbeständig ist, hängt von der Sorte und ihrer Wasseraufnahme ab – Granit und viele Quarzite sind gut
+                geeignet, manche Kalksteine nicht. Geflammte oder gestockte Oberflächen sind außen deutlich griffiger als polierte.
+            </>
+        )
+    },
+    {
+        title: 'Blockstufen als Konstruktion',
+        text: (
+            <>
+                Blockstufen sind massive Stufen aus Naturstein oder Beton, die als eigene Treppenkonstruktion auf ein Fundament bzw. in ein
+                Mörtelbett gesetzt werden – kein Belag auf einer bestehenden Treppe. Sie eignen sich besonders für Hauseingänge und
+                Gartentreppen.
+            </>
+        )
+    }
+];
+
 const RENOVATION = [
     { t: 'Schadensbild aufnehmen', d: 'Klopfprobe, Zustand von Fugen, Kanten und Unterbau, Wasserwege und Anschlüsse an Haus und Tür.' },
     { t: 'Altbelag zurückbauen', d: 'Lose und hohle Platten sowie mürbes Mörtelbett werden entfernt, bis ein tragfähiger Untergrund vorliegt.' },
@@ -77,235 +112,207 @@ const WEITERLESEN = [
     { title: 'Häufige Fragen', path: '/faq', desc: 'Antworten rund um Fliesen und Ablauf' }
 ];
 
+// Hochkant-Plan im Planblatt: mittig, schmaler als das Blatt (wie auf /treppen und /treppen/innentreppe)
+const PLAN_HOCHKANT = 'mx-auto max-w-1/2 md:max-w-1/3 lg:max-w-1/2';
+
+// Zeile des Registers (Ratgeber auf Fliese): die ganze Zeile ist der Link; Hover färbt die Fläche auf Kalk
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-kalk active:bg-kalk';
+// Name in der Zeile: Unterstrich beim Überfahren
+const NAME =
+    'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
+// Liste an der Fuge: Fugenkreuz als Marke, Text in Textschrift im Lesemaß (wie auf /treppen)
+function FugenListe({ eintraege, className }) {
+    return (
+        <ul className={clsx('border-t border-fuge', className)}>
+            {eintraege.map((item) => (
+                <li key={item} className="flex gap-3 border-b border-fuge py-4 font-text text-fs-2 text-tinte">
+                    <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                        <Fugenkreuz className="size-3" />
+                    </span>
+                    <span className="min-w-0 max-w-mass">{item}</span>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
 export default function AussentreppePage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="aussentreppe-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Trees className="w-3.5 h-3.5" />
-                        Treppen &middot; Außenbereich
-                    </span>
-                    <h1 id="aussentreppe-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Außentreppe fliesen: frostsicher &amp; rutschfest bei{' '}
-                        <span className="text-ceramic-gradient">Tezgel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Außentreppe und Hauseingang frostsicher fliesen &amp; sanieren: Fliesenleger-Fachbetrieb Tezgel belegt Stufen und Podeste mit rutschfesten Platten, normgerechtem Gefälle und dauerhafter Verbundabdichtung in Wetzlar &amp; Aßlar.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Außentreppe begutachten lassen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/treppen" className="btn-ghost px-7 py-3.5 text-xs">
-                            Alle Treppentypen
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Beanspruchung */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="beanspruchung-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow mb-4">Besondere Beanspruchung</span>
-                    <h2 id="beanspruchung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Warum Außentreppen mehr aushalten müssen
-                    </h2>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {STRESS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li
-                                key={item.title}
-                                className="group glass-surface p-7 rounded-tile-lg hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-11 h-11 mb-4">
-                                    <Icon className="w-5 h-5" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-950 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Typische Schäden */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="schaeden-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">
-                            <AlertTriangle className="w-3.5 h-3.5" />
-                            Typische Schäden
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „treppe“ */}
+            <section aria-labelledby="aussentreppe-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Treppen &middot; Außenbereich</>}
+                    titel={
+                        <span id="aussentreppe-heading">
+                            Außentreppe fliesen: frostsicher &amp; rutschfest bei{' '}
+                            <span>Tezgel</span>
                         </span>
-                        <h2 id="schaeden-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Frostabplatzungen, lose Platten, Ausblühungen
-                        </h2>
-                    </div>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {DAMAGE.map((item) => (
-                            <li key={item.title} className="p-7 rounded-tile-lg bg-slate-50 border border-slate-200">
-                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
+                    }
+                    vorspann={
+                        <p>
+                            Außentreppe und Hauseingang frostsicher fliesen &amp; sanieren: Fliesenleger-Fachbetrieb Tezgel belegt Stufen und
+                            Podeste mit rutschfesten Platten, normgerechtem Gefälle und dauerhafter Verbundabdichtung in Wetzlar &amp; Aßlar.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Außentreppe begutachten lassen
+                            </Knopf>
+                            <Knopf href="/treppen" variante="neben">
+                                Alle Treppentypen
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        // Der Plan „treppe“ steht hochkant (16 × 24): mittig auf halber bzw. (md) einem Drittel der Blattbreite
+                        <Planblatt felder={planfelder('Außentreppe fliesen', 'treppe')}>
+                            <Verlegeplan plan="treppe" ohneAchse bemassung={false} interaktiv className={PLAN_HOCHKANT} />
+                        </Planblatt>
+                    }
+                />
+            </section>
+
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. BEANSPRUCHUNG: vier Felder (ab lg in einer Reihe, md zwei Spalten – keine Restzelle) */}
+                <Abschnitt
+                    titelId="beanspruchung-heading"
+                    leitachse
+                    spaet
+                    etikett="Besondere Beanspruchung"
+                    titel="Warum Außentreppen mehr aushalten müssen"
+                >
+                    <Feldraster spalten={4}>
+                        {STRESS.map((item) => (
+                            <Feld key={item.title}>
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
                         ))}
-                    </ul>
-                    <p className="mt-8 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 3. TYPISCHE SCHÄDEN auf Fliese: Merkliste im Halbverband (Titel bleiben h3), darunter der Verweis auf die
+                    Schadensanalyse */}
+                <Abschnitt
+                    titelId="schaeden-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    etikett="Typische Schäden"
+                    titel="Frostabplatzungen, lose Platten, Ausblühungen"
+                >
+                    <Merkliste spalten={2} verband titelAls="h3" eintraege={DAMAGE.map((item) => ({ titel: item.title, text: item.desc }))} />
+                    <p className="mt-12 max-w-mass font-text text-fs-2 text-tinte-2">
                         Die Ursache eines Schadens klären wir vor Ort, bevor wir eine Lösung vorschlagen – mehr dazu unter{' '}
-                        <Link href="/schadensanalyse" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
+                        <Link href="/schadensanalyse" className={linkKlassen}>
                             Schadensanalyse
                         </Link>
                         .
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Aufbau */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="aufbau-heading">
-                <div className="text-center max-w-3xl mx-auto mb-10">
-                    <span className="eyebrow mb-4">
-                        <Layers className="w-3.5 h-3.5" />
-                        Aufbau
-                    </span>
-                    <h2 id="aufbau-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Gefälle, Abdichtung, Entwässerung
-                    </h2>
-                </div>
-                <ul className="glass-surface rounded-tile-xl p-7 sm:p-10 space-y-4">
-                    {BUILDUP.map((item) => (
-                        <li key={item} className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                            <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
-                <p className="mt-6 text-sm text-slate-700 leading-relaxed text-center">
-                    Auch außen gilt: Die Steigungen sollen gleichmäßig bleiben. Wie Belagdicken und Ausgleich geplant
-                    werden, lesen Sie im{' '}
-                    <Link href="/treppen" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
-                        Treppen-Überblick
-                    </Link>
-                    .
-                </p>
-            </section>
+                {/* 4. AUFBAU: Kopf seitlich, rechts die fünf Punkte als Liste an der Fuge und der Verweis auf den Überblick */}
+                <Abschnitt titelId="aufbau-heading" leitachse spaet kopf="seitlich" etikett="Aufbau" titel="Gefälle, Abdichtung, Entwässerung">
+                    <FugenListe eintraege={BUILDUP} />
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
+                        Auch außen gilt: Die Steigungen sollen gleichmäßig bleiben. Wie Belagdicken und Ausgleich geplant werden, lesen Sie im{' '}
+                        <Link href="/treppen" className={linkKlassen}>
+                            Treppen-Überblick
+                        </Link>
+                        .
+                    </p>
+                </Abschnitt>
 
-            {/* Material & Trittsicherheit */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="material-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow mb-4">Material &amp; Trittsicherheit</span>
-                        <h2 id="material-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Frostfeste Keramik, Naturstein oder Blockstufe
-                        </h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="glass-surface p-7 rounded-tile-lg">
-                            <span className="icon-chip w-11 h-11 mb-4">
-                                <Snowflake className="w-5 h-5" />
-                            </span>
-                            <h3 className="font-black text-base text-slate-900 mb-2">Frostbeständiges Feinsteinzeug</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">
-                                Feinsteinzeug nimmt kaum Wasser auf und ist deshalb in der Regel frostbeständig – maßgeblich
-                                ist die Herstellerangabe zur Frostbeständigkeit. Für Stufen im Freien empfiehlt sich als
-                                Richtwert eine Rutschhemmung von R11 (Prüfung nach DIN EN 16165).
-                            </p>
-                        </div>
-                        <div className="glass-surface p-7 rounded-tile-lg">
-                            <span className="icon-chip w-11 h-11 mb-4">
-                                <Mountain className="w-5 h-5" />
-                            </span>
-                            <h3 className="font-black text-base text-slate-900 mb-2">Naturstein</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">
-                                Ob ein Naturstein frostbeständig ist, hängt von der Sorte und ihrer Wasseraufnahme ab – Granit
-                                und viele Quarzite sind gut geeignet, manche Kalksteine nicht. Geflammte oder gestockte
-                                Oberflächen sind außen deutlich griffiger als polierte.
-                            </p>
-                        </div>
-                        <div className="glass-surface p-7 rounded-tile-lg">
-                            <span className="icon-chip w-11 h-11 mb-4">
-                                <Hammer className="w-5 h-5" />
-                            </span>
-                            <h3 className="font-black text-base text-slate-900 mb-2">Blockstufen als Konstruktion</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">
-                                Blockstufen sind massive Stufen aus Naturstein oder Beton, die als eigene Treppenkonstruktion
-                                auf ein Fundament bzw. in ein Mörtelbett gesetzt werden – kein Belag auf einer bestehenden
-                                Treppe. Sie eignen sich besonders für Hauseingänge und Gartentreppen.
-                            </p>
-                        </div>
-                    </div>
-                    <p className="mt-8 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
-                        Für die Stufenkante gelten außen zusätzlich Frost und Wasserablauf: Gehrungskanten brauchen
-                        besonders dichtes Material und einen vollflächigen Verbund, Profile müssen für außen geeignet sein.
-                        Den allgemeinen Vergleich der Kantenlösungen finden Sie unter{' '}
-                        <Link href="/treppen/innentreppe" className="font-bold text-orange-800 hover:text-orange-700 hover:underline underline-offset-2">
+                {/* 5. MATERIAL auf Fliese: drei Felder; das dritte überspannt in md die freie Breite (keine Restzelle); darunter
+                    der Verweis auf die Kantenlösungen */}
+                <Abschnitt
+                    titelId="material-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    etikett={<>Material &amp; Trittsicherheit</>}
+                    titel="Frostfeste Keramik, Naturstein oder Blockstufe"
+                >
+                    <Feldraster spalten={3}>
+                        {MATERIAL.map((item, i) => {
+                            const letzter = i === MATERIAL.length - 1;
+                            return (
+                                <Feld key={item.title} spanne={letzter ? 2 : undefined} className={clsx(letzter && 'lg:col-span-1')}>
+                                    <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                    <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.text}</p>
+                                </Feld>
+                            );
+                        })}
+                    </Feldraster>
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
+                        Für die Stufenkante gelten außen zusätzlich Frost und Wasserablauf: Gehrungskanten brauchen besonders dichtes Material und
+                        einen vollflächigen Verbund, Profile müssen für außen geeignet sein. Den allgemeinen Vergleich der Kantenlösungen finden Sie
+                        unter{' '}
+                        <Link href="/treppen/innentreppe" className={linkKlassen}>
                             Innentreppe fliesen
                         </Link>
                         .
                     </p>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Sanierung Schritt für Schritt */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="sanierung-heading">
-                <div className="ceramic-hero rounded-tile-xl p-8 sm:p-12 space-y-5">
-                    <span className="eyebrow eyebrow-neutral">Sanierung</span>
-                    <h2 id="sanierung-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                        Außentreppe sanieren – Schritt für Schritt
-                    </h2>
-                    <ol className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {RENOVATION.map((step, idx) => (
-                            <li key={step.t} className="rounded-tile-md bg-white/80 border border-slate-200 p-5">
-                                <span className="font-display block text-3xl font-black tabular-nums text-orange-600/40 mb-2" aria-hidden="true">
-                                    {String(idx + 1).padStart(2, '0')}
-                                </span>
-                                <h3 className="font-black text-slate-900 mb-1">{step.t}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{step.d}</p>
+                {/* 6. SANIERUNG: vier Schritte als Schrittfolge (ab lg waagrecht, Nummern nur sichtbar wie im Bestand), darunter
+                    die zwei Wege */}
+                <Abschnitt
+                    titelId="sanierung-heading"
+                    leitachse
+                    spaet
+                    etikett="Sanierung"
+                    titel="Außentreppe sanieren – Schritt für Schritt"
+                >
+                    <Schrittfolge
+                        ausrichtung="waagrecht"
+                        nummerStumm
+                        schritte={RENOVATION.map((step) => ({ titel: step.t, text: step.d }))}
+                    />
+                    <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
+                            Vor-Ort-Termin anfragen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 7. RATGEBER auf Fliese: Register, je Zeile Titel, Beschreibung und Pfeil; die ganze Zeile ist der Link. Die
+                    Fläche trennt den Abschnitt vom folgenden Qualitätsversprechen (Kalk) */}
+                <Abschnitt
+                    titelId="aussentreppe-ratgeber-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    titel={<>Weiterführende Ratgeber zu Außentreppen &amp; Eingangsbereichen</>}
+                >
+                    <ul className="border-t border-tinte">
+                        {WEITERLESEN.map((link) => (
+                            <li key={link.path} className="border-b border-fuge">
+                                <Link href={link.path} data-motion="zustand" className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{link.title}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2">{link.desc}</span>
+                                    </span>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
+                                </Link>
                             </li>
                         ))}
-                    </ol>
-                    <div className="flex flex-wrap gap-3.5 pt-2">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
-                            Vor-Ort-Termin anfragen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-700" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                    </div>
-                </div>
-            </section>
+                    </ul>
+                </Abschnitt>
+            </Leitachse>
 
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="aussentreppe-ratgeber-heading">
-                <h2 id="aussentreppe-ratgeber-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
-                    Weiterführende Ratgeber zu Außentreppen &amp; Eingangsbereichen
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {WEITERLESEN.map((link) => (
-                        <li key={link.path}>
-                            <Link
-                                href={link.path}
-                                className="group glass-surface rounded-tile-md p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="font-black text-slate-900 group-hover:text-orange-950 transition-colors flex items-center gap-1">
-                                    {link.title}
-                                    <ArrowRight className="w-4 h-4" />
-                                </span>
-                                <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
+            {/* 8. QUALITÄTSVERSPRECHEN (geteilter Baustein); einen Abschluss hat die Seite im Bestand nicht */}
             <QualityPromise />
-        </div>
+        </>
     );
 }
