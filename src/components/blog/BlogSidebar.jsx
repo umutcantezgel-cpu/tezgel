@@ -4,6 +4,7 @@ import { useContent } from '@/contexts/ContentContext';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
+import { zeichenFuer } from '@/components/blog/BlogCard';
 import { etikettKlassen, feldKlassen } from '@/components/kern/stile';
 import { COMPANY_DATA } from '@/config/company';
 
@@ -13,7 +14,8 @@ const KATEGORIE =
 
 /**
  * Blog Sidebar Component
- * Features: Sticky behavior, search, category filter, consultation CTA
+ * Features: ein Feld mit Fugen zwischen Suche, Kategorien und Beratung (keine Zwischenräume), search, category filter,
+ * consultation CTA. Nicht haftend: das Feld ist höher als der Bildschirm, haftend würde es unter den Kopf laufen.
  * (View counts and Popular Posts removed)
  */
 const BlogSidebar = ({
@@ -30,9 +32,9 @@ const BlogSidebar = ({
     );
 
     return (
-        <div className="sticky top-24 space-y-6">
+        <div className="divide-y divide-fuge border border-fuge bg-fliese">
             {/* Suche */}
-            <div className="border border-fuge bg-fliese p-6">
+            <div className="p-6">
                 <p className={etikettKlassen}>
                     <Fugenkreuz className="size-3 shrink-0 text-strich" />
                     Suche
@@ -49,32 +51,38 @@ const BlogSidebar = ({
 
             {/* Kategorien */}
             {categories.length > 1 && (
-                <div className="border border-fuge bg-fliese p-6">
+                <div className="p-6">
                     <p className={etikettKlassen}>
                         <Fugenkreuz className="size-3 shrink-0 text-strich" />
                         Kategorien
                     </p>
                     <div className="mt-4 flex flex-col gap-2">
-                        {categories.map(category => (
-                            <button
-                                type="button"
-                                key={category.id}
-                                onClick={() => setActiveCategory(category.id)}
-                                aria-pressed={activeCategory === category.id}
-                                className={KATEGORIE}
-                            >
-                                <span className="font-semibold">{category.name}</span>
-                                {activeCategory === category.id && (
-                                    <Icon name="pfeil-rechts" groesse={5} />
-                                )}
-                            </button>
-                        ))}
+                        {categories.map(category => {
+                            const zeichen = zeichenFuer(category.id);
+                            return (
+                                <button
+                                    type="button"
+                                    key={category.id}
+                                    onClick={() => setActiveCategory(category.id)}
+                                    aria-pressed={activeCategory === category.id}
+                                    className={KATEGORIE}
+                                >
+                                    <span className="flex min-w-0 items-center gap-2">
+                                        {zeichen && <Icon name={zeichen} groesse={5} />}
+                                        <span className="font-semibold">{category.name}</span>
+                                    </span>
+                                    {activeCategory === category.id && (
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    )}
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
             )}
 
             {/* Beratung */}
-            <div className="border border-fuge bg-fliese p-6">
+            <div className="p-6">
                 <p className="font-anzeige text-fs-4 text-tinte">Beratung gewünscht?</p>
                 <p className="mt-2 font-text text-fs-2 text-tinte-2">
                     Fragen zu Badsanierung, Fliesen oder Abdichtung? {COMPANY_DATA.owner.fullName} berät Sie

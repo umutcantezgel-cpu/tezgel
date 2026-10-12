@@ -1111,5 +1111,11 @@
   "ansicht": "d1440",
   "alt": "Cookie-Einstellungen",
   "vermerk": "E4-NACH-03: ab lg steht „Cookie-Einstellungen“ einmal als Schild-Knopf am Ende der Rechtszeile (gleiche Funktion, Name „Cookie-Einstellungen verwalten“); der gleichlautende Link aus navigation.js ist dort ausgeblendet (E3-SICHT-ARB Befund 8)"
+ },
+ {
+  "seite": "/blog",
+  "teil": "alt",
+  "alt_muster": ".+",
+  "vermerk": "E4-NACH-14: Listen- und Hervorhebungsbilder der Ratgeber-Liste durch gezeichnete Themenmotive ersetzt (dekorativ, ohne Alt-Text; E3-SICHT-ARB Befund 24, M-19) – Fotos bleiben auf den Artikelseiten"
  }
 ]

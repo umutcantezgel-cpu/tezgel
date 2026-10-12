@@ -1,13 +1,12 @@
 "use client";
 import Link from 'next/link';
-import Image from 'next/image';
 import { useBlogListe } from '@/lib/formulare/useBlogListe';
-import BlogCard from '@/components/blog/BlogCard';
+import BlogCard, { Themenmotiv, zeichenFuer } from '@/components/blog/BlogCard';
 import BlogSidebar from '@/components/blog/BlogSidebar';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import Knopf from '@/components/kern/Knopf';
-import { etikettKlassen, feldKlassen, wahlKlassen } from '@/components/kern/stile';
+import { etikettKlassen, feldKlassen, labelKlassen, wahlKlassen } from '@/components/kern/stile';
 
 // Filter-Insel der Ratgeber-Liste /blog: Hook und das davon abhängige Markup (Suche und Kategorien mobil, Hervorhebung,
 // Liste, Leerzustand, Seitenleiste). Reihenfolge und Texte wie im Bestand; Zeilen an der Fuge statt Karten.
@@ -30,40 +29,47 @@ export default function BlogFilter() {
     <div className="grid grid-cols-4 gap-y-12 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
       <div className="col-span-4 min-w-0 md:col-span-8 lg:col-span-8">
 
-        {/* Suche und Kategorien (mobil und Tablett) */}
+        {/* Suche (sichtbar beschriftet) und Kategorien als querlaufende Zeile (mobil und Tablett) */}
         <div className="mb-8 flex flex-col gap-4 border-b border-fuge pb-6 lg:hidden">
-          <input
-            type="text"
-            aria-label="Ratgeber durchsuchen"
-            placeholder="Ratgeber durchsuchen..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className={feldKlassen}
-          />
+          <div>
+            <label htmlFor="blog-suche-mobil" className={labelKlassen}>Ratgeber durchsuchen</label>
+            <input
+              id="blog-suche-mobil"
+              type="text"
+              placeholder="Ratgeber durchsuchen..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={feldKlassen}
+            />
+          </div>
 
           {visibleCategories.length > 0 && (
-            <div className="flex flex-wrap gap-2">
+            <div className="-mx-1 flex snap-x gap-2 overflow-x-auto px-1 py-1">
               <button
                 type="button"
                 onClick={() => setActiveCategory('all')}
                 aria-pressed={activeCategory === 'all'}
-                className={wahlKlassen}
+                className={`${wahlKlassen} shrink-0 snap-start gap-2`}
               >
                 {activeCategory === 'all' && <Fugenkreuz className="size-3 shrink-0" />}
                 Alle Themen
               </button>
-              {visibleCategories.map(category => (
-                <button
-                  type="button"
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  aria-pressed={activeCategory === category.id}
-                  className={wahlKlassen}
-                >
-                  {activeCategory === category.id && <Fugenkreuz className="size-3 shrink-0" />}
-                  {category.name}
-                </button>
-              ))}
+              {visibleCategories.map(category => {
+                const zeichen = zeichenFuer(category.id);
+                return (
+                  <button
+                    type="button"
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    aria-pressed={activeCategory === category.id}
+                    className={`${wahlKlassen} shrink-0 snap-start gap-2`}
+                  >
+                    {activeCategory === category.id && <Fugenkreuz className="size-3 shrink-0" />}
+                    {zeichen && <Icon name={zeichen} groesse={4} />}
+                    {category.name}
+                  </button>
+                );
+              })}
             </div>
           )}
         </div>
@@ -76,16 +82,10 @@ export default function BlogFilter() {
               data-motion="zustand"
               className="group grid border border-fuge bg-fliese transition-colors dauer-1 ease-setzen hover:border-strich md:grid-cols-2"
             >
-              <div className="relative h-32 border-b border-fuge md:h-auto md:border-b-0 md:border-r">
-                <Image
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
+              <Themenmotiv
+                kategorie={featuredPost.category}
+                className="aspect-3/2 w-full border-b border-fuge bg-fliese md:aspect-auto md:border-b-0 md:border-r"
+              />
 
               <div className="flex min-w-0 flex-col gap-4 p-6 sm:p-8">
                 <p className={etikettKlassen}>

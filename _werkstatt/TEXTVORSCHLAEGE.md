@@ -60,6 +60,7 @@ TEXTE-Regel: Mikrotexte (Knöpfe, Labels, Badges/Etiketten, Alt-Texte, Zustands-
 | E4-NACH-03 | Fuß, Rechtszeile (`Footer.jsx`, `CookieConsent.tsx`) | ab lg Link „Cookie-Einstellungen“ und Knopf „Cookie-Einstellungen“ nebeneinander | ab lg nur der Knopf (gleiche Funktion, Name „Cookie-Einstellungen verwalten“); unter lg der Link | doppelter Eintrag (E3-SICHT-ARB Befund 8) |
 | E4-NACH-04 | Qualitätsversprechen (`QualityPromise.jsx`, 56 Seiten) | je Punkt „Punkt 01“ … „Punkt 08“ und Fuß „Garantierter Standard“ (8×) | Nummer „01“ … „08“; „Garantierter Standard“ einmal im Etikett („HWK Fachbetrieb · HWK Wiesbaden · Garantierter Standard“) | Wiederholung (E3-SICHT-ERZ Befund 5) |
 | E4-NACH-05 | Express-Anfrage Schritt 1 (`TezgelAnfrageFunnel/Schritt1.jsx`) | Eckmarken „Sehr beliebt“, „Großformat“, „Frostsicher“, „Präzision“, „DIN-Norm“ | (entfallen; Daten in `useAnfrageFunnel` unverändert) | wertende Marken ohne Beleg (E3-SICHT-ERZ Befund 7, E3-SICHT-ARB Befund 6) |
+| E4-NACH-14 | Ratgeber-Liste `/blog` (`BlogCard.jsx`, `BlogFilter.jsx`) | Listenbilder mit Alt-Text = Beitragstitel; Suchfeld mobil nur mit `aria-label` | gezeichnetes Themenmotiv je Kategorie (dekorativ, ohne Alt-Text); sichtbares Label „Ratgeber durchsuchen“ (gleicher Name); Trenner „·“ in der Kennzeile | Fotowiederholung und Generatoranmutung (E3-SICHT-ARB Befund 24, M-19); sichtbare Beschriftung (E3-BAU-09) |
 
 ## Vorschläge (Überschriften, Fließtext)
 | Paket | Fundstelle | heute | Vorschlag | Grund |
