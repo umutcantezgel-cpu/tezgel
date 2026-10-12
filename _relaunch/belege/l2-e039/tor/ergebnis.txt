@@ -1,0 +1,15 @@
+T2 · l2-e039 · live e41b65f → 0adf516 · Seiten /fliesen/konfigurator,/fliesen,/fliesen/kueche,/standorte/giessen,/standorte/limburg,/standorte/wetzlar,/leistungen/bad/wetzlar · 2026-10-12T13:36:42+00:00
+01-sperrklinke 0 
+02-reinraum 0 
+03-bereich 0 {"html_abweichend":["fliesen/auf-fussbodenheizung.html","fliesen/festpreisangebot.html","fliesen/fliesenarten.html","fliesen/flur-diele.html","fliesen/grossformat.html","fliesen/holzoptik.html","fliesen/konfigurator.html","fliesen/kueche.html","fliesen/neubau.html","fliesen/renovierung.html","fliesen/verlegemuster.html","fliesen/verlegetechnik.html","fliesen.html","leistungen/aussen/asslar.html","leistungen/aussen/bad-nauheim.html","leistungen/aussen/braunfels.html","leistungen/aussen/butzbach.html","leistungen/aussen/dillenburg.html","leistungen/aussen/friedberg.html","leistungen/aussen/giess
+04-werte 0 Bericht: _relaunch/belege/l2-e039/tor/werte/2026-10-12T13-42-36-475Z.json
+05-altsystem 0 
+06-texte2 0 → belege/l2-e039/tor/06-texte2-vergleich.json
+07-server 0 
+08-axe 0 ernst/kritisch auf den Seiten des Schritts 0
+09-a11y-zusatz-lauf 0 forced {"ohne_grenze":237,"davon_mit_grafik":179,"felder_ohne_grenze":6,"laeufe":14,"fehler":0} ohnejs {"text_unter_80":0,"erster_bildschirm_versteckt":0,"erster_bildschirm_ebenso_mit_js":0,"navigation_fehlt":0,"kopf_ohne_interne_links":0,"laeufe":14,"fehler":0} 
+10-wortbruch 0 Wortbrüche: 0 {}
+11-fotos-lauf 0 {"aufnahmen":28,"fehler":0,"nicht200":0,"ueberlauf":0,"konsole":0}
+12-specs 1 [1A[2K  1 failed   26 skipped   379 passed (7.4m) 
+13-pixel 0 pixel: 16 Vergleiche · abweichend 0
+T2 ROT · /home/user/tezgel/_relaunch/belege/l2-e039/tor/ergebnis.txt
