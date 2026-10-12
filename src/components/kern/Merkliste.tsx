@@ -21,6 +21,8 @@ export interface MerklisteProps {
   /** Mono-Etikett „Punkt 01“ über dem Titel; mit verband nur die Nummer „01“ */
   nummeriert?: boolean;
   flaeche?: 'fliese' | 'tinte';
+  /** Element des Eintragstitels: p (Standard) oder h3, wo die Einträge im Bestand Überschriften waren (Gliederung bleibt) */
+  titelAls?: 'p' | 'h3';
   className?: string;
 }
 
@@ -32,8 +34,9 @@ const RASTER = {
 const nummerZiffer = (i: number) => String(i + 1).padStart(2, '0');
 const nummer = (i: number) => `Punkt ${nummerZiffer(i)}`;
 
-export default function Merkliste({ eintraege, spalten = 1, verband = false, nummeriert = false, flaeche = 'fliese', className }: MerklisteProps) {
+export default function Merkliste({ eintraege, spalten = 1, verband = false, nummeriert = false, flaeche = 'fliese', className, titelAls = 'p' }: MerklisteProps) {
   const tinte = flaeche === 'tinte';
+  const Titel = titelAls;
 
   if (verband) {
     return (
@@ -48,7 +51,7 @@ export default function Merkliste({ eintraege, spalten = 1, verband = false, num
           >
             {nummeriert && <span className={clsx('w-8 shrink-0 font-mono text-fs-2', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{nummerZiffer(i)}</span>}
             <div className="min-w-0 flex-1">
-              <p className={clsx('font-anzeige text-fs-4 font-semibold', tinte ? 'text-kalk' : 'text-tinte')}>{e.titel}</p>
+              <Titel className={clsx('font-anzeige text-fs-4 font-semibold', tinte ? 'text-kalk' : 'text-tinte')}>{e.titel}</Titel>
               {e.text && <div className={clsx('mt-2 text-fs-2 text-pretty hyphens-auto', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{e.text}</div>}
             </div>
           </li>
@@ -65,7 +68,7 @@ export default function Merkliste({ eintraege, spalten = 1, verband = false, num
             <Fugenkreuz className={clsx('mt-2 size-3 shrink-0', tinte ? 'text-nacht-2' : 'text-strich')} />
             <div className="min-w-0 flex-1">
               {nummeriert && <p className={clsx('font-mono text-fs-1', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{nummer(i)}</p>}
-              <p className={clsx('font-anzeige text-fs-4 font-semibold', nummeriert && 'mt-2', tinte ? 'text-kalk' : 'text-tinte')}>{e.titel}</p>
+              <Titel className={clsx('font-anzeige text-fs-4 font-semibold', nummeriert && 'mt-2', tinte ? 'text-kalk' : 'text-tinte')}>{e.titel}</Titel>
               {e.text && <div className={clsx('mt-2 text-fs-2 text-pretty hyphens-auto', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{e.text}</div>}
               {e.fuss && <div className={clsx('mt-4 border-t pt-4', tinte ? 'border-nacht-fuge' : 'border-fuge')}>{e.fuss}</div>}
             </div>
@@ -81,7 +84,7 @@ export default function Merkliste({ eintraege, spalten = 1, verband = false, num
         <li key={i} className={clsx('flex flex-col p-6 lg:p-8', tinte ? 'bg-tinte' : 'bg-fliese')}>
           <div className="flex flex-1 flex-col">
             {nummeriert && <p className={clsx('font-mono text-fs-1', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{nummer(i)}</p>}
-            <p className={clsx('font-anzeige text-fs-3 font-semibold', nummeriert && 'mt-4', tinte ? 'text-kalk' : 'text-tinte')}>{e.titel}</p>
+            <Titel className={clsx('font-anzeige text-fs-3 font-semibold', nummeriert && 'mt-4', tinte ? 'text-kalk' : 'text-tinte')}>{e.titel}</Titel>
             {e.text && <div className={clsx('mt-2 text-fs-2 text-pretty hyphens-auto', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{e.text}</div>}
           </div>
           {e.fuss && <div className={clsx('mt-6 border-t pt-4', tinte ? 'border-nacht-fuge' : 'border-fuge')}>{e.fuss}</div>}
