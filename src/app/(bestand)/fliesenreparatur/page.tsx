@@ -1,25 +1,31 @@
-import React from 'react';
+// Fliesenreparatur (E5-BAU-07 · S-16, KERN v2): Seitenkörper der Themenseite als Erzählansicht nach dem Muster der
+// Familienreferenz (leistungen/[id], fliesen) und der Schwesterseite /fliesen/fugensanierung. Einstieg mit Laserachse, H1
+// links, Vorspann und zwei Knöpfe (WhatsApp, Telefon); rechts das Planblatt „reparatur“ mit der markierten Fliese
+// (interaktiv; das Blatt trägt die rote Achse des Plans). Danach die Leitachse über die Abschnitte, Flächen im Wechsel:
+// 2. Leistungen und Erstmaßnahmen (Fliese): Liste an der Fuge, daneben der Warnkasten „Wasser tritt aus?“ · 3. Austausch
+// (Kalk): vier Schritte als Schrittfolge · 4. Ersatzfliesen (Fliese), Kopf seitlich: drei Wege als Merkliste · 5. Grenzen
+// (Kalk): Liste an der Fuge, daneben zwei Felder mit Verweis · 6. Kundenstimme mit Anriss (Fliese) · 7. Reparatur anfragen
+// (Kalk), Kopf seitlich: Fotoliste, Erreichbarkeit, zwei Wege · 8. Weiterführende Ratgeber als Register (Fliese).
+// Danach das Qualitätsversprechen (geteilter Baustein).
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand. Kein Auftritt und kein großer Moment. `spaet` auf allen
+// Abschnitten unter dem ersten Bildschirm (keine Sprungziele, keine Formulare). Metadaten unverändert. Serverkomponente.
 import Link from 'next/link';
-import {
-    Wrench,
-    Phone,
-    MessageCircle,
-    ArrowRight,
-    CheckCircle2,
-    Droplets,
-    Grid,
-    Palette,
-    AlertTriangle,
-    ScanSearch,
-    Camera,
-    Clock,
-    Star,
-    Quote
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { REVIEWS } from '@/config/reviews';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 
 export const metadata = createMetadata({
     title: 'Fliesenreparatur Wetzlar & Aßlar | Fliesen Tezgel',
@@ -34,6 +40,13 @@ const REPAIRS = [
     'Ausgebrochene Zementfugen und gerissene Silikonfugen',
     'Beschädigte Stufenkanten und lose Stufenplatten',
     'Bohrlöcher nach einem Umbau oder Fliesen hinter entfernten Einbauten'
+];
+
+const WATER_STEPS = [
+    'Absperrventil bzw. Hauptabsperrhahn hinter dem Wasserzähler schließen',
+    'Elektrische Geräte im betroffenen Bereich nur stromlos schalten, wenn das gefahrlos möglich ist',
+    'Wasser aufnehmen und den Schaden für die Versicherung fotografieren',
+    'Einen Installateur mit der Behebung der Leckage beauftragen'
 ];
 
 const REPLACE_STEPS = [
@@ -56,6 +69,13 @@ const NOT_WORTH_IT = [
     'Es sind so viele Ersatzfliesen nötig, dass keine passenden mehr zu bekommen sind'
 ];
 
+const PHOTO_TIPS = [
+    'eine Nahaufnahme des Schadens',
+    'ein Übersichtsfoto des Raums bzw. der Fläche',
+    'Format der Fliese (z. B. mit Zollstock im Bild)',
+    'ob noch Restfliesen vorhanden sind'
+];
+
 const WEITERLESEN = [
     { title: 'Fugensanierung', path: '/fliesen/fugensanierung', desc: 'Silikon- und Zementfugen erneuern' },
     { title: 'Schadensanalyse', path: '/schadensanalyse', desc: 'Ursachen vor Ort klären' },
@@ -63,286 +83,263 @@ const WEITERLESEN = [
     { title: 'Häufige Fragen', path: '/faq', desc: 'Antworten rund um Fliesen und Ablauf' }
 ];
 
+// Zeile des Registers (Ratgeber auf Fliese): die ganze Zeile ist der Link; Überfahren färbt die Fläche auf Kalk
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-kalk active:bg-kalk';
+// Name in der Zeile: Unterstrich beim Überfahren
+const NAME =
+    'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+// Überschrift eines Felds bzw. einer Spalte (H2 im Bestand, eine Stufe unter den Abschnittsköpfen)
+const FELD_TITEL = 'font-anzeige text-fs-5 text-tinte';
+
+// Liste an der Fuge: Fugenkreuz als Marke, Text in Textschrift (wie /treppen)
+function FugenListe({ eintraege, className }: { eintraege: string[]; className?: string }) {
+    return (
+        <ul className={clsx('border-t border-fuge', className)}>
+            {eintraege.map((item) => (
+                <li key={item} className="flex gap-3 border-b border-fuge py-4 font-text text-fs-2 text-tinte">
+                    <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                        <Fugenkreuz className="size-3" />
+                    </span>
+                    <span className="min-w-0">{item}</span>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
 export default function FliesenreparaturPage() {
     const review = REVIEWS.find((r) => r.id === 'christian-d');
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="reparatur-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Wrench className="w-3.5 h-3.5" />
-                        Service &middot; Reparaturen &amp; kleinere Arbeiten
-                    </span>
-                    <h1 id="reparatur-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Fliesenreparatur und kleine Arbeiten:{' '}
-                        <span className="text-ceramic-gradient">einzelne Fliesen, Fugen, Sockel</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Nicht jeder Schaden erfordert einen neuen Boden. Eine gesprungene Fliese, eine lose Sockelfliese
-                        oder eine bröselnde Fuge lassen sich oft gezielt ausbessern. Als HWK-Fachbetrieb mit bis zu 12 Handwerkern aus{' '}
-                        {COMPANY_DATA.headquarters.city} übernehmen wir auch kleinere Arbeiten – sorgfältig ausgeführt,
-                        nach vereinbartem Termin.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            Fotos per WhatsApp senden
-                        </a>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            {/* Was repariert wird + Wasseraustritt */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-label="Leistungen und Erstmaßnahmen">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="glass-surface p-8 rounded-tile-xl space-y-4">
-                        <h2 className="text-xl font-black text-slate-900 flex items-center gap-3">
-                            <span className="icon-chip w-11 h-11">
-                                <Grid className="w-5 h-5 text-orange-600" />
-                            </span>
-                            Was repariert wird
-                        </h2>
-                        <ul className="space-y-3">
-                            {REPAIRS.map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-slate-700 leading-relaxed">
-                                    <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="glass-surface p-8 rounded-tile-xl space-y-4">
-                        <h2 className="text-xl font-black text-slate-900 flex items-center gap-3">
-                            <span className="icon-chip w-11 h-11">
-                                <Droplets className="w-5 h-5 text-orange-600" />
-                            </span>
-                            Wasser tritt aus? Erst absperren, dann Installateur
-                        </h2>
-                        <ol className="space-y-2 text-sm text-slate-700 leading-relaxed list-decimal list-inside marker:text-orange-600 marker:font-bold">
-                            <li>Absperrventil bzw. Hauptabsperrhahn hinter dem Wasserzähler schließen</li>
-                            <li>Elektrische Geräte im betroffenen Bereich nur stromlos schalten, wenn das gefahrlos möglich ist</li>
-                            <li>Wasser aufnehmen und den Schaden für die Versicherung fotografieren</li>
-                            <li>Einen Installateur mit der Behebung der Leckage beauftragen</li>
-                        </ol>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Leitungsarbeiten gehören nicht zu unserem Handwerk. Sobald die Leitung repariert und der
-                            Untergrund trocken ist, erneuern wir Fliesen und Abdichtung – nach vereinbartem Termin.
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „reparatur“ */}
+            <section aria-labelledby="reparatur-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Service &middot; Reparaturen &amp; kleinere Arbeiten</>}
+                    titel={
+                        <span id="reparatur-heading">
+                            Fliesenreparatur und kleine Arbeiten:{' '}
+                            <span>einzelne Fliesen, Fugen, Sockel</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Nicht jeder Schaden erfordert einen neuen Boden. Eine gesprungene Fliese, eine lose Sockelfliese
+                            oder eine bröselnde Fuge lassen sich oft gezielt ausbessern. Als HWK-Fachbetrieb mit bis zu 12 Handwerkern aus{' '}
+                            {COMPANY_DATA.headquarters.city} übernehmen wir auch kleinere Arbeiten – sorgfältig ausgeführt,
+                            nach vereinbartem Termin.
                         </p>
-                    </div>
-                </div>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href={COMPANY_DATA.contact.whatsappLink} extern vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
+                                Fotos per WhatsApp senden
+                            </Knopf>
+                            <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                                <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Fliesenreparatur', 'reparatur')}>
+                            <Verlegeplan plan="reparatur" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Einzelne Fliesen austauschen */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="austausch-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Einzelne Fliesen austauschen</span>
-                        <h2 id="austausch-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            So bleiben Abdichtung und Nachbarfliesen geschützt
-                        </h2>
-                    </div>
-                    <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {REPLACE_STEPS.map((step, idx) => (
-                            <li
-                                key={step.t}
-                                className="group p-7 rounded-tile-lg bg-slate-50 border border-slate-200 hover:bg-white hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="font-display block text-4xl font-black tabular-nums text-orange-600/25 group-hover:text-orange-600/40 transition-colors mb-3" aria-hidden="true">
-                                    {String(idx + 1).padStart(2, '0')}
-                                </span>
-                                <h3 className="text-base font-black text-slate-900 mb-2">{step.t}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{step.d}</p>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
-            </section>
-
-            {/* Kein Ersatz mehr lieferbar */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="ersatz-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">
-                        <Palette className="w-3.5 h-3.5" />
-                        Ersatzfliesen
-                    </span>
-                    <h2 id="ersatz-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Kein Ersatz mehr lieferbar?
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Fliesen werden in Chargen produziert; selbst dieselbe Serie kann nach Jahren in Farbton und Maß
-                        leicht abweichen. Eine exakt passende Ersatzfliese lässt sich deshalb nicht immer beschaffen. Diese
-                        Wege haben sich bewährt:
-                    </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {NO_LONGER_AVAILABLE.map((item) => (
-                        <li key={item.t} className="glass-surface p-7 rounded-tile-xl">
-                            <h3 className="font-black text-base text-slate-900 mb-2">{item.t}</h3>
-                            <p className="text-sm text-slate-700 leading-relaxed">{item.d}</p>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
-            {/* Grenzen + Fugen/Schadensanalyse */}
-            <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10" aria-label="Grenzen der Reparatur">
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                    <div className="lg:col-span-3 p-8 rounded-tile-xl bg-slate-50 border border-slate-200">
-                        <h2 className="text-xl font-black text-slate-900 mb-4 flex items-center gap-2">
-                            <AlertTriangle className="w-5 h-5 text-amber-500" />
-                            Wann eine Reparatur nicht mehr sinnvoll ist
-                        </h2>
-                        <ul className="space-y-3">
-                            {NOT_WORTH_IT.map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-slate-700 leading-relaxed">
-                                    <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="mt-4 text-sm text-slate-700 leading-relaxed">
-                            Dann würde eine Reparatur nur das Symptom beheben. Sinnvoller ist eine Teil- oder
-                            Komplettsanierung – wir sagen Ihnen offen, was sich lohnt.
-                        </p>
-                    </div>
-                    <div className="lg:col-span-2 space-y-6">
-                        <div className="p-7 rounded-tile-xl bg-orange-50/50 border border-orange-200/60 space-y-2">
-                            <h2 className="text-lg font-black text-slate-900">Fugen und Silikon erneuern</h2>
-                            <p className="text-sm text-slate-700 leading-relaxed">
-                                Sitzen die Fliesen fest und nur die Fugen sind verschlissen, genügt oft eine Fugensanierung.
-                            </p>
-                            <Link href="/fliesen/fugensanierung" className="inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
-                                Zur Fugensanierung
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
+            <Leitachse>
+                {/* 2. LEISTUNGEN UND ERSTMASSNAHMEN (ein Abschnitt wie im Bestand, zwei H2): links was repariert wird als Liste an
+                    der Fuge, rechts der Warnkasten (Gestalt wie kern/Hinweis „warn“) mit den vier Erstmaßnahmen, Nummer in Mono.
+                    Zier-Icons der Überschriften entfallen (Flucht an der Inhaltskante); das Hinweiszeichen gehört zum Warnkasten */}
+                <Abschnitt aria-label="Leistungen und Erstmaßnahmen" flaeche="fliese" leitachse spaet>
+                    <div className="grid gap-y-16 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="lg:col-span-6">
+                            <h2 className="text-fs-6 text-tinte">Was repariert wird</h2>
+                            <FugenListe eintraege={REPAIRS} className="mt-8" />
                         </div>
-                        <div className="p-7 rounded-tile-xl bg-orange-50/50 border border-orange-200/60 space-y-2">
-                            <h2 className="text-lg font-black text-slate-900 flex items-center gap-2">
-                                <ScanSearch className="w-5 h-5 text-orange-600" />
-                                Ursache unklar?
+
+                        <div className="self-start border border-l-2 border-tinte bg-kalk p-6 lg:col-span-6 lg:p-8">
+                            <h2 className={clsx(FELD_TITEL, 'flex items-start gap-3')}>
+                                <Icon name="hinweis" groesse={6} className="mt-1" />
+                                <span className="min-w-0">Wasser tritt aus? Erst absperren, dann Installateur</span>
                             </h2>
-                            <p className="text-sm text-slate-700 leading-relaxed">
-                                Wenn Risse wiederkehren oder Feuchtigkeit im Spiel ist, klären wir zuerst die Ursache.
+                            <ol className="mt-6 border-t border-fuge">
+                                {WATER_STEPS.map((step, idx) => (
+                                    <li key={step} className="flex gap-4 border-b border-fuge py-3 font-text text-fs-2 text-tinte">
+                                        <span aria-hidden="true" className="w-6 shrink-0 font-mono text-fs-1 leading-6 text-tinte-2">
+                                            {String(idx + 1).padStart(2, '0')}
+                                        </span>
+                                        <span className="min-w-0">{step}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                            <p className="mt-6 font-text text-fs-2 text-tinte-2">
+                                Leitungsarbeiten gehören nicht zu unserem Handwerk. Sobald die Leitung repariert und der
+                                Untergrund trocken ist, erneuern wir Fliesen und Abdichtung – nach vereinbartem Termin.
                             </p>
-                            <Link href="/schadensanalyse" className="inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
-                                Zur Schadensanalyse
-                                <ArrowRight className="w-4 h-4" />
-                            </Link>
                         </div>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Review */}
-            {review && (
-                <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-label="Kundenstimme">
-                    <figure className="glass-surface rounded-tile-xl p-7 sm:p-10 text-center">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <span className="flex items-center gap-0.5 text-amber-500" aria-label={`${review.rating} von 5 Sternen`}>
+                {/* 3. EINZELNE FLIESEN AUSTAUSCHEN: vier Schritte als Schrittfolge (ab lg waagrecht); Nummern bleiben für
+                    Screenreader stumm wie im Bestand */}
+                <Abschnitt
+                    titelId="austausch-heading"
+                    leitachse
+                    spaet
+                    etikett="Einzelne Fliesen austauschen"
+                    titel="So bleiben Abdichtung und Nachbarfliesen geschützt"
+                >
+                    <Schrittfolge
+                        ausrichtung="waagrecht"
+                        nummerStumm
+                        schritte={REPLACE_STEPS.map((step) => ({ titel: step.t, text: step.d }))}
+                    />
+                </Abschnitt>
+
+                {/* 4. ERSATZFLIESEN: Kopf links mit Einleitung, rechts die drei bewährten Wege als Merkliste (H3 wie im Bestand) */}
+                <Abschnitt
+                    titelId="ersatz-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Ersatzfliesen"
+                    titel="Kein Ersatz mehr lieferbar?"
+                    einleitung={
+                        <p>
+                            Fliesen werden in Chargen produziert; selbst dieselbe Serie kann nach Jahren in Farbton und Maß
+                            leicht abweichen. Eine exakt passende Ersatzfliese lässt sich deshalb nicht immer beschaffen. Diese
+                            Wege haben sich bewährt:
+                        </p>
+                    }
+                >
+                    <Merkliste spalten={1} titelAls="h3" eintraege={NO_LONGER_AVAILABLE.map((item) => ({ titel: item.t, text: item.d }))} />
+                </Abschnitt>
+
+                {/* 5. GRENZEN DER REPARATUR (ein Abschnitt wie im Bestand, drei H2): links die Grenzen als Liste an der Fuge mit
+                    Schluss, rechts zwei Felder an der Fuge mit je einem Verweis (Fugensanierung, Schadensanalyse) */}
+                <Abschnitt aria-label="Grenzen der Reparatur" leitachse spaet>
+                    <div className="grid gap-y-16 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="lg:col-span-7">
+                            <h2 className="max-w-mass text-fs-6 text-tinte">Wann eine Reparatur nicht mehr sinnvoll ist</h2>
+                            <FugenListe eintraege={NOT_WORTH_IT} className="mt-8" />
+                            <p className="mt-6 max-w-mass font-text text-fs-3 text-tinte-2">
+                                Dann würde eine Reparatur nur das Symptom beheben. Sinnvoller ist eine Teil- oder
+                                Komplettsanierung – wir sagen Ihnen offen, was sich lohnt.
+                            </p>
+                        </div>
+
+                        <div className="grid gap-px self-start border border-fuge bg-fuge lg:col-span-5">
+                            <div className="flex flex-col bg-fliese p-6 lg:p-8">
+                                <h2 className={FELD_TITEL}>Fugen und Silikon erneuern</h2>
+                                <p className="mt-3 font-text text-fs-2 text-tinte-2">
+                                    Sitzen die Fliesen fest und nur die Fugen sind verschlissen, genügt oft eine Fugensanierung.
+                                </p>
+                                <Knopf href="/fliesen/fugensanierung" variante="text" icon="pfeil-rechts" className="mt-4 self-start">
+                                    Zur Fugensanierung
+                                </Knopf>
+                            </div>
+                            <div className="flex flex-col bg-fliese p-6 lg:p-8">
+                                <h2 className={FELD_TITEL}>Ursache unklar?</h2>
+                                <p className="mt-3 font-text text-fs-2 text-tinte-2">
+                                    Wenn Risse wiederkehren oder Feuchtigkeit im Spiel ist, klären wir zuerst die Ursache.
+                                </p>
+                                <Knopf href="/schadensanalyse" variante="text" icon="pfeil-rechts" className="mt-4 self-start">
+                                    Zur Schadensanalyse
+                                </Knopf>
+                            </div>
+                        </div>
+                    </div>
+                </Abschnitt>
+
+                {/* 6. KUNDENSTIMME: eine Bewertung mit Anriss, Quelle in Mono (wie /treppen/innentreppe); Zitat im Lesemaß */}
+                {review && (
+                    <Abschnitt aria-label="Kundenstimme" flaeche="fliese" breite="mass" leitachse spaet>
+                        <figure className="border-l-2 border-laser-tief pl-6 sm:pl-8">
+                            {/* role="img": ohne Rolle ist aria-label an einem span unzulässig und wird nicht vorgelesen (axe aria-prohibited-attr) */}
+                            <span role="img" className="flex items-center gap-1 text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
                                 {Array.from({ length: review.rating }, (_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
+                                    <Icon key={i} name="stern-voll" groesse={4} />
                                 ))}
                             </span>
-                            <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
-                        </div>
-                        <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed">„{review.text}“</blockquote>
-                        <figcaption className="mt-4 text-sm">
-                            <span className="font-bold text-slate-900">{review.author}</span>
-                            <span className="text-slate-600"> &middot; {review.source}-Rezension &middot; {review.topic}</span>
-                        </figcaption>
-                    </figure>
-                </section>
-            )}
+                            <blockquote className="mt-4 max-w-mass font-text text-fs-4 text-tinte">„{review.text}“</blockquote>
+                            <figcaption className="mt-4 font-text text-fs-2 text-tinte">
+                                <span className="font-semibold">{review.author}</span>
+                                <span className="font-mono text-fs-1 text-tinte-2"> &middot; {review.source}-Rezension &middot; {review.topic}</span>
+                            </figcaption>
+                        </figure>
+                    </Abschnitt>
+                )}
 
-            {/* Reparatur anfragen */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="anfragen-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 space-y-5">
-                    <span className="eyebrow">
-                        <Camera className="w-3.5 h-3.5 text-orange-600" />
-                        Reparatur anfragen
-                    </span>
-                    <h2 id="anfragen-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                        Fotos per WhatsApp senden
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                        Mit ein paar Fotos können wir den Aufwand besser einschätzen. Hilfreich sind:
-                    </p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {[
-                            'eine Nahaufnahme des Schadens',
-                            'ein Übersichtsfoto des Raums bzw. der Fläche',
-                            'Format der Fliese (z. B. mit Zollstock im Bild)',
-                            'ob noch Restfliesen vorhanden sind'
-                        ].map((item) => (
-                            <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                                <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                <span>{item}</span>
+                {/* 7. REPARATUR ANFRAGEN: Kopf links mit Einleitung, rechts die Fotoliste in zwei Spalten an der Fuge, die
+                    Erreichbarkeit (aus COMPANY_DATA) und zwei Wege; der Hauptknopf ist WhatsApp wie im Bestand */}
+                <Abschnitt
+                    titelId="anfragen-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Reparatur anfragen"
+                    titel="Fotos per WhatsApp senden"
+                    einleitung={<p>Mit ein paar Fotos können wir den Aufwand besser einschätzen. Hilfreich sind:</p>}
+                >
+                    <ul className="grid border-t border-fuge sm:grid-cols-2 sm:gap-x-8">
+                        {PHOTO_TIPS.map((item) => (
+                            <li key={item} className="flex gap-3 border-b border-fuge py-4 font-text text-fs-2 text-tinte">
+                                <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                                    <Fugenkreuz className="size-3" />
+                                </span>
+                                <span className="min-w-0">{item}</span>
                             </li>
                         ))}
                     </ul>
-                    <p className="text-sm text-slate-700 flex items-start gap-2">
-                        <Clock className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
+                    <p className="mt-8 flex max-w-mass items-start gap-3 font-text text-fs-2 text-tinte-2">
+                        <Icon name="uhr" groesse={5} className="mt-px text-tinte" />
                         <span>
                             Erreichbar {COMPANY_DATA.hours.formattedWeekdays} und {COMPANY_DATA.hours.formattedSaturday}.
                             Den Termin stimmen wir persönlich mit Ihnen ab.
                         </span>
                     </p>
-                    <div className="flex flex-wrap gap-3.5 pt-2">
-                        <a
-                            href={COMPANY_DATA.contact.whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-button-whatsapp px-7 py-3.5 text-xs"
-                        >
-                            <MessageCircle className="w-4 h-4" />
-                            WhatsApp: {COMPANY_DATA.contact.whatsapp}
-                        </a>
-                        <Link href="/kontakt" className="btn-ghost px-7 py-3.5 text-xs">
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href={COMPANY_DATA.contact.whatsappLink} extern vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
+                            WhatsApp: <span className="font-mono font-normal">{COMPANY_DATA.contact.whatsapp}</span>
+                        </Knopf>
+                        <Knopf href="/kontakt" variante="neben">
                             Kontaktformular
-                        </Link>
+                        </Knopf>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="reparatur-ratgeber-heading">
-                <h2 id="reparatur-ratgeber-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
-                    Weiterführende Ratgeber zur Fliesenreparatur
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {WEITERLESEN.map((link) => (
-                        <li key={link.path}>
-                            <Link
-                                href={link.path}
-                                className="group glass-surface rounded-tile-lg p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="font-black text-slate-900 group-hover:text-orange-700 transition-colors flex items-center gap-1">
-                                    {link.title}
-                                    <ArrowRight className="w-4 h-4" />
-                                </span>
-                                <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+                {/* 8. WEITERFÜHRENDE RATGEBER: Register, je Zeile Titel, Beschreibung und Pfeil; die ganze Zeile ist der Link */}
+                <Abschnitt
+                    titelId="reparatur-ratgeber-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    titel="Weiterführende Ratgeber zur Fliesenreparatur"
+                >
+                    <ul className="border-t border-tinte">
+                        {WEITERLESEN.map((link) => (
+                            <li key={link.path} className="border-b border-fuge">
+                                <Link href={link.path} data-motion="zustand" className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{link.title}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2">{link.desc}</span>
+                                    </span>
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </Abschnitt>
+            </Leitachse>
 
+            {/* 9. QUALITÄTSVERSPRECHEN (geteilter Baustein); einen Abschluss hat die Seite im Bestand nicht */}
             <QualityPromise />
-        </div>
+        </>
     );
 }

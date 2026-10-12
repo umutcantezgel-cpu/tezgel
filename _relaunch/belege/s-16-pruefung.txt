@@ -1,0 +1,25 @@
+S-16 · Prüfungen 1–9 (12.10.2026, Arbeitsbaum main, Dev 4350, Live 4362)
+1 tsc --noEmit -p . (flock)          Exit 0, 0 Fehler (gesamt)
+2 eslint (2 Dateien)                 Exit 0, 0 Fehler, 0 Warnungen
+3 werte.mjs --dateien (2 Dateien)    Exit 0, befunde gesamt 0 (318 Klassenvorkommen, 78 eindeutig)
+4 Altsystem-grep                     keine Treffer (vorher /naturstein/marmor-kalkstein 95 Treffer in 68 Zeilen,
+                                     /fliesenreparatur 97 Treffer in 72 Zeilen)
+5 Texte 4362 -> 4350 (texte.mjs zeichnet spaet-Abschnitte selbst sichtbar)
+  ohne Liste:  entfernt 7, hinzu 33, meta 0, seo 0, kaputte_links 0, ROT
+  --erlaubt s-16-erlaubt.json: entfernt 2, hinzu 33, meta 0, seo 0, kaputte_links 0, ROT
+    entfernt = je Seite Fuß „Cookie-Einstellungen“ (fremd: fehlt im Dev-Lauf auch auf /treppen und /balkon-terrasse,
+               Beleg s-16-probe-fremd; bekannt aus F-07/R-01b), main_zeilen entfernt 0
+    erlaubt  = 5 Einschätzungen der Einsatzbereiche, CSS-Versalien -> Mono-Etikett in Normalschreibung (Quelltext gleich)
+    hinzu    = Schriftfeld des Planblatts (je 12 Zeilen), 5 Einschätzungen in Normalschreibung, Mono-Nummern 01–04 der
+               Erstmaßnahmen (/fliesenreparatur)
+  Überschriften (Folge), Links, alt-Texte, JSON-LD-Hash, title/description/canonical: identisch (beide Seiten)
+  Lesefolge main_zeilen ohne neue Zeilen: /naturstein/marmor-kalkstein 100/100, /fliesenreparatur 104/104 gleich
+  Textprobe (statisch): ENTFERNT nur Texte, die als etikett=/titel= wiederkehren, id=…-heading -> titelId, und die vier
+  Erstmaßnahmen (JSX-Text -> Datenliste WATER_STEPS, Wortlaut gleich); bezeichner.cjs je Datei []
+6 einzelbild m390,t768,d1440 --voll  je Seite 3× HTTP 200, Konsole 0, Überlauf 0, Überlappung 0
+7 wortbruch                          Wortbrüche: 0
+8 Playwright funktion-navigation + funktion-kontaktwege (mobil, desktop): 86 passed, 13 skipped, 1 failed
+  ([desktop] 404 „Zur Startseite“ führt zurück zur Startseite: Dev-Zeitüberschreitung) -> Wiederholung: 2 passed
+  Kein Formular eingebunden
+9 git status                         eigene Änderungen nur in den 2 Seiten und _relaunch/belege/s-16*
+Zusatz axe (m375, d1440): erst 2 × aria-prohibited-attr (Sterne-span mit aria-label ohne Rolle) -> role="img" -> 0

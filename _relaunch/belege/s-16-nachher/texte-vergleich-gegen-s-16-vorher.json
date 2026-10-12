@@ -1,0 +1,77 @@
+{
+ "vorher": "s-16-vorher",
+ "nachher": "s-16-nachher",
+ "seiten": {
+  "/fliesenreparatur": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Fliesenreparatur",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "01",
+     "02",
+     "03",
+     "04"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  },
+  "/naturstein/marmor-kalkstein": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Marmor & Travertin verlegen lassen",
+     "Verband",
+     "Drittelverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Sehr gut geeignet",
+     "Gut geeignet",
+     "Nur mit Einschränkungen",
+     "Sorgfältig abwägen",
+     "Meist ungeeignet"
+    ]
+   },
+   "footer_zeilen": {
+    "entfernt": [
+     "Cookie-Einstellungen"
+    ],
+    "hinzu": []
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 2,
+  "hinzu": 33,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}
