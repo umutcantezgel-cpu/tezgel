@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Verlegeplan from '@/components/kern/Verlegeplan';
-import { linkKlassen } from '@/components/kern/stile';
 
 // Themenmotiv je Kategorie (IDs aus src/config/blog.js): Bad → bad, Pflege → fugen, Abdichtung → abdichtung,
 // Balkon → balkon, Naturstein → naturstein, sonst grossformat (wie in der Liste)
@@ -84,7 +83,7 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                                 <p className="mt-2 font-anzeige text-fs-4 font-semibold text-tinte">
                                     <Link
                                         href={`/blog/${post.slug}`}
-                                        className={`${linkKlassen} after:absolute after:inset-0`}
+                                        className="text-tinte no-underline decoration-strich underline-offset-4 after:absolute after:inset-0 hover:underline focus-visible:underline"
                                     >
                                         {post.title}
                                     </Link>

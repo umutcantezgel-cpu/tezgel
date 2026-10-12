@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { seitenKlassen } from '@/components/kern/stile';
 
 /**
  * Reading Progress Bar Component
  * Zeigt den Scrollfortschritt als 2-px-Linie in Laser am oberen Rand. Der Anteil (0–1) steht in der CSS-Variablen
  * --lesefortschritt; die Klasse lesefortschritt-linie zieht die Linie über scale auf (ohne Übergang, ohne data-motion).
- * Das Prozentfeld entfällt unter lg; ab lg steht es rechts bündig mit der Seitenkante unter dem Kopf, nie darüber.
+ * Ohne Prozentfeld (E4-NACH-15 Nachtrag, E3-SICHT-ARB Befunde 33/35): die Linie zeigt den Fortschritt; ein schwebendes Feld
+ * lag als feste Ebene über Kopf bzw. Text.
  */
 const ReadingProgress = () => {
     const [progress, setProgress] = useState(0);
@@ -44,16 +44,6 @@ const ReadingProgress = () => {
                 />
             </div>
 
-            {/* Prozentfeld: ab lg unter dem Kopf (top-24 = 96 px, Kopf h-16), rechts bündig mit dem Inhalt */}
-            {progress > 5 && progress < 95 && (
-                <div className="pointer-events-none fixed inset-x-0 top-24 z-10 hidden lg:block">
-                    <div className={`${seitenKlassen} flex justify-end`}>
-                        <div className="border border-fuge bg-fliese px-3 py-1 font-mono text-fs-1 text-tinte tabular-nums">
-                            {Math.round(progress)}%
-                        </div>
-                    </div>
-                </div>
-            )}
         </>
     );
 };
