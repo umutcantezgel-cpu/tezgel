@@ -36,8 +36,10 @@ export default function SzeneAblauf({ schritte, plan = 'bad', titelEbene = 'h3',
       data-motion={bewegt ? 'szene-ablauf' : undefined}
     >
       {schritte.slice(0, 3).map((s, i) => (
-        <li key={i} className="flex flex-col bg-fliese p-6 lg:p-8">
-          <div className="szene-plan border border-fuge bg-fliese p-4">
+        // ab lg teilen die drei Stände ihre Zeilen (Subgrid): Plan, Nummer, Untertitel, Titel und Text stehen je Zeile auf
+        // einer Linie, auch wenn der erste Plan mit Bemaßung höher ist (Rückgabe E4-N2-05)
+        <li key={i} className="flex flex-col bg-fliese p-6 lg:row-span-5 lg:grid lg:grid-rows-subgrid lg:gap-y-0 lg:p-8">
+          <div className="szene-plan flex items-center border border-fuge bg-fliese p-4">
             {/* ohne Laserachse: das eine Rot je Bildschirm trägt die Leitachse bzw. der Einstieg (E3-ORCH-01) */}
             <Verlegeplan plan={plan} zustand={ZUSTAENDE[i]} bemassung={i === 0} ohneAchse />
           </div>

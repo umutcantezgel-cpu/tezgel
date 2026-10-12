@@ -1522,5 +1522,11 @@
   "block": "main",
   "entfernt": "Fliesen-Konfigurator Schritt 1: Raum & Einsatzbereich Schritt 2: Untergrund & Bestand Schritt 3: Format, Material & Menge Schritt 4: Zusammenfassung & Kontakt Schritt 1 von 4 Fliesenprojekt vorbereiten Materialbedarf inkl. Verschnitt (Richtwert): Wählen Sie zuerst einen Bereich. 1. Raum & Einsatzbereich Wo soll gefliest werden? Mehrfachauswahl ist möglich. Raum und Einsatzbereich (Mehrfachauswahl) Wohn- & Essbereich Böden in Wohnräumen und offenen Grundrissen Küche Küchenboden und Küchenrückwand Flur & Diele Eingang, Diele, Garderobe Treppe Innen- oder Außentreppe, Tritt- und Setzstufen Balkon & Terrasse Frostsichere Außenbeläge Nur Untergrund / Abdichtung Ausgleich, Entkopplung, Abdichtung Bad, Dusche, Gäste-WC Dafür gibt es eigene Planungswerkzeuge Bitte wählen Sie mindestens einen Bereich aus. Weiter zu Schritt 2",
   "vermerk": "E4-NACH-13 Konfigurator: Werkzeug direkt unter dem Kopf (ARB 12, 13) – Block wortgleich, nur Lage verschoben (vor „So funktioniert es …“ statt danach); Verschiebung, kein Wortverlust – TEXTVORSCHLAEGE"
+ },
+ {
+  "seite": "/leistungen",
+  "teil": "main_zeilen",
+  "alt": "Ausstattungsmerkmale & Vorteile:",
+  "vermerk": "E4-N2-05 Fachgewerke: Merkmal-Etikett → Aufklapper „Merkmale · N“ (Mikrotext) – TEXTVORSCHLAEGE"
  }
 ]
