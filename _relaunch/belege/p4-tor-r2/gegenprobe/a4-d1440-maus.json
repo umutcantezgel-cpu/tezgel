@@ -1,0 +1,188 @@
+{
+ "satz": "gegenprobe-c5ef582",
+ "base": "http://127.0.0.1:4321",
+ "bedingungen": {
+  "ansicht": "d1440",
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "isMobile": false,
+  "hasTouch": false,
+  "dpr": 1,
+  "eingabe": "maus",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "reducedMotion": "no-preference",
+  "locale": "de-DE",
+  "zeitzone": "Europe/Berlin",
+  "feste_zeit": "2026-10-12T08:00:00.000Z",
+  "einwilligung": "erstbesuch",
+  "sperre": "installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)",
+  "warten": "Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s",
+  "aktion_timeout_ms": 30000,
+  "stoerung": null,
+  "werkzeug": "probelauf.mjs 1.0",
+  "banner_erschienen": true
+ },
+ "erstellt": "2026-10-11T15:29:21.817Z",
+ "lauf": "a4-d1440-maus",
+ "aufgabe": 4,
+ "titel": "Eigenen Ort prüfen",
+ "auftrag": "Prüfen Sie, ob der Betrieb auch in Butzbach arbeitet.",
+ "start": "/",
+ "eingabe_datei": "cache/probelauf/eingaben/ausgangsstand/a4-d1440-maus.json",
+ "antwort": "Ja – nach Klick auf „Standorte“ steht „Butzbach 35 km“ in der Stadt-Leiste unter „Unser 45-km-Einsatzgebiet in Mittelhessen“; nach dem Klick darauf „Einsatzgebiet Butzbach“.",
+ "gegenprobe": false,
+ "befunde": [
+  {
+   "schwere": "gering",
+   "schritt": 1,
+   "text": "Der (nicht geschlossene) Einwilligungsbanner verdeckt auf /standorte die H1 „Standorte & Einsatzgebiete in Mittelhessen“."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 1,
+   "text": "Die Blase „Chat starten“ verdeckt den Chip „Butzbach 35 km“ teilweise („Butzbac…“)."
+  },
+  {
+   "schwere": "gering",
+   "schritt": 2,
+   "text": "Klick auf den Stadt-Chip: die Details erscheinen unterhalb der Karte außerhalb des Bildes."
+  }
+ ],
+ "schritte": [
+  {
+   "nr": 0,
+   "art": "start",
+   "eingabe": {
+    "start": "/"
+   },
+   "ergebnis": "ok",
+   "handlungen": 0,
+   "summe": 0,
+   "url": "/",
+   "h1": "Perfektion auf jedem Quadrat­meter. Fliesenverlegung & Badsanierung aus Aßlar",
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "dateien": {
+    "bild": "00-start.jpg",
+    "aria": "00-aria.txt",
+    "sichtbar": "00-sichtbar.txt"
+   },
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "festhalten_ms": {
+    "bild": 57,
+    "aria": 186,
+    "ausschnitt": 26,
+    "bedien": 30
+   },
+   "dauer_ms": 1984
+  },
+  {
+   "nr": 1,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Standorte"
+   },
+   "ergebnis": "ok",
+   "ziel_element": "link \"Standorte\" · nav „Hauptnavigation“",
+   "auswahl": "eindeutig, Stufe rolle-genau",
+   "handlungen": 1,
+   "bildlauf_implizit": 0,
+   "summe": 1,
+   "url": "/standorte",
+   "h1": "Standorte & Einsatzgebiete in Mittelhessen",
+   "scrollY": 0,
+   "ebenen": [
+    "dialog \"Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG\""
+   ],
+   "fokus": null,
+   "spur": null,
+   "hinweise": [],
+   "ruhe": {
+    "netz": "ruhig",
+    "dom": "ruhig",
+    "animation": "keine"
+   },
+   "dateien": {
+    "bild": "01-tippe.jpg",
+    "aria": "01-aria.txt",
+    "sichtbar": "01-sichtbar.txt"
+   },
+   "festhalten_ms": {
+    "bild": 45,
+    "aria": 67,
+    "ausschnitt": 8,
+    "bedien": 17
+   },
+   "dauer_ms": 666
+  },
+  {
+   "nr": 2,
+   "art": "tippe",
+   "eingabe": {
+    "tippe": "Butzbach 35 km"
+   },
+   "ergebnis": "fehler",
+   "grund": "nicht gefunden: kein sichtbares Element „Butzbach 35 km“",
+   "handlungen": 0,
+   "summe": 1,
+   "url": "/standorte",
+   "dateien": {
+    "bild": "02-fehler.jpg",
+    "aria": "02-aria.txt",
+    "sichtbar": "02-sichtbar.txt"
+   },
+   "dauer_ms": 301
+  }
+ ],
+ "handlungen_gesamt": 1,
+ "ziel": {
+  "geprueft": true,
+  "erreicht": true,
+  "bei_schritt": 1,
+  "handlungen_bis_ziel": 1,
+  "bedingungen": [
+   {
+    "name": "Butzbach als Einsatzort bestätigt",
+    "erfuellt": true,
+    "bei_schritt": 1,
+    "treffer": "Butzbach im Bild zusammen mit Einsatzgebiet/Standorten: „…ad Nauheim Friedberg (Hessen) Butzbach Herborn Dillenburg Haiger Braunfels Sol…“"
+   }
+  ]
+ },
+ "abbruch": {
+  "schritt": 2,
+  "eingabe": {
+   "tippe": "Butzbach 35 km"
+  },
+  "grund": "nicht gefunden: kein sichtbares Element „Butzbach 35 km“",
+  "kandidaten": [
+   "link \"Butzbach\" (Ähnlichkeit 0.70)",
+   "link \"Fliesenleger in Butzbach\" (Ähnlichkeit 0.39)",
+   "link \"Datenschutz\" (Ähnlichkeit 0.26)",
+   "link \"Fachgewerke\" (Ähnlichkeit 0.17)",
+   "link \"Bad-Projektcheck\" (Ähnlichkeit 0.14)",
+   "link \"Alle Fachgewerke\" (Ähnlichkeit 0.14)",
+   "link \"Badsanierung komplett\" (Ähnlichkeit 0.12)",
+   "link \"Wetzlar\" (Ähnlichkeit 0.11)"
+  ],
+  "pw_log": null,
+  "url": "/standorte",
+  "dateien": {
+   "bild": "02-fehler.jpg",
+   "aria": "02-aria.txt",
+   "sichtbar": "02-sichtbar.txt"
+  }
+ },
+ "anfragen": [],
+ "verlassen": [],
+ "konsolenfehler": []
+}

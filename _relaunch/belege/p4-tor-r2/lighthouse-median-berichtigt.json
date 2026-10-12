@@ -1,0 +1,7 @@
+{
+ "anlass": "P4-GEG2 N-G: lighthouse.mjs nahm bei gerader Laufzahl den oberen Mittelwert als Median; berichtigt (Mittel der beiden mittleren Werte). Neu gerechnet aus den gespeicherten 10 Läufen je Rolle.",
+ "gegen_live_f2c4180_mobil": {"basis": {"perf": 85.5, "tbt": 251.2, "lcp": 3463.9, "si": 1496.3}, "kandidat": {"perf": 85.0, "tbt": 233.5, "lcp": 3469.0, "si": 1072.4}},
+ "gegen_live_f2c4180_desktop": {"basis": {"perf": 100, "tbt": 16.3, "lcp": 793.8}, "kandidat": {"perf": 100, "tbt": 15.3, "lcp": 795.7}},
+ "gegen_bestand_a8e049f_mobil": {"basis": {"perf": 84.0, "tbt": 152.0, "lcp": 4215.6, "fcp": 1361.9}, "kandidat": {"perf": 86.0, "tbt": 221.0, "lcp": 3463.2, "fcp": 1071.4}},
+ "quellen": ["../t2-c5ef582-gegen-live/lighthouse-vergleich.json", "../t2-c5ef582-gegen-bestand/lighthouse-vergleich.json"]
+}

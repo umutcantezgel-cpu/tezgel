@@ -12,3 +12,5 @@
 | Mutationsprobe (Kopie f2c4180-m, je gebaut) | M1 Suche ohne Kleinschreibung → 2 Fälle rot · M2 „Filter zurücksetzen“ leert die Suche nicht → 3 Fälle rot | `mut-blog-1-tests.log`, `mut-blog-2-tests.log` |
 
 **Urteil: T2 grün.** Push `git push origin HEAD:main` (E-005), danach Live-Rauchtest und Live-Browser (Kennung fest übergeben).
+
+> **Berichtigung (E-036, 11.10.2026):** Die Pixelvergleiche in diesem Beleg sind ungültig. Die Maske von `pixel.mjs` blendete die ganze Seite aus; erkannt wurden nur Höhenänderungen. Nachgeprüft mit dem berichtigten Werkzeug: `../p4-tor-r2/pixel/` (Stichprobe und rückwirkend gegen den Ausgangsstand).

@@ -1,7 +1,7 @@
 // Funktionstests F-13 (Navigation), F-14 (FAQ), F-16 (Blog-Werkzeuge), F-17 (404), F-18 (Login), F-19 (Bewertungs-Karussell).
 // Prüft Verhalten (Zustand, Ziel, Status, Fehlermeldung, Fokus), nicht Aussehen. Keine Wartezeiten, nur Zustandsabfragen.
 // Kein Test gegen die echte Route nötig: keines dieser Elemente sendet an /api/anfrage (Login wird clientseitig abgewiesen).
-import { test, expect, bedienbar, istKern, oeffne, sprunglink } from './fixtures.mjs';
+import { test, expect, bedienbar, istKern, oeffne, sprunglink, RAHMEN_KERN } from './fixtures.mjs';
 
 const ARTIKEL = '/blog/fliesen-reinigen-pflegen';
 
@@ -110,8 +110,10 @@ test.describe('Mega-Menü (Desktop, ab lg)', () => {
 // Am Desktop (1440 px) fehlt der Kern-Schalter ab xl, die Hauptnavigation ist der Zugang. Der Kern-Drawer selbst wird dort
 // knapp unter xl (1279 px) mit Maus und Tastatur geprüft; der Bestand zeigt den Schalter auch bei 1440 px.
 // Weg nach Fassung und Projekt: Kern am Desktop → Breite unter xl, sonst unverändert.
+// E-038: Der gemeinsame Kopf (KERN v2) zeigt die Hauptnavigation auf jeder Seite ab xl ohne Menü-Schalter.
+const kopfAbXl = (pfad) => RAHMEN_KERN || istKern(pfad);
 async function zumDrawer(page, pfad, isMobile) {
-  if (istKern(pfad) && !isMobile) {
+  if (kopfAbXl(pfad) && !isMobile) {
     await expect(menueSchalter(page)).toBeHidden();
     await page.setViewportSize(UNTER_XL);
     await expect(hauptnav(page)).toBeHidden();
@@ -126,7 +128,7 @@ test.describe('Mobilmenü (Drawer)', () => {
       if (isMobile) {
         await expect(hauptnav(page)).toBeHidden();
         await expect(menueSchalter(page)).toBeVisible();
-      } else if (istKern(pfad)) {
+      } else if (kopfAbXl(pfad)) {
         await expect(hauptnav(page)).toBeVisible();
         await expect(menueSchalter(page)).toBeHidden();
       } else {

@@ -1,0 +1,4 @@
+375x812 ohne-js: {"attr":null,"banner":false,"kanal":true,"spb":"65px","pb":"0px","leer_unter_fuss":48}
+375x812 ohne-hydrierung: {"attr":null,"banner":false,"kanal":true,"spb":"65px","pb":"0px","leer_unter_fuss":48}
+1440x900 ohne-js: {"attr":null,"banner":false,"kanal":true,"spb":"16px","pb":"0px","leer_unter_fuss":0}
+1440x900 ohne-hydrierung: {"attr":null,"banner":false,"kanal":true,"spb":"16px","pb":"0px","leer_unter_fuss":0}

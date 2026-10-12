@@ -133,7 +133,7 @@ Der Plan mit diesen Punkten wurde vom Auftraggeber genehmigt (Plan-Freigabe im C
   2. *Schale per Pfad wählen* (Client-Weiche mit `usePathname`, beide Schalen im RSC-Paket aller Seiten) + Schalter je Phase. → doppelte Schale in jeder Seite, alle vier Schriftfamilien überall, Weiche im Client.
   3. *Zwei Routen-Gruppen mit je eigenem Root-Layout:* `src/app/(bestand)/` (heutiges Layout unverändert: Schale, Inter/Jakarta, `globals.css`) und `src/app/(kern)/` (neues Layout: Kern-Schale, Archivo/Plex, eigenes CSS `kern-global.css` mit `@source` nur auf Kern-Code). Neue Seiten entstehen ruhend im privaten Ordner `src/app/(kern)/_entwurf/<route>/` (Unterstrich = nicht geroutet), werden typgeprüft, gelintet und gepusht, sind aber nicht erreichbar und nicht gebaut (private Ordner kompiliert Next nur bei Import) – gebaut und angesehen werden sie im Vorschau-Kandidaten (Plan Runde 3, N-03). **Freischaltung** einer Seite oder eines Clusters = ein Commit, der `_entwurf/<route>` nach `(kern)/<route>` verschiebt und `(bestand)/<route>` entfernt. Getestet wird vorher der **Kandidat**: Reinraum-Kopie + dasselbe Freischalt-Skript (`werkzeuge/freischalten.sh`), also Byte für Byte der spätere Live-Stand. 404 für unbekannte Adressen über `app/global-not-found.tsx` (experimentell, `experimental.globalNotFound`), das die Bestands-Schale rendert, bis die letzte Seite umgezogen ist.
 - **Bewertung:** (3) erfüllt alle vier Ziele: Seiten sind live nie gemischt; Wellen pushen ruhenden Code; alte Seiten behalten ihr CSS unverändert (`globals.css` bekommt nur `@source not` für Kern-Ordner, damit ihr CSS byte-gleich bleibt), neue Seiten tragen nur Kern-CSS und zwei Schriften; framer-motion, lucide, `tokens.css`, Inter/Jakarta und die alte Schale fallen am Ende mit dem letzten Bestandsnutzer weg (E-009/E-010 vereinfacht, P2-GEG-01 Befund 10 erledigt). Nachteil: Wechsel zwischen alter und neuer Seite lädt die Seite voll neu (verschiedene Root-Layouts) – nur in der Übergangszeit, unkritisch. Risiko: `global-not-found` ist experimentell → Kandidat-Prüfung mit Status 404 und Funktionstest F-17; Rückfall: Weg 2 nur für die 404.
-- **Wahl: (3).** Ablauf je Phase: ruhende Wellen → Kandidat-Tor (vollständig) → Freischalt-Commit → Push → Live-Rauchtest. Der Umzug des Bestands nach `(bestand)` ist ein eigener, inhaltsneutraler Schritt (P3-00): HTML aller 172 Dateien normalisiert identisch, Pixel 0.
+- **Wahl: (3).** Ablauf je Phase: ruhende Wellen → Kandidat-Tor (vollständig) → Freischalt-Commit → Push → Live-Rauchtest. Der Umzug des Bestands nach `(bestand)` ist ein eigener, inhaltsneutraler Schritt (P3-00): HTML aller 172 Dateien normalisiert identisch, Pixel 0 (Pixelbeleg ungültig nach E-036; die Endpunkte deckt der rückwirkende Vollvergleich).
 - **Umkehrprobe:** Revert des Freischalt-Commits stellt die Bestandsseite wieder her (sie liegt bis zum Aufräumen am Phasenende in der Historie und im Kandidat-Vergleich). Der Umzug selbst ist per Revert umkehrbar.
 - **Folgen zweiter Ordnung:** (1) P4 heißt nun „Fundament“ ohne globalen Umstieg: vollständige Kern-Bausteine, Vorlagen, Verlegepläne, Icons, Wege (308/410) – die Freischaltungen geschehen clusterweise in P5. (2) Interne Links zwischen alten und neuen Seiten bleiben gleich (URLs unverändert). (3) Metadaten-Vorgaben des Root-Layouts werden in ein gemeinsames Modul gezogen und von beiden Layouts genutzt (JSON-LD-Hash-Invariante). (4) Die Startklasse (Kopfskript) steht nur im Kern-Layout. (5) Dokumentation: Zusammenführen entfällt (main), am Ende von P5 werden `(bestand)` und alle Altbausteine entfernt.
 
@@ -392,3 +392,121 @@ Wegwerf-Baum = Umzug + Minimal-`(kern)` (Layout mit Archivo/Plex, Kopfskript, Be
 - **Wahl: C** (in P4-13, zusammen mit der Banner-Leiste). B ist verworfen (Verlust). A wird zurückgestellt: erst messen, was C bringt. Reicht es nicht, kommt A als eigene Entscheidung mit Werkzeugregel zur Gegenprüfung. Die Werkzeuge müssten dafür aufgeschobene Abschnitte vor dem Lesen darstellen; ob das eine zulässige Messregel ist, entscheidet ein Gegenprüfer.
 - **Zurückgestellt als eigene Pakete (mit build-vergleich, außerhalb Kern):** `TrackingScripts` ohne Bestands-Banner und `company.js` ohne lucide; K-009-Zeitlimit von 2 s (greift bei 4× vor der Hydrierung, volle Neuberechnung, keine Bewegung); Maß-Token `66ch` und `h-lh` (Scroll-Sperre des Menüs, INP).
 - **Messregel:** Lighthouse nur im ruhigen Fenster. Unter Last streute die TBT im selben Build zwischen 240 und 1 450 ms.
+
+## E-034 · Abnahme P4-13 (Banner als Leiste, WhatsApp im Kopf, Kanal nur im Browser, Banner-Zustand vor dem ersten Bild)
+- **Ergebnis der Rückgabe** (Arbeitskopien, vorher HEAD bd6f877 gegen nachher; Belege `belege/p4-13/`):
+  - ohne JS: rot 4 → grün 0
+  - Einleitung bei 1440 und 1920 auf allen sieben Kern-Seiten frei (vorher bis 74 % verdeckt), H1 überall frei
+  - `<html>`-Mutationen nach dem Laden: 2 → 0; Banner-Aufgabe in der Spur 5/5 → 0/5; TBT-Schätzung 213 → 144 ms
+  - a11y-zusatz: harte Kennzahlen 0
+  - axe 57 Läufe 0, Specs 137/0/11, Wortbruch 0, Fotos 0 Fehler
+  - unter lg geometrisch gleich
+- **Orchestrator-Prüfung des Diffs:**
+  - Logik und Texte: Wortlaut, Knopffolge und gleichwertiges Paar des Banners unverändert (E-013). Das Kopfskript liest Cookie und Version nur, aus derselben Quelle wie `useConsent` (`@/lib/cookie-inventory`); keine Logikänderung.
+  - Kanal: mit `useSyncExternalStore` nur im Browser, das Verhalten des Knopfs bleibt (Hook, Verdeckungsprüfung, `id`, Name).
+  - Kopf-Link: echtes `<a>` mit Bestandsziel und Bestandsnamen, Fokus nach K-006.
+  - Die neuen festen Werte stehen als Tokens in `kern.css`.
+  - Lint, typecheck und `npm test` (22/22) grün.
+- **Offene Fragen der Rückgabe – Wahl:**
+  1. **Gegenprobe a3-d1440-maus 6 statt 5 (Bezug 5): begründete Abweichung.** Ohne Banner kostet derselbe Weg in Bestand und Kern 7 Handlungen. Die 5 waren ein Nebeneffekt des großen alten Feldes: Sein scroll-padding von 414 px rollte das Hero-Formular so, dass der Absende-Knopf ins Bild kam. **Auflage P6** (Startseite): Nach dem Ausfüllen des Hero-Formulars liegt „Absenden“ im Bild; Ziel ≤ 5.
+  2. **Einleitung bei 1024 × 768 und 1280 × 800 teils verdeckt: angenommen.** Geometrisch geht es nicht ganz: Die Einleitung reicht dort bis 17 px an den Bildrand oder darüber hinaus, und die schmalste Leiste mit vollem Inhalt ist ~140 px hoch. Vorher war es auf 6 von 7 Seiten bis 97 %, jetzt auf 4 bzw. 3 Seiten weniger. **Auflage** an W1 (`/bad`), W3 (`/standorte`), W8 (`/ueber-uns`) und P6 (`/`): kürzere Einstiege prüfen.
+  3. **Restfall Laufzeitfehler: angenommen.** Laden alle App-Skripte, werfen aber, bleibt am Seitenende Leerraum (152 bzw. 389 px). Inhalt, Links und WhatsApp im Kopf bleiben erreichbar. Eine breitere Sicherung würde bei wiederherstellbaren Hydrierungsfehlern den Platz fälschlich entfernen.
+  4. **Token 360–767 px bleibt `21.25rem`** (gemessen); bei einer zusätzlichen Zeile rollt der Textteil, nichts wird verdeckt.
+- **Berichtigung Punkt 1 (P4-GEG2 N-B, nachgemessen 11.10.2026):** Der Satz „ohne Banner kostet derselbe Weg in Bestand und Kern 7“ war nicht gemessen; gemessen war nur der Kern vorher/nachher. Diagnose ohne Banner (`probelauf.mjs --diagnose-ohne-banner`, Eingabe des Ausgangsstands, `belege/p4-tor-r2/diagnose-a3/`):
+  - **Ausgangsstand 707a93d: 5** (alle vier Felder und „Absenden“ im ersten Bildschirm, kein Bildlauf).
+  - **Live f2c4180** (Kern vor P4-13): **7**.
+  - **Kandidat c5ef582: 7**. Feld 3 liegt unter dem Bildrand (+1 Bildlauf), „Absenden“ auch (+1).
+  - Richtig ist also: Das Hero-Formular des Kerns braucht bei 1440 × 900 ohne Banner **zwei Handlungen mehr als der Ausgangsstand**, seit P3-16 live, für alle wiederkehrenden Besucher. Die Messungen der Tore liefen nur im Erstbesuch; dort verdeckte bis P4-13 das große scroll-padding des alten Banners den Mehraufwand (5), mit der Leiste sind es 6.
+  - **Folge:** Die Auflage „Absenden im Bild“ (bisher P6) wird ein eigenes Paket **P4-15** (Hero-Formular `/` am Desktop vollständig im ersten Bildschirm; Ziel a3-d1440-maus ≤ 5 mit **und** ohne Banner), direkt nach P4-14 und vor W1. In ABNAHME „Offene Abweichungen“ eingetragen.
+- **Nachtrag P4-GEG2 (N-E, N-F, N-O):**
+  - **Kopf mit klassischer Scrollleiste (N-E), gemessen** (`werkzeuge/kopfplatz-scrollleiste.mjs`, ohne `--hide-scrollbars`, Leiste 15 px, `belege/p4-tor-r2/kopfplatz/`):
+    - Kandidat bei 1280 px: Reserve **−3 px** (Bedarf 1 172, verfügbar 1 169); ab 1290 px +7, bei 1296 +13. Live: +21.
+    - Folge: Das Markenfeld wird 3 px schmaler. Der Innenabstand rechts vom Logo sinkt von 16 auf 13 px; das Logo bleibt 128 × 40 (unverändert). Kein Überlauf, kein Umbruch, keine Überlappung.
+    - Angenommen bis **P4-15**: Kopf ab xl so verengen, dass mit 17-px-Leiste ≥ 12 px Reserve bleiben.
+  - **Touch-Weiche am Kopf-Link (N-F):** Der Bestand öffnet WhatsApp auf Touch-Geräten im selben Fenster (`openWhatsApp`), der Kern-Kopf-Link immer in einem neuen Tab (iPad quer ≥ 1024 px). Ziel und Name sind gleich. Ergänzung als progressive Verbesserung in **P4-15**.
+  - **Weitere Restfälle „Platz ohne Banner“ (N-O), angenommen:**
+    - Ein App-Skript schlägt fehl, bevor der Lauscher des Kopfskripts hängt (11 von 12 Skripten stehen vor ihm).
+    - Banner-Blocker blenden den Dialog per CSS aus.
+    - Dann bleiben 152 bzw. 389 px Leerraum am Seitenende samt scroll-padding. Inhalt und Wege bleiben erreichbar. Live ist es heute schlechter: Die alte Messung reservierte bis zur vollen Bildhöhe.
+- **E-013 Nachtrag (Hauptaktion):** Bei d1440 auf `/` liegt die erste Feldzeile des Hero-Formulars unter der Leiste. Frei bleiben der Hauptknopf „Aufmaß anfragen“ im Kopf, die Formular-Überschrift, Telefon und WhatsApp im Kopf; mindestens ein vollständiger Anfrageweg ist frei. Fokus auf ein Feld rollt es über die Leiste (scroll-padding).
+- **MIKROTEXTE:** Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) gestrichen. Es gibt kein neues Wort.
+- **Folge:** P4-13 wirkt sofort auf `/` (live) → T2 für `/` vor dem Push, Lighthouse im ruhigen Fenster (Z-12).
+
+## E-035 · Z-12 TBT `/` nach P4-13: Frist „bis zum P4-Tor“ verfehlt, Maßnahme A (Aufschub) als P4-14 mit Werkzeugregel
+- **Befund (Lighthouse 13.5, mobil, je 10 verschränkte Paare im ruhigen Fenster, Kandidat c5ef582 auf 4324; Belege `belege/t2-c5ef582-gegen-live/`, `belege/t2-c5ef582-gegen-bestand/`):**
+  - gegen Live f2c4180 (4337): Punkte 86 → 85, TBT 253 → 249 ms, LCP 3 465 → 3 469 ms, FCP gleich, Speed Index 1 507 → 1 074 ms, CLS 0; Desktop 100 = 100, TBT 18 = 18. P4-13 macht `/` also nicht langsamer; der Banner steht ab dem ersten Bild (Speed Index besser).
+  - gegen Bestand a8e049f (4323): Punkte 84 → 86, LCP 4 219 → 3 464 ms (−17,9 %), FCP −290 ms, **TBT 159 → 247 ms** (Budget 200).
+  - Die Spur-Schätzung von P4-13 (213 → 144 ms) zeigt sich in Lighthouse nicht: Die Banner-Aufgabe ist weg, aber die übrigen Aufgaben (HTML-Parsen mit Stil und Layout, Framework-Start) tragen die TBT weiter.
+  - Gegenüber E-024 (224 gegen 140 ms) ist der absolute Wert höher, das Verhältnis zum Bestand im selben Fenster ähnlich (1,55 gegen 1,60). Der Anstieg liegt nicht an P4-13 (gegen Live gleich); ein Vergleich im selben Fenster mit bcd8fcb ist nicht möglich (Build verworfen).
+- **Berichtigung (P4-GEG2 N-G, N-N):** `lighthouse.mjs` nahm bei 10 Läufen den oberen Mittelwert als Median. Echte Mediane: gegen Live TBT 251 → 233,5 ms, Punkte 85,5 → 85; gegen Bestand TBT 152 → 221 ms, Punkte 84 → 86, LCP −17,9 % (`belege/p4-tor-r2/lighthouse-median-berichtigt.json`). Verhältnis zum Bestand 1,45 (nicht 1,55). Gegen den letzten Live-T2 vor P4 (5421e5b: 196/141 = 1,39) ist der Abstand während P4 gewachsen, nicht durch P4-13 (gegen Live gleich); verschiedene Fenster, daher nicht schlüssig. Die Folge (keine Freischaltung vor P4-14) bleibt.
+- **Lage:** ABNAHME „Offene Abweichungen“ setzte für Z-12 die Frist „nicht über dem Bestand, ≤ 200 ms bis zum P4-Tor“. Die Frist ist verfehlt. Z-12 ist kein Kriterium des P4-Tors (Z-05, Z-11, Z-13, L3), aber eine Zusage.
+- **Wege:**
+  1. P4-13 zurückhalten, bis die TBT erfüllt ist. Verlust: H1 (ohne JS) und H2 (Banner verdeckt die Einleitung) blieben live offen, obwohl P4-13 die Leistung nicht verschlechtert.
+  2. P4-13 nach bestandenem T2 live; **A (Aufschub, `content-visibility: auto` unter dem Einstieg, P4-12: Lighthouse TBT 292 → 124 ms, Punkte 83 → 89)** als eigenes Paket P4-14, **bevor eine weitere Seite freigeschaltet wird** (W1 `/bad` wartet darauf).
+  3. Abweichung nach L7 dauerhaft annehmen. Verworfen: Der Hebel ist belegt.
+- **Wahl: (2).** Nach K-013 ist `/` nicht schlechter als der Bestand (Punkte +2, LCP −17,9 %), und gegen Live ändert sich nichts.
+  - **Neue Frist:** TBT ≤ 200 ms und ≤ Bestand mit P4-14, vor der Freischaltung von W1.
+  - **Umkehrprobe:** Bringt P4-14 die TBT nicht unter das Budget, oder verlangt die Werkzeugregel einen Sonderweg im Produkt, wird Z-12 nach L7 entschieden. Die Freischaltung weiterer Seiten trägt dann denselben Vorbehalt.
+- **Werkzeugregel für A, zur Entscheidung durch den Gegenprüfer P4-GEG2:**
+  - Nicht dargestellte Abschnitte liefern in Chrome leeres `innerText` und keine Lage. Bei Besuchern ist jeder Abschnitt dargestellt, sobald er ins Bild kommt.
+  - Vorschlag: Werkzeuge, die die ganze Seite auf einmal lesen (a11y-zusatz `forced`/`zoom`, `texte.mjs`, `probelauf.mjs` für Überschriften), setzen im Messkontext einen eingespeisten Stil `.k-aufschub { content-visibility: visible }`. Das ist der Zustand jedes Abschnitts im Bild.
+  - Nicht für Leistung (Lighthouse, INP, Spur), Bewegung und Fotos: Diese messen den echten Zustand.
+  - Kein Eingriff im Produkt (G7). Der Schalter steht in jeder Ausgabe unter „bedingungen“.
+
+## E-036 · Berichtigung: Pixelvergleiche seit P2-PLAN-01 waren blind (Maskenfehler in `pixel.mjs`)
+- **Befund (P4-Tor R2, 11.10.2026):**
+  - Der Vergleich `/` Live gegen Kandidat c5ef582 meldete 0 Abweichungen, obwohl der Kandidat im Kopf einen neuen WhatsApp-Link zeigt (per Foto bestätigt).
+  - Ursache: Die Maske `#whatsapp-floating-btn, *:has(> #whatsapp-floating-btn) { visibility: hidden }` blendete auch das Elternelement des Knopfs aus. Im Kern ist das `<body>`, im Bestand ein `div.contents` mit fast der ganzen Seite (1 316 von 1 421 Elementen). Erschien der Knopf vor der Aufnahme (Leerlauf-Rückruf, praktisch immer), waren beide Aufnahmen nahezu leer.
+  - Erkannt wurden so nur Höhenänderungen (Kategorie „Maße“, z. B. T2 4bd371f `/` +37…+122 px). Die Maske stand so seit der Einführung des Werkzeugs (82a13a8, P2-PLAN-01).
+- **Betroffene Belege** („0 abweichend“ ist dort nicht tragfähig): Pixelzeilen in `belege/t2-5421e5b`, `t2-bcd8fcb`, `t2-ad80754`, `t2-926059b`, `t2-a32b6de`, `t2-35c0883`, `t2-4bd371f`, `t2-ca8d5ff`, `t2-f2c4180`, `t2-8319525`, `t2-56fd0dd`, `t2-74e768c`, `t1-31fc739` sowie P4-GEG M3 (`belege/p4-tor/pixel/`, 64/0).
+  - Die Aussage „Pixeldiff 0 auf allen anderen Seiten“ (P3) stand damit nur auf den übrigen Säulen. Das sind T1 streng (HTML 172 gleich, CSS gleich bzw. nur additiv) für ruhende Pushes, Text v2, die Funktionstests und gesichtete Fotos.
+- **Berichtigung des Werkzeugs (ca2dea6 und Folgecommit):**
+  - Maskiert werden nur noch `#whatsapp-floating-btn` (in beiden Fassungen selbst `position: fixed`) und die zeitabhängige Sprechblase „Chat starten“ des Bestands-Kanals (`[style*="z-index: 9996"]`).
+  - Selbstprüfungen: Abbruch, wenn ein maskiertes Element mehr als 40 Nachfahren hat, und Abbruch bei einer fast einfarbigen Aufnahme (> 98 %).
+  - Positiv-Selbsttest: `--maske body` bricht ab.
+- **Nachprüfung mit dem berichtigten Werkzeug (`belege/p4-tor-r2/pixel/`, `belege/p4-tor-r2/pixel-start/`):**
+  1. `/` Live f2c4180 gegen Kandidat c5ef582: Rauschen 4/0. m375 und t768 gleich; d1440 und d1920 je 4 060 px nur im Kopf (Zeile 8–55: WhatsApp-Link, Navigation rückt zusammen). Das ist erwartet (P4-13).
+  2. M3-Stichprobe (16 Bestandsseiten × 4 Ansichten), Vorschau c5ef582-v gegen Live f2c4180: Rauschen 64/0. Erster Lauf 1 abweichend (`/fliesen` m375: die Sprechblase „Chat starten“, zeitabhängig). Mit ergänzter Maske zwei Wiederholungen je 4/0.
+  3. **Rückwirkend Ausgangsstand 707a93d gegen Live f2c4180** (dieselbe Stichprobe): Abweichend ist nur `/leistungen/aussen`, 76 px in allen vier Ansichten. Das ist der Einwilligungshaken im Anfrageformular, im Ausgangsstand vorab gesetzt und seit P3-00k (N-14, E-014) leer, also gewollt. Ein zusätzlicher Textversatz bei d1920 im ersten Lauf trat bei der Wiederholung nicht auf (Rauschen 4310/4310: 0).
+- **Wahl:**
+  - Die alten Pixelzeilen gelten als „ungültig (E-036)“. Zwischenstände lassen sich nicht nachprüfen, weil die Builds verworfen sind; die Endpunkte (Ausgangsstand gegen heutiges Live) sind verglichen.
+  - Die Stichprobe deckt 16 Seiten. Ein Vollvergleich aller Bestandsseiten (Ausgangsstand gegen Live, 4 Ansichten) läuft als Nachtrag zu diesem Tor.
+- **Umkehrprobe:** Zeigt der Vollvergleich eine ungewollte Abweichung, ist sie ein Befund am Live-Stand und wird vor W1 behoben.
+
+## E-037 · Entscheidung des Auftraggebers: Startseite als Vorbild, Unterseiten einzeln aufwerten, immer auf main, regelmäßige Updates
+- **Wortlaut (Chat, 11.10.2026, ≈ 18:20 CEST):** „vereinheitlich das design konzept auf main so das die Startseite als vorbil genommen wird und alle unterseiten stück für stück aufgewertet werden immer auf main mit immer regelmäßigen updates“
+- **Auslegung:**
+  1. **Vorbild:** der Kern der live geschalteten Startseite `/`. Das umfasst KERN.md, Kopf, Fuß, Banner, Register, Schriften, Formsystem und Bausteine. Jede Unterseite bekommt diese Gestaltung, keine zweite Linie.
+  2. **Stück für Stück:** Freischaltung **je Seite oder je Vorlage** (eine dynamische Vorlage schaltet alle ihre Instanzen) statt ganzer Cluster-Wellen. Jeder Schritt hat ein eigenes T2 und einen eigenen Push.
+  3. **Immer auf main:** unverändert (E-000, E-005). Kein Sammeln über Tage; ein grüner Schritt geht sofort live.
+  4. **Regelmäßige Updates:**
+     - Nach jedem Push eine kurze Meldung im Chat: was live ist, wichtigste Messwerte, Link auf den Beleg.
+     - Dazu der Morgenbericht und die stündliche Protokollzeile in STATUS.
+- **Unverändert:**
+  - UNANTASTBAR, G1–G9, Tore T1/T2/T3, Bauregeln (Einfrieren, ruhende Entwürfe, `freischalten.sh`), E-035 (P4-14 vor der nächsten Freischaltung) und M-20 (Zielgruppe im Wortlaut für `/kontakt`, `/leistungen`, `/ueber-uns`).
+  - Das Phasentor T3 (L3) gilt weiter am Ende von P5; die Freischalt-Schwelle je Schritt ist T2.
+- **Folge:** Die Wellentabelle P5 wird zu einer Schrittfolge (PLAN.md, Abschnitt „Ausrollung Stück für Stück“), erarbeitet über einen Plan-Workflow mit Gegenprüfung. Planwert und Pushfrequenz stehen danach in STATUS.
+
+## E-038 · Ein Gestaltungssystem: KERN v2 der live laufenden Fusions-Startseite; nur diese Sitzung baut, direkt auf main
+- **Befund (11.10.2026):**
+  - Eine zweite Orchestrierung („Werkstatt“, `_werkstatt/`) hat auf Anweisung des Auftraggebers beide Arbeitsstände zusammengeführt und die Startseite aus beiden Fassungen fusioniert (Werkstatt E-020). Sie hat das auf `main` gepusht: 6156079, live seit ≈ 17:10 CEST.
+  - `/` liegt im Rahmen `(bestand)` und nutzt das Werkstatt-System **KERN v2**:
+    - Regeln in `_werkstatt/KERN.md`.
+    - Tokens in `src/app/globals.css` (`@theme static`) und `src/app/bewegung.css`.
+    - Bausteine flach in `src/components/kern/*.tsx` und `kern/stile.ts`; Startabschnitte in `src/components/start/*`.
+    - Icons in `src/components/icons/*`, Pläne in `src/lib/plaene/*`.
+  - Die Kern-Startseite dieser Sitzung liegt als Entwurf unter `src/app/(kern)/_entwurf/start/page.tsx`.
+  - Der Rahmen (Kopf, Menü, Fuß, untere Leiste, Banner, WhatsApp) ist auf allen Seiten KERN v2. Umgebaut sind erst `/`, `/kontakt` und die 404; 74 von 76 Seitendateien haben noch altes Markup.
+- **Entscheidung des Auftraggebers** (Chat, 11.10., Antwort auf zwei Fragen):
+  - Vorbild ist „die Live-Fusionsstartseite“.
+  - Weiter baut „nur diese Sitzung“.
+  - Zusammen mit E-037: Unterseiten Stück für Stück, immer auf `main`, regelmäßige Updates.
+- **Folgen:**
+  1. **KERN v2 ist das einzige Gestaltungssystem.** `_werkstatt/KERN.md` gilt für alle Seiten. `_relaunch/KERN.md` (v1.2) und die Kern-Bausteine in den Unterordnern von `src/components/kern/` (`basis`, `formulare`, `kopf-b`, `fuss`, `seiten`, `start`, `vorlagen` …) sind Archiv bzw. ruhend; Abbau in E6-ORCH-01.
+  2. **Die ruhenden Kern-Entwürfe** (`src/app/(kern)/_entwurf/{bad,leistungen,standorte,blog,ueber-uns}`) sind die **inhaltliche Vorlage**: Abschnittsfolge, Daten, Anker, Hooks und die Auflagen W1–W9. Die Optik entsteht neu aus KERN-v2-Bausteinen (Übersetzung `_werkstatt/pakete/FUSION-UEBERSETZUNG.md`). `/kontakt` ist bereits live umgebaut.
+  3. **Kein Freischalten mehr.** Seiten werden direkt im Rahmen `(bestand)` umgebaut; jeder Schritt (Seite, Vorlage oder geteilte Komponente) hat ein eigenes Tor (T2-S/T2-Q) und einen eigenen Push.
+  4. **Das Paketgerüst** sind die offenen Werkstatt-Pakete E3–E6 und die Kür (`_werkstatt/PLAN.md`), umsortiert in `PLAN.md`, Abschnitt „Vereinheitlichung“. Die Werkstatt-Werkzeuge (`werte.mjs`, `umbau.mjs`, `ueberlappung.mjs`, Register, `briefing.mjs`, Sichtabnahme-Vorlage) werden weiter benutzt.
+  5. **Überholt:** P4-14 (TBT) und P4-15 (Hero-Formular), weil sie an der Kern-Startseite gemessen wurden. Neumessung an der Fusions-`/` (Basiswerte Phase 1).
+  6. **Übergabe:** `_werkstatt/STATUS.md` und `PRUEFPUNKT.md` tragen den Vermerk „ÜBERGEBEN – nicht fortsetzen, nicht pushen“; M-21 ist beantwortet. Der WERKSTATT-Block in der committeten `CLAUDE.md` bleibt stehen (`commit.sh` committet `CLAUDE.md` nie), ist aber durch diese Vermerke und den lokalen Orchestrator-Block überholt.
+  7. **Merge-Commits** laufen über `commit.sh --merge`: nur `ORCHESTRATOR=1`, keine ungelösten Konflikte, `CLAUDE.md` im Index ohne lokalen Block, keine Datei > 5 MB.
+- **Umkehrprobe:** Bringt ein Schritt eine Seite unter den Stand vor dem Umbau (Funktion, Barrierefreiheit, Text, Leistung), wird er per Revert-Commit zurückgenommen und neu gebaut.

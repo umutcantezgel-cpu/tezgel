@@ -80,7 +80,9 @@ async function klick(ziel) {
 
 // Platzhalter-Knopf der Karte am jeweiligen Ort. Die Servicegebiet-Karte der Startseite wird erst im Blick eingebunden.
 async function ladeKnopf(page, ort) {
-  if (ort === '/') await page.getByText('Karte wird geladen...').first().scrollIntoViewIfNeeded();
+  // E-038 (Fusions-Startseite, Werkstatt E2-BAU-04): auf / steht das Einwilligungs-Tor sofort im Dokument (vorher erst ein
+  // Ladehinweis „Karte wird geladen...“) – den Knopf selbst in den Blick holen.
+  if (ort === '/') await page.getByRole('button', { name: LADE_KNOPF }).first().scrollIntoViewIfNeeded();
   const bereich = ort === '/standorte' ? standortKarte(page) : page;
   return bereich.getByRole('button', { name: LADE_KNOPF });
 }

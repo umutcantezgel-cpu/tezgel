@@ -23,7 +23,7 @@
 | Z-11 Werkzeug | a11y-zusatz: Umfang mehrzeiliger Inline-Links | Messkorrektur E-029. U ist die umrandete Fläche (Vereinigung der Zeilenstücke, gestapelte als ein Umriss); der erste Ansatz (Summe) ist verworfen. Nachtrag N1: Verbindungsabstand aus `outline-width`/`outline-offset` statt fest 8 px; Umriss < 2 px gilt immer als „dünn“; Selbsttest mit fünf Formen (`node a11y-zusatz.mjs --selbsttest`). Alle 80 mehrteiligen Elemente der Vorschau: Verhältnis ≥ 2,03 (Gegenprüfer) | `../p4tor-a11y-vorschau2/` (verworfen), `../../werkzeuge/a11y-zusatz.mjs` |
 | Z-13 Darstellung | Fotos 6 Seiten × 4 Ansichten, Überlaufprüfung, selbst gesichtet | 24/24, 0 Fehler, **0 Überlauf**, kein abgeschnittener oder überlappender Text | `../p4tor-fotos-vorschau/` |
 | Z-13 Darstellung | Wortbruch 6 Seiten × 320/375/768/1024/1440/1920 | **0** | `../p4tor-wortbruch/wortbruch.json` |
-| Z-13 Pixel (P4-GEG M3) | nicht freigeschaltete Seiten der Vorschau gegen Live 4337, feste Stichprobe 16 Seiten (je Vorlage eine + statische) × 4 Ansichten | **64 Vergleiche, 0 abweichend**. Der Rauschlauf Live gegen Live brach am Zeitlimit ab; bei 0 Abweichungen trägt das Ergebnis ohne ihn. Für das Live-Produkt trägt zusätzlich T1 1752144 (HTML 172 gleich, CSS gleich) | `pixel/ergebnis.json` |
+| Z-13 Pixel (P4-GEG M3) | nicht freigeschaltete Seiten der Vorschau gegen Live 4337, feste Stichprobe 16 Seiten (je Vorlage eine + statische) × 4 Ansichten | **ungültig (E-036, Maskenfehler im Werkzeug)**; nachgeprüft in Runde 2 mit berichtigtem Werkzeug: 64/0 nach Maske der Sprechblase (`../p4-tor-r2/pixel/`). Ursprünglich gemeldet: 64 Vergleiche, 0 abweichend. Der Rauschlauf Live gegen Live brach am Zeitlimit ab; bei 0 Abweichungen trägt das Ergebnis ohne ihn. Für das Live-Produkt trägt zusätzlich T1 1752144 (HTML 172 gleich, CSS gleich) | `pixel/ergebnis.json` |
 | Z-06 (mitgeprüft) | texte2 gegen f2c4180 mit MIKROTEXTE | 0 rot (E-028) | `../p4tor-texte2/` |
 | Z-06 (mitgeprüft) | SEO-Invarianten | 0 Abweichungen Meta/SEO; Sitemap 163; 0 kaputte Links | `../p4tor-seo-vorschau/` |
 | Z-07 (Zwischenstand) | Slop-Jäger (Haiku) + Opus-Gegenprüfer je Seite | weich 23 (P0 58, −60 %) · hart 0 (P0 13). Rest: Floskeln in unantastbarem Wortlaut (→ TEXTVORSCHLAEGE) und Strukturfunde als Auflagen W1, W2, W6, W8 | `../p4tor-slop/slop-jaeger.json` |
@@ -80,3 +80,6 @@
   - Mutationsprobe P6 mobil.
   - T2 für `/` (P4-12 + P4-13 wirken sofort).
   - Gegenprüfer Runde 2.
+
+## Runde 2
+Siehe `../p4-tor-r2/ERGEBNIS.md` (Vorschau c5ef582-v nach P4-13, T2 für `/`, Gegenprüfer P4-GEG2).

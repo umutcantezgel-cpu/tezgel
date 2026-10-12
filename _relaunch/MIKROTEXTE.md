@@ -47,7 +47,6 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `*` | `Fachgewerke Konfigurator` | `Unsere Fachgewerke` | 1 | P3-06 | Navigationseintrag im Kern-Mobilblatt: Kategorietitel aus `navigationLinks` („Unsere Fachgewerke“); „Konfigurator“ steht als Etikett im Planblatt |
 | `*` | `Impressum · Datenschutz` | `Impressum Datenschutz` | 1 | P3-08 | Linkzeile im Einwilligungsbanner: Trenner „·“ als Gestaltung statt Text; beide Links unverändert |
 | `/` | `Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel ·` | `Handwerkskammer-eingetragener Fachbetrieb Deniz Tezgel` | 1 | P3-09 | Kennzeile im Einstieg (Zeichensetzung): Trenner „·“ zwischen Etikett und Bewertung entfällt (Fuge statt Zeichen), Wortlaut gleich |
-| `*` | `WhatsApp-Chat starten` | `–` | 2 | P3-06 | WhatsApp-Link im Desktop-Kopf des Bestands entfällt (Jury E-022: Kopf ruhig); WhatsApp bleibt im Einstieg, als Kanal am Desktop und in der unteren Leiste (gleicher Name) |
 | `*` | `Aufmaß buchen` | `–` | 1 | P3-06 | Zweiter „Aufmaß buchen“-Knopf (Bestands-Drawer) entfällt; der Kopf trägt „Aufmaß anfragen“, mobil die untere Leiste „Aufmaß“ |
 | `*` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite` | `–` | 2 | P3-06 | Dublette: Logo-Link im Bestands-Drawer; der Logo-Link im Kopf trägt den Namen unverändert |
 | `*` | `Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar` | `–` | 2 | P3-06 | Dublette: Logo-Bild im Bestands-Drawer; das Logo im Kopf trägt den Alt-Text unverändert |
@@ -65,3 +64,6 @@ Stand 10.10.2026 · P3-00j · 10 Einträge für `/`, alle Klasse 1. Orchestrator
 | `/kontakt` | `≤ 15 km` | `–` | 1 | P4-08f | wie oben |
 | `/kontakt` | `≤ 30 km` | `–` | 1 | P4-08f | wie oben |
 | `/kontakt` | `≤ 45 km` | `–` | 1 | P4-08f | wie oben |
+| `*` | `WhatsApp-Nachricht an Fliesenverlegung Tezgel senden` | `–` | 2 | P4-13 | Nur im **Server-HTML** entfernt: Der schwebende Kanal wird wie im Bestand erst im Browser eingehängt (H1, E-029 Berichtigung, E-034). Im Browser steht er unverändert mit diesem Namen (`belege/p4-tor-r2/kanal/kanal-probe-4321.json`, 7 Seiten × m375/d1440; Funktionstest F-10 „Widget /“). Keine Textänderung (P4-GEG2 N-J). |
+
+Aufgehoben: Die Zeile `*` „WhatsApp-Chat starten“ → „–“ (P3-06) ist gestrichen. Der Kern-Kopf führt den Link ab lg wieder mit dem Bestandsnamen (P4-13, E-029 Berichtigung, E-034).

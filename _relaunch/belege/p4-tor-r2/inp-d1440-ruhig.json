@@ -1,0 +1,1646 @@
+{
+ "satz": "t2-c5ef582-inp-d1440-ruhig",
+ "base": "http://127.0.0.1:4323",
+ "kandidat": "http://127.0.0.1:4324",
+ "modus": "verschraenkt",
+ "bedingungen": {
+  "methode": "Playwright + CDP Emulation.setCPUThrottlingRate + Event-Timing-API (PerformanceObserver type \"event\", durationThreshold 16, buffered); INP-Näherung je Lauf = höchste Dauer über die Interaktionen (interactionId > 0) der Aktion; Median über die Wiederholungen",
+  "drossel_cpu": "4× (CDP), kein Netzdrosseln",
+  "wiederholungen": 5,
+  "reihenfolge": "je Wiederholung A (Basis) dann B (Kandidat)",
+  "einwilligung": "abgelehnt",
+  "kontext": "je Lauf frischer Kontext (kalter Cache), DPR 1, de-DE, Europe/Berlin, hell, reducedMotion no-preference; mobil Touch (tap), Desktop Maus (click)",
+  "start": "nach load + Schriften + Netzruhe (≤ 5 s) und 500 ms ohne Long Task (≤ 15 s); Ziel vorher ins Bild gescrollt",
+  "tippen": "10 Zeichen („Badfliesen“, bei tel/number „0123456789“), Abstand 120 ms",
+  "seitenwechsel": "Wert = Klick-Interaktion im alten Dokument; seitenwechsel_ms = Eingabe (pointerdown) → loadEventEnd (hart) bzw. → erstes requestAnimationFrame nach navigate (weich)",
+  "ruhetor": "ungedrosselte Rechenprobe ≤ 1,3 × beste (≤ 60 s); messqualitaet „unsicher“ bei effektiver Drosselung außerhalb 0,75–1,35 × Soll",
+  "sperre": "installSperre (Dritt-Hosts 204, schreibende Anfragen abgefangen/Attrappe), assertLocal",
+  "schwelle_api": "Event Timing meldet nur Einträge ≥ 16 ms (auf 8 ms gerundet) → inp_ms 0 = unter 16 ms",
+  "budget_inp_ms": 200,
+  "bewertung": "gut ≤ 200 ms · verbesserungswürdig ≤ 500 ms · schlecht > 500 ms (web.dev)"
+ },
+ "erstellt": "2026-10-11T16:49:55.584Z",
+ "seiten": {
+  "/": {
+   "d1440": {
+    "menue": {
+     "basis": {
+      "median": {
+       "inp_ms": 200,
+       "verzoegerung_ms": 14,
+       "verarbeitung_ms": 6,
+       "darstellung_ms": 183
+      },
+      "streuung_ms": [
+       96,
+       336
+      ],
+      "gueltig": 5,
+      "von": 5,
+      "unsicher": 0,
+      "ohne_ruhe": 0,
+      "ziel": {
+       "tag": "button",
+       "id": null,
+       "text": "Untermenü Badsanierung öffnen",
+       "aria_controls": "mega-0",
+       "name": null,
+       "typ": "button",
+       "href": null,
+       "oben_px": 32,
+       "groesse": "26×30"
+      },
+      "geoeffnet": "5/5",
+      "wiederholt_wegen_last": 3,
+      "fehler": [],
+      "bewertung": "gut",
+      "laeufe": [
+       {
+        "rolle": "basis",
+        "k": 0,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.47,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "mega-0",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 32,
+         "groesse": "26×30"
+        },
+        "ruhe_nach_scroll": false,
+        "geoeffnet": true,
+        "inp_ms": 328,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.flex.items-center > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.lucide.lucide-chevron-down",
+        "verzoegerung_ms": 125,
+        "verarbeitung_ms": 14,
+        "darstellung_ms": 189,
+        "interaktionen": 1,
+        "last_1min": [
+         0.08,
+         1.67
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         328
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 1,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.28,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "mega-0",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 32,
+         "groesse": "26×30"
+        },
+        "ruhe_nach_scroll": false,
+        "geoeffnet": true,
+        "inp_ms": 184,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.flex.items-center > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.lucide.lucide-chevron-down",
+        "verzoegerung_ms": 14,
+        "verarbeitung_ms": 6,
+        "darstellung_ms": 163,
+        "interaktionen": 1,
+        "last_1min": [
+         1.85,
+         2.32
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         184
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 2,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.87,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "mega-0",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 32,
+         "groesse": "26×30"
+        },
+        "ruhe_nach_scroll": false,
+        "geoeffnet": true,
+        "inp_ms": 200,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.flex.items-center > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.lucide.lucide-chevron-down",
+        "verzoegerung_ms": 12,
+        "verarbeitung_ms": 6,
+        "darstellung_ms": 183,
+        "interaktionen": 1,
+        "last_1min": [
+         4.14,
+         4.47
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 3,
+        "alle_ms": [
+         200
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 3,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.17,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "mega-0",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 32,
+         "groesse": "26×30"
+        },
+        "ruhe_nach_scroll": true,
+        "geoeffnet": true,
+        "inp_ms": 96,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.flex.items-center > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.lucide.lucide-chevron-down",
+        "verzoegerung_ms": 14,
+        "verarbeitung_ms": 3,
+        "darstellung_ms": 79,
+        "interaktionen": 1,
+        "last_1min": [
+         4.49,
+         4.29
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 2,
+        "alle_ms": [
+         96
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 4,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.16,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "mega-0",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 32,
+         "groesse": "26×30"
+        },
+        "ruhe_nach_scroll": false,
+        "geoeffnet": true,
+        "inp_ms": 336,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.flex.items-center > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.lucide.lucide-chevron-down",
+        "verzoegerung_ms": 144,
+        "verarbeitung_ms": 7,
+        "darstellung_ms": 185,
+        "interaktionen": 1,
+        "last_1min": [
+         4.07,
+         4.28
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 2,
+        "alle_ms": [
+         336
+        ]
+       }
+      ]
+     },
+     "kandidat": {
+      "median": {
+       "inp_ms": 48,
+       "verzoegerung_ms": 22,
+       "verarbeitung_ms": 5,
+       "darstellung_ms": 18
+      },
+      "streuung_ms": [
+       32,
+       72
+      ],
+      "gueltig": 5,
+      "von": 5,
+      "unsicher": 0,
+      "ohne_ruhe": 0,
+      "ziel": {
+       "tag": "button",
+       "id": null,
+       "text": "Untermenü Badsanierung öffnen",
+       "aria_controls": "k-kopf-b-blatt-0_R_4iivb_",
+       "name": null,
+       "typ": "button",
+       "href": null,
+       "oben_px": 0,
+       "groesse": "48×64"
+      },
+      "geoeffnet": "5/5",
+      "wiederholt_wegen_last": 0,
+      "fehler": [],
+      "bewertung": "gut",
+      "laeufe": [
+       {
+        "rolle": "kandidat",
+        "k": 0,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.56,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "k-kopf-b-blatt-0_R_4iivb_",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 0,
+         "groesse": "48×64"
+        },
+        "ruhe_nach_scroll": true,
+        "geoeffnet": true,
+        "inp_ms": 40,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "li.group.relative > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.shrink-0",
+        "verzoegerung_ms": 19,
+        "verarbeitung_ms": 4,
+        "darstellung_ms": 17,
+        "interaktionen": 1,
+        "last_1min": [
+         1.67,
+         1.85
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         40
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 1,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.33,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "k-kopf-b-blatt-0_R_4iivb_",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 0,
+         "groesse": "48×64"
+        },
+        "ruhe_nach_scroll": true,
+        "geoeffnet": true,
+        "inp_ms": 48,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "li.group.relative > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.shrink-0",
+        "verzoegerung_ms": 22,
+        "verarbeitung_ms": 5,
+        "darstellung_ms": 21,
+        "interaktionen": 1,
+        "last_1min": [
+         2.32,
+         2.21
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         48
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 2,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.59,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "k-kopf-b-blatt-0_R_4iivb_",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 0,
+         "groesse": "48×64"
+        },
+        "ruhe_nach_scroll": true,
+        "geoeffnet": true,
+        "inp_ms": 72,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "li.group.relative > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.shrink-0",
+        "verzoegerung_ms": 34,
+        "verarbeitung_ms": 11,
+        "darstellung_ms": 28,
+        "interaktionen": 1,
+        "last_1min": [
+         4.47,
+         4.19
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         72
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 3,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.39,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "k-kopf-b-blatt-0_R_4iivb_",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 0,
+         "groesse": "48×64"
+        },
+        "ruhe_nach_scroll": true,
+        "geoeffnet": true,
+        "inp_ms": 48,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "li.group.relative > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.shrink-0",
+        "verzoegerung_ms": 22,
+        "verarbeitung_ms": 8,
+        "darstellung_ms": 18,
+        "interaktionen": 1,
+        "last_1min": [
+         4.29,
+         4.11
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         48
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 4,
+        "eingabe": "maus",
+        "ruhetor_s": 2,
+        "drossel_effektiv": 4.83,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "button",
+         "id": null,
+         "text": "Untermenü Badsanierung öffnen",
+         "aria_controls": "k-kopf-b-blatt-0_R_4iivb_",
+         "name": null,
+         "typ": "button",
+         "href": null,
+         "oben_px": 0,
+         "groesse": "48×64"
+        },
+        "ruhe_nach_scroll": true,
+        "geoeffnet": true,
+        "inp_ms": 32,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "li.group.relative > button[aria-label=\"Untermenü Badsanierung schließen\"] > svg.shrink-0",
+        "verzoegerung_ms": 13,
+        "verarbeitung_ms": 1,
+        "darstellung_ms": 18,
+        "interaktionen": 1,
+        "last_1min": [
+         4.28,
+         3.94
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         32
+        ]
+       }
+      ]
+     },
+     "differenz": {
+      "inp_ms": -152,
+      "verzoegerung_ms": 8,
+      "verarbeitung_ms": -1,
+      "darstellung_ms": -165
+     }
+    },
+    "formular": {
+     "basis": {
+      "median": {
+       "inp_ms": 384,
+       "verzoegerung_ms": 183,
+       "verarbeitung_ms": 2,
+       "darstellung_ms": 190,
+       "fokus_ms": 280,
+       "tasten_max_ms": 384
+      },
+      "streuung_ms": [
+       320,
+       416
+      ],
+      "gueltig": 5,
+      "von": 5,
+      "unsicher": 0,
+      "ohne_ruhe": 1,
+      "ziel": {
+       "tag": "input",
+       "id": "hero-name",
+       "text": "Vor- und Nachname",
+       "aria_controls": null,
+       "name": "name",
+       "typ": "text",
+       "href": null,
+       "oben_px": 435,
+       "groesse": "205×44"
+      },
+      "getippt": "5/5",
+      "fokus_nachgeholt": 0,
+      "wiederholt_wegen_last": 1,
+      "fehler": [],
+      "bewertung": "verbesserungswürdig",
+      "laeufe": [
+       {
+        "rolle": "basis",
+        "k": 0,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.28,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": false,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 435,
+         "groesse": "205×44"
+        },
+        "ruhe_nach_scroll": false,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 336,
+        "unter_schwelle": false,
+        "ereignis": "keydown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 218,
+        "verarbeitung_ms": 0,
+        "darstellung_ms": 118,
+        "interaktionen": 11,
+        "fokus_ms": 304,
+        "tasten_max_ms": 336,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         3.94,
+         4.17
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         304,
+         272,
+         288,
+         336,
+         256,
+         256,
+         192,
+         192,
+         296,
+         192,
+         256
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 1,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.36,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 435,
+         "groesse": "205×44"
+        },
+        "ruhe_nach_scroll": false,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 320,
+        "unter_schwelle": false,
+        "ereignis": "keydown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 128,
+        "verarbeitung_ms": 2,
+        "darstellung_ms": 190,
+        "interaktionen": 11,
+        "fokus_ms": 248,
+        "tasten_max_ms": 320,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.24,
+         4.3
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         248,
+         320,
+         248,
+         280,
+         272,
+         304,
+         280,
+         192,
+         248,
+         208,
+         216
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 2,
+        "eingabe": "maus",
+        "ruhetor_s": 2,
+        "drossel_effektiv": 5.29,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 435,
+         "groesse": "205×44"
+        },
+        "ruhe_nach_scroll": false,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 400,
+        "unter_schwelle": false,
+        "ereignis": "keydown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 183,
+        "verarbeitung_ms": 2,
+        "darstellung_ms": 216,
+        "interaktionen": 11,
+        "fokus_ms": 280,
+        "tasten_max_ms": 400,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.12,
+         4.75
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         280,
+         400,
+         184,
+         288,
+         224,
+         208,
+         200,
+         240,
+         160,
+         248,
+         152
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 3,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.2,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 435,
+         "groesse": "205×44"
+        },
+        "ruhe_nach_scroll": false,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 416,
+        "unter_schwelle": false,
+        "ereignis": "keydown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 244,
+        "verarbeitung_ms": 0,
+        "darstellung_ms": 171,
+        "interaktionen": 11,
+        "fokus_ms": 296,
+        "tasten_max_ms": 416,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.61,
+         4.52
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         296,
+         208,
+         216,
+         336,
+         416,
+         264,
+         288,
+         224,
+         264,
+         288,
+         176
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 4,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.57,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 435,
+         "groesse": "205×44"
+        },
+        "ruhe_nach_scroll": false,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 384,
+        "unter_schwelle": false,
+        "ereignis": "keydown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 150,
+        "verarbeitung_ms": 2,
+        "darstellung_ms": 232,
+        "interaktionen": 11,
+        "fokus_ms": 272,
+        "tasten_max_ms": 384,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.48,
+         4.35
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 2,
+        "alle_ms": [
+         272,
+         384,
+         256,
+         240,
+         184,
+         168,
+         184,
+         192,
+         256,
+         240,
+         256
+        ]
+       }
+      ]
+     },
+     "kandidat": {
+      "median": {
+       "inp_ms": 48,
+       "verzoegerung_ms": 14,
+       "verarbeitung_ms": 5,
+       "darstellung_ms": 33,
+       "fokus_ms": 48,
+       "tasten_max_ms": 40
+      },
+      "streuung_ms": [
+       48,
+       80
+      ],
+      "gueltig": 5,
+      "von": 5,
+      "unsicher": 0,
+      "ohne_ruhe": 0,
+      "ziel": {
+       "tag": "input",
+       "id": "hero-name",
+       "text": "Vor- und Nachname",
+       "aria_controls": null,
+       "name": "name",
+       "typ": "text",
+       "href": null,
+       "oben_px": 761,
+       "groesse": "245×48"
+      },
+      "getippt": "5/5",
+      "fokus_nachgeholt": 0,
+      "wiederholt_wegen_last": 1,
+      "fehler": [],
+      "bewertung": "gut",
+      "laeufe": [
+       {
+        "rolle": "kandidat",
+        "k": 0,
+        "eingabe": "maus",
+        "ruhetor_s": 2,
+        "drossel_effektiv": 5.32,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 761,
+         "groesse": "245×48"
+        },
+        "ruhe_nach_scroll": true,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 80,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 44,
+        "verarbeitung_ms": 3,
+        "darstellung_ms": 33,
+        "interaktionen": 11,
+        "fokus_ms": 80,
+        "tasten_max_ms": 48,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4,
+         4.24
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 2,
+        "alle_ms": [
+         80,
+         48,
+         40,
+         40,
+         32,
+         32,
+         32,
+         32,
+         40,
+         24,
+         32
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 1,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.31,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 761,
+         "groesse": "245×48"
+        },
+        "ruhe_nach_scroll": true,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 56,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 14,
+        "verarbeitung_ms": 6,
+        "darstellung_ms": 36,
+        "interaktionen": 11,
+        "fokus_ms": 56,
+        "tasten_max_ms": 40,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.3,
+         4.12
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         56,
+         32,
+         32,
+         32,
+         32,
+         40,
+         24,
+         24,
+         16,
+         24,
+         24
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 2,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.56,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 761,
+         "groesse": "245×48"
+        },
+        "ruhe_nach_scroll": true,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 48,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 17,
+        "verarbeitung_ms": 5,
+        "darstellung_ms": 26,
+        "interaktionen": 11,
+        "fokus_ms": 48,
+        "tasten_max_ms": 40,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.75,
+         4.61
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         48,
+         32,
+         24,
+         40,
+         40,
+         24,
+         40,
+         32,
+         32,
+         24,
+         32
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 3,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.99,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 761,
+         "groesse": "245×48"
+        },
+        "ruhe_nach_scroll": true,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 48,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 14,
+        "verarbeitung_ms": 5,
+        "darstellung_ms": 30,
+        "interaktionen": 11,
+        "fokus_ms": 48,
+        "tasten_max_ms": 48,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.52,
+         4.16
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         48,
+         48,
+         48,
+         40,
+         40,
+         32,
+         24,
+         40,
+         24,
+         24,
+         32
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 4,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.93,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "input",
+         "id": "hero-name",
+         "text": "Vor- und Nachname",
+         "aria_controls": null,
+         "name": "name",
+         "typ": "text",
+         "href": null,
+         "oben_px": 761,
+         "groesse": "245×48"
+        },
+        "ruhe_nach_scroll": true,
+        "fokussiert": true,
+        "getippt": true,
+        "inp_ms": 48,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "input#hero-name",
+        "verzoegerung_ms": 5,
+        "verarbeitung_ms": 1,
+        "darstellung_ms": 42,
+        "interaktionen": 11,
+        "fokus_ms": 48,
+        "tasten_max_ms": 40,
+        "tasten_interaktionen": 10,
+        "last_1min": [
+         4.35,
+         4.16
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         48,
+         32,
+         24,
+         32,
+         40,
+         32,
+         40,
+         24,
+         32,
+         32,
+         24
+        ]
+       }
+      ]
+     },
+     "differenz": {
+      "inp_ms": -336,
+      "verzoegerung_ms": -169,
+      "verarbeitung_ms": 3,
+      "darstellung_ms": -157,
+      "fokus_ms": -232,
+      "tasten_max_ms": -344
+     }
+    },
+    "seitenwechsel": {
+     "basis": {
+      "median": {
+       "inp_ms": 256,
+       "verzoegerung_ms": 88,
+       "verarbeitung_ms": 6,
+       "darstellung_ms": 179,
+       "seitenwechsel_ms": 2514
+      },
+      "streuung_ms": [
+       184,
+       344
+      ],
+      "gueltig": 5,
+      "von": 5,
+      "unsicher": 3,
+      "ohne_ruhe": 4,
+      "ziel": {
+       "tag": "a",
+       "id": null,
+       "text": "Aufmaß vor Ort anfragen",
+       "aria_controls": null,
+       "name": null,
+       "typ": null,
+       "href": "/kontakt",
+       "oben_px": 584,
+       "groesse": "255×50"
+      },
+      "art": "weich",
+      "ziel_pfad": "/kontakt",
+      "wiederholt_wegen_last": 4,
+      "fehler": [],
+      "bewertung": "verbesserungswürdig",
+      "laeufe": [
+       {
+        "rolle": "basis",
+        "k": 0,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 3.47,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": false,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 584,
+         "groesse": "255×50"
+        },
+        "ruhe_nach_scroll": false,
+        "ziel_pfad": "/kontakt",
+        "art": "weich",
+        "seitenwechsel_ms": 2795,
+        "inp_ms": 272,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.lg:col-span-7.space-y-6 > div.flex.flex-col > a.btn-primary.w-full",
+        "verzoegerung_ms": 88,
+        "verarbeitung_ms": 6,
+        "darstellung_ms": 179,
+        "interaktionen": 1,
+        "last_1min": [
+         4.16,
+         4.43
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         272
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 1,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.8,
+        "messqualitaet": "unsicher",
+        "ruhe_erreicht": false,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 584,
+         "groesse": "255×50"
+        },
+        "ruhe_nach_scroll": false,
+        "ziel_pfad": "/kontakt",
+        "art": "weich",
+        "seitenwechsel_ms": 2383,
+        "inp_ms": 256,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.lg:col-span-7.space-y-6 > div.flex.flex-col > a.btn-primary.w-full",
+        "verzoegerung_ms": 112,
+        "verarbeitung_ms": 8,
+        "darstellung_ms": 136,
+        "interaktionen": 1,
+        "last_1min": [
+         3.72,
+         4.04
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 3,
+        "alle_ms": [
+         256
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 2,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.27,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": false,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 584,
+         "groesse": "255×50"
+        },
+        "ruhe_nach_scroll": false,
+        "ziel_pfad": "/kontakt",
+        "art": "weich",
+        "seitenwechsel_ms": 2514,
+        "inp_ms": 184,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.lg:col-span-7.space-y-6 > div.flex.flex-col > a.btn-primary.w-full",
+        "verzoegerung_ms": 19,
+        "verarbeitung_ms": 7,
+        "darstellung_ms": 158,
+        "interaktionen": 1,
+        "last_1min": [
+         4.11,
+         4.02
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 2,
+        "alle_ms": [
+         184
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 3,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 7.63,
+        "messqualitaet": "unsicher",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 584,
+         "groesse": "255×50"
+        },
+        "ruhe_nach_scroll": false,
+        "ziel_pfad": "/kontakt",
+        "art": "weich",
+        "seitenwechsel_ms": 2392,
+        "inp_ms": 256,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.lg:col-span-7.space-y-6 > div.flex.flex-col > a.btn-primary.w-full",
+        "verzoegerung_ms": 20,
+        "verarbeitung_ms": 6,
+        "darstellung_ms": 230,
+        "interaktionen": 1,
+        "last_1min": [
+         4.02,
+         3.78
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 3,
+        "alle_ms": [
+         256
+        ]
+       },
+       {
+        "rolle": "basis",
+        "k": 4,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 6.38,
+        "messqualitaet": "unsicher",
+        "ruhe_erreicht": false,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 584,
+         "groesse": "255×50"
+        },
+        "ruhe_nach_scroll": false,
+        "ziel_pfad": "/kontakt",
+        "art": "weich",
+        "seitenwechsel_ms": 3133,
+        "inp_ms": 344,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.lg:col-span-7.space-y-6 > div.flex.flex-col > a.btn-primary.w-full",
+        "verzoegerung_ms": 119,
+        "verarbeitung_ms": 6,
+        "darstellung_ms": 220,
+        "interaktionen": 1,
+        "last_1min": [
+         3.99,
+         3.66
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 3,
+        "alle_ms": [
+         344
+        ]
+       }
+      ]
+     },
+     "kandidat": {
+      "median": {
+       "inp_ms": 72,
+       "verzoegerung_ms": 18,
+       "verarbeitung_ms": 14,
+       "darstellung_ms": 41,
+       "seitenwechsel_ms": 754
+      },
+      "streuung_ms": [
+       64,
+       80
+      ],
+      "gueltig": 5,
+      "von": 5,
+      "unsicher": 0,
+      "ohne_ruhe": 0,
+      "ziel": {
+       "tag": "a",
+       "id": null,
+       "text": "Aufmaß vor Ort anfragen",
+       "aria_controls": null,
+       "name": null,
+       "typ": null,
+       "href": "/kontakt",
+       "oben_px": 736,
+       "groesse": "258×48"
+      },
+      "art": "hart",
+      "ziel_pfad": "/kontakt",
+      "wiederholt_wegen_last": 0,
+      "fehler": [],
+      "bewertung": "gut",
+      "laeufe": [
+       {
+        "rolle": "kandidat",
+        "k": 0,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 5.4,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 736,
+         "groesse": "258×48"
+        },
+        "ruhe_nach_scroll": true,
+        "ziel_pfad": "/kontakt",
+        "art": "hart",
+        "abschied_gemeldet": true,
+        "seitenwechsel_ms": 796,
+        "inp_ms": 72,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.mt-k-5.lg:col-span-6 > div.mt-k-6.flex > a.relative.inline-flex",
+        "verzoegerung_ms": 18,
+        "verarbeitung_ms": 14,
+        "darstellung_ms": 41,
+        "interaktionen": 1,
+        "last_1min": [
+         4.43,
+         4.16
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         72
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 1,
+        "eingabe": "maus",
+        "ruhetor_s": 2,
+        "drossel_effektiv": 4.99,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 736,
+         "groesse": "258×48"
+        },
+        "ruhe_nach_scroll": true,
+        "ziel_pfad": "/kontakt",
+        "art": "hart",
+        "abschied_gemeldet": true,
+        "seitenwechsel_ms": 648,
+        "inp_ms": 64,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.mt-k-5.lg:col-span-6 > div.mt-k-6.flex > a.relative.inline-flex",
+        "verzoegerung_ms": 13,
+        "verarbeitung_ms": 14,
+        "darstellung_ms": 37,
+        "interaktionen": 1,
+        "last_1min": [
+         4.04,
+         3.8
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         64
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 2,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.78,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 736,
+         "groesse": "258×48"
+        },
+        "ruhe_nach_scroll": true,
+        "ziel_pfad": "/kontakt",
+        "art": "hart",
+        "abschied_gemeldet": true,
+        "seitenwechsel_ms": 1195,
+        "inp_ms": 72,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.mt-k-5.lg:col-span-6 > div.mt-k-6.flex > a.relative.inline-flex",
+        "verzoegerung_ms": 15,
+        "verarbeitung_ms": 13,
+        "darstellung_ms": 44,
+        "interaktionen": 1,
+        "last_1min": [
+         4.02,
+         4.02
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         72
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 3,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.37,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 736,
+         "groesse": "258×48"
+        },
+        "ruhe_nach_scroll": true,
+        "ziel_pfad": "/kontakt",
+        "art": "hart",
+        "abschied_gemeldet": true,
+        "seitenwechsel_ms": 696,
+        "inp_ms": 80,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.mt-k-5.lg:col-span-6 > div.mt-k-6.flex > a.relative.inline-flex",
+        "verzoegerung_ms": 24,
+        "verarbeitung_ms": 18,
+        "darstellung_ms": 38,
+        "interaktionen": 1,
+        "last_1min": [
+         3.78,
+         3.56
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         80
+        ]
+       },
+       {
+        "rolle": "kandidat",
+        "k": 4,
+        "eingabe": "maus",
+        "ruhetor_s": 0,
+        "drossel_effektiv": 4.24,
+        "messqualitaet": "ok",
+        "ruhe_erreicht": true,
+        "ziel": {
+         "tag": "a",
+         "id": null,
+         "text": "Aufmaß vor Ort anfragen",
+         "aria_controls": null,
+         "name": null,
+         "typ": null,
+         "href": "/kontakt",
+         "oben_px": 736,
+         "groesse": "258×48"
+        },
+        "ruhe_nach_scroll": true,
+        "ziel_pfad": "/kontakt",
+        "art": "hart",
+        "abschied_gemeldet": true,
+        "seitenwechsel_ms": 754,
+        "inp_ms": 72,
+        "unter_schwelle": false,
+        "ereignis": "pointerdown",
+        "ereignis_ziel": "div.mt-k-5.lg:col-span-6 > div.mt-k-6.flex > a.relative.inline-flex",
+        "verzoegerung_ms": 19,
+        "verarbeitung_ms": 8,
+        "darstellung_ms": 46,
+        "interaktionen": 1,
+        "last_1min": [
+         3.66,
+         3.66
+        ],
+        "fremd_abgefangen": 0,
+        "schreibend_abgefangen": 0,
+        "versuche": 1,
+        "alle_ms": [
+         72
+        ]
+       }
+      ]
+     },
+     "differenz": {
+      "inp_ms": -184,
+      "verzoegerung_ms": -70,
+      "verarbeitung_ms": 8,
+      "darstellung_ms": -138,
+      "seitenwechsel_ms": -1760
+     }
+    },
+    "inp_seite_ms": {
+     "basis": 384,
+     "kandidat": 72
+    },
+    "budget_eingehalten": true
+   }
+  }
+ },
+ "umgebung": {
+  "browser": "Chromium 141.0.7390.37 headless (/opt/pw-browsers/chromium-1194/chrome-linux/chrome)",
+  "node": "v22.22.0",
+  "cpus": 4,
+  "last_1min_start": 0.08,
+  "last_1min_ende": 3.61
+ },
+ "zusammenfassung": {
+  "inp_max_ms": 72,
+  "ueber_budget": [],
+  "laufzeit_s": 673
+ }
+}

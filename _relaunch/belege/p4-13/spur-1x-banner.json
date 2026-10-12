@@ -1,0 +1,90 @@
+{
+ "http://127.0.0.1:4343": [
+  {
+   "tbt_wand": 1.4,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 1,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 1,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 1,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 5.5,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 11.9,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  }
+ ],
+ "http://127.0.0.1:4344": [
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 2,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 2,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 1,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  },
+  {
+   "tbt_wand": 0,
+   "lange_aufgaben": 1,
+   "hydrierung_ms": null,
+   "banner_aufgaben": []
+  }
+ ]
+}

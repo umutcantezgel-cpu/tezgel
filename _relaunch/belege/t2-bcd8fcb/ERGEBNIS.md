@@ -32,3 +32,5 @@ Befunde für spätere Pakete (nicht blockierend):
 - Mehrere Anfrageformulare auf derselben Seite.
 - TBT mobil 224 ms (Budget 200).
 - Lighthouse mobil 84 (Ziel ≥ 90).
+
+> **Berichtigung (E-036, 11.10.2026):** Die Pixelvergleiche in diesem Beleg sind ungültig. Die Maske von `pixel.mjs` blendete die ganze Seite aus; erkannt wurden nur Höhenänderungen. Nachgeprüft mit dem berichtigten Werkzeug: `../p4-tor-r2/pixel/` (Stichprobe und rückwirkend gegen den Ausgangsstand).

@@ -29,3 +29,5 @@ Pixel, Text v2, SEO-Invarianten, Lighthouse und Jury entfallen begründet: Der s
 ## Live (544c42d)
 - `live-rauchtest.sh`: x-build = 544c42d, Hauptseiten 200, Sitemap 163, 404 für unbekannte Adresse: GRÜN.
 - `wege.mjs --live` (≤ 1 Anfrage/s, nur GET/HEAD): 20 Proben (7 Bereiche, Unterseite, 2 Einzeladressen, HEAD, 2 × 308 + Ziele, 5 Grenzfälle) rot 0: GRÜN → `../t2-74e768c-live/wege.json`.
+
+> **Berichtigung (E-036, 11.10.2026):** Die Pixelvergleiche in diesem Beleg sind ungültig. Die Maske von `pixel.mjs` blendete die ganze Seite aus; erkannt wurden nur Höhenänderungen. Nachgeprüft mit dem berichtigten Werkzeug: `../p4-tor-r2/pixel/` (Stichprobe und rückwirkend gegen den Ausgangsstand).

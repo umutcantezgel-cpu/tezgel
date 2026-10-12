@@ -1,0 +1,23 @@
+{
+ "satz": "p4r2-aussen-wdh",
+ "a": "http://127.0.0.1:4310",
+ "b": "http://127.0.0.1:4337",
+ "laeufe": 2,
+ "abweichend": 2,
+ "ergebnis": [
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "d1440",
+   "gleich": false,
+   "abweichende_pixel": 76,
+   "flaeche": 9803520
+  },
+  {
+   "seite": "/leistungen/aussen",
+   "ansicht": "d1920",
+   "gleich": false,
+   "abweichende_pixel": 76,
+   "flaeche": 13071360
+  }
+ ]
+}

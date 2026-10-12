@@ -1,7 +1,7 @@
 // Funktionstests F-10 (WhatsApp-Links und Widget) und F-15 (Telefon/E-Mail).
 // Prüft Ziele (href bzw. geöffnetes Ziel), vorbelegten Text und Versand, nicht Aussehen.
 // Kein Formular: ein Test gegen die echte Route entfällt. Jeder Browserlauf läuft hinter der Sperre (G5).
-import { test, expect, bedienbar, istKern, oeffne, sprunglink } from './fixtures.mjs';
+import { test, expect, bedienbar, istKern, oeffne, sprunglink, RAHMEN_KERN } from './fixtures.mjs';
 
 const WA_NUMMER = '491726728504';
 const TEL_FESTNETZ = '4964414483567';
@@ -56,7 +56,8 @@ async function waAufrufen(page, ausloeser) {
 const KANAL_NAME = 'WhatsApp-Nachricht an Fliesenverlegung Tezgel senden';
 const LEISTE_NAME = 'WhatsApp-Chat starten';
 const SCROLL_ANTEILE = [0.5, 0.25, 0.75, 0.125, 0.375, 0.625, 0.875, 1, 0];
-const wegIstLeiste = (pfad, isMobile) => istKern(pfad) && isMobile;
+// E-038: Der gemeinsame Rahmen (KERN v2) führt WhatsApp mobil über die untere Leiste – auf jeder Seite, nicht nur auf Kern-Seiten.
+const wegIstLeiste = (pfad, isMobile) => (RAHMEN_KERN || istKern(pfad)) && isMobile;
 // Leiste über ihren Ort, nicht über den Namen (M-3): der Name wird danach eigens geprüft.
 const leisteWhatsApp = (page) => page.locator('aside[aria-label="Schnellkontakt Daumenleiste"] a[href*="whatsapp"]');
 // Erstes Bedienelement des Widget-Falls nach demselben festen Weg (für oeffne, P4-06).

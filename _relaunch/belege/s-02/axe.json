@@ -1,0 +1,531 @@
+{
+ "satz": "s-02",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 39,
+ "ernst_kritisch_knoten": 110,
+ "je_regel": {
+  "serious:color-contrast": 110
+ },
+ "ergebnisse": [
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 8,
+     "ziele": [
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(1) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(2) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".hover\\:bg-white.p-8.bg-slate-50:nth-child(3) > .mt-6.pt-6.border-slate-200 > .hover\\:text-orange-700.text-orange-600[href$=\"musterbaeder\"]",
+      ".mt-8.text-center.text-slate-700 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700",
+      ".font-bold.text-slate-900 > .hover\\:underline.underline-offset-2.hover\\:text-orange-700"
+     ],
+     "knoten": [
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<a class=\"text-sm font-bold text-orange-600 hover:text-orange-700 inline-flex items-center gap-1\" href=\"/bad/musterbaeder\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.43 (foreground color: #f54900, background color: #f8fafc, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".bg-orange-600.whitespace-nowrap.shadow-md",
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ],
+     "knoten": [
+      {
+       "html": "<button type=\"button\" aria-pressed=\"true\" class=\"px-4 py-2 rounded-tile-pill whitespace-nowrap text-xs font-black transition-all bg-orange-600 text-white shadow-md\">Alle Themen</button>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<span class=\"absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10\">Empfohlener Leitfaden</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<div class=\"flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".bg-orange-600.whitespace-nowrap.shadow-md",
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ],
+     "knoten": [
+      {
+       "html": "<button type=\"button\" aria-pressed=\"true\" class=\"px-4 py-2 rounded-tile-pill whitespace-nowrap text-xs font-black transition-all bg-orange-600 text-white shadow-md\">Alle Themen</button>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<span class=\"absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10\">Empfohlener Leitfaden</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<div class=\"flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(4) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ],
+     "knoten": [
+      {
+       "html": "<span class=\"absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10\">Empfohlener Leitfaden</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<div class=\"flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<div class=\"flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".bg-orange-600.whitespace-nowrap.shadow-md",
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ],
+     "knoten": [
+      {
+       "html": "<button type=\"button\" aria-pressed=\"true\" class=\"px-4 py-2 rounded-tile-pill whitespace-nowrap text-xs font-black transition-all bg-orange-600 text-white shadow-md\">Alle Themen</button>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<span class=\"absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10\">Empfohlener Leitfaden</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<div class=\"flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": [
+    {
+     "id": "color-contrast",
+     "impact": "serious",
+     "hilfe": "Elements must meet minimum color contrast ratio thresholds",
+     "anzahl": 14,
+     "ziele": [
+      ".top-3",
+      "div:nth-child(1) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(2) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(3) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm",
+      "div:nth-child(4) > .h-full.relative.group > .hover\\:-translate-y-0\\.5.hover\\:shadow-\\[0_20px_40px_-12px_rgba\\(15\\,23\\,42\\,0\\.14\\)\\].glass-surface > .p-6.flex-1.flex-col > .border-slate-200.pt-4.border-t > .font-bold.text-orange-600.text-sm"
+     ],
+     "knoten": [
+      {
+       "html": "<span class=\"absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-black uppercase px-3 py-1 rounded-tile-pill shadow-md z-10\">Empfohlener Leitfaden</span>",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #ffffff, background color: #f54900, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<div class=\"flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      },
+      {
+       "html": "<div class=\"flex items-center gap-2 text-orange-600 font-bold text-sm pointer-events-none\">",
+       "grund": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #f54900, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  }
+ ]
+}

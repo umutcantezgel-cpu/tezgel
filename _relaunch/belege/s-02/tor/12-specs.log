@@ -1,0 +1,67 @@
+
+Running 62 tests using 2 workers
+
+[1A[2K[1/62] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[2/62] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[3/62] [mobil] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[4/62] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[5/62] [mobil] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[6/62] [mobil] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[7/62] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[8/62] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[9/62] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[10/62] [mobil] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[11/62] [mobil] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[12/62] [mobil] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[13/62] [mobil] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[14/62] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[15/62] [mobil] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[16/62] [mobil] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[17/62] [mobil] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[18/62] [mobil] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[19/62] [mobil] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[20/62] [mobil] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[21/62] [mobil] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[22/62] [mobil] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[23/62] [mobil] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[24/62] [mobil] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[25/62] [mobil] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[26/62] [mobil] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[27/62] [mobil] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[28/62] [mobil] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[29/62] [mobil] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[30/62] [mobil] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[31/62] [mobil] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K[32/62] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[33/62] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[34/62] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[35/62] [desktop] › tests/funktion-navigation.spec.mjs:64:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Hover öffnet das Untermenü, Escape schließt es
+[1A[2K[36/62] [desktop] › tests/funktion-navigation.spec.mjs:80:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Tastatur: Schalter per Enter öffnen, Escape schließt, Fokus bleibt am Schalter
+[1A[2K[37/62] [desktop] › tests/funktion-navigation.spec.mjs:94:5 › Mega-Menü (Desktop, ab lg) › /leistungen: Klick auf einen Untermenü-Punkt führt zum Ziel und schließt das Menü
+[1A[2K[38/62] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[39/62] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[40/62] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[41/62] [desktop] › tests/funktion-navigation.spec.mjs:126:5 › Mobilmenü (Drawer) › /leistungen: mobil ist die Desktop-Navigation ausgeblendet und der Drawer der Zugang; am Desktop ist sie sichtbar (Kern ab xl ohne Menü-Schalter)
+[1A[2K[42/62] [desktop] › tests/funktion-navigation.spec.mjs:140:5 › Mobilmenü (Drawer) › /leistungen: Schalter öffnet das Menü, Escape schließt es
+[1A[2K[43/62] [desktop] › tests/funktion-navigation.spec.mjs:154:5 › Mobilmenü (Drawer) › /leistungen: Kategorie aufklappen, Link folgen: Ziel wird geöffnet, Menü schließt
+[1A[2K[44/62] [desktop] › tests/funktion-navigation.spec.mjs:186:3 › Menü vor der Hydrierung (V-06) › Menü-Schalter öffnet und schließt das Menü ohne JavaScript (am Desktop das Untermenü)
+[1A[2K[45/62] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /leistungen: erster Tabstopp, führt zu #main-content
+[1A[2K[46/62] [desktop] › tests/funktion-navigation.spec.mjs:210:44 › Sprunglink › /: erster Tabstopp, führt zu #main-content
+[1A[2K[47/62] [desktop] › tests/funktion-navigation.spec.mjs:226:3 › FAQ-Akkordeon (/faq) › Frage öffnet die Antwort, zweiter Klick schließt sie (aria-expanded)
+[1A[2K[48/62] [desktop] › tests/funktion-navigation.spec.mjs:239:3 › FAQ-Akkordeon (/faq) › Kategorie wechseln zeigt nur deren Fragen
+[1A[2K[49/62] [desktop] › tests/funktion-navigation.spec.mjs:249:3 › FAQ-Akkordeon (/faq) › Suche liefert Treffer aus Frage und Antwort; ohne Treffer klare Meldung
+[1A[2K[50/62] [desktop] › tests/funktion-navigation.spec.mjs:261:3 › FAQ-Akkordeon (/faq) › Startseite: Akkordeon-Frage klappt auf und zu (Bestand aria-expanded, Kern details.open) und blendet die Antwort ein/aus
+[1A[2K[51/62] [desktop] › tests/funktion-navigation.spec.mjs:280:3 › 404 › unbekannte Adresse liefert Status 404 mit Hinweis und Wegen zurück
+[1A[2K[52/62] [desktop] › tests/funktion-navigation.spec.mjs:288:3 › 404 › Link „Zur Startseite“ führt zurück zur Startseite
+[1A[2K[53/62] [desktop] › tests/funktion-navigation.spec.mjs:295:3 › 404 › unbekannter Ratgeber-Artikel liefert ebenfalls Status 404
+[1A[2K[54/62] [desktop] › tests/funktion-navigation.spec.mjs:304:3 › Login (deaktiviert) › leere Pflichtfelder: Anmeldung wird nicht ausgelöst
+[1A[2K[55/62] [desktop] › tests/funktion-navigation.spec.mjs:314:3 › Login (deaktiviert) › falsche Daten: Meldung, Passwort wird geleert, kein Absturz
+[1A[2K[56/62] [desktop] › tests/funktion-navigation.spec.mjs:336:3 › Bewertungs-Karussell (/) › am Anfang ist „Vorherige“ gesperrt, „Nächste“ frei
+[1A[2K[57/62] [desktop] › tests/funktion-navigation.spec.mjs:344:3 › Bewertungs-Karussell (/) › „Nächste“ blättert vor, „Vorherige“ führt zurück und sperrt sich am Anfang
+[1A[2K[58/62] [desktop] › tests/funktion-navigation.spec.mjs:361:3 › Bewertungs-Karussell (/) › Tastatur: „Nächste“ mit Enter blättert vor
+[1A[2K[59/62] [desktop] › tests/funktion-navigation.spec.mjs:377:3 › Blog-Übersicht (/blog) › Suche filtert Artikel; ohne Treffer klare Meldung; „Filter zurücksetzen“ stellt alles wieder her
+[1A[2K[60/62] [desktop] › tests/funktion-navigation.spec.mjs:392:3 › Blog-Übersicht (/blog) › Kategorie-Filter zeigt nur Artikel dieser Kategorie; „Alle“ setzt zurück
+[1A[2K[61/62] [desktop] › tests/funktion-navigation.spec.mjs:408:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Teilen-Menü: Ziele tragen Artikel-Adresse und Titel; „Schließen“ schließt
+[1A[2K[62/62] [desktop] › tests/funktion-navigation.spec.mjs:435:3 › Blog-Artikel (/blog/fliesen-reinigen-pflegen) › Inhaltsverzeichnis: Klick springt zur Überschrift
+[1A[2K  9 skipped
+  53 passed (58.7s)

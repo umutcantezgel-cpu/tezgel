@@ -567,6 +567,9 @@ const aufgabe = def.aufgabe ? AUFGABEN[def.aufgabe] : null;
 const schritte = Array.isArray(def.schritte) ? def.schritte : [];
 const stoerCss = arg('stoer-css', def.stoer_css || null);
 const echteZeit = flag('echte-zeit');
+// P4-GEG2 N-B: Diagnose ohne Banner (Einwilligung „abgelehnt“). Zählt nie für Z-04, nur zum Erklären einer Abweichung;
+//   steht in bedingungen.einwilligung.
+const ohneBanner = flag('diagnose-ohne-banner');
 const still = flag('still');
 const V = ANSICHTEN[ansicht];
 if (!V) { console.error(`Unbekannte Ansicht ${ansicht} (${Object.keys(ANSICHTEN).join(', ')})`); process.exit(1); }
@@ -590,7 +593,7 @@ const context = await browser.newContext({
   locale: 'de-DE', timezoneId: 'Europe/Berlin', reducedMotion: 'no-preference',
 });
 await installSperre(context, { protokoll });
-await setzeEinwilligung(context, 'erstbesuch');
+await setzeEinwilligung(context, ohneBanner ? 'abgelehnt' : 'erstbesuch');
 if (stoerCss) {
   await context.addInitScript((css) => {
     const add = () => { const s = document.createElement('style'); s.setAttribute('data-probelauf-stoerung', ''); s.textContent = css; (document.head || document.documentElement).appendChild(s); };
@@ -612,7 +615,7 @@ neueSeiten.length = 0;
 const bedingungen = {
   ansicht, viewport: { width: V.width, height: V.height }, isMobile: V.isMobile, hasTouch: V.hasTouch, dpr: 1, eingabe,
   browser: `chromium ${browser.version()}`, playwright: '1.56.1', reducedMotion: 'no-preference', locale: 'de-DE', zeitzone: 'Europe/Berlin',
-  feste_zeit: echteZeit ? null : FESTE_ZEIT.toISOString(), einwilligung: 'erstbesuch', sperre: 'installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)',
+  feste_zeit: echteZeit ? null : FESTE_ZEIT.toISOString(), einwilligung: ohneBanner ? 'abgelehnt (Diagnose ohne Banner, zählt nicht für Z-04)' : 'erstbesuch', sperre: 'installSperre (POST /api/anfrage → Attrappe, Fremd-Hosts 204, andere schreibende abgebrochen)',
   warten: 'Zustandsabfragen mit Obergrenze: Netz ruhig 400 ms (max 5 s), DOM ruhig 250 ms (max 3 s), endliche Animationen (max 2 s), Schriften; Banner-Erscheinen max 8 s',
   aktion_timeout_ms: AKTION_TIMEOUT, stoerung: stoerCss ? { css: stoerCss, hinweis: 'GEGENPROBE – kein gültiges Ergebnis' } : null,
   werkzeug: `probelauf.mjs ${WERKZEUG_VERSION}`,

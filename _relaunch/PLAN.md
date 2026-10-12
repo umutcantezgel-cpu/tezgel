@@ -506,3 +506,210 @@ Wiederaufnahme nach jedem Paket (L5) · `testzahl.mjs` zusätzlich mit Laufzeitz
 | 6 | P4-Tabelle, Kriterien P3-00k–o, Summe, Jury-Schwelle | P4 zusätzlich: P4-08 Entwürfe der sechs Hauptseiten W1-01, W2-01, W3-01, W6-01, W8-01, W9-01 (für das P4-Tor, E-017). Kriterien: P3-00k Rang 1 (Z-05, Z-03), P3-00l Z-03/Z-05, P3-00m Z-07/Z-13, P3-00n Z-04, P3-00o Z-05. Summe: P3-00 15 + P3 18 (Varianten) + P4 11 + P5 ≈ 50 (mit -T/-P) + P6 8 + P7 6 ≈ **108 Pakete**; Planwert 10–13 Tage bleibt bis zur Messung am ersten T2. Jury-Schwelle (Bestand + 2,0) gilt nur je Hauptseite. | erledigt (hier) |
 | 7 | Wiederaufnahme | PRUEFPUNKT/STATUS aktualisiert; NEBELKARTE „erprobt“ mit Beleg (Erprobung 2) | erledigt |
 | 8 | Testzahl, Laufzeit-Sperrklinke, PAKET-Pflicht, Kopfskript | Basis 292 Fälle (Laufzeit), statisch 109 Fälle, fixme 3 + skip 6; Laufzeit-Sperrklinke Teil von T2; `commit.sh` verlangt `PAKET=` oder `ORCHESTRATOR=1`; K-009-Text an das gebaute Kopfskript angeglichen (Zeitlimit entfernt die Startklasse; Modul markiert Sichtbares sofort) | erledigt |
+
+---
+
+## Vereinheitlichung · Startseite als Vorbild, Unterseiten Stück für Stück (E-037, E-038) · gilt vor allen früheren Abschnitten
+
+### Context
+
+- **Zwei Sitzungen, ein Live-Stand.** Neben dieser Relaunch-Sitzung lief eine zweite Orchestrierung, die „Werkstatt“ (`_werkstatt/`).
+  - Auf Anweisung des Auftraggebers hat sie beide Arbeitsstände zusammengeführt und die Startseite aus beiden Fassungen fusioniert.
+  - Am 11.10. gegen 17:10 CEST hat sie das auf `main` gepusht: **6156079 ist live** auf www.tezgel.de.
+  - Die Fusions-Startseite `src/app/(bestand)/page.tsx` nutzt das Gestaltungssystem **KERN v2**:
+    - Regeln in `_werkstatt/KERN.md`
+    - Tokens in `src/app/globals.css` und `src/app/bewegung.css`
+    - Bausteine `src/components/kern/*.tsx` (flach) und `src/components/kern/stile.ts`
+  - Meine Kern-Startseite liegt dort nur noch als ruhender Entwurf.
+- **Rahmen und Seitenstand heute.** Der Rahmen für alle Seiten ist bereits KERN v2: Kopf, Menü, Fuß, untere Leiste, Banner und WhatsApp.
+  - Vollständig umgebaut sind nur `/`, `/kontakt` und die 404-Seite.
+  - **74 von 76 Seitendateien** nutzen noch altes Markup: lucide, glass, Verläufe, slate.
+- **Entscheidungen des Auftraggebers (11.10., Chat):**
+  1. „vereinheitlich das design konzept auf main so das die Startseite als vorbil genommen wird und alle unterseiten stück für stück aufgewertet werden immer auf main mit immer regelmäßigen updates“ (E-037).
+  2. Vorbild ist die **live laufende Fusions-Startseite**.
+  3. **Nur diese Sitzung** baut weiter; die Werkstatt ist angehalten.
+- **Ziel:** ein Gestaltungssystem (KERN v2) auf allen rund 120 Seiten.
+  - Jede Seite bzw. Vorlage ist ein eigener Schritt mit eigenem Prüftor und eigenem Push auf `main`.
+  - Nach jedem Push bekommt der Auftraggeber eine kurze Meldung.
+- **Unverändert gelten:**
+  - UNANTASTBAR: Logo, Rechtstexte, Überschriften und Fließtext nur als Vorschlag, Geschäftslogik, `src/config/*`.
+  - G1–G9.
+  - Commits nur über `commit.sh`.
+  - Push nur nach grünem Tor mit `git push origin HEAD:main`.
+  - Modelle: Opus 5.5 und Haiku 5.5, je Agent ausdrücklich gesetzt; PARALLELITÄT 5.
+
+### Phase 0 · Zusammenführung und Übergabe (≈ 1,5 h, ein Push, live unverändert)
+
+1. **Lokalen CLAUDE.md-Block sichern.** Kopie nach `$S/claude-lokal.md`, dann `git checkout -- CLAUDE.md`. Der Merge startet sonst nicht. Der Block wird nie committet.
+2. **`commit.sh` erweitern um `--merge`.** Kein Commit ohne `commit.sh`, aber ein Merge-Commit lässt keine Teil-Commits zu. Der neue Modus:
+   - prüft, dass eine Zusammenführung läuft;
+   - prüft, dass `CLAUDE.md` im Index byte-gleich mit `origin/main` ist, also kein lokaler Block enthalten;
+   - prüft, dass keine Datei größer als 5 MB ist;
+   - schreibt dann den Merge-Commit mit den Attributionszeilen.
+3. **Zusammenführen.** `git fetch origin main`, dann `git merge --no-ff --no-commit origin/main`.
+   - Einziger Konflikt: `src/lib/motion/kopfskript.ts`.
+   - `KOPFSKRIPT` (aktives Dokument `(bestand)`) bleibt byte-gleich mit `origin/main`.
+   - Mein erweitertes `KOPF_SKRIPT` (ruhendes `(kern)`) bleibt, ebenso `EINWILLIGUNG`/`BEWEGUNG` samt Import aus `@/lib/cookie-inventory`.
+   - Commit mit `ORCHESTRATOR=1 commit.sh --merge "integration: origin/main 6156079 (Werkstatt-Fusion) eingemischt"`.
+4. **Lokalen Block wiederherstellen.** `CLAUDE.md` ist danach der committete Stand mit Werkstatt-Block, dazu mein Orchestrator-Block (uncommittet), neu gefasst:
+   - Der Werkstatt-Block ist durch E-038 überholt; nur diese Sitzung arbeitet auf `main`.
+   - Vor jedem Start gilt die Leseliste `_relaunch/`.
+5. **Übergabe dokumentieren** (im selben Push):
+   - **`_werkstatt/STATUS.md` und `PRUEFPUNKT.md`, oben:** „ÜBERGEBEN 11.10.2026 (Entscheidung des Auftraggebers): Der Werkstatt-Lauf ist beendet, nicht fortsetzen, nicht pushen. Die Fortsetzung läuft über die Relaunch-Sitzung nach `_relaunch/PLAN.md`, Abschnitt Vereinheitlichung.“ Der Werkstatt-Block in `CLAUDE.md` verweist genau auf diese Dateien, damit stoppt ein wieder aufgenommener Werkstatt-Lauf.
+   - **`_werkstatt/MENSCHEN.md`:** M-21 als beantwortet markieren.
+   - **`_relaunch/ENTSCHEIDUNGEN.md` E-038:**
+     - KERN v2 ist das einzige Gestaltungssystem; Vorbild ist das live laufende `/`.
+     - Nur diese Sitzung baut.
+     - Der Werkstatt-PLAN (E3–E6, Kür) wird als Paketgerüst übernommen.
+     - `_relaunch/KERN.md` v1.2 und die Kern-Entwürfe werden Archiv bzw. inhaltliche Vorlage.
+     - P4-14 und P4-15 (am Kern-`/` gemessen) gelten als **überholt**; sie werden am Fusions-`/` neu gemessen (Phase 1.4).
+   - **PLAN, STATUS, PRUEFPUNKT:** nachführen.
+6. **T1** am Merge-Commit:
+   - Reinraum: npm ci, Build, Typprüfung, Lint, `npm test` einschließlich `test/bewegung.test.mjs`, qa:graph.
+   - `build-vergleich.mjs 6156079 <merge> --streng`, erwartet **HTML 172 gleich und CSS gleich**. Meine Produktänderungen liegen nur in ruhenden Kern-Dateien.
+7. **Push und Live-Prüfung.**
+   - Bereichsprüfung (`git diff --name-only origin/main HEAD | grep -v ^_relaunch/`): nur Kern-Ruhedateien, `kopfskript.ts` und die Übergabedokumente.
+   - Größe ≤ 50 MB.
+   - `git push origin HEAD:main`, danach `vercel-status.sh`.
+   - `live-rauchtest.sh <sha>` und `live-browser.mjs <sha>` mit fester Kennung.
+   - Meldung an den Auftraggeber.
+8. **Zur `CLAUDE.md` im Repo:** Der Werkstatt-Block bleibt vorerst stehen, weil `commit.sh` `CLAUDE.md` nie committet. Die Übergabevermerke neutralisieren ihn. Ihn zu ersetzen wäre eine Ausnahme von meiner Regel; die schlage ich dem Auftraggeber nur als Option vor, sie blockiert nichts.
+
+### Phase 1 · Eine Werkzeugkette, ein Prüfprofil, Basiswerte (≈ 3–4 h, vor der ersten Seite)
+
+1. **Testsuite: eine einzige, `_relaunch/werkzeuge/tests`.** Sie behält Sperrklinke (`testzahl.mjs`), Uhr-Spec und meine Prüfwerkzeuge. Anpassungen:
+   - `fixtures.mjs`: `KERN_SEITEN` standardmäßig `[]`.
+   - `funktion-einwilligung`: `ladeKnopf` rollt auf den Knopf „Karte laden & zustimmen“.
+   - `funktion-navigation`: Die Schalter-Regel hängt am gemeinsamen Kopf (Navigation erst ab xl), nicht an `istKern`.
+   - `funktion-kontaktwege`: `wegIstLeiste = (p, isMobile) => isMobile`.
+   - Die Specs `funktion-tracking` und `funktion-weiterleitung` aus `_werkstatt/werkzeuge/tests` übernehmen.
+   - Sperrklinke neu basieren, mit Begründung in LERNEN.
+   - Ziel: auf Live 6156079 grün, mindestens so viele Fälle wie die Werkstatt-Suite (290).
+   - Die Werkstatt-Suite wird archiviert und nicht mehr gefahren.
+2. **Werkzeuge der Werkstatt** übernehmen (bleiben in `_werkstatt/werkzeuge`, eigenes `npm ci` mit `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1`):
+   - Übernommen werden `werte.mjs` mit `werte-regeln.json` (nur KERN-v2-Werte), `umbau.mjs` (AST-Umbau lucide → Icon, Klassen → KERN, schreibt nur bei gleichem Text-Fingerabdruck), `ueberlappung.mjs`, `abschnitte.mjs`, `bildsatz.mjs`, `sprite.mjs`, `glyphen.mjs`, `textprobe.cjs`/`bezeichner.cjs`, `bewegung.mjs register` gegen `_werkstatt/register.json`, `briefing.mjs` und `pakete/_vorlage-sichtabnahme.md`.
+   - Fest verdrahteten alten Scratchpad-Pfad und Branchnamen durch `RELAUNCH_SCRATCH` bzw. `main` ersetzen.
+   - Eigene Ports (4350 ff.), damit nichts mit 4310/4320 kollidiert.
+   - Abgelöst: `kern-klassen.mjs` durch `werte.mjs`. `freischalten.sh` entfällt, weil die Seiten direkt in `(bestand)` umgebaut werden, statt ruhend freigeschaltet.
+3. **Prüfprofile:**
+   - **T2-S (je Seiten-Schritt, Ziel ≤ 1,5 h):**
+     - Reinraum aus dem Commit.
+     - `build-vergleich` gegen Live: HTML ändert sich nur auf den Seiten des Schritts; CSS-Änderungen sind erklärt.
+     - `werte.mjs` auf den geänderten Dateien: 0.
+     - Bewegungs-Register lückenlos.
+     - Funktionstests der betroffenen F, beide Projekte.
+     - `texte2` der Seiten mit MIKROTEXTE: rot 0 (Überschriften und Fließtext unverändert).
+     - SEO-Invarianten: Titel, Beschreibung, Canonical, JSON-LD, H1, Links.
+     - axe in den Zuständen normal, Menü, Erstbesuch, Einstellungen: 0.
+     - `a11y-zusatz`: harte Kennzahlen 0.
+     - Fotos in 4 Ansichten, selbst gesichtet; Wortbruch 0; Überlappung 0.
+     - Statischer Slop: 0 lucide, glass, glow und Verlauf auf der Seite.
+   - **T2-Q (geteilte Komponente oder Formular-Ansicht):** wie T2-S, zusätzlich:
+     - alle Seiten, die die Komponente nutzen (grep), in m375 und d1440;
+     - Pixel-Stichprobe der übrigen Seiten mit dem berichtigten `pixel.mjs`;
+     - Mutationsprobe für jede neue Formular-Ansicht.
+   - **Tagestor T-D** (einmal täglich im ruhigen Fenster, ohne Agenten, vor dem Morgenbericht):
+     - volle Suite mit Sperrklinke;
+     - Lighthouse und INP der am Tag geänderten Hauptansichten, verschränkt gegen den Ausgangsstand 707a93d (10 Paare, echter Median, nicht schlechter als der Bestand, Budget K-011);
+     - Pixel-Stichprobe der unberührten Vorlagen;
+     - Sichtabnahme (frischer Opus, Werkstatt-Vorlage) der fertigen Hauptansichten: Ansichtswert ≥ 8, sonst Nachpaket.
+   - **Phasentor** am Ende jeder Etappe (E3, E4/E5, E6): Probeläufer, Fünf-Sekunden-Probe mit vorab festgelegter Regel, Mutationsprobe, frischer Gegenprüfer.
+4. **Basiswerte, einmal:**
+   - Lighthouse und INP der Fusions-`/` gegen den Ausgangsstand (ruhig, 10 Paare). Bisher gibt es dafür keinen Beleg.
+   - Gegenprobe a3 auf der Fusions-`/` mit und ohne Banner.
+   - Sichtabnahme `/` und `/kontakt` (das offene Werkstatt-Tor Anlauf 2).
+   - Aus den Befunden entsteht gegebenenfalls ein Paket „Startseite nachschärfen“ (TBT, Hero-Formular). Es ersetzt P4-14 und P4-15.
+
+### Phase 2 ff. · Schrittfolge (≈ 45 Pushes, Planwert 8–10 Tage)
+
+**Grundlagen:**
+- Das Gerüst sind die Werkstatt-Pakete E3–E6 (`_werkstatt/PLAN.md`), umsortiert nach sichtbarem Nutzen und Abhängigkeiten.
+- Jede Zeile unten ist ein Schritt mit eigenem Push.
+- Briefings entstehen neu aus den PLAN-Zeilen mit `briefing.mjs` bzw. der Paketvorlage.
+- **Inhaltliche Vorlage** sind meine ruhenden Kern-Entwürfe:
+  - Abschnittsfolge, Daten, Anker (`#projekt-check`, `#anfrage`, `#express-anfrage`, `#termin-buchen`), H1-ids;
+  - die geteilten Hooks aus `src/lib/formulare/*`;
+  - die Auflagen W1–W9.
+- Die Optik entsteht aus KERN-v2-Bausteinen. Die Übersetzungstabelle steht in `_werkstatt/pakete/FUSION-UEBERSETZUNG.md`.
+
+**E3 · Hauptansichten und Querschnitt** (Opus baut; Formular-Schritte als T2-Q):
+
+| Nr | Schritt | Voraussetzung |
+|---|---|---|
+| S-01 | `/leistungen` (E3-BAU-02); PricingCalculator und Funnel sind schon KERN v2 | Phase 1 |
+| S-02 | `/ueber-uns` (E3-BAU-07) | Phase 1 |
+| S-03 | `/blog`: Server-Komponente mit Filterinsel, `useBlogListe` (E3-BAU-09) | Phase 1 |
+| S-04 | `/leistungen/[id]`, 4 Seiten (E3-BAU-03) | S-01 |
+| Q-01…Q-05, parallel gebaut, nacheinander gepusht | BadanfrageFunnel (E3-BAU-16–18) · BadProjektCheck (-19) · LeadQuickForm (-20) · RouteVisualization (-21) · FliesenKonfigurator (-11–15) | Phase 1 |
+| S-05 | `/bad` (E3-BAU-01) und Szene „Verlegeplan entsteht“ (E3-ORCH-01) | Q-01, Q-02 |
+| S-06 | `/standorte` (E3-BAU-04) und Einzugsband (E3-ORCH-03) | Q-04 |
+| S-07 | `/standorte/[stadt]`, 10 Seiten (E3-BAU-05) | Q-03 |
+| S-08 | `/fliesen` (E3-BAU-06) und Verband-Umschalter (E3-ORCH-04) | Q-05 |
+| S-09 | `/fliesen/konfigurator` (E3-BAU-08) | Q-05 |
+| S-10 | `/blog/[slug]`, 10 Seiten (E3-BAU-10) | S-03 |
+| S-11 | SIG-3 auf `/leistungen` (E3-ORCH-02), Fugenband `/ueber-uns` (E3-ORCH-05, framer-motion raus) | S-01, S-02 |
+
+Danach das Phasentor E3.
+
+**E4 · Familien** (Haiku mit `umbau.mjs` und Bausteinen, Opus nimmt ab; je 2–3 Seiten):
+- `bad/*`: 4 Schritte, darunter Musterbäder samt `[slug]`.
+- `fliesen/*`: 7 Schritte.
+
+**E5:**
+- Untergrund: 3 Schritte.
+- Balkon/Terrasse: 2.
+- Naturstein und Fliesenreparatur: 2.
+- Treppen: 2.
+- `/leistungen/[id]/[stadt]`: eine Vorlage für alle Instanzen.
+- `/schadensanalyse`.
+
+**E6:**
+- Firma: `/unternehmen`, `/team`, `/partner`.
+- Karriere: 2 Seiten. Ausstellung: 2 Seiten.
+- `/referenzen` und `[id]`.
+- `/termin`.
+- `/beratung`: framer-motion raus.
+- `/faq` und `/preise`.
+- `/foerderung`, `/downloads`, `/login`.
+- Rechtsseiten in 2 Schritten, nur Darstellung.
+- Restkomponenten.
+- Danach das Phasentor.
+
+**E6-ORCH-01 · Abbau des alten Systems** (eigener Schritt mit build-vergleich und knip/grep-Nachweis):
+- Alias-Schicht `tokens.css` entfernen; lucide, framer-motion und Phosphor deinstallieren.
+- Ruhendes `(kern)` samt `src/components/kern/{basis,…}`, `src/styles/kern*.css` und `src/lib/kern` entfernen.
+- `src/lib/kern/start/daten.ts` versorgt die Startseite. Vorher wird es nach `src/lib/start/daten.ts` verschoben.
+
+**Danach:** Kür (Werkstatt KÜR-01…09), P6/P7 nach `_relaunch/PLAN.md` mit ABSCHLUSS, dann Lauf 2 A0–A2 mit Halt am Freigabepunkt.
+
+**Parallelität:**
+- Bis zu 4 Bau-Agenten bearbeiten im Arbeitsbaum getrennte Dateien (Wellenregel: keine gemeinsame Datei, getrennter Importgraph).
+- Vorschau-Builds der Agenten laufen in eigenen Scratch-Kopien auf eigenen Ports, höchstens 2 Builds gleichzeitig.
+- Der Orchestrator nimmt jeden fertigen Schritt ab und committet ihn einzeln (`PAKET=<brief>`).
+- Tor und Push laufen nacheinander aus dem Commit. Der Reinraum baut aus `git archive HEAD`, unfertige Arbeit geht also nie live.
+- Lighthouse läuft nur im Tagestor-Fenster.
+
+### Updates an den Auftraggeber
+
+- **Nach jedem Push:** 2–4 Zeilen im Chat (was live ist, Kennung, wichtigste Messwerte, Beleg).
+- **Morgenbericht-Routine** `trig_01Emv32h2axxyM1GBuc9wCVY`: Prompt auf den neuen Ablauf umstellen (`update_trigger`): Seiten live und offen, Tagestor, Abweichungen, offene Fragen.
+- **Stündlich** eine Protokollzeile in STATUS; PRUEFPUNKT nach jedem Schritt.
+
+### Offene Entscheidungen (blockieren nichts)
+
+- **M-20** Zielgruppe im Einleitungssatz von `/leistungen`, `/ueber-uns` und `/kontakt`: Bis zur Antwort bleibt der Wortlaut; die Fünf-Sekunden-Auflage gilt als begründete Abweichung.
+- Werkstatt-Fragen **M-15 bis M-22** wandern in `_relaunch/MENSCHEN.md`: Waisen löschen, GA-Zeitpunkt, Wetzlar als HQ, Öffnungszeiten, echte Fotos.
+- **Optional:** den Werkstatt-Block der committeten `CLAUDE.md` ersetzen (Ausnahme von meiner Commit-Regel).
+
+### Verifikation
+
+- **Je Schritt:** `_relaunch/belege/s-<nr>/ERGEBNIS.md` mit allen T2-S- bzw. T2-Q-Zeilen. Danach Push, `live-rauchtest.sh` und `live-browser.mjs` mit fester Kennung, dann die Meldung.
+- **Täglich:** das Tagestor T-D mit Beleg.
+- **Am Ende:** frischer Gegenprüfer über ABNAHME. Bedingungen:
+  - statisch 0 lucide, glass, glow und Verlauf unter `src/app/(bestand)`;
+  - `werte.mjs` 0;
+  - volle Suite grün;
+  - axe und `a11y-zusatz` hart 0;
+  - Lighthouse nicht schlechter als der Ausgangsstand, Budgets erreicht oder als begründete Abweichung;
+  - Sichtabnahme ≥ 8 auf den 12 Hauptansichten (`_werkstatt/HAUPTANSICHTEN.json`).
+

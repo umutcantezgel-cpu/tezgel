@@ -1,0 +1,1014 @@
+{
+ "base": "http://127.0.0.1:4343",
+ "einstellungen": false,
+ "erg": [
+  {
+   "seite": "/",
+   "ansicht": "1024x768",
+   "banner": {
+    "oben": 355,
+    "unten": 720,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 365
+   },
+   "h1": {
+    "oben": 158,
+    "unten": 485,
+    "zeilen": 7,
+    "zeilen_im_bild": 7,
+    "zeilen_verdeckt": 5,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 37,
+    "anteil_lesbar": 63
+   },
+   "einleitung": {
+    "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Wal",
+    "oben": 509,
+    "unten": 751,
+    "zeilen": 9,
+    "zeilen_im_bild": 9,
+    "zeilen_verdeckt": 8,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 92,
+    "anteil_lesbar": 8
+   },
+   "html_stil": "--k-banner-unten: 413px;",
+   "html_attr": null,
+   "scroll_pb": "413px",
+   "pb": "413px"
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "1024x768",
+   "banner": {
+    "oben": 355,
+    "unten": 720,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 365
+   },
+   "h1": {
+    "oben": 182,
+    "unten": 436,
+    "zeilen": 5,
+    "zeilen_im_bild": 5,
+    "zeilen_verdeckt": 2,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 26,
+    "anteil_lesbar": 74
+   },
+   "einleitung": {
+    "text": "Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfe",
+    "oben": 468,
+    "unten": 779,
+    "zeilen": 13,
+    "zeilen_im_bild": 13,
+    "zeilen_verdeckt": 8,
+    "ganz_im_bild": false,
+    "anteil_verdeckt": 84,
+    "anteil_lesbar": 14
+   },
+   "html_stil": "--k-banner-unten: 413px;",
+   "html_attr": null,
+   "scroll_pb": "413px",
+   "pb": "413px"
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "1024x768",
+   "banner": {
+    "oben": 355,
+    "unten": 720,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 365
+   },
+   "h1": {
+    "oben": 161,
+    "unten": 320,
+    "zeilen": 4,
+    "zeilen_im_bild": 4,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wet",
+    "oben": 385,
+    "unten": 591,
+    "zeilen": 11,
+    "zeilen_im_bild": 11,
+    "zeilen_verdeckt": 11,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 86,
+    "anteil_lesbar": 14
+   },
+   "html_stil": "--k-banner-unten: 413px;",
+   "html_attr": null,
+   "scroll_pb": "413px",
+   "pb": "413px"
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "1024x768",
+   "banner": {
+    "oben": 355,
+    "unten": 720,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 365
+   },
+   "h1": {
+    "oben": 213,
+    "unten": 452,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 2,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 44,
+    "anteil_lesbar": 56
+   },
+   "einleitung": {
+    "text": "Als Fachbetrieb mit Firmensitz in der Hohwardstraß",
+    "oben": 476,
+    "unten": 685,
+    "zeilen": 12,
+    "zeilen_im_bild": 12,
+    "zeilen_verdeckt": 12,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 97,
+    "anteil_lesbar": 3
+   },
+   "html_stil": "--k-banner-unten: 413px;",
+   "html_attr": null,
+   "scroll_pb": "413px",
+   "pb": "413px"
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "1024x768",
+   "banner": {
+    "oben": 355,
+    "unten": 720,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 365
+   },
+   "h1": {
+    "oben": 148,
+    "unten": 200,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps ",
+    "oben": 216,
+    "unten": 304,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 413px;",
+   "html_attr": null,
+   "scroll_pb": "413px",
+   "pb": "413px"
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "1024x768",
+   "banner": {
+    "oben": 355,
+    "unten": 720,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 365
+   },
+   "h1": {
+    "oben": 202,
+    "unten": 361,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 1,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 2,
+    "anteil_lesbar": 98
+   },
+   "einleitung": {
+    "text": "Über uns und Fliesenverlegung Tezgel: Ihr eingetra",
+    "oben": 393,
+    "unten": 635,
+    "zeilen": 13,
+    "zeilen_im_bild": 13,
+    "zeilen_verdeckt": 13,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 97,
+    "anteil_lesbar": 3
+   },
+   "html_stil": "--k-banner-unten: 413px;",
+   "html_attr": null,
+   "scroll_pb": "413px",
+   "pb": "413px"
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "1024x768",
+   "banner": {
+    "oben": 355,
+    "unten": 720,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 365
+   },
+   "h1": {
+    "oben": 148,
+    "unten": 251,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hesse",
+    "oben": 267,
+    "unten": 414,
+    "zeilen": 5,
+    "zeilen_im_bild": 5,
+    "zeilen_verdeckt": 2,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 34,
+    "anteil_lesbar": 66
+   },
+   "html_stil": "--k-banner-unten: 413px;",
+   "html_attr": null,
+   "scroll_pb": "413px",
+   "pb": "413px"
+  },
+  {
+   "seite": "/",
+   "ansicht": "1280x800",
+   "banner": {
+    "oben": 386,
+    "unten": 752,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 138,
+    "unten": 474,
+    "zeilen": 6,
+    "zeilen_im_bild": 6,
+    "zeilen_verdeckt": 4,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 19,
+    "anteil_lesbar": 81
+   },
+   "einleitung": {
+    "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Wal",
+    "oben": 498,
+    "unten": 678,
+    "zeilen": 9,
+    "zeilen_im_bild": 9,
+    "zeilen_verdeckt": 9,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 88,
+    "anteil_lesbar": 12
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "1280x800",
+   "banner": {
+    "oben": 386,
+    "unten": 752,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 183,
+    "unten": 479,
+    "zeilen": 5,
+    "zeilen_im_bild": 5,
+    "zeilen_verdeckt": 2,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 22,
+    "anteil_lesbar": 78
+   },
+   "einleitung": {
+    "text": "Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfe",
+    "oben": 511,
+    "unten": 727,
+    "zeilen": 10,
+    "zeilen_im_bild": 10,
+    "zeilen_verdeckt": 7,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 74,
+    "anteil_lesbar": 26
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "1280x800",
+   "banner": {
+    "oben": 386,
+    "unten": 752,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 162,
+    "unten": 349,
+    "zeilen": 4,
+    "zeilen_im_bild": 4,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wet",
+    "oben": 414,
+    "unten": 598,
+    "zeilen": 8,
+    "zeilen_im_bild": 8,
+    "zeilen_verdeckt": 8,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 75,
+    "anteil_lesbar": 25
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "1280x800",
+   "banner": {
+    "oben": 386,
+    "unten": 752,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 214,
+    "unten": 494,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 2,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 38,
+    "anteil_lesbar": 62
+   },
+   "einleitung": {
+    "text": "Als Fachbetrieb mit Firmensitz in der Hohwardstraß",
+    "oben": 518,
+    "unten": 699,
+    "zeilen": 11,
+    "zeilen_im_bild": 11,
+    "zeilen_verdeckt": 10,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 82,
+    "anteil_lesbar": 18
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "1280x800",
+   "banner": {
+    "oben": 386,
+    "unten": 752,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 149,
+    "unten": 206,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps ",
+    "oben": 222,
+    "unten": 313,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "1280x800",
+   "banner": {
+    "oben": 386,
+    "unten": 752,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 203,
+    "unten": 390,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 1,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 1,
+    "anteil_lesbar": 99
+   },
+   "einleitung": {
+    "text": "Über uns und Fliesenverlegung Tezgel: Ihr eingetra",
+    "oben": 422,
+    "unten": 602,
+    "zeilen": 13,
+    "zeilen_im_bild": 13,
+    "zeilen_verdeckt": 9,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 75,
+    "anteil_lesbar": 25
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "1280x800",
+   "banner": {
+    "oben": 386,
+    "unten": 752,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 149,
+    "unten": 264,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hesse",
+    "oben": 280,
+    "unten": 400,
+    "zeilen": 4,
+    "zeilen_im_bild": 4,
+    "zeilen_verdeckt": 1,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 6,
+    "anteil_lesbar": 94
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/",
+   "ansicht": "1440x900",
+   "banner": {
+    "oben": 486,
+    "unten": 852,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 138,
+    "unten": 500,
+    "zeilen": 6,
+    "zeilen_im_bild": 6,
+    "zeilen_verdeckt": 1,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Wal",
+    "oben": 524,
+    "unten": 704,
+    "zeilen": 9,
+    "zeilen_im_bild": 9,
+    "zeilen_verdeckt": 8,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 74,
+    "anteil_lesbar": 26
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "1440x900",
+   "banner": {
+    "oben": 486,
+    "unten": 852,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 183,
+    "unten": 505,
+    "zeilen": 5,
+    "zeilen_im_bild": 5,
+    "zeilen_verdeckt": 2,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 1,
+    "anteil_lesbar": 99
+   },
+   "einleitung": {
+    "text": "Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfe",
+    "oben": 537,
+    "unten": 753,
+    "zeilen": 10,
+    "zeilen_im_bild": 10,
+    "zeilen_verdeckt": 6,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 63,
+    "anteil_lesbar": 37
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "1440x900",
+   "banner": {
+    "oben": 486,
+    "unten": 852,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 162,
+    "unten": 366,
+    "zeilen": 4,
+    "zeilen_im_bild": 4,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wet",
+    "oben": 431,
+    "unten": 616,
+    "zeilen": 8,
+    "zeilen_im_bild": 8,
+    "zeilen_verdeckt": 7,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 44,
+    "anteil_lesbar": 56
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "1440x900",
+   "banner": {
+    "oben": 486,
+    "unten": 852,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 214,
+    "unten": 520,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 1,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 9,
+    "anteil_lesbar": 91
+   },
+   "einleitung": {
+    "text": "Als Fachbetrieb mit Firmensitz in der Hohwardstraß",
+    "oben": 544,
+    "unten": 725,
+    "zeilen": 11,
+    "zeilen_im_bild": 11,
+    "zeilen_verdeckt": 9,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 72,
+    "anteil_lesbar": 28
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "1440x900",
+   "banner": {
+    "oben": 486,
+    "unten": 852,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 149,
+    "unten": 210,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps ",
+    "oben": 226,
+    "unten": 317,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "1440x900",
+   "banner": {
+    "oben": 486,
+    "unten": 852,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 203,
+    "unten": 407,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Über uns und Fliesenverlegung Tezgel: Ihr eingetra",
+    "oben": 439,
+    "unten": 619,
+    "zeilen": 13,
+    "zeilen_im_bild": 13,
+    "zeilen_verdeckt": 5,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 48,
+    "anteil_lesbar": 52
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "1440x900",
+   "banner": {
+    "oben": 486,
+    "unten": 852,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 149,
+    "unten": 272,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hesse",
+    "oben": 288,
+    "unten": 379,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/",
+   "ansicht": "1920x1080",
+   "banner": {
+    "oben": 666,
+    "unten": 1032,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 138,
+    "unten": 531,
+    "zeilen": 6,
+    "zeilen_im_bild": 6,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Fugenarme XXL-Großformatfliesen, barrierefreie Wal",
+    "oben": 555,
+    "unten": 735,
+    "zeilen": 9,
+    "zeilen_im_bild": 9,
+    "zeilen_verdeckt": 2,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 11,
+    "anteil_lesbar": 89
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "1920x1080",
+   "banner": {
+    "oben": 666,
+    "unten": 1032,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 183,
+    "unten": 536,
+    "zeilen": 5,
+    "zeilen_im_bild": 5,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfe",
+    "oben": 568,
+    "unten": 784,
+    "zeilen": 10,
+    "zeilen_im_bild": 10,
+    "zeilen_verdeckt": 4,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 13,
+    "anteil_lesbar": 87
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "1920x1080",
+   "banner": {
+    "oben": 666,
+    "unten": 1032,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 162,
+    "unten": 387,
+    "zeilen": 4,
+    "zeilen_im_bild": 4,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Als eingetragener Fliesenleger-Fachbetrieb für Wet",
+    "oben": 452,
+    "unten": 637,
+    "zeilen": 8,
+    "zeilen_im_bild": 8,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "1920x1080",
+   "banner": {
+    "oben": 666,
+    "unten": 1032,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 214,
+    "unten": 551,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Als Fachbetrieb mit Firmensitz in der Hohwardstraß",
+    "oben": 575,
+    "unten": 756,
+    "zeilen": 11,
+    "zeilen_im_bild": 11,
+    "zeilen_verdeckt": 3,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 14,
+    "anteil_lesbar": 86
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "1920x1080",
+   "banner": {
+    "oben": 666,
+    "unten": 1032,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 149,
+    "unten": 211,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Praxisnaher Fliesen-Ratgeber mit wertvollen Tipps ",
+    "oben": 227,
+    "unten": 318,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "1920x1080",
+   "banner": {
+    "oben": 666,
+    "unten": 1032,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 203,
+    "unten": 428,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Über uns und Fliesenverlegung Tezgel: Ihr eingetra",
+    "oben": 460,
+    "unten": 640,
+    "zeilen": 13,
+    "zeilen_im_bild": 13,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "1920x1080",
+   "banner": {
+    "oben": 666,
+    "unten": 1032,
+    "links": 48,
+    "rechts": 496,
+    "hoehe": 366
+   },
+   "h1": {
+    "oben": 149,
+    "unten": 272,
+    "zeilen": 2,
+    "zeilen_im_bild": 2,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "einleitung": {
+    "text": "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hesse",
+    "oben": 288,
+    "unten": 379,
+    "zeilen": 3,
+    "zeilen_im_bild": 3,
+    "zeilen_verdeckt": 0,
+    "ganz_im_bild": true,
+    "anteil_verdeckt": 0,
+    "anteil_lesbar": 100
+   },
+   "html_stil": "--k-banner-unten: 414px;",
+   "html_attr": null,
+   "scroll_pb": "414px",
+   "pb": "414px"
+  }
+ ]
+}

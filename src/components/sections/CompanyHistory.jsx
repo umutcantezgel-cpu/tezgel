@@ -1,58 +1,66 @@
-// Unternehmensgeschichte als Fugenband (KERN K-007 fugenband, E3-ORCH-05): die Jahre stehen an einer Fuge, ein Lot
-// läuft links an den Jahren entlang, sein rotes Stück wächst mit dem Scrollen durch das Band (view-timeline, CSS in
-// bewegung.css). Ohne animation-timeline, ohne JavaScript oder bei reduzierter Bewegung steht das Lot fertig.
-// Serverkomponente – framer-motion, Leuchtflächen, Glasflächen und Hover-Versatz entfallen (E-005, E-010).
-// Wortlaut und Lesefolge wie im Bestand; Daten aus `@/config/company` (historyTimeline, Motto, Inhaber).
+// Über uns · Unternehmensgeschichte (KERN v2, S-02): Serverkomponente ohne Bewegungsbibliothek und ohne Fremd-Icons;
+// nur auf /ueber-uns eingebunden. Kopf wie `Abschnitt` (Mono-Etikett mit Fugenkreuz, H2 `company-history-heading`, Einleitung).
+// Zeitleiste als ruhige Fuge: eine durchgehende Linie in Strich (`fugenband-linie`), mobil links, ab md bei einem Viertel
+// der Breite; je Eintrag eine Jahresmarke mit Fugenkreuz auf der Linie (`fugenband-marke`), das Jahr in Mono links der
+// Linie, Titel (H3) und Text rechts. Kein Wechsel links/rechts – einspaltig an der Linie bleibt es ruhig.
+// Die scroll-gebundene Bewegung „Fugenband“ (Register `fugenband`, S-11) setzt später an Linie und Marken an; bis dahin
+// trägt der Container genau einen `auftritt` (ohne JS und bei reduzierter Bewegung sofort sichtbar).
+// Abschluss: das Motto als großes Zitat im Anzeigeschnitt auf einem Feld in Fliese (ohne Anführungs-Icon, nicht kursiv),
+// die Quelle in Mono in Satzschreibung. Wortlaut wörtlich aus dem Bestand, Daten aus `@/config/company`.
 import { COMPANY_DATA, historyTimeline } from '@/config/company';
+import Abschnitt from '@/components/kern/Abschnitt';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
-import { etikettKlassen, seitenKlassen } from '@/components/kern/stile';
 
 export default function CompanyHistory() {
-    const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
+  const { business, headquarters, authority, owner, legalName, motto } = COMPANY_DATA;
 
-    return (
-        <section className="py-16 lg:py-24" aria-labelledby="company-history-heading">
-            <div className={seitenKlassen}>
-                <div className="max-w-mass">
-                    <span className={etikettKlassen}>
-                        <Fugenkreuz className="size-3 shrink-0 text-strich" />
-                        Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}
-                    </span>
-                    <h2 id="company-history-heading" className="mt-4 text-fs-6 text-tinte">
-                        Unsere Unternehmensgeschichte
-                    </h2>
-                    <p className="mt-6 text-fs-4 text-tinte-2">
-                        Von der Betriebsgründung in {headquarters.city} bis zum Fliesen-Fachbetrieb für ganz Mittelhessen: So hat sich {legalName} unter {owner.fullName} entwickelt.
-                    </p>
-                </div>
+  return (
+    <Abschnitt
+      titelId="company-history-heading"
+      etikett={<>Gegründet {business.establishmentYear} in {headquarters.city} &middot; {authority.shortName}</>}
+      titel="Unsere Unternehmensgeschichte"
+      einleitung={
+        <p>
+          Von der Betriebsgründung in {headquarters.city} bis zum Fliesen-Fachbetrieb für ganz Mittelhessen: So hat sich {legalName} unter {owner.fullName} entwickelt.
+        </p>
+      }
+      auftritt
+    >
+      <div className="relative">
+        {/* Die Fuge: eine Linie über alle Einträge (mobil links, ab md an der Grenze Jahr | Text bei 1/4) */}
+        <span aria-hidden="true" className="fugenband-linie pointer-events-none absolute inset-y-0 left-2 border-l border-strich md:left-1/4" />
 
-                {/* Fugenband: Lot links (Grundschicht Fuge, rotes Stück folgt dem Scrollen), je Jahr eine Zeile an der Fuge */}
-                <div className="fugenband relative mt-16" data-motion="fugenband">
-                    <div aria-hidden="true" className="fugenband-linie">
-                        <span className="fugenband-rot" />
-                    </div>
-                    <ol className="border-t border-fuge">
-                        {historyTimeline.map((item) => (
-                            <li key={item.year} className="relative grid grid-cols-4 gap-x-6 gap-y-2 border-b border-fuge py-8 pl-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-8 lg:py-12 lg:pl-12">
-                                <Fugenkreuz className="absolute left-0 top-8 size-3 -translate-x-1/2 text-tinte lg:top-12" />
-                                <p className="col-span-4 font-mono text-fs-5 text-tinte tabular-nums md:col-span-2 lg:col-span-2">{item.year}</p>
-                                <div className="col-span-4 md:col-span-6 lg:col-span-7">
-                                    <h3 className="font-anzeige text-fs-5 text-tinte">{item.title}</h3>
-                                    <p className="mt-2 max-w-mass text-fs-3 text-tinte-2">{item.description}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
+        <ol className="relative">
+          {historyTimeline.map((eintrag) => (
+            <li key={eintrag.year} className="relative pb-12 pl-8 last:pb-0 md:grid md:grid-cols-12 md:pb-16 md:pl-0">
+              {/* Jahr: mobil über dem Titel, ab md links der Linie (rechtsbündig); die Marke sitzt mittig auf der Linie */}
+              <p className="relative font-mono text-fs-4 text-tinte md:col-span-3 md:self-start md:pr-8 md:text-right md:text-fs-5 lg:pr-12">
+                <span
+                  aria-hidden="true"
+                  className="fugenband-marke absolute top-1/2 -left-6 flex -translate-x-1/2 -translate-y-1/2 text-tinte md:right-0 md:left-auto md:translate-x-1/2"
+                >
+                  <Fugenkreuz className="size-4" />
+                </span>
+                {eintrag.year}
+              </p>
+              <div className="mt-2 md:col-span-9 md:mt-0 md:pl-8 lg:col-span-7 lg:pl-12">
+                <h3 className="text-fs-5 text-tinte">{eintrag.title}</h3>
+                <p className="mt-4 max-w-mass text-fs-3 text-tinte-2">{eintrag.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
 
-                {/* Leitsatz des Inhabers wie im Einstieg der Startseite: Linie in Tinte, Zitat, Herkunft in Mono */}
-                <figure className="mt-16 max-w-mass border-l-2 border-tinte pl-6">
-                    <blockquote className="text-fs-5 text-tinte">&bdquo;{motto}&ldquo;</blockquote>
-                    <figcaption className="mt-3 font-mono text-fs-1 text-tinte-2">
-                        {owner.fullName} &middot; {owner.title}, {legalName}
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-    );
+      {/* Leitsatz zum Schluss: Motto mit Unterschrift (Bestand: „Final Vision Banner“) */}
+      <figure className="mt-16 border border-fuge bg-fliese p-6 md:p-12 lg:mt-24">
+        <blockquote className="max-w-mass font-anzeige text-fs-5 font-extrabold text-tinte lg:text-fs-6">
+          &bdquo;{motto}&ldquo;
+        </blockquote>
+        <figcaption className="mt-6 font-mono text-fs-1 text-tinte-2">
+          {owner.fullName} &middot; {owner.title}, {legalName}
+        </figcaption>
+      </figure>
+    </Abschnitt>
+  );
 }

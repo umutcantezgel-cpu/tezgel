@@ -1,0 +1,7 @@
+1024 {"kopfhoehe":64,"verfuegbar":928,"bedarf":761,"felder":[459,412,57],"ueberlauf_kopf":false,"ueberlauf_seite":false,"nav_eintraege":0,"nav_mehrzeilig":0,
+1100 {"kopfhoehe":64,"verfuegbar":1004,"bedarf":763,"felder":[534,413,57],"ueberlauf_kopf":false,"ueberlauf_seite":false,"nav_eintraege":0,"nav_mehrzeilig":0,
+1279 {"kopfhoehe":64,"verfuegbar":1183,"bedarf":764,"felder":[713,413,57],"ueberlauf_kopf":false,"ueberlauf_seite":false,"nav_eintraege":0,"nav_mehrzeilig":0,
+1280 {"kopfhoehe":64,"verfuegbar":1184,"bedarf":1148,"felder":[180,750,254],"ueberlauf_kopf":false,"ueberlauf_seite":false,"nav_eintraege":10,"nav_mehrzeilig":0,
+1366 {"kopfhoehe":64,"verfuegbar":1216,"bedarf":1148,"felder":[212,750,254],"ueberlauf_kopf":false,"ueberlauf_seite":false,"nav_eintraege":10,"nav_mehrzeilig":0,
+1440 {"kopfhoehe":64,"verfuegbar":1216,"bedarf":1148,"felder":[212,750,254],"ueberlauf_kopf":false,"ueberlauf_seite":false,"nav_eintraege":10,"nav_mehrzeilig":0,
+1920 {"kopfhoehe":64,"verfuegbar":1216,"bedarf":1148,"felder":[212,750,254],"ueberlauf_kopf":false,"ueberlauf_seite":false,"nav_eintraege":10,"nav_mehrzeilig":0,

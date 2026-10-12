@@ -56,6 +56,9 @@ const WORKER = Math.min(2, Math.max(1, Number(arg('worker', '2')))); // Last: h�
 const gpArg = arg('gegenprobe');
 const gegenprobe = gpArg === undefined ? [] : (gpArg === true ? ['fokus'] : String(gpArg).split(','));
 const zustaendeTastatur = flag('ohne-erstbesuch') ? ['abgelehnt'] : ['abgelehnt', 'erstbesuch'];
+// P4-GEG2 N-A: Reflow, Zoom, Textabstand und forced-colors zusätzlich mit offenem Banner (erstbesuch) bzw. in der
+//   Einstellungen-Ansicht (einstellungen). Standard: nur „abgelehnt“ (Banner zu) wie bisher.
+const BANNER_ZUSTAENDE = ['abgelehnt', ...(typeof arg('banner') === 'string' ? arg('banner').split(',').filter((z) => ['erstbesuch', 'einstellungen'].includes(z)) : [])];
 for (const p of pruefungen) if (!ALLE_PRUEFUNGEN.includes(p)) throw new Error(`unbekannte Prüfung ${p}`);
 for (const a of ansichten) if (!ANSICHTEN[a]) throw new Error(`unbekannte Ansicht ${a}`);
 
@@ -557,6 +560,18 @@ async function laden(page, s, { waitUntil = 'domcontentloaded' } = {}) {
   await page.evaluate(HELFER);
   return resp ? resp.status() : null;
 }
+async function bannerZustand(page, banner) {
+  if (banner === 'abgelehnt') return;
+  const dialog = page.getByRole('dialog').filter({ hasText: /Cookie/ }).first();
+  await dialog.waitFor({ state: 'visible', timeout: 10000 });
+  if (banner === 'einstellungen') {
+    await dialog.getByRole('button', { name: 'Einstellungen', exact: true }).click();
+    await page.waitForTimeout(500);
+    if (!(await dialog.getByText('Cookie-Einstellungen individuell anpassen').first().isVisible())) throw new Error('Einstellungen-Ansicht nicht geöffnet');
+  }
+  await page.waitForTimeout(300);
+}
+const einwFuer = (banner) => (banner === 'abgelehnt' ? 'abgelehnt' : 'erstbesuch');
 const sperrInfo = (protokoll) => ({ fremd: protokoll.filter((p) => p.art === 'fremd').length, blockiert: protokoll.filter((p) => p.art === 'blockiert').length });
 
 // ---- 1. Tastatur ----
@@ -687,13 +702,14 @@ async function pruefeTastatur(s, a, zustand) {
 }
 
 // ---- 2. Reflow 320 ----
-async function pruefeReflow(s) {
+async function pruefeReflow(s, banner = 'abgelehnt') {
   const v = { width: 320, height: 640, isMobile: false, hasTouch: false };
-  const { context, protokoll } = await neuerKontext(v);
+  const { context, protokoll } = await neuerKontext(v, {}, einwFuer(banner));
   const page = await context.newPage();
-  const r = { pruefung: 'reflow', seite: s, ansicht: 'r320' };
+  const r = { pruefung: 'reflow', seite: s, ansicht: 'r320', banner };
   try {
     r.status = await laden(page, s);
+    await bannerZustand(page, banner);
     await durchscrollen(page); await bereit(page);
     r.gegenprobe = await gegenprobenAnwenden(page, 'reflow');
     r.horizontal = await page.evaluate(() => window.__a11yZ.horizontal());
@@ -707,13 +723,14 @@ async function pruefeReflow(s) {
 }
 
 // ---- 3. Zoom 200 % ----
-async function pruefeZoom(s, variante) {
+async function pruefeZoom(s, variante, banner = 'abgelehnt') {
   const v = variante === 'css' ? { width: 1280, height: 800 } : { width: 640, height: 400 };
-  const { context, protokoll } = await neuerKontext(v, { deviceScaleFactor: variante === 'css' ? 1 : 2 });
+  const { context, protokoll } = await neuerKontext(v, { deviceScaleFactor: variante === 'css' ? 1 : 2 }, einwFuer(banner));
   const page = await context.newPage();
-  const r = { pruefung: 'zoom', seite: s, variante, ansicht: variante === 'css' ? 'd1280-zoom2' : 'v640x400-dpr2' };
+  const r = { pruefung: 'zoom', seite: s, variante, ansicht: variante === 'css' ? 'd1280-zoom2' : 'v640x400-dpr2', banner };
   try {
     r.status = await laden(page, s);
+    await bannerZustand(page, banner);
     await durchscrollen(page); await bereit(page);
     if (variante === 'css') {
       await page.evaluate(async () => { document.documentElement.style.zoom = 2; window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); await window.__a11yZ.frames(3); });
@@ -733,13 +750,14 @@ async function pruefeZoom(s, variante) {
 }
 
 // ---- 4. Textabstände ----
-async function pruefeTextabstand(s, a) {
+async function pruefeTextabstand(s, a, banner = 'abgelehnt') {
   const v = ANSICHTEN[a];
-  const { context, protokoll } = await neuerKontext(v);
+  const { context, protokoll } = await neuerKontext(v, {}, einwFuer(banner));
   const page = await context.newPage();
-  const r = { pruefung: 'textabstand', seite: s, ansicht: a };
+  const r = { pruefung: 'textabstand', seite: s, ansicht: a, banner };
   try {
     r.status = await laden(page, s);
+    await bannerZustand(page, banner);
     await durchscrollen(page); await bereit(page);
     r.gegenprobe = await gegenprobenAnwenden(page, 'textabstand');
     const vor = await page.evaluate(TEXTSCHNITT);
@@ -767,18 +785,19 @@ async function pruefeTextabstand(s, a) {
 }
 
 // ---- 5. forced-colors ----
-async function pruefeForced(s, a) {
+async function pruefeForced(s, a, banner = 'abgelehnt') {
   const v = ANSICHTEN[a];
-  const { context, protokoll } = await neuerKontext(v);
+  const { context, protokoll } = await neuerKontext(v, {}, einwFuer(banner));
   const page = await context.newPage();
-  const r = { pruefung: 'forced', seite: s, ansicht: a };
+  const r = { pruefung: 'forced', seite: s, ansicht: a, banner };
   try {
     await page.emulateMedia({ forcedColors: 'active', reducedMotion: 'reduce' });
     r.status = await laden(page, s);
+    await bannerZustand(page, banner);
     await durchscrollen(page); await bereit(page);
     r.gegenprobe = await gegenprobenAnwenden(page, 'forced');
     const dir = ensureDir(path.join(CACHE, 'forced-colors', a));
-    const datei = path.join(dir, `${slug(s)}.jpg`);
+    const datei = path.join(dir, `${slug(s)}${banner === 'abgelehnt' ? '' : '-' + banner}.jpg`);
     await page.screenshot({ path: datei, fullPage: true, type: 'jpeg', quality: 60, animations: 'disabled' });
     r.foto = path.relative(RELAUNCH, datei);
     const f = await page.evaluate(FORCED, BEDIENELEMENTE);
@@ -839,10 +858,12 @@ const t0 = Date.now();
 browser = await chromium.launch();
 const jobs = [];
 if (pruefungen.includes('tastatur')) for (const s of seiten) for (const a of ansichten) for (const z of zustaendeTastatur) jobs.push(['tastatur', () => pruefeTastatur(s, a, z)]);
-if (pruefungen.includes('reflow')) for (const s of seiten) jobs.push(['reflow', () => pruefeReflow(s)]);
-if (pruefungen.includes('zoom')) for (const s of seiten) for (const vz of ['css', 'aequivalent']) jobs.push(['zoom', () => pruefeZoom(s, vz)]);
-if (pruefungen.includes('textabstand')) for (const s of seiten) for (const a of ansichten) jobs.push(['textabstand', () => pruefeTextabstand(s, a)]);
-if (pruefungen.includes('forced')) for (const s of seiten) for (const a of ansichten) jobs.push(['forced', () => pruefeForced(s, a)]);
+for (const b of BANNER_ZUSTAENDE) {
+  if (pruefungen.includes('reflow')) for (const s of seiten) jobs.push(['reflow', () => pruefeReflow(s, b)]);
+  if (pruefungen.includes('zoom')) for (const s of seiten) for (const vz of ['css', 'aequivalent']) jobs.push(['zoom', () => pruefeZoom(s, vz, b)]);
+  if (pruefungen.includes('textabstand')) for (const s of seiten) for (const a of ansichten) jobs.push(['textabstand', () => pruefeTextabstand(s, a, b)]);
+  if (pruefungen.includes('forced')) for (const s of seiten) for (const a of ansichten) jobs.push(['forced', () => pruefeForced(s, a, b)]);
+}
 if (pruefungen.includes('ohnejs')) for (const s of seiten) for (const a of ansichten) jobs.push(['ohnejs', () => pruefeOhneJs(s, a)]);
 const laeufe = [];
 let next = 0;
@@ -951,7 +972,7 @@ const aus = {
   satz, base: BASE, erstellt: new Date().toISOString(), werkzeug: 'a11y-zusatz.mjs', kriterium: 'Z-11',
   bedingungen: {
     server: BASE, browser: `chromium ${browserVersion}`, playwright: '1.56.1', seiten, ansichten, pruefungen,
-    einwilligung: 'abgelehnt', einwilligung_tastatur: zustaendeTastatur, reducedMotion: 'reduce', locale: 'de-DE', timezoneId: 'Europe/Berlin', colorScheme: 'light', deviceScaleFactor: 1,
+    einwilligung: 'abgelehnt', banner_zustaende: BANNER_ZUSTAENDE, einwilligung_tastatur: zustaendeTastatur, reducedMotion: 'reduce', locale: 'de-DE', timezoneId: 'Europe/Berlin', colorScheme: 'light', deviceScaleFactor: 1,
     ansichten_px: Object.fromEntries(ansichten.map((a) => [a, ANSICHTEN[a]])), worker: WORKER, gegenprobe: gegenprobe.length ? gegenprobe.map((g) => ({ name: g, ...GEGENPROBEN[g], js: GEGENPROBEN[g].js ? String(GEGENPROBEN[g].js) : undefined })) : null,
     regeln: REGELN, rohdaten: path.relative(RELAUNCH, CACHE),
   },

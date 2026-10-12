@@ -1,0 +1,633 @@
+[
+ {
+  "ansicht": "320x640",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 91,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 369,
+   "spb": 369,
+   "pb": 369
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 529,
+   "spb": 529,
+   "pb": 529
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "320x640",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 86,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 86,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 369,
+   "spb": 369,
+   "pb": 369
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "360x740",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 83,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 389,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 604,
+   "spb": 604,
+   "pb": 604
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "360x740",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 71,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 71,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 389,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "375x812",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 72,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 375,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 658,
+   "spb": 658,
+   "pb": 658
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "375x812",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 70,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 70,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 375,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "430x932",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 65,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 375,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 748,
+   "spb": 748,
+   "pb": 748
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "430x932",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 69,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 69,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 375,
+   "spb": 389,
+   "pb": 389
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "768x1024",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 67,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 441,
+   "spb": 449,
+   "pb": 449
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 849,
+   "spb": 849,
+   "pb": 849
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "768x1024",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 90,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 90,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 441,
+   "spb": 449,
+   "pb": 449
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1000x800",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 81,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 446,
+   "spb": 449,
+   "pb": 449
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 681,
+   "spb": 681,
+   "pb": 681
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1000x800",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 76,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 76,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 446,
+   "spb": 449,
+   "pb": 449
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1024x768",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 89,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 182,
+   "spb": 192,
+   "pb": 192
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 576,
+   "spb": 576,
+   "pb": 576
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1024x768",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 69,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 69,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 182,
+   "spb": 192,
+   "pb": 192
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1100x800",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 62,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 162,
+   "spb": 192,
+   "pb": 192
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 600,
+   "spb": 600,
+   "pb": 600
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1100x800",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 107,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 107,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 162,
+   "spb": 192,
+   "pb": 192
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1280x800",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 79,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 143,
+   "spb": 152,
+   "pb": 152
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 600,
+   "spb": 600,
+   "pb": 600
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1280x800",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 76,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 76,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 143,
+   "spb": 152,
+   "pb": 152
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1440x900",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 93,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 143,
+   "spb": 152,
+   "pb": 152
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 652,
+   "spb": 675,
+   "pb": 675
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1440x900",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 78,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 78,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 143,
+   "spb": 152,
+   "pb": 152
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "ansicht": "1920x1080",
+  "motion": "reduce",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 80,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 143,
+   "spb": 152,
+   "pb": 152
+  },
+  "erste_ok": true,
+  "einstellungen": {
+   "attr": "einstellungen",
+   "belegt": 652,
+   "spb": 810,
+   "pb": 810
+  },
+  "einstellungen_ok": true
+ },
+ {
+  "ansicht": "1920x1080",
+  "motion": "no-preference",
+  "html_mutationen_beim_laden": [
+   {
+    "t": 78,
+    "a": "data-k-banner",
+    "v": "offen",
+    "lesbar": "loading"
+   },
+   {
+    "t": 78,
+    "a": "class",
+    "v": "archivo_8f655f11-module__q1M_Ta__variable plexmono_19171dcf-module__Gqqf6q__variable k-bewegung",
+    "lesbar": "loading"
+   }
+  ],
+  "erste": {
+   "attr": "offen",
+   "belegt": 143,
+   "spb": 152,
+   "pb": 152
+  },
+  "erste_ok": true,
+  "einstellungen": null,
+  "einstellungen_ok": null
+ },
+ {
+  "klickfolge": [
+   [
+    "start",
+    [
+     "noch kein html",
+     "offen"
+    ]
+   ],
+   [
+    "Einstellungen",
+    "einstellungen"
+   ],
+   [
+    "Zurück",
+    "offen"
+   ],
+   [
+    "Alle ablehnen",
+    null
+   ],
+   [
+    "Fußlink Cookie-Einstellungen",
+    "einstellungen"
+   ],
+   [
+    "Auswahl speichern",
+    null
+   ],
+   [
+    "Neu laden mit Entscheidung",
+    [
+     "noch kein html",
+     null,
+     false,
+     []
+    ]
+   ]
+  ]
+ },
+ {
+  "abgelehnt": [
+   "noch kein html",
+   null,
+   [],
+   "0px"
+  ]
+ }
+]

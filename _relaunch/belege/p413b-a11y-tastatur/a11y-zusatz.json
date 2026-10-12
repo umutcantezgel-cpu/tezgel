@@ -1,0 +1,489 @@
+{
+ "satz": "p413b-a11y-tastatur",
+ "base": "http://127.0.0.1:4321",
+ "erstellt": "2026-10-11T17:26:08.658Z",
+ "werkzeug": "a11y-zusatz.mjs",
+ "kriterium": "Z-11",
+ "bedingungen": {
+  "server": "http://127.0.0.1:4321",
+  "browser": "chromium 141.0.7390.37",
+  "playwright": "1.56.1",
+  "seiten": [
+   "/"
+  ],
+  "ansichten": [
+   "m375",
+   "d1440"
+  ],
+  "pruefungen": [
+   "tastatur"
+  ],
+  "einwilligung": "abgelehnt",
+  "banner_zustaende": [
+   "abgelehnt"
+  ],
+  "einwilligung_tastatur": [
+   "abgelehnt",
+   "erstbesuch"
+  ],
+  "reducedMotion": "reduce",
+  "locale": "de-DE",
+  "timezoneId": "Europe/Berlin",
+  "colorScheme": "light",
+  "deviceScaleFactor": 1,
+  "ansichten_px": {
+   "m375": {
+    "width": 375,
+    "height": 812,
+    "isMobile": true,
+    "hasTouch": true
+   },
+   "d1440": {
+    "width": 1440,
+    "height": 900,
+    "isMobile": false,
+    "hasTouch": false
+   }
+  },
+  "worker": 2,
+  "gegenprobe": null,
+  "regeln": {
+   "tastatur": {
+    "obergrenze_schritte": 400,
+    "ende": "Fokus verlässt das Dokument (activeElement = body, document.hasFocus() = false) oder Rückkehr zum ersten Element",
+    "sprung_rueckwaerts": "Dokument-Y (rect.top + scrollY) des nächsten Fokus liegt mehr als 1 Bildschirmhöhe über dem vorigen",
+    "fokus_sichtbar": "Ausschnitt = Element-Rechteck + 8 px, im Bild; Fokus-Bild (nach Tab, stabil) gegen Ruhe-Bild (nach blur(), stabil). Pixel geändert = ein Kanal weicht > 12/255 ab; Kontrastpixel = geändert und Kontrast Fokus-/Ruhefarbe ≥ 3:1 (WCAG-2.4.13-Verfahren). Messlage: ragt der Ausschnitt aus dem Bild, wird das Element nur für die Messung mittig gerollt (scrollIntoView center), danach werden Fenster- und Container-Scrollstände zurückgesetzt. U = Umfang des sichtbaren Elementrechtecks abzüglich Eckenrundung (je Ecke (2 − π/2)·r, Radien nach CSS-Skalierung; mindestens ½ Rechteckumfang) = 1-px-Umfang; Inline-Element über mehrere Zeilen (display inline, getClientRects > 1): U = Umfang der Vereinigung der Zeilenstücke im Bild; übereinander liegende Stücke mit Abstand ≤ 2·(Versatz + Breite) des Umrisses bilden wie bei Chrome einen Umriss; Umriss < 2 px gilt als dünn (der Ring folgt den Stücken, nicht dem umschließenden Rechteck; P4-Tor, E-029). Status: ok ≥ 1,5·U Kontrastpixel (≈ 2-px-Umriss mit Kantenglättung) · duenn ≥ 0,7·U (≈ 1 px oder nur teilweise ≥ 3:1) · kontrastarm < 0,7·U · unsichtbar < max(4, 0,05·U) geänderte Pixel. „Fokus nicht sichtbar“ = unsichtbar + kontrastarm; „nicht-messbar“ = Fokus blieb nach blur() nicht frei. grund: element-unsichtbar (checkVisibility mit Deckkraft/visibility = false), im-overflow-abgeschnitten, ohne-groesse, ausserhalb-bild. Messlage auch dann mittig, wenn an Ring-Stichproben (4 px außerhalb, Kanten/Ecken) eine fremde feste Ebene liegt (ist die Mitte mittig verdeckt, im natürlichen aber frei, wird im natürlichen Scrollstand gemessen); das zählt als „Ring teilverdeckt (fest)“, wenn die Mitte im natürlichen Scrollstand frei war (WCAG 2.4.12, Info). Zusatz „ohne Outline/Schatten“: weder outline noch box-shadow unterscheiden sich zwischen Fokus und Ruhe (AUFTRAG §7: Fokus über outline).",
+    "fokus_verdeckt": "elementFromPoint an der Mitte des größten Client-Rechtecks ist weder Element noch Nach-/Vorfahr noch zugehöriges label; „fest“ = Treffer liegt in einer position:fixed/sticky-Ebene, die das Element nicht enthält; „ausserhalb“ = Mitte nicht im Bild; „abgeschnitten“ = Mitte liegt außerhalb eines overflow-Vorfahren; „ganz“ = zusätzlich alle vier Ecken nicht frei",
+    "falle": "derselbe Fokus 10× hintereinander → Abbruch; Zyklus = ein Element zum 3. Mal fokussiert → Abbruch, danach Escape + Tab: verlässt der Fokus den Zyklus?",
+    "sprunglink": "erster Tab fokussiert <a href=\"#main-content\"> und das Ziel #main-content existiert",
+    "iframes": "ein iframe zählt als ein Element (Fremd-Inhalte sind durch die Sperre leer)"
+   },
+   "reflow": {
+    "ansicht": "320 × 640, DPR 1, Desktop-Kontext (entspricht 1280 px bei 400 %)",
+    "horizontal": "scrollWidth > clientWidth + 1 oder scrollTo(1e6) ergibt scrollX > 1 (Hinweis: overflow-x: clip an html/body verhindert Scrollen strukturell; Abgeschnittenes zeigt sich dann nur in ragt-heraus)",
+    "ueberlauf": "lib.mjs → ueberlauf() (ragt-heraus, text-abgeschnitten), nach durchscrollen()"
+   },
+   "zoom": {
+    "css": "1280 × 800, DPR 1, document.documentElement.style.zoom = 2 (Medienabfragen sehen weiter 1280 px – strenger als Browser-Zoom)",
+    "aequivalent": "640 × 400, DPR 2, ohne CSS-Zoom (= Browser-Zoom 200 % bei 1280 × 800)",
+    "verdeckt": "sichtbares Bedienelement, dessen Mitte an keiner Scrollposition (Schritt ½ Bildschirmhöhe) frei ist",
+    "nie_im_bild": "Mitte an keiner Scrollposition im Bild (z. B. rechts außerhalb) und kein eigener Scroll-Container dazwischen",
+    "info": "im_overflow_verborgen = Mitte nur außerhalb eines overflow-Vorfahren (z. B. geschlossene Menüs/Akkordeons); im_scroller = in einem scrollbaren Container (z. B. Filterleiste), per Container-Scrollen erreichbar"
+   },
+   "textabstand": {
+    "stilblatt": "*,*::before,*::after{line-height:1.5!important;letter-spacing:.12em!important;word-spacing:.16em!important} p{margin-bottom:2em!important}",
+    "befund": "Text-Fragment (Range.getClientRects) ragt > 2 px über die Innenkante eines Elements mit overflow hidden/clip; gezählt wird nur, was ohne Stilblatt nicht abgeschnitten war; dazu neue ueberlauf()-Befunde",
+    "scroll_ueberhang": "Wortlaut Paket: overflow hidden/clip mit Text und scrollHeight > clientHeight bzw. scrollWidth > clientWidth (+1 px), neu ggü. ohne Stilblatt – zählt auch Nicht-Text-Überhang, daher nur Info"
+   },
+   "forced": {
+    "emulation": "page.emulateMedia({ forcedColors: 'active' })",
+    "befund": "sichtbares Bedienelement ohne Rahmen (alle Seiten none/hidden oder < 1 px) und ohne Outline und ohne sichtbaren Text; Felder (input/select/textarea) ohne Rahmen/Outline gesondert"
+   },
+   "ohnejs": {
+    "kontext": "javaScriptEnabled: false",
+    "text": "sichtbare Zeichen in <main> (Textknoten mit checkVisibility inkl. Deckkraft/visibility) ≥ 80 % des Laufs mit JS (nach durchscrollen)",
+    "erster_bildschirm": "Elemente im ersten Bildschirm mit opacity 0 oder visibility hidden, oberstes je Teilbaum, mit Inhalt (Text/Bild) und ohne aria-hidden; Kennzahl zählt nur, was im Lauf mit JS (oben, nach durchscrollen) nicht ebenso verborgen ist (pfad + Text); ebenso verborgene (geschlossene Menüs) stehen gesondert",
+    "navigation": "mindestens ein sichtbarer interner Link in header oder footer; dazu erreichbare Hauptseiten"
+   }
+  },
+  "rohdaten": "cache/a11y-zusatz/p413b-a11y-tastatur"
+ },
+ "laufzeit_s": 62,
+ "status": {
+  "tastatur": {
+   "reihenfolge": "gruen",
+   "fokus_sichtbar": "gruen",
+   "fokus_2px": "rot",
+   "fokus_outline": "gruen",
+   "fokus_verdeckt": "gruen",
+   "tastaturfalle": "gruen",
+   "sprunglink": "gruen"
+  }
+ },
+ "kennzahlen": {
+  "tastatur": {
+   "fokus_nicht_sichtbar": 0,
+   "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+   "fokus_ring_teilverdeckt_fest": 8,
+   "fokus_unter_2px": 1,
+   "fokus_nicht_messbar": 0,
+   "fokus_ohne_outline_schatten": 0,
+   "fokus_verdeckt": 0,
+   "fokus_verdeckt_fest": 0,
+   "sprung_rueckwaerts": 0,
+   "falle": 0,
+   "zyklus_ohne_ausweg": 0,
+   "sprunglink_fehlt": 0,
+   "laeufe": 4,
+   "fehler": 0,
+   "schritte": 710,
+   "m375_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_abgelehnt": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "m375_erstbesuch": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 1,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   },
+   "d1440_erstbesuch": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_unter_2px": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "sprunglink_fehlt": 0
+   }
+  }
+ },
+ "je_seite": {
+  "/": {
+   "tastatur": {
+    "fokus_nicht_sichtbar": 0,
+    "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+    "fokus_ring_teilverdeckt_fest": 8,
+    "fokus_unter_2px": 1,
+    "fokus_nicht_messbar": 0,
+    "fokus_ohne_outline_schatten": 0,
+    "fokus_verdeckt": 0,
+    "fokus_verdeckt_fest": 0,
+    "sprung_rueckwaerts": 0,
+    "falle": 0,
+    "zyklus_ohne_ausweg": 0,
+    "sprunglink_fehlt": 0
+   }
+  }
+ },
+ "ergebnisse": {
+  "tastatur": [
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 179,
+    "instabil": 0,
+    "fokus": {
+     "ok": 179,
+     "duenn": 0,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 30.7
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "d1440",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 185,
+    "instabil": 0,
+    "fokus": {
+     "ok": 185,
+     "duenn": 0,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 31.9
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "abgelehnt",
+    "status": 200,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 170,
+    "instabil": 0,
+    "fokus": {
+     "ok": 170,
+     "duenn": 0,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 1,
+     "fokus_unter_2px": 0,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 28.9
+   },
+   {
+    "pruefung": "tastatur",
+    "seite": "/",
+    "ansicht": "m375",
+    "zustand": "erstbesuch",
+    "status": 200,
+    "banner": true,
+    "gegenprobe": [],
+    "erster_tab": {
+     "ok": true,
+     "pfad": "a.sr-only.k-text",
+     "name": "Zum Hauptinhalt springen",
+     "href": "#main-content"
+    },
+    "ende": "seitenende",
+    "schritte": 176,
+    "instabil": 0,
+    "fokus": {
+     "ok": 175,
+     "duenn": 1,
+     "kontrastarm": 0,
+     "unsichtbar": 0,
+     "nicht-messbar": 0
+    },
+    "verdeckt": {
+     "fest": 0,
+     "andere": 0,
+     "ausserhalb": 0,
+     "abgeschnitten": 0,
+     "ganz": 0
+    },
+    "kennzahlen": {
+     "fokus_nicht_sichtbar": 0,
+     "fokus_nicht_sichtbar_davon_verdeckt_verborgen": 0,
+     "fokus_ring_teilverdeckt_fest": 5,
+     "fokus_unter_2px": 1,
+     "fokus_nicht_messbar": 0,
+     "fokus_ohne_outline_schatten": 0,
+     "fokus_verdeckt": 0,
+     "fokus_verdeckt_fest": 0,
+     "sprung_rueckwaerts": 0,
+     "falle": 0,
+     "zyklus_ohne_ausweg": 0,
+     "sprunglink_fehlt": 0
+    },
+    "befunde": {
+     "fokus": [
+      {
+       "nr": 81,
+       "status": "duenn",
+       "grund": "ring-unter-fester-ebene",
+       "pfad": "section.py-k-9 > div.mx-auto.max-w-(--k-seite) > div.mt-k-8 > div.relative.snap-x",
+       "name": "Bad „Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir k",
+       "kontrast": 1492,
+       "maxKontrast": 16.96,
+       "umfang": 1526,
+       "stilAenderung": [
+        "outline",
+        "outlineOffset"
+       ]
+      }
+     ],
+     "verdeckt": [],
+     "sprung": [],
+     "falle": null,
+     "zyklus": null,
+     "refokus_fehlgeschlagen": [],
+     "ring_teilverdeckt": [
+      {
+       "nr": 1,
+       "pfad": "a.sr-only.k-text",
+       "name": "Zum Hauptinhalt springen",
+       "ebene": "header.z-40.h-(--k-kopf-hoehe)"
+      },
+      {
+       "nr": 81,
+       "pfad": "section.py-k-9 > div.mx-auto.max-w-(--k-seite) > div.mt-k-8 > div.relative.snap-x",
+       "name": "Bad „Die Fa.Tezgel hat uns im Bad neue Fliesen verlegt.Wir k",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 168,
+       "pfad": "aside.fixed.inset-x-0 > div.grid.grid-cols-3 > a.flex.min-h-k-7",
+       "name": "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 169,
+       "pfad": "aside.fixed.inset-x-0 > div.grid.grid-cols-3 > a.flex.min-h-k-7",
+       "name": "WhatsApp-Chat starten",
+       "ebene": "div.flex.flex-col"
+      },
+      {
+       "nr": 170,
+       "pfad": "aside.fixed.inset-x-0 > div.grid.grid-cols-3 > a.flex.min-h-k-7",
+       "name": "Aufmaß",
+       "ebene": "div.flex.flex-col"
+      }
+     ]
+    },
+    "sperre": {
+     "fremd": 0,
+     "blockiert": 0
+    },
+    "dauer_s": 30.3
+   }
+  ]
+ }
+}

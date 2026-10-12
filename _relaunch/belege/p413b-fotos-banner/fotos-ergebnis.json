@@ -1,0 +1,82 @@
+{
+ "satz": "p413b-fotos-banner",
+ "base": "http://127.0.0.1:4321",
+ "einwilligung": "erstbesuch",
+ "bewegung": "reduce",
+ "feste_zeit": null,
+ "dpr": 1,
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 1,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 16655,
+   "blockiert": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 1,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 16735,
+   "blockiert": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 1,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7188,
+   "blockiert": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 1,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 7192,
+   "blockiert": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "status": 200,
+   "hoehen": 1,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 8977,
+   "blockiert": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1920",
+   "status": 200,
+   "hoehen": 1,
+   "konsole": [],
+   "ueberlauf": [],
+   "fremd": 0,
+   "fehler": null,
+   "seitenhoehe": 8981,
+   "blockiert": []
+  }
+ ]
+}

@@ -22,3 +22,5 @@ Die Vorlagen P4-01/02/03 ruhen: Sie fügen dem Kern-CSS nur Hilfsregeln hinzu.
 Text v2, SEO-Invarianten und axe entfallen begründet: Das HTML aller 172 Seiten ist ohne den Sprite-Block gleich. Der Sprite-Block ist `aria-hidden`, ohne Text und ohne Fokus.
 
 **Urteil: T2 grün.** Push `git push origin HEAD:main` (E-005), danach Live-Rauchtest.
+
+> **Berichtigung (E-036, 11.10.2026):** Die Pixelvergleiche in diesem Beleg sind ungültig. Die Maske von `pixel.mjs` blendete die ganze Seite aus; erkannt wurden nur Höhenänderungen. Nachgeprüft mit dem berichtigten Werkzeug: `../p4-tor-r2/pixel/` (Stichprobe und rückwirkend gegen den Ausgangsstand).

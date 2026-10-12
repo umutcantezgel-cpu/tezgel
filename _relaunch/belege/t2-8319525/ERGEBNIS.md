@@ -12,3 +12,5 @@ Inhalt: Hooks für WhatsApp-Kanal (F-10), Einwilligungsbanner (F-11) und Kurzfor
 | Gegenprüfer P3-00pq-GEG (Opus, frisch) | beide Commits „Verhalten gleich: ja“; nur niedrige Befunde (Fast Refresh im Entwicklungsmodus, künftiger Server-Import, `sourceTag` Pflicht im Hook) |
 | Mutationsprobe (Kopie `-m`, Port 4313, desktop, 46 Fälle) | W1 Kontexttext /bad → 1 rot · W2 Entprellung 0 → 1 rot · B1 Ablehnen ruft Annehmen → 2 rot · B2 Hash geändert → 1 rot · B3 Auswahl vertauscht → 1 rot · Q1 Honeypot-Prüfung aus → 2 rot · Q2 `inquiryType` → 3 rot ⇒ jede Mutation erkannt (11 rot, 33 grün, 2 übersprungen) |
 | Pixel | entfällt: HTML und CSS gleich; Widget und Banner werden nur im Client gerendert, ihr Markup ist byte-gleich (Gegenprüfer) |
+
+> **Berichtigung (E-036, 11.10.2026):** Die Pixelvergleiche in diesem Beleg sind ungültig. Die Maske von `pixel.mjs` blendete die ganze Seite aus; erkannt wurden nur Höhenänderungen. Nachgeprüft mit dem berichtigten Werkzeug: `../p4-tor-r2/pixel/` (Stichprobe und rückwirkend gegen den Ausgangsstand).

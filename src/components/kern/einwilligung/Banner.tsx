@@ -7,19 +7,30 @@
 // - „Alle akzeptieren“ und „Alle ablehnen“ gleich groß, gleich geformt, gleiche Farbstufe (beide Nebenknopf).
 // - Rolle dialog, aria-modal="false": nicht blockierend, kein Fokuszwang, keine Wurfphysik.
 // - Lage: mobil volle Breite direkt über der unteren Leiste samt Sicherheitsrand (`--k-leiste-platz`, P3-07, Rückfall 0), ab 768 px links unten
-//   mit höchstens 28rem und Abstand `--k-rand`.
+//   mit höchstens 28rem und Abstand `--k-rand`. Ab lg (P4-13, P4-GEG H2) eine Leiste am unteren Rand über die Seitenbreite
+//   (Inhalt auf der Flucht wie der Kopf): links der Text samt „Datenschutz · Impressum“ über die ganze Höhe, rechts wie das
+//   Schriftfeld eines Plans der Feldkopf und darunter die Knöpfe in einer Reihe. So bleiben H1 und Einleitung frei, wo die
+//   Geometrie es zulässt (Rückgabe P4-13). Raster und Flucht: `.k-banner-leiste` in `src/styles/kern.css`.
 // - Nie das LCP-Element (Bauregel 8): kleiner gesetzt als jede Einstiegsüberschrift (Text k-1/k-2) und als Komposition
 //   aus Satzblöcken (je ganzer Satz ein Block, fließend umbrechend) – jeder Block ist für die LCP-Messung ein eigenes
 //   Textelement; der Wortlaut bleibt Zeichen für Zeichen gleich (textContent). Kein Zeitverzug hier.
 // - Kein schwebendes Schild (P3-08b, K-003 Prinzip 7: feste Ebenen nur Kopf und untere Leiste). Widerruf jederzeit über den
 //   Fußlink „Cookie-Einstellungen“ (`#cookie-settings`, P3-07); `handleShieldClick` des Hooks bleibt unverdrahtet.
-// - Fokus nie verdeckt (WCAG 2.4.11): Solange der Banner steht, misst die Ansicht die belegte Höhe vom unteren Rand
-//   (`--k-banner-unten` am <html>) und gibt dem Dokument genau so viel scroll-padding und Platz am Ende.
-import { useEffect, useRef } from 'react';
+// - Fokus nie verdeckt (WCAG 2.4.11), ohne Stiländerung am <html> beim Laden (P4-13, E-033 Weg C): Den Zustand
+//   `data-k-banner="offen"` setzt das Kopfskript (`src/lib/motion/kopfskript.ts`) schon vor dem ersten Bild, wenn keine
+//   Entscheidung gespeichert ist. scroll-padding und Platz am Ende kommen aus festen Werten je Breite (`--k-banner-unten`
+//   in `src/styles/kern.css`); der Banner ist höchstens so hoch (`--k-banner-hoehe` bzw. `--k-banner-einstellungen`).
+//   Hier wechselt der Wert nur nach einer Handlung im Banner („einstellungen“, zurück „offen“) und fällt nach der Wahl weg.
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { useEinwilligungsBanner } from '@/lib/formulare/useEinwilligungsBanner';
 import { CONSENT_CATEGORY_INFO, COOKIE_INVENTORY, type ConsentCategory } from '@/lib/cookie-inventory';
 import { AkkordeonEintrag, Ankreuzfeld, Etikett, Knopf, Textlink, verbinde } from '@/components/kern/basis';
 import Icon from '@/components/kern/icons/Icon';
+
+declare global {
+  // Banner eingehängt: Das Kopfskript nimmt den reservierten Platz danach nicht mehr bei einem Skript-Ladefehler zurück.
+  interface Window { __kBanner?: boolean }
+}
 
 type Einwilligung = ReturnType<typeof useEinwilligungsBanner>;
 
@@ -43,13 +54,17 @@ export type BannerAnsichtProps = Pick<
   lage?: 'fest' | 'vorschau';
 };
 
-// Belegte Höhe vom unteren Rand (Banner samt Leiste darunter); Tailwind liest die Klassen wörtlich aus dieser Datei.
-const UNTEN = '--k-banner-unten';
-const HTML_KLASSEN = ['scroll-pb-(--k-banner-unten)', 'pb-(--k-banner-unten)'] as const;
+// Zustand am <html> (Werte „offen“, „einstellungen“); die Regeln dazu stehen in `src/styles/kern.css`.
+const ZUSTAND = 'data-k-banner';
 
-// Lage am Rand: mobil volle Breite über der Leiste; ab md links unten (≤ 28rem) über der Leiste; ab lg ohne Leiste.
+// Lage am Rand: mobil volle Breite über der Leiste; ab md links unten (≤ 28rem) über der Leiste; ab lg Leiste über die
+// ganze Breite am unteren Rand (keine untere Leiste mehr), nur mit Fuge oben.
 const FEST_BANNER =
-  'fixed inset-x-0 bottom-(--k-leiste-platz) z-50 md:right-auto md:left-(--k-rand) md:mb-(--k-rand) md:w-full md:max-w-md lg:bottom-(--k-rand) lg:mb-0';
+  'fixed inset-x-0 bottom-(--k-leiste-platz) z-50 md:right-auto md:left-(--k-rand) md:mb-(--k-rand) md:w-full md:max-w-md lg:right-0 lg:left-0 lg:mb-0 lg:max-w-none lg:grid lg:border-x-0 lg:border-b-0 k-banner-leiste';
+// Felder der Leiste ab lg (nur fest): Feldkopf und Knöpfe rechts, Text links über beide Zeilen.
+const LEISTE_KOPF = 'lg:col-start-2 lg:row-start-1';
+const LEISTE_TEXT = 'lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:border-r lg:border-k-fuge lg:pr-k-5 lg:pb-k-3';
+const LEISTE_KNOEPFE = 'lg:col-start-2 lg:row-start-2 lg:border-t-0 lg:pr-0 lg:py-k-3';
 
 const SATZ = 'block';
 
@@ -70,6 +85,10 @@ function Saetze({ text }: { text: string }) {
 // Fokus im Feldkopf nach innen (K-006: 2 px, auf Tinte Kalk): außen schnitte ihn der Rand des Banners (overflow) ab.
 const FOKUS_INNEN = 'focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-k-kalk';
 const KNOPFREIHE = 'grid grid-cols-2 gap-k-2';
+// Erste Ansicht ab lg: eine Reihe; „Alle akzeptieren“ und „Alle ablehnen“ bleiben als eigenes Paar gleich breit (Raster mit
+// zwei gleichen Spalten), „Einstellungen“ als Textknopf daneben. Unter lg löst sich das Paar auf (contents): Raster wie bisher.
+const KNOPFREIHE_LEISTE = 'lg:flex lg:items-center';
+const KNOPFPAAR_LEISTE = 'contents lg:grid lg:grid-cols-2 lg:gap-k-2';
 // Aufbau: Feldkopf · Mitte (scrollt, wenn der Platz nicht reicht) · Knopffeld (steht immer, die Wahl bleibt sichtbar).
 const MITTE = 'flex min-h-0 flex-1 flex-col gap-k-3 overflow-y-auto overscroll-contain px-k-4 pt-k-3 pb-k-2';
 const FUSS = 'shrink-0 border-t border-k-fuge px-k-4 py-k-2';
@@ -130,28 +149,21 @@ export function BannerAnsicht({
     }
   }, [showBanner, showSettings]);
 
-  // Fokus nie verdeckt: belegte Höhe messen, solange der Banner fest am Rand steht.
-  useEffect(() => {
-    if (!fest || !showBanner) return;
-    const el = dialogRef.current;
-    if (!el) return;
+  // Fokus nie verdeckt: Zustand am <html> nachführen (feste Werte in kern.css). Beim Erstbesuch steht „offen“ schon aus dem
+  // Kopfskript; solange noch keine Entscheidung gespeichert ist (Banner erscheint erst nach dem Mount), bleibt es stehen.
+  // Gesetzt bzw. entfernt wird nur bei einem Wechsel, also nach einem Klick – vor dem Zeichnen, damit Banner und Platz im
+  // selben Bild wechseln.
+  useLayoutEffect(() => {
+    if (!fest) return;
+    window.__kBanner = true;
     const root = document.documentElement;
-    const messen = () => {
-      const unten = Math.max(0, Math.ceil(window.innerHeight - el.getBoundingClientRect().top));
-      root.style.setProperty(UNTEN, `${unten}px`);
-    };
-    messen();
-    const beobachter = new ResizeObserver(messen);
-    beobachter.observe(el);
-    window.addEventListener('resize', messen);
-    root.classList.add(...HTML_KLASSEN);
-    return () => {
-      beobachter.disconnect();
-      window.removeEventListener('resize', messen);
-      root.classList.remove(...HTML_KLASSEN);
-      root.style.removeProperty(UNTEN);
-    };
-  }, [fest, showBanner]);
+    const soll = showBanner ? (showSettings ? 'einstellungen' : 'offen') : null;
+    if (soll) {
+      if (root.getAttribute(ZUSTAND) !== soll) root.setAttribute(ZUSTAND, soll);
+    } else if (consent && root.hasAttribute(ZUSTAND)) {
+      root.removeAttribute(ZUSTAND);
+    }
+  }, [fest, showBanner, showSettings, consent]);
 
   return (
     <>
@@ -162,17 +174,27 @@ export function BannerAnsicht({
           aria-modal="false"
           aria-label="Cookie-Einwilligungsbanner gemäß DSGVO und TTDSG"
           aria-describedby="cookie-consent-description"
+          // Der WhatsApp-Kanal (ab lg rechts unten) weicht der Leiste aus, statt unsichtbar unter ihr fokussierbar zu bleiben.
+          data-kanal-frei={fest ? '' : undefined}
           className={verbinde(
             'flex flex-col overflow-hidden border-t border-k-strich bg-k-kalk text-k-tinte md:border',
             fest ? FEST_BANNER : 'w-full max-w-md border',
-            fest && (showSettings ? 'max-h-3/4' : 'max-h-1/2 lg:max-h-3/4'),
+            fest && (showSettings ? 'max-h-(--k-banner-einstellungen)' : 'max-h-(--k-banner-hoehe)'),
+            // Leiste ab lg (Raster): Bei größerem Textabstand (WCAG 1.4.12) rollt die Leiste, statt Text abzuschneiden;
+            // bei normalem Satz passt alles, es rollt nichts (P4-13b, P4-GEG2 N-A).
+            fest && 'lg:overflow-y-auto',
           )}
         >
           {!showSettings ? (
             /* ── Erste Ebene ── */
             <>
               {/* Schließen steht wie im Bestand vor der Überschrift (Text- und Fokusfolge); sichtbar rechts (flex-row-reverse) */}
-              <div className="flex shrink-0 flex-row-reverse items-center justify-between gap-k-3 bg-k-tinte text-k-kalk">
+              <div
+                className={verbinde(
+                  'flex shrink-0 flex-row-reverse items-center justify-between gap-k-3 bg-k-tinte text-k-kalk',
+                  fest && LEISTE_KOPF,
+                )}
+              >
                 {/* Schließen = Nur Essentiell */}
                 <button
                   type="button"
@@ -180,6 +202,8 @@ export function BannerAnsicht({
                   data-motion="zustand"
                   className={verbinde(
                     'flex size-k-7 shrink-0 cursor-pointer items-center justify-center text-k-kalk pointer-fine:hover:bg-k-nacht-fuge active:bg-k-nacht-fuge',
+                    // forced-colors: reines Symbol braucht eine Grenze; Farbe setzt das System (currentColor) – wie im Kopf.
+                    'forced-colors:border',
                     FOKUS_INNEN,
                   )}
                   aria-label="Cookie-Banner schließen – nur essentielle Cookies werden gesetzt"
@@ -192,8 +216,11 @@ export function BannerAnsicht({
                 </p>
               </div>
 
-              <div className={MITTE}>
-                <p id="cookie-consent-description" className="k-text flex flex-col text-k-1 text-k-tinte md:text-k-2">
+              <div className={verbinde(MITTE, fest && LEISTE_TEXT)}>
+                <p
+                  id="cookie-consent-description"
+                  className={verbinde('k-text flex flex-col text-k-1 text-k-tinte md:text-k-2', fest && 'lg:text-k-1')}
+                >
                   <span className={SATZ}>Wir nutzen Cookies auf unserer Website.</span>{' '}
                   <span className={SATZ}>
                     Einige sind <strong className="font-semibold">technisch notwendig</strong> für den Betrieb, während andere
@@ -227,16 +254,24 @@ export function BannerAnsicht({
                 )}
 
               </div>
-              <div className={FUSS}>
+              <div className={verbinde(FUSS, fest && LEISTE_KNOEPFE)}>
                 {/* Knöpfe: „Alle ablehnen“ gleichwertig zu „Alle akzeptieren“ (gleiche Art, Größe, Breite) */}
-                <div className={KNOPFREIHE}>
-                  <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleAcceptAll)}>
-                    Alle akzeptieren
-                  </Knopf>
-                  <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleDeclineAll)}>
-                    Alle ablehnen
-                  </Knopf>
-                  <Knopf art="text" groesse="klein" breit className="col-span-2" onClick={() => mitFokus('ansicht', handleOpenSettings)}>
+                <div className={verbinde(KNOPFREIHE, fest && KNOPFREIHE_LEISTE)}>
+                  <div className={fest ? KNOPFPAAR_LEISTE : 'contents'}>
+                    <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleAcceptAll)}>
+                      Alle akzeptieren
+                    </Knopf>
+                    <Knopf art="neben" breit onClick={() => mitFokus('zurueck', handleDeclineAll)}>
+                      Alle ablehnen
+                    </Knopf>
+                  </div>
+                  <Knopf
+                    art="text"
+                    groesse="klein"
+                    breit
+                    className={verbinde('col-span-2', fest && 'lg:w-auto lg:px-k-3')}
+                    onClick={() => mitFokus('ansicht', handleOpenSettings)}
+                  >
                     Einstellungen
                   </Knopf>
                 </div>
@@ -245,13 +280,13 @@ export function BannerAnsicht({
           ) : (
             /* ── Einstellungen (granular) ── */
             <>
-              <div className="shrink-0 bg-k-tinte text-k-kalk">
+              <div className={verbinde('shrink-0 bg-k-tinte text-k-kalk', fest && LEISTE_KOPF)}>
                 <p ref={kopfRef} tabIndex={-1} className={verbinde('k-mono text-k-1 px-k-4 py-k-3', FOKUS_INNEN)}>
                   Cookie-Einstellungen individuell anpassen
                 </p>
               </div>
 
-              <div className={MITTE}>
+              <div className={verbinde(MITTE, fest && LEISTE_TEXT)}>
                 <p className="k-text flex flex-col text-k-1 text-k-tinte-2 md:text-k-2">
                   <span className={SATZ}>Bestimmen Sie selbst, welche Kategorien Sie zulassen möchten.</span>{' '}
                   <span className={SATZ}>
@@ -326,7 +361,7 @@ export function BannerAnsicht({
                 </ul>
 
               </div>
-              <div className={FUSS}>
+              <div className={verbinde(FUSS, fest && LEISTE_KNOEPFE)}>
                 {/* Knöpfe der Einstellungen: alle drei Wahlknöpfe gleichwertig */}
                 <div className={KNOPFREIHE}>
                   <Knopf art="neben" breit className="col-span-2" onClick={() => mitFokus('zurueck', handleSaveSettings)}>
