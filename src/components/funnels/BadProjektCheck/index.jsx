@@ -61,9 +61,9 @@ export default function BadProjektCheck() {
                 </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12">
+            <div className="mt-8 grid grid-cols-1 gap-8 xl:grid-cols-12">
                 {/* Angaben 1–4 (links, 7 Spalten) */}
-                <div className="flex min-w-0 flex-col gap-8 lg:col-span-7">
+                <div className="flex min-w-0 flex-col gap-8 xl:col-span-6">
                     <Schritt1 sqm={sqm} changeSqm={changeSqm} sqmLabel={sqmLabel} />
                     <Schritt2 sanitaryScope={sanitaryScope} setSanitaryScope={setSanitaryScope} />
                     <Schritt3 tier={tier} setTier={setTier} />

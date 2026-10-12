@@ -14,7 +14,7 @@ import { inputClass } from './stile';
 // Mikrotext (freigegeben): Die Bestätigungszeile steht ohne vorangestelltes Briefsymbol (wie E3-BAU-18).
 export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extras, matchingBath, contactOpen, setContactOpen, sentVia, setSentVia, referenceId, handleNewRequest, leadData, setLeadData, isSubmitting, errorMessage, handleLeadSubmit }) {
     return (
-        <div className="flex min-w-0 flex-col justify-between gap-8 border border-fuge bg-kalk p-4 sm:p-8 lg:col-span-5">
+        <div className="flex min-w-0 flex-col justify-between gap-8 border border-fuge bg-kalk p-4 sm:p-8 xl:col-span-6">
             <div className="flex flex-col gap-6">
                 <span className={etikettKlassen}>
                     <Fugenkreuz className="size-3 text-strich" />
@@ -23,16 +23,17 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
 
                 <dl aria-live="polite" className="divide-y divide-fuge border border-fuge bg-fliese px-4 text-fs-2">
                     {[
-                        ['Badgröße', `ca. ${sqmLabel} m²`],
+                        ['Badgröße', <span key="groesse" className="font-mono">{`ca. ${sqmLabel} m²`}</span>],
                         ['Umfang', scopeLabel],
                         ['Ausstattung', tierLabel],
                         ['Wünsche', extras.join(', ') || 'Keine Extras gewählt']
                     ].map(([term, value]) => (
-                        // Zeile erst ab xl nebeneinander: die Spalte ist seit der Rückfrage-Spalte (E4-NACH-07) schmal, lange
-                        // Werte liefen sonst über den Rand (E3-SICHT-ERZ Befund 16)
-                        <div key={term} className="flex flex-col gap-1 py-2 xl:flex-row xl:justify-between xl:gap-3">
-                            <dt className="shrink-0 text-tinte-2">{term}</dt>
-                            <dd className="min-w-0 break-words font-semibold text-tinte hyphens-auto xl:text-right">{value}</dd>
+                        // Etikett (Mono, klein) über dem Wert, Wert linksbündig. Nebeneinander blieb der Wert in der schmalen
+                        // Spalte bei ca. 93 px (E3-SICHT-2-ERZ Befund 6). Umbruch an Silbengrenzen (hyphens-auto); break-words
+                        // greift nur, wenn kein Silbenschnitt möglich ist (E3-SICHT-2-ERZ Befund 5)
+                        <div key={term} className="flex min-w-0 flex-col gap-1 py-2">
+                            <dt className="font-mono text-fs-1 text-tinte-2">{term}</dt>
+                            <dd className="min-w-0 break-words font-semibold text-tinte hyphens-auto">{value}</dd>
                         </div>
                     ))}
                 </dl>
@@ -43,9 +44,9 @@ export default function Zusammenfassung({ sqmLabel, scopeLabel, tierLabel, extra
 
                 {/* Reference to exact Musterbad */}
                 <Hinweis art="merk">
-                    <p className="flex items-center justify-between gap-2 font-semibold text-tinte">
+                    <p className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 font-semibold text-tinte">
                         <span>Musterbad-Vergleich:</span>
-                        <Link href="/bad/musterbaeder" className={`${linkKlassen} inline-flex items-center gap-1 font-semibold`}>
+                        <Link href="/bad/musterbaeder" className={`${linkKlassen} inline-flex items-center gap-1 whitespace-nowrap font-semibold`}>
                             Katalog
                             <Icon name="pfeil-rechts" groesse={4} />
                         </Link>

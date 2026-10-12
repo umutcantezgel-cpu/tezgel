@@ -1,7 +1,8 @@
 // Bad (E3-BAU-01, KERN v2): Erzählansicht nach dem Muster der Startseite und von /leistungen. Einstieg mit Achse, H1 links
 // bündig, Vorspann, Knöpfe und Zusagen; rechts der Verlegeplan „bad“ ohne Achse (je Bildschirm nur ein roter Blickfang).
 // Danach die Leitachse über die Abschnitte: Bad-Leistungen als Feldraster, Qualitäts-Kategorien als Feldraster auf Fliese
-// mit je einem Grundriss, Projektcheck und Badanfrage im Raster aus Funnel (8 Spalten) und Rückfrage (4 Spalten, ab lg klebend).
+// mit je einem Grundriss, Anfragewege (Projektcheck, darunter Badanfrage) in EINEM Abschnitt auf Fliese: Raster aus Funnel
+// (8 Spalten) und eine Rückfrage (4 Spalten, ab lg klebend).
 // Die Anfragewege werden nachgeladen (TEMPO). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
 // Kein großer Moment und keine Bewegung (setzt der Orchestrator).
 import Link from 'next/link';
@@ -153,10 +154,10 @@ export default function BadPage() {
                     </Feldraster>
                 </Abschnitt>
 
-                {/* 3. QUALITÄTS-KATEGORIEN auf Fliese: je Kategorie ein Feld, Musterbäder als Textlink, Telefon im Satz */}
+                {/* 3. QUALITÄTS-KATEGORIEN auf Kalk (die Anfragewege danach stehen auf Fliese – keine zwei gleichen Flächen in Folge,
+                    Rückgabe E4-N2-04): je Kategorie ein Feld, Musterbäder als Textlink, Telefon im Satz */}
                 <Abschnitt
                     titelId="bad-tiers-heading"
-                    flaeche="fliese"
                     leitachse
                     spaet
                     etikett="Transparente Standards"
@@ -193,23 +194,18 @@ export default function BadPage() {
                     </p>
                 </Abschnitt>
 
-                {/* 4. BAD-PROJEKTCHECK: der Funnel trägt seine Überschrift selbst; rechts die Rückfrage (unter lg darunter) */}
-                <Abschnitt id="projekt-check" aria-label="Bad-Projektcheck" leitachse spaet>
+                {/* 4. ANFRAGEWEGE in einem Abschnitt auf Fliese: der Projektcheck, darunter mit Fuge die Badanfrage (beide Werkzeuge
+                    bleiben); rechts EINE Rückfrage (ab lg klebend, unter lg nach beiden Werkzeugen). Die IDs und ARIA-Namen liegen an
+                    den beiden inneren Hüllen; die Hüllen sind Regionen mit Namen, wie zuvor die Abschnitte. */}
+                <Abschnitt flaeche="fliese" leitachse spaet>
                     <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
                         <div className="min-w-0 lg:col-span-8">
-                            <BadProjektCheck />
-                        </div>
-                        <div className="lg:col-span-4">
-                            <Rueckfrage />
-                        </div>
-                    </div>
-                </Abschnitt>
-
-                {/* 5. BADANFRAGE auf Fliese: Funnel und Rückfrage im selben Raster */}
-                <Abschnitt id="anfrage" aria-label="Badanfrage" flaeche="fliese" leitachse spaet>
-                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
-                        <div className="min-w-0 lg:col-span-8">
-                            <BadanfrageFunnel />
+                            <div id="projekt-check" role="region" aria-label="Bad-Projektcheck" className="scroll-mt-24">
+                                <BadProjektCheck />
+                            </div>
+                            <div id="anfrage" role="region" aria-label="Badanfrage" className="mt-12 scroll-mt-24 border-t border-fuge pt-12">
+                                <BadanfrageFunnel />
+                            </div>
                         </div>
                         <div className="lg:col-span-4">
                             <Rueckfrage />
