@@ -685,6 +685,19 @@ Danach das Phasentor E3.
 - Danach das Phasentor.
 
 **E6-ORCH-01 · Abbau des alten Systems** (eigener Schritt mit build-vergleich und knip/grep-Nachweis):
+- **Stand 13.10. – Karte und Plan** (Analyse-Workflow, nur lesend; Gegenprüfung ohne blockierenden Befund;
+  `belege/e6-orch-01/karte-plan-kritik.json`). Importgraph: 113 Wurzeln, 336 lebende Dateien; vom ruhenden Baum (253 Dateien)
+  sind nur `lib/kern/start/daten.ts`, `kern/einwilligung/BannerPlatz.tsx`, `kern/fuss/SprungHalter.tsx` lebend; 25 Dateien
+  ausserhalb ohne Importeur; keine der 136 tokens.css-Variablen wird gelesen. Schritte (je ein Commit, Reihenfolge bindend):
+  1 Waisen löschen (25) · 2 framer-motion und Phosphor deinstallieren (MIT-Lizenztext der Phosphor-Pfade beilegen) ·
+  3 ErrorBoundary auf KERN (sichtbar nur im Fehlerfall; Sichtung am Produktionsbuild) · 5 ruhenden Kern löschen (die drei
+  lebenden Dateien bleiben) · 6 die drei umziehen, `@source not` und werte-Ausnahmen aufheben (JSON-Kommas prüfen) ·
+  7 Alias-Schicht `tokens.css` und Alias-Klassen, Alt-Doku · 8 Tailwind-Standardpalette sperren · 10 Werkzeuge/Pläne.
+  **Mit Freigabe (M-25):** 4 `useAnfrageFunnel.ts` ohne lucide-Datenfelder (G9: nur zusammen mit 9) · 9 lucide aus
+  `src/config` und deinstallieren. Prüfungen: Importe statt Volltext (`from ['"]lucide-react`), knip-Basis vor Schritt 1 und
+  nur Wegfälle danach, build-vergleich --streng je Lieferung, Pixel-Stichprobe, volle Suite. Nicht im Umfang: E-Mail-Vorlagen
+  (Versand), `services.js color`, reduced-motion-Übergangsregel bis zur Umstellung freier transition-colors, flache
+  Kern-Dateien ohne Nutzung (Zeitband u. a.).
 - Alias-Schicht `tokens.css` entfernen; lucide, framer-motion und Phosphor deinstallieren.
 - Ruhendes `(kern)` samt `src/components/kern/{basis,…}`, `src/styles/kern*.css` und `src/lib/kern` entfernen.
 - Restkomponenten ohne Nutzung entfernen: `animations/HeartbeatCTA.tsx`, `common/TileCraftIcons.jsx`, `ui/GradientText.tsx`,
