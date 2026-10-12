@@ -1,0 +1,16 @@
+{"html":172,"nur_vorher":0,"nur_nachher":0,"html_abweichend":8,"css_weg":1,"css_neu":38,"var_weg":0,"var_neu":0,"keyframes_weg":0,"keyframes_neu":0}
+≠ faq.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente
+≠ index.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente
+≠ leistungen/aussen.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente
+≠ leistungen/bad.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente
+≠ leistungen/untergrund.html 
+  vorher:  lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-center gap-2">< 
+  nachher: lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12"><ol class="flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte" aria-label="Phasen der Anfrage"><li class="flex items-cente

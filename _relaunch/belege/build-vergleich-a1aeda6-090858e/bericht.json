@@ -1,0 +1,109 @@
+{
+ "vorher": "a1aeda6",
+ "nachher": "090858e",
+ "laufzeit_reste": {
+  "vorher": [],
+  "nachher": []
+ },
+ "variablen_weg": [],
+ "variablen_neu": [],
+ "keyframes_weg": [],
+ "keyframes_neu": [],
+ "html_dateien": 172,
+ "nur_vorher": [],
+ "nur_nachher": [],
+ "html_abweichend": 8,
+ "abweichungen": [
+  {
+   "datei": "faq.html",
+   "ab": 88842,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "index.html",
+   "ab": 131196,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/aussen.html",
+   "ab": 132469,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/bad.html",
+   "ab": 131942,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/untergrund.html",
+   "ab": 129711,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen/wohnen.html",
+   "ab": 131852,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "leistungen.html",
+   "ab": 145834,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  },
+  {
+   "datei": "preise.html",
+   "ab": 92880,
+   "vorher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-center gap-2\"><",
+   "nachher": "lex flex-col gap-12 bg-fliese p-6 sm:p-8 lg:col-span-3 lg:p-12\"><ol class=\"flex flex-wrap items-center gap-3 font-mono text-fs-1 text-tinte\" aria-label=\"Phasen der Anfrage\"><li class=\"flex items-cente"
+  }
+ ],
+ "css_selektoren_weg": [
+  "html:has(.menue-blatt:popover-open)"
+ ],
+ "css_selektoren_neu": [
+  ".-ml-px",
+  ".-mt-px",
+  ".\\@3xs\\:whitespace-nowrap",
+  ".\\@container",
+  ".\\@max-3xs\\:px-4",
+  ".aspect-4\\/3",
+  ".border-t-tinte",
+  ".focus-within\\:z-10:focus-within",
+  ".gap-y-16",
+  ".group-hover\\:text-tinte:is(:where(.group):hover *)",
+  ".justify-self-stretch",
+  ".lg\\:col-start-6",
+  ".lg\\:col-start-8",
+  ".lg\\:grid-cols-1",
+  ".lg\\:py-12",
+  ".md\\:aspect-3\\/4",
+  ".md\\:border-l",
+  ".md\\:border-t-0",
+  ".md\\:first\\:pt-0:first-child",
+  ".md\\:flex-wrap",
+  ".md\\:gap-8",
+  ".md\\:gap-x-8",
+  ".md\\:min-h-32",
+  ".md\\:overflow-visible",
+  ".md\\:px-0",
+  ".pl-px",
+  ".pt-px",
+  ".self-stretch",
+  ".sm\\:columns-2",
+  ".sticky",
+  ".top-2",
+  ".wrap-anywhere",
+  ".xl\\:col-span-4",
+  ".xl\\:col-span-8",
+  ".xl\\:col-start-9",
+  "body:has(.menue-blatt:popover-open)",
+  "body>footer",
+  "body>main"
+ ]
+}
