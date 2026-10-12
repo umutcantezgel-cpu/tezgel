@@ -3,54 +3,10 @@ import Link from 'next/link';
 import { useContent } from '@/contexts/ContentContext';
 import Icon from '@/components/icons/Icon';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import { planFuer, zeichenFuer } from '@/lib/blog/motive';
 
-/**
- * Plan und Fachzeichen je Kategorie-ID (Befund 24/26). Der Plan kommt aus `src/lib/plaene/vorgaben.ts`, das Zeichen aus
- * der Icon-Familie. Jede Kategorie hat ein eigenes Zeichen; Kategorien ohne Eintrag zeigen kein Zeichen.
- * Unbekannte Kategorien zeigen das Fugenbild ohne Zeichen.
- */
-export const KATEGORIE_MOTIV = {
-    bad: { plan: 'bad', zeichen: 'bad' },
-    fliesen: { plan: 'naturstein', zeichen: 'naturstein' },
-    untergrund: { plan: 'abdichtung', zeichen: 'abdichtung' },
-    aussen: { plan: 'balkon', zeichen: 'balkon' },
-    pflege: { plan: 'fugen', zeichen: 'reparatur' },
-    ratgeber: { plan: 'wohnen', zeichen: 'dokument' },
-    news: { plan: 'grossformat', zeichen: 'kalender' },
-};
-
-/**
- * Plan je Beitrag (Slug, Befund 20/21): jede Vorschau zeigt ihr Thema. Ohne Eintrag gilt das Kategorie-Motiv.
- */
-export const BEITRAG_MOTIV = {
-    'handwerkerbonus-fliesenarbeiten': 'wohnen',
-    'undichte-dusche-warnzeichen': 'reparatur',
-    'feinsteinzeug-oder-naturstein-vergleich': 'naturstein',
-    'fliesen-fuer-allergiker': 'grossformat',
-    'fliesen-mythen-faktencheck': 'fussbodenheizung',
-    'fliesen-reinigen-pflegen': 'fugen',
-    'fliesenleger-gesucht-geselle-meister': 'untergrund',
-    'gaeste-wc-fliesen': 'bad',
-    'rutschfeste-fliesen-r-klassen': 'treppe',
-    'schimmel-fliesenfugen-vermeiden': 'fugen',
-    'duschrinne-oder-punktablauf': 'abdichtung',
-    'wandnischen-dusche-planen': 'badsanierung',
-    'barrierefreier-balkonaustritt': 'balkon',
-};
-
-const STANDARD_MOTIV = { plan: 'fugen' };
-
-const hat = (objekt, schluessel) => Object.prototype.hasOwnProperty.call(objekt, schluessel);
-
-/** Plan des Beitrags: zuerst der Eintrag je Slug, dann das Kategorie-Motiv, sonst das Fugenbild */
-const motivFuer = (post) => {
-    if (post && hat(BEITRAG_MOTIV, post.slug)) return { plan: BEITRAG_MOTIV[post.slug] };
-    if (post && hat(KATEGORIE_MOTIV, post.category)) return { plan: KATEGORIE_MOTIV[post.category].plan };
-    return STANDARD_MOTIV;
-};
-
-/** Fachzeichen der Kategorie, oder undefined (dann kein Zeichen) */
-export const zeichenFuer = (kategorie) => (hat(KATEGORIE_MOTIV, kategorie) ? KATEGORIE_MOTIV[kategorie].zeichen : undefined);
+// Themenmotive aus einer Quelle (src/lib/blog/motive.js); zeichenFuer bleibt hier erreichbar (Filter, Seitenleiste)
+export { zeichenFuer };
 
 /**
  * Gezeichnetes Themenmotiv statt Foto (dekorativ, aria-hidden über Verlegeplan): Plan des Beitrags ohne Achse und ohne
@@ -59,7 +15,7 @@ export const zeichenFuer = (kategorie) => (hat(KATEGORIE_MOTIV, kategorie) ? KAT
 export function Themenmotiv({ post, className }) {
     return (
         <div className={`flex items-center justify-center overflow-hidden p-3 ${className}`}>
-            <Verlegeplan plan={motivFuer(post).plan} ohneAchse bemassung={false} className="h-full w-full" />
+            <Verlegeplan plan={planFuer(post)} ohneAchse bemassung={false} className="h-full w-full" />
         </div>
     );
 }

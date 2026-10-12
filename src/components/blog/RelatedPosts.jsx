@@ -2,32 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Verlegeplan from '@/components/kern/Verlegeplan';
+import { planFuer } from '@/lib/blog/motive';
 
-// Plan je Beitrag wie in der Liste (BlogCard, E4-N2-12): zuerst der Eintrag je Slug, sonst das Kategorie-Motiv, sonst das
-// Fugenbild. Doppelt gehalten, weil BlogCard „use client“ ist und Werte nicht an Serverseiten gibt; gehört in eine
-// gemeinsame Datei. Exportiert, damit der Einstieg des Artikels dasselbe Motiv zeigt (ARB 28).
-const BEITRAG_MOTIV = {
-    'handwerkerbonus-fliesenarbeiten': 'wohnen',
-    'undichte-dusche-warnzeichen': 'reparatur',
-    'feinsteinzeug-oder-naturstein-vergleich': 'naturstein',
-    'fliesen-fuer-allergiker': 'grossformat',
-    'fliesen-mythen-faktencheck': 'fussbodenheizung',
-    'fliesen-reinigen-pflegen': 'fugen',
-    'fliesenleger-gesucht-geselle-meister': 'untergrund',
-    'gaeste-wc-fliesen': 'bad',
-    'rutschfeste-fliesen-r-klassen': 'treppe',
-    'schimmel-fliesenfugen-vermeiden': 'fugen',
-    'duschrinne-oder-punktablauf': 'abdichtung',
-    'wandnischen-dusche-planen': 'badsanierung',
-    'barrierefreier-balkonaustritt': 'balkon',
-};
-const KATEGORIE_PLAN = { bad: 'bad', fliesen: 'naturstein', untergrund: 'abdichtung', aussen: 'balkon', pflege: 'fugen', ratgeber: 'wohnen', news: 'grossformat' };
-const hat = (objekt, schluessel) => Object.prototype.hasOwnProperty.call(objekt, schluessel);
-export const motivFuer = (post) => {
-    if (post && hat(BEITRAG_MOTIV, post.slug)) return BEITRAG_MOTIV[post.slug];
-    if (post && hat(KATEGORIE_PLAN, post.category)) return KATEGORIE_PLAN[post.category];
-    return 'fugen';
-};
+// Plan je Beitrag wie in der Liste (src/lib/blog/motive.js); exportiert, damit der Einstieg des Artikels dasselbe Motiv zeigt (ARB 28)
+export const motivFuer = planFuer;
 
 /**
  * Related Posts Component
