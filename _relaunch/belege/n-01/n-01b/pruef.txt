@@ -1,0 +1,19 @@
+# N-01b · Prüfungen (Arbeitskopie 328463c + n-01b.patch, Server 4343)
+## npx tsc --noEmit -p .
+tsc exit 0
+## npx eslint src/app/globals.css
+  0:0  warning  File ignored because no matching configuration was supplied
+
+✖ 1 problem (0 errors, 1 warning)
+
+eslint exit 0
+## npm test
+# tests 35
+# pass 35
+# fail 0
+test exit 0
+## werte.mjs --dateien src/app/globals.css
+werte: 1 Dateien · 0 Klassenvorkommen (0 eindeutig) · 0.1 s
+  befunde gesamt       0
+Bericht: _werkstatt/cache/werte/2026-10-12T06-18-10-095Z.json
+werte exit 0

@@ -1,0 +1,4 @@
+4337 öffnen Stil 3311/3310/3310/3310 Elemente, 310.1 ms CPU
+4337 schließen Stil 3306/6 Elemente, 60.6 ms CPU
+4343 öffnen Stil 623 Elemente, 11.7 ms CPU
+4343 schließen Stil 619 Elemente, 17.6 ms CPU

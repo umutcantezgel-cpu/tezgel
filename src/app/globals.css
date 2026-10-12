@@ -208,10 +208,18 @@
     color: var(--color-tinte);
     font-family: var(--font-text);
     font-feature-settings: "kern" 1, "calt" 1;
-    /* <html> selbst setzt kein overflow: Dann gilt das overflow von <body> für den Viewport (CSS Overflow 3), waagerecht
-       beschnitten wie bisher, und die Menü-Sperre darunter kann an <body> hängen. */
+    /* <html> setzt kein overflow: Dann gilt das overflow von <body> für den Viewport (CSS Overflow 3) – waagerecht
+       `hidden` als Rückfall, bei offenem Menü die Sperre darunter. <body> selbst beschneidet dadurch nicht mehr. */
     overflow-x: clip;
     min-height: 100vh;
+  }
+
+  /* Waagerecht beschneiden die beiden Flächen im Fluss, Inhalt und Fuß (N-01b). So erreicht kein Überstand den Viewport,
+     der nicht rollbar werden darf, auch nicht per Fokus oder scrollIntoView (Zoom, Textabstand). Feste Ebenen tragen zum
+     Rollbereich nichts bei. clip bildet keinen Scroll-Container: sticky und die Flex-Mindesthöhe bleiben unberührt. */
+  body > main,
+  body > footer {
+    overflow-x: clip;
   }
 
   /* Offenes Menüblatt sperrt das Scrollen der Seite (ohne JavaScript, auch vor der Hydrierung), über <body> am Viewport.

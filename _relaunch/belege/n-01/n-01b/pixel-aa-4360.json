@@ -1,0 +1,65 @@
+{
+ "satz": "n-01b-aa-4360",
+ "a": "http://127.0.0.1:4360",
+ "b": "http://127.0.0.1:4360",
+ "laeufe": 8,
+ "abweichend": 0,
+ "ergebnis": [
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 22762080
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10569375
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 10003680
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4479375
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 15733440
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 7075875
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 8363520
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "gleich": true,
+   "abweichende_pixel": 0,
+   "flaeche": 4255500
+  }
+ ]
+}

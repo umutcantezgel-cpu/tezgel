@@ -1,0 +1,9 @@
+4360 m375 js:an  offen:true ov-offen {"html":"visible","body":"hidden"} y 392→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700
+4360 m375 js:aus offen:true ov-offen {"html":"visible","body":"hidden"} y 382→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700
+4360 d1024 js:an  offen:true ov-offen {"html":"visible","body":"hidden"} y 392→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700
+4360 d1024 js:aus offen:true ov-offen {"html":"visible","body":"hidden"} y 367→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700
+4343 m375 js:an  offen:true ov-offen {"html":"visible","body":"hidden"} y 398→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700
+4343 m375 js:aus offen:true ov-offen {"html":"visible","body":"hidden"} y 367→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen 400 | zu:true Rad danach 700
+4343 d1024 js:an  offen:true ov-offen {"html":"visible","body":"hidden"} y 392→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700
+4343 d1024 js:aus offen:true ov-offen {"html":"visible","body":"hidden"} y 382→Rad(Blatt) 400→Rad(links) 400→PageDown 400→Wischen - | zu:true Rad danach 700
+4343 Wischen ohne Menü: y 400 → 1080

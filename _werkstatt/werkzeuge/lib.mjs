@@ -146,10 +146,12 @@ export async function ueberlauf(page) {
       if (r.width <= 2 || r.height <= 2) continue; // visuell versteckt (sr-only) zählt nicht
       if (cs.clipPath && cs.clipPath.startsWith('inset(50%')) continue;
       if (cs.clip && cs.clip.startsWith('rect(0')) continue;
-      // Element ragt über den Viewport hinaus (ohne eigenen Scroll-Container)
+      // Element ragt über den Viewport hinaus (ohne eigenen Scroll-Container). Die Flächen im Fluss direkt unter <body>
+      // (main, footer) beschneiden seit N-01b statt <body> den Viewport-Überstand: wie <body> nicht als Beschneider zählen,
+      // sonst würde ein Überstand unsichtbar, den das Werkzeug vorher meldete (Vergleichbarkeit mit live).
       if ((r.right > vw + 1 || r.left < -1) && cs.position !== 'fixed' && !el.closest('[data-relaunch-scroller], [style*="overflow-x"], .overflow-x-auto, .overflow-x-scroll')) {
         let p = el.parentElement, clipped = false;
-        while (p && p !== document.body) { const pcs = getComputedStyle(p); if (['hidden', 'clip', 'auto', 'scroll'].includes(pcs.overflowX)) { clipped = true; break; } p = p.parentElement; }
+        while (p && p !== document.body && !(p.parentElement === document.body && ['MAIN', 'FOOTER'].includes(p.tagName))) { const pcs = getComputedStyle(p); if (['hidden', 'clip', 'auto', 'scroll'].includes(pcs.overflowX)) { clipped = true; break; } p = p.parentElement; }
         if (!clipped) befunde.push({ art: 'ragt-heraus', tag: el.tagName.toLowerCase(), cls: String(el.className).slice(0, 80), left: Math.round(r.left), right: Math.round(r.right) });
       }
       // Text abgeschnitten (Text-Element mit verstecktem Überlauf)
