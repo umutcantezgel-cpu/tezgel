@@ -27,9 +27,6 @@ export const metadata = createMetadata({
     path: '/fliesen/konfigurator'
 });
 
-// Erklärabschnitte: H2 eine Stufe kleiner als die H1 (text-fs-5 statt text-fs-6, E3-SICHT-ARB Befund 11)
-const ERKLAER_H2 = '[&_h2]:text-fs-5';
-
 const STEP_CARDS = [
     {
         title: 'Schritt 1: Raum und Einsatzbereich',
@@ -101,7 +98,7 @@ const NEXT_STEPS = [
 ];
 
 const RELATED_LINKS = [
-    { href: '/bad/badplaner', title: 'Badplaner', desc: 'Bad, Dusche und Gäste-WC planen' },
+    { href: '/bad/badplaner', title: 'Badplaner', desc: <>Bad, Dusche und <span className="whitespace-nowrap">Gäste-WC</span> planen</> },
     { href: '/bad/projekt-check', title: 'Bad-Projektcheck', desc: 'Ihr Badprojekt strukturiert beschreiben' },
     { href: '/fliesen/verlegemuster', title: 'Verlegemuster & Abschlüsse', desc: 'Fugenbild, Verband, Kanten und Sockel' },
     { href: '/beratung', title: 'Beratung', desc: 'Persönlich klären, was zu Ihrem Projekt passt' }
@@ -120,7 +117,7 @@ export default function FliesenKonfiguratorPage() {
                     </>
                 }
                 vorspann={
-                    <p>
+                    <p className="text-fs-3">
                         Mit dem Fliesen-Konfigurator und Bedarfsrechner von Fachbetrieb Tezgel berechnen Sie Materialbedarf und Verschnitt für Raum, Untergrund und Format vorab – unverbindlich und kostenfrei.
                     </p>
                 }
@@ -130,23 +127,25 @@ export default function FliesenKonfiguratorPage() {
                         <Knopf href="/kontakt" variante="neben">Direkt Aufmaß anfragen</Knopf>
                     </>
                 }
-                merkmale={
-                    <p className="max-w-mass text-fs-2 text-tinte-2">
-                        Sie planen ein Bad?{' '}
-                        <Link href="/bad/badplaner" className={linkKlassen}>
-                            Zum Badplaner
-                        </Link>{' '}
-                        oder zum{' '}
-                        <Link href="/bad/projekt-check" className={linkKlassen}>
-                            Bad-Projektcheck
-                        </Link>
-                        .
-                    </p>
+                rand={
+                    <div className="mt-auto">
+                        <p className="max-w-mass text-fs-2 text-tinte-2">
+                            Sie planen ein Bad?{' '}
+                            <Link href="/bad/badplaner" className={linkKlassen}>
+                                Zum Badplaner
+                            </Link>{' '}
+                            oder zum{' '}
+                            <Link href="/bad/projekt-check" className={linkKlassen}>
+                                Bad-Projektcheck
+                            </Link>
+                            .
+                        </p>
+                    </div>
                 }
             />
 
-            {/* 2. Werkzeug direkt unter dem Kopf: Fortschritt und Formular links (8 Spalten), Ergebnis-Spalte rechts (ab lg klebend) */}
-            <Abschnitt art="arbeit" id="konfigurator" aria-label="Fliesen-Konfigurator" spaet>
+            {/* 2. Werkzeug direkt unter dem Kopf: Fortschritt und Formular links (8 Spalten), Bedarfsanzeige und Verlegeplan rechts (ab lg auf Höhe des Werkzeugs) */}
+            <Abschnitt art="arbeit" id="konfigurator" aria-label="Fliesen-Konfigurator">
                 <FliesenKonfigurator ergebnisSpalte />
             </Abschnitt>
 
@@ -156,7 +155,6 @@ export default function FliesenKonfiguratorPage() {
                 titelId="ablauf-heading"
                 etikett="So funktioniert es"
                 titel="Vier Schritte bis zur strukturierten Anfrage"
-                className={ERKLAER_H2}
                 spaet
                 einleitung={
                     <p>
@@ -182,7 +180,6 @@ export default function FliesenKonfiguratorPage() {
                 kopf="seitlich"
                 etikett="Berechnung"
                 titel="So rechnet der Konfigurator: Fläche, Muster, Verschnitt"
-                className={ERKLAER_H2}
                 spaet
                 einleitung={
                     <div className="space-y-4">
@@ -233,7 +230,7 @@ export default function FliesenKonfiguratorPage() {
             </Abschnitt>
 
             {/* 5. Treppen: die drei Regeln als Liste an der Fuge, je Regel ein Absatz mit fettem Einstieg */}
-            <Abschnitt art="arbeit" titelId="treppen-heading" titel="Bei Treppen nur die Nettofläche" className={ERKLAER_H2} spaet>
+            <Abschnitt art="arbeit" titelId="treppen-heading" etikett="Treppen" titel="Bei Treppen nur die Nettofläche" spaet>
                 <ul className="border-t border-fuge">
                     <li className="border-b border-fuge py-6">
                         <p className="max-w-mass font-text text-fs-3 text-tinte">
@@ -263,7 +260,6 @@ export default function FliesenKonfiguratorPage() {
                 titelId="weiter-heading"
                 etikett="Nach der Anfrage"
                 titel="Wie es weitergeht: Aufmaß und Festpreisangebot"
-                className={ERKLAER_H2}
                 spaet
             >
                 <Schrittfolge
@@ -273,7 +269,7 @@ export default function FliesenKonfiguratorPage() {
             </Abschnitt>
 
             {/* 7. FAQ: native Aufklapper (ohne Skript), Fuge statt Kasten; Plus geschlossen, Minus offen */}
-            <Abschnitt art="arbeit" titelId="faq-heading" etikett="FAQ" titel="Häufige Fragen zum Konfigurator" className={ERKLAER_H2} spaet>
+            <Abschnitt art="arbeit" titelId="faq-heading" etikett="FAQ" titel="Häufige Fragen zum Konfigurator" spaet>
                 <div className="border-t border-fuge">
                     {FAQS.map((faq) => (
                         <details key={faq.q} className="group border-b border-fuge">
@@ -300,7 +296,6 @@ export default function FliesenKonfiguratorPage() {
                 titelId="ratgeber-heading"
                 etikett="Ratgeber"
                 titel="Weiterführende Ratgeber zur Fliesenplanung"
-                className={ERKLAER_H2}
                 spaet
             >
                 <Feldraster spalten={4} als="ul">
@@ -326,7 +321,7 @@ export default function FliesenKonfiguratorPage() {
                 </p>
             </Abschnitt>
 
-            <QualityPromise />
+            <QualityPromise art="arbeit" />
         </>
     );
 }

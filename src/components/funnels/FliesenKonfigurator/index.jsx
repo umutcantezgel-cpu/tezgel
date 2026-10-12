@@ -11,7 +11,8 @@ import React from 'react';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
 import { etikettKlassen, knopfKlassen } from '@/components/kern/stile';
-import { STEPS, fmt, useFliesenKonfigurator } from '@/lib/formulare/useFliesenKonfigurator';
+import { ROOM_OPTIONS, STEPS, fmt, useFliesenKonfigurator } from '@/lib/formulare/useFliesenKonfigurator';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 import Schritt1 from './Schritt1';
 import Schritt2 from './Schritt2';
 import Schritt3 from './Schritt3';
@@ -21,6 +22,8 @@ import WhatsAppGeoeffnet from './WhatsAppGeoeffnet';
 
 // Weiter-Knopf: aktiv als Hauptknopf, gesperrt als Strich-Rahmen auf Fliese (keine graue Fläche)
 const WEITER_AKTIV = knopfKlassen('haupt', 'w-full sm:w-auto');
+// Verlegeplan der Ergebnis-Spalte (ab lg): je Bereich ein gezeichneter Plan aus den Planvorgaben (K-008), ohne Achse
+const RAUM_PLAN = { wohnen: 'wohnen', kueche: 'fugen', flur: 'grossformat', treppe: 'treppe', balkon: 'balkon', untergrund: 'untergrund', bad: 'bad' };
 const WEITER_GESPERRT =
     'inline-flex min-h-11 w-full cursor-not-allowed items-center justify-center gap-2 rounded-none border border-strich bg-fliese px-6 py-3 font-text text-fs-2 font-semibold text-tinte-2 sm:w-auto';
 
@@ -66,12 +69,13 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
     // bzw. erst nach dem Werkzeug die Rückfrage (Schritte 1–2), Werkzeug.
     // -----------------------------------------------------------------------
     const gesperrt = data.rooms.length === 0;
+    const ersterBereich = ROOM_OPTIONS.find((r) => data.rooms.includes(r.id))?.id;
 
     return (
-        <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-12">
-            <div className="grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12">
+        <div className="border border-strich bg-fliese p-6 sm:p-8 lg:p-6">
+            <div className="grid grid-cols-4 gap-y-8 md:grid-cols-8 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-4">
                 {/* Kopf und Fortschritt: eine sichtbare Anzeige (die Kästchen), „Schritt X von 4“ für Screenreader */}
-                <div className="order-1 col-span-4 border-b border-fuge pb-6 md:col-span-8 lg:col-span-12">
+                <div className="order-1 col-span-4 border-b border-fuge pb-4 md:col-span-8 lg:col-span-12">
                     <div className="flex flex-wrap items-center justify-between gap-4">
                         <span className={etikettKlassen}>
                             <Fugenkreuz className="size-3 text-strich" />
@@ -111,13 +115,17 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                         </ol>
                     </div>
                     <p className="sr-only">Schritt {step} von 4</p>
-                    <h2 className="mt-6 font-anzeige text-fs-5 font-semibold text-tinte">Fliesenprojekt vorbereiten</h2>
+                    <h2 className="mt-4 font-anzeige text-fs-5 font-semibold text-tinte">Fliesenprojekt vorbereiten</h2>
                 </div>
 
-                {/* Ergebnis-Spalte (ab lg rechts neben dem Werkzeug, klebend). Schritte 1–2: Rückfrage an der gleichen Stelle */}
+                {/* Ergebnis-Spalte: ab lg rechts neben dem Werkzeug und auf dessen Höhe gestreckt (keine leere Spalte): oben die
+                    Bedarfsanzeige, darunter der Verlegeplan des ersten gewählten Bereichs (gezeichnet, ohne Achse). Mobil steht die
+                    Bedarfsanzeige nur mit ergebnisSpalte ab Schritt 3 vor dem Werkzeug, in Schritt 1–2 danach. */}
                 <div
-                    className={`order-2 col-span-4 md:col-span-8 ${
-                        ergebnisSpalte ? 'lg:col-span-4 lg:col-start-9 lg:row-start-2 lg:sticky lg:top-24 lg:self-start' : 'lg:col-span-12'
+                    className={`col-span-4 md:col-span-8 ${
+                        ergebnisSpalte
+                            ? `${step >= 3 ? 'order-2' : 'order-4'} lg:col-span-4 lg:col-start-9 lg:row-start-2 lg:sticky lg:top-24 lg:flex lg:flex-col lg:gap-4 lg:self-start`
+                            : 'order-2 lg:col-span-12'
                     }`}
                 >
                     {/* Live-Vorschau des Materialbedarfs in jedem Schritt (Bestand; aria-live) */}
@@ -146,12 +154,17 @@ export default function FliesenKonfigurator({ area, substrate, format, material,
                             )}
                         </div>
                     )}
+                    {ergebnisSpalte && (
+                        <div className="hidden items-center justify-center border border-fuge bg-fliese p-4 lg:flex">
+                            <Verlegeplan plan={RAUM_PLAN[ersterBereich] ?? 'fugen'} ohneAchse bemassung={false} />
+                        </div>
+                    )}
                 </div>
 
                 {/* Werkzeug: Schrittüberschrift, Formularinhalt und Schrittnavigation */}
                 <div className={`order-3 col-span-4 md:col-span-8 ${ergebnisSpalte ? 'lg:col-span-8 lg:col-start-1 lg:row-start-2' : 'lg:col-span-12'}`}>
                     <div>
-                        <div className="mb-6">
+                        <div className="mb-4">
                             <p ref={headingRef} tabIndex={-1} className="font-anzeige text-fs-4 font-semibold text-tinte focus:outline-none">
                                 {step}. {STEPS[step - 1].title}
                             </p>

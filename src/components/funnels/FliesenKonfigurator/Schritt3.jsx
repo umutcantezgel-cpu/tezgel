@@ -3,7 +3,6 @@ import Hinweis from '@/components/kern/Hinweis';
 import { hilfeKlassen, labelKlassen } from '@/components/kern/stile';
 import { FORMAT_OPTIONS, MATERIAL_OPTIONS, PATTERN_OPTIONS, STAIR_COVERING_OPTIONS, STAIR_TYPE_OPTIONS, YES_NO, parseNumber } from '@/lib/formulare/useFliesenKonfigurator';
 import { inputClass, legendClass } from './stile';
-import Auswahlgruppe from './Auswahlgruppe';
 
 // Verbandszeichen je Muster (E4-NACH-13, Befund 17): dekorativ, neben dem Namen; „Noch offen“ ohne Zeichen.
 const VERBAND_ZEICHEN = {
@@ -27,6 +26,42 @@ const MUSTER_MIT_ZEICHEN = PATTERN_OPTIONS.map((o) =>
         : o
 );
 
+// Auswahl als Feldraster (E4-NACH-13, Befunde 13, 14; wie Schritt 1): Felder an der Fuge (gap-px auf Fuge), Fliese,
+// gewählt Tinte mit Haken. Legende, Optionen, aria-pressed, Labels, Nebentexte und Reihenfolge wie bisher; ein einzelnes
+// letztes Feld spannt die Spalten, damit kein leerer Rasterplatz bleibt. spalten: auto (1 mobil, 2 ab sm), zwei, eins.
+function Feldwahl({ legend, options, value, onChange, spalten = 'auto' }) {
+    const raster = spalten === 'eins' ? 'grid-cols-1' : spalten === 'zwei' ? 'grid-cols-2' : 'grid-cols-1 sm:grid-cols-2';
+    const einzeln = options.length % 2 === 1 ? options.length - 1 : -1;
+    const spanne = spalten === 'auto' ? 'sm:col-span-2' : spalten === 'zwei' ? 'col-span-2' : '';
+    return (
+        <fieldset className="m-0 min-w-0 border-0 p-0">
+            <legend className={labelKlassen}>{legend}</legend>
+            <div className={`mt-2 grid gap-px border border-fuge bg-fuge ${raster}`}>
+                {options.map((o, i) => {
+                    const selected = value === o.id;
+                    return (
+                        <button
+                            key={o.id}
+                            type="button"
+                            aria-pressed={selected}
+                            onClick={() => onChange(o.id)}
+                            className={`flex min-h-11 w-full items-center gap-4 p-4 text-left font-text ${i === einzeln ? spanne : ''} ${
+                                selected ? 'bg-tinte text-kalk hover:bg-tinte-2' : 'bg-fliese text-tinte hover:bg-kalk'
+                            }`}
+                        >
+                            <span className="flex min-w-0 flex-1 flex-col">
+                                <span className="block text-fs-3 font-semibold">{o.label ?? o.title}</span>
+                                {o.desc && <span className={`mt-1 block text-fs-2 ${selected ? 'text-nacht-2' : 'text-tinte-2'}`}>{o.desc}</span>}
+                            </span>
+                            {selected && <Icon name="haken" groesse={4} />}
+                        </button>
+                    );
+                })}
+            </div>
+        </fieldset>
+    );
+}
+
 // Schritt 3: Format, Material und Menge (E-011: aus FliesenKonfigurator.jsx verschoben; E3-BAU-13: Darstellung nach KERN
 // wie Schritt1/2, Zahlenfelder wie E3-BAU-17; Texte, IDs, ARIA, Bedingungen, Reihenfolge und Nutzlast unverändert).
 export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises }) {
@@ -34,27 +69,24 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
         <div className="space-y-8">
             {hasAreaRooms && (
                 <div className="space-y-6">
-                    <Auswahlgruppe
+                    <Feldwahl
                         legend="Fliesenformat:"
                         options={FORMAT_OPTIONS}
                         value={data.format}
-                        columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                         onChange={(id) => update({ format: id })}
                     />
 
-                    <Auswahlgruppe
+                    <Feldwahl
                         legend="Material bzw. Optik:"
                         options={MATERIAL_OPTIONS}
                         value={data.material}
-                        columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                         onChange={(id) => update({ material: id })}
                     />
 
-                    <Auswahlgruppe
+                    <Feldwahl
                         legend="Verlegemuster:"
                         options={MUSTER_MIT_ZEICHEN}
                         value={data.pattern}
-                        columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                         onChange={(id) => update({ pattern: id })}
                     />
 
@@ -71,7 +103,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="decimal"
                                     placeholder="z. B. 24,5"
                                     value={data.area}
-                                    onChange={(e) => update({ area: e.target.value })}
+                        onChange={(e) => update({ area: e.target.value })}
                                     className={`${inputClass} tabular-nums`}
                                     aria-describedby="fk-area-help"
                                 />
@@ -86,7 +118,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="decimal"
                                     placeholder="z. B. 18"
                                     value={data.skirting}
-                                    onChange={(e) => update({ skirting: e.target.value })}
+                        onChange={(e) => update({ skirting: e.target.value })}
                                     className={`${inputClass} tabular-nums`}
                                 />
                             </div>
@@ -100,7 +132,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                 max="150"
                                 step="1"
                                 value={Math.min(Math.max(Math.round(parseNumber(data.area)) || 1, 1), 150)}
-                                onChange={(e) => update({ area: e.target.value })}
+                        onChange={(e) => update({ area: e.target.value })}
                                 className="w-full min-h-11 cursor-pointer accent-tinte"
                             />
                             <div className="mt-1 flex justify-between font-mono text-fs-1 text-tinte-2 tabular-nums" aria-hidden="true">
@@ -121,45 +153,44 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                     <h4 className="text-fs-3 font-semibold text-tinte">Treppe</h4>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <Auswahlgruppe
+                        <Feldwahl
                             legend="Lage:"
                             options={[{ id: 'innen', label: 'Innentreppe' }, { id: 'aussen', label: 'Außentreppe' }]}
                             value={data.stairLocation}
-                            columns="grid-cols-1 lg:grid-cols-2"
+                            spalten="zwei"
                             onChange={(id) => update({ stairLocation: id })}
                         />
-                        <Auswahlgruppe
+                        <Feldwahl
                             legend="Treppenform:"
                             options={[{ id: 'gerade', label: 'Gerade' }, { id: 'gewendelt', label: 'Gewendelt' }]}
                             value={data.stairShape}
-                            columns="grid-cols-1 lg:grid-cols-2"
+                            spalten="zwei"
                             onChange={(id) => update({ stairShape: id })}
                         />
                     </div>
 
-                    <Auswahlgruppe
+                    <Feldwahl
                         legend="Bauart der Treppe:"
                         options={STAIR_TYPE_OPTIONS}
                         value={data.stairType}
-                        columns="grid-cols-1 lg:grid-cols-3"
                         onChange={(id) => update({ stairType: id })}
                     />
 
                     {data.stairType !== 'blockstufen' && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <Auswahlgruppe
+                            <Feldwahl
                                 legend="Belag:"
                                 options={STAIR_COVERING_OPTIONS}
                                 value={data.stairCovering}
-                                columns="grid-cols-1"
-                                onChange={(id) => update({ stairCovering: id })}
+                                spalten="eins"
+                        onChange={(id) => update({ stairCovering: id })}
                             />
-                            <Auswahlgruppe
+                            <Feldwahl
                                 legend="Setzstufen (senkrechte Flächen) belegen?"
                                 options={YES_NO}
                                 value={data.risersOn}
-                                columns="grid-cols-2"
-                                onChange={(id) => update({ risersOn: id })}
+                                spalten="zwei"
+                        onChange={(id) => update({ risersOn: id })}
                             />
                         </div>
                     )}
@@ -177,7 +208,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="numeric"
                                     placeholder="z. B. 14"
                                     value={data.stairRises}
-                                    onChange={(e) => update({ stairRises: e.target.value })}
+                        onChange={(e) => update({ stairRises: e.target.value })}
                                     className={`${inputClass} tabular-nums`}
                                     aria-describedby="fk-stairs-help"
                                 />
@@ -193,7 +224,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                         inputMode="numeric"
                                         placeholder={Number.isFinite(rises) ? `${rises} (automatisch)` : 'automatisch'}
                                         value={data.risersCount}
-                                        onChange={(e) => update({ risersCount: e.target.value })}
+                        onChange={(e) => update({ risersCount: e.target.value })}
                                         className={`${inputClass} tabular-nums`}
                                     />
                                 </div>
@@ -208,7 +239,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="numeric"
                                     placeholder={Number.isFinite(rises) ? `${Math.max(rises - 1, 0)} (automatisch)` : 'automatisch'}
                                     value={data.treadsCount}
-                                    onChange={(e) => update({ treadsCount: e.target.value })}
+                        onChange={(e) => update({ treadsCount: e.target.value })}
                                     className={`${inputClass} tabular-nums`}
                                 />
                             </div>
@@ -222,7 +253,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="decimal"
                                     placeholder="z. B. 100"
                                     value={data.stairWidth}
-                                    onChange={(e) => update({ stairWidth: e.target.value })}
+                        onChange={(e) => update({ stairWidth: e.target.value })}
                                     className={`${inputClass} tabular-nums`}
                                 />
                             </div>
@@ -234,7 +265,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                     inputMode="decimal"
                                     placeholder="z. B. 30"
                                     value={data.treadDepth}
-                                    onChange={(e) => update({ treadDepth: e.target.value })}
+                        onChange={(e) => update({ treadDepth: e.target.value })}
                                     className={`${inputClass} tabular-nums`}
                                 />
                             </div>
@@ -247,7 +278,7 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                                         inputMode="decimal"
                                         placeholder="z. B. 18"
                                         value={data.riserHeight}
-                                        onChange={(e) => update({ riserHeight: e.target.value })}
+                        onChange={(e) => update({ riserHeight: e.target.value })}
                                         className={`${inputClass} tabular-nums`}
                                     />
                                 </div>
@@ -270,11 +301,11 @@ export default function Schritt3({ data, update, hasAreaRooms, hasStairs, rises 
                         </Hinweis>
                     )}
 
-                    <Auswahlgruppe
+                    <Feldwahl
                         legend="Treppensockel mit ausführen?"
                         options={YES_NO}
                         value={data.stairSkirting}
-                        columns="grid-cols-2"
+                        spalten="zwei"
                         onChange={(id) => update({ stairSkirting: id })}
                     />
                 </div>
