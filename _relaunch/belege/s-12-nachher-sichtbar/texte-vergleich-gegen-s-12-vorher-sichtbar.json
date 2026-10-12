@@ -1,0 +1,60 @@
+{
+ "vorher": "s-12-vorher-sichtbar",
+ "nachher": "s-12-nachher-sichtbar",
+ "seiten": {
+  "/untergrund-abdichtung/fliesen-auf-fliesen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Altfliesen überkleben",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Spricht dafür",
+     "Zu bedenken",
+     "Spricht dafür",
+     "Zu bedenken"
+    ]
+   }
+  },
+  "/untergrund-abdichtung/entkopplung": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Fliesen auf Holzboden verlegen",
+     "Verband",
+     "Kreuzfuge",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 28,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

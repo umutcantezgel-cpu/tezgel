@@ -1,23 +1,27 @@
-import React from 'react';
+// Fliesen auf Fliesen / Überfliesen (E5-BAU-03 / S-12, KERN v2): Erzählansicht nach dem Muster der Familie Untergrund
+// (/leistungen/[id], /fliesen; Geschwister din-18534, estrich-belegreife). Einstieg mit Laserachse, H1 links, Vorspann und
+// zwei Knöpfe; rechts das Planblatt mit dem Plan „reparatur“ (interaktiv, ohne Achse). Danach die Leitachse über die
+// Abschnitte, Flächen im Wechsel Kalk/Fliese: Voraussetzungen seitlich als Merkliste · Abwägung als Feldraster (dafür / zu
+// bedenken) · Technik und Aufbauhöhen als zwei Spalten an der Fuge · Rückbau seitlich mit Checkliste · Staubschutz und
+// Nassraum als Feldraster (#nassraum, darum ohne `spaet`) · Fragen als Aufklapper · Abschluss mit drei Wegen · Ratgeber als
+// Navigation. Wortlaut, Überschriften, Links, IDs, ARIA und Lesefolge wie im Bestand. Kein großer Moment, kein Auftritt,
+// keine Icon-Kacheln (eine Icon-Familie). Metadaten unverändert.
 import Link from 'next/link';
-import {
-    Hammer,
-    Layers,
-    DoorOpen,
-    ShieldCheck,
-    Sparkles,
-    Search,
-    Ruler,
-    CircleCheck,
-    TriangleAlert,
-    ArrowRight,
-    Phone,
-    MessageCircle,
-    ChevronDown
-} from 'lucide-react';
 import { COMPANY_DATA } from '@/config/company';
 import { createMetadata } from '@/lib/metadata';
 import QualityPromise from '@/components/sections/QualityPromise';
+import WhatsAppLogo from '@/components/ui/WhatsAppLogo';
+import Icon from '@/components/icons/Icon';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Merkliste from '@/components/kern/Merkliste';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Altfliesen überkleben: Wann es fachgerecht geht | Tezgel',
@@ -58,19 +62,23 @@ const PRO_CONTRA = [
 const PREREQS = [
     {
         title: 'Haftung',
-        desc: 'Der Altbelag muss vollflächig und fest am Untergrund haften. Einzelne lose Fliesen werden entfernt und die Stelle ausgeglichen; lösen sich viele, ist der Belag als Untergrund ungeeignet.',
-        icon: Layers
+        desc: 'Der Altbelag muss vollflächig und fest am Untergrund haften. Einzelne lose Fliesen werden entfernt und die Stelle ausgeglichen; lösen sich viele, ist der Belag als Untergrund ungeeignet.'
     },
     {
         title: 'Hohlstellen',
-        desc: 'Mit der Klopfprobe wird die Fläche abgeklopft. Hohl klingende Bereiche zeigen fehlenden Verbund – sie sind eine Schwachstelle, die sich in den neuen Belag überträgt.',
-        icon: Search
+        desc: 'Mit der Klopfprobe wird die Fläche abgeklopft. Hohl klingende Bereiche zeigen fehlenden Verbund – sie sind eine Schwachstelle, die sich in den neuen Belag überträgt.'
     },
     {
         title: 'Ebenheit',
-        desc: 'Der Altbelag wird wie jeder Untergrund nach DIN 18202 gemessen. Für Großformate ist eine besonders ebene Fläche nötig; Versätze und Mulden werden vorher gespachtelt.',
-        icon: Ruler
+        desc: 'Der Altbelag wird wie jeder Untergrund nach DIN 18202 gemessen. Für Großformate ist eine besonders ebene Fläche nötig; Versätze und Mulden werden vorher gespachtelt.'
     }
+];
+
+const HEIGHTS = [
+    'Türblätter müssen meist gekürzt werden; bei Zargen und Schwellen prüfen wir, ob genug Luft bleibt.',
+    'Zu angrenzenden Räumen entsteht eine Kante, die mit einem Übergangsprofil oder einer Rampe gelöst wird.',
+    'Bodenablauf und Duschtasse brauchen passende Aufsatzstücke bzw. eine neue Einbauhöhe.',
+    'An der Wand verschieben sich Armaturen, Unterputz-Rosetten und Anschlüsse von WC und Waschtisch nach vorn.'
 ];
 
 const CHECKLIST = [
@@ -104,277 +112,259 @@ const READ_MORE = [
     { label: 'Über unseren Betrieb', href: '/unternehmen' }
 ];
 
+// Felder im Raster: auf Fliese-Fläche Kalk, auf Kalk-Fläche Fliese (Fuge statt Karte, kein Abheben)
+const FELD = 'flex flex-col p-6 lg:p-8';
+// Fließtext in Feldern und Spalten
+const TEXT = 'font-text text-fs-2 text-tinte-2';
+
+// Aufzählung an der Fuge: Marke (Fugenkreuz bzw. Icon) auf Höhe der ersten Zeile, Text daneben
+function Punkte({ eintraege, marke = 'kreuz', className }) {
+    return (
+        <ul className={className}>
+            {eintraege.map((text) => (
+                <li key={text} className="flex gap-3 font-text text-fs-2 text-tinte">
+                    <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-tinte">
+                        {marke === 'kreuz' ? <Fugenkreuz className="size-3 text-strich" /> : <Icon name={marke} groesse={5} />}
+                    </span>
+                    <span className="min-w-0">{text}</span>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
 export default function FliesenAufFliesenPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-warm -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-orange top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="ueberfliesen-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <Hammer className="w-3.5 h-3.5 text-orange-600" />
-                        Altbelag &middot; Überfliesen &middot; Rückbau
-                    </span>
-                    <h1 id="ueberfliesen-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Altfliesen überkleben:{' '}
-                        <span className="text-ceramic-gradient">Wann es fachgerecht geht</span> bei Tezgel
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Altfliesen überkleben oder Rückbau? Fachbetrieb Tezgel prüft Ihren Altbelag auf Tragfähigkeit, Haftung und Aufbauhöhen – damit Ihr neuer Fliesenbelag dauerhaft sicher und rissfrei liegt.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Altbelag prüfen lassen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/bad/badsanierung" className="btn-ghost px-7 py-3.5 text-xs">
-                            Badsanierung ansehen
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Etikett, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt mit dem Plan „reparatur“ */}
+            <section aria-labelledby="ueberfliesen-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Altbelag &middot; Überfliesen &middot; Rückbau</>}
+                    titel={
+                        <span id="ueberfliesen-heading">
+                            Altfliesen überkleben:{' '}
+                            <span>Wann es fachgerecht geht</span> bei Tezgel
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Altfliesen überkleben oder Rückbau? Fachbetrieb Tezgel prüft Ihren Altbelag auf Tragfähigkeit, Haftung und Aufbauhöhen – damit Ihr neuer Fliesenbelag dauerhaft sicher und rissfrei liegt.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Altbelag prüfen lassen
+                            </Knopf>
+                            <Knopf href="/bad/badsanierung" variante="neben">
+                                Badsanierung ansehen
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Altfliesen überkleben', 'reparatur')}>
+                            <Verlegeplan plan="reparatur" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Prerequisites */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="voraussetzungen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Prüfung</span>
-                    <h2 id="voraussetzungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Voraussetzungen: Haftung, Hohlstellen, Ebenheit
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Ein Altbelag ist nur dann ein guter Untergrund, wenn er selbst fest mit dem Bauteil verbunden ist.
-                    </p>
-                </div>
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {PREREQS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li key={item.title} className="group glass-surface p-7 rounded-tile-xl hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300">
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6 text-orange-600" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
+            <Leitachse>
+                {/* 2. VORAUSSETZUNGEN: Kopf links mit Einleitung, rechts die drei Prüfpunkte als Merkliste an der Fuge (Titel bleiben H3) */}
+                <Abschnitt
+                    titelId="voraussetzungen-heading"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Prüfung"
+                    titel="Voraussetzungen: Haftung, Hohlstellen, Ebenheit"
+                    einleitung={
+                        <p>
+                            Ein Altbelag ist nur dann ein guter Untergrund, wenn er selbst fest mit dem Bauteil verbunden ist.
+                        </p>
+                    }
+                >
+                    <Merkliste spalten={1} titelAls="h3" eintraege={PREREQS.map((item) => ({ titel: item.title, text: item.desc }))} />
+                </Abschnitt>
 
-            {/* Pro / Contra */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="vergleich-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Abwägung</span>
-                        <h2 id="vergleich-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Überfliesen oder Rückbau: Vor- und Nachteile
-                        </h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* 3. ABWÄGUNG: Fläche Fliese, je Weg ein Feld (Kalk) mit „Spricht dafür“ (Haken) und „Zu bedenken“ (Hinweis) als Mono-Etiketten */}
+                <Abschnitt
+                    titelId="vergleich-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett="Abwägung"
+                    titel="Überfliesen oder Rückbau: Vor- und Nachteile"
+                >
+                    <Feldraster spalten={2} als="div">
                         {PRO_CONTRA.map((col) => (
-                            <article key={col.title} className="rounded-tile-xl bg-slate-50 border border-slate-200 p-7 sm:p-8">
-                                <h3 className="text-xl font-black text-slate-900 mb-5">{col.title}</h3>
-                                <p className="text-xs font-black uppercase tracking-widest text-orange-800 mb-2">Spricht dafür</p>
-                                <ul className="space-y-2 mb-6">
-                                    {col.pros.map((text) => (
-                                        <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                            <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                                            <span>{text}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <p className="text-xs font-black uppercase tracking-widest text-amber-800 mb-2">Zu bedenken</p>
-                                <ul className="space-y-2">
-                                    {col.cons.map((text) => (
-                                        <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                            <TriangleAlert className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                            <span>{text}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                            <article key={col.title} className={`${FELD} bg-kalk`}>
+                                <h3 className="font-anzeige text-fs-5 text-tinte">{col.title}</h3>
+                                <p className={`mt-6 ${etikettKlassen}`}>Spricht dafür</p>
+                                <Punkte eintraege={col.pros} marke="haken" className="mt-3 grid gap-3" />
+                                <p className={`mt-8 border-t border-fuge pt-6 ${etikettKlassen}`}>Zu bedenken</p>
+                                <Punkte eintraege={col.cons} marke="hinweis" className="mt-3 grid gap-3" />
                             </article>
                         ))}
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 4. TECHNIK UND AUFBAUHÖHEN: zwei Spalten an der Fuge, je mit eigener H2 wie im Bestand (ohne Icon-Kacheln) */}
+                <Abschnitt leitachse spaet aria-label="Technik und Aufbauhöhen">
+                    <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-x-12">
+                        <article className="border-t border-tinte pt-8">
+                            <h2 className="font-anzeige text-fs-5 text-tinte">Haftbrücke und Grundierung auf glasierten Altfliesen</h2>
+                            <div className="mt-6 flex max-w-mass flex-col gap-4 font-text text-fs-3 text-tinte-2">
+                                <p>
+                                    Glasierte Fliesen saugen nicht – normaler Kleber findet auf ihnen schlecht Halt. Deshalb wird der
+                                    Altbelag gründlich gereinigt und entfettet, Pflegefilme und Silikonreste werden entfernt.
+                                </p>
+                                <p>
+                                    Danach folgt eine Haftbrücke bzw. Grundierung, die für nicht saugende Untergründe freigegeben ist,
+                                    oder eine Kontaktschicht aus dem Kleber selbst. Verlegt wird mit einem verformungsfähigen Kleber, der
+                                    laut Hersteller für Fliesen auf Fliesen geeignet ist.
+                                </p>
+                            </div>
+                        </article>
+                        <article className="border-t border-tinte pt-8">
+                            <h2 className="font-anzeige text-fs-5 text-tinte">Aufbauhöhen: Türen, Übergänge, Sanitärobjekte</h2>
+                            <Punkte eintraege={HEIGHTS} className="mt-6 grid max-w-mass gap-4" />
+                        </article>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Technique */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-label="Technik und Aufbauhöhen">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <article className="glass-surface rounded-tile-xl p-7 sm:p-9">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <Layers className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Haftbrücke und Grundierung auf glasierten Altfliesen</h2>
-                        <div className="space-y-3 text-sm text-slate-700 leading-relaxed">
-                            <p>
-                                Glasierte Fliesen saugen nicht – normaler Kleber findet auf ihnen schlecht Halt. Deshalb wird der
-                                Altbelag gründlich gereinigt und entfettet, Pflegefilme und Silikonreste werden entfernt.
-                            </p>
-                            <p>
-                                Danach folgt eine Haftbrücke bzw. Grundierung, die für nicht saugende Untergründe freigegeben ist,
-                                oder eine Kontaktschicht aus dem Kleber selbst. Verlegt wird mit einem verformungsfähigen Kleber, der
-                                laut Hersteller für Fliesen auf Fliesen geeignet ist.
-                            </p>
-                        </div>
-                    </article>
-                    <article className="glass-surface rounded-tile-xl p-7 sm:p-9">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <DoorOpen className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Aufbauhöhen: Türen, Übergänge, Sanitärobjekte</h2>
-                        <ul className="space-y-3">
-                            {[
-                                'Türblätter müssen meist gekürzt werden; bei Zargen und Schwellen prüfen wir, ob genug Luft bleibt.',
-                                'Zu angrenzenden Räumen entsteht eine Kante, die mit einem Übergangsprofil oder einer Rampe gelöst wird.',
-                                'Bodenablauf und Duschtasse brauchen passende Aufsatzstücke bzw. eine neue Einbauhöhe.',
-                                'An der Wand verschieben sich Armaturen, Unterputz-Rosetten und Anschlüsse von WC und Waschtisch nach vorn.'
-                            ].map((text) => (
-                                <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                                    <span>{text}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </article>
-                </div>
-            </section>
-
-            {/* When removal is necessary + checklist */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="rueckbau-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                    <div className="space-y-4">
-                        <span className="eyebrow eyebrow-orange">Grenzen</span>
-                        <h2 id="rueckbau-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Wann ein Rückbau unvermeidbar ist
-                        </h2>
-                        <p className="text-base text-slate-700 leading-relaxed">
+                {/* 5. RÜCKBAU: Fläche Fliese, Kopf links; rechts zwei Absätze und die Checkliste als Feld (Kalk) mit Haken */}
+                <Abschnitt
+                    titelId="rueckbau-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    kopf="seitlich"
+                    etikett="Grenzen"
+                    titel="Wann ein Rückbau unvermeidbar ist"
+                >
+                    <div className="flex max-w-mass flex-col gap-4 font-text text-fs-3 text-tinte-2">
+                        <p>
                             Wenn der Altbelag in größeren Bereichen hohl liegt oder sich löst, wenn Feuchteschäden oder Schimmel
                             hinter den Fliesen vermutet werden, wenn der Untergrund selbst gerissen ist oder wenn die zusätzliche
                             Aufbauhöhe an Türen, Treppen oder bodengleichen Duschen nicht unterzubringen ist, führt am Rückbau kein
                             Weg vorbei.
                         </p>
-                        <p className="text-base text-slate-700 leading-relaxed">
+                        <p>
                             Auch bei mehreren übereinanderliegenden Altbelägen oder einem nicht ausreichend tragfähigen Untergrund
                             raten wir vom Überfliesen ab.
                         </p>
                     </div>
-                    <div className="glass-surface rounded-tile-xl p-7 sm:p-8">
-                        <h3 className="text-lg font-black text-slate-900 mb-4">Checkliste: Überfliesen kommt in Frage, wenn …</h3>
-                        <ul className="space-y-3">
-                            {CHECKLIST.map((text) => (
-                                <li key={text} className="flex gap-3 text-sm text-slate-700 leading-relaxed">
-                                    <CircleCheck className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                                    <span>{text}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="mt-5 text-sm text-slate-600 leading-relaxed">
+                    <div className="mt-12 border border-fuge bg-kalk p-6 lg:p-8">
+                        <h3 className="font-anzeige text-fs-4 text-tinte">Checkliste: Überfliesen kommt in Frage, wenn …</h3>
+                        <Punkte eintraege={CHECKLIST} marke="haken" className="mt-6 grid gap-3 md:grid-cols-2 md:gap-x-8" />
+                        <p className={`mt-6 border-t border-fuge pt-4 ${TEXT}`}>
                             Die Checkliste ersetzt nicht die Prüfung vor Ort – sie hilft Ihnen, die eigene Situation vorab einzuschätzen.
                         </p>
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Dust-reduced removal + wet room */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-label="Rückbau im bewohnten Haus und Nassraum">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <article className="glass-surface rounded-tile-xl p-7 sm:p-9">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <Sparkles className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Staubarmer Rückbau im bewohnten Haus</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Ein Rückbau ohne jeden Staub ist nicht möglich – aber er lässt sich stark eindämmen. Wir trennen den
-                            Arbeitsbereich mit Staubschutzwänden und -türen ab, decken Laufwege und angrenzende Flächen ab und setzen
-                            Luftreiniger ein. Schutt wird auf kurzem Weg aus dem Haus gebracht, am Ende wird besenrein übergeben.
-                        </p>
-                    </article>
-                    <article id="nassraum" className="glass-surface rounded-tile-xl p-7 sm:p-9 scroll-mt-28">
-                        <span className="icon-chip w-11 h-11 mb-4">
-                            <ShieldCheck className="w-5 h-5 text-orange-600" />
-                        </span>
-                        <h2 className="text-2xl font-black text-slate-900 mb-3">Sonderfall Nassraum: Abdichtung neu herstellen</h2>
-                        <p className="text-sm text-slate-700 leading-relaxed">
-                            Alte Fliesen sind keine Abdichtung. Wird in Dusch- oder Wannenbereichen überfliest, bringen wir auf dem
-                            vorbereiteten Altbelag eine neue Verbundabdichtung auf – mit Dichtbändern, Ecken und Manschetten. Passt der
-                            vorhandene Ablauf nicht zu einer normgerechten Anbindung, ist ein Rückbau in diesem Bereich meist die
-                            sauberere Lösung.
-                        </p>
-                        <Link href="/untergrund-abdichtung/din-18534" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-orange-700 hover:text-orange-800">
-                            Abdichtung nach DIN 18534
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </article>
-                </div>
-            </section>
+                {/* 6. STAUBSCHUTZ UND NASSRAUM: zwei Felder mit eigener H2; das zweite trägt den Anker #nassraum – darum ohne `spaet` */}
+                <Abschnitt leitachse aria-label="Rückbau im bewohnten Haus und Nassraum">
+                    <Feldraster spalten={2} als="div">
+                        <article className={`${FELD} bg-fliese`}>
+                            <h2 className="font-anzeige text-fs-4 text-tinte">Staubarmer Rückbau im bewohnten Haus</h2>
+                            <p className={`mt-6 ${TEXT}`}>
+                                Ein Rückbau ohne jeden Staub ist nicht möglich – aber er lässt sich stark eindämmen. Wir trennen den
+                                Arbeitsbereich mit Staubschutzwänden und -türen ab, decken Laufwege und angrenzende Flächen ab und setzen
+                                Luftreiniger ein. Schutt wird auf kurzem Weg aus dem Haus gebracht, am Ende wird besenrein übergeben.
+                            </p>
+                        </article>
+                        <article id="nassraum" className={`${FELD} bg-fliese`}>
+                            <h2 className="font-anzeige text-fs-4 text-tinte">Sonderfall Nassraum: Abdichtung neu herstellen</h2>
+                            <p className={`mt-6 ${TEXT}`}>
+                                Alte Fliesen sind keine Abdichtung. Wird in Dusch- oder Wannenbereichen überfliest, bringen wir auf dem
+                                vorbereiteten Altbelag eine neue Verbundabdichtung auf – mit Dichtbändern, Ecken und Manschetten. Passt der
+                                vorhandene Ablauf nicht zu einer normgerechten Anbindung, ist ein Rückbau in diesem Bereich meist die
+                                sauberere Lösung.
+                            </p>
+                            <div className="mt-auto pt-6">
+                                <Knopf href="/untergrund-abdichtung/din-18534" variante="text" icon="pfeil-rechts">
+                                    Abdichtung nach DIN 18534
+                                </Knopf>
+                            </div>
+                        </article>
+                    </Feldraster>
+                </Abschnitt>
 
-            {/* FAQ */}
-            <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 relative z-10" aria-labelledby="faq-heading">
-                <h2 id="faq-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight mb-6 text-center">
-                    Häufige Fragen zum Überfliesen
-                </h2>
-                <div className="space-y-3">
-                    {FAQ.map((item) => (
-                        <details key={item.q} className="group glass-surface rounded-tile-lg px-6 py-4">
-                            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
-                                {item.q}
-                                <ChevronDown className="w-5 h-5 text-orange-600 shrink-0 transition-transform group-open:rotate-180" />
-                            </summary>
-                            <p className="mt-3 text-sm text-slate-700 leading-relaxed">{item.a}</p>
-                        </details>
-                    ))}
-                </div>
-            </section>
-
-            {/* CTA */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative z-10" aria-labelledby="cta-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4">
-                    <h2 id="cta-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                        Überfliesen oder Rückbau – wir klären es vor Ort
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
-                        {COMPANY_DATA.owner.fullName} prüft Haftung, Hohlstellen und Aufbauhöhen persönlich und empfiehlt den Weg, der
-                        zu Ihrem Raum passt. Erste Fotos können Sie uns gern vorab per WhatsApp schicken.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
-                            Termin anfragen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                        <a href={COMPANY_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" className="glass-button-whatsapp px-7 py-3.5 text-xs">
-                            <MessageCircle className="w-4 h-4" />
-                            Fotos per WhatsApp
-                        </a>
+                {/* 7. FRAGEN: Fläche Fliese, Kopf links, je Frage ein Aufklapper mit Fuge (Plus/Minus) */}
+                <Abschnitt titelId="faq-heading" flaeche="fliese" leitachse spaet kopf="seitlich" titel="Häufige Fragen zum Überfliesen">
+                    <div className="border-t border-tinte">
+                        {FAQ.map((item) => (
+                            <details key={item.q} className="group border-b border-fuge">
+                                <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-6 py-4 font-text text-fs-3 font-semibold text-tinte [&::-webkit-details-marker]:hidden">
+                                    {item.q}
+                                    <span className="flex shrink-0 items-center text-tinte" aria-hidden="true">
+                                        <span className="group-open:hidden">
+                                            <Icon name="plus" groesse={6} />
+                                        </span>
+                                        <span className="hidden group-open:block">
+                                            <Icon name="minus" groesse={6} />
+                                        </span>
+                                    </span>
+                                </summary>
+                                <p className="max-w-mass pb-6 font-text text-fs-2 text-tinte-2">{item.a}</p>
+                            </details>
+                        ))}
                     </div>
-                </div>
-            </section>
+                </Abschnitt>
 
-            {/* Weiterführende Ratgeber */}
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 relative z-10" aria-labelledby="ratgeber-heading">
-                <h2 id="ratgeber-heading" className="text-xl font-black text-slate-900 mb-4">Weiterführende Ratgeber zu Fliese auf Fliese &amp; Sanierung</h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                    {READ_MORE.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className="group flex items-center justify-between gap-3 h-full rounded-tile-lg bg-white border border-slate-200 px-5 py-4 text-sm font-bold text-slate-800 hover:border-orange-500/80 hover:text-orange-700 transition-all duration-300"
-                            >
-                                {link.label}
-                                <ArrowRight className="w-4 h-4 text-orange-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+                {/* 8. ABSCHLUSS: Überschrift, Einleitung und drei Wege (Termin, Telefon, Fotos per WhatsApp aus COMPANY_DATA) */}
+                <Abschnitt
+                    titelId="cta-heading"
+                    leitachse
+                    spaet
+                    titel="Überfliesen oder Rückbau – wir klären es vor Ort"
+                    einleitung={
+                        <p>
+                            {COMPANY_DATA.owner.fullName} prüft Haftung, Hohlstellen und Aufbauhöhen persönlich und empfiehlt den Weg, der
+                            zu Ihrem Raum passt. Erste Fotos können Sie uns gern vorab per WhatsApp schicken.
+                        </p>
+                    }
+                >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
+                            Termin anfragen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                        <Knopf href={COMPANY_DATA.contact.whatsappLink} extern variante="neben" vorne={<WhatsAppLogo className="size-5 shrink-0" />}>
+                            Fotos per WhatsApp
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 9. WEITERFÜHRENDE RATGEBER: Fläche Fliese; Navigation mit eigener H2 wie im Bestand, vier Verweise als Merkliste */}
+                <Abschnitt flaeche="fliese" leitachse spaet>
+                    <nav aria-labelledby="ratgeber-heading">
+                        <div className="max-w-mass">
+                            <h2 id="ratgeber-heading" className="text-fs-6 text-tinte">
+                                Weiterführende Ratgeber zu Fliese auf Fliese &amp; Sanierung
+                            </h2>
+                        </div>
+                        <Merkliste
+                            spalten={2}
+                            className="mt-12"
+                            eintraege={READ_MORE.map((link) => ({
+                                titel: (
+                                    <Link href={link.href} className={linkKlassen}>
+                                        {link.label}
+                                    </Link>
+                                )
+                            }))}
+                        />
+                    </nav>
+                </Abschnitt>
+            </Leitachse>
 
             <QualityPromise />
-        </div>
+        </>
     );
 }

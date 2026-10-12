@@ -1,0 +1,5 @@
+[
+ { "seite": "/untergrund-abdichtung/fliesen-auf-fliesen", "alt": "SPRICHT DAFÜR", "grund": "nur Darstellung: Quelltext unverändert „Spricht dafür“; bisher per CSS uppercase (verbotenes Versal-Etikett), jetzt Mono-Etikett in Normalschreibung" },
+ { "seite": "/untergrund-abdichtung/fliesen-auf-fliesen", "alt": "ZU BEDENKEN", "grund": "nur Darstellung: Quelltext unverändert „Zu bedenken“; bisher per CSS uppercase, jetzt Mono-Etikett in Normalschreibung" },
+ { "seite": "*", "alt": "Cookie-Einstellungen", "grund": "Rahmen (Fuß), Client-Insel, Dev-Zeitpunkt: in der Gegenprobe s-12-*-sichtbar (2 s Wartezeit) auf beiden Seiten vorhanden; nicht Teil der Schreibrechte" }
+]
