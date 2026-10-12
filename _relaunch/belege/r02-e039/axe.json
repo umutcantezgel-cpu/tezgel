@@ -1,0 +1,561 @@
+{
+ "satz": "r02-e039",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "wcag22aa"
+ ],
+ "laeufe": 91,
+ "ernst_kritisch_knoten": 0,
+ "je_regel": {},
+ "ergebnisse": [
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/treppen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/karriere",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/giessen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte/wetzlar",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/untergrund-abdichtung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/balkon-terrasse/balkonsanierung",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/agb",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/faq",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/preise",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/unternehmen",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "t768",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1920",
+   "zustand": "normal",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/bad",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/leistungen",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/standorte",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/blog",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/ueber-uns",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "menue",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "erstbesuch",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "m375",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  },
+  {
+   "seite": "/kontakt",
+   "ansicht": "d1440",
+   "zustand": "einstellungen",
+   "verstoesse": []
+  }
+ ]
+}

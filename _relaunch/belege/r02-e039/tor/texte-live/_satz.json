@@ -1,0 +1,570 @@
+{
+ "satz": "r02-e039-texte-live",
+ "base": null,
+ "bedingungen": {
+  "quelle": "../../../../tmp/claude-0/-home-user-tezgel/f51f963a-66a5-5b8c-a0c5-6b569a6ff96b/scratchpad/reinraum-1d837bd/.next/server/app/**/*.html",
+  "build_id": "4rteVi1anWThpsckY8Vg6",
+  "dateien": 14,
+  "parser": "Chromium DOMParser (Playwright 1.56.1), keine Skriptausführung, keine Netzanfragen",
+  "streaming": "React $RC/$RS aufgelöst (Suspense-Inhalt an Ort, Ersatzinhalt entfernt)",
+  "ohne": [
+   "script (JSON-LD als Hash)",
+   "style",
+   "template",
+   "noscript"
+  ],
+  "normalisierung": "U+00AD/U+200B/U+2060/U+FEFF entfernt; U+00A0/U+2007/U+202F → Leerzeichen; <br> → Leerzeichen; Leerraum zusammengefasst; kein Groß/Klein-Angleich; Inline-Grenze ohne Leerraum → Leerzeichen (außer an Zeichensetzung)",
+  "meta_ohne": [
+   "charset",
+   "viewport",
+   "theme-color",
+   "color-scheme",
+   "x-build",
+   "next-size-adjust",
+   "format-detection"
+  ],
+  "hash_befehle": [
+   "cookie-settings"
+  ]
+ },
+ "erstellt": "2026-10-12T22:46:16.726Z",
+ "summe": {
+  "dateien": 14,
+  "im_manifest": 14,
+  "eintraege": 6498,
+  "seiten_mit_mehreren_h1": [],
+  "seiten_ohne_h1": [],
+  "fragmente": {
+   "gesamt": 50,
+   "ok": 36,
+   "befehle": 14,
+   "fehlend": 0,
+   "ziel_unbekannt": 0,
+   "pflichtanker_ok": "3/4"
+  },
+  "netz_protokoll": 0,
+  "laufzeit_s": 1.1
+ },
+ "fragmente": {
+  "gesamt": 50,
+  "ok": 36,
+  "befehle": [
+   {
+    "seite": "/agb",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/bad",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/balkon-terrasse/balkonsanierung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/faq",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/karriere",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/kontakt",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/preise",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/leistungen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/giessen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/standorte/wetzlar",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/treppen",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/untergrund-abdichtung",
+    "href": "#cookie-settings"
+   },
+   {
+    "seite": "/unternehmen",
+    "href": "#cookie-settings"
+   }
+  ],
+  "fehlend": [],
+  "ziel_unbekannt": [],
+  "ziele": [
+   {
+    "ziel": "/kontakt",
+    "id": "express-anfrage",
+    "verweise": 15,
+    "von": [
+     "/agb",
+     "/bad",
+     "/balkon-terrasse/balkonsanierung",
+     "/faq",
+     "/karriere"
+    ]
+   },
+   {
+    "ziel": "/agb",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/agb"
+    ]
+   },
+   {
+    "ziel": "/bad",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/bad"
+    ]
+   },
+   {
+    "ziel": "/balkon-terrasse/balkonsanierung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/balkon-terrasse/balkonsanierung"
+    ]
+   },
+   {
+    "ziel": "/faq",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/faq"
+    ]
+   },
+   {
+    "ziel": "/karriere",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/karriere"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/",
+    "id": "ablauf",
+    "verweise": 1,
+    "von": [
+     "/"
+    ]
+   },
+   {
+    "ziel": "/kontakt",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/kontakt"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/preise",
+    "id": "anfrage",
+    "verweise": 1,
+    "von": [
+     "/preise"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "express-anfrage",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "bad",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "wohnen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "aussen",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/leistungen",
+    "id": "untergrund",
+    "verweise": 1,
+    "von": [
+     "/leistungen"
+    ]
+   },
+   {
+    "ziel": "/standorte/giessen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/giessen"
+    ]
+   },
+   {
+    "ziel": "/standorte/wetzlar",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/standorte/wetzlar"
+    ]
+   },
+   {
+    "ziel": "/treppen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/treppen"
+    ]
+   },
+   {
+    "ziel": "/untergrund-abdichtung",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/untergrund-abdichtung"
+    ]
+   },
+   {
+    "ziel": "/unternehmen",
+    "id": "main-content",
+    "verweise": 1,
+    "von": [
+     "/unternehmen"
+    ]
+   }
+  ],
+  "pflichtanker": [
+   {
+    "anker": "/#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#express-anfrage",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/kontakt#termin-buchen",
+    "ok": true,
+    "seite_vorhanden": true
+   },
+   {
+    "anker": "/referenzen#bewertungen",
+    "ok": false,
+    "seite_vorhanden": false
+   }
+  ]
+ },
+ "seiten": {
+  "/": {
+   "datei": "start.json",
+   "quelle": "index.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 808,
+   "arten": {
+    "meta": 32,
+    "text": 647,
+    "aria": 103,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Perfektion auf jedem Quadratmeter. Fliesenverlegung & Badsanierung aus Aßlar"
+   ],
+   "hash": "53d4f5fadb80c332"
+  },
+  "/agb": {
+   "datei": "agb.json",
+   "quelle": "agb.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 331,
+   "arten": {
+    "meta": 33,
+    "text": 254,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 6
+   },
+   "h1": [
+    "Allgemeine Geschäftsbedingungen (AGB)"
+   ],
+   "hash": "8be2726030d5c5f7"
+  },
+  "/bad": {
+   "datei": "bad.json",
+   "quelle": "bad.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 433,
+   "arten": {
+    "meta": 33,
+    "text": 348,
+    "aria": 40,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Ihr Traumbad schlüsselfertig in Fachqualität"
+   ],
+   "hash": "b97713a66c15c794"
+  },
+  "/balkon-terrasse/balkonsanierung": {
+   "datei": "balkon-terrasse__balkonsanierung.json",
+   "quelle": "balkon-terrasse/balkonsanierung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 422,
+   "arten": {
+    "meta": 33,
+    "text": 328,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 23
+   },
+   "h1": [
+    "Balkon sanieren: vom undichten Altbelag zur dauerhaften Lösung"
+   ],
+   "hash": "e48d270d10cecac7"
+  },
+  "/faq": {
+   "datei": "faq.json",
+   "quelle": "faq.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 433,
+   "arten": {
+    "meta": 33,
+    "text": 344,
+    "aria": 49,
+    "alt": 3,
+    "ueberschrift": 4
+   },
+   "h1": [
+    "FAQ: Häufige Fragen zu Fliesen & Bad bei Tezgel"
+   ],
+   "hash": "ffc77220cd475ab5"
+  },
+  "/karriere": {
+   "datei": "karriere.json",
+   "quelle": "karriere.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 394,
+   "arten": {
+    "meta": 33,
+    "text": 308,
+    "aria": 35,
+    "alt": 3,
+    "ueberschrift": 15
+   },
+   "h1": [
+    "Fliesenleger Jobs & Karriere bei Tezgel in Wetzlar & Aßlar"
+   ],
+   "hash": "92456254d40047e1"
+  },
+  "/kontakt": {
+   "datei": "kontakt.json",
+   "quelle": "kontakt.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 437,
+   "arten": {
+    "meta": 33,
+    "text": 348,
+    "aria": 43,
+    "alt": 3,
+    "ueberschrift": 10
+   },
+   "h1": [
+    "Kontakt & Aufmaß Fliesenleger Tezgel"
+   ],
+   "hash": "4394c3fc37dce5c9"
+  },
+  "/leistungen": {
+   "datei": "leistungen.json",
+   "quelle": "leistungen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 508,
+   "arten": {
+    "meta": 33,
+    "text": 410,
+    "aria": 50,
+    "alt": 3,
+    "ueberschrift": 12
+   },
+   "h1": [
+    "Fliesenleger Leistungen & Fachgewerke Wetzlar"
+   ],
+   "hash": "18062a7a5675772e"
+  },
+  "/preise": {
+   "datei": "preise.json",
+   "quelle": "preise.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 455,
+   "arten": {
+    "meta": 32,
+    "text": 362,
+    "aria": 51,
+    "alt": 3,
+    "ueberschrift": 7
+   },
+   "h1": [
+    "Kosten & Preise auf Anfrage – Verbindliche Festpreise"
+   ],
+   "hash": "9ce5bf9c59b0abdd"
+  },
+  "/standorte/giessen": {
+   "datei": "standorte__giessen.json",
+   "quelle": "standorte/giessen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 503,
+   "arten": {
+    "meta": 33,
+    "text": 411,
+    "aria": 47,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Gießen"
+   ],
+   "hash": "935bfc40e79287b7"
+  },
+  "/standorte/wetzlar": {
+   "datei": "standorte__wetzlar.json",
+   "quelle": "standorte/wetzlar.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 504,
+   "arten": {
+    "meta": 33,
+    "text": 412,
+    "aria": 47,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung & Badsanierung in Wetzlar"
+   ],
+   "hash": "83f545bb9191868c"
+  },
+  "/treppen": {
+   "datei": "treppen.json",
+   "quelle": "treppen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 441,
+   "arten": {
+    "meta": 33,
+    "text": 344,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 24
+   },
+   "h1": [
+    "Treppen neu belegen: Welche Lösung passt zu Ihrer Treppe?"
+   ],
+   "hash": "c6d12dea9f383434"
+  },
+  "/untergrund-abdichtung": {
+   "datei": "untergrund-abdichtung.json",
+   "quelle": "untergrund-abdichtung.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 438,
+   "arten": {
+    "meta": 33,
+    "text": 343,
+    "aria": 38,
+    "alt": 3,
+    "ueberschrift": 21
+   },
+   "h1": [
+    "Untergrund und Abdichtung: das Fundament jedes Fliesenbelags"
+   ],
+   "hash": "88570909bcb8bd6c"
+  },
+  "/unternehmen": {
+   "datei": "unternehmen.json",
+   "quelle": "unternehmen.html",
+   "status": 200,
+   "im_manifest": true,
+   "eintraege": 391,
+   "arten": {
+    "meta": 32,
+    "text": 310,
+    "aria": 37,
+    "alt": 3,
+    "ueberschrift": 9
+   },
+   "h1": [
+    "Fliesenverlegung Tezgel: Unternehmen & Qualität"
+   ],
+   "hash": "cf966da16c2990de"
+  }
+ }
+}

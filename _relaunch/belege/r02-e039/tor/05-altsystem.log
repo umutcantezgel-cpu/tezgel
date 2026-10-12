@@ -1,0 +1,3 @@
+src/components/common/Header.jsx:202:                                                        <span className="inline-flex items-center gap-2 font-mono text-fs-1 text-nacht-2">{link.featured.eyebrow}</span>
+src/components/start/Fachbereiche.tsx:90:              key={hub.eyebrow}
+src/components/start/Fachbereiche.tsx:95:                <span className={clsx(etikettForm, 'text-tinte')}>{hub.eyebrow}</span>
