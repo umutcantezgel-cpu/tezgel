@@ -3,10 +3,31 @@ import Link from 'next/link';
 import Icon from '@/components/icons/Icon';
 import Verlegeplan from '@/components/kern/Verlegeplan';
 
-// Themenmotiv je Kategorie (IDs aus src/config/blog.js): Bad → bad, Pflege → fugen, Abdichtung → abdichtung,
-// Balkon → balkon, Naturstein → naturstein, sonst grossformat (wie in der Liste)
-const MOTIV_JE_KATEGORIE = { bad: 'bad', pflege: 'fugen', untergrund: 'abdichtung', aussen: 'balkon', naturstein: 'naturstein' };
-const motivFuer = (kategorie) => MOTIV_JE_KATEGORIE[kategorie] ?? 'grossformat';
+// Plan je Beitrag wie in der Liste (BlogCard, E4-N2-12): zuerst der Eintrag je Slug, sonst das Kategorie-Motiv, sonst das
+// Fugenbild. Doppelt gehalten, weil BlogCard „use client“ ist und Werte nicht an Serverseiten gibt; gehört in eine
+// gemeinsame Datei. Exportiert, damit der Einstieg des Artikels dasselbe Motiv zeigt (ARB 28).
+const BEITRAG_MOTIV = {
+    'handwerkerbonus-fliesenarbeiten': 'wohnen',
+    'undichte-dusche-warnzeichen': 'reparatur',
+    'feinsteinzeug-oder-naturstein-vergleich': 'naturstein',
+    'fliesen-fuer-allergiker': 'grossformat',
+    'fliesen-mythen-faktencheck': 'fussbodenheizung',
+    'fliesen-reinigen-pflegen': 'fugen',
+    'fliesenleger-gesucht-geselle-meister': 'untergrund',
+    'gaeste-wc-fliesen': 'bad',
+    'rutschfeste-fliesen-r-klassen': 'treppe',
+    'schimmel-fliesenfugen-vermeiden': 'fugen',
+    'duschrinne-oder-punktablauf': 'abdichtung',
+    'wandnischen-dusche-planen': 'badsanierung',
+    'barrierefreier-balkonaustritt': 'balkon',
+};
+const KATEGORIE_PLAN = { bad: 'bad', fliesen: 'naturstein', untergrund: 'abdichtung', aussen: 'balkon', pflege: 'fugen', ratgeber: 'wohnen', news: 'grossformat' };
+const hat = (objekt, schluessel) => Object.prototype.hasOwnProperty.call(objekt, schluessel);
+export const motivFuer = (post) => {
+    if (post && hat(BEITRAG_MOTIV, post.slug)) return BEITRAG_MOTIV[post.slug];
+    if (post && hat(KATEGORIE_PLAN, post.category)) return KATEGORIE_PLAN[post.category];
+    return 'fugen';
+};
 
 /**
  * Related Posts Component
@@ -68,7 +89,7 @@ const RelatedPosts = ({ currentPost, allPosts = [], categories = [], limit = 3 }
                                 className="flex size-24 shrink-0 items-center justify-center border border-fuge bg-kalk p-2"
                                 aria-hidden="true"
                             >
-                                <Verlegeplan plan={motivFuer(post.category)} ohneAchse bemassung={false} />
+                                <Verlegeplan plan={motivFuer(post)} ohneAchse bemassung={false} />
                             </div>
 
                             <div className="min-w-0 flex-1">

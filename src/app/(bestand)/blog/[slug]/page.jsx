@@ -4,13 +4,14 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import ReadingProgress from '@/components/blog/ReadingProgress';
 import BlogAuthorCard from '@/components/blog/BlogAuthorCard';
-import RelatedPosts from '@/components/blog/RelatedPosts';
+import RelatedPosts, { motivFuer } from '@/components/blog/RelatedPosts';
 import ShareButtons from '@/components/blog/ShareButtons';
 import TableOfContents from '@/components/blog/TableOfContents';
 import BlogVoteButton from '@/components/blog/BlogVoteButton';
 import QualityPromise from '@/components/sections/QualityPromise';
 import Icon from '@/components/icons/Icon';
 import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Verlegeplan from '@/components/kern/Verlegeplan';
 import Knopf from '@/components/kern/Knopf';
 import { etikettKlassen, knopfKlassen, linkKlassen, seitenKlassen } from '@/components/kern/stile';
 import { posts } from '@/config/posts';
@@ -67,10 +68,29 @@ const ueberschriften = (markdown) => {
   return liste;
 };
 
-// Messwert in einer Tabellenzelle: kurz und mit Ziffer (R9, 12°, ca. 15 cm) oder eine Gruppe A, B, C
-const istMesswert = (text) => {
-  const t = text.trim();
-  return t.length > 0 && t.length <= 16 && (/\d/.test(t) || /^[ABC]$/.test(t));
+// Klassen, Gruppen und Messwerte in Tabellen (R9, B, 12°, 2 mm) in Mono; die Wörter drum herum bleiben in Grotesk
+const MESSWERT = /R\d{1,2}|\b[ABC]\b|\d+(?:[.,]\d+)?(?:\s?(?:°|%|mm|cm|m)(?!\p{L}))?/gu;
+const messwerte = (kinder) =>
+  React.Children.toArray(kinder).flatMap((kind, i) => {
+    if (typeof kind !== 'string') return [kind];
+    const teile = [];
+    let rest = 0;
+    let n = 0;
+    for (const treffer of kind.matchAll(MESSWERT)) {
+      if (treffer.index > rest) teile.push(kind.slice(rest, treffer.index));
+      teile.push(<span key={`m${i}-${n++}`} className="font-mono">{treffer[0]}</span>);
+      rest = treffer.index + treffer[0].length;
+    }
+    if (rest < kind.length) teile.push(kind.slice(rest));
+    return teile;
+  });
+
+// Spaltenköpfe einer Tabelle als Klartext, je Spalte: Etiketten im Stapel-Layout unter sm
+const kopfTexte = (thead) => {
+  const zeile = React.Children.toArray(thead?.props?.children).find((k) => React.isValidElement(k));
+  return React.Children.toArray(zeile?.props?.children)
+    .filter((k) => React.isValidElement(k))
+    .map((k) => extractText(k.props.children).trim());
 };
 
 export default async function BlogPostPage({ params }) {
@@ -105,7 +125,7 @@ export default async function BlogPostPage({ params }) {
               {(categoryData || post.featured) && (
                 <p className={`${etikettKlassen} mb-6 flex-wrap`}>
                   {categoryData && <span>{categoryData.name}</span>}
-                  {categoryData && post.featured && <Fugenkreuz className="size-3 shrink-0 text-strich" />}
+                  {categoryData && post.featured && <span aria-hidden="true">·</span>}
                   {post.featured && <span>Empfehlung</span>}
                 </p>
               )}
@@ -123,7 +143,7 @@ export default async function BlogPostPage({ params }) {
                       <Icon name="kalender" groesse={4} />
                       {displayDate}
                     </span>
-                    <Fugenkreuz className="size-3 shrink-0 text-strich" />
+                    <span aria-hidden="true" className="shrink-0">·</span>
                   </>
                 )}
                 <span className="inline-flex items-center gap-2">
@@ -131,6 +151,13 @@ export default async function BlogPostPage({ params }) {
                   {readingTime} Lesezeit
                 </span>
               </p>
+            </div>
+
+            {/* Motiv im Einstieg: dasselbe Themenmotiv wie in der Liste, dekorativ und ohne Laserachse (ARB 28) */}
+            <div aria-hidden="true" className="col-span-4 flex justify-start md:col-span-8 lg:col-span-3 lg:col-start-10 lg:row-start-1 lg:self-start">
+              <div className="flex size-24 items-center justify-center overflow-hidden border border-fuge bg-fliese p-3 md:size-32">
+                <Verlegeplan plan={motivFuer(post)} ohneAchse bemassung={false} className="h-full w-full" />
+              </div>
             </div>
           </div>
         </div>
@@ -196,22 +223,42 @@ export default async function BlogPostPage({ params }) {
                     // Name der Tabelle: die Überschrift davor, sonst der Artikeltitel
                     const stelle = node?.position?.start?.offset;
                     const ueber = stelle === undefined ? undefined : kapitel.filter((k) => k.stelle < stelle).pop();
+                    // Unter sm stapeln sich die Zeilen als Blöcke: jede Zelle trägt ihren Spaltenkopf als Etikett (data-label);
+                    // die Kopfzeile bleibt für Screenreader im Baum, ab sm sichtbar
+                    const teile = React.Children.toArray(children).filter((t) => React.isValidElement(t));
+                    const kopf = teile.find((t) => t.type === 'thead');
+                    const koerper = teile.find((t) => t.type === 'tbody');
+                    const etiketten = kopfTexte(kopf);
                     return (
                       <div role="region" aria-label={`Tabelle: ${ueber ? ueber.text : post.title}`} tabIndex={0} className="mt-8 overflow-x-auto border border-fuge bg-fliese">
-                        <table className="w-full border-collapse text-left">{children}</table>
+                        {/* Rollen ausdrücklich: unter sm stehen Zeilen und Zellen als Blöcke (display: block), Safari verliert sonst die Tabellenrolle */}
+                        <table role="table" className="block w-full border-collapse text-left sm:table">
+                          {kopf && <thead role="rowgroup" className="sr-only sm:not-sr-only sm:table-header-group">{kopf.props.children}</thead>}
+                          {koerper && (
+                            <tbody role="rowgroup" className="block sm:table-row-group">
+                              {React.Children.map(koerper.props.children, (zeile) => {
+                                if (!React.isValidElement(zeile)) return zeile;
+                                let n = 0;
+                                const zellen = React.Children.map(zeile.props.children, (zelle) =>
+                                  React.isValidElement(zelle) ? React.cloneElement(zelle, { etikett: etiketten[n++] }) : zelle
+                                );
+                                return <tr role="row" className="block border-b border-fuge px-3 py-3 last:border-b-0 sm:table-row sm:border-b-0 sm:p-0">{zellen}</tr>;
+                              })}
+                            </tbody>
+                          )}
+                        </table>
                       </div>
                     );
                   },
                   th: ({ node: _node, children }) => (
-                    <th scope="col" className="min-w-0 break-words hyphens-auto border-b-2 border-tinte px-3 py-3 text-left align-bottom font-mono text-fs-1 font-normal text-tinte-2 sm:px-4">{children}</th>
+                    <th scope="col" role="columnheader" className="min-w-0 break-words hyphens-auto border-b-2 border-tinte px-3 py-3 text-left align-bottom font-mono text-fs-1 font-normal text-tinte-2 sm:px-4">{children}</th>
                   ),
-                  td: ({ node: _node, children }) => {
-                    // Messwerte (R-Klassen, Winkel, Gruppen, Maße) in Mono; der Text bleibt unverändert
-                    const messwert = istMesswert(extractText(children));
-                    return (
-                      <td className={`min-w-0 break-words hyphens-auto border-b border-fuge px-3 py-3 align-top text-fs-2 text-tinte sm:px-4${messwert ? ' font-mono' : ''}`}>{children}</td>
-                    );
-                  },
+                  td: ({ node: _node, children, etikett }) => (
+                    <td role="cell" className="block min-w-0 break-words hyphens-auto py-1 align-top text-fs-2 text-tinte sm:table-cell sm:border-b sm:border-fuge sm:px-4 sm:py-3">
+                      {etikett && <span className="mb-1 block font-mono text-fs-1 text-tinte-2 sm:hidden">{etikett}</span>}
+                      {messwerte(children)}
+                    </td>
+                  ),
                 }}
                 /* eslint-enable @typescript-eslint/no-unused-vars */
               >
@@ -265,7 +312,7 @@ export default async function BlogPostPage({ params }) {
             </div>
 
             {/* Weitere Artikel */}
-            <div className="mt-16">
+            <div className="mt-16 max-w-mass text-fs-3">
               <RelatedPosts
                 currentPost={post}
                 allPosts={posts}
@@ -277,7 +324,7 @@ export default async function BlogPostPage({ params }) {
         </div>
       </div>
 
-      <QualityPromise />
+      <QualityPromise art="arbeit" />
     </>
   );
 }
