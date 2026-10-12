@@ -1,0 +1,20 @@
+S-17 · Prüfungen 1–9 (12.10.2026, Arbeitsbaum main, Dev 4350, Live 4362)
+1 tsc --noEmit -p . (flock)          Exit 0, 0 Fehler (gesamt)
+2 eslint (2 Dateien)                 Exit 0, 0 Fehler, 0 Warnungen
+3 werte.mjs --dateien (2 Dateien)    Exit 0, befunde gesamt 0 (196 Klassenvorkommen, 68 eindeutig)
+4 Altsystem-grep                     keine Treffer (vorher /treppen 99 Treffer in 68 Zeilen, /treppen/innentreppe 76 in 55)
+5 Texte 4362 -> 4350
+  Standard (s-17-vorher -> s-17-nachher): entfernt 74, hinzu 28, meta 0, seo 0, kaputte_links 0, ROT
+    -> alle 71 übrigen Zeilen liegen in Abschnitten mit spaet (content-visibility: auto, innerText leer) + 3 Versalzeilen
+  Gegenprobe sichtbar (.spaet-zeichnen{content-visibility:visible}, Skript scratchpad/s-17/werkzeug/texte-sichtbar.mjs):
+    s-17-vorher-sichtbar -> s-17-nachher-sichtbar --erlaubt s-17-erlaubt.json: entfernt 0, hinzu 28, meta 0, seo 0, GRÜN
+    s-17-vorher -> s-17-nachher-sichtbar --erlaubt s-17-erlaubt.json:          entfernt 0, hinzu 28, meta 0, seo 0, GRÜN
+  Überschriften (Folge), Links, JSON-LD-Hash: identisch (beide Seiten)
+  Lesefolge main_zeilen ohne neue Zeilen: 0 Abweichungen (/treppen 120/120, /treppen/innentreppe 79/79)
+  hinzu: Schriftfeld des Planblatts (je 12), 3 Kennzeilen in Normalschreibung, sr-only-Beschriftung der Tabelle
+6 einzelbild m390,t768,d1440 --voll  je Seite 3× HTTP 200, Konsole 0, Überlauf 0, Überlappung 0
+7 wortbruch                          Wortbrüche: 0
+8 Playwright funktion-navigation + funktion-kontaktwege (mobil, desktop): 85 passed, 13 skipped, 2 failed
+  (404 „Zur Startseite“ führt zurück zur Startseite, beide Projekte: Dev-Zeitüberschreitung) -> Wiederholung: 2 passed
+  Kein Formular eingebunden (FinalCTA ohne Schnellformular)
+9 git status                         eigene Änderungen nur in den 2 Seiten und _relaunch/belege/s-17*

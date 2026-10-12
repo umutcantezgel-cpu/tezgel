@@ -1,0 +1,60 @@
+{
+ "vorher": "s-17-vorher-sichtbar",
+ "nachher": "s-17-nachher-sichtbar",
+ "seiten": {
+  "/treppen": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Treppe fliesen & sanieren",
+     "Verband",
+     "Halbverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Stufen, Setzstufen und Sockel",
+     "Neue Beläge im Mehrfamilienhaus",
+     "Frost- und trittsicher belegt"
+    ]
+   }
+  },
+  "/treppen/innentreppe": {
+   "main_zeilen": {
+    "entfernt": [],
+    "hinzu": [
+     "Blatt",
+     "Innentreppe fliesen lassen",
+     "Verband",
+     "Halbverband",
+     "Betrieb",
+     "Fliesenverlegung Tezgel",
+     "Inhaber",
+     "Deniz Tezgel",
+     "Kammer",
+     "HWK Wiesbaden",
+     "Betrieb seit",
+     "2008",
+     "Gehrung, Profil oder Stufenplatte?"
+    ]
+   }
+  }
+ },
+ "summe": {
+  "entfernt": 0,
+  "hinzu": 28,
+  "meta": 0,
+  "seo": 0
+ },
+ "sitemap": {
+  "entfernt": [],
+  "hinzu": []
+ },
+ "robots_geaendert": false,
+ "kaputte_links": []
+}

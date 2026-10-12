@@ -1,24 +1,30 @@
-import React from 'react';
+// Treppen (S-17 nach E5-BAU-08, KERN v2): Seitenkörper der Themenseite als Erzählansicht nach dem Muster der Familienreferenz
+// (leistungen/[id], fliesen) und der Schwesterseite /untergrund-abdichtung. Einstieg mit Laserachse, H1 links, Vorspann und
+// zwei Knöpfe; rechts das Planblatt „Treppe fliesen & sanieren“ mit dem Plan „treppe“ (interaktiv, die rote Achse trägt das
+// Blatt). Danach die Leitachse über die Abschnitte, Flächen im Wechsel Kalk/Fliese:
+// 2. Treppentypen als Feldraster (je Feld ein Link, Kalk) · 3. Voraussetzung: zwei Listen an der Fuge nebeneinander
+// (Fliese) · 4. Belagsarten als Feldraster mit zwei Spalten (Kalk) · 5. Steigungen: Text an der Fuge neben einem
+// Prüffeld (Fliese) · 6. Renovierung als Schrittfolge mit zwei Wegen (Kalk) · 7. Ratgeber als Register, Kopf seitlich (Fliese) ·
+// Qualitätsversprechen und Abschluss (geteilte Bausteine). Kein Auftritt, kein großer Moment.
+// Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand; Metadaten und Daten unverändert. Serverkomponente.
 import Link from 'next/link';
-import {
-    Home,
-    Building2,
-    Trees,
-    ArrowRight,
-    Phone,
-    Layers,
-    Ruler,
-    CheckCircle2,
-    AlertTriangle,
-    Hammer,
-    Mountain,
-    Square
-} from 'lucide-react';
+import clsx from 'clsx';
 import { COMPANY_DATA } from '@/config/company';
 import { TOPIC_HUBS } from '@/config/topics';
 import { createMetadata } from '@/lib/metadata';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { FinalCTA } from '@/components/ui/FinalCTA';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Einstieg from '@/components/kern/Einstieg';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import Knopf from '@/components/kern/Knopf';
+import Leitachse from '@/components/kern/Leitachse';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+import Schrittfolge from '@/components/kern/Schrittfolge';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import { etikettKlassen, linkKlassen } from '@/components/kern/stile';
 
 export const metadata = createMetadata({
     title: 'Treppe fliesen & sanieren Wetzlar | Fachbetrieb Tezgel',
@@ -29,12 +35,6 @@ export const metadata = createMetadata({
 
 const TREPPEN_HUB = TOPIC_HUBS.find((hub) => hub.id === 'treppen');
 const SUBPAGES = (TREPPEN_HUB?.pages ?? []).filter((page) => page.path !== '/treppen');
-
-const SUBPAGE_ICONS = {
-    '/treppen/innentreppe': Home,
-    '/treppen/treppenhaus': Building2,
-    '/treppen/aussentreppe': Trees
-};
 
 const SUBPAGE_TEXT = {
     '/treppen/innentreppe':
@@ -61,25 +61,35 @@ const NOT_SUITABLE = [
 
 const COVERINGS = [
     {
-        icon: Square,
         title: 'Fliesen auf Tritt- und Setzstufen',
         desc: 'Bodenfliesen werden für jede Stufe zugeschnitten; die Kante entsteht per Gehrung oder mit einem Stufenprofil. Das Format kann zum angrenzenden Boden passen, damit Flur und Treppe wie aus einem Guss wirken.'
     },
     {
-        icon: Layers,
         title: 'Feinsteinzeug-Stufenplatten',
         desc: 'Stufenplatten mit werkseitig ausgebildeter Kante („Stufenfliese“) bringen eine fertige, abgerundete oder gefaste Vorderkante mit. Sie sind robust, aber an Laufbreite und Stufentiefe gebunden, die das Sortiment vorgibt.'
     },
     {
-        icon: Mountain,
         title: 'Naturstein-Stufenbeläge',
         desc: 'Tritt- und Setzstufen aus Granit, Schiefer, Quarzit oder Kalkstein – meist vom Steinlieferanten nach Aufmaß zugeschnitten und an der Vorderkante bearbeitet. Welche Sorte sich für Ihre Treppe eignet, hängt von Nutzung und Standort ab.'
     },
     {
-        icon: Hammer,
         title: 'Blockstufen (Außenbereich)',
         desc: 'Blockstufen sind keine Belagsart, sondern eine eigene massive Stufenkonstruktion aus Naturstein oder Beton, die auf Fundament bzw. Mörtelbett gesetzt wird – typisch für Hauseingang und Garten. Mehr dazu auf der Seite zur Außentreppe.'
     }
+];
+
+const AUFMASS_PUNKTE = [
+    'Höhe jeder einzelnen Steigung und Tiefe jedes Auftritts',
+    'Aufbauhöhe des neuen Belags unten und oben: Bekommen Flur und Obergeschoss denselben Aufbau, verschieben sich alle Stufen gleichmäßig',
+    'Wird nur die Treppe belegt, wird die unterste Steigung höher und die oberste niedriger – das gleichen wir über das Kleber- bzw. Mörtelbett und passende Belagdicken aus',
+    'Ungleichmäßige Rohbaustufen lassen sich nur begrenzt korrigieren; die Maße des Rohbaus bleiben maßgebend'
+];
+
+const RENOVIERUNG = [
+    { t: 'Altbelag prüfen', d: 'Fest haftende Fliesen können unter Umständen bleiben; Teppich, PVC und Kleberreste werden entfernt.' },
+    { t: 'Untergrund vorbereiten', d: 'Stufen reinigen, grundieren, Ausbrüche und Unebenheiten mit geeignetem Mörtel ausgleichen.' },
+    { t: 'Stufen einzeln aufmessen', d: 'Keine Stufe ist exakt gleich – jede Tritt- und Setzstufe wird individuell zugeschnitten.' },
+    { t: 'Vollflächig verlegen', d: 'Hohlraumarm verlegt mit flexiblem Fliesenkleber, damit Kanten unter Last nicht abbrechen.' }
 ];
 
 const WEITERLESEN = [
@@ -89,281 +99,272 @@ const WEITERLESEN = [
     { title: 'Referenzen', path: '/referenzen', desc: 'Ausgeführte Projekte und Kundenstimmen' }
 ];
 
+// Zeile des Registers (Ratgeber auf Fliese): die ganze Zeile ist der Link; Hover färbt die Fläche auf Kalk
+const ZEILE = 'group flex min-h-12 items-center gap-4 px-3 py-4 pointer-fine:hover:bg-kalk active:bg-kalk';
+// Name in der Zeile: Unterstrich beim Überfahren
+const NAME =
+    'font-text text-fs-3 font-semibold text-tinte md:w-1/3 md:shrink-0 decoration-1 underline-offset-4 decoration-tinte pointer-fine:group-hover:underline group-active:underline';
+
+// Hochkant-Plan im Planblatt: mittig, schmaler als das Blatt
+const PLAN_HOCHKANT = 'mx-auto max-w-1/2 md:max-w-1/3 lg:max-w-1/2';
+
+// Eintrag einer Liste an der Fuge: Fugenkreuz als Marke, Text in Textschrift
+function FugenListe({ eintraege, className }) {
+    return (
+        <ul className={clsx('border-t border-fuge', className)}>
+            {eintraege.map((item) => (
+                <li key={item} className="flex gap-3 border-b border-fuge py-4 font-text text-fs-2 text-tinte">
+                    <span aria-hidden="true" className="flex h-6 shrink-0 items-center text-strich">
+                        <Fugenkreuz className="size-3" />
+                    </span>
+                    <span className="min-w-0">{item}</span>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
 export default function TreppenPage() {
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-warm top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="treppen-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow eyebrow-orange">
-                        <Layers className="w-3.5 h-3.5 text-orange-600" />
-                        Treppenanlagen &middot; Fachbetrieb aus {COMPANY_DATA.headquarters.city}
-                    </span>
-                    <h1 id="treppen-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Treppen neu belegen:{' '}
-                        <span className="text-ceramic-gradient">Welche Lösung passt zu Ihrer Treppe?</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen &amp; Treppenhaus vom Fachbetrieb Tezgel. Eine abgenutzte Massivtreppe muss nicht abgerissen werden: Solange der Rohbau trägt, bekommt sie mit Fliesen, Feinsteinzeug oder Naturstein einen neuen, rutschfesten Belag – innen, im Treppenhaus und am Hauseingang. Hier finden Sie alle Grundlagen und die passende Lösung für Ihre Treppe.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs group">
-                            Aufmaß vor Ort anfragen
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/treppen/innentreppe" className="btn-ghost px-7 py-3.5 text-xs">
-                            Innentreppe fliesen
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 an der Laserachse, Vorspann, zwei Knöpfe; rechts das Planblatt „treppe“ */}
+            <section aria-labelledby="treppen-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Treppenanlagen &middot; Fachbetrieb aus {COMPANY_DATA.headquarters.city}</>}
+                    titel={
+                        <span id="treppen-heading">
+                            Treppen neu belegen:{' '}
+                            <span>Welche Lösung passt zu Ihrer Treppe?</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Treppe sanieren und Treppen neu belegen: Robuste Beläge für innen, außen &amp; Treppenhaus vom Fachbetrieb Tezgel. Eine
+                            abgenutzte Massivtreppe muss nicht abgerissen werden: Solange der Rohbau trägt, bekommt sie mit Fliesen, Feinsteinzeug
+                            oder Naturstein einen neuen, rutschfesten Belag – innen, im Treppenhaus und am Hauseingang. Hier finden Sie alle
+                            Grundlagen und die passende Lösung für Ihre Treppe.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/kontakt" icon="pfeil-rechts">
+                                Aufmaß vor Ort anfragen
+                            </Knopf>
+                            <Knopf href="/treppen/innentreppe" variante="neben">
+                                Innentreppe fliesen
+                            </Knopf>
+                        </>
+                    }
+                    rand={
+                        // Der Plan „treppe“ steht hochkant (16 × 24): mittig auf halber bzw. (md, Blatt über die volle Breite) einem
+                        // Drittel der Blattbreite, damit das Blatt nicht weit über die Textspalte hinausragt
+                        <Planblatt felder={planfelder('Treppe fliesen & sanieren', 'treppe')}>
+                            <Verlegeplan plan="treppe" ohneAchse bemassung={false} interaktiv className={PLAN_HOCHKANT} />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Treppentypen – Subpages */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10" aria-labelledby="treppentypen-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Welche Treppe haben Sie?</span>
-                    <h2 id="treppentypen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Innentreppe, Treppenhaus oder Außentreppe
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Jeder Treppentyp stellt eigene Anforderungen – an Optik, Belastbarkeit, Trittsicherheit und
-                        Witterungsbeständigkeit. Wählen Sie Ihre Situation:
-                    </p>
-                </div>
-
-                <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {SUBPAGES.map((page) => {
-                        const Icon = SUBPAGE_ICONS[page.path] ?? Layers;
-                        return (
-                            <li key={page.path}>
-                                <Link
-                                    href={page.path}
-                                    className="group glass-surface p-8 rounded-tile-2xl h-full flex flex-col hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. TREPPENTYPEN als Feldraster: je Unterseite ein Feld, das ganz als Link dient; das dritte Feld überspannt
+                    in md die freie Breite (keine Restzelle) */}
+                <Abschnitt
+                    titelId="treppentypen-heading"
+                    leitachse
+                    spaet
+                    etikett="Welche Treppe haben Sie?"
+                    titel="Innentreppe, Treppenhaus oder Außentreppe"
+                    einleitung={
+                        <p>
+                            Jeder Treppentyp stellt eigene Anforderungen – an Optik, Belastbarkeit, Trittsicherheit und Witterungsbeständigkeit.
+                            Wählen Sie Ihre Situation:
+                        </p>
+                    }
+                >
+                    <Feldraster spalten={3}>
+                        {SUBPAGES.map((page, i) => {
+                            const letzter = i === SUBPAGES.length - 1;
+                            return (
+                                <Feld
+                                    key={page.path}
+                                    spanne={letzter ? 2 : undefined}
+                                    className={clsx('relative', letzter && 'lg:col-span-1')}
                                 >
-                                    <span className="icon-chip w-12 h-12 mb-5 text-orange-600">
-                                        <Icon className="w-6 h-6" />
+                                    <Link href={page.path} className="group flex flex-1 flex-col after:absolute after:inset-0">
+                                        <h3 className="font-anzeige text-fs-4 text-tinte underline decoration-strich underline-offset-4 group-hover:decoration-tinte">
+                                            {page.name}
+                                        </h3>
+                                        <p className={clsx(etikettKlassen, 'mt-3')}>{page.desc}</p>
+                                        <p className="mt-4 max-w-mass font-text text-fs-2 text-tinte-2">{SUBPAGE_TEXT[page.path]}</p>
+                                        <span className="mt-auto inline-flex items-center gap-2 pt-6 font-text text-fs-2 font-semibold text-tinte">
+                                            Zur Detailseite
+                                            <Icon name="pfeil-rechts" groesse={5} />
+                                        </span>
+                                    </Link>
+                                </Feld>
+                            );
+                        })}
+                    </Feldraster>
+                </Abschnitt>
+
+                {/* 3. VORAUSSETZUNG auf Fliese: Kopf gestapelt, darunter die beiden Listen an der Fuge nebeneinander (Haken bzw.
+                    Hinweis im Titel) */}
+                <Abschnitt
+                    titelId="voraussetzung-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    etikett="Voraussetzung"
+                    titel="Tragfähige Massivtreppe: was sich belegen lässt – und was nicht"
+                    einleitung={
+                        <p>
+                            Fliesen und Naturstein sind starre Beläge. Sie halten dauerhaft nur auf einem Untergrund, der sich nicht bewegt. Rohbau,
+                            Geländer und Statik der Treppe sind nicht Teil unserer Leistung – wir prüfen beim Vor-Ort-Termin aber, ob Ihre Treppe
+                            als Untergrund geeignet ist.
+                        </p>
+                    }
+                >
+                    <div className="grid gap-12 md:grid-cols-2 md:gap-8 lg:gap-12">
+                        <div>
+                            <h3 className="flex items-center gap-3 font-anzeige text-fs-4 text-tinte">
+                                <Icon name="haken" groesse={5} />
+                                In der Regel gut belegbar
+                            </h3>
+                            <FugenListe eintraege={SUITABLE} className="mt-6" />
+                        </div>
+                        <div>
+                            <h3 className="flex items-center gap-3 font-anzeige text-fs-4 text-tinte">
+                                <Icon name="hinweis" groesse={5} />
+                                Nicht oder nur nach Klärung
+                            </h3>
+                            <FugenListe eintraege={NOT_SUITABLE} className="mt-6" />
+                        </div>
+                    </div>
+                </Abschnitt>
+
+                {/* 4. BELAGSARTEN als Feldraster mit zwei Spalten, darunter der Verweis auf Kanten und Rutschhemmung */}
+                <Abschnitt
+                    titelId="belagsarten-heading"
+                    leitachse
+                    spaet
+                    etikett="Belagsarten im Überblick"
+                    titel="Fliese, Stufenplatte, Naturstein – oder Blockstufe"
+                >
+                    <Feldraster spalten={2}>
+                        {COVERINGS.map((item) => (
+                            <Feld key={item.title}>
+                                <h3 className="font-anzeige text-fs-4 text-tinte">{item.title}</h3>
+                                <p className="mt-3 max-w-mass font-text text-fs-2 text-tinte-2">{item.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
+                    <p className="mt-8 max-w-mass font-text text-fs-2 text-tinte-2">
+                        Wie die Stufenkante ausgebildet wird – Gehrung, Profil oder Stufenplatte – vergleichen wir ausführlich auf der Seite{' '}
+                        <Link href="/treppen/innentreppe" className={linkKlassen}>
+                            Innentreppe fliesen
+                        </Link>
+                        . Welche Rutschhemmung auf Stufen sinnvoll ist, erklärt unser Beitrag zu den{' '}
+                        <Link href="/blog/rutschfeste-fliesen-r-klassen" className={linkKlassen}>
+                            R-Klassen nach DIN EN 16165
+                        </Link>
+                        .
+                    </p>
+                </Abschnitt>
+
+                {/* 5. STEIGUNGEN auf Fliese: links der Text an der Fuge, rechts die Punkte des Aufmaßes als Prüffeld auf Kalk */}
+                <Abschnitt
+                    titelId="steigungen-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    etikett="Gleichmäßige Steigungen"
+                    titel="Belagdicken und Ausgleich vorher planen"
+                >
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="border-t border-tinte pt-6 lg:col-span-7">
+                            <h3 className="font-anzeige text-fs-4 text-tinte">Warum es auf Millimeter ankommt</h3>
+                            <div className="mt-4 grid max-w-mass gap-4 font-text text-fs-3 text-tinte-2">
+                                <p>
+                                    Beim Gehen stellt sich der Körper auf eine gleichbleibende Stufenhöhe ein. Weicht eine einzelne Steigung spürbar ab –
+                                    häufig die erste oder die letzte –, wird die Treppe zur Stolperfalle. Die DIN 18065 dient als Orientierung: Sie lässt
+                                    innerhalb eines Treppenlaufs nur geringe Abweichungen zwischen den Steigungen zu.
+                                </p>
+                                <p>
+                                    Eine Treppe mit n Steigungen hat n Setzstufen, aber in der Regel nur n−1 Trittstufen – die oberste „Stufe“ ist der
+                                    Boden des Obergeschosses bzw. das Podest. Die Belagsfläche einer Trittstufe ist der Auftritt einschließlich Überstand
+                                    an der Vorderkante.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="border border-fuge bg-kalk p-6 lg:col-span-5 lg:p-8">
+                            <h3 className="font-anzeige text-fs-4 text-tinte">Was wir beim Aufmaß klären</h3>
+                            <FugenListe eintraege={AUFMASS_PUNKTE} className="mt-6" />
+                        </div>
+                    </div>
+                </Abschnitt>
+
+                {/* 6. RENOVIERUNG: vier Schritte als Schrittfolge (ab lg waagrecht), darunter die zwei Wege */}
+                <Abschnitt
+                    titelId="renovieren-heading"
+                    leitachse
+                    spaet
+                    etikett="Alte Treppe renovieren"
+                    titel="Neuer Belag statt Abriss"
+                    einleitung={
+                        <p>
+                            Viele ältere Treppen tragen Teppich, PVC oder abgenutzte Fliesen, während der Rohbau darunter noch tragfähig ist. Die
+                            Renovierung läuft deshalb in klaren Schritten:
+                        </p>
+                    }
+                >
+                    <Schrittfolge
+                        ausrichtung="waagrecht"
+                        nummerStumm
+                        schritte={RENOVIERUNG.map((step) => ({ titel: step.t, text: step.d }))}
+                    />
+                    <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                        <Knopf href="/kontakt" icon="pfeil-rechts">
+                            Treppe begutachten lassen
+                        </Knopf>
+                        <Knopf href={`tel:${COMPANY_DATA.contact.phoneLink}`} variante="neben" iconLinks="telefon">
+                            <span className="font-mono font-normal">{COMPANY_DATA.contact.phone}</span>
+                        </Knopf>
+                    </div>
+                </Abschnitt>
+
+                {/* 7. RATGEBER auf Fliese: Kopf seitlich, rechts das Register, je Zeile Titel, Beschreibung und Pfeil; die ganze
+                    Zeile ist der Link */}
+                <Abschnitt
+                    titelId="treppen-ratgeber-heading"
+                    leitachse
+                    spaet
+                    flaeche="fliese"
+                    kopf="seitlich"
+                    titel="Weiterführende Ratgeber zu Treppen & Treppensanierung"
+                >
+                    <ul className="border-t border-tinte">
+                        {WEITERLESEN.map((link) => (
+                            <li key={link.path} className="border-b border-fuge">
+                                <Link href={link.path} data-motion="zustand" className={ZEILE}>
+                                    <span className="flex min-w-0 flex-1 flex-col gap-1 md:flex-row md:items-baseline md:gap-6">
+                                        <span className={NAME}>{link.title}</span>
+                                        <span className="font-text text-fs-2 text-tinte-2">{link.desc}</span>
                                     </span>
-                                    <h3 className="font-black text-lg text-slate-900 group-hover:text-orange-700 transition-colors mb-1">
-                                        {page.name}
-                                    </h3>
-                                    <p className="text-xs font-bold uppercase tracking-wider text-orange-700 mb-3">{page.desc}</p>
-                                    <p className="text-sm text-slate-700 leading-relaxed mb-5 flex-1">{SUBPAGE_TEXT[page.path]}</p>
-                                    <span className="text-sm font-bold text-orange-700 inline-flex items-center gap-1">
-                                        Zur Detailseite
-                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                    <span aria-hidden="true" className="flex shrink-0 text-strich">
+                                        <Icon name="pfeil-rechts" groesse={5} />
                                     </span>
                                 </Link>
                             </li>
-                        );
-                    })}
-                </ul>
-            </section>
-
-            {/* Voraussetzung */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="voraussetzung-heading">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <span className="eyebrow eyebrow-orange mb-4">Voraussetzung</span>
-                        <h2 id="voraussetzung-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Tragfähige Massivtreppe: was sich belegen lässt – und was nicht
-                        </h2>
-                        <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                            Fliesen und Naturstein sind starre Beläge. Sie halten dauerhaft nur auf einem Untergrund, der sich
-                            nicht bewegt. Rohbau, Geländer und Statik der Treppe sind nicht Teil unserer Leistung – wir
-                            prüfen beim Vor-Ort-Termin aber, ob Ihre Treppe als Untergrund geeignet ist.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="p-8 rounded-tile-xl bg-slate-50 border border-slate-200">
-                            <h3 className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
-                                <CheckCircle2 className="w-5 h-5 text-orange-600" />
-                                In der Regel gut belegbar
-                            </h3>
-                            <ul className="space-y-3">
-                                {SUITABLE.map((item) => (
-                                    <li key={item} className="flex items-start gap-2 text-sm text-slate-700 leading-relaxed">
-                                        <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="p-8 rounded-tile-xl bg-slate-50 border border-slate-200">
-                            <h3 className="text-lg font-black text-slate-900 mb-4 flex items-center gap-2">
-                                <AlertTriangle className="w-5 h-5 text-amber-500" />
-                                Nicht oder nur nach Klärung
-                            </h3>
-                            <ul className="space-y-3">
-                                {NOT_SUITABLE.map((item) => (
-                                    <li key={item} className="flex items-start gap-2 text-sm text-slate-700 leading-relaxed">
-                                        <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Belagsarten */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="belagsarten-heading">
-                <div className="text-center max-w-3xl mx-auto mb-12">
-                    <span className="eyebrow eyebrow-orange mb-4">Belagsarten im Überblick</span>
-                    <h2 id="belagsarten-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Fliese, Stufenplatte, Naturstein – oder Blockstufe
-                    </h2>
-                </div>
-
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {COVERINGS.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                            <li
-                                key={item.title}
-                                className="group glass-surface p-7 rounded-tile-2xl hover:-translate-y-0.5 hover:border-orange-500/80 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-11 h-11 mb-4 text-orange-600">
-                                    <Icon className="w-5 h-5" />
-                                </span>
-                                <h3 className="font-black text-base text-slate-900 mb-2 group-hover:text-orange-700 transition-colors">{item.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{item.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-
-                <p className="mt-8 text-sm text-slate-700 leading-relaxed max-w-4xl mx-auto text-center">
-                    Wie die Stufenkante ausgebildet wird – Gehrung, Profil oder Stufenplatte – vergleichen wir ausführlich
-                    auf der Seite{' '}
-                    <Link href="/treppen/innentreppe" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
-                        Innentreppe fliesen
-                    </Link>
-                    . Welche Rutschhemmung auf Stufen sinnvoll ist, erklärt unser Beitrag zu den{' '}
-                    <Link href="/blog/rutschfeste-fliesen-r-klassen" className="font-bold text-orange-700 hover:text-orange-600 hover:underline underline-offset-2">
-                        R-Klassen nach DIN EN 16165
-                    </Link>
-                    .
-                </p>
-            </section>
-
-            {/* Gleichmäßige Steigungen */}
-            <section className="py-20 bg-white border-y border-slate-200 relative z-10" aria-labelledby="steigungen-heading">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center max-w-3xl mx-auto mb-10">
-                        <span className="eyebrow eyebrow-orange mb-4">
-                            <Ruler className="w-3.5 h-3.5 text-orange-600" />
-                            Gleichmäßige Steigungen
-                        </span>
-                        <h2 id="steigungen-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                            Belagdicken und Ausgleich vorher planen
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-700 leading-relaxed">
-                        <div className="glass-surface rounded-tile-2xl p-7 space-y-3">
-                            <h3 className="font-black text-base text-slate-900">Warum es auf Millimeter ankommt</h3>
-                            <p>
-                                Beim Gehen stellt sich der Körper auf eine gleichbleibende Stufenhöhe ein. Weicht eine einzelne
-                                Steigung spürbar ab – häufig die erste oder die letzte –, wird die Treppe zur Stolperfalle.
-                                Die DIN 18065 dient als Orientierung: Sie lässt innerhalb eines Treppenlaufs nur geringe
-                                Abweichungen zwischen den Steigungen zu.
-                            </p>
-                            <p>
-                                Eine Treppe mit n Steigungen hat n Setzstufen, aber in der Regel nur n−1 Trittstufen – die
-                                oberste „Stufe“ ist der Boden des Obergeschosses bzw. das Podest. Die Belagsfläche einer
-                                Trittstufe ist der Auftritt einschließlich Überstand an der Vorderkante.
-                            </p>
-                        </div>
-                        <div className="glass-surface rounded-tile-2xl p-7 space-y-3">
-                            <h3 className="font-black text-base text-slate-900">Was wir beim Aufmaß klären</h3>
-                            <ul className="space-y-2">
-                                {[
-                                    'Höhe jeder einzelnen Steigung und Tiefe jedes Auftritts',
-                                    'Aufbauhöhe des neuen Belags unten und oben: Bekommen Flur und Obergeschoss denselben Aufbau, verschieben sich alle Stufen gleichmäßig',
-                                    'Wird nur die Treppe belegt, wird die unterste Steigung höher und die oberste niedriger – das gleichen wir über das Kleber- bzw. Mörtelbett und passende Belagdicken aus',
-                                    'Ungleichmäßige Rohbaustufen lassen sich nur begrenzt korrigieren; die Maße des Rohbaus bleiben maßgebend'
-                                ].map((item) => (
-                                    <li key={item} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Renovieren statt Abriss */}
-            <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10" aria-labelledby="renovieren-heading">
-                <div className="ceramic-hero rounded-tile-2xl p-8 sm:p-12 space-y-5">
-                    <span className="eyebrow eyebrow-neutral">Alte Treppe renovieren</span>
-                    <h2 id="renovieren-heading" className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                        Neuer Belag statt Abriss
-                    </h2>
-                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                        Viele ältere Treppen tragen Teppich, PVC oder abgenutzte Fliesen, während der Rohbau darunter noch
-                        tragfähig ist. Die Renovierung läuft deshalb in klaren Schritten:
-                    </p>
-                    <ol className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {[
-                            { t: 'Altbelag prüfen', d: 'Fest haftende Fliesen können unter Umständen bleiben; Teppich, PVC und Kleberreste werden entfernt.' },
-                            { t: 'Untergrund vorbereiten', d: 'Stufen reinigen, grundieren, Ausbrüche und Unebenheiten mit geeignetem Mörtel ausgleichen.' },
-                            { t: 'Stufen einzeln aufmessen', d: 'Keine Stufe ist exakt gleich – jede Tritt- und Setzstufe wird individuell zugeschnitten.' },
-                            { t: 'Vollflächig verlegen', d: 'Hohlraumarm verlegt mit flexiblem Fliesenkleber, damit Kanten unter Last nicht abbrechen.' }
-                        ].map((step, idx) => (
-                            <li key={step.t} className="rounded-tile-lg bg-white/80 border border-slate-200 p-5">
-                                <span className="font-display block text-3xl font-black tabular-nums text-orange-500/30 mb-2" aria-hidden="true">
-                                    {String(idx + 1).padStart(2, '0')}
-                                </span>
-                                <h3 className="font-black text-slate-900 mb-1">{step.t}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{step.d}</p>
-                            </li>
                         ))}
-                    </ol>
-                    <div className="flex flex-wrap gap-3.5 pt-2">
-                        <Link href="/kontakt" className="btn-primary px-7 py-3.5 text-xs">
-                            Treppe begutachten lassen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <a href={`tel:${COMPANY_DATA.contact.phoneLink}`} className="btn-ghost px-7 py-3.5 text-xs">
-                            <Phone className="w-4 h-4 text-orange-600" />
-                            {COMPANY_DATA.contact.phone}
-                        </a>
-                    </div>
-                </div>
-            </section>
+                    </ul>
+                </Abschnitt>
+            </Leitachse>
 
-            {/* Weiterführende Ratgeber */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 relative z-10" aria-labelledby="treppen-ratgeber-heading">
-                <h2 id="treppen-ratgeber-heading" className="text-2xl font-black text-slate-900 tracking-tight mb-6">
-                    Weiterführende Ratgeber zu Treppen &amp; Treppensanierung
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {WEITERLESEN.map((link) => (
-                        <li key={link.path}>
-                            <Link
-                                href={link.path}
-                                className="group glass-surface rounded-tile-lg p-5 h-full block hover:-translate-y-0.5 hover:border-orange-500/80 transition-all duration-300"
-                            >
-                                <span className="font-black text-slate-900 group-hover:text-orange-700 transition-colors flex items-center gap-1">
-                                    {link.title}
-                                    <ArrowRight className="w-4 h-4" />
-                                </span>
-                                <span className="block mt-1 text-sm text-slate-700">{link.desc}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
+            {/* 8. ABSCHLUSS (geteilte Bausteine) */}
             <QualityPromise />
             <FinalCTA />
-        </div>
+        </>
     );
 }
