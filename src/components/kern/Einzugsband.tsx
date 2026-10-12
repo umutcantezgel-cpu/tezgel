@@ -42,9 +42,9 @@ export default function Einzugsband({ aktuell, kompakt = false, form = 'band', c
       <ol className={clsx('grid grid-cols-1 border-l-2', stapel ? 'border-tinte' : 'border-laser md:grid-cols-10')}>
         {gruppen.map(({ zone, orte }) => (
           <li key={zone.id} className={clsx('einzugsband-zone relative border-b border-r border-fuge bg-fliese', !stapel && BREITE[zone.id])}>
+            {/* Kante der Zone: zieht sich beim Laden von links auf, Zone für Zone (bewegung.css); der Text steht ab dem ersten
+                Bild (E3-SICHT-2-ERZ Befund 18 – vorher deckte eine Fläche die Orte bis zu 1,2 s ab) */}
             <span className="einzugsband-kante absolute inset-x-0 top-0 h-px bg-tinte" aria-hidden="true" />
-            {/* Abdeckung: legt die Zone beim Laden von links frei, Zone für Zone (bewegung.css, E4-NACH-02) */}
-            {!kompakt && <span className="einzugsband-decke absolute inset-0 z-10 bg-fliese" aria-hidden="true" />}
             <div className={kompakt ? 'px-3 pt-1 pb-px' : 'p-4 lg:p-6'}>
               <p className={etikettKlassen}>
                 <span className="text-tinte">{zone.etikett}</span>

@@ -346,7 +346,29 @@ html.k-bewegung .sig-plan-ziel .plan-reihenteil {
 html.k-bewegung [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
   animation: plan-flucht var(--dauer-4) var(--ease-setzen) var(--dauer-2) both;
 }
+/* Mit der Flucht zieht sich die rote Achse des Plans auf (E3-SICHT-2-ERZ Befund 7: bei 1440 px war die Flucht in den grauen
+   1-px-Fugen kaum zu sehen) – das gezogene Rot des Einstiegs, laser · dauer-4 parallel zur Flucht; nur scale. */
+@keyframes plan-achse-lot-ziehen {
+  from { scale: 1 0; }
+}
+@keyframes plan-achse-waage-ziehen {
+  from { scale: 0 1; }
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-lot,
+html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-waage {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: plan-achse-lot-ziehen var(--dauer-4) var(--ease-laser) var(--dauer-2) both;
+}
+html.k-bewegung:not(.k-notaus) [data-motion="sig-plan"][data-flucht="laden"] .plan-achse-waage {
+  transform-origin: 0 50%;
+  animation-name: plan-achse-waage-ziehen;
+}
 @media print {
+  .verlegeplan .plan-achse {
+    scale: none !important;
+    animation: none !important;
+  }
   .verlegeplan .plan-reihenteil {
     translate: none !important;
     animation: none !important;
@@ -391,31 +413,28 @@ html.k-bewegung [data-motion="sig-plan"][data-flucht="laden"] .plan-reihenteil {
 @keyframes szene-einblenden { from { opacity: 0; } to { opacity: 1; } }
 @keyframes szene-setzen { from { opacity: 0; scale: 0.6; } to { opacity: 1; scale: 1; } }
 
-/* einzugsband (K-007, /standorte und [stadt], E4-NACH-02): das Band legt sich beim Laden Zone für Zone von links frei –
-   eine Abdeckung in Fliese schrumpft nach rechts (scale, Ursprung rechts), Zone 2 und 3 je fünf Staffelstufen später
-   (dauer-3 · setzen, gesamt 1,2 s). CSS ab dem ersten Bild unter html.k-bewegung (wie SIG-1, kein Warten auf Skript);
-   ohne Startklasse, reduziert, nach dem Notaus und im Druck ist keine Abdeckung zu sehen. */
-.einzugsband .einzugsband-decke {
-  transform-origin: right center;
-  scale: 0 1;
-  pointer-events: none;
+/* einzugsband (K-007, /standorte und [stadt]; E4-NACH-02, E4-N2-03): beim Laden zieht sich die Kante jeder Zone von links
+   auf, Zone 2 und 3 je fünf Staffelstufen später (dauer-3 · setzen, gesamt 1,2 s); Orte und Entfernungen stehen ab dem
+   ersten Bild (vorher deckte eine Fläche sie ab, E3-SICHT-2-ERZ Befund 18). CSS ab dem ersten Bild unter html.k-bewegung;
+   ohne Startklasse, reduziert, nach dem Notaus und im Druck steht die Kante voll. Nur scale. */
+.einzugsband .einzugsband-kante {
+  transform-origin: left center;
 }
-@keyframes einzugsband-freilegen {
-  from { scale: 1 1; }
-  to { scale: 0 1; }
+@keyframes einzugsband-kante-ziehen {
+  from { scale: 0 1; }
 }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-decke {
-  animation: einzugsband-freilegen var(--dauer-3) var(--ease-setzen) both;
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-kante {
+  animation: einzugsband-kante-ziehen var(--dauer-3) var(--ease-setzen) both;
 }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-decke {
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(2) .einzugsband-kante {
   animation-delay: calc(var(--staffel) * 5);
 }
-html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-decke {
+html.k-bewegung:not(.k-notaus) [data-motion="einzugsband"] .einzugsband-zone:nth-child(3) .einzugsband-kante {
   animation-delay: calc(var(--staffel) * 10);
 }
-@media print, (forced-colors: active) {
-  .einzugsband .einzugsband-decke {
-    display: none;
+@media print {
+  .einzugsband .einzugsband-kante {
+    animation: none !important;
   }
 }
 

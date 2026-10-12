@@ -24,6 +24,8 @@ interface FinalCTAProps {
   serviceContext?: string;
   showQuickForm?: boolean;
   quickFormSource?: string;
+  /** Laserachse am Abschluss (Erzählansichten); Arbeitsansichten ohne Leitachse (K-007, E3-SICHT-2-ARB Befund 6) */
+  achse?: boolean;
 }
 
 const defaultBenefits = [
@@ -51,6 +53,7 @@ export default function FinalCTA({
   serviceContext,
   showQuickForm = false,
   quickFormSource,
+  achse = true,
 }: FinalCTAProps) {
   return (
     <section
@@ -58,7 +61,7 @@ export default function FinalCTA({
       className={clsx("relative w-full border-t border-fuge bg-kalk py-24 text-tinte lg:py-32", className)}
     >
       <div className={clsx(seitenKlassen, "relative")}>
-        <Laserachse className={ACHSE_LAGE} />
+        {achse && <Laserachse className={ACHSE_LAGE} />}
         <div className="border border-fuge bg-fliese">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Anliegen: Kontext, Überschrift, Untertitel, Zusagen */}

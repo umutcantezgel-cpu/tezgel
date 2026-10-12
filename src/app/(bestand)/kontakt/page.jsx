@@ -143,6 +143,7 @@ export default function KontaktPage() {
                 headline="Sie möchten Ihr Bad oder Ihre Fliesen erneuern? Jetzt unverbindlich beraten lassen."
                 subtitle="Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb"
                 buttonText="Jetzt Deniz Tezgel anrufen"
+                achse={false}
             />
         </>
     );

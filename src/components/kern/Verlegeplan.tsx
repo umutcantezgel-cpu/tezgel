@@ -152,8 +152,8 @@ export default function Verlegeplan({ plan, beschriftet = false, bemassung = tru
       )}
       <rect className="plan-raum" x={0} y={0} width={W} height={H} />
       {elemente.map((e, i) => <Element key={i} e={e} b={b} h={h} />)}
-      {zeigeLot && <path className="plan-achse" d={`M${bild.achseX * S} ${-rand + 4}V${H + rand - 4}`} />}
-      {zeigeWaage && <path className="plan-achse" d={`M${-rand + 4} ${bild.achseY * S}H${W + rand - 4}`} />}
+      {zeigeLot && <path className="plan-achse plan-achse-lot" d={`M${bild.achseX * S} ${-rand + 4}V${H + rand - 4}`} />}
+      {zeigeWaage && <path className="plan-achse plan-achse-waage" d={`M${-rand + 4} ${bild.achseY * S}H${W + rand - 4}`} />}
       {zeigeLot && zeigeWaage && <path className="plan-kreuz" d={`M${bild.achseX * S - 1.5} ${bild.achseY * S - 6}h3v4.5h4.5v3h-4.5v4.5h-3v-4.5h-4.5v-3h4.5z`} />}
       {zustand === 'aufmass' && (
         <g className="plan-pruefung">

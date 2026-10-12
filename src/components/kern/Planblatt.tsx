@@ -2,9 +2,12 @@
 // (Verlegeplan, Einzugsband …), unten das Schriftfeld mit Stammdaten. Das Blatt füllt die Höhe der Textspalte, damit im
 // ersten Bildschirm keine leere Rasterspalte bleibt (E3-SICHT-ERZ Befund 1). Die Zeichnung sitzt in der Blattfläche
 // mittig; die Felder stehen an der unteren Fuge. Alle Werte kommen aus der Konfiguration – nichts Erfundenes, kein Maßstab.
-import type { ReactNode } from 'react';
+// Ist die Zeichnung ein Verlegeplan, zeigt das Blatt seine rote Achse (das gezogene Rot des Einstiegs, E3-SICHT-2-ERZ Q3);
+// mit `flucht="laden"` zieht sich die Achse während der Flucht auf (bewegung.css, sig-plan).
+import { cloneElement, isValidElement, type ReactNode } from 'react';
 import clsx from 'clsx';
 import Schriftfeld, { type SchriftfeldFeld } from './Schriftfeld';
+import Verlegeplan, { type VerlegeplanProps } from './Verlegeplan';
 import { COMPANY_DATA } from '@/config/company';
 import { PLAENE, type PlanName } from '@/lib/plaene/vorgaben';
 import type { Planvorgabe, Verband } from '@/lib/plaene/typen';
@@ -16,10 +19,14 @@ export interface PlanblattProps {
   children: ReactNode;
   /** Schriftfeld unter der Zeichnung; ohne Felder nur das Blatt */
   felder?: SchriftfeldFeld[];
+  /** rote Achse eines Verlegeplans im Blatt zeigen (Standard ja; `ohneAchse` am Plan wird dann übergangen) */
+  achse?: boolean;
   className?: string;
 }
 
-export default function Planblatt({ children, felder, className }: PlanblattProps) {
+export default function Planblatt({ children, felder, achse = true, className }: PlanblattProps) {
+  const zeichnung =
+    achse && isValidElement<VerlegeplanProps>(children) && children.type === Verlegeplan ? cloneElement(children, { ohneAchse: false }) : children;
   return (
     <div className={clsx('flex h-full flex-col border border-fuge bg-fliese', className)}>
       {/* Blattfläche mit Schnittmarken an den Ecken: der freie Rand um die Zeichnung gehört zum Blatt */}
@@ -28,7 +35,7 @@ export default function Planblatt({ children, felder, className }: PlanblattProp
         <span aria-hidden="true" className="absolute top-3 right-3 size-3 border-t border-r border-strich" />
         <span aria-hidden="true" className="absolute bottom-3 left-3 size-3 border-b border-l border-strich" />
         <span aria-hidden="true" className="absolute right-3 bottom-3 size-3 border-r border-b border-strich" />
-        {children}
+        {zeichnung}
       </div>
       {felder && felder.length > 0 && <Schriftfeld felder={felder} spalten="blatt" className="border-x-0 border-b-0" />}
     </div>

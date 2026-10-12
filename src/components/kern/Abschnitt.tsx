@@ -43,7 +43,8 @@ export default function Abschnitt({ id, titelId, etikett, nummer, titel, einleit
           {etikett}
         </p>
       )}
-      {titel && <h2 id={hId} className={clsx('text-fs-6', tinte ? 'text-kalk' : 'text-tinte')}>{titel}</h2>}
+      {/* Arbeitsansicht: H1 steht in text-fs-6, die H2 eine Stufe darunter (E3-SICHT-2-ARB Befunde 4, 15, 25) */}
+      {titel && <h2 id={hId} className={clsx(art === 'arbeit' ? 'text-fs-5' : 'text-fs-6', tinte ? 'text-kalk' : 'text-tinte')}>{titel}</h2>}
       {einleitung && <div className={clsx('mt-6 text-fs-3', tinte ? 'text-nacht-2' : 'text-tinte-2')}>{einleitung}</div>}
     </div>
   );

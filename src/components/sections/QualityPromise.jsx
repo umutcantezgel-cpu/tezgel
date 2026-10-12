@@ -6,8 +6,9 @@ import Knopf from '@/components/kern/Knopf';
 
 // Qualitätsversprechen (KERN K-009, Merkliste im Halbverband): acht Punkte als Zeilen an der Fuge mit Mono-Nummer,
 // „Garantierter Standard“ einmal im Etikett des Abschnitts, der Abschluss als Zeile ohne Kasten.
-// Überschrift, Texte und Links bleiben wortgleich.
-export default function QualityPromise() {
+// Überschrift, Texte und Links bleiben wortgleich. `art="arbeit"` auf Arbeitsansichten: Abstände und H2-Stufe der
+// Arbeitsansicht (H2 eine Stufe unter der H1, E3-SICHT-2-ARB Befund 15).
+export default function QualityPromise({ art = 'erzaehl' }) {
     const punkte = COMPANY_DATA.qualityPromises.map((promise) => ({
         titel: promise.title,
         text: promise.description,
@@ -16,6 +17,7 @@ export default function QualityPromise() {
     return (
         <Abschnitt
             id="qualitaet"
+            art={art}
             titelId="quality-promise-heading"
             etikett={<>HWK Fachbetrieb &middot; {COMPANY_DATA.authority.shortName} &middot; Garantierter Standard</>}
             titel="Unser 8-Punkte-Qualitätsversprechen für Ihr Fliesenprojekt"
