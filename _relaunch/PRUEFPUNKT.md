@@ -13,4 +13,4 @@
 - 2026-10-12 12:20 CEST · M live (28ee443, Live-Prüfung grün). Gutachten U1–U8 fertig; Baumeister F-01–F-05 laufen.
 - 2026-10-12 14:50 CEST · Lieferung 1 live (e41b65f, Live-Prüfung grün). Lieferung 2 im Tor.
 - 2026-10-12 17:05 CEST · Lieferung 2 live (f3ec304, Live-Prüfung grün nach Wiederholung mit fester Kennung). Fusion II fertig. R-01a/b gestartet. Lernen: Live-Prüfungen immer mit der gepushten Kennung als Literal, nie $(git rev-parse HEAD) – lokale Commits während des Wartens verschieben sonst die Erwartung; Platten-Budget: höchstens 4 Reinraum-Kopien im Scratchpad halten.
-- 2026-10-12 21:20 CEST · R-01 live (b913dfd; Vercel-Status lief in die Wartezeit, live-rauchtest und live-browser mit build=b913dfd grün). E5-Welle 1 gestartet (5 Baumeister).
+- 2026-10-12 19:48 CEST · R-01 live (b913dfd; Vercel-Status lief in die Wartezeit, live-rauchtest und live-browser mit build=b913dfd grün). E5-Welle 1 gestartet (5 Baumeister).
