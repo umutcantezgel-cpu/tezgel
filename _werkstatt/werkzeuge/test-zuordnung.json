@@ -152,5 +152,18 @@
       "funktion-navigation.spec.mjs",
       "funktion-kontaktwege.spec.mjs"
     ]
+  },
+  {
+    "muster": "src/app/\\(bestand\\)/.+/page\\.(jsx|tsx)$",
+    "specs": [
+      "funktion-navigation.spec.mjs",
+      "funktion-kontaktwege.spec.mjs"
+    ]
+  },
+  {
+    "muster": "src/app/\\(bestand\\)/bad/(badsanierung|bad-aus-einer-hand|barrierefreies-bad|fliesen)/",
+    "specs": [
+      "funktion-badanfrage.spec.mjs"
+    ]
   }
 ]

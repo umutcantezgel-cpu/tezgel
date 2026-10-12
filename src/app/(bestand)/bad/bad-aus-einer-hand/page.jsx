@@ -1,20 +1,27 @@
-import React from 'react';
-import Link from 'next/link';
-import {
-    Sparkles,
-    ArrowRight,
-    Users,
-    Clock,
-    FileCheck,
-    HeartHandshake,
-    Star,
-    Quote
-} from 'lucide-react';
+// Bad aus einer Hand (E4-BAU-01, KERN v2): Erzählansicht nach dem Muster der Familienreferenz (bestand/bad/page.jsx).
+// Einstieg mit Achse, H1 links bündig, Vorspann, Knöpfe; rechts das Planblatt „bad“ mit dem Verlegeplan (interaktiv,
+// ohne Bemaßung). Danach die Leitachse über die Abschnitte: die Vorteile als Feldraster mit der Kundenstimme, das
+// Qualitätsversprechen, die Badanfrage mit Rückfrage in EINEM Abschnitt auf Fliese.
+// Die Anfrage wird nachgeladen (TEMPO). Wortlaut, Überschriften, Links, IDs und Lesefolge wie im Bestand.
+import dynamic from 'next/dynamic';
 import { COMPANY_DATA } from '@/config/company';
 import { RATING_SUMMARY, REVIEWS } from '@/config/reviews';
-import BadanfrageFunnel from '@/components/funnels/BadanfrageFunnel';
+import Icon from '@/components/icons/Icon';
 import QualityPromise from '@/components/sections/QualityPromise';
 import { createMetadata } from '@/lib/metadata';
+import Einstieg from '@/components/kern/Einstieg';
+import Abschnitt from '@/components/kern/Abschnitt';
+import Leitachse from '@/components/kern/Leitachse';
+import { Feld, Feldraster } from '@/components/kern/Feldraster';
+import Knopf from '@/components/kern/Knopf';
+import Rueckfrage from '@/components/kern/Rueckfrage';
+import Verlegeplan from '@/components/kern/Verlegeplan';
+import Planblatt, { planfelder } from '@/components/kern/Planblatt';
+
+// Anfrageformular nachladen wie auf der Startseite und in der Familienreferenz (TEMPO, Z-08 / E-025)
+const BadanfrageFunnel = dynamic(() => import('@/components/funnels/BadanfrageFunnel'), {
+    loading: () => <p className="py-12 font-mono text-fs-1 text-tinte-2">Anfrageformular wird geladen...</p>,
+});
 
 export const metadata = createMetadata({
     title: 'Bad aus einer Hand Wetzlar & Aßlar | Tezgel Badsanierung',
@@ -27,111 +34,108 @@ export default function BadAusEinerHandPage() {
     const review = REVIEWS.find((r) => r.id === 'thorsten-a');
 
     const benefits = [
-        { icon: Users, title: 'Ein fester Fach-Ansprechpartner', desc: `Sie müssen nicht mit fünf verschiedenen Firmen telefonieren. ${COMPANY_DATA.owner.fullName} betreut Sie persönlich von A bis Z.` },
-        { icon: FileCheck, title: 'Verbindlicher Festpreis', desc: 'Transparente Gesamtkalkulation aller Gewerke ohne versteckte Kosten oder böse Überraschungen.' },
-        { icon: Clock, title: 'Verlässlicher Bauzeitplan', desc: 'Feste Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.' },
-        { icon: Sparkles, title: 'Staubarme Ausführung', desc: 'Einsatz von Staubschutzwänden, Luftreinigern und Schonabdeckungen für saubere Wohnräume.' }
+        { title: 'Ein fester Fach-Ansprechpartner', desc: `Sie müssen nicht mit fünf verschiedenen Firmen telefonieren. ${COMPANY_DATA.owner.fullName} betreut Sie persönlich von A bis Z.` },
+        { title: 'Verbindlicher Festpreis', desc: 'Transparente Gesamtkalkulation aller Gewerke ohne versteckte Kosten oder böse Überraschungen.' },
+        { title: 'Verlässlicher Bauzeitplan', desc: 'Feste Zusagen für Baustart und Fertigstellung – damit Ihr Alltag planbar bleibt.' },
+        { title: 'Staubarme Ausführung', desc: 'Einsatz von Staubschutzwänden, Luftreinigern und Schonabdeckungen für saubere Wohnräume.' }
     ];
 
     return (
-        <div className="pt-32 pb-24 min-h-screen relative overflow-hidden">
-            {/* Ambient Glow */}
-            <div className="ambient-glow-orange -top-32 -left-32 opacity-70" />
-            <div className="ambient-glow-red top-96 -right-24 opacity-60" />
-
-            {/* Hero */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10" aria-labelledby="einer-hand-heading">
-                <div className="ceramic-hero rounded-tile-lg border border-neutral-200/80 shadow-tile p-8 sm:p-12 text-center space-y-4 relative overflow-hidden">
-                    <span className="eyebrow">
-                        <HeartHandshake className="w-3.5 h-3.5" />
-                        Rundum-Sorglos-Service &middot; Aßlar &amp; Wetzlar
-                    </span>
-                    <h1 id="einer-hand-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
-                        Bad aus einer Hand: <br />
-                        <span className="text-ceramic-gradient">Ein Ansprechpartner. Ein Festpreis. Null Stress.</span>
-                    </h1>
-                    <p className="text-sm sm:text-base text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                        Ihr schlüsselfertiges Bad aus einer Hand in Aßlar &amp; Wetzlar: Als spezialisierter Fachbetrieb Tezgel garantieren wir Ihnen einen Ansprechpartner, einen Festpreis und termingerechte Fertigstellung mit null Stress. Kein Ärger mit Gewerken – wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau bis zur schlüsselfertigen Übergabe.
-                    </p>
-
-                    <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-                        <Link href="/bad/projekt-check" className="btn-primary px-7 py-3.5 text-xs group">
-                            Bad-Projektcheck starten
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                        </Link>
-                        <Link href="/kontakt" className="btn-ghost px-7 py-3.5 text-xs">
-                            Beratungstermin anfragen
-                        </Link>
-                    </div>
-                </div>
+        <>
+            {/* 1. EINSTIEG: Kennzeile, H1 auf der Achse, Vorspann, Knöpfe; rechts der Plan ohne Bemaßung */}
+            <section aria-labelledby="einer-hand-heading">
+                <Einstieg
+                    art="erzaehl"
+                    etikett={<>Rundum-Sorglos-Service &middot; Aßlar &amp; Wetzlar</>}
+                    titel={
+                        <span id="einer-hand-heading">
+                            Bad aus einer Hand:{' '}
+                            <span className="block">Ein Ansprechpartner. Ein Festpreis. Null Stress.</span>
+                        </span>
+                    }
+                    vorspann={
+                        <p>
+                            Ihr schlüsselfertiges Bad aus einer Hand in Aßlar &amp; Wetzlar: Als spezialisierter Fachbetrieb Tezgel garantieren wir Ihnen einen Ansprechpartner, einen Festpreis und termingerechte Fertigstellung mit null Stress. Kein Ärger mit Gewerken – wir koordinieren Sanitär, Fliesen, Elektrik und Trockenbau bis zur schlüsselfertigen Übergabe.
+                        </p>
+                    }
+                    aktionen={
+                        <>
+                            <Knopf href="/bad/projekt-check" icon="pfeil-rechts">Bad-Projektcheck starten</Knopf>
+                            <Knopf href="/kontakt" variante="neben">Beratungstermin anfragen</Knopf>
+                        </>
+                    }
+                    rand={
+                        <Planblatt felder={planfelder('Bad aus einer Hand Wetzlar & Aßlar', 'bad')}>
+                            <Verlegeplan plan="bad" ohneAchse bemassung={false} interaktiv />
+                        </Planblatt>
+                    }
+                />
             </section>
 
-            {/* Benefits Grid */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10" aria-labelledby="vorteile-heading">
-                <div className="text-center max-w-3xl mx-auto mb-14">
-                    <span className="eyebrow eyebrow-amber mb-4">
-                        <Star className="w-3.5 h-3.5 fill-current text-amber-500" />
-                        {google.displayRating} &middot; {google.count} {google.label}
-                    </span>
-                    <h2 id="vorteile-heading" className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Ihre Vorteile mit unserem{' '}
-                        <span className="text-ceramic-gradient">Komplettbad-Service</span>
-                    </h2>
-                    <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                        Persönlich, termintreu und sauber – so arbeitet unser Fachbetrieb aus Aßlar in Wetzlar, Gießen und ganz
-                        Mittelhessen.
-                    </p>
-                </div>
+            {/* LEITACHSE: das Lot setzt die Achse des Einstiegs über die Abschnitte fort */}
+            <Leitachse>
+                {/* 2. VORTEILE als Feldraster (vier Felder), darunter die Kundenstimme */}
+                <Abschnitt
+                    titelId="vorteile-heading"
+                    flaeche="fliese"
+                    leitachse
+                    spaet
+                    etikett={<>{google.displayRating} &middot; {google.count} {google.label}</>}
+                    titel={
+                        <>
+                            Ihre Vorteile mit unserem{' '}
+                            <span>Komplettbad-Service</span>
+                        </>
+                    }
+                    einleitung={
+                        <p>
+                            Persönlich, termintreu und sauber – so arbeitet unser Fachbetrieb aus Aßlar in Wetzlar, Gießen und ganz Mittelhessen.
+                        </p>
+                    }
+                >
+                    <Feldraster spalten={4}>
+                        {benefits.map((b) => (
+                            <Feld key={b.title}>
+                                <h3 className="font-anzeige text-fs-4 font-semibold text-tinte">{b.title}</h3>
+                                <p className="mt-3 font-text text-fs-2 text-tinte-2">{b.desc}</p>
+                            </Feld>
+                        ))}
+                    </Feldraster>
 
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {benefits.map((b) => {
-                        const Icon = b.icon;
-                        return (
-                            <li
-                                key={b.title}
-                                className="group glass-surface p-7 rounded-tile-md hover:-translate-y-0.5 hover:border-orange-500 hover:shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] transition-all duration-300"
-                            >
-                                <span className="icon-chip w-12 h-12 mb-5">
-                                    <Icon className="w-6 h-6" />
-                                </span>
-                                <h3 className="text-base font-black text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{b.title}</h3>
-                                <p className="text-sm text-slate-700 leading-relaxed">{b.desc}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-
-                {review && (
-                    <figure className="mt-12 ceramic-hero rounded-tile-md border border-neutral-200/80 p-7 sm:p-10 max-w-4xl mx-auto text-center">
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <span className="flex items-center gap-0.5 text-amber-500" aria-label={`${review.rating} von 5 Sternen`}>
+                    {review && (
+                        <figure className="mt-16 max-w-mass border-t border-fuge pt-12">
+                            <span className="flex items-center gap-px text-tinte" aria-label={`${review.rating} von 5 Sternen`}>
                                 {Array.from({ length: review.rating }, (_, i) => (
-                                    <Star key={i} className="w-4 h-4 fill-current" aria-hidden="true" />
+                                    <Icon key={i} name="stern-voll" groesse={4} />
                                 ))}
                             </span>
-                            <Quote className="w-6 h-6 text-orange-600/40" aria-hidden="true" />
+                            <blockquote className="mt-6 font-anzeige text-fs-4 text-tinte">„{review.text}“</blockquote>
+                            <figcaption className="mt-4 font-text text-fs-2 text-tinte">
+                                <span className="font-semibold">{review.author}</span>
+                                <span className="font-mono text-fs-1 text-tinte-2"> &middot; {review.source}-Rezension &middot; {review.topic}</span>
+                            </figcaption>
+                            <div className="mt-8">
+                                <Knopf href="/referenzen" variante="text" icon="pfeil-rechts">Alle Kundenbewertungen ansehen</Knopf>
+                            </div>
+                        </figure>
+                    )}
+                </Abschnitt>
+
+                {/* 3. QUALITÄTSVERSPRECHEN (bestehende Komponente, unverändert eingebunden) */}
+                <QualityPromise />
+
+                {/* 4. ANFRAGE: Badanfrage (8 Spalten) und Rückfrage (4 Spalten, ab lg klebend) */}
+                <Abschnitt id="anfrage" aria-label="Badanfrage" flaeche="fliese" leitachse spaet>
+                    <div className="grid gap-y-12 lg:grid-cols-12 lg:gap-x-12">
+                        <div className="min-w-0 lg:col-span-8">
+                            <BadanfrageFunnel />
                         </div>
-                        <blockquote className="text-base sm:text-lg text-slate-800 leading-relaxed">„{review.text}“</blockquote>
-                        <figcaption className="mt-4 text-sm">
-                            <span className="font-bold text-slate-900">{review.author}</span>
-                            <span className="text-slate-600"> &middot; {review.source}-Rezension &middot; {review.topic}</span>
-                        </figcaption>
-                        <Link
-                            href="/referenzen"
-                            className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-orange-600 hover:text-orange-700"
-                        >
-                            Alle Kundenbewertungen ansehen
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </figure>
-                )}
-            </section>
-
-            <QualityPromise />
-
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10 scroll-mt-28" id="anfrage" aria-label="Badanfrage">
-                <BadanfrageFunnel />
-            </section>
-        </div>
+                        <div className="lg:col-span-4">
+                            <Rueckfrage />
+                        </div>
+                    </div>
+                </Abschnitt>
+            </Leitachse>
+        </>
     );
 }
