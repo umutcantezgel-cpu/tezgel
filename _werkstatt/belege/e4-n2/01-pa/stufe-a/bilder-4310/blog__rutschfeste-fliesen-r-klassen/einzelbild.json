@@ -1,0 +1,50 @@
+{
+ "seite": "/blog/rutschfeste-fliesen-r-klassen",
+ "base": "http://127.0.0.1:4310",
+ "ziel": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/stufe-a/bilder-4310/blog__rutschfeste-fliesen-r-klassen",
+ "optionen": {
+  "ansichten": [
+   "m390",
+   "d1440"
+  ],
+  "scroll": "0",
+  "voll": false,
+  "einwilligung": "abgelehnt",
+  "bewegung": "reduce",
+  "warte": 0,
+  "dpr": 1,
+  "qualitaet": 70
+ },
+ "ergebnisse": [
+  {
+   "ansicht": "m390",
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/stufe-a/bilder-4310/blog__rutschfeste-fliesen-r-klassen/m390.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  },
+  {
+   "ansicht": "d1440",
+   "seite": "/blog/rutschfeste-fliesen-r-klassen",
+   "status": 200,
+   "datei": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/stufe-a/bilder-4310/blog__rutschfeste-fliesen-r-klassen/d1440.jpg",
+   "anker": null,
+   "konsole": [],
+   "ueberlauf": [],
+   "ueberlappung": [],
+   "ueberlappungGesamt": 0,
+   "ueberlappungNachArt": {},
+   "fehler": null,
+   "fremd": 0,
+   "blockiert": []
+  }
+ ]
+}

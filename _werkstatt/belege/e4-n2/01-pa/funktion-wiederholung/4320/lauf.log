@@ -1,0 +1,17 @@
+
+Running 12 tests using 1 worker
+
+  ✓   1 [desktop] › tests/funktion-einwilligung.spec.mjs:141:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host) (4.5s)
+  ✓   2 [desktop] › tests/funktion-einwilligung.spec.mjs:152:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host) (5.6s)
+  ✓   3 [desktop] › tests/funktion-einwilligung.spec.mjs:161:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter (5.7s)
+  ✓   4 [desktop] › tests/funktion-einwilligung.spec.mjs:173:5 › Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host (5.3s)
+  ✓   5 [desktop] › tests/funktion-einwilligung.spec.mjs:141:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host) (3.2s)
+  ✓   6 [desktop] › tests/funktion-einwilligung.spec.mjs:152:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host) (1.9s)
+  ✓   7 [desktop] › tests/funktion-einwilligung.spec.mjs:161:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter (3.1s)
+  ✓   8 [desktop] › tests/funktion-einwilligung.spec.mjs:173:5 › Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host (2.0s)
+  ✓   9 [desktop] › tests/funktion-einwilligung.spec.mjs:141:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /standorte: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host) (3.0s)
+  ✓  10 [desktop] › tests/funktion-einwilligung.spec.mjs:152:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /kontakt: „Karte laden & zustimmen“ setzt Marketing-Einwilligung und lädt die Karte (Anfrage an Karten-Host) (1.9s)
+  ✓  11 [desktop] › tests/funktion-einwilligung.spec.mjs:161:5 › Karten hinter Einwilligung (F-12) › ohne Marketing-Einwilligung (abgelehnt) › /: „Karte laden & zustimmen“ im Servicegebiet setzt Marketing-Einwilligung und ersetzt den Platzhalter (3.1s)
+  ✓  12 [desktop] › tests/funktion-einwilligung.spec.mjs:173:5 › Karten hinter Einwilligung (F-12) › mit Marketing-Einwilligung (alle) › /standorte: Karte ohne Platzhalter, Anfrage an Karten-Host (2.6s)
+
+  12 passed (46.6s)

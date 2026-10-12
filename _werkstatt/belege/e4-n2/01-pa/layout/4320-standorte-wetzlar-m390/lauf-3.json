@@ -1,0 +1,74 @@
+{
+ "seite": "/standorte/wetzlar",
+ "ansicht": "m390",
+ "base": "http://127.0.0.1:4320",
+ "lauf": 3,
+ "ladeEndeMs": 7551,
+ "fensterEndeMs": 12551,
+ "laufzeitMs": 12955,
+ "summe": 0.00402,
+ "kopfBeitrag": 0,
+ "anzahlEintraege": 2,
+ "anzahlNachEingabe": 0,
+ "eintraege": [
+  {
+   "t": 2256,
+   "wert": 0.003959524970641916,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": null,
+     "vorher": [
+      16,
+      259,
+      358,
+      48
+     ],
+     "nachher": [
+      16,
+      259,
+      358,
+      48
+     ]
+    },
+    {
+     "knoten": null,
+     "vorher": [
+      16,
+      445,
+      358,
+      46
+     ],
+     "nachher": [
+      16,
+      445,
+      358,
+      46
+     ]
+    }
+   ]
+  },
+  {
+   "t": 11714,
+   "wert": 0.00006373936759316693,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": null,
+     "vorher": [
+      67,
+      794,
+      24,
+      24
+     ],
+     "nachher": [
+      91,
+      794,
+      6,
+      24
+     ]
+    }
+   ]
+  }
+ ]
+}

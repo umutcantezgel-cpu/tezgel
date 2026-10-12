@@ -1,0 +1,23 @@
+{
+ "modus": "register",
+ "seite": "/blog/rutschfeste-fliesen-r-klassen",
+ "ansicht": "m390",
+ "ergebnis": "/home/user/tezgel/_werkstatt/belege/e4-n2/01-pa/bewegung/register-beitrag-m390/ergebnis.json",
+ "gefundene_kennungen": [
+  "aufklappen",
+  "druck",
+  "leitachse",
+  "zustand"
+ ],
+ "unbekannt": [],
+ "ohne_register_anzahl": 0,
+ "ohne_register_erste": [],
+ "schritte": {
+  "hover_geprueft": 20,
+  "hover_fehler": 0,
+  "hover_fehler_beispiel": null,
+  "hover_ausserhalb_uebersprungen": 0,
+  "tab_schritte": 30,
+  "fokus_verschieden": 30
+ }
+}

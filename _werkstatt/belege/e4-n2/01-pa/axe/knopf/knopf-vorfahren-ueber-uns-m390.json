@@ -1,0 +1,103 @@
+{
+ "base": "http://127.0.0.1:4320",
+ "ansicht": "m390",
+ "seite": "/ueber-uns",
+ "ergebnis": [
+  {
+   "text": "Kostenfreies Vor-Ort-Aufmaß anfragen",
+   "tag": "a",
+   "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibol",
+   "clientRects": 0,
+   "rechteck": [
+    0,
+    0
+   ],
+   "stapelAnMitte": [],
+   "vorfahren": [
+    {
+     "tag": "a",
+     "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibol",
+     "display": "inline-flex",
+     "contentVisibility": "visible",
+     "hidden": false,
+     "rechtecke": 0,
+     "auffaellig": false
+    },
+    {
+     "tag": "div",
+     "klasse": "shrink-0 border-t border-fuge bg-fliese p-4",
+     "display": "block",
+     "contentVisibility": "visible",
+     "hidden": false,
+     "rechtecke": 0,
+     "auffaellig": false
+    },
+    {
+     "tag": "div",
+     "klasse": "flex h-full flex-col border-l border-fuge",
+     "display": "flex",
+     "contentVisibility": "visible",
+     "hidden": false,
+     "rechtecke": 0,
+     "auffaellig": false
+    },
+    {
+     "tag": "div",
+     "klasse": "menue-blatt fixed inset-y-0 right-0 left-auto m-0 h-dvh max-h-none w-full max-w-md overflow-hidden border-0 bg",
+     "display": "none",
+     "contentVisibility": "visible",
+     "hidden": false,
+     "rechtecke": 0,
+     "auffaellig": true
+    }
+   ]
+  },
+  {
+   "text": "Kostenfreies Vor-Ort-Aufmaß",
+   "tag": "a",
+   "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibol",
+   "clientRects": 1,
+   "rechteck": [
+    274,
+    49
+   ],
+   "stapelAnMitte": [
+    "a.inline-flex min-h-11 items-center justify-center gap-2 rounded-none px",
+    "div.mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 flex flex-col gap-6 p",
+    "div.border-b border-nacht-fuge",
+    "footer.flaeche-tinte border-t border-nacht-fuge bg-tinte text-kalk",
+    "body.antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text",
+    "html.archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9"
+   ],
+   "vorfahren": [
+    {
+     "tag": "a",
+     "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibol",
+     "display": "flex",
+     "contentVisibility": "visible",
+     "hidden": false,
+     "rechtecke": 1,
+     "auffaellig": false
+    },
+    {
+     "tag": "div",
+     "klasse": "mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justi",
+     "display": "flex",
+     "contentVisibility": "visible",
+     "hidden": false,
+     "rechtecke": 1,
+     "auffaellig": false
+    },
+    {
+     "tag": "div",
+     "klasse": "border-b border-nacht-fuge",
+     "display": "block",
+     "contentVisibility": "visible",
+     "hidden": false,
+     "rechtecke": 1,
+     "auffaellig": false
+    }
+   ]
+  }
+ ]
+}

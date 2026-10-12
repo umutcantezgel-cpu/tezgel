@@ -1,0 +1,249 @@
+{
+ "seite": "/bad",
+ "ansicht": "d1440",
+ "base": "http://127.0.0.1:4310",
+ "lauf": 2,
+ "ladeEndeMs": 2110,
+ "fensterEndeMs": 7110,
+ "laufzeitMs": 7534,
+ "summe": 0.2841,
+ "kopfBeitrag": 0.2841,
+ "anzahlEintraege": 2,
+ "anzahlNachEingabe": 0,
+ "eintraege": [
+  {
+   "t": 1059,
+   "wert": 0.14282561236095037,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": {
+      "sel": "div.grid.grid-cols-4 > div.col-span-4.flex > div.flex.h-full > dl.grid.gap-px",
+      "h1": false,
+      "mono": false,
+      "oben": 772,
+      "text": "BlattBadsanierungVerbandHalbverbandBetriebFliesenverlegung TezgelInhab",
+      "klasse": "grid gap-px border border-fuge bg-fuge grid-cols-2 md:grid-cols-3 border-x-0 border-b-0"
+     },
+     "vorher": [
+      850,
+      800,
+      477,
+      100
+     ],
+     "nachher": [
+      850,
+      772,
+      477,
+      128
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.col-span-4.flex > div.flex.h-full > div.relative.flex > svg",
+      "h1": false,
+      "mono": false,
+      "oben": 294,
+      "text": "",
+      "klasse": ""
+     },
+     "vorher": [
+      882,
+      308,
+      440,
+      313
+     ],
+     "nachher": [
+      882,
+      294,
+      440,
+      313
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.max-w-mass",
+      "h1": false,
+      "mono": false,
+      "oben": 519,
+      "text": "Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfertige Badsanierung i",
+      "klasse": "mt-8 max-w-mass text-fs-4 text-tinte"
+     },
+     "vorher": [
+      112,
+      548,
+      689,
+      216
+     ],
+     "nachher": [
+      112,
+      519,
+      689,
+      216
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.flex",
+      "h1": false,
+      "mono": false,
+      "oben": 767,
+      "text": "Bad-Projektcheck startenMusterbäder entdecken",
+      "klasse": "mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+     },
+     "vorher": [
+      112,
+      796,
+      689,
+      50
+     ],
+     "nachher": [
+      112,
+      767,
+      689,
+      50
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > h1.text-tinte.text-fs-7",
+      "h1": true,
+      "mono": false,
+      "oben": 175,
+      "text": "Ihr Traumbad schlüsselfertig in Fachqualität",
+      "klasse": "text-tinte text-fs-7"
+     },
+     "vorher": [
+      112,
+      204,
+      689,
+      312
+     ],
+     "nachher": [
+      112,
+      175,
+      689,
+      312
+     ]
+    }
+   ]
+  },
+  {
+   "t": 1429,
+   "wert": 0.14127586879233112,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": {
+      "sel": "div.grid.grid-cols-4 > div.col-span-4.flex > div.flex.h-full > dl.grid.gap-px",
+      "h1": false,
+      "mono": false,
+      "oben": 800,
+      "text": "BlattBadsanierungVerbandHalbverbandBetriebFliesenverlegung TezgelInhab",
+      "klasse": "grid gap-px border border-fuge bg-fuge grid-cols-2 md:grid-cols-3 border-x-0 border-b-0"
+     },
+     "vorher": [
+      850,
+      772,
+      477,
+      128
+     ],
+     "nachher": [
+      850,
+      800,
+      477,
+      100
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.col-span-4.flex > div.flex.h-full > div.relative.flex > svg",
+      "h1": false,
+      "mono": false,
+      "oben": 308,
+      "text": "",
+      "klasse": ""
+     },
+     "vorher": [
+      882,
+      294,
+      413,
+      313
+     ],
+     "nachher": [
+      882,
+      308,
+      413,
+      313
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.max-w-mass",
+      "h1": false,
+      "mono": false,
+      "oben": 548,
+      "text": "Ihr Fachbetrieb Tezgel realisiert Ihre schlüsselfertige Badsanierung i",
+      "klasse": "mt-8 max-w-mass text-fs-4 text-tinte"
+     },
+     "vorher": [
+      112,
+      519,
+      689,
+      216
+     ],
+     "nachher": [
+      112,
+      548,
+      689,
+      216
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > div.mt-8.flex",
+      "h1": false,
+      "mono": false,
+      "oben": 796,
+      "text": "Bad-Projektcheck startenMusterbäder entdecken",
+      "klasse": "mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+     },
+     "vorher": [
+      112,
+      767,
+      689,
+      50
+     ],
+     "nachher": [
+      112,
+      796,
+      689,
+      50
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.grid.grid-cols-4 > div.col-span-4.md:col-span-8 > h1.text-tinte.text-fs-7",
+      "h1": true,
+      "mono": false,
+      "oben": 204,
+      "text": "Ihr Traumbad schlüsselfertig in Fachqualität",
+      "klasse": "text-tinte text-fs-7"
+     },
+     "vorher": [
+      112,
+      175,
+      689,
+      312
+     ],
+     "nachher": [
+      112,
+      204,
+      689,
+      312
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "seite": "/",
+ "ansicht": "m390",
+ "base": "http://127.0.0.1:4320",
+ "lauf": 2,
+ "ladeEndeMs": 7510,
+ "fensterEndeMs": 12510,
+ "laufzeitMs": 12861,
+ "summe": 0,
+ "kopfBeitrag": 0,
+ "anzahlEintraege": 1,
+ "anzahlNachEingabe": 1,
+ "eintraege": [
+  {
+   "t": 2222,
+   "wert": 0.05311489477254036,
+   "juengst": true,
+   "quellen": [
+    {
+     "knoten": null,
+     "vorher": [
+      16,
+      444,
+      358,
+      22
+     ],
+     "nachher": [
+      16,
+      599,
+      358,
+      22
+     ]
+    },
+    {
+     "knoten": null,
+     "vorher": [
+      16,
+      599,
+      358,
+      83
+     ],
+     "nachher": [
+      16,
+      599,
+      358,
+      83
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mx-auto.w-full > div.relative.grid > div.mt-8.lg:sticky > div.mt-8.flex",
+      "h1": false,
+      "mono": false,
+      "oben": 718,
+      "text": "Aufmaß vor Ort anfragenPer WhatsApp schreiben06441 / 44 83 567",
+      "klasse": "mt-8 flex flex-wrap gap-3"
+     },
+     "vorher": [
+      16,
+      688,
+      358,
+      156
+     ],
+     "nachher": [
+      16,
+      718,
+      358,
+      126
+     ]
+    },
+    {
+     "knoten": {
+      "sel": "div.mt-8.lg:sticky > div.mt-8.flex > a.inline-flex.min-h-11 > svg",
+      "h1": false,
+      "mono": false,
+      "oben": 856,
+      "text": "",
+      "klasse": ""
+     },
+     "vorher": [
+      104,
+      826,
+      20,
+      18
+     ],
+     "nachher": [
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ]
+  }
+ ]
+}

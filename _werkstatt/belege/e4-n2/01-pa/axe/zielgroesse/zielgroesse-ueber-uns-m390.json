@@ -1,0 +1,222 @@
+{
+ "seite": "/ueber-uns",
+ "ansicht": "m390",
+ "base": "http://127.0.0.1:4320",
+ "befunde_target_size": [],
+ "knopf_stapel": [
+  {
+   "knopf": {
+    "tag": "a",
+    "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setz",
+    "text": "Kostenfreies Vor-Ort-Aufmaß anfragen",
+    "rechteck": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "position": "static",
+    "display": "inline-flex",
+    "zIndex": "auto"
+   },
+   "mitte_viewport": [
+    0,
+    0
+   ],
+   "stapelAnMitte": [
+    {
+     "tag": "div",
+     "klasse": "mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 flex h-16 items-center justify-between gap-6 xl:gap-4 2xl:gap-6",
+     "text": "FachbetriebAßlar · WetzlarBadsanierungBäder & SanierungBadsa",
+     "rechteck": [
+      0,
+      0,
+      390,
+      64
+     ],
+     "position": "static",
+     "display": "flex",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "header",
+     "klasse": "kopf-anker fixed inset-x-0 top-0 z-40 border-b border-fuge bg-kalk",
+     "text": "FachbetriebAßlar · WetzlarBadsanierungBäder & SanierungBadsa",
+     "rechteck": [
+      0,
+      0,
+      390,
+      65
+     ],
+     "position": "fixed",
+     "display": "block",
+     "zIndex": "40"
+    },
+    {
+     "tag": "header",
+     "klasse": "relative border-b border-fuge pt-24 pb-16 lg:pt-32 lg:pb-24",
+     "text": "Gegründet 2008 · HWK WiesbadenÜber uns – Fliesenleger-Fachbe",
+     "rechteck": [
+      0,
+      0,
+      390,
+      994.9
+     ],
+     "position": "relative",
+     "display": "block",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "main",
+     "klasse": "flex-1",
+     "text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"AboutPa",
+     "rechteck": [
+      0,
+      0,
+      390,
+      6262.4
+     ],
+     "position": "static",
+     "display": "block",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "body",
+     "klasse": "antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text",
+     "text": "Zum Hauptinhalt springenFachbetriebAßlar · WetzlarBadsanieru",
+     "rechteck": [
+      0,
+      0,
+      390,
+      10009
+     ],
+     "position": "static",
+     "display": "flex",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "html",
+     "klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable",
+     "text": "Über uns | Fliesenleger-Fachbetrieb Tezgel Aßlar(function(){",
+     "rechteck": [
+      0,
+      0,
+      390,
+      10009
+     ],
+     "position": "static",
+     "display": "block",
+     "zIndex": "auto"
+    }
+   ],
+   "innerhalbViewport": true
+  },
+  {
+   "knopf": {
+    "tag": "a",
+    "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setz",
+    "text": "Kostenfreies Vor-Ort-Aufmaß",
+    "rechteck": [
+     16,
+     6523.9,
+     274.5,
+     49.3
+    ],
+    "position": "static",
+    "display": "flex",
+    "zIndex": "auto"
+   },
+   "mitte_viewport": [
+    153,
+    406
+   ],
+   "stapelAnMitte": [
+    {
+     "tag": "a",
+     "klasse": "inline-flex min-h-11 items-center justify-center gap-2 rounded-none px-6 py-3 font-text text-fs-2 font-semibold no-underline transition-colors dauer-1 ease-setz",
+     "text": "Kostenfreies Vor-Ort-Aufmaß",
+     "rechteck": [
+      16,
+      6523.9,
+      274.5,
+      49.3
+     ],
+     "position": "static",
+     "display": "flex",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "div",
+     "klasse": "mx-auto w-full max-w-seite px-4 md:px-8 lg:px-12 flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between",
+     "text": "HWK FachbetriebHWK WiesbadenDIN 18534VerbundabdichtungStaubs",
+     "rechteck": [
+      0,
+      6263.4,
+      390,
+      341.8
+     ],
+     "position": "static",
+     "display": "flex",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "div",
+     "klasse": "border-b border-nacht-fuge",
+     "text": "HWK FachbetriebHWK WiesbadenDIN 18534VerbundabdichtungStaubs",
+     "rechteck": [
+      0,
+      6263.4,
+      390,
+      342.8
+     ],
+     "position": "static",
+     "display": "block",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "footer",
+     "klasse": "flaeche-tinte border-t border-nacht-fuge bg-tinte text-kalk",
+     "text": "HWK FachbetriebHWK WiesbadenDIN 18534VerbundabdichtungStaubs",
+     "rechteck": [
+      0,
+      6262.4,
+      390,
+      3746.6
+     ],
+     "position": "static",
+     "display": "block",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "body",
+     "klasse": "antialiased min-h-screen flex flex-col bg-kalk text-tinte font-text",
+     "text": "Zum Hauptinhalt springenFachbetriebAßlar · WetzlarBadsanieru",
+     "rechteck": [
+      0,
+      0,
+      390,
+      10009
+     ],
+     "position": "static",
+     "display": "flex",
+     "zIndex": "auto"
+    },
+    {
+     "tag": "html",
+     "klasse": "archivo_bc882d51-module__U-gtSG__variable plexmono_99c0e74b-module__d9PJFq__variable",
+     "text": "Über uns | Fliesenleger-Fachbetrieb Tezgel Aßlar(function(){",
+     "rechteck": [
+      0,
+      0,
+      390,
+      10009
+     ],
+     "position": "static",
+     "display": "block",
+     "zIndex": "auto"
+    }
+   ],
+   "innerhalbViewport": true
+  }
+ ]
+}

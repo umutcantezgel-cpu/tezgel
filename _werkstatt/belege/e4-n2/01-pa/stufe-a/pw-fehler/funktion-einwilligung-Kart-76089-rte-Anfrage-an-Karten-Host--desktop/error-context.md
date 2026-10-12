@@ -1,0 +1,853 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Zum Hauptinhalt springen" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Fliesenverlegung Tezgel – Fachbetrieb Aßlar · Wetzlar – Startseite" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar" [ref=e7]
+      - navigation "Hauptnavigation" [ref=e8]:
+        - generic [ref=e10]:
+          - link "Badsanierung" [ref=e11] [cursor=pointer]:
+            - /url: /bad
+          - button "Untermenü Badsanierung öffnen" [ref=e12]:
+            - img [ref=e13]
+        - generic [ref=e16]:
+          - link "Fachgewerke" [ref=e17] [cursor=pointer]:
+            - /url: /leistungen
+          - button "Untermenü Fachgewerke öffnen" [ref=e18]:
+            - img [ref=e19]
+        - generic [ref=e22]:
+          - link "Standorte" [ref=e23] [cursor=pointer]:
+            - /url: /standorte
+          - button "Untermenü Standorte öffnen" [ref=e24]:
+            - img [ref=e25]
+        - generic [ref=e28]:
+          - link "Ratgeber" [ref=e29] [cursor=pointer]:
+            - /url: /blog
+          - button "Untermenü Ratgeber öffnen" [ref=e30]:
+            - img [ref=e31]
+        - generic [ref=e34]:
+          - link "Über uns" [ref=e35] [cursor=pointer]:
+            - /url: /ueber-uns
+          - button "Untermenü Über uns öffnen" [ref=e36]:
+            - img [ref=e37]
+      - generic [ref=e39]:
+        - 'link "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 567" [ref=e40] [cursor=pointer]':
+          - /url: tel:+4964414483567
+          - img [ref=e41]
+          - generic [ref=e43]: 06441 / 44 83 567
+        - button "WhatsApp-Nachricht an Fliesenverlegung Tezgel senden" [ref=e44]:
+          - img [ref=e45]
+          - generic [ref=e47]: WhatsApp
+        - link "Aufmaß anfragen" [ref=e48] [cursor=pointer]:
+          - /url: /kontakt
+  - main [ref=e49]:
+    - generic [ref=e53]:
+      - paragraph [ref=e54]: Fachbetrieb Aßlar · Wetzlar · Hessen
+      - heading "Kontakt & Aufmaß Fliesenleger Tezgel" [level=1] [ref=e55]:
+        - generic [ref=e56]: Kontakt & Aufmaß Fliesenleger Tezgel
+      - paragraph [ref=e58]: "Ihr Fliesenleger für Aßlar, Wetzlar und ganz Hessen: Rufen Sie uns direkt an, schreiben Sie uns per WhatsApp oder sichern Sie sich über unsere Express-Anfrage Ihr kostenfreies Vor-Ort-Aufmaß mit verbindlichem Festpreisangebot."
+      - generic [ref=e59]:
+        - link "Zur Express-Anfrage" [ref=e60] [cursor=pointer]:
+          - /url: "#express-anfrage"
+          - generic [ref=e61]: Zur Express-Anfrage
+          - img [ref=e62]
+        - link "06441 / 44 83 567" [ref=e64] [cursor=pointer]:
+          - /url: tel:+4964414483567
+          - img [ref=e65]
+          - generic [ref=e67]: 06441 / 44 83 567
+    - region "Direkter Kontakt und Qualitätsversprechen" [ref=e68]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - img [ref=e74]
+            - generic [ref=e76]: Eingetragener HWK-Fachbetrieb
+          - heading "Direkter Kontakt" [level=3] [ref=e77]
+          - paragraph [ref=e78]: Sprechen Sie direkt mit Inhaber Deniz Tezgel – ohne Callcenter oder Warteschleifen.
+          - generic [ref=e79]:
+            - link "Büro / Festnetz 06441 / 44 83 567" [ref=e80] [cursor=pointer]:
+              - /url: tel:+49 6441 4483567
+              - generic [ref=e81]:
+                - img [ref=e82]
+                - generic [ref=e84]:
+                  - generic [ref=e85]: Büro / Festnetz
+                  - generic [ref=e86]: 06441 / 44 83 567
+              - img [ref=e87]
+            - link "Mobil & WhatsApp 0172 / 67 28 504" [ref=e89] [cursor=pointer]:
+              - /url: https://wa.me/491726728504
+              - generic [ref=e90]:
+                - img [ref=e91]
+                - generic [ref=e93]:
+                  - generic [ref=e94]: Mobil & WhatsApp
+                  - generic [ref=e95]: 0172 / 67 28 504
+              - img [ref=e96]
+            - link "E-Mail Adresse info@tezgel.de" [ref=e98] [cursor=pointer]:
+              - /url: mailto:info@tezgel.de
+              - generic [ref=e99]:
+                - img [ref=e100]
+                - generic [ref=e102]:
+                  - generic [ref=e103]: E-Mail Adresse
+                  - generic [ref=e104]: info@tezgel.de
+              - img [ref=e105]
+            - generic [ref=e107]:
+              - img [ref=e108]
+              - generic [ref=e110]:
+                - generic [ref=e111]: Bürozeiten
+                - generic [ref=e112]: "Mo–Do: 07:30 – 18:00 Uhr"
+                - generic [ref=e113]: "Fr: 07:30 – 17:00 Uhr"
+                - generic [ref=e114]: "Sa: 08:00 – 14:00 Uhr (Vor-Ort-Termine nach Vereinbarung)"
+            - generic [ref=e115]:
+              - img [ref=e116]
+              - generic [ref=e118]:
+                - generic [ref=e119]: Betriebssitz (HQ)
+                - generic [ref=e120]: Hohwardstraße 14
+                - generic [ref=e121]: 35614 Aßlar (Mittelhessen)
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e125]: Qualitätsversprechen
+              - generic [ref=e126]: HWK Wiesbaden
+            - heading "Persönliche Fachberatung" [level=2] [ref=e127]
+            - paragraph [ref=e128]: Inhaber Deniz Tezgel betreut jedes Projekt von der Vor-Ort-Begutachtung bis zur sauberen Endübergabe persönlich.
+            - figure "— Deniz Tezgel, Inhaber" [ref=e129]:
+              - blockquote [ref=e130]: „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“
+              - generic [ref=e131]: — Deniz Tezgel, Inhaber
+            - list [ref=e132]:
+              - listitem [ref=e133]:
+                - img [ref=e134]
+                - generic [ref=e136]: Normgerechte Verbundabdichtung nach DIN 18534
+              - listitem [ref=e137]:
+                - img [ref=e138]
+                - generic [ref=e140]: Garantierter Staubschutz bei Renovierungen
+              - listitem [ref=e141]:
+                - img [ref=e142]
+                - generic [ref=e144]: Eingetragen bei der Handwerkskammer Wiesbaden
+          - generic [ref=e145]:
+            - generic [ref=e146]: "Einsatzgebiet:"
+            - generic [ref=e147]: Aßlar, Wetzlar, Gießen, Herborn, Dillenburg & ganz Hessen
+            - link "Alle Standorte ansehen" [ref=e148] [cursor=pointer]:
+              - /url: /standorte
+    - region "Unser Fachbetrieb & Einsatzgebiet Mittelhessen" [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - paragraph [ref=e152]:
+            - img [ref=e153]
+            - text: Interaktive Karte & Standorte
+          - heading "Unser Fachbetrieb & Einsatzgebiet Mittelhessen" [level=2] [ref=e155]
+          - paragraph [ref=e157]: Zentrale in der Hohwardstraße 14, 35614 Aßlar – wählen Sie Ihre Stadt für Fahrtzeiten und Infos.
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - paragraph [ref=e162]:
+                - img [ref=e163]
+                - generic [ref=e165]: Standort & Einsatzradius
+              - heading "Mittelhessen vor Ort" [level=3] [ref=e166]
+              - paragraph [ref=e167]: Firmensitz Aßlar – täglicher Einsatz in Wetzlar, Gießen & Lahn-Dill.
+              - generic [ref=e168]:
+                - generic:
+                  - img
+                - textbox "Stadt oder Kreis filtern" [ref=e169]:
+                  - /placeholder: Stadt oder Kreis filtern...
+              - generic [ref=e170]:
+                - button "Alle" [pressed] [ref=e171]
+                - button "≤ 10 km" [ref=e172]
+                - button "≤ 25 km" [ref=e173]
+                - button "≤ 50 km" [ref=e174]
+              - list [ref=e175]:
+                - listitem [ref=e176]:
+                  - button "Wetzlar angrenzend" [ref=e177]:
+                    - generic [ref=e178]:
+                      - img [ref=e179]
+                      - generic [ref=e181]: Wetzlar
+                    - generic [ref=e182]: angrenzend
+                - listitem [ref=e183]:
+                  - button "Gießen ca. 25 km" [ref=e184]:
+                    - generic [ref=e185]:
+                      - img [ref=e186]
+                      - generic [ref=e188]: Gießen
+                    - generic [ref=e189]: ca. 25 km
+                - listitem [ref=e190]:
+                  - button "Marburg ca. 40 km" [ref=e191]:
+                    - generic [ref=e192]:
+                      - img [ref=e193]
+                      - generic [ref=e195]: Marburg
+                    - generic [ref=e196]: ca. 40 km
+                - listitem [ref=e197]:
+                  - button "Limburg an der Lahn ca. 35 km" [ref=e198]:
+                    - generic [ref=e199]:
+                      - img [ref=e200]
+                      - generic [ref=e202]: Limburg an der Lahn
+                    - generic [ref=e203]: ca. 35 km
+                - listitem [ref=e204]:
+                  - button "Bad Nauheim ca. 40 km" [ref=e205]:
+                    - generic [ref=e206]:
+                      - img [ref=e207]
+                      - generic [ref=e209]: Bad Nauheim
+                    - generic [ref=e210]: ca. 40 km
+                - listitem [ref=e211]:
+                  - button "Friedberg (Hessen) ca. 45 km" [ref=e212]:
+                    - generic [ref=e213]:
+                      - img [ref=e214]
+                      - generic [ref=e216]: Friedberg (Hessen)
+                    - generic [ref=e217]: ca. 45 km
+                - listitem [ref=e218]:
+                  - button "Butzbach ca. 35 km" [ref=e219]:
+                    - generic [ref=e220]:
+                      - img [ref=e221]
+                      - generic [ref=e223]: Butzbach
+                    - generic [ref=e224]: ca. 35 km
+                - listitem [ref=e225]:
+                  - button "Herborn ca. 20 km" [ref=e226]:
+                    - generic [ref=e227]:
+                      - img [ref=e228]
+                      - generic [ref=e230]: Herborn
+                    - generic [ref=e231]: ca. 20 km
+                - listitem [ref=e232]:
+                  - button "Dillenburg ca. 25 km" [ref=e233]:
+                    - generic [ref=e234]:
+                      - img [ref=e235]
+                      - generic [ref=e237]: Dillenburg
+                    - generic [ref=e238]: ca. 25 km
+                - listitem [ref=e239]:
+                  - button "Haiger ca. 30 km" [ref=e240]:
+                    - generic [ref=e241]:
+                      - img [ref=e242]
+                      - generic [ref=e244]: Haiger
+                    - generic [ref=e245]: ca. 30 km
+                - listitem [ref=e246]:
+                  - button "Braunfels ca. 10 km" [ref=e247]:
+                    - generic [ref=e248]:
+                      - img [ref=e249]
+                      - generic [ref=e251]: Braunfels
+                    - generic [ref=e252]: ca. 10 km
+                - listitem [ref=e253]:
+                  - button "Solms ca. 8 km" [ref=e254]:
+                    - generic [ref=e255]:
+                      - img [ref=e256]
+                      - generic [ref=e258]: Solms
+                    - generic [ref=e259]: ca. 8 km
+                - listitem [ref=e260]:
+                  - button "Aßlar ca. 5 km" [pressed] [ref=e261]:
+                    - generic [ref=e262]:
+                      - img [ref=e263]
+                      - generic [ref=e265]: Aßlar
+                    - generic [ref=e266]: ca. 5 km
+            - generic [ref=e267]:
+              - generic [ref=e268]:
+                - generic [ref=e269]: Aßlar
+                - generic [ref=e270]:
+                  - img [ref=e271]
+                  - generic [ref=e273]: Direkt vor Ort (Firmensitz)
+              - paragraph [ref=e274]: Firmensitz & Meister-Erfahrung – schnellste Reaktionszeit für Ihr Projekt.
+              - generic [ref=e275]:
+                - link "Route" [ref=e276] [cursor=pointer]:
+                  - /url: https://www.google.com/maps/dir/?api=1&destination=Hohwardstra%C3%9Fe%2014%2C%2035614%20A%C3%9Flar%2C%20Deutschland
+                  - generic [ref=e277]: Route
+                  - img [ref=e278]
+                - 'link "Fliesenverlegung Tezgel anrufen: 06441 / 44 83 567" [ref=e280] [cursor=pointer]':
+                  - /url: tel:+4964414483567
+                  - img [ref=e281]
+                  - generic [ref=e283]: Anrufen
+          - generic [ref=e287]:
+            - generic [ref=e288]:
+              - img [ref=e289]
+              - text: Karte
+            - generic [ref=e292]:
+              - paragraph [ref=e293]:
+                - img [ref=e294]
+                - generic [ref=e296]: Firmensitz Aßlar
+              - list [ref=e297]:
+                - listitem [ref=e298]:
+                  - generic [ref=e300]:
+                    - paragraph [ref=e301]:
+                      - generic [ref=e302]: ≤ 10 km
+                    - list [ref=e303]:
+                      - listitem [ref=e304]:
+                        - generic [ref=e305]:
+                          - generic [ref=e307]: Aßlar
+                          - generic [ref=e308]: Firmensitz
+                      - listitem [ref=e309]:
+                        - generic [ref=e310]:
+                          - generic [ref=e312]: Wetzlar
+                          - generic [ref=e313]: ca. 5 km
+                      - listitem [ref=e314]:
+                        - generic [ref=e315]:
+                          - generic [ref=e317]: Solms
+                          - generic [ref=e318]: ca. 8 km
+                      - listitem [ref=e319]:
+                        - generic [ref=e320]:
+                          - generic [ref=e322]: Braunfels
+                          - generic [ref=e323]: ca. 10 km
+                - listitem [ref=e324]:
+                  - generic [ref=e326]:
+                    - paragraph [ref=e327]:
+                      - generic [ref=e328]: ≤ 25 km
+                    - list [ref=e329]:
+                      - listitem [ref=e330]:
+                        - generic [ref=e331]:
+                          - generic [ref=e333]: Herborn
+                          - generic [ref=e334]: ca. 20 km
+                      - listitem [ref=e335]:
+                        - generic [ref=e336]:
+                          - generic [ref=e338]: Dillenburg
+                          - generic [ref=e339]: ca. 25 km
+                      - listitem [ref=e340]:
+                        - generic [ref=e341]:
+                          - generic [ref=e343]: Gießen
+                          - generic [ref=e344]: ca. 25 km
+                - listitem [ref=e345]:
+                  - generic [ref=e347]:
+                    - paragraph [ref=e348]:
+                      - generic [ref=e349]: ≤ 50 km
+                    - list [ref=e350]:
+                      - listitem [ref=e351]:
+                        - generic [ref=e352]:
+                          - generic [ref=e354]: Haiger
+                          - generic [ref=e355]: ca. 30 km
+                      - listitem [ref=e356]:
+                        - generic [ref=e357]:
+                          - generic [ref=e359]: Butzbach
+                          - generic [ref=e360]: ca. 35 km
+                      - listitem [ref=e361]:
+                        - generic [ref=e362]:
+                          - generic [ref=e364]: Limburg an der Lahn
+                          - generic [ref=e365]: ca. 35 km
+                      - listitem [ref=e366]:
+                        - generic [ref=e367]:
+                          - generic [ref=e369]: Bad Nauheim
+                          - generic [ref=e370]: ca. 40 km
+                      - listitem [ref=e371]:
+                        - generic [ref=e372]:
+                          - generic [ref=e374]: Marburg
+                          - generic [ref=e375]: ca. 40 km
+                      - listitem [ref=e376]:
+                        - generic [ref=e377]:
+                          - generic [ref=e379]: Friedberg (Hessen)
+                          - generic [ref=e380]: ca. 45 km
+            - generic [ref=e381]:
+              - paragraph [ref=e382]: Interaktive Karte geschützt (DSGVO)
+              - paragraph [ref=e383]: Um die interaktive Google Maps Karte mit Standorten und Routen anzuzeigen, ist Ihre Einwilligung in externe Medien erforderlich.
+              - generic [ref=e384]:
+                - button "Karte laden & zustimmen" [ref=e385]
+                - button "Cookie-Einstellungen" [ref=e386]
+    - region "Fliesenleger oder Badsanierung in Aßlar, Wetzlar & Mittelhessen gesucht?" [ref=e387]:
+      - generic [ref=e389]:
+        - generic [ref=e390]:
+          - generic [ref=e391]:
+            - img [ref=e392]
+            - generic [ref=e394]: Ihr regionaler Ansprechpartner für Aßlar, Wetzlar & Mittelhessen
+          - heading "Fliesenleger oder Badsanierung in Aßlar, Wetzlar & Mittelhessen gesucht?" [level=2] [ref=e395]
+          - paragraph [ref=e396]: Fachbetriebsleiter Deniz Tezgel berät Sie in Aßlar, Wetzlar & Mittelhessen persönlich und unverbindlich. Vereinbaren Sie direkt Ihr kostenfreies Aufmaß vor Ort.
+        - generic [ref=e397]:
+          - generic [ref=e398]:
+            - link "06441 / 44 83 567" [ref=e399] [cursor=pointer]:
+              - /url: tel:+4964414483567
+              - img [ref=e400]
+              - generic [ref=e402]: 06441 / 44 83 567
+            - link "WhatsApp Chat" [ref=e403] [cursor=pointer]:
+              - /url: https://wa.me/491726728504
+              - img [ref=e404]
+              - generic [ref=e406]: WhatsApp Chat
+          - list [ref=e407]:
+            - listitem [ref=e408]:
+              - img [ref=e409]
+              - generic [ref=e411]: "Mo - Fr: 07:30 – 18:00 Uhr"
+            - listitem [ref=e412]:
+              - img [ref=e413]
+              - generic [ref=e415]: Vor-Ort-Aufmaß kostenfrei
+            - listitem [ref=e416]:
+              - img [ref=e417]
+              - generic [ref=e419]: Verbindlicher Festpreis
+    - region "Wunschtermin in 2 Schritten reservieren" [ref=e420]:
+      - generic [ref=e422]:
+        - generic [ref=e423]:
+          - paragraph [ref=e424]:
+            - img [ref=e425]
+            - text: Verbindlicher Vor-Ort-Termin
+          - heading "Wunschtermin in 2 Schritten reservieren" [level=2] [ref=e427]
+          - paragraph [ref=e429]: Wählen Sie direkt einen freien Tag und eine Uhrzeit für Ihr kostenfreies Aufmaß vor Ort.
+        - generic [ref=e431]:
+          - generic [ref=e433]:
+            - generic [ref=e434]:
+              - img [ref=e435]
+              - generic [ref=e437]: Kostenloses Vor-Ort-Aufmaß
+            - heading "Kostenfreies Vor-Ort-Aufmaß & Schadensanalyse" [level=3] [ref=e438]
+            - paragraph [ref=e439]: Persönliche Beratung & Messung vor Ort durch Inhaber Deniz Tezgel
+          - generic [ref=e440]:
+            - paragraph [ref=e441]:
+              - img [ref=e442]
+              - generic [ref=e444]: "Schritt 1: Verfügbaren Tag & Uhrzeit wählen"
+            - region "Verfügbare Termine" [ref=e445]:
+              - group "Di, 13.10.2026" [ref=e446]:
+                - generic [ref=e448]: Di, 13.10.2026
+                - generic [ref=e449]:
+                  - button "08:30 Uhr" [ref=e450]:
+                    - generic [ref=e451]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e452]:
+                    - generic [ref=e453]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e454]:
+                    - generic [ref=e455]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e456]:
+                    - generic [ref=e457]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e458]:
+                    - generic [ref=e459]: 16:30 Uhr
+              - group "Mi, 14.10.2026" [ref=e460]:
+                - generic [ref=e462]: Mi, 14.10.2026
+                - generic [ref=e463]:
+                  - button "08:30 Uhr" [ref=e464]:
+                    - generic [ref=e465]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e466]:
+                    - generic [ref=e467]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e468]:
+                    - generic [ref=e469]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e470]:
+                    - generic [ref=e471]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e472]:
+                    - generic [ref=e473]: 16:30 Uhr
+              - group "Do, 15.10.2026" [ref=e474]:
+                - generic [ref=e476]: Do, 15.10.2026
+                - generic [ref=e477]:
+                  - button "08:30 Uhr" [ref=e478]:
+                    - generic [ref=e479]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e480]:
+                    - generic [ref=e481]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e482]:
+                    - generic [ref=e483]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e484]:
+                    - generic [ref=e485]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e486]:
+                    - generic [ref=e487]: 16:30 Uhr
+              - group "Fr, 16.10.2026" [ref=e488]:
+                - generic [ref=e490]: Fr, 16.10.2026
+                - generic [ref=e491]:
+                  - button "08:30 Uhr" [ref=e492]:
+                    - generic [ref=e493]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e494]:
+                    - generic [ref=e495]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e496]:
+                    - generic [ref=e497]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e498]:
+                    - generic [ref=e499]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e500]:
+                    - generic [ref=e501]: 16:30 Uhr
+              - group "Sa, 17.10.2026" [ref=e502]:
+                - generic [ref=e503]:
+                  - generic [ref=e504]: Sa, 17.10.2026
+                  - generic [ref=e505]: Samstag (Aufmaßtermin)
+                - generic [ref=e506]:
+                  - button "08:30 Uhr" [ref=e507]:
+                    - generic [ref=e508]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e509]:
+                    - generic [ref=e510]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e511]:
+                    - generic [ref=e512]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e513]:
+                    - generic [ref=e514]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e515]:
+                    - generic [ref=e516]: 16:30 Uhr
+              - group "Mo, 19.10.2026" [ref=e517]:
+                - generic [ref=e519]: Mo, 19.10.2026
+                - generic [ref=e520]:
+                  - button "08:30 Uhr" [ref=e521]:
+                    - generic [ref=e522]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e523]:
+                    - generic [ref=e524]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e525]:
+                    - generic [ref=e526]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e527]:
+                    - generic [ref=e528]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e529]:
+                    - generic [ref=e530]: 16:30 Uhr
+              - group "Di, 20.10.2026" [ref=e531]:
+                - generic [ref=e533]: Di, 20.10.2026
+                - generic [ref=e534]:
+                  - button "08:30 Uhr" [ref=e535]:
+                    - generic [ref=e536]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e537]:
+                    - generic [ref=e538]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e539]:
+                    - generic [ref=e540]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e541]:
+                    - generic [ref=e542]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e543]:
+                    - generic [ref=e544]: 16:30 Uhr
+              - group "Mi, 21.10.2026" [ref=e545]:
+                - generic [ref=e547]: Mi, 21.10.2026
+                - generic [ref=e548]:
+                  - button "08:30 Uhr" [ref=e549]:
+                    - generic [ref=e550]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e551]:
+                    - generic [ref=e552]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e553]:
+                    - generic [ref=e554]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e555]:
+                    - generic [ref=e556]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e557]:
+                    - generic [ref=e558]: 16:30 Uhr
+              - group "Do, 22.10.2026" [ref=e559]:
+                - generic [ref=e561]: Do, 22.10.2026
+                - generic [ref=e562]:
+                  - button "08:30 Uhr" [ref=e563]:
+                    - generic [ref=e564]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e565]:
+                    - generic [ref=e566]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e567]:
+                    - generic [ref=e568]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e569]:
+                    - generic [ref=e570]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e571]:
+                    - generic [ref=e572]: 16:30 Uhr
+              - group "Fr, 23.10.2026" [ref=e573]:
+                - generic [ref=e575]: Fr, 23.10.2026
+                - generic [ref=e576]:
+                  - button "08:30 Uhr" [ref=e577]:
+                    - generic [ref=e578]: 08:30 Uhr
+                  - button "10:30 Uhr" [ref=e579]:
+                    - generic [ref=e580]: 10:30 Uhr
+                  - button "13:00 Uhr" [ref=e581]:
+                    - generic [ref=e582]: 13:00 Uhr
+                  - button "15:00 Uhr" [ref=e583]:
+                    - generic [ref=e584]: 15:00 Uhr
+                  - button "16:30 Uhr" [ref=e585]:
+                    - generic [ref=e586]: 16:30 Uhr
+    - region "Ihr Vor-Ort-Aufmaß anfordern" [ref=e587]:
+      - generic [ref=e589]:
+        - generic [ref=e590]:
+          - paragraph [ref=e591]:
+            - img [ref=e592]
+            - text: Oder detailliert konfigurieren
+          - heading "Ihr Vor-Ort-Aufmaß anfordern" [level=2] [ref=e594]
+          - paragraph [ref=e596]: Füllen Sie kurz die Projektdaten aus – Fachbetriebsleiter Deniz Tezgel meldet sich persönlich bei Ihnen.
+        - generic [ref=e598]:
+          - generic [ref=e599]:
+            - generic [ref=e600]:
+              - generic [ref=e601]:
+                - img [ref=e602]
+                - text: Express-Anfrage in 60 Sekunden
+              - list "Fortschritt" [ref=e604]:
+                - listitem [ref=e605]: "1"
+                - listitem [ref=e606]: "2"
+                - listitem [ref=e607]: "3"
+            - paragraph [ref=e608]: "Schritt 1: Welches Projekt planen Sie?"
+            - paragraph [ref=e609]: Wählen Sie Ihr Fachgewerk für eine passende Planung.
+          - generic [ref=e610]:
+            - generic [ref=e611]:
+              - button "Bad & Wellness Walk-In-Dusche, Großformate, Ablagenischen" [pressed] [ref=e612]:
+                - generic [ref=e613]:
+                  - img [ref=e614]
+                  - generic [ref=e616]:
+                    - generic [ref=e617]: Bad & Wellness
+                    - generic [ref=e618]: Walk-In-Dusche, Großformate, Ablagenischen
+              - button "Wohnbereich & Neubau Feinsteinzeug, Küche, Diele & Flure" [ref=e619]:
+                - generic [ref=e620]:
+                  - img [ref=e621]
+                  - generic [ref=e623]:
+                    - generic [ref=e624]: Wohnbereich & Neubau
+                    - generic [ref=e625]: Feinsteinzeug, Küche, Diele & Flure
+              - button "Balkon & Terrasse 2-cm-Keramikplatten auf Stelzlagern" [ref=e626]:
+                - generic [ref=e627]:
+                  - img [ref=e628]
+                  - generic [ref=e630]:
+                    - generic [ref=e631]: Balkon & Terrasse
+                    - generic [ref=e632]: 2-cm-Keramikplatten auf Stelzlagern
+              - button "Treppen & Naturstein Granit, Naturstein & Treppenstufen" [ref=e633]:
+                - generic [ref=e634]:
+                  - img [ref=e635]
+                  - generic [ref=e637]:
+                    - generic [ref=e638]: Treppen & Naturstein
+                    - generic [ref=e639]: Granit, Naturstein & Treppenstufen
+              - button "Untergrund & Abdichtung Estrichausgleich & DIN 18534 Verbundabdichtung" [ref=e640]:
+                - generic [ref=e641]:
+                  - img [ref=e642]
+                  - generic [ref=e644]:
+                    - generic [ref=e645]: Untergrund & Abdichtung
+                    - generic [ref=e646]: Estrichausgleich & DIN 18534 Verbundabdichtung
+            - 'button "Weiter zu Schritt 2: Fläche & Ort" [ref=e648]':
+              - text: "Weiter zu Schritt 2: Fläche & Ort"
+              - img [ref=e649]
+    - region "Sie möchten Ihr Bad oder Ihre Fliesen erneuern? Jetzt unverbindlich beraten lassen." [ref=e651]:
+      - generic [ref=e653]:
+        - generic [ref=e654]:
+          - generic [ref=e655]:
+            - heading "Sie möchten Ihr Bad oder Ihre Fliesen erneuern? Jetzt unverbindlich beraten lassen." [level=2] [ref=e656]
+            - paragraph [ref=e657]: Kostenfreies Vor-Ort-Aufmaß • Feste Terminabsprachen • HWK-Fachbetrieb
+            - list [ref=e658]:
+              - listitem [ref=e659]:
+                - img [ref=e660]
+                - generic [ref=e662]: Kostenfreies Vor-Ort-Aufmaß in Aßlar, Wetzlar & Hessen
+              - listitem [ref=e663]:
+                - img [ref=e664]
+                - generic [ref=e666]: Verbindlicher Festpreis ohne versteckte Kosten
+              - listitem [ref=e667]:
+                - img [ref=e668]
+                - generic [ref=e670]: Saubere Baustelle mit Staubschutz-Garantie
+          - generic [ref=e671]:
+            - 'link "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 567" [ref=e672] [cursor=pointer]':
+              - /url: tel:+4964414483567
+              - text: 06441 / 44 83 567
+            - link "Jetzt Deniz Tezgel anrufen" [ref=e673] [cursor=pointer]:
+              - /url: tel:+4964414483567
+              - img [ref=e674]
+              - generic [ref=e676]: Jetzt Deniz Tezgel anrufen
+            - link "WhatsApp Nachricht an Fliesenverlegung Tezgel senden" [ref=e677] [cursor=pointer]:
+              - /url: https://wa.me/491726728504
+              - img [ref=e678]
+              - generic [ref=e680]: Per WhatsApp schreiben
+        - generic [ref=e681]:
+          - img [ref=e682]
+          - paragraph [ref=e684]: 5,0 Google-Bewertung bei 27 echten Kundenstimmen
+  - contentinfo [ref=e685]:
+    - generic [ref=e687]:
+      - list [ref=e688]:
+        - listitem [ref=e689]:
+          - img [ref=e690]
+          - generic [ref=e692]:
+            - generic [ref=e693]: HWK Fachbetrieb
+            - text: HWK Wiesbaden
+        - listitem [ref=e694]:
+          - img [ref=e695]
+          - generic [ref=e697]:
+            - generic [ref=e698]: DIN 18534
+            - text: Verbundabdichtung
+        - listitem [ref=e699]:
+          - img [ref=e700]
+          - generic [ref=e702]:
+            - generic [ref=e703]: Staubschutz-Garantie
+            - text: bei bewohnten Sanierungen
+        - listitem [ref=e704]:
+          - img [ref=e705]
+          - generic [ref=e707]:
+            - generic [ref=e708]: Festpreisgarantie
+            - text: transparent kalkuliert
+      - link "Kostenfreies Vor-Ort-Aufmaß" [ref=e709] [cursor=pointer]:
+        - /url: /kontakt
+        - text: Kostenfreies Vor-Ort-Aufmaß
+        - img [ref=e710]
+    - generic [ref=e712]:
+      - generic [ref=e713]:
+        - link "Fliesenverlegung Tezgel – Inh. Deniz Tezgel · Fachbetrieb Aßlar / Wetzlar – Startseite" [ref=e714] [cursor=pointer]:
+          - /url: /
+          - img "Fliesenverlegung Tezgel – Fachbetrieb Aßlar & Wetzlar" [ref=e715]
+          - generic [ref=e716]: Inh. Deniz Tezgel · Fachbetrieb Aßlar / Wetzlar
+        - blockquote [ref=e717]: „Die Zufriedenheit unserer Kunden ist die beste Reklame für uns.“
+        - generic [ref=e718]:
+          - generic [ref=e719]:
+            - text: Anschrift
+            - generic [ref=e720]: Hohwardstraße 14, 35614 Aßlar
+          - generic [ref=e721]:
+            - text: Telefon
+            - 'link "Fliesenverlegung Tezgel telefonisch anrufen: 06441 / 44 83 567" [ref=e722] [cursor=pointer]':
+              - /url: tel:+4964414483567
+              - text: 06441 / 44 83 567
+          - generic [ref=e723]:
+            - text: Mobil & WhatsApp
+            - 'link "Mobil & WhatsApp: 0172 / 67 28 504 – Chat mit Deniz Tezgel starten" [ref=e724] [cursor=pointer]':
+              - /url: https://api.whatsapp.com/send?phone=491726728504
+              - text: 0172 / 67 28 504
+          - generic [ref=e725]:
+            - text: Fax
+            - generic [ref=e726]: 06441 / 44 83 548
+          - generic [ref=e727]:
+            - text: E-Mail
+            - 'link "E-Mail an Fliesenverlegung Tezgel senden: info@tezgel.de" [ref=e728] [cursor=pointer]':
+              - /url: mailto:info@tezgel.de
+              - text: info@tezgel.de
+          - generic [ref=e729]:
+            - text: Zeiten
+            - generic [ref=e730]:
+              - text: "Mo - Fr: 07:30 – 18:00 Uhr"
+              - text: "Sa: 08:00 – 14:00 Uhr (Vor-Ort-Termine)"
+        - generic [ref=e731]:
+          - generic [ref=e732]:
+            - term [ref=e733]: Kammer
+            - definition [ref=e734]: Handwerkskammer Wiesbaden
+          - generic [ref=e735]:
+            - term [ref=e736]: Betrieb seit
+            - definition [ref=e737]: "2008"
+          - generic [ref=e738]:
+            - term [ref=e739]: USt-IdNr.
+            - definition [ref=e740]: DE 259249094
+      - generic [ref=e741]:
+        - navigation "Badsanierung" [ref=e742]:
+          - paragraph [ref=e743]: Badsanierung
+          - list [ref=e744]:
+            - listitem [ref=e745]:
+              - link "Badsanierung im Überblick" [ref=e746] [cursor=pointer]:
+                - /url: /bad
+            - listitem [ref=e747]:
+              - link "Badsanierung komplett" [ref=e748] [cursor=pointer]:
+                - /url: /bad/badsanierung
+            - listitem [ref=e749]:
+              - link "Fliesen & XXL-Großformate" [ref=e750] [cursor=pointer]:
+                - /url: /bad/fliesen
+            - listitem [ref=e751]:
+              - link "Barrierefreies Bad" [ref=e752] [cursor=pointer]:
+                - /url: /bad/barrierefreies-bad
+            - listitem [ref=e753]:
+              - link "Bad aus einer Hand" [ref=e754] [cursor=pointer]:
+                - /url: /bad/bad-aus-einer-hand
+            - listitem [ref=e755]:
+              - link "Badplaner" [ref=e756] [cursor=pointer]:
+                - /url: /bad/badplaner
+            - listitem [ref=e757]:
+              - link "Bad-Projektcheck" [ref=e758] [cursor=pointer]:
+                - /url: /bad/projekt-check
+            - listitem [ref=e759]:
+              - link "Musterbäder" [ref=e760] [cursor=pointer]:
+                - /url: /bad/musterbaeder
+            - listitem [ref=e761]:
+              - link "Badanfrage" [ref=e762] [cursor=pointer]:
+                - /url: /bad/badanfrage
+        - navigation "Fachgewerke & Fachthemen" [ref=e763]:
+          - paragraph [ref=e764]: Fachgewerke & Fachthemen
+          - list [ref=e765]:
+            - listitem [ref=e766]:
+              - link "Alle Fachgewerke" [ref=e767] [cursor=pointer]:
+                - /url: /leistungen
+            - listitem [ref=e768]:
+              - link "Fliesen & Verlegung" [ref=e769] [cursor=pointer]:
+                - /url: /fliesen
+            - listitem [ref=e770]:
+              - link "Untergrund & Abdichtung" [ref=e771] [cursor=pointer]:
+                - /url: /untergrund-abdichtung
+            - listitem [ref=e772]:
+              - link "Balkon & Terrasse" [ref=e773] [cursor=pointer]:
+                - /url: /balkon-terrasse
+            - listitem [ref=e774]:
+              - link "Naturstein & Granit" [ref=e775] [cursor=pointer]:
+                - /url: /naturstein
+            - listitem [ref=e776]:
+              - link "Treppen" [ref=e777] [cursor=pointer]:
+                - /url: /treppen
+            - listitem [ref=e778]:
+              - link "Fliesen-Konfigurator" [ref=e779] [cursor=pointer]:
+                - /url: /fliesen/konfigurator
+            - listitem [ref=e780]:
+              - link "Schadensanalyse" [ref=e781] [cursor=pointer]:
+                - /url: /schadensanalyse
+            - listitem [ref=e782]:
+              - link "Fliesenreparatur" [ref=e783] [cursor=pointer]:
+                - /url: /fliesenreparatur
+        - navigation "Standorte Hessen" [ref=e784]:
+          - paragraph [ref=e785]: Standorte Hessen
+          - list [ref=e786]:
+            - listitem [ref=e787]:
+              - link "Wetzlar" [ref=e788] [cursor=pointer]:
+                - /url: /standorte/wetzlar
+            - listitem [ref=e789]:
+              - link "Gießen" [ref=e790] [cursor=pointer]:
+                - /url: /standorte/giessen
+            - listitem [ref=e791]:
+              - link "Marburg" [ref=e792] [cursor=pointer]:
+                - /url: /standorte/marburg
+            - listitem [ref=e793]:
+              - link "Limburg an der Lahn" [ref=e794] [cursor=pointer]:
+                - /url: /standorte/limburg
+            - listitem [ref=e795]:
+              - link "Bad Nauheim" [ref=e796] [cursor=pointer]:
+                - /url: /standorte/bad-nauheim
+            - listitem [ref=e797]:
+              - link "Friedberg (Hessen)" [ref=e798] [cursor=pointer]:
+                - /url: /standorte/friedberg
+            - listitem [ref=e799]:
+              - link "Butzbach" [ref=e800] [cursor=pointer]:
+                - /url: /standorte/butzbach
+            - listitem [ref=e801]:
+              - link "Herborn" [ref=e802] [cursor=pointer]:
+                - /url: /standorte/herborn
+            - listitem [ref=e803]:
+              - link "Dillenburg" [ref=e804] [cursor=pointer]:
+                - /url: /standorte/dillenburg
+            - listitem [ref=e805]:
+              - link "Haiger" [ref=e806] [cursor=pointer]:
+                - /url: /standorte/haiger
+            - listitem [ref=e807]:
+              - link "Braunfels" [ref=e808] [cursor=pointer]:
+                - /url: /standorte/braunfels
+            - listitem [ref=e809]:
+              - link "Solms" [ref=e810] [cursor=pointer]:
+                - /url: /standorte/solms
+            - listitem [ref=e811]:
+              - link "Aßlar" [ref=e812] [cursor=pointer]:
+                - /url: /standorte/asslar
+            - listitem [ref=e813]:
+              - link "Fliesenberatung Wetzlar" [ref=e814] [cursor=pointer]:
+                - /url: /ausstellung/wetzlar
+            - listitem [ref=e815]:
+              - link "Fliesenberatung Gießen" [ref=e816] [cursor=pointer]:
+                - /url: /ausstellung/giessen
+        - navigation "Unternehmen & Ratgeber" [ref=e817]:
+          - paragraph [ref=e818]: Unternehmen & Ratgeber
+          - list [ref=e819]:
+            - listitem [ref=e820]:
+              - link "Über Deniz Tezgel" [ref=e821] [cursor=pointer]:
+                - /url: /ueber-uns
+            - listitem [ref=e822]:
+              - link "Qualitätsversprechen" [ref=e823] [cursor=pointer]:
+                - /url: /unternehmen
+            - listitem [ref=e824]:
+              - link "Team" [ref=e825] [cursor=pointer]:
+                - /url: /team
+            - listitem [ref=e826]:
+              - link "Referenzen & Bewertungen" [ref=e827] [cursor=pointer]:
+                - /url: /referenzen
+            - listitem [ref=e828]:
+              - link "Ratgeber & Blog" [ref=e829] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e830]:
+              - link "Häufige Fragen" [ref=e831] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=e832]:
+              - link "Vor-Ort-Beratung" [ref=e833] [cursor=pointer]:
+                - /url: /beratung
+            - listitem [ref=e834]:
+              - link "Förderung" [ref=e835] [cursor=pointer]:
+                - /url: /foerderung
+            - listitem [ref=e836]:
+              - link "Downloads" [ref=e837] [cursor=pointer]:
+                - /url: /downloads
+            - listitem [ref=e838]:
+              - link "Partner" [ref=e839] [cursor=pointer]:
+                - /url: /partner
+            - listitem [ref=e840]:
+              - link "Karriere" [ref=e841] [cursor=pointer]:
+                - /url: /karriere
+            - listitem [ref=e842]:
+              - link "Kontakt" [ref=e843] [cursor=pointer]:
+                - /url: /kontakt
+    - generic [ref=e845]:
+      - paragraph [ref=e846]: © 2026 Fliesenverlegung Tezgel · Inh. Deniz Tezgel · Alle Rechte vorbehalten.
+      - navigation "Rechtliches" [ref=e847]:
+        - list [ref=e848]:
+          - listitem [ref=e849]:
+            - link "Impressum" [ref=e850] [cursor=pointer]:
+              - /url: /impressum
+          - listitem [ref=e851]:
+            - link "Datenschutz" [ref=e852] [cursor=pointer]:
+              - /url: /datenschutz
+          - listitem [ref=e853]:
+            - link "AGB" [ref=e854] [cursor=pointer]:
+              - /url: /agb
+          - listitem [ref=e855]:
+            - link "Widerruf" [ref=e856] [cursor=pointer]:
+              - /url: /widerruf
+          - listitem [ref=e857]:
+            - link "Cookie-Richtlinie" [ref=e858] [cursor=pointer]:
+              - /url: /cookie-richtlinie
+          - listitem [ref=e859]:
+            - link "Barrierefreiheit" [ref=e860] [cursor=pointer]:
+              - /url: /barrierefreiheit
+          - listitem [ref=e861]:
+            - button "Cookie-Einstellungen verwalten" [ref=e862]:
+              - img [ref=e863]
+              - generic [ref=e865]: Cookie-Einstellungen
+      - paragraph [ref=e866]:
+        - text: "Webdesign & SEO:"
+        - link "Webdesign Wetzlar – Coday" [ref=e867] [cursor=pointer]:
+          - /url: https://www.codayweb.de/de
+  - alert [ref=e868]: Kontakt & Aufmaß Fliesenleger Tezgel
+```

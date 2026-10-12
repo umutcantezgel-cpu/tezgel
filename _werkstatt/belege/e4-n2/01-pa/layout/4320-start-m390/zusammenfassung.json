@@ -1,0 +1,18 @@
+{
+ "seite": "/",
+ "ansicht": "m390",
+ "base": "http://127.0.0.1:4320",
+ "laeufe": 3,
+ "median_summe": 0.05311,
+ "median_kopfBeitrag": 0,
+ "summen_je_lauf": [
+  0.05311,
+  0,
+  0.05311
+ ],
+ "kopf_je_lauf": [
+  0,
+  0,
+  0
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "seite": "/bad",
+ "ansicht": "d1440",
+ "base": "http://127.0.0.1:4320",
+ "lauf": 3,
+ "ladeEndeMs": 6739,
+ "fensterEndeMs": 11739,
+ "laufzeitMs": 12074,
+ "summe": 0,
+ "kopfBeitrag": 0,
+ "anzahlEintraege": 1,
+ "anzahlNachEingabe": 0,
+ "eintraege": [
+  {
+   "t": 10151,
+   "wert": 0.000002706645447530864,
+   "juengst": false,
+   "quellen": [
+    {
+     "knoten": null,
+     "vorher": [
+      91,
+      850,
+      24,
+      24
+     ],
+     "nachher": [
+      98,
+      850,
+      23,
+      24
+     ]
+    }
+   ]
+  }
+ ]
+}

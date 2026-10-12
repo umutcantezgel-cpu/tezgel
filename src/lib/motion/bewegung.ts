@@ -42,7 +42,12 @@ export function beobachte(wurzel: ParentNode = document): void {
   if (!html.classList.contains('k-bewegung')) return;
   html.classList.add('k-modul');
   if (!aktiv() || typeof IntersectionObserver === 'undefined') {
-    wurzel.querySelectorAll('[data-motion]').forEach(setzeAn);
+    // Endzustand nur für Kennungen mit Startzustand (laden, sicht) – reine CSS-Kennungen (druck, zustand, aufklappen …)
+    // bleiben unberührt: ihre Elemente liegen oft in nachgeladenen Inseln, die noch hydrieren (Hydrierungswarnung
+    // „data-motion-stand“ am Knopf im Formular, Prüfstufe A E4-N2-01)
+    for (const kennung of [...ladeKennungen(), ...beobachteteKennungen(false), ...beobachteteKennungen(true)]) {
+      wurzel.querySelectorAll(`[data-motion="${kennung}"]`).forEach(setzeAn);
+    }
     return;
   }
   const grob = window.matchMedia('(hover: none), (pointer: coarse)').matches;

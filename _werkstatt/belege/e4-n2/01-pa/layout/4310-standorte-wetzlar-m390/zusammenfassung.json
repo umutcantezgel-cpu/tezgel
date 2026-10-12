@@ -1,0 +1,18 @@
+{
+ "seite": "/standorte/wetzlar",
+ "ansicht": "m390",
+ "base": "http://127.0.0.1:4310",
+ "laeufe": 3,
+ "median_summe": 0.17179,
+ "median_kopfBeitrag": 0.17179,
+ "summen_je_lauf": [
+  0.17179,
+  0.17179,
+  0.17179
+ ],
+ "kopf_je_lauf": [
+  0.17179,
+  0.17179,
+  0.17179
+ ]
+}
