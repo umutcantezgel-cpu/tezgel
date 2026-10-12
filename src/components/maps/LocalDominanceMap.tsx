@@ -1,12 +1,15 @@
 'use client';
 
-// Regionale Marktabdeckung der Stadtseite (E4-NACH-09, Befund 27/28/29): helle Fliesenfläche mit Fugen statt des Radars auf
-// Tinte. Die Zonen ab Aßlar als Zonenliste (Einzugsband, kompakt, stapelnd) mit der eigenen Stadt hervorgehoben; die Rangliste
-// als Felder an der Fuge; Zentrum, Fahrtzeit und Radius wie im Bestand; Route in Google Maps als Nebenknopf.
+// Regionale Marktabdeckung der Stadtseite (E4-NACH-09, Befund 27/28/29; E3-SICHT-2-ERZ Befund 19–21, E4-N2-08): helle
+// Fliesenfläche mit Fugen. Links der Ausschnitt des Einzugsbands – nur die Zone der Stadt ab dem Firmensitz, die Stadt mit
+// Fugenkreuz, in einer Spalte bis max-w-mass, Entfernungen in Mono direkt neben dem Ort; rechts der Text (Rangliste,
+// Zentrum, Fahrtzeit, Radius, Route in Google Maps als Nebenknopf). Das volle Einzugsband steht nur im Planblatt des Einstiegs.
 import clsx from 'clsx';
 import Icon from '@/components/icons/Icon';
-import Einzugsband from '@/components/kern/Einzugsband';
-import { knopfKlassen } from '@/components/kern/stile';
+import Fugenkreuz from '@/components/kern/Fugenkreuz';
+import { etikettForm, etikettKlassen, knopfKlassen } from '@/components/kern/stile';
+import { CITIES } from '@/config/cities';
+import { gruppiereNachZone, mitEntfernungAbSitz } from '@/lib/einzugszonen';
 import { getDirectionsUrl, calculateEstimatedDriveTime, CITY_HUB_DATA } from '@/lib/maps/getMapEmbedUrl';
 
 export interface LocalDominanceMapProps {
@@ -17,12 +20,18 @@ export interface LocalDominanceMapProps {
   citySlug?: string;
 }
 
+// Zonen des Einzugsbands (Entfernungen ab Aßlar, dieselbe Quelle wie das Band im Planblatt)
+const ZONEN = gruppiereNachZone(mitEntfernungAbSitz(CITIES, CITY_HUB_DATA));
+
+// Entfernung ab dem Firmensitz (Bestandswortlaut des Bands)
+const entfernung = (km: number) => (km === 0 ? 'Firmensitz' : `ca. ${km} km`);
+
 /**
  * ══════════════════════════════════════════════════════════════
  * Regionale Marktabdeckung (Stadtseite)
  * ══════════════════════════════════════════════════════════════
+ * - Ausschnitt: die Zone der Stadt ab Aßlar mit den Nachbarorten dieser Zone; die eigene Stadt trägt das Fugenkreuz.
  * - Rangliste als Felder an der Fuge: Sterne für Bewertungen, Haken für Angaben.
- * - Zonenliste ab Aßlar (Einzugsband, kompakt) mit der eigenen Stadt hervorgehoben.
  * - Berechnet die Fahrtzeit ab Aßlar und verlinkt auf die Routenplanung.
  */
 export function LocalDominanceMap({
@@ -45,42 +54,70 @@ export function LocalDominanceMap({
   const distanceKm = hubData ? hubData.distanceKm : Math.max(5, Math.round(radiusKm * 0.7));
   const driveInfo = calculateEstimatedDriveTime(distanceKm);
   const routeUrl = getDirectionsUrl(centerCity);
+  const zone = ZONEN.find((gruppe) => gruppe.orte.some((o) => o.slug === citySlug));
 
   return (
-    <div className={clsx('flex flex-col gap-6 border border-fuge bg-fliese p-6 text-tinte lg:p-8', className)}>
-      {/* Rangliste: Felder an der Fuge */}
-      <ul className="grid gap-px border border-fuge bg-fuge">
-        {topRankings.map((badge, idx) => (
-          <li key={idx} className="flex items-center gap-3 bg-fliese px-4 py-3 font-text text-fs-2 text-tinte">
-            <Icon name={badge.includes('★') ? 'stern' : 'haken'} groesse={4} className="text-tinte-2" />
-            <span>{badge}</span>
-          </li>
-        ))}
-      </ul>
+    <div className={clsx('flex flex-col gap-8 border border-fuge bg-fliese p-6 text-tinte lg:flex-row lg:items-start lg:gap-x-12 lg:p-8', className)}>
+      {/* Ausschnitt: die Zone der Stadt als Zeichnung mit Lot, höchstens max-w-mass breit; Entfernung direkt neben dem Ort */}
+      {zone && (
+        <div className="w-fit max-w-mass">
+          <p className={clsx(etikettForm, 'mb-4 text-tinte')}>
+            <Fugenkreuz className="size-3 shrink-0 text-tinte" />
+            <span>Firmensitz Aßlar</span>
+          </p>
+          <div className="border-l-2 border-tinte pl-4">
+            <p className={etikettKlassen}>{zone.zone.etikett}</p>
+            <ul className="mt-2 border-t border-fuge">
+              {zone.orte.map((o) => {
+                const ist = o.slug === citySlug;
+                return (
+                  <li key={o.slug} className="flex items-center justify-between gap-x-6 border-b border-fuge py-2 font-text text-fs-2 text-tinte">
+                    <span className="flex min-w-0 items-center gap-2">
+                      {ist ? <Fugenkreuz className="size-3 shrink-0 text-tinte" /> : <span aria-hidden="true" className="size-3 shrink-0" />}
+                      <span className={clsx('wrap-break-word', ist && 'font-semibold')}>{o.name}</span>
+                    </span>
+                    <span className="shrink-0 font-mono text-fs-1 text-tinte-2">{entfernung(o.distanceKm)}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      )}
 
-      {/* Zonen ab Aßlar: stapelnd, ohne Lot in Rot; die eigene Stadt trägt das Fugenkreuz */}
-      <Einzugsband aktuell={citySlug} kompakt form="stapel" />
+      {/* Text neben dem Ausschnitt: Rangliste, Zentrum und Fahrtzeit, Radius und Route */}
+      <div className="flex min-w-0 flex-1 flex-col gap-6">
+        {/* Rangliste: Felder an der Fuge */}
+        <ul className="grid gap-px border border-fuge bg-fuge">
+          {topRankings.map((badge, idx) => (
+            <li key={idx} className="flex items-center gap-3 bg-fliese px-4 py-3 font-text text-fs-2 text-tinte">
+              <Icon name={badge.includes('★') ? 'stern' : 'haken'} groesse={4} className="text-tinte-2" />
+              <span>{badge}</span>
+            </li>
+          ))}
+        </ul>
 
-      {/* Zentrum und Fahrtzeit */}
-      <div className="flex flex-col gap-2 font-mono text-fs-1 text-tinte-2 sm:flex-row sm:flex-wrap sm:gap-x-6">
-        <span>Zentrum: {centerCity}</span>
-        <span className="inline-flex items-center gap-2">
-          <Icon name="uhr" groesse={4} />
-          <span>Fahrtzeit ab Aßlar: {driveInfo.text}</span>
-        </span>
-      </div>
+        {/* Zentrum und Fahrtzeit */}
+        <div className="flex flex-col gap-2 font-mono text-fs-1 text-tinte-2">
+          <span>Zentrum: {centerCity}</span>
+          <span className="inline-flex items-center gap-2">
+            <Icon name="uhr" groesse={4} />
+            <span>Fahrtzeit ab Aßlar: {driveInfo.text}</span>
+          </span>
+        </div>
 
-      {/* Fußzeile: Radius und Routenlink */}
-      <div className="flex flex-col gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <span className="inline-flex items-center gap-2 font-text text-fs-2 text-tinte-2">
-          <Icon name="haken" groesse={4} />
-          <span>Radius: ca. {radiusKm} km Vor-Ort-Einsatz</span>
-        </span>
+        {/* Fußzeile: Radius und Routenlink */}
+        <div className="flex flex-col gap-4 border-t border-fuge pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <span className="inline-flex items-center gap-2 font-text text-fs-2 text-tinte-2">
+            <Icon name="haken" groesse={4} />
+            <span>Radius: ca. {radiusKm} km Vor-Ort-Einsatz</span>
+          </span>
 
-        <a href={routeUrl} target="_blank" rel="noopener noreferrer" className={knopfKlassen('neben', 'shrink-0')} data-motion="druck">
-          <span>Route in Google Maps</span>
-          <Icon name="link-extern" groesse={4} />
-        </a>
+          <a href={routeUrl} target="_blank" rel="noopener noreferrer" className={knopfKlassen('neben', 'shrink-0')} data-motion="druck">
+            <span>Route in Google Maps</span>
+            <Icon name="link-extern" groesse={4} />
+          </a>
+        </div>
       </div>
     </div>
   );

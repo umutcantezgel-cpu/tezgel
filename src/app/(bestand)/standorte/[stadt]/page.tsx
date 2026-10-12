@@ -215,18 +215,15 @@ export default async function StandortPage({
         {/* 3. ANFAHRT: Bestandsbaustein, unverändert eingebunden */}
         <RouteVisualization city={city} />
 
-        {/* 4. EINSATZGEBIET: Titelzeile und Anfahrtshinweis, darunter die Karte des Einsatzgebiets (Bestandsbaustein) */}
+        {/* 4. EINSATZGEBIET: Abschnitt mit H2 wie die übrigen Abschnitte (E3-SICHT-2-ERZ Befund 21); darunter der Ausschnitt
+            der Zone der Stadt neben dem Text (LocalDominanceMap, Befund 19/20) – kein zweites volles Einzugsband */}
         <Abschnitt
-          aria-label={`Einsatzgebiet und Marktabdeckung ${city.name}`}
+          titelId="stadt-einsatzgebiet"
           leitachse
           spaet
           etikett="Regionale Marktabdeckung"
-          einleitung={
-            <>
-              <p className="font-anzeige text-fs-4 font-semibold text-tinte">Einsatzgebiet {city.name} &amp; Mittelhessen</p>
-              <p className="mt-2 text-fs-2 text-tinte-2">Feste Anfahrtsrouten ab Aßlar im gesamten Lahn-Dill-Kreis &amp; Umgebung.</p>
-            </>
-          }
+          titel={<>Einsatzgebiet {city.name} &amp; Mittelhessen</>}
+          einleitung={<p>Feste Anfahrtsrouten ab Aßlar im gesamten Lahn-Dill-Kreis &amp; Umgebung.</p>}
         >
           {/* Helle Zonenliste statt Radar (Befund 27/29); die Badge-Zeile „#1 Fachbetrieb …“ entfällt (Befund 28) */}
           <LocalDominanceMap
