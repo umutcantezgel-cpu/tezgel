@@ -651,6 +651,13 @@ Wiederaufnahme nach jedem Paket (L5) · `testzahl.mjs` zusätzlich mit Laufzeitz
 
 Danach das Phasentor E3.
 
+**Rahmen-Nachpakete (Befunde 12.10., vor E4, je eigener Push, Prüfprofil T2-Q):**
+- N-01 Startseite TBT (läuft): wiederholte Stil-Neuberechnung nach dem ersten Bild, live mobil 70,5 statt 82,5 Punkte.
+- R-01 Fokus nie verdeckt: a11y-zusatz zeigt live auf jeder Seite verdeckte Fokusziele unter festen Ebenen (`/ueber-uns` live 56, vor allem
+  mobil unter der unteren Leiste, am Desktop beim Erstbesuch unter dem Banner), dazu Fokus unter 2 px, Textabstand und forced-colors rot
+  (`belege/s-02-live/a11y-zusatz.json`). Ziel: harte Kennzahlen 0 auf allen Hauptansichten (scroll-padding-bottom für die Leiste,
+  Banner-Lage, Fokusring). Gemeinsame Dateien → nach N-01, nicht parallel dazu.
+
 **E4 · Familien** (Haiku mit `umbau.mjs` und Bausteinen, Opus nimmt ab; je 2–3 Seiten):
 - `bad/*`: 4 Schritte, darunter Musterbäder samt `[slug]`.
 - `fliesen/*`: 7 Schritte.
