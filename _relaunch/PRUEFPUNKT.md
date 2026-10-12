@@ -1,7 +1,8 @@
 # PRUEFPUNKT
 
 - Lauf: 1 (angepasst, E-000) · **Vereinheitlichung (E-037, E-038):** Vorbild ist die live laufende Fusions-Startseite (KERN v2); nur diese Sitzung baut, Seite für Seite direkt auf `main`. Plan: `PLAN.md`, Abschnitt „Vereinheitlichung“; Stand und Reihenfolge ab 12.10.: Plan-Datei der Sitzung, Abschnitt „Stand 12.10.“ (inhaltsgleich unten).
-- Live: c27fc77 (Phase 0). Lokal committet, nicht gepusht: 29c9a95 (Belege Phase 0).
+- Live: 5c3c359 (S-02 `/ueber-uns`). Lokal committet, nicht gepusht: S-01 `/leistungen` (67f6df4), S-03 `/blog` (607d822), N-01 (345d0d7), S-01b/S-01c (28523e2, ac76645), S-04 `/leistungen/[id]` (0be3106), Aufträge Q-01/02/03/05.
+- **Push angehalten:** Tor t-n01-s0103-r2 (Stand 328463c) zeigt durch N-01 einen waagerecht scrollbaren Viewport bei 200 % Zoom (scrollX 92) und Textabstand (2 px). N-01b beim N-01-Agenten (Wrapper mit `overflow-x: clip`, Sperre weiter an body). Danach ein Tor über HEAD (/, /leistungen, /blog, /leistungen/[id] + BEREICH_AUCH Preisrechner-Seiten), dann Push.
 - **Basiswerte (12.10.):** `belege/e038-basis/ERGEBNIS.md` – live `/` mobil 70,5 Punkte gegen 82,5 im Ausgangsstand, TBT 1 045 gegen 286 ms; Ursache laut Spur wiederholte Stil-Neuberechnung nach dem ersten Bild (nicht CSS-Animationen). INP noch offen.
 - **In Arbeit (Opus, Hintergrund):**
   - N-01 Startseite TBT (`pakete/N-01.md`, eigene Arbeitskopie, Ports 4343–4345) – Vorrang beim Push.
