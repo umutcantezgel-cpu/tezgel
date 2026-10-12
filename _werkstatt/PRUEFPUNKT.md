@@ -1,5 +1,13 @@
 # PRUEFPUNKT
 
+- Etappe: E4 · Stand 12.10.2026 ~10:30 CEST · E4-N2-01…13 und E4-N2-02-PA abgenommen. E4 Familien: E4-BAU-01 (fb069cf), -02 (559975b), -03 (dc5f2ae), -04 (92ed276), -05 (4c1f614), -06 (691218b), -07 (48b76da) abgenommen; -08, -09, -10, -11 laufen (4 Plätze). main = 6156079 (live), Push nur auf den Arbeitsbranch.
+- Jetzt: Rückgaben -08…-11 abnehmen (Prüfstufe A je Paket, Bildsichtung, Commit, Push). Danach: `_werkstatt/belege/adhoc/texte/` (Zwischenablage eines Textlaufs, nicht committen) entfernen, wenn keine Baumeister mehr laufen; 4310 auf HEAD neu starten (Reinraum durch Prüfer); E4-PRUEF-B (Prüfstufe B der Etappe); dann E5 (Spezifikationen im Generator, E5-BAU-10 [id]/[stadt] von Hand), E6.
+- Kleinpunkte: `src/components/sections/CompanyHistory.jsx` verwaist → mit E6-BAU-11 entfernen; Rinne im Schnitt für `bad`/`untergrund` (vorgaben.ts); Leitachse mit Abschnittsbezug statt Verdeckung (/ueber-uns); mobil Einstieg der Arbeitsansichten kürzer (/blog erster Eintrag bei ~1150 px); bewegung.mjs-Schwelle für 1-px-Kanten; FinalCTA fehlt auf vielen Unterseiten (Vorschlag für später); Merkliste einspaltig mit langen Zeilen am Desktop (/fliesen/fliesenarten „Beim Kauf“).
+- Briefings E4-BAU-01…11 liegen in `_werkstatt/pakete/` (Generator `scratchpad/orch/spez/e4/erzeuge.py`, dort auch E5-BAU-01…09/-11).
+- Offene Menschen-Fragen: M-15 bis M-26; Textvorschläge in TEXTVORSCHLAEGE (neu: Musterbad-Größe `sizeM2`).
+
+## Vorheriger Stand (überholt)
+
 - Etappe: E4 · Stand 12.10.2026 ~08:05 CEST · zweiter Durchgang E4-N2-01…13 abgenommen (Commits im PLAN); Prüfstufe A der Bausteine (E4-N2-02-PA) läuft. E4 Familien: E4-BAU-01 (fb069cf), -02 (559975b), -03 (dc5f2ae) abgenommen; -04, -05, -06 laufen. main = 6156079 (live), Push nur auf den Arbeitsbranch.
 - Jetzt: E4 Familien nach PLAN (E4-BAU-04…11, je Paket Prüfstufe A, Commit, Push; 4 Plätze); Rückgabe E4-N2-02-PA auswerten. Danach E4-PRUEF-B (Prüfstufe B der Etappe), E5 (Spezifikationen im Generator, E5-BAU-10 von Hand), E6.
 - Kleinpunkte nach E4-N2: `src/components/sections/CompanyHistory.jsx` verwaist (Firmengeschichte steht jetzt in /ueber-uns) → mit E6-BAU-11 entfernen; Rinne im Schnitt für `bad`/`untergrund` (vorgaben.ts); Leitachse mit Abschnittsbezug statt Verdeckung (/ueber-uns); mobil Einstieg der Arbeitsansichten kürzer (/blog erster Eintrag bei ~1150 px).
